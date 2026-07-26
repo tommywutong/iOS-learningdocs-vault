@@ -1,0 +1,88 @@
+---
+title: Meet SwiftData
+session_id: 10187
+collection: wwdc2023
+year: 2023
+duration: '8:52'
+topics: [Essentials, Swift]
+group: H · 持久化与文件系统
+evergreen: false
+source_url: 'https://developer.apple.com/videos/play/wwdc2023/10187/'
+content_hash: 'sha256:5b5d389f7de47d68'
+translated: false
+---
+
+# Meet SwiftData
+
+<sub>WWDC2023 · 8:52 · Essentials、Swift</sub>
+
+SwiftData is a powerful and expressive persistence framework built for Swift. We'll show you how you can model your data directly from...
+
+> [!note] 归档理由
+> SwiftData 入门
+
+## Chapters
+
+- [Intro](/videos/play/wwdc2023/10187/?time=0)
+- [Using the model macro](/videos/play/wwdc2023/10187/?time=67)
+- [Working with your data](/videos/play/wwdc2023/10187/?time=197)
+- [Use SwiftData with SwiftUI](/videos/play/wwdc2023/10187/?time=422)
+- [Wrap-up](/videos/play/wwdc2023/10187/?time=490)
+
+## Resources
+
+- [Intro](https://developer.apple.com/videos/play/wwdc2023/10187/?time=0)
+- [Using the model macro](https://developer.apple.com/videos/play/wwdc2023/10187/?time=67)
+- [Working with your data](https://developer.apple.com/videos/play/wwdc2023/10187/?time=197)
+- [Use SwiftData with SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10187/?time=422)
+- [Wrap-up](https://developer.apple.com/videos/play/wwdc2023/10187/?time=490)
+- [SwiftData](https://developer.apple.com/documentation/SwiftData)
+- [Adopting SwiftData for a Core Data app](https://developer.apple.com/documentation/CoreData/adopting-swiftdata-for-a-core-data-app)
+- [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2023/10187/5/1D820D6D-4F01-48EB-8F22-901F4A4B69FE/downloads/wwdc2023-10187_hd.mp4?dl=1)
+- [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2023/10187/5/1D820D6D-4F01-48EB-8F22-901F4A4B69FE/downloads/wwdc2023-10187_sd.mp4?dl=1)
+- [Build an app with SwiftData](https://developer.apple.com/videos/play/wwdc2023/10154)
+- [Discover Observation in SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10149)
+- [Dive deeper into SwiftData](https://developer.apple.com/videos/play/wwdc2023/10196)
+- [Migrate to SwiftData](https://developer.apple.com/videos/play/wwdc2023/10189)
+- [Model your schema with SwiftData](https://developer.apple.com/videos/play/wwdc2023/10195)
+- [Q&A: SwiftData](https://developer.apple.com/videos/play/wwdc2023/10331)
+- [Q&A: SwiftData](https://developer.apple.com/videos/play/wwdc2023/111543)
+- [What’s new in Swift](https://developer.apple.com/videos/play/wwdc2023/10164)
+- [What’s new in SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10148)
+- [Adding @Model to Trip](https://developer.apple.com/videos/play/wwdc2023/10187/?time=87)
+- [Providing options for @Attribute and @Relationship](https://developer.apple.com/videos/play/wwdc2023/10187/?time=166)
+- [Initialize a ModelContainer](https://developer.apple.com/videos/play/wwdc2023/10187/?time=223)
+- [Creating a model container in SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10187/?time=238)
+- [Accessing the environment's ModelContext](https://developer.apple.com/videos/play/wwdc2023/10187/?time=260)
+- [Building a predicate](https://developer.apple.com/videos/play/wwdc2023/10187/?time=313)
+- [Fetching with a FetchDescriptor](https://developer.apple.com/videos/play/wwdc2023/10187/?time=332)
+- [Fetching with fetch and sort descriptors](https://developer.apple.com/videos/play/wwdc2023/10187/?time=346)
+- [Working with a ModelContext](https://developer.apple.com/videos/play/wwdc2023/10187/?time=375)
+- [Using @Query in SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10187/?time=458)
+
+## Transcript
+
+> [!warning] 关于逐字稿
+> 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。
+
+♪ ♪ Ben: Hi, I'm Ben Trumbull, and I'm excited to introduce SwiftData to you.
+
+SwiftData is a powerful framework for data modeling and management and enhances your modern Swift app. Like SwiftUI, it focuses entirely on code with no external file formats and uses Swift's new macro system to create a seamless API experience.
+
+SwiftData relies on the expressivity provided by the new Swift language macros in order to create a seamless API experience. And it is naturally integrated with SwiftUI and works with other platform features, like CloudKit and Widgets. In this session, we'll look at the new @Model macro and its power to model your data directly from Swift code, I'll introduce you to fetching and modifying your data with SwiftData, then I'll finish up by providing you with an overview of some of the other platform frameworks that work seamlessly with SwiftData.
+
+Now we'll look more into @Model.
+
+@Model is a new Swift macro that helps to define your model's schema from your Swift code. SwiftData schemas are normal Swift code, but when needed, you can annotate your properties with additional metadata. Using this schema, SwiftData adds powerful functionality to your model objects. It’s as simple as decorating your class with @Model, and the schema is generated. Models in SwiftData are the source of truth for your application's schema and drive the persistence experience. Part of this experience will transform the class' stored properties and turns them into persisted properties. Adding @Model to your model opens up a world of possibilities. SwiftData natively adapts your value type properties to be used as attributes right away. These properties include basic value types, like string, int, and float. They can also include more complex value types, such as structs, enums, and codable types too, including collections. SwiftData models reference types as relationships. You can create links between your model types with relationships and collections of model types. @Model will modify all the stored properties on your type. You can influence how SwiftData builds your schema using metadata on your properties. With @Attribute, you can add uniqueness constraints. You can use @Relationship to control the choice of inverses and specify delete propagation rules. These change the behaviors of links between models. You can tell SwiftData not to include specific properties with the Transient macro. Here is our previous Trip example. I'll adjust SwiftData's schema generation by adding metadata to our stored properties.
+
+I can add @Attribute to name and specify that it should be unique. I can also decorate our bucket list relationship with @Relationship and instruct Swift Data to delete all the related bucket list items whenever this trip is deleted. To learn more about SwiftData modeling, check out the "Model your schema with SwiftData" session. Now I'll cover how you can work with your model types and the two key objects you'll use to drive your operations: SwiftData's ModelContainer and ModelContext. The model container provides the persistent backend for your model types. You can use the default settings just by specifying your schema, or you can customize it with configurations and migration options. You can create a model container just by specifying the list of model types you want stored. If you want to customize your container further, you can use a configuration to change your URL, CloudKit and group container identifiers, and migration options With your container set up, you're ready to fetch and save data with model contexts. You can also use SwiftUI's view and scene modifiers to set up container and have it automatically established in the view's environment. Model contexts observe all the changes to your models and provide many of the actions to operate on them. They are your interface to tracking updates, fetching data, saving changes, and even undoing those changes.
+
+In SwiftUI, you'll generally get the modelContext from your view's environment after you create your model container.
+
+Outside the view hierarchy, you can ask the model container to give you a shared main actor bound context, or you can simply instantiate new contexts for a given model container. Once you have a context, you're ready to fetch data. SwiftData benefits from new Swift native types like predicate and fetch descriptor, as well as significant improvements to Swift's native sort descriptor.
+
+New in iOS 17, predicate works with native Swift types and uses Swift macros for strongly typed construction. It's a fully type checked modern replacement for NSPredicate. Implementing your predicates is easy, too, with Xcode support, like autocomplete. Here are a few examples of building predicates for our Sample Trip app. First, I can specify all the trips whose destination is New York. I can narrow our query down to just trips about birthdays, and I can specify we're only interested in trips planned for the future, as opposed to any of our past adventures. Once we've decided which trips we're interested in fetching, we can use the new FetchDescriptor type and instruct our ModelContext to fetch those trips. Working together with FetchDescriptor, Swift SortDescriptor is getting some updates to support native Swift types and keypaths, and we can use SortDescriptor to specify the order in which we'd like our fetched Trips to be organized. FetchDescriptor offers many other ways to tailor your SwiftData queries. In addition to predicates and sorting, you can specify related objects to prefetch, limiting the result count, excluding unsaved changes from the results, and much more. SwiftData also makes it easy to create, delete, and change your data by using the ModelContext to drive these operations. After creating your model objects like any other Swift classes, you can insert them into the context and begin using SwiftData features, like change tracking and persistence. Deleting persistent objects is as easy as telling the ModelContext to mark them for deletion, and you can save these and other pending changes by asking the ModelContext to save them and commit them to the persistent container. Changing property values on your model objects is as simple as using the property setters as you normally would. The Model macro modifies your stored properties to help the ModelContext track your changes automatically and include them in your next save operation.
+
+To learn more about SwiftData containers and contexts and driving its operations, check out the "Dive Deeper into SwiftData" session. SwiftData was built with SwiftUI in mind, and using them together couldn't be easier. SwiftUI is the easiest way to get started using SwiftData. Whether its setting up your SwiftData container, fetching data, or driving your view updates, we've built APIs directly integrating these frameworks. The new SwiftUI scene and view modifiers are the easiest way to get started building a SwiftData application. With SwiftUI, you can configure your data store, change your options, enable undo, and toggle autosaving. SwiftUI will propagate your model context in its environment. Once you've set up, the easiest way to start using your data is the new @Query property wrapper. You can easily load and filter anything stored in your database with a single line of code. SwiftData supports the all-new observable feature for your modeled properties. SwiftUI will automatically refresh changes on any of the observed properties. SwiftUI and SwiftData work hand in hand to help you build engaging and powerful apps. Learn more about using these frameworks together in our "Build an app with SwiftData" session.
+
+SwiftData is a powerful new solution to data management, designed with first-class support for Swift's features. It uses Swift's new macro system to focus entirely on your code. Set up your schema using @model, and configure your persistence experience with the model container. You can easily enable persistence, undo and redo, iCloud synchronization, widget development, and more. Start building SwiftData into your apps right away by leveraging SwiftUI's seamless integration. We're excited to see what you build with SwiftData, and thanks for watching. ♪ ♪

@@ -1,0 +1,190 @@
+---
+title: Profile and optimize power usage in your app
+session_id: 226
+collection: wwdc2025
+year: 2025
+duration: '19:43'
+topics: [System Services, Developer Tools]
+group: G · 调试、崩溃与 Instruments
+evergreen: false
+source_url: 'https://developer.apple.com/videos/play/wwdc2025/226/'
+content_hash: 'sha256:fa61cb53a36235bf'
+translated: false
+---
+
+# Profile and optimize power usage in your app
+
+<sub>WWDC2025 · 19:43 · System Services、Developer Tools</sub>
+
+Learn how to optimize your app for maximum battery life. Discover how to identify the root cause of power issues in your app — whether...
+
+> [!note] 归档理由
+> 功耗剖析最新工具
+
+## Chapters
+
+- [Welcome](/videos/play/wwdc2025/226/?time=0)
+- [Debug reproducible issues](/videos/play/wwdc2025/226/?time=112)
+- [Uncover hidden issues](/videos/play/wwdc2025/226/?time=577)
+- [Compare power usage](/videos/play/wwdc2025/226/?time=979)
+- [Optimize proactively](/videos/play/wwdc2025/226/?time=1105)
+
+## Resources
+
+- [Welcome](https://developer.apple.com/videos/play/wwdc2025/226/?time=0)
+- [Debug reproducible issues](https://developer.apple.com/videos/play/wwdc2025/226/?time=112)
+- [Uncover hidden issues](https://developer.apple.com/videos/play/wwdc2025/226/?time=577)
+- [Compare power usage](https://developer.apple.com/videos/play/wwdc2025/226/?time=979)
+- [Optimize proactively](https://developer.apple.com/videos/play/wwdc2025/226/?time=1105)
+- [Performance and metrics](https://developer.apple.com/documentation/Xcode/performance-and-metrics)
+- [Measuring your app’s power use with Power Profiler](https://developer.apple.com/documentation/Xcode/measuring-your-app-s-power-use-with-power-profiler)
+- [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2025/226/4/b8318d6d-95e6-42c6-b883-c4164edfa29e/downloads/wwdc2025-226_hd.mp4?dl=1)
+- [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2025/226/4/b8318d6d-95e6-42c6-b883-c4164edfa29e/downloads/wwdc2025-226_sd.mp4?dl=1)
+- [Optimize CPU performance with Instruments](https://developer.apple.com/videos/play/wwdc2025/308)
+
+## Transcript
+
+> [!warning] 关于逐字稿
+> 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。
+
+Hi everyone! I'm Wiam, and I am a software engineer at Apple.
+
+I'm thrilled to talk to you about power optimization.
+
+Delivering fantastic, high-quality app experiences is what you do best.
+
+People love apps they can rely on throughout their day, and a crucial part of that reliability is excellent battery life.
+
+Power-efficient apps lead to longer engagement and greater satisfaction, a true win-win.
+
+But, an app that consumes excessive power can quickly spoil that positive experience.
+
+So what if I showed you a secret weapon, a tool that empowers you to build apps that are both powerful and incredibly energy efficient? In this video, you'll learn new ways to solve power problems by leveraging the capabilities of this tool.
+
+Before I dive into the details, I’ll quickly outline our journey today.
+
+I’ll begin with tackling those problems you can easily reproduce at your desk.
+
+I’ll go through a practical example, showing you how to identify and reduce excessive power usage.
+
+I'll then explore how to tackle those more challenging, real-world scenarios that are harder to pinpoint.
+
+I'll show you how to capture data in any environment.
+
+Next, I’ll demonstrate how to compare the power consumption of different implementations. This provides a clear way to measure and improve your app's efficiency.
+
+Finally, I'll cover how you can proactively detect power problems early in your development process and ship a highly optimized version of your app.
+
+Perhaps you've noticed high energy impact in Xcode, signaling a problem, but finding the root cause is tough. In these situations, what you really need is the ability to run your app, reproduce the issue, and record power metrics.
+
+The Power Profiler in Instruments is the perfect tool for this.
+
+It lets you profile your app and record a power trace which can then be visualized in Instruments.
+
+This is exactly the problem I'm trying to solve in my app. I am working on a video streaming app, Destination Video, designed for watching content on iPhone and iPad. I wanted to enhance it, so I added a Library pane to easily browse the entire video collection. When I checked Xcode Organizer's energy report afterwards, I saw a significant jump in CPU usage compared to before. This directly translates to slower performance and reduced battery life. I am going to use the Power Profiler in Instruments to investigate this regression.
+
+First, I'll open the XCode project, and connect my iPhone wirelessly.
+
+Then I'll go to product and click on Profile. This will then build and install the app to my device and open Instruments.
+
+I'll select the blank template, choose Power Profiler, and CPU Profiler to also capture information about CPU usage.
+
+You can choose other instruments as needed.
+
+I'll use the default settings and start recording.
+
+Now, I am going to switch over to the device and open up that Library pane.
+
+I'm also noticing a hang while opening this pane, likely related to the issue I am investigating. I will now stop recording and examine the trace. I’ll focus on the recording by pressing command + control + Z.
+
+I’ll expand the Power Profiler track by clicking the disclosure triangle to the left of the track. With Power Profiler, I have access to both system level power metrics and per-app power impact metrics.
+
+The first lane is the system power usage lane which provides an overall indication of energy consumption. The higher the value, the more power your app is likely using. You can select a region and inspect the average value down in the summary pane. After selecting a region of time in this trace, the summary pane indicates 10.5%/hr.
+
+The next step is to review my app’s power impact metrics. There are a number of metrics I can inspect, related to different subsystems: the CPU, GPU, display, and networking power impact. The CPU power impact lane is crucial because high CPU activity is a major factor in power consumption.
+
+Sustained or intense CPU usage directly increases power usage. There is a spike in CPU power impact that happened right after I tried to open the Library pane. I'll highlight the region before to be able to determine the average CPU Power impact value.
+
+The average value is 1. Now I'll highlight the spike.
+
+The average CPU power impact is 21 which is significantly higher than what it was previously. This value is a score that lets you identify when unexpected power spikes occur, and prioritize debugging the highest impact subsystem.
+
+Time Profiler helps pinpoint the source of this CPU overhead by identifying which functions consume the most CPU time.
+
+I will click on CPU Profiler, and to focus the analysis on application specific code, I’ll examine the Call Tree view and select 'Hide System Libraries'. In the Heaviest Stack Trace pane, Instruments indicates that significant time is being spent in the VideoCardView.
+
+Since this view's body is relatively simple, the issue likely comes from how frequently it's being called. That means I'm going to check out the LibraryThumbnailView next. It's the one making all those video thumbnails in the Library pane, so it's a good bet that's where the problem lies.
+
+I am going to jump back to Xcode to analyze the code within this view.
+
+The code iterates through the entire array of videos. For each video, it generates a VideoCardView which creates its thumbnail and create a view to display it. All of these views are then placed inside a VStack. Now, imagine there are hundreds, or even thousands of videos. This approach forces the app to load every single thumbnail and create every single view upfront the moment the Library pane becomes visible, regardless of whether they are actually on screen. This is inefficient and explains the high CPU usage I discovered in Instruments. The app is doing too much work loading content that is not even needed yet.
+
+Fortunately, SwiftUI gives us a great API for this: LazyVStack. It only creates and renders the views for items that are currently visible or about to scroll into view. So, the optimization is straightforward. I'll replace the use of VStack with LazyVStack. I will provide it with the same array of videos, but the view itself intelligently handles the creation and destruction of the item views as I scroll. I am going to test now this optimization. I'll click on Profile again, and I’ll start recording.
+
+Then on my device I will open the Library pane.
+
+My app is now responsive, it's no longer hanging.
+
+I’ll stop recording now, and scroll down to the CPU power impact lane.
+
+I'll highlight the same region to be able to determine the average value. It now indicates a smaller average: 4.3 instead of the previous 21. This addresses the CPU regression. Loading all video thumbnails upfront in the Library pane was identified as the cause of unnecessary power consumption.
+
+Instruments helped pinpoint the inefficient code, and switching to on-demand loading makes the feature much more performant.
+
+For a more in depth understanding of CPU profiling and optimization techniques, I highly recommend watching the WWDC video "Optimize CPU performance with Instruments".
+
+The Power Profiler provides valuable insights into your app's power consumption. Remember to leverage it whenever you suspect there's an issue and you're not sure which subsystem to focus on or what to optimize.
+
+So far, I've been profiling with my iPhone connected to Xcode. This is great for controlled tests, but it doesn't always show the whole picture.
+
+What about those frustrating issues that only appear in the wild? The ones that are impossible to reproduce consistently on your desk? Maybe you're facing scenarios like: How does your app really behave during navigation with CarPlay? Or how much power does your augmented reality feature really use outdoors? How do you debug background battery usage that takes hours to appear? How can your quality team easily provide actionable power diagnostics from their field testing? To solve these, I need a way to gather data from real world usage – without needing a direct connection to Xcode.
+
+The Power Profiler is also available on-device and it can be used to find issues that can't be reproduced during development.
+
+Here’s a concrete example. Recently, my coworker reported some serious battery life issues – my app Destination Video, is always number one in battery usage on his device. I tried everything, but I just couldn't reproduce it on my setup.
+
+People use apps differently, he might have been hitting an edge case I haven't encountered yet.
+
+Thanks to on-device power profiling, I didn't need his device physically. I simply asked him to collect a trace using this new mode and send the file to me. I’ll show you how easy it is to collect this data.
+
+You first need to turn on developer mode in the Settings app, which is available after you’ve connected your device to Xcode. Then, go to Performance Trace in developer settings. Once Performance Trace is enabled, there’s the option to enable Power Profiler. Make sure this is toggled on. Next, you need to specify which app you want to profile. Only apps installed by Xcode, TestFlight or via the enterprise program can be monitored. Select your app from the list. Great! Now, start the data collection. Swipe down from the top right corner of your device to access Control Center.
+
+The performance trace icon is used to start data collection. Tap the icon once you’ve added it to begin recording. You can let this run for a few hours or until you are able to reproduce your issue. Now, stop the collection. Simply tap the Performance Trace icon in Control Center again.
+
+This generates a trace file containing all the collected power metrics which you can then share with your Mac and open directly in Instruments. That's it! This is exactly what my coworker has done, and now I'm going to show you how I can analyze the file he sent to identify the root cause. I'll open the file with Instruments.
+
+With on-device power tracing, you have access to system level power metrics, per-app power impact metrics and the Time Profiler. The Time Profiler in this mode has a lower sample rate to reduce the observer effect. The CPU power impact lane reveals a clear pattern of CPU impact, with distinct areas of high CPU impact followed by periods of low CPU impact, repeating periodically. That's definitely not what I’d expect from Destination Video app. If I zoom in on one of these areas of high impact, I can figure out what's driving this power usage. I am going to check the Time Profiler to get an idea of what functions are running during this period.
+
+videoSuggestionsForLocation is right at the top, eating up significant CPU time. That function is part of my feature for recommending videos based on location, you know, suggesting videos about nearby landmarks or events, and is called whenever location changes. And that explains why I couldn't reproduce it here! Sitting at my desk, my location doesn't really change much. So the function might run once when the app starts, but then it just sits there.
+
+But my coworker uses the app while commuting – they're moving around all the time! Those frequent location updates were triggering this heavy filtering process over and over. I’ll quickly hop over to the Destination Video app itself.
+
+This feature shows up in the Nearby Suggestions pane. That's where those location based recommendations pop up, all powered by the same function. Okay, so I know the function causing trouble now. I’ll dive into the code and figure out what I can do to optimize it.
+
+videoSuggestionsForLocation is called every time my location changes.
+
+It’s responsible for generating a list of relevant videos to display.
+
+Right now, every single time it gets called, it reads this RecommendationRules file into a Data object, and then uses JSONDecoder to parse it into the RecommendationRule map. And this JSON file isn't small – it's got hundreds of complex rules. File I/O and JSON parsing, especially for big files, they're resource-intensive operations! The app is doing all this heavy lifting over and over, every time the location changes.
+
+That's definitely the source of the problem. The rules themselves don't change while the app is running.
+
+So an optimization is basically to load and parse the rules lazily, just one time, and cache them.
+
+This simple change will reduce the work done during each location update. For my app, I’ll ask the same colleague to test it again after I optimize it further.
+
+Whenever you make a fix like this in your own app, you can always have someone test it under the same conditions and grab a new power trace. It's the perfect way to confirm you actually fixed the original problem and – just as importantly – verify that you didn't accidentally introduce a new power issue while making the change.
+
+It really helps you close the loop and be confident in your optimizations.
+
+Alright, I’ve covered how to track down existing problems. But how do you confidently choose between different optimization strategies before you ship? Perhaps an optimization involves a trade-off – less CPU usage but maybe slightly more network activity. How do you know the net effect on battery life? Here's a common scenario: you’re developing a new feature.
+
+You've got your implementation – I’ll call it Approach 1. It's straightforward, seems efficient when you test it with small amounts of data. But then your coworker proposes Approach 2. It's architected differently, maybe a bit more complex, perhaps a little slower on those small datasets, but it's designed to handle large amounts of data much more gracefully. Now you've got a dilemma: which one is really better for battery life? Trying to decide this based just on local testing or inspecting code is really tough. Your local tests might not represent the typical data sizes encountered, or how network conditions, background activity impact performance. This is where you can leverage the Power Profiler, specifically for comparing the impact. You can profile your app with one approach and profile it again with the second approach and compare these values.
+
+Keep in mind that conditions like thermals, device state, and system pressure can impact how much power is ultimately used. This also includes your app’s state, like how much data it manages, preferences turned on, or features enabled. To account for these variables, you can, for example, capture multiple runs of each approach under various conditions and average the results, then use that data to inform your decisions regarding features and implementations, ultimately optimizing your app for the best experience. The Power Profiler is one of many tools in your arsenal.
+
+While coding, get instant feedback with Xcode Energy Gauges and do deep dives with Instruments. Catch issues early with automated XCTests.
+
+After shipping, monitor impact in the field using Xcode Organizer, MetricKit and App Store Connect API. These tools are your allies in the fight for energy efficiency, they provide valuable context and insights. By effectively utilizing them, you can build a robust energy efficiency strategy into your development process. You now have the tools and knowledge to build power-efficient apps.
+
+Use the Power Profiler early and often, let the data guide your decisions, and iterate based on what you learn. Here's a challenge: take a trace of your app right now and examine the resulting data! It's a fun way to put your new skills into practice. Alright, that's all the power tips I've got. Thanks for watching!
