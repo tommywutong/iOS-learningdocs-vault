@@ -56,7 +56,12 @@ translated: true                # ← 改成 true
 
 ## 三、结构性文字的固定译法
 
-渲染器生成的结构性文字，**必须用下表的固定译法**，不要自由发挥（同一语料里译法不统一比译得不够漂亮糟糕得多）：
+渲染器生成的结构性文字，**必须用下表的固定译法**，不要自由发挥（同一语料里译法不统一比译得不够漂亮糟糕得多）。
+
+这一节由 `tools/validate.py` 的 `FIXED_LINES` / `FIXED_INLINE` 强制执行，
+漏译的存量可以用 `python3 tools/fix_structural.py --apply` 批量统一。
+加这道检查之前漏出去过 150 处——因为这些标题只有一两个单词，够不到「残留英文」
+的 8 词阈值，`## 概述` 与 `## Overview` 曾在同一个仓库里共存。
 
 | 英文原文 | 固定中文译法 |
 |---|---|
@@ -68,6 +73,9 @@ translated: true                # ← 改成 true
 | `## Default Implementations` | `## 默认实现` |
 | `## Download` | `## 下载` |
 | `## Overview`（Apple 原文里的） | `## 概述` |
+| `## Transcript`（WWDC） | `## 逐字稿` |
+| `## Resources`（WWDC） | `## 相关资源` |
+| `## Chapters`（WWDC） | `## 章节` |
 | `_(deprecated)_` | `_(已废弃)_` |
 | `_(beta)_` | `_(beta)_`（保留） |
 | `> [!warning] Deprecated` | `> [!warning] 已废弃` |
