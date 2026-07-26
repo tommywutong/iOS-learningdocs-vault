@@ -1,0 +1,6341 @@
+[
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/02.png",
+  "before": 2422712,
+  "dim_before": [
+   622,
+   11823
+  ],
+  "after": 200088,
+  "dim_after": [
+   126,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 200088
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/01.jpg",
+  "before": 2409579,
+  "dim_before": [
+   4000,
+   2250
+  ],
+  "after": 839102,
+  "dim_after": [
+   2400,
+   1350
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 839102
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/01.jpg",
+  "before": 1991565,
+  "dim_before": [
+   674,
+   13322
+  ],
+  "after": 96384,
+  "dim_after": [
+   121,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 96384
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/3.png",
+  "before": 1883482,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 829119,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1307251
+   },
+   {
+    "max_side": 1280,
+    "size": 829119
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/28.png",
+  "before": 1875186,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 796008,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1280217
+   },
+   {
+    "max_side": 1280,
+    "size": 796008
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/43.png",
+  "before": 1868614,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 783979,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1267979
+   },
+   {
+    "max_side": 1280,
+    "size": 783979
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/4.png",
+  "before": 2701172,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 815557,
+  "dim_after": [
+   1024,
+   576
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1916164
+   },
+   {
+    "max_side": 1280,
+    "size": 1250843
+   },
+   {
+    "max_side": 1024,
+    "size": 815557
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/51.png",
+  "before": 1856885,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 797179,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1281109
+   },
+   {
+    "max_side": 1280,
+    "size": 797179
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/42.png",
+  "before": 1849481,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 774194,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1254287
+   },
+   {
+    "max_side": 1280,
+    "size": 774194
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/15.png",
+  "before": 1833146,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 748061,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1225116
+   },
+   {
+    "max_side": 1280,
+    "size": 748061
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/49.png",
+  "before": 1839511,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 767953,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1245621
+   },
+   {
+    "max_side": 1280,
+    "size": 767953
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/2.png",
+  "before": 1830386,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 758222,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1234703
+   },
+   {
+    "max_side": 1280,
+    "size": 758222
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/23.png",
+  "before": 1827520,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 753961,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1228753
+   },
+   {
+    "max_side": 1280,
+    "size": 753961
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/42.png",
+  "before": 2095460,
+  "dim_before": [
+   2586,
+   1850
+  ],
+  "after": 723774,
+  "dim_after": [
+   1280,
+   916
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2063739
+   },
+   {
+    "max_side": 2000,
+    "size": 1532651
+   },
+   {
+    "max_side": 1600,
+    "size": 1055731
+   },
+   {
+    "max_side": 1280,
+    "size": 723774
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/35.png",
+  "before": 1823119,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 751512,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1226286
+   },
+   {
+    "max_side": 1280,
+    "size": 751512
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/40.png",
+  "before": 1826245,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 749572,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1224160
+   },
+   {
+    "max_side": 1280,
+    "size": 749572
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/18.png",
+  "before": 1818857,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 753471,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1225915
+   },
+   {
+    "max_side": 1280,
+    "size": 753471
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/53.png",
+  "before": 1814720,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 737764,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1212921
+   },
+   {
+    "max_side": 1280,
+    "size": 737764
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/25.png",
+  "before": 1805612,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 729977,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1201280
+   },
+   {
+    "max_side": 1280,
+    "size": 729977
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/37.png",
+  "before": 1802140,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 726431,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1197039
+   },
+   {
+    "max_side": 1280,
+    "size": 726431
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/04.jpg",
+  "before": 1801748,
+  "dim_before": [
+   3000,
+   1688
+  ],
+  "after": 876069,
+  "dim_after": [
+   2400,
+   1350
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 876069
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/52.png",
+  "before": 1794335,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 713922,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1184061
+   },
+   {
+    "max_side": 1280,
+    "size": 713922
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/38.png",
+  "before": 1792882,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 725508,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1192810
+   },
+   {
+    "max_side": 1280,
+    "size": 725508
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/55.png",
+  "before": 1784796,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 706895,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1175231
+   },
+   {
+    "max_side": 1280,
+    "size": 706895
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/21.png",
+  "before": 1783556,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 772336,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1227008
+   },
+   {
+    "max_side": 1280,
+    "size": 772336
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/9.png",
+  "before": 1778139,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 706093,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1171011
+   },
+   {
+    "max_side": 1280,
+    "size": 706093
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/50.png",
+  "before": 1776093,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 702786,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1168157
+   },
+   {
+    "max_side": 1280,
+    "size": 702786
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/31.png",
+  "before": 1772038,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 696217,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1161010
+   },
+   {
+    "max_side": 1280,
+    "size": 696217
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/41.png",
+  "before": 1772416,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 695592,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1160743
+   },
+   {
+    "max_side": 1280,
+    "size": 695592
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/54.png",
+  "before": 1771574,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 692748,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1158248
+   },
+   {
+    "max_side": 1280,
+    "size": 692748
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/5.png",
+  "before": 1771815,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 694301,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1159670
+   },
+   {
+    "max_side": 1280,
+    "size": 694301
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/39.png",
+  "before": 1769490,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 692205,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1157411
+   },
+   {
+    "max_side": 1280,
+    "size": 692205
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/30.png",
+  "before": 1768593,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 692559,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1157015
+   },
+   {
+    "max_side": 1280,
+    "size": 692559
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/1.png",
+  "before": 1765497,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 747540,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1195579
+   },
+   {
+    "max_side": 1280,
+    "size": 747540
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/8.png",
+  "before": 1720616,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 726924,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1166305
+   },
+   {
+    "max_side": 1280,
+    "size": 726924
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/36.png",
+  "before": 1732297,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 731716,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1179851
+   },
+   {
+    "max_side": 1280,
+    "size": 731716
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/22.png",
+  "before": 1690195,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 702468,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1138835
+   },
+   {
+    "max_side": 1280,
+    "size": 702468
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/33.png",
+  "before": 1679367,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 740790,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1166345
+   },
+   {
+    "max_side": 1280,
+    "size": 740790
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/32.png",
+  "before": 1645849,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 722932,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1143365
+   },
+   {
+    "max_side": 1280,
+    "size": 722932
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/45.png",
+  "before": 1646375,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 844428,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1236944
+   },
+   {
+    "max_side": 1280,
+    "size": 844428
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/44.png",
+  "before": 1585297,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 747506,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1138291
+   },
+   {
+    "max_side": 1280,
+    "size": 747506
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/47.png",
+  "before": 1589653,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 687978,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1095195
+   },
+   {
+    "max_side": 1280,
+    "size": 687978
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/17.png",
+  "before": 1568354,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 677083,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1079181
+   },
+   {
+    "max_side": 1280,
+    "size": 677083
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/47.jpg",
+  "before": 1461185,
+  "dim_before": [
+   3063,
+   1489
+  ],
+  "after": 673460,
+  "dim_after": [
+   2400,
+   1166
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 673460
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/14.png",
+  "before": 1410474,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 967202,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 967202
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/07.jpg",
+  "before": 1435711,
+  "dim_before": [
+   3000,
+   1688
+  ],
+  "after": 618028,
+  "dim_after": [
+   2400,
+   1350
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 618028
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/34.png",
+  "before": 1542459,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 685308,
+  "dim_after": [
+   1280,
+   720
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1091369
+   },
+   {
+    "max_side": 1280,
+    "size": 685308
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/7.png",
+  "before": 1361282,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 959128,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 959128
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/19.png",
+  "before": 1342928,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 905330,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 905330
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/26.png",
+  "before": 1331476,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 955232,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 955232
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/24.png",
+  "before": 1297082,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 872373,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 872373
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/29.png",
+  "before": 1305534,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 958230,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 958230
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/25.png",
+  "before": 1443362,
+  "dim_before": [
+   3072,
+   1882
+  ],
+  "after": 827196,
+  "dim_after": [
+   1600,
+   980
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1424021
+   },
+   {
+    "max_side": 2000,
+    "size": 1182134
+   },
+   {
+    "max_side": 1600,
+    "size": 827196
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/20.png",
+  "before": 1294819,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 917456,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 917456
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/24.png",
+  "before": 1642662,
+  "dim_before": [
+   5042,
+   3151
+  ],
+  "after": 856084,
+  "dim_after": [
+   1600,
+   1000
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1405584
+   },
+   {
+    "max_side": 2000,
+    "size": 1143715
+   },
+   {
+    "max_side": 1600,
+    "size": 856084
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/27.png",
+  "before": 1218711,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 861940,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 861940
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/6.png",
+  "before": 1283647,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 881795,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 881795
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/05.jpg",
+  "before": 1134186,
+  "dim_before": [
+   2919,
+   1686
+  ],
+  "after": 590716,
+  "dim_after": [
+   2400,
+   1386
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 590716
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/08.jpg",
+  "before": 1139069,
+  "dim_before": [
+   2919,
+   1686
+  ],
+  "after": 582912,
+  "dim_after": [
+   2400,
+   1386
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 582912
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/16.png",
+  "before": 1092648,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 800027,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 800027
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/46.png",
+  "before": 1078703,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 794049,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 794049
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/3.png",
+  "before": 1292093,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 577407,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 577407
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/06.jpg",
+  "before": 1089023,
+  "dim_before": [
+   2914,
+   1686
+  ],
+  "after": 562850,
+  "dim_after": [
+   2400,
+   1388
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 562850
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/12.png",
+  "before": 1033850,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 757864,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 757864
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/5.png",
+  "before": 1117684,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 575966,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 575966
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/02.jpg",
+  "before": 1050443,
+  "dim_before": [
+   2916,
+   1687
+  ],
+  "after": 543715,
+  "dim_after": [
+   2400,
+   1388
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 543715
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/24.jpg",
+  "before": 1030675,
+  "dim_before": [
+   2917,
+   1686
+  ],
+  "after": 545124,
+  "dim_after": [
+   2400,
+   1387
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 545124
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/2.png",
+  "before": 985250,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 592106,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 592106
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/13.png",
+  "before": 916817,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 657424,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 657424
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/11.png",
+  "before": 907604,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 665685,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 665685
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/48.png",
+  "before": 904513,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 633346,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 633346
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/12.png",
+  "before": 996745,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 916102,
+  "dim_after": [
+   1280,
+   800
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2846003
+   },
+   {
+    "max_side": 2000,
+    "size": 2037390
+   },
+   {
+    "max_side": 1600,
+    "size": 1362504
+   },
+   {
+    "max_side": 1280,
+    "size": 916102
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/04.png",
+  "before": 955804,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 934952,
+  "dim_after": [
+   1280,
+   800
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2911948
+   },
+   {
+    "max_side": 2000,
+    "size": 2072180
+   },
+   {
+    "max_side": 1600,
+    "size": 1382619
+   },
+   {
+    "max_side": 1280,
+    "size": 934952
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/10.png",
+  "before": 996106,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 927226,
+  "dim_after": [
+   1280,
+   904
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2305309
+   },
+   {
+    "max_side": 2000,
+    "size": 1828349
+   },
+   {
+    "max_side": 1600,
+    "size": 1322254
+   },
+   {
+    "max_side": 1280,
+    "size": 927226
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/11.png",
+  "before": 934676,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 902453,
+  "dim_after": [
+   1280,
+   800
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2837138
+   },
+   {
+    "max_side": 2000,
+    "size": 2007368
+   },
+   {
+    "max_side": 1600,
+    "size": 1339200
+   },
+   {
+    "max_side": 1280,
+    "size": 902453
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/3.png",
+  "before": 917986,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 917986,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1757284
+   },
+   {
+    "max_side": 2000,
+    "size": 1383249
+   },
+   {
+    "max_side": 1600,
+    "size": 995442
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/29.png",
+  "before": 924003,
+  "dim_before": [
+   3000,
+   1875
+  ],
+  "after": 797450,
+  "dim_after": [
+   1024,
+   640
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2920455
+   },
+   {
+    "max_side": 2000,
+    "size": 2242810
+   },
+   {
+    "max_side": 1600,
+    "size": 1595718
+   },
+   {
+    "max_side": 1280,
+    "size": 1130628
+   },
+   {
+    "max_side": 1024,
+    "size": 797450
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/03.jpg",
+  "before": 901146,
+  "dim_before": [
+   2916,
+   1686
+  ],
+  "after": 460709,
+  "dim_after": [
+   2400,
+   1387
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 460709
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/19.jpg",
+  "before": 876879,
+  "dim_before": [
+   2916,
+   1686
+  ],
+  "after": 447398,
+  "dim_after": [
+   2400,
+   1387
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 447398
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/09.jpg",
+  "before": 899292,
+  "dim_before": [
+   3999,
+   3000
+  ],
+  "after": 899292,
+  "dim_after": [
+   3999,
+   3000
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 911072
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/43.jpg",
+  "before": 843952,
+  "dim_before": [
+   2910,
+   1686
+  ],
+  "after": 442712,
+  "dim_after": [
+   2400,
+   1390
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 442712
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/acfun-swift-practice/13.png",
+  "before": 846446,
+  "dim_before": [
+   1500,
+   1060
+  ],
+  "after": 846446,
+  "dim_after": [
+   1500,
+   1060
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1957412
+   },
+   {
+    "max_side": 1024,
+    "size": 1218173
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/g01.png",
+  "before": 799198,
+  "dim_before": [
+   1098,
+   3160
+  ],
+  "after": 799198,
+  "dim_after": [
+   1098,
+   3160
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 893662
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/4.png",
+  "before": 843533,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 550283,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 550283
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/acfun-swift-practice/01.png",
+  "before": 787182,
+  "dim_before": [
+   1500,
+   1060
+  ],
+  "after": 787182,
+  "dim_after": [
+   1500,
+   1060
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1949741
+   },
+   {
+    "max_side": 1024,
+    "size": 1233231
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/37.png",
+  "before": 902120,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 895018,
+  "dim_after": [
+   1024,
+   640
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2879501
+   },
+   {
+    "max_side": 2000,
+    "size": 2342744
+   },
+   {
+    "max_side": 1600,
+    "size": 1716558
+   },
+   {
+    "max_side": 1280,
+    "size": 1246741
+   },
+   {
+    "max_side": 1024,
+    "size": 895018
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/20.png",
+  "before": 857328,
+  "dim_before": [
+   3000,
+   1875
+  ],
+  "after": 792499,
+  "dim_after": [
+   1024,
+   640
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2905452
+   },
+   {
+    "max_side": 2000,
+    "size": 2233986
+   },
+   {
+    "max_side": 1600,
+    "size": 1589750
+   },
+   {
+    "max_side": 1280,
+    "size": 1126065
+   },
+   {
+    "max_side": 1024,
+    "size": 792499
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/04.png",
+  "before": 859687,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 859687,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 3166058
+   },
+   {
+    "max_side": 2000,
+    "size": 2567977
+   },
+   {
+    "max_side": 1600,
+    "size": 1887749
+   },
+   {
+    "max_side": 1280,
+    "size": 1370666
+   },
+   {
+    "max_side": 1024,
+    "size": 982920
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/07.png",
+  "before": 853004,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 853004,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2940115
+   },
+   {
+    "max_side": 2000,
+    "size": 2334587
+   },
+   {
+    "max_side": 1600,
+    "size": 1688402
+   },
+   {
+    "max_side": 1280,
+    "size": 1217423
+   },
+   {
+    "max_side": 1024,
+    "size": 870883
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/03.png",
+  "before": 748957,
+  "dim_before": [
+   1492,
+   1482
+  ],
+  "after": 513578,
+  "dim_after": [
+   1280,
+   1271
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 513578
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/12.jpg",
+  "before": 762593,
+  "dim_before": [
+   3999,
+   3000
+  ],
+  "after": 636881,
+  "dim_after": [
+   2400,
+   1800
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 636881
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/34.png",
+  "before": 829944,
+  "dim_before": [
+   3000,
+   1875
+  ],
+  "after": 817661,
+  "dim_after": [
+   1024,
+   640
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2803081
+   },
+   {
+    "max_side": 2000,
+    "size": 2183825
+   },
+   {
+    "max_side": 1600,
+    "size": 1577600
+   },
+   {
+    "max_side": 1280,
+    "size": 1137408
+   },
+   {
+    "max_side": 1024,
+    "size": 817661
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/11.jpg",
+  "before": 751761,
+  "dim_before": [
+   2999,
+   3998
+  ],
+  "after": 610767,
+  "dim_after": [
+   1800,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 610767
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/1.png",
+  "before": 738059,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 384975,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 384975
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-quickjs/2.png",
+  "before": 786730,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 786730,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1921079
+   },
+   {
+    "max_side": 2000,
+    "size": 1520440
+   },
+   {
+    "max_side": 1600,
+    "size": 1107854
+   },
+   {
+    "max_side": 1280,
+    "size": 787586
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/acfun-swift-practice/12.png",
+  "before": 725576,
+  "dim_before": [
+   1500,
+   1060
+  ],
+  "after": 725576,
+  "dim_after": [
+   1500,
+   1060
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1982851
+   },
+   {
+    "max_side": 1024,
+    "size": 1254731
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-deeply-analyse-llvm/10.png",
+  "before": 715031,
+  "dim_before": [
+   1920,
+   1080
+  ],
+  "after": 601889,
+  "dim_after": [
+   1600,
+   900
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 601889
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/06.png",
+  "before": 775377,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 775377,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2376249
+   },
+   {
+    "max_side": 2000,
+    "size": 1728612
+   },
+   {
+    "max_side": 1600,
+    "size": 1172933
+   },
+   {
+    "max_side": 1280,
+    "size": 800516
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/28.jpg",
+  "before": 705398,
+  "dim_before": [
+   3000,
+   1824
+  ],
+  "after": 387058,
+  "dim_after": [
+   2400,
+   1459
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 387058
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/30.jpg",
+  "before": 697681,
+  "dim_before": [
+   4032,
+   3024
+  ],
+  "after": 697681,
+  "dim_after": [
+   4032,
+   3024
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 819293
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/01.jpeg",
+  "before": 697452,
+  "dim_before": [
+   1492,
+   1119
+  ],
+  "after": 341265,
+  "dim_after": [
+   1280,
+   960
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 341265
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/33.png",
+  "before": 743275,
+  "dim_before": [
+   5042,
+   3151
+  ],
+  "after": 743275,
+  "dim_after": [
+   5042,
+   3151
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1325572
+   },
+   {
+    "max_side": 2000,
+    "size": 1067628
+   },
+   {
+    "max_side": 1600,
+    "size": 786230
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/18.jpg",
+  "before": 656592,
+  "dim_before": [
+   3000,
+   1800
+  ],
+  "after": 372629,
+  "dim_after": [
+   2400,
+   1440
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 372629
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/07.png",
+  "before": 730139,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 730139,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1959217
+   },
+   {
+    "max_side": 2000,
+    "size": 1528882
+   },
+   {
+    "max_side": 1600,
+    "size": 1093317
+   },
+   {
+    "max_side": 1280,
+    "size": 775952
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/16.png",
+  "before": 730658,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 730658,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2566517
+   },
+   {
+    "max_side": 2000,
+    "size": 2073406
+   },
+   {
+    "max_side": 1600,
+    "size": 1526001
+   },
+   {
+    "max_side": 1280,
+    "size": 1117683
+   },
+   {
+    "max_side": 1024,
+    "size": 814002
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-map/6.png",
+  "before": 629570,
+  "dim_before": [
+   2048,
+   10000
+  ],
+  "after": 413190,
+  "dim_after": [
+   491,
+   2400
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 413190
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/45.png",
+  "before": 690936,
+  "dim_before": [
+   5042,
+   3151
+  ],
+  "after": 690936,
+  "dim_after": [
+   5042,
+   3151
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1404570
+   },
+   {
+    "max_side": 2000,
+    "size": 1155470
+   },
+   {
+    "max_side": 1600,
+    "size": 861318
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/11.png",
+  "before": 697329,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 697329,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1927810
+   },
+   {
+    "max_side": 2000,
+    "size": 1450126
+   },
+   {
+    "max_side": 1600,
+    "size": 1008759
+   },
+   {
+    "max_side": 1280,
+    "size": 705448
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/21.png",
+  "before": 681913,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 681913,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1915642
+   },
+   {
+    "max_side": 2000,
+    "size": 1504046
+   },
+   {
+    "max_side": 1600,
+    "size": 1019734
+   },
+   {
+    "max_side": 1280,
+    "size": 691227
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/06.png",
+  "before": 654207,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 654207,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1563534
+   },
+   {
+    "max_side": 2000,
+    "size": 1220749
+   },
+   {
+    "max_side": 1600,
+    "size": 876981
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/13.jpg",
+  "before": 624311,
+  "dim_before": [
+   3999,
+   3000
+  ],
+  "after": 624311,
+  "dim_after": [
+   3999,
+   3000
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 679296
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/27.png",
+  "before": 605885,
+  "dim_before": [
+   2872,
+   1862
+  ],
+  "after": 605885,
+  "dim_after": [
+   2872,
+   1862
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 788876
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/10.png",
+  "before": 644467,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 644467,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1919026
+   },
+   {
+    "max_side": 2000,
+    "size": 1548927
+   },
+   {
+    "max_side": 1600,
+    "size": 1155460
+   },
+   {
+    "max_side": 1280,
+    "size": 859448
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/04.png",
+  "before": 598693,
+  "dim_before": [
+   1492,
+   1038
+  ],
+  "after": 422109,
+  "dim_after": [
+   1280,
+   890
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 422109
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/09.png",
+  "before": 626332,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 626332,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1810132
+   },
+   {
+    "max_side": 2000,
+    "size": 1462648
+   },
+   {
+    "max_side": 1600,
+    "size": 1016297
+   },
+   {
+    "max_side": 1280,
+    "size": 702467
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/38.png",
+  "before": 613063,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 613063,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2585018
+   },
+   {
+    "max_side": 2000,
+    "size": 1899800
+   },
+   {
+    "max_side": 1600,
+    "size": 1276742
+   },
+   {
+    "max_side": 1280,
+    "size": 857463
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/37.png",
+  "before": 616475,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 616475,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2536932
+   },
+   {
+    "max_side": 2000,
+    "size": 1865949
+   },
+   {
+    "max_side": 1600,
+    "size": 1251738
+   },
+   {
+    "max_side": 1280,
+    "size": 838999
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-quickjs/3.png",
+  "before": 611415,
+  "dim_before": [
+   2480,
+   3508
+  ],
+  "after": 611415,
+  "dim_after": [
+   2480,
+   3508
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1690992
+   },
+   {
+    "max_side": 2000,
+    "size": 1362619
+   },
+   {
+    "max_side": 1600,
+    "size": 1003296
+   },
+   {
+    "max_side": 1280,
+    "size": 719808
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/08.png",
+  "before": 599081,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 599081,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1871024
+   },
+   {
+    "max_side": 2000,
+    "size": 1527821
+   },
+   {
+    "max_side": 1600,
+    "size": 1131292
+   },
+   {
+    "max_side": 1280,
+    "size": 834035
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/10.png",
+  "before": 590231,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 590231,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1668924
+   },
+   {
+    "max_side": 2000,
+    "size": 1256392
+   },
+   {
+    "max_side": 1600,
+    "size": 886002
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/use-llvm/03.png",
+  "before": 571672,
+  "dim_before": [
+   1500,
+   1033
+  ],
+  "after": 511976,
+  "dim_after": [
+   1280,
+   881
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 511976
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/05.png",
+  "before": 591767,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 591767,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1842594
+   },
+   {
+    "max_side": 2000,
+    "size": 1494186
+   },
+   {
+    "max_side": 1600,
+    "size": 1107251
+   },
+   {
+    "max_side": 1280,
+    "size": 816360
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/19.png",
+  "before": 583968,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 583968,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1781629
+   },
+   {
+    "max_side": 2000,
+    "size": 1383215
+   },
+   {
+    "max_side": 1600,
+    "size": 945119
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/pic/ReactiveCocoaOC.png",
+  "before": 569101,
+  "dim_before": [
+   1995,
+   1753
+  ],
+  "after": 476870,
+  "dim_after": [
+   1600,
+   1406
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 476870
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/14.png",
+  "before": 580966,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 580966,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1640278
+   },
+   {
+    "max_side": 2000,
+    "size": 1275686
+   },
+   {
+    "max_side": 1600,
+    "size": 875200
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/22.png",
+  "before": 579582,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 579582,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1666231
+   },
+   {
+    "max_side": 2000,
+    "size": 1303610
+   },
+   {
+    "max_side": 1600,
+    "size": 895682
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/06.jpg",
+  "before": 551360,
+  "dim_before": [
+   1280,
+   960
+  ],
+  "after": 125246,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 125246
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/25.png",
+  "before": 569939,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 569939,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1933055
+   },
+   {
+    "max_side": 2000,
+    "size": 1502024
+   },
+   {
+    "max_side": 1600,
+    "size": 986863
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/04.png",
+  "before": 578885,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 578885,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2337278
+   },
+   {
+    "max_side": 2000,
+    "size": 1718930
+   },
+   {
+    "max_side": 1600,
+    "size": 1156180
+   },
+   {
+    "max_side": 1280,
+    "size": 782102
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/08.png",
+  "before": 566268,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 566268,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1638891
+   },
+   {
+    "max_side": 2000,
+    "size": 1259777
+   },
+   {
+    "max_side": 1600,
+    "size": 887001
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/24.png",
+  "before": 559929,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 559929,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1564485
+   },
+   {
+    "max_side": 2000,
+    "size": 1242000
+   },
+   {
+    "max_side": 1600,
+    "size": 878416
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/18.png",
+  "before": 564088,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 564088,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1645687
+   },
+   {
+    "max_side": 2000,
+    "size": 1304922
+   },
+   {
+    "max_side": 1600,
+    "size": 885520
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/g03.png",
+  "before": 527216,
+  "dim_before": [
+   1338,
+   1696
+  ],
+  "after": 527216,
+  "dim_after": [
+   1338,
+   1696
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 608567
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/32.png",
+  "before": 555721,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 555721,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1850246
+   },
+   {
+    "max_side": 2000,
+    "size": 1496800
+   },
+   {
+    "max_side": 1600,
+    "size": 1098839
+   },
+   {
+    "max_side": 1280,
+    "size": 802010
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/03.png",
+  "before": 545728,
+  "dim_before": [
+   5042,
+   3151
+  ],
+  "after": 545728,
+  "dim_after": [
+   5042,
+   3151
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1082417
+   },
+   {
+    "max_side": 2000,
+    "size": 902970
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/26.png",
+  "before": 536559,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 536559,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1458481
+   },
+   {
+    "max_side": 2000,
+    "size": 1155601
+   },
+   {
+    "max_side": 1600,
+    "size": 809114
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/11.png",
+  "before": 525502,
+  "dim_before": [
+   1492,
+   1047
+  ],
+  "after": 416393,
+  "dim_after": [
+   1280,
+   898
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 416393
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/26.png",
+  "before": 524941,
+  "dim_before": [
+   2832,
+   1774
+  ],
+  "after": 524941,
+  "dim_after": [
+   2832,
+   1774
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 682027
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/1.png",
+  "before": 535873,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 535873,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1256184
+   },
+   {
+    "max_side": 2000,
+    "size": 1003198
+   },
+   {
+    "max_side": 1600,
+    "size": 734535
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/02.png",
+  "before": 535004,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 535004,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2151675
+   },
+   {
+    "max_side": 2000,
+    "size": 1602480
+   },
+   {
+    "max_side": 1600,
+    "size": 1086383
+   },
+   {
+    "max_side": 1280,
+    "size": 735810
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/20.PNG",
+  "before": 530863,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 530863,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1928866
+   },
+   {
+    "max_side": 2000,
+    "size": 1605039
+   },
+   {
+    "max_side": 1600,
+    "size": 1201251
+   },
+   {
+    "max_side": 1280,
+    "size": 877540
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/6.png",
+  "before": 526606,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 526606,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1529344
+   },
+   {
+    "max_side": 2000,
+    "size": 1224576
+   },
+   {
+    "max_side": 1600,
+    "size": 894671
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/wwdc22-notes/02.jpg",
+  "before": 501597,
+  "dim_before": [
+   2880,
+   1920
+  ],
+  "after": 338661,
+  "dim_after": [
+   2400,
+   1600
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 338661
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/18.png",
+  "before": 517533,
+  "dim_before": [
+   3072,
+   1882
+  ],
+  "after": 517533,
+  "dim_after": [
+   3072,
+   1882
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1964798
+   },
+   {
+    "max_side": 2000,
+    "size": 1587820
+   },
+   {
+    "max_side": 1600,
+    "size": 1110279
+   },
+   {
+    "max_side": 1280,
+    "size": 763698
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/12.png",
+  "before": 522025,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 522025,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1233116
+   },
+   {
+    "max_side": 2000,
+    "size": 1007615
+   },
+   {
+    "max_side": 1600,
+    "size": 747611
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/25.png",
+  "before": 517847,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 517847,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1903098
+   },
+   {
+    "max_side": 2000,
+    "size": 1541022
+   },
+   {
+    "max_side": 1600,
+    "size": 1132321
+   },
+   {
+    "max_side": 1280,
+    "size": 826475
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/41.png",
+  "before": 506427,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 506427,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1470308
+   },
+   {
+    "max_side": 2000,
+    "size": 1206247
+   },
+   {
+    "max_side": 1600,
+    "size": 900998
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/43.jpeg",
+  "before": 496295,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 496295,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/wwdc22-notes/05.png",
+  "before": 500201,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 500201,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1337630
+   },
+   {
+    "max_side": 2000,
+    "size": 1092623
+   },
+   {
+    "max_side": 1600,
+    "size": 809323
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/05.png",
+  "before": 501793,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 501793,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1526040
+   },
+   {
+    "max_side": 2000,
+    "size": 1207816
+   },
+   {
+    "max_side": 1600,
+    "size": 844700
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/2.png",
+  "before": 494943,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 494943,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1006442
+   },
+   {
+    "max_side": 2000,
+    "size": 800379
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/16.png",
+  "before": 498541,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 498541,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2062683
+   },
+   {
+    "max_side": 2000,
+    "size": 1565309
+   },
+   {
+    "max_side": 1600,
+    "size": 1048165
+   },
+   {
+    "max_side": 1280,
+    "size": 705629
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/17.png",
+  "before": 496411,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 496411,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1930196
+   },
+   {
+    "max_side": 2000,
+    "size": 1600282
+   },
+   {
+    "max_side": 1600,
+    "size": 1198890
+   },
+   {
+    "max_side": 1280,
+    "size": 875011
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/wwdc22-notes/01.png",
+  "before": 491943,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 491943,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1165758
+   },
+   {
+    "max_side": 2000,
+    "size": 940151
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-quickjs/5.png",
+  "before": 495070,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 495070,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1310078
+   },
+   {
+    "max_side": 2000,
+    "size": 1064404
+   },
+   {
+    "max_side": 1600,
+    "size": 795298
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/25.PNG",
+  "before": 495038,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 495038,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1790936
+   },
+   {
+    "max_side": 2000,
+    "size": 1503507
+   },
+   {
+    "max_side": 1600,
+    "size": 1140901
+   },
+   {
+    "max_side": 1280,
+    "size": 844464
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/10.jpg",
+  "before": 488073,
+  "dim_before": [
+   3999,
+   3000
+  ],
+  "after": 488073,
+  "dim_after": [
+   3999,
+   3000
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 581881
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/07.png",
+  "before": 491474,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 491474,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1452168
+   },
+   {
+    "max_side": 2000,
+    "size": 1138094
+   },
+   {
+    "max_side": 1600,
+    "size": 812287
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/wwdc22-notes/03.jpg",
+  "before": 480999,
+  "dim_before": [
+   2880,
+   1920
+  ],
+  "after": 480999,
+  "dim_after": [
+   2880,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 868137
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/08.jpg",
+  "before": 481062,
+  "dim_before": [
+   3999,
+   3000
+  ],
+  "after": 481062,
+  "dim_after": [
+   3999,
+   3000
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 577212
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/18.png",
+  "before": 485906,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 485906,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1744088
+   },
+   {
+    "max_side": 1280,
+    "size": 1208700
+   },
+   {
+    "max_side": 1024,
+    "size": 826556
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/21.png",
+  "before": 484406,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 484406,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1595174
+   },
+   {
+    "max_side": 2000,
+    "size": 1320670
+   },
+   {
+    "max_side": 1600,
+    "size": 996626
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/iOS-performance-optimization-second-time/02.png",
+  "before": 473496,
+  "dim_before": [
+   2880,
+   1800
+  ],
+  "after": 473496,
+  "dim_after": [
+   2880,
+   1800
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2280549
+   },
+   {
+    "max_side": 2000,
+    "size": 1815870
+   },
+   {
+    "max_side": 1600,
+    "size": 1226720
+   },
+   {
+    "max_side": 1280,
+    "size": 831451
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/09.png",
+  "before": 479935,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 479935,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1456729
+   },
+   {
+    "max_side": 2000,
+    "size": 1195476
+   },
+   {
+    "max_side": 1600,
+    "size": 879163
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/14.png",
+  "before": 470517,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 470517,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1304065
+   },
+   {
+    "max_side": 2000,
+    "size": 1031122
+   },
+   {
+    "max_side": 1600,
+    "size": 737768
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/17.png",
+  "before": 476078,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 476078,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1377600
+   },
+   {
+    "max_side": 2000,
+    "size": 1071756
+   },
+   {
+    "max_side": 1600,
+    "size": 754552
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/23.png",
+  "before": 469160,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 469160,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1498203
+   },
+   {
+    "max_side": 2000,
+    "size": 1190453
+   },
+   {
+    "max_side": 1600,
+    "size": 839541
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/13.png",
+  "before": 466348,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 466348,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1311275
+   },
+   {
+    "max_side": 2000,
+    "size": 1054342
+   },
+   {
+    "max_side": 1600,
+    "size": 749511
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/03.png",
+  "before": 460370,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 460370,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1693668
+   },
+   {
+    "max_side": 1280,
+    "size": 1093338
+   },
+   {
+    "max_side": 1024,
+    "size": 719400
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/02.png",
+  "before": 455660,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 455660,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1476609
+   },
+   {
+    "max_side": 1280,
+    "size": 1061947
+   },
+   {
+    "max_side": 1024,
+    "size": 748585
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/31.png",
+  "before": 467393,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 467393,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1865063
+   },
+   {
+    "max_side": 2000,
+    "size": 1664408
+   },
+   {
+    "max_side": 1600,
+    "size": 1164043
+   },
+   {
+    "max_side": 1280,
+    "size": 808952
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/02.jpeg",
+  "before": 442775,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 442775,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/10.png",
+  "before": 451959,
+  "dim_before": [
+   1188,
+   902
+  ],
+  "after": 451959,
+  "dim_after": [
+   1188,
+   902
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 469110
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/16.png",
+  "before": 459358,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 459358,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1090325
+   },
+   {
+    "max_side": 2000,
+    "size": 826485
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/10.png",
+  "before": 455150,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 455150,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1463378
+   },
+   {
+    "max_side": 1280,
+    "size": 1058831
+   },
+   {
+    "max_side": 1024,
+    "size": 750509
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/g13.png",
+  "before": 441234,
+  "dim_before": [
+   1552,
+   1238
+  ],
+  "after": 401628,
+  "dim_after": [
+   1280,
+   1021
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 401628
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-quickjs/1.png",
+  "before": 465922,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 465922,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1271667
+   },
+   {
+    "max_side": 2000,
+    "size": 1039211
+   },
+   {
+    "max_side": 1600,
+    "size": 778708
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/23.png",
+  "before": 435410,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 435410,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1281929
+   },
+   {
+    "max_side": 1280,
+    "size": 916484
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/09.png",
+  "before": 440179,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 440179,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1182384
+   },
+   {
+    "max_side": 2000,
+    "size": 939932
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/01.png",
+  "before": 446945,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 446945,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1750445
+   },
+   {
+    "max_side": 2000,
+    "size": 1297888
+   },
+   {
+    "max_side": 1600,
+    "size": 879477
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/23.png",
+  "before": 431057,
+  "dim_before": [
+   970,
+   1824
+  ],
+  "after": 431057,
+  "dim_after": [
+   970,
+   1824
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 534371
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/17.png",
+  "before": 440626,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 440626,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1429414
+   },
+   {
+    "max_side": 2000,
+    "size": 1164891
+   },
+   {
+    "max_side": 1600,
+    "size": 866008
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/18.png",
+  "before": 437640,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 437640,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1438082
+   },
+   {
+    "max_side": 2000,
+    "size": 1175043
+   },
+   {
+    "max_side": 1600,
+    "size": 871267
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/06.jpeg",
+  "before": 426440,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 426440,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/21.PNG",
+  "before": 443453,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 443453,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1645266
+   },
+   {
+    "max_side": 2000,
+    "size": 1363444
+   },
+   {
+    "max_side": 1600,
+    "size": 1024189
+   },
+   {
+    "max_side": 1280,
+    "size": 749362
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/03.png",
+  "before": 434654,
+  "dim_before": [
+   2500,
+   1616
+  ],
+  "after": 434654,
+  "dim_after": [
+   2500,
+   1616
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1782798
+   },
+   {
+    "max_side": 2000,
+    "size": 1343071
+   },
+   {
+    "max_side": 1600,
+    "size": 929733
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/29.png",
+  "before": 429680,
+  "dim_before": [
+   3254,
+   1976
+  ],
+  "after": 429680,
+  "dim_after": [
+   3254,
+   1976
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1376547
+   },
+   {
+    "max_side": 2000,
+    "size": 1105351
+   },
+   {
+    "max_side": 1600,
+    "size": 775131
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/15.png",
+  "before": 424287,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 424287,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 964880
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/19.png",
+  "before": 425925,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 425925,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1548117
+   },
+   {
+    "max_side": 1280,
+    "size": 1061262
+   },
+   {
+    "max_side": 1024,
+    "size": 719167
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/22.png",
+  "before": 426349,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 426349,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1586744
+   },
+   {
+    "max_side": 1280,
+    "size": 1110603
+   },
+   {
+    "max_side": 1024,
+    "size": 763883
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/35.jpeg",
+  "before": 417415,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 417415,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/18.png",
+  "before": 428687,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 428687,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1575767
+   },
+   {
+    "max_side": 2000,
+    "size": 1277282
+   },
+   {
+    "max_side": 1600,
+    "size": 943440
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/05.png",
+  "before": 409988,
+  "dim_before": [
+   2000,
+   1250
+  ],
+  "after": 409988,
+  "dim_after": [
+   2000,
+   1250
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1305557
+   },
+   {
+    "max_side": 1280,
+    "size": 931657
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/17.png",
+  "before": 419600,
+  "dim_before": [
+   3584,
+   2240
+  ],
+  "after": 419600,
+  "dim_after": [
+   3584,
+   2240
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1830272
+   },
+   {
+    "max_side": 2000,
+    "size": 1393899
+   },
+   {
+    "max_side": 1600,
+    "size": 951289
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/02.png",
+  "before": 408465,
+  "dim_before": [
+   1170,
+   1336
+  ],
+  "after": 408465,
+  "dim_after": [
+   1170,
+   1336
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 434871
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/17.png",
+  "before": 408482,
+  "dim_before": [
+   3072,
+   1882
+  ],
+  "after": 408482,
+  "dim_after": [
+   3072,
+   1882
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1634781
+   },
+   {
+    "max_side": 2000,
+    "size": 1311949
+   },
+   {
+    "max_side": 1600,
+    "size": 918715
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/39.png",
+  "before": 411762,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 411762,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1362655
+   },
+   {
+    "max_side": 2000,
+    "size": 1084748
+   },
+   {
+    "max_side": 1600,
+    "size": 784563
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/36.png",
+  "before": 408860,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 408860,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1522947
+   },
+   {
+    "max_side": 2000,
+    "size": 1357603
+   },
+   {
+    "max_side": 1600,
+    "size": 966068
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/5.png",
+  "before": 417973,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 417973,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1218190
+   },
+   {
+    "max_side": 2000,
+    "size": 1018604
+   },
+   {
+    "max_side": 1600,
+    "size": 783492
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/32.png",
+  "before": 418320,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 418320,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1801912
+   },
+   {
+    "max_side": 2000,
+    "size": 1664414
+   },
+   {
+    "max_side": 1600,
+    "size": 1158278
+   },
+   {
+    "max_side": 1280,
+    "size": 798668
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-javascriptcore/01.png",
+  "before": 399431,
+  "dim_before": [
+   1000,
+   750
+  ],
+  "after": 399431,
+  "dim_after": [
+   1000,
+   750
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/09.jpeg",
+  "before": 397785,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 397785,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/pic/ReactiveCocoaSwift.png",
+  "before": 402986,
+  "dim_before": [
+   2166,
+   1395
+  ],
+  "after": 402986,
+  "dim_after": [
+   2166,
+   1395
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 468055
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/iOS-performance-optimization-second-time/01.png",
+  "before": 407982,
+  "dim_before": [
+   2466,
+   3026
+  ],
+  "after": 407982,
+  "dim_after": [
+   2466,
+   3026
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1410228
+   },
+   {
+    "max_side": 2000,
+    "size": 1095797
+   },
+   {
+    "max_side": 1600,
+    "size": 764746
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/03.png",
+  "before": 407683,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 407683,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1187383
+   },
+   {
+    "max_side": 2000,
+    "size": 947734
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/g02.png",
+  "before": 396285,
+  "dim_before": [
+   824,
+   1380
+  ],
+  "after": 395324,
+  "dim_after": [
+   764,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 395324
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/html-to-native-htn-development-record/04.png",
+  "before": 392166,
+  "dim_before": [
+   1652,
+   1360
+  ],
+  "after": 392166,
+  "dim_after": [
+   1652,
+   1360
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 691472
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/04.jpg",
+  "before": 395963,
+  "dim_before": [
+   1280,
+   960
+  ],
+  "after": 204479,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 204479
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-quickjs/4.png",
+  "before": 392135,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 392135,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 945425
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/24.PNG",
+  "before": 402875,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 402875,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1400556
+   },
+   {
+    "max_side": 2000,
+    "size": 1164390
+   },
+   {
+    "max_side": 1600,
+    "size": 875026
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/27.png",
+  "before": 393015,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 393015,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1147634
+   },
+   {
+    "max_side": 2000,
+    "size": 907917
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/13.png",
+  "before": 397295,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 397295,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1126199
+   },
+   {
+    "max_side": 2000,
+    "size": 962718
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/20.png",
+  "before": 373813,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 373813,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1078284
+   },
+   {
+    "max_side": 2000,
+    "size": 864599
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/html-to-native-htn-development-record/06.png",
+  "before": 363818,
+  "dim_before": [
+   1298,
+   1352
+  ],
+  "after": 363818,
+  "dim_after": [
+   1298,
+   1352
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 438598
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/09.png",
+  "before": 372566,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 372566,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1137628
+   },
+   {
+    "max_side": 2000,
+    "size": 920927
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/08.png",
+  "before": 359764,
+  "dim_before": [
+   926,
+   1174
+  ],
+  "after": 354878,
+  "dim_after": [
+   807,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 354878
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/07.jpg",
+  "before": 355583,
+  "dim_before": [
+   1280,
+   960
+  ],
+  "after": 168708,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 168708
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/12.png",
+  "before": 371030,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 371030,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1463437
+   },
+   {
+    "max_side": 2000,
+    "size": 1184440
+   },
+   {
+    "max_side": 1600,
+    "size": 872350
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/00.jpg",
+  "before": 355502,
+  "dim_before": [
+   2000,
+   3214
+  ],
+  "after": 355502,
+  "dim_after": [
+   2000,
+   3214
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 514155
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/pic/RXSwift.png",
+  "before": 352523,
+  "dim_before": [
+   1568,
+   2125
+  ],
+  "after": 352523,
+  "dim_after": [
+   1568,
+   2125
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 457299
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/14.png",
+  "before": 354205,
+  "dim_before": [
+   3072,
+   1882
+  ],
+  "after": 354205,
+  "dim_after": [
+   3072,
+   1882
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1364104
+   },
+   {
+    "max_side": 2000,
+    "size": 1107418
+   },
+   {
+    "max_side": 1600,
+    "size": 780923
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/08.png",
+  "before": 364797,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 364797,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1200485
+   },
+   {
+    "max_side": 2000,
+    "size": 1009084
+   },
+   {
+    "max_side": 1600,
+    "size": 773654
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/27.png",
+  "before": 355620,
+  "dim_before": [
+   2716,
+   1544
+  ],
+  "after": 355620,
+  "dim_after": [
+   2716,
+   1544
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1167418
+   },
+   {
+    "max_side": 2000,
+    "size": 910474
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/13.png",
+  "before": 356368,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 356368,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1044083
+   },
+   {
+    "max_side": 2000,
+    "size": 849201
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/36.jpeg",
+  "before": 347317,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 347317,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/24.png",
+  "before": 353671,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 353671,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1186975
+   },
+   {
+    "max_side": 2000,
+    "size": 962621
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/44.png",
+  "before": 352203,
+  "dim_before": [
+   2718,
+   1540
+  ],
+  "after": 352203,
+  "dim_after": [
+   2718,
+   1540
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1173133
+   },
+   {
+    "max_side": 2000,
+    "size": 936376
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/37.jpeg",
+  "before": 344738,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 344738,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/38.jpeg",
+  "before": 340394,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 340394,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/31.jpeg",
+  "before": 339343,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 339343,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/thinking-in-how-to-speed-up-app/4.png",
+  "before": 352003,
+  "dim_before": [
+   3508,
+   2480
+  ],
+  "after": 352003,
+  "dim_after": [
+   3508,
+   2480
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 758895
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/23.png",
+  "before": 349925,
+  "dim_before": [
+   2734,
+   1548
+  ],
+  "after": 349925,
+  "dim_after": [
+   2734,
+   1548
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1092732
+   },
+   {
+    "max_side": 2000,
+    "size": 926249
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-with-swiftui/g11.jpeg",
+  "before": 332226,
+  "dim_before": [
+   2052,
+   1428
+  ],
+  "after": 251013,
+  "dim_after": [
+   2000,
+   1392
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 251013
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/read-snapkit-and-masonry-source-code/02.jpg",
+  "before": 337896,
+  "dim_before": [
+   1000,
+   1333
+  ],
+  "after": 337896,
+  "dim_after": [
+   1000,
+   1333
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 375914
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/19.jpeg",
+  "before": 330739,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 330739,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/05.png",
+  "before": 347849,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 347849,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1060009
+   },
+   {
+    "max_side": 2000,
+    "size": 880181
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swift-evolutionary-path/02.png",
+  "before": 347791,
+  "dim_before": [
+   3006,
+   1948
+  ],
+  "after": 347791,
+  "dim_after": [
+   3006,
+   1948
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1670667
+   },
+   {
+    "max_side": 2000,
+    "size": 1318615
+   },
+   {
+    "max_side": 1600,
+    "size": 928579
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/html-to-native-htn-development-record/07.png",
+  "before": 330048,
+  "dim_before": [
+   772,
+   1520
+  ],
+  "after": 276369,
+  "dim_after": [
+   650,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 276369
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/41.jpeg",
+  "before": 326654,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 326654,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/26.png",
+  "before": 335629,
+  "dim_before": [
+   2750,
+   1540
+  ],
+  "after": 335629,
+  "dim_after": [
+   2750,
+   1540
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 899419
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/06.png",
+  "before": 328822,
+  "dim_before": [
+   1396,
+   944
+  ],
+  "after": 328822,
+  "dim_after": [
+   1396,
+   944
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 417057
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/01.png",
+  "before": 345651,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 345651,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1022036
+   },
+   {
+    "max_side": 2000,
+    "size": 811018
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/wwdc22-notes/04.png",
+  "before": 326310,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 326310,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 508709
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/how-to-analyze-startup-time-cost-in-ios/09.png",
+  "before": 323983,
+  "dim_before": [
+   1262,
+   654
+  ],
+  "after": 290537,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 290537
+   }
+  ]
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/html-to-native-htn-development-record/05.png",
+  "before": 323854,
+  "dim_before": [
+   1470,
+   1160
+  ],
+  "after": 323854,
+  "dim_after": [
+   1470,
+   1160
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 463356
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/47.jpeg",
+  "before": 321174,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 321174,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/32.jpeg",
+  "before": 316702,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 316702,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/15.png",
+  "before": 324145,
+  "dim_before": [
+   3072,
+   1882
+  ],
+  "after": 324145,
+  "dim_after": [
+   3072,
+   1882
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1280654
+   },
+   {
+    "max_side": 2000,
+    "size": 1222769
+   },
+   {
+    "max_side": 1600,
+    "size": 842862
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/16.png",
+  "before": 329116,
+  "dim_before": [
+   2980,
+   1864
+  ],
+  "after": 329116,
+  "dim_after": [
+   2980,
+   1864
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1485995
+   },
+   {
+    "max_side": 2000,
+    "size": 1141188
+   },
+   {
+    "max_side": 1600,
+    "size": 798263
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/10.png",
+  "before": 321241,
+  "dim_before": [
+   1500,
+   911
+  ],
+  "after": 321241,
+  "dim_after": [
+   1500,
+   911
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1323294
+   },
+   {
+    "max_side": 1024,
+    "size": 774039
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/develop-macos-with-swiftui-combine-concurrency-aysnc-await-actor/20.png",
+  "before": 315604,
+  "dim_before": [
+   912,
+   1750
+  ],
+  "after": 315604,
+  "dim_after": [
+   912,
+   1750
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 449454
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/12.png",
+  "before": 319520,
+  "dim_before": [
+   1500,
+   911
+  ],
+  "after": 319520,
+  "dim_after": [
+   1500,
+   911
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1375323
+   },
+   {
+    "max_side": 1024,
+    "size": 801507
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/09.png",
+  "before": 316285,
+  "dim_before": [
+   1500,
+   914
+  ],
+  "after": 316285,
+  "dim_after": [
+   1500,
+   914
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1473046
+   },
+   {
+    "max_side": 1024,
+    "size": 867322
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/35.png",
+  "before": 310269,
+  "dim_before": [
+   1500,
+   905
+  ],
+  "after": 310269,
+  "dim_after": [
+   1500,
+   905
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1362270
+   },
+   {
+    "max_side": 1024,
+    "size": 758675
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/30.png",
+  "before": 330135,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 330135,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1346391
+   },
+   {
+    "max_side": 2000,
+    "size": 1195145
+   },
+   {
+    "max_side": 1600,
+    "size": 856134
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/36.png",
+  "before": 307043,
+  "dim_before": [
+   1500,
+   904
+  ],
+  "after": 307043,
+  "dim_after": [
+   1500,
+   904
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1305279
+   },
+   {
+    "max_side": 1024,
+    "size": 741309
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/35.png",
+  "before": 325693,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 325693,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1363220
+   },
+   {
+    "max_side": 2000,
+    "size": 1228725
+   },
+   {
+    "max_side": 1600,
+    "size": 881103
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/12.png",
+  "before": 309312,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 309312,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 905831
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/gmtc-ios-slimming-practice/33.jpeg",
+  "before": 303845,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 303845,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/use-llvm/02.png",
+  "before": 302562,
+  "dim_before": [
+   1500,
+   816
+  ],
+  "after": 302562,
+  "dim_after": [
+   1500,
+   816
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 302857
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/ios-conf-sg-25-share/14.png",
+  "before": 305595,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 305595,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 949596
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/deeply-analyse-javascriptcore/12.png",
+  "before": 315256,
+  "dim_before": [
+   2636,
+   1424
+  ],
+  "after": 315256,
+  "dim_after": [
+   2636,
+   1424
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1487494
+   },
+   {
+    "max_side": 2000,
+    "size": 1140274
+   },
+   {
+    "max_side": 1600,
+    "size": 797390
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/letsvision25-ai-improve-ios-skill/26.png",
+  "before": 303886,
+  "dim_before": [
+   1500,
+   913
+  ],
+  "after": 303886,
+  "dim_after": [
+   1500,
+   913
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1433869
+   },
+   {
+    "max_side": 1024,
+    "size": 829433
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/slides-of-use-llvm/12.png",
+  "before": 305994,
+  "dim_before": [
+   3072,
+   1920
+  ],
+  "after": 305994,
+  "dim_after": [
+   3072,
+   1920
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1063240
+   },
+   {
+    "max_side": 2000,
+    "size": 877917
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/study/StarmingBlog/source/uploads/swiftui-rss-reader/34.png",
+  "before": 315200,
+  "dim_before": [
+   3456,
+   2234
+  ],
+  "after": 315200,
+  "dim_after": [
+   3456,
+   2234
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1231437
+   },
+   {
+    "max_side": 2000,
+    "size": 1131635
+   },
+   {
+    "max_side": 1600,
+    "size": 823696
+   }
+  ],
+  "reverted": true
+ }
+]

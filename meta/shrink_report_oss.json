@@ -1,0 +1,1692 @@
+[
+ {
+  "file": "oss/analyze/contents/architecture/images/model/404.gif",
+  "before": 1703397,
+  "dim_before": [
+   800,
+   600
+  ],
+  "after": 1703397,
+  "dim_after": [
+   800,
+   600
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/AFNetworking/1.png",
+  "before": 974028,
+  "dim_before": [
+   1280,
+   1280
+  ],
+  "after": 645986,
+  "dim_after": [
+   1024,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 645986
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Thought/181210/1.png",
+  "before": 872950,
+  "dim_before": [
+   738,
+   1600
+  ],
+  "after": 591371,
+  "dim_after": [
+   590,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 591371
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/AFNetworking/2.png",
+  "before": 953643,
+  "dim_before": [
+   1280,
+   1280
+  ],
+  "after": 626431,
+  "dim_after": [
+   1024,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 626431
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Objects_in_Obj-C/1.png",
+  "before": 999266,
+  "dim_before": [
+   1280,
+   1280
+  ],
+  "after": 676525,
+  "dim_after": [
+   1024,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 676525
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/6.png",
+  "before": 996071,
+  "dim_before": [
+   2000,
+   1172
+  ],
+  "after": 704169,
+  "dim_after": [
+   1600,
+   937
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 704169
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/3.png",
+  "before": 855366,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 855366,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 982914
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Link_Map_File_in_Xcode/2.png",
+  "before": 929601,
+  "dim_before": [
+   2464,
+   1592
+  ],
+  "after": 929601,
+  "dim_after": [
+   2464,
+   1592
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1311326
+   },
+   {
+    "max_side": 2000,
+    "size": 986986
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/7.png",
+  "before": 807721,
+  "dim_before": [
+   1280,
+   856
+  ],
+  "after": 545190,
+  "dim_after": [
+   1024,
+   684
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 545190
+   }
+  ]
+ },
+ {
+  "file": "oss/swift-docs/docs/assets/DifferentiableProgramming/tapenade.png",
+  "before": 822621,
+  "dim_before": [
+   1560,
+   1600
+  ],
+  "after": 561164,
+  "dim_after": [
+   1248,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 561164
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/1.png",
+  "before": 854072,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 854072,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 955865
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Objects_in_Obj-C/2.png",
+  "before": 765681,
+  "dim_before": [
+   1024,
+   1024
+  ],
+  "after": 765681,
+  "dim_after": [
+   1024,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Link_Map_File_in_Xcode/3.png",
+  "before": 805765,
+  "dim_before": [
+   1600,
+   1033
+  ],
+  "after": 556999,
+  "dim_after": [
+   1280,
+   826
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 556999
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/5.png",
+  "before": 842610,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 842610,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1211638
+   },
+   {
+    "max_side": 2000,
+    "size": 932212
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Swift_GYB/1.png",
+  "before": 778873,
+  "dim_before": [
+   2000,
+   1172
+  ],
+  "after": 534465,
+  "dim_after": [
+   1600,
+   937
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 534465
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Objects_in_Obj-C/3.png",
+  "before": 764208,
+  "dim_before": [
+   1024,
+   1024
+  ],
+  "after": 764208,
+  "dim_after": [
+   1024,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/CocoaPods/images/cocoapods.png",
+  "before": 762292,
+  "dim_before": [
+   800,
+   450
+  ],
+  "after": 762292,
+  "dim_after": [
+   800,
+   450
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/clang-docs/clang/docs/coro-generator-variables.png",
+  "before": 774476,
+  "dim_before": [
+   2256,
+   1542
+  ],
+  "after": 774476,
+  "dim_after": [
+   2256,
+   1542
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 951254
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/4.png",
+  "before": 807094,
+  "dim_before": [
+   2744,
+   1598
+  ],
+  "after": 807094,
+  "dim_after": [
+   2744,
+   1598
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1062737
+   },
+   {
+    "max_side": 2000,
+    "size": 925397
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/clang-docs/clang/docs/coro-async-task-continuations.png",
+  "before": 764334,
+  "dim_before": [
+   1600,
+   1093
+  ],
+  "after": 537943,
+  "dim_after": [
+   1280,
+   874
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 537943
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-hashtable-insert-many.gif.gif",
+  "before": 731611,
+  "dim_before": [
+   800,
+   600
+  ],
+  "after": 731611,
+  "dim_after": [
+   800,
+   600
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/2.png",
+  "before": 758470,
+  "dim_before": [
+   2000,
+   1172
+  ],
+  "after": 521567,
+  "dim_after": [
+   1600,
+   937
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 521567
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/5.png",
+  "before": 722986,
+  "dim_before": [
+   1600,
+   948
+  ],
+  "after": 511415,
+  "dim_after": [
+   1280,
+   758
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 511415
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/reids-eventloop.png",
+  "before": 756021,
+  "dim_before": [
+   1600,
+   1199
+  ],
+  "after": 547941,
+  "dim_after": [
+   1280,
+   959
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 547941
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/AsyncDisplayKit/images/astableview-data.png",
+  "before": 766663,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 766663,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1180120
+   },
+   {
+    "max_side": 2000,
+    "size": 960387
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/AirPlay_on_Pi/1.png",
+  "before": 721760,
+  "dim_before": [
+   2458,
+   1570
+  ],
+  "after": 721760,
+  "dim_after": [
+   2458,
+   1570
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 851546
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/6.png",
+  "before": 717658,
+  "dim_before": [
+   1600,
+   937
+  ],
+  "after": 507897,
+  "dim_after": [
+   1280,
+   749
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 507897
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Category_in_Obj-C/1.png",
+  "before": 695200,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 695200,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 764679
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Link_Map_File_in_Xcode/1.png",
+  "before": 694383,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 694383,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 801449
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/2.png",
+  "before": 688850,
+  "dim_before": [
+   2750,
+   1632
+  ],
+  "after": 688850,
+  "dim_after": [
+   2750,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 742974
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVO_in_iOS/4.png",
+  "before": 717884,
+  "dim_before": [
+   2552,
+   1380
+  ],
+  "after": 717884,
+  "dim_after": [
+   2552,
+   1380
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1277783
+   },
+   {
+    "max_side": 2000,
+    "size": 1097444
+   },
+   {
+    "max_side": 1600,
+    "size": 827422
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/matrix.wiki/images/trace/trace_view.png",
+  "before": 700725,
+  "dim_before": [
+   3690,
+   1486
+  ],
+  "after": 700725,
+  "dim_after": [
+   3690,
+   1486
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1448655
+   },
+   {
+    "max_side": 2000,
+    "size": 1187668
+   },
+   {
+    "max_side": 1600,
+    "size": 871134
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/process-time-events-in-redis.png",
+  "before": 689777,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 689777,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1030814
+   },
+   {
+    "max_side": 2000,
+    "size": 846660
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/redis-eventloop-proces-event.png",
+  "before": 690645,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 690645,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1112090
+   },
+   {
+    "max_side": 2000,
+    "size": 915994
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/Category_in_Obj-C/2.png",
+  "before": 682090,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 682090,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 910640
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/AsyncDisplayKit/images/CRT.png",
+  "before": 608033,
+  "dim_before": [
+   1024,
+   819
+  ],
+  "after": 608033,
+  "dim_after": [
+   1024,
+   819
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/clang-docs/clang/docs/coro-generator-suspended.png",
+  "before": 670202,
+  "dim_before": [
+   2168,
+   1454
+  ],
+  "after": 670202,
+  "dim_after": [
+   2168,
+   1454
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 870829
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/NSObject_in_iOS/1.png",
+  "before": 634161,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 634161,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 918217
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-hashtable-insert-one.gif.gif",
+  "before": 606025,
+  "dim_before": [
+   800,
+   600
+  ],
+  "after": 606025,
+  "dim_after": [
+   800,
+   600
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/5.png",
+  "before": 613800,
+  "dim_before": [
+   2000,
+   1451
+  ],
+  "after": 464054,
+  "dim_after": [
+   1600,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 464054
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/architecture/images/view/animation.gif",
+  "before": 591634,
+  "dim_before": [
+   800,
+   400
+  ],
+  "after": 591634,
+  "dim_after": [
+   800,
+   400
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/I:O-Multiplexing-Model.png",
+  "before": 686355,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 686355,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1002429
+   },
+   {
+    "max_side": 2000,
+    "size": 807010
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Jenkins_by_Homebrew/1.png",
+  "before": 625251,
+  "dim_before": [
+   2784,
+   1986
+  ],
+  "after": 625251,
+  "dim_after": [
+   2784,
+   1986
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 797236
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-hashtable-hashstate-next.gif",
+  "before": 556729,
+  "dim_before": [
+   800,
+   600
+  ],
+  "after": 556729,
+  "dim_after": [
+   800,
+   600
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Thought/181210/2.jpg",
+  "before": 633967,
+  "dim_before": [
+   2400,
+   1600
+  ],
+  "after": 413332,
+  "dim_after": [
+   2000,
+   1333
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 413332
+   }
+  ]
+ },
+ {
+  "file": "oss/swift-docs/docs/assets/DifferentiableProgramming/differentiable-manifolds.png",
+  "before": 556964,
+  "dim_before": [
+   1999,
+   1321
+  ],
+  "after": 556964,
+  "dim_after": [
+   1999,
+   1321
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 582929
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/dyld_shared_cache/1.png",
+  "before": 558099,
+  "dim_before": [
+   1844,
+   1278
+  ],
+  "after": 558099,
+  "dim_after": [
+   1844,
+   1278
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 839895
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/8.png",
+  "before": 578239,
+  "dim_before": [
+   2186,
+   1764
+  ],
+  "after": 578239,
+  "dim_after": [
+   2186,
+   1764
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 856267
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/eventloop-file-event-in-redis.png",
+  "before": 553695,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 553695,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 808926
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/blocking-io.png",
+  "before": 553556,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 553556,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 743905
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/6.png",
+  "before": 543754,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 543754,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 576243
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-autorelease-print-pool-content.png",
+  "before": 540039,
+  "dim_before": [
+   1076,
+   723
+  ],
+  "after": 540039,
+  "dim_after": [
+   1076,
+   723
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 648638
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/3.png",
+  "before": 550672,
+  "dim_before": [
+   2430,
+   1592
+  ],
+  "after": 550672,
+  "dim_after": [
+   2430,
+   1592
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 653136
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/5.png",
+  "before": 537750,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 537750,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 567197
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/image.png",
+  "before": 515167,
+  "dim_before": [
+   900,
+   500
+  ],
+  "after": 515167,
+  "dim_after": [
+   900,
+   500
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/fishhook/images/fishhook-hello.png",
+  "before": 451404,
+  "dim_before": [
+   1024,
+   811
+  ],
+  "after": 451404,
+  "dim_after": [
+   1024,
+   811
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/redis-reactor-pattern.png",
+  "before": 529093,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 529093,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 756781
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/4.png",
+  "before": 527305,
+  "dim_before": [
+   2400,
+   1407
+  ],
+  "after": 405637,
+  "dim_after": [
+   2000,
+   1172
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 405637
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/1.png",
+  "before": 486554,
+  "dim_before": [
+   2700,
+   2160
+  ],
+  "after": 486554,
+  "dim_after": [
+   2700,
+   2160
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 615878
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/1.png",
+  "before": 502856,
+  "dim_before": [
+   2464,
+   1592
+  ],
+  "after": 502856,
+  "dim_after": [
+   2464,
+   1592
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 568278
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/3.png",
+  "before": 456904,
+  "dim_before": [
+   2464,
+   1592
+  ],
+  "after": 456904,
+  "dim_after": [
+   2464,
+   1592
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 557860
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/process-time-event.png",
+  "before": 498972,
+  "dim_before": [
+   2732,
+   2048
+  ],
+  "after": 498972,
+  "dim_after": [
+   2732,
+   2048
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 761919
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-message-core.png",
+  "before": 449957,
+  "dim_before": [
+   462,
+   692
+  ],
+  "after": 449957,
+  "dim_after": [
+   462,
+   692
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/3.png",
+  "before": 451195,
+  "dim_before": [
+   1240,
+   947
+  ],
+  "after": 451195,
+  "dim_after": [
+   1240,
+   947
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 458477
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/swift-docs/docs/assets/DifferentiableProgramming/autodiff-reverse-debugging.gif",
+  "before": 436705,
+  "dim_before": [
+   1024,
+   774
+  ],
+  "after": 436705,
+  "dim_after": [
+   1024,
+   774
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/13.png",
+  "before": 450536,
+  "dim_before": [
+   1024,
+   782
+  ],
+  "after": 450536,
+  "dim_after": [
+   1024,
+   782
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/6.png",
+  "before": 430278,
+  "dim_before": [
+   1024,
+   782
+  ],
+  "after": 430278,
+  "dim_after": [
+   1024,
+   782
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/iOS-Source-Probe/image/15058343519881/15074375282210.jpg",
+  "before": 436029,
+  "dim_before": [
+   1600,
+   969
+  ],
+  "after": 277261,
+  "dim_after": [
+   1280,
+   775
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 277261
+   }
+  ]
+ },
+ {
+  "file": "oss/iOS-Source-Probe/image/15058343519881/15074373726740.jpg",
+  "before": 366630,
+  "dim_before": [
+   1600,
+   970
+  ],
+  "after": 249055,
+  "dim_after": [
+   1280,
+   776
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 249055
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/CI_Practice_in_iOS/1/2.png",
+  "before": 431056,
+  "dim_before": [
+   2784,
+   1632
+  ],
+  "after": 431056,
+  "dim_after": [
+   2784,
+   1632
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 593615
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/swift-docs/docs/InstrumentsExpandedProfile.png",
+  "before": 421256,
+  "dim_before": [
+   1772,
+   870
+  ],
+  "after": 421256,
+  "dim_after": [
+   1772,
+   870
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 529213
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/6.png",
+  "before": 421065,
+  "dim_before": [
+   1486,
+   1148
+  ],
+  "after": 421065,
+  "dim_after": [
+   1486,
+   1148
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 559804
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/iOS-Source-Probe/image/15058343519881/15074385597132.jpg",
+  "before": 384313,
+  "dim_before": [
+   1600,
+   978
+  ],
+  "after": 234171,
+  "dim_after": [
+   1280,
+   782
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 234171
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/5.png",
+  "before": 365258,
+  "dim_before": [
+   1240,
+   947
+  ],
+  "after": 365258,
+  "dim_after": [
+   1240,
+   947
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 370873
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Focus/KVC_in_iOS/1.png",
+  "before": 344031,
+  "dim_before": [
+   2036,
+   1531
+  ],
+  "after": 344031,
+  "dim_after": [
+   2036,
+   1531
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 520539
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Tips/Livestreaming_on_macOS/7.png",
+  "before": 360305,
+  "dim_before": [
+   1560,
+   1220
+  ],
+  "after": 360305,
+  "dim_after": [
+   1560,
+   1220
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 429916
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/matrix.wiki/images/PowerConsume/How_To_Check_CPU_Usage.png",
+  "before": 347551,
+  "dim_before": [
+   2116,
+   2400
+  ],
+  "after": 295132,
+  "dim_after": [
+   1763,
+   2000
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 295132
+   }
+  ]
+ },
+ {
+  "file": "oss/swift-docs/docs/PerfReport.png",
+  "before": 336848,
+  "dim_before": [
+   1256,
+   1208
+  ],
+  "after": 336848,
+  "dim_after": [
+   1256,
+   1208
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 454752
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Ruby/images/sidekiq/sidekiq-logo.png",
+  "before": 364020,
+  "dim_before": [
+   2000,
+   500
+  ],
+  "after": 364020,
+  "dim_after": [
+   2000,
+   500
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 511473
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-message-objc-msgSend-with-cache.gif",
+  "before": 330120,
+  "dim_before": [
+   1280,
+   797
+  ],
+  "after": 185349,
+  "dim_after": [
+   1024,
+   637
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 185349
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/images/objc-hashtable-insert-empty.gif",
+  "before": 318500,
+  "dim_before": [
+   800,
+   600
+  ],
+  "after": 318500,
+  "dim_after": [
+   800,
+   600
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/iOS-Weekly/assets/iOSdev.jpg",
+  "before": 328675,
+  "dim_before": [
+   1124,
+   2000
+  ],
+  "after": 230641,
+  "dim_after": [
+   899,
+   1600
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 230641
+   }
+  ]
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/21.png",
+  "before": 310834,
+  "dim_before": [
+   1024,
+   683
+  ],
+  "after": 310834,
+  "dim_after": [
+   1024,
+   683
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/matrix.wiki/images/AboutSymbol/static-symbol-info2.png",
+  "before": 301584,
+  "dim_before": [
+   1024,
+   657
+  ],
+  "after": 301584,
+  "dim_after": [
+   1024,
+   657
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "oss/Perspective/Posts/Practice/Docker_for_Hadoop/9.png",
+  "before": 327275,
+  "dim_before": [
+   1240,
+   947
+  ],
+  "after": 327275,
+  "dim_after": [
+   1240,
+   947
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 327275
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/Database/images/dynamo/dynamodb.png",
+  "before": 306335,
+  "dim_before": [
+   3096,
+   1084
+  ],
+  "after": 306335,
+  "dim_after": [
+   3096,
+   1084
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 548081
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "oss/analyze/contents/KVOController/images/kvocontroller-banner.jpg",
+  "before": 303607,
+  "dim_before": [
+   1280,
+   720
+  ],
+  "after": 207367,
+  "dim_after": [
+   1024,
+   576
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 207367
+   }
+  ]
+ },
+ {
+  "file": "oss/analyze/contents/Redis/images/redis-eventloop-logo.jpg",
+  "before": 311473,
+  "dim_before": [
+   1920,
+   1200
+  ],
+  "after": 311473,
+  "dim_after": [
+   1920,
+   1200
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 331036
+   }
+  ],
+  "reverted": true
+ }
+]
