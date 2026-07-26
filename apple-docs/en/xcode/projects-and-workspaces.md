@@ -1,0 +1,56 @@
+---
+title: Projects and workspaces
+framework: xcode
+symbol_kind: article
+role: collectionGroup
+role_heading: ''
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/xcode/projects-and-workspaces
+source_url: 'https://developer.apple.com/documentation/xcode/projects-and-workspaces'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/xcode/projects-and-workspaces.json'
+content_hash: 'sha256:0f0bbe9e0d6a50c8'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Xcode](../xcode.md)
+
+# Projects and workspaces
+
+Manage the code and resources you use to build apps, libraries, and other software for Apple platforms.
+
+## Topics
+
+### Files and workspaces
+
+- [Managing files and folders in your Xcode project](managing-files-and-folders-in-your-xcode-project.md) — Add new or existing files to your project, and use groups to organize the files and folders in the Project navigator.
+- [Managing multiple projects and their dependencies](managing-multiple-projects-and-their-dependencies.md) — Manage related projects in one place using a workspace, or configure build-time dependencies between different Xcode projects using cross-project references.
+- [Downloading and installing additional Xcode components](downloading-and-installing-additional-xcode-components.md) — Add more simulated devices, optional features, and support for additional platforms.
+
+### Navigation
+
+- [Configuring the Xcode project window](configuring-the-xcode-project-window.md) — Customize the Xcode project window and editor area to view and edit project files in a configuration you prefer.
+- [Finding and replacing content in a project](finding-and-replacing-content-in-a-project.md) — Search some or all of your project for text strings or symbol names, and perform advanced searches using regular expressions.
+
+### Project configuration
+
+- [Managing your app’s information property list values](../bundleresources/managing-your-app-s-information-property-list.md) — Customize the information property list values for your app using Xcode.
+- [Adding package dependencies to your app](adding-package-dependencies-to-your-app.md) — Integrate package dependencies to share code between projects, or leverage code from other developers.
+- [Creating a Mac version of your iPad app](../uikit/creating-a-mac-version-of-your-ipad-app.md) — Bring your iPad app to macOS with Mac Catalyst.
+- [Setting up a watchOS project](../watchos-apps/setting-up-a-watchos-project.md) — Create a new watchOS project or add a watch target to an existing iOS project.
+- [Embedding a command-line tool in a sandboxed app](embedding-a-helper-tool-in-a-sandboxed-app.md) — Add a command-line tool to a sandboxed app’s Xcode project so the resulting app can run it as a helper tool.
+
+### Associated domains and universal links
+
+- [Allowing apps and websites to link to your content](allowing-apps-and-websites-to-link-to-your-content.md) — Use universal links to link directly to content within your app and share data securely.
+
+## See Also
+
+### Xcode IDE
+
+- [Source control management](source-control-management.md) — Back up your files, collaborate with others, and tag your releases with Git source control support in Xcode.
+- [Capabilities](capabilities.md) — Enable services that Apple provides, such as In-App Purchase, Push Notifications, Apple Pay, iCloud, and many others.
+- [Build system](build-system.md) — Compile your code into a binary format, and customize your project settings to build your code.
+- [Command-line tools](command-line-tools.md) — Develop and customize your projects in Terminal.

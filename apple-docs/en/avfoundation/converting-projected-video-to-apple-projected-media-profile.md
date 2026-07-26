@@ -1,0 +1,68 @@
+---
+title: Converting projected video to Apple Projected Media Profile
+framework: AVFoundation
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [macOS 26.0+, Xcode 26.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/avfoundation/converting-projected-video-to-apple-projected-media-profile
+source_url: 'https://developer.apple.com/documentation/avfoundation/converting-projected-video-to-apple-projected-media-profile'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/converting-projected-video-to-apple-projected-media-profile.json'
+content_hash: 'sha256:c7bb4cd9ea00fe44'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md) · [Media reading and writing](media-reading-and-writing.md)
+
+# Converting projected video to Apple Projected Media Profile
+
+<sub>Sample Code</sub>
+
+Convert content with equirectangular or half-equirectangular projection to APMP.
+
+## Overview
+
+> [!note] Note
+> This sample code project is associated with WWDC25 session 297: [Learn about the Apple Projected Media Profile](https://developer.apple.com/videos/play/wwdc2025/297).
+
+### Configure the sample code project
+
+The app takes a path to a monoscopic or stereoscopic (frame-packed) side-by-side or over-under stereo input video file as a single command-line argument. To run the app in Xcode, click the Run button to convert the included side-by-side frame-packed stereoscopic 180 sample asset (`Lighthouse_sbs.mp4`), or choose Product \> Scheme \> Edit Scheme, and edit the path to your file on the Arguments tab of the Run build scheme action.
+
+To add projected media metadata to an output file, pass one of the following two options:
+
+- **`--autoDetect` (or `-a`)** — Examines the source file for spherical metadata compatible with APMP.
+- **`--projectionKind <projection_kind>` (or `-p`)** — Specifies the projection type, which can be `equirectangular` or `halfequirectangular`.
+
+Other options:
+
+- **`--viewPackingKind <view_packing_kind>` (or `-v`)** — Manually specifies the frame-packing mode, which can be `sidebyside` or `overunder`. The app ignores this option if you specify the `--autoDetect` option.
+- **`--baseline` (or `-b`)** — Specifies a baseline in millimeters (for example, `--baseline 64.0` for a 64mm baseline).
+- **`--fov` (or `-f`)** — Specifies a horizontal field of view in degrees (for example, `--fov 80.0` for an 80-degree field of view).
+
+By default, the project’s scheme loads a side-by-side video from the Xcode project folder named `Lighthouse_sbs.mp4`.
+
+## See Also
+
+### Media writing
+
+- [Converting side-by-side 3D video to multiview HEVC and spatial video](converting-side-by-side-3d-video-to-multiview-hevc-and-spatial-video.md) — Create video content for visionOS by converting an existing 3D HEVC file to a multiview HEVC format, optionally adding spatial metadata to create a spatial video.
+- [Adding a display mask rectangle metadata track to a movie file](adding-a-display-mask-rectangle-metadata-track-to-a-movie-file.md) — Show a specific area of a video by using timed display mask rectangle metadata.
+- [Writing fragmented MPEG-4 files for HTTP Live Streaming](writing-fragmented-mpeg-4-files-for-http-live-streaming.md) — Create an HTTP Live Streaming presentation by turning a movie file into a sequence of fragmented MPEG-4 files.
+- [Creating spatial photos and videos with spatial metadata](../imageio/creating-spatial-photos-and-videos-with-spatial-metadata.md) — Add spatial metadata to stereo photos and videos to create spatial media for viewing on Apple Vision Pro.
+- [Tagging media with video color information](tagging-media-with-video-color-information.md) — Inspect and set video color space information when writing and transcoding media.
+- [Evaluating an app’s video color](evaluating-an-app-s-video-color.md) — Check color reproduction for a video in your app by using test patterns, video test equipment, and light-measurement instruments.
+- [AVOutputSettingsAssistant](avoutputsettingsassistant.md) — An object that builds audio and video output settings dictionaries.
+- [AVAssetWriter](avassetwriter.md) — An object that writes media data to a container file.
+- [AVAssetWriterInput](avassetwriterinput.md) — An object that appends media samples to a track in an asset writer’s output file.
+- [AVAssetWriterInputPixelBufferAdaptor](avassetwriterinputpixelbufferadaptor.md) — An object that appends video samples to an asset writer input. _(deprecated)_
+- [AVAssetWriterInputTaggedPixelBufferGroupAdaptor](avassetwriterinputtaggedpixelbuffergroupadaptor.md) — An object that appends tagged buffer groups to an asset writer input. _(deprecated)_
+- [AVAssetWriterInputMetadataAdaptor](avassetwriterinputmetadataadaptor.md) — An object that appends timed metadata groups to an asset writer input. _(deprecated)_
+- [AVAssetWriterInputGroup](avassetwriterinputgroup.md) — A group of inputs with tracks that are mutually exclusive to each other for playback or processing.
+
+## Download
+
+- [ConvertingProjectedVideoToAppleProjectedMediaProfile.zip](https://docs-assets.developer.apple.com/published/6a11c3cf4e6d/ConvertingProjectedVideoToAppleProjectedMediaProfile.zip)

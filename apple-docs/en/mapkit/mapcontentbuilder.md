@@ -1,0 +1,63 @@
+---
+title: MapContentBuilder
+framework: MapKit
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, macOS 14.0+, tvOS 17.0+, visionOS, watchOS 10.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/mapkit/mapcontentbuilder
+source_url: 'https://developer.apple.com/documentation/mapkit/mapcontentbuilder'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/mapkit/mapcontentbuilder.json'
+content_hash: 'sha256:44bcd994fb7f889a'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [MapKit](../mapkit.md)
+
+# MapContentBuilder
+
+<sub>Structure</sub>
+
+A result builder that creates map content from closures you provide.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@resultBuilder struct MapContentBuilder
+```
+
+## Overview
+
+The [buildBlock(_:)](<mapcontentbuilder/buildblock(__)-5ewn9.md>) methods in this type create [MapContent](mapcontent.md) instances based on the number and types of sources you provide as parameters.
+
+You don’t use this type directly. Instead, SwiftUI annotates the `content` parameter of the various `MapView` initializers with the `@MapContentBuilder` annotation, implicitly calling this builder for you.
+
+## Topics
+
+### Map content builders
+
+- [buildBlock()](<mapcontentbuilder/buildblock().md>) — Creates an empty map content block that contains no statements.
+- [buildBlock(_:)](<mapcontentbuilder/buildblock(__)-5ewn9.md>) — Creates a map content block that contains a single content result.
+
+### Conditionally building map content
+
+- [buildEither(first:)](<mapcontentbuilder/buildeither(first_).md>) — Compares content in a multistatement closure, resulting in use of the conditional content if the first argument you provide evaluates to  true.
+- [buildEither(second:)](<mapcontentbuilder/buildeither(second_).md>) — Compares content in a multistatement closure, resulting in use of the conditional content if the second argument you provide evaluates to true.
+- [buildExpression(_:)](<mapcontentbuilder/buildexpression(__).md>) — Builds an expression within the map content builder.
+- [buildIf(_:)](<mapcontentbuilder/buildif(__).md>) — Compares content in a multistatement closure, that produces an optional view that’s visible if the argument you provide evaluates to true.
+- [buildLimitedAvailability(_:)](<mapcontentbuilder/buildlimitedavailability(__).md>) — Provides support for “if” statements with “available” macro clauses in multi-statement closures, producing conditional content for the “then” branch, such the conditionally-available branch.
+
+### Type Methods
+
+- [buildBlock(_:)](<mapcontentbuilder/buildblock(__)-4omn.md>)
+
+## See Also
+
+### Protocols
+
+- [DynamicMapContent](dynamicmapcontent.md) — A  type of view that generates views from an underlying collection of data.
+- [MapContent](mapcontent.md) — A protocol used to construct map content such as controls, markers, and annotations.
+- [MapContentView](mapcontentview.md) — A view that contains content that displays on a map at a specific position, and that responds to specific interactions you specify.

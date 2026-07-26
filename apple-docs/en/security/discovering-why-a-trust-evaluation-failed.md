@@ -1,0 +1,54 @@
+---
+title: Discovering Why a Trust Evaluation Failed
+framework: Security
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/discovering-why-a-trust-evaluation-failed
+source_url: 'https://developer.apple.com/documentation/security/discovering-why-a-trust-evaluation-failed'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/discovering-why-a-trust-evaluation-failed.json'
+content_hash: 'sha256:c23884ba5a9fc56d'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md) · [Certificate, Key, and Trust Services](certificate-key-and-trust-services.md) · [Trust](trust.md)
+
+# Discovering Why a Trust Evaluation Failed
+
+<sub>Article</sub>
+
+Determine whether you can recover from a failed trust evaluation.
+
+## Overview
+
+Many factors affect the outcome of a trust evaluation. These include whether the system can locate all of the intermediate certificates, the validity of the certificates in the chain, and the characteristics of the certificates. Some issues, like a revoked certificate, result in an absolute failure and should _not_ be circumvented. In other cases, you might get a different result by changing the conditions of the evaluation. For example, an expired certificate might have been valid when the corresponding identity was used to sign a document.
+
+To get the specific reason for trust failure, examine the error parameter provided in the evaluation callback described in [Evaluating a Trust and Parsing the Result](evaluating-a-trust-and-parsing-the-result.md). The error’s code indicates the reason, or in the case of multiple errors, the most serious reason for the failure. For example, a revoked certificate results in an error with the code [errSecCertificateRevoked](errseccertificaterevoked.md), while an expired certificate produces [errSecCertificateExpired](errseccertificateexpired.md).
+
+To determine whether the system considers the failure recoverable, use the [SecTrustGetTrustResult](<sectrustgettrustresult(____).md>) method.
+
+**Swift**
+
+```swift
+var trustResult = SecTrustResultType.invalid
+SecTrustGetTrustResult(trust, &trustResult)
+if trustResult == .recoverableTrustFailure {
+    // Make changes and try again.
+}
+```
+
+**Objective-C**
+
+```objc
+SecTrustResultType trustResult;
+SecTrustGetTrustResult(trust, &trustResult);
+if (trustResult == kSecTrustResultRecoverableTrustFailure) {
+    // Make changes and try again.
+}
+```
+
+For a result of [kSecTrustResultRecoverableTrustFailure](sectrustresulttype/recoverabletrustfailure.md), and based on the error you receive, you may be able to remedy problems by reconfiguring and reevaluating the trust, as described in [Configuring a Trust](configuring-a-trust.md).

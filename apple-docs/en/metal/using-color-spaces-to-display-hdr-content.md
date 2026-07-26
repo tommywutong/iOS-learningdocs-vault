@@ -1,0 +1,61 @@
+---
+title: Using color spaces to display HDR content
+framework: Metal
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/using-color-spaces-to-display-hdr-content
+source_url: 'https://developer.apple.com/documentation/metal/using-color-spaces-to-display-hdr-content'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/using-color-spaces-to-display-hdr-content.json'
+content_hash: 'sha256:c43e7c6ade0e1184'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [HDR content](hdr-content.md)
+
+# Using color spaces to display HDR content
+
+<sub>Article</sub>
+
+Use a color space when you don’t need to edit or process the pixel data.
+
+## Overview
+
+If you aren’t editing the content in a linear color space, and simply need to display the content with the correct transfer function, use a color space that includes that transfer function. Create a Metal layer and set its [wantsExtendedDynamicRangeContent](../quartzcore/cametallayer/wantsextendeddynamicrangecontent.md) property to [true](../swift/true.md). Set the color space that matches the color primaries and transfer function of your content. The code below creates a Metal layer for content in the BT.2020 color space using the PQ transfer function:
+
+**Swift**
+
+```swift
+let metalLayer = CAMetalLayer()
+metalLayer.wantsExtendedDynamicRangeContent = true
+metalLayer.pixelFormat = .bgr10a2Unorm
+let name = CGColorSpace.itur_2100_PQ
+metalLayer.colorspace = CGColorSpace(name: name)
+```
+
+**Objective-C**
+
+```objective-c
+CAMetalLayer *metalLayer = [CAMetalLayer new];
+metalLayer.wantsExtendedDynamicRangeContent = YES;
+metalLayer.pixelFormat = MTLPixelFormatBGR10A2Unorm;
+const CFStringRef name = kCGColorSpaceITUR_2100_PQ;
+CGColorSpaceRef colorspace = CGColorSpaceCreateWithName(name);
+metalLayer.colorspace = colorspace;
+CGColorSpaceRelease(colorspace);
+```
+
+## See Also
+
+### High dynamic range content
+
+- [Processing HDR images with Metal](processing-hdr-images-with-metal.md) — Implement a post-processing pipeline using the latest features on Apple GPUs.
+- [Displaying HDR content in a Metal layer](displaying-hdr-content-in-a-metal-layer.md) — Bring your high dynamic range (HDR) content to compatible Mac displays.
+- [Determining support for EDR values](determining-support-for-edr-values.md) — Check whether a display supports EDR.
+- [Using system tone mapping on video content](using-system-tone-mapping-on-video-content.md) — Use EDR metadata to apply the default system tone mapping to a layer.
+- [Performing your own tone mapping](performing-your-own-tone-mapping.md) — Apply your own tone mapping to get the exact behavior you want.
+- [Implementing tone mapping on reference displays](implementing-tone-mapping-on-reference-displays.md) — Detect reference displays and keep your content within the capabilities of the display hardware.

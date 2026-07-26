@@ -1,0 +1,28 @@
+---
+title: columnDidResize
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [macOS 27.0+ beta]
+languages: [swift]
+beta: true
+deprecated: false
+doc_path: /documentation/foundation/notificationcenter/messageidentifier/columndidresize-7ktag
+source_url: 'https://developer.apple.com/documentation/foundation/notificationcenter/messageidentifier/columndidresize-7ktag'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/notificationcenter/messageidentifier/columndidresize-7ktag.json'
+content_hash: 'sha256:2b52cc121dfffccf'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NotificationCenter](../../notificationcenter.md) · [MessageIdentifier](../messageidentifier.md)
+
+# columnDidResize
+
+<sub>Type Property</sub>
+
+<sub>macOS</sub>
+
+```swift
+static var columnDidResize: NotificationCenter.BaseMessageIdentifier<NSTableView.ColumnDidResizeMessage> { get }
+```

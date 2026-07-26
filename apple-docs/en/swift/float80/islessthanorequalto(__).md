@@ -1,0 +1,60 @@
+---
+title: 'isLessThanOrEqualTo(_:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [macOS 10.10+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/float80/islessthanorequalto(_:)'
+source_url: 'https://developer.apple.com/documentation/swift/float80/islessthanorequalto(_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/float80/islessthanorequalto%28_%3A%29.json'
+content_hash: 'sha256:de8ab9c565947c3e'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Float80](../float80.md)
+
+# isLessThanOrEqualTo(_:)
+
+<sub>Instance Method</sub>
+
+Returns a Boolean value indicating whether this instance is less than or equal to the given value.
+
+<sub>macOS</sub>
+
+```swift
+func isLessThanOrEqualTo(_ other: Float80) -> Bool
+```
+
+## Parameters
+
+- `other` — The value to compare with this value.
+
+## Return Value
+
+`true` if `other` is greater than this value; otherwise, `false`. If either this value or `other` is NaN, the result of this method is `false`.
+
+## Discussion
+
+This method serves as the basis for the less-than-or-equal-to operator (`<=`) for floating-point values. Some special cases apply:
+
+- Because NaN is incomparable with any value, this method returns `false` when called on NaN or when NaN is passed as `other`.
+- `-infinity` compares less than or equal to all values except NaN.
+- Every value except NaN compares less than or equal to `+infinity`.
+
+The following example shows the behavior of the `isLessThanOrEqualTo(_:)` method with different kinds of values:
+
+```swift
+let x = 15.0
+x.isLessThanOrEqualTo(20.0)
+// true
+x.isLessThanOrEqualTo(.nan)
+// false
+Double.nan.isLessThanOrEqualTo(x)
+// false
+```
+
+The `isLessThanOrEqualTo(_:)` method implements the less-than-or-equal predicate defined by the [IEEE 754 specification](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933).

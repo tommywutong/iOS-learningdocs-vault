@@ -1,0 +1,47 @@
+---
+title: largeContentSizeImageInsets
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 11.0+, iPadOS 11.0+, Mac Catalyst 13.1+, tvOS 11.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uibaritem/largecontentsizeimageinsets
+source_url: 'https://developer.apple.com/documentation/uikit/uibaritem/largecontentsizeimageinsets'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uibaritem/largecontentsizeimageinsets.json'
+content_hash: 'sha256:b1addfc8e212ac7f'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIBarItem](../uibaritem.md)
+
+# largeContentSizeImageInsets
+
+<sub>Instance Property</sub>
+
+The insets to apply to the bar item’s large image when displaying the image in an assistive UI.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+var largeContentSizeImageInsets: UIEdgeInsets { get set }
+```
+
+## Discussion
+
+The default value of this property is [UIEdgeInsetsZero](../uiedgeinsets/zero.md).
+
+## See Also
+
+### Getting and setting properties
+
+- [title](title.md) — The title displayed on the item.
+- [image](image.md) — The image used to represent the item.
+- [landscapeImagePhone](landscapeimagephone.md) — The image to use to represent the item in landscape orientation when using the iPhone appearance idiom.
+- [largeContentSizeImage](largecontentsizeimage.md) — The image to display for users who are blind or have low vision.
+- [imageInsets](imageinsets.md) — The image inset or outset for each edge.
+- [landscapeImagePhoneInsets](landscapeimagephoneinsets.md) — The image inset or outset for each edge of the image in landscape orientation when using the iPhone appearance idiom.
+- [enabled](isenabled.md) — A Boolean value indicating whether the item is enabled.
+- [tag](tag.md) — The bar item’s tag, an app-supplied integer that you can use to identify bar item objects in your app.

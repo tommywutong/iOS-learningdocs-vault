@@ -1,0 +1,73 @@
+---
+title: USB
+framework: Kernel
+symbol_kind: symbol
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/kernel/hardware_families/usb
+source_url: 'https://developer.apple.com/documentation/kernel/hardware_families/usb'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/kernel/hardware_families/usb.json'
+content_hash: 'sha256:2ebd377eb7fe0258'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Kernel](../../kernel.md) · [Hardware Families](../hardware_families.md)
+
+# USB
+
+<sub>API Collection</sub>
+
+Implement a driver that supports Universal Serial Bus (USB) devices.
+
+## Overview
+
+Use kernel extensions to implement support for devices with real-time requirements, such as audio and video devices.
+
+> [!note] Note
+> For most types of USB drivers, Apple has deprecated the use of kernel extensions. Instead, create a DriverKit extension using [USBDriverKit](../../usbdriverkit.md).
+
+This framework refers to the USB Implementers Forum (USB-IF) _Universal Serial Bus 3.2 Specification_, Revision 1.0, September 22, 2017. You can view this specification and other referenced USB specifications at [http://www.usb.org/](../../http_/www.usb.org.md).
+
+## Topics
+
+### Device Communication
+
+- [Building a Simple USB Driver](usb/building_a_simple_usb_driver.md) — Set up and load a driver that logs output to the Console app.
+- [IOUSBHostIOSourceClientRecordLink](../iousbhostiosourceclientrecordlink.md) — A structure that represents a USB host input/output source client record entry.
+- [IOUSBHostIOSourceClientRecordList](../iousbhostiosourceclientrecordlist.md) — A structure that represents a list of USB host input/output source client records.
+
+### USB Specifications
+
+- [IOUSBIsochronousFrame](../iousbisochronousframe.md) — A structure representing a single frame in an isochronous transfer.
+- [USB Device Descriptors](usb/usb_device_descriptors.md) — Structures and functions for working with device descriptors.
+- [Additional Specifications](usb/additional_specifications.md) — Structures related to hubs, devices, and endpoints.
+
+### Actions
+
+- [IOUSBCompletionAction](../iousbcompletionaction.md) — A function the system calls when the USB input/output request completes.
+- [IOUSBCompletion](../iousbcompletion.md) — The structure that specifies the action to perform when the USB input/output request completes.
+- [IOUSBHostBundledCompletion](../iousbhostbundledcompletion.md) — The structure that specifies the action to perform when a bulk USB input/output request completes.
+- [IOUSBHostBundledCompletionAction](../iousbhostbundledcompletionaction.md) — The function description for a USB host bundled completion action.
+- [IOUSBHostCompletion](../iousbhostcompletion.md) — The structure that specifies the action to perform when the USB input/output request completes.
+- [IOUSBHostCompletionAction](../iousbhostcompletionaction.md) — The function description for a USB host completion action.
+- [IOUSBHostIsochronousCompletion](../iousbhostisochronouscompletion.md) — A structure describing the completion callback for an asynchronous isochronous operation.
+- [IOUSBHostIsochronousCompletionAction](../iousbhostisochronouscompletionaction.md) — The function description for a USB host isochronous completion action.
+- [IOUSBIsocCompletion](../iousbisoccompletion.md) — A structure specifying the action to perform when an isochronous USB input/output operation completes.
+- [IOUSBIsocCompletionAction](../iousbisoccompletionaction.md) — The function that executes when the isochronous USB input/output request completes.
+- [IOUSBLowLatencyIsocCompletion](../iousblowlatencyisoccompletion.md) — The function that executes when the low-latency isochronous USB input/output request completes.
+- [IOUSBLowLatencyIsocCompletionAction](../iousblowlatencyisoccompletionaction.md) — The function that excutes when the low-latency isochronous USB input/output request completes.
+- [IOUSBCompletionActionWithTimeStamp](../iousbcompletionactionwithtimestamp.md) — The function that executes when the USB input/output request completes.
+- [IOUSBCompletionWithTimeStamp](../iousbcompletionwithtimestamp.md) — A structure specifying action to perform when the USB input/output request completes.
+
+## See Also
+
+### Hardware Interconnects
+
+- [ATA](ata.md) — Implement a driver that supports Advanced Technology Attachment (ATA) devices.
+- [Bluetooth](bluetooth.md) — Implement a driver that supports Bluetooth devices.
+- [FireWire](firewire.md) — Implement a driver that supports FireWire devices. 
+- [PCI](pci.md) — Implement a driver that supports Thunderbolt devices or PCI cards.

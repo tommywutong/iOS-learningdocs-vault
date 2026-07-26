@@ -1,0 +1,72 @@
+---
+title: 'map(_:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/asyncsequence/map(_:)-1q1k3'
+source_url: 'https://developer.apple.com/documentation/swift/asyncsequence/map(_:)-1q1k3'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncsequence/map%28_%3A%29-1q1k3.json'
+content_hash: 'sha256:0538c4f09c8e09fc'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [AsyncSequence](../asyncsequence.md)
+
+# map(_:)
+
+<sub>Instance Method</sub>
+
+Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@preconcurrency func map<Transformed>(_ transform: @escaping @Sendable (Self.Element) async -> Transformed) -> AsyncMapSequence<Self, Transformed>
+```
+
+## Parameters
+
+- `transform` — A mapping closure. `transform` accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type.
+
+## Return Value
+
+An asynchronous sequence that contains, in order, the elements produced by the `transform` closure.
+
+## Discussion
+
+Use the `map(_:)` method to transform every element received from a base asynchronous sequence. Typically, you use this to transform from one type of element to another.
+
+In this example, an asynchronous sequence called `Counter` produces `Int` values from `1` to `5`. The closure provided to the `map(_:)` method takes each `Int` and looks up a corresponding `String` from a `romanNumeralDict` dictionary. This means the outer `for await in` loop iterates over `String` instances instead of the underlying `Int` values that `Counter` produces:
+
+```swift
+let romanNumeralDict: [Int: String] =
+    [1: "I", 2: "II", 3: "III", 5: "V"]
+
+let stream = Counter(howHigh: 5)
+    .map { romanNumeralDict[$0] ?? "(unknown)" }
+for await numeral in stream {
+    print(numeral, terminator: " ")
+}
+// Prints "I II III (unknown) V "
+```
+
+## See Also
+
+### Transforming a Sequence
+
+- [AsyncMapSequence](../asyncmapsequence.md) — An asynchronous sequence that maps the given closure over the asynchronous sequence’s elements.
+- [map(_:)](<map(__)-70wgb.md>) — Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements.
+- [AsyncThrowingMapSequence](../asyncthrowingmapsequence.md) — An asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements.
+- [compactMap(_:)](<compactmap(__)-gfdq.md>) — Creates an asynchronous sequence that maps the given closure over the asynchronous sequence’s elements, omitting results that don’t return a value.
+- [AsyncCompactMapSequence](../asynccompactmapsequence.md) — An asynchronous sequence that maps a given closure over the asynchronous sequence’s elements, omitting results that don’t return a value.
+- [compactMap(_:)](<compactmap(__)-1f8zn.md>) — Creates an asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value.
+- [AsyncThrowingCompactMapSequence](../asyncthrowingcompactmapsequence.md) — An asynchronous sequence that maps an error-throwing closure over the base sequence’s elements, omitting results that don’t return a value.
+- [AsyncFlatMapSequence](../asyncflatmapsequence.md) — An asynchronous sequence that concatenates the results of calling a given transformation with each element of this sequence.
+- [AsyncThrowingFlatMapSequence](../asyncthrowingflatmapsequence.md) — An asynchronous sequence that concatenates the results of calling a given error-throwing transformation with each element of this sequence.
+- [reduce(_:_:)](<reduce(____).md>) — Returns the result of combining the elements of the asynchronous sequence using the given closure.
+- [reduce(into:_:)](<reduce(into___).md>) — Returns the result of combining the elements of the asynchronous sequence using the given closure, given a mutable initial value.

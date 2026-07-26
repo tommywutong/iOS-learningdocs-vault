@@ -1,0 +1,44 @@
+---
+title: SKExternalPurchaseCustomLinkRegions
+framework: Bundle Resources
+symbol_kind: typealias
+role: symbol
+role_heading: Property List Key
+platforms: [iOS 18.1+, iPadOS 18.1+, Mac Catalyst 18.1+, macOS 15.1+, tvOS 18.1+, visionOS 2.1+, watchOS 11.1+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/bundleresources/information-property-list/skexternalpurchasecustomlinkregions
+source_url: 'https://developer.apple.com/documentation/bundleresources/information-property-list/skexternalpurchasecustomlinkregions'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/bundleresources/information-property-list/skexternalpurchasecustomlinkregions.json'
+content_hash: 'sha256:702b1aae714aa33e'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Bundle Resources](../../bundleresources.md) · [Information Property List](../information-property-list.md)
+
+# SKExternalPurchaseCustomLinkRegions
+
+<sub>Property List Key</sub>
+
+An array of country code strings that indicate the regions where your app supports custom links for the communication and promotion of offers.
+
+## Discussion
+
+Use this information property list key if your app has the [com.apple.developer.storekit.external-purchase-link](../entitlements/com.apple.developer.storekit.external-purchase-link.md) entitlement and uses the [ExternalPurchaseCustomLink](../../storekit/externalpurchasecustomlink.md) API.
+
+Include an entry for each country code where your app supports custom links for the communication and promotion of offers.
+
+Valid country codes include the European Union: Austria (`at`), Belgium (`be`), Bulgaria (`bg`), Croatia (`hr`), Cyprus (`cy`), Czechia (`cz`), Denmark (`dk`), Estonia (`ee`), Finland (`fi`), France (`fr`), Germany (`de`), Greece (`gr`), Hungary (`hu`), Ireland (`ie`), Italy (`it`), Latvia (`lv`), Lithuania (`lt`), Luxembourg (`lu`), Malta (`mt`), Netherlands (`nl`), Poland (`pl`), Portugal (`pt`), Romania (`ro`), Slovakia (`sk`), Slovenia (`si`), Spain (`es`), Sweden (`se`).
+
+## See Also
+
+### StoreKit
+
+- [SKAdNetworkItems](skadnetworkitems.md) — An array of dictionaries containing a list of ad network IDs.
+- [SKExternalLinkAccount](skexternallinkaccount.md) — A dictionary that contains localized URLs to an external website for account creation or management.
+- [SKExternalPurchase](skexternalpurchase.md) — A string array of country codes that indicates your app supports external purchases.
+- [SKExternalPurchaseLink](skexternalpurchaselink.md) — A dictionary that contains URLs to websites where people using your app can make external purchases for supported regions.
+- [SKExternalPurchaseMultiLink](skexternalpurchasemultilink.md) — A dictionary that contains an array of URLs to websites where people using your app can make external purchases.
+- [SKIncludeConsumableInAppPurchaseHistory](skincludeconsumableinapppurchasehistory.md) — A Boolean value that determines whether StoreKit includes finished consumable In-App Purchases in transaction information.
+- [SKExternalPurchaseLinkStreamingRegions](skexternalpurchaselinkstreamingregions.md) — A list of country codes that indicate the regions where your music-streaming app communicates and promotes offers.

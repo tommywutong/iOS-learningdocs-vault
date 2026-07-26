@@ -1,0 +1,106 @@
+---
+title: Generating the signature to validate view-through ads
+framework: StoreKit
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/storekit/generating-the-signature-to-validate-view-through-ads
+source_url: 'https://developer.apple.com/documentation/storekit/generating-the-signature-to-validate-view-through-ads'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/generating-the-signature-to-validate-view-through-ads.json'
+content_hash: 'sha256:20df6db275965160'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [StoreKit](../storekit.md) · [Ad network attribution](ad-network-attribution.md) · [SKAdNetwork](skadnetwork.md)
+
+# Generating the signature to validate view-through ads
+
+<sub>Article</sub>
+
+Initiate install validation by displaying a view-through ad with signed parameters.
+
+## Overview
+
+Install validation informs an ad network when users install and launch an app they purchase after viewing an ad. Ad networks provide an ad with cryptographically signed information that includes their ad network ID. If the ad results in a conversion, the customer’s device sends install-validation postbacks. For information about attribution-winning and nonwinning postbacks, see [Receiving ad attributions and postbacks](receiving-ad-attributions-and-postbacks.md).
+
+Starting in iOS 14.5 with SKAdNetwork 2.2, ad networks can present view-through ads to provide custom ads using any media.
+
+> [!note] Note
+> These instructions are for signing view-through ads. If you’re presenting a StoreKit-rendered ad, see [Generating the signature to validate StoreKit-rendered ads](generating-the-signature-to-validate-storekit-rendered-ads.md).
+
+To provide a view-through ad and initiate a validation, the app calls [+ startImpression:completionHandler:](<skadnetwork/startimpression(__completionhandler_).md>), presents the ad, and then calls [+ endImpression:completionHandler:](<skadnetwork/endimpression(__completionhandler_).md>). The ad network needs to generate the [signature](skadimpression/signature.md) in the [SKAdImpression](skadimpression.md) instance that both methods share.
+
+Ad networks generate the signature on their server using their ad network ID and the PKCS#8 private key they establish when registering to use the API. For more information, see [Registering an ad network](registering-an-ad-network.md).
+
+### Create an ad impression instance
+
+Create an instance of [SKAdImpression](skadimpression.md) to set the properties for the ad impression. These properties contain the same values you use to generate the signature.
+
+The following table maps the parameters you use in the signature string to their equivalent [SKAdImpression](skadimpression.md) properties, as the code example demonstrates in the [Combine parameter values](generating-the-signature-to-validate-view-through-ads.md#Combine-parameter-values) section below:
+
+| Signature parameter | Equivalent properties |
+|---|---|
+| `version` | [version](skadimpression/version.md).  For view-through ads, use version 2.2 and later. |
+| `ad-network-id` | [adNetworkIdentifier](skadimpression/adnetworkidentifier.md) |
+| `campaign-id` | [adCampaignIdentifier](skadimpression/adcampaignidentifier.md) for version 3 or earlier. For version 4 and later, the [sourceIdentifier](skadimpression/sourceidentifier.md) replaces this parameter. |
+| `source-identifier` | [sourceIdentifier](skadimpression/sourceidentifier.md) for version 4 and later. This parameter replaces the [adCampaignIdentifier](skadimpression/adcampaignidentifier.md) parameter. |
+| `itunes-item-id` | [advertisedAppStoreItemIdentifier](skadimpression/advertisedappstoreitemidentifier.md) |
+| `nonce` | [adImpressionIdentifier](skadimpression/adimpressionidentifier.md) |
+| `source-app-id` | [sourceAppStoreItemIdentifier](skadimpression/sourceappstoreitemidentifier.md) |
+| `fidelity-type` | An additional parameter in the signature that isn’t part of [SKAdImpression](skadimpression.md). Required for version 2.2 and later signatures. For view-through ads, use a fidelity type value of `0`. |
+| `timestamp` | [timestamp](skadimpression/timestamp.md) |
+
+### Combine parameter values
+
+The order and content of the signature parameters depends on the [version](skadimpression/version.md) of the signature you’re creating. Choose one of the parameter combinations below, based on your [version](skadimpression/version.md).
+
+To generate a signature for version 4 or later, combine the signature parameter values into a UTF-8 string with an invisible separator (`‘\u2063’`) between them, in the exact order the code below shows:
+
+```http
+version + '\u2063' + ad-network-id + '\u2063' + source-identifier + '\u2063' + itunes-item-id + '\u2063' + nonce + '\u2063' + source-app-id + '\u2063' + fidelity-type + '\u2063' + timestamp
+
+```
+
+To generate a signature for versions 2.2 and 3, combine the signature parameter values into a UTF-8 string with an invisible separator (`‘\u2063’`) between them, in the exact order the code below shows:
+
+```http
+version + '\u2063' + ad-network-id + '\u2063' + campaign-id + '\u2063' + itunes-item-id + '\u2063' + nonce + '\u2063' + source-app-id + '\u2063' + fidelity-type + '\u2063' + timestamp
+
+```
+
+Use the most recent version available in the SDK whenever possible. For information about availability, see [SKAdNetwork release notes](skadnetwork-release-notes.md).
+
+### Sign the combined string
+
+Sign the combined UTF-8 string with the following key and algorithm:
+
+- Your PKCS#8 private key.
+- The Elliptic Curve Digital Signature Algorithm (ECDSA) with a SHA-256 hash.
+
+The resulting Digital Encoding Rules (DER)-formatted binary value is the signature.
+
+### Encode the signature
+
+Encode the binary signature you generate into a Base64 string. The result is your ad network attribution signature, [signature](skadimpression/signature.md), to use for view-through ads. The signature string should resemble the following:
+
+```
+MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==
+```
+
+For more information about Base64 encoding, see [base64EncodedString(options:)](<../foundation/data/base64encodedstring(options_).md>).
+
+### Use the generated signature string
+
+After you generate the signature, you have all the required values for your [SKAdImpression](skadimpression.md) instance and can use it to call [+ startImpression:completionHandler:](<skadnetwork/startimpression(__completionhandler_).md>). Present your view-through ad, and then call [+ endImpression:completionHandler:](<skadnetwork/endimpression(__completionhandler_).md>) using the same [SKAdImpression](skadimpression.md) instance.
+
+## See Also
+
+### Signing view-through ads
+
+- [SKAdImpression](skadimpression.md) — A class that defines an ad impression for a view-through ad.
+- [+ startImpression:completionHandler:](<skadnetwork/startimpression(__completionhandler_).md>) — Indicates that your app is presenting a view-through ad to the user.
+- [+ endImpression:completionHandler:](<skadnetwork/endimpression(__completionhandler_).md>) — Indicates that your app is no longer presenting a view-through ad to the user.

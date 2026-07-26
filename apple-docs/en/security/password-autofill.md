@@ -1,0 +1,72 @@
+---
+title: Password AutoFill
+framework: Security
+symbol_kind: article
+role: collectionGroup
+role_heading: ''
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/password-autofill
+source_url: 'https://developer.apple.com/documentation/security/password-autofill'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/password-autofill.json'
+content_hash: 'sha256:5cbdbec6e12ebed2'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# Password AutoFill
+
+Streamline your app’s login and onboarding procedures.
+
+## Overview
+
+Password AutoFill simplifies login and account creation tasks for iOS apps and webpages. With just a few taps, your users can create and save new passwords or log in to an existing account. Users don’t even need to know their password; the system handles everything. This convenience increases the likelihood that users will complete your app’s onboarding process and start using your app more quickly. Additionally, by encouraging users to select unique, strong passwords, you increase the security of your app.
+
+By default, Password AutoFill saves the user’s login credentials on their current iOS device. iOS can sync these credentials securely across the user’s devices using iCloud Keychain. Password AutoFill recommends credentials only for your app’s associated domain, and the user must authenticate using Face ID or Touch ID before accessing these credentials. For more information on privacy and security, see [Approach to Privacy](https://www.apple.com/privacy/approach-to-privacy/) and [iOS Security Guide](https://images.apple.com/business/docs/iOS_Security_Guide.pdf).
+
+Password AutoFill also provides credentials from third-party password managers that implement a credential provider extension. For more information on the credential provider extension, see the [Authentication Services](../authenticationservices.md) framework.
+
+### Enable Password AutoFill
+
+Password AutoFill uses heuristics to determine when the user logs in or creates new passwords, and automatically provides the password QuickType bar. These heuristics give users some Password AutoFill support in most apps, even if those apps haven’t been updated to support AutoFill. However, to provide the best user experience and ensure your app fully supports Password AutoFill, perform the following steps:
+
+1. Set up your app’s associated domains. To learn how to set up your app’s associated domains, see [Supporting associated domains](../xcode/supporting-associated-domains.md).
+2. Set the correct AutoFill type on relevant text fields. For an iOS app, see [Enabling Password AutoFill on a text input view](enabling-password-autofill-on-a-text-input-view.md). For a web app, see [Enabling Password AutoFill on an HTML input element](enabling-password-autofill-on-an-html-input-element.md).
+
+### Support third-party web services
+
+Password AutoFill streamlines logging into web services at your domain; however, if you need to log into a third-party service, use [ASWebAuthenticationSession](../authenticationservices/aswebauthenticationsession.md) instead, which supports Password AutoFill when your user hasn’t already logged in.
+
+### Integrate a password management app with Password AutoFill
+
+If you’re developing a password management app, create AutoFill Credential Provider Extensions to surface credentials from your app in Password AutoFill and pull your app’s password data into the Password AutoFill workflow. When your app integrates with Password AutoFill, users don’t have to copy and paste credentials. Instead, they can use password data stored in your app easily because the data will be offered to the user to fill in compatible user name and password fields. To integrate a password app with Password AutoFill, use in the [Authentication Services](../authenticationservices.md) framework.
+
+## Topics
+
+### Essentials
+
+- [About the Password AutoFill workflow](about-the-password-autofill-workflow.md) — Learn how Password AutoFill interacts with both iOS and web apps.
+- [Supporting associated domains](../xcode/supporting-associated-domains.md) — Connect your app and a website to provide both a native app and a browser experience.
+- [applinks](../bundleresources/applinks.md) — The root object for a universal links service definition.
+
+### Text input views
+
+- [Enabling Password AutoFill on a text input view](enabling-password-autofill-on-a-text-input-view.md) — Make sure a text input view displays the correct AutoFill suggestions.
+- [textContentType](../uikit/uitextinputtraits/textcontenttype.md) — The semantic meaning for a text input area.
+- [username](../uikit/uitextcontenttype/username.md) — A property that defines the content in a text input area as an account or login name.
+- [password](../uikit/uitextcontenttype/password.md) — A property that defines the content in a text input area as a password.
+- [newPassword](../uikit/uitextcontenttype/newpassword.md) — A property that defines the content in a text input area as a new password.
+- [oneTimeCode](../uikit/uitextcontenttype/onetimecode.md) — A property that defines the content in a text input area as a one-time code.
+
+### Text input elements
+
+- [Enabling Password AutoFill on an HTML input element](enabling-password-autofill-on-an-html-input-element.md) — Make sure a web view or webpage provides the correct AutoFill suggestions.
+
+### Password rules
+
+- [Customizing Password AutoFill rules](customizing-password-autofill-rules.md) — Modify the strong password rules for your app by adding your own restrictions.
+- [passwordRules](../uikit/uitextinputtraits/passwordrules.md)
+- [UITextInputPasswordRules](../uikit/uitextinputpasswordrules.md) — A class that represents password rules for a text input field.

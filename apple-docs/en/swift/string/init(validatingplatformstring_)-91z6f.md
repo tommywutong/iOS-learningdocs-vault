@@ -1,0 +1,40 @@
+---
+title: 'init(validatingPlatformString:)'
+framework: Swift
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 15.0+, iPadOS 15.0+, Mac Catalyst 15.0+, macOS 12.0+, tvOS 15.0+, visionOS 1.0+, watchOS 8.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/string/init(validatingplatformstring:)-91z6f'
+source_url: 'https://developer.apple.com/documentation/swift/string/init(validatingplatformstring:)-91z6f'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/string/init%28validatingplatformstring%3A%29-91z6f.json'
+content_hash: 'sha256:fe1b4a0f979fe37d'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [String](../string.md)
+
+# init(validatingPlatformString:)
+
+<sub>Initializer</sub>
+
+Creates a string by interpreting the null-terminated platform string as UTF-8 on Unix and UTF-16 on Windows.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+init?(validatingPlatformString platformString: [CInterop.PlatformChar])
+```
+
+## Parameters
+
+- `platformString` — The null-terminated platform string to be interpreted as `CInterop.PlatformUnicodeEncoding`.
+
+## Discussion
+
+- Note It is a precondition that `platformString` must be null-terminated. The absence of a null byte will trigger a runtime error.
+
+If the contents of the platform string isn’t well-formed Unicode, this initializer returns `nil`.

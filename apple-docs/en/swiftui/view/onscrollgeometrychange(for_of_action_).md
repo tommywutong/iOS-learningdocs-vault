@@ -1,0 +1,88 @@
+---
+title: 'onScrollGeometryChange(for:of:action:)'
+framework: SwiftUI
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swiftui/view/onscrollgeometrychange(for:of:action:)'
+source_url: 'https://developer.apple.com/documentation/swiftui/view/onscrollgeometrychange(for:of:action:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/view/onscrollgeometrychange%28for%3Aof%3Aaction%3A%29.json'
+content_hash: 'sha256:bb14c7605abc9e64'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [View](../view.md)
+
+# onScrollGeometryChange(for:of:action:)
+
+<sub>Instance Method</sub>
+
+Adds an action to be performed when a value, created from a scroll geometry, changes.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+nonisolated func onScrollGeometryChange<T>(for type: T.Type, of transform: @escaping (ScrollGeometry) -> T, action: @escaping (T, T) -> Void) -> some View where T : Equatable
+
+```
+
+## Parameters
+
+- `type` — The type of value transformed from a [ScrollGeometry](../scrollgeometry.md).
+
+- `transform` — A closure that transforms a [ScrollGeometry](../scrollgeometry.md) to your type.
+
+- `action` — A closure to run when the transformed data changes. - **oldValue** — The old value that failed the comparison check. - **newValue** — The new value that failed the comparison check.
+
+## Discussion
+
+The geometry of a scroll view changes frequently while scrolling. You should avoid updating large parts of your app whenever the scroll geometry changes. To aid in this, you provide two closures to this modifier:
+
+- transform: This converts a value of [ScrollGeometry](../scrollgeometry.md) to a your own data type.
+- action: This provides the data type you created in `of` and is called whenever the data type changes.
+
+For example, you can use this modifier to know when the user scrolls a scroll view beyond the top of its content. In the following example, the data type you convert to is a `Bool` and the action is called whenever the `Bool` changes.
+
+```swift
+@Binding var isBeyondZero: Bool
+
+ScrollView {
+    // ...
+}
+.onScrollGeometryChange(for: Bool.self) { geometry in
+    geometry.contentOffset.y < geometry.contentInsets.top
+} action: { wasBeyondZero, isBeyondZero in
+    self.isBeyondZero = isBeyondZero
+}
+```
+
+If multiple scroll views are found within the view hierarchy, only the first one will invoke the closure you provide and a runtime issue will be logged. For example, in the following view, only the vertical scroll view will have its geometry changes invoke the provided closure.
+
+```swift
+VStack {
+    ScrollView(.vertical) { ... }
+    ScrollView(.horizontal) { ... }
+}
+.onScrollGeometryChange(for: Bool.self) { geometry in
+     ...
+} action: { oldValue, newValue in
+    ...
+}
+```
+
+For responding to non-scroll geometry changes, see the [onGeometryChange(for:of:action:)](<ongeometrychange(for_of_action_).md>) modifier.
+
+## See Also
+
+### Responding to scroll view changes
+
+- [onScrollTargetVisibilityChange(idType:threshold:_:)](<onscrolltargetvisibilitychange(idtype_threshold___).md>) — Adds an action to be called with information about what views would be considered visible.
+- [onScrollVisibilityChange(threshold:_:)](<onscrollvisibilitychange(threshold___).md>) — Adds an action to be called when the view crosses the threshold to be considered on/off screen.
+- [onScrollPhaseChange(_:)](<onscrollphasechange(__).md>) — Adds an action to perform when the scroll phase of the first scroll view in the hierarchy changes.
+- [ScrollGeometry](../scrollgeometry.md) — A type that defines the geometry of a scroll view.
+- [ScrollPhase](../scrollphase.md) — A type that describes the state of a scroll gesture of a scrollable view like a scroll view.
+- [ScrollPhaseChangeContext](../scrollphasechangecontext.md) — A type that provides you with more content when the phase of a scroll view changes.

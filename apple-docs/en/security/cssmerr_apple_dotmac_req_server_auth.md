@@ -1,0 +1,28 @@
+---
+title: CSSMERR_APPLE_DOTMAC_REQ_SERVER_AUTH
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [macOS 10.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/cssmerr_apple_dotmac_req_server_auth
+source_url: 'https://developer.apple.com/documentation/security/cssmerr_apple_dotmac_req_server_auth'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/cssmerr_apple_dotmac_req_server_auth.json'
+content_hash: 'sha256:73f19307a69d0a3a'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# CSSMERR_APPLE_DOTMAC_REQ_SERVER_AUTH
+
+<sub>Global Variable</sub>
+
+<sub>macOS</sub>
+
+```swift
+var CSSMERR_APPLE_DOTMAC_REQ_SERVER_AUTH: Int { get }
+```

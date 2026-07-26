@@ -1,0 +1,44 @@
+---
+title: isContiguousUTF8
+framework: Swift
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/string/iscontiguousutf8
+source_url: 'https://developer.apple.com/documentation/swift/string/iscontiguousutf8'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/string/iscontiguousutf8.json'
+content_hash: 'sha256:16964d6107253e47'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [String](../string.md)
+
+# isContiguousUTF8
+
+<sub>Instance Property</sub>
+
+Returns whether this string’s storage contains validly-encoded UTF-8 contents in contiguous memory.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var isContiguousUTF8: Bool { get }
+```
+
+## Discussion
+
+Contiguous strings always operate in O(1) time for withUTF8, always give a result for String.UTF8View.withContiguousStorageIfAvailable, and always return a non-nil value from `String._utf8Span` and `String.UTF8View._span`. Contiguous strings also benefit from fast-paths and better optimizations.
+
+## See Also
+
+### Working with Encodings
+
+- [availableStringEncodings](availablestringencodings.md) — An array of the encodings that strings support in the application’s environment.
+- [defaultCStringEncoding](defaultcstringencoding.md) — The C-string encoding assumed for any method accepting a C string as an argument.
+- [localizedName(of:)](<localizedname(of_).md>) — Returns a human-readable string giving the name of the specified encoding.
+- [makeContiguousUTF8()](<makecontiguousutf8().md>) — If this string is not contiguous, make it so. If this mutates the string, it will invalidate any pre-existing indices.
+- [withUTF8(_:)](<withutf8(__).md>) — Runs `body` over the content of this string in contiguous memory. If this string is not contiguous, this will first make it contiguous, which will also speed up subsequent access. If this mutates the string, it will invalidate any pre-existing indices.

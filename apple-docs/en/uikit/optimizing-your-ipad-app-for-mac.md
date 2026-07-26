@@ -1,0 +1,112 @@
+---
+title: Optimizing your iPad app for Mac
+framework: UIKit
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/optimizing-your-ipad-app-for-mac
+source_url: 'https://developer.apple.com/documentation/uikit/optimizing-your-ipad-app-for-mac'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/optimizing-your-ipad-app-for-mac.json'
+content_hash: 'sha256:a7253ca457fa9dc2'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md) · [Mac Catalyst](mac-catalyst.md)
+
+# Optimizing your iPad app for Mac
+
+<sub>Article</sub>
+
+Make your iPad app more like a Mac app by taking advantage of system features in macOS.
+
+## Overview
+
+The Mac version of your iPad app supports many system features found in macOS without requiring any effort from you, including:
+
+- A default menu bar for your app
+- Support for trackpad, mouse, and keyboard input
+- Support for window resizing and full-screen display
+- Mac-style scroll bars
+- Copy-and-paste support
+- Drag-and-drop support
+- Support for system Touch Bar controls
+
+You can, however, extend your app to take advantage of even more system features.
+
+> [!important] Important
+> Mac apps built with Mac Catalyst can only use [AppKit](../appkit.md) APIs marked as available in Mac Catalyst, such as [NSToolbar](../appkit/nstoolbar.md) and [NSTouchBar](../appkit/nstouchbar.md). Mac Catalyst doesn’t support accessing unavailable AppKit APIs.
+
+### Add menu bar items
+
+The Mac version of your app comes with a standard menu bar. Customize it by adding and removing menu items using [UIMenuBuilder](uimenubuilder.md). To learn more, see [Adding menus and shortcuts to the menu bar and user interface](adding-menus-and-shortcuts-to-the-menu-bar-and-user-interface.md).
+
+### Show a Settings window
+
+Mac apps typically let users manage app-specific settings by displaying a Settings window. Users see this window by selecting the app menu followed by the Settings menu item in the menu bar. If your app has a Settings bundle, the system automatically provides your app with a Settings window. To learn more, see [Displaying a Settings window](displaying-a-settings-window.md).
+
+### Add a Liquid Glass background to your primary view controller
+
+iPad apps using a split view controller get a Mac-style vertical split view when running in macOS. You can help your iPad app look more at home on Mac by applying Liquid Glass to the primary view controller’s background. To do this, set your split view controller’s [primaryBackgroundStyle](uisplitviewcontroller/primarybackgroundstyle.md) to [UISplitViewControllerBackgroundStyleSidebar](uisplitviewcontroller/backgroundstyle/sidebar.md), as shown in the following code.
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    let splitViewController = window!.rootViewController as! UISplitViewController
+    let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count - 1] as! UINavigationController
+    navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+    
+    // Add a Liquid Glass background to the primary view controller.
+    splitViewController.primaryBackgroundStyle = .sidebar
+    
+    splitViewController.delegate = self
+    
+    return true
+}
+```
+
+Set your split view controller’s [primaryBackgroundStyle](uisplitviewcontroller/primarybackgroundstyle.md) to [UISplitViewControllerBackgroundStyleNone](uisplitviewcontroller/backgroundstyle/none.md) to avoid styling the primary view controller’s background.
+
+### Detect the pointer in a view
+
+Mac users rely on a pointer to interact with apps, whether selecting a text field or moving a window. As the user moves the pointer over UI elements, some elements should change their appearance. For example, a web browser highlights a link as the pointer moves over it.
+
+To detect when the user moves the pointer over a view in your app, add a [UIHoverGestureRecognizer](uihovergesturerecognizer.md) to that view. This tells your app when the pointer enters or leaves the view, or moves while over it.
+
+```swift
+class ViewController: UIViewController {
+
+    @IBOutlet var button: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let hover = UIHoverGestureRecognizer(target: self, action: #selector(hovering(_:)))
+        button.addGestureRecognizer(hover)
+    }
+
+    @objc
+    func hovering(_ recognizer: UIHoverGestureRecognizer) {
+        switch recognizer.state {
+        case .began, .changed:
+            button.titleLabel?.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        case .ended:
+            button.titleLabel?.textColor = UIColor.link
+        default:
+            break
+        }
+    }
+}
+```
+
+## See Also
+
+### App support
+
+- [Bring an iPad App to the Mac with Mac Catalyst](../tutorials/mac-catalyst.md) — Build a native Mac app from the same codebase as your iPad app.
+- [Choosing a user interface idiom for your Mac app](choosing-a-user-interface-idiom-for-your-mac-app.md) — Select the iPad or the Mac user interface idiom in your Mac app built with Mac Catalyst.
+- [LSMinimumSystemVersion](../bundleresources/information-property-list/lsminimumsystemversion.md) — The minimum version of the operating system required for the app to run in macOS.
+- [UIApplicationSupportsTabbedSceneCollection](../bundleresources/information-property-list/uiapplicationscenemanifest/uiapplicationsupportstabbedscenecollection.md) — A Boolean value indicating whether an app built with Mac Catalyst supports automatic tabbing mode.

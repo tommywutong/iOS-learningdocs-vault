@@ -1,0 +1,34 @@
+---
+title: traitOverrides
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, tvOS 17.0+, visionOS]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uipresentationcontroller/traitoverrides-629ka
+source_url: 'https://developer.apple.com/documentation/uikit/uipresentationcontroller/traitoverrides-629ka'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uipresentationcontroller/traitoverrides-629ka.json'
+content_hash: 'sha256:4a8538231ef6b6ae'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIPresentationController](../uipresentationcontroller.md)
+
+# traitOverrides
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor @preconcurrency var traitOverrides: UITraitOverrides { get set }
+```
+
+## See Also
+
+### Overriding trait values
+
+- [UITraitOverrides](../uitraitoverrides-swift.struct.md) — A mutable container of traits you use to set trait changes for an object and its descendants.

@@ -1,0 +1,48 @@
+---
+title: PHAssetCollectionSubtype.smartAlbumSpatial
+framework: Photos
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/photos/phassetcollectionsubtype/smartalbumspatial
+source_url: 'https://developer.apple.com/documentation/photos/phassetcollectionsubtype/smartalbumspatial'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/photos/phassetcollectionsubtype/smartalbumspatial.json'
+content_hash: 'sha256:70a073fb86729ad4'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Photos](../../photos.md) · [PHAssetCollectionSubtype](../phassetcollectionsubtype.md)
+
+# PHAssetCollectionSubtype.smartAlbumSpatial
+
+<sub>Case</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+case smartAlbumSpatial
+```
+
+## See Also
+
+### Smart Album Types
+
+- [PHAssetCollectionSubtypeSmartAlbumAllHidden](smartalbumallhidden.md) — A Smart Album that groups all assets hidden from the Moments view in the Photos app.
+- [PHAssetCollectionSubtypeSmartAlbumAnimated](smartalbumanimated.md) — A Smart Album that groups all image animation assets.
+- [PHAssetCollectionSubtypeSmartAlbumBursts](smartalbumbursts.md) — A Smart Album that groups all burst photo sequences in the photo library.
+- [PHAssetCollectionSubtypeSmartAlbumCinematic](smartalbumcinematic.md) — A Smart Album that groups all cinematic photo assets.
+- [PHAssetCollectionSubtypeSmartAlbumDepthEffect](smartalbumdeptheffect.md) — A Smart Album that groups all images captured using the Depth Effect camera mode on compatible devices.
+- [PHAssetCollectionSubtypeSmartAlbumFavorites](smartalbumfavorites.md) — A Smart Album that groups all assets that the user marks as favorites.
+- [PHAssetCollectionSubtypeSmartAlbumGeneric](smartalbumgeneric.md) — A Smart Album without a more-specific subtype.
+- [PHAssetCollectionSubtypeSmartAlbumLivePhotos](smartalbumlivephotos.md) — A Smart Album that groups all Live Photos assets.
+- [PHAssetCollectionSubtypeSmartAlbumLongExposures](smartalbumlongexposures.md) — A Smart Album that groups all Live Photos assets where the Long Exposure variation is in an enabled state.
+- [PHAssetCollectionSubtypeSmartAlbumPanoramas](smartalbumpanoramas.md) — A Smart Album that groups all panorama photos in the photo library.
+- [PHAssetCollectionSubtypeSmartAlbumRAW](smartalbumraw.md) — A Smart Album that groups all RAW assets in the photo library.
+- [PHAssetCollectionSubtypeSmartAlbumRecentlyAdded](smartalbumrecentlyadded.md) — A Smart Album that groups all recently added assets in the photo library.
+- [PHAssetCollectionSubtypeSmartAlbumScreenshots](smartalbumscreenshots.md) — A Smart Album that groups all images captured using the device’s screenshot function.
+- [PHAssetCollectionSubtypeSmartAlbumSelfPortraits](smartalbumselfportraits.md) — A Smart Album that groups all photos and videos captured using the device’s front-facing camera.
+- [PHAssetCollectionSubtypeSmartAlbumSlomoVideos](smartalbumslomovideos.md) — A Smart Album that groups all Slow-Mo videos in the photo library.

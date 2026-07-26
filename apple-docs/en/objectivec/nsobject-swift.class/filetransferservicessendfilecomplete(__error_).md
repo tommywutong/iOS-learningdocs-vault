@@ -1,0 +1,28 @@
+---
+title: 'fileTransferServicesSendFileComplete(_:error:)'
+framework: Objective-C Runtime
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [macOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/objectivec/nsobject-swift.class/filetransferservicessendfilecomplete(_:error:)'
+source_url: 'https://developer.apple.com/documentation/objectivec/nsobject-swift.class/filetransferservicessendfilecomplete(_:error:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/objectivec/nsobject-swift.class/filetransferservicessendfilecomplete%28_%3Aerror%3A%29.json'
+content_hash: 'sha256:3ff21e8e368bca01'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Objective-C Runtime](../../objectivec.md) · [NSObject](../nsobject-swift.class.md)
+
+# fileTransferServicesSendFileComplete(_:error:)
+
+<sub>Instance Method</sub>
+
+<sub>macOS</sub>
+
+```swift
+func fileTransferServicesSendFileComplete(_ inServices: OBEXFileTransferServices!, error inError: OBEXError)
+```

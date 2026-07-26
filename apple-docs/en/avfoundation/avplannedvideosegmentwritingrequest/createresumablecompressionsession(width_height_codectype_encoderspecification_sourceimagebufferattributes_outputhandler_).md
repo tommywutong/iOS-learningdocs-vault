@@ -1,0 +1,59 @@
+---
+title: 'createResumableCompressionSession(width:height:codecType:encoderSpecification:sourceImageBufferAttributes:outputHandler:)'
+framework: AVFoundation
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 27.0+ beta, iPadOS 27.0+ beta, Mac Catalyst 27.0+ beta, macOS 27.0+ beta, tvOS 27.0+ beta, visionOS 27.0+ beta]
+languages: [swift]
+beta: true
+deprecated: false
+doc_path: '/documentation/avfoundation/avplannedvideosegmentwritingrequest/createresumablecompressionsession(width:height:codectype:encoderspecification:sourceimagebufferattributes:outputhandler:)'
+source_url: 'https://developer.apple.com/documentation/avfoundation/avplannedvideosegmentwritingrequest/createresumablecompressionsession(width:height:codectype:encoderspecification:sourceimagebufferattributes:outputhandler:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/avplannedvideosegmentwritingrequest/createresumablecompressionsession%28width%3Aheight%3Acodectype%3Aencoderspecification%3Asourceimagebufferattributes%3Aoutputhandler%3A%29.json'
+content_hash: 'sha256:5b24b27d3c94d00b'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [AVFoundation](../../avfoundation.md) · [AVPlannedVideoSegmentWritingRequest](../avplannedvideosegmentwritingrequest.md)
+
+# createResumableCompressionSession(width:height:codecType:encoderSpecification:sourceImageBufferAttributes:outputHandler:)
+
+<sub>Instance Method</sub>
+
+Helper function to create a VTCompressionSession that restores the video encoder state persisted at the end of the previous segment.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+func createResumableCompressionSession(width: Int32, height: Int32, codecType: CMVideoCodecType, encoderSpecification: [String : any Sendable]? = nil, sourceImageBufferAttributes: [String : any Sendable]? = nil, outputHandler: @escaping @Sendable (OSStatus, VTEncodeInfoFlags, CMSampleBuffer?) -> Void) throws -> VTCompressionSession
+```
+
+## Parameters
+
+- `width` — The pixel width of video frames.
+
+- `height` — The pixel height of video frames.
+
+- `codecType` — The codec type.
+
+- `encoderSpecification` — A dictionary describing the characteristics of a video encoder to use. Pass nil to let the system choose an encoder. If the client provides a specification, it should omit the following keys kVTCompressionPropertyKey_SourceFrameCount, kVTCompressionPropertyKey_MoreFramesBeforeStart, kVTCompressionPropertyKey_MoreFramesAfterEnd since such keys will be overwritten by the underlying implementation.
+
+- `sourceImageBufferAttributes` — Required attributes for source pixel buffers, used when creating a pixel buffer pool for source frames. If you don’t want the system to create one for you, pass nil. Using pixel buffers not allocated by the system increases the chance that you’ll have to copy image data.
+
+- `outputHandler` — The handler to invoke with compressed frames. The system may call this function asynchronously, on a different thread from the one that calls VTCompressionSessionEncodeFrame.
+
+## Return Value
+
+A configured VTCompressionSession ready for encoding this segment.
+
+## Discussion
+
+Clients using VTCompressionSession directly to produce encoded video samples for writing the segment must use this method to create the session. The client should perform additional configurations on the returned compression session, but must apply the same configurations for each segment of the track.
+
+Client cannot call this method more than once on a writing request object. For the same segment writing request, this method and the makeResumableWriterInput method are mutually exclusive. The client can call either one of the two, but not both. This method fails (returns nil) with error if the parameters differ from the previous segment.
+
+The client should release the session after use. The writing request retains the compression session but does not mutate the session after this method is returned.
+
+> [!danger] Throws
+> An error if the session cannot be created or if parameters differ from previous segment.

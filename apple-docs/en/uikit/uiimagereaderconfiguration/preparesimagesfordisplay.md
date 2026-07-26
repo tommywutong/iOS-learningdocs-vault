@@ -1,0 +1,42 @@
+---
+title: preparesImagesForDisplay
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, tvOS 17.0+, visionOS 1.0+, watchOS 10.0+]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiimagereaderconfiguration/preparesimagesfordisplay
+source_url: 'https://developer.apple.com/documentation/uikit/uiimagereaderconfiguration/preparesimagesfordisplay'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiimagereaderconfiguration/preparesimagesfordisplay.json'
+content_hash: 'sha256:5e485c491a14b545'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIImageReaderConfiguration](../uiimagereaderconfiguration.md)
+
+# preparesImagesForDisplay
+
+<sub>Instance Property</sub>
+
+A Boolean value that indicates whether the image reader prepares the image for display.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS, watchOS</sub>
+
+```objc
+@property (nonatomic, assign, readwrite) BOOL preparesImagesForDisplay;
+```
+
+## Discussion
+
+The default value is [false](../../swift/false.md).
+
+## See Also
+
+### Configuration properties
+
+- [prefersHighDynamicRange](prefershighdynamicrange.md) — A Boolean value that indicates whether the image reader should decode the image as HDR when the type is capable of decoding in either SDR or HDR.
+- [preferredThumbnailSize](preferredthumbnailsize.md) — The thumbnail size in pixels that the image reader makes the image.
+- [pixelsPerInch](pixelsperinch.md) — The integral scale that the image reader applies to the image.

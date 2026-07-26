@@ -1,0 +1,43 @@
+---
+title: 'init(_:xStart:xEnd:y:height:)'
+framework: Swift Charts
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/charts/barplot/init(_:xstart:xend:y:height:)'
+source_url: 'https://developer.apple.com/documentation/charts/barplot/init(_:xstart:xend:y:height:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/charts/barplot/init%28_%3Axstart%3Axend%3Ay%3Aheight%3A%29.json'
+content_hash: 'sha256:c7d7b3312d501fd5'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift Charts](../../charts.md) · [BarPlot](../barplot.md)
+
+# init(_:xStart:xEnd:y:height:)
+
+<sub>Initializer</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+nonisolated init<Data, X>(_ data: Data, xStart: PlottableProjection<BarPlot<Content>.DataElement, X>, xEnd: PlottableProjection<BarPlot<Content>.DataElement, X>, y: PlottableProjection<BarPlot<Content>.DataElement, some Plottable>, height: MarkDimensions<BarPlot<Content>.DataElement> = .automatic) where Content == VectorizedBarPlotContent<Data>, Data : RandomAccessCollection, X : Plottable
+```
+
+## See Also
+
+### Plotting bars from a collection
+
+- [init(_:x:y:width:height:stacking:)](<init(__x_y_width_height_stacking_).md>)
+- [init(_:x:yStart:yEnd:width:)](<init(__x_ystart_yend_width_).md>)
+- [init(_:x:yStart:yEnd:width:stacking:)](<init(__x_ystart_yend_width_stacking_)-2mtih.md>)
+- [init(_:x:yStart:yEnd:width:stacking:)](<init(__x_ystart_yend_width_stacking_)-680hw.md>)
+- [init(_:xStart:xEnd:y:height:stacking:)](<init(__xstart_xend_y_height_stacking_)-16tou.md>)
+- [init(_:xStart:xEnd:y:height:stacking:)](<init(__xstart_xend_y_height_stacking_)-2x0yx.md>)
+- [init(_:xStart:xEnd:yStart:yEnd:)](<init(__xstart_xend_ystart_yend_)-48su5.md>)
+- [init(_:xStart:xEnd:yStart:yEnd:)](<init(__xstart_xend_ystart_yend_)-862wn.md>)
+- [init(_:xStart:xEnd:yStart:yEnd:)](<init(__xstart_xend_ystart_yend_)-mtdv.md>)
+- [init(_:xStart:xEnd:yStart:yEnd:)](<init(__xstart_xend_ystart_yend_)-raqh.md>)

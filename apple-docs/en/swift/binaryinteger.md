@@ -1,0 +1,246 @@
+---
+title: BinaryInteger
+framework: Swift
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/binaryinteger
+source_url: 'https://developer.apple.com/documentation/swift/binaryinteger'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/binaryinteger.json'
+content_hash: 'sha256:2843f03a5416602b'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Swift](../swift.md)
+
+# BinaryInteger
+
+<sub>Protocol</sub>
+
+An integer type with a binary representation.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+protocol BinaryInteger : CustomStringConvertible, Hashable, Numeric, Strideable where Self.Magnitude : BinaryInteger, Self.Magnitude == Self.Magnitude.Magnitude
+```
+
+## Overview
+
+The `BinaryInteger` protocol is the basis for all the integer types provided by the standard library. All of the standard library’s integer types, such as `Int` and `UInt32`, conform to `BinaryInteger`.
+
+## Converting Between Numeric Types
+
+You can create new instances of a type that conforms to the `BinaryInteger` protocol from a floating-point number or another binary integer of any type. The `BinaryInteger` protocol provides initializers for four different kinds of conversion.
+
+## Range-Checked Conversion
+
+You use the default `init(_:)` initializer to create a new instance when you’re sure that the value passed is representable in the new type. For example, an instance of `Int16` can represent the value `500`, so the first conversion in the code sample below succeeds. That same value is too large to represent as an `Int8` instance, so the second conversion fails, triggering a runtime error.
+
+```swift
+let x: Int = 500
+let y = Int16(x)
+// y == 500
+
+let z = Int8(x)
+// Error: Not enough bits to represent...
+```
+
+When you create a binary integer from a floating-point value using the default initializer, the value is rounded toward zero before the range is checked. In the following example, the value `127.75` is rounded to `127`, which is representable by the `Int8` type.  `128.25` is rounded to `128`, which is not representable as an `Int8` instance, triggering a runtime error.
+
+```swift
+let e = Int8(127.75)
+// e == 127
+
+let f = Int8(128.25)
+// Error: Double value cannot be converted...
+```
+
+## Exact Conversion
+
+Use the `init?(exactly:)` initializer to create a new instance after checking whether the passed value is representable. Instead of trapping on out-of-range values, using the failable `init?(exactly:)` initializer results in `nil`.
+
+```swift
+let x = Int16(exactly: 500)
+// x == Optional(500)
+
+let y = Int8(exactly: 500)
+// y == nil
+```
+
+When converting floating-point values, the `init?(exactly:)` initializer checks both that the passed value has no fractional part and that the value is representable in the resulting type.
+
+```swift
+let e = Int8(exactly: 23.0)       // integral value, representable
+// e == Optional(23)
+
+let f = Int8(exactly: 23.75)      // fractional value, representable
+// f == nil
+
+let g = Int8(exactly: 500.0)      // integral value, nonrepresentable
+// g == nil
+```
+
+## Clamping Conversion
+
+Use the `init(clamping:)` initializer to create a new instance of a binary integer type where out-of-range values are clamped to the representable range of the type. For a type `T`, the resulting value is in the range `T.min...T.max`.
+
+```swift
+let x = Int16(clamping: 500)
+// x == 500
+
+let y = Int8(clamping: 500)
+// y == 127
+
+let z = UInt8(clamping: -500)
+// z == 0
+```
+
+## Bit Pattern Conversion
+
+Use the `init(truncatingIfNeeded:)` initializer to create a new instance with the same bit pattern as the passed value, extending or truncating the value’s representation as necessary. Note that the value may not be preserved, particularly when converting between signed to unsigned integer types or when the destination type has a smaller bit width than the source type. The following example shows how extending and truncating work for nonnegative integers:
+
+```swift
+let q: Int16 = 850
+// q == 0b00000011_01010010
+
+let r = Int8(truncatingIfNeeded: q)      // truncate 'q' to fit in 8 bits
+// r == 82
+//   == 0b01010010
+
+let s = Int16(truncatingIfNeeded: r)     // extend 'r' to fill 16 bits
+// s == 82
+//   == 0b00000000_01010010
+```
+
+Any padding is performed by _sign-extending_ the passed value. When nonnegative integers are extended, the result is padded with zeroes. When negative integers are extended, the result is padded with ones. This example shows several extending conversions of a negative value—note that negative values are sign-extended even when converting to an unsigned type.
+
+```swift
+let t: Int8 = -100
+// t == -100
+// t's binary representation == 0b10011100
+
+let u = UInt8(truncatingIfNeeded: t)
+// u == 156
+// u's binary representation == 0b10011100
+
+let v = Int16(truncatingIfNeeded: t)
+// v == -100
+// v's binary representation == 0b11111111_10011100
+
+let w = UInt16(truncatingIfNeeded: t)
+// w == 65436
+// w's binary representation == 0b11111111_10011100
+```
+
+## Comparing Across Integer Types
+
+You can use relational operators, such as the less-than and equal-to operators (`<` and `==`), to compare instances of different binary integer types. The following example compares instances of the `Int`, `UInt`, and `UInt8` types:
+
+```swift
+let x: Int = -23
+let y: UInt = 1_000
+let z: UInt8 = 23
+
+if x < y {
+    print("\(x) is less than \(y).")
+}
+// Prints "-23 is less than 1000."
+
+if z > x {
+    print("\(z) is greater than \(x).")
+}
+// Prints "23 is greater than -23."
+```
+
+## Relationships
+
+- **Inherits From**: [AdditiveArithmetic](additivearithmetic.md), [Comparable](comparable.md), [CustomStringConvertible](customstringconvertible.md), [Equatable](equatable.md), [ExpressibleByIntegerLiteral](expressiblebyintegerliteral.md), [Hashable](hashable.md), [Numeric](numeric.md), [Strideable](strideable.md)
+
+- **Inherited By**: [FixedWidthInteger](fixedwidthinteger.md), [SignedInteger](signedinteger.md), [UnsignedInteger](unsignedinteger.md)
+
+- **Conforming Types**: [Int](int.md), [Int128](int128.md), [Int16](int16.md), [Int32](int32.md), [Int64](int64.md), [Int8](int8.md), [UInt](uint.md), [UInt128](uint128.md), [UInt16](uint16.md), [UInt32](uint32.md), [UInt64](uint64.md), [UInt8](uint8.md)
+
+## Topics
+
+### Creating a Binary Integer
+
+- [init()](<binaryinteger/init().md>) — Creates a new value equal to zero.
+
+### Converting Integers
+
+- [init(_:)](<binaryinteger/init(__)-8gmdl.md>) — Creates a new instance from the given integer.
+- [init(clamping:)](<binaryinteger/init(clamping_).md>) — Creates a new instance with the representable value that’s closest to the given integer.
+- [init(truncatingIfNeeded:)](<binaryinteger/init(truncatingifneeded_).md>) — Creates a new instance from the bit pattern of the given instance by sign-extending or truncating to fit this type.
+
+### Converting Floating-Point Values
+
+- [init(_:)](<binaryinteger/init(__)-2ln0u.md>) — Creates an integer from the given floating-point value, rounding toward zero.
+
+### Converting with No Loss of Precision
+
+- [init(exactly:)](<binaryinteger/init(exactly_).md>) — Creates an integer from the given floating-point value, if it can be represented exactly.
+
+### Performing Calculations
+
+- [Binary Integer Operators](binary-integer-operators.md) — Perform arithmetic and bitwise operations or compare values.
+- [quotientAndRemainder(dividingBy:)](<binaryinteger/quotientandremainder(dividingby_).md>) — Returns the quotient and remainder of this value divided by the given value.
+- [isMultiple(of:)](<binaryinteger/ismultiple(of_).md>) — Returns `true` if this value is a multiple of the given value, and `false` otherwise.
+
+### Finding the Sign and Magnitude
+
+- [signum()](<binaryinteger/signum().md>) — Returns `-1` if this value is negative and `1` if it’s positive; otherwise, `0`.
+
+### Accessing Numeric Constants
+
+- [isSigned](binaryinteger/issigned.md) — A Boolean value indicating whether this type is a signed integer type.
+
+### Working with Binary Representation
+
+- [bitWidth](binaryinteger/bitwidth.md) — The number of bits in the current binary representation of this value.
+- [trailingZeroBitCount](binaryinteger/trailingzerobitcount.md) — The number of trailing zeros in this value’s binary representation.
+- [words](binaryinteger/words-swift.property.md) — A collection containing the words of this value’s binary representation, in order from the least significant to most significant.
+- [Words](binaryinteger/words-swift.associatedtype.md) — A type that represents the words of a binary integer.
+
+### Operators
+
+- [%(_:_:)](<binaryinteger/_(____)-30ngi.md>) — Returns the remainder of dividing the first value by the second.
+- [^(_:_:)](<binaryinteger/_(____)-3qw5d.md>) — Returns the result of performing a bitwise XOR operation on the two given values.
+- [|(_:_:)](<binaryinteger/_(____)-6qhsw.md>) — Returns the result of performing a bitwise OR operation on the two given values.
+- [^=(_:_:)](<binaryinteger/_=(____)-1fatv.md>) — Stores the result of performing a bitwise XOR operation on the two given values in the left-hand-side variable.
+- [|=(_:_:)](<binaryinteger/_=(____)-4vfmj.md>) — Stores the result of performing a bitwise OR operation on the two given values in the left-hand-side variable.
+- [%=(_:_:)](<binaryinteger/_=(____)-79wgi.md>) — Divides the first value by the second and stores the remainder in the left-hand-side variable.
+- [\<\<(_:_:)](<binaryinteger/__(____)-28lmu.md>) — Returns the result of shifting a value’s binary representation the specified number of digits to the left.
+- [\>\>(_:_:)](<binaryinteger/__(____)-4vnij.md>) — Returns the result of shifting a value’s binary representation the specified number of digits to the right.
+- [\>\>=(_:_:)](<binaryinteger/__=(____)-5lhky.md>) — Stores the result of shifting a value’s binary representation the specified number of digits to the right in the left-hand-side variable.
+- [\<\<=(_:_:)](<binaryinteger/__=(____)-9pzpp.md>) — Stores the result of shifting a value’s binary representation the specified number of digits to the left in the left-hand-side variable.
+
+### Initializers
+
+- [init(_:format:lenient:)](<binaryinteger/init(__format_lenient_)-2qv61.md>)
+- [init(_:format:lenient:)](<binaryinteger/init(__format_lenient_)-50z9r.md>)
+- [init(_:format:lenient:)](<binaryinteger/init(__format_lenient_)-86j1g.md>)
+- [init(_:strategy:)](<binaryinteger/init(__strategy_)-207i8.md>) — Initialize an instance by parsing `value` with the given `strategy`.
+
+### Instance Methods
+
+- [formatted()](<binaryinteger/formatted().md>) — Format `self` using `IntegerFormatStyle()`
+- [formatted(_:)](<binaryinteger/formatted(__)-4qd73.md>) — Format `self` with the given format.
+- [formatted(_:)](<binaryinteger/formatted(__)-73k3e.md>) — Format `self` with the given format. `self` is first converted to `S.FormatInput` type, then format with the given format.
+
+### Default Implementations
+
+- [BinaryInteger Implementations](binaryinteger/binaryinteger-implementations.md)
+- [Equatable Implementations](binaryinteger/equatable-implementations.md)
+
+## See Also
+
+### Integer
+
+- [FixedWidthInteger](fixedwidthinteger.md) — An integer type that uses a fixed size for every instance.
+- [SignedInteger](signedinteger.md) — An integer type that can represent both positive and negative values.
+- [UnsignedInteger](unsignedinteger.md) — An integer type that can represent only nonnegative values.

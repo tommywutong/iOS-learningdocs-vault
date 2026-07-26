@@ -1,0 +1,45 @@
+---
+title: 'init(exactly:)'
+framework: Swift
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 14.0+, iPadOS 14.0+, Mac Catalyst 14.0+, macOS 11.0+, tvOS 14.0+, visionOS 1.0+, watchOS 7.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/int64/init(exactly:)-74h3v'
+source_url: 'https://developer.apple.com/documentation/swift/int64/init(exactly:)-74h3v'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/int64/init%28exactly%3A%29-74h3v.json'
+content_hash: 'sha256:257b6fe2c90bb197'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Int64](../int64.md)
+
+# init(exactly:)
+
+<sub>Initializer</sub>
+
+Creates an integer from the given floating-point value, if it can be represented exactly.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+init?(exactly source: Float16)
+```
+
+## Parameters
+
+- `source` — A floating-point value to convert to an integer.
+
+## Discussion
+
+If the value passed as `source` is not representable exactly, the result is `nil`. In the following example, the constant `x` is successfully created from a value of `21.0`, while the attempt to initialize the constant `y` from `21.5` fails:
+
+```swift
+let x = Int(exactly: 21.0)
+// x == Optional(21)
+let y = Int(exactly: 21.5)
+// y == nil
+```

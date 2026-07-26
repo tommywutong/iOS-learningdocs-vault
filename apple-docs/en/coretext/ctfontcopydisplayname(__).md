@@ -1,0 +1,48 @@
+---
+title: 'CTFontCopyDisplayName(_:)'
+framework: Core Text
+symbol_kind: func
+role: symbol
+role_heading: Function
+platforms: [iOS 3.2+, iPadOS 3.2+, Mac Catalyst 13.1+, macOS 10.5+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/coretext/ctfontcopydisplayname(_:)'
+source_url: 'https://developer.apple.com/documentation/coretext/ctfontcopydisplayname(_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coretext/ctfontcopydisplayname%28_%3A%29.json'
+content_hash: 'sha256:144364e241e8a977'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Text](../coretext.md)
+
+# CTFontCopyDisplayName(_:)
+
+<sub>Function</sub>
+
+Returns the display name of the given font.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func CTFontCopyDisplayName(_ font: CTFont) -> CFString
+```
+
+## Parameters
+
+- `font` — The font reference.
+
+## Discussion
+
+A retained reference to the localized display name of the font.
+
+## See Also
+
+### Getting Font Names
+
+- [CTFontCopyPostScriptName](<ctfontcopypostscriptname(__).md>) — Returns the PostScript name of the given font.
+- [CTFontCopyFamilyName](<ctfontcopyfamilyname(__).md>) — Returns the family name of the given font.
+- [CTFontCopyFullName](<ctfontcopyfullname(__).md>) — Returns the full name of the given font.
+- [CTFontCopyName](<ctfontcopyname(____).md>) — Returns a reference to the requested name of the given font.
+- [CTFontCopyLocalizedName](<ctfontcopylocalizedname(______).md>) — Returns a reference to a localized name for the given font.

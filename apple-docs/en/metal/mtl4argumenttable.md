@@ -1,0 +1,69 @@
+---
+title: MTL4ArgumentTable
+framework: Metal
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, macOS 26.0+, tvOS 26.0+, visionOS 26.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/mtl4argumenttable
+source_url: 'https://developer.apple.com/documentation/metal/mtl4argumenttable'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/mtl4argumenttable.json'
+content_hash: 'sha256:62be37cd126fe173'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md)
+
+# MTL4ArgumentTable
+
+<sub>Protocol</sub>
+
+Provides a mechanism to manage and provide resource bindings for buffers, textures, sampler states and other Metal resources.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+protocol MTL4ArgumentTable : NSObjectProtocol
+```
+
+## Relationships
+
+- **Inherits From**: [NSObjectProtocol](../objectivec/nsobjectprotocol.md)
+
+## Topics
+
+### Instance Properties
+
+- [device](mtl4argumenttable/device.md) — The device from which you created this argument table.
+- [label](mtl4argumenttable/label.md) — Assigns an optional label with this argument table for debugging purposes.
+
+### Instance Methods
+
+- [- setAddress:attributeStride:atIndex:](<mtl4argumenttable/setaddress(__attributestride_index_).md>) — Binds a GPU address to a buffer binding slot, providing a dynamic vertex stride.
+- [- setAddress:atIndex:](<mtl4argumenttable/setaddress(__index_).md>) — Binds a GPU address to a buffer binding slot.
+- [- setResource:atBufferIndex:](<mtl4argumenttable/setresource(__bufferindex_).md>) — Binds a resource to a buffer binding slot.
+- [- setSamplerState:atIndex:](<mtl4argumenttable/setsamplerstate(__index_).md>) — Binds a sampler state to a sampler state binding slot.
+- [- setTexture:atIndex:](<mtl4argumenttable/settexture(__index_).md>) — Binds a texture to a texture binding slot.
+
+## See Also
+
+### Submitting work to a GPU with Metal 4
+
+- [MTL4CommandQueue](mtl4commandqueue.md) — An abstraction representing a command queue that you use commit and synchronize command buffers and to perform other GPU operations.
+- [MTL4CommandQueueDescriptor](mtl4commandqueuedescriptor.md) — Groups together parameters for the creation of a new command queue.
+- [MTL4CommandQueueError](mtl4commandqueueerror-swift.struct.md)
+- [Code](mtl4commandqueueerror-swift.struct/code.md) — Enumeration of kinds of errors that committing an array of command buffers instances can produce.
+- [MTL4CommandQueueErrorDomain](mtl4commandqueueerrordomain.md)
+- [MTL4CommandBuffer](mtl4commandbuffer.md) — Records a sequence of GPU commands.
+- [MTL4CommandBufferOptions](mtl4commandbufferoptions.md) — Options to configure a command buffer before encoding work into it.
+- [MTL4CommandEncoder](mtl4commandencoder.md) — An encoder that writes GPU commands into a command buffer.
+- [MTL4RenderEncoderOptions](mtl4renderencoderoptions.md) — Custom render pass options you specify at encoder creation time.
+- [MTL4ArgumentTableDescriptor](mtl4argumenttabledescriptor.md) — Groups parameters for the creation of a Metal argument table.
+- [MTL4CommandAllocator](mtl4commandallocator.md) — Manages the memory backing the encoding of GPU commands into command buffers.
+- [MTL4CommandAllocatorDescriptor](mtl4commandallocatordescriptor.md) — Groups together parameters for creating a command allocator.
+- [MTL4CommitOptions](mtl4commitoptions.md) — Represents options to configure a commit operation on a command queue.
+- [MTL4CommitFeedback](mtl4commitfeedback.md) — Describes an object containing debug information from Metal to your app after completing a workload.
+- [MTL4CommitFeedbackHandler](mtl4commitfeedbackhandler.md) — Defines the block signature for a callback Metal invokes to provide your app feedback after completing a workload.

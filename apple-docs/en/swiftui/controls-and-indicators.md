@@ -1,0 +1,130 @@
+---
+title: Controls and indicators
+framework: SwiftUI
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/controls-and-indicators
+source_url: 'https://developer.apple.com/documentation/swiftui/controls-and-indicators'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/controls-and-indicators.json'
+content_hash: 'sha256:59e2bff55773a19e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# Controls and indicators
+
+<sub>API Collection</sub>
+
+Display values and get user selections.
+
+## Overview
+
+SwiftUI provides controls that enable user interaction specific to each platform and context. For example, people can initiate events with buttons and links, or choose among a set of discrete values with different kinds of pickers. You can also display information to the user with indicators like progress views and gauges.
+
+![](../../../attachments/3d1d4d9ddf1ec58056b340ea15756488/controls-and-indicators-hero@2x.png)
+
+Use these built-in controls and indicators when composing custom views, and style them to match the needs of your app’s user interface. For design guidance, see [Menus and actions](../design/human-interface-guidelines/menus-and-actions.md), [Selection and input](../design/human-interface-guidelines/selection-and-input.md), and [Status](../design/human-interface-guidelines/status.md) in the Human Interface Guidelines.
+
+## Topics
+
+### Creating buttons
+
+- [Button](button.md) — A control that initiates an action.
+- [buttonStyle(_:)](<view/buttonstyle(__).md>) — Sets the style for buttons within this view to a button style with a custom appearance and standard interaction behavior.
+- [buttonBorderShape(_:)](<view/buttonbordershape(__).md>) — Sets the border shape for buttons in this view.
+- [ButtonBorderShape](buttonbordershape.md) — A shape used to draw a button’s border.
+- [buttonRepeatBehavior(_:)](<view/buttonrepeatbehavior(__).md>) — Sets whether buttons in this view should repeatedly trigger their actions on prolonged interactions.
+- [ButtonRepeatBehavior](buttonrepeatbehavior.md) — The options for controlling the repeatability of button actions.
+- [buttonRepeatBehavior](environmentvalues/buttonrepeatbehavior.md) — Whether buttons with this associated environment should repeatedly trigger their actions on prolonged interactions.
+- [buttonSizing(_:)](<view/buttonsizing(__).md>) — The preferred sizing behavior of buttons in the view hierarchy.
+- [ButtonSizing](buttonsizing.md) — The sizing behavior of `Button`s and other button-like controls.
+- [ButtonRole](buttonrole.md) — A value that describes the purpose of a button.
+
+### Creating special-purpose buttons
+
+- [EditButton](editbutton.md) — A button that toggles the edit mode environment value.
+- [PasteButton](pastebutton.md) — A system button that reads items from the pasteboard and delivers it to a closure.
+- [RenameButton](renamebutton.md) — A button that triggers a standard rename action.
+
+### Linking to other content
+
+- [Link](link.md) — A control for navigating to a URL.
+- [ShareLink](sharelink.md) — A view that controls a sharing presentation.
+- [SharePreview](sharepreview.md) — A representation of a type to display in a share preview.
+- [TextFieldLink](textfieldlink.md) — A control that requests text input from the user when pressed.
+- [HelpLink](helplink.md) — A button with a standard appearance that opens app-specific help documentation.
+
+### Getting numeric inputs
+
+- [Slider](slider.md) — A control for selecting a value from a bounded linear range of values.
+- [Stepper](stepper.md) — A control that performs increment and decrement actions.
+- [Toggle](toggle.md) — A control that toggles between on and off states.
+- [toggleStyle(_:)](<view/togglestyle(__).md>) — Sets the style for toggles in a view hierarchy.
+
+### Choosing from a set of options
+
+- [Picker](picker.md) — A control for selecting from a set of mutually exclusive values.
+- [pickerStyle(_:)](<view/pickerstyle(__).md>) — Sets the style for pickers within this view.
+- [horizontalRadioGroupLayout()](<view/horizontalradiogrouplayout().md>) — Sets the style for radio group style pickers within this view to be horizontally positioned with the radio buttons inside the layout.
+- [defaultWheelPickerItemHeight(_:)](<view/defaultwheelpickeritemheight(__).md>) — Sets the default wheel-style picker item height.
+- [defaultWheelPickerItemHeight](environmentvalues/defaultwheelpickeritemheight.md) — The default height of an item in a wheel-style picker, such as a date picker.
+- [paletteSelectionEffect(_:)](<view/paletteselectioneffect(__).md>) — Specifies the selection effect to apply to a palette item.
+- [PaletteSelectionEffect](paletteselectioneffect.md) — The selection effect to apply to a palette item.
+
+### Choosing dates
+
+- [DatePicker](datepicker.md) — A control for selecting an absolute date.
+- [datePickerStyle(_:)](<view/datepickerstyle(__).md>) — Sets the style for date pickers within this view.
+- [MultiDatePicker](multidatepicker.md) — A control for picking multiple dates.
+- [calendar](environmentvalues/calendar.md) — The current calendar that views should use when handling dates.
+- [timeZone](environmentvalues/timezone.md) — The current time zone that views should use when handling dates.
+
+### Choosing a color
+
+- [ColorPicker](colorpicker.md) — A control used to select a color from the system color picker UI.
+
+### Indicating a value
+
+- [Gauge](gauge.md) — A view that shows a value within a range.
+- [gaugeStyle(_:)](<view/gaugestyle(__).md>) — Sets the style for gauges within this view.
+- [ProgressView](progressview.md) — A view that shows the progress toward completion of a task.
+- [progressViewStyle(_:)](<view/progressviewstyle(__).md>) — Sets the style for progress views in this view.
+- [DefaultDateProgressLabel](defaultdateprogresslabel.md) — The default type of the current value label when used by a date-relative progress view.
+- [DefaultButtonLabel](defaultbuttonlabel.md) — The default label to use for a button.
+
+### Indicating missing content
+
+- [ContentUnavailableView](contentunavailableview.md) — An interface, consisting of a label and additional content, that you display when the content of your app is unavailable to users.
+
+### Providing haptic feedback
+
+- [sensoryFeedback(_:trigger:)](<view/sensoryfeedback(__trigger_).md>) — Plays the specified `feedback` when the provided `trigger` value changes.
+- [sensoryFeedback(trigger:_:)](<view/sensoryfeedback(trigger___).md>) — Plays feedback when returned from the `feedback` closure after the provided `trigger` value changes.
+- [sensoryFeedback(_:trigger:condition:)](<view/sensoryfeedback(__trigger_condition_).md>) — Plays the specified `feedback` when the provided `trigger` value changes and the `condition` closure returns `true`.
+- [SensoryFeedback](sensoryfeedback.md) — Represents a type of haptic and/or audio feedback that can be played.
+
+### Sizing controls
+
+- [controlSize(_:)](<view/controlsize(__).md>) — Sets the size for controls within this view.
+- [controlSize](environmentvalues/controlsize.md) — The size to apply to controls within a view.
+- [ControlSize](controlsize.md) — The size classes, like regular or small, that you can apply to controls within a view.
+
+## See Also
+
+### Views
+
+- [View fundamentals](view-fundamentals.md) — Define the visual elements of your app using a hierarchy of views.
+- [View configuration](view-configuration.md) — Adjust the characteristics of views in a hierarchy.
+- [View styles](view-styles.md) — Apply built-in and custom appearances and behaviors to different types of views.
+- [Animations](animations.md) — Create smooth visual updates in response to state changes.
+- [Text input and output](text-input-and-output.md) — Display formatted text and get text input from the user.
+- [Images](images.md) — Add images and symbols to your app’s user interface.
+- [Menus and commands](menus-and-commands.md) — Provide space-efficient, context-dependent access to commands and controls.
+- [Shapes](shapes.md) — Trace and fill built-in and custom shapes with a color, gradient, or other pattern.
+- [Drawing and graphics](drawing-and-graphics.md) — Enhance your views with graphical effects and customized drawings.

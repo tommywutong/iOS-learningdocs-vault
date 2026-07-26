@@ -1,0 +1,47 @@
+---
+title: UISplitViewController.DisplayMode.oneOverSecondary
+framework: UIKit
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.1+, tvOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uisplitviewcontroller/displaymode-swift.enum/oneoversecondary
+source_url: 'https://developer.apple.com/documentation/uikit/uisplitviewcontroller/displaymode-swift.enum/oneoversecondary'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uisplitviewcontroller/displaymode-swift.enum/oneoversecondary.json'
+content_hash: 'sha256:f0f5bbd4d8534a5e'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [UIKit](../../../uikit.md) · [UISplitViewController](../../uisplitviewcontroller.md) · [DisplayMode](../displaymode-swift.enum.md)
+
+# UISplitViewController.DisplayMode.oneOverSecondary
+
+<sub>Case</sub>
+
+One sidebar is layered on top of the secondary view controller, leaving the secondary view controller partially visible.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS</sub>
+
+```swift
+case oneOverSecondary
+```
+
+## Discussion
+
+This display mode shows one sidebar layered on top of the secondary view controller, partially obscuring it. The sidebar shown is the primary column for [UISplitViewControllerStyleDoubleColumn](../style-swift.enum/doublecolumn.md) interfaces and the supplementary column for [UISplitViewControllerStyleTripleColumn](../style-swift.enum/triplecolumn.md) interfaces. The secondary view controller is dimmed out, preventing interaction with its view. Touching the dimmed view dismisses the overlay and returns the interface to the [UISplitViewControllerDisplayModeSecondaryOnly](secondaryonly.md) display mode.
+
+This display mode is available for the [UISplitViewControllerSplitBehaviorOverlay](../splitbehavior-swift.enum/overlay.md) split behavior.
+
+## See Also
+
+### Constants
+
+- [UISplitViewControllerDisplayModeAutomatic](automatic.md) — The split view controller automatically decides the most appropriate display mode based on the device and the current app size.
+- [UISplitViewControllerDisplayModeSecondaryOnly](secondaryonly.md) — Only the secondary view controller is shown onscreen.
+- [UISplitViewControllerDisplayModeOneBesideSecondary](onebesidesecondary.md) — One sidebar appears side-by-side with the secondary view controller.
+- [UISplitViewControllerDisplayModeTwoBesideSecondary](twobesidesecondary.md) — Two sidebars appear side-by-side with the secondary view controller.
+- [UISplitViewControllerDisplayModeTwoOverSecondary](twooversecondary.md) — Two sidebars are layered on top of the secondary view controller, leaving the secondary view controller partially visible.
+- [UISplitViewControllerDisplayModeTwoDisplaceSecondary](twodisplacesecondary.md) — Two sidebars displace the secondary view controller instead of overlapping it, moving it partially offscreen.

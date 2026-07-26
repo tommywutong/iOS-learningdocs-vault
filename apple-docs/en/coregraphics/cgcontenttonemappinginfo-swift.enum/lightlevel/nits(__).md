@@ -1,0 +1,28 @@
+---
+title: 'CGContentToneMappingInfo.LightLevel.nits(_:)'
+framework: Core Graphics
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, macOS 26.0+, tvOS 26.0+, visionOS 26.0+, watchOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/coregraphics/cgcontenttonemappinginfo-swift.enum/lightlevel/nits(_:)'
+source_url: 'https://developer.apple.com/documentation/coregraphics/cgcontenttonemappinginfo-swift.enum/lightlevel/nits(_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coregraphics/cgcontenttonemappinginfo-swift.enum/lightlevel/nits%28_%3A%29.json'
+content_hash: 'sha256:43bf649d6d179311'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Core Graphics](../../../coregraphics.md) · [CGContentToneMappingInfo](../../cgcontenttonemappinginfo-swift.enum.md) · [LightLevel](../lightlevel.md)
+
+# CGContentToneMappingInfo.LightLevel.nits(_:)
+
+<sub>Case</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+case nits(Int)
+```

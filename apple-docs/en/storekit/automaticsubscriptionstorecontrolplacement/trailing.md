@@ -1,0 +1,41 @@
+---
+title: trailing
+framework: StoreKit
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [tvOS 18.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/storekit/automaticsubscriptionstorecontrolplacement/trailing
+source_url: 'https://developer.apple.com/documentation/storekit/automaticsubscriptionstorecontrolplacement/trailing'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/automaticsubscriptionstorecontrolplacement/trailing.json'
+content_hash: 'sha256:dba3c3a6d3b24eb9'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [StoreKit](../../storekit.md) · [AutomaticSubscriptionStoreControlPlacement](../automaticsubscriptionstorecontrolplacement.md)
+
+# trailing
+
+<sub>Type Property</sub>
+
+A placement that anchors the subscription controls to the trailing edge of the view.
+
+<sub>tvOS</sub>
+
+```swift
+static var trailing: AutomaticSubscriptionStoreControlPlacement { get }
+```
+
+## See Also
+
+### Getting automatic placements
+
+- [automatic](automatic.md) — A context-appropriate placement that the system determines automatically.
+- [bottomBar](bottombar.md) — A placement that locates the subscription controls in a bar near the bottom of the main scroll view in a subscription store view.
+- [buttonsInBottomBar](buttonsinbottombar.md) — A hybrid placement that positions subscription controls within the main scroll view, and places auxiliary buttons in the bottom bar.
+- [scrollView](scrollview.md) — A placement that locates the subscription controls within the main scroll view of a subscription store view.
+- [bottom](bottom.md) — A placement that anchors the subscription controls to the bottom edge of the view.
+- [leading](leading.md) — A placement that anchors the subscription controls to the leading edge of the view.

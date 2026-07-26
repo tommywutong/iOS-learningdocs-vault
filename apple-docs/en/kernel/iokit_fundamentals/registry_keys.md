@@ -1,0 +1,99 @@
+---
+title: Registry Keys
+framework: Kernel
+symbol_kind: symbol
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/kernel/iokit_fundamentals/registry_keys
+source_url: 'https://developer.apple.com/documentation/kernel/iokit_fundamentals/registry_keys'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/kernel/iokit_fundamentals/registry_keys.json'
+content_hash: 'sha256:9a202d8db28fd4df'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Kernel](../../kernel.md) · [IOKit Fundamentals](../iokit_fundamentals.md)
+
+# Registry Keys
+
+<sub>API Collection</sub>
+
+## Topics
+
+### Keys
+
+- [gIOPropertyExistsMatchKey](../giopropertyexistsmatchkey.md)
+- [gIOPropertyMatchKey](../giopropertymatchkey.md)
+- [gIOProviderClassKey](../gioproviderclasskey.md)
+- [gIORegistryEntryIDKey](../gioregistryentryidkey.md)
+- [gIORegistryEntryPropertyKeysKey](../gioregistryentrypropertykeyskey.md)
+- [gIORematchCountKey](../giorematchcountkey.md)
+- [gIORematchPersonalityKey](../giorematchpersonalitykey.md)
+- [gIOResourceIOKitKey](../gioresourceiokitkey.md)
+- [gIOResourceMatchKey](../gioresourcematchkey.md)
+- [gIOResourceMatchedKey](../gioresourcematchedkey.md)
+- [gIOResourcesKey](../gioresourceskey.md)
+- [gIOServiceDEXTEntitlementsKey](../gioservicedextentitlementskey.md)
+- [gIOServiceKey](../gioservicekey.md)
+- [gIOServicePlane](../gioserviceplane.md)
+- [gIOSupportedPropertiesKey](../giosupportedpropertieskey.md)
+- [gIOUserClassKey](../giouserclasskey.md)
+- [gIOUserClientClassKey](../giouserclientclasskey.md)
+- [gIOUserServerClassKey](../giouserserverclasskey.md)
+- [gIOUserServerNameKey](../giouserservernamekey.md)
+- [gIOUserServerTagKey](../giouserservertagkey.md)
+- [gIOUserServicePropertiesKey](../giouserservicepropertieskey.md)
+- [gIOUserUserClientKey](../giouseruserclientkey.md)
+- [gIOInterruptControllersKey](../giointerruptcontrollerskey.md)
+- [gIOInterruptSpecifiersKey](../giointerruptspecifierskey.md)
+- [gIOKitDebugKey](../giokitdebugkey.md)
+- [gIOLocationKey](../giolocationkey.md)
+- [gIOLocationMatchKey](../giolocationmatchkey.md)
+- [gIOMapperIDKey](../giomapperidkey.md)
+- [gIOMatchCategoryKey](../giomatchcategorykey.md)
+- [gIOMatchDeferKey](../giomatchdeferkey.md)
+- [gIOMatchedNotification](../giomatchednotification.md)
+- [gIOMatchedPersonalityKey](../giomatchedpersonalitykey.md)
+- [gIOMatchedServiceCountKey](../giomatchedservicecountkey.md)
+- [gIONameKey](../gionamekey.md)
+- [gIONameMatchKey](../gionamematchkey.md)
+- [gIONameMatchedKey](../gionamematchedkey.md)
+- [gIOParentMatchKey](../gioparentmatchkey.md)
+- [gIOPathMatchKey](../giopathmatchkey.md)
+- [gIOPlatformActiveActionKey](../gioplatformactiveactionkey.md)
+- [gIOPlatformHaltRestartActionKey](../gioplatformhaltrestartactionkey.md)
+- [gIOPlatformPanicActionKey](../gioplatformpanicactionkey.md)
+- [gIOPlatformQuiesceActionKey](../gioplatformquiesceactionkey.md)
+- [gIOPlatformSleepActionKey](../gioplatformsleepactionkey.md)
+- [gIOPlatformWakeActionKey](../gioplatformwakeactionkey.md)
+- [gIOBSDKey](../giobsdkey.md)
+- [gIOBSDMajorKey](../giobsdmajorkey.md)
+- [gIOBSDMinorKey](../giobsdminorkey.md)
+- [gIOBSDNameKey](../giobsdnamekey.md)
+- [gIOBSDUnitKey](../giobsdunitkey.md)
+- [gIOCommandPoolSizeKey](../giocommandpoolsizekey.md)
+- [gIODEXTMatchCountKey](../giodextmatchcountkey.md)
+- [gIODTAAPLInterruptsKey](../giodtaaplinterruptskey.md)
+- [gIODTCompatibleKey](../giodtcompatiblekey.md)
+- [gIODTModelKey](../giodtmodelkey.md)
+- [gIODTNWInterruptMappingKey](../giodtnwinterruptmappingkey.md)
+- [gIODTPHandleKey](../giodtphandlekey.md)
+- [gIODTTargetTypeKey](../giodttargettypekey.md)
+- [gIODTTypeKey](../giodttypekey.md)
+- [gIODefaultMatchCategoryKey](../giodefaultmatchcategorykey.md)
+- [gIODeviceMemoryKey](../giodevicememorykey.md)
+- [gIODriverKitEntitlementKey](../giodriverkitentitlementkey.md)
+- [gIODriverKitUserClientEntitlementsKey](../giodriverkitusercliententitlementskey.md)
+
+## See Also
+
+### Driver Registry
+
+- [IORegistryEntry](../ioregistryentry.md) — The base class for all objects in the registry.
+- [IORegistryIterator](../ioregistryiterator.md) — An iterator over the registry.
+- [IOBSDNameMatching](../1575336-iobsdnamematching.md) — Create a matching dictionary that specifies an IOService match based on BSD device name.
+- [IOPrintPlane](../1558295-ioprintplane.md)
+- [Registry Utilities](registry_utilities.md)

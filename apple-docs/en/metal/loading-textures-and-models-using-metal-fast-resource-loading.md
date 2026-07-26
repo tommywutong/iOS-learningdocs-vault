@@ -1,0 +1,58 @@
+---
+title: Loading textures and models using Metal fast resource loading
+framework: Metal
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [macOS 13.0+, Xcode 14.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/loading-textures-and-models-using-metal-fast-resource-loading
+source_url: 'https://developer.apple.com/documentation/metal/loading-textures-and-models-using-metal-fast-resource-loading'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/loading-textures-and-models-using-metal-fast-resource-loading.json'
+content_hash: 'sha256:683466c123242b0a'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Metal sample code library](metal-sample-code-library.md)
+
+# Loading textures and models using Metal fast resource loading
+
+<sub>Sample Code</sub>
+
+Stream texture and buffer data directly from disk into Metal resources using fast resource loading.
+
+## Overview
+
+> [!note] Note
+> This sample code project is associated with WWDC22 session [10104: Load resources faster with Metal 3](https://developer.apple.com/wwdc22/10104/).
+
+### Configure the sample code project
+
+This sample code project requires the following:
+
+- macOS 13 or later, and a Mac with Apple silicon
+- Xcode 14 or later
+
+## See Also
+
+### Render workflows
+
+- [Using Metal to draw a view’s contents](using-metal-to-draw-a-view's-contents.md) — Create a MetalKit view and a render pass to draw the view’s contents.
+- [Drawing a triangle with Metal 4](drawing-a-triangle-with-metal-4.md) — Render a colorful, rotating 2D triangle by running draw commands with a render pipeline on a GPU.
+- [Selecting device objects for graphics rendering](selecting-device-objects-for-graphics-rendering.md) — Switch dynamically between multiple GPUs to efficiently render to a display.
+- [Customizing render pass setup](customizing-render-pass-setup.md) — Render into an offscreen texture by creating a custom render pass.
+- [Creating a custom Metal view](creating-a-custom-metal-view.md) — Implement a lightweight view for Metal rendering that’s customized to your app’s needs.
+- [Calculating primitive visibility using depth testing](calculating-primitive-visibility-using-depth-testing.md) — Determine which pixels are visible in a scene by using a depth texture.
+- [Encoding indirect command buffers on the CPU](encoding-indirect-command-buffers-on-the-cpu.md) — Reduce CPU overhead and simplify your command execution by reusing commands.
+- [Implementing order-independent transparency with image blocks](implementing-order-independent-transparency-with-image-blocks.md) — Draw overlapping, transparent surfaces in any order by using tile shaders and image blocks.
+- [Adjusting the level of detail using Metal mesh shaders](adjusting-the-level-of-detail-using-metal-mesh-shaders.md) — Choose and render meshes with several levels of detail using object and mesh shaders.
+- [Creating a 3D application with hydra rendering](creating-a-3d-application-with-hydra-rendering.md) — Build a 3D application that integrates with Hydra and USD.
+- [Culling occluded geometry using the visibility result buffer](culling-occluded-geometry-using-the-visibility-result-buffer.md) — Draw a scene without rendering hidden geometry by checking whether each object in the scene is visible.
+- [Improving edge-rendering quality with multisample antialiasing (MSAA)](improving-edge-rendering-quality-with-multisample-antialiasing-msaa.md) — Apply MSAA to enhance the rendering of edges with custom resolve options and immediate and tile-based resolve paths.
+- [Achieving smooth frame rates with a Metal display link](achieving-smooth-frame-rates-with-a-metal-display-link.md) — Pace rendering with minimal input latency while providing essential information to the operating system for power-efficient rendering, thermal mitigation, and the scheduling of sustainable workloads.
+
+## Download
+
+- [LoadingTexturesAndModelsUsingMetalFastResourceLoading.zip](https://docs-assets.developer.apple.com/published/6015a250e92b/LoadingTexturesAndModelsUsingMetalFastResourceLoading.zip)

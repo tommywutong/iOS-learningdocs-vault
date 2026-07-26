@@ -1,0 +1,53 @@
+---
+title: privateFrameworksURL
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 4.0+, iPadOS 4.0+, Mac Catalyst 13.1+, macOS 10.6+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/bundle/privateframeworksurl
+source_url: 'https://developer.apple.com/documentation/foundation/bundle/privateframeworksurl'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/bundle/privateframeworksurl.json'
+content_hash: 'sha256:1dd76d6ee80c045d'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [Bundle](../bundle.md)
+
+# privateFrameworksURL
+
+<sub>Instance Property</sub>
+
+The file URL of the bundle’s subdirectory containing private frameworks.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var privateFrameworksURL: URL? { get }
+```
+
+## Discussion
+
+This property contains the appropriate path for modern application and framework bundles. This property may not be a URL for non-standard bundle formats or for some older bundle formats.
+
+## See Also
+
+### Getting the standard bundle directories
+
+- [resourceURL](resourceurl.md) — The file URL of the bundle’s subdirectory containing resource files.
+- [executableURL](executableurl.md) — The file URL of the receiver’s executable file.
+- [sharedFrameworksURL](sharedframeworksurl.md) — The file URL of the receiver’s subdirectory containing shared frameworks.
+- [builtInPlugInsURL](builtinpluginsurl.md) — The file URL of the receiver’s subdirectory containing plug-ins.
+- [- URLForAuxiliaryExecutable:](<url(forauxiliaryexecutable_).md>) — Returns the file URL of the executable with the specified name in the receiver’s bundle.
+- [sharedSupportURL](sharedsupporturl.md) — The file URL of the bundle’s subdirectory containing shared support files.
+- [appStoreReceiptURL](appstorereceipturl.md) — The file URL for the bundle’s App Store receipt. _(deprecated)_
+- [resourcePath](resourcepath.md) — The full pathname of the bundle’s subdirectory containing resources.
+- [executablePath](executablepath.md) — The full pathname of the receiver’s executable file.
+- [privateFrameworksPath](privateframeworkspath.md) — The full pathname of the bundle’s subdirectory containing private frameworks.
+- [sharedFrameworksPath](sharedframeworkspath.md) — The full pathname of the bundle’s subdirectory containing shared frameworks.
+- [builtInPlugInsPath](builtinpluginspath.md) — The full pathname of the receiver’s subdirectory containing plug-ins.
+- [- pathForAuxiliaryExecutable:](<path(forauxiliaryexecutable_).md>) — Returns the full pathname of the executable with the specified name in the receiver’s bundle.
+- [sharedSupportPath](sharedsupportpath.md) — The full pathname of the bundle’s subdirectory containing shared support files.

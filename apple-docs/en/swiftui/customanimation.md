@@ -1,0 +1,126 @@
+---
+title: CustomAnimation
+framework: SwiftUI
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, macOS 14.0+, tvOS 17.0+, visionOS 1.0+, watchOS 10.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/customanimation
+source_url: 'https://developer.apple.com/documentation/swiftui/customanimation'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/customanimation.json'
+content_hash: 'sha256:c75604800cc455cf'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# CustomAnimation
+
+<sub>Protocol</sub>
+
+A type that defines how an animatable value changes over time.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@preconcurrency protocol CustomAnimation : Hashable, Sendable
+```
+
+## Overview
+
+Use this protocol to create a type that changes an animatable value over time, which produces a custom visual transition of a view. For example, the follow code changes an animatable value using an elastic ease-in ease-out function:
+
+```swift
+struct ElasticEaseInEaseOutAnimation: CustomAnimation {
+    let duration: TimeInterval
+
+    func animate<V>(value: V, time: TimeInterval, context: inout AnimationContext<V>) -> V? where V : VectorArithmetic {
+        if time > duration { return nil } // The animation has finished.
+
+        let p = time / duration
+        let s = sin((20 * p - 11.125) * ((2 * Double.pi) / 4.5))
+        if p < 0.5 {
+            return value.scaled(by: -(pow(2, 20 * p - 10) * s) / 2)
+        } else {
+            return value.scaled(by: (pow(2, -20 * p + 10) * s) / 2 + 1)
+        }
+    }
+}
+```
+
+> [!note] Note
+> To maintain state during the life span of a custom animation, use the [state](animationcontext/state.md) property available on the `context` parameter value. You can also use context’s [environment](animationcontext/environment.md) property to retrieve environment values from the view that created the custom animation. For more information, see [AnimationContext](animationcontext.md).
+
+To create an [Animation](animation.md) instance of a custom animation, use the [init(_:)](<animation/init(__).md>) initializer, passing in an instance of a custom animation; for example:
+
+```swift
+Animation(ElasticEaseInEaseOutAnimation(duration: 5.0))
+```
+
+To help make view code more readable, extend [Animation](animation.md) and add a static property and function that returns an `Animation` instance of a custom animation. For example, the following code adds the static property `elasticEaseInEaseOut` that returns the elastic ease-in ease-out animation with a default duration of `0.35` seconds. Next, the code adds a method that returns the animation with a specified duration.
+
+```swift
+extension Animation {
+    static var elasticEaseInEaseOut: Animation { elasticEaseInEaseOut(duration: 0.35) }
+    static func elasticEaseInEaseOut(duration: TimeInterval) -> Animation {
+        Animation(ElasticEaseInEaseOutAnimation(duration: duration))
+    }
+}
+```
+
+To animate a view with the elastic ease-in ease-out animation, a view calls either `.elasticEaseInEaseOut` or `.elasticEaseInEaseOut(duration:)`. For example, the follow code includes an Animate button that, when clicked, animates a circle as it moves from one edge of the view to the other, using the elastic ease-in ease-out animation with a duration of `5` seconds:
+
+```swift
+struct ElasticEaseInEaseOutView: View {
+    @State private var isActive = false
+
+    var body: some View {
+        VStack(alignment: isActive ? .trailing : .leading) {
+            Circle()
+                .frame(width: 100.0)
+                .foregroundColor(.accentColor)
+
+            Button("Animate") {
+                withAnimation(.elasticEaseInEaseOut(duration: 5.0)) {
+                    isActive.toggle()
+                }
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .padding()
+    }
+}
+```
+
+[A video that shows a circle that moves from one edge of the view to the other using an elastic ease-in ease-out animation. The circle's initial position is near the leading edge of the view. The circle begins moving slightly towards the leading, then towards trail edges of the view before it moves off the leading edge showing only two-thirds of the circle. The circle then moves quickly to the trailing edge of the view, going slightly beyond the edge so that only two-thirds of the circle is visible. The circle bounces back into full view before settling into position near the trailing edge of the view. The circle repeats this animation in reverse, going from the trailing edge of the view to the leading edge.](https://docs-assets.developer.apple.com/published/42cf84f4e803f09fbf8fcfd0ec9b0b00/animation-20-elastic.mp4)
+
+## Relationships
+
+- **Inherits From**: [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Animating a value
+
+- [animate(value:time:context:)](<customanimation/animate(value_time_context_).md>) — Calculates the value of the animation at the specified time.
+
+### Getting the velocity
+
+- [velocity(value:time:context:)](<customanimation/velocity(value_time_context_).md>) — Calculates the velocity of the animation at a specified time.
+
+### Determining whether to merge
+
+- [shouldMerge(previous:value:time:context:)](<customanimation/shouldmerge(previous_value_time_context_).md>) — Determines whether an instance of the animation can merge with other running animations.
+
+## See Also
+
+### Creating custom animations
+
+- [AnimationContext](animationcontext.md) — Contextual values that a custom animation can use to manage state and access a view’s environment.
+- [AnimationState](animationstate.md) — A container that stores the state for a custom animation.
+- [AnimationStateKey](animationstatekey.md) — A key for accessing animation state values.
+- [UnitCurve](unitcurve.md) — A  function defined by a two-dimensional curve that maps an input progress in the range [0,1] to an output progress that is also in the range [0,1]. By changing the shape of the curve, the effective speed of an animation or other interpolation can be changed.
+- [Spring](spring.md) — A representation of a spring’s motion.

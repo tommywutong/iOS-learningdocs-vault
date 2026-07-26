@@ -1,0 +1,70 @@
+---
+title: 'updateValue(_:forKey:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/dictionary/updatevalue(_:forkey:)'
+source_url: 'https://developer.apple.com/documentation/swift/dictionary/updatevalue(_:forkey:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/dictionary/updatevalue%28_%3Aforkey%3A%29.json'
+content_hash: 'sha256:404c525c91cc3ae0'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Dictionary](../dictionary.md)
+
+# updateValue(_:forKey:)
+
+<sub>Instance Method</sub>
+
+Updates the value stored in the dictionary for the given key, or adds a new key-value pair if the key does not exist.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@discardableResult mutating func updateValue(_ value: Value, forKey key: Key) -> Value?
+```
+
+## Parameters
+
+- `value` — The new value to add to the dictionary.
+
+- `key` — The key to associate with `value`. If `key` already exists in the dictionary, `value` replaces the existing associated value. If `key` isn’t already a key of the dictionary, the `(key, value)` pair is added.
+
+## Return Value
+
+The value that was replaced, or `nil` if a new key-value pair was added.
+
+## Discussion
+
+Use this method instead of key-based subscripting when you need to know whether the new value supplants the value of an existing key. If the value of an existing key is updated, `updateValue(_:forKey:)` returns the original value.
+
+```swift
+var hues = ["Heliotrope": 296, "Coral": 16, "Aquamarine": 156]
+
+if let oldValue = hues.updateValue(18, forKey: "Coral") {
+    print("The old value of \(oldValue) was replaced with a new one.")
+}
+// Prints "The old value of 16 was replaced with a new one."
+```
+
+If the given key is not present in the dictionary, this method adds the key-value pair and returns `nil`.
+
+```swift
+if let oldValue = hues.updateValue(330, forKey: "Cerise") {
+    print("The old value of \(oldValue) was replaced with a new one.")
+} else {
+    print("No value was found in the dictionary for that key.")
+}
+// Prints "No value was found in the dictionary for that key."
+```
+
+## See Also
+
+### Adding Keys and Values
+
+- [reserveCapacity(_:)](<reservecapacity(__).md>) — Reserves enough space to store the specified number of key-value pairs.

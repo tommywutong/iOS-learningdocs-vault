@@ -1,0 +1,58 @@
+---
+title: toUnicodeName
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 9.0+, iPadOS 9.0+, Mac Catalyst 13.1+, macOS 10.11+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, occ, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/stringtransform/tounicodename
+source_url: 'https://developer.apple.com/documentation/foundation/stringtransform/tounicodename'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/stringtransform/tounicodename.json'
+content_hash: 'sha256:65ac0a1de5fe2fe5'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [StringTransform](../stringtransform.md)
+
+# toUnicodeName
+
+<sub>Type Property</sub>
+
+An identifier for a transform that converts characters to Unicode names.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let toUnicodeName: StringTransform
+```
+
+## Discussion
+
+For example, the string “🐶🐮” transforms to `"``\N{DOG FACE}\N{COW FACE}"` .
+
+Passing this constant to the [- applyTransform:reverse:range:updatedRange:](<../nsmutablestring/applytransform(__reverse_range_updatedrange_).md>) method is equivalent to passing [kCFStringTransformToUnicodeName](../../corefoundation/kcfstringtransformtounicodename.md) to [CFStringTransform(_:_:_:_:)](<../../corefoundation/cfstringtransform(________).md>).
+
+> [!note] Note
+> The result of a forward transformation delimits each Unicode name with enclosing curly braces and the leading character sequence `"\N"`. In some programming languages, `"\N{...}"` is used as an escape sequence for Unicode characters in strings and regular expressions; this isn’t supported in Swift or Objective-C. To perform the reverse transform of a string literal in Swift or Objective-C, escape the leading backslash (`"\\N{...}"`) for each Unicode name.
+
+## See Also
+
+### Constants
+
+- [NSStringTransformLatinToKatakana](latintokatakana.md) — A constant containing the transliteration of a string from Latin script to Katakana script.
+- [NSStringTransformLatinToHiragana](latintohiragana.md) — A constant containing the transliteration of a string from Latin script to Hiragana script.
+- [NSStringTransformLatinToHangul](latintohangul.md) — A constant containing the transliteration of a string from Latin script to Hangul script.
+- [NSStringTransformLatinToArabic](latintoarabic.md) — A constant containing the transliteration of a string from Latin script to Arabic script.
+- [NSStringTransformLatinToHebrew](latintohebrew.md) — A constant containing the transliteration of a string from Latin script to Hebrew script.
+- [NSStringTransformLatinToThai](latintothai.md) — A constant containing the transliteration of a string from Latin script to Thai script.
+- [NSStringTransformLatinToCyrillic](latintocyrillic.md) — A constant containing the transliteration of a string from Latin script to Cyrillic script.
+- [NSStringTransformToLatin](tolatin.md) — A constant containing the transliteration of a string from any script to Latin script.
+- [NSStringTransformMandarinToLatin](mandarintolatin.md) — A constant containing the transliteration of a string from Han script to Latin.
+- [NSStringTransformHiraganaToKatakana](hiraganatokatakana.md) — A constant containing the transliteration of a string from Hiragana script to Katakana script.
+- [NSStringTransformFullwidthToHalfwidth](fullwidthtohalfwidth.md) — A constant containing the transformation of a string from full-width CJK characters to half-width forms.
+- [NSStringTransformToXMLHex](toxmlhex.md) — A constant containing the transformation of a string from characters to XML hexadecimal escape codes.
+- [NSStringTransformStripCombiningMarks](stripcombiningmarks.md) — A constant containing the transformation of a string by removing combining marks.
+- [NSStringTransformStripDiacritics](stripdiacritics.md) — A constant containing the transformation of a string by removing diacritics.

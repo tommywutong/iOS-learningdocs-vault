@@ -1,0 +1,134 @@
+---
+title: String.UTF8View
+framework: Swift
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/string/utf8view
+source_url: 'https://developer.apple.com/documentation/swift/string/utf8view'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/string/utf8view.json'
+content_hash: 'sha256:197cbc29dfc194e5'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [String](../string.md)
+
+# String.UTF8View
+
+<sub>Structure</sub>
+
+A view of a string’s contents as a collection of UTF-8 code units.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@frozen struct UTF8View
+```
+
+## Overview
+
+You can access a string’s view of UTF-8 code units by using its `utf8` property. A string’s UTF-8 view encodes the string’s Unicode scalar values as 8-bit integers.
+
+```swift
+let flowers = "Flowers 💐"
+for v in flowers.utf8 {
+    print(v)
+}
+// 70
+// 108
+// 111
+// 119
+// 101
+// 114
+// 115
+// 32
+// 240
+// 159
+// 146
+// 144
+```
+
+A string’s Unicode scalar values can be up to 21 bits in length. To represent those scalar values using 8-bit integers, more than one UTF-8 code unit is often required.
+
+```swift
+let flowermoji = "💐"
+for v in flowermoji.unicodeScalars {
+    print(v, v.value)
+}
+// 💐 128144
+
+for v in flowermoji.utf8 {
+    print(v)
+}
+// 240
+// 159
+// 146
+// 144
+```
+
+In the encoded representation of a Unicode scalar value, each UTF-8 code unit after the first is called a _continuation byte_.
+
+## UTF8View Elements Match Encoded C Strings
+
+Swift streamlines interoperation with C string APIs by letting you pass a `String` instance to a function as an `Int8` or `UInt8` pointer. When you call a C function using a `String`, Swift automatically creates a buffer of UTF-8 code units and passes a pointer to that buffer. The code units of that buffer match the code units in the string’s `utf8` view.
+
+The following example uses the C `strncmp` function to compare the beginning of two Swift strings. The `strncmp` function takes two `const char*` pointers and an integer specifying the number of characters to compare. Because the strings are identical up to the 14th character, comparing only those characters results in a return value of `0`.
+
+```swift
+let s1 = "They call me 'Bell'"
+let s2 = "They call me 'Stacey'"
+
+print(strncmp(s1, s2, 14))
+// Prints "0"
+print(String(s1.utf8.prefix(14))!)
+// Prints "They call me '"
+```
+
+Extending the compared character count to 15 includes the differing characters, so a nonzero result is returned.
+
+```swift
+print(strncmp(s1, s2, 15))
+// Prints "-17"
+print(String(s1.utf8.prefix(15))!)
+// Prints "They call me 'B"
+```
+
+## Relationships
+
+- **Conforms To**: [BidirectionalCollection](../bidirectionalcollection.md), [Collection](../collection.md), [Copyable](../copyable.md), [CustomDebugStringConvertible](../customdebugstringconvertible.md), [CustomReflectable](../customreflectable.md), [CustomStringConvertible](../customstringconvertible.md), [Escapable](../escapable.md), [Sendable](../sendable.md), [SendableMetatype](../sendablemetatype.md), [Sequence](../sequence.md)
+
+## Topics
+
+### Instance Properties
+
+- [customPlaygroundQuickLook](utf8view/customplaygroundquicklook.md) — A custom playground Quick Look for this instance.
+- [span](utf8view/span.md) — A span over the UTF-8 code units that make up this string.
+
+### Instance Methods
+
+- [isTriviallyIdentical(to:)](<utf8view/istriviallyidentical(to_).md>) — Returns a boolean value indicating whether this UTF8 view is trivially identical to `other`. _(beta)_
+
+### Default Implementations
+
+- [BidirectionalCollection Implementations](utf8view/bidirectionalcollection-implementations.md)
+- [Collection Implementations](utf8view/collection-implementations.md)
+- [CustomDebugStringConvertible Implementations](utf8view/customdebugstringconvertible-implementations.md)
+- [CustomReflectable Implementations](utf8view/customreflectable-implementations.md)
+- [CustomStringConvertible Implementations](utf8view/customstringconvertible-implementations.md)
+- [Sequence Implementations](utf8view/sequence-implementations.md)
+
+## See Also
+
+### Related String Types
+
+- [Substring](../substring.md) — A slice of a string.
+- [StringProtocol](../stringprotocol.md) — A type that can represent a string as a collection of characters.
+- [Index](index.md) — A position of a character or code unit in a string.
+- [UnicodeScalarView](unicodescalarview.md) — A view of a string’s contents as a collection of Unicode scalar values.
+- [UTF16View](utf16view.md) — A view of a string’s contents as a collection of UTF-16 code units.
+- [Iterator](iterator.md) — A type that provides the collection’s iteration interface and encapsulates its iteration state.
+- [Encoding](encoding.md)

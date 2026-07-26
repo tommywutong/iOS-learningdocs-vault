@@ -1,0 +1,74 @@
+---
+title: 'init(_:value:in:step:format:onEditingChanged:)'
+framework: SwiftUI
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, macOS 13.0+, visionOS 1.0+, watchOS 9.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swiftui/stepper/init(_:value:in:step:format:oneditingchanged:)'
+source_url: 'https://developer.apple.com/documentation/swiftui/stepper/init(_:value:in:step:format:oneditingchanged:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/stepper/init%28_%3Avalue%3Ain%3Astep%3Aformat%3Aoneditingchanged%3A%29.json'
+content_hash: 'sha256:56c6b2af0eedc321'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [Stepper](../stepper.md)
+
+# init(_:value:in:step:format:onEditingChanged:)
+
+<sub>Initializer</sub>
+
+Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide, displaying its value with an applied format style.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, visionOS, watchOS</sub>
+
+```swift
+@export(implementation) nonisolated init<F>(_ titleResource: LocalizedStringResource, value: Binding<F.FormatInput>, in bounds: ClosedRange<F.FormatInput>, step: F.FormatInput.Stride = 1, format: F, onEditingChanged: @escaping (Bool) -> Void = { _ in }) where F : ParseableFormatStyle, F.FormatInput : BinaryFloatingPoint, F.FormatOutput == String
+```
+
+## Parameters
+
+- `titleResource` — Text resource for the stepper’s localized title describing the purpose of the stepper.
+
+- `value` — A [Binding](../binding.md) to a value that your provide.
+
+- `bounds` — A closed range that describes the upper and lower bounds permitted by the stepper.
+
+- `step` — The amount to increment or decrement `value` each time the user clicks or taps the stepper’s increment or decrement button, respectively. Defaults to `1`.
+
+- `format` — A format style of type `F` to use when converting between the string the user edits and the underlying value of type `F.FormatInput`. If `format` can’t perform the conversion, the stepper leaves `value` unchanged. If the user stops editing the text in an invalid state, the stepper updates the text to the last known valid value.
+
+- `onEditingChanged` — A closure that’s called when editing begins and ends. For example, on iOS, the user may touch and hold the increment or decrement buttons on a `Stepper` which causes the execution of the `onEditingChanged` closure at the start and end of the gesture.
+
+## Discussion
+
+Use `Stepper(_:value:in:step:format:onEditingChanged:)` to create a stepper that increments or decrements a value within a specific range of values by a specific step size, while displaying the current value. In the example below, a stepper increments or decrements a binding to value over a range of `1...50` by `5` each time the user clicks or taps the stepper’s increment or decrement buttons:
+
+```swift
+struct StepperView: View {
+    @State private var value = 0.0
+    private let step = 5.0
+    private let range = 1.0...50.0
+
+    var body: some View {
+        Stepper("Stepping by \(step) in \(range.description)",
+            value: $value,
+            in: range,
+            step: step,
+            format: .number
+        )
+        .padding()
+    }
+}
+```
+
+## See Also
+
+### Creating a stepper over a range
+
+- [init(value:in:step:label:onEditingChanged:)](<init(value_in_step_label_oneditingchanged_).md>) — Creates a stepper configured to increment or decrement a binding to a value using a step value and within a range of values you provide.
+- [init(value:in:step:format:label:onEditingChanged:)](<init(value_in_step_format_label_oneditingchanged_).md>) — Creates a stepper configured to increment or decrement a binding to a value using a step value and within a range of values you provide, displaying its value with an applied format style.
+- [init(_:value:in:step:onEditingChanged:)](<init(__value_in_step_oneditingchanged_).md>) — Creates a stepper instance that increments and decrements a binding to a value, by a step size and within a closed range that you provide.

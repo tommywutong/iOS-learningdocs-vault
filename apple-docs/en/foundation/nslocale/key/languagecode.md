@@ -1,0 +1,54 @@
+---
+title: languageCode
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nslocale/key/languagecode
+source_url: 'https://developer.apple.com/documentation/foundation/nslocale/key/languagecode'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nslocale/key/languagecode.json'
+content_hash: 'sha256:e6bcfcb6e42ba02c'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NSLocale](../../nslocale.md) · [Key](../key.md)
+
+# languageCode
+
+<sub>Type Property</sub>
+
+The locale language code.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let languageCode: NSLocale.Key
+```
+
+## Discussion
+
+The corresponding value is an `NSString` object; for example, `"zh"`.
+
+## See Also
+
+### Keys
+
+- [NSLocaleIdentifier](identifier.md) — The locale identifier.
+- [NSLocaleCountryCode](countrycode.md) — The locale country or region code.
+- [NSLocaleScriptCode](scriptcode.md) — The locale script code.
+- [NSLocaleVariantCode](variantcode.md) — The locale variant code.
+- [NSLocaleExemplarCharacterSet](exemplarcharacterset.md) — The exemplar character set for the locale.
+- [NSLocaleCalendar](calendar.md) — The calendar associated with the locale.
+- [NSLocaleCollationIdentifier](collationidentifier.md) — The collation associated with the locale.
+- [NSLocaleCollatorIdentifier](collatoridentifier.md) — The collation identifier for the locale.
+- [NSLocaleUsesMetricSystem](usesmetricsystem.md) — A flag that indicates whether the locale uses the metric system.
+- [NSLocaleMeasurementSystem](measurementsystem.md) — The measurement system associated with the locale.
+- [NSLocaleDecimalSeparator](decimalseparator.md) — The decimal separator associated with the locale.
+- [NSLocaleGroupingSeparator](groupingseparator.md) — The numeric grouping separator associated with the locale.
+- [NSLocaleCurrencySymbol](currencysymbol.md) — The currency symbol associated with the locale.
+- [NSLocaleCurrencyCode](currencycode.md) — The currency code associated with the locale.
+- [NSLocaleQuotationEndDelimiterKey](quotationenddelimiterkey.md) — The end quotation symbol associated with the locale.

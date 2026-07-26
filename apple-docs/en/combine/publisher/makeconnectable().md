@@ -1,0 +1,61 @@
+---
+title: makeConnectable()
+framework: Combine
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/combine/publisher/makeconnectable()
+source_url: 'https://developer.apple.com/documentation/combine/publisher/makeconnectable()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/combine/publisher/makeconnectable%28%29.json'
+content_hash: 'sha256:392456ff9a7a785c'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Combine](../../combine.md) · [Publisher](../publisher.md)
+
+# makeConnectable()
+
+<sub>Instance Method</sub>
+
+Creates a connectable wrapper around the publisher.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func makeConnectable() -> Publishers.MakeConnectable<Self>
+```
+
+## Return Value
+
+A [ConnectablePublisher](../connectablepublisher.md) wrapping this publisher.
+
+## Discussion
+
+In the following example, [makeConnectable()](<makeconnectable().md>) wraps its upstream publisher (an instance of [Share](../publishers/share.md)) with a [ConnectablePublisher](../connectablepublisher.md). Without this, the first sink subscriber would receive all the elements from the sequence publisher and cause it to complete before the second subscriber attaches. By making the publisher connectable, the publisher doesn’t produce any elements until after the [connect()](<../connectablepublisher/connect().md>) call.
+
+```swift
+ let subject = Just<String>("Sent")
+ let pub = subject
+     .share()
+     .makeConnectable()
+ cancellable1 = pub.sink { print ("Stream 1 received: \($0)")  }
+
+ // For example purposes, use DispatchQueue to add a second subscriber
+ // a second later, and then connect to the publisher a second after that.
+ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+     self.cancellable2 = pub.sink { print ("Stream 2 received: \($0)") }
+ }
+ DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+     self.connectable = pub.connect()
+ }
+ // Prints:
+ // Stream 2 received: Sent
+ // Stream 1 received: Sent
+```
+
+> [!note] Note
+> The [connect()](<../connectablepublisher/connect().md>) operator returns a [Cancellable](../cancellable.md) instance that you must retain. You can also use this instance to cancel publishing.

@@ -1,0 +1,90 @@
+---
+title: WKExtensionDelegateAdaptor
+framework: SwiftUI
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [watchOS 7.0+（9.2 起废弃）]
+languages: [swift]
+beta: false
+deprecated: true
+doc_path: /documentation/swiftui/wkextensiondelegateadaptor
+source_url: 'https://developer.apple.com/documentation/swiftui/wkextensiondelegateadaptor'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/wkextensiondelegateadaptor.json'
+content_hash: 'sha256:41cfd910c0b95182'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# WKExtensionDelegateAdaptor
+
+<sub>Structure</sub>
+
+A property wrapper type that you use to create a WatchKit extension delegate.
+
+> [!warning] Deprecated
+> Use WKApplicationDelegateAdaptor with a WKApplicationDelegate instead.
+
+<sub>watchOS</sub>
+
+```swift
+@MainActor @preconcurrency @propertyWrapper struct WKExtensionDelegateAdaptor<DelegateType> where DelegateType : NSObject, DelegateType : WKExtensionDelegate
+```
+
+## Overview
+
+To handle extension delegate callbacks in an extension that uses the SwiftUI life cycle, define a type that conforms to the [WKExtensionDelegate](../watchkit/wkextensiondelegate.md) protocol, and implement the delegate methods that you need. For example, you can implement the [didRegisterForRemoteNotifications(withDeviceToken:)](<../watchkit/wkextensiondelegate/didregisterforremotenotifications(withdevicetoken_).md>) method to handle remote notification registration:
+
+```swift
+class MyExtensionDelegate: NSObject, WKExtensionDelegate, ObservableObject {
+    func didRegisterForRemoteNotifications(withDeviceToken: Data) {
+        // Record the device token.
+    }
+}
+```
+
+Then use the `WKExtensionDelegateAdaptor` property wrapper inside your [App](app.md) declaration to tell SwiftUI about the delegate type:
+
+```swift
+@main
+struct MyApp: App {
+    @WKExtensionDelegateAdaptor private var extensionDelegate: MyExtensionDelegate
+
+    var body: some Scene { ... }
+}
+```
+
+SwiftUI instantiates the delegate and calls the delegate’s methods in response to life cycle events. Define the delegate adaptor only in your [App](app.md) declaration, and only once for a given extension. If you declare it more than once, SwiftUI generates a runtime error.
+
+If your extension delegate conforms to the [ObservableObject](../combine/observableobject.md) protocol, as in the example above, then SwiftUI puts the delegate it creates into the [Environment](environment.md). You can access the delegate from any scene or view in your extension using the [EnvironmentObject](environmentobject.md) property wrapper:
+
+```swift
+@EnvironmentObject private var extensionDelegate: MyExtensionDelegate
+```
+
+This enables you to use the dollar sign (`$`) prefix to get a binding to published properties that you declare in the delegate. For more information, see [projectedValue](wkextensiondelegateadaptor/projectedvalue.md).
+
+> [!important] Important
+> Manage an externsion’s life cycle events without using a delegate whenever possible. For example, prefer to handle changes in [ScenePhase](scenephase.md) instead of relying on delegate callbacks, like [applicationDidFinishLaunching()](<../watchkit/wkextensiondelegate/applicationdidfinishlaunching().md>).
+
+## Relationships
+
+- **Conforms To**: [DynamicProperty](dynamicproperty.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Creating a delegate adaptor
+
+- [init(_:)](<wkextensiondelegateadaptor/init(__).md>) — Creates a WatchKit extension delegate adaptor using an observable delegate. _(deprecated)_
+
+### Getting the delegate adaptor
+
+- [projectedValue](wkextensiondelegateadaptor/projectedvalue.md) — A projection of the observed object that provides bindings to its properties. _(deprecated)_
+- [wrappedValue](wkextensiondelegateadaptor/wrappedvalue.md) — The underlying delegate. _(deprecated)_
+
+## See Also
+
+### Targeting watchOS
+
+- [WKApplicationDelegateAdaptor](wkapplicationdelegateadaptor.md) — A property wrapper that is used in `App` to provide a delegate from WatchKit.

@@ -1,0 +1,42 @@
+---
+title: titleTextAttributes
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 5.0+, iPadOS 5.0+, Mac Catalyst 13.1+, tvOS, visionOS 1.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uinavigationbar/titletextattributes
+source_url: 'https://developer.apple.com/documentation/uikit/uinavigationbar/titletextattributes'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uinavigationbar/titletextattributes.json'
+content_hash: 'sha256:d40070368abae17c'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UINavigationBar](../uinavigationbar.md)
+
+# titleTextAttributes
+
+<sub>Instance Property</sub>
+
+Display attributes for the bar’s title text.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+var titleTextAttributes: [NSAttributedString.Key : Any]? { get set }
+```
+
+## Discussion
+
+You can specify the font, text color, text shadow color, and text shadow offset for the title in the text attributes dictionary, using the text attribute keys described in [NSAttributedString.Key](../../foundation/nsattributedstring/key.md).
+
+## See Also
+
+### Configuring the title
+
+- [largeTitleTextAttributes](largetitletextattributes.md) — Display attributes for the bar’s large title text.
+- [- titleVerticalPositionAdjustmentForBarMetrics:](<titleverticalpositionadjustment(for_).md>) — Returns the title’s vertical position adjustment for given bar metrics.
+- [- setTitleVerticalPositionAdjustment:forBarMetrics:](<settitleverticalpositionadjustment(__for_).md>) — Sets the title’s vertical position adjustment for given bar metrics.

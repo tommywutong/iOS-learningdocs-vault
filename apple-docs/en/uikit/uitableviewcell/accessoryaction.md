@@ -1,0 +1,59 @@
+---
+title: accessoryAction
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 2.0+（3.0 起废弃）, iPadOS 2.0+（3.0 起废弃）, Mac Catalyst 13.1+（13.1 起废弃）]
+languages: [occ]
+beta: false
+deprecated: true
+doc_path: /documentation/uikit/uitableviewcell/accessoryaction
+source_url: 'https://developer.apple.com/documentation/uikit/uitableviewcell/accessoryaction'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uitableviewcell/accessoryaction.json'
+content_hash: 'sha256:c8f7ca8a48794680'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UITableViewCell](../uitableviewcell.md)
+
+# accessoryAction
+
+<sub>Instance Property</sub>
+
+The selector defining the action message to invoke when users tap the accessory view.
+
+> [!warning] Deprecated
+> Instead, use [- tableView:commitEditingStyle:forRowAtIndexPath:](<../uitableviewdatasource/tableview(__commit_forrowat_).md>) or [- tableView:accessoryButtonTappedForRowWithIndexPath:](<../uitableviewdelegate/tableview(__accessorybuttontappedforrowwith_).md>) for handling taps on cells.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS, watchOS</sub>
+
+```objc
+@property (nonatomic, nullable) SEL accessoryAction;
+```
+
+## Discussion
+
+If you specify a selector for the accessory action, a message is sent only if the accessory view is a detail disclosure button—that is, the cell’s [accessoryType](accessorytype-swift.property.md) property is assigned a value of[UITableViewCellAccessoryDetailDisclosureButton](accessorytype-swift.enum/detaildisclosurebutton.md). If the value of this property is `NULL`, no action message is sent.
+
+The accessory view is a `UITableViewCell`-defined control, framework control, or custom control on the right side of the cell. It is often used to display a new view related to the selected cell. If the accessory view inherits from [UIControl](../uicontrol.md), you may set a target and action through the [- addTarget:action:forControlEvents:](<../uicontrol/addtarget(__action_for_).md>) method. See [accessoryView](accessoryview.md) for more information.
+
+## See Also
+
+### Deprecated
+
+- [textLabel](textlabel.md) — The label to use for the main textual content of the table cell. _(deprecated)_
+- [detailTextLabel](detailtextlabel.md) — The secondary label of the table cell, if one exists. _(deprecated)_
+- [imageView](imageview.md) — The image view of the table cell. _(deprecated)_
+- [initWithFrame:reuseIdentifier:](initwithframe_reuseidentifier_.md) — Initializes and returns a table cell object. _(deprecated)_
+- [text](text.md) — The text of the cell. _(deprecated)_
+- [font](font.md) — The font of the title. _(deprecated)_
+- [textAlignment](textalignment.md) — A constant that specifies the alignment of text in the cell. _(deprecated)_
+- [textColor](textcolor.md) — The color of the title text. _(deprecated)_
+- [selectedTextColor](selectedtextcolor.md) — The color of the title text when the cell is selected. _(deprecated)_
+- [lineBreakMode](linebreakmode.md) — The mode for wrapping and truncating text in the cell. _(deprecated)_
+- [image](image.md) — The image to use as content for the cell. _(deprecated)_
+- [selectedImage](selectedimage.md) — The image to use a cell content when the cell is selected. _(deprecated)_
+- [hidesAccessoryWhenEditing](hidesaccessorywhenediting.md) — A Boolean value that determines whether the accessory view is hidden when the cell is being edited. _(deprecated)_
+- [target](target.md) — The target object to receive action messages. _(deprecated)_
+- [editAction](editaction.md) — The selector defining the action message to invoke when users tap the insert or delete button. _(deprecated)_

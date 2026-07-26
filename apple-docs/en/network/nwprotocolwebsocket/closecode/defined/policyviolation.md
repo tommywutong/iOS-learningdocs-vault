@@ -1,0 +1,46 @@
+---
+title: NWProtocolWebSocket.CloseCode.Defined.policyViolation
+framework: Network
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/network/nwprotocolwebsocket/closecode/defined/policyviolation
+source_url: 'https://developer.apple.com/documentation/network/nwprotocolwebsocket/closecode/defined/policyviolation'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/network/nwprotocolwebsocket/closecode/defined/policyviolation.json'
+content_hash: 'sha256:473464d90ae36179'
+translated: false
+---
+
+> Navigation: [Technologies](../../../../technologies.md) · [Network](../../../../network.md) · [NWProtocolWebSocket](../../../nwprotocolwebsocket.md) · [CloseCode](../../closecode.md) · [Defined](../defined.md)
+
+# NWProtocolWebSocket.CloseCode.Defined.policyViolation
+
+<sub>Case</sub>
+
+An endpoint is terminating the connection because it received a message that violates its policy.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+case policyViolation
+```
+
+## See Also
+
+### Defined Close Codes
+
+- [NWProtocolWebSocket.CloseCode.Defined.normalClosure](normalclosure.md) — A normal closure occurred with no errors.
+- [NWProtocolWebSocket.CloseCode.Defined.goingAway](goingaway.md) — An endpoint is no longer available, such as when a server is down.
+- [NWProtocolWebSocket.CloseCode.Defined.protocolError](protocolerror.md) — An endpoint is terminating the connection due to a protocol error.
+- [NWProtocolWebSocket.CloseCode.Defined.unsupportedData](unsupporteddata.md) — An endpoint is terminating the connection because it received a type of data it cannot accept.
+- [NWProtocolWebSocket.CloseCode.Defined.noStatusReceived](nostatusreceived.md) — This value is reserved for local errors and indicates that no Close code was received.
+- [NWProtocolWebSocket.CloseCode.Defined.abnormalClosure](abnormalclosure.md) — This value is reserved for local errors and indicates that no Close message was received.
+- [NWProtocolWebSocket.CloseCode.Defined.invalidFramePayloadData](invalidframepayloaddata.md) — An endpoint is terminating the connection because it received data within a message that was inconsistent with the message type.
+- [NWProtocolWebSocket.CloseCode.Defined.messageTooBig](messagetoobig.md) — An endpoint is terminating the connection because it received a message that is too big for it to process.
+- [NWProtocolWebSocket.CloseCode.Defined.mandatoryExtension](mandatoryextension.md) — The WebSocket client expected the server to negotiate one or more extensions that were not negotiated.
+- [NWProtocolWebSocket.CloseCode.Defined.internalServerError](internalservererror.md) — The server is terminating the connection because it encountered an unexpected condition that prevented it from fulfilling the request.
+- [NWProtocolWebSocket.CloseCode.Defined.tlsHandshake](tlshandshake.md) — This value is reserved for local errors and indicates that the TLS handshake failed.

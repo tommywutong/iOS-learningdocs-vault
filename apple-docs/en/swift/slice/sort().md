@@ -1,0 +1,56 @@
+---
+title: sort()
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/slice/sort()
+source_url: 'https://developer.apple.com/documentation/swift/slice/sort()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/slice/sort%28%29.json'
+content_hash: 'sha256:3e2f1c0c78994a95'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Slice](../slice.md)
+
+# sort()
+
+<sub>Instance Method</sub>
+
+Sorts the collection in place.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+mutating func sort()
+```
+
+## Discussion
+
+You can sort any mutable collection of elements that conform to the `Comparable` protocol by calling this method. Elements are sorted in ascending order.
+
+Here’s an example of sorting a list of students’ names. Strings in Swift conform to the `Comparable` protocol, so the names are sorted in ascending order according to the less-than operator (`<`).
+
+```swift
+var students = ["Kofi", "Abena", "Peter", "Kweku", "Akosua"]
+students.sort()
+print(students)
+// Prints "["Abena", "Akosua", "Kofi", "Kweku", "Peter"]"
+```
+
+To sort the elements of your collection in descending order, pass the greater-than operator (`>`) to the `sort(by:)` method.
+
+```swift
+students.sort(by: >)
+print(students)
+// Prints "["Peter", "Kweku", "Kofi", "Akosua", "Abena"]"
+```
+
+The sorting algorithm is guaranteed to be stable. A stable sort preserves the relative order of elements that compare as equal.
+
+> [!abstract] Complexity
+> O(_n_ log _n_), where _n_ is the length of the collection.

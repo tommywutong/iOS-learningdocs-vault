@@ -1,0 +1,57 @@
+---
+title: 'init(unfolding:onCancel:)'
+framework: Swift
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/asyncstream/init(unfolding:oncancel:)'
+source_url: 'https://developer.apple.com/documentation/swift/asyncstream/init(unfolding:oncancel:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncstream/init%28unfolding%3Aoncancel%3A%29.json'
+content_hash: 'sha256:1c1f7e3fd84d40c6'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [AsyncStream](../asyncstream.md)
+
+# init(unfolding:onCancel:)
+
+<sub>Initializer</sub>
+
+Constructs an asynchronous stream from a given element-producing closure, with an optional closure to handle cancellation.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@preconcurrency init(unfolding produce: @escaping @Sendable () async -> Element?, onCancel: (@Sendable () -> Void)? = nil)
+```
+
+## Parameters
+
+- `produce` — A closure that asynchronously produces elements for the stream.
+
+- `onCancel` — A closure to execute when canceling the stream’s task.
+
+## Discussion
+
+Use this convenience initializer when you have an asynchronous function that can produce elements for the stream, and don’t want to invoke a continuation manually. This initializer “unfolds” your closure into an asynchronous stream. The created stream handles conformance to the `AsyncSequence` protocol automatically, including termination (either by cancellation or by returning `nil` from the closure to finish iteration).
+
+The following example shows an `AsyncStream` created with this initializer that produces random numbers on a one-second interval. This example uses the Swift multiple trailing closure syntax, which omits the `unfolding` parameter label.
+
+```swift
+let stream = AsyncStream<Int> {
+    await Task.sleep(1 * 1_000_000_000)
+    return Int.random(in: 1...10)
+} onCancel: { @Sendable () in print("Canceled.") }
+
+// Call point:
+for await random in stream {
+    print(random)
+}
+```
+
+> [!note] Note
+> Because the system might call the `onCancel` callback as part of task cancellation, it’s subject to the same considerations for avoiding deadlock as outlined in the documentation for [withTaskCancellationHandler(operation:onCancel:)](<../withtaskcancellationhandler(operation_oncancel_).md>).

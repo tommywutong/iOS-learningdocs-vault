@@ -1,0 +1,30 @@
+---
+title: blockByteCount
+framework: Apple CryptoKit
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 13.2+, iPadOS 13.2+, Mac Catalyst 13.2+, macOS 10.15+, tvOS 13.2+, visionOS 1.0+, watchOS 6.1+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/cryptokit/insecure/md5/blockbytecount
+source_url: 'https://developer.apple.com/documentation/cryptokit/insecure/md5/blockbytecount'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/cryptokit/insecure/md5/blockbytecount.json'
+content_hash: 'sha256:dda4fae8fc47e1a2'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Apple CryptoKit](../../../cryptokit.md) · [Insecure](../../insecure.md) · [MD5](../md5.md)
+
+# blockByteCount
+
+<sub>Type Property</sub>
+
+The number of bytes that represents the hash function’s internal state.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let blockByteCount: Int
+```

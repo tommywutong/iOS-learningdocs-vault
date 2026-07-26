@@ -1,0 +1,145 @@
+---
+title: Media playback
+framework: AVFoundation
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/avfoundation/media-playback
+source_url: 'https://developer.apple.com/documentation/avfoundation/media-playback'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/media-playback.json'
+content_hash: 'sha256:3fc6e211feeccfe3'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md)
+
+# Media playback
+
+<sub>API Collection</sub>
+
+Manage the playback of media assets and interstitial content, independent of how you present that content in your interface.
+
+## Overview
+
+You use a player to manage the playback and timing of a media asset, for example starting and stopping playback, and seeking to a particular time. A player manages the playback of a single media asset at a time. The framework also provides a queue player that queues media assets to play sequentially.
+
+> [!note] Note
+> When you use AVFoundation, Apple may collect metrics to help improve the framework.
+
+You create an instance of [AVPlayerItem](avplayeritem.md) to play a media asset. A player item manages the timing and presentation state of an asset played by the player. A player item also contains player item tracks that correspond to the tracks in the asset. You direct the output of a player to a specialized Core Animation layer, a player layer, or a synchronized layer.
+
+> [!important] Important
+> You must call the [VTRegisterProfessionalVideoWorkflowVideoDecoders()](<../videotoolbox/vtregisterprofessionalvideoworkflowvideodecoders().md>) function if your app requires Afterburner accelerated playback and decoding of ProRes and ProRes RAW video files.
+
+## Topics
+
+### Essentials
+
+- [Configuring your app for media playback](configuring-your-app-for-media-playback.md) — Configure apps to enable standard media playback behavior.
+
+### Playback control
+
+- [Observing playback state in SwiftUI](observing-playback-state-in-swiftui.md) — Keep your user interface in sync with state changes from playback objects.
+- [Controlling the transport behavior of a player](controlling-the-transport-behavior-of-a-player.md) — Play, pause, and seek through a media presentation.
+- [Creating a seamless multiview playback experience](creating-a-seamless-multiview-playback-experience.md) — Build advanced multiview playback experiences with the AVFoundation and AVRouting frameworks.
+- [AVPlayer](avplayer.md) — An object that provides the interface to control the player’s transport behavior.
+- [AVPlayerItem](avplayeritem.md) — An object that models the timing and presentation state of an asset during playback.
+- [AVPlayerItemTrack](avplayeritemtrack.md) — An object that represents the presentation state of an asset track during playback.
+- [AVQueuePlayer](avqueueplayer.md) — An object that plays a sequence of player items.
+- [AVPlayerLooper](avplayerlooper.md) — An object that loops media content using a queue player.
+
+### SharePlay
+
+- [Destination Video](../visionos/destination-video.md) — Leverage SwiftUI to build an immersive media experience in a multiplatform app.
+- [Supporting coordinated media playback](supporting-coordinated-media-playback.md) — Create synchronized media experiences that enable users to watch and listen across devices.
+- [AVPlaybackCoordinator](avplaybackcoordinator.md) — An object that coordinates the playback of players in a connected group.
+- [AVPlayerPlaybackCoordinator](avplayerplaybackcoordinator.md) — A playback coordinator subclass that coordinates the playback of player objects in a connected group.
+- [AVDelegatingPlaybackCoordinator](avdelegatingplaybackcoordinator.md) — A playback coordinator subclass that coordinates the playback of custom player objects in a connected group.
+- [AVPlaybackCoordinationMedium](avplaybackcoordinationmedium.md) — The AVPlaybackCoordinationMedium passes states and messages between its connected playback coordinators.
+
+### Presentation
+
+- [Monitoring playback progress in your app](monitoring-playback-progress-in-your-app.md) — Observe the playback of a media asset to update your app’s user-interface state.
+- [Using HEVC video with alpha](using-hevc-video-with-alpha.md) — Play, write, and export HEVC video with an alpha channel to add overlay effects to your video processing.
+- [AVPlayerLayer](avplayerlayer.md) — An object that presents the visual contents of a player object.
+- [AVSynchronizedLayer](avsynchronizedlayer.md) — A Core Animation layer that derives its timing from a player item so that you can synchronize layer animations with media playback.
+
+### Media selection
+
+- [Selecting subtitles and alternative audio tracks](selecting-subtitles-and-alternative-audio-tracks.md) — Extend your app’s appeal to users by adding subtitles and alternative audio tracks in their native language.
+- [AVMediaSelection](avmediaselection.md) — An object that represents a complete rendition of media selection options on an asset.
+- [AVMediaSelectionGroup](avmediaselectiongroup.md) — An object that represents a collection of mutually exclusive options for the presentation of media within an asset.
+- [AVMediaSelectionOption](avmediaselectionoption.md) — An object that represents a specific option for the presentation of media within a group of options.
+- [AVMutableMediaSelection](avmutablemediaselection.md) — A mutable object that represents a complete rendition of media selection options on an asset.
+- [AVPlayerMediaSelectionCriteria](avplayermediaselectioncriteria.md) — An object that specifies the preferred languages and media characteristics for a player.
+- [AVCustomMediaSelectionScheme](avcustommediaselectionscheme.md) — For content that has been authored with the express intent of offering an alternative selection interface for AVMediaSelectionOptions, AVCustomMediaSelectionScheme provides a collection of custom settings for controlling the presentation of the media.
+- [AVMediaPresentationSelector](avmediapresentationselector.md) — For content that has been authored with the express intent of offering an alternative selection interface for AVMediaSelectionOptions, AVMediaPresentationSelector represents a collection of mutually exclusive settings.
+- [AVMediaPresentationSetting](avmediapresentationsetting.md) — For content that has been authored with the express intent of offering an alternative selection interface for AVMediaSelectionOptions, AVMediaPresentationSetting represents a selectable setting for controlling the presentation of the media.
+
+### Interstitials
+
+- [Providing an integrated view of your timeline when playing HLS interstitials](providing-an-integrated-view-of-your-timeline-when-playing-hls-interstitials.md) — Go beyond simple ad insertion with point and fill occupancy HLS interstitials.
+- [AVPlayerInterstitialEvent](avplayerinterstitialevent.md) — An object that provides instructions for how a player presents interstitial content.
+- [AVPlayerInterstitialEventController](avplayerinterstitialeventcontroller.md) — An object that schedules interstitial events for items played by the primary player.
+- [AVPlayerInterstitialEventMonitor](avplayerinterstitialeventmonitor.md) — An object that monitors the scheduling and progress of interstitial events.
+- [AVPlayerInterstitialEventMonitorScheduleRequestErrorKey](avplayerinterstitialeventmonitorschedulerequesterrorkey.md) — userInfo dictionary key for the AVPlayerInterstitialEventMonitorScheduleRequestCompletedNotification. Value is NSError. Absent if the request succeeded
+- [AVPlayerInterstitialEventMonitorScheduleRequestIdentifierKey](avplayerinterstitialeventmonitorschedulerequestidentifierkey.md) — userInfo dictionary key for the AVPlayerInterstitialEventMonitorScheduleRequestCompletedNotification. Value is NSString.
+- [AVPlayerInterstitialEventMonitorScheduleRequestResponseKey](avplayerinterstitialeventmonitorschedulerequestresponsekey.md) — userInfo dictionary key for the AVPlayerInterstitialEventMonitorScheduleRequestCompletedNotification. Value is NSData. Absent if the request failed.
+- [AVPlayerItemIntegratedTimeline](avplayeritemintegratedtimeline.md) — An object that models the timeline and playback sequence of a primary player item and scheduled interstitial events.
+
+### Metrics
+
+- [AVMetrics](avmetrics.md) — An asynchronous stream of metric information.
+- [AVMergedMetrics](avmergedmetrics.md) — An asynchronous stream of metric information from different publishers.
+- [AVVideoPerformanceMetrics](avvideoperformancemetrics.md) — An object that provides metrics related to video playback quality.
+- [AVMetricEventStreamPublisher](avmetriceventstreampublisher.md) — A type for objects that publish metric events to the event stream.
+- [AVMetricEvent](avmetricevent.md) — A base class that represents a metric event.
+- [AVMetricErrorEvent](avmetricerrorevent.md) — An object that represents a metric event when an error occurs.
+- [Metric event types](metric-event-types.md)
+
+### Remote controls
+
+- [Supporting remote interactions in tvOS](supporting-remote-interactions-in-tvos.md) — Set up your app to support remote commands and events in a variety of scenarios by using the relevant approach.
+
+### Timed metadata
+
+- [Presenting chapter markers](presenting-chapter-markers.md) — Add chapter markers to enable users to quickly navigate your content.
+- [AVMetadataGroup](avmetadatagroup.md) — A collection of metadata items associated with a timeline segment.
+- [AVTimedMetadataGroup](avtimedmetadatagroup.md) — A collection of metadata items that are valid for use during a specific time range.
+- [AVMutableTimedMetadataGroup](avmutabletimedmetadatagroup.md) — A mutable collection of metadata items that are valid for use during a specific time range.
+- [AVDateRangeMetadataGroup](avdaterangemetadatagroup.md) — A collection of metadata items that are valid for use within a specific date range.
+- [AVMutableDateRangeMetadataGroup](avmutabledaterangemetadatagroup.md) — A mutable collection of metadata items that are valid for use within a specific range of dates.
+- [AVPlayerItemMediaDataCollector](avplayeritemmediadatacollector.md) — The abstract base for media data collectors.
+- [AVPlayerItemMetadataCollector](avplayeritemmetadatacollector.md) — An object used to capture the date range metadata defined for an HTTP Live Streaming asset.
+
+### Media output
+
+- [AVPlayerVideoOutput](avplayervideooutput.md) — An object that receives video data from a player object.
+- [AVVideoOutputSpecification](avvideooutputspecification.md) — An object that specifies the pixel buffer attributes and tag collections handled by a player video output.
+- [AVPlayerItemOutput](avplayeritemoutput.md) — An abstract class that defines the common interface to output media data from a player item.
+- [AVPlayerItemVideoOutput](avplayeritemvideooutput.md) — An object that outputs video frames from a player item.
+- [AVPlayerItemLegibleOutput](avplayeritemlegibleoutput.md) — An object that vends attributed strings for media with a legible characteristic.
+- [AVPlayerItemRenderedLegibleOutput](avplayeritemrenderedlegibleoutput.md) — A player item output that vends media with a legible characteristic as rendered pixel buffers.
+- [AVRenderedCaptionImage](avrenderedcaptionimage.md) — An object that provides a rendered pixel buffer and its position in pixels.
+- [AVPlayerItemMetadataOutput](avplayeritemmetadataoutput.md) — An object that vends collections of metadata items that a player item’s tracks carry.
+- [AVPlayerItemOutputPushDelegate](avplayeritemoutputpushdelegate.md) — A protocol that defines the methods to implement to respond to changes in the media data sequence.
+- [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md) — [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md) delivers `CMSampleBuffers` for [AVPlayerItem](avplayeritem.md) playback. _(beta)_
+- [AVPlayerItemSampleBufferOutputConfiguration](avplayeritemsamplebufferoutputconfiguration.md) — Configuration options specified when creating an [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md). _(beta)_
+- [AVPlayerItemSampleBufferOutputAudioConfiguration](avplayeritemsamplebufferoutputaudioconfiguration.md) — Audio-specific configuration options specified when creating an [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md). _(beta)_
+
+### Utilities
+
+- [AVAssetPlaybackAssistant](avassetplaybackassistant.md) — An object that provides playback information for an asset.
+- [AVAssetPlaybackConfigurationOption](avassetplaybackconfigurationoption.md) — A structure that defines playback configuration options for an asset.
+
+## See Also
+
+### Playback
+
+- [Offline playback and storage](offline-playback-and-storage.md) — Download streamed content to disk to allow offline playback, and define policies to automatically remove downloaded assets.
+- [Streaming and AirPlay](streaming-and-airplay.md) — Stream content wirelessly to other devices using AirPlay, and handle requests involving FairPlay-protected assets.
+- [Sample buffer playback](sample-buffer-playback.md) — Create custom controllers to play and synchronize the timing of sample buffer streams.

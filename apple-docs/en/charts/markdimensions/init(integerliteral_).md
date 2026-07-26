@@ -1,0 +1,34 @@
+---
+title: 'init(integerLiteral:)'
+framework: Swift Charts
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/charts/markdimensions/init(integerliteral:)'
+source_url: 'https://developer.apple.com/documentation/charts/markdimensions/init(integerliteral:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/charts/markdimensions/init%28integerliteral%3A%29.json'
+content_hash: 'sha256:5160a6c185a33ef5'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift Charts](../../charts.md) · [MarkDimensions](../markdimensions.md)
+
+# init(integerLiteral:)
+
+<sub>Initializer</sub>
+
+Creates a constant width or height from an integer.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+nonisolated init(integerLiteral value: Int)
+```
+
+## Parameters
+
+- `value` — The width or height.

@@ -1,0 +1,48 @@
+---
+title: E_HANDLE
+framework: Core Foundation
+symbol_kind: macro
+role: symbol
+role_heading: Macro
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/corefoundation/e_handle
+source_url: 'https://developer.apple.com/documentation/corefoundation/e_handle'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/corefoundation/e_handle.json'
+content_hash: 'sha256:c8013641c5123c68'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Foundation](../corefoundation.md)
+
+# E_HANDLE
+
+<sub>Macro</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```objc
+#define E_HANDLE
+```
+
+## See Also
+
+### Macros
+
+- [CF_ASSUME_NONNULL_BEGIN](cf_assume_nonnull_begin.md)
+- [CF_ASSUME_NONNULL_END](cf_assume_nonnull_end.md)
+- [CF_AUTOMATED_REFCOUNT_UNAVAILABLE](cf_automated_refcount_unavailable.md)
+- [CF_AVAILABLE_IOS](cf_available_ios.md)
+- [CF_AVAILABLE_IPHONE](cf_available_iphone.md)
+- [CF_AVAILABLE_MAC](cf_available_mac.md)
+- [CF_AVAILABLE](cf_available.md)
+- [CF_BOXABLE](cf_boxable.md)
+- [CF_BRIDGED_MUTABLE_TYPE](cf_bridged_mutable_type.md)
+- [CF_BRIDGED_TYPE](cf_bridged_type.md)
+- [CF_CALENDAR_DEPRECATED](cf_calendar_deprecated.md)
+- [CF_CALENDAR_ENUM_DEPRECATED](cf_calendar_enum_deprecated.md)
+- [CF_CLOSED_ENUM](cf_closed_enum.md)
+- [CF_CONSUMED](cf_consumed.md)
+- [CF_DEFINES_CG_TYPES](cf_defines_cg_types.md)

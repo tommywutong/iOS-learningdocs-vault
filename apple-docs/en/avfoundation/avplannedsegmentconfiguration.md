@@ -1,0 +1,60 @@
+---
+title: AVPlannedSegmentConfiguration
+framework: AVFoundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 27.0+ beta, iPadOS 27.0+ beta, Mac Catalyst 27.0+ beta, macOS 27.0+ beta, tvOS 27.0+ beta, visionOS 27.0+ beta]
+languages: [swift, occ]
+beta: true
+deprecated: false
+doc_path: /documentation/avfoundation/avplannedsegmentconfiguration
+source_url: 'https://developer.apple.com/documentation/avfoundation/avplannedsegmentconfiguration'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/avplannedsegmentconfiguration.json'
+content_hash: 'sha256:f7b607627479cec7'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md)
+
+# AVPlannedSegmentConfiguration
+
+<sub>Class</sub>
+
+AVPlannedSegmentConfiguration describes the requirements for a planned segment in an incremental writing session executed by the AVAssetWritingPlanner. Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+class AVPlannedSegmentConfiguration
+```
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Inherited By**: [AVPlannedVideoSegmentConfiguration](avplannedvideosegmentconfiguration.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md)
+
+## Topics
+
+### Creating a segment configuration
+
+- [- initWithDuration:](<avplannedsegmentconfiguration/init(duration_).md>) — Creates an instance of AVPlannedSegmentConfiguration specifying the duration of the planned segment. _(beta)_
+
+### Inspecting the configuration
+
+- [duration](avplannedsegmentconfiguration/duration.md) — The duration of this planned segment. _(beta)_
+
+## See Also
+
+### Planned export
+
+- [AVAssetWritingPlanner](avassetwritingplanner.md) — AVAssetWritingPlanner orchestrates incremental writing of media files. _(beta)_
+- [AVAssetWritingPlannerProgress](avassetwritingplannerprogress.md) — AVAssetWritingPlannerProgress tracks the progress of incremental writing for each track in an AVAssetWritingPlanner session. _(beta)_
+- [AVAssetTrackPlan](avassettrackplan.md) — AVAssetTrackPlan holds information about a track and how it should be segmented and executed in an incremental writing session. _(beta)_
+- [AVAssetVideoTrackPlan](avassetvideotrackplan.md) — AVAssetVideoTrackPlan holds information about a track and how it should be segmented and executed in an incremental writing session. _(beta)_
+- [AVPlannedVideoSegmentConfiguration](avplannedvideosegmentconfiguration.md) — AVPlannedVideoSegmentConfiguration describes the requirements for a planned video segment in an incremental writing session executed by the AVAssetWritingPlanner. _(beta)_
+- [AVPlannedSegmentWritingRequest](avplannedsegmentwritingrequest.md) — AVPlannedSegmentWritingRequest encompasses a request from the AVAssetWritingPlanner to the client code to write one incremental track segment. _(beta)_
+- [AVPlannedVideoSegmentWritingRequest](avplannedvideosegmentwritingrequest.md) — AVPlannedVideoSegmentWritingRequest encompasses a request from the AVAssetWritingPlanner to the client code to write one incremental video track segment with compression. _(beta)_

@@ -1,0 +1,42 @@
+---
+title: unknown
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 5.0+, iPadOS 5.0+, Mac Catalyst 13.1+, macOS 10.7+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/urlfileresourcetype/unknown
+source_url: 'https://developer.apple.com/documentation/foundation/urlfileresourcetype/unknown'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/urlfileresourcetype/unknown.json'
+content_hash: 'sha256:4f943b387d9d0a70'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [URLFileResourceType](../urlfileresourcetype.md)
+
+# unknown
+
+<sub>Type Property</sub>
+
+The resource’s type is unknown.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let unknown: URLFileResourceType
+```
+
+## See Also
+
+### Constants
+
+- [NSURLFileResourceTypeNamedPipe](namedpipe.md) — The resource is a named pipe.
+- [NSURLFileResourceTypeCharacterSpecial](characterspecial.md) — The resource is a character special file.
+- [NSURLFileResourceTypeDirectory](directory.md) — The resource is a directory.
+- [NSURLFileResourceTypeBlockSpecial](blockspecial.md) — The resource is a block special file.
+- [NSURLFileResourceTypeRegular](regular.md) — The resource is a regular file.
+- [NSURLFileResourceTypeSymbolicLink](symboliclink.md) — The resource is a symbolic link.
+- [NSURLFileResourceTypeSocket](socket.md) — The resource is a socket.

@@ -1,0 +1,28 @@
+---
+title: alpha
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, tvOS 18.0+, visionOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uilistcontentconfiguration-swift.struct/alpha
+source_url: 'https://developer.apple.com/documentation/uikit/uilistcontentconfiguration-swift.struct/alpha'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uilistcontentconfiguration-swift.struct/alpha.json'
+content_hash: 'sha256:fa3ecce9554b2883'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIListContentConfiguration](../uilistcontentconfiguration-swift.struct.md)
+
+# alpha
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+var alpha: CGFloat { get set }
+```

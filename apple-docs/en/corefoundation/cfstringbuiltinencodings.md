@@ -1,0 +1,65 @@
+---
+title: CFStringBuiltInEncodings
+framework: Core Foundation
+symbol_kind: enum
+role: symbol
+role_heading: Enumeration
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/corefoundation/cfstringbuiltinencodings
+source_url: 'https://developer.apple.com/documentation/corefoundation/cfstringbuiltinencodings'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/corefoundation/cfstringbuiltinencodings.json'
+content_hash: 'sha256:1568cd83a65f054e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Foundation](../corefoundation.md)
+
+# CFStringBuiltInEncodings
+
+<sub>Enumeration</sub>
+
+Encodings that are built-in on all platforms on which macOS runs.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+enum CFStringBuiltInEncodings
+```
+
+## Relationships
+
+- **Conforms To**: [BitwiseCopyable](../swift/bitwisecopyable.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [RawRepresentable](../swift/rawrepresentable.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Constants
+
+- [kCFStringEncodingMacRoman](cfstringbuiltinencodings/macroman.md) — An encoding constant that identifies the Mac Roman encoding.
+- [kCFStringEncodingWindowsLatin1](cfstringbuiltinencodings/windowslatin1.md) — An encoding constant that identifies the Windows Latin 1 encoding (ANSI codepage 1252).
+- [kCFStringEncodingISOLatin1](cfstringbuiltinencodings/isolatin1.md) — An encoding constant that identifies the ISO Latin 1 encoding (ISO 8859-1)
+- [kCFStringEncodingNextStepLatin](cfstringbuiltinencodings/nextsteplatin.md) — An encoding constant that identifies the NextStep/OpenStep encoding.
+- [kCFStringEncodingASCII](cfstringbuiltinencodings/ascii.md) — An encoding constant that identifies the ASCII encoding (decimal values 0 through 127).
+- [kCFStringEncodingUnicode](cfstringbuiltinencodings/unicode.md) — An encoding constant that identifies the Unicode encoding.
+- [kCFStringEncodingUTF8](cfstringbuiltinencodings/utf8.md) — An encoding constant that identifies the UTF 8 encoding.
+- [kCFStringEncodingNonLossyASCII](cfstringbuiltinencodings/nonlossyascii.md) — An encoding constant that identifies non-lossy ASCII encoding.
+- [kCFStringEncodingUTF16](cfstringbuiltinencodings/utf16.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF16Format encoding (alias of kCFStringEncodingUnicode).
+- [kCFStringEncodingUTF16BE](cfstringbuiltinencodings/utf16be.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF16BEFormat encoding. This constant specifies big-endian byte order.
+- [kCFStringEncodingUTF16LE](cfstringbuiltinencodings/utf16le.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF16LEFormat encoding. This constant specifies little-endian byte order.
+- [kCFStringEncodingUTF32](cfstringbuiltinencodings/utf32.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF32Format encoding.
+- [kCFStringEncodingUTF32BE](cfstringbuiltinencodings/utf32be.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF32BEFormat encoding. This constant specifies big-endian byte order.
+- [kCFStringEncodingUTF32LE](cfstringbuiltinencodings/utf32le.md) — An encoding constant that identifies kTextEncodingUnicodeDefault + kUnicodeUTF32LEFormat encoding. This constant specifies little-endian byte order.
+
+### Initializers
+
+- [init(rawValue:)](<cfstringbuiltinencodings/init(rawvalue_).md>)
+
+## See Also
+
+### Constants
+
+- [String Comparison Flags](string-comparison-flags.md) — Flags that specify how string comparisons are performed.
+- [Invalid String Encoding Flag](invalid-string-encoding-flag.md) — Special value returned from functions to indicate a string encoding that is not supported or recognized by CFString.
+- [External String Encodings](external-string-encodings.md) — `CFStringEncoding` constants for encodings that may be supported by CFString.

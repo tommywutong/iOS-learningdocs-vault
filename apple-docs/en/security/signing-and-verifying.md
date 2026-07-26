@@ -1,0 +1,166 @@
+---
+title: Signing and Verifying
+framework: Security
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/signing-and-verifying
+source_url: 'https://developer.apple.com/documentation/security/signing-and-verifying'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/signing-and-verifying.json'
+content_hash: 'sha256:6d8148ae34a6a774'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md) · [Certificate, Key, and Trust Services](certificate-key-and-trust-services.md) · [Keys](keys.md)
+
+# Signing and Verifying
+
+<sub>Article</sub>
+
+Create and evaluate digital signatures to establish the validity of code or data.
+
+## Overview
+
+You create a cryptographic signature on a block of data by first creating a hash of the data and then encrypting this digest with your private key. A recipient uses your public key to decrypt the signature, while independently re-creating the hash of the original data. If the decrypted hash and the computed one match, the recipient can be sure the data is from the owner of the private key that corresponds to the public key.
+
+Often, you sign a block of data as a side effect of performing some other operation. For example, as a final step in distributing your app, Xcode signs the code on your behalf using one of your cryptographic identities (see [Code Signing Guide](https://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005929)). When you want to sign or verify a block of data in your app, you use functions provided by the certificate, key, and trust services API.
+
+### Get Your Private Key
+
+Begin by getting your private key, as described in [Getting an Existing Key](getting-an-existing-key.md), either from the keychain or from an identity (which itself probably resides in the keychain). Then, select one of the signing algorithms. For example:
+
+**Swift**
+
+```swift
+let privateKey: SecKey = <# a key #>
+let algorithm: SecKeyAlgorithm = .rsaSignatureMessagePKCS1v15SHA512
+```
+
+**Objective-C**
+
+```objc
+SecKeyRef privateKey = <# a key #>;  // E.g., from the keychain
+SecKeyAlgorithm algorithm = kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA512;
+```
+
+This algorithm indicates that the signing function should first create an SHA-512 digest of the input data and then use RSA encryption with PKCS#1 padding. But you can choose different options, along a number of dimensions:
+
+- **Digest vs. message.** If you already have a digest of the data, you can use one of the `Digest` algorithms. For example, the above algorithm might become [kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA512](seckeyalgorithm/rsasignaturedigestpkcs1v15sha512.md). If you do this, be sure that the actual hashing matches the named hashing algorithm.
+- **Digital signature algorithm type.** If you have elliptic curve keys instead of RSA, you can use an Elliptic Curve Digital Signature Algorithm (ECDSA). For example, the above algorithm might become [kSecKeyAlgorithmECDSASignatureMessageX962SHA512](seckeyalgorithm/ecdsasignaturemessagex962sha512.md).
+
+With a key and an algorithm selected, you can test the compatibility of these with the signing operation using the [SecKeyIsAlgorithmSupported](<seckeyisalgorithmsupported(______).md>) function:
+
+**Swift**
+
+```swift
+guard SecKeyIsAlgorithmSupported(privateKey, .sign, algorithm) else {
+    throw <# an error #>
+}
+```
+
+**Objective-C**
+
+```objc
+BOOL canSign = SecKeyIsAlgorithmSupported(privateKey,
+                                          kSecKeyOperationTypeSign,
+                                          algorithm);
+```
+
+This function might return [false](../swift/false.md), for example, if the key’s [kSecAttrCanSign](ksecattrcansign.md) attribute is set to [false](../swift/false.md). This situation might happen if you used a public key instead of a private one (despite the variable name). Similarly, if you attempt to use an RSA key with one of the ECDSA algorithms, the check fails.
+
+Finally, you can create the signature with a call to the [SecKeyCreateSignature](<seckeycreatesignature(________).md>) function:
+
+**Swift**
+
+```swift
+var error: Unmanaged<CFError>?
+guard let signature = SecKeyCreateSignature(privateKey,
+                                            algorithm,
+                                            data as CFData,
+                                            &error) as Data? else {
+                                                throw error!.takeRetainedValue() as Error
+}
+```
+
+**Objective-C**
+
+```objc
+NSData* data2sign = <# some data #>;
+NSData* signature = nil;
+if (canSign) {
+    CFErrorRef error = NULL;
+    signature = (NSData*)CFBridgingRelease(       // ARC takes ownership
+                     SecKeyCreateSignature(privateKey,
+                                           algorithm,
+                                           (__bridge CFDataRef)data2sign,
+                                           &error));
+    if (!signature) {
+        NSError *err = CFBridgingRelease(error);  // ARC takes ownership
+        // Handle the error. . .
+    }
+}
+
+```
+
+If something goes wrong, the function returns a `nil` signature and populates the error reference with a [CFError](../corefoundation/cferror.md) object that explains the failure. In Objective-C, you transfer management of the error object, if it exists, to Automatic Reference Counting (ARC). In Swift, you transfer control of this unmanaged object’s memory to the system with a call to [takeRetainedValue()](<../swift/unmanaged/takeretainedvalue().md>) and recast as an [Error](../swift/error.md).
+
+### Transmit the Data
+
+After you successfully generate a signature, you transmit the data and signature to any interested party. Using your public key, the recipient then verifies the signature by performing a set of operations that resemble the signing process. As the receiver, you first retrieve the public key, possibly from a certificate, as described in [Getting an Existing Key](getting-an-existing-key.md). Then, using the same algorithm as was used for signing, you test that the key and algorithm are mutually compatible with the verification operation:
+
+**Swift**
+
+```swift
+guard SecKeyIsAlgorithmSupported(publicKey, .verify, algorithm) else {
+    throw <# an error #>
+}
+```
+
+**Objective-C**
+
+```objc
+SecKeyRef publicKey = <# a key #>;  // E.g., from a cert
+BOOL canVerify = SecKeyIsAlgorithmSupported(publicKey,
+                                            kSecKeyOperationTypeVerify,
+                                            algorithm);
+```
+
+The [SecKeyIsAlgorithmSupported](<seckeyisalgorithmsupported(______).md>) function returns [false](../swift/false.md) if you use the wrong kind of key for the operation or algorithm. You then conduct the verification with a call to the [SecKeyVerifySignature](<seckeyverifysignature(__________).md>) function:
+
+**Swift**
+
+```swift
+var error: Unmanaged<CFError>?
+guard SecKeyVerifySignature(publicKey,
+                            algorithm,
+                            data as CFData,
+                            signature as CFData,
+                            &error) else {
+                                throw error!.takeRetainedValue() as Error
+}
+```
+
+**Objective-C**
+
+```objc
+BOOL result = NO;
+if (canVerify) {
+    CFErrorRef error = NULL;
+    result = SecKeyVerifySignature(publicKey,
+                                   algorithm,
+                                   (__bridge CFDataRef)data2sign,
+                                   (__bridge CFDataRef)signature,
+                                   &error);
+    if (!result) {
+        NSError *err = CFBridgingRelease(error);  // ARC takes ownership
+        // Handle the error. . .
+    }
+}
+
+```
+
+If the call succeeds and the signature and data are intact, the return value is [true](../swift/true.md). If the function returns [false](../swift/false.md), either the data or signature has been altered, the public key doesn’t match the private key, or some other error has occurred. Handle the error and transfer error object ownership to the system as needed.

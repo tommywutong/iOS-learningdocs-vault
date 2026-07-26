@@ -1,0 +1,30 @@
+---
+title: configurationState
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, visionOS 2.0+]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uitabsidebaritem/configurationstate-16oov
+source_url: 'https://developer.apple.com/documentation/uikit/uitabsidebaritem/configurationstate-16oov'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uitabsidebaritem/configurationstate-16oov.json'
+content_hash: 'sha256:ecb070a7274c0983'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UITabSidebarItem](../uitabsidebaritem.md)
+
+# configurationState
+
+<sub>Instance Property</sub>
+
+The current configuration state of the sidebar item.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS, watchOS</sub>
+
+```objc
+@property (nonatomic, strong, readonly) UICellConfigurationState * configurationState;
+```

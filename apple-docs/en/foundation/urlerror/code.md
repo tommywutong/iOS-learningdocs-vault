@@ -1,0 +1,107 @@
+---
+title: URLError.Code
+framework: Foundation
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 8.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/urlerror/code
+source_url: 'https://developer.apple.com/documentation/foundation/urlerror/code'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/urlerror/code.json'
+content_hash: 'sha256:1cdedf2a8443062c'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [URLError](../urlerror.md)
+
+# URLError.Code
+
+<sub>Structure</sub>
+
+Codes that describe errors within the URL loading API.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+struct Code
+```
+
+## Relationships
+
+- **Conforms To**: [Equatable](../../swift/equatable.md), [Hashable](../../swift/hashable.md), [RawRepresentable](../../swift/rawrepresentable.md), [Sendable](../../swift/sendable.md), [SendableMetatype](../../swift/sendablemetatype.md)
+
+## Topics
+
+### Error codes
+
+- [appTransportSecurityRequiresSecureConnection](code/apptransportsecurityrequiressecureconnection.md) — App Transport Security disallowed a connection because there is no secure network connection.
+- [backgroundSessionInUseByAnotherProcess](code/backgroundsessioninusebyanotherprocess.md) — An app or app extension attempted to connect to a background session that is already connected to a process.
+- [backgroundSessionRequiresSharedContainer](code/backgroundsessionrequiressharedcontainer.md) — The shared container identifier of the URL session configuration is needed but has not been set.
+- [backgroundSessionWasDisconnected](code/backgroundsessionwasdisconnected.md) — The app is suspended or exits while a background data task is processing.
+- [badServerResponse](code/badserverresponse.md) — The URL Loading system received bad data from the server.
+- [badURL](code/badurl.md) — A malformed URL prevented a URL request from being initiated.
+- [callIsActive](code/callisactive.md) — A connection was attempted while a phone call is active on a network that does not support simultaneous phone and data communication (EDGE or GPRS).
+- [cancelled](code/cancelled.md) — An asynchronous load has been canceled.
+- [cannotCloseFile](code/cannotclosefile.md) — A download task couldn’t close the downloaded file on disk.
+- [cannotConnectToHost](code/cannotconnecttohost.md) — An attempt to connect to a host failed.
+- [cannotCreateFile](code/cannotcreatefile.md) — A download task couldn’t create the downloaded file on disk because of an I/O failure.
+- [cannotDecodeContentData](code/cannotdecodecontentdata.md) — Content data received during a connection request had an unknown content encoding.
+- [cannotDecodeRawData](code/cannotdecoderawdata.md) — Content data received during a connection request could not be decoded for a known content encoding.
+- [cannotFindHost](code/cannotfindhost.md) — The host name for a URL could not be resolved.
+- [cannotLoadFromNetwork](code/cannotloadfromnetwork.md) — A request to load an item only from the cache could not be satisfied.
+- [cannotMoveFile](code/cannotmovefile.md) — A download task was unable to move a downloaded file on disk.
+- [cannotOpenFile](code/cannotopenfile.md) — A download task was unable to open the downloaded file on disk.
+- [cannotParseResponse](code/cannotparseresponse.md) — A task could not parse a response.
+- [cannotRemoveFile](code/cannotremovefile.md) — A download task was unable to remove a downloaded file from disk.
+- [cannotWriteToFile](code/cannotwritetofile.md) — A download task was unable to write to the downloaded file on disk.
+- [clientCertificateRejected](code/clientcertificaterejected.md) — A server certificate was rejected.
+- [clientCertificateRequired](code/clientcertificaterequired.md) — A client certificate was required to authenticate an SSL connection during a request.
+- [dataLengthExceedsMaximum](code/datalengthexceedsmaximum.md) — The length of the resource data exceeds the maximum allowed.
+- [dataNotAllowed](code/datanotallowed.md) — The cellular network disallowed a connection.
+- [dnsLookupFailed](code/dnslookupfailed.md) — The host address could not be found via DNS lookup.
+- [downloadDecodingFailedMidStream](code/downloaddecodingfailedmidstream.md) — A download task failed to decode an encoded file during the download.
+- [downloadDecodingFailedToComplete](code/downloaddecodingfailedtocomplete.md) — A download task failed to decode an encoded file after downloading.
+- [fileDoesNotExist](code/filedoesnotexist.md) — A file does not exist.
+- [fileIsDirectory](code/fileisdirectory.md) — A request for an FTP file resulted in the server responding that the file is not a plain file, but a directory.
+- [httpTooManyRedirects](code/httptoomanyredirects.md) — A redirect loop has been detected or the threshold for number of allowable redirects has been exceeded (currently 16).
+- [internationalRoamingOff](code/internationalroamingoff.md) — The attempted connection required activating a data context while roaming, but international roaming is disabled.
+- [networkConnectionLost](code/networkconnectionlost.md) — A client or server connection was severed in the middle of an in-progress load.
+- [noPermissionsToReadFile](code/nopermissionstoreadfile.md) — A resource couldn’t be read because of insufficient permissions.
+- [notConnectedToInternet](code/notconnectedtointernet.md) — A network resource was requested, but an internet connection has not been established and cannot be established automatically.
+- [redirectToNonExistentLocation](code/redirecttononexistentlocation.md) — A redirect was specified by way of server response code, but the server did not accompany this code with a redirect URL.
+- [requestBodyStreamExhausted](code/requestbodystreamexhausted.md) — A body stream is needed but the client did not provide one.
+- [resourceUnavailable](code/resourceunavailable.md) — A requested resource couldn’t be retrieved.
+- [secureConnectionFailed](code/secureconnectionfailed.md) — An attempt to establish a secure connection failed for reasons that can’t be expressed more specifically.
+- [serverCertificateHasBadDate](code/servercertificatehasbaddate.md) — A server certificate had a date which indicates it has expired, or is not yet valid.
+- [serverCertificateHasUnknownRoot](code/servercertificatehasunknownroot.md) — A server certificate was not signed by any root server.
+- [serverCertificateNotYetValid](code/servercertificatenotyetvalid.md) — A server certificate is not yet valid.
+- [serverCertificateUntrusted](code/servercertificateuntrusted.md) — A server certificate was signed by a root server that isn’t trusted.
+- [timedOut](code/timedout.md) — An asynchronous operation timed out.
+- [unknown](code/unknown.md) — The URL Loading System encountered an error that it can’t interpret.
+- [unsupportedURL](code/unsupportedurl.md) — A properly formed URL couldn’t be handled by the framework.
+- [userAuthenticationRequired](code/userauthenticationrequired.md) — Authentication is required to access a resource.
+- [userCancelledAuthentication](code/usercancelledauthentication.md) — An asynchronous request for authentication has been canceled by the user.
+- [zeroByteResource](code/zerobyteresource.md) — A server reported that a URL has a non-zero content length, but terminated the network connection gracefully without sending any data.
+
+## See Also
+
+### Error codes
+
+- [appTransportSecurityRequiresSecureConnection](apptransportsecurityrequiressecureconnection.md) — App Transport Security disallowed a connection because there is no secure network connection.
+- [backgroundSessionInUseByAnotherProcess](backgroundsessioninusebyanotherprocess.md) — An app or app extension attempted to connect to a background session that is already connected to a process.
+- [backgroundSessionRequiresSharedContainer](backgroundsessionrequiressharedcontainer.md) — The shared container identifier of the URL session configuration is needed but hasn’t been set.
+- [backgroundSessionWasDisconnected](backgroundsessionwasdisconnected.md) — The app is suspended or exits while a background data task is processing.
+- [badServerResponse](badserverresponse.md) — The URL Loading System received bad data from the server.
+- [badURL](badurl.md) — A malformed URL prevented a URL request from being initiated.
+- [callIsActive](callisactive.md) — A connection was attempted while a phone call is active on a network that doesn’t support simultaneous phone and data communication, such as EDGE or GPRS.
+- [cancelled](cancelled.md) — An asynchronous load has been canceled.
+- [cannotCloseFile](cannotclosefile.md) — A download task couldn’t close the downloaded file on disk.
+- [cannotConnectToHost](cannotconnecttohost.md) — An attempt to connect to a host failed.
+- [cannotCreateFile](cannotcreatefile.md) — A download task couldn’t create the downloaded file on disk because of an I/O failure.
+- [cannotDecodeContentData](cannotdecodecontentdata.md) — Content data received during a connection request had an unknown content encoding.
+- [cannotDecodeRawData](cannotdecoderawdata.md) — Content data received during a connection request couldn’t be decoded for a known content encoding.
+- [cannotFindHost](cannotfindhost.md) — The host name for a URL couldn’t be resolved.
+- [cannotLoadFromNetwork](cannotloadfromnetwork.md) — A request to load an item only from the cache could not be satisfied.

@@ -1,0 +1,44 @@
+---
+title: NSUserActivityTypeBrowsingWeb
+framework: Foundation
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsuseractivitytypebrowsingweb
+source_url: 'https://developer.apple.com/documentation/foundation/nsuseractivitytypebrowsingweb'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsuseractivitytypebrowsingweb.json'
+content_hash: 'sha256:c329423ae0001901'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Foundation](../foundation.md)
+
+# NSUserActivityTypeBrowsingWeb
+
+<sub>Global Variable</sub>
+
+An activity that continues from Handoff or a universal link.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+let NSUserActivityTypeBrowsingWeb: String
+```
+
+## Discussion
+
+An [NSUserActivity](nsuseractivity.md) object with an [activityType](nsuseractivity/activitytype.md) value of [NSUserActivityTypeBrowsingWeb](nsuseractivitytypebrowsingweb.md) indicates either an activity continued from a web browser-to-native app Handoff or a universal link. For this activity type, the [webpageURL](nsuseractivity/webpageurl.md) property contains the `http` or `https` URL associated with the activity.
+
+For more information on universal links, see [Allowing apps and websites to link to your content](../xcode/allowing-apps-and-websites-to-link-to-your-content.md). For more information on web browser-to-native app Handoff, see [Web Browser–to–Native App Handoff](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/Handoff/AdoptingHandoff/AdoptingHandoff.html#//apple_ref/doc/uid/TP40014338-CH2-SW10).
+
+## See Also
+
+### Browsing the web
+
+- [webpageURL](nsuseractivity/webpageurl.md) — The URL of the webpage to load in a browser to continue the activity.
+- [referrerURL](nsuseractivity/referrerurl.md) — The URL of the webpage that linked to the webpage URL.
+- [TVUserActivityTypeBrowsingChannelGuide](../tvservices/tvuseractivitytypebrowsingchannelguide.md) — An activity for viewing your app’s channel guide.

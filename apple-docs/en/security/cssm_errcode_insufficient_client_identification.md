@@ -1,0 +1,28 @@
+---
+title: CSSM_ERRCODE_INSUFFICIENT_CLIENT_IDENTIFICATION
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [macOS 10.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/cssm_errcode_insufficient_client_identification
+source_url: 'https://developer.apple.com/documentation/security/cssm_errcode_insufficient_client_identification'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/cssm_errcode_insufficient_client_identification.json'
+content_hash: 'sha256:00e18f2bd5fde0dd'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# CSSM_ERRCODE_INSUFFICIENT_CLIENT_IDENTIFICATION
+
+<sub>Global Variable</sub>
+
+<sub>macOS</sub>
+
+```swift
+var CSSM_ERRCODE_INSUFFICIENT_CLIENT_IDENTIFICATION: Int { get }
+```

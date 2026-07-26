@@ -1,0 +1,46 @@
+---
+title: 'symmetricDifference(_:)'
+framework: Foundation
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 8.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/foundation/characterset/symmetricdifference(_:)'
+source_url: 'https://developer.apple.com/documentation/foundation/characterset/symmetricdifference(_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/characterset/symmetricdifference%28_%3A%29.json'
+content_hash: 'sha256:03f8b70a8432afdd'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [CharacterSet](../characterset.md)
+
+# symmetricDifference(_:)
+
+<sub>Instance Method</sub>
+
+Returns an exclusive or of the `CharacterSet` with another `CharacterSet`.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func symmetricDifference(_ other: CharacterSet) -> CharacterSet
+```
+
+## See Also
+
+### Combining Character Sets
+
+- [formIntersection(_:)](<formintersection(__).md>) — Sets the value to an intersection of the `CharacterSet` with another `CharacterSet`.
+- [formSymmetricDifference(_:)](<formsymmetricdifference(__).md>) — Sets the value to an exclusive or of the `CharacterSet` with another `CharacterSet`.
+- [formUnion(_:)](<formunion(__).md>) — Sets the value to a union of the `CharacterSet` with another `CharacterSet`.
+- [hasMember(inPlane:)](<hasmember(inplane_).md>) — Returns true if the `CharacterSet` has a member in the specified plane.
+- [insert(charactersIn:)](<insert(charactersin_)-2syuj.md>) — Insert the values from the specified string into the `CharacterSet`.
+- [intersection(_:)](<intersection(__).md>) — Returns an intersection of the `CharacterSet` with another `CharacterSet`.
+- [invert()](<invert().md>) — Invert the contents of the `CharacterSet`.
+- [isSuperset(of:)](<issuperset(of_).md>) — Returns true if `self` is a superset of `other`.
+- [remove(charactersIn:)](<remove(charactersin_)-3sayw.md>) — Remove the values from the specified string from the `CharacterSet`.
+- [subtracting(_:)](<subtracting(__).md>) — Returns a `CharacterSet` created by removing elements in `other` from `self`.
+- [union(_:)](<union(__).md>) — Returns a union of the `CharacterSet` with another `CharacterSet`.

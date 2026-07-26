@@ -1,0 +1,48 @@
+---
+title: CG_NULLABLE_ARRAY
+framework: Core Graphics
+symbol_kind: macro
+role: symbol
+role_heading: Macro
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coregraphics/cg_nullable_array
+source_url: 'https://developer.apple.com/documentation/coregraphics/cg_nullable_array'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coregraphics/cg_nullable_array.json'
+content_hash: 'sha256:3af89fba970b919a'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Graphics](../coregraphics.md)
+
+# CG_NULLABLE_ARRAY
+
+<sub>Macro</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```objc
+#define CG_NULLABLE_ARRAY
+```
+
+## See Also
+
+### Macros
+
+- [CGSizeApplyAffineTransform](cgsizeapplyaffinetransform-c.macro.md)
+- [CGPointApplyAffineTransform](cgpointapplyaffinetransform-c.macro.md)
+- [CGAffineTransformMake](cgaffinetransformmake-c.macro.md)
+- [CG_BOXABLE](cg_boxable.md)
+- [CG_BRIDGE_VERSION](cg_bridge_version.md)
+- [CG_EXTERN](cg_extern.md)
+- [CG_EXTERN_32](cg_extern_32.md)
+- [CG_EXTERN_64](cg_extern_64.md)
+- [CG_INLINE](cg_inline.md)
+- [CG_IOS_VERSION](cg_ios_version.md)
+- [CG_LOCAL](cg_local.md)
+- [CG_LOCAL_32](cg_local_32.md)
+- [CG_LOCAL_64](cg_local_64.md)
+- [CG_NONNULL_ARRAY](cg_nonnull_array.md)
+- [CG_OBSOLETE](cg_obsolete.md)

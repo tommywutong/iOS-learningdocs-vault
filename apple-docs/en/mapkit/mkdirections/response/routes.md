@@ -1,0 +1,36 @@
+---
+title: routes
+framework: MapKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 7.0+, iPadOS 7.0+, Mac Catalyst 13.1+, macOS 10.9+, tvOS 9.2+, visionOS 1.0+, watchOS 1.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/mapkit/mkdirections/response/routes
+source_url: 'https://developer.apple.com/documentation/mapkit/mkdirections/response/routes'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/mapkit/mkdirections/response/routes.json'
+content_hash: 'sha256:4969384e94f6c980'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [MapKit](../../../mapkit.md) · [MKDirections](../../mkdirections.md) · [Response](../response.md)
+
+# routes
+
+<sub>Instance Property</sub>
+
+An array of route objects representing the directions between the start and end points.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var routes: [MKRoute] { get }
+```
+
+## Discussion
+
+The array contains one or more [MKRoute](../../mkroute.md) objects, each of which represents a possible set of directions for the user to follow. If you don’t request alternate routes in the original directions request, this array contains at most one object.
+
+Each route object contains geometry information that you can use to display that route on your app’s map view. Routes may also contain additional information that’s relevant to that particular route, such as the expected travel time and any trip advisory notices.

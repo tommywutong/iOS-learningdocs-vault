@@ -1,0 +1,28 @@
+---
+title: nSubtables
+framework: Core Text
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coretext/mortchain/nsubtables
+source_url: 'https://developer.apple.com/documentation/coretext/mortchain/nsubtables'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coretext/mortchain/nsubtables.json'
+content_hash: 'sha256:c55499eecf6121f9'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Text](../../coretext.md) · [MortChain](../mortchain.md)
+
+# nSubtables
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var nSubtables: UInt16
+```

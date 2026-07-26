@@ -1,0 +1,192 @@
+---
+title: Scheduling an alarm with AlarmKit
+framework: AlarmKit
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, Xcode 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/alarmkit/scheduling-an-alarm-with-alarmkit
+source_url: 'https://developer.apple.com/documentation/alarmkit/scheduling-an-alarm-with-alarmkit'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/alarmkit/scheduling-an-alarm-with-alarmkit.json'
+content_hash: 'sha256:43baa4aa59d2a50a'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AlarmKit](../alarmkit.md)
+
+# Scheduling an alarm with AlarmKit
+
+<sub>Sample Code</sub>
+
+Create prominent alerts at specified dates for your iOS app.
+
+## Overview
+
+An alarm is an alert that presents at a pre-determined time based on a schedule or after a countdown. It overrides both a device’s focus and silent mode, if necessary.
+
+This sample project uses AlarmKit to create and manage different types of alarms. In this app people can create and manage:
+
+- **One-time alarms** which alert only once at a specified time in the future.
+- **Repeating alarms** which alert with a weekly cadence.
+- **Timers** which alert after a countdown, and start immediately.
+
+This project also includes a widget extension for setting up the custom countdown Live Activity associated with an alarm.
+
+> [!note] Note
+> This sample code project is associated with WWDC25 session 230: [Wake up to the AlarmKit API](https://developer.apple.com/wwdc25/230).
+
+## Authorize the app to schedule alarms
+
+This sample prompts people to authorize the app to allow AlarmKit to schedule alarms and create alerts by calling [requestAuthorization()](<alarmmanager/requestauthorization().md>) on [AlarmManager](alarmmanager.md). Otherwise, when a person adds their first alarm, AlarmKit automatically requests this authorization on behalf of the app, before scheduling the alarm. If this sample doesn’t get this authorization, then any alarm created by the app isn’t scheduled and subsequently doesn’t alert.
+
+```swift
+do {
+    let state = try await alarmManager.requestAuthorization()
+    return state == .authorized
+} catch {
+    print("Error occurred while requesting authorization: \(error)")
+    return false
+}
+```
+
+The sample includes the [NSAlarmKitUsageDescription](../bundleresources/information-property-list/nsalarmkitusagedescription.md) key in the app’s `Info.plist` with a descriptive string explaining why it schedules alarms. This string appears in the system prompt when requesting authorization, in this sample the string is:
+
+```
+We'll schedule alerts for alarms you create within our app.
+```
+
+If the `NSAlarmKitUsageDescription` key is missing or its value is an empty string, apps can’t schedule alarms with AlarmKit.
+
+## Create the alarm schedule
+
+The sample app creates an alarm with either, or both, a countdown duration and a schedule, based on the options a person sets.
+
+[CountdownDuration](alarm/countdownduration-swift.struct.md) uses the selected `TimeInterval` for the  pre-alert countdown, which displays the alert when the countdown reaches 0.
+
+[Schedule](alarm/schedule-swift.enum.md) enables people to set a one-time alarm, or configure a weekly schedule. For single-occurrence alarms, the [repeats](alarm/schedule-swift.enum/relative/repeats.md) property is set to [Alarm.Schedule.Relative.Recurrence.never](alarm/schedule-swift.enum/relative/recurrence/never.md). For recurring alarms, the `repeats` property is set to [Alarm.Schedule.Relative.Recurrence.weekly(_:)](<alarm/schedule-swift.enum/relative/recurrence/weekly(__).md>) with an associated array `Locale.Weekday`, indicating the days of the week the alarm alerts.
+
+```swift
+let time = Alarm.Schedule.Relative.Time(hour: hour, minute: minute)
+return .relative(.init(
+    time: time,
+    repeats: weekdays.isEmpty ? .never : .weekly(Array(weekdays))
+))
+```
+
+## Configure the alarm’s UI attributes
+
+AlarmKit provides a presentation for each of the three alarm states - [Alert](alarmpresentation/alert-swift.struct.md), [Countdown](alarmpresentation/countdown-swift.struct.md), and [Paused](alarmpresentation/paused-swift.struct.md). Because `Countdown` and `Paused` are optional presentations, this sample doesn’t use them if the alarm only has an `Alert` state.
+
+```swift
+let alertContent = AlarmPresentation.Alert(title: userInput.localizedLabel,
+        stopButton: .stopButton,
+        secondaryButton: secondaryButton,
+        secondaryButtonBehavior: secondaryButtonBehavior)
+
+guard userInput.countdownDuration != nil else {
+    // An alarm without countdown specifies only an alert state.
+    return AlarmPresentation(alert: alertContent)
+}
+
+// With countdown enabled, provide a presentation for both a countdown and paused state.
+let countdownContent = AlarmPresentation.Countdown(title: userInput.localizedLabel,
+        pauseButton: .pauseButton)
+
+let pausedContent = AlarmPresentation.Paused(title: "Paused",
+        resumeButton: .resumeButton)
+
+return AlarmPresentation(alert: alertContent, countdown: countdownContent, paused: pausedContent)
+```
+
+Alongside the [stopButton](alarmpresentation/alert-swift.struct/stopbutton.md), the sample includes another action button in the alerting UI. This action depends on [secondaryButton](alarmpresentation/alert-swift.struct/secondarybutton.md) and [secondaryButtonBehavior](alarmpresentation/alert-swift.struct/secondarybuttonbehavior-swift.property.md).
+
+```swift
+var secondaryButtonBehavior: AlarmPresentation.Alert.SecondaryButtonBehavior? {
+    switch selectedSecondaryButton {
+    case .none: nil
+    case .countdown: .countdown
+    case .openApp: .custom
+    }
+}
+```
+
+When the `secondaryButtonBehavior` property is set to [AlarmPresentation.Alert.SecondaryButtonBehavior.countdown](alarmpresentation/alert-swift.struct/secondarybuttonbehavior-swift.enum/countdown.md), the secondary button is a `Repeat` action, which re-triggers the alarm after a certain `TimeInterval`, as specified in [postAlert](alarm/countdownduration-swift.struct/postalert.md). If the `secondaryButtonBehavior` is set to [AlarmPresentation.Alert.SecondaryButtonBehavior.custom](alarmpresentation/alert-swift.struct/secondarybuttonbehavior-swift.enum/custom.md), the alarm alert displays an `Open` action to launch the app.
+
+```swift
+let secondaryButton: AlarmButton? = switch secondaryButtonBehavior {
+    case .countdown: .repeatButton
+    case .custom: .openAppButton
+    default: nil
+}
+```
+
+> [!note] Note
+> The system forwards the alert presentation to a paired watch (if any) to notify people when an alarm is alerting.
+
+The content for these presentations is wrapped into [ActivityAttributes](../activitykit/activityattributes.md), along with [tintColor](alarmattributes/tintcolor.md), and [metadata](alarmattributes/metadata.md). The tint color associates the alarms with the sample app and also differentiates them from other app’s alarms on the person’s device.
+
+```swift
+let attributes = AlarmAttributes(presentation: alarmPresentation(with: userInput),
+        metadata: CookingData(),
+        tintColor: Color.blue)
+```
+
+## Schedule the configured alarm
+
+The sample uses a unique identifier to track alarms registered with AlarmKit. The sample manages and updates alarm states, such as [pause(id:)](<alarmmanager/pause(id_).md>) and [cancel(id:)](<alarmmanager/cancel(id_).md>), using this identifier.
+
+When a person taps the button in the alerting UI, the [AlarmManager](alarmmanager.md) automatically handles stop or countdown functionalities, depending on the button type.
+
+> [!tip] Tip
+> You can add additional actions for each button type using [App Intents](../appintents.md), which you can configure using [AlarmConfiguration](alarmmanager/alarmconfiguration.md).
+
+```swift
+let id = UUID()
+let alarmConfiguration = AlarmConfiguration(countdownDuration: userInput.countdownDuration,
+        schedule: userInput.schedule,
+        attributes: attributes,
+        stopIntent: StopIntent(alarmID: id.uuidString),
+        secondaryIntent: secondaryIntent(alarmID: id, userInput: userInput))
+```
+
+This sample creates the alarm ID and [AlarmConfiguration](alarmmanager/alarmconfiguration.md) and schedules the alarm with [AlarmManager](alarmmanager.md).
+
+```swift
+let alarm = try await alarmManager.schedule(id: id, configuration: alarmConfiguration)
+```
+
+## Observe state changes on the alarms
+
+At initialization, the `ViewModel` subscribes to alarm events from [shared](alarmmanager/shared.md). This enables the sample app to have the latest state of an alarm even if the alarm state updated while the sample app isn’t running.
+
+```swift
+Task {
+    for await incomingAlarms in alarmManager.alarmUpdates {
+        updateAlarmState(with: incomingAlarms)
+    }
+}
+```
+
+> [!note] Note
+> An [Alarm](alarm.md) that’s not included in the [alarmUpdates](alarmmanager/alarmupdates-swift.property.md) asynchronous stream is no longer scheduled with AlarmKit.
+
+## Create a Widget Extension for Live Activities
+
+The sample app adds a widget extension target to customize non-alerting presentations in the Dynamic Island, Lock Screen, and StandBy. The widget extension receives the same [AlarmAttributes](alarmattributes.md) structure that you provide to [shared](alarmmanager/shared.md) when scheduling alarms. It includes the metadata provided in the [Configure the alarm’s UI attributes](#Configure-the-alarms-UI-attributes) section above.
+
+> [!important] Important
+> AlarmKit expects a widget extension if an app supports a countdown presentation. Otherwise, the system may unexpectedly dismiss alarms and fail to alert. For more information, see [ActivityKit](../activitykit.md).
+
+## See Also
+
+### Alarm management
+
+- [AlarmManager](alarmmanager.md) — An object that exposes functions to work with alarms: scheduling, snoozing, cancelling.
+- [Alarm](alarm.md) — An object that describes an alarm that can alert once or on a repeating schedule.
+
+## Download
+
+- [SchedulingAnAlarmWithAlarmKit.zip](https://docs-assets.developer.apple.com/published/c2045ce0bff8/SchedulingAnAlarmWithAlarmKit.zip)

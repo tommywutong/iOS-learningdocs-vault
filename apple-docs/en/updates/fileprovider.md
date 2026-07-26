@@ -1,0 +1,58 @@
+---
+title: File Provider updates
+framework: Updates
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/updates/fileprovider
+source_url: 'https://developer.apple.com/documentation/updates/fileprovider'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/updates/fileprovider.json'
+content_hash: 'sha256:a49de6e3b1162b19'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Updates](../updates.md)
+
+# File Provider updates
+
+<sub>Article</sub>
+
+Learn about important changes to File Provider.
+
+## Overview
+
+Browse notable changes in [File Provider](../fileprovider.md).
+
+## June 2024
+
+- Offer people the ability to sync their Desktop and Documents folders with your File Provider app. Check whether a person opts in to sync these folders using [replicatedKnownFolders](../fileprovider/nsfileproviderdomain/replicatedknownfolders.md). Sync the folders using [claimKnownFolders(_:localizedReason:completionHandler:)](<../fileprovider/nsfileprovidermanager/claimknownfolders(__localizedreason_completionhandler_).md>), or stop syncing using [releaseKnownFolders(_:localizedReason:completionHandler:)](<../fileprovider/nsfileprovidermanager/releaseknownfolders(__localizedreason_completionhandler_).md>) if the person opts out. Provide the system with information about which folders you support syncing through [supportedKnownFolders](../fileprovider/nsfileproviderdomain/supportedknownfolders.md), and share the locations of the folders by adopting [NSFileProviderKnownFolderSupporting](../fileprovider/nsfileproviderknownfoldersupporting.md).
+- Cache files on external disks. Confirm whether a volume is eligible for storing a domain using [checkDomainsCanBeStoredOnVolume(at:)](<../fileprovider/nsfileprovidermanager/checkdomainscanbestoredonvolume(at_).md>), and create a domain on that volume using the new [init(displayName:userInfo:volumeURL:)](<../fileprovider/nsfileproviderdomain/init(displayname_userinfo_volumeurl_).md>) initializer. Store data about the current sync state using [stateDirectoryURL()](<../fileprovider/nsfileprovidermanager/statedirectoryurl().md>), and determine whether to connect to a domain created on another device using [shouldConnectExternalDomain(completionHandler:)](<../fileprovider/nsfileproviderexternalvolumehandling/shouldconnectexternaldomain(completionhandler_).md>).
+- Install the File Provider logging profile to log helpful information for debugging and troubleshooting. Download the `.mobileconfig` file at [Profiles and Logs](https://developer.apple.com/bug-reporting/profiles-and-logs/).
+
+## March 2024
+
+- Improve error handling with new underlying error codes for [NSFileProviderError.Code.providerNotFound](../fileprovider/nsfileprovidererror/code/providernotfound.md). [NSFileProviderError.Code.providerDomainTemporarilyUnavailable](../fileprovider/nsfileprovidererror/code/providerdomaintemporarilyunavailable.md) indicates that the system is unable to service requests for this domain temporarily, and you can try again later. [NSFileProviderError.Code.providerDomainNotFound](../fileprovider/nsfileprovidererror/code/providerdomainnotfound.md) indicates that there isn’t a registered domain for the corresponding identifier. [NSFileProviderError.Code.applicationExtensionNotFound](../fileprovider/nsfileprovidererror/code/applicationextensionnotfound.md) indicates that there isn’t an app extension within the app bundle.
+
+## See Also
+
+### Technology and frameworks
+
+- [Accelerate updates](accelerate.md) — Learn about important changes to Accelerate.
+- [Accessibility updates](accessibility.md) — Learn about important changes to Accessibility.
+- [ActivityKit updates](activitykit.md) — Learn about important changes in ActivityKit.
+- [AdAttributionKit Updates](adattributionkit.md) — Learn about important changes to AdAttributionKit.
+- [App Clips updates](appclips.md) — Learn about important changes in App Clips.
+- [App Intents updates](appintents.md) — Learn about important changes in App Intents.
+- [AppKit updates](appkit.md) — Learn about important changes to AppKit.
+- [Apple Intelligence updates](apple-intelligence.md) — Learn about important changes to Apple Intelligence.
+- [AppleMapsServerAPI Updates](applemapsserverapi.md) — Learn about important changes to AppleMapsServerAPI.
+- [Apple Pencil updates](applepencil.md) — Learn about important changes to Apple Pencil.
+- [ARKit updates](arkit.md) — Learn about important changes to ARKit.
+- [Audio Toolbox updates](audiotoolbox.md) — Learn about important changes to Audio Toolbox.
+- [AuthenticationServices updates](authenticationservices.md) — Learn about important changes to AuthenticationServices.
+- [AVFAudio updates](avfaudio.md) — Learn about important changes to AVFAudio.
+- [AVFoundation updates](avfoundation.md) — Learn about important changes to AVFoundation.

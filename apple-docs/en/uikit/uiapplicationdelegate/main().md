@@ -1,0 +1,34 @@
+---
+title: main()
+framework: UIKit
+symbol_kind: method
+role: symbol
+role_heading: Type Method
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 2.0+, tvOS, visionOS]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiapplicationdelegate/main()
+source_url: 'https://developer.apple.com/documentation/uikit/uiapplicationdelegate/main()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiapplicationdelegate/main%28%29.json'
+content_hash: 'sha256:052bfce986071aa0'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIApplicationDelegate](../uiapplicationdelegate.md)
+
+# main()
+
+<sub>Type Method</sub>
+
+Provides the top-level entry point for the app.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor @preconcurrency static func main()
+```
+
+## Discussion
+
+[UIApplicationDelegate](../uiapplicationdelegate.md) provides an implementation of the [main()](<main().md>) method so that it can serve as the main entry point for a UIKit app. The system calls the [main()](<main().md>) method to launch your app; you never call it yourself. You can have exactly one entry point in your app, which you mark with the `@main` attribute.

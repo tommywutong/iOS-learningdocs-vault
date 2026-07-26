@@ -1,0 +1,57 @@
+---
+title: 'allocate(capacity:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Type Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/unsafemutablepointer/allocate(capacity:)'
+source_url: 'https://developer.apple.com/documentation/swift/unsafemutablepointer/allocate(capacity:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/unsafemutablepointer/allocate%28capacity%3A%29.json'
+content_hash: 'sha256:c18f5ad4842149b2'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [UnsafeMutablePointer](../unsafemutablepointer.md)
+
+# allocate(capacity:)
+
+<sub>Type Method</sub>
+
+Allocates uninitialized memory for the specified number of instances of type `Pointee`.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static func allocate(capacity count: Int) -> UnsafeMutablePointer<Pointee>
+```
+
+## Parameters
+
+- `count` — The amount of memory to allocate, counted in instances of `Pointee`.
+
+## Discussion
+
+The resulting pointer references a region of memory that is bound to `Pointee` and is `count * MemoryLayout<Pointee>.stride` bytes in size.
+
+The following example allocates enough new memory to store four `Int` instances and then initializes that memory with the elements of a range.
+
+```swift
+let intPointer = UnsafeMutablePointer<Int>.allocate(capacity: 4)
+for i in 0..<4 {
+    (intPointer + i).initialize(to: i)
+}
+print(intPointer.pointee)
+// Prints "0"
+```
+
+When you allocate memory, always remember to deallocate once you’re finished.
+
+```swift
+intPointer.deallocate()
+```
+
+You must only use `deallocate()` to end the lifetime of memory created with `allocate()`; it is a programming error to use `free` or another deallocation API, and may result in undefined behavior.

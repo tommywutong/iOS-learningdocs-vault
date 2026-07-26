@@ -1,0 +1,60 @@
+---
+title: Adjusting the level of detail using Metal mesh shaders
+framework: Metal
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, macOS 14.0+, Xcode 26.3+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/adjusting-the-level-of-detail-using-metal-mesh-shaders
+source_url: 'https://developer.apple.com/documentation/metal/adjusting-the-level-of-detail-using-metal-mesh-shaders'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/adjusting-the-level-of-detail-using-metal-mesh-shaders.json'
+content_hash: 'sha256:fa793c802997b79e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Metal sample code library](metal-sample-code-library.md)
+
+# Adjusting the level of detail using Metal mesh shaders
+
+<sub>Sample Code</sub>
+
+Choose and render meshes with several levels of detail using object and mesh shaders.
+
+## Overview
+
+> [!note] Note
+> This sample code project is associated with WWDC22 session [10162: Transform your geometry with Metal mesh shaders](https://developer.apple.com/wwdc22/10162/).
+
+### Configure the sample code project
+
+To run this sample, you need Xcode 14 or later, and a physical device that supports [MTLGPUFamilyMac2](mtlgpufamily/mac2.md) or [MTLGPUFamilyApple7](mtlgpufamily/apple7.md), such as:
+
+- A Mac running macOS 13 or later
+- An iOS device with an A15 chip or later running iOS 16 or later
+
+This sample can only run on a physical device because it uses mesh shader features, which Simulator doesn’t support.
+
+## See Also
+
+### Render workflows
+
+- [Using Metal to draw a view’s contents](using-metal-to-draw-a-view's-contents.md) — Create a MetalKit view and a render pass to draw the view’s contents.
+- [Drawing a triangle with Metal 4](drawing-a-triangle-with-metal-4.md) — Render a colorful, rotating 2D triangle by running draw commands with a render pipeline on a GPU.
+- [Selecting device objects for graphics rendering](selecting-device-objects-for-graphics-rendering.md) — Switch dynamically between multiple GPUs to efficiently render to a display.
+- [Customizing render pass setup](customizing-render-pass-setup.md) — Render into an offscreen texture by creating a custom render pass.
+- [Creating a custom Metal view](creating-a-custom-metal-view.md) — Implement a lightweight view for Metal rendering that’s customized to your app’s needs.
+- [Calculating primitive visibility using depth testing](calculating-primitive-visibility-using-depth-testing.md) — Determine which pixels are visible in a scene by using a depth texture.
+- [Encoding indirect command buffers on the CPU](encoding-indirect-command-buffers-on-the-cpu.md) — Reduce CPU overhead and simplify your command execution by reusing commands.
+- [Implementing order-independent transparency with image blocks](implementing-order-independent-transparency-with-image-blocks.md) — Draw overlapping, transparent surfaces in any order by using tile shaders and image blocks.
+- [Loading textures and models using Metal fast resource loading](loading-textures-and-models-using-metal-fast-resource-loading.md) — Stream texture and buffer data directly from disk into Metal resources using fast resource loading.
+- [Creating a 3D application with hydra rendering](creating-a-3d-application-with-hydra-rendering.md) — Build a 3D application that integrates with Hydra and USD.
+- [Culling occluded geometry using the visibility result buffer](culling-occluded-geometry-using-the-visibility-result-buffer.md) — Draw a scene without rendering hidden geometry by checking whether each object in the scene is visible.
+- [Improving edge-rendering quality with multisample antialiasing (MSAA)](improving-edge-rendering-quality-with-multisample-antialiasing-msaa.md) — Apply MSAA to enhance the rendering of edges with custom resolve options and immediate and tile-based resolve paths.
+- [Achieving smooth frame rates with a Metal display link](achieving-smooth-frame-rates-with-a-metal-display-link.md) — Pace rendering with minimal input latency while providing essential information to the operating system for power-efficient rendering, thermal mitigation, and the scheduling of sustainable workloads.
+
+## Download
+
+- [AdjustingTheLevelOfDetailUsingMetalMeshShaders.zip](https://docs-assets.developer.apple.com/published/d68116010a56/AdjustingTheLevelOfDetailUsingMetalMeshShaders.zip)

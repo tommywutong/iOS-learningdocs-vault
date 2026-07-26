@@ -1,0 +1,104 @@
+---
+title: 'init(cglContext:pixelFormat:colorSpace:options:)'
+framework: Core Image
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [macOS 10.6+（10.14 起废弃）]
+languages: [swift, occ]
+beta: false
+deprecated: true
+doc_path: '/documentation/coreimage/cicontext/init(cglcontext:pixelformat:colorspace:options:)-6rp6d'
+source_url: 'https://developer.apple.com/documentation/coreimage/cicontext/init(cglcontext:pixelformat:colorspace:options:)-6rp6d'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coreimage/cicontext/init%28cglcontext%3Apixelformat%3Acolorspace%3Aoptions%3A%29-6rp6d.json'
+content_hash: 'sha256:646cdae60b648d50'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Image](../../coreimage.md) · [CIContext](../cicontext.md)
+
+# init(cglContext:pixelFormat:colorSpace:options:)
+
+<sub>Initializer</sub>
+
+Creates a Core Image context from a CGL context, using the specified options, color space, and pixel format object.
+
+> [!warning] Deprecated
+> Core Image OpenGL API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these warnings)
+
+<sub>macOS</sub>
+
+```swift
+init(cglContext cglctx: CGLContextObj, pixelFormat: CGLPixelFormatObj?, colorSpace: CGColorSpace?, options: [CIContextOption : Any]? = nil)
+```
+
+## Parameters
+
+- `cglctx` — A CGL context obtained by calling the CGL function `CGLCreateContext(_:_:_:)`.
+
+- `pixelFormat` — A CGL pixel format object either obtained from the system or created by calling a CGL function such as `CGLChoosePixelFormat(_:_:_:)`. This parameter must be the same pixel format object used to create the CGL context. The pixel format object must be valid for the lifetime of the Core Image context. Don’t release the pixel format object until after you release the Core Image context.
+
+- `colorSpace` — A color space object encapsulating color space information that is used to specify how color values are interpreted.
+
+- `options` — A dictionary that contains options for creating a [CIContext](../cicontext.md) object. You can pass any of the keys defined in [CIContextOption](../cicontextoption.md) along with the appropriate value.
+
+## Discussion
+
+After calling this method, Core Image draws content into the surface (drawable object) attached to the CGL context. A CGL context is a macOS OpenGL context. For more information, see [OpenGL Programming Guide for Mac](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/OpenGL-MacProgGuide/opengl_intro/opengl_intro.html#//apple_ref/doc/uid/TP40001987).
+
+When you create a [CIContext](../cicontext.md) object using a CGL context, all OpenGL states set for the CGL context affect rendering to that context. That means that coordinate and viewport transformations set on the CGL context, as well as the vertex color, affect drawing to that context.
+
+For best results, follow these guidelines when you use Core Image to render into an OpenGL context:
+
+- Ensure that a single unit in the coordinate space of the OpenGL context represents a single pixel in the output device.
+- The Core Image coordinate space has the origin in the bottom-left corner of the screen. You should configure the OpenGL context in the same way.
+- The OpenGL context blending state is respected by Core Image. If the image you want to render contains translucent pixels, it’s best to enable blending using a blend function with the parameters `GL_ONE, GL_ONE_MINUS_SRC_ALPHA`, as shown in the following code example.
+
+Core Image manages its own internal OpenGL context that shares resources with the OpenGL context you specify. To enable resource sharing, use the following code:
+
+**Swift**
+
+```swift
+let attr = [
+    NSOpenGLPFAAccelerated,
+    NSOpenGLPFANoRecovery,
+    NSOpenGLPFAColorSize, 32,
+    0
+    ].map {NSOpenGLPixelFormatAttribute($0)}
+let pf = NSOpenGLPixelFormat(attributes: attr)!
+let myCIContext = CIContext(CGLContext: CGLGetCurrentContext(),
+                            pixelFormat: pf.CGLPixelFormatObj,
+                            colorSpace: CGColorSpaceCreateDeviceRGB(),
+                            options: [:])
+```
+
+**Objective-C**
+
+```objc
+const NSOpenGLPixelFormatAttribute attr[] = {
+        NSOpenGLPFAAccelerated,
+        NSOpenGLPFANoRecovery,
+        NSOpenGLPFAColorSize, 32,
+        0
+    };
+NSOpenGLPixelFormat *pf = [[NSOpenGLPixelFormat alloc] initWithAttributes:(void *)&attr];
+CIContext *myCIContext = [CIContext contextWithCGLContext: CGLGetCurrentContext()
+                                pixelFormat: [pf CGLPixelFormatObj]
+                                colorSpace: CGColorSpaceCreateDeviceRGB()
+                                options: nil];
+```
+
+## See Also
+
+### Related Documentation
+
+- [+ contextWithCGContext:options:](<init(cgcontext_options_)-6p78w.md>) — Creates a Core Image context from a Quartz context, using the specified options.
+
+### Deprecated
+
+- [+ contextWithEAGLContext:](<init(eaglcontext_)-8ajef.md>) — Creates a Core Image context from an EAGL context. _(deprecated)_
+- [+ contextWithEAGLContext:options:](<init(eaglcontext_options_)-6uyqj.md>) — Creates a Core Image context from an EAGL context using the specified options. _(deprecated)_
+- [init(forOfflineGPUAtIndex:)](<init(forofflinegpuatindex_).md>) — Creates an OpenGL-based Core Image context using a GPU that is not currently driving a display. _(deprecated)_
+- [init(forOfflineGPUAtIndex:colorSpace:options:sharedContext:)](<init(forofflinegpuatindex_colorspace_options_sharedcontext_).md>) — Creates an OpenGL-based Core Image context using a GPU that is not currently driving a display, with the specified options. _(deprecated)_
+- [- createCGLayerWithSize:info:](<createcglayer(with_info_).md>) — Creates a CGLayer object from the provided parameters. _(deprecated)_
+- [- drawImage:atPoint:fromRect:](<draw(__at_from_).md>) — Renders a region of an image to a point in the context destination. _(deprecated)_

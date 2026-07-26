@@ -1,0 +1,60 @@
+---
+title: Publishers.MapError
+framework: Combine
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/combine/publishers/maperror
+source_url: 'https://developer.apple.com/documentation/combine/publishers/maperror'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/combine/publishers/maperror.json'
+content_hash: 'sha256:bf3ec14e78a17bc5'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Combine](../../combine.md) · [Publishers](../publishers.md)
+
+# Publishers.MapError
+
+<sub>Structure</sub>
+
+A publisher that converts any failure from the upstream publisher into a new error.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+struct MapError<Upstream, Failure> where Upstream : Publisher, Failure : Error
+```
+
+## Relationships
+
+- **Conforms To**: [Publisher](../publisher.md)
+
+## Topics
+
+### Creating an error-mapping publisher
+
+- [init(upstream:_:)](<maperror/init(upstream___).md>)
+- [init(upstream:transform:)](<maperror/init(upstream_transform_).md>) — Creates a publisher that converts any failure from the upstream publisher into a new error.
+
+### Declaring supporting types
+
+- [Output](maperror/output.md) — The kind of values published by this publisher.
+
+### Inspecting publisher properties
+
+- [upstream](maperror/upstream.md) — The publisher from which this publisher receives elements.
+- [transform](maperror/transform.md) — The closure that converts the upstream failure into a new error.
+
+## See Also
+
+### Mapping elements
+
+- [Map](map.md) — A publisher that transforms all elements from the upstream publisher with a provided closure.
+- [TryMap](trymap.md) — A publisher that transforms all elements from the upstream publisher with a provided error-throwing closure.
+- [Scan](scan.md) — A publisher that transforms elements from the upstream publisher by providing the current element to a closure along with the last value returned by the closure.
+- [TryScan](tryscan.md) — A publisher that transforms elements from the upstream publisher by providing the current element to a failable closure along with the last value returned by the closure.
+- [SetFailureType](setfailuretype.md) — A publisher that appears to send a specified failure type.

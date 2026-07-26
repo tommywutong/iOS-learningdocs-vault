@@ -1,0 +1,84 @@
+---
+title: enumerated()
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/string/enumerated()
+source_url: 'https://developer.apple.com/documentation/swift/string/enumerated()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/string/enumerated%28%29.json'
+content_hash: 'sha256:ddd0664ef4c2390a'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [String](../string.md)
+
+# enumerated()
+
+<sub>Instance Method</sub>
+
+Returns a sequence of pairs (_n_, _x_), where _n_ represents a consecutive integer starting at zero and _x_ represents an element of the sequence.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func enumerated() -> EnumeratedSequence<Self>
+```
+
+## Return Value
+
+A sequence of pairs enumerating the sequence.
+
+## Discussion
+
+This example enumerates the characters of the string “Swift” and prints each character along with its place in the string.
+
+```swift
+for (n, c) in "Swift".enumerated() {
+    print("\(n): '\(c)'")
+}
+// Prints "0: 'S'"
+// Prints "1: 'w'"
+// Prints "2: 'i'"
+// Prints "3: 'f'"
+// Prints "4: 't'"
+```
+
+When you enumerate a collection, the integer part of each pair is a counter for the enumeration, but is not necessarily the index of the paired value. These counters can be used as indices only in instances of zero-based, integer-indexed collections, such as `Array` and `ContiguousArray`. For other collections the counters may be out of range or of the wrong type to use as an index. To iterate over the elements of a collection with its indices, use the `zip(_:_:)` function.
+
+This example iterates over the indices and elements of a set, building a list consisting of indices of names with five or fewer letters.
+
+```swift
+let names: Set = ["Sofia", "Camilla", "Martina", "Mateo", "Nicolás"]
+var shorterIndices: [Set<String>.Index] = []
+for (i, name) in zip(names.indices, names) {
+    if name.count <= 5 {
+        shorterIndices.append(i)
+    }
+}
+```
+
+Now that the `shorterIndices` array holds the indices of the shorter names in the `names` set, you can use those indices to access elements in the set.
+
+```swift
+for i in shorterIndices {
+    print(names[i])
+}
+// Prints "Sofia"
+// Prints "Mateo"
+```
+
+> [!abstract] Complexity
+> O(1)
+
+## See Also
+
+### Iterating over a String’s Characters
+
+- [forEach(_:)](<foreach(__).md>) — Calls the given closure on each element in the sequence in the same order as a `for`-`in` loop.
+- [makeIterator()](<makeiterator().md>) — Returns an iterator over the elements of the collection.
+- [underestimatedCount](underestimatedcount.md) — A value less than or equal to the number of elements in the collection.

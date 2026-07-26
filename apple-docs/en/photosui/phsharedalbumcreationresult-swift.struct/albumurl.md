@@ -1,0 +1,30 @@
+---
+title: albumURL
+framework: PhotosUI
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 27.0+ beta, iPadOS 27.0+ beta, Mac Catalyst 27.0+ beta, macOS 27.0+ beta, visionOS 27.0+ beta]
+languages: [swift]
+beta: true
+deprecated: false
+doc_path: /documentation/photosui/phsharedalbumcreationresult-swift.struct/albumurl
+source_url: 'https://developer.apple.com/documentation/photosui/phsharedalbumcreationresult-swift.struct/albumurl'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/photosui/phsharedalbumcreationresult-swift.struct/albumurl.json'
+content_hash: 'sha256:24b231615f985c84'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [PhotosUI](../../photosui.md) · [PHSharedAlbumCreationResult](../phsharedalbumcreationresult-swift.struct.md)
+
+# albumURL
+
+<sub>Instance Property</sub>
+
+The URL of the created shared album.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, visionOS</sub>
+
+```swift
+var albumURL: URL { get }
+```

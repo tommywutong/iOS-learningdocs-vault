@@ -1,0 +1,61 @@
+---
+title: Display Mode Optional Properties
+framework: Core Graphics
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coregraphics/display-mode-optional-properties
+source_url: 'https://developer.apple.com/documentation/coregraphics/display-mode-optional-properties'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coregraphics/display-mode-optional-properties.json'
+content_hash: 'sha256:305a95f169d2515f'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Graphics](../coregraphics.md) · [Quartz Display Services](quartz-display-services.md)
+
+# Display Mode Optional Properties
+
+<sub>API Collection</sub>
+
+Keys for optional properties in a display mode dictionary.
+
+## Overview
+
+A given key is present in a display mode dictionary only if the property applies, and is always associated with a value of `kCFBooleanTrue`. Keys not relevant to a particular display mode will not appear in the mode dictionary.
+
+### Special Considerations
+
+Starting in OS X v10.6, display mode dictionaries have been made obsolete by the display mode opaque type. For more information on display modes, see[Changing Display Modes (OS X v10.6 or later)](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/QuartzDisplayServicesConceptual/Articles/DisplayModes.html#//apple_ref/doc/uid/TP40004234).
+
+## Topics
+
+### Constants
+
+- [kCGDisplayModeIsSafeForHardware](kcgdisplaymodeissafeforhardware.md) — Specifies a CFBoolean value indicating that the display mode doesn’t need a confirmation dialog to be set. _(deprecated)_
+- [kCGDisplayModeIsInterlaced](kcgdisplaymodeisinterlaced.md) — Specifies a CFBoolean value indicating that the I/O Kit interlace mode flag is set.
+- [kCGDisplayModeIsStretched](kcgdisplaymodeisstretched.md) — Specifies a CFBoolean value indicating that the I/O Kit stretched mode flag is set.
+- [kCGDisplayModeIsTelevisionOutput](kcgdisplaymodeistelevisionoutput.md) — Specifies a CFBoolean value indicating that the I/O Kit television output mode flag is set.
+
+## See Also
+
+### Constants
+
+- [CGCaptureOptions](cgcaptureoptions.md) — Configuration parameters that are used when capturing displays.
+- [CGDisplayChangeSummaryFlags](cgdisplaychangesummaryflags.md) — The configuration parameters that are passed to a display reconfiguration callback function.
+- [CGConfigureOption](cgconfigureoption.md) — The scope of the changes in a display configuration transaction.
+- [Display Fade Blend Fractions](display-fade-blend-fractions.md) — The lower and upper bounds for blend color fractions during a display fade operation.
+- [Display Fade Constants](display-fade-constants.md) — Values relating to fade operations.
+- [Display ID Defaults](display-id-defaults.md) — Default values for a display ID.
+- [Display Mode Standard Properties](display-mode-standard-properties.md) — Keys for the standard properties in a display mode dictionary.
+- [Reserved Window Levels](reserved-window-levels.md) — Window level constants.
+- [CGScreenUpdateOperation](cgscreenupdateoperation.md) — Types of screen-update operations.
+- [CGWindowLevelKey](cgwindowlevelkey.md) — Keys that represent the standard window levels in macOS. Quartz includes these keys to support application frameworks like Cocoa. Applications do not need to use them directly.
+- [Window Server Session Properties](window-server-session-properties.md) — The keys for the standard properties in a window server session dictionary.
+- [CGDisplayStreamUpdateRectType](cgdisplaystreamupdaterecttype.md) — Use these constants to determine which rectangles your app is interested in.
+- [CGDisplayStreamFrameStatus](cgdisplaystreamframestatus.md) — Describes a frame update event.
+- [Display Stream Optional Property Keys](display-stream-optional-property-keys.md) — These keys are used to populate the `properties` dictionary used when creating a new display stream.
+- [Display Stream YCbCr to RGB conversion Matrix Options](display-stream-ycbcr-to-rgb-conversion-matrix-options.md) — These strings are used to specify a matrix for the `CGDisplayStream/yCbCrMatrix` option.

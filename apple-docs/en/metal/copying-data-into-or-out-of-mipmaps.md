@@ -1,0 +1,106 @@
+---
+title: Copying data into or out of mipmaps
+framework: Metal
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/copying-data-into-or-out-of-mipmaps
+source_url: 'https://developer.apple.com/documentation/metal/copying-data-into-or-out-of-mipmaps'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/copying-data-into-or-out-of-mipmaps.json'
+content_hash: 'sha256:1e7fe6adeb1bc6ef'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Textures](textures.md)
+
+# Copying data into or out of mipmaps
+
+<sub>Article</sub>
+
+Specify which mipmaps that the data transfer affects.
+
+## Overview
+
+When you copy data between resources, and the source or destination is a texture, specify which mipmaps that the data transfer affects.
+
+### Copy data from system memory to a mipmap
+
+When you copy data from system memory into a texture, using the [- replaceRegion:mipmapLevel:withBytes:bytesPerRow:](<mtltexture/replace(region_mipmaplevel_withbytes_bytesperrow_).md>) or similar method, state which mipmap is the destination of that copy.
+
+**Swift**
+
+```swift
+// Create a 3D region, where image is a CGContext instance.
+let image = <#CGContext#>
+let region: MTLRegion = MTLRegionMake3D(0, 0, 0, image.width, image.height, 1)
+
+// Replace the region in the texture.
+texture.replace(region: region, mipmapLevel: 0, withBytes: image.data!, bytesPerRow: image.bytesPerRow)
+```
+
+**Objective-C**
+
+```objective-c
+MTLRegion region = {
+    { 0, 0, 0 },                   // MTLOrigin
+    {image.width, image.height, 1} // MTLSize
+};
+
+[texture replaceRegion:region
+           mipmapLevel:0
+             withBytes:image.data.bytes
+           bytesPerRow:bytesPerRow];
+```
+
+Call this routine once for each mipmap you want to fill, changing the region to match the size of the mipmap level you’re writing to.
+
+### Copy mipmap data between Metal resources
+
+If you already have data in Metal resources, use an [MTLBlitCommandEncoder](mtlblitcommandencoder.md) to copy data to and from different mipmaps in a texture.
+
+To copy all matching data between two textures, encode a command using the [- copyFromTexture:toTexture:](<mtlblitcommandencoder/copy(from_to_).md>): method. The two textures need to have the same pixel format and type. Metal copies all matching mipmap sizes to the destination texture.
+
+To copy a selection of mipmaps from one texture to another, use the [- copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:](<mtlblitcommandencoder/copy(from_sourceslice_sourcelevel_to_destinationslice_destinationlevel_slicecount_levelcount_).md>) method. Specify the first source mipmap level and first destination mipmap level, both of which need to have the same dimensions. Also specify the number of mipmap levels you want to copy.
+
+For example, the following code assumes that the destination texture is twice as large in both dimensions as the source texture. Mipmap `1` in the destination matches the size of the source mipmap `0`, so the code passes `0` as the source level and `1` as the destination level. It also passes `5` as the level count to copy `5` mipmaps.
+
+**Swift**
+
+```swift
+// Copy mipmap data between MTLTexture instances.
+let source = <#MTLTexture#>, destination = <#MTLTexture#>
+            
+encoder.copy(from: source, sourceSlice: 0, sourceLevel: 0, to: destination, destinationSlice: 0,
+             destinationLevel: 1, sliceCount: 1, levelCount: 5)
+```
+
+**Objective-C**
+
+```objective-c
+[encoder copyFromTexture: source
+    sourceSlice: 0
+    sourceLevel: 0
+    toTexture: destination
+    destinationSlice: 0
+    destinationLevel: 1
+    sliceCount: 1
+    levelCount: 5];
+```
+
+If you need to copy data between buffers and textures, encode a separate blit command for each mipmap level to copy. See [MTLBlitCommandEncoder](mtlblitcommandencoder.md) for other methods that copy data to and from textures.
+
+## See Also
+
+### Texture mipmapping
+
+- [Improving texture sampling quality and performance with mipmaps](improving-texture-sampling-quality-and-performance-with-mipmaps.md) — Avoid texture-rendering artifacts and reduce the GPU’s workload by creating smaller versions of a texture.
+- [Creating a mipmapped texture](creating-a-mipmapped-texture.md) — Decide whether a texture that you’re creating needs mipmaps.
+- [Generating mipmap data](generating-mipmap-data.md) — Create your mipmaps either when you author content or at runtime.
+- [Adding mipmap filtering to samplers](adding-mipmap-filtering-to-samplers.md) — Specify how the GPU samples mipmaps in your textures.
+- [Restricting access to specific mipmaps](restricting-access-to-specific-mipmaps.md) — Set the range of mipmap levels that a sampler can access.
+- [Predicting which mips the GPU samples with level-of-detail queries](predicting-which-mips-the-gpu-samples-with-level-of-detail-queries.md) — Determine in advance which mipmap levels the GPU requires to sample a texture.
+- [Dynamically adjusting texture level of detail](dynamically-adjusting-texture-level-of-detail.md) — Defer generating or loading larger mipmaps until that level of detail is needed.

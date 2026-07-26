@@ -1,0 +1,50 @@
+---
+title: Getting high-fidelity input with coalesced touches
+framework: UIKit
+symbol_kind: article
+role: collectionGroup
+role_heading: ''
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/getting-high-fidelity-input-with-coalesced-touches
+source_url: 'https://developer.apple.com/documentation/uikit/getting-high-fidelity-input-with-coalesced-touches'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/getting-high-fidelity-input-with-coalesced-touches.json'
+content_hash: 'sha256:270b3e3149d357b7'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md) · [Touches, presses, and gestures](touches-presses-and-gestures.md) · [Handling touches in your view](handling-touches-in-your-view.md)
+
+# Getting high-fidelity input with coalesced touches
+
+Learn how to support high-precision touches in your app.
+
+## Overview
+
+UIKit usually delivers touches to your app at around 60 Hz, but some devices are capable of recording touch information at up to 240 Hz. On such devices, UIKit doesn’t deliver the extra touch information automatically, in case the app doesn’t need the extra data. Instead, it coalesces any extra touches into a single [UITouch](uitouch.md) object, whose location reflects only the last recorded touch. However, apps that want the extra precision can retrieve and use the additional touch information.
+
+> [!important] Important
+> Coalesced touches are intended for apps that need the extra precision and can handle the associated costs. Processing coalesced touches means gathering additional data and applying it to your content. If you don’t need the extra precision, continue using the set of touch objects that UIKit passes to the methods of your views or gesture recognizers.
+
+The following image illustrates what happens when the user drags Apple Pencil across the device. At the point where UIKit reports a touch event to the app, Apple Pencil has reported four touch positions, but UIKit reports only the last touch to the app by default. The remaining three touches are delivered as coalesced touches, and the app must retrieve them explicitly to use them.
+
+![](../../../attachments/5ee4a79a95c27d5a2d56f0a1c243abae/getting-high-fidelity-input-with-coalesced-touches-1@2x.png)
+
+<sub>An illustration, with two iPad screens shown side by side. On the left, the initial touch event made by Apple Pencil is shown toward the upper-left of the display. As Apple Pencil is dragged down and to the right, the touches are coalesced when the drag ends, as shown on the right.</sub>
+
+To retrieve coalesced touches, call the [- coalescedTouchesForTouch:](<uievent/coalescedtouches(for_).md>) method of the [UIEvent](uievent.md) object containing the original [UITouch](uitouch.md) object. That method returns the array of all touches since the last event, including the last [UITouch](uitouch.md) object actually delivered to the app. You must retrieve coalesced touches immediately when handling an event. After handling the event, there’s no guarantee that any coalesced touches will remain available.
+
+## Topics
+
+### Example
+
+- [Implementing coalesced touch support in an app](implementing-coalesced-touch-support-in-an-app.md) — Learn how to create a simple app that handles coalesced touches.
+
+## See Also
+
+### Advanced touch handling
+
+- [Implementing a Multi-Touch app](implementing-a-multi-touch-app.md) — Learn how to create a simple app that handles multitouch input.
+- [Minimizing latency with predicted touches](minimizing-latency-with-predicted-touches.md) — Create a smooth and responsive drawing experience using UIKit’s predictions for touch locations.

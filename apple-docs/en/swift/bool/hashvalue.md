@@ -1,0 +1,45 @@
+---
+title: hashValue
+framework: Swift
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/bool/hashvalue
+source_url: 'https://developer.apple.com/documentation/swift/bool/hashvalue'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/bool/hashvalue.json'
+content_hash: 'sha256:84e75bda5939627c'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Bool](../bool.md)
+
+# hashValue
+
+<sub>Instance Property</sub>
+
+The hash value.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var hashValue: Int { get }
+```
+
+## Discussion
+
+Hash values are not guaranteed to be equal across different executions of your program. Do not save hash values to use during a future execution.
+
+> [!important] Important
+> `hashValue` is deprecated as a `Hashable` requirement. To conform to `Hashable`, implement the `hash(into:)` requirement instead. The compiler provides an implementation for `hashValue` for you.
+
+## See Also
+
+### Inspecting a Boolean
+
+- [customMirror](custommirror.md) — A mirror that reflects the `Bool` instance.
+- [customPlaygroundQuickLook](customplaygroundquicklook.md) — A custom playground Quick Look for the `Bool` instance. _(deprecated)_
+- [hash(into:)](<hash(into_).md>) — Hashes the essential components of this value by feeding them into the given hasher.

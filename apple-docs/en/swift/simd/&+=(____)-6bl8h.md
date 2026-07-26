@@ -1,0 +1,28 @@
+---
+title: '&+=(_:_:)'
+framework: Swift
+symbol_kind: op
+role: symbol
+role_heading: Operator
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/simd/&+=(_:_:)-6bl8h'
+source_url: 'https://developer.apple.com/documentation/swift/simd/&+=(_:_:)-6bl8h'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/simd/%26%2B%3D%28_%3A_%3A%29-6bl8h.json'
+content_hash: 'sha256:326a7e3254f4a968'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [SIMD](../simd.md)
+
+# &+=(_:_:)
+
+<sub>Operator</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static func &+= (a: inout Self, b: Self)
+```

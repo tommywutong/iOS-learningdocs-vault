@@ -1,0 +1,41 @@
+---
+title: deviceVerificationNonce
+framework: StoreKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 15.0+, iPadOS 15.0+, macOS 12.0+, tvOS 15.0+, visionOS 1.0+, watchOS 8.0+]
+languages: [swift, swift, swift, swift, swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/storekit/product/subscriptioninfo/renewalinfo/deviceverificationnonce
+source_url: 'https://developer.apple.com/documentation/storekit/product/subscriptioninfo/renewalinfo/deviceverificationnonce'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/product/subscriptioninfo/renewalinfo/deviceverificationnonce.json'
+content_hash: 'sha256:ee45687b8714e460'
+translated: false
+---
+
+> Navigation: [Technologies](../../../../technologies.md) · [StoreKit](../../../../storekit.md) · [Product](../../../product.md) · [SubscriptionInfo](../../subscriptioninfo.md) · [RenewalInfo](../renewalinfo.md)
+
+# deviceVerificationNonce
+
+<sub>Instance Property</sub>
+
+The UUID to use to compute the device verification value.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+let deviceVerificationNonce: UUID
+```
+
+## Discussion
+
+For more information, see [deviceVerificationID](../../../appstore/deviceverificationid.md).
+
+## See Also
+
+### Verifying subscription renewal information
+
+- [deviceVerification](deviceverification.md) — The device verification value to use to verify whether the renewal information belongs to the device.
+- [signedDate](signeddate.md) — The date that the App Store signed the JWS renewal information.

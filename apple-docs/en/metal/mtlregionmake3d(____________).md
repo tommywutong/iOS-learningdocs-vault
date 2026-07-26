@@ -1,0 +1,57 @@
+---
+title: 'MTLRegionMake3D(_:_:_:_:_:_:)'
+framework: Metal
+symbol_kind: func
+role: symbol
+role_heading: Function
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/metal/mtlregionmake3d(_:_:_:_:_:_:)'
+source_url: 'https://developer.apple.com/documentation/metal/mtlregionmake3d(_:_:_:_:_:_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/mtlregionmake3d%28_%3A_%3A_%3A_%3A_%3A_%3A%29.json'
+content_hash: 'sha256:8d2c4e0f87c15ccf'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md)
+
+# MTLRegionMake3D(_:_:_:_:_:_:)
+
+<sub>Function</sub>
+
+Creates a 3D region.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+func MTLRegionMake3D(_ x: Int, _ y: Int, _ z: Int, _ width: Int, _ height: Int, _ depth: Int) -> MTLRegion
+```
+
+## Parameters
+
+- `x` — The x coordinate of the origin.
+
+- `y` — The y coordinate of the origin.
+
+- `z` — The z coordinate of the origin.
+
+- `width` — The width of the volume.
+
+- `height` — The height of the volume.
+
+- `depth` — The depth of the volume.
+
+## Return Value
+
+A 3D region with the specified values.
+
+## See Also
+
+### Creating regions
+
+- [init()](<mtlregion/init().md>) — Initializes a new region.
+- [init(origin:size:)](<mtlregion/init(origin_size_).md>) — Initializes a new region with the specified origin and size.
+- [MTLRegionMake1D](<mtlregionmake1d(____).md>) — Creates a 3D representation of a 1D region.
+- [MTLRegionMake2D](<mtlregionmake2d(________).md>) — Creates a 3D representation of a 2D region.

@@ -1,0 +1,62 @@
+---
+title: MKAnnotation
+framework: MapKit
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/mapkit/mkannotation
+source_url: 'https://developer.apple.com/documentation/mapkit/mkannotation'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/mapkit/mkannotation.json'
+content_hash: 'sha256:0a2fd7cf06a2a381'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [MapKit](../mapkit.md)
+
+# MKAnnotation
+
+<sub>Protocol</sub>
+
+An interface for associating your content with a specific map location.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+protocol MKAnnotation : NSObjectProtocol
+```
+
+## Overview
+
+An object that adopts this protocol manages the data that you want to display on the map surface. It doesn’t provide the visual representation that the map displays. Instead, your map view’s delegate provides the [MKAnnotationView](mkannotationview.md) objects necessary to display the content of your annotations. When you want to display content at a specific point on the map, add an annotation object to the map view. When the annotation’s [coordinate](mkannotation/coordinate.md) is visible on the map, the map view asks its delegate to provide an appropriate view to display any content associated with the annotation. You implement the [- mapView:viewForAnnotation:](<mkmapviewdelegate/mapview(__viewfor_)-8humz.md>) method of the delegate to provide that view.
+
+An object that adopts this protocol needs to implement the [coordinate](mkannotation/coordinate.md) property. The other methods of this protocol are optional.
+
+## Relationships
+
+- **Inherits From**: [NSObjectProtocol](../objectivec/nsobjectprotocol.md)
+
+- **Inherited By**: [MKOverlay](mkoverlay.md)
+
+- **Conforming Types**: [MKCircle](mkcircle.md), [MKClusterAnnotation](mkclusterannotation.md), [MKGeodesicPolyline](mkgeodesicpolyline.md), [MKMapFeatureAnnotation](mkmapfeatureannotation.md), [MKMapItemAnnotation](mkmapitemannotation.md), [MKMultiPoint](mkmultipoint.md), [MKMultiPolygon](mkmultipolygon.md), [MKMultiPolyline](mkmultipolyline.md), [MKPlacemark](mkplacemark.md), [MKPointAnnotation](mkpointannotation.md), [MKPolygon](mkpolygon.md), [MKPolyline](mkpolyline.md), [MKShape](mkshape.md), [MKTileOverlay](mktileoverlay.md), [MKUserLocation](mkuserlocation.md)
+
+## Topics
+
+### Position attributes
+
+- [coordinate](mkannotation/coordinate.md) — The center point (specified as a map coordinate) of the annotation.
+
+### Title attributes
+
+- [title](mkannotation/title.md) — The string containing the annotation’s title.
+- [subtitle](mkannotation/subtitle.md) — The string containing the annotation’s subtitle.
+
+## See Also
+
+### Shared behavior
+
+- [MKPlacemark](mkplacemark.md) — A user-friendly description of a location on the map. _(deprecated)_
+- [MKAnnotationView](mkannotationview.md) — The visual representation of one of your annotation objects.

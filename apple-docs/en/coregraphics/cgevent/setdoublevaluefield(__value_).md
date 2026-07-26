@@ -1,0 +1,62 @@
+---
+title: 'setDoubleValueField(_:value:)'
+framework: Core Graphics
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [Mac Catalyst 13.1+, macOS 10.4+]
+languages: [swift, swift, swift, swift, occ, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/coregraphics/cgevent/setdoublevaluefield(_:value:)'
+source_url: 'https://developer.apple.com/documentation/coregraphics/cgevent/setdoublevaluefield(_:value:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coregraphics/cgevent/setdoublevaluefield%28_%3Avalue%3A%29.json'
+content_hash: 'sha256:b150a0e378a51032'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Graphics](../../coregraphics.md) · [CGEvent](../cgevent.md)
+
+# setDoubleValueField(_:value:)
+
+<sub>Instance Method</sub>
+
+Sets the floating-point value of a field in a Quartz event.
+
+<sub>Mac Catalyst, macOS</sub>
+
+```swift
+func setDoubleValueField(_ field: CGEventField, value: Double)
+```
+
+## Parameters
+
+- `field` — A field in the specified event. Pass one of the constants listed in [CGEventField](../cgeventfield.md).
+
+- `value` — The new value of the specified field.
+
+## Discussion
+
+Before calling this function, the event type must be set using a typed event creation function such as [CGEventCreateMouseEvent](<init(mouseeventsource_mousetype_mousecursorposition_mousebutton_).md>), or by calling [CGEventSetType](../cgeventsettype.md).
+
+In cases where the field’s value is represented within the event by a fixed point number or integer, the `value` parameter is scaled as needed and converted to the appropriate type.
+
+## See Also
+
+### Functions
+
+- [CGAcquireDisplayFadeReservation](<../cgacquiredisplayfadereservation(____).md>) — Reserves the fade hardware for a specified time interval.
+- [CGAssociateMouseAndMouseCursorPosition](<../cgassociatemouseandmousecursorposition(__).md>) — Connects or disconnects the mouse and cursor while an application is in the foreground.
+- [CGBeginDisplayConfiguration](<../cgbegindisplayconfiguration(__).md>) — Begins a new set of display configuration changes.
+- [CGCancelDisplayConfiguration](<../cgcanceldisplayconfiguration(__).md>) — Cancels a set of display configuration changes.
+- [CGCaptureAllDisplays](<../cgcapturealldisplays().md>) — Obtains exclusive use of all active displays, preventing other applications and system services from using the display or changing its configuration.
+- [CGCaptureAllDisplaysWithOptions](<../cgcapturealldisplayswithoptions(__).md>) — Captures all attached displays, using the specified options.
+- [CGCompleteDisplayConfiguration](<../cgcompletedisplayconfiguration(____).md>) — Completes a set of display configuration changes.
+- [CGConfigureDisplayFadeEffect](<../cgconfiguredisplayfadeeffect(____________).md>) — Modifies the settings of the built-in fade effect that occurs during a display configuration.
+- [CGConfigureDisplayMirrorOfDisplay](<../cgconfiguredisplaymirrorofdisplay(______).md>) — Changes the configuration of a mirroring set.
+- [CGConfigureDisplayMode](<../cgconfiguredisplaymode(______).md>) — Configures the display mode of a display. _(deprecated)_
+- [CGConfigureDisplayOrigin](<../cgconfiguredisplayorigin(________).md>) — Configures the origin of a display relative to the global display coordinate space.
+- [CGConfigureDisplayStereoOperation](<../cgconfiguredisplaystereooperation(________).md>) — Enables or disables stereo operation for a display, as part of a display configuration.
+- [CGConfigureDisplayWithDisplayMode](<../cgconfiguredisplaywithdisplaymode(________).md>) — Configures the display mode of a display.
+- [CGCursorIsDrawnInFramebuffer](<../cgcursorisdrawninframebuffer().md>) — Returns a Boolean value indicating whether the mouse cursor is drawn in framebuffer memory. _(deprecated)_
+- [CGCursorIsVisible](<../cgcursorisvisible().md>) — Returns a Boolean value indicating whether the mouse cursor is visible. _(deprecated)_

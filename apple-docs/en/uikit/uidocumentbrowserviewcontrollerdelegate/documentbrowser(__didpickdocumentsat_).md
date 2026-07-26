@@ -1,0 +1,80 @@
+---
+title: 'documentBrowser(_:didPickDocumentsAt:)'
+framework: UIKit
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 12.0+, iPadOS 12.0+, Mac Catalyst 13.1+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/uikit/uidocumentbrowserviewcontrollerdelegate/documentbrowser(_:didpickdocumentsat:)'
+source_url: 'https://developer.apple.com/documentation/uikit/uidocumentbrowserviewcontrollerdelegate/documentbrowser(_:didpickdocumentsat:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uidocumentbrowserviewcontrollerdelegate/documentbrowser%28_%3Adidpickdocumentsat%3A%29.json'
+content_hash: 'sha256:7686cece1d0a5219'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIDocumentBrowserViewControllerDelegate](../uidocumentbrowserviewcontrollerdelegate.md)
+
+# documentBrowser(_:didPickDocumentsAt:)
+
+<sub>Instance Method</sub>
+
+Tells the delegate that the user has selected one or more documents.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+optional func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL])
+```
+
+## Parameters
+
+- `controller` — The current document browser.
+
+- `documentURLs` — An array of URLs for the selected documents. If the document browser’s [allowsPickingMultipleItems](../uidocumentbrowserviewcontroller/allowspickingmultipleitems.md) property is [true](../../swift/true.md), the array contains one or more URLs. If [false](../../swift/false.md), it contains only a single URL.
+
+## Discussion
+
+Implement this method to process the documents selected by the user. Typically, you create a view controller to display the selected documents, then present that view modally, like in the following code.
+
+```swift
+// Did Select Documents
+func documentBrowser(_ controller: UIDocumentBrowserViewController,
+    didPickDocumentsAt documentURLs: [URL]) {
+    
+    assert(controller.allowsPickingMultipleItems == false)
+    
+    assert(documentURLs.count > 0,
+           "*** We received an empty array of documents ***")
+    
+    assert(documentURLs.count <= 1,
+           "*** We received more than one document ***")
+    
+    guard let url = documentURLs.first else {
+        fatalError("*** No URL Found! ***")
+    }
+    
+    openDocument(controller, forFileURL: url)
+}
+
+private func openDocument(_ controller: UIDocumentBrowserViewController,
+                          forFileURL url: URL) {
+    
+    let doc = // Create a UIDocument subclass for the selected URL.
+
+    let editor = // Create a view controller to edit the document.
+
+    // Optionally, set up a transition controller here...
+        
+    doc.open { (success) in
+        guard success else {
+            // Handle the error here...
+        }
+        
+        // Present the document
+        controller.present(editor, animated: true, completion: nil)
+    }
+}
+```

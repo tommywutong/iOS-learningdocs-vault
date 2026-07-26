@@ -1,0 +1,50 @@
+---
+title: Customizing Scribble with Interactions
+framework: PencilKit
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [iOS 14.0+, iPadOS 14.0+, Mac Catalyst 14.0+, Xcode 11.5+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/pencilkit/customizing-scribble-with-interactions
+source_url: 'https://developer.apple.com/documentation/pencilkit/customizing-scribble-with-interactions'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/pencilkit/customizing-scribble-with-interactions.json'
+content_hash: 'sha256:b2900c514341cde0'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [PencilKit](../pencilkit.md)
+
+# Customizing Scribble with Interactions
+
+<sub>Sample Code</sub>
+
+Enable writing on a non-text-input view by adding interactions.
+
+## Overview
+
+> [!note] Note
+> This sample code project is associated with WWDC20 session [10106: Meet Scribble for iPad](https://developer.apple.com/wwdc20/10106/).
+
+This sample code project must be run on a physical device with Apple Pencil.
+
+## See Also
+
+### Canvas
+
+- [Drawing with PencilKit](drawing-with-pencilkit.md) — Add expressive, low-latency drawing to your app using PencilKit.
+- [Inspecting, Modifying, and Constructing PencilKit Drawings](inspecting-modifying-and-constructing-pencilkit-drawings.md) — Score users’ ability to match PencilKit drawings generated from text, by accessing the strokes and points inside PencilKit drawings.
+- [Importing Bézier path data into PencilKit](importing-external-drawing-data-into-pencilkit.md) — Convert existing Bézier-based stroke data into PencilKit drawing strokes.
+- [Controlling stroke rendering for animation and editing](controlling-stroke-rendering-for-animation-and-editing.md) — Slice, animate, and blend PencilKit strokes in code, while keeping grain texture and wet ink intact.
+- [PKCanvasView](pkcanvasview.md) — A view that captures Apple Pencil input and displays the rendered results in an iOS app.
+- [PKDrawing](pkdrawing-swift.struct.md) — A structure representing the drawing information captured by a canvas view.
+- [PKStroke](pkstroke-swift.struct.md) — A structure that represents the paths, boundaries, and other properties of a stroke drawn on a canvas.
+- [PKStrokePath](pkstrokepath-swift.struct.md) — A structure that captures the components of a stroke and provides methods to find and interpolate points along the stroke’s path.
+- [PKStrokePoint](pkstrokepoint-swift.struct.md) — A structure that represents the properties of a specific point along a stroke’s path.
+- [PKInk](pkink-swift.struct.md) — A structure that represents an ink that specifies its type, color, and width.
+
+## Download
+
+- [CustomizingScribbleWithInteractions.zip](https://docs-assets.developer.apple.com/published/0139dbb82fec/CustomizingScribbleWithInteractions.zip)

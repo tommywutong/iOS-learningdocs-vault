@@ -1,0 +1,30 @@
+---
+title: kSecAttrProtocolAFP
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.1+, macOS 10.6+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/ksecattrprotocolafp
+source_url: 'https://developer.apple.com/documentation/security/ksecattrprotocolafp'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/ksecattrprotocolafp.json'
+content_hash: 'sha256:4c21380ba5d828d1'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# kSecAttrProtocolAFP
+
+<sub>Global Variable</sub>
+
+AFP over TCP.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+let kSecAttrProtocolAFP: CFString
+```

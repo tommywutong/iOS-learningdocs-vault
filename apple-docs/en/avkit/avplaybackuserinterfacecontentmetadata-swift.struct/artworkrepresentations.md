@@ -1,0 +1,34 @@
+---
+title: artworkRepresentations
+framework: AVKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 27.0+ beta, iPadOS 27.0+ beta, Mac Catalyst 27.0+ beta]
+languages: [swift, swift, swift]
+beta: true
+deprecated: false
+doc_path: /documentation/avkit/avplaybackuserinterfacecontentmetadata-swift.struct/artworkrepresentations
+source_url: 'https://developer.apple.com/documentation/avkit/avplaybackuserinterfacecontentmetadata-swift.struct/artworkrepresentations'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avkit/avplaybackuserinterfacecontentmetadata-swift.struct/artworkrepresentations.json'
+content_hash: 'sha256:a4d316eed596a420'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [AVKit](../../avkit.md) · [AVPlaybackUserInterfaceContentMetadata](../avplaybackuserinterfacecontentmetadata-swift.struct.md)
+
+# artworkRepresentations
+
+<sub>Instance Property</sub>
+
+Array of available artwork representations in various formats and sizes.
+
+<sub>iOS, iPadOS, Mac Catalyst</sub>
+
+```swift
+var artworkRepresentations: [AVPlaybackUserInterfaceContentArtwork]
+```
+
+## Discussion
+
+Multiple representations allow the system to choose the most appropriate artwork for different display contexts (thumbnails, full-screen, high-DPI displays). Each representation specifies its dimensions, format, and URL for optimal loading and display performance.

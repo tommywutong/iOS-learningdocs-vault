@@ -1,0 +1,52 @@
+---
+title: Replaying a GPU trace file
+framework: xcode
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/xcode/replaying-a-gpu-trace-file
+source_url: 'https://developer.apple.com/documentation/xcode/replaying-a-gpu-trace-file'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/xcode/replaying-a-gpu-trace-file.json'
+content_hash: 'sha256:d256dc00f008bb9b'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal debugger](metal-debugger.md)
+
+# Replaying a GPU trace file
+
+<sub>Article</sub>
+
+Debug and profile your app’s performance using a GPU trace file in the Metal debugger.
+
+## Overview
+
+Replaying a GPU trace file allows you to debug and profile previously captured GPU commands using the Metal debugger. For more information, see [Capturing a Metal workload in Xcode](capturing-a-metal-workload-in-xcode.md) or [Capturing a Metal workload programmatically](capturing-a-metal-workload-programmatically.md).
+
+To replay a GPU trace file, open it in Xcode. Before clicking Replay, you can configure which device to use (if there’s more than one available), as well as configure whether to run with profiling.
+
+![An Xcode screenshot of the Replay GPU Trace dialog with options to begin replaying a GPU trace file.](../../../attachments/63299cd1e14acd0035b2afb3b4405eba/gputools-metal-debugger-essentials-replay@2x.png)
+
+### Configure replay
+
+If you have multiple devices, you need to select a device before you can replay the GPU trace file. Xcode automatically selects the most compatible device, but you can select a different device using the Device popover.
+
+> [!warning] Warning
+> GPU trace files are only compatible with devices of the same type, the same GPU, and the same operating system. Otherwise, performance may vary. For example, if you capture a Metal workload on a Mac with an AMD GPU, replaying the exported GPU trace file on a Mac with the Apple M1 chip may not work or behave the same.
+
+You can optionally enable the Profile GPU Trace option to have Xcode automatically profile after replaying. Profiling has an initial performance impact on the Metal debugger, so only enable this option when debugging your app’s performance. You can always profile later as needed.
+
+## See Also
+
+### Essentials
+
+- [Capturing a Metal workload in Xcode](capturing-a-metal-workload-in-xcode.md) — Analyze your app’s performance by configuring your project to use the Metal debugger.
+- [Capturing a Metal workload programmatically](capturing-a-metal-workload-programmatically.md) — Analyze your app’s performance by invoking Metal’s frame capture.
+- [Investigating visual artifacts](investigating-visual-artifacts.md) — Discover, diagnose, and fix visual artifacts in your app with the Metal debugger.
+- [Optimizing GPU performance](optimizing-gpu-performance.md) — Find and address performance bottlenecks using the Metal debugger.
+- [Debugging with interactive command-line tools](debugging-with-interactive-command-line-tools.md) — Investigate rendering issues in GPU traces without leaving the Terminal.
+- [Investigating GPU issues with AI agents](investigating-gpu-issues-with-ai-agents.md) — Find the root cause of an issue in a large GPU trace by handing the trace to an AI agent for autonomous investigation.

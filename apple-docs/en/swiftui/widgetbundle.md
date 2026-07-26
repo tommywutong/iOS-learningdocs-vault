@@ -1,0 +1,70 @@
+---
+title: WidgetBundle
+framework: SwiftUI
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS 14.0+, iPadOS 14.0+, Mac Catalyst 14.0+, macOS 11.0+, visionOS 1.0+, watchOS 9.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/widgetbundle
+source_url: 'https://developer.apple.com/documentation/swiftui/widgetbundle'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/widgetbundle.json'
+content_hash: 'sha256:deb174310b66ce8e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# WidgetBundle
+
+<sub>Protocol</sub>
+
+A container used to expose multiple widgets from a single widget extension.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, visionOS, watchOS</sub>
+
+```swift
+@MainActor @preconcurrency protocol WidgetBundle
+```
+
+## Overview
+
+To support multiple types of widgets, add the `@main` attribute to a structure that conforms to `WidgetBundle`. For example, a game might have one widget to display summary information about the game and a second widget to display detailed information about individual characters.
+
+```swift
+@main
+struct GameWidgets: WidgetBundle {
+   var body: some Widget {
+       GameStatusWidget()
+       CharacterDetailWidget()
+   }
+}
+```
+
+## Topics
+
+### Implementing a widget bundle
+
+- [body](widgetbundle/body-swift.property.md) — Declares the group of widgets that an app supports.
+- [Body](widgetbundle/body-swift.associatedtype.md) — The type of widget that represents the content of the bundle.
+- [WidgetBundleBuilder](widgetbundlebuilder.md) — A custom attribute that constructs a widget bundle’s body.
+
+### Running a widget bundle
+
+- [init()](<widgetbundle/init().md>) — Creates a widget bundle using the bundle’s body as its content.
+- [main()](<widgetbundle/main().md>) — Initializes and runs the widget bundle.
+
+## See Also
+
+### Creating widgets
+
+- [Building Widgets Using WidgetKit and SwiftUI](../widgetkit/building-widgets-using-widgetkit-and-swiftui.md) — Create widgets to show your app’s content on the Home screen, with custom intents for user-customizable settings.
+- [Creating a widget extension](../widgetkit/creating-a-widget-extension.md) — Display your app’s content in a convenient, informative widget on various devices.
+- [Keeping a widget up to date](../widgetkit/keeping-a-widget-up-to-date.md) — Plan your widget’s timeline to show timely, relevant information using dynamic views, and update the timeline when things change.
+- [Making a configurable widget](../widgetkit/making-a-configurable-widget.md) — Give people the option to customize their widgets by adding a custom app intent to your project.
+- [Widget](widget.md) — The configuration and content of a widget to display on the Home screen or in Notification Center.
+- [LimitedAvailabilityConfiguration](limitedavailabilityconfiguration.md) — A type-erased widget configuration.
+- [WidgetConfiguration](widgetconfiguration.md) — A type that describes a widget’s content.
+- [EmptyWidgetConfiguration](emptywidgetconfiguration.md) — An empty widget configuration.

@@ -1,0 +1,106 @@
+---
+title: RangeSet
+framework: Swift
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/rangeset
+source_url: 'https://developer.apple.com/documentation/swift/rangeset'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/rangeset.json'
+content_hash: 'sha256:9af6ede978d6636f'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Swift](../swift.md)
+
+# RangeSet
+
+<sub>Structure</sub>
+
+A set of values of any comparable type, represented by ranges.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+struct RangeSet<Bound> where Bound : Comparable
+```
+
+## Overview
+
+You can use a range set to efficiently represent a set of `Comparable` values that spans any number of discontiguous ranges. Range sets are commonly used to represent multiple subranges of a collection, by storing ranges of a collection’s index type.
+
+In this example, `negativeSubranges` is a range set representing the locations of all the negative values in `numbers`:
+
+```swift
+var numbers = [10, 12, -5, 14, -3, -9, 15]
+let negativeSubranges = numbers.indices(where: { $0 < 0 })
+// numbers[negativeSubranges].count == 3
+
+numbers.moveSubranges(negativeSubranges, to: 0)
+// numbers == [-5, -3, -9, 10, 12, 14, 15]
+```
+
+## Relationships
+
+- **Conforms To**: [Copyable](copyable.md), [CustomStringConvertible](customstringconvertible.md), [Equatable](equatable.md), [Escapable](escapable.md), [Hashable](hashable.md), [Sendable](sendable.md), [SendableMetatype](sendablemetatype.md)
+
+## Topics
+
+### Structures
+
+- [Ranges](rangeset/ranges-swift.struct.md) — A collection of the ranges that make up a range set.
+
+### Initializers
+
+- [init()](<rangeset/init().md>) — Creates an empty range set.
+- [init(_:)](<rangeset/init(__)-230uy.md>) — Creates a range set containing the given range.
+- [init(_:)](<rangeset/init(__)-42v9u.md>)
+- [init(_:)](<rangeset/init(__)-9x0yj.md>) — Creates a range set containing the values in the given ranges.
+- [init(_:within:)](<rangeset/init(__within_).md>) — Creates a new range set containing ranges that contain only the specified indices in the given collection.
+
+### Instance Properties
+
+- [isEmpty](rangeset/isempty.md) — A Boolean value indicating whether the range set is empty.
+- [ranges](rangeset/ranges-swift.property.md) — A collection of the ranges that make up the range set.
+
+### Instance Methods
+
+- [contains(_:)](<rangeset/contains(__).md>) — Returns a Boolean value indicating whether the given value is contained by the ranges in the range set.
+- [formIntersection(_:)](<rangeset/formintersection(__).md>) — Removes the contents of this range set that aren’t also in the given range set.
+- [formSymmetricDifference(_:)](<rangeset/formsymmetricdifference(__).md>) — Removes the contents of this range set that are also in the given set and adds the contents of the given set that are not already in this range set.
+- [formUnion(_:)](<rangeset/formunion(__).md>) — Adds the contents of the given range set to this range set.
+- [insert(_:within:)](<rangeset/insert(__within_).md>) — Inserts a range that contains only the specified index into the range set.
+- [insert(contentsOf:)](<rangeset/insert(contentsof_).md>) — Inserts the given range into the range set.
+- [intersection(_:)](<rangeset/intersection(__).md>) — Returns a new range set containing the contents of both this set and the given set.
+- [isDisjoint(_:)](<rangeset/isdisjoint(__).md>) — Returns a Boolean value that indicates whether this range set set has no members in common with the given set.
+- [isStrictSubset(of:)](<rangeset/isstrictsubset(of_).md>) — Returns a Boolean value that indicates whether this range set is a strict subset of the given set.
+- [isStrictSuperset(of:)](<rangeset/isstrictsuperset(of_).md>) — Returns a Boolean value that indicates whether this range set is a strict superset of the given set.
+- [isSubset(of:)](<rangeset/issubset(of_).md>) — Returns a Boolean value that indicates whether this range set is a subset of the given set.
+- [isSuperset(of:)](<rangeset/issuperset(of_).md>) — Returns a Boolean value that indicates whether this range set is a superset of the given set.
+- [isValid(within:)](<rangeset/isvalid(within_)-38qb9.md>) — Indicates whether the range set is valid for use with the provided discontiguous attributed string.
+- [isValid(within:)](<rangeset/isvalid(within_)-6u17e.md>) — Indicates whether the range set is valid for use with the provided attributed string.
+- [remove(_:within:)](<rangeset/remove(__within_).md>) — Removes the range that contains only the specified index from the range set.
+- [remove(contentsOf:)](<rangeset/remove(contentsof_).md>) — Removes the given range from the range set.
+- [subtract(_:)](<rangeset/subtract(__).md>) — Removes the contents of the given range set from this range set.
+- [subtracting(_:)](<rangeset/subtracting(__).md>) — Returns a new set containing the contents of this range set that are not also in the given range set.
+- [symmetricDifference(_:)](<rangeset/symmetricdifference(__).md>) — Returns a new range set representing the values in this range set or the given range set, but not both.
+- [union(_:)](<rangeset/union(__).md>) — Returns a new range set containing the contents of both this set and the given set.
+
+### Default Implementations
+
+- [CustomStringConvertible Implementations](rangeset/customstringconvertible-implementations.md)
+- [Equatable Implementations](rangeset/equatable-implementations.md)
+- [Hashable Implementations](rangeset/hashable-implementations.md)
+
+## See Also
+
+### Ranges
+
+- [..\<(_:_:)](<comparable/'.._(____).md>) — Returns a half-open range that contains its lower bound but not its upper bound.
+- [Range](range.md) — A half-open interval from a lower bound up to, but not including, an upper bound.
+- [...(_:_:)](<comparable/'...(____).md>) — Returns a closed range that contains both of its bounds.
+- [ClosedRange](closedrange.md) — An interval from a lower bound up to, and including, an upper bound.

@@ -1,0 +1,64 @@
+---
+title: 'subscript(_:)'
+framework: Swift
+symbol_kind: subscript
+role: symbol
+role_heading: Instance Subscript
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/substring/utf8view/subscript(_:)-7hfz9'
+source_url: 'https://developer.apple.com/documentation/swift/substring/utf8view/subscript(_:)-7hfz9'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/substring/utf8view/subscript%28_%3A%29-7hfz9.json'
+content_hash: 'sha256:8105d2e24b878b49'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Substring](../../substring.md) · [UTF8View](../utf8view.md)
+
+# subscript(_:)
+
+<sub>Instance Subscript</sub>
+
+Accesses a contiguous subrange of the collection’s elements.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+subscript(r: Range<Substring.UTF8View.Index>) -> Substring.UTF8View { get }
+```
+
+## Overview
+
+For example, using a `PartialRangeFrom` range expression with an array accesses the subrange from the start of the range expression until the end of the array.
+
+```swift
+let streets = ["Adams", "Bryant", "Channing", "Douglas", "Evarts"]
+let streetsSlice = streets[2..<5]
+print(streetsSlice)
+// ["Channing", "Douglas", "Evarts"]
+```
+
+The accessed slice uses the same indices for the same elements as the original collection. This example searches `streetsSlice` for one of the strings in the slice, and then uses that index in the original array.
+
+```swift
+let index = streetsSlice.firstIndex(of: "Evarts")!    // 4
+print(streets[index])
+// "Evarts"
+```
+
+Always use the slice’s `startIndex` property instead of assuming that its indices start at a particular value. Attempting to access an element by using an index outside the bounds of the slice may result in a runtime error, even if that index is valid for the original collection.
+
+```swift
+print(streetsSlice.startIndex)
+// 2
+print(streetsSlice[2])
+// "Channing"
+
+print(streetsSlice[0])
+// error: Index out of bounds
+```
+
+> [!abstract] Complexity
+> O(1)

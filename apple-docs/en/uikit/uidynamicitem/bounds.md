@@ -1,0 +1,39 @@
+---
+title: bounds
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS, iPadOS, Mac Catalyst, tvOS, visionOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uidynamicitem/bounds
+source_url: 'https://developer.apple.com/documentation/uikit/uidynamicitem/bounds'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uidynamicitem/bounds.json'
+content_hash: 'sha256:43255564ad5f16e2'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIDynamicItem](../uidynamicitem.md)
+
+# bounds
+
+<sub>Instance Property</sub>
+
+Called when a dynamic animator needs the bounds of the dynamic item.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+var bounds: CGRect { get }
+```
+
+## See Also
+
+### Participating in dynamic animation
+
+- [center](center.md) — The center point of the dynamic item.
+- [transform](transform.md) — The rotation of the dynamic item.
+- [collisionBoundsType](collisionboundstype.md) — The type of collision bounds associated with the item.
+- [collisionBoundingPath](collisionboundingpath.md) — The path-based shape to use for the collision bounds.

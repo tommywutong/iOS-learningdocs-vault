@@ -1,0 +1,30 @@
+---
+title: errSecVerificationFailure
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/errsecverificationfailure
+source_url: 'https://developer.apple.com/documentation/security/errsecverificationfailure'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/errsecverificationfailure.json'
+content_hash: 'sha256:92135030e68f2347'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# errSecVerificationFailure
+
+<sub>Global Variable</sub>
+
+A verification failure occurred.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var errSecVerificationFailure: OSStatus { get }
+```

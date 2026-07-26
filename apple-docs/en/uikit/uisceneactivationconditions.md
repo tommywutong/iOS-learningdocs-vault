@@ -1,0 +1,63 @@
+---
+title: UISceneActivationConditions
+framework: UIKit
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.1+, tvOS 13.0+, visionOS 1.0+]
+languages: [swift, swift, swift, swift, swift, swift, occ, occ, occ, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uisceneactivationconditions
+source_url: 'https://developer.apple.com/documentation/uikit/uisceneactivationconditions'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uisceneactivationconditions.json'
+content_hash: 'sha256:8eeecc06b0656271'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md)
+
+# UISceneActivationConditions
+
+<sub>Class</sub>
+
+The set of conditions that define when UIKit activates the current scene.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor class UISceneActivationConditions
+```
+
+## Overview
+
+When an event occurs that requires the activation of a scene, UIKit routes the event to the scene best suited to handle it. UIKit determines which scene is the best by evaluating the target content identifier of the event against the predicates in each scene’s [UISceneActivationConditions](uisceneactivationconditions.md) object. You create [UISceneActivationConditions](uisceneactivationconditions.md) objects for your scenes and use them to prioritize which events each scene handles. Use the [prefersToActivateForTargetContentIdentifierPredicate](uisceneactivationconditions/preferstoactivatefortargetcontentidentifierpredicate.md) predicate to designate the scene as the primary handler of an event.
+
+Many different objects contain a [targetContentIdentifier](../foundation/nsuseractivity/targetcontentidentifier.md) property, including [NSUserActivity](../foundation/nsuseractivity.md), [UNNotificationContent](../usernotifications/unnotificationcontent.md), and [UIApplicationShortcutItem](uiapplicationshortcutitem.md). When creating those objects, fill that property with a value that uniquely describes the event and matches your scenes’ predicates. Every event must match at least one scene.
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSCoding](../foundation/nscoding.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [NSSecureCoding](../foundation/nssecurecoding.md), [Sendable](../swift/sendable.md)
+
+## Topics
+
+### Creating an activation conditions object
+
+- [- init](<uisceneactivationconditions/init().md>) — Creates a new activation conditions object.
+- [- initWithCoder:](<uisceneactivationconditions/init(coder_).md>) — Restores an activation conditions object from the specified archive.
+
+### Specifying the conditions
+
+- [prefersToActivateForTargetContentIdentifierPredicate](uisceneactivationconditions/preferstoactivatefortargetcontentidentifierpredicate.md) — The set of conditions for which UIKit chooses to activate this scene over others.
+- [canActivateForTargetContentIdentifierPredicate](uisceneactivationconditions/canactivatefortargetcontentidentifierpredicate.md) — Conditions for which UIKit can activate the scene if a better alternative doesn’t exist.
+
+## See Also
+
+### Activation and destruction
+
+- [ActivationRequestOptions](uiscene/activationrequestoptions.md) — An object that contains information you want the system to use when activating the session associated with a scene.
+- [UIWindowSceneDestructionRequestOptions](uiwindowscenedestructionrequestoptions.md) — An object that contains information to use when removing a window scene from your app.
+- [UISceneDestructionRequestOptions](uiscenedestructionrequestoptions.md) — An object you pass to UIKit to permanently remove a scene and its associated session from your app.
+- [UISceneClosureConfirmation](uisceneclosureconfirmation.md) — A configuration specifying a confirmation dialog that will be shown before a user action will result in destruction of the scene session and the disconnection of the scene. _(beta)_

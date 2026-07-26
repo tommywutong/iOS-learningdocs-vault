@@ -1,0 +1,50 @@
+---
+title: overlayInvalidConfiguration
+framework: StoreKit
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 14.0+, iPadOS 14.0+, Mac Catalyst 14.0+, visionOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/storekit/skerror/overlayinvalidconfiguration
+source_url: 'https://developer.apple.com/documentation/storekit/skerror/overlayinvalidconfiguration'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/skerror/overlayinvalidconfiguration.json'
+content_hash: 'sha256:7b314465fe5066e8'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [StoreKit](../../storekit.md) · [SKError](../skerror.md)
+
+# overlayInvalidConfiguration
+
+<sub>Type Property</sub>
+
+An error code that indicates the overlay’s configuration is invalid.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+static var overlayInvalidConfiguration: SKError.Code { get }
+```
+
+## See Also
+
+### Error codes
+
+- [Code](code.md) — Error codes for StoreKit errors.
+- [unknown](unknown.md) — Error code indicating that an unknown or unexpected error occurred.
+- [clientInvalid](clientinvalid.md) — Error code indicating that the client is not allowed to perform the attempted action.
+- [paymentCancelled](paymentcancelled.md) — Error code indicating that the user canceled a payment request.
+- [paymentInvalid](paymentinvalid.md) — Error code indicating that one of the payment parameters was not recognized by the App Store.
+- [paymentNotAllowed](paymentnotallowed.md) — Error code indicating that the user is not allowed to authorize payments.
+- [storeProductNotAvailable](storeproductnotavailable.md) — Error code indicating that the requested product is not available in the store.
+- [cloudServicePermissionDenied](cloudservicepermissiondenied.md) — Error code indicating that the user has not allowed access to Cloud service information.
+- [cloudServiceNetworkConnectionFailed](cloudservicenetworkconnectionfailed.md) — Error code indicating that the device could not connect to the network.
+- [cloudServiceRevoked](cloudservicerevoked.md) — Error code indicating that the user has revoked permission to use this cloud service.
+- [privacyAcknowledgementRequired](privacyacknowledgementrequired.md) — Error code indicating that the user has not yet acknowledged Apple’s privacy policy for Apple Music.
+- [unauthorizedRequestData](unauthorizedrequestdata.md) — Error code indicating that the app is attempting to use a property for which it does not have the required entitlement.
+- [invalidOfferIdentifier](invalidofferidentifier.md) — Error code indicating that the offer identifier cannot be found or is not active.
+- [invalidOfferPrice](invalidofferprice.md) — Error code indicating that the price you specified in App Store Connect is no longer valid.
+- [invalidSignature](invalidsignature.md) — Error code indicating that the signature in a payment discount is not valid.

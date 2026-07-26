@@ -1,0 +1,41 @@
+---
+title: Determining support for EDR values
+framework: Metal
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/determining-support-for-edr-values
+source_url: 'https://developer.apple.com/documentation/metal/determining-support-for-edr-values'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/determining-support-for-edr-values.json'
+content_hash: 'sha256:0a9e0baa7c01c061'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [HDR content](hdr-content.md)
+
+# Determining support for EDR values
+
+<sub>Article</sub>
+
+Check whether a display supports EDR.
+
+## Overview
+
+Discover whether a display supports EDR values by reading the [maximumPotentialExtendedDynamicRangeColorComponentValue](../appkit/nsscreen/maximumpotentialextendeddynamicrangecolorcomponentvalue.md) property on an [NSScreen](../appkit/nsscreen.md) instance for that display. A value greater than `1.0` indicates that the display supports EDR values; otherwise, the display supports only SDR values.
+
+This property’s value is independent of the current state of the display. It’s possible for a display to support EDR but to be unable to present those values right now. For information about the current state of the display, check the [maximumExtendedDynamicRangeColorComponentValue](../appkit/nsscreen/maximumextendeddynamicrangecolorcomponentvalue.md) property.
+
+## See Also
+
+### High dynamic range content
+
+- [Processing HDR images with Metal](processing-hdr-images-with-metal.md) — Implement a post-processing pipeline using the latest features on Apple GPUs.
+- [Displaying HDR content in a Metal layer](displaying-hdr-content-in-a-metal-layer.md) — Bring your high dynamic range (HDR) content to compatible Mac displays.
+- [Using color spaces to display HDR content](using-color-spaces-to-display-hdr-content.md) — Use a color space when you don’t need to edit or process the pixel data.
+- [Using system tone mapping on video content](using-system-tone-mapping-on-video-content.md) — Use EDR metadata to apply the default system tone mapping to a layer.
+- [Performing your own tone mapping](performing-your-own-tone-mapping.md) — Apply your own tone mapping to get the exact behavior you want.
+- [Implementing tone mapping on reference displays](implementing-tone-mapping-on-reference-displays.md) — Detect reference displays and keep your content within the capabilities of the display hardware.

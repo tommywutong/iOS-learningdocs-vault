@@ -1,0 +1,51 @@
+---
+title: concurrencyType
+framework: Core Data
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 5.0+, iPadOS 5.0+, Mac Catalyst 13.1+, macOS 10.7+, tvOS, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coredata/nsmanagedobjectcontext/concurrencytype-swift.property
+source_url: 'https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/concurrencytype-swift.property'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coredata/nsmanagedobjectcontext/concurrencytype-swift.property.json'
+content_hash: 'sha256:1c8d313b7c493d23'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Data](../../coredata.md) · [NSManagedObjectContext](../nsmanagedobjectcontext.md)
+
+# concurrencyType
+
+<sub>Instance Property</sub>
+
+The concurrency type for the context.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var concurrencyType: NSManagedObjectContextConcurrencyType { get }
+```
+
+## Discussion
+
+For more details on concurrency type, see [Concurrency](../nsmanagedobjectcontext.md#Concurrency).
+
+## See Also
+
+### Related Documentation
+
+- [- initWithConcurrencyType:](<init(concurrencytype_).md>) — Creates a context that uses the specified concurrency type. _(deprecated)_
+
+### Managing concurrency
+
+- [NSManagedObjectContextQueryGenerationKey](../nsmanagedobjectcontextquerygenerationkey.md) — Constant used to reference the query generation token.
+- [+ mergeChangesFromRemoteContextSave:intoContexts:](<mergechanges(fromremotecontextsave_into_).md>) — Handles changes from other processes or from a serialized state.
+- [automaticallyMergesChangesFromParent](automaticallymergeschangesfromparent.md) — A Boolean value that indicates whether the context automatically merges changes saved to its persistent store coordinator or parent context.
+- [mergePolicy](mergepolicy.md) — The merge policy of the context.
+- [queryGenerationToken](querygenerationtoken.md) — Returns the token associated with the query generation currently in use by this context.
+- [transactionAuthor](transactionauthor.md) — The author for the context that is used as an identifier in persistent history transactions.
+- [- mergeChangesFromContextDidSaveNotification:](<mergechanges(fromcontextdidsave_).md>) — Merges the changes specified in a given notification.
+- [- setQueryGenerationFromToken:error:](<setquerygenerationfrom(__).md>) — Sets the query generation this context should use.

@@ -1,0 +1,130 @@
+---
+title: Capture setup
+framework: AVFoundation
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/avfoundation/capture-setup
+source_url: 'https://developer.apple.com/documentation/avfoundation/capture-setup'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/capture-setup.json'
+content_hash: 'sha256:ba25f6d1a31939bf'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md)
+
+# Capture setup
+
+<sub>API Collection</sub>
+
+Configure built-in cameras and microphones, and external capture devices, for media capture.
+
+## Overview
+
+The AVFoundation Capture subsystem provides a common high-level architecture for video, photo, and audio capture services in iOS and macOS. Use this system if you want to:
+
+- Build a custom camera UI to integrate shooting photos or videos into your app’s user experience.
+- Give users more direct control over photo and video capture, such as focus, exposure, and stabilization options.
+- Produce different results than the system camera UI, such as RAW format photos, depth maps, or videos with custom timed metadata.
+- Get live access to pixel or audio data streaming directly from a capture device.
+
+> [!note] Note
+> To instead let the user capture media with the system camera UI within your app, see [UIImagePickerController](../uikit/uiimagepickercontroller.md).
+
+The main parts of the capture architecture are sessions, inputs, and outputs: Capture sessions connect one or more inputs to one or more outputs. Inputs are sources of media, including capture devices like the cameras and microphones built into an iOS device or Mac. Outputs acquire media from inputs to produce useful data, such as movie files written to disk or raw pixel buffers available for live processing.
+
+![](../../../attachments/9b0221d1660fd2379e731fce79dc3522/media-2970476@2x.png)
+
+<sub>Block diagram of the basic capture session architecture: an AVCaptureSession acquires data from an AVCaptureDevice through AVCaptureDeviceInput, and provides data to one or more AVCaptureOutput objects.</sub>
+
+## Topics
+
+### Essentials
+
+- [Requesting authorization to capture and save media](requesting-authorization-to-capture-and-save-media.md) — Prompt the user to authorize access to the camera, microphone, and photo library.
+
+### Capture sessions
+
+- [Setting up a capture session](setting-up-a-capture-session.md) — Configure input devices, output media, preview views, and basic settings before capturing photos or video.
+- [Accessing the camera while multitasking on iPad](../avkit/accessing-the-camera-while-multitasking-on-ipad.md) — Operate the camera in Split View, Slide Over, Picture in Picture, and Stage Manager modes.
+- [AVCam: Building a camera app](avcam-building-a-camera-app.md) — Capture photos and record video using the front and rear iPhone and iPad cameras.
+- [Build a responsive camera app that launches quickly](build-a-responsive-camera-app-that-launches-quickly.md) — Build a fast camera launch experience for your iOS and iPadOS apps.
+- [Capturing Cinematic video](capturing-cinematic-video.md) — Capture video with an adjustable depth of field and focus points.
+- [Supporting Center Stage front camera in your iOS app](supporting-center-stage-front-camera-in-your-ios-app.md) — Enable Center Stage for photos and videos on the iPhone front camera.
+- [AVMultiCamPiP: Capturing from Multiple Cameras](avmulticampip-capturing-from-multiple-cameras.md) — Simultaneously record the output from the front and back cameras into a single movie file by using a multi-camera capture session.
+- [AVCamBarcode: detecting barcodes and faces](avcambarcode-detecting-barcodes-and-faces.md) — Identify machine readable codes or faces by using the camera.
+- [AVCaptureSession](avcapturesession.md) — An object that configures capture behavior and coordinates the flow of data from input devices to capture outputs.
+- [AVCaptureMultiCamSession](avcapturemulticamsession.md) — A capture session that supports simultaneous capture from multiple inputs of the same media type.
+- [AVCaptureInput](avcaptureinput.md) — An abstract superclass for objects that provide input data to a capture session.
+- [AVCaptureOutput](avcaptureoutput.md) — An abstract superclass for objects that provide media output destinations for a capture session.
+- [AVCaptureConnection](avcaptureconnection.md) — An object that represents a connection from a capture input to a capture output.
+
+### Capture devices
+
+- [Choosing a capture device](choosing-a-capture-device.md) — Select the front or back camera, or use advanced features like the TrueDepth camera or dual camera.
+- [Adopting smart framing in your camera app](adopting-smart-framing-in-your-camera-app.md) — Capture the optimal shot by providing automatic framing recommendations.
+- [AVCaptureDevice](avcapturedevice.md) — An object that represents a hardware or virtual capture device like a camera or microphone.
+- [AVCaptureDeviceInput](avcapturedeviceinput.md) — An object that provides media input from a capture device to a capture session.
+- [AVContinuityDevice](avcontinuitydevice.md) — A class that represents a physical iOS device that’s nearby and can provide access to its cameras and microphones.
+- [AVExternalStorageDevice](avexternalstoragedevice.md) — Represents a physical external storage device that stores media assets.
+- [AVExternalStorageDeviceDiscoverySession](avexternalstoragedevicediscoverysession.md) — Informs your app when the external storage devices connect to and disconnect from the system.
+
+### Capture preview
+
+- [AVCaptureVideoPreviewLayer](avcapturevideopreviewlayer.md) — A Core Animation layer that displays video from a camera device.
+- [AVCaptureAudioPreviewOutput](avcaptureaudiopreviewoutput.md) — A capture output that provides a preview of the captured audio.
+
+### Continuity Camera
+
+- [Supporting Continuity Camera in your tvOS app](../avkit/supporting-continuity-camera-in-your-tvos-app.md) — Capture high-quality photos, video, and audio in your Apple TV app by connecting an iPhone or iPad as a continuity device.
+- [Supporting Continuity Camera in your macOS app](supporting-continuity-camera-in-your-macos-app.md) — Enable high-quality photo and video capture by using an iPhone camera as an external capture device.
+- [AVCaptureDeskViewApplication](avcapturedeskviewapplication.md) — An object that programmatically presents Desk View.
+
+### Capture controls
+
+- [Enhancing your app experience with the Camera Control](enhancing-your-app-experience-with-the-camera-control.md) — Provide direct access to your camera app’s features to help people quickly capture the perfect shot.
+- [AVCaptureControl](avcapturecontrol.md) — An abstract base class for controls that interact with the camera system.
+- [AVCaptureSystemZoomSlider](avcapturesystemzoomslider.md) — A control that adjusts the video zoom factor of a capture device within the system-recommended range.
+- [AVCaptureSystemExposureBiasSlider](avcapturesystemexposurebiasslider.md) — A control that adjusts the exposure bias of a capture device within the system-recommended range.
+- [AVCaptureSlider](avcaptureslider.md) — A slider control that selects a value from a bounded range.
+- [AVCaptureIndexPicker](avcaptureindexpicker.md) — A control for selecting from a set of mutually exclusive values by index.
+
+### External display output
+
+- [AVCaptureExternalDisplayConfiguration](avcaptureexternaldisplayconfiguration.md) — A class you use to specify a configuration to your external display configurator.
+- [AVCaptureExternalDisplayConfigurator](avcaptureexternaldisplayconfigurator.md) — A configurator class allowing you to configure properties of an external display to match the camera’s active video format.
+
+### Timecode generation
+
+- [AVCaptureTimecodeGenerator](avcapturetimecodegenerator.md) — Generates and synchronizes timecode data from various sources for precise video and audio synchronization.
+- [AVCaptureTimecodeGeneratorDelegate](avcapturetimecodegeneratordelegate.md) — A protocol for receiving real-time timecode updates and error notifications from a timecode generator.
+- [SynchronizationStatus](avcapturetimecodegenerator/synchronizationstatus.md) — Constants defining the synchronization status of a timecode generator .
+- [Source](avcapturetimecode/source.md) — Describes a timecode source that a timecode generator can synchronize to.
+- [SourceType](avcapturetimecode/sourcetype-swift.enum.md) — Defines possible sources for generating timecode in using a timecode generator.
+- [AVCaptureTimecode](avcapturetimecode.md) — This structure represents a timecode, adhering to SMPTE standards, which define precise time information and associated timestamps for video or audio synchronization.
+- [AVCaptureTimecodeAdvancedByFrames](<avcapturetimecode/advanced(__by_).md>) — Generates a new timecode by adding a specified number of frames to the given timecode, handling overflow for seconds, minutes, and hours.
+- [AVCaptureTimecodeCreateMetadataSampleBufferAssociatedWithPresentationTimeStamp](<avcapturetimecode/createmetadatasamplebuffer(from_associatedwithpresentationtimestamp_).md>) — Creates a sample buffer containing Timecode Media Description metadata for integration with a video track.
+- [AVCaptureTimecodeCreateMetadataSampleBufferForDuration](<avcapturetimecode/createmetadatasamplebuffer(from_forduration_).md>) — Creates a sample buffer containing Timecode Media Description metadata for a specified duration.
+
+### External synchronization
+
+- [AVExternalSyncDevice](avexternalsyncdevice.md) — An external sync device connected to a host device that can be used to drive the timing of an internal component, such as a camera sensor.
+- [AVExternalSyncDeviceDelegate](avexternalsyncdevicedelegate.md) — Defines an interface for delegates of [AVCaptureDeviceInput](avcapturedeviceinput.md) to respond to events that occur when connecting, calibrating, and disconnecting external sync devices.
+- [AVExternalSyncDeviceStatus](avexternalsyncdevicestatus.md) — Connection state of an external sync device
+- [DiscoverySession](avexternalsyncdevice/discoverysession.md) — A means of discovering and monitoring connection / disconnection of external sync devices to the host.
+
+### Pro video storage
+
+- [AVProVideoStorage](avprovideostorage.md) — A class to track and manage pre-allocated storage for high data rate video capture. _(beta)_
+
+## See Also
+
+### Capture
+
+- [Photo capture](photo-capture.md) — Capture high-quality still images, Live Photos, and supporting photo data.
+- [Audio and video capture](audio-and-video-capture.md) — Capture audio and video directly to media files, or capture streams of media for direct access to media sample buffers.
+- [Additional data capture](additional-data-capture.md) — Capture additional data including depth and metadata, and synchronize capture from multiple outputs.

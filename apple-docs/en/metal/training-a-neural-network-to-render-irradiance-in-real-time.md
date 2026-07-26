@@ -1,0 +1,71 @@
+---
+title: Training a neural network to render irradiance in real time
+framework: Metal
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [macOS 26.0+, Xcode 26.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/training-a-neural-network-to-render-irradiance-in-real-time
+source_url: 'https://developer.apple.com/documentation/metal/training-a-neural-network-to-render-irradiance-in-real-time'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/training-a-neural-network-to-render-irradiance-in-real-time.json'
+content_hash: 'sha256:006f2fbed2882857'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Metal sample code library](metal-sample-code-library.md)
+
+# Training a neural network to render irradiance in real time
+
+<sub>Sample Code</sub>
+
+Train a small neural network on the GPU to approximate diffuse irradiance, and compare the result against Monte Carlo integration and a pre-trained ML model.
+
+## Overview
+
+This sample renders a PBR sphere lit by an HDR environment map, computing per-pixel diffuse irradiance using three different techniques that you can switch between at runtime:
+
+- **Monte Carlo** integrates the hemisphere per pixel each frame, producing a ground-truth reference.
+- **MPP** trains a lightweight MLP on the GPU at launch using Metal Performance Primitives cooperative matrix operations, then evaluates it per pixel.
+- **ML Encoder** dispatches a pre-trained Core ML model through `MTL4MachineLearningCommandEncoder`.
+
+The renderer uses a three-pass deferred approach. A geometry pass rasterizes world-space normals and material parameters to textures. The selected irradiance technique then takes the normals as input and outputs a tensor with the irradiance values. A composite pass then evaluates direct lighting with a Cook-Torrance BRDF, adds indirect lighting from the irradiance tensor, then tone-maps the result.
+
+### Configure the sample code project
+
+To run this sample, you need:
+
+- A Mac running macOS 26 or later
+- Xcode 26 or later
+
+> [!note] Note
+> This sample requires Metal 4.
+
+### Training on the GPU
+
+When the MPP technique is selected, the sample generates 512 ground-truth normal/irradiance pairs via Monte Carlo integration, then runs multiple training iterations per frame using a three-layer MLP. The MLP has 3 inputs (normal xyz), 2 hidden layers of 16 neurons, and 3 outputs (irradiance rgb). The input layer is padded to 16 elements, the output layer is padded to 8 elements, and irradiance values are converted to and from log space for numerical stability.
+
+The forward pass uses tensor ops and cooperative tensors to evaluate the network cooperatively across a SIMD group, where 32 threads process 32 pixels simultaneously. The backward pass works in a similar way to compute weight gradients and propagate activation gradients through each layer, with Adam as the optimizer.
+
+### Training offline with PyTorch
+
+When the ML Encoder technique is selected, a `MTL4MachineLearningCommandEncoder` is used to execute a pre-trained version of the same MLP network. Unlike the MPP approach, the pre-trained network does not skip empty pixels, so this technique is less efficient yet is much simpler.
+
+The `train_irradiance.py` script has an implementation of the Monte Carlo integration from `Irradiance.metal`, and can be used to regenerate the offline model (`Irradiance.mtlpackage`) using PyTorch. Run it with:
+
+```
+uv run ./train_irradiance.py
+```
+
+## See Also
+
+### Machine learning workflows
+
+- [Running a machine learning model on the GPU timeline](running-a-machine-learning-model-on-the-gpu-timeline.md) — Dispatch model inference commands with a machine learning pass in a Metal 4 command buffer.
+- [Running inline ML operations in a shader with Metal 4](running-inline-ml-operations-in-a-shader-with-metal-4.md) — Multiply matrices across multiple GPU cores with inline tensor operations.
+
+## Download
+
+- [TrainingANeuralNetworkToRenderIrradianceInRealTime.zip](https://docs-assets.developer.apple.com/published/210b0e935e71/TrainingANeuralNetworkToRenderIrradianceInRealTime.zip)

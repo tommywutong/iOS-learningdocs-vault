@@ -1,0 +1,30 @@
+---
+title: customMirror
+framework: Swift
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/set/iterator/custommirror
+source_url: 'https://developer.apple.com/documentation/swift/set/iterator/custommirror'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/set/iterator/custommirror.json'
+content_hash: 'sha256:99caf42d8c14c48a'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Set](../../set.md) · [Iterator](../iterator.md)
+
+# customMirror
+
+<sub>Instance Property</sub>
+
+A mirror that reflects the iterator.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var customMirror: Mirror { get }
+```

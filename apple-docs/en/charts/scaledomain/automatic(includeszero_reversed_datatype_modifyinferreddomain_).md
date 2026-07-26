@@ -1,0 +1,67 @@
+---
+title: 'automatic(includesZero:reversed:dataType:modifyInferredDomain:)'
+framework: Swift Charts
+symbol_kind: method
+role: symbol
+role_heading: Type Method
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, macOS 13.0+, tvOS 16.0+, visionOS 1.0+, watchOS 9.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/charts/scaledomain/automatic(includeszero:reversed:datatype:modifyinferreddomain:)'
+source_url: 'https://developer.apple.com/documentation/charts/scaledomain/automatic(includeszero:reversed:datatype:modifyinferreddomain:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/charts/scaledomain/automatic%28includeszero%3Areversed%3Adatatype%3Amodifyinferreddomain%3A%29.json'
+content_hash: 'sha256:e4e8b3abdcb3e697'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift Charts](../../charts.md) · [ScaleDomain](../scaledomain.md)
+
+# automatic(includesZero:reversed:dataType:modifyInferredDomain:)
+
+<sub>Type Method</sub>
+
+Creates a scale domain configuration that infers the scale domain from data.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static func automatic<DataValue>(includesZero: Bool? = nil, reversed: Bool? = nil, dataType: DataValue.Type, modifyInferredDomain: @escaping (inout [DataValue]) -> Void) -> AutomaticScaleDomain where DataValue : Plottable
+```
+
+## Parameters
+
+- `includesZero` — Whether the scale domain should include zero (only applicable for numerical values).
+
+- `reversed` — Whether the scale domain should be reversed (e.g., 100 … 0).
+
+- `dataType` — The type of a data value in the domain.
+
+- `modifyInferredDomain` — A closure that modifies the automatically inferred domain.
+
+## Discussion
+
+You can modify the inferred scale domain with a function.
+
+For instance, you can sort the categories in a categorical x scale:
+
+```swift
+Chart { ... }
+.chartXScale(domain: .automatic(dataType: String.self) { domain in
+    // Sort the categories.
+    domain.sort(using: .localizedStandard)
+    // Include a new category.
+    domain.append("Other")
+}
+```
+
+You can also modify a numerical scale to include a given value. The example below sets the y scale to always include the value 100.
+
+```swift
+Chart { ... }
+.chartYScale(domain: .automatic(dataType: Double.self) { domain in
+    domain.append(100)
+}
+```
+
+Note that the `modifyInferredDomain` closure is used as part of the automatic scale domain inference process. The result of it can be further modified by the `reversed` parameter, and to include values from axis marks. To set the scale domain to an exact value, specify the value as the `domain:` argument directly instead of using `.automatic`.

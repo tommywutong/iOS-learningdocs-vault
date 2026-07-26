@@ -1,0 +1,71 @@
+---
+title: AVPlayerItemMetadataOutput
+framework: AVFoundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.1+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/avfoundation/avplayeritemmetadataoutput
+source_url: 'https://developer.apple.com/documentation/avfoundation/avplayeritemmetadataoutput'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/avplayeritemmetadataoutput.json'
+content_hash: 'sha256:aa10add6ae8f6867'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md)
+
+# AVPlayerItemMetadataOutput
+
+<sub>Class</sub>
+
+An object that vends collections of metadata items that a player item’s tracks carry.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+class AVPlayerItemMetadataOutput
+```
+
+## Overview
+
+> [!note] Note
+> Setting the value of [suppressesPlayerRendering](avplayeritemoutput/suppressesplayerrendering.md) on an instance of `AVPlayerItemMetadataOutput` has no effect.
+
+## Relationships
+
+- **Inherits From**: [AVPlayerItemOutput](avplayeritemoutput.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Creating a metadata output
+
+- [- initWithIdentifiers:](<avplayeritemmetadataoutput/init(identifiers_).md>) — Creates an instance of AVPlayerItemMetadataOutput.
+
+### Configuring the delegate
+
+- [advanceIntervalForDelegateInvocation](avplayeritemmetadataoutput/advanceintervalfordelegateinvocation.md) — The time interval, in seconds, the player item metadata output object messages its delegate earlier than normal.
+- [delegate](avplayeritemmetadataoutput/delegate.md) — The delegate object.
+- [AVPlayerItemMetadataOutputPushDelegate](avplayeritemmetadataoutputpushdelegate.md) — Methods you can implement to provide additional metadata.
+- [delegateQueue](avplayeritemmetadataoutput/delegatequeue.md) — The dispatch queue on which messages are sent to the delegate.
+- [- setDelegate:queue:](<avplayeritemmetadataoutput/setdelegate(__queue_).md>) — Sets the delegate and a dispatch queue on which the delegate is called.
+
+## See Also
+
+### Media output
+
+- [AVPlayerVideoOutput](avplayervideooutput.md) — An object that receives video data from a player object.
+- [AVVideoOutputSpecification](avvideooutputspecification.md) — An object that specifies the pixel buffer attributes and tag collections handled by a player video output.
+- [AVPlayerItemOutput](avplayeritemoutput.md) — An abstract class that defines the common interface to output media data from a player item.
+- [AVPlayerItemVideoOutput](avplayeritemvideooutput.md) — An object that outputs video frames from a player item.
+- [AVPlayerItemLegibleOutput](avplayeritemlegibleoutput.md) — An object that vends attributed strings for media with a legible characteristic.
+- [AVPlayerItemRenderedLegibleOutput](avplayeritemrenderedlegibleoutput.md) — A player item output that vends media with a legible characteristic as rendered pixel buffers.
+- [AVRenderedCaptionImage](avrenderedcaptionimage.md) — An object that provides a rendered pixel buffer and its position in pixels.
+- [AVPlayerItemOutputPushDelegate](avplayeritemoutputpushdelegate.md) — A protocol that defines the methods to implement to respond to changes in the media data sequence.
+- [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md) — [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md) delivers `CMSampleBuffers` for [AVPlayerItem](avplayeritem.md) playback. _(beta)_
+- [AVPlayerItemSampleBufferOutputConfiguration](avplayeritemsamplebufferoutputconfiguration.md) — Configuration options specified when creating an [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md). _(beta)_
+- [AVPlayerItemSampleBufferOutputAudioConfiguration](avplayeritemsamplebufferoutputaudioconfiguration.md) — Audio-specific configuration options specified when creating an [AVPlayerItemSampleBufferOutput](avplayeritemsamplebufferoutput.md). _(beta)_

@@ -1,0 +1,28 @@
+---
+title: lineHeight
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 18.0+, iPadOS 18.0+, visionOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uitextformattingviewcontroller/formattingdescriptor-swift.struct/lineheight
+source_url: 'https://developer.apple.com/documentation/uikit/uitextformattingviewcontroller/formattingdescriptor-swift.struct/lineheight'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uitextformattingviewcontroller/formattingdescriptor-swift.struct/lineheight.json'
+content_hash: 'sha256:3fc767427fef3ef6'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [UIKit](../../../uikit.md) · [UITextFormattingViewController](../../uitextformattingviewcontroller.md) · [FormattingDescriptor](../formattingdescriptor-swift.struct.md)
+
+# lineHeight
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+var lineHeight: Double?
+```

@@ -1,0 +1,51 @@
+---
+title: textAlternatives
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [macOS 10.8+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsattributedstring/key/textalternatives
+source_url: 'https://developer.apple.com/documentation/foundation/nsattributedstring/key/textalternatives'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsattributedstring/key/textalternatives.json'
+content_hash: 'sha256:52af9d69da79afc4'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NSAttributedString](../../nsattributedstring.md) · [Key](../key.md)
+
+# textAlternatives
+
+<sub>Type Property</sub>
+
+The alternatives for the text.
+
+<sub>macOS</sub>
+
+```swift
+static let textAlternatives: NSAttributedString.Key
+```
+
+## Discussion
+
+The value of this attribute is an [NSTextAlternatives](../../../appkit/nstextalternatives.md) object representing alternatives for a string that may be presented to the user.
+
+## See Also
+
+### Getting text attribute keys
+
+- [cursor](cursor.md) — The cursor object.
+- [link](link.md) — The link for the text.
+- [markedClauseSegment](markedclausesegment.md) — The index of the marked clause segment.
+- [NSReplacementIndexAttributeName](replacementindex.md) — The replacement position associated with a format string specifier.
+- [shadow](shadow.md) — The shadow of the text.
+- [spellingState](spellingstate.md) — The spelling state of the text.
+- [suggestionHighlight](suggestionhighlight.md) — A highlight associated with a Spotlight suggestion.
+- [textEffect](texteffect.md) — An attribute that applies a text effect to the text.
+- [textHighlightColorScheme](texthighlightcolorscheme.md) — The custom highlight color to apply to the text.
+- [textHighlightStyle](texthighlightstyle.md) — An attribute that adds a highlight color to the text to emphasize it.
+- [textItemTag](textitemtag.md) — The name of a custom tag associated with a text item.
+- [toolTip](tooltip.md) — The tooltip text.

@@ -1,0 +1,45 @@
+---
+title: cancel()
+framework: Dispatch
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 8.0+, macOS 10.10+, tvOS, visionOS, watchOS]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/dispatch/dispatchworkitem/cancel()
+source_url: 'https://developer.apple.com/documentation/dispatch/dispatchworkitem/cancel()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/dispatch/dispatchworkitem/cancel%28%29.json'
+content_hash: 'sha256:668f1eea9d548298'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Dispatch](../../dispatch.md) · [DispatchWorkItem](../dispatchworkitem.md)
+
+# cancel()
+
+<sub>Instance Method</sub>
+
+Cancels the current work item asynchronously.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func cancel()
+```
+
+## Discussion
+
+Cancellation causes future attempts to execute the work item to return immediately. Cancellation does not affect the execution of a work item that has already begun.
+
+Release of any resources associated with the block object is delayed until execution of the block object is next attempted (or any execution already in progress completes).
+
+> [!note] Note
+> Take care to ensure that a work item does not capture any resources that require execution of the block body in order to be released, such as memory allocated with `malloc(3)` on which the block body calls `free(3)`. Such resources are leaked if the block body is never executed due to cancellation.
+
+## See Also
+
+### Canceling a Work Item
+
+- [isCancelled](iscancelled.md) — A Boolean value indicating whether the work item has been canceled.

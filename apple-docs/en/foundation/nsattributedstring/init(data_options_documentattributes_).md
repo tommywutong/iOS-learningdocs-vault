@@ -1,0 +1,58 @@
+---
+title: 'init(data:options:documentAttributes:)'
+framework: Foundation
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 7.0+, iPadOS 7.0+, Mac Catalyst 13.1+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/foundation/nsattributedstring/init(data:options:documentattributes:)'
+source_url: 'https://developer.apple.com/documentation/foundation/nsattributedstring/init(data:options:documentattributes:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsattributedstring/init%28data%3Aoptions%3Adocumentattributes%3A%29.json'
+content_hash: 'sha256:08d7368a9743dcb9'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [NSAttributedString](../nsattributedstring.md)
+
+# init(data:options:documentAttributes:)
+
+<sub>Initializer</sub>
+
+Creates an attributed string from the contents of the specified data object.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+init(data: Data, options: [NSAttributedString.DocumentReadingOptionKey : Any] = [:], documentAttributes dict: AutoreleasingUnsafeMutablePointer<NSDictionary?>?) throws
+```
+
+## Parameters
+
+- `data` — The data from which to create the string.
+
+- `options` — Attributes for interpreting the document contents. Specify the [documentType](documentattributekey/documenttype.md) or [fileType](documentreadingoptionkey/filetype.md) option to interpret the data as a specific type. When sharing files between different platforms, specify the [sourceTextScaling](documentreadingoptionkey/sourcetextscaling.md) or [targetTextScaling](documentreadingoptionkey/targettextscaling.md) options for any required text scaling behaviors. Specify the [characterEncoding](documentattributekey/characterencoding.md) attribute for plain-text files. Specify the [defaultAttributes](documentattributekey/defaultattributes.md) key to apply document attributes to the returned string. If you specify an empty dictionary, the method identifies the data format from the data itself.
+
+- `dict` — An in-out dictionary containing document-level attributes. On output, this method updates the dictionary to contain any document-specific keys found in the data. Specify `nil` if you don’t want the document attributes.
+
+## Return Value
+
+Returns an initialized attributed string object, or `nil` if the method can’t decode the data.
+
+## Discussion
+
+Don’t call this method from a background thread if the `options` dictionary includes the [documentType](documentattributekey/documenttype.md) attribute with a value of [html](documenttype/html.md). If you do, the method tries to synchronize with the main thread, fails, and times out. Calling it from the main thread works, but can still time out if the HTML contains references to external resources. The HTML import mechanism is meant for implementing something like markdown (that is, text styles, colors, and so on), not for general HTML import.
+
+> [!note] Handling Errors in Swift
+> In Swift, this API is imported as an initializer and is marked with the `throws` keyword to indicate that it throws an error in cases of failure.
+>
+> You call this method in a `try` expression and handle any errors in the `catch` clauses of a `do` statement, as described in [Error Handling](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html) in [The Swift Programming Language](https://docs.swift.org/swift-book/) and `About Imported Cocoa Error Parameters`.
+
+## See Also
+
+### Creating from a data file
+
+- [- initWithDocFormat:documentAttributes:](<init(docformat_documentattributes_).md>) — Creates an attributed string from Microsoft Word format data in the specified data object.
+- [- initWithURL:options:documentAttributes:error:](<init(url_options_documentattributes_).md>) — Creates an attributed string from the contents of the specified URL.

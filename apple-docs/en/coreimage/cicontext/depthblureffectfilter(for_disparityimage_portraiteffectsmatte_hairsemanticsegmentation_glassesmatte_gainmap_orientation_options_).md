@@ -1,0 +1,66 @@
+---
+title: 'depthBlurEffectFilter(for:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:glassesMatte:gainMap:orientation:options:)'
+framework: Core Image
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 14.1+, iPadOS 14.1+, Mac Catalyst 14.1+, macOS 11.0+, tvOS 14.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/coreimage/cicontext/depthblureffectfilter(for:disparityimage:portraiteffectsmatte:hairsemanticsegmentation:glassesmatte:gainmap:orientation:options:)'
+source_url: 'https://developer.apple.com/documentation/coreimage/cicontext/depthblureffectfilter(for:disparityimage:portraiteffectsmatte:hairsemanticsegmentation:glassesmatte:gainmap:orientation:options:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coreimage/cicontext/depthblureffectfilter%28for%3Adisparityimage%3Aportraiteffectsmatte%3Ahairsemanticsegmentation%3Aglassesmatte%3Againmap%3Aorientation%3Aoptions%3A%29.json'
+content_hash: 'sha256:72189e28ee82d67c'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Image](../../coreimage.md) · [CIContext](../cicontext.md)
+
+# depthBlurEffectFilter(for:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:glassesMatte:gainMap:orientation:options:)
+
+<sub>Instance Method</sub>
+
+Create a [CIFilter](../cifilter-swift.class.md) instance for the supplied image data that can be used to apply a depth blur effect created with the supplied auxiliary images.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+func depthBlurEffectFilter(for image: CIImage, disparityImage: CIImage, portraitEffectsMatte: CIImage?, hairSemanticSegmentation: CIImage?, glassesMatte: CIImage?, gainMap: CIImage?, orientation: CGImagePropertyOrientation, options: [AnyHashable : Any]? = nil) -> CIFilter?
+```
+
+## Parameters
+
+- `image` — The image object to apply the depth blur effect to.
+
+- `disparityImage` — The auxiliary disparity image. For more information, see [kCIImageAuxiliaryDisparity](../ciimageoption/auxiliarydisparity.md).
+
+- `portraitEffectsMatte` — The auxiliary portrait effects matte image. For more information, see [kCIImageAuxiliaryPortraitEffectsMatte](../ciimageoption/auxiliaryportraiteffectsmatte.md).
+
+- `hairSemanticSegmentation` — The auxiliary semantic segmentation hair matte image. For more information, see [kCIImageAuxiliarySemanticSegmentationHairMatte](../ciimageoption/auxiliarysemanticsegmentationhairmatte.md).
+
+- `glassesMatte` — The auxiliary glasses matte image. For more information, see [kCIImageAuxiliarySemanticSegmentationGlassesMatte](../ciimageoption/auxiliarysemanticsegmentationglassesmatte.md).
+
+- `gainMap` — The auxiliary gain map image. For more information, see [kCIImageAuxiliaryHDRGainMap](../ciimageoption/auxiliaryhdrgainmap.md).
+
+- `orientation` — The intended display orientation for the image.
+
+- `options` — Reserved for future use.
+
+## Discussion
+
+The receiver context is used to render the image in order to get the facial landmarks used to create the effect. The auxiliary images used to create the filter can be obtained from a JPEG or HEIC file containing embedded portrait effects matte data.
+
+## See Also
+
+### Related Documentation
+
+- [CIImageOption](../ciimageoption.md)
+- [Configuring camera capture to collect a Portrait Effects matte](../../avfoundation/configuring-camera-capture-to-collect-a-portrait-effects-matte.md) — Prepare your app to capture a portrait effects matte when taking photos.
+
+### Creating Depth Blur Filters
+
+- [- depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:orientation:options:](<depthblureffectfilter(for_disparityimage_portraiteffectsmatte_hairsemanticsegmentation_orientation_options_).md>) — Create a [CIFilter](../cifilter-swift.class.md) instance for the supplied image data that can be used to apply a depth blur effect created with the supplied auxiliary images.
+- [- depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:orientation:options:](<depthblureffectfilter(for_disparityimage_portraiteffectsmatte_orientation_options_).md>) — Create a [CIFilter](../cifilter-swift.class.md) instance for the supplied image data that can be used to apply a depth blur effect created with the supplied auxiliary images.
+- [- depthBlurEffectFilterForImageData:options:](<depthblureffectfilter(forimagedata_options_).md>) — Create a [CIFilter](../cifilter-swift.class.md) instance for the supplied image data that can be used to apply a depth blur effect.
+- [- depthBlurEffectFilterForImageURL:options:](<depthblureffectfilter(forimageurl_options_).md>) — Create a [CIFilter](../cifilter-swift.class.md) instance for the supplied image URL that can be used to apply a depth blur effect.

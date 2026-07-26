@@ -1,0 +1,95 @@
+---
+title: HID
+framework: Kernel
+symbol_kind: symbol
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/kernel/hardware_families/hid
+source_url: 'https://developer.apple.com/documentation/kernel/hardware_families/hid'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/kernel/hardware_families/hid.json'
+content_hash: 'sha256:34238c7256481332'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Kernel](../../kernel.md) · [Hardware Families](../hardware_families.md)
+
+# HID
+
+<sub>API Collection</sub>
+
+Implement a driver that interacts with human interface devices, such as mice and keyboards.
+
+## Overview
+
+The use of kernel extensions for HID drivers is deprecated. Instead, create a DriverKit extension using [HIDDriverKit](../../hiddriverkit.md).
+
+## Topics
+
+### Reports
+
+- [IOHIDReportType](../iohidreporttype.md) — Describes different type of HID reports.
+- [HIDReportCommandType](../hidreportcommandtype.md)
+- [IOHIDCompletion](../iohidcompletion.md) — Struct specifying action to perform when set/get report completes.
+- [IOHIDCompletionAction](../iohidcompletionaction.md) — Function called when set/get report completes
+
+### Event Types
+
+- [IOHIDBiometricEventType](../iohidbiometriceventtype.md)
+- [IOHIDPointerEventOptions](../iohidpointereventoptions.md)
+- [IOHIDOptionsType](../iohidoptionstype.md) — Options for opening a device via IOHIDLib.
+- [IOHIDStandardType](../iohidstandardtype.md) — Type to define what industrial standard the device is referencing.
+- [IOHIDValueScaleType](../iohidvaluescaletype.md) — Describes different types of scaling that can be performed on element values.
+- [IOHIDKeyboardEventOptions](../iohidkeyboardeventoptions.md)
+- [IOHIDScrollEventOptions](../iohidscrolleventoptions.md)
+- [IOHIDEventType](../iohideventtype.md)
+
+### HID Elements
+
+- [IOHIDElementCollectionType](../iohidelementcollectiontype.md) — Describes different types of HID collections.
+- [IOHIDElementCommitDirection](../iohidelementcommitdirection.md)
+- [IOHIDElementCookie](../iohidelementcookie.md) — Abstract data type used as a unique identifier for an element.
+- [IOHIDElementFlags](../iohidelementflags.md)
+- [IOHIDElementType](../iohidelementtype.md) — Describes different types of HID elements.
+- [IOHIDValueOptions](../iohidvalueoptions.md) — Describes options for gathering element values.
+
+### HID Types
+
+- [IOHIDButtonModes](../iohidbuttonmodes.md)
+- [IOHIDDigitizerStylusData](../iohiddigitizerstylusdata.md)
+- [IOHIDDigitizerTouchData](../iohiddigitizertouchdata.md)
+- [IOHIDQueueOptionsType](../iohidqueueoptionstype.md) — Options for creating a queue via IOHIDLib.
+- [NXByteOrder](../nxbyteorder.md)
+- [NXEQElement](../nxeqelement.md)
+- [NXEvent](../nxevent.md)
+- [NXEventData](../nxeventdata.md)
+- [NXEventExt](../nxeventext.md)
+- [NXEventExtension](../nxeventextension.md)
+- [NXEventPtr](../nxeventptr.md)
+- [NXEventSystemDevice](../nxeventsystemdevice.md)
+- [NXEventSystemDeviceList](../nxeventsystemdevicelist.md)
+- [NXEventSystemInfoData](../nxeventsysteminfodata.md)
+- [NXEventSystemInfoType](../nxeventsysteminfotype.md)
+- [NXKeyMapping](../nxkeymapping.md)
+- [NXMouseButton](../nxmousebutton.md)
+- [NXMouseScaling](../nxmousescaling.md)
+- [NXParsedKeyMapping](../nxparsedkeymapping.md)
+- [NXSwappedDouble](../nxswappeddouble.md)
+- [NXSwappedFloat](../nxswappedfloat.md)
+- [NXTabletPointData](../nxtabletpointdata.md)
+- [NXTabletPointDataPtr](../nxtabletpointdataptr.md)
+- [NXTabletProximityData](../nxtabletproximitydata.md)
+- [NXTabletProximityDataPtr](../nxtabletproximitydataptr.md)
+
+## See Also
+
+### Interfaces
+
+- [Audio](audio.md) — Implement a driver that interacts with audio hardware. 
+- [Graphics and Displays](graphics_and_displays.md) — Implement a driver that interacts with graphics and video hardware. 
+- [Network](network.md) — Implement a driver that interacts with network interfaces such as Ethernet adaptors. 
+- [SCSI](scsi.md) — Implement a driver that supports Small Computer System Interface (SCSI) protocols.
+- [Mass Storage](mass_storage.md) — Implement a driver that communicates with CD, DVD, or other mass storage devices.

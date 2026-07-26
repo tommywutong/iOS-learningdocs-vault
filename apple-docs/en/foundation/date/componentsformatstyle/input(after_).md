@@ -1,0 +1,50 @@
+---
+title: 'input(after:)'
+framework: Foundation
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 1.0+, watchOS 11.0+]
+languages: [swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/foundation/date/componentsformatstyle/input(after:)'
+source_url: 'https://developer.apple.com/documentation/foundation/date/componentsformatstyle/input(after:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/date/componentsformatstyle/input%28after%3A%29.json'
+content_hash: 'sha256:fa847002bb47e559'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [Date](../../date.md) · [ComponentsFormatStyle](../componentsformatstyle.md)
+
+# input(after:)
+
+<sub>Instance Method</sub>
+
+The next input value after the given input.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func input(after input: Range<Date>) -> Range<Date>?
+```
+
+## Return Value
+
+If [isPositive](ispositive.md) is true, the range `input.lowerBound..<x`, where `x` is the next larger date that this style can differentiate. If [isPositive](ispositive.md) is false, the range `x..<input.upperBound`, where `x` is the next higher date this style can differentiate, or `nil` if there is no such `x`.
+
+## Discussion
+
+If [isPositive](ispositive.md) is true, the next input value maintains the same `lowerBound` as `input`, but has a different`upperBound`. If [isPositive](ispositive.md) is false, the next input value maintains the same `upperBound` as `input`, but as a different `lowerBound`.
+
+Use this function to determine if the return value provided by [discreteInput(before:)](<discreteinput(before_).md>) is precise enough for your use case for any input `y`:
+
+```
+guard let x = style.discreteInput(before: y) else {
+    return
+}
+
+let z = style.input(after: x) ?? y
+```
+
+If the distance between the `upperBound`s of `x` and `z` is too large for the precision you require, you may want to manually probe `format(_:)` at a higher rate in that interval, as there is no guarantee for what the output will be in that interval.

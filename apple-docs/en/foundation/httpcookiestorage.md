@@ -1,0 +1,103 @@
+---
+title: HTTPCookieStorage
+framework: Foundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.1+, macOS 10.2+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/httpcookiestorage
+source_url: 'https://developer.apple.com/documentation/foundation/httpcookiestorage'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/httpcookiestorage.json'
+content_hash: 'sha256:69ebc845a2043139'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Foundation](../foundation.md)
+
+# HTTPCookieStorage
+
+<sub>Class</sub>
+
+A container that manages the storage of cookies.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+class HTTPCookieStorage
+```
+
+## Overview
+
+Each stored cookie is represented by an instance of the [HTTPCookie](httpcookie.md) class.
+
+### Sharing cookie storage
+
+The persistent cookie storage returned by [sharedHTTPCookieStorage](httpcookiestorage/shared.md) may be available to app extensions or other apps, subject to the following guidelines:
+
+- iOS — Each app and app extension has a unique data container, meaning  they have separate cookie stores. You can obtain a common cookie storage by using the [+ sharedCookieStorageForGroupContainerIdentifier:](<httpcookiestorage/sharedcookiestorage(forgroupcontaineridentifier_).md>) method.
+- macOS (non-sandboxed) — As of macOS 10.11, each app has its own cookie storage. Prior to macOS 10.11, a common cookie store is shared among the user’s apps.
+- macOS (sandboxed) — Same as iOS.
+- [UIWebView](../uikit/uiwebview.md) — `UIWebView` instances within an app inherit the parent app’s shared cookie storage.
+- [WKWebView](../webkit/wkwebview.md) — Each `WKWebView` instance has its own cookie storage. See the [WKHTTPCookieStore](../webkit/wkhttpcookiestore.md) class for more information.
+
+Session cookies (where the cookie object’s [sessionOnly](httpcookie/issessiononly.md) property is [true](../swift/true.md)) are local to a single process and are not shared.
+
+> [!note] Note
+> In cases where a cookie storage is shared between processes, changes made to the cookie accept policy affect all currently running apps using the cookie storage.
+
+### Subclassing notes
+
+The [HTTPCookieStorage](httpcookiestorage.md) class is usable as-is, but you can subclass it. For example, you can override the storage methods like [- storeCookies:forTask:](<httpcookiestorage/storecookies(__for_).md>), [- getCookiesForTask:completionHandler:](<httpcookiestorage/getcookiesfor(__completionhandler_).md>) to screen which cookies are stored, or reimplement the storage mechanism for security or other reasons.
+
+When overriding methods of this class, be aware that methods that take a `task` parameter are preferred by the system to equivalent methods that do not. Therefore, you should override the task-based methods when subclassing, as follows:
+
+- Retrieving cookies — Override [- getCookiesForTask:completionHandler:](<httpcookiestorage/getcookiesfor(__completionhandler_).md>), instead of or in addition to [- cookiesForURL:](<httpcookiestorage/cookies(for_).md>).
+- Adding cookies — Override [- storeCookies:forTask:](<httpcookiestorage/storecookies(__for_).md>), instead of or in addition to [- setCookies:forURL:mainDocumentURL:](<httpcookiestorage/setcookies(__for_maindocumenturl_).md>).
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Getting the shared cookie storage object
+
+- [sharedHTTPCookieStorage](httpcookiestorage/shared.md) — The shared cookie storage instance.
+- [+ sharedCookieStorageForGroupContainerIdentifier:](<httpcookiestorage/sharedcookiestorage(forgroupcontaineridentifier_).md>) — Returns the cookie storage instance for the container associated with the specified app group identifier.
+
+### Getting and setting the cookie accept policy
+
+- [cookieAcceptPolicy](httpcookiestorage/cookieacceptpolicy.md) — The cookie storage’s cookie accept policy.
+- [AcceptPolicy](httpcookie/acceptpolicy.md) — Cookie acceptance policies implemented by the [HTTPCookieStorage](httpcookiestorage.md) class.
+
+### Adding and removing cookies
+
+- [- removeCookiesSinceDate:](<httpcookiestorage/removecookies(since_).md>) — Removes cookies that were stored after a given date.
+- [- deleteCookie:](<httpcookiestorage/deletecookie(__).md>) — Deletes the specified cookie from the cookie storage.
+- [- setCookie:](<httpcookiestorage/setcookie(__).md>) — Stores a specified cookie in the cookie storage if the cookie accept policy permits.
+- [- setCookies:forURL:mainDocumentURL:](<httpcookiestorage/setcookies(__for_maindocumenturl_).md>) — Adds an array of cookies to the cookie storage if the storage’s cookie acceptance policy permits.
+- [- storeCookies:forTask:](<httpcookiestorage/storecookies(__for_).md>) — Stores an array of cookies in the cookie storage, on behalf of the provided task, if the cookie accept policy permits.
+
+### Retrieving cookies
+
+- [cookies](httpcookiestorage/cookies.md) — The cookie storage’s cookies.
+- [- getCookiesForTask:completionHandler:](<httpcookiestorage/getcookiesfor(__completionhandler_).md>) — Fetches cookies relevant to the specified task and passes them to the completion handler.
+- [- cookiesForURL:](<httpcookiestorage/cookies(for_).md>) — Returns all the cookie storage’s cookies that are sent to a specified URL.
+- [- sortedCookiesUsingDescriptors:](<httpcookiestorage/sortedcookies(using_).md>) — Returns all of the cookie storage’s cookies, sorted according to a given set of sort descriptors.
+
+### Tracking cookie storage changes
+
+- [NSHTTPCookieManagerCookiesChangedNotification](nsnotification/name-swift.struct/nshttpcookiemanagercookieschanged.md) — A notification posted when the cookies stored in the cookie storage have changed.
+- [CookiesChangedMessage](httpcookiestorage/cookieschangedmessage.md) — A message a cookie storage instance sends when its cookies change.
+- [NSHTTPCookieManagerAcceptPolicyChangedNotification](nsnotification/name-swift.struct/nshttpcookiemanageracceptpolicychanged.md) — A notification posted when the acceptance policy of the cookie storage has changed. _(deprecated)_
+
+## See Also
+
+### Cookies
+
+- [HTTPCookie](httpcookie.md) — A representation of an HTTP cookie.

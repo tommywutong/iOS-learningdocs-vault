@@ -1,0 +1,45 @@
+---
+title: Performance analysis
+framework: SwiftUI
+symbol_kind: article
+role: collectionGroup
+role_heading: ''
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/performance-analysis
+source_url: 'https://developer.apple.com/documentation/swiftui/performance-analysis'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/performance-analysis.json'
+content_hash: 'sha256:e679589474c0026b'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# Performance analysis
+
+Measure and improve your app’s responsiveness.
+
+## Overview
+
+Use Instruments to detect hangs and hitches in your app, and to analyze long view body updates and frequently occurring SwiftUI updates that can contribute to hangs and hitches.
+
+## Topics
+
+### Essentials
+
+- [Understanding user interface responsiveness](../xcode/understanding-user-interface-responsiveness.md) — Make your app more responsive by examining the event-handling and rendering loop.
+- [Understanding hangs in your app](../xcode/understanding-hangs-in-your-app.md) — Determine the cause for delays in user interactions by examining the main thread and the main run loop.
+- [Understanding hitches in your app](../xcode/understanding-hitches-in-your-app.md) — Determine the cause of interruptions in motion by examining the render loop.
+
+### Analyzing SwiftUI performance
+
+- [Understanding and improving SwiftUI performance](../xcode/understanding-and-improving-swiftui-performance.md) — Identify and address long-running view updates, and reduce the frequency of updates.
+
+## See Also
+
+### Tool support
+
+- [Previews in Xcode](previews-in-xcode.md) — Generate dynamic, interactive previews of your custom views.
+- [Xcode library customization](xcode-library-customization.md) — Expose custom views and modifiers in the Xcode library.

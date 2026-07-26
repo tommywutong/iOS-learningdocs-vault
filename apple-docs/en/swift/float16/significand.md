@@ -1,0 +1,56 @@
+---
+title: significand
+framework: Swift
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 14.0+, iPadOS 14.0+, Mac Catalyst 14.0+, macOS 11.0+, tvOS 14.0+, visionOS 1.0+, watchOS 7.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/float16/significand
+source_url: 'https://developer.apple.com/documentation/swift/float16/significand'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/float16/significand.json'
+content_hash: 'sha256:417aeda06b2ec387'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Float16](../float16.md)
+
+# significand
+
+<sub>Instance Property</sub>
+
+The significand of the floating-point value.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var significand: Float16 { get }
+```
+
+## Discussion
+
+The magnitude of a floating-point value `x` of type `F` can be calculated by using the following formula, where `**` is exponentiation:
+
+```swift
+x.significand * (F.radix ** x.exponent)
+```
+
+In the next example, `y` has a value of `21.5`, which is encoded as `1.34375 * 2 ** 4`. The significand of `y` is therefore 1.34375.
+
+```swift
+let y: Double = 21.5
+// y.significand == 1.34375
+// y.exponent == 4
+// Double.radix == 2
+```
+
+If a type’s radix is 2, then for finite nonzero numbers, the significand is in the range `1.0 ..< 2.0`. For other values of `x`, `x.significand` is defined as follows:
+
+- If `x` is zero, then `x.significand` is 0.0.
+- If `x` is infinite, then `x.significand` is infinity.
+- If `x` is NaN, then `x.significand` is NaN.
+
+> [!note] Note
+> The significand is frequently also called the _mantissa_, but significand is the preferred terminology in the [IEEE 754 specification](http://ieeexplore.ieee.org/servlet/opac?punumber=4610933), to allay confusion with the use of mantissa for the fractional part of a logarithm.

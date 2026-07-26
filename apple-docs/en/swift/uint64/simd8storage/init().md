@@ -1,0 +1,30 @@
+---
+title: init()
+framework: Swift
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/uint64/simd8storage/init()
+source_url: 'https://developer.apple.com/documentation/swift/uint64/simd8storage/init()'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/uint64/simd8storage/init%28%29.json'
+content_hash: 'sha256:58fba937e993413c'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [UInt64](../../uint64.md) · [SIMD8Storage](../simd8storage.md)
+
+# init()
+
+<sub>Initializer</sub>
+
+Creates a vector with zero in all lanes.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+init()
+```

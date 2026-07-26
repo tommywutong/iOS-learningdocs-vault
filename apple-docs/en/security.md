@@ -1,0 +1,142 @@
+---
+title: Security
+framework: Security
+symbol_kind: module
+role: collection
+role_heading: Framework
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security
+source_url: 'https://developer.apple.com/documentation/security'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security.json'
+content_hash: 'sha256:249d85b8b0ae3457'
+translated: false
+---
+
+> Navigation: [Technologies](technologies.md)
+
+# Security
+
+<sub>Framework</sub>
+
+Secure the data your app manages, and control access to your app.
+
+## Overview
+
+Use the Security framework to protect information, establish trust, and control access to software. Broadly, security services support these goals:
+
+- Establish a user’s identity (authentication) and then selectively grant access to resources (authorization).
+- Secure data, both on disk and in motion across a network connection.
+- Ensure the validity of code to be executed for a particular purpose.
+
+As shown in the image below, you can also use lower level cryptographic resources to create new secure services. Cryptography is difficult and the cost of bugs typically so high that it’s rarely a good idea to implement your own cryptography solution. Rely on the Security framework when you need cryptography in your app.
+
+![](../../attachments/c89145031becb4c02e98769e238d4f25/media-2891898@2x.png)
+
+<sub>Diagram showing your app sitting above the Security framework, which provides tools to enable secure interaction with users, data, and code.</sub>
+
+> [!note] Note
+> Always use the highest level API that meets your needs. The Security framework is not always your best option. For example, to conduct secure network communications, start by considering the [Foundation](foundation.md) framework’s [URL Loading System](foundation/url-loading-system.md), which builds on the Security framework. Only if your app requires lower level access to security protocol functions would you use the secure transport API directly.
+
+## Topics
+
+### Essentials
+
+- [Security updates](updates/security.md) — Learn about important changes to Security.
+
+### Authorization and authentication
+
+- [Password AutoFill](security/password-autofill.md) — Streamline your app’s login and onboarding procedures.
+- [Shared Web Credentials](security/shared-web-credentials.md) — Share credentials between iOS apps and their website counterparts.
+- [Authorization Services](security/authorization-services.md) — Access restricted areas of the operating system, and control access to particular features of your macOS app.
+- [Authorization Plug-ins](security/authorization-plug-ins.md) — Extend the authorization services API by creating plug-ins that can participate in authorization decisions.
+- [Sessions](security/sessions.md) — Manage login, authorization, and security sessions in macOS.
+- [One-time codes](security/one-time-codes.md) — Streamline entry of authentication and recovery codes.
+
+### Secure data
+
+- [Keychain services](security/keychain-services.md) — Securely store small chunks of data on behalf of the user.
+- [Preventing Insecure Network Connections](security/preventing-insecure-network-connections.md) — Enforce secure network links in your app by relying on App Transport Security.
+
+### Secure code
+
+- [Code Signing Services](security/code-signing-services.md) — Examine and validate signed code running on the system.
+- [Notarizing macOS software before distribution](security/notarizing-macos-software-before-distribution.md) — Give users even more confidence in your macOS software by submitting it to Apple for notarization.
+- [Preparing your app to work with pointer authentication](security/preparing-your-app-to-work-with-pointer-authentication.md) — Test your app against the arm64e architecture to ensure that it works seamlessly with enhanced security features.
+- [App Sandbox](security/app-sandbox.md) — Restrict access to system resources and user data in macOS apps to contain damage if an app becomes compromised.
+- [Hardened Runtime](security/hardened-runtime.md) — Manage security protections and resource access for your macOS apps.
+- [Disabling and Enabling System Integrity Protection](security/disabling-and-enabling-system-integrity-protection.md) — Disable system protections only temporarily during development to test drivers, kernel extensions, and other low-level code.
+- [Using the latest code signature format](xcode/using-the-latest-code-signature-format.md) — Update legacy app code signatures so your app runs on current OS releases.
+- [Updating Mac Software](security/updating-mac-software.md) — Implement Mac software updates without causing code-signing crashes.
+- [TN3125: Inside Code Signing: Provisioning Profiles](technotes/tn3125-inside-code-signing-provisioning-profiles.md) — Learn how provisioning profiles enable third-party code to run on Apple platforms.
+
+### Launch environment constraints
+
+- [Applying launch environment and library constraints](security/applying-launch-environment-and-library-constraints.md) — Limit the libraries your process loads, and the situations where it runs.
+- [Defining launch environment and library constraints](security/defining-launch-environment-and-library-constraints.md) — Restrict your app’s components to their expected contexts.
+- [Constraining a tool’s launch environment](security/constraining-a-tool's-launch-environment.md) — Improve the security of your macOS app by limiting the ways its components can run.
+
+### Cryptography
+
+- [Complying with Encryption Export Regulations](security/complying-with-encryption-export-regulations.md) — Declare the use of encryption in your app to streamline the app submission process.
+- [Certificate, Key, and Trust Services](security/certificate-key-and-trust-services.md) — Establish trust using certificates and cryptographic keys.
+- [Cryptographic Message Syntax Services](security/cryptographic-message-syntax-services.md) — Cryptographically sign and encrypt S/MIME messages.
+- [Randomization Services](security/randomization-services.md) — Generate cryptographically secure random numbers.
+- [Security Transforms](security/security-transforms.md) — Perform cryptographic functions like encoding, encryption, signing, and signature verification.
+- [ASN.1](security/asn-1.md) — Encode and decode Distinguished Encoding Rules (DER) and Basic Encoding Rules (BER) data streams.
+
+### Result codes
+
+- [Security Framework Result Codes](security/security-framework-result-codes.md) — Evaluate result codes common to many Security framework functions.
+
+### Legacy interfaces
+
+- [Common Security Services Manager](security/common-security-services-manager.md) — A set of open source modules underpinning the legacy implementation of the Security framework.
+- [Secure Transport](security/secure-transport.md) — Secure network communication using standardized transport layer security mechanisms.
+- [Secure Download](security/secure-download.md) — Implement Apple’s Secure Download System in macOS.
+- [Security legacy reference](security/security-legacy-reference.md) — Learn about legacy APIs.
+
+### Reference
+
+- [Security Structures](security/security-structures.md)
+- [Security Constants](security/security-constants.md)
+- [Security Functions](security/security-functions.md)
+- [Security Data Types](security/security-data-types.md)
+
+### Variables
+
+- [CSSM_APPLE_PRIVATE_CSPDL_CODE_28](security/cssm_apple_private_cspdl_code_28.md)
+- [TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256](security/tls_ecdhe_psk_with_chacha20_poly1305_sha256.md)
+- [errSecCSDetachedCertificates](security/errseccsdetachedcertificates.md)
+- [errSecCSMultipleSelfSigning](security/errseccsmultipleselfsigning.md)
+- [errSecCSRemoteSignerFirstSlotFull](security/errseccsremotesignerfirstslotfull.md)
+- [errSecCSRemoteSignerSecondSlotFull](security/errseccsremotesignersecondslotfull.md)
+- [errSecCSUnsupportedAlgorithm](security/errseccsunsupportedalgorithm.md)
+- [errSecMissingQualifiedCertStatement](security/errsecmissingqualifiedcertstatement.md)
+- [kSecCFErrorDetachedCertificates](security/kseccferrordetachedcertificates.md)
+- [kSecCS_MAX_SIGNATURES](security/kseccs_max_signatures.md)
+- [kSecCodeInfoChosenSignature](security/kseccodeinfochosensignature.md)
+- [kSecCodeInfoSignerInfoSKID](security/kseccodeinfosignerinfoskid.md)
+- [kSecCodeInfoTotalSignatures](security/kseccodeinfototalsignatures.md)
+- [kSecPolicyAppleEAPClient](security/ksecpolicyappleeapclient.md)
+- [kSecPolicyAppleEAPServer](security/ksecpolicyappleeapserver.md)
+- [kSecPolicyAppleIPSecClient](security/ksecpolicyappleipsecclient.md)
+- [kSecPolicyAppleIPSecServer](security/ksecpolicyappleipsecserver.md)
+- [kSecPolicyAppleSSLClient](security/ksecpolicyapplesslclient.md)
+- [kSecPolicyAppleSSLServer](security/ksecpolicyapplesslserver.md)
+- [kSecTrustQCStatements](security/ksectrustqcstatements.md)
+- [kSecTrustQWACValidation](security/ksectrustqwacvalidation.md)
+
+### Functions
+
+- [SecIdentityCreate](<security/secidentitycreate(______).md>)
+- [sec_protocol_metadata_copy_negotiated_protocol](<security/sec_protocol_metadata_copy_negotiated_protocol(__).md>)
+- [sec_protocol_metadata_copy_server_name](<security/sec_protocol_metadata_copy_server_name(__).md>)
+
+### Type Aliases
+
+- [CE_DataType](security/ce_datatype-swift.typealias.md)
+- [CE_ExtendedKeyUsage](security/ce_extendedkeyusage-swift.typealias.md)
+- [CE_GeneralNameType](security/ce_generalnametype-swift.typealias.md)

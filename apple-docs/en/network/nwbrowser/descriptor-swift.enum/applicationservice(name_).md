@@ -1,0 +1,34 @@
+---
+title: 'NWBrowser.Descriptor.applicationService(name:)'
+framework: Network
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, macOS 13.0+, tvOS 16.0+, visionOS 1.0+, watchOS 9.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/network/nwbrowser/descriptor-swift.enum/applicationservice(name:)'
+source_url: 'https://developer.apple.com/documentation/network/nwbrowser/descriptor-swift.enum/applicationservice(name:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/network/nwbrowser/descriptor-swift.enum/applicationservice%28name%3A%29.json'
+content_hash: 'sha256:cbd01ae29300a89c'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Network](../../../network.md) · [NWBrowser](../../nwbrowser.md) · [Descriptor](../descriptor-swift.enum.md)
+
+# NWBrowser.Descriptor.applicationService(name:)
+
+<sub>Case</sub>
+
+Returns a browser descriptor for application services.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+case applicationService(name: String)
+```
+
+## Parameters
+
+- `name` — The name of the application service.

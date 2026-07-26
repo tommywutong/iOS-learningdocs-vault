@@ -1,0 +1,48 @@
+---
+title: HRESULT_SEVERITY
+framework: Core Foundation
+symbol_kind: macro
+role: symbol
+role_heading: Macro
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/corefoundation/hresult_severity
+source_url: 'https://developer.apple.com/documentation/corefoundation/hresult_severity'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/corefoundation/hresult_severity.json'
+content_hash: 'sha256:aa082e951d6d1130'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Foundation](../corefoundation.md)
+
+# HRESULT_SEVERITY
+
+<sub>Macro</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```objc
+#define HRESULT_SEVERITY(hr)
+```
+
+## See Also
+
+### Macros
+
+- [CF_ASSUME_NONNULL_BEGIN](cf_assume_nonnull_begin.md)
+- [CF_ASSUME_NONNULL_END](cf_assume_nonnull_end.md)
+- [CF_AUTOMATED_REFCOUNT_UNAVAILABLE](cf_automated_refcount_unavailable.md)
+- [CF_AVAILABLE_IOS](cf_available_ios.md)
+- [CF_AVAILABLE_IPHONE](cf_available_iphone.md)
+- [CF_AVAILABLE_MAC](cf_available_mac.md)
+- [CF_AVAILABLE](cf_available.md)
+- [CF_BOXABLE](cf_boxable.md)
+- [CF_BRIDGED_MUTABLE_TYPE](cf_bridged_mutable_type.md)
+- [CF_BRIDGED_TYPE](cf_bridged_type.md)
+- [CF_CALENDAR_DEPRECATED](cf_calendar_deprecated.md)
+- [CF_CALENDAR_ENUM_DEPRECATED](cf_calendar_enum_deprecated.md)
+- [CF_CLOSED_ENUM](cf_closed_enum.md)
+- [CF_CONSUMED](cf_consumed.md)
+- [CF_DEFINES_CG_TYPES](cf_defines_cg_types.md)

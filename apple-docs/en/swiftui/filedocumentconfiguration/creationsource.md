@@ -1,0 +1,54 @@
+---
+title: creationSource
+framework: SwiftUI
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 27.0+ beta（27.0 起废弃）, iPadOS 27.0+ beta（27.0 起废弃）, Mac Catalyst 27.0+ beta（27.0 起废弃）, visionOS 27.0+ beta（27.0 起废弃）]
+languages: [swift]
+beta: true
+deprecated: true
+doc_path: /documentation/swiftui/filedocumentconfiguration/creationsource
+source_url: 'https://developer.apple.com/documentation/swiftui/filedocumentconfiguration/creationsource'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/filedocumentconfiguration/creationsource.json'
+content_hash: 'sha256:d7497259f6a6ea26'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [FileDocumentConfiguration](../filedocumentconfiguration.md)
+
+# creationSource
+
+<sub>Instance Property</sub>
+
+The source associated with the button that created this document.
+
+> [!warning] Deprecated
+> Use the Document protocol and URLDocumentConfiguration.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+var creationSource: DocumentCreationSource? { get }
+```
+
+## Discussion
+
+On iOS, you can specify the source via a [NewDocumentButton](../newdocumentbutton.md) in [DocumentGroupLaunchScene](../documentgrouplaunchscene.md):
+
+```swift
+extension DocumentCreationSource {
+    static let scanner: Self =
+        DocumentCreationSource(id: "document-from-scanner")
+
+    static let template: Self =
+        DocumentCreationSource(id: "document-from-template")
+}
+
+DocumentGroupLaunchScene("Documents") {
+    NewDocumentButton("Scan Document", source: .scanner)
+    NewDocumentButton("New from Template", source: .template)
+}
+```
+
+Use this property to determine which [NewDocumentButton](../newdocumentbutton.md) triggered the creation of the current document, allowing you to customize the UI accordingly.

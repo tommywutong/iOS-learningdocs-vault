@@ -1,0 +1,48 @@
+---
+title: 'drop(_:to:)'
+framework: UIKit
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 11.0+, iPadOS 11.0+, Mac Catalyst 13.1+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/uikit/uitableviewdropcoordinator/drop(_:to:)-57wx'
+source_url: 'https://developer.apple.com/documentation/uikit/uitableviewdropcoordinator/drop(_:to:)-57wx'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uitableviewdropcoordinator/drop%28_%3Ato%3A%29-57wx.json'
+content_hash: 'sha256:cf46385ffa0534b0'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UITableViewDropCoordinator](../uitableviewdropcoordinator.md)
+
+# drop(_:to:)
+
+<sub>Instance Method</sub>
+
+Animates the item to an arbitrary location in your view hierarchy.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+func drop(_ dragItem: UIDragItem, to target: UIDragPreviewTarget) -> any UIDragAnimating
+```
+
+## Parameters
+
+- `dragItem` — The item that you want to drop.
+
+- `target` — The location at which to drop the item, specified as a point in a view. You can also use the [UIDragPreviewTarget](../uidragpreviewtarget.md) object to specify a final transform to apply to the content.
+
+## Discussion
+
+Use this method to animate drops to any view in your app. For example, you might use this method to drop items onto a tab bar or toolbar that is part of your interface.
+
+## See Also
+
+### Animating rows to their destination
+
+- [- dropItem:toRowAtIndexPath:](<drop(__torowat_).md>) — Animates the item to the specified index path in the table view.
+- [- dropItem:intoRowAtIndexPath:rect:](<drop(__intorowat_rect_).md>)
+- [- dropItem:toPlaceholder:](<drop(__to_)-3znax.md>) — Animates the item to the specified location and inserts a placeholder cell at that location.

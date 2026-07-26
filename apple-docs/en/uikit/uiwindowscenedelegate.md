@@ -1,0 +1,78 @@
+---
+title: UIWindowSceneDelegate
+framework: UIKit
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.1+, tvOS 13.0+, visionOS 1.0+]
+languages: [swift, swift, swift, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiwindowscenedelegate
+source_url: 'https://developer.apple.com/documentation/uikit/uiwindowscenedelegate'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiwindowscenedelegate.json'
+content_hash: 'sha256:b3015815facd4bb4'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md)
+
+# UIWindowSceneDelegate
+
+<sub>Protocol</sub>
+
+Additional methods that you use to manage app-specific tasks occurring in a scene.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor protocol UIWindowSceneDelegate : UISceneDelegate
+```
+
+## Overview
+
+Use your [UIWindowSceneDelegate](uiwindowscenedelegate.md) object to manage the life cycle of one instance of your app’s user interface. The window scene delegate conforms to the [UISceneDelegate](uiscenedelegate.md) protocol, and you use it to receive notifications when its scene connects to the app, enters the foreground, and so on. You also use it to respond to changes in the underlying environment of the scene. For example, if the user resizes a scene, use your delegate to make any needed changes to your content to accommodate the new size.
+
+Don’t create [UIWindowSceneDelegate](uiwindowscenedelegate.md) objects directly. Instead, specify the name of your delegate class as part of the configuration data for your scene. You can specify this information in your app’s `Info.plist` file, or in the [UISceneConfiguration](uisceneconfiguration.md) object you return from your app delegate’s [- application:configurationForConnectingSceneSession:options:](<uiapplicationdelegate/application(__configurationforconnecting_options_).md>) method. For more information about how to configure scenes, see [Specifying the scenes your app supports](specifying-the-scenes-your-app-supports.md).
+
+For an example on using `UIWindowSceneDelegate` in your app, see [Supporting multiple windows on iPad](supporting-multiple-windows-on-ipad.md).
+
+## Relationships
+
+- **Inherits From**: [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [UISceneDelegate](uiscenedelegate.md)
+
+## Topics
+
+### Managing the scene’s main window
+
+- [window](uiwindowscenedelegate/window.md) — The main window associated with the scene.
+
+### Responding to scene changes
+
+- [- windowScene:didUpdateEffectiveGeometry:](<uiwindowscenedelegate/windowscene(__didupdateeffectivegeometry_).md>) — Called when the window scene’s effective geometry has changed.
+
+### Performing tasks
+
+- [- windowScene:performActionForShortcutItem:completionHandler:](<uiwindowscenedelegate/windowscene(__performactionfor_completionhandler_).md>) — Asks the delegate to perform the user-selected action.
+- [- windowScene:userDidAcceptCloudKitShareWithMetadata:](<uiwindowscenedelegate/windowscene(__userdidacceptcloudkitsharewith_).md>) — Tells the delegate that the window scene now has access to shared information in CloudKit.
+
+### Configuring supported interface orientations
+
+- [- supportedInterfaceOrientationsForWindowScene:](<uiwindowscenedelegate/supportedinterfaceorientations(for_).md>) — Returns the interface orientations supported by the window scene. The returned value replaces the app’s UISupportedInterfaceOrientations Info.plist value for this scene. If not implemented, the Info.plist value is used. _(beta)_
+
+### Deprecated methods
+
+- [- windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:](<uiwindowscenedelegate/windowscene(__didupdate_interfaceorientation_traitcollection_).md>) — Notifies you when the size, orientation, or traits of a scene change. _(deprecated)_
+
+### Instance Methods
+
+- [- preferredWindowingControlStyleForScene:](<uiwindowscenedelegate/preferredwindowingcontrolstyle(for_).md>) — Called by the system to determine the windowing control style for the provided scene. `automaticStyle` will be used if this method is not implemented.
+
+## See Also
+
+### Window scenes
+
+- [Supporting multiple windows on iPad](supporting-multiple-windows-on-ipad.md) — Support side-by-side instances of your app’s interface and create new windows.
+- [UIWindowScene](uiwindowscene.md) — A scene that manages one or more windows for your app.
+- [UIScene](uiscene.md) — An object that represents one instance of your app’s user interface.
+- [UISceneDelegate](uiscenedelegate.md) — The core methods you use to respond to life-cycle events occurring within a scene.

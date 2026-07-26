@@ -1,0 +1,48 @@
+---
+title: scrollEdgeAppearance
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 15.0+, iPadOS 15.0+, Mac Catalyst 15.0+, tvOS 15.0+, visionOS 1.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uitabbar/scrolledgeappearance
+source_url: 'https://developer.apple.com/documentation/uikit/uitabbar/scrolledgeappearance'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uitabbar/scrolledgeappearance.json'
+content_hash: 'sha256:c986f6753e28939e'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UITabBar](../uitabbar.md)
+
+# scrollEdgeAppearance
+
+<sub>Instance Property</sub>
+
+The appearance settings for the tab bar when the edge of scrollable content aligns with the edge of the tab bar.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@NSCopying var scrollEdgeAppearance: UITabBarAppearance? { get set }
+```
+
+## Discussion
+
+When a tab bar controller contains a tab bar and a scroll view, part of the scroll view’s content appears underneath the tab bar. If the edge of the scrolled content reaches that bar, UIKit applies the appearance settings in this property.
+
+If the value of this property is `nil`, UIKit uses the value of the tab bar’s [standardAppearance](standardappearance.md) property, modified to have a transparent background. If no tab bar controller manages your tab bar, UIKit ignores this property and uses the tab bar’s standard appearance.
+
+You can customize the appearance for specific tab bar items with the [scrollEdgeAppearance](../uitabbaritem/scrolledgeappearance.md) property of [UITabBarItem](../uitabbaritem.md).
+
+## See Also
+
+### Customizing tab bar appearance
+
+- [standardAppearance](standardappearance.md) — The appearance settings for a standard-height tab bar.
+- [leadingAccessoryView](leadingaccessoryview.md) — The view at the leading edge of a tab bar on tvOS.
+- [trailingAccessoryView](trailingaccessoryview.md) — The view at the trailing edge of a tab bar on tvOS.
+- [translucent](istranslucent.md) — A Boolean value that indicates whether the tab bar is translucent.
+- [Legacy customizations](../uitabbar-legacy-customizations.md) — Customize appearance information directly on the tab bar object.

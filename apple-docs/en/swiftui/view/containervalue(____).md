@@ -1,0 +1,135 @@
+---
+title: 'containerValue(_:_:)'
+framework: SwiftUI
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swiftui/view/containervalue(_:_:)'
+source_url: 'https://developer.apple.com/documentation/swiftui/view/containervalue(_:_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/view/containervalue%28_%3A_%3A%29.json'
+content_hash: 'sha256:a9103f33ea81aedd'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [View](../view.md)
+
+# containerValue(_:_:)
+
+<sub>Instance Method</sub>
+
+Sets a particular container value of a view.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@export(implementation) nonisolated func containerValue<V>(_ keyPath: WritableKeyPath<ContainerValues, V>, _ value: V) -> some View
+
+```
+
+## Parameters
+
+- `keyPath` — A key path that indicates the property of the [ContainerValues](../containervalues.md) structure to update.
+
+- `value` — The new value to set for the item specified by `keyPath`.
+
+## Return Value
+
+A view that has the given value set in its containerValues.
+
+## Discussion
+
+Use this modifier to set one of the writable properties of the [ContainerValues](../containervalues.md) structure, including custom values that you create.
+
+Like preferences, container values are able to be read by views above the view they’re set on. Unlike preferences, however, container values don’t have merging behavior because they don’t escape their closest container. In the following example, the container value is set on the contained view, but is dropped when it reaches the containing [VStack](../vstack.md).
+
+```swift
+VStack {
+    Text("A")
+        .containerValue(\.myCustomValue, 1) // myCustomValue = 1
+    Text("B")
+        .containerValue(\.myCustomValue, 2) // myCustomValue = 2
+    // container values are unaffected by views that aren't containers:
+    Text("C")
+        .containerValue(\.myCustomValue, 3)
+        .padding() // myCustomValue = 3
+} // myCustomValue = its default value, values do not escape the container
+```
+
+Even if a stack has only one child, container values still won’t be readable outside of the `VStack`. Container values don’t escape a container even if the container has only one child.
+
+In this example, a direct subview writes a container value, allowing its direct container view to read it back:
+
+```swift
+@ContentBuilder var content: some View {
+    Text("A")
+        .containerValue(\.myCustomValue, 1)
+}
+
+ForEach(subviews: content) { subview in
+    Text("value = \(subview.containerValues.myCustomValue)") // shows "value = 1"
+}
+```
+
+However in the next example, the wrapping `VStack` means the `Text` view is not a direct subview of the outer container, so that container cannot read the changed value:
+
+```swift
+@ContentBuilder var containedContent: some View {
+    VStack {
+        Text("A")
+            .containerValue(\.myCustomValue, 1)
+    }
+}
+
+ForEach(subviews: containedContent) { subviews in
+    Text("value = \(subview.containerValues.myCustomValue)") // shows the default value
+}
+```
+
+The container values modifier can also be used to modify mutable subfields of container values.
+
+```swift
+struct PinPosition {
+    var rotation: Double = 0
+    var xOffset: Int = 0
+}
+
+extension ContainerValues {
+    @Entry var pinPosition: PinPosition = .init()
+}
+
+// pinPosition.rotation = 0, pinPosition.xOffset = 3
+Text("A").containerValue(\.pinPosition.xOffset, 3)
+
+// pinPosition.rotation = 10, pinPosition.xOffset = 5
+Text("B")
+    .containerValue(\.pinPosition.rotation, 10)
+    .containerValue(\.pinPosition.xOffset, 5)
+```
+
+This allows you to group multiple related container values into structs while maintaining separate modifiers to write each value.
+
+```swift
+extension View {
+    func pinRotation(_ rotation: Double) -> some View {
+        containerValue(\.pinPosition.rotation, rotation)
+    }
+
+    func pinXOffset(_ xOffset: Int) -> some View {
+        containerValue(\.pinPosition.xOffset, xOffset)
+    }
+}
+```
+
+## See Also
+
+### Accessing a container’s subviews
+
+- [Subview](../subview.md) — An opaque value representing a subview of another view.
+- [SubviewsCollection](../subviewscollection.md) — An opaque collection representing the subviews of view.
+- [SubviewsCollectionSlice](../subviewscollectionslice.md) — A slice of a SubviewsCollection.
+- [ContainerValues](../containervalues.md) — A collection of container values associated with a given view.
+- [ContainerValueKey](../containervaluekey.md) — A key for accessing container values.

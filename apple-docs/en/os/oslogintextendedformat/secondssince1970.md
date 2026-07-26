@@ -1,0 +1,28 @@
+---
+title: OSLogIntExtendedFormat.secondsSince1970
+framework: os
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, macOS 26.0+, tvOS 26.0+, visionOS 26.0+, watchOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/os/oslogintextendedformat/secondssince1970
+source_url: 'https://developer.apple.com/documentation/os/oslogintextendedformat/secondssince1970'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/os/oslogintextendedformat/secondssince1970.json'
+content_hash: 'sha256:23d8810759650358'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [os](../../os.md) · [OSLogIntExtendedFormat](../oslogintextendedformat.md)
+
+# OSLogIntExtendedFormat.secondsSince1970
+
+<sub>Case</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+case secondsSince1970
+```

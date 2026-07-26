@@ -1,0 +1,78 @@
+---
+title: 'add(_:withCompletionHandler:)'
+framework: User Notifications
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 10.0+, iPadOS 10.0+, Mac Catalyst 13.1+, macOS 10.14+, tvOS 10.0+, visionOS 1.0+, watchOS 3.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/usernotifications/unusernotificationcenter/add(_:withcompletionhandler:)'
+source_url: 'https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/add(_:withcompletionhandler:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/usernotifications/unusernotificationcenter/add%28_%3Awithcompletionhandler%3A%29.json'
+content_hash: 'sha256:04e22a6d4b992e83'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [User Notifications](../../usernotifications.md) · [UNUserNotificationCenter](../unusernotificationcenter.md)
+
+# add(_:withCompletionHandler:)
+
+<sub>Instance Method</sub>
+
+Schedules the delivery of a local notification.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: (@Sendable ((any Error)?) -> Void)? = nil)
+```
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+func add(_ request: UNNotificationRequest) async throws
+```
+
+## Parameters
+
+- `request` — The request object containing the notification payload and trigger information. This parameter must not be `nil`.
+
+- `completionHandler` — The block to execute with the results. This block may be executed on a background thread. The block has no return value and takes the following parameter: - **error** — An error object indicating whether a problem occurred. If the notification was scheduled successfully, this parameter is `nil`; otherwise, it is set to an error object indicating the reason for the failure.
+
+## Discussion
+
+> [!important] Important
+> You can call this method from synchronous code using a completion handler, as shown on this page, or you can call it as an asynchronous method that has the following declaration:
+>
+> ```swift
+> func add(_ request: UNNotificationRequest) async throws
+> ```
+>
+> For information about concurrency and asynchronous code in Swift, see [Calling Objective-C APIs Asynchronously](../../swift/calling-objective-c-apis-asynchronously.md).
+
+This method schedules local notifications only; you cannot use it to schedule the delivery of remote notifications. Upon calling this method, the system begins tracking the trigger conditions associated with your request. When the trigger condition is met, the system delivers your notification. If the request does not contain a [UNNotificationTrigger](../unnotificationtrigger.md) object, the notification is delivered right away.
+
+You may call this method from any thread of your app.
+
+```swift
+let center = UNUserNotificationCenter.current()
+let content = UNMutableNotificationContent()
+content.title = "My notification title"
+content.body = "My notification body"
+let notification = UNNotificationRequest(identifier: "com.example.mynotification", content: content, trigger: nil)
+do {
+    try await center.add(notification)
+} catch {
+    // Handle any errors.
+}
+```
+
+## See Also
+
+### Scheduling notifications
+
+- [- getPendingNotificationRequestsWithCompletionHandler:](<getpendingnotificationrequests(completionhandler_).md>) — Fetches all of your app’s local notifications that are pending delivery.
+- [- removePendingNotificationRequestsWithIdentifiers:](<removependingnotificationrequests(withidentifiers_).md>) — Removes your app’s local notifications that are pending and match the specified identifiers.
+- [- removeAllPendingNotificationRequests](<removeallpendingnotificationrequests().md>) — Removes all of your app’s pending local notifications.

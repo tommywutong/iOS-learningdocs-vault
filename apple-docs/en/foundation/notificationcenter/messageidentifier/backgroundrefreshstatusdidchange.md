@@ -1,0 +1,41 @@
+---
+title: backgroundRefreshStatusDidChange
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, tvOS 26.0+, visionOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/notificationcenter/messageidentifier/backgroundrefreshstatusdidchange
+source_url: 'https://developer.apple.com/documentation/foundation/notificationcenter/messageidentifier/backgroundrefreshstatusdidchange'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/notificationcenter/messageidentifier/backgroundrefreshstatusdidchange.json'
+content_hash: 'sha256:88bd0c013125df20'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NotificationCenter](../../notificationcenter.md) · [MessageIdentifier](../messageidentifier.md)
+
+# backgroundRefreshStatusDidChange
+
+<sub>Type Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+static var backgroundRefreshStatusDidChange: NotificationCenter.BaseMessageIdentifier<UIApplication.BackgroundRefreshStatusDidChangeMessage> { get }
+```
+
+## See Also
+
+### Identifying UIKit app life cycle messages
+
+- [didFinishLaunching](didfinishlaunching.md)
+- [didBecomeActive](didbecomeactive-2hcfs.md)
+- [didEnterBackground](didenterbackground-1u5sm.md)
+- [willEnterForeground](willenterforeground-95zi8.md)
+- [willResignActive](willresignactive-4rf2p.md)
+- [didReceiveMemoryWarning](didreceivememorywarning.md)
+- [significantTimeChange](significanttimechange.md)
+- [userDidTakeScreenshot](userdidtakescreenshot.md)

@@ -1,0 +1,48 @@
+---
+title: '~(_:)'
+framework: Swift
+symbol_kind: op
+role: symbol
+role_heading: Operator
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/binaryinteger/~(_:)-6mr7y'
+source_url: 'https://developer.apple.com/documentation/swift/binaryinteger/~(_:)-6mr7y'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/binaryinteger/~%28_%3A%29-6mr7y.json'
+content_hash: 'sha256:e348415e5284a175'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [BinaryInteger](../binaryinteger.md)
+
+# ~(_:)
+
+<sub>Operator</sub>
+
+Returns the inverse of the bits set in the argument.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static func ~ (x: Self) -> Self
+```
+
+## Discussion
+
+The bitwise NOT operator (`~`) is a prefix operator that returns a value in which all the bits of its argument are flipped: Bits that are `1` in the argument are `0` in the result, and bits that are `0` in the argument are `1` in the result. This is equivalent to the inverse of a set. For example:
+
+```swift
+let x: UInt8 = 5        // 0b00000101
+let notX = ~x           // 0b11111010
+```
+
+Performing a bitwise NOT operation on 0 returns a value with every bit set to `1`.
+
+```swift
+let allOnes = ~UInt8.min   // 0b11111111
+```
+
+> [!abstract] Complexity
+> O(1).

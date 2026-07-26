@@ -1,0 +1,41 @@
+---
+title: UICollectionView.SelfSizingInvalidation.enabledIncludingConstraints
+framework: UIKit
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, tvOS 16.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uicollectionview/selfsizinginvalidation-swift.enum/enabledincludingconstraints
+source_url: 'https://developer.apple.com/documentation/uikit/uicollectionview/selfsizinginvalidation-swift.enum/enabledincludingconstraints'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uicollectionview/selfsizinginvalidation-swift.enum/enabledincludingconstraints.json'
+content_hash: 'sha256:ca81ae24959ae11a'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [UIKit](../../../uikit.md) · [UICollectionView](../../uicollectionview.md) · [SelfSizingInvalidation](../selfsizinginvalidation-swift.enum.md)
+
+# UICollectionView.SelfSizingInvalidation.enabledIncludingConstraints
+
+<sub>Case</sub>
+
+A mode that enables automatic self-sizing invalidation after Auto Layout changes.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+case enabledIncludingConstraints
+```
+
+## Discussion
+
+If you use this self-sizing invalidation mode, calling [- invalidateIntrinsicContentSize](<../../uiview/invalidateintrinsiccontentsize().md>) on a self-sizing cell or its [contentView](../../uicollectionviewcell/contentview.md) causes the cell to resize if necessary. Additionally, any Auto Layout change within the [contentView](../../uicollectionviewcell/contentview.md) of a self-sizing cell automatically calls [- invalidateIntrinsicContentSize](<../../uiview/invalidateintrinsiccontentsize().md>).
+
+## See Also
+
+### Constants
+
+- [UICollectionViewSelfSizingInvalidationDisabled](disabled.md) — A mode that disables self-sizing invalidation.
+- [UICollectionViewSelfSizingInvalidationEnabled](enabled.md) — A mode that enables manual self-sizing invalidation.

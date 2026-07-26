@@ -1,0 +1,28 @@
+---
+title: options
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift, swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/timer/timerpublisher/options
+source_url: 'https://developer.apple.com/documentation/foundation/timer/timerpublisher/options'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/timer/timerpublisher/options.json'
+content_hash: 'sha256:f24acce87f1282b4'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [Timer](../../timer.md) · [TimerPublisher](../timerpublisher.md)
+
+# options
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+final let options: RunLoop.SchedulerOptions?
+```

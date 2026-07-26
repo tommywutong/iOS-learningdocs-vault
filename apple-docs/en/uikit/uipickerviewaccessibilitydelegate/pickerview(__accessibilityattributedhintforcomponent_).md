@@ -1,0 +1,56 @@
+---
+title: 'pickerView(_:accessibilityAttributedHintForComponent:)'
+framework: UIKit
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 11.0+, iPadOS 11.0+, Mac Catalyst 13.1+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: '/documentation/uikit/uipickerviewaccessibilitydelegate/pickerview(_:accessibilityattributedhintforcomponent:)'
+source_url: 'https://developer.apple.com/documentation/uikit/uipickerviewaccessibilitydelegate/pickerview(_:accessibilityattributedhintforcomponent:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uipickerviewaccessibilitydelegate/pickerview%28_%3Aaccessibilityattributedhintforcomponent%3A%29.json'
+content_hash: 'sha256:d47ab816e1c4b9fe'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIPickerViewAccessibilityDelegate](../uipickerviewaccessibilitydelegate.md)
+
+# pickerView(_:accessibilityAttributedHintForComponent:)
+
+<sub>Instance Method</sub>
+
+Returns an attributed string that describes the result of performing an action on the specified component.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+optional func pickerView(_ pickerView: UIPickerView, accessibilityAttributedHintForComponent component: Int) -> NSAttributedString?
+```
+
+## Parameters
+
+- `pickerView` — The picker view object.
+
+- `component` — The component in the picker view that requires a hint.
+
+## Return Value
+
+The localized attributed string that describes the results of performing an action on the specified component.
+
+## Discussion
+
+Implement this optional method to ensure that the accessibility element representing the picker view provides an appropriate hint for each component. Your attributed string may include the [UIAccessibilitySpeechAttributeLanguage](../uiaccessibilityspeechattributelanguage.md) attribute, which lets you use different language synthesizers for different parts of the string. The system prefers this method over the [- pickerView:accessibilityHintForComponent:](<pickerview(__accessibilityhintforcomponent_).md>) method.
+
+For in-depth information on how to create an appropriate hint, see [Guidelines for Creating Hints](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/iPhoneAccessibility/Making_Application_Accessible/Making_Application_Accessible.html#//apple_ref/doc/uid/TP40008785-CH102-SW11).
+
+## See Also
+
+### Providing descriptive information
+
+- [- pickerView:accessibilityLabelForComponent:](<pickerview(__accessibilitylabelforcomponent_).md>) — Returns a string that identifies the picker view component.
+- [- pickerView:accessibilityAttributedLabelForComponent:](<pickerview(__accessibilityattributedlabelforcomponent_).md>) — Returns an attributed string that identifies the picker view component.
+- [- pickerView:accessibilityHintForComponent:](<pickerview(__accessibilityhintforcomponent_).md>) — Returns a string that describes the result of performing an action on the component.
+- [- pickerView:accessibilityUserInputLabelsForComponent:](<pickerview(__accessibilityuserinputlabelsforcomponent_).md>)
+- [- pickerView:accessibilityAttributedUserInputLabelsForComponent:](<pickerview(__accessibilityattributeduserinputlabelsforcomponent_).md>)

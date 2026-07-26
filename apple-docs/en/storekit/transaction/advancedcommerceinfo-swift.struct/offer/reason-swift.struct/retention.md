@@ -1,0 +1,35 @@
+---
+title: retention
+framework: StoreKit
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 18.4+, iPadOS 18.4+, macOS 15.4+, tvOS 18.4+, visionOS 2.4+, watchOS 11.4+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/storekit/transaction/advancedcommerceinfo-swift.struct/offer/reason-swift.struct/retention
+source_url: 'https://developer.apple.com/documentation/storekit/transaction/advancedcommerceinfo-swift.struct/offer/reason-swift.struct/retention'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/transaction/advancedcommerceinfo-swift.struct/offer/reason-swift.struct/retention.json'
+content_hash: 'sha256:8d57b7704d871f89'
+translated: false
+---
+
+> Navigation: [Technologies](../../../../../technologies.md) · [StoreKit](../../../../../storekit.md) · [Transaction](../../../../transaction.md) · [AdvancedCommerceInfo](../../../advancedcommerceinfo-swift.struct.md) · [Offer](../../offer.md) · [Reason](../reason-swift.struct.md)
+
+# retention
+
+<sub>Type Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let retention: Transaction.AdvancedCommerceInfo.Offer.Reason
+```
+
+## See Also
+
+### Type Properties
+
+- [acquisition](acquisition.md)
+- [winBack](winback.md)

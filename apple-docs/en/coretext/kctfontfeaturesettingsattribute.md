@@ -1,0 +1,57 @@
+---
+title: kCTFontFeatureSettingsAttribute
+framework: Core Text
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [iOS 3.2+, iPadOS 3.2+, Mac Catalyst 13.1+, macOS 10.5+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coretext/kctfontfeaturesettingsattribute
+source_url: 'https://developer.apple.com/documentation/coretext/kctfontfeaturesettingsattribute'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coretext/kctfontfeaturesettingsattribute.json'
+content_hash: 'sha256:6e1525c81692a53f'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Text](../coretext.md)
+
+# kCTFontFeatureSettingsAttribute
+
+<sub>Global Variable</sub>
+
+The font features settings for a font reference.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+let kCTFontFeatureSettingsAttribute: CFString
+```
+
+## Discussion
+
+The value associated with this key is a [CFArray](../corefoundation/cfarray.md) object containing font feature-setting dictionaries. A feature-setting dictionary contains a tuple of a [kCTFontFeatureTypeIdentifierKey](kctfontfeaturetypeidentifierkey.md) key-value pair and a [kCTFontFeatureSelectorIdentifierKey](kctfontfeatureselectoridentifierkey.md) key-value pair. Each setting dictionary indicates which setting should be turned on.
+
+> [!note] Note
+> In the case of duplicate or conflicting settings, the last setting in the list takes precedence. It is the caller’s responsibility to handle exclusive and nonexclusive settings as necessary.
+
+## See Also
+
+### Font Attribute Keys
+
+- [kCTFontURLAttribute](kctfonturlattribute.md) — The font URL from the font descriptor.
+- [kCTFontNameAttribute](kctfontnameattribute.md) — The PostScript name from the font descriptor.
+- [kCTFontDisplayNameAttribute](kctfontdisplaynameattribute.md) — The name used to display the font.
+- [kCTFontFamilyNameAttribute](kctfontfamilynameattribute.md) — The font family name from the font descriptor.
+- [kCTFontStyleNameAttribute](kctfontstylenameattribute.md) — The style name of the font.
+- [kCTFontTraitsAttribute](kctfonttraitsattribute.md) — The dictionary of font traits for stylistic information.
+- [kCTFontVariationAttribute](kctfontvariationattribute.md) — The dictionary of font variation.
+- [kCTFontSizeAttribute](kctfontsizeattribute.md) — The font point size.
+- [kCTFontMatrixAttribute](kctfontmatrixattribute.md) — The font transformation matrix when creating a font.
+- [kCTFontCascadeListAttribute](kctfontcascadelistattribute.md) — The cascade list used for a font reference.
+- [kCTFontCharacterSetAttribute](kctfontcharactersetattribute.md) — The Unicode character coverage set for a font reference.
+- [kCTFontLanguagesAttribute](kctfontlanguagesattribute.md) — A list of covered languages for a font reference.
+- [kCTFontBaselineAdjustAttribute](kctfontbaselineadjustattribute.md) — The baseline adjustment for a font reference.
+- [kCTFontMacintoshEncodingsAttribute](kctfontmacintoshencodingsattribute.md) — The Macintosh encodings for a font reference.
+- [kCTFontFeaturesAttribute](kctfontfeaturesattribute.md) — The font features for a font reference.

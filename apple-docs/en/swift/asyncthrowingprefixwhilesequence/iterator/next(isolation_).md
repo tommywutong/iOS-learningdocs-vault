@@ -1,0 +1,34 @@
+---
+title: 'next(isolation:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 18.0+, iPadOS 18.0+, Mac Catalyst 18.0+, macOS 15.0+, tvOS 18.0+, visionOS 2.0+, watchOS 11.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/asyncthrowingprefixwhilesequence/iterator/next(isolation:)'
+source_url: 'https://developer.apple.com/documentation/swift/asyncthrowingprefixwhilesequence/iterator/next(isolation:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncthrowingprefixwhilesequence/iterator/next%28isolation%3A%29.json'
+content_hash: 'sha256:751c6a615b083b43'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [AsyncThrowingPrefixWhileSequence](../../asyncthrowingprefixwhilesequence.md) · [Iterator](../iterator.md)
+
+# next(isolation:)
+
+<sub>Instance Method</sub>
+
+Produces the next element in the prefix-while sequence.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+mutating func next(isolation actor: isolated (any Actor)?) async throws -> Base.Element?
+```
+
+## Discussion
+
+If the predicate hasn’t failed yet, this method gets the next element from the base sequence and calls the predicate with it. If this call succeeds, this method passes along the element. Otherwise, it returns `nil`, ending the sequence. If calling the predicate closure throws an error, the sequence ends and `next(isolation:)` rethrows the error.

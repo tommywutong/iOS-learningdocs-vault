@@ -1,0 +1,38 @@
+---
+title: kCFUserNotificationDefaultResponse
+framework: Core Foundation
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [macOS 10.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/corefoundation/kcfusernotificationdefaultresponse
+source_url: 'https://developer.apple.com/documentation/corefoundation/kcfusernotificationdefaultresponse'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/corefoundation/kcfusernotificationdefaultresponse.json'
+content_hash: 'sha256:762a4760fc57a06d'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Foundation](../corefoundation.md)
+
+# kCFUserNotificationDefaultResponse
+
+<sub>Global Variable</sub>
+
+The default button was pressed.
+
+<sub>macOS</sub>
+
+```swift
+var kCFUserNotificationDefaultResponse: CFOptionFlags { get }
+```
+
+## See Also
+
+### Constants
+
+- [kCFUserNotificationAlternateResponse](kcfusernotificationalternateresponse.md) — The alternate button was pressed.
+- [kCFUserNotificationOtherResponse](kcfusernotificationotherresponse.md) — The third button was pressed.
+- [kCFUserNotificationCancelResponse](kcfusernotificationcancelresponse.md) — No button was pressed and the notification timed out.

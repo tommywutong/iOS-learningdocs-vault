@@ -1,0 +1,28 @@
+---
+title: 'clamp(lowerBound:upperBound:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/simd2/clamp(lowerbound:upperbound:)-9havh'
+source_url: 'https://developer.apple.com/documentation/swift/simd2/clamp(lowerbound:upperbound:)-9havh'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/simd2/clamp%28lowerbound%3Aupperbound%3A%29-9havh.json'
+content_hash: 'sha256:461bedf696b1db5f'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [SIMD2](../simd2.md)
+
+# clamp(lowerBound:upperBound:)
+
+<sub>Instance Method</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+mutating func clamp(lowerBound: Self, upperBound: Self)
+```

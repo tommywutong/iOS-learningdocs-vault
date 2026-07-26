@@ -1,0 +1,95 @@
+---
+title: UIInputViewController
+framework: UIKit
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.1+, tvOS, visionOS 1.0+]
+languages: [swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiinputviewcontroller
+source_url: 'https://developer.apple.com/documentation/uikit/uiinputviewcontroller'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiinputviewcontroller.json'
+content_hash: 'sha256:ea8ca4387aa31e9c'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md)
+
+# UIInputViewController
+
+<sub>Class</sub>
+
+The primary view controller for a custom keyboard app extension.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor class UIInputViewController
+```
+
+## Overview
+
+To create a custom keyboard, first subclass the [UIInputViewController](uiinputviewcontroller.md) class, then add your keyboard’s user interface to the [inputView](uiinputviewcontroller/inputview.md) property of your subclass. In Xcode, you can start a custom keyboard by choosing the Custom Keyboard target template.
+
+A custom keyboard can respond to user input events in the following ways:
+
+- Add text in the form of an unattributed [NSString](../foundation/nsstring.md) object at the insertion point in the current text input object, by calling the [- insertText:](<uikeyinput/inserttext(__).md>) method on the [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) property. This property provides that method through its conformance to the [UIKeyInput](uikeyinput.md) protocol
+- Delete text in a backward direction, starting at the insertion point, by calling the [- deleteBackward](<uikeyinput/deletebackward().md>) method on the [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) property.
+- Switch to another keyboard in the set of user-enabled keyboards, by calling the [- advanceToNextInputMode](<uiinputviewcontroller/advancetonextinputmode().md>) method.
+- Dismiss the keyboard, by calling the [- dismissKeyboard](<uiinputviewcontroller/dismisskeyboard().md>) method.
+
+Obtain textual context around the insertion point by reading the [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) properties [documentContextBeforeInput](uitextdocumentproxy/documentcontextbeforeinput.md) and [documentContextAfterInput](uitextdocumentproxy/documentcontextafterinput.md). To find out if the current text input object is empty, call the [hasText](uikeyinput/hastext.md) method on the [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) property. You can employ this textual context by considering it along with user input, to offer context-sensitive output to a document from your keyboard.
+
+An input view controller conforms to the [UITextInputDelegate](uitextinputdelegate.md) protocol, allowing you to respond to changes in document content and position of the insertion point.
+
+To present an appropriate keyboard layout, respond to the current text input object’s [UIKeyboardType](uikeyboardtype.md) property. For each keyboard type trait you support, change the contents of your primary view accordingly.
+
+For more about creating a custom keyboard, read [Custom Keyboard](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html#//apple_ref/doc/uid/TP40014214-CH16) in [App Extension Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214).
+
+## Relationships
+
+- **Inherits From**: [UIViewController](uiviewcontroller.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSCoding](../foundation/nscoding.md), [NSExtensionRequestHandling](../foundation/nsextensionrequesthandling.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [NSTouchBarProvider](../appkit/nstouchbarprovider.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md), [UIActivityItemsConfigurationProviding](uiactivityitemsconfigurationproviding.md), [UIAppearanceContainer](uiappearancecontainer.md), [UIContentContainer](uicontentcontainer.md), [UIFocusEnvironment](uifocusenvironment.md), [UIPasteConfigurationSupporting](uipasteconfigurationsupporting.md), [UIResponderStandardEditActions](uiresponderstandardeditactions.md), [UIStateRestoring](uistaterestoring.md), [UITextInputDelegate](uitextinputdelegate.md), [UITraitChangeObservable](uitraitchangeobservable-67e94.md), [UITraitEnvironment](uitraitenvironment.md), [UIUserActivityRestoring](uiuseractivityrestoring.md)
+
+## Topics
+
+### Providing a user interface for a custom keyboard
+
+- [inputView](uiinputviewcontroller/inputview.md) — The primary view for the input view controller.
+
+### Controlling a custom keyboard
+
+- [- advanceToNextInputMode](<uiinputviewcontroller/advancetonextinputmode().md>) — Switches to the next keyboard in the list of user-enabled keyboards.
+- [- dismissKeyboard](<uiinputviewcontroller/dismisskeyboard().md>) — Dismisses the custom keyboard from the screen.
+- [- handleInputModeListFromView:withEvent:](<uiinputviewcontroller/handleinputmodelist(from_with_).md>) — Supports interaction with the list of user-enabled keyboards.
+
+### Interacting with a text input object
+
+- [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) — A proxy to the text input object that the custom keyboard is interacting with.
+- [UITextDocumentProxy](uitextdocumentproxy.md) — An object that provides textual context to a custom keyboard.
+
+### Obtaining a supplementary lexicon
+
+- [- requestSupplementaryLexiconWithCompletion:](<uiinputviewcontroller/requestsupplementarylexicon(completion_).md>) — Obtains a supplementary lexicon of term pairs in a custom keyboard.
+
+### Changing the primary language of a custom keyboard
+
+- [primaryLanguage](uiinputviewcontroller/primarylanguage.md) — The primary language for a custom keyboard.
+
+### Configuring the keyboard behaviors
+
+- [needsInputModeSwitchKey](uiinputviewcontroller/needsinputmodeswitchkey.md) — A Boolean value that indicates whether the keyboard must display an input switcher key.
+- [hasFullAccess](uiinputviewcontroller/hasfullaccess.md) — A Boolean value that indicates whether the keyboard has full access.
+- [hasDictationKey](uiinputviewcontroller/hasdictationkey.md) — A Boolean value that indicates whether the keyboard has a dictation key.
+
+## See Also
+
+### Custom keyboard
+
+- [UITextDocumentProxy](uitextdocumentproxy.md) — An object that provides textual context to a custom keyboard.
+- [UIInputViewAudioFeedback](uiinputviewaudiofeedback.md) — A property that enables a custom input or keyboard accessory view to play standard keyboard input clicks.
+- [UILexicon](uilexicon.md) — A read-only array of term pairs, each in a lexicon entry object, for a custom keyboard.
+- [UILexiconEntry](uilexiconentry.md) — A read-only term pair, available within a lexicon object, for a custom keyboard.

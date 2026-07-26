@@ -1,0 +1,76 @@
+---
+title: Adding mipmap filtering to samplers
+framework: Metal
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/adding-mipmap-filtering-to-samplers
+source_url: 'https://developer.apple.com/documentation/metal/adding-mipmap-filtering-to-samplers'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/adding-mipmap-filtering-to-samplers.json'
+content_hash: 'sha256:af84c3052733d001'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Textures](textures.md)
+
+# Adding mipmap filtering to samplers
+
+<sub>Article</sub>
+
+Specify how the GPU samples mipmaps in your textures.
+
+## Overview
+
+By default, samplers sample data only from mipmap `0`. If your texture contains more than one mipmap, and you want it to sample the lower-level mipmaps, you need to specify this behavior when you create the texture sampler.
+
+### Create the sampler in your app
+
+If you’re creating an [MTLSamplerState](mtlsamplerstate.md) instance, create the [MTLSamplerDescriptor](mtlsamplerdescriptor.md) instance and set its [mipFilter](mtlsamplerdescriptor/mipfilter.md) property. The following code uses linear filtering for the minification and magnification filter, and uses linear filtering for mipmaps. This combination is usually called _trilinear filtering_. With this configuration, the GPU chooses the two mipmaps nearest in size and generates a sample by linearly filtering four pixels from each mipmap. Then it blends those two values with a linear interpolation to generate the final sample.
+
+**Swift**
+
+```swift
+let descriptor = MTLSamplerDescriptor()
+descriptor.minFilter = MTLSamplerMinMagFilter.linear
+descriptor.magFilter = MTLSamplerMinMagFilter.linear
+descriptor.mipFilter = MTLSamplerMipFilter.linear
+
+let sampler = device.makeSamplerState(descriptor: descriptor)
+```
+
+**Objective-C**
+
+```objective-c
+MTLSamplerDescriptor *descriptor = [MTLSamplerDescriptor new];
+descriptor.minFilter = MTLSamplerMinMagFilterLinear;
+descriptor.magFilter = MTLSamplerMinMagFilterLinear;
+descriptor.mipFilter = MTLSamplerMipFilterLinear;
+
+id<MTLSamplerState> sampler = [_device newSamplerStateWithDescriptor: descriptor];
+```
+
+Alternatively, any of these filters could filter from the nearest pixel, instead of a linear filter, resulting in fewer sampled pixels but lower quality. Ultimately, you need to decide the right tradeoffs between sampling performance and quality for your app.
+
+### Create the sampler in your shader
+
+If you prefer to create samplers in your shader, specify the mipmap filtering there instead of in your app:
+
+```metal
+constexpr sampler s(filter::linear, mip_filter::linear)
+```
+
+## See Also
+
+### Texture mipmapping
+
+- [Improving texture sampling quality and performance with mipmaps](improving-texture-sampling-quality-and-performance-with-mipmaps.md) — Avoid texture-rendering artifacts and reduce the GPU’s workload by creating smaller versions of a texture.
+- [Creating a mipmapped texture](creating-a-mipmapped-texture.md) — Decide whether a texture that you’re creating needs mipmaps.
+- [Copying data into or out of mipmaps](copying-data-into-or-out-of-mipmaps.md) — Specify which mipmaps that the data transfer affects.
+- [Generating mipmap data](generating-mipmap-data.md) — Create your mipmaps either when you author content or at runtime.
+- [Restricting access to specific mipmaps](restricting-access-to-specific-mipmaps.md) — Set the range of mipmap levels that a sampler can access.
+- [Predicting which mips the GPU samples with level-of-detail queries](predicting-which-mips-the-gpu-samples-with-level-of-detail-queries.md) — Determine in advance which mipmap levels the GPU requires to sample a texture.
+- [Dynamically adjusting texture level of detail](dynamically-adjusting-texture-level-of-detail.md) — Defer generating or loading larger mipmaps until that level of detail is needed.

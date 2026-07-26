@@ -1,0 +1,48 @@
+---
+title: Declared Age Range
+framework: Declared Age Range
+symbol_kind: module
+role: collection
+role_heading: Framework
+platforms: [iOS 26.0+, iPadOS 26.0+, Mac Catalyst 26.0+, macOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/declaredagerange
+source_url: 'https://developer.apple.com/documentation/declaredagerange'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/declaredagerange.json'
+content_hash: 'sha256:e2ac51fe92a8df2b'
+translated: false
+---
+
+> Navigation: [Technologies](technologies.md)
+
+# Declared Age Range
+
+<sub>Framework</sub>
+
+Create age-appropriate experiences in your app by asking people to share their age range.
+
+## Overview
+
+Use the Declared Age Range API to request that people share their age range with your app. For children in a Family Sharing group, a parent or guardian or the Family Organizer can decide whether to always share a child’s age information with your app, ask the child every time, or never share their age information. Along with an age range, the system returns an [AgeRangeDeclaration](declaredagerange/agerangeservice/agerangedeclaration.md) for the age range a person provides. To use the Declared Age Range API, add the [com.apple.developer.declared-age-range](bundleresources/entitlements/com.apple.developer.declared-age-range.md) entitlement to your app by enabling the Declared Age Range capability on your target in Xcode. For more information, see [Adding capabilities to your app](https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app).
+
+> [!important] Important
+> Data from the Declared Age Range API is based on information declared by an end user, or their parent or guardian, and may be confirmed using a payment method (like a credit card), government ID, or another method. You are solely responsible for ensuring compliance with associated laws or regulations that may apply to your app.
+
+## Topics
+
+### Essentials
+
+- [com.apple.developer.declared-age-range](bundleresources/entitlements/com.apple.developer.declared-age-range.md) — A Boolean value indicating whether your app may request a person’s age range.
+- [Requesting people’s age range information in your app](declaredagerange/requesting-people-share-their-age-range-with-your-app.md) — Ask people to share their age range with your app, and tailor features for adults, teens, and children while preserving privacy.
+- [Implementing age assurance and permissions](declaredagerange/implementing-age-assurance-and-permissions.md) — Create a significant change flow to inform people about important updates in your app and request age-related permissions.
+
+### Age range requests
+
+- [AgeRangeService](declaredagerange/agerangeservice.md) — A request for the age range of a person logged onto the current device.
+- [DeclaredAgeRangeAction](declaredagerange/declaredagerangeaction.md) — An action that requests a person’s age range.
+
+### Significant change acknowledgment
+
+- [SignificantUpdateAction](declaredagerange/significantupdateaction.md) — An action that presents a system sheet for significant app update acknowledgments.

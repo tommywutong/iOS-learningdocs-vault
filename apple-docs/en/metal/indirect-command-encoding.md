@@ -1,0 +1,73 @@
+---
+title: Indirect command encoding
+framework: Metal
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/indirect-command-encoding
+source_url: 'https://developer.apple.com/documentation/metal/indirect-command-encoding'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/indirect-command-encoding.json'
+content_hash: 'sha256:dc6928057014bed0'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md)
+
+# Indirect command encoding
+
+<sub>API Collection</sub>
+
+Store draw commands in Metal buffers and run them at a later time on the GPU, either once or repeatedly.
+
+## Overview
+
+You can use an [MTLIndirectCommandBuffer](mtlindirectcommandbuffer.md) instance to store draw commands and invoke them at a later time. Metal executes all the draw commands in an indirect command buffer each time you submit it. This means you can use indirect command buffers multiple times, unlike [MTLCommandBuffer](mtlcommandbuffer.md) instances, which are all single-use.
+
+You can encode an indirect command buffer to run on either the CPU or the GPU. However, the GPU gives you the ability to immediately use the output of one pass as the input of a subsequent pass. For example, you can create an indirect command buffer with commands that conditionally draw visible items by running:
+
+1. A compute kernel that identifies visible geometry and saves it to a result buffer
+2. An indirect command buffer that uses the result buffer as its input to make decisions on what to draw
+
+## Topics
+
+### Indirect command buffers
+
+- [Creating an indirect command buffer](creating-an-indirect-command-buffer.md) — Configure a descriptor to specify the properties of an indirect command buffer.
+- [Specifying drawing and dispatch arguments indirectly](specifying-drawing-and-dispatch-arguments-indirectly.md) — Use indirect commands if you don’t know your draw or dispatch call arguments when you encode the command.
+- [Encoding indirect command buffers on the CPU](encoding-indirect-command-buffers-on-the-cpu.md) — Reduce CPU overhead and simplify your command execution by reusing commands.
+- [Encoding indirect command buffers on the GPU](encoding-indirect-command-buffers-on-the-gpu.md) — Maximize CPU to GPU parallelization by generating render commands on the GPU.
+- [MTLIndirectCommandBuffer](mtlindirectcommandbuffer.md) — A command buffer containing reusable commands, encoded either on the CPU or GPU.
+- [MTLIndirectCommandBufferDescriptor](mtlindirectcommandbufferdescriptor.md) — A configuration you create to customize an indirect command buffer.
+- [MTLIndirectCommandType](mtlindirectcommandtype.md) — The types of commands that you can encode into the indirect command buffer.
+- [MTLIndirectCommandBufferExecutionRange](mtlindirectcommandbufferexecutionrange.md) — A range of commands in an indirect command buffer.
+- [MTLIndirectCommandBufferExecutionRangeMake](<mtlindirectcommandbufferexecutionrangemake(____).md>) — Creates a command execution range.
+
+### Indirect compute commands
+
+- [MTLIndirectComputeCommand](mtlindirectcomputecommand.md) — A compute command in an indirect command buffer.
+- [MTLRegion](mtlregion.md) — The bounds for a subset of an instance’s elements.
+- [MTLSize](mtlsize.md) — A type that represents one, two, or three dimensions of a type instance, such as an array or texture.
+- [MTLOrigin](mtlorigin.md) — The coordinates for the front upper-left corner of a region.
+- [MTLStageInRegionIndirectArguments](mtlstageinregionindirectarguments.md) — The data layout required for the arguments needed to specify the stage-in region.
+- [MTLDispatchThreadgroupsIndirectArguments](mtldispatchthreadgroupsindirectarguments.md) — The data layout required for arguments needed to specify the size of threadgroups.
+
+### Render compute commands
+
+- [MTLIndirectRenderCommand](mtlindirectrendercommand.md) — A render command in an indirect command buffer.
+- [MTLDrawPatchIndirectArguments](mtldrawpatchindirectarguments.md) — The data layout required for drawing patches via indirect buffer calls.
+- [MTLDrawPrimitivesIndirectArguments](mtldrawprimitivesindirectarguments.md) — The data layout required for drawing primitives via indirect buffer calls.
+- [MTLDrawIndexedPrimitivesIndirectArguments](mtldrawindexedprimitivesindirectarguments.md) — The data layout required for drawing indexed primitives via indirect buffer calls.
+
+## See Also
+
+### Command encoders
+
+- [Render passes](render-passes.md) — Encode a render pass to draw graphics into an image.
+- [Compute passes](compute-passes.md) — Encode a compute pass that runs computations in parallel on a thread grid, processing and manipulating Metal resource data on multiple cores of a GPU.
+- [Machine learning passes](machine-learning-passes.md) — Add machine learning model inference to your Metal app’s GPU workflow.
+- [Blit passes](blit-passes.md) — Encode a block information transfer pass to adjust and copy data to and from GPU resources, such as buffers and textures.
+- [Ray tracing with acceleration structures](ray-tracing-with-acceleration-structures.md) — Build a representation of your scene’s geometry using triangles and bounding volumes to quickly trace rays through the scene.

@@ -1,0 +1,28 @@
+---
+title: fontAssetDownloadError
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [macOS 10.13+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/cocoaerror/code/fontassetdownloaderror
+source_url: 'https://developer.apple.com/documentation/foundation/cocoaerror/code/fontassetdownloaderror'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/cocoaerror/code/fontassetdownloaderror.json'
+content_hash: 'sha256:e97a8d6661f80871'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [CocoaError](../../cocoaerror.md) · [Code](../code.md)
+
+# fontAssetDownloadError
+
+<sub>Type Property</sub>
+
+<sub>macOS</sub>
+
+```swift
+static var fontAssetDownloadError: CocoaError.Code { get }
+```

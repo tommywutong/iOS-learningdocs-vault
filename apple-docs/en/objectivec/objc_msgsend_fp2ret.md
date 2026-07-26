@@ -1,0 +1,48 @@
+---
+title: objc_msgSend_fp2ret
+framework: Objective-C Runtime
+symbol_kind: func
+role: symbol
+role_heading: Function
+platforms: [macOS 10.5+]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/objectivec/objc_msgsend_fp2ret
+source_url: 'https://developer.apple.com/documentation/objectivec/objc_msgsend_fp2ret'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/objectivec/objc_msgsend_fp2ret.json'
+content_hash: 'sha256:54cff6c5f9f73eb4'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Objective-C Runtime](../objectivec.md)
+
+# objc_msgSend_fp2ret
+
+<sub>Function</sub>
+
+<sub>macOS</sub>
+
+```objc
+extern void objc_msgSend_fp2ret();
+```
+
+## See Also
+
+### Functions
+
+- [class_createInstanceFromZone](class_createinstancefromzone.md) _(deprecated)_
+- [class_lookupMethod](<class_lookupmethod(____).md>) _(deprecated)_
+- [class_respondsToMethod](<class_respondstomethod(____).md>) _(deprecated)_
+- [NXCompareHashTables](nxcomparehashtables.md) _(deprecated)_
+- [NXCopyHashTable](nxcopyhashtable.md) _(deprecated)_
+- [NXCountHashTable](nxcounthashtable.md) _(deprecated)_
+- [NXCreateHashTable](nxcreatehashtable.md) _(deprecated)_
+- [NXCreateHashTableFromZone](nxcreatehashtablefromzone.md) _(deprecated)_
+- [NXEmptyHashTable](nxemptyhashtable.md) _(deprecated)_
+- [NXFreeHashTable](nxfreehashtable.md) _(deprecated)_
+- [NXHashGet](nxhashget.md) _(deprecated)_
+- [NXHashInsert](nxhashinsert.md) _(deprecated)_
+- [NXHashInsertIfAbsent](nxhashinsertifabsent.md) _(deprecated)_
+- [NXHashMember](nxhashmember.md) _(deprecated)_
+- [NXHashRemove](nxhashremove.md) _(deprecated)_

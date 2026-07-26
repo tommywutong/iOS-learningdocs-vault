@@ -1,0 +1,45 @@
+---
+title: 'buildBlock(_:_:)'
+framework: SwiftUI
+symbol_kind: method
+role: symbol
+role_heading: Type Method
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, macOS 12.0+, visionOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swiftui/tablecolumnbuilder/buildblock(_:_:)'
+source_url: 'https://developer.apple.com/documentation/swiftui/tablecolumnbuilder/buildblock(_:_:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/tablecolumnbuilder/buildblock%28_%3A_%3A%29.json'
+content_hash: 'sha256:5a41f786b7759089'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [TableColumnBuilder](../tablecolumnbuilder.md)
+
+# buildBlock(_:_:)
+
+<sub>Type Method</sub>
+
+Creates an unsortable column result from two sources.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, visionOS</sub>
+
+```swift
+@export(implementation) static func buildBlock<C0, C1>(_ c0: C0, _ c1: C1) -> TupleTableColumnContent<RowValue, Never, (C0, C1)> where RowValue == C0.TableRowValue, C0 : TableColumnContent, C1 : TableColumnContent, C0.TableColumnSortComparator == Never, C0.TableRowValue == C1.TableRowValue, C1.TableColumnSortComparator == Never
+```
+
+## See Also
+
+### Building a column
+
+- [buildBlock(_:)](<buildblock(__).md>) — Creates a single, unsortable column result.
+- [buildBlock(_:_:_:)](<buildblock(______).md>) — Creates an unsortable column result from three sources.
+- [buildBlock(_:_:_:_:)](<buildblock(________).md>) — Creates an unsortable column result from four sources.
+- [buildBlock(_:_:_:_:_:)](<buildblock(__________).md>) — Creates an unsortable column result from five sources.
+- [buildBlock(_:_:_:_:_:_:)](<buildblock(____________).md>) — Creates an unsortable column result from six sources.
+- [buildBlock(_:_:_:_:_:_:_:)](<buildblock(______________).md>) — Creates an unsortable column result from seven sources.
+- [buildBlock(_:_:_:_:_:_:_:_:)](<buildblock(________________).md>) — Creates an unsortable column result from eight sources.
+- [buildBlock(_:_:_:_:_:_:_:_:_:)](<buildblock(__________________).md>) — Creates an unsortable column result from nine sources.
+- [buildBlock(_:_:_:_:_:_:_:_:_:_:)](<buildblock(____________________).md>) — Creates an unsortable column result from ten sources.
+- [buildExpression(_:)](<buildexpression(__).md>) — Creates a generic, unsortable single column expression.

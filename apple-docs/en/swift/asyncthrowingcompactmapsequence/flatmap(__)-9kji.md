@@ -1,0 +1,53 @@
+---
+title: 'flatMap(_:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/asyncthrowingcompactmapsequence/flatmap(_:)-9kji'
+source_url: 'https://developer.apple.com/documentation/swift/asyncthrowingcompactmapsequence/flatmap(_:)-9kji'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncthrowingcompactmapsequence/flatmap%28_%3A%29-9kji.json'
+content_hash: 'sha256:c2a3528d8cd8907f'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [AsyncThrowingCompactMapSequence](../asyncthrowingcompactmapsequence.md)
+
+# flatMap(_:)
+
+<sub>Instance Method</sub>
+
+Creates an asynchronous sequence that concatenates the results of calling the given transformation with each element of this sequence.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@preconcurrency func flatMap<SegmentOfResult>(_ transform: @escaping @Sendable (Self.Element) async -> SegmentOfResult) -> AsyncFlatMapSequence<Self, SegmentOfResult> where SegmentOfResult : AsyncSequence, Self.Failure == SegmentOfResult.Failure
+```
+
+## Parameters
+
+- `transform` — A mapping closure. `transform` accepts an element of this sequence as its parameter and returns an `AsyncSequence`.
+
+## Return Value
+
+A single, flattened asynchronous sequence that contains all elements in all the asynchronous sequences produced by `transform`.
+
+## Discussion
+
+Use this method to receive a single-level asynchronous sequence when your transformation produces an asynchronous sequence for each element.
+
+In this example, an asynchronous sequence called `Counter` produces `Int` values from `1` to `5`. The transforming closure takes the received `Int` and returns a new `Counter` that counts that high. For example, when the transform receives `3` from the base sequence, it creates a new `Counter` that produces the values `1`, `2`, and `3`. The `flatMap(_:)` method “flattens” the resulting sequence-of-sequences into a single `AsyncSequence`.
+
+```swift
+let stream = Counter(howHigh: 5)
+    .flatMap { Counter(howHigh: $0) }
+for await number in stream {
+    print(number, terminator: " ")
+}
+// Prints "1 1 2 1 2 3 1 2 3 4 1 2 3 4 5 "
+```

@@ -1,0 +1,72 @@
+---
+title: UIAppearanceContainer
+framework: UIKit
+symbol_kind: protocol
+role: symbol
+role_heading: Protocol
+platforms: [iOS, iPadOS, Mac Catalyst, tvOS, visionOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiappearancecontainer
+source_url: 'https://developer.apple.com/documentation/uikit/uiappearancecontainer'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiappearancecontainer.json'
+content_hash: 'sha256:2672c4122ce04ffc'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md)
+
+# UIAppearanceContainer
+
+<sub>Protocol</sub>
+
+A protocol that a class must adopt to allow appearance customization using the [UIAppearance](uiappearance.md) API.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+@MainActor protocol UIAppearanceContainer : NSObjectProtocol
+```
+
+## Overview
+
+To participate in the appearance proxy API, tag appearance property accessor methods in your header with [UI_APPEARANCE_SELECTOR](ui_appearance_selector.md).
+
+Appearance property accessor methods must be of the form:
+
+**Swift**
+
+```swift
+func propertyForAxis1(axis1: IntegerType, axis2: IntegerType, axisN: IntegerType) -> PropertyType
+func setProperty(property: PropertyType, forAxis1 axis1: IntegerType, axis2: IntegerType)
+```
+
+**Objective-C**
+
+```objc
+- (PropertyType)propertyForAxis1:(IntegerType)axis1 axis2:(IntegerType)axis2 … axisN:(IntegerType)axisN;
+- (void)setProperty:(PropertyType)property forAxis1:(IntegerType)axis1 axis2:(IntegerType)axis2 … axisN:(IntegerType)axisN;
+```
+
+You may have no axes or as many as you like for any property.
+
+The property type may be any standard iOS type: `id`, [NSInteger](../objectivec/nsinteger.md), [NSUInteger](../objectivec/nsuinteger.md), [CGFloat](../corefoundation/cgfloat-swift.struct.md), [CGPoint](../corefoundation/cgpoint.md), [CGSize](../corefoundation/cgsize.md), [CGRect](../corefoundation/cgrect.md), [UIEdgeInsets](uiedgeinsets.md) or [UIOffset](uioffset.md). Axis parameter values must be either [NSInteger](../objectivec/nsinteger.md) or [NSUInteger](../objectivec/nsuinteger.md). UIKit throws an exception if other types are used in the axes.
+
+For example, [UIBarButtonItem](uibarbuttonitem.md) defines these methods:
+
+- [- setTitlePositionAdjustment:forBarMetrics:](<uibarbuttonitem/settitlepositionadjustment(__for_).md>)
+- [- backButtonBackgroundImageForState:barMetrics:](<uibarbuttonitem/backbuttonbackgroundimage(for_barmetrics_).md>)
+- [- setBackButtonBackgroundImage:forState:barMetrics:](<uibarbuttonitem/setbackbuttonbackgroundimage(__for_barmetrics_).md>)
+
+## Relationships
+
+- **Inherits From**: [NSObjectProtocol](../objectivec/nsobjectprotocol.md)
+
+- **Conforming Types**: [UIActionSheet](uiactionsheet.md), [UIActivityIndicatorView](uiactivityindicatorview.md), [UIActivityViewController](uiactivityviewcontroller.md), [UIAlertController](uialertcontroller.md), [UIAlertView](uialertview.md), [UIBackgroundExtensionView](uibackgroundextensionview.md), [UIButton](uibutton.md), [UICalendarView](uicalendarview.md), [UICloudSharingController](uicloudsharingcontroller.md), [UICollectionReusableView](uicollectionreusableview.md), [UICollectionView](uicollectionview.md), [UICollectionViewCell](uicollectionviewcell.md), [UICollectionViewController](uicollectionviewcontroller.md), [UICollectionViewListCell](uicollectionviewlistcell.md), [UIColorPickerViewController](uicolorpickerviewcontroller.md), [UIColorWell](uicolorwell.md), [UIContentUnavailableView](uicontentunavailableview.md), [UIControl](uicontrol.md), [UIDatePicker](uidatepicker.md), [UIDocumentBrowserViewController](uidocumentbrowserviewcontroller.md), [UIDocumentMenuViewController](uidocumentmenuviewcontroller.md), [UIDocumentPickerExtensionViewController](uidocumentpickerextensionviewcontroller.md), [UIDocumentPickerViewController](uidocumentpickerviewcontroller.md), [UIDocumentViewController](uidocumentviewcontroller.md), [UIEventAttributionView](uieventattributionview.md), [UIFontPickerViewController](uifontpickerviewcontroller.md), [UIImagePickerController](uiimagepickercontroller.md), [UIImageView](uiimageview.md), [UIInputView](uiinputview.md), [UIInputViewController](uiinputviewcontroller.md), [UILabel](uilabel.md), [UIListContentView](uilistcontentview.md), [UINavigationBar](uinavigationbar.md), [UINavigationController](uinavigationcontroller.md), [UIPageControl](uipagecontrol.md), [UIPageViewController](uipageviewcontroller.md), [UIPasteControl](uipastecontrol.md), [UIPickerView](uipickerview.md), [UIPopoverBackgroundView](uipopoverbackgroundview.md), [UIPopoverController](uipopovercontroller.md), [UIPopoverPresentationController](uipopoverpresentationcontroller.md), [UIPresentationController](uipresentationcontroller.md), [UIProgressView](uiprogressview.md), [UIReferenceLibraryViewController](uireferencelibraryviewcontroller.md), [UIRefreshControl](uirefreshcontrol.md), [UIScrollView](uiscrollview.md), [UISearchBar](uisearchbar.md), [UISearchContainerViewController](uisearchcontainerviewcontroller.md), [UISearchController](uisearchcontroller.md), [UISearchTextField](uisearchtextfield.md), [UISegmentedControl](uisegmentedcontrol.md), [UISheetPresentationController](uisheetpresentationcontroller.md), [UISlider](uislider.md), [UISplitViewController](uisplitviewcontroller.md), [UIStackView](uistackview.md), [UIStandardTextCursorView](uistandardtextcursorview.md), [UIStepper](uistepper.md), [UISwitch](uiswitch.md), [UITabBar](uitabbar.md), [UITabBarController](uitabbarcontroller.md), [UITableView](uitableview.md), [UITableViewCell](uitableviewcell.md), [UITableViewController](uitableviewcontroller.md), [UITableViewHeaderFooterView](uitableviewheaderfooterview.md), [UITextField](uitextfield.md), [UITextFormattingViewController](uitextformattingviewcontroller.md), [UITextView](uitextview.md), [UIToolbar](uitoolbar.md), [UIVideoEditorController](uivideoeditorcontroller.md), [UIView](uiview.md), [UIViewController](uiviewcontroller.md), [UIVisualEffectView](uivisualeffectview.md), [UIWebView](uiwebview.md), [UIWindow](uiwindow.md)
+
+## See Also
+
+### Appearance proxies
+
+- [UIAppearance](uiappearance.md) — A collection of methods that gives you access to the appearance proxy for a class.

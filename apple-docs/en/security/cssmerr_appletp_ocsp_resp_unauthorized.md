@@ -1,0 +1,28 @@
+---
+title: CSSMERR_APPLETP_OCSP_RESP_UNAUTHORIZED
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [macOS 10.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/cssmerr_appletp_ocsp_resp_unauthorized
+source_url: 'https://developer.apple.com/documentation/security/cssmerr_appletp_ocsp_resp_unauthorized'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/cssmerr_appletp_ocsp_resp_unauthorized.json'
+content_hash: 'sha256:8c6505bb8cad9081'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# CSSMERR_APPLETP_OCSP_RESP_UNAUTHORIZED
+
+<sub>Global Variable</sub>
+
+<sub>macOS</sub>
+
+```swift
+var CSSMERR_APPLETP_OCSP_RESP_UNAUTHORIZED: Int { get }
+```

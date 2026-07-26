@@ -1,0 +1,48 @@
+---
+title: didRenameVolume
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [macOS 26.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/notificationcenter/messageidentifier/didrenamevolume
+source_url: 'https://developer.apple.com/documentation/foundation/notificationcenter/messageidentifier/didrenamevolume'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/notificationcenter/messageidentifier/didrenamevolume.json'
+content_hash: 'sha256:2019e4d31ef57388'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NotificationCenter](../../notificationcenter.md) · [MessageIdentifier](../messageidentifier.md)
+
+# didRenameVolume
+
+<sub>Type Property</sub>
+
+<sub>macOS</sub>
+
+```swift
+static var didRenameVolume: NotificationCenter.BaseMessageIdentifier<NSWorkspace.DidRenameVolumeMessage> { get }
+```
+
+## See Also
+
+### Identifying AppKit workspace messages
+
+- [didHideApplication](didhideapplication.md)
+- [didUnhideApplication](didunhideapplication.md)
+- [willLaunchApplication](willlaunchapplication.md)
+- [didLaunchApplication](didlaunchapplication.md)
+- [willSleep](willsleep.md)
+- [didWake](didwake.md)
+- [didTerminateApplication](didterminateapplication.md)
+- [didMountVolume](didmountvolume.md)
+- [willUnmountVolume](willunmountvolume.md)
+- [didUnmountVolume](didunmountvolume.md)
+- [didActivateApplication](didactivateapplication.md)
+- [didDeactivateApplication](diddeactivateapplication.md)
+- [sessionDidBecomeActive](sessiondidbecomeactive.md)
+- [sessionDidResignActive](sessiondidresignactive.md)
+- [didChangeFileLabels](didchangefilelabels.md)

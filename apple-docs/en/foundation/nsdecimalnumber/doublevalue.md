@@ -1,0 +1,42 @@
+---
+title: doubleValue
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsdecimalnumber/doublevalue
+source_url: 'https://developer.apple.com/documentation/foundation/nsdecimalnumber/doublevalue'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsdecimalnumber/doublevalue.json'
+content_hash: 'sha256:47695379c6bab72b'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [NSDecimalNumber](../nsdecimalnumber.md)
+
+# doubleValue
+
+<sub>Instance Property</sub>
+
+The decimal number’s closest approximate `double` value.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var doubleValue: Double { get }
+```
+
+## Discussion
+
+Not all decimal numbers can be accurately represented using a `double` value.
+
+## See Also
+
+### Accessing the Value
+
+- [decimalValue](decimalvalue.md) — The decimal number’s value, expressed as an [Decimal](../decimal.md) structure.
+- [- descriptionWithLocale:](<description(withlocale_).md>) — Returns a string representation of the decimal number appropriate for the specified locale.
+- [objCType](objctype.md) — A C string containing the Objective-C type for the data contained in the decimal number object.

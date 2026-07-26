@@ -1,0 +1,30 @@
+---
+title: errSecBufferTooSmall
+framework: Security
+symbol_kind: var
+role: symbol
+role_heading: Global Variable
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/security/errsecbuffertoosmall
+source_url: 'https://developer.apple.com/documentation/security/errsecbuffertoosmall'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/security/errsecbuffertoosmall.json'
+content_hash: 'sha256:808da1056b07d5da'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Security](../security.md)
+
+# errSecBufferTooSmall
+
+<sub>Global Variable</sub>
+
+The buffer is too small.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+var errSecBufferTooSmall: OSStatus { get }
+```

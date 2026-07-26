@@ -1,0 +1,50 @@
+---
+title: os_log_info_enabled
+framework: os
+symbol_kind: macro
+role: symbol
+role_heading: Macro
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [occ]
+beta: false
+deprecated: false
+doc_path: /documentation/os/os_log_info_enabled
+source_url: 'https://developer.apple.com/documentation/os/os_log_info_enabled'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/os/os_log_info_enabled.json'
+content_hash: 'sha256:0b9ded35928578f9'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [os](../os.md)
+
+# os_log_info_enabled
+
+<sub>Macro</sub>
+
+Returns a Boolean value that indicates whether info-level logging is in an enabled state for a specified log object.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```objc
+#define os_log_info_enabled(log)
+```
+
+## Parameters
+
+- `log` — The [OS_LOG_DEFAULT](os_log_default.md) constant or a custom log object that you create with the [os_log_create](os_log_create.md) function.
+
+## Return Value
+
+[true](../swift/true.md) if info-level logging is in an enabled state; otherwise, [false](../swift/false.md).
+
+## See Also
+
+### Related Documentation
+
+- [OS_LOG_TYPE_INFO](../kernel/os_log_type_t/os_log_type_info.md) — Info-level messages are initially stored in memory buffers. Without a configuration change, they are not moved to the data store and are purged as memory buffers fill. They are, however, captured in the data store when faults and, optionally, errors occur. When info-level messages are added to the data store, they remain there until a storage quota is exceeded, at which point, the oldest messages are purged. Use this level to capture information that may be helpful, but isn’t essential, for troubleshooting errors. Logging a message of this type is equivalent to calling the  function.
+
+### Getting Log Configuration
+
+- [os_log_debug_enabled](os_log_debug_enabled.md) — Returns a Boolean value that indicates whether debug-level logging is in an enabled state for a specified log object.
+- [os_log_type_enabled](<oslog/isenabled(type_).md>) — Returns a Boolean value that indicates whether the log can write messages with the specified log type.
+- [os_signpost_enabled](os_signpost_enabled.md) — Returns a Boolean value that indicates whether signposts are in an enabled state for the specified log.

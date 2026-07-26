@@ -1,0 +1,77 @@
+---
+title: UIBehavioralStyle
+framework: UIKit
+symbol_kind: enum
+role: symbol
+role_heading: Enumeration
+platforms: [iOS 15.0+, iPadOS 15.0+, Mac Catalyst 15.0+, visionOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uibehavioralstyle
+source_url: 'https://developer.apple.com/documentation/uikit/uibehavioralstyle'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uibehavioralstyle.json'
+content_hash: 'sha256:2cac200eb16e3c72'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [UIKit](../uikit.md)
+
+# UIBehavioralStyle
+
+<sub>Enumeration</sub>
+
+Constants that indicate how a control behaves in apps built with Mac Catalyst.
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+enum UIBehavioralStyle
+```
+
+## Overview
+
+If you build your app with Mac Catalyst and use the Mac idiom, you can specify the preferred behavior style for a control to change its appearance and behavior. For instance, consider an iPad app that displays a slider with a custom thumb image. By default, the Mac version of the app, built with Mac Catalyst, displays a standard macOS slider when the user interface idiom of the app is [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md).
+
+To provide a consistent appearance of the slider in the iPad and Mac versions of the app, set the [preferredBehavioralStyle](uislider/preferredbehavioralstyle.md) of the slider to [UIBehavioralStylePad](uibehavioralstyle/pad.md). This behavioral style tells the slider to behave as if the user interface idiom is [UIUserInterfaceIdiomPad](uiuserinterfaceidiom/pad.md) even though the app uses the Mac idiom.
+
+macOS doesn’t scale the interface of apps that use the Mac idiom, so you may need to update your app to accommodate size differences. For example, a slider with a custom thumb image may need a different image for the Mac app than the one used in the iPad app.
+
+```swift
+let slider = UISlider()
+slider.minimumValue = 0
+slider.maximumValue = 1
+slider.value = 0.5
+slider.preferredBehavioralStyle = .pad
+
+if slider.traitCollection.userInterfaceIdiom == .mac {
+    slider.setThumbImage(#imageLiteral(resourceName: "customSliderThumbMac")), for: .normal)
+} else {
+    slider.setThumbImage(#imageLiteral(resourceName: "customSliderThumb")), for: .normal)
+}
+```
+
+To learn more about the Mac idiom, see [Choosing a user interface idiom for your Mac app](choosing-a-user-interface-idiom-for-your-mac-app.md).
+
+## Relationships
+
+- **Conforms To**: [BitwiseCopyable](../swift/bitwisecopyable.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [RawRepresentable](../swift/rawrepresentable.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Styles
+
+- [UIBehavioralStyleAutomatic](uibehavioralstyle/automatic.md) — A style the system chooses based on the app’s targeted platform.
+- [UIBehavioralStylePad](uibehavioralstyle/pad.md) — A style that indicates that a control appears and behaves as it does in iPadOS.
+- [UIBehavioralStyleMac](uibehavioralstyle/mac.md) — A style that indicates that a control appears and behaves as it does in macOS.
+
+### Initializers
+
+- [init(rawValue:)](<uibehavioralstyle/init(rawvalue_).md>)
+
+## See Also
+
+### Specifying the behavioral style
+
+- [behavioralStyle](uibutton/behavioralstyle.md) — The style that determines how the button behaves.
+- [preferredBehavioralStyle](uibutton/preferredbehavioralstyle.md) — The preferred behavioral style.

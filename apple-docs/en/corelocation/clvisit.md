@@ -1,0 +1,72 @@
+---
+title: CLVisit
+framework: Core Location
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.1+, macOS 10.15+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/corelocation/clvisit
+source_url: 'https://developer.apple.com/documentation/corelocation/clvisit'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/corelocation/clvisit.json'
+content_hash: 'sha256:a7c682769b23ef30'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Location](../corelocation.md)
+
+# CLVisit
+
+<sub>Class</sub>
+
+Information about the user’s location during a specific period of time.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS</sub>
+
+```swift
+class CLVisit
+```
+
+## Overview
+
+A [CLVisit](clvisit.md) object encapsulates information about places that the user has been. Visit objects are created by the system and delivered by the [CLLocationManager](cllocationmanager.md) object to its delegate after you start the delivery of events. The visit includes the location where the visit occurred and information about the arrival and departure times as relevant. You do not create visit objects directly, nor should you subclass [CLVisit](clvisit.md).
+
+Visit objects contain as much information about the visit as possible but may not always include both the arrival and departure times. For example, when the user arrives at a location, the system may send an event with only an arrival time. When the user departs a location, the event can contain both the arrival time (if your app was monitoring visits prior to the user’s arrival) and the departure time.
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSCoding](../foundation/nscoding.md), [NSCopying](../foundation/nscopying.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [NSSecureCoding](../foundation/nssecurecoding.md)
+
+## Topics
+
+### Getting the location
+
+- [coordinate](clvisit/coordinate.md) — The geographical coordinate information.
+- [horizontalAccuracy](clvisit/horizontalaccuracy.md) — The horizontal accuracy (in meters) of the specified coordinate.
+
+### Getting the visit duration
+
+- [arrivalDate](clvisit/arrivaldate.md) — The approximate time at which the user arrived at the specified location.
+- [departureDate](clvisit/departuredate.md) — The approximate time at which the user left the specified location.
+
+### Initializers
+
+- [init(coder:)](<clvisit/init(coder_).md>)
+
+## See Also
+
+### Location updates
+
+- [Getting the current location of a device](getting-the-current-location-of-a-device.md) — Start location services and provide information the system needs to optimize power usage for those services.
+- [Handling location updates in the background](handling-location-updates-in-the-background.md) — Configure your app to receive location updates when it isn’t running in the foreground.
+- [Creating a location push service extension](creating-a-location-push-service-extension.md) — Add and configure an extension to enable your location-sharing app to access a person’s location in response to a request from someone else.
+- [CLLocation](cllocation.md) — The latitude, longitude, and course information reported by the system.
+- [CLLocationCoordinate2D](cllocationcoordinate2d.md) — The latitude and longitude associated with a location, specified using the WGS 84 reference frame.
+- [CLFloor](clfloor.md) — The floor of a building on which the user’s device is located.
+- [CLLocationSourceInformation](cllocationsourceinformation.md) — Information about the source that provides a location.
+- [Monitoring location changes with Core Location](monitoring-location-changes-with-core-location.md) — Define boundaries and act on user location updates.
+- [CLServiceSession](clservicesession-pt7n.md) — An object that provides diagnostics about an app’s authorization to use location services.

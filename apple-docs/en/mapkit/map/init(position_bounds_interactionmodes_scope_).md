@@ -1,0 +1,60 @@
+---
+title: 'init(position:bounds:interactionModes:scope:)'
+framework: MapKit
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, macOS 14.0+, tvOS 17.0+, visionOS, watchOS 10.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/mapkit/map/init(position:bounds:interactionmodes:scope:)'
+source_url: 'https://developer.apple.com/documentation/mapkit/map/init(position:bounds:interactionmodes:scope:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/mapkit/map/init%28position%3Abounds%3Ainteractionmodes%3Ascope%3A%29.json'
+content_hash: 'sha256:2739d269eaa8fdcf'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [MapKit](../../mapkit.md) · [Map](../map.md)
+
+# init(position:bounds:interactionModes:scope:)
+
+<sub>Initializer</sub>
+
+Creates a new, empty map with the initial camera position, bounds, interaction modes, and scope you provide.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@MainActor @preconcurrency init(position: Binding<MapCameraPosition>, bounds: MapCameraBounds? = nil, interactionModes: MapInteractionModes = .all, scope: Namespace.ID? = nil) where Content == MapContentView<Never, EmptyMapContent>
+```
+
+## Parameters
+
+- `position` — The initial [MapCameraPosition](../mapcameraposition.md).
+
+- `bounds` — The [MapCameraBounds](../mapcamerabounds.md) that define the camera’s view of the map.
+
+- `interactionModes` — The [MapInteractionModes](../mapinteractionmodes.md) that describe ways a person can interact with the map.
+
+- `scope` — The map’s [Namespace.ID](../../swiftui/namespace/id.md).
+
+## See Also
+
+### Creating a map
+
+- [init(bounds:interactionModes:scope:)](<init(bounds_interactionmodes_scope_).md>) — Creates a new, empty map with the bounds, interaction modes, and scope you provide.
+- [init(bounds:interactionModes:scope:content:)](<init(bounds_interactionmodes_scope_content_).md>) — Creates a new map with the bounds, interaction modes, scope, and content you provide.
+- [init(bounds:interactionModes:selection:scope:)](<init(bounds_interactionmodes_selection_scope_)-11lec.md>) — Creates a new, empty map with the bounds, interaction modes, a binding to a map feature, and scope you provide.
+- [init(bounds:interactionModes:selection:scope:)](<init(bounds_interactionmodes_selection_scope_)-236di.md>) — Creates a new, empty map with the bounds, interaction modes, the selected map feature, and scope you provide.
+- [init(bounds:interactionModes:selection:scope:content:)](<init(bounds_interactionmodes_selection_scope_content_)-28wns.md>) — Creates a new map with the bounds, interaction modes, selected map feature, scope, and map content you provide.
+- [init(bounds:interactionModes:selection:scope:content:)](<init(bounds_interactionmodes_selection_scope_content_)-2tdbr.md>) — Creates a new map with the bounds, interaction modes, selected value, scope, and map content you provide.
+- [init(initialPosition:bounds:interactionModes:scope:)](<init(initialposition_bounds_interactionmodes_scope_).md>) — Creates a new, empty map with the initial camera position, bounds, interaction modes, and scope you provide.
+- [init(initialPosition:bounds:interactionModes:scope:content:)](<init(initialposition_bounds_interactionmodes_scope_content_).md>) — Creates a new map with the initial camera position, bounds, interaction modes, scope, and map content you provide.
+- [init(initialPosition:bounds:interactionModes:selection:scope:)](<init(initialposition_bounds_interactionmodes_selection_scope_).md>) — Creates a new, empty map with the initial camera position, bounds, interaction modes, selected map feature, and scope you provide.
+- [init(initialPosition:bounds:interactionModes:selection:scope:content:)](<init(initialposition_bounds_interactionmodes_selection_scope_content_)-9feos.md>) — Creates a new map with the initial camera position, bounds, interaction modes, selected map feature, scope, and content you provide.
+- [init(initialPosition:bounds:interactionModes:selection:scope:content:)](<init(initialposition_bounds_interactionmodes_selection_scope_content_)-451vp.md>) — Creates a new map with the initial camera position, bounds, interaction modes, selected map feature, scope, and content you provide.
+- [init(position:bounds:interactionModes:scope:content:)](<init(position_bounds_interactionmodes_scope_content_).md>) — Creates a new map with the initial camera position, bounds, interaction modes, scope, and content you provide.
+- [init(position:bounds:interactionModes:selection:scope:)](<init(position_bounds_interactionmodes_selection_scope_).md>) — Creates a new map with the initial camera position, bounds, interaction modes, scope, and content you provide.
+- [init(position:bounds:interactionModes:selection:scope:content:)](<init(position_bounds_interactionmodes_selection_scope_content_)-47y4p.md>) — Creates a new map with the initial camera position, bounds, interaction modes, selected feature, scope, and content you provide.
+- [init(position:bounds:interactionModes:selection:scope:content:)](<init(position_bounds_interactionmodes_selection_scope_content_)-9xq1q.md>) — Creates a new map with the initial camera position, bounds, interaction modes, selected feature, scope, and content you provide.

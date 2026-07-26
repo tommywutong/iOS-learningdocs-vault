@@ -1,0 +1,244 @@
+---
+title: NSBackgroundActivityScheduler
+framework: Foundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [macOS 10.10+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsbackgroundactivityscheduler
+source_url: 'https://developer.apple.com/documentation/foundation/nsbackgroundactivityscheduler'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsbackgroundactivityscheduler.json'
+content_hash: 'sha256:cbd1be6c8239902b'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Foundation](../foundation.md)
+
+# NSBackgroundActivityScheduler
+
+<sub>Class</sub>
+
+A task scheduler suitable for low priority operations that can run in the background.
+
+<sub>macOS</sub>
+
+```swift
+class NSBackgroundActivityScheduler
+```
+
+## Overview
+
+Use an [NSBackgroundActivityScheduler](nsbackgroundactivityscheduler.md) object to schedule an arbitrary maintenance or background task. It’s similar to an [Timer](timer.md) object, in that it lets you schedule a repeating or non-repeating task. However, [NSBackgroundActivityScheduler](nsbackgroundactivityscheduler.md) gives the system flexibility to determine the most efficient time to execute based on energy usage, thermal conditions, and CPU use.
+
+For example, use an [NSBackgroundActivityScheduler](nsbackgroundactivityscheduler.md) object to schedule:
+
+- Automatic saves
+- Backups
+- Data maintenance
+- Periodic content fetches
+- Installation of updates
+- Activities occurring in intervals of 10 minutes or more
+- Any other deferrable task
+
+For information about performing non-deferrable tasks efficiently, see [Specify Nondeferrable Background Activities](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html#//apple_ref/doc/uid/TP40013929-CH32-SW10) in [Energy Efficiency Guide for Mac Apps](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/index.html#//apple_ref/doc/uid/TP40013929).
+
+> [!note] Note
+> The [NSBackgroundActivityScheduler](nsbackgroundactivityscheduler.md) class interfaces with the XPC Activity API. However, your app doesn’t need to be an XPC service in order to use [NSBackgroundActivityScheduler](nsbackgroundactivityscheduler.md).
+
+### Create a Scheduler
+
+To initialize a scheduler, call [- initWithIdentifier:](<nsbackgroundactivityscheduler/init(identifier_).md>) for `NSBackgroundActivityScheduler`, and pass it a unique identifier string in reverse DNS notation (`nil` and zero-length strings are not allowed) that remains constant across launches of your application.
+
+**Swift**
+
+```swift
+let activity = NSBackgroundActivityScheduler(identifier: "com.example.MyApp.updatecheck")
+```
+
+**Objective-C**
+
+```objc
+NSBackgroundActivityScheduler *activity = [[NSBackgroundActivityScheduler alloc] initWithIdentifier:@"com.example.MyApp.updatecheck"];
+```
+
+> [!note] Note
+> The system uses this unique identifier to track the number of times the activity has run and to improve the heuristics for deciding when to run it again in the future.
+
+### Configure Scheduler Properties
+
+Configure the scheduler with any of the following scheduling properties:
+
+- [repeats](nsbackgroundactivityscheduler/repeats.md)—If set to [true](../swift/true.md), the activity is rescheduled at the specified interval after finishing.
+- [interval](nsbackgroundactivityscheduler/interval.md)—For repeating schedulers, the average interval between invocations of the activity. For nonrepeating schedulers, `interval` is the suggested interval of time between scheduling the activity and the invocation of the activity.
+- [tolerance](nsbackgroundactivityscheduler/tolerance.md)—The amount of time before or after the nominal fire date when the activity should be invoked. The nominal fire date is calculated by using the interval combined with the previous fire date or the time when the activity is started. These two properties create a window in time, during which the activity may be scheduled. The system will more aggressively schedule the activity as it nears the end of the grace period after the nominal fire date. The default value is half the interval.
+- [qualityOfService](nsbackgroundactivityscheduler/qualityofservice.md)—The default value is `NSQualityOfServiceBackground`. If you upgrade the quality of service above this level, the system schedules the activity more aggressively. The default value is the recommended value for most activities. For information on quality of service, see [Prioritize Work at the Task Level](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/PrioritizeWorkAtTheTaskLevel.html#//apple_ref/doc/uid/TP40013929-CH35) in [Energy Efficiency Guide for Mac Apps](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/index.html#//apple_ref/doc/uid/TP40013929).
+
+The next three code examples demonstrate different scheduling scenarios.
+
+Scheduling an activity to fire in the next 10 minutes
+
+**Swift**
+
+```swift
+activity.tolerance = 10 * 60
+```
+
+**Objective-C**
+
+```objc
+activity.tolerance = 10 * 60;
+```
+
+Scheduling an activity to fire between 15 and 45 minutes from now
+
+**Swift**
+
+```swift
+activity.interval = 30 * 60
+activity.tolerance = 15 * 60
+```
+
+**Objective-C**
+
+```objc
+activity.interval = 30 * 60;
+activity.tolerance = 15 * 60;
+```
+
+Scheduling an activity to fire once each hour
+
+**Swift**
+
+```swift
+activity.repeats = true
+activity.interval = 60 * 60
+```
+
+**Objective-C**
+
+```objc
+activity.repeats = YES;
+activity.interval = 60 * 60;
+```
+
+### Schedule Activity with scheduleWithBlock:
+
+When you’re ready to schedule the activity, call `scheduleWithBlock:` and provide a block of code to execute when the scheduler runs, as shown in the following example. The block will be called on a serial background queue appropriate for the level of quality of service specified. The system automatically uses the [- beginActivityWithOptions:reason:](<processinfo/beginactivity(options_reason_).md>) method (of [ProcessInfo](processinfo.md)) while invoking the block, choosing appropriate options based on the specified quality of service.
+
+When your block is called, it’s passed a completion handler as an argument. Configure the block to invoke this handler, passing it a result of type [Result](nsbackgroundactivityscheduler/result.md) to indicate whether the activity finished ([NSBackgroundActivityResultFinished](nsbackgroundactivityscheduler/result/finished.md)) or should be deferred ([NSBackgroundActivityResultDeferred](nsbackgroundactivityscheduler/result/deferred.md)) and rescheduled for a later time. Failure to invoke the completion handler results in the activity not being rescheduled. For work that will be deferred and rescheduled, the block may optionally adjust scheduler properties, such as [interval](nsbackgroundactivityscheduler/interval.md) or [tolerance](nsbackgroundactivityscheduler/tolerance.md), before calling the completion handler.
+
+Scheduling background activity
+
+**Swift**
+
+```swift
+activity.scheduleWithBlock() { (completion: NSBackgroundActivityCompletionHandler) in
+    // Perform the activity
+    self.completion(NSBackgroundActivityResult.Finished)
+}
+```
+
+**Objective-C**
+
+```objc
+[activity
+scheduleWithBlock:^(NSBackgroundActivityCompletionHandler completion) {
+   // Perform the activity
+   self.completion(NSBackgroundActivityResultFinished);
+}];
+```
+
+### Detect Whether to Defer Activity
+
+It’s conceivable that while a lengthy activity is running, conditions may change, resulting in the activity now requiring deferral. For example, perhaps the user has unplugged the Mac and it’s now running on battery power. Your activity can call [shouldDefer](nsbackgroundactivityscheduler/shoulddefer.md) to determine whether this has occurred. A value of [true](../swift/true.md) indicates that the block should finish what it’s currently doing and invoke its completion handler with a value of [NSBackgroundActivityResultDeferred](nsbackgroundactivityscheduler/result/deferred.md). See the following example.
+
+Detecting deferred background activity
+
+**Swift**
+
+```swift
+if activity.shouldDefer {
+    // Wrap up processing and prepare to defer activity
+    self.completion(NSBackgroundActivityResult.Deferred)
+} else {
+    // Continue processing
+    self.completion(NSBackgroundActivityResult.Finished)
+}
+```
+
+**Objective-C**
+
+```objc
+if ([activity shouldDefer]) {
+   // Wrap up processing and prepare to defer activity
+   self.completion(NSBackgroundActivityResultDeferred);
+} else {
+   // Continue processing
+   self.completion(NSBackgroundActivityResultFinished);
+};
+```
+
+### Stop Activity
+
+Call [- invalidate](<nsbackgroundactivityscheduler/invalidate().md>) to stop scheduling an activity, as shown in the following example.
+
+Stopping background activity
+
+**Swift**
+
+```swift
+activity.invalidate()
+```
+
+**Objective-C**
+
+```objc
+[activity invalidate];
+```
+
+> [!note] Note
+> When an activity is stopped, a block that’s currently executing will still finish executing.
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Hashable](../swift/hashable.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md)
+
+## Topics
+
+### Background Scheduler Attributes
+
+- [identifier](nsbackgroundactivityscheduler/identifier.md) — A unique reverse DNS notation string, such as `com.example.MyApp.updatecheck`, that identifies the activity.
+- [repeats](nsbackgroundactivityscheduler/repeats.md) — A Boolean value indicating whether the activity should be rescheduled after it completes.
+- [interval](nsbackgroundactivityscheduler/interval.md) — An integer providing a suggested interval between scheduling and invoking the activity.
+- [qualityOfService](nsbackgroundactivityscheduler/qualityofservice.md) — A value of type `NSQualityOfService`, which controls how aggressively the system schedules the activity.
+- [shouldDefer](nsbackgroundactivityscheduler/shoulddefer.md) — A Boolean value indicating whether your app should stop performing background activity and resume at a more optimal time.
+- [tolerance](nsbackgroundactivityscheduler/tolerance.md) — A value of type [TimeInterval](timeinterval.md), which specifies a range of time during which the background activity may occur.
+
+### Initializing Schedulers
+
+- [- initWithIdentifier:](<nsbackgroundactivityscheduler/init(identifier_).md>) — Initializes a background activity scheduler object with a specified unique identifier.
+
+### Scheduling Activity
+
+- [- scheduleWithBlock:](<nsbackgroundactivityscheduler/schedule(__).md>) — Begins scheduling the background activity.
+- [CompletionHandler](nsbackgroundactivityscheduler/completionhandler.md)
+
+### Stopping Scheduled Activity
+
+- [- invalidate](<nsbackgroundactivityscheduler/invalidate().md>) — Prevents the background activity from being scheduled again.
+
+### Constants
+
+- [Result](nsbackgroundactivityscheduler/result.md) — These constants indicate whether background activity has been completed successfully or whether additional processing should be deferred until a more optimal time.
+- [QualityOfService](qualityofservice.md) — Constants that indicate the nature and importance of work to the system.
+
+## See Also
+
+### System Interaction
+
+- [ProcessInfo](processinfo.md) — A collection of information about the current process.

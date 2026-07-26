@@ -1,0 +1,94 @@
+---
+title: Creating a 3D application with hydra rendering
+framework: Metal
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/creating-a-3d-application-with-hydra-rendering
+source_url: 'https://developer.apple.com/documentation/metal/creating-a-3d-application-with-hydra-rendering'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/creating-a-3d-application-with-hydra-rendering.json'
+content_hash: 'sha256:75ad6188861464ed'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Metal](../metal.md) · [Metal sample code library](metal-sample-code-library.md)
+
+# Creating a 3D application with hydra rendering
+
+<sub>Sample Code</sub>
+
+Build a 3D application that integrates with Hydra and USD.
+
+## Overview
+
+> [!note] Note
+> This sample code project is associated with WWDC22 session 10141: [Explore USD tools and rendering](https://developer.apple.com/wwdc22/10141/).
+
+### Configure the sample code project
+
+This sample requires Xcode 14 or later and macOS 13 or later. To build the project, you first need to [get and build the USD source code](https://github.com/PixarAnimationStudios/OpenUSD/blob/release/README.md#getting-and-building-the-code) from the Pixar GitHub repository, and then use CMake to generate an Xcode project with references to both the compiled USD libraries and the header files in the USD source code. If you don’t already have CMake installed, [download the latest version of CMake](https://cmake.org/download/) to your Applications folder.
+
+CMake is both a GUI and command-line app. To use the command-line tool, open a Terminal window and add the `/Contents/bin` folder from the `CMake.app` application bundle to your `PATH` environment variable, like this:
+
+```shell
+path+=('/Applications/CMake.app/Contents/bin/')
+export PATH
+```
+
+> [!note] Note
+> The previous command assumes you use the default `zsh` shell and adds `cmake` to your path for only the current terminal session. To add `cmake` to your path permanently, or if you’re using another shell like `bash`, add `/Applications/CMake.app/Contents/bin/` to the `$PATH` declaration in your `.zshrc` file or in the configuration file your shell uses.
+
+Clone the USD repo, using the following command:
+
+```shell
+git clone https://github.com/PixarAnimationStudios/USD
+```
+
+Next, build USD using the following command: `python3 <path to usd source>/build_scripts/build_usd.py --generator Xcode --no-python <path to install the built USD>`. For example, if you’ve cloned the USD source code into `~/dev/USD`, the build command might look like this:
+
+```shell
+python3 ~/dev/USD/build_scripts/build_usd.py --generator Xcode --no-python ./USDInstall
+```
+
+Configure the `USD_Path` environment variable: `export USD_PATH=<path to usd install>`. For example, if you’ve installed USD at `~/dev/USDInstall`, use this command:
+
+```shell
+ export USD_PATH=~/dev/USDInstall
+```
+
+Run the following CMake command to generate an Xcode project: `cmake -S <path to project source folder> -B <path to directory where it creates the Xcode project>`. If the sample code is at `~/dev/`, the command might look like this:
+
+```shell
+ cmake -S ~/dev/CreatingA3DApplicationWithHydraRendering/ -B ~/dev/CreatingA3DApplicationWithHydraRendering/
+```
+
+Finally, open the generated Xcode project, and change the scheme to `hydraplayer`.
+
+> [!important] Important
+> You’re responsible for abiding by the terms of the license(s) associated with the code from the USD repo.
+
+## See Also
+
+### Render workflows
+
+- [Using Metal to draw a view’s contents](using-metal-to-draw-a-view's-contents.md) — Create a MetalKit view and a render pass to draw the view’s contents.
+- [Drawing a triangle with Metal 4](drawing-a-triangle-with-metal-4.md) — Render a colorful, rotating 2D triangle by running draw commands with a render pipeline on a GPU.
+- [Selecting device objects for graphics rendering](selecting-device-objects-for-graphics-rendering.md) — Switch dynamically between multiple GPUs to efficiently render to a display.
+- [Customizing render pass setup](customizing-render-pass-setup.md) — Render into an offscreen texture by creating a custom render pass.
+- [Creating a custom Metal view](creating-a-custom-metal-view.md) — Implement a lightweight view for Metal rendering that’s customized to your app’s needs.
+- [Calculating primitive visibility using depth testing](calculating-primitive-visibility-using-depth-testing.md) — Determine which pixels are visible in a scene by using a depth texture.
+- [Encoding indirect command buffers on the CPU](encoding-indirect-command-buffers-on-the-cpu.md) — Reduce CPU overhead and simplify your command execution by reusing commands.
+- [Implementing order-independent transparency with image blocks](implementing-order-independent-transparency-with-image-blocks.md) — Draw overlapping, transparent surfaces in any order by using tile shaders and image blocks.
+- [Loading textures and models using Metal fast resource loading](loading-textures-and-models-using-metal-fast-resource-loading.md) — Stream texture and buffer data directly from disk into Metal resources using fast resource loading.
+- [Adjusting the level of detail using Metal mesh shaders](adjusting-the-level-of-detail-using-metal-mesh-shaders.md) — Choose and render meshes with several levels of detail using object and mesh shaders.
+- [Culling occluded geometry using the visibility result buffer](culling-occluded-geometry-using-the-visibility-result-buffer.md) — Draw a scene without rendering hidden geometry by checking whether each object in the scene is visible.
+- [Improving edge-rendering quality with multisample antialiasing (MSAA)](improving-edge-rendering-quality-with-multisample-antialiasing-msaa.md) — Apply MSAA to enhance the rendering of edges with custom resolve options and immediate and tile-based resolve paths.
+- [Achieving smooth frame rates with a Metal display link](achieving-smooth-frame-rates-with-a-metal-display-link.md) — Pace rendering with minimal input latency while providing essential information to the operating system for power-efficient rendering, thermal mitigation, and the scheduling of sustainable workloads.
+
+## Download
+
+- [CreatingA3DApplicationWithHydraRendering.zip](https://docs-assets.developer.apple.com/published/fc450e9ee3a6/CreatingA3DApplicationWithHydraRendering.zip)

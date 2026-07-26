@@ -1,0 +1,86 @@
+---
+title: Recording movies in alternative formats
+framework: AVFoundation
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/avfoundation/recording-movies-in-alternative-formats
+source_url: 'https://developer.apple.com/documentation/avfoundation/recording-movies-in-alternative-formats'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/recording-movies-in-alternative-formats.json'
+content_hash: 'sha256:780750e9f518a07e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [AVFoundation](../avfoundation.md) · [Audio and video capture](audio-and-video-capture.md)
+
+# Recording movies in alternative formats
+
+<sub>Article</sub>
+
+Change the default format for capturing movie files.
+
+## Overview
+
+You use [AVCaptureMovieFileOutput](avcapturemoviefileoutput.md) to capture QuickTime movie files, and the framework chooses the HEVC format by default on most iPhone and iPad models. However, you can change the default format in advance if you know you need a different format.
+
+If your app shares the captured video using a system share sheet, the system automatically converts the video to a format thatʼs compatible with the destination device. However, if your app saves or shares captured video internally, for applications outside the system share sheet, you need to use a video-capture format thatʼs compatible with all target devices. This article shows you how to change the capture format dynamically, so that videos captured in your app begin in the desired format.
+
+### Change the default capture format
+
+You can change the default format at capture time by specifying it in the output settings for capturing movie files. Each capture device has a dictionary of settings that you adjust to control properties of the output movie file. For example, to capture video in H.264/MPEG-4 AVC, set the output settings key [AVVideoCodecKey](avvideocodeckey.md) to [AVVideoCodecTypeH264](avvideocodectype/h264.md), as the example below shows:
+
+**Swift**
+
+```swift
+import AVFoundation
+
+let movieFileOutput = // Your AVCaptureMovieFileOutput. //
+
+if movieFileOutput.availableVideoCodecTypes.contains(.h264),
+    let connection = movieFileOutput.connection(with: .video) {
+    // Use the H.264 codec to encode the video.
+    movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.h264], for: connection)
+}
+```
+
+**Objective-C**
+
+```objc
+#import <AVFoundation/AVFoundation.h>
+
+AVCaptureMovieFileOutput *movieFileOutput = // Your AVCaptureMovieFileOutput. //;
+    
+if ([movieFileOutput.availableVideoCodecTypes containsObject:AVVideoCodecTypeH264]) {
+    AVCaptureConnection* connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
+    // Use the H.264 codec to encode the video.
+    [movieFileOutput setOutputSettings:@{AVVideoCodecKey: AVVideoCodecTypeH264} forConnection:connection];
+}
+```
+
+For a list of supported capture codecs, see [AVVideoCodecType](avvideocodectype.md).
+
+### Convert previously captured movie files
+
+In addition to saving or sharing captured video using a different default format, you can also convert existing movie file content by generating a new movie file based on the contents of the existing file. For details on how, see [Exporting video to alternative formats](exporting-video-to-alternative-formats.md).
+
+## See Also
+
+### Related Documentation
+
+- [AVVideoCodecTypeH264](avvideocodectype/h264.md) — The H.264 video codec.
+- [AVVideoCodecTypeHEVC](avvideocodectype/hevc.md) — The HEVC video codec.
+- [AVVideoCodecTypeJPEG](avvideocodectype/jpeg.md) — The JPEG video codec.
+- [AVVideoCodecTypeAppleProRes422](avvideocodectype/prores422.md) — The Apple ProRes 422 video codec.
+- [AVVideoCodecTypeAppleProRes4444](avvideocodectype/prores4444.md) — The Apple ProRes 4444 video codec.
+
+### File capture
+
+- [AVCaptureMovieFileOutput](avcapturemoviefileoutput.md) — A capture output that records video and audio to a QuickTime movie file.
+- [AVCaptureAudioFileOutput](avcaptureaudiofileoutput.md) — A capture output that records audio and saves the recorded audio to a file.
+- [AVCaptureFileOutput](avcapturefileoutput.md) — The abstract superclass for capture outputs that can record captured data to a file.
+- [AVCaptureFileOutputDelegate](avcapturefileoutputdelegate.md) — Methods for monitoring or controlling the output of a media file capture.
+- [AVCaptureFileOutputRecordingDelegate](avcapturefileoutputrecordingdelegate.md) — Methods for responding to events that occur while recording captured media to a file.

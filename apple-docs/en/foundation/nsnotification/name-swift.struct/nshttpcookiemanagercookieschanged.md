@@ -1,0 +1,41 @@
+---
+title: NSHTTPCookieManagerCookiesChanged
+framework: Foundation
+symbol_kind: property
+role: symbol
+role_heading: Type Property
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.1+, macOS 10.2+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsnotification/name-swift.struct/nshttpcookiemanagercookieschanged
+source_url: 'https://developer.apple.com/documentation/foundation/nsnotification/name-swift.struct/nshttpcookiemanagercookieschanged'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsnotification/name-swift.struct/nshttpcookiemanagercookieschanged.json'
+content_hash: 'sha256:8f85ebc9d374301c'
+translated: false
+---
+
+> Navigation: [Technologies](../../../technologies.md) · [Foundation](../../../foundation.md) · [NSNotification](../../nsnotification.md) · [Name](../name-swift.struct.md)
+
+# NSHTTPCookieManagerCookiesChanged
+
+<sub>Type Property</sub>
+
+A notification posted when the cookies stored in the cookie storage have changed.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+static let NSHTTPCookieManagerCookiesChanged: NSNotification.Name
+```
+
+## Discussion
+
+The notification’s [object](../../notification/object.md) is the [HTTPCookieStorage](../../httpcookiestorage.md) instance. This notification does not contain a [userInfo](../../notification/userinfo.md) dictionary.
+
+## See Also
+
+### Tracking cookie storage changes
+
+- [CookiesChangedMessage](../../httpcookiestorage/cookieschangedmessage.md) — A message a cookie storage instance sends when its cookies change.
+- [NSHTTPCookieManagerAcceptPolicyChangedNotification](nshttpcookiemanageracceptpolicychanged.md) — A notification posted when the acceptance policy of the cookie storage has changed. _(deprecated)_

@@ -1,0 +1,58 @@
+---
+title: AdAttributionKit Updates
+framework: Updates
+symbol_kind: article
+role: article
+role_heading: Article
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/updates/adattributionkit
+source_url: 'https://developer.apple.com/documentation/updates/adattributionkit'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/updates/adattributionkit.json'
+content_hash: 'sha256:490fda1bbc903c5c'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Updates](../updates.md)
+
+# AdAttributionKit Updates
+
+<sub>Article</sub>
+
+Learn about important changes to AdAttributionKit.
+
+## Overview
+
+Browse notable changes in [AdAttributionKit](../adattributionkit.md).
+
+## June 2025
+
+- Receive postbacks in multiple conversion windows and understand where an app is installed with the county-code property in postbacks.
+- Control how the system attributes conversions for your app by using attribution rules and cooldown windows.
+
+## June 2024
+
+- Add support for re-engagement, which allows you to measure the success of ad campaigns that lead people to re-engage with apps they’ve already installed, while respecting their privacy.
+- Specify a re-engagement URL: At runtime, advertisements can present a universal link registered for your app to launch to display content inside of advertised apps and begin re-engagement measurement.
+
+## See Also
+
+### Technology and frameworks
+
+- [Accelerate updates](accelerate.md) — Learn about important changes to Accelerate.
+- [Accessibility updates](accessibility.md) — Learn about important changes to Accessibility.
+- [ActivityKit updates](activitykit.md) — Learn about important changes in ActivityKit.
+- [App Clips updates](appclips.md) — Learn about important changes in App Clips.
+- [App Intents updates](appintents.md) — Learn about important changes in App Intents.
+- [AppKit updates](appkit.md) — Learn about important changes to AppKit.
+- [Apple Intelligence updates](apple-intelligence.md) — Learn about important changes to Apple Intelligence.
+- [AppleMapsServerAPI Updates](applemapsserverapi.md) — Learn about important changes to AppleMapsServerAPI.
+- [Apple Pencil updates](applepencil.md) — Learn about important changes to Apple Pencil.
+- [ARKit updates](arkit.md) — Learn about important changes to ARKit.
+- [Audio Toolbox updates](audiotoolbox.md) — Learn about important changes to Audio Toolbox.
+- [AuthenticationServices updates](authenticationservices.md) — Learn about important changes to AuthenticationServices.
+- [AVFAudio updates](avfaudio.md) — Learn about important changes to AVFAudio.
+- [AVFoundation updates](avfoundation.md) — Learn about important changes to AVFoundation.
+- [Background Tasks updates](backgroundtasks.md) — Learn about important changes in Background Tasks.

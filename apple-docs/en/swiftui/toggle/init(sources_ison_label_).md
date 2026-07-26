@@ -1,0 +1,67 @@
+---
+title: 'init(sources:isOn:label:)'
+framework: SwiftUI
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 16.0+, iPadOS 16.0+, Mac Catalyst 16.0+, macOS 13.0+, tvOS 16.0+, visionOS 1.0+, watchOS 9.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swiftui/toggle/init(sources:ison:label:)'
+source_url: 'https://developer.apple.com/documentation/swiftui/toggle/init(sources:ison:label:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/toggle/init%28sources%3Aison%3Alabel%3A%29.json'
+content_hash: 'sha256:dd1549b2ba5b065e'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [Toggle](../toggle.md)
+
+# init(sources:isOn:label:)
+
+<sub>Initializer</sub>
+
+Creates a toggle representing a collection of values with a custom label.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+nonisolated init<C>(sources: C, isOn: KeyPath<C.Element, Binding<Bool>>, @ContentBuilder label: () -> Label) where C : RandomAccessCollection
+```
+
+## Parameters
+
+- `sources` — A collection of values used as the source for rendering the Toggle’s state.
+
+- `isOn` — The key path of the values that determines whether the toggle is on, mixed or off.
+
+- `label` — A view that describes the purpose of the toggle.
+
+## Discussion
+
+The following example creates a single toggle that represents the state of multiple alarms:
+
+```swift
+struct Alarm: Hashable, Identifiable {
+    var id = UUID()
+    var isOn = false
+    var name = ""
+}
+
+@State private var alarms = [
+    Alarm(isOn: true, name: "Morning"),
+    Alarm(isOn: false, name: "Evening")
+]
+
+Toggle(sources: $alarms, isOn: \.isOn) {
+    Text("Enable all alarms")
+}
+```
+
+## See Also
+
+### Creating a toggle for a collection
+
+- [init(_:sources:isOn:)](<init(__sources_ison_).md>) — Creates a toggle representing a collection of values that generates its label from a localized string resource.
+- [init(_:image:sources:isOn:)](<init(__image_sources_ison_).md>) — Creates a toggle representing a collection of values that generates its label from a localized string resource and image resource.
+- [init(_:systemImage:sources:isOn:)](<init(__systemimage_sources_ison_).md>) — Creates a toggle representing a collection of values that generates its label from a localized string key and system image.

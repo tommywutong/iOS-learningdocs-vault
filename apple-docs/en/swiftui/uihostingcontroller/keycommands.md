@@ -1,0 +1,28 @@
+---
+title: keyCommands
+framework: SwiftUI
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, visionOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/uihostingcontroller/keycommands
+source_url: 'https://developer.apple.com/documentation/swiftui/uihostingcontroller/keycommands'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/uihostingcontroller/keycommands.json'
+content_hash: 'sha256:083781add1716075'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [SwiftUI](../../swiftui.md) · [UIHostingController](../uihostingcontroller.md)
+
+# keyCommands
+
+<sub>Instance Property</sub>
+
+<sub>iOS, iPadOS, Mac Catalyst, visionOS</sub>
+
+```swift
+@MainActor @preconcurrency override dynamic var keyCommands: [UIKeyCommand]? { get }
+```

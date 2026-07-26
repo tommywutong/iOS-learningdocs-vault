@@ -1,0 +1,180 @@
+---
+title: NSLocale
+framework: Foundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.0+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, occ, occ, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nslocale
+source_url: 'https://developer.apple.com/documentation/foundation/nslocale'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nslocale.json'
+content_hash: 'sha256:81419bacc2775d1e'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Foundation](../foundation.md)
+
+# NSLocale
+
+<sub>Class</sub>
+
+Information about linguistic, cultural, and technological conventions for use in formatting data for presentation.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+class NSLocale
+```
+
+## Overview
+
+In Swift, this object bridges to [Locale](locale.md); use [NSLocale](nslocale.md) when you need reference semantics or other Foundation-specific behavior.
+
+You typically use a locale to format and interpret information about and according to the user’s customs and preferences.
+
+You can initialize any number of locale instances with [- initWithLocaleIdentifier:](<nslocale/init(localeidentifier_).md>) using one of the locale identifiers found in the [availableLocaleIdentifiers](nslocale/availablelocaleidentifiers.md) array. However, you usually use a locale configured to match the preferences of the current user.
+
+Use the [currentLocale](nslocale/current.md) property to get the locale matching the current user’s preferences. If you need to be alerted when the user does make changes to region settings, register for the [NSCurrentLocaleDidChangeNotification](nslocale/currentlocaledidchangenotification.md) notification. Alternatively, you can use the [autoupdatingCurrentLocale](nslocale/autoupdatingcurrent.md) property to get a locale that automatically updates with the user’s configuration settings:
+
+**Swift**
+
+```swift
+let locale = NSLocale.autoupdatingCurrent
+```
+
+**Objective-C**
+
+```objc
+NSLocale* locale = [NSLocale autoupdatingCurrentLocale];
+```
+
+You can inspect a locale by reading its properties, as listed in Getting Information About a Locale. For properties containing a code or identifier, you can then obtain a string suitable for presentation to the user with the methods listed in Getting Display Information About a Locale. For example, you can report the user’s language as a string localized in that language using the autoupdating locale obtained in the previous example:
+
+**Swift**
+
+```swift
+let code = locale.languageCode!
+let language = locale.localizedString(forLanguageCode: code)!
+
+print("\(language)")
+// Prints "English" for locale en_US, "français" for fr_FR
+```
+
+**Objective-C**
+
+```objc
+NSString* code = locale.languageCode;
+NSString* language = [locale localizedStringForLanguageCode:code];
+
+NSLog(@"%@",language);
+// Prints "English" for locale en_US, "français" for fr_FR
+```
+
+You frequently use a locale in conjunction with a formatter. For example, the [DateFormatter](dateformatter.md) class has a [locale](dateformatter/locale.md) property that ensures dates are converted to strings that match the user’s expectations about date formatting. By default, this property indicates the user’s current locale, which is usually the behavior you want, but you can instead set it to another locale instance to obtain a different output. See [Data Formatting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/DataFormatting.html#//apple_ref/doc/uid/10000029i) for more information about working with formatters.
+
+[NSLocale](nslocale.md) is _toll-free bridged_ with its Core Foundation counterpart, [CFLocale](../corefoundation/cflocale.md). See [Toll-Free Bridging](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Toll-FreeBridgin/Toll-FreeBridgin.html#//apple_ref/doc/uid/TP40010810-CH2) for more information on toll-free bridging.
+
+> [!important] Important
+> The Swift overlay to the Foundation framework provides the [Locale](locale.md) structure, which bridges to the [NSLocale](nslocale.md) class. For more information about value types, see [Working with Foundation Types](../swift/working-with-foundation-types.md).
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [Copyable](../swift/copyable.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Escapable](../swift/escapable.md), [Hashable](../swift/hashable.md), [NSCoding](nscoding.md), [NSCopying](nscopying.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [NSSecureCoding](nssecurecoding.md), [Sendable](../swift/sendable.md), [SendableMetatype](../swift/sendablemetatype.md)
+
+## Topics
+
+### Initializing a Locale
+
+- [- initWithLocaleIdentifier:](<nslocale/init(localeidentifier_).md>) — Initializes a locale using a given locale identifier.
+- [- initWithCoder:](<nslocale/init(coder_).md>) — Returns a locale initialized from data in the given unarchiver.
+
+### Getting the User’s Locale
+
+- [autoupdatingCurrentLocale](nslocale/autoupdatingcurrent.md) — A locale which tracks the user’s current preferences.
+- [currentLocale](nslocale/current.md) — A locale that represents the user’s region settings at the time the property is read.
+- [NSCurrentLocaleDidChangeNotification](nslocale/currentlocaledidchangenotification.md) — A notification that indicates that the user’s locale changed.
+- [systemLocale](nslocale/system.md) — A locale representing the generic root values with little localization.
+
+### Getting Known Identifiers and Codes
+
+- [availableLocaleIdentifiers](nslocale/availablelocaleidentifiers.md) — The list of locale identifiers available on the system.
+- [ISOCountryCodes](nslocale/isocountrycodes.md) — The list of known country or region codes.
+- [ISOLanguageCodes](nslocale/isolanguagecodes.md) — The list of known language codes.
+- [ISOCurrencyCodes](nslocale/isocurrencycodes.md) — The list of known currency codes.
+- [commonISOCurrencyCodes](nslocale/commonisocurrencycodes.md) — A list of commonly encountered currency codes.
+
+### Converting Between Identifiers
+
+- [+ canonicalLocaleIdentifierFromString:](<nslocale/canonicallocaleidentifier(from_).md>) — Returns the canonical identifier for a given locale identification string.
+- [+ componentsFromLocaleIdentifier:](<nslocale/components(fromlocaleidentifier_).md>) — Returns a dictionary that is the result of parsing a locale ID.
+- [+ localeIdentifierFromComponents:](<nslocale/localeidentifier(fromcomponents_).md>) — Returns a locale identifier from the components specified in a given dictionary.
+- [+ canonicalLanguageIdentifierFromString:](<nslocale/canonicallanguageidentifier(from_).md>) — Returns a canonical language identifier by mapping an arbitrary locale identification string to the canonical identifier.
+- [+ localeIdentifierFromWindowsLocaleCode:](<nslocale/localeidentifier(fromwindowslocalecode_).md>) — Returns a locale identifier from a Windows locale code.
+- [+ windowsLocaleCodeFromLocaleIdentifier:](<nslocale/windowslocalecode(fromlocaleidentifier_).md>) — Returns a Window locale code from the locale identifier.
+
+### Getting Information About a Locale
+
+- [localeIdentifier](nslocale/localeidentifier.md) — The identifier for the locale.
+- [countryCode](nslocale/countrycode.md) — The country or region code for the locale. _(deprecated)_
+- [languageCode](nslocale/languagecode.md) — The language code for the locale.
+- [scriptCode](nslocale/scriptcode.md) — The script code for the locale.
+- [variantCode](nslocale/variantcode.md) — The variant code for the locale.
+- [exemplarCharacterSet](nslocale/exemplarcharacterset.md) — The exemplar character set for the locale.
+- [collationIdentifier](nslocale/collationidentifier.md) — The collation identifier for the locale.
+- [collatorIdentifier](nslocale/collatoridentifier.md) — The collator identifier for the locale.
+- [usesMetricSystem](nslocale/usesmetricsystem.md) — A Boolean value that indicates whether the locale uses the metric system.
+- [decimalSeparator](nslocale/decimalseparator.md) — The decimal separator for the locale.
+- [groupingSeparator](nslocale/groupingseparator.md) — The grouping separator for the locale.
+- [currencyCode](nslocale/currencycode.md) — The currency code for the locale.
+- [currencySymbol](nslocale/currencysymbol.md) — The currency symbol for the locale.
+- [calendarIdentifier](nslocale/calendaridentifier.md) — The calendar identifier for the locale.
+- [quotationBeginDelimiter](nslocale/quotationbegindelimiter.md) — The begin quotation symbol for the locale.
+- [quotationEndDelimiter](nslocale/quotationenddelimiter.md) — The end quotation symbol for the locale.
+- [alternateQuotationBeginDelimiter](nslocale/alternatequotationbegindelimiter.md) — The alternate begin quotation symbol for the locale.
+- [alternateQuotationEndDelimiter](nslocale/alternatequotationenddelimiter.md) — The alternate end quotation symbol for the locale.
+
+### Getting Display Information About a Locale
+
+- [- localizedStringForLocaleIdentifier:](<nslocale/localizedstring(forlocaleidentifier_).md>) — Returns the localized string for the specified locale identifier.
+- [- localizedStringForCountryCode:](<nslocale/localizedstring(forcountrycode_).md>) — Returns the localized string for a country or region code.
+- [- localizedStringForLanguageCode:](<nslocale/localizedstring(forlanguagecode_).md>) — Returns the localized string for the specified language code.
+- [- localizedStringForScriptCode:](<nslocale/localizedstring(forscriptcode_).md>) — Returns the localized string for the specified script code.
+- [- localizedStringForVariantCode:](<nslocale/localizedstring(forvariantcode_).md>) — Returns the localized string for the specified variant code.
+- [- localizedStringForCollationIdentifier:](<nslocale/localizedstring(forcollationidentifier_).md>) — Returns the localized string for the specified collation identifier.
+- [- localizedStringForCollatorIdentifier:](<nslocale/localizedstring(forcollatoridentifier_).md>) — Returns the localized string for the specified collator identifier.
+- [- localizedStringForCurrencyCode:](<nslocale/localizedstring(forcurrencycode_).md>) — Returns the localized string for the specified currency code.
+- [- localizedStringForCalendarIdentifier:](<nslocale/localizedstring(forcalendaridentifier_).md>) — Returns the localized string for the specified calendar identifier.
+- [Locale Calendar Identifiers](locale-calendar-identifiers.md) — The types of calendars.
+
+### Accessing Locale Information by Key
+
+- [- objectForKey:](<nslocale/object(forkey_).md>) — Returns the value of the component corresponding to the specified key.
+- [- displayNameForKey:value:](<nslocale/displayname(forkey_value_).md>) — Returns the display name for the given locale component value.
+- [Key](nslocale/key.md) — The keys used to access components of a locale.
+
+### Getting the User’s Preferred Languages
+
+- [preferredLanguages](nslocale/preferredlanguages.md) — An ordered list of the user’s preferred languages.
+
+### Getting Line and Character Direction for a Language
+
+- [+ characterDirectionForLanguage:](<nslocale/characterdirection(forlanguage_).md>) — Returns the direction of the sequence of characters in a line for the specified ISO language code.
+- [+ lineDirectionForLanguage:](<nslocale/linedirection(forlanguage_).md>) — Returns the direction of the sequence of lines for the specified ISO language code.
+- [LanguageDirection](nslocale/languagedirection.md) — The directions that a language may take across a page of text.
+
+### Instance Properties
+
+- [languageIdentifier](nslocale/languageidentifier.md) — Returns the identifier for the language part of the locale. For example, returns “en-US” for “en_US@rg=gbzzzz”  locale.
+- [regionCode](nslocale/regioncode.md) — Returns the region code of the locale. If the `rg` subtag is present, the value of the subtag will be used. For example,  returns “GB” for “en_US@rg=gbzzzz” locale. If the `localeIdentifier` doesn’t contain a region, returns `nil`.
+
+## See Also
+
+### Related Documentation
+
+- [Internationalization and Localization Guide](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html#//apple_ref/doc/uid/10000171i)
+- [Data Formatting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/DataFormatting.html#//apple_ref/doc/uid/10000029i)

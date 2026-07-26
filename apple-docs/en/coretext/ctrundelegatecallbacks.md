@@ -1,0 +1,54 @@
+---
+title: CTRunDelegateCallbacks
+framework: Core Text
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/coretext/ctrundelegatecallbacks
+source_url: 'https://developer.apple.com/documentation/coretext/ctrundelegatecallbacks'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/coretext/ctrundelegatecallbacks.json'
+content_hash: 'sha256:dded7718f5e7a071'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Core Text](../coretext.md)
+
+# CTRunDelegateCallbacks
+
+<sub>Structure</sub>
+
+A structure holding pointers to callbacks implemented by the run delegate.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+struct CTRunDelegateCallbacks
+```
+
+## Overview
+
+You pass in a pointer to this structure when you create a CTRunDelegate object with the [CTRunDelegateCreate](<ctrundelegatecreate(____).md>) function. The callbacks defined in this structure are provided by the owner of a run delegate and are used to modify glyph metrics during layout. The values returned by the delegate are applied to each glyph in the run or runs corresponding to the attribute containing that delegate.
+
+See [CTRunDelegate](ctrundelegate.md) for a discussion of the function-pointer types associated with these callbacks.
+
+## Relationships
+
+- **Conforms To**: [BitwiseCopyable](../swift/bitwisecopyable.md), [Sendable](../swift/sendable.md)
+
+## Topics
+
+### Initializers
+
+- [init(version:dealloc:getAscent:getDescent:getWidth:)](<ctrundelegatecallbacks/init(version_dealloc_getascent_getdescent_getwidth_).md>)
+
+### Instance Properties
+
+- [dealloc](ctrundelegatecallbacks/dealloc.md) — The callback invoked when the retain count of a CTRunDelegate reaches 0 and the CTRunDelegate is deallocated. This callback may be `NULL`.
+- [getAscent](ctrundelegatecallbacks/getascent.md) — The callback invoked to request the run delegate to determine and return the typographic ascent of glyphs in the run. This callback may be `NULL`, which is equivalent to a `getAscent` callback that always returns 0.
+- [getDescent](ctrundelegatecallbacks/getdescent.md) — The callback invoked to request the run delegate to determine and return the typographic descent of glyphs in the run. This callback may be `NULL`, which is equivalent to a `getDescent` callback that always returns 0.
+- [getWidth](ctrundelegatecallbacks/getwidth.md) — The callback invoked to request the run delegate to determine and return the typographic width of glyphs in the run. This callback may be `NULL`, which is equivalent to a `getWidth` callback that always returns 0.
+- [version](ctrundelegatecallbacks/version.md) — The version number of the callbacks being passed in as a parameter to [CTRunDelegateCreate](<ctrundelegatecreate(____).md>). The initial version is [kCTRunDelegateVersion1](kctrundelegateversion1.md).

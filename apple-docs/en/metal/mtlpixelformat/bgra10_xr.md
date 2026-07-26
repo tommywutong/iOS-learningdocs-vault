@@ -1,0 +1,61 @@
+---
+title: MTLPixelFormat.bgra10_xr
+framework: Metal
+symbol_kind: case
+role: symbol
+role_heading: Case
+platforms: [iOS 10.0+, iPadOS 10.0+, Mac Catalyst 14.0+, macOS 11.0+, tvOS 10.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/metal/mtlpixelformat/bgra10_xr
+source_url: 'https://developer.apple.com/documentation/metal/mtlpixelformat/bgra10_xr'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/metal/mtlpixelformat/bgra10_xr.json'
+content_hash: 'sha256:4d662ef1b58336c3'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Metal](../../metal.md) · [MTLPixelFormat](../mtlpixelformat.md)
+
+# MTLPixelFormat.bgra10_xr
+
+<sub>Case</sub>
+
+A 64-bit extended-range pixel format with four fixed-point components of 10-bit blue, 10-bit green, 10-bit red, and 10-bit alpha.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+case bgra10_xr
+```
+
+## Discussion
+
+Pixel components are in blue, green, red, and alpha order, from least significant bit to most significant bit (little-endian order). Each component is a 16-bit chunk arranged as follows:
+
+- The 10 most-significant bits (bits 6–15) store the component’s data.
+- The 6 least-significant bits (bits 0–5) are padding, and their value is `0`.
+
+![](../../../../attachments/8515221632abee0dd20a5c80b97ae560/bgra10-xr-layout-1@2x.png)
+
+<sub>Bit layout diagram showing the pixel data storage arrangement of the BGRA10_XR pixel format. The blue component is stored in bits 6 to 15, the green component is stored in bits 22 to 31, the red component is stored in bits 38 to 47, and the alpha component is stored in bits 54 to 63. Bits 0 to 5, 16 to 21, 32 to 37, and 48 to 53 are used as padding.</sub>
+
+The blue, green, and red components are linearly encoded in a transform from `[0,2^10)` to [`-0.752941, 1.25098]`. The formula used in this linear encoding is `shader_float = (xr10_value - 384) / 510.0f`.
+
+> [!tip] Tip
+> Each UNorm8-based pixel value has an exact corresponding value in the XR10 pixel range, given by `xr10_value = unorm8_value * 2 + 384`.
+
+The alpha component is always clamped to a `[0.0, 1.0]` range in sampling, rendering, and writing operations, despite supporting values outside this range.
+
+To display wide color values on devices with wide color displays, set this pixel format on the [colorPixelFormat](../../metalkit/mtkview/colorpixelformat.md) property of an [MTKView](../../metalkit/mtkview.md) or the [pixelFormat](../../quartzcore/cametallayer/pixelformat.md) property of a [CAMetalLayer](../../quartzcore/cametallayer.md).
+
+> [!note] Note
+> Only devices with a wide color display can display color values outside the `[0.0, 1.0]` range; all other devices clamp color values to the `[0.0, 1.0]` range.
+
+## See Also
+
+### Extended range and wide color pixel formats
+
+- [MTLPixelFormatBGRA10_XR_sRGB](bgra10_xr_srgb.md) — A 64-bit extended-range pixel format with sRGB conversion and four fixed-point components of 10-bit blue, 10-bit green, 10-bit red, and 10-bit alpha.
+- [MTLPixelFormatBGR10_XR](bgr10_xr.md) — A 32-bit extended-range pixel format with three fixed-point components of 10-bit blue, 10-bit green, and 10-bit red.
+- [MTLPixelFormatBGR10_XR_sRGB](bgr10_xr_srgb.md) — A 32-bit extended-range pixel format with sRGB conversion and three fixed-point components of 10-bit blue, 10-bit green, and 10-bit red.

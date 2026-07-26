@@ -1,0 +1,44 @@
+---
+title: systemMinimumLayoutMargins
+framework: UIKit
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 11.0+, iPadOS 11.0+, Mac Catalyst 13.1+, tvOS 11.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/uikit/uiviewcontroller/systemminimumlayoutmargins
+source_url: 'https://developer.apple.com/documentation/uikit/uiviewcontroller/systemminimumlayoutmargins'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/uikit/uiviewcontroller/systemminimumlayoutmargins.json'
+content_hash: 'sha256:c08a265223616a22'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [UIKit](../../uikit.md) · [UIViewController](../uiviewcontroller.md)
+
+# systemMinimumLayoutMargins
+
+<sub>Instance Property</sub>
+
+The minimum layout margins for the view controller’s root view.
+
+<sub>iOS, iPadOS, Mac Catalyst, tvOS, visionOS</sub>
+
+```swift
+var systemMinimumLayoutMargins: NSDirectionalEdgeInsets { get }
+```
+
+## Discussion
+
+This property contains the minimum layout margins expected by the system for the view controller’s root view. Do not override this property. To stop considering the system’s minimum layout margins for the root view, set the [viewRespectsSystemMinimumLayoutMargins](viewrespectssystemminimumlayoutmargins.md) property to [false](../../swift/false.md). This property does not affect the margins associated with subviews of the root view.
+
+If you assign a custom value to the [directionalLayoutMargins](../uiview/directionallayoutmargins.md) property of the view controller’s root view, the root view’s actual margins are set to either your custom values or the minimum values defined by this property, whichever values are greater. For example, if the value for one system minimum margin is `20` points and you specify a value of `10` for the same margin on the view, the view uses the value `20` for the margin.
+
+## See Also
+
+### Managing the view’s margins
+
+- [Positioning content within layout margins](../positioning-content-within-layout-margins.md) — Position views so that they aren’t crowded by other content.
+- [viewRespectsSystemMinimumLayoutMargins](viewrespectssystemminimumlayoutmargins.md) — A Boolean value indicating whether the view controller’s view uses the system-defined minimum layout margins.
+- [- viewLayoutMarginsDidChange](<viewlayoutmarginsdidchange().md>) — Called to notify the view controller that the layout margins of its root view changed.

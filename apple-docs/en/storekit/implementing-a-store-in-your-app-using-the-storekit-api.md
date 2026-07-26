@@ -1,0 +1,80 @@
+---
+title: Implementing a store in your app using the StoreKit API
+framework: StoreKit
+symbol_kind: article
+role: sampleCode
+role_heading: Sample Code
+platforms: [iOS 27.0+ beta, iPadOS 27.0+ beta, Mac Catalyst 27.0+ beta, Xcode 27.0+ beta]
+languages: [swift]
+beta: true
+deprecated: false
+doc_path: /documentation/storekit/implementing-a-store-in-your-app-using-the-storekit-api
+source_url: 'https://developer.apple.com/documentation/storekit/implementing-a-store-in-your-app-using-the-storekit-api'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/storekit/implementing-a-store-in-your-app-using-the-storekit-api.json'
+content_hash: 'sha256:4f3b89a844bb7610'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [StoreKit](../storekit.md) · [In-App Purchase](in-app-purchase.md)
+
+# Implementing a store in your app using the StoreKit API
+
+<sub>Sample Code</sub>
+
+Offer In-App Purchases and manage entitlements using signed transactions and status information.
+
+## Overview
+
+The sample project demonstrates how to use StoreKit in a SwiftUI-based iOS app with a simulated app server, SKDemoServer. SKDemoServer is a Swift package that acts as the app’s backend by vending product identifiers and persisting consumable purchase entitlements using SwiftData.
+
+To test your implementation of In-App Purchases using StoreKit, you can use StoreKit Testing in Xcode and the sandbox environment. For more information, see [Testing at all stages of development with Xcode and the sandbox](testing-at-all-stages-of-development-with-xcode-and-the-sandbox.md), [Testing In-App Purchases with sandbox](testing-in-app-purchases-with-sandbox.md), and [Setting up StoreKit Testing in Xcode](../xcode/setting-up-storekit-testing-in-xcode.md).
+
+> [!note] Note
+> This sample code project is associated with WWDC26 session 210: [What’s new in Apple In-App Purchase](https://developer.apple.com/videos/play/wwdc2026/210).
+
+### Test the sample code project in Xcode
+
+This sample code project implements StoreKit Testing in Xcode to let you test In-App Purchases without completing any product set up in App Store Connect. It defines In-App Purchases in a `Products.storekit` file.
+
+To test the sample in Xcode:
+
+1. Select the sample target, then configure it to use your Developer team for signing. For more information, see “Assign the project to a team” in [Preparing your app for distribution](../xcode/preparing-your-app-for-distribution.md).
+2. Edit the SKDemo “Run” scheme, and select `Products.storekit` for StoreKit configuration. For more information, see “Enable StoreKit Testing in Xcode” in [Setting up StoreKit Testing in Xcode](../xcode/setting-up-storekit-testing-in-xcode.md).
+3. Build and run the sample app on a device or in the Simulator.
+4. The sample app displays a list of products available for sale in `Products.storekit` upon launching. If the sample app fails to display an In-App Purchase, see [TN3185: Troubleshooting In-App Purchases availability in Xcode](../technotes/tn3185-troubleshooting-in-app-purchases-availability-in-xcode.md).
+
+### Test the sample code project in the sandbox environment
+
+To test your app in the sandbox environment, sign in to a Sandbox Apple Account. In the sandbox environment, you can test In-App Purchases using real product information from App Store Connect without incurring charges. This sample code project defines In-App Purchases in a `Products.plist` file. Before you can start testing the sample app in the sandbox environment, you need to complete configuration steps in App Store Connect and Xcode. For more information, see “Prepare for sandbox testing” in [Testing In-App Purchases with sandbox](testing-in-app-purchases-with-sandbox.md).
+
+To prepare this sample code project to run in the sandbox, perform the following steps in App Store Connect:
+
+1. Find or create an app that supports In-App Purchases and you can use for testing purposes.
+2. Select the app and make a note of its bundle ID.
+3. Create an In-App Purchase that uses a product identifier from `Products.plist`. Use information from `Products.storekit` to set up the In-App Purchase. Repeat this step for all identifiers in `Products.plist`.
+4. After you create the SKDemo+ and Car Wash subscription groups, make note of their Group IDs.
+5. Create a [Sandbox Apple Account](https://developer.apple.com/help/app-store-connect/test-in-app-purchases/create-a-sandbox-apple-account/).
+
+To prepare this sample code project to use information from App Store Connect, perform the following steps in Xcode:
+
+1. Select the sample target, then change the bundle ID to your testing app’s bundle ID. For more information, see “Set the bundle ID” in [Preparing your app for distribution](../xcode/preparing-your-app-for-distribution.md).
+2. Configure the target to use your Developer team for signing. For more information, see “Assign the project to a team” in [Preparing your app for distribution](../xcode/preparing-your-app-for-distribution.md).
+3. Edit the SKDemo “Run” scheme, and remove `Products.storekit` from StoreKit configuration. For more information, see “Disable StoreKit Testing in Xcode” in [Setting up StoreKit Testing in Xcode](../xcode/setting-up-storekit-testing-in-xcode.md).
+4. In the `Server.swift` file, replace 3F19ED53 with your new SKDemo+ subscription Group ID and C0372950 with your new Car Wash subscription Group ID from App Store Connect.
+
+You’re now ready to test this sample in the sandbox environment. Sign in to the device with a Sandbox Apple Account, then build and run this sample in Xcode. The sample app displays a list of products available for sale in the App Store upon launching. If the sample app fails to display an In-App Purchase, see [TN3186: Troubleshooting In-App Purchases availability in the sandbox](../technotes/tn3186-troubleshooting-in-app-purchases-availability-in-the-sandbox.md).
+
+## See Also
+
+### Product and subscription information
+
+- [Supporting monthly subscriptions with a 12-month commitment](supporting-monthly-subscriptions-with-a-12-month-commitment.md) — Configure, merchandise, and grant access to a monthly subscription with a 12-month commitment.
+- [Managing the life cycle of monthly subscriptions with a 12-month commitment](managing-lifecycle-of-monthly-subscriptions-with-a-12-month-commitment-.md) — Handle renewals, cancellations, billing issues, refund requests, and price changes, and test subscriptions with a commitment plan.
+- [Product](product.md) — Information about a product that you configure in App Store Connect.
+- [SubscriptionInfo](product/subscriptioninfo.md) — Information about an auto-renewable subscription, such as its status, period, subscription group, and subscription offer details.
+- [SubscriptionInfo](subscriptioninfo.md) — Information about an auto-renewable subscription.
+- [SubscriptionStatus](subscriptionstatus.md) — Represents the renewal status information for an auto-renewable subscription.
+
+## Download
+
+- [ImplementingAStoreInYourAppUsingTheStoreKitAPI.zip](https://docs-assets.developer.apple.com/published/623bce0ddaba/ImplementingAStoreInYourAppUsingTheStoreKitAPI.zip)

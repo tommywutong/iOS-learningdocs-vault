@@ -1,0 +1,191 @@
+---
+title: NSAttributedString
+framework: Foundation
+symbol_kind: class
+role: symbol
+role_heading: Class
+platforms: [iOS 3.2+, iPadOS 3.2+, Mac Catalyst 13.1+, macOS 10.0+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/foundation/nsattributedstring
+source_url: 'https://developer.apple.com/documentation/foundation/nsattributedstring'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/foundation/nsattributedstring.json'
+content_hash: 'sha256:28ff8fc4ccd0e51c'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [Foundation](../foundation.md)
+
+# NSAttributedString
+
+<sub>Class</sub>
+
+A string of text that manages data, layout, and stylistic information for ranges of characters to support rendering.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+class NSAttributedString
+```
+
+## Overview
+
+[NSAttributedString](nsattributedstring.md) is a type you use to manage strings of stylized Unicode text. In addition to text, an attributed string contains key-value pairs known as _attributes_ that specify additional information to apply to ranges of characters within the string. Attributed strings support many different kinds of attributes, including:
+
+- Rendering attributes that specify font, color, kern, ligature, and other details
+- Attributes for attachments and adaptive image glyphs
+- Semantic attributes such as link URLs or tool-tip information
+- Language attributes to support automatic gender agreement and text layout
+- Accessibility attributes that provide information for assistive technologies
+- Attributes that summarize details of the Markdown import process
+- Custom attributes you define for your app
+
+Use attributed strings anywhere you need styled text, or when you need to associate additional information with your text. Because [NSAttributedString](nsattributedstring.md) is an immutable type, you specify all of the text and attributes for it at creation time and can’t change them later. You can create attributed strings directly from a string of characters and a dictionary of attributes. You can also create attributed strings from the contents of a file, including files that contain RTF, RTFD, HTML, Markdown, or other file formats. If you need to modify the contents of an attributed string later, use the [NSMutableAttributedString](nsmutableattributedstring.md) type instead.
+
+If you create an [NSAttributedString](nsattributedstring.md) without any font information, the string’s default font is Helvetica 12-point, which might differ from the default system font for the platform. To change the font, specify a font attribute at creation time.
+
+### Persistence
+
+Be aware of how you persist attributed strings to and from the disk. RTF and RTFD are the preferred format for attributed strings because they offer the best fidelity for reading and writing attribute data. The RTF formats support a large number of standard attributes, and Apple extends the formats to support many Apple-specific attributes. If you define custom attributes for ranges of characters, store them separately alongside the RTF file for your text.
+
+If you work extensively with HTML content, validate the results and performance of import and export operations during testing. WebKit handles the conversion between HTML markup and attributed strings. If an HTML file contains tags or constructs that attributed strings don’t support, the import process ignores them and imports what it can.
+
+When you create an attributed string from Markdown, the system adds presentation intent attributes with information about the original Markdown content. The system doesn’t add style attributes to match the Markdown elements, but the system applies default style information when it renders a string with intent attributes. To change the rendering behavior of your Markdown content, remove the intent attributes and add the style attributes you prefer.
+
+> [!important] Important
+> When reading or writing attributed strings, choose methods that return or throw an error, and check any errors you receive. Handling errors is the best way to detect issues with the import or export process and take corrective action.
+
+The methods for reading and writing common file formats also support document attributes. Document attributes aren’t part of the attributed string itself, but accompany the text when you save it to a file. When you read a file, the system returns any document attributes that it finds. Similarly, when you write an attributed string to a file, you can specify the attributes to include. For more information about document attributes, see [DocumentAttributeKey](nsattributedstring/documentattributekey.md) and [DocumentReadingOptionKey](nsattributedstring/documentreadingoptionkey.md).
+
+### System framework interoperability
+
+[TextKit](../uikit/textkit.md) and [Core Text](../coretext.md) use attributed strings extensively during the layout and rendering processes. These technologies use the string’s text and rendering-related attributes to calculate the text metrics needed during layout. Similarly, these technologies apply those same attributes during rendering to give the text its styled appearance. The technologies use only attributes that directly affect the appearance of the text, and ignore most other attributes. For some attributes, the text system adds attributes during rendering as needed. For example, the text system provides default style attributes for text with the [link](nsattributedstring/key/link.md) attribute.
+
+[AppKit](../appkit.md) and [UIKit](../uikit.md) also support attributed strings in several ways. Some views and controls in these frameworks have APIs that accept attributed strings, and render the string with its style information. The frameworks also add methods to the [NSAttributedString](nsattributedstring.md) class that let you draw a styled string directly in one of your custom views. Because these methods use TextKit to draw the string, they recognize the same rendering-related attributes as that technology.
+
+The [NSAttributedString](nsattributedstring.md) class and its Core Foundation counterpart, [CFAttributedString](../corefoundation/cfattributedstring.md), are toll-free bridged, which means you can use the two types interchangeably in your code without losing any text or attribute information.
+
+## Relationships
+
+- **Inherits From**: [NSObject](../objectivec/nsobject-swift.class.md)
+
+- **Inherited By**: [NSMutableAttributedString](nsmutableattributedstring.md)
+
+- **Conforms To**: [CVarArg](../swift/cvararg.md), [Copyable](../swift/copyable.md), [CustomDebugStringConvertible](../swift/customdebugstringconvertible.md), [CustomStringConvertible](../swift/customstringconvertible.md), [Equatable](../swift/equatable.md), [Escapable](../swift/escapable.md), [Hashable](../swift/hashable.md), [NSCoding](nscoding.md), [NSCopying](nscopying.md), [NSItemProviderReading](nsitemproviderreading.md), [NSItemProviderWriting](nsitemproviderwriting.md), [NSMutableCopying](nsmutablecopying.md), [NSObjectProtocol](../objectivec/nsobjectprotocol.md), [NSPasteboardReading](../appkit/nspasteboardreading.md), [NSPasteboardWriting](../appkit/nspasteboardwriting.md), [NSSecureCoding](nssecurecoding.md)
+
+## Topics
+
+### Creating attributed strings
+
+- [Creation methods](creation-methods.md) — Create attributed strings from existing content or raw text and apply the initial attributes.
+
+### Exporting the string as data
+
+- [- dataFromRange:documentAttributes:error:](<nsattributedstring/data(from_documentattributes_).md>) — Returns a data object that contains a text stream corresponding to the characters and attributes within the specified range.
+- [- fileWrapperFromRange:documentAttributes:error:](<nsattributedstring/filewrapper(from_documentattributes_).md>) — Returns a file wrapper object that contains a text stream corresponding to the characters and attributes within the specified range.
+- [- docFormatFromRange:documentAttributes:](<nsattributedstring/docformat(from_documentattributes_).md>) — Returns a data object that contains a Microsoft Word–format stream corresponding to the characters and attributes within the specified range.
+- [- RTFFromRange:documentAttributes:](<nsattributedstring/rtf(from_documentattributes_).md>) — Returns a data object that contains an RTF stream corresponding to the characters and attributes within the specified range, omitting all attachment attributes.
+- [- RTFDFromRange:documentAttributes:](<nsattributedstring/rtfd(from_documentattributes_).md>) — Returns a data object that contains an RTFD stream corresponding to the characters and attributes within the specified range.
+- [- RTFDFileWrapperFromRange:documentAttributes:](<nsattributedstring/rtfdfilewrapper(from_documentattributes_).md>) — Returns a file wrapper object that contains an RTFD document corresponding to the characters and attributes within the specified range.
+
+### Getting the characters
+
+- [string](nsattributedstring/string.md) — The character contents of the attributed string as a string.
+- [length](nsattributedstring/length.md) — The length of the attributed string.
+- [- attributedSubstringFromRange:](<nsattributedstring/attributedsubstring(from_).md>) — Returns an attributed string consisting of the characters and attributes within the specified range in the attributed string.
+
+### Getting font attribute information
+
+- [- fontAttributesInRange:](<nsattributedstring/fontattributes(in_).md>) — Returns the font attributes in effect for the character at the specified location.
+- [- rulerAttributesInRange:](<nsattributedstring/rulerattributes(in_).md>) — Returns the ruler (paragraph) attributes in effect for the characters within the specified range.
+
+### Getting attributes for a range of text
+
+- [- attributesAtIndex:effectiveRange:](<nsattributedstring/attributes(at_effectiverange_).md>) — Returns the attributes for the character at the specified index.
+- [- attributesAtIndex:longestEffectiveRange:inRange:](<nsattributedstring/attributes(at_longesteffectiverange_in_).md>) — Returns the attributes for the character at the specified index and, by reference, the range where the attributes apply.
+- [- attribute:atIndex:effectiveRange:](<nsattributedstring/attribute(__at_effectiverange_).md>) — Returns the value for an attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies.
+- [- attribute:atIndex:longestEffectiveRange:inRange:](<nsattributedstring/attribute(__at_longesteffectiverange_in_).md>) — Returns the value for the attribute with the specified name of the character at the specified index and, by reference, the range where the attribute applies.
+- [- enumerateAttribute:inRange:options:usingBlock:](<nsattributedstring/enumerateattribute(__in_options_using_).md>) — Executes the specified closure or block for each range of a particular attribute in the attributed string.
+- [- enumerateAttributesInRange:options:usingBlock:](<nsattributedstring/enumerateattributes(in_options_using_).md>) — Executes the specified closure or block for each range of attributes in the attributed string.
+- [EnumerationOptions](nsattributedstring/enumerationoptions.md) — Options for enumerating attributes.
+
+### Getting text content attributes
+
+- [Key](nsattributedstring/key.md) — The attributes you apply to ranges of characters in an attributed string.
+- [TextHighlightStyle](nsattributedstring/texthighlightstyle.md) — Constants that specify the type of highlight to apply to text.
+- [TextHighlightColorScheme](nsattributedstring/texthighlightcolorscheme.md) — Constants that specify the highlight color to use with the text.
+- [TextEffectStyle](nsattributedstring/texteffectstyle.md) — Constants for the type of effect to apply to the text.
+- [SpellingState](nsattributedstring/spellingstate.md) — Constants for the spelling state attribute key.
+- [NSUnderlineStyle](../uikit/nsunderlinestyle.md) — Constants for the underline style and strikethrough style attribute keys.
+- [NSWritingDirectionFormatType](../uikit/nswritingdirectionformattype.md) — Constants for the writing direction attribute key.
+
+### Getting document-wide attributes
+
+- [DocumentAttributeKey](nsattributedstring/documentattributekey.md) — The attributes you apply to an entire document.
+- [DocumentReadingOptionKey](nsattributedstring/documentreadingoptionkey.md) — Options for constructing an attributed string from data you read from disk.
+- [HTML attributes](html-attributes.md) — Documentwide attributes that provide control over the form of generated HTML.
+- [DocumentType](nsattributedstring/documenttype.md) — Constants for the document type document attribute key.
+- [TextLayoutSectionKey](nsattributedstring/textlayoutsectionkey.md) — Constants for the text layout sections document attribute key.
+- [NSTextScalingType](../uikit/nstextscalingtype.md) — Constants that specify the text scaling.
+
+### Representing markdown attributes
+
+- [InlinePresentationIntent](inlinepresentationintent.md) — A type that defines presentation intent for runs of characters for traits like emphasis, strikethrough, and code voice.
+
+### Comparing strings
+
+- [- isEqualToAttributedString:](<nsattributedstring/isequal(to_).md>) — Returns a Boolean value that indicates whether the attributed string is equal to the specified string.
+
+### Getting the supported text-file formats
+
+- [- prefersRTFDInRange:](<nsattributedstring/prefersrtfd(in_).md>) — Returns a Boolean value that indicates whether the specified range of text prefers RTFD formatting.
+- [textTypes](nsattributedstring/texttypes.md) — An array of UTI strings that identify the file types that attributed strings support, either directly or through a user-installed filter service.
+- [textUnfilteredTypes](nsattributedstring/textunfilteredtypes.md) — An array of UTI strings that identify the file types that attributed strings support directly.
+
+### Calculating linguistic units
+
+- [- doubleClickAtIndex:](<nsattributedstring/doubleclick(at_).md>) — Returns the range of characters that form a word (or other linguistic unit) surrounding the specified index, taking language characteristics into account.
+- [- lineBreakBeforeIndex:withinRange:](<nsattributedstring/linebreak(before_within_).md>) — Returns the appropriate line break when the character at the index doesn’t fit on the same line as the character at the beginning of the range.
+- [- lineBreakByHyphenatingBeforeIndex:withinRange:](<nsattributedstring/linebreakbyhyphenating(before_within_).md>) — Returns the index of the closest character before the specified index, and within the specified range, that can fit on a new line by hyphenating.
+- [- nextWordFromIndex:forward:](<nsattributedstring/nextword(from_forward_).md>) — Returns the index of the first character of the word after or before the specified index.
+
+### Performing automatic grammar agreement
+
+- [- attributedStringByInflectingString](<nsattributedstring/inflecting().md>) — If the string has portions tagged with NSInflectionRuleAttributeName that have no format specifiers, create a new string with those portions inflected by following the rule in the attribute.
+
+### Calculating ranges for common elements
+
+- [- itemNumberInTextList:atIndex:](<nsattributedstring/itemnumber(in_at_).md>) — Returns the index of the item at the specified location within the list.
+- [- rangeOfTextBlock:atIndex:](<nsattributedstring/range(of_at_)-1wrcp.md>) — Returns the range of the individual text block that contains the specified location.
+- [- rangeOfTextList:atIndex:](<nsattributedstring/range(of_at_)-6um0x.md>) — Returns the range of the specified text list that contains the specified location.
+- [- rangeOfTextTable:atIndex:](<nsattributedstring/range(of_at_)-3fevu.md>) — Returns the range of the specified text table that contains the specified location.
+
+### Drawing the attributed string
+
+- [- drawAtPoint:](<nsattributedstring/draw(at_).md>) — Draws the attributed string starting at the specified point in the current graphics context.
+- [- drawInRect:](<nsattributedstring/draw(in_).md>) — Draws the attributed string inside the specified bounding rectangle in the current graphics context.
+- [- drawWithRect:options:context:](<nsattributedstring/draw(with_options_context_).md>) — Draws the attributed string in the specified bounding rectangle using the provided options.
+
+### Getting metrics for the string
+
+- [- size](<nsattributedstring/size().md>) — Returns the size necessary to draw the string.
+- [- boundingRectWithSize:options:context:](<nsattributedstring/boundingrect(with_options_context_).md>) — Returns the bounding rectangle necessary to draw the string.
+- [- containsAttachmentsInRange:](<nsattributedstring/containsattachments(in_).md>) — Returns a Boolean value that indicates if the attributed string contains an attachment in the specified range.
+
+### Deprecated
+
+- [Deprecated Symbols](deprecated-symbols.md) — Migrate your code away from using these symbols.
+
+### Initializers
+
+- [init(coder:)](<nsattributedstring/init(coder_).md>)
+
+## See Also
+
+### Strings with Metadata
+
+- [AttributedString](attributedstring.md) — A value type for a string with associated attributes for portions of its text.
+- [AttributedSubstring](attributedsubstring.md) — A portion of an attributed string.
+- [Attributed String Supporting Types](attributed-string-supporting-types.md) — Types that the attributed string, attributed substring, and helper types extend or conform to, for sharing common functionality.
+- [NSMutableAttributedString](nsmutableattributedstring.md) — A mutable string with associated attributes (such as visual style, hyperlinks, or accessibility data) for portions of its text.

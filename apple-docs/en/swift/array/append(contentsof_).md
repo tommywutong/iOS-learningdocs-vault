@@ -1,0 +1,60 @@
+---
+title: 'append(contentsOf:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 8.0+, iPadOS 8.0+, Mac Catalyst 13.0+, macOS 10.10+, tvOS 9.0+, visionOS 1.0+, watchOS 2.0+]
+languages: [swift, swift, swift, swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/array/append(contentsof:)'
+source_url: 'https://developer.apple.com/documentation/swift/array/append(contentsof:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/array/append%28contentsof%3A%29.json'
+content_hash: 'sha256:57f2faf9e18ad7b1'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Array](../array.md)
+
+# append(contentsOf:)
+
+<sub>Instance Method</sub>
+
+Adds the elements of a sequence to the end of the array.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+mutating func append<S>(contentsOf newElements: S) where Element == S.Element, S : Sequence
+```
+
+## Parameters
+
+- `newElements` — The elements to append to the array.
+
+## Discussion
+
+Use this method to append the elements of a sequence to the end of this array. This example appends the elements of a `Range<Int>` instance to an array of integers.
+
+```swift
+var numbers = [1, 2, 3, 4, 5]
+numbers.append(contentsOf: 10...15)
+print(numbers)
+// Prints "[1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15]"
+```
+
+> [!abstract] Complexity
+> O(_m_) on average, where _m_ is the length of `newElements`, over many calls to `append(contentsOf:)` on the same array.
+
+## See Also
+
+### Combining Arrays
+
+- [append(contentsOf:)](<append(contentsof_)-9foli.md>) — Adds the elements of a sequence or collection to the end of this collection.
+- [+(_:_:)](<+(____)-6h58k.md>) — Creates a new collection by concatenating the elements of a sequence and a collection.
+- [+(_:_:)](<+(____)-n33n.md>) — Creates a new collection by concatenating the elements of a collection and a sequence.
+- [+(_:_:)](<+(____).md>)
+- [+(_:_:)](<+(____)-9fm5l.md>) — Creates a new collection by concatenating the elements of two collections.
+- [+=(_:_:)](<+=(____)-676ib.md>) — Appends the elements of a sequence to a range-replaceable collection.
+- [+=(_:_:)](<+=(____).md>)

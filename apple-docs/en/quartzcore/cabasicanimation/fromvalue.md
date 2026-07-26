@@ -1,0 +1,45 @@
+---
+title: fromValue
+framework: Core Animation
+symbol_kind: property
+role: symbol
+role_heading: Instance Property
+platforms: [iOS 2.0+, iPadOS 2.0+, Mac Catalyst 13.1+, macOS 10.5+, tvOS 9.0+, visionOS 1.0+]
+languages: [swift, occ]
+beta: false
+deprecated: false
+doc_path: /documentation/quartzcore/cabasicanimation/fromvalue
+source_url: 'https://developer.apple.com/documentation/quartzcore/cabasicanimation/fromvalue'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/quartzcore/cabasicanimation/fromvalue.json'
+content_hash: 'sha256:8e7449f826e1eb30'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Core Animation](../../quartzcore.md) · [CABasicAnimation](../cabasicanimation.md)
+
+# fromValue
+
+<sub>Instance Property</sub>
+
+Defines the value the receiver uses to start interpolation.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS</sub>
+
+```swift
+var fromValue: Any? { get set }
+```
+
+## Discussion
+
+See [Setting Interpolation Values](../cabasicanimation.md#Setting-Interpolation-Values) for details on how `fromValue` interacts with the other interpolation values.
+
+## See Also
+
+### Related Documentation
+
+- [Core Animation Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40004514)
+
+### Interpolation values
+
+- [toValue](tovalue.md) — Defines the value the receiver uses to end interpolation.
+- [byValue](byvalue.md) — Defines the value the receiver uses to perform relative interpolation.

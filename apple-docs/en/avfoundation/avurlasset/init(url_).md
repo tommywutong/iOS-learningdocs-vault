@@ -1,0 +1,41 @@
+---
+title: 'init(url:)'
+framework: AVFoundation
+symbol_kind: init
+role: symbol
+role_heading: Initializer
+platforms: [iOS 4.0+, iPadOS 4.0+, Mac Catalyst 4.0+, macOS 10.7+, tvOS 9.0+, visionOS 1.0+, watchOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/avfoundation/avurlasset/init(url:)'
+source_url: 'https://developer.apple.com/documentation/avfoundation/avurlasset/init(url:)'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/avfoundation/avurlasset/init%28url%3A%29.json'
+content_hash: 'sha256:bfb01cc4a659ffbc'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [AVFoundation](../../avfoundation.md) · [AVURLAsset](../avurlasset.md)
+
+# init(url:)
+
+<sub>Initializer</sub>
+
+Creates an asset that models the media at the specified URL.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+convenience init(url: URL)
+```
+
+## Parameters
+
+- `url` — A URL to a local, remote, or HTTP Live Streaming media resource.
+
+## See Also
+
+### Creating an asset
+
+- [- initWithURL:options:](<init(url_options_)-2x8uu.md>) — Creates an asset that models the media resource at the specified URL.
+- [Initialization options](../avurlasset-initialization-options.md) — Specify options to configure the initialization of a media asset.

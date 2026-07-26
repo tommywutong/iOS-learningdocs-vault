@@ -1,0 +1,65 @@
+---
+title: 'map(_:)'
+framework: Swift
+symbol_kind: method
+role: symbol
+role_heading: Instance Method
+platforms: [iOS 13.0+, iPadOS 13.0+, Mac Catalyst 13.0+, macOS 10.15+, tvOS 13.0+, visionOS 1.0+, watchOS 6.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: '/documentation/swift/asyncdropfirstsequence/map(_:)-7g3xh'
+source_url: 'https://developer.apple.com/documentation/swift/asyncdropfirstsequence/map(_:)-7g3xh'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncdropfirstsequence/map%28_%3A%29-7g3xh.json'
+content_hash: 'sha256:bab95b14c5539ad2'
+translated: false
+---
+
+> Navigation: [Technologies](../../technologies.md) · [Swift](../../swift.md) · [AsyncDropFirstSequence](../asyncdropfirstsequence.md)
+
+# map(_:)
+
+<sub>Instance Method</sub>
+
+Creates an asynchronous sequence that maps the given error-throwing closure over the asynchronous sequence’s elements.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>
+
+```swift
+@preconcurrency func map<Transformed>(_ transform: @escaping @Sendable (Self.Element) async throws -> Transformed) -> AsyncThrowingMapSequence<Self, Transformed>
+```
+
+## Parameters
+
+- `transform` — A mapping closure. `transform` accepts an element of this sequence as its parameter and returns a transformed value of the same or of a different type. `transform` can also throw an error, which ends the transformed sequence.
+
+## Return Value
+
+An asynchronous sequence that contains, in order, the elements produced by the `transform` closure.
+
+## Discussion
+
+Use the `map(_:)` method to transform every element received from a base asynchronous sequence. Typically, you use this to transform from one type of element to another.
+
+In this example, an asynchronous sequence called `Counter` produces `Int` values from `1` to `5`. The closure provided to the `map(_:)` method takes each `Int` and looks up a corresponding `String` from a `romanNumeralDict` dictionary. This means the outer `for await in` loop iterates over `String` instances instead of the underlying `Int` values that `Counter` produces. Also, the dictionary doesn’t provide a key for `4`, and the closure throws an error for any key it can’t look up, so receiving this value from `Counter` ends the modified sequence with an error.
+
+```swift
+let romanNumeralDict: [Int: String] =
+    [1: "I", 2: "II", 3: "III", 5: "V"]
+
+do {
+    let stream = Counter(howHigh: 5)
+        .map { (value) throws -> String in
+            guard let roman = romanNumeralDict[value] else {
+                throw MyError()
+            }
+            return roman
+        }
+    for try await numeral in stream {
+        print(numeral, terminator: " ")
+    }
+} catch {
+    print("Error: \(error)")
+}
+// Prints "I II III Error: MyError() "
+```

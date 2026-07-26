@@ -1,0 +1,51 @@
+---
+title: PlainTextEditorStyle
+framework: SwiftUI
+symbol_kind: struct
+role: symbol
+role_heading: Structure
+platforms: [iOS 17.0+, iPadOS 17.0+, Mac Catalyst 17.0+, macOS 14.0+, visionOS 1.0+]
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swiftui/plaintexteditorstyle
+source_url: 'https://developer.apple.com/documentation/swiftui/plaintexteditorstyle'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swiftui/plaintexteditorstyle.json'
+content_hash: 'sha256:5d947a42b903bcab'
+translated: false
+---
+
+> Navigation: [Technologies](../technologies.md) · [SwiftUI](../swiftui.md)
+
+# PlainTextEditorStyle
+
+<sub>Structure</sub>
+
+A text editor style with no decoration.
+
+<sub>iOS, iPadOS, Mac Catalyst, macOS, visionOS</sub>
+
+```swift
+nonisolated struct PlainTextEditorStyle
+```
+
+## Overview
+
+You can also use [plain](texteditorstyle/plain.md) to create this style.
+
+## Relationships
+
+- **Conforms To**: [TextEditorStyle](texteditorstyle.md)
+
+## Topics
+
+### Creating the text editor style
+
+- [init()](<plaintexteditorstyle/init().md>)
+
+## See Also
+
+### Supporting types
+
+- [AutomaticTextEditorStyle](automatictexteditorstyle.md) — The default text editor style, based on the text editor’s context.
+- [RoundedBorderTextEditorStyle](roundedbordertexteditorstyle.md) — A text editor style with a system-defined rounded border.
