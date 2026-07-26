@@ -27,7 +27,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-FENCE = re.compile(r"^```(\w*)\s*$")
+# 围栏允许前导空白：列表项内的代码块是缩进的（`  ```objc`），
+# 行首锚定的正则识别不了，会把整块代码当正文去做「残留英文」扫描而误报。
+#
+# 语言标注**不能**用 `\w*`：`\w` 不含连字符，于是 ```objective-c（仓库里 503 处）、
+# ```c++、```obj-c 都识别不出开围栏。后果是连锁的——闭围栏 ``` 反被当成开围栏，
+# 紧随其后的正文被当成代码做逐字符比对（正文当然译过 → 假报「代码被改动」），
+# 同时真代码被当成正文去扫残留英文（→ 假报 NSAssert 之类未翻译）。
+# 一个字符类吃掉了两类假问题，所以这里放宽到「除空白和反引号以外的任何字符」。
+FENCE = re.compile(r"^\s*```([^\s`]*)\s*$")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(<?([^)>]+)>?\)")
 IMAGE = re.compile(r"!\[[^\]]*\]\(<?([^)>]+)>?\)")
 HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
@@ -39,6 +47,39 @@ INLINE_CODE = re.compile(r"`[^`]*`")
 
 # 允许译文改动的 frontmatter 字段
 MUTABLE_FIELDS = {"title", "translated", "translated_at", "translator", "reviewed"}
+
+# 渲染器生成的结构性文字，必须用 TRANSLATION_STYLE.md 第三节的固定译法。
+# 这一项是「同一语料里译法不统一」的唯一确定性防线：`## Topics` 只有 1 种正确
+# 写法，而它躲得过「残留英文」检查（只有 1 个单词，够不到 8 词阈值）。
+# 实测漏出去过 108 处：39 篇 `## Topics`、33 篇 `## See Also`、15 篇 `## Overview`
+# 与 WWDC 的 21 篇 `## Transcript`、21 篇 `## Resources`、7 篇 `## Chapters`。
+FIXED_LINES = {
+    "## Topics": "## 主题",
+    "## See Also": "## 另请参阅",
+    "## Relationships": "## 关系",
+    "## Parameters": "## 参数",
+    "## Default Implementations": "## 默认实现",
+    "## Download": "## 下载",
+    "## Overview": "## 概述",
+    # WWDC 这三个：前两个跟随仓库已有先例
+    # （wwdc2021/10132、10133 用的是 `## 相关资源` 而不是 `## 资源`），
+    # `## Chapters` 无先例，定为 `## 章节`
+    "## Transcript": "## 逐字稿",
+    "## Resources": "## 相关资源",
+    "## Chapters": "## 章节",
+}
+FIXED_INLINE = {
+    "> Navigation:": "> 导航：",
+    "<sub>Article</sub>": "<sub>文章</sub>",
+    "<sub>Framework</sub>": "<sub>框架</sub>",
+    "<sub>Sample Code</sub>": "<sub>示例代码</sub>",
+    "<sub>API Collection</sub>": "<sub>API 集合</sub>",
+    "<sub>Instance Method</sub>": "<sub>实例方法</sub>",
+    "<sub>Instance Property</sub>": "<sub>实例属性</sub>",
+    "<sub>Type Method</sub>": "<sub>类型方法</sub>",
+    "<sub>Initializer</sub>": "<sub>初始化方法</sub>",
+    "<sub>Enumeration Case</sub>": "<sub>枚举 case</sub>",
+}
 
 
 def split_frontmatter(text: str) -> tuple[dict, str]:
@@ -65,7 +106,7 @@ def code_blocks(body: str) -> list[tuple[str, list[str]]]:
         m = FENCE.match(line)
         if m and not inside:
             inside, lang, buf = True, m.group(1), []
-        elif line.strip() == "```" and inside:
+        elif line.strip().startswith("```") and inside:
             out.append((lang, buf))
             inside = False
         elif inside:
@@ -79,12 +120,41 @@ def strip_code(body: str) -> str:
     """去掉代码块，用于「残留英文」检测。"""
     out, inside = [], False
     for line in body.splitlines():
-        if FENCE.match(line) or (line.strip() == "```" and inside):
-            inside = not inside if not (line.strip() == "```" and inside) else False
+        if FENCE.match(line):
+            inside = not inside
             continue
         if not inside:
             out.append(line)
     return "\n".join(out)
+
+
+def split_trailing_comment(line: str) -> tuple[str, str]:
+    """把一行代码切成 (代码部分, 行尾注释)。
+
+    规范允许译注释，但 COMMENT 只认整行注释，`print("A") // prints "A"`
+    这种行尾注释会被当成代码去逐字符比对，报出假问题。
+
+    只处理 `//` 和 `/*`：本仓库的代码块几乎全是 Swift/ObjC/C。不处理 `#`，
+    因为 Swift 的 `#if` / `#selector` / `#"raw"#` 和 ObjC 的 `#import` 会误伤，
+    Python 那点行尾注释不值得为此冒险。
+    需要跳过字符串字面量里的 `//`——`URL(string: "https://…")` 满地都是。
+    """
+    quote: str | None = None
+    i = 0
+    while i < len(line):
+        c = line[i]
+        if quote:
+            if c == "\\":
+                i += 2
+                continue
+            if c == quote:
+                quote = None
+        elif c in "\"'":
+            quote = c
+        elif c == "/" and line[i + 1 : i + 2] in ("/", "*"):
+            return line[:i], line[i:]
+        i += 1
+    return line, ""
 
 
 def headings(body: str) -> list[int]:
@@ -148,8 +218,20 @@ def check_pair(en: Path, zh: Path) -> list[str]:
         looks_like_identifier = bool(
             re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\([^)]*\))?", t)
             or re.fullmatch(r"[+-]?\s*[A-Za-z_][\w:.\-]*", t)
+            # 崩溃信号那类标题整个由全大写标识符加括号组成
+            # （`EXC_BAD_ACCESS (SIGSEGV)`、
+            #  `EXC_BREAKPOINT (SIGTRAP) and EXC_BAD_INSTRUCTION (SIGILL)`），
+            # 去掉全大写词、括号和连接词后什么都不剩，就说明它不是自然语言标题。
+            or not re.sub(r"[A-Z][A-Z0-9_]{2,}|[()/]|\b(and|or)\b|\s+", "", t)
         )
-        if not looks_like_identifier:
+        # 框架落地页的标题就是框架自己的名字（`Core Data`、`Push to Talk`），
+        # 规范规定框架名不译。判据取三者同时成立，避免顺手放过真漏译。
+        is_framework_landing = (
+            t == en_fm.get("framework", "").strip("'\"")
+            and en_fm.get("symbol_kind") == "module"
+            and en_fm.get("role") == "collection"
+        )
+        if not looks_like_identifier and not is_framework_landing:
             issues.append("title 未翻译（与原文相同）")
 
     # 2 & 3. 链接与图片目标
@@ -176,9 +258,20 @@ def check_pair(en: Path, zh: Path) -> list[str]:
                 continue
             for ln, (e, z) in enumerate(zip(ec, zc), 1):
                 if COMMENT.match(e):
-                    continue  # 注释允许译
-                if e != z:
+                    continue  # 整行注释允许译
+                ecode, ecmt = split_trailing_comment(e)
+                zcode, zcmt = split_trailing_comment(z)
+                # 只 rstrip：缩进必须逐字符保留，但代码与行尾注释之间的空格
+                # 无意义。不 rstrip 的话「删掉行尾注释」会报成「代码被改动」，
+                # 指错方向。
+                if ecode.rstrip() != zcode.rstrip():
                     issues.append(f"第 {i} 个代码块第 {ln} 行代码被改动：{e.strip()[:60]!r}")
+                    break
+                # 注释可以译，但不能整条删掉——那是内容丢失
+                if ecmt.strip() and not zcmt.strip():
+                    issues.append(
+                        f"第 {i} 个代码块第 {ln} 行的注释被删掉：{ecmt.strip()[:60]!r}"
+                    )
                     break
 
     # 5 & 6. 结构
@@ -195,7 +288,18 @@ def check_pair(en: Path, zh: Path) -> list[str]:
     if callouts(en_body) != callouts(zh_body):
         issues.append(f"callout 不一致：原文 {callouts(en_body)}，译文 {callouts(zh_body)}")
 
-    # 8. 残留英文
+    # 8. 结构性文字的固定译法（只在原文确实有这段结构时才要求，
+    #    否则正文里偶然出现同名标题会被误判）
+    zh_lines = {ln.strip() for ln in zh_body.splitlines()}
+    en_lines = {ln.strip() for ln in en_body.splitlines()}
+    for en_form, zh_form in FIXED_LINES.items():
+        if en_form in en_lines and en_form in zh_lines:
+            issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
+    for en_form, zh_form in FIXED_INLINE.items():
+        if en_form in en_body and en_form in zh_body:
+            issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
+
+    # 9. 残留英文
     hits = residual_english(zh_body)
     if hits:
         issues.append(f"疑似未翻译的英文 {len(hits)} 处，首条：{hits[0]!r}")
