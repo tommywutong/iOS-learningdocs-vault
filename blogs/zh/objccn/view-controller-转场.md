@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2a90a60f0bf4281a'
 translated: n/a
 ---
@@ -208,10 +208,10 @@ self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(
 
 ## 扩展阅读
 
-- WWDC: Custom Transitions using View Controllers
-- Custom UIViewController transitions
-- iOS 7: Custom Transitions
-- Custom View Controller Transitions with Orientation
+- [WWDC: Custom Transitions using View Controllers](http://asciiwwdc.com/2013/sessions/218)
+- [Custom UIViewController transitions](http://www.teehanlax.com/blog/custom-uiviewcontroller-transitions/)
+- [iOS 7: Custom Transitions](http://www.doubleencore.com/2013/09/ios-7-custom-transitions/)
+- [Custom View Controller Transitions with Orientation](http://whoisryannystrom.com/2013/10/01/View-Controller-Transition-Orientation/)
 
 ---
 

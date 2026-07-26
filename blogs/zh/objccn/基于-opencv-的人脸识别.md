@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a5fe52cd0127bedd'
 translated: n/a
 ---
@@ -48,18 +48,16 @@ OpenCV 声明了命名空间 `cv`，因此 OpenCV 的类的前面会有个 `cv::
 
 下面是在[官方文档](http://docs.opencv.org/modules/core/doc/intro.html)中列出的最重要的模块。
 
-- ：简洁的核心模块，定义了基本的数据结构，包括稠密多维数组
-
-  和其他模块需要的基本函数。
-- ：图像处理模块，包括线性和非线性图像滤波、几何图像转换 (缩放、仿射与透视变换、一般性基于表的重映射)、颜色空间转换、直方图等等。
-- ：视频分析模块，包括运动估计、背景消除、物体跟踪算法。
-- ：包括基本的多视角几何算法、单体和立体相机的标定、对象姿态估计、双目立体匹配算法和元素的三维重建。
-- ：包含了显著特征检测算法、描述算子和算子匹配算法。
-- ：物体检测和一些预定义的物体的检测 (如人脸、眼睛、杯子、人、汽车等)。
-- ：多种机器学习算法，如 K 均值、支持向量机和神经网络。
-- ：一个简单易用的接口，提供视频捕捉、图像和视频编码等功能，还有简单的 UI 接口 (iOS 上可用的仅是其一个子集)。
-- ：OpenCV 中不同模块的 GPU 加速算法 (iOS 上不可用)。
-- ：使用 OpenCL 实现的通用算法 (iOS 上不可用)。
+- **core**：简洁的核心模块，定义了基本的数据结构，包括稠密多维数组 `Mat` 和其他模块需要的基本函数。
+- **imgproc**：图像处理模块，包括线性和非线性图像滤波、几何图像转换 (缩放、仿射与透视变换、一般性基于表的重映射)、颜色空间转换、直方图等等。
+- **video**：视频分析模块，包括运动估计、背景消除、物体跟踪算法。
+- **calib3d**：包括基本的多视角几何算法、单体和立体相机的标定、对象姿态估计、双目立体匹配算法和元素的三维重建。
+- **features2d**：包含了显著特征检测算法、描述算子和算子匹配算法。
+- **objdetect**：物体检测和一些预定义的物体的检测 (如人脸、眼睛、杯子、人、汽车等)。
+- **ml**：多种机器学习算法，如 K 均值、支持向量机和神经网络。
+- **highgui**：一个简单易用的接口，提供视频捕捉、图像和视频编码等功能，还有简单的 UI 接口 (iOS 上可用的仅是其一个子集)。
+- **gpu**：OpenCV 中不同模块的 GPU 加速算法 (iOS 上不可用)。
+- **ocl**：使用 OpenCL 实现的通用算法 (iOS 上不可用)。
 - 一些其它辅助模块，如 Python 绑定和用户贡献的算法。
 
 ### 基础类和操作
@@ -88,17 +86,9 @@ uchar *pixelPtr = cvMat.data + rowIndex * cvMat.step[0] + colIndex * cvMat.step[
 
 集成 OpenCV 到你的工程中有三种方法：
 
-- 。
-- iOS 框架发行包
-
-  ，并把它添加到工程里。
-- GitHub
-
-  拉下代码，并根据
-
-  教程
-
-  自己编译 OpenCV 库。
+- 使用 CocoaPods 就好： `pod "OpenCV"`。
+- 下载官方[iOS 框架发行包](http://opencv.org/downloads.html)，并把它添加到工程里。
+- 从 [GitHub](https://github.com/Itseez/opencv) 拉下代码，并根据[教程](http://docs.opencv.org/doc/tutorials/introduction/ios_install/ios_install.html#ios-installation)自己编译 OpenCV 库。
 
 ### Objective-C++
 

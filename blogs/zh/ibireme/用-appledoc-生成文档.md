@@ -39,10 +39,10 @@ appledoc是最年轻的一个，并且只为Objective-C服务（很专一），�
 
 ### 安装
 
-- 正常安装
-- Homebrew
-- 自己编译
-- 更新
+- [正常安装](#)
+- [Homebrew](#)
+- [自己编译](#)
+- [更新](#)
 
 ```
 git clone git://github.com/tomaz/appledoc.git

@@ -26,43 +26,9 @@ translated: n/a
 
 在 2019 年 SwiftUI 刚问世时，除去专门用来管理手势的 `@GestureState` 以外，有三个常用的和状态管理相关的 property wrapper，它们分别是 `@State`，`@ObservedObject` 和 `@EnvironmentObject`。根据职责和作用范围不同，它们各自的适用场景也有区别。一般来说：
 
-- 用于
-
-  中的私有状态值，一般来说它所修饰的都应该是 struct 值，并且不应该被其他的 view 看到。它代表了 SwiftUI 中作用范围最小，本身也最简单的状态，比如一个
-
-  ，一个
-
-  或者一个
-
-  。简单说，如果一个状态能够被标记为
-
-  并且它是值类型，那么
-
-  是适合的。
-- 协议。对于这样的 class 类型，其中被标记为
-
-  的属性，将会在变更时自动发出事件，通知对它有依赖的
-
-  进行更新。
-
-  中如果需要依赖这样的
-
-  对象，在声明时则使用
-
-  来订阅。
-- 针对那些需要传递到深层次的子
-
-  中的
-
-  对象，我们可以在父层级的
-
-  上用
-
-  修饰器来将它注入到环境中，这样任意子
-
-  都可以通过
-
-  来获取对应的对象。
+- `@State` 用于 `View` 中的私有状态值，一般来说它所修饰的都应该是 struct 值，并且不应该被其他的 view 看到。它代表了 SwiftUI 中作用范围最小，本身也最简单的状态，比如一个 `Bool`，一个 `Int` 或者一个 `String`。简单说，如果一个状态能够被标记为 `private` 并且它是值类型，那么 `@State` 是适合的。
+- 对于更复杂的一组状态，我们可以将它组织在一个 class 中，并让其实现 `ObservableObject` 协议。对于这样的 class 类型，其中被标记为 `@Published` 的属性，将会在变更时自动发出事件，通知对它有依赖的 `View` 进行更新。`View` 中如果需要依赖这样的 `ObservableObject` 对象，在声明时则使用 `@ObservedObject` 来订阅。
+- `@EnvironmentObject` 针对那些需要传递到深层次的子 `View` 中的 `ObservableObject` 对象，我们可以在父层级的 `View` 上用 `.environmentObject` 修饰器来将它注入到环境中，这样任意子 `View` 都可以通过 `@EnvironmentObject` 来获取对应的对象。
 
 这基本就是初版 SwiftUI 状态管理的全部了。
 

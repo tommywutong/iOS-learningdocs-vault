@@ -229,13 +229,7 @@ PhotoViewController *vc = obj;
 
 ## 扩展阅读
 
-- Test-Driven iOS Development
-
-  我的 iOS TDD 入门书
-- Kiwi 的 Wiki
-
-  关于 Kiwi 你所需要知道的一切
-- Unit Testing - NSHipster
-- Test Driving iOS Development with Kiwi
-
-  iBook的书，中国区不让卖书，所以可能需要非中国账号 (日本账号这本书只要 5 美金)
+- [Test-Driven iOS Development](http://www.amazon.com/Test-Driven-iOS-Development-Developers-Library/dp/0321774183) 我的 iOS TDD 入门书
+- [Kiwi 的 Wiki](https://github.com/kiwi-bdd/Kiwi/wiki) 关于 Kiwi 你所需要知道的一切
+- [Unit Testing - NSHipster](http://nshipster.com/unit-testing/)
+- [Test Driving iOS Development with Kiwi](https://itunes.apple.com/us/book/test-driving-ios-development/id502345143?mt=11) iBook的书，中国区不让卖书，所以可能需要非中国账号 (日本账号这本书只要 5 美金)

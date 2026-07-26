@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-07-17
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b13f56f8ad86cb7c'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年7月17日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 看了`objc.io`中的[《Behaviors in iOS Apps》](http://www.objc.io/issue-13/behaviors.html)（objccn上也有[中文翻译版](http://objccn.io/issue-13-3/)）后，终于**如梦初醒**了IB中的这个低调的`Object`存在的意义：
 
@@ -33,7 +33,7 @@ translated: n/a
 
 ---
 
-# [#Top-Level-Objects](#Top-Level-Objects)Top Level Objects
+# Top Level Objects
 
 首先必须说明Top Level Objects这个概念，根据apple文档：
 
@@ -45,18 +45,18 @@ translated: n/a
 
 事实上任何Object都可以添加，这里出现了一个LoginViewModel对象、一个菊花、一个Tap手势。
 
-### [#Nib对象的创建顺序](#Nib对象的创建顺序)Nib对象的创建顺序
+### Nib对象的创建顺序
 
-1. 消息
-2. 消息
-3. 消息
-4. 消息
-5. 消息
-6. 消息
+1. 自定义的Top Level Objects收到`- init`消息
+2. ViewController收到`- initWithCoder:`消息
+3. 自定义的Top Level Objects 收到`- awakeFromNib`消息
+4. ViewController收到`- awakeFromNib`消息
+5. 子View分别收到`- initWithCoder:`消息
+6. 子View分别收到`- awakeFromNib`消息
 
 可见自定义的Object的创建时间是早于VC的，至于为什么`- awakeFromNib`收到的晚于VC的创建，是因为**创建出来的Object需要被VC强引用**
 
-### [#VC对自定义Objects的强引用](#VC对自定义Objects的强引用)VC对自定义Objects的强引用
+### VC对自定义Objects的强引用
 
 创建出来的Object必须保证不被释放，这个强引用由VC实现，虽说没有显示的API，但从`UIViewController.h`中可以看到马脚：
 
@@ -82,7 +82,7 @@ _注：只在storyboard下生效，在xib下，被创建的Object因为没有被
 
 ---
 
-# [#构建0代码VC的简单登录场景](#构建0代码VC的简单登录场景)构建0代码VC的简单登录场景
+# 构建0代码VC的简单登录场景
 
 **storyboard中拉出个VC，随便摆摆：**  
 ![](http://ww3.sinaimg.cn/large/51530583gw1eig0usoroej209k076t8p.jpg)
@@ -121,17 +121,15 @@ _注：只在storyboard下生效，在xib下，被创建的Object因为没有被
 
 ---
 
-# [#What’s-more](#What’s-more)What’s more
+# What’s more
 
-- ，继承+重载无可非议（但像UITableView这种被设计成
-
-  的类，我们更应该去配置它，而非继承它，更别说NSArray，NSString这种类簇的工具类了）
+- 首先，这次实验并非表明我们应该写0代码的VC，UIViewController本身被设计作为一个`模板类`，继承+重载无可非议（但像UITableView这种被设计成`配置类`的类，我们更应该去配置它，而非继承它，更别说NSArray，NSString这种类簇的工具类了）
 - 组合模式以十分灵活的方式划分功能，Demo中只用了一个ViewModel，其实完全可以组合一个Animation类实现动画，组合一个HTTP类来发请求？，组合一个处理旋转屏幕的类等等，而且**完成这些子功能的代码集中在一个类中，而不是分散在VC的各个角落，两个功能的小模块间可以说没有耦合**
 - VC没有代码，但storyboard已经干了VC该干的事，如创建和布局子View、设置Autolayout、设置action，定义跳转等。我想，Apple祭出storyboard的目的就在于将纯视图和纯代码逻辑分离，VC本该Control它的View，而不是自己就是那个View
 
 ---
 
-# [#References](#References)References
+# References
 
 [https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/LoadingResources/CocoaNibs/CocoaNibs.html](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/LoadingResources/CocoaNibs/CocoaNibs.html)  
 [http://www.objc.io/issue-13/behaviors.html](http://www.objc.io/issue-13/behaviors.html)

@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-05-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:10e95f6bcf4eedae'
 translated: n/a
 ---
@@ -353,6 +353,6 @@ void _class_initialize(Class cls)
 
 ## 参考链接
 
-- https://www.mikeash.com/pyblog/friday-qa-2009-05-22-objective-c-class-loading-and-initialization.html
-- http://blog.iderzheng.com/objective-c-load-vs-initialize/
-- http://nshipster.com/method-swizzling/
+- [https://www.mikeash.com/pyblog/friday-qa-2009-05-22-objective-c-class-loading-and-initialization.html](https://www.mikeash.com/pyblog/friday-qa-2009-05-22-objective-c-class-loading-and-initialization.html)
+- [http://blog.iderzheng.com/objective-c-load-vs-initialize/](http://blog.iderzheng.com/objective-c-load-vs-initialize/)
+- [http://nshipster.com/method-swizzling/](http://nshipster.com/method-swizzling/)

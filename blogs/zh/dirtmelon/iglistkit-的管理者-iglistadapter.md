@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-12-27
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:78e032804a85fc18'
 translated: n/a
 ---
@@ -628,13 +628,9 @@ typedef NS_ENUM(NSInteger, IGListAdapterUpdateType) {
 
 这个方法会在以下几种情况下调用：
 
-1. 的
-
-  前调用；
-2. 后调用；
-3. 执行
-
-  方法后。
+1. 执行 `-[IGListAdapter performUpdatesAnimated:completion:]` 的 `completion block` 前调用；
+2. 执行 `-[IGListAdapter reloadDataWithCompletion:]` 后调用；
+3. `IGListSectionController` 执行 `-[IGListCollectionContext performBatchAnimated:updates:completion:]` 方法后。
 
 `IGListAdapter` 支持设置多个 `Listener` ，对外提供了两个方法来添加和移除 `Listener` :
 

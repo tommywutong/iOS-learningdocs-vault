@@ -24,7 +24,7 @@ Apple 在 Xcode 7 中新加入了一套 UI Testing 的工具，其目的就是�
 
 本文是我的 [WWDC15 笔记](http://onevcat.com/2015/06/ios9-sdk/)中的一篇，本文所参考的有：
 
-- UI Testing in Xcode
+- [UI Testing in Xcode](https://developer.apple.com/videos/wwdc/2015/?id=406)
 
 ### UI Testing 和 Accessibility
 

@@ -140,7 +140,7 @@ Reply in my preferred language.
 
 啊，对了。链接还是可以放一下的：
 
-- https://prowl.cat
-- onevcat/Prowl
+- 官网： [https://prowl.cat](https://prowl.cat)
+- GitHub：[onevcat/Prowl](https://github.com/onevcat/Prowl)
 
 如果有兴趣的话，不妨点个星，会是对我很大的支持！另外，官网里其实有个小彩蛋，也等你来发现 :P

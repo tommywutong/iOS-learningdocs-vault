@@ -18,11 +18,11 @@ translated: n/a
 
 本文是我的 [WWDC 2014 笔记](http://onevcat.com/2014/07/developer-should-know-about-ios8/) 中的一篇，涉及的 Session 有
 
-- What’s New in Cocoa Touch
-- Building Adaptive Apps with UIKit
-- What’s New in Interface Builder
-- View Controller Advancements in iOS 8
-- A Look Inside Presentation Controllers
+- [What’s New in Cocoa Touch](http://devstreaming.apple.com/videos/wwdc/2014/202xx3ane09vxdz/202/202_hd_whats_new_in_cocoa_touch.mov?dl=1)
+- [Building Adaptive Apps with UIKit](http://devstreaming.apple.com/videos/wwdc/2014/216xxcnxc6wnkf3/216/216_hd_building_adaptive_apps_with_uikit.mov?dl=1)
+- [What’s New in Interface Builder](http://devstreaming.apple.com/videos/wwdc/2014/411xx0xo98zzoor/411/411_hd_whats_new_in_interface_builder.mov?dl=1)
+- [View Controller Advancements in iOS 8](http://devstreaming.apple.com/videos/wwdc/2014/214xxq2mdbtmp23/214/214_hd_view_controller_advancements_in_ios_8.mov?dl=1)
+- [A Look Inside Presentation Controllers](http://devstreaming.apple.com/videos/wwdc/2014/228xxnfgueiskhi/228/228_hd_a_look_inside_presentation_controllers.mov?dl=1)
 
 iOS 8 和 OS X 10.10 中一个被强调了多次的主题就是大一统，Apple 希望通过 Hand-off 和各种体验的无缝切换和集成将用户黏在由 Apple 设备构成的生态圈中。而对开发者而言，今年除了 Swift 的一个大主题也是平台的统一。在 What’s New in Cocoa Touch 的 Seesion 一开始，UIKit 的工程师 Luke 就指出了 iOS 8 SDK 的最重要的关键字就是自适应 (adaptivity)。这是一个很激动人心的词，首先自适应是一种设计哲学，尽量使事情保持简单，我们便可从中擢取优雅；另一方面，可能这也是 Apple 不得不做的转变。随着传说中的更大屏和超大屏的 iPhone 6 的到来，开发者在为 iOS 进行开发的时候似乎也开始面临着和安卓一样的设备尺寸的碎片化的问题。而 iOS 8 所着重希望解决的，就是这一问题。
 

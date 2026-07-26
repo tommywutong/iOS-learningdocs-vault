@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c9e512be48a9a6cb'
 translated: n/a
 ---
@@ -37,19 +37,17 @@ _注意：这里只是列举个别细节。_
 iOS的做法是：
 
 1. 打开系统拍照应用拍张照片。
-2. 应用，启动应用，选择已存在照片，从系统相册里选取照片，然后编辑。
-3. 应用恰好支持直接分享
-
-  Instagram 又在分享列表中，就此完成任务。
+2. 回到主界面，找到_图片编辑_应用，启动应用，选择已存在照片，从系统相册里选取照片，然后编辑。
+3. 如果_图片编辑_应用恰好支持直接分享**且** Instagram 又在分享列表中，就此完成任务。
 4. 如果第 3 点条件不满足，那就得先把编辑好的照片保存到系统相册。
-5. 然后打开它...
+5. 再一次回到主界面，找到 _Instagram_ 然后打开它...
 6. 导入之前编辑保存的照片，然后分享给 Instagram 上的潮友们。;)
 
 至于 Android，就简单得多了：
 
 1. 打开拍照应用，拍张照片。
-2. 应用，然后直接编辑。
-3. 应用支持直接分享（我还从来没见过哪个图片处理应用不支持直接分享的），点击分享然后选择 Instagram。假如这个应用不支持分享，直接卸载算了，换个靠谱的应用来处理，或者干脆用系统集成的图片编辑器。KitKat 之后的系统内建编辑器已经相当酷炫。
+2. 向右滑查看“相册”，然后点击分享按钮。选择想要使用的_图片编辑_应用，然后直接编辑。
+3. 如果_图片编辑_应用支持直接分享（我还从来没见过哪个图片处理应用不支持直接分享的），点击分享然后选择 Instagram。假如这个应用不支持分享，直接卸载算了，换个靠谱的应用来处理，或者干脆用系统集成的图片编辑器。KitKat 之后的系统内建编辑器已经相当酷炫。
 
 需要说明的是，对于那些提供分享功能的 iOS 应用来说，其处理流程和 Android 基本是一致的。根本性的差别是，如果应用本身不支持分享那就断绝了分享给其他应用的道路。与 Facebook 和 Twitter 一样，Instagram 这类热门应用还好，但是除此之外还有大量的应用，基本上没什么应用会集成针对它们的分享服务。
 
@@ -172,8 +170,8 @@ if (getIntent() != null ) {
 
 `Intents` 还有两个重要职责：
 
-- [^4]（或向其发送指令）。
-- （广播）。
+- 启动 `Service`[^4]（或向其发送指令）。
+- 发`Broadcast`（广播）。
 
 ### 启动服务
 
@@ -515,11 +513,11 @@ Google Translate 将刚刚的文本翻译成了意大利文。
 
 ##延伸阅读
 
-- Intents and Filters
-- Intents
-- Common Intents
-- Integrating Application with Intents
-- Sharing Simple Data
+- [Intents and Filters](http://developer.android.com/guide/components/intents-filters.html)
+- [Intents](http://developer.android.com/reference/android/content/Intent.html)
+- [Common Intents](http://developer.android.com/guide/components/intents-common.html)
+- [Integrating Application with Intents](http://android-developers.blogspot.com.es/2009/11/integrating-application-with-intents.html)
+- [Sharing Simple Data](http://developer.android.com/training/sharing/index.html)
 
 [^1]: Activities 是在你的应用中提供单个屏幕的用户界面的组件。
 

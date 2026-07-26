@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-09
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c6b46b29658e544c'
 translated: n/a
 ---
@@ -20,17 +20,13 @@ translated: n/a
 
 KVO(Key Value Observing)，是`观察者模式`在`Foundation`中的实现
 
-## [#KVO的原理](#KVO的原理)KVO的原理
+## KVO的原理
 
 简而言之就是：
 
 1. 当一个object有观察者时，动态创建这个object的类的子类
-2. 方法
-3. 方法中调用
-
-  和
-
-  通知观察者
+2. 对于每个被观察的property，重写其`set`方法
+3. 在重写的`set`方法中调用`- willChangeValueForKey:`和`- didChangeValueForKey:`通知观察者
 4. 当一个property没有观察者时，删除重写的方法
 5. 当没有observer观察任何一个property时，删除动态创建的子类
 
@@ -131,10 +127,10 @@ Sark
 大概就是说arc下这个方法在所有`dealloc`调用完成后负责释放所有的变量，当然这个和kvo没啥关系了，回到正题。  
 从上面breakpoint2的打印可以看出，动态类重写了4个方法：
 
-1. 最主要的重写方法，set值时调用通知函数
-2. 隐藏自己必备啊，返回原来类的class
-3. 做清理犯罪现场工作
-4. 这就是内部使用的标示了，判断这个类有没被KVO动态生成子类
+1. `- setName:`最主要的重写方法，set值时调用通知函数
+2. `- class`隐藏自己必备啊，返回原来类的class
+3. `- dealloc`做清理犯罪现场工作
+4. `- _isKVOA`这就是内部使用的标示了，判断这个类有没被KVO动态生成子类
 
 ---
 

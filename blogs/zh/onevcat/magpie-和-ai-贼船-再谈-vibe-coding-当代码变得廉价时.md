@@ -36,8 +36,8 @@ translated: n/a
 
 非常欢迎大家加星和尝试，以及提出建议。
 
-- onevcat/Magpie
-- onevcat/ai-ship
+- [onevcat/Magpie](https://github.com/onevcat/magpie)
+- [onevcat/ai-ship](https://github.com/onevcat/ai-ship)
 
 ### 开发中的 Vibe Coding 体验
 
@@ -92,7 +92,11 @@ Magpie 的情况要复杂一些：它实际牵涉到多个项目，包括 web �
 
 AI 在实现基础功能和调整布局时非常好用，但是生成的页面总会有些冰冷。我在 [Magpie](https://onevcat.link/) 中加入一些悬停动效，增加页面的趣味性。
 
+您的浏览器不支持 HTML5 视频。
+
 对于[「AI贼船」](https://ai.onev.cat)，希望能更专注提供的内容。在页面顶部我添加了大范围的留白，这让站点标题更加突出；为了让页面不要全是文字，结合站点标题准备了一艘小船图标作为标题的补充；为了能让站点具备一定的动态感，为标题和图标添加了悬停动画，让小船能真正“出航”。
+
+您的浏览器不支持 HTML5 视频。
 
 在 vibe coding 的环境下，对这些细节的思考和实现所花的时间，甚至超过了页面的业务逻辑本身。不过也正是这些地方，才能让你的 app 免于千篇一律。
 

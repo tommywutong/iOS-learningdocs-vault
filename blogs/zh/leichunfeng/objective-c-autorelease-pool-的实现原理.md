@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-05-31
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bffe1e4004e71306'
 translated: n/a
 ---
@@ -175,19 +175,13 @@ __weak NSString *string_weak_ = nil;
 
 ![AutoreleasePoolPage](http://leichunfeng.github.io/images/AutoreleasePoolPage.png)
 
-1. 用来校验 AutoreleasePoolPage 的结构是否完整；
-2. 指向最新添加的 autoreleased 对象的下一个位置，初始化时指向
-
-  ；
-3. 指向当前线程；
-4. 指向父结点，第一个结点的 parent 值为
-
-  ；
-5. 指向子结点，最后一个结点的 child 值为
-
-  ；
-6. 代表深度，从 0 开始，往后递增 1；
-7. 代表 high water mark 。
+1. `magic` 用来校验 AutoreleasePoolPage 的结构是否完整；
+2. `next` 指向最新添加的 autoreleased 对象的下一个位置，初始化时指向 `begin()` ；
+3. `thread` 指向当前线程；
+4. `parent` 指向父结点，第一个结点的 parent 值为 `nil` ；
+5. `child` 指向子结点，最后一个结点的 child 值为 `nil` ；
+6. `depth` 代表深度，从 0 开始，往后递增 1；
+7. `hiwat` 代表 high water mark 。
 
 另外，当 `next == begin()` 时，表示 AutoreleasePoolPage 为空；当 `next == end()` 时，表示 AutoreleasePoolPage 已满。
 
@@ -301,7 +295,7 @@ static inline id *autoreleaseFast(id obj)
 
 `autoreleaseFast` 函数在执行一个具体的插入操作时，分别对三种情况进行了不同的处理：
 
-1. 指向的位置；
+1. 当前 page 存在且没有满时，直接将对象添加到当前 page 中，即 `next` 指向的位置；
 2. 当前 page 存在且已满时，创建一个新的 page ，并将对象添加到新创建的 page 中；
 3. 当前 page 不存在时，即还没有 page 时，创建第一个 page ，并将对象添加到新创建的 page 中。
 

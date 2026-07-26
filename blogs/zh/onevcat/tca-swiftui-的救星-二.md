@@ -74,12 +74,8 @@ var body: some View {
 
 `viewStore.binding` 方法接受 `get` 和 `send` 两个参数，它们都是和当前 View Store 及绑定 view 类型相关的泛型函数。在特化 (将泛型在这个上下文中转换为具体类型) 后：
 
-- 负责为对象 View (这里的
-
-  ) 提供数据。
-- 负责将 View 新发送的值转换为 View Store 可以理解的 action，并发送它来触发
-
-  。
+- `get: (Counter) -> String` 负责为对象 View (这里的 `TextField`) 提供数据。
+- `send: (String) -> CounterAction` 负责将 View 新发送的值转换为 View Store 可以理解的 action，并发送它来触发 `counterReducer`。
 
 在 `counterReducer` 接到 `binding` 给出的 `setCount` 事件后，我们就回到使用 reducer 进行状态更新，并驱动 UI 的标准 TCA 循环中了。
 
@@ -137,17 +133,9 @@ let counterReducer = Reducer<Counter, CounterAction, CounterEnvironment> {
 
 如果在一个 Feature 中，有多个绑定值的话，使用例子中这样的方式，每次我们都会需要添加一个 action，然后在 `binding` 中 `send` 它。这是千篇一律的模板代码，TCA 中设计了 `@BindableState` 和 `BindableAction`，让多个绑定的写法简单一些。具体来说，分三步：
 
-1. 中的需要和 UI 绑定的变量添加
-
-  。
-2. 声明为
-
-  ，然后添加一个“特殊”的 case
-
-  。
-3. ，并添加
-
-  调用。
+1. 为 `State` 中的需要和 UI 绑定的变量添加 `@BindableState`。
+2. 将 `Action` 声明为 `BindableAction`，然后添加一个“特殊”的 case `binding(BindingAction<Counter>)` 。
+3. 在 Reducer 中处理这个 `.binding`，并添加 `.binding()` 调用。
 
 直接用代码说明会更快：
 

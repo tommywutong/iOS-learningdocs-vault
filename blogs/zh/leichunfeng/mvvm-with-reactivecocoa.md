@@ -7,7 +7,7 @@ original_language: zh
 published: 2016-02-27
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b06afa6a7fa02ba8'
 translated: n/a
 ---
@@ -22,23 +22,9 @@ Feb 27th, 2016 10:17 pm
 
 **说明**：本文将采用理论与实践相结合的方式，重点介绍一个使用 `MVVM` 和 `RAC` 开发的 `iOS` 开源项目 [MVVMReactiveCocoa](https://github.com/leichunfeng/MVVMReactiveCocoa) ，目的是希望能为你实践 `MVVM` 提供帮助。不过，在正式开始介绍正文之前，请你先思考以下三个问题：
 
-- 与
-
-  有什么异同点，
-
-  到
-
-  是怎样演进的；
-- 在
-
-  中扮演什么样的角色，
-
-  是否一定要结合
-
-  使用；
-- 应用转变成一个
-
-  应用，有哪些需要注意的地方。
+- `MVC` 与 `MVVM` 有什么异同点，`MVC` 到 `MVVM` 是怎样演进的；
+- `RAC` 在 `MVVM` 中扮演什么样的角色，`MVVM` 是否一定要结合 `RAC` 使用；
+- 如何将一个现有的 `MVC` 应用转变成一个 `MVVM` 应用，有哪些需要注意的地方。
 
 带着以上问题，我们一起进入正文。
 
@@ -68,50 +54,10 @@ Feb 27th, 2016 10:17 pm
 
 从上图中，我们可以非常清楚地看到 `MVVM` 中四个组件之间的关系。**注**：除了 `view` 、`viewModel` 和 `model` 之外，`MVVM` 中还有一个非常重要的隐含组件 `binder` ：
 
-- ：由
-
-  中的
-
-  和
-
-  组成，负责
-
-  的展示，绑定
-
-  中的属性，触发
-
-  中的命令；
-- ：从
-
-  的
-
-  中抽取出来的展示逻辑，负责从
-
-  中获取
-
-  所需的数据，转换成
-
-  可以展示的数据，并暴露公开的属性和命令供
-
-  进行绑定；
-- ：与
-
-  中的
-
-  一致，包括数据模型、访问数据库的操作和网络请求等；
-- ：在
-
-  中，声明式的数据和命令绑定是一个隐含的约定，它可以让开发者非常方便地实现
-
-  和
-
-  的同步，避免编写大量繁杂的样板化代码。在微软的
-
-  实现中，使用的是一种被称为
-
-  XAML
-
-  的标记语言。
+- `view` ：由 `MVC` 中的 `view` 和 `controller` 组成，负责 `UI` 的展示，绑定 `viewModel` 中的属性，触发 `viewModel` 中的命令；
+- `viewModel` ：从 `MVC` 的 `controller` 中抽取出来的展示逻辑，负责从 `model` 中获取 `view` 所需的数据，转换成 `view` 可以展示的数据，并暴露公开的属性和命令供 `view` 进行绑定；
+- `model` ：与 `MVC` 中的 `model` 一致，包括数据模型、访问数据库的操作和网络请求等；
+- `binder` ：在 `MVVM` 中，声明式的数据和命令绑定是一个隐含的约定，它可以让开发者非常方便地实现 `view` 和 `viewModel` 的同步，避免编写大量繁杂的样板化代码。在微软的 `MVVM` 实现中，使用的是一种被称为 [XAML](https://en.wikipedia.org/wiki/Extensible_Application_Markup_Language) 的标记语言。
 
 ## ReactiveCocoa
 
@@ -237,19 +183,9 @@ Feb 27th, 2016 10:17 pm
 
 怎么样？其实 `MVVM` 并没有想像中的那么难吧，而且更重要的是它也没有破坏 `MVC` 的现有结构，只不过是移动了一些代码，仅此而已。好了，说了这么多，那 `MVVM` 相比 `MVC` 到底有哪些好处呢？我想，主要可以归纳为以下三点：
 
-- 中，所以
-
-  中的代码将会变得非常轻量级；
-- 中的代码是与
-
-  无关的，所以它具有良好的可测试性；
-- 来说，改变它可能会比较困难，并且存在一定的风险。在这种场景下，
-
-  可以作为
-
-  的适配器使用，从而避免对
-
-  进行较大的改动。
+- 由于展示逻辑被抽取到了 `viewModel` 中，所以 `view` 中的代码将会变得非常轻量级；
+- 由于 `viewModel` 中的代码是与 `UI` 无关的，所以它具有良好的可测试性；
+- 对于一个封装了大量业务逻辑的 `model` 来说，改变它可能会比较困难，并且存在一定的风险。在这种场景下，`viewModel` 可以作为 `model` 的适配器使用，从而避免对 `model` 进行较大的改动。
 
 通过前面的示例，我们对第一点已经有了一定的感触；至于第三点，可能对于一个复杂的大型应用来说，才会比较明显；下面，我们还是使用前面的示例，来直观地感受下第二点好处：
 
@@ -313,12 +249,8 @@ SpecEnd
 
 从上图中，我们可以看到，在 `MVVMReactiveCocoa` 中主要有两大继承体系：
 
-- 的继承体系，基类为
-
-  ；
-- 的继承体系，基类为
-
-  。
+- 用蓝色标识出来的 `viewModel` 的继承体系，基类为 `MRCViewModel` ；
+- 用红色标识出来的 `view` 的继承体系，基类为 `MRCViewController` 。
 
 除了提供与系统基类 `UIViewController` 相对应的基类 `MRCViewModel/MRCViewController` 外，还提供了与系统基类 `UITableViewController` 和 `UITabBarController` 相对应的基类 `MRCTableViewModel/MRCTableViewController` 和 `MRCTabBarViewModel/MRCTabBarController` ，其中基类 `MRCTableViewModel/MRCTableViewController` 的使用最为普遍。
 
@@ -332,17 +264,9 @@ SpecEnd
 
 从上图中，我们可以看出，在服务总线类 `MRCViewModelServices/MRCViewModelServicesImpl` 中，主要包括以下三个方面的内容：
 
-- 和
-
-  两个服务类；
-- 提供的
-
-  框架，用天蓝色进行了标识，主要包括
-
-  服务类；
-- 协议和实现类
-
-  等。
+- 应用自有的服务类，用柚黄色进行了标识，包括 `MRCAppStoreService/MRCAppStoreServiceImpl` 和 `MRCRepositoryService/MRCRepositoryServiceImpl` 两个服务类；
+- 第三方 `GitHub` 提供的 `API` 框架，用天蓝色进行了标识，主要包括 `OCTClient` 服务类；
+- 应用的导航服务，用藻绿色进行了标识，包括 `MRCNavigationProtocol` 协议和实现类 `MRCViewModelServicesImpl` 等。
 
 其中，前两者都是以信号的形式对 `viewModel` 层提供服务，代表异步的网络请求等数据获取操作，而我们在 `viewModel` 层则可以通过订阅信号的形式获取到所需的数据。此外，服务总线还实现了 `MRCNavigationProtocol` 协议，它的内容如下：
 
@@ -386,19 +310,9 @@ SpecEnd
 
 我们先来思考一个问题，就是我们为什么要实现 `ViewModel-Based` 的导航操作呢？直接在 `view` 层使用系统的 `push/present` 等操作来完成导航不就好了么？我总结了一下这么做的理由，主要有以下三点：
 
-- 模式的应用应该是以
-
-  为驱动来运转的；
-- 的探讨，
-
-  提供了
-
-  所需的数据和命令。因此，我们往往可以直接在命令执行成功后使用
-
-  顺带就把导航操作给做了，一气呵成；
-- 更加轻量级，只需要绑定
-
-  提供的数据和命令即可。
+- 从理论上来说，`MVVM` 模式的应用应该是以 `viewModel` 为驱动来运转的；
+- 根据我们前面对 `MVVM` 的探讨，`viewModel` 提供了 `view` 所需的数据和命令。因此，我们往往可以直接在命令执行成功后使用 `doNext` 顺带就把导航操作给做了，一气呵成；
+- 这样可以使 `view` 更加轻量级，只需要绑定 `viewModel` 提供的数据和命令即可。
 
 既然如此，那我们究竟要如何实现 `ViewModel-Based` 的导航操作呢？我们都知道 `iOS` 中的导航操作无外乎两种，`push/pop` 和 `present/dismiss` ，前者是 `UINavigationController` 特有的功能，而后者是所有 `UIViewController` 都具备的功能。**注意**，`UINavigationController` 也是 `UIViewController` 的子类，所以它也同样具备 `present/dismiss` 的功能。因此，从本质上来说，不管我们要实现什么样的导航操作，最终都是离不开 `push/pop` 和 `present/dismiss` 的。
 
@@ -578,13 +492,9 @@ SpecEnd
 
 其中，主要的界面元素有：
 
-- ；
-- 和
-
-  ；
-- 和一个跳转到浏览器授权登录的按钮
-
-  。
+- 一个用于展示用户头像的按钮 `avatarButton` ；
+- 用于输入账号和密码的输入框 `usernameTextField` 和 `passwordTextField` ；
+- 一个直接登录的按钮 `loginButton` 和一个跳转到浏览器授权登录的按钮 `browserLoginButton` 。
 
 **分析**：根据我们前面对 `MVVM` 的探讨，`viewModel` 需要提供 `view` 所需的数据和命令。因此，`MRCLoginViewModel.h` 头文件的内容大致如下：
 
@@ -684,17 +594,9 @@ SpecEnd
 @end
 ```
 
-- 层的方法查询本地数据库中缓存的用户数据，并返回
-
-  属性;
-- ，如果是则登录按钮可用，否则不可用;
-- 或
-
-  命令执行成功时，调用
-
-  代码块，使用服务总线中的方法
-
-  进入首页。
+- 当用户输入的用户名发生变化时，调用 `model` 层的方法查询本地数据库中缓存的用户数据，并返回 `avatarURL` 属性;
+- 当用户输入的用户名或密码发生变化时，判断用户名和密码的长度是否均大于 `0` ，如果是则登录按钮可用，否则不可用;
+- 当 `loginCommand` 或 `browserLoginCommand` 命令执行成功时，调用 `doNext` 代码块，使用服务总线中的方法 `resetRootViewModel:` 进入首页。
 
 接下来，我们来看看 `MRCLoginViewController` 中的部分关键代码：
 
@@ -768,34 +670,10 @@ SpecEnd
 @end
 ```
 
-- 中
-
-  属性的变化，然后设置
-
-  中的图片；
-- 中的
-
-  和
-
-  属性分别与
-
-  和
-
-  输入框中的内容进行绑定；
-- 的
-
-  属性与
-
-  的
-
-  属性进行绑定；
-- 和
-
-  按钮被点击时分别执行
-
-  和
-
-  命令。
+- 观察 `viewModel` 中 `avatarURL` 属性的变化，然后设置 `avatarButton` 中的图片；
+- 将 `viewModel` 中的 `username` 和 `password` 属性分别与 `usernameTextField` 和 `passwordTextField` 输入框中的内容进行绑定；
+- 将 `loginButton` 的 `enabled` 属性与 `viewModel` 的 `validLoginSignal` 属性进行绑定；
+- 在 `loginButton` 和 `browserLoginButton` 按钮被点击时分别执行 `loginCommand` 和 `browserLoginCommand` 命令。
 
 综上所述，我们将 `MRCLoginViewController` 中的展示逻辑抽取到 `MRCLoginViewModel` 中后，使得 `MRCLoginViewController` 中的代码更加简洁和清晰。实践 `MVVM` 的关键点在于，我们要能够分析清楚 `viewModel` 需要暴露给 `view` 的数据和命令，这些数据和命令能够代表 `view` 当前的状态。
 
@@ -803,33 +681,9 @@ SpecEnd
 
 首先，我们从理论出发介绍了 `MVC` 和 `MVVM` 各自的概念以及从 `MVC` 到 `MVVM` 的演进过程；接着，介绍了 `RAC` 在 `MVVM` 中的两个使用场景；最后，我们从实践的角度，重点介绍了一个使用 `MVVM` 和 `RAC` 开发的开源项目 `MVVMReactiveCocoa` 。总的来说，我认为 `iOS` 中的 `MVVM` 可以分为以下三种不同的实践程度，它们分别对应不同的适用场景：
 
-- ，适用于现有的
-
-  项目，想转换成
-
-  但是不打算引入
-
-  作为
-
-  的团队；
-- ，适用于现有的
-
-  项目，想转换成
-
-  并且打算引入
-
-  作为
-
-  的团队；
-- ，适用于全新的项目，想实践
-
-  并且打算引入
-
-  作为
-
-  ，然后也想实践
-
-  的团队。
+- `MVVM + KVO` ，适用于现有的 `MVC` 项目，想转换成 `MVVM` 但是不打算引入 `RAC` 作为 `binder` 的团队；
+- `MVVM + RAC` ，适用于现有的 `MVC` 项目，想转换成 `MVVM` 并且打算引入 `RAC` 作为 `binder` 的团队；
+- `MVVM + RAC + ViewModel-Based Navigation` ，适用于全新的项目，想实践 `MVVM` 并且打算引入 `RAC` 作为 `binder` ，然后也想实践 `ViewModel-Based Navigation` 的团队。
 
 写在最后，希望这篇文章能够打消你对 `MVVM` 模式的顾虑，赶快行动起来吧。
 

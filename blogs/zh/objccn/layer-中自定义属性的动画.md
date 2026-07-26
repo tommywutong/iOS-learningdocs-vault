@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:664a7a3a3207fb35'
 translated: n/a
 ---
@@ -33,7 +33,7 @@ Layer 中自定义属性的动画
 一般说来，我们希望添加到 `CALayer` 的子类上的可动画属性有三种类型：
 
 - 能间接动画 Layer （或其子类）的一个或多个标准属性的属性。
-- 属性）重绘的属性。
+- 能触发 Layer 背后的图像（即 `contents` 属性）重绘的属性。
 - 不涉及 Layer 重绘或对任何已有属性执行动画的属性。
 
 ## 间接属性动画

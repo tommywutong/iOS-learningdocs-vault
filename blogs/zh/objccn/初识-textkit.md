@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e1e13cbceefc2f28'
 translated: n/a
 ---
@@ -141,8 +141,8 @@ TextKit 包括了超过 100 个方法，一篇文章根本没办法尽数涉及�
 
 让我们从最简单的开始：配置文本系统。正如你在上面 TextKit 简图中看到的，`NSTextStorage`、`NSLayoutManager` 和 `NSTextContainer` 之间的箭头都是有两个头的。我试图描述它们的关系是 1 对 N 的关系。就是那样：一个 Text Storage 可以拥有多个 Layout Manager，一个 Layout Manager 也可以拥有多个 Text Container。这些多重性带来了很好的特性：
 
-- ，而且可以把它们放到一起来显示。每一个表现都有独立的位置和大小。如果相应的 Text View 可编辑，那么在某个 Text View 上做的所有修改都会马上反映到所有 Text View 上。
-- 展现出来。很有用的一个例子，基于页面的布局：每个页面包含一个单独的 Text View。所有这些视图的 Text Container 都引用同一个 Layout Manager，这时这个 Layout Manager 就可以将文本分布到这些视图上来显示。
+- 将多个 Layout Manager 附加到同一个 Text Storage 上，可以产生_相同文本的多种视觉表现_，而且可以把它们放到一起来显示。每一个表现都有独立的位置和大小。如果相应的 Text View 可编辑，那么在某个 Text View 上做的所有修改都会马上反映到所有 Text View 上。
+- 将多个 Text Container 附加到同一个 Layout Manager 上，这样可以将_一个文本分布到多个视图_展现出来。很有用的一个例子，基于页面的布局：每个页面包含一个单独的 Text View。所有这些视图的 Text Container 都引用同一个 Layout Manager，这时这个 Layout Manager 就可以将文本分布到这些视图上来显示。
 
 在 Storyboard 或者 Interface 文件中实例化 `UITextView` 时，它会预配置一个文本系统：一个 Text Storage，引用一个 Layout Manager，而后者又引用一个 Text Container。同样地，一个文本系统栈也可以通过代码直接创建：
 

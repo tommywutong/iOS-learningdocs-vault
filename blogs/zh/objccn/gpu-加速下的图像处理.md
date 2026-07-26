@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e442ed8a22c127f2'
 translated: n/a
 ---
@@ -56,9 +56,9 @@ OpenGL ES 2.0 引入了可编程管线。可编程管线允许你创建自己的
 
 幸运的是，过去几年，一些工具和框架减少了开发者在尝试着色器方面的焦虑。
 
-- GPUImage
-- ShaderToy
-- Shaderific
+- [GPUImage](https://github.com/BradLarson/GPUImage)
+- [ShaderToy](https://www.shadertoy.com/)
+- [Shaderific](http://www.shaderific.com/)
 - Quartz Composer
 
 下面我将要写的每一个着色器的例子都是从开源框架 GPUImage 中来的。如果你对 OpenGL/OpenGL ES 场景如何配置，从而使其可以使用着色器渲染感到好奇的话，可以 clone 这个仓储。我们不会深入到怎样设置 OpenGL/OpenGL ES 来使用着色器渲染，这超出了这篇文章的范围。
@@ -161,8 +161,8 @@ gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
 
 在负责 OpenGL 和 OpenGL ES 实现的 Khronos 小组的网站上有一些有用的参考资料。在你开始之前，一件你可以做的最有价值的事情就是获取 OpenGL 和 OpenGL ES 的快速入门指导：
 
-- OpenGL ES
-- OpenGL
+- [OpenGL ES](https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf)
+- [OpenGL](https://www.khronos.org/files/opengl-quick-reference-card.pdf)
 
 通过查看这些参考卡片，你可以快速简单地了解在写 OpenGL 应用时需要的着色语言函数和数据类型。
 
@@ -495,17 +495,17 @@ gl_FragColor = texture2D(inputImageTexture, (refractedVector.xy + 1.0) * 0.5) * 
 
 如果你的数学有些生疏了，我有一些书可以推荐给你：
 
-- 3D Math Primer for Graphics and Game Development
-- The Nature of Code
-- The Computational Beauty of Nature
+- [3D Math Primer for Graphics and Game Development](http://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231/ref=sr_1_1?ie=UTF8&qid=1422837187&sr=8-1&keywords=3d+math+primer+for+graphics+and+game+development)
+- [The Nature of Code](http://natureofcode.com)
+- [The Computational Beauty of Nature](http://www.amazon.com/Computational-Beauty-Nature-Explorations-Adaptation/dp/0262561271/ref=sr_1_1?s=books&ie=UTF8&qid=1422837256&sr=1-1&keywords=computational+beauty+of+nature)
 
 也有数不清的关于GLSL书和特殊着色器被我们行业突出的人士创造出来：
 
-- Graphics Shaders: Theory and Practice
-- The OpenGL Shading Language
-- OpenGL 4 Shading Language Cookbook
-- GPU Gems
-- GPU Pro: Advanced Rendering Techniques
+- [Graphics Shaders: Theory and Practice](http://www.amazon.com/Graphics-Shaders-Theory-Practice-Second/dp/1568814348/ref=sr_1_1?s=books&ie=UTF8&qid=1422837351&sr=1-1&keywords=graphics+shaders+theory+and+practice)
+- [The OpenGL Shading Language](http://www.amazon.com/OpenGL-Shading-Language-Randi-Rost/dp/0321637631/ref=sr_1_1?s=books&ie=UTF8&qid=1422896457&sr=1-1&keywords=opengl+shading+language)
+- [OpenGL 4 Shading Language Cookbook](http://www.amazon.com/OpenGL-Shading-Language-Cookbook-Second/dp/1782167021/ref=sr_1_2?s=books&ie=UTF8&qid=1422896457&sr=1-2&keywords=opengl+shading+language)
+- [GPU Gems](http://http.developer.nvidia.com/GPUGems/gpugems_part01.html)
+- [GPU Pro: Advanced Rendering Techniques](http://www.amazon.com/GPU-Pro-Advanced-Rendering-Techniques/dp/1568814720/ref=sr_1_4?s=books&ie=UTF8&qid=1422837427&sr=1-4&keywords=gpu+pro)
 
 还有，再一次强调，[GPUImage](https://github.com/BradLarson/GPUImage)是一个开源的资源，里面有一些非常酷的着色器。一个非常好的学习着色器的方式，就是拿一个你觉得很有意思的着色器，然后一行一行看下去，搜寻任何你不理解的部分。GPUImage 还有一个[着色器设计](https://github.com/BradLarson/GPUImage/tree/master/examples/Mac/ShaderDesigner)的 Mac 端应用，可以让你测试着色器而不用准备 OpenGL 的代码。
 

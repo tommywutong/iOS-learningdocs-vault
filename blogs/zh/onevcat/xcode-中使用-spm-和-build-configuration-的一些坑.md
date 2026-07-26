@@ -147,42 +147,8 @@ targets: [
 
 答案可能让人大跌眼镜。在 Xcode 环境下，Xcode 会基于 Build Configuration 的名字，来选择 SPM 包的所使用的编译配置。具体来说，暂时发现的规则有：
 
-- 或者
-
-  (不区分大小写)，那么 Xcode 会使用
-
-  来编译 SPM 包。比如默认的
-
-  ，以及
-
-  ，
-
-  ，
-
-  ，
-
-  ，
-
-  都在此列。
-- 进行编译。比如默认的
-
-  ，以及像是
-
-  ，
-
-  ，
-
-  ，
-
-  ，
-
-  ，
-
-  ，
-
-  等等，都会使用
-
-  作为编译配置。
+- 如果名字里包含有 `Debug` 或者 `Development` (不区分大小写)，那么 Xcode 会使用 `.debug` 来编译 SPM 包。比如默认的 `Debug`，以及 `Development`，`Debug_Testing`，`_development_`，`Not_DEBUG`，`hello development` 都在此列。
+- 否则，使用 `.release` 进行编译。比如默认的 `Release`，以及像是 `Dev`，`Testing`，`Staging`，`Prod`，`Beta`，`QA`，`CI` 等等，都会使用 `.release` 作为编译配置。
 
 ![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
 
@@ -228,8 +194,8 @@ Could not find module ‘MyLibrary’ for target ‘x86_64-apple-ios-simulator�
 
 带来的最大的副作用有两个：
 
-1. 进行包的编译，这不仅会需要编译不必要的架构，也需要进行额外的编译优化，将导致包的编译速度降低。
-2. 的输出可能出现问题等。
+1. 因为要使用 `.release` 进行包的编译，这不仅会需要编译不必要的架构，也需要进行额外的编译优化，将导致包的编译速度降低。
+2. 因为包被 release 优化了，所以 debug 会变得困难：比如在包中设置的断点可能无法工作，`po` 的输出可能出现问题等。
 
 ## 小结
 

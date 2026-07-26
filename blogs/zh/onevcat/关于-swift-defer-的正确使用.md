@@ -97,15 +97,9 @@ func doSomethingThenRemove() {
 
 解决的方法大概有三种：
 
-1. ：
-
-  `NSRecursiveLock`
-
-  可以在同一个线程获取多次，而不造成死锁的问题。
-2. 之前先
-
-  。
-3. 传入按照条件，避免在其中加锁。
+1. 换用 `NSRecursiveLock`：[`NSRecursiveLock`](https://developer.apple.com/documentation/foundation/nsrecursivelock) 可以在同一个线程获取多次，而不造成死锁的问题。
+2. 在调用 `remove` 之前先 `unlock`。
+3. 为 `remove` 传入按照条件，避免在其中加锁。
 
 1 和 2 都会造成额外的性能损失，虽然在一般情况下这样的加锁性能微乎其微，但是使用方案 3 似乎也并不很麻烦。于是我很开心地把 `remove` 改成了这样：
 

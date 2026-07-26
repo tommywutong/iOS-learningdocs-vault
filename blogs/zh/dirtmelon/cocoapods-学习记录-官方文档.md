@@ -7,7 +7,7 @@ original_language: zh
 published: 2021-03-13
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ae61e62a57cf959d'
 translated: n/a
 ---
@@ -24,32 +24,16 @@ CocoaPods 的官方文档写得比较详细，建议都过一遍，以免用错�
 
 TL;DR:
 
-- 来下载新的 pods ，即使你已经有
-
-  且之前已经执行过
-
-  。就算只是给已使用 CocoaPods 的项目添加或者移除 pods ，也是执行
-
-  ；
-- 。
+- 使用 `pod install` 来下载新的 pods ，即使你已经有 `Podfile` 且之前已经执行过 `pod install` 。就算只是给已使用 CocoaPods 的项目添加或者移除 pods ，也是执行 `pod install` ；
+- 当你想要更新 pods 至一个更新的版本时，执行 `pod update [PODNAME]` 。
 
 `pod install` ：
 
-- 来下载和安装新的 pods 时，它都会把新的 pods 对应的版本和名字写进
+- 每次执行 `pod install` 来下载和安装新的 pods 时，它都会把新的 pods 对应的版本和名字写进 `Podfile.lock` 中，以此来锁定 pods 的版本；
+- 当你执行执行 `pod install` 时，它只会解析没有 `Podfile.lock` 中没有出现过的 pods 依赖：
 
-  中，以此来锁定 pods 的版本；
-- 时，它只会解析没有
-
-  中没有出现过的 pods 依赖：
-
-    - 中有出现，它就会下载
-
-      中对应的版本，不去检查是否有更新的版本；
-    - 中没有出现，它就会去搜索
-
-      中所匹配的版本，例如
-
-      。
+    - 如果在 `Podfile.lock` 中有出现，它就会下载 `Podfile.lock` 中对应的版本，不去检查是否有更新的版本；
+    - 如果在 `Podfile.lock` 中没有出现，它就会去搜索 `Podfile` 中所匹配的版本，例如 `pod ‘MyPod’, ‘~> 1.2’` 。
 
 通过 `pod outdated` 可以检查是否有更新的版本。
 
@@ -59,14 +43,8 @@ TL;DR:
 
 咋一看只使用 `Podfile` 应该足够获取 pod 库的精确版本了，其实不然。像是在 `Podfile` 中指定版本 `pod ‘A’, ’1.0.0’` ，不管是 `pod install` 或者 `pod update` 都会更新其它 pod 的版本，因为它们已经在 `Podfile` 中指定版本了。 假设有 pod `A` 依赖了 pod `A2` ，声明在 `A.podspec` 中： `dependency ‘A2’, ‘~> 3.0’` 。在这个例子中，通过 `pod ‘A’, ‘1.0.0’` 可以指定所有成员都使用 pod `A` 的 `1.0.0` 版本，但是：
 
-- 是 3.4 版本，因为这是
-
-  的最新版本；
-- 时，他下载的 pod
-
-  库版本是 3.5 ，因为
-
-  后面可能会放了一个新的版本处理。
+- 成员 A 可能使用的 pod `A2` 是 3.4 版本，因为这是 `A2` 的最新版本；
+- 当用户 B 执行 `pod install` 时，他下载的 pod `A2` 库版本是 3.5 ，因为 `A2` 后面可能会放了一个新的版本处理。
 
 所以需要通过 `Podfile.lock` 来指定所有依赖库的版本，这样就可以确保所有人的依赖库版本都是一致的。 团队成员之间合理使用 `pod install` 和 `pod update` 可以大大提高开发效率。
 
@@ -78,7 +56,7 @@ TL;DR:
 
 把 `Pods` 目录添加到记录中的好处：
 
-- 和连接网络；
+- 把仓库 clone 下来后可以直接编译运行，不需要额外再下载 CocoaPods 。不需要执行 `pod install` 和连接网络；
 - 即使 Pod 的源（例如 Github ）挂掉了，项目中的 Pod 库也还可以使用；
 - Pod 库中的代码可以保证一致。
 
@@ -86,7 +64,7 @@ TL;DR:
 
 - 仓库会占用更小的空间；
 - 只要 Pods 的源可用， CocoaPods 就可以执行相同的安装过程；
-- 库不会有冲突。
+- 在执行版本管理操作比如合并不同分支时 `Pods` 库不会有冲突。
 
 ## Using a Gemfile
 
@@ -172,12 +150,8 @@ CocoaPods 不仅提供了依赖库版本管理的功能，还提供了插件功�
 
 CocoaPods 插件能做什么：
 
-- 过程，包括
-
-  前和
-
-  后；
-- 子命令；
+- hook 整个 `install` 过程，包括 `install` 前和 `install` 后；
+- 支持设置 `pod` 子命令；
 - Ruby 是门动态语言，受益于此，插件可以做任何你想做的事情。
 
 通过 `Gemfile` 可以安装插件，安装 [cocoapods-repo-update](https://github.com/wordpress-mobile/cocoapods-repo-update)：
@@ -214,7 +188,7 @@ bundle exec pod check || bundle exec pod install
 
 1. 拉取需要预编译的 pods ；
 2. 编译这些 pods ；
-3. 文件，从指向源码改为指向编译好的 frameworks 。
+3. 修改 `.podspec` 文件，从指向源码改为指向编译好的 frameworks 。
 
 可以通过一下方式来指定需要使用预编译的 pods ：
 

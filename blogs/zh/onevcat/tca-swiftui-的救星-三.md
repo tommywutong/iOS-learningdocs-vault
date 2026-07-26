@@ -122,21 +122,9 @@ let timerReducer = Reducer<TimerState, TimerAction, TimerEnvironment> {
 ```
 
 1. 类似上一篇文中，对于外部输入，我们使用环境值来进行注入。
-2. 是一个最简单的满足了
-
-  的类型。
-3. 的实例作为这个 Effect 的 id。
-4. 返回类型是
-
-  。而在
-
-  中，我们要求返回值为
-
-  。TCA 为
-
-  的 output 转换提供了人见人爱的
-
-  方法。用它就可以把返回结果转换为我们需要的类型了。
+2. 为了能够实现 Effect 的取消，我们需要为创建的 Effect 指定一个 id。这里 `TimerId` 是一个最简单的满足了 `Hashable` 的类型。
+3. TCA 中直接提供了创建一个 timer 的方法，我们创建一个 `TimerId` 的实例作为这个 Effect 的 id。
+4. `Effect.timer` 返回类型是 `Effect<DispatchQueue.SchedulerTimeType, Never>`。而在 `timerReducer` 中，我们要求返回值为 `Effect<Action, Never>`。TCA 为 `Effect` 的 output 转换提供了人见人爱的 `map` 方法。用它就可以把返回结果转换为我们需要的类型了。
 
 遇到 `.start` 后，reducer 返回一个 timer Effect，开启一个“副作用”。之后，每隔 10 毫秒，`.timeUpdated` 就将被发送一次，reducer 获取到这个 action，并用它来更新 `duration`。
 
@@ -282,19 +270,9 @@ class TimerLabelTests: XCTestCase {
   }
 ```
 
-1. 将这个
-
-  的“时针”前进给定的时间，也就是说，让时间流逝。我们不再依赖于不精确的现实世界，也不依赖于运行这个测试的具体设备和环境，而可以准确地将计时器调到 35 毫秒的位置。
-2. 来断言接收到了某个事件，并且在闭包中验证 State 的改变。这里由于 1 中
-
-  的原因，我们会期望收到三次
-
-  (因为在
-
-  的实现中我们指定了 10 毫秒触发一次 timer)。
-3. 发送
-
-  action 来取消 timer，让它停下。
+1. `advance(by:)` 将这个 `scheduler` 的“时针”前进给定的时间，也就是说，让时间流逝。我们不再依赖于不精确的现实世界，也不依赖于运行这个测试的具体设备和环境，而可以准确地将计时器调到 35 毫秒的位置。
+2. 使用 `.receive` 来断言接收到了某个事件，并且在闭包中验证 State 的改变。这里由于 1 中 `scheduler.advance` 的原因，我们会期望收到三次 `.timeUpdated` (因为在 `timerReducer` 的实现中我们指定了 10 毫秒触发一次 timer)。
+3. 最后，向 `store` 发送 `.stop` action 来取消 timer，让它停下。
 
 在上面的断言中，删除 2 中的任意一个 `receive` 调用或者是移除掉 3 中的 `send(.stop)`，都会导致测试的失败。 TCA 在对应 Effect 测试时，会对还未被 `receive` 的 action 以及还在运行的 Effect 进行断言，这个特性非常优秀，保证了涉及的异步操作处理“万无一失”。
 
@@ -444,18 +422,8 @@ class SampleTextTests: XCTestCase {
 }
 ```
 
-1. publisher，这里直接返回了一个 “Hello World” 作为完成值的
-
-  。它代表了一个“即将发生”的外部“返回值”。
-2. 和
-
-  让测试向前运行。不添加参数时，
-
-  会被使用，这代表
-
-  不会发生时间流逝，但会把所有当前“堆积”的 Effect 事件都发送出去。TCA 也为我们准备了一个特殊的
-
-  来简化这个过程：
+1. 相对于提供一个实际的 `dataTask` publisher，这里直接返回了一个 “Hello World” 作为完成值的 `Effect`。它代表了一个“即将发生”的外部“返回值”。
+2. 和上面 timer 的例子相似，使用 `.test` 和 `advance` 让测试向前运行。不添加参数时，`.zero` 会被使用，这代表 `scheduler` 不会发生时间流逝，但会把所有当前“堆积”的 Effect 事件都发送出去。TCA 也为我们准备了一个特殊的 `.immediate` 来简化这个过程：
 
 ```swift-diff
 class SampleTextTests: XCTestCase {
@@ -542,31 +510,9 @@ struct GameEnvironment { }
 
 最后，是最艰难的部分 `Reducer` 了。这里的核心思想有下面三条：
 
-1. 和
-
-  ，并
-
-  。
-2. 的刷新。在这个例子中，
-
-  和
-
-  会更改各自的
-
-  和
-
-  ，但是
-
-  中的
-
-  和
-
-  并不会被子组件的 reducer 更改 (因为
-
-  是一个 struct)，因此我们需要一种方式
-
-  。
-3. 。
+1. 组件的行为都是由 reducer 定义的。子组件的行为，也应该由子组件的 reducer 自己决定。因此我们需要使用已有的 `counterReducer` 和 `timerReducer`，并**把 `GameAction` 转换为子组件所需要的 `CounterAction` 或 `TimerAction` 并传递给它们**。
+2. 子组件对各自 State 进行修改的结果，需要反应到父组件中，这样才能完成父组件 `View` 的刷新。在这个例子中，`counterReducer` 和 `timerReducer` 会更改各自的 `Counter` 和 `TimerState`，但是 `GameState` 中的 `counter` 和 `timer` 并不会被子组件的 reducer 更改 (因为 `GameState` 是一个 struct)，因此我们需要一种方式**让子组件 reducer 能够设置父组件对应的 state**。
+3. 多个组件需要联合起来工作，因此各个组件的 reducer **需要进行合并**。
 
 TCA 中，在将多个子组件的 Reducer 组合成父组件 Reducer 时，通常结合使用 `combine` 和 `pullback`。TCA 为我们提供了一些特殊的写法，让整个过程看起来非常简洁：
 
@@ -587,29 +533,9 @@ let gameReducer = Reducer<GameState, GameAction, GameEnvironment>.combine( // 3
 
 在子组件 reducer 上调用 `pullback` 函数是整个过程的关键：`pullback` 负责将子组件的 reducer “拉回”成为父组件 reducer 的一部分，它首先把父组件 Action 进行转换并发送给子组件，然后把子组件的 State 变化设置回到父组件中。具体来说，上面的代码中对应的编号：
 
-1. 来自一个为 TCA 开发的
-
-  工具库 CasePaths
-
-  ，它通过在 enum case 之前添加斜杠，来把这个 case 转换为一个具有更丰富特性的
-
-  struct。在这里，
-
-  主要承担从接收到的父组件 Action 中将对应的子组件的 Action 提取出来的工作，这样在子组件的 reducer 中，就可以使用它们了。
-2. ，使用 Key path 的语法创建一个
-
-  。子组件 reducer 中对子组件 state 的变更，最终会通过这个
-
-  写回到
-
-  相关的属性里，最后触发 View 的刷新。
-3. 是一个转换器，它把子组件的 reducer 类型转换为父组件的 reducer 类型。最后，我们使用
-
-  把
-
-  和
-
-  转换后的结果合并起来，这样它们就可以同时工作了。
+1. `/GameAction.counter` 来自一个为 TCA 开发的[工具库 CasePaths](https://github.com/pointfreeco/swift-case-paths)，它通过在 enum case 之前添加斜杠，来把这个 case 转换为一个具有更丰富特性的 `CasePath` struct。在这里，`CasePath` 主要承担从接收到的父组件 Action 中将对应的子组件的 Action 提取出来的工作，这样在子组件的 reducer 中，就可以使用它们了。
+2. 对于 `state`，使用 Key path 的语法创建一个 `WritableKeyPath`。子组件 reducer 中对子组件 state 的变更，最终会通过这个 `WritableKeyPath` 写回到 `GameState` 相关的属性里，最后触发 View 的刷新。
+3. `pullback` 是一个转换器，它把子组件的 reducer 类型转换为父组件的 reducer 类型。最后，我们使用 `Reducer.combine` 把 `counterReducer` 和 `timerReducer` 转换后的结果合并起来，这样它们就可以同时工作了。
 
 理解 `pullback` 在 TCA 里非常重要，作为参考，我把这个函数的签名写在下面，你可以对照各个参数再梳理一遍：
 

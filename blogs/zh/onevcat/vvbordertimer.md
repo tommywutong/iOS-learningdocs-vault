@@ -18,14 +18,14 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
 
 ### 是什么
 
-- 是UIView的子类
+- **VVBorderTimer**是UIView的子类
 - 它为UIView提供使用边界进行倒计时的效果
 - 边框角落的半径和线宽在运行时可调
 - 倒计时是有颜色渐变效果
 
 ### What’s this
 
-- is a subclass of UIView.
+- **VVBorderTimer** is a subclass of UIView.
 - It provides an counting down effect using the view’s border.
 - The radius of round corners and line width are configurable in runtime.
 - There is also a color transition effect during the counting.
@@ -33,13 +33,17 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
 ### 怎么用
 
 - 将VVBorderTimerView.h和VVBorderTimerView.m导入您的工程。请根据您的情况选择使用ARC版本或非ARC版本
-- ```plaintext
+- 分配并初始化一个VVBorderTimerView. 设置其背景颜色
+
+  ```plaintext
   VVBorderTimerView *btv = [[VVBorderTimerView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
   //为计时器设置背景颜色
   btv.backgroundColor = [UIColor clearColor];
   ```
 
-    1. ```plaintext
+    1. 配置计时器属性，如: 颜色(可选), 总时间和delegate.
+
+      ```plaintext
       //上边界为绿色
       UIColor *color0 = [UIColor greenColor];
       //右边黄色
@@ -56,7 +60,9 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
       //为计时器设定delegate
       btv.delegate = self;
       ```
-    2. ```plaintext
+    2. 实现计时器的delegate
+
+      ```plaintext
       //转角半径(0 代表矩形)
       -(float) cornerRadius:(VVBorderTimerView *)requestor
       { return 30;
@@ -70,7 +76,9 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
       { //do something
       }
       ```
-    3. ```plaintext
+    3. 将计时器加入您的viewController的view，并使用 -(void)start 开始计时
+
+      ```plaintext
       [self.view addSubview:btv];
       [btv start];
       ```
@@ -80,12 +88,16 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
 ### How to use
 
 1. Import VVBorderTimerView.h and VVBorderTimerView.m to your project. Select either ARC version or non-ARC version for your situation.
-2. ```plaintext
+2. Alloc and init a VVBorderTimerView. Set its background color.
+
+  ```plaintext
   VVBorderTimerView *btv = [[VVBorderTimerView alloc] initWithFrame:CGRectMake(20, 20, 280, 280)];
   //Specify a background color for the timer
   btv.backgroundColor = [UIColor clearColor];
   ```
-3. ```plaintext
+3. Set the properties for the timer: colors(optional), totalTime and delegate.
+
+  ```plaintext
   //Top border will be green
   UIColor *color0 = [UIColor greenColor];
   //Right border yellow
@@ -102,7 +114,9 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
   //Set the delegate for the timer
   btv.delegate = self;
   ```
-4. ```plaintext
+4. Implement the timer’s delegate
+
+  ```plaintext
   //Corner radius for a timer(0 means rectangle)
   -(float) cornerRadius:(VVBorderTimerView *)requestor
   { return 30;
@@ -116,7 +130,9 @@ GitHub 链接: [https://github.com/onevcat/VVBorderTimerView](https://github.com
   { //do something
   }
   ```
-5. ```plaintext
+5. Add it to your viewController’s view and then start the timer using -(void)start
+
+  ```plaintext
   [self.view addSubview:btv];
   [btv start];
   ```

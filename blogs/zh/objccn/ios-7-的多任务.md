@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b0c73762f34bd20c'
 translated: n/a
 ---
@@ -336,9 +336,9 @@ iOS 7 中强大的多任务和网络 API 为现有应用和新应用开启了一
 
 ## 扩展阅读
 
-- WWDC 2013 session “What’s New with Multitasking”
-- WWDC 2013 session “What’s New in Foundation Networking”
-- URL Loading System Programming Guide
+- [WWDC 2013 session “What’s New with Multitasking”](https://developer.apple.com/wwdc/videos/?id=204)
+- [WWDC 2013 session “What’s New in Foundation Networking”](https://developer.apple.com/wwdc/videos/?id=705)
+- [URL Loading System Programming Guide](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html#//apple_ref/doc/uid/10000165i)
 
 ---
 

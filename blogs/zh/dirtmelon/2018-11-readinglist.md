@@ -7,7 +7,7 @@ original_language: zh
 published: 2018-12-05
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:031cae18033effe4'
 translated: n/a
 ---
@@ -34,7 +34,9 @@ translated: n/a
 [A Better MVC, Part 5: An Evolution | Dave DeLong](https://davedelong.com/blog/2018/04/24/a-better-mvc-part-5-an-evolution/) 作者在五个月后又写了一篇关于 MVC 的文章。 MVC 不是一种设计模式，是一种思想，它追求封装，将不同的东西分隔开来。 View Controller 其实不是 Controller，而是 View，它负责的其实是 View 相关的逻辑。 View Controller 应该只负责处理业务逻辑或者传递数据给它包含的 UIViews，不应该两者都包含。 UIViewControllers 应该只负责下面的其中一个部分：
 
 1. 组合 Child View Controller
-2. > So instead of saying a UIViewController should “manage either sequence or UI”, perhaps a better way of saying it would be that a UIViewController should either compose children or put stuff in to UIViews (with the understanding that this is a guideline, and not a rule).
+2. 给自己拥有的 UIViews 填充数据
+
+  > So instead of saying a UIViewController should “manage either sequence or UI”, perhaps a better way of saying it would be that a UIViewController should either compose children or put stuff in to UIViews (with the understanding that this is a guideline, and not a rule).
 
 https://www.avanderlee.com/optimization/measure-performance-code/ 检测代码性能: Xcode unit test，playground 和 terminal，playground 因为涉及到 UI 的更新，所以检测到的代码执行时间会其它两个大，其它两个的结果比较接近。
 

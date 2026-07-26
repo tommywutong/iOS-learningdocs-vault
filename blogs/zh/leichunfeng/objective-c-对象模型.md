@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-04-25
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:059b467497454d4e'
 translated: n/a
 ---
@@ -66,6 +66,6 @@ typedef struct objc_object *id;
 
 ## 参考链接
 
-- http://www.devtang.com/blog/2013/10/15/objective-c-object-model/
-- http://husbandman.diandian.com/post/2012-08-17/40036035008
-- http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html
+- [http://www.devtang.com/blog/2013/10/15/objective-c-object-model/](http://www.devtang.com/blog/2013/10/15/objective-c-object-model/)
+- [http://husbandman.diandian.com/post/2012-08-17/40036035008](http://husbandman.diandian.com/post/2012-08-17/40036035008)
+- [http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html](http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html)

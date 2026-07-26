@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3832e529453b376b'
 translated: n/a
 ---
@@ -45,8 +45,8 @@ layer 将像文档中所写的的那样去寻找动作，整个过程分为五�
 layer 通过向它的 delegate 发送 `actionForLayer:forKey:` 消息来询问提供一个对应属性变化的 action。delegate 可以通过返回以下三者之一来进行响应：
 
 1. 它可以返回一个动作对象，这种情况下 layer 将使用这个动作。
-2. ， 这样 layer 就会到其他地方继续寻找。
-3. 对象，告诉 layer 这里不需要执行一个动作，搜索也会就此停止。
+2. 它可以返回一个 `nil`， 这样 layer 就会到其他地方继续寻找。
+3. 它可以返回一个 `NSNull` 对象，告诉 layer 这里不需要执行一个动作，搜索也会就此停止。
 
 而让这一切变得有趣的是，当 layer 在背后支持一个 view 的时候，view 就是它的 delegate；
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:14172743259880ce'
 translated: n/a
 ---
@@ -20,18 +20,20 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-22
 
-1. 1. SpriteKit截屏
+**文章目录**
 
-    1. 1.1. 方法一：
-    2. 1.2. 方法二:
-2. 2. 使用Social.Framework分享游戏战绩
+1. [1. SpriteKit截屏](#SpriteKit截屏)
 
-    1. 2.1. 使用UIActivityViewController
-    2. 2.2. 使用SLComposeViewController
+    1. [1.1. 方法一：](#方法一：)
+    2. [1.2. 方法二:](#方法二)
+2. [2. 使用Social.Framework分享游戏战绩](#使用Social-Framework分享游戏战绩)
+
+    1. [2.1. 使用UIActivityViewController](#使用UIActivityViewController)
+    2. [2.2. 使用SLComposeViewController](#使用SLComposeViewController)
 
 本文讲述在用`SpriteKit`制作iOS游戏的时候，如何让在用户在达到某种成就后分享自己的成就或分数，并附上一张游戏截屏，然后发到社交网络上
 
-## [#SpriteKit截屏](#SpriteKit截屏)SpriteKit截屏
+## SpriteKit截屏
 
 传统的截屏方法是用UIView的layer来读取渲染上下文，生成图片
 
@@ -51,7 +53,7 @@ UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
 而这一切都是基于`UIKit`的，在`SpriteKit`中，上面的方法是实效的，截屏的效果就是一张白色图片  
 但在苹果的官方文档中，明确提到了`SKTexture`的作用，最后一条是说可以将节点树渲染成纹理，可以应用于对游戏截屏。苹果还告诉了我们`SKView`的一个方法：`textureFromNode:`，该方法将以node包含的内容渲染成一个纹理，但是如何将`SKTexture`转换为`UIView`呢？我在workoverflow的一个[提问](http://stackoverflow.com/questions/21061248/uiimage-from-sktexture)中找到了答案：
 
-### [#方法一：](#方法一：)方法一：
+### 方法一：
 
 ```maxima
 - (UIImage*) imageWithView:(UIView *)view
@@ -85,7 +87,7 @@ UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
 3. add a SKSpriteNode with the texture into your new scene, placing it in the middle
 4. render the view into a graphics context
 
-### [#方法二](#方法二)方法二:
+### 方法二:
 
 ```objectivec
 -(UIImage *)imageFromNode:(SKNode *)node {
@@ -120,7 +122,7 @@ UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
 
 记得要到iphone或者simulator里设置好对应社交网络的账号，填上用户名密码登录上，不然找不到account，不能post。如果找不到新浪微博，把系统语言调到中文。如果没有预先设置好账号，social.framework在真机和simulator上表现会不同。
 
-### [#使用UIActivityViewController](#使用UIActivityViewController)使用UIActivityViewController
+### 使用UIActivityViewController
 
 ```objectivec
 //某个SKScene中添加的代码
@@ -144,7 +146,7 @@ UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);
 
 如果想系统的学一下`UIActivityViewController`，建立看看这篇翻译自[Mattt Thompson](http://nshipster.com/uiactivityviewcontroller/)的[博文](https://github.com/nixzhu/dev-blog/blob/master/2014-04-22-ui-activity-viewcontroller.md)
 
-### [#使用SLComposeViewController](#使用SLComposeViewController)使用SLComposeViewController
+### 使用SLComposeViewController
 
 这个就相当于上面里介绍的单个分享service  
 目前支持的平台有以下这些：

@@ -16,8 +16,8 @@ translated: n/a
 
 本文是我的 [WWDC 2014 笔记](http://onevcat.com/2014/07/developer-should-know-about-ios8/) 中的一篇，涉及的 Session 有
 
-- Creating Extensions for iOS and OS X, Part 1
-- Creating Extensions for iOS and OS X, Part 2
+- [Creating Extensions for iOS and OS X, Part 1](http://devstreaming.apple.com/videos/wwdc/2014/205xxqzduadzo14/205/205_hd_creating_extensions_for_ios_and_os_x,_part_1.mov?dl=1)
+- [Creating Extensions for iOS and OS X, Part 2](http://devstreaming.apple.com/videos/wwdc/2014/217xxsvxdga3rh5/217/217_hd_creating_extensions_for_ios_and_os_x_part_2.mov?dl=1)
 
 ## 总览
 

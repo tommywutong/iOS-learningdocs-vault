@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-12-18
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2a0b2cc7912c5c0c'
 translated: n/a
 ---
@@ -18,15 +18,15 @@ translated: n/a
 
 2014年12月18日
 
-# [#Class-Clusters](#Class-Clusters)Class Clusters
+# Class Clusters
 
 Class Clusters（类簇）是`抽象工厂`模式在iOS下的一种实现，众多常用类，如`NSString`，`NSArray`，`NSDictionary`，`NSNumber`都运作在这一模式下，它是接口简单性和扩展性的权衡体现，在我们完全不知情的情况下，偷偷隐藏了很多具体的实现类，只暴露出简单的接口。
 
-# [#NSArray的类簇](#NSArray的类簇)NSArray的类簇
+# NSArray的类簇
 
 虽然[官方文档](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/ClassClusters/ClassClusters.html)中拿`NSNumber`说事儿，但Foundation并没有像图中描述的那样为每个number都弄一个子类，于是研究下`NSArray`类簇的实现方式。
 
-## [#NSPlacehodlerArray](#NSPlacehodlerArray)__NSPlacehodlerArray
+## __NSPlacehodlerArray
 
 熟悉这个模式的同学很可能看过下面的测试代码，将原有的`alloc+init`拆开写：
 
@@ -104,7 +104,7 @@ id obj4 = [NSMutableArray alloc];
 // 1和2地址相同，3和4地址相同，无论多少次都相同，且地址相差16位
 ```
 
-# [#静态不可变空对象](#静态不可变空对象)静态不可变空对象
+# 静态不可变空对象
 
 除此之外，Foundation对`不可变`版本的空数组也做了个小优化：
 
@@ -122,7 +122,7 @@ NSArray *arr5 = @[@1];
 
 所以也给用这些方法来测试对象内存管理的同学提个醒，很容易意料之外的。
 
-# [#References](#References)References
+# References
 
 [https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/ClassClusters/ClassClusters.html](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/ClassClusters/ClassClusters.html)  
 [http://iphonedevwiki.net/index.php/Foundation.framework/Inheritance_hierarchy](http://iphonedevwiki.net/index.php/Foundation.framework/Inheritance_hierarchy)

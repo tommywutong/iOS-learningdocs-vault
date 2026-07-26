@@ -7,7 +7,7 @@ original_language: zh
 published: 2017-03-14
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0c76ba2df23f65d6'
 translated: n/a
 ---
@@ -249,10 +249,6 @@ ExpressibleByIntegerLiteral 改为 ExpressibleByArrayLiteral ，ExpressibleByStr
 
 挂起操作有三种方式：
 
-1. 无条件停止操作，可以接受一条信息
-2. 会进行条件监测，
-
-  时停止操作，正式版本中会被移除掉
-3. 跟
-
-  比较类似，但是在正式版本中不会被移除
+1. `fatalError` 无条件停止操作，可以接受一条信息
+2. `assert` 会进行条件监测， `false` 时停止操作，正式版本中会被移除掉
+3. `precondition` 跟 `assert` 比较类似，但是在正式版本中不会被移除

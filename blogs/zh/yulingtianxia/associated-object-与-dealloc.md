@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b8595349db27226c'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-12-15
 
-1. 1. 问题的由来
-2. 2. 实现原理
-3. 3. MessageThrottle 的特殊定制
-4. 4. Reference
+**文章目录**
+
+1. [1. 问题的由来](#问题的由来)
+2. [2. 实现原理](#实现原理)
+3. [3. MessageThrottle 的特殊定制](#MessageThrottle-的特殊定制)
+4. [4. Reference](#Reference)
 
 我的 Objective-C 消息节流防抖库 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 需要实现一个特性：当 `MTRule` 的 `target` 释放后，自动调用 `MTRule` 的 `discard` 方法。后来使用了业界很早就已有的方案：Associated Object，在这里整理下相关的知识点。
 
-## [#问题的由来](#问题的由来)问题的由来
+## 问题的由来
 
 起初的思路是考虑到 `MTRule` 的 `target` 属性是 `weak` 的，想在其释放之前，也就是 `target` 变成 `nil` 之前调用 `MTRule` 对象的 `discard` 方法。然而 `target` 被释放赋值为 `nil` 的操作并不能通过 KVO 之类来监听，因为其并不是在外部通过 set 方法，这涉及到 `weak` 的实现原理（PS: 可以查看源码中 `weak_clear_no_lock()` 函数的实现）。于是问题转而变成了『在对象销毁前得到通知』。
 
 接着我在 MacRumors 上找到了一篇 2005 年的[贴子](https://forums.macrumors.com/threads/getting-notified-when-an-object-instance-is-deallocated.976309/)。大概内容就是讲通过 KVO 监听 `retainCount` 属性纯属失了智，众所周知 `retainCount` 不能真实反映对象内存管理的情况，即便 `retainCount` 为 `1` 的时候收到了 `release` 消息，也会直接 `dealloc` 掉，并不会变成 `0`。接着又有人说干脆 hook 下 `dealloc` 方法，然后抛通知，但是这样不安全。直到 2008 年 DenNukem 回帖说他直到咋办啦，用 Associated Object！
 
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 当一个对象（Host）释放后，其关联的对象（Associated Object）也会被解除。可以在 Host 对象上添加 Associated Object，策略用 `OBJC_ASSOCIATION_RETAIN`。由于只有 Host 持有了这个 Associated Object，当 Host 释放后 Associated Object 也会被释放。在 Associated Object 的 `dealloc` 方法中告知外界其 Host 对象已经释放。Perfect！
 
@@ -76,7 +78,7 @@ void *objc_destructInstance(id obj)
 
 虽说 Runtime 帮我们自动移除了 Associated Object，但对我这种平常几乎一直写 MRC 代码的人来说还真有点不适应，毕竟脑子里时刻警惕着：每一次 `retain` 都要配套来一次 `release` 或 `autorelease`。
 
-## [#MessageThrottle-的特殊定制](#MessageThrottle-的特殊定制)MessageThrottle 的特殊定制
+## MessageThrottle 的特殊定制
 
 好，又回归到文章最开头的问题。现在解决了『`MTRule` 的 `target` 释放后，自动调用 `MTRule` 的 `discard` 方法』的问题。但是，要注意到此时 `target` 属性都释放了，于是就无法提供 `discard` 方法正确执行做需要的信息。所以需要在 Associated Object 中加入一些属性来保存一些执行 `discard` 时所需必要的信息。
 
@@ -128,10 +130,10 @@ static void mt_configureTargetDealloc(MTRule *rule)
 
 感兴趣的可以查看 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 的源码，或者阅读我的上一篇文章 [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/)，更详细地讲述了 Objective-C 消息节流防抖的实现原理。这里只是对其实现自动 `discard` 原理的补充。
 
-## [#Reference](#Reference)Reference
+## Reference
 
-- Getting notified when an object instance is deallocated
-- Fun With the Objective-C Runtime: Run Code at Deallocation of Any Object
-- Will An Associated Object Be Released Automatically?
-- CYLDeallocBlockExecutor
-- objc4-723
+- [Getting notified when an object instance is deallocated](https://forums.macrumors.com/threads/getting-notified-when-an-object-instance-is-deallocated.976309/)
+- [Fun With the Objective-C Runtime: Run Code at Deallocation of Any Object](https://blog.slaunchaman.com/2011/04/11/fun-with-the-objective-c-runtime-run-code-at-deallocation-of-any-object/)
+- [Will An Associated Object Be Released Automatically?](https://stackoverflow.com/questions/10842829/will-an-associated-object-be-released-automatically/10843510#10843510)
+- [CYLDeallocBlockExecutor](https://github.com/ChenYilong/CYLDeallocBlockExecutor)
+- [objc4-723](https://opensource.apple.com/source/objc4/objc4-723/)

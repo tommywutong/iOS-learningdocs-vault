@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a58130ab85d2d9f0'
 translated: n/a
 ---
@@ -20,12 +20,14 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-12-30
 
-1. 1. 安装
+**文章目录**
 
-    1. 1.1. AppStore
-    2. 1.2. GitHub Release
-2. 2. 使用方式
-3. 3. 脏词黑名单
+1. [1. 安装](#安装)
+
+    1. [1.1. AppStore](#AppStore)
+    2. [1.2. GitHub Release](#GitHub-Release)
+2. [2. 使用方式](#使用方式)
+3. [3. 脏词黑名单](#脏词黑名单)
 
 开发者经常会在代码中看到各类脏话，有吐槽产品的瞎改早晚还会改回来的，有吐槽这块代码写的太烂无法直视的，或是干脆心情不好就一顿骂。公司内部的项目想必是无数天坑 f*ck 无数，连对外开源的项目也难逃一劫，比如前一段时间 [OpenJDK](https://bugs.openjdk.java.net/browse/JDK-8215217) 就因为脏话太多火了一把。
 
@@ -35,18 +37,18 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](https://github.com/yulingtianxia/DirtyWords-for-Xcode/blob/master/images/%E8%89%B9.png?raw=true)
 
-## [#安装](#安装)安装
+## 安装
 
-### [#AppStore](#AppStore)AppStore
+### AppStore
 
 [DirtyWords for Xcode](https://itunes.apple.com/cn/app/dirtywords-for-xcode/id1447526628?mt=12)
 
-### [#GitHub-Release](#GitHub-Release)GitHub Release
+### GitHub Release
 
 直接从 GitHub Release 页面下载最新的安装包：  
 [https://github.com/yulingtianxia/DirtyWords-for-Xcode/releases](https://github.com/yulingtianxia/DirtyWords-for-Xcode/releases)
 
-## [#使用方式](#使用方式)使用方式
+## 使用方式
 
 用法很简单，反正目前也就这么一个功能。Editer -\> Dirty Words -\> Highlight
 
@@ -64,7 +66,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](https://github.com/yulingtianxia/DirtyWords-for-Xcode/blob/master/images/keybindings.png?raw=true)
 
-## [#脏词黑名单](#脏词黑名单)脏词黑名单
+## 脏词黑名单
 
 脏词列表文件跟随 app 打包进去了。在拓展加载完成后，也会通过网络下载 [dirtywords](https://github.com/yulingtianxia/DirtyWords-for-Xcode/blob/master/SourceEditorExtension/dirtywords) 文件进行更新。这样方便以后调整脏词列表，也欢迎大家提 PR 补充。
 

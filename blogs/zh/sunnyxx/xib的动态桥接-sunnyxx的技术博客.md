@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-07-01
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5dfc256fa14d2c32'
 translated: n/a
 ---
@@ -18,24 +18,24 @@ translated: n/a
 
 2014年7月1日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 个人很主张使用`Interface Builder`(以下都简称`IB`)来构建程序UI，包括`storyboard`和`xib`，相比代码更可视和易于修改，尤其在使用AutoLayout的时候，一目了然。  
 但用了这么久IB之后发现一个很大的槽点，就是IB间很难`嵌套混用`，比如一个xib中的view是另一个xib的子view，或者一个storyboard中两个vc都用到了一个xib构建的view等。解决方法一般是代码手动拼接，这就造成了比较混乱的情况。
 
 **本文将尝试解决这个问题，实现xib的`动态桥接`，并提供一个支持`cocoapods`的开源工具类供方便使用。**
 
-## [#一张图顶十句话：](#一张图顶十句话：)一张图顶十句话：
+## 一张图顶十句话：
 
 ![](http://ww2.sinaimg.cn/large/51530583gw1ehzgklik42j20m80go0ua.jpg)
 
-## [#实现效果：](#实现效果：)实现效果：
+## 实现效果：
 
 ![](http://ww3.sinaimg.cn/large/51530583gw1ehzgoiqfkfj20hs0qo75u.jpg)
 
 ---
 
-# [#黑魔法方法](#黑魔法方法)黑魔法方法
+# 黑魔法方法
 
 实现这个功能的关键在于：在ib加载的某个时刻将`placeholder`的view动态替换成从xib加载的view，下面的方法就可以做到：
 
@@ -72,10 +72,10 @@ So，这个方法提供了一个机会，**可以将decode出来的对象替换�
 
 流程不难理解，就是有2个小难点：
 
-- ，如何判断
+- 步骤1从xib创建真正的view时也会调用这个方法，会造成`递归`，如何判断
 - 迁移`AutoLayoutConstrains`
 
-### [#解决递归问题](#解决递归问题)解决递归问题
+### 解决递归问题
 
 这个topic全网可能就[《这篇文章》](http://blog.yangmeyer.de/blog/2012/07/09/an-update-on-nested-nib-loading)有写，本文也是从它发起的，但是发现它的方法并不能解决所有问题（尤其是用storyboard加载xib时），所以换了个思路，采取了设置标志位的方式避免递归调用：
 
@@ -95,7 +95,7 @@ So，这个方法提供了一个机会，**可以将decode出来的对象替换�
 
 方法有点土，但是有效了，源代码文章后面会给地址。
 
-### [#迁移AutoLayoutConstrains](#迁移AutoLayoutConstrains)迁移AutoLayoutConstrains
+### 迁移AutoLayoutConstrains
 
 由于IB在加载AutoLayoutConstrains时的顺序是**先加载子View内部的约束，后加载父View上的约束**，而我们替换placeholder的时机是：
 
@@ -133,7 +133,7 @@ realView.translatesAutoresizingMaskIntoConstraints = NO;
 
 ---
 
-# [#开源项目XXNibBridge](#开源项目XXNibBridge)开源项目XXNibBridge
+# 开源项目XXNibBridge
 
 光说方案不给源码还是不地道的，demo放到了[我的github上面的XXNibBridge项目](https://github.com/sunnyxx/XXNibBridge)，回顾一下上面的关系图：
 
@@ -168,7 +168,7 @@ realView.translatesAutoresizingMaskIntoConstraints = NO;
 [tableView registerNib:[XXSarkView xx_nib] forCellReuseIdentifier:[XXSarkView xx_nibID]];
 ```
 
-# [#XXNibBridge的使用](#XXNibBridge的使用)XXNibBridge的使用
+# XXNibBridge的使用
 
 **Cocoapods安装**
 
@@ -200,7 +200,7 @@ pod 'XXNibBridge', :git => 'https://github.com/sunnyxx/XXNibBridge.git'
 
 ---
 
-# [#References](#References)References
+# References
 
 [http://blog.yangmeyer.de/blog/2012/07/09/an-update-on-nested-nib-loading](http://blog.yangmeyer.de/blog/2012/07/09/an-update-on-nested-nib-loading)  
 [http://stackoverflow.com/questions/19816703/replacing-nsview-while-keeping-autolayout-constraints](http://stackoverflow.com/questions/19816703/replacing-nsview-while-keeping-autolayout-constraints)  

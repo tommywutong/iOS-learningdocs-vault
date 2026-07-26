@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9e10fe4ab6e0e531'
 translated: n/a
 ---
@@ -426,12 +426,12 @@ Travis CI 提供了一个功能完整的持续集成环境，以进行应用程�
 
 ## 更多链接
 
-- 示例工程
-- Travis CI
-- Travis CI 专业版
-- Xctool
-- HockeyApp
-- TestFlight
+- [示例工程](https://github.com/objcio/issue-6-travis-ci)
+- [Travis CI](http://www.travis-ci.com/)
+- [Travis CI 专业版](https://magnum.travis-ci.com/)
+- [Xctool](https://github.com/facebook/xctool)
+- [HockeyApp](http://hockeyapp.net/)
+- [TestFlight](https://testflightapp.com/)
 
 ---
 

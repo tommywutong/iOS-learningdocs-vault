@@ -18,4 +18,4 @@ translated: n/a
 
 没什么用,只是看着好玩罢了～ [Github](https://github.com/ibireme/YYViewHierarchy3D)
 
-[if lt IE 9]\>\<script\>document.createElement('video');\</script\>\<![endif] [https://blog.ibireme.com/wp-content/uploads/2013/08/YYView3D-1.mp4](https://blog.ibireme.com/wp-content/uploads/2013/08/YYView3D-1.mp4)
+[https://blog.ibireme.com/wp-content/uploads/2013/08/YYView3D-1.mp4](https://blog.ibireme.com/wp-content/uploads/2013/08/YYView3D-1.mp4)

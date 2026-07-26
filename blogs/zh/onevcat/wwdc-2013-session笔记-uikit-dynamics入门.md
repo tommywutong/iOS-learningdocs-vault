@@ -59,9 +59,9 @@ translated: n/a
 代码很简单，
 
 1. 以现在ViewController的view为参照系（ReferenceView），来初始化一个UIDynamicAnimator。
-2. 的
+2. 然后分配并初始化一个动力行为，这里是UIGravityBehavior，将需要进行物理模拟的UIDynamicItem传入。`UIGravityBehavior`的`initWithItems:`接受的参数为包含id
 
-  接受的参数为包含id
+  的数组，另外`UIGravityBehavior`实例还有一个`addItem:`方法接受单个的id。就是说，实现了UIDynamicItem委托的对象，都可以看作是被力学特性影响的，进而参与到计算中。UIDynamicItem委托需要我们实现`bounds`，`center`和`transform`三个属性，在UIKit Dynamics计算新的位置时，需要向Behavior内的item询问这些参数，以进行正确计算。iOS7中，UIView和UICollectionViewLayoutAttributes已经默认实现了这个接口，所以这里我们直接把需要模拟重力的UIView添加到UIGravityBehavior里就行了。
 3. 把配置好的UIGravityBehavior添加到animator中。
 4. strong持有一下animator，避免当前scope结束被ARC释放掉（后果当然就是UIView在哪儿傻站着不掉）
 
@@ -199,7 +199,7 @@ viewDidiLoad时先在现在环境中加入了重力，然后监测到pan时附�
 对于第一种，其实考虑一下上面的重力+边界碰撞，或者drag & drop行为，其实都是两个甚至多个行为的叠加。要是每次都这样设定一次的话，不是很辛苦么，还容易遗忘出错。于是一种好的方式是将它们打包封装一下。具体地，如下步骤：
 
 1. 继承一下UIDynamicBehavior（在这里UIDynamicBehavior类似一个抽象类，并没有具体实现什么行为）
-2. ，用以添加物体和想要打包的规则。当然你如果喜欢用其他方式也行..只不过和自带的行为保持API统一对大家都有好处..添加item的话就用默认规则的initWithItems:就行，对于规则UIDynamicBehavior提供了一个addChildBehavior:的方法，来将其他规则加入到当前规则里
+2. 在子类中实现一个类似其他内置行为初始化方法`initWithItems:`，用以添加物体和想要打包的规则。当然你如果喜欢用其他方式也行..只不过和自带的行为保持API统一对大家都有好处..添加item的话就用默认规则的initWithItems:就行，对于规则UIDynamicBehavior提供了一个addChildBehavior:的方法，来将其他规则加入到当前规则里
 3. 没有第三步了，使用就行了。
 
 一个例子，打包了碰撞和重力两种行为，定义之后使用时就只需要写一次了。当然这只是最简单的例子和运用，当行为复杂以后，这样的使用方法是不可避免的，否则管理起来会让人有想死的心。另外，将手势等交互的方式也集成之中，进一步封装调用细节会是不错的实践。

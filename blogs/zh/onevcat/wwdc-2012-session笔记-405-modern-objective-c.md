@@ -96,15 +96,13 @@ OC的语法一直被认为比较麻烦，绝大多数的消息发送都带有很
 
 所有的[NSNumber numberWith…:]方法都可以简写了：
 
-- 简写为
-
-  ;
-- 简写为
-- 简写为
-- 简写为
-- 简写为
-- 简写为
-- 简写为
+- `[NSNumber numberWithChar:‘X’]` 简写为 `@‘X’`;
+- `[NSNumber numberWithInt:12345]` 简写为 `@12345`
+- `[NSNumber numberWithUnsignedLong:12345ul]` 简写为 `@12345ul`
+- `[NSNumber numberWithLongLong:12345ll]` 简写为 `@12345ll`
+- `[NSNumber numberWithFloat:123.45f]` 简写为 `@123.45f`
+- `[NSNumber numberWithDouble:123.45]` 简写为 `@123.45`
+- `[NSNumber numberWithBool:YES]` 简写为 `@YES`
 
 嗯…方便很多啊～以前最讨厌的就是数字放Array里还要封装成NSNumber了…现在的话直接用@开头接数字，可以简化不少。
 
@@ -112,9 +110,9 @@ OC的语法一直被认为比较麻烦，绝大多数的消息发送都带有很
 
 部分NSArray方法得到了简化：
 
-- 简写为
-- 简写为
-- 简写为
+- `[NSArray array]` 简写为 `@[]`
+- `[NSArray arrayWithObject:a]` 简写为 `@[ a ]`
+- `[NSArray arrayWithObjects:a, b, c, nil]` 简写为 `@[ a, b, c ]`
 
 可以理解为@符号就表示NS对象(和NSString的@号一样)，然后接了一个在很多其他语言中常见的方括号[]来表示数组。实际上在我们使用简写时，编译器会将其自动翻译补全为我们常见的代码。比如对于@[ a, b, c ]，实际编译时的代码是
 
@@ -131,9 +129,9 @@ array = [NSArray arrayWithObjects:objects count:count];
 
 既然数组都简化了，字典也没跑儿，还是和Perl啊Python啊Ruby啊很相似，意料之中的写法：
 
-- 简写为
-- 简写为
-- 简写为
+- `[NSDictionary dictionary]` 简写为 `@{}`
+- `[NSDictionary dictionaryWithObject:o1 forKey:k1]` 简写为 `@{ k1 : o1 }`
+- `[NSDictionary dictionaryWithObjectsAndKeys:o1, k1, o2, k2, o3, k3, nil]` 简写为 `@{ k1 : o1, k2 : o2, k3 : o3 }`
 
 和数组类似，当写下@{ k1 : o1, k2 : o2, k3 : o3 }时，实际的代码会是
 
@@ -173,12 +171,10 @@ static NSArray *thePlanets;
 
 其实使用这些简写的一大目的是可以使用下标来访问元素：
 
-- 简写为
-
-  ;
-- 简写为
-- 简写为
-- 简写为
+- `[_array objectAtIndex:idx]` 简写为 `_array[idx]`;
+- `[_array replaceObjectAtIndex:idx withObject:newObj]` 简写为 `_array[idx] = newObj`
+- `[_dic objectForKey:key]` 简写为 `_dic[key]`
+- `[_dic setObject:object forKey:key]` 简写为 `_dic[key] = newObject`
 
 很方便，但是一定需要注意，对于字典用的也是方括号[]，而不是想象中的花括号{}。估计是想避免和代码块的花括号发生冲突吧…简写的实际工作原理其实真的就只是简单的对应的方法的简写，没有什么惊喜。
 

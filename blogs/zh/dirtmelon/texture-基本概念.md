@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-02-19
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1886118ced705e28'
 translated: n/a
 ---
@@ -100,15 +100,21 @@ ASRangeTuningParameters 定义了各个区域大小，一般来说即将进入�
 
 通过以下可以在相关的状态中进行不同的操作：
 
-- ```objc
+- Visible Range :
+
+  ```objc
   -didEnterVisibleState
   -didExitVisibleState
   ```
-- ```objc
+- Display Range
+
+  ```objc
   -didEnterDisplayState
   -didExitDisplayState
   ```
-- ```objc
+- Preload Range
+
+  ```objc
   -didEnterPreloadState
   -didExitPreloadState
   ```

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4471868b5f0cb9f6'
 translated: n/a
 ---
@@ -20,16 +20,18 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-08-17
 
-1. 1. 背景
-2. 2. 解决方案
+**文章目录**
 
-    1. 2.1. UITableView
-    2. 2.2. UICollectionView
-    3. 2.3. InvalidationContext
+1. [1. 背景](#背景)
+2. [2. 解决方案](#解决方案)
+
+    1. [2.1. UITableView](#UITableView)
+    2. [2.2. UICollectionView](#UICollectionView)
+    3. [2.3. InvalidationContext](#InvalidationContext)
 
 本文讲述了`UITableView`、`UICollectionView`实现self-sizing cell布局的知识，以及如何用InvalidationContext优化`UICollectionView`布局的更新。
 
-## [#背景](#背景)背景
+## 背景
 
 iOS越来越人性化了，用户可以在设置-通用-辅助功能中动态调整字体大小了。你会发现所有iOS自带的APP的字体大小都变了，可惜我们开发的第三方APP依然是以前的字体。在iOS7之后我们可以用`UIFont`的`preferredFontForTextStyle:`类方法来指定一个样式，并让字体大小符合用户设定的字体大小。目前可供选择的有六种样式:
 
@@ -54,9 +56,9 @@ iOS会根据样式的用途来合理调整字体。
 
 总之，还会有其他动态因素导致我们需要修改布局。
 
-## [#解决方案](#解决方案)解决方案
+## 解决方案
 
-### [#UITableView](#UITableView)UITableView
+### UITableView
 
 有三种策略可以调节Cell（或者是Header和Footer）的高度：
 
@@ -78,20 +80,10 @@ iOS会根据样式的用途来合理调整字体。
 
 以Cell为例，iOS会根据给出的预计高度来创建一个Cell，但等到真正要显示它的时候，iOS8会在self-sizing计算得出新的Size并调整table的`contentSize`后，将Cell绘制显示出来。关键在于如何得出Cell新的Size，iOS提供了两种方法：
 
-- 这个两年前推出的神器虽然在一开始表现不佳，但随着Xcode的越来越给力，在iOS7中自动布局俨然成了默认勾选的选项，通过设定一系列约束来使得我们的UI能够适应各种尺寸的屏幕。如果你有使用约束的经验，想必已经有了解决思路：向Cell的
-
-  添加约束。iOS会先调用
-
-  的
-
-  方法来根据约束计算新的Size，如果你没实现约束，
-
-  会接着调用
-
-  方法。
-- 我们可以重写
-
-  方法来自己定义新的Size，这样我们就不必学习约束相关的知识了。
+- 自动布局  
+   这个两年前推出的神器虽然在一开始表现不佳，但随着Xcode的越来越给力，在iOS7中自动布局俨然成了默认勾选的选项，通过设定一系列约束来使得我们的UI能够适应各种尺寸的屏幕。如果你有使用约束的经验，想必已经有了解决思路：向Cell的`contentView`添加约束。iOS会先调用`UIView`的`systemLayoutSizeFittingSize:`方法来根据约束计算新的Size，如果你没实现约束，`systemLayoutSizeFittingSize:`会接着调用`sizeThatFits:`方法。
+- 人工代码  
+   我们可以重写`sizeThatFits:`方法来自己定义新的Size，这样我们就不必学习约束相关的知识了。
 
 下面我给出了一个用Swift语言写的Demo-[HardChoice](http://hardchoice.yulingtianxia.com)，使用自动布局来调整`UITableViewCell`的高度。我通过实现一个`UITableViewCell`的子类`DynamicCell`来实现自动布局，你可以再GitHub上下载[源码](https://github.com/yulingtianxia/HardChoice)：
 
@@ -147,7 +139,7 @@ self.tableView.estimatedRowHeight = 44
 
 ![](http://yulingtianxia.com/resources/140833033058.gif)
 
-### [#UICollectionView](#UICollectionView)UICollectionView
+### UICollectionView
 
 `UITableView` 和 `UICollectionView` 都是 data-source 和 delegate 驱动的。`UICollectionView`在此之上进行了进一步抽象。它将其子视图的位置，大小和外观的控制权委托给一个单独的布局对象。通过提供一个自定义布局对象，你几乎可以实现任何你能想象到的布局。布局继承自 `UICollectionViewLayout` 抽象基类。iOS6 中以 `UICollectionViewFlowLayout` 类的形式提出了一个具体的布局实现。在`UICollectionViewFlowLayout`中，self-sizing同样适用：
 
@@ -173,7 +165,7 @@ PS：`preferredLayoutAttributesFittingAttributes:`方法默认调整Size属性�
 
 其次。。。没有其次，在`UICollectionView`中实现self-sizing，只需给`estimatedItemSize`属性赋值（不能是`CGSizeZero`），一行代码足矣。
 
-### [#InvalidationContext](#InvalidationContext)InvalidationContext
+### InvalidationContext
 
 假如设备屏幕旋转，或者需要展示一些其妙的效果（比如CoverFlow），我们需要将当前的布局失效，并重新计算布局。当然每次计算都有一定的开销，所以我们应该谨慎的仅在我们需要的时候调用`invalidateLayout`方法来让布局失效。
 

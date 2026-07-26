@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:89f3e73074f61cd3'
 translated: n/a
 ---
@@ -63,11 +63,11 @@ func mySimpleFunction() {
 
 如果你曾在 Objective-C 之外的语言进行过编程，上面的这个函数你会非常熟悉
 
-- 表示这是一个函数。
-- 。
-- 。
+- `func` 表示这是一个函数。
+- 函数的名称是 `mySimpleFunction`。
+- 这个函数没有参数传入 - 因此是`( )`。
 - 函数没有返回值
-- 中执行
+- 函数是在`{ }`中执行
 
 现在让我们看一个稍稍复杂的例子：
 
@@ -595,9 +595,9 @@ luckyNumberForName("Mr. Roboto", lotteryHandler: {name, number in
 
 Swift 有三个级别的[权限控制](https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html)：
 
-- 可以为实体启用定义它们的模块中的源文件的访问，另外其他模块的源文件里只要导入了定义模块后，也能进行访问。通常情况下，Framework 是可以被任何人使用的，你可以将其设置为 public 级别
-- 可以为实体启用定义它们的模块中的源文件的访问，但是在定义模块之外的任何源文件中都不能访问它。通常情况下，app 或 Framework 的内部结构使用 internal 级别。
-- 只能在当前源文件中使用的实体。使用 private 级别，可以隐藏某些功能的特地的实现细节。
+- **Public 权限** 可以为实体启用定义它们的模块中的源文件的访问，另外其他模块的源文件里只要导入了定义模块后，也能进行访问。通常情况下，Framework 是可以被任何人使用的，你可以将其设置为 public 级别
+- **Internal 权限** 可以为实体启用定义它们的模块中的源文件的访问，但是在定义模块之外的任何源文件中都不能访问它。通常情况下，app 或 Framework 的内部结构使用 internal 级别。
+- **Private 权限** 只能在当前源文件中使用的实体。使用 private 级别，可以隐藏某些功能的特地的实现细节。
 
 默认情况下，每个函数和变量是 internal 的 —— 如果你希望修改他们，你需要在每个方法和变量的前面使用 `private` 或者 `public` 关键字：
 

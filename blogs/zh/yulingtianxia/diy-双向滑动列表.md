@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:19a0630bcf8ff45a'
 translated: n/a
 ---
@@ -20,17 +20,19 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-01-16
 
-1. 1. 需求简介
-2. 2. 数据请求
+**文章目录**
 
-    1. 2.1. 格式设计
-    2. 2.2. 请求时机
-3. 3. 可重用的 ItemView
-4. 4. 感受
+1. [1. 需求简介](#需求简介)
+2. [2. 数据请求](#数据请求)
+
+    1. [2.1. 格式设计](#格式设计)
+    2. [2.2. 请求时机](#请求时机)
+3. [3. 可重用的 ItemView](#可重用的-ItemView)
+4. [4. 感受](#感受)
 
 公司项目中有个页面是双向滑动的列表，遂用 `UIScrollView` 手撸了之，把一些 UI 和数据上的心得记录下来。
 
-## [#需求简介](#需求简介)需求简介
+## 需求简介
 
 UI 上的主要内容就是一个 `UITableView`，其中一些 cell 内会嵌套一个横向滑动的 `ListView`，`ListView` 中包含一些尺寸相同可点击的 ItemView，ItemView 中的图片内容需要从网络加载。
 
@@ -44,9 +46,9 @@ UI 上的主要内容就是一个 `UITableView`，其中一些 cell 内会嵌套
 
 **如果只是单纯一个双向滑动列表，`UICollectionView` 完全可以胜任。**但是真正的需求里还掺杂着很多其他 UI 元素，所以只能 DIY 了。
 
-## [#数据请求](#数据请求)数据请求
+## 数据请求
 
-### [#格式设计](#格式设计)格式设计
+### 格式设计
 
 因为主体 UI 为竖向列表嵌套横向列表，所以两个方向都需要有数据请求。
 
@@ -75,7 +77,7 @@ ItemView 对应的数据 `ItemModel` 包含唯一标识符 `itemID` 和图片地
 
 之所以不干脆在 `ListModel` 装填所有 `ItemModel`，是为了节省一次请求的数据流量，降低失败率。因为第一次展示页面时只需要填充前几个 ItemView 的数据，等用户横向滑动后再继续根据 `itemIDs` 请求滑动到的 ItemView 对应数据。
 
-### [#请求时机](#请求时机)请求时机
+### 请求时机
 
 因为有了 `ListView` 中所有 ItemView 对应的 ID，所以横向滑动没有分页逻辑，就没有转菊花的停顿时间用来请求网络数据和等待接受处理数据。虽然可以用 ID 请求到对应的 `ItemModel`，但肯定不能在 `UITableView` 的 datasource 回调中为每个 cell 去单独请求数据。所以 `ListView` 即便直接使用 `UITableView` 或 `UICollectionView`，也无法享受到它带来的便捷，数据请求逻辑依然需要自己在 `UIScrollViewDelegate` 中实现。**所以 `ListView` 是继承 `UIScrollView` 自己 DIY 了一个横向滑动列表。如何合理控制数据请求次数成为了性能优化的重点**
 
@@ -154,11 +156,11 @@ const static CGFloat itemFirstToLeft = 0; // 最左边的 ItemView 的 leftMargi
 `UIScrollViewDelegate` 中实现策略如下：
 
 1. 在列表滚动过程中计算当前显示在屏幕上的 ItemView 的区间，并调用 `loadItems:`
-2. 重新加载数据
+2. 在列表即将开始滚动和停止滚动的时刻，调用 `reloadItemModels` 重新加载数据
 
 在计算需要加载的 `range` 的时候需要注意一些边界数值的处理，擅用 `floorf` 和 `ceilf` 函数进行取舍，并用 `MAX()` 和 `MIN()` 来检查边界值合法性。
 
-## [#可重用的-ItemView](#可重用的-ItemView)可重用的 `ItemView`
+## 可重用的 `ItemView`
 
 需要自己实现一个类似 `UICollectionView` 的 item 重用机制。
 
@@ -279,7 +281,7 @@ const static CGFloat itemFirstToLeft = 0; // 最左边的 ItemView 的 leftMargi
 }
 ```
 
-## [#感受](#感受)感受
+## 感受
 
 不得不承认一开始想 DIY 个列表还是有装逼嫌疑的，但后来发现还是 DIY 来的爽，好多事情都掌握在自己手里，批量请求数据也更方便（虽说直接用 `UICollectionView` 也可以办到，只是有些绕，且依然得自己实现 `UIScrollViewDelegate`）。最大的收获就是对 `UIScrollView` 的理解更深刻，对 `UITableView` 的实现机制有了掌握。
 

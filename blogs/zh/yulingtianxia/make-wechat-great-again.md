@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5142bb761b694acb'
 translated: n/a
 ---
@@ -20,16 +20,18 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-02-28
 
-1. 1. 工欲善其事必先利其器
-2. 2. 之后就是不停地 Hook
+**文章目录**
 
-    1. 2.1. 关闭『发现』页面的各种入口 - 清君侧
-    2. 2.2. 修改微信运动步数 - 装逼党的自我修养
-    3. 2.3. 小红点消除计划 - 我想静静
-    4. 2.4. 夜间模式 - 辣眼睛
-    5. 2.5. 阻止撤回消息 - 知道真相的我眼泪掉下来
-    6. 2.6. 要屏蔽 - 不要免打扰
-3. 3. 后记
+1. [1. 工欲善其事必先利其器](#工欲善其事必先利其器)
+2. [2. 之后就是不停地 Hook](#之后就是不停地-Hook)
+
+    1. [2.1. 关闭『发现』页面的各种入口 - 清君侧](#关闭『发现』页面的各种入口-清君侧)
+    2. [2.2. 修改微信运动步数 - 装逼党的自我修养](#修改微信运动步数-装逼党的自我修养)
+    3. [2.3. 小红点消除计划 - 我想静静](#小红点消除计划-我想静静)
+    4. [2.4. 夜间模式 - 辣眼睛](#夜间模式-辣眼睛)
+    5. [2.5. 阻止撤回消息 - 知道真相的我眼泪掉下来](#阻止撤回消息-知道真相的我眼泪掉下来)
+    6. [2.6. 要屏蔽 - 不要免打扰](#要屏蔽-不要免打扰)
+3. [3. 后记](#后记)
 
 关闭朋友圈有一年多了，突然有一天微信的策略变了，在关闭朋友圈的同时也不让别人查看自己的朋友圈了。有妹子表示看不到我朋友圈很不爽，于是我决定对微信进行一番改造！初步实现效果：
 
@@ -42,7 +44,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 **手机无需越狱**，项目 GitHub 地址: [FishChat](https://github.com/yulingtianxia/FishChat)，Make WeChat Great Again！
 
-## [#工欲善其事必先利其器](#工欲善其事必先利其器)工欲善其事必先利其器
+## 工欲善其事必先利其器
 
 因为没有越狱手机，所以不是直接写 tweak 放手机里，而是需要将 `CaptainHook` 工程编译出的 dylib 注入到已砸壳 app 的二进制文件中。同样因为没有越狱机，所以砸壳的文件只能从 某 P 助手下载了。
 
@@ -51,7 +53,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 1. 查找可用的 iPhone 开发者证书
 2. 解压 ipa 文件
 3. 拷贝 mobileprovision 文件和要注入的 dylib 文件到 app 文件夹中
-4. 段中加入一条加载 dylib 的指令
+4. 向 app 中可执行文件的 `Load Commands` 段中加入一条加载 dylib 的指令
 5. 对 app 中所有的 app，appx，framework，dylib 文件用第 1 步获取的证书进行重签名
 6. 打包签名好的 ipa 文件
 7. 删除上述过程中产生的中间文件
@@ -113,58 +115,22 @@ mobiledevice install_app extracted.ipa
 想要让 [autoswimfi.sh](https://github.com/yulingtianxia/FishChat/blob/master/Shell/autoswimfi.sh) 一气呵成执行下去，需要依赖以下几项：
 
 1. Mac 上需要有唯一可用的 iPhone 开发者证书，如果有多个，默认选最后一个
-2. 工具用于注入 dylib 文件到二进制文件中
-3. 可以将 ipa 安装到 USB 连接到 Mac 上的手机中
+2. `yololib` 工具用于注入 dylib 文件到二进制文件中
+3. `mobiledevice` 可以将 ipa 安装到 USB 连接到 Mac 上的手机中
 4. 一个可用的 mobileprovision 文件，十分关键，可以新建个工程在自己手机 Run 一下，新生成的 app 里面就有 mobileprovision 文件。
 
 在这里多再说几句：
 
-1. 很多次，一直失败，就当前辈们劝我还是用
-
-  稳妥的时候，我觉得还是再试一次吧，果然还是失败了。不过新建 Xcode 项目选择 template 时却出现了
-
-  哈哈哈哈！
-2. 注入 dylib 后 crash，后来用
-
-  就好了！不过
-
-  有个 bug 是对 dylib 的版本号有要求。这里可以直接改源码，把
-
-  和
-
-  的宏定义都改成
-
-  。懒人直接用我上传的
-
-  yololib
-
-  。
-3. 打印所有的
-
-  ，建议搭配
-
-  进行正则过滤。
-
-  可以查看使用的库文件。
+1. 一年多前我尝试安装 `iOSOpenDev` 很多次，一直失败，就当前辈们劝我还是用 `theos` 稳妥的时候，我觉得还是再试一次吧，果然还是失败了。不过新建 Xcode 项目选择 template 时却出现了 `iOSOpenDev` 哈哈哈哈！
+2. 一开始用 `insert_dylib` 注入 dylib 后 crash，后来用 `yololib` 就好了！不过 `yololib` 有个 bug 是对 dylib 的版本号有要求。这里可以直接改源码，把 `DYLIB_CURRENT_VER` 和 `DYLIB_COMPATIBILITY_VERSION` 的宏定义都改成 `0x0000`。懒人直接用我上传的 [yololib](https://github.com/yulingtianxia/FishChat/blob/master/yololib)。
+3. 如果要查看 Mach-O 文件完整信息，建议用 MachOView。`otool -l` 打印所有的 `Load Commands`，建议搭配 `grep` 进行正则过滤。`otool -L` 可以查看使用的库文件。
 4. 网上一些重签名工具没有将插件拓展或 Watch 中的 dylib 重签名，导致签名失败等问题。微信的 Apple Watch 客户端用 Swift 写的，因为还没有 ABI 稳定，所以只好把大量 dylib 打包进去。
-5. 来完成一些调试工作，这样就不用一次次打 Log 了。同样也可以打印出视图层级，不过建议有条件的同学用 Reveal 2，已经支持 USB 调试了。
-
-  只支持在同网段下连接到手机 IP 的
-
-  端口，cy 脚本还是跟
-
-  命令有一些差别的。如果
-
-  官网的 sdk 不好用，那就用用我上传的吧：
-
-  `Cycript.framework`
-6. 得到的头文件寻找蛛丝马迹了。Dump 出的文件：
-
-  WeChat-Headers
+5. 可以使用 `Cycript` 来完成一些调试工作，这样就不用一次次打 Log 了。同样也可以打印出视图层级，不过建议有条件的同学用 Reveal 2，已经支持 USB 调试了。`Cycript` 只支持在同网段下连接到手机 IP 的 `8888` 端口，cy 脚本还是跟 `lldb` 命令有一些差别的。如果 `Cycript` 官网的 sdk 不好用，那就用用我上传的吧：[`Cycript.framework`](https://github.com/yulingtianxia/FishChat/tree/master/Cycript.framework)
+6. 找到视图对应的类之后，就需要在 `class-dump` 得到的头文件寻找蛛丝马迹了。Dump 出的文件：[WeChat-Headers](https://github.com/yulingtianxia/FishChat/tree/master/WeChat-Headers)
 7. 查看设备 Log 最简单的方式当然是从 Xcode-\>Devices-\>你的设备。
-8. 安装失败，可以将工程 Clean 和 Clean Build Folder 后重新编译，再跑一次我的脚本。如果还不行，尝试用 iTools 等软件安装 ipa 到手机上。
+8. 安装时如果遇到 `AMDeviceSecureInstallApplication` 安装失败，可以将工程 Clean 和 Clean Build Folder 后重新编译，再跑一次我的脚本。如果还不行，尝试用 iTools 等软件安装 ipa 到手机上。
 
-## [#之后就是不停地-Hook](#之后就是不停地-Hook)之后就是不停地 Hook
+## 之后就是不停地 Hook
 
 我曾经在『[让你的微信不再被人撤回消息](http://yulingtianxia.com/blog/2016/05/06/Let-your-WeChat-for-Mac-never-revoke-messages/)』这篇文章中说过：
 
@@ -174,7 +140,7 @@ mobiledevice install_app extracted.ipa
 
 > Mac 上需要安装 `iOSOpenDev` 或 `theos`，本项目新建工程时使用 `iOSOpenDev` 的 `CaptainHook` 模板。编译的时候要选自己的手机，不要选模拟器。
 
-### [#关闭『发现』页面的各种入口-清君侧](#关闭『发现』页面的各种入口-清君侧)关闭『发现』页面的各种入口 - 清君侧
+### 关闭『发现』页面的各种入口 - 清君侧
 
 在关掉各种乱码七糟的功能之后，发现页面仍留下几个无法关闭的入口。本次逆向微信的动机也由此引发：我只想关闭朋友圈入口，并没想关闭自己朋友圈内容，不过微信的这项策略也是很符合一些人的需求的。很多人真的想关闭自己朋友圈不让别人看，不过将这个需求跟旧的『关闭朋友圈入口』功能强绑定在一起，就有些绑架用户的味道了，鱼和熊掌不可兼得啊！不过关闭朋友圈后，别人依然能看到自己在 TimeLine 上新发的内容，但是一旦点击头像进入主页后就提示『该朋友暂未开启朋友圈』，奇怪的是回到自己的 TimeLine 上后，以前那条新发的内容就消失了。我觉得这不是 bug，而是产品策略。微信在努力保持用户粘性，不得不在用户需求和产品数据之间权衡。好吧，扯远了。。。
 
@@ -223,7 +189,7 @@ CHOptimizedMethod1(self, void, FindFriendEntryViewController, viewDidAppear, BOO
 }
 ```
 
-### [#修改微信运动步数-装逼党的自我修养](#修改微信运动步数-装逼党的自我修养)修改微信运动步数 - 装逼党的自我修养
+### 修改微信运动步数 - 装逼党的自我修养
 
 修改微信运动步数的方法网上一搜就有好多文章，就是 hook `WCDeviceStepObject` 的 `m7StepCount` 方法罢了。我在这里为了更方便地装逼，当然不能 hook 时把步数写死了，随机数也不够屌，要装逼就装到位：
 
@@ -272,7 +238,7 @@ CHOptimizedMethod0(self, unsigned int, WCDeviceStepObject, m7StepCount)
 }
 ```
 
-### [#小红点消除计划-我想静静](#小红点消除计划-我想静静)小红点消除计划 - 我想静静
+### 小红点消除计划 - 我想静静
 
 微信真的是越来越臃肿，大有追赶 QQ 的架势，连小红点也是越来越多。『发现』页面撸的挺干净了，我就不信扫一扫入口还能有小红点（flag 已立）。『我』Tab 页里什么钱包啊卡包啊老有小红点，真烦人，老得点进去。
 
@@ -314,7 +280,7 @@ CHOptimizedMethod1(self, void, UIView, didAddSubview, UIView *, subview)
 }
 ```
 
-### [#夜间模式-辣眼睛](#夜间模式-辣眼睛)夜间模式 - 辣眼睛
+### 夜间模式 - 辣眼睛
 
 > 她说睡了，其实是躺在被窝里继续玩手机罢了。
 
@@ -324,7 +290,7 @@ CHOptimizedMethod1(self, void, UIView, didAddSubview, UIView *, subview)
 
 这么辣眼睛的审美会被狂吐槽，就不贴代码了，有兴趣的去项目里查看哈哈。
 
-### [#阻止撤回消息-知道真相的我眼泪掉下来](#阻止撤回消息-知道真相的我眼泪掉下来)阻止撤回消息 - 知道真相的我眼泪掉下来
+### 阻止撤回消息 - 知道真相的我眼泪掉下来
 
 有时候被撤回的消息看到了会后悔的，但这依然阻止不了我的好奇心+强迫症。
 
@@ -351,11 +317,11 @@ CHDeclareMethod3(void, CMessageMgr, DelMsg, id, arg1, MsgList, id, arg2, DelAll,
 }
 ```
 
-### [#要屏蔽-不要免打扰](#要屏蔽-不要免打扰)要屏蔽 - 不要免打扰
+### 要屏蔽 - 不要免打扰
 
 详细内容请见：[如何在逆向工程中 Hook 得更准 - 微信屏蔽好友&群消息实战](http://yulingtianxia.com/blog/2017/03/06/How-to-hook-the-correct-method-in-reverse-engineering)
 
-## [#后记](#后记)后记
+## 后记
 
 若不是时间匆忙，或许还可以让微信变得更伟大。比如加个『彻底清理缓存』按钮。平时使用微信确实有很多不爽的地方，尤其是群功能太弱太弱了。我还想加个功能就是如果对方发了超过 30s 的语音，并且对方不是妹子也不是老板不是亲戚，此时自动回复 #&*DF@$@(M!…..我没太听清，请你重新再发一遍？
 

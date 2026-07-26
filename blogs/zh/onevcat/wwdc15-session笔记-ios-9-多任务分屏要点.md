@@ -16,9 +16,9 @@ translated: n/a
 
 本文是我的 [WWDC15 笔记](http://onevcat.com/2015/06/ios9-sdk/)中的一篇，涉及的 Session 有
 
-- Getting Started with Multitasking on iPad in iOS 9
-- Multitasking Essentials for Media-Based Apps on iPad in iOS 9
-- Optimizing Your App for Multitasking on iPad in iOS 9
+- [Getting Started with Multitasking on iPad in iOS 9](https://developer.apple.com/videos/wwdc/2015/?id=205)
+- [Multitasking Essentials for Media-Based Apps on iPad in iOS 9](https://developer.apple.com/videos/wwdc/2015/?id=211)
+- [Optimizing Your App for Multitasking on iPad in iOS 9](https://developer.apple.com/videos/wwdc/2015/?id=212)
 
 ### iOS 9 多任务综述
 
@@ -96,9 +96,7 @@ iOS 9 中多任务的另一种表现形式就是视频的画中画模式：即�
 
 1. 使用 iOS 9 SDK 构建你的 app；
 2. 在 app 的 Capabilities 里，将 Background Modes 的 “Audio, AirPlay, and Picture in Picture” 勾选上 (Xcode 7 beta 中暂时为 “Audio and AirPlay”)；
-3. 设置为合适的选项
-
-  ，比如
+3. 将 AudioSession Catogory [设置为合适的选项](https://gist.github.com/onevcat/82defadf559968c6a3bc)，比如 `AVAudioSessionCategoryPlayback`
 4. 使用 AVKit，AVFoundation 或者 WebKit 框架来播放视频。
 
 在 iOS 9 中，一直伴随我们的 MediaPlayer 框架中的视频播放部分正式宣布寿终正寝。也就是说，如果你在使用 `MPMoviePlayerViewController` 或者 `MPMoviePlayerController` 在播放视频的话，你就无法使用画中画的特性了，因此尽快转型到新的视频播放框架会是急迫的适配任务。因为画中画模式是基于 `AVPlayerLayer` 的。当切换到画中画时，会将正在播放视频的 layer 取出，然后进行缩小后添加到新的界面的 layer 上。这也是旧的 MediaPlayer 框架无法支持画中画的主要原因。

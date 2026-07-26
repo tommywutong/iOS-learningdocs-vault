@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-08-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ffb16f7c5e85e89b'
 translated: n/a
 ---
@@ -18,13 +18,13 @@ translated: n/a
 
 2014年8月26日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 这是《objc与鸭子对象》的下半部分，[《objc与鸭子对象（上）》](http://blog.sunnyxx.com/2014/08/24/objc-duck/)中介绍了鸭子类型和它在objc中的实践，以及一个使用NSProxy实现JSON Entity的鸭子类。下半部分介绍鸭子对象的进阶用法，并简单介绍由鸭子对象思想衍生出的`依赖注入`，实现一个demo。
 
 ---
 
-# [#被误解了的面向对象](#被误解了的面向对象)被误解了的面向对象
+# 被误解了的面向对象
 
 Smalltalk之父或者说面向对象之父（之一）的**Alan Kay**曾写过：
 
@@ -45,7 +45,7 @@ Smalltalk之父或者说面向对象之父（之一）的**Alan Kay**曾写过�
 
 ---
 
-# [#Json-Entity的重构](#Json-Entity的重构)Json Entity的重构
+# Json Entity的重构
 
 回想上一篇中的JSON Entity类：
 
@@ -91,7 +91,7 @@ NSLog(@"%@, %@, %@", copied.jsonString, copied.name, copied.age);
 
 ---
 
-# [#依赖注入](#依赖注入)依赖注入
+# 依赖注入
 
 `Dependency Injection`，简称`DI`，其实在这个场景下叫`动态实现注入`更合适。它的思想是将一个“对象”分成三部分，**protocol**、**proxy**和**implementation**，试想有两个协议，他们定义了彼此间该如何发送message：  
 ![](http://ww1.sinaimg.cn/bmiddle/51530583jw1ejqir7ys6zj20lu04ywes.jpg)  
@@ -101,7 +101,7 @@ NSLog(@"%@, %@, %@", copied.jsonString, copied.name, copied.age);
 ![](http://ww3.sinaimg.cn/bmiddle/51530583jw1ejqj6c7uqrj20l60dw75f.jpg)  
 由于调用层只有协议没有类名，所以`Implement A`实现类并不依赖`Implement B`，就像贩毒团伙的两方只靠小弟来交易，完全不知道幕后大哥是谁，这就是所谓的“面向接口编程”吧。
 
-## [#Let’s-demo-it](#Let’s-demo-it)Let’s demo it
+## Let’s demo it
 
 重点在实现这个Proxy类，按照刚才重构Json Entity类的思路，头文件定义十分精简：
 
@@ -194,7 +194,7 @@ id<XXDIProxy, XXGirlFriend> gf = XXDIProxyCreate();
 
 ---
 
-# [#我是后语](#我是后语)我是后语
+# 我是后语
 
 现在有一个完整的依赖注入框架[typhoon](http://www.typhoonframework.org/)，感兴趣的可以把玩一下。  
 依赖注入不仅可以解耦依赖关系，也可以更好的Test和Mock，想测试某个对象只需要将实现对象注入成Test对象，想造假数据只需要将response对象替换成一个Mock对象，无需修改调用代码，天然不刺激~
@@ -203,7 +203,7 @@ _PS： 实际使用中可不要过度设计哦。。。_
 
 ---
 
-# [#Reference](#Reference)Reference
+# Reference
 
 [http://c2.com/cgi/wiki?AlanKayOnMessaging](http://c2.com/cgi/wiki?AlanKayOnMessaging)  
 [http://www.typhoonframework.org/](http://www.typhoonframework.org/)

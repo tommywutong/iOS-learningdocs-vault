@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:89d38798fa8ab664'
 translated: n/a
 ---
@@ -20,17 +20,19 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2015-08-12
 
-1. 1. 值 VS 引用
-2. 2. 值类型的经验
-3. 3. 做出抉择
-4. 4. 嵌套类型
-5. 5. 结论
+**文章目录**
+
+1. [1. 值 VS 引用](#值-VS-引用)
+2. [2. 值类型的经验](#值类型的经验)
+3. [3. 做出抉择](#做出抉择)
+4. [4. 嵌套类型](#嵌套类型)
+5. [5. 结论](#结论)
 
 本文翻译自 Mike Ash 的 [Friday Q&A 2015-07-17: When to Use Swift Structs and Classes](https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html)
 
 Swift 圈中有一个被反复讨论的话题已经成为了:何时使用`class`,何时使用`struct`.我觉得今天我也要给出我的个人观点.
 
-## [#值-VS-引用](#值-VS-引用)值 VS 引用
+## 值 VS 引用
 
 答案真的很简单了:当你需要用值语义的时候使用`struct`,需要用引用语义使用`class`.就是这样!
 
@@ -125,7 +127,7 @@ The number in reference2 is 43
 The number in value2 is 42
 ```
 
-## [#值类型的经验](#值类型的经验)值类型的经验
+## 值类型的经验
 
 值类型并不是新鲜事物,但是对于很多人来说觉得它是新的.这是怎么回事呢?
 
@@ -151,7 +153,7 @@ print("x=\(x) x2=\(x2)")
 
 实际上 Objective-C 的 [tagged pointers](https://www.mikeash.com/pyblog/friday-qa-2012-07-27-lets-build-tagged-pointers.html) 对此提到过.一个对象遇上了 tagged pointer 的处理,然后存储在指针的值中,就成了值类型.拷贝操作这时拷贝的就是对象内容了.表面上没差异,因为 Objective-C 函数库小心翼翼地仅将不可变类型放到 tagged pointer 中.有些 `NSNumber` 对象是引用类型而有些是值类型,但用起来没什么差别.
 
-## [#做出抉择](#做出抉择)做出抉择
+## 做出抉择
 
 既然我们知道了值类型的工作原理,我们改为自己的数据类型选择那种方式呢?
 
@@ -173,7 +175,7 @@ print("x=\(x) x2=\(x2)")
 
 Swift 说”不错”,这意味着如 `Array`,`Dictionary` 和 `String` 都是 `struct` 而不是 `class`. 它们在赋值和作为参数传递时被拷贝.只要拷贝的开销小,这就是个彻底明智的选择,而Swift费了很大力气去实现这点.
 
-## [#嵌套类型](#嵌套类型)嵌套类型
+## 嵌套类型
 
 嵌套使用值类型和引用类型会有四种组合方式.只是其中一个比较有趣.
 
@@ -257,6 +259,6 @@ Bob Josephsonson, Jr.
 
 在其他情况下,解决方案可能更简单.比如,你创建了一个包含视图的 `struct`,而视图是引用类型且不能改成值类型.这_或许_是个好的迹象表明你不该用 `struct`, 因为你不管怎样都不能维持值语义.
 
-## [#结论](#结论)结论
+## 结论
 
 当移动值类型时它们会被拷贝,然而引用类型只是得到了一个对相同底层对象新引用.这意味着对引用类型的修改在每个引用上都看的到,然而对值类型的修改只会影响你修改的那块存储区.当选择使用哪种类型时,思考下如何拷贝你的类型比较恰当,如果需要深层拷贝就倾向于选择值类型.最后,谨防值类型中嵌入的引用类型,稍有不慎就会遭殃.

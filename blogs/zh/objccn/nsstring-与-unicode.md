@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f8d1451947007b1d'
 translated: n/a
 ---
@@ -249,7 +249,7 @@ NSRange fullRange = NSMakeRange(0, [s length]);
 
 这个奇妙的方法表明，苹果想让我们把字符串看做子字符串的集合，而不是（苹果意义上的）字符的集合，因为
 
-1. 太小，不足以代表一个真正的 Unicode 字符；
+1. 单个 `unichar` 太小，不足以代表一个真正的 Unicode 字符；
 2. 一些（普遍意义上的）字符由多个 Unicode 码点组成。
 
 请注意，这个方法的加入相对晚一些（在 OS X 10.6 和 iOS 4.0 的时候）。在之前，按字符循环一个字符串要麻烦得多。
@@ -295,16 +295,12 @@ NSLog(@"%@ is %@ to %@", s, result == NSOrderedSame ? @"equal" : @"not equal", t
 
 > 如果你不得不猜测文件的编码（注意，没有明确信息，就只有猜测）：
 
-> 1. 或者
-> 
->   （或者这两个方法参数为 URL 的等价方法）。
-> 
+> 1. 试试这两个方法：`stringWithContentsOfFile:usedEncoding:error:` 或者 `initWithContentsOfFile:usedEncoding:error:` （或者这两个方法参数为 URL 的等价方法）。  
 >   这些方法会尝试猜测资源的编码，如果猜测成功，会以引用的形式带回所用的编码。
 > 2. 如果 1 失败了，试着用 UTF-8 读取资源。
-> 3. 这里「合适的」取决于具体情况。它可以是默认的 C 语言字符串编码，也可以是 ISO 或者 Windows Latin 1 编码，亦或者是其它的，取决于你的数据来源。
-> 4. 类的载入方法（比如：
-> 
->   ）。这些方法会尝试纯文本文件，然后返回使用的编码。可以用这些方法打开任意的文档。如果你的程序并不是专业处理文本的程序，这些方法也值得考虑。对于 Foundation 级别的工具，或者不是自然语言的文本来说，这些方法可能不太合适。
+> 3. 如果 2 失败了，试试合适的老的编码。  
+>   这里「合适的」取决于具体情况。它可以是默认的 C 语言字符串编码，也可以是 ISO 或者 Windows Latin 1 编码，亦或者是其它的，取决于你的数据来源。
+> 4. 最终，还可以试试 Application Kit 里 `NSAttributedString` 类的载入方法（比如：`initWithFileURL:options:documentAttributes:error:`）。这些方法会尝试纯文本文件，然后返回使用的编码。可以用这些方法打开任意的文档。如果你的程序并不是专业处理文本的程序，这些方法也值得考虑。对于 Foundation 级别的工具，或者不是自然语言的文本来说，这些方法可能不太合适。
 
 > 编者注 第 4 条中 `NSAttributedString` 的方法名原文拼写有误，本译文已更正。
 
@@ -322,30 +318,10 @@ NSLog(@"%@ is %@ to %@", s, result == NSOrderedSame ? @"equal" : @"not equal", t
 
 ## 扩展阅读
 
-- 关于 Unicode 和字符集，每个程序员绝对、必须要了解的一点内容
-
-  。这篇文章已经有 10 年了，而且不仅限于 Cocoa 编程，但是值得一读。
-- Ross Carter
-
-  在 2012 年 NSCoference 上做了一次名叫「
-
-  你也可以讲 Unicode
-
-  」 的精彩演讲。演讲很有意思，强烈推荐观看。这篇文章的一部分就是基于 Ross 的演讲稿的。
-
-  NSConference
-
-  的 Scotty 人很好，让 objc.io 的读者可以观看这次视频。谢了！
-- 维基百科上关于 Unicode 的文章
-
-  很棒。
-- unicode.org
-
-  是 Unicode 联盟的官网，上面不仅有完整的标准和码表索引，还有其它很有意思的信息。扩展部分
-
-  FAQ
-
-  也很棒。
+- Joel Spolsky: [关于 Unicode 和字符集，每个程序员绝对、必须要了解的一点内容](http://www.joelonsoftware.com/articles/Unicode.html)。这篇文章已经有 10 年了，而且不仅限于 Cocoa 编程，但是值得一读。
+- [Ross Carter](https://twitter.com/RossT) 在 2012 年 NSCoference 上做了一次名叫「[你也可以讲 Unicode](https://vimeo.com/86030221)」 的精彩演讲。演讲很有意思，强烈推荐观看。这篇文章的一部分就是基于 Ross 的演讲稿的。[NSConference](http://nsconference.com/) 的 Scotty 人很好，让 objc.io 的读者可以观看这次视频。谢了！
+- [维基百科上关于 Unicode 的文章](http://en.wikipedia.org/wiki/Unicode)很棒。
+- [unicode.org](http://unicode.org) 是 Unicode 联盟的官网，上面不仅有完整的标准和码表索引，还有其它很有意思的信息。扩展部分 [FAQ](http://www.unicode.org/faq/) 也很棒。
 
 [^1]: 最新的 6.3.0 版本的 Unicode 标准支持 100 种文字和 15 种符号集，比如数学符号和麻将牌。在还没有提供支持的文字中，有 12 种「仍有人使用的文字」以及 31 种「古老的」或者「已经消亡的」文字。
 

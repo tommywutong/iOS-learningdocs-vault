@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-06
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c644b795a06b6b4b'
 translated: n/a
 ---
@@ -22,7 +22,7 @@ Reactive Cocoa Tutorial 系列，转载请注明该文源地址 – by sunnyxx
 
 ---
 
-## [#先说说RAC中必须要知道的宏：](#先说说RAC中必须要知道的宏：)先说说RAC中必须要知道的宏：
+## 先说说RAC中必须要知道的宏：
 
 ```plain
 RAC(TARGET, [KEYPATH, [NIL_VALUE]])
@@ -75,7 +75,7 @@ RAC(self.outputLabel, text) = RACObserve(self.model, name);
 
 **这两个宏一定成对出现，先weak再strong**
 
-## [#除了RAC中常用宏的使用，有一些宏的实现方法也很值得观摩。](#除了RAC中常用宏的使用，有一些宏的实现方法也很值得观摩。)除了RAC中常用宏的使用，有一些宏的实现方法也很值得观摩。
+## 除了RAC中常用宏的使用，有一些宏的实现方法也很值得观摩。
 
 举个高级点的栗子：
 
@@ -133,7 +133,7 @@ int count = 3;
 
 反正我看完之后感觉挺震惊，宏还能这么用，这样带来的好处不止是将计算在预处理时搞定，不拖延到运行时恶心cpu；但更重要的是编译检查。比如某些可变参数的实现要求可以填2个参数，可以填3个参数，其他的都不行，这样，也只有这样的宏的实现，才能在编译前就确定了错误。
 
-## [#除了上面，还有一个神奇的宏的使用：](#除了上面，还有一个神奇的宏的使用：)除了上面，还有一个神奇的宏的使用：
+## 除了上面，还有一个神奇的宏的使用：
 
 当使用诸如`RAC(self, outputLabel)`或`RACObserve(self, name)`时，发现写完逗号之后，**输入第二个property的时候会出现完全正确的代码提示**！这相当神奇。  
 ![自动代码提示](http://images.cnitblog.com/blog/401798/201402/112147518936541.png)
@@ -182,7 +182,7 @@ int c = ((void)a, b);
 
 这个宏的巧妙的地方就在于使得编译器以为我们要输入“点”出来的属性，保证了输入值的合法性（输了不存在的property直接报错的），同时利用了逗号表达式取逗号最后值的语法返回了正确的keypath。
 
-## [#总之](#总之)总之
+## 总之
 
 RAC对宏的使用达到了很高的水平，还有诸如`RACTuplePack`，`RACTupleUnpack`的宏就不细说了，值得研究。
 

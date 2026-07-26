@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-04-23
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:283c4c8b7bca9fed'
 translated: n/a
 ---
@@ -90,63 +90,27 @@ func requestImageData(for: PHAsset, options: PHImageRequestOptions?, resultHandl
 
 `PHImageRequestOptions` 对象决定了怎么获取图像，它有这些属性：
 
-- ：
+- `deliveryMode` ：`PHImageRequestOptionsDeliveryMode` ，分以下几种模式：
 
-  ，分以下几种模式：
-
-    - ，图片管理器会提供多次的结果来平衡图片质量和响应速度，也就是说有可能多次调用
-
-      ，在准备好高质量的图片以前先返回一个较低质量的图片给你用于展示。
-    - ，只返回高质量的图片。
-    - ，如果高质量的图片无法快速加载，
-
-      则提供低质量的图片，可以通过检查
-
-      中的
-
-      值来判断图片的质量。
-- :
-
-  ，图片管理器如何设置图像大小：
+    - `.opportunistic` ，图片管理器会提供多次的结果来平衡图片质量和响应速度，也就是说有可能多次调用 `resultHandler` ，在准备好高质量的图片以前先返回一个较低质量的图片给你用于展示。
+    - `.highQualityFormat` ，只返回高质量的图片。
+    - `.fastFormat` ，如果高质量的图片无法快速加载，`resultHandler` 则提供低质量的图片，可以通过检查 `info dictionary` 中的 `PHImageResultIsDegradedKey` 值来判断图片的质量。
+- `resizeMode` : `PHImageRequestOptionsResizeMode` ，图片管理器如何设置图像大小：
 
     - none ：不重新设置图像大小
     - .fast ：比 .exact 效率更高，但是有可能跟 targetSize 大小不一样
     - .exact ：返回图像必须和目标大小相匹配
-- ：裁剪图片的部分区域，如果需要进行裁剪，
+- `normalizedCropRect` ：裁剪图片的部分区域，如果需要进行裁剪，`resizeMode` 必须为 `.exact` 模式。
+- `` 如果 `isSynchronous` 设为 `true` ，则 `deliveryMode` 不起作用。 iCloud 相关属性：
+- `isNetworkAccessAllowed` ：`Bool` ，如果图片没有存储在本地，且 `isNetworkAccessAllowed` 为 `true` ，图片管理器则从 iCloud 中下载。如果 `isNetworkAccessAllowed` 为 `false` ，则 `image` 为 nil ，且可以通过 `info dictionary` 中 `PHImageResultIsInCloudKey` 值来判断是否存储于 iCloud 中。
+- `progressHandler` ：`(Double, Error?, UnsafeMutablePointer
 
-  必须为
+  , [AnyHashable : Any]?) -\> Void
 
-  模式。
-- 设为
-
-  ，则
-
-  不起作用。 iCloud 相关属性：
-- ：
-
-  ，如果图片没有存储在本地，且
-
-  为
-
-  ，图片管理器则从 iCloud 中下载。如果
-
-  为
-
-  ，则
-
-  为 nil ，且可以通过
-
-  中
-
-  值来判断是否存储于 iCloud 中。
-- ：`(Double, Error?, UnsafeMutablePointer
-
-    - ：表示下载进度，从 0.0 到 1.0
-    - ：当下载图片出错时 error 有值，否则为 nil
-    - ：如果需要取消下载，则在
-
-      里进行设置
-    - ：提供这次图片请求的额外信息
+    - `progress` ：表示下载进度，从 0.0 到 1.0
+    - `error` ：当下载图片出错时 error 有值，否则为 nil
+    - `stop` ：如果需要取消下载，则在 `block` 里进行设置 `*stop`
+    - `info` ：提供这次图片请求的额外信息
 
 1. 获取视频
 
@@ -237,6 +201,6 @@ func changeDetails<T>(for fetchResult: PHFetchResult<T>) -> PHFetchResultChangeD
 
 ## 参考
 
-- https://objccn.io/issue-21-4/#Photo-metadata
-- PHImageManager - NSHipster
-- https://developer.apple.com/videos/play/wwdc2014/511/
+- [https://objccn.io/issue-21-4/#Photo-metadata](https://objccn.io/issue-21-4/#Photo-metadata)
+- [PHImageManager - NSHipster](https://nshipster.com/phimagemanager/)
+- [https://developer.apple.com/videos/play/wwdc2014/511/](https://developer.apple.com/videos/play/wwdc2014/511/)

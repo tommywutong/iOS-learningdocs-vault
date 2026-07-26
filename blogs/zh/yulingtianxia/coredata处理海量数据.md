@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a0f7a235c2e9654d'
 translated: n/a
 ---
@@ -20,12 +20,14 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-08-05
 
-1. 1. Batch Updates
-2. 2. Asynchronous Fetching
+**文章目录**
+
+1. [1. Batch Updates](#Batch-Updates)
+2. [2. Asynchronous Fetching](#Asynchronous-Fetching)
 
 随着iOS8和OSX10.10的发布，Core Data也迎来了更新。这次的更新可谓是重量级的，它使得程序员能够更加直接高效的操作数据库，在处理大量数据时速度明显提升（这在以前不知有多少程序员因为Core Data批量更新数据效率之低而不得不放弃使用它）。Batch Updates可用于批量快速更新数据，Asynchronous Fetching可用于异步抓取海量数据，并可以通过`NSProgress`实现进度跟踪和取消。
 
-## [#Batch-Updates](#Batch-Updates)Batch Updates
+## Batch Updates
 
 在CoreData中想要更新大量数据，我们往往要将大量修改后的`NSManagedObject`加载到`NSManagedObjectContext`中并保存，这会占用大量内存，试想想在iPhone这样的内存有限的移动设备上将是个灾难，数据有可能丢失。你可能会采取批处理的方式，即一小批一小批的更新`NSManagedObject`并保存到`NSManagedObjectContext`中，但这样会花费很多时间，用户体验较差。
 
@@ -140,7 +142,7 @@ managedObjectContext?.performBlock({ () -> Void in
 
 Batch Updates的优势在于其效率，在处理上万条数据的时候，它执行的时间跟SQL语句执行时间相当。毕竟它绕开了`NSManagedObjectContext`直接修改底层数据库,节省内存,但千万别忘了手动更新 UI.
 
-## [#Asynchronous-Fetching](#Asynchronous-Fetching)Asynchronous Fetching
+## Asynchronous Fetching
 
 Asynchronous Fetching的加入依然是为了解决CoreData读取海量数据所带来的问题。通过使用Asynchronous Fetching，我们可以在抓取数据的同时不阻塞占用`NSManagedObjectContext`，并可以随时取消抓取行为，随时跟踪抓取数据的进度。
 
@@ -148,22 +150,8 @@ Asynchronous Fetching的加入依然是为了解决CoreData读取海量数据所
 
 而Asynchronous Fetching则不同，当我们将一个`NSAsynchronousFetchRequest`对象传入`executeRequest:error:`方法后会立即返回一个“未来的”`NSAsynchronousFetchResult`。`NSAsynchronousFetchRequest`初始化时需要传入两个参数赋值给属性：
 
-1. 属性，允许我们在抓取完成后执行回调block；
-2. 属性，类型是
-
-  。也即是说虽然是异步抓取，其实我们用的还是以前的
-
-  ，当
-
-  抓取结束后会更新
-
-  ，这也就意味着
-
-  的并发类型只能是
-
-  或
-
-  。
+1. `completionBlock`属性，允许我们在抓取完成后执行回调block；
+2. `fetchRequest`属性，类型是`NSFetchRequest`。也即是说虽然是异步抓取，其实我们用的还是以前的`NSFetchRequest`，当`NSFetchRequest`抓取结束后会更新`NSManagedObjectContext`，这也就意味着`NSManagedObjectContext`的并发类型只能是`NSPrivateQueueConcurrencyType`或`NSMainQueueConcurrencyType`。
 
 于是当我们用`NSAsynchronousFetchRequest`抓取数据时，我们会先用`NSManagedObjectContext`的`executeRequest:error:`方法传入一个`NSAsynchronousFetchRequest`，这个方法在`NSManagedObjectContext`上执行时，`NSManagedObjectContext`会立即制造并返回一个`NSAsynchronousFetchResult`，同时`NSAsynchronousFetchRequest`会被发送到`NSPersistentStore`。你现在可以继续编辑这个`NSManagedObjectContext`中的`NSManagedObject`，等到`NSPersistentStore`执行请求完毕时会将结果返回给`NSAsynchronousFetchResult`的`finalResult`属性，更新`NSManagedObjectContext`，执行`NSAsynchronousFetchRequest`的回调block。
 

@@ -71,6 +71,6 @@ if (SYSTEM_VERSION_LESS_THAN(@“5.0”))
 
 作为iOS开发者，Apple的关于UIViewController的文档以及开发者的一些讨论是必读的，简单整理如下：
 
-- View Controller Programming Guide for iOS
-- 关于误用UIViewController而造成的私有API调用的讨论
-- stack overflow上关于误用view controller的讨论
+- [View Controller Programming Guide for iOS](http://developer.apple.com/library/ios/#featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457-CH1-SW1)
+- [关于误用UIViewController而造成的私有API调用的讨论](https://devforums.apple.com/message/310806#310806)
+- [stack overflow上关于误用view controller的讨论](http://stackoverflow.com/questions/5691226/am-i-abusing-uiviewcontroller-subclassing/5691708#comment-6507338)

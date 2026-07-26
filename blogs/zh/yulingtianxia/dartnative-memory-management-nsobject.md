@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-28
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8936c114d0b4f4af'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-12-26
 
-1. 1. 问题分析
-2. 2. Objective-C 对象销毁后的处理
-3. 3. Dart 从 Objective-C 获取对象
-4. 4. Objective-C 从 Dart 获取对象
-5. 5. 后记
+**文章目录**
+
+1. [1. 问题分析](#问题分析)
+2. [2. Objective-C 对象销毁后的处理](#Objective-C-对象销毁后的处理)
+3. [3. Dart 从 Objective-C 获取对象](#Dart-从-Objective-C-获取对象)
+4. [4. Objective-C 从 Dart 获取对象](#Objective-C-从-Dart-获取对象)
+5. [5. 后记](#后记)
 
 [dart_native](https://github.com/dart-native/dart_native) 基于 Dart FFI，通过 C++ 调用 Native 的 API。这种跨多语言的 bridge 就需要考虑到内存管理的问题。由于篇幅有限，会分开来讲，本篇文章只涉及 Objective-C 对象类型的管理。
 
 如果你还不了解 [dart_native](https://github.com/dart-native/dart_native) 是什么，建议先看下我之前的两篇文章：
 
-- 用 Dart 来写 Objective-C 代码
-- 谈谈 dart_native 混合编程引擎的设计
+- [用 Dart 来写 Objective-C 代码](http://yulingtianxia.com/blog/2019/10/27/Write-Objective-C-Code-using-Dart/)
+- [谈谈 dart_native 混合编程引擎的设计](http://yulingtianxia.com/blog/2019/11/28/DartObjC-Design/)
 
-## [#问题分析](#问题分析)问题分析
+## 问题分析
 
 先看看不同语言是如何管理内存与对象的生命周期的。
 
@@ -47,7 +49,7 @@ GC 和引用计数都是常见的内存管理方式，这里就不科普具体�
 
 跨语言之间的方法调用，更多关注的是方法返回值给到另一种语言时的生命周期，以及对象被销毁后的处理。
 
-## [#Objective-C-对象销毁后的处理](#Objective-C-对象销毁后的处理)Objective-C 对象销毁后的处理
+## Objective-C 对象销毁后的处理
 
 读过我之前文章的人可能会对 [dart_native](https://github.com/dart-native/dart_native) 的使用方式稍有了解，其实就是自定义 Dart 类来把 Objective-C 类封装了一层。比如我写了个 Dart 类叫 `NSObject`，封装了大部分基本的 API。打通了方法的调用时类型的自动转换，支持所有基本类型。
 
@@ -81,7 +83,7 @@ bool operator ==(other) {
 
 如此一来，一旦 Dart 对象内部指向的 Objective-C 对象被销毁，它就等于 `nil` 了。
 
-## [#Dart-从-Objective-C-获取对象](#Dart-从-Objective-C-获取对象)Dart 从 Objective-C 获取对象
+## Dart 从 Objective-C 获取对象
 
 从 Objective-C 获取对象的方式可能是新创建的，也可能是某个普通方法的返回值。从形式上二者都是调用方法返回对象，但是内存引用计数却不一样。以 `new`, `alloc`, `copy` 和 `mutableCopy` 开头的方法会被认为引用计数加一，这样就相当于把 Objective-C 对象的管理权交给了 Dart。而普通方法返回的 Objective-C 对象的管理权并不归属 Dart。
 
@@ -90,7 +92,7 @@ bool operator ==(other) {
 这里从使用方式可分两种情况：
 
 1. 临时使用 Objective-C 对象，当为局部变量：Dart 侧编写代码时无需关心内存管理
-2. 和
+2. 长期使用 Objective-C 对象，作为属性持有：Dart 侧需手动 `retain` 和 `release`
 
 针对第二种情况，写过 MRC 代码的会很熟悉。这是对应的 Dart 代码，是不是很像。
 
@@ -108,7 +110,7 @@ class _MyAppState extends State<MyApp> {
 
 如果 Dart VM 支持了 `finalize`，那么现在的『半自动』内存管理就成了『全自动』了，不过那样的话，内存管理方案也会改变。这里就不谈 Plan B 了。
 
-## [#Objective-C-从-Dart-获取对象](#Objective-C-从-Dart-获取对象)Objective-C 从 Dart 获取对象
+## Objective-C 从 Dart 获取对象
 
 [dart_native](https://github.com/dart-native/dart_native) 是支持传入回调方法的，也就是 Objective-C 是可以直接调用 Dart 方法的。当 Objective-C 从 Dart 方法的返回值是对象，需要处理好它的生命周期。
 
@@ -126,7 +128,7 @@ native_mark_autoreleasereturn_object(id object) {
 
 当然还需要在 Objective-C 侧调用完 Dart 方法后，将 TLS 置空，确保不会造成内存泄露。
 
-## [#后记](#后记)后记
+## 后记
 
 这篇文章依然没有讲 Dart 如何调用 Objective-C API，没有贴很多代码晒技术细节，满篇都是讲思路和方法。可能是我觉得这些都是 Runtime 的基础，没太多自己思考的东西。写出来也只是简单的科普知识罢了。
 

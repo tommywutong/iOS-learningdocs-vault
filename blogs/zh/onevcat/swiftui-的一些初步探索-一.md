@@ -175,9 +175,9 @@ struct ContentView: View {
 
 当然我们可以明确指定出 `body` 的类型，但是这带来一些麻烦：
 
-1. 的返回时我们都需要手动去更改相应的类型。
-2. 的时候，我们都需要去考虑会是什么类型。
-3. ，而对实际上它是什么类型并不感兴趣。
+1. 每次修改 `body` 的返回时我们都需要手动去更改相应的类型。
+2. 新建一个 `View` 的时候，我们都需要去考虑会是什么类型。
+3. 其实我们只关心返回的是不是一个 `View`，而对实际上它是什么类型并不感兴趣。
 
 `some View` 这种写法使用了 Swift 5.1 的 [Opaque return types 特性](https://github.com/apple/swift-evolution/blob/master/proposals/0244-opaque-result-types.md)。它向编译器作出保证，每次 `body` 得到的一定是某一个确定的，遵守 `View` 协议的类型，但是请编译器“网开一面”，不要再细究具体的类型。返回类型**确定单一**这个条件十分重要，比如，下面的代码也是无法通过的：
 
@@ -308,9 +308,9 @@ VStack(alignment: .leading) {
 
 到目前为止，只有以下三种写法能被接受 (有可能随着 SwiftUI 的发展出现别的可接受写法)：
 
-- 的语句
-- 语句
-- 语句
+- 结果为 `View` 的语句
+- `if` 语句
+- `if...else...` 语句
 
 #### [Section 4 - Step 7: 链式调用修改 View 的属性](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views#create-a-custom-image-view)
 

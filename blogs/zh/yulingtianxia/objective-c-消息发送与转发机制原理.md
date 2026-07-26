@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:01f3bcd59886efab'
 translated: n/a
 ---
@@ -20,29 +20,31 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2016-06-15
 
-1. 1. 八面玲珑的 objc_msgSend
+**文章目录**
 
-    1. 1.1. 源码解析
-    2. 1.2. 为什么使用汇编语言
-2. 2. 使用 lookUpImpOrForward 快速查找 IMP
+1. [1. 八面玲珑的 objc_msgSend](#八面玲珑的-objc-msgSend)
 
-    1. 2.1. 优化缓存查找&类的初始化
-    2. 2.2. 继续在类的继承体系中查找
-    3. 2.3. 回顾 objc_msgSend 伪代码
-3. 3. forwarding 中路漫漫的消息转发
+    1. [1.1. 源码解析](#源码解析)
+    2. [1.2. 为什么使用汇编语言](#为什么使用汇编语言)
+2. [2. 使用 lookUpImpOrForward 快速查找 IMP](#使用-lookUpImpOrForward-快速查找-IMP)
 
-    1. 3.1. objc_msgForward_impcache 的转换
-    2. 3.2. objc_msgForward 也只是个入口
-    3. 3.3. objc_setForwardHandler 设置了消息转发的回调
-    4. 3.4. 逆向工程助力刨根问底
-4. 4. 总结
-5. 5. 参考文献
+    1. [2.1. 优化缓存查找&类的初始化](#优化缓存查找-amp-类的初始化)
+    2. [2.2. 继续在类的继承体系中查找](#继续在类的继承体系中查找)
+    3. [2.3. 回顾 objc_msgSend 伪代码](#回顾-objc-msgSend-伪代码)
+3. [3. forwarding 中路漫漫的消息转发](#forwarding-中路漫漫的消息转发)
+
+    1. [3.1. objc_msgForward_impcache 的转换](#objc-msgForward-impcache-的转换)
+    2. [3.2. objc_msgForward 也只是个入口](#objc-msgForward-也只是个入口)
+    3. [3.3. objc_setForwardHandler 设置了消息转发的回调](#objc-setForwardHandler-设置了消息转发的回调)
+    4. [3.4. 逆向工程助力刨根问底](#逆向工程助力刨根问底)
+4. [4. 总结](#总结)
+5. [5. 参考文献](#参考文献)
 
 消息发送和转发流程可以概括为：消息发送（Messaging）是 Runtime 通过 selector 快速查找 IMP 的过程，有了函数指针就可以执行对应的方法实现；消息转发（Message Forwarding）是在查找 IMP 失败后执行一系列转发流程的慢速通道，如果不作转发处理，则会打日志和抛出异常。
 
 **本文不讲述开发者在消息发送和转发流程中需要做的事，而是讲述原理。能够很好地阅读本文的前提是你对 [Objective-C Runtime](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/) 已经有一定的了解，关于什么是消息，Class 的结构，selector、IMP、元类等概念将不再赘述**。本文用到的源码为 objc4-680 和 CF-1153.18，逆向 CoreFoundation.framework 的系统版本为 macOS 10.11.5，汇编语言架构为 x86_64。
 
-## [#八面玲珑的-objc-msgSend](#八面玲珑的-objc-msgSend)八面玲珑的 objc_msgSend
+## 八面玲珑的 objc_msgSend
 
 此函数是消息发送必经之路，但只要一提 `objc_msgSend`，都会说它的伪代码如下或类似的逻辑，反正就是获取 IMP 并调用：
 
@@ -54,7 +56,7 @@ id objc_msgSend(id self, SEL _cmd, ...) {
 }
 ```
 
-### [#源码解析](#源码解析)源码解析
+### 源码解析
 
 为啥老用伪代码？因为 `objc_msgSend` 是用汇编语言写的，针对不同架构有不同的实现。如下为 `x86_64` 架构下的源码，可以在 [objc-msg-x86_64.s](https://github.com/opensource-apple/objc4/blob/master/runtime/Messengers.subproj/objc-msg-x86_64.s) 文件中找到，关键代码如下：
 
@@ -115,24 +117,20 @@ LCacheMiss:
 
 从上面的代码可以看出方法查找 IMP 的工作交给了 OC 中的 `_class_lookupMethodAndLoadCache3` 函数，并将 IMP 返回（从 `r11` 挪到 `rax`）。最后在 `objc_msgSend` 中调用 IMP。
 
-### [#为什么使用汇编语言](#为什么使用汇编语言)为什么使用汇编语言
+### 为什么使用汇编语言
 
 其实在 [objc-msg-x86_64.s](https://github.com/opensource-apple/objc4/blob/master/runtime/Messengers.subproj/objc-msg-x86_64.s) 中包含了多个版本的 `objc_msgSend` 方法，它们是根据返回值的类型和调用者的类型分别处理的：
 
-- :向父类发消息，返回值类型为
-- :返回值类型为 floating-point，其中包含
-
-  入口处理返回值类型为
-
-  的情况
-- :返回值为结构体
-- :向父类发消息，返回值类型为结构体
+- `objc_msgSendSuper`:向父类发消息，返回值类型为 `id`
+- `objc_msgSend_fpret`:返回值类型为 floating-point，其中包含 `objc_msgSend_fp2ret` 入口处理返回值类型为 `long double` 的情况
+- `objc_msgSend_stret`:返回值为结构体
+- `objc_msgSendSuper_stret`:向父类发消息，返回值类型为结构体
 
 当需要发送消息时，编译器会生成中间代码，根据情况分别调用 `objc_msgSend`, `objc_msgSend_stret`, `objc_msgSendSuper`, 或 `objc_msgSendSuper_stret` 其中之一。
 
 这也是为什么 `objc_msgSend` 要用汇编语言而不是 OC、C 或 C++ 语言来实现，因为单独一个方法定义满足不了多种类型返回值，有的方法返回 `id`，有的返回 `int`。考虑到不同类型参数返回值排列组合映射不同方法签名（method signature）的问题，那 switch 语句得老长了。。。**这些原因可以总结为 [Calling Convention](https://en.wikipedia.org/wiki/Calling_convention)，也就是说函数调用者与被调用者必须约定好参数与返回值在不同架构处理器上的存取规则，比如参数是以何种顺序存储在栈上，或是存储在哪些寄存器上。**除此之外还有其他原因，比如其可变参数用汇编处理起来最方便，因为找到 IMP 地址后参数都在栈上。要是用 C++ 传递可变参数那就悲剧了，prologue 机制会弄乱地址（比如 i386 上为了存储 `ebp` 向后移位 4byte），最后还要用 epilogue 打扫战场。而且汇编程序执行效率高，在 Objective-C Runtime 中调用频率较高的函数好多都用汇编写的。
 
-## [#使用-lookUpImpOrForward-快速查找-IMP](#使用-lookUpImpOrForward-快速查找-IMP)使用 lookUpImpOrForward 快速查找 IMP
+## 使用 lookUpImpOrForward 快速查找 IMP
 
 上一节中说到的 `_class_lookupMethodAndLoadCache3` 函数其实只是简单的调用了 `lookUpImpOrForward` 函数：
 
@@ -146,7 +144,7 @@ IMP _class_lookupMethodAndLoadCache3(id obj, SEL sel, Class cls)
 
 注意 `lookUpImpOrForward` 调用时使用缓存参数传入为 `NO`，因为之前已经尝试过查找缓存了。`IMP lookUpImpOrForward(Class cls, SEL sel, id inst, bool initialize, bool cache, bool resolver)` 实现了一套查找 IMP 的标准路径，也就是在消息转发（Forward）之前的逻辑。
 
-### [#优化缓存查找-amp-类的初始化](#优化缓存查找-amp-类的初始化)优化缓存查找&类的初始化
+### 优化缓存查找&类的初始化
 
 先对 debug 模式下的 assert 进行 unlock：
 
@@ -158,50 +156,10 @@ runtimeLock.assertUnlocked();
 
 `lookUpImpOrForward` 接着做了如下两件事：
 
-1. 参数为
+1. 如果使用缓存（`cache` 参数为 `YES`），那就调用 `cache_getImp` 方法从缓存查找 IMP。`cache_getImp` 是用汇编语言写的，也可以在 [objc-msg-x86_64.s](https://github.com/opensource-apple/objc4/blob/master/runtime/Messengers.subproj/objc-msg-x86_64.s) 找到，其依然用了之前说过的 `CacheLookup` 宏。因为 `_class_lookupMethodAndLoadCache3` 调用 `lookUpImpOrForward` 时 `cache` 参数为 `NO`，**这步直接略过**。
+2. 如果是第一次用到这个类且 `initialize` 参数为 `YES`（`initialize  &&  !cls->isInitialized()`），需要进行初始化工作，也就是开辟一个用于读写数据的空间。先对 `runtimeLock` 写操作加锁，然后调用 `cls` 的 `initialize` 方法。如果 `sel == initialize` 也没关系，虽然 `initialize` 还会被调用一次，但不会起作用啦，因为 `cls->isInitialized()` 已经是 `YES` 啦。
 
-  ），那就调用
-
-  方法从缓存查找 IMP。
-
-  是用汇编语言写的，也可以在
-
-  objc-msg-x86_64.s
-
-  找到，其依然用了之前说过的
-
-  宏。因为
-
-  调用
-
-  时
-
-  参数为
-
-  ，
-
-  。
-2. 参数为
-
-  （
-
-  ），需要进行初始化工作，也就是开辟一个用于读写数据的空间。先对
-
-  写操作加锁，然后调用
-
-  的
-
-  方法。如果
-
-  也没关系，虽然
-
-  还会被调用一次，但不会起作用啦，因为
-
-  已经是
-
-  啦。
-
-### [#继续在类的继承体系中查找](#继续在类的继承体系中查找)继续在类的继承体系中查找
+### 继续在类的继承体系中查找
 
 考虑到运行时类中的方法可能会增加，需要先做读操作加锁，使得方法查找和缓存填充成为原子操作。添加 category 会刷新缓存，之后如果旧数据又被重填到缓存中，category 添加操作就会被忽略掉。
 
@@ -211,33 +169,19 @@ runtimeLock.read();
 
 之后的逻辑整理如下：
 
-1. ，这是个汇编程序入口，可以理解为一个标记。对此种情况进行缓存填充操作后，跳到第 7 步；否则执行下一步。
-2. 汇编程序入口。如果命中缓存获取到了 IMP，则直接跳到第 7 步；否则执行下一步。
-3. 属性），并填充到缓存中。查找过程比较复杂，会针对已经排序的列表使用二分法查找，未排序的列表则是线性遍历。如果成功查找到 Method 对象，就直接跳到第 7 步；否则执行下一步。
-4. 汇编程序入口作为缓存中消息转发的标记。也就是说如果在缓存中找到了 IMP，但如果发现其内容是
-
-  ，那就终止在类的继承层级中递归查找，进入下一步；否则跳到第 7 步。
-5. 的参数
-
-  为
-
-  并且是第一次进入第 5 步时，时进入动态方法解析；否则进入下一步。这步消息转发前的最后一次机会。此时释放读入锁（
-
-  ），接着间接地发送
-
-  或
-
-  消息。这相当于告诉程序员『赶紧用 Runtime 给类里这个 selector 弄个对应的 IMP 吧』，因为此时锁已经 unlock 了所以不会缓存结果，甚至还需要软性地处理缓存过期问题可能带来的错误。这里的业务逻辑稍微复杂些，后面会总结。因为这些工作都是在非线程安全下进行的，完成后需要回到第 1 步再次查找 IMP。
-6. 当做 IMP 并写入缓存。这也就是之前第 4 步中为何查找到
-
-  就表明了要进入消息转发了。
-7. ）这步还偏执地做了一些脑洞略大的 assert，很有趣。
+1. 如果 selector 是需要被忽略的垃圾回收用到的方法，则将 IMP 结果设为 `_objc_ignored_method`，这是个汇编程序入口，可以理解为一个标记。对此种情况进行缓存填充操作后，跳到第 7 步；否则执行下一步。
+2. 查找当前类中的缓存，跟之前一样，使用 `cache_getImp` 汇编程序入口。如果命中缓存获取到了 IMP，则直接跳到第 7 步；否则执行下一步。
+3. 在当前类中的方法列表（method list）中进行查找，也就是根据 selector 查找到 Method 后，获取 Method 中的 IMP（也就是 `method_imp` 属性），并填充到缓存中。查找过程比较复杂，会针对已经排序的列表使用二分法查找，未排序的列表则是线性遍历。如果成功查找到 Method 对象，就直接跳到第 7 步；否则执行下一步。
+4. 在继承层级中递归向父类中查找，情况跟上一步类似，也是先查找缓存，缓存没中就查找方法列表。这里跟上一步不同的地方在于缓存策略，有个 `_objc_msgForward_impcache` 汇编程序入口作为缓存中消息转发的标记。也就是说如果在缓存中找到了 IMP，但如果发现其内容是 `_objc_msgForward_impcache`，那就终止在类的继承层级中递归查找，进入下一步；否则跳到第 7 步。
+5. 当传入 `lookUpImpOrForward` 的参数 `resolver` 为 `YES` 并且是第一次进入第 5 步时，时进入动态方法解析；否则进入下一步。这步消息转发前的最后一次机会。此时释放读入锁（`runtimeLock.unlockRead()`），接着间接地发送 `+resolveInstanceMethod` 或 `+resolveClassMethod` 消息。这相当于告诉程序员『赶紧用 Runtime 给类里这个 selector 弄个对应的 IMP 吧』，因为此时锁已经 unlock 了所以不会缓存结果，甚至还需要软性地处理缓存过期问题可能带来的错误。这里的业务逻辑稍微复杂些，后面会总结。因为这些工作都是在非线程安全下进行的，完成后需要回到第 1 步再次查找 IMP。
+6. 此时不仅没查找到 IMP，动态方法解析也不奏效，只能将 `_objc_msgForward_impcache` 当做 IMP 并写入缓存。这也就是之前第 4 步中为何查找到 `_objc_msgForward_impcache` 就表明了要进入消息转发了。
+7. 读操作解锁，并将之前找到的 IMP 返回。（无论是正经 IMP 还是不正经的 `_objc_msgForward_impcache`）这步还偏执地做了一些脑洞略大的 assert，很有趣。
 
 对于第 5 步，其实是直接调用 `_class_resolveMethod` 函数，在这个函数中实现了复杂的方法解析逻辑。如果 `cls` 是元类则会发送 `+resolveClassMethod`，然后根据 `lookUpImpOrNil(cls, sel, inst, NO/*initialize*/, YES/*cache*/, NO/*resolver*/)` 函数的结果来判断是否发送 `+resolveInstanceMethod`；如果不是元类，则只需要发送 `+resolveInstanceMethod` 消息。这里调用 `+resolveInstanceMethod` 或 `+resolveClassMethod` 时再次用到了 `objc_msgSend`，而且第三个参数正是传入 `lookUpImpOrForward` 的那个 `sel`。在发送方法解析消息之后还会调用 `lookUpImpOrNil(cls, sel, inst, NO/*initialize*/, YES/*cache*/, NO/*resolver*/)` 来判断是否已经添加上 `sel` 对应的 IMP 了，打印出结果。
 
 最后 `lookUpImpOrForward` 方法也会把真正的 IMP 或者需要消息转发的 `_objc_msgForward_impcache` 返回，并最终专递到 `objc_msgSend` 中。而 `_objc_msgForward_impcache` 会在转化成 `_objc_msgForward` 或 `_objc_msgForward_stret`。这个后面会讲解原理。
 
-### [#回顾-objc-msgSend-伪代码](#回顾-objc-msgSend-伪代码)回顾 objc_msgSend 伪代码
+### 回顾 objc_msgSend 伪代码
 
 回过头来会发现 `objc_msgSend` 的伪代码描述得很传神啊，因为`class_getMethodImplementation` 的实现如下：
 
@@ -269,9 +213,9 @@ IMP lookUpImpOrNil(Class cls, SEL sel, id inst,
 
 `lookUpImpOrNil` 方法可以查找到 selector 对应的 IMP 或是 `nil`，所以如果不考虑返回值类型为结构体的情况，用那几行伪代码来表示复杂的汇编实现还是挺恰当的。
 
-## [#forwarding-中路漫漫的消息转发](#forwarding-中路漫漫的消息转发)**forwarding** 中路漫漫的消息转发
+## **forwarding** 中路漫漫的消息转发
 
-### [#objc-msgForward-impcache-的转换](#objc-msgForward-impcache-的转换)objc_msgForward_impcache 的转换
+### objc_msgForward_impcache 的转换
 
 `_objc_msgForward_impcache` 只是个内部的函数指针，只存储于上节提到的类的方法缓存中，需要被转化为 `_objc_msgForward` 和 `_objc_msgForward_stret` 才能被外部调用。但在 ~~Mac OS X~~ macOS 10.6 及更早版本的 libobjc.A.dylib 中是不能直接调用的，况且我们根本不会直接用到它。带 `stret` 后缀的函数依旧是返回值为结构体的版本。
 
@@ -316,7 +260,7 @@ IMP class_getMethodImplementation_stret(Class cls, SEL sel)
 
 也就是说 `_objc_msgForward*` 系列本质都是函数指针，都用汇编语言实现，都可以与 IMP 类型的值作比较。`_objc_msgForward` 和 `_objc_msgForward_stret` 声明在 [message.h](https://github.com/opensource-apple/objc4/blob/master/runtime/message.h) 文件中。`_objc_msgForward_impcache` 在早期版本的 Runtime 中叫做 `_objc_msgForward_internal`。
 
-### [#objc-msgForward-也只是个入口](#objc-msgForward-也只是个入口)objc_msgForward 也只是个入口
+### objc_msgForward 也只是个入口
 
 从汇编源码可以很容易看出 **`_objc_msgForward` 和 `_objc_msgForward_stret` 会分别调用 `_objc_forward_handler` 和 `_objc_forward_handler_stret`**：
 
@@ -342,7 +286,7 @@ END_ENTRY	__objc_msgForward_stret
 
 也就是说，消息转发过程是现将 `_objc_msgForward_impcache` 强转成 `_objc_msgForward` 或 `_objc_msgForward_stret`，再分别调用 `_objc_forward_handler` 或 `_objc_forward_handler_stret`。
 
-### [#objc-setForwardHandler-设置了消息转发的回调](#objc-setForwardHandler-设置了消息转发的回调)objc_setForwardHandler 设置了消息转发的回调
+### objc_setForwardHandler 设置了消息转发的回调
 
 在 Objective-C 2.0 之前，默认的 `_objc_forward_handler` 或 `_objc_forward_handler_stret` 都是 `nil`，而新版本的默认实现是这样的：
 
@@ -383,7 +327,7 @@ void objc_setForwardHandler(void *fwd, void *fwd_stret)
 }
 ```
 
-### [#逆向工程助力刨根问底](#逆向工程助力刨根问底)逆向工程助力刨根问底
+### 逆向工程助力刨根问底
 
 重头戏在于对 `objc_setForwardHandler` 的调用，以及之后的消息转发调用栈。这回不是在 Objective-C Runtime （libobjc.dylib）中啦，而是在 Core Foundation（CoreFoundation.framework）中。虽然 CF 是开源的，但有意思的是苹果故意在开源的代码中删除了在 [CFRuntime.c](https://github.com/opensource-apple/CF/blob/master/CFRuntime.c) 文件 `__CFInitialize()` 中调用 `objc_setForwardHandler` 的代码。`__CFInitialize()` 函数是在 CF runtime 连接到进程时初始化调用的。从反编译得到的汇编代码中可以很容易跟 C 源码对比出来，我用红色标出了同一段代码的差异。
 
@@ -565,17 +509,9 @@ int __forwarding__(void *frameStackPointer, int isStret) {
 
 这么一大坨代码就是整个消息转发路径的逻辑，概括如下：
 
-1. 方法获取新的 target 作为 receiver 重新执行 selector，如果返回的内容不合法（为
-
-  或者跟旧 receiver 一样），那就进入第二步。
-2. 获取方法签名后，判断返回类型信息是否正确，再调用
-
-  执行
-
-  对象，并将结果返回。如果对象没实现
-
-  方法，进入第三步。
-3. 方法。
+1. 先调用 `forwardingTargetForSelector` 方法获取新的 target 作为 receiver 重新执行 selector，如果返回的内容不合法（为 `nil` 或者跟旧 receiver 一样），那就进入第二步。
+2. 调用 `methodSignatureForSelector` 获取方法签名后，判断返回类型信息是否正确，再调用 `forwardInvocation` 执行 `NSInvocation` 对象，并将结果返回。如果对象没实现 `methodSignatureForSelector` 方法，进入第三步。
+3. 调用 `doesNotRecognizeSelector` 方法。
 
 `doesNotRecognizeSelector` 之前其实还有个判断 selector 在 Runtime 中是否注册过的逻辑，但在我们正常发消息的时候不会出此问题。但如果手动创建一个 `NSInvocation` 对象并调用 `invoke`，并将第二个参数设置成一个不存在的 selector，那就会导致这个问题，并输入日志 “does not match selector known to Objective C runtime”。较真儿的读者可能会有疑问：何这段逻辑判断干脆用不到却还存在着？难道除了 `__CF_forwarding_prep_0` 和 `___forwarding_prep_1___` 函数还有其他函数也调用 `___forwarding___` 么？莫非消息转发还有其他路径？其实并不是！原因是 `___forwarding___` 调用了 `___invoking___` 函数，所以上面的伪代码直接把 `___invoking___` 函数的逻辑也『翻译』过来了。除了 `___forwarding___` 函数，以下方法也会调用`___invoking___` 函数:
 
@@ -616,7 +552,7 @@ void +[NSObject doesNotRecognizeSelector:](void * self, void * _cmd, void * arg2
 
 也就是说我们可以 override `doesNotRecognizeSelector` 或者捕获其抛出的异常。在这里还是大有文章可做的。
 
-## [#总结](#总结)总结
+## 总结
 
 我将整个实现流程绘制出来，过滤了一些不会进入的分支路径和跟主题无关的细节：
 
@@ -624,9 +560,9 @@ void +[NSObject doesNotRecognizeSelector:](void * self, void * _cmd, void * arg2
 
 介于国内关于这块知识的好多文章描述不够准确和详细，或是对消息转发的原理描述理解不够深刻，或是侧重贴源码而欠思考，所以我做了一个比较全面详细的讲解。
 
-## [#参考文献](#参考文献)参考文献
+## 参考文献
 
-- Why objc_msgSend Must be Written in Assembly
-- Hmmm, What’s that Selector?
-- A Look Under the Hood of objc_msgSend()
-- Printing Objective-C Invocations in LLDB
+- [Why objc_msgSend Must be Written in Assembly](http://arigrant.com/blog/2014/2/12/why-objcmsgsend-must-be-written-in-assembly)
+- [Hmmm, What’s that Selector?](http://arigrant.com/blog/2013/12/13/a-selector-left-unhandled)
+- [A Look Under the Hood of objc_msgSend()](http://blog.zhengdong.me/2013/07/18/a-look-under-the-hood-of-objc-msgsend/)
+- [Printing Objective-C Invocations in LLDB](http://arigrant.com/blog/2014/2/18/chisels-print-invocation-command)

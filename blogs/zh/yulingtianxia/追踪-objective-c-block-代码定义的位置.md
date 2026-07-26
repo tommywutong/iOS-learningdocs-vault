@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fb7bdd70d233c62c'
 translated: n/a
 ---
@@ -20,16 +20,18 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-06-24
 
-1. 1. 解决思路
-2. 2. Mach-O 文件格式
-3. 3. Block Mangle Name
-4. 4. 总结
+**文章目录**
+
+1. [1. 解决思路](#解决思路)
+2. [2. Mach-O 文件格式](#Mach-O-文件格式)
+3. [3. Block Mangle Name](#Block-Mangle-Name)
+4. [4. 总结](#总结)
 
 之前写了一篇文章[《追踪 Objective-C 方法中的 Block 参数对象》](http://yulingtianxia.com/blog/2018/03/31/Track-Block-Arguments-of-Objective-C-Method/)，利用 [BlockHook](https://github.com/yulingtianxia/BlockHook) 和 Objective-C 的动态特性实现对 block 对象执行和销毁的追踪。本文在此基础上，通过 Mach-O 文件格式获取 Mangle Name 并根据 Clang 源码实现对其解析，探寻如何追踪 block 代码定义的位置。
 
 主要代码已经整合到 [BlockHook](https://github.com/yulingtianxia/BlockHook) 1.0.2 版本中。
 
-## [#解决思路](#解决思路)解决思路
+## 解决思路
 
 能想到的最直接的方法就是获取 block 内部 invoke 函数的内存地址，并找到这个地址对应的 image，然后根据对基地址的偏移量，利用 dYSM 文件存储的符号表查找到对应代码位置。这属于很常规的操作了，即便没有 dYSM 文件，用 Mach-O 反汇编也能知道 block 定义在哪个方法的大概位置。
 
@@ -42,7 +44,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 1. 通过读取每个 Mach-O 镜像文件的符号表，建立 block invoke 函数偏移地址到符号名的映射。
 2. 获取到的符号名是经过 Clang 处理后的 mangle name，根据生成规则反推出 block invoke 函数实现代码位置。
 
-## [#Mach-O-文件格式](#Mach-O-文件格式)Mach-O 文件格式
+## Mach-O 文件格式
 
 网上关于 Mach-O 文件的介绍一大堆，这里不再赘述。其实就是个二进制文件格式定义，照着文档写代码读二进制内容罢了。苹果也提供了 Mach-O 文件数据结构的定义，直接用就行了。当二进制镜像被加载到虚拟内存中后，就可以通过计算各种偏移量来按图索骥了。下面的代码将 `_hunt_blocks_for_image` 注册为镜像加载后的回调函数，这行代码执行前已经加载的镜像也会回调此函数：
 
@@ -120,22 +122,12 @@ static void _hunt_blocks_for_image(const struct mach_header *header, intptr_t sl
 }
 ```
 
-## [#Block-Mangle-Name](#Block-Mangle-Name)Block Mangle Name
+## Block Mangle Name
 
 Clang 7.0.0 源码的 [Mangle.cpp](https://clang.llvm.org/doxygen/Mangle_8cpp_source.html#l00060) 文件实现了 Objective-C 和 block 的 mangle name。只需要看 `mangleBlock` 和 `mangleGlobalBlock` 两个函数即可大概了解 block mangle name 的生成规则。
 
-1. +
-
-  。详见
-
-  函数实现。
-2. + block 代码所处的函数或方法的 mangle name +
-
-  +
-
-  。详见
-
-  函数实现。
+1. 全局 block：block 变量名 + `_block_invoke` + `discriminator`。详见 `mangleGlobalBlock` 函数实现。
+2. 其他 block：`__` + block 代码所处的函数或方法的 mangle name + `_block_invoke` + `discriminator`。详见 `mangleBlock` 函数实现。
 
 需要注意的是 `discriminator` 是从第二个才开始显示的。比如在 `Foo` 类的 `bar` 方法中定义了两个 block，那么这两个 block 的 mangle name 就是 `__10_-[Foo bar]_block_invoke` 和 `__10_-[Foo bar]_block_invoke_2`。在 gcc 里稍有区别，第一个 block 的 mangle name 也会显示 `discriminator`。前面的 “10” 是方法名 `-[Foo bar]` 的字符串长度。这部分属于 Objective-C 方法名的 mangle name 规则，C++ 函数也有类似的规则，不仅用数字保存字符串长度，还有其他字母表示方法类型和参数类型等。这里不展开细讲了，看源码都能找到。
 
@@ -161,7 +153,7 @@ Clang 7.0.0 源码的 [Mangle.cpp](https://clang.llvm.org/doxygen/Mangle_8cpp_so
 
 想了解 [BlockHook](https://github.com/yulingtianxia/BlockHook) 原理的，可以看这篇文章：[Hook Objective-C Block with Libffi](http://yulingtianxia.com/blog/2018/02/28/Hook-Objective-C-Block-with-Libffi/)。（继续疯狂炒冷饭。。。）
 
-## [#总结](#总结)总结
+## 总结
 
 目前 [BlockHook](https://github.com/yulingtianxia/BlockHook) 和 [BlockTracker](https://github.com/yulingtianxia/BlockTracker) 都已经支持获取 block 的 mangle name 了。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-05-18
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dd2b9b1e0c55dfe5'
 translated: n/a
 ---
@@ -365,15 +365,13 @@ print(structValue.b) // 4
 
 为了与 C 进行交互，有时我们需要在 `Raw` 指针和 Swift 对象之间进行转换，为此，Swift 提供了 `Unmanaged` 给我们使用。 而 Swift 对象和 `Raw` 指针的转换分为两部分：
 
-- 与 Swift 对象之间的转换；
+- `void *` 与 Swift 对象之间的转换；
 - 内存管理，当指针传递给 C 之后，Swift 的 ARC 就失效了，这时需要我们进行手动管理内存；
 
 ### Swift To C
 
-- 会增加引用计数，需要在适当的时机调用
-
-  ，否则会造成内存泄露；
-- 不会增加引用计数，可以在一些会在内部处理 ownership 或者直接使用值的 C API 中使用；
+- `Unmanaged.passRetained(obj)` 会增加引用计数，需要在适当的时机调用 `release` ，否则会造成内存泄露；
+- `Unmanaged.passUnretained(obj)` 不会增加引用计数，可以在一些会在内部处理 ownership 或者直接使用值的 C API 中使用；
 
 ```swift
 let str0 = "boxcar" as CFString

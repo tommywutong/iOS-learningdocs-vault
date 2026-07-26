@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5510dcad934fbbee'
 translated: n/a
 ---
@@ -355,13 +355,13 @@ STAssertTrue([cell isMemberOfClass:[PhotoCell class]], @"");
 
 ### 扩展阅读
 
-- Test-driven development
-- OCMock
-- Xcode Unit Testing Guide
-- Book: Test Driven Development: By Example
-- Blog: Quality Coding
-- Blog: iOS Unit Testing
-- Blog: Secure Mac Programing
+- [Test-driven development](https://github.com/objcio/issue-1-lighter-view-controllers/blob/master/PhotoDataTests/PhotoDataTestCase.h)
+- [OCMock](http://ocmock.org)
+- [Xcode Unit Testing Guide](https://developer.apple.com/library/ios/documentation/DeveloperTools/Conceptual/UnitTesting/)
+- [Book: Test Driven Development: By Example](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
+- [Blog: Quality Coding](http://qualitycoding.org)
+- [Blog: iOS Unit Testing](http://iosunittesting.com)
+- [Blog: Secure Mac Programing](http://blog.securemacprogramming.com/?s=testing&searchsubmit=Search)
 
 ---
 

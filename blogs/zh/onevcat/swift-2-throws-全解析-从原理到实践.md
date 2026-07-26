@@ -304,5 +304,5 @@ Swift 的异常抛出并不是传统意义的 exception，在调试时抛出异�
 
 ## 参考资料
 
-- Friday Q&A: Swift Name Mangling
-- How to write a unit test which passes if a function throws?
+- MikeAsh Friday Q&A，Swift 中 Name Mangling 的定义和使用：[Friday Q&A: Swift Name Mangling](https://mikeash.com/pyblog/friday-qa-2014-08-15-swift-name-mangling.html)
+- Apple 开发者论坛，关于 Swift 中 throw 的测试方法：[How to write a unit test which passes if a function throws?](https://forums.developer.apple.com/thread/5824)

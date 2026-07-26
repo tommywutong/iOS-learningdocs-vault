@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:89484b4fb1aeff82'
 translated: n/a
 ---
@@ -82,13 +82,11 @@ Audio Unit 的 API 可以在 iOS 中进行跨应用音频。音频流 (和 MIDI 
 
 ### 更多
 
-- ，它能够简单地播放系统中的声音。
-- 类为 OS X 提供了用于播放声音的简单接口，与 iOS 中的
-
-  在概念上基本类似。
-- 以及 CloudKit 通知，都可以播放声音。
-- 实现。
-- (和 AVKit) 来代替它们。
+- 在 OS X 中，最基本的音频接口就是 `NSBeep()`，它能够简单地播放系统中的声音。
+- `NSSound` 类为 OS X 提供了用于播放声音的简单接口，与 iOS 中的 `AVAudioPlayer` 在概念上基本类似。
+- 所有的通知 API，包括 iOS 中的本地通知或者推送通知、OS X 中的 `NSUserNotification` 以及 CloudKit 通知，都可以播放声音。
+- Audio Toolbox 框架是强大的，但是它的层级却非常的低。在过去，它基于 C++ 所编写，但是其大多数的功能现在都可以通过 `AVFoundation` 实现。
+- QTKit 和 QuickTime 框架现在已经过时了，它们不应该被用在以后的开发中。我们应该使用 `AVFoundation` (和 AVKit) 来代替它们。
 
 ---
 

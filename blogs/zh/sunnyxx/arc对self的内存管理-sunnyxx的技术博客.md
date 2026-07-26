@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-01-17
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:25b4eff4e18142db'
 translated: n/a
 ---
@@ -38,18 +38,10 @@ translated: n/a
 
 具体的问题大概是这样：
 
-1. 对象，将自己作为其delegate
-2. 的
-
-  方法发起网络请求
-3. 中执行了
-4. 中，
-
-  方法在回调完
-
-  后
-
-  了
+1. 调用方（如view controller）实例化并强引用`YTKRequest`对象，将自己作为其delegate
+2. 调用方调用`YTKRequest`的`- start`方法发起网络请求
+3. 调用方在`- requestFinished:`中执行了`self.request = nil;`
+4. `YTKRequest`中，`- start`方法在回调完`- requestFinished:`后**BAD_ACCESS**了
 
 也就是说，`- start`方法还未返回时，self就被外部释放了。作者发现了这个潜在的问题，所以在方法局部增设了一个`strongSelf`的强引用来保证self的生命周期延续到方法结束。问题是解决了，但是更希望知道原因。
 
@@ -67,7 +59,7 @@ translated: n/a
 
 现在想想还是比较不符合常理，入参的self居然不能保证这个函数执行完成。后来查阅了下文档，发现是ARC的(gao)机(de)制(gui)，clang的[《这篇ARC文档》](http://clang.llvm.org/docs/AutomaticReferenceCounting.html#self)中有明确的解释，总结如下：
 
-- 的，也就是说，入参的self被表示为：（init系列方法的self除外）
+- ARC下，self既不是strong也不是weak，而是`unsafe_unretained`的，也就是说，入参的self被表示为：（init系列方法的self除外）
 
 ```objc
 - (void)start {
@@ -76,8 +68,8 @@ translated: n/a
 }
 ```
 
-- ，如果调用方没有保证，就会出现上面的crash
-- ，objc中100%的方法（不是函数）调用第一个参数都是self，同时，99%的情况下，调用方都不会在方法执行时把这个对象释放，所以相比于在每个方法中插入对self的引用计数管理：
+- 在方法调用时，ARC不会对self做retain或release，生命周期全由**它的调用方来保证**，如果调用方没有保证，就会出现上面的crash
+- ARC这样做的原因是**性能优化**，objc中100%的方法（不是函数）调用第一个参数都是self，同时，99%的情况下，调用方都不会在方法执行时把这个对象释放，所以相比于在每个方法中插入对self的引用计数管理：
 
 ```objc
 - (void)start {

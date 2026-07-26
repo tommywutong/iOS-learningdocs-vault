@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-09-01
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fbb55152070a2bf2'
 translated: n/a
 ---
@@ -20,10 +20,12 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-09-01
 
-1. 1. 苹果官方文档的古老方案
-2. 2. Facebook 的 hfsort
-3. 3. 基于 Clang SanitizerCoverage 的方案
-4. 4. 后记
+**文章目录**
+
+1. [1. 苹果官方文档的古老方案](#苹果官方文档的古老方案)
+2. [2. Facebook 的 hfsort](#Facebook-的-hfsort)
+3. [3. 基于 Clang SanitizerCoverage 的方案](#基于-Clang-SanitizerCoverage-的方案)
+4. [4. 后记](#后记)
 
 『二进制文件重排优化启动速度』本是一项上古 PC 时代就玩过的东东，前一阵子借助某宇宙大厂重新火了一把。不过令我惊讶的是：这么简单个事情竟然搞得如此复杂，而且还声称『开拓性的探索、在没有业界经验可供参考』。。。
 
@@ -37,17 +39,17 @@ AppOrderFiles(^(NSString *orderFilePath) {
 });
 ```
 
-## [#苹果官方文档的古老方案](#苹果官方文档的古老方案)苹果官方文档的古老方案
+## 苹果官方文档的古老方案
 
 苹果的官方文档很早就给了二进制文件重排的方案：[Improving Locality of Reference](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/ImprovingLocality.html#//apple_ref/doc/uid/20001862-117091-BCIBJEBH)，『早』到甚至被苹果提示这份文档已经年久失修，部分工具和链接失效了。文档的过时不仅体现在还是 GCC 时代，连工具链比如像 `gprof` 也不能用了，不过 Google 也给出了 macOS 上的替代品，有兴趣的可以去研究下。
 
-## [#Facebook-的-hfsort](#Facebook-的-hfsort)Facebook 的 hfsort
+## Facebook 的 hfsort
 
 需要先用 hf-prod-collect.sh 收集数据，然后塞给 [hfsort](https://github.com/facebook/hhvm/tree/master/hphp/tools/hfsort) 生成 hotfuncs.txt 文件。很好很强大，不过对于编程小白来说有一定的使用成本。
 
 PS：此方案来自于我写了这篇文章后，jmpews 大神丢给我了个链接，受益匪浅。（其实我啥都看不懂）
 
-## [#基于-Clang-SanitizerCoverage-的方案](#基于-Clang-SanitizerCoverage-的方案)基于 Clang SanitizerCoverage 的方案
+## 基于 Clang SanitizerCoverage 的方案
 
 在 [Clang 10 documentation](https://clang.llvm.org/docs/SanitizerCoverage.html#tracing-pcs) 中可以看到 LLVM 官方对 SanitizerCoverage 的详细介绍，包含了示例代码。
 
@@ -109,7 +111,7 @@ void __sanitizer_cov_trace_pc_guard(uint32_t *guard) {
 }
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 苹果官方也提供了 PGO 的详细文档，而且操作很简单。不过它跟二进制文件重排还是有区别的，这里不展开讲了。毕竟相对于对业务代码加载优先级的优化来说，PGO 对启动优化性价比没那么高，应该就是高频调用函数内联之类的（这句纯属瞎扯）。
 

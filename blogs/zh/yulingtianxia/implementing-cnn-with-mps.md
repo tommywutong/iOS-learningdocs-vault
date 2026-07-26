@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c0282db2bd2a5ed8'
 translated: n/a
 ---
@@ -20,28 +20,30 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-05-30
 
-1. 1. 理论基础
+**文章目录**
 
-    1. 1.1. 卷积神经网络简介
-    2. 1.2. 图片分类常用的数据和预设网络模型
-    3. 1.3. 迁移学习
-2. 2. 框架选择
-3. 3. 数据采集
-4. 4. Inception V3 pre-trained network
+1. [1. 理论基础](#理论基础)
 
-    1. 4.1. bottleneck features
-    2. 4.2. Fine-tuning
-5. 5. Convert HDF5 to binary .dat files
-6. 6. Metal Performance Shaders
+    1. [1.1. 卷积神经网络简介](#卷积神经网络简介)
+    2. [1.2. 图片分类常用的数据和预设网络模型](#图片分类常用的数据和预设网络模型)
+    3. [1.3. 迁移学习](#迁移学习)
+2. [2. 框架选择](#框架选择)
+3. [3. 数据采集](#数据采集)
+4. [4. Inception V3 pre-trained network](#Inception-V3-pre-trained-network)
 
-    1. 6.1. MPS 简介
-    2. 6.2. 使用 MPS 构建网络并预测
-7. 7. 总结
-8. 8. Reference
+    1. [4.1. bottleneck features](#bottleneck-features)
+    2. [4.2. Fine-tuning](#Fine-tuning)
+5. [5. Convert HDF5 to binary .dat files](#Convert-HDF5-to-binary-dat-files)
+6. [6. Metal Performance Shaders](#Metal-Performance-Shaders)
+
+    1. [6.1. MPS 简介](#MPS-简介)
+    2. [6.2. 使用 MPS 构建网络并预测](#使用-MPS-构建网络并预测)
+7. [7. 总结](#总结)
+8. [8. Reference](#Reference)
 
 最近一个月从零开始自学了下有关 iOS 上的机器学习相关知识，亲身实践了从数据采集到训练模型再到移动端预测的流程。理论知识学习路径为：**机器学习-\>深度学习-\>迁移学习**；实践框架学习路径为：**TensorFlow-\>Keras-\>MPS(iOS 10)**。最终完成一个简单的手势图像五分类问题，并预测 iOS 摄像头采集的图片。最终结果，训练集准确率 96.26%，交叉验证集准确率 73.86%。
 
-## [#理论基础](#理论基础)理论基础
+## 理论基础
 
 虽然结果导向很重要，但是我还是想从基础学起，而不是去急于去网上找现成的解决方案来调参。毕竟我的目的是拓宽知识面，开新的技能树。
 
@@ -53,7 +55,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 光掌握机器学习的基础知识显然不够，大而全不如专而精。深度学习在图像识别领域大放异彩，其实深度学习是机器学习的一个分支，而深度学习领域最近在图像识别上应用最火的可能就是 CNN 了。所以在狂学深度学习的时候重点研究了下 CNN。
 
-### [#卷积神经网络简介](#卷积神经网络简介)卷积神经网络简介
+### 卷积神经网络简介
 
 全连接网络权重过多，而卷积神经网络可以实现权值共享，引入了深度，数据为 3D 的。推荐查看 Stanford 的 [Convolutional Neural Networks (CNNs / ConvNets)](http://cs231n.github.io/convolutional-networks/)，中文翻译：[CS231n课程笔记翻译：卷积神经网络笔记](https://zhuanlan.zhihu.com/p/22038289)。
 
@@ -67,7 +69,7 @@ Fully Connected 也叫 Dense，因为全连接权重密度很大。其实就是�
 
 如果卷积核尺寸不是 1x1，或平移的步长不是 1x1，那么卷积运算后的结果肯定比原尺寸要小，所以padding 规则就很重要。一般常用的『Same』规则就是在数据周围填充一些 0，使得卷积运算后的数据宽和高跟输入数据一样。
 
-### [#图片分类常用的数据和预设网络模型](#图片分类常用的数据和预设网络模型)图片分类常用的数据和预设网络模型
+### 图片分类常用的数据和预设网络模型
 
 图片分类使用已经打好标签的数据库来进行有监督学习，
 
@@ -101,7 +103,7 @@ Fully Connected 也叫 Dense，因为全连接权重密度很大。其实就是�
 
 推荐一个还算不错的机器学习的数据网站：[kaggle](https://www.kaggle.com)
 
-### [#迁移学习](#迁移学习)迁移学习
+### 迁移学习
 
 从头开始训练一个复杂的网络是很费时费力的，需要获取符合目标的海量真实数据，并使用性能极强的集群来训练数据，并有足够的耐心等待训练结果。稍有不慎，还需要不断调参，重新再来。这是个枯燥乏味的体力活，并且是在有硬件经济实力的基础上才办得到的。总会看到一些论文里描述自己的模型用 Tesla KXX 跑了多久才训练出了结果，其实在机器学习领域，花费半年甚至更久的时间来调参优化模型是很正常的。
 
@@ -111,7 +113,7 @@ Fully Connected 也叫 Dense，因为全连接权重密度很大。其实就是�
 
 详细内容可以参考这篇文章：([https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html))
 
-## [#框架选择](#框架选择)框架选择
+## 框架选择
 
 有一些知名的框架可供选择：TensorFlow, Torch, Caffee, Theano, Keras…
 
@@ -125,7 +127,7 @@ Keras 基于 TensorFlow 或 Theano，集成了大量功能，是一种方便快�
 >  就像用管道搭建供水系统，当你在拼水管的时候，里面是没有水的。只有所有的管子都接完了，才能送水。  
 >  – 引自 [http://keras-cn.readthedocs.io/en/latest/for_beginners/concepts/](http://keras-cn.readthedocs.io/en/latest/for_beginners/concepts/)
 
-## [#数据采集](#数据采集)数据采集
+## 数据采集
 
 因为网上提供的一些用于训练的海量图片数据都是格式整齐像素较低的图片，比如28x28这种，且特征明显，都为某种物体，这种专用于比赛挑战的图片分类数量一般都是10，100，1000等，更专注于算法的准确率，忽视了真实的场景。
 
@@ -139,7 +141,7 @@ Keras 基于 TensorFlow 或 Theano，集成了大量功能，是一种方便快�
 
 图像采集的代码放在 [captureImages](https://github.com/yulingtianxia/HandGestureCNN/tree/master/captureImages) 目录里。
 
-## [#Inception-V3-pre-trained-network](#Inception-V3-pre-trained-network)Inception V3 pre-trained network
+## Inception V3 pre-trained network
 
 在 Keras Blog 中，[Building powerful image classification models using very little data](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) 很好地介绍了如何针对小数据集利用现有的 VGG16 网络 fine-tuning，并在 [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats/data) 数据集上取得了 94% 的准确率。
 
@@ -149,7 +151,7 @@ VGG 系列网络虽然结构简单易理解，但无论是加载权重的耗时�
 
 所以我决定使用 [Inception V3 Network](https://arxiv.org/pdf/1512.00567v3.pdf) 来 fine-tuning，这样在后续的 MPS 代码编写上就会省很多时间。TensorFlow 官方也有相应 [教程](https://www.tensorflow.org/tutorials/image_recognition#image-recognition)。
 
-### [#bottleneck-features](#bottleneck-features)bottleneck features
+### bottleneck features
 
 下图展示了 Inception V3 网络的结构，其中的 top 部分就是 Final part 所指的部分，我们可以将其替换成我们自己的全连接层，利用前面 Input 预测的结果来作为输入数据，训练我们自己的分类器。
 
@@ -214,7 +216,7 @@ model.save_weights(top_model_weights_path)
 
 这部分的源码放在 [bottleneck_features_train_inceptionv3.py](https://github.com/yulingtianxia/HandGestureCNN/blob/master/Train/bottleneck_features_train_inceptionv3.py)
 
-### [#Fine-tuning](#Fine-tuning)Fine-tuning
+### Fine-tuning
 
 为了达到更好的效果，可以解冻后面几层。看了下 Inception V3 的网络结构，最后一个 tower 拥有 9 个卷积层，比较复杂。虽然理论上 fine-tuneing 整个 tower 是可行的，但是计算开销很大，用我的 iMac 4 GHz Intel Core i7 八核跑一个月都不行。
 
@@ -270,7 +272,7 @@ Keras 可以根据数据的文件夹自动分类打标签，所以我将图片�
 
 这部分源码放在 [finetune_inceptionv3.py](https://github.com/yulingtianxia/HandGestureCNN/blob/master/Train/finetune_inceptionv3.py)
 
-## [#Convert-HDF5-to-binary-dat-files](#Convert-HDF5-to-binary-dat-files)Convert HDF5 to binary .dat files
+## Convert HDF5 to binary .dat files
 
 > HDF（英语：Hierarchical Data Format）指一种为存储和处理大容量科学数据设计的文件格式及相应库文件。HDF最早由NCSA开发，目前在非盈利组织 HDF 小组维护下继续发展。当前流行的版本是HDF5。  
 >  – 维基百科
@@ -362,9 +364,9 @@ func extractHDF5(h5Name: String) {
 }
 ```
 
-## [#Metal-Performance-Shaders](#Metal-Performance-Shaders)Metal Performance Shaders
+## Metal Performance Shaders
 
-### [#MPS-简介](#MPS-简介)MPS 简介
+### MPS 简介
 
 Metal Performance Shaders 简称 MPS，可以为使用 Metal 技术的 App 提供底层高性能 GPU 运算接口。最初苹果提供的 Shader 语言本来是很底层很生涩的，后来为 iOS 提供了原生支持的 API，可以用 Swift 或 OC 来调用底层接口了。iOS 9 的 MPS 提供了图片特效处理和 Metal 纹理相关的 API，iOS 10 的 MPS 新增了有关 CNN 和矩阵乘法的 API。不过目前苹果只开放了 CNN 的预测功能，如果想要在 iOS 10 上训练一个 CNN，那就只能借助第三方工具了。
 
@@ -390,22 +392,14 @@ MPS 在我的 iPhone 6s Plus 上性能很好，发热也少，可以通过神经
 
 > PS: 科普下，[oC kH kW iC] 是四维数组（矩阵） [outputChannels][kernelHeight][kernelWidth][inputChannels/groups] 的 shape。
 
-### [#使用-MPS-构建网络并预测](#使用-MPS-构建网络并预测)使用 MPS 构建网络并预测
+### 使用 MPS 构建网络并预测
 
 MPS 预测的执行流程如下：
 
 1. 获取可用的 device
-2. 获取
-
-  ，从
-
-  获取
-3. 对象
-4. 方法，输入为
-
-  和上一层网络输出的
-
-  对象。
+2. 从 `device` 获取 `commandQueue`，从 `commandQueue` 获取 `commandBuffer`
+3. 构建网络模型和输入数据的 `MSPImage` 对象
+4. 调用网络每层的 `encode` 方法，输入为 `commandBuffer` 和上一层网络输出的 `MSPImage` 对象。
 5. 提交 `commandBuffer`
 6. 等待输出结果，并处理成 one-hot 格式。
 
@@ -477,7 +471,7 @@ func logits_layer(commandBuffer: MTLCommandBuffer){
 }
 ```
 
-## [#总结](#总结)总结
+## 总结
 
 这是一篇行外人看不懂，行内人觉得水，我自己觉得收获满满的实践笔记。并没有花大量篇幅总结Machine Learning 的基础知识，也没有逐个讲述框架 API 的使用，更没有列一堆公式和数学定义。。。因为这种知识体系大而全的文章，网上不胜枚举，而且肯定比我总结的好。本着一个小白去探索世界的心态，把自己从理论学习到训练模型再到 iOS 上的预测的实践流程记录下来。很多枯燥耗时的学习 ML、TF 和配置环境的过程都省略掉了。
 
@@ -487,7 +481,7 @@ func logits_layer(commandBuffer: MTLCommandBuffer){
 
 深度学习发展很快，要学习的内容还有很多。学习得越多，就发现自己越是无知，以至于怀疑自己的智商和精力了。
 
-## [#Reference](#Reference)Reference
+## Reference
 
 [Coursera Machine Learning](https://www.coursera.org/learn/machine-learning/home)  
 [TensorFlow](https://www.tensorflow.org)  

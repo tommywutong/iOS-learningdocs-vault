@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-28
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a1d32ec694a18e9b'
 translated: n/a
 ---
@@ -20,17 +20,19 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2020-04-25
 
-1. 1. 封装 Objective-C 里的 Out Parameter
-2. 2. 从 Out Parameter 取值
+**文章目录**
 
-    1. 2.1. 建立泛型与初始化的映射
-    2. 2.2. 自动生成注册代码
-    3. 2.3. 自动取值
-3. 3. 后续
+1. [1. 封装 Objective-C 里的 Out Parameter](#封装-Objective-C-里的-Out-Parameter)
+2. [2. 从 Out Parameter 取值](#从-Out-Parameter-取值)
+
+    1. [2.1. 建立泛型与初始化的映射](#建立泛型与初始化的映射)
+    2. [2.2. 自动生成注册代码](#自动生成注册代码)
+    3. [2.3. 自动取值](#自动取值)
+3. [3. 后续](#后续)
 
 [dart_native](https://github.com/dart-native/dart_native) 作为一条比 Channel 性能更高开发成本更低的超级通道，通过 C++ 调用 Native 的 API，深入底层且考虑全面。很多 Objective-C 接口含有 `NSError **` 这种 out parameter，[dart_native](https://github.com/dart-native/dart_native) 也对这种场景做了支持。
 
-## [#封装-Objective-C-里的-Out-Parameter](#封装-Objective-C-里的-Out-Parameter)封装 Objective-C 里的 Out Parameter
+## 封装 Objective-C 里的 Out Parameter
 
 说白了用的最多的就是 “A pointer to a pointer” 啊！`NSError **` 啊！
 
@@ -80,7 +82,7 @@ class NSObjectRef<T extends id> {
 }
 ```
 
-## [#从-Out-Parameter-取值](#从-Out-Parameter-取值)从 Out Parameter 取值
+## 从 Out Parameter 取值
 
 Dart 侧把一个指针传给 OC 后，OC 会创建另一个指针，并把后者赋值给前者指向的内存。还是拿 `NSError` 举例子：
 
@@ -94,7 +96,7 @@ Dart 侧把一个指针传给 OC 后，OC 会创建另一个指针，并把后�
 
 下一步是要将上例中 OC 的 `NSError` 对象转成 Dart 的对象，并赋值给 `NSObjectRef` 的 `value` 属性上。
 
-### [#建立泛型与初始化的映射](#建立泛型与初始化的映射)建立泛型与初始化的映射
+### 建立泛型与初始化的映射
 
 面对不同泛型的 `NSObjectRef` 声明，要转成其封装类型的对象。而 Flutter 禁用的 Dart 的反射，即不能通过 `NSObjectRef` 声明的泛型来初始化对应的类。我维护了个 `Map` 来建立起 `Type` 到初始化调用的映射，并提供注册方法：
 
@@ -155,7 +157,7 @@ syncValue() {
 }
 ```
 
-### [#自动生成注册代码](#自动生成注册代码)自动生成注册代码
+### 自动生成注册代码
 
 那么多 Native 类型，总不能手写代码一个个去调用 `registerTypeConvertor` 吧。[dart_native](https://github.com/dart-native/dart_native) 提供了 Annotation 用于自动生成这些注册代码，只需要在封装 Native 类的上面加一个 `@native` 即可：
 
@@ -235,7 +237,7 @@ void runDartNative() {
 
 PS: 自动生成代码这块一开始是给 callback 功能用的，这里写下，只是蹭了蹭篇幅。
 
-### [#自动取值](#自动取值)自动取值
+### 自动取值
 
 `syncValue()` 方法实现后就比较简单了，下一步就只是找个合理的时机调用的问题了。这只需要在 [dart_native](https://github.com/dart-native/dart_native) 的 `msgSend` 方法中加入对参数类型的判断。如果是 `NSObjectRef` 类型，则需要在调用完 Native 侧的方法后再次调用它的 `syncValue()` 方法。
 
@@ -262,7 +264,7 @@ outRefArgs.forEach((ref) => ref.syncValue());
 
 [dart_native](https://github.com/dart-native/dart_native) 中的`msgSend` 方法顾名思义，虽然表面上是复刻 OC 的实现，实则接口和原理差很多。这里也不详细展开讲，感兴趣的可以直接去看代码。
 
-## [#后续](#后续)后续
+## 后续
 
 `NSObjectRef` 目前只考虑了对 `NSObject` 及其子类的 out parameter 的封装，理论上对其他基本类型和结构体也是可以支持的，不过使用场景可能没 `NSError **` 那么多，等遇到的时候再搞吧。
 

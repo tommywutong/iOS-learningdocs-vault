@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:99bf7b079870b122'
 translated: n/a
 ---
@@ -20,24 +20,26 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-11-05
 
-1. 1. 概念
-2. 2. 使用姿势
-3. 3. 实现原理
+**文章目录**
 
-    1. 3.1. 管理 MTRule
-    2. 3.2. 处理 NSInvocation
+1. [1. 概念](#概念)
+2. [2. 使用姿势](#使用姿势)
+3. [3. 实现原理](#实现原理)
 
-          1. 3.2.1. MTPerformModeFirstly
-          2. 3.2.2. MTPerformModeLast
-          3. 3.2.3. MTPerformModeDebounce
-    3. 3.3. 规则的应用与废除
-4. 4. 后记
+    1. [3.1. 管理 MTRule](#管理-MTRule)
+    2. [3.2. 处理 NSInvocation](#处理-NSInvocation)
+
+          1. [3.2.1. MTPerformModeFirstly](#MTPerformModeFirstly)
+          2. [3.2.2. MTPerformModeLast](#MTPerformModeLast)
+          3. [3.2.3. MTPerformModeDebounce](#MTPerformModeDebounce)
+    3. [3.3. 规则的应用与废除](#规则的应用与废除)
+4. [4. 后记](#后记)
 
 在实际项目中经常会遇到因方法调用频繁而导致的 UI 闪动问题和性能问题，这时用某种策略需要控制调用频率，以达到节流和防抖的效果。[MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 是我实现的一个 Objective-C 消息节流和防抖的轻量级工具库，使用便捷且业务无关。
 
 读懂本文的前提是对 [Objective-C Runtime](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/) 和 [Objective-C 消息发送与转发机制原理](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/)有一定了解。
 
-## [#概念](#概念)概念
+## 概念
 
 函数节流（throttle）是一个很基础的概念，常常跟函数防抖（debounce）作比较。在处理连续事件时比较常用，可以通过[这个 Demo](http://demo.nimius.net/debounce_throttle/) 感受下二者区别。在 JS 中有较多的实现和应用案例，可以查看[这篇文章](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs) 更直接地了解下。
 
@@ -45,7 +47,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 在 Objective-C 中，方法调用其实就是消息发送，所以我改了个名字，叫消息节流和防抖。
 
-## [#使用姿势](#使用姿势)使用姿势
+## 使用姿势
 
 假如我创建了一个 `Stub` 类的实例 `s`，我想限制它调用 `foo:` 方法的频率。先要创建并配置一个 `MTRule`，并将规则应用到 `MTEngine` 单例中：
 
@@ -86,35 +88,13 @@ rule.mode = MTPerformModeLast;
 
 应用和废除规则都是线程安全的。
 
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 参照 [Aspects](https://github.com/steipete/Aspects) 和 [JSPatch](https://github.com/bang590/JSPatch) 中 Hook 的原理，将限制频率逻辑嵌入消息转发流程中：
 
-1. ，对应实现为
-
-  的
-
-  。
-2. Objective-C runtime 消息转发机制
-
-  ，将
-
-  对应的
-
-  改成
-
-  从而触发调用
-
-  方法。
-3. 的实现替换为自己实现的
-
-  ，并在自己实现的逻辑中将
-
-  设为
-
-  。并限制
-
-  的调用频率。
+1. 给类添加一个新的方法 `fixed_selector`，对应实现为 `rule.selector` 的 `IMP`。
+2. 利用 [Objective-C runtime 消息转发机制](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/)，将 `rule.selector` 对应的 `IMP` 改成 `_objc_msgForward` 从而触发调用 `forwardInvocation:` 方法。
+3. 将 `forwardInvocation:` 的实现替换为自己实现的 `IMP`，并在自己实现的逻辑中将 `invocation.selector` 设为 `fixed_selector`。并限制 `[invocation invoke]` 的调用频率。
 
 这种做法的缺陷是如果同时 hook 了基类和子类的同一个方法，且子类调用了基类的方法，就会导致循环调用。因为调用 `super` 方法时，传入的 `target` 还是 `self` 对象，导致调用了子类的方法。好在这里并不允许同时 hook 一条继承链上的两个类，因为子类和基类限制频率的规则会相互干扰，导致不易发现的 bug。
 
@@ -122,7 +102,7 @@ rule.mode = MTPerformModeLast;
 
 由于配置规则的内容较多，如果使用逐个传参的方式，方法名会很长。所以这里用 `MTRule` 类封装了规则的上下文，并使用 `applyRule:` 和 `discardRule:` 方法应用和废除规则。
 
-### [#管理-MTRule](#管理-MTRule)管理 `MTRule`
+### 管理 `MTRule`
 
 `MTEngine` 内部使用键值对存取 `MTRule`，这里使用 `target` 和 `selector` 的组合值作为 key。这里只要保证唯一性即可区分不同的规则，格式不固定：
 
@@ -167,7 +147,7 @@ static BOOL mt_checkRuleValid(MTRule *rule)
 }
 ```
 
-### [#处理-NSInvocation](#处理-NSInvocation)处理 `NSInvocation`
+### 处理 `NSInvocation`
 
 在进入到消息转发流程调用 `forwardInvocation:` 方法时会进入到自定义的处理逻辑中，然后决定是否执行 `[invocation invoke]`。之前已经将原始 `selector` 的 IMP 替换成了 `fixedSelector`，所以调用 `[invocation invoke]` 之前需要调用 `invocation.selector = fixedSelector`。
 
@@ -208,7 +188,7 @@ static void mt_handleInvocation(NSInvocation *invocation, SEL fixedSelector)
 
 上面代码省略了不同 `mode` 的处理逻辑，下面会逐个讲解。
 
-#### [#MTPerformModeFirstly](#MTPerformModeFirstly)`MTPerformModeFirstly`
+#### `MTPerformModeFirstly`
 
 ```less
 MTModePerformFirstly:
@@ -230,7 +210,7 @@ if (now - rule.lastTimeRequest > rule.durationThreshold) {
 }
 ```
 
-#### [#MTPerformModeLast](#MTPerformModeLast)`MTPerformModeLast`
+#### `MTPerformModeLast`
 
 ```less
 MTModePerformLast:
@@ -258,7 +238,7 @@ else {
 }
 ```
 
-#### [#MTPerformModeDebounce](#MTPerformModeDebounce)`MTPerformModeDebounce`
+#### `MTPerformModeDebounce`
 
 ```less
 MTModePerformDebounce:
@@ -286,7 +266,7 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(rule.durationThreshold
 });
 ```
 
-### [#规则的应用与废除](#规则的应用与废除)规则的应用与废除
+### 规则的应用与废除
 
 在真正应用规则之前，需要检查下规则合法性，然后检查继承链上是否已经应用过规则了。如果有，则需要输出错误信息；否则应用规则。这里使用 POSIX 的互斥锁保证线程安全。`mt_overrideMethod()` 函数所作的事情就是开始提到的利用消息转发流程 hook 的三个步骤。
 
@@ -339,7 +319,7 @@ dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(rule.durationThreshold
 }
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 其实在开发过程中遇到需要限制方法调用频率的场景并不多，只是最近恰巧连续碰到几个刷新 UI 过频繁的问题，才想到应该去造个轮子。因为时间仓促，肯定还有考虑不周和一些 bug，待投入使用后慢慢完善和修复。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f110f7dcfaef79ec'
 translated: n/a
 ---
@@ -20,8 +20,10 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-09-26
 
-1. 1. 参数的惰性计算（Lazy Evaluation）
-2. 2. 自动闭包
+**文章目录**
+
+1. [1. 参数的惰性计算（Lazy Evaluation）](#参数的惰性计算（Lazy-Evaluation）)
+2. [2. 自动闭包](#自动闭包)
 
 本文翻译自[Building assert() in Swift, Part 1: Lazy Evaluation](https://developer.apple.com/swift/blog/?id=4)
 
@@ -42,7 +44,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 Swift模拟的断言(assert)提供C语言中断言几乎所有功能，不使用预处理，以更干净的方式实现。让我们深入学习Swift一些有趣的特性吧。
 
-## [#参数的惰性计算（Lazy-Evaluation）](#参数的惰性计算（Lazy-Evaluation）)参数的惰性计算（Lazy Evaluation）
+## 参数的惰性计算（Lazy Evaluation）
 
 当实现Swift的`assert()`时，我们遇到的第一个挑战是没有明确的方式让一个函数接收一个表达式而不评判它。比如，我们想使用：
 
@@ -107,7 +109,7 @@ func &&(lhs: BooleanType, rhs: @autoclosure () -> BooleanType) -> Bool {
 
 通过将右边表达式以闭包形式接收，Swift提供合适的子表达式的惰性计算。
 
-## [#自动闭包](#自动闭包)自动闭包
+## 自动闭包
 
 作为C语言的宏，自动闭包要谨慎使用。因为从调用函数的一方看不出来参数的计算受到了影响。自动闭包有意地限制我们不传递参数，所以你不能在类似条件控制流的情形中使用它。在符合人们期望的实用语义情况（可能是“features”API）下使用它，而不是单单为了省略闭包的花括号。
 

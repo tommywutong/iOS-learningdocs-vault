@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-06-14
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:44110596674d16e0'
 translated: n/a
 ---
@@ -58,18 +58,10 @@ struct method_t {
 
 本质上，它就是 `struct method_t` 类型的指针，所以我们重点看下结构体 `method_t` 的定义。在结构体 `method_t` 中定义了三个成员变量和一个成员函数：
 
-1. 表示的是方法的名称，用于唯一标识某个方法，比如
-
-  ；
-2. 表示的是方法的返回值和参数类型（详细信息可以查阅苹果官方文档中的
-
-  Type Encodings
-
-  ）；
-3. 是一个函数指针，指向方法的实现；
-4. 顾名思义，是一个根据
-
-  的地址对方法进行排序的函数。
+1. `name` 表示的是方法的名称，用于唯一标识某个方法，比如 `@selector(viewWillAppear:)` ；
+2. `types` 表示的是方法的返回值和参数类型（详细信息可以查阅苹果官方文档中的 [Type Encodings](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1) ）；
+3. `imp` 是一个函数指针，指向方法的实现；
+4. `SortBySELAddress` 顾名思义，是一个根据 `name` 的地址对方法进行排序的函数。
 
 由此，我们也可以发现 Objective-C 中的方法名是不包括参数类型的，也就是说下面两个方法在 runtime 看来就是同一个方法：
 
@@ -115,10 +107,8 @@ struct method_t {
 
 要达到这个目的，我们有两种比较常规的实现方式：
 
-1. 代码，简单粗暴；
-2. ，并让我们的
-
-  都继承这些子类。
+1. 直接修改每个页面的 `view controller` 代码，简单粗暴；
+2. 子类化 `view controller` ，并让我们的 `view controller` 都继承这些子类。
 
 第 1 种方式的缺点是不言而喻的，这样做不仅会产生大量重复的代码，而且还很容易遗漏某些页面，非常难维护；第 2 种方式稍微好一点，但是也同样需要我们子类化 `UIViewController` 、`UITableViewController` 和 `UITabBarController` 等不同类型的 `view controller` 。
 
@@ -182,11 +172,9 @@ struct method_t {
 
 **解析**：在上面的代码中有三个关键点需要引起我们的注意：
 
-1. 方法中实现 Method Swizzling 的逻辑，而不是其他的什么方法，比如
-
-  等；
+1. 为什么是在 `+load` 方法中实现 Method Swizzling 的逻辑，而不是其他的什么方法，比如 `+initialize` 等；
 2. 为什么 Method Swizzling 的逻辑需要用 dispatch_once 来进行调度；
-3. 方法，并且以它的结果为依据分别处理两种不同的情况。
+3. 为什么需要调用 `class_addMethod` 方法，并且以它的结果为依据分别处理两种不同的情况。
 
 下面我们就一起来分析下这三个为什么到底是为了什么？
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3c6b401c10c2cdef'
 translated: n/a
 ---
@@ -20,11 +20,13 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2015-03-01
 
-1. 1. 魁首：UIDynamicAnimator
-2. 2. 最简单的行为：UIGravityBehavior
-3. 3. 反弹的墙壁：UICollisionBehavior
-4. 4. Core Motion
-5. 5. 其他的行为
+**文章目录**
+
+1. [1. 魁首：UIDynamicAnimator](#魁首：UIDynamicAnimator)
+2. [2. 最简单的行为：UIGravityBehavior](#最简单的行为：UIGravityBehavior)
+3. [3. 反弹的墙壁：UICollisionBehavior](#反弹的墙壁：UICollisionBehavior)
+4. [4. Core Motion](#Core-Motion)
+5. [5. 其他的行为](#其他的行为)
 
 本文翻译自[BigNerdRanch](http://www.bignerdranch.com/blog/uidynamics-in-swift/)，作者[Steve Sparks](http://www.bignerdranch.com/about-us/nerds/steve-sparks/)
 
@@ -66,11 +68,11 @@ override func viewDidLoad() {
 
 它不动；啥都没动。那也太无聊了。我们设置它动起来吧。
 
-## [#魁首：UIDynamicAnimator](#魁首：UIDynamicAnimator)魁首：UIDynamicAnimator
+## 魁首：UIDynamicAnimator
 
 这出戏的魁首是`UIDynamicAnimator`。按照给出的一系列规则，animator在屏幕每次重绘时调整每个物体的位置。就其本身而言，animator根本不执行任何操作；它需要的规则被称为行为（behavior）。行为描述的事物类似于一个冲量，例如推一下，或重力那种持久的力。你也可以指定它们的摩擦力，弹力等等。animator不做任何对自己制定的规则；它只是魁首。我们在下一节将会声明它的一个实例。
 
-## [#最简单的行为：UIGravityBehavior](#最简单的行为：UIGravityBehavior)最简单的行为：UIGravityBehavior
+## 最简单的行为：UIGravityBehavior
 
 让我们从一个重力行为开始，结果便是我们的红色箱子掉落到屏幕底部。它是从概念上最容易理解的行为了；一个已知方向的拉力会在每个时钟周期向物体施加速度。我们打算施加垂直向下的重力。
 
@@ -91,11 +93,9 @@ func createAnimatorStuff() {
 
 重要的是注意`UIDynamicAnimator`后面标记的问号意思是变量可能为`nil`。事实上，我就在这里把它设为`nil`。原因有些微妙：
 
-- 调用时必需对其进行赋值。
-- 必须在
-
-  之后调用。
-- 。
+- animator是在类中声明的，这意味着当view controller的`init`调用时必需对其进行赋值。
+- `self.view` 必须在 `init` 之后调用。
+- animator的构造器需要一个视图作为它的参照视图，而且这个值将会是`self.view`。
 
 因为我们已经在这酿造了一个鸡生蛋的问题，我们不会允许此变量为`nil`，并且在`viewDidLoad()`期间将其设定好。这引入了一些波折，任何时间我们使用`animator`变量，都将发现我们不得不亲自确保在使用之前它的值不是`nil`。这在Swift中被处理成在`animator`后面用一个问号标记，比如`animator?.behaviors()`。我们将会讨论更多些这方面的内容。暂且让我们向`viewDidLoad`加点代码来调用我们的新方法…
 
@@ -111,7 +111,7 @@ func createAnimatorStuff() {
 
 嗯，真有趣…就一会儿，它立刻跌出了底部。
 
-## [#反弹的墙壁：UICollisionBehavior](#反弹的墙壁：UICollisionBehavior)反弹的墙壁：UICollisionBehavior
+## 反弹的墙壁：UICollisionBehavior
 
 `UICollisionBehavior`关注担心物体是否会在它们的轨迹上碰撞，如果碰撞，它们怎么相互作用。除了让物体互相碰撞，它也推断边界，也就是类似物体边框的路径。（使用`let`）声明一个`UICollisionBehavior`常量，并把它添加到设置代码中：
 
@@ -136,7 +136,7 @@ animator?.addBehavior(collider)
 
 但是它们做的还是不够好。我们为啥不将环境重力绑定到从加速计读取到的重力上呢？
 
-## [#Core-Motion](#Core-Motion)Core Motion
+## Core Motion
 
 iOS设备的加速计能做一堆巧活儿，这其中最常见的就是告诉我们重力向哪个方向牵引。[苹果关于 `UIAcceleration` 的文档](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAcceleration_Class/index.html)在一开始就给出了一张示范坐标轴如何转化到设备上的图片：
 
@@ -234,7 +234,7 @@ func gravityUpdated(motion: CMDeviceMotion!, error: NSError!) {
 
 太酷了！
 
-## [#其他的行为](#其他的行为)其他的行为
+## 其他的行为
 
 我提交了两个commit将事情推进了一点：[其中一个](https://github.com/stevesparks/RockBox/commit/8752153e608e621193742582913e2e3aaba207c9)添加了`UIDynamicItemBehavior`，允许我们修改箱子的摩擦力和弹性。我让他们超弹(elasticity = 0.9, friction = 0.1)，于是重力演变成了箱子们狂躁弹跳似的疯狂演示。
 

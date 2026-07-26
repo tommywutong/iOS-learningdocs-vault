@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a09e4d53726e88eb'
 translated: n/a
 ---
@@ -20,15 +20,17 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-09
 
-1. 1. 前言
-2. 2. 正文
-3. 3. 后记
+**文章目录**
 
-## [#前言](#前言)前言
+1. [1. 前言](#前言)
+2. [2. 正文](#正文)
+3. [3. 后记](#后记)
+
+## 前言
 
 去年在实习的期间，需要写一个类似刮刮乐的小功能，当时是从网上下载的demo，后来经过自己研读代码和debug后，终于整理出了一套比较easy的实现方法
 
-## [#正文](#正文)正文
+## 正文
 
 需要源码的可以在[这里](https://github.com/yulingtianxia/ImageMask)下载  
 我用的是从网上下载的`ImageMaskView`类，这个类还调用了工具类`Matrix`以及`PointTransforms.h`,使用非ARC实现并且在`ImageMaskView`类中使用了Objective－C和C＋＋混编，废话不多说，介绍下具体搭建方法吧  
@@ -82,6 +84,6 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 好的，现在可以运行啦，我的demo效果如下  
 ![QQ20140409-4@2x](http://yulingtianxia.com/resources/140353391637.png)
 
-## [#后记](#后记)后记
+## 后记
 
 对iOS的Core Graphics不是很熟悉，还没有去深入看代码中的实现过程，不过修复了一个小bug：在UITouchPhaseBegan的时候刮开的圆形面积坐标错位了，并针对Retina和非Retina进行测试，效果都不错。以前用过其他的刮刮乐的代码，缺点是跟图片像素比之类的有关，显示效果很不好；但这个demo可以适配任意大小的Image而不用更改代码。

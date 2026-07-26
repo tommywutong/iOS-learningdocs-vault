@@ -24,56 +24,16 @@ WWDC 15 提出的 ATS (App Transport Security) 是 Apple 在推进网络通讯�
 
 现在 (2016-11-28)，这方面的相关规定和几个事实如下：
 
-1. TLS
-
-  v1.2 以上，AES-128 和 SHA-2 以及 ECDHC 等) 的 HTTPS 内容。这对所有的网络请求都有效，包括
-
-  ，通过 AVFoundation 访问的流媒体，
-
-  以及
-
-  等。
-2. 为
-
-  来全面禁用 ATS，不过如果你这么做的话，需要在提交 app 时进行说明，为什么需要访问非 HTTPS 内容。一般来说，可能简单粗暴地开启这个选项，而又无法找到正当理由的 app 会难以通过审核。
-3. 将全部 HTTP 内容开放，选择使用
-
-  来针对特定的域名，通过设定该域名下的
-
-  来开放 HTTP 应该要相对容易过审核。“需要访问的域名是第三方服务器，他们没有进行 HTTPS 对应”会是审核时的一个可选理由，但是这应该只需要针对特定域名，而非全面开放。如果访问的是自己的服务器的话，可能这个理由会无法通过。
-4. 和
-
-  键。通过将它们设置为
-
-  ，可以让你的 app 中的
-
-  、
-
-  或者使用
-
-  播放的在线视频不受 ATS 的限制。虽然依然需要在审核时进行说明，但这也应该是绝大多数使用了相关特性的 app 的首选。坏消息是这个键在 iOS 9 中并不会起作用。
+1. 默认情况下你的 app 可以访问加密足够强 ([TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) v1.2 以上，AES-128 和 SHA-2 以及 ECDHC 等) 的 HTTPS 内容。这对所有的网络请求都有效，包括 `NSURLSession`，通过 AVFoundation 访问的流媒体，`UIWebView` 以及 `WKWebView` 等。
+2. 你依然可以添加 `NSAllowsArbitraryLoads` 为 `YES` 来全面禁用 ATS，不过如果你这么做的话，需要在提交 app 时进行说明，为什么需要访问非 HTTPS 内容。一般来说，可能简单粗暴地开启这个选项，而又无法找到正当理由的 app 会难以通过审核。
+3. 相比于使用 `NSAllowsArbitraryLoads` 将全部 HTTP 内容开放，选择使用 `NSExceptionDomains` 来针对特定的域名，通过设定该域名下的 `NSExceptionAllowsInsecureHTTPLoads` 来开放 HTTP 应该要相对容易过审核。“需要访问的域名是第三方服务器，他们没有进行 HTTPS 对应”会是审核时的一个可选理由，但是这应该只需要针对特定域名，而非全面开放。如果访问的是自己的服务器的话，可能这个理由会无法通过。
+4. 对于网页浏览和视频播放的行为，iOS 10 中新加入了 `NSAllowsArbitraryLoadsInWebContent` 和 `NSAllowsArbitraryLoadsForMedia` 键。通过将它们设置为 `YES`，可以让你的 app 中的 `UIWebView`、`WKWebView` 或者使用 `AVFoundation` 播放的在线视频不受 ATS 的限制。虽然依然需要在审核时进行说明，但这也应该是绝大多数使用了相关特性的 app 的首选。坏消息是这个键在 iOS 9 中并不会起作用。
 
 总结一下就是以下两点：
 
-1. 中进行添加。
-2. 或/和
-
-  ，并且将组件换成
-
-  或
-
-  ，以及
-
-  中的 player 就可以了。如果你还需要支持 iOS 9，并且需要访问网页和视频的话，可能只能去开启
-
-  然后提交时进行说明，并且看 Apple 审核员的脸色决定让不让通过了。除了
-
-  以外，另外一个访问网页的选择是使用
-
-  。因为其实
-
-  就是一个独立于 app 的 Safari 进程，所以它完全不受 ATS 的限制。
-3. ，而不必担心 SSL 连接的问题。
+1. 对于 API 请求，基本上是必须使用 HTTPS 的，特别是如果你们自己可以管理服务器的话。可能需要后端的同学尽快升级到 HTTPS (不过话说虽然是用 Let’s Encrypt 的，我一个个人博客都启用 HTTPS 了，作为 API 的用户服务器，还不开 HTTPS 真有点说不过去)。如果使用的是第三方的 API，而他们没有提供 HTTPS 支持的话，需要在 `NSExceptionDomains` 中进行添加。
+2. 如果你的 app 只支持 iOS 10，并且有用户可以自由输入网址进行浏览的功能，或者是在线视频音频播放功能的话，只加入 `NSAllowsArbitraryLoadsInWebContent` 或/和 `NSAllowsArbitraryLoadsForMedia`，并且将组件换成 `UIWebView` 或 `WKWebView`，以及 `AVFoundation` 中的 player 就可以了。如果你还需要支持 iOS 9，并且需要访问网页和视频的话，可能只能去开启 `NSAllowsArbitraryLoads` 然后提交时进行说明，并且看 Apple 审核员的脸色决定让不让通过了。除了 `WKWebKit` 以外，另外一个访问网页的选择是使用 `SFSafariViewController`。因为其实 `SFSafariViewController` 就是一个独立于 app 的 Safari 进程，所以它完全不受 ATS 的限制。
+3. 如果你需要使用内网，可以设置 `NSAllowsLocalNetworking`，而不必担心 SSL 连接的问题。
 
 另外，当 `NSAllowsArbitraryLoads` 和 `NSAllowsArbitraryLoadsInWebContent` 或 `NSAllowsArbitraryLoadsForMedia` 同时存在时，根据系统不同，表现的行为也会不一样。简单说，iOS 9 只看 `NSAllowsArbitraryLoads`，而 iOS 10 会优先看 `InWebContent` 和 `ForMedia` 的部分。在 iOS 10 中，要是后两者存在的话，在相关部分就会忽略掉 `NSAllowsArbitraryLoads`；如果不存在，则遵循 `NSAllowsArbitraryLoads` 的设定。说起来可能有点复杂，我在这里总结了一下根据 `NSAppTransportSecurity` 中设定条件不同，所对应的系统版本和请求组件的行为的不同，可以作为你设置这个字典时的参考 (表中使用了 `NSAllowsArbitraryLoadsInWebContent` 作为例子，`NSAllowsArbitraryLoadsForMedia` 也同理)：
 

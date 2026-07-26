@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:da27941d2db30c84'
 translated: n/a
 ---
@@ -70,9 +70,7 @@ Root view controller 有两个 container views。添加它们是为了让布局�
 
 我们实例化了 `_startMapViewController`，用来显示起始位置，并设置了用于标注的图像。
 
-1. 被添加成 root view controller 的一个 child。这会自动在 child 上调用
-
-  方法。
+1. `_startMapViewcontroller` 被添加成 root view controller 的一个 child。这会自动在 child 上调用 `willMoveToParentViewController:` 方法。
 2. child 的 view 被添加成 container view 的 subview。
 3. child 被通知到它现在有一个 parent view controller。
 4. 用来显示地理位置的 child view controller 被实例化了，但是还没有被插入到任何 view 或 controller 层级中。
@@ -121,15 +119,9 @@ Apple 已经针对 view controller 容器做了细致的 API，我们可以构�
 }
 ```
 
-1. 作为一个 child 进行添加，并通知
-
-  它将被移除。如果
-
-  的 view 是容器 view 层级的一部分，它的
-
-  方法就会被调用。
-2. 被告知它有一个新的 parent，并且适当的 view 事件方法将被调用。
-3. 被移除了。
+1. 在开始动画之前，我们把 `toController` 作为一个 child 进行添加，并通知 `fromController` 它将被移除。如果 `fromController` 的 view 是容器 view 层级的一部分，它的 `viewWillDisappear:` 方法就会被调用。
+2. `toController` 被告知它有一个新的 parent，并且适当的 view 事件方法将被调用。
+3. `fromController` 被移除了。
 
 这个为 view controller 过场动画而准备的便捷方法会自动把老的 view controller 换成新的 view controller。然而，如果你想实现自己的过场动画，并且希望一次只显示一个 view，你需要在老的 view 上调用 `removeFromSuperview`，并为新的 view 调用 `addSubview:`。错误的调用次序通常会导致 `UIViewControllerHierarchyInconsistency` 警告。例如：在添加 view 之前调用 `didMoveToParentViewController:` 就触发这个警告。
 

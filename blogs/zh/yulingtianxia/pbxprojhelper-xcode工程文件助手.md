@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:26934efe0af1a07c'
 translated: n/a
 ---
@@ -20,34 +20,36 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2016-11-28
 
-1. 1. 产品方案
+**文章目录**
 
-    1. 1.1. 为什么造这个工具？
-    2. 1.2. 需求！
-2. 2. 技术实现
+1. [1. 产品方案](#产品方案)
 
-    1. 2.1. 对比工程文件
-    2. 2.2. 应用 JSON 配置
-    3. 2.3. 操作工程文件
+    1. [1.1. 为什么造这个工具？](#为什么造这个工具？)
+    2. [1.2. 需求！](#需求！)
+2. [2. 技术实现](#技术实现)
 
-          1. 2.3.1. 编码问题
-          2. 2.3.2. 备份机制
-    4. 2.4. 预览和过滤工程文件内容
+    1. [2.1. 对比工程文件](#对比工程文件)
+    2. [2.2. 应用 JSON 配置](#应用-JSON-配置)
+    3. [2.3. 操作工程文件](#操作工程文件)
 
-          1. 2.4.1. 预览
-          2. 2.4.2. 过滤
-    5. 2.5. 快速切换工程文件
-    6. 2.6. 构造命令行工具
-3. 3. 结果
-4. 4. 感悟
+          1. [2.3.1. 编码问题](#编码问题)
+          2. [2.3.2. 备份机制](#备份机制)
+    4. [2.4. 预览和过滤工程文件内容](#预览和过滤工程文件内容)
+
+          1. [2.4.1. 预览](#预览)
+          2. [2.4.2. 过滤](#过滤)
+    5. [2.5. 快速切换工程文件](#快速切换工程文件)
+    6. [2.6. 构造命令行工具](#构造命令行工具)
+3. [3. 结果](#结果)
+4. [4. 感悟](#感悟)
 
 [pbxprojHelper](https://github.com/yulingtianxia/pbxprojHelper) 可以帮你快速配置 Xcode 工程文件，省去麻烦的人工手动操作。项目开源，使用 Swift 开发，详细介绍请见[使用说明](https://github.com/yulingtianxia/pbxprojHelper/blob/master/Documentation/README_ZH.md)。除了 Mac App 外还提供了命令行工具 [`pbxproj`](https://github.com/yulingtianxia/pbxprojHelper/releases/download/1.1.3/pbxproj)，它集成了 [pbxprojHelper](https://github.com/yulingtianxia/pbxprojHelper) 的核心功能，同样简易实用。
 
 因为 [README_ZH](https://github.com/yulingtianxia/pbxprojHelper/blob/master/Documentation/README_ZH.md) 中对使用方法已经讲得很详细了，这里重点说的是产品方案和技术实现。
 
-## [#产品方案](#产品方案)产品方案
+## 产品方案
 
-### [#为什么造这个工具？](#为什么造这个工具？)为什么造这个工具？
+### 为什么造这个工具？
 
 ![](https://github.com/yulingtianxia/pbxprojHelper/blob/master/images/usage@2x.png?raw=true)
 
@@ -60,19 +62,23 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 而我本人最常遇到的场景是 1 和 2，因为不能用公司的证书配置来编译，一些跟苹果开发者账号相关的功能导致一些 target 编译不过，还有些 debug 模式下需要设置的编译选项。所以每次都需要手动修改 Xcode 工程配置，很是麻烦。
 
-### [#需求！](#需求！)需求！
+### 需求！
 
 可以说开发这个工具一开始完全就是为了解决我个人的痛点的，基本没考虑做成功能强大的通用工具。虽然做的事情比较小众，但也能满足一批苹果开发者的需求了。我把需求分为以下几点：
 
-1. ![](https://github.com/yulingtianxia/pbxprojHelper/blob/master/images/compare.png?raw=true)
-2. ![](https://github.com/yulingtianxia/pbxprojHelper/blob/master/images/apply_revert.png?raw=true)
+1. 将程序员对工程文件做出的配置修改记录下来，并保存成 JSON 文件
+
+  ![](https://github.com/yulingtianxia/pbxprojHelper/blob/master/images/compare.png?raw=true)
+2. 下次使用时直接导入 JSON 文件，将配置修改应用到当前的工程文件上，并支持回滚操作。
+
+  ![](https://github.com/yulingtianxia/pbxprojHelper/blob/master/images/apply_revert.png?raw=true)
 3. 支持工程文件内容的预览、过滤
 4. 快速切换最近使用的工程
 5. 提供命令行工具
 
 可以说 1 和 2 是刚需，也是常用功能。3 和 4 是辅助功能，5 是附加需求。我平时最常碰到的需求点就是 2 和 4 了。
 
-## [#技术实现](#技术实现)技术实现
+## 技术实现
 
 关于 Xcode 工程文件的介绍，请参考我之前写的 [Let’s Talk About project.pbxproj](http://yulingtianxia.com/blog/2016/09/28/Let-s-Talk-About-project-pbxproj/)。本篇文章可以算作是它的续集。
 
@@ -80,7 +86,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 我把工程文件相关的底层方法都封装在 `PropertyListHandler` 类中，它们跟界面无关。还有一些工具类和方法写到 `Utils` 文件中。
 
-### [#对比工程文件](#对比工程文件)对比工程文件
+### 对比工程文件
 
 想要记录工程文件的修改是很难的，所以只能是比较下两个工程文件的差异。这里不是对比文件那种简单的 `diff` 操作，而是要记录具体针对哪个配置项做了『增删改』。
 
@@ -179,7 +185,7 @@ class func compare(project project1: [String: Any], withOtherProject project2: [
 
 可以看出生成的对比结果是个字典，包含三个键值对，键分别是 `insert`、`remove` 和 `modify`，值为字典。
 
-### [#应用-JSON-配置](#应用-JSON-配置)应用 JSON 配置
+### 应用 JSON 配置
 
 因为生成的 JSON 配置文件具有一定格式，所以必须按照格式规则来应用这些配置到工程文件中。最关键的是在上一步中生成的路径格式为 `A.B.C`，且路径内容是未知的，需要实时处理。所以我写了个方法来解析路径，步入到路径最底层后提供闭包来对路径的值进行修改。假设 `keyPath` 为路径字符串内容，方法实现如下：
 
@@ -302,7 +308,7 @@ class func apply(json: [String: [String: Any]], onProjectData projectData: [Stri
 
 在遍历的同时修改工程文件数据的内容，这里使用了 Swift 的嵌套方法和尾随闭包语法。这总语法虽然用着爽，但是对代码的可读性也有所降低。
 
-### [#操作工程文件](#操作工程文件)操作工程文件
+### 操作工程文件
 
 可以用 `PropertyListSerialization` 来（反）序列化 project.pbxproj 文件的内容：
 
@@ -316,7 +322,7 @@ try data.write(to: url, options: .atomic)
 
 将工程文件数据写入磁盘表面上看起来是一件再简单不过的事情，但其实这里面包含编码问题和备份机制。
 
-#### [#编码问题](#编码问题)编码问题
+#### 编码问题
 
 直接把工程文件数据写入文件后，中文会有乱码。需要做的是把中文内容的 Unicode 的标量值提取出并转成 numeric character reference（NCR）。”&#dddd” 的一串字符是 HTML、XML 等 SGML 类语言的转义序列（escape sequence），它们不是『编码』。
 
@@ -348,7 +354,7 @@ func handleEncode(fileURL: URL) {
 }
 ```
 
-#### [#备份机制](#备份机制)备份机制
+#### 备份机制
 
 既然是要生成新的工程文件来替换原来的工程文件，备份机制肯定不能少。当前的备份机制仅仅备份上次修改的文件，这是考虑到备份历史文件会占用大量磁盘的问题。比如大一些的工程文件可能占用10M 甚至更多的空间，频繁操作产生的备份会很多。
 
@@ -381,13 +387,13 @@ fileprivate class func backupURLOf(projectURL url: inout URL) -> URL {
 
 一个方法只干一件事，这个方法设计的很不好，干了两件事，别学我这么做。我这么做是为了省代码量。（狡辩，逃）
 
-### [#预览和过滤工程文件内容](#预览和过滤工程文件内容)预览和过滤工程文件内容
+### 预览和过滤工程文件内容
 
 主界面如下，在展示所有数据的同时，可以在 Filter 文本框中输入关键词来过滤数据：
 
 ![MainWindow](https://raw.githubusercontent.com/yulingtianxia/pbxprojHelper/master/images/MainWindow%402x.png)
 
-#### [#预览](#预览)预览
+#### 预览
 
 关于如何使用 `NSOutlineView` 展示数据，不想多说，查文档写 UI 谁都会。
 
@@ -421,7 +427,7 @@ func keyPath(forItem item: Any?) -> String {
 
 这样就可以实现双击某行数据时，自动将当前数据的路径写入 Pasteboard 中。
 
-#### [#过滤](#过滤)过滤
+#### 过滤
 
 过滤关键字的重点就是判断一个 `Item` 及其子节点中是否包含此关键字，此时需要依然是需要 DFS 递归查找关键字。
 
@@ -478,7 +484,7 @@ func isItem(_ item: Any, containsKeyWord word: String) -> Bool {
 }
 ```
 
-### [#快速切换工程文件](#快速切换工程文件)快速切换工程文件
+### 快速切换工程文件
 
 下拉列表的 UI 实现很简单，就是一个 `NSView` 里面放几个 `NSTextField`。维护常用工程文件列表需要在每次用户选择工程文件后将其加入列表，实现 LRU 算法。
 
@@ -486,7 +492,7 @@ func isItem(_ item: Any, containsKeyWord word: String) -> Bool {
 
 下拉列表的点击操作交由 `NSClickGestureRecognizer` 捕获处理。
 
-### [#构造命令行工具](#构造命令行工具)构造命令行工具
+### 构造命令行工具
 
 为了尽可能精简命令行的使用复杂度，我只把最核心的功能封装进去，一共只有这几个命令：
 
@@ -507,13 +513,13 @@ Command options are (-convert is the default):
 
 不是所有的人都会把 Swift 文件当做脚本去执行，所以还需要创建个 target，打包成可执行程序，这样就不依赖 Swift 命令了。
 
-## [#结果](#结果)结果
+## 结果
 
 我使用 pbxprojHelper 的频率十分高，因为开发同一项目的人很多，svn 的分支也多。第一次生成好我的 JSON 配置文件后以后就几乎不用再生成了，不同分支的工程都可以共用这一个 JSON 配置。每次因为种种原因 revert 了 project.pbxproj 文件后，我都可以用它一键配置好我的工程文件，**节省了至少 90% 的时间！**即便换了个其他分支的工程，也可以在常用列表中迅速切换，不用再次 select 文件。
 
 也正是在一次次的使用中发现了若干 bug 和体验问题，然后不断改进和完善。
 
-## [#感悟](#感悟)感悟
+## 感悟
 
 这个项目从开始构思需求到完成基本功能花费了我大概一周的业余时间。
 

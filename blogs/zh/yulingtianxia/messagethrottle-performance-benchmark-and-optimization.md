@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7fe4128ea42c6868'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-05-31
 
-1. 1. Benchmark
-2. 2. Optimization
-3. 3. 总结
+**文章目录**
+
+1. [1. Benchmark](#Benchmark)
+2. [2. Optimization](#Optimization)
+3. [3. 总结](#总结)
 
 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 是我开发的Objective-C 节流限频组件，其原理基于 Hook 消息转发流程，所以相比直接调用方法，会有一些性能上的损耗。本篇文章记录了对其性能进行测试的结果，并通过使用 `NSMapTable` 改进存储结构和缓存来对性能进行大幅度的优化。
 
@@ -30,7 +32,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 关于 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 最初的实现原理可以参考 [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/)。
 
-## [#Benchmark](#Benchmark)Benchmark
+## Benchmark
 
 Xcode 自带的单元测试框架可以很方便的测量一个方法的执行效率，`measureBlock` 里的代码会被执行十次，测试结束后会得到每次执行耗时，以及平均数和方差。
 
@@ -83,7 +85,7 @@ Xcode 自带的单元测试框架可以很方便的测量一个方法的执行�
 2. 使用 MessageThottle 后，消息转发流程会带来多余的耗时会导致性能下降，而且被调用方法耗时越少，性能下降得越明显（比较两列数据）。
 3. 如果加了消息限频，会忽略掉一部分调用，这样当出现大量频繁调用时，方法真正执行的次数很少，性能反而大大提升了（第三行数据）
 
-## [#Optimization](#Optimization)Optimization
+## Optimization
 
 通过性能优化，将消息转发流程产生的耗时降低了将近 50%。并加强了线程安全。
 
@@ -96,9 +98,7 @@ Xcode 自带的单元测试框架可以很方便的测量一个方法的执行�
 为了方便管理和查看所有的 `MTRule`，使用了 `MTEngine` 单例进行中心化的管理。获取一个 `MTRule` 之前，需要先用 `target` 和 `selector` 生成一个描述字符串，然后用这个字符串作为 Key 在 `MTEngine` 的字典里查询对应的 `MTRule` 对象。每次应用和废除规则、消息发送时都要频繁从 `MTEngine` 获取 `MTRule` 对象，由此也产生了大量开销。这里的性能瓶颈主要有两点：
 
 1. 生成描述字符串造成的开销。
-2. 加锁的字典获取
-
-  的等待开销。
+2. 从 `MTEngine` 加锁的字典获取 `MTRule` 的等待开销。
 
 应用和废除规则的时候，这两点开销并不明显。但当所有应用规则的消息发送都要经过这两步的时候，这俨然成了拥堵的重灾区。当然治理方案也是相对的：
 
@@ -217,7 +217,7 @@ static SEL mt_aliasForSelector(SEL selector)
 
 可能有人会担心直接缓存 `SEL` 指针会不会命中率很低。因为所有名字相同的方法都拥有同一个唯一的 `SEL`，所以可以很快速地用直接指针地址判等。可以参考[这里](https://stackoverflow.com/questions/11051528/understanding-uniqueness-of-selectors-in-objective-c?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)。
 
-## [#总结](#总结)总结
+## 总结
 
 更新 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 到最新版即可获取到更快更强更安全的 Objective 消息节流限频功能，一行代码搞定频繁调用的问题。
 

@@ -78,12 +78,10 @@ Shader "Custom/Normal Mapping" {
 }
 ```
 
-1. 的贴图，用于放置法线图
+1. 声明并加入一个显示名称为`Bump`的贴图，用于放置法线图
 2. 为了能够在CG程序中使用这张贴图，必须加入一个sample，希望你还记得～
 3. 获取Bump的uv信息作为输入
-4. 是定义在UnityCG.cginc文件中的方法，这个文件中包含了一系列常用的CG变量以及方法。
-
-  接受一个fixed4的输入，并将其转换为所对应的法线值（fixed3）。在解包得到这个值之后，将其赋给输出的Normal，就可以参与到光线运算中完成接下来的渲染工作了。
+4. 从法线图中提取法线信息，并将其赋予相应点的输出的Normal属性。`UnpackNormal`是定义在UnityCG.cginc文件中的方法，这个文件中包含了一系列常用的CG变量以及方法。`UnpackNormal`接受一个fixed4的输入，并将其转换为所对应的法线值（fixed3）。在解包得到这个值之后，将其赋给输出的Normal，就可以参与到光线运算中完成接下来的渲染工作了。
 
 现在保存并且编译这个Shader，创建新的material并使用这个shader，将石头的材质贴图和法线图分别拖放到Base和Bump里，再将其应用到石头模型上，应该就可以看到右侧图的效果了。
 
@@ -93,7 +91,7 @@ Shader "Custom/Normal Mapping" {
 
 在刚才的Shader上进行如下修改。
 
-- 行改为这样
+- 首先将原来的`#pragma`行改为这样
 
 ```glsl
 #pragma surface surf CustomDiffuse

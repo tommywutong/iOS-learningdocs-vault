@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-08-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1ac004062b77693c'
 translated: n/a
 ---
@@ -20,19 +20,21 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-03-31
 
-1. 1. 使用方法
-2. 2. 实现原理
+**文章目录**
 
-    1. 2.1. 过滤方法的 Block 参数
-    2. 2.2. 执行 Callback
-    3. 2.3. 对 NSInvocation 的一点探索
-3. 3. 总结
+1. [1. 使用方法](#使用方法)
+2. [2. 实现原理](#实现原理)
+
+    1. [2.1. 过滤方法的 Block 参数](#过滤方法的-Block-参数)
+    2. [2.2. 执行 Callback](#执行-Callback)
+    3. [2.3. 对 NSInvocation 的一点探索](#对-NSInvocation-的一点探索)
+3. [3. 总结](#总结)
 
 很多方法最后一个参数是类似于 `completionBlock` 这种回调，然而有些 API 实现一些异常逻辑时会忘记调用传入的 Block 参数（当然这肯定是 bug 啦），或者存在多次调用。在调试的时候可能会碰到这种大坑，需要追踪下 Block 参数何时调用了，甚至是否调用过。如果不方便直接在 Block 实现中加代码，或者没有源码的情况下，就需要无侵入式地追踪 Block 参数对象。
 
 [BlockTracker](https://github.com/yulingtianxia/BlockTracker) 可以追踪方法调用时传入的 Block 类型的参数的执行和销毁。基于 [BlockHook](https://github.com/yulingtianxia/BlockHook) 实现。本文讲述了它的使用方法和实现原理。
 
-## [#使用方法](#使用方法)使用方法
+## 使用方法
 
 只需要调用 `bt_trackBlockArgOfSelector:callback:` 方法，就能在对应方法执行传入的 block 参数被调用和销毁的时候得到回调。回调中的内容包含了 `block` 对象，回调类型，`block` 已经执行的次数，执行 `block` 的参数、返回值，堆栈信息。
 
@@ -91,25 +93,17 @@ BlockTrackerCallBackTypeDead invoke count = 1
 }
 ```
 
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 原理很简单，就是 Hook 方法后再 Hook 下 Block，流程大致如下：
 
-1. MessageThrottle
-
-  的实现原理。
-2. BlockHook
-
-  先 Hook 所有 Block 类型的参数。Hook 模式为
-
-  和
-
-  。
+1. 利用 Objective-C Runtime 机制 Hook 某个方法，参考 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 的实现原理。
+2. 在方法真正执行前，使用 [BlockHook](https://github.com/yulingtianxia/BlockHook) 先 Hook 所有 Block 类型的参数。Hook 模式为 `BlockHookModeAfter` 和 `BlockHookModeDead`。
 3. 在 Block 执行后更新执行次数，并将相关信息回调给 Tracker。销毁后也会回调给 Tracker。
 
 流程大概很简单，复用以前代码。这里主要讲下 Track 的逻辑。
 
-### [#过滤方法的-Block-参数](#过滤方法的-Block-参数)过滤方法的 Block 参数
+### 过滤方法的 Block 参数
 
 在 `bt_trackBlockArgOfSelector:callback:` 里获取方法的 Type Encoding 后判断是否含有 Block 类型的参数，并将 Block 参数的 Index 保存到 `BTTracker` 的 `blockArgIndex` 属性。
 
@@ -149,7 +143,7 @@ BlockTrackerCallBackTypeDead invoke count = 1
 
 `bt_trackBlockArgOfSelector:callback:` 方法返回的 `BTTracker` 对象也保存了 `callback` 回调。
 
-### [#执行-Callback](#执行-Callback)执行 Callback
+### 执行 Callback
 
 遍历之前保存的 Block 参数 Index 列表 `blockArgIndex`，从 `NSInvocation` 中取到 Block 参数后，就可以 Hook 了。Block 的执行次数保存到了 `BHToken` 上，每次执行都会累加。在 Block 执行或销毁后都会调用 `callback`，只是传的参数稍有不同。
 
@@ -187,7 +181,7 @@ for (NSNumber *index in tracker.blockArgIndex) {
 }
 ```
 
-### [#对-NSInvocation-的一点探索](#对-NSInvocation-的一点探索)对 NSInvocation 的一点探索
+### 对 NSInvocation 的一点探索
 
 在从 `NSInvocation` 对象获取参数时，需要先调用 `retainArguments` 方法让 `NSInvocation` 将 Block 参数 `copy`。因为有些 Block 参数类型是 `__NSStackBlock__`，需要拷贝到堆上，否则从 `NSInvocation` 获取的 Block 不会销毁。
 
@@ -235,7 +229,7 @@ struct BTInvocaton {
 };
 ```
 
-## [#总结](#总结)总结
+## 总结
 
 由于 Hook Method 的逻辑是在消息转发流程搞事情，所以跟 Aspects 一样不能同时 Hook 父类和子类类相同方法。因为如果子类调用父类的实现，就会死循环。如果 Hook 方法这部分使用 [Method Swizzling](http://yulingtianxia.com/blog/2017/04/17/Objective-C-Method-Swizzling/) 等交换 IMP 的方式实现，也会有着严重依赖 Hook 顺序导致调用错乱的问题。还是基于桥的 Hook 牛逼，汇编跳板，我这辈子是看不懂了。
 

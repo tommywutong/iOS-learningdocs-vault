@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e50999f9e3820007'
 translated: n/a
 ---
@@ -41,20 +41,10 @@ iOS 开发者的 Android 第一课
 Objective-C 和 Java 之间有很多不同，虽然若能将 Objective-C 的方式带入 Java 可能会很有诱惑力，但这样做很可能导致代码库与驱动它的主要框架产生冲突。总之，有一些需要提防地陷阱：
 
 - 类前缀就留在 Objective-C 里不要带过来了。Java 有实在的命名空间和包管理，所以不再需要类前缀。
-- ，不是
-
-  。尽可能多的在代码里使用JavaDoc来写方法和类描述，它能让你和其他人更舒服些。
+- 实例变量的前缀是 `m`，不是 `_`。尽可能多的在代码里使用JavaDoc来写方法和类描述，它能让你和其他人更舒服些。
 - Null 检查！Objective-C能妥善处理向nil发送消息，但Java不行。
-- 调用你自定义地getter，你必须使用
-
-  。
-- 和
-
-  前缀来更好的识别 getter 和 setter 。Java 方法通常写为动作和查询，例如
-
-  ，而不是
-
-  。
+- 向属性说再见。如果你想要 setter 和 getter，你只能实际地创建一个 getVariableName()方法，并显式的调用它。使用 `this.object`**不会**调用你自定义地getter，你必须使用 `this.getObjct`。
+- 同样的，给方法名加上 `get` 和 `set` 前缀来更好的识别 getter 和 setter 。Java 方法通常写为动作和查询，例如 `getCell()`，而不是 `cellForRowAtIndexPath:`。
 
 ### 项目结构
 
@@ -466,9 +456,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
 
 - 总是去处理 dp（密度无关的像素）的情况，而不是直接使用像素。
 - 不要在可视化编辑器里去调整的部件 - 通常来说可视化编辑器会在部件之间加间隔，而不是像你所期望的那样去调整高宽。最佳选择应该是直接在 XML 文件中进行编辑。
-- 值用于布局的高或宽，这个值在好几年前的 API 8 中就被废弃并被
-
-  取代了。
+- 如果你曾看到 `fill_parent` 值用于布局的高或宽，这个值在好几年前的 API 8 中就被废弃并被 `match_parent` 取代了。
 
 查看看这篇[响应式 Android 应用](http://objccn.io/issue-11-3)的文章能得到更多布局小贴士。
 
@@ -476,20 +464,10 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
 
 Android 上可用的[数据存储选项](http://developer.android.com/guide/topics/data/data-storage.html)同样类似于 iOS 上可用的：
 
-- Shared Preferences
-
-  \<-\> NSUserDefaults
+- [Shared Preferences](http://developer.android.com/guide/topics/data/data-storage.html#pref) \<-\> NSUserDefaults
 - 内存对象
-- 内部
-
-  或
-
-  外部
-
-  文件存储将数据保存到文件结构或是从文件结构获取数据 \<-\> 保存数据到 documents 目录
-- SQLite
-
-  \<-\> Core Data
+- 通过[内部](http://developer.android.com/guide/topics/data/data-storage.html#filesInternal)或[外部](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal)文件存储将数据保存到文件结构或是从文件结构获取数据 \<-\> 保存数据到 documents 目录
+- [SQLite](http://developer.android.com/guide/topics/data/data-storage.html#db) \<-\> Core Data
 
 主要的不同是缺少 Core Data，作为替代，Android 提供了直接访问 SQLite 数据库的方式，并返回一个[游标 (cursor)](http://developer.android.com/reference/android/database/Cursor.html) 对象作为结果。请看这篇[在 Android 上使用 SQLite](htttp://objccn.io/issue-11-5)的文章获取更多此问题的细节。
 
@@ -497,14 +475,12 @@ Android 上可用的[数据存储选项](http://developer.android.com/guide/topi
 
 我们目前为止讨论的只是一些皮毛而已。要真正从一些 Android 特有的事物里获取好处，我建议关注以下这些特性：
 
-- Action Bar, Overflow Menu, 和 Menu Button
-- 跨应用数据分享
-- 响应常见的 OS 操作
+- [Action Bar, Overflow Menu, 和 Menu Button](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [跨应用数据分享](https://developer.android.com/training/sharing/index.html)
+- [响应常见的 OS 操作](http://developer.android.com/guide/components/intents-common.html)
 - 从 Java 的特性获取好处：泛型、虚方法、虚类，等等。
-- Google 兼容库
-- x86 HAXM 插件
-
-  让模拟器像黄油般顺滑。
+- [Google 兼容库](http://developer.android.com/tools/support-library/index.html)
+- Android 模拟器：安装 [x86 HAXM 插件](http://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager)让模拟器像黄油般顺滑。
 
 > 编者注 关于模拟器，个人推荐[GenyMotion](http://www.genymotion.com)的相关解决方案
 

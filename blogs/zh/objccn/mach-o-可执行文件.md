@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4f57f0d3661683a1'
 translated: n/a
 ---
@@ -100,13 +100,13 @@ int main(int argc, char *argv[])
 
 - 符号化 (Tokenization)
 - 宏定义的展开
-- 的展开
+- `#include` 的展开
 
 ##### 语法和语义分析
 
 - 将符号化后的内容转化为一棵解析树 (parse tree)
 - 解析树做语义分析
-- （Abstract Syntax Tree* (AST)）
+- 输出一棵_抽象语法树_（Abstract Syntax Tree* (AST)）
 
 ##### 生成代码和优化
 

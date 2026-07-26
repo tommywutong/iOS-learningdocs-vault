@@ -141,19 +141,9 @@ var body: some View {
 
 问题出在 `@State` 上：SwiftUI [通过 property wrapper](https://onevcat.com/2019/06/swift-ui-firstlook-2/#教程-3---handling-user-input) 简化并模拟了普通的变量读写，但是我们必须始终牢记，`@State Int` 并不等同于 `Int`，它根本就不是一个传统意义的存储属性。这个 property wrapper 做的事情大体上说有三件：
 
-1. 这个 struct 提供了一组 getter 和 setter，这个
-
-  struct 中保存了
-
-  的具体数字。
-2. 关联到当前
-
-  上，为它在堆中对应当前
-
-  分配一个存储位置。
-3. 修饰的变量设置观察，当值改变时，触发新一次的
-
-  求值，并刷新屏幕。
+1. 为底层的存储变量 `State<Int>` 这个 struct 提供了一组 getter 和 setter，这个 `State` struct 中保存了 `Int` 的具体数字。
+2. 在 body 首次求值前，将 `State<Int>` 关联到当前 `View` 上，为它在堆中对应当前 `View` 分配一个存储位置。
+3. 为 `@State` 修饰的变量设置观察，当值改变时，触发新一次的 `body` 求值，并刷新屏幕。
 
 我们可以看到的 `State` 的 public 的部分只有几个初始化方法和 property wrapper 的标准的 value：
 

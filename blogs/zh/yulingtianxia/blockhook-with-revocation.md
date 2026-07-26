@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-08-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:33eece893caf694c'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-05-26
 
-1. 1. 按顺序构造『虚拟的』 Hook 链表
-2. 2. 撤销 Hook
-3. 3. 总结
+**文章目录**
+
+1. [1. 按顺序构造『虚拟的』 Hook 链表](#按顺序构造『虚拟的』-Hook-链表)
+2. [2. 撤销 Hook](#撤销-Hook)
+3. [3. 总结](#总结)
 
 [BlockHook](https://github.com/yulingtianxia/BlockHook) 开创性地解决了 Objective-C 语言界 Hook Block 的问题，但也迎来了新的问题：
 
@@ -34,10 +36,10 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 关于 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的原理，可以先阅读之前的文章：
 
-- Hook Objective-C Block with Libffi
-- BlockHook with Struct
+- [Hook Objective-C Block with Libffi](http://yulingtianxia.com/blog/2018/02/28/Hook-Objective-C-Block-with-Libffi/)
+- [BlockHook with Struct](http://yulingtianxia.com/blog/2019/04/27/BlockHook-with-Struct/)
 
-## [#按顺序构造『虚拟的』-Hook-链表](#按顺序构造『虚拟的』-Hook-链表)按顺序构造『虚拟的』 Hook 链表
+## 按顺序构造『虚拟的』 Hook 链表
 
 首先要有一个链表来按先后顺序记录一个 Block 对象上所有的 Hook。这个链表的格式以及持有关系也需要考虑在内。
 
@@ -67,7 +69,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 1. 将 token 的生命周期绑定到 Block 对象上，实现 self-managed
 2. 因为函数指针地址是唯一的，确保 Block 上关联每个 token 的 key 不会冲突
-3. 指针作为 key，可以找到最后一次 Hook 的 token。进而按 Hook 先后顺序遍历出所有的 token。
+3. Block 的 `invoke` 指针作为 key，可以找到最后一次 Hook 的 token。进而按 Hook 先后顺序遍历出所有的 token。
 
 下面的代码展示了如何获取最后一次 Hook 的 token。在读取 `invoke` 函数指针的时候，注意保证线程安全。
 
@@ -92,7 +94,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 }
 ```
 
-## [#撤销-Hook](#撤销-Hook)撤销 Hook
+## 撤销 Hook
 
 俗话说『请神容易送神难』。好多 Hook 框架只解决的如何 Hook，但是却无法撤销恢复原样，留下一堆烂摊子。
 
@@ -102,14 +104,8 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 那么撤销 Hook 就可以从链表头部开始遍历，找到当前要 `remove` 的 token。接着链表上删除这个 token，而这又可以分为两个子问题：
 
-1. 指针指向 token 的
-
-  。
-2. 最后一次 Hook：需要将上一次 Hook token 的
-
-  指向当前 token 的
-
-  。
+1. 移除最后一次 Hook：需要将 Block 的 `invoke` 指针指向 token 的 `originalInvoke`。
+2. 移除_非_最后一次 Hook：需要将上一次 Hook token 的 `originalInvoke` 指向当前 token 的 `originalInvoke`。
 
 最后肯定还要解除 Block 对象对 token 的持有。
 
@@ -153,6 +149,6 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 }
 ```
 
-## [#总结](#总结)总结
+## 总结
 
 [BlockHook](https://github.com/yulingtianxia/BlockHook) 还在不断完善每一个细节，尽可能做到有始有终，至善尽美。

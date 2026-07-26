@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-08-24
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:32509080018b3d2e'
 translated: n/a
 ---
@@ -20,16 +20,16 @@ translated: n/a
 
 这是《objc与鸭子对象》的上半部分，[《objc与鸭子对象（下）》](http://blog.sunnyxx.com/2014/08/26/objc-duck-advanced/)中介绍了鸭子类型的进阶用法、依赖注入以及demo。
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 ![](http://ww1.sinaimg.cn/mw690/51530583jw1ejqkwtxr1dj20rs0ijgo7.jpg)  
 `鸭子类型`(Duck Type)即：**“当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子”**，换成程序猿语言就是：**“当调用者知道这个对象能调用什么方法时，管它这个对象到底是什么类的实例呢”**。本文对objc中的鸭子类型对象进行简单探究，并用一个“只用一个类实现Json Entity”的小demo实践下这个思路的魔力。进阶篇请看下半部分。
 
 ---
 
-# [#objc与鸭子类型](#objc与鸭子类型)objc与鸭子类型
+# objc与鸭子类型
 
-## [#id类型是个大鸭子](#id类型是个大鸭子)id类型是个大鸭子
+## id类型是个大鸭子
 
 鸭子类型是动态语言的特性，编译时并不决定函数调用关系，说白了所有的类型声明都是给编译器看的。objc在动态和静态方面找到了不错的平衡，既保留了严格的静态检查也没破坏运行时的动态特性。  
 我们知道，向一个objc对象（或Class）发消息，实际上就是沿着它的`isa`指针寻找真正函数地址，所以只要一个对象满足下面的结构，就可以对它发送消息：
@@ -43,7 +43,7 @@ struct objc_object {
 也就是熟知的`id`类型，objc在语言层面先天就支持了这个基本的鸭子类型，我们可以将任意一个对象强转为id类型从而向它发送消息，就算它并不能响应这个消息，编译器也无从知晓。  
 正如[这篇文章](http://www.informit.com/articles/article.aspx?p=1353396)中对objc对象的简短定义：`The best definition for a Smalltalk or Objective-C "object" is "something that can respond to messages.` object并非一定是某个特定类型的实例，只要它能响应需要的消息就可以了。
 
-## [#从-interface到-protocol](#从-interface到-protocol)从@interface到@protocol
+## 从@interface到@protocol
 
 正如objc先天支持的动态的`id`类型，`@protocol`为鸭子类型提供了编译时的强类型检查，实现了Cocoa中经典的鸭子类型使用场景：
 
@@ -82,7 +82,7 @@ self.tableView.dataSource = (Class<UITableViewDataSource>)[DataSource class];
 
 ---
 
-# [#Demo-一个类实现Json-Entity](#Demo-一个类实现Json-Entity)[Demo]一个类实现Json Entity
+# [Demo]一个类实现Json Entity
 
 `Entity`对象表示某个**纯数据**的结构，如：
 
@@ -225,7 +225,7 @@ self.tableView.dataSource = (Class<UITableViewDataSource>)[DataSource class];
 
 ---
 
-# [#Reference](#Reference)Reference
+# Reference
 
 [http://en.wikipedia.org/wiki/Duck_typing](http://en.wikipedia.org/wiki/Duck_typing)  
 [http://www.informit.com/articles/article.aspx?p=1353396](http://www.informit.com/articles/article.aspx?p=1353396)  

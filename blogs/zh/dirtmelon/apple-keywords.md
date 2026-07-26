@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-04-29
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0d1070e30d1b0328'
 translated: n/a
 ---
@@ -57,20 +57,8 @@ NS_ASSUME_NONNULL_END
 
 Swift 的 `closure` 分为逃逸 `escaping` 和非逃逸 `non-escaping` 。
 
-- ，处理
-
-  的持有和释放，在使用时为了循环引用，需要添加
-
-  声明，如果需要调用
-
-  的属性，需要添加
-
-  。
-- 的相关管理，调用
-
-  的属性不需要添加
-
-  。
+- 逃逸背包表示可能会在函数返回之后才调用，比如一些网络请求。逃逸背包因为可能会在函数返回之后才调用，所以需要捕获 `self` ，处理 `self` 的持有和释放，在使用时为了循环引用，需要添加 `[weak self]` 声明，如果需要调用 `self` 的属性，需要添加 `self.` 。
+- 非逃逸背包择表示会在函数结束前调用，编译器会进行一些优化，去掉对 `self` 的相关管理，调用 `self` 的属性不需要添加 `self.` 。
 
 Swift 使用 `non-escaping` 作为默认属性，如果是逃逸闭包则需要显式声明 `@escaping` ：
 
@@ -182,9 +170,7 @@ let objc = ObjcClass(aka: “Test”)
 好处：
 
 - 提供一些默认参数；
-- 添加
-
-  ；
+- 封装层给 `block` 添加 `@escaping` ；
 - 更 Swift 的 API 。
 
 官方文档：[Improving Objective-C API Declarations for Swift

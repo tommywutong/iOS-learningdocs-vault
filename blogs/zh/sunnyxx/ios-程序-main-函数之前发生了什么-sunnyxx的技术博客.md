@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-08-30
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:85ed6943188226c0'
 translated: n/a
 ---
@@ -18,13 +18,13 @@ translated: n/a
 
 2014年8月30日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 一个 iOS App 的 `main` 函数位于 main.m 中，这是我们熟知的**程序入口**。但对 objc 了解更多之后发现，程序在进入我们的 main 函数前已经执行了很多代码，比如熟知的 `+ load` 方法等。本文将跟随程序执行顺序，刨根问底，从 `dyld` 到 `runtime` ，看看 main 函数之前都发生了什么。
 
-# [#从dyld开始](#从dyld开始)从dyld开始
+# 从dyld开始
 
-## [#动态链接库](#动态链接库)动态链接库
+## 动态链接库
 
 iOS 中用到的所有系统 framework 都是动态链接的，类比成插头和插排，静态链接的代码在编译后的静态链接过程就将插头和插排一个个插好，运行时直接执行二进制文件；而动态链接需要在程序启动时去完成“插插销”的过程，所以在我们写的代码执行前，动态连接器需要完成准备工作。
 
@@ -60,31 +60,27 @@ TestMain:
 这些 lib 都是`dylib`格式（如 windows 中的 dll ），系统使用动态链接有几点好处：
 
 - 代码共用：很多程序都动态链接了这些 lib，但它们在内存和磁盘中中只有一份
-- 是
-
-  的替身，哪天想升级直接换成
-
-  然后再替换替身就行了
+- 易于维护：由于被依赖的 lib 是程序执行时才 link 的，所以这些 lib 很容易做更新，比如`libSystem.dylib` 是 `libSystem.B.dylib` 的替身，哪天想升级直接换成 `libSystem.C.dylib` 然后再替换替身就行了
 - 减少可执行文件体积：相比静态链接，动态链接在编译时不需要打进去，所以可执行文件的体积要小很多
 
-## [#dyld](#dyld)dyld
+## dyld
 
 **dyld**（the dynamic link editor），Apple 的动态链接器，系统 kernel 做好启动程序的初始准备后，交给 dyld 负责，援引并翻译[《 Mike Ash 这篇 blog 》](https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html)对 dyld 作用顺序的概括：
 
 1. 从 kernel 留下的原始调用栈引导和启动自己
-2. 加载进内存，当然这里有
+2. 将程序依赖的动态链接库**递归**加载进内存，当然这里有**缓存机制**
 3. non-lazy 符号立即 link 到可执行文件，lazy 的存表里
 4. Runs static initializers for the executable
 5. 找到可执行文件的 main 函数，准备参数并调用
 6. 程序执行中负责绑定 lazy 符号、提供 runtime dynamic loading services、提供调试器接口
 7. 程序main函数 return 后执行 static terminator
-8. 函数
+8. 某些场景下 main 函数结束后调 libSystem 的 **_exit** 函数
 
 得益于 dyld 是开源的，[github 地址](https://github.com/opensource-apple/dyld)，我们可以从源码一探究竟。
 
 一切源于`dyldStartup.s`这个文件，其中用汇编实现了名为`__dyld_start`的方法，汇编太生涩，它主要干了两件事：
 
-1. 方法（省去参数）
+1. 调用`dyldbootstrap::start()`方法（省去参数）
 2. 上个方法返回了 main 函数地址，填入参数并调用 main 函数
 
 这个步骤随手就能验证出来，设置一个`符号断点`断在`_objc_init`：  
@@ -93,7 +89,7 @@ TestMain:
 ![](http://ww3.sinaimg.cn/mw600/51530583jw1ejxgwiptytj20jw0f0q5r.jpg)  
 看到了栈底的`dyldbootstrap::start()`方法，继而调用了`dyld::_main()`方法，其中完成了刚才说的递归加载动态库过程，由于`libSystem`默认引入，栈中出现了`libSystem_initializer`的初始化方法。
 
-## [#ImageLoader](#ImageLoader)ImageLoader
+## ImageLoader
 
 当然这个 **image** 不是图片的意思，它大概表示一个二进制文件（可执行文件或 so 文件），里面是被编译过的符号、代码等，所以 ImageLoader 作用是将这些文件加载进内存，且**每一个文件对应一个ImageLoader实例来负责加载**。
 
@@ -106,7 +102,7 @@ TestMain:
 
 ---
 
-# [#runtime-与-load](#runtime-与-load)runtime 与 +load
+# runtime 与 +load
 
 刚才讲到 `libSystem` 是若干个系统 lib 的集合，所以它只是一个容器 lib 而已，而且它也是开源的，里面实质上就一个文件，[init.c](http://www.opensource.apple.com/source/Libsystem/Libsystem-169.3/init.c)，由 `libSystem_initializer` 逐步调用到了 `_objc_init`，这里就是 objc 和 runtime 的初始化入口。
 
@@ -132,7 +128,7 @@ dyld_image_state_dependents_initialized, 0, &load_images);
 
 至此，可执行文件中和动态库所有的符号（Class，Protocol，Selector，IMP，…）都已经按格式成功加载到内存中，被 runtime 所管理，再这之后，runtime 的那些方法（动态添加 Class、swizzle 等等才能生效）
 
-## [#关于-load-方法的几个-QA](#关于-load-方法的几个-QA)关于 +load 方法的几个 QA
+## 关于 +load 方法的几个 QA
 
 Q: 重载自己 Class 的 +load 方法时需不需要调父类？  
 A: runtime 负责按继承顺序递归调用，所以我们不能调 super
@@ -148,7 +144,7 @@ A: 不需要，只要这个类的符号被编译到最后的可执行文件中�
 
 ---
 
-# [#简单总结](#简单总结)简单总结
+# 简单总结
 
 整个事件由 dyld 主导，完成运行环境的初始化后，配合 ImageLoader 将二进制文件按格式加载到内存，  
 动态链接依赖库，并由 runtime 负责加载成 objc 定义的结构，所有初始化工作结束后，dyld 调用真正的 main 函数。  
@@ -156,7 +152,7 @@ A: 不需要，只要这个类的符号被编译到最后的可执行文件中�
 
 ---
 
-# [#孤独的-main-函数](#孤独的-main-函数)孤独的 main 函数
+# 孤独的 main 函数
 
 当这一切都结束时，dyld 会清理现场，将调用栈回归，只剩下：  
 ![](http://ww3.sinaimg.cn/mw690/51530583jw1ejykutdlvsj20fc02smx9.jpg)  
@@ -164,7 +160,7 @@ A: 不需要，只要这个类的符号被编译到最后的可执行文件中�
 
 ---
 
-# [#References](#References)References
+# References
 
 [https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html](https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html)  
 [http://newosxbook.com/articles/DYLD.html](http://newosxbook.com/articles/DYLD.html)  

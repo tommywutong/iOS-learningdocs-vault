@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1656d6379c57df60'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-06-19
 
-1. 1. Core ML
+**文章目录**
 
-    1. 1.1. 简介
-    2. 1.2. Model 转换工具
-    3. 1.3. 底层计算性能
-    4. 1.4. Demo: 数据预处理
-    5. 1.5. 总结
-2. 2. Vision
+1. [1. Core ML](#Core-ML)
 
-    1. 2.1. 应用场景
-    2. 2.2. Vision 使用姿势
-    3. 2.3. Demo: 与 Core ML 集成
-    4. 2.4. 总结
-3. 3. 感受
+    1. [1.1. 简介](#简介)
+    2. [1.2. Model 转换工具](#Model-转换工具)
+    3. [1.3. 底层计算性能](#底层计算性能)
+    4. [1.4. Demo: 数据预处理](#Demo-数据预处理)
+    5. [1.5. 总结](#总结)
+2. [2. Vision](#Vision)
+
+    1. [2.1. 应用场景](#应用场景)
+    2. [2.2. Vision 使用姿势](#Vision-使用姿势)
+    3. [2.3. Demo: 与 Core ML 集成](#Demo-与-Core-ML-集成)
+    4. [2.4. 总结](#总结-1)
+3. [3. 感受](#感受)
 
 机器学习和计算机视觉在 iOS 上虽然早已有了系统级的支持，但 WWDC 17 发布的 iOS 11 将它们的使用门槛大大降低。苹果提供了设计合理且容易上手的 API，让那些对基础理论知识一窍不通的门外汉也能玩转高大上的前沿科技，这是苹果一贯的风格。
 
@@ -41,9 +43,9 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](https://github.com/yulingtianxia/Core-ML-Sample/blob/master/coreml.gif?raw=true)
 
-## [#Core-ML](#Core-ML)Core ML
+## Core ML
 
-### [#简介](#简介)简介
+### 简介
 
 Core ML 大大降低了开发者在苹果设备上使用机器学习技术预测模型的门槛和成本。苹果制定了自己的模型文件格式，统一的格式和全新的 API 设计使得 Core ML 支持苹果生态下多个平台。
 
@@ -53,7 +55,7 @@ Core ML 大大降低了开发者在苹果设备上使用机器学习技术预测
 
 ![](http://yulingtianxia.com/resources/iOS11/coreml2.png)
 
-### [#Model-转换工具](#Model-转换工具)Model 转换工具
+### Model 转换工具
 
 苹果提供了一个 Python 工具，可以将业内一些常用的机器学习框架导出的 Model 转成 MLMODEL 文件。代码会编译成可执行二进制文件，而 MLMODEL 会编译成 Bundle 文件，在代码文件中可以直接调用 MLMODEL 生成的类，这些都是需要 Xcode 9 做支撑，也就是说，现阶段并不支持动态下发 MLMODEL 文件。Core ML 的预测过程全都在客户端进行，保证用户隐私不会泄露。
 
@@ -69,7 +71,7 @@ MLMODEL 文件中还包含了很多元数据，比如作者，License，输入�
 
 ![](http://yulingtianxia.com/resources/iOS11/coreml5.png)
 
-### [#底层计算性能](#底层计算性能)底层计算性能
+### 底层计算性能
 
 Core ML 的底层是 Accelerate BNNS 和 MPS，并可以根据实际情况进行无缝切换。比如在处理图片的场景下使用 MPS，处理文字场景下使用 Accelerate，甚至可以在同一个 model 的不同层使用不同的底层技术来预测。Vision 和 NLP 可以结合 Core ML 一起使用。Core ML 对硬件做了性能优化，而且支持的模型种类更多，开发者不用关注底层的一些细节，苹果全都封装好了。
 
@@ -83,7 +85,7 @@ Core ML 的底层是 Accelerate BNNS 和 MPS，并可以根据实际情况进行
 
 Metal 2 使用 MPS 进行图像处理的性能也得到了提升，在不同的设备上大约提升了百分之二十多。
 
-### [#Demo-数据预处理](#Demo-数据预处理)Demo: 数据预处理
+### Demo: 数据预处理
 
 [Core-ML-Sample](https://github.com/yulingtianxia/Core-ML-Sample) 使用了 Core ML 和 Vision 技术实现对摄像头拍摄的图像实时预测物体种类。因为图像来源是摄像头，所以需要将 `CMSampleBuffer` 转成 `CVPixelBuffer`。因为 Xcode 9 已经生成好了代码，直接调用 `Inceptionv3` 类的 `prediction` 方法即可完成预测。生成的 `Inceptionv3Output` 类含有 `classLabel` 和 `classLabelProbs` 两个属性，可以获取预测的分类标签名以及每种标签的可能性。可以点击 Xcode Model View 中 Model Class 的生成源码箭头来查看这些类的信息。
 
@@ -130,16 +132,16 @@ func resize(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
 
 除了图片需要预处理外，其他数据可能也需要预处理。这需要看训练的模型的输入是什么形式，比如分析一段文本所表达的情绪是开心还是沮丧，可能需要写个预处理程序统计词频，然后输入到训练好的模型中进行预测。
 
-### [#总结](#总结)总结
+### 总结
 
 - Model 极速集成
 - 支持多种数据类型
 - 硬件优化
 - 适配主流机器学习框架
 
-## [#Vision](#Vision)Vision
+## Vision
 
-### [#应用场景](#应用场景)应用场景
+### 应用场景
 
 1. 人脸检测：支持检测笑脸、侧脸、局部遮挡脸部、戴眼镜和帽子等场景，可以标记出人脸的矩形区域
 2. 人脸特征点：可以标记出人脸和眼睛、眉毛、鼻子、嘴、牙齿的轮廓，以及人脸的中轴线
@@ -149,7 +151,7 @@ func resize(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
 6. 文字检测
 7. 目标跟踪：脸部，矩形和通用模板
 
-### [#Vision-使用姿势](#Vision-使用姿势)Vision 使用姿势
+### Vision 使用姿势
 
 将各种功能的 Request 提供给一个 RequestHandler，Handler 持有图片信息，并将处理结果分发给每个 Request 的 completion Block 中。可以从 `results` 属性中得到 Observation 数组，然后进行更新 UI 等操作。因为 completion Block 所执行的队列跟 perform request 的队列相同，所以更新 UI 时记得使用主队列。
 
@@ -179,7 +181,7 @@ Vision 与 iOS 上其他几种带人脸检测功能框架的对比：
 
 ![](http://yulingtianxia.com/resources/iOS11/506_vision_framework_building_on_core_ml_%E9%A1%B5%E9%9D%A2_72.png)
 
-### [#Demo-与-Core-ML-集成](#Demo-与-Core-ML-集成)Demo: 与 Core ML 集成
+### Demo: 与 Core ML 集成
 
 Core ML 具有更好的性能，Vision 可为其提供图片处理的流程。Core ML 生成的代码中含有 `MLModel` 类型的 `model` 对象，可以用它初始化 `VNCoreMLModel` 对象，这样就将 Core ML 的 Model 集成进 Vision 框架中了：
 
@@ -265,13 +267,13 @@ var exifOrientationFromDeviceOrientation: Int32 {
 }
 ```
 
-### [#总结-1](#总结-1)总结
+### 总结
 
 - Vision 是一个关于计算机视觉的顶层新框架。
 - 一个界面，多重跟踪检测
 - 集成 Core ML 轻松使用自己的 model
 
-## [#感受](#感受)感受
+## 感受
 
 苹果为开发者带来了炫酷的功能，并且这些示例很有针对性，更实用。Vision 更像是一个工具库，对一些高频场景进行了封装，比如人脸、条形码、矩形和文字等，这些基于底层 API 封装的高级功能可以帮助开发者很快地完成老板的功能。而 Core ML 给出的 Model 也很有代表性，贴近实际应用场景，很容易激发开发者使用的热情。我想这正是苹果最擅长的，把复杂的事情简单化，提供极易上手的 Demo，并循序渐进，给予开发者更高深的玩法，不失拓展性和定制化。
 

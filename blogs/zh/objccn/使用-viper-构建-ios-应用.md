@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ba7ef867936a3a5a'
 translated: n/a
 ---
@@ -572,14 +572,14 @@ func == (leftSide: UpcomingDisplayItem, rightSide: UpcomingDisplayItem) -> Bool 
 
 ## 扩展阅读
 
-- VIPER TODO, 文章示例
-- VIPER SWIFT, 基于 Swift 的文章示例
-- 另一个计数器应用
-- Mutual Mobile 关于 VIPER 的介绍
-- 简明架构
-- 更轻量的 View Controllers
-- 测试 View Controllers
-- Bunnies
+- [VIPER TODO, 文章示例](https://github.com/objcio/issue-13-viper)
+- [VIPER SWIFT, 基于 Swift 的文章示例](https://github.com/objcio/issue-13-viper-swift)
+- [另一个计数器应用](https://github.com/mutualmobile/Counter)
+- [Mutual Mobile 关于 VIPER 的介绍](http://mutualmobile.github.io/blog/2013/12/04/viper-introduction/)
+- [简明架构](http://blog.8thlight.com/uncle-bob/2011/11/22/Clean-Architecture.html)
+- [更轻量的 View Controllers](http://objccn.io/issue-1-1/)
+- [测试 View Controllers](http://objccn.io/issue-1-3/)
+- [Bunnies](http://inessential.com/2014/03/16/smaller_please)
 
 ---
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-09-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:335593245954765b'
 translated: n/a
 ---
@@ -22,7 +22,7 @@ translated: n/a
 
 ---
 
-## [#基本用法](#基本用法)基本用法
+## 基本用法
 
 `__attribute__((cleanup(...)))`，用于修饰一个变量，**在它的作用域结束时可以自动执行一个指定的方法**，如：
 
@@ -57,7 +57,7 @@ NSInteger integer __attribute__((cleanup(intCleanUp))) = 1;
 假如一个作用域内有若干个cleanup的变量，他们的调用顺序是`先入后出`的栈式顺序；  
 而且，cleanup是先于这个对象的`dealloc`调用的。
 
-## [#进阶用法](#进阶用法)进阶用法
+## 进阶用法
 
 既然`__attribute__((cleanup(...)))`可以用来修饰变量，`block`当然也是其中之一，写一个block的cleanup函数非常有趣：
 

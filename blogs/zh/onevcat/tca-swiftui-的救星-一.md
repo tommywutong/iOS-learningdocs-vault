@@ -28,20 +28,8 @@ iOS 15 一声炮响，给开发们送来了全新版本的 SwiftUI。它不仅�
 
 Apple 并没有像在 UIKit 中贯彻 MVC 那样，为 SwiftUI “钦定” 一个架构。虽然 SwiftUI 中提供了诸多状态管理的关键字或属性包装 (property wrapper)，比如 `@State`、`@ObservedObject` 等，但是你很难说官方 SwiftUI 教程里关于[数据传递](https://developer.apple.com/tutorials/app-dev-training/passing-data-with-bindings)和[状态管理](https://developer.apple.com/tutorials/app-dev-training/managing-state-and-life-cycle)的部分，足够指导开发者构建出稳定和可扩展的 app。SwiftUI 最基础的状态管理模式，做到了 single source of truth：所有的 view 都是由状态导出的，但是它同时也存在了很多不足。简单就可以列举一些：
 
-- ，
-
-  ，
-
-  ，
-
-  ，
-
-  各自的特点和区别。
-- 中，甚至只能在
-
-  中和其他 view 代码混杂在一起。同一个状态可能被多个不相关的 View 直接修改 (比如通过
-
-  )，这些修改难以被追踪和定位，在 app 更复杂的情况下会是噩梦。
+- 复杂的状态修饰，想要“正常”使用，你至少必须要记住 `@State`，`@ObservedObject`，`@StateObject`，`@Binding`，`@EnvironmentObject` 各自的特点和区别。
+- 很多修改状态的代码内嵌在 `View.body` 中，甚至只能在 `body` 中和其他 view 代码混杂在一起。同一个状态可能被多个不相关的 View 直接修改 (比如通过 `Binding`)，这些修改难以被追踪和定位，在 app 更复杂的情况下会是噩梦。
 - 测试困难：这可能和直觉相反，因为 SwiftUI 框架的 view 完全是由状态决定的，所以理论上来说我们只需要测试状态 (也就是 model 层) 就行，这本应是很容易的。但是如果严格按照 Apple 官方教程的基本做法，app 中会存在大量私有状态，这些状态难以 mock，而且就算可以，如何测试对这些状态的修改也是问题。
 
 当然，这些不足都可以克服，比如死记硬背下五种属性包装的写法、尽可能减少共享可变状态来避免被意外修改、以及按照 Apple 的[推荐](https://developer.apple.com/videos/play/wwdc2019/233/)准备一组 preview 的数据然后打开 View 文件去挨个检查 Preview 的结果 (虽然有一些[自动化工具](https://www.raywenderlich.com/24426963-snapshot-testing-tutorial-for-swiftui-getting-started)帮我们解放双眼，但严肃点儿，别笑，Apple 在这个 session 里原本的意思就是让我们去查渲染结果！)。
@@ -108,13 +96,9 @@ func view(model: Model) -> some View {
 ![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
 
 1. 用户在 view 上的操作 (比如按下某个按钮)，将会以消息的方式进行发送。Elm 中的某种机制将捕获到这个消息。
-2. 一并，作为输入传递给
-
-  函数。这个函数通常是 app 开发者所需要花费时间最长的部分，它控制了整个 app 状态的变化。作为 Elm 架构的核心，它需要根据输入的消息和状态，演算出新的
-
-  。
-3. 到来时，再次重复上面的过程，去获取新的状态。
-4. 函数，渲染出结果 (在 Elm 的语境下，就是一个前端 HTML 页面)。用户可以通过它再次发送新的消息，重复上面的循环。
+2. 在检测到新消息到来时，它会和当前的 `Model` 一并，作为输入传递给 `update` 函数。这个函数通常是 app 开发者所需要花费时间最长的部分，它控制了整个 app 状态的变化。作为 Elm 架构的核心，它需要根据输入的消息和状态，演算出新的 `Model`。
+3. 这个新的 model 将替换掉原有的 model，并准备在下一个 `msg` 到来时，再次重复上面的过程，去获取新的状态。
+4. Elm 运行时负责在得到新 Model 后调用 `view` 函数，渲染出结果 (在 Elm 的语境下，就是一个前端 HTML 页面)。用户可以通过它再次发送新的消息，重复上面的循环。
 
 现在，你已经对 TEA 有了基本的了解了。我们类比一下这些步骤在 SwiftUI 中的实现，可以发现步骤 4 其实已经包含在 SwiftUI 中了：当 `@State` 或 `@ObservedObject` 的 `@Published` 发生变化时，SwiftUI 会自动调用 `View.body` 为我们渲染新的界面。因此，想要在 SwiftUI 中实现 TEA，我们需要做的是实现 1 至 3。或者换句话说，我们需要的是一套规则，来把零散的 SwiftUI 状态管理的方式进行规范。TCA 正是在这方面做出了非常多的努力。
 
@@ -174,13 +158,9 @@ struct CounterView: View {
 
 > `Reducer`，`Store` 和 `WithViewStore` 是 TCA 中的类型：
 > 
-> - 是函数式编程中的常见概念，顾名思意，它将多项内容进行合并，最后返回单个结果。
-> - ，而是将它放在一个
-> 
->   中。这个 Store 负责把
-> 
->   (State) 和 Action 连接起来。
-> - 让我们有机会为 reducer 提供自定义的运行环境，用来注入一些依赖。我们会把相关内容放到后面再解释。
+> - `Reducer` 是函数式编程中的常见概念，顾名思意，它将多项内容进行合并，最后返回单个结果。
+> - ContentView 中，我们不直接操作 `Counter`，而是将它放在一个 `Store` 中。这个 Store 负责把 `Counter` (State) 和 Action 连接起来。
+> - `CounterEnvironment` 让我们有机会为 reducer 提供自定义的运行环境，用来注入一些依赖。我们会把相关内容放到后面再解释。
 
 上面的代码中 1 至 3，恰好就对应了 TEA 组成部件中对应的部分：
 

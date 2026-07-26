@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:72e44738a9bbcee7'
 translated: n/a
 ---
@@ -20,47 +20,49 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-11-05
 
-1. 1. 引言
-2. 2. 简介
-3. 3. 与 Runtime 交互
+**文章目录**
 
-    1. 3.1. Objective-C 源代码
-    2. 3.2. NSObject 的方法
-    3. 3.3. Runtime 的函数
-4. 4. Runtime 基础数据结构
+1. [1. 引言](#引言)
+2. [2. 简介](#简介)
+3. [3. 与 Runtime 交互](#与-Runtime-交互)
 
-    1. 4.1. SEL
-    2. 4.2. id
-    3. 4.3. Class
+    1. [3.1. Objective-C 源代码](#Objective-C-源代码)
+    2. [3.2. NSObject 的方法](#NSObject-的方法)
+    3. [3.3. Runtime 的函数](#Runtime-的函数)
+4. [4. Runtime 基础数据结构](#Runtime-基础数据结构)
 
-          1. 4.3.1. cache_t
-          2. 4.3.2. class_data_bits_t
-          3. 4.3.3. class_ro_t
-          4. 4.3.4. class_rw_t
-          5. 4.3.5. realizeClass
-    4. 4.4. Category
-    5. 4.5. Method
-    6. 4.6. Ivar
-    7. 4.7. objc_property_t
-    8. 4.8. protocol_t
-    9. 4.9. IMP
-5. 5. 消息
+    1. [4.1. SEL](#SEL)
+    2. [4.2. id](#id)
+    3. [4.3. Class](#Class)
 
-    1. 5.1. objc_msgSend 函数
-    2. 5.2. 方法中的隐藏参数
-    3. 5.3. 获取方法地址
-6. 6. 动态方法解析
-7. 7. 消息转发
+          1. [4.3.1. cache_t](#cache-t)
+          2. [4.3.2. class_data_bits_t](#class-data-bits-t)
+          3. [4.3.3. class_ro_t](#class-ro-t)
+          4. [4.3.4. class_rw_t](#class-rw-t)
+          5. [4.3.5. realizeClass](#realizeClass)
+    4. [4.4. Category](#Category)
+    5. [4.5. Method](#Method)
+    6. [4.6. Ivar](#Ivar)
+    7. [4.7. objc_property_t](#objc-property-t)
+    8. [4.8. protocol_t](#protocol-t)
+    9. [4.9. IMP](#IMP)
+5. [5. 消息](#消息)
 
-    1. 7.1. 重定向
-    2. 7.2. 转发
-    3. 7.3. 转发和多继承
-    4. 7.4. 替代者对象(Surrogate Objects)
-    5. 7.5. 转发与继承
-8. 8. 健壮的实例变量 (Non Fragile ivars)
-9. 9. Objective-C Associated Objects
-10. 10. Method Swizzling
-11. 11. 总结
+    1. [5.1. objc_msgSend 函数](#objc-msgSend-函数)
+    2. [5.2. 方法中的隐藏参数](#方法中的隐藏参数)
+    3. [5.3. 获取方法地址](#获取方法地址)
+6. [6. 动态方法解析](#动态方法解析)
+7. [7. 消息转发](#消息转发)
+
+    1. [7.1. 重定向](#重定向)
+    2. [7.2. 转发](#转发)
+    3. [7.3. 转发和多继承](#转发和多继承)
+    4. [7.4. 替代者对象(Surrogate Objects)](#替代者对象-Surrogate-Objects)
+    5. [7.5. 转发与继承](#转发与继承)
+8. [8. 健壮的实例变量 (Non Fragile ivars)](#健壮的实例变量-Non-Fragile-ivars)
+9. [9. Objective-C Associated Objects](#Objective-C-Associated-Objects)
+10. [10. Method Swizzling](#Method-Swizzling)
+11. [11. 总结](#总结)
 
 本文详细整理了 Cocoa 的 Runtime 系统的知识，它使得 Objective-C 如虎添翼，具备了灵活的动态特性，使这门古老的语言焕发生机。主要内容如下：
 
@@ -76,7 +78,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 - Method Swizzling
 - 总结
 
-## [#引言](#引言)引言
+## 引言
 
 曾经觉得Objc特别方便上手，面对着 Cocoa 中大量 API，只知道简单的查文档和调用。还记得初学 Objective-C 时把 `[receiver message]` 当成简单的方法调用，而无视了**“发送消息”**这句话的深刻含义。其实 `[receiver message]` 会被编译器转化为：
 
@@ -96,7 +98,7 @@ objc_msgSend(receiver, selector, arg1, arg2, ...)
 
 Objective-C 的 Runtime 铸就了它动态语言的特性，这些深层次的知识虽然平时写代码用的少一些，但是却是每个 Objc 程序员需要了解的。
 
-## [#简介](#简介)简介
+## 简介
 
 因为Objc是一门动态语言，所以它总是想办法把一些决定工作从编译连接推迟到运行时。也就是说只有编译器是不够的，还需要一个运行时系统 (runtime system) 来执行编译后的代码。这就是 Objective-C Runtime 系统存在的意义，它是整个 Objc 运行框架的一块基石。
 
@@ -104,26 +106,26 @@ Runtime其实有两个版本: “modern” 和 “legacy”。我们现在用的
 
 Runtime 基本是用 C 和汇编写的，可见苹果为了动态系统的高效而作出的努力。你可以在[这里](http://www.opensource.apple.com/source/objc4/)下到苹果维护的开源代码。苹果和GNU各自维护一个开源的 runtime 版本，这两个版本之间都在努力的保持一致。
 
-## [#与-Runtime-交互](#与-Runtime-交互)与 Runtime 交互
+## 与 Runtime 交互
 
 Objc 从三种不同的层级上与 Runtime 系统进行交互，分别是通过 Objective-C 源代码，通过 Foundation 框架的`NSObject`类定义的方法，通过对 runtime 函数的直接调用。
 
-### [#Objective-C-源代码](#Objective-C-源代码)Objective-C 源代码
+### Objective-C 源代码
 
 大部分情况下你就只管写你的Objc代码就行，runtime 系统自动在幕后辛勤劳作着。  
 还记得引言中举的例子吧，消息的执行会使用到一些编译器为实现动态语言特性而创建的数据结构和函数，Objc中的类、方法和协议等在 runtime 中都由一些数据结构来定义，这些内容在后面会讲到。（比如 `objc_msgSend` 函数及其参数列表中的 `id` 和 `SEL` 都是啥）
 
-### [#NSObject-的方法](#NSObject-的方法)NSObject 的方法
+### NSObject 的方法
 
 Cocoa 中大多数类都继承于 `NSObject` 类，也就自然继承了它的方法。最特殊的例外是 `NSProxy`，它是个抽象超类，它实现了一些消息转发有关的方法，可以通过继承它来实现一个其他类的替身类或是虚拟出一个不存在的类，说白了就是领导把自己展现给大家风光无限，但是把活儿都交给幕后小弟去干。
 
 有的`NSObject`中的方法起到了抽象接口的作用，比如`description`方法需要你重载它并为你定义的类提供描述内容。`NSObject`还有些方法能在运行时获得类的信息，并检查一些特性，比如`class`返回对象的类；`isKindOfClass:`和`isMemberOfClass:`则检查对象是否在指定的类继承体系中；`respondsToSelector:`检查对象能否响应指定的消息；`conformsToProtocol:`检查对象是否实现了指定协议类的方法；`methodForSelector:`则返回指定方法实现的地址。
 
-### [#Runtime-的函数](#Runtime-的函数)Runtime 的函数
+### Runtime 的函数
 
 Runtime 系统是一个由一系列函数和数据结构组成，具有公共接口的动态共享库。头文件存放于`/usr/include/objc`目录下。许多函数允许你用纯C代码来重复实现 Objc 中同样的功能。虽然有一些方法构成了`NSObject`类的基础，但是你在写 Objc 代码时一般不会直接用到这些函数的，除非是写一些 Objc 与其他语言的桥接或是底层的debug工作。在 [Objective-C Runtime Reference](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/index.html) 中有对 Runtime 函数的详细文档。
 
-## [#Runtime-基础数据结构](#Runtime-基础数据结构)Runtime 基础数据结构
+## Runtime 基础数据结构
 
 还记得引言中的`objc_msgSend:`方法吧，它的真身是这样的：
 
@@ -133,7 +135,7 @@ id objc_msgSend ( id self, SEL op, ... );
 
 下面将会逐渐展开介绍一些术语，其实它们都对应着数据结构。熟悉 Objective-C 类的内存模型或看过相关源码的可以直接跳过。
 
-### [#SEL](#SEL)SEL
+### SEL
 
 `objc_msgSend`函数第二个参数类型为`SEL`，它是`selector`在Objc中的表示类型（Swift中是`Selector`类）。`selector`是方法选择器，可以理解为区分方法的 ID，而这个 ID 的数据结构是`SEL`:
 
@@ -145,7 +147,7 @@ typedef struct objc_selector *SEL;
 
 不同类中相同名字的方法所对应的方法选择器是相同的，即使方法名字相同而变量类型不同也会导致它们具有相同的方法选择器，于是 Objc 中方法命名有时会带上参数类型(`NSNumber` 一堆抽象工厂方法拿走不谢)，Cocoa 中有好多长长的方法哦。
 
-### [#id](#id)id
+### id
 
 `objc_msgSend` 第一个参数类型为`id`，大家对它都不陌生，它是一个指向类实例的指针：
 
@@ -175,7 +177,7 @@ public:
 
 PS: `isa` 指针不总是指向实例对象所属的类，不能依靠它来确定类型，而是应该用 `class` 方法来确定实例对象的类。因为KVO的实现机理就是将被观察对象的 `isa` 指针指向一个中间类而不是真实的类，这是一种叫做 **isa-swizzling** 的技术，详见[官方文档](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOImplementation.html)
 
-### [#Class](#Class)Class
+### Class
 
 `Class` 其实是一个指向 `objc_class` 结构体的指针：
 
@@ -206,7 +208,7 @@ struct objc_class : objc_object {
 
 可以看到运行时一个类还关联了它的超类指针，类名，成员变量，方法，缓存，还有附属的协议。
 
-#### [#cache-t](#cache-t)cache_t
+#### cache_t
 
 ```cpp
 struct cache_t {
@@ -241,7 +243,7 @@ public:
 
 有关缓存的实现细节，可以查看 objc-cache.mm 文件。
 
-#### [#class-data-bits-t](#class-data-bits-t)class_data_bits_t
+#### class_data_bits_t
 
 `objc_class` 中最复杂的是 `bits`，`class_data_bits_t` 结构体所包含的信息太多了，主要包含 `class_rw_t`, `retain/release/autorelease/retainCount` 和 `alloc` 等信息，很多存取方法也是围绕它展开。查看 objc-runtime-new.h 源码如下：
 
@@ -334,7 +336,7 @@ class_rw_t* data() {
 
 `class_data_bits_t` 甚至还包含了一些对 `class_rw_t` 中 `flags` 成员存取的封装函数。
 
-#### [#class-ro-t](#class-ro-t)class_ro_t
+#### class_ro_t
 
 `objc_class` 包含了 `class_data_bits_t`，`class_data_bits_t` 存储了 `class_rw_t` 的指针，而 `class_rw_t` 结构体又包含 `class_ro_t` 的指针。
 
@@ -386,15 +388,15 @@ struct class_ro_t {
 #define RO_REALIZED           (1<<31) // class is realized - must never be set by compiler
 ```
 
-#### [#class-rw-t](#class-rw-t)class_rw_t
+#### class_rw_t
 
 `class_rw_t` 提供了运行时对类拓展的能力，而 `class_ro_t` 存储的大多是类在编译时就已经确定的信息。二者都存有类的方法、属性（成员变量）、协议等信息，不过存储它们的列表实现方式不同。
 
 `class_rw_t` 中使用的 `method_array_t`, `property_array_t`, `protocol_array_t` 都继承自 `list_array_tt<Element, List>`, 它可以不断扩张，因为它可以存储 list 指针，内容有三种：
 
 1. 空
-2. 指针
-3. 指针数组
+2. 一个 `entsize_list_tt` 指针
+3. `entsize_list_tt` 指针数组
 
 `class_rw_t` 的内容是可以在运行时被动态修改的，可以说运行时对类的拓展大都是存储在这里的。
 
@@ -452,7 +454,7 @@ struct class_rw_t {
 
 `demangledName` 是计算机语言用于解决实体名称唯一性的一种方法，做法是向名称中添加一些类型信息，用于从编译器中向链接器传递更多语义信息。
 
-#### [#realizeClass](#realizeClass)realizeClass
+#### realizeClass
 
 在某个类初始化之前，`objc_class->data()` 返回的指针指向的其实是个 `class_ro_t` 结构体。等到 `static Class realizeClass(Class cls)` 静态方法在类第一次初始化时被调用，它会开辟 `class_rw_t` 的空间，并将 `class_ro_t` 指针赋值给 `class_rw_t->ro`。这种偷天换日的行为是靠 `RO_FUTURE` 标志位来记录的：
 
@@ -486,7 +488,7 @@ if (ro->flags & RO_FUTURE) {
 
 经过 `realizeClass` 函数处理的类才是『真正的』类，调用它时不能对类做写操作。
 
-### [#Category](#Category)Category
+### Category
 
 `Category` 为现有的类提供了拓展性，它是 `category_t` 结构体的指针。
 
@@ -537,7 +539,7 @@ struct locstamped_category_list_t {
 
 所以更具体来说 `attachCategories` 做的就是将 `locstamped_category_list_t.list` 列表中每个 `locstamped_category_t.cat` 中的那方法、协议和属性分别添加到类的 `class_rw_t` 对应列表中。`header_info` 中的信息决定了是否是元类，从而选择应该是添加实例方法还是类方法、实例属性还是类属性等。源码在 objc-runtime-new.mm 文件中，很好理解。
 
-### [#Method](#Method)Method
+### Method
 
 `Method`是一种代表类中的某个方法的类型。
 
@@ -564,13 +566,11 @@ struct method_t {
 };
 ```
 
-- ，前面提到过相同名字的方法即使在不同类中定义，它们的方法选择器也相同。
-- 是个
+- 方法名类型为 `SEL`，前面提到过相同名字的方法即使在不同类中定义，它们的方法选择器也相同。
+- 方法类型 `types` 是个`char`指针，其实存储着方法的参数类型和返回值类型。
+- `imp` 指向了方法的实现，本质上是一个函数指针，后面会详细讲到。
 
-  指针，其实存储着方法的参数类型和返回值类型。
-- 指向了方法的实现，本质上是一个函数指针，后面会详细讲到。
-
-### [#Ivar](#Ivar)Ivar
+### Ivar
 
 `Ivar` 是一种代表类中实例变量的类型。
 
@@ -622,7 +622,7 @@ struct ivar_t {
 
 `class_copyIvarList` 函数获取的不仅有实例变量，还有属性。但会在原本的属性名前加上一个下划线。
 
-### [#objc-property-t](#objc-property-t)objc_property_t
+### objc_property_t
 
 `@property` 标记了类中的属性，这个不必多说大家都很熟悉，它是一个指向`objc_property` 结构体的指针：
 
@@ -690,7 +690,7 @@ for (i = 0; i < outCount; i++) {
 
 对比下 `class_copyIvarList` 函数，使用 `class_copyPropertyList` 函数只能获取类的属性，而不包含成员变量。但此时获取的属性名是不带下划线的。
 
-### [#protocol-t](#protocol-t)protocol_t
+### protocol_t
 
 虽然 Objective-C 的 `Category` 和 `protocol` 拓展能力有限，但也得为了将就 Swift 的感受，充个胖子。
 
@@ -717,7 +717,7 @@ struct protocol_t : objc_object {
 }
 ```
 
-### [#IMP](#IMP)IMP
+### IMP
 
 `IMP`在`objc.h`中的定义是：
 
@@ -729,30 +729,22 @@ typedef void (*IMP)(void /* id, SEL, ... */ );
 
 你会发现 `IMP` 指向的方法与 `objc_msgSend` 函数类型相同，参数都包含 `id` 和 `SEL` 类型。每个方法名都对应一个 `SEL` 类型的方法选择器，而每个实例对象中的 `SEL` 对应的方法实现肯定是唯一的，通过一组 `id` 和 `SEL` 参数就能确定唯一的方法实现地址；反之亦然。
 
-## [#消息](#消息)消息
+## 消息
 
 前面做了这么多铺垫，现在终于说到了消息了。Objc 中发送消息是用中括号（`[]`）把接收者和消息括起来，而直到运行时才会把消息与方法实现绑定。
 
 **有关消息发送和消息转发机制的原理，可以查看[这篇文章](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/)。**
 
-### [#objc-msgSend-函数](#objc-msgSend-函数)objc_msgSend 函数
+### objc_msgSend 函数
 
 在引言中已经对`objc_msgSend`进行了一点介绍，看起来像是`objc_msgSend`返回了数据，其实`objc_msgSend`从不返回数据而是你的方法被调用后返回了数据。下面详细叙述下消息发送步骤：
 
-1. 是不是要忽略的。比如 Mac OS X 开发，有了垃圾回收就不理会
-
-  ,
-
-  这些函数了。
-2. 对象。ObjC 的特性是允许对一个
-
-  对象执行任何一个方法不会 Crash，因为会被忽略掉。
-3. ，先从
-
-  里面找，完了找得到就跳到对应的函数去执行。
-4. 找不到就找一下方法分发表。
-5. 类为止。
-6. 解析了，后面会提到。
+1. 检测这个 `selector` 是不是要忽略的。比如 Mac OS X 开发，有了垃圾回收就不理会 `retain`, `release` 这些函数了。
+2. 检测这个 target 是不是 `nil` 对象。ObjC 的特性是允许对一个 `nil` 对象执行任何一个方法不会 Crash，因为会被忽略掉。
+3. 如果上面两个都过了，那就开始查找这个类的 `IMP`，先从 `cache` 里面找，完了找得到就跳到对应的函数去执行。
+4. 如果 `cache` 找不到就找一下方法分发表。
+5. 如果分发表找不到就到超类的分发表去找，一直找，直到找到`NSObject`类为止。
+6. 如果还找不到就要开始进入**动态方法**解析了，后面会提到。
 
 PS:这里说的分发表其实就是`Class`中的方法列表，它将方法选择器和方法实现地址联系起来。
 
@@ -764,14 +756,14 @@ PS:这里说的分发表其实就是`Class`中的方法列表，它将方法选�
 
 PS：有木有发现这些函数的命名规律哦？带“Super”的是消息传递给超类；“stret”可分为“st”+“ret”两部分，分别代表“struct”和“return”；“fpret”就是“fp”+“ret”，分别代表“floating-point”和“return”。
 
-### [#方法中的隐藏参数](#方法中的隐藏参数)方法中的隐藏参数
+### 方法中的隐藏参数
 
 我们经常在方法中使用`self`关键字来引用实例本身，但从没有想过为什么`self`就能取到调用当前方法的对象吧。其实`self`的内容是在方法运行时被偷偷的动态传入的。
 
 当`objc_msgSend`找到方法对应的实现时，它将直接调用该方法实现，并将消息中所有的参数都传递给方法实现,同时,它还将传递两个隐藏的参数:
 
-- 指向的内容）
-- 指向的内容）
+- 接收消息的对象（也就是`self`指向的内容）
+- 方法选择器（`_cmd`指向的内容）
 
 之所以说它们是隐藏的是因为在源代码方法的定义中并没有声明这两个参数。它们是在代码被编译时被插入实现中的。尽管这些参数没有被明确声明，在源代码中我们仍然可以引用它们。在下面的例子中，`self`引用了接收者对象，而`_cmd`引用了方法本身的选择器：
 
@@ -797,7 +789,7 @@ struct objc_super { id receiver; Class class; };
 
 这个结构体指明了消息应该被传递给特定超类的定义。但`receiver`仍然是`self`本身，这点需要注意，因为当我们想通过`[super class]`获取超类时，编译器只是将指向`self`的`id`指针和`class`的SEL传递给了`objc_msgSendSuper`函数，因为只有在`NSObject`类才能找到`class`方法，然后`class`方法调用`object_getClass()`，接着调用`objc_msgSend(objc_super->receiver, @selector(class))`，传入的第一个参数是指向`self`的`id`指针，与调用`[self class]`相同，所以我们得到的永远都是`self`的类型。
 
-### [#获取方法地址](#获取方法地址)获取方法地址
+### 获取方法地址
 
 在`IMP`那节提到过可以避开消息绑定而直接获取方法的地址并调用方法。这种做法很少用，除非是需要持续大量重复调用某方法的极端情况，避开消息发送泛滥而直接调用该方法会更高效。
 
@@ -817,7 +809,7 @@ for ( i = 0 ; i < 1000 ; i++ )
 
 PS：`methodForSelector:`方法是由 Cocoa 的 Runtime 系统提供的，而不是 Objc 自身的特性。
 
-## [#动态方法解析](#动态方法解析)动态方法解析
+## 动态方法解析
 
 你可以动态地提供一个方法的实现。例如我们可以用`@dynamic`关键字在类的实现文件中修饰一个属性：
 
@@ -896,30 +888,16 @@ m 文件：
 
 需要深刻理解 `[self class]` 与 `object_getClass(self)` 甚至 `object_getClass([self class])` 的关系，其实并不难，重点在于 `self` 的类型：
 
-1. 为实例对象时，
-
-  与
-
-  等价，因为前者会调用后者。
-
-  得到元类。
-2. 为类对象时，
-
-  返回值为自身，还是
-
-  。
-
-  与
-
-  等价。
+1. 当 `self` 为实例对象时，`[self class]` 与 `object_getClass(self)` 等价，因为前者会调用后者。`object_getClass([self class])` 得到元类。
+2. 当 `self` 为类对象时，`[self class]` 返回值为自身，还是 `self`。`object_getClass(self)` 与 `object_getClass([self class])` 等价。
 
 凡是涉及到类方法时，一定要弄清楚元类、selector、IMP 等概念，这样才能做到举一反三，随机应变。
 
-## [#消息转发](#消息转发)消息转发
+## 消息转发
 
 ![](http://yulingtianxia.com/resources/QQ20141113-1@2x.png)
 
-### [#重定向](#重定向)重定向
+### 重定向
 
 在消息转发机制执行前，Runtime 系统会再给我们一次偷梁换柱的机会，即通过重载`- (id)forwardingTargetForSelector:(SEL)aSelector`方法替换消息的接受者为其他对象：
 
@@ -946,7 +924,7 @@ m 文件：
 }
 ```
 
-### [#转发](#转发)转发
+### 转发
 
 当动态方法解析不作处理返回`NO`时，消息转发机制会被触发。在这时`forwardInvocation:`方法会被执行，我们可以重写这个方法来定义我们的转发逻辑：
 
@@ -971,7 +949,7 @@ m 文件：
 
 注意： `forwardInvocation:`方法只有在消息接收对象中无法正常响应消息时才会被调用。 所以，如果我们希望一个对象将`negotiate`消息转发给其它对象，则这个对象不能有`negotiate`方法。否则，`forwardInvocation:`将不可能会被调用。
 
-### [#转发和多继承](#转发和多继承)转发和多继承
+### 转发和多继承
 
 转发和继承相似，可以用于为Objc编程添加一些多继承的效果。就像下图那样，一个对象把消息转发出去，就好似它把另一个对象中的方法借过来或是“继承”过来一样。
 
@@ -981,11 +959,11 @@ m 文件：
 
 消息转发弥补了 Objc 不支持多继承的性质，也避免了因为多继承导致单个类变得臃肿复杂。它将问题分解得很细，只针对想要借鉴的方法才转发，而且转发机制是透明的。
 
-### [#替代者对象-Surrogate-Objects](#替代者对象-Surrogate-Objects)替代者对象(Surrogate Objects)
+### 替代者对象(Surrogate Objects)
 
 转发不仅能模拟多继承，也能使轻量级对象代表重量级对象。弱小的女人背后是强大的男人，毕竟女人遇到难题都把它们转发给男人来做了。这里有一些适用案例，可以参看[官方文档](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtForwarding.html#//apple_ref/doc/uid/TP40008048-CH105-SW11)。
 
-### [#转发与继承](#转发与继承)转发与继承
+### 转发与继承
 
 尽管转发很像继承，但是`NSObject`类不会将两者混淆。像`respondsToSelector:` 和 `isKindOfClass:`这类方法只会考虑继承体系，不会考虑转发链。比如上图中一个`Warrior`对象如果被问到是否能响应`negotiate`消息：
 
@@ -1025,7 +1003,7 @@ if ( [aWarrior respondsToSelector:@selector(negotiate)] )
 }
 ```
 
-## [#健壮的实例变量-Non-Fragile-ivars](#健壮的实例变量-Non-Fragile-ivars)健壮的实例变量 (Non Fragile ivars)
+## 健壮的实例变量 (Non Fragile ivars)
 
 在 Runtime 的现行版本中，最大的特点就是健壮的实例变量。当一个类被编译时，实例变量的布局也就形成了，它表明访问类的实例变量的位置。从对象头部开始，实例变量依次根据自己所占空间而产生位移：
 
@@ -1045,7 +1023,7 @@ if ( [aWarrior respondsToSelector:@selector(negotiate)] )
 
 [优化 App 的启动时间](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/) 讲过加载 Mach-O 文件时有个步骤是通过 fix-up 修改偏移量来解决 fragile base class。
 
-## [#Objective-C-Associated-Objects](#Objective-C-Associated-Objects)Objective-C Associated Objects
+## Objective-C Associated Objects
 
 在 OS X 10.6 之后，Runtime系统让Objc支持向对象动态添加变量。涉及到的函数有以下三个：
 
@@ -1069,7 +1047,7 @@ enum {
 
 这些常量对应着引用关联值的政策，也就是 Objc 内存管理的引用计数机制。**有关 Objective-C 引用计数机制的原理，可以查看[这篇文章](http://yulingtianxia.com/blog/2015/12/06/The-Principle-of-Refenrence-Counting/)**。
 
-## [#Method-Swizzling](#Method-Swizzling)Method Swizzling
+## Method Swizzling
 
 之前所说的消息转发虽然功能强大，但需要我们了解并且能更改对应类的源代码，因为我们需要实现自己的转发逻辑。当我们无法触碰到某个类的源代码，却想更改这个类某个方法的实现时，该怎么办呢？可能继承类并重写方法是一种想法，但是有时无法达到目的。这里介绍的是 Method Swizzling ，它通过重新映射方法对应的实现来达到“偷天换日”的目的。跟消息转发相比，Method Swizzling 的做法更为隐蔽，甚至有些冒险，也增大了debug的难度。
 
@@ -1183,11 +1161,11 @@ method_setImplementation(m2, imp1);
 
 Method Swizzling 的确是一个值得深入研究的话题，找了几篇不错的资源推荐给大家：
 
-- Objective-C的hook方案（一）: Method Swizzling
-- Method Swizzling
-- How do I implement method swizzling?
-- What are the Dangers of Method Swizzling in Objective C?
-- JRSwizzle
+- [Objective-C的hook方案（一）: Method Swizzling](http://blog.csdn.net/yiyaaixuexi/article/details/9374411)
+- [Method Swizzling](http://nshipster.com/method-swizzling/)
+- [How do I implement method swizzling?](http://stackoverflow.com/questions/5371601/how-do-i-implement-method-swizzling)
+- [What are the Dangers of Method Swizzling in Objective C?](http://stackoverflow.com/questions/5339276/what-are-the-dangers-of-method-swizzling-in-objective-c)
+- [JRSwizzle](https://github.com/rentzsch/jrswizzle)
 
 在用 SpriteKit 写游戏的时候,因为 API 本身有一些缺陷(增删节点时不考虑父节点是否存在啊,很容易崩溃啊有木有!),我在 Swift 上使用 Method Swizzling弥补这个缺陷:
 
@@ -1244,7 +1222,7 @@ SKNode.yxy_swizzleRemoveFromParent()
 
 因为 Swift 中的 extension 的特殊性,最好在某个类的`load()` 方法中调用上面的两个方法.我是在AppDelegate 中调用的,于是保证了应用启动时能够执行上面两个方法.
 
-## [#总结](#总结)总结
+## 总结
 
 我们之所以让自己的类继承 `NSObject` 不仅仅因为苹果帮我们完成了复杂的内存分配问题，更是因为这使得我们能够用上 Runtime 系统带来的便利。可能我们平时写代码时可能很少会考虑一句简单的 `[receiver message]` 背后发生了什么，而只是当做方法或函数调用。深入理解 Runtime 系统的细节更有利于我们利用消息机制写出功能更强大的代码，比如 Method Swizzling 等。
 
@@ -1252,6 +1230,6 @@ Update 20170820: 使用 objc4-709 源码重写部分章节，更新至 Swift 4 �
 
 参考链接：
 
-- Objective-C Runtime Programming Guide
-- Objective-C runtime之运行时的基本特点
-- Understanding the Objective-C Runtime
+- [Objective-C Runtime Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048)
+- [Objective-C runtime之运行时的基本特点](http://blog.csdn.net/wzzvictory/article/details/8615569)
+- [Understanding the Objective-C Runtime](http://cocoasamurai.blogspot.jp/2010/01/understanding-objective-c-runtime.html)

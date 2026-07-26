@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-04-13
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4d37d01c0e9cedde'
 translated: n/a
 ---
@@ -18,13 +18,13 @@ translated: n/a
 
 2014年4月13日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 学习objc时，尤其是先学过其他编程语言再来看objc时，总会对objc的**类**声明的关键字`interface`感到有点奇怪，在其它面向对象的语言中通常由`class`关键字来表示，而`interface`在java中表示的却大约相当于objc的`protocol`，这个关键字的区别究竟代表了objc语言的设计者怎样的思想呢，在objc类设计中需要注意哪些问题呢？接下来对这个问题进行一些思考和探究.
 
 ---
 
-# [#interface](#interface)interface?
+# interface?
 
 先来段Wiki:
 
@@ -42,7 +42,7 @@ translated: n/a
 
 ---
 
-# [#interface生成了class？](#interface生成了class？)@interface生成了class？
+# @interface生成了class？
 
 学习objc时最早接触的就是怎么写一个类了，从`.h`中写`@interface`声明类，再从`.m`中写`@implementation`实现方法，所以，objc中写一个`@interface`就相当于c++中写一个`class`。但这是真的么？
 
@@ -81,7 +81,7 @@ Sark *sark = ((id (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Sark"), 
 ((void (*)(id, SEL))(void *)objc_msgSend)((id)sark, sel_registerName("speak"));
 ```
 
-# [#对比-interface和-implementation](#对比-interface和-implementation)对比@interface和@implementation
+# 对比@interface和@implementation
 
 `@interface` 我们干过的事：
 
@@ -109,7 +109,7 @@ Sark *sark = ((id (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Sark"), 
 通过对比可以发现，**@interface对objc类结构的合成并无决定性作用**，加上**无决定性**是因为如果没有`@interface`会丢失一些类自省的原始数据，如属性列表和协议列表，但对于纯粹的对象消息发送并无影响。  
 所以说，可以得出这么一个结论，**objc中@interface就是为了给调用者看的，是和调用者的一个protocol**，没错，就是**protocol**。
 
-# [#对比-interface和-protocol](#对比-interface和-protocol)对比@interface和@protocol
+# 对比@interface和@protocol
 
 与其把`@implementation`扯进来不如对比下`@protocol`
 
@@ -136,7 +136,7 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 
 ---
 
-# [#类与接口的设计原则-电视和遥控器](#类与接口的设计原则-电视和遥控器)类与接口的设计原则 - 电视和遥控器
+# 类与接口的设计原则 - 电视和遥控器
 
 我喜欢将`Class`和`interface`的关系比喻成`电视+遥控器`，那么objc中的消息机制就可以理解成：  
 **用户（caller）通过遥控器（interface）上的按钮（methods）发送红外线（message）来操纵电视（object）**  
@@ -150,20 +150,18 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 所以，在设计一个类的interface的时候，如同在设计遥控器应该有怎样功能的按钮，要从调用者的角度出发，区分边界，应该时刻有以下几点考虑：
 
 1. 这个方法或属性真的属于这个类的职责么？（电视遥控器能遥控空调？）
-2. 中（而不是放在
-
-  的类扩展中）么？
+2. 这个方法或属性真的必须放在`.h`中（而不是放在`.m`的类扩展中）么？
 3. 调用者必须看文档才能知道这个类该如何使用么？（同一个业务需要调用者按顺序调用多次（而不是将这些细节隐藏，同时提供一个简洁的接口）才行）
 4. 调用者是否可以很容易发现类内部的变量和实现方式？（脑补下电视里面一块电路板漏在外面半截- -）
 5. …
 
 ---
 
-# [#objc的-interface设计技巧Tips](#objc的-interface设计技巧Tips)objc的@interface设计技巧Tips
+# objc的@interface设计技巧Tips
 
 看过不少代码，从@interface设计上多少就能看出作者的水平，分享下我对于这个问题的一些拙见。
 
-## [#只暴露外部需要看到的](#只暴露外部需要看到的)只暴露外部需要看到的
+## 只暴露外部需要看到的
 
 比如，有如下一个类（这个类无意义，主要关注写法）：
 
@@ -180,31 +178,27 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 
 这个interface出现的问题：
 
-1. 不应该在头文件@interface中声明，而应该在类扩展中声明；公开由外部调用的协议，如
-
-  则写在这儿是正确的。
-2. 和
-
-  不应出现在这儿定义，这将类的内部实现暴露了出去，自从属性可以自动合成后，这里就更应该清净了。
+1. 类内部自己使用的协议，如`<NSXMLParserDelegate>`不应该在头文件@interface中声明，而应该在类扩展中声明；公开由外部调用的协议，如`<NSCopying>`则写在这儿是正确的。
+2. `实例变量`和`IBOutlet`不应出现在这儿定义，这将类的内部实现暴露了出去，自从属性可以自动合成后，这里就更应该清净了。
 3. 内部使用的属性对象不要暴露在外，应该移动到类扩展中。
 4. 调用者对IBAction同样不需要关心，那么就不应该放在这儿。
 
-## [#合理分组子功能](#合理分组子功能)合理分组子功能
+## 合理分组子功能
 
 - 将相同功能的一组属性或方法写在一起
 
 使用这个类或者对其进行修改时，一般都是从功能上找，所以把同一功能模块的一组属性或方法写在一块
 
-- 分块
-- 将interface按功能分区
+- 纯操作方法的子功能（无需向类添加变量）使用`Category`分块
+- 在头文件中也可以使用`类扩展`将interface按功能分区
 
 `Category`里不能添加实例变量，但是类扩展可以，一般都在`.m`中作为私有interface使用，同样在头文件里作为分区使用，如，ReactiveCocoa中的[RACStream.h](https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/ReactiveCocoaFramework/ReactiveCocoa/RACStream.h)
 
-## [#避免头文件污染](#避免头文件污染)避免头文件污染
+## 避免头文件污染
 
 首先，类实现内部.m文件中使用的其他interface应该在.m文件import，如果也写在header中就会造成对调用者的污染；当interface中出现其他`Class`或`protocol`时，可以使用前置声明`@class XXX`, `@protocol XXX`；当模块（一组类）内部间需要有一些定义（如常量、类型）而又不需要模块使用者知道时，使用一个内部头文件在模块中使用。
 
-## [#避免接口过度设计](#避免接口过度设计)避免接口过度设计
+## 避免接口过度设计
 
 考虑调用者的使用方便是很必要的，过火了反而增加了复杂度：
 
@@ -221,7 +215,7 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 
 提供了一组这样的方法，调用者可能只能用到其中的一个，那这样倒不如只留一个接口。
 
-## [#避免单例的滥用](#避免单例的滥用)避免单例的滥用
+## 避免单例的滥用
 
 单例模式固然好用，但感觉有点过度，将接口设计成单例入口前需要考虑一下：
 
@@ -230,7 +224,7 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 3. 是否能用类方法代替？
 4. 这个单例对象是否能成为另一个单例对象的属性？如果是，应该作为属性
 
-## [#隐藏继承关系中的私有接口](#隐藏继承关系中的私有接口)隐藏继承关系中的私有接口
+## 隐藏继承关系中的私有接口
 
 感谢`@像条狗在飞`在留言中提出的问题，问题大概可以总结为：当子类需要使用父类的一个私有属性（方法）时，需要把这个属性（方法）放到父类的header中，但暴露给子类的同时暴露给了外部调用者，如何解决?
 
@@ -250,23 +244,15 @@ NSObject之所以成为NSObject，绝大多数都是`<NSObject>`协议定义的�
 
 ---
 
-# [#总结](#总结)总结
+# 总结
 
-- 合成了Class，而非
-
-  ，
-
-  是
-
-  的强类型升级版，它们和
-
-  都表示了相近的含义
+- `@implementation`合成了Class，而非`@interface`，`@interface`是`@protocol`的强类型升级版，它们和`Category`都表示了相近的含义
 - 我们应该善于面向接口编程，划清边界，将类的实现隐藏在调用者所见之外，使主调和被调者之间保持`最少知识原则`
-- 本身就是最好的文档
+- `@interface`本身就是最好的文档
 
 ---
 
-# [#References](#References)References
+# References
 
 [http://en.m.wikipedia.org/wiki/Interface_(object-oriented_programming](http://en.m.wikipedia.org/wiki/Interface_(object-oriented_programming))  
 [http://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B](http://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B)

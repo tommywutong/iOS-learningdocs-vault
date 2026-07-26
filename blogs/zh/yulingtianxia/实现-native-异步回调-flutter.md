@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-10-25
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4e67174ba0b17843'
 translated: n/a
 ---
@@ -28,9 +28,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 为什么说 Flutter Channel 无法做到呢，有两点：
 
-1. 。上面的例子是在 Native 的主线程调用 Flutter 并可以
-
-  获取到返回值，如果用 Channel 会直接导致死锁。
+1. 使用 Channel 从 Native 调用 Dart 时，想获取返回值就只能通过在 Channel API 在主线程的异步回调 `FlutterResult`。上面的例子是在 Native 的主线程调用 Flutter 并可以**同步**获取到返回值，如果用 Channel 会直接导致死锁。
 2. Flutter Channel 需要写额外的胶水代码，而上面的例子简单清爽，跨语言调用无缝衔接。
 
 PS: 考虑到性能问题，在 Native 主线程调用 Flutter 并同步等待返回值这种场景，可能会引起卡顿。实事求是地说，这可能本身是个不该考虑到的场景，但不代表 [DartNative](https://github.com/dart-native/dart_native) 就不去做。毕竟 [DartNative](https://github.com/dart-native/dart_native) 在实现 Flutter Channel 没覆盖到的场景的同时，也在尝试不断替代它。

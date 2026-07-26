@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-04-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cfab664262dea1bb'
 translated: n/a
 ---
@@ -26,7 +26,7 @@ translated: n/a
 
 ![](http://ww1.sinaimg.cn/mw690/51530583jw1er6hbxkv2xj20k80oota0.jpg)
 
-### [#一行代码搞定](#一行代码搞定)一行代码搞定
+### 一行代码搞定
 
 研究发现，这里其实是一个被 UITableView 默认填充的 HeaderView。而且，当试图将它的高度设置为 0 时，完全不起效果。但我们用下面的代码创建一个高度特别小的 HeaderView 时，上面的边距就不见了：
 
@@ -35,7 +35,7 @@ translated: n/a
 `CGFLOAT_MIN` 这个宏表示 CGFloat 能代表的最接近 0 的浮点数，64 位下大概是 0.00(300左右个)0225 这个样子  
 这样写单纯的为了避免一个魔法数字，这里用 `0.1` 效果是一样的，后面再讲。
 
-### [#在-Storyboard-中-0-代码搞定](#在-Storyboard-中-0-代码搞定)在 Storyboard 中 0 代码搞定
+### 在 Storyboard 中 0 代码搞定
 
 没用 Storyboard 的同学使用上面的代码就 OK 了； 而在 Storyboard 中可以 0 代码搞定这个事：
 
@@ -52,7 +52,7 @@ translated: n/a
 ![](http://ww2.sinaimg.cn/mw690/51530583jw1er6jj5n61fj20ju0lidgi.jpg
 )
 
-### [#刨根问底-UITableViewHeader-的猫腻](#刨根问底-UITableViewHeader-的猫腻)刨根问底 UITableViewHeader 的猫腻
+### 刨根问底 UITableViewHeader 的猫腻
 
 为什么刚才说 0.1 和 CGFLOAT_MIN 是等效的呢？经过研究，这个高度值的影响大概是这样的：
 

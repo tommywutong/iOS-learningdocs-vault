@@ -7,7 +7,7 @@ original_language: zh
 published: 2016-08-13
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c14c86c8bb1e7224'
 translated: n/a
 ---
@@ -20,7 +20,7 @@ translated: n/a
 
 这是**重识 Objective-C Runtime**系列文章的其中一篇：
 
-- 重识 Objective-C Runtime - Smalltalk 与 C 的融合
+- [重识 Objective-C Runtime - Smalltalk 与 C 的融合](http://blog.sunnyxx.com/2016/08/13/reunderstanding-runtime-0/)
 - 重识 Objective-C Runtime - 看透 Type 与 Value
 - 重识 Objective-C Runtime - 何为对象何为类
 - 重识 Objective-C Runtime - Calling Conventions
@@ -29,7 +29,7 @@ translated: n/a
 2014 年的时候，线下分享了一次 Runtime，为配合分享还出了[几个题目](http://blog.sunnyxx.com/2014/11/06/runtime-nuts/)，莫名其妙的被当成了面试题，导致大家各种补 Runtime 的知识和文章，甚至后来招人的时候，面试者都反问我为啥不考点 Runtime 的题 - -  
 时隔快两年，随着最近对这块的理解的加深，咱们来重新认识一下 Runtime。
 
-## [#Smalltalk-与-C-的融合](#Smalltalk-与-C-的融合)Smalltalk 与 C 的融合
+## Smalltalk 与 C 的融合
 
 三十几年前，Brad Cox 和 Tom Love 在主流且高效的 C 语言基础上，借鉴 Smalltalk 的面向对象与消息机制，想要搞出一个易用且轻量的 C 语言扩展，但 C 和 Smalltalk 的思想和语法格格不入，比如在 Smalltalk 中一切皆对象，一切调用都是发消息：
 
@@ -68,36 +68,20 @@ p := Person name: 'sunnyxx' age: 26
 
 作为单纯的 C 语言扩展，Runtime 中只要实现几个最基础的函数（如 objc_msgSend）即可，但为了构建整套 Objective-C 面向对象的基础库（如 Foundation），Runtime 还需要提供像 NSObject 这样的 Root Class 作为面向对象的起点、提供运行时反射机制以及运行时对 Class 结构修改的 API 等。再后来，即便是 Objective-C 语言本身的不断发展，新语言特性的加入，也不外乎是扩展 Clang 和扩展 Runtime，比如：
 
-- ，
-
-  等，同时还要处理 dealloc 函数，自动加入对 super 的调用等，具体可以看
-
-  这篇文章
-
-  。
+- ARC：编译器分析对象引用关系，在合适的位置插入内存管理的函数，并需要把这些函数打包加到 Runtime 中，如 `objc_storeStrong`，`objc_storeWeak`等，同时还要处理 dealloc 函数，自动加入对 super 的调用等，具体可以看[这篇文章](http://blog.sunnyxx.com/2014/04/02/objc_dig_arc_dealloc/)。
 - Lightweight Generics：叫做 “轻量泛型” 是因为只增加了编译器检查的支持，而泛型信息并未影响到运行时，所以 Runtime 库无需改动。
-- ）、Array Literal（
-
-  ）、Dictionary Literal（
-
-  ）和轻量泛型一样，只是把如
-
-  在编译期 rewrite 成
-
-  而已，无需改动 Runtime。
-- 这篇文章
-
-  。
+- Syntax Sugars：比如 Boxed Expr（`@123`）、Array Literal（`@[...]`）、Dictionary Literal（`@{...}`）和轻量泛型一样，只是把如 `@123` 在编译期 rewrite 成 `[NSNumber numberWithInt:123]` 而已，无需改动 Runtime。
+- Non Fragile Ivars: 类实例变量的动态调整技术，用于实现 Objective-C Binary 的兼容性，随着 Objective-C 2.0 出现，需要编译器和 Runtime 的共同配合，感兴趣的可以看[这篇文章](http://quotation.github.io/objc/2015/05/21/objc-runtime-ivar-access.html)。
 
 因此，Runtime 的精髓并非在于平日里很少接触的那些所谓“黑魔法” Runtime API、也并非各种 Swizzle 大法，而是在 Objective-C 语言层面如何处理 Type、处理 Value、如何设计 OOP 数据结构和消息机制、如何设计 ABI 等，去了解这么一个小而美的 C 语言运行时扩展是怎么设计出来的。假如非要让我考一道 Runtime 的题，可能是**“给你 C 语言，如何实现一个 Objective-C？”**，答到哪儿算哪儿。
 
 接下来的文章就找几个有意思的点挨个聊聊。
 
-## [#References](#References)References
+## References
 
 [https://zh.wikipedia.org/wiki/Objective-C](https://zh.wikipedia.org/wiki/Objective-C)  
 [http://web.cecs.pdx.edu/~harry/musings/SmalltalkOverview.html](http://web.cecs.pdx.edu/~harry/musings/SmalltalkOverview.html)
 
-## [#来罐可乐并催更](#来罐可乐并催更)来罐可乐并催更
+## 来罐可乐并催更
 
 ![](http://ww2.sinaimg.cn/large/51530583jw1et2mwz8hqzj20af0camy7.jpg)

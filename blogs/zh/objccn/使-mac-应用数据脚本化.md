@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ac150922459e599b'
 translated: n/a
 ---
@@ -364,8 +364,8 @@ Matt Neuburg 的 [AppleScript 权威指南](http://www.amazon.com/AppleScript-De
 
 当然，Apple 有关于这些技术的文档：
 
-- Cocoa 脚本指南
-- AppleScript 概览
+- [Cocoa 脚本指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40002164)
+- [AppleScript 概览](https://developer.apple.com/library/mac/documentation/applescript/conceptual/applescriptx/AppleScriptX.html#//apple_ref/doc/uid/10000156-BCICHGIE)
 
 此外，请参阅 Apple 的 Sketch 应用，它实现了脚本化。
 

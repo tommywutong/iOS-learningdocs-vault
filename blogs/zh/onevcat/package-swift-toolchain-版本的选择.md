@@ -30,13 +30,9 @@ WWDC 2020 上 Swift Package Manager (SPM) 开始支持 [Resource bundle](https:/
 
 你可能已经看到过，有的项目中 (比如 [PromiseKit](https://github.com/mxcl/PromiseKit)) 会有多个 Package.swift 的声明：它们带有不同的后缀，比如 `Package.swift`，`Package@swift-4.2.swift` 或者 `Package@swift-5.3.swift`。SPM 在选取声明文件时，会按照当前 toolchain 版本从新到旧，去选取最近的一个兼容版本的文件。举个几个例子，上面三个文件存在的情况下：
 
-- ；
-- (由于不符合最低版本)。同时，由于不存在
-
-  这一恰好兼容的版本，SPM 会向下寻找最近的一个兼容版本，即 转而使用
-
-  。
-- 。
+- 如果安装了带有 5.3 的 Xcode 12，则选取使用 `Package@swift-5.3.swift`；
+- 如果运行环境是 5.1 的 Xcode 11，则跳过 `Package@swift-5.3.swift` (由于不符合最低版本)。同时，由于不存在 `Package@swift-5.1.swift` 这一恰好兼容的版本，SPM 会向下寻找最近的一个兼容版本，即 转而使用 `Package@swift-4.2.swift`。
+- 如果 toolchain 版本甚至低于 4.2，那么所有带有后缀的声明文件都会被跳过，而去使用 `Package.swift`。
 
 ### swift-tools-version
 
@@ -46,15 +42,9 @@ WWDC 2020 上 Swift Package Manager (SPM) 开始支持 [Resource bundle](https:/
 
 因此，在添加 SPM 新版本支持的时候，正确的做法是：
 
-1. 的首行中，声明你的 package 所能支持的最低的 toolchain 版本。
-2. 和
-
-  不变：这可以让旧版本的 toolchain 继续使用已有的 package 描述。
-3. 添加
-
-  文件，并在文件中首行将 toolchain 版本设置为同样的版本，即
-
-  。然后为新版编写合适的 package 声明。
+1. 创建 package 时，在 `Package.swift` 的首行中，声明你的 package 所能支持的最低的 toolchain 版本。
+2. 保持现有的所有 `Package.swift` 和 `Package@swift-a.b.swift` 不变：这可以让旧版本的 toolchain 继续使用已有的 package 描述。
+3. 为新版本 `x.y` 添加 `Package@swift-x.y.swift` 文件，并在文件中首行将 toolchain 版本设置为同样的版本，即 `// swift-tools-version:x.y`。然后为新版编写合适的 package 声明。
 
 你可以通过切换 Xcode 中的 Command Line Tools 设定，并使用下面的命令来检查当前设定下所被选用的 toolchain version。
 

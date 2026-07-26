@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f3002fca3390238d'
 translated: n/a
 ---
@@ -102,11 +102,7 @@ iCloud 文档存储的核心思想非常简单：每个应用都有至少通往�
 
 阅读 `NSFileCoordinator` 的文档，你可能注意到每个方法都有一个冗长而复杂的描述。虽然 API 文档通常是非常可靠的，但由于同其他协调器和文件展示者交互的多样性，以及文件夹和文件锁的语法多样性，都造成了很高的复杂度。有一些很容易忽略的细节和问题贯穿这些长长的描述：
 
-1. 标识，文件展示者将无法通过
-
-  对文件删除操作做出影响。如果移动目录时不使用
-
-  ，则移动操作将不会等待其子项目上正在执行的协调操作进行完成。
+1. 认真选择协调选项。它们真的对文件协调器和文件展示者有着影响。比如，如果没有采用 `NSFileCoordinatorWritingForDeleting` 标识，文件展示者将无法通过 `accommodatePresentedItemDeletionWithCompletionHandler:` 对文件删除操作做出影响。如果移动目录时不使用 `NSFileCoordinatorWritingForMoving`，则移动操作将不会等待其子项目上正在执行的协调操作进行完成。
 2. 始终认为协调调用可能会失败并返回错误。因为文件协调同 iCloud 交互，如果被协调的文件不能被下载，协调调用会失败并产生一条错误信息，并且你实际的文件操作可能不会被执行。如果没有正确的实现错误处理方法，你的应用可能不会注意到这样的问题。
 3. 在进入协调 block 之后检查文件状态。协调请求之后，也许很长时间已经过去了。这时，应用操作文件的前提条件可能已经失效。你想写入的信息直到重新获得锁之前有可能都是脏数据。也可能在你等待获得写入权限的时候文件已经被删除。这时你可能会无意中再次创建已经被删除的文件。
 
@@ -124,26 +120,10 @@ iCloud 文档存储的核心思想非常简单：每个应用都有至少通往�
 
 从通知中得出正确结论并不容易。文件展示中存在的 bug 造成了有些通知处理器_从未被执行_。这里初步介绍一些已知的不太规律的通知:
 
-1. 和
-
-  ，所有的子项目通知要么不被调用，要么以一种难以预测的方式被调用。绝对不要依赖它们 -- 实际上，
-
-  和
-
-  从不会被调用。
-2. 的文件协调来删除文件，
-
-  才会工作。否则，你会连一个 change 的通知都收不到。
-3. 时，
-
-  和
-
-  才会被调用。否则项目不会收到任何有用的通知。子项目仍旧会分别针对旧的和新的 URL 收到
-
-  通知。
-4. 通知也被发送，你仍然会针对旧的和新的 URL 收到两个额外的
-
-  通知。要做好准备好处理这个。
+1. 除了 `presentedSubitemDidChangeAtURL:` 和 `presentedSubitemAtURL:didMoveToURL:`，所有的子项目通知要么不被调用，要么以一种难以预测的方式被调用。绝对不要依赖它们 -- 实际上，`presentedSubitemDidAppearAtURL:` 和 `accommodatePresentedSubitemDeletionAtURL:completionHandler:` 从不会被调用。
+2. 只有通过使用了 `NSFileCoordinatorWritingForDeleting` 的文件协调来删除文件，`accommodatePresentedItemDeletionWithCompletionHandler:` 才会工作。否则，你会连一个 change 的通知都收不到。
+3. 只有文件展示者执行 `itemAtURL:didMoveToURL:` 时，`presentedItemDidMoveToURL:` 和 `presentedSubitemAtURL:didMoveToURL:` 才会被调用。否则项目不会收到任何有用的通知。子项目仍旧会分别针对旧的和新的 URL 收到 `presentedSubitemDidChange` 通知。
+4. 即使文件被正确移动，`presentedSubitemAtURL:didMoveToURL:` 通知也被发送，你仍然会针对旧的和新的 URL 收到两个额外的 `presentedSubitemDidChangeAtURL:` 通知。要做好准备好处理这个。
 
 一般来说，你必须注意通知可能会失效。也不应该依赖于任何特定的通知顺序。例如，当描述一个目录树时，你不能期望父文件夹的通知会先于或晚于其中子项目的通知。
 

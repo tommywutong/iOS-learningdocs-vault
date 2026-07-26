@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-09-09
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a461056d6119d463'
 translated: n/a
 ---
@@ -28,7 +28,7 @@ iOS8 新特性，`Size Classes`，是对老式UI思路的全新抽象：把各�
 
 听过有人说，我们不用学 autolayout 了，直接学 Size Classes 就一步到位了。这个说法是不对的，因为 Size Classes 在将屏幕分类后，执行布局的还是Autolayout。
 
-# [#Size-Classes与Interface-Builder](#Size-Classes与Interface-Builder)Size Classes与Interface Builder
+# Size Classes与Interface Builder
 
 当然不出所料的是，Xcode 6 中 Interface Builder 对 Size Classes 有了很强大的支持：
 
@@ -48,7 +48,7 @@ IB 中某个 View 的出现与否，**约束的出现与否以及约束的值都
 
 ![](http://7xtel4.com1.z0.glb.clouddn.com/2016-05-13-4.jpeg)
 
-# [#Size-Classes的xml文件改动](#Size-Classes的xml文件改动)Size Classes的xml文件改动
+# Size Classes的xml文件改动
 
 说到9合1的时候肯定会有疑问，这样的storyboard文件会不会很大？源文件会不会很乱导致多人开发经常冲突？
 
@@ -63,7 +63,7 @@ wAny,hAny 模式下刚才只有一个 Label 的页面：
 
 所以说 IB 中以附加的描述字段来表示哪些元素是被哪些 Size Classes 包含或排除的，也正因为这样的描述方式，使得新的 xml 格式**可以被低版本兼容**（低版本不解析这个字段，但其他字段正常解析）
 
-# [#Size-Classes与xcassets](#Size-Classes与xcassets)Size Classes与xcassets
+# Size Classes与xcassets
 
 既然 storyboard 变成了 9 合 1，配套的 `xcassets` 必须也有所表示才行， Xcode 6 后向 `xcassets` 中添加图片时增加了选择对应 Size Classes 的菜单，展开后会像下面一样：
 
@@ -72,7 +72,7 @@ wAny,hAny 模式下刚才只有一个 Label 的页面：
 通过符号表示确实不错 `-`对应紧缩，`*`对应 Any，`+`对应宽松  
 （@3x 是 iPhone6 Plus）
 
-# [#总结](#总结)总结
+# 总结
 
 总的来说，iOS 对 UI 这块的改动是跨时代性的，Autolayout 的出现使得布局的复杂度减少到了 View 与 View 的关系上，再由根 View（也就是屏幕）指定frame，随后所有子 View 相对布局，把 frame 的概念归一化到根 View 的 frame 上；但有了 Size Classes 后，根视图的 frame 概念也被移除了，这下整个 app 的 UI 和 frame 这个单词已然脱离关系，这也正是apple想要达到的目的。
 

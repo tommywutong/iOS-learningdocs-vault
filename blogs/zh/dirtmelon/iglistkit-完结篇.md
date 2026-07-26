@@ -7,7 +7,7 @@ original_language: zh
 published: 2021-02-19
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:da026f22cb385f05'
 translated: n/a
 ---
@@ -52,19 +52,9 @@ static void adjustZIndexForAttributes(UICollectionViewLayoutAttributes *attribut
 
 这里取了个巧，假设每个 `Section` 的 `Item` 数量不超过 1000 个，每个 `Section` 的起始 `zIndex` 为 `baseZIndex` ，值为 `attributes.indexPath.section * maxZIndexPerSection` ，然后根据 `attributes.representedElementCategory` 进行判断：
 
-1. ，
-
-  ，根据
-
-  进行叠加；
-2. ，位于每个
-
-  的顶部，所以
-
-  为
-
-  ；
-3. 用于设置背景，所以应该位于最底部；
+1. `UICollectionElementCategoryCell` ，`baseZIndex + attributes.indexPath.item` ，根据 `indexPath.item` 进行叠加；
+2. `UICollectionElementCategorySupplementaryView` ，位于每个 `Section` 的顶部，所以 `zIndex` 为 `baseZIndex + maxZIndexPerSection - 1` ；
+3. `UICollectionElementCategoryDecorationView` 用于设置背景，所以应该位于最底部；
 
 一般来说 iOS 应该很少出现单个 `Section` 超过 1000 ，如果出现了而又设置 `stickyHeaders` 为 `true` ，那么就可能会出现 `Cell` 把 `HeaderView` 覆盖的情况。
 
@@ -107,16 +97,8 @@ static void adjustZIndexForAttributes(UICollectionViewLayoutAttributes *attribut
 }
 ```
 
-1. 改变了， 布局肯定是会失效的，所以这里直接返回
-
-  ；
-2. 的值，因为当
-
-  为
-
-  时，我们需要重新计算
-
-  的布局；
+1. 如果 `size` 改变了， 布局肯定是会失效的，所以这里直接返回 `YES` ；
+2. 如果滑动方向上的坐标改变了，则返回 `stickyHeaders` 的值，因为当 `stickyHeaders` 为 `YES` 时，我们需要重新计算 `Header` 的布局；
 
 ```objc
 - (UICollectionViewLayoutInvalidationContext *)invalidationContextForBoundsChange:(CGRect)newBounds {
@@ -139,14 +121,8 @@ static void adjustZIndexForAttributes(UICollectionViewLayoutAttributes *attribut
 https://twitter.com/_ryannystrom/status/1344322269099810822 这条推总结了 IGListKit 的开发历程。作者在 Instagram 时，产品的迭代在假期中会变慢，所以他们决定用这段时间来偿还技术债务。在 2014 年的冬季，为了从 `UITableView` 迁移至 `UICollectionView` ，作者 review 了超过 12K 行的代码。同时也去掉了对 iOS5 的支持，使得可以直接使用 iOS6 新增的 API 。通过这次重构，作者也总结了以下经验：
 
 1. 数据源应该统一在一处修改，否则会产生数据不一致的异常；
-2. 的第一次布局可能会自动调用
-
-  ；
-3. 需要设置为
-
-  ，即滚动时始终停留在顶部，那么就需要在滚动时进行
-
-  的计算，会有性能损耗。
+2. `UIView` 的第一次布局可能会自动调用 `reloadData` ；
+3. 如果 `header view` 需要设置为 `sticky` ，即滚动时始终停留在顶部，那么就需要在滚动时进行 `frame` 的计算，会有性能损耗。
 
 Instagram 之前直接使用 `reloadData` ，大部分情况下表现都没问题，但是以下两件事情一直困扰作者：
 
@@ -155,7 +131,7 @@ Instagram 之前直接使用 `reloadData` ，大部分情况下表现都没问�
 
 这些都是因为 `reloadData` 的机制造成的，在 `reloadData` 时，所有显示在屏幕上的 `Cell` 都会进行复用。因此即使 UI 不变， `Cell` 仍然需要进行复用（或者初始化），重新绑定数据，设置图像等，这涉及到大量的计算和操作。 以 Instagram 的点赞操作为例，当点赞某条 post 时，会调用 `reloadData` 。因为所有 `Cell` 都进行了复用，所以需要记录点赞的 `Cell` 所在的 `row` ，然后进行 `reload` ，再执行类型的动画。如果动画开始后某些操作又触发了 `reloadData` ，那么动画就会被取消，也就导致了 UI 错误。 图片闪烁的问题就比较简单，当包含图片的 `Cell` 被复用时，会将背景设置为灰色，然后从缓存或者网络中异步获取图片，进行设置。复用和从缓存中获取/设置图片之间的异步时间差是造成闪烁的原因。 作者开始思考为什么不仅仅更新有数据修改的 `Cell` 呢？其他框架也有类似的解决方案，不如 React ：将数据绑定到 View ，当数据更改时只是将修改的数据重新绑定到 View ，同时触发 View 的修改。 按照只在一个地方更新数据源的原则，需要计算新旧数据的不同，使用 `UICollectionView` 的 API 来进行传入/删除/重新加载/移动，不接触其它没有改动的地方。作者研究了好几种 diff 算法： rsync ， Myers ，React ，最后选择了 Paul Heckel 的算法 https://dl.acm.org/doi/10.1145/359460.359467 ，原因如下：
 
-1. 的 API 匹配：插入，删除，更新和移动；
+1. 计算结果与 `UICollectionView` 的 API 匹配：插入，删除，更新和移动；
 2. 能够理解部分的实例实现。
 
 另一个关键的决定是如何定义 identity 和 equality 。作者本来是想直接使用 `NSObject` 的 `-hash` 和 `-isEqual:` ，以免工程师需要编写/理解差异概念。但是 [ryanolsonk](https://twitter.com/ryanolsonk) 认为作者是错误的，因为 `-hash` 是非常复杂的算法： [mikeash.com: Friday Q&A 2010-06-18: Implementing Equality and Hashing](https://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html) Foundation 的 `hash` 有可能会产生冲突，比如 `NSString` ，只使用前缀/中间/后缀部分的 32 个字符来进行 `hash` 的计算：

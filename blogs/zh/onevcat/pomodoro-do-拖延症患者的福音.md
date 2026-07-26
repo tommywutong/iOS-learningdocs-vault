@@ -18,10 +18,10 @@ translated: n/a
 
 由于完全是自己完成的应用啦，所以详细介绍就写的偏向广告一点吧～欢迎大家购买使用，并给我提意见哦～我会不断完善这款app的。
 
-- https://itunes.apple.com/app/id791903475?ls=1&mt=8
-- http://pomo.onevcat.com/
-- Pomodoro Do——拖延症什么的，我才不怕呢
-- 用一顆番茄來改變你的人生 – Pomodoro Do 評測
+- App Store地址：[https://itunes.apple.com/app/id791903475?ls=1&mt=8](https://itunes.apple.com/app/id791903475?ls=1&mt=8)
+- Pomodoro Do官方主页：[http://pomo.onevcat.com/](http://pomo.onevcat.com/)
+- i果儿评测：[Pomodoro Do——拖延症什么的，我才不怕呢](http://www.iguor.com/4050.html)
+- PunApp：[用一顆番茄來改變你的人生 – Pomodoro Do 評測](http://punapp.com/review/article/7437)
 
 ## 什么是Pomodoro Do
 
@@ -90,7 +90,7 @@ AppStore上也有不少番茄工作法的应用。相比起来，Pomodoro Do的�
 
 ---
 
-- https://itunes.apple.com/app/id791903475?ls=1&mt=8
-- http://pomo.onevcat.com/
-- Pomodoro Do——拖延症什么的，我才不怕呢
-- 用一顆番茄來改變你的人生 – Pomodoro Do 評測
+- App Store地址：[https://itunes.apple.com/app/id791903475?ls=1&mt=8](https://itunes.apple.com/app/id791903475?ls=1&mt=8)
+- Pomodoro Do官方主页：[http://pomo.onevcat.com/](http://pomo.onevcat.com/)
+- i果儿评测：[Pomodoro Do——拖延症什么的，我才不怕呢](http://www.iguor.com/4050.html)
+- PunApp：[用一顆番茄來改變你的人生 – Pomodoro Do 評測](http://punapp.com/review/article/7437)

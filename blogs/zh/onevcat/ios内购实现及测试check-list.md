@@ -20,9 +20,9 @@ translated: n/a
 
 如果您在实现和测试iOS应用内购的时候遇到问题，可以逐一对照下面所列出的条目，并逐一进行检查。相信可以排除大部分的错误。如果您遇到的问题不在这个列表范围内，欢迎在评论中指出，我会进行更新。
 
-- 功能？登陆iOS Dev Center的Certificates, Identifiers & Profiles下，在Identifiers中找到正在开发的App，In-App Purchase一项应当显示Enabled（如果使用Xcode5，可以直接在Xcode的Capabilities页面中打开In-App Purchases）。
+- 您是否在iOS Dev Center中打开了对应应用AppID的`In-App Purchases`功能？登陆iOS Dev Center的Certificates, Identifiers & Profiles下，在Identifiers中找到正在开发的App，In-App Purchase一项应当显示Enabled（如果使用Xcode5，可以直接在Xcode的Capabilities页面中打开In-App Purchases）。
 - 您是否在iTunes Connect中注册了您的IAP项目，并将其设为Cleared for Sale？
-- 的内容是否和您的AppID一致？
+- 您的plist中的`Bundle identifier`的内容是否和您的AppID一致？
 - 您是否正确填写了Version（CFBundleVersion）和Build（CFBuildNumber）两个数字？两者缺一不可。
 - 您用代码向Apple申请售卖物品列表时是否使用了完整的在iTC注册的Product ID？（使用在IAP管理中内购项目的Product ID一栏中的字符串）
 - 您是否在打开IAP以后重新生成过包含IAP许可的provisioning profile？
@@ -40,29 +40,13 @@ translated: n/a
 - 您的内购项目是否是最近才新建的，或者进行了更改？内购项目需要一段时间才能反应到所有服务器上，这个过程一般是一两小时，也可能再长一些达到若干小时。
 - 您在iTC中Contracts, Tax, and Banking Information项目中是否有还没有设置或者过期了的项目？不完整的财务信息无法进行内购测试。
 - 您是在越狱设备上进行内购测试么？越狱设备不能用于正常内购，您需要重装或者寻找一台没有越狱的设备。
-- Apple开发者论坛关于IAP的板块
-
-  ，如果苹果服务器正down掉，那里应该有热烈的讨论。
+- 您是否能正常连接到Apple的服务器，你可以访问[Apple开发者论坛关于IAP的板块](https://devforums.apple.com/community/ios/connected/purchase)，如果苹果服务器正down掉，那里应该有热烈的讨论。
 
 ---
 
 如果您正在寻找一份手把手教你实现IAP的教程的话，这篇文章不是您的菜。关于IAP的实现和步骤，可以参考下面的教程：
 
-- 官方IAP指南
-
-  和相应的
-
-  Technical Note
-- iOS6 IAP教程
-- 中文教程
-- mattt/CargoBay
-
-  ，
-
-  robotmedia/RMStore
-
-  或者
-
-  MugunthKumar/MKStoreKit
-
-  。推荐前两个，因为MKStoreKit有一些恼人的小bug。
+- 苹果的[官方IAP指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)和相应的[Technical Note](https://developer.apple.com/library/mac/technotes/tn2259/_index.html)
+- Ray Wenderlich的[iOS6 IAP教程](http://www.raywenderlich.com/23266/in-app-purchases-in-ios-6-tutorial-consumables-and-receipt-validation)
+- 一篇图文并茂的[中文教程](http://blog.csdn.net/xiaominghimi/article/details/6937097)
+- 直接使用大神们封好的Store有关的库，比如[mattt/CargoBay](https://github.com/mattt/CargoBay)，[robotmedia/RMStore](https://github.com/robotmedia/RMStore)或者[MugunthKumar/MKStoreKit](https://github.com/MugunthKumar/MKStoreKit)。推荐前两个，因为MKStoreKit有一些恼人的小bug。

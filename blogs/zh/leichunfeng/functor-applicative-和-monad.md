@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-11-08
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:01dd4a4dffd68a8f'
 translated: n/a
 ---
@@ -26,15 +26,9 @@ Nov 8th, 2015 10:53 am
 
 关于 `Functor`、`Applicative` 和 `Monad` 的概念，其实各用一句话就可以概括：
 
-1. 就是一种实现了
-
-  的数据类型；
-2. 就是一种实现了
-
-  的数据类型；
-3. 就是一种实现了
-
-  的数据类型。
+1. 一个 `Functor` 就是一种实现了 `Functor typeclass` 的数据类型；
+2. 一个 `Applicative` 就是一种实现了 `Applicative typeclass` 的数据类型；
+3. 一个 `Monad` 就是一种实现了 `Monad typeclass` 的数据类型。
 
 当然，你可能会问那什么是 [typeclass](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101) 呢？我想当你在看到**实现**二字的时候，就应该已经猜到了：
 
@@ -186,16 +180,8 @@ class Functor f => Applicative f where
 
 在 `Applicative typeclass` 中定义了两个函数：
 
-- ：将一个值
-
-  放入上下文中；
-- ：将一个在上下文中的函数
-
-  应用到一个在上下文中的值
-
-  ，并返回另一个在上下文中的值
-
-  。
+- `pure` ：将一个值 `a` 放入上下文中；
+- `(<*>)` ：将一个在上下文中的函数 `f (a -> b)` 应用到一个在上下文中的值 `f a` ，并返回另一个在上下文中的值 `f b` 。
 
 **注**：`<*>` 函数的发音我也不知道，如果有同学知道的话还请告之，谢谢。
 
@@ -419,8 +405,8 @@ Nothing
 
 我们可以看到，在 `RACStream` 中定义了两个看上去非常眼熟的方法：
 
-1. ；
-2. 。
+1. `+ (instancetype)return:(id)value;` ；
+2. `- (instancetype)bind:(RACStreamBindBlock (^)(void))block;` 。
 
 其中，`return:` 方法的功能就是将一个值 `value` 放入 `RACStream` 上下文中；而 `bind:` 方法的功能则是将一个 `RACStreamBindBlock` 类型的 `block` 应用到一个在 `RACStream` 上下文中的值（`receiver`），并返回另一个在 `RACStream` 上下文中的值。**注**，`RACStreamBindBlock` 类型的 `block` 就是一个接收一个普通值 `value` 但是返回一个在 `RACStream` 上下文中的值的“函数”：
 
@@ -476,46 +462,22 @@ RACSignal *signal2 = [[[signal1
 
 `Functor`、`Applicative` 和 `Monad` 是什么：
 
-1. 就是一种实现了
-
-  的数据类型；
-2. 就是一种实现了
-
-  的数据类型；
-3. 就是一种实现了
-
-  的数据类型。
+1. 一个 `Functor` 就是一种实现了 `Functor typeclass` 的数据类型；
+2. 一个 `Applicative` 就是一种实现了 `Applicative typeclass` 的数据类型；
+3. 一个 `Monad` 就是一种实现了 `Monad typeclass` 的数据类型。
 
 `Functor`、`Applicative` 和 `Monad` 三者之间的联系：
 
-1. 是增强型的
-
-  ，一种数据类型要成为
-
-  的前提条件是它必须是
-
-  ；
-2. 是增强型的
-
-  ，一种数据类型要成为
-
-  的前提条件是它必须是
-
-  。
+1. `Applicative` 是增强型的 `Functor` ，一种数据类型要成为 `Applicative` 的前提条件是它必须是 `Functor` ；
+2. `Monad` 是增强型的 `Applicative` ，一种数据类型要成为 `Monad` 的前提条件是它必须是 `Applicative` 。
 
 `Functor`、`Applicative` 和 `Monad` 三者之间的区别：
 
 ![recap](http://leichunfeng.github.io/images/recap.png)
 
-1. ：使用
-
-  应用一个函数到一个上下文中的值；
-2. ：使用
-
-  应用一个上下文中的函数到一个上下文中的值；
-3. ：使用
-
-  应用一个接收一个普通值但是返回一个在上下文中的值的函数到一个上下文中的值。
+1. `Functor` ：使用 `fmap` 应用一个函数到一个上下文中的值；
+2. `Applicative` ：使用 `<*>` 应用一个上下文中的函数到一个上下文中的值；
+3. `Monad` ：使用 `>>=` 应用一个接收一个普通值但是返回一个在上下文中的值的函数到一个上下文中的值。
 
 此外，我们还介绍了一种非常有意思的数据类型 `Maybe` ，它实现了 `Functor typeclass`、`Applicative typeclass` 和 `Monad typeclass` ，所以它同时是 `Functor`、`Applicative` 和 `Monad` 。
 

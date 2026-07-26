@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a5c22b0c489767fd'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-10-28
 
-1. 1. Swift Class 与 Ivar
-2. 2. Swift Class Runtime Name
-3. 3. Swift Class Check
-4. 4. Swift Class Lazy Property
+**文章目录**
+
+1. [1. Swift Class 与 Ivar](#Swift-Class-与-Ivar)
+2. [2. Swift Class Runtime Name](#Swift-Class-Runtime-Name)
+3. [3. Swift Class Check](#Swift-Class-Check)
+4. [4. Swift Class Lazy Property](#Swift-Class-Lazy-Property)
 
 之前 [TBUIAutoTest](https://github.com/yulingtianxia/TBUIAutoTest) 有个 [issue](https://github.com/yulingtianxia/TBUIAutoTest/issues/7)，我发现原因跟 Swift 有关，在解决问题时顺带稍微研究了下 Swift 编写的类。
 
-## [#Swift-Class-与-Ivar](#Swift-Class-与-Ivar)Swift Class 与 Ivar
+## Swift Class 与 Ivar
 
 纯粹的 Swift 类（没继承自 `NSObject`）在 Runtime 上有很大的坑。虽然 Runtime 的接口都能调用，但因为 `Class` 实现和构成有很大差异，所以需要谨慎对待。比如 Swift 没有 `Ivar` 的概念，相应的 Runtime 接口也只是尽可能的封装，不保证返回的内容正确。Swift 将成员变量和属性统一起来，并统一存储和管理。
 
 其实如果 Swift 类的属性类型是继承自 `NSObject` 的话，还是可以通过 `Ivar` 相关 Runtime 函数获取到内容的。这也是 [TBUIAutoTest](https://github.com/yulingtianxia/TBUIAutoTest) 能够兼容 Swift 的原因。有些 Objective-C 类型在 Swift 有对应的替代，比如 `NSString` 与 `String`。编译器会自动转换接口和类型，但在这些类型上的属性获取 Ivar 依然有些问题。比如使用 [object_getIvar](https://github.com/opensource-apple/objc4/blob/881b875d7aada4cbfc154e022e1297c9526de747/runtime/objc-class.mm#L360) 就会 `BAD_ACCESS`。
 
-## [#Swift-Class-Runtime-Name](#Swift-Class-Runtime-Name)Swift Class Runtime Name
+## Swift Class Runtime Name
 
 在比较早的 Swift 版本，debug 时我们看到的 Swift 的类名都是一串很长很乱的字符串，其实那是经过 Objective-C Runtime Mangle 后的产物。大概的规则如下：
 
@@ -47,7 +49,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 举个栗子：使用 `NSClassFromString(@"_TtC19ClassWrittenInSwift11AppDelegate")` 获取到的类是 `ClassWrittenInSwift` Module 中的 `AppDelegate` 类。
 
-## [#Swift-Class-Check](#Swift-Class-Check)Swift Class Check
+## Swift Class Check
 
 如何判断一个类是否用 Swift 写的呢？Runtime 中 `Class` 是有标志位的，只是没对外暴露接口而已。映射到 Runtime 源码中 `Class` 的内存模型，将标志位取出即可，关键代码如下。
 
@@ -93,7 +95,7 @@ BOOL isWrittenInSwift(Class cls)
 
 哎，自己的 Repo 真是越来越水了。
 
-## [#Swift-Class-Lazy-Property](#Swift-Class-Lazy-Property)Swift Class Lazy Property
+## Swift Class Lazy Property
 
 Swift 类的 `lazy` 属性的存储比较特殊，毕竟是懒加载。它的属性名有个后缀 “.storage”，所以在 Runtime 里获取属性名时要注意，使用时是要过滤掉后缀的。
 

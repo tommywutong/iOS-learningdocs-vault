@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:00aceb9ab63f2490'
 translated: n/a
 ---
@@ -20,11 +20,13 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-07-03
 
-1. 1. 建立数据模型
-2. 2. Swift与Objective-C桥接
-3. 3. NSFetchedResultsController
-4. 4. UITextField键盘响应
-5. 5. 随机选择算法
+**文章目录**
+
+1. [1. 建立数据模型](#建立数据模型)
+2. [2. Swift与Objective-C桥接](#Swift与Objective-C桥接)
+3. [3. NSFetchedResultsController](#NSFetchedResultsController)
+4. [4. UITextField键盘响应](#UITextField键盘响应)
+5. [5. 随机选择算法](#随机选择算法)
 
 在Swift发布后，我尝试用Swift和Core Data做了一个小Demo，名字叫“[HardChoice](http://hardchoice.yulingtianxia.com)”。它用于帮助人们随机生成一个问题的结果，当然结果是预设好的，并可以加入权值。本文将通过这个Demo来进一步阐述Core Data的知识。
 
@@ -51,7 +53,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 先在第一个页面添加问题（吃啥？），然后点击问题进入到第二个添加选项（鸭子，蛋，猪）的页面。每个选项左边是选项名，右边是该选项的权值。摇动手机就能随机从所有选项中选出答案（就像第二张图那样）。
 
-## [#建立数据模型](#建立数据模型)建立数据模型
+## 建立数据模型
 
 还是像以前那样新建一个Master-Detail Application，勾选Use Core Data选项，语言选择Swift，然后Xcode会自动生成一个具有`UITableView`的Demo，这些内容之前说过。下面我们需要打开xcdatamodeld文件来建立我们的数据模型：
 
@@ -77,10 +79,10 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 下面会通过部门与员工的例子来阐述`Delete Rule`的用法
 
-- 如果关系指向的目标仍然有对象，那么关系的源对象就不会被删除，比如你想删除一个部门，必须先确保该部门所有员工已经调到其他部门（或被解雇），否则这个部门就不会被删除。
-- 将被删除对象反向关系的目标设为null，比如如果你删除了一个部门，那么将这个部门所有成员的department关系目标设为null。需要注意的是员工的department关系应该被勾选为Optional，或者是在删除部门之后马上给该部门员工设置一个新的部门。
-- 顾名思义它会传递删除命令，删除一个对象会导致这个对象关系中所指向的所有目标对象也被删除。比如如果你删除了一个部门那么这个部门所有员工都会被立即删除。
-- 无为而治。比如如果你删除了一个部门，那么这个部门底下的所有员工什么都不知道，他们还以为自己还属于这个部门。
+- **`Deny`** 如果关系指向的目标仍然有对象，那么关系的源对象就不会被删除，比如你想删除一个部门，必须先确保该部门所有员工已经调到其他部门（或被解雇），否则这个部门就不会被删除。
+- **`Nullify`** 将被删除对象反向关系的目标设为null，比如如果你删除了一个部门，那么将这个部门所有成员的department关系目标设为null。需要注意的是员工的department关系应该被勾选为Optional，或者是在删除部门之后马上给该部门员工设置一个新的部门。
+- **`Cascade`** 顾名思义它会传递删除命令，删除一个对象会导致这个对象关系中所指向的所有目标对象也被删除。比如如果你删除了一个部门那么这个部门所有员工都会被立即删除。
+- **`No Action`** 无为而治。比如如果你删除了一个部门，那么这个部门底下的所有员工什么都不知道，他们还以为自己还属于这个部门。
 
 回到我们的例子，因为`Question`指向`Choice`的`choices`关系具有从属的性质，问题被删除后`choices`所指向的选项也应该被删除，所以`choices`关系中的`Delete Rule`我们选择`Cascade`；而`Choice`指向`Question`的`question`关系中`Delete Rule`被设置成了`Nullify`，也就是解除了`Question`与这个`Choice`的关系，并且我们之前已经设置`Question`的`choices`关系设置为`Optional`来满足`Nullify`这一选项的要求。
 
@@ -88,7 +90,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 如果你对建立数据模型的过程生疏，建议回到[初识Core Data(2)](http://yulingtianxia.com/blog/2014/05/02/chu-shi-core-data-2/)中复习下“使用数据模型设计器”一节
 
-## [#Swift与Objective-C桥接](#Swift与Objective-C桥接)Swift与Objective-C桥接
+## Swift与Objective-C桥接
 
 在使用Xcode6 Beta2生成`NSManagedObject`子类的时候，生成的代码依然是Objective-C的代码（即使我的工程是用Swift语言建立的），这就涉及到在Swift工程中调用Objective-C类的问题。苹果给我们提供了一个比较简单的解决方案。在你向工程中加入OC文件时，Xcode会自动弹出消息问你是否需要生成一个桥接头文件（“工程名-Bridging-Header.h”），然后我们在这个头文件中加入想要在Swift中调用的OC类的头文件：
 
@@ -108,7 +110,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 有关Swift和OC在同一项目中混合使用的方法详见[这里](https://github.com/CocoaChina-editors/Welcome-to-Swift/blob/master/Using%20Swift%20with%20Cocoa%20and%20Objective-C/03Mix%20and%20Match/Swift%20and%20Objective-C%20in%20the%20Same%20Project.md)
 
-## [#NSFetchedResultsController](#NSFetchedResultsController)NSFetchedResultsController
+## NSFetchedResultsController
 
 在[初识Core Data(1)](http://yulingtianxia.com/blog/2014/05/01/chu-shi-core-data-1/)中我们提到过`NSFetchedResultsController`的作用，简单地说，`NSFetchedResultsController`的作用就是有效率的管理从CoreData获取请求的数据结果，并将结果提供给`UITableView`作为数据源。
 
@@ -299,7 +301,7 @@ override func tableView(tableView: UITableView, commitEditingStyle editingStyle:
 println("Unresolved error \(error!), \(error!.userInfo)")
 ```
 
-## [#UITextField键盘响应](#UITextField键盘响应)UITextField键盘响应
+## UITextField键盘响应
 
 在将`UITextField`实例赋值给`CustomIOS7AlertView`的`containerView`属性前需要先让其获取当前焦点，并将`UITextField`的`delegate`属性设为`self`：
 
@@ -354,7 +356,7 @@ func textFieldDidBeginEditing(textField: UITextField!){
 
 在Xcode6 beta2中的模拟器不是很好使，经常不能弹出键盘，这里给出的代码有很多疏漏，只提供个参考，主要是处理`UITextField`代理的思想
 
-## [#随机选择算法](#随机选择算法)随机选择算法
+## 随机选择算法
 
 `DetailViewController`的内容跟`MasterViewController`内容很像，最大的区别在于多了一个从`Choice`数据中随机抽选的一个方法。因为是通过摇一摇的方式来触发随机算法，所以我们重载`motionBegan(motion: UIEventSubtype, withEvent event: UIEvent!)`方法来响应手机摇动：
 

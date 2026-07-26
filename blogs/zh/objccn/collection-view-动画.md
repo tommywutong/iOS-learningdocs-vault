@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:37bdebaf494dbcb0'
 translated: n/a
 ---
@@ -32,8 +32,8 @@ Collection View 深入太多了，事实上，[Ole Begeman](http://oleb.net) 和
 
 你可以在 GitHub 中找到本文提到的两个示例工程:
 
-- 布局动画
-- 自定义 collection view 转场动画
+- [布局动画](https://github.com/objcio/issue-12-CollectionViewAnimations)
+- [自定义 collection view 转场动画](https://github.com/objcio/issue-12-CustomCollectionViewTransition)
 
 ## Collection View 布局动画
 

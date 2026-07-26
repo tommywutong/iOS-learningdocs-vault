@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-04-19
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b4e332e69387d2a9'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年4月19日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 这是[Reactive Cocoa Tutorial系列](http://blog.sunnyxx.com/tags/Reactive%20Cocoa%20Tutorial/)其中的一篇，[上一篇](http://blog.sunnyxx.com/2014/03/06/rac_3_racsignal/)简单介绍了RAC中最重要的`RACSignal`，下面几篇文章将主要从它的`Operations`下手，这也是工程中使用RAC的重点。从简到难，本篇文章先介绍RAC消息流的`过滤器-Filters`类别的相关方法。
 
@@ -26,16 +26,16 @@ translated: n/a
 
 #RAC中的Filters
 
-## [#画个范围](#画个范围)画个范围
+## 画个范围
 
 一个Signal源可以产生一系列next值，但并非所有值都是需要的，具体的Subscriber可以选择在原有Signal上套用Filter操作来过滤掉不需要的值。  
 我的定义：RAC中如果一个`Operation`将处理后的值集合是处理前值集合的`子集`，我们就可以把它归为`Filter`类型。
 
 当然通过之前介绍的基础操作完全可以自己拼出个想要的filter来，RAC为了方便使用已经实现了几个常用的filter，经过总结，这些filter大概可以分成两类：`next值过滤类型`和`起止点过滤类型`
 
-## [#值过滤类型Filters](#值过滤类型Filters)值过滤类型Filters
+## 值过滤类型Filters
 
-### [#filter-BOOL-id-value](#filter-BOOL-id-value)filter: (BOOL (^)(id value))
+### filter: (BOOL (^)(id value))
 
 RAC中的filter同名方法`- filter:(BOOL (^)(id value))`，简单明了，将一个value用block做test，返回YES的才会通过，它的内部实现使用了`- flattenMap:`，将原来的`Signal`经过过滤转化成只返回过滤值的`Signal`，用法也不难理解：
 
@@ -49,7 +49,7 @@ RAC中的filter同名方法`- filter:(BOOL (^)(id value))`，简单明了，将�
 
 此外，还有几个这个方法的衍生方法：
 
-### [#ignore-id](#ignore-id)- ignore: (id)
+### - ignore: (id)
 
 忽略给定的值，注意，这里忽略的既可以是地址相同的对象，也可以是`- isEqual:`结果相同的值，也就是说自己写的Model对象可以通过重写`- isEqual:`方法来使`- ignore:`生效。常用的值的判断没有问题，如下：
 
@@ -59,12 +59,12 @@ RAC中的filter同名方法`- filter:(BOOL (^)(id value))`，简单明了，将�
 }];
 ```
 
-### [#ignoreValues](#ignoreValues)- ignoreValues
+### - ignoreValues
 
 这个比较极端，忽略所有值，只关心Signal结束，也就是只取`Comletion`和`Error`两个消息，中间所有值都丢弃。  
 注意，这个操作应该出现在Signal有终止条件的的情况下，如`rac_textSignal`这样除`dealloc`外没有终止条件的Signal上就不太可能用到。
 
-### [#distinctUntilChanged](#distinctUntilChanged)- distinctUntilChanged
+### - distinctUntilChanged
 
 也是一个**相当常用**的Filter（但它不是- filter:的衍生方法），它将这一次的值与上一次做比较，当相同时（也包括`- isEqual:`）被忽略掉。  
 比如UI上一个Label绑定了一个值，根据值更新显示的内容:
@@ -80,12 +80,12 @@ self.user.username = @"sunnyxx"; // 3rd
 
 所以，对于相同值可以忽略的情况，果断加上它吧。
 
-## [#起止点过滤类型](#起止点过滤类型)起止点过滤类型
+## 起止点过滤类型
 
 除了被动的当next值来的时候做判断，也可以主动的提前选择开始和结束条件，分为两种类型：  
 `take型（取）`和`skip型(跳)`
 
-### [#take-NSUInteger](#take-NSUInteger)- take: (NSUInteger)
+### - take: (NSUInteger)
 
 从开始一共取N次的next值，不包括`Competion`和`Error`，如：
 
@@ -101,7 +101,7 @@ self.user.username = @"sunnyxx"; // 3rd
 }];
 ```
 
-### [#takeLast-NSUInteger](#takeLast-NSUInteger)- takeLast: (NSUInteger)
+### - takeLast: (NSUInteger)
 
 取最后N次的next值，注意，由于一开始不能知道这个Signal将有多少个next值，所以RAC实现它的方法是将所有next值都存起来，然后**原Signal完成时**再将后N个**依次**发送给接收者，但Error发生时依然是立刻发送的。
 
@@ -122,7 +122,7 @@ self.user.username = @"sunnyxx"; // 3rd
 
 也就是这个Signal一直到textField执行`dealloc`时才停止
 
-### [#takeUntilBlock-BOOL-id-x](#takeUntilBlock-BOOL-id-x)- takeUntilBlock:(BOOL (^)(id x))
+### - takeUntilBlock:(BOOL (^)(id x))
 
 对于每个next值，运行block，当block返回YES时停止取值，如：
 
@@ -134,11 +134,11 @@ self.user.username = @"sunnyxx"; // 3rd
 }];
 ```
 
-### [#takeWhileBlock-BOOL-id-x](#takeWhileBlock-BOOL-id-x)- takeWhileBlock:(BOOL (^)(id x))
+### - takeWhileBlock:(BOOL (^)(id x))
 
 上面的反向逻辑，对于每个next值，block返回 YES时才取值
 
-### [#skip-NSUInteger](#skip-NSUInteger)- skip:(NSUInteger)
+### - skip:(NSUInteger)
 
 从开始跳过N次的next值，简单的栗子：
 
@@ -154,30 +154,26 @@ self.user.username = @"sunnyxx"; // 3rd
 }];
 ```
 
-### [#skipUntilBlock-BOOL-id-x](#skipUntilBlock-BOOL-id-x)- skipUntilBlock:(BOOL (^)(id x))
+### - skipUntilBlock:(BOOL (^)(id x))
 
 和`- takeUntilBlock:`同理，一直跳，直到block为YES
 
-### [#skipWhileBlock-BOOL-id-x](#skipWhileBlock-BOOL-id-x)- skipWhileBlock:(BOOL (^)(id x))
+### - skipWhileBlock:(BOOL (^)(id x))
 
 和`- takeWhileBlock:`同理，一直跳，直到block为NO
 
 ---
 
-# [#总结](#总结)总结
+# 总结
 
 本章介绍了RAC中Filter类型的Operation，总结一下：
 
-- 时
+- 适用场景：需要一个next值集合的`子集`时
 - Filter类型：值过滤型和起止点过滤型
-- ，
+- 值过滤型常用方法： `-filter:`，`-ignore:`，`-distinctUnitlChanged`
+- 起止点过滤型常用方法：`take`系列和`skip`系列
 
-  ，
-- 系列和
-
-  系列
-
-# [#References](#References)References
+# References
 
 [https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/Documentation/BasicOperators.md#filtering](https://github.com/ReactiveCocoa/ReactiveCocoa/blob/master/Documentation/BasicOperators.md#filtering)
 

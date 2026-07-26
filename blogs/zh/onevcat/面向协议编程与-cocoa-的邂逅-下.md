@@ -419,15 +419,7 @@ func testUserRequest() {
 
 几个我认为在 POP 实践中值得一看的资料，愿意再进行深入了解的朋友不妨一看。
 
-- Protocol-Oriented Programming in Swift
-
-  - WWDC 15 #408
-- Protocols with Associated Types
-
-  - @alexisgallagher
-- Protocol Oriented Programming in the Real World
-
-  - @_matthewpalmer
-- Practical Protocol-Oriented-Programming
-
-  - @natashatherobot
+- [Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408/) - WWDC 15 #408
+- [Protocols with Associated Types](https://www.youtube.com/watch?v=XWoNjiSPqI8) - @alexisgallagher
+- [Protocol Oriented Programming in the Real World](http://matthewpalmer.net/blog/2015/08/30/protocol-oriented-programming-in-the-real-world/) - @_matthewpalmer
+- [Practical Protocol-Oriented-Programming](https://realm.io/news/appbuilders-natasha-muraschev-practical-protocol-oriented-programming/) - @natashatherobot

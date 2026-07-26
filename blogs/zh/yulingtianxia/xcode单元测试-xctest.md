@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ec2447828b1734a2'
 translated: n/a
 ---
@@ -26,12 +26,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 在XCode5中新建一个工程的时候，会默认带一个用于单元测试的target，其名字为工程名加Test后缀，并且文件名也以Test结尾。你会发现已经有了一个默认的测试用例，其中有三个方法：`setUp`,`tearDown`,`testExample`。其中`testExample`方法左侧有一个播放按钮，点击它就会对这个方法进行测试，而在整个文件的`@implementation`那行也有个同样的按钮，点击后会对当前测试用例的所有方法进行测试，也可通过Command＋U快捷键来触发。这个测试用例类没有头文件，因为测试用例不需要给外部暴漏接口。按照苹果官方的文档，建立一个测试用例的过程应该是这样的：
 
-1. 的子类
+1. 建立一个`XCTestCase`的子类
 2. 实现测试方法
 3. 选择性的定义一些实例变量来存储fixture的状态
-4. 方法选择性的实例化fixture
-5. 方法来在测试后清除
-
+4. 通过重写`setUp`方法选择性的实例化fixture
+5. 通过重写`tearDown`方法来在测试后清除  
   测试方法没有参数和返回值，用test作为前缀，比如：
 
 ```objc

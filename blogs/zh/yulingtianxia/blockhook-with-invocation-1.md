@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-08-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:de842bf982f43fa9'
 translated: n/a
 ---
@@ -20,13 +20,15 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-07-27
 
-1. 1. 使用方法
-2. 2. 实现原理
+**文章目录**
 
-    1. 2.1. BHInvocation 结构
-    2. 2.2. retainArguments 实现
-    3. 2.3. block_interceptor 实现
-3. 3. 后记
+1. [1. 使用方法](#使用方法)
+2. [2. 实现原理](#实现原理)
+
+    1. [2.1. BHInvocation 结构](#BHInvocation-结构)
+    2. [2.2. retainArguments 实现](#retainArguments-实现)
+    3. [2.3. block_interceptor 实现](#block-interceptor-实现)
+3. [3. 后记](#后记)
 
 [BlockHook](https://github.com/yulingtianxia/BlockHook) 在业界已经率先解决了在**同步**调用场景下对 Objective-C Block 的 AOP 问题。但也有很多场景是需要先调用一段自己的逻辑，然后再**异步延时**执行 Block。
 
@@ -38,7 +40,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 让子弹再飞一会儿！
 
-## [#使用方法](#使用方法)使用方法
+## 使用方法
 
 [BlockHook](https://github.com/yulingtianxia/BlockHook) 拦截器用法很简单，在已有 `BHInvocation` 参数的基础上，增加了一个 `completion` 回调。当拦截器的逻辑异步执行完后，调用 `completion` 即可继续执行原来的 Block。如果拦截器的逻辑是同步的，也依然可以用这个接口，只是没必要罢了，推荐直接用原来的 `block_hookWithMode:usingBlock:` 接口。
 
@@ -75,7 +77,7 @@ NSObject *(^testblock)(NSObject *) = ^(NSObject *a) {
 testblock(testArg);
 ```
 
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 首先想想如果要延迟一个 Objective-C 方法的执行，需要怎么做？
 
@@ -85,7 +87,7 @@ testblock(testArg);
 
 ![](http://yulingtianxia.com/resources/BlockHook/BlockInterceptor.png)
 
-### [#BHInvocation-结构](#BHInvocation-结构)BHInvocation 结构
+### BHInvocation 结构
 
 我之前的 [BlockHook with Struct](http://yulingtianxia.com/blog/2019/04/27/BlockHook-with-Struct/) 这篇文章提到了个技术点：在 x86 架构下，当 Block 返回值是大于 16 Byte 的 `struct` 时，参数列表有些变化：
 
@@ -99,20 +101,20 @@ testblock(testArg);
 
 PS：`BHInvocation` 与 `NSInvocation` 的场景和用法有些不同，所以实现上也会有差异。`NSInvocation` 没有公开源码，想了解原理的可以看看 mikeash 的实现： [MAInvocation](https://github.com/mikeash/MAInvocation)。但我并没有参考过 mikeash 的源码，因为等我写完了才发现它。。。
 
-### [#retainArguments-实现](#retainArguments-实现)`retainArguments` 实现
+### `retainArguments` 实现
 
 `retainArguments` 实现策略：
 
-1. 指针数组和返回值指针
-2. 指针内容类型为 Objective-C 对象的参数
-3. 过来
-4. 过来
+1. 拷贝 `void **args` 指针数组和返回值指针
+2. `retain` 指针内容类型为 Objective-C 对象的参数
+3. 如果参数中也有其他 Block 对象，则 `copy` 过来
+4. 如果参数中有 C-string，则 `strcpy` 过来
 
 ![](http://yulingtianxia.com/resources/BlockHook/retainArguments.png)
 
 需要注意的是这里依然要考虑两套 `args` 和 `retValue` 的问题。代码就不贴了，有兴趣的可以自己去看。
 
-### [#block-interceptor-实现](#block-interceptor-实现)`block_interceptor` 实现
+### `block_interceptor` 实现
 
 解决了 `retainArguments` 的实现，一切都好说了。只要基于原有的 `block_hookWithMode:usingBlock:` 接口稍加改装即可：
 
@@ -130,7 +132,7 @@ PS：`BHInvocation` 与 `NSInvocation` 的场景和用法有些不同，所以�
 }
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 写了这么多关于 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的文章，我越来越发现自己在苹果爸爸面前所表现出的无知。几乎每一步都要去踩很多坑，看很多源码。而这次是看着苹果爸爸的文档脑补如何实现，业界也没有能参考的先例。
 

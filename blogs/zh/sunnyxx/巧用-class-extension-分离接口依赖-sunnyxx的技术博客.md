@@ -7,7 +7,7 @@ original_language: zh
 published: 2016-04-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6601af265496980f'
 translated: n/a
 ---
@@ -52,7 +52,7 @@ translated: n/a
 不过有两个设计原则必须要遵守：
 
 1. Category 的实现可以依赖主类，但主类一定不依赖 Category，也就是说移除任何一个 Category 的代码不会对主类产生任何影响。
-2. 来达到相同效果。
+2. Category 可以直接使用主类已有的私有成员变量，但不应该为实现 Category 而往主类中添加成员变量，考虑在 Category 的实现中使用 `objc association` 来达到相同效果。
 
 > 所以 Category 一定是简单插拔的，就像买个外接键盘来扩展在 MacBook 上的写码能力，但当拔了键盘，MacBook 的运行不会受到任何影响。
 

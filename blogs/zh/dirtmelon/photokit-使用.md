@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-06-09
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d834b9a8f0701214'
 translated: n/a
 ---
@@ -50,9 +50,7 @@ PHAssetCollection.fetchAssetCollections(with: .smartAlbum,
 
 ### 如何判断是否为 GIF
 
-1. 属性，再判断是否等于
-
-  。
+1. 通过 KeyValue 形式访问 `uniformTypeIdentifier` 属性，再判断是否等于 `kUTTypeGIF` 。
 
 ```swift
 extension PHAsset {
@@ -66,13 +64,7 @@ extension PHAsset {
 }
 ```
 
-1. 对应的
-
-  ，通过
-
-  或者
-
-  来判断是否为 GIF 。
+1. 获取 `PHAsset` 对应的 `PHAssetResource` ，通过 `uniformTypeIdentifier` 或者 `originalFilename` 来判断是否为 GIF 。
 
 通过 `originalFilename` 的文件后缀判断，文件后缀判断一个不好的地方是有 GIF 也有 gif ，可能是因为 iOS 13 beta 版的关系。
 
@@ -102,9 +94,7 @@ extension PHAsset {
 }
 ```
 
-1. 的元数据来判断，但是由于
-
-  获取的是整张原图的数据，消耗较大，不建议使用这个方法来判断是否为 GIF 。
+1. 通过获取 `PHAsset` 的元数据来判断，但是由于 `requestImageData(for:options:resultHandler:)` 获取的是整张原图的数据，消耗较大，不建议使用这个方法来判断是否为 GIF 。
 
 ```swift
 let requestOptions = PHImageRequestOptions()
@@ -124,12 +114,8 @@ PHImageManager.default().requestImageData(for: asset,
 性能测试： 在 iOS 13 beta 1 ，iPhone 8P 上进行 2000 次判断是否为 GIF ，得到的时间消耗如下（单位为 s ）：
 
 1. KeyValue 获取对应的属性进行比较 0.010032176971435547
-2. 的
-
-  的后缀判断 3.440941095352173
-3. 的
-
-  判断 3.4876623153686523
+2. `PHAssetResource` 的 `originalFilename` 的后缀判断 3.440941095352173
+3. `PHAssetResource` 的 `uniformTypeIdentifier` 判断 3.4876623153686523
 
 可以看到 `PHAssetResource` 的方法均消耗较大，所以采用第一种方法来判断是否为 GIF 。
 

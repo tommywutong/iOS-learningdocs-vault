@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-08-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7593807696b72840'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-02-28
 
-1. 1. 如何使用
-2. 2. 实现原理
+**文章目录**
 
-    1. 2.1. 通过 Block 创建函数模板
-    2. 2.2. 创建闭包，替换 Block 的 invoke
-    3. 2.3. 实现通用 Hook 函数
-    4. 2.4. 组装 NSInvocation 执行 Hook 逻辑
-3. 3. 总结
+1. [1. 如何使用](#如何使用)
+2. [2. 实现原理](#实现原理)
+
+    1. [2.1. 通过 Block 创建函数模板](#通过-Block-创建函数模板)
+    2. [2.2. 创建闭包，替换 Block 的 invoke](#创建闭包，替换-Block-的-invoke)
+    3. [2.3. 实现通用 Hook 函数](#实现通用-Hook-函数)
+    4. [2.4. 组装 NSInvocation 执行 Hook 逻辑](#组装-NSInvocation-执行-Hook-逻辑)
+3. [3. 总结](#总结)
 
 本文通过参照 `MABlockClosure` 的实现和 `Aspects` 的 API 设计，基于 libffi 实现了对 Objective-C Block 的 hook。GitHub 地址：[https://github.com/yulingtianxia/BlockHook](https://github.com/yulingtianxia/BlockHook)
 
 什么场景下需要 hook block 呢？在有源码的情况下，大部分程序员会选择直接在 block 中插代码。假如方法 A 的入参是个 block 对象，方法 A 将 block 传给方法 B,C…等。如果只有方法 A 的源码，上层传入的 block 和下层方法实现都是黑盒的话，想追踪 block 调用的时机，打印些 log，就得 hook 这个 block 对象了。
 
-## [#如何使用](#如何使用)如何使用
+## 如何使用
 
 虽然 Github 上已经给了例子，用过 Aspects 的人一看就懂，但为了凑篇幅，还是多 BB 几句吧。
 
@@ -117,34 +119,26 @@ block dead! token:<BHToken: 0x1d00f9900>
 
 因为需要动态定义和运行函数，用到了 libffi，所以还需要引入对应架构的静态库，自己去官网下个编译好，在工程中引入 libffi.a 和包含头文件的 include 文件夹就行。示例程序 BlockHookSample 使用的是 arm64 架构。具体做法是在 Build Settings 中的 Other Link Flags 加入 libffi.a 的路径，在 Header Search Paths 加入 include 文件夹路径。
 
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 先说下大致思路：
 
-1. 构建 block-\>invoke 函数的模板
-2. ，根据 cif 动态定义函数
-
-  ，并指定通用的实现函数为
-3. ，原始的 block-\>invoke 存放在
-4. 中动态调用
-
-  函数和执行 hook 的逻辑。
+1. 根据 block 对象的签名，使用 `ffi_prep_cif` 构建 block-\>invoke 函数的模板 `cif`
+2. 使用 `ffi_closure`，根据 cif 动态定义函数 `replacementInvoke`，并指定通用的实现函数为 `ClosureFunc`
+3. 将 block-\>invoke 替换为 `replacementInvoke`，原始的 block-\>invoke 存放在 `originInvoke`
+4. 在 `ClosureFunc` 中动态调用 `originInvoke` 函数和执行 hook 的逻辑。
 
 对 libffi 的介绍和用法有很多文章可以参考，这里不再赘述。
 
 再整理下代码设计思路：
 
-- : 它实现了 hook 的逻辑，存储了相关的上下文。是最主要的类。
-- : 提供 hook 的接口，每次 hook block 对象都会创建一个
-
-  ，并将其返回给用户。
-- 管理
-
-  对象的中心，以后可以拓展更多玩法。
+- `BHToken`: 它实现了 hook 的逻辑，存储了相关的上下文。是最主要的类。
+- `NSObject (BlockHook)`: 提供 hook 的接口，每次 hook block 对象都会创建一个 `BHToken`，并将其返回给用户。
+- `BHCenter` 管理 `BHToken` 对象的中心，以后可以拓展更多玩法。
 
 下面列举下 `BHToken` 中几个比较重要的逻辑。
 
-### [#通过-Block-创建函数模板](#通过-Block-创建函数模板)通过 Block 创建函数模板
+### 通过 Block 创建函数模板
 
 有关 Objective-C Block 内存模型这里不再赘述，Block ABI 可以在 [Clang 文档](https://clang.llvm.org/docs/Block-ABI-Apple.html) 查到。根据 block 的 flag 位掩码计算偏移拿到 Type Encoding 签名 signature。`BHBlockTypeEncodeString()` 函数实现了这些逻辑，代码不贴了。一个 block 的签名格式是：[返回值类型和偏移][@?0][参数0类型和偏移][参数1类型和偏移]…，比如 arm64 下 `int (^block)(int, int)` 的签名是 `i16@?0i8i12`。block 指针占 8 字节，参数和返回值 `int` 都是 4 字节。
 
@@ -168,7 +162,7 @@ block dead! token:<BHToken: 0x1d00f9900>
 }
 ```
 
-### [#创建闭包，替换-Block-的-invoke](#创建闭包，替换-Block-的-invoke)创建闭包，替换 Block 的 `invoke`
+### 创建闭包，替换 Block 的 `invoke`
 
 可以使用函数模板（`ffi_cif`）和一个函数指针（`replacementInvoke`）创建闭包(`ffi_closure`)。
 
@@ -203,7 +197,7 @@ _closure = ffi_closure_alloc(sizeof(ffi_closure), &_replacementInvoke);
 ((__bridge struct _BHBlock *)self.block)->invoke = _originInvoke;
 ```
 
-### [#实现通用-Hook-函数](#实现通用-Hook-函数)实现通用 Hook 函数
+### 实现通用 Hook 函数
 
 所有被 hook 的 block 调用时都会走到 `BHFFIClosureFunc` 这里，可以拿到 block-\>invoke 的函数模板，返回值指针，参数列表。还有自定义的 `userdata`，传入的是 `BHToken` 对象。
 
@@ -228,7 +222,7 @@ static void BHFFIClosureFunc(ffi_cif *cif, void *ret, void **args, void *userdat
 
 根据 Hook mode，会在不同的时机调用 `invokeHookBlockWithArgs:` 方法执行 hook 的逻辑。
 
-### [#组装-NSInvocation-执行-Hook-逻辑](#组装-NSInvocation-执行-Hook-逻辑)组装 `NSInvocation` 执行 Hook 逻辑
+### 组装 `NSInvocation` 执行 Hook 逻辑
 
 Hook 逻辑实现在 `self.hookBlock` 中，被 Hook 的 block 是 `self.block`，分别获取两者的签名，并拷贝后者的参数传给前者构造的 `blockInvocation`。这里要注意 `self.hookBlock` 的参数比 `self.block` 多一个 `token`，所以在二者参数比对和传递时需要特殊处理下。最后执行 `blockInvocation`，即调用了 `usingBlock:` 的参数。
 
@@ -279,7 +273,7 @@ Hook 逻辑实现在 `self.hookBlock` 中，被 Hook 的 block 是 `self.block`�
 
 因为用户传入的 `hookBlock` 签名是不确定的，所以需要针对参数数量判断临界条件。
 
-## [#总结](#总结)总结
+## 总结
 
 又是大水文一篇，总算是在月末憋出来了。因为只花了一天时间写代码，实在太仓促，肯定还有一堆 bug。目前不建议用到生产环境上，辅助 debug 还是可以的，以后会慢慢优化。也欢迎各位老铁们提 PR：[https://github.com/yulingtianxia/BlockHook/pulls](https://github.com/yulingtianxia/BlockHook/pulls)
 

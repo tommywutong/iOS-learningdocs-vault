@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-11-30
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4392c47ab63ffe01'
 translated: n/a
 ---
@@ -110,19 +110,9 @@ private lazy var session: URLSession = {
 
 下面代码展示了 `startLoad()` 方法是如何使用会话来启动数据任务，和使用 delegate 的回调方法来处理接收到的数据和错误。下面代码实现了三个 delegate 的回调方法：
 
-- urlSession(_:dataTask:didReceive:completionHandler:)
-
-  验证响应是否具有成功的 HTTP 状态代码，且 MIME 类型为 text/html 或 text/plain。如果这两种情况都不是，则取消任务，否则可以继续进行任务。
-- urlSession(_:dataTask:didReceive:)
-
-  处理任务接收到的每个数据对象，并将其添加
-
-  的缓冲区中。
-- urlSession(_:task:didCompleteWithError:)
-
-  首先查看是否发生了传输级的错误。如果没有错误，就尝试将
-
-  缓冲区转换为字符串并设置为 webView 的内容。
+- [urlSession(_:dataTask:didReceive:completionHandler:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1410027-urlsession) 验证响应是否具有成功的 HTTP 状态代码，且 MIME 类型为 text/html 或 text/plain。如果这两种情况都不是，则取消任务，否则可以继续进行任务。
+- [urlSession(_:dataTask:didReceive:)](https://developer.apple.com/documentation/foundation/urlsessiondatadelegate/1411528-urlsession) 处理任务接收到的每个数据对象，并将其添加 `receivedData` 的缓冲区中。
+- [urlSession(_:task:didCompleteWithError:)](https://developer.apple.com/documentation/foundation/urlsessiontaskdelegate/1411610-urlsession) 首先查看是否发生了传输级的错误。如果没有错误，就尝试将 `receivedData` 缓冲区转换为字符串并设置为 webView 的内容。
 
 ```swift
 var receivedData: Data?
@@ -180,15 +170,15 @@ func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithErro
 
 `NSURLSession` 有用于基本请求的单例 `sharedSession` （没有配置对象）。它不像你创建的会话那样可进行自定义，如果你的要求不多，可以尝试下使用它。也可以通过下面三种配置来进行初始化：
 
-1. 非常相似，但是允许你设置更多配置，并且可以通过 delegate 来增量获取数据。
-2. 的不同之处在于它不会将缓存，cookie或者认证凭证存储到硬盘中。
+1. default session ： 跟 `sharedSession` 非常相似，但是允许你设置更多配置，并且可以通过 delegate 来增量获取数据。
+2. ephemeral session ：临时会话，跟 `sharedSession` 的不同之处在于它不会将缓存，cookie或者认证凭证存储到硬盘中。
 3. Background session ：允许你在后台执行上传或者下载任务
 
 ### 任务类型
 
 在会话中，你创建的任务可以有选择地将数据上传到服务器，然后可以选择将接收到的数据转为文件存放到硬盘中还是转为 `NSData` 对象存放到内存中。 `NSURLSession` API 提供三种类型的任务：
 
-1. 对象来接收和发送数据。通常用于执行一些数据较小的，可与服务器进行交互的请求
+1. data task ：使用 `NSData` 对象来接收和发送数据。通常用于执行一些数据较小的，可与服务器进行交互的请求
 2. upload task ：跟 data task 类似，但是通常用于上传文件形式的数据，支持后台上传
 3. Download task ：以文件形式下载数据，支持后台下载
 
@@ -252,8 +242,8 @@ URL Loading System 会为你处理 HTTP 协议各个方面的配置（HTTP 1.1 �
 
 URL Loading System 会根据请求正文是否具有已知长度来判断是否需要设置 `Content-Length` ：
 
-- 设置为已知长度。你可以在设置请求正文为 data 对象时看到这种效果
-- 。将请求正文设置为流时会看到这种效果。
+- 如果已经知道长度，它就会使用身份传输编码并将 `Content-Length` 设置为已知长度。你可以在设置请求正文为 data 对象时看到这种效果
+- 如果不知道长度，则使用分块传输编码，并省略 `Content-Length` 。将请求正文设置为流时会看到这种效果。
 
 ## 上传数据到网站
 
@@ -617,28 +607,10 @@ self.downloadTask = downloadTask
 
 为了执行后台下载，需要使用 `background` 操作来配置 [NSURLSession](https://developer.apple.com/documentation/foundation/nsurlsession?language=objc) 。
 
-1. 的类方法
-
-  backgroundSessionConfigurationWithIdentifier:
-
-  创建一个后台
-
-  NSURLSessionConfiguration
-
-  对象，会话 ID 在 app 里是唯一的。但是大多数 app 只需要很少的后台会话（通常只有一个），你可以把会话 ID 写死。
-2. sessionSendsLaunchEvents
-
-  为
-
-  。
-3. discretionary
-
-  为
-
-  ，这样系统可以等待到最佳状态来执行传输，如等到设备充电或者连接到 Wi-Fi 。
-4. 对象来创建
-
-  对象。
+1. 通过 `NSURLSession` 的类方法 [backgroundSessionConfigurationWithIdentifier:](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration/1407496-backgroundsessionconfigurationwi?language=objc) 创建一个后台 [NSURLSessionConfiguration](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration?language=objc) 对象，会话 ID 在 app 里是唯一的。但是大多数 app 只需要很少的后台会话（通常只有一个），你可以把会话 ID 写死。
+2. 为了在任务完成时让系统唤醒你的 app，需要设置 [sessionSendsLaunchEvents](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration/1617174-sessionsendslaunchevents?language=objc) 为 `true` 。
+3. 对于一些不需要立即完成的任务，可以设置 [discretionary](https://developer.apple.com/documentation/foundation/nsurlsessionconfiguration/1411552-discretionary?language=objc) 为 `true` ，这样系统可以等待到最佳状态来执行传输，如等到设备充电或者连接到 Wi-Fi 。
+4. 使用 `NSURLSessionConfiguration` 对象来创建 `NSURLSession` 对象。
 
 ```swift
 private lazy var urlSession: URLSession = {
@@ -653,20 +625,10 @@ private lazy var urlSession: URLSession = {
 
 你可以通过 [downloadTaskWithURL:](https://developer.apple.com/documentation/foundation/nsurlsession/1411482-downloadtaskwithurl?language=objc) 或者 [downloadTaskWithRequest:](https://developer.apple.com/documentation/foundation/nsurlsession/1411481-downloadtaskwithrequest?language=objc) 方法来创建下载任务。
 
-1. 来创建下载任务。
-2. earliestBeginDate
-
-  来在未来某个时间启动下载任务。设置了之后，下载任务并不是一定会在这个时间启动，只是不会早于这个时间。
-3. countOfBytesClientExpectsToSend
-
-  和
-
-  countOfBytesClientExpectsToReceive
-
-  属性。通过设置这些属性，可以设置请求的字节数的上限。
-4. resume
-
-  来启动任务。
+1. 使用 `downloadTaskWithURL:` 来创建下载任务。
+2. 也可以通过设置 [earliestBeginDate](https://developer.apple.com/documentation/foundation/nsurlsessiontask/2873413-earliestbegindate?language=objc) 来在未来某个时间启动下载任务。设置了之后，下载任务并不是一定会在这个时间启动，只是不会早于这个时间。
+3. 为了使得系统的网络调度更有效率，可以设置 [countOfBytesClientExpectsToSend](https://developer.apple.com/documentation/foundation/nsurlsessiontask/2873401-countofbytesclientexpectstosend?language=objc) 和 [countOfBytesClientExpectsToReceive](https://developer.apple.com/documentation/foundation/nsurlsessiontask/2873414-countofbytesclientexpectstorecei?language=objc) 属性。通过设置这些属性，可以设置请求的字节数的上限。
+4. 调用 [resume](https://developer.apple.com/documentation/foundation/nsurlsessiontask/1411121-resume?language=objc) 来启动任务。
 
 ```swift
 let backgroundTask = urlSession.downloadTask(with: url)
@@ -717,9 +679,7 @@ func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
 
 - 必须要提供 delegate 给会话来传递事件。
 - 只支持 HTTP 和 HTTPS 协议（不支持自定义协议）。
-- URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:
-
-  方法，也不会进行调用。
+- 始终遵循重定向。即使你引入 [URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:](https://developer.apple.com/documentation/foundation/nsurlsessiontaskdelegate/1411626-urlsession?language=objc) 方法，也不会进行调用。
 - 只支持文件的上传任务（data 对象的上传或者流会在 app 退出时失败）。
 
 ### 高效地使用后台会话
@@ -746,11 +706,7 @@ func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
 
 - 可以直接使用提供的 CachedURLResponse 对象进行缓存；
 - nil ，不进行缓存；
-- storagePolicy
-
-  和
-
-  userInfo
+- 重新创建一个 CachedURLResponse 对象，结合提供的 CachedURLResponse 对象，同时也可以指定 [storagePolicy](https://developer.apple.com/documentation/foundation/nscachedurlresponse/1412269-storagepolicy?language=objc) 和 [userInfo](https://developer.apple.com/documentation/foundation/nscachedurlresponse/1411900-userinfo?language=objc)
 
 ```swift
 func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
@@ -776,22 +732,8 @@ func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
 
 接入 delegate 两个或者其中一个验证方法，取决于你接收到的验证要求的性质。
 
-- NSURLSessionDelegate
-
-  的
-
-  URLSession:didReceiveChallenge:completionHandler:
-
-  的方法来处理会话层级的验证要求。它跟 TLS 验证类似。一旦你成功处理这些验证要求，就会影响到所有通过这个会话
-
-  NSURLSession
-
-  创建的任务
-- NSURLSessionTaskDelegate
-
-  URLSession:task:didReceiveChallenge:completionHandler:
-
-  的方法来处理任务特定的验证要求。这些要求跟输入用户名/密码验证类似。每个会话都有可能需要进行验证请求。
+- 接入 [NSURLSessionDelegate](https://developer.apple.com/documentation/foundation/nsurlsessiondelegate?language=objc) 的 [URLSession:didReceiveChallenge:completionHandler:](https://developer.apple.com/documentation/foundation/nsurlsessiondelegate/1409308-urlsession?language=objc) 的方法来处理会话层级的验证要求。它跟 TLS 验证类似。一旦你成功处理这些验证要求，就会影响到所有通过这个会话 [NSURLSession](https://developer.apple.com/documentation/foundation/nsurlsession?language=objc) 创建的任务
+- 接入 [NSURLSessionTaskDelegate](https://developer.apple.com/documentation/foundation/nsurlsessiontaskdelegate?language=objc)[URLSession:task:didReceiveChallenge:completionHandler:](https://developer.apple.com/documentation/foundation/nsurlsessiontaskdelegate/1411595-urlsession?language=objc) 的方法来处理任务特定的验证要求。这些要求跟输入用户名/密码验证类似。每个会话都有可能需要进行验证请求。
 
 > [NSURLProtectionSpace Authentication Method Constants](https://developer.apple.com/documentation/foundation/nsurlprotectionspace/nsurlprotectionspace_authentication_method_constants?language=objc) 中有说明用于会话或者任务认证的方法。
 
@@ -807,11 +749,7 @@ func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
 
 你可以通过调用传递过来的 completion handler 来响应认证挑战。你需要传递一个 [NSURLSessionAuthChallengeDisposition](https://developer.apple.com/documentation/foundation/nsurlsessionauthchallengedisposition?language=objc) 参数来表示你如何处理这个认证挑战的。你可以使用这个 disposition 参数来提供证书，取消请求或者进行默认的处理方式。
 
-- 下面代码展示了如何根据
-
-  来处理认证挑战，如果是
-
-  ，就使用默认的处理方法。
+- 下面代码展示了如何根据 `authMethod` 来处理认证挑战，如果是 `NSURLAuthenticationMethodHTTPBasic` ，就使用默认的处理方法。
 
 ```swift
 let authMethod = challenge.protectionSpace.authenticationMethod
@@ -842,12 +780,8 @@ func credentialsFromUI() -> URLCredential? {
 
 一旦你创建了证书对象，你需要调用 completion handler 来响应挑战。
 
-- NSURLSessionAuthChallengeCancelAuthenticationChallenge
-
-  参数。
-- NSURLSessionAuthChallengeUseCredential
-
-  参数。
+- 如果你无法创建证书，或者用户明确地取消了，调用 completion handler 和传递 [NSURLSessionAuthChallengeCancelAuthenticationChallenge](https://developer.apple.com/documentation/foundation/nsurlsessionauthchallengedisposition/nsurlsessionauthchallengecancelauthenticationchallenge?language=objc) 参数。
+- 如果你创建了证书对象，调用 completion handler 和传递 [NSURLSessionAuthChallengeUseCredential](https://developer.apple.com/documentation/foundation/nsurlsessionauthchallengedisposition/nsurlsessionauthchallengeusecredential?language=objc) 参数。
 
 ```swift
 guard let credential = credentialOrNil else {

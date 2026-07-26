@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f4e6671f904fa279'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年3月15日
 
-## [#ARC-or-not？](#ARC-or-not？)ARC or not？
+## ARC or not？
 
 `Automatic Reference Counting`是objc发展以来相当重要的一个进步
 

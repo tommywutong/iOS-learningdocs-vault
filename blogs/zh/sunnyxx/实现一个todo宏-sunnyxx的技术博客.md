@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-03-01
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4e36c34447718a05'
 translated: n/a
 ---
@@ -27,7 +27,7 @@ translated: n/a
 
 ---
 
-# [#Let’s-do-it](#Let’s-do-it)Let’s do it
+# Let’s do it
 
 手动让编译器报警（报错）可以用以下几个方法：
 
@@ -83,21 +83,9 @@ int main() {
 其中涉及到的知识：
 
 - 两个常量字符串可以拼接成一个整串 “123””456” =\> “123456”
-- ，
-
-  宏展开次数的计数器，全局唯一；
-
-  当前文件完整目录字符串；
-
-  在当前文件第几行
-- 应延时展开，如果将上面的
-
-  换成
-
-  的话，如
-
-  就不能被正确展开成行数，而是成了一个常量字符串
-- 换行
+- 使用到3个**预定义宏**，`__COUNTER__`宏展开次数的计数器，全局唯一；`__FILE__`当前文件完整目录字符串；`__LINE__`在当前文件第几行
+- 在字符串中**预定义宏**应延时展开，如果将上面的`DEFER_STRINGIFY`换成`STRINGIFY`的话，如`__LINE__`就不能被正确展开成行数，而是成了一个常量字符串`"__LINE__"`
+- 为了美化，warning message中可以使用`\n`换行
 
 于是，使用`FORMATTED_MESSAGE(MSG)`宏就可以将带文件路径、序号、行数等信息加入到最终的warning中。
 
@@ -113,7 +101,7 @@ int main() {
 
 ---
 
-# [#最终版本](#最终版本)最终版本
+# 最终版本
 
 ```objc
 #define STRINGIFY(S) #S
@@ -128,7 +116,7 @@ DEFER_STRINGIFY(__FILE__) " line " DEFER_STRINGIFY(__LINE__)
 
 ---
 
-# [#What’s-more](#What’s-more)What’s more
+# What’s more
 
 除此之外，还研究了半天如何在宏里面定义一个注释，这样就可以偷偷写`// TODO: ...`的注释，让Xcode导航栏中也出现这个TODO了：  
 ![](http://ww4.sinaimg.cn/large/51530583jw1eprhben4m9j20by02oglq.jpg)  
@@ -139,7 +127,7 @@ Xcode插件[《XTodo》](https://github.com/trawor/XToDo)也是利用这个特�
 
 同时，上面的代码在[《github上》](https://github.com/sunnyxx/TodoMacro)可以找到。也欢迎关注微博[@我就叫Sunny怎么了](http://weibo.com/u/1364395395)一起交流。
 
-# [#References](#References)References
+# References
 
 [http://clang.llvm.org/docs/UsersManual.html](http://clang.llvm.org/docs/UsersManual.html)  
 [https://gcc.gnu.org/onlinedocs/cpp/Pragmas.html](https://gcc.gnu.org/onlinedocs/cpp/Pragmas.html)

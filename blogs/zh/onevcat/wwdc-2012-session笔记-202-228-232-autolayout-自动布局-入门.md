@@ -151,9 +151,15 @@ viewsDictionary = NSDictionaryOfVariableBindings(cancelButton,acceptButton);
 
 在view名字后面添加括号以及连接处的数字可以赋予表达式更多意义，以下进行一些举例：
 
--   - 取消按钮宽72point，accept按钮宽50point，它们之间间距12point
--   - wideView宽度大于等于60point，该约束条件优先级为700（优先级最大值为1000，优先级越高的约束越先被满足）
--   - 竖直布局，先是一个redBox，其下方紧接一个宽度等于redBox宽度的yellowBox
+- [cancelButton(72)]-12-[acceptButton(50)]
+
+    - 取消按钮宽72point，accept按钮宽50point，它们之间间距12point
+- [wideView(\>=60@700)]
+
+    - wideView宽度大于等于60point，该约束条件优先级为700（优先级最大值为1000，优先级越高的约束越先被满足）
+- V:[redBox][yellowBox(==redBox)]
+
+    - 竖直布局，先是一个redBox，其下方紧接一个宽度等于redBox宽度的yellowBox
 - H:
 
   -[Find]-[FindNext]-[FindField(\>=20)]-
@@ -180,7 +186,9 @@ viewsDictionary = NSDictionaryOfVariableBindings(cancelButton,acceptButton);
 来检查是否存在Ambiguous Layout以及存在的位置，来帮助添加条件。另外还有一些检查方法，来查看view的约束和约束状态：
 
 - [view constraintsAffectingLayoutForOrientation/Axis: NSLayoutConstraintOrientationHorizontal/Vertical]
--   - [view exerciseAmbiguityInLayout]
+- [view hasAmbiguousLayout]
+
+    - [view exerciseAmbiguityInLayout]
 
 > 2013年9月1日作者更新：在iOS7和Xcode5中，IB在添加和检查Autolayout约束方面有了长足的进步。现在使用IB可以比较容易地完成复杂约束，而得益于新的IB的约束检查机制，我们也很少再会遇到遗漏或者多余约束情况的出现（有问题的约束条件将直接在IB中得到错误或者警告）。但是对于确实很奇葩的约束条件有可能使用IB无法达成，这时候还是有可能需要代码补充的。
 

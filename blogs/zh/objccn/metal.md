@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:eb7271edc93c430e'
 translated: n/a
 ---
@@ -328,9 +328,9 @@ OS X 上支持 Metal 也是迟早的事。API 本身并不局限于 iPhone 和 i
 
 ## 资源
 
-- Metal Programming Guide
-- Metal Shading Language Guide
-- Metal by Example
+- [Metal Programming Guide](https://developer.apple.com/Library/ios/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Introduction/Introduction.html)
+- [Metal Shading Language Guide](https://developer.apple.com/library/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html)
+- [Metal by Example](http://metalbyexample.com)
 
 ---
 

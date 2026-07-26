@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-05
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ca57a1f9de460486'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年3月5日
 
-## [#category的真面目](#category的真面目)category的真面目
+## category的真面目
 
 objc所有类和对象都是c结构体，category当然也一样，下面是`runtime`中category的结构：
 
@@ -33,26 +33,14 @@ struct _category_t {
 };
 ```
 
-1. 注意，并不是category小括号里写的名字，而是类的名字
-2. 要扩展的类对象，编译期间这个值是不会有的，在app被runtime加载时才会根据
+1. `name`注意，并不是category小括号里写的名字，而是类的名字
+2. `cls`要扩展的类对象，编译期间这个值是不会有的，在app被runtime加载时才会根据`name`对应到类对象
+3. `instance_methods`这个category所有的`-`方法
+4. `class_methods`这个category所有的`+`方法
+5. `protocols`这个category实现的protocol，比较不常用在category里面实现协议，但是确实支持的
+6. `properties`这个category所有的property，这也是category里面可以定义属性的原因，不过这个property不会`@synthesize`实例变量，一般有需求添加实例变量属性时会采用`objc_setAssociatedObject`和`objc_getAssociatedObject`方法绑定方法绑定，不过这种方法生成的与一个普通的实例变量完全是两码事。
 
-  对应到类对象
-3. 这个category所有的
-
-  方法
-4. 这个category所有的
-
-  方法
-5. 这个category实现的protocol，比较不常用在category里面实现协议，但是确实支持的
-6. 这个category所有的property，这也是category里面可以定义属性的原因，不过这个property不会
-
-  实例变量，一般有需求添加实例变量属性时会采用
-
-  和
-
-  方法绑定方法绑定，不过这种方法生成的与一个普通的实例变量完全是两码事。
-
-### [#编译器，你对category干了什么？](#编译器，你对category干了什么？)编译器，你对category干了什么？
+### 编译器，你对category干了什么？
 
 举个栗子看，定义下面一个类和它的category，实现忽略，保存为`sark.h`和`sark.m`  
 1  
@@ -111,29 +99,19 @@ static struct _category_t *L_OBJC_LABEL_CATEGORY_$ [1] __attribute__((used, sect
 
 至此编译器的任务完成了。
 
-### [#runtime，我的category哪儿去了？](#runtime，我的category哪儿去了？)runtime，我的category哪儿去了？
+### runtime，我的category哪儿去了？
 
 我们知道，category动态扩展了原来类的方法，在调用者看来好像原来类本来就有这些方法似的，有两个事实：
 
-1. ，都可以成功调用category的方法，都影响不到category的加载流程，import只是帮助了编译检查和链接过程
-2. 在
-
-  将不会存在
+1. 不论有没有import category 的`.h`，都可以成功调用category的方法，都影响不到category的加载流程，import只是帮助了编译检查和链接过程
+2. runtime加载完成后，category的**原始信息**在**类结构里**将不会存在
 
 这需要探究下**runtime对category的加载过程**，这里就简单说一下
 
-1. 的方法，在library加载前由libSystem dyld调用，进行初始化操作
-2. 方法将文件中的
-
-  map到内存
-3. 方法初始化map后的
-
-  ，这里面干了很多的事情，像load所有的类、协议和
-
-  ，著名的
-
-  方法就是这一步调用的
-4. 方法，这个方法拿出来看看：
+1. objc runtime的加载入口是一个叫`_objc_init`的方法，在library加载前由libSystem dyld调用，进行初始化操作
+2. 调用`map_images`方法将文件中的`image`map到内存
+3. 调用`_read_images`方法初始化map后的`image`，这里面干了很多的事情，像load所有的类、协议和**category**，著名的`+ load`方法就是这一步调用的
+4. 仔细看category的初始化，循环调用了`_getObjc2CategoryList`方法，这个方法拿出来看看：
 5. …
 
 ```objc

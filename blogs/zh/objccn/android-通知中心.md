@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a54ea456d7474685'
 translated: n/a
 ---
@@ -306,9 +306,9 @@ Android 提供了给用户和开发者不少通知方面的功能。从一开始
 
 #### 参考
 
-- Android 简史
-- Android 通知文档
-- 为 Android 穿戴设备创建通知
+- [Android 简史](http://www.theverge.com/2011/12/7/2585779/android-history)
+- [Android 通知文档](http://developer.android.com/guide/topics/ui/notifiers/notifications.html)
+- [为 Android 穿戴设备创建通知](http://developer.android.com/wear/notifications/creating.html)
 
 ---
 

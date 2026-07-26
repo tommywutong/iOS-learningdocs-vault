@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-11-06
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d0c597ca679fcaf6'
 translated: n/a
 ---
@@ -25,7 +25,7 @@ translated: n/a
 3. 答案在本页末尾给出，有同学针对这几道题写了讲解，所以就一笔带过了
 4. 分享的具体内容争取找个时间写个blog总结下
 
-# [#神经病院objc-runtime入院考试](#神经病院objc-runtime入院考试)神经病院objc runtime入院考试
+# 神经病院objc runtime入院考试
 
 (1) 下面的代码输出什么？
 
@@ -88,7 +88,7 @@ BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
 @end
 ```
 
-# [#答案](#答案)答案
+# 答案
 
 (1) Son / Son 因为super为编译器标示符，向super发送的消息被编译成`objc_msgSendSuper`，但仍以self作为reveiver  
 (2) YES / NO / NO / NO `<NSObject>`协议有一套类方法的隐藏实现，所以编译运行正常；由于NSObject meta class的父类为NSObject class，所以只有第一句为YES  

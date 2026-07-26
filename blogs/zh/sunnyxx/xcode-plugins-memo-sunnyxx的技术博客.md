@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-14
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2b44e151f4d61ed7'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年3月14日
 
-## [#FuzzyAutocomplete](#FuzzyAutocomplete)FuzzyAutocomplete
+## FuzzyAutocomplete
 
 github：[https://github.com/chendo/FuzzyAutocompletePlugin](https://github.com/chendo/FuzzyAutocompletePlugin)  
 ![FuzzyAutocomplete](https://raw.github.com/chendo/FuzzyAutocompletePlugin/master/demo.gif)
@@ -27,7 +27,7 @@ github：[https://github.com/chendo/FuzzyAutocompletePlugin](https://github.com/
 注意：使用的时候有个输入字母字数小于3就输入不了的bug。  
 效率必备。
 
-## [#KSImageNamed](#KSImageNamed)KSImageNamed
+## KSImageNamed
 
 github: [https://github.com/ksuther/KSImageNamed-Xcode](https://github.com/ksuther/KSImageNamed-Xcode)  
 ![KSImageNamed](https://raw.github.com/ksuther/KSImageNamed-Xcode/master/screenshot.gif)  
@@ -35,7 +35,7 @@ github: [https://github.com/ksuther/KSImageNamed-Xcode](https://github.com/ksuth
 注意：项目中图片文件数量很多的时候，安装这个插件导致xcode运行明显缓慢，不知道现在版本是否已经修改了这个bug  
 手写UI的尤其适用，我等sb党用的少点。
 
-## [#HOStringSense](#HOStringSense)HOStringSense
+## HOStringSense
 
 github: [https://github.com/holtwick/HOStringSense-for-Xcode](https://github.com/holtwick/HOStringSense-for-Xcode)  
 ![HOStringSense](https://github.com/holtwick/HOStringSense-for-Xcode/raw/master/StringDemoAnimation.gif)  

@@ -103,14 +103,18 @@ Shader "Custom/Diffuse Texture" {
 
 - _Name - 属性的名字，简单说就是变量名，在之后整个Shader代码中将使用这个名字来获取该属性的内容
 - Display Name - 这个字符串将显示在Unity的材质编辑器中作为Shader的使用者可读的内容
--   - Color - 一种颜色，由RGBA（红绿蓝和透明度）四个量来定义；
+- type - 这个属性的类型，可能的type所表示的内容有以下几种：
+
+    - Color - 一种颜色，由RGBA（红绿蓝和透明度）四个量来定义；
     - 2D - 一张2的阶数大小（256，512之类）的贴图。这张贴图将在采样后被转为对应基于模型UV的每个像素的颜色，最终被显示出来；
     - Rect - 一个非2阶数大小的贴图；
     - Cube - 即Cube map texture（立方体纹理），简单说就是6张有联系的2D贴图的组合，主要用来做反射效果（比如天空盒和动态反射），也会被转换为对应点的采样；
     - Range(min, max) - 一个介于最小值和最大值之间的浮点数，一般用来当作调整Shader某些特性的参数（比如透明度渲染的截止值可以是从0至1的值等）；
     - Float - 任意一个浮点数；
     - Vector - 一个四维数；
--   - Color - 以0～1定义的rgba颜色，比如(1,1,1,1)；
+- defaultValue 定义了这个属性的默认值，通过输入一个符合格式的默认值来指定对应属性的初始值（某些效果可能需要某些特定的参数值来达到需要的效果，虽然这些值可以在之后在进行调整，但是如果默认就指定为想要的值的话就省去了一个个调整的时间，方便很多）。
+
+    - Color - 以0～1定义的rgba颜色，比如(1,1,1,1)；
     - 2D/Rect/Cube - 对于贴图来说，默认值可以为一个代表默认tint颜色的字符串，可以是空字符串或者”white”,”black”,”gray”,”bump”中的一个
     - Float，Range - 某个指定的浮点数
     - Vector - 一个4维数，写为 (x,y,z,w)
@@ -139,9 +143,7 @@ _Texture ("Texture", 2D) = "white" {}
 
 - Background - 最早被调用的渲染，用来渲染天空盒或者背景
 - Geometry - 这是默认值，用来渲染非透明物体（普通情况下，场景中的绝大多数物体应该是非透明的）
-- Alpha Test
-
-  的像素，单独为AlphaTest设定一个Queue是出于对效率的考虑
+- AlphaTest - 用来渲染经过[Alpha Test](http://docs.unity3d.com/Documentation/Components/SL-AlphaTest.html)的像素，单独为AlphaTest设定一个Queue是出于对效率的考虑
 - Transparent - 以从后往前的顺序渲染透明物体
 - Overlay - 用来渲染叠加的效果，是渲染的最后阶段（比如镜头光晕等特效）
 

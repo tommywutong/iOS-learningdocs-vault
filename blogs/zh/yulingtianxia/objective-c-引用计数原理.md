@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:00659e552ea3c96d'
 translated: n/a
 ---
@@ -20,30 +20,32 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2015-12-06
 
-1. 1. 引用计数如何存储
+**文章目录**
 
-    1. 1.1. TaggedPointer
-    2. 1.2. isa 指针（NONPOINTER_ISA）
-    3. 1.3. 散列表
-2. 2. 获取引用计数
-3. 3. 修改引用计数
+1. [1. 引用计数如何存储](#引用计数如何存储)
 
-    1. 3.1. retain 和 release
-    2. 3.2. alloc, new, copy, mutableCopy
-    3. 3.3. autorelease
-4. 4. Reference
+    1. [1.1. TaggedPointer](#TaggedPointer)
+    2. [1.2. isa 指针（NONPOINTER_ISA）](#isa-指针（NONPOINTER-ISA）)
+    3. [1.3. 散列表](#散列表)
+2. [2. 获取引用计数](#获取引用计数)
+3. [3. 修改引用计数](#修改引用计数)
+
+    1. [3.1. retain 和 release](#retain-和-release)
+    2. [3.2. alloc, new, copy, mutableCopy](#alloc-new-copy-mutableCopy)
+    3. [3.3. autorelease](#autorelease)
+4. [4. Reference](#Reference)
 
 - 本文所使用的源码为 objc4-647 和 CF-1153.18
 - 实际上这是我本周实习周报的一部分，写的比较仓促，如有差错还请多多指正。
 - 不讲用法，只说原理。
 
-# [#引用计数如何存储](#引用计数如何存储)引用计数如何存储
+# 引用计数如何存储
 
 有些对象如果支持使用 TaggedPointer，苹果会直接将其指针值作为引用计数返回；如果当前设备是 64 位环境并且使用 Objective-C 2.0，那么“一些”对象会使用其 `isa` 指针的一部分空间来存储它的引用计数；否则 Runtime 会使用一张散列表来管理引用计数。
 
 其实还有一种情况会改变引用计数的存储策略，那就是是否使用垃圾回收（用`UseGC`属性判断），但这种早已弃用的东西就不要管了，而且初始化垃圾回收机制的 `void gc_init(BOOL wantsGC)` 方法一直被传入 `NO`。
 
-## [#TaggedPointer](#TaggedPointer)TaggedPointer
+## TaggedPointer
 
 判断当前对象是否在使用 TaggedPointer 是看标志位是否为 1 ：
 
@@ -66,7 +68,7 @@ objc_object::isTaggedPointer()
 
 `id` 其实就是 `objc_object *` 的简写（`typedef struct objc_object *id;`），它的 `isTaggedPointer()` 方法经常会在操作引用计数时用到，因为这决定了存储引用计数的策略。
 
-## [#isa-指针（NONPOINTER-ISA）](#isa-指针（NONPOINTER-ISA）)isa 指针（NONPOINTER_ISA）
+## isa 指针（NONPOINTER_ISA）
 
 用 64 bit 存储一个内存地址显然是种浪费，毕竟很少有那么大内存的设备。于是可以优化存储方案，用一部分额外空间存储其他内容。`isa` 指针第一位为 1 即表示使用优化的 `isa` 指针，这里列出不同架构下的 64 位环境中 `isa` 指针结构：
 
@@ -153,7 +155,7 @@ union isa_t
 
 在 64 位环境下，优化的 `isa` 指针并不是就一定会存储引用计数，毕竟用 19bit （iOS 系统）保存引用计数不一定够。需要注意的是这 19 位保存的是**引用计数的值减一**。`has_sidetable_rc` 的值如果为 1，那么引用计数会存储在一个叫 `SideTable` 的类的属性中，后面会详细讲。
 
-## [#散列表](#散列表)散列表
+## 散列表
 
 散列表来存储引用计数具体是用 `DenseMap` 类来实现，这个类中包含好多映射实例到其引用计数的键值对，并支持用 `DenseMapIterator` 迭代器快速查找遍历这些键值对。接着说键值对的格式：键的类型为 `DisguisedPtr<objc_object>`，`DisguisedPtr` 类是对 `objc_object *` 指针及其一些操作进行的封装，目的就是为了让它给人看起来不会有内存泄露的样子（真是心机裱），其内容可以理解为对象的内存地址；值的类型为 `__darwin_size_t`，在 darwin 内核一般等同于 `unsigned long`。其实这里保存的值也是等于**引用计数减一**。使用散列表保存引用计数的设计很好，即使出现故障导致对象的内存块损坏，只要引用计数表没有被破坏，依然可以顺藤摸瓜找到内存块的位置。
 
@@ -225,7 +227,7 @@ struct weak_table_t {
 
 苹果使用一个全局的 `weak` 表来保存所有的 `weak` 引用。并将对象作为键，`weak_entry_t` 作为值。`weak_entry_t` 中保存了所有指向该对象的 `weak` 指针。
 
-# [#获取引用计数](#获取引用计数)获取引用计数
+# 获取引用计数
 
 在非 ARC 环境可以使用 `retainCount` 方法获取某个对象的引用计数，其会调用 `objc_object` 的 `rootRetainCount()` 方法：
 
@@ -312,9 +314,9 @@ typedef objc::DenseMap<DisguisedPtr<objc_object>,size_t,true> RefcountMap;
 
 当然不能够完全信任这个 `_objc_rootRetainCount(id obj)` 函数，对于已释放的对象以及不正确的对象地址，有时也返回 “1”。它所返回的引用计数只是某个给定时间点上的值，该方法并未考虑到系统稍后会把自动释放吃池清空，因而不会将后续的释放操作从返回值里减去。clang 会尽可能把 `NSString` 实现成单例对象，其引用计数会很大。如果使用了 TaggedPointer，`NSNumber` 的内容**有可能**就不再放到堆中，而是直接写在宽敞的64位栈指针值里。其看上去和真正的 `NSNumber` 对象一样，只是使用 TaggedPointer 优化了下，但其引用计数可能不准确。
 
-# [#修改引用计数](#修改引用计数)修改引用计数
+# 修改引用计数
 
-## [#retain-和-release](#retain-和-release)retain 和 release
+## retain 和 release
 
 在非 ARC 环境下可以使用 `retain` 和 `release` 方法对引用计数进行加一减一操作，它们分别调用了 `_objc_rootRetain(id obj)` 和 `_objc_rootRelease(id obj)` 函数，不过后两者在 ARC 环境下也可使用。最后这两个函数又会调用 `objc_object` 的下面两个方法：
 
@@ -407,7 +409,7 @@ NS_INLINE id __nullable CFBridgingRelease(CFTypeRef CF_CONSUMED __nullable X) {
 }
 ```
 
-## [#alloc-new-copy-mutableCopy](#alloc-new-copy-mutableCopy)alloc, new, copy, mutableCopy
+## alloc, new, copy, mutableCopy
 
 根据编译器的约定，这以这四个单词开头的方法都会使引用计数加一。而 `new` 相当于调用 `alloc` 后再调用 `init`：
 
@@ -439,13 +441,13 @@ calloc()
 
 在 `retain` 方法加符号断点会发现 `alloc`, `new`, `copy`, `mutableCopy` 这四个方法都会通过 Core Foundation 的 `CFBasicHashAddValue()` 函数来调用 `retain` 方法。其实 CF 有个修改和查看引用计数的入口函数 `__CFDoExternRefOperation`，在 `CFRuntime.c` 文件中实现。
 
-## [#autorelease](#autorelease)autorelease
+## autorelease
 
 本想贴上一堆 Runtime 中关于自动释放池的源码然后说上一大堆，然后发现了太阳神的这篇[黑幕背后的Autorelease](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/)把我想说的都说了，把我不知道的也说了，简直太屌了。
 
 其实通过看源码可以知道好多细节，没事点进去各种宏定义往往会得到惊喜：哇，原来是这么回事，XX 就是 XX 之类。。。
 
-# [#Reference](#Reference)Reference
+# Reference
 
 [http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html](http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html)
 

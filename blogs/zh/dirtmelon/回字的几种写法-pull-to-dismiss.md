@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-07-13
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:079ccd69d31f3efc'
 translated: n/a
 ---
@@ -138,12 +138,12 @@ func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> B
 
 优点：
 
-1. ；
+1. 不需要继承 `UITableView` ；
 2. 不需要处理较多的边界情况
 
 缺点：
 
-1. 的滑动手势跟触发 dismiss 的手势不是连续的，滚动到顶部时，需要松开后然后再次向上滑动；
+1. 用户对 `UITableView` 的滑动手势跟触发 dismiss 的手势不是连续的，滚动到顶部时，需要松开后然后再次向上滑动；
 
 ## 继承 UITableView
 

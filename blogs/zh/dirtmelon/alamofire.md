@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-06-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:75014b3c70a1eb02'
 translated: n/a
 ---
@@ -99,11 +99,9 @@ public let AF = Session.default
 		-- Validation.swift
 ```
 
-1. 里面包含的是网络请求过程中必须要调用的部分；
-2. 为系统的一些类添加了便捷方法；
-3. 则是
-
-  提供的一些特定功能，如缓存策略，重试策略，请求结果的处理等；
+1. `Core` 里面包含的是网络请求过程中必须要调用的部分；
+2. `Extensions` 为系统的一些类添加了便捷方法；
+3. `Features` 则是 `Alamofire` 提供的一些特定功能，如缓存策略，重试策略，请求结果的处理等；
 
 ## 基础解析
 
@@ -148,14 +146,8 @@ extension Error {
 
 这里使用了 `@autoclosure` 来声明对应的 `Closure` 。
 
-1. 其实是个
-
-  ，那么我们就不需要获取
-
-  ，也不需要执行对应的代码，所以这里使用了闭包来传参。
-2. 进行声明，这样调用方在调用的时候不需要加上
-
-  ，看起来跟普通的参数一样：
+1. 使用闭包是为了利用其延迟执行的特性，如果 `Error` 其实是个 `AFError` ，那么我们就不需要获取 `defaultAFError` ，也不需要执行对应的代码，所以这里使用了闭包来传参。
+2. 使用 `@autoclosure` 进行声明，这样调用方在调用的时候不需要加上 `{}` ，看起来跟普通的参数一样：
 
 ```swift
 error.asAFError(or: .responseSerializationFailed(reason: .customSerializationFailed(error: error)))
@@ -367,29 +359,11 @@ open func encode<Parameters: Encodable>(_ parameters: Parameters?,
 }
 ```
 
-1. 是否有
-
-  ，如果没有则报
-
-  错误；
-2. 是否有指定
-
-  ，如果没有则报
-
-  错误；
-3. 中；
-4. 用于转换
-
-  为
-
-  时的
-
-  ，
-
-  可以获取
-
-  ；
-5. 。
+1. 判断 `request` 是否有 `url` ，如果没有则报 `AFError.parameterEncoderFailed(reason: .missingRequiredComponent(.httpMethod(rawValue: rawValue)))` 错误；
+2. 判断 `request` 是否有指定 `method` ，如果没有则报 `AFError.parameterEncoderFailed(reason: .missingRequiredComponent(.httpMethod(rawValue: rawValue)))` 错误；
+3. 根据参数编码类型判断是否追加到 `url` 中；
+4. `mapError` 用于转换 `Result` 为 `failure` 时的 `error` ，`get()` 可以获取 `success value` ；
+5. 参数编码后设置为 `httpBody` 。
 
 ### ParameterEncoding
 
@@ -1149,68 +1123,12 @@ let possibleObject = possibleData.tryMapError {
 
 当创建一个 `Request` 的子类后， Alamofire 会进行一系列的操作来完成这个请求。一个成功的请求包括以下流程：
 
-1. 值中，用于初始化
-
-  ；
-2. 的
-
-  方法来创建第一个
-
-  。
-
-  会存储到
-
-  的
-
-  属性中。如果有定义
-
-  ， 在生成
-
-  会进行调用来调整
-
-  ；
-3. 或者
-
-  有提供
-
-  或者
-
-  ，则会对之前生成的
-
-  进行调整，同时也会存储到
-
-  的
-
-  属性中；
-4. 调用
-
-  的方法来生成对应的
-
-  ，不同的
-
-  子类 会生成不同的
-
-  ；
-5. 完成任务，且已经收集到
-
-  ，
-
-  就会执行自己的
-
-  来验证请求结果是否正确；
-6. 就会执行
-
-  来处理请求结果。在上面这些步骤中，每个步骤都有可能产生错误或者接收到网络返回的错误结果，这些错误会传递给对应的
-
-  。在处理结果时会判断是否需要重试。 当
-
-  传递给
-
-  后，
-
-  会调用对应的
-
-  来判断是否需要进行重试，如果需要进行重试，则再走一次上面的流程。
+1. 一些初始化参数，比如 HTTP 方法， HTTP 头和参数等会被封装进内部的 `URLRequestConvertible` 值中，用于初始化 `Request` ；
+2. 调用 `URLRequestConvertible` 的 `asURLRequest()` 方法来创建第一个 `URLRequest` 。 `URLRequest` 会存储到 `Request` 的 `mutableState.requests` 属性中。如果有定义 `RequestModifier` ， 在生成 `URLRequest` 会进行调用来调整 `URLRequest` ；
+3. 如果 `Session` 或者 `Request` 有提供 `RequestAdapters` 或者 `RequestInterceptors` ，则会对之前生成的 `URLRequest` 进行调整，同时也会存储到 `Request` 的 `mutableState.requests` 属性中；
+4. `Session` 调用 `Request` 的方法来生成对应的 `URLSessionTask` ，不同的 `Request` 子类 会生成不同的 `URLSessionTask` ；
+5. 当 `URLSessionTask` 完成任务，且已经收集到 `URLSessionTaskMetrics` ， `Request` 就会执行自己的 `Validators ` 来验证请求结果是否正确；
+6. 通过验证后， `Request` 就会执行 `mutableState.responseSerializers` 来处理请求结果。在上面这些步骤中，每个步骤都有可能产生错误或者接收到网络返回的错误结果，这些错误会传递给对应的 `Request` 。在处理结果时会判断是否需要重试。 当 `Error` 传递给 `Request` 后，`Request` 会调用对应的 `RequestRetriers` 来判断是否需要进行重试，如果需要进行重试，则再走一次上面的流程。
 
 下面以 `DataRequest` 为例讲一下发起网络请求的整体流程。
 
@@ -1218,11 +1136,7 @@ let possibleObject = possibleData.tryMapError {
 
 Alamofire 为发起 `DataRequest` 提供了三个接口：
 
-1. 为
-
-  ，即
-
-  ：
+1. `parameters` 为 `Parameters` ，即 `[String: Any]` ：
 
 ```swift
 open func request(_ convertible: URLConvertible,
@@ -1265,9 +1179,7 @@ struct RequestConvertible: URLRequestConvertible {
 }
 ```
 
-1. 支持
-
-  ：
+1. `parameters` 支持 `Encodable` ：
 
 ```swift
 open func request<Parameters: Encodable>(_ convertible: URLConvertible,
@@ -1308,11 +1220,7 @@ struct RequestEncodableConvertible<Parameters: Encodable>: URLRequestConvertible
 }
 ```
 
-1. 后会调用这个接口来生成
-
-  ，在使用的时候也可以自己生成
-
-  ，直接调用这个接口：
+1. 上面两个接口经过处理生成对应的 `URLRequestConvertible` 后会调用这个接口来生成 `DataRequest` ，在使用的时候也可以自己生成 `URLRequestConvertible` ，直接调用这个接口：
 
 ```swift
 open func request(_ convertible: URLRequestConvertible, interceptor: RequestInterceptor? = nil) -> DataRequest {
@@ -1356,8 +1264,8 @@ func perform(_ request: Request) {
 }
 ```
 
-1. 是否有取消，因为有可能还没发起请求就已经被取消了；
-2. 中；
+1. 判断 `request` 是否有取消，因为有可能还没发起请求就已经被取消了；
+2. 添加到 `activeRequests` 中；
 3. 使用 switch case let 进行类型判断
 
 然后调用 `performSetupOperations` 方法进行一些请求前的准备工作。 在处理过程中会判断是否有设置 `adapter` ，如果有设置 `adapter` ，则调用 `adapter` 对请求做一次适配。
@@ -1402,27 +1310,11 @@ func performSetupOperations(for request: Request, convertible: URLRequestConvert
 }
 ```
 
-1. ；
-2. 是否符合格式要求，如果是
-
-  请求，而且
-
-  中有数据，就会报一个
-
-  的错；
-3. 的
-
-  方法，负责更新 request 的 mutableState 和调用 eventMonitor 对应的方法；
-4. ，如果没有则调用
-
-  进行一些最后的处理工作；
-5. 对
-
-  进行转换，然后调用
-
-  和
-
-  ；
+1. 尝试生成对应的 `URLRequest` ；
+2. 检验 `URLRequest` 是否符合格式要求，如果是 `GET` 请求，而且 `httpBody` 中有数据，就会报一个 `bodyDataInGETRequest` 的错；
+3. 调用 `request` 的 `didCreateInitialURLRequest` 方法，负责更新 request 的 mutableState 和调用 eventMonitor 对应的方法；
+4. 判断是否有 `adapter` ，如果没有则调用 `didCreateURLRequest` 进行一些最后的处理工作；
+5. 使用 `adapter` 对 `request` 进行转换，然后调用 `request.didAdaptInitialRequest` 和 `didCreateURLRequest` ；
 
 可以看到上面的代码在调用 `request` 的方法时都会通过 `rootRequeue` 进行异步调用，以保证线程安全。 再看一下 `Request` 中对应的方法都做了哪些处理：
 
@@ -1438,8 +1330,8 @@ func didCreateInitialURLRequest(_ request: URLRequest) {
 
 `Session` 中调用 `request` 的方法都跟上面的实现类似：
 
-1. ；
-2. 调用相关回调；
+1. 更新 `request.state` ；
+2. 通过 `eventMonitor` 调用相关回调；
 
 `didCreateURLRequest` 则负责创建对应的 `URLSessionTask` ，在 `requestTaskMap` 中添加对应的记录：
 
@@ -1697,15 +1589,9 @@ func response(queue: DispatchQueue = .main, completionHandler: @escaping (AFData
 }
 ```
 
-1. 中进行处理，因为在进行序列化操作时是在
-
-  进行处理；
-2. ，因为不做任何序列化操作，所以
-
-  直接设置 0 ；
-3. 添加
-
-  ；
+1. 完成序列化操作后，转换到 `underlyingQueue` 中进行处理，因为在进行序列化操作时是在 `serializationQueue` 进行处理；
+2. 生成对应的 `DataResponse` ，因为不做任何序列化操作，所以 `serializationDuration` 直接设置 0 ；
+3. 调用 `responseSerializerDidComplete` 添加 `completionHandler` ；
 
 添加 `ResponseSerializer` ：
 
@@ -1729,26 +1615,8 @@ func appendResponseSerializer(_ closure: @escaping () -> Void) {
 }
 ```
 
-1. 为
-
-  ，是因为如果
-
-  序列化失败，会重新发送请求，而重新发送请求时会调用
-
-  方法，只有
-
-  的状态为
-
-  时才会调用
-
-  ， 所以这里要设置为
-
-  ，使得可以调用
-
-  ，重新发送请求；
-2. ，如果已经处理完，则直接开始处理新增的
-
-  ；
+1. 这里之所以把状态由 `.finished` 为 `.resumed` ，是因为如果 `ResponseSerializer` 序列化失败，会重新发送请求，而重新发送请求时会调用 `updateStatesForTask` 方法，只有 `request` 的状态为 `resumed` 时才会调用 `task.resume()` ， 所以这里要设置为 `resumed` ，使得可以调用 `task.resume()` ，重新发送请求；
+2. 是否已经处理完其它 `ResponseSerializer` ，如果已经处理完，则直接开始处理新增的 `ResponseSerializer` ；
 3. 是否需要直接开始进行网络请求；
 
 调用下一个 `ResponseSerializer` 进行处理，如果所有 `ResponseSerializer` 都处理完毕则调用所有的 `completions` ：
@@ -1782,14 +1650,8 @@ func processNextResponseSerializer() {
     }
 ```
 
-1. 和
-
-  ， 这个
-
-  PR
-
-  有提到具体原因；
-2. ；
+1. 如果已经完成所有序列化操作，优先移除所有的 `ResponseSerializers` 和 `ResponseSerializerCompletions` ， 这个 [PR](https://github.com/Alamofire/Alamofire/pull/2778) 有提到具体原因；
+2. 执行所有 `ResponseSerializerCompletions` ；
 3. 如果还有序列化操作未执行，就先执行；
 
 获取下一个序列化操作，因为只有完成了序列化操作后才会添加对应的 `ResponseSerializerCompletion` ，所以通过 `responseSerializers` 和 `responseSerializerCompletions` 的 `count` 来比较即可知道是否还有序列化操作未处理：
@@ -1902,31 +1764,9 @@ public func response<Serializer: DataResponseSerializerProtocol>(queue: Dispatch
 
 而 Alamofire 也提供了一些常见的序列化操作给我们使用：
 
-1. 通过
-
-  将
-
-  转换为
-
-  ；
-2. 通过
-
-  将
-
-  转换为
-
-  对象；
-3. 通过
-
-  将
-
-  转换为
-
-  对象，
-
-  默认为
-
-  ；
+1. `responseString(queue:encoding:completionHandler:)` 通过 `StringResponseSerializer` 将 `Data` 转换为 `String` ；
+2. `responseJSON(queue:options:completionHandler)` 通过 `JSONResponseSerializer(JSONSerialization)` 将 `Data` 转换为 `JSON` 对象；
+3. `responseDecodable(of:queue:decoder:completionHandler:)` 通过 `DecodableResponseSerializer` 将 `Data` 转换为 `Decodable` 对象， `decoder` 默认为 `JSONDecoder` ；
 
 这里也是通过协议来对自动的序列化操作进行抽象。
 
@@ -2126,7 +1966,7 @@ open func stopListening() {
 
 ### 总结
 
-1. 来判断是否应该发送请求；
+1. 不要通过 `NetworkReachabilityManager` 来判断是否应该发送请求；
 2. 当网络状态切换时，可以考虑重新发送请求；
 3. 网络状态可以为用户请求失败提供一些更明确的提示；
 4. 判断用户的网络状态来执行不同的流量策略，如视频的清晰度；
@@ -2136,10 +1976,6 @@ open func stopListening() {
 Alamofire 作为一个使用 `Swift` 编写的网络库，提供的发起网络请求接口十分简单，学习成本非常低，有不少值得学习和借鉴的地方：
 
 1. 使用协议进行抽象；
-2. 来实现属性的线程安全；
+2. 使用 `@propertyWrapper` 来实现属性的线程安全；
 3. 支持链式调用，使用上更加优雅和方便；
-4. 来为
-
-  提供默认的方法实现，从而使得
-
-  的方法是可选的； ……
+4. 借用 `extension` 来为 `protocol` 提供默认的方法实现，从而使得 `protocol` 的方法是可选的； ……

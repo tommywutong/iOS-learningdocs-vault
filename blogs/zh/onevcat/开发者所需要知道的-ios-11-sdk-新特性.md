@@ -72,48 +72,14 @@ Xcode 9 中的索引系统也使用了新的引擎，据称在大型项目中搜
 
 剩下的都是些小变化了，简单浏览了下，把我觉得值得一提的列举出来，并附上参考的链接。
 
-- 拖拽
-
-  - 很标准的一套 iOS API，不出意外地，iOS 系统帮助我们处理了绝大部分工作，开发者几乎只需要处理结果。
-
-  和
-
-  原生支持拖拽，
-
-  和
-
-  的拖拽有一系列专用的 delegate 来表明拖拽的发生和结束。而你也可以对任意
-
-  子类定义拖拽行为。和 mac 上的拖拽不同，iOS 的拖拽充分尊重了多点触控的屏幕，所以可能你需要对一次多个的拖拽行为做些特别处理。
-- `prefersLargeTitles`
-
-  即可。
-- FileProvider 和 FileProviderUI
-
-  - 提供一套类似 Files app 的界面，让你可以获取用户设备上或者云端的文件。相信会成为以后文档相关类 app 的标配。
+- [拖拽](https://developer.apple.com/documentation/uikit/drag_and_drop) - 很标准的一套 iOS API，不出意外地，iOS 系统帮助我们处理了绝大部分工作，开发者几乎只需要处理结果。`UITextView` 和 `UITextField` 原生支持拖拽，`UICollectionView` 和 `UITableView` 的拖拽有一系列专用的 delegate 来表明拖拽的发生和结束。而你也可以对任意 `UIView` 子类定义拖拽行为。和 mac 上的拖拽不同，iOS 的拖拽充分尊重了多点触控的屏幕，所以可能你需要对一次多个的拖拽行为做些特别处理。
+- 新的 Navigation title 设计 - iOS 11 的大多数系统 app 都采用了新的设计，放大了导航栏的标题字体。如果你想采用这项设计的话也非常简单，设置 navigation bar 的 [`prefersLargeTitles`](https://developer.apple.com/documentation/uikit/uinavigationbar/2908999-preferslargetitles) 即可。
+- [FileProvider 和 FileProviderUI](https://developer.apple.com/documentation/fileprovider) - 提供一套类似 Files app 的界面，让你可以获取用户设备上或者云端的文件。相信会成为以后文档相关类 app 的标配。
 - 不再支持 32 位 app - 虽然在 beta 1 中依然可以运行 32 位 app，但是 Apple 明确指出了将在后续的 iOS 11 beta 中取消支持。所以如果你想让自己的程序运行在 iOS 11 的设备上，进行 64 位的重新编译是必须步骤。
-- DeviceCheck
-
-  - 每天要用广告 ID 追踪用户的开发者现在有了更好地选择 (当然前提是用来做正经事儿)。DeviceCheck 允许你通过你的服务器与 Apple 服务器通讯，并为单个设备设置两个 bit 的数据。简单说，你在设备上用 DeviceCheck API 生成一个 token，然后将这个 token 发给自己的服务器，再由自己的服务器与 Apple 的 API 进行通讯，来更新或者查询该设备的值。这两个 bit 的数据用来追踪用户比如是否已经领取奖励这类信息。
-- PDFKit
-
-  - 这是一个在 macOS 上已经长期存在的框架，但却在 iOS 上姗姗来迟。你可以使用这个框架显示和操作 pdf 文件。
-- IdentityLookup
-
-  - 可以自己开发一个 app extension 来拦截系统 SMS 和 MMS 的信息。系统的信息 app 在接到未知的人的短信时，会询问所有开启的过滤扩展，如果扩展表示该消息应当被拦截，那么这则信息将不会传递给你。扩展有机会访问到事先指定的 server 来进行判断 (所以说你可以光明正大地获取用户短信内容了，不过当然考虑到隐私，这些访问都是匿名加密的，Apple 也禁止这类扩展在 container 里进行写入)。
-- Core NFC
-
-  - 在 iPhone 7 和 iPhone 7 Plus 上提供基础的近场通讯读取功能。看起来很 promising，只要你有合适的 NFC 标签，手机就可以进行读取。但是考虑到无法后台常驻，实用性就打了折扣。不过笔者不是很熟这块，也许能有更合适的场景也未可知。
-- Auto Fill
-
-  - 从 iCloud Keychain 中获取密码，然后自动填充的功能现在开放给第三方开发者了。UITextInputTraits 的
-
-  textContentType
-
-  中添加了
-
-  和
-
-  ，对适合的 text view 或者 text field 的 content type 进行配置，并填写 Info.plist 的相关内容，就可以在要求输入用户名密码时获取键盘上方的自动填充，帮助用户快速登录。
+- [DeviceCheck](https://developer.apple.com/documentation/devicecheck) - 每天要用广告 ID 追踪用户的开发者现在有了更好地选择 (当然前提是用来做正经事儿)。DeviceCheck 允许你通过你的服务器与 Apple 服务器通讯，并为单个设备设置两个 bit 的数据。简单说，你在设备上用 DeviceCheck API 生成一个 token，然后将这个 token 发给自己的服务器，再由自己的服务器与 Apple 的 API 进行通讯，来更新或者查询该设备的值。这两个 bit 的数据用来追踪用户比如是否已经领取奖励这类信息。
+- [PDFKit](https://developer.apple.com/documentation/pdfkit) - 这是一个在 macOS 上已经长期存在的框架，但却在 iOS 上姗姗来迟。你可以使用这个框架显示和操作 pdf 文件。
+- [IdentityLookup](https://developer.apple.com/documentation/identitylookup) - 可以自己开发一个 app extension 来拦截系统 SMS 和 MMS 的信息。系统的信息 app 在接到未知的人的短信时，会询问所有开启的过滤扩展，如果扩展表示该消息应当被拦截，那么这则信息将不会传递给你。扩展有机会访问到事先指定的 server 来进行判断 (所以说你可以光明正大地获取用户短信内容了，不过当然考虑到隐私，这些访问都是匿名加密的，Apple 也禁止这类扩展在 container 里进行写入)。
+- [Core NFC](https://developer.apple.com/documentation/corenfc) - 在 iPhone 7 和 iPhone 7 Plus 上提供基础的近场通讯读取功能。看起来很 promising，只要你有合适的 NFC 标签，手机就可以进行读取。但是考虑到无法后台常驻，实用性就打了折扣。不过笔者不是很熟这块，也许能有更合适的场景也未可知。
+- [Auto Fill](https://developer.apple.com/videos/play/wwdc2017/206/) - 从 iCloud Keychain 中获取密码，然后自动填充的功能现在开放给第三方开发者了。UITextInputTraits 的 [textContentType](https://developer.apple.com/documentation/uikit/uitextcontenttype) 中添加了 `username` 和 `password`，对适合的 text view 或者 text field 的 content type 进行配置，并填写 Info.plist 的相关内容，就可以在要求输入用户名密码时获取键盘上方的自动填充，帮助用户快速登录。
 
 暂时先这么多，我之后如果发现什么有意思的事情再逐渐补充。如果你觉得还有什么值得一提的变化，也欢迎在评论里留言，我也会添加进去。

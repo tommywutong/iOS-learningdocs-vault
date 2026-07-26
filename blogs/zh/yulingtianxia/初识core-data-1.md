@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:baba0fe6d765b134'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-05-01
 
-1. 1. Core Data概述
-2. 2. 新建一个Core Data工程
-3. 3. 总结
+**文章目录**
+
+1. [1. Core Data概述](#Core-Data概述)
+2. [2. 新建一个Core Data工程](#新建一个Core-Data工程)
+3. [3. 总结](#总结)
 
 本文内容：
 
@@ -32,7 +34,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ---
 
-## [#Core-Data概述](#Core-Data概述)Core Data概述
+## Core Data概述
 
 Core Data本身既不是数据库也不是数据库访问框架。相反，Core Data是一个完整的数据模型解决方案。我简单理解为对持久层的封装，使得我们可以通过可视化建立数据模型，简化数据存取。有人会联想到Hibernate，其实Core Data比Hibernate强大得多，它不仅支持SQLite数据库，还能对XML文件、二进制文件、用户自定义文件进行操作。
 
@@ -42,7 +44,7 @@ iOS 3.0和Mac OS X10.5都支持Core Data，但iOS上不支持XML文件存储。C
 在OSX上可以绑定利用KVO和KVC保持UI项与模型对象或属性之间的连接，无需编写任何代码，通过对象和数组控制器自动从Core Data存储区分批提取`NSManagedObject`对象。这就像在VS中用.Net构建基于SQLServer的桌面程序。  
 苹果公司单独为iOS平台的Core Data引入了`NSFetchedResultsController`类帮助视图与从持久化存储文件提取的数据之间的交互。它主要是用来充当`UITableiView`的数据源，负责调整`UITableiView`行与节（section）的显示数目，以及为各表格行提供内容。
 
-## [#新建一个Core-Data工程](#新建一个Core-Data工程)新建一个Core Data工程
+## 新建一个Core Data工程
 
 在Xcode5中，只有Master-Detail Application，Utility Application以及Empty Application支持创建时使用Core Data模板，我们选择带有UITableView的Master-Detail Application吧。
 
@@ -457,19 +459,17 @@ MyCDDemo.sqlite文件是在编译MyCDDemo.xcdatamodeld时生成的，同样生�
 
 最后，找到`insertNewObject`方法，当用户尝试加入一个对象到表视图时，该方法将被调用。接着你将看到如下的处理过程：
 
-- 对象；
+- 获得一个`NSManagedObjectContext`对象；
 - 决定创建新对象的实体；
-- 对象并将其插入到
-
-  对象；
-- 对象设置timeStamp属性值
-- 对象执行保存。
+- 根据实体名称创建一个新的`NSManagedObject`对象并将其插入到`NSManagedObjectContext`对象；
+- 对新创建的`NSManagedObject`对象设置timeStamp属性值
+- `NSManagedObjectContext`对象执行保存。
 
 当上下文执行保存，新的对象将被写到持久存储区中。这是如此简单！
 
 DetailViewController的内容比较简单，不在叙述，到此结束，新建Core Data的模版工程代码已经解析完毕了。在下一期文章中将会亲手修改代码，探索Core Data更多的使用技巧。
 
-## [#总结](#总结)总结
+## 总结
 
 Core Data框架基本的5个类：：NSPersistentStoreCoordinator、NSManagedObjectContext、NSManagedObjectModel、NSEntityDescription、NSManagedObject。
 

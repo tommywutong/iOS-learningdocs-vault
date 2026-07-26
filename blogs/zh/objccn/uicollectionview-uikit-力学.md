@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d7a8a007006154b5'
 translated: n/a
 ---
@@ -34,14 +34,8 @@ UIKit Dynamics 是 iOS 7 中基于物理动画引擎的一个新功能--它被�
 
 文章中的两个例子项目都已经在 GitHub 中:
 
-- ASHSpringyCollectionView
-
-  （基于
-
-  UICollectionView Spring Demo
-
-  ）
-- Newtownian UICollectionView
+- [ASHSpringyCollectionView](https://github.com/objcio/issue-5-springy-collection-view)（基于 [UICollectionView Spring Demo](https://github.com/TeehanLax/UICollectionView-Spring-Demo)）
+- [Newtownian UICollectionView](https://github.com/objcio/issue-5-newtonian-collection-view)
 
 ## 关于 UIDynamicAnimator
 

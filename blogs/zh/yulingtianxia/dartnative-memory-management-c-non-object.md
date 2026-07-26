@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-28
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ddb43360bc49ae1d'
 translated: n/a
 ---
@@ -20,30 +20,32 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2020-01-31
 
-1. 1. 问题分析
-2. 2. 何时销毁非对象类型
-3. 3. Dart 从 C++ 获取非对象类型
-4. 4. C++ 从 Dart 获取非对象类型
+**文章目录**
 
-    1. 4.1. Dart 向 C++ 传参
-    2. 4.2. Objective-C 调用 Dart callback 时获取的返回值
-5. 5. 后记
+1. [1. 问题分析](#问题分析)
+2. [2. 何时销毁非对象类型](#何时销毁非对象类型)
+3. [3. Dart 从 C++ 获取非对象类型](#Dart-从-C-获取非对象类型)
+4. [4. C++ 从 Dart 获取非对象类型](#C-从-Dart-获取非对象类型)
+
+    1. [4.1. Dart 向 C++ 传参](#Dart-向-C-传参)
+    2. [4.2. Objective-C 调用 Dart callback 时获取的返回值](#Objective-C-调用-Dart-callback-时获取的返回值)
+5. [5. 后记](#后记)
 
 [dart_native](https://github.com/dart-native/dart_native) 基于 Dart FFI，通过 C++ 调用 Native 的 API。这种跨多语言的 bridge 就需要考虑到内存管理的问题。[上一篇文章](http://yulingtianxia.com/blog/2019/12/26/DartObjC-Memory-Management-Object/) 介绍了 Objective-C 对象类型的管理，本篇算是它的续篇，讲下对 `struct` 和 `char *` 内存的管理。
 
 如果你还不了解 [dart_native](https://github.com/dart-native/dart_native) 是什么，建议先看下我之前的两篇文章：
 
-- 用 Dart 来写 Objective-C 代码
-- 谈谈 dart_native 混合编程引擎的设计
-- DartNative Memory Management: NSObject
+- [用 Dart 来写 Objective-C 代码](http://yulingtianxia.com/blog/2019/10/27/Write-Objective-C-Code-using-Dart/)
+- [谈谈 dart_native 混合编程引擎的设计](http://yulingtianxia.com/blog/2019/11/28/DartObjC-Design/)
+- [DartNative Memory Management: NSObject](http://yulingtianxia.com/blog/2019/12/26/DartObjC-Memory-Management-Object/)
 
 PS：dart_objc 已经更名为 dart_native。
 
-## [#问题分析](#问题分析)问题分析
+## 问题分析
 
 Cocoa(Touch) 中的好多 API 都用到了系统内建的 `struct` 或 `UTF8String`(`char *`) 类型，它们不像 Objective-C 对象那样只存在于堆上（Block 除外），既可以存在堆上也可以在栈上。**如果能将 `struct` 和 `char *` 用对象的形式包一层**，那么就可以**将堆上非对象类型的生命周期转换为对象类型，交由 ARC 来管理**。由此继续借助[上一篇文章](http://yulingtianxia.com/blog/2019/12/26/DartObjC-Memory-Management-Object/)的经验和流程，自动释放存储在堆上的 `struct` 和 `char *` 类型。
 
-## [#何时销毁非对象类型](#何时销毁非对象类型)何时销毁非对象类型
+## 何时销毁非对象类型
 
 首先要确定非对象类型传递的方式。这里的解决方案是全都存储于堆上，并用一个 Wrapper 对象包一层来传递。下面说说为何这么做。
 
@@ -59,37 +61,13 @@ Cocoa(Touch) 中的好多 API 都用到了系统内建的 `struct` 或 `UTF8Stri
 
 这样就可以把一个非对象类型先 copy 到堆上，然后封装成对象类型来传递了。确保其不会过早被释放，且在同步或异步调用完成后由 ARC 自动释放。
 
-## [#Dart-从-C-获取非对象类型](#Dart-从-C-获取非对象类型)Dart 从 C++ 获取非对象类型
+## Dart 从 C++ 获取非对象类型
 
 这里分两种情况：
 
-1. 或
-
-  （
-
-  ）。会通过 Dart FFI 的
-
-  在堆上开辟新的内存，
-
-  。
-2. 会被拷贝到新创建的堆内存上，
-
-  ；
-
-  会自动转换成
-
-  ，
-
-  。
-3. 会被拷贝到新创建的堆内存上，
-
-  ；
-
-  会自动转换成
-
-  ，
-
-  。
+1. Dart 创建新的 `struct` 或 `char *`（`Pointer<Utf8>`）。会通过 Dart FFI 的 `allocate` 在堆上开辟新的内存，**需要释放**。
+2. Dart 调用 C++ 函数或 Objective-C Block 时获取的返回值。`struct` 会被拷贝到新创建的堆内存上，**需要释放**；`char *` 会自动转换成 `String`，**不需要释放**。
+3. C++ 调用 Dart callback 时传入的参数。`struct` 会被拷贝到新创建的堆内存上，**需要释放**；`char *` 会自动转换成 `String`，**不需要释放**。
 
 至于如何在 Dart 侧创建诸如 `CGRect` 之类的 `struct`，可能又能单开一篇文章来讲了，这里不细说了。Dart 侧并不会直接从 Objective-C/C++ 侧拿到 `struct` 类型，而是拿到一份 `malloc` 并拷贝后的指针。
 
@@ -120,7 +98,7 @@ abstract class NativeStruct {
 
 也就是 Dart 获取到的 `struct` 是个临时变量，不用就会自动销毁。如果需要长期持有，则需要手动 `retain` 和 `release`。而 Dart 获取到的 `char *` 则会被自动转为 `String` 类型，无需关心内存管理。
 
-## [#C-从-Dart-获取非对象类型](#C-从-Dart-获取非对象类型)C++ 从 Dart 获取非对象类型
+## C++ 从 Dart 获取非对象类型
 
 这里分两种情况：
 
@@ -139,13 +117,9 @@ dynamic storeCStringToPointer(dynamic object, Pointer<Pointer<Void>> ptr) {
 }
 ```
 
-### [#Dart-向-C-传参](#Dart-向-C-传参)Dart 向 C++ 传参
+### Dart 向 C++ 传参
 
-1. 的时候，即便已经通过传递
-
-  来保证调用过程中不被释放，但还需要利用
-
-  将其生命周期交给 Foundation 管理。
+1. 由于字符串比较特殊，即便在函数调用结束后，字符串很多以常量的形式被继续使用。所以传递 `char *` 的时候，即便已经通过传递 `PointerWrapper` 来保证调用过程中不被释放，但还需要利用 `NSTaggedPointerString` 将其生命周期交给 Foundation 管理。
 2. 原本传递结构体现在改成了传递结构体的指针。因为跨语言调用时，使用 Dart FFI 传递单个数据最大为 64bit，可以为整型、浮点型或指针等。所以可能无法容纳下比较大的结构体，需要传递指向结构体的指针。
 3. 其余类型照常传递。
 
@@ -172,7 +146,7 @@ _fillArgsToInvocation(NSMethodSignature *signature, void **args, NSInvocation *i
 }
 ```
 
-### [#Objective-C-调用-Dart-callback-时获取的返回值](#Objective-C-调用-Dart-callback-时获取的返回值)Objective-C 调用 Dart callback 时获取的返回值
+### Objective-C 调用 Dart callback 时获取的返回值
 
 由于 Dart callback 所对应的 C++ Function 由 libffi 动态创建，而基于动态创建的 C++ Function 又动态创建了 Objective-C Block 和方法。所以这一切都是我们创建的，尽在掌控之中。而这个动态创建的过程又有点复杂，可以再单独开一篇文章来讲了。
 
@@ -195,7 +169,7 @@ if (wrapper.hasStret) {
 }
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 非对象类型的内存管理要比对象类型复杂得多，光是把 `struct` 在 Dart 中转换出来就已经有些麻烦了。好在大部分问题都已经克服过去了，最终实现了一套半自动化的内存管理系统，也实现了跨语言的类型自动转换。后续可能还会对 stret 的情况进行优化，甚至对方案进行大改。
 

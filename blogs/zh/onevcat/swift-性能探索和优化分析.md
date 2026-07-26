@@ -162,7 +162,7 @@ Swift 还是一门很新的语言，并且处于高速发展中。因为现在 S
 
 ### 参考
 
-- Swift Intermediate Language
-- NSCache - NSHipster
-- NSCache 文档
-- Surge
+- [Swift Intermediate Language](http://llvm.org/devmtg/2015-10/slides/GroffLattner-SILHighLevelIR.pdf)
+- [NSCache - NSHipster](http://nshipster.com/nscache/)
+- [NSCache 文档](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/NSCache_Class/)
+- [Surge](https://github.com/mattt/Surge)

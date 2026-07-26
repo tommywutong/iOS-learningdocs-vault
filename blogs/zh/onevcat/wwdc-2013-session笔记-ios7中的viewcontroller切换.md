@@ -215,9 +215,7 @@ VC容器的主要目的是解决将不同VC添加到同一个屏幕上的需求�
 1. 我们首先需要得到参与切换的两个ViewController的信息，使用context的方法拿到它们的参照；
 2. 对于要呈现的VC，我们希望它从屏幕下方出现，因此将初始位置设置到屏幕下边缘；
 3. 将view添加到containerView中；
-4. 相关文档
-
-  ；（顺便多说一句，iOS7中对UIView动画添加了一个很方便的Category，UIViewKeyframeAnimations。使用其中方法可以为UIView动画添加关键帧动画）
+4. 开始动画。这里的动画时间长度和切换时间长度一致，都为0.8s。usingSpringWithDamping的UIView动画API是iOS7新加入的，描述了一个模拟弹簧动作的动画曲线，我们在这里只做使用，更多信息可以参看[相关文档](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/occ/clm/UIView/animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:)；（顺便多说一句，iOS7中对UIView动画添加了一个很方便的Category，UIViewKeyframeAnimations。使用其中方法可以为UIView动画添加关键帧动画）
 5. 在动画结束后我们必须向context报告VC切换完成，是否成功（在这里的动画切换中，没有失败的可能性，因此直接pass一个YES过去）。系统在接收到这个消息后，将对VC状态进行维护。
 
 接下来我们实现一个UIViewControllerTransitioningDelegate，应该就能让它工作了。简单来说，一个比较好的地方是直接在MainViewController中实现这个接口。在MainVC中声明实现这个接口，然后加入或变更为如下代码：

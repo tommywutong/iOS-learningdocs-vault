@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b05ad27368595c2a'
 translated: n/a
 ---
@@ -20,35 +20,31 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-09-29
 
-1. 1. UIAlertController是什么
-2. 2. 为什么不直接使用UIActionSheet和UIAlertView
-3. 3. 创建一个UIAlertController
-4. 4. 添加动作
-5. 5. 添加文本框
-6. 6. 总结
+**文章目录**
+
+1. [1. UIAlertController是什么](#UIAlertController是什么)
+2. [2. 为什么不直接使用UIActionSheet和UIAlertView](#为什么不直接使用UIActionSheet和UIAlertView)
+3. [3. 创建一个UIAlertController](#创建一个UIAlertController)
+4. [4. 添加动作](#添加动作)
+5. [5. 添加文本框](#添加文本框)
+6. [6. 总结](#总结)
 
 iOS8新推出的UIAlertController究竟是为了什么？已有的`UIActionSheet`和`UIAlertView`就这样被打酱油了么？其实不然。。。
 
-## [#UIAlertController是什么](#UIAlertController是什么)UIAlertController是什么
+## UIAlertController是什么
 
 `UIAlertController`是iOS8中新加入的一个ViewController，其主要功能是提醒（Alert），并取代 `UIActionSheet`和`UIAlertView`向用户展示提醒消息。因为它是一个ViewController，所以可以用`presentViewController:animated:completion:`方法来弹出它。
 
-## [#为什么不直接使用UIActionSheet和UIAlertView](#为什么不直接使用UIActionSheet和UIAlertView)为什么不直接使用`UIActionSheet`和`UIAlertView`
+## 为什么不直接使用`UIActionSheet`和`UIAlertView`
 
-1. 采用block异步回调的形式来代理按钮的动作和文本框的配置，这样显得更加代码紧凑，可读性高。这样就不用通过协议代理给其他类，使得同一个逻辑下本应在一起的代码分离开。
-2. 和
-
-  执行的都是提醒功能，只是展现的位置略有不同，合并相似功能并上升到Controller的级别，这是一种进步。
-3. 在添加按钮和文本框时更加灵活，而
-
-  只提供了四种Style，局限性太大。
-4. 在增加拓展性的基础上也限定了一些风格来进行约束，不过新增加的风格比
-
-  更贴合实际应用。
+1. `UIAlertController`采用block异步回调的形式来代理按钮的动作和文本框的配置，这样显得更加代码紧凑，可读性高。这样就不用通过协议代理给其他类，使得同一个逻辑下本应在一起的代码分离开。
+2. `UIActionSheet`和`UIAlertView`执行的都是提醒功能，只是展现的位置略有不同，合并相似功能并上升到Controller的级别，这是一种进步。
+3. `UIAlertController`在添加按钮和文本框时更加灵活，而`UIAlertView`只提供了四种Style，局限性太大。
+4. `UIAlertController`在增加拓展性的基础上也限定了一些风格来进行约束，不过新增加的风格比`UIAlertView`更贴合实际应用。
 
 PS：其实最直接的原因就是博主想弹出个Alert，有俩文本框的（不要密码输入框），可惜`UIAlertView`做不到啊！！！
 
-## [#创建一个UIAlertController](#创建一个UIAlertController)创建一个`UIAlertController`
+## 创建一个`UIAlertController`
 
 创建很简单有木有：
 
@@ -75,7 +71,7 @@ enum UIAlertControllerStyle : Int {
 }
 ```
 
-## [#添加动作](#添加动作)添加动作
+## 添加动作
 
 以前的做法是给个按钮标题数组然后在实现协议的代理方法中判断下按钮序列，然后对应给出不同的处理流程。分散的逻辑和代码无疑增加了开发者的工作量，还要求对应的类实现代理协议，真是out了。
 
@@ -97,7 +93,7 @@ let cancelAction = UIAlertAction(title: cancelbtn, style: .Cancel) { (action) ->
 alert.addAction(cancelAction)
 ```
 
-## [#添加文本框](#添加文本框)添加文本框
+## 添加文本框
 
 这也是最令博主激动的地方，最然不能自定义Alert中的内容，但起码添加UITextField不受限制了。添加文本框的方法实在是简洁：
 
@@ -118,7 +114,7 @@ alert.addTextFieldWithConfigurationHandler { (choiceNameTF) -> Void in
 
 美中不足的是文本框的代理还需要在另外一个地方写代码来实现协议，这种历史遗留问题终将被block统统解决！
 
-## [#总结](#总结)总结
+## 总结
 
 `UIAlertController`的确是方便多了，无论是代码的简洁性还是可读性，都有了较大的提升。不过也有缺点，就是动用Controller的层级略显麻烦，尤其是使用`presentViewController:animated:completion:`方法来弹出Alert界面与之前的一个潇洒的`show`相比真是有些“霸气”。看个人喜好了，只要满足需求，咋方便咋用。
 

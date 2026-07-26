@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-08-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:170c54b6e1a2a2ea'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-08-11
 
-1. 1. 接口设计
+**文章目录**
 
-    1. 1.1. BlockHook 相关的接口
-    2. 1.2. NSInvocation 相关的接口
-2. 2. 接口实现
+1. [1. 接口设计](#接口设计)
 
-    1. 2.1. Copy Pointer
-    2. 2.2. Retain Pointer
-    3. 2.3. 读写参数和返回值
-3. 3. 总结
+    1. [1.1. BlockHook 相关的接口](#BlockHook-相关的接口)
+    2. [1.2. NSInvocation 相关的接口](#NSInvocation-相关的接口)
+2. [2. 接口实现](#接口实现)
+
+    1. [2.1. Copy Pointer](#Copy-Pointer)
+    2. [2.2. Retain Pointer](#Retain-Pointer)
+    3. [2.3. 读写参数和返回值](#读写参数和返回值)
+3. [3. 总结](#总结)
 
 [上一篇文章](http://yulingtianxia.com/blog/2019/07/27/BlockHook-with-Invocation/) 简单介绍了下 `retainArguments` 和 `block_interceptor` 实现的思路，本文会详细讲解下 `BHInvocation` 的接口设计与实现，并与系统的 `NSInvocation` 作对比。
 
-## [#接口设计](#接口设计)接口设计
+## 接口设计
 
 `BHInvocation` 相当于是参照 `NSInvocation` 的接口并改造了下，以承载 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的一些元数据。
 
@@ -54,7 +56,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 @end
 ```
 
-### [#BlockHook-相关的接口](#BlockHook-相关的接口)BlockHook 相关的接口
+### BlockHook 相关的接口
 
 为了存储 Hook 相关的信息，需要在 `NSInvocation` 的接口基础上新增 `token` 属性和 `mode` 属性。不过 `BHToken` 其实已经存储了 `BlockHookMode`，为何还要再在 `BHInvocation` 中加一个 `mode` 呢？
 
@@ -66,19 +68,19 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 由于是 Hook，所以执行 Block 时需要注意是调用原始实现还是新的实现。 加入了 `invokeOriginalBlock` 接口来调用原始实现，这也是所有 AOP 工具的必要设计。
 
-### [#NSInvocation-相关的接口](#NSInvocation-相关的接口)`NSInvocation` 相关的接口
+### `NSInvocation` 相关的接口
 
 为了降低使用者的学习成本，[BlockHook](https://github.com/yulingtianxia/BlockHook) 的接口设计上会尽量参照一些已有的 AOP 工具。在 Invocation 这块，能参照的最好的例子就是系统提供的 `NSInvocation`。其提供了**读、写和 `retian` 参数列表/返回值**的接口，以及方法签名等。
 
 而 `NSInvocation` 有些接口在 [BlockHook](https://github.com/yulingtianxia/BlockHook) 中是用不到的，比如 `selector` 属性没什么意义，再比如 `invoke` 和 `invokeWithTarget:` 这两个接口在 AOP 场景下也不必存在。
 
-## [#接口实现](#接口实现)接口实现
+## 接口实现
 
 在[上一篇文章](http://yulingtianxia.com/blog/2019/07/27/BlockHook-with-Invocation/)中介绍了过了 `retainArguments` 的实现思路，针对每个指向参数或返回值的指针都需要经历 “Copy” 和 “Retain” 两步：
 
 ![](http://yulingtianxia.com/resources/BlockHook/retainArguments.png)
 
-### [#Copy-Pointer](#Copy-Pointer)Copy Pointer
+### Copy Pointer
 
 无论 `pointer` 指向的内容是一个 `struct` 还是 `NSObject *`，都需要将 `pointer` 的内容拷贝，防止原始内存被修改或者释放。在拷贝前需要开辟新的内存，其生命周期与 `BHInvocation` 绑定在一起。
 
@@ -95,7 +97,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 }
 ```
 
-### [#Retain-Pointer](#Retain-Pointer)Retain Pointer
+### Retain Pointer
 
 如果 `pointer` 指向的内容依然是个指针，比如 `NSObject *` 或 `char *`，还需要防止其内容提前被释放，产生野指针。这里相当于是对 Objective-C 对象和 C-String 的特殊处理，以参数和返回值的 index 作为 key，利用字典 `retainMap` 强引用 Objective-C 对象；对于 Block 对象还需调用 `copy` 方法，将栈上的 Block 拷贝到堆上防止被提早释放；对于 C-String 则是开辟新内存并拷贝字符串内容，然后放入 `retainMap` 中；
 
@@ -126,7 +128,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 }
 ```
 
-### [#读写参数和返回值](#读写参数和返回值)读写参数和返回值
+### 读写参数和返回值
 
 [上一篇文章](http://yulingtianxia.com/blog/2019/07/27/BlockHook-with-Invocation/)讲述了 `BHInvocation` 存储参数列表和返回值上的一些处理策略，这里来讲讲如何读写。
 
@@ -195,6 +197,6 @@ NSObject * __unsafe_unretained arg;
 }
 ```
 
-## [#总结](#总结)总结
+## 总结
 
 最初 `BHInvocation` 还不够完善时，读写 Block 的参数/返回值只能用二级指针之类的晦涩语法直接操作 `args` 和 `retValue`，门槛较高而且还不够安全。`BHInvocation` 接口设计和实现上尽量参考已有的成熟案例，降低开发者学习成本，快速上手。

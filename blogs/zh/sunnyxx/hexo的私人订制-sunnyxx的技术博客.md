@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-07
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d1c515f13c215abc'
 translated: n/a
 ---
@@ -18,9 +18,9 @@ translated: n/a
 
 2014年3月7日
 
-# [#准备工作](#准备工作)准备工作
+# 准备工作
 
-## [#Fork-it](#Fork-it)Fork it!
+## Fork it!
 
 从0开始多费劲，先从hexo的主题中选一个看的过去的，从上面加工。  
 这次选的是hexo的默认主题`Landscape`，觉得一个大banner挺好看而已。  
@@ -30,15 +30,10 @@ fork完去setting页面改个名字，就叫它`present`了，因为当时看到
 
 ![](http://ww3.sinaimg.cn/large/51530583gw1ee7835uauoj20j804mwen.jpg)
 
-- 目录默认是在
+- hexo工程的`themes/`目录默认是在`.gitignore`里的，意思是主题和内容是应该分开的  
+  theme作为主项目的`submodule`，所以主题更改时也应该单独提交了
 
-  里的，意思是主题和内容是应该分开的
-
-  theme作为主项目的
-
-  ，所以主题更改时也应该单独提交了
-
-## [#Clone-it！](#Clone-it！)Clone it！
+## Clone it！
 
 把刚fork的名为`present`的theme安装到hexo目录：
 
@@ -57,7 +52,7 @@ theme: present // 修改这儿
 
 运行下`hexo server`就能立刻看到效果了
 
-# [#开始定制theme](#开始定制theme)开始定制theme
+# 开始定制theme
 
 先得看看hexo theme里面的结构：
 
@@ -65,7 +60,7 @@ theme: present // 修改这儿
 - /layout/*.ejs - 网页布局
 - /source/css/*.styl - 网页样式
 
-## [#定制banner](#定制banner)定制banner
+## 定制banner
 
 ![banner](http://ww4.sinaimg.cn/large/51530583gw1ee78mkdkspj20jp06bq3h.jpg)  
 默认的banner图是个地球星空图，先从它下手，这张图位于`/themes/present/source/css/images/banner.jpg`  
@@ -172,7 +167,7 @@ much better
 
 在`/themes/present/source/css/_variables.styl`中：
 
-#### [#调整主区域布局（很值得修改）](#调整主区域布局（很值得修改）)调整主区域布局（很值得修改）
+#### 调整主区域布局（很值得修改）
 
 默认的主题的主区域太窄了，没几个字就得换行，下面的`main-column`控制主区域宽，`sidebar-column`控制sidebar宽，这两个值加一起凑成全部宽度，会居中对齐。  
 1  
@@ -188,13 +183,13 @@ mobile-nav-width = 280px
 main-column = 12 // 主文章区域的宽度  
 sidebar-column = 3 // 侧边栏区域的宽度
 
-#### [#修改代码字体](#修改代码字体)修改代码字体
+#### 修改代码字体
 
 ```plain
 font-mono = Menlo/*Menlo必须提前面啊*/, "Source Code Pro", Monaco, Consolas, Consolas, monospace
 ```
 
-#### [#修改正文字体和行高](#修改正文字体和行高)修改正文字体和行高
+#### 修改正文字体和行高
 
 ```plain
 font-size = 15px // Menlo字体我看15px的很清楚
@@ -206,7 +201,7 @@ line-height-title = 1.3em
 
 位于`/themes/present/source/css/_partial/article.styl`的样式文件负责文章里面的样式
 
-#### [#修改图片格式](#修改图片格式)修改图片格式
+#### 修改图片格式
 
 ```plain
 img, video
@@ -250,7 +245,7 @@ img, video
  });  
  });
 
-#### [#修改blockquote样式](#修改blockquote样式)修改blockquote样式
+#### 修改blockquote样式
 
 ```plain
 blockquote
@@ -264,7 +259,7 @@ blockquote
 
 位于`/themes/present/source/css/_extend.styl`的样式文件定义了基本样式
 
-#### [#修改标题样式](#修改标题样式)修改标题样式
+#### 修改标题样式
 
 ```plain
 h1
@@ -282,7 +277,7 @@ h6
   color: color-grey
 ```
 
-#### [#修改文章背景](#修改文章背景)修改文章背景
+#### 修改文章背景
 
 ```plain
 $block
@@ -292,7 +287,7 @@ $block
   border-radius: 10px // 圆角矩形走起
 ```
 
-## [#定制代码样式](#定制代码样式)定制代码样式
+## 定制代码样式
 
 这个必须单拿出来写
 
@@ -384,9 +379,9 @@ Code block高亮：`我是小代码块高亮`
  text-shadow: 0 1px #fff  
  padding: 0.1em 0.3em // 控制大小
 
-# [#开始定制widget](#开始定制widget)开始定制widget
+# 开始定制widget
 
-## [#添加多说评论](#添加多说评论)添加多说评论
+## 添加多说评论
 
 在`present/layout/_partial/article.ejs`中最下面，要不用discuss的话先注掉，换成下面的：
 
@@ -411,7 +406,7 @@ Code block高亮：`我是小代码块高亮`
 <% } %>
 ```
 
-## [#添加友情链接](#添加友情链接)添加友情链接
+## 添加友情链接
 
 首先，在`present/layout/_widget/`目录下新建一个文件，随便copy个当前目录下的改名也行，我这儿叫`friends.ejs`  
 编辑这个文件：  

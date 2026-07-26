@@ -20,8 +20,8 @@ translated: n/a
 
 这是关于 JOSE 和密码学的三篇系列文章中的最后一篇，你可以在下面的链接中找到其他部分：
 
-1. 基础 - 什么是 JWT 以及 JOSE
-2. 理论 - JOSE 中的签名和验证流程
+1. [基础 - 什么是 JWT 以及 JOSE](https://onevcat.com/2018/12/jose-1/)
+2. [理论 - JOSE 中的签名和验证流程](https://onevcat.com/2018/12/jose-2/)
 3. 实践 - 如何使用 Security.framework 处理 JOSE 中的验证 (本文)
 
 这一篇中，我们会在 JOSE 基础篇和理论篇的知识架构上，使用 iOS (或者说 Cocoa) 的相关框架来完成对 JWT 的解析，并利用 JWK 对它的签名进行验证。在最后，我会给出一些我自己在实现和学习这些内容时的思考，并把一些相关工具和标准列举一下。
@@ -34,13 +34,9 @@ JWT，或者更精确一点，JWS 中的 Header 和 Payload 都是 Base64Url 编
 
 Base64 相信大家都已经很熟悉了，随着网络普及，这套编码有一个很大的“缺点”，就是使用了 `+`，`/` 和 `=`。这些字符在 URL 里是很不友好的，在作为传输时需要额外做 escaping。Base64Url 就是针对这个问题的改进，具体来说就是：
 
-1. 替换为
-
-  ；
-2. 替换为
-
-  ；
-3. 干掉。
+1. 将 `+` 替换为 `-`；
+2. 将 `/` 替换为 `_`；
+3. 将末尾的 `=` 干掉。
 
 相关代码的话非常简单，为 `Data` 和 `String` 分别添加 extension 来相互转换就好：
 
@@ -432,8 +428,8 @@ macOS 上自带的 OpenSSL 版本一般比较旧，而大部分 Linux 系统的 
 
 JWT 最常见的使用场景有两个：
 
-- ：用户登录后，在后续的请求中带上一个有效的 JWT，其中包含该用户可以访问的路径或权限等。服务器验证 JWT 有效性后对访问进行授权。相比于传统像是 OAuth 的 token 来说，服务器并不需要存储这些 token，可以实现无状态的授权，因此它的开销较小，也更容易实现和理解。另外，由于 JWT 不需要依赖 Cookie 的特性，跨站或者跨服务依然可能使用，这让单点登录非常简单。
-- ：LINE SDK 中对用户信息进行签名和验证，就属于信息交换的范畴。依赖 JWT 的签名特性，接收方可以确保 JWT 中的内容没有被篡改，是一种安全的信息交换方式。
+- **授权**：用户登录后，在后续的请求中带上一个有效的 JWT，其中包含该用户可以访问的路径或权限等。服务器验证 JWT 有效性后对访问进行授权。相比于传统像是 OAuth 的 token 来说，服务器并不需要存储这些 token，可以实现无状态的授权，因此它的开销较小，也更容易实现和理解。另外，由于 JWT 不需要依赖 Cookie 的特性，跨站或者跨服务依然可能使用，这让单点登录非常简单。
+- **信息交换**：LINE SDK 中对用户信息进行签名和验证，就属于信息交换的范畴。依赖 JWT 的签名特性，接收方可以确保 JWT 中的内容没有被篡改，是一种安全的信息交换方式。
 
 最近有非常多的关于反对使用 JWT 进行授权的声音，比如[这篇文章](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)和[这篇文章](https://paragonie.com/blog/2017/03/jwt-json-web-tokens-is-bad-standard-that-everyone-should-avoid)。JWT 作为授权 token 来使用，最大的问题在于无法过期或者作废，另外，一些严格遵守标准的实现，反而可能[引入严重的安全问题](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/)。
 
@@ -445,64 +441,34 @@ JWT 最常见的使用场景有两个：
 
 ##### 关于编码和算法
 
-- X.680 - ASN.1 的标准和基本标注方式
-
-  ：ASN.1 是这套方法的名字，而对应的标准号是 X.680。
-- X.690 - DER 编码规则
-
-  ：也包括了其他的，比如 BER 和 CER 的编码规则。
-- RFC 3279 - 关于 X.509 如何编码密钥和签名
-
-  ：在 X.509 应用层面上密钥以及签名的构成。
-- SEC 2 - 关于椭圆曲线算法参数
-
-  ：ECDSA 的各种 OIDs 定义和椭圆曲线 G 值的表示方式。
-- X9.62 - 椭圆曲线的应用和相关编码方式
-
-  ：描述了 ECDSA 算法和密钥的表示方式。它在 SEC 2 的基础上添加了关于曲线点 (也就是实际的密钥本身) 的定义。
-- RFC 5480 - 椭圆曲线公钥的信息
-
-  ：EC 公钥的定义，表示方式，使用曲线和对应的密钥位数及散列算法的关系。
-- RFC 8017 - RSA 算法相关的标准
-
-  ：包括像是 RSA key 的 ASN.1 定义，所注册的 OIDs 。
+- [X.680 - ASN.1 的标准和基本标注方式](https://www.itu.int/ITU-T/studygroups/com17/languages/X.680-0207.pdf)：ASN.1 是这套方法的名字，而对应的标准号是 X.680。
+- [X.690 - DER 编码规则](https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf)：也包括了其他的，比如 BER 和 CER 的编码规则。
+- [RFC 3279 - 关于 X.509 如何编码密钥和签名](https://tools.ietf.org/html/rfc3279)：在 X.509 应用层面上密钥以及签名的构成。
+- [SEC 2 - 关于椭圆曲线算法参数](http://www.secg.org/sec2-v2.pdf)：ECDSA 的各种 OIDs 定义和椭圆曲线 G 值的表示方式。
+- [X9.62 - 椭圆曲线的应用和相关编码方式](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.202.2977&rep=rep1&type=pdf)：描述了 ECDSA 算法和密钥的表示方式。它在 SEC 2 的基础上添加了关于曲线点 (也就是实际的密钥本身) 的定义。
+- [RFC 5480 - 椭圆曲线公钥的信息](https://tools.ietf.org/html/rfc5480)：EC 公钥的定义，表示方式，使用曲线和对应的密钥位数及散列算法的关系。
+- [RFC 8017 - RSA 算法相关的标准](https://tools.ietf.org/html/rfc8017)：包括像是 RSA key 的 ASN.1 定义，所注册的 OIDs 。
 
 ##### 关于 JOSE
 
-- RFC 7515 - JSON Web Signature (JWS)
-- RFC 7516 - JSON Web Encryption (JWE)
-- RFC 7517 - JSON Web Key (JWK)
-- RFC 7518 - JSON Web Algorithms (JWA)
-- RFC 7519 - JSON Web Token (JWT)
-- RFC 7165 - JOSE 的使用例子和要求
+- [RFC 7515 - JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
+- [RFC 7516 - JSON Web Encryption (JWE)](https://tools.ietf.org/html/rfc7516)
+- [RFC 7517 - JSON Web Key (JWK)](https://tools.ietf.org/html/rfc7517)
+- [RFC 7518 - JSON Web Algorithms (JWA)](https://tools.ietf.org/html/rfc7518)
+- [RFC 7519 - JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
+- [RFC 7165 - JOSE 的使用例子和要求](https://tools.ietf.org/html/rfc7165)
 
 ##### 杂项
 
-- RFC 4648 - 关于 Base64Url 的编码规则
-
-  ：JOSE 中的数据都是使用 Base64Url 进行编码的。
-- OpenID Connect Discovery
-
-  ：OpenID 相关的 profile 取得方式，以及其中键值对的定义。关于 Discovery Document 的更好的说明，可以参考
-
-  Google 的这个指南
-
-  。
+- [RFC 4648 - 关于 Base64Url 的编码规则](https://tools.ietf.org/html/rfc4648)：JOSE 中的数据都是使用 Base64Url 进行编码的。
+- [OpenID Connect Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)：OpenID 相关的 profile 取得方式，以及其中键值对的定义。关于 Discovery Document 的更好的说明，可以参考 [Google 的这个指南](https://developers.google.com/identity/protocols/OpenIDConnect#discovery)。
 
 #### 验证和速查工具汇总
 
-- ASN.1 解码器
-
-  ：将一段 DER 数据解码为可读的 ASN.1 表示。
-- 数据格式转换
-
-  ：将数据在 Base64、文本和字节表示之间进行任意转换。
-- ASN.1 中的 OIDs 转换
-
-  ：帮助解码和编码 OBJECT IDENTIFIER 值。
-- JWK 和 PEM 相互转换
-
-  ：将 JWK 或者 PEM 的密钥相互转换的工具。
+- [ASN.1 解码器](https://holtstrom.com/michael/tools/asn1decoder.php)：将一段 DER 数据解码为可读的 ASN.1 表示。
+- [数据格式转换](https://cryptii.com/pipes/base64-to-hex)：将数据在 Base64、文本和字节表示之间进行任意转换。
+- [ASN.1 中的 OIDs 转换](https://www.alvestrand.no/objectid/top.html)：帮助解码和编码 OBJECT IDENTIFIER 值。
+- [JWK 和 PEM 相互转换](https://8gwifi.org/jwkconvertfunctions.jsp)：将 JWK 或者 PEM 的密钥相互转换的工具。
 
 #### 你的这篇文章或者代码好像有问题！
 

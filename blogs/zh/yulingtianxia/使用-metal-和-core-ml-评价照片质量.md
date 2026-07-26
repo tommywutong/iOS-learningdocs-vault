@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-08-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:13d1f6bd03177734'
 translated: n/a
 ---
@@ -20,11 +20,13 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-11-30
 
-1. 1. 常规算法
-2. 2. 机器学习
-3. 3. 照片相似度
-4. 4. 总结
-5. 5. Reference
+**文章目录**
+
+1. [1. 常规算法](#常规算法)
+2. [2. 机器学习](#机器学习)
+3. [3. 照片相似度](#照片相似度)
+4. [4. 总结](#总结)
+5. [5. Reference](#Reference)
 
 如何评价一张照片的质量呢？
 
@@ -36,7 +38,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](http://yulingtianxia.com/resources/PhotoAssessment/AssessmentResult1.png)![](http://yulingtianxia.com/resources/PhotoAssessment/AssessmentResult2.png)
 
-## [#常规算法](#常规算法)常规算法
+## 常规算法
 
 目前业界有很多衡量照片质量的维度，可以通过调整各个维度占的权重来计算照片的最终得分。常用的衡量维度都是一些图形学上的客观因素：
 
@@ -127,7 +129,7 @@ Sobel 算子卷积运算后的方差值可以用来检测模糊程度。下面�
 
 常规做法都是利用客观评价指标来打分，可以通过设定阈值来过滤掉不符合要求的照片，但没能像大脑一样通过读懂图片的内容来评判质量。
 
-## [#机器学习](#机器学习)机器学习
+## 机器学习
 
 Google AI Blog 在 2017 年底发表过一篇博客：[Introducing NIMA: Neural Image Assessment](https://ai.googleblog.com/2017/12/introducing-nima-neural-image-assessment.html)。讲述了通过神经网络迁移学习来预测图片评分方法。损失函数为 EMD (earth mover’s distance)，分数分布范围是 1-10 分。先用一些已有的模型在 ImageNet 上预训练，再加个 10 节点的全连接层使用 AVA 等数据集 fune-tune。预测结果是 10 个分数的分布，而不是直接给出评分，所以可以进一步计算出期望分和方差等。
 
@@ -135,15 +137,9 @@ Google AI Blog 在 2017 年底发表过一篇博客：[Introducing NIMA: Neural 
 
 在网上搜索到了几个还算不错的开源实现：
 
-- idealo/image-quality-assessment
-
-  ：使用 Keras + Docker + AWS 实现，MobileNet 的完成度较高，提供了 aesthetic 和 technical 两种训练好的评分模型。Keras 模型可以直接转成 mlmodel。
-- titu1994/neural-image-assessment
-
-  ：使用 Keras 实现，提供了训练好的几种模型。效果最好的为 NASNet Mobile，loss = 0.067。Keras 模型可以直接转成 mlmodel。
-- truskovskiyk/nima.pytorch
-
-  ：使用 pytorch 实现，完成度一般，只提供了 MobileNetV2 模型（loss = 0.08）。pytorch 模型需要先转为 ONNX，然后再转成 mlmodel 格式。
+- [idealo/image-quality-assessment](https://github.com/idealo/image-quality-assessment)：使用 Keras + Docker + AWS 实现，MobileNet 的完成度较高，提供了 aesthetic 和 technical 两种训练好的评分模型。Keras 模型可以直接转成 mlmodel。
+- [titu1994/neural-image-assessment](https://github.com/titu1994/neural-image-assessment)：使用 Keras 实现，提供了训练好的几种模型。效果最好的为 NASNet Mobile，loss = 0.067。Keras 模型可以直接转成 mlmodel。
+- [truskovskiyk/nima.pytorch](https://github.com/truskovskiyk/nima.pytorch)：使用 pytorch 实现，完成度一般，只提供了 MobileNetV2 模型（loss = 0.08）。pytorch 模型需要先转为 ONNX，然后再转成 mlmodel 格式。
 
 经过反复试验与对比结果，最终使用了第一个开源实现的 MobileNet。在这个过程中踩了不少坑：
 
@@ -161,7 +157,7 @@ PS: 这里原本还加入了神经网络识别面部表情，但是由于准确�
 
 这部分的代码实现在这里： [PhotoMLProcessor.swift](https://github.com/yulingtianxia/PhotoAssessment/blob/master/PhotoAssessment-Sample/Sources/PhotoMLProcessor.swift)
 
-## [#照片相似度](#照片相似度)照片相似度
+## 照片相似度
 
 我 2016 年曾经写过一篇文章：[如何自制一款寻找相似图片的 Mac 工具](http://yulingtianxia.com/blog/2016/01/17/search-for-similar-images/)，原理是通过 RGBA 色彩空间和像素相对位置构造出一个特征向量，然后计算特征向量之间的余弦相似度作为照片的相似度。这种做法在处理移动客户端照片时可以进一步优化：
 
@@ -212,19 +208,19 @@ PS: 这里原本还加入了神经网络识别面部表情，但是由于准确�
 
 因为输入都是像素数组，降采样使用 `MPSImageBilinearScale`，实现细节类似于上面讲的边缘检测。代码在 [PhotoMPSProcessor.swift](https://github.com/yulingtianxia/PhotoAssessment/blob/master/PhotoAssessment-Sample/Sources/PhotoMPSProcessor.swift) 里。
 
-## [#总结](#总结)总结
+## 总结
 
 算法可以通过调整阈值来平衡准确度与性能。比如降采样的尺寸和相似度阈值都是可以影响到最终结果和性能开销的。这里不再展开讨论。使用 Vision + Core ML 预测图片和人脸识别依然耗时较久，处理 500 张图片可能要几十秒，在生产环境下批量处理图片时需要注意。
 
-## [#Reference](#Reference)Reference
+## Reference
 
-- yulingtianxia/PhotoAssessment
-- 数字图像 - 边缘检测原理 - Sobel, Laplace, Canny算子
-- idealo/image-quality-assessment
-- titu1994/neural-image-assessment
-- truskovskiyk/nima.pytorch
-- NIMA: Neural Image Assessment
-- Introducing NIMA: Neural Image Assessment
-- Core ML
-- apple/coremltools
-- MTKTextureLoader fails for 16-big images
+- [yulingtianxia/PhotoAssessment](https://github.com/yulingtianxia/PhotoAssessment)
+- [数字图像 - 边缘检测原理 - Sobel, Laplace, Canny算子](https://www.jianshu.com/p/2334bee37de5)
+- [idealo/image-quality-assessment](https://github.com/idealo/image-quality-assessment)
+- [titu1994/neural-image-assessment](https://github.com/titu1994/neural-image-assessment)
+- [truskovskiyk/nima.pytorch](https://github.com/truskovskiyk/nima.pytorch)
+- [NIMA: Neural Image Assessment](https://arxiv.org/abs/1709.05424)
+- [Introducing NIMA: Neural Image Assessment](https://ai.googleblog.com/2017/12/introducing-nima-neural-image-assessment.html)
+- [Core ML](https://developer.apple.com/documentation/coreml)
+- [apple/coremltools](https://github.com/apple/coremltools)
+- [MTKTextureLoader fails for 16-big images](https://forums.developer.apple.com/thread/97218)

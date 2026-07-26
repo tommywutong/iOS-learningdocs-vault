@@ -7,7 +7,7 @@ original_language: zh
 published: 2021-11-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7d3fcf683c93283c'
 translated: n/a
 ---
@@ -198,16 +198,8 @@ void incrementDeallocations(__unsafe_unretained id obj) {
 
 计数相关操作就介绍完毕了，操作也比较简单：
 
-1. 记录
-
-  的
-
-  调用次数；
-2. 记录
-
-  的
-
-  调用次数。
+1. `incrementAllocations` 记录 `Class` 的 `alloc` 调用次数；
+2. `incrementDeallocations` 记录 `Class` 的 `dealloc` 调用次数。
 
 ## 跟踪对象实例
 

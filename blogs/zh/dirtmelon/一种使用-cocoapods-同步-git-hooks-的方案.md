@@ -7,7 +7,7 @@ original_language: zh
 published: 2021-05-23
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90849e8fdf4ad8b1'
 translated: n/a
 ---
@@ -24,38 +24,10 @@ Git hooks 可以使用多种语言编写，包括 Shell ， Ruby ， Perl 和 Py
 
 Git-SCM [Git - Git Hooks](http://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) 详细说明了各种 hooks 的类型，同时也提供了中文版本 [Pro Git - Git hooks](https://www.progit.cn/#_git_hooks) 。 常用的 hooks ：
 
-- ：执行
-
-  时触发，可以用于代码规范等，就 iOS 来说，如果团队间禁止使用
-
-  或者
-
-  ，那么在
-
-  时可以检测是否有
-
-  或者
-
-  文件。也可以用于资源大小的检测，可以设置图片资源大小不能超过某个尺寸；
-- ： 在执行
-
-  时会调用，可用于提供
-
-  信息的模版；
-- ：在完成
-
-  编写和提交后出发，可用于校验
-
-  的说明是否符合规范，结合
-
-  可以在团队间设置
-
-  信息的规范；
-- ：在完成
-
-  之后执行，不接受任何参数，但是可以通过
-
-  来获取最后一次的提交信息，可以用于发送邮件提醒之类。
+- `pre-commit` ：执行 `git commit` 时触发，可以用于代码规范等，就 iOS 来说，如果团队间禁止使用 `xib` 或者 `storyboard` ，那么在 `commit` 时可以检测是否有 `xib` 或者 `storyboard` 文件。也可以用于资源大小的检测，可以设置图片资源大小不能超过某个尺寸；
+- `prepare-commit-msg` ： 在执行 `git commit` 时会调用，可用于提供 `commit` 信息的模版；
+- `commit-msg` ：在完成 `commit message` 编写和提交后出发，可用于校验 `commit` 的说明是否符合规范，结合 `prepare-commit-msg` 可以在团队间设置 `commit` 信息的规范；
+- `post-commit` ：在完成 `commit` 之后执行，不接受任何参数，但是可以通过 `git log -1 HEAD` 来获取最后一次的提交信息，可以用于发送邮件提醒之类。
 
 ## 同步问题
 

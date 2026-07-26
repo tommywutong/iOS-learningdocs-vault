@@ -20,10 +20,10 @@ WWDC 2014 已经过去一个多月。最激动人心的莫过于 Swift 这门新
 
 这篇总览先简要介绍下在我看来作为 iOS 开发者应该关注的开发时的变化，在之后一系列文章里我会对其中的某几个部分详细探讨一下，而其余的可能就在本文中做简介。总而言之，这次 WWDC 2014 的相关笔记（现在来说的话是暂定计划要写的内容）大概整理如下：
 
-- 开发者所需要知道的 iOS8 SDK 新特性
-- iOS 界面开发的大一统
-- iOS 通知中心扩展制作入门
-- 可视化开发，IB 的新时代
+- [开发者所需要知道的 iOS8 SDK 新特性](http://onevcat/2014/07/developer-should-know-about-ios8)
+- [iOS 界面开发的大一统](http://onevcat.com/2014/07/ios-ui-unique/)
+- [iOS 通知中心扩展制作入门](http://onevcat.com/2014/08/notification-today-widget/)
+- [可视化开发，IB 的新时代](http://onevcat.com/2014/10/ib-customize-view/)
 - iOS 和 Mac 整合开发
 - 通知中心和应用使用重心的改变
 

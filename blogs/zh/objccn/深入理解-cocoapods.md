@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:04d37e5202a02a48'
 translated: n/a
 ---
@@ -161,9 +161,9 @@ CocoaPods 将依照 `Podfile`、`.podspec` 和缓存文件的信息将源文件�
 
 当 CocoaPods 往工程中添加一个第三方库时，不仅仅是添加代码这么简单，还会添加很多内容。由于每个第三方库有不同的 target，因此对于每个库，都会有几个文件需要添加，每个 target 都需要：
 
-- 文件
-- 文件
-- 文件
+- 一个包含编译选项的 `.xcconfig` 文件
+- 一个同时包含编译设置和 CocoaPods 默认配置的私有 `.xcconfig` 文件
+- 一个编译所必须的 `prefix.pch` 文件
 - 另一个编译必须的文件 `dummy.m`
 
 一旦每个 pod 的 target 完成了上面的内容，整个 `Pods` target 就会被创建。这增加了相同文件的同时，还增加了另外几个文件。如果源码中包含有资源 bundle，将这个 bundle 添加至程序 target 的指令将被添加到 `Pods-Resources.sh` 文件中。还有一个名为 `Pods-environment.h` 的文件，文件中包含了一些宏，这些宏可以用来检查某个组件是否来自 pod。最后，将生成两个认可文件，一个是 `plist`，另一个是 `markdown`，这两个文件用于给最终用户查阅相关许可信息。

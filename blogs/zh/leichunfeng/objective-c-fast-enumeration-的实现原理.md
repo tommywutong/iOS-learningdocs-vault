@@ -7,7 +7,7 @@ original_language: zh
 published: 2016-06-20
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8c82b484a71bf8d8'
 translated: n/a
 ---
@@ -20,7 +20,7 @@ Jun 20th, 2016 8:30 pm
 
 在 Objective-C 2.0 中提供了快速枚举的语法，它是我们遍历集合元素的首选方法，因为它具有以下优点：
 
-- 更高效；
+- 比直接使用 `NSEnumerator` 更高效；
 - 语法非常简洁；
 - 如果集合在遍历的过程中被修改，它会抛出异常；
 - 可以同时执行多个枚举。

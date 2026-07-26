@@ -7,7 +7,7 @@ original_language: zh
 published: 2016-05-14
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:44ab59a0d4349c1f'
 translated: n/a
 ---
@@ -24,7 +24,7 @@ Clang Attributes 是 Clang 提供的一种**源码注解**，方便开发者向�
 
 > 以下测试都以 Xcode 7.3 ( Clang 3.8 ) 为准
 
-## [#objc-subclassing-restricted](#objc-subclassing-restricted)objc_subclassing_restricted
+## objc_subclassing_restricted
 
 使用这个属性可以定义一个 `Final Class`，也就是说，一个不可被继承的类，假设我们有个名叫 `Eunuch（太监）` 的类，但并不希望有人可以继承自它：
 
@@ -45,7 +45,7 @@ __attribute__((objc_subclassing_restricted))
 @end
 ```
 
-## [#objc-requires-super](#objc-requires-super)objc_requires_super
+## objc_requires_super
 
 aka: `NS_REQUIRES_SUPER`，标志子类继承这个方法时需要调用 `super`，否则给出编译警告：
 
@@ -66,7 +66,7 @@ aka: `NS_REQUIRES_SUPER`，标志子类继承这个方法时需要调用 `super`
 @end
 ```
 
-## [#objc-boxable](#objc-boxable)objc_boxable
+## objc_boxable
 
 Objective-C 中的 `@(...)` 语法糖可以将基本数据类型 box 成 `NSNumber` 对象，假如想 box 一个 `struct` 类型或是 `union` 类型成 `NSValue` 对象，可以使用这个属性：
 
@@ -85,7 +85,7 @@ XXRect rect2 = {1, 2, 3, 4};
 NSValue *value2 = @(rect2); // √
 ```
 
-## [#constructor-destructor](#constructor-destructor)constructor / destructor
+## constructor / destructor
 
 顾名思义，构造器和析构器，加上这两个属性的函数会在分别在可执行文件（或 shared library）**load** 和 **unload** 时被调用，可以理解为在 `main()` 函数调用前和 return 后执行：
 
@@ -119,7 +119,7 @@ constructor 和 `+load` 都是在 main 函数执行前调用，但 `+load` 比 c
 
 > PS：若有多个 constructor 且想控制优先级的话，可以写成 `__attribute__((constructor(101)))`，里面的数字越小优先级越高，1 ~ 100 为系统保留。
 
-## [#enable-if](#enable-if)enable_if
+## enable_if
 
 这个属性只能用在 C 函数上，可以用来实现**参数的静态检查**：
 
@@ -138,11 +138,11 @@ printValidAge(150); // <--- Compile Error
 printValidAge(-1); // <--- Compile Error
 ```
 
-## [#cleanup](#cleanup)cleanup
+## cleanup
 
 声明到一个变量上，当这个变量作用域结束时，调用指定的一个函数，Reactive Cocoa 用这个特性实现了神奇的 `@onExit`，关于这个 attribute，在之前的文章中有介绍，[传送门](http://blog.sunnyxx.com/2014/09/15/objc-attribute-cleanup/)。
 
-## [#overloadable](#overloadable)overloadable
+## overloadable
 
 用于 C 函数，可以定义若干个函数名相同，但参数不同的方法，调用时编译器会自动根据参数选择函数原型：
 
@@ -162,7 +162,7 @@ logAnything(233);
 logAnything(CGRectMake(1, 2, 3, 4));
 ```
 
-## [#objc-runtime-name](#objc-runtime-name)objc_runtime_name
+## objc_runtime_name
 
 用于 `@interface` 或 `@protocol`，将类或协议的名字在编译时指定成另一个：
 
@@ -197,7 +197,7 @@ __attribute__((objc_runtime_name("40ea43d7629d01e4b8d6289a132482d0dd5df4fa")))
 
 在运行时用 `__attribute__((constructor))` 获取入口时机，用 runtime 找到这个类，反解出 “sharedInstance” 这个 selector 信息，动态将 `+ alloc`，`- init` 等方法替换，返回 `+ sharedInstance` 单例。
 
-## [#References](#References)References
+## References
 
 [http://llvm.org/releases/3.8.0/tools/clang/docs/AttributeReference.html](http://llvm.org/releases/3.8.0/tools/clang/docs/AttributeReference.html)  
 [http://clang-analyzer.llvm.org/annotations.html](http://clang-analyzer.llvm.org/annotations.html)

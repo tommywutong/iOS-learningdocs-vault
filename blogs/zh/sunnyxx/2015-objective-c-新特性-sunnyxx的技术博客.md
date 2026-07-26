@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-06-12
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d8ed54747cee5944'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2015年6月12日
 
-# [#Overview](#Overview)Overview
+# Overview
 
 自 WWDC 2015 推出和开源 Swift 2.0 后，大家对 Swift 的热情又一次高涨起来，在羡慕创业公司的朋友们大谈 Swift 新特性的同时，也有很多像我一样工作上依然需要坚守着 Objective-C 语言的开发者们。今年的 WWDC 中介绍了几个 Objective-C 语言的新特性，还是在“与 Swift 协同工作”这种 Topic 里讲的，越发凸显这门语言的边缘化了，不过有新特性还是极好的，接下来，本文将介绍下面三个主要的新特性：
 
@@ -26,7 +26,7 @@ translated: n/a
 - Lightweight Generics *
 - __kindof
 
-# [#Nullability](#Nullability)Nullability
+# Nullability
 
 然而 Nullability 并不算新特性了，从上一个版本的 llvm 6.1 (Xcode 6.3) 就已经支持。这个简版的 Optional ，没有 Swift 中 `?` 和 `!` 语法糖的支持，在 Objective-C 中就显得非常啰嗦了：
 
@@ -71,11 +71,11 @@ NSURL 的这个 API 前面加了 nullable 后，更加显式的指出了这个�
 不仅是属性和方法中的对象，对于局部的对象、甚至 c 指针都可以用带双下划线的修饰符，可以理解成能用 const 关键字的地方都能用 Nullability。  
 所以 Nullability 总的来说就是，写着丑B，用着舒服 - -
 
-# [#Lightweight-Generics](#Lightweight-Generics)Lightweight Generics
+# Lightweight Generics
 
 **Lightweight Generics** 轻量级泛型，轻量是因为这是个纯编译器的语法支持（llvm 7.0），和 Nullability 一样，没有借助任何 objc runtime 的升级，也就是说，这个新语法在 Xcode 7 上可以使用且完全向下兼容（更低的 iOS 版本）
 
-## [#带泛型的容器](#带泛型的容器)带泛型的容器
+## 带泛型的容器
 
 这无疑是本次最重大的改进，有了泛型后终于可以指定容器类中对象的类型了：
 
@@ -101,7 +101,7 @@ NSDictionary<NSString *, NSNumber *> *mapping = @{@"a": @1, @"b": @2};
 
 不用多想就清楚下面的数组中存的是什么，避免了 NSString 和 NSURL 的混乱。
 
-## [#自定义泛型类](#自定义泛型类)自定义泛型类
+## 自定义泛型类
 
 比起使用系统的泛型容器，更好玩的是自定义一个泛型类，目前这里还没什么文档，但拦不住我们写测试代码，假设我们要自定义一个 Stack 容器类：
 
@@ -129,7 +129,7 @@ NSDictionary<NSString *, NSNumber *> *mapping = @{@"a": @1, @"b": @2};
 
 对于多参数的泛型，用逗号隔开，其他都一样，可以参考 NSDictionary 的头文件。
 
-## [#协变性和逆变性](#协变性和逆变性)协变性和逆变性
+## 协变性和逆变性
 
 当类支持泛型后，它们的 Type 发生了变化，比如下面三个对象看上去都是 Stack，但实际上属于三个 Type：
 
@@ -170,7 +170,7 @@ Stack<NSMutableString *> *mutableStringStack; // Stack<NSMutableString *>
 
 协变是非常好理解的，像 NSArray 的泛型就用了协变的修饰符，而逆变我还没有想到有什么实际的使用场景。
 
-# [#kindof](#kindof)__kindof
+# __kindof
 
 __kindof 这修饰符还是很实用的，解决了一个长期以来的小痛点，拿原来的 UITableView 的这个方法来说：
 
@@ -196,7 +196,7 @@ __kindof 这修饰符还是很实用的，解决了一个长期以来的小痛�
 UIButton *button = view.subviews.lastObject;
 ```
 
-# [#Where-to-go](#Where-to-go)Where to go
+# Where to go
 
 有了上面介绍的这些新特性以及如 **instancetype** 这样的历史更新，Objective-C 这门古老语言的类型检测和类型推断终于有所长进，现在不论是接口还是代码中的 **id** 类型都越来越少，更多潜在的类型错误可以被编译器的静态检查发现。  
 同时，个人感觉新版的 Xcode 对继承链构造器的检测也加强了，**NS_DESIGNATED_INITIALIZER** 这个宏并不是新面孔，可以使用它标志出像 Swift 一样的指定构造器和便捷构造器。
@@ -205,11 +205,11 @@ UIButton *button = view.subviews.lastObject;
 
 ![](http://ww2.sinaimg.cn/large/51530583jw1et2iirmu7bj20ze0bojvm.jpg)
 
-# [#References](#References)References
+# References
 
 [https://msdn.microsoft.com/zh-cn/library/dd799517.aspx](https://msdn.microsoft.com/zh-cn/library/dd799517.aspx)  
 [https://gist.github.com/jtbandes/881f07a955ff2eadd1a0](https://gist.github.com/jtbandes/881f07a955ff2eadd1a0)
 
-# [#请我喝瓶可乐？](#请我喝瓶可乐？)请我喝瓶可乐？
+# 请我喝瓶可乐？
 
 ![](http://ww2.sinaimg.cn/large/51530583jw1et2mwz8hqzj20af0camy7.jpg)

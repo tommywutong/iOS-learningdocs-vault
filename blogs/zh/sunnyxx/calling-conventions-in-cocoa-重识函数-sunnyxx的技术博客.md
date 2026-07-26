@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:30e36f98c2a38af2'
 translated: n/a
 ---
@@ -22,7 +22,7 @@ translated: n/a
 
 这是系列文章中的一篇：
 
-- Calling Conventions - 初识
+- [Calling Conventions - 初识](http://localhost:4000/2016/05/21/objc-calling-conventions/)
 - Calling Conventions - va_list
 - Calling Conventions - objc_msgSend
 - Calling Conventions - NSInvocation 与 NSMethodSignature 的勾当
@@ -36,7 +36,7 @@ translated: n/a
 
 本文在 Objective-C 语境下，对计算机大楼地基中的 `Calling Conventions` 进行研究和介绍，它描述了**函数调用**所遵循的基本原则，了解之后，可以让我们对 iOS 一些机制的理解变的更加清晰，如：可变参数、`objc_msgSend` 为何这样实现、`NSInvocation` 是干嘛的、`NSMethodSignature` 存在的意义、`libffi` 等，下面细细讲来。
 
-## [#CPU-后厨](#CPU-后厨)CPU 后厨
+## CPU 后厨
 
 要理解 Calling Conventions 就需要先理解程序运行的机制，不妨把
 
@@ -60,14 +60,15 @@ translated: n/a
 - objc_retainAutorelease 的里应外合实现
 - 动态反射调用 c 方法与 libffi
 
-## [#Calling-Conventions-是干嘛用的](#Calling-Conventions-是干嘛用的)Calling Conventions 是干嘛用的
+## Calling Conventions 是干嘛用的
 
 > a calling convention is an implementation-level (low-level) scheme for how subroutines receive parameters from their caller and how they return a result.
 
 它约定了（包括但不限于）：
 
 - 入参和返回值存放的位置和规则：用 register（寄存器）还是用 stack（栈内存）还是某种组合方式传递、参数个数和类型不同时如何存放（取决于一个值的长度能否被寄存器的长度容下，如一个较大的 struct 的返回方式不同于一个 int 的返回方式）
-- -
+- 参数的传递顺序  
+  -
 
 从刚开始学 C 语言的时候，就在接触函数。只要看到它的声明，就知道了函数名、入参类型、返回值类型：
 
@@ -85,11 +86,7 @@ void test() {
 
 一切都非常自然，而背后却是 `Calling Conventions` 定义的规则：
 
-1. （寄存器）和
-
-  （函数栈内存），对于函数调用只是一个
-
-  指令跳转到函数入口地址，那函数参数如何传递、返回值如何返回给 caller 呢？
+1. C 代码编译后，被揉碎成一行行过程式的汇编指令，能直接操作的只有 `register`（寄存器）和 `stack`（函数栈内存），对于函数调用只是一个 `call` 指令跳转到函数入口地址，那函数参数如何传递、返回值如何返回给 caller 呢？
 2. 光我们能接触到的 Architecture 就有很多种，如 i386（ Mac32位和32位模拟器 ）、x86_64（Mac64位和64位模拟器）、真机 armv7、armv7s、arm64 等，每个架构下 CPU 不同导致汇编指令集也不尽相同，
 
 [http://zhuanlan.zhihu.com/p/19893066](http://zhuanlan.zhihu.com/p/19893066)  
@@ -128,7 +125,7 @@ NSRange range = [@"sunnyxx" rangeOfString:@"xx"];
 
 让我们一起来扒一扒。
 
-## [#汇编视角](#汇编视角)汇编视角
+## 汇编视角
 
 要探索 C 语言的函数调用机制，就要从更底层的汇编入手。在 `main.c` 中写一段简单的测试代码：
 
@@ -185,19 +182,13 @@ _main:
 
 `%rbp`（ Frame Base Pointer ）是栈基地址寄存器，`%rsp` ( Frame Stack Pointer ) 栈顶地址寄存器，这俩货是栈内存管理的核心，每当进入一个函数时：
 
-1. 指令将历史的
-
-  保存起来，腾出这个寄存器
-2. 指令将
-
-  的值赋值给
-
-  ，让基地址指向栈顶
-3. 回收栈内存。
+1. 用 `pushq` 指令将历史的 `%rbp` 保存起来，腾出这个寄存器
+2. 用 `movq` 指令将 `%rsp` 的值赋值给 `%rbp`，让基地址指向栈顶
+3. 在函数 return 前使用对应的 `popq` 回收栈内存。
 
 `%rsp` ( Frame Stack Pointer ) 负责记录栈内存的栈顶地址，和上面的 `%rbp` 配合，一个负责栈底一个负责栈顶；`movq` 指令就是个简单的赋值操作，相当于 `%rbp = %rsp`，
 
-## [#References](#References)References
+## References
 
 [https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/LowLevelABI/130-IA-32_Function_Calling_Conventions/IA32.html](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/LowLevelABI/130-IA-32_Function_Calling_Conventions/IA32.html)  
 [https://en.wikipedia.org/wiki/Calling_convention](https://en.wikipedia.org/wiki/Calling_convention)  

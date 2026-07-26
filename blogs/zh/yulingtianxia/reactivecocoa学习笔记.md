@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d3ef3213eba9a083'
 translated: n/a
 ---
@@ -20,26 +20,28 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-07-29
 
-1. 1. 官方介绍
-2. 2. 我的学习笔记（不断更新）
+**文章目录**
 
-    1. 2.1. 函数式编程
-    2. 2.2. 响应式编程
-    3. 2.3. RAC中的类和方法
+1. [1. 官方介绍](#官方介绍)
+2. [2. 我的学习笔记（不断更新）](#我的学习笔记（不断更新）)
 
-          1. 2.3.1. RACSignal和RACStream
-          2. 2.3.2. RACSubscriber
-          3. 2.3.3. RACDisposable
-          4. 2.3.4. RACCommand
-          5. 2.3.5. RACScheduler
-    4. 2.4. 解决引用循环
-    5. 2.5. 常用宏定义
-3. 3. 优秀文章
-4. 4. 视频
+    1. [2.1. 函数式编程](#函数式编程)
+    2. [2.2. 响应式编程](#响应式编程)
+    3. [2.3. RAC中的类和方法](#RAC中的类和方法)
+
+          1. [2.3.1. RACSignal和RACStream](#RACSignal和RACStream)
+          2. [2.3.2. RACSubscriber](#RACSubscriber)
+          3. [2.3.3. RACDisposable](#RACDisposable)
+          4. [2.3.4. RACCommand](#RACCommand)
+          5. [2.3.5. RACScheduler](#RACScheduler)
+    4. [2.4. 解决引用循环](#解决引用循环)
+    5. [2.5. 常用宏定义](#常用宏定义)
+3. [3. 优秀文章](#优秀文章)
+4. [4. 视频](#视频)
 
 几个月前看了一点RAC的介绍，感觉很强大但也很难入门，这次挖个坑，整理下RAC的资源。
 
-## [#官方介绍](#官方介绍)官方介绍
+## 官方介绍
 
 ReactiveCocoa 受[函数响应式编程](http://blog.maybeapps.com/post/42894317939/input-and-output)激发。不同于使用可变的变量替换和就地修改，RAC提供Signals（被表示为`RACSignal`）来捕获当前值和将来值。
 
@@ -222,19 +224,19 @@ RAC(self.imageView, image) = [[[[client
 更多的例子，参见 [C-41][] 或 [GroceryList][], 都是用ReactiveCocoa写的真实的iOS应用  
 . 关于 RAC 更多的详细信息可以在[Documentation][] 文件夹中找到.
 
-## [#我的学习笔记（不断更新）](#我的学习笔记（不断更新）)我的学习笔记（不断更新）
+## 我的学习笔记（不断更新）
 
-### [#函数式编程](#函数式编程)函数式编程
+### 函数式编程
 
 参考维基百科上的[概念](http://zh.wikipedia.org/wiki/函數程式語言)，简单理解为可以将函数作为其他函数的参数，具有block或λ表达式。
 
-### [#响应式编程](#响应式编程)响应式编程
+### 响应式编程
 
 参考维基百科上的[概念](http://zh.wikipedia.org/wiki/响应式编程)，简单地理解为专注于数据流和变化的传播。
 
-### [#RAC中的类和方法](#RAC中的类和方法)RAC中的类和方法
+### RAC中的类和方法
 
-#### [#RACSignal和RACStream](#RACSignal和RACStream)RACSignal和RACStream
+#### RACSignal和RACStream
 
 RAC的核心是Signal，对应的类为RACSignal，它其实是一个事件源，Signal会给它的订阅者（subscribers）发送一连串的事件。有三种事件：next，error和completed。Signal可以在error或completed事件发出前发出任意多的next事件。
 
@@ -288,7 +290,7 @@ RACSubscriber是一个协议，包含了向订阅者发送事件的方法。
 上面工厂方法用于创建一个Signal，当Signal被订阅时，`createSignal:`的参数block中的内容被执行。block的参数是一个实现RACSubscriber协议的对象，然后向这个订阅者发送了next事件（内容为NSNumber类型的@YES值）和completed事件。  
 PS：除此之外RACSubscriber还有`sendError:`和`didSubscribeWithDisposable:`两个方法。
 
-#### [#RACDisposable](#RACDisposable)RACDisposable
+#### RACDisposable
 
 你会发现RACSignal (Subscription)类别中所有方法的返回值类型都是RACDisposable，它的`dispose`方法可以让我们手动移除订阅者。举个栗子：
 
@@ -312,15 +314,15 @@ RACDisposable *subscription =
 
 当管道（好吧比较短）的订阅者全部被移除后，管道中的代码不会执行，包括三种事件参数block中的代码和诸如`doNext:`等副作用的block。可以简单理解为，当管道中的Signal没人订阅，它的事件就不会发出了。
 
-#### [#RACCommand](#RACCommand)RACCommand
+#### RACCommand
 
 `RACCommand` 通常用来表示某个Action的执行，比如点击Button。
 
-#### [#RACScheduler](#RACScheduler)RACScheduler
+#### RACScheduler
 
 类似于GCD中的序列，是管理线程的类，负责RAC中让信号发出的事件华丽丽的在线程中穿梭，尤其是想更新UI必须在主线程中的时候，可以让事件直接从其他线程跳到主线程。此外RACScheduler也有优先级、延时等GCD中的特性。
 
-### [#解决引用循环](#解决引用循环)解决引用循环
+### 解决引用循环
 
 使用RAC会写大量的block，这就会涉及到引用循环的问题，如果你细心的话会发现上一节的代码就存在这个问题，一种普遍的解决办法是声明一个weak变量，并将self赋值给它，然后再block中使用这个weak变量，但这样太繁琐了。
 
@@ -341,12 +343,12 @@ RACDisposable *subscription =
   }];
 ```
 
-### [#常用宏定义](#常用宏定义)常用宏定义
+### 常用宏定义
 
 `RAC()` 可以将Signal发出事件的值赋值给某个对象的某个属性，其参数为对象名和属性名  
 `RACObserve()` 参数为对象名和属性名，新建一个Signal并对对象的属性的值进行观察，当值变化时Signal会发出事件
 
-## [#优秀文章](#优秀文章)优秀文章
+## 优秀文章
 
 [nshipster-Reactive​Cocoa](http://nshipster.cn/reactivecocoa/)  
 [ReactiveCocoa与Functional Reactive Programming](http://limboy.me/ios/2013/06/19/frp-reactivecocoa.html)  
@@ -362,4 +364,4 @@ RACDisposable *subscription =
 [GroceryList](https://github.com/jspahrsummers/GroceryList)  
 [Documentation](https://github.com/ReactiveCocoa/ReactiveCocoa/tree/master/Documentation)
 
-## [#视频](#视频)视频
+## 视频

@@ -44,8 +44,8 @@ translated: n/a
 
 `llms.txt` 标准现在定义了两种不同的文件：`/llms.txt` 和 `/llms-full.txt`。
 
-- 提供了一个精简的网站文档导航视图，旨在帮助 AI 系统快速理解网站的结构，它通过链接提供了一个简洁、结构化的关键内容概述。
-- 是一个包含所有文档内容的综合性文件，它将所有文档整合到一个单独的 Markdown 文件中，这个文件需要“包罗万象”，因此尺寸一般比较大。
+- `/llms.txt` 提供了一个精简的网站文档导航视图，旨在帮助 AI 系统快速理解网站的结构，它通过链接提供了一个简洁、结构化的关键内容概述。
+- `/llms-full.txt` 是一个包含所有文档内容的综合性文件，它将所有文档整合到一个单独的 Markdown 文件中，这个文件需要“包罗万象”，因此尺寸一般比较大。
 
 这两种版本的存在使得网站所有者可以根据不同的用例和内容结构，选择向 LLMs 提供的信息详细程度。对于拥有大量文档的网站，以导航为中心的 `/llms.txt` 可以提供快速的路线图，而 `/llms-full.txt` 则提供完整的原始内容以供深入处理。
 
@@ -53,12 +53,10 @@ translated: n/a
 
 对于 `/llms.txt` 文件，其必须遵循特定的 Markdown 语法和结构。
 
-1. ）开头，随后可以有一个简短的项目描述的块引用（
-
-  ），通常一到三句话即可。
-2. ）组织，例如“文档”、“示例”等，用于列出文档链接，创建逻辑区块（例如，“主要文档”、“产品”）
-3. 。此处的 URL 应该是等同于为人类准备的网页地址所等同的该文档的 md 格式文件。
-4. 部分用于表示当上下文长度受限时可以省略的次要链接。
+1. 文件应以网站或项目名称的一级标题（`#`）开头，随后可以有一个简短的项目描述的块引用（`>`），通常一到三句话即可。
+2. 接下来的内容应使用二级标题（`##`）组织，例如“文档”、“示例”等，用于列出文档链接，创建逻辑区块（例如，“主要文档”、“产品”）
+3. 这个二级标题下应该是一个列表，它包含相应的链接和简短的描述，格式为 `- [文档名称](URL): 简短描述`。此处的 URL 应该是等同于为人类准备的网页地址所等同的该文档的 md 格式文件。
+4. 此外，还可以包含其他的二级区块，例如“可选资源”、或“隐私政策”等其他部分。一般会使用 `## Optional` 部分用于表示当上下文长度受限时可以省略的次要链接。
 
 一个典型且简单的 `llms.txt` 文件内容如下：
 
@@ -102,11 +100,9 @@ translated: n/a
 
 和主动抓取网络的搜索引擎或者爬虫不同，目前 LLMs 还不会自动发现和索引 `llms.txt` 文件（毕竟 llms-txt 还没有成为被完全认可的标准）。因此，我们还需要手动将文件内容提供给 AI 系统。这可以通过以下方式完成：
 
-1. 或
-
-  文件的链接；
-2. 文件的内容直接复制到提示词中；
-3. 文件。
+1. 直接向可以访问互联网的 AI 提供 `llms.txt` 或 `llms-full.txt` 文件的链接；
+2. 对不能访问互联网的 AI，将 `llms.txt` 文件的内容直接复制到提示词中；
+3. 或者，如果 AI 工具支持文件上传功能，则可以使用该功能上传 `llms.txt` 文件。
 
 目前该标准仍处于早期阶段，但随着标准的普及，我们可能会看到 AI 系统发展出自动发现和使用 `llms.txt` 文件的能力，这会类似于搜索引擎处理 `robots.txt` 和 `sitemap.xml` 的方式。
 
@@ -118,23 +114,11 @@ translated: n/a
 
 目前有多种工具可以帮助生成 `llms.txt` 文件，从而简化了创建过程，使得网站所有者更容易采用该标准。例如：
 
-- 是一个开源的命令行工具，可以基于网站的
-
-  文件生成
-
-  。
-- 的工具，它使用 Firecrawl 的爬虫来生成
-
-  文件。Firecrawl 还提供了一个功能齐全的 AI 爬虫，可以创建
-
-  文件，并为大型平台提供在线生成器。
-- 的生成功能，可以为托管的文档自动生成
-
-  和
-
-  。
+- dotenv 开发的 `llmstxt` 是一个开源的命令行工具，可以基于网站的 `sitemap.xml` 文件生成 `llms.txt`。
+- Firecrawl 也提供了一个名为 `llmstxt` 的工具，它使用 Firecrawl 的爬虫来生成 `llms.txt` 文件。Firecrawl 还提供了一个功能齐全的 AI 爬虫，可以创建 `llms.txt` 文件，并为大型平台提供在线生成器。
+- Mintlify 是一个文档平台，内置了 `llms.txt` 的生成功能，可以为托管的文档自动生成 `/llms.txt` 和 `/llms-full.txt`。
 - Microsoft 的 MarkItDown、Jina AI 的 Reader API 等，可以把任意内容转换为 Markdown，适合用来从没有直接纯文字驱动的网站生成 llms-full.txt。
-- 文件。
+- 也有一些 WordPress 插件可以用来创建和管理 `/llms.txt` 文件。
 
 下表列出了一些可用于生成 `llms.txt` 文件的工具：
 
@@ -151,11 +135,11 @@ translated: n/a
 
 许多网站已经开始实施 `llms.txt` 标准，并展示了其在不同场景下的实际应用。我们可以在 [llms.txt hub](https://llmstxthub.com) 上找到很多现成的示例，比如：
 
-- Cloudflare
-- Anthropic
-- Perplexity
-- ElevenLabs
-- Cursor
+- [Cloudflare](https://llmstxthub.com/website/cloudflare)
+- [Anthropic](https://docs.anthropic.com/llms.txt)
+- [Perplexity](https://llmstxthub.com/website/perplexity)
+- [ElevenLabs](https://llmstxthub.com/website/elevenlabs)
+- [Cursor](https://llmstxthub.com/websites/cursor)
 
 这个标准非常适合用来帮助 LLM 在上下文中索引文档，如果你的网站也实现了 llms.txt，不妨尝试将它们也提交到 llms.txt hub，让大家更容易发现它！
 

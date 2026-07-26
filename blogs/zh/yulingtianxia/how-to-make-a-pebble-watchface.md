@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:69a5c111f6e74a5c'
 translated: n/a
 ---
@@ -71,15 +71,11 @@ static void update_time() {
 
 这里说几个开发时需要注意的地方：
 
-1. 这篇指引
-
-  ，我 P 图的时候干脆搞成不透明的了。
-2. 中的对齐策略。
-3. 前缀。
+1. 显示带 alpha 通道的 png 图片时需要参照下[这篇指引](https://developer.pebble.com/blog/2015/05/13/tips-and-tricks-transparent-images/)，我 P 图的时候干脆搞成不透明的了。
+2. 位图无法缩放，但可以设置其在 `BitmapLayer` 中的对齐策略。
+3. 加载资源时需要加上 `RESOURCE_ID_` 前缀。
 4. 系统自带的字体并不是所有字号都有的，种类很有限。
-5. 的
-
-  是外接矩形，有内建方法判断是否是圆形手表。
+5. 圆形手表的 `Window` 的 `bounds.size` 是外接矩形，有内建方法判断是否是圆形手表。
 6. 真机调试需要打开手机上 Pebble 官方 App，打开开发者模式，开启开发者连接，保持蓝牙连接，让电脑与手机在同一个子网内。
 
 我选择使用云端开发工具 [CloudPebble](https://cloudpebble.net/ide/) 而不是本地 sdk，主要是因为 CloudPebble 集成了一套创建和管理工程、托管代码和资源、在真机或模拟器编译运行、持续集成以及支持同步 GitHub 的开发环境。很适合初学者快速上手，敏捷开发。

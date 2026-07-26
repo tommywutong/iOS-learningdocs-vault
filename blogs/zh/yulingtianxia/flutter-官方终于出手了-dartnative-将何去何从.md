@@ -7,7 +7,7 @@ original_language: zh
 published: 2022-12-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:50c85cbcc542ea88'
 translated: n/a
 ---
@@ -20,15 +20,17 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2022-12-12
 
-1. 1. ffigen 与 DartNative
-2. 2. 什么是 DartNative Interface
+**文章目录**
 
-    1. 2.1. 使用示例
+1. [1. ffigen 与 DartNative](#ffigen-与-DartNative)
+2. [2. 什么是 DartNative Interface](#什么是-DartNative-Interface)
 
-          1. 2.1.1. Dart 调用 Native
-          2. 2.1.2. Native 调用 Dart
-          3. 2.1.3. Dart Finalizer
-3. 3. 何去何从?
+    1. [2.1. 使用示例](#使用示例)
+
+          1. [2.1.1. Dart 调用 Native](#Dart-调用-Native)
+          2. [2.1.2. Native 调用 Dart](#Native-调用-Dart)
+          3. [2.1.3. Dart Finalizer](#Dart-Finalizer)
+3. [3. 何去何从?](#何去何从)
 
 2022 年 8 月底，Flutter 发布了 3.3 稳定版，随之发布的 Dart 2.18 宣布[支持 Dart 与 Objective-C 和 Swift 互调](https://flutter.cn/posts/dart-2-18#dart-与-objective-c-和-swift-互调)，而 [Java 与 Java/Kotlin 的互调也在开发中](https://github.com/dart-lang/sdk/issues/49674)。整体思路跟 DartNative 三年前的思路类似，走的也是跨语言 API 直接调用(但官方目前只支持同步)，然后通过工具链生成接口绑定。发布当天就有人给我提 Issue 了：[老哥，考虑一下这个库未来何去何从吧，官方有了](https://github.com/dart-native/dart_native/issues/105)，竟如此『不讲武德』
 
@@ -38,7 +40,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](http://yulingtianxia.com/resources/DartNative/14035340227.png)
 
-## [#ffigen-与-DartNative](#ffigen-与-DartNative)ffigen 与 DartNative
+## ffigen 与 DartNative
 
 Flutter 官方为了支持 Dart 与 Objective-C 和 Swift 互调，基于 ffigen 工具生成了大量的模板代码，缺点是可读性差，优点是性能好一些；DartNative 基于 Native Runtime 动态调用任意 Objective-C 和 Swift 方法，codegen 只是锦上添花，缺点是首次调用性能有所牺牲（有 cache），优点是动态性强且生成代码可读性高，即便手写代码也很少。
 
@@ -48,7 +50,7 @@ Flutter 官方为了支持 Dart 与 Objective-C 和 Swift 互调，基于 ffigen
 
 于是有意思的事情出现了：Channel/ffigen 和 DartNative 正在朝着对方的设计思路演进，但实现上却有很大差别。这里没有吹嘘 Flutter 官方是参考了 DartNative 的意思，毕竟这种只有不到 900 Star 的小项目根本不会受到 Google 官方关注，我相信这只是巧合罢了。而且 ffigen 和 DartNative 都是基于官方的 dart:ffi 实现的，所以 Google 永远都是爸爸。
 
-## [#什么是-DartNative-Interface](#什么是-DartNative-Interface)什么是 DartNative Interface
+## 什么是 DartNative Interface
 
 DartNative Interface 实现了跨语言接口之间的绑定和双向调用。相比于 Channel，无需针对 method 写一堆 if-else，也不用把参数挤在一坨序列化和反序列化。DartNative Interface 会将参数列表和返回值自动转换，并支持同步调用和异步协程（这 Channel 它能比吗？它不可以）。iOS/macOS/Android 目前支持的数据类型：num/String/List/Map/Set/NativeByte/NativeObject，支持双向互相调用。iOS/macOS 额外支持 Function/Pointer，支持 Swift。
 
@@ -56,9 +58,9 @@ DartNative Interface 实现了跨语言接口之间的绑定和双向调用。�
 
 ![](https://github.com/dart-native/dart_native/blob/master/images/dartnative.png?raw=true)
 
-### [#使用示例](#使用示例)使用示例
+### 使用示例
 
-#### [#Dart-调用-Native](#Dart-调用-Native)Dart 调用 Native
+#### Dart 调用 Native
 
 Dart 代码：
 
@@ -116,7 +118,7 @@ public class InterfaceDemo extends DartNativeInterface {
 }
 ```
 
-#### [#Native-调用-Dart](#Native-调用-Dart)Native 调用 Dart
+#### Native 调用 Dart
 
 Dart 代码：
 
@@ -156,7 +158,7 @@ invokeMethod("totalCost", new Object[]{0.123456789, 10, Arrays.asList("hello", "
 );
 ```
 
-#### [#Dart-Finalizer](#Dart-Finalizer)Dart Finalizer
+#### Dart Finalizer
 
 Flutter 3.0(Dart 2.17) 开始支持 Dart Finalizer，但是使用 DartNative，只需要 Flutter 2.2(Dart 2.13) 就可以了：
 
@@ -196,7 +198,7 @@ InterfaceMethod(finalizer, finalizerObject) {
 @end
 ```
 
-## [#何去何从](#何去何从)何去何从?
+## 何去何从?
 
 DartNative 的最近一次技术分享是在 2021 年底的 GMTC 深圳站：[Flutter 自研通道 DartNative 的探索与实现](https://gmtc.infoq.cn/2021/shenzhen/presentation/4010)。不过那次分享的内容有所保留，不仅没有提到 DartNative 的 Interface 开发计划，连当时已经做了的一些新特性都没有讲，比如支持 Swift 和 macOS、适配 Dart nullsafety、支持 muti-isolates、支持 OC 方法和 block 返回 Future 给 Dart 等。原因是篇幅要精简，况且总得攒点东西留着后续分享不是嘛？
 

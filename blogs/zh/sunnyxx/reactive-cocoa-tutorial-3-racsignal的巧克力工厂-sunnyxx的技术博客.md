@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-06
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a6a3fd179bf63ef6'
 translated: n/a
 ---
@@ -20,13 +20,13 @@ translated: n/a
 
 Reactive Cocoa Tutorial 系列，转载请注明该文源地址 [http://blog.sunnyxx.com/2014/03/06/rac_3_racsignal/](http://blog.sunnyxx.com/2014/03/06/rac_3_racsignal/) – by sunnyxx
 
-## [#Overview](#Overview)Overview
+## Overview
 
 上一篇介绍了函数式编程和`RACStream`，使得函数得以串联起来，而它的具体子类，也是RAC编程中最重要的部分，`RACSignal`就是使得算式得以逐步运算并使其有意义的关键所在，本节主要介绍`RACSignal`的机理，具体的使用放到接下来的几节。
 
 ![](http://pic.jschina.com.cn/0/12/03/96/12039600_602173.jpg)
 
-## [#巧克力工厂的运作模式](#巧克力工厂的运作模式)巧克力工厂的运作模式
+## 巧克力工厂的运作模式
 
 RACStream实现了一个嵌套函数的结构，如f(x) = f1(f2(f3(x)))，但好像是考试卷子上的一道题，没有人去做它，没得出个结果的话这道题是没有意义的。
 
@@ -39,11 +39,11 @@ OK，现在起将这个事儿都比喻成一个巧克力工厂，f(x)的结果�
 
 我觉得这个`push-driven`要想解释清楚，需要和RACSequence的`pull-driven`放在一起来看。在巧克力工厂，push-driven是“生产一个吃一个”，而pull-driven是“吃完一个才生产下一个”，对于工厂来说前者是主动模式：生产了巧克力就“push”给各个供销商，后者是被动模式：各个供销商过来“pull”产品时才给你现做巧克力。
 
-### [#Status](#Status)Status
+### Status
 
 所以，对于RACSigna的push-driven的生产模式，首先，当工厂发现没有供销商签合同准备要巧克力的时候，工厂当然没有必要开动生产；只要当有一个以上准备收货的经销商时，工厂才开动生产。这就是RACSignal的休眠（cold）和激活（hot）状态，也就是所谓的冷信号和热信号。一般情况下，一个RACSignal创建之后都处于cold状态，有人去subscribe才被激活。
 
-### [#Event](#Event)Event
+### Event
 
 RACSignal能产生且只能产生三种事件：next、completed，error。
 
@@ -53,7 +53,7 @@ RACSignal能产生且只能产生三种事件：next、completed，error。
 
 工厂厂长存了所有供销商的 QQ，每当发生上面三件事情的一件时，都用 QQ 挨个儿发消息告诉他们，于是供销商就能根据生产状态决定要做点什么。当订单完成或者失败后，厂长就会把这个供销商的 QQ 删了，以后发消息的时候也就没必要通知他了。
 
-### [#Side-Effects](#Side-Effects)Side Effects
+### Side Effects
 
 RACSignal在被subscribe的时候可能会产生副作用，先举个官方的栗子：
 
@@ -126,7 +126,7 @@ RACMulticastConnection *connection = [networkRequest multicast:[RACReplaySubject
 
 当地一个订阅者subscribeNext的时候触发了AFNetworkingOperation的创建和执行，开始网络请求，此时又来了个订阅者订阅这个Signal，按理说这个网络请求会被“副作用”，重新发一遍，但做了上面的处理之后，这两个订阅者接收到了同样的一个请求的内容。
 
-### [#RACScheduler-生产线](#RACScheduler-生产线)RACScheduler - 生产线
+### RACScheduler - 生产线
 
 RACScheduler是RAC里面对线程的简单封装，事件可以在指定的scheduler上分发和执行，不特殊指定的话，事件的分发和执行都在一个默认的后台线程里面做，大多数情况也就不用动了，有一些特殊的signal必须在主线程调用，使用-deliverOn：可以切换调用的线程。
 
@@ -136,7 +136,7 @@ RACScheduler是RAC里面对线程的简单封装，事件可以在指定的sched
 
 意思是订阅者执行时的block一定非并发执行，也就是说不会执行到一半被另一个线程进入，也意味着写subscribeXXX block的时候没必要做加锁处理了。
 
-### [#巧克力的生产工艺](#巧克力的生产工艺)巧克力的生产工艺
+### 巧克力的生产工艺
 
 RACSignal的厂子建好了，运行的模式也都想好了，剩下的就是巧克力的加工工艺了。
 

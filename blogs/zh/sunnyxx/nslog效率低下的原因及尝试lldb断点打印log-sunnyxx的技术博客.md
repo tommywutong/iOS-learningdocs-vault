@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-04-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f07c9c624cc6e1ec'
 translated: n/a
 ---
@@ -18,13 +18,13 @@ translated: n/a
 
 2014年4月22日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 打Log是我们debug时最简单朴素的方法，`NSLog`对于objc开发就像`printf`对于c一样重要。但在使用`NSLog`打印大量Log，尤其是在游戏开发时（如每一帧都打印数据），`NSLog`会明显的拖慢程序的运行速度（游戏帧速严重下滑）。本文探究了一下`NSLog`如此之慢的原因，并尝试使用lldb断点调试器替代NSLog进行debug log。
 
 ---
 
-# [#小测试](#小测试)小测试
+# 小测试
 
 测试下分别使用`NSLog`和`printf`打印10000次耗费的时间。`CFAbsoluteTimeGetCurrent()`函数可以打印出当前的时间戳，精度还是很高的，于是乎测试代码如下：
 
@@ -56,11 +56,11 @@ NSLog time: 10.471490, printf time: 0.090503 // 真机调试(iphone5)
 
 ---
 
-# [#探究原因](#探究原因)探究原因
+# 探究原因
 
 基本上这种事情一定可以在Apple文档中找到，看`NSLog`的文档，第一句话就说：`Logs an error message to the Apple System Log facility.`，所以首先，`NSLog`就不是设计作为普通的debug log的，而是error log；其次，`NSLog`也并非是`printf`的简单封装，而是`Apple System Log`(后面简称ASL)的封装。
 
-## [#ASL](#ASL)ASL
+## ASL
 
 ASL是个啥？从[官方手册](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/asl.3.html)上，或者从终端执行`man 3 asl`都可以看到说明：
 
@@ -84,7 +84,7 @@ ASL是个啥？从[官方手册](https://developer.apple.com/library/mac/documen
 
 意识大概是说，NSLog会向ASL写log，同时向Terminal写log，而且同时会出现在`Console.app`中（Mac自带软件，用NSLog打出的log在其中全部可见）；不仅如此，每一次NSLog都会新建一个ASL client并向ASL守护进程发起连接，log之后再关闭连接。所以说，当这个过程出现N次时，消耗大量资源导致程序变慢也就不奇怪了。
 
-## [#时间和进程信息](#时间和进程信息)时间和进程信息
+## 时间和进程信息
 
 主要原因已经找到，还有个值得注意的问题是`NSLog`每次会将当前的系统时间，进程和线程信息等作为前缀也打印出来，如：
 
@@ -96,29 +96,29 @@ ASL是个啥？从[官方手册](https://developer.apple.com/library/mac/documen
 
 ---
 
-# [#如何是好](#如何是好)如何是好
+# 如何是好
 
 NSLog有这样的消耗问题，那该怎么办呢？
 
 1. 拒绝残留的Log。现在项目都是多人共同开发，我们应该只把Log作为错误日志或者重要信息的日志使用，commit前请把自己调试的log去掉（尤其是在循环里写log的小伙伴，简直不能一起快乐的玩耍了）
 2. release版本中消除Log。debug归debug，再慢也不能波及到release版本，用预编译宏过滤下就好。
-3. ，自建一个简单的当然也挺好（其实为了项目需要自己也写了个小log系统，实现可以按名字和级别显示log和一些扩展功能，以后有机会分享下）
+3. 是时候换个Log系统了，如`CocoaLumberjack`，自建一个简单的当然也挺好（其实为了项目需要自己也写了个小log系统，实现可以按名字和级别显示log和一些扩展功能，以后有机会分享下）
 
 不过个人认为debug时最好还是用调试器进行调试（尤其是只需要知道某个变量值的时候）
 
 ---
 
-# [#尝试使用断点-lldb调试器打Log](#尝试使用断点-lldb调试器打Log)尝试使用断点+lldb调试器打Log
+# 尝试使用断点+lldb调试器打Log
 
 关于强大的`lldb`调试器用一个专题来讲都是应该，现在只了解一些皮毛，不过就算皮毛的功能也可以替代NSLog这种方法进行调试了，重要的一点是:**使用断点log不需要重新编译工程**，况且和Xcode已经结合的很好，在此先只说打Log这件事。
 
-## [#简单断点-po-p](#简单断点-po-p)简单断点+po(p)
+## 简单断点+po(p)
 
 断点时可以在xcode的lldb调试区使用`po`或`p`命令打印对象或变量，对于当前栈帧中引用到的变量都是可见的，所以说假如只是看一眼某个对象运行到这儿是不是存在，是什么值的话，设个断点就够了，况且IDE已经把这个功能集成，鼠标放变量上就可以了。
 
 lldb一些常用调试技巧可以这篇[入门教程](http://www.cimgf.com/2012/12/13/xcode-lldb-tutorial/)
 
-## [#Condition和Action断点](#Condition和Action断点)Condition和Action断点
+## Condition和Action断点
 
 断点不止能把程序断住，触发时也按一定条件，而且可以执行（一个或多个）Action，在断点上右键选择`Edit Breakpoint`，弹出的断点设置中可以添加一些Action：  
 ![](http://ww2.sinaimg.cn/large/51530583tw1efobdj4pb3j205002wt8n.jpg)  
@@ -147,16 +147,16 @@ break at: 'main()',  count: 6, sunnyxx says : 5
 
 ---
 
-# [#总结](#总结)总结
+# 总结
 
-- 耗费比较大的资源
-- 被设计为error log，是ASL的高层封装
-- ，可以使用自建的log系统或好用的log系统来替代
-- 断点调试是一个优秀的debug方法，需要再深入研究下
+- `NSLog`耗费比较大的资源
+- `NSLog`被设计为error log，是ASL的高层封装
+- 在项目中避免提交commit自己的Debug log，release版本更要注意去除`NSLog`，可以使用自建的log系统或好用的log系统来替代`NSLog`
+- debug不应只局限于log满天飞，`lldb`断点调试是一个优秀的debug方法，需要再深入研究下
 
 ---
 
-# [#References](#References)References
+# References
 
 [https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/asl.3.html](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/asl.3.html)  
 [http://theonlylars.com/blog/2012/07/03/ditching-nslog-advanced-ios-logging-part-1/](http://theonlylars.com/blog/2012/07/03/ditching-nslog-advanced-ios-logging-part-1/)  

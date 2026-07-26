@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8fbddbc05051141c'
 translated: n/a
 ---
@@ -172,36 +172,10 @@ GCD 通过创建所谓的[线程池](http://en.wikipedia.org/wiki/Thread_pool_pa
 
 注意以下四点：
 
-1. 多读单写
-
-  和
-
-  锁竞争
-2. 方式来保存值，这很重要。我们不想也不必阻塞当前线程只是为了等待
-
-  完成。当读操作时，我们使用
-
-  因为我们需要返回值。
-3. 需要一个
-
-  参数，用来传递给
-
-  。函数调用者可以自由传递一个
-
-  值并且能够在函数返回后修改它。因此我们
-
-  对传入的字符串使用
-
-  操作以确保函数能够正确地工作。如果传入的字符串不是可变的（也就是正常的
-
-  类型），调用
-
-  基本上是个空操作。
-4. 创建时，参数
-
-  的值必须是
-
-  （或者0）。
+1. 不要使用上面的代码，请先阅读[多读单写](#multiple_readers_single_writer)和[锁竞争](#contention)
+2. 我们使用 `async` 方式来保存值，这很重要。我们不想也不必阻塞当前线程只是为了等待_写操作_完成。当读操作时，我们使用 `sync` 因为我们需要返回值。
+3. 从函数接口可以看出，`-setCount:forKey:` 需要一个 `NSString` 参数，用来传递给 `dispatch_async`。函数调用者可以自由传递一个 `NSMutableString` 值并且能够在函数返回后修改它。因此我们_必须_对传入的字符串使用 _copy_ 操作以确保函数能够正确地工作。如果传入的字符串不是可变的（也就是正常的 `NSString` 类型），调用_copy_基本上是个空操作。
+4. `isolationQueue` 创建时，参数 `dispatch_queue_attr_t` 的值必须是_DISPATCH_QUEUE_SERIAL_（或者0）。
 
 ### 单一资源的多读单写
 
@@ -441,12 +415,8 @@ dispatch_group_notify(group, dispatch_get_main_queue(), ^(){
 
 为了能正常工作，你需要确保:
 
-- 必须要在
-
-  之前运行。
-- 和
-
-  一直是成对出现的（就算有错误产生时）。
+- `dispatch_group_enter()` 必须要在 `dispatch_group_leave()`之前运行。
+- `dispatch_group_enter()` 和 `dispatch_group_leave()` 一直是成对出现的（就算有错误产生时）。
 
 ## 事件源
 

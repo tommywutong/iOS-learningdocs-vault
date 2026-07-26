@@ -45,6 +45,54 @@ public class TrafficLight {
 
 其余部分的逻辑和本次主题无关，不过它们也比较简单。如果你有兴趣的话，可以点开下面的详情查看。但这不影响本文的理解。
 
+TrafficLight 的其他部分
+
+为了能让信号灯进行状态转换，我们可以在 `TrafficLight` 里定义各个阶段的时间：
+
+```swift
+public var stopDuration = 4.0
+public var proceedDuration = 6.0
+public var cautionDuration = 1.5
+```
+
+然后用一个 `Timer` 计时，并进行控制状态的转换：
+
+```swift
+private var timer: Timer?
+
+private func turnState(_ state: State) {
+    switch state {
+    case .proceed:
+        timer = Timer.scheduledTimer(withTimeInterval: proceedDuration, repeats: false) { _ in
+            self.turnState(.caution)
+        }
+    case .caution:
+        timer = Timer.scheduledTimer(withTimeInterval: cautionDuration, repeats: false) { _ in
+            self.turnState(.stop)
+        }
+    case .stop:
+        timer = Timer.scheduledTimer(withTimeInterval: stopDuration, repeats: false) { _ in
+            self.turnState(.proceed)
+        }
+    }
+    self.state = state
+}
+```
+
+最后，向外提供开启和结束的方法就可以了：
+
+```swift
+public func start() {
+    guard timer == nil else { return }
+    turnState(.stop)
+}
+
+public func stop() {
+    timer?.invalidate()
+    timer = nil
+}
+```
+
 在 (ViewController 中) 使用这个红绿灯也很简单。我们按照红绿黄的颜色，在 `onStateChanged` 中设定 `view` 的颜色：
 
 ```swift
@@ -174,18 +222,8 @@ public class TrafficLight {
 }
 ```
 
-1. 的类型，才能作为
-
-  字典的 key。
-
-  `ObjectIdentifier`
-
-  通过给定的类型或者是 class 实例，可以生成一个唯一代表该类型和实例的值。它非常适合用来当作
-
-  的 key。
-2. 中寻找设置的值。如果没有找到的话，返回默认值
-
-  。
+1. 只有满足 `Hashable` 的类型，才能作为 `options` 字典的 key。[`ObjectIdentifier`](https://developer.apple.com/documentation/swift/objectidentifier) 通过给定的类型或者是 class 实例，可以生成一个唯一代表该类型和实例的值。它非常适合用来当作 `options` 的 key。
+2. 通过 key 在 `options` 中寻找设置的值。如果没有找到的话，返回默认值 `type.defaultValue`。
 
 现在，对 `TrafficLight.GreenLightColor` 进行扩展，让它满足 `TrafficLightOption`。如果 `TrafficLight` 已经被打包成 framework，我们甚至可以把这部分代码从 `TrafficLight` 所在的 target 中拿出来：
 

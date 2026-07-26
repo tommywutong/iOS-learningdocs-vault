@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-03-06
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f45ddde5da2b747c'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年3月6日
 
-## [#前言](#前言)前言
+## 前言
 
 iOS 面试题看过来  
 题目多来源于项目中遇到的错误和平时的误区，要是都能了如指掌，恭喜你，6级过了- -。  
@@ -30,7 +30,7 @@ iOS 面试题看过来
 
 ---
 
-## [#1-下面的代码分别输出什么？](#1-下面的代码分别输出什么？)1. 下面的代码分别输出什么？
+## 1. 下面的代码分别输出什么？
 
 ```objc
 @implementation Son : Father
@@ -45,7 +45,7 @@ iOS 面试题看过来
 @end
 ```
 
-## [#2-下面的代码报错？警告？还是正常输出什么？](#2-下面的代码报错？警告？还是正常输出什么？)2. 下面的代码报错？警告？还是正常输出什么？
+## 2. 下面的代码报错？警告？还是正常输出什么？
 
 ```objc
 Father *father = [Father new];
@@ -54,7 +54,7 @@ BOOL b2 = [Father responseToSelector:@selector(responseToSelector:)];
 NSLog(@"%d, %d", b1, b2);
 ```
 
-## [#3-请求很快就执行完成，但是completionBlock很久之后才设置，还能否执行呢？](#3-请求很快就执行完成，但是completionBlock很久之后才设置，还能否执行呢？)3. 请求很快就执行完成，但是completionBlock很久之后才设置，还能否执行呢？
+## 3. 请求很快就执行完成，但是completionBlock很久之后才设置，还能否执行呢？
 
 ```objc
 ...
@@ -68,7 +68,7 @@ sleep(100); // sleep主线程，使得下面的代码在后台线程完成后才
 ...
 ```
 
-## [#4-不使用IB时，下面这样做有问题么？](#4-不使用IB时，下面这样做有问题么？)4. 不使用IB时，下面这样做有问题么？
+## 4. 不使用IB时，下面这样做有问题么？
 
 ```objc
 - (void)viewDidLoad {
@@ -79,7 +79,7 @@ sleep(100); // sleep主线程，使得下面的代码在后台线程完成后才
 }
 ```
 
-## [#5-下面代码输出什么？](#5-下面代码输出什么？)5. 下面代码输出什么？
+## 5. 下面代码输出什么？
 
 ```objc
 - (void)viewDidLoad {
@@ -95,8 +95,8 @@ sleep(100); // sleep主线程，使得下面的代码在后台线程完成后才
 
 ---
 
-# [#答案和解答](#答案和解答)答案和解答
+# 答案和解答
 
-## [#请戳我，我是传送门](#请戳我，我是传送门)[请戳我，我是传送门](http://blog.sunnyxx.com/2014/03/06/ios_exam_0_key/)
+## [请戳我，我是传送门](http://blog.sunnyxx.com/2014/03/06/ios_exam_0_key/)
 
 原创文章，转载请注明源地址，[blog.sunnyxx.com](http://blog.sunnyxx.com)

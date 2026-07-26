@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-02-27
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:38af9d60994df368'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年2月27日
 
-# [#Install](#Install)Install
+# Install
 
 **安装nvm（Node Version Manager）**，Terminal中运行
 
@@ -116,7 +116,7 @@ theme: light
 
 重新generate和server预览，就看到变化了。
 
-## [#deploy](#deploy)deploy
+## deploy
 
 github上建个respository，设置里设一下  
 在`_config.yml`中：  
@@ -135,7 +135,7 @@ $ hexo deploy
 
 就行了，github会多一个branch，比octopress简单
 
-## [#绑定域名](#绑定域名)绑定域名
+## 绑定域名
 
 去万网买了这个域名`sunnyxx.com`，以`blog.sunnyxx.com`作为博客的域名，  
 看万网是阿里的才从那儿买的，后来发现`DNSPod`貌似比较好，万网的后台做的那叫一个*，但愿解析速度上别再不行就行。  
@@ -168,7 +168,7 @@ github.map.fastly.net. 30 IN A 103.245.222.133
 这说明是成功了，发现解析过程是`blog.sunnyxx.com`-\>`sunnyxx.github.io`-\>`github.map.fastly.net`-\>`103.245.222.133` 最终指向了github的web server  
 由于国内GreatWall，解析速度明显不稳定，有时候都连不上，以后再看怎么办吧
 
-## [#添加sitemap](#添加sitemap)添加sitemap
+## 添加sitemap
 
 同样的，我们使用hexo提供的插件，方法与添加RSS类似。  
 安装sitemap到本地：  
@@ -183,7 +183,7 @@ plugins:
 
 访问zipperary/sitemap.xml即可看到站点地图。不过，sitemap的初衷是给搜索引擎看的，为了提高搜索引擎对自己站点的收录效果，我们最好手动到google和百度等搜索引擎提交sitemap.xml。
 
-## [#文章中插入图片](#文章中插入图片)文章中插入图片
+## 文章中插入图片
 
 原来用octopress写的时候在目录下面建个`images`目录来保存图片，引用时使用了相对路径就行了，但这是让我最蛋疼的事，想发个图片还得命个名，然后`mv`过去，再引进来，特别墨迹。hexo中当然也可以用这种方法，但是发现使用个`图床`来搞定图片真是一劳永逸了。
 
@@ -197,13 +197,13 @@ plugins:
 PS：gif也没问题  
 ![1231231](http://ww2.sinaimg.cn/large/51530583gw1ee17y3p11zg207804lnhh.gif)
 
-## [#StackEdit-超赞的Markdown在线编辑器](#StackEdit-超赞的Markdown在线编辑器)StackEdit - 超赞的Markdown在线编辑器
+## StackEdit - 超赞的Markdown在线编辑器
 
 ![](http://ww2.sinaimg.cn/large/51530583gw1ee1a7efwa0j20hk03kwen.jpg)
 
 界面干净，所见即所得，支持同步到`Dropbox`和`github`，这个特别好，比如在公司写了点东西就可以一键同步，保留犯罪现场，回来之后继续写剩下的。
 
-## [#遇到的问题](#遇到的问题)遇到的问题
+## 遇到的问题
 
 第二次用的时候发现安装的hexo命令找不到了，重新use一下：  
 1  
@@ -218,7 +218,7 @@ $ nvm use 0.10
 效果：  
  ![](http://ww2.sinaimg.cn/large/51530583gw1ee1a7efwa0j20hk03kwen.jpg)
 
-## [#添加友情链接](#添加友情链接)添加友情链接
+## 添加友情链接
 
 `themes/xxxxxx/layout/_widget/blogroll.ejs`  
 1  

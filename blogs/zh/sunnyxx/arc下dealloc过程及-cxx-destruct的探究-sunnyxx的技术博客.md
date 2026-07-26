@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-04-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8fcd8a497f802f98'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年4月2日
 
-## [#我是前言](#我是前言)我是前言
+## 我是前言
 
 这次探索源自于自己一直以来对`ARC`的一个疑问，在`MRC`时代，经常写下面的代码：
 
@@ -47,11 +47,11 @@ translated: n/a
 **问题来了：**
 
 1. 这个对象实例变量（Ivars）的释放去哪儿了？
-2. ，上层的析构去哪儿了？
+2. 没有显示的调用`[super dealloc]`，上层的析构去哪儿了？
 
 ---
 
-## [#ARC文档中对dealloc过程的解释](#ARC文档中对dealloc过程的解释)ARC文档中对dealloc过程的解释
+## ARC文档中对dealloc过程的解释
 
 [llvm官方的ARC文档](http://clang.llvm.org/docs/AutomaticReferenceCounting.html#dealloc)中对ARC下的dealloc过程做了简单说明，从中还是能找出些有用的信息：
 
@@ -67,7 +67,7 @@ translated: n/a
 
 ---
 
-## [#NSObject的析构过程](#NSObject的析构过程)NSObject的析构过程
+## NSObject的析构过程
 
 通过apple的runtime源码，不难发现NSObject执行`dealloc`时调用`_objc_rootDealloc`继而调用`object_dispose`随后调用`objc_destructInstance`方法，前几步都是条件判断和简单的跳转，最后的这个函数如下：
 
@@ -95,19 +95,15 @@ void *objc_destructInstance(id obj)
 
 简单明确的干了三件事：
 
-1. 的东西干了点什么事
-2. 去除和这个对象assocate的对象（常用于category中添加带变量的属性，这也是为什么
-
-  (Edit: 在ARC或MRC下都不需要remove，感谢@sagles的基情提示）
-3. ，清空引用计数表并清除弱引用表，将所有
-
-  引用指nil（这也就是weak变量能安全置空的所在）
+1. 执行一个叫`object_cxxDestruct`的东西干了点什么事
+2. 执行`_object_remove_assocations`去除和这个对象assocate的对象（常用于category中添加带变量的属性，这也是为什么~~~~ARC下没必要remove一遍的原因~~~~ (Edit: 在ARC或MRC下都不需要remove，感谢@sagles的基情提示）
+3. 执行`objc_clear_deallocating`，清空引用计数表并清除弱引用表，将所有`weak`引用指nil（这也就是weak变量能安全置空的所在）
 
 所以，所探寻的ARC自动释放实例变量的地方就在`cxxDestruct`这个东西里面没跑了。
 
 ---
 
-## [#探寻隐藏的-cxx-destruct](#探寻隐藏的-cxx-destruct)探寻隐藏的.cxx_destruct
+## 探寻隐藏的.cxx_destruct
 
 上面找到的名为`object_cxxDestruct`的方法最终成为下面的调用：
 
@@ -148,7 +144,7 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 
 ---
 
-## [#通过实验找出-cxx-destruct](#通过实验找出-cxx-destruct)通过实验找出.cxx_destruct
+## 通过实验找出.cxx_destruct
 
 最好的办法还是写个测试代码把这个隐藏的方法找出来，其实在runtime中运行已经没什么隐藏可言了，简单的类结构如下：
 
@@ -192,7 +188,7 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 
 ---
 
-## [#使用watchpoint定位内存释放时刻](#使用watchpoint定位内存释放时刻)使用watchpoint定位内存释放时刻
+## 使用watchpoint定位内存释放时刻
 
 依然在`after new`断点处，输入lldb命令：  
 1  
@@ -210,7 +206,7 @@ watchpoint set variable son-\>_name
 
 ---
 
-## [#刨根问底-cxx-destruct](#刨根问底-cxx-destruct)刨根问底.cxx_destruct
+## 刨根问底.cxx_destruct
 
 知道了ARC下对象实例变量的释放过程在`.cxx_destruct`内完成，但这个函数内部发生了什么，是如何调用`objc_storeStrong`释放变量的呢？  
 从上面的探究中知道，`.cxx_destruct`是编译器生成的代码，那它很可能在clang前端编译时完成，这让我联想到clang的`Code Generation`，因为之前曾经使用`clang -rewrite-objc xxx.m`时查看过官方文档留下了些印象，于是google：
@@ -301,7 +297,7 @@ id objc_storeStrong(id *object, id value) {
 
 ---
 
-## [#自动调用-super-dealloc-的实现](#自动调用-super-dealloc-的实现)自动调用[super dealloc]的实现
+## 自动调用[super dealloc]的实现
 
 按照上面的思路，自动调用`[super dealloc]`也一定是`CodeGen`干的工作了  
 位于 [http://clang.llvm.org/doxygen/CGObjC_8cpp_source.html](http://clang.llvm.org/doxygen/CGObjC_8cpp_source.html) 492行  
@@ -346,20 +342,20 @@ struct FinishARCDealloc : EHScopeStack::Cleanup {
 
 ---
 
-## [#总结](#总结)总结
+## 总结
 
-- 方法自动释放
-- 方法也由编译器自动插入
-- 过程需要进一步了解，还不清楚其运作方式
-- 也值得深入研究一下
+- ARC下对象的成员变量于编译器插入的`.cxx_desctruct`方法自动释放
+- ARC下`[super dealloc]`方法也由编译器自动插入
+- 所谓`编译器插入代码`过程需要进一步了解，还不清楚其运作方式
+- clang的`CodeGen`也值得深入研究一下
 
 ---
 
-## [#References：](#References：)References：
+## References：
 
-- http://clang.llvm.org/docs/AutomaticReferenceCounting.html
-- http://my.safaribooksonline.com/book/programming/objective-c/9780132908641/3dot-memory-management/ch03
-- http://clang.llvm.org/doxygen/CGObjC_8cpp_source.html
+- [http://clang.llvm.org/docs/AutomaticReferenceCounting.html](http://clang.llvm.org/docs/AutomaticReferenceCounting.html)
+- [http://my.safaribooksonline.com/book/programming/objective-c/9780132908641/3dot-memory-management/ch03](http://my.safaribooksonline.com/book/programming/objective-c/9780132908641/3dot-memory-management/ch03)
+- [http://clang.llvm.org/doxygen/CGObjC_8cpp_source.html](http://clang.llvm.org/doxygen/CGObjC_8cpp_source.html)
 
 ---
 

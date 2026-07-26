@@ -316,15 +316,9 @@ extension Person: _FormatSpecifiable {
 
 在[上篇](https://onevcat.com/2021/03/swiftui-text-1/)的基础上，在本文中：
 
-- 插值的方法，让它支持了
-
-  和
-
-  。
-- 插值的主要任务是自动生成合适的，带有参数的本地化 key。
-- 插值时，应该是尽可能使用
-
-  ，避免参数“被吞”。
-- 确定的。我们也可以通过让自定义类型实现这个协议的方式，来进行插值。
+- 我们尝试扩展了 `LocalizedStringKey` 插值的方法，让它支持了 `Bool` 和 `Person`。
+- `LocalizedStringKey` 插值的主要任务是自动生成合适的，带有参数的本地化 key。
+- 在扩展 `LocalizedStringKey` 插值时，应该是尽可能使用 `appendInterpolation`，避免参数“被吞”。
+- 插值的格式是由 `_FormatSpecifiable` 确定的。我们也可以通过让自定义类型实现这个协议的方式，来进行插值。
 
 至此，为什么 `Text` 中可以插值 `Image`，以及它背后发生的所有事情，我们应该都弄清楚了。

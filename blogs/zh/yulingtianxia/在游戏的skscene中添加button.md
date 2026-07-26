@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a29abcaef5cada8d'
 translated: n/a
 ---
@@ -20,12 +20,14 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-27
 
-1. 1. 在SKScene中添加SKNode对象作为Button
-2. 2. 通过继承来封装自己的Button
+**文章目录**
+
+1. [1. 在SKScene中添加SKNode对象作为Button](#在SKScene中添加SKNode对象作为Button)
+2. [2. 通过继承来封装自己的Button](#通过继承来封装自己的Button)
 
 偶然发现`SpriteKit`中的`SKNode`也有`userInteractionEnabled`属性，就像`UIKit`中的`userInteractionEnabled`一样，于是我对以前的代码进行重构，发现了在游戏中添加交互button的新的方式（估计很多大神们早就发现了）
 
-## [#在SKScene中添加SKNode对象作为Button](#在SKScene中添加SKNode对象作为Button)在SKScene中添加SKNode对象作为Button
+## 在SKScene中添加SKNode对象作为Button
 
 不得不承认，我以前在`SKScene`中添加一个`Button`的过程是这样的：
 
@@ -61,7 +63,7 @@ button.position = CGPointMake(self.size.width/2, self.size.height/2);
 
 如果某个场景中需要设置很多Button，比如游戏设置界面，那么在`touchesEnded: withEvent:`方法中就会出现好多if判断，这么多分支，每个分支可能还有很多操作，这样增加了SKScene的体积，使得代码可读性变差，维护也困难
 
-## [#通过继承来封装自己的Button](#通过继承来封装自己的Button)通过继承来封装自己的Button
+## 通过继承来封装自己的Button
 
 `UIKit`中的`userInteractionEnabled`大家一定都很熟悉，它默认值是`YES`，也就是默认接受触摸事件，偶然发现`SKNode`也有`userInteractionEnabled`属性，但是默认值是`NO`，而且`SKNode`是继承`UIResponder`的，这么说，我们可以在SKNode中一展拳脚了，不必再麻烦SKScene了  
 下面添加一个用于跳转到主菜单场景页面的Button为例：  

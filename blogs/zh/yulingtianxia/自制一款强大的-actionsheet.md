@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b75db3e110a996d7'
 translated: n/a
 ---
@@ -20,55 +20,57 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2016-07-18
 
-1. 1. 为何要造这个轮子
-2. 2. 界面组成
+**文章目录**
 
-    1. 2.1. 背景
-    2. 2.2. 容器
-    3. 2.3. 标题&消息
-    4. 2.4. 自定义视图
-    5. 2.5. 按钮
-3. 3. 接口实现
+1. [1. 为何要造这个轮子](#为何要造这个轮子)
+2. [2. 界面组成](#界面组成)
 
-    1. 3.1. 初始化
-    2. 3.2. 添加按钮
-    3. 3.3. show
+    1. [2.1. 背景](#背景)
+    2. [2.2. 容器](#容器)
+    3. [2.3. 标题&消息](#标题-amp-消息)
+    4. [2.4. 自定义视图](#自定义视图)
+    5. [2.5. 按钮](#按钮)
+3. [3. 接口实现](#接口实现)
 
-          1. 3.3.1. setupNewWindow
+    1. [3.1. 初始化](#初始化)
+    2. [3.2. 添加按钮](#添加按钮)
+    3. [3.3. show](#show)
 
-                  1. 3.3.1.1. Autorotation
-                  2. 3.3.1.2. interruptGesture
-                  3. 3.3.1.3. TBActionSheetController
-          2. 3.3.2. setupLayout
-          3. 3.3.3. setupStyle
+          1. [3.3.1. setupNewWindow](#setupNewWindow)
 
-                  1. 3.3.3.1. BlurEffect & Separator
+                  1. [3.3.1.1. Autorotation](#Autorotation)
+                  2. [3.3.1.2. interruptGesture](#interruptGesture)
+                  3. [3.3.1.3. TBActionSheetController](#TBActionSheetController)
+          2. [3.3.2. setupLayout](#setupLayout)
+          3. [3.3.3. setupStyle](#setupStyle)
 
-                            1. 3.3.3.1.1. 截屏
-                            2. 3.3.3.1.2. ambientColor
-                            3. 3.3.3.1.3. Separator
-                  2. 3.3.3.2. RectCorner
-                  3. 3.3.3.3. setupContainerFrame
-          4. 3.3.4. 动画
-    4. 3.4. close & buttonTapped
-4. 4. 一些细节
+                  1. [3.3.3.1. BlurEffect & Separator](#BlurEffect-amp-Separator)
 
-    1. 4.1. Marco
+                            1. [3.3.3.1.1. 截屏](#截屏)
+                            2. [3.3.3.1.2. ambientColor](#ambientColor)
+                            3. [3.3.3.1.3. Separator](#Separator)
+                  2. [3.3.3.2. RectCorner](#RectCorner)
+                  3. [3.3.3.3. setupContainerFrame](#setupContainerFrame)
+          4. [3.3.4. 动画](#动画)
+    4. [3.4. close & buttonTapped](#close-amp-buttonTapped)
+4. [4. 一些细节](#一些细节)
 
-          1. 4.1.1. UI_APPEARANCE_SELECTOR
-          2. 4.1.2. NS_UNAVAILABLE
-          3. 4.1.3. NS_ASSUME_NONNULL_BEGIN（_END）
-    2. 4.2. 动态配置
-5. 5. 属性
+    1. [4.1. Marco](#Marco)
 
-    1. 5.1. 尺寸
-    2. 5.2. 样式
-    3. 5.3. 状态
-    4. 5.4. 内容
-    5. 5.5. 标记
-    6. 5.6. 动画&朝向
-    7. 5.7. 属性存取器
-6. 6. 后记
+          1. [4.1.1. UI_APPEARANCE_SELECTOR](#UI-APPEARANCE-SELECTOR)
+          2. [4.1.2. NS_UNAVAILABLE](#NS-UNAVAILABLE)
+          3. [4.1.3. NS_ASSUME_NONNULL_BEGIN（_END）](#NS-ASSUME-NONNULL-BEGIN（-END）)
+    2. [4.2. 动态配置](#动态配置)
+5. [5. 属性](#属性)
+
+    1. [5.1. 尺寸](#尺寸)
+    2. [5.2. 样式](#样式)
+    3. [5.3. 状态](#状态)
+    4. [5.4. 内容](#内容)
+    5. [5.5. 标记](#标记)
+    6. [5.6. 动画&朝向](#动画-amp-朝向)
+    7. [5.7. 属性存取器](#属性存取器)
+6. [6. 后记](#后记)
 
 iOS 系统自带的 `UIActionSheet` 无法满足开发中高度个性化的 UI 风格和代码风格，所以我决定自己动手丰衣足食，于是 [`TBActionSheet`](https://github.com/yulingtianxia/TBActionSheet) 诞生了：
 
@@ -87,7 +89,7 @@ Github：[https://github.com/yulingtianxia/TBActionSheet](https://github.com/yul
 7. 支持点击背景关闭
 8. 可以在显示后动态更新 UI
 
-# [#为何要造这个轮子](#为何要造这个轮子)为何要造这个轮子
+# 为何要造这个轮子
 
 可能上午视觉同学要求所有系统版本的 ActionSheet 都要做成 iOS9 的圆角样式，下午就推翻做成跟微信一模一样，晚上又觉得微信的好丑风格不搭。。。如何以不变应万变？自己造个万能轮子！
 
@@ -99,19 +101,15 @@ Github：[https://github.com/yulingtianxia/TBActionSheet](https://github.com/yul
 
 在做到功能强大高度个性化的同时也要注重对系统控件原有 API 的最大还原，在绝大多数情况下只需要将代码中的 `UI` 替换成 `TB` 即可，降低改动成本。
 
-# [#界面组成](#界面组成)界面组成
+# 界面组成
 
 从 UI 上大致划分成几个区域，它们都在 `TBActionSheet` 的视图层级树中：
 
-1. 为半透明背景
-2. 是容纳 Sheet 视图的容器
-3. 和
-
-  属性是标题和消息，类型为
-4. 属性是个普通的
-
-  ，供使用者传入自定义视图
-5. 是对应着每个 Action 的按钮
+1. `TBActionBackground` 为半透明背景
+2. `TBActionContainer` 是容纳 Sheet 视图的容器
+3. `titleLabel` 和 `messageLabel` 属性是标题和消息，类型为 `UILabel`
+4. `customView` 属性是个普通的 `UIView`，供使用者传入自定义视图
+5. `TBActionButton` 是对应着每个 Action 的按钮
 
 ![视图层级](http://yulingtianxia.com/resources/TBActionSheet/overview.jpg)
 
@@ -119,7 +117,7 @@ Github：[https://github.com/yulingtianxia/TBActionSheet](https://github.com/yul
 
 在实际使用时只需使用 `TBActionSheet` 就可以了，所以上面提到的类都是幕后工作者。我将会讲述每部分具体实现和一些功能点的实现。
 
-## [#背景](#背景)背景
+## 背景
 
 背景是 `TBActionSheet` 的子视图中最底层的视图。
 
@@ -127,7 +125,7 @@ Github：[https://github.com/yulingtianxia/TBActionSheet](https://github.com/yul
 
 点击背景后会调用父视图 `TBActionSheet` 的 `close` 方法关闭，后续会有详述。
 
-## [#容器](#容器)容器
+## 容器
 
 我在实现的时候没有使用自动布局，而是自己计算 frame。容器的作用是把一系列内容包装起来，方便计算 frame。`TBActionContainer` 容纳了整个 ActionSheet 的主体功能视图，系统的毛玻璃效果也是在这添加的。
 
@@ -139,17 +137,17 @@ Github：[https://github.com/yulingtianxia/TBActionSheet](https://github.com/yul
 
 `TBActionContainer` 继承于 `UIImageView`，`header`，`custom`，`footer` 类型也都是 `UIImageView`。这是为了实现毛玻璃效果，后续会有详述。
 
-## [#标题-amp-消息](#标题-amp-消息)标题&消息
+## 标题&消息
 
 系统的 `UIActionSheet` 只支持标题没有消息，但可以通过换行的方式伪装下标题和消息。我这里当然是用两个 `UILabel` 来实现标题和消息的啦，字体颜色也尽量还原 `UIAlertController` 的样式。
 
 `TBActionSheet` 的 `titleLabel` 和 `messageLabel` 属性是 `readonly` 的，它们都是 `TBActionContainer` 的 `header` 属性的子视图。
 
-## [#自定义视图](#自定义视图)自定义视图
+## 自定义视图
 
 `TBActionSheet` 的 `customView` 属性可供使用者传入一个 `UIView` 对象，它是 `TBActionContainer` 的 `custom` 属性的子视图。自定义视图能够接收到触摸事件。
 
-## [#按钮](#按钮)按钮
+## 按钮
 
 所有的按钮都存储于 `TBActionSheet` 的 `buttons` 数组中，类型为 `TBActionButton`。
 
@@ -191,7 +189,7 @@ typedef NS_ENUM(NSInteger, TBActionButtonStyle) {
 
 因为按钮的数量毕竟有限，对于按钮圆角的实现就不需要考虑性能问题了。有关圆角的这部分后续会有专门一节叙述。
 
-# [#接口实现](#接口实现)接口实现
+# 接口实现
 
 `TBActionSheet` 具有 `UIActionSheet` 的**几乎**所有接口和属性，可以说前者是后者的超集。之所以说『几乎』，是因为我在 `UIWindow` 上模态显示 ActionSheet，相当于 `UIAlertController` 的做法，于是以下 `UIActionSheet` 的接口我目前并没有实现：
 
@@ -211,7 +209,7 @@ typedef NS_ENUM(NSInteger, TBActionButtonStyle) {
 
 `TBActionSheetDelegate` 中的方法跟 `UIActionSheetDelegate` 中的方法 selector 完全一样。
 
-## [#初始化](#初始化)初始化
+## 初始化
 
 初始化方法的设计延续了 `UIActionSheet` 的接口，在此基础上还加了个带有 `message` 参数的方法。**为了减少冗余代码，实现高内聚低耦合的设计模式，一般会写一个参数最多功能最全的方法，其他参数少的方法去调用前者**。这种层层 Forward 参数的方式在 API 设计中很常见。由于这两个方法都带有可变参数，且**不能在一个带有可变参数的方法中直接调用另一个带有可变参数的方法**。因为函数参数入栈或者存入寄存器的方式都是有规可循的，我也曾尝试过在 x86-64 下找出指针固定的偏移量，遵循 x86-64 calling convention 下的可变参数调用从而修正 `va_list` 结构体的值。x86 下 `va_list` 是个 `char *`，而 x86-64 架构下 `va_list` 是个结构体：
 
@@ -307,7 +305,7 @@ typedef struct {
 }
 ```
 
-## [#添加按钮](#添加按钮)添加按钮
+## 添加按钮
 
 添加按钮的实现就是调用 `TBActionButton` 的工厂方法新建一个按钮，然后将其设置好点击事件处理的方法后，将按钮实例添加到 `buttons` 数组中。针对按钮不同的风格，会更新 `cancelButtonIndex` 和 `destructiveButtonIndex`，这里做了个兼容性的妥协：`UIActionSheet` 提供的接口只能至多有一个 `cancelButtonTitle` 或 `destructiveButtonTitle`，而 `UIAlertController` 的接口却支持多个。`TBActionSheet` 支持多个 `cancelButtonTitle` 或 `destructiveButtonTitle`，但 `cancelButtonIndex` 和 `destructiveButtonIndex` 总是被更新为最后一个添加的对应风格按钮的 Index：
 
@@ -355,7 +353,7 @@ typedef struct {
 
 这也是顺应了之前的设计，减少冗余代码。
 
-## [#show](#show)show
+## show
 
 在调用 `show` 方法之前，使用者可能会修改一些属性的值，所以大量的绘制和计算都是在 `show` 方法调用时执行的。在显示 ActionSheet 的时候需要有一组动画效果：将背景颜色由透明设成半透明黑色，并将容器从屏幕外由下至上平移至屏幕底部。
 
@@ -394,11 +392,11 @@ typedef struct {
 
 在动画开始之前最关键的三个步骤是：
 
-1. ：
+1. 设置新的 `UIWindow`：`setupNewWindow`
 2. 设置布局：`setupLayout`
 3. 设置毛玻璃效果、圆角、背景颜色等风格：`setupStyle`
 
-### [#setupNewWindow](#setupNewWindow)setupNewWindow
+### setupNewWindow
 
 `setupNewWindow` 的具体实现如下：
 
@@ -424,18 +422,14 @@ typedef struct {
 
 在把新的 `UIWindow` 搬到屏幕上之前先用 `previousKeyWindow` 属性记录下当前的 `keyWindow`，因为以后会经常用到它。下面会详细展开讲述 `setupNewWindow` 方法都干了啥。
 
-#### [#Autorotation](#Autorotation)Autorotation
+#### Autorotation
 
 之前说过 `TBActionSheet` 是在 `UIWindow` 上模态展示，其实这么做的另一个原因是为了更方便地实现自动旋转。旋转事件的传递路径为：`UIApplication` -\> `UIWindow` -\> `rootViewController` -\> `rootViewController.view`。所以需要将 `TBActionSheet` 作为 `rootViewController.view` 的子视图，这样让其跟着屏幕一起旋转。而在 iOS7 时代，`UIWindow` 是不会跟着一起旋转的，其 `bounds` 是不变的，坐标系计算跟 iOS8 之后的不同，所以 `TBActionSheet` 自动旋转目前仅支持 iOS8+。为了方便在控制器中处理旋转事件，我写了个 `TBActionSheetController`，它对 `TBActionSheet` 有一个弱引用，只是为了方便一些操作。
 
 实现自动旋转的主要流程是：
 
-1. 实例
-2. 实例
-
-  并赋值给
-
-  属性
+1. 新建一个 `TBActionSheetController` 实例 `actionSheetVC`
+2. 新建一个 `UIWindow` 实例 `window` 并赋值给 `window` 属性
 3. `window.rootViewController = actionSheetVC`
 4. `[actionSheetVC.view addSubview: YOUR_VIEW]`
 
@@ -453,7 +447,7 @@ typedef struct {
 
 `setupContainerFrame` 方法在后面会讲到。
 
-#### [#interruptGesture](#interruptGesture)interruptGesture
+#### interruptGesture
 
 如果作用于 `previousKeyWindow` 上的手势触发了 ActionSheet 的显示，但此时这个手势没有终止（比如 Pan 手势一直在捕获），这时就会引发一系列问题（测试的同学功不可没），必须中断其他窗口正在捕获的手势。思路是递归遍历子视图树中的所有手势对象，针对 Tap 和 Pan 这两种手势做中断处理。中断的方法就是将 `enabled` 设为 `NO` 再设为 `YES`：
 
@@ -472,70 +466,42 @@ typedef struct {
 }
 ```
 
-#### [#TBActionSheetController](#TBActionSheetController)TBActionSheetController
+#### TBActionSheetController
 
 为了让 ActionSheet 自动旋转，还需要覆写 `TBActionSheetController` 的 `shouldAutorotate` 方法并返回 `YES`，以及在 `supportedInterfaceOrientations` 方法中返回想要旋转的朝向 Mask。为了让 `TBActionSheetController` 的状态栏风格和 Hidden 状态与 ActionSheet 展现之前相同，还需要覆写 `preferredStatusBarStyle` 和 `prefersStatusBarHidden` 这两个方法。通过 `previousKeyWindow` 可以递归找到最顶层的控制器，并递归调用 `childViewControllerForStatusBarXXX` 方法向其获取可以代表状态栏风格或 Hidden 的控制器。这里用到了一些关于 `UIWindow` 的辅助方法，具体实现在 `UIWindow (TBAdditions)` 类别中。
 
-### [#setupLayout](#setupLayout)setupLayout
+### setupLayout
 
 因为没有用自动布局，所以需要在容器中从上到下依次排列视图，宽度由 `sheetWidth` 属性得知，只需计算好当前的纵坐标。纵坐标是根据各组件高度累加计算的，所以本质上还是对高度的计算。`titleLabel` 和 `messageLabel` 的高度可根据字体和文字内容计算出来。`customView` 是由调用方提供，高度也可以获得。按钮的高度由 `buttonHeight` 属性决定。除此之外还有视图之间的空隙，大部分都是小的空隙，Cancel 按钮上下都是大空隙。我将大小空隙的高度分别『钦定』为 8point 和 0.5point，并没提供属性用于个性化。其实这里叫『空隙』不准确，应该是『隔板（Separator）』，因为我在控件之间加了透明的 `UIView`，它可以根据需求变换背景颜色。
 
 `setupLayout` 方法的主要流程如下（忽略创建和添加 Separator）：
 
-1. 和
-
-  属性依次为
-
-  和
-
-  创建实例，并添加到容器中（
-
-  ），计算
-
-  。
-2. ，添加到容器中（
-
-  ），计算
-
-  的
-
-  。
-3. 数组向容器中（
-
-  ）添加按钮，计算按钮的
-
-  ，并根据按钮样式调整文字颜色和 Separator 高度。
-4. 属性计算容器下方需要『空』出来的高度。
-
-  为 ActionSheet 下方的 y 轴位移，向下为正，非负值无效，默认值为 -8。最后计算容器的
-
-  。
+1. 根据 `title` 和 `message` 属性依次为 `titleLabel` 和 `messageLabel` 创建实例，并添加到容器中（`actionContainer.header`），计算 `frame`。
+2. 处理调用者传入的 `customView`，添加到容器中（`actionContainer.custom`），计算 `customView` 的 `frame`。
+3. 遍历 `buttons` 数组向容器中（`actionContainer`）添加按钮，计算按钮的 `frame`，并根据按钮样式调整文字颜色和 Separator 高度。
+4. 根据 `offsetY` 属性计算容器下方需要『空』出来的高度。`offsetY` 为 ActionSheet 下方的 y 轴位移，向下为正，非负值无效，默认值为 -8。最后计算容器的 `frame`。
 
 这部分的计算略复杂，只是阐述下思想。但这还不是最复杂的部分。
 
-### [#setupStyle](#setupStyle)setupStyle
+### setupStyle
 
 此方法主要是设置风格，比如毛玻璃效果、圆角和颜色等，依赖于 `setupLayout` 的结果。
 
 微信的样式是整个容器背景全带毛玻璃效果，且没有圆角；系统样式中 iOS9 和 iOS8 只有按钮和标题部分带毛玻璃效果，其余地方镂空透明的，且 iOS9 的圆角更大些。iOS7 没有毛玻璃效果。`TBActionSheet` 有几个属性用来调节这些参数：
 
-- 是否让 ActionSheet 背景透明（镂空）
-- 是否启用毛玻璃效果
-- 矩形圆角半径
-- ActionSheet 的环境色
+- `backgroundTransparentEnabled` 是否让 ActionSheet 背景透明（镂空）
+- `blurEffectEnabled` 是否启用毛玻璃效果
+- `rectCornerRadius` 矩形圆角半径
+- `ambientColor` ActionSheet 的环境色
 
-#### [#BlurEffect-amp-Separator](#BlurEffect-amp-Separator)BlurEffect & Separator
+#### BlurEffect & Separator
 
 `UIVisualEffectView` 只支持 iOS8+，为了兼容 iOS7 及更低版本，我的策略是将屏幕上容器区域矩形进行截图，并做三次 Box 模糊处理，并将图片设置为容器的图片（但愿你还记得它们都是 `UIImageView`），模拟毛玻璃效果。苹果在 WWDC2013 给出了开源实现，使用的是 CI 框架的 Box 模糊函数，效率比高斯模糊要高：[ios_uiimageeffects.zip](https://developer.apple.com/downloads/download.action?path=wwdc_2013/wwdc_2013_sample_code/ios_uiimageeffects.zip)。针对容器镂空的情况，不能将容器矩形整体截图，需要将非镂空控件的每一部分单独截图并做模糊处理，然后将处理好的图片设置为控件的图片（因为容器中的控件都是 `UIImageView` 或 `UIButton`，不包含 Separator）。而使用 `UIVisualEffectView` 的时候也同样遵循这个道理。 `UIVisualEffectView` 的优点是针对变化的背景可以实时渲染出毛玻璃效果，而截图手动 Box 模糊就做不到这点；缺点是除非使用 `UIVisualEffectView` 的私有接口否则不能调节模糊半径，而 CI 框架提供的函数可以做到。
 
 也就是说这里需要做两个判断：
 
-1. ；否则用截图和 Box 模糊；如果不开启毛玻璃效果则使用半透明（alpha=0.5）的背景色（
-
-  ）
-2. ,
-
-  和按钮）矩形截图。
+1. 毛玻璃效果策略：iOS8+ 用 `UIVisualEffectView`；否则用截图和 Box 模糊；如果不开启毛玻璃效果则使用半透明（alpha=0.5）的背景色（`ambientColor`）
+2. ActionSheet 背景是否镂空：不镂空则对容器矩形整体截图，镂空则只对容器内的控件（`header`,`custom` 和按钮）矩形截图。
 
 因为 iOS7 下的毛玻璃效果使用的是截图，所以需要在设备屏幕旋转时刷新下 UI，再次调用 `setupStyle` 方法。需要覆写 `TBActionSheetController` 中下面的方法：
 
@@ -548,7 +514,7 @@ typedef struct {
 }
 ```
 
-##### [#截屏](#截屏)截屏
+##### 截屏
 
 截屏就是在屏幕上的进行截图，表面上看上去很简单，但实践的时候也会碰到坑。首先我要截取的肯定是 ActionSheet 出现之前的屏幕，所以之前提到过的 `previousKeyWindow` 属性就又派上用场了，它是 ActionSheet 展现前的窗口，通过它可以获取到最顶层的控制器，然后获取控制器管理的 `view`，接着就是用 UIKit 那套函数截图。这里需要区分下 iOS6 和 iOS7+ 渲染视图层级要调用不同的接口，并注意一个仅仅发生在 iOS7 上的 crash：**如果截屏区域的长或宽过小时将会引发 crash，这是 iOS7 系统的 bug**。
 
@@ -608,7 +574,7 @@ typedef struct {
 }
 ```
 
-##### [#ambientColor](#ambientColor)ambientColor
+##### ambientColor
 
 环境色其实就是容器的背景颜色，但不能叫 `backgroundColor`，因为 `UIView` 中已经有个 `backgroundColor` 属性了，如果我们自己强制声明重名的属性会导致奇怪的问题。比如设置好的背景色在程序运行中自动被设成其他颜色（一般是黑色），而且是随机出现的，而且一旦出现就会一直复现，除非杀进程。PS：别问我为啥知道这么多，都是泪啊！用在公司项目中被测试同学提过好多次 bug！
 
@@ -621,7 +587,7 @@ typedef struct {
 
 这部分的代码逻辑其实略复杂，但还不是最烧脑的。
 
-##### [#Separator](#Separator)Separator
+##### Separator
 
 在 `setupLayout` 中创建的 Separator 都会添加到 `separators` 数组中，并作为容器的子视图参与 UI 绘制：
 
@@ -637,7 +603,7 @@ typedef struct {
 
 Separator 只是个普通的 `UIView`，可以透明也可以有颜色，这取决于调用者的口味。微信样式中按钮之间是有些深色的，可以通过 `separatorColor` 属性来设置这个颜色。Separator 的两种尺寸之前提到过，BigFragment 为 8point，位于 Cancel 按钮上下，即使 Cancel 按钮在中间，也可以应付自如。
 
-#### [#RectCorner](#RectCorner)RectCorner
+#### RectCorner
 
 圆角的实现不复杂，但是判断哪里需要处理成圆角很复杂：**哪个 `UIView` 的哪个角需要处理成圆角**
 
@@ -660,25 +626,13 @@ typedef NS_OPTIONS(NSUInteger, TBRectCorner) {
 而判断哪里需要圆角的过程就复杂了，用到了大量的 if-else 判断来修改 `tbRectCorner` 属性。这项工作复杂的原因就在于其布局不确定性，加圆角的规则如下：
 
 1. 整个容器的边缘都有圆角。容器内部 Separator 为 BigFragment 的上下边缘都有圆角。（Cancel 按钮上下的 Separator 都为 BigFragment）
-2. 和
-
-  如果都为
-
-  ，也就是容器的
-
-  无内容，则容器顶部圆角加在
-
-  顶部。
-3. 为
-
-  ，则容器的
-
-  无内容，则容器顶部圆角加在第一个按钮顶部。
+2. `title` 和 `message` 如果都为 `nil`，也就是容器的 `header` 无内容，则容器顶部圆角加在 `custom` 顶部。
+3. 如果传入的 `customView` 为 `nil`，则容器的 `custom` 无内容，则容器顶部圆角加在第一个按钮顶部。
 4. 容器底部圆角加在最后一个按钮底部。
 
 具体实现代码就不贴了，分散在 `setupStyle` 方法的多个位置。
 
-#### [#setupContainerFrame](#setupContainerFrame)setupContainerFrame
+#### setupContainerFrame
 
 `show` 方法中的动画会将整个容器从屏幕外右下至上滑动至屏幕底部，动画的终点就是容器最终的 `frame`。在计算纵坐标时需要考虑到 iOS7 的状态栏的高度：
 
@@ -697,7 +651,7 @@ typedef NS_OPTIONS(NSUInteger, TBRectCorner) {
 #define kContainerLeft ((kScreenWidth - self.sheetWidth)/2)
 ```
 
-### [#动画](#动画)动画
+### 动画
 
 从 iOS7 开始 UIKit 支持了 Spring 动画，有趣的是 SpriteKit 和 UIDynamic 也是在 iOS7 新加入的。我猜其底层实现应该是公用的。
 
@@ -705,7 +659,7 @@ typedef NS_OPTIONS(NSUInteger, TBRectCorner) {
 
 目前调节动画的参数有三个属性：`animationDuration`，`animationDampingRatio` 和 `animationVelocity`。
 
-## [#close-amp-buttonTapped](#close-amp-buttonTapped)close & buttonTapped
+## close & buttonTapped
 
 用户点击背景或者按钮时，ActionSheet 会执行消失动画，并伴随着 `delegate` 的一些回调或是执行 block。这两个方法的实现差不多，仅以 `buttonTapped` 为例讲解一下。
 
@@ -763,13 +717,13 @@ self.window.rootViewController = nil;
 
 只要调用方不再对 ActionSheet 有强引用，`window` 就会被释放，不会造成内存泄露。
 
-# [#一些细节](#一些细节)一些细节
+# 一些细节
 
-## [#Marco](#Marco)Marco
+## Marco
 
 项目中用到了一些 UIKit 自带的宏，其实它们好多都是使用 `__attribute__` 的偷懒方式，目的是告诉编译器一些事情。
 
-### [#UI-APPEARANCE-SELECTOR](#UI-APPEARANCE-SELECTOR)UI_APPEARANCE_SELECTOR
+### UI_APPEARANCE_SELECTOR
 
 在声明属性的时候，考虑到方便一个应用内控件的统一风格，使用到了 `UI_APPEARANCE_SELECTOR` 宏。在 iOS8 之前 `UIAppearance` 不支持 `BOOL` 类型，需要用 `NSInteger` 替代。所有声明带有 `UI_APPEARANCE_SELECTOR` 的属性都在 `initialize` 初始化：
 
@@ -807,7 +761,7 @@ self.window.rootViewController = nil;
 __attribute__((annotate("ui_appearance_selector")))
 ```
 
-### [#NS-UNAVAILABLE](#NS-UNAVAILABLE)NS_UNAVAILABLE
+### NS_UNAVAILABLE
 
 有时候自己创建了一个类，但是想禁用一些从父类继承来的方法，就可以使用 `NS_UNAVAILABLE` 宏。比如在 `TBActionSheet` 类中我禁用了这个初始化方法：
 
@@ -831,11 +785,11 @@ __attribute__((annotate("ui_appearance_selector")))
 - (instancetype)init __attribute__((unavailable("init not available, please use initWithSheet:")));
 ```
 
-### [#NS-ASSUME-NONNULL-BEGIN（-END）](#NS-ASSUME-NONNULL-BEGIN（-END）)NS_ASSUME_NONNULL_BEGIN（_END）
+### NS_ASSUME_NONNULL_BEGIN（_END）
 
 llvm 6.1 为 Objective-C 加入了 Nullability 的新特性后，头文件们一个个都更啰嗦了。可以默认一段代码的属性或参数为非空，针对可能为空的则用 `nullable` 修饰。但我们声明的大部分属性或者方法参数都是非空的，大量的 `nonnull` 会降低可读性，所以苹果提供了 Audited Regions 宏，也就是 `NS_ASSUME_NONNULL_BEGIN` 和 `NS_ASSUME_NONNULL_END`。在头文件中这对儿宏之间区域的代码都会被审查，指针都会被默认为是 `nonnull`。`TBActionSheet` 适配了 Nullability 特性，更多内容可以参考官方的[Nullability and Objective-C](https://developer.apple.com/swift/blog/?id=25)。
 
-## [#动态配置](#动态配置)动态配置
+## 动态配置
 
 iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBActionSheet` 可以做到实时动态更新，比如动态添加按钮：
 
@@ -853,13 +807,13 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 
 还有就是一些视图背景颜色的还原，每次设置前先将其设为 `nil`。
 
-# [#属性](#属性)属性
+# 属性
 
 `UIActionSheet` 中除了 `UIActionSheetStyle actionSheetStyle` 属性，其余属性都已实现。因为 `TBActionSheet` 的样式可高度个性化定制，所以不再需要 `UIActionSheetStyle` 这种枚举了。可以说 `TBActionSheet` 在属性上依然『几乎』是 `UIActionSheet` 的超集。
 
 `TBActionSheet` 的属性实在是太多了，因为它完全是手撸的，太灵活了。但总结起来无非就是『尺寸』、『样式』、『状态』、『内容』、『标记』和『动画&朝向』这几大类。
 
-## [#尺寸](#尺寸)尺寸
+## 尺寸
 
 ```objectivec
 /**
@@ -880,7 +834,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic,assign) CGFloat rectCornerRadius UI_APPEARANCE_SELECTOR;
 ```
 
-## [#样式](#样式)样式
+## 样式
 
 ```objectivec
 /**
@@ -909,7 +863,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic,strong) UIColor *ambientColor UI_APPEARANCE_SELECTOR;
 ```
 
-## [#状态](#状态)状态
+## 状态
 
 ```objectivec
 /**
@@ -930,7 +884,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic, getter=isBlurEffectEnabled) NSInteger blurEffectEnabled UI_APPEARANCE_SELECTOR;
 ```
 
-## [#内容](#内容)内容
+## 内容
 
 ```objectivec
 @property(nonatomic,copy)  NSString * _Nullable  title;
@@ -949,7 +903,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic,strong,nullable) UIView *customView;
 ```
 
-## [#标记](#标记)标记
+## 标记
 
 ```objectivec
 /**
@@ -961,7 +915,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic,readonly) NSInteger firstOtherButtonIndex;	// -1 if no otherButtonTitles or initWithTitle:... not used
 ```
 
-## [#动画-amp-朝向](#动画-amp-朝向)动画&朝向
+## 动画&朝向
 
 ```objectivec
 @property(nonatomic,readonly) NSInteger numberOfButtons;
@@ -983,7 +937,7 @@ iOS 系统的 `UIActionSheet` 在展现后就不能做修改了，而我的 `TBA
 @property(nonatomic,assign) UIInterfaceOrientationMask supportedInterfaceOrientations UI_APPEARANCE_SELECTOR;
 ```
 
-## [#属性存取器](#属性存取器)属性存取器
+## 属性存取器
 
 其实属性存取器并不都是必要的，很多 set 方法可以不写，毕竟所有的布局和样式都在最后的 `show` 方法中决定。但一些改动不大的轻量级属性修改还是可以接受的，这些属性的 set 方法实现也比较简单。动态配置需要再次调用 `setupLayout`、`setupStyle` 以及 `setupContainerFrame`，而这些轻量级的属性修改则可立即生效，无需再调用那三个方法。
 
@@ -1052,18 +1006,14 @@ ActionSheet 是否可见，取决于窗口及控制器是否存在：
 }
 ```
 
-# [#后记](#后记)后记
+# 后记
 
 我也没想到一个简简单单的 ActionSheet 也会写的这么复杂，早知道会这样我真的不敢下手。以至于写完后还没测试就用在了公司的项目中，各种爆 Bug 然后 Debug。同事们各种提意见然后我再去完善。第一次线上版本全部替换成 `TBActionSheet` 后出了 Bug，这真的是实习生干的 23333 这锅我背了！
 
 其实写这个轮子是留下了很多遗憾和不足的：
 
 1. 一开始觉得布局很简单，无非就是几个 Button 啊 Label 啊，所以没用自动布局。后面功能越来越多布局开始变得复杂，需要大量计算，想想真是后悔。但再往后动态配置和个性化程度大大提升，发现已经复杂到不适合用自动布局，不知是否有些心安
-2. 或
-
-  来实现的，在长按按钮滑动选择的时候，
-
-  就做不到系统控件那样了。如果重写的话一定要用 Table 啊
+2. 系统控件的实现是用 `UITableView` 或 `UICollectionView` 来实现的，在长按按钮滑动选择的时候，`TBActionSheet` 就做不到系统控件那样了。如果重写的话一定要用 Table 啊
 3. 属性名几经修改，接口也有小幅度修改，功能强大但也已经臃肿
 4. 没能做到全功能适配 iOS7，或许是自己太懒了。其实有写过二维变换模拟系统的旋转动画，并进行了复杂的数学坐标推导出变换公式，最后觉得还是效果不满意，并投入太多精力，遂放弃
 5. 当时因为业务忙，写的代码真是乱，现在还在一点点整理。。。说啥都是借口！

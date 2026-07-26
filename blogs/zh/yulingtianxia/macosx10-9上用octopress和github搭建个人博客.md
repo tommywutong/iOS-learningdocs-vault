@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7a464605f10b385d'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-05
 
-1. 1. Octopress搭建
-2. 2. Github Page 部署
-3. 3. Blog的美化工作
+**文章目录**
+
+1. [1. Octopress搭建](#Octopress搭建)
+2. [2. Github Page 部署](#Github-Page-部署)
+3. [3. Blog的美化工作](#Blog的美化工作)
 
 网上已经有很多关于搭建Octopress的文章了，但我写这篇文章的目的是帮助Mac新手们搭建自己的Octopress，尤其是最新的Mavericks系统
 
@@ -34,7 +36,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ---
 
-# [#Octopress搭建](#Octopress搭建)Octopress搭建
+# Octopress搭建
 
 众所周知，MacOSX自带Ruby，10.9系统带了两个版本的Ruby：1.8和2.0，因为Octopress需要Ruby1.9.3以上的支持，所以Mavericks自带的Ruby2.0是可以胜任的，新手们可以松一口气了。  
 如果没有安装command line tools，可以直接安装Xcode。Xcode5之后，command line tools都是跟随Xcode自带的，不用单独安装，想卸载也就麻烦了，可以在Xcode中Preferences-\>Locations中查看command line tools版本。
@@ -101,8 +103,9 @@ rake install
 如果出现“You have already activated rake 10.3.1, but your Gemfile requires rake 0.9.6. Prepending `bundle exec` to your command may solve this.”这样的提示，有三种解决方法：
 
 1. 运行`bundle update`
-2. ，即运行
-3. 这三种方法建议先用方法1，如果不行再用方法3，方法2是无奈之举
+2. 按照提示在前面加上`bundle exec`，即运行`bundle exec rake install`
+3. 卸载不一样的版本 gem uninstall rake -v=10.3.1  
+  这三种方法建议先用方法1，如果不行再用方法3，方法2是无奈之举
 
 **关于创建博文**
 
@@ -113,7 +116,7 @@ rake generate ＃生成HTML文件
 
 这里推荐一个markdown编辑器[Mou](http://mouapp.com)，markdown是用来编写我们博客的语言，文件后缀名为md或markdown，学过Latex的童鞋可能会了解得更快一些，用markdown编写HTML版面是再好不过得了，markdown速成[传送门](http://www.ituring.com.cn/article/23)。网上教程也挺多的，语法风格跟Latex有点像。
 
-# [#Github-Page-部署](#Github-Page-部署)Github Page 部署
+# Github Page 部署
 
 首先要有一个Github账号，假设用户名为username，那么新建一个仓库，名字叫“username.github.io”，Github会自动识别它为你的个人页面。你可以通过username.github.io这个网址来访问你部署的静态网页。创建完成后，获取你这个仓库的Git Url，SSH或者Http协议的都可以，然后执行`rake setup_github_pages`，当提示你的时候输入你前面创建的仓库的Git Url。比如`git@github.com:username/username.github.com.git`  
 你会发现octopress文件夹中多了_deploy目录，并将这个目录当作master分支，而其余的文件都作为新建立的source分支。octopress原理是在source分支保存框架所需要的文件，还有博客的markdown文件，然后每次将生成的html文件放入master分支，通过username.github.io访问到的是已经生成好的master分支的文件，也就是_deploy文件夹的内容。  
@@ -134,7 +137,7 @@ git push origin source
 
 如果你有自己的域名，可以通过在仓库中新建CNAME文件进行配置映射，这里不再细说。
 
-# [#Blog的美化工作](#Blog的美化工作)Blog的美化工作
+# Blog的美化工作
 
 可以用[greyshade](https://github.com/shashankmehta/greyshade)或者[slash](https://github.com/tommy351/Octopress-Theme-Slash)主题美化博客，根据个人喜好了。需要注意的是，greyshade这个主题有些不足之处，比如，disqus实效，还有如何添加新浪微博链接，请看[这里](http://bryanone.com/blog/2014/03/01/problem-with-greyshade/)和[这里](http://imallen.com/blog/2013/05/12/add-support-for-weibo-and-dribbble-to-greyshade.html)。如果首页左侧没有显示title和subtitle等信息，可以修改/source/_includes/header.html文件，添加
 
@@ -146,28 +149,11 @@ git push origin source
 修改_config.yml文件，可以配置博客的参数，网上有很多详细的教程来说明每个属性是干什么的，需要注意的一点就是冒号后面一定要加空格，否则编译不通过。建议下载一个Sublime Text来打开这些前台文件，增加效率。博客头像和Github一样采用[gravatar](http://yulingtianxia.com/blog/2014/04/05/macosx10-dot-9shang-yong-octopresshe-githubda-jian-ge-ren-bo-ke/www.gravatar.com)的头像托管服务，在_config.yml文件中的email属性中填入你在gravatar的邮件或者在email_md5属性中填入md5码也可。  
 **关于添加标签云效果**
 
-1. category_cloud.rb
-
-  复制到你的
-
-  文件夹下
-2. category_cloud.html
-
-  到你的
-
-  目录
-3. 文件中的
-
-  项中加入第二步添加的路径：
-4. tagcloud.swf
-
-  到
-
-  文件夹
-
-  如果想修改标签云的颜色可以在
-
-  文件中改变：
+1. 将[category_cloud.rb](https://github.com/yulingtianxia/yulingtianxia.github.io/blob/source/plugins/category_cloud.rb)复制到你的`/octopress/plugins/`文件夹下
+2. 拷贝[category_cloud.html](https://github.com/yulingtianxia/yulingtianxia.github.io/blob/source/source/_includes/custom/asides/category_cloud.html)到你的`octopress/source/_includes/custom/asides/`目录
+3. 在你的 `octopress/_config.yml` 文件中的`default_asides`项中加入第二步添加的路径：`custom/asides/category_cloud.html`
+4. 拷贝[tagcloud.swf](https://github.com/yulingtianxia/yulingtianxia.github.io/blob/source/source/javascripts/tagcloud.swf)到`source/javascripts/`文件夹  
+  如果想修改标签云的颜色可以在`category_cloud.rb`文件中改变：
 
   ```less
   @opts['bgcolor'] = '#3D4349'

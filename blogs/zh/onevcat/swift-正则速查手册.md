@@ -160,18 +160,8 @@ let bitcoinAddress_v1 = Regex {
 
 此外：
 
-- 的
-
-  )，此时
-
-  和
-
-  等效为
-
-  ，
-
-  等。
-- 等。
+- 对于多行匹配模式的情况 (如带有 `m` 的 `/^abc/m`)，此时 `^` 和 `$` 等效为 `.startOfLine`，`.endOfLine` 等。
+- 对于 Unicode 支持，常用的还有 `.textSegmentBoundary (\y)` 等。
 
 ### 捕获
 
@@ -324,25 +314,9 @@ if let result = text.wholeMatch(of: regex) {
 
 在创建 `Regex` 后，可以使用其上的实例方法来对 `Regex` 进行部分修改。最常用的大概有：
 
-- - 匹配是否忽略大小写。等效于
-
-  中的
-
-  flag。
-- -
-
-  和
-
-  是否也匹配每行。等效于
-
-  中的
-
-  flag。
-- - 字面量
-
-  是否应该匹配包括换行符在内的任意字符。等效于
-
-  flag。
+- `ignoresCase(_:)` - 匹配是否忽略大小写。等效于 `/[aeiou]/i` 中的 `i` flag。
+- `anchorsMatchLineEndings(_:)` - `^` 和 `$` 是否也匹配每行。等效于 `/^[aeiou]$/m` 中的 `m` flag。
+- `dotMatchesNewlines(_:)` - 字面量 `.` 是否应该匹配包括换行符在内的任意字符。等效于 `s` flag。
 
 ## 小结
 
@@ -357,7 +331,7 @@ Swift Regex 是符合 Swift 美学的正则写法，可以在标准库层面替�
 
 - 文档不足，实际用例和社区支持也相对匮乏
 - 需求的系统版本较高，近几年内可能难以完全迁移
-- 等条件控制
+- 不论字面量还是 DSL，暂时还不支持 `if` 等条件控制
 - Foundation 的 Parser 数量和种类不多
 
 不过这些毒点相对都是容易改善的，个人还是十分看好 Swift Regex 的前景。特别是用来做一些简单的文本处理和本地工具的话，会非常方便。
@@ -368,19 +342,19 @@ Swift Regex 是符合 Swift 美学的正则写法，可以在标准库层面替�
 
 #### WWDC 22
 
-- Meet Swift Regex
-- Swift Regex: Beyond the basics
+- [Meet Swift Regex](https://developer.apple.com/videos/play/wwdc2022/110357/)
+- [Swift Regex: Beyond the basics](https://developer.apple.com/videos/play/wwdc2022/110358/)
 
 #### Swift Evolution
 
-- SE-0350: Regex type and overview
-- SE-0351: Regex builder DSL
-- SE-0354: Regex literals
-- SE-0355: Regex syntax
-- SE-0357: Regex-powered algorithms
-- SE-0363: Unicode for String Processing
+- [SE-0350: Regex type and overview](https://github.com/apple/swift-evolution/blob/main/proposals/0350-regex-type-overview.md)
+- [SE-0351: Regex builder DSL](https://github.com/apple/swift-evolution/blob/main/proposals/0351-regex-builder.md)
+- [SE-0354: Regex literals](https://github.com/apple/swift-evolution/blob/main/proposals/0354-regex-literals.md)
+- [SE-0355: Regex syntax](https://github.com/apple/swift-evolution/blob/main/proposals/0355-regex-syntax-run-time-construction.md)
+- [SE-0357: Regex-powered algorithms](https://github.com/apple/swift-evolution/blob/main/proposals/0357-regex-string-processing-algorithms.md)
+- [SE-0363: Unicode for String Processing](https://github.com/apple/swift-evolution/blob/main/proposals/0363-unicode-for-string-processing.md)
 
 #### 其他资源
 
-- Regex Playground
-- Cheat Sheet
+- [Regex Playground](https://regexr.com)
+- [Cheat Sheet](https://github.com/niklongstone/regular-expression-cheat-sheet)

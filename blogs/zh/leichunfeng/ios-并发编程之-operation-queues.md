@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-07-29
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7c2a483b4e9915ad'
 translated: n/a
 ---
@@ -22,24 +22,34 @@ Jul 29th, 2015 10:06 pm
 
 由于本文涉及的内容较多，所以建议读者先提前了解一下本文的目录结构，以便对本文有一个宏观的认识：
 
--   - 术语
+- 基本概念
+
+    - 术语
     - 串行 vs. 并发
     - 同步 vs. 异步
     - 队列 vs. 线程
 - iOS 的并发编程模型
 - Operation Queues vs. Grand Central Dispatch (GCD)
--   - 并发 vs. 非并发 Operation
+- 关于 Operation 对象
+
+    - 并发 vs. 非并发 Operation
     - 创建 NSInvocationOperation 对象
     - 创建 NSBlockOperation 对象
--   - 执行主任务
+- 自定义 Operation 对象
+
+    - 执行主任务
     - 响应取消事件
     - 配置并发执行的 Operation
     - 维护 KVO 通知
--   - 配置依赖关系
+- 定制 Operation 对象的执行行为
+
+    - 配置依赖关系
     - 修改 Operation 在队列中的优先级
     - 修改 Operation 执行任务线程的优先级
     - 设置 Completion Block
--   - 添加 Operation 到 Operation Queue 中
+- 执行 Operation 对象
+
+    - 添加 Operation 到 Operation Queue 中
     - 手动执行 Operation
     - 取消 Operation
     - 等待 Operation 执行完成
@@ -55,9 +65,7 @@ Jul 29th, 2015 10:06 pm
 首先，我们先来了解一下在 iOS 并发编程中非常重要的三个术语，这是我们理解 iOS 并发编程的基础：
 
 - 进程（process），指的是一个正在运行中的可执行文件。每一个进程都拥有独立的虚拟内存空间和系统资源，包括端口权限等，且至少包含一个主线程和任意数量的辅助线程。另外，当一个进程的主线程退出时，这个进程就结束了；
-- POSIX threads API
-
-  的，也就是我们常说的 pthreads ；
+- 线程（thread），指的是一个独立的代码执行路径，也就是说线程是代码执行路径的最小分支。在 iOS 中，线程的底层实现是基于 [POSIX threads API](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html) 的，也就是我们常说的 pthreads ；
 - 任务（task），指的是我们需要执行的工作，是一个抽象的概念，用通俗的话说，就是一段代码。
 
 ### 串行 vs. 并发
@@ -88,14 +96,8 @@ Jul 29th, 2015 10:06 pm
 
 简单来说，`GCD` 是苹果基于 `C` 语言开发的，一个用于多核编程的解决方案，主要用于优化应用程序以支持多核处理器以及其他对称多处理系统。而 Operation Queues 则是一个建立在 `GCD` 的基础之上的，面向对象的解决方案。它使用起来比 `GCD` 更加灵活，功能也更加强大。下面简单地介绍了 Operation Queues 和 `GCD` 各自的使用场景：
 
-- 来说，使用 Operation Queues 会增加一点点额外的开销，但是我们却换来了非常强大的灵活性和功能，我们可以给 operation 之间添加依赖关系、取消一个正在执行的 operation 、暂停和恢复 operation queue 等；
-- ：则是一种更轻量级的，以
-
-  的顺序执行并发任务的方式，使用
-
-  时我们并不关心任务的调度情况，而让系统帮我们自动处理。但是
-
-  的短板也是非常明显的，比如我们想要给任务之间添加依赖关系、取消或者暂停一个正在执行的任务时就会变得非常棘手。
+- Operation Queues ：相对 `GCD` 来说，使用 Operation Queues 会增加一点点额外的开销，但是我们却换来了非常强大的灵活性和功能，我们可以给 operation 之间添加依赖关系、取消一个正在执行的 operation 、暂停和恢复 operation queue 等；
+- `GCD` ：则是一种更轻量级的，以 `FIFO` 的顺序执行并发任务的方式，使用 `GCD` 时我们并不关心任务的调度情况，而让系统帮我们自动处理。但是 `GCD` 的短板也是非常明显的，比如我们想要给任务之间添加依赖关系、取消或者暂停一个正在执行的任务时就会变得非常棘手。
 
 ## 关于 Operation 对象
 
@@ -109,7 +111,7 @@ Jul 29th, 2015 10:06 pm
 
 - 支持在 operation 之间建立依赖关系，只有当一个 operation 所依赖的所有 operation 都执行完成时，这个 operation 才能开始执行；
 - 支持一个可选的 completion block ，这个 block 将会在 operation 的主任务执行完成时被调用；
-- 来观察 operation 执行状态的变化；
+- 支持通过 `KVO` 来观察 operation 执行状态的变化；
 - 支持设置执行的优先级，从而影响 operation 之间的相对执行顺序；
 - 支持取消操作，可以允许我们停止正在执行的 operation 。
 
@@ -182,7 +184,7 @@ Jul 29th, 2015 10:06 pm
 NSBlockOperation 是 NSOperation 类的另外一个系统预定义的子类，我们可以用它来封装一个或多个 `block` 。我们知道 `GCD` 主要就是用来进行 `block` 调度的，那为什么我们还需要 NSBlockOperation 类呢？一般来说，有以下两个场景我们会优先使用 NSBlockOperation 类：
 
 - 当我们在应用中已经使用了 Operation Queues 且不想创建 Dispatch Queues 时，NSBlockOperation 类可以为我们的应用提供一个面向对象的封装；
-- 观察 operation 的状态变化等。
+- 我们需要用到 Dispatch Queues 不具备的功能时，比如需要设置 operation 之间的依赖关系、使用 `KVO` 观察 operation 的状态变化等。
 
 下面的示例代码展示了创建一个 NSBlockOperation 对象的基本方法：
 
@@ -239,7 +241,7 @@ NSBlockOperation 是 NSOperation 类的另外一个系统预定义的子类，�
 从最低限度上来说，每一个 operation 都应该至少实现以下两个方法：
 
 - 一个自定义的初始化方法；
-- 方法。
+- `main` 方法。
 
 我们需要用一个自定义的初始化方法来将创建的 operation 置于一个已知的状态，并且重写 `main` 方法来执行我们的任务。当然，我们也可以实现一些其他的额外方法，比如实现 `NSCoding` 协议来允许我们归档和解档 operation 等。下面的示例代码展示了如何自定义一个简单的 operation ：
 
@@ -343,24 +345,10 @@ NSBlockOperation 是 NSOperation 类的另外一个系统预定义的子类，�
 
 在默认情况下，operation 是同步执行的，也就是说在调用它的 `start` 方法的线程中执行它们的任务。而在 operation 和 operation queue 结合使用时，operation queue 可以为非并发的 operation 提供线程，因此，大部分的 operation 仍然可以异步执行。但是，如果你想要手动地执行一个 operation ，又想这个 operation 能够异步执行的话，你需要做一些额外的配置来让你的 operation 支持并发执行。下面列举了一些你可能需要重写的方法：
 
-- ：必须的，所有并发执行的 operation 都必须要重写这个方法，替换掉 NSOperation 类中的默认实现。
-
-  方法是一个 operation 的起点，我们可以在这里配置任务执行的线程或者一些其它的执行环境。另外，需要特别注意的是，在我们重写的
-
-  方法中一定不要调用父类的实现；
-- ：可选的，通常这个方法就是专门用来实现与该 operation 相关联的任务的。尽管我们可以直接在
-
-  方法中执行我们的任务，但是用
-
-  方法来实现我们的任务可以使设置代码和任务代码得到分离，从而使 operation 的结构更清晰；
-- 和
-
-  ：必须的，并发执行的 operation 需要负责配置它们的执行环境，并且向外界客户报告执行环境的状态。因此，一个并发执行的 operation 必须要维护一些状态信息，用来记录它的任务是否正在执行，是否已经完成执行等。此外，当这两个方法所代表的值发生变化时，我们需要生成相应的
-
-  通知，以便外界能够观察到这些状态的变化；
-- ：必须的，这个方法的返回值用来标识一个 operation 是否是并发的 operation ，我们需要重写这个方法并返回
-
-  。
+- `start` ：必须的，所有并发执行的 operation 都必须要重写这个方法，替换掉 NSOperation 类中的默认实现。`start` 方法是一个 operation 的起点，我们可以在这里配置任务执行的线程或者一些其它的执行环境。另外，需要特别注意的是，在我们重写的 `start` 方法中一定不要调用父类的实现；
+- `main` ：可选的，通常这个方法就是专门用来实现与该 operation 相关联的任务的。尽管我们可以直接在 `start` 方法中执行我们的任务，但是用 `main` 方法来实现我们的任务可以使设置代码和任务代码得到分离，从而使 operation 的结构更清晰；
+- `isExecuting` 和 `isFinished` ：必须的，并发执行的 operation 需要负责配置它们的执行环境，并且向外界客户报告执行环境的状态。因此，一个并发执行的 operation 必须要维护一些状态信息，用来记录它的任务是否正在执行，是否已经完成执行等。此外，当这两个方法所代表的值发生变化时，我们需要生成相应的 `KVO` 通知，以便外界能够观察到这些状态的变化；
+- `isConcurrent` ：必须的，这个方法的返回值用来标识一个 operation 是否是并发的 operation ，我们需要重写这个方法并返回 `YES` 。
 
 下面我们将分三部分内容来介绍一下定义一个并发执行的 operation 所需的基本代码，主体部分的代码如下所示：
 
@@ -534,7 +522,7 @@ NSOperation 类的以下 `key paths` 支持 `KVO` 通知，我们可以通过观
 最终，我们需要执行 operation 来调度与其关联的任务。目前，主要有两种方式来执行一个 operation ：
 
 - 将 operation 添加到一个 operation queue 中，让 operation queue 来帮我们自动执行；
-- 方法手动执行 operation 。
+- 直接调用 `start` 方法手动执行 operation 。
 
 ### 添加 Operation 到 Operation Queue 中
 
@@ -546,9 +534,9 @@ NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
 
 创建好 operation queue 后，我们可以使用下面三个方法添加 operation 到 operation queue 中：
 
-- ，添加一个 operation 到 operation queue 中；
-- ，添加一组 operation 到 operation queue 中；
-- ，直接添加一个 block 到 operation queue 中，而不用创建一个 NSBlockOperation 对象。
+- `addOperation:` ，添加一个 operation 到 operation queue 中；
+- `addOperations:waitUntilFinished:` ，添加一组 operation 到 operation queue 中；
+- `addOperationWithBlock:` ，直接添加一个 block 到 operation queue 中，而不用创建一个 NSBlockOperation 对象。
 
 在大多数情况下，一个 operation 被添加到 operation queue 后不久就会执行，但是也有很多原因会使 operation queue 延迟执行入队的 operation 。比如，我们前面提到了的，如果一个 operation 所依赖的其他 operation 还没有执行完成时，这个 operation 就不能开始执行；再比如说 operation queue 被暂停执行或者已经达到了它最大可并发的 operation 数。下面的示例代码展示了这三种方法的基本用法：
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:96bf73713daa8c53'
 translated: n/a
 ---
@@ -27,9 +27,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 在苹果的[官方文档](https://developer.apple.com/library/ios/documentation/DataManagement/Conceptual/UsingCoreDataWithiCloudPG/UsingSQLiteStoragewithiCloud/UsingSQLiteStoragewithiCloud.html#//apple_ref/doc/uid/TP40013491-CH3-SW1)中已经把配置工作叙述的很明确了，简单地说可以总结为三步：
 
 - 在iTunes Connect创建App ID，在Xcode中找到项目的Capabilities标签并开启iCloud选项。这会为你创建一个默认的iCloud容器，名字格式为“com.XXX.yourAppID”
-- 时向
-
-  参数传入一个持久存储的名称，自己起一个就行，示例代码如下:
+- 添加`NSPersistentStore`时向`options`参数传入一个持久存储的名称，自己起一个就行，示例代码如下:
 
 ```objc
 NSDictionary *storeOptions =
@@ -41,19 +39,8 @@ NSPersistentStore *store = [coordinator addPersistentStoreWithType:NSSQLiteStore
                                                              error:&error];
 ```
 
-- ,
-
-  和
-
-  这三个通知进行注册以便接收通知后对数据进行处理。最好用
-
-  的
-
-  方法来使逻辑更加明确，代码更紧凑。
-
-  最后贴上Swift实现
-
-  的代码：
+- 对`NSPersistentStoreCoordinatorStoresWillChangeNotification`,`NSPersistentStoreCoordinatorStoresDidChangeNotification`和`NSPersistentStoreDidImportUbiquitousContentChangesNotification`这三个通知进行注册以便接收通知后对数据进行处理。最好用`NSNotificationCenter`的`addObserverForName:object:queue:usingBlock:`方法来使逻辑更加明确，代码更紧凑。  
+  最后贴上Swift实现`persistentStoreCoordinator`的代码：
 
   ```swift
   var persistentStoreCoordinator: NSPersistentStoreCoordinator! {
@@ -162,5 +149,5 @@ PS：官方文档不建议在主线程使用`URLForUbiquityContainerIdentifier`�
 
 参考：
 
-- http://stackoverflow.com/questions/26195612/icloud-debug-gauge-status-disabled
-- http://stackoverflow.com/questions/25971816/xcode-6-ios-8-icloud-core-data-setup
+- [http://stackoverflow.com/questions/26195612/icloud-debug-gauge-status-disabled](http://stackoverflow.com/questions/26195612/icloud-debug-gauge-status-disabled)
+- [http://stackoverflow.com/questions/25971816/xcode-6-ios-8-icloud-core-data-setup](http://stackoverflow.com/questions/25971816/xcode-6-ios-8-icloud-core-data-setup)

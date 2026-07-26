@@ -271,19 +271,13 @@ VVStack[36517:70b] + 'SimpleString, when assigned to 'Hello world', should equal
 
 可以看到，这三个关键字的描述将在测试时被依次打印出来，形成一个完整的行为描述。除了这三个之外，Kiwi还有一些其他的行为描述关键字，其中比较重要的包括
 
-- - 当前scope内部的所有的其他block运行之前调用一次
-- - 当前scope内部的所有的其他block运行之后调用一次
-- - 在scope内的每个it之前调用一次，对于
-
-  的配置代码应该写在这里
-- - 在scope内的每个it之后调用一次，用于清理测试后的代码
-- - 可以在里面直接书写不需要描述的测试
-- - 只打印一条log信息，不做测试。这个语句会给出一条警告，可以作为一开始集中书写行为描述时还未实现的测试的提示。
-- - 和
-
-  一样，另一种写法。因为在真正实现时测试时只需要将x删掉就是
-
-  ，但是pending语意更明确，因此还是推荐pending
+- `beforeAll(aBlock)` - 当前scope内部的所有的其他block运行之前调用一次
+- `afterAll(aBlock)` - 当前scope内部的所有的其他block运行之后调用一次
+- `beforeEach(aBlock)` - 在scope内的每个it之前调用一次，对于`context`的配置代码应该写在这里
+- `afterEach(aBlock)` - 在scope内的每个it之后调用一次，用于清理测试后的代码
+- `specify(aBlock)` - 可以在里面直接书写不需要描述的测试
+- `pending(aString, aBlock)` - 只打印一条log信息，不做测试。这个语句会给出一条警告，可以作为一开始集中书写行为描述时还未实现的测试的提示。
+- `xit(aString, aBlock)` - 和`pending`一样，另一种写法。因为在真正实现时测试时只需要将x删掉就是`it`，但是pending语意更明确，因此还是推荐pending
 
 可以看到，由于有`context`的存在，以及其可以嵌套的特性，测试的流程控制相比传统测试可以更加精确。我们更容易把before和after的作用区域限制在合适的地方。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-03-07
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:622f2b8a2748cc3a'
 translated: n/a
 ---
@@ -19,9 +19,7 @@ translated: n/a
 在 `Objective-C` 中可以使用 `method swizzling` 来进行 AOP 编程，可以替换掉原有方法的执行，或者在原有方法执行前后添加自己的代码。 举个最普遍的例子：我们需要统计 app 中每个 `ViewController` 出现的次数，需要在 `viewDidAppear:` 中添加统计方法，一般来说我们可能会考虑用继承，但是继承会带来以下两个问题：
 
 1. 需要一个基类来实现这些代码，如果有多个类似的需求则会导致基类非常庞大；
-2. 都需要继承自这个基类，需要针对不同的
-
-  类型来编写不同的基类；
+2. 所有新建的 `ViewController` 都需要继承自这个基类，需要针对不同的 `Controller` 类型来编写不同的基类；
 
 通过 `method swizzling` 我们可以在 `UIViewController` 的 `viewDidAppear:` 插入自己的替换代码，大多数无痕埋点都是使用这个解决方法。下面来看看不怎么优雅地实现一个 `method swizzling` 的代码：
 
@@ -64,22 +62,8 @@ translated: n/a
 
 可以看到如果通过 runtime 提供的方法来进行 `method swizzling` 的话，我们需要进行以下工作：
 
-1. 方法，在
-
-  方法中进行
-
-  ；
-2. ，我们就需要编写大量分类和参数相同的方法。为了解决这个问题，
-
-  给我们提供了通过
-
-  来进行
-
-  的途径，不需要分类，不需要编写参数相同的方法，一切都在
-
-  中进行。下面来看下优雅地使用
-
-  实现相同的功能：
+1. 新建分类，在分类中添加 `load` 方法，在 `load` 方法中进行 `method swizzling` ；
+2. 在分类中添加需要替换的具有相同参数的方法； 如果有大量类的需要进行 `method swizzling` ，我们就需要编写大量分类和参数相同的方法。为了解决这个问题，`Aspects` 给我们提供了通过 `Block` 来进行 `method swizzling` 的途径，不需要分类，不需要编写参数相同的方法，一切都在 `Block` 中进行。下面来看下优雅地使用 `Aspects` 实现相同的功能：
 
 ```objectivec
 [UIViewController aspect_hookSelector:@selector(viewWillAppear:)

@@ -7,7 +7,7 @@ original_language: zh
 published: 2017-02-20
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2f94c7bf3113bbd5'
 translated: n/a
 ---
@@ -24,19 +24,15 @@ Feb 20th, 2017 10:47 am
 
 概括来说，从磁盘中加载一张图片，并将它显示到屏幕上，中间的[主要工作流](https://github.com/path/FastImageCache#the-problem)如下：
 
-1. 方法从磁盘中加载一张图片，这个时候的图片并没有解压缩；
-2. 赋值给
-
-  ；
-3. 捕获到了
-
-  图层树的变化；
-4. 等因素的影响，这个 copy 操作可能会涉及以下部分或全部步骤：
+1. 假设我们使用 `+imageWithContentsOfFile:` 方法从磁盘中加载一张图片，这个时候的图片并没有解压缩；
+2. 然后将生成的 `UIImage` 赋值给 `UIImageView` ；
+3. 接着一个隐式的 `CATransaction` 捕获到了 `UIImageView` 图层树的变化；
+4. 在主线程的下一个 run loop 到来时，Core Animation 提交了这个隐式的 transaction ，这个过程可能会对图片进行 copy 操作，而受图片是否**字节对齐**等因素的影响，这个 copy 操作可能会涉及以下部分或全部步骤：
 
     1. 分配内存缓冲区用于管理文件 IO 和解压缩操作；
     2. 将文件数据从磁盘读到内存中；
     3. 将压缩的图片数据解码成未压缩的位图形式，这是一个非常耗时的 CPU 操作；
-    4. 的图层。
+    4. 最后 Core Animation 使用未压缩的位图数据渲染 `UIImageView` 的图层。
 
 在上面的步骤中，我们提到了图片的解压缩是一个非常耗时的 CPU 操作，并且它默认是在主线程中执行的。那么当需要加载的图片比较多时，就会对我们应用的响应性造成严重的影响，尤其是在快速滑动的列表上，这个问题会表现得更加突出。
 
@@ -291,13 +287,7 @@ typedef CF_ENUM(uint32_t, CGImageAlphaInfo) {
 上面的注释其实已经比较清楚了，它同样也提供了三个方面的 alpha 信息：
 
 - 是否包含 alpha ；
-- 最低有效位
-
-  ，比如 RGBA ，还是
-
-  最高有效位
-
-  ，比如 ARGB ；
+- 如果包含 alpha ，那么 alpha 信息所处的位置，在像素的[最低有效位](https://zh.wikipedia.org/wiki/%E6%9C%80%E4%BD%8E%E6%9C%89%E6%95%88%E4%BD%8D)，比如 RGBA ，还是[最高有效位](https://zh.wikipedia.org/wiki/%E6%9C%80%E9%AB%98%E6%9C%89%E6%95%88%E4%BD%8D)，比如 ARGB ；
 - 如果包含 alpha ，那么每个颜色分量是否已经乘以 alpha 的值，这种做法可以加速图片的渲染时间，因为它避免了渲染时的额外乘法运算。比如，对于 RGB 颜色空间，用已经乘以 alpha 的数据来渲染图片，每个像素都可以避免 3 次乘法运算，红色乘以 alpha ，绿色乘以 alpha 和蓝色乘以 alpha 。
 
 那么我们在解压缩图片的时候应该使用哪个值呢？根据 [Which CGImageAlphaInfo should we use](http://stackoverflow.com/questions/23723564/which-cgimagealphainfo-should-we-use) 和官方文档中对 `UIGraphicsBeginImageContextWithOptions` 函数的讨论：
@@ -328,13 +318,7 @@ typedef CF_ENUM(uint32_t, CGImageByteOrderInfo) {
 
 它主要提供了两个方面的字节顺序信息：
 
-- 小端模式
-
-  还是
-
-  大端模式
-
-  ；
+- [小端模式](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F#.E5.B0.8F.E7.AB.AF.E5.BA.8F)还是[大端模式](https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F#.E5.A4.A7.E7.AB.AF.E5.BA.8F)；
 - 数据以 16 位还是 32 位为单位。
 
 对于 iPhone 来说，采用的是小端模式，但是为了保证应用的向后兼容性，我们可以使用系统提供的宏，来避免 [Hardcoding](https://en.wikipedia.org/wiki/Hard_coding) ：
@@ -365,32 +349,12 @@ typedef CF_ENUM(uint32_t, CGImageByteOrderInfo) {
 
 好了，了解完这些相关知识后，我们再回过头来看看 `CGBitmapContextCreate` 函数中每个参数所代表的具体含义：
 
-- ：如果不为
-
-  ，那么它应该指向一块大小至少为
-
-  字节的内存；如果 为
-
-  ，那么系统就会为我们自动分配和释放所需的内存，所以一般指定
-
-  即可；
-- 和
-
-  ：位图的宽度和高度，分别赋值为图片的像素宽度和像素高度即可；
-- ：像素的每个颜色分量使用的 bit 数，在 RGB 颜色空间下指定 8 即可；
-- ：位图的每一行使用的字节数，大小至少为
-
-  字节。有意思的是，当我们指定 0 时，系统不仅会为我们自动计算，而且还会进行 cache line alignment 的优化，更多信息可以查看
-
-  what is byte alignment (cache line alignment) for Core Animation? Why it matters?
-
-  和
-
-  Why is my image’s Bytes per Row more than its Bytes per Pixel times its Width?
-
-  ，亲测可用；
-- ：就是我们前面提到的颜色空间，一般使用 RGB 即可；
-- ：就是我们前面提到的位图的布局信息。
+- `data` ：如果不为 `NULL` ，那么它应该指向一块大小至少为 `bytesPerRow * height` 字节的内存；如果 为 `NULL` ，那么系统就会为我们自动分配和释放所需的内存，所以一般指定 `NULL` 即可；
+- `width` 和 `height` ：位图的宽度和高度，分别赋值为图片的像素宽度和像素高度即可；
+- `bitsPerComponent` ：像素的每个颜色分量使用的 bit 数，在 RGB 颜色空间下指定 8 即可；
+- `bytesPerRow` ：位图的每一行使用的字节数，大小至少为 `width * bytes per pixel` 字节。有意思的是，当我们指定 0 时，系统不仅会为我们自动计算，而且还会进行 cache line alignment 的优化，更多信息可以查看 [what is byte alignment (cache line alignment) for Core Animation? Why it matters?](http://stackoverflow.com/questions/23790837/what-is-byte-alignment-cache-line-alignment-for-core-animation-why-it-matters) 和 [Why is my image’s Bytes per Row more than its Bytes per Pixel times its Width?](http://stackoverflow.com/questions/15935074/why-is-my-images-bytes-per-row-more-than-its-bytes-per-pixel-times-its-width) ，亲测可用；
+- `space` ：就是我们前面提到的颜色空间，一般使用 RGB 即可；
+- `bitmapInfo` ：就是我们前面提到的位图的布局信息。
 
 到这里，你已经掌握了强制解压缩图片需要用到的最核心的函数，点个赞。
 
@@ -454,9 +418,9 @@ CGImageRef YYCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDisplay
 
 它接受一个原始的位图参数 `imageRef` ，最终返回一个新的解压缩后的位图 `newImage` ，中间主要经过了以下三个步骤：
 
-- 函数创建一个位图上下文；
-- 函数将原始位图绘制到上下文中；
-- 函数创建一张新的解压缩后的位图。
+- 使用 `CGBitmapContextCreate` 函数创建一个位图上下文；
+- 使用 `CGContextDrawImage` 函数将原始位图绘制到上下文中；
+- 使用 `CGBitmapContextCreateImage` 函数创建一张新的解压缩后的位图。
 
 事实上，SDWebImage 和 FLAnimatedImage 中对图片的解压缩过程与上述完全一致，只是传递给 `CGBitmapContextCreate` 函数的部分参数存在细微的差别，如下表所示：
 
@@ -474,11 +438,9 @@ CGImageRef YYCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDisplay
 
 首先，我们来了解下测试的原理，我们可以将从磁盘加载一张图片到最终渲染到屏幕上的过程划分为三个阶段：
 
-- 对象；
-- 对象进行解压缩，得到一个新的解压缩后的
-
-  对象；
-- 对象绘制到屏幕上。
+- 初始化阶段：从磁盘初始化图片，生成一个未解压缩的 `UIImage` 对象；
+- 解压缩阶段：分别使用 YYKit 、SDWebImage 和 FLAnimatedImage 对第 1 步中得到的 `UIImage` 对象进行解压缩，得到一个新的解压缩后的 `UIImage` 对象；
+- 绘制阶段：将第 2 步中得到的 `UIImage` 对象绘制到屏幕上。
 
 这里我们以绘制阶段的耗时为依据来评测解压缩的性能，解压缩的算法越优秀，那么得到的图片就越符合系统渲染时的需求，绘制的时间也就越短。为了让测试的结果更准确，我们对每张图片都解压缩 10 次，然后取平均值。说明，本次使用的测试设备是 iPhone 5s 。
 

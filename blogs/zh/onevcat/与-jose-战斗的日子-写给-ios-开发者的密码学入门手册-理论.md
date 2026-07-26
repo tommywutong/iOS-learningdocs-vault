@@ -20,9 +20,9 @@ translated: n/a
 
 这是关于 JOSE 和密码学的三篇系列文章中的第二篇，你可以在下面的链接中找到其他部分：
 
-1. 基础 - 什么是 JWT 以及 JOSE
+1. [基础 - 什么是 JWT 以及 JOSE](https://onevcat.com/2018/12/jose-1/)
 2. 理论 - JOSE 中的签名和验证流程 (本文)
-3. 实践 - 如何使用 Security.framework 处理 JOSE 中的验证
+3. [实践 - 如何使用 Security.framework 处理 JOSE 中的验证](https://onevcat.com/2018/12/jose-3/)
 
 这一篇中，主要介绍网络传输的密钥的编码和处理方法，以及进行数字签名和验证的基本流程。我们在之后实践一篇里，会使用到这些知识。
 
@@ -75,11 +75,7 @@ q9UU8I5mEovUf86QZ7kOBIjJwqnzD1omageEHWwHdBO6B+dFabmdT9POxg==
 光这样说会很抽象，具体来讲，可以简单对这几个概念和各自的作用进行总结：
 
 - ASN.1 - 一种数据或者信息表达时使用的句法，比如 “接下来是一串连续内容 (SEQUENCE)，长度是…”；“现在开始一个整数”；“从这里开始是位串 (BITSTRING)” 等这样句法信息。
-- 表示 SEQUENCE 的开始，然后下一个/若干个字节表示这段内容的长度；使用
-
-  表示现在开始是一个整数；使用
-
-  表示 BIT STRING 开始等。
+- DER - 是 ASN.1 的一种具体编码方式，比如使用 `0x30` 表示 SEQUENCE 的开始，然后下一个/若干个字节表示这段内容的长度；使用 `0x02` 表示现在开始是一个整数；使用 `0x03` 表示 BIT STRING 开始等。
 - X.509 - 在网络证书和公钥传输时，所应该遵守的 ASN.1 形式。它定义了一个特定证书或者公钥应该由哪些部分构成，比如“一开始应该有一个 SEQUENCE，然后紧接着是两个整数来代表密钥值”等。这些构成的部分由 ASN.1 格式表达，一般由 DER 编码。
 - X9.62 - 针对 ECDSA 相关算法的定义。X.509 是一个一般性的密钥编码规定，在 X.509 中指定了 ECDSA 的密钥和签名需要遵守 X9.62。(类似相应地，它也规定了 RSA 的密钥和签名要遵守 PKCS (Public Key Cryptography Standards))。
 - PEM - 将证书或者密钥用 DER 编码后，可以得到一组字节数据。把这些数据转换为 Base64 编码的字符串，然后在前后加上 BEGIN 和 END 标签，就得到 PEM 的表现形式。
@@ -162,20 +158,14 @@ DER 编码的通用规则是，在一个代表类型的字节后面，一般都�
 
 1. 在 `30 13` 这个 SEQUENCE 里，我们能找到两个 OBJECT IDENTIFIER 的定义。关于 OBJECT IDENTIFIER 的编解码规则，可以参考[这里的说明](https://docs.microsoft.com/en-us/windows/desktop/seccertenroll/about-object-identifier)。这部分不是重点，所以就简单只说结论然后跳过了。这两个值分别代表：
 
-    - - (ecPublicKey)
-    - - (P-256)
+    - `1.2.840.10045.2.1` - (ecPublicKey)
+    - `1.2.840.10045.3.1.7` - (P-256)
 
 可以看到，它定义了这个公钥的类型，以及使用的曲线。
 
 > 关于解码后的 OBJECT IDENTIFIER 所代表的涵义，可以在[这里](https://www.alvestrand.no/objectid/top.html)进行查询。
 
-1. 这 BIT STRING 中，我们的 STRING 长度是 66 个字节 (528 bit)。但是如果我们想要传输的 bit 数只有 523 bit 时，最后一个 byte 中的后 5 bit 数据其实并不是我们想要的。这时候我们需要一种方式来指定应该“丢弃”掉最后若干 bit。
-
-  之后的字节
-
-  负责指定数据末尾有多少 bit 不应该使用。当然，这里我们想要传输的数据 bit 数恰好是 8 的倍数，所以设为 0，表示所有 bit 我们都要使用。如果我们想要舍弃最后 5 bit 的话，这个 byte 就应该是
-
-  。
+1. BIT STRING 定义的是一个一串 BIT 数据 (注意这里的 STRING 并不是字符串的意思)。在一个 bit 为单位的数据里，可能存在想要传输的数据 bit 数不是 8 的倍数的情况。但是在 DER 编码长度时，我们指定的是 byte 数。比如在 `03 42` 这 BIT STRING 中，我们的 STRING 长度是 66 个字节 (528 bit)。但是如果我们想要传输的 bit 数只有 523 bit 时，最后一个 byte 中的后 5 bit 数据其实并不是我们想要的。这时候我们需要一种方式来指定应该“丢弃”掉最后若干 bit。`03 42` 之后的字节 `0x00` 负责指定数据末尾有多少 bit 不应该使用。当然，这里我们想要传输的数据 bit 数恰好是 8 的倍数，所以设为 0，表示所有 bit 我们都要使用。如果我们想要舍弃最后 5 bit 的话，这个 byte 就应该是 `0x05`。
 
 > DER 中还有一个类型叫做 OCTET STRING，它定义的是一个 8 bit (OCTET，或者说字节) 组成的字节串流。而 BIT STRING 传输的单位是一个 bit，要注意区分。(我们在本文中不会用到 OCTET STRING，它通常用来传输一些 ACSII 字符串等)
 

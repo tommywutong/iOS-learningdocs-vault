@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-10-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90f0e563753b809c'
 translated: n/a
 ---
@@ -18,16 +18,16 @@ translated: n/a
 
 2014年10月15日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 Autorelease机制是iOS开发者管理对象内存的好伙伴，MRC中，调用`[obj autorelease]`来延迟内存的释放是一件简单自然的事，ARC下，我们甚至可以完全不知道Autorelease就能管理好内存。而在这背后，objc和编译器都帮我们做了哪些事呢，它们是如何协作来正确管理内存的呢？刨根问底，一起来探究下黑幕背后的Autorelease机制。
 
-# [#Autorelease对象什么时候释放？](#Autorelease对象什么时候释放？)Autorelease对象什么时候释放？
+# Autorelease对象什么时候释放？
 
 这个问题拿来做面试题，问过很多人，没有几个能答对的。很多答案都是“当前作用域大括号结束时释放”，显然木有正确理解Autorelease机制。  
 在没有手加Autorelease Pool的情况下，Autorelease对象是在当前的`runloop`迭代结束时释放的，而它能够释放的原因是**系统在每个runloop迭代中都加入了自动释放池Push和Pop**
 
-## [#小实验](#小实验)小实验
+## 小实验
 
 ```objc
 __weak id reference = nil;
@@ -62,9 +62,9 @@ __weak id reference = nil;
 }
 ```
 
-# [#Autorelease原理](#Autorelease原理)Autorelease原理
+# Autorelease原理
 
-## [#AutoreleasePoolPage](#AutoreleasePoolPage)AutoreleasePoolPage
+## AutoreleasePoolPage
 
 ARC下，我们使用`@autoreleasepool{}`来使用一个AutoreleasePool，随后编译器将其改写成下面的样子：
 
@@ -80,10 +80,10 @@ AutoreleasePoolPage是一个C++实现的类
 
 ![](http://ww2.sinaimg.cn/mw690/51530583gw1elj2ugt21wj20f109m3zl.jpg)
 
-- 的形式组合而成（分别对应结构中的parent指针和child指针）
+- AutoreleasePool并没有单独的结构，而是由若干个AutoreleasePoolPage以`双向链表`的形式组合而成（分别对应结构中的parent指针和child指针）
 - AutoreleasePool是按线程一一对应的（结构中的thread指针指向当前线程）
 - AutoreleasePoolPage每个对象会开辟4096字节内存（也就是虚拟内存一页的大小），除了上面的实例变量所占空间，剩下的空间全部用来储存autorelease对象的地址
-- 指针作为游标指向栈顶最新add进来的autorelease对象的下一个位置
+- 上面的`id *next`指针作为游标指向栈顶最新add进来的autorelease对象的下一个位置
 - 一个AutoreleasePoolPage的空间被占满时，会新建一个AutoreleasePoolPage对象，连接链表，后来的autorelease对象在新的page加入
 
 所以，若当前线程中只有一个AutoreleasePoolPage对象，并记录了很多autorelease对象地址时内存如下图：
@@ -94,7 +94,7 @@ AutoreleasePoolPage是一个C++实现的类
 
 **所以，向一个对象发送`- autorelease`消息，就是将这个对象加入到当前AutoreleasePoolPage的栈顶next指针指向的位置**
 
-## [#释放时刻](#释放时刻)释放时刻
+## 释放时刻
 
 每当进行一次`objc_autoreleasePoolPush`调用时，runtime向当前的AutoreleasePoolPage中add进一个`哨兵对象`，值为0（也就是个nil），那么这一个page就变成了下面的样子：
 
@@ -103,16 +103,14 @@ AutoreleasePoolPage是一个C++实现的类
 `objc_autoreleasePoolPush`的返回值正是这个哨兵对象的地址，被`objc_autoreleasePoolPop(哨兵对象)`作为入参，于是：
 
 1. 根据传入的哨兵对象地址找到哨兵对象所处的page
-2. 消息，并向回移动
-
-  指针到正确位置
+2. 在当前page中，将晚于哨兵对象插入的所有autorelease对象都发送一次`- release`消息，并向回移动`next`指针到正确位置
 3. 补充2：从最新加入的对象一直向前清理，可以向前跨越若干个page，直到哨兵所在的page
 
 刚才的objc_autoreleasePoolPop执行后，最终变成了下面的样子：
 
 ![](http://ww3.sinaimg.cn/mw690/51530583gw1elj6u2i3fyj20dz0bqdgi.jpg)
 
-## [#嵌套的AutoreleasePool](#嵌套的AutoreleasePool)嵌套的AutoreleasePool
+## 嵌套的AutoreleasePool
 
 知道了上面的原理，嵌套的AutoreleasePool就非常简单了，pop的时候总会释放到上次push的位置为止，多层的pool就是多个哨兵对象而已，就像剥洋葱一样，每次一层，互不影响。
 
@@ -120,7 +118,7 @@ AutoreleasePoolPage是一个C++实现的类
 
 【附加内容】
 
-# [#Autorelease返回值的快速释放机制](#Autorelease返回值的快速释放机制)Autorelease返回值的快速释放机制
+# Autorelease返回值的快速释放机制
 
 值得一提的是，ARC下，runtime有一套对autorelease返回值的优化策略。  
 比如一个工厂方法：
@@ -148,7 +146,7 @@ objc_storeStrong(&sark, nil); // 相当于代替我们调用了release
 
 一切看上去都很好，不过既然编译器知道了这么多信息，干嘛还要劳烦autorelease这个开销不小的机制呢？于是乎，runtime使用了一些黑魔法将这个问题解决了。
 
-## [#黑魔法之Thread-Local-Storage](#黑魔法之Thread-Local-Storage)黑魔法之Thread Local Storage
+## 黑魔法之Thread Local Storage
 
 Thread Local Storage（TLS）线程局部存储，目的很简单，将一块内存作为某个线程专有的存储，以key-value的形式进行读写，比如在非arm架构下，使用pthread提供的方法实现：
 
@@ -165,7 +163,7 @@ int pthread_setspecific(pthread_key_t , const void *);
 于是问题又来了，假如被调方和主调方只有一边是ARC环境编译的该咋办？（比如我们在ARC环境下用了非ARC编译的第三方库，或者反之）  
 只能动用更高级的黑魔法。
 
-## [#黑魔法之-builtin-return-address](#黑魔法之-builtin-return-address)黑魔法之__builtin_return_address
+## 黑魔法之__builtin_return_address
 
 这个内建函数原型是`char *__builtin_return_address(int level)`，作用是得到函数的返回地址，参数表示层数，如__builtin_return_address(0)表示当前函数体返回地址，传1是调用这个函数的外层函数的返回值地址，以此类推。
 
@@ -182,7 +180,7 @@ int ret = [sark foo];
 也就是说，被调用的函数也有翻身做地主的机会了，可以反过来对主调方干点坏事。  
 回到上面的问题，**如果一个函数返回前知道调用方是ARC还是非ARC，就有机会对于不同情况做不同的处理**
 
-## [#黑魔法之反查汇编指令](#黑魔法之反查汇编指令)黑魔法之反查汇编指令
+## 黑魔法之反查汇编指令
 
 通过上面的__builtin_return_address加某些偏移量，被调方可以定位到主调方在返回值后面的`汇编指令`：
 
@@ -226,7 +224,7 @@ static bool callerAcceptsFastAutorelease(const void * const ra0) {
 
 它检验了主调方在返回值之后是否紧接着调用了`objc_retainAutoreleasedReturnValue`，如果是，就知道了外部是ARC环境，反之就走没被优化的老逻辑。
 
-# [#其他Autorelease相关知识点](#其他Autorelease相关知识点)其他Autorelease相关知识点
+# 其他Autorelease相关知识点
 
 使用容器的block版本的枚举器时，内部会自动添加一个AutoreleasePool：
 

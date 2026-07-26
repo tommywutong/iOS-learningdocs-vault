@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:473d8ae06ab60442'
 translated: n/a
 ---
@@ -20,51 +20,53 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-09-17
 
-1. 1. Run Loops
+**文章目录**
 
-    1. 1.1. Run Loop 剖析
+1. [1. Run Loops](#Run-Loops)
 
-          1. 1.1.1. Run Loop Modes
-          2. 1.1.2. Input Sources
+    1. [1.1. Run Loop 剖析](#Run-Loop-剖析)
 
-                  1. 1.1.2.1. Port-Based Sources(Source1)
-                  2. 1.1.2.2. Custom Input Sources(Source0)
-                  3. 1.1.2.3. Cocoa Perform Selector Sources
-          3. 1.1.3. Timer Sources
-          4. 1.1.4. Run Loop Observers
-          5. 1.1.5. Run Loop 事件顺序
-    2. 1.2. 该何时使用 Run Loop？
-    3. 1.3. 使用 Run Loop 对象
+          1. [1.1.1. Run Loop Modes](#Run-Loop-Modes)
+          2. [1.1.2. Input Sources](#Input-Sources)
 
-          1. 1.3.1. 获取 Run Loop 对象
-          2. 1.3.2. 配置 Run Loop
-          3. 1.3.3. 启动 Run Loop
-          4. 1.3.4. 退出 Run Loop
-          5. 1.3.5. 线程安全和 Run Loop 对象
-    4. 1.4. 配置 Run Loop Source
+                  1. [1.1.2.1. Port-Based Sources(Source1)](#Port-Based-Sources-Source1)
+                  2. [1.1.2.2. Custom Input Sources(Source0)](#Custom-Input-Sources-Source0)
+                  3. [1.1.2.3. Cocoa Perform Selector Sources](#Cocoa-Perform-Selector-Sources)
+          3. [1.1.3. Timer Sources](#Timer-Sources)
+          4. [1.1.4. Run Loop Observers](#Run-Loop-Observers)
+          5. [1.1.5. Run Loop 事件顺序](#Run-Loop-事件顺序)
+    2. [1.2. 该何时使用 Run Loop？](#该何时使用-Run-Loop？)
+    3. [1.3. 使用 Run Loop 对象](#使用-Run-Loop-对象)
 
-          1. 1.4.1. 定义 Custom Input Source
+          1. [1.3.1. 获取 Run Loop 对象](#获取-Run-Loop-对象)
+          2. [1.3.2. 配置 Run Loop](#配置-Run-Loop)
+          3. [1.3.3. 启动 Run Loop](#启动-Run-Loop)
+          4. [1.3.4. 退出 Run Loop](#退出-Run-Loop)
+          5. [1.3.5. 线程安全和 Run Loop 对象](#线程安全和-Run-Loop-对象)
+    4. [1.4. 配置 Run Loop Source](#配置-Run-Loop-Source)
 
-                  1. 1.4.1.1. 定义 Input Source
-                  2. 1.4.1.2. 在 Run Loop 上装载 Input Source
-                  3. 1.4.1.3. Input Source 与 Client 的协作
-                  4. 1.4.1.4. 给 Input Source 发信号(Signal)
-          2. 1.4.2. 配置 Timer Source
-          3. 1.4.3. 配置 Port-Based Input Source
+          1. [1.4.1. 定义 Custom Input Source](#定义-Custom-Input-Source)
 
-                  1. 1.4.3.1. 配置 NSMachPort 对象
+                  1. [1.4.1.1. 定义 Input Source](#定义-Input-Source)
+                  2. [1.4.1.2. 在 Run Loop 上装载 Input Source](#在-Run-Loop-上装载-Input-Source)
+                  3. [1.4.1.3. Input Source 与 Client 的协作](#Input-Source-与-Client-的协作)
+                  4. [1.4.1.4. 给 Input Source 发信号(Signal)](#给-Input-Source-发信号-Signal)
+          2. [1.4.2. 配置 Timer Source](#配置-Timer-Source)
+          3. [1.4.3. 配置 Port-Based Input Source](#配置-Port-Based-Input-Source)
 
-                            1. 1.4.3.1.1. 实现主线程代码
-                            2. 1.4.3.1.2. 实现次级线程代码
-                  2. 1.4.3.2. 配置 NSMessagePort 对象
-                  3. 1.4.3.3. 使用 Core Foundation 配置基于端口的 Input Source
+                  1. [1.4.3.1. 配置 NSMachPort 对象](#配置-NSMachPort-对象)
+
+                            1. [1.4.3.1.1. 实现主线程代码](#实现主线程代码)
+                            2. [1.4.3.1.2. 实现次级线程代码](#实现次级线程代码)
+                  2. [1.4.3.2. 配置 NSMessagePort 对象](#配置-NSMessagePort-对象)
+                  3. [1.4.3.3. 使用 Core Foundation 配置基于端口的 Input Source](#使用-Core-Foundation-配置基于端口的-Input-Source)
 
 [Threading Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW1) 的学习笔记&翻译，第二部分。关于 Run Loop 的内容。
 
-- Threading Programming Guide(1)
-- Threading Programming Guide(3)
+- [Threading Programming Guide(1)](http://yulingtianxia.com/blog/2017/08/28/Threading-Programming-Guide-1/)
+- [Threading Programming Guide(3)](http://yulingtianxia.com/blog/2017/10/08/Threading-Programming-Guide-3/)
 
-## [#Run-Loops](#Run-Loops)Run Loops
+## Run Loops
 
 Run Loop 作为线程相关基础设施的一部分，充当着循环处理、调度事件/消息的角色。它使得线程不会执行完单个任务后就立刻结束，而是让线程在没有任务时保持休眠状态，在需要处理消息时被立刻唤醒。
 
@@ -72,7 +74,7 @@ Run Loop 其实是个对象，但不需要主动去创建它，而且每个线�
 
 Run Loop 作为苹果提供的 [Event Loop](https://en.wikipedia.org/wiki/Event_loop) 机制的实现方案，在 Cocoa 和 Core Foundation 有两个对应的类：[`NSRunLoop`](https://developer.apple.com/documentation/foundation/runloop) 和 [`CFRunLoop`](https://developer.apple.com/documentation/corefoundation/cfrunloop)
 
-### [#Run-Loop-剖析](#Run-Loop-剖析)Run Loop 剖析
+### Run Loop 剖析
 
 Run Loop 可能需要开发者自己写 `while` 或 `for` 循环，并在里面驱动 run loop 对象运行，每轮运行都会处理接收到事件的回调。
 
@@ -88,7 +90,7 @@ Input Source, Timer Source, Run Loop Observer 统称为 Mode Item，这里的 Mo
 
 下面几节会详细讲述上面提到的这些概念。
 
-#### [#Run-Loop-Modes](#Run-Loop-Modes)Run Loop Modes
+#### Run Loop Modes
 
 Run Loop Mode 包含了需要被监听的 input source 和 timer 集合，以及需要接收通知的 observer 集合。Run loop 的每次运行都会处在某个特定模式下，而且只有这个模式所包含的 item 集合才会参与发送事件(被监听)和接收通知。
 
@@ -137,25 +139,25 @@ typedef struct __CFRuntimeBase {
 | Event tracking | NSEventTrackingRunLoopMode (Cocoa), UITrackingRunLoopMode (Cocoa Touch) | Cocoa 用它限定鼠标拖拽事件之类的用户交互轨迹 |
 | Common modes | NSRunLoopCommonModes (Cocoa), kCFRunLoopCommonModes (Core Foundation) | 可配置的通用模式集合，将某个 Input Source 关联到此 Mode 也会将其关联到集合中所有 Mode。Cocoa 框架中的 Common modes 默认包含 Default, Modal, Event tracking 三种 Mode；CF 框架起初只包含 Default，可以使用 `CFRunLoopAddCommonMode`函数向集合中添加自定义 Mode。 |
 
-#### [#Input-Sources](#Input-Sources)Input Sources
+#### Input Sources
 
 Input Sources 有两种实现：基于端口(Port-based)和自定义(Custom)，它们都向线程异步分发事件，而唯一的不同就是被发信号（signal）的方式。基于端口的事件源会自动由内核发信号，自定义事件源需要被其他线程手动发信号。
 
 Input Source 会被添加到一些 Mode 中，如果某个 input source 不在当前的 Mode 中，那么它生成的事件在 run loop 处于正确的 mode 之前会先被 hold 住。
 
-##### [#Port-Based-Sources-Source1](#Port-Based-Sources-Source1)Port-Based Sources(Source1)
+##### Port-Based Sources(Source1)
 
 Cocoa 和 Core Foundation 使用端口相关的对象和函数提供了对创建基于端口的事件源的内建支持。比如在 Cocoa 中，只需创建一个端口对象并使用 `NSPort` 的方法来向 run loop 添加端口。端口对象为你处理好了创建和配置 input source 的事情。
 
 在 Core Foundation 中需要手动创建端口和 run loop source。涉及到的 API 有 `CFMachPortRef`, `CFMessagePortRef`, `CFSocketRef`。
 
-##### [#Custom-Input-Sources-Source0](#Custom-Input-Sources-Source0)Custom Input Sources(Source0)
+##### Custom Input Sources(Source0)
 
 只能使用 Core Foundation 中的 `CFRunLoopSourceRef` 相关函数来创建自定义事件源。在处理到来的事件、从 run loop 移除 source 后都会有函数回调，可以通过实现这些回调函数来配置 source。
 
 除此之外还需定义事件分发机制。source 有一部分是在单独的线程运行的，负责为 input source 提供数据，并在数据准备好后对 source 发信号。事件分发机制取决于开发者，但别弄得太过复杂。
 
-##### [#Cocoa-Perform-Selector-Sources](#Cocoa-Perform-Selector-Sources)Cocoa Perform Selector Sources
+##### Cocoa Perform Selector Sources
 
 Cocoa 定义了一种在任何线程执行 `selector` 的 custom input source。与机遇端口的事件源相同之处是在目标线程依次执行 `selector`，缓解了一条线程运行多个方法时可能发生的同步问题；不同之处在于 `selector` 执行后会将 source 从 run loop 挪走。
 
@@ -170,7 +172,7 @@ Cocoa 定义了一种在任何线程执行 `selector` 的 custom input source。
 | `performSelector:withObject:afterDelay:`, `performSelector:withObject:afterDelay:inModes:` | 在当前线程 run loop 的下次循环延迟一段时间执行 `selector`。因为需要等到下次 run loop 循环才会依次执行队列中的 `selector`，所以本身就会有一点延时。 |
 | `cancelPreviousPerformRequestsWithTarget:`, `cancelPreviousPerformRequestsWithTarget:selector:object:` | 取消 `performSelector:withObject:afterDelay:` 或 `performSelector:withObject:afterDelay:inModes:` 方法向当前线程发送的消息。 |
 
-#### [#Timer-Sources](#Timer-Sources)Timer Sources
+#### Timer Sources
 
 Timer source 会在未来一个预定时间向线程同步分发事件。线程可以用 Timer 来通知自己做一些事情。比如用户在搜索栏输入一连串字符之后的某个时间自动搜索一次结果。正是因为有了个延时，才让用户有机会在自动搜索发生前尽可能打出想要的搜索字符串。
 
@@ -180,7 +182,7 @@ Timer 并不是实时的，会有误差。如果一个 timer 不在正在运行�
 
 `NSTimer` 和 `CFRunLoopTimerRef` 是 toll-free bridged 的，设置好时间和回调函数后加到正在运行的 run loop 中即可。具体信息可以参考这两个类的 API 文档。
 
-#### [#Run-Loop-Observers](#Run-Loop-Observers)Run Loop Observers
+#### Run Loop Observers
 
 不同于 source 在同步或异步事件发生时触发，observer 会在 run loop 运行期间的某些特殊地方触发。这些 run loop 中『特殊』的地方列举如下：
 
@@ -193,7 +195,7 @@ Timer 并不是实时的，会有误差。如果一个 timer 不在正在运行�
 
 可以使用 Core Foundation 的 `CFRunLoopObserverRef` 类创建 run loop observer。`CFRunLoopObserverRef` 记录了回调函数和关注的事件类型（上面 6 种时间的掩码），它跟 timer 一样可以在创建的时候选择只触发一次或重复触发。
 
-#### [#Run-Loop-事件顺序](#Run-Loop-事件顺序)Run Loop 事件顺序
+#### Run Loop 事件顺序
 
 线程的 run loop 每次运行都会处理待决的事件，并为绑定的所有 observer 生成通知。次序如下：
 
@@ -203,12 +205,16 @@ Timer 并不是实时的，会有误差。如果一个 timer 不在正在运行�
 4. 触发所有已就绪的非基于端口的 input source
 5. 如果一个基于端口的 input source 已就绪并等待触发，立即处理事件，并转至**第 9 步**
 6. 通知 observer 线程即将休眠
-7.   - 有基于端口的 input source 事件到达
+7. 让线程休眠，直到被以下条件唤醒：
+
+    - 有基于端口的 input source 事件到达
     - timer 触发
     - run loop 设定的超时时间到了
     - run loop 被手动唤醒
 8. 通知 observer 线程刚刚被唤醒
-9.   - 如果用户定义的 timer 触发了，处理 timer 事件并重启 run loop，跳回到**第 2 步**
+9. 处理待决事件
+
+    - 如果用户定义的 timer 触发了，处理 timer 事件并重启 run loop，跳回到**第 2 步**
     - 如果 input source 触发了，分发事件
     - 如果 run loop 被唤醒且没有超时，重启 run loop，跳回到**第 2 步**
 10. 通知 observer 已经退出 run loop
@@ -219,7 +225,7 @@ Timer 并不是实时的，会有误差。如果一个 timer 不在正在运行�
 
 可以使用 run loop 对象将其手动唤醒，其他事件也可能导致 run loop 被唤醒。比如添加另一个非基于端口的 input source 唤醒 run loop，input source 就能立刻被处理，而不是一直等到其他事件发生。
 
-### [#该何时使用-Run-Loop？](#该何时使用-Run-Loop？)该何时使用 Run Loop？
+### 该何时使用 Run Loop？
 
 需要手动运行 run loop 的场景只有一个，那就是你创建次级线程的时候。应用主线程的 run loop 是基础设施中至关重要的部分。应用框架会把自动运行主线程 run loop 的程序写好，比如 `UIApplication` 或 `NSApplication` 中的 `run`。如果使用 Xcode 带的模板创建工程，千万不要去调用这些方法。
 
@@ -227,25 +233,25 @@ Timer 并不是实时的，会有误差。如果一个 timer 不在正在运行�
 
 - 使用 input source 与其他线程通信
 - 在线程中使用 timer
-- 系列的方法
+- 在 Cocoa 应用中使用任何 `performSelector...` 系列的方法
 - 让线程执行周期性任务
 
 如果选择使用 run loop，配置和启动是很简单的。可是就所有的线程编程来说，应该计划好在合适的场景下退出次级线程，总比强行退出要好。
 
-### [#使用-Run-Loop-对象](#使用-Run-Loop-对象)使用 Run Loop 对象
+### 使用 Run Loop 对象
 
 Run Loop 对象提供了向 run loop 中添加 input source、timer 和 run-loop observer 的主要接口，并运行起来。每个线程都关联一个单独的 run loop。在 Cocoa 中，Run Loop 对象是个 `NSRunLoop` 类的实例，在 Core Foundation 中是 `CFRunLoopRef` 指针。但它们不是 toll-free bridge 的。
 
-#### [#获取-Run-Loop-对象](#获取-Run-Loop-对象)获取 Run Loop 对象
+#### 获取 Run Loop 对象
 
 获取当前线程的 run loop 对象有两种方式：
 
-- 的类方法
-- 函数
+- Cocoa 框架 `NSRunLoop` 的类方法 `currentRunLoop`
+- `CFRunLoopGetCurrent` 函数
 
 可以从 `NSRunLoop` 对象的 `getCFRunLoop` 方法获取到 `CFRunLoopRef`，这样就可以传给 Core Foundation 程序使用了。二者都指向同一个 run loop，所以可以混用。
 
-#### [#配置-Run-Loop](#配置-Run-Loop)配置 Run Loop
+#### 配置 Run Loop
 
 在次级线程运行 run loop 之前，必须向其添加至少一个 input source 或 timer，否则 run loop 会因没有可监控的 source 而在运行后立刻退出。
 
@@ -299,7 +305,7 @@ typedef struct {
 } CFRunLoopObserverContext;
 ```
 
-#### [#启动-Run-Loop](#启动-Run-Loop)启动 Run Loop
+#### 启动 Run Loop
 
 只有在应用的次级线程才需要启动 run loop，而且需要有至少一个 input source 或 timer，否则 run loop 启动后会立刻退出。
 
@@ -350,7 +356,7 @@ typedef struct {
 
 可以递归启动 run loop。也就是说可以在 input source 或 timer 的回调处理函数中调用 `CFRunLoopRun`, `CFRunLoopRunInMode` 或上面提到的 `NSRunLoop` 的三个方法，而且嵌套的 run loop 可以在任意 Mode 下运行。
 
-#### [#退出-Run-Loop](#退出-Run-Loop)退出 Run Loop
+#### 退出 Run Loop
 
 在 run loop 已经将事件处理之前有两种退出的方式：
 
@@ -363,17 +369,17 @@ typedef struct {
 
 虽然移除 run loop 的 input source 和 timer 也会导致其退出，但这种方法不可靠。因为有些系统程序会向 run loop 中添加 input source，开发者根本不知道有这回事，移除的时候就会漏掉，自然就不会导致 run loop 退出。
 
-#### [#线程安全和-Run-Loop-对象](#线程安全和-Run-Loop-对象)线程安全和 Run Loop 对象
+#### 线程安全和 Run Loop 对象
 
 使用 Core Foundation 中的函数操作 run loop 对象一般都是线程安全的，可以在任何线程调用。如果要更改 run loop 的配置，尽可能在 run loop 自己的线程操作。
 
 Cocoa 中对应的 `NSRunLoop` 内部并不是线程安全的，必须在 run loop 所在的线程修改它。向其他线程的 run loop 添加 input source 或 timer 都会导致 crash 或异常行为。
 
-### [#配置-Run-Loop-Source](#配置-Run-Loop-Source)配置 Run Loop Source
+### 配置 Run Loop Source
 
 主要演示使用 Cocoa 和 Core Foundation 设置各种类型的 source。
 
-#### [#定义-Custom-Input-Source](#定义-Custom-Input-Source)定义 Custom Input Source
+#### 定义 Custom Input Source
 
 创建 custom input source 需要阐明如下内容：
 
@@ -390,7 +396,7 @@ Custom Input Source 的配置是很灵活的，scheduler，perform 和 cancellat
 
 下面会解释上图中 custom input source 的实现，并展示需要实现的关键代码。
 
-##### [#定义-Input-Source](#定义-Input-Source)定义 Input Source
+##### 定义 Input Source
 
 需要用 Core Foundation 配置 run loop source，并将其加到 run loop 中。因为 handler 都是基于 C 的函数，所以需要将其封装成 Objective-C 的接口。下面的代码封装了两个 Objective-C 类：`RunLoopSource` 封装了 `CFRunLoopSourceRef`，并管理一个 command buffer，并使用 buffer 接收其他线程的消息。`RunLoopContext` 封装了 `CFRunLoopRef` 和 `RunLoopSource` 指针，用于向应用主线程传递 source 对象和 run loop 引用。
 
@@ -474,7 +480,7 @@ void RunLoopSourceCancelRoutine (void *info, CFRunLoopRef rl, CFStringRef mode)
 
 上面这三个回调函数中 application delegate 的 `registerSource:` 和 `removeSource:` 方法暂时省略，后面会列出。这三个回调函数会在创建 custom input source 的时候当做参数传入。
 
-##### [#在-Run-Loop-上装载-Input-Source](#在-Run-Loop-上装载-Input-Source)在 Run Loop 上装载 Input Source
+##### 在 Run Loop 上装载 Input Source
 
 下面代码是 `RunLoopSource` 类的 `init` 和 `addToCurrentRunLoop` 方法。`init` 创建了一个 `CFRunLoopSourceRef`，这才是真正被添加到 run loop 中的类型。当 worker 线程调用 `addToCurrentRunLoop` 方法时，才会将 input source 装载到 run loop 中，并在此时调用 `RunLoopSourceScheduleRoutine` 回调函数。之后就可以启动 run loop 了。
 
@@ -550,7 +556,7 @@ struct __CFRunLoopSource {
 };
 ```
 
-##### [#Input-Source-与-Client-的协作](#Input-Source-与-Client-的协作)Input Source 与 Client 的协作
+##### Input Source 与 Client 的协作
 
 自定义的 input source 需要由其他线程手动发信号。重点是其线程在这之前会一直处于休眠状态，所以一定要让其他线程知道这个 input source，并能与之通信。
 
@@ -582,7 +588,7 @@ struct __CFRunLoopSource {
 
 代码逻辑很简单，就是 application delegate 维护了一个存储 `RunLoopContext` 对象的可变数组 `sourcesToPing`，并提供了增加和移除数组元素的两个方法。
 
-##### [#给-Input-Source-发信号-Signal](#给-Input-Source-发信号-Signal)给 Input Source 发信号(Signal)
+##### 给 Input Source 发信号(Signal)
 
 Client 在将数据传递给 input source 后，还需要给 source 发信号，并唤醒 run loop。发信号的作用是让 run loop 知道 input source 已经做好被处理的准备了。当信号发出时线程可能还在休眠，所以必须唤醒 run loop。否则可能会导致延迟处理 input source。
 
@@ -596,7 +602,7 @@ Client 在将数据传递给 input source 后，还需要给 source 发信号，
 }
 ```
 
-#### [#配置-Timer-Source](#配置-Timer-Source)配置 Timer Source
+#### 配置 Timer Source
 
 使用不同框架创建 timer 对象的方式略有差别：Cocoa 中使用 `NSTimer`，Core Foundation 中使用 `CFRunLoopTimerRef` 类型。二者是 toll-free bridged 的，但是 `NSTimer` 提供的 API 更便捷。比如可以用下面的方法马上创建并安排（schedule）好一个 timer：
 
@@ -639,15 +645,15 @@ CFRunLoopTimerRef timer = CFRunLoopTimerCreate(kCFAllocatorDefault, 0.1, 0.3, 0,
 CFRunLoopAddTimer(runLoop, timer, kCFRunLoopCommonModes);
 ```
 
-#### [#配置-Port-Based-Input-Source](#配置-Port-Based-Input-Source)配置 Port-Based Input Source
+#### 配置 Port-Based Input Source
 
 Cocoa 和 Core Foundation 都提供了用于线程间或进程间通讯的基于端口（port-based）的对象。下面展示了如何用几种不同类型的端口来设置端口通信。
 
-##### [#配置-NSMachPort-对象](#配置-NSMachPort-对象)配置 `NSMachPort` 对象
+##### 配置 `NSMachPort` 对象
 
 使用 `NSMachPort` 对象建立本地连接过程如下：创建 `NSMachPort` 对象并添加到主线程的 run loop 中。当启动次级线程时将这个 `NSMachPort` 对象传递给次级线程的入口函数。次级线程会用这个 `NSMachPort` 对象往主线程发消息。
 
-###### [#实现主线程代码](#实现主线程代码)实现主线程代码
+###### 实现主线程代码
 
 下面的代码展示了启动次级 worker 线程的主要代码。使用 Cocoa 框架写出的代码要比 Core Foundation 的少多了，但效果几乎一样。有个不同点是 Cocoa 直接传递 `NSPort` 对象，而 Core Foundation 传递端口名字符串。
 
@@ -696,7 +702,7 @@ Cocoa 和 Core Foundation 都提供了用于线程间或进程间通讯的基于
 }
 ```
 
-###### [#实现次级线程代码](#实现次级线程代码)实现次级线程代码
+###### 实现次级线程代码
 
 次级线程的入口函数会被传入主线程的端口对象，配置好次级线程后，使用主线程的端口对象来与主线程通信。下面代码中的 `MyWorkerClass` 是个辅助类，它的 `sendCheckinMessage:` 方法负责创建次级线程的本地端口，并发消息给主线程。
 
@@ -752,7 +758,7 @@ Cocoa 和 Core Foundation 都提供了用于线程间或进程间通讯的基于
 }
 ```
 
-##### [#配置-NSMessagePort-对象](#配置-NSMessagePort-对象)配置 `NSMessagePort` 对象
+##### 配置 `NSMessagePort` 对象
 
 如果用 `NSMessagePort` 对象建立本地连接，不能在线程间简单地传递端口对象，而是必须要拿到端口名称。使用一个字符串作为键在 `NSMessagePortNameServer` 注册本地端口，并把这个字符串传给另外的线程，这样就能通过这个字符串获取到端口对象，接着用它通信。下面的代码展示了使用创建和注册 `NSMessagePort` 的过程。
 
@@ -769,7 +775,7 @@ NSString* localPortName = [NSString stringWithFormat:@"MyPortName"];
                      name:localPortName];
 ```
 
-##### [#使用-Core-Foundation-配置基于端口的-Input-Source](#使用-Core-Foundation-配置基于端口的-Input-Source)使用 Core Foundation 配置基于端口的 Input Source
+##### 使用 Core Foundation 配置基于端口的 Input Source
 
 使用 Core Foundation 在主线程和其他线程之间建立一个双向通讯通道需要写更多的代码。
 

@@ -26,12 +26,12 @@ WWDC 2025 上，苹果公布了设备端的 Foundation Models 框架，可以让
 
 **核心发现汇总：**
 
-- ：总运行时内存约 1.0-1.5GB（模型权重 750MB + KV cache + 框架开销）
-- ：实际限制为 4096 tokens，不是训练时的 65K
-- ：多 session 并发会严重影响性能，从 10-30 tokens/s 降至约 1 token/s
-- ：每个 @Generable 属性约增加 30 tokens 开销
-- ：意外地不敏感，0.0-2.0 范围内表现稳定
-- ：相当严格，会删除违规的 transcript 条目
+- **内存消耗**：总运行时内存约 1.0-1.5GB（模型权重 750MB + KV cache + 框架开销）
+- **上下文窗口**：实际限制为 4096 tokens，不是训练时的 65K
+- **并发性能**：多 session 并发会严重影响性能，从 10-30 tokens/s 降至约 1 token/s
+- **Schema 开销**：每个 @Generable 属性约增加 30 tokens 开销
+- **温度敏感性**：意外地不敏感，0.0-2.0 范围内表现稳定
+- **安全防护**：相当严格，会删除违规的 transcript 条目
 
 ## 性能特征：数字背后的真相
 
@@ -73,7 +73,7 @@ catch LanguageModelSession.GenerationError.exceededContextWindowSize {
 
 **3 个并发 session：**
 
-- session 的性能都骤降到约 1 token/s
+- 所有设备：**每个** session 的性能都骤降到约 1 token/s
 
 显然，苹果只考虑了单 session 的使用场景。如果你的应用需要处理多个并发的 AI 任务，建议全局管理**一个 session**，使用队列去串行访问，避免任何并发 session。
 
@@ -132,9 +132,9 @@ Tool Calling 让用户能通过自然语言控制应用功能，这可能是”�
 
 在创造性任务测试中，我发现 Foundation Models 对温度参数的敏感性比预期要低：
 
-- ：输出几乎相同，遵循指令
-- ：逐渐增加创造性，但仍然可控（默认 0.7）
-- ：最大创造性，偶尔会有意外惊喜
+- **0.0-0.7**：输出几乎相同，遵循指令
+- **0.7-1.5**：逐渐增加创造性，但仍然可控（默认 0.7）
+- **1.5-2.0**：最大创造性，偶尔会有意外惊喜
 
 这与一些其他温度相对敏感的模型的表现有明显差异，在整个支持范围里，模型对于指令的跟随都还不错。
 
@@ -231,14 +231,14 @@ let response = try await session.respond(
 
 Foundation Models 给我最大的感受是：**这是一个为了实用而设计的框架，而不是为了炫技**。3B 参数在当今的大模型时代看起来不大，但苹果针对设备端的场景做了大量优化：
 
-1. ：保持了模型质量的同时大幅减少了存储和内存需求
-2. ：在 3B 模型外，还搭配了一个 300M 的 draft model，提升了推理速度
-3. ：确保了结构化输出的可靠性
-4. ：为应用集成提供了优雅的解决方案
+1. **2-bit 量化**：保持了模型质量的同时大幅减少了存储和内存需求
+2. **推测解码和草稿模型**：在 3B 模型外，还搭配了一个 300M 的 draft model，提升了推理速度
+3. **约束解码**：确保了结构化输出的可靠性
+4. **Tool Calling**：为应用集成提供了优雅的解决方案
 
 不过，也要认识到它的限制：
 
-- （训练数据截止到 2023 年 10 月，美国总统还是拜登！）
+- **世界知识有限**（训练数据截止到 2023 年 10 月，美国总统还是拜登！）
 - **不适合数学计算和代码生成**
 - **复杂推理能力有限**
 
@@ -256,11 +256,11 @@ Foundation Models 给我最大的感受是：**这是一个为了实用而设计
 
 如果你正在考虑在项目中使用 Foundation Models：
 
-1. ，框架已经相当稳定
-2. ，不要指望短期内会有大幅提升
-3. ，这可能是最有价值的功能
-4. ，如果存在对话式的场景，几乎必须处理上下文溢出
-5. ，模拟器版本跑的是 macOS 搭载的模型，性能结果可能不准确
+1. **现在就可以开始实验**，框架已经相当稳定
+2. **围绕 4096 token 限制设计应用流程**，不要指望短期内会有大幅提升
+3. **优先考虑 Tool Calling**，这可能是最有价值的功能
+4. **准备好上下文管理策略**，如果存在对话式的场景，几乎必须处理上下文溢出
+5. **在真机上测试性能**，模拟器版本跑的是 macOS 搭载的模型，性能结果可能不准确
 
 Foundation Models 不是万能的，但它为 iOS 应用带来了前所未有的 AI 能力。关键是理解它的边界，并在这些边界内发挥创造力。
 
@@ -268,9 +268,9 @@ Foundation Models 不是万能的，但它为 iOS 应用带来了前所未有的
 
 **参考资料：**
 
-- Meet the Foundation Models framework - WWDC25
-- Deep dive into the Foundation Models framework - WWDC25
-- Code-along: Bring on-device AI to your app using Foundation Models - WWDC25
-- Explore prompt design & safety for on-device foundation models - WWDC25
+- [Meet the Foundation Models framework - WWDC25](https://developer.apple.com/videos/play/wwdc2025/248/)
+- [Deep dive into the Foundation Models framework - WWDC25](https://developer.apple.com/videos/play/wwdc2025/259/)
+- [Code-along: Bring on-device AI to your app using Foundation Models - WWDC25](https://developer.apple.com/videos/play/wwdc2025/286/)
+- [Explore prompt design & safety for on-device foundation models - WWDC25](https://developer.apple.com/videos/play/wwdc2025/301/)
 
 **再次强调**，本文基于 macOS/iOS/Xcode 26 Beta 1 的测试结果，后续版本可能会有所不同。如果你有不同的发现或问题，欢迎讨论。

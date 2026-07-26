@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-07-05
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6e0504209082f5d3'
 translated: n/a
 ---
@@ -22,8 +22,8 @@ translated: n/a
 
 可能看到加入 Moya 后，整个 App 的网络层功能非常清晰， App 不会直接与 Alamofire 交互，所有网络请求都是通过 Moya 发起。 Moya 支持以下特性：
 
-- ；
-- 定义清晰的用法；
+- 编译时检测是否使用正确的 `API endpoint` ；
+- 通过 enum 的关联值来对不同的 `endpoints` 定义清晰的用法；
 - 测试插桩为一等值，使得单元测试变得非常容易；
 
 接入 Moya 后，你不再也不应该直接与 Alamofire 交互，所有的一切都由 Moya 来完成。 Moya 设计得非常灵活，可以满足各个开发者的需求。它更像是一个关于如何看待网络请求的库。 Moya 基本的整体架构如下图所示：
@@ -67,21 +67,9 @@ public protocol TargetType {
 
 可以看到 `TargetType` 定义了一个请求所需要的基本数据，是开发者与 Moya 进行交互的第一层入口。 Moya 建议定义 `enum` 类型来支持 `TargetType` ，这样可以通过 `switch case` 和关联值来对不同的接口设置不同的数据，在添加了新的 `case` 后，编译器也可以及时检查和报错来提示我们编写对应的代码，如果使用 `class` 或者 `struct` ，就会失去这个优点。虽然使用 `enum` 需要编写大量的 `switch case` ，但在更加安全。
 
-1. 属性对于同一个
-
-  类型来说应该是相同的，也就是说我们可以根据
-
-  的不同把接口放到不同的
-
-  类型中，如果说一个
-
-  中包含不同的
-
-  ，那么可以考虑拆成 多个
-
-  ；
-2. 属性用于表示你如何发送/接收数据，如何添加数据，文件和数据流到请求的 body 中；
-3. 属性用于定于哪些状态码是可以通过验证的；
+1. `baseURL` 属性对于同一个 `enum` 类型来说应该是相同的，也就是说我们可以根据 `baseURL` 的不同把接口放到不同的 `enum` 类型中，如果说一个 `enum` 中包含不同的 `baseURL` ，那么可以考虑拆成 多个 `enum` ；
+2. `task` 属性用于表示你如何发送/接收数据，如何添加数据，文件和数据流到请求的 body 中；
+3. `validationType` 属性用于定于哪些状态码是可以通过验证的；
 
 ### Endpoint
 
@@ -366,9 +354,7 @@ func requestNormal(_ target: Target, callbackQueue: DispatchQueue?, progress: Mo
 }
 ```
 
-1. 转换为对应的
-
-  ：
+1. 将 `Target` 转换为对应的 `Endpoint` ：
 
 ```swift
 open func endpoint(_ token: Target) -> Endpoint {
@@ -377,7 +363,7 @@ open func endpoint(_ token: Target) -> Endpoint {
 ```
 
 1. 获取 Target 对应的插桩行为；
-2. ：
+2. 生成一个 `CancellableWrapper` ：
 
 ```swift
 internal class CancellableWrapper: Cancellable {
@@ -400,9 +386,7 @@ internal class SimpleCancellable: Cancellable {
 
 `CancellableWrapper` 内部使用一个 `SimpleCancellable` 来实现 `Cancellable` 协议，如果进行插桩测试，就直接使用 `SimpleCancellable` ，如果发起实际请求，就会生成对应的 `Cancellable` ，替换 `SimpleCancellable` ；
 
-1. 调用插件的
-
-  方法对相应结果进行处理；
+1. 使用 `reduce`调用插件的 `process` 方法对相应结果进行处理；
 
 做完上面的预处理后，就会判断是否需要处理重复的请求，进行相关的处理：
 
@@ -470,47 +454,17 @@ return cancellableToken
 ```
 
 1. 判断请求是否已经取消，如果已经取消就不用发起请求；
-2. 是否为
-
-  ，如果不是则调用
-
-  处理对应的
-
-  ；
-3. ，也是根据
-
-  调用不同的
-
-  ；
-4. 执行请求，同时替换
-
-  的
-
-  ；
-5. 来将
-
-  转换为
-
-  ，转换完成后则调用
-
-  ，而上述步骤也都是在
-
-  内执行，之所以使用
-
-  来进行处理，是为了支持异步转换，调用方可以在异步将
-
-  转换为
-
-  后再调用
-
-  ；
+2. 判断 `requestRequest` 是否为 `.success` ，如果不是则调用 `pluginsWithCompletion` 处理对应的 `error` ；
+3. 生成 `networkCompletion` ，也是根据 `trackInflights` 调用不同的 `closure` ；
+4. 调用 `performRequest` 执行请求，同时替换 `cancellableToken` 的 `innerCancellable` ；
+5. 调用 `requestClosure` 来将 `Endpoint` 转换为 `URLRequest` ，转换完成后则调用 `performNetworking` ，而上述步骤也都是在 `performNetworking` 内执行，之所以使用 `closure` 来进行处理，是为了支持异步转换，调用方可以在异步将 `Endpoint` 转换为 `URLRequest` 后再调用 `performNetworking` ；
 
 ### 发起请求
 
 `performRequest` 会根据是否需要进行插桩测试来调用不同的方法：
 
-1. ；
-2. ；
+1. 如果进行插桩测试，就调用 `stubRequest` ；
+2. 如果不进行插桩测试，就调用 `sendRequest` ；
 
 #### stubRequest
 
@@ -565,11 +519,7 @@ func notifyPluginsOfImpendingStub(for request: URLRequest, target: Target) -> UR
 }
 ```
 
-1. 则会进行验证和经由
-
-  的
-
-  来获取对应的假数据，同时也会调用插件的对应方法；
+1. 而 `createStubFunction` 则会进行验证和经由 `Endpoint` 的 `sampleResponseClosure` 来获取对应的假数据，同时也会调用插件的对应方法；
 
 #### sendRequest
 
@@ -588,10 +538,8 @@ func sendRequest(_ target: Target, request: URLRequest, callbackQueue: DispatchQ
 }
 ```
 
-1. ，用于调用插件对应的方法；
-2. 的
-
-  ；
+1. 生成 `MoyaRequestInterceptor` ，用于调用插件对应的方法；
+2. 设置 `interceptor` 的 `willSend` ；
 3. 调用 Alamofire 的方法发送请求；
 
 ```swift
@@ -657,17 +605,9 @@ func sendAlamofireRequest<T>(_ alamoRequest: T, target: Target, callbackQueue: D
 }
 ```
 
-1. ；
-2. 再通过
-
-  判断是否使用，为什么不通过
-
-  一起判断？
-3. ，这一步的目的是为了将 Alamofire 的
-
-  转换为 Moya 所需要的格式，调用插件的
-
-  方法；
+1. 获取插件，生成对应的 `progressClosure` ；
+2. 这里不太明白为什么先生成 `progressClosure` 再通过 `progressCompletion` 判断是否使用，为什么不通过 `progressCompletion` 一起判断？
+3. 生成 `completionHandler` ，这一步的目的是为了将 Alamofire 的 `response` 转换为 Moya 所需要的格式，调用插件的 `didReceive` 方法；
 
 至此，已经走完了 Moya 发送请求和处理相应结果的基本流程，可以看到 Moya 在 Alamofire 的基础上再提供了一层封装，简单易用，只需要进行少量的定义就可以直接使用，也提供了足够灵活的插件和入口给调用方使用。
 

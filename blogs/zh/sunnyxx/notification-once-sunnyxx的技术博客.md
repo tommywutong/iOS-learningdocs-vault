@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-03-09
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cbf225dc72381ada'
 translated: n/a
 ---
@@ -51,9 +51,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 解释：
 
-- 方法在足够早的时间点被调用
-- 对象用来给外部 remove 观察者
-- ，会捕获到 nil
+- `+ load`方法在足够早的时间点被调用
+- block 版本的通知注册会产生一个`__NSObserver *`对象用来给外部 remove 观察者
+- block 对 observer 对象的捕获早于函数的返回，所以若不加`__block`，会捕获到 nil
 - 在 block 执行结束时移除 observer，无需其他清理工作
 - 这样，在模块内部就完成了在程序启动点代码的挂载
 

@@ -18,12 +18,12 @@ Apple Watch 和 watchOS 第一代产品只允许用户在 iPhone 设备上进行
 
 本文是我的 [WWDC15 笔记](http://onevcat.com/2015/06/ios9-sdk/)中的一篇，在 WWDC15 中涉及到 watchOS 2 的相关内容的 session 非常多，本文所参考的有：
 
-- Introducing WatchKit for watchOS 2
-- WatchKit In-Depth, Part 1
-- WatchKit In-Depth, Part 2
-- Introducing Watch Connectivity
-- Building Watch Apps
-- Creating Complications with ClockKit
+- [Introducing WatchKit for watchOS 2](https://developer.apple.com/videos/wwdc/2015/?id=105)
+- [WatchKit In-Depth, Part 1](https://developer.apple.com/videos/wwdc/2015/?id=207)
+- [WatchKit In-Depth, Part 2](https://developer.apple.com/videos/wwdc/2015/?id=208)
+- [Introducing Watch Connectivity](https://developer.apple.com/videos/wwdc/2015/?id=713)
+- [Building Watch Apps](https://developer.apple.com/videos/wwdc/2015/?id=108)
+- [Creating Complications with ClockKit](https://developer.apple.com/videos/wwdc/2015/?id=209)
 
 ## 项目简介
 

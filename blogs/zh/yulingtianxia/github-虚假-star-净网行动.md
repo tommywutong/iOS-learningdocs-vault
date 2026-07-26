@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:50ad3e69db4cd6b5'
 translated: n/a
 ---
@@ -20,11 +20,13 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-09-16
 
-1. 1. 思路
-2. 2. 爆料
-3. 3. 使用方法
-4. 4. 技术实现
-5. 5. 后记
+**文章目录**
+
+1. [1. 思路](#思路)
+2. [2. 爆料](#爆料)
+3. [3. 使用方法](#使用方法)
+4. [4. 技术实现](#技术实现)
+5. [5. 后记](#后记)
 
 前一阵子看到一篇文章 [《石锤 github 买 star 行为》](https://juejin.im/post/5b8c9310f265da4361530560)，第一反应是很震惊。是真的很震惊，因为文章中提到的 CocoaDebug 我也 star 了，没想到竟然涉嫌购买 star 炒作，蒙蔽了好多人的双眼。没错，我就是跟风 star，看别的大神 star 啥就顺手 star。 也有的人看 Trending 上啥火顺手 star，甚至用脚本自动 star。
 
@@ -34,7 +36,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 项目源码：[FuckFakeGitHubStars](https://github.com/yulingtianxia/FuckFakeGitHubStars)
 
-## [#思路](#思路)思路
+## 思路
 
 1. 用 GitHub 的 API 获取 repo 有哪些用户 star 了，然后再看看这些用户都 star 了哪些 repo。
 2. 将 star 行为相似的用户和 repo 聚类
@@ -42,7 +44,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 4. 计算 repo 的 star 中黑名单用户占比。
 5. 继续遍历黑名单中的用户，挖掘下一层关系链，揪出更多花钱买 star 的 repo。
 
-## [#爆料](#爆料)爆料
+## 爆料
 
 **郑重声明**：
 
@@ -97,7 +99,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 我好担心被这些人报复啊。
 
-## [#使用方法](#使用方法)使用方法
+## 使用方法
 
 直接看 [README.md](https://github.com/yulingtianxia/FuckFakeGitHubStars/blob/master/README.md) 吧。
 
@@ -105,7 +107,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 最终的可读性比较强的信息输出在 log 里，没有上传。有兴趣的可以自己跑下。
 
-## [#技术实现](#技术实现)技术实现
+## 技术实现
 
 技术栈就是 python3 + GraphQL。
 
@@ -115,7 +117,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 本项目用到的技术都是现学现卖，纯粹是玩票性质，代码烂的一逼，求轻喷。某大神都深入 Python 底层实现原理开课赚钱了，我还在这边查语法边写垃圾代码，差距太大了哎！
 
-## [#后记](#后记)后记
+## 后记
 
 愿以后 GitHub 能够清静些，虽然我大清自有国情在，但也别让一些别有用心之人一条臭鱼坏了一坨粥。
 

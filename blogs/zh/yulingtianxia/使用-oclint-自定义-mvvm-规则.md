@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:95e0b60f13f76b82'
 translated: n/a
 ---
@@ -20,15 +20,17 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-01-27
 
-1. 1. 编译 OCLint
-2. 2. 自定义规则
+**文章目录**
 
-    1. 2.1. 创建规则
-    2. 2.2. 生成调试工程
-    3. 2.3. 实现规则
-3. 3. 集成到 Xcode
-4. 4. 后记
-5. 5. Reference
+1. [1. 编译 OCLint](#编译-OCLint)
+2. [2. 自定义规则](#自定义规则)
+
+    1. [2.1. 创建规则](#创建规则)
+    2. [2.2. 生成调试工程](#生成调试工程)
+    3. [2.3. 实现规则](#实现规则)
+3. [3. 集成到 Xcode](#集成到-Xcode)
+4. [4. 后记](#后记)
+5. [5. Reference](#Reference)
 
 最近在搞 iOS MVVM 框架，虽说是 N 年前就老生常谈的知识了，但设计模式毕竟是只一种规范，无法约束项目中所有程序员都去遵循。我做了个 OCLint 的自定义规则，对 ViewModel 运行静态检查。
 
@@ -36,7 +38,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 伸手党也可以使用我写的[脚本](https://github.com/yulingtianxia/oclint/releases/download/0.18.10/install-0.18.10)直接安装，已包含 MVVM 规则。
 
-## [#编译-OCLint](#编译-OCLint)编译 OCLint
+## 编译 OCLint
 
 编译 OCLint 时，会先下载 LLVM 等项目。由于 LLVM 源码废弃了在 SVN 上的版本管理，将其迁移到了 Git 上，所以目前各种版本的 OCLint 都无法编译了。而且最新版本的 OCLint 还是基于 LLVM 5 的！我从作者的 Repo 那发现有 LLVM 7 的 branch，依然无法编译，只好自己动手改了。
 
@@ -60,11 +62,11 @@ chmod +x install-oclint
 ./install-oclint
 ```
 
-## [#自定义规则](#自定义规则)自定义规则
+## 自定义规则
 
 网上有很多介绍如何编写自定义规则的文章，这里假设已经成功编译好 OCLint，总体流程如下。
 
-### [#创建规则](#创建规则)创建规则
+### 创建规则
 
 使用 oclint-scripts 文件夹下的 scaffoldRule 脚本创建一个新规则，并指定模板。注意规则名不需要带 “Rule”:
 
@@ -72,7 +74,7 @@ chmod +x install-oclint
 oclint-scripts/scaffoldRule MVVM -t ASTVisitor
 ```
 
-### [#生成调试工程](#生成调试工程)生成调试工程
+### 生成调试工程
 
 创建一个文件夹用于生成调试 Rule 的工程。我已经创建好了：[https://github.com/yulingtianxia/oclint/tree/llvm-7.0/oclint-xcodeproject](https://github.com/yulingtianxia/oclint/tree/llvm-7.0/oclint-xcodeproject)
 
@@ -95,7 +97,7 @@ cmake -G Xcode -D CMAKE_CXX_COMPILER=../build/llvm-install/bin/clang++  -D CMAKE
 
 为了能够调试运行，还需要在 Scheme 的 Info 下选择 Executable 为编译好的 oclint 的可执行文件。oclint-0.18.10 文件由于后缀名问题不允许被选择为 Executable，删掉后缀名的数字就可以了。这样就可以无需重新编译 OCLint 直接运行调试了！
 
-### [#实现规则](#实现规则)实现规则
+### 实现规则
 
 在 MVVM 设计模式下，我想让 ViewModel 的属性都是只读的。因为我只想通过与 Model 的数据绑定来更新 ViewModel 的值，或是在其内部更新状态。现在我需要实现一个规则来找出那些非只读属性。
 
@@ -134,7 +136,7 @@ bool VisitObjCImplementationDecl(ObjCImplementationDecl *node)
 }
 ```
 
-## [#集成到-Xcode](#集成到-Xcode)集成到 Xcode
+## 集成到 Xcode
 
 先放一张集成后的效果：
 
@@ -166,13 +168,13 @@ xcodebuild | xcpretty -r json-compilation-database --output compile_commands.jso
 oclint-json-compilation-database -- -report-type xcode
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 我只是简单的写了一个 ViewModel 的规则来跑通和验证整个流程，其实 MVVM 设计模式里还有更多的规则需要实现，比如 ViewModel 中不能引入 `UIKit` 等。欢迎有兴趣的同学提 PR！
 
-## [#Reference](#Reference)Reference
+## Reference
 
-- OCLint
-- LLVM Download Page
-- llvm-project
-- Introduction to the Clang AST
+- [OCLint](http://oclint.org)
+- [LLVM Download Page](http://releases.llvm.org/download.html#7.0.0)
+- [llvm-project](https://github.com/llvm/llvm-project)
+- [Introduction to the Clang AST](http://clang.llvm.org/docs/IntroductionToTheClangAST.html)

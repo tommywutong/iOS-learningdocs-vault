@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-30
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c9163e5220f17077'
 translated: n/a
 ---
@@ -20,14 +20,16 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2020-09-28
 
-1. 1. Why DartNative?
-2. 2. 实现原理
-3. 3. 方法签名的优化
-4. 4. 字符串转换的优化
+**文章目录**
 
-    1. 4.1. 转换 Dart String 为 Objective-C NSString:
-    2. 4.2. 转换 Objective-C NSString 为 Dart String:
-5. 5. 后记
+1. [1. Why DartNative?](#Why-DartNative)
+2. [2. 实现原理](#实现原理)
+3. [3. 方法签名的优化](#方法签名的优化)
+4. [4. 字符串转换的优化](#字符串转换的优化)
+
+    1. [4.1. 转换 Dart String 为 Objective-C NSString:](#转换-Dart-String-为-Objective-C-NSString)
+    2. [4.2. 转换 Objective-C NSString 为 Dart String:](#转换-Objective-C-NSString-为-Dart-String)
+5. [5. 后记](#后记)
 
 Flutter Channel 是一个异步调用通道，如果想在 Dart 侧同步获取到 Native 返回的结果，调用的时候加上 `await` 就可以了：
 
@@ -48,25 +50,13 @@ final int result = await platform.invokeMethod('hello channel');
 DNTest().hello('DartNative');
 ```
 
-## [#Why-DartNative](#Why-DartNative)Why DartNative?
+## Why DartNative?
 
-1. DartNative
-
-  是『真同步』，保证了执行顺序。同时也支持异步调用。
+1. [DartNative](https://github.com/dart-native/dart_native) 是『真同步』，保证了执行顺序。同时也支持异步调用。
 2. 一行代码实现同步调用，告别 Flutter Channel 胶水代码带来的开发成本。
-3. DartNative
+3. 同步调用性能是 Flutter Channel 的数倍。分别使用 Flutter Channel 和 [DartNative](https://github.com/dart-native/dart_native) 调用 `fooNSString:` 方法，**耗时相差三到四倍**。性能数据可能在不同场景下有波动，可以通过执行 [Benchmark 代码](https://github.com/dart-native/dart_native/blob/3af52f7d3cfa0d93fd9fc04a10a05d4a2e0d5398/dart_native/example/lib/ios/ios_main.dart) 来对比结果。
 
-  调用
-
-  方法，
-
-  。性能数据可能在不同场景下有波动，可以通过执行
-
-  Benchmark 代码
-
-  来对比结果。
-
-## [#实现原理](#实现原理)实现原理
+## 实现原理
 
 下图以 Dart 同步调用 iOS Objective-C API 为例，描述了 [DartNative](https://github.com/dart-native/dart_native) 同步调用的原理。以一个字符串参数为例，讲述了从 Dart `String` 自动转为 Objective-C `NSString` 并传递给 `hello:` 方法的过程。返回值也是自动转换类型的，由于篇幅原因没在图片中描述。
 
@@ -74,7 +64,7 @@ DNTest().hello('DartNative');
 
 在实现了基本的同步调用后，开发重点也转向了性能优化。
 
-## [#方法签名的优化](#方法签名的优化)方法签名的优化
+## 方法签名的优化
 
 在 Dart 同步调用 Native 时，为了实现跨语言调用时参数和返回值类型的自动转换，需要先获取到 Native 的方法签名。这里做了两方面的性能优化：
 
@@ -83,11 +73,11 @@ DNTest().hello('DartNative');
 
 ![](http://yulingtianxia.com/resources/DartObjC/sync_call_optimize.png)
 
-## [#字符串转换的优化](#字符串转换的优化)字符串转换的优化
+## 字符串转换的优化
 
 Dart `String` 在与 Objective-C `NSString` 相互转换的过程中，数据传输的格式的选择至关重要。因为 Dart `String` 是使用 UTF16 编码的，所以 [DartNative](https://github.com/dart-native/dart_native) 使用 `Uint16List` 作为数据传输的格式。通过性能测试，使用 UTF16 来回传输字符串的总耗时（包含 Native 方法自身耗时）相比 UTF8 [减少了 35% 左右](https://github.com/dart-native/dart_native/issues/22)，如果只计算通道自动类型转换耗时减少的比例会更多。
 
-### [#转换-Dart-String-为-Objective-C-NSString](#转换-Dart-String-为-Objective-C-NSString)转换 Dart `String` 为 Objective-C `NSString`:
+### 转换 Dart `String` 为 Objective-C `NSString`:
 
 使用 DartFFI 在堆上创建 `uint16_t` 数组，将 Dart `String` 转为 UTF16 格式后装载进去。最终通过 `perform` 方法反射调用 `stringWithCharacters:length:` 方法来创建 `NSString` 对象。
 
@@ -103,7 +93,7 @@ NSObject result = Class('NSString').perform(
 free(charPtr);
 ```
 
-### [#转换-Objective-C-NSString-为-Dart-String](#转换-Objective-C-NSString-为-Dart-String)转换 Objective-C `NSString` 为 Dart `String`:
+### 转换 Objective-C `NSString` 为 Dart `String`:
 
 `NSString` 转为 UTF16 稍微麻烦一点。这里的方案是先转为 UTF16 的 `NSData`，然后将 `uint16_t` 数组的地址和字符长度（不是字节长度）返回给 Dart 侧。
 
@@ -127,7 +117,7 @@ free(length);
 String str = String.fromCharCodes(list);
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 写了这么多 [DartNative](https://github.com/dart-native/dart_native) 的相关文章，终于轮到了介绍最基础最核心的同步调用功能。其实异步调用也是支持的，看来用 [DartNative](https://github.com/dart-native/dart_native) 来替换 Flutter Channel 的理由又多了。
 

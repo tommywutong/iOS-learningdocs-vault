@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:84b99af84ddabfe8'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-05-02
 
-1. 1. 自定义NSManagedObject
-2. 2. 使用数据模型设计器
-3. 3. 探究Core Data在SQLite中的实现
+**文章目录**
+
+1. [1. 自定义NSManagedObject](#自定义NSManagedObject)
+2. [2. 使用数据模型设计器](#使用数据模型设计器)
+3. [3. 探究Core Data在SQLite中的实现](#探究Core-Data在SQLite中的实现)
 
 本文内容：
 
@@ -36,7 +38,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 在[下一篇文章](http://yulingtianxia.com/blog/2014/07/03/chu-shi-core-data-3/)里，我将会通过教程的方式，讲述如何用Swift结合CoreData的NSFetchedResultsController写一个小Demo-[HardChoice](http://hardchoice.yulingtianxia.com)
 
-## [#自定义NSManagedObject](#自定义NSManagedObject)自定义NSManagedObject
+## 自定义NSManagedObject
 
 在上一篇教程中我们每条数据都是通过`NSManagedObject`对象装载，通过KVC方式使用`valueForKey：`方法访问对象属性，但是使用KVC要比使用访问器效率低一点。 只在必要时使用KVC，比如你需要动态选择key或keyPath。
 
@@ -181,7 +183,7 @@ DetailViewController.m:
 
 如果想复用`MasterViewController`里面那些代码，需要做些大改动，具体可以参看[更轻量的 View Controllers](http://objccn.io/issue-1-1/)这篇文章
 
-## [#使用数据模型设计器](#使用数据模型设计器)使用数据模型设计器
+## 使用数据模型设计器
 
 点击MyCDDemo.xcdatamodeld文件进入数据模型设计器，点击下方的加号（Add Enity），添加一个Enity，将其名字改为Person。然后添加name和sex属性，类型为string，需要注意的是属性名需要首字母小写，而且我们无需像往常给数据库建表一样为其添加ID字段，因为Core Data中你不需要任何类型的唯一标识Id，也不需要处理表连接。Core Data将在后台自动处理。你所需要做的就是定义对象间的关系。Core Data框架将在后台决定如何生成最佳的底层机制。
 
@@ -388,7 +390,7 @@ DetailViewController.m:
 
 现在，我们并不需要知道他们的实现方法是如何被动态生成的，估计是用到了block或者delegate。
 
-## [#探究Core-Data在SQLite中的实现](#探究Core-Data在SQLite中的实现)探究Core Data在SQLite中的实现
+## 探究Core Data在SQLite中的实现
 
 在上一节中我们创建了`Person`，`Teacher`和`Student`三个Entity和对应的`NSManagedObject`子类，下面我们需要在代码中对其进行“实战部署”，并观察它们是如何在SQLite数据库中保存的，这样更有利于理解Core Data机制。
 

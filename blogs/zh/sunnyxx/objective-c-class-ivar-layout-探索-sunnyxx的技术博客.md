@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-09-13
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9b890f8342cc114d'
 translated: n/a
 ---
@@ -95,16 +95,14 @@ void class_setWeakIvarLayout(Class cls, const uint8_t *layout)
 
 一个 uint8_t 在 16 进制下是两位，所以编码的值每两位一对儿，以上面的 ivarLayout 为例：
 
-1. 表示有 0 个非 strong 对象和 1 个 strong 对象
-2. 表示有 2 个非 strong 对象和 0 个 strong 对象
-3. 为结束符，就像 cstring 的
-
-  一样
+1. 前两位 **01** 表示有 0 个非 strong 对象和 1 个 strong 对象
+2. 之后两位 **20** 表示有 2 个非 strong 对象和 0 个 strong 对象
+3. 最后两位 **00** 为结束符，就像 cstring 的 **\\0** 一样
 
 同理，上面的 weakIvarLayout：
 
-1. 表示有 1 个非 weak 对象和接下来连续 2 个 weak 对象
-2. 结束符
+1. 前两位 **12** 表示有 1 个非 weak 对象和接下来连续 2 个 weak 对象
+2. **00** 结束符
 
 这样，用两个 layout 编码值就可以排查出一个 ivar 是属于 strong 还是 weak 的，若都没有找到，就说明这个对象是 unsafe_unretained.
 

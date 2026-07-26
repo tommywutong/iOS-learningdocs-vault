@@ -260,30 +260,8 @@ mutating func appendInterpolation<T>(_ value: T) where T : _FormatSpecifiable
 
 ## 小结
 
-- 中插值
-
-  和
-
-  这样的非
-
-  值，这让图文混排或者格式化文字非常方便。
-- 。你可以为
-
-  自定义插值方式，甚至可以为自定义的任意类型设定字符串插值。
-- 的时候，参数的类型是
-
-  。
-- 实现了接受
-
-  或者
-
-  的插值方法，所以我们可以在创建
-
-  时直接插入
-
-  或者格式化的
-
-  。
-- 不接受
-
-  或者自定义类型的插值参数。我们可以添加相关方法，不过这会带来副作用。
+- SwiftUI 2.0 中可以向 `Text` 中插值 `Image` 和 `Date` 这样的非 `String` 值，这让图文混排或者格式化文字非常方便。
+- 灵活的插值得益于 Swift 5.0 引入的 `ExpressibleByStringInterpolation`。你可以为 `String` 自定义插值方式，甚至可以为自定义的任意类型设定字符串插值。
+- 用字符串字面量初始化 `Text` 的时候，参数的类型是 `LocalizedStringKey`。
+- `LocalizedStringKey` 实现了接受 `Image` 或者 `Date` 的插值方法，所以我们可以在创建 `Text` 时直接插入 `Image` 或者格式化的 `Date`。
+- `LocalizedStringKey` 不接受 `Bool` 或者自定义类型的插值参数。我们可以添加相关方法，不过这会带来副作用。

@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-12-25
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5d274a1b5b1390d8'
 translated: n/a
 ---
@@ -28,27 +28,29 @@ Dec 25th, 2015 8:44 pm
 
 关于 `ReactiveCocoa` 的版本演进历程，简单介绍如下：
 
-- ：
-
-  ；
-- ：
-
-  ；
-- ：
-
-  。
+- `<= v2.5` ：`Objective-C` ；
+- `v3.x` ：`Swift 1.2` ；
+- `v4.x` ：`Swift 2.x` 。
 
 **注**：本文所介绍的均为 `ReactiveCocoa v2.5` 版本中的内容，这是 `Objective-C` 最新的稳定版本。另外，本文的目录结构如下：
 
 - 简介
--   - RACStream
+- 信号源
+
+    - RACStream
     - RACSignal
     - RACSubject
     - RACSequence
--   - RACSubscriber
+- 订阅者
+
+    - RACSubscriber
     - RACMulticastConnection
--   - RACScheduler
--   - RACDisposable
+- 调度器
+
+    - RACScheduler
+- 清洁工
+
+    - RACDisposable
 - 总结
 - 参考链接
 
@@ -60,10 +62,10 @@ Dec 25th, 2015 8:44 pm
 
 从上面的类图中，我们可以看出，`ReactiveCocoa` 主要由以下四大核心组件构成：
 
-- 及其子类；
-- 的实现类及其子类；
-- 及其子类；
-- 及其子类。
+- 信号源：`RACStream` 及其子类；
+- 订阅者：`RACSubscriber` 的实现类及其子类；
+- 调度器：`RACScheduler` 及其子类；
+- 清洁工：`RACDisposable` 及其子类。
 
 其中，信号源又是最核心的部分，其他组件都是围绕它运作的。
 
@@ -225,53 +227,19 @@ Dec 25th, 2015 8:44 pm
 
 `RACSignal` 代表的是未来将会被传送的值，它是一种 `push-driven` 的流。`RACSignal` 可以向订阅者发送三种不同类型的事件：
 
-- ：
-
-  通过
-
-  事件向订阅者传送新的值，并且这个值可以为
-
-  ；
-- ：
-
-  通过
-
-  事件向订阅者表明信号在正常结束前发生了错误；
-- ：
-
-  通过
-
-  事件向订阅者表明信号已经正常结束，不会再有后续的值传送给订阅者。
+- `next` ：`RACSignal` 通过 `next` 事件向订阅者传送新的值，并且这个值可以为 `nil` ；
+- `error` ：`RACSignal` 通过 `error` 事件向订阅者表明信号在正常结束前发生了错误；
+- `completed` ：`RACSignal` 通过 `completed` 事件向订阅者表明信号已经正常结束，不会再有后续的值传送给订阅者。
 
 **注意**，`ReactiveCocoa` 中的值流只包含正常的值，即通过 `next` 事件传送的值，并不包括 `error` 和 `completed` 事件，它们需要被特殊处理。通常情况下，一个信号的生命周期是由任意个 `next` 事件和一个 `error` 事件或一个 `completed` 事件组成的。
 
 从前面的类图中，我们可以看出，`RACSignal` 并非只有一个类，事实上，它的一系列功能是通过类簇来实现的。除去我们将在下节介绍的 `RACSubject` 及其子类外，`RACSignal` 还有五个用来实现不同功能的私有子类：
 
-- ：空信号，用来实现
-
-  的
-
-  方法；
-- ：一元信号，用来实现
-
-  的
-
-  方法；
-- ：动态信号，使用一个
-
-  来实现订阅行为，我们在使用
-
-  的
-
-  方法时创建的就是该类的实例；
-- ：错误信号，用来实现
-
-  的
-
-  方法；
-- ：通道终端，代表
-
-  的一个终端，用来实现双向绑定。
+- `RACEmptySignal` ：空信号，用来实现 `RACSignal` 的 `+empty` 方法；
+- `RACReturnSignal` ：一元信号，用来实现 `RACSignal` 的 `+return:` 方法；
+- `RACDynamicSignal` ：动态信号，使用一个 `block` 来实现订阅行为，我们在使用 `RACSignal` 的 `+createSignal:` 方法时创建的就是该类的实例；
+- `RACErrorSignal` ：错误信号，用来实现 `RACSignal` 的 `+error:` 方法；
+- `RACChannelTerminal` ：通道终端，代表 `RACChannel` 的一个终端，用来实现双向绑定。
 
 对于 `RACSignal` 类簇来说，最核心的方法莫过于 `-subscribe:` 了，这个方法封装了订阅者对信号源的一次订阅过程，它是订阅者与信号源产生联系的唯一入口。因此，对于 `RACSignal` 的所有子类来说，这个方法的实现逻辑就代表了该子类的具体订阅行为，是区分不同子类的关键所在。同时，这也是为什么 `RACSignal` 中的 `-subscribe:` 方法是一个抽象方法，并且必须要让子类实现的原因：
 
@@ -323,11 +291,9 @@ Dec 25th, 2015 8:44 pm
 
 另外，`RACSubject` 也有三个用来实现不同功能的子类：
 
-- ：分组信号，用来实现
-
-  的分组功能；
-- ：重演最后值的信号，当被订阅时，会向订阅者发送它最后接收到的值；
-- ：重演信号，保存发送过的值，当被订阅时，会向订阅者重新发送这些值。
+- `RACGroupedSignal` ：分组信号，用来实现 `RACSignal` 的分组功能；
+- `RACBehaviorSubject` ：重演最后值的信号，当被订阅时，会向订阅者发送它最后接收到的值；
+- `RACReplaySubject` ：重演信号，保存发送过的值，当被订阅时，会向订阅者重新发送这些值。
 
 `RACSubject` 的功能非常强大，但是太过灵活，也正是因为如此，我们只有在迫不得已的情况下才会使用它。
 
@@ -337,12 +303,8 @@ Dec 25th, 2015 8:44 pm
 
 从理论上说，一个 `RACSequence` 由两部分组成：
 
-- ：指的是序列中的第一个对象，如果序列为空，则为
-
-  ；
-- ：指的是序列中除第一个对象外的其它所有对象，同样的，如果序列为空，则为
-
-  。
+- `head` ：指的是序列中的第一个对象，如果序列为空，则为 `nil` ；
+- `tail` ：指的是序列中除第一个对象外的其它所有对象，同样的，如果序列为空，则为 `nil` 。
 
 事实上，一个序列的 `tail` 仍然是一个序列，如果我们将序列看作是一条毛毛虫，那么 `head` 和 `tail` 可表示如下：
 
@@ -440,25 +402,15 @@ RACSequence *results = [[strings.rac_sequence
 
 同样的，`RACSequence` 的一系列功能也是通过类簇来实现的，它共有九个用来实现不同功能的私有子类：
 
-- ：一元序列，用来实现
-
-  的
-
-  方法；
-- ：用来遍历索引集；
-- ：空序列，用来实现
-
-  的
-
-  方法；
-- ：动态序列，使用
-
-  来动态地实现一个序列；
-- ：用来遍历信号中的值；
-- ：用来遍历数组中的元素；
-- ：非懒计算的序列，在初始化时立即计算所有的值；
-- ：用来遍历字符串中的字符；
-- ：用来遍历元组中的元素。
+- `RACUnarySequence` ：一元序列，用来实现 `RACSequence` 的 `+return:` 方法；
+- `RACIndexSetSequence` ：用来遍历索引集；
+- `RACEmptySequence` ：空序列，用来实现 `RACSequence` 的 `+empty` 方法；
+- `RACDynamicSequence` ：动态序列，使用 `blocks` 来动态地实现一个序列；
+- `RACSignalSequence` ：用来遍历信号中的值；
+- `RACArraySequence` ：用来遍历数组中的元素；
+- `RACEagerSequence` ：非懒计算的序列，在初始化时立即计算所有的值；
+- `RACStringSequence` ：用来遍历字符串中的字符；
+- `RACTupleSequence` ：用来遍历元组中的元素。
 
 `RACSequence` 为类簇提供了统一的对外接口，对于使用它的客户端代码来说，完全不需要知道私有子类的存在，很好地隐藏了实现细节。另外，值得一提的是，`RACSequence` 实现了快速枚举的协议 `NSFastEnumeration` ，在这个协议中只声明了一个看上去非常抽筋的方法：
 
@@ -614,18 +566,10 @@ RACSequence *results = [[strings.rac_sequence
 
 咋看之下，`RACScheduler` 的儿子貌似还不少，但是真正出力干活的却真心不多，主要就是 `RACTargetQueueScheduler` 子类：
 
-- ：立即执行调度的任务，这是唯一一个支持同步执行的调度器；
-- ：一个抽象的队列调度器，在一个
-
-  串行列队中异步调度所有任务；
-- ：继承自
-
-  ，在一个以一个任意的
-
-  队列为
-
-  的串行队列中异步调度所有任务；
-- ：一个只用来调度订阅的调度器。
+- `RACImmediateScheduler` ：立即执行调度的任务，这是唯一一个支持同步执行的调度器；
+- `RACQueueScheduler` ：一个抽象的队列调度器，在一个 `GCD` 串行列队中异步调度所有任务；
+- `RACTargetQueueScheduler` ：继承自 `RACQueueScheduler` ，在一个以一个任意的 `GCD` 队列为 `target` 的串行队列中异步调度所有任务；
+- `RACSubscriptionScheduler` ：一个只用来调度订阅的调度器。
 
 值得一提的是，在 `RACScheduler` 中有一个非常特殊的方法：
 
@@ -645,44 +589,10 @@ RACSequence *results = [[strings.rac_sequence
 
 ![](http://leichunfeng.github.io/images/RACDisposable.png)
 
-- ：作为
-
-  的容器使用，可以包含一个
-
-  对象，并且允许将这个
-
-  对象通过原子操作交换出来；
-- ：代表一次
-
-  观察，并且可以用来停止观察；
-- ：跟
-
-  一样，
-
-  也是作为
-
-  的容器使用。不同的是，它可以包含多个
-
-  对象，并且支持手动添加和移除
-
-  对象，有点类似于可变数组
-
-  。而当一个
-
-  对象被
-
-  时，它会调用其所包含的所有
-
-  对象的
-
-  方法，有点类似于
-
-  的作用;
-- ：当它被
-
-  的时候调用本身的
-
-  方法。
+- `RACSerialDisposable` ：作为 `disposable` 的容器使用，可以包含一个 `disposable` 对象，并且允许将这个 `disposable` 对象通过原子操作交换出来；
+- `RACKVOTrampoline` ：代表一次 `KVO` 观察，并且可以用来停止观察；
+- `RACCompoundDisposable` ：跟 `RACSerialDisposable` 一样，`RACCompoundDisposable` 也是作为 `disposable` 的容器使用。不同的是，它可以包含多个 `disposable` 对象，并且支持手动添加和移除 `disposable` 对象，有点类似于可变数组 `NSMutableArray` 。而当一个 `RACCompoundDisposable` 对象被 `disposed` 时，它会调用其所包含的所有 `disposable` 对象的 `-dispose` 方法，有点类似于 `autoreleasepool` 的作用;
+- `RACScopedDisposable` ：当它被 `dealloc` 的时候调用本身的 `-dispose` 方法。
 
 咋看之下，`RACDisposable` 的逻辑似乎有些复杂，不过换汤不换药，不管它们怎么换着花样玩，最终都只是为了能够在合适的时机调用 `disposable` 对象的 `-dispose` 方法，执行清理工作而已。
 

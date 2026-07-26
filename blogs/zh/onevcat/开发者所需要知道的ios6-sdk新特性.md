@@ -96,7 +96,7 @@ Apple希望用户关闭app，然后下一次打开时能保持关闭时的界面
 
 - 整个UIView都支持NSAttributedString的格式化字符串了。特别是UITextView和UITextField～(再次抄袭开源社区，Apple你又赢了)
 - UIImage现在多了一个新方法，可以在生成UIImage对象时指定scale。为retina iPad开发的童鞋们解脱了..
-- ~OpenUDID已死，udid暂时无解，请乖乖使用广告vendor id；或者将一个uuid存入keychain可以在大多数情况下替代udid（onevcat与2013.09.01更新）
+- NSUUID，用这个类现在可以很方便的创建一个uuid了.注意这个是uuid，不要和udid弄混了…Apple承诺的udid解决方案貌似还没出现..~~~现在要拿udid的话还是用[OpenUDID](https://github.com/ylechelle/OpenUDID)吧～~~~OpenUDID已死，udid暂时无解，请乖乖使用广告vendor id；或者将一个uuid存入keychain可以在大多数情况下替代udid（onevcat与2013.09.01更新）
 
 ---
 

@@ -27,21 +27,13 @@ TestFlight 现在已经修成正果，被 Apple 高价收购。虽然很遗憾�
 
 崩溃报告类：
 
-- Crittercism
-
-  个人用了一段时间，表现很稳定，但是版本更新时设置比较麻烦
-- Crashlytics
-
-  相当优雅方便，最近被Twitter收购。十分推荐
+- [Crittercism](https://www.crittercism.com/) 个人用了一段时间，表现很稳定，但是版本更新时设置比较麻烦
+- [Crashlytics](https://www.crashlytics.com/) 相当优雅方便，最近被Twitter收购。十分推荐
 
 用户行为统计类：
 
-- Flurry
-
-  这个太有名了，不多说了
-- Countly
-
-  好处是轻量开源，数据可以自己掌控
+- [Flurry](http://www.flurry.com/) 这个太有名了，不多说了
+- [Countly](http://count.ly/) 好处是轻量开源，数据可以自己掌控
 
 但是在“发布前”测试分发这个环节上，基本还没有出现能与TestFlight相匹敌的服务出现，因此如果有这方面的测试需求的话，TF依然是开发人员的首选。
 
@@ -116,13 +108,11 @@ TestFlight界面友好，文档齐全，开发者在使用上不会遇到很多�
     - 如果libTestFlight.a不在栏内，从Project Navigation里将其拖到栏内
 - 开始使用
 
-    - ，方便起见，您也可以在工程的预编译文件中的_#ifdef
+    - 在需要用到TestFlight SDK的文件中引入头文件：_#import “TestFlight.h”_，方便起见，您也可以在工程的预编译文件中的_#ifdef **OBJC**_块中引入
+    - 获取团队token：在[这个页面](http://testflightapp.com/dashboard/team/)中对应的团队下选取TeamInfo，获取团队的token。
+    - 在AppDelegate中启动TestFlight
 
-      _块中引入
-    - 这个页面
-
-      中对应的团队下选取TeamInfo，获取团队的token。
-    - ```objc
+      ```objc
       –(BOOL)application:(UIApplication *_)application didFinishLaunchingWithOptions:(NSDictionary  _*)launchOptions {
         // start of your application:didFinishLaunchingWithOptions
         // …
@@ -199,7 +189,7 @@ Log将会在客户端进入后台或者被退出的时候上传到服务器，�
 
 ..做过部署的童鞋对这个应该很熟了，官方也有一个详细的guide，总之照着做就没错了
 
-- XCode3如何生成ipa
+- [XCode3如何生成ipa](http://support.testflightapp.com/kb/tutorials/how-to-create-an-ipa-xcode-3)
 - [Xcode4如何生成ipa](http://support.testflightapp.com/kb/tutorials/how-to-create-an-ipa-xcode-4)
 
 ### 上传测试版本

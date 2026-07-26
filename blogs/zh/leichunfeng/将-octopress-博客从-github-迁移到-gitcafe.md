@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-11-15
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8c6f0209c99e5988'
 translated: n/a
 ---
@@ -28,15 +28,9 @@ Nov 15th, 2014 1:38 pm
 
 ## 准备工作
 
-1. GitCafe
-
-  账号。
-2. 《如何安装和设置 Git》
-
-  。
-3. leichunfeng
-
-  。
+1. 注册 [GitCafe](http://gitcafe.com/signup?invited_by=leichunfeng) 账号。
+2. 添加 SSH 公钥到你的 GitCafe 账号下，可参考 GitCafe 官方帮助文档中的[《如何安装和设置 Git》](https://gitcafe.com/GitCafe/Help/wiki/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%92%8C%E8%AE%BE%E7%BD%AE-Git#wiki)。
+3. 创建一个与你的 GitCafe 用户名相同名称的项目，例如 [leichunfeng](https://gitcafe.com/leichunfeng/leichunfeng) 。
 
 ## 添加远程仓库
 

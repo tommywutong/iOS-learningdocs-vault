@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fb6ee656408bd187'
 translated: n/a
 ---
@@ -60,21 +60,11 @@ _好吧, 那么为什么不使用 `transitionFromViewController:toViewController
 
 iOS 7 自定义视图控制器转场的 API 基本上都是以协议的方式提供的，这也使其可以非常灵活的使用，因为你可以很简单地将它们插入到你的类中。最主要的五个组件如下:
 
-1. 遵从
-
-  协议，并且负责实际执行动画。
-2. 通过遵从
-
-  协议来控制可交互式的转场。
-3. 根据不同的转场类型方便的提供需要的动画控制器和交互控制器。
-4. 定义了转场时需要的元数据，比如在转场过程中所参与的视图控制器和视图的相关属性。 转场上下文对象遵从
-
-  协议，
-
-  。
-5. 可以在运行转场动画时，并行的运行其他动画。 转场协调器遵从
-
-  协议。
+1. **动画控制器 (Animation Controllers)** 遵从 `UIViewControllerAnimatedTransitioning` 协议，并且负责实际执行动画。
+2. **交互控制器 (Interaction Controllers)** 通过遵从 `UIViewControllerInteractiveTransitioning` 协议来控制可交互式的转场。
+3. **转场代理 (Transitioning Delegates)** 根据不同的转场类型方便的提供需要的动画控制器和交互控制器。
+4. **转场上下文 (Transitioning Contexts)** 定义了转场时需要的元数据，比如在转场过程中所参与的视图控制器和视图的相关属性。 转场上下文对象遵从 `UIViewControllerContextTransitioning` 协议，_并且这是由系统负责生成和提供的_。
+5. **转场协调器(Transition Coordinators)** 可以在运行转场动画时，并行的运行其他动画。 转场协调器遵从 `UIViewControllerTransitionCoordinator` 协议。
 
 正如你从其他的阅读材料中得知的那样，转场有不可交互式和可交互式两种方式。在本文中，我们将集中精力于不可交互的转场。这种转场是最简单的转场，也是我们学习的一个好的开始。这意味着我们需要处理上面提到的_动画控制器 (animation controllers)_，_转场代理 (transitioning delegates)_ 和_转场上下文 (transitioning contexts)_。
 
@@ -204,12 +194,8 @@ transitionContext.completionBlock = ^(BOOL didComplete) {
 
 `containerViewController:animationControllerForTransitionFromViewController:toViewController:` 方法挺有趣的，当然，你可以把它和下面的 UIKit 中的视图控制器容器的代理协议做对比：
 
-- (
-
-  )
-- (
-
-  )
+- `tabBarController:animationControllerForTransitionFromViewController:toViewController:` (`UITabBarControllerDelegate`)
+- `navigationController:animationControllerForOperation:fromViewController:toViewController:` (`UINavigationControllerDelegate`)
 
 所有的这些方法都返回一个 `id<UIViewControllerAnimatedTransitioning>` 对象。
 
@@ -293,10 +279,8 @@ static CGFloat const kInitialSpringVelocity = 0.5f;
 
 ## 扩展资料
 
-- “Architecting Modern Apps, Part 1”
-
-  (07:23-31:27)
-- GitHub
+- 2014 年的 iOS 7 Tech Talks 视频: [“Architecting Modern Apps, Part 1”](https://developer.apple.com/tech-talks/videos/index.php?id=3#3) (07:23-31:27)
+- 全部代码都放在 [GitHub](https://github.com/objcio/issue-12-custom-container-transitions)
 
 ---
 

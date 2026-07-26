@@ -39,8 +39,8 @@ LINE SDK 里使用 JWT 验证用户的逻辑如下：
 整个系列会比较长，为了阅读压力小一些，我会分成三个部分：
 
 1. 基础 - 什么是 JWT 以及 JOSE (本文)
-2. 理论 - JOSE 中的签名和验证流程
-3. 实践 - 如何使用 Security.framework 处理 JOSE 中的验证
+2. [理论 - JOSE 中的签名和验证流程](https://onevcat.com/2018/12/jose-2/)
+3. [实践 - 如何使用 Security.framework 处理 JOSE 中的验证](https://onevcat.com/2018/12/jose-3/)
 
 全部读完的话应该能对网络相关的密码学有一个肤浅的了解，特别是常见的签名算法和密钥种类，编码规则，怎么处理拿到的密钥，怎么做签名验证等等。如果你在工作中有相关需求，但不知道如何下手的话，可以仔细阅读整个系列，并参看开源的 [LINE SDK Swift](https://github.com/line/line-sdk-ios-swift) 的相关实现，甚至直接 copy 部分代码 (如果可以的话，也请顺便点一下 star)。如果你只是感兴趣想要简单了解的话，可以只看 JOSE 和 JWT 的基础概念和理论流程部分的内容，作为知识面的扩展，等以后有实际需要了再回头看实践部分的内容。
 
@@ -80,26 +80,10 @@ Header 包含了 JWT 的一些元信息。我们可以尝试将上面的 `eyJhbG
 
 在 JWT Header 中，”alg” 是必须指定的值，它表示这个 JWT 的签名方式。上例中 JWT 使用的是 `HS256` 进行签名，也就是使用 SHA-256 作为摘要算法的 HMAC。常见的选择还有 `RS256`，`ES256` 等等。总结一下：
 
-- 或者说
-
-  HMAC
-
-  ：一种对称算法 (symmetric algorithm)，也就是加密密钥和解密密钥是同一个。类似于我们创建 zip 文件时设定的密码，验证方需要知道和签名方同样的密钥，才能得到正确的验证结果。
-- ：使用
-
-  RSA
-
-  进行签名。RSA 是一种基于极大整数做因数分解的非对称算法 (asymmetric algorithm)。相比于对称算法的 HMAC 只有一对密钥，RSA 使用成对的公钥 (public key) 和私钥 (private key) 来进行签名和验证。大多数 HTTPS 中验证证书和加密传输数据使用的是 RSA 算法。
-- ：使用
-
-  椭圆曲线数字签名算法 (ECDSA)
-
-  进行签名。和 RSA 类似，它也是一种非对称算法。不过它是基于椭圆曲线的。ECDSA 最著名的使用场景是比特币的数字签名。
-- : 和
-
-  类似使用 RSA 算法，但是使用 PSS 作为 padding 进行签名。作为对比，
-
-  中使用的是 PKCS1-v1_5 的 padding。
+- `HSXXX` 或者说 [HMAC](https://en.wikipedia.org/wiki/HMAC)：一种对称算法 (symmetric algorithm)，也就是加密密钥和解密密钥是同一个。类似于我们创建 zip 文件时设定的密码，验证方需要知道和签名方同样的密钥，才能得到正确的验证结果。
+- `RSXXX`：使用 [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) 进行签名。RSA 是一种基于极大整数做因数分解的非对称算法 (asymmetric algorithm)。相比于对称算法的 HMAC 只有一对密钥，RSA 使用成对的公钥 (public key) 和私钥 (private key) 来进行签名和验证。大多数 HTTPS 中验证证书和加密传输数据使用的是 RSA 算法。
+- `ESXXX`：使用 [椭圆曲线数字签名算法 (ECDSA)](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) 进行签名。和 RSA 类似，它也是一种非对称算法。不过它是基于椭圆曲线的。ECDSA 最著名的使用场景是比特币的数字签名。
+- `PSXXX`: 和 `RSXXX` 类似使用 RSA 算法，但是使用 PSS 作为 padding 进行签名。作为对比，`RSXXX` 中使用的是 PKCS1-v1_5 的 padding。
 
 > 如果你对这些介绍一头雾水，也不必担心。关于各个算法的一些更细节的内容，会在后面实践部分再详细说明。现在，你只需要知道 Header 中 “alg” key 为我们指明了签名所使用的签名算法和散列算法。我们之后需要依据这里的指示来验证签名。
 

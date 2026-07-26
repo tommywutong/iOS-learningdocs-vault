@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-07-20
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f74a78699f2d3a60'
 translated: n/a
 ---
@@ -20,14 +20,16 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-02-28
 
-1. 1. 性能对比
-2. 2. Shader 的实现
+**文章目录**
 
-    1. 2.1. Threadgroup
-    2. 2.2. Non-uniform Threadgroup Size
-    3. 2.3. 原子操作生成 Histogram
-    4. 2.4. 踩坑
-3. 3. Reference
+1. [1. 性能对比](#性能对比)
+2. [2. Shader 的实现](#Shader-的实现)
+
+    1. [2.1. Threadgroup](#Threadgroup)
+    2. [2.2. Non-uniform Threadgroup Size](#Non-uniform-Threadgroup-Size)
+    3. [2.3. 原子操作生成 Histogram](#原子操作生成-Histogram)
+    4. [2.4. 踩坑](#踩坑)
+3. [3. Reference](#Reference)
 
 在照片质量评分组件 [PhotoAssessment](https://github.com/yulingtianxia/PhotoAssessment) 项目上，有些算法的实现是使用 CPU 运行的。通过使用 MPS(Metal Performance Shader) 在 GPU 上并行计算，显著提升了性能，算法执行耗时降低了 99.9% 以上。震惊，呵呵。随着性能上成百上千倍的提升，可以在相等时间内处理更大尺寸的图片，进而提升组件的准确度和用户体验。
 
@@ -37,7 +39,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 工程升级到 Swift 5 结果 CI 不支持，编不过哎。
 
-## [#性能对比](#性能对比)性能对比
+## 性能对比
 
 对一张 4032x3024 彩色图片在 iPhone 8 Plus 上进行测试的 Benchmark 如下（单位：秒）：
 
@@ -64,7 +66,7 @@ gpu total cost: 0.008553862571716
 
 实现这两个功能的 Shader kernel 函数分别封装成 Swift 类： [`MPSSaturationKernel`](https://github.com/yulingtianxia/PhotoAssessment/blob/master/PhotoAssessment-Sample/Sources/MPSSaturationKernel.swift) 和 [`MSPFingerprintImageKernel`](https://github.com/yulingtianxia/PhotoAssessment/blob/master/PhotoAssessment-Sample/Sources/MSPFingerprintImageKernel.swift)。
 
-## [#Shader-的实现](#Shader-的实现)Shader 的实现
+## Shader 的实现
 
 Command Encoder 会使用 Texture、Buffer、Sampler、Pipeline 等内容构建出 Command，并装载到 Command Buffer 上。
 
@@ -84,7 +86,7 @@ Command Encoder 有三种：Render、Compute 和 Blit。区别在于用途和用
 2. Buffer：可作为额外的入参或结果，可设定 CPU 和 GPU 间共享
 3. Compute Pipeline State：用于配置 Shader 函数名，也可用于计算 threadgroup 相关信息。
 
-### [#Threadgroup](#Threadgroup)Threadgroup
+### Threadgroup
 
 GPU 并行计算时，每条线程处理一个像素。整个 Texture 看做一个 Grid，可以进一步划分成多个 threadgroup。
 
@@ -120,7 +122,7 @@ rgb2hsvKernelNonuniform(texture2d<float, access::read> inTexture [[texture(0)]],
 
 ![from Apple Doc](https://raw.githubusercontent.com/yulingtianxia/Blog-Hexo-Source/master/source/resources/MPS/grid%20coordinates.png)
 
-### [#Non-uniform-Threadgroup-Size](#Non-uniform-Threadgroup-Size)Non-uniform Threadgroup Size
+### Non-uniform Threadgroup Size
 
 Command Encoder 需要知道要处理的 Grid 的分组情况，比如Grid 包含多少 threadgroup，每个 threadgroup 包含多少 thread。
 
@@ -186,7 +188,7 @@ rgb2hsvKernelNonuniform(texture2d<float, access::read> inTexture [[texture(0)]],
 
 所以目前我的策略是先判断是否支持 Non-uniform Threadgroup Size，然后决定使用的 Shader 函数版本、以及 Encoder 分发线程的方式。
 
-### [#原子操作生成-Histogram](#原子操作生成-Histogram)原子操作生成 Histogram
+### 原子操作生成 Histogram
 
 在计算指纹向量的时，并行将每个像素的内容处理完后，还需要统计成柱状图。比如处理完的像素种类一共有 `HistogramBufferSize` 种，需要统计每种类型的像素数量，可以声明一个 Buffer，包含长度为 `HistogramBufferSize` 的数组 `bucket`，将其传入 Shader 函数用于统计。
 
@@ -221,7 +223,7 @@ void fingerprint(texture2d<uint, access::read> inTexture [[texture(0)]],
 
 MPS 支持的原子操作值类型很有限，无法选择占用内存更低的类型，只好忍受 `atomic_int` 带来的 4 Byte 吧。只要控制好 `HistogramBufferSize`，问题应该不大。
 
-### [#踩坑](#踩坑)踩坑
+### 踩坑
 
 MPS 中获取向量内容的方式可谓是方便，但是也是有坑在里面的。比如要注意无论是 `xyzw` 还是 `rgba` 分量获取的内容都是从低地址到高地址排列的。比如传入的像素格式是 RGBA，那么 `rgba` 获取的值正好是反过来的。
 
@@ -238,9 +240,9 @@ abgr  // r低 a 高
 outTexture.write(1, 2, 3, 4), gid);
 ```
 
-## [#Reference](#Reference)Reference
+## Reference
 
-- https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf
-- https://developer.apple.com/metal/Metal-Feature-Set-Tables.pdf
-- https://stackoverflow.com/questions/47738441/passing-textures-with-uint8-component-type-to-metal-compute-shader
-- https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl
+- [https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf)
+- [https://developer.apple.com/metal/Metal-Feature-Set-Tables.pdf](https://developer.apple.com/metal/Metal-Feature-Set-Tables.pdf)
+- [https://stackoverflow.com/questions/47738441/passing-textures-with-uint8-component-type-to-metal-compute-shader](https://stackoverflow.com/questions/47738441/passing-textures-with-uint8-component-type-to-metal-compute-shader)
+- [https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl](https://stackoverflow.com/questions/15095909/from-rgb-to-hsv-in-opengl-glsl)

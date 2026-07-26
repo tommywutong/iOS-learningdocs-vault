@@ -40,7 +40,7 @@ translated: n/a
 
 做 Web 的同学会感觉，agent 在前端的闭环验证做得还不错。原因很朴素：
 
-- ：结构化、可遍历、自带语义的一棵树。
+- agent 能毫不费力地直接拿到 **DOM**：结构化、可遍历、自带语义的一棵树。
 - 浏览器有成熟的自动化工具：Playwright、Puppeteer 这些，selector 很稳。
 - 控制台日志、网络请求——所有信号都是文本可读的。
 
@@ -51,10 +51,10 @@ DOM 本身就是一份 agent 的”天然语料”。`<button id="login">` 这�
 换到 mobile，问题立刻就不一样了：
 
 - iOS 和 Android 都是相对封闭的环境，没有一个”DOM 等价物”对外暴露。
--   - ：贵、慢，对长尾控件识别能力有限，点坐标需要靠截图计算容易漂移，不稳定，而且多模态的调用成本爆炸。
-    - ：UIAutomator / AccessibilityService / iOS 的 AX API，原始输出动不动几十甚至上百 KB JSON，使用不当 token 消耗惊人，还
+- 现在市面上能看到的两类方案，都还不能让人满意：
 
-      （这点后面细说）。
+    - **靠截图 + 多模态模型**：贵、慢，对长尾控件识别能力有限，点坐标需要靠截图计算容易漂移，不稳定，而且多模态的调用成本爆炸。
+    - **dump UI tree 给 agent 看**：UIAutomator / AccessibilityService / iOS 的 AX API，原始输出动不动几十甚至上百 KB JSON，使用不当 token 消耗惊人，还**经常拿不到 UI 元素**（这点后面细说）。
 
 结果就是：agent 看不清楚界面，就没法自己验证；没法自己验证，就得把开发者拉回那个”写 prompt、等出活、人肉跑 app”的低效循环里。
 
@@ -68,16 +68,10 @@ DOM 本身就是一份 agent 的”天然语料”。`<button id="login">` 这�
 
 它做四件事：
 
-1. ：把 app 当前屏幕翻译成一种紧凑、对 agent 友好的文本格式（我们叫它
-
-  ）。
-2. ：通过 outline 里
-
-  、
-
-  这种简短 selector，让 agent（和人）都能轻松选中元素并触发交互。
-3. ……提供一整套命令，覆盖所有操作和证据留存，为 agent 审计和接入其他系统留好接口。
-4. ：iOS 和 Android 用同一套命令、同一种 selector、同一种 JSON 输出格式，同样的验证在多端可以复用。
+1. **看**：把 app 当前屏幕翻译成一种紧凑、对 agent 友好的文本格式（我们叫它 `outline`）。
+2. **点**：通过 outline 里 `@N`、`#id` 这种简短 selector，让 agent（和人）都能轻松选中元素并触发交互。
+3. **打字 / 手势 / 截图 / 录屏 / 多指操作 / 键盘事件**……提供一整套命令，覆盖所有操作和证据留存，为 agent 审计和接入其他系统留好接口。
+4. **跨平台**：iOS 和 Android 用同一套命令、同一种 selector、同一种 JSON 输出格式，同样的验证在多端可以复用。
 
 它的产品形态是一个 Swift 写的 macOS CLI（带一个 daemon 做加速），两端各自这样驱动：iOS 侧通过 Facebook 的 idb（FBSimulatorControl）连接模拟器，UI 观测经 CoreSimulator 的 `AccessibilityPlatformTranslation` 取 accessibility tree，输入则通过注入 HID 事件完成；Android 侧则是一个在设备上跑 `AccessibilityService` 的 bridge APK，通过 `adb forward` 暴露 HTTP API。
 
@@ -171,6 +165,8 @@ Outline 不只是压缩。它固然有”让 JSON 变小”的目的，但更重
 ![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
 
 _图 2：LINE 转发选择页同时存在好友列表和群组列表 —— 得分最高的好友列表拿到 `#N`，群组列表自动落到 `#N@2`。完整的动态演示可以看下面的视频。_
+
+您的浏览器不支持 HTML5 视频。
 
 对 agent 来说，这意味着”点击聊天列表里的第三行”这样的自然语言，现在可以直接对应 `tap #3`，不需要中间任何视觉识别、推理和计算。验证脚本也不再绑死在硬编码的坐标（会随设备漂移）或某个特定的 label 上（会随多语言漂移）——它适配的是”页面运行时呈现出来的主列表”，而不管这个列表今天有 5 个 cell 还是 20 个 cell、也不关心 cell 的具体 label 是什么。E2E 测试在这种 selector 下要稳定得多。
 
@@ -273,10 +269,10 @@ IndigoHIDMessageForMouseNSEvent(p0, p1, target, eventType, direction,
 
 `sim-use` 不是一个新点子，但我们相信它对于推进和解决 agent 在 mobile 开发 loop 的验证环节这件事上，会带来帮助。Cameron Cooke 的 [AXe](https://github.com/cameroncooke/axe) 是它的起点，业界也有 Appium、idb、Maestro 等等。我们站在前人的肩上做了几件具体的事：
 
-- 。Outline DSL 是这件事的直接结果。
-- ，并用具体的几何 / hit-test 算法把缺口补上。
-- ，而是用一套统一的命令面 + 平台特定的实现 + “surface honesty”的纪律来保证 agent 真的能写出跨平台的脚本。
-- ：一个 7MB 的 binary，加一段几百行的 SKILL.md，就能补上 agent 开发的最后一块拼图，把人从”人肉跑 app”的循环里解放出来，去想更值得想的事。
+- **第一目标是”让 agent 高效消化 UI”，而不是”让脚本能跑”**。Outline DSL 是这件事的直接结果。
+- **承认 iOS / Android 的 accessibility API 都不完整**，并用具体的几何 / hit-test 算法把缺口补上。
+- **跨平台不是”把一边的设计复制到另一边”**，而是用一套统一的命令面 + 平台特定的实现 + “surface honesty”的纪律来保证 agent 真的能写出跨平台的脚本。
+- **足够轻量，容易上手**：一个 7MB 的 binary，加一段几百行的 SKILL.md，就能补上 agent 开发的最后一块拼图，把人从”人肉跑 app”的循环里解放出来，去想更值得想的事。
 
 `sim-use` 已经[在 GitHub 上开源](https://github.com/lycorp-jp/sim-use)。希望这篇能让你对它内部的设计取舍有一些直观的认识。如果你也在做 mobile + AI 这件事，欢迎来提 issue 和 PR。
 

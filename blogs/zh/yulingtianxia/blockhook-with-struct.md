@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-08-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4ee049c1f8231d1f'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-04-27
 
-1. 1. Struct Encode
-2. 2. Return Struct on x86
-3. 3. 后记
+**文章目录**
+
+1. [1. Struct Encode](#Struct-Encode)
+2. [2. Return Struct on x86](#Return-Struct-on-x86)
+3. [3. 后记](#后记)
 
 一年前，我开发了 [BlockHook](https://github.com/yulingtianxia/BlockHook)，（应该是）填补了 Objective-C 业界在 Hook Block 技术领域的空白。但是对于 Block 的参数和返回值有限制，仅定制了 `CGRect`, `CGSize`, `CGPoint` 等结构体，不支持自定义 struct。这次就把这个坑给填上。
 
@@ -30,7 +32,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 关于 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的实现原理，可以先阅读 [Hook Objective-C Block with Libffi](http://yulingtianxia.com/blog/2018/02/28/Hook-Objective-C-Block-with-Libffi/)。
 
-## [#Struct-Encode](#Struct-Encode)Struct Encode
+## Struct Encode
 
 要想解析自定义结构体的类型，并转换为 `ffi_type`，首先要从 Block 的 signature 入手。从中提取出 struct 的 encode，并继续解析其内容。
 
@@ -94,7 +96,7 @@ static const char *BHSizeAndAlignment(const char *str, NSUInteger *sizep, NSUInt
 
 `_ffiTypeForEncode` 方法中对 struct 的处理也得到了简化，只需调用 `_ffiTypeForStructEncode` 即可。经测试，struct 之间的嵌套都 OK。
 
-## [#Return-Struct-on-x86](#Return-Struct-on-x86)Return Struct on x86
+## Return Struct on x86
 
 在 x86 架构下，当 Block 返回值是大于 16 Byte 的 struct 时，其实现函数 `invoke` 的参数列表会发生变化：第一个参数不再是 Block 对象自己，而是指向 struct 返回值的指针。其余参数依次往后挪一位。Block 结构中 `flags` 里有一个 bit 标记了这个『潜规则』：
 
@@ -162,7 +164,7 @@ static void BHFFIClosureFunc(ffi_cif *cif, void *ret, void **args, void *userdat
 }
 ```
 
-## [#后记](#后记)后记
+## 后记
 
 在测试用例 [BlockHookSample_iOSTests.m](https://github.com/yulingtianxia/BlockHook/blob/master/BlockHookSample%20iOSTests/BlockHookSample_iOSTests.m) 文件中包含了一些常用的使用示例，还有一些诸如改 Block 参数和返回值的骚操作。大家如果在使用中发现任何问题，或者有新的诉求，欢迎来提 issue：[https://github.com/yulingtianxia/BlockHook/issues](https://github.com/yulingtianxia/BlockHook/issues)
 

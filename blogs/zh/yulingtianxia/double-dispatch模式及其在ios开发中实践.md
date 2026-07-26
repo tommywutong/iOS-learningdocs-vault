@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e8893f46f9a542ca'
 translated: n/a
 ---
@@ -20,30 +20,32 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-13
 
-1. 1. 本文内容
-2. 2. 引子
-3. 3. C++中的Double Dispatch实例
-4. 4. Java中的Double Dispatch实例
+**文章目录**
 
-    1. 4.1. 1 根据对象来选择行为问题
-    2. 4.2. 2 Double Dispatch Pattern
-5. 5. Objective-C中实现碰撞检测用到的Visitor模式
+1. [1. 本文内容](#本文内容)
+2. [2. 引子](#引子)
+3. [3. C++中的Double Dispatch实例](#C-中的Double-Dispatch实例)
+4. [4. Java中的Double Dispatch实例](#Java中的Double-Dispatch实例)
 
-## [#本文内容](#本文内容)本文内容
+    1. [4.1. 1 根据对象来选择行为问题](#1-根据对象来选择行为问题)
+    2. [4.2. 2 Double Dispatch Pattern](#2-Double-Dispatch-Pattern)
+5. [5. Objective-C中实现碰撞检测用到的Visitor模式](#Objective-C中实现碰撞检测用到的Visitor模式)
+
+## 本文内容
 
 - 引子
 - C++中的Double Dispatch实例
 - Java中的Double Dispatch实例
 - Objective-C中实现碰撞检测用到的Visitor模式
 
-## [#引子](#引子)引子
+## 引子
 
 在一个太空大战游戏中，导弹可以撞向飞船，也可能撞向行星，所以在碰撞检测的时候就需要判断碰撞的结果。假设游戏有四种物体：飞船，陨石，行星，导弹，那么就产生了`4*3/2+4`种情形（一枚导弹撞上另一枚导弹）。这种排列组合计算出的结果会随着物体种类N的增多爆炸性增长，如果这个时候还用一堆if－else来检测碰撞，那真是`Naive`了。这时我们可以利用面向对象语言的多态性质来在程序运行时动态绑定，因为碰撞检测是一种“双向选择”，所以我们需要`double dispatch`（双分派），`Visitor`模式就是`double dispatch`的一种应用。  
 ![Visitor模式](http://yulingtianxia.com/resources/14035338896.jpg)
 
 DD模式适合于处理多个对象之间的相互作用。假如不用DD模式的话，那么每个对象跟别的对象发生关系时，就必须辛辛苦苦的进行if…else…枚举，因为它并不知道对方是何神圣。DD模式的引入解决了这个问题，其实说白了就是利用语言内置的虚函数机制来替你干活，把工作移交给编译器去做了。
 
-## [#C-中的Double-Dispatch实例](#C-中的Double-Dispatch实例)C++中的Double Dispatch实例
+## C++中的Double Dispatch实例
 
 本节内容摘自[这里](http://www.cnblogs.com/west-link/archive/2011/07/26/2116887.html)  
 我们先从字面上去理解它吧，直观地说，它指的是两次dispatch。这里的dispatch指的是什么呢？举个例子：
@@ -156,12 +158,12 @@ EventRecorder* pRecorder = new AdvanceEventRecorder();
 可以看出，第一次dispatch正确地找到了`KeyEvent`的`RecordEvent(EventRecorder* recorder)`，第二次dispatch找到了`AdvanceEventRecorder`的`RecordEvent(KeyEvent* event)`。  
  Visitor模式就是对Double Dispatch的应用，另外，在碰撞检测算法中也会经常用到。
 
-## [#Java中的Double-Dispatch实例](#Java中的Double-Dispatch实例)Java中的Double Dispatch实例
+## Java中的Double Dispatch实例
 
 本节参考自[这里](http://www.blogjava.net/chaocai/archive/2009/02/19/255640.html)  
 相对于C++中使用继承来说，Java提供的接口和函数重载让Double Dispatch模式更容易实现
 
-### [#1-根据对象来选择行为问题](#1-根据对象来选择行为问题)1 根据对象来选择行为问题
+### 1 根据对象来选择行为问题
 
 ```java
 public interface Event {
@@ -193,7 +195,7 @@ new Handler().handle(evt);
 结果：It is event  
 是不是有点出乎意料，不是It is BlueEvent，**这是因为Overload并不支持在运行时根据参数的运行时类型来绑定方法**，所以要执行哪个方法是在编译时就选定了的。
 
-### [#2-Double-Dispatch-Pattern](#2-Double-Dispatch-Pattern)2 Double Dispatch Pattern
+### 2 Double Dispatch Pattern
 
 由于Java,C++及C#都具有上述局限，通常我们只能通过Switch或if结构来实现，当然这种实现方式既不优雅而且影响代码的可维护性。  
 通过以下的Double Dispatch Pattern便可以优雅的实现。
@@ -228,7 +230,7 @@ evt.injectHandler(new EventHandler());
 }
 ```
 
-## [#Objective-C中实现碰撞检测用到的Visitor模式](#Objective-C中实现碰撞检测用到的Visitor模式)Objective-C中实现碰撞检测用到的Visitor模式
+## Objective-C中实现碰撞检测用到的Visitor模式
 
 虽然OC不支持函数重载，但是我们可以老老实实的用方法名来区分类似`visitXXX`的访问方法，并利用OC其独有的SEL类型可以很好的在运行时判断该调用哪个方法
 

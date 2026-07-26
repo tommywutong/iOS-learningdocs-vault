@@ -74,36 +74,10 @@ public struct List<Selection, Content> where Selection : SelectionManager, Conte
 
 这个初始化方法的约束比较多，我们一行行来看：
 
-- 因为这个函数签名中并没有出现
-
-  ，
-
-  仅只
-
-  的类型声明中有定义，所以在这与其说是一个约束，不如说是一个用来反向确定
-
-  实际类型的描述。现在让我们先将注意力放在更重要的地方，稍后会再多讲一些这个。
-- 这基本上等同于要求第一个输入参数是
-
-  。
-- 对于构建每一行的
-
-  来说，需要返回是
-
-  是很正常的事情。注意
-
-  其实也是被
-
-  标记的，因此你也可以把
-
-  的内容展开写进去。不过一般我们会更希望尽可能拆小 UI 部件，而不是把东西堆在一起。
-- 要求
-
-  (也就是数组元素的类型) 上存在一个可以辨别出某个实例的
-
-  满足 `Hashable` 的 id
-
-  。这个要求将在数据变更时快速定位到变化的数据所对应的 cell，并进行 UI 刷新。
+- `Content == ForEach<Data, Button<HStack<RowContent>>>` 因为这个函数签名中并没有出现 `Content`，`Content` 仅只 `List<Selection, Content>` 的类型声明中有定义，所以在这与其说是一个约束，不如说是一个用来反向确定 `List` 实际类型的描述。现在让我们先将注意力放在更重要的地方，稍后会再多讲一些这个。
+- `Data : RandomAccessCollection` 这基本上等同于要求第一个输入参数是 `Array`。
+- `RowContent : View` 对于构建每一行的 `rowContent` 来说，需要返回是 `View` 是很正常的事情。注意 `rowContent` 其实也是被 `@ViewBuilder` 标记的，因此你也可以把 `LandmarkRow` 的内容展开写进去。不过一般我们会更希望尽可能拆小 UI 部件，而不是把东西堆在一起。
+- `Data.Element : Identifiable` 要求 `Data.Element` (也就是数组元素的类型) 上存在一个可以辨别出某个实例的[满足 `Hashable` 的 id](https://developer.apple.com/documentation/swiftui/identifiable/3285392-id)。这个要求将在数据变更时快速定位到变化的数据所对应的 cell，并进行 UI 刷新。
 
 关于 `List` 以及其他一些常见的基础 `View`，有一个比较有趣的事实。在下面的代码中，我们期望 `List` 的初始化方法生成的是某个类型的 `View`：
 
@@ -208,12 +182,8 @@ SwiftUI 中还有几个常见的 `@` 开头的修饰，比如 `@Binding`，`@Env
 
 在 SwiftUI 中，做动画变的十分简单。Apple 的教程里提供了两种动画的方式：
 
-1. 上使用
-
-  modifier
-2. 来控制某个
-
-  ，进而触发动画。
+1. 直接在 `View` 上使用 `.animation` modifier
+2. 使用 `withAnimation { }` 来控制某个 `State`，进而触发动画。
 
 对于只需要对单个 `View` 做动画的时候，`animation(_:)` 要更方便一些，它和其他各类 modifier 并没有太大不同，返回的是一个包装了对象 `View` 和对应的动画类型的新的 `View`。`animation(_:)` 接受的参数 `Animation` 并不是直接定义 `View` 上的动画的数值内容的，它是描述的是动画所使用的时间曲线，动画的延迟等这些和 `View` 无关的东西。具体和 `View` 有关的，想要进行动画的数值方面的变更，由其他的诸如 `rotationEffect` 和 `scaleEffect` 这样的 modifier 来描述。
 

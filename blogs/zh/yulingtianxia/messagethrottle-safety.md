@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:597fadf4f9872b66'
 translated: n/a
 ---
@@ -20,14 +20,16 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-07-31
 
-1. 1. 继承链消息转发缺陷
-2. 2. 兼容 KVO、其他 Hook 框架
-3. 3. Revert Hook 的缺陷
+**文章目录**
 
-    1. 3.1. 先 Hook 父类，然后 revert，接着 Hook 子类。最后调用子类实例对象方法。
-    2. 3.2. 先 Hook 子类，然后 revert，接着 Hook 父类。最后调用子类实例对象方法。
-4. 4. 规则持久化
-5. 5. 线程安全
+1. [1. 继承链消息转发缺陷](#继承链消息转发缺陷)
+2. [2. 兼容 KVO、其他 Hook 框架](#兼容-KVO、其他-Hook-框架)
+3. [3. Revert Hook 的缺陷](#Revert-Hook-的缺陷)
+
+    1. [3.1. 先 Hook 父类，然后 revert，接着 Hook 子类。最后调用子类实例对象方法。](#先-Hook-父类，然后-revert，接着-Hook-子类。最后调用子类实例对象方法。)
+    2. [3.2. 先 Hook 子类，然后 revert，接着 Hook 父类。最后调用子类实例对象方法。](#先-Hook-子类，然后-revert，接着-Hook-父类。最后调用子类实例对象方法。)
+4. [4. 规则持久化](#规则持久化)
+5. [5. 线程安全](#线程安全)
 
 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 是我开发的Objective-C 节流限频组件，其原理基于 Hook 消息转发流程，在运行时应用了一套节流限频的规则。
 
@@ -35,15 +37,15 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 本文是关于 [MessageThrottle](https://github.com/yulingtianxia/MessageThrottle) 的第四篇文章。前三篇如下：
 
-- Objective-C Message Throttle and Debounce
-- Associated Object 与 Dealloc
-- MessageThrottle Performance Benchmark and Optimization
+- [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/)
+- [Associated Object 与 Dealloc](http://yulingtianxia.com/blog/2017/12/15/Associated-Object-and-Dealloc/)
+- [MessageThrottle Performance Benchmark and Optimization](http://yulingtianxia.com/blog/2018/05/31/MessageThrottle-Performance-Benchmark-and-Optimization/)
 
 主要类的关系如下图，虚线为 `weak` 属性。
 
 ![](http://yulingtianxia.com/resources/MessageThrottle1.png)
 
-## [#继承链消息转发缺陷](#继承链消息转发缺陷)继承链消息转发缺陷
+## 继承链消息转发缺陷
 
 由于是在消息转发流程搞事情，把所有消息都经由一个统一的路由函数 `mt_forwardInvocation` 进行处理。子类和父类不能同时 Hook 同一个方法，原因是如果子类的方法调用了父类方法，那么父类的方法调用走到统一路由函数 `mt_forwardInvocation` 的时候，『调用父类方法』这一信息早已经丢失了，接着会转发给子类的方法实现，从而造成死循环。最后 crash。
 
@@ -53,7 +55,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 ![](http://yulingtianxia.com/resources/MessageThrottle2.png)
 
-## [#兼容-KVO、其他-Hook-框架](#兼容-KVO、其他-Hook-框架)兼容 KVO、其他 Hook 框架
+## 兼容 KVO、其他 Hook 框架
 
 首先先了解下 KVO 的原理：当监听类型为 `A` 的对象 `a` 时，会动态创建 `A` 的子类 `NSKVONotifying_A`，并把 `a` 的类型改成 `NSKVONotifying_A`。`NSKVONotifying_A` 会覆写监听的属性村粗方法，以及 `class` 方法，让外部以为 `a` 的类型依然是 `A`。
 
@@ -147,13 +149,13 @@ static BOOL mt_recoverMethod(id target, SEL selector, SEL aliasSelector)
 }
 ```
 
-## [#Revert-Hook-的缺陷](#Revert-Hook-的缺陷)Revert Hook 的缺陷
+## Revert Hook 的缺陷
 
 前提：子类和父类都实现了同一个方法，并且子类的方法会调用 `super` 的方法。
 
 在 Aspects 中有两种异常场景：
 
-### [#先-Hook-父类，然后-revert，接着-Hook-子类。最后调用子类实例对象方法。](#先-Hook-父类，然后-revert，接着-Hook-子类。最后调用子类实例对象方法。)先 Hook 父类，然后 revert，接着 Hook 子类。最后调用子类实例对象方法。
+### 先 Hook 父类，然后 revert，接着 Hook 子类。最后调用子类实例对象方法。
 
 结果是只执行了父类的方法，子类的方法没执行到。
 
@@ -174,7 +176,7 @@ class_replaceMethod(cls, selector, mt_getMsgForwardIMP(statedClass, selector), t
 
 测试了下 Aspects 的表现，果然是只调用了父类的实现，这是一个很大的漏洞。
 
-### [#先-Hook-子类，然后-revert，接着-Hook-父类。最后调用子类实例对象方法。](#先-Hook-子类，然后-revert，接着-Hook-父类。最后调用子类实例对象方法。)先 Hook 子类，然后 revert，接着 Hook 父类。最后调用子类实例对象方法。
+### 先 Hook 子类，然后 revert，接着 Hook 父类。最后调用子类实例对象方法。
 
 结果是 crash。
 
@@ -189,7 +191,7 @@ MessageThrottle 解决方案是记录所有 Hook 过的类，在 Hook 其他类�
 
 这个方案虽然不完美，但总比抛异常 crash 好。连 Aspects 也没有注意到这点，亲测会 crash。
 
-## [#规则持久化](#规则持久化)规则持久化
+## 规则持久化
 
 如果限频规则只存在于内存中，那么其实是很不安全的。
 
@@ -203,7 +205,7 @@ MessageThrottle 解决方案是记录所有 Hook 过的类，在 Hook 其他类�
 
 可以使用 `savePersistentRules` 方法来保存持久化规则。对于 iOS、macOS 和 tvOS，会在收到 Terminate 通知时自动调用 `savePersistentRules` 方法。
 
-## [#线程安全](#线程安全)线程安全
+## 线程安全
 
 每个 `MTRule` 都对应着一个递归锁，保证了此规则上的方法调用是线程安全的。  
 存储所有 target-selector 映射关系的 `MTEngine` 添加和废除规则涉及到对 `NSMapTable` 和 `NSMutableSet` 的操作，使用一个互斥锁来保证 `apply`、`discard` 和 `allRules` 等方法的线程安全。当一个 `MTRule` 在多个线程被频繁 `apply` 和 `discard` 的同时也可能会有这个 `MTRule` 的方法在多个线程频繁调用，所以还需要在 `apply` 和 `discard` 方法里也加一层 `MTRule` 的递归锁。

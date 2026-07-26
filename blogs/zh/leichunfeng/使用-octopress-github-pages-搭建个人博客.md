@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-11-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a15aab77f9747be4'
 translated: n/a
 ---
@@ -34,9 +34,7 @@ Nov 11th, 2014 9:47 pm
 
 ### 准备工作
 
-1. Git
-
-  。
+1. 安装 [Git](http://git-scm.com/) 。
 2. 安装 Ruby 1.9.3 及以上版本。
 
 你可以使用 `ruby --version` 查看一下你安装的 `Ruby` 版本，如果低于 1.9.3，你可以使用 [rbenv](http://octopress.org/docs/setup/rbenv/) 或 [RVM](http://octopress.org/docs/setup/rvm/) 来安装更高版本。
@@ -149,21 +147,9 @@ rake deploy
 
 ### 优化博客的访问速度
 
-1. 文件中有关
-
-  的部分。
-2. 文件，删除
-
-  的自定义字体。
-
-  ，如果使用注释的方式会造成最终生成出来的
-
-  页面的
-
-  部分也被注释。
-3. 文件中
-
-  的链接地址。
+1. 删除或注释配置 `_config.yml` 文件中有关 `Twitter` 的部分。
+2. 修改 `source/_includes/custom/head.html` 文件，删除 `google` 的自定义字体。**注意**，如果使用注释的方式会造成最终生成出来的 `HTML` 页面的 `body` 部分也被注释。
+3. 修改 `source/_includes/head.html` 文件中 `jquery.min.js` 的链接地址。
 
 ```
 将 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -175,15 +161,13 @@ rake deploy
 
 给你的每篇博文最后添加上原文链接，这样不管是其他人转载或是分享你的博文，读者都能够根据原文链接轻松地访问到你的原始博文。要实现这个目的并不难，但是我不想因为这样而破坏了博文原本的结构和布局，还要让读者在阅读博文的时候毫无违和感，谁让我是一个偏执狂呢！我查看过不少这方面的博文，其中[《为octopress每篇文章添加一个文章信息》](http://codemacro.com/2012/07/26/post-footer-plugin-for-octopress/)还算比较接近我的需求，但还不够完美，且太复杂。于是我决定自己动手实现，结果已如你所见。
 
-- 文件，内容只有一行代码。
+- 创建 `source/_includes/post/original_link.html` 文件，内容只有一行代码。
 
 ```
 echo '<br>原文链接：<a href="http://blog.leichunfeng.com{#{page.url}#}">http://blog.leichunfeng.com{#{page.url}#}</a>' >> source/_includes/post/original_link.html
 ```
 
-- 文件，在
-
-  后面添加一行代码。
+- 修改 `source/_layouts/post.html` 文件，在 `{#% include post/categories.html %#}` 后面添加一行代码。
 
 ```
 {#% include post/categories.html %#}

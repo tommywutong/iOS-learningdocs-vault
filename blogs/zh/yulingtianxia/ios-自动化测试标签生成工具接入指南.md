@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bec89928e9d79f3f'
 translated: n/a
 ---
@@ -20,18 +20,20 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2018-08-13
 
-1. 1. 应用场景
-2. 2. 集成方式
+**文章目录**
 
-    1. 2.1. 手动拖拽文件
-    2. 2.2. CocoaPods
-    3. 2.3. Carthage
-3. 3. 使用方法
-4. 4. 注意事项
+1. [1. 应用场景](#应用场景)
+2. [2. 集成方式](#集成方式)
+
+    1. [2.1. 手动拖拽文件](#手动拖拽文件)
+    2. [2.2. CocoaPods](#CocoaPods)
+    3. [2.3. Carthage](#Carthage)
+3. [3. 使用方法](#使用方法)
+4. [4. 注意事项](#注意事项)
 
 [TBUIAutoTest](https://github.com/yulingtianxia/TBUIAutoTest) 可以帮开发人员生成UI 控件的标签，便于自动化测试。只需一行代码或一个配置，几乎所有的 iOS Native UI 都会在运行时生成一个页面内唯一且不变的标签。不仅节省了开发人员手动为每个 UI 控件加标签的时间，也节省了测试人员与开发人员的沟通成本。
 
-## [#应用场景](#应用场景)应用场景
+## 应用场景
 
 目前已经有 QQ、今日头条、兴趣部落、NOW直播等几十款 App 接入 [TBUIAutoTest](https://github.com/yulingtianxia/TBUIAutoTest)。阿里系自动化测试开源框架 [Macaca](https://github.com/macacajs/iosHookViewId) 也在使用此方案，服务阿里多款 App。
 
@@ -51,9 +53,9 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 实现的思路和原理：[为 UIAutomation 添加自动化测试标签的探索](http://yulingtianxia.com/blog/2016/03/28/Add-UITest-Label-for-UIAutomation/)
 
-## [#集成方式](#集成方式)集成方式
+## 集成方式
 
-### [#手动拖拽文件](#手动拖拽文件)手动拖拽文件
+### 手动拖拽文件
 
 将 TBUIAutoTest 文件夹内的所有文件加入到工程中即可。
 
@@ -68,7 +70,7 @@ UIView+TBUIAutoTest.h
 UIView+TBUIAutoTest.m
 ```
 
-### [#CocoaPods](#CocoaPods)CocoaPods
+### CocoaPods
 
 首先要安装 CocoaPods：
 
@@ -93,7 +95,7 @@ end
 pod install
 ```
 
-### [#Carthage](#Carthage)Carthage
+### Carthage
 
 首先要通过 homebrew 安装 Carthage:
 
@@ -110,10 +112,10 @@ github "yulingtianxia/TBUIAutoTest"
 
 运行 `carthage update` 命令来获取 `TBUIAutoTest.framework`，将其拖拽到工程中使用即可。
 
-## [#使用方法](#使用方法)使用方法
+## 使用方法
 
-- ：是否生成 UI 标签
-- ：是否开启长按弹窗显示 UI 标签
+- `kAutoTestUITurnOnKey` ：是否生成 UI 标签
+- `kAutoTestUILongPressKey` ：是否开启长按弹窗显示 UI 标签
 
 [TBUIAutoTest](https://github.com/yulingtianxia/TBUIAutoTest) 会在 `+ load` 方法中从 `NSUserDefaults` 中读取 `kAutoTestUITurnOnKey` 和 `kAutoTestUILongPressKey` 的值。所以在设置这两个 Key 之后，一般需要下次启动 App 才生效。这里推荐拉一条自动化测试专用分支，通过宏控制在 App 启动更早的时机设置这两个 Key。
 
@@ -124,7 +126,7 @@ extern NSString * const kAutoTestUILongPressKey;
 [NSUserDefaults.standardUserDefaults setBool:YES forKey:kAutoTestUILongPressKey];
 ```
 
-## [#注意事项](#注意事项)注意事项
+## 注意事项
 
 系统一些自带的 UI 控件的 `isAccessibilityElement` 属性默认是 `YES`，但是如果想让自定义的 UI 控件能够被捕获，需要手动将其设为 `YES`。除此之外还有一些容器控件之间的嵌套场景，需要在容器类中实现 `UIAccessibilityContainer`，这样才能捕获到容器控件内的子视图。最简单的一种实现如下：
 

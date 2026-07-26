@@ -7,7 +7,7 @@ original_language: zh
 published: 2014-08-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:76d653cd4d5c273f'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2014年8月2日
 
-## [#我是前言](#我是前言)我是前言
+## 我是前言
 
 看开源代码时，总会看到一些大神级别的代码，给人眼前一亮的感觉，多数都是被淡忘的C语言语法，总结下objc写码中遇到的各类`非主流`代码技巧和一些妙用：
 
@@ -36,7 +36,7 @@ translated: n/a
 
 ---
 
-## [#娱乐向-objc最短的方法声明](#娱乐向-objc最短的方法声明)[娱乐向]objc最短的方法声明
+## [娱乐向]objc最短的方法声明
 
 先来个娱乐向的。  
 方法声明时有一下几个trick：
@@ -76,7 +76,7 @@ _PS: 方法名都没的方法只能靠`performSelector`来调用了，`selector`
 
 ---
 
-## [#C-结构体的初始化](#C-结构体的初始化)[C]结构体的初始化
+## [C]结构体的初始化
 
 ```objc
 // 不加(CGRect)强转也不会warning
@@ -85,7 +85,7 @@ CGRect rect2 = {.origin.x=5, .size={10, 10}}; // {5, 0, 10, 10}
 CGRect rect3 = {1, 2}; // {1, 2, 0, 0}
 ```
 
-## [#C-三元条件表达式的两元使用](#C-三元条件表达式的两元使用)[C]三元条件表达式的两元使用
+## [C]三元条件表达式的两元使用
 
 三元条件表达式`?:`是C中唯一一个三目运算符，用来替代简单的`if-else`语句，同时也是可以**两元**使用的：
 
@@ -113,7 +113,7 @@ if (block1) {
 int result = !block1 ?: block1(1, 2);
 ```
 
-## [#C-数组的下标初始化](#C-数组的下标初始化)[C]数组的下标初始化
+## [C]数组的下标初始化
 
 ```objc
 const int numbers[] = {
@@ -140,7 +140,7 @@ const NSString *XXTypeNameMapping[] = {
 
 ---
 
-## [#objc-可变参数类型的block](#objc-可变参数类型的block)[objc]可变参数类型的block
+## [objc]可变参数类型的block
 
 一个block像下面一样声明：
 
@@ -191,7 +191,7 @@ block(@1); // block3的第一个参数为@1，第二个为nil
 + (RACSignal *)combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)())reduceBlock;
 ```
 
-## [#objc-readonly属性支持扩展的写法](#objc-readonly属性支持扩展的写法)[objc]readonly属性支持扩展的写法
+## [objc]readonly属性支持扩展的写法
 
 假如一个类有一个`readonly`属性：
 
@@ -203,8 +203,8 @@ block(@1); // block3的第一个参数为@1，第二个为nil
 
 `.m`中可以使用`_friends`来使用自动合成的这个变量，但假如：
 
-- 来set实例变量时（只合成了getter）
-- ）
+- 习惯使用`self.`来set实例变量时（只合成了getter）
+- 希望重写getter进行懒加载时（重写getter时则不会生成下划线的变量，除非手动`@synthesize`）
 - 允许子类重载这个属性来修改它时（编译报错属性修饰符不匹配）
 
 这种`readonly`声明方法就行不通了，所以下面的写法更有通用性：
@@ -227,7 +227,7 @@ block(@1); // block3的第一个参数为@1，第二个为nil
 
 ---
 
-## [#C-小括号内联复合表达式](#C-小括号内联复合表达式)[C]小括号内联复合表达式
+## [C]小括号内联复合表达式
 
 `A compound statement enclosed in parentheses`原谅我的渣翻译- -，来自[《gcc官方对此的说明》](https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html)，源自gcc对c的扩展，如今被clang继承。
 
@@ -265,7 +265,7 @@ self.result = ({
 
 _PS: 返回值和代码块结束点必须在结尾_
 
-## [#娱乐向-奇葩的C函数写法](#娱乐向-奇葩的C函数写法)[娱乐向]奇葩的C函数写法
+## [娱乐向]奇葩的C函数写法
 
 正常编译执行：
 
@@ -277,7 +277,7 @@ int a
 }
 ```
 
-## [#Macro-预处理时计算可变参数个数](#Macro-预处理时计算可变参数个数)[Macro]预处理时计算可变参数个数
+## [Macro]预处理时计算可变参数个数
 
 ```c
 #define COUNT_PARMS2(_a1, _a2, _a3, _a4, _a5, RESULT, ...) RESULT
@@ -285,7 +285,7 @@ int a
 int count = COUNT_PARMS(1,2,3); // 预处理时count==3
 ```
 
-## [#Macro-预处理断言](#Macro-预处理断言)[Macro]预处理断言
+## [Macro]预处理断言
 
 下面的断言在编译前就生效
 
@@ -305,7 +305,7 @@ C_ASSERT(COUNT_PARMS(1,2,3) == 2);
 
 如果断言失败，相当于`switch-case`中出现了两个`case:0`，则编译报错。
 
-## [#多重-带自动提示的keypath宏](#多重-带自动提示的keypath宏)[多重]带自动提示的keypath宏
+## [多重]带自动提示的keypath宏
 
 源自`Reactive Cocoa`中的宏：
 
@@ -317,7 +317,7 @@ C_ASSERT(COUNT_PARMS(1,2,3) == 2);
 原来写过一篇[《介绍RAC宏的文章》](http://blog.sunnyxx.com/2014/03/06/rac_1_macros/)中曾经写过。这个宏在写PATH参数的同时是带自动提示的：  
 ![](http://images.cnitblog.com/blog/401798/201402/112147518936541.png)
 
-### [#逗号表达式](#逗号表达式)逗号表达式
+### 逗号表达式
 
 逗号表达式取后值，但前值的表达式参与运算，可用void忽略编译器警告
 
@@ -327,7 +327,7 @@ int a = ((void)(1+2), 2); // a == 2
 
 于是上面的keypath宏的输出结果是`#PATH`也就是一个c字符串
 
-### [#逻辑最短路径](#逻辑最短路径)逻辑最短路径
+### 逻辑最短路径
 
 之前的文章没有弄清上面宏中`NO&&NO`的含义，其实这用到了编译器优化的特性：
 
@@ -341,6 +341,6 @@ if (NO && [self shouldDo]/*不执行*/) {
 
 ---
 
-# [#References](#References)References
+# References
 
 [https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html](https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html)

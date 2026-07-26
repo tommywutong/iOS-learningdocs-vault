@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-28
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:729926397c47da0f'
 translated: n/a
 ---
@@ -20,11 +20,13 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2019-10-27
 
-1. 1. 问题背景
-2. 2. 分析问题
-3. 3. 解决问题
-4. 4. 使用方法
-5. 5. 后续
+**文章目录**
+
+1. [1. 问题背景](#问题背景)
+2. [2. 分析问题](#分析问题)
+3. [3. 解决问题](#解决问题)
+4. [4. 使用方法](#使用方法)
+5. [5. 后续](#后续)
 
 这篇文章不是讲 Flutter Channel 入门的，可能让你失望了。不过继续往下读可能也会有点收获。
 
@@ -32,7 +34,7 @@ Flutter 提升了客户端开发的效率，但在跟 Native 代码配合开发�
 
 尚在开发中，开源地址：[https://github.com/yulingtianxia/dart_objc](https://github.com/yulingtianxia/dart_objc)
 
-## [#问题背景](#问题背景)问题背景
+## 问题背景
 
 先说说为什么会有开发效率的问题。Flutter 的跨平台多适用于 UI 等上层需求，本来是可以提升开发效率的。但是诸如 LBS、系统和设备信息、获取相册等常用功能都需要两端去写很多 Native 代码。**最终原本的『两端开发』最后成了『三端开发』**。很少会有完全用 Flutter 开发的 App，原因如下：
 
@@ -46,7 +48,7 @@ Flutter 提升了客户端开发的效率，但在跟 Native 代码配合开发�
 3. Flutter 需要通过编写 channel 代码来与 Native 层交互，需要两端开发时统一数据传输协议。不仅 channel 调用性能较差，Model 数据在 Native 与 Flutter 之间传递过程的序列化和反序列化也降低性能。
 4. 通过 channel 在 Flutter 和 Native 之间调用时只支持异步回调
 
-## [#分析问题](#分析问题)分析问题
+## 分析问题
 
 既然无法避免调用 Native 的 API，那么就要面对这个事实。下一步是如何能让调用 Native API 的这个过程效率更高。具体体现如下：
 
@@ -58,7 +60,7 @@ Flutter 提升了客户端开发的效率，但在跟 Native 代码配合开发�
 1. 将 Native API 封装成对应的 Dart 语言，解决一系列语言之间的类型转换和语法兼容问题
 2. 通过一个更高效的方式来调用 Native API，这里使用 dart:ffi 调用 C 函数，再通过 Runtime 机制调用 Native
 
-## [#解决问题](#解决问题)解决问题
+## 解决问题
 
 提供一个 Flutter 库来提供 Dart 语言的 API，通过 dart:ffi 作为 Flutter 与 Native 之间的桥。对比 Dart 与 Native 的语法特性，对一些类型进行内存级别的底层转换。
 
@@ -66,7 +68,7 @@ Flutter 提升了客户端开发的效率，但在跟 Native 代码配合开发�
 
 由于 [dart_native](https://pub.dev/packages/dart_native) 组件还在基于 dev 版本的 Dart 开发，可能后续还会有比较大的变动，甚至是 API 的变化。所以没有过多展开讲实现细节，感兴趣可以去自己看代码：[https://github.com/yulingtianxia/dart_objc](https://github.com/yulingtianxia/dart_objc)
 
-## [#使用方法](#使用方法)使用方法
+## 使用方法
 
 假如你写了个 Objective-C 的类叫 `RuntimeStub`，并实现了个 `fooBlock:` 方法，参数和返回值都是个 block 对象。
 
@@ -117,7 +119,7 @@ class RuntimeStub extends NSObject {
 }
 ```
 
-## [#后续](#后续)后续
+## 后续
 
 目前的 Cocoa API 封装打算参考 Swift 版本的文档，毕竟 Dart 有些语法跟 Swift 还有点像。
 

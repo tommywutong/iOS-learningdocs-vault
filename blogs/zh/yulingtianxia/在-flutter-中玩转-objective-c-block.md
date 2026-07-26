@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-09-28
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5b4c0d24cbba675f'
 translated: n/a
 ---
@@ -20,17 +20,19 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2020-03-28
 
-1. 1. Dart 调用 Objective-C 带 Block 的 API
+**文章目录**
 
-    1. 1.1. 函数签名
-    2. 1.2. 动态创建 Block
-    3. 1.3. 映射 Block 和 Dart Function
-2. 2. Dart 调用 Objective-C 返回的 Block
-3. 3. 后续
+1. [1. Dart 调用 Objective-C 带 Block 的 API](#Dart-调用-Objective-C-带-Block-的-API)
+
+    1. [1.1. 函数签名](#函数签名)
+    2. [1.2. 动态创建 Block](#动态创建-Block)
+    3. [1.3. 映射 Block 和 Dart Function](#映射-Block-和-Dart-Function)
+2. [2. Dart 调用 Objective-C 返回的 Block](#Dart-调用-Objective-C-返回的-Block)
+3. [3. 后续](#后续)
 
 [dart_native](https://github.com/dart-native/dart_native) 作为一条比 Channel 性能更高开发成本更低的超级通道，通过 C++ 调用 Native 的 API，深入底层且考虑全面。很多 Objective-C 接口的参数和返回值是 Block，所以这就需要支持用 Dart 语言创建和调用 Objective-C Block。
 
-## [#Dart-调用-Objective-C-带-Block-的-API](#Dart-调用-Objective-C-带-Block-的-API)Dart 调用 Objective-C 带 Block 的 API
+## Dart 调用 Objective-C 带 Block 的 API
 
 Dart 语言支持协程，这样就无需传递闭包来作为异步调用的回调。而 Objective-C 大量 API 都使用 Block 作为回调，当 Dart 调用这类异步 API 的时候，就需要 Dart 侧创建 Block 并传递给 Objective-C。
 
@@ -52,7 +54,7 @@ typedef NSObject *(^BarBlock)(NSObject *a);
 
 下面就讲下 [dart_native](https://github.com/dart-native/dart_native) 是如何做到把 Dart Function 当做 Block 传给 Objective-C 的。
 
-### [#函数签名](#函数签名)函数签名
+### 函数签名
 
 首先要确保的是 Dart Function 的签名跟 Objective-C Block 是一致的，这样二者才能转换。在 Dart 里一切皆为对象，Function 也不例外。那么拿到 Function 的 `runtimeType` 即可，然后解析其内容。不过 `runtimeType` 的内容都是 Dart 类名，如何能与 Objective-C 类型对应上呢？[dart_native](https://github.com/dart-native/dart_native) 的策略是提供与 Native 同名的类，这样使用这些同名类定义 Dart Function，就可以把函数签名映射到 Native 上了。
 
@@ -75,7 +77,7 @@ class CGFloat = NativeBox<double> with _ToAlias;
 class CString = NativeBox<String> with _ToAlias;
 ```
 
-### [#动态创建-Block](#动态创建-Block)动态创建 Block
+### 动态创建 Block
 
 有了函数签名，如何构造对应的 Block 对象呢？首先要知道 Block 是什么，而这是就又个老生常谈的话题了。我十分建议你先了解下 [BlockHook](https://github.com/yulingtianxia/BlockHook) 及其相关文章，这样会对理解这部分内容有很大帮助。
 
@@ -139,21 +141,13 @@ class CString = NativeBox<String> with _ToAlias;
 简单来说，动态创建 Block 的流程封装在了一个 Wrapper 类中，步骤如下：
 
 1. 用 libffi 动态创建相同签名的函数，
-2. 、
-
-  、
-
-  和
-
-  对象等
+2. 准备好创建 Block 需要的 `flag`、`description`、`signature` 和 `wrapper` 对象等
 3. 根据 Block 的内存模型创建对应的结构体（栈上）
-4. 到堆上，并发送
-
-  消息
+4. 把 Block 对象 `copy` 到堆上，并发送 `autorelease` 消息
 
 这上面每一步其实都不简单，单独拆出来都能写一段。但因为 [bang 大佬已经写过文章](http://blog.cnbang.net/tech/3332/)介绍过了，我这里就不再赘述了。我只是站在巨人的肩膀上，增加了一些改进和对 Dart 的适配（如支持结构体、`x86` 兼容等）。很惭愧，就做了一点微小的工作。
 
-### [#映射-Block-和-Dart-Function](#映射-Block-和-Dart-Function)映射 Block 和 Dart Function
+### 映射 Block 和 Dart Function
 
 Block 对象创建好了，需要跟 Dart Function 映射起来，然后当 Block 被执行的时候才会调用到对应的 Dart 逻辑。
 
@@ -189,7 +183,7 @@ dealloc() {
 }
 ```
 
-## [#Dart-调用-Objective-C-返回的-Block](#Dart-调用-Objective-C-返回的-Block)Dart 调用 Objective-C 返回的 Block
+## Dart 调用 Objective-C 返回的 Block
 
 结合对 Block 的理解以及实践过 Dart 调用 OC 方法的经验，很容易在 Dart 版的 `Block` 中实现个 `invoke` 方法：
 
@@ -237,11 +231,11 @@ dynamic invoke([List args]) {
 1. 获取 Block 的函数签名
 2. 校验 Dart 测传入的参数列表是否符合函数签名
 3. 将 Dart 参数转为 Native 对应的类型，写入堆中
-4. ，将 Block 指针和参数列表二级指针传过去
+4. 调用 C 函数 `blockInvoke`，将 Block 指针和参数列表二级指针传过去
 5. 释放二级指针（其指向的对象类型和堆上的结构体会自动释放）
-6. 返回的指针内容转为 Dart 对象
+6. 将 `blockInvoke` 返回的指针内容转为 Dart 对象
 
-## [#后续](#后续)后续
+## 后续
 
 关于 Block 这块其实还有很多技术细节没有叙述完整，包括 `copy` 方法的实现，回调映射的细节，类型自动转换的细节等。因为篇幅原因，感兴趣的可以直接看源码：[https://github.com/dart-native/dart_native](https://github.com/dart-native/dart_native)
 

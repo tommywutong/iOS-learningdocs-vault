@@ -102,25 +102,9 @@ extension Chat: Observation.Observable {
 
 `@Observable` 宏主要完成以下三件事情：
 
-1. ，
-
-  也是一个宏，它会进一步展开，并将原来的存储属性转换为计算属性。同时，对于每个被转换的存储属性，
-
-  宏会为其添加一个带有下划线的新的存储属性。
-2. 相关的内容，包括一个
-
-  实例，以及
-
-  和
-
-  两个辅助方法。这两个方法接受
-
-  的
-
-  ，并将这些信息转发给 registrar 的相关方法。
-3. 遵循
-
-  协议。该协议现在没有任何要求的方法，它只作为编译辅助。
+1. 为所有的存储属性添加 `@ObservationTracked`，`@ObservationTracked` 也是一个宏，它会进一步展开，并将原来的存储属性转换为计算属性。同时，对于每个被转换的存储属性，`@Observable` 宏会为其添加一个带有下划线的新的存储属性。
+2. 添加与 `ObservationRegistrar` 相关的内容，包括一个 `_$observationRegistrar` 实例，以及 `access` 和 `withMutation` 两个辅助方法。这两个方法接受 `Chat` 的 `KeyPath`，并将这些信息转发给 registrar 的相关方法。
+3. 使 `Chat` 遵循 `Observation.Observable` 协议。该协议现在没有任何要求的方法，它只作为编译辅助。
 
 `@ObservationTracked` 宏还可以进一步展开。以 `message` 为例，它的展开结果如下：
 
@@ -144,28 +128,8 @@ var message: String
 }
 ```
 
-1. 是 Swift 5.9 中专门添加的新特性，称为
-
-  Init Accessors
-
-  ，它为计算属性添加 getter 和 setter 以外的第三种访问方式，
-
-  。由于宏无法改写已有的
-
-  初始化方法的实现，因此它为
-
-  提供了一种访问计算属性的途径，允许我们在初始化方法中调用计算属性的这个 init 声明，来为新生成的背后的存储属性
-
-  进行初始化。
-2. 将
-
-  转换为计算属性，并为其添加了 getter 和 setter。通过调用前面提到的
-
-  和
-
-  方法，
-
-  将属性的读取和写入与 registrar 关联在一起，实现了对属性的监测和追踪。
+1. `init(initialValue)` 是 Swift 5.9 中专门添加的新特性，称为 [Init Accessors](https://github.com/apple/swift-evolution/blob/main/proposals/0400-init-accessors.md)，它为计算属性添加 getter 和 setter 以外的第三种访问方式，`init`。由于宏无法改写已有的 `Chat` 初始化方法的实现，因此它为 `Chat.init` 提供了一种访问计算属性的途径，允许我们在初始化方法中调用计算属性的这个 init 声明，来为新生成的背后的存储属性 `_message` 进行初始化。
+2. `@ObservationTracked` 将 `message` 转换为计算属性，并为其添加了 getter 和 setter。通过调用前面提到的 `access` 和 `withMutation` 方法，`@ObservationTracked` 将属性的读取和写入与 registrar 关联在一起，实现了对属性的监测和追踪。
 
 由此，关于 Observation 框架在 SwiftUI 中的运作机制，我们可以得到如下大致图景：在 `View` 的 `body` 中，通过 getter 访问实例上的属性时，Observation Registrar 会记录这次访问，并为当前 `View` 注册一个能够刷新自身的方法；而当通过 setter 修改属性的值时，Registrar 会从记录中找到对应的刷新方法并执行，进而触发 View 的重新求值和刷新。
 
@@ -217,27 +181,9 @@ chat.alreadyRead = false
 
 上面的示例中，有几点值得注意：
 
-1. 中，我们只访问了
-
-  属性，因此在设置
-
-  时，
-
-  并没有被触发。这个属性并没有被添加到访问追踪里。
-2. 时，
-
-  被调用。不过这时所获取的
-
-  依然是
-
-  。
-
-  将在属性的
-
-  时发生。也就是说，在这个闭包中，我们无法获取到新值。
-3. 的值，不会再次触发
-
-  。相关的观察在第一次触发时都被移除了。
+1. 由于在 `apply` 中，我们只访问了 `alreadyRead` 属性，因此在设置 `chat.message` 时，`onChange` 并没有被触发。这个属性并没有被添加到访问追踪里。
+2. 当我们设置 `chat.alreadyRead = true` 时，`onChange` 被调用。不过这时所获取的 `alreadyRead` 依然是 `false`。`onChange` 将在属性的 `willSet` 时发生。也就是说，在这个闭包中，我们无法获取到新值。
+3. 再次改变 `alreadyRead` 的值，不会再次触发 `onChange`。相关的观察在第一次触发时都被移除了。
 
 `withObservationTracking` 扮演了重要的桥梁角色，在 SwiftUI 的 `View.body` 对 model 属性的观察中，它把两者联系了起来。
 
@@ -309,10 +255,8 @@ struct ObservationRegistrar {
 
 Observation 框架当前的实现选择了在值 `willSet` 的时候对所有被观察的变更以“仅调用一次”的方式调用 `onChange`。这让我们产生联想，Observation 是否可以做到以下事情：
 
-1. 时，而非
-
-  时进行调用。
-2. 属性发生变化时都进行调用。
+1. 在 `didSet` 时，而非 `willSet` 时进行调用。
+2. 保持观察者的状态，在每次 `Observable` 属性发生变化时都进行调用。
 
 在当前实现中，追踪观察所使用的 `Id` 具有如下定义：
 
@@ -516,19 +460,15 @@ struct PersonAgeView: View {
 
 ## 总结
 
-1. 宏将会是 SwiftUI 进行状态管理的最佳方式。它们不仅提供了简洁的语法，也带来了性能的提升。
-2. 观察。不过，由于目前 Observation 框架所暴露的选项有限，它的使用场景主要集中在 SwiftUI 内部，在 SwiftUI 之外的使用场景相对较少。
-3. ，但
-
-  和
-
-  的支持已经实现，仅仅只是没有将接口暴露出来。所以未来某一天 Observation 支持其他属性设置时机的观察，并不足为奇。
+1. 从 iOS 17 开始，使用 Observation 框架和 `@Observable` 宏将会是 SwiftUI 进行状态管理的最佳方式。它们不仅提供了简洁的语法，也带来了性能的提升。
+2. Observation 框架可以单独使用，通过宏来改写属性的 setter 和 getter，并使用一个 access tracking list 完成单次的 `willSet` 观察。不过，由于目前 Observation 框架所暴露的选项有限，它的使用场景主要集中在 SwiftUI 内部，在 SwiftUI 之外的使用场景相对较少。
+3. 虽然当前只支持 `willSet`，但 `didSet` 和 `full` 的支持已经实现，仅仅只是没有将接口暴露出来。所以未来某一天 Observation 支持其他属性设置时机的观察，并不足为奇。
 4. 将 Observation 框架 back port 到早期版本并不存在技术上的困难，但是由于开发者难以提供透明的 SwiftUI wrapper，这使得将其应用于旧版本的 SwiftUI 有一定挑战。同时，考虑到 SwiftUI 是该框架的主要用户，并且与系统版本绑定，因此 Observation 框架也被设计为与系统版本绑定的特性。
 5. 使用新的框架写法会带来新的性能优化实践，深入理解 Observation 的原理将有助于我们编写性能更加优秀的 SwiftUI app。
 
 ### 参考链接
 
-- WWDC 23 - Discover Observation in SwiftUI
-- Observation 官方文档
-- Swift 标准库中的 Observation 源码
-- Observation 前向兼容，概念验证
+- [WWDC 23 - Discover Observation in SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10149/)
+- [Observation 官方文档](https://developer.apple.com/documentation/observation)
+- [Swift 标准库中的 Observation 源码](https://github.com/apple/swift/tree/main/stdlib/public/Observation)
+- [Observation 前向兼容，概念验证](https://github.com/onevcat/ObservationBP)

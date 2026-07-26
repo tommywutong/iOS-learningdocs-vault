@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6adacc4407e99b05'
 translated: n/a
 ---
@@ -20,13 +20,13 @@ translated: n/a
 
 这是**重识 Objective-C Runtime**系列文章的其中一篇：
 
-- 重识 Objective-C Runtime - Smalltalk 与 C 的融合
-- 重识 Objective-C Runtime - 看透 Type 与 Value
+- [重识 Objective-C Runtime - Smalltalk 与 C 的融合](http://blog.sunnyxx.com/2016/08/13/reunderstanding-runtime-0/)
+- [重识 Objective-C Runtime - 看透 Type 与 Value](http://blog.sunnyxx.com/2016/08/13/reunderstanding-runtime-1/)
 - 重识 Objective-C Runtime - 何为对象何为类
 - 重识 Objective-C Runtime - Calling Conventions
 - 重识 Objective-C Runtime - 能写完上面的就不错了
 
-## [#看透-Type-与-Value](#看透-Type-与-Value)看透 Type 与 Value
+## 看透 Type 与 Value
 
 对于 C 语言来说，Type 就个比较虚幻的东西，它唯一的目的便是**让编译器知道一段数据的长度，来决定如何存取**，举个例子：
 
@@ -62,7 +62,7 @@ movb %cl, -5(%rbp)
 
 1. 相应长度的指令 (是 movq、movl 还是 movb ?)
 2. 寄存器长度的选用（是 rax、eax 还是 al ?）
-3. 的指令将 sp 向低地址移动）
+3. 栈变量内存大小的确定，也可以说是 sp 的位置（ sp 表示 Stack Pointer， 它和 Base Pointer 配合管理栈内存的分配与回收，所谓“分配”栈内存只是用如 `subq $32, %rsp` 的指令将 sp 向低地址移动）
 
 然而，对于动态语言，Type 不仅在编译期起到上述作用，**还需要保留到运行时，让动态调用得以实现**，被称作 `Type Encodings`，对于 Objective-C 所有 Type 的编码，都可以在[这个官方文档](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html)中查到，里面的编码和用 `@encode()` 生成的一致，比如：
 
@@ -100,18 +100,18 @@ class Sark {
 
 既然 Swift 已经把类型信息带入到了 Runtime，那么理论上就可以对它进行动态的调用，[https://github.com/sunnyxx/PatchSwiftDemo](https://github.com/sunnyxx/PatchSwiftDemo)
 
-## [#ABI](#ABI)ABI
+## ABI
 
-## [#Tagged-Pointer](#Tagged-Pointer)Tagged Pointer
+## Tagged Pointer
 
 值类型对象  
 po 12071766408378668855
 
-# [#Function](#Function)Function
+# Function
 
-## [#Name-Mangling](#Name-Mangling)Name Mangling
+## Name Mangling
 
-# [#Message](#Message)Message
+# Message
 
 class 可以作为 UITableViewDataSource 么
 
@@ -121,7 +121,7 @@ type-\> function name + arg type + ret type
 name mangling  
 function name -\> c (dlsym) swift -\> github objc -\> SEL
 
-# [#References](#References)References
+# References
 
 [https://zh.wikipedia.org/wiki/Objective-C](https://zh.wikipedia.org/wiki/Objective-C)  
 [http://web.cecs.pdx.edu/~harry/musings/SmalltalkOverview.html](http://web.cecs.pdx.edu/~harry/musings/SmalltalkOverview.html)

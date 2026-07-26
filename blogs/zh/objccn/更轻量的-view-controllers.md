@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:37e4c21cb2724139'
 translated: n/a
 ---
@@ -187,12 +187,12 @@ self.tableView.dataSource = photosArrayDataSource;
 
 ### 扩展阅读
 
-- View Controller Programming Guide for iOS
-- Cocoa Core Competencies: Controller Object
-- Writing high quality view controllers
-- Stack Overflow: Model View Controller Store
-- Unburdened View Controllers
-- Stack Overflow: How to avoid big and clumsy `UITableViewControllers` on iOS
+- [View Controller Programming Guide for iOS](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/)
+- [Cocoa Core Competencies: Controller Object](http://developer.apple.com/library/mac/#documentation/General/Conceptual/DevPedia-CocoaCore/ControllerObject.html)
+- [Writing high quality view controllers](http://subjective-objective-c.blogspot.de/2011/08/writing-high-quality-view-controller.html)
+- [Stack Overflow: Model View Controller Store](http://programmers.stackexchange.com/questions/184396/mvcs-model-view-controller-store)
+- [Unburdened View Controllers](https://speakerdeck.com/trianglecocoa/unburdened-viewcontrollers-by-jay-thrash)
+- [Stack Overflow: How to avoid big and clumsy `UITableViewControllers` on iOS](http://programmers.stackexchange.com/questions/177668/how-to-avoid-big-and-clumsy-uitableviewcontroller-on-ios)
 
 ---
 

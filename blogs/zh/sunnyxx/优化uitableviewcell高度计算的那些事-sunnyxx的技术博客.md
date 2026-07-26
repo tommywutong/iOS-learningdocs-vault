@@ -7,7 +7,7 @@ original_language: zh
 published: 2015-05-17
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5824b48916e5e71b'
 translated: n/a
 ---
@@ -18,7 +18,7 @@ translated: n/a
 
 2015年5月17日
 
-# [#我是前言](#我是前言)我是前言
+# 我是前言
 
 这篇文章是我和我们团队最近对 **UITableViewCell** 利用 **AutoLayout** 自动高度计算和 **UITableView** 滑动优化的一个总结。  
 我们也在维护一个开源的扩展，`UITableView+FDTemplateLayoutCell`，让高度计算这个事情变的前所未有的简单，也受到了很多星星的支持，[github链接请戳我](https://github.com/forkingdog/UITableView-FDTemplateLayoutCell)
@@ -33,9 +33,9 @@ translated: n/a
 
 ---
 
-# [#UITableViewCell高度计算](#UITableViewCell高度计算)UITableViewCell高度计算
+# UITableViewCell高度计算
 
-## [#rowHeight](#rowHeight)rowHeight
+## rowHeight
 
 `UITableView`是我们再熟悉不过的视图了，它的 **delegate** 和 **data source** 回调不知写了多少次，也不免遇到 UITableViewCell 高度计算的事。UITableView 询问 cell 高度有两种方式。  
 一种是针对所有 Cell 具有固定高度的情况，通过：
@@ -56,7 +56,7 @@ self.tableView.rowHeight = 88;
 
 需要注意的是，实现了这个方法后，`rowHeight` 的设置将无效。所以，这个方法适用于具有多种 cell 高度的 UITableView。
 
-## [#estimatedRowHeight](#estimatedRowHeight)estimatedRowHeight
+## estimatedRowHeight
 
 这个属性 iOS7 就出现了， 文档是这么描述它的作用的：
 
@@ -82,7 +82,7 @@ self.tableView.estimatedRowHeight = 88;
 
 ---
 
-# [#iOS8-self-sizing-cell](#iOS8-self-sizing-cell)iOS8 self-sizing cell
+# iOS8 self-sizing cell
 
 具有动态高度内容的 cell 一直是个头疼的问题，比如聊天气泡的 cell， frame 布局时代通常是用数据内容反算高度：
 
@@ -125,7 +125,7 @@ PS：iOS8 系统中 rowHeight 的默认值已经设置成了 UITableViewAutomati
 
 ---
 
-# [#iOS8抽风的算高机制](#iOS8抽风的算高机制)iOS8抽风的算高机制
+# iOS8抽风的算高机制
 
 相同的代码在 iOS7 和 iOS8 上滑动顺畅程度完全不同，iOS8 莫名奇妙的卡。很大一部分原因是 iOS8 上的算高机制大不相同，这是我做的小测试：
 
@@ -134,7 +134,7 @@ PS：iOS8 系统中 rowHeight 的默认值已经设置成了 UITableViewAutomati
 研究后发现这么多次额外计算有下面的原因：
 
 1. 不开启高度估算时，UITableView 上来就要对所有 cell 调用算高来确定 contentSize
-2. 相比不带 “forIndexPath” 的版本会多调用一次高度计算
+2. `dequeueReusableCellWithIdentifier:forIndexPath:` 相比不带 “forIndexPath” 的版本会多调用一次高度计算
 3. iOS7 计算高度后有”缓存“机制，不会重复计算；而 iOS8 不论何时都会重新计算 cell 高度
 
 iOS8 把高度计算搞成这个样子，从 WWDC 也倒是能找到点解释，cell 被认为随时都可能改变高度（如从设置中调整动态字体大小），所以每次滑动出来后都要重新计算高度。
@@ -143,7 +143,7 @@ iOS8 把高度计算搞成这个样子，从 WWDC 也倒是能找到点解释，
 
 ---
 
-# [#UITableView-FDTemplateLayoutCell](#UITableView-FDTemplateLayoutCell)UITableView+FDTemplateLayoutCell
+# UITableView+FDTemplateLayoutCell
 
 使用 `UITableView+FDTemplateLayoutCell` 无疑是解决算高问题的最佳实践之一，既有 iOS8 self-sizing 功能简单的 API，又可以达到 iOS7 流畅的滑动效果，还保持了最低支持 iOS6。  
 使用起来大概是这样：
@@ -160,23 +160,16 @@ iOS8 把高度计算搞成这个样子，从 WWDC 也倒是能找到点解释，
 
 写完上面的代码后，你就已经使用到了：
 
-- 这个 cell 只为了参加高度计算，不会真的显示到屏幕上；它通过 UITableView 的
-
-  方法 lazy 创建并保存，所以要求这个 ReuseID 必须已经被注册到了 UITableView 中，也就是说，要么是 Storyboard 中的原型 cell，要么就是使用了 UITableView 的
-
-  或
-
-  其中之一的注册方法。
-- 使用了系统在 iOS6 就提供的 API：
-- 计算出的高度会自动进行缓存，所以滑动时每个 cell 真正的高度计算只会发生一次，后面的高度询问都会命中缓存，减少了非常可观的多余计算。
-- 无须担心你数据源的变化引起的缓存失效，当调用如
-
-  ，
-
-  等任何一个触发 UITableView 刷新机制的方法时，已有的高度缓存将以
-
-  执行失效。如删除一个 indexPath 为 [0:5] 的 cell 时，[0:0] ~ [0:4] 的高度缓存不受影响，而 [0:5] 后面所有的缓存值都向前移动一个位置。自动缓存失效机制对 UITableView 的 9 个公有 API 都进行了分别的处理，以保证没有一次多余的高度计算。
-- 预缓存机制将在 UITableView 没有滑动的空闲时刻执行，计算和缓存那些还没有显示到屏幕中的 cell，整个缓存过程完全没有感知，这使得完整列表的高度计算既没有发生在加载时，又没有发生在滑动时，同时保证了加载速度和滑动流畅性，下文会着重讲下这块的实现原理。
+- **和每个 UITableViewCell ReuseID 一一对应的 template layout cell**  
+  这个 cell 只为了参加高度计算，不会真的显示到屏幕上；它通过 UITableView 的 `-dequeueCellForReuseIdentifier:` 方法 lazy 创建并保存，所以要求这个 ReuseID 必须已经被注册到了 UITableView 中，也就是说，要么是 Storyboard 中的原型 cell，要么就是使用了 UITableView 的 `-registerClass:forCellReuseIdentifier:` 或 `-registerNib:forCellReuseIdentifier:`其中之一的注册方法。
+- **根据 autolayout 约束自动计算高度**  
+  使用了系统在 iOS6 就提供的 API：`-systemLayoutSizeFittingSize:`
+- **根据 index path 的一套高度缓存机制**  
+  计算出的高度会自动进行缓存，所以滑动时每个 cell 真正的高度计算只会发生一次，后面的高度询问都会命中缓存，减少了非常可观的多余计算。
+- **自动的缓存失效机制**  
+  无须担心你数据源的变化引起的缓存失效，当调用如`-reloadData`，`-deleteRowsAtIndexPaths:withRowAnimation:`等任何一个触发 UITableView 刷新机制的方法时，已有的高度缓存将以**最小的代价**执行失效。如删除一个 indexPath 为 [0:5] 的 cell 时，[0:0] ~ [0:4] 的高度缓存不受影响，而 [0:5] 后面所有的缓存值都向前移动一个位置。自动缓存失效机制对 UITableView 的 9 个公有 API 都进行了分别的处理，以保证没有一次多余的高度计算。
+- **预缓存机制**  
+  预缓存机制将在 UITableView 没有滑动的空闲时刻执行，计算和缓存那些还没有显示到屏幕中的 cell，整个缓存过程完全没有感知，这使得完整列表的高度计算既没有发生在加载时，又没有发生在滑动时，同时保证了加载速度和滑动流畅性，下文会着重讲下这块的实现原理。
 
 我们在设计这个工具的 API 时斟酌了非常长的时间，既要保证功能的强大，也要保证接口的精简，一行调用背后隐藏着很多功能。
 
@@ -195,18 +188,18 @@ iOS8 把高度计算搞成这个样子，从 WWDC 也倒是能找到点解释，
 
 ---
 
-# [#利用RunLoop空闲时间执行预缓存任务](#利用RunLoop空闲时间执行预缓存任务)利用RunLoop空闲时间执行预缓存任务
+# 利用RunLoop空闲时间执行预缓存任务
 
 FDTemplateLayoutCell 的高度预缓存是一个优化功能，它要求页面处于**空闲**状态时才执行计算，当用户正在滑动列表时显然不应该执行计算任务影响滑动体验。  
 一般来说，这个功能要耦合 UITableView 的滑动状态才行，但这种实现十分不优雅且可能破坏外部的 delegate 结构，但好在我们还有`RunLoop`这个工具，了解它的运行机制后，可以用很简单的代码实现上面的功能。
 
-## [#空闲RunLoopMode](#空闲RunLoopMode)空闲RunLoopMode
+## 空闲RunLoopMode
 
 在曾经的 RunLoop 线下分享会（[视频可戳](http://yun.baidu.com/share/link?shareid=2268593032&uk=2885973690)）中介绍了 RunLoopMode 的概念。  
 当用户正在滑动 UIScrollView 时，RunLoop 将切换到 `UITrackingRunLoopMode` 接受滑动手势和处理滑动事件（包括减速和弹簧效果），此时，其他 Mode （除 NSRunLoopCommonModes 这个组合 Mode）下的事件将全部暂停执行，来保证滑动事件的优先处理，这也是 iOS 滑动顺畅的重要原因。  
 当 UI 没在滑动时，默认的 Mode 是 `NSDefaultRunLoopMode`（同 CF 中的 kCFRunLoopDefaultMode），同时也是 CF 中定义的 “空闲状态 Mode”。当用户啥也不点，此时也没有什么网络 IO 时，就是在这个 Mode 下。
 
-## [#用RunLoopObserver找准时机](#用RunLoopObserver找准时机)用RunLoopObserver找准时机
+## 用RunLoopObserver找准时机
 
 注册 RunLoopObserver 可以观测当前 RunLoop 的运行状态，并在状态机切换时收到通知：
 
@@ -236,7 +229,7 @@ CFRunLoopAddObserver(runLoop, observer, runLoopMode);
 
 在其中的 TODO 位置，就可以开始任务的收集和分发了，当然，不能忘记适时的移除这个 observer
 
-## [#分解成多个RunLoop-Source任务](#分解成多个RunLoop-Source任务)分解成多个RunLoop Source任务
+## 分解成多个RunLoop Source任务
 
 假设列表有 20 个 cell，加载后展示了前 5 个，那么开启估算后 table view 只计算了这 5 个的高度，此时剩下 15 个就是“预缓存”的任务，而我们并不希望这 15 个计算任务在同一个 RunLoop 迭代中同步执行，这样会卡顿 UI，所以应该把它们**分别分解**到 15 个 RunLoop 迭代中执行，这时就需要手动向 RunLoop 中添加 Source 任务（由应用发起和处理的是 Source 0 任务）  
 Foundation 层没对 RunLoopSource 提供直接构建的 API，但是提供了一个间接的、既熟悉又陌生的 API：
@@ -276,7 +269,7 @@ PS: 预缓存功能因为下拉刷新的冲突和不明显的收益已经废弃
 
 ---
 
-# [#开始使用UITableView-FDTemplateLayoutCell](#开始使用UITableView-FDTemplateLayoutCell)开始使用UITableView+FDTemplateLayoutCell
+# 开始使用UITableView+FDTemplateLayoutCell
 
 如果你觉得这个工具能帮得到你，整合到工程也十分简单。  
 使用 cocoapods：

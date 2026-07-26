@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:447be1d79e9df150'
 translated: n/a
 ---
@@ -304,7 +304,7 @@ for (NSMappingModel *mappingModel in mappingModels) {
 为此应用建立单元测试异常简单：
 
 1. 将相关数据填入旧存储*。
-2. 。
+2. 将产生的持久性存储文件复制到你的_测试目标_。
 3. 编写测试断言符合最新的数据模型。
 4. 运行测试，迁移数据到新的数据模型。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-05-30
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1c5cfc88ebbc14ab'
 translated: n/a
 ---
@@ -20,10 +20,12 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2020-05-30
 
-1. 1. 修复 BlockHook 在 MRC 上的问题
-2. 2. 解决 GlobalBlock 没有写权限的问题
-3. 3. 优化 BlockHook 检测 Private Data 的方式
-4. 4. 最后谈谈 BlockHook
+**文章目录**
+
+1. [1. 修复 BlockHook 在 MRC 上的问题](#修复-BlockHook-在-MRC-上的问题)
+2. [2. 解决 GlobalBlock 没有写权限的问题](#解决-GlobalBlock-没有写权限的问题)
+3. [3. 优化 BlockHook 检测 Private Data 的方式](#优化-BlockHook-检测-Private-Data-的方式)
+4. [4. 最后谈谈 BlockHook](#最后谈谈-BlockHook)
 
 [BlockHook](https://github.com/yulingtianxia/BlockHook) 最近修复了一些内存安全方面的问题，记录下这些问题的解决思路：
 
@@ -31,7 +33,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 2. GlobalBlock 在某些场景下的 VM Protection 没有写权限
 3. 如何检测带有 Private Data 的 block
 
-## [#修复-BlockHook-在-MRC-上的问题](#修复-BlockHook-在-MRC-上的问题)修复 BlockHook 在 MRC 上的问题
+## 修复 BlockHook 在 MRC 上的问题
 
 ARC 下将 StackBlock 赋值时，会自动 copy 成 MallocBlock。不过这个编译器帮我们做的隐式行为的前提是代码里显示声明为 Block 类型。而 [BlockHook](https://github.com/yulingtianxia/BlockHook) 为了能够传入各种签名的 `aspectBlock`，恰恰用的是 `id`：
 
@@ -51,7 +53,7 @@ ARC 下将 StackBlock 赋值时，会自动 copy 成 MallocBlock。不过这个�
 _aspectBlock = [aspectBlock copy];
 ```
 
-## [#解决-GlobalBlock-没有写权限的问题](#解决-GlobalBlock-没有写权限的问题)解决 GlobalBlock 没有写权限的问题
+## 解决 GlobalBlock 没有写权限的问题
 
 用 Xcode 11 编译时，将 Deployment Info 中的 target 选择 iOS 13 后，GlobalBlock 对象所占的内存是只读的，这就导致 Hook 过程中无法对 `invoke` 函数指针做写操作，直接 crash。
 
@@ -111,7 +113,7 @@ static BOOL ReplaceBlockInvoke(struct _BHBlock *block, void *replacement) {
 
 如果有大佬知道苹果爸爸为何会这样做，或者有更优雅更安全的方案，请给小弟赐教，欢迎指出缺陷，一起开源共建。
 
-## [#优化-BlockHook-检测-Private-Data-的方式](#优化-BlockHook-检测-Private-Data-的方式)优化 BlockHook 检测 Private Data 的方式
+## 优化 BlockHook 检测 Private Data 的方式
 
 在 [BlockHook with Private Data](http://yulingtianxia.com/blog/2019/06/19/BlockHook-with-Private-Data/) 这篇文章里我曾经介绍过一种『骨骼惊奇』的 Block，不能直接替换 `invoke` 函数指针来 Hook。当时判断这类带有 Private Data 的 Block 的依据是直接用 Private Data 中的 `dbpd_magic` 字段与 `DISPATCH_BLOCK_PRIVATE_DATA_MAGIC` 判等：
 
@@ -160,7 +162,7 @@ bh_dispatch_block_get_private_data(struct _BHBlock *block) {
 
 既然无法直接拿到 `_dispatch_block_special_invoke` 指针，那我干脆创建一个带有 Private Data 的 Block 然后取它的 `invoke` 指针不就搞定了吗！现在看看当初的自己好傻啊。
 
-## [#最后谈谈-BlockHook](#最后谈谈-BlockHook)最后谈谈 BlockHook
+## 最后谈谈 BlockHook
 
 其实 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的诞生纯属偶然，起初是我本想做些其他关于 Block 的事情，但技术太菜一直没搞成。一顿瞎折腾失败后，剩余的代码就是 [BlockHook](https://github.com/yulingtianxia/BlockHook) 的雏形。然后业余时间不断踩坑和填坑，收到用户反馈后不断打磨，最终搞出了个能用的版本。我本以为打磨了这么久，应该没啥大问题了，然而还是不断有新的问题和挑战出现。毕竟自己曾经吹下了牛皮，含着泪也要继续打磨下去。有时候兴趣带来的动力真的远超 KPI 的压力，让人干劲十足，哈哈。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3c6063f751a3072e'
 translated: n/a
 ---
@@ -20,20 +20,22 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2016-09-28
 
-1. 1. Property List 的历史
-2. 2. 操作 Property List 的途径
-3. 3. 简要解析 project.pbxproj 文件
+**文章目录**
 
-    1. 3.1. 内容规则
-    2. 3.2. 内容类型
-4. 4. 操作 project.pbxproj 文件
-5. 5. Reference
+1. [1. Property List 的历史](#Property-List-的历史)
+2. [2. 操作 Property List 的途径](#操作-Property-List-的途径)
+3. [3. 简要解析 project.pbxproj 文件](#简要解析-project-pbxproj-文件)
+
+    1. [3.1. 内容规则](#内容规则)
+    2. [3.2. 内容类型](#内容类型)
+4. [4. 操作 project.pbxproj 文件](#操作-project-pbxproj-文件)
+5. [5. Reference](#Reference)
 
 project.pbxproj 文件被包含于 Xcode 工程文件 *.xcodeproj 之中，存储着 Xcode 工程的各项配置参数。它本质上是一种旧风格的 Property List 文件，历史可追溯到 NeXT 的 OpenStep。其可读性不如 xml 和 json，苹果却一直沿用至今，作为一家以创新闻名的公司可能这里剩下的就是情怀吧。
 
 本文谈了下 project.pbxproj 的知识，并总结了一些操作工程文件的优秀轮子，并在最后给出了自己的解决方案 [pbxprojHelper](https://github.com/yulingtianxia/pbxprojHelper)。
 
-## [#Property-List-的历史](#Property-List-的历史)Property List 的历史
+## Property List 的历史
 
 想了解 project.pbxproj 文件格式，就需要先了解 Property List。
 
@@ -62,7 +64,7 @@ Property List 有很多种表现方式，最古老的格式就是之前提到的
 
 于是乎 Property List 在苹果家族的历史上存在三种格式：OpenStep，XML 和 Binary。**除了 OpenStep 被废弃不支持写入以外，其余格式都提供 API 支持读写。**
 
-## [#操作-Property-List-的途径](#操作-Property-List-的途径)操作 Property List 的途径
+## 操作 Property List 的途径
 
 Unix 的 `plutil` 工具提供了处理 Property list 文件的能力。 比如将 Property list 文件转成 XML 格式:
 
@@ -80,11 +82,11 @@ plutil -convert xml1 -s -r -o project.pbxproj.xml project.pbxproj
 
 之前提到过不支持 OpenStep 写入的问题，所以即便我们能在内存中操作 project.pbxproj 文件，依然不能直接保存。**如果自己动手写一个 OpenStep 格式生成程序，依然无法准确还原字典中键值对的顺序。**更何况 project.pbxproj 文件中还插入了大量增强 human-readable 的注释，这些注释的生成是有特殊逻辑的，这个在后面会讲。
 
-## [#简要解析-project-pbxproj-文件](#简要解析-project-pbxproj-文件)简要解析 project.pbxproj 文件
+## 简要解析 project.pbxproj 文件
 
 既然表面上无法将修改过的工程文件数据还原为 OpenStep 格式，Xcode 又是如何『开挂』做到的呢？这就得从 project.pbxproj 文件内容说起了。
 
-### [#内容规则](#内容规则)内容规则
+### 内容规则
 
 project.pbxproj 使用 UUID 作为交叉引用的索引，保证每个配置信息对象的唯一性。因为 UUID 根据机器硬件和时间戳生成，避免了多人在同一时间段操作修改工程文件带来的问题。也就是说工程中每项配置对象都有个唯一的 UUID，然后其他配置对象想引用某个配置对象直接使用它的 UUID 即可。这就跟我们编程时使用指针指向某个对象的地址一样，其他对象的属性想引用它，只需要给属性传个指针地址就行了。
 
@@ -124,7 +126,7 @@ project.pbxproj 使用 UUID 作为交叉引用的索引，保证每个配置信�
 
 可以根据 `A45018751D9D68D60002869D` 找到对应的 `buildConfigurationList` 对象的内容，所以说 project.pbxproj 使用 UUID 作为交叉引用的索引。通过这种关系，可以递归构建一张有向图，每个对象都是一个节点。
 
-### [#内容类型](#内容类型)内容类型
+### 内容类型
 
 在 Xcode 中能看见所有的公共配置信息都存在于 project.pbxproj 中。主要包含跟文件相关的 BuildFile，Group 和 FileReference；跟编译相关的 BuildPhase 和 Build Configuration（List）；以及一些列 Target 和 TargetDependency。
 
@@ -157,25 +159,15 @@ XCConfigurationList
 
 每个 section 中的对象类型都是相同的，对象的类型是靠 `isa` 的值区分的。对象内部的属性类型以及含义可以参照这篇文章提供的对照表：[Xcode Project File Format](http://www.monobjc.net/xcode-project-file-format.html)
 
-## [#操作-project-pbxproj-文件](#操作-project-pbxproj-文件)操作 project.pbxproj 文件
+## 操作 project.pbxproj 文件
 
 我收集了一些可以操作 project.pbxproj 文件的优秀轮子，原理大都是用 `plutil` 转成 json 或 xml 后进行处理，不仅功能非常局限，且都无法完美还原为 OpenStep 格式的内容：
 
-- Xcodeproj
-
-  CocoaPods 写的 Ruby 解析库，用于修改引入 CocoaPods 的工程文件并保存为 XML 格式。CocoaPods 本身是很强大的，还可以用来操作 Xcode workspaces (.xcworkspace), configuration files (.xcconfig) 和 Xcode Scheme files (.xcscheme).
-- mod-pbxproj
-
-  强大的 Python 解析库，支持一定的修改操作，可输出 OpenStep 格式，但是顺序和注释内容无法完美还原，有些鸡肋。
-- xUnique
-
-  用 Python 写的统一多设备生成的 UUID 的工具，主要用途是统一工程在多设备上生成的 UUID，避免工程文件冲突。
-- pbxplorer
-
-  Ruby 写的解析库。
-- node-xcode
-
-  Cordova 基于它管理 Xcode 工程
+- [Xcodeproj](https://github.com/CocoaPods/Xcodeproj) CocoaPods 写的 Ruby 解析库，用于修改引入 CocoaPods 的工程文件并保存为 XML 格式。CocoaPods 本身是很强大的，还可以用来操作 Xcode workspaces (.xcworkspace), configuration files (.xcconfig) 和 Xcode Scheme files (.xcscheme).
+- [mod-pbxproj](https://github.com/kronenthaler/mod-pbxproj) 强大的 Python 解析库，支持一定的修改操作，可输出 OpenStep 格式，但是顺序和注释内容无法完美还原，有些鸡肋。
+- [xUnique](https://github.com/truebit/xUnique) 用 Python 写的统一多设备生成的 UUID 的工具，主要用途是统一工程在多设备上生成的 UUID，避免工程文件冲突。
+- [pbxplorer](https://github.com/mjmsmith/pbxplorer) Ruby 写的解析库。
+- [node-xcode](https://github.com/alunny/node-xcode) Cordova 基于它管理 Xcode 工程
 
 不过 **Xcode 可以打开 XML 格式的 project.pbxproj，一旦在 Xcode 界面上修改工程配置就会重新将 project.pbxproj 转成 OpenStep 风格。解铃还须系铃人，经过多番对比之后发现最终还是 Xcode 自己才能将 XML 完美还原成原来的 OpenStep 格式，且 `diff` 对比毫无差错。**原因很简单，Xcode 使用的私有 API 的导出结果是个黑盒，外界无论怎么猜都会有瑕疵。所以还是导出为 XML 后手动在 Xcode 界面中触发下吧。既然这样的话，如果能够简单高效地生成出 XML 文件作为工程文件就好了。基于此想法我开发了一款叫做 [pbxprojHelper](https://github.com/yulingtianxia/pbxprojHelper) 的 Mac App：
 
@@ -219,7 +211,7 @@ Command options are (-convert is the default):
 
 想了解更多信息请查看 GitHub 主页：[https://github.com/yulingtianxia/pbxprojHelper](https://github.com/yulingtianxia/pbxprojHelper)
 
-## [#Reference](#Reference)Reference
+## Reference
 
 [https://en.wikipedia.org/wiki/Property_list](https://en.wikipedia.org/wiki/Property_list)  
 [http://www.monobjc.net/xcode-project-file-format.html](http://www.monobjc.net/xcode-project-file-format.html)  

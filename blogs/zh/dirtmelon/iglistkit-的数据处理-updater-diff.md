@@ -7,7 +7,7 @@ original_language: zh
 published: 2021-01-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:22cff0d1144950cf'
 translated: n/a
 ---
@@ -196,14 +196,10 @@ typedef NS_ENUM (NSInteger, IGListBatchUpdateState) {
 };
 ```
 
-1. ，空闲状态，即当前无
-
-  任务；
-2. ，已加入到批量更新的状态中，防止内部在同一时间内多次调用
-
-  方法；
-3. 正在执行批量更新操作；
-4. 已经完成批量更新操作。
+1. `IGListBatchUpdateStateIdle` ，空闲状态，即当前无 `perform` 任务；
+2. `IGListBatchUpdateStateQueuedBatchUpdate` ，已加入到批量更新的状态中，防止内部在同一时间内多次调用 `performBatchUpdatesWithCollectionViewBlock:` 方法；
+3. `IGListBatchUpdateStateExecutingBatchUpdateBlock` 正在执行批量更新操作；
+4. `IGListBatchUpdateStateExecutedBatchUpdateBlock` 已经完成批量更新操作。
 
 在整个更新流程中， `updater.state` 会在这四种状态间切换，在不同状态间执行重复刷新操作时， `updater` 会因应不同的状态调用不同的方法，这块的处理是为了保证 `UI` 跟数据源之间的一致性和减少多余的刷新操作。
 

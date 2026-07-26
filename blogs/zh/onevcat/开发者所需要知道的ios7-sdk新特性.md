@@ -20,13 +20,13 @@ translated: n/a
 
 相关笔记整理如下：
 
-- 开发者所需要知道的iOS7 SDK新特性
-- WWDC2013笔记 Xcode5和ObjC新特性
-- WWDC2013笔记 UIKit力学模型入门
-- WWDC2013笔记 SpriteKit快速入门和新时代iOS游戏开发指南
-- WWDC2013笔记 iOS7中的多任务
-- WWDC 2013 Session笔记 - iOS7中弹簧式列表的制作
-- WWDC 2013 Session笔记 - iOS7中的ViewController切换
+- 总览 [开发者所需要知道的iOS7 SDK新特性](http://onevcat.com/2013/06/developer-should-know-about-ios7/)
+- 工具 [WWDC2013笔记 Xcode5和ObjC新特性](http://onevcat.com/2013/06/new-in-xcode5-and-objc/)
+- UIKit动力学 [WWDC2013笔记 UIKit力学模型入门](http://onevcat.com/2013/06/uikit-dynamics-started/)
+- SpriteKit入门 [WWDC2013笔记 SpriteKit快速入门和新时代iOS游戏开发指南](http://onevcat.com/2013/06/sprite-kit-start/)
+- 后台应用运行和多任务新特性 [WWDC2013笔记 iOS7中的多任务](http://onevcat.com/2013/08/ios7-background-multitask/)
+- iOS7中弹簧式列表的制作 [WWDC 2013 Session笔记 - iOS7中弹簧式列表的制作](http://onevcat.com/2013/09/spring-list-like-ios7-message)
+- iOS7中自定义ViewController切换效果 [WWDC 2013 Session笔记 - iOS7中的ViewController切换](http://onevcat.com/2013/10/vc-transition-in-ios7/)
 
 ---
 
@@ -44,9 +44,7 @@ iOS7最大的变化莫过于UI设计，也许你会说UI设计“这是设计师
 
 自己实验了几个现有的AppStore应用在iOS7上的运行情况：
 
-- Pomodoro Do
-
-  ： 这是我自己开发的应用，运行正常，但是因为不是iOS7 SDK打包，所以在UI上使用了之前系统的，问题是导航栏Tint颜色丢失，导致很难看，需要尽快更新。
+- [Pomodoro Do](https://itunes.apple.com/app/id533469911?mt=8)： 这是我自己开发的应用，运行正常，但是因为不是iOS7 SDK打包，所以在UI上使用了之前系统的，问题是导航栏Tint颜色丢失，导致很难看，需要尽快更新。
 - Facebook：因为使用了图片自定义导航栏，而没有直接使用系统提供的材质，所以没什么问题。
 - 面包旅行：直接Crash，无法打开，原因未知。
 
@@ -96,13 +94,7 @@ GameCenter一直是苹果的败笔…虽然每年都在改进，但是一直没�
 
 > 后台应用运行和多任务新特性 [WWDC2013笔记 iOS7中的多任务](http://onevcat.com/2013/08/ios7-background-multitask/) http://onevcat.com/2013/08/ios7-background-multitask/
 
-- 为
-
-  来实现后台下载内容了，需要在AppDelegate里实现
-
-  以及
-
-  来处理完成的下载，这个为后台运行代码提供了又一种选择。不过考虑到Apple如果继续严格审核的话，可能只有杂志报刊类应用能够取得这个权限吧。另外需要注意开发者仅只能指定一个最小间隔，最后下没下估计就得看系统娘的心情了。
+- 经常需要下载新内容的应用现在可以通过设置`UIBackgroundModes`为`fetch`来实现后台下载内容了，需要在AppDelegate里实现`setMinimumBackgroundFetchInterval:`以及`application:performFetchWithCompletionHandler: `来处理完成的下载，这个为后台运行代码提供了又一种选择。不过考虑到Apple如果继续严格审核的话，可能只有杂志报刊类应用能够取得这个权限吧。另外需要注意开发者仅只能指定一个最小间隔，最后下没下估计就得看系统娘的心情了。
 - 同样是后台下载，以前只能推送提醒用户进入应用下载，现在可以接到推送并在后台下载。UIBackgroundModes设为remote-notification，并实现`application:didReceiveRemoteNotification:fetchCompletionHandler:`
 
 为后台下载，开发者必须使用一个新的类`NSURLSession`，其实就是在NSURLConnection上加了个后台处理，使用类似，API十分简单，不再赘述。

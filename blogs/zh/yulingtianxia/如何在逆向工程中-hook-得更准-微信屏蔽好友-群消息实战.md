@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d8bf12f72628e8d5'
 translated: n/a
 ---
@@ -20,22 +20,24 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2017-03-06
 
-1. 1. 从 UI 猜
-2. 2. 关联相关类一起猜
-3. 3. 逆向工程绝不仅仅靠猜
+**文章目录**
 
-    1. 3.1. 获取方法的 IMP
-    2. 3.2. 将地址翻译成 Selector
+1. [1. 从 UI 猜](#从-UI-猜)
+2. [2. 关联相关类一起猜](#关联相关类一起猜)
+3. [3. 逆向工程绝不仅仅靠猜](#逆向工程绝不仅仅靠猜)
 
-          1. 3.2.1. 分步详细剖析计算方法
-          2. 3.2.2. 快速计算方法
-          3. 3.2.3. 还原 Selector
-4. 4. 从汇编代码继续猜
-5. 5. 总结
+    1. [3.1. 获取方法的 IMP](#获取方法的-IMP)
+    2. [3.2. 将地址翻译成 Selector](#将地址翻译成-Selector)
+
+          1. [3.2.1. 分步详细剖析计算方法](#分步详细剖析计算方法)
+          2. [3.2.2. 快速计算方法](#快速计算方法)
+          3. [3.2.3. 还原 Selector](#还原-Selector)
+4. [4. 从汇编代码继续猜](#从汇编代码继续猜)
+5. [5. 总结](#总结)
 
 在逆向工程中往往需要针对想要做的功能 Hook 到相应的方法和属性，小白面对 `class-dump` 后的大量头文件表示只能靠『猜』。这里我分享下逆向微信实现屏蔽群消息和好友消息的实战经验，适用于**非越狱机**，项目 GitHub 地址: [FishChat](https://github.com/yulingtianxia/FishChat)。为了能读懂此文，建议先阅读我的上一篇文章：[Make WeChat Great Again](http://yulingtianxia.com/blog/2017/02/28/Make-WeChat-Great-Again/)。
 
-## [#从-UI-猜](#从-UI-猜)从 UI 猜
+## 从 UI 猜
 
 先用 `Cycript` 或 Reveal 获取视图层级信息，然后从 `View` 和 `ViewController` 的头文件中寻找信息。然后就凭编程经验去猜了，比如一些方法属性的命名，一些常用的代码设计等等套路。
 
@@ -47,17 +49,17 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 剩下的就是获取好友 ID 和群 ID，用一个字典存储是否屏蔽的标记，在操作开关的时候对字典赋值。这些功能也能够通过分析 UI 逆向实现。
 
-## [#关联相关类一起猜](#关联相关类一起猜)关联相关类一起猜
+## 关联相关类一起猜
 
 在我之前写的 [Make WeChat Great Again](http://yulingtianxia.com/blog/2017/02/28/Make-WeChat-Great-Again/) 里有提到 `CMessageMgr` 这个类，它是个管理消息的单例，而消息被包装成 `CMessageWrap` 对象来传递。在 `CMessageMgr` 中搜索 getmsg 会发现有好几个方法。因为 `CMessageWrap` 中包含 `m_uiMesLocalID` 和 `m_n64MesSvrID` 属性，所以锁定目标为 `- (id)GetMsg:n64SvrID:` 和 `- (id)GetMsg:LocalID:`，经过验证后发现获取消息时调用的是后者。PS：进入聊天窗口时其实还调用了 `- (id)GetMsgByCreateTime:FromID:FromCreateTime:Limit:LeftCount:FromSequence:` 方法。
 
 不过，Hook `- (id)GetMsg:LocalID:` 之后发现即便不调用原始方法的实现，直接返回 `nil`，也依然不能屏蔽消息。这时需要找到调用它的上层方法，然后继续寻找真正处理消息的逻辑。
 
-## [#逆向工程绝不仅仅靠猜](#逆向工程绝不仅仅靠猜)逆向工程绝不仅仅靠猜
+## 逆向工程绝不仅仅靠猜
 
 初步思路是获取到方法的调用栈，然后查找上一层的方法，并将方法调用的地址换算成 Hopper 反汇编后的地址，这样就能获取到方法名了，然后进行 Hook。
 
-### [#获取方法的-IMP](#获取方法的-IMP)获取方法的 IMP
+### 获取方法的 IMP
 
 如果是越狱手机，直接 ssh 到手机执行 `debugserver`，然后就可以像平时 debug 那样用 lldb 尽情调戏程序了。而我这里因为是非越狱机，只能打 Log 了。
 
@@ -135,11 +137,11 @@ Mar  2 00:37:36 yangxiaoyude-iPhone WeChat(FishChat.dylib)[22880] <Notice>: (
 	8   CoreFounda
 ```
 
-### [#将地址翻译成-Selector](#将地址翻译成-Selector)将地址翻译成 Selector
+### 将地址翻译成 Selector
 
 这里分详细和快速两种方法来讲述如何通过内存地址找到对应的 `Selector`。分步骤计算适合对操作系统原理不太熟悉的新手，老司机可以直接进入『快速计算方法』。
 
-#### [#分步详细剖析计算方法](#分步详细剖析计算方法)分步详细剖析计算方法
+#### 分步详细剖析计算方法
 
 1. 反汇编得出方法相对地址
 
@@ -178,15 +180,13 @@ WeChat 文件在手机中加载的随机地址为 **『原始 IMP 的地址 - �
 6   WeChat                              0x1029DE050 _ZN16ClearSessionItem7compareERKNSt3__110shared_ptrIS_EES4_ + 523508
 ```
 
-#### [#快速计算方法](#快速计算方法)快速计算方法
+#### 快速计算方法
 
 已知条件：
 
-1. 在 Hopper 反汇编后的地址
-2. 方法内存地址为
-3. 在内存中
-
-  处被调用
+1. `-[CMessageMgr GetMsg:LocalID:]` 在 Hopper 反汇编后的地址 `0x10280e1d4`
+2. `-[CMessageMgr GetMsg:LocalID:]` 方法内存地址为 `0x1028821d4`
+3. `-[CMessageMgr GetMsg:LocalID:]` 在内存中 `0x102afb960` 处被调用
 
 求 `0x102afb960` 对应 Hopper 反汇编后的地址？
 
@@ -200,7 +200,7 @@ A 方法反汇编地址 - B 方法反汇编地址 = A 方法真实地址 - B 方
 
 跟之前的分步骤计算结果一样。
 
-#### [#还原-Selector](#还原-Selector)还原 Selector
+#### 还原 Selector
 
 根据反汇编地址在 Hopper 中定位方法名，快捷键 `G`。
 
@@ -215,7 +215,7 @@ A 方法反汇编地址 - B 方法反汇编地址 = A 方法真实地址 - B 方
 -[EventService HandleRespThread:]
 ```
 
-## [#从汇编代码继续猜](#从汇编代码继续猜)从汇编代码继续猜
+## 从汇编代码继续猜
 
 虽然可以锁定添加消息的实现逻辑在 `-[CSyncBaseEvent BatchAddMsg:ShowPush:]` 方法里，但是查找头文件发现它的两个参数和一个返回值竟然都是 `BOOL` 类型。直接 Hook 掉并返回 `NO` 虽然可以屏蔽消息，但是却屏蔽了所有的消息，没有对消息来源进行筛选。可以肯定的是在其内部已经获取到了 `CMessageWrap` 消息数组（Batch 暗示批量），然后才调用的 `-[CMessageMgr GetMsg:LocalID:]` 方法。而真正添加消息的逻辑可能在 `-[CMessageMgr GetMsg:LocalID:]` 调用之前，也可能在它调用之后。
 
@@ -250,7 +250,7 @@ NSMutableArray * filtMessageWrapArr(NSMutableArray *msgList) {
 
 最终屏蔽消息功能大功告成。
 
-## [#总结](#总结)总结
+## 总结
 
 这里只是做个示范，并不代表我 Hook 得最准。因为条条大路通罗马，只要达到目的就好。本来逆向工程就是在没有源码的情况下揣测和分析，所以不同的人会给出不同的逆向过程，这就像从南坡和北坡一起爬山一样。
 

@@ -7,7 +7,7 @@ original_language: zh
 published: 2020-12-20
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:48a37f00228dde00'
 translated: n/a
 ---
@@ -43,34 +43,8 @@ translated: n/a
 
 `IGListSectionController` 在初始化时需要获取到当前的 `UIViewController *viewController` 和 `id <IGListCollectionContext> collectionContext` 。
 
-1. 可用于
-
-  ，
-
-  ，
-
-  或者其它自定义转场，对于
-
-  来说，它只知道这是一个
-
-  ，不知道它的具体类型，因为
-
-  是可复用的，我们有可能将其和不同的
-
-  连接起来，所以其
-
-  的类型是不确定的；
-2. 为了对接口进行收敛，限制可以调用的接口，使用了
-
-  对其进行抽象，
-
-  本质上是一个
-
-  ，但是
-
-  可能有一些我们不需要也不想提供给外界访问的接口，所以借由
-
-  来进行抽象。
+1. `viewController` 可用于 `push` ， `pop` ， `present` 或者其它自定义转场，对于 `IGListSectionController` 来说，它只知道这是一个 `UIViewController` ，不知道它的具体类型，因为 `IGListSectionController` 是可复用的，我们有可能将其和不同的 `UIViewController` 连接起来，所以其 `viewController` 的类型是不确定的；
+2. `collectionContext` 为了对接口进行收敛，限制可以调用的接口，使用了 `protocol` 对其进行抽象， `collectionContext` 本质上是一个 `IGListAdapter` ，但是 `IGListAdapter` 可能有一些我们不需要也不想提供给外界访问的接口，所以借由 `protocol` 来进行抽象。
 
 `IGListKit` 定义了 `IGListSectionControllerThreadContext` ，在 `IGListSectionController` 初始化时对 `viewController` 和 `collectionContext` 进行设置：
 
@@ -315,9 +289,7 @@ NSDictionary <NSString *, NSNumber *> *dictionary;
 
 `IGListSectionMap` 提供了一种在常数时间内对 `Object` 和 `SectionController` 进行互相映射的方式。 主要方法有以下几种：
 
-1. 返回对应的
-
-  ：
+1. 根据 `section` 返回对应的 `IGListSectionController` ：
 
 ```objc
 /// 根据 section 返回对应的 IGListSectionController
@@ -574,45 +546,15 @@ let adapter = ListAdapter(updater: ListAdapterUpdater(),
 
 `IGListDisplayHandler` 的内部实现为 `willDisplay/didEndDisplaying` 提供了两个层级的入口：
 
-1. 级别，通过设置
-
-  的
-
-  ，可以获取整个
-
-  的回调；
-2. ，通过设置
-
-  ，可以获取具体到某个
-
-  的回调。也支持设置
-
-  为
-
-  它自己，由于
-
-  跟
-
-  是绑定的，所以在处理不同的
-
-  中相同的
-
-  时，我们不仅可以复用
-
-  ，也可以复用
-
-  的配置，进行一些曝光时长的统一配置。
+1. `IGListAdapter` 级别，通过设置 `adapter` 的 `id <IGListAdapterDelegate> delegate` ，可以获取整个 `UICollectionView` 的回调；
+2. `IGListSectionController` ，通过设置 `id <IGListDisplayDelegate> displayDelegate` ，可以获取具体到某个 `sectionController` 的回调。也支持设置 `displayDelegate` 为 `IGListSectionController` 它自己，由于 `IGListSectionController` 跟 `Object` 是绑定的，所以在处理不同的 `ViewController` 中相同的 `Object` 时，我们不仅可以复用 `IGListSectionController` ，也可以复用 `displayDelegate` 的配置，进行一些曝光时长的统一配置。
 
 ## 总结
 
 可以看到 `IGListSectionController` 作为 `IGListKit` 的基石，直接和数据层进行绑定，而且 `IGListKit` 还通过 `IGListSectionController` 进行各种扩展，支持以下特性：
 
 - 支持范型特性，设置指定的数据类型；
-- 的
-
-  ；
-- 内根据不同的数据刷新不同的
-
-  ；
+- 支持快捷只显示单个 `Cell` 的 `Section` ；
+- 支持数据流绑定， `Section` 内根据不同的数据刷新不同的 `Cell` ；
 - 支持预处理，预处理的范围也可以进行设置；
-- 的层级进行操作。
+- 支持设置显示时的相关回调，且可以基于 `IGListSectionController` 的层级进行操作。

@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-09-03
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cc84112cf59d3c79'
 translated: n/a
 ---
@@ -24,12 +24,10 @@ translated: n/a
 
 `ViewModel` 扮演的是处理业务逻辑的角色，负责处理数据和为 `ViewController` 提供数据源。一般来说有几下几点要求：
 
-- 编写单元测试。
-- 或者
-
-  的存在，只负责自己处理数据。
-- 时需要严格按照现有规范来编写。
-- 食用更佳
+- 可测试的，这样可以直接为 `ViewModel` 编写单元测试。
+- 不知道 `ViewController` 或者 `View` 的存在，只负责自己处理数据。
+- 团队编写 `ViewModel` 时需要严格按照现有规范来编写。
+- 配合 `RxSwift` 食用更佳
 
 ### 如何将 ViewModel 与数据源绑定
 
@@ -203,19 +201,11 @@ extension Response {
 
 ## 相关资源
 
-1. http://community.rxswift.org/
-2. https://github.com/kickstarter/native-docs/blob/master/vm-structure.md
-3. native-docs/inputs-outputs.md at master · kickstarter/native-docs · GitHub
-
-  KickStarter 重度使用
-
-  和
-
-  ，上文阐述了他们关于
-
-  的设计理念。
-4. RxSwift 中文文档 · RxSwift 中文文档
-5. http://davesexton.com/blog/post/To-Use-Subject-Or-Not-To-Use-Subject.aspx
-6. RxSwift + MVVM: how to feed ViewModels
-7. GitHub - sergdort/CleanArchitectureRxSwift: Example of Clean Architecture of iOS app using RxSwift
-8. 是时候学习 RxSwift 了 - Limboy’s HQ
+1. [http://community.rxswift.org/](http://community.rxswift.org/)
+2. [https://github.com/kickstarter/native-docs/blob/master/vm-structure.md](https://github.com/kickstarter/native-docs/blob/master/vm-structure.md)
+3. [native-docs/inputs-outputs.md at master · kickstarter/native-docs · GitHub](https://github.com/kickstarter/native-docs/blob/master/inputs-outputs.md) KickStarter 重度使用 `MVVM` 和 `ViewModel` ，上文阐述了他们关于 `ViewModel` 的设计理念。
+4. [RxSwift 中文文档 · RxSwift 中文文档](https://beeth0ven.github.io/RxSwift-Chinese-Documentation/)
+5. [http://davesexton.com/blog/post/To-Use-Subject-Or-Not-To-Use-Subject.aspx](http://davesexton.com/blog/post/To-Use-Subject-Or-Not-To-Use-Subject.aspx)
+6. [RxSwift + MVVM: how to feed ViewModels](https://medium.com/blablacar-tech/rxswift-mvvm-66827b8b3f10)
+7. [GitHub - sergdort/CleanArchitectureRxSwift: Example of Clean Architecture of iOS app using RxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+8. [是时候学习 RxSwift 了 - Limboy’s HQ](https://limboy.me/tech/2016/12/11/time-to-learn-rxswift.html)

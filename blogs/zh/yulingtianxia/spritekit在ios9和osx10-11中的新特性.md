@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cb2247f794d4660f'
 translated: n/a
 ---
@@ -20,30 +20,32 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2015-06-12
 
-1. 1. Viewport 和 SKCameraNode
-2. 2. SKAudioNode
-3. 3. 引用与实例化
+**文章目录**
 
-    1. 3.1. SKReferenceNode
-    2. 3.2. Named SKActions
-4. 4. 优化
-5. 5. SceneKit
-6. 6. GameplayKit
-7. 7. SpriteKit工具
+1. [1. Viewport 和 SKCameraNode](#Viewport-和-SKCameraNode)
+2. [2. SKAudioNode](#SKAudioNode)
+3. [3. 引用与实例化](#引用与实例化)
 
-    1. 7.1. Texture atlas
-    2. 7.2. Texture atlas in Asset Catalog
-    3. 7.3. Texture atlas with On Demand Resources
-    4. 7.4. 粒子编辑器
-    5. 7.5. Xcode Quicklook
-    6. 7.6. 2D 编辑器
-    7. 7.7. 新的附加部件
-    8. 7.8. 动作编辑器
-8. 8. 总结
+    1. [3.1. SKReferenceNode](#SKReferenceNode)
+    2. [3.2. Named SKActions](#Named-SKActions)
+4. [4. 优化](#优化)
+5. [5. SceneKit](#SceneKit)
+6. [6. GameplayKit](#GameplayKit)
+7. [7. SpriteKit工具](#SpriteKit工具)
+
+    1. [7.1. Texture atlas](#Texture-atlas)
+    2. [7.2. Texture atlas in Asset Catalog](#Texture-atlas-in-Asset-Catalog)
+    3. [7.3. Texture atlas with On Demand Resources](#Texture-atlas-with-On-Demand-Resources)
+    4. [7.4. 粒子编辑器](#粒子编辑器)
+    5. [7.5. Xcode Quicklook](#Xcode-Quicklook)
+    6. [7.6. 2D 编辑器](#2D-编辑器)
+    7. [7.7. 新的附加部件](#新的附加部件)
+    8. [7.8. 动作编辑器](#动作编辑器)
+8. [8. 总结](#总结)
 
 这是一篇 WWDC2015 Session 604 的学习笔记,在看 WWDC2014 的 Session 时也总结过一篇[SpriteKit在iOS8和OSX10.10中的新特性](http://yulingtianxia.com/blog/2014/08/08/spritekitzai-ios8he-osx10-dot-10zhong-de-xin-te-xing/),从 iOS7 发布 SpriteKit 以来我一直利用课余时间做些小游戏,感受着 SpriteKit 的一路成长.这次也在第一时间总结了下 今年 WWDC SpriteKit 的新特性.
 
-## [#Viewport-和-SKCameraNode](#Viewport-和-SKCameraNode)Viewport 和 SKCameraNode
+## Viewport 和 SKCameraNode
 
 ![viewport](http://yulingtianxia.com/resources/QQ20150612-1@2x.png)
 
@@ -55,19 +57,19 @@ Viewport(视口) 指的是当前场景中哪些部分是可见的.也就是说�
 
 其实摄像头早就该加了,这是专业的游戏框架不可或缺的元素.
 
-## [#SKAudioNode](#SKAudioNode)SKAudioNode
+## SKAudioNode
 
 ![SKAudioNode](http://yulingtianxia.com/resources/QQ20150612-3@2x.png)
 
 `SKAudioNode` 的加入更是令人激动.我们可以在游戏场景中的某个位置加入声源,让玩家身临其境.此前无论你的音效再怎么狂拽屌炸天,都只能是背景音乐的效果.这次终于能发挥下我们的双耳效应了.想象下在游戏中一辆 F1 赛车从你身边飚过的声音.然而这本身就是游戏框架的标配, SpriteKit 这次只是努力追赶而已.
 
-## [#引用与实例化](#引用与实例化)引用与实例化
+## 引用与实例化
 
 ![引用与实例化](http://yulingtianxia.com/resources/QQ20150612-6@2x.png)
 
 简单来说就是将动作和节点封装成实例,这样可以在其他地方引用它们,以达到组件重用的效果.
 
-### [#SKReferenceNode](#SKReferenceNode)SKReferenceNode
+### SKReferenceNode
 
 ![SKReferenceNode](http://yulingtianxia.com/resources/QQ20150612-4@2x.png)
 
@@ -77,7 +79,7 @@ Viewport(视口) 指的是当前场景中哪些部分是可见的.也就是说�
 
 不得不吐槽下之前的场景编辑器,竟然不能重复使用一些组件,甚至不能引用我做的粒子效果 sks 文件到场景中.但这本来应该是一个游戏场景编辑器本该有的功能啊!
 
-### [#Named-SKActions](#Named-SKActions)Named SKActions
+### Named SKActions
 
 ![Named SKActions](http://yulingtianxia.com/resources/QQ20150612-5@2x.png)
 
@@ -106,7 +108,7 @@ animateWithNormalTextures: //使 `SKSpriteNode` 的法线贴图按照给定贴�
 
 在之前的动作中只提供了贴图切换的动作,而没有法线贴图切换的动作,这就让光照效果只能应用在贴图固定的`SKSpriteNode`中.这回我们可以让法线贴图和跟着动起来了!
 
-## [#优化](#优化)优化
+## 优化
 
 ![Metal](http://yulingtianxia.com/resources/QQ20150612-8@2x.png)
 
@@ -114,23 +116,23 @@ animateWithNormalTextures: //使 `SKSpriteNode` 的法线贴图按照给定贴�
 
 受益于 Swift 类型安全的提升, Objective-C 泛型的加入,还有对 nullability 的改进, SpriteKit 的 API 也跟着做出了一系列优化调整.无论是使用 Swift 还是 Objective-C, 我们都能玩转 SpriteKit.
 
-## [#SceneKit](#SceneKit)SceneKit
+## SceneKit
 
 SpriteKit 和 SceneKit 这对儿难兄难弟虽然一直不受游戏开发者的宠爱,但它们总是喜欢相互搞基.可以在 SceneKit 中渲染 SpriteKit 的内容,反之亦然.今年搞基的方式又多了:
 
-1. 进行转场,各种转场效果随你挑.
+1. 可以在 SceneKit 中使用 `SKTransition` 进行转场,各种转场效果随你挑.
 2. SceneKit 也支持 Metal 了,可以一起躺在 Metal 上面搞基了.
 3. 要么都在 Metal 上搞基,要么都在 OpenGL 上开搞,自动匹配相同的”大床”.
 
-## [#GameplayKit](#GameplayKit)GameplayKit
+## GameplayKit
 
 ![GameplayKit](http://yulingtianxia.com/resources/QQ20150612-9@2x.png)
 
 GameplayKit 是个新推出的框架,它能帮我们构建一些游戏中的逻辑,比如状态机, AI 和路径查找.我本已经迫不及待地想使用它了,可惜在 iOS9 beta 中我用 SpriteKit 写的游戏卡顿严重,我想还是再等等吧.
 
-## [#SpriteKit工具](#SpriteKit工具)SpriteKit工具
+## SpriteKit工具
 
-### [#Texture-atlas](#Texture-atlas)Texture atlas
+### Texture atlas
 
 如果你有游戏编程的经验，那么你一定对图片拼合的概念很熟悉，图片能够在屏幕上独立地变更位置。图片拼合后可以打包整合到一张大图上一次性载入。相比多次载入不同的图片，这样做能够带来很多方面的好处：内存使用，载入时间，渲染性能等等.
 
@@ -138,7 +140,7 @@ GameplayKit 是个新推出的框架,它能帮我们构建一些游戏中的逻�
 
 但有了 Xcode ,我们将多个图片加入图册中就可以了,无需自己手动创建一张大的贴图,并计算其中每部分的边界.这的确很省事,还记得游戏设计概论课的实验上,我们的游戏素材都需要手动将人物的好几部分拼合到一张大图上,当人物奔跑时就在大图上切换edge并读取. 做过游戏的人都体会过这一点,现在 Xcode 帮我们做了.这项功能之前就有了,今年拿出来忽悠一遍只是因为他们做得更好了.
 
-### [#Texture-atlas-in-Asset-Catalog](#Texture-atlas-in-Asset-Catalog)Texture atlas in Asset Catalog
+### Texture atlas in Asset Catalog
 
 ![Texture atlas in Asset Catalog](http://yulingtianxia.com/resources/QQ20150612-10@2x.png)
 
@@ -147,27 +149,27 @@ GameplayKit 是个新推出的框架,它能帮我们构建一些游戏中的逻�
 - 可以直接在界面上操作来区分不同设备不同分辨率的图片.
 - 通过 App thinning 来使游戏体积更小.因为用户从 AppStore 下载游戏时,只会下载他们设备所对应的图片.节省时间和空间.
 
-### [#Texture-atlas-with-On-Demand-Resources](#Texture-atlas-with-On-Demand-Resources)Texture atlas with On Demand Resources
+### Texture atlas with On Demand Resources
 
 ![Texture atlas with On Demand Resources](http://yulingtianxia.com/resources/QQ20150612-11@2x.png)
 
 On Demand Resources 之前的 Session 提到过,它是属于 App thinning 中的一部分.通过给图片打上 On Demand Resources 标签,并可以通过网络在后台下载对应标签的图片.比如在游戏中快要进入到第一关,可以在后台使用”Level1”标签获取对应的那些图片.这样游戏的体积也会大大缩小,因为很多图片只是在即将用到的时候被下载下来.一个图片有多个标签时,只需要使用其中任一个标签就可以将其下载.
 
-### [#粒子编辑器](#粒子编辑器)粒子编辑器
+### 粒子编辑器
 
 又是老把戏重新炫耀,可以在界面上实时修改参数(据说49个呢)来观察效果,无需写代码无需重新编译,嗯.
 
-### [#Xcode-Quicklook](#Xcode-Quicklook)Xcode Quicklook
+### Xcode Quicklook
 
 继续扯老把戏,比如在 Playground 里面能显示 SpriteKit 程序的效果图.这早就可以了好么?去年还拿这个做例子呢!气球那个!还有在 debug 时显示节点当前的缩略图,我记得这个去年也早就有了:
 
 ![Quicklook](http://yulingtianxia.com/resources/QQ20150612-12@2x.png)
 
-### [#2D-编辑器](#2D-编辑器)2D 编辑器
+### 2D 编辑器
 
 新的编辑器可以模拟和预览场景了,会动了.之前 Xcode6 已经支持编辑粒子效果和整个游戏场景,今年 Xcode7 还加入了动画和动作效果.想想一行代码都不用写就能做出会动的场景,越来越靠近 Unity 等专业的游戏平台框架了.(凭我的经验肯定这肯定会让 Mac 煎鸡蛋,因为在之前仅是静态场景下模拟光照就已经发热有些严重了,更别提模拟物理计算让场景内容动起来了)
 
-### [#新的附加部件](#新的附加部件)新的附加部件
+### 新的附加部件
 
 之前提到的 SKCameraNode, SKAudioNode 和 SKReferenceNode,Xcode7 都是给予激情支持的:
 
@@ -177,13 +179,13 @@ On Demand Resources 之前的 Session 提到过,它是属于 App thinning 中的
 
 让强迫症激动的是场景编辑器终于支持将 Node 设为自定义类了.这真是太赞了!
 
-### [#动作编辑器](#动作编辑器)动作编辑器
+### 动作编辑器
 
 最让人激动的是我们可以在动作编辑器中像做视频一样基于时间线构建出复杂的交互动画!支持 2D 和 3D, 并能实时预览:
 
 ![Action](http://yulingtianxia.com/resources/QQ20150612-15@2x.png)
 
-## [#总结](#总结)总结
+## 总结
 
 老实说作为一个游戏引擎, SpriteKit 这次带来的新功能大部分依然是其他各大游戏引擎早就有的标配,但苹果最吸引人的地方就是它学得很快,每次总会给大家带来新的变化,会让它的粉丝们看到希望. SpriteKit 和 SceneKit 这两个苹果自家的游戏引擎一直不温不火,一是不够成熟,二是不能跨平台,但我相信苹果每年都会给它们带来更新更炫的功能,让开发者接受它们.
 

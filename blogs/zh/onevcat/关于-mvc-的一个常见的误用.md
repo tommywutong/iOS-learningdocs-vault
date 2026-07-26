@@ -124,9 +124,9 @@ extension ToDoListViewController {
 
   如果我们仔细思考，会发现，用户点击添加按钮，或者侧滑删除 cell 时，在 View Controller 中其实发生了这些事情：
 
-    1. )
+    1. 维护 Model (也就是 `items`)
     2. 增删 table view 的 cell
-    3. 的可用状态
+    3. 维护 `addButton` 的可用状态
 
   也就是说，UI 操作不仅导致了 Model 的变更，还同时导致了 UI 的变化。理想化的数据流动应该是单向的：UI 操作 -\> 经由 View Controller 进行模型更新 -\> 新的模型经由 View Controller 更新 UI -\> 等待新的 UI 操作，而在例子中，我们变成了“经由 View Controller 进行模型更新以及 UI 操作”。虽然看起来这是很不起眼的变更，但是会在项目复杂后带来麻烦。
 
@@ -184,7 +184,7 @@ override func viewDidLoad() {
 
 这种简单的实现面临很多挑战，是我们在实际 app 中不得不考虑的：
 
-1. 过程中 block 掉 UI，否则用户在请求完成前所添加的条目将被覆盖。
+1. 是不是应该需要在 `getExistingToDoItems` 过程中 block 掉 UI，否则用户在请求完成前所添加的条目将被覆盖。
 2. 在添加和删除条目的时候，我们都需要进行网络请求，另外我们也需要根据请求返回的状态更新添加按钮的状态。
 3. Block 用户输入将让 app 变为没网无法使用，不进行 block 的话则需要考虑数据同步的问题。
 4. 另外，我们需不需要在没网时依然让用户可以进行增加或删除，并缓存操作，等到有网时再将这些缓存反映给服务器。
@@ -433,7 +433,7 @@ extension ToDoListViewController {
 
 现在，不妨再考虑一下上一节中场景一 (编辑条目) 和场景二 (网络同步) 的需求，是不是觉得结构会清晰很多呢？
 
-1. 也可以被方便地测试。
+1. 我们现在有了一个单独的可以测试的 Model 层，通过简单的 Mock，`ToDoListViewController` 也可以被方便地测试。
 2. UI 操作 -\> 经由 Controller 进行模型变更 -\> 经由 Controller 将当前模型“映射”为 UI 状态，这个数据流动方向是严格可预测的 (并且应当时刻牢记需要保持这个循环)。这大大减少了 Controller 层的负担。
 3. 由于模型层不再被单一 View Controller 持有，其他的 Controller (不单指像是编辑用的 Edit View Controller 这样的视图控制器，也包括比如负责下载的 Controller 等等这类数据控制器) 也可以操作模型层。在此同时，所有的模型结果会被自动且正确地反应到 View 上，这为多 Controller 协同工作和更复杂的场景提供了坚实的基础。
 

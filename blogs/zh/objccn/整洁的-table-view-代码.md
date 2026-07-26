@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:76be94604de9e0af'
 translated: n/a
 ---
@@ -238,9 +238,9 @@ Table view controllers（以及其他的 controller 对象！）应该在 model 
 
 ### 扩展阅读
 
-- Blog: Skinnier Controllers using View Categories
-- Table View Programming Guide
-- Cocoa Core Competencies: Controller Object
+- [Blog: Skinnier Controllers using View Categories](http://www.sebastianrehnby.com/blog/2013/01/01/skinnier-controllers-using-view-categories/)
+- [Table View Programming Guide](http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/tableview_iphone/AboutTableViewsiPhone/AboutTableViewsiPhone.html)
+- [Cocoa Core Competencies: Controller Object](http://developer.apple.com/library/mac/#documentation/General/Conceptual/DevPedia-CocoaCore/ControllerObject.html)
 
 ---
 

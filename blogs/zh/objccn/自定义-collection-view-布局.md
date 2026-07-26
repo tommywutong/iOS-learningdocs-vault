@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2d646ce06330759b'
 translated: n/a
 ---
@@ -209,18 +209,10 @@ UITableView 中的 cell 自带了一套非常漂亮的插入和删除动画。�
 
 ### 扩展阅读
 
-- Collection View Programming Guide
-
-  .
-- NSHipster on `UICollectionView`
-
-  .
-- `UICollectionView`: The Complete Guide
-
-  , e-book by Ash Furrow.
-- `MSCollectionViewCalendarLayout`
-
-  by Eric Horacek is an excellent and more complete implementation of a custom layout for a week calendar view.
+- [Collection View Programming Guide](http://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012334-CH1-SW1).
+- [NSHipster on `UICollectionView`](http://nshipster.com/uicollectionview/).
+- [`UICollectionView`: The Complete Guide](http://ashfurrow.com/uicollectionview-the-complete-guide/), e-book by Ash Furrow.
+- [`MSCollectionViewCalendarLayout`](https://github.com/monospacecollective/MSCollectionViewCalendarLayout) by Eric Horacek is an excellent and more complete implementation of a custom layout for a week calendar view.
 
 ---
 

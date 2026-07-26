@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:abb15dbddb6cc0cc'
 translated: n/a
 ---
@@ -20,16 +20,18 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2016-04-28
 
-1. 1. 简单粗暴的想法
-2. 2. Graham Scan
-3. 3. 后记
+**文章目录**
+
+1. [1. 简单粗暴的想法](#简单粗暴的想法)
+2. [2. Graham Scan](#Graham-Scan)
+3. [3. 后记](#后记)
 
 [凸包(Convex hull)](https://en.wikipedia.org/wiki/Convex_hull) 是一个数学上的概念，在二维平面上可以想象成用一个橡皮筋套住一堆钉在平面上的钉子。本文讲述如何使用 Swift 实现 [Graham scan](https://en.wikipedia.org/wiki/Graham_scan) 算法来寻找二维平面点集上的凸包。工程源码 Github：[https://github.com/yulingtianxia/Algorithm-Experiment](https://github.com/yulingtianxia/Algorithm-Experiment)
 
 ![By Maksim (original); en:User:Pbroks3 (redraw), via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/d/de/ConvexHull.svg)  
 ![](http://yulingtianxia.com/resources/convexhull/convexhull.gif)
 
-# [#简单粗暴的想法](#简单粗暴的想法)简单粗暴的想法
+# 简单粗暴的想法
 
 直观上去看可以理解为『找出最外围的点』，进而把问题转化为『剔除凸多边形内部的点』，进而简化为『剔除任意三角形内的点』。PS：**三角形**指的是由点集内任意三个不相同的点构成的三角形，以下不再赘述定义，直接以**三角形**代指。
 
@@ -78,14 +80,8 @@ PS：这里注意我们想要的结果仅仅是**凸包顶点**，有些点可�
 
 有两种方案可以按照逆时针顺序输出结果：
 
-1. 点为中心，向量
-
-  方向做射线逆时针扫描，按照扫描到点的顺序输出即可，直至 360° 扫描完毕。
-2. 上方的点集
-
-  按照 X 值从大到小排列，下方的点集
-
-  按照 X 值从小到大排列，最后输出顺序为：
+1. 以 `A` 点为中心，向量 `DA` 方向做射线逆时针扫描，按照扫描到点的顺序输出即可，直至 360° 扫描完毕。
+2. 将直线 `AD` 上方的点集 `Su` 按照 X 值从大到小排列，下方的点集 `Sd` 按照 X 值从小到大排列，最后输出顺序为：`A，Sd，D，Su`
 
 很明显，第二种方案计算量小并且实现简单。
 
@@ -159,7 +155,7 @@ func generateConvexHull(inout points:[PointView]){
 
 `PointView` 是算法演示程序中用于绘制和存储二维点坐标信息的类，它不仅存储坐标，还维护了状态 `isConvexHullNode`，并根据状态值是否为凸包顶点来改变 UI（红色的点为凸包顶点，紫色为非凸包顶点）。此外 `PointView` 还需要处理鼠标拖拽事件。这部分比较简单，就不上代码了。
 
-# [#Graham-Scan](#Graham-Scan)Graham Scan
+# Graham Scan
 
 当沿着凸包逆时针漫游时，你会发现总是在『向左拐』；反之则是『向右拐』。
 
@@ -248,6 +244,6 @@ func generateConvexHull(inout points: [PointView]) {
 
 Graham Scan 的时间复杂度是 `O(nlogn)`，而且只适用于二维平面。算法导论上也讲到了包裹法（Jarvis步进法）和分治法，时间复杂度都是 `O(nlogn)`。我的[那个工程](https://github.com/yulingtianxia/Algorithm-Experiment)里也有[分治法的 Swift 实现](https://github.com/yulingtianxia/Algorithm-Experiment/blob/master/ConvexHull/ConvexHull/DivideAndConquer.swift)。如果拓展到多维空间，我觉得使用 Swift 并不是一个很好的实现语言，Matlab 再适合不过了。
 
-# [#后记](#后记)后记
+# 后记
 
 博主江郎才尽竟然拿学校的某次算法实验充数尼玛坑爹呢这是！

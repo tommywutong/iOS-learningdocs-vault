@@ -7,7 +7,7 @@ original_language: zh
 published: 2019-05-26
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:041891c54b15d60e'
 translated: n/a
 ---
@@ -20,9 +20,11 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 
 发表于 2014-04-07
 
-1. 1. iOS的单例模式
-2. 2. NSUserDefaults
-3. 3. 总结：iOS单例模式 and NSUserDefaults
+**文章目录**
+
+1. [1. iOS的单例模式](#iOS的单例模式)
+2. [2. NSUserDefaults](#NSUserDefaults)
+3. [3. 总结：iOS单例模式 and NSUserDefaults](#总结：iOS单例模式-and-NSUserDefaults)
 
 本文内容：
 
@@ -30,7 +32,7 @@ By [杨萧玉](https://plus.google.com/106642427004837273341?rel=author)
 - NSUserDefaults的使用
 - 总结：iOS单例模式 and NSUserDefaults
 
-# [#iOS的单例模式](#iOS的单例模式)iOS的单例模式
+# iOS的单例模式
 
 提起单例模式大家都不陌生，什么懒汉式，饿汉式，老汉式。。。扯远了
 
@@ -102,7 +104,7 @@ static MyGizmoClass *sharedGizmoManager = nil;
 instance为将被实例化的对象，为了让instance只被实例化一次，用到了GCD(Grand Central Dispatch)中的`dispatch_once`方法。该方法有两个参数，第二个参数是一个block，只会被执行一次。而第一个参数是一个谓词，用于判断代码块（block）是否执行完，这个谓词只能是全局或静态变量，类型为dispatch_once_t，其实dispatch_once_t就是long类型。你可以理解为第一个参数是个标识位，能保证记录第二个参数block的执行情况，即使是在最复杂的多线程并发执行的情况下，也就是说，GCD的这个方法是线程安全的。如果你对block这种类型比较陌生，可以把它暂时当作函数指针，当然，它比函数指针还要强大。  
 你可以重写init方法来实现饿汉式单例，也可以自定义initwithXXX来在需要实例化的时候调用之，实现懒汉式单例。
 
-# [#NSUserDefaults](#NSUserDefaults)NSUserDefaults
+# NSUserDefaults
 
 很多APP启动时需要读取上次运行保存的一些状态，如何保存呢？Core Data，SQlite和UIDocuments未免杀鸡用牛刀了，而`NSUserDefaults`很适用于快速读取小规模的数据
 
@@ -195,7 +197,7 @@ NSData *newshopData = [standardDefaults objectForKey:"myshop"];
 SNShops *newshop = [NSKeyedUnarchiver unarchiveObjectWithData:newshopData];
 ```
 
-# [#总结：iOS单例模式-and-NSUserDefaults](#总结：iOS单例模式-and-NSUserDefaults)总结：iOS单例模式 and NSUserDefaults
+# 总结：iOS单例模式 and NSUserDefaults
 
 单例模式虽然能存入任何类型的对象，但是它会随着程序的挂起而消亡。而NSUserDefaults在读取自定义类型时有些繁琐，降低编码效率和可读性，好处是程序下次启动依然能读取到上次的状态。  
 笔者在实际应用中采取了二者结合的模式：让单例模式的类实现协议，程序第一次启动的时候通过NSData做载体读取单例类的实例，并存入单例，程序运行中一直对单例做存储操作，当程序快要进入到后台挂起的时候，通过NSData做载体存入NSUserDefaults，一举两得。

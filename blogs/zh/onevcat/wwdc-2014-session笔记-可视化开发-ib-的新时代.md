@@ -16,8 +16,8 @@ translated: n/a
 
 本文是我的 [WWDC 2014 笔记](http://onevcat.com/2014/07/developer-should-know-about-ios8/) 中的一篇，涉及的 Session 有
 
-- What’s New in Xcode 6
-- What’s New in Interface Builder
+- [What’s New in Xcode 6](http://devstreaming.apple.com/videos/wwdc/2014/401xxfkzfrjyb93/401/401_whats_new_in_xcode_6.pdf?dl=1)
+- [What’s New in Interface Builder](http://devstreaming.apple.com/videos/wwdc/2014/411xx0xo98zzoor/411/411_whats_new_in_interface_builder.pdf?dl=1)
 
 如果说在 WWDC 14 之前 Interface Builder (IB) 还是可选项的话，我相信在此之后 IB 已经是毫无疑问的 iOS 开发标配了，纯代码界面可以说已经渐行渐远，可以逐渐离开我们的视线了。
 

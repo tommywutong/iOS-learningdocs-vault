@@ -357,38 +357,16 @@ return [self swizzledAcceptCurrentCompletion];
 
 另外，github等代码托管网站上有不少大神们写的插件，都开源放出。这些必须是学习插件编写的最优秀的教材和参考：
 
-- mneorr / Alcatraz
-
-  Xcode的包管理插件，管理其他插件的插件
-- onevcat / VVDocumenter-Xcode
-
-  帮助快速写文档注释的插件，自动提取参数返回值等
-- omz / ColorSense-for-Xcode
-
-  在UIColor/NSColor上显示出对应的颜色
-- omz / Dash-Plugin-for-Xcode
-
-  在Xcode中集成Dash，方便看文档
-- omz / MiniXcode
-
-  隐藏Xcode臃肿的工具栏，获得更大的可视空间
-- ksuther / KSImageNamed-Xcode
-
-  输入imageNamed的时候自动补完图片名称
-- JugglerShu / XVim
-
-  将Xcode编辑器改造成Vim
-- davekeck / Xcode-4-Fixins
-
-  修正一些Xcode的bugs（应该已经没有太大用了）
-- 0xced / CLITool-InfoPlist
-
-  方便修改Info.plist为CLI目标的插件
-- questbeat / Lin
-
-  为NSLocalizedString显示补全
-- stefanceriu / SCXcodeMiniMap
-
-  在侧边显示代码小地图
+- [mneorr / Alcatraz](https://github.com/mneorr/Alcatraz) Xcode的包管理插件，管理其他插件的插件
+- [onevcat / VVDocumenter-Xcode](https://github.com/onevcat/VVDocumenter-Xcode) 帮助快速写文档注释的插件，自动提取参数返回值等
+- [omz / ColorSense-for-Xcode](https://github.com/omz/ColorSense-for-Xcode) 在UIColor/NSColor上显示出对应的颜色
+- [omz / Dash-Plugin-for-Xcode](https://github.com/omz/Dash-Plugin-for-Xcode) 在Xcode中集成Dash，方便看文档
+- [omz / MiniXcode](https://github.com/omz/MiniXcode) 隐藏Xcode臃肿的工具栏，获得更大的可视空间
+- [ksuther / KSImageNamed-Xcode](https://github.com/ksuther/KSImageNamed-Xcode) 输入imageNamed的时候自动补完图片名称
+- [JugglerShu / XVim](https://github.com/JugglerShu/XVim) 将Xcode编辑器改造成Vim
+- [davekeck / Xcode-4-Fixins](https://github.com/davekeck/Xcode-4-Fixins) 修正一些Xcode的bugs（应该已经没有太大用了）
+- [0xced / CLITool-InfoPlist](https://github.com/0xced/CLITool-InfoPlist) 方便修改Info.plist为CLI目标的插件
+- [questbeat / Lin](https://github.com/questbeat/Lin) 为NSLocalizedString显示补全
+- [stefanceriu / SCXcodeMiniMap](https://github.com/stefanceriu/SCXcodeMiniMap) 在侧边显示代码小地图
 
 好了，就到这里吧。VVPlugInDemo的工程文件我放到了github上，有需要的话您可以从[这里下载](https://github.com/onevcat/VVPluginDemo)并作为参考和起始来使用。谢谢您看完这么长的文。正如一开始所说的，我自己水平十分有限，因此错误和不当之处还恳请大家轻喷多原谅，并帮助我改正，再次谢谢～

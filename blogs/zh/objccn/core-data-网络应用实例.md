@@ -7,7 +7,7 @@ original_language: zh
 published: ''
 status: frozen
 license: 页脚「© 2015 至今」→ 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3a55746f2f74c07f'
 translated: n/a
 ---
@@ -34,8 +34,8 @@ Core Data 网络应用实例
 
 我们这样来做
 
-1. 类，用来从 web service 请求所有的说明。
-2. 对象取出说明并将他们导入 Core Data。
+1. 首先，我们创建一个 `PodsWebservice` 类，用来从 web service 请求所有的说明。
+2. 接着，创建一个 `Importer` 对象取出说明并将他们导入 Core Data。
 3. 最终，我们展示如何让最重要的工作在后台线程中运行。
 
 ## 从 Web Service 取得对象

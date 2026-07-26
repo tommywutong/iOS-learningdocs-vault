@@ -47,17 +47,17 @@ MCP 提供一套标准协议来解决这些问题。简而言之，它通过一�
 
 MCP 的具体使用以及 Server 和 Client 的实现方法并非本文重点。Anthropic 作为该协议的主要推动者，提供了详尽的文档和 SDK，开发者只需遵循这些资源即可轻松实现 MCP。
 
-- Model Context Protocol 介绍
-- MCP Server 开发
-- MCP Client 开发
+- [Model Context Protocol 介绍](https://modelcontextprotocol.io/introduction)
+- [MCP Server 开发](https://modelcontextprotocol.io/quickstart/server)
+- [MCP Client 开发](https://modelcontextprotocol.io/quickstart/client)
 
 ### 现状
 
 MCP 因能有效弥补 LLM 的部分缺陷，逐渐从最初的质疑转为广受认可与欢迎。社区对 MCP 也有 awesome 的定番 repo 和同好社群，可供搜索已有的 server。最后，像是 Cline 这样的插件，甚至提供了 MCP Market。
 
-- awesome-mcp-servers
-- MCP Directory
-- Cline - MCP Marketplace
+- [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
+- [MCP Directory](https://mcp.so/)
+- [Cline - MCP Marketplace](https://github.com/cline/mcp-marketplace)
 
 不过，MCP 目前仍存在一些不足：
 

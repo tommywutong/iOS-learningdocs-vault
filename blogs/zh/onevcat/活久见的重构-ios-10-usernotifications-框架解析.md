@@ -30,27 +30,13 @@ iOS 10 中以前杂乱的和通知相关的 API 都被统一了，现在开发�
 
 但是理想的丰满并不能弥补现实的骨感。自从在 iOS 3 引入 Push Notification 后，之后几乎每个版本 Apple 都在加强这方面的功能。我们可以回顾一下整个历程和相关的主要 API：
 
-- 的
-
-  与
-
-  的
-
-  ，
-- ，
-
-  ，
+- iOS 3 - 引入推送通知 `UIApplication` 的 `registerForRemoteNotificationTypes` 与 `UIApplicationDelegate` 的 `application(_:didRegisterForRemoteNotificationsWithDeviceToken:)`，`application(_:didReceiveRemoteNotification:)`
+- iOS 4 - 引入本地通知 `scheduleLocalNotification`，`presentLocalNotificationNow:`，` application(_:didReceive:)`
 - iOS 5 - 加入通知中心页面
 - iOS 6 - 通知中心页面与 iCloud 同步
 - iOS 7 - 后台静默推送 `application(_:didReceiveRemoteNotification:fetchCompletionHandle:)`
-- ，
-
-  与
-
-  ，
-
-  等
-- ，全新的 Provider API 等
+- iOS 8 - 重新设计 notification 权限请求，Actionable 通知 `registerUserNotificationSettings(_:)`，`UIUserNotificationAction` 与 `UIUserNotificationCategory`，`application(_:handleActionWithIdentifier:forRemoteNotification:completionHandler:)` 等
+- iOS 9 - Text Input action，基于 HTTP/2 的推送请求 `UIUserNotificationActionBehavior`，全新的 Provider API 等
 
 有点晕，不是么？一个开发者很难在不借助于文档的帮助下区分 `application(_:didReceiveRemoteNotification:)` 和 `application(_:didReceiveRemoteNotification:fetchCompletionHandle:)`，新入行的开发者也不可能明白 `registerForRemoteNotificationTypes` 和 `registerUserNotificationSettings(_:)` 之间是不是有什么关系，Remote 和 Local Notification 除了在初始化方式之外那些细微的区别也让人抓狂，而很多 API 都被随意地放在了 `UIApplication` 或者 `UIApplicationDelegate` 中。除此之外，应用已经在前台时，远程推送是无法直接显示的，要先捕获到远程来的通知，然后再发起一个本地通知才能完成显示。更让人郁闷的是，应用在运行时和非运行时捕获通知的路径还不一致。虽然这些种种问题都是由一定历史原因造成的，但不可否认，正是混乱的组织方式和之前版本的考虑不周，使得 iOS 通知方面的开发一直称不上“让人愉悦”，甚至有不少“坏代码”的味道。
 
@@ -198,13 +184,9 @@ UNUserNotificationCenter.current().add(request) { error in
   好消息是，后一种字典的方法其实在 iOS 8.2 的时候就已经存在了。虽然当时 `title` 只是用在 Apple Watch 上的，但是设置好 `body` 的话在 iOS 上还是可以显示的，所以针对 iOS 10 添加标题时是可以保证前向兼容的。
 
   另外，如果要进行本地化对应，在设置这些内容文本时，本地可以使用 `String.localizedUserNotificationString(forKey: "your_key", arguments: [])` 的方式来从 Localizable.strings 文件中取出本地化字符串，而远程推送的话，也可以在 payload 的 alert 中使用 `loc-key` 或者 `title-loc-key` 来进行指定。关于 payload 中的 key，可以参考[这篇文档](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html)。
-2. ，在某月某日某时触发
-
-  以及在用户进入或是离开某个区域时触发
-
-  。
+2. 触发器是只对本地通知而言的，远程推送的通知的话默认会在收到后立即显示。现在 UserNotifications 框架中提供了三种触发器，分别是：在一定时间后触发 `UNTimeIntervalNotificationTrigger`，在某月某日某时触发 `UNCalendarNotificationTrigger` 以及在用户进入或是离开某个区域时触发 `UNLocationNotificationTrigger`。
 3. 请求标识符可以用来区分不同的通知请求，在将一个通知请求提交后，通过特定 API 我们能够使用这个标识符来取消或者更新这个通知。我们将在稍后再提到具体用法。
-4. 进行处理。我们会在 delegate 中接收到这个通知请求对应的 response，另外我们也有机会在应用的 extension 中对 request 进行处理。我们在接下来的章节会看到更多这方面的内容。
+4. 在新版本的通知框架中，Apple 借用了一部分网络请求的概念。我们组织并发送一个通知请求，然后将这个请求提交给 `UNUserNotificationCenter` 进行处理。我们会在 delegate 中接收到这个通知请求对应的 response，另外我们也有机会在应用的 extension 中对 request 进行处理。我们在接下来的章节会看到更多这方面的内容。
 
 在提交通知请求后，我们锁屏或者将应用切到后台，并等待设定的时间后，就能看到我们的通知出现在通知中心或者屏幕横幅了：
 
@@ -382,11 +364,9 @@ private func registerNotificationCategory() {
 }
 ```
 
-1. 代表一个输入文本的 action，你可以自定义框的按钮 title 和 placeholder。你稍后会使用
-
-  来对 action 进行区分。
-2. 对应标准的按钮。
-3. ，我们将在实际发送通知的时候用这个标识符进行设置，这样系统就知道这个通知对应哪个 category 了。
+1. `UNTextInputNotificationAction` 代表一个输入文本的 action，你可以自定义框的按钮 title 和 placeholder。你稍后会使用 `identifier` 来对 action 进行区分。
+2. 普通的 `UNNotificationAction` 对应标准的按钮。
+3. 为 category 指定一个 `identifier`，我们将在实际发送通知的时候用这个标识符进行设置，这样系统就知道这个通知对应哪个 category 了。
 
 当然，不要忘了在程序启动时调用这个方法进行注册：
 
@@ -501,12 +481,8 @@ class NotificationService: UNNotificationServiceExtension {
 }
 ```
 
-1. 方法中有一个等待发送的通知请求，我们通过修改这个请求中的 content 内容，然后在限制的时间内将修改后的内容调用通过
-
-  返还给系统，就可以显示这个修改过的通知了。
-2. 的话，系统会调用这个方法，来告诉你大限已到。你可以选择什么都不做，这样的话系统将当作什么都没发生，简单地显示原来的通知。可能你其实已经设置好了绝大部分内容，只是有很少一部分没有完成，这时你也可以像例子中这样调用
-
-  来显示一个变更“中途”的通知。
+1. `didReceive:` 方法中有一个等待发送的通知请求，我们通过修改这个请求中的 content 内容，然后在限制的时间内将修改后的内容调用通过 `contentHandler` 返还给系统，就可以显示这个修改过的通知了。
+2. 在一定时间内没有调用 `contentHandler` 的话，系统会调用这个方法，来告诉你大限已到。你可以选择什么都不做，这样的话系统将当作什么都没发生，简单地显示原来的通知。可能你其实已经设置好了绝大部分内容，只是有很少一部分没有完成，这时你也可以像例子中这样调用 `contentHandler` 来显示一个变更“中途”的通知。
 
 Service Extension 现在只对远程推送的通知起效，你可以在推送 payload 中增加一个 `mutable-content` 值为 1 的项来启用内容修改：
 
@@ -619,19 +595,11 @@ if let imageURLString = bestAttemptContent.userInfo["image"] as? String,
 
 关于在通知中展示图片或者视频，有几点想补充说明：
 
-- 的
-
-  虽然是一个数组，但是系统只会展示第一个 attachment 对象的内容。不过你依然可以发送多个 attachments，然后在要展示的时候再重新安排它们的顺序，以显示最符合情景的图片或者视频。另外，你也可能会在自定义通知展示 UI 时用到多个 attachment。我们接下来一节中会看到一个相关的例子。
-- 被调用之前，你有 30 秒时间来处理和更改通知内容。对于一般的图片来说，这个时间是足够的。但是如果你推送的是体积较大的视频内容，用户又恰巧处在糟糕的网络环境的话，很有可能无法及时下载完成。
-- 这篇回答
-
-  。
-- 来
-
-  指定资源类型
-
-  。
-- 中找到。
+- `UNNotificationContent` 的 `attachments` 虽然是一个数组，但是系统只会展示第一个 attachment 对象的内容。不过你依然可以发送多个 attachments，然后在要展示的时候再重新安排它们的顺序，以显示最符合情景的图片或者视频。另外，你也可能会在自定义通知展示 UI 时用到多个 attachment。我们接下来一节中会看到一个相关的例子。
+- 在当前 beta (iOS 10 beta 4) 中，`serviceExtensionTimeWillExpire` 被调用之前，你有 30 秒时间来处理和更改通知内容。对于一般的图片来说，这个时间是足够的。但是如果你推送的是体积较大的视频内容，用户又恰巧处在糟糕的网络环境的话，很有可能无法及时下载完成。
+- 如果你想在远程推送来的通知中显示应用 bundle 内的资源的话，要注意 extension 的 bundle 和 app main bundle 并不是一回事儿。你可以选择将图片资源放到 extension bundle 中，也可以选择放在 main bundle 里。总之，你需要保证能够获取到正确的，并且你具有读取权限的 url。关于从 extension 中访问 main bundle，可以参看[这篇回答](http://stackoverflow.com/questions/26189060/get-the-main-app-bundle-from-within-extension)。
+- 系统在创建 attachement 时会根据提供的 url 后缀确定文件类型，如果没有后缀，或者后缀无法不正确的话，你可以在创建时通过 `UNNotificationAttachmentOptionsTypeHintKey` 来[指定资源类型](https://developer.apple.com/reference/usernotifications/unnotificationattachmentoptionstypehintkey)。
+- 如果使用的图片和视频文件不在你的 bundle 内部，它们将被移动到系统的负责通知的文件夹下，然后在当通知被移除后删除。如果媒体文件在 bundle 内部，它们将被复制到通知文件夹下。每个应用能使用的媒体文件的文件大小总和是有限制，超过限制后创建 attachment 时将抛出异常。可能的所有错误可以在 `UNError` 中找到。
 - 你可以访问一个已经创建的 attachment 的内容，但是要注意权限问题。可以使用 `startAccessingSecurityScopedResource` 来暂时获取以创建的 attachment 的访问权限。比如：
 
   ```swift
