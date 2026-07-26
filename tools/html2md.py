@@ -48,6 +48,15 @@ BLOCK_TAGS = {
 # 这些是纯结构容器，自己不产生内容，一律递归进去
 PASSTHROUGH = {"tr", "td", "th", "tbody", "thead", "tfoot", "body", "main", "section", "header"}
 
+# 行内标签。它们可以直接挂在块级容器下面（`<li><code>x</code> 不能为 nil</li>`），
+# 块级处理必须把连续的行内内容攒成一段，否则这些标签会整个被丢掉。
+INLINE_TAGS = {
+    "code", "strong", "b", "em", "i", "del", "s", "strike", "sub", "sup", "small",
+    "abbr", "kbd", "var", "mark", "q", "cite", "time", "tt", "u", "big", "font",
+    "label", "ins", "samp", "dfn", "acronym", "bdi", "bdo", "ruby", "rt", "rp",
+    "span", "a", "br", "wbr",
+}
+
 
 def _text(el) -> str:
     """行内文本，压缩空白（代码路径不会走到这里）。"""
@@ -68,37 +77,59 @@ class Converter:
     # ------------------------------------------------------------ 行内
 
     def inline(self, el) -> str:
+        """渲染 el 的**内容**（不含 el 自己的标签语义）。"""
         out: list[str] = []
         if el.text:
             out.append(self.escape(el.text))
         for child in el:
             tag = child.tag if isinstance(child.tag, str) else ""
-            if tag in DROP:
-                pass
-            elif tag == "code":
-                # 行内 code：内容不转义、不压空白
-                out.append(f"`{child.text_content()}`")
-            elif tag in ("strong", "b"):
-                inner = self.inline(child).strip()
-                out.append(f"**{inner}**" if inner else "")
-            elif tag in ("em", "i"):
-                inner = self.inline(child).strip()
-                out.append(f"_{inner}_" if inner else "")
-            elif tag in ("del", "s", "strike"):
-                out.append(f"~~{self.inline(child).strip()}~~")
-            elif tag == "a":
-                href = self.absolutize(child.get("href", ""))
-                inner = self.inline(child).strip() or href
-                out.append(f"[{inner}]({href})" if href else inner)
-            elif tag == "img":
-                out.append(self.image(child))
-            elif tag == "br":
-                out.append("  \n")
-            else:
-                out.append(self.inline(child))
+            # tag 为空＝注释/处理指令，本身不是内容，但 tail 要留
+            if tag and tag not in DROP:
+                out.append(self.inline_el(child))
             if child.tail:
                 out.append(self.escape(child.tail))
         return "".join(out)
+
+    def inline_el(self, child) -> str:
+        """把**单个元素本身**当行内内容渲染（含它自己的标签语义）。
+
+        块级处理里也要用它：行内标签有可能直接挂在 <li> / <div> 下面，
+        那时不能只渲染它的子节点，否则 `<code>`、`<strong>` 的标记会丢。
+        """
+        tag = child.tag if isinstance(child.tag, str) else ""
+        if tag == "code":
+            # 行内 code：内容不转义、不压空白
+            return f"`{child.text_content()}`"
+        if tag in ("strong", "b"):
+            inner = self.inline(child).strip()
+            return f"**{inner}**" if inner else ""
+        if tag in ("em", "i"):
+            inner = self.inline(child).strip()
+            return f"_{inner}_" if inner else ""
+        if tag in ("del", "s", "strike"):
+            return f"~~{self.inline(child).strip()}~~"
+        if tag in ("sup", "sub"):
+            # 上下标不留标记会得到彻头彻尾的错数：mikeash 讲浮点时写
+            # `2<sup>31</sup>`，直接拼接就变成「231」，`1010<sub>2</sub>` 变成「10102」。
+            inner = self.inline(child).strip()
+            return ("^" if tag == "sup" else "~") + inner if inner else ""
+        if tag == "a":
+            href = child.get("href", "")
+            inner = self.inline(child).strip()
+            # 空内容 + 纯锚点 href＝标题旁的「¶」永久链接（Hexo headerlink、
+            # Docusaurus hash-link、Rouge anchor）。浏览器里它是个图标，退回用
+            # href 当文字会在每个标题后面糊上一条 `[#小节名](#小节名)`。
+            # Docusaurus 塞的是零宽空格，普通 strip() 去不掉，要单列出来。
+            if not inner.strip("​‌‍﻿ ") and href.startswith("#"):
+                return ""
+            href = self.absolutize(href)
+            inner = inner or href
+            return f"[{inner}]({href})" if href else inner
+        if tag == "img":
+            return self.image(child)
+        if tag == "br":
+            return "  \n"
+        return self.inline(child)
 
     def escape(self, text: str) -> str:
         text = re.sub(r"\s+", " ", text)
@@ -136,7 +167,19 @@ class Converter:
             if m:
                 lang = m.group(1).lower()
                 break
-        raw = el.text_content()
+        # `<pre>` 唯一的子元素是 `<code>` 时取 code 的内容，而不是 pre 的。
+        # HTML5 里 `<pre><code>` 才是代码块的规范写法，很多模板会把 <code> 另起一行
+        # 并缩进（objc.io 就是 `<pre>\n\t\t\t\t<code>…`）。取 pre.text_content() 会把
+        # 那串模板制表符当成第一行代码的缩进，每个代码块的首行都被推歪。
+        node = el
+        codes = el.xpath("./code")
+        if (
+            len(codes) == 1
+            and not (el.text or "").strip()
+            and not (codes[0].tail or "").strip()
+        ):
+            node = codes[0]
+        raw = node.text_content()
         # 去掉整块统一的前后空行，但**保留每行的行内缩进**
         lines = raw.split("\n")
         while lines and not lines[0].strip():
@@ -182,26 +225,55 @@ class Converter:
         return re.sub(r"\n{3,}", "\n\n", text).strip() + "\n"
 
     def blocks(self, el, crayon: dict, depth: int = 0) -> list[str]:
+        """把 el 的子节点切成块。
+
+        连续的行内内容（容器自己的 text、行内标签、各节点的 tail）攒进 buf，
+        遇到真正的块级元素或结束时才冲刷成一段。不这样做的话
+        `<li><code>x</code> 不能为 nil</li>` 里的 `<code>` 会整个丢掉，
+        `<li>文字<code>x</code></li>` 的「文字」（挂在 el.text 上）也会丢。
+        """
         out: list[str] = []
+        buf: list[str] = []
+
+        def flush() -> None:
+            if not buf:
+                return
+            t = "".join(buf).strip()
+            del buf[:]
+            if t:
+                out.append(t)
+
+        if el.text and el.text.strip():
+            buf.append(self.escape(el.text))
+
         for child in el:
             tag = child.tag if isinstance(child.tag, str) else ""
+            if not tag:
+                # 注释 / 处理指令：本身不是内容（mikeash 页面里有 `<!-- enable-comments -->`），
+                # 但它后面的文本还要留下
+                if child.tail and child.tail.strip():
+                    buf.append(self.escape(child.tail))
+                continue
             if tag in DROP or _is_boilerplate(child):
                 continue
             # 行号表格式高亮要在其它分支之前拦掉：它外层可能是 figure/code/div/table，
             # 落到那些分支就会把行号当代码、或把整段代码当行内 code 压成一行。
             hl = self.highlight_code(child) if tag in ("figure", "code", "div", "table") else None
             if hl:
+                flush()
                 out.append(hl)
                 continue
             if tag == "pre":
+                flush()
                 idx = child.get("data-crayon")
                 out.append(crayon.get(int(idx), "") if idx is not None else self.code_block(child))
             elif re.fullmatch(r"h[1-6]", tag):
-                lvl = int(tag[1])
+                flush()
                 inner = self.inline(child).strip()
                 if inner:
-                    out.append(f"{'#' * lvl} {inner}")
+                    out.append(f"{'#' * int(tag[1])} {inner}")
             elif tag == "p":
+                flush()
                 block = self.para_code(child)
                 if block:
                     out.append(block)
@@ -210,41 +282,53 @@ class Converter:
                     if inner:
                         out.append(inner)
             elif tag in ("ul", "ol"):
+                flush()
                 out.append(self.list_block(child, crayon, tag == "ol", depth))
             elif tag == "blockquote":
-                inner = self.blocks(child, crayon, depth)
-                body = "\n\n".join(inner)
+                flush()
+                body = "\n\n".join(self.blocks(child, crayon, depth))
                 out.append("\n".join("> " + l for l in body.splitlines()))
             elif tag == "table":
                 # 老站（如 2013 年的 sealiesoftware）用 table 做页面布局，不是数据表格。
                 # 当成表格渲染会把整篇正文塞进单元格里毁掉。判据：单元格里含块级元素。
+                flush()
                 if self.is_layout_table(child):
                     out.extend(self.blocks(child, crayon, depth))
                 else:
                     out.append(self.table(child))
             elif tag == "hr":
+                flush()
                 out.append("---")
             elif tag == "figure":
-                inner = self.blocks(child, crayon, depth)
-                out.extend(inner)
+                flush()
+                out.extend(self.blocks(child, crayon, depth))
             elif tag == "figcaption":
+                flush()
                 inner = self.inline(child).strip()
                 if inner:
                     out.append(f"<sub>{inner}</sub>")
             elif tag == "img":
+                flush()
                 s = self.image(child)
                 if s:
                     out.append(s)
-            elif tag in PASSTHROUGH:
-                # 纯结构容器：无条件递归。里面没有块级元素时，把行内内容当一段收下，
+            elif tag in PASSTHROUGH or tag in BLOCK_TAGS or tag == "center":
+                # 结构容器：里面还有块级元素就递归；否则整块当一段收下，
                 # 否则老站那种 <td> 里直接堆文本的写法会整段丢掉。
+                flush()
                 if any(isinstance(c.tag, str) and c.tag in BLOCK_TAGS for c in child):
                     out.extend(self.blocks(child, crayon, depth))
                 else:
                     inner = self.inline(child).strip()
                     if inner:
                         out.append(inner)
-            elif tag in BLOCK_TAGS or tag in ("span", "a", "center"):
+            elif tag in INLINE_TAGS and not any(
+                isinstance(c.tag, str) and c.tag in BLOCK_TAGS for c in child
+            ):
+                # 行内标签直接挂在块级容器下面：并入当前这一段，别单独成段、更别丢掉
+                buf.append(self.inline_el(child))
+            else:
+                flush()
                 if any(isinstance(c.tag, str) and c.tag in BLOCK_TAGS for c in child):
                     out.extend(self.blocks(child, crayon, depth))
                 else:
@@ -252,9 +336,8 @@ class Converter:
                     if inner:
                         out.append(inner)
             if child.tail and child.tail.strip():
-                t = self.escape(child.tail).strip()
-                if t:
-                    out.append(t)
+                buf.append(self.escape(child.tail))
+        flush()
         return out
 
     def list_block(self, el, crayon: dict, ordered: bool, depth: int) -> str:

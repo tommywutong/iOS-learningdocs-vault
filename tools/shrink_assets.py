@@ -29,6 +29,8 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# 默认处理 attachments/，也可以用 --dir 指定别的目录、--limit 指定别的阈值。
+# oss/ 下的中文笔记仓库带大量截图（749 MB），用更严的阈值压。
 ATTACH = ROOT / "attachments"
 LIMIT = 1_000_000          # 目标上限，1 MB
 LADDER = [2400, 2000, 1600, 1280, 1024]   # 最长边逐档下调
@@ -98,19 +100,37 @@ def shrink(path: Path) -> dict:
 
 
 def main() -> None:
+    global ATTACH, LIMIT
     dry = "--dry-run" in sys.argv
+    for i, a in enumerate(sys.argv):
+        if a == "--dir" and i + 1 < len(sys.argv):
+            ATTACH = ROOT / sys.argv[i + 1]
+        if a == "--limit" and i + 1 < len(sys.argv):
+            LIMIT = int(sys.argv[i + 1])
     if not ATTACH.exists():
-        sys.exit("attachments/ 不存在")
+        sys.exit(f"{ATTACH} 不存在")
 
-    big = sorted(
-        (p for p in ATTACH.rglob("*") if p.is_file() and p.stat().st_size > LIMIT),
-        key=lambda p: -p.stat().st_size,
-    )
-    total_all = sum(p.stat().st_size for p in ATTACH.rglob("*") if p.is_file())
+    # 两道必须的防护：
+    # 1. 只处理真正的图片。曾经差点把 .git/objects/pack/*.pack 当图片压，
+    #    那会直接损坏 git 仓库。
+    # 2. 跳过任何 .git 目录。
+    IMG_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".tiff", ".bmp"}
+
+    def eligible(p: Path) -> bool:
+        return (
+            p.is_file()
+            and p.suffix.lower() in IMG_EXT
+            and ".git" not in p.parts
+            and p.stat().st_size > LIMIT
+        )
+
+    big = sorted((p for p in ATTACH.rglob("*") if eligible(p)), key=lambda p: -p.stat().st_size)
+    total_all = sum(p.stat().st_size for p in ATTACH.rglob("*")
+                    if p.is_file() and ".git" not in p.parts)
     total_big = sum(p.stat().st_size for p in big)
     print(f"attachments/ 共 {sum(1 for p in ATTACH.rglob('*') if p.is_file()):,} 个文件，"
           f"{total_all / 1e9:.2f} GB")
-    print(f"其中 > 1 MB 的 {len(big)} 个，占 {total_big / 1e9:.2f} GB "
+    print(f"其中超过 {LIMIT / 1000:.0f} KB 的图片 {len(big)} 个，占 {total_big / 1e9:.2f} GB "
           f"（{total_big / total_all * 100:.0f}%）")
 
     if dry:
@@ -146,7 +166,7 @@ def main() -> None:
     now = sum(p.stat().st_size for p in ATTACH.rglob("*") if p.is_file())
     print(f"  attachments/ 现在 {now / 1e9:.2f} GB")
 
-    (ROOT / "meta" / "shrink_report.json").write_text(
+    (ROOT / "meta" / f"shrink_report_{ATTACH.name}.json").write_text(
         json.dumps(records, ensure_ascii=False, indent=1), encoding="utf-8"
     )
     print("  明细 → meta/shrink_report.json")

@@ -215,14 +215,19 @@ async def discover(keys: list[str]) -> None:
                     doc = lxml.html.fromstring(r.text)
                     doc.make_links_absolute(page_url)
                     pat = d.get("url_filter")
+                    # 索引页的 <a> 里常常标题和作者各占一个子元素，整块 text_content()
+                    # 会拼成「标题 作者」。可选的 title_xpath（相对 <a>）用来只取标题。
+                    txp = d.get("title_xpath")
                     for a in doc.xpath("//a[@href]"):
                         href = a.get("href").split("#")[0]
                         rel = urllib.parse.urlparse(href).path
                         if pat and not (re.search(pat, rel) or re.search(pat, href)):
                             continue
+                        tnode = (a.xpath(txp) or [None])[0] if txp else None
+                        raw_title = (tnode if tnode is not None else a).text_content()
                         urls.append({
                             "url": href,
-                            "title": " ".join(a.text_content().split())[:200],
+                            "title": " ".join(raw_title.split())[:200],
                             "date": "",
                         })
             except Exception as e:

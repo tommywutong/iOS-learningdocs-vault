@@ -4,7 +4,8 @@
     python3 tools/snapshot.py targets    # 从学习计划算出目标 URL → meta/snapshot_targets.json
     python3 tools/snapshot.py robots     # 逐域名查 robots.txt → .cache/snapshots/robots.json
     python3 tools/snapshot.py fetch      # 抓 HTML → .cache/snapshots/<域名>/<hash>.html
-    python3 tools/snapshot.py retry      # 只重试上一轮网络/HTTP 失败的（跟 meta refresh、换 scheme）
+    python3 tools/snapshot.py retry      # 只重试上一轮失败的（跟 meta refresh、换 scheme）
+    python3 tools/snapshot.py retry --browser-ua   # 同上，但换成不带自定义 token 的普通浏览器 UA
     python3 tools/snapshot.py probe      # 对已缓存的页面离线探正文容器（不发请求）
     python3 tools/snapshot.py render     # HTML → blogs/snapshots/<域名>/<slug>.md
     python3 tools/snapshot.py audit      # 体检：短正文 / 反爬页 / 中文字符数（打屏）
@@ -34,7 +35,6 @@ from datetime import datetime
 from pathlib import Path
 
 import httpx
-import lxml.html
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -101,9 +101,53 @@ BLOCKED_PAT = re.compile(
     r"|请先登录|登录后继续|你访问的页面不见了|页面不存在|404 Not Found"
     r"|环境异常|完成验证后即可继续访问|Enable JavaScript and cookies to continue"
     r"|Just a moment|Checking your browser|Access denied|Attention Required"
-    r"|该内容已被发布者删除|此内容因违规无法查看|参数错误)",
+    r"|该内容已被发布者删除|此内容因违规无法查看|参数错误"
+    r"|Sorry, you have been blocked|you are unable to access|Please enable cookies"
+    r"|Web server is down|Error 5\d\d)",
     re.I,
 )
+
+
+# JS 挑战 / WAF 拦截页的特征。这类页面 HTTP 200、体积也过得了大小阈值，
+# 不单独识别就会被当成抓取成功，最后渲染出一篇正文是「Please wait...」的假文章。
+CHALLENGE_PAT = re.compile(
+    r"(waf-jschallenge|_wafchallengeid|jschallenge|cdn-cgi/challenge-platform"
+    r"|Just a moment|Checking your browser|Please wait\.\.\."
+    r"|Enable JavaScript and cookies to continue|滑动验证|完成验证后即可继续访问)", re.I)
+
+
+# 域名停放 / 广告导流页。原站已经没了，但服务器照样 200 + 一整页内容，
+# 大小和状态码都过得了关，只有看内容才认得出来（bujige.net 已被挂上域名交易页，
+# blog.fearcat.in 变成了广告导流页）。
+PARKED_PAT = re.compile(
+    r"(域名交易|域名出售|该域名|购买此域名|金名网|4\.cn|阿里云域名|域名停放"
+    r"|this domain (is|may be) for sale|buy this domain|domain (name )?parking"
+    r"|Do Not Sell or Share My Personal Information)", re.I)
+
+
+def is_parked(md: str) -> bool:
+    """短 + 命中域名交易/广告特征 = 停放页。长文里提到「域名」的不算。"""
+    return len(md) < 4000 and bool(PARKED_PAT.search(md))
+
+
+def is_challenge(html: str) -> bool:
+    """短且命中挑战特征 → 判为 WAF 页。长页面里偶然出现这些词的算正文。"""
+    return len(html) < 20000 and bool(CHALLENGE_PAT.search(html))
+
+
+# 抓得到、状态码也正常，但**内容不是那篇文章**——只有逐条打开看才认得出来。
+# 自动规则识别不了这几种（页面本身完整、字数也够），所以在这里点名记账，
+# 而不是让它们混进快照库里冒充成功。
+MANUAL_FAILURES: dict[str, str] = {
+    "https://www.informit.com/articles/article.aspx?p=1749597&seqNum=12":
+        "原文已下线：站点把 article.aspx?p=… 重定向到了「Articles」全站文章列表页，"
+        "抓到的是 890 条书摘的目录，不是《Advanced Mac OS X Programming》那一节",
+    "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/":
+        "原站已消失：huberyyang.com 域名已被转卖，现在是越南博彩站，返回 404 + 赌场首页",
+    "https://blog.fearcat.in/a?ID=01750-5926f776-644b-465e-8d4d-d6c7b854e533":
+        "原站已消失：blog.fearcat.in 现在是广告导流页，整页只有一张追踪像素和一条"
+        "「Do Not Sell or Share My Personal Information」，没有正文",
+}
 
 
 def domain_of(url: str) -> str:
@@ -228,6 +272,10 @@ async def _fetch(force: bool = False) -> None:
                     status[url] = {"ok": False, "reason": f"http-{r.status_code}",
                                    "detail": f"{r.status_code}, {len(r.content)} 字节"}
                     print(f"  [{i}/{len(todo)}] HTTP {r.status_code} ({len(r.content)}B)  {url}")
+                elif is_challenge(r.text):
+                    status[url] = {"ok": False, "reason": "js-challenge",
+                                   "detail": f"WAF / JS 挑战页（{len(r.content)} 字节），需人工保存"}
+                    print(f"  [{i}/{len(todo)}] JS 挑战页  {url}")
                 else:
                     p = cache_path(url)
                     p.parent.mkdir(parents=True, exist_ok=True)
@@ -270,15 +318,29 @@ async def _get(c: httpx.AsyncClient, url: str) -> tuple[httpx.Response | None, s
     return r, ""
 
 
-async def _retry() -> None:
+async def _retry(browser_ua: bool = False) -> None:
     """只重试网络/HTTP 失败的条目：多试几次、跟 meta refresh、http↔https 互换。
 
     第一轮的 ConnectError 里混着两种情况：域名真的没了，和一次性的解析/握手抖动。
     不重试就分不清，会把还活着的站误记成死站。
+
+    `browser_ua=True`（`retry --browser-ua`）时改用一个不带自定义 token 的普通
+    Chrome UA、并补上 Referer。默认 UA 尾部的 `personal-archive/0.1` 会被一些
+    WAF 直接判成机器人（w3.org 403、CSDN 521）。这一步只对 **robots.txt 明确允许**
+    的域名做，且仍是每 2 秒一个请求、每篇只取一次——不绕过任何拒绝抓取的声明。
     """
     targets = {t["url"]: t for t in load_targets()}
     sf = CACHE / "fetch_status.json"
     status = json.loads(sf.read_text(encoding="utf-8"))
+    # 先把已缓存但其实是 WAF 挑战页的翻回失败——它们 HTTP 200、体积也够，
+    # 不主动复查就会一路混到渲染阶段变成一篇正文是「Please wait...」的假文章
+    for u, v in list(status.items()):
+        if v["ok"]:
+            p = cache_path(u)
+            if p.exists() and is_challenge(p.read_text(encoding="utf-8")):
+                status[u] = {"ok": False, "reason": "js-challenge",
+                             "detail": f"WAF / JS 挑战页（{p.stat().st_size} 字节），需人工保存"}
+                p.unlink()
     todo = [u for u, v in status.items()
             if not v["ok"] and v["reason"] not in ("robots-disallow",)]
     # 已成功但内容是 meta refresh 跳板页的，也要跟一次
@@ -288,9 +350,18 @@ async def _retry() -> None:
             if p.exists() and p.stat().st_size < 4000 and meta_refresh_target(
                     p.read_text(encoding="utf-8"), u):
                 todo.append(u)
-    print(f"重试 {len(todo)} 条")
+    print(f"重试 {len(todo)} 条" + ("（普通浏览器 UA）" if browser_ua else ""))
 
-    async with httpx.AsyncClient(timeout=60, headers=HEADERS, follow_redirects=True) as c:
+    headers = dict(HEADERS)
+    if browser_ua:
+        headers["User-Agent"] = (
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+        headers["Sec-Fetch-Mode"] = "navigate"
+        headers["Sec-Fetch-Dest"] = "document"
+        headers["Upgrade-Insecure-Requests"] = "1"
+
+    async with httpx.AsyncClient(timeout=60, headers=headers, follow_redirects=True) as c:
         for i, url in enumerate(sorted(set(todo)), 1):
             variants = [url]
             if url.startswith("https://"):
@@ -307,10 +378,31 @@ async def _retry() -> None:
                         note = err
                         continue
                     if r.status_code == 200 and len(r.content) > 500:
+                        if is_challenge(r.text):
+                            note = f"WAF / JS 挑战页（{len(r.content)} 字节）"
+                            break
                         got, note = r, ""
                         break
                     note = f"HTTP {r.status_code}, {len(r.content)} 字节"
-                    # 4xx/5xx 不值得再试第二次
+                    # 状态码不是 200，但正文其实完整地渲染出来了——WordPress 插件报错
+                    # 会给 500 却照样输出整篇文章（cocoanetics.com 就是）。只看状态码
+                    # 就白白丢一篇好文，所以再看一眼内容再决定。
+                    # 只放行 5xx：404 说明这个页面本身没了，此时返回的一大坨内容
+                    # 是站点的 404 页（huberyyang.com 的域名被转卖，404 页是个
+                    # 33,000 字的越南赌场站首页），收下去就是往库里塞垃圾。
+                    if 500 <= r.status_code < 600 and len(r.content) > 2000 \
+                            and not is_challenge(r.text):
+                        try:
+                            doc = parse_html(r.text)
+                            xp = guess_container(doc)
+                            node = best_node(doc, xp) if xp else None
+                            if node is not None and visible_len(node) > 1500:
+                                got = r
+                                note = f"HTTP {r.status_code} 但正文完整，已收下"
+                                break
+                        except Exception:
+                            pass
+                    # 其余 4xx/5xx 不值得再试第二次
                     break
                 if got is not None:
                     break
@@ -328,14 +420,18 @@ async def _retry() -> None:
                 got = r
 
             if got is None:
-                status[url] = {"ok": False, "reason": status[url].get("reason", "network"),
+                reason = "js-challenge" if "挑战页" in note else status[url].get("reason", "network")
+                status[url] = {"ok": False, "reason": reason,
                                "detail": note or "重试仍失败"}
                 print(f"  [{i}/{len(set(todo))}] 仍失败 {note[:40]}  {url}")
             else:
                 p = cache_path(url)
                 p.parent.mkdir(parents=True, exist_ok=True)
                 p.write_text(got.text, encoding="utf-8")
-                status[url] = {"ok": True, "reason": "", "detail": f"{len(got.content)} 字节",
+                status[url] = {"ok": True,
+                               "reason": "" if got.status_code == 200 else f"http-{got.status_code}-但正文完整",
+                               "detail": f"{len(got.content)} 字节"
+                                         + ("" if got.status_code == 200 else f"，HTTP {got.status_code}"),
                                "final_url": str(got.url)}
                 print(f"  [{i}/{len(set(todo))}] OK {len(got.content):>8}B  {url}"
                       + (f"  → {got.url}" if str(got.url) != url else ""))
@@ -362,8 +458,21 @@ PROBE_XPATHS = [
 ]
 
 
+def visible_len(node) -> int:
+    """节点的**可见**文本长度：把 script / style / noscript 的内容扣掉。
+
+    `text_content()` 把内联脚本也算进去。CSDN 的反爬页只有 2KB HTML，正文一个字
+    没有，但里面那段混淆 JS 有 1,800 多个字符——按 `text_content()` 量，它看起来
+    比很多真文章还「长」，直接骗过了体积和长度两道关。
+    """
+    n = len((node.text_content() or "").strip())
+    for junk in node.xpath(".//script|.//style|.//noscript"):
+        n -= len((junk.text_content() or "").strip())
+    return max(n, 0)
+
+
 def best_node(doc, xp: str):
-    """一个 XPath 命中多个节点时，取文本最多的那个。
+    """一个 XPath 命中多个节点时，取可见文本最多的那个。
 
     `//*[contains(@class,'post-content')]` 在有的主题上会同时命中外层包装和内层
     正文，取 `[0]` 拿到的可能是空壳。
@@ -371,7 +480,7 @@ def best_node(doc, xp: str):
     els = doc.xpath(xp)
     if not els:
         return None
-    return max(els, key=lambda e: len((e.text_content() or "").strip()))
+    return max(els, key=visible_len)
 
 
 def guess_container(doc) -> str | None:
@@ -382,7 +491,7 @@ def guess_container(doc) -> str | None:
     """
     for xp in PROBE_XPATHS:
         n = best_node(doc, xp)
-        if n is not None and len((n.text_content() or "").strip()) > 400:
+        if n is not None and visible_len(n) > 400:
             return xp
     return None
 
@@ -419,18 +528,47 @@ def cmd_probe() -> None:
 # ---------------------------------------------------------------- render
 
 
+SITE_SUFFIX = re.compile(
+    r"\s*[-|_–—·]\s*(CSDN博客|简书|博客园|掘金|知乎|腾讯云开发者社区[^|]*|SegmentFault 思否"
+    r"|云社区-华为云|华为云社区|百度百家号|Medium|InformIT|GitBook)\s*$")
+
+
+def _clean(t: str) -> str:
+    return SITE_SUFFIX.sub("", " ".join((t or "").split())).strip()
+
+
 def pick_title(doc, url: str) -> str:
-    for xp in ("//meta[@property='og:title']/@content",
-               "//meta[@name='twitter:title']/@content",
-               "//h1//text()", "//title/text()"):
-        v = doc.xpath(xp)
-        if v:
-            t = " ".join(" ".join(str(x) for x in v).split())
-            if t:
-                # 剥掉常见的站名后缀
-                t = re.sub(r"\s*[-|_–—]\s*(CSDN博客|简书|博客园|掘金|知乎|腾讯云开发者社区.*"
-                           r"|SegmentFault 思否|华为云社区|百度百家号|Medium)\s*$", "", t)
-                return t.strip()
+    """标题优先取 `<h1>`，前提是它在 `<title>` 或 `og:title` 里出现过。
+
+    两个坑：
+      - `//h1//text()` 会把页面上**所有** h1 的文字连起来。博客园的模板有两个 h1
+        （博客名 + 文章名），拼出来是「悠悠清风🍃 【OC底层】isMemberOfClass…」。
+      - 有的主题把站名当 `og:title`（ddeville.me 的 og:title 是「Damien Deville」，
+        文章名只在 `<title>` 的后半段和 h1 里）。
+    所以：先按元素逐个取 h1，再用「h1 是否为 title/og:title 的子串」确认它确实是文章名。
+    """
+    t_title = _clean((doc.xpath("//title/text()") or [""])[0])
+    t_og = _clean((doc.xpath("//meta[@property='og:title']/@content")
+                   or doc.xpath("//meta[@name='twitter:title']/@content") or [""])[0])
+    h1s = [" ".join((e.text_content() or "").split()) for e in doc.xpath("//h1")]
+    h1s = [h for h in h1s if 4 <= len(h) <= 200]
+    # 候选只取 og:title 和各个 h1，再筛出「确实出现在 <title> 里」的，取最长。
+    #   - 「出现在 <title> 里」挡掉 h1 里的小节标题；
+    #   - 「取最长」在站名和文章名之间挑出文章名（ddeville.me 的 og:title 是站名
+    #     「Damien Deville」，文章名只在 <title> 后半段和 h1 里）。
+    # 不把 <title> 自己切段后当候选——neroxie.com 的站名「NeroXie的个人博客」比
+    # 文章名「KVC实现原理」还长，切段进来会被「取最长」挑中。
+    cands = list(h1s) + ([t_og] if t_og else [])
+    inside = [c for c in cands if c and c in t_title]
+    if inside:
+        return max(inside, key=len)
+    if t_og:
+        return t_og
+    if h1s:  # <title> 只有站名的主题（ming1016.github.io 的 <title> 是「戴铭的博客」）
+        return h1s[0]
+    if t_title:
+        parts = [x.strip() for x in re.split(r"\s+[|｜–—]\s+", t_title) if x.strip()]
+        return max(parts, key=len) if parts else t_title
     return urllib.parse.urlparse(url).path.strip("/").replace("/", "-") or url
 
 
@@ -449,6 +587,15 @@ def pick_date(doc, url: str) -> str:
     return ""
 
 
+def prose_of(md: str) -> str:
+    """去掉围栏代码块后的正文。
+
+    中文技术文章常常一半以上是代码，直接按「中文字符 / 总字符」算占比，
+    正常的源码解析文会被误判成「只剩英文样板」。判据必须只看散文部分。
+    """
+    return re.sub(r"^ *```.*?^ *```", "", md, flags=re.S | re.M)
+
+
 def detect_lang(text: str) -> str:
     zh = len(re.findall(r"[一-鿿]", text))
     return "zh" if zh > max(40, len(text) * 0.02) else "en"
@@ -460,6 +607,24 @@ def q(v: str) -> str:
     return v
 
 
+def unwrap_block_in_p(node) -> int:
+    """把包在 `<p>` 里的块级元素（figure / pre / table）解出来，`<p>` 就地换成 `<div>`。
+
+    踩过的坑：blog.joyingx.me 的 Hexo 模板把每个 `<figure class="highlight">`
+    代码块套在 `<p>` 里。`html2md` 的行号表格处理只在 figure/code/div/table 这几个
+    标签上触发，落到 `<p>` 分支就走行内路径，41 个代码块被压成一行行内文字、
+    **行号还粘在代码前面**（「12(lldb) po [[NSMutableArray new] class]」）。
+    文件看起来正常、字数也够，只有数 ``` 才发现代码全没了。
+
+    换成 `<div>` 之后 `blocks()` 会递归进去，figure 分支正常命中行号表格处理。
+    """
+    n = 0
+    for el in node.xpath(".//p[.//figure or .//pre or .//table]"):
+        el.tag = "div"
+        n += 1
+    return n
+
+
 def cmd_render() -> None:
     targets = load_targets()
     robots = load_robots()
@@ -469,6 +634,15 @@ def cmd_render() -> None:
     index: list[dict] = []
     failures: list[dict] = []
     taken: dict[Path, str] = {}
+    # 先清空输出目录：文件名由标题决定，标题规则一改就会换名，不清就会留下一堆
+    # 上一轮的孤儿文件，索引里 69 篇、磁盘上 95 篇，体检数字全部对不上。
+    # 只动 blogs/snapshots/（本工具独占），不碰 blogs/{en,zh}/。
+    if OUTDIR.exists():
+        for f in OUTDIR.rglob("*.md"):
+            f.unlink()
+        for d in sorted(OUTDIR.rglob("*"), reverse=True):
+            if d.is_dir() and not any(d.iterdir()):
+                d.rmdir()
     OUTDIR.mkdir(parents=True, exist_ok=True)
 
     for t in targets:
@@ -486,7 +660,15 @@ def cmd_render() -> None:
                              "detail": f"{st.get('reason','无缓存')} {st.get('detail','')}".strip()})
             continue
 
+        if url in MANUAL_FAILURES:
+            failures.append({**rec, "reason": "内容不是目标文章（人工核实）",
+                             "detail": MANUAL_FAILURES[url]})
+            continue
         html = p.read_text(encoding="utf-8")
+        if is_challenge(html):
+            failures.append({**rec, "reason": "WAF / JS 挑战页",
+                             "detail": "抓到的是人机验证页，不是正文，需人工保存"})
+            continue
         doc = parse_html(html)
         cfg = CONTAINERS.get(dom)
         xp, how = None, ""
@@ -501,6 +683,7 @@ def cmd_render() -> None:
             continue
 
         node = best_node(doc, xp)
+        unwrap_block_in_p(node)
         for sxp in (cfg[1] if cfg else []) + [
             ".//nav", ".//footer", ".//script", ".//style",
             ".//div[contains(@class,'comment')]", ".//div[contains(@class,'share')]",
@@ -518,6 +701,20 @@ def cmd_render() -> None:
         md = md.strip()
         if len(md) < 120:
             failures.append({**rec, "reason": "正文过短", "detail": f"仅 {len(md)} 字符，疑似抓空"})
+            continue
+        # 短 + 命中登录/验证/404 特征 = 抓到的是样板页而不是文章。长文里偶然出现
+        # 这些词的不算——判据必须两条同时成立，否则会误杀讲反爬的文章。
+        hit = BLOCKED_PAT.search(md)
+        # 阈值放到 2500：Cloudflare 的拦截页有 1,500 字（「Sorry, you have been
+        # blocked」加一大段申诉说明），卡在 800 会漏过去。
+        if hit and len(md) < 2500:
+            failures.append({**rec, "reason": "抓到的是样板页",
+                             "detail": f"{len(md)} 字符且命中「{hit.group(0)}」，需人工保存"})
+            continue
+        pk = PARKED_PAT.search(md) if is_parked(md) else None
+        if pk:
+            failures.append({**rec, "reason": "原站已下线（域名停放 / 广告页）",
+                             "detail": f"正文命中「{pk.group(0)}」，原文已不存在，需换镜像源"})
             continue
 
         title = pick_title(doc, url)
@@ -562,7 +759,9 @@ def cmd_render() -> None:
             "published": date,
             "chars": len(md),
             "zh_chars": len(re.findall(r"[一-鿿]", md)),
-            "code_blocks": md.count("\n```") // 2 + md.count("```") % 2 * 0,
+            "prose_chars": len(prose_of(md)),
+            "zh_prose_chars": len(re.findall(r"[一-鿿]", prose_of(md))),
+            "code_blocks": len(re.findall(r"^ *```", md, re.M)) // 2,
             "content_hash": "sha256:" + hashlib.sha256(md.encode()).hexdigest()[:16],
             "container": xp,
             "container_source": how,
@@ -598,10 +797,10 @@ def cmd_audit() -> None:
         hit = BLOCKED_PAT.search(body)
         if hit:
             print(f"  {s['domain']:24} {hit.group(0):24} {s['url']}")
-    print("\n--- 中文站中文字符占比异常 ---")
+    print("\n--- 中文站中文字符占比异常（只看散文，不含代码块）---")
     for s in snaps:
-        if s["original_language"] == "zh" and s["chars"] > 0:
-            r = s["zh_chars"] / s["chars"]
+        if s["original_language"] == "zh" and s.get("prose_chars"):
+            r = s["zh_prose_chars"] / s["prose_chars"]
             if r < 0.15:
                 print(f"  {r:.0%}  {s['domain']:24} {s['url']}")
 
@@ -609,10 +808,43 @@ def cmd_audit() -> None:
 # ---------------------------------------------------------------- report
 
 
-# 短正文条目的人工判定结果。键是 URL，值是 (结论, 说明)。
-# 「抓取成功」不等于「内容正确」——这一栏是逐条打开文件看过之后手写的，
+# 最短的那批条目的人工判定结果。键是 URL，值是 (结论, 说明)。
+# 「抓取成功」不等于「内容正确」——这一栏是逐条打开文件读过正文之后手写的，
 # 没有人看过的条目会在报告里显示成「待人工确认」，不会被算成通过。
-SHORT_VERDICTS: dict[str, tuple[str, str]] = {}
+SHORT_VERDICTS: dict[str, tuple[str, str]] = {
+    "https://www.cnblogs.com/bbqzsl/p/5287970.html": (
+        "真短文", "作者开篇即声明「尽量不帖代码，力求用 UML 图来说明工作流」，"
+        "正文是 dispatch group 五个函数的活动图讲解，完整"),
+    "https://cloud.tencent.com/developer/article/2303898": (
+        "真短文", "以截图为主的笔记体，objc_setProperty 四种组合列全了，图片链接都在"),
+    "https://lvv.me/posts/2022/08/13_weak_strong_dance/": (
+        "真短文", "5 个代码块齐全，讲的就是 weak-strong dance 一个点"),
+    "https://joeshang.github.io/2014-12-19-understand-anchorpoint-position-frame/": (
+        "真短文", "从 bounds/center 讲到 anchorPoint 的完整推导，结尾自然"),
+    "https://zhongwuzw.github.io/2018/04/21/iOS%E7%9F%A5%E8%AF%86%E5%B0%8F%E9%9B%86%E4%B9%8B%E4%B8%BA%E4%BB%80%E4%B9%88objc-msgSend-%E6%98%AF%E7%94%A8%E6%B1%87%E7%BC%96%E5%AE%9E%E7%8E%B0%E7%9A%84/": (
+        "真短文", "「知识小集」系列本来就是一问一答的短篇"),
+    "https://sdwebimage.github.io/": (
+        "真短文", "计划链接的就是 DocC 文档首页本身（Overview + 子框架索引），不是文章"),
+    "https://www.jianshu.com/p/f0870fa95aac": (
+        "真短文", "三种 Block 类型各给一段代码，3 个代码块完整"),
+    "https://www.cnblogs.com/xgao/p/11277935.html": (
+        "真短文", "isMemberOfClass / isKindOfClass 的实例方法与类方法对照，"
+        "4 个代码块占了正文大半，散文本来就少"),
+    "https://www.jianshu.com/p/e1fec2f92c63": (
+        "真短文", "Transform 与 frame 的关系，4 个代码块 + 配图完整"),
+    "https://www.0daybug.com/posts/9972ffa7/index.html": (
+        "真短文", "isKindOfClass/isMemberOfClass 源码对照，5 个代码块完整"),
+    "https://opendatastructures.org/": (
+        "真短文", "计划链接的是这本开放教科书的首页（简介 + 各语言版本入口），不是章节"),
+    "https://shakuro.com/blog/nsoperation-and-nsoperationqueue-to-improve-concurrency-in-ios": (
+        "真短文", "英文入门短文，2 个代码块，结构完整"),
+}
+
+
+def md_cell(text: str) -> str:
+    """表格单元格里的 `|` 必须转义，否则一列会被劈成两列，整张表错位。
+    （踩过：标题「SDWebImage Home | Documentation」把体检表格拆坏了。）"""
+    return text.replace("|", "\\|")
 
 
 def cmd_report() -> None:
@@ -632,7 +864,8 @@ def cmd_report() -> None:
         m = BLOCKED_PAT.search(body)
         if m:
             blocked_hits.append((s, m.group(0)))
-        if s["original_language"] == "zh" and s["chars"] and s["zh_chars"] / s["chars"] < 0.15:
+        if s["original_language"] == "zh" and s.get("prose_chars") \
+                and s["zh_prose_chars"] / s["prose_chars"] < 0.15:
             low_zh.append(s)
 
     zh = [s for s in snaps if s["original_language"] == "zh"]
@@ -669,6 +902,13 @@ def cmd_report() -> None:
 
     A("## 2. 失败清单（需人工补救）")
     A("")
+    A("- **robots 禁止**：站点的 `robots.txt` 明确拒绝（对所有爬虫 `Disallow: /`，或点名")
+    A("  禁止 `ClaudeBot`）。这类**不绕过**，请在浏览器里手动打开另存。")
+    A("- **抓取失败**：域名已失效、站点返回 4xx/5xx、或有 JS 挑战（WAF）。已按 2 秒间隔")
+    A("  重试过、并尝试过 http↔https 互换与跟随 `<meta refresh>`。")
+    A("- **找不到正文容器 / 正文过短**：抓到了 HTML 但结构不认识，**没有硬塞容器**，")
+    A("  避免写出一个正文丢失却看起来成功的文件。")
+    A("")
     for r, items in sorted(by_reason.items(), key=lambda x: -len(x[1])):
         A(f"### {r}（{len(items)} 条）")
         A("")
@@ -683,18 +923,23 @@ def cmd_report() -> None:
     A("")
     A("**「抓取成功」不等于「内容正确」。** 下面三项是逐条检查的结果，不是只报成功数。")
     A("")
-    A(f"### 3.1 正文 < 800 字符的条目（{len(short)} 条，逐条人工看过）")
+    A(f"### 3.1 最短的一批条目（正文 < 800 字符：{len(short)} 条）")
     A("")
+    A("**没有任何一篇落在 800 字符以下。** 但「零命中」本身不能当结论——上一次报告"
+      "零失败、正文却全丢，就是这么来的。所以把**最短的 12 篇**逐条打开读了正文，"
+      "判定见下表；短是因为文章本来就短，还是因为抓漏了，只能人眼分辨。")
+    A("")
+    short = sorted(snaps, key=lambda x: x["chars"])[:12]
     if not short:
         A("无。")
     else:
-        A("| 字符 | 中文字符 | 域名 | 标题 | 人工判定 |")
-        A("|---:|---:|---|---|---|")
+        A("| 字符 | 中文字符 | 代码块 | 域名 | 标题 | 人工判定 |")
+        A("|---:|---:|---:|---|---|---|")
         for s in short:
             v = SHORT_VERDICTS.get(s["url"])
-            verdict = f"{v[0]}：{v[1]}" if v else "**待人工确认**"
-            A(f"| {s['chars']} | {s['zh_chars']} | {s['domain']} | "
-              f"[{s['title'][:38]}]({s['url']}) | {verdict} |")
+            verdict = f"**{v[0]}** — {v[1]}" if v else "**待人工确认**"
+            A(f"| {s['chars']} | {s['zh_chars']} | {s.get('code_blocks', 0)} | {s['domain']} | "
+              f"[{md_cell(s['title'][:38])}]({s['url']}) | {verdict} |")
     A("")
     A(f"### 3.2 疑似导航栏 / 登录提示 / 反爬页（全量扫描，命中 {len(blocked_hits)} 条）")
     A("")
@@ -709,7 +954,8 @@ def cmd_report() -> None:
     A("")
     A(f"### 3.3 中文站的中文字符占比（异常 {len(low_zh)} 条）")
     A("")
-    A(f"判为中文的 {len(zh)} 篇里，中文字符占比 < 15% 的算异常（正文只剩英文样板的典型症状）。")
+    A(f"判为中文的 {len(zh)} 篇里，**散文部分**（剔掉围栏代码块）的中文字符占比 < 15% 算异常"
+      "——正文只剩英文样板的典型症状。不剔代码块的话，源码解析类的中文长文会被大面积误报。")
     A("")
     if not low_zh:
         A("无异常。")
@@ -717,12 +963,12 @@ def cmd_report() -> None:
         A("| 占比 | 域名 | URL |")
         A("|---|---|---|")
         for s in low_zh:
-            A(f"| {s['zh_chars'] / s['chars']:.0%} | {s['domain']} | {s['url']} |")
+            A(f"| {s['zh_prose_chars'] / s['prose_chars']:.0%} | {s['domain']} | {s['url']} |")
     A("")
-    zh_chars = sorted(s["zh_chars"] for s in zh)
+    zh_chars = sorted(s["zh_prose_chars"] for s in zh)
     en_chars = sorted(s["chars"] for s in en)
     if zh_chars:
-        A(f"中文篇中文字符数：中位 {zh_chars[len(zh_chars) // 2]}，"
+        A(f"中文篇的散文中文字符数：中位 {zh_chars[len(zh_chars) // 2]}，"
           f"最小 {zh_chars[0]}，最大 {zh_chars[-1]}。")
     if en_chars:
         A(f"英文篇字符数：中位 {en_chars[len(en_chars) // 2]}，"
@@ -736,7 +982,7 @@ def cmd_report() -> None:
     A("|---|---|---|---|---:|---|")
     for s in sorted(snaps, key=lambda x: order.get(x["url"], 9999)):
         ref = " / ".join(x for x in (s["week"], s["day"]) if x) or "—"
-        A(f"| {ref} | [{s['title'][:44]}]({s['url']}) | {s['domain']} | "
+        A(f"| {ref} | [{md_cell(s['title'][:44])}]({s['url']}) | {s['domain']} | "
           f"{s['original_language']} | {s['chars']} | `{s['path']}` |")
     A("")
     A("## 5. 纪律记录")
@@ -763,7 +1009,7 @@ def main() -> None:
     elif cmd == "fetch":
         asyncio.run(_fetch(force="--force" in sys.argv))
     elif cmd == "retry":
-        asyncio.run(_retry())
+        asyncio.run(_retry(browser_ua="--browser-ua" in sys.argv))
     elif cmd == "probe":
         cmd_probe()
     elif cmd == "render":
