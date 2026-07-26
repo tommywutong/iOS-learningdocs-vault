@@ -140,8 +140,17 @@ def check_pair(en: Path, zh: Path) -> list[str]:
             issues.append(f"frontmatter `{k}` 被改动：{v!r} → {zh_fm[k]!r}")
     for k in zh_fm.keys() - en_fm.keys() - MUTABLE_FIELDS:
         issues.append(f"frontmatter 多了字段 `{k}`")
-    if zh_fm.get("title") == en_fm.get("title") and en_fm.get("title"):
-        issues.append("title 未翻译（与原文相同）")
+    # title 与原文相同不一定是漏译：很多 API 页的标题本身就是标识符
+    # （`mask`、`buckets`、`viewIsAppearing(_:)`），按规范就该保留英文。
+    # 只有当标题像自然语言（含空格且不是纯标识符）时才判为漏译。
+    t = en_fm.get("title", "").strip("'\"")
+    if t and zh_fm.get("title") == en_fm.get("title"):
+        looks_like_identifier = bool(
+            re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\([^)]*\))?", t)
+            or re.fullmatch(r"[+-]?\s*[A-Za-z_][\w:.\-]*", t)
+        )
+        if not looks_like_identifier:
+            issues.append("title 未翻译（与原文相同）")
 
     # 2 & 3. 链接与图片目标
     for name, pat in (("链接", LINK), ("图片", IMAGE)):
@@ -211,12 +220,18 @@ def main() -> None:
         return
 
     results: dict[str, list[str]] = {}
-    missing_en = 0
+    native_zh = 0
     for zh in zh_files:
         en = Path(str(zh).replace("/zh/", "/en/", 1))
         if not en.exists():
+            # 中文来源的博客（ibireme、onevcat 这些）本来就没有英文版，
+            # 它们直接躺在 zh/ 下，不是译文，不参与结构比对。
+            # 不排除的话会产生几百条误报，校验器就没人看了。
+            fm, _ = split_frontmatter(zh.read_text(encoding="utf-8"))
+            if fm.get("original_language") == "zh":
+                native_zh += 1
+                continue
             results[str(zh.relative_to(ROOT))] = ["找不到对应的英文原文"]
-            missing_en += 1
             continue
         issues = check_pair(en, zh)
         if issues:
@@ -225,8 +240,10 @@ def main() -> None:
     if as_json:
         print(json.dumps(results, ensure_ascii=False, indent=1))
     else:
-        clean = len(zh_files) - len(results)
-        print(f"校验 {len(zh_files)} 篇译文：通过 {clean}，有问题 {len(results)}")
+        checked = len(zh_files) - native_zh
+        clean = checked - len(results)
+        print(f"校验 {checked} 篇译文：通过 {clean}，有问题 {len(results)}"
+              + (f"（另有 {native_zh} 篇中文原生内容，无需比对）" if native_zh else ""))
         for path, issues in list(results.items())[:40]:
             print(f"\n  {path}")
             for i in issues[:6]:
