@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 宏进阶，理解 SwiftSyntax
 
-## Chapters
+## 章节
 
 - [Introduction](/videos/play/wwdc2023/10167/?time=0)
 - [Why macros?](/videos/play/wwdc2023/10167/?time=51)
@@ -32,7 +32,7 @@ translated: true
 - [Writing correct macros](/videos/play/wwdc2023/10167/?time=2016)
 - [Wrap up](/videos/play/wwdc2023/10167/?time=2322)
 
-## Resources
+## 相关资源
 
 - [Introduction](https://developer.apple.com/videos/play/wwdc2023/10167/?time=0)
 - [Why macros?](https://developer.apple.com/videos/play/wwdc2023/10167/?time=51)
@@ -96,7 +96,7 @@ translated: true
 - [Declaring a macro's names](https://developer.apple.com/videos/play/wwdc2023/10167/?time=2144)
 - [Macros are testable](https://developer.apple.com/videos/play/wwdc2023/10167/?time=2308)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

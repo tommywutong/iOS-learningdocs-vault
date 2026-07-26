@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > Swift 指针语义、内存绑定规则
 
-## Resources
+## 相关资源
 
 - [Manual Memory Management](https://developer.apple.com/documentation/Swift/manual-memory-management)
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2020/10167/3/5A7F9994-6332-4CE6-8132-10C43C01827B/wwdc2020_10167_hd.mp4?dl=1)
@@ -40,7 +40,7 @@ translated: true
 - [withMemoryRebound(to:capacity:) API](https://developer.apple.com/videos/play/wwdc2020/10167/?time=1393)
 - [BufferView：在原始内存之上分层构建类型](https://developer.apple.com/videos/play/wwdc2020/10167/?time=1549)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

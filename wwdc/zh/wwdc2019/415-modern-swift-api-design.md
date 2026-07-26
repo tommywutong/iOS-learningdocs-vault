@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > Swift API 设计准则，读源码时的判断依据
 
-## Resources
+## 相关资源
 
 - [Swift API Guidelines](https://swift.org/documentation/api-design-guidelines/)
 - [The Swift Programming Language](https://docs.swift.org/swift-book/)
@@ -36,7 +36,7 @@ translated: true
 - [SwiftUI Essentials](https://developer.apple.com/videos/play/wwdc2019/216)
 - [What's New in Swift](https://developer.apple.com/videos/play/wwdc2019/402)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

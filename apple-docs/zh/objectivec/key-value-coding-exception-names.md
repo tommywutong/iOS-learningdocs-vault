@@ -21,13 +21,13 @@ translated: true
 
 这个常量定义了键值编码操作失败时引发的异常的名称。
 
-## Topics
+## 主题
 
 ### Constants
 
 - [undefinedKeyException](../foundation/nsexceptionname/undefinedkeyexception.md) — 在键值编码操作失败时引发。
 
-## See Also
+## 另请参阅
 
 ### Constants
 

@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Data Types
 
@@ -37,7 +37,7 @@ translated: true
 - [objc_uncaught_exception_handler](objc_uncaught_exception_handler.md)
 - [objc_zone_t](objc_zone_t.md)
 
-## See Also
+## 另请参阅
 
 ### Reference
 

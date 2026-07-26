@@ -21,13 +21,13 @@ translated: true
 
 键值编码方法引发的异常。
 
-## Topics
+## 主题
 
 ### Constants
 
 - [NSOperationNotSupportedForKeyException](../foundation/nsoperationnotsupportedforkeyexception.md)
 
-## See Also
+## 另请参阅
 
 ### Key-Value Coding
 

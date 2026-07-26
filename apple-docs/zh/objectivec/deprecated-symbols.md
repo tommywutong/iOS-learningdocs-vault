@@ -23,7 +23,7 @@ translated: true
 
 查看不再受支持的符号，找到应改用的替代方案。
 
-## Topics
+## 主题
 
 ### Deprecated Class Methods
 

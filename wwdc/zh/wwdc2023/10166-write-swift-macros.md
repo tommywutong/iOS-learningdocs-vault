@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 宏的展开机制（编译期代码生成）
 
-## Chapters
+## 章节
 
 - [Overview](/videos/play/wwdc2023/10166/?time=75)
 - [Create a macro using Xcode's macro template](/videos/play/wwdc2023/10166/?time=310)
@@ -32,7 +32,7 @@ translated: true
 - [Emit error messages from a macro](/videos/play/wwdc2023/10166/?time=1625)
 - [Generalize SlopeSubset to a generic EnumSubset macro](/videos/play/wwdc2023/10166/?time=1812)
 
-## Resources
+## 相关资源
 
 - [Overview](https://developer.apple.com/videos/play/wwdc2023/10166/?time=75)
 - [Create a macro using Xcode's macro template](https://developer.apple.com/videos/play/wwdc2023/10166/?time=310)
@@ -71,7 +71,7 @@ translated: true
 - [Generalize SlopeSubset declaration to EnumSubset](https://developer.apple.com/videos/play/wwdc2023/10166/?time=1863)
 - [Retrieve the generic parameter of EnumSubset](https://developer.apple.com/videos/play/wwdc2023/10166/?time=1893)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

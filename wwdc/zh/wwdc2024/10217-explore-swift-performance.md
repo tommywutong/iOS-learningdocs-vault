@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > Swift 性能心智模型的现代重写版：内存布局、派发、特化
 
-## Chapters
+## 章节
 
 - [简介](/videos/play/wwdc2024/10217/?time=0)
 - [议程](/videos/play/wwdc2024/10217/?time=84)
@@ -38,7 +38,7 @@ translated: true
 - [泛型](/videos/play/wwdc2024/10217/?time=1836)
 - [总结](/videos/play/wwdc2024/10217/?time=2040)
 
-## Resources
+## 相关资源
 
 - [简介](https://developer.apple.com/videos/play/wwdc2024/10217/?time=0)
 - [议程](https://developer.apple.com/videos/play/wwdc2024/10217/?time=84)
@@ -100,7 +100,7 @@ translated: true
 - [之前两个 Swift 函数签名的对比](https://developer.apple.com/videos/play/wwdc2024/10217/?time=1910)
 - [针对已知类型参数的泛型函数特化](https://developer.apple.com/videos/play/wwdc2024/10217/?time=1977)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

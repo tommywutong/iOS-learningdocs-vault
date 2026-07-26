@@ -21,13 +21,13 @@ translated: true
 > [!note] 归档理由
 > Swift/ObjC 互操作与桥接的底层规则
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2015/401gee20yy5v2men/401/401_hd_swift_and_objectivec_interoperability.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2015/401gee20yy5v2men/401/401_sd_swift_and_objectivec_interoperability.mp4?dl=1)
 - [Presentation Slides (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2015/401gee20yy5v2men/401/401_swift_and_objectivec_interoperability.pdf?dl=1)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

@@ -23,7 +23,7 @@ translated: true
 
 `WebScripting` 是一个非正式协议，定义了一些方法，类可以实现这些方法将其接口导出到诸如 JavaScript 之类的 WebScript 环境。
 
-## Overview
+## 概述
 
 并非所有属性和方法都会默认导出到 JavaScript。对象需要实现下文描述的类方法，来指定要导出的属性和方法。此外，如果某个方法的返回类型及其所有参数都不是 Objective-C 对象或标量，那么该方法就不会被导出。
 
@@ -43,7 +43,7 @@ translated: true
 
 可以通过向相关的 `WebScriptObject` 实例发送 [throwException(_:)](<../webkit/webscriptobject/throwexception(__).md>) 消息，从脚本环境中引发异常。引发异常的方法必须在脚本调用的作用域内。
 
-## Topics
+## 主题
 
 ### Getting attributes
 
@@ -61,7 +61,7 @@ translated: true
 
 - [- finalizeForWebScript](<nsobject-swift.class/finalizeforwebscript().md>) — 在脚本环境重置时执行清理工作。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

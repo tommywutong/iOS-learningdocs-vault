@@ -23,7 +23,7 @@ translated: true
 
 这个宏指示 dispatch 函数是否必须转换为合适的函数指针类型。
 
-## Topics
+## 主题
 
 ### Constants
 

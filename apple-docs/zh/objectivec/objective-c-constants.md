@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Constants
 
@@ -36,7 +36,7 @@ translated: true
 - [OBJC_REALIZECLASSFROMSWIFT_DEFINED](objc_realizeclassfromswift_defined.md)
 - [OBJC_SETHOOK_LAZYCLASSNAMER_DEFINED](objc_sethook_lazyclassnamer_defined.md)
 
-## See Also
+## 另请参阅
 
 ### Reference
 

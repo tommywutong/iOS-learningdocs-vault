@@ -21,7 +21,7 @@ translated: true
 
 以下值用作 [- infoForBinding:](<nsobject-swift.class/infoforbinding(__).md>) 返回的字典中的键。
 
-## Topics
+## 主题
 
 ### Constants
 
@@ -29,7 +29,7 @@ translated: true
 - [observedKeyPath](../appkit/nsbindinginfokey/observedkeypath.md) — 一个 `NSString` 对象，包含该绑定的键路径。
 - [options](../appkit/nsbindinginfokey/options.md) — 一个 `NSDictionary` 对象，包含创建该绑定时选项字典中指定的键值对。
 
-## See Also
+## 另请参阅
 
 ### Constants
 

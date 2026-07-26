@@ -21,7 +21,7 @@ Xcode 11 现在完全支持在 Swift 中使用和创建二进制框架。了解�
 > [!note] 归档理由
 > 二进制框架、module interface 与 ABI 稳定
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2019/416h8485aty341c2/416/416_hd_binary_frameworks_in_swift.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2019/416h8485aty341c2/416/416_sd_binary_frameworks_in_swift.mp4?dl=1)
@@ -31,7 +31,7 @@ Xcode 11 现在完全支持在 Swift 中使用和创建二进制框架。了解�
 - [Creating Swift Packages](https://developer.apple.com/videos/play/wwdc2019/410)
 - [What's New in Swift](https://developer.apple.com/videos/play/wwdc2019/402)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

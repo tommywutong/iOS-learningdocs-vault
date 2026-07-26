@@ -23,13 +23,13 @@ translated: true
 
 一种机制，可让你通过名称或键间接访问对象的属性。
 
-## Overview
+## 概述
 
 访问对象值的基本方法是 [- setValue:forKey:](<nsobject-swift.class/setvalue(__forkey_).md>)（设置由指定键标识的属性的值）和 [- valueForKey:](<nsobject-swift.class/value(forkey_).md>)（返回由指定键标识的属性的值）。因此，可以用一致的方式访问对象的所有属性。
 
 默认实现依赖于对象通常实现的存取方法（如有需要，也可以直接访问实例变量）。
 
-## Topics
+## 主题
 
 ### Getting Values
 
@@ -80,7 +80,7 @@ translated: true
 - [NSUndefinedKeyException userInfo Keys](nsundefinedkeyexception-userinfo-keys.md) — 这些常量是 `NSUndefinedKeyException` 的 `userInfo` 字典中的键
 - [NSKeyValueValidationError](../foundation/nskeyvaluevalidationerror-swift.var.md) — 一个键值编码验证错误。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

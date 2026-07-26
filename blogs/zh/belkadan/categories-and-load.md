@@ -46,5 +46,5 @@ translated: true
 
 GCC 的语言扩展里还有不少有意思的东西。就算你最终用不上,翻一翻也挺好玩的。
 
-This entry was posted on [March](https://belkadan.com/blog/2009/03) 19, [2009](https://belkadan.com/blog/2009) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Cocoa](https://belkadan.com/blog/tags/cocoa), [Objective-C](https://belkadan.com/blog/tags/objective-c)
+本文发布于 [2009](https://belkadan.com/blog/2009) 年 [3](https://belkadan.com/blog/2009/03) 月 19 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Cocoa](https://belkadan.com/blog/tags/cocoa)、[Objective-C](https://belkadan.com/blog/tags/objective-c)
 </content>

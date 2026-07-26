@@ -26,7 +26,7 @@ translated: true
 
 [Using Clang from SVN in Xcode](https://belkadan.com/blog/2011/07/Using-Clang-from-SVN-in-Xcode/?tag=llvm) »
 
-[Weak Linking](https://belkadan.com/blog/2011/07/Weak-Linking/?tag=compilers) »
+[弱链接](https://belkadan.com/blog/2011/07/Weak-Linking/?tag=compilers) »
 
 ## [自动引用计数](#)
 
@@ -89,5 +89,5 @@ Cocoa 框架长期以来都用的是基于引用计数的体系,不过从 Mac OS
 
 1. 如果你不喜欢编译器在背地里帮你摆弄东西,可以这么想:几乎在任何情况下,你都是想在使用对象期间保留它,用完再释放。所以与其用 `retain`/`release` 来标记所有权,你本该只需要对 `__weak` 引用这个特例做标注就够了。 [↩︎](#fnref:automatic)
 
-This entry was posted on [June](https://belkadan.com/blog/2011/06) 20, [2011](https://belkadan.com/blog/2011) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Cocoa](https://belkadan.com/blog/tags/cocoa), [Objective-C](https://belkadan.com/blog/tags/objective-c), [LLVM](https://belkadan.com/blog/tags/llvm), [Compilers](https://belkadan.com/blog/tags/compilers)
+本文发布于 [2011](https://belkadan.com/blog/2011) 年 [6](https://belkadan.com/blog/2011/06) 月 20 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Cocoa](https://belkadan.com/blog/tags/cocoa)、[Objective-C](https://belkadan.com/blog/tags/objective-c)、[LLVM](https://belkadan.com/blog/tags/llvm)、[编译器](https://belkadan.com/blog/tags/compilers)
 </content>

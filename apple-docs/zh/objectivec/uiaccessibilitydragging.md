@@ -23,7 +23,7 @@ translated: true
 
 一对属性，可让你微调拖放操作如何暴露给辅助技术。
 
-## Overview
+## 概述
 
 默认情况下，如果一个可辅助访问的视图或其子树具有拖动和/或放置交互，辅助技术会自动将其暴露出来。但是，如果存在不止一个这样的交互，每个拖动或放置都应该有一个名称来消除歧义，从而提供良好的用户体验。此外，在某些情况下，你可能希望从某个元素暴露拖动或放置操作，而这些交互安装在不属于该元素视图层级结构子树的视图上。
 
@@ -40,14 +40,14 @@ translated: true
 
 对于每个位置描述符，其关联的视图应该是拥有该拖动或放置对应的合适 `UIInteraction` 对象的 `UIView`。
 
-## Topics
+## 主题
 
 ### Fine-Tuning Drag and Drop
 
 - [accessibilityDragSourceDescriptors](nsobject-swift.class/accessibilitydragsourcedescriptors.md) — 一个位置描述符对象数组，用来定义可以从该元素发起哪些拖动。
 - [accessibilityDropPointDescriptors](nsobject-swift.class/accessibilitydroppointdescriptors.md) — 一个位置描述符对象数组，用来定义在该元素上的哪些位置可以进行放置。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

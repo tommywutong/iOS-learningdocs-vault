@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Structures
 
@@ -35,7 +35,7 @@ translated: true
 - [objc_property_attribute_t](objc_property_attribute_t.md) — 定义一个属性特性。
 - [objc_super](objc_super-swift.struct.md) — 指定一个实例的超类。
 
-## See Also
+## 另请参阅
 
 ### Reference
 

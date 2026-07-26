@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 版本性 What's New，作时间线索引用
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/401ieeclipzse3tz3fg/401/401_hd_whats_new_in_swift.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/401ieeclipzse3tz3fg/401/401_sd_whats_new_in_swift.mp4?dl=1)
@@ -32,7 +32,7 @@ translated: true
 - [Swift Generics (Expanded)](https://developer.apple.com/videos/play/wwdc2018/406)
 - [Understanding Crashes and Crash Logs](https://developer.apple.com/videos/play/wwdc2018/414)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

@@ -23,11 +23,11 @@ translated: true
 
 由 CoreFoundation 的免费桥接（toll-free bridging）使用。
 
-## Overview
+## 概述
 
 不要自行调用这个函数。
 
-## See Also
+## 另请参阅
 
 ### Working with Classes
 

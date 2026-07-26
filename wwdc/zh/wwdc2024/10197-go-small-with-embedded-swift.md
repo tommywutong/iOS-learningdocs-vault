@@ -21,7 +21,7 @@ Embedded Swift 把 Swift 的安全性与表达力带到了资源受限的环境�
 > [!note] 归档理由
 > Embedded Swift：无 runtime 的 Swift 子集，反向理解 runtime 依赖
 
-## Chapters
+## 章节
 
 - [Introduction](/videos/play/wwdc2024/10197/?time=0)
 - [Agenda](/videos/play/wwdc2024/10197/?time=25)
@@ -38,7 +38,7 @@ Embedded Swift 把 Swift 的安全性与表达力带到了资源受限的环境�
 - [Explore more](/videos/play/wwdc2024/10197/?time=1188)
 - [Wrap up](/videos/play/wwdc2024/10197/?time=1292)
 
-## Resources
+## 相关资源
 
 - [Introduction](https://developer.apple.com/videos/play/wwdc2024/10197/?time=0)
 - [Agenda](https://developer.apple.com/videos/play/wwdc2024/10197/?time=25)
@@ -73,7 +73,7 @@ Embedded Swift 把 Swift 的安全性与表达力带到了资源受限的环境�
 - [Unavailable features will produce errors](https://developer.apple.com/videos/play/wwdc2024/10197/?time=1137)
 - [Prefer generics over "any" types](https://developer.apple.com/videos/play/wwdc2024/10197/?time=1164)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

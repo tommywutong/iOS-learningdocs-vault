@@ -23,7 +23,7 @@ translated: true
 
 `WebPlugIn` 这个非正式协议定义了一些方法，使得使用 WebKit 框架的应用程序与其可能使用的任何基于 WebKit 的插件之间能够进行交互。
 
-## Topics
+## 主题
 
 ### Accessing the Scripting Environment
 
@@ -47,7 +47,7 @@ translated: true
 - [- webPlugInMainResourceDidReceiveData:](<nsobject-swift.class/webpluginmainresourcedidreceive(__)-5b6f6.md>) — 在连接以增量方式加载数据时被调用。
 - [- webPlugInMainResourceDidReceiveResponse:](<nsobject-swift.class/webpluginmainresourcedidreceive(__)-6x7b9.md>) — 在连接接收到足够的数据以构造其请求的 URL 响应时被调用。
 
-## See Also
+## 另请参阅
 
 ### Interacting with Web Plug-ins
 

@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > noncopyable 类型与所有权模型
 
-## Chapters
+## 章节
 
 - [Introduction](/videos/play/wwdc2024/10170/?time=0)
 - [Agenda](/videos/play/wwdc2024/10170/?time=30)
@@ -31,7 +31,7 @@ translated: true
 - [Extensions](/videos/play/wwdc2024/10170/?time=1152)
 - [Wrap up](/videos/play/wwdc2024/10170/?time=1284)
 
-## Resources
+## 相关资源
 
 - [Introduction](https://developer.apple.com/videos/play/wwdc2024/10170/?time=0)
 - [Agenda](https://developer.apple.com/videos/play/wwdc2024/10170/?time=30)
@@ -66,7 +66,7 @@ translated: true
 - [Cancellable for Jobs with Copyable actions](https://developer.apple.com/videos/play/wwdc2024/10170/?time=1214)
 - [Cancellable for all Jobs](https://developer.apple.com/videos/play/wwdc2024/10170/?time=1260)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

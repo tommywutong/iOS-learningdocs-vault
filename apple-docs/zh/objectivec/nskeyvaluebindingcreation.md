@@ -23,7 +23,7 @@ translated: true
 
 一组方法，可用来在视图对象和控制器之间、或控制器和模型对象之间创建和移除绑定。
 
-## Overview
+## 概述
 
 [NSKeyValueBindingCreation](nskeyvaluebindingcreation.md) 这个非正式协议还为视图子类提供了一种方式，用来公布它所暴露的绑定。该协议由 [NSObject](nsobject-swift.class.md) 实现，其方法可以被视图和控制器子类重写。
 
@@ -35,7 +35,7 @@ translated: true
 
 `NSView` 的子类可以通过为每个属性调用类方法 [+ exposeBinding:](<nsobject-swift.class/exposebinding(__).md>) 来将额外的符合键值编码/键值观察规范的属性暴露为绑定。这通常在类的 `initialize` 方法中完成。通过暴露对象所支持的绑定并创建一个 Interface Builder 面板，你可以让自己类的实例在 Interface Builder 中变得可绑定。
 
-## Topics
+## 主题
 
 ### Exposing bindings
 
@@ -58,7 +58,7 @@ translated: true
 - [NSBindingOption](../appkit/nsbindingoption.md)
 - [Binding Dictionary Keys](binding-dictionary-keys.md) — 以下值用作 [- infoForBinding:](<nsobject-swift.class/infoforbinding(__).md>) 返回的字典中的键
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

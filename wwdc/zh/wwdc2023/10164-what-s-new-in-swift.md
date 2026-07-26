@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 同上
 
-## Chapters
+## 章节
 
 - [Swift 项目近况](/videos/play/wwdc2023/10164/?time=39)
 - [把 if/else 和 switch 语句当作表达式使用](/videos/play/wwdc2023/10164/?time=164)
@@ -34,7 +34,7 @@ translated: true
 - [Swift 并发的新特性](/videos/play/wwdc2023/10164/?time=1961)
 - [FoundationDB：一个案例研究](/videos/play/wwdc2023/10164/?time=2300)
 
-## Resources
+## 相关资源
 
 - [Swift 项目近况](https://developer.apple.com/videos/play/wwdc2023/10164/?time=39)
 - [把 if/else 和 switch 语句当作表达式使用](https://developer.apple.com/videos/play/wwdc2023/10164/?time=164)
@@ -114,7 +114,7 @@ translated: true
 - [FoundationDB "master data" actor 的 C++ 实现](https://developer.apple.com/videos/play/wwdc2023/10164/?time=2362)
 - [FoundationDB "master data" actor 的 Swift 实现](https://developer.apple.com/videos/play/wwdc2023/10164/?time=2418)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

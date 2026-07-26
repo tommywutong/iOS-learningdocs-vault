@@ -18,7 +18,7 @@ translated: true
 
 [The Shell is a Program](https://belkadan.com/blog/2024/12/The-Shell-is-a-Program/) »
 
-« [Run-time Polymorphism in Swift](https://belkadan.com/blog/2024/04/Run-time-Polymorphism-in-Swift/?tag=swift)
+« [Swift 中的运行时多态](https://belkadan.com/blog/2024/04/Run-time-Polymorphism-in-Swift/?tag=swift)
 
 ## [AnyObject](#)
 
@@ -45,4 +45,4 @@ AnyObject 也可以用作泛型约束。如果你用 `T: AnyObject`，就能保�
 1. [在 Apple 的操作系统上，这其实是个谎言](https://belkadan.com/blog/2021/08/Swift-Regret-AnyObject-Dispatch/)，但我还是鼓励大家都当它是真的。[↩︎](#fnref:objc)
 2. 这也是为什么协议扩展里定义的方法是静态解析的：它们不在那张表里。而且由于模块是分开编译的，把它们放进表里也可能根本*做不到*。所以这里只有一条规则，那就是只有协议的要求会被[动态派发](https://belkadan.com/blog/2024/04/Run-time-Polymorphism-in-Swift/)。[↩︎](#fnref:extension)
 
-This entry was posted on [July](https://belkadan.com/blog/2024/07) 02, [2024](https://belkadan.com/blog/2024) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift)
+本文发布于 [2024](https://belkadan.com/blog/2024) 年 [7](https://belkadan.com/blog/2024/07) 月 02 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)

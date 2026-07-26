@@ -18,11 +18,11 @@ translated: true
 
 [Suffusion: Playing with Filesystems](https://belkadan.com/blog/2020/07/Suffusion/) »
 
-« [Swift on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=swift)
+« [Swift 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=swift)
 
 [Suffusion: Playing with Filesystems](https://belkadan.com/blog/2020/07/Suffusion/?tag=swift) »
 
-« [Swift on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=mac-os-classic)
+« [Swift 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=mac-os-classic)
 
 [Rescuing Files From Classic Mac OS...with Swift!](https://belkadan.com/blog/2023/01/Rescuing-Files-with-Swift/?tag=mac-os-classic) »
 
@@ -215,4 +215,4 @@ _第二_神秘的 bug 是我同样发过推特的另一个：
 4. 苹果发行过一个叫 [MacsBug](https://en.wikipedia.org/wiki/MacsBug) 的标准调试器，但我没能让它在我的模拟器里跑起来。 [↩︎](#fnref:MacsBug)
 5. 我用的是 `master-next` 分支，因为我需要 IBM 关于 AIX 最新的工作成果；等下一次 LLVM 重新分支之后，我会把这个项目锁定到 Swift 5.3 或 5.4 之类的某个版本，然后就不再动它了。 [↩︎](#fnref:master-next)
 
-This entry was posted on [May](https://belkadan.com/blog/2020/05) 24, [2020](https://belkadan.com/blog/2020) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift), [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic), [ROSE-8](https://belkadan.com/blog/tags/rose-8)
+本文发布于 [2020](https://belkadan.com/blog/2020) 年 [5](https://belkadan.com/blog/2020/05) 月 24 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)、[Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)、[ROSE-8](https://belkadan.com/blog/tags/rose-8)

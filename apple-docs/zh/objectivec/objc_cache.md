@@ -21,11 +21,11 @@ translated: true
 
 针对方法调用的性能优化。包含指向最近使用过的方法的指针。
 
-## Overview
+## 概述
 
 为了减少对常用方法定义进行线性搜索的需要——这种操作会显著拖慢方法查找的速度——Objective-C runtime 函数会将该类最近调用过的方法的定义指针存储在一个 `objc_cache` 数据结构中。
 
-## Topics
+## 主题
 
 ### Fields
 
@@ -33,7 +33,7 @@ translated: true
 - [occupied](1808501-occupied.md) — 一个整数，指定已占用的缓存桶总数。
 - [buckets](1808503-buckets.md) — 一个指向 [Method](method.md) 数据结构的指针数组。这个数组最多包含 `mask + 1` 个条目。注意指针可能为 `NULL`，表示该缓存桶未被占用，且已占用的桶不一定是连续的。这个数组会随时间增长。
 
-## See Also
+## 另请参阅
 
 ### Class-Definition Data Structures
 

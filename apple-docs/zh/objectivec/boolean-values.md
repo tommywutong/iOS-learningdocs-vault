@@ -23,14 +23,14 @@ translated: true
 
 这些宏定义了方便的常量来表示布尔值。
 
-## Topics
+## 主题
 
 ### Constants
 
 - [YES](yes.md) — 将 `YES` 定义为 `1`。
 - [NO](no.md) — 将 `NO` 定义为 `0`。
 
-## See Also
+## 另请参阅
 
 ### Constants
 

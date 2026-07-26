@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 泛型/existential 的现代表述（any/some）
 
-## Resources
+## 相关资源
 
 - [The Swift Programming Language](https://docs.swift.org/swift-book/)
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2022/110352/3/961EB9A0-3340-443A-8C57-8665B9034F1D/downloads/wwdc2022-110352_hd.mp4?dl=1)
@@ -31,7 +31,7 @@ translated: true
 - [What's new in Swift](https://developer.apple.com/videos/play/wwdc2022/110354)
 - [Complete example](https://developer.apple.com/videos/play/wwdc2022/110352/?time=1630)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

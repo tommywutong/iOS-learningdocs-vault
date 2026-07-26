@@ -99,4 +99,4 @@ default:
 
   我这里还偷偷夹带了一下 Rust 的重载。Rust *确实*有重载，尽管它装作没有：不同的 trait 可以声明同名方法，而调用者在两个 trait 都成立时，必须手动消除歧义。[↩︎](#fnref:objc)
 
-This entry was posted on [April](https://belkadan.com/blog/2024/04) 06, [2024](https://belkadan.com/blog/2024) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift), [Programming languages](https://belkadan.com/blog/tags/programming-languages)
+本文发布于 [2024](https://belkadan.com/blog/2024) 年 [4](https://belkadan.com/blog/2024/04) 月 06 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)、[编程语言](https://belkadan.com/blog/tags/programming-languages)

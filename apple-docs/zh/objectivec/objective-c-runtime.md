@@ -23,7 +23,7 @@ translated: true
 
 描述 macOS Objective-C runtime 库的支持函数和数据结构。
 
-## Overview
+## 概述
 
 Objective-C runtime 是一个运行时库，为 Objective-C 语言的动态特性提供支持，因此所有 Objective-C App 都会链接它。Objective-C runtime 库的支持函数实现在位于 `/usr/lib/libobjc.A.dylib` 的共享库中。
 
@@ -44,7 +44,7 @@ macOS 上 Objective-C runtime 库的实现是 Mac 平台独有的。对于其他
 
 由于本文档不是一篇讲 C 语言的文档，它假定读者对该语言已有一定的了解。不过，不需要非常深入的了解。
 
-## Topics
+## 主题
 
 ### Working with Classes
 
@@ -203,7 +203,7 @@ macOS 上 Objective-C runtime 库的实现是 Mac 平台独有的。对于其他
 
 - [objc_AssociationPolicy](objc_associationpolicy.md) — 用于指定关联行为的类型。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

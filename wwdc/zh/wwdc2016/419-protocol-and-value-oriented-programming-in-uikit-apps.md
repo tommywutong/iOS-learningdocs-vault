@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 把 POP 落到 UIKit 上，值语义实践
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2016/419lgbsyhjrmqtmq0qh/419/419_hd_protocol_and_value_oriented_programming_in_uikit_apps.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2016/419lgbsyhjrmqtmq0qh/419/419_sd_protocol_and_value_oriented_programming_in_uikit_apps.mp4?dl=1)
@@ -29,7 +29,7 @@ translated: true
 - [Understanding Swift Performance](https://developer.apple.com/videos/play/wwdc2016/416)
 - [Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

@@ -23,7 +23,7 @@ translated: true
 
 键值编码操作失败时所涉及的键。
 
-## See Also
+## 另请参阅
 
 ### Constants
 

@@ -23,7 +23,7 @@ translated: true
 
 一组方法，为使用键值编码提供额外的能力。
 
-## Overview
+## 概述
 
 Cocoa 脚本编写利用键值编码来获取和设置可脚本化对象中的信息。这个分类中的方法为使用键值编码提供了额外的能力，包括按索引获取和设置多值键中的键值，以及强制转换（或转换）某个键值。其他方法允许可脚本化容器类的实现者为按名称和唯一 ID 引用的元素提供快速访问。
 
@@ -32,7 +32,7 @@ Cocoa 脚本编写利用键值编码来获取和设置可脚本化对象中的�
 > [!note] Note
 > 在 OS X 10.3 及更早版本中，Cocoa 脚本编写不会调用 [- setValue:forKey:](<nsobject-swift.class/setvalue(__forkey_).md>) 或 [- mutableArrayValueForKey:](<nsobject-swift.class/mutablearrayvalue(forkey_).md>)，因此脚本导致的模型对象更改并不总是会触发自动键值观察通知。从 macOS 10.4 开始，为了向后二进制兼容，如果该方法被重写，Cocoa 会调用现已废弃的方法 [- takeValue:forKey:](<nsobject-swift.class/takevalue(__forkey_).md>)，而不是 [- setValue:forKey:](<nsobject-swift.class/setvalue(__forkey_).md>)。
 
-## Topics
+## 主题
 
 ### Indexed access
 
@@ -55,7 +55,7 @@ Cocoa 脚本编写利用键值编码来获取和设置可脚本化对象中的�
 
 - [NSScriptKeyValueCoding Exception Names](nsscriptkeyvaluecoding-exception-names.md) — 键值编码方法引发的异常。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

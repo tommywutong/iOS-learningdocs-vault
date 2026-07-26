@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 以 SwiftPM 分发二进制框架（XCFramework）
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2020/10147/3/9A1289F5-A542-4604-BB2E-E7A77AF2C41F/wwdc2020_10147_hd.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2020/10147/3/9A1289F5-A542-4604-BB2E-E7A77AF2C41F/wwdc2020_10147_sd.mp4?dl=1)
@@ -33,7 +33,7 @@ translated: true
 - [Distributing Binary Frameworks as a Swift Package](https://developer.apple.com/videos/play/wwdc2020/10147/?time=184)
 - [Computing the Checksum](https://developer.apple.com/videos/play/wwdc2020/10147/?time=343)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

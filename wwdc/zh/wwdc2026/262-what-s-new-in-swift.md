@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 同上（最新）
 
-## Chapters
+## 章节
 
 - [Introduction](/videos/play/wwdc2026/262/?time=7)
 - [Everyday Language Improvements](/videos/play/wwdc2026/262/?time=44)
@@ -46,7 +46,7 @@ translated: true
 - [New Standard Library Types: UniqueBox, UniqueArray, Ref](/videos/play/wwdc2026/262/?time=1737)
 - [The Future of Swift](/videos/play/wwdc2026/262/?time=1871)
 
-## Resources
+## 相关资源
 
 - [Introduction](https://developer.apple.com/videos/play/wwdc2026/262/?time=7)
 - [Everyday Language Improvements](https://developer.apple.com/videos/play/wwdc2026/262/?time=44)
@@ -111,7 +111,7 @@ translated: true
 - [用 'MutableRef' 消除重复访问（通过 'inout' 参数提升）](https://developer.apple.com/videos/play/wwdc2026/262/?time=1834)
 - [用 'MutableRef' 消除重复访问（通过 'MutableRef' 提升）](https://developer.apple.com/videos/play/wwdc2026/262/?time=1841)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

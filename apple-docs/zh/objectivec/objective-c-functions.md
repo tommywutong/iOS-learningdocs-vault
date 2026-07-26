@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Functions
 
@@ -66,7 +66,7 @@ translated: true
 - [protocol_copyPropertyList2](<protocol_copypropertylist2(________).md>)
 - [sel_isMapped](<sel_ismapped(__).md>) — 标识某个选择器是否有效。
 
-## See Also
+## 另请参阅
 
 ### Reference
 

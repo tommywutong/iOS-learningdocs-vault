@@ -20,11 +20,11 @@ translated: true
 
 « [Leaving Apple](https://belkadan.com/blog/2019/11/Leaving-Apple/?tag=swift)
 
-[ROSE-8 on Mac OS 9](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/?tag=swift) »
+[ROSE-8 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/?tag=swift) »
 
 « [Color Palette #8](https://belkadan.com/blog/2018/01/Color-Palette-8/?tag=mac-os-classic)
 
-[ROSE-8 on Mac OS 9](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/?tag=mac-os-classic) »
+[ROSE-8 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/?tag=mac-os-classic) »
 
 « [So You Want to Be a (Compiler) Wizard](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/?tag=compilers)
 
@@ -225,4 +225,4 @@ Classic 随着 2000 年代 Mac 转向 Intel 处理器而终结，但 Carbon 一�
 11. 顺带一提，跨库调用（「具名间接调用」）的代码，看起来本该能和通过函数指针调用共享逻辑。这样做能减小代码体积，代价是多一次跳转，但也许这一次额外的跳转对性能的影响还挺大的。^[12](#fn:footnote) [↩︎](#fnref:indirect)
 12. 这篇文章创下了「我写过的文章里脚注数量」的记录（还没算上这一条）。有人建议我用一条脚注来纪念这件事。 [↩︎](#fnref:footnote)
 
-This entry was posted on [April](https://belkadan.com/blog/2020/04) 01, [2020](https://belkadan.com/blog/2020) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift), [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic), [Compilers](https://belkadan.com/blog/tags/compilers), [April Fools](https://belkadan.com/blog/tags/april-fools)
+本文发布于 [2020](https://belkadan.com/blog/2020) 年 [4](https://belkadan.com/blog/2020/04) 月 01 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)、[Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)、[编译器](https://belkadan.com/blog/tags/compilers)、[愚人节](https://belkadan.com/blog/tags/april-fools)

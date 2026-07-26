@@ -21,7 +21,7 @@ Swift 使用类型推断，帮你在不牺牲类型安全的前提下写出简�
 > [!note] 归档理由
 > 类型推断如何工作、为何编译慢
 
-## Resources
+## 相关资源
 
 - [The Swift Programming Language](https://docs.swift.org/swift-book/)
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2020/10165/4/F5BC5595-D6B4-4C08-B9EC-E801F766386B/wwdc2020_10165_hd.mp4?dl=1)
@@ -31,7 +31,7 @@ Swift 使用类型推断，帮你在不牺牲类型安全的前提下写出简�
 - [SmoothieList](https://developer.apple.com/videos/play/wwdc2020/10165/?time=176)
 - [FilteredList](https://developer.apple.com/videos/play/wwdc2020/10165/?time=233)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

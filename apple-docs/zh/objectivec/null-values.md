@@ -23,14 +23,14 @@ translated: true
 
 这些宏为类和实例定义了空值。
 
-## Topics
+## 主题
 
 ### Constants
 
 - [nil](nil-227m0.md) — 定义空实例的 `id`。
 - [Nil](nil-565ns.md)
 
-## See Also
+## 另请参阅
 
 ### Constants
 

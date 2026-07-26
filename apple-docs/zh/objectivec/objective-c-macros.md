@@ -21,14 +21,14 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Macros
 
 - [OBJC_API_VERSION](objc_api_version.md)
 - [OBJC_NO_GC](objc_no_gc.md)
 
-## See Also
+## 另请参阅
 
 ### Reference
 

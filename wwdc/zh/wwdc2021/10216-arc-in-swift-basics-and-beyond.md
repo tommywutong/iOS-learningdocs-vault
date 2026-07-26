@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > ARC 的插入规则、生命周期与 withExtendedLifetime，内存管理核心
 
-## Resources
+## 相关资源
 
 - [ARC - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html)
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2021/10216/4/884C234F-2424-47DF-A4CF-A9010D869C66/downloads/wwdc2021-10216_hd.mp4?dl=1)
@@ -40,7 +40,7 @@ translated: true
 - [安全处理反初始化方法副作用的技巧 - 重新设计以限制类内部细节的可见性](https://developer.apple.com/videos/play/wwdc2021/10216/?time=1111)
 - [安全处理反初始化方法副作用的技巧 - 重新设计以避免反初始化方法副作用](https://developer.apple.com/videos/play/wwdc2021/10216/?time=1148)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

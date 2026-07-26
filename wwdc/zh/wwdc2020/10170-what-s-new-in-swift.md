@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 同上
 
-## Resources
+## 相关资源
 
 - [Swift Standard Library Preview](https://github.com/apple/swift-standard-library-preview)
 - [Swift Argument Parser on GitHub](https://github.com/apple/swift-argument-parser)
@@ -42,7 +42,7 @@ translated: true
 - [OSLog 对字符串插值和格式化选项的支持](https://developer.apple.com/videos/play/wwdc2020/10170/?time=1714)
 - [ArgumentParser Swift 包](https://developer.apple.com/videos/play/wwdc2020/10170/?time=1805)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

@@ -23,7 +23,7 @@ translated: true
 
 一组用于比较脚本对象的方法。
 
-## Overview
+## 概述
 
 为脚本编写目的而比较两个对象的正确方式，往往与以编程方式比较对象的正确方式不同。这个非正式协议定义了一组方法，可以实现这些方法来执行适合脚本编写的比较，且独立于其他用于比较的方法。
 
@@ -31,7 +31,7 @@ translated: true
 
 Cocoa 为 `NSString` 和 `NSAttributedString` 提供了这些脚本比较方法的默认实现。对于任何需要执行与 NSComparisonMethods 所提供的比较不同的、面向脚本编写的比较的可脚本化对象，你都应该定义这些方法的实现。如果没有对象需要不同的比较方法，你可以只实现 `NSScriptingComparisonMethods` 中你需要的那些方法。
 
-## Topics
+## 主题
 
 ### Performing comparisons
 
@@ -44,7 +44,7 @@ Cocoa 为 `NSString` 和 `NSAttributedString` 提供了这些脚本比较方法�
 - [- scriptingIsLessThan:](<nsobject-swift.class/scriptingislessthan(__).md>) — 在脚本比较中，如果被比较的对象小于 `object`，则返回 `true`。
 - [- scriptingIsLessThanOrEqualTo:](<nsobject-swift.class/scriptingislessthanorequal(to_).md>) — 在脚本比较中，如果被比较的对象小于或等于 `object`，则返回 `true`。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

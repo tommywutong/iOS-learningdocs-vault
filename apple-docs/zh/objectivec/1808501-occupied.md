@@ -23,7 +23,7 @@ translated: true
 
 一个整数，指定已占用的缓存桶（cache bucket）总数。
 
-## See Also
+## 另请参阅
 
 ### Fields
 

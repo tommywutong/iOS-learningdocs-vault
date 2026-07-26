@@ -23,11 +23,11 @@ translated: true
 
 一组方法，辅助功能元素可以用它们来支持特定的动作。
 
-## Overview
+## 概述
 
 `UIAccessibilityAction` 这个非正式协议为辅助功能元素提供了一种支持特定动作的方式，例如在某个范围内选择值，或滚动查看屏幕上的信息。例如，为了响应滚动手势，你需要实现 [- accessibilityScroll:](<nsobject-swift.class/accessibilityscroll(__).md>) 方法，并附带新的页面状态（例如「第 3 页，共 9 页」）发布 [pageScrolled](../uikit/uiaccessibility/notification/pagescrolled.md)。或者，要让滑块或选择器视图这类元素具备辅助功能，你首先需要通过包含 [adjustable](../uikit/uiaccessibilitytraits/adjustable.md) 特性来对其进行描述。然后，你必须实现 [- accessibilityIncrement](<nsobject-swift.class/accessibilityincrement().md>) 和 [- accessibilityDecrement](<nsobject-swift.class/accessibilitydecrement().md>) 方法。这样做之后，辅助技术的用户就可以使用该辅助技术特有的手势来调整该元素。
 
-## Topics
+## 主题
 
 ### Performing an action
 
@@ -46,7 +46,7 @@ translated: true
 
 - [UIAccessibilityScrollDirection](../uikit/uiaccessibilityscrolldirection.md) — 滚动动作的方向。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

@@ -1,5 +1,5 @@
 ---
-title: 'The Swift Runtime: Type Layout'
+title: 'Swift 运行时：类型布局'
 source: Belkadan (Jordan Rose, 前 Swift 编译器工程师)
 source_key: belkadan
 source_url: 'https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/'
@@ -14,15 +14,15 @@ translated: true
 
 > 原文：[The Swift Runtime: Type Layout](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/)　·　Belkadan (Jordan Rose, 前 Swift 编译器工程师)
 
-« [The Swift Runtime: Heap Objects](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/)
+« [Swift 运行时：堆对象](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/)
 
 [The Swift Runtime: Type Metadata](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/) »
 
-« [The Swift Runtime: Heap Objects](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/?tag=swift)
+« [Swift 运行时：堆对象](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/?tag=swift)
 
 [The Swift Runtime: Type Metadata](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/?tag=swift) »
 
-« [The Swift Runtime: Heap Objects](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/?tag=swift-runtime)
+« [Swift 运行时：堆对象](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/?tag=swift-runtime)
 
 [The Swift Runtime: Type Metadata](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/?tag=swift-runtime) »
 
@@ -364,4 +364,4 @@ extension UnsafeMutablePointer where Pointee == StructMetadata {
 4. C 里给 struct 用的最常见算法跟 Swift 的布局算法非常像，只不过会在 struct_末尾_加上填充，确保它的大小是对齐的整数倍，这意味着大小和 stride 永远是一样的。这简化了不少事情，但也意味着当这个 struct 被嵌入一个更大的 struct 时会浪费空间——对齐要求更小的额外字段没法被塞进那段填充里。[↩︎](#fnref:stride)
 5. 为什么这不是我们上面讲的那个循环的一部分？布局算法在好几个不同的地方都会用到，而在不同场景下对额外可居留值数量的需求是不一样的。[↩︎](#fnref:loop)
 
-This entry was posted on [September](https://belkadan.com/blog/2020/09) 07, [2020](https://belkadan.com/blog/2020) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift), [Swift runtime](https://belkadan.com/blog/tags/swift-runtime)
+本文发布于 [2020](https://belkadan.com/blog/2020) 年 [9](https://belkadan.com/blog/2020/09) 月 07 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)、[Swift 运行时](https://belkadan.com/blog/tags/swift-runtime)

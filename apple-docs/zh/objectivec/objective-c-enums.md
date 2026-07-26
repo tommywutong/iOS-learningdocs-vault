@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-## Topics
+## 主题
 
 ### Enumerations
 
@@ -36,7 +36,7 @@ translated: true
 - [OBJC_SYNC_SUCCESS](objc_sync_success.md)
 - [OBJC_WAIT_UNTIL_DONE](objc_wait_until_done.md)
 
-## See Also
+## 另请参阅
 
 ### Reference
 

@@ -1,5 +1,5 @@
 ---
-title: 'The Swift Runtime: Heap Objects'
+title: 'Swift 运行时：堆对象'
 source: Belkadan (Jordan Rose, 前 Swift 编译器工程师)
 source_key: belkadan
 source_url: 'https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/'
@@ -16,13 +16,13 @@ translated: true
 
 « [Objective-Rust](https://belkadan.com/blog/2020/08/Objective-Rust/)
 
-[The Swift Runtime: Type Layout](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/) »
+[Swift 运行时：类型布局](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/) »
 
 « [Objective-Rust](https://belkadan.com/blog/2020/08/Objective-Rust/?tag=swift)
 
-[The Swift Runtime: Type Layout](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/?tag=swift) »
+[Swift 运行时：类型布局](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/?tag=swift) »
 
-[The Swift Runtime: Type Layout](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/?tag=swift-runtime) »
+[Swift 运行时：类型布局](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/?tag=swift-runtime) »
 
 ## [The Swift Runtime: Heap Objects](#)
 
@@ -249,4 +249,4 @@ func swift_once(
 5. 真正的 runtime 还会给这个对象一个特殊的引用计数，表示它是不朽的（immortal）。我在自己的实现里没有费心去做这个。[↩︎](#fnref:immortal)
 6. 严格来说，这么做仍然违反了 Swift 正式的[内存访问规则](https://github.com/apple/swift-evolution/blob/master/proposals/0282-atomics.md)，因为它是在另一个线程可能正在修改这个指针的过程中去读取它。Swift 目前没有办法告诉_编译器_在这里做一次「安全」的读取。我们只是运气好：编译器为单线程模式生成的代码，在多线程模式下碰巧也能用。[↩︎](#fnref:threading)
 
-This entry was posted on [August](https://belkadan.com/blog/2020/08) 31, [2020](https://belkadan.com/blog/2020) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https://belkadan.com/blog/tags/swift), [Swift runtime](https://belkadan.com/blog/tags/swift-runtime)
+本文发布于 [2020](https://belkadan.com/blog/2020) 年 [8](https://belkadan.com/blog/2020/08) 月 31 日，归类于 [技术](https://belkadan.com/blog/technical)。标签：[Swift](https://belkadan.com/blog/tags/swift)、[Swift 运行时](https://belkadan.com/blog/tags/swift-runtime)

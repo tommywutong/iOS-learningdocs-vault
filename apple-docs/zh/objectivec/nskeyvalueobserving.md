@@ -23,13 +23,13 @@ translated: true
 
 一个非正式协议，对象采用它来接收其他对象指定属性变化的通知。
 
-## Overview
+## 概述
 
 你可以观察任何对象属性，包括简单特性、一对一关系和一对多关系。一对多关系的观察者会被告知所做变化的类型——以及变化中涉及哪些对象。
 
 [NSObject](nsobject-swift.class.md) 提供了 [NSKeyValueObserving](nskeyvalueobserving.md) 协议的一个实现，为所有对象提供自动观察能力。你可以通过禁用自动观察者通知、并使用该协议中的方法实现手动通知，来进一步细化通知行为。
 
-## Topics
+## 主题
 
 ### Change Notification
 
@@ -66,7 +66,7 @@ translated: true
 - [NSKeyValueChangeKey](../foundation/nskeyvaluechangekey.md) — 可以出现在变化字典中的键。
 - [NSKeyValueSetMutationKind](../foundation/nskeyvaluesetmutationkind.md)
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

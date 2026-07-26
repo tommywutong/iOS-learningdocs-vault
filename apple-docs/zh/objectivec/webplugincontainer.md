@@ -23,7 +23,7 @@ translated: true
 
 `WebPlugInContainer` 是一个非正式协议，使插件能够向应用程序发送消息。
 
-## Topics
+## 主题
 
 ### Performing actions on the enclosing container
 
@@ -35,7 +35,7 @@ translated: true
 - [webFrame](nsobject-swift.class/webframe.md) — 返回包含该插件的 `WebFrame`。
 - [webPlugInContainerSelectionColor](nsobject-swift.class/webplugincontainerselectioncolor.md) — 返回插件的选中颜色。
 
-## See Also
+## 另请参阅
 
 ### Related Documentation
 

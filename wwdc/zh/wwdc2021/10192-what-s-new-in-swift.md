@@ -21,7 +21,7 @@ translated: true
 > [!note] 归档理由
 > 同上
 
-## Resources
+## 相关资源
 
 - [Package Collections](https://swift.org/blog/package-collections)
 - [Swift Compiler Driver on GitHub](https://github.com/apple/swift-driver)
@@ -78,7 +78,7 @@ translated: true
 - [Structured concurrency](https://developer.apple.com/videos/play/wwdc2021/10192/?time=1626)
 - [Actors](https://developer.apple.com/videos/play/wwdc2021/10192/?time=1766)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。

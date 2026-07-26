@@ -21,18 +21,18 @@ translated: true
 
 这些常量是 `NSUndefinedKeyException` 的 `userInfo` 字典中的键
 
-## Overview
+## 概述
 
 更多信息参见 [Key Value Coding Exception Names](key-value-coding-exception-names.md)。
 
-## Topics
+## 主题
 
 ### Constants
 
 - [NSTargetObjectUserInfoKey](nstargetobjectuserinfokey.md) — 键值编码操作失败时所涉及的对象。
 - [NSUnknownUserInfoKey](nsunknownuserinfokey.md) — 键值编码操作失败时所涉及的键。
 
-## See Also
+## 另请参阅
 
 ### Constants
 

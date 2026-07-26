@@ -21,16 +21,16 @@ translated: true
 > [!note] 归档理由
 > 值/引用类型、witness table、动态派发的成本模型，至今仍是必读
 
-## Resources
+## 相关资源
 
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2016/416k7f0xkmz28rvlvwb/416/416_hd_understanding_swift_performance.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2016/416k7f0xkmz28rvlvwb/416/416_sd_understanding_swift_performance.mp4?dl=1)
 - [Presentation Slides (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2016/416k7f0xkmz28rvlvwb/416/416_understanding_swift_performance.pdf?dl=1)
 - [Unsafe Swift](https://developer.apple.com/videos/play/wwdc2020/10648)
 - [Concurrent Programming With GCD in Swift 3](https://developer.apple.com/videos/play/wwdc2016/720)
-- [Protocol and Value Oriented Programming in UIKit Apps](https://developer.apple.com/videos/play/wwdc2016/419)
+- [在 UIKit App 中运用面向协议和面向值编程](https://developer.apple.com/videos/play/wwdc2016/419)
 
-## Transcript
+## 逐字稿
 
 > [!warning] 关于逐字稿
 > 这份逐字稿是 Apple 的自动语音识别产物，**未经人工校对**，可能有术语转写错误。段落已按原始 HTML 的 `<p>` 结构重组，但断句仍可能不自然。
