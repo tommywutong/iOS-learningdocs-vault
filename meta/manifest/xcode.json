@@ -1,0 +1,4650 @@
+{
+ "archive": "xcode",
+ "included": [
+  "com.apple.Xcode"
+ ],
+ "page_count": 386,
+ "longform_count": 384,
+ "pages": [
+  {
+   "path": "/documentation/xcode",
+   "title": "Xcode",
+   "type": "module",
+   "breadcrumb": "Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-an-xcode-project-for-an-app",
+   "title": "Creating an Xcode project for an app",
+   "type": "article",
+   "breadcrumb": "Xcode/Creating an Xcode project for an app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-your-app-s-interface-with-swiftui",
+   "title": "Creating your app’s interface with SwiftUI",
+   "type": "article",
+   "breadcrumb": "Xcode/Creating your app’s interface with SwiftUI",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/previewing-your-apps-interface-in-xcode",
+   "title": "Previewing your app’s interface in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Previewing your app’s interface in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-and-running-an-app",
+   "title": "Building and running an app",
+   "type": "article",
+   "breadcrumb": "Xcode/Building and running an app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/updates/xcode",
+   "title": "Xcode updates",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/projects-and-workspaces",
+   "title": "Projects and workspaces",
+   "type": "collection",
+   "breadcrumb": "Xcode/Projects and workspaces",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/managing-files-and-folders-in-your-xcode-project",
+   "title": "Managing files and folders in your Xcode project",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Managing files and folders in your Xcode project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/managing-multiple-projects-and-their-dependencies",
+   "title": "Managing multiple projects and their dependencies",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Managing multiple projects and their dependencies",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/downloading-and-installing-additional-xcode-components",
+   "title": "Downloading and installing additional Xcode components",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Downloading and installing additional Xcode components",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-the-xcode-project-window",
+   "title": "Configuring the Xcode project window",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Configuring the Xcode project window",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/finding-and-replacing-content-in-a-project",
+   "title": "Finding and replacing content in a project",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Finding and replacing content in a project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/managing-your-app-s-information-property-list",
+   "title": "Managing your app’s information property list values",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Managing your app’s information property list values",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-package-dependencies-to-your-app",
+   "title": "Adding package dependencies to your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Adding package dependencies to your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uikit/creating-a-mac-version-of-your-ipad-app",
+   "title": "Creating a Mac version of your iPad app",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Creating a Mac version of your iPad app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/watchos-apps/setting-up-a-watchos-project",
+   "title": "Setting up a watchOS project",
+   "type": "collection",
+   "breadcrumb": "Xcode/Projects and workspaces/Setting up a watchOS project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/embedding-a-helper-tool-in-a-sandboxed-app",
+   "title": "Embedding a command-line tool in a sandboxed app",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Embedding a command-line tool in a sandboxed app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content",
+   "title": "Allowing apps and websites to link to your content",
+   "type": "collection",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/supporting-universal-links-in-your-app",
+   "title": "Supporting universal links in your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Supporting universal links in your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/supporting-associated-domains",
+   "title": "Supporting associated domains",
+   "type": "collection",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Supporting associated domains",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/entitlements/com.apple.developer.associated-domains",
+   "title": "Associated Domains Entitlement",
+   "type": "typealias",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Supporting associated domains/Associated Domains Entitlement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/applinks",
+   "title": "object applinks",
+   "type": "dictionarySymbol",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Supporting associated domains/object applinks",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/defining-a-custom-url-scheme-for-your-app",
+   "title": "Defining a custom URL scheme for your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Defining a custom URL scheme for your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preparing-your-app-to-be-the-default-browser",
+   "title": "Preparing your app to be the default web browser",
+   "type": "article",
+   "breadcrumb": "Xcode/Projects and workspaces/Allowing apps and websites to link to your content/Preparing your app to be the default web browser",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/source-control-management",
+   "title": "Source control management",
+   "type": "collection",
+   "breadcrumb": "Xcode/Source control management",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-xcode-project-to-use-source-control",
+   "title": "Configuring your Xcode project to use source control",
+   "type": "article",
+   "breadcrumb": "Xcode/Source control management/Configuring your Xcode project to use source control",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/tracking-code-changes-in-a-source-control-repository",
+   "title": "Tracking code changes in a source control repository",
+   "type": "article",
+   "breadcrumb": "Xcode/Source control management/Tracking code changes in a source control repository",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/organizing-your-code-changes-with-source-control",
+   "title": "Organizing your code changes with source control",
+   "type": "article",
+   "breadcrumb": "Xcode/Source control management/Organizing your code changes with source control",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/combining-code-changes-in-a-source-control-repository",
+   "title": "Combining code changes in a source control repository",
+   "type": "article",
+   "breadcrumb": "Xcode/Source control management/Combining code changes in a source control repository",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-source-control-in-xcode",
+   "title": "Configuring source control in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Source control management/Configuring source control in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/capabilities",
+   "title": "Capabilities",
+   "type": "collection",
+   "breadcrumb": "Xcode/Capabilities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-capabilities-to-your-app",
+   "title": "Adding capabilities to your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Adding capabilities to your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-background-execution-modes",
+   "title": "Configuring background execution modes",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring background execution modes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-custom-fonts",
+   "title": "Configuring custom fonts",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring custom fonts",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-game-controllers",
+   "title": "Configuring game controllers",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring game controllers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-maps-support",
+   "title": "Configuring Maps support",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Maps support",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-siri-support",
+   "title": "Configuring Siri support",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Siri support",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-apple-pay-support",
+   "title": "Configuring Apple Pay support",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Apple Pay support",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-sign-in-with-apple",
+   "title": "Configuring Sign in with Apple support",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Sign in with Apple support",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-wallet-support",
+   "title": "Configuring Wallet support",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Wallet support",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-an-associated-domain",
+   "title": "Configuring an associated domain",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring an associated domain",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-app-groups",
+   "title": "Configuring app groups",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring app groups",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-icloud-services",
+   "title": "Configuring iCloud services",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring iCloud services",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-network-extensions",
+   "title": "Configuring network extensions",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring network extensions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/registering-your-app-with-apns",
+   "title": "Registering your app with APNs",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Registering your app with APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-group-activities",
+   "title": "Configuring Group Activities",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Group Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-media-device-discovery",
+   "title": "Configuring media device discovery",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring media device discovery",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-family-controls",
+   "title": "Configuring Family Controls",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring Family Controls",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-the-hardened-runtime",
+   "title": "Configuring the hardened runtime",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring the hardened runtime",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-the-macos-app-sandbox",
+   "title": "Configuring the macOS App Sandbox",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring the macOS App Sandbox",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-keychain-sharing",
+   "title": "Configuring keychain sharing",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring keychain sharing",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/protecting-local-app-data-using-containers",
+   "title": "Protecting local app data using containers on macOS",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Protecting local app data using containers on macOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/accessing-app-group-containers",
+   "title": "Accessing app group containers in your existing macOS app",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Accessing app group containers in your existing macOS app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-healthkit-access",
+   "title": "Configuring HealthKit access",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring HealthKit access",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-homekit-access",
+   "title": "Configuring HomeKit access",
+   "type": "article",
+   "breadcrumb": "Xcode/Capabilities/Configuring HomeKit access",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/build-system",
+   "title": "Build system",
+   "type": "collection",
+   "breadcrumb": "Xcode/Build system",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-a-new-target-in-your-project",
+   "title": "Configuring a new target in your project",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Configuring a new target in your project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-a-multiplatform-app-target",
+   "title": "Configuring a multiplatform app",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Configuring a multiplatform app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-the-build-settings-of-a-target",
+   "title": "Configuring the build settings of a target",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Configuring the build settings of a target",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-a-build-configuration-file-to-your-project",
+   "title": "Adding a build configuration file to your project",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Adding a build configuration file to your project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/build-settings-reference",
+   "title": "Build settings reference",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Build settings reference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/identifying-and-addressing-framework-module-issues",
+   "title": "Identifying and addressing framework module issues",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Identifying and addressing framework module issues",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-build-product-layout-changes",
+   "title": "Understanding build product layout changes in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Understanding build product layout changes in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/customizing-the-build-schemes-for-a-project",
+   "title": "Customizing the build schemes for a project",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Customizing the build schemes for a project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/customizing-the-build-phases-of-a-target",
+   "title": "Customizing the build phases of a target",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Customizing the build phases of a target",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-build-rules-for-custom-file-types",
+   "title": "Creating build rules for custom file types",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Creating build rules for custom file types",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/running-custom-scripts-during-a-build",
+   "title": "Running custom scripts during a build",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Running custom scripts during a build",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/running-code-on-a-specific-version",
+   "title": "Running code on a specific platform or OS version",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Running code on a specific platform or OS version",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-project-to-use-mergeable-libraries",
+   "title": "Configuring your project to use mergeable libraries",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Configuring your project to use mergeable libraries",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/improving-the-speed-of-incremental-builds",
+   "title": "Improving the speed of incremental builds",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Improving the speed of incremental builds",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/improving-build-efficiency-with-good-coding-practices",
+   "title": "Improving build efficiency with good coding practices",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Improving build efficiency with good coding practices",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-your-project-with-explicit-module-dependencies",
+   "title": "Building your project with explicit module dependencies",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Building your project with explicit module dependencies",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/verifying-the-origin-of-your-xcframeworks",
+   "title": "Verifying the origin of your XCFrameworks",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Verifying the origin of your XCFrameworks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/enabling-enhanced-security-for-your-app",
+   "title": "Enabling enhanced security for your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Enabling enhanced security for your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-enhanced-security-helper-extensions",
+   "title": "Creating enhanced security helper extensions",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Creating enhanced security helper extensions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adopting-type-aware-memory-allocation",
+   "title": "Adopting type-aware memory allocation",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Adopting type-aware memory allocation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/conforming-to-mach-ipc-security-restrictions",
+   "title": "Conforming to Mach IPC security restrictions",
+   "type": "article",
+   "breadcrumb": "Xcode/Build system/Conforming to Mach IPC security restrictions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/command-line-tools",
+   "title": "Command-line tools",
+   "type": "collection",
+   "breadcrumb": "Xcode/Command-line tools",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/installing-the-command-line-tools",
+   "title": "Installing the command-line tools",
+   "type": "article",
+   "breadcrumb": "Xcode/Command-line tools/Installing the command-line tools",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-command-line-tools-settings",
+   "title": "Configuring command-line tools settings",
+   "type": "article",
+   "breadcrumb": "Xcode/Command-line tools/Configuring command-line tools settings",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/xcode-command-line-tool-reference",
+   "title": "Xcode command-line tool reference",
+   "type": "article",
+   "breadcrumb": "Xcode/Command-line tools/Xcode command-line tool reference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/resetting-access-to-protected-resources-in-macos",
+   "title": "Resetting access to protected resources in macOS",
+   "type": "article",
+   "breadcrumb": "Xcode/Command-line tools/Resetting access to protected resources in macOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/source-editor",
+   "title": "Source editor",
+   "type": "collection",
+   "breadcrumb": "Xcode/Source editor",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/editing-source-files-in-xcode",
+   "title": "Editing source files in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Source editor/Editing source files in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/using-coding-intelligence-in-the-source-editor",
+   "title": "Using coding intelligence in the source editor",
+   "type": "article",
+   "breadcrumb": "Xcode/Source editor/Using coding intelligence in the source editor",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/running-code-snippets-using-the-playground-macro",
+   "title": "Running code snippets using the playground macro",
+   "type": "article",
+   "breadcrumb": "Xcode/Source editor/Running code snippets using the playground macro",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/fixing-issues-in-your-code-as-you-type",
+   "title": "Fixing issues in your code as you type",
+   "type": "article",
+   "breadcrumb": "Xcode/Source editor/Fixing issues in your code as you type",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/finding-and-refactoring-code",
+   "title": "Finding and refactoring code",
+   "type": "article",
+   "breadcrumb": "Xcode/Source editor/Finding and refactoring code",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/coding-intelligence",
+   "title": "Coding intelligence",
+   "type": "collection",
+   "breadcrumb": "Xcode/Coding intelligence",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/setting-up-coding-intelligence",
+   "title": "Setting up coding intelligence",
+   "type": "article",
+   "breadcrumb": "Xcode/Coding intelligence/Setting up coding intelligence",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-code-with-intelligence-in-xcode",
+   "title": "Writing code with intelligence in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Coding intelligence/Writing code with intelligence in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-your-app-using-agents",
+   "title": "Localizing your app using agents",
+   "type": "article",
+   "breadcrumb": "Xcode/Coding intelligence/Localizing your app using agents",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/extending-and-customizing-agents",
+   "title": "Extending and customizing agents",
+   "type": "article",
+   "breadcrumb": "Xcode/Coding intelligence/Extending and customizing agents",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/giving-external-agents-access-to-xcode",
+   "title": "Giving external agents access to Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Coding intelligence/Giving external agents access to Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/bundles-and-frameworks",
+   "title": "Bundles and frameworks",
+   "type": "collection",
+   "breadcrumb": "Xcode/Bundles and frameworks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/placing-content-in-a-bundle",
+   "title": "Placing content in a bundle",
+   "type": "article",
+   "breadcrumb": "Xcode/Bundles and frameworks/Placing content in a bundle",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/embedding-nonstandard-code-structures-in-a-bundle",
+   "title": "Embedding nonstandard code structures in a bundle",
+   "type": "article",
+   "breadcrumb": "Xcode/Bundles and frameworks/Embedding nonstandard code structures in a bundle",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/editing-property-list-files",
+   "title": "Editing property list files",
+   "type": "article",
+   "breadcrumb": "Xcode/Bundles and frameworks/Editing property list files",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-a-static-framework",
+   "title": "Creating a static framework",
+   "type": "article",
+   "breadcrumb": "Xcode/Bundles and frameworks/Creating a static framework",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-a-multi-platform-binary-framework-bundle",
+   "title": "Creating a multiplatform binary framework bundle",
+   "type": "article",
+   "breadcrumb": "Xcode/Bundles and frameworks/Creating a multiplatform binary framework bundle",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/swift-packages",
+   "title": "Swift packages",
+   "type": "collection",
+   "breadcrumb": "Xcode/Swift packages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/identifying-binary-dependencies",
+   "title": "Identifying binary dependencies",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Identifying binary dependencies",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/editing-a-package-dependency-as-a-local-package",
+   "title": "Editing a package dependency as a local package",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Editing a package dependency as a local package",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-a-standalone-swift-package-with-xcode",
+   "title": "Creating a standalone Swift package with Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Creating a standalone Swift package with Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/bundling-resources-with-a-swift-package",
+   "title": "Bundling resources with a Swift package",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Bundling resources with a Swift package",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-package-resources",
+   "title": "Localizing package resources",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Localizing package resources",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distributing-binary-frameworks-as-swift-packages",
+   "title": "Distributing binary frameworks as Swift packages",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Distributing binary frameworks as Swift packages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/developing-a-swift-package-in-tandem-with-an-app",
+   "title": "Developing a Swift package in tandem with an app",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Developing a Swift package in tandem with an app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/organizing-your-code-with-local-packages",
+   "title": "Organizing your code with local packages",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Organizing your code with local packages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/packagedescription",
+   "title": "PackageDescription",
+   "type": "module",
+   "breadcrumb": "Xcode/Swift packages/PackageDescription",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/publishing-a-swift-package-with-xcode",
+   "title": "Publishing a Swift package with Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Publishing a Swift package with Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-swift-packages-or-apps-that-use-them-in-continuous-integration-workflows",
+   "title": "Building Swift packages or apps that use them in continuous integration workflows",
+   "type": "article",
+   "breadcrumb": "Xcode/Swift packages/Building Swift packages or apps that use them in continuous integration workflows",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/asset-management",
+   "title": "Asset management",
+   "type": "collection",
+   "breadcrumb": "Xcode/Asset management",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-your-app-icon-using-icon-composer",
+   "title": "Creating your app icon using Icon Composer",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Creating your app icon using Icon Composer",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-app-to-use-alternate-app-icons",
+   "title": "Configuring your app to use alternate app icons",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Asset management/Configuring your app to use alternate app icons",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-app-icon",
+   "title": "Configuring your app icon using an asset catalog",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Configuring your app icon using an asset catalog",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/specifying-your-apps-launch-screen",
+   "title": "Specifying your app’s launch screen",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Specifying your app’s launch screen",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/managing-assets-with-asset-catalogs",
+   "title": "Managing assets with asset catalogs",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Managing assets with asset catalogs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-images-to-your-xcode-project",
+   "title": "Adding images to your Xcode project",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Adding images to your Xcode project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uikit/creating-custom-symbol-images-for-your-app",
+   "title": "Creating custom symbol images for your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Creating custom symbol images for your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/specifying-your-apps-color-scheme",
+   "title": "Specifying your app’s color scheme",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Specifying your app’s color scheme",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uikit/supporting-dark-mode-in-your-interface",
+   "title": "Supporting Dark Mode in your interface",
+   "type": "collection",
+   "breadcrumb": "Xcode/Asset management/Supporting Dark Mode in your interface",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/arkit/detecting-images-in-an-ar-experience",
+   "title": "Detecting Images in an AR Experience",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Asset management/Detecting Images in an AR Experience",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/arkit/scanning-and-detecting-3d-objects",
+   "title": "Scanning and Detecting 3D Objects",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Asset management/Scanning and Detecting 3D Objects",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/realitykit/composing-interactive-3d-content-with-realitykit-and-reality-composer-pro",
+   "title": "Composing interactive 3D content with RealityKit and Reality Composer Pro",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Asset management/Composing interactive 3D content with RealityKit and Reality Composer Pro",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/createml",
+   "title": "Create ML",
+   "type": "module",
+   "breadcrumb": "Xcode/Asset management/Create ML",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-a-spritekit-particle-emitter-in-xcode",
+   "title": "Creating a SpriteKit particle emitter in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Asset management/Creating a SpriteKit particle emitter in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localization",
+   "title": "Localization",
+   "type": "collection",
+   "breadcrumb": "Xcode/Localization",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/supporting-multiple-languages-in-your-app",
+   "title": "Supporting multiple languages in your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Supporting multiple languages in your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-and-varying-text-with-a-string-catalog",
+   "title": "Localizing and varying text with a string catalog",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Localizing and varying text with a string catalog",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/using-generated-localizable-symbols-in-your-code",
+   "title": "Using generated localizable symbols in your code",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Using generated localizable symbols in your code",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-landmarks",
+   "title": "Localizing Landmarks",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Localization/Localizing Landmarks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preparing-your-interface-for-localization",
+   "title": "Preparing your interface for localization",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Preparing your interface for localization",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preparing-your-apps-text-for-translation",
+   "title": "Preparing your app’s text for translation",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Preparing your app’s text for translation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preparing-dates-numbers-with-formatters",
+   "title": "Preparing dates, currencies, and numbers for translation",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Preparing dates, currencies, and numbers for translation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/preparing-views-for-localization",
+   "title": "Preparing views for localization",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Preparing views for localization",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/autosizing-views-for-localization-in-ios",
+   "title": "Autosizing views for localization in iOS",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Localization/Autosizing views for localization in iOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localization-friendly-layouts-in-macos",
+   "title": "Localization-friendly layouts in macOS",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Localization/Localization-friendly layouts in macOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-support-for-languages-and-regions",
+   "title": "Adding support for languages and regions",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Adding support for languages and regions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/choosing-localization-regions-and-scripts",
+   "title": "Choosing localization regions and scripts",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Choosing localization regions and scripts",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-resources-to-localizations",
+   "title": "Adding resources to localizations",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Adding resources to localizations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-assets-in-a-catalog",
+   "title": "Localizing assets in a catalog",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Localizing assets in a catalog",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-screenshots-of-your-app-for-localizers",
+   "title": "Creating screenshots of your app for localizers",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Creating screenshots of your app for localizers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exporting-localizations",
+   "title": "Exporting localizations",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Exporting localizations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/editing-xliff-and-string-catalog-files",
+   "title": "Editing XLIFF and string catalog files",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Editing XLIFF and string catalog files",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/importing-localizations",
+   "title": "Importing localizations",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Importing localizations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/locking-views-in-storyboard-and-xib-files",
+   "title": "Locking views in storyboard and XIB files",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Locking views in storyboard and XIB files",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/previewing-localizations",
+   "title": "Previewing localizations",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Previewing localizations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/testing-localizations-when-running-your-app",
+   "title": "Testing localizations when running your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Testing localizations when running your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/localizing-strings-that-contain-plurals",
+   "title": "Localizing strings that contain plurals",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Localizing strings that contain plurals",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-width-and-device-variants-of-strings",
+   "title": "Creating width and device variants of strings",
+   "type": "article",
+   "breadcrumb": "Xcode/Localization/Creating width and device variants of strings",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/accessibility/accessibility-inspector",
+   "title": "Accessibility Inspector",
+   "type": "collection",
+   "breadcrumb": "Xcode/Accessibility Inspector",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-documentation",
+   "title": "Writing documentation",
+   "type": "collection",
+   "breadcrumb": "Xcode/Writing documentation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/documenting-apps-frameworks-and-packages",
+   "title": "Documenting apps, frameworks, and packages",
+   "type": "article",
+   "breadcrumb": "Xcode/Writing documentation/Documenting apps, frameworks, and packages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-symbol-documentation-in-your-source-files",
+   "title": "Writing symbol documentation in your source files",
+   "type": "article",
+   "breadcrumb": "Xcode/Writing documentation/Writing symbol documentation in your source files",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-supplemental-content-to-a-documentation-catalog",
+   "title": "Adding supplemental content to a documentation catalog",
+   "type": "article",
+   "breadcrumb": "Xcode/Writing documentation/Adding supplemental content to a documentation catalog",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/slothcreator-building-docc-documentation-in-xcode",
+   "title": "SlothCreator: Building DocC documentation in Xcode",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Writing documentation/SlothCreator: Building DocC documentation in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-structure-to-your-documentation-pages",
+   "title": "Adding structure to your documentation pages",
+   "type": "article",
+   "breadcrumb": "Xcode/Writing documentation/Adding structure to your documentation pages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distributing-documentation-to-other-developers",
+   "title": "Distributing documentation to other developers",
+   "type": "article",
+   "breadcrumb": "Xcode/Writing documentation/Distributing documentation to other developers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/device-hub",
+   "title": "Device Hub",
+   "type": "collection",
+   "breadcrumb": "Xcode/Device Hub",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/running-your-app-on-simulated-or-physical-devices",
+   "title": "Running your app on simulated or physical devices",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Running your app on simulated or physical devices",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/managing-your-simulated-and-physical-devices-in-device-hub",
+   "title": "Managing your simulated and physical devices in Device Hub",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Managing your simulated and physical devices in Device Hub",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/enabling-developer-mode-on-a-device",
+   "title": "Enabling Developer Mode on a device",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Enabling Developer Mode on a device",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-the-environment-of-a-simulated-device",
+   "title": "Configuring the environment of a simulated device",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Configuring the environment of a simulated device",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/interacting-with-your-app-in-device-hub",
+   "title": "Interacting with your app in Device Hub",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Interacting with your app in Device Hub",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/capturing-screenshots-and-videos-from-devices",
+   "title": "Capturing screenshots and videos from devices",
+   "type": "article",
+   "breadcrumb": "Xcode/Device Hub/Capturing screenshots and videos from devices",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/debugging",
+   "title": "Debugging",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/diagnosing-and-resolving-bugs-in-your-running-app",
+   "title": "Diagnosing and resolving bugs in your running app",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing and resolving bugs in your running app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/diagnosing-issues-in-the-appearance-of-your-running-app",
+   "title": "Diagnosing issues in the appearance of a running app",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues in the appearance of a running app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/diagnosing-memory-thread-and-crash-issues-early",
+   "title": "Diagnosing memory, thread, and crash issues early",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/use-of-deallocated-memory",
+   "title": "Use of deallocated memory",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Use of deallocated memory",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/deallocation-of-deallocated-memory",
+   "title": "Deallocation of deallocated memory",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Deallocation of deallocated memory",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/deallocation-of-nonallocated-memory",
+   "title": "Deallocation of nonallocated memory",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Deallocation of nonallocated memory",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/use-of-stack-memory-after-function-return",
+   "title": "Use of stack memory after function return",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Use of stack memory after function return",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/use-of-out-of-scope-stack-memory",
+   "title": "Use of out-of-scope stack memory",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Use of out-of-scope stack memory",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/overflow-and-underflow-of-buffers",
+   "title": "Overflow and underflow of buffers",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Overflow and underflow of buffers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/overflow-of-c-containers",
+   "title": "Overflow of C++ containers",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Overflow of C++ containers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/data-races",
+   "title": "Data races",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Data races",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/swift-access-races",
+   "title": "Swift access races",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Swift access races",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/races-on-collections-and-other-apis",
+   "title": "Races on collections and other APIs",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Races on collections and other APIs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/uninitialized-mutexes",
+   "title": "Uninitialized mutexes",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Uninitialized mutexes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/thread-leaks",
+   "title": "Thread leaks",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Thread leaks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/misaligned-pointer",
+   "title": "Misaligned pointer",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Misaligned pointer",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-boolean",
+   "title": "Invalid Boolean value",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid Boolean value",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/out-of-bounds-array-access",
+   "title": "Out-of-bounds array access",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Out-of-bounds array access",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-enumeration-value",
+   "title": "Invalid enumeration value",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid enumeration value",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reaching-of-unreachable-point",
+   "title": "Reaching of unreachable point",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Reaching of unreachable point",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/dynamic-type-violation",
+   "title": "Dynamic type violation",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Dynamic type violation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-float-cast",
+   "title": "Invalid float cast",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid float cast",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/division-by-zero",
+   "title": "Division by zero",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Division by zero",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/nonnull-argument-violation",
+   "title": "Nonnull argument violation",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Nonnull argument violation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/nonnull-return-value-violation",
+   "title": "Nonnull return value violation",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Nonnull return value violation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/nonnull-variable-assignment-violation",
+   "title": "Nonnull variable assignment violation",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Nonnull variable assignment violation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/null-reference-creation-and-null-pointer-dereference",
+   "title": "Null reference creation and null pointer dereference",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Null reference creation and null pointer dereference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-object-size",
+   "title": "Invalid object size",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid object size",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-shift",
+   "title": "Invalid shift",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid shift",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/integer-overflow",
+   "title": "Integer overflow",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Integer overflow",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/invalid-variable-length-array",
+   "title": "Invalid variable-length array",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing memory, thread, and crash issues early/Invalid variable-length array",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/foundation/analyzing-http-traffic-with-instruments",
+   "title": "Analyzing HTTP traffic with Instruments",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Analyzing HTTP traffic with Instruments",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/detecting-when-your-app-contacts-domains-that-may-be-profiling-users",
+   "title": "Detecting when your app contacts domains that may be profiling users",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Detecting when your app contacts domains that may be profiling users",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/metal-developer-workflows",
+   "title": "Metal developer workflows",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-your-project-with-embedded-shader-sources",
+   "title": "Building your project with embedded shader sources",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Building your project with embedded shader sources",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/naming-resources-and-commands",
+   "title": "Naming resources and commands",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Naming resources and commands",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-and-using-custom-capture-scopes",
+   "title": "Creating and using custom capture scopes",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Creating and using custom capture scopes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-live-resources-at-runtime",
+   "title": "Inspecting live resources at runtime",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Inspecting live resources at runtime",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/validating-your-apps-metal-api-usage",
+   "title": "Validating your app’s Metal API usage",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Validating your app’s Metal API usage",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/validating-your-apps-metal-shader-usage",
+   "title": "Validating your app’s Metal shader usage",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Validating your app’s Metal shader usage",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/monitoring-your-metal-apps-graphics-performance",
+   "title": "Monitoring your Metal app’s graphics performance",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Monitoring your Metal app’s graphics performance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/customizing-metal-performance-hud",
+   "title": "Customizing the Metal Performance HUD",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Customizing the Metal Performance HUD",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-metal-performance-hud-metrics",
+   "title": "Understanding the Metal Performance HUD metrics",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Understanding the Metal Performance HUD metrics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/gaining-performance-insights-with-metal-performance-hud",
+   "title": "Gaining performance insights with the Metal Performance HUD",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Gaining performance insights with the Metal Performance HUD",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/generating-performance-reports-with-metal-performance-hud",
+   "title": "Generating performance reports with the Metal Performance HUD",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Generating performance reports with the Metal Performance HUD",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/finding-your-metal-apps-gpu-occupancy",
+   "title": "Finding your Metal app’s GPU occupancy",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Finding your Metal app’s GPU occupancy",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-shader-bottlenecks",
+   "title": "Reducing shader bottlenecks",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Reducing shader bottlenecks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/measuring-the-gpus-use-of-memory-bandwidth",
+   "title": "Measuring the GPU’s use of memory bandwidth",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal developer workflows/Measuring the GPU’s use of memory bandwidth",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/metal-debugger",
+   "title": "Metal debugger",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Metal debugger",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/capturing-a-metal-workload-in-xcode",
+   "title": "Capturing a Metal workload in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Capturing a Metal workload in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/capturing-a-metal-workload-programmatically",
+   "title": "Capturing a Metal workload programmatically",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Capturing a Metal workload programmatically",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/replaying-a-gpu-trace-file",
+   "title": "Replaying a GPU trace file",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Replaying a GPU trace file",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/investigating-visual-artifacts",
+   "title": "Investigating visual artifacts",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Investigating visual artifacts",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/optimizing-gpu-performance",
+   "title": "Optimizing GPU performance",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Optimizing GPU performance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/debugging-with-interactive-command-line-tools",
+   "title": "Debugging with interactive command-line tools",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Debugging with interactive command-line tools",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/investigating-gpu-issues-with-ai-agents",
+   "title": "Investigating GPU issues with AI agents",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Investigating GPU issues with AI agents",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-your-metal-workload",
+   "title": "Analyzing your Metal workload",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing your Metal workload",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-resource-dependencies",
+   "title": "Analyzing resource dependencies",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing resource dependencies",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-memory-usage",
+   "title": "Analyzing memory usage",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing memory usage",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-apple-gpu-performance-using-a-visual-timeline",
+   "title": "Analyzing Apple GPU performance using a visual timeline",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing Apple GPU performance using a visual timeline",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-apple-gpu-performance-using-counter-statistics",
+   "title": "Analyzing Apple GPU performance using counter statistics",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing Apple GPU performance using counter statistics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-apple-gpu-performance-using-performance-heatmaps-a17-m3",
+   "title": "Analyzing Apple GPU performance with performance heat maps",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing Apple GPU performance with performance heat maps",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-apple-gpu-performance-using-shader-cost-graph-a17-m3",
+   "title": "Analyzing Apple GPU performance using the shader cost graph",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing Apple GPU performance using the shader cost graph",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-non-apple-gpu-performance-using-counter-statistics",
+   "title": "Analyzing non-Apple GPU performance using counter statistics",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing non-Apple GPU performance using counter statistics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-acceleration-structures",
+   "title": "Inspecting acceleration structures",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting acceleration structures",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-buffers",
+   "title": "Inspecting buffers",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting buffers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-pipeline-states",
+   "title": "Inspecting pipeline states",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting pipeline states",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-sampler-states",
+   "title": "Inspecting sampler states",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting sampler states",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-shaders",
+   "title": "Inspecting shaders",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting shaders",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-textures",
+   "title": "Inspecting textures",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting textures",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-the-bound-resources-for-a-command",
+   "title": "Inspecting the bound resources for a command",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting the bound resources for a command",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-the-geometry-of-a-draw-command",
+   "title": "Inspecting the geometry of a draw command",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting the geometry of a draw command",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/inspecting-the-attachments-of-a-draw-command",
+   "title": "Inspecting the attachments of a draw command",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Inspecting the attachments of a draw command",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/debugging-the-shaders-within-a-draw-command-or-compute-dispatch",
+   "title": "Debugging the shaders within a draw command or compute dispatch",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Debugging the shaders within a draw command or compute dispatch",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-draw-command-and-compute-dispatch-performance-with-gpu-counters",
+   "title": "Analyzing draw command and compute dispatch performance with GPU counters",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing draw command and compute dispatch performance with GPU counters",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-draw-command-and-compute-dispatch-performance-with-pipeline-statistics",
+   "title": "Analyzing draw command and compute dispatch performance with pipeline statistics",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Metal debugger/Analyzing draw command and compute dispatch performance with pipeline statistics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/setting-breakpoints-to-pause-your-running-app",
+   "title": "Setting breakpoints to pause your running app",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Setting breakpoints to pause your running app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/stepping-through-code-and-inspecting-variables-to-isolate-bugs",
+   "title": "Stepping through code and inspecting variables to isolate bugs",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Stepping through code and inspecting variables to isolate bugs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-your-app-to-include-debugging-information",
+   "title": "Building your app to include debugging information",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Building your app to include debugging information",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/diagnosing-issues-using-crash-reports-and-device-logs",
+   "title": "Diagnosing issues using crash reports and device logs",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/acquiring-crash-reports-and-diagnostic-logs",
+   "title": "Acquiring crash reports and diagnostic logs",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Acquiring crash reports and diagnostic logs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-identifiable-symbol-names-to-a-crash-report",
+   "title": "Adding identifiable symbol names to a crash report",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Adding identifiable symbol names to a crash report",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/identifying-the-cause-of-common-crashes",
+   "title": "Identifying the cause of common crashes",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/addressing-crashes-from-swift-runtime-errors",
+   "title": "Addressing crashes from Swift runtime errors",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Addressing crashes from Swift runtime errors",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/addressing-language-exception-crashes",
+   "title": "Addressing language exception crashes",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Addressing language exception crashes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reading-an-exception-message",
+   "title": "Reading an exception message",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Reading an exception message",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/addressing-watchdog-terminations",
+   "title": "Addressing watchdog terminations",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Addressing watchdog terminations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/investigating-crashes-for-zombie-objects",
+   "title": "Investigating crashes for zombie objects",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Investigating crashes for zombie objects",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/investigating-memory-access-crashes",
+   "title": "Investigating memory access crashes",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Investigating memory access crashes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/addressing-missing-framework-crashes",
+   "title": "Addressing missing framework crashes",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying the cause of common crashes/Addressing missing framework crashes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-a-crash-report",
+   "title": "Analyzing a crash report",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Analyzing a crash report",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/examining-the-fields-in-a-crash-report",
+   "title": "Examining the fields in a crash report",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Examining the fields in a crash report",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/interpreting-the-json-format-of-a-crash-report",
+   "title": "Interpreting the JSON format of a crash report",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Interpreting the JSON format of a crash report",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-the-exception-types-in-a-crash-report",
+   "title": "Understanding the exception types in a crash report",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exc_arithmetic",
+   "title": "EXC_ARITHMETIC",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_ARITHMETIC",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exc_bad_access",
+   "title": "EXC_BAD_ACCESS",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_BAD_ACCESS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigbus",
+   "title": "EXC_BAD_ACCESS (SIGBUS)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_BAD_ACCESS (SIGBUS)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigsegv",
+   "title": "EXC_BAD_ACCESS (SIGSEGV)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_BAD_ACCESS (SIGSEGV)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigtrap_sigill",
+   "title": "EXC_BREAKPOINT (SIGTRAP) and EXC_BAD_INSTRUCTION (SIGILL)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_BREAKPOINT (SIGTRAP) and EXC_BAD_INSTRUCTION (SIGILL)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exc_crash",
+   "title": "EXC_CRASH",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigabrt",
+   "title": "EXC_CRASH (SIGABRT)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH (SIGABRT)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigkill",
+   "title": "EXC_CRASH (SIGKILL)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH (SIGKILL)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigquit",
+   "title": "EXC_CRASH (SIGQUIT)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH (SIGQUIT)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigsys",
+   "title": "EXC_CRASH (SIGSYS)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH (SIGSYS)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sigterm",
+   "title": "EXC_CRASH (SIGTERM)",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_CRASH (SIGTERM)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exc_guard",
+   "title": "EXC_GUARD",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_GUARD",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/exc_resource",
+   "title": "EXC_RESOURCE",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Understanding the exception types in a crash report/EXC_RESOURCE",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/identifying-high-memory-use-with-jetsam-event-reports",
+   "title": "Identifying high-memory use with jetsam event reports",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Identifying high-memory use with jetsam event reports",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logging",
+   "title": "Logging",
+   "type": "collection",
+   "breadcrumb": "Xcode/Debugging/Diagnosing issues using crash reports and device logs/Logging",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/diagnosing-issues-with-entitlements",
+   "title": "Diagnosing Issues with Entitlements",
+   "type": "article",
+   "breadcrumb": "Xcode/Debugging/Diagnosing Issues with Entitlements",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/performance-and-metrics",
+   "title": "Performance and metrics",
+   "type": "collection",
+   "breadcrumb": "Xcode/Performance and metrics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/improving-your-app-s-performance",
+   "title": "Improving your app’s performance",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Improving your app’s performance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/tutorials/instruments",
+   "title": "Profiling apps using Instruments",
+   "type": "overview",
+   "breadcrumb": "Xcode/Performance and metrics/Profiling apps using Instruments",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-the-performance-of-your-shipping-app",
+   "title": "Analyzing the performance of your shipping app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing the performance of your shipping app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/visionos/creating-a-performance-plan-for-visionos-app",
+   "title": "Creating a performance plan for your visionOS app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Creating a performance plan for your visionOS app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-responsiveness-issues-in-your-shipping-app",
+   "title": "Analyzing responsiveness issues in your shipping app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing responsiveness issues in your shipping app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/improving-app-responsiveness",
+   "title": "Improving app responsiveness",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Improving app responsiveness",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-user-interface-responsiveness",
+   "title": "Understanding user interface responsiveness",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Understanding user interface responsiveness",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-and-improving-swiftui-performance",
+   "title": "Understanding and improving SwiftUI performance",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Understanding and improving SwiftUI performance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-hangs-in-your-app",
+   "title": "Understanding hangs in your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Understanding hangs in your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-hitches-in-your-app",
+   "title": "Understanding hitches in your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Understanding hitches in your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/diagnosing-performance-issues-early",
+   "title": "Diagnosing performance issues early",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Diagnosing performance issues early",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-your-app-s-launch-time",
+   "title": "Reducing your app’s launch time",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s launch time",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reduce-terminations-in-your-app",
+   "title": "Reducing terminations in your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing terminations in your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/addressing-cpu-bottlenecks",
+   "title": "Addressing CPU bottlenecks",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Addressing CPU bottlenecks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-cpu-usage-with-processor-trace",
+   "title": "Analyzing CPU usage with the Processor Trace instrument",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing CPU usage with the Processor Trace instrument",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-cpu-profiles-with-call-tree-views",
+   "title": "Analyzing CPU profiles with call tree views",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing CPU profiles with call tree views",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-your-app-s-memory-use",
+   "title": "Reducing your app’s memory use",
+   "type": "collection",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s memory use",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/gathering-information-about-memory-use",
+   "title": "Gathering information about memory use",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s memory use/Gathering information about memory use",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/making-changes-to-reduce-memory-use",
+   "title": "Making changes to reduce memory use",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s memory use/Making changes to reduce memory use",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preventing-memory-use-regressions",
+   "title": "Preventing memory-use regressions",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s memory use/Preventing memory-use regressions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/responding-to-low-memory-warnings",
+   "title": "Responding to low-memory warnings",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s memory use/Responding to low-memory warnings",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-your-app-s-size",
+   "title": "Reducing your app’s size",
+   "type": "collection",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s size",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/doing-basic-optimization-to-reduce-your-app-s-size",
+   "title": "Doing basic optimization to reduce your app’s size",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s size/Doing basic optimization to reduce your app’s size",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/doing-advanced-optimization-to-further-reduce-your-app-s-size",
+   "title": "Doing advanced optimization to further reduce your app’s size",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s size/Doing advanced optimization to further reduce your app’s size",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-the-performance-of-your-metal-app",
+   "title": "Analyzing the performance of your Metal app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing the performance of your Metal app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-the-memory-usage-of-your-metal-app",
+   "title": "Analyzing the memory usage of your Metal app",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing the memory usage of your Metal app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/analyzing-your-app-s-battery-use",
+   "title": "Analyzing your app’s battery use",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Analyzing your app’s battery use",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/measuring-your-app-s-power-use-with-power-profiler",
+   "title": "Measuring your app’s power use with Power Profiler",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Measuring your app’s power use with Power Profiler",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-your-app-s-battery-use",
+   "title": "Reducing your app’s battery use",
+   "type": "collection",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/scheduling-cpu-work-efficiently",
+   "title": "Scheduling CPU work efficiently",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Scheduling CPU work efficiently",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/responding-to-power-notifications",
+   "title": "Responding to power notifications",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Responding to power notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/improving-your-app-s-rendering-efficiency",
+   "title": "Improving your app’s rendering efficiency",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Improving your app’s rendering efficiency",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-power-usage-when-capturing-media",
+   "title": "Reducing power usage when capturing media",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Reducing power usage when capturing media",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-networking-and-bluetooth-power-usage",
+   "title": "Reducing networking and Bluetooth power usage",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Reducing networking and Bluetooth power usage",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/accessing-the-device-s-location-efficiently",
+   "title": "Accessing the device’s location efficiently",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Accessing the device’s location efficiently",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-disk-writes",
+   "title": "Reducing disk writes",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s battery use/Reducing disk writes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reducing-your-app-s-disk-usage",
+   "title": "Reducing your app’s disk usage",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Reducing your app’s disk usage",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/monitoring-your-app-s-storage-metrics",
+   "title": "Monitoring your app’s storage metrics",
+   "type": "article",
+   "breadcrumb": "Xcode/Performance and metrics/Monitoring your app’s storage metrics",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-custom-modelers-for-intelligent-instruments",
+   "title": "Creating custom modelers for intelligent instruments",
+   "type": "sampleCode",
+   "breadcrumb": "Xcode/Performance and metrics/Creating custom modelers for intelligent instruments",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/testing",
+   "title": "Testing",
+   "type": "collection",
+   "breadcrumb": "Xcode/Testing",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/adding-tests-to-your-xcode-project",
+   "title": "Adding tests to your Xcode project",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Adding tests to your Xcode project",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/updating-your-existing-codebase-to-accommodate-unit-tests",
+   "title": "Updating your existing codebase to accommodate unit tests",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Updating your existing codebase to accommodate unit tests",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/determining-how-much-code-your-tests-cover",
+   "title": "Determining how much code your tests cover",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Determining how much code your tests cover",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/organizing-tests-to-improve-feedback",
+   "title": "Improving code assessment by organizing tests into test plans",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Improving code assessment by organizing tests into test plans",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/running-tests-and-interpreting-results",
+   "title": "Running tests and interpreting results",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Running tests and interpreting results",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-and-running-performance-tests",
+   "title": "Writing and running performance tests",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Writing and running performance tests",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/simulating-location-in-tests",
+   "title": "Simulating location in tests",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Simulating location in tests",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/setting-up-storekit-testing-in-xcode",
+   "title": "Setting up StoreKit Testing in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Setting up StoreKit Testing in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/testing-in-app-purchases-with-storekit-transaction-manager-in-code",
+   "title": "Testing in-app purchases with StoreKit transaction manager in Xcode",
+   "type": "article",
+   "breadcrumb": "Xcode/Testing/Testing in-app purchases with StoreKit transaction manager in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distribution",
+   "title": "Distribution",
+   "type": "collection",
+   "breadcrumb": "Xcode/Distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/preparing-your-app-for-distribution",
+   "title": "Preparing your app for distribution",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Preparing your app for distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/changing-the-bundle-identifier",
+   "title": "Changing the bundle identifier",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Changing the bundle identifier",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distributing-your-app-for-beta-testing-and-releases",
+   "title": "Distributing your app for beta testing and releases",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Distributing your app for beta testing and releases",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distributing-your-app-to-registered-devices",
+   "title": "Distributing your app to registered devices",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Distributing your app to registered devices",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/packaging-mac-software-for-distribution",
+   "title": "Packaging Mac software for distribution",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Packaging Mac software for distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-distribution-signed-code-for-the-mac",
+   "title": "Creating distribution-signed code for macOS",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Creating distribution-signed code for macOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/using-the-latest-code-signature-format",
+   "title": "Using the latest code signature format",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Using the latest code signature format",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/security/notarizing-macos-software-before-distribution",
+   "title": "Notarizing macOS software before distribution",
+   "type": "collection",
+   "breadcrumb": "Xcode/Distribution/Notarizing macOS software before distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/signing-a-daemon-with-a-restricted-entitlement",
+   "title": "Signing a daemon with a restricted entitlement",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Signing a daemon with a restricted entitlement",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sharing-your-teams-signing-certificates",
+   "title": "Synchronizing code signing identities with your developer account",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Synchronizing code signing identities with your developer account",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles",
+   "title": "TN3125: Inside Code Signing: Provisioning Profiles",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/TN3125: Inside Code Signing: Provisioning Profiles",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/testing-a-release-build",
+   "title": "Testing a release build",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Testing a release build",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/testing-a-beta-os",
+   "title": "Testing a beta OS",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Testing a beta OS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/viewing-and-responding-to-feedback",
+   "title": "Viewing and responding to feedback from beta testers",
+   "type": "article",
+   "breadcrumb": "Xcode/Distribution/Viewing and responding to feedback from beta testers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/xcode-cloud",
+   "title": "Xcode Cloud",
+   "type": "collection",
+   "breadcrumb": "Xcode/Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/getting-started-with-xcode-cloud",
+   "title": "Getting started with Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Getting started with Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/distributing-your-xcode-cloud-builds-through-testflight",
+   "title": "Distributing your Xcode Cloud builds through TestFlight",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Distributing your Xcode Cloud builds through TestFlight",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/about-continuous-integration-and-delivery-with-xcode-cloud",
+   "title": "About continuous integration and delivery with Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/About continuous integration and delivery with Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/setting-up-your-project-to-use-xcode-cloud",
+   "title": "Setting up your project to use Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Setting up your project to use Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-first-xcode-cloud-workflow",
+   "title": "Configuring your first Xcode Cloud workflow",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Configuring your first Xcode Cloud workflow",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/making-dependencies-available-to-xcode-cloud",
+   "title": "Making dependencies available to Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Making dependencies available to Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-xcode-cloud-for-your-team",
+   "title": "Configuring Xcode Cloud for your team",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Configuring Xcode Cloud for your team",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sharing-custom-aliases-across-xcode-cloud-workflows",
+   "title": "Sharing macOS and Xcode versions across Xcode Cloud workflows",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Sharing macOS and Xcode versions across Xcode Cloud workflows",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/sharing-environment-variables-across-xcode-cloud-workflows",
+   "title": "Sharing environment variables across Xcode Cloud workflows",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Sharing environment variables across Xcode Cloud workflows",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/building-swift-packages-or-swift-playground-app-projects-with-xcode-cloud",
+   "title": "Building Swift packages and Swift Playgrounds app projects with Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Building Swift packages and Swift Playgrounds app projects with Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds",
+   "title": "Setting the next build number for Xcode Cloud builds",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Setting the next build number for Xcode Cloud builds",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/including-notes-for-testers-with-a-beta-release-of-your-app",
+   "title": "Including notes for testers with a beta release of your app",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Including notes for testers with a beta release of your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/removing-your-project-from-xcode-cloud",
+   "title": "Removing your project from Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Removing your project from Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reviewing-xcode-cloud-usage-data",
+   "title": "Reviewing Xcode Cloud usage data",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Reviewing Xcode Cloud usage data",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/developing-a-workflow-strategy-for-xcode-cloud",
+   "title": "Developing a workflow strategy for Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Developing a workflow strategy for Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/xcode-cloud-workflow-reference",
+   "title": "Xcode Cloud workflow reference",
+   "type": "collection",
+   "breadcrumb": "Xcode/Xcode Cloud/Xcode Cloud workflow reference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-start-conditions",
+   "title": "Configuring start conditions",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Xcode Cloud workflow reference/Configuring start conditions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-your-xcode-cloud-workflow-s-actions",
+   "title": "Configuring your Xcode Cloud workflow’s actions",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Xcode Cloud workflow reference/Configuring your Xcode Cloud workflow’s actions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/creating-a-workflow-that-builds-your-app-for-distribution",
+   "title": "Creating a workflow that builds your app for distribution",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Creating a workflow that builds your app for distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/understanding-infrastructure-validation-builds",
+   "title": "Understanding Xcode Cloud infrastructure validation builds",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Understanding Xcode Cloud infrastructure validation builds",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/source-code-management-setup",
+   "title": "Source code management setup",
+   "type": "collection",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-bitbucket-cloud",
+   "title": "Connecting Xcode Cloud to Bitbucket Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to Bitbucket Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-bitbucket-server",
+   "title": "Connecting Xcode Cloud to Bitbucket Server",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to Bitbucket Server",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-github",
+   "title": "Connecting Xcode Cloud to GitHub",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to GitHub",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-github-enterprise",
+   "title": "Connecting Xcode Cloud to GitHub Enterprise",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to GitHub Enterprise",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-gitlab",
+   "title": "Connecting Xcode Cloud to GitLab",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to GitLab",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-a-self-managed-gitlab-instance",
+   "title": "Connecting Xcode Cloud to a self-managed GitLab instance",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Source code management setup/Connecting Xcode Cloud to a self-managed GitLab instance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-requirements-for-merging-a-pull-request",
+   "title": "Configuring requirements for merging a pull request",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Configuring requirements for merging a pull request",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-custom-build-scripts",
+   "title": "Writing custom build scripts",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Writing custom build scripts",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/environment-variable-reference",
+   "title": "Environment variable reference",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Environment variable reference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/resolving-common-configuration-and-build-issues",
+   "title": "Resolving common configuration and build issues",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Resolving common configuration and build issues",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/resolve-github-enterprise-connection-issues",
+   "title": "Resolve GitHub Enterprise connection issues",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Resolve GitHub Enterprise connection issues",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/reporting-feedback-for-xcode-cloud",
+   "title": "Reporting feedback for Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Reporting feedback for Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/configuring-webhooks-in-xcode-cloud",
+   "title": "Configuring webhooks in Xcode Cloud",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Configuring webhooks in Xcode Cloud",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/webhook-payload",
+   "title": "Xcode Cloud webhook payload reference",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Xcode Cloud webhook payload reference",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/connecting-xcode-cloud-to-slack",
+   "title": "Connecting Xcode Cloud to Slack",
+   "type": "article",
+   "breadcrumb": "Xcode/Xcode Cloud/Connecting Xcode Cloud to Slack",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/appstoreconnectapi/xcode-cloud-workflows-and-builds",
+   "title": "Xcode Cloud Workflows and Builds",
+   "type": "collection",
+   "breadcrumb": "Xcode/Xcode Cloud/Xcode Cloud Workflows and Builds",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/apple-silicon",
+   "title": "Apple silicon",
+   "type": "module",
+   "breadcrumb": "Xcode/Apple silicon",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/application-binary-interfaces",
+   "title": "Application binary interfaces",
+   "type": "collection",
+   "breadcrumb": "Xcode/Application binary interfaces",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-arm64-code-for-apple-platforms",
+   "title": "Writing ARM64 code for Apple platforms",
+   "type": "article",
+   "breadcrumb": "Xcode/Application binary interfaces/Writing ARM64 code for Apple platforms",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-64-bit-intel-code-for-apple-platforms",
+   "title": "Writing 64-bit Intel code for Apple Platforms",
+   "type": "article",
+   "breadcrumb": "Xcode/Application binary interfaces/Writing 64-bit Intel code for Apple Platforms",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-armv7-code-for-ios",
+   "title": "Writing ARMv7 code for iOS",
+   "type": "article",
+   "breadcrumb": "Xcode/Application binary interfaces/Writing ARMv7 code for iOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/xcode/writing-armv6-code-for-ios",
+   "title": "Writing ARMv6 code for iOS",
+   "type": "article",
+   "breadcrumb": "Xcode/Application binary interfaces/Writing ARMv6 code for iOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  }
+ ]
+}

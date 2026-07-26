@@ -1,0 +1,1496 @@
+{
+ "key": "jessesquires",
+ "count": 298,
+ "articles": [
+  {
+   "url": "https://www.jessesquires.com/blog/2014/06/09/built-with-open-source/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/06/25/apples-to-apples/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/08/03/status-bars-matter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/08/06/apples-to-apples-part-two/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/08/19/on-the-value-of-benchmarks/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/08/21/apples-to-apples-part-three/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/10/01/adaptive-user-interfaces/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/10/22/swift-failable-initializers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/12/05/rosetta-stone-contributes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2014/12/08/introducing-jsqmessagesvc-6-0/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/01/05/swift-coredata-and-testing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/02/17/better-coredata-models-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/03/31/functional-notifications/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/04/06/swift-failable-initializers-revisited/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/05/25/using-core-data-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/07/19/swift-namespaced-constants/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/07/26/swift-enumerations-and-equatable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/10/14/UIKit-changes-in-iOS-9/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/10/25/building-data-sources-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/12/06/swift-open-source/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/12/10/open-source-swift-weekly-1/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/12/17/open-source-swift-weekly-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2015/12/24/open-source-swift-weekly-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/01/07/open-source-swift-weekly-4/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/01/14/new-weekly-brief/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/02/06/jsqmessages-call-for-contributors/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/02/19/swifty-presenters/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/03/21/contributing-to-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/05/20/swift-documentation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/05/22/open-source-everything/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/06/04/avoiding-objc-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/06/14/the-a5-is-dead/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/07/03/swift-3-sherlocked-my-libraries/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/07/25/migrating-to-swift-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/07/31/enums-as-configs/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/09/30/speaking-at-frenchkit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/10/01/shipping-swift-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/10/03/understanding-swift-evolution/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/10/06/contributing-to-swift-weekly/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2016/11/05/140-proposals-frenchkit-video/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/01/08/swift-documentation-part-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/01/16/testing-without-ocmock/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/01/23/pushing-limits-of-pop/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/02/08/prioritization/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/02/09/sleazy-recruiting/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/02/10/refactoring-singletons-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/02/15/adapting-to-change-and-cutting-corners/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/03/07/swift-unwrapped/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/04/05/thoughts-on-swift-access-control/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/05/28/a-fair-hotel/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/06/04/writing-better-singletons-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/06/05/protocol-composition-in-swift-and-objc/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/07/16/officially-deprecating-jsqmessagesviewcontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/07/17/a-story-about-swift-source-compat/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/08/08/customizing-git-log/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/08/13/data-society-media-manipulation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/09/03/supporting-json-feed/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/09/10/building-a-site-with-jekyll-on-nfsn/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/09/18/measuring-compile-times-xcode9/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/09/24/when-your-app-is-used-in-unexpected-ways/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/10/01/floating-point-swift-ulp-and-epsilon/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2017/12/28/swift-weekly-brief-hiatus/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/02/08/how-to-sysdiagnose-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/02/25/replacing-google-with-duckduckgo/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/04/16/upgrading-to-bootstrap-4/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/04/22/removing-google-analytics-too/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/10/why-optional-swift-closures-are-escaping/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/11/thoughts-on-wwdc-2018/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/12/xcode-tip-improving-assistant-editor/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/13/swift-unwrapped-at-wwdc-2018/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/16/reading-adichie-dear-ijeawele/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/24/choosing-a-vpn-service/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/06/27/til-tor-browser/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/07/01/xcode-tip-debugging-behavior-new-tab/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/07/05/swifts-new-calling-convention/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/07/19/blaming-homelessness-on-the-homeless-sf/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/07/29/swift-tip-building-arrays-with-compactmap/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/07/30/the-four-agreements/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/09/26/15-years-later/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/10/08/lars-and-the-basket-of-apples/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/11/07/debugging-subtle-swift-bug-facepalm/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2018/11/17/executing-applescript-in-mac-app-on-macos-mojave/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/01/05/reading-list-2018/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/02/25/how-to-estimate-engineering-project-timelines/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/03/22/reading-notes-1/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/03/26/introducing-lucifer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/07/reading-notes-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/13/linked-out/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/15/implementing-right-click-for-nsbutton/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/16/workaround-highlight-bug-nsstatusitem/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/16/update-to-lucifer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/08/19/my-dad-ate-an-impossible-whopper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/03/introducing-red-eye/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/13/announcing-plurals-and-noun/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/16/swift-unwrapped-5-1-doug-gregor/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/19/the-aca-and-your-credit-report/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/26/overriding-status-bar-settings-ios-simulator/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/27/icloud-backup-using-rsync/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/29/reading-notes-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/29/reading-notes-4/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2019/09/30/automating-simctl-status-bar/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/04/reading-list-2019/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/06/selecting-an-xcode-version-on-github-ci/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/08/observing-appearance-changes-on-ios-and-macos/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/10/time-machine-failing-on-macos-catalina/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/14/apple-script-to-export-open-safari-tabs-to-omnifocus/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/21/xcode-tip-breakpoints-as-bookmarks/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/01/24/github-default-community-health-files/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/02/23/mac-app-tests-fail-with-hardened-runtime/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/02/24/replacing-cocoapods-with-swiftpm/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/02/25/jetbrains-mono-and-disabling-font-ligatures/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/03/04/another-issue-with-swiftpm-xcode-integration/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/03/23/implementing-dark-mode-with-cgcolor/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/07/libraries-for-building-menu-bar-mac-apps/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/10/running-danger-on-github-actions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/11/previously-previously-previously-relocated-items-in-macos-catalina/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/11/bay-area-mutual-aid-covid-19/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/13/fully-automating-perfect-status-bar-overrides-for-ios-simulators/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/14/deprecating-jsqdatasourceskit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/15/updating-permalinks-and-adding-redirects-for-jekyll-sites/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/04/16/approved-for-github-sponsors/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/05/08/simple-private-opensource-analytics-with-goatcounter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/05/16/on-non-native-apps/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/05/17/who-do-they-protect/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/05/20/marking-unused-required-initializers-as-unavailable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/07/quickly-switching-between-xcodes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/08/best-touch-bar-configuration-for-people-who-hate-the-touch-bar/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/16/swift-globals-and-static-members-are-atomic-and-lazily-computed/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/17/time-machine-error-45/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/20/xcode-12-drops-support-for-ios-8-fix-for-cocoapods/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/24/how-to-fix-the-incomprehensible-tabs-in-xcode-12/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/07/30/github-tip-watching-releases/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/08/26/zsh-could-not-find-cocoapods/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/08/30/unpropertied/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/09/15/why-is-apple-acting-like-an-asshole/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/09/15/dont-forget-the-keyboards/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/10/08/swift-deinit-is-not-called-for-failable-initializers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/10/12/swift-unwrapped-with-jordan-rose/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/11/24/seasons-greetings-from-your-ceo-at-tech-company/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/11/26/radical-readings-for-the-tech-worker/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/11/28/how-to-fix-ruby-bundler-errors-on-nearlyfreespeech/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/15/running-multiple-dangers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/20/useful-danger-rules-for-bitrise/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/20/the-largest-strike-in-history/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/22/obscure-bridgeos-crash/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/22/swift-self-executing-anonymous-closures/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/28/the-different-types-of-self-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/28/resources-for-learning-about-compilers-and-llvm/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2020/12/30/reading-list-2020/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/01/03/top-posts-of-2020/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/02/a-web-host-worth-using/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/02/how-to-reboot-touch-bar-without-rebooting-macbook/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/09/fixing-macos-search-bugs/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/16/returning-to-normal/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/16/deleting-tweets-and-other-social-media-content/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/17/returning-to-normal-part-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/17/xcode-ui-testing-reliability-tips/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/18/using-pipes-in-swift-scripts/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/19/how-to-test-your-macos-app-or-not/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/22/xcode-tips-for-everyone/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/23/returning-to-normal-part-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/26/a-better-approach-to-writing-a-userdefaults-property-wrapper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/30/apple-cooperation-with-authoritarian-governments/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/03/31/migrating-omnifocus-to-a-new-mac/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/04/05/why-swift-closures-are-not-equatable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/04/07/resources-for-learning-swiftui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/04/07/time-machine-error-45-big-sur/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/01/three-months-of-big-sur/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/01/ios-14-app-library/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/02/to-distribute-in-the-mac-app-store-or-not/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/06/rss-feeds-jekyll-and-absolute-versus-relative-urls/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/29/apple-docc-great-but-useless-for-oss/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/06/29/what-is-a-rent-strike/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/07/01/is-swiftui-ready/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/07/08/diffable-data-source-behavior-changes-and-reconfiguring-cells-in-ios-15/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/07/11/debugging-diffabledatasource-cellproviders/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/07/15/fixing-a-hard-to-find-bug-in-dark-mode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/08/08/different-ways-to-observe-properties-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/08/23/caching-bundler-on-github-actions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/08/24/useful-label-based-github-actions-workflows/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/09/12/an-ios-shortcut-to-show-proof-of-vaccine/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/10/17/github-actions-workflows-for-automatic-rebasing-and-merging/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/10/22/recently-updated-posts/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/10/24/git-aliases-to-improve-productivity/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/10/25/dont-let-them-loot/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/10/25/delete-app-during-ui-tests/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/01/how-to-start-a-blog/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/03/swift-package-ios-tests/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/03/xcode-13-framework-test-fail/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/06/deprecating-presenterkit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/12/first-impressions-of-swiftui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/13/xcode-13-device-orientation-bug/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/13/using-an-appdelegate-in-swiftui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/18/industrial-sabotage/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/19/swiftui-tips-for-organizing-multiplatform-projects/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/21/reading-notes-the-wage-system/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/22/fix-lldb-rpc-server-crash/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/24/reading-notes-abolition-of-work/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/11/30/yo-wheres-my-juicero/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/01/my-worst-tech-interview-experience/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/03/please-dont-copy-my-site/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/29/my-first-apple-watch/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/29/apple-watch-thinks-im-dead/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/30/reading-list-2021/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2021/12/31/top-posts-of-2021/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/11/time-machine-error-35-monterey/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/11/on-third-party-apple-watch-apps/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/11/ios-app-library-is-drunk/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/13/imessage-spam-and-reporting-abuse/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/14/users-and-privacy/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/16/nfts-and-web3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/16/the-best-and-the-worst/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/16/screen-time-is-drunk/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/24/thich-nhat-hanh/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/26/icloud-failures-developer-relations/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/01/26/core-data-optionals/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/02/01/decimal-vs-double/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/02/15/mac-sigh-of-death/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/03/04/quickly-displaying-the-swift-version-that-ships-with-xcode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/03/25/my-website-disappeared-from-bing-and-duckduckgo/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/03/26/gh-action-merge-release-to-main/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/03/27/comparing-release-branch-strategies/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/03/28/fastlane-version-with-xcconfig/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/04/17/quick-5-released/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/04/17/duckduckgo-removing-other-sites/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/04/19/github-suspending-russian-accounts/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/04/22/docc-on-github-pages/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/04/27/nimble-10-released/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/05/16/may-16/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/07/25/disconnected/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/07/25/my-website-disappeared-from-bing-and-duckduckgo-part-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/08/04/automatically-assign-milestones-with-github-actions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/08/11/implementing-a-main-thread-watchdog-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/08/19/sharing-code-in-swiftui-apps/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/12/14/simctrl-status_bar-broken/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/12/14/mastodon/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/12/15/rss-to-mastodon/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2022/12/15/powerful-navigation-api/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/01/18/upgrading-to-macos-ventura/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/01/18/eventmachine-failure-on-macos-ventura/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/01/23/mac-os-x-vs-macos/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/02/06/goodbye-twitter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/02/20/ios-view-controller-loading/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/02/21/xcode-tip-sharing-breakpoints/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/02/22/terminal-tip-say/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/03/02/icloud-tabs-bug/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/03/02/xcode-tip-filter-console/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/03/22/xcode-tip-filter-modified-files/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/03/23/improve-multiplatform-swiftui-code/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/02/hardcore-and-karma/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/04/exploring-a-new-ios-codebase/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/10/going-indie/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/24/new-app-taxatio/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/25/linebreakstrategy-pushout/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/04/26/estimating-rss-subscribers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/05/08/going-indie-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/07/11/creating-dynamic-colors-in-swiftui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/07/11/where-are-xcode-bookmarks-stored/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/07/17/stop-prefixing-userdefaults-keys/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/07/18/navigation-link-accessory-view-swiftui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/08/16/going-indie-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/08/17/swift-url-absolutestring-path/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/10/30/github-tip-filter-involves/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/11/14/fix-airpods-reset/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/04/new-m3-mbp/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/05/m3-performance/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/06/xcode-shell-env/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/07/going-indie-4/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/15/mastodon/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/16/macbook-notch-and-menu-bar-fixes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/29/top-posts-of-2023/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2023/12/29/reading-list-2023/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/03/app-store-rejection/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/04/simctl-status_bar-still-broken/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/16/app-store-screenshot-requirements/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/17/swift-protocol-requirement-quirks/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/18/menu-bar-apps-for-sale/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/22/fastlane-for-indies/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/01/22/swift-scripting-broken-macos-14/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/04/29/sdk-privacy-manifests/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/05/29/swiftpm-package-resolved-xcode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/06/05/swift-concurrency-non-sendable-closures/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/06/29/swiftui-scene-phase/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/07/04/app-store-screenshot-changes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/07/09/uitest-improvements-in-xcode-16/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/09/09/swift-observable-macro/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/10/16/kintsugi/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/10/18/introducing-reactivecollectionskit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/10/23/reactivecollectionskit-diffing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2024/12/19/diffable-data-source-main-actor-inconsistency/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/02/19/type-erasure-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/02/20/misery-boredom-anxiety/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/02/24/xcode-tip-spell-check/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/03/04/ai-code-review/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/03/10/swiftpm-schemes-in-xcode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/03/24/automate-perfect-mac-screenshots/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/10/28/workaround-how-to-silence-deprecation-warnings-in-swift/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://www.jessesquires.com/blog/2025/11/07/mariposa/",
+   "title": "",
+   "date": ""
+  }
+ ]
+}

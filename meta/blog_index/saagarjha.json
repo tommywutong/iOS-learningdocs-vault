@@ -1,0 +1,116 @@
+{
+ "key": "saagarjha",
+ "count": 22,
+ "articles": [
+  {
+   "url": "https://saagarjha.com/blog/2016/11/23/first-post/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2018/12/01/scheduling-dark-mode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2018/12/18/ui-testing-peek-and-pop/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2019/01/11/mocking-capabilities-in-the-ios-simulator/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2019/03/13/dual-booting-chrome-os-and-elementary-os/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2019/04/26/thoughts-on-macos-package-managers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2019/09/29/making-os-log-public-on-macos-catalina/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2019/12/15/bypassing-objc-msgsend/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/02/11/appkit-in-swift-playgrounds/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/02/23/jailed-just-in-time-compilation-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/04/12/designing-a-better-strcpy/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/04/22/debugging-python-operator-precedence-with-macsbug/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/05/10/why-we-at-famous-company-switched-to-hyped-technology/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/05/20/mac-app-store-sandbox-escape/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2020/11/08/fixing-section-2-5-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2023/12/22/swift-concurrency-waits-for-no-one/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2024/02/27/making-friends-with-attributegraph/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/2024/04/12/wiring-your-house-for-networking/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/blog/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/toys/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/toys/address-finder/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://saagarjha.com/toys/godbolt/",
+   "title": "",
+   "date": ""
+  }
+ ]
+}

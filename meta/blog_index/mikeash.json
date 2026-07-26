@@ -1,0 +1,1546 @@
+{
+ "key": "mikeash",
+ "count": 308,
+ "articles": [
+  {
+   "url": "https://www.mikeash.com/pyblog/objc_msgsends-new-prototype.html",
+   "title": "objc_msgSend's New Prototype",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2018-06-29-debugging-with-c-reduce.html",
+   "title": "Friday Q&A 2018-06-29: Debugging with C-Reduce",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2018-04-27-generating-text-with-markov-chains-in-swift.html",
+   "title": "Friday Q&A 2018-04-27: Generating Text With Markov Chains in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-12-08-type-erasure-in-swift.html",
+   "title": "Friday Q&A 2017-12-08: Type Erasure in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-11-10-observing-the-a11s-heterogenous-cores.html",
+   "title": "Friday Q&A 2017-11-10: Observing the A11's Heterogenous Cores",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-10-27-locks-thread-safety-and-swift-2017-edition.html",
+   "title": "Friday Q&A 2017-10-27: Locks, Thread Safety, and Swift: 2017 Edition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-02-06-locks-thread-safety-and-swift.html",
+   "title": "an article about locks and thread safety in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-complete-friday-qa-volumes-ii-and-iii-are-out.html",
+   "title": "The Complete Friday Q&A Volumes II and III Are Out!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-10-06-type-safe-user-defaults.html",
+   "title": "Friday Q&A 2017-10-06: Type-Safe User Defaults",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-09-22-swift-4-weak-references.html",
+   "title": "Friday Q&A 2017-09-22: Swift 4 Weak References",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-best-new-features-in-swift-4.html",
+   "title": "The Best New Features in Swift 4",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/corporate-training-nyc-workshop-and-book-update.html",
+   "title": "Corporate Training, NYC Workshop, and Book Update",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-08-25-swift-error-handling-implementation.html",
+   "title": "Friday Q&A 2017-08-25: Swift Error Handling Implementation",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-08-11-swiftunmanaged.html",
+   "title": "Friday Q&A 2017-08-11: Swift.Unmanaged",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-07-28-a-binary-coder-for-swift.html",
+   "title": "Friday Q&A 2017-07-28: A Binary Coder for Swift",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-07-14-swiftcodable.html",
+   "title": "my last article",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2017-06-30-dissecting-objc_msgsend-on-arm64.html",
+   "title": "Friday Q&A 2017-06-30: Dissecting objc_msgSend on ARM64",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/more-advanced-swift-workshop-and-blog-and-book-updates.html",
+   "title": "More Advanced Swift Workshop, and Blog and Book Updates",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/advanced-swift-workshop-in-new-york-city.html",
+   "title": "Advanced Swift Workshop in New York City",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/advanced-swift-workshop-in-washington-dc.html",
+   "title": "Advanced Swift Workshop in Washington, DC",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/good-news-bad-news-and-ugly-news.html",
+   "title": "Good News, Bad News, and Ugly News",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2016-04-15-performance-comparisons-of-common-operations-2016-edition.html",
+   "title": "Friday Q&A 2016-04-15: Performance Comparisons of Common Operations, 2016 Edition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2016-03-04-swift-asserts.html",
+   "title": "Friday Q&A 2016-03-04: Swift Asserts",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2016-02-19-what-is-the-secure-enclave.html",
+   "title": "Friday Q&A 2016-02-19: What Is the Secure Enclave?",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2016-01-29-swift-struct-storage.html",
+   "title": "Friday Q&A 2016-01-29: Swift Struct Storage",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-12-25-swifty-targetaction.html",
+   "title": "Friday Q&A 2015-12-25: Swifty Target/Action",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-12-11-swift-weak-references.html",
+   "title": "Friday Q&A 2015-12-11: Swift Weak References",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-11-20-covariance-and-contravariance.html",
+   "title": "Friday Q&A 2015-11-20: Covariance and Contravariance",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard.html",
+   "title": "Friday Q&A 2015-11-06: Why is Swift's String API So Hard?",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-09-18-building-a-gear-warning-system.html",
+   "title": "Friday Q&A 2015-09-18: Building a Gear Warning System",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-09-04-lets-build-dispatch_queue.html",
+   "title": "Friday Q&A 2015-09-04: Let's Build dispatch_queue",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-08-14-an-xcode-plugin-for-unsmoothed-text.html",
+   "title": "Friday Q&A 2015-08-14: An Xcode Plugin for Unsmoothed Text",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-07-31-tagged-pointer-strings.html",
+   "title": "Friday Q&A 2015-07-31: Tagged Pointer Strings",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-07-27-lets-build-tagged-pointers.html",
+   "title": "Tagged pointers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-07-17-when-to-use-swift-structs-and-classes.html",
+   "title": "Friday Q&A 2015-07-17: When to Use Swift Structs and Classes",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-07-03-address-sanitizer.html",
+   "title": "Friday Q&A 2015-07-03: Address Sanitizer",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html",
+   "title": "Friday Q&A 2015-06-19: The Best of What's New in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/i-do-not-agree-to-your-terms.html",
+   "title": "I Do Not Agree To Your Terms",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-05-29-concurrent-memory-deallocation-in-the-objective-c-runtime.html",
+   "title": "Friday Q&A 2015-05-29: Concurrent Memory Deallocation in the Objective-C Runtime",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-05-01-fuzzing-with-afl-fuzz.html",
+   "title": "Friday Q&A 2015-05-01: Fuzzing with afl-fuzz",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-04-17-lets-build-swiftarray.html",
+   "title": "Friday Q&A 2015-04-17: Let's Build Swift.Array",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-03-20-preprocessor-abuse-and-optional-parentheses.html",
+   "title": "Friday Q&A 2015-03-20: Preprocessor Abuse and Optional Parentheses",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-02-20-lets-build-synchronized.html",
+   "title": "Friday Q&A 2015-02-20: Let's Build @synchronized",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2015-01-23-lets-build-swift-notifications.html",
+   "title": "Friday Q&A 2015-01-23: Let's Build Swift Notifications",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-07-08-lets-build-nsnotificationcenter.html",
+   "title": "previously explored building NSNotificationCenter",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-11-07-lets-build-nszombie.html",
+   "title": "Friday Q&A 2014-11-07: Let's Build NSZombie",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-05-20-the-inner-life-of-zombies.html",
+   "title": "the implementation of zombies",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/a-brief-pause.html",
+   "title": "A Brief Pause",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-08-29-swift-memory-dumping.html",
+   "title": "Friday Q&A 2014-08-29: Swift Memory Dumping",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-07-18-exploring-swift-memory-layout.html",
+   "title": "previous",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-08-01-exploring-swift-memory-layout-part-ii.html",
+   "title": "articles",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-08-15-swift-name-mangling.html",
+   "title": "Friday Q&A 2014-08-15: Swift Name Mangling",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-07-04-secrets-of-swifts-speed.html",
+   "title": "Friday Q&A 2014-07-04: Secrets of Swift's Speed",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-06-20-interesting-swift-features.html",
+   "title": "Friday Q&A 2014-06-20: Interesting Swift Features",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-06-06-secrets-of-dispatch_once.html",
+   "title": "Friday Q&A 2014-06-06: Secrets of dispatch_once",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-05-23-a-heartbleed-inspired-paranoid-memory-allocator.html",
+   "title": "Friday Q&A 2014-05-23: A Heartbleed-Inspired Paranoid Memory Allocator",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-05-09-when-an-autorelease-isnt.html",
+   "title": "Friday Q&A 2014-05-09: When an Autorelease Isn't",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-03-14-introduction-to-the-sockets-api.html",
+   "title": "Friday Q&A 2014-03-14: Introduction to the Sockets API",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/tales-from-the-crash-mines-issue-1.html",
+   "title": "Tales From The Crash Mines: Issue #1",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-01-11-mach-exception-handlers.html",
+   "title": "guest post about mach exception handlers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-01-24-introduction-to-libclang.html",
+   "title": "Friday Q&A 2014-01-24: Introduction to libclang",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2014-01-10-lets-break-cocoa.html",
+   "title": "Friday Q&A 2014-01-10: Let's Break Cocoa",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-12-06-network-protocol-design.html",
+   "title": "Friday Q&A 2013-12-06: Network Protocol Design",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/voodoopad-acquisition.html",
+   "title": "VoodooPad Acquisition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-10-25-nsobject-the-class-and-the-protocol.html",
+   "title": "Friday Q&A 2013-10-25: NSObject: the Class and the Protocol",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-10-11-why-registers-are-fast-and-ram-is-slow.html",
+   "title": "Friday Q&A 2013-10-11: Why Registers Are Fast and RAM Is Slow",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-09-27-arm64-and-you.html",
+   "title": "previous article on ARM64",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-09-13-a-library-for-easier-property-list-type-checking-and-error-reporting.html",
+   "title": "Friday Q&A 2013-09-13: A Library for Easier Property List Type Checking and Error Reporting",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-08-30-model-serialization-with-property-lists.html",
+   "title": "promised last time",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-08-16-lets-build-dispatch-groups.html",
+   "title": "Friday Q&A 2013-08-16: Let's Build Dispatch Groups",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-08-02-type-safe-scalars-with-single-field-structs.html",
+   "title": "Friday Q&A 2013-08-02: Type-Safe Scalars with Single-Field Structs",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-06-28-anatomy-of-a-compiler-bug.html",
+   "title": "Friday Q&A 2013-06-28: Anatomy of a Compiler Bug",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-06-14-reachability.html",
+   "title": "Friday Q&A 2013-06-14: Reachability",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-05-31-c-quiz.html",
+   "title": "Friday Q&A 2013-05-31: C Quiz",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-05-17-lets-build-stringwithformat.html",
+   "title": "Friday Q&A 2013-05-17: Let's Build stringWithFormat:",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-05-03-proper-use-of-asserts.html",
+   "title": "Friday Q&A 2013-05-03: Proper Use of Asserts",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-is-on-vacation.html",
+   "title": "Friday Q&A Is On Vacation",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-04-05-windows-and-window-controllers.html",
+   "title": "Friday Q&A 2013-04-05: Windows and Window Controllers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/objective-c-literals-in-serbo-croatian.html",
+   "title": "Objective-C Literals in Serbo-Croatian",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-06-22-objective-c-literals.html",
+   "title": "Objective-C Literals",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-03-22-lets-build-nsinvocation-part-ii.html",
+   "title": "Friday Q&A 2013-03-22: Let's Build NSInvocation, Part II",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-03-08-lets-build-nsinvocation-part-i.html",
+   "title": "Last time on Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-02-22-lets-build-uitableview.html",
+   "title": "Friday Q&A 2013-02-22: Let's Build UITableView",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-02-08-lets-build-key-value-coding.html",
+   "title": "Friday Q&A 2013-02-08: Let's Build Key-Value Coding",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2013-01-25-lets-build-nsobject.html",
+   "title": "Last time",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-12-28-what-happens-when-you-load-a-byte-of-memory.html",
+   "title": "Friday Q&A 2012-12-28: What Happens When You Load a Byte of Memory",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-12-14-objective-c-pitfalls.html",
+   "title": "Friday Q&A 2012-12-14: Objective-C Pitfalls",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-11-30-lets-build-a-mach-o-executable.html",
+   "title": "Friday Q&A 2012-11-30: Let's Build A Mach-O Executable",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html",
+   "title": "dyld: Dynamic Linking On OS X",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-11-16-lets-build-objc_msgsend.html",
+   "title": "Friday Q&A 2012-11-16: Let's Build objc_msgSend",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-11-02-building-the-fft.html",
+   "title": "Friday Q&A 2012-11-02: Building the FFT",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-10-26-fourier-transforms-and-ffts.html",
+   "title": "last post in this mini-series",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-10-12-obtaining-and-interpreting-audio-data.html",
+   "title": "Last time around",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-09-28-optimizing-flood-fill.html",
+   "title": "Friday Q&A 2012-09-28: Optimizing Flood Fill",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-09-14-implementing-a-flood-fill.html",
+   "title": "Last time",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-08-31-obtaining-and-interpreting-image-data.html",
+   "title": "the previous article about manipulating image data",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-08-24-things-you-never-wanted-to-know-about-c.html",
+   "title": "Friday Q&A 2012-08-24: Things You Never Wanted To Know About C",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-08-10-a-tour-of-commoncrypto.html",
+   "title": "Friday Q&A 2012-08-10: A Tour of CommonCrypto",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-07-06-lets-build-nsnumber.html",
+   "title": "Last time",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-06-01-a-tour-of-plweakcompatibility-part-ii.html",
+   "title": "Friday Q&A 2012-06-01: A Tour of PLWeakCompatibility: Part II",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-05-18-a-tour-of-plweakcompatibility-part-i.html",
+   "title": "Last time",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/introducing-plweakcompatibility.html",
+   "title": "introduced PLWeakCompatibility",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/solving-simulator-bootstrap-errors.html",
+   "title": "Solving Simulator Bootstrap Errors",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-05-04-plcrashreporter-and-unwinding-the-stack-with-dwarf-part-2.html",
+   "title": "Friday Q&A 2012-05-04: PLCrashReporter and Unwinding the Stack With DWARF, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-04-27-plcrashreporter-and-unwinding-the-stack-with-dwarf.html",
+   "title": "discussed in last week's article",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-04-13-nib-memory-management.html",
+   "title": "Friday Q&A 2012-04-13: Nib Memory Management",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-03-16-lets-build-nsmutabledictionary.html",
+   "title": "Friday Q&A 2012-03-16: Let's Build NSMutableDictionary",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-03-09-lets-build-nsmutablearray.html",
+   "title": "Last time on Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-03-02-key-value-observing-done-right-take-2.html",
+   "title": "Friday Q&A 2012-03-02: Key-Value Observing Done Right: Take 2",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/key-value-observing-done-right.html",
+   "title": "Key-Value Observing Done Right",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-02-17-ring-buffers-and-mirrored-memory-part-ii.html",
+   "title": "Friday Q&A 2012-02-17: Ring Buffers and Mirrored Memory: Part II",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-02-03-ring-buffers-and-mirrored-memory-part-i.html",
+   "title": "Last time on Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/deadlocks-and-lock-ordering-a-vignette.html",
+   "title": "Deadlocks and Lock Ordering: a Vignette",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-mac-toolbox-followup.html",
+   "title": "The Mac Toolbox: Followup",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-01-20-fork-safety.html",
+   "title": "Friday Q&A 2012-01-20: Fork Safety",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/plausible-labs-is-hiring.html",
+   "title": "Plausible Labs is Hiring",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-01-13-the-mac-toolbox.html",
+   "title": "Friday Q&A 2012-01-13: The Mac Toolbox",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/buy-videos-of-my-vtm-presentations.html",
+   "title": "Buy Videos of My VTM Presentations",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2012-01-06-the-hopper-disassembler.html",
+   "title": "Friday Q&A 2012-01-06: The Hopper Disassembler",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/avoid-apress.html",
+   "title": "Avoid Apress",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-12-30-disassembling-the-assembly-part-3-arm-edition.html",
+   "title": "Friday Q&A 2011-12-30: Disassembling the Assembly, Part 3: ARM edition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-12-23-disassembling-the-assembly-part-2.html",
+   "title": "Friday Q&A 2011-12-23: Disassembling the Assembly, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-12-16-disassembling-the-assembly-part-1.html",
+   "title": "Friday Q&A 2011-12-16: Disassembling the Assembly, Part 1",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-12-02-object-file-inspection-tools.html",
+   "title": "Friday Q&A 2011-12-02: Object File Inspection Tools",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/testing-hashcash-based-anti-spam-measures.html",
+   "title": "Testing Hashcash-Based Anti-Spam Measures",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/no-article-for-you.html",
+   "title": "No Article For you!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-11-11-building-a-memoizing-block-proxy.html",
+   "title": "Friday Q&A 2011-11-11: Building a Memoizing Block Proxy",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-10-28-generic-block-proxying.html",
+   "title": "block proxying",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-10-14-whats-new-in-gcd.html",
+   "title": "Friday Q&A 2011-10-14: What's New in GCD",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-09-30-automatic-reference-counting.html",
+   "title": "Friday Q&A 2011-09-30: Automatic Reference Counting",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-09-16-lets-build-reference-counting.html",
+   "title": "Friday Q&A 2011-09-16: Let's Build Reference Counting",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-09-02-lets-build-nsautoreleasepool.html",
+   "title": "Friday Q&A 2011-09-02: Let's Build NSAutoreleasePool",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-08-19-namespaced-constants-and-functions.html",
+   "title": "Friday Q&A 2011-08-19: Namespaced Constants and Functions",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/see-me-speak-at-voices-that-matter-in-boston.html",
+   "title": "See Me Speak at Voices That Matter in Boston",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-08-27-defensive-programming-in-cocoa.html",
+   "title": "Defensive Programming in Cocoa",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/see-me-speak-at-voices-that-matter-in-seattle.html",
+   "title": "Voices That Matter in Seattle",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-08-05-method-signature-mismatches.html",
+   "title": "Friday Q&A 2011-08-05: Method Signature Mismatches",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-07-22-writing-unit-tests.html",
+   "title": "Friday Q&A 2011-07-22: Writing Unit Tests",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-delayed-again.html",
+   "title": "Friday Q&A Delayed Again",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-06-17-gdb-tips-and-tricks.html",
+   "title": "Friday Q&A 2011-06-17: gdb Tips and Tricks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-06-03-objective-c-blocks-vs-c0x-lambdas-fight.html",
+   "title": "Friday Q&A 2011-06-03: Objective-C Blocks vs. C++0x Lambdas: Fight!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-05-06-a-tour-of-mablockclosure.html",
+   "title": "Friday Q&A 2011-05-06: A Tour of MABlockClosure",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-02-12-trampolining-blocks-with-mutable-code.html",
+   "title": "converting blocks into function pointers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-falls-behind.html",
+   "title": "Friday Q&A Falls Behind",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-04-15-compile-time-tips-and-tricks.html",
+   "title": "Friday Q&A 2011-04-15: Compile-Time Tips and Tricks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/link-implementing-imp_implementationwithblock.html",
+   "title": "Link: Implementing imp_implementationWithBlock",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-04-01-signal-handling.html",
+   "title": "Friday Q&A 2011-04-01: Signal Handling",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-03-18-random-numbers.html",
+   "title": "Friday Q&A 2011-03-18: Random Numbers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-03-04-a-tour-of-osatomic.html",
+   "title": "Friday Q&A 2011-03-04: A Tour of OSAtomic",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-02-18-compound-literals.html",
+   "title": "Friday Q&A 2011-02-18: Compound Literals",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/complete-friday-qa-direct-sell-epub-pdf-and-print-on-demand.html",
+   "title": "Complete Friday Q&A Direct-Sell ePub, PDF, and Print on Demand",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/complete-friday-qa-now-available.html",
+   "title": "last week's of The Complete Friday Q&A: Volume I",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/writing-the-complete-friday-qa.html",
+   "title": "Writing the Complete Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "http://www.mikeash.com/pyblog/complete-friday-qa-now-available.html",
+   "title": "The Complete Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2011-01-04-practical-floating-point.html",
+   "title": "Friday Q&A 2011-01-04: Practical Floating Point",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/rogue-amoeba-is-hiring-again.html",
+   "title": "Rogue Amoeba Is Hiring Again",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-12-31-c-macro-tips-and-tricks.html",
+   "title": "Friday Q&A 2010-12-31: C Macro Tips and Tricks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-12-17-custom-object-allocators-in-objective-c.html",
+   "title": "Friday Q&A 2010-12-17: Custom Object Allocators in Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-12-03-accessors-memory-management-and-thread-safety.html",
+   "title": "Friday Q&A 2010-12-03: Accessors, Memory Management, and Thread Safety",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html",
+   "title": "Friday Q&A 2010-11-19: Creating Classes at Runtime for Fun and Profit",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-11-6-creating-classes-at-runtime-in-objective-c.html",
+   "title": "the last Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/summary-of-the-current-state-of-my-publications.html",
+   "title": "Summary of the Current State of my Publications",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-will-return.html",
+   "title": "Friday Q&A Will Return",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/cocoa-unbound.html",
+   "title": "Cocoa Unbound",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-10-09-defensive-programming.html",
+   "title": "a post on defensive programming",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-08-12-implementing-nscoding.html",
+   "title": "Friday Q&A 2010-08-12: Implementing NSCoding",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-07-30-zeroing-weak-references-to-corefoundation-objects.html",
+   "title": "Friday Q&A 2010-07-30: Zeroing Weak References to CoreFoundation Objects",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/introducing-mazeroingweakref.html",
+   "title": "Introducing MAZeroingWeakRef",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-07-16-zeroing-weak-references-in-objective-c.html",
+   "title": "my Friday Q&A post this week",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-07-02-background-timers.html",
+   "title": "Friday Q&A 2010-07-02: Background Timers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/blocks-and-gcd-in-russian.html",
+   "title": "Blocks and GCD in Russian",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html",
+   "title": "Friday Q&A 2010-06-18: Implementing Equality and Hashing",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-05-28-leopard-collection-classes.html",
+   "title": "Friday Q&A 2010-05-28: Leopard Collection Classes",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/some-light-reading.html",
+   "title": "Some Light Reading",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-05-14-what-every-apple-programmer-should-know.html",
+   "title": "Friday Q&A 2010-05-14: What Every Apple Programmer Should Know",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/iphone-apps-i-cant-have.html",
+   "title": "iPhone Apps I Can't Have",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/another-week-without-friday-qa.html",
+   "title": "Another Week Without Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-04-30-dealing-with-retain-cycles.html",
+   "title": "Friday Q&A 2010-04-30: Dealing with Retain Cycles",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-04-23-implementing-a-custom-slider.html",
+   "title": "Friday Q&A 2010-04-23: Implementing a Custom Slider",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/mistakes-and-chains-of-events.html",
+   "title": "Mistakes and Chains of Events",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-04-16-implementing-fast-enumeration.html",
+   "title": "Friday Q&A 2010-04-16: Implementing Fast Enumeration",
+   "date": ""
+  },
+  {
+   "url": "http://www.mikeash.com/pyblog/friday-qa-2010-04-09-comparison-of-objective-c-enumeration-techniques.html",
+   "title": "the various options available in Objective-C for enumerating over a collection",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/an-objective-c-continuations-library.html",
+   "title": "An Objective-C Continuations Library",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-04-09-comparison-of-objective-c-enumeration-techniques.html",
+   "title": "Friday Q&A 2010-04-09: Comparison of Objective-C Enumeration Techniques",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-04-02-opencl-basics.html",
+   "title": "Friday Q&A 2010-04-02: OpenCL Basics",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/and-again.html",
+   "title": "And Again",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-skips-a-week.html",
+   "title": "Friday Q&A Skips a Week",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-03-12-subclassing-class-clusters.html",
+   "title": "Friday Q&A 2010-03-12: Subclassing Class Clusters",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-03-05-compound-futures.html",
+   "title": "Friday Q&A 2010-03-05: Compound Futures",
+   "date": ""
+  },
+  {
+   "url": "http://www.mikeash.com/pyblog/friday-qa-2010-02-26-futures.html",
+   "title": "discussion from last week",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-02-26-futures.html",
+   "title": "Friday Q&A 2010-02-26: Futures",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-02-19-character-encodings.html",
+   "title": "Friday Q&A 2010-02-19: Character Encodings",
+   "date": ""
+  },
+  {
+   "url": "http://www.mikeash.com/pyblog/friday-qa-2009-08-14-practical-blocks.html",
+   "title": "blocks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-02-05-error-returns-with-continuation-passing-style.html",
+   "title": "Friday Q&A 2010-02-05: Error Returns with Continuation Passing Style",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-01-29-method-replacement-for-fun-and-profit.html",
+   "title": "Friday Q&A 2010-01-29: Method Replacement for Fun and Profit",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-01-22-toll-free-bridging-internals.html",
+   "title": "Friday Q&A 2010-01-22: Toll Free Bridging Internals",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-01-15-stack-and-heap-objects-in-objective-c.html",
+   "title": "Friday Q&A 2010-01-15: Stack and Heap Objects in Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-01-08-nsnotificationqueue.html",
+   "title": "Friday Q&A 2010-01-08: NSNotificationQueue",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2010-01-01-nsrunloop-internals.html",
+   "title": "Friday Q&A 2010-01-01: NSRunLoop Internals",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-12-18-highlights-from-a-year-of-friday-qa.html",
+   "title": "Friday Q&A 2009-12-18: Highlights From a Year of Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/rogue-amoeba-is-hiring.html",
+   "title": "Rogue Amoeba Is Hiring",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-12-11-a-gcd-case-study-building-an-http-server.html",
+   "title": "Friday Q&A 2009-12-11: A GCD Case Study: Building an HTTP Server",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-12-04-building-standalone-iphone-web-apps.html",
+   "title": "Friday Q&A 2009-12-04: Building Standalone iPhone Web Apps",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-11-27-using-accessors-in-init-and-dealloc.html",
+   "title": "Friday Q&A 2009-11-27: Using Accessors in Init and Dealloc",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-11-20-probing-cocoa-with-pyobjc.html",
+   "title": "Friday Q&A 2009-11-20: Probing Cocoa With PyObjC",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/deconstructing-apples-copyright-and-trademark-guidelines.html",
+   "title": "Deconstructing Apple's Copyright and Trademark Guidelines",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-11-13-dangerous-cocoa-calls.html",
+   "title": "Friday Q&A 2009-11-13: Dangerous Cocoa Calls",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-11-06-linking-and-install-names.html",
+   "title": "Friday Q&A 2009-11-06: Linking and Install Names",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-10-30-generators-in-objective-c.html",
+   "title": "Friday Q&A 2009-10-30: Generators in Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-10-23-a-preview-of-coming-attractions.html",
+   "title": "Friday Q&A 2009-10-23: A Preview of Coming Attractions",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-10-16-creating-a-blocks-based-object-system.html",
+   "title": "Friday Q&A 2009-10-16: Creating a Blocks-Based Object System",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/xbolo-is-out.html",
+   "title": "XBolo is Out!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-10-02-care-and-feeding-of-singletons.html",
+   "title": "Friday Q&A 2009-10-02: Care and Feeding of Singletons",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-09-25-gcd-practicum.html",
+   "title": "Friday Q&A 2009-09-25: GCD Practicum",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-09-18-intro-to-grand-central-dispatch-part-iv-odds-and-ends.html",
+   "title": "Friday Q&A 2009-09-18: Intro to Grand Central Dispatch, Part IV: Odds and Ends",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-iphone-development-story-one-year-later.html",
+   "title": "The iPhone Development Story: One Year Later",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/gcd-is-not-blocks-blocks-are-not-gcd.html",
+   "title": "GCD Is Not Blocks, Blocks Are Not GCD",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-09-11-intro-to-grand-central-dispatch-part-iii-dispatch-sources.html",
+   "title": "Friday Q&A 2009-09-11: Intro to Grand Central Dispatch, Part III: Dispatch Sources",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-09-04-intro-to-grand-central-dispatch-part-ii-multi-core-performance.html",
+   "title": "Friday Q&A 2009-09-04: Intro to Grand Central Dispatch, Part II: Multi-Core Performance",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/objective-c-runtime-podcast-episode-at-mobile-orchard.html",
+   "title": "Objective-C Runtime Podcast Episode at Mobile Orchard",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-08-28-intro-to-grand-central-dispatch-part-i-basics-and-dispatch-queues.html",
+   "title": "Friday Q&A 2009-08-28: Intro to Grand Central Dispatch, Part I: Basics and Dispatch Queues",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/unicode-comments-support.html",
+   "title": "Unicode Comments Support",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/reading-between-the-lines-of-apples-fcc-reply.html",
+   "title": "Reading Between the Lines of Apple's FCC Reply",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-08-21-writing-vararg-macros-and-functions.html",
+   "title": "Friday Q&A 2009-08-21: Writing Vararg Macros and Functions",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-08-14-practical-blocks.html",
+   "title": "Friday Q&A 2009-08-14: Practical Blocks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-07-17-format-strings-tips-and-tricks.html",
+   "title": "Friday Q&A 2009-07-17: Format Strings Tips and Tricks",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-07-10-type-specifiers-in-c-part-3.html",
+   "title": "Friday Q&A 2009-07-10: Type Specifiers in C, Part 3",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-07-03-type-specifiers-in-c-part-2.html",
+   "title": "Friday Q&A 2009-07-03: Type Specifiers in C, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-06-26-type-qualifiers-in-c-part-1.html",
+   "title": "Friday Q&A 2009-06-26: Type Qualifiers in C, Part 1",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-06-19-mac-os-x-process-memory-statistics.html",
+   "title": "Friday Q&A 2009-06-19: Mac OS X Process Memory Statistics",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-06-05-introduction-to-valgrind.html",
+   "title": "Friday Q&A 2009-06-05: Introduction to Valgrind",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-05-22-objective-c-class-loading-and-initialization.html",
+   "title": "Friday Q&A 2009-05-22: Objective-C Class Loading and Initialization",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/use-nsoperationqueue.html",
+   "title": "Use NSOperationQueue",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/nanogolf.html",
+   "title": "Nanogolf",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-05-01-on-hold.html",
+   "title": "Friday Q&A 2009-05-01: On Hold",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-04-24-code-generation-with-llvm-part-2-fast-objective-c-forwarding.html",
+   "title": "Friday Q&A 2009-04-24: Code Generation with LLVM, Part 2: Fast Objective-C Forwarding",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-04-17-code-generation-with-llvm-part-1-basics.html",
+   "title": "Friday Q&A 2009-04-17: Code Generation with LLVM, Part 1: Basics",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-04-10-multithreaded-optimization-in-chemicalburn.html",
+   "title": "Friday Q&A 2009-04-10: Multithreaded Optimization in ChemicalBurn",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-04-03-on-hold.html",
+   "title": "Friday Q&A 2009-04-03: On Hold",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-03-27-objective-c-message-forwarding.html",
+   "title": "Friday Q&A 2009-03-27: Objective-C Message Forwarding",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-03-20-objective-c-messaging.html",
+   "title": "Friday Q&A 2009-03-20: Objective-C Messaging",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-03-13-intro-to-the-objective-c-runtime.html",
+   "title": "Friday Q&A 2009-03-13: Intro to the Objective-C Runtime",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-03-06-using-the-clang-static-analyzer.html",
+   "title": "Friday Q&A 2009-03-06: Using the Clang Static Analyzer",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-02-27-holistic-optimization.html",
+   "title": "Friday Q&A 2009-02-27: Holistic Optimization",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-02-20-the-good-and-bad-of-distributed-objects.html",
+   "title": "Friday Q&A 2009-02-20: The Good and Bad of Distributed Objects",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-02-13-operations-based-parallelization.html",
+   "title": "Friday Q&A 2009-02-13: Operations-Based Parallelization",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/late-night-cocoa-nsoperationqueue-problems.html",
+   "title": "Late Night Cocoa: NSOperationQueue Problems",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-02-06-profiling-with-shark.html",
+   "title": "Friday Q&A 2009-02-06: Profiling With Shark",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-01-30-code-injection.html",
+   "title": "Friday Q&A 2009-01-30: Code Injection",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html",
+   "title": "Friday Q&A 2009-01-23",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-01-16.html",
+   "title": "Friday Q&A 2009-01-16",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-01-09.html",
+   "title": "Friday Q&A 2009-01-09",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2009-01-02.html",
+   "title": "Friday Q&A 2009-01-02",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2008-12-26.html",
+   "title": "Friday Q&A 2008-12-26",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa-2008-12-19.html",
+   "title": "Friday Q&A 2008-12-19",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/friday-qa.html",
+   "title": "Friday Q&A",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/raoperationqueue-an-open-source-replacement-for-nsoperationqueue.html",
+   "title": "RAOperationQueue, an open-source replacement for NSOperationQueue",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/dont-use-nsoperationqueue.html",
+   "title": "Don't Use NSOperationQueue",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-how-and-why-of-cocoa-initializers.html",
+   "title": "The How and Why of Cocoa Initializers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/its-a-poor-carpenter-who-blames-his-tools-or-xcode-sucks-again.html",
+   "title": "It's a Poor Carpenter Who Blames His Tools or: Xcode Sucks Again",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-iphone-development-story.html",
+   "title": "The iPhone Development Story",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/netawake.html",
+   "title": "NetAwake",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/late-night-cocoa.html",
+   "title": "Late Night Cocoa",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/welcome-to-iphone-your-crappy-mac-of-tomorrow-today.html",
+   "title": "Welcome to iPhone: Your Crappy Mac of Tomorrow, Today!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/wwdc--followup.html",
+   "title": "WWDC 08 Followup",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/worst-keynote-ever.html",
+   "title": "Worst. Keynote. Ever.",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/wwdc-.html",
+   "title": "WWDC 2008",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/tales-from-the-sausage-factory-why-those-big-downloads-for-simple-updates.html",
+   "title": "Tales from the Sausage Factory: Why Those Big Downloads for Simple Updates?",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/deconstructing-the-iphone-sdk-malware.html",
+   "title": "Deconstructing the iPhone SDK: Malware",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations-iphone-edition.html",
+   "title": "Performance Comparisons of Common Operations, iPhone Edition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/use-strnstr.html",
+   "title": "Use strnstr",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/deconstructing-the-iphone-sdk-no-multitasking.html",
+   "title": "Deconstructing the iPhone SDK: No Multitasking",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/code-signing-and-you.html",
+   "title": "Code Signing and You",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/goodbye-nibs.html",
+   "title": "Goodbye, Nibs",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/a-tool-for-editing-version-controlled-bundles.html",
+   "title": "A Tool for Editing Version-Controlled Bundles",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations-leopard-edition.html",
+   "title": "Performance Comparisons of Common Operations, Leopard Edition",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/the-cults-of-programming.html",
+   "title": "The Cults of Programming",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/leopard-first-impressions.html",
+   "title": "Leopard: First Impressions",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/algorithmic-optimizations-a-case-study.html",
+   "title": "Algorithmic Optimizations: a Case Study",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/perform_better_with_garbage_collection.html",
+   "title": "Perform Better With Garbage Collection",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/ioccc2006.html",
+   "title": "IOCCC 2006 Winners",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/firstpost.html",
+   "title": "First Post",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/dont-use-strnstr.html",
+   "title": "Don't use strnstr",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations.html",
+   "title": "Performance Comparisons of Common Operations",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/subtle-bugs.html",
+   "title": "Subtle Bugs",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/open-source.html",
+   "title": "Open Source",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/how-to-shrink-your-source-code.html",
+   "title": "How To Shrink Your Source Code",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/more-fun-with-autorelease.html",
+   "title": "More Fun With Autorelease",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/why-coreaudio-is-hard.html",
+   "title": "Why CoreAudio is Hard",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/hacking-c-from-c.html",
+   "title": "Hacking C++ From C",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/lesson-of-the-day.html",
+   "title": "Lesson of the Day",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/getting-answers.html",
+   "title": "Getting Answers",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/using-evil-for-good.html",
+   "title": "Using Evil for Good",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/autorelease-is-fast.html",
+   "title": "Autorelease is Fast",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/making-xcode-better.html",
+   "title": "Making Xcode Better",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/custom-nscells-done-right.html",
+   "title": "Custom NSCells Done Right",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/cocoa-simbl-plugins.html",
+   "title": "Cocoa SIMBL Plugins",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/fluid-simulation-for-dummies.html",
+   "title": "Fluid Simulation for Dummies",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/nsopenglcontext-and-one-shot.html",
+   "title": "NSOpenGLContext and one-shot",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/what-every-programmer-should-know.html",
+   "title": "What Every Programmer Should Know",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/braaaaaaaains.html",
+   "title": "Braaaaaaaains",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/bug-reversal.html",
+   "title": "Bug Reversal",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/bolo-ecology.html",
+   "title": "Bolo Ecology",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/score.html",
+   "title": "Score!",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/fun-with-beowulf-clusters.html",
+   "title": "Fun With Beowulf Clusters",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/using-filemerge-with-subversion.html",
+   "title": "Using FileMerge with subversion",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/dashboard-rant.html",
+   "title": "Dashboard Rant",
+   "date": ""
+  },
+  {
+   "url": "https://www.mikeash.com/pyblog/namecomment-conflict.html",
+   "title": "Name/comment conflict",
+   "date": ""
+  }
+ ]
+}

@@ -1,0 +1,7262 @@
+{
+ "archive": "os",
+ "included": [
+  "com.apple.os"
+ ],
+ "page_count": 600,
+ "longform_count": 21,
+ "pages": [
+  {
+   "path": "/documentation/os",
+   "title": "os",
+   "type": "module",
+   "breadcrumb": "os",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/reading-unix-manual-pages",
+   "title": "Reading UNIX Manual Pages",
+   "type": "article",
+   "breadcrumb": "os/Reading UNIX Manual Pages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/logging",
+   "title": "Logging",
+   "type": "collection",
+   "breadcrumb": "os/Logging",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/generating-log-messages-from-your-code",
+   "title": "Generating Log Messages from Your Code",
+   "type": "article",
+   "breadcrumb": "os/Logging/Generating Log Messages from Your Code",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/viewing-log-messages",
+   "title": "Viewing Log Messages",
+   "type": "article",
+   "breadcrumb": "os/Logging/Viewing Log Messages",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/customizing-logging-behavior-while-debugging",
+   "title": "Customizing Logging Behavior While Debugging",
+   "type": "article",
+   "breadcrumb": "os/Logging/Customizing Logging Behavior While Debugging",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger",
+   "title": "Logger",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Logger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/init(subsystem:category:)",
+   "title": "init(subsystem: String, category: String)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/init(subsystem: String, category: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/init(_:)",
+   "title": "init(OSLog)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/init(OSLog)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog",
+   "title": "OSLog",
+   "type": "class",
+   "breadcrumb": "os/Logging/Logger/OSLog",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/init(subsystem:category:)-17gyy",
+   "title": "convenience init(subsystem: String, category: String)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/OSLog/convenience init(subsystem: String, category: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/init(subsystem:category:)-72ghw",
+   "title": "convenience init(subsystem: String, category: OSLog.Category)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/OSLog/convenience init(subsystem: String, category: OSLog.Category)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/category",
+   "title": "OSLog.Category",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Logger/OSLog/OSLog.Category",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/category/pointsofinterest",
+   "title": "static let pointsOfInterest: OSLog.Category",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/OSLog.Category/static let pointsOfInterest: OSLog.Category",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/category/dynamicstacktracing",
+   "title": "static let dynamicStackTracing: OSLog.Category",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/OSLog.Category/static let dynamicStackTracing: OSLog.Category",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/category/dynamictracing",
+   "title": "static let dynamicTracing: OSLog.Category",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/OSLog.Category/static let dynamicTracing: OSLog.Category",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/category/rawvalue",
+   "title": "let rawValue: String",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/OSLog.Category/let rawValue: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/default",
+   "title": "static let `default`: OSLog",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/static let `default`: OSLog",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/disabled",
+   "title": "static let disabled: OSLog",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/static let disabled: OSLog",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/isenabled(type:)",
+   "title": "func isEnabled(type: OSLogType) -> Bool",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/OSLog/func isEnabled(type: OSLogType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslog/signpostsenabled",
+   "title": "var signpostsEnabled: Bool",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLog/var signpostsEnabled: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/log(_:)",
+   "title": "func log(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func log(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/log(level:_:)",
+   "title": "func log(level: OSLogType, OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func log(level: OSLogType, OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype",
+   "title": "OSLogType",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Logger/OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/debug",
+   "title": "static let debug: OSLogType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/static let debug: OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/info",
+   "title": "static let info: OSLogType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/static let info: OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/default",
+   "title": "static let `default`: OSLogType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/static let `default`: OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/error",
+   "title": "static let error: OSLogType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/static let error: OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/fault",
+   "title": "static let fault: OSLogType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/static let fault: OSLogType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/init(_:)",
+   "title": "init(UInt8)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/OSLogType/init(UInt8)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/init(rawvalue:)",
+   "title": "init(rawValue: UInt8)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Logger/OSLogType/init(rawValue: UInt8)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogtype/rawvalue",
+   "title": "var rawValue: UInt8",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogType/var rawValue: UInt8",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogmessage",
+   "title": "OSLogMessage",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Logger/OSLogMessage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogmessage/buffersize",
+   "title": "var bufferSize: Int",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogMessage/var bufferSize: Int",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogmessage/interpolation",
+   "title": "let interpolation: OSLogInterpolation",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/OSLogMessage/let interpolation: OSLogInterpolation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/maxoslogargumentcount",
+   "title": "var maxOSLogArgumentCount: UInt8",
+   "type": "var",
+   "breadcrumb": "os/Logging/Logger/OSLogMessage/var maxOSLogArgumentCount: UInt8",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/notice(_:)",
+   "title": "func notice(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func notice(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/debug(_:)",
+   "title": "func debug(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func debug(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/trace(_:)",
+   "title": "func trace(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func trace(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/info(_:)",
+   "title": "func info(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func info(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/error(_:)",
+   "title": "func error(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func error(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/warning(_:)",
+   "title": "func warning(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func warning(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/fault(_:)",
+   "title": "func fault(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func fault(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/critical(_:)",
+   "title": "func critical(OSLogMessage)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func critical(OSLogMessage)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/isenabled(type:)",
+   "title": "func isEnabled(type: OSLogType) -> Bool",
+   "type": "method",
+   "breadcrumb": "os/Logging/Logger/func isEnabled(type: OSLogType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/logger/disabled",
+   "title": "static var disabled: Logger",
+   "type": "property",
+   "breadcrumb": "os/Logging/Logger/static var disabled: Logger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/message-argument-formatters",
+   "title": "Message Argument Formatters",
+   "type": "collection",
+   "breadcrumb": "os/Logging/Message Argument Formatters",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy",
+   "title": "OSLogPrivacy",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/auto",
+   "title": "static var auto: OSLogPrivacy",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static var auto: OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/private",
+   "title": "static var `private`: OSLogPrivacy",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static var `private`: OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/public",
+   "title": "static var `public`: OSLogPrivacy",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static var `public`: OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/sensitive",
+   "title": "static var sensitive: OSLogPrivacy",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static var sensitive: OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/auto(mask:)",
+   "title": "static func auto(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static func auto(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/private(mask:)",
+   "title": "static func `private`(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static func `private`(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/sensitive(mask:)",
+   "title": "static func sensitive(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/static func sensitive(mask: OSLogPrivacy.Mask) -> OSLogPrivacy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/mask",
+   "title": "OSLogPrivacy.Mask",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/OSLogPrivacy.Mask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/mask/hash",
+   "title": "case hash",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/OSLogPrivacy.Mask/case hash",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogprivacy/mask/none",
+   "title": "case none",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPrivacy/OSLogPrivacy.Mask/case none",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogboolformat",
+   "title": "OSLogBoolFormat",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogBoolFormat",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogboolformat/truth",
+   "title": "case truth",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogBoolFormat/case truth",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogboolformat/answer",
+   "title": "case answer",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogBoolFormat/case answer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting",
+   "title": "OSLogIntegerFormatting",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/decimal",
+   "title": "static var decimal: OSLogIntegerFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static var decimal: OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/hex",
+   "title": "static var hex: OSLogIntegerFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static var hex: OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/octal",
+   "title": "static var octal: OSLogIntegerFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static var octal: OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/decimal(explicitpositivesign:)",
+   "title": "static func decimal(explicitPositiveSign: Bool) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func decimal(explicitPositiveSign: Bool) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/decimal(explicitpositivesign:mindigits:)",
+   "title": "static func decimal(explicitPositiveSign: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func decimal(explicitPositiveSign: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/hex(explicitpositivesign:includeprefix:uppercase:)",
+   "title": "static func hex(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func hex(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/hex(explicitpositivesign:includeprefix:uppercase:mindigits:)",
+   "title": "static func hex(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func hex(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/octal(explicitpositivesign:includeprefix:uppercase:)",
+   "title": "static func octal(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func octal(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintegerformatting/octal(explicitpositivesign:includeprefix:uppercase:mindigits:)",
+   "title": "static func octal(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntegerFormatting/static func octal(explicitPositiveSign: Bool, includePrefix: Bool, uppercase: Bool, minDigits: @autoclosure () -> Int) -> OSLogIntegerFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat",
+   "title": "OSLogInt32ExtendedFormat",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/ipv4address",
+   "title": "case ipv4Address",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case ipv4Address",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/secondssince1970",
+   "title": "case secondsSince1970",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case secondsSince1970",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/darwinerrno",
+   "title": "case darwinErrno",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case darwinErrno",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/darwinmode",
+   "title": "case darwinMode",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case darwinMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/darwinsignal",
+   "title": "case darwinSignal",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case darwinSignal",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/bitrate",
+   "title": "case bitrate",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case bitrate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/bitrateiec",
+   "title": "case bitrateIEC",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case bitrateIEC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/bytecount",
+   "title": "case byteCount",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case byteCount",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/bytecountiec",
+   "title": "case byteCountIEC",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case byteCountIEC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/truth",
+   "title": "case truth",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case truth",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/answer",
+   "title": "case answer",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case answer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogint32extendedformat/macherrno",
+   "title": "case machErrno",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInt32ExtendedFormat/case machErrno",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting",
+   "title": "OSLogFloatFormatting",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/fixed",
+   "title": "static var fixed: OSLogFloatFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static var fixed: OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/hex",
+   "title": "static var hex: OSLogFloatFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static var hex: OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/exponential",
+   "title": "static var exponential: OSLogFloatFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static var exponential: OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/hybrid",
+   "title": "static var hybrid: OSLogFloatFormatting",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static var hybrid: OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/exponential(explicitpositivesign:uppercase:)",
+   "title": "static func exponential(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func exponential(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/exponential(precision:explicitpositivesign:uppercase:)",
+   "title": "static func exponential(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func exponential(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/fixed(explicitpositivesign:uppercase:)",
+   "title": "static func fixed(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func fixed(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/fixed(precision:explicitpositivesign:uppercase:)",
+   "title": "static func fixed(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func fixed(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/hex(explicitpositivesign:uppercase:)",
+   "title": "static func hex(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func hex(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/hybrid(explicitpositivesign:uppercase:)",
+   "title": "static func hybrid(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func hybrid(explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogfloatformatting/hybrid(precision:explicitpositivesign:uppercase:)",
+   "title": "static func hybrid(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogFloatFormatting/static func hybrid(precision: @autoclosure () -> Int, explicitPositiveSign: Bool, uppercase: Bool) -> OSLogFloatFormatting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat",
+   "title": "OSLogPointerFormat",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/none",
+   "title": "case none",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case none",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/ipv6address",
+   "title": "case ipv6Address",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case ipv6Address",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/sockaddr",
+   "title": "case sockaddr",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case sockaddr",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/timespec",
+   "title": "case timespec",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case timespec",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/timeval",
+   "title": "case timeval",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case timeval",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogpointerformat/uuid",
+   "title": "case uuid",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogPointerFormat/case uuid",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation",
+   "title": "OSLogInterpolation",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:)-6tazr",
+   "title": "func appendInterpolation(@autoclosure () -> String, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> String, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:attributes:)-7g68v",
+   "title": "func appendInterpolation(@autoclosure () -> String, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> String, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-8kli1",
+   "title": "func appendInterpolation(@autoclosure () -> Int, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-5ihzf",
+   "title": "func appendInterpolation(@autoclosure () -> Int8, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int8, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-190d0",
+   "title": "func appendInterpolation(@autoclosure () -> Int16, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int16, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:)-3ji02",
+   "title": "func appendInterpolation(@autoclosure () -> Int32, format: OSLogInt32ExtendedFormat, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int32, format: OSLogInt32ExtendedFormat, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:attributes:)-4i2ir",
+   "title": "func appendInterpolation(@autoclosure () -> Int32, format: OSLogInt32ExtendedFormat, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int32, format: OSLogInt32ExtendedFormat, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-2sb1i",
+   "title": "func appendInterpolation(@autoclosure () -> Int32, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int32, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-802m9",
+   "title": "func appendInterpolation(@autoclosure () -> Int64, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int64, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-20jin",
+   "title": "func appendInterpolation(@autoclosure () -> UInt, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UInt, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-4qvu9",
+   "title": "func appendInterpolation(@autoclosure () -> UInt8, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UInt8, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-7k91g",
+   "title": "func appendInterpolation(@autoclosure () -> UInt16, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UInt16, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-2i3qh",
+   "title": "func appendInterpolation(@autoclosure () -> UInt32, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UInt32, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-81jbm",
+   "title": "func appendInterpolation(@autoclosure () -> UInt64, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UInt64, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-6mu00",
+   "title": "func appendInterpolation(@autoclosure () -> Double, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Double, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:attributes:)-8bi90",
+   "title": "func appendInterpolation(@autoclosure () -> Double, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Double, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:)-7z1jd",
+   "title": "func appendInterpolation(@autoclosure () -> Float, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Float, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:attributes:)-78sek",
+   "title": "func appendInterpolation(@autoclosure () -> Float, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Float, format: OSLogFloatFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:)-686xc",
+   "title": "func appendInterpolation(@autoclosure () -> Bool, format: OSLogBoolFormat, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Bool, format: OSLogBoolFormat, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:)-84m60",
+   "title": "func appendInterpolation<T>(@autoclosure () -> T, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation<T>(@autoclosure () -> T, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:attributes:)-xyum",
+   "title": "func appendInterpolation<T>(@autoclosure () -> T, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation<T>(@autoclosure () -> T, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:align:privacy:attributes:)-8107a",
+   "title": "func appendInterpolation<T>(@autoclosure () -> T, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation<T>(@autoclosure () -> T, format: OSLogIntegerFormatting, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:)-8hwmt",
+   "title": "func appendInterpolation(@autoclosure () -> any Any.Type, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> any Any.Type, align: OSLogStringAlignment, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:align:privacy:attributes:)-9hehv",
+   "title": "func appendInterpolation(@autoclosure () -> any Any.Type, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> any Any.Type, align: OSLogStringAlignment, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:bytes:format:privacy:)",
+   "title": "func appendInterpolation(@autoclosure () -> UnsafeRawPointer, bytes: @autoclosure () -> Int, format: OSLogPointerFormat, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UnsafeRawPointer, bytes: @autoclosure () -> Int, format: OSLogPointerFormat, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:bytes:format:privacy:attributes:)",
+   "title": "func appendInterpolation(@autoclosure () -> UnsafeRawPointer, bytes: @autoclosure () -> Int, format: OSLogPointerFormat, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UnsafeRawPointer, bytes: @autoclosure () -> Int, format: OSLogPointerFormat, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:)-5qaau",
+   "title": "func appendInterpolation(@autoclosure () -> UnsafeRawBufferPointer, format: OSLogPointerFormat, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UnsafeRawBufferPointer, format: OSLogPointerFormat, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:attributes:)-93lbs",
+   "title": "func appendInterpolation(@autoclosure () -> UnsafeRawBufferPointer, format: OSLogPointerFormat, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> UnsafeRawBufferPointer, format: OSLogPointerFormat, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:privacy:)",
+   "title": "func appendInterpolation(@autoclosure () -> NSObject, privacy: OSLogPrivacy)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> NSObject, privacy: OSLogPrivacy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:privacy:attributes:)-3czd2",
+   "title": "func appendInterpolation(@autoclosure () -> NSObject, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> NSObject, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:format:privacy:attributes:)-6le5w",
+   "title": "func appendInterpolation(@autoclosure () -> Int, format: OSLogIntExtendedFormat, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> Int, format: OSLogIntExtendedFormat, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:privacy:attributes:)-4o74h",
+   "title": "func appendInterpolation(@autoclosure () -> any Error, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> any Error, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:privacy:attributes:)-6vtcc",
+   "title": "func appendInterpolation(@autoclosure () -> (any Error)?, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> (any Error)?, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osloginterpolation/appendinterpolation(_:privacy:attributes:)-9eafm",
+   "title": "func appendInterpolation(@autoclosure () -> NSObject?, privacy: OSLogPrivacy, attributes: String)",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogInterpolation/func appendInterpolation(@autoclosure () -> NSObject?, privacy: OSLogPrivacy, attributes: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat",
+   "title": "OSLogIntExtendedFormat",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat/bitrate",
+   "title": "case bitrate",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat/case bitrate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat/bitrateiec",
+   "title": "case bitrateIEC",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat/case bitrateIEC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat/bytecount",
+   "title": "case byteCount",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat/case byteCount",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat/bytecountiec",
+   "title": "case byteCountIEC",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat/case byteCountIEC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogintextendedformat/secondssince1970",
+   "title": "case secondsSince1970",
+   "type": "case",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogIntExtendedFormat/case secondsSince1970",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogstringalignment",
+   "title": "OSLogStringAlignment",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogStringAlignment",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogstringalignment/none",
+   "title": "static var none: OSLogStringAlignment",
+   "type": "property",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogStringAlignment/static var none: OSLogStringAlignment",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogstringalignment/left(columns:)",
+   "title": "static func left(columns: @autoclosure () -> Int) -> OSLogStringAlignment",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogStringAlignment/static func left(columns: @autoclosure () -> Int) -> OSLogStringAlignment",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/oslogstringalignment/right(columns:)",
+   "title": "static func right(columns: @autoclosure () -> Int) -> OSLogStringAlignment",
+   "type": "method",
+   "breadcrumb": "os/Logging/Message Argument Formatters/OSLogStringAlignment/static func right(columns: @autoclosure () -> Int) -> OSLogStringAlignment",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/recording-performance-data",
+   "title": "Recording Performance Data",
+   "type": "article",
+   "breadcrumb": "os/Logging/Recording Performance Data",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter",
+   "title": "OSSignposter",
+   "type": "struct",
+   "breadcrumb": "os/Logging/OSSignposter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/init(subsystem:category:)-94xpb",
+   "title": "init(subsystem: String, category: String)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/init(subsystem: String, category: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/init(subsystem:category:)-4vdri",
+   "title": "init(subsystem: String, category: OSLog.Category)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/init(subsystem: String, category: OSLog.Category)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/init(logger:)",
+   "title": "init(logger: Logger)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/init(logger: Logger)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/init(loghandle:)",
+   "title": "init(logHandle: OSLog)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/init(logHandle: OSLog)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/disabled",
+   "title": "static var disabled: OSSignposter",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/static var disabled: OSSignposter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/isenabled",
+   "title": "var isEnabled: Bool",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/var isEnabled: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/makesignpostid()",
+   "title": "func makeSignpostID() -> OSSignpostID",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func makeSignpostID() -> OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/makesignpostid(from:)",
+   "title": "func makeSignpostID(from: AnyObject) -> OSSignpostID",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func makeSignpostID(from: AnyObject) -> OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid",
+   "title": "OSSignpostID",
+   "type": "struct",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/exclusive",
+   "title": "static let exclusive: OSSignpostID",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/static let exclusive: OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/invalid",
+   "title": "static let invalid: OSSignpostID",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/static let invalid: OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/null",
+   "title": "static let null: OSSignpostID",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/static let null: OSSignpostID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/init(_:)",
+   "title": "init(UInt64)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/init(UInt64)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/init(log:)",
+   "title": "init(log: OSLog)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/init(log: OSLog)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/init(log:object:)",
+   "title": "init(log: OSLog, object: AnyObject)",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/init(log: OSLog, object: AnyObject)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostid/rawvalue",
+   "title": "let rawValue: os_signpost_id_t",
+   "type": "property",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostID/let rawValue: os_signpost_id_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/begininterval(_:id:)",
+   "title": "func beginInterval(StaticString, id: OSSignpostID) -> OSSignpostIntervalState",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func beginInterval(StaticString, id: OSSignpostID) -> OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/begininterval(_:id:_:)",
+   "title": "func beginInterval(StaticString, id: OSSignpostID, SignpostMetadata) -> OSSignpostIntervalState",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func beginInterval(StaticString, id: OSSignpostID, SignpostMetadata) -> OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/beginanimationinterval(_:id:)",
+   "title": "func beginAnimationInterval(StaticString, id: OSSignpostID) -> OSSignpostIntervalState",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func beginAnimationInterval(StaticString, id: OSSignpostID) -> OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/beginanimationinterval(_:id:_:)",
+   "title": "func beginAnimationInterval(StaticString, id: OSSignpostID, SignpostMetadata) -> OSSignpostIntervalState",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func beginAnimationInterval(StaticString, id: OSSignpostID, SignpostMetadata) -> OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostintervalstate",
+   "title": "OSSignpostIntervalState",
+   "type": "class",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostintervalstate/init(from:)",
+   "title": "init(from: any Decoder) throws",
+   "type": "init",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostIntervalState/init(from: any Decoder) throws",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostintervalstate/beginstate(id:)",
+   "title": "static func beginState(id: OSSignpostID) -> OSSignpostIntervalState",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostIntervalState/static func beginState(id: OSSignpostID) -> OSSignpostIntervalState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostintervalstate/encode(to:)",
+   "title": "func encode(to: any Encoder) throws",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/OSSignpostIntervalState/func encode(to: any Encoder) throws",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/signpostmetadata",
+   "title": "SignpostMetadata",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/OSSignposter/SignpostMetadata",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/endinterval(_:_:)",
+   "title": "func endInterval(StaticString, OSSignpostIntervalState)",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func endInterval(StaticString, OSSignpostIntervalState)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/endinterval(_:_:_:)",
+   "title": "func endInterval(StaticString, OSSignpostIntervalState, SignpostMetadata)",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func endInterval(StaticString, OSSignpostIntervalState, SignpostMetadata)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/withintervalsignpost(_:id:around:)",
+   "title": "func withIntervalSignpost<T>(StaticString, id: OSSignpostID, around: () throws -> T) rethrows -> T",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func withIntervalSignpost<T>(StaticString, id: OSSignpostID, around: () throws -> T) rethrows -> T",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/withintervalsignpost(_:id:_:around:)",
+   "title": "func withIntervalSignpost<T>(StaticString, id: OSSignpostID, SignpostMetadata, around: () throws -> T) rethrows -> T",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func withIntervalSignpost<T>(StaticString, id: OSSignpostID, SignpostMetadata, around: () throws -> T) rethrows -> T",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/emitevent(_:id:)",
+   "title": "func emitEvent(StaticString, id: OSSignpostID)",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func emitEvent(StaticString, id: OSSignpostID)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposter/emitevent(_:id:_:)",
+   "title": "func emitEvent(StaticString, id: OSSignpostID, SignpostMetadata)",
+   "type": "method",
+   "breadcrumb": "os/Logging/OSSignposter/func emitEvent(StaticString, id: OSSignpostID, SignpostMetadata)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/legacy-signpost-symbols",
+   "title": "Legacy Signpost Symbols",
+   "type": "collection",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost(_:dso:log:name:signpostid:)-2oz8u",
+   "title": "func os_signpost(OSSignpostType, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID)",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/func os_signpost(OSSignpostType, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost(_:dso:log:name:signpostid:_:_:)-2om9b",
+   "title": "func os_signpost(OSSignpostType, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID, StaticString, any CVarArg...)",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/func os_signpost(OSSignpostType, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID, StaticString, any CVarArg...)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype",
+   "title": "OSSignpostType",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/begin",
+   "title": "static let begin: OSSignpostType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/static let begin: OSSignpostType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/end",
+   "title": "static let end: OSSignpostType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/static let end: OSSignpostType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/event",
+   "title": "static let event: OSSignpostType",
+   "type": "property",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/static let event: OSSignpostType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/init(rawvalue:)",
+   "title": "init(rawValue: UInt8)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/init(rawValue: UInt8)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/init(_:)",
+   "title": "init(UInt8)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/init(UInt8)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignposttype/rawvalue",
+   "title": "var rawValue: UInt8",
+   "type": "property",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostType/var rawValue: UInt8",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost(_:dso:log:name:signpostid:)-12m3v",
+   "title": "func os_signpost(OSSignpostAnimationBegin, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID)",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/func os_signpost(OSSignpostAnimationBegin, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost(_:dso:log:name:signpostid:_:_:)-nez5",
+   "title": "func os_signpost(OSSignpostAnimationBegin, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID, AnimationFormatString.OSLogMessage, any CVarArg...)",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/func os_signpost(OSSignpostAnimationBegin, dso: UnsafeRawPointer, log: OSLog, name: StaticString, signpostID: OSSignpostID, AnimationFormatString.OSLogMessage, any CVarArg...)",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostanimationbegin",
+   "title": "OSSignpostAnimationBegin",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostAnimationBegin",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/ossignpostanimationbegin/animationbegin",
+   "title": "case animationBegin",
+   "type": "case",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/OSSignpostAnimationBegin/case animationBegin",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/animationformatstring",
+   "title": "AnimationFormatString",
+   "type": "enum",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/AnimationFormatString",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/animationformatstring/oslogmessage",
+   "title": "AnimationFormatString.OSLogMessage",
+   "type": "struct",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/AnimationFormatString/AnimationFormatString.OSLogMessage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/animationformatstring/oslogmessage/init(stringliteral:)",
+   "title": "init(stringLiteral: String)",
+   "type": "init",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/AnimationFormatString/AnimationFormatString.OSLogMessage/init(stringLiteral: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_t",
+   "title": "os_signpost_id_t",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/synchronization",
+   "title": "Synchronization",
+   "type": "collection",
+   "breadcrumb": "os/Synchronization",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock",
+   "title": "OSAllocatedUnfairLock",
+   "type": "struct",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/init(initialstate:)",
+   "title": "init(initialState: State)",
+   "type": "init",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/init(initialState: State)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/lock()",
+   "title": "func lock()",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func lock()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/lockifavailable()",
+   "title": "func lockIfAvailable() -> Bool",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func lockIfAvailable() -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/unlock()",
+   "title": "func unlock()",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func unlock()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/ownership",
+   "title": "OSAllocatedUnfairLock.Ownership",
+   "type": "enum",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/OSAllocatedUnfairLock.Ownership",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/ownership/owner",
+   "title": "case owner",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/OSAllocatedUnfairLock.Ownership/case owner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/ownership/notowner",
+   "title": "case notOwner",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/OSAllocatedUnfairLock.Ownership/case notOwner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/precondition(_:)",
+   "title": "func precondition(OSAllocatedUnfairLock<State>.Ownership)",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func precondition(OSAllocatedUnfairLock<State>.Ownership)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/init(uncheckedstate:)",
+   "title": "init(uncheckedState: State)",
+   "type": "init",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/init(uncheckedState: State)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/lock(flags:)",
+   "title": "func lock(flags: OSAllocatedUnfairLockFlags)",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func lock(flags: OSAllocatedUnfairLockFlags)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlock(_:)-1uy7m",
+   "title": "func withLock<R>((inout State) throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLock<R>((inout State) throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlock(_:)-hple",
+   "title": "func withLock<R>(() throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLock<R>(() throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlock(flags:_:)-1ub4c",
+   "title": "func withLock<R>(flags: OSAllocatedUnfairLockFlags, (inout State) throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLock<R>(flags: OSAllocatedUnfairLockFlags, (inout State) throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlock(flags:_:)-u2xj",
+   "title": "func withLock<R>(flags: OSAllocatedUnfairLockFlags, () throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLock<R>(flags: OSAllocatedUnfairLockFlags, () throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockifavailable(_:)-1rp3w",
+   "title": "func withLockIfAvailable<R>(() throws -> R) rethrows -> R?",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockIfAvailable<R>(() throws -> R) rethrows -> R?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockifavailable(_:)-3kw0o",
+   "title": "func withLockIfAvailable<R>((inout State) throws -> R) rethrows -> R?",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockIfAvailable<R>((inout State) throws -> R) rethrows -> R?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockifavailableunchecked(_:)-15q0y",
+   "title": "func withLockIfAvailableUnchecked<R>((inout State) throws -> R) rethrows -> R?",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockIfAvailableUnchecked<R>((inout State) throws -> R) rethrows -> R?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockifavailableunchecked(_:)-6gji7",
+   "title": "func withLockIfAvailableUnchecked<R>(() throws -> R) rethrows -> R?",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockIfAvailableUnchecked<R>(() throws -> R) rethrows -> R?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockunchecked(_:)-7qywq",
+   "title": "func withLockUnchecked<R>((inout State) throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockUnchecked<R>((inout State) throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockunchecked(_:)-9v03m",
+   "title": "func withLockUnchecked<R>(() throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockUnchecked<R>(() throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockunchecked(flags:_:)-8cv64",
+   "title": "func withLockUnchecked<R>(flags: OSAllocatedUnfairLockFlags, (inout State) throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockUnchecked<R>(flags: OSAllocatedUnfairLockFlags, (inout State) throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlock/withlockunchecked(flags:_:)-9iq8s",
+   "title": "func withLockUnchecked<R>(flags: OSAllocatedUnfairLockFlags, () throws -> R) rethrows -> R",
+   "type": "method",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLock/func withLockUnchecked<R>(flags: OSAllocatedUnfairLockFlags, () throws -> R) rethrows -> R",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlockflags",
+   "title": "OSAllocatedUnfairLockFlags",
+   "type": "struct",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLockFlags",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/osallocatedunfairlockflags/adaptivespin",
+   "title": "static let adaptiveSpin: OSAllocatedUnfairLockFlags",
+   "type": "property",
+   "breadcrumb": "os/Synchronization/OSAllocatedUnfairLockFlags/static let adaptiveSpin: OSAllocatedUnfairLockFlags",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/deprecated-symbols",
+   "title": "Deprecated Symbols",
+   "type": "collection",
+   "breadcrumb": "os/Deprecated Symbols",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_debug_enabled()",
+   "title": "func os_trace_debug_enabled() -> Bool",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/func os_trace_debug_enabled() -> Bool",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_info_enabled()",
+   "title": "func os_trace_info_enabled() -> Bool",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/func os_trace_info_enabled() -> Bool",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_enabled(_:)",
+   "title": "func os_trace_type_enabled(UInt8) -> Bool",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/func os_trace_type_enabled(UInt8) -> Bool",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_debug",
+   "title": "var OS_TRACE_TYPE_DEBUG: UInt32",
+   "type": "var",
+   "breadcrumb": "os/Deprecated Symbols/var OS_TRACE_TYPE_DEBUG: UInt32",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_info",
+   "title": "var OS_TRACE_TYPE_INFO: UInt32",
+   "type": "var",
+   "breadcrumb": "os/Deprecated Symbols/var OS_TRACE_TYPE_INFO: UInt32",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_release",
+   "title": "var OS_TRACE_TYPE_RELEASE: UInt32",
+   "type": "var",
+   "breadcrumb": "os/Deprecated Symbols/var OS_TRACE_TYPE_RELEASE: UInt32",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_payload_object_t",
+   "title": "os_trace_payload_object_t",
+   "type": "typealias",
+   "breadcrumb": "os/Deprecated Symbols/os_trace_payload_object_t",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os-constants",
+   "title": "os Constants",
+   "type": "collection",
+   "breadcrumb": "os/os Constants",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_atomic_uses_cxx",
+   "title": "var OS_ATOMIC_USES_CXX: Int32",
+   "type": "var",
+   "breadcrumb": "os/os Constants/var OS_ATOMIC_USES_CXX: Int32",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_target_has_10_12_features",
+   "title": "var OS_LOG_TARGET_HAS_10_12_FEATURES: Int32",
+   "type": "var",
+   "breadcrumb": "os/os Constants/var OS_LOG_TARGET_HAS_10_12_FEATURES: Int32",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_target_has_10_13_features",
+   "title": "var OS_LOG_TARGET_HAS_10_13_FEATURES: Int32",
+   "type": "var",
+   "breadcrumb": "os/os Constants/var OS_LOG_TARGET_HAS_10_13_FEATURES: Int32",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_target_has_10_14_features",
+   "title": "var OS_LOG_TARGET_HAS_10_14_FEATURES: Int32",
+   "type": "var",
+   "breadcrumb": "os/os Constants/var OS_LOG_TARGET_HAS_10_14_FEATURES: Int32",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_target_has_10_15_features",
+   "title": "var OS_LOG_TARGET_HAS_10_15_FEATURES: Int32",
+   "type": "var",
+   "breadcrumb": "os/os Constants/var OS_LOG_TARGET_HAS_10_15_FEATURES: Int32",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_string_section",
+   "title": "var OS_LOG_STRING_SECTION: String",
+   "type": "var",
+   "breadcrumb": "os/var OS_LOG_STRING_SECTION: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/legacy-logging-symbols",
+   "title": "Legacy Logging Symbols",
+   "type": "collection",
+   "breadcrumb": "os/Logging/Legacy Logging Symbols",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os-log-t",
+   "title": "os_log_t",
+   "type": "collection",
+   "breadcrumb": "os/Logging/os_log_t",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_default",
+   "title": "OS_LOG_DEFAULT",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_t/OS_LOG_DEFAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_disabled",
+   "title": "OS_LOG_DISABLED",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_t/OS_LOG_DISABLED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_create",
+   "title": "os_log_create",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_log_t/os_log_create",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_info_enabled",
+   "title": "os_log_info_enabled",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_t/os_log_info_enabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_debug_enabled",
+   "title": "os_log_debug_enabled",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_t/os_log_debug_enabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_enabled",
+   "title": "os_signpost_enabled",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_log_t/os_signpost_enabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_t",
+   "title": "os_log_t",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/os_log_t/os_log_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_with_type",
+   "title": "os_log_with_type",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_with_type",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_type_t/os_log_type_debug",
+   "title": "OS_LOG_TYPE_DEBUG",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_log_type_t/OS_LOG_TYPE_DEBUG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_type_t/os_log_type_default",
+   "title": "OS_LOG_TYPE_DEFAULT",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_log_type_t/OS_LOG_TYPE_DEFAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_type_t/os_log_type_error",
+   "title": "OS_LOG_TYPE_ERROR",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_log_type_t/OS_LOG_TYPE_ERROR",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_type_t/os_log_type_fault",
+   "title": "OS_LOG_TYPE_FAULT",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_log_type_t/OS_LOG_TYPE_FAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_type_t/os_log_type_info",
+   "title": "OS_LOG_TYPE_INFO",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_log_type_t/OS_LOG_TYPE_INFO",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log",
+   "title": "os_log",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_info",
+   "title": "os_log_info",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_info",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_debug",
+   "title": "os_log_debug",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_debug",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_error",
+   "title": "os_log_error",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_error",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_fault",
+   "title": "os_log_fault",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_log_fault",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_type_t/os_signpost_event",
+   "title": "OS_SIGNPOST_EVENT",
+   "type": "case",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_type_t/OS_SIGNPOST_EVENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_type_t/os_signpost_interval_begin",
+   "title": "OS_SIGNPOST_INTERVAL_BEGIN",
+   "type": "case",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_type_t/OS_SIGNPOST_INTERVAL_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_type_t/os_signpost_interval_end",
+   "title": "OS_SIGNPOST_INTERVAL_END",
+   "type": "case",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_type_t/OS_SIGNPOST_INTERVAL_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_generate",
+   "title": "os_signpost_id_generate",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/os_signpost_id_generate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_make_with_pointer",
+   "title": "os_signpost_id_make_with_pointer",
+   "type": "func",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/os_signpost_id_make_with_pointer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_exclusive",
+   "title": "OS_SIGNPOST_ID_EXCLUSIVE",
+   "type": "macro",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/OS_SIGNPOST_ID_EXCLUSIVE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_invalid",
+   "title": "OS_SIGNPOST_ID_INVALID",
+   "type": "macro",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/OS_SIGNPOST_ID_INVALID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_null",
+   "title": "OS_SIGNPOST_ID_NULL",
+   "type": "macro",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/OS_SIGNPOST_ID_NULL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_type_mask",
+   "title": "OS_SIGNPOST_TYPE_MASK",
+   "type": "macro",
+   "breadcrumb": "os/Logging/Legacy Signpost Symbols/os_signpost_id_t/OS_SIGNPOST_TYPE_MASK",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_emit_with_type",
+   "title": "os_signpost_emit_with_type",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_signpost_emit_with_type",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_interval_begin",
+   "title": "os_signpost_interval_begin",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_signpost_interval_begin",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_interval_end",
+   "title": "os_signpost_interval_end",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_signpost_interval_end",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_event_emit",
+   "title": "os_signpost_event_emit",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_signpost_event_emit",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/collecting-log-messages-in-activities",
+   "title": "Collecting Log Messages in Activities",
+   "type": "article",
+   "breadcrumb": "os/Logging/Collecting Log Messages in Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os-activity-t",
+   "title": "os_activity_t",
+   "type": "collection",
+   "breadcrumb": "os/Logging/os_activity_t",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_initiate",
+   "title": "os_activity_initiate",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_initiate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_initiate_f",
+   "title": "os_activity_initiate_f",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_initiate_f",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_create",
+   "title": "os_activity_create",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_create",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_label_useraction",
+   "title": "os_activity_label_useraction",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_label_useraction",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_flag_t",
+   "title": "os_activity_flag_t",
+   "type": "enum",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_flag_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_flag_t/os_activity_flag_default",
+   "title": "OS_ACTIVITY_FLAG_DEFAULT",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_flag_t/OS_ACTIVITY_FLAG_DEFAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_flag_t/os_activity_flag_detached",
+   "title": "OS_ACTIVITY_FLAG_DETACHED",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_flag_t/OS_ACTIVITY_FLAG_DETACHED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_flag_t/os_activity_flag_if_none_present",
+   "title": "OS_ACTIVITY_FLAG_IF_NONE_PRESENT",
+   "type": "case",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_flag_t/OS_ACTIVITY_FLAG_IF_NONE_PRESENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_apply",
+   "title": "os_activity_apply",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_apply",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_apply_f",
+   "title": "os_activity_apply_f",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_apply_f",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_get_identifier",
+   "title": "os_activity_get_identifier",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_get_identifier",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_id_t",
+   "title": "os_activity_id_t",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_id_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope_enter",
+   "title": "os_activity_scope_enter",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_scope_enter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope_leave",
+   "title": "os_activity_scope_leave",
+   "type": "func",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_scope_leave",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope_state_t",
+   "title": "os_activity_scope_state_t",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_scope_state_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope_state_s/opaque",
+   "title": "opaque",
+   "type": "property",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_scope_state_t/opaque",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_t",
+   "title": "os_activity_t",
+   "type": "typealias",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_none",
+   "title": "OS_ACTIVITY_NONE",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_t/OS_ACTIVITY_NONE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_current",
+   "title": "OS_ACTIVITY_CURRENT",
+   "type": "macro",
+   "breadcrumb": "os/Logging/os_activity_t/os_activity_t/OS_ACTIVITY_CURRENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/workgroups",
+   "title": "Workgroups",
+   "type": "collection",
+   "breadcrumb": "os/Workgroups",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/apple-silicon/tuning-your-code-s-performance-for-apple-silicon",
+   "title": "Tuning your code’s performance for Apple silicon",
+   "type": "article",
+   "breadcrumb": "os/Workgroups/Tuning your code’s performance for Apple silicon",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/apple-silicon/porting-your-audio-code-to-apple-silicon",
+   "title": "Porting your audio code to Apple silicon",
+   "type": "article",
+   "breadcrumb": "os/Workgroups/Porting your audio code to Apple silicon",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_start",
+   "title": "os_workgroup_interval_start",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_interval_start",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_update",
+   "title": "os_workgroup_interval_update",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_interval_update",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_finish",
+   "title": "os_workgroup_interval_finish",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_interval_finish",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_t",
+   "title": "os_workgroup_interval_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_interval_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_t",
+   "title": "os_workgroup_interval_data_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_interval_data_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_clockid_t",
+   "title": "os_clockid_t",
+   "type": "enum",
+   "breadcrumb": "os/Workgroups/os_clockid_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_clockid_t/os_clock_mach_absolute_time",
+   "title": "OS_CLOCK_MACH_ABSOLUTE_TIME",
+   "type": "case",
+   "breadcrumb": "os/Workgroups/os_clockid_t/OS_CLOCK_MACH_ABSOLUTE_TIME",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_parallel_create",
+   "title": "os_workgroup_parallel_create",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_parallel_create",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_parallel_t",
+   "title": "os_workgroup_parallel_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_parallel_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join",
+   "title": "os_workgroup_join",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_join",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_leave",
+   "title": "os_workgroup_leave",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_leave",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join_token_t",
+   "title": "os_workgroup_join_token_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_join_token_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_cancel",
+   "title": "os_workgroup_cancel",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_cancel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_testcancel",
+   "title": "os_workgroup_testcancel",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_testcancel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_max_parallel_threads",
+   "title": "os_workgroup_max_parallel_threads",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_max_parallel_threads",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_mpt_attr_t",
+   "title": "os_workgroup_mpt_attr_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_mpt_attr_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_set_working_arena",
+   "title": "os_workgroup_set_working_arena",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_set_working_arena",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_get_working_arena",
+   "title": "os_workgroup_get_working_arena",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_get_working_arena",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_index",
+   "title": "os_workgroup_index",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_index",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_working_arena_destructor_t",
+   "title": "os_workgroup_working_arena_destructor_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_working_arena_destructor_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_create_with_workgroup",
+   "title": "os_workgroup_create_with_workgroup",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_create_with_workgroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_create_with_port",
+   "title": "os_workgroup_create_with_port",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_create_with_port",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_copy_port",
+   "title": "os_workgroup_copy_port",
+   "type": "func",
+   "breadcrumb": "os/Workgroups/os_workgroup_copy_port",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_t",
+   "title": "os_workgroup_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_t",
+   "title": "os_workgroup_attr_t",
+   "type": "typealias",
+   "breadcrumb": "os/Workgroups/os_workgroup_attr_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_interval-c.class",
+   "title": "OS_os_workgroup_interval",
+   "type": "class",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_interval",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_interval-c.class/init",
+   "title": "- init",
+   "type": "method",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_interval/- init",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_interval-c.protocol",
+   "title": "OS_os_workgroup_interval",
+   "type": "protocol",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_interval",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup",
+   "title": "OS_os_workgroup",
+   "type": "class",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup/init",
+   "title": "- init",
+   "type": "method",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup/- init",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object",
+   "title": "OS_object",
+   "type": "class",
+   "breadcrumb": "os/Workgroups/OS_object",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object/init",
+   "title": "- init",
+   "type": "method",
+   "breadcrumb": "os/Workgroups/OS_object/- init",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_parallel-c.class",
+   "title": "OS_os_workgroup_parallel",
+   "type": "class",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_parallel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_parallel-c.class/init",
+   "title": "- init",
+   "type": "method",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_parallel/- init",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_workgroup_parallel-c.protocol",
+   "title": "OS_os_workgroup_parallel",
+   "type": "protocol",
+   "breadcrumb": "os/Workgroups/OS_os_workgroup_parallel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock",
+   "title": "os_unfair_lock",
+   "type": "typealias",
+   "breadcrumb": "os/Synchronization/os_unfair_lock",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_init",
+   "title": "OS_UNFAIR_LOCK_INIT",
+   "type": "macro",
+   "breadcrumb": "os/Synchronization/OS_UNFAIR_LOCK_INIT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_t",
+   "title": "os_unfair_lock_t",
+   "type": "typealias",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_lock",
+   "title": "os_unfair_lock_lock",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_lock",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_trylock",
+   "title": "os_unfair_lock_trylock",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_trylock",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_lock_with_flags",
+   "title": "os_unfair_lock_lock_with_flags",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_lock_with_flags",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_unlock",
+   "title": "os_unfair_lock_unlock",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_unlock",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_assert_owner",
+   "title": "os_unfair_lock_assert_owner",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_assert_owner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_assert_not_owner",
+   "title": "os_unfair_lock_assert_not_owner",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_assert_not_owner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_flags_t",
+   "title": "os_unfair_lock_flags_t",
+   "type": "enum",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_flags_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_flags_t/os_unfair_lock_flag_adaptive_spin",
+   "title": "OS_UNFAIR_LOCK_FLAG_ADAPTIVE_SPIN",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_flags_t/OS_UNFAIR_LOCK_FLAG_ADAPTIVE_SPIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_flags_t/os_unfair_lock_flag_none",
+   "title": "OS_UNFAIR_LOCK_FLAG_NONE",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_unfair_lock_flags_t/OS_UNFAIR_LOCK_FLAG_NONE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address",
+   "title": "os_sync_wait_on_address",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address_with_deadline",
+   "title": "os_sync_wait_on_address_with_deadline",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address_with_deadline",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address_with_timeout",
+   "title": "os_sync_wait_on_address_with_timeout",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address_with_timeout",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address_flags_t",
+   "title": "os_sync_wait_on_address_flags_t",
+   "type": "enum",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address_flags_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address_flags_t/os_sync_wait_on_address_none",
+   "title": "OS_SYNC_WAIT_ON_ADDRESS_NONE",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address_flags_t/OS_SYNC_WAIT_ON_ADDRESS_NONE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wait_on_address_flags_t/os_sync_wait_on_address_shared",
+   "title": "OS_SYNC_WAIT_ON_ADDRESS_SHARED",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_sync_wait_on_address_flags_t/OS_SYNC_WAIT_ON_ADDRESS_SHARED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wake_by_address_all",
+   "title": "os_sync_wake_by_address_all",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_sync_wake_by_address_all",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wake_by_address_any",
+   "title": "os_sync_wake_by_address_any",
+   "type": "func",
+   "breadcrumb": "os/Synchronization/os_sync_wake_by_address_any",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wake_by_address_flags_t",
+   "title": "os_sync_wake_by_address_flags_t",
+   "type": "enum",
+   "breadcrumb": "os/Synchronization/os_sync_wake_by_address_flags_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wake_by_address_flags_t/os_sync_wake_by_address_none",
+   "title": "OS_SYNC_WAKE_BY_ADDRESS_NONE",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_sync_wake_by_address_flags_t/OS_SYNC_WAKE_BY_ADDRESS_NONE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sync_wake_by_address_flags_t/os_sync_wake_by_address_shared",
+   "title": "OS_SYNC_WAKE_BY_ADDRESS_SHARED",
+   "type": "case",
+   "breadcrumb": "os/Synchronization/os_sync_wake_by_address_flags_t/OS_SYNC_WAKE_BY_ADDRESS_SHARED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_proc_available_memory",
+   "title": "os_proc_available_memory",
+   "type": "func",
+   "breadcrumb": "os/os_proc_available_memory",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_block_t",
+   "title": "os_block_t",
+   "type": "typealias",
+   "breadcrumb": "os/os_block_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_function_t",
+   "title": "os_function_t",
+   "type": "typealias",
+   "breadcrumb": "os/os_function_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_release-c.func",
+   "title": "os_release",
+   "type": "func",
+   "breadcrumb": "os/os_release",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_retain-c.func",
+   "title": "os_retain",
+   "type": "func",
+   "breadcrumb": "os/os_retain",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_is_enabled",
+   "title": "os_log_is_enabled",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/os_log_is_enabled",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_is_debug_enabled",
+   "title": "os_log_is_debug_enabled",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/os_log_is_debug_enabled",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_get_active",
+   "title": "os_activity_get_active",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/os_activity_get_active",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_end",
+   "title": "os_activity_end",
+   "type": "func",
+   "breadcrumb": "os/Deprecated Symbols/os_activity_end",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_start",
+   "title": "os_activity_start",
+   "type": "macro",
+   "breadcrumb": "os/Deprecated Symbols/os_activity_start",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_set_breadcrumb",
+   "title": "os_activity_set_breadcrumb",
+   "type": "macro",
+   "breadcrumb": "os/Deprecated Symbols/os_activity_set_breadcrumb",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_breadcrumb_t",
+   "title": "os_breadcrumb_t",
+   "type": "typealias",
+   "breadcrumb": "os/Deprecated Symbols/os_breadcrumb_t",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_payload_t",
+   "title": "os_trace_payload_t",
+   "type": "typealias",
+   "breadcrumb": "os/Deprecated Symbols/os_trace_payload_t",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os-macros",
+   "title": "os Macros",
+   "type": "collection",
+   "breadcrumb": "os/os Macros",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_available_begin",
+   "title": "API_AVAILABLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_AVAILABLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_available_end",
+   "title": "API_AVAILABLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_AVAILABLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_available",
+   "title": "API_AVAILABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_AVAILABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated_begin",
+   "title": "API_DEPRECATED_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated_end",
+   "title": "API_DEPRECATED_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated_with_replacement_begin",
+   "title": "API_DEPRECATED_WITH_REPLACEMENT_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED_WITH_REPLACEMENT_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated_with_replacement_end",
+   "title": "API_DEPRECATED_WITH_REPLACEMENT_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED_WITH_REPLACEMENT_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated_with_replacement",
+   "title": "API_DEPRECATED_WITH_REPLACEMENT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED_WITH_REPLACEMENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_deprecated",
+   "title": "API_DEPRECATED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_DEPRECATED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_driverkit",
+   "title": "API_TO_BE_DEPRECATED_DRIVERKIT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_DRIVERKIT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_ios",
+   "title": "API_TO_BE_DEPRECATED_IOS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_IOS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_macos",
+   "title": "API_TO_BE_DEPRECATED_MACOS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_MACOS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_tvos",
+   "title": "API_TO_BE_DEPRECATED_TVOS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_TVOS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_visionos",
+   "title": "API_TO_BE_DEPRECATED_VISIONOS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_VISIONOS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated_watchos",
+   "title": "API_TO_BE_DEPRECATED_WATCHOS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED_WATCHOS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_to_be_deprecated",
+   "title": "API_TO_BE_DEPRECATED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_TO_BE_DEPRECATED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_unavailable_begin",
+   "title": "API_UNAVAILABLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_UNAVAILABLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_unavailable_end",
+   "title": "API_UNAVAILABLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_UNAVAILABLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_unavailable",
+   "title": "API_UNAVAILABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/API_UNAVAILABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_null",
+   "title": "OS_ACTIVITY_NULL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ACTIVITY_NULL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_object_api",
+   "title": "OS_ACTIVITY_OBJECT_API",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ACTIVITY_OBJECT_API",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_aligned",
+   "title": "OS_ALIGNED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ALIGNED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_always_inline",
+   "title": "OS_ALWAYS_INLINE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ALWAYS_INLINE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_analyzer_suppress",
+   "title": "OS_ANALYZER_SUPPRESS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ANALYZER_SUPPRESS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_assume_nonnull_begin",
+   "title": "OS_ASSUME_NONNULL_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ASSUME_NONNULL_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_assume_nonnull_end",
+   "title": "OS_ASSUME_NONNULL_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ASSUME_NONNULL_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_assume_ptr_abi_single_begin",
+   "title": "OS_ASSUME_PTR_ABI_SINGLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ASSUME_PTR_ABI_SINGLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_assume_ptr_abi_single_end",
+   "title": "OS_ASSUME_PTR_ABI_SINGLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ASSUME_PTR_ABI_SINGLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_atomic_std-7n5mi",
+   "title": "OS_ATOMIC_STD",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ATOMIC_STD",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_closed_enum",
+   "title": "OS_CLOSED_ENUM",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_CLOSED_ENUM",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_closed_options",
+   "title": "OS_CLOSED_OPTIONS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_CLOSED_OPTIONS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_cold",
+   "title": "OS_COLD",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_COLD",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_compiler_can_assume",
+   "title": "OS_COMPILER_CAN_ASSUME",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_COMPILER_CAN_ASSUME",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_concat",
+   "title": "OS_CONCAT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_CONCAT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_const",
+   "title": "OS_CONST",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_CONST",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_count_args",
+   "title": "OS_COUNT_ARGS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_COUNT_ARGS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_count_args1",
+   "title": "OS_COUNT_ARGS1",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_COUNT_ARGS1",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_counted_by",
+   "title": "OS_COUNTED_BY",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_COUNTED_BY",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_enum",
+   "title": "OS_ENUM",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_ENUM",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_expect",
+   "title": "OS_EXPECT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_EXPECT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_export",
+   "title": "OS_EXPORT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_EXPORT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_fallthrough",
+   "title": "OS_FALLTHROUGH",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_FALLTHROUGH",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_format_printf",
+   "title": "OS_FORMAT_PRINTF",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_FORMAT_PRINTF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_header_indexable",
+   "title": "OS_HEADER_INDEXABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_HEADER_INDEXABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_inline",
+   "title": "OS_INLINE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_INLINE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_lock_api_version",
+   "title": "OS_LOCK_API_VERSION",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOCK_API_VERSION",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_call_with_format_name",
+   "title": "OS_LOG_CALL_WITH_FORMAT_NAME",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_CALL_WITH_FORMAT_NAME",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_call_with_format",
+   "title": "OS_LOG_CALL_WITH_FORMAT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_CALL_WITH_FORMAT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_category_dynamic_stack_tracing",
+   "title": "OS_LOG_CATEGORY_DYNAMIC_STACK_TRACING",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_CATEGORY_DYNAMIC_STACK_TRACING",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_category_dynamic_tracing",
+   "title": "OS_LOG_CATEGORY_DYNAMIC_TRACING",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_CATEGORY_DYNAMIC_TRACING",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_category_points_of_interest",
+   "title": "OS_LOG_CATEGORY_POINTS_OF_INTEREST",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_CATEGORY_POINTS_OF_INTEREST",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_format_errors",
+   "title": "OS_LOG_FORMAT_ERRORS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_FORMAT_ERRORS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_formatlike",
+   "title": "OS_LOG_FORMATLIKE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_FORMATLIKE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_pragma_pop",
+   "title": "OS_LOG_PRAGMA_POP",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_PRAGMA_POP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_pragma_push",
+   "title": "OS_LOG_PRAGMA_PUSH",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_PRAGMA_PUSH",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_remove_parens",
+   "title": "OS_LOG_REMOVE_PARENS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_REMOVE_PARENS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_string",
+   "title": "OS_LOG_STRING",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_STRING",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_uninitialized",
+   "title": "OS_LOG_UNINITIALIZED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_LOG_UNINITIALIZED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_malloc",
+   "title": "OS_MALLOC",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_MALLOC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_noescape",
+   "title": "OS_NOESCAPE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NOESCAPE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_noinline",
+   "title": "OS_NOINLINE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NOINLINE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull_all",
+   "title": "OS_NONNULL_ALL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL_ALL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull1",
+   "title": "OS_NONNULL1",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL1",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull10",
+   "title": "OS_NONNULL10",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL10",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull11",
+   "title": "OS_NONNULL11",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL11",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull12",
+   "title": "OS_NONNULL12",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL12",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull13",
+   "title": "OS_NONNULL13",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL13",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull14",
+   "title": "OS_NONNULL14",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL14",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull15",
+   "title": "OS_NONNULL15",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL15",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull2",
+   "title": "OS_NONNULL2",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL2",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull3",
+   "title": "OS_NONNULL3",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL3",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull4",
+   "title": "OS_NONNULL4",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL4",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull5",
+   "title": "OS_NONNULL5",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL5",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull6",
+   "title": "OS_NONNULL6",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL6",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull7",
+   "title": "OS_NONNULL7",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL7",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull8",
+   "title": "OS_NONNULL8",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL8",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nonnull9",
+   "title": "OS_NONNULL9",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NONNULL9",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_noreturn",
+   "title": "OS_NORETURN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NORETURN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_not_tail_called",
+   "title": "OS_NOT_TAIL_CALLED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NOT_TAIL_CALLED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_nothrow",
+   "title": "OS_NOTHROW",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_NOTHROW",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_objc_independent_class",
+   "title": "OS_OBJC_INDEPENDENT_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJC_INDEPENDENT_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_assume_abi_single_begin",
+   "title": "OS_OBJECT_ASSUME_ABI_SINGLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_ASSUME_ABI_SINGLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_assume_abi_single_end",
+   "title": "OS_OBJECT_ASSUME_ABI_SINGLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_ASSUME_ABI_SINGLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_assume_nonnull_begin",
+   "title": "OS_OBJECT_ASSUME_NONNULL_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_ASSUME_NONNULL_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_assume_nonnull_end",
+   "title": "OS_OBJECT_ASSUME_NONNULL_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_ASSUME_NONNULL_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_bridge",
+   "title": "OS_OBJECT_BRIDGE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_BRIDGE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_class_implements_protocol_impl",
+   "title": "OS_OBJECT_CLASS_IMPLEMENTS_PROTOCOL_IMPL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_CLASS_IMPLEMENTS_PROTOCOL_IMPL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_class_implements_protocol",
+   "title": "OS_OBJECT_CLASS_IMPLEMENTS_PROTOCOL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_CLASS_IMPLEMENTS_PROTOCOL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_class",
+   "title": "OS_OBJECT_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_consumed",
+   "title": "OS_OBJECT_CONSUMED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_CONSUMED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_base",
+   "title": "OS_OBJECT_DECL_BASE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_BASE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_class",
+   "title": "OS_OBJECT_DECL_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_impl_class",
+   "title": "OS_OBJECT_DECL_IMPL_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_IMPL_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_impl",
+   "title": "OS_OBJECT_DECL_IMPL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_IMPL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_protocol",
+   "title": "OS_OBJECT_DECL_PROTOCOL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_PROTOCOL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_sendable_class",
+   "title": "OS_OBJECT_DECL_SENDABLE_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_SENDABLE_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl_subclass",
+   "title": "OS_OBJECT_DECL_SUBCLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL_SUBCLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_decl",
+   "title": "OS_OBJECT_DECL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_DECL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_global_object",
+   "title": "OS_OBJECT_GLOBAL_OBJECT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_GLOBAL_OBJECT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_have_objc_support",
+   "title": "OS_OBJECT_HAVE_OBJC_SUPPORT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_HAVE_OBJC_SUPPORT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_objc_runtime_visible",
+   "title": "OS_OBJECT_OBJC_RUNTIME_VISIBLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_OBJC_RUNTIME_VISIBLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_returns_retained",
+   "title": "OS_OBJECT_RETURNS_RETAINED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_RETURNS_RETAINED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_show_class",
+   "title": "OS_OBJECT_SHOW_CLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_SHOW_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_show_subclass",
+   "title": "OS_OBJECT_SHOW_SUBCLASS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_SHOW_SUBCLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_swift_has_missing_designated_init",
+   "title": "OS_OBJECT_SWIFT_HAS_MISSING_DESIGNATED_INIT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_SWIFT_HAS_MISSING_DESIGNATED_INIT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_swift_sendable",
+   "title": "OS_OBJECT_SWIFT_SENDABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_SWIFT_SENDABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_swift3",
+   "title": "OS_OBJECT_SWIFT3",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_SWIFT3",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_use_objc_retain_release",
+   "title": "OS_OBJECT_USE_OBJC_RETAIN_RELEASE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_USE_OBJC_RETAIN_RELEASE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_use_objc",
+   "title": "OS_OBJECT_USE_OBJC",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_USE_OBJC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_object_warn_unused_result",
+   "title": "OS_OBJECT_WARN_UNUSED_RESULT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OBJECT_WARN_UNUSED_RESULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_options",
+   "title": "OS_OPTIONS",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OPTIONS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_overloadable",
+   "title": "OS_OVERLOADABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_OVERLOADABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_pure",
+   "title": "OS_PURE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_PURE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_refined_for_swift",
+   "title": "OS_REFINED_FOR_SWIFT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_REFINED_FOR_SWIFT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sentinel",
+   "title": "OS_SENTINEL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SENTINEL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sized_by",
+   "title": "OS_SIZED_BY",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SIZED_BY",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_stringify",
+   "title": "OS_STRINGIFY",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_STRINGIFY",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_swift_name",
+   "title": "OS_SWIFT_NAME",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SWIFT_NAME",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_swift_nonisolated_unsafe",
+   "title": "OS_SWIFT_NONISOLATED_UNSAFE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SWIFT_NONISOLATED_UNSAFE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_swift_nonisolated",
+   "title": "OS_SWIFT_NONISOLATED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SWIFT_NONISOLATED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_swift_unavailable_from_async",
+   "title": "OS_SWIFT_UNAVAILABLE_FROM_ASYNC",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SWIFT_UNAVAILABLE_FROM_ASYNC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_swift_unavailable",
+   "title": "OS_SWIFT_UNAVAILABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_SWIFT_UNAVAILABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_call",
+   "title": "OS_TRACE_CALL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_TRACE_CALL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_error",
+   "title": "OS_TRACE_TYPE_ERROR",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_TRACE_TYPE_ERROR",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_type_fault",
+   "title": "OS_TRACE_TYPE_FAULT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_TRACE_TYPE_FAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_uninitialized",
+   "title": "OS_TRACE_UNINITIALIZED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_TRACE_UNINITIALIZED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_transparent_union",
+   "title": "OS_TRANSPARENT_UNION",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_TRANSPARENT_UNION",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_availability",
+   "title": "OS_UNFAIR_LOCK_AVAILABILITY",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_UNFAIR_LOCK_AVAILABILITY",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unsafe_indexable",
+   "title": "OS_UNSAFE_INDEXABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_UNSAFE_INDEXABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unused",
+   "title": "OS_UNUSED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_UNUSED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_used",
+   "title": "OS_USED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_USED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_wait_on_addr_availability",
+   "title": "OS_WAIT_ON_ADDR_AVAILABILITY",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WAIT_ON_ADDR_AVAILABILITY",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_warn_result_needs_release",
+   "title": "OS_WARN_RESULT_NEEDS_RELEASE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WARN_RESULT_NEEDS_RELEASE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_warn_result",
+   "title": "OS_WARN_RESULT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WARN_RESULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_weak_import",
+   "title": "OS_WEAK_IMPORT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WEAK_IMPORT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_weak",
+   "title": "OS_WEAK",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WEAK",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_assume_abi_single_begin",
+   "title": "OS_WORKGROUP_ASSUME_ABI_SINGLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_ASSUME_ABI_SINGLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_assume_abi_single_end",
+   "title": "OS_WORKGROUP_ASSUME_ABI_SINGLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_ASSUME_ABI_SINGLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_assume_nonnull_begin",
+   "title": "OS_WORKGROUP_ASSUME_NONNULL_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_ASSUME_NONNULL_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_assume_nonnull_end",
+   "title": "OS_WORKGROUP_ASSUME_NONNULL_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_ASSUME_NONNULL_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_initializer_default",
+   "title": "OS_WORKGROUP_ATTR_INITIALIZER_DEFAULT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_ATTR_INITIALIZER_DEFAULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_decl",
+   "title": "OS_WORKGROUP_DECL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_DECL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_export",
+   "title": "OS_WORKGROUP_EXPORT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_EXPORT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_initializer",
+   "title": "OS_WORKGROUP_INTERVAL_DATA_INITIALIZER",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_INTERVAL_DATA_INITIALIZER",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_returns_retained",
+   "title": "OS_WORKGROUP_RETURNS_RETAINED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_RETURNS_RETAINED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_subclass_decl_proto",
+   "title": "OS_WORKGROUP_SUBCLASS_DECL_PROTO",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_SUBCLASS_DECL_PROTO",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_subclass_decl",
+   "title": "OS_WORKGROUP_SUBCLASS_DECL",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_SUBCLASS_DECL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_unsafe_indexable",
+   "title": "OS_WORKGROUP_UNSAFE_INDEXABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_UNSAFE_INDEXABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_warn_result",
+   "title": "OS_WORKGROUP_WARN_RESULT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/OS_WORKGROUP_WARN_RESULT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/spi_available_begin",
+   "title": "SPI_AVAILABLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/SPI_AVAILABLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/spi_available_end",
+   "title": "SPI_AVAILABLE_END",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/SPI_AVAILABLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/spi_available",
+   "title": "SPI_AVAILABLE",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/SPI_AVAILABLE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/spi_deprecated_with_replacement",
+   "title": "SPI_DEPRECATED_WITH_REPLACEMENT",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/SPI_DEPRECATED_WITH_REPLACEMENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/spi_deprecated",
+   "title": "SPI_DEPRECATED",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/SPI_DEPRECATED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope",
+   "title": "os_activity_scope",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_activity_scope",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_add3_overflow",
+   "title": "os_add3_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_add3_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_add_and_mul_overflow",
+   "title": "os_add_and_mul_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_add_and_mul_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_add_overflow",
+   "title": "os_add_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_add_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_atomic",
+   "title": "os_atomic",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_atomic",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_atomic_basetypeof",
+   "title": "os_atomic_basetypeof",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_atomic_basetypeof",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_atomic_std-4ge83",
+   "title": "os_atomic_std",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_atomic_std",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_cast_to_atomic_pointer",
+   "title": "os_cast_to_atomic_pointer",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_cast_to_atomic_pointer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_cast_to_nonatomic_pointer",
+   "title": "os_cast_to_nonatomic_pointer",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_cast_to_nonatomic_pointer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_compiler_barrier",
+   "title": "os_compiler_barrier",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_compiler_barrier",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_convert_overflow",
+   "title": "os_convert_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_convert_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_dec_overflow",
+   "title": "os_dec_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_dec_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_inc_overflow",
+   "title": "os_inc_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_inc_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_is_compile_time_constant",
+   "title": "os_is_compile_time_constant",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_is_compile_time_constant",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_sensitive",
+   "title": "os_log_sensitive",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_log_sensitive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_log_sensitive_debug",
+   "title": "os_log_sensitive_debug",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_log_sensitive_debug",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_mul3_overflow",
+   "title": "os_mul3_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_mul3_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_mul_and_add_overflow",
+   "title": "os_mul_and_add_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_mul_and_add_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_mul_overflow",
+   "title": "os_mul_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_mul_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_prevent_tail_call_optimization",
+   "title": "os_prevent_tail_call_optimization",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_prevent_tail_call_optimization",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_release-c.macro",
+   "title": "os_release",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_release",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_retain-c.macro",
+   "title": "os_retain",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_retain",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_animation_interval_begin",
+   "title": "os_signpost_animation_interval_begin",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_signpost_animation_interval_begin",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_signpost_id_make_with_id",
+   "title": "os_signpost_id_make_with_id",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_signpost_id_make_with_id",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sub3_overflow",
+   "title": "os_sub3_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_sub3_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_sub_overflow",
+   "title": "os_sub_overflow",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_sub_overflow",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace",
+   "title": "os_trace",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_debug",
+   "title": "os_trace_debug",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_debug",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_debug_with_payload",
+   "title": "os_trace_debug_with_payload",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_debug_with_payload",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_error",
+   "title": "os_trace_error",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_error",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_error_with_payload",
+   "title": "os_trace_error_with_payload",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_error_with_payload",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_fault",
+   "title": "os_trace_fault",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_fault",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_fault_with_payload",
+   "title": "os_trace_fault_with_payload",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_fault_with_payload",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_info",
+   "title": "os_trace_info",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_info",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_info_with_payload",
+   "title": "os_trace_info_with_payload",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_info_with_payload",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_trace_with_payload",
+   "title": "os_trace_with_payload",
+   "type": "macro",
+   "breadcrumb": "os/os Macros/os_trace_with_payload",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os-data-types",
+   "title": "os Data Types",
+   "type": "collection",
+   "breadcrumb": "os/os Data Types",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_activity",
+   "title": "OS_os_activity",
+   "type": "protocol",
+   "breadcrumb": "os/os Data Types/OS_os_activity",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_os_log",
+   "title": "OS_os_log",
+   "type": "protocol",
+   "breadcrumb": "os/os Data Types/OS_os_log",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_activity_scope_state_s",
+   "title": "os_activity_scope_state_s",
+   "type": "struct",
+   "breadcrumb": "os/os Data Types/os_activity_scope_state_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_unfair_lock_s",
+   "title": "os_unfair_lock_s",
+   "type": "struct",
+   "breadcrumb": "os/os Data Types/os_unfair_lock_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_opaque_s",
+   "title": "os_workgroup_attr_opaque_s",
+   "type": "struct",
+   "breadcrumb": "os/os Data Types/os_workgroup_attr_opaque_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_opaque_s/opaque",
+   "title": "opaque",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_attr_opaque_s/opaque",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_opaque_s/sig",
+   "title": "sig",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_attr_opaque_s/sig",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_opaque_s",
+   "title": "os_workgroup_interval_data_opaque_s",
+   "type": "struct",
+   "breadcrumb": "os/os Data Types/os_workgroup_interval_data_opaque_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_opaque_s/opaque",
+   "title": "opaque",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_interval_data_opaque_s/opaque",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_opaque_s/sig",
+   "title": "sig",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_interval_data_opaque_s/sig",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join_token_opaque_s",
+   "title": "os_workgroup_join_token_opaque_s",
+   "type": "struct",
+   "breadcrumb": "os/os Data Types/os_workgroup_join_token_opaque_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join_token_opaque_s/opaque",
+   "title": "opaque",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_join_token_opaque_s/opaque",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join_token_opaque_s/sig",
+   "title": "sig",
+   "type": "property",
+   "breadcrumb": "os/os Data Types/os_workgroup_join_token_opaque_s/sig",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_attr_s",
+   "title": "os_workgroup_attr_s",
+   "type": "typealias",
+   "breadcrumb": "os/os Data Types/os_workgroup_attr_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_interval_data_s",
+   "title": "os_workgroup_interval_data_s",
+   "type": "typealias",
+   "breadcrumb": "os/os Data Types/os_workgroup_interval_data_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_join_token_s",
+   "title": "os_workgroup_join_token_s",
+   "type": "typealias",
+   "breadcrumb": "os/os Data Types/os_workgroup_join_token_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_mpt_attr_s",
+   "title": "os_workgroup_mpt_attr_s",
+   "type": "typealias",
+   "breadcrumb": "os/os Data Types/os_workgroup_mpt_attr_s",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_lockdown_mode_enabled",
+   "title": "os_lockdown_mode_enabled",
+   "type": "func",
+   "breadcrumb": "os/os_lockdown_mode_enabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_get",
+   "title": "os_security_config_get",
+   "type": "func",
+   "breadcrumb": "os/os_security_config_get",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_get_for_proc",
+   "title": "os_security_config_get_for_proc",
+   "type": "func",
+   "breadcrumb": "os/os_security_config_get_for_proc",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_get_for_task",
+   "title": "os_security_config_get_for_task",
+   "type": "func",
+   "breadcrumb": "os/os_security_config_get_for_task",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted",
+   "title": "API_OBSOLETED",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted_begin",
+   "title": "API_OBSOLETED_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted_end",
+   "title": "API_OBSOLETED_END",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted_with_replacement",
+   "title": "API_OBSOLETED_WITH_REPLACEMENT",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED_WITH_REPLACEMENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted_with_replacement_begin",
+   "title": "API_OBSOLETED_WITH_REPLACEMENT_BEGIN",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED_WITH_REPLACEMENT_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/api_obsoleted_with_replacement_end",
+   "title": "API_OBSOLETED_WITH_REPLACEMENT_END",
+   "type": "macro",
+   "breadcrumb": "os/API_OBSOLETED_WITH_REPLACEMENT_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/log_swift_name",
+   "title": "LOG_SWIFT_NAME",
+   "type": "macro",
+   "breadcrumb": "os/LOG_SWIFT_NAME",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/log_swift_newtype",
+   "title": "LOG_SWIFT_NEWTYPE",
+   "type": "macro",
+   "breadcrumb": "os/LOG_SWIFT_NEWTYPE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_workgroup_enum_api_deprecated_with_replacement",
+   "title": "OS_WORKGROUP_ENUM_API_DEPRECATED_WITH_REPLACEMENT",
+   "type": "macro",
+   "breadcrumb": "os/OS_WORKGROUP_ENUM_API_DEPRECATED_WITH_REPLACEMENT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t",
+   "title": "os_security_config_t",
+   "type": "enum",
+   "breadcrumb": "os/os_security_config_t",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_guard_objects",
+   "title": "OS_SECURITY_CONFIG_GUARD_OBJECTS",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_GUARD_OBJECTS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_hardened_heap",
+   "title": "OS_SECURITY_CONFIG_HARDENED_HEAP",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_HARDENED_HEAP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_mte",
+   "title": "OS_SECURITY_CONFIG_MTE",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_MTE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_none",
+   "title": "OS_SECURITY_CONFIG_NONE",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_NONE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_script_restrictions",
+   "title": "OS_SECURITY_CONFIG_SCRIPT_RESTRICTIONS",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_SCRIPT_RESTRICTIONS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/os/os_security_config_t/os_security_config_tpro",
+   "title": "OS_SECURITY_CONFIG_TPRO",
+   "type": "case",
+   "breadcrumb": "os/os_security_config_t/OS_SECURITY_CONFIG_TPRO",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  }
+ ]
+}

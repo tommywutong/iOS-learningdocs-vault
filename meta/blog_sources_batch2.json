@@ -1,0 +1,229 @@
+{
+  "_readme": [
+    "第三方技术博客归档 —— 第二批源配置。字段含义与 meta/blog_sources.json 完全一致。",
+    "",
+    "单独一个文件是为了避开与第一批的并发写冲突。用法：",
+    "  BLOG_CONFIG=meta/blog_sources_batch2.json python3 tools/blog.py discover|fetch|render <key>",
+    "tools/blog.py 里 CONFIG 支持 BLOG_CONFIG 环境变量覆盖（默认仍读 blog_sources.json）。",
+    "",
+    "本批已按 robots.txt 明确排除、不抓取的源：",
+    "  blog.devtang.com —— robots.txt 里 `User-agent: ClaudeBot / Disallow: /`（Cloudflare",
+    "  Managed content 段），同段还禁了 CCBot / GPTBot / Google-Extended / Applebot-Extended，",
+    "  且 `Content-Signal: ai-train=no`。配置保留在下面仅作留档，discover/fetch 会自动跳过。",
+    "",
+    "engineering.fb.com 是超大站（post-sitemap 共 1089 篇），本项目只取站方自己的 iOS 分类",
+    "（/category/ios/ 共 8 页），不做整站抓取。"
+  ],
+  "sources": [
+    {
+      "key": "objcio",
+      "name": "objc.io",
+      "lang": "en",
+      "homepage": "https://www.objc.io/",
+      "note": "objc.io 期刊 #1–#24 英文原版，149 篇。仓库里已有官方中文版 blogs/zh/objccn/（同为 149 篇），抓下英文原版即可配成「英文原文 + 现成中文译文」，无需翻译。对应关系见 meta/BLOG_BATCH2_REPORT.md。站点无 sitemap.xml（404），/issues/ 单页即含全部 24 期 × 全部文章的链接。",
+      "priority": 1,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "https://www.objc.io/issues/",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/issues/\\d+-[A-Za-z0-9-]+/[A-Za-z0-9_-]+/?$"
+      },
+      "container": "//div[contains(@class,'c-article__body')]",
+      "strip": [],
+      "code_mode": "pre",
+      "license": "未声明（页面无版权声明，文章版权归各作者）→ 仅私有归档",
+      "_discover_probe": "sitemap.xml 404；/issues/ 索引页实测 149 篇文章 + 24 个期号页，为该站可得的最全清单",
+      "_note_container": "//article 会带上「浏览本期」侧栏和 header，c-article__body 才是纯正文",
+      "title_clean": "\\s*[·]\\s*objc\\.io\\s*$"
+    },
+    {
+      "key": "nshipster",
+      "name": "NSHipster (Mattt)",
+      "lang": "en",
+      "homepage": "https://nshipster.com/",
+      "note": "Method Swizzling / Associated Objects / KVO 等经典篇的一手来源。CC BY-NC —— 本批唯一有明确开放授权的源。robots.txt 只有 `User-agent: * / Allow: /`。",
+      "priority": 2,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://nshipster.com/sitemap.xml"
+      },
+      "container": "//article",
+      "strip": [],
+      "code_mode": "auto",
+      "license": "CC BY-NC（页脚明示）→ 可非商业再分发，须署名",
+      "_discover_probe": "实测该端点 209 条（含 13 个 /authors/ 页 + 首页），排除后为文章",
+      "exclude": "/authors/|nshipster\\.com/?$"
+    },
+    {
+      "key": "ciechanowski",
+      "name": "Bartosz Ciechanowski",
+      "lang": "en",
+      "homepage": "https://ciechanow.ski/",
+      "note": "Exposing NSMutableArray / NSDictionary / floating point 三篇是全网罕见的深度拆解；后期转向交互式图形长文（gears、mechanical-watch 等），正文里大量 canvas 交互在 Markdown 里会丢，但文字与代码完整。robots.txt 404（站点返回自定义 404 页），视为无限制。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://ciechanow.ski/sitemap.xml"
+      },
+      "container": "//div[@id='content']",
+      "strip": [
+        ".//div[contains(@class,'post_date')]",
+        ".//div[contains(@class,'patreon')]"
+      ],
+      "code_mode": "pre",
+      "license": "Copyright © Bartosz Ciechanowski（页脚）→ 仅私有归档",
+      "_discover_probe": "实测该端点 28 条，为该站可得的最全清单",
+      "_note_container": "无 article/main，正文在 div#content，必须显式配（guess_container 会先撞上别的）",
+      "exclude": "/(archives|post|extra)/?$|/index\\.html$|ciechanow\\.ski/?$"
+    },
+    {
+      "key": "jessesquires",
+      "name": "Jesse Squires",
+      "lang": "en",
+      "homepage": "https://www.jessesquires.com/",
+      "note": "主线程 watchdog、Xcode/Swift 工程实践。robots.txt 只点名禁 GPTBot，`User-agent: *` 放开，未点名 ClaudeBot / anthropic-ai。",
+      "priority": 4,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://www.jessesquires.com/sitemap.xml"
+      },
+      "container": "//div[contains(@class,'post-content')]",
+      "strip": [],
+      "code_mode": "auto",
+      "license": "© 2014–2026 Jesse Squires → 仅私有归档",
+      "_discover_probe": "实测该端点 502 条，含大量 tags/categories/archive 页，排除后为文章",
+      "exclude": "/blog/(archive|tags|categories|recently-updated)|/(about|apps|contact|hire-me|linkedout|privacy|projects|search|speaking|sponsor|subscribe)/|/blog/?$"
+    },
+    {
+      "key": "emergetools",
+      "name": "Emerge Tools Blog",
+      "lang": "en",
+      "homepage": "https://www.emergetools.com/",
+      "note": "iOS 15 启动优化（chained fixups）、order files、二进制体积。robots.txt 只禁 /private/。站点已并入 Sentry，停更风险高。",
+      "priority": 5,
+      "status": "frozen",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://www.emergetools.com/sitemap.xml"
+      },
+      "container": "//main",
+      "strip": [
+        ".//div[contains(@class,'newsletter')]",
+        ".//section[contains(@class,'newsletter')]"
+      ],
+      "code_mode": "pre",
+      "license": "All rights reserved（页脚明示）→ 严格私有",
+      "_discover_probe": "sitemap 共 38 条，其中 34 条 /blog/posts/；另有 2 条拼接错误的外链（netloc 不匹配，自动剔除）。/blog 索引页只给 13 篇，反而不如 sitemap 全",
+      "exclude": "emergetools\\.com(?!/blog/posts/)"
+    },
+    {
+      "key": "devtang",
+      "name": "唐巧的博客",
+      "lang": "zh",
+      "homepage": "https://blog.devtang.com/",
+      "note": "**已按 robots.txt 跳过，未抓取任何页面。** robots.txt 的 Cloudflare Managed content 段里有 `User-agent: ClaudeBot / Disallow: /`，同时 `Content-Signal: ai-train=no,use=reference`。保留此条目只为让 discover/fetch 每次都重新核验并打印跳过原因。",
+      "priority": 6,
+      "status": "skipped-robots",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://blog.devtang.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "robots.txt 点名禁止 ClaudeBot → 不抓取",
+      "_skip_reason": "robots.txt: User-agent: ClaudeBot / Disallow: /"
+    },
+    {
+      "key": "southpeak",
+      "name": "南峰子 (southpeak)",
+      "lang": "zh",
+      "homepage": "https://southpeak.github.io/",
+      "note": "NSNotificationCenter / Runtime / Foundation 源码级解析。Hexo + NexT 主题，代码用「行号表格」高亮且每行是 <div class=\"line\">（不是常见的 <span class=\"line\">）—— 为此在 tools/html2md.py 的 highlight_code() 里补了 div 分支，否则整块代码会被拼成一行。",
+      "priority": 7,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": [
+          "https://southpeak.github.io/archives/",
+          "https://southpeak.github.io/archives/page/2/",
+          "https://southpeak.github.io/archives/page/3/",
+          "https://southpeak.github.io/archives/page/4/",
+          "https://southpeak.github.io/archives/page/5/",
+          "https://southpeak.github.io/archives/page/6/",
+          "https://southpeak.github.io/archives/page/7/",
+          "https://southpeak.github.io/archives/page/8/",
+          "https://southpeak.github.io/archives/page/9/"
+        ],
+        "link_xpath": "//a/@href",
+        "url_filter": "^/\\d{4}/\\d{2}/\\d{2}/"
+      },
+      "container": "//div[contains(@class,'post-body')]",
+      "strip": [
+        ".//div[contains(@class,'post-copyright')]",
+        ".//div[contains(@class,'reward')]"
+      ],
+      "code_mode": "auto",
+      "license": "© 2017 南峰子（页脚）→ 仅私有归档",
+      "_discover_probe": "无 sitemap.xml / atom.xml / rss.xml（全 404）；/archives/ 每页 10 篇共 9 页，必须逐页翻",
+      "exclude": "/(categories|tags|archives|about|page)/"
+    },
+    {
+      "key": "fbeng",
+      "name": "Meta Engineering — iOS",
+      "lang": "en",
+      "homepage": "https://engineering.fb.com/",
+      "note": "**只取站方自己的 iOS 分类，不做整站抓取。** 全站 post-sitemap 有 1089 篇，绝大多数与移动端无关；/category/ios/ 共 8 页是站方的官方 iOS 分类。robots.txt 为 `User-agent: * / Disallow:`（空值＝全放开），未点名任何 AI 爬虫。",
+      "priority": 8,
+      "status": "active",
+      "discover": {
+        "type": "index",
+        "url": [
+          "https://engineering.fb.com/category/ios/",
+          "https://engineering.fb.com/category/ios/page/2/",
+          "https://engineering.fb.com/category/ios/page/3/",
+          "https://engineering.fb.com/category/ios/page/4/",
+          "https://engineering.fb.com/category/ios/page/5/",
+          "https://engineering.fb.com/category/ios/page/6/",
+          "https://engineering.fb.com/category/ios/page/7/",
+          "https://engineering.fb.com/category/ios/page/8/"
+        ],
+        "link_xpath": "//a/@href",
+        "url_filter": "^/\\d{4}/\\d{2}/\\d{2}/[a-z0-9-]+/[^/]+/?$"
+      },
+      "container": "//div[contains(@class,'entry-content')]",
+      "strip": [
+        ".//div[contains(@class,'sharedaddy')]",
+        ".//div[contains(@class,'wp-block-buttons')]"
+      ],
+      "code_mode": "auto",
+      "license": "© Meta → 仅私有归档",
+      "_discover_probe": "分类页每页 12–15 篇共 8 页；用分类而非整站 sitemap，把 1089 篇收敛到 iOS 相关的几十篇",
+      "exclude": "/(category|tag|author|videos?)/"
+    },
+    {
+      "key": "kreya",
+      "name": "Kreya Blog",
+      "lang": "en",
+      "homepage": "https://kreya.app/",
+      "note": "protobuf wire format 图解两篇（protocolbuffers-wire-format / part-2）是核心价值，其余多为产品更新日志。robots.txt 只有 `User-agent: *` + Sitemap，无 Disallow。",
+      "priority": 9,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://kreya.app/sitemap.xml"
+      },
+      "container": "//div[contains(@class,'markdown')]",
+      "strip": [],
+      "code_mode": "pre",
+      "license": "Copyright © riok GmbH（页脚）→ 仅私有归档",
+      "_discover_probe": "实测该端点 137 条，其中 /blog/ 下约 60 条，其余为产品页/对比页",
+      "exclude": "kreya\\.app(?!/blog/)|/blog/(page|authors|archive|tags|categories)/|kreya\\.app/blog/?$"
+    }
+  ],
+  "git_sources": []
+}

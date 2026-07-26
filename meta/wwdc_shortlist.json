@@ -1,0 +1,3865 @@
+[
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "ObjC runtime 内部数据结构、method list、tagged pointer 的权威一手材料",
+  "id": "10163",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Advancements in the Objective-C runtime",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10163/",
+  "duration": "23:05",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "ObjC 头文件如何被 Swift 导入，桥接层规则",
+  "id": "10680",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Refine Objective-C frameworks for Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10680/",
+  "duration": "42:42",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "值/引用类型、witness table、动态派发的成本模型，至今仍是必读",
+  "id": "416",
+  "collection": "wwdc2016",
+  "year": 2016,
+  "title": "Understanding Swift Performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2016/416/",
+  "duration": "58:22",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Swift 性能心智模型的现代重写版：内存布局、派发、特化",
+  "id": "10217",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Explore Swift performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10217/",
+  "duration": "34:36",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "InlineArray/Span、去分配与去引用计数，语言级性能新范式",
+  "id": "312",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Improve memory usage and performance with Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/312/",
+  "duration": "31:31",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "ARC 的插入规则、生命周期与 withExtendedLifetime，内存管理核心",
+  "id": "10216",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "ARC in Swift: Basics and beyond",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10216/",
+  "duration": "20:42",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "面向协议编程的原始出处，理解 existential 与 witness",
+  "id": "408",
+  "collection": "wwdc2015",
+  "year": 2015,
+  "title": "Protocol-Oriented Programming in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2015/408/",
+  "duration": "45:52",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "把 POP 落到 UIKit 上，值语义实践",
+  "id": "419",
+  "collection": "wwdc2016",
+  "year": 2016,
+  "title": "Protocol and Value Oriented Programming in UIKit Apps",
+  "url": "https://developer.apple.com/videos/play/wwdc2016/419/",
+  "duration": "39:51",
+  "topics": [
+   "Swift",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Swift/ObjC 互操作与桥接的底层规则",
+  "id": "401",
+  "collection": "wwdc2015",
+  "year": 2015,
+  "title": "Swift and Objective-C Interoperability",
+  "url": "https://developer.apple.com/videos/play/wwdc2015/401/",
+  "duration": "35:40",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "泛型的实现原理与特化，理解 Swift 编译期",
+  "id": "406",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Swift Generics (Expanded)",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/406/",
+  "duration": "56:55",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "泛型/existential 的现代表述（any/some）",
+  "id": "110352",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Embrace Swift generics",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110352/",
+  "duration": "27:29",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "协议接口设计与 primary associated type",
+  "id": "110353",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Design protocol interfaces in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110353/",
+  "duration": "25:31",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "parameter packs（变参泛型），语言特性",
+  "id": "10168",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Generalize APIs with parameter packs",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10168/",
+  "duration": "18:24",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "算法与集合抽象的思维方式",
+  "id": "223",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Embracing Algorithms",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/223/",
+  "duration": "40:13",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "类型推断如何工作、为何编译慢",
+  "id": "10165",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Embrace Swift type inference",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10165/",
+  "duration": "20:53",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Swift 指针语义、内存绑定规则",
+  "id": "10167",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Safely manage pointers in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10167/",
+  "duration": "27:31",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Unsafe API 全景，越界与未定义行为边界",
+  "id": "10648",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Unsafe Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10648/",
+  "duration": "22:50",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "noncopyable 类型与所有权模型",
+  "id": "10170",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Consume noncopyable types in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10170/",
+  "duration": "22:21",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Swift API 设计准则，读源码时的判断依据",
+  "id": "415",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Modern Swift API Design",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/415/",
+  "duration": "41:06",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "宏的展开机制（编译期代码生成）",
+  "id": "10166",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Write Swift macros",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10166/",
+  "duration": "33:58",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "宏进阶，理解 SwiftSyntax",
+  "id": "10167",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Expand on Swift macros",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10167/",
+  "duration": "39:43",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Embedded Swift：无 runtime 的 Swift 子集，反向理解 runtime 依赖",
+  "id": "10197",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Go small with Embedded Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10197/",
+  "duration": "22:17",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "C/C++/Swift 混编的 ABI 与内存安全边界",
+  "id": "311",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Safely mix C, C++, and Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/311/",
+  "duration": "32:11",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "Swift 与 C++ 互操作模型",
+  "id": "10172",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Mix Swift and C++",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10172/",
+  "duration": "17:45",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": true,
+  "reason": "二进制框架、module interface 与 ABI 稳定",
+  "id": "416",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Binary Frameworks in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/416/",
+  "duration": "40:32",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "以 SwiftPM 分发二进制框架（XCFramework）",
+  "id": "10147",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Distribute binary frameworks as Swift packages",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10147/",
+  "duration": "7:47",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "版本性 What's New，作时间线索引用",
+  "id": "401",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "What's New in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/401/",
+  "duration": "37:29",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "402",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "What's New in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/402/",
+  "duration": "36:44",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "10170",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "What's new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10170/",
+  "duration": "32:19",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "10192",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "What‘s new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10192/",
+  "duration": "32:45",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "110354",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "What's new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110354/",
+  "duration": "38:16",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "10164",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "What’s new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10164/",
+  "duration": "43:07",
+  "topics": [
+   "Developer Tools",
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "10136",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "What’s new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10136/",
+  "duration": "30:24",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上",
+  "id": "245",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "What’s new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/245/",
+  "duration": "38:10",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "A · ObjC/Swift runtime 与语言实现",
+  "evergreen": false,
+  "reason": "同上（最新）",
+  "id": "262",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "What’s new in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/262/",
+  "duration": "32:45",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "内存足迹、脏内存/压缩内存、图片解码真实成本，经典必读",
+  "id": "416",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "iOS Memory Deep Dive",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/416/",
+  "duration": "51:28",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "Memory Graph、泄漏与循环引用的系统诊断法",
+  "id": "10180",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Detect and diagnose memory issues",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10180/",
+  "duration": "29:26",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "堆内存分析的现代工具链与判读方法",
+  "id": "10173",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Analyze heap memory",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10173/",
+  "duration": "33:03",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "游戏视角的内存剖析，讲到分配器与常驻内存",
+  "id": "10106",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Profile and optimize your game's memory",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10106/",
+  "duration": "38:26",
+  "topics": [
+   "Graphics & Games"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "内存完整性强制（MIE）——硬件级内存安全，底层新知识",
+  "id": "206",
+  "collection": "meet-with-apple",
+  "year": null,
+  "title": "Secure your app with Memory Integrity Enforcement",
+  "url": "https://developer.apple.com/videos/play/meet-with-apple/206/",
+  "duration": "12:21",
+  "topics": [
+   "Developer Tools",
+   "Swift",
+   "Privacy & Security"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "包体积与运行时性能的取舍（含 ObjC/Swift 元数据成本）",
+  "id": "110363",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Improve app size and runtime performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110363/",
+  "duration": "14:28",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "存储占用与缓存/清理策略",
+  "id": "419",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Optimizing Storage in Your App",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/419/",
+  "duration": "37:49",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "B · 内存管理与内存性能",
+  "evergreen": true,
+  "reason": "资源与图片资产的内存/体积成本",
+  "id": "227",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Optimizing App Assets",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/227/",
+  "duration": "46:45",
+  "topics": [
+   "SwiftUI & UI Frameworks",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "GCD 队列模型、线程爆炸与同步原语，理解调度的起点",
+  "id": "720",
+  "collection": "wwdc2016",
+  "year": 2016,
+  "title": "Concurrent Programming With GCD in Swift 3",
+  "url": "https://developer.apple.com/videos/play/wwdc2016/720/",
+  "duration": "35:41",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "QoS、优先级反转、队列层次——GCD 最深的一场",
+  "id": "706",
+  "collection": "wwdc2017",
+  "year": 2017,
+  "title": "Modernizing Grand Central Dispatch Usage",
+  "url": "https://developer.apple.com/videos/play/wwdc2017/706/",
+  "duration": "54:37",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "Swift 并发运行时如何实现：协作线程池、continuation、无线程爆炸",
+  "id": "10254",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Swift concurrency: Behind the scenes",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10254/",
+  "duration": "39:18",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "async/await 的语义与挂起点",
+  "id": "10132",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Meet async/await in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10132/",
+  "duration": "33:39",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "actor 隔离与可重入，理解锁的替代方案",
+  "id": "10133",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Protect mutable state with Swift actors",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10133/",
+  "duration": "28:32",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "结构化并发、任务树与取消传播",
+  "id": "10134",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Explore structured concurrency in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10134/",
+  "duration": "27:54",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "AsyncSequence 基础",
+  "id": "10058",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Meet AsyncSequence",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10058/",
+  "duration": "14:21",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "把回调式代码迁到并发的实战",
+  "id": "10194",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Swift concurrency: Update a sample app",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10194/",
+  "duration": "61:00",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "用 Instruments 看并发运行时行为（可视化调度）",
+  "id": "110350",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Visualize and optimize Swift concurrency",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110350/",
+  "duration": "24:38",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "Sendable 与数据竞争的静态消除模型",
+  "id": "110351",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Eliminate data races using Swift Concurrency",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110351/",
+  "duration": "28:54",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "Async Algorithms 库",
+  "id": "110355",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Meet Swift Async Algorithms",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110355/",
+  "duration": "13:01",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "任务组、优先级、取消的进阶语义",
+  "id": "10170",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Beyond the basics of structured concurrency",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10170/",
+  "duration": "24:22",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "Swift 6 严格并发迁移路径与隔离模型",
+  "id": "10169",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Migrate your app to Swift 6",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10169/",
+  "duration": "41:48",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "并发心智模型的最新统一表述",
+  "id": "268",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Embracing Swift concurrency",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/268/",
+  "duration": "28:01",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "SwiftUI 中的并发与主 actor",
+  "id": "266",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Explore concurrency in SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/266/",
+  "duration": "24:55",
+  "topics": [
+   "SwiftUI & UI Frameworks",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "SwiftUI 并发早期版本",
+  "id": "10019",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Discover concurrency in SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10019/",
+  "duration": "22:54",
+  "topics": [
+   "Swift",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": true,
+  "reason": "Core Data 的并发上下文模型",
+  "id": "10017",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Bring Core Data concurrency to Swift and SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10017/",
+  "duration": "27:04",
+  "topics": [
+   "Swift",
+   "SwiftUI & UI Frameworks",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "Network 框架的结构化并发用法",
+  "id": "250",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Use structured concurrency with Network framework",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/250/",
+  "duration": "21:10",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "C · 并发、锁与线程",
+  "evergreen": false,
+  "reason": "Swift 实验室问答，含并发疑难（时效性一般）",
+  "id": "8001",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Swift Group Lab",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/8001/",
+  "duration": "61:17",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "最接近 RunLoop 讲解的一场：渲染循环各阶段与 hitch 定义",
+  "id": "10855",
+  "collection": "tech-talks",
+  "year": null,
+  "title": "Explore UI animation hitches and the render loop",
+  "url": "https://developer.apple.com/videos/play/tech-talks/10855/",
+  "duration": "11:54",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "commit 阶段（布局/绘制/提交）卡顿的成因",
+  "id": "10856",
+  "collection": "tech-talks",
+  "year": null,
+  "title": "Find and fix hitches in the commit phase",
+  "url": "https://developer.apple.com/videos/play/tech-talks/10856/",
+  "duration": "11:22",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "render 阶段（GPU 合成）卡顿的成因",
+  "id": "10857",
+  "collection": "tech-talks",
+  "year": null,
+  "title": "Demystify and eliminate hitches in the render phase",
+  "url": "https://developer.apple.com/videos/play/tech-talks/10857/",
+  "duration": "19:24",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "hang 的分类、主线程阻塞源与消除方法",
+  "id": "10258",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Understand and eliminate hangs from your app",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10258/",
+  "duration": "24:24",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "设备端 hang 检测与 Xcode 联动",
+  "id": "10082",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Track down hangs with Xcode and on-device detection",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10082/",
+  "duration": "17:13",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "用 Instruments 逐帧定位 hang，方法论极强",
+  "id": "10248",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Analyze hangs with Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10248/",
+  "duration": "42:52",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "用 XCTest 把动画卡顿变成可回归的指标",
+  "id": "10077",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Eliminate animation hitches with XCTest",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10077/",
+  "duration": "13:45",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": false,
+  "reason": "响应性问题的最新工具流程",
+  "id": "268",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Profile, fix, and verify: Improve app responsiveness with Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/268/",
+  "duration": "26:43",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "性能问题的总体分类与排查顺序（总纲）",
+  "id": "10181",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Ultimate application performance survival guide",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10181/",
+  "duration": "24:00",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "性能优化的通用方法论，老但不过时",
+  "id": "407",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Practical Approaches to Great App Performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/407/",
+  "duration": "50:21",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "D · 响应性、hang/hitch 与渲染循环（RunLoop 的现代替身）",
+  "evergreen": true,
+  "reason": "可变刷新率与帧预算，理解 ProMotion 下的时序",
+  "id": "10147",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Optimize for variable refresh rate displays",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10147/",
+  "duration": "23:20",
+  "topics": [
+   "Graphics & Games"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "SwiftUI 的身份、依赖图与 body 求值时机——框架原理",
+  "id": "10022",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Demystify SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10022/",
+  "duration": "40:17",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "SwiftUI 性能的因果模型：依赖过宽、结构性身份",
+  "id": "10160",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Demystify SwiftUI performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10160/",
+  "duration": "21:48",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "容器与 ViewBuilder 的展开机制",
+  "id": "10146",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Demystify SwiftUI containers",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10146/",
+  "duration": "18:12",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "SwiftUI 性能的 Instruments 实操",
+  "id": "306",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Optimize SwiftUI performance with Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/306/",
+  "duration": "35:36",
+  "topics": [
+   "Swift",
+   "SwiftUI & UI Frameworks",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "列表/集合视图性能：预取、cell 复用、diffable",
+  "id": "10252",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Make blazing fast lists and collection views",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10252/",
+  "duration": "22:30",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "UICollectionView 结构与布局体系",
+  "id": "225",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "A Tour of UICollectionView",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/225/",
+  "duration": "40:22",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "Compositional Layout 的布局求值模型",
+  "id": "215",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in Collection View Layout",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/215/",
+  "duration": "50:13",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "Diffable Data Source 与一致性快照",
+  "id": "220",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in UI Data Sources",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/220/",
+  "duration": "36:15",
+  "topics": [
+   "System Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "UICollectionView 列表化",
+  "id": "10026",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Lists in UICollectionView",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10026/",
+  "duration": "16:54",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "UICollectionView 增强",
+  "id": "10097",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Advances in UICollectionView",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10097/",
+  "duration": "9:55",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "TextKit 1 的排版流水线",
+  "id": "221",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "TextKit Best Practices",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/221/",
+  "duration": "37:55",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "TextKit 2 的视口化布局，排版性能原理",
+  "id": "10061",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Meet TextKit 2",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10061/",
+  "duration": "41:04",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "TextKit 与文本视图更新",
+  "id": "10090",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "What's new in TextKit and text views",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10090/",
+  "duration": "24:04",
+  "topics": [
+   "Essentials",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "TextKit 最新形态",
+  "id": "370",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Elevate your app’s text experience with TextKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/370/",
+  "duration": "23:46",
+  "topics": [
+   "App Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "UIKit trait 系统与失效/重解析机制",
+  "id": "10057",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Unleash the UIKit trait system",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10057/",
+  "duration": "29:50",
+  "topics": [
+   "App Services",
+   "Essentials",
+   "System Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "UIKit 年度更新（含性能项）",
+  "id": "10055",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "What’s new in UIKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10055/",
+  "duration": "31:18",
+  "topics": [
+   "App Services",
+   "System Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "SwiftUI 动画的插值与事务模型",
+  "id": "10156",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Explore SwiftUI animation",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10156/",
+  "duration": "30:01",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "弹簧动画的物理参数，理解交互动画",
+  "id": "10158",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Animate with springs",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10158/",
+  "duration": "22:52",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "滚动视图的底层行为与几何",
+  "id": "10159",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Beyond scroll views",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10159/",
+  "duration": "14:46",
+  "topics": [
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "惰性栈与滚动的按需构建机制",
+  "id": "321",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Dive into lazy stacks and scrolling with SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/321/",
+  "duration": "21:10",
+  "topics": [
+   "Design",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "SwiftUI 图形效果与合成",
+  "id": "322",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Compose advanced graphics effects with SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/322/",
+  "duration": "17:55",
+  "topics": [
+   "Design",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": false,
+  "reason": "SwiftUI 中 Canvas/绘制",
+  "id": "10021",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Add rich graphics to your SwiftUI app",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10021/",
+  "duration": "23:56",
+  "topics": [
+   "Graphics & Games",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "E · UIKit/SwiftUI 渲染与 UI 性能",
+  "evergreen": true,
+  "reason": "流体界面背后的交互物理与响应性哲学，长期有效",
+  "id": "803",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Designing Fluid Interfaces",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/803/",
+  "duration": "64:41",
+  "topics": [
+   "Design"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Xcode 构建系统全流程：编译、链接、任务图（学习计划已选）",
+  "id": "415",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Behind the Scenes of the Xcode Build Process",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/415/",
+  "duration": "57:33",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "启动阶段拆解：dyld、初始化器、首帧（学习计划已选）",
+  "id": "423",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Optimizing App Launch",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/423/",
+  "duration": "43:18",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "静态链接器与 dyld 的现代实现、chained fixups（学习计划已选）",
+  "id": "110362",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Link fast: Improve build and launch times",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110362/",
+  "duration": "31:09",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Xcode 构建并行化与依赖图，构建耗时根因",
+  "id": "110364",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Demystify parallelization in Xcode builds",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110364/",
+  "duration": "25:15",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "mergeable libraries：动静态库的合并链接，dyld 关键演进",
+  "id": "10268",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Meet mergeable libraries",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10268/",
+  "duration": "26:15",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "显式模块构建，理解 Clang/Swift 模块缓存",
+  "id": "10171",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Demystify explicitly built modules",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10171/",
+  "duration": "15:28",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "构建加速与增量编译原理",
+  "id": "408",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Building Faster in Xcode",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/408/",
+  "duration": "39:48",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Clang/LLVM 年度进展，编译器视角",
+  "id": "409",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "What's New in Clang and LLVM",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/409/",
+  "duration": "41:03",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Apple silicon 系统架构：内存/页/指针认证/Rosetta",
+  "id": "10686",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Explore the new system architecture of Apple silicon Macs",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10686/",
+  "duration": "23:16",
+  "topics": [
+   "Developer Tools",
+   "System Services"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Mach-O 通用二进制、架构迁移的实际问题",
+  "id": "10214",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Port your Mac app to Apple silicon",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10214/",
+  "duration": "40:44",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": false,
+  "reason": "iOS 应用跑在 macOS 的二进制与环境差异",
+  "id": "10114",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "iPad and iPhone apps on Apple silicon Macs",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10114/",
+  "duration": "17:29",
+  "topics": [
+   "Developer Tools",
+   "App Store, Distribution & Marketing"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "符号化原理：dSYM、UUID、地址还原——崩溃分析基础",
+  "id": "10211",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Symbolication: Beyond the basics",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10211/",
+  "duration": "37:20",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "SwiftPM 的依赖解析与构建模型",
+  "id": "411",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Getting to Know Swift Package Manager",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/411/",
+  "duration": "36:38",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": false,
+  "reason": "Xcode 中采用 SwiftPM",
+  "id": "408",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Adopting Swift Packages in Xcode",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/408/",
+  "duration": "33:24",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": false,
+  "reason": "创建 Swift 包",
+  "id": "410",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Creating Swift Packages",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/410/",
+  "duration": "31:05",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": false,
+  "reason": "包插件（构建期代码生成）",
+  "id": "110359",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Meet Swift Package plugins",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110359/",
+  "duration": "15:27",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "Xcode 工程配置进阶：xcconfig、target 依赖，构建系统实操",
+  "id": "10210",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Explore advanced project configuration in Xcode",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10210/",
+  "duration": "25:37",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": true,
+  "reason": "依赖的数字签名校验，二进制信任链",
+  "id": "10061",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Verify app dependencies with digital signatures",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10061/",
+  "duration": "17:05",
+  "topics": [
+   "App Services",
+   "Essentials",
+   "System Services",
+   "Privacy & Security"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "F · Mach-O / dyld / 编译链接 / 启动优化",
+  "evergreen": false,
+  "reason": "公证流程（macOS 分发）",
+  "id": "703",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "All About Notarization",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/703/",
+  "duration": "33:40",
+  "topics": [
+   "Developer Tools",
+   "App Store, Distribution & Marketing"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "LLDB 表达式求值、断点动作，调试能力天花板",
+  "id": "412",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Advanced Debugging with Xcode and LLDB",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/412/",
+  "duration": "53:41",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "崩溃日志的结构、信号与异常类型判读",
+  "id": "414",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Understanding Crashes and Crash Logs",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/414/",
+  "duration": "57:17",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "LLDB 基础机制",
+  "id": "402",
+  "collection": "wwdc2015",
+  "year": 2015,
+  "title": "What's New in LLDB",
+  "url": "https://developer.apple.com/videos/play/wwdc2015/402/",
+  "duration": "38:37",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "ASan 原理（影子内存），内存错误检测底层",
+  "id": "413",
+  "collection": "wwdc2015",
+  "year": 2015,
+  "title": "Advanced Debugging and the Address Sanitizer",
+  "url": "https://developer.apple.com/videos/play/wwdc2015/413/",
+  "duration": "33:52",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "LLDB 数据格式化与自定义命令",
+  "id": "429",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "LLDB: Beyond \"po\"",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/429/",
+  "duration": "20:44",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "Swift 调试信息如何生成与丢失，反射与类型元数据",
+  "id": "110370",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Debug Swift debugging with LLDB",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/110370/",
+  "duration": "20:04",
+  "topics": [
+   "Developer Tools",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "LLDB 现代工作流",
+  "id": "10198",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Run, Break, Inspect: Explore effective debugging in LLDB",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10198/",
+  "duration": "28:48",
+  "topics": [
+   "Swift",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "断点新特性",
+  "id": "10209",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Discover breakpoint improvements",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10209/",
+  "duration": "12:34",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "os_log/signpost 的低开销日志原理",
+  "id": "405",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Measuring Performance Using Logging",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/405/",
+  "duration": "35:25",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "Swift 日志与隐私修饰符",
+  "id": "10168",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Explore logging in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10168/",
+  "duration": "17:23",
+  "topics": [
+   "Privacy & Security",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "结构化日志与调试联动",
+  "id": "10226",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Debug with structured logging",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10226/",
+  "duration": "13:42",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "System Trace：系统调用、线程状态、VM 事件——最底层的一场",
+  "id": "411",
+  "collection": "wwdc2016",
+  "year": 2016,
+  "title": "System Trace in Depth",
+  "url": "https://developer.apple.com/videos/play/wwdc2016/411/",
+  "duration": "37:18",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "Instruments 入门",
+  "id": "411",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Getting Started with Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/411/",
+  "duration": "34:54",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "自定义 Instruments 与 signpost 建模",
+  "id": "410",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Creating Custom Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/410/",
+  "duration": "55:40",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "Instruments 建模语言进阶",
+  "id": "421",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Modeling in Custom Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/421/",
+  "duration": "37:42",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "性能分析体验设计",
+  "id": "414",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Developing a Great Profiling Experience",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/414/",
+  "duration": "39:04",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "CPU 性能剖析（采样、调用树、微架构视角）",
+  "id": "308",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Optimize CPU performance with Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/308/",
+  "duration": "32:59",
+  "topics": [
+   "AI & Machine Learning",
+   "Graphics & Games",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "Xcode Organizer 的现场性能指标",
+  "id": "10076",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Diagnose performance issues with the Xcode Organizer",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10076/",
+  "duration": "11:07",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "MetricKit：线上性能与崩溃数据的采集",
+  "id": "10081",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "What's new in MetricKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10081/",
+  "duration": "13:45",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "MetricKit 最新形态",
+  "id": "222",
+  "collection": "wwdc2026",
+  "year": 2026,
+  "title": "Meet the new MetricKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2026/222/",
+  "duration": "17:43",
+  "topics": [
+   "Developer Tools",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "TestFlight 崩溃三角定位",
+  "id": "10203",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Triage TestFlight crashes in Xcode Organizer",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10203/",
+  "duration": "15:27",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "功耗/性能回归诊断",
+  "id": "10087",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Diagnose Power and Performance regressions in your app",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10087/",
+  "duration": "15:30",
+  "topics": [
+   "App Store, Distribution & Marketing",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "电量与性能的因果关系，CPU/唤醒/网络成本",
+  "id": "417",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Improving Battery Life and Performance",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/417/",
+  "duration": "39:33",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "电量优化实操",
+  "id": "10083",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Power down: Improve battery consumption",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10083/",
+  "duration": "18:57",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "功耗剖析最新工具",
+  "id": "226",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Profile and optimize power usage in your app",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/226/",
+  "duration": "19:43",
+  "topics": [
+   "System Services",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": true,
+  "reason": "静态分析器原理与误报判读",
+  "id": "10202",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Detect bugs early with the static analyzer",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10202/",
+  "duration": "9:13",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "G · 调试、崩溃与 Instruments",
+  "evergreen": false,
+  "reason": "Instruments 中的 HTTP 追踪",
+  "id": "10212",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Analyze HTTP traffic in Instruments",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10212/",
+  "duration": "33:57",
+  "topics": [
+   "Privacy & Security",
+   "System Services",
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "Core Data 栈结构、上下文与批处理，长期有效",
+  "id": "224",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Core Data Best Practices",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/224/",
+  "duration": "34:26",
+  "topics": [
+   "Developer Tools",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "Core Data 细节与陷阱集合",
+  "id": "10017",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Core Data: Sundries and maxims",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10017/",
+  "duration": "17:27",
+  "topics": [
+   "Developer Tools",
+   "SwiftUI & UI Frameworks",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "模型迁移机制（轻量/重量迁移）",
+  "id": "10120",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Evolve your Core Data schema",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10120/",
+  "duration": "19:51",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "Core Data + CloudKit 同步优化",
+  "id": "10119",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Optimize your use of Core Data and CloudKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10119/",
+  "duration": "26:21",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "Core Data 年度更新",
+  "id": "10186",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "What’s new in Core Data",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10186/",
+  "duration": "23:23",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "Core Data 与 CloudKit 集成",
+  "id": "202",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Using Core Data With CloudKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/202/",
+  "duration": "31:49",
+  "topics": [
+   "SwiftUI & UI Frameworks",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "SwiftData 入门",
+  "id": "10187",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Meet SwiftData",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10187/",
+  "duration": "8:52",
+  "topics": [
+   "Essentials",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "SwiftData 的底层：ModelContext、持久化后端",
+  "id": "10196",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Dive deeper into SwiftData",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10196/",
+  "duration": "15:35",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "SwiftData 年度更新",
+  "id": "10137",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "What’s new in SwiftData",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10137/",
+  "duration": "14:01",
+  "topics": [
+   "App Services",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "自定义数据存储后端，看清 SwiftData 抽象层",
+  "id": "10138",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Create a custom data store with SwiftData",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10138/",
+  "duration": "13:52",
+  "topics": [
+   "App Services",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "历史追踪（change history）机制",
+  "id": "10075",
+  "collection": "wwdc2024",
+  "year": 2024,
+  "title": "Track model changes with SwiftData history",
+  "url": "https://developer.apple.com/videos/play/wwdc2024/10075/",
+  "duration": "16:52",
+  "topics": [
+   "App Services",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "继承与 schema 迁移",
+  "id": "291",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "SwiftData: Dive into inheritance and schema migration",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/291/",
+  "duration": "19:08",
+  "topics": [
+   "App Services",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "APFS：快照、克隆、空间共享——文件系统底层",
+  "id": "710",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "What's New in Apple File Systems",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/710/",
+  "duration": "34:07",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "文件管理与 Quick Look",
+  "id": "719",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "What’s New in File Management and Quick Look",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/719/",
+  "duration": "23:55",
+  "topics": [
+   "SwiftUI & UI Frameworks",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "iOS 存储行为与清理机制",
+  "id": "204",
+  "collection": "tech-talks",
+  "year": null,
+  "title": "iOS Storage Best Practices",
+  "url": "https://developer.apple.com/videos/play/tech-talks/204/",
+  "duration": "8:53",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "verified",
+  "subtitles": [
+   "english",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "可续传文件传输，涉及 URLSession 后台机制",
+  "id": "10006",
+  "collection": "wwdc2023",
+  "year": 2023,
+  "title": "Build robust and resumable file transfers",
+  "url": "https://developer.apple.com/videos/play/wwdc2023/10006/",
+  "duration": "20:39",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": false,
+  "reason": "FileProvider 云同步",
+  "id": "10182",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "Sync files to the cloud with FileProvider on macOS",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10182/",
+  "duration": "17:49",
+  "topics": [
+   "App Services",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "SwiftUI 数据流的所有权模型",
+  "id": "10040",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Data Essentials in SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10040/",
+  "duration": "36:15",
+  "topics": [
+   "Swift",
+   "System Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "Foundation 更新（AttributedString、格式化）",
+  "id": "10109",
+  "collection": "wwdc2021",
+  "year": 2021,
+  "title": "What's new in Foundation",
+  "url": "https://developer.apple.com/videos/play/wwdc2021/10109/",
+  "duration": "37:35",
+  "topics": [
+   "Essentials",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "H · 持久化与文件系统",
+  "evergreen": true,
+  "reason": "Foundation 底层进展（Unicode、Data）",
+  "id": "723",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in Foundation",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/723/",
+  "duration": "15:54",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "Network.framework 设计：连接状态机、替代 socket",
+  "id": "715",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Introducing Network.framework: A modern alternative to Sockets",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/715/",
+  "duration": "61:43",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "网络栈进阶第一部分，TCP/TLS/多路径",
+  "id": "712",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in Networking, Part 1",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/712/",
+  "duration": "56:58",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "网络栈进阶第二部分，协议与性能",
+  "id": "713",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in Networking, Part 2",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/713/",
+  "duration": "61:25",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "现代网络条件下的连接与延迟成本",
+  "id": "714",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Optimizing Your App for Today’s Internet",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/714/",
+  "duration": "38:11",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "现代网络 API 的性能与安全默认值",
+  "id": "10111",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Boost performance and security with modern networking",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10111/",
+  "duration": "13:42",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "后台执行模型：任务类型、预算、调度器——系统机制核心",
+  "id": "707",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Advances in App Background Execution",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/707/",
+  "duration": "39:07",
+  "topics": [
+   "Developer Tools"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "后台任务的现代 API 与生命周期",
+  "id": "227",
+  "collection": "wwdc2025",
+  "year": 2025,
+  "title": "Finish tasks in the background",
+  "url": "https://developer.apple.com/videos/play/wwdc2025/227/",
+  "duration": "18:38",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "brazilian portuguese",
+   "english",
+   "french",
+   "japanese",
+   "korean",
+   "latin american spanish",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": false,
+  "reason": "SwiftUI 中的后台任务",
+  "id": "10142",
+  "collection": "wwdc2022",
+  "year": 2022,
+  "title": "Efficiency awaits: Background tasks in SwiftUI",
+  "url": "https://developer.apple.com/videos/play/wwdc2022/10142/",
+  "duration": "12:49",
+  "topics": [
+   "App Services",
+   "SwiftUI & UI Frameworks"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "korean",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "System Extensions/DriverKit：用户态驱动与进程隔离",
+  "id": "702",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "System Extensions and DriverKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/702/",
+  "duration": "37:01",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": false,
+  "reason": "DriverKit 驱动移植",
+  "id": "10210",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Modernize PCI and SCSI drivers with DriverKit",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10210/",
+  "duration": "36:53",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "Accelerate 与 SIMD，向量化与微架构",
+  "id": "701",
+  "collection": "wwdc2018",
+  "year": 2018,
+  "title": "Using Accelerate and simd",
+  "url": "https://developer.apple.com/videos/play/wwdc2018/701/",
+  "duration": "36:48",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": false,
+  "reason": "Swift 版 Accelerate",
+  "id": "718",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Introducing Accelerate for Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/718/",
+  "duration": "20:59",
+  "topics": [
+   "System Services",
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": false,
+  "reason": "Swift 数值计算",
+  "id": "10217",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Explore numerical computing in Swift",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10217/",
+  "duration": "15:24",
+  "topics": [
+   "Swift"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "Combine 的发布者/订阅者与背压模型",
+  "id": "722",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Introducing Combine",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/722/",
+  "duration": "18:52",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "Combine 操作符组合实践",
+  "id": "721",
+  "collection": "wwdc2019",
+  "year": 2019,
+  "title": "Combine in Practice",
+  "url": "https://developer.apple.com/videos/play/wwdc2019/721/",
+  "duration": "34:41",
+  "topics": [
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "yes"
+ },
+ {
+  "group": "I · 系统服务、进程与安全底层",
+  "evergreen": true,
+  "reason": "Endpoint Security：内核事件订阅，系统监控底层",
+  "id": "10159",
+  "collection": "wwdc2020",
+  "year": 2020,
+  "title": "Build an Endpoint Security app",
+  "url": "https://developer.apple.com/videos/play/wwdc2020/10159/",
+  "duration": "41:35",
+  "topics": [
+   "Privacy & Security",
+   "System Services"
+  ],
+  "has_transcript": "assumed",
+  "subtitles": [
+   "english",
+   "japanese",
+   "simplified chinese"
+  ],
+  "slides_pdf": "no"
+ }
+]

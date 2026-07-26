@@ -1,0 +1,986 @@
+{
+ "key": "nshipster",
+ "count": 196,
+ "articles": [
+  {
+   "url": "https://nshipster.com/replay/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/manim/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/isolated-any/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uncertainty/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/model-context-protocol/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ollama/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/1password-cli/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/as-we-may-code/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/wwdc-2020/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cross-pollination/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/contact-tracing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-log/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcconfig/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/callable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/rawrepresentable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/at-compiler-directives/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/direct/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/available/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/bless/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/keyvaluepairs/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/secrets/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/message-id/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/device-identifiers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/metrickit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swiftui-previews/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ios-13/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/apns-device-tokens/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/dark-mode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/identifiable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/accessibility-keyboard/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/formatter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/caemitterlayer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uistackview/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/propertywrapper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/wwdc-2019/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-format/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/image-resizing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/optional-throws-result-async-await/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cggeometry/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/guided-access/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uitableviewheaderfooterview/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcode-source-extensions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-foundation-error-protocols/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/mapkit-js/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/javascriptcore/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-api-pollution/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-regular-expressions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/expressiblebystringinterpolation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/textoutputstream/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-sh/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/import/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/bundles-and-packages/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/character-viewer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/homebrew/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/simctl/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/vscode/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/customplaygrounddisplayconvertible/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/language-server-protocol/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/void/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swiftsyntax/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/numericcast/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/timeinterval-date-dateinterval/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/macos-dynamic-desktop/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uifieldbehavior/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ios-12/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cmmotionactivity/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsdataasset/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-property-observers/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/hashable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nllanguagerecognizer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/never/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uitextinputpasswordrules/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/bug-reporting/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-gyb/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-8/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uitextchecker/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/new-years-2016/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/guard-and-defer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uikeycommand/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cloudkit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ios9/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-7/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/mirror/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcplayground/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-documentation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/unmanaged/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/quick-look-debugging/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nscalendar-additions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsscanner/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ibinspectable-ibdesignable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-objc-runtime/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/new-years-2015/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsundomanager/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/apple-pay/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/watchkit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uiprintinteractioncontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/core-location-in-ios-8/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uisplitviewcontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cmdevicemotion/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/inter-process-communication/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-system-version-checking/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uialertcontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/equatable-and-comparable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/optionset/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-default-protocol-implementations/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/wkwebview/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-literals/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/swift-operators/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xctestcase/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsoperation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ios8/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-6/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cocoapods/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/benchmarking/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-5/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ibaction-iboutlet-iboutletcollection/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/mkgeodesicpolyline/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uiactivityviewcontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcode-plugins/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/configuration-profiles/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/avspeechsynthesizer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsurl/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/empathy/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/dictionary-services/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/temporary-files/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/namespacing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/method-swizzling/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/associated-objects/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/mktileoverlay-mkmapsnapshotter-mkdirections/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/stewardship/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/extended-file-attributes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsrange/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/new-years-2014/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/launch-options/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/multipeer-connectivity/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsnotification-and-nsnotificationcenter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/filemanager/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-4/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/launch-arguments-and-environment-variables/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nserror/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/key-value-observing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcode-key-bindings-and-gestures/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ios7/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/network-link-conditioner/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/xcode-snippets/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/equality/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshashtable-and-nsmaptable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/random/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/objective-c-documentation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-3/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uimenucontroller/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nspredicate/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsexpression/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/enumerators/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uuid-udid-unique-identifier/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/object-subscripting/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsdatadetector/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/unit-testing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nscoding/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/mklocalsearch/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nshipster-quiz-1/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nssecurecoding/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/bool/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/icloud/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/search-kit/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/c-storage-classes/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uiappearance/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsassertionhandler/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsurlcache/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/type-encodings/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsvalue/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nslocalizedstring/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/__attribute__/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nil/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/new-years-2013/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/instancetype/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/kvc-collection-operators/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsorderedset/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/ns_enum-ns_options/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/valuetransformer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsurlprotocol/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uilocalizedindexedcollation/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nslinguistictagger/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/addressbookui/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/pragma/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uicollectionview/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/characterset/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/uiaccessibility/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/locale/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cfbag/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/cfstringtransform/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/datecomponents/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nssortdescriptor/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nscache/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://nshipster.com/nsindexset/",
+   "title": "",
+   "date": ""
+  }
+ ]
+}

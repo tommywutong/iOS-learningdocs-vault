@@ -1,0 +1,901 @@
+{
+ "key": "belkadan",
+ "count": 179,
+ "articles": [
+  {
+   "url": "https://belkadan.com/blog/2026/07/What-I-Didnt-Know-About-Jury-Duty/",
+   "title": "What I Didn't Know About Jury Duty",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/personal",
+   "title": "Personal",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2026/03/YAML-Is-Not-My-Preferred-Configuration-Format/",
+   "title": "YAML is (not) my preferred configuration format",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/technical",
+   "title": "Technical",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/encoding",
+   "title": "Encoding",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2025/11/Whats-in-a-Button/",
+   "title": "What's in a Button?",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/user-experience",
+   "title": "User experience",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/rant",
+   "title": "Rant",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2025/04/SICPelago/",
+   "title": "SICPelago",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2025/01/ROSE-8-in-customasm/",
+   "title": "ROSE-8 in customasm",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2025/01/Pretty-Good-Pretty-Good/",
+   "title": "“Pretty Good, Pretty Good”",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/12/The-Shell-is-a-Program/",
+   "title": "The Shell is a Program",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/07/Trunic/",
+   "title": "Trunic",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/07/AnyObject/",
+   "title": "AnyObject",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/04/XZ-Gon-Give-It-To-Ya/",
+   "title": "XZ Gon' Give It To Ya",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/04/Run-time-Polymorphism-in-Swift/",
+   "title": "Run-time Polymorphism in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/01/Online-Communication/",
+   "title": "Online Communication",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024/01/The-Biggest-Smallest-PNG/",
+   "title": "The Biggest Smallest PNG",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/12/CellLVM/",
+   "title": "CellLVM",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/12/Protobuf-Is-Almost-Streamable/",
+   "title": "Protobuf Is Almost Streamable",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/12/Daylight-Saving-Is-Temporal-Time-Zones/",
+   "title": "Daylight Saving Is Temporal Time Zones",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/11/GitMounter/",
+   "title": "GitMounter",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/10/Type-Erasure-in-Rust/",
+   "title": "Type Erasure in Rust",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/10/Soft-Orders-of-Magnitude/",
+   "title": "Soft Orders of Magnitude",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/10/Implicity-Atomic/",
+   "title": "There's No Such Thing As \"Implicitly Atomic\"",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/08/Multiplayer-Slipways/",
+   "title": "Multiplayer Slipways",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/07/Magic-Constants-in-C/",
+   "title": "HOW TO REFER TO A MAGIC CONSTANT IN C",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/04/SNaNs-and-QNaNs/",
+   "title": "sNaNs and qNaNs",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/02/Setting-up-GoToSocial/",
+   "title": "Setting up GoToSocial",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023/01/Rescuing-Files-with-Swift/",
+   "title": "Rescuing Files From Classic Mac OS...with Swift!",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/12/Re-Twitter/",
+   "title": "Re: Twitter",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/11/Codable-Serde/",
+   "title": "The Two Faces of Codable/Serde",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/10/Swift-in-the-OS/",
+   "title": "Swift was always going to be part of the OS",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/05/ARM64-Relative-References/",
+   "title": "Relative References in ARM64 Disassembly",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/04/Default-Arguments-and-Label-based-Overloading/",
+   "title": "Default Arguments and Label-based Overloading",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/03/TalkPay/",
+   "title": "#TalkPay",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/03/UnsafeMutableRawBufferPointer/",
+   "title": "UnsafeMutableRawBufferPointer",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022/02/Dynamic-Linking-and-Static-Linking/",
+   "title": "Dynamic Linking Is Bad For Apps And Static Linking Is Also Bad For Apps",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2021/12/Swift-Regrets-Wrap-up/",
+   "title": "Swift Regrets: Wrap-up",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2021/09/Swift-Regrets/",
+   "title": "Swift Regrets",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2021/07/Keyboard-Pants/",
+   "title": "Keyboard Pants",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/11/Negotiate-Your-Offers/",
+   "title": "Negotiate Your Offers!",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/10/Swift-Runtime-Enums/",
+   "title": "The Swift Runtime: Enums",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/10/Swift-Runtime-Class-Metadata-Initialization/",
+   "title": "The Swift Runtime: Class Metadata Initialization",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/09/Swift-Runtime-Class-Metadata/",
+   "title": "The Swift Runtime: Class Metadata",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/09/Swift-Runtime-Uniquing-Caches/",
+   "title": "The Swift Runtime: Uniquing Caches",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/",
+   "title": "The Swift Runtime: Type Metadata",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/",
+   "title": "The Swift Runtime: Type Layout",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/",
+   "title": "The Swift Runtime: Heap Objects",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/08/Objective-Rust/",
+   "title": "Objective-Rust",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/07/On-the-DHS-in-Portland/",
+   "title": "A Letter To My Congressional Representatives on the DHS Abuses of Power in Portland, Oregon",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/07/Suffusion/",
+   "title": "Suffusion: Playing with Filesystems",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/",
+   "title": "ROSE-8 on Mac OS 9",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/04/Shallow-Git-Repositories/",
+   "title": "Shallow Git Repositories",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/",
+   "title": "Swift on Mac OS 9",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/02/Flexible-Identities-in-git/",
+   "title": "Flexible Identities in git",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/02/ROSE-8-Game-by-Color/",
+   "title": "Introducing the Game 'by Color",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/01/ROSE-8-Console/",
+   "title": "ROSE-8: Console Mode",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/",
+   "title": "Setting up gitweb on Shared Hosting",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020/01/ROSE-8/",
+   "title": "ROSE-8",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/12/Quasiquarantine/",
+   "title": "quasiquarantine",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/11/Leaving-Apple/",
+   "title": "Leaving Apple",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/09/Queue-Queeu-Quuee/",
+   "title": "Queue, Queeu, Quuee",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/09/Presentation-on-PrintAsObjC/",
+   "title": "Presentation on PrintAsObjC",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/08/go-east/",
+   "title": "> go east",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019/02/A-Shiny-Magic-Number/",
+   "title": "A Shiny Magic Number",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/04/Misleading-Metrics/",
+   "title": "Misleading Metrics and UX Tradeoffs",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/04/FIXME/",
+   "title": "\"FIXME\" Doesn't Always Mean \"Fix Me\"",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/03/My-Little-String-Optimization-2/",
+   "title": "My Little (String) Optimization, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/03/My-Little-Optimization/",
+   "title": "My Little Optimization: The Compiler Is Magic",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/02/Many-to-Many-Protocols/",
+   "title": "Many-to-Many Protocols",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018/01/Color-Palette-8/",
+   "title": "Color Palette #8",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2017/09/The-New-Kingdom-of-Nouns/",
+   "title": "The New Kingdom of Nouns",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2017/09/Over-abstraction/",
+   "title": "Over-abstraction",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016/08/Macromancy-2/",
+   "title": "Macromancy, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016/08/Macromancy/",
+   "title": "Macromancy",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016/06/Pronoun-Buttons/",
+   "title": "Pronoun Buttons",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016/05/Webmailer-Update-Bar/",
+   "title": "Webmailer's Update Bar",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/",
+   "title": "So You Want to Be a (Compiler) Wizard",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015/12/Re-Contempt-Culture/",
+   "title": "Re: Contempt Culture",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015/11/Recommendations/",
+   "title": "Recommendations",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015/05/Nibblesort/",
+   "title": "Nibblesort: Adventures in Optimization",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015/02/AlterConf/",
+   "title": "AlterConf SF/Oakland",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015/01/Skip-the-FFI/",
+   "title": "“Skip the FFI”",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2014/12/SIGWINCH/",
+   "title": "SIGWINCH",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2012/12/How-to-Write-a-Checker/",
+   "title": "How to Write a Checker in 24 Hours",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2012/10/Git-Tricks/",
+   "title": "Git Tricks",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2012/05/Big-News/",
+   "title": "Big News",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2012/04/Keyboard-Adventures/",
+   "title": "Keyboard Adventures",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/freebies/Mail-Aliases/",
+   "title": "Mail Aliases",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/freebies/Header-Anchors/",
+   "title": "Header Anchors: A Safari Extension",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/08/Little-Big-Details/",
+   "title": "\"Little Big Details\"",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/07/Weak-Linking/",
+   "title": "Weak Linking",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/07/Using-Clang-from-SVN-in-Xcode/",
+   "title": "Using Clang from SVN in Xcode",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/07/rm-vs-Time-Machine/",
+   "title": "rm vs. Time Machine",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/07/Priorities/",
+   "title": "Priorities",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/Quick-Look-in-TextMate/",
+   "title": "Quick Look in TextMate",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/git-add/",
+   "title": "git add",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/Automatic-Reference-Counting/",
+   "title": "Automatic Reference Counting",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/Sandwich-Code/",
+   "title": "Dealing with \"Sandwich Code\"",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/Gdba/",
+   "title": "gdba",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/06/Chrome-vs-Safari/",
+   "title": "Chrome vs. Safari",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/05/User-Side-Troubleshooting/",
+   "title": "User-Side Troubleshooting",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011/05/Auspicious-Continuation/",
+   "title": "Auspicious Continuation",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/07/Scripting-Bridge/",
+   "title": "Scripting Bridge",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/07/What-Happened-to-Dockyard/",
+   "title": "What Happened to Dockyard?",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/06/Garbage-Collectors-and-Stack-Drawers/",
+   "title": "Garbage Collectors and Stack Drawers",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/06/Z-shell/",
+   "title": "Z shell",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/05/Several-New-Features/",
+   "title": "“Several New Features”",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/05/C-plus-plus-Templates-are-Turing-Complete/",
+   "title": "C++ Templates are Turing-Complete",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/04/Meme--How-Many-HTML-Elements-Can-You-Name/",
+   "title": "[Meme] How Many HTML Elements Can You Name in 5 Minutes?",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/04/Safer-Plugin-Categories/",
+   "title": "Safer Plugin Categories",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/04/Hacking-Safari-4-for-Great-Convenience/",
+   "title": "Hacking Safari 4...for Great Convenience",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/03/Const-Correctness/",
+   "title": "Const Correctness",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/03/Categories-and-load/",
+   "title": "Categories and +load",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/03/Subversion-Checksum-Problems/",
+   "title": "Subversion Checksum Problems",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009/03/JavaScript-Tetris/",
+   "title": "JavaScript Tetris",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2008/09/Objective-J-and-Objective-C/",
+   "title": "Objective-J and Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2008/08/HTTPS-and-Name-based-Virtual-Hosting/",
+   "title": "HTTPS and Name-based Virtual Hosting",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2008/03/Alerts-Without-Apps/",
+   "title": "Alerts Without Apps (or nibs)",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2008/01/NSNumber-CFNumber-and-CFBoolean/",
+   "title": "NSNumber, CFNumber, and CFBoolean",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/12/GenericToolbar-and-IB3/",
+   "title": "GenericToolbar and IB3",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/10/Performance-Optimization-Why-We-Cannot-Use-valueForKeyPath/",
+   "title": "Performance Optimization: Why We Can't Use valueForKeyPath:",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/09/Short-Xcode-Tip-on-Plugins/",
+   "title": "Short Xcode Tip: Plugins",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/07/Port-25-Blocked/",
+   "title": "Port 25 Blocked?",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/06/GenericToolbar-Icon/",
+   "title": "GenericToolbar Icon",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/04/Symbolism-of-Pretty-URLs/",
+   "title": "The Symbolism of Pretty URLS",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/03/Flexible-PHP/",
+   "title": "Flexible PHP",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007/01/Inauspicious-Beginnings/",
+   "title": "Inauspicious Beginnings",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/atom",
+   "title": "Main",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/everything",
+   "title": "Everything",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2026/07",
+   "title": "July 2026",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2026/03",
+   "title": "March 2026",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2025",
+   "title": "Posts from 2025",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2024",
+   "title": "Posts from 2024",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2023",
+   "title": "Posts from 2023",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2022",
+   "title": "Posts from 2022",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2021",
+   "title": "Posts from 2021",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2020",
+   "title": "Posts from 2020",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2019",
+   "title": "Posts from 2019",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2018",
+   "title": "Posts from 2018",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2017",
+   "title": "Posts from 2017",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2016",
+   "title": "Posts from 2016",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2015",
+   "title": "Posts from 2015",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2014",
+   "title": "Posts from 2014",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2012",
+   "title": "Posts from 2012",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2011",
+   "title": "Posts from 2011",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2009",
+   "title": "Posts from 2009",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2008",
+   "title": "Posts from 2008",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/2007",
+   "title": "Posts from 2007",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/freebies",
+   "title": "Freebies",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/apache",
+   "title": "Apache",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/apple",
+   "title": "Apple",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/assembly",
+   "title": "Assembly",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/cxx",
+   "title": "C++",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/cocoa",
+   "title": "Cocoa",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/compilers",
+   "title": "Compilers",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/diversity-in-tech",
+   "title": "Diversity in tech",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/filesystems",
+   "title": "Filesystems",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/games",
+   "title": "Games",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/git",
+   "title": "Git",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/humor",
+   "title": "Humor",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/llvm",
+   "title": "LLVM",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/mac-os-classic",
+   "title": "Mac OS Classic",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/mac-os-x",
+   "title": "Mac OS X",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/meta",
+   "title": "Meta",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/objective-c",
+   "title": "Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/programming-languages",
+   "title": "Programming languages",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/rose-8",
+   "title": "ROSE-8",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/running-a-website",
+   "title": "Running a website",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/rust",
+   "title": "Rust",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/social-media-import",
+   "title": "Social media import",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/source-code",
+   "title": "Source code",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/swift",
+   "title": "Swift",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/swift-regrets",
+   "title": "Swift regrets",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/swift-runtime",
+   "title": "Swift runtime",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/tech-industry",
+   "title": "Tech industry",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags/unix",
+   "title": "Unix",
+   "date": ""
+  },
+  {
+   "url": "https://belkadan.com/blog/tags",
+   "title": "(see all tags)",
+   "date": ""
+  }
+ ]
+}

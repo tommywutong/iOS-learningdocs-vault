@@ -1,0 +1,876 @@
+{
+ "archive": "backgroundtasks",
+ "included": [
+  "com.apple.backgroundtasks"
+ ],
+ "page_count": 67,
+ "longform_count": 7,
+ "pages": [
+  {
+   "path": "/documentation/backgroundtasks",
+   "title": "Background Tasks",
+   "type": "module",
+   "breadcrumb": "Background Tasks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/updates/backgroundtasks",
+   "title": "Background Tasks updates",
+   "type": "article",
+   "breadcrumb": "Background Tasks/Background Tasks updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler",
+   "title": "BGTaskScheduler",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGTaskScheduler",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/shared",
+   "title": "class var shared: BGTaskScheduler",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/class var shared: BGTaskScheduler",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/supportedresources",
+   "title": "class var supportedResources: BGContinuedProcessingTaskRequest.Resources",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/class var supportedResources: BGContinuedProcessingTaskRequest.Resources",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/register(fortaskwithidentifier:using:launchhandler:)",
+   "title": "func register(forTaskWithIdentifier: String, using: dispatch_queue_t?, launchHandler: (BGTask) -> Void) -> Bool",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func register(forTaskWithIdentifier: String, using: dispatch_queue_t?, launchHandler: (BGTask) -> Void) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/submit(_:)",
+   "title": "func submit(BGTaskRequest) throws",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func submit(BGTaskRequest) throws",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/cancel(taskrequestwithidentifier:)",
+   "title": "func cancel(taskRequestWithIdentifier: String)",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func cancel(taskRequestWithIdentifier: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/cancelalltaskrequests()",
+   "title": "func cancelAllTaskRequests()",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func cancelAllTaskRequests()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/getpendingtaskrequests(completionhandler:)",
+   "title": "func getPendingTaskRequests(completionHandler: ([BGTaskRequest]) -> Void)",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func getPendingTaskRequests(completionHandler: ([BGTaskRequest]) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error",
+   "title": "BGTaskScheduler.Error",
+   "type": "struct",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code",
+   "title": "BGTaskScheduler.Error.Code",
+   "type": "enum",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code/notpermitted",
+   "title": "case notPermitted",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code/case notPermitted",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code/toomanypendingtaskrequests",
+   "title": "case tooManyPendingTaskRequests",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code/case tooManyPendingTaskRequests",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code/unavailable",
+   "title": "case unavailable",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code/case unavailable",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code/immediaterunineligible",
+   "title": "case immediateRunIneligible",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code/case immediateRunIneligible",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/code/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/BGTaskScheduler.Error.Code/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/notpermitted",
+   "title": "static var notPermitted: BGTaskScheduler.Error.Code",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/static var notPermitted: BGTaskScheduler.Error.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/toomanypendingtaskrequests",
+   "title": "static var tooManyPendingTaskRequests: BGTaskScheduler.Error.Code",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/static var tooManyPendingTaskRequests: BGTaskScheduler.Error.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/unavailable",
+   "title": "static var unavailable: BGTaskScheduler.Error.Code",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/static var unavailable: BGTaskScheduler.Error.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/errordomain",
+   "title": "static var errorDomain: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/static var errorDomain: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/error/immediaterunineligible",
+   "title": "static var immediateRunIneligible: BGTaskScheduler.Error.Code",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/BGTaskScheduler.Error/static var immediateRunIneligible: BGTaskScheduler.Error.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/errordomain",
+   "title": "class let errorDomain: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/class let errorDomain: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskscheduler/submittaskrequest(_:completionhandler:)",
+   "title": "func submitTaskRequest(BGTaskRequest, completionHandler: ((any Error)?) -> Void)",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTaskScheduler/func submitTaskRequest(BGTaskRequest, completionHandler: ((any Error)?) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtask",
+   "title": "BGTask",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGTask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtask/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTask/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtask/expirationhandler",
+   "title": "var expirationHandler: (() -> Void)?",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTask/var expirationHandler: (() -> Void)?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtask/settaskcompleted(success:)",
+   "title": "func setTaskCompleted(success: Bool)",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGTask/func setTaskCompleted(success: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uikit/using-background-tasks-to-update-your-app",
+   "title": "Using background tasks to update your app",
+   "type": "article",
+   "breadcrumb": "Background Tasks/Using background tasks to update your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/refreshing-and-maintaining-your-app-using-background-tasks",
+   "title": "Refreshing and Maintaining Your App Using Background Tasks",
+   "type": "sampleCode",
+   "breadcrumb": "Background Tasks/Refreshing and Maintaining Your App Using Background Tasks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/choosing-background-strategies-for-your-app",
+   "title": "Choosing Background Strategies for Your App",
+   "type": "article",
+   "breadcrumb": "Background Tasks/Choosing Background Strategies for Your App",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgprocessingtask",
+   "title": "BGProcessingTask",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGProcessingTask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgapprefreshtask",
+   "title": "BGAppRefreshTask",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGAppRefreshTask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bghealthresearchtask",
+   "title": "BGHealthResearchTask",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGHealthResearchTask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/performing-long-running-tasks-on-ios-and-ipados",
+   "title": "Performing long-running tasks on iOS and iPadOS",
+   "type": "article",
+   "breadcrumb": "Background Tasks/Performing long-running tasks on iOS and iPadOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtask",
+   "title": "BGContinuedProcessingTask",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTask",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtask/title",
+   "title": "var title: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTask/var title: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtask/subtitle",
+   "title": "var subtitle: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTask/var subtitle: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtask/updatetitle(_:subtitle:)",
+   "title": "func updateTitle(String, subtitle: String)",
+   "type": "method",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTask/func updateTitle(String, subtitle: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/entitlements/com.apple.developer.background-tasks.continued-processing.gpu",
+   "title": "Background GPU Access",
+   "type": "typealias",
+   "breadcrumb": "Background Tasks/Background GPU Access",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgprocessingtaskrequest",
+   "title": "BGProcessingTaskRequest",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGProcessingTaskRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgprocessingtaskrequest/init(identifier:)",
+   "title": "init(identifier: String)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGProcessingTaskRequest/init(identifier: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgprocessingtaskrequest/requiresexternalpower",
+   "title": "var requiresExternalPower: Bool",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGProcessingTaskRequest/var requiresExternalPower: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgprocessingtaskrequest/requiresnetworkconnectivity",
+   "title": "var requiresNetworkConnectivity: Bool",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGProcessingTaskRequest/var requiresNetworkConnectivity: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgapprefreshtaskrequest",
+   "title": "BGAppRefreshTaskRequest",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGAppRefreshTaskRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgapprefreshtaskrequest/init(identifier:)",
+   "title": "init(identifier: String)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGAppRefreshTaskRequest/init(identifier: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskrequest",
+   "title": "BGTaskRequest",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGTaskRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskrequest/earliestbegindate",
+   "title": "var earliestBeginDate: Date?",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskRequest/var earliestBeginDate: Date?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgtaskrequest/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGTaskRequest/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bghealthresearchtaskrequest",
+   "title": "BGHealthResearchTaskRequest",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGHealthResearchTaskRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bghealthresearchtaskrequest/protectiontypeofrequireddata",
+   "title": "var protectionTypeOfRequiredData: NSString",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGHealthResearchTaskRequest/var protectionTypeOfRequiredData: NSString",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest",
+   "title": "BGContinuedProcessingTaskRequest",
+   "type": "class",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/init(identifier:title:subtitle:)",
+   "title": "init(identifier: String, title: String, subtitle: String)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/init(identifier: String, title: String, subtitle: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/requiredresources",
+   "title": "var requiredResources: BGContinuedProcessingTaskRequest.Resources",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/var requiredResources: BGContinuedProcessingTaskRequest.Resources",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/resources",
+   "title": "BGContinuedProcessingTaskRequest.Resources",
+   "type": "struct",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.Resources",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/resources/gpu",
+   "title": "static var gpu: BGContinuedProcessingTaskRequest.Resources",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.Resources/static var gpu: BGContinuedProcessingTaskRequest.Resources",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/resources/init(rawvalue:)",
+   "title": "init(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.Resources/init(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/strategy",
+   "title": "var strategy: BGContinuedProcessingTaskRequest.SubmissionStrategy",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/var strategy: BGContinuedProcessingTaskRequest.SubmissionStrategy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/submissionstrategy",
+   "title": "BGContinuedProcessingTaskRequest.SubmissionStrategy",
+   "type": "enum",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.SubmissionStrategy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/submissionstrategy/fail",
+   "title": "case fail",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.SubmissionStrategy/case fail",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/submissionstrategy/queue",
+   "title": "case queue",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.SubmissionStrategy/case queue",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/submissionstrategy/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequest.SubmissionStrategy/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/subtitle",
+   "title": "var subtitle: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/var subtitle: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequest/title",
+   "title": "var title: String",
+   "type": "property",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/var title: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/starting-and-terminating-tasks-during-development",
+   "title": "Starting and Terminating Tasks During Development",
+   "type": "article",
+   "breadcrumb": "Background Tasks/Starting and Terminating Tasks During Development",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bgcontinuedprocessingtaskrequestresources/bgcontinuedprocessingtaskrequestresourcesdefault",
+   "title": "BGContinuedProcessingTaskRequestResourcesDefault",
+   "type": "case",
+   "breadcrumb": "Background Tasks/BGContinuedProcessingTaskRequest/BGContinuedProcessingTaskRequestResources/BGContinuedProcessingTaskRequestResourcesDefault",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/backgroundtasks/bg_extern",
+   "title": "BG_EXTERN",
+   "type": "macro",
+   "breadcrumb": "Background Tasks/BG_EXTERN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  }
+ ]
+}

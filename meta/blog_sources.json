@@ -1,0 +1,474 @@
+{
+  "_readme": [
+    "第三方技术博客归档的源配置。每个源一条，字段含义：",
+    "  lang        原文语言。en → 归档英文原文 + 中文译文；zh → 只归档中文原文",
+    "  discover    文章清单从哪来：feed（RSS/Atom）/ sitemap / index（解析索引页）",
+    "  container   正文容器的 XPath。用 `python3 tools/blog.py probe <key> <url>` 探出来",
+    "  strip       正文里要剔掉的样板（导航、分享条、作者简介）的 XPath，相对 container",
+    "  code_mode   pre（标准 <pre>）/ crayon（WordPress Crayon 插件）/ auto",
+    "  license     授权状况，直接影响能不能公开。未声明一律按「保留所有权利」处理",
+    "  status      frozen（已停更，优先抢救）/ active",
+    "",
+    "已按 robots.txt 明确排除、不抓取的源：",
+    "  massicotte.org  —— robots.txt 点名 Disallow ClaudeBot / anthropic-ai / GPTBot / CCBot",
+    "  casatwy.com     —— 同上",
+    "  这两个站只能人工按需保存单页，不跑爬虫。"
+  ],
+  "sources": [
+    {
+      "key": "sealiesoftware",
+      "name": "Hamster Emporium (Greg Parker)",
+      "lang": "en",
+      "homepage": "http://sealiesoftware.com/blog/",
+      "note": "ObjC runtime 一手源头（non-pointer isa、objc_msgSend、tagged pointer）。HTTPS 已彻底失效只能走 HTTP，消失风险全清单最高，优先级第一。",
+      "priority": 1,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "http://sealiesoftware.com/blog/archive/",
+        "link_xpath": "//a/@href",
+        "url_filter": "/blog/archive/"
+      },
+      "container": "//body",
+      "strip": [
+        ".//p[contains(., '| archive |')]",
+        ".//img[contains(@src,'sealie.gif')]",
+        ".//a[contains(@href,'mailto')]",
+        ".//hr"
+      ],
+      "code_mode": "auto",
+      "license": "未声明 → 保守视为保留所有权利，仅私有归档",
+      "_discover_probe": "实测该端点 39 条，为该站可得的最全清单",
+      "_note_container": "2013 年的 table 布局老站，无 article/content 容器；转换器已能识别布局 table 并递归",
+      "title_clean": "^Hamster Emporium:\\s*"
+    },
+    {
+      "key": "mikeash",
+      "name": "mikeash.com Friday Q&A",
+      "lang": "en",
+      "homepage": "https://www.mikeash.com/pyblog/",
+      "note": "用户学习计划里引用 24 次，最多。ObjC runtime/内存/并发的圣经级连载，冻结在 2018。feed 只有摘要+20 条，必须走索引页。",
+      "priority": 1,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "https://www.mikeash.com/pyblog/",
+        "link_xpath": "//a/@href",
+        "url_filter": "/pyblog/"
+      },
+      "container": "//div[@id='content']",
+      "strip": [
+        "./p[1]",
+        ".//a[contains(@href,'rss.py')]/ancestor::p[1]"
+      ],
+      "code_mode": "pre",
+      "license": "未声明 → 仅私有归档",
+      "exclude": "(rss\\.py|/pyblog/$)"
+    },
+    {
+      "key": "cocoawithlove",
+      "name": "Cocoa with Love (Matt Gallagher)",
+      "lang": "en",
+      "homepage": "https://www.cocoawithlove.com/",
+      "note": "经典 Cocoa/ObjC 深度文章，已冻结。页脚明写 All rights reserved —— 绝不可公开。",
+      "priority": 2,
+      "status": "frozen",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://www.cocoawithlove.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "All rights reserved（页脚明示）→ 严格私有",
+      "_discover_probe": "实测该端点 266 条，为该站可得的最全清单",
+      "exclude": "/(tags?|categories|about|index)"
+    },
+    {
+      "key": "alwaysprocessing",
+      "name": "Always Processing (Brian T. Kelley)",
+      "lang": "en",
+      "homepage": "https://alwaysprocessing.blog/",
+      "note": "2022-2023 的 ObjC/C++ ABI 底层系列，实测已停更于 2024-01。用户计划引用 8 次。feed 只有 10 条，需走索引页。",
+      "priority": 2,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "https://alwaysprocessing.blog/all/posts",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/\\d{4}/"
+      },
+      "container": "//article",
+      "strip": [
+        ".//a[contains(@href,'/about/')]/ancestor::*[self::p or self::div][1]"
+      ],
+      "code_mode": "pre",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "改用全量索引页（首页/feed 只给最近几篇）"
+    },
+    {
+      "key": "belkadan",
+      "name": "Belkadan (Jordan Rose, 前 Swift 编译器工程师)",
+      "lang": "en",
+      "homepage": "https://belkadan.com/blog/",
+      "note": "The Swift Runtime 八篇是最系统的 Swift 元数据资料，仍活跃。无 feed 无 sitemap，/blog/ 单页含全量倒序索引。",
+      "priority": 1,
+      "status": "active",
+      "discover": {
+        "type": "index",
+        "url": "https://belkadan.com/blog/",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/blog/"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "Copyright 2012–2020 Jordan Rose → 仅私有归档",
+      "exclude": "/blog/\\.\\.|/blog/$"
+    },
+    {
+      "key": "worthdoingbadly",
+      "name": "worthdoingbadly (Zhuowei Zhang)",
+      "lang": "en",
+      "homepage": "https://worthdoingbadly.com/",
+      "note": "iOS 内部机制与逆向。feed 和 sitemap 都有，抓取容易。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://worthdoingbadly.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 48 条，为该站可得的最全清单",
+      "exclude": "/assets/"
+    },
+    {
+      "key": "saagarjha",
+      "name": "Saagar Jha",
+      "lang": "en",
+      "homepage": "https://saagarjha.com/",
+      "note": "Apple 平台底层、Rosetta、逆向。CC BY-SA 4.0 —— 注意：译文作为衍生作品也必须以 BY-SA 发布。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://saagarjha.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名",
+      "_discover_probe": "实测该端点 29 条，为该站可得的最全清单",
+      "exclude": "/(talks|about|projects)/"
+    },
+    {
+      "key": "oleb",
+      "name": "Ole Begemann",
+      "lang": "en",
+      "homepage": "https://oleb.net/",
+      "note": "Swift 语言细节与标准库内部。实测中位 780 词，翻译成本低。/feed 是全文 Atom。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "index",
+        "url": "https://oleb.net/blog/",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/blog/.+"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 367 条，为该站可得的最全清单"
+    },
+    {
+      "key": "lowlevelbits",
+      "name": "Low Level Bits (Alex Denisov)",
+      "lang": "en",
+      "homepage": "https://lowlevelbits.org/",
+      "note": "LLVM / 编译器内部，成系列。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://lowlevelbits.org/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "© 2014-2025 → 仅私有归档",
+      "_discover_probe": "实测该端点 242 条，为该站可得的最全清单",
+      "exclude": "/(consultancy|contract|about|talks|tags?|categories)/"
+    },
+    {
+      "key": "maskray",
+      "name": "MaskRay (宋方睿)",
+      "lang": "en",
+      "homepage": "https://maskray.me/",
+      "note": "链接器/ELF/符号解析，极系统。对理解 Mach-O 链接有强迁移价值。robots 全放开。",
+      "priority": 3,
+      "status": "active",
+      "discover": {
+        "type": "index",
+        "url": "https://maskray.me/blog/archives/",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/blog/\\d{4}"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "改用全量索引页（首页/feed 只给最近几篇）"
+    },
+    {
+      "key": "ibireme",
+      "name": "ibireme (郭曜源)",
+      "lang": "zh",
+      "homepage": "https://blog.ibireme.com/",
+      "note": "《深入理解 RunLoop》《保持界面流畅》《不再安全的 OSSpinLock》。技术文止于 2016-01，没有 GitHub 源仓库，RSS 只剩最近几篇 —— 中文源里最紧急、只能爬 HTML。用 Crayon 插件，代码要从 textarea 取。",
+      "priority": 1,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "https://blog.ibireme.com/archive/",
+        "link_xpath": "//a/@href",
+        "url_filter": "blog\\.ibireme\\.com/\\d{4}/\\d{2}/\\d{2}/"
+      },
+      "container": "//div[contains(@class,'entry-content')]",
+      "strip": [
+        ".//div[contains(@class,'et_post_meta_wrapper')]"
+      ],
+      "code_mode": "crayon",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 61 条，为该站可得的最全清单"
+    },
+    {
+      "key": "onevcat",
+      "name": "onevcat (王巍/喵神)",
+      "lang": "zh",
+      "homepage": "https://onevcat.com/",
+      "note": "中文圈质量标杆，仍活跃。**唯一明示 CC BY 4.0 的中文源**，可再分发（须署名+原文链接）。feed/atom/sitemap 全有。",
+      "priority": 1,
+      "status": "active",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://onevcat.com/sitemap.xml"
+      },
+      "container": "//div[contains(@class,'post-content')]",
+      "strip": [],
+      "code_mode": "auto",
+      "license": "CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接",
+      "_discover_probe": "实测该端点 498 条，为该站可得的最全清单",
+      "exclude": "/(about|tags?|categories|archives?|links|search)/"
+    },
+    {
+      "key": "leichunfeng",
+      "name": "雷纯锋",
+      "lang": "zh",
+      "homepage": "https://leichunfeng.github.io/",
+      "note": "MVVM、UIViewController 生命周期（经典）。冻结在 2017-02，只有 18 篇，atom.xml 是全文，最好抓。",
+      "priority": 2,
+      "status": "frozen",
+      "discover": {
+        "type": "feed",
+        "url": "https://leichunfeng.github.io/atom.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档"
+    },
+    {
+      "key": "yulingtianxia",
+      "name": "杨萧玉",
+      "lang": "zh",
+      "homepage": "https://yulingtianxia.com/",
+      "note": "《Objective-C Method Swizzling》《App Order Files》（二进制重排的真正一手源，优于各种转述文）+ BlockHook 系列。停更于 2022-12。",
+      "priority": 2,
+      "status": "frozen",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://yulingtianxia.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 121 条，为该站可得的最全清单",
+      "exclude": "/(about|tags?|categories|archives?)/"
+    },
+    {
+      "key": "sunnyxx",
+      "name": "sunnyxx (孙源)",
+      "lang": "zh",
+      "homepage": "https://blog.sunnyxx.com/",
+      "note": "《重识 ObjC Runtime》《Class Ivar Layout 探索》《ARC 对 self 的内存管理》。冻结于 2016-08。",
+      "priority": 2,
+      "status": "frozen",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://blog.sunnyxx.com/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 51 条，为该站可得的最全清单"
+    },
+    {
+      "key": "dirtmelon",
+      "name": "dirtmelon",
+      "lang": "zh",
+      "homepage": "https://dirtmelon.github.io/",
+      "note": "FBAllocationTracker / Aspects / ObjC Direct Methods（引用 LLVM commit，一手）。停更于 2022-01。也有 GitHub 源仓库可 clone。",
+      "priority": 3,
+      "status": "frozen",
+      "discover": {
+        "type": "sitemap",
+        "url": "https://dirtmelon.github.io/sitemap.xml"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "未声明 → 仅私有归档",
+      "_discover_probe": "实测该端点 73 条，为该站可得的最全清单"
+    },
+    {
+      "key": "objccn",
+      "name": "ObjC 中国 (objccn.io)",
+      "lang": "zh",
+      "homepage": "https://objccn.io/",
+      "note": "objc.io 期刊 #1–#24 的官方中文版，约 120 篇现成译文 —— 等于免费拿到 objc.io 的中文版，直接省掉翻译成本。robots.txt 和 sitemap 都是 404，需逐期枚举索引页。",
+      "priority": 1,
+      "status": "frozen",
+      "discover": {
+        "type": "index",
+        "url": "https://objccn.io/issues/",
+        "link_xpath": "//a/@href",
+        "url_filter": "^/issue-\\d+-\\d+"
+      },
+      "container": null,
+      "strip": [],
+      "code_mode": "auto",
+      "license": "页脚「© 2015 至今」→ 仅私有归档",
+      "_discover_probe": "改用全量索引页（首页/feed 只给最近几篇）"
+    }
+  ],
+  "git_sources": [
+    {
+      "key": "swift-evolution",
+      "repo": "https://github.com/swiftlang/swift-evolution",
+      "license": "Apache-2.0",
+      "depth": 50,
+      "note": "565 份提案；组织已从 apple 改名 swiftlang。visions/ 那 10 篇比单个提案更值得读。"
+    },
+    {
+      "key": "swift-book",
+      "repo": "https://github.com/swiftlang/swift-book",
+      "license": "Apache-2.0",
+      "depth": 1,
+      "note": "官方 Swift 语言书"
+    },
+    {
+      "key": "swift-book-zh",
+      "repo": "https://github.com/SwiftGGTeam/the-swift-programming-language-in-chinese",
+      "license": "Apache-2.0",
+      "depth": 1,
+      "note": "SwiftGG 中文版；swift.gg 域名已挂售，仓库是唯一可靠留存"
+    },
+    {
+      "key": "ios-weekly",
+      "repo": "https://github.com/SwiftOldDriver/iOS-Weekly",
+      "license": "Apache-2.0",
+      "depth": 1,
+      "note": "老司机周报，带人工点评的选文索引，可作为后续发现新源的输入"
+    },
+    {
+      "key": "draveness-analyze",
+      "repo": "https://github.com/draveness/analyze",
+      "license": "未确认",
+      "depth": 1,
+      "note": "objc 源码分析 10 篇 + 三方库全集，中文天花板"
+    },
+    {
+      "key": "kingcos-perspective",
+      "repo": "https://github.com/kingcos/Perspective",
+      "license": "未确认",
+      "depth": 1,
+      "note": "dyld_shared_cache / App 启动 / 锁 / +load，每篇标注 Release Notes 版本表"
+    },
+    {
+      "key": "ios-source-probe",
+      "repo": "https://github.com/Desgard/iOS-Source-Probe",
+      "license": "未确认",
+      "depth": 1,
+      "note": "含 mach-o / fishhook 分析"
+    },
+    {
+      "key": "matrix-wiki",
+      "repo": "https://github.com/Tencent/matrix.wiki",
+      "license": "未确认",
+      "depth": 1,
+      "note": "微信 Matrix 内存/卡顿/耗电三部曲，教科书级一手材料，实测可直接 clone"
+    },
+    {
+      "key": "objc4",
+      "repo": "https://github.com/apple-oss-distributions/objc4",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "全历史 clone（仅 4.7MB / 35 commit），换来 git log -p 看函数演化"
+    },
+    {
+      "key": "dyld",
+      "repo": "https://github.com/apple-oss-distributions/dyld",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "13.5MB；doc/dyld4.md 等是全网最好的 dyld4 设计文档"
+    },
+    {
+      "key": "libdispatch",
+      "repo": "https://github.com/apple-oss-distributions/libdispatch",
+      "license": "Apache-2.0",
+      "depth": 0,
+      "note": "GCD 实现"
+    },
+    {
+      "key": "libclosure",
+      "repo": "https://github.com/apple-oss-distributions/libclosure",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "Block 运行时实现"
+    },
+    {
+      "key": "libmalloc",
+      "repo": "https://github.com/apple-oss-distributions/libmalloc",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "堆分配器；根目录无 LICENSE，需自己补 APSL 全文"
+    },
+    {
+      "key": "libpthread",
+      "repo": "https://github.com/apple-oss-distributions/libpthread",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "根目录无 LICENSE，且混有 OSF/Mach 旧版权"
+    },
+    {
+      "key": "CF",
+      "repo": "https://github.com/apple-oss-distributions/CF",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "**已冻结**（最后 commit 2021-10-06，Apple 之后不再公开）。学 RunLoop 的唯一一手来源，风险最高，立刻抓 CF-1153.18"
+    },
+    {
+      "key": "distribution-macOS",
+      "repo": "https://github.com/apple-oss-distributions/distribution-macOS",
+      "license": "APSL 2.0",
+      "depth": 0,
+      "note": "482KB / 166 个 tag，「OS 版本 → 各项目精确 SHA」的唯一权威索引"
+    }
+  ]
+}

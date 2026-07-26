@@ -1,0 +1,86 @@
+{
+ "key": "alwaysprocessing",
+ "count": 16,
+ "articles": [
+  {
+   "url": "https://alwaysprocessing.blog/2024/01/07/rust-ffi-cfstr-getbytes-2",
+   "title": "Rust API Bindings: CFStringGetBytes Is Hard, Part 2",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/12/29/rust-ffi-cfstr-getbytes-1",
+   "title": "Rust API Bindings: CFStringGetBytes Is Hard, Part 1",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/12/28/rust-ffi-cf-rc",
+   "title": "Rust API Bindings: Core Foundation Memory Management and Mutability",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/12/27/rust-ffi-signed-conv",
+   "title": "Rust API Bindings: Core Foundation Signed/Unsigned Conversion Handling CFIndex/usize (signed/unsigned) conversion is important in crafting idiomatic Rust API bindings. I looked at how Apple handled th",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/10/01/objc-release",
+   "title": "Objective-C Internals: Release Although release is \"just\" the logical inverse of retain, its implementation is much more complex, primarily due to the ARM synchronization model. This post explores the",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/07/22/objc-retain",
+   "title": "Objective-C Internals: Retain Objective-C memory is managed through a reference counting scheme, which has evolved from a relatively simple API into a sophisticated, highly-optimized implementation wh",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/06/11/hl-accidental-system",
+   "title": "Home Lab: The Accidental System I didn’t set out to build a home lab, but one emerged anyway. This post shares the choices I made to solve one-off problems and how those choices accumulated into a sur",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/06/05/objc-assoc-obj",
+   "title": "Objective-C Internals: Associated References A comparison of Apple’s Associated References implementation and one I wrote for historical context, with additional notes about use with tagged pointer ob",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/05/30/site-refresh",
+   "title": "Site Refresh The site has undergone extensive updates, receiving a new layout, theme, and art, along with a few usability improvements. With this time-consuming investment complete, I’ll again have ba",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/03/19/objc-tagged-ptr",
+   "title": "Objective-C Internals: Tagged Pointer Objects Tagged pointer objects (a private runtime feature) optimize performance by storing an object’s data in its pointer value, eliminating the object’s heap al",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/03/12/objc-ivar-abi",
+   "title": "Objective-C Internals: Non-Fragile Instance Variables Objective-C instance variables may impact ABI stability. In Objective-C 2, Apple introduced a \"non-fragile\" layout to preserve ABI stability acros",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/02/16/objc-unrealized-classes",
+   "title": "Objective-C Internals: Unrealized Classes (and Toll-Free Bridging) Objective-C unrealized classes may refer to future classes or class stubs. Future classes (a private runtime feature) facilitate toll",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/01/19/objc-class-isa",
+   "title": "Objective-C Internals: The Many Uses of isa The Objective-C runtime optimizes performance by packing additional information into an object’s isa pointer. This post compares the different packing mecha",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/01/10/objc-class-graph-impl",
+   "title": "Objective-C Internals: Class Graph Implementation A brief look at the Objective-C runtime source code, focusing on the definition of object and class types, highlighting how inheritance is implemented",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2023/01/02/objc-class-arch",
+   "title": "Objective-C Internals: Class Architecture Objective-C has an unique class architecture where classes are objects. Its elegant design enables dynamic method dispatch for all object types through the us",
+   "date": ""
+  },
+  {
+   "url": "https://alwaysprocessing.blog/2022/02/20/size-matters",
+   "title": "Size Matters: An Exploration of Virtual Memory on iOS An out-of-memory crash while debugging an iOS app led to investigating the iOS virtual memory system and finding the virtual address space size va",
+   "date": ""
+  }
+ ]
+}

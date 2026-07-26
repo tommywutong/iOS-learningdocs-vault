@@ -1,0 +1,4943 @@
+{
+ "archive": "widgetkit",
+ "included": [
+  "com.apple.WidgetKit"
+ ],
+ "page_count": 402,
+ "longform_count": 41,
+ "pages": [
+  {
+   "path": "/documentation/widgetkit",
+   "title": "WidgetKit",
+   "type": "module",
+   "breadcrumb": "WidgetKit",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/developing-a-widgetkit-strategy",
+   "title": "Developing a WidgetKit strategy",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Developing a WidgetKit strategy",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift",
+    "swift",
+    "occ",
+    "occ",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/updates/widgetkit",
+   "title": "WidgetKit updates",
+   "type": "article",
+   "breadcrumb": "WidgetKit/WidgetKit updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-a-widget-extension",
+   "title": "Creating a widget extension",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Creating a widget extension",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift",
+    "swift",
+    "swift",
+    "occ",
+    "occ",
+    "occ",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/building-widgets-using-widgetkit-and-swiftui",
+   "title": "Building Widgets Using WidgetKit and SwiftUI",
+   "type": "sampleCode",
+   "breadcrumb": "WidgetKit/Building Widgets Using WidgetKit and SwiftUI",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/emoji-rangers-supporting-live-activities-interactivity-and-animations",
+   "title": "Emoji Rangers: Supporting Live Activities, interactivity, and animations",
+   "type": "sampleCode",
+   "breadcrumb": "WidgetKit/Emoji Rangers: Supporting Live Activities, interactivity, and animations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetbundle",
+   "title": "WidgetBundle",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/WidgetBundle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgets-and-complications-collection",
+   "title": "Widgets and watch complications",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Widgets and watch complications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preparing-widgets-for-additional-contexts-and-appearances",
+   "title": "Preparing widgets for additional platforms, contexts, and appearances",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preparing widgets for additional platforms, contexts, and appearances",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widget",
+   "title": "Widget",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Widget",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily",
+   "title": "WidgetFamily",
+   "type": "enum",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/systemsmall",
+   "title": "case systemSmall",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case systemSmall",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/systemmedium",
+   "title": "case systemMedium",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case systemMedium",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/systemlarge",
+   "title": "case systemLarge",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case systemLarge",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/systemextralarge",
+   "title": "case systemExtraLarge",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case systemExtraLarge",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/systemextralargeportrait",
+   "title": "case systemExtraLargePortrait",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case systemExtraLargePortrait",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/accessorycircular",
+   "title": "case accessoryCircular",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case accessoryCircular",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/accessorycorner",
+   "title": "case accessoryCorner",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case accessoryCorner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/accessoryrectangular",
+   "title": "case accessoryRectangular",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case accessoryRectangular",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetfamily/accessoryinline",
+   "title": "case accessoryInline",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetFamily/case accessoryInline",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/staticconfiguration",
+   "title": "StaticConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/staticconfiguration/init(kind:provider:content:)",
+   "title": "init<Provider>(kind: String, provider: Provider, content: (Provider.Entry) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/init<Provider>(kind: String, provider: Provider, content: (Provider.Entry) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/body-swift.property",
+   "title": "var body: Self.Body",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/var body: Self.Body",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/configurationdisplayname(_:)-2c3zv",
+   "title": "func configurationDisplayName<S>(S) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func configurationDisplayName<S>(S) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/configurationdisplayname(_:)-3sbn4",
+   "title": "func configurationDisplayName(Text) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func configurationDisplayName(Text) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/configurationdisplayname(_:)-4v9q",
+   "title": "func configurationDisplayName(LocalizedStringKey) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func configurationDisplayName(LocalizedStringKey) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/description(_:)-1bvuj",
+   "title": "func description(Text) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func description(Text) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/description(_:)-2bfr",
+   "title": "func description<S>(S) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func description<S>(S) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/description(_:)-4q9pa",
+   "title": "func description(LocalizedStringKey) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func description(LocalizedStringKey) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/supportedfamilies(_:)",
+   "title": "func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func supportedFamilies([WidgetFamily]) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/supplementalactivityfamilies(_:)",
+   "title": "func supplementalActivityFamilies([ActivityFamily]) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func supplementalActivityFamilies([ActivityFamily]) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/backgroundtask(_:action:)",
+   "title": "func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func backgroundTask<D, R>(BackgroundTask<D, R>, action: (D) async -> R) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/onbackgroundurlsessionevents(matching:_:)-2e152",
+   "title": "func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func onBackgroundURLSessionEvents(matching: ((String) -> Bool)?, (String, () -> Void) -> Void) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/onbackgroundurlsessionevents(matching:_:)-fw6x",
+   "title": "func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/StaticConfiguration/func onBackgroundURLSessionEvents(matching: String, (String, () -> Void) -> Void) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/making-a-configurable-widget",
+   "title": "Making a configurable widget",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Making a configurable widget",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/migrating-from-sirikit-intents-to-app-intents",
+   "title": "Migrating widgets from SiriKit Intents to App Intents",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Migrating widgets from SiriKit Intents to App Intents",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentconfiguration",
+   "title": "AppIntentConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentconfiguration/init(kind:intent:provider:content:)",
+   "title": "init<Provider>(kind: String, intent: Intent.Type, provider: Provider, content: (Provider.Entry) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentConfiguration/init<Provider>(kind: String, intent: Intent.Type, provider: Provider, content: (Provider.Entry) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo",
+   "title": "WidgetInfo",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/kind",
+   "title": "let kind: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/let kind: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/family",
+   "title": "let family: WidgetFamily",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/let family: WidgetFamily",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/configuration",
+   "title": "let configuration: INIntent?",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/let configuration: INIntent?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/id",
+   "title": "var id: WidgetInfo",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/var id: WidgetInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/widgetconfigurationintent(of:)",
+   "title": "func widgetConfigurationIntent<Intent>(of: Intent.Type) -> Intent?",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/func widgetConfigurationIntent<Intent>(of: Intent.Type) -> Intent?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetinfo/identifiable-implementations",
+   "title": "Identifiable Implementations",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetInfo/Identifiable Implementations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/supporting-additional-widget-sizes",
+   "title": "Supporting additional widget sizes",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Supporting additional widget sizes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/displaying-the-right-widget-background",
+   "title": "Displaying the right widget background",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Displaying the right widget background",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/optimizing-your-widget-for-accented-rendering-mode-and-liquid-glass",
+   "title": "Optimizing your widget for accented rendering mode and Liquid Glass",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Optimizing your widget for accented rendering mode and Liquid Glass",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/adding-standby-and-carplay-support-to-your-widget",
+   "title": "Adding StandBy and CarPlay support to your widget",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Adding StandBy and CarPlay support to your widget",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrenderingmode",
+   "title": "WidgetRenderingMode",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrenderingmode/fullcolor",
+   "title": "static let fullColor: WidgetRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRenderingMode/static let fullColor: WidgetRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrenderingmode/accented",
+   "title": "static let accented: WidgetRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRenderingMode/static let accented: WidgetRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrenderingmode/vibrant",
+   "title": "static let vibrant: WidgetRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRenderingMode/static let vibrant: WidgetRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetaccentedrenderingmode",
+   "title": "WidgetAccentedRenderingMode",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetAccentedRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetaccentedrenderingmode/accented",
+   "title": "static let accented: WidgetAccentedRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetAccentedRenderingMode/static let accented: WidgetAccentedRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetaccentedrenderingmode/accenteddesaturated",
+   "title": "static let accentedDesaturated: WidgetAccentedRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetAccentedRenderingMode/static let accentedDesaturated: WidgetAccentedRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetaccentedrenderingmode/desaturated",
+   "title": "static let desaturated: WidgetAccentedRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetAccentedRenderingMode/static let desaturated: WidgetAccentedRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetaccentedrenderingmode/fullcolor",
+   "title": "static let fullColor: WidgetAccentedRenderingMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetAccentedRenderingMode/static let fullColor: WidgetAccentedRenderingMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetbackground",
+   "title": "AccessoryWidgetBackground",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetBackground",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetbackground/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetBackground/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation",
+   "title": "WidgetLocation",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/carplay",
+   "title": "static let carPlay: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let carPlay: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/iphonewidgetsonmac",
+   "title": "static let iPhoneWidgetsOnMac: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let iPhoneWidgetsOnMac: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/homescreen",
+   "title": "static let homeScreen: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let homeScreen: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/lockscreen",
+   "title": "static let lockScreen: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let lockScreen: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/smartstack",
+   "title": "static let smartStack: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let smartStack: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/standby",
+   "title": "static let standBy: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let standBy: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetlocation/watchface",
+   "title": "static let watchFace: WidgetLocation",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetLocation/static let watchFace: WidgetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/keeping-a-widget-up-to-date",
+   "title": "Keeping a widget up to date",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Keeping a widget up to date",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider",
+   "title": "TimelineProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/getsnapshot(in:completion:)",
+   "title": "func getSnapshot(in: Self.Context, completion: (Self.Entry) -> Void)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/func getSnapshot(in: Self.Context, completion: (Self.Entry) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/gettimeline(in:completion:)",
+   "title": "func getTimeline(in: Self.Context, completion: (Timeline<Self.Entry>) -> Void)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/func getTimeline(in: Self.Context, completion: (Timeline<Self.Entry>) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/placeholder(in:)",
+   "title": "func placeholder(in: Self.Context) -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/func placeholder(in: Self.Context) -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/entry",
+   "title": "Entry",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/context",
+   "title": "TimelineProvider.Context",
+   "type": "typealias",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/TimelineProvider.Context",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/relevance()",
+   "title": "func relevance() async -> WidgetRelevance<Void>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/func relevance() async -> WidgetRelevance<Void>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovider/relevance()-7036j",
+   "title": "func relevance() async -> WidgetRelevance<Void>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProvider/func relevance() async -> WidgetRelevance<Void>/func relevance() async -> WidgetRelevance<Void>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider",
+   "title": "AppIntentTimelineProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/placeholder(in:)",
+   "title": "func placeholder(in: Self.Context) -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func placeholder(in: Self.Context) -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/recommendations()",
+   "title": "func recommendations() -> [AppIntentRecommendation<Self.Intent>]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func recommendations() -> [AppIntentRecommendation<Self.Intent>]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/recommendations()-5xfj5",
+   "title": "func recommendations() -> [AppIntentRecommendation<Self.Intent>]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func recommendations() -> [AppIntentRecommendation<Self.Intent>]/func recommendations() -> [AppIntentRecommendation<Self.Intent>]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/relevance()",
+   "title": "func relevance() async -> WidgetRelevance<Self.Intent>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func relevance() async -> WidgetRelevance<Self.Intent>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/relevance()-9vl5j",
+   "title": "func relevance() async -> WidgetRelevance<Self.Intent>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func relevance() async -> WidgetRelevance<Self.Intent>/func relevance() async -> WidgetRelevance<Self.Intent>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/snapshot(for:in:)",
+   "title": "func snapshot(for: Self.Intent, in: Self.Context) async -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func snapshot(for: Self.Intent, in: Self.Context) async -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/timeline(for:in:)",
+   "title": "func timeline(for: Self.Intent, in: Self.Context) async -> Timeline<Self.Entry>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/func timeline(for: Self.Intent, in: Self.Context) async -> Timeline<Self.Entry>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/context",
+   "title": "AppIntentTimelineProvider.Context",
+   "type": "typealias",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/AppIntentTimelineProvider.Context",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/entry",
+   "title": "Entry",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintenttimelineprovider/intent",
+   "title": "Intent",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentTimelineProvider/Intent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider",
+   "title": "IntentTimelineProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/getsnapshot(for:in:completion:)",
+   "title": "func getSnapshot(for: Self.Intent, in: Self.Context, completion: (Self.Entry) -> Void)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func getSnapshot(for: Self.Intent, in: Self.Context, completion: (Self.Entry) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/gettimeline(for:in:completion:)",
+   "title": "func getTimeline(for: Self.Intent, in: Self.Context, completion: (Timeline<Self.Entry>) -> Void)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func getTimeline(for: Self.Intent, in: Self.Context, completion: (Timeline<Self.Entry>) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/placeholder(in:)",
+   "title": "func placeholder(in: Self.Context) -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func placeholder(in: Self.Context) -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/entry",
+   "title": "Entry",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/intent",
+   "title": "Intent",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/Intent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/recommendations()",
+   "title": "func recommendations() -> [IntentRecommendation<Self.Intent>]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func recommendations() -> [IntentRecommendation<Self.Intent>]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/recommendations()-5qmcg",
+   "title": "func recommendations() -> [IntentRecommendation<Self.Intent>]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func recommendations() -> [IntentRecommendation<Self.Intent>]/func recommendations() -> [IntentRecommendation<Self.Intent>]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/context",
+   "title": "IntentTimelineProvider.Context",
+   "type": "typealias",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/IntentTimelineProvider.Context",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/relevance()",
+   "title": "func relevance() async -> WidgetRelevance<Self.Intent>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func relevance() async -> WidgetRelevance<Self.Intent>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intenttimelineprovider/relevance()-4bbqo",
+   "title": "func relevance() async -> WidgetRelevance<Self.Intent>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentTimelineProvider/func relevance() async -> WidgetRelevance<Self.Intent>/func relevance() async -> WidgetRelevance<Self.Intent>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext",
+   "title": "TimelineProviderContext",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/ispreview",
+   "title": "let isPreview: Bool",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/let isPreview: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/family",
+   "title": "let family: WidgetFamily",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/let family: WidgetFamily",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/displaysize",
+   "title": "let displaySize: CGSize",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/let displaySize: CGSize",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/environmentvariants-swift.property",
+   "title": "let environmentVariants: TimelineProviderContext.EnvironmentVariants",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/let environmentVariants: TimelineProviderContext.EnvironmentVariants",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/environmentvariants-swift.struct",
+   "title": "TimelineProviderContext.EnvironmentVariants",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/TimelineProviderContext.EnvironmentVariants",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/environmentvariants-swift.struct/subscript(_:)",
+   "title": "subscript<T>(WritableKeyPath<EnvironmentValues, T>) -> [T]?",
+   "type": "subscript",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/TimelineProviderContext.EnvironmentVariants/subscript<T>(WritableKeyPath<EnvironmentValues, T>) -> [T]?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineprovidercontext/environmentvariants-swift.struct/subscript(dynamicmember:)",
+   "title": "subscript<T>(dynamicMember _: WritableKeyPath<EnvironmentValues, T>) -> [T]?",
+   "type": "subscript",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineProviderContext/TimelineProviderContext.EnvironmentVariants/subscript<T>(dynamicMember _: WritableKeyPath<EnvironmentValues, T>) -> [T]?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentry",
+   "title": "TimelineEntry",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentry/date",
+   "title": "var date: Date",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntry/var date: Date",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentry/relevance",
+   "title": "var relevance: TimelineEntryRelevance?",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntry/var relevance: TimelineEntryRelevance?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentry/relevance-9msg1",
+   "title": "var relevance: TimelineEntryRelevance?",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntry/var relevance: TimelineEntryRelevance?/var relevance: TimelineEntryRelevance?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timeline",
+   "title": "Timeline",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timeline/init(entries:policy:)",
+   "title": "init(entries: [EntryType], policy: TimelineReloadPolicy)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/init(entries: [EntryType], policy: TimelineReloadPolicy)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timeline/entries",
+   "title": "let entries: [EntryType]",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/let entries: [EntryType]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timeline/policy",
+   "title": "let policy: TimelineReloadPolicy",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/let policy: TimelineReloadPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelinereloadpolicy",
+   "title": "TimelineReloadPolicy",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/TimelineReloadPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelinereloadpolicy/atend",
+   "title": "static let atEnd: TimelineReloadPolicy",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/TimelineReloadPolicy/static let atEnd: TimelineReloadPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelinereloadpolicy/after(_:)",
+   "title": "static func after(Date) -> TimelineReloadPolicy",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/TimelineReloadPolicy/static func after(Date) -> TimelineReloadPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelinereloadpolicy/never",
+   "title": "static let never: TimelineReloadPolicy",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Timeline/TimelineReloadPolicy/static let never: TimelineReloadPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter",
+   "title": "WidgetCenter",
+   "type": "class",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/shared",
+   "title": "static let shared: WidgetCenter",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/static let shared: WidgetCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/getcurrentconfigurations(_:)",
+   "title": "func getCurrentConfigurations((Result<[WidgetInfo], any Error>) -> Void)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func getCurrentConfigurations((Result<[WidgetInfo], any Error>) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/userinfokey",
+   "title": "WidgetCenter.UserInfoKey",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/WidgetCenter.UserInfoKey",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/userinfokey/family",
+   "title": "static let family: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/WidgetCenter.UserInfoKey/static let family: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/userinfokey/kind",
+   "title": "static let kind: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/WidgetCenter.UserInfoKey/static let kind: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/userinfokey/activityid",
+   "title": "static let activityID: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/WidgetCenter.UserInfoKey/static let activityID: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/reloadtimelines(ofkind:)",
+   "title": "func reloadTimelines(ofKind: String)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func reloadTimelines(ofKind: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/reloadalltimelines()",
+   "title": "func reloadAllTimelines()",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func reloadAllTimelines()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/invalidateconfigurationrecommendations()",
+   "title": "func invalidateConfigurationRecommendations()",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func invalidateConfigurationRecommendations()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/currentpushinfo",
+   "title": "var currentPushInfo: WidgetPushInfo?",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/var currentPushInfo: WidgetPushInfo?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/currentconfigurations()",
+   "title": "func currentConfigurations() async throws -> [WidgetInfo]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func currentConfigurations() async throws -> [WidgetInfo]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetcenter/invalidaterelevance(ofkind:)",
+   "title": "func invalidateRelevance(ofKind: String)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetCenter/func invalidateRelevance(ofKind: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/updating-widgets-with-widgetkit-push-notifications",
+   "title": "Updating widgets with WidgetKit push notifications",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Updating widgets with WidgetKit push notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpushhandler",
+   "title": "WidgetPushHandler",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPushHandler",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpushhandler/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPushHandler/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpushhandler/pushtokendidchange(_:widgets:)",
+   "title": "func pushTokenDidChange(WidgetPushInfo, widgets: [WidgetInfo])",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPushHandler/func pushTokenDidChange(WidgetPushInfo, widgets: [WidgetInfo])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpushinfo",
+   "title": "WidgetPushInfo",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPushInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpushinfo/token",
+   "title": "let token: Data",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPushInfo/let token: Data",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessing-location-information-in-widgets",
+   "title": "Accessing location information in widgets",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Accessing location information in widgets",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/making-network-requests-in-a-widget-extension",
+   "title": "Making network requests in a widget extension",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Making network requests in a widget extension",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewing-widgets-and-live-activities-in-xcode",
+   "title": "Previewing widgets and Live Activities in Xcode",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Previewing widgets and Live Activities in Xcode",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview-macros",
+   "title": "Preview macros",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:as:widget:timelineprovider:)",
+   "title": "macro Preview<Widget, Provider>(String?, as: WidgetFamily, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Provider>(String?, as: WidgetFamily, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:as:using:widget:timelineprovider:)-4ljg1",
+   "title": "macro Preview<Widget, Provider>(String?, as: WidgetFamily, using: Provider.Intent, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Provider>(String?, as: WidgetFamily, using: Provider.Intent, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:as:using:widget:timelineprovider:)-3df1l",
+   "title": "macro Preview<Widget, Provider>(String?, as: WidgetFamily, using: Provider.Intent, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Provider>(String?, as: WidgetFamily, using: Provider.Intent, widget: () -> Widget, timelineProvider: () -> Provider)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:as:widget:timeline:)",
+   "title": "macro Preview<Widget>(String?, as: WidgetFamily, widget: () -> Widget, timeline: () async -> [any TimelineEntry])",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget>(String?, as: WidgetFamily, widget: () -> Widget, timeline: () async -> [any TimelineEntry])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:widget:relevanceentries:)",
+   "title": "macro Preview<Widget, Entry>(String?, widget: () -> Widget, relevanceEntries: () async -> [Entry])",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Entry>(String?, widget: () -> Widget, relevanceEntries: () async -> [Entry])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:widget:relevanceprovider:)",
+   "title": "macro Preview<Widget, Provider>(String?, widget: () -> Widget, relevanceProvider: () -> Provider)",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Provider>(String?, widget: () -> Widget, relevanceProvider: () -> Provider)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:widget:relevanceprovider:relevance:)",
+   "title": "macro Preview<Widget, Provider>(String?, widget: () -> Widget, relevanceProvider: () -> Provider, relevance: () async -> WidgetRelevance<Provider.Configuration>)",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Provider>(String?, widget: () -> Widget, relevanceProvider: () -> Provider, relevance: () async -> WidgetRelevance<Provider.Configuration>)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/preview(_:as:using:widget:contentstates:)",
+   "title": "macro Preview<Widget, Attributes>(String?, as: ActivityPreviewViewKind, using: Attributes, widget: () -> Widget, contentStates: () async -> [Attributes.ContentState])",
+   "type": "macro",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/macro Preview<Widget, Attributes>(String?, as: ActivityPreviewViewKind, using: Attributes, widget: () -> Widget, contentStates: () async -> [Attributes.ContentState])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewactivitybuilder",
+   "title": "PreviewActivityBuilder",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewActivityBuilder",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewactivitybuilder/buildarray(_:)",
+   "title": "static func buildArray([[A.ContentState]]) -> [A.ContentState]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewActivityBuilder/static func buildArray([[A.ContentState]]) -> [A.ContentState]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewactivitybuilder/buildexpression(_:)",
+   "title": "static func buildExpression(A.ContentState) -> [A.ContentState]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewActivityBuilder/static func buildExpression(A.ContentState) -> [A.ContentState]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewactivitybuilder/buildpartialblock(accumulated:next:)",
+   "title": "static func buildPartialBlock(accumulated: [A.ContentState], next: [A.ContentState]) -> [A.ContentState]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewActivityBuilder/static func buildPartialBlock(accumulated: [A.ContentState], next: [A.ContentState]) -> [A.ContentState]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewactivitybuilder/buildpartialblock(first:)",
+   "title": "static func buildPartialBlock(first: [A.ContentState]) -> [A.ContentState]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewActivityBuilder/static func buildPartialBlock(first: [A.ContentState]) -> [A.ContentState]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewrelevanceentrybuilder",
+   "title": "PreviewRelevanceEntryBuilder",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewRelevanceEntryBuilder",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewrelevanceentrybuilder/buildarray(_:)",
+   "title": "static func buildArray([[Entry]]) -> [Entry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewRelevanceEntryBuilder/static func buildArray([[Entry]]) -> [Entry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewrelevanceentrybuilder/buildexpression(_:)",
+   "title": "static func buildExpression(Entry) -> [Entry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewRelevanceEntryBuilder/static func buildExpression(Entry) -> [Entry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewrelevanceentrybuilder/buildpartialblock(first:)",
+   "title": "static func buildPartialBlock(first: [Entry]) -> [Entry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewRelevanceEntryBuilder/static func buildPartialBlock(first: [Entry]) -> [Entry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewrelevanceentrybuilder/buildpartialblock(accumulated:next:)",
+   "title": "static func buildPartialBlock(accumulated: [Entry], next: [Entry]) -> [Entry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewRelevanceEntryBuilder/static func buildPartialBlock(accumulated: [Entry], next: [Entry]) -> [Entry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewtimelinebuilder",
+   "title": "PreviewTimelineBuilder",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewTimelineBuilder",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewtimelinebuilder/buildarray(_:)",
+   "title": "static func buildArray([[any TimelineEntry]]) -> [any TimelineEntry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewTimelineBuilder/static func buildArray([[any TimelineEntry]]) -> [any TimelineEntry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewtimelinebuilder/buildexpression(_:)",
+   "title": "static func buildExpression(some TimelineEntry) -> [any TimelineEntry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewTimelineBuilder/static func buildExpression(some TimelineEntry) -> [any TimelineEntry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewtimelinebuilder/buildpartialblock(accumulated:next:)",
+   "title": "static func buildPartialBlock(accumulated: [any TimelineEntry], next: [any TimelineEntry]) -> [any TimelineEntry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewTimelineBuilder/static func buildPartialBlock(accumulated: [any TimelineEntry], next: [any TimelineEntry]) -> [any TimelineEntry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/previewtimelinebuilder/buildpartialblock(first:)",
+   "title": "static func buildPartialBlock(first: [any TimelineEntry]) -> [any TimelineEntry]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Preview macros/PreviewTimelineBuilder/static func buildPartialBlock(first: [any TimelineEntry]) -> [any TimelineEntry]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpreviewcontext",
+   "title": "WidgetPreviewContext",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPreviewContext",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetpreviewcontext/init(family:)",
+   "title": "init(family: WidgetFamily)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetPreviewContext/init(family: WidgetFamily)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/debugging-widgets",
+   "title": "Debugging widgets",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Debugging widgets",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/updating-your-widgets-for-visionos",
+   "title": "Updating your widgets for visionOS",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Updating your widgets for visionOS",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/widgettexture(_:)",
+   "title": "func widgetTexture(WidgetTexture) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/func widgetTexture(WidgetTexture) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgettexture",
+   "title": "WidgetTexture",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetTexture",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgettexture/glass",
+   "title": "static let glass: WidgetTexture",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetTexture/static let glass: WidgetTexture",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgettexture/paper",
+   "title": "static let paper: WidgetTexture",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetTexture/static let paper: WidgetTexture",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/widgetconfiguration/supportedmountingstyles(_:)",
+   "title": "func supportedMountingStyles([WidgetMountingStyle]) -> some WidgetConfiguration\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/func supportedMountingStyles([WidgetMountingStyle]) -> some WidgetConfiguration\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetmountingstyle",
+   "title": "WidgetMountingStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetMountingStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetmountingstyle/elevated",
+   "title": "static let elevated: WidgetMountingStyle",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetMountingStyle/static let elevated: WidgetMountingStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetmountingstyle/recessed",
+   "title": "static let recessed: WidgetMountingStyle",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetMountingStyle/static let recessed: WidgetMountingStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/levelofdetail",
+   "title": "LevelOfDetail",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/LevelOfDetail",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/levelofdetail/default",
+   "title": "static let `default`: LevelOfDetail",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/LevelOfDetail/static let `default`: LevelOfDetail",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/levelofdetail/simplified",
+   "title": "static let simplified: LevelOfDetail",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/LevelOfDetail/static let simplified: LevelOfDetail",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-accessory-widgets-and-watch-complications",
+   "title": "Creating accessory widgets and watch complications",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Creating accessory widgets and watch complications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup",
+   "title": "AccessoryWidgetGroup",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:content:)-3ij0e",
+   "title": "init(some StringProtocol, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(some StringProtocol, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:content:)-75rkg",
+   "title": "init(LocalizedStringResource, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringResource, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:content:)-nb0",
+   "title": "init(LocalizedStringKey, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringKey, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:image:content:)-385rt",
+   "title": "init(LocalizedStringResource, image: ImageResource, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringResource, image: ImageResource, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:image:content:)-50iyk",
+   "title": "init(LocalizedStringKey, image: ImageResource, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringKey, image: ImageResource, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:image:content:)-66iys",
+   "title": "init(some StringProtocol, image: ImageResource, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(some StringProtocol, image: ImageResource, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:systemimage:content:)-3mynu",
+   "title": "init(LocalizedStringResource, systemImage: String, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringResource, systemImage: String, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:systemimage:content:)-54h9w",
+   "title": "init(LocalizedStringKey, systemImage: String, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(LocalizedStringKey, systemImage: String, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(_:systemimage:content:)-7rnqc",
+   "title": "init(some StringProtocol, systemImage: String, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(some StringProtocol, systemImage: String, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroup/init(label:content:)",
+   "title": "init(label: () -> Label, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroup/init(label: () -> Label, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroupstyle",
+   "title": "AccessoryWidgetGroupStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroupStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroupstyle/automatic",
+   "title": "static let automatic: AccessoryWidgetGroupStyle",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroupStyle/static let automatic: AccessoryWidgetGroupStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroupstyle/circular",
+   "title": "static let circular: AccessoryWidgetGroupStyle",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroupStyle/static let circular: AccessoryWidgetGroupStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/accessorywidgetgroupstyle/roundedsquare",
+   "title": "static let roundedSquare: AccessoryWidgetGroupStyle",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AccessoryWidgetGroupStyle/static let roundedSquare: AccessoryWidgetGroupStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/converting-a-clockkit-app",
+   "title": "Migrating ClockKit complications to WidgetKit",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Migrating ClockKit complications to WidgetKit",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widget-suggestions-in-smart-stacks",
+   "title": "Increasing the visibility of widgets in Smart Stacks",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/Increasing the visibility of widgets in Smart Stacks",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentryrelevance",
+   "title": "TimelineEntryRelevance",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntryRelevance",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentryrelevance/init(score:duration:)",
+   "title": "init(score: Float, duration: TimeInterval)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntryRelevance/init(score: Float, duration: TimeInterval)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentryrelevance/duration",
+   "title": "var duration: TimeInterval",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntryRelevance/var duration: TimeInterval",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/timelineentryrelevance/score",
+   "title": "var score: Float",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/TimelineEntryRelevance/var score: Float",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceconfiguration",
+   "title": "RelevanceConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceconfiguration/init(kind:provider:content:)",
+   "title": "init<Provider>(kind: String, provider: Provider, content: (Provider.Entry) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceConfiguration/init<Provider>(kind: String, provider: Provider, content: (Provider.Entry) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider",
+   "title": "RelevanceEntriesProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/entry(configuration:context:)",
+   "title": "func entry(configuration: Self.Configuration, context: Self.Context) async throws -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/func entry(configuration: Self.Configuration, context: Self.Context) async throws -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/relevance()",
+   "title": "func relevance() async -> WidgetRelevance<Self.Configuration>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/func relevance() async -> WidgetRelevance<Self.Configuration>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/placeholder(context:)",
+   "title": "func placeholder(context: Self.Context) -> Self.Entry",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/func placeholder(context: Self.Context) -> Self.Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovidercontext",
+   "title": "RelevanceEntriesProviderContext",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/RelevanceEntriesProviderContext",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovidercontext/displaysize",
+   "title": "let displaySize: CGSize",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/RelevanceEntriesProviderContext/let displaySize: CGSize",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovidercontext/ispreview",
+   "title": "let isPreview: Bool",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/RelevanceEntriesProviderContext/let isPreview: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/configuration",
+   "title": "Configuration",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/Configuration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/entry",
+   "title": "Entry",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/Entry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentriesprovider/context",
+   "title": "RelevanceEntriesProvider.Context",
+   "type": "typealias",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntriesProvider/RelevanceEntriesProvider.Context",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/relevanceentry",
+   "title": "RelevanceEntry",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/RelevanceEntry",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevance",
+   "title": "WidgetRelevance",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevance",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevance/init(_:)",
+   "title": "init([WidgetRelevanceAttribute<Configuration>])",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevance/init([WidgetRelevanceAttribute<Configuration>])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute",
+   "title": "WidgetRelevanceAttribute",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(configuration:context:)-8325r",
+   "title": "init(configuration: Configuration, context: RelevantContext)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(configuration: Configuration, context: RelevantContext)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(configuration:context:)-8jxhs",
+   "title": "init(configuration: Configuration, context: RelevantContext)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(configuration: Configuration, context: RelevantContext)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(configuration:group:)-5yh17",
+   "title": "init(configuration: Configuration, group: WidgetRelevanceGroup)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(configuration: Configuration, group: WidgetRelevanceGroup)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(configuration:group:)-93jm5",
+   "title": "init(configuration: Configuration, group: WidgetRelevanceGroup)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(configuration: Configuration, group: WidgetRelevanceGroup)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(context:)",
+   "title": "init(context: RelevantContext)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(context: RelevantContext)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevanceattribute/init(group:)",
+   "title": "init(group: WidgetRelevanceGroup)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceAttribute/init(group: WidgetRelevanceGroup)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevancegroup",
+   "title": "WidgetRelevanceGroup",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevancegroup/automatic",
+   "title": "static let automatic: WidgetRelevanceGroup",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceGroup/static let automatic: WidgetRelevanceGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevancegroup/ungrouped",
+   "title": "static let ungrouped: WidgetRelevanceGroup",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceGroup/static let ungrouped: WidgetRelevanceGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/widgetrelevancegroup/named(_:)",
+   "title": "static func named(String) -> WidgetRelevanceGroup",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/WidgetRelevanceGroup/static func named(String) -> WidgetRelevanceGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentrecommendation",
+   "title": "AppIntentRecommendation",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentRecommendation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentrecommendation/init(intent:description:)-2p4dh",
+   "title": "init(intent: Intent, description: LocalizedStringKey)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentRecommendation/init(intent: Intent, description: LocalizedStringKey)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentrecommendation/init(intent:description:)-65igj",
+   "title": "init(intent: Intent, description: Text)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentRecommendation/init(intent: Intent, description: Text)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentrecommendation/init(intent:description:)-7zn32",
+   "title": "init(intent: Intent, description: some StringProtocol)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentRecommendation/init(intent: Intent, description: some StringProtocol)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentrecommendation/init(intent:description:)-3j1cv",
+   "title": "init(intent: Intent, description: LocalizedStringResource)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/AppIntentRecommendation/init(intent: Intent, description: LocalizedStringResource)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentconfiguration",
+   "title": "IntentConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentconfiguration/init(kind:intent:provider:content:)",
+   "title": "init<Provider>(kind: String, intent: Intent.Type, provider: Provider, content: (Provider.Entry) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentConfiguration/init<Provider>(kind: String, intent: Intent.Type, provider: Provider, content: (Provider.Entry) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentrecommendation",
+   "title": "IntentRecommendation",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentRecommendation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentrecommendation/init(intent:description:)-1zh33",
+   "title": "init(intent: T, description: LocalizedStringKey)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentRecommendation/init(intent: T, description: LocalizedStringKey)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentrecommendation/init(intent:description:)-4epo2",
+   "title": "init(intent: T, description: Text)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentRecommendation/init(intent: T, description: Text)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentrecommendation/init(intent:description:)-6v7dj",
+   "title": "init<S>(intent: T, description: S)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentRecommendation/init<S>(intent: T, description: S)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/intentrecommendation/init(intent:description:)-6o8yy",
+   "title": "init(intent: T, description: LocalizedStringResource)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Widgets and watch complications/IntentRecommendation/init(intent: T, description: LocalizedStringResource)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/liveactivities-collection",
+   "title": "Live Activities",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/displaying-live-data-with-live-activities",
+   "title": "Displaying live data with Live Activities",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Live Activities/Displaying live data with Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit",
+   "title": "ActivityKit",
+   "type": "module",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityKit",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityconfiguration",
+   "title": "ActivityConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityviewcontext",
+   "title": "ActivityViewContext",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/ActivityViewContext",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityviewcontext/attributes",
+   "title": "let attributes: Attributes",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/ActivityViewContext/let attributes: Attributes",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityviewcontext/state",
+   "title": "let state: Attributes.ContentState",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/ActivityViewContext/let state: Attributes.ContentState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityviewcontext/isstale",
+   "title": "let isStale: Bool",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/ActivityViewContext/let isStale: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityviewcontext/activityid",
+   "title": "let activityID: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/ActivityViewContext/let activityID: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityconfiguration/init(for:content:dynamicisland:)",
+   "title": "init<Content>(for: Attributes.Type, content: (ActivityViewContext<Attributes>) -> Content, dynamicIsland: (ActivityViewContext<Attributes>) -> DynamicIsland)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityConfiguration/init<Content>(for: Attributes.Type, content: (ActivityViewContext<Attributes>) -> Content, dynamicIsland: (ActivityViewContext<Attributes>) -> DynamicIsland)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicisland",
+   "title": "DynamicIsland",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicisland/init(expanded:compactleading:compacttrailing:minimal:)",
+   "title": "init<Expanded, CompactLeading, CompactTrailing, Minimal>(expanded: () -> DynamicIslandExpandedContent<Expanded>, compactLeading: () -> CompactLeading, compactTrailing: () -> CompactTrailing, minimal: () -> Minimal)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/init<Expanded, CompactLeading, CompactTrailing, Minimal>(expanded: () -> DynamicIslandExpandedContent<Expanded>, compactLeading: () -> CompactLeading, compactTrailing: () -> CompactTrailing, minimal: () -> Minimal)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregion",
+   "title": "DynamicIslandExpandedRegion",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregion/init(_:priority:content:)",
+   "title": "init(DynamicIslandExpandedRegionPosition, priority: Double, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/init(DynamicIslandExpandedRegionPosition, priority: Double, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionposition",
+   "title": "DynamicIslandExpandedRegionPosition",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionPosition",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionposition/bottom",
+   "title": "static let bottom: DynamicIslandExpandedRegionPosition",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionPosition/static let bottom: DynamicIslandExpandedRegionPosition",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionposition/center",
+   "title": "static let center: DynamicIslandExpandedRegionPosition",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionPosition/static let center: DynamicIslandExpandedRegionPosition",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionposition/leading",
+   "title": "static let leading: DynamicIslandExpandedRegionPosition",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionPosition/static let leading: DynamicIslandExpandedRegionPosition",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionposition/trailing",
+   "title": "static let trailing: DynamicIslandExpandedRegionPosition",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionPosition/static let trailing: DynamicIslandExpandedRegionPosition",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/view/dynamicisland(verticalplacement:)",
+   "title": "func dynamicIsland(verticalPlacement: DynamicIslandExpandedRegionVerticalPlacement) -> some View\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/func dynamicIsland(verticalPlacement: DynamicIslandExpandedRegionVerticalPlacement) -> some View\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionverticalplacement",
+   "title": "DynamicIslandExpandedRegionVerticalPlacement",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionVerticalPlacement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionverticalplacement/default",
+   "title": "static let `default`: DynamicIslandExpandedRegionVerticalPlacement",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionVerticalPlacement/static let `default`: DynamicIslandExpandedRegionVerticalPlacement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregionverticalplacement/belowiftoowide",
+   "title": "static let belowIfTooWide: DynamicIslandExpandedRegionVerticalPlacement",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedRegionVerticalPlacement/static let belowIfTooWide: DynamicIslandExpandedRegionVerticalPlacement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontent",
+   "title": "DynamicIslandExpandedContent",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontentbuilder",
+   "title": "DynamicIslandExpandedContentBuilder",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContentBuilder",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontentbuilder/buildpartialblock(accumulated:next:)-39sr0",
+   "title": "static func buildPartialBlock<C0, C1>(accumulated: DynamicIslandExpandedContent<C0>, next: DynamicIslandExpandedContent<C1>) -> DynamicIslandExpandedContent<some View>\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContentBuilder/static func buildPartialBlock<C0, C1>(accumulated: DynamicIslandExpandedContent<C0>, next: DynamicIslandExpandedContent<C1>) -> DynamicIslandExpandedContent<some View>\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontentbuilder/buildpartialblock(accumulated:next:)-3jswv",
+   "title": "static func buildPartialBlock<C0, C1>(accumulated: DynamicIslandExpandedContent<C0>, next: DynamicIslandExpandedRegion<C1>) -> DynamicIslandExpandedContent<some View>\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContentBuilder/static func buildPartialBlock<C0, C1>(accumulated: DynamicIslandExpandedContent<C0>, next: DynamicIslandExpandedRegion<C1>) -> DynamicIslandExpandedContent<some View>\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontentbuilder/buildpartialblock(first:)-5j108",
+   "title": "static func buildPartialBlock<C>(first: DynamicIslandExpandedRegion<C>) -> DynamicIslandExpandedContent<some View>\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContentBuilder/static func buildPartialBlock<C>(first: DynamicIslandExpandedRegion<C>) -> DynamicIslandExpandedContent<some View>\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedcontentbuilder/buildpartialblock(first:)-74hpw",
+   "title": "static func buildPartialBlock<C>(first: DynamicIslandExpandedContent<C>) -> DynamicIslandExpandedContent<some View>\n",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/DynamicIslandExpandedContentBuilder/static func buildPartialBlock<C>(first: DynamicIslandExpandedContent<C>) -> DynamicIslandExpandedContent<some View>\n",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandexpandedregion/contentmargins(_:_:)",
+   "title": "func contentMargins(Edge.Set, Double) -> DynamicIslandExpandedRegion<Content>",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandExpandedRegion/func contentMargins(Edge.Set, Double) -> DynamicIslandExpandedRegion<Content>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicisland/widgeturl(_:)",
+   "title": "func widgetURL(URL?) -> DynamicIsland",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/func widgetURL(URL?) -> DynamicIsland",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicisland/keylinetint(_:)",
+   "title": "func keylineTint(Color?) -> DynamicIsland",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/func keylineTint(Color?) -> DynamicIsland",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicisland/contentmargins(_:_:for:)",
+   "title": "func contentMargins(Edge.Set, Double, for: DynamicIslandMode) -> DynamicIsland",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/func contentMargins(Edge.Set, Double, for: DynamicIslandMode) -> DynamicIsland",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandmode",
+   "title": "DynamicIslandMode",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandmode/compactleading",
+   "title": "static let compactLeading: DynamicIslandMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandMode/static let compactLeading: DynamicIslandMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandmode/compacttrailing",
+   "title": "static let compactTrailing: DynamicIslandMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandMode/static let compactTrailing: DynamicIslandMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandmode/expanded",
+   "title": "static let expanded: DynamicIslandMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandMode/static let expanded: DynamicIslandMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/dynamicislandmode/minimal",
+   "title": "static let minimal: DynamicIslandMode",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Live Activities/DynamicIsland/DynamicIslandMode/static let minimal: DynamicIslandMode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/nsuseractivitytypeliveactivity",
+   "title": "let NSUserActivityTypeLiveActivity: String",
+   "type": "var",
+   "breadcrumb": "WidgetKit/Live Activities/let NSUserActivityTypeLiveActivity: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind",
+   "title": "ActivityPreviewViewKind",
+   "type": "enum",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/content",
+   "title": "case content",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/case content",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/dynamicisland(_:)",
+   "title": "case dynamicIsland(ActivityPreviewViewKind.DynamicIslandPreviewViewState)",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/case dynamicIsland(ActivityPreviewViewKind.DynamicIslandPreviewViewState)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/dynamicislandpreviewviewstate",
+   "title": "ActivityPreviewViewKind.DynamicIslandPreviewViewState",
+   "type": "enum",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/ActivityPreviewViewKind.DynamicIslandPreviewViewState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/dynamicislandpreviewviewstate/compact",
+   "title": "case compact",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/ActivityPreviewViewKind.DynamicIslandPreviewViewState/case compact",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/dynamicislandpreviewviewstate/minimal",
+   "title": "case minimal",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/ActivityPreviewViewKind.DynamicIslandPreviewViewState/case minimal",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activitypreviewviewkind/dynamicislandpreviewviewstate/expanded",
+   "title": "case expanded",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityPreviewViewKind/ActivityPreviewViewKind.DynamicIslandPreviewViewState/case expanded",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityfamily",
+   "title": "ActivityFamily",
+   "type": "enum",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityFamily",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityfamily/small",
+   "title": "case small",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityFamily/case small",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/activityfamily/medium",
+   "title": "case medium",
+   "type": "case",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityFamily/case medium",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/supportedactivityfamiliesenvironmentkey",
+   "title": "SupportedActivityFamiliesEnvironmentKey",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Live Activities/ActivityFamily/SupportedActivityFamiliesEnvironmentKey",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controls-collection",
+   "title": "Controls",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Controls",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-controls-to-perform-actions-across-the-system",
+   "title": "Creating controls to perform actions across the system",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Controls/Creating controls to perform actions across the system",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/adding-refinements-and-configuration-to-controls",
+   "title": "Adding refinements and configuration to controls",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Controls/Adding refinements and configuration to controls",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/staticcontrolconfiguration",
+   "title": "StaticControlConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/StaticControlConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/staticcontrolconfiguration/init(kind:content:)",
+   "title": "init(kind: String, content: () -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/StaticControlConfiguration/init(kind: String, content: () -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/staticcontrolconfiguration/init(kind:provider:content:)",
+   "title": "init<Provider>(kind: String, provider: Provider, content: (Provider.Value) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/StaticControlConfiguration/init<Provider>(kind: String, provider: Provider, content: (Provider.Value) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolconfiguration",
+   "title": "AppIntentControlConfiguration",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolconfiguration/init(kind:intent:content:)",
+   "title": "init(kind: String, intent: Configuration.Type, content: (Configuration) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlConfiguration/init(kind: String, intent: Configuration.Type, content: (Configuration) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolconfiguration/init(kind:provider:content:)",
+   "title": "init<Provider>(kind: String, provider: Provider, content: (Provider.Value) -> Content)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlConfiguration/init<Provider>(kind: String, provider: Provider, content: (Provider.Value) -> Content)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlcenter",
+   "title": "ControlCenter",
+   "type": "class",
+   "breadcrumb": "WidgetKit/Controls/ControlCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlcenter/currentcontrols()",
+   "title": "func currentControls() async throws -> [ControlInfo]",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlCenter/func currentControls() async throws -> [ControlInfo]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlcenter/reloadallcontrols()",
+   "title": "func reloadAllControls()",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlCenter/func reloadAllControls()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlcenter/reloadcontrols(ofkind:)",
+   "title": "func reloadControls(ofKind: String)",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlCenter/func reloadControls(ofKind: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlcenter/shared",
+   "title": "static let shared: ControlCenter",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlCenter/static let shared: ControlCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo",
+   "title": "ControlInfo",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo/kind",
+   "title": "let kind: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo/let kind: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo/pushinfo",
+   "title": "var pushInfo: ControlPushInfo?",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo/var pushInfo: ControlPushInfo?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo/configurationintent(of:)",
+   "title": "func configurationIntent<Intent>(of: Intent.Type) -> Intent?",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo/func configurationIntent<Intent>(of: Intent.Type) -> Intent?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo/identifiable-implementations",
+   "title": "Identifiable Implementations",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo/Identifiable Implementations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlinfo/id",
+   "title": "var id: String",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlInfo/Identifiable Implementations/var id: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton",
+   "title": "ControlWidgetButton",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(action:label:)-77p8j",
+   "title": "init(action: Action, label: () -> Label)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(action: Action, label: () -> Label)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(action:label:)-8oxxp",
+   "title": "init(action: Action, label: () -> Label)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(action: Action, label: () -> Label)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(action:label:actionlabel:)",
+   "title": "init(action: Action, label: () -> Label, actionLabel: (Bool) -> ActionLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(action: Action, label: () -> Label, actionLabel: (Bool) -> ActionLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(_:action:actionlabel:)-4sgji",
+   "title": "init(some StringProtocol, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(some StringProtocol, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(_:action:actionlabel:)-67uvw",
+   "title": "init(LocalizedStringKey, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(LocalizedStringKey, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbutton/init(_:action:actionlabel:)-1kxch",
+   "title": "init(LocalizedStringResource, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/init(LocalizedStringResource, action: Action, actionLabel: (Bool) -> ActionLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgetbuttondefaultactionlabel",
+   "title": "ControlWidgetButtonDefaultActionLabel",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetButton/ControlWidgetButtonDefaultActionLabel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle",
+   "title": "ControlWidgetToggle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle/init(ison:action:label:)",
+   "title": "init(isOn: Bool, action: Action, label: () -> Label)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/init(isOn: Bool, action: Action, label: () -> Label)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle/init(ison:action:label:valuelabel:)",
+   "title": "init(isOn: Bool, action: Action, label: () -> Label, valueLabel: (Bool) -> ValueLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/init(isOn: Bool, action: Action, label: () -> Label, valueLabel: (Bool) -> ValueLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle/init(_:ison:action:valuelabel:)-33wfq",
+   "title": "init(some StringProtocol, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/init(some StringProtocol, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle/init(_:ison:action:valuelabel:)-5o6bn",
+   "title": "init(LocalizedStringKey, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/init(LocalizedStringKey, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggle/init(_:ison:action:valuelabel:)-4lk32",
+   "title": "init(LocalizedStringResource, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/init(LocalizedStringResource, isOn: Bool, action: Action, valueLabel: (Bool) -> ValueLabel)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlwidgettoggledefaultlabel",
+   "title": "ControlWidgetToggleDefaultLabel",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlWidgetToggle/ControlWidgetToggleDefaultLabel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/updating-controls-locally-and-remotely",
+   "title": "Updating controls locally and remotely",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Controls/Updating controls locally and remotely",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlpushhandler",
+   "title": "ControlPushHandler",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Controls/ControlPushHandler",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlpushhandler/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "WidgetKit/Controls/ControlPushHandler/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlpushhandler/pushtokensdidchange(controls:)",
+   "title": "func pushTokensDidChange(controls: [ControlInfo])",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlPushHandler/func pushTokensDidChange(controls: [ControlInfo])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlpushinfo",
+   "title": "ControlPushInfo",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/Controls/ControlPushInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlpushinfo/token",
+   "title": "let token: Data",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlPushInfo/let token: Data",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlvalueprovider",
+   "title": "ControlValueProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Controls/ControlValueProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlvalueprovider/value",
+   "title": "Value",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Controls/ControlValueProvider/Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlvalueprovider/previewvalue",
+   "title": "var previewValue: Self.Value",
+   "type": "property",
+   "breadcrumb": "WidgetKit/Controls/ControlValueProvider/var previewValue: Self.Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/controlvalueprovider/currentvalue()",
+   "title": "func currentValue() async throws -> Self.Value",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/ControlValueProvider/func currentValue() async throws -> Self.Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolvalueprovider",
+   "title": "AppIntentControlValueProvider",
+   "type": "protocol",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlValueProvider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolvalueprovider/configuration",
+   "title": "Configuration",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlValueProvider/Configuration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolvalueprovider/value",
+   "title": "Value",
+   "type": "associatedtype",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlValueProvider/Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolvalueprovider/currentvalue(configuration:)",
+   "title": "func currentValue(configuration: Self.Configuration) async throws -> Self.Value",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlValueProvider/func currentValue(configuration: Self.Configuration) async throws -> Self.Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/appintentcontrolvalueprovider/previewvalue(configuration:)",
+   "title": "func previewValue(configuration: Self.Configuration) -> Self.Value",
+   "type": "method",
+   "breadcrumb": "WidgetKit/Controls/AppIntentControlValueProvider/func previewValue(configuration: Self.Configuration) -> Self.Value",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications",
+   "title": "Creating views for widgets, Live Activities, and watch complications",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Creating views for widgets, Live Activities, and watch complications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/swiftui-views",
+   "title": "SwiftUI views for widgets",
+   "type": "collection",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/displaying-dynamic-dates",
+   "title": "Displaying dynamic dates in widgets",
+   "type": "article",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Displaying dynamic dates in widgets",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/text",
+   "title": "Text",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Text",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/image",
+   "title": "Image",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Image",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities",
+   "title": "Adding interactivity to widgets and Live Activities",
+   "type": "article",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Adding interactivity to widgets and Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/button",
+   "title": "Button",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Button",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/toggle",
+   "title": "Toggle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Toggle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/label",
+   "title": "Label",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Label",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/link",
+   "title": "Link",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Link",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/hstack",
+   "title": "HStack",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/HStack",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/vstack",
+   "title": "VStack",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/VStack",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/zstack",
+   "title": "ZStack",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ZStack",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/lazyhstack",
+   "title": "LazyHStack",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/LazyHStack",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/lazyvstack",
+   "title": "LazyVStack",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/LazyVStack",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/lazyhgrid",
+   "title": "LazyHGrid",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/LazyHGrid",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/lazyvgrid",
+   "title": "LazyVGrid",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/LazyVGrid",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/griditem",
+   "title": "GridItem",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/GridItem",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/foreach",
+   "title": "ForEach",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ForEach",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/group",
+   "title": "Group",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Group",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/groupbox",
+   "title": "GroupBox",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/GroupBox",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/section",
+   "title": "Section",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Section",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/outlinegroup",
+   "title": "OutlineGroup",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/OutlineGroup",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/spacer",
+   "title": "Spacer",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Spacer",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/divider",
+   "title": "Divider",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Divider",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/emptyview",
+   "title": "EmptyView",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/EmptyView",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/equatableview",
+   "title": "EquatableView",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/EquatableView",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/rectangle",
+   "title": "Rectangle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Rectangle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/roundedrectangle",
+   "title": "RoundedRectangle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/RoundedRectangle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/circle",
+   "title": "Circle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Circle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/ellipse",
+   "title": "Ellipse",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Ellipse",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/capsule",
+   "title": "Capsule",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Capsule",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/path",
+   "title": "Path",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Path",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/scaledshape",
+   "title": "ScaledShape",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ScaledShape",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/rotatedshape",
+   "title": "RotatedShape",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/RotatedShape",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/offsetshape",
+   "title": "OffsetShape",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/OffsetShape",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/transformedshape",
+   "title": "TransformedShape",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/TransformedShape",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/containerrelativeshape",
+   "title": "ContainerRelativeShape",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ContainerRelativeShape",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/color",
+   "title": "Color",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Color",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/imagepaint",
+   "title": "ImagePaint",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ImagePaint",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/gradient",
+   "title": "Gradient",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Gradient",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/lineargradient",
+   "title": "LinearGradient",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/LinearGradient",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/angulargradient",
+   "title": "AngularGradient",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/AngularGradient",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/radialgradient",
+   "title": "RadialGradient",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/RadialGradient",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/foregroundstyle",
+   "title": "ForegroundStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ForegroundStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/fillstyle",
+   "title": "FillStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/FillStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/backgroundstyle",
+   "title": "BackgroundStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/BackgroundStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/selectionshapestyle",
+   "title": "SelectionShapeStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/SelectionShapeStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/separatorshapestyle",
+   "title": "SeparatorShapeStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/SeparatorShapeStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/strokestyle",
+   "title": "StrokeStyle",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/StrokeStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/canvas",
+   "title": "Canvas",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/Canvas",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/geometryproxy",
+   "title": "GeometryProxy",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/GeometryProxy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/geometryreader",
+   "title": "GeometryReader",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/GeometryReader",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/projectiontransform",
+   "title": "ProjectionTransform",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/ProjectionTransform",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/anyview",
+   "title": "AnyView",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/AnyView",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/swiftui/tupleview",
+   "title": "TupleView",
+   "type": "struct",
+   "breadcrumb": "WidgetKit/SwiftUI views for widgets/TupleView",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/animating-data-updates-in-widgets-and-live-activities",
+   "title": "Animating data updates in widgets and Live Activities",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Animating data updates in widgets and Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/linking-to-specific-app-scenes-from-your-widget-or-live-activity",
+   "title": "Linking to specific app scenes from your widget or Live Activity",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Linking to specific app scenes from your widget or Live Activity",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/adding-accessible-descriptions-to-widgets-and-live-activities",
+   "title": "Adding accessible descriptions to widgets and Live Activities",
+   "type": "article",
+   "breadcrumb": "WidgetKit/Adding accessible descriptions to widgets and Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/wgwidgetuserinfokeyactivityid",
+   "title": "WGWidgetUserInfoKeyActivityID",
+   "type": "var",
+   "breadcrumb": "WidgetKit/WGWidgetUserInfoKeyActivityID",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/wgwidgetuserinfokeyfamily",
+   "title": "WGWidgetUserInfoKeyFamily",
+   "type": "var",
+   "breadcrumb": "WidgetKit/WGWidgetUserInfoKeyFamily",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/wgwidgetuserinfokeykind",
+   "title": "WGWidgetUserInfoKeyKind",
+   "type": "var",
+   "breadcrumb": "WidgetKit/WGWidgetUserInfoKeyKind",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  }
+ ]
+}

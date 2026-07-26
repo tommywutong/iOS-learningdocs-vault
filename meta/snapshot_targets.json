@@ -1,0 +1,758 @@
+[
+ {
+  "url": "https://juejin.cn/post/6963188936508178469",
+  "domain": "juejin.cn",
+  "group": "platform",
+  "week": "第一周：对象、类与所有权的地基",
+  "day": "Day 1｜先分清“地址空间”，不要一上来背 isa（对应 W1-10）"
+ },
+ {
+  "url": "https://www.cnblogs.com/xgao/p/11277935.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第一周：对象、类与所有权的地基",
+  "day": "Day 3｜在结构图上推导类型判断，再看 Tagged Pointer（对应 W1-05、W1-06）"
+ },
+ {
+  "url": "https://www.0daybug.com/posts/9972ffa7/index.html",
+  "domain": "0daybug.com",
+  "group": "single-site",
+  "week": "第一周：对象、类与所有权的地基",
+  "day": "Day 3｜在结构图上推导类型判断，再看 Tagged Pointer（对应 W1-05、W1-06）"
+ },
+ {
+  "url": "https://roadmap.isylar.com/iOS/Knowledge/RuntimeCls.html",
+  "domain": "roadmap.isylar.com",
+  "group": "single-site",
+  "week": "第一周：对象、类与所有权的地基",
+  "day": "Day 3｜在结构图上推导类型判断，再看 Tagged Pointer（对应 W1-05、W1-06）"
+ },
+ {
+  "url": "https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/",
+  "domain": "blog.timac.org",
+  "group": "single-site",
+  "week": "第一周：对象、类与所有权的地基",
+  "day": "Day 3｜在结构图上推导类型判断，再看 Tagged Pointer（对应 W1-05、W1-06）"
+ },
+ {
+  "url": "https://cloud.tencent.com/developer/article/2303898",
+  "domain": "cloud.tencent.com",
+  "group": "platform",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 1｜先把属性翻译成所有权关系（对应 W2-07、W2-08、W2-09）"
+ },
+ {
+  "url": "https://blog.csdn.net/u013378438/article/details/82790332",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）"
+ },
+ {
+  "url": "https://www.uiimage.com/post/blog/ios/sidetables/",
+  "domain": "uiimage.com",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）"
+ },
+ {
+  "url": "https://verdagon.dev/blog/surprising-weak-refs",
+  "domain": "verdagon.dev",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/f0870fa95aac",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 3｜先看 Block 是什么，再谈捕获（对应 W2-12、W2-13、W2-15）"
+ },
+ {
+  "url": "https://www.informit.com/articles/article.aspx?p=1749597&seqNum=12",
+  "domain": "informit.com",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 3｜先看 Block 是什么，再谈捕获（对应 W2-12、W2-13、W2-15）"
+ },
+ {
+  "url": "https://halfrost.com/ios_block/",
+  "domain": "halfrost.com",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 4｜在结构体基础上研究捕获与复制（对应 W2-10、W2-11）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/809a9bca597f",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://luohs.github.io/2017/05/31/20170531/",
+  "domain": "luohs.github.io",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://lvv.me/posts/2022/08/13_weak_strong_dance/",
+  "domain": "lvv.me",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://dhoerl.wordpress.com/2013/04/23/i-finally-figured-out-weakself-and-strongself/",
+  "domain": "dhoerl.wordpress.com",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://bytes.vokal.io/objc-block-capture-weakself/",
+  "domain": "bytes.vokal.io",
+  "group": "single-site",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://medium.com/fantageek/understanding-weak-and-strong-in-objective-c-d17ba4c2c297",
+  "domain": "medium.com",
+  "group": "platform",
+  "week": "第二周：weak、属性关键字与 Block",
+  "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）"
+ },
+ {
+  "url": "https://ridiculousfish.com/blog/posts/objc_msgsend.html",
+  "domain": "ridiculousfish.com",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 1｜把方法调用还原为“查找行为”（对应 W1-03）"
+ },
+ {
+  "url": "https://zhongwuzw.github.io/2018/04/21/iOS%E7%9F%A5%E8%AF%86%E5%B0%8F%E9%9B%86%E4%B9%8B%E4%B8%BA%E4%BB%80%E4%B9%88objc-msgSend-%E6%98%AF%E7%94%A8%E6%B1%87%E7%BC%96%E5%AE%9E%E7%8E%B0%E7%9A%84/",
+  "domain": "zhongwuzw.github.io",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 1｜把方法调用还原为“查找行为”（对应 W1-03）"
+ },
+ {
+  "url": "https://kingcos.me/posts/2019/objc_msgsend/",
+  "domain": "kingcos.me",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 1｜把方法调用还原为“查找行为”（对应 W1-03）"
+ },
+ {
+  "url": "https://www.cnblogs.com/developer-ios/p/4948803.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 2｜有了方法查找，才学习 Swizzling（对应 W4-04）"
+ },
+ {
+  "url": "https://draveness.me/ao.html",
+  "domain": "draveness.me",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 3｜Category 是编译产物，关联对象是运行期旁路（对应 W4-05、W4-06）"
+ },
+ {
+  "url": "https://www.cnblogs.com/huanying2000/p/13938350.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 3｜Category 是编译产物，关联对象是运行期旁路（对应 W4-05、W4-06）"
+ },
+ {
+  "url": "https://www.cnblogs.com/junhuawang/p/14304756.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 4｜用加载时机把 Category、load、initialize 串起来（对应 W5-07）"
+ },
+ {
+  "url": "https://www.neroxie.com/2019/07/12/KVC%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
+  "domain": "neroxie.com",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）"
+ },
+ {
+  "url": "https://zhuanlan.zhihu.com/p/587704697",
+  "domain": "zhuanlan.zhihu.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）"
+ },
+ {
+  "url": "https://blog.csdn.net/zhoupengju/article/details/53129436",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）"
+ },
+ {
+  "url": "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
+  "domain": "huberyyang.com",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）"
+ },
+ {
+  "url": "https://blog.csdn.net/weixin_38633659/article/details/149066468",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）"
+ },
+ {
+  "url": "https://www.cnblogs.com/iOS-Blog/archive/2013/02/21/2920926.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）"
+ },
+ {
+  "url": "https://coderjtao.github.io/2019/07/26/%E5%BA%95%E5%B1%82%E5%88%9D%E7%AA%A5%E2%80%94%E2%80%94NSNotificationCenter/",
+  "domain": "coderjtao.github.io",
+  "group": "single-site",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）"
+ },
+ {
+  "url": "https://www.cnblogs.com/wujy/p/5825690.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+  "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）"
+ },
+ {
+  "url": "https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/pthread.h.html",
+  "domain": "pubs.opengroup.org",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）"
+ },
+ {
+  "url": "http://stevenwuzheng.com/archives/runloop%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB",
+  "domain": "stevenwuzheng.com",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）"
+ },
+ {
+  "url": "https://bujige.net/blog/iOS-Complete-learning-pthread-and-NSThread.html",
+  "domain": "bujige.net",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）"
+ },
+ {
+  "url": "https://ming1016.github.io/2016/01/13/how-to-use-gcd/",
+  "domain": "ming1016.github.io",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 3｜GCD 从四格矩阵开始，再扩 API（对应 W3-06）"
+ },
+ {
+  "url": "https://www.cnblogs.com/bbqzsl/p/5287970.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 3｜GCD 从四格矩阵开始，再扩 API（对应 W3-06）"
+ },
+ {
+  "url": "https://dirtmelon.github.io/Knowledge/iDev/Multithreading/Grand-Central-Dispatch.html",
+  "domain": "dirtmelon.github.io",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 3｜GCD 从四格矩阵开始，再扩 API（对应 W3-06）"
+ },
+ {
+  "url": "https://nsprogrammer.github.io/jekyll/update/2021/07/02/nsoperation.html",
+  "domain": "nsprogrammer.github.io",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 4｜Operation 是“可管理的任务图”（对应 W3-05）"
+ },
+ {
+  "url": "https://shakuro.com/blog/nsoperation-and-nsoperationqueue-to-improve-concurrency-in-ios",
+  "domain": "shakuro.com",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 4｜Operation 是“可管理的任务图”（对应 W3-05）"
+ },
+ {
+  "url": "https://ioscoachfrank.com/chaining-nsoperations.html",
+  "domain": "ioscoachfrank.com",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 4｜Operation 是“可管理的任务图”（对应 W3-05）"
+ },
+ {
+  "url": "https://mjtsai.com/blog/2015/12/16/osspinlock-is-unsafe/",
+  "domain": "mjtsai.com",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）"
+ },
+ {
+  "url": "https://zhuanlan.zhihu.com/p/587418305",
+  "domain": "zhuanlan.zhihu.com",
+  "group": "platform",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）"
+ },
+ {
+  "url": "https://juejin.cn/post/7070416276564213791",
+  "domain": "juejin.cn",
+  "group": "platform",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）"
+ },
+ {
+  "url": "https://solarana.dev/2018/04/15/protecting-critical-sections/",
+  "domain": "solarana.dev",
+  "group": "single-site",
+  "week": "第四周：线程、GCD、Operation 与锁",
+  "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）"
+ },
+ {
+  "url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/",
+  "domain": "suelan.github.io",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 1｜RunLoop 先学“一轮发生什么”（对应 W4-02）"
+ },
+ {
+  "url": "https://meldstudio.co/blog/macos-cfrunloop-internals-scheduling-high-precision-timers-and-recurring-tasks/",
+  "domain": "meldstudio.co",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 1｜RunLoop 先学“一轮发生什么”（对应 W4-02）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/aa0fae8c491b",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 1｜RunLoop 先学“一轮发生什么”（对应 W4-02）"
+ },
+ {
+  "url": "https://www.desgard.com/iOS-Source-Probe/Objective-C/Foundation/Run%20Loop%20%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A.html",
+  "domain": "desgard.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 1｜RunLoop 先学“一轮发生什么”（对应 W4-02）"
+ },
+ {
+  "url": "https://cloud.tencent.cn/developer/article/1427933",
+  "domain": "cloud.tencent.cn",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 2｜先会 RunLoop，再理解常驻线程与卡顿监测（对应 W4-03）"
+ },
+ {
+  "url": "https://ai-chan.top/code/Runloop%E4%B8%8E%E5%8D%A1%E9%A1%BF%E7%9B%91%E6%8E%A7/",
+  "domain": "ai-chan.top",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 2｜先会 RunLoop，再理解常驻线程与卡顿监测（对应 W4-03）"
+ },
+ {
+  "url": "https://cloud.tencent.com/developer/article/1895911",
+  "domain": "cloud.tencent.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 2｜先会 RunLoop，再理解常驻线程与卡顿监测（对应 W4-03）"
+ },
+ {
+  "url": "https://blog.csdn.net/Deft_MKJing/article/details/82947706",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）"
+ },
+ {
+  "url": "https://jinxuebin.cn/2019/06/AutoReleasePool%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E6%8E%A2%E7%A9%B6/",
+  "domain": "jinxuebin.cn",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）"
+ },
+ {
+  "url": "https://devyang.space/2019/05/05/autoreleasepool/",
+  "domain": "devyang.space",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）"
+ },
+ {
+  "url": "http://matteogobbi.github.io/blog/2014/09/28/autorelease-under-the-hood/",
+  "domain": "matteogobbi.github.io",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）"
+ },
+ {
+  "url": "https://swiftrocks.com/understanding-the-ios-responder-chain",
+  "domain": "swiftrocks.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 4｜事件先命中视图，再沿响应者链寻找处理者（对应 W4-07、W5-01）"
+ },
+ {
+  "url": "https://medium.com/ios-os-x-development/understanding-cocoa-and-cocoa-touch-responder-chain-12fe558ebe97",
+  "domain": "medium.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 4｜事件先命中视图，再沿响应者链寻找处理者（对应 W4-07、W5-01）"
+ },
+ {
+  "url": "https://www.cocoanetics.com/2012/09/the-amazing-responder-chain/",
+  "domain": "cocoanetics.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 4｜事件先命中视图，再沿响应者链寻找处理者（对应 W4-07、W5-01）"
+ },
+ {
+  "url": "https://bbs.huaweicloud.com/blogs/331365",
+  "domain": "bbs.huaweicloud.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 4｜事件先命中视图，再沿响应者链寻找处理者（对应 W4-07、W5-01）"
+ },
+ {
+  "url": "https://medium.com/@dhrumilraval212/mastering-the-uiviewcontroller-lifecycle-a-senior-developers-deep-dive-4cc8082cd3d6",
+  "domain": "medium.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 5｜生命周期必须按场景观测（对应 W5-06）"
+ },
+ {
+  "url": "https://useyourloaf.com/blog/uikit-view-lifecycle-viewisappearing/",
+  "domain": "useyourloaf.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 5｜生命周期必须按场景观测（对应 W5-06）"
+ },
+ {
+  "url": "https://joeshang.github.io/2014-12-19-understand-anchorpoint-position-frame/",
+  "domain": "joeshang.github.io",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 6｜最后补坐标系，因为它依赖视图层级（对应 W3-12、W5-08）"
+ },
+ {
+  "url": "https://zhangbuhuai.com/post/layer-geometry-in-ios.html",
+  "domain": "zhangbuhuai.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 6｜最后补坐标系，因为它依赖视图层级（对应 W3-12、W5-08）"
+ },
+ {
+  "url": "http://www.samirchen.com/graphic-transform-in-ios/",
+  "domain": "samirchen.com",
+  "group": "single-site",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 6｜最后补坐标系，因为它依赖视图层级（对应 W3-12、W5-08）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/e1fec2f92c63",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+  "day": "Day 6｜最后补坐标系，因为它依赖视图层级（对应 W3-12、W5-08）"
+ },
+ {
+  "url": "https://www.hackingwithswift.com/articles/155/advanced-uiview-shadow-effects-using-shadowpath",
+  "domain": "hackingwithswift.com",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 2｜离屏渲染先学定义，再看触发条件（对应 W5-02）"
+ },
+ {
+  "url": "http://angelolloqui.com/blog/30-iOS-Performance-tips-I-Drawing-shadows",
+  "domain": "angelolloqui.com",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 2｜离屏渲染先学定义，再看触发条件（对应 W5-02）"
+ },
+ {
+  "url": "https://blog.fearcat.in/a?ID=01750-5926f776-644b-465e-8d4d-d6c7b854e533",
+  "domain": "blog.fearcat.in",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 2｜离屏渲染先学定义，再看触发条件（对应 W5-02）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/e6d44ca9c103",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 2｜离屏渲染先学定义，再看触发条件（对应 W5-02）"
+ },
+ {
+  "url": "https://medium.com/jike-engineering/asyncdisplaykit%E4%BB%8B%E7%BB%8D-%E4%B8%80-6b871d29e005",
+  "domain": "medium.com",
+  "group": "platform",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 4｜先建立 baseline，再谈列表优化（对应 W6-09）"
+ },
+ {
+  "url": "https://www.swiftcafe.io/post/asdk",
+  "domain": "swiftcafe.io",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 4｜先建立 baseline，再谈列表优化（对应 W6-09）"
+ },
+ {
+  "url": "https://medium.com/@iosengineering/better-uitableviews-pt-1-performance-a76dcd76d772",
+  "domain": "medium.com",
+  "group": "platform",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 4｜先建立 baseline，再谈列表优化（对应 W6-09）"
+ },
+ {
+  "url": "https://blog.aberlt.com/2017/12/30/UITableView-%E6%B5%81%E7%95%85%E5%BA%A6%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5/",
+  "domain": "blog.aberlt.com",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 4｜先建立 baseline，再谈列表优化（对应 W6-09）"
+ },
+ {
+  "url": "http://blog.joyingx.me/2015/05/03/NSMutableArray%20%E5%8E%9F%E7%90%86%E6%8F%AD%E9%9C%B2/",
+  "domain": "blog.joyingx.me",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）"
+ },
+ {
+  "url": "https://zhuanlan.zhihu.com/p/25063245",
+  "domain": "zhuanlan.zhihu.com",
+  "group": "platform",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）"
+ },
+ {
+  "url": "https://www.laoqingcai.com/ios-nsmutablearray/",
+  "domain": "laoqingcai.com",
+  "group": "single-site",
+  "week": "第六周：UIKit 渲染、UITableView 与性能",
+  "day": "Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）"
+ },
+ {
+  "url": "https://segmentfault.com/a/1190000047731614",
+  "domain": "segmentfault.com",
+  "group": "platform",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 1｜从一份源文件走到目标文件（对应 W1-07）"
+ },
+ {
+  "url": "https://pewpewthespells.com/blog/static_and_dynamic_libraries.html",
+  "domain": "pewpewthespells.com",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 3｜静态/动态不是文件后缀问答（对应 W1-09）"
+ },
+ {
+  "url": "https://bpoplauschi.github.io/2021/10/24/Intro-to-static-and-dynamic-libraries-frameworks.html",
+  "domain": "bpoplauschi.github.io",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 3｜静态/动态不是文件后缀问答（对应 W1-09）"
+ },
+ {
+  "url": "https://engineering.monday.com/is-there-such-a-thing-as-a-static-framework/",
+  "domain": "engineering.monday.com",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 3｜静态/动态不是文件后缀问答（对应 W1-09）"
+ },
+ {
+  "url": "https://ddeville.me/2014/04/dynamic-linking/",
+  "domain": "ddeville.me",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 4｜在 Mach-O 基础上学习 dyld（对应 W1-08）"
+ },
+ {
+  "url": "https://blog.allegro.tech/2018/05/Static-linking-vs-dyld3.html",
+  "domain": "blog.allegro.tech",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 4｜在 Mach-O 基础上学习 dyld（对应 W1-08）"
+ },
+ {
+  "url": "https://huang-libo.github.io/posts/App-Startup-Time-dyld/",
+  "domain": "huang-libo.github.io",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 4｜在 Mach-O 基础上学习 dyld（对应 W1-08）"
+ },
+ {
+  "url": "https://zhuanlan.zhihu.com/p/597864788",
+  "domain": "zhuanlan.zhihu.com",
+  "group": "platform",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 4｜在 Mach-O 基础上学习 dyld（对应 W1-08）"
+ },
+ {
+  "url": "https://blog.jacobstechtavern.com/p/static-dynamic-mergeable-oh-my",
+  "domain": "blog.jacobstechtavern.com",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 4｜在 Mach-O 基础上学习 dyld（对应 W1-08）"
+ },
+ {
+  "url": "https://www.avanderlee.com/optimization/launch-time-performance-optimization/",
+  "domain": "avanderlee.com",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）"
+ },
+ {
+  "url": "https://tech.meituan.com/2018/12/06/waimai-ios-optimizing-startup.html",
+  "domain": "tech.meituan.com",
+  "group": "single-site",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）"
+ },
+ {
+  "url": "https://mp.weixin.qq.com/s/Drmmx5JtjG3UtTFksL6Q8Q",
+  "domain": "mp.weixin.qq.com",
+  "group": "platform",
+  "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+  "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）"
+ },
+ {
+  "url": "https://www.bswanson.dev/blog/exploring-sqlite-internals/",
+  "domain": "bswanson.dev",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 2｜有了存储场景，再补数据库最低原理（对应 W6-15、W6-16）"
+ },
+ {
+  "url": "https://www.cnblogs.com/huahuahu/p/sqlite-suo-yin-de-yuan-li-ji-ying-yong.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 2｜有了存储场景，再补数据库最低原理（对应 W6-15、W6-16）"
+ },
+ {
+  "url": "https://www.w3.org/TR/xml/",
+  "domain": "w3.org",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 3｜序列化先比较需求，再看二进制细节（对应 W5-09）"
+ },
+ {
+  "url": "https://victoriametrics.com/blog/go-protobuf/",
+  "domain": "victoriametrics.com",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 3｜序列化先比较需求，再看二进制细节（对应 W5-09）"
+ },
+ {
+  "url": "https://auth0.com/blog/beating-json-performance-with-protobuf/",
+  "domain": "auth0.com",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 3｜序列化先比较需求，再看二进制细节（对应 W5-09）"
+ },
+ {
+  "url": "https://knightsj.github.io/2017/02/22/JSONModel%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/",
+  "domain": "knightsj.github.io",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 4｜JSONModel 只追一条主链（对应 W6-03）"
+ },
+ {
+  "url": "https://blog.csdn.net/game3108/article/details/52388089",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）"
+ },
+ {
+  "url": "https://blog.csdn.net/Lu_Ca/article/details/114532423",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）"
+ },
+ {
+  "url": "https://blog.itlee.top/2017/12/21/YYModel%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%80/",
+  "domain": "blog.itlee.top",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）"
+ },
+ {
+  "url": "https://sdwebimage.github.io/",
+  "domain": "sdwebimage.github.io",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 6｜SDWebImage 第一遍只看成功路径（对应 W6-05）"
+ },
+ {
+  "url": "https://www.cnblogs.com/zhangzhang-y/p/13584570.html",
+  "domain": "cnblogs.com",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 6｜SDWebImage 第一遍只看成功路径（对应 W6-05）"
+ },
+ {
+  "url": "https://looseyi.github.io/post/sourcecode-ios/source-code-sdweb-en1/",
+  "domain": "looseyi.github.io",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 7｜第二遍才看性能与取消（对应 W6-05、W6-09）"
+ },
+ {
+  "url": "https://blog.csdn.net/weixin_46818265/article/details/142442895",
+  "domain": "blog.csdn.net",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 8｜架构是前七天代码的职责重排（对应 W6-06、W6-07）"
+ },
+ {
+  "url": "https://www.jianshu.com/p/e59bb8f59302",
+  "domain": "jianshu.com",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 8｜架构是前七天代码的职责重排（对应 W6-06、W6-07）"
+ },
+ {
+  "url": "https://javaguide.cn/cs-basics/network/tcp-connection-and-disconnection.html",
+  "domain": "javaguide.cn",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 9｜网络基础放到 URLSession 下面分层（对应 W6-02、W6-11、W6-12）"
+ },
+ {
+  "url": "https://segmentfault.com/a/1190000022410446",
+  "domain": "segmentfault.com",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 9｜网络基础放到 URLSession 下面分层（对应 W6-02、W6-11、W6-12）"
+ },
+ {
+  "url": "https://opendatastructures.org/",
+  "domain": "opendatastructures.org",
+  "group": "single-site",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 10｜用一个小项目证明知识连接起来了（对应 全阶段串联）"
+ },
+ {
+  "url": "https://baijiahao.baidu.com/s?id=1670083688956388773&wfr=spider&for=pc",
+  "domain": "baijiahao.baidu.com",
+  "group": "platform",
+  "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+  "day": "Day 10｜用一个小项目证明知识连接起来了（对应 全阶段串联）"
+ }
+]

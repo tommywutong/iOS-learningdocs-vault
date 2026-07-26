@@ -1,0 +1,1583 @@
+{
+ "archive": "activitykit",
+ "included": [
+  "com.apple.activitykit"
+ ],
+ "page_count": 131,
+ "longform_count": 15,
+ "pages": [
+  {
+   "path": "/documentation/activitykit",
+   "title": "ActivityKit",
+   "type": "module",
+   "breadcrumb": "ActivityKit",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/developing-a-widgetkit-strategy",
+   "title": "Developing a WidgetKit strategy",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Developing a WidgetKit strategy",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/updates/activitykit",
+   "title": "ActivityKit updates",
+   "type": "article",
+   "breadcrumb": "ActivityKit/ActivityKit updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/displaying-live-data-with-live-activities",
+   "title": "Displaying live data with Live Activities",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Displaying live data with Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/starting-and-updating-live-activities-with-activitykit-push-notifications",
+   "title": "Starting and updating Live Activities with ActivityKit push notifications",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Starting and updating Live Activities with ActivityKit push notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity",
+   "title": "Activity",
+   "type": "class",
+   "breadcrumb": "ActivityKit/Activity",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/request(attributes:content:pushtype:)",
+   "title": "static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?) throws -> Activity<Attributes>",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?) throws -> Activity<Attributes>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/request(attributes:content:pushtype:style:)",
+   "title": "static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle) throws -> Activity<Attributes>",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle) throws -> Activity<Attributes>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/request(attributes:content:pushtype:style:alertconfiguration:start:)",
+   "title": "static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle, alertConfiguration: AlertConfiguration, start: Date) throws -> Activity<Attributes>",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle, alertConfiguration: AlertConfiguration, start: Date) throws -> Activity<Attributes>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/request(attributes:content:pushtype:style:alertconfiguration:startdate:)",
+   "title": "static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle, alertConfiguration: AlertConfiguration, startDate: Date) throws -> Activity<Attributes>",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/static func request(attributes: Attributes, content: ActivityContent<Activity<Attributes>.ContentState>, pushType: PushType?, style: ActivityStyle, alertConfiguration: AlertConfiguration, startDate: Date) throws -> Activity<Attributes>",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/attributes",
+   "title": "let attributes: Attributes",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/let attributes: Attributes",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityattributes",
+   "title": "ActivityAttributes",
+   "type": "protocol",
+   "breadcrumb": "ActivityKit/Activity/ActivityAttributes",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityattributes/contentstate",
+   "title": "ContentState",
+   "type": "associatedtype",
+   "breadcrumb": "ActivityKit/Activity/ActivityAttributes/ContentState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityattributes/previewcontext(_:isstale:viewkind:)",
+   "title": "func previewContext(Self.ContentState, isStale: Bool, viewKind: ActivityPreviewViewKind) -> some View",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityAttributes/func previewContext(Self.ContentState, isStale: Bool, viewKind: ActivityPreviewViewKind) -> some View",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystyle",
+   "title": "ActivityStyle",
+   "type": "enum",
+   "breadcrumb": "ActivityKit/Activity/ActivityStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystyle/standard",
+   "title": "case standard",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityStyle/case standard",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystyle/transient",
+   "title": "case transient",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityStyle/case transient",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/content",
+   "title": "var content: ActivityContent<Activity<Attributes>.ContentState>",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var content: ActivityContent<Activity<Attributes>.ContentState>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitycontent",
+   "title": "ActivityContent",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitycontent/init(state:staledate:relevancescore:)",
+   "title": "init(state: State, staleDate: Date?, relevanceScore: Double)",
+   "type": "init",
+   "breadcrumb": "ActivityKit/Activity/ActivityContent/init(state: State, staleDate: Date?, relevanceScore: Double)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitycontent/state",
+   "title": "let state: State",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityContent/let state: State",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitycontent/staledate",
+   "title": "let staleDate: Date?",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityContent/let staleDate: Date?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitycontent/relevancescore",
+   "title": "let relevanceScore: Double",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityContent/let relevanceScore: Double",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstate-swift.typealias",
+   "title": "Activity.ContentState",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Activity.ContentState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/pushtype",
+   "title": "PushType",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/PushType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/pushtype/token",
+   "title": "static var token: PushType",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/PushType/static var token: PushType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/pushtype/channel(_:)",
+   "title": "static func channel(String) -> PushType",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/PushType/static func channel(String) -> PushType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror",
+   "title": "ActivityAuthorizationError",
+   "type": "enum",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/attributestoolarge",
+   "title": "case attributesTooLarge",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case attributesTooLarge",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/denied",
+   "title": "case denied",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case denied",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/globalmaximumexceeded",
+   "title": "case globalMaximumExceeded",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case globalMaximumExceeded",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/malformedactivityidentifier",
+   "title": "case malformedActivityIdentifier",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case malformedActivityIdentifier",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/missingprocessidentifier",
+   "title": "case missingProcessIdentifier",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case missingProcessIdentifier",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/persistencefailure",
+   "title": "case persistenceFailure",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case persistenceFailure",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/reconnectnotpermitted",
+   "title": "case reconnectNotPermitted",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case reconnectNotPermitted",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/targetmaximumexceeded",
+   "title": "case targetMaximumExceeded",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case targetMaximumExceeded",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/unentitled",
+   "title": "case unentitled",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case unentitled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/unsupported",
+   "title": "case unsupported",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case unsupported",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/unsupportedtarget",
+   "title": "case unsupportedTarget",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case unsupportedTarget",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/visibility",
+   "title": "case visibility",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/case visibility",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/failurereason",
+   "title": "var failureReason: String?",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/var failureReason: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/recoverysuggestion",
+   "title": "var recoverySuggestion: String?",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/var recoverySuggestion: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/errorcode",
+   "title": "var errorCode: Int",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/var errorCode: Int",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationerror/errordomain",
+   "title": "static var errorDomain: String",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationError/static var errorDomain: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/update(_:)",
+   "title": "func update(ActivityContent<Activity<Attributes>.ContentState>) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/func update(ActivityContent<Activity<Attributes>.ContentState>) async",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/update(_:alertconfiguration:)",
+   "title": "func update(ActivityContent<Activity<Attributes>.ContentState>, alertConfiguration: AlertConfiguration?) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/func update(ActivityContent<Activity<Attributes>.ContentState>, alertConfiguration: AlertConfiguration?) async",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration",
+   "title": "AlertConfiguration",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/init(title:body:sound:)",
+   "title": "init(title: LocalizedStringResource, body: LocalizedStringResource, sound: AlertConfiguration.AlertSound)",
+   "type": "init",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/init(title: LocalizedStringResource, body: LocalizedStringResource, sound: AlertConfiguration.AlertSound)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/title",
+   "title": "var title: LocalizedStringResource",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/var title: LocalizedStringResource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/body",
+   "title": "var body: LocalizedStringResource",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/var body: LocalizedStringResource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/sound",
+   "title": "var sound: AlertConfiguration.AlertSound",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/var sound: AlertConfiguration.AlertSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/alertsound",
+   "title": "AlertConfiguration.AlertSound",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/AlertConfiguration.AlertSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/alertsound/named(_:)",
+   "title": "static func named(String) -> AlertConfiguration.AlertSound",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/AlertConfiguration.AlertSound/static func named(String) -> AlertConfiguration.AlertSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/alertconfiguration/alertsound/default",
+   "title": "static var `default`: AlertConfiguration.AlertSound",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/AlertConfiguration/AlertConfiguration.AlertSound/static var `default`: AlertConfiguration.AlertSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/update(_:alertconfiguration:timestamp:)",
+   "title": "func update(ActivityContent<Activity<Attributes>.ContentState>, alertConfiguration: AlertConfiguration?, timestamp: Date) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/func update(ActivityContent<Activity<Attributes>.ContentState>, alertConfiguration: AlertConfiguration?, timestamp: Date) async",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/end(_:dismissalpolicy:)",
+   "title": "func end(ActivityContent<Activity<Attributes>.ContentState>?, dismissalPolicy: ActivityUIDismissalPolicy) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/func end(ActivityContent<Activity<Attributes>.ContentState>?, dismissalPolicy: ActivityUIDismissalPolicy) async",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityuidismissalpolicy",
+   "title": "ActivityUIDismissalPolicy",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityUIDismissalPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityuidismissalpolicy/default",
+   "title": "static let `default`: ActivityUIDismissalPolicy",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityUIDismissalPolicy/static let `default`: ActivityUIDismissalPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityuidismissalpolicy/immediate",
+   "title": "static let immediate: ActivityUIDismissalPolicy",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityUIDismissalPolicy/static let immediate: ActivityUIDismissalPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityuidismissalpolicy/after(_:)",
+   "title": "static func after(Date) -> ActivityUIDismissalPolicy",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityUIDismissalPolicy/static func after(Date) -> ActivityUIDismissalPolicy",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/end(_:dismissalpolicy:timestamp:)",
+   "title": "func end(ActivityContent<Activity<Attributes>.ContentState>?, dismissalPolicy: ActivityUIDismissalPolicy, timestamp: Date) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/func end(ActivityContent<Activity<Attributes>.ContentState>?, dismissalPolicy: ActivityUIDismissalPolicy, timestamp: Date) async",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentupdates-swift.property",
+   "title": "var contentUpdates: Activity<Attributes>.ContentUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var contentUpdates: Activity<Attributes>.ContentUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentupdates-swift.struct",
+   "title": "Activity.ContentUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ContentUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentupdates-swift.struct/iterator",
+   "title": "Activity.ContentUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ContentUpdates/Activity.ContentUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> Activity<Attributes>.ContentUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Activity.ContentUpdates/func makeAsyncIterator() -> Activity<Attributes>.ContentUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentupdates-swift.struct/element",
+   "title": "Activity.ContentUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Activity.ContentUpdates/Activity.ContentUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystate",
+   "title": "var activityState: ActivityState",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var activityState: ActivityState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate",
+   "title": "ActivityState",
+   "type": "enum",
+   "breadcrumb": "ActivityKit/Activity/ActivityState",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate/active",
+   "title": "case active",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityState/case active",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate/dismissed",
+   "title": "case dismissed",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityState/case dismissed",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate/pending",
+   "title": "case pending",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityState/case pending",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate/stale",
+   "title": "case stale",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityState/case stale",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activitystate/ended",
+   "title": "case ended",
+   "type": "case",
+   "breadcrumb": "ActivityKit/Activity/ActivityState/case ended",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystateupdates-swift.property",
+   "title": "var activityStateUpdates: Activity<Attributes>.ActivityStateUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var activityStateUpdates: Activity<Attributes>.ActivityStateUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystateupdates-swift.struct",
+   "title": "Activity.ActivityStateUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityStateUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystateupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> Activity<Attributes>.ActivityStateUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityStateUpdates/func makeAsyncIterator() -> Activity<Attributes>.ActivityStateUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystateupdates-swift.struct/iterator",
+   "title": "Activity.ActivityStateUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityStateUpdates/Activity.ActivityStateUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activitystateupdates-swift.struct/element",
+   "title": "Activity.ActivityStateUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityStateUpdates/Activity.ActivityStateUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtoken",
+   "title": "var pushToken: Data?",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var pushToken: Data?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtokenupdates-swift.property",
+   "title": "var pushTokenUpdates: Activity<Attributes>.PushTokenUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/var pushTokenUpdates: Activity<Attributes>.PushTokenUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtokenupdates-swift.struct",
+   "title": "Activity.PushTokenUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.PushTokenUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtokenupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> Activity<Attributes>.PushTokenUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Activity.PushTokenUpdates/func makeAsyncIterator() -> Activity<Attributes>.PushTokenUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtokenupdates-swift.struct/iterator",
+   "title": "Activity.PushTokenUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.PushTokenUpdates/Activity.PushTokenUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtokenupdates-swift.struct/element",
+   "title": "Activity.PushTokenUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Activity.PushTokenUpdates/Activity.PushTokenUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtostarttoken",
+   "title": "static var pushToStartToken: Data?",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/static var pushToStartToken: Data?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/pushtostarttokenupdates",
+   "title": "static var pushToStartTokenUpdates: Activity<Attributes>.PushTokenUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/static var pushToStartTokenUpdates: Activity<Attributes>.PushTokenUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo",
+   "title": "ActivityAuthorizationInfo",
+   "type": "class",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/areactivitiesenabled",
+   "title": "var areActivitiesEnabled: Bool",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/var areActivitiesEnabled: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.property",
+   "title": "let activityEnablementUpdates: ActivityAuthorizationInfo.ActivityEnablementUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/let activityEnablementUpdates: ActivityAuthorizationInfo.ActivityEnablementUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.struct",
+   "title": "ActivityAuthorizationInfo.ActivityEnablementUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.ActivityEnablementUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.ActivityEnablementUpdates/func makeAsyncIterator() -> ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.struct/iterator",
+   "title": "ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.ActivityEnablementUpdates/ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.struct/iterator/next()",
+   "title": "func next() async -> Bool?",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.ActivityEnablementUpdates/ActivityAuthorizationInfo.ActivityEnablementUpdates.Iterator/func next() async -> Bool?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/activityenablementupdates-swift.struct/element",
+   "title": "ActivityAuthorizationInfo.ActivityEnablementUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.ActivityEnablementUpdates/ActivityAuthorizationInfo.ActivityEnablementUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/init()",
+   "title": "init()",
+   "type": "init",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/init()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushesenabled",
+   "title": "var frequentPushesEnabled: Bool",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/var frequentPushesEnabled: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.property",
+   "title": "let frequentPushEnablementUpdates: ActivityAuthorizationInfo.FrequentPushEnablementUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/let frequentPushEnablementUpdates: ActivityAuthorizationInfo.FrequentPushEnablementUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.struct",
+   "title": "ActivityAuthorizationInfo.FrequentPushEnablementUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.FrequentPushEnablementUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.FrequentPushEnablementUpdates/func makeAsyncIterator() -> ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.struct/iterator",
+   "title": "ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.FrequentPushEnablementUpdates/ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.struct/iterator/next()",
+   "title": "func next() async -> Bool?",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.FrequentPushEnablementUpdates/ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Iterator/func next() async -> Bool?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activityauthorizationinfo/frequentpushenablementupdates-swift.struct/element",
+   "title": "ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/ActivityAuthorizationInfo/ActivityAuthorizationInfo.FrequentPushEnablementUpdates/ActivityAuthorizationInfo.FrequentPushEnablementUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activities",
+   "title": "static var activities: [Activity<Attributes>]",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/static var activities: [Activity<Attributes>]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activityupdates-swift.type.property",
+   "title": "static var activityUpdates: Activity<Attributes>.ActivityUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/static var activityUpdates: Activity<Attributes>.ActivityUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activityupdates-swift.struct",
+   "title": "Activity.ActivityUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activityupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> Activity<Attributes>.ActivityUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityUpdates/func makeAsyncIterator() -> Activity<Attributes>.ActivityUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activityupdates-swift.struct/iterator",
+   "title": "Activity.ActivityUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityUpdates/Activity.ActivityUpdates.Iterator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/activityupdates-swift.struct/element",
+   "title": "Activity.ActivityUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Activity.ActivityUpdates/Activity.ActivityUpdates.Element",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/id",
+   "title": "let id: String",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/let id: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/deprecated-symbols",
+   "title": "Deprecated symbols",
+   "type": "collection",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/request(attributes:contentstate:pushtype:)",
+   "title": "static func request(attributes: Attributes, contentState: Activity<Attributes>.ContentState, pushType: PushType?) throws -> Activity<Attributes>",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/static func request(attributes: Attributes, contentState: Activity<Attributes>.ContentState, pushType: PushType?) throws -> Activity<Attributes>",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/update(using:)",
+   "title": "func update(using: Activity<Attributes>.ContentState) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/func update(using: Activity<Attributes>.ContentState) async",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/update(using:alertconfiguration:)",
+   "title": "func update(using: Activity<Attributes>.ContentState, alertConfiguration: AlertConfiguration?) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/func update(using: Activity<Attributes>.ContentState, alertConfiguration: AlertConfiguration?) async",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/end(using:dismissalpolicy:)",
+   "title": "func end(using: Activity<Attributes>.ContentState?, dismissalPolicy: ActivityUIDismissalPolicy) async",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/func end(using: Activity<Attributes>.ContentState?, dismissalPolicy: ActivityUIDismissalPolicy) async",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstate-swift.property",
+   "title": "var contentState: Activity<Attributes>.ContentState",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/var contentState: Activity<Attributes>.ContentState",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstateupdates-swift.property",
+   "title": "var contentStateUpdates: Activity<Attributes>.ContentStateUpdates",
+   "type": "property",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/var contentStateUpdates: Activity<Attributes>.ContentStateUpdates",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstateupdates-swift.struct",
+   "title": "Activity.ContentStateUpdates",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/Activity.ContentStateUpdates",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstateupdates-swift.struct/makeasynciterator()",
+   "title": "func makeAsyncIterator() -> Activity<Attributes>.ContentStateUpdates.Iterator",
+   "type": "method",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/Activity.ContentStateUpdates/func makeAsyncIterator() -> Activity<Attributes>.ContentStateUpdates.Iterator",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstateupdates-swift.struct/iterator",
+   "title": "Activity.ContentStateUpdates.Iterator",
+   "type": "struct",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/Activity.ContentStateUpdates/Activity.ContentStateUpdates.Iterator",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/activity/contentstateupdates-swift.struct/element",
+   "title": "Activity.ContentStateUpdates.Element",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/Activity/Deprecated symbols/Activity.ContentStateUpdates/Activity.ContentStateUpdates.Element",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/emoji-rangers-supporting-live-activities-interactivity-and-animations",
+   "title": "Emoji Rangers: Supporting Live Activities, interactivity, and animations",
+   "type": "sampleCode",
+   "breadcrumb": "ActivityKit/Emoji Rangers: Supporting Live Activities, interactivity, and animations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/information-property-list/nssupportsliveactivities",
+   "title": "NSSupportsLiveActivities",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/NSSupportsLiveActivities",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/information-property-list/nssupportsliveactivitiesfrequentupdates",
+   "title": "NSSupportsLiveActivitiesFrequentUpdates",
+   "type": "typealias",
+   "breadcrumb": "ActivityKit/NSSupportsLiveActivitiesFrequentUpdates",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/creating-custom-views-for-live-activities",
+   "title": "Creating custom views for Live Activities",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Creating custom views for Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/adding-accessible-descriptions-to-widgets-and-live-activities",
+   "title": "Adding accessible descriptions to widgets and Live Activities",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Adding accessible descriptions to widgets and Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/activitykit/launching-your-app-from-a-live-activity",
+   "title": "Launching your app from a Live Activity",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Launching your app from a Live Activity",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-a-widget-extension",
+   "title": "Creating a widget extension",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Creating a widget extension",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/animating-data-updates-in-widgets-and-live-activities",
+   "title": "Animating data updates in widgets and Live Activities",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Animating data updates in widgets and Live Activities",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications",
+   "title": "Creating views for widgets, Live Activities, and watch complications",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Creating views for widgets, Live Activities, and watch complications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit/linking-to-specific-app-scenes-from-your-widget-or-live-activity",
+   "title": "Linking to specific app scenes from your widget or Live Activity",
+   "type": "article",
+   "breadcrumb": "ActivityKit/Linking to specific app scenes from your widget or Live Activity",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/widgetkit",
+   "title": "WidgetKit",
+   "type": "module",
+   "breadcrumb": "ActivityKit/WidgetKit",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  }
+ ]
+}

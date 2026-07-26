@@ -1,0 +1,241 @@
+{
+ "key": "kreya",
+ "count": 47,
+ "articles": [
+  {
+   "url": "https://kreya.app/blog/api-snapshot-testing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/best-api-testing-tools/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/bloomrpc-deprecated/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/bring-your-own-storage/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/calling-auth0-secured-apis/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/comparing-privacy-of-popular-api-clients/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/getting-started-with-graphql/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/grpc-best-practices/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/grpc-deep-dive/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/grpc-web-deep-dive/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/har-import/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/hidden-cost-of-cloud-first-api-clients/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/how-to-call-google-cloud-apis/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/how-we-built-kreya/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.10-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.11-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.12-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.13-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.14-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.15-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.16-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.17-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.18-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.19-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.20.0-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.7-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.8-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/kreya-1.9-whats-new/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/looking-back-on-2021/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/looking-back-on-2022/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/looking-back-on-2023/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/looking-back-on-2024/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/looking-back-on-2025/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/new-http-query-method-explained/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/postman-vs-kreya/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/protobuf-editions-explained/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/protocolbuffers-wire-format-part-2/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/protocolbuffers-wire-format/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/rest-vs-grpc-which-should-you-choose/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/rest-vs-grpc/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/solving-advent-of-code-with-kreya/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/telemetry-insights-q2-2021/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/testing-apis-with-kreya/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/testing-rest-apis/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/transfering-files-with-grpc/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/using-virtual-scrolling/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://kreya.app/blog/why-kreya-isnt-open-source/",
+   "title": "",
+   "date": ""
+  }
+ ]
+}

@@ -1,0 +1,3788 @@
+{
+ "archive": "usernotifications",
+ "included": [
+  "com.apple.usernotifications"
+ ],
+ "page_count": 290,
+ "longform_count": 30,
+ "pages": [
+  {
+   "path": "/documentation/usernotifications",
+   "title": "User Notifications",
+   "type": "module",
+   "breadcrumb": "User Notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/updates/usernotifications",
+   "title": "User Notifications updates",
+   "type": "article",
+   "breadcrumb": "User Notifications/User Notifications updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/asking-permission-to-use-notifications",
+   "title": "Asking permission to use notifications",
+   "type": "article",
+   "breadcrumb": "User Notifications/Asking permission to use notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter",
+   "title": "UNUserNotificationCenter",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/current()",
+   "title": "class func current() -> UNUserNotificationCenter",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/class func current() -> UNUserNotificationCenter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/getnotificationsettings(completionhandler:)",
+   "title": "func getNotificationSettings(completionHandler: (UNNotificationSettings) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func getNotificationSettings(completionHandler: (UNNotificationSettings) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/setbadgecount(_:withcompletionhandler:)",
+   "title": "func setBadgeCount(Int, withCompletionHandler: (((any Error)?) -> Void)?)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func setBadgeCount(Int, withCompletionHandler: (((any Error)?) -> Void)?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/requestauthorization(options:completionhandler:)",
+   "title": "func requestAuthorization(options: UNAuthorizationOptions, completionHandler: (Bool, (any Error)?) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func requestAuthorization(options: UNAuthorizationOptions, completionHandler: (Bool, (any Error)?) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions",
+   "title": "UNAuthorizationOptions",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/badge",
+   "title": "static var badge: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var badge: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/sound",
+   "title": "static var sound: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var sound: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/alert",
+   "title": "static var alert: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var alert: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/carplay",
+   "title": "static var carPlay: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var carPlay: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/criticalalert",
+   "title": "static var criticalAlert: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var criticalAlert: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/providesappnotificationsettings",
+   "title": "static var providesAppNotificationSettings: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var providesAppNotificationSettings: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/provisional",
+   "title": "static var provisional: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var provisional: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/init(rawvalue:)",
+   "title": "init(rawValue: UInt)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/init(rawValue: UInt)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/announcement",
+   "title": "static var announcement: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var announcement: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptions/timesensitive",
+   "title": "static var timeSensitive: UNAuthorizationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/static var timeSensitive: UNAuthorizationOptions",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/delegate",
+   "title": "var delegate: (any UNUserNotificationCenterDelegate)?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/var delegate: (any UNUserNotificationCenterDelegate)?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenterdelegate",
+   "title": "UNUserNotificationCenterDelegate",
+   "type": "protocol",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/handling-notifications-and-notification-related-actions",
+   "title": "Handling notifications and notification-related actions",
+   "type": "article",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/Handling notifications and notification-related actions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift",
+    "swift",
+    "occ",
+    "occ",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:didreceive:withcompletionhandler:)",
+   "title": "func userNotificationCenter(UNUserNotificationCenter, didReceive: UNNotificationResponse, withCompletionHandler: () -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/func userNotificationCenter(UNUserNotificationCenter, didReceive: UNNotificationResponse, withCompletionHandler: () -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:willpresent:withcompletionhandler:)",
+   "title": "func userNotificationCenter(UNUserNotificationCenter, willPresent: UNNotification, withCompletionHandler: (UNNotificationPresentationOptions) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/func userNotificationCenter(UNUserNotificationCenter, willPresent: UNNotification, withCompletionHandler: (UNNotificationPresentationOptions) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions",
+   "title": "UNNotificationPresentationOptions",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/badge",
+   "title": "static var badge: UNNotificationPresentationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/static var badge: UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/banner",
+   "title": "static var banner: UNNotificationPresentationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/static var banner: UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/list",
+   "title": "static var list: UNNotificationPresentationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/static var list: UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/sound",
+   "title": "static var sound: UNNotificationPresentationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/static var sound: UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/alert",
+   "title": "static var alert: UNNotificationPresentationOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/static var alert: UNNotificationPresentationOptions",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptions/init(rawvalue:)",
+   "title": "init(rawValue: UInt)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptions/init(rawValue: UInt)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:opensettingsfor:)",
+   "title": "func userNotificationCenter(UNUserNotificationCenter, openSettingsFor: UNNotification?)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/func userNotificationCenter(UNUserNotificationCenter, openSettingsFor: UNNotification?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/supportscontentextensions",
+   "title": "var supportsContentExtensions: Bool",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/var supportsContentExtensions: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/add(_:withcompletionhandler:)",
+   "title": "func add(UNNotificationRequest, withCompletionHandler: (((any Error)?) -> Void)?)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func add(UNNotificationRequest, withCompletionHandler: (((any Error)?) -> Void)?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/getpendingnotificationrequests(completionhandler:)",
+   "title": "func getPendingNotificationRequests(completionHandler: ([UNNotificationRequest]) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func getPendingNotificationRequests(completionHandler: ([UNNotificationRequest]) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/removependingnotificationrequests(withidentifiers:)",
+   "title": "func removePendingNotificationRequests(withIdentifiers: [String])",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func removePendingNotificationRequests(withIdentifiers: [String])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/removeallpendingnotificationrequests()",
+   "title": "func removeAllPendingNotificationRequests()",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func removeAllPendingNotificationRequests()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/getdeliverednotifications(completionhandler:)",
+   "title": "func getDeliveredNotifications(completionHandler: ([UNNotification]) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func getDeliveredNotifications(completionHandler: ([UNNotification]) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/removedeliverednotifications(withidentifiers:)",
+   "title": "func removeDeliveredNotifications(withIdentifiers: [String])",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func removeDeliveredNotifications(withIdentifiers: [String])",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/removealldeliverednotifications()",
+   "title": "func removeAllDeliveredNotifications()",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func removeAllDeliveredNotifications()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/setnotificationcategories(_:)",
+   "title": "func setNotificationCategories(Set<UNNotificationCategory>)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func setNotificationCategories(Set<UNNotificationCategory>)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unusernotificationcenter/getnotificationcategories(completionhandler:)",
+   "title": "func getNotificationCategories(completionHandler: (Set<UNNotificationCategory>) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/func getNotificationCategories(completionHandler: (Set<UNNotificationCategory>) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror",
+   "title": "UNError",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/notificationsnotallowed",
+   "title": "static var notificationsNotAllowed: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var notificationsNotAllowed: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentinvalidurl",
+   "title": "static var attachmentInvalidURL: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentInvalidURL: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentunrecognizedtype",
+   "title": "static var attachmentUnrecognizedType: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentUnrecognizedType: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentinvalidfilesize",
+   "title": "static var attachmentInvalidFileSize: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentInvalidFileSize: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentnotindatastore",
+   "title": "static var attachmentNotInDataStore: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentNotInDataStore: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentmoveintodatastorefailed",
+   "title": "static var attachmentMoveIntoDataStoreFailed: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentMoveIntoDataStoreFailed: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/attachmentcorrupt",
+   "title": "static var attachmentCorrupt: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var attachmentCorrupt: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/notificationinvalidnodate",
+   "title": "static var notificationInvalidNoDate: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var notificationInvalidNoDate: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/notificationinvalidnocontent",
+   "title": "static var notificationInvalidNoContent: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var notificationInvalidNoContent: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/contentprovidinginvalid",
+   "title": "static var contentProvidingInvalid: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var contentProvidingInvalid: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/contentprovidingobjectnotallowed",
+   "title": "static var contentProvidingObjectNotAllowed: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var contentProvidingObjectNotAllowed: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/badgeinputinvalid",
+   "title": "static var badgeInputInvalid: UNError.Code",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var badgeInputInvalid: UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/errordomain",
+   "title": "static var errorDomain: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/static var errorDomain: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerrordomain",
+   "title": "let UNErrorDomain: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/let UNErrorDomain: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code",
+   "title": "UNError.Code",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/notificationsnotallowed",
+   "title": "case notificationsNotAllowed",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case notificationsNotAllowed",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentinvalidurl",
+   "title": "case attachmentInvalidURL",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentInvalidURL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentunrecognizedtype",
+   "title": "case attachmentUnrecognizedType",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentUnrecognizedType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentinvalidfilesize",
+   "title": "case attachmentInvalidFileSize",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentInvalidFileSize",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentnotindatastore",
+   "title": "case attachmentNotInDataStore",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentNotInDataStore",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentmoveintodatastorefailed",
+   "title": "case attachmentMoveIntoDataStoreFailed",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentMoveIntoDataStoreFailed",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/attachmentcorrupt",
+   "title": "case attachmentCorrupt",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case attachmentCorrupt",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/notificationinvalidnodate",
+   "title": "case notificationInvalidNoDate",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case notificationInvalidNoDate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/notificationinvalidnocontent",
+   "title": "case notificationInvalidNoContent",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case notificationInvalidNoContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/contentprovidinginvalid",
+   "title": "case contentProvidingInvalid",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case contentProvidingInvalid",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/contentprovidingobjectnotallowed",
+   "title": "case contentProvidingObjectNotAllowed",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case contentProvidingObjectNotAllowed",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/badgeinputinvalid",
+   "title": "case badgeInputInvalid",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/case badgeInputInvalid",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unerror/code/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNError/UNError.Code/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings",
+   "title": "UNNotificationSettings",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationSettings",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/authorizationstatus",
+   "title": "var authorizationStatus: UNAuthorizationStatus",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var authorizationStatus: UNAuthorizationStatus",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus",
+   "title": "UNAuthorizationStatus",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/notdetermined",
+   "title": "case notDetermined",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/case notDetermined",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/denied",
+   "title": "case denied",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/case denied",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/authorized",
+   "title": "case authorized",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/case authorized",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/provisional",
+   "title": "case provisional",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/case provisional",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/ephemeral",
+   "title": "case ephemeral",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/case ephemeral",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationstatus/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAuthorizationStatus/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/notificationcentersetting",
+   "title": "var notificationCenterSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var notificationCenterSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/lockscreensetting",
+   "title": "var lockScreenSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var lockScreenSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/carplaysetting",
+   "title": "var carPlaySetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var carPlaySetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/alertsetting",
+   "title": "var alertSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var alertSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/badgesetting",
+   "title": "var badgeSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var badgeSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/soundsetting",
+   "title": "var soundSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var soundSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/criticalalertsetting",
+   "title": "var criticalAlertSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var criticalAlertSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/announcementsetting",
+   "title": "var announcementSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var announcementSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/scheduleddeliverysetting",
+   "title": "var scheduledDeliverySetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var scheduledDeliverySetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/timesensitivesetting",
+   "title": "var timeSensitiveSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var timeSensitiveSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsetting",
+   "title": "UNNotificationSetting",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsetting/notsupported",
+   "title": "case notSupported",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNNotificationSetting/case notSupported",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsetting/disabled",
+   "title": "case disabled",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNNotificationSetting/case disabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsetting/enabled",
+   "title": "case enabled",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNNotificationSetting/case enabled",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsetting/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNNotificationSetting/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/alertstyle",
+   "title": "var alertStyle: UNAlertStyle",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var alertStyle: UNAlertStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unalertstyle",
+   "title": "UNAlertStyle",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAlertStyle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unalertstyle/none",
+   "title": "case none",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAlertStyle/case none",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unalertstyle/banner",
+   "title": "case banner",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAlertStyle/case banner",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unalertstyle/alert",
+   "title": "case alert",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAlertStyle/case alert",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unalertstyle/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNAlertStyle/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/showpreviewssetting",
+   "title": "var showPreviewsSetting: UNShowPreviewsSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var showPreviewsSetting: UNShowPreviewsSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unshowpreviewssetting",
+   "title": "UNShowPreviewsSetting",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNShowPreviewsSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unshowpreviewssetting/always",
+   "title": "case always",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNShowPreviewsSetting/case always",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unshowpreviewssetting/whenauthenticated",
+   "title": "case whenAuthenticated",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNShowPreviewsSetting/case whenAuthenticated",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unshowpreviewssetting/never",
+   "title": "case never",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNShowPreviewsSetting/case never",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unshowpreviewssetting/init(rawvalue:)",
+   "title": "init?(rawValue: Int)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSettings/UNShowPreviewsSetting/init?(rawValue: Int)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/providesappnotificationsettings",
+   "title": "var providesAppNotificationSettings: Bool",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var providesAppNotificationSettings: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/directmessagessetting",
+   "title": "var directMessagesSetting: UNNotificationSetting",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSettings/var directMessagesSetting: UNNotificationSetting",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsettings/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSettings/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/setting-up-a-remote-notification-server",
+   "title": "Setting up a remote notification server",
+   "type": "collection",
+   "breadcrumb": "User Notifications/Setting up a remote notification server",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/registering-your-app-with-apns",
+   "title": "Registering your app with APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Registering your app with APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/generating-a-remote-notification",
+   "title": "Generating a remote notification",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Generating a remote notification",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/pushing-background-updates-to-your-app",
+   "title": "Pushing background updates to your App",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Pushing background updates to your App",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/establishing-a-connection-to-apns",
+   "title": "Establishing a connection to Apple Push Notification service (APNs)",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Establishing a connection to Apple Push Notification service (APNs)",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/establishing-a-token-based-connection-to-apns",
+   "title": "Establishing a token-based connection to APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Establishing a token-based connection to APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/establishing-a-certificate-based-connection-to-apns",
+   "title": "Establishing a certificate-based connection to APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Establishing a certificate-based connection to APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/sending-notification-requests-to-apns",
+   "title": "Sending notification requests to APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Sending notification requests to APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/handling-notification-responses-from-apns",
+   "title": "Handling notification responses from APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Handling notification responses from APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/viewing-the-status-of-push-notifications-using-metrics-and-apns",
+   "title": "Viewing the status of push notifications using Metrics and APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Viewing the status of push notifications using Metrics and APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/setting-up-broadcast-push-notifications",
+   "title": "Setting up broadcast push notifications",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Setting up broadcast push notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/sending-channel-management-requests-to-apns",
+   "title": "Sending channel management requests to APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Sending channel management requests to APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/sending-broadcast-push-notification-requests-to-apns",
+   "title": "Sending broadcast push notification requests to APNs",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Sending broadcast push notification requests to APNs",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/handling-error-responses-from-apns",
+   "title": "Handling error responses from Apple Push Notification service",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Handling error responses from Apple Push Notification service",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/troubleshooting-push-notifications",
+   "title": "Troubleshooting push notifications",
+   "type": "article",
+   "breadcrumb": "User Notifications/Setting up a remote notification server/Troubleshooting push notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/sending-push-notifications-using-command-line-tools",
+   "title": "Sending push notifications using command-line tools",
+   "type": "article",
+   "breadcrumb": "User Notifications/Sending push notifications using command-line tools",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/testing-notifications-using-the-push-notification-console",
+   "title": "Testing notifications using the Push Notification Console",
+   "type": "article",
+   "breadcrumb": "User Notifications/Testing notifications using the Push Notification Console",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/scheduling-a-notification-locally-from-your-app",
+   "title": "Scheduling a notification locally from your app",
+   "type": "collection",
+   "breadcrumb": "User Notifications/Scheduling a notification locally from your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest",
+   "title": "UNNotificationRequest",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest/init(identifier:content:trigger:)",
+   "title": "convenience init(identifier: String, content: UNNotificationContent, trigger: UNNotificationTrigger?)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationRequest/convenience init(identifier: String, content: UNNotificationContent, trigger: UNNotificationTrigger?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationRequest/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest/content",
+   "title": "var content: UNNotificationContent",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationRequest/var content: UNNotificationContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest/trigger",
+   "title": "var trigger: UNNotificationTrigger?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationRequest/var trigger: UNNotificationTrigger?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationrequest/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationRequest/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotification",
+   "title": "UNNotification",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotification",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotification/request",
+   "title": "var request: UNNotificationRequest",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotification/var request: UNNotificationRequest",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotification/date",
+   "title": "var date: Date",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotification/var date: Date",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotification/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotification/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/sending-web-push-notifications-in-web-apps-and-browsers",
+   "title": "Sending web push notifications in web apps and browsers",
+   "type": "article",
+   "breadcrumb": "User Notifications/Sending web push notifications in web apps and browsers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/implementing-communication-notifications",
+   "title": "Implementing communication notifications",
+   "type": "article",
+   "breadcrumb": "User Notifications/Implementing communication notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontentproviding",
+   "title": "UNNotificationContentProviding",
+   "type": "protocol",
+   "breadcrumb": "User Notifications/UNNotificationContentProviding",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionicon",
+   "title": "UNNotificationActionIcon",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationActionIcon",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionicon/init(systemimagename:)",
+   "title": "convenience init(systemImageName: String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationActionIcon/convenience init(systemImageName: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionicon/init(templateimagename:)",
+   "title": "convenience init(templateImageName: String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationActionIcon/convenience init(templateImageName: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionicon/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationActionIcon/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent",
+   "title": "UNMutableNotificationContent",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/title",
+   "title": "var title: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var title: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/subtitle",
+   "title": "var subtitle: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var subtitle: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/body",
+   "title": "var body: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var body: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/attachments",
+   "title": "var attachments: [UNNotificationAttachment]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var attachments: [UNNotificationAttachment]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/userinfo",
+   "title": "var userInfo: [AnyHashable : Any]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var userInfo: [AnyHashable : Any]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/launchimagename",
+   "title": "var launchImageName: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var launchImageName: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/badge",
+   "title": "var badge: NSNumber?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var badge: NSNumber?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/targetcontentidentifier",
+   "title": "var targetContentIdentifier: String?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var targetContentIdentifier: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/sound",
+   "title": "var sound: UNNotificationSound?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var sound: UNNotificationSound?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/interruptionlevel",
+   "title": "var interruptionLevel: UNNotificationInterruptionLevel",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var interruptionLevel: UNNotificationInterruptionLevel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel",
+   "title": "UNNotificationInterruptionLevel",
+   "type": "enum",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel/active",
+   "title": "case active",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel/case active",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel/critical",
+   "title": "case critical",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel/case critical",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel/passive",
+   "title": "case passive",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel/case passive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel/timesensitive",
+   "title": "case timeSensitive",
+   "type": "case",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel/case timeSensitive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationinterruptionlevel/init(rawvalue:)",
+   "title": "init?(rawValue: UInt)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/UNNotificationInterruptionLevel/init?(rawValue: UInt)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/relevancescore",
+   "title": "var relevanceScore: Double",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var relevanceScore: Double",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/filtercriteria",
+   "title": "var filterCriteria: String?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var filterCriteria: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/threadidentifier",
+   "title": "var threadIdentifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var threadIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/categoryidentifier",
+   "title": "var categoryIdentifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var categoryIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/summaryargument",
+   "title": "var summaryArgument: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var summaryArgument: String",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/summaryargumentcount",
+   "title": "var summaryArgumentCount: Int",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var summaryArgumentCount: Int",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unmutablenotificationcontent/appentityidentifiers",
+   "title": "var appEntityIdentifiers: [EntityIdentifier]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNMutableNotificationContent/var appEntityIdentifiers: [EntityIdentifier]",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent",
+   "title": "UNNotificationContent",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/title",
+   "title": "var title: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var title: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/subtitle",
+   "title": "var subtitle: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var subtitle: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/body",
+   "title": "var body: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var body: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/attachments",
+   "title": "var attachments: [UNNotificationAttachment]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var attachments: [UNNotificationAttachment]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/userinfo",
+   "title": "var userInfo: [AnyHashable : Any]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var userInfo: [AnyHashable : Any]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/launchimagename",
+   "title": "var launchImageName: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var launchImageName: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/badge",
+   "title": "var badge: NSNumber?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var badge: NSNumber?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/targetcontentidentifier",
+   "title": "var targetContentIdentifier: String?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var targetContentIdentifier: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/sound",
+   "title": "var sound: UNNotificationSound?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var sound: UNNotificationSound?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/interruptionlevel",
+   "title": "var interruptionLevel: UNNotificationInterruptionLevel",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var interruptionLevel: UNNotificationInterruptionLevel",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/relevancescore",
+   "title": "var relevanceScore: Double",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var relevanceScore: Double",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/filtercriteria",
+   "title": "var filterCriteria: String?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var filterCriteria: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/threadidentifier",
+   "title": "var threadIdentifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var threadIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/categoryidentifier",
+   "title": "var categoryIdentifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var categoryIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/summaryargument",
+   "title": "var summaryArgument: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var summaryArgument: String",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/summaryargumentcount",
+   "title": "var summaryArgumentCount: Int",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationContent/var summaryArgumentCount: Int",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/updating(from:)",
+   "title": "func updating(from: any UNNotificationContentProviding) throws -> UNNotificationContent",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationContent/func updating(from: any UNNotificationContentProviding) throws -> UNNotificationContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcontent/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationContent/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment",
+   "title": "UNNotificationAttachment",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationAttachment",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/init(identifier:url:options:)-83grx",
+   "title": "convenience init(identifier: String, url: URL, options: [AnyHashable : Any]?) throws",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/convenience init(identifier: String, url: URL, options: [AnyHashable : Any]?) throws",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachmentoptionstypehintkey",
+   "title": "let UNNotificationAttachmentOptionsTypeHintKey: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/let UNNotificationAttachmentOptionsTypeHintKey: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachmentoptionsthumbnailhiddenkey",
+   "title": "let UNNotificationAttachmentOptionsThumbnailHiddenKey: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/let UNNotificationAttachmentOptionsThumbnailHiddenKey: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachmentoptionsthumbnailclippingrectkey",
+   "title": "let UNNotificationAttachmentOptionsThumbnailClippingRectKey: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/let UNNotificationAttachmentOptionsThumbnailClippingRectKey: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachmentoptionsthumbnailtimekey",
+   "title": "let UNNotificationAttachmentOptionsThumbnailTimeKey: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/let UNNotificationAttachmentOptionsThumbnailTimeKey: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/url",
+   "title": "var url: URL",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/var url: URL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/type",
+   "title": "var type: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/var type: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattachment/init(identifier:url:options:)-7oony",
+   "title": "convenience init(identifier: String, URL: URL, options: [AnyHashable : Any]?) throws",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAttachment/convenience init(identifier: String, URL: URL, options: [AnyHashable : Any]?) throws",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound",
+   "title": "UNNotificationSound",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/default",
+   "title": "class var `default`: UNNotificationSound",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSound/class var `default`: UNNotificationSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/init(named:)",
+   "title": "convenience init(named: UNNotificationSoundName)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSound/convenience init(named: UNNotificationSoundName)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/defaultcritical",
+   "title": "class var defaultCritical: UNNotificationSound",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSound/class var defaultCritical: UNNotificationSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/defaultcriticalsound(withaudiovolume:)",
+   "title": "class func defaultCriticalSound(withAudioVolume: Float) -> Self",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationSound/class func defaultCriticalSound(withAudioVolume: Float) -> Self",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/criticalsoundnamed(_:)",
+   "title": "class func criticalSoundNamed(UNNotificationSoundName) -> Self",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationSound/class func criticalSoundNamed(UNNotificationSoundName) -> Self",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/criticalsoundnamed(_:withaudiovolume:)",
+   "title": "class func criticalSoundNamed(UNNotificationSoundName, withAudioVolume: Float) -> Self",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationSound/class func criticalSoundNamed(UNNotificationSoundName, withAudioVolume: Float) -> Self",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/defaultringtone",
+   "title": "class var defaultRingtone: UNNotificationSound",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationSound/class var defaultRingtone: UNNotificationSound",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/ringtonesoundnamed(_:)",
+   "title": "class func ringtoneSoundNamed(UNNotificationSoundName) -> Self",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationSound/class func ringtoneSoundNamed(UNNotificationSoundName) -> Self",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsound/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSound/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsoundname",
+   "title": "UNNotificationSoundName",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNNotificationSoundName",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsoundname/init(_:)",
+   "title": "init(String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSoundName/init(String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationsoundname/init(rawvalue:)",
+   "title": "init(rawValue: String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationSoundName/init(rawValue: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/uncalendarnotificationtrigger",
+   "title": "UNCalendarNotificationTrigger",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNCalendarNotificationTrigger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/uncalendarnotificationtrigger/init(datematching:repeats:)",
+   "title": "convenience init(dateMatching: DateComponents, repeats: Bool)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNCalendarNotificationTrigger/convenience init(dateMatching: DateComponents, repeats: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/uncalendarnotificationtrigger/nexttriggerdate()",
+   "title": "func nextTriggerDate() -> Date?",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNCalendarNotificationTrigger/func nextTriggerDate() -> Date?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/uncalendarnotificationtrigger/datecomponents",
+   "title": "var dateComponents: DateComponents",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNCalendarNotificationTrigger/var dateComponents: DateComponents",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/uncalendarnotificationtrigger/init(datematchingcomponents:repeats:)",
+   "title": "convenience init(dateMatchingComponents: DateComponents, repeats: Bool)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNCalendarNotificationTrigger/convenience init(dateMatchingComponents: DateComponents, repeats: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untimeintervalnotificationtrigger",
+   "title": "UNTimeIntervalNotificationTrigger",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNTimeIntervalNotificationTrigger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untimeintervalnotificationtrigger/init(timeinterval:repeats:)",
+   "title": "convenience init(timeInterval: TimeInterval, repeats: Bool)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNTimeIntervalNotificationTrigger/convenience init(timeInterval: TimeInterval, repeats: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untimeintervalnotificationtrigger/nexttriggerdate()",
+   "title": "func nextTriggerDate() -> Date?",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNTimeIntervalNotificationTrigger/func nextTriggerDate() -> Date?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untimeintervalnotificationtrigger/timeinterval",
+   "title": "var timeInterval: TimeInterval",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNTimeIntervalNotificationTrigger/var timeInterval: TimeInterval",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unlocationnotificationtrigger",
+   "title": "UNLocationNotificationTrigger",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNLocationNotificationTrigger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unlocationnotificationtrigger/init(region:repeats:)",
+   "title": "convenience init(region: CLRegion, repeats: Bool)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNLocationNotificationTrigger/convenience init(region: CLRegion, repeats: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unlocationnotificationtrigger/region",
+   "title": "var region: CLRegion",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNLocationNotificationTrigger/var region: CLRegion",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unpushnotificationtrigger",
+   "title": "UNPushNotificationTrigger",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNPushNotificationTrigger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationtrigger",
+   "title": "UNNotificationTrigger",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationTrigger",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationtrigger/repeats",
+   "title": "var repeats: Bool",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationTrigger/var repeats: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationtrigger/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationTrigger/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/declaring-your-actionable-notification-types",
+   "title": "Declaring your actionable notification types",
+   "type": "article",
+   "breadcrumb": "User Notifications/Declaring your actionable notification types",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory",
+   "title": "UNNotificationCategory",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationCategory",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/init(identifier:actions:intentidentifiers:options:)",
+   "title": "convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], options: UNNotificationCategoryOptions)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationCategory/convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], options: UNNotificationCategoryOptions)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/init(identifier:actions:intentidentifiers:hiddenpreviewsbodyplaceholder:options:)",
+   "title": "convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], hiddenPreviewsBodyPlaceholder: String, options: UNNotificationCategoryOptions)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationCategory/convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], hiddenPreviewsBodyPlaceholder: String, options: UNNotificationCategoryOptions)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/init(identifier:actions:intentidentifiers:hiddenpreviewsbodyplaceholder:categorysummaryformat:options:)",
+   "title": "convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], hiddenPreviewsBodyPlaceholder: String?, categorySummaryFormat: String?, options: UNNotificationCategoryOptions)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationCategory/convenience init(identifier: String, actions: [UNNotificationAction], intentIdentifiers: [String], hiddenPreviewsBodyPlaceholder: String?, categorySummaryFormat: String?, options: UNNotificationCategoryOptions)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/actions",
+   "title": "var actions: [UNNotificationAction]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var actions: [UNNotificationAction]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/intentidentifiers",
+   "title": "var intentIdentifiers: [String]",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var intentIdentifiers: [String]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/hiddenpreviewsbodyplaceholder",
+   "title": "var hiddenPreviewsBodyPlaceholder: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var hiddenPreviewsBodyPlaceholder: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/categorysummaryformat",
+   "title": "var categorySummaryFormat: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var categorySummaryFormat: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/options",
+   "title": "var options: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/var options: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions",
+   "title": "UNNotificationCategoryOptions",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/init(rawvalue:)",
+   "title": "init(rawValue: UInt)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/init(rawValue: UInt)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/allowincarplay",
+   "title": "static var allowInCarPlay: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/static var allowInCarPlay: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/allowannouncement",
+   "title": "static var allowAnnouncement: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/static var allowAnnouncement: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": true,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/hiddenpreviewsshowtitle",
+   "title": "static var hiddenPreviewsShowTitle: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/static var hiddenPreviewsShowTitle: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/hiddenpreviewsshowsubtitle",
+   "title": "static var hiddenPreviewsShowSubtitle: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/static var hiddenPreviewsShowSubtitle: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptions/customdismissaction",
+   "title": "static var customDismissAction: UNNotificationCategoryOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationCategory/UNNotificationCategoryOptions/static var customDismissAction: UNNotificationCategoryOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategory/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationCategory/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction",
+   "title": "UNNotificationAction",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationAction",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/init(identifier:title:options:)",
+   "title": "convenience init(identifier: String, title: String, options: UNNotificationActionOptions)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAction/convenience init(identifier: String, title: String, options: UNNotificationActionOptions)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/init(identifier:title:options:icon:)",
+   "title": "convenience init(identifier: String, title: String, options: UNNotificationActionOptions, icon: UNNotificationActionIcon?)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAction/convenience init(identifier: String, title: String, options: UNNotificationActionOptions, icon: UNNotificationActionIcon?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/title",
+   "title": "var title: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/var title: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/icon",
+   "title": "var icon: UNNotificationActionIcon?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/var icon: UNNotificationActionIcon?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/options",
+   "title": "var options: UNNotificationActionOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/var options: UNNotificationActionOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptions",
+   "title": "UNNotificationActionOptions",
+   "type": "struct",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptions/init(rawvalue:)",
+   "title": "init(rawValue: UInt)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptions/init(rawValue: UInt)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptions/authenticationrequired",
+   "title": "static var authenticationRequired: UNNotificationActionOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptions/static var authenticationRequired: UNNotificationActionOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptions/destructive",
+   "title": "static var destructive: UNNotificationActionOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptions/static var destructive: UNNotificationActionOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptions/foreground",
+   "title": "static var foreground: UNNotificationActionOptions",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptions/static var foreground: UNNotificationActionOptions",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationaction/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAction/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationaction",
+   "title": "UNTextInputNotificationAction",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNTextInputNotificationAction",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationaction/init(identifier:title:options:textinputbuttontitle:textinputplaceholder:)",
+   "title": "convenience init(identifier: String, title: String, options: UNNotificationActionOptions, textInputButtonTitle: String, textInputPlaceholder: String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNTextInputNotificationAction/convenience init(identifier: String, title: String, options: UNNotificationActionOptions, textInputButtonTitle: String, textInputPlaceholder: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationaction/init(identifier:title:options:icon:textinputbuttontitle:textinputplaceholder:)",
+   "title": "convenience init(identifier: String, title: String, options: UNNotificationActionOptions, icon: UNNotificationActionIcon?, textInputButtonTitle: String, textInputPlaceholder: String)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNTextInputNotificationAction/convenience init(identifier: String, title: String, options: UNNotificationActionOptions, icon: UNNotificationActionIcon?, textInputButtonTitle: String, textInputPlaceholder: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationaction/textinputbuttontitle",
+   "title": "var textInputButtonTitle: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNTextInputNotificationAction/var textInputButtonTitle: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationaction/textinputplaceholder",
+   "title": "var textInputPlaceholder: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNTextInputNotificationAction/var textInputPlaceholder: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationresponse",
+   "title": "UNNotificationResponse",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationResponse",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationresponse/actionidentifier",
+   "title": "var actionIdentifier: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationResponse/var actionIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationresponse/notification",
+   "title": "var notification: UNNotification",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationResponse/var notification: UNNotification",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationresponse/targetscene",
+   "title": "var targetScene: UIScene?",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNNotificationResponse/var targetScene: UIScene?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationdefaultactionidentifier",
+   "title": "let UNNotificationDefaultActionIdentifier: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationResponse/let UNNotificationDefaultActionIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationdismissactionidentifier",
+   "title": "let UNNotificationDismissActionIdentifier: String",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationResponse/let UNNotificationDismissActionIdentifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationresponse/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationResponse/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationresponse",
+   "title": "UNTextInputNotificationResponse",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNTextInputNotificationResponse",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/untextinputnotificationresponse/usertext",
+   "title": "var userText: String",
+   "type": "property",
+   "breadcrumb": "User Notifications/UNTextInputNotificationResponse/var userText: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/modifying-content-in-newly-delivered-notifications",
+   "title": "Modifying content in newly delivered notifications",
+   "type": "article",
+   "breadcrumb": "User Notifications/Modifying content in newly delivered notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationserviceextension",
+   "title": "UNNotificationServiceExtension",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationServiceExtension",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationserviceextension/didreceive(_:withcontenthandler:)",
+   "title": "func didReceive(UNNotificationRequest, withContentHandler: (UNNotificationContent) -> Void)",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationServiceExtension/func didReceive(UNNotificationRequest, withContentHandler: (UNNotificationContent) -> Void)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationserviceextension/serviceextensiontimewillexpire()",
+   "title": "func serviceExtensionTimeWillExpire()",
+   "type": "method",
+   "breadcrumb": "User Notifications/UNNotificationServiceExtension/func serviceExtensionTimeWillExpire()",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/entitlements/aps-environment",
+   "title": "APS Environment Entitlement",
+   "type": "typealias",
+   "breadcrumb": "User Notifications/APS Environment Entitlement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/bundleresources/entitlements/com.apple.developer.aps-environment",
+   "title": "APS Environment (macOS) Entitlement",
+   "type": "typealias",
+   "breadcrumb": "User Notifications/APS Environment (macOS) Entitlement",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/handling-communication-notifications-and-focus-status-updates",
+   "title": "Handling Communication Notifications and Focus Status Updates",
+   "type": "sampleCode",
+   "breadcrumb": "User Notifications/Handling Communication Notifications and Focus Status Updates",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/implementing-alert-push-notifications",
+   "title": "Implementing Alert Push Notifications",
+   "type": "sampleCode",
+   "breadcrumb": "User Notifications/Implementing Alert Push Notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/implementing-background-push-notifications",
+   "title": "Implementing Background Push Notifications",
+   "type": "sampleCode",
+   "breadcrumb": "User Notifications/Implementing Background Push Notifications",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattributedmessagecontext",
+   "title": "UNNotificationAttributedMessageContext",
+   "type": "class",
+   "breadcrumb": "User Notifications/UNNotificationAttributedMessageContext",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationattributedmessagecontext/init(sendmessageintent:attributedcontent:)",
+   "title": "convenience init(sendMessageIntent: INSendMessageIntent, attributedContent: NSAttributedString)",
+   "type": "init",
+   "breadcrumb": "User Notifications/UNNotificationAttributedMessageContext/convenience init(sendMessageIntent: INSendMessageIntent, attributedContent: NSAttributedString)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unauthorizationoptionnone",
+   "title": "UNAuthorizationOptionNone",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNAuthorizationOptions/UNAuthorizationOptionNone",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationpresentationoptionnone",
+   "title": "UNNotificationPresentationOptionNone",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNUserNotificationCenter/UNUserNotificationCenterDelegate/UNNotificationPresentationOptionNone",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationactionoptionnone",
+   "title": "UNNotificationActionOptionNone",
+   "type": "var",
+   "breadcrumb": "User Notifications/UNNotificationAction/UNNotificationActionOptionNone",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/usernotifications-constants",
+   "title": "UserNotifications Constants",
+   "type": "collection",
+   "breadcrumb": "User Notifications/UserNotifications Constants",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/usernotifications/unnotificationcategoryoptionnone",
+   "title": "UNNotificationCategoryOptionNone",
+   "type": "var",
+   "breadcrumb": "User Notifications/UserNotifications Constants/UNNotificationCategoryOptionNone",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  }
+ ]
+}

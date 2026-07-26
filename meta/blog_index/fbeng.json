@@ -1,0 +1,481 @@
+{
+ "key": "fbeng",
+ "count": 95,
+ "articles": [
+  {
+   "url": "https://engineering.fb.com/2026/06/22/video-engineering/adopting-av1-for-real-time-communication-rtc-meta/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2026/05/11/security/labyrinth-1-1-end-to-end-encrypted-e2ee-backups-more-reliable/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2025/12/15/android/how-ai-transforming-secure-by-default-mobile-frameworks-adoption/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2025/11/17/ios/enhancing-hdr-on-instagram-for-ios-with-dolby-vision/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2024/12/18/ios/how-we-think-about-threads-ios-performance/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2024/10/02/android/react-at-meta-connect-2024/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2024/03/26/android/instagram-threads-hdr-photos/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/11/06/android/how-meta-built-threads-in-5-months/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/07/17/video-engineering/hdr-video-reels-meta/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/04/13/security/whatsapp-key-transparency/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/",
+   "title": "Nov 20, 2025 Key Transparency Comes to Messenger",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/04/13/security/whatsapp-device-verification-protects-your-account/",
+   "title": "Apr 13, 2023 How Device Verification protects your WhatsApp account",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2021/09/10/security/whatsapp-e2ee-backups/",
+   "title": "Sep 10, 2021 How WhatsApp is enabling end-to-end encrypted backups",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/04/11/video-engineering/high-quality-audio-xhe-aac-codec-meta/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2023/02/06/ios/facebook-ios-app-architecture/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2022/07/18/developer-tools/building-text-animations-for-instagram-stories/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2022/05/09/android/language-packs/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2020/12/16/android/co-experiences/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2020/12/10/web/how-instagram-suggests-new-content/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2020/10/21/networking-traffic/how-facebook-is-bringing-quic-to-billions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2020/03/02/data-infrastructure/messenger/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/09/26/android/unicode-font-converter/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/05/01/open-source/f8-open-source/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/04/30/developer-tools/f8-2019-day-1/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/11/02/web/react-conf/",
+   "title": "Nov 02, 2018 React Conf recap: Hooks, Suspense, and Concurrent Rendering",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/03/21/open-source/python-test-runner/",
+   "title": "Mar 21, 2019 Open-sourcing Python Test Runner for multiple tests in parallel",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/01/02/open-source/open-source-2018/",
+   "title": "Jan 02, 2019 Open source year in review",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/04/05/production-engineering/facebook-london-engineering-fair/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2019/01/17/developer-tools/spectrum/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/12/06/android/mobile-scale-tel-aviv/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/10/29/ml-applications/qnnpack/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/10/19/android/mobilelab/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/09/17/android/2018-scale-conference-recap/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/06/11/android/flipper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2018/02/21/ios/f8-2018-registration-now-open/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2017/09/06/android/finding-inter-procedural-bugs-at-scale-with-infer-static-analyzer/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2017/05/24/android/managing-resources-for-large-scale-testing/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2017/02/07/android/register-now-for-f8-2017/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2017/01/27/android/building-zero-protocol-for-fast-secure-mobile-connections/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/12/19/android/facebook-open-source-2016-year-in-review/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/12/08/android/made-in-ny-the-engineering-behind-social-recommendations/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/12/07/android/yoga-a-cross-platform-layout-engine/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/11/22/android/keyframes-delivering-scalable-high-quality-animations-to-mobile-clients/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/11/08/android/delivering-real-time-ai-in-the-palm-of-your-hand/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/07/13/android/the-mobile-device-lab-at-the-prineville-data-center/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/06/17/android/developing-the-technical-language-behind-creativity-for-canvas/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/04/13/ios/building-and-managing-ios-model-objects-with-remodel/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/04/13/ios/automatic-memory-leak-detection-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/04/13/android/react-native-a-year-in-review/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/04/04/ios/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/03/29/android/mobile-scale-london-recap/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2016/03/28/android/dive-into-react-native-performance/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/12/30/android/favorite-hacks-of-2015/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/12/09/android/continuing-to-build-news-feed-for-all-types-of-connections/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/12/03/ios/under-the-hood-broadcasting-live-video-to-millions/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/11/23/android/making-react-native-apps-accessible/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/11/20/ios/optimizing-facebook-for-ios-start-time/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/08/31/android/facebook-seattle-s-five-year-anniversary-celebrating-a-culture-of-entrepreneurialism/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/08/24/ios/reducing-fooms-in-the-facebook-ios-app/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/08/18/ios/under-the-hood-place-tips-at-lollapalooza/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/08/06/android/the-technology-behind-preview-photos/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/07/02/android/72-hours-to-launch-celebrate-pride/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/06/25/ios/delivering-high-scroll-performance/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/06/25/ios/building-add-a-link/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/06/15/android/under-the-hood-building-moments/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/03/26/android/f8-big-technology-bets-and-open-source-announcements/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/03/26/android/react-native-bringing-modern-web-techniques-to-mobile/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/03/25/ios/introducing-componentkit-functional-and-declarative-ui-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/02/24/ios/introducing-origami-live/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2015/01/28/ios/faster-photos-in-facebook-for-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/12/17/ios/the-art-and-science-behind-auto-enhance-for-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/10/31/ios/making-news-feed-nearly-50-faster-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/10/15/ios/introducing-asyncdisplaykit-for-smooth-and-responsive-apps-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/10/02/android/scale-2014-recap-of-mobile-track/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/08/12/ios/debugging-file-corruption-on-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/06/11/android/f8-developer-conference-hacker-way-recap/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/04/28/ios/introducing-pop-the-animation-engine-behind-paper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/03/07/ios/building-paper/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2014/01/09/android/airlock-facebook-s-mobile-a-b-testing-framework/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2013/11/13/android/building-a-faster-messenger/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2013/07/31/android/secure-browsing-by-default/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/11/09/ios/under-the-hood-integrating-standalone-mobile-app-features-into-facebook-for-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/10/31/android/product-engineering-at-facebook/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/10/11/ios/interning-at-facebook-building-the-new-mobile-advertising-interface/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/08/28/ios/under-the-hood-building-facebook-camera/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/08/23/ios/under-the-hood-rebuilding-facebook-for-ios/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/03/26/ios/from-intern-to-photos-team-full-timer-jen-dolson/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2012/02/04/ios/meet-a-facebook-engineer-ben-gertzfield/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2011/08/12/android/building-facebook-messenger/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2011/04/27/ios/hackamonth-mixing-things-up/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2011/03/31/android/one-mobile-site-to-serve-thousands-of-phones/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2010/10/21/ios/google-summer-of-code-2010/",
+   "title": "",
+   "date": ""
+  },
+  {
+   "url": "https://engineering.fb.com/2010/05/13/android/touchscreens-are-fingerpaint/",
+   "title": "",
+   "date": ""
+  }
+ ]
+}

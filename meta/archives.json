@@ -1,0 +1,2363 @@
+{
+ "count": 393,
+ "technologies": {
+  "LocalAuthentication": {
+   "slug": "LocalAuthentication",
+   "title": "Local Authentication",
+   "url": "/documentation/LocalAuthentication",
+   "abstract": "Authenticate users biometrically or with a passphrase they already know."
+  },
+  "AdAttributionKit": {
+   "slug": "AdAttributionKit",
+   "title": "AdAttributionKit",
+   "url": "/documentation/AdAttributionKit",
+   "abstract": "Present, process, and register postbacks for in-app ads in the App Store and alternative app marketplaces."
+  },
+  "CoreLocation": {
+   "slug": "CoreLocation",
+   "title": "Core Location",
+   "url": "/documentation/CoreLocation",
+   "abstract": "Obtain the geographic location and orientation of a device."
+  },
+  "LinkPresentation": {
+   "slug": "LinkPresentation",
+   "title": "Link Presentation",
+   "url": "/documentation/LinkPresentation",
+   "abstract": "Fetch, provide, and present rich links in your app."
+  },
+  "LockedCameraCapture": {
+   "slug": "LockedCameraCapture",
+   "title": "LockedCameraCapture",
+   "url": "/documentation/LockedCameraCapture",
+   "abstract": "Capture content with your app’s camera experience when the device is locked."
+  },
+  "ManagedSettings": {
+   "slug": "ManagedSettings",
+   "title": "Managed Settings",
+   "url": "/documentation/ManagedSettings",
+   "abstract": "Access and change settings with your app while maintaining user privacy and control."
+  },
+  "WebKit": {
+   "slug": "WebKit",
+   "title": "WebKit",
+   "url": "/documentation/WebKit",
+   "abstract": "Integrate web content seamlessly into your app, and customize content interactions to meet your app’s needs."
+  },
+  "tvos-release-notes": {
+   "slug": "tvos-release-notes",
+   "title": "tvOS Release Notes",
+   "url": "/documentation/tvos-release-notes",
+   "abstract": "Learn about changes to the tvOS SDK."
+  },
+  "Testing": {
+   "slug": "Testing",
+   "title": "Swift Testing",
+   "url": "/documentation/Testing",
+   "abstract": "Create and run tests for your Swift packages and Xcode projects."
+  },
+  "CloudKit": {
+   "slug": "CloudKit",
+   "title": "CloudKit",
+   "url": "/documentation/CloudKit",
+   "abstract": "Store structured app and user data in iCloud containers that all users of your app can share."
+  },
+  "CryptoTokenKit": {
+   "slug": "CryptoTokenKit",
+   "title": "CryptoTokenKit",
+   "url": "/documentation/CryptoTokenKit",
+   "abstract": "Access security tokens and the cryptographic assets they store."
+  },
+  "Accounts": {
+   "slug": "Accounts",
+   "title": "Accounts",
+   "url": "/documentation/Accounts",
+   "abstract": "Help users access and manage their external accounts from within your app, without requiring them to enter login credentials."
+  },
+  "BrowserEngineKit": {
+   "slug": "BrowserEngineKit",
+   "title": "BrowserEngineKit",
+   "url": "/documentation/BrowserEngineKit",
+   "abstract": "Create a browser that renders content using an alternative browser engine."
+  },
+  "PushToTalk": {
+   "slug": "PushToTalk",
+   "title": "Push to Talk",
+   "url": "/documentation/PushToTalk",
+   "abstract": "Display the system user interface for your app’s Push to Talk services."
+  },
+  "Accessibility": {
+   "slug": "Accessibility",
+   "title": "Accessibility",
+   "url": "/documentation/Accessibility",
+   "abstract": "Make your apps accessible to everyone who uses Apple devices."
+  },
+  "TVML": {
+   "slug": "TVML",
+   "title": "TVML",
+   "url": "/documentation/TVML",
+   "abstract": "Use Apple TV Markup Language to create individual pages inside of a client-server app."
+  },
+  "ScriptingBridge": {
+   "slug": "ScriptingBridge",
+   "title": "Scripting Bridge",
+   "url": "/documentation/ScriptingBridge",
+   "abstract": "Automate scriptable apps by sending and receiving Apple events."
+  },
+  "WirelessInsights": {
+   "slug": "WirelessInsights",
+   "title": "WirelessInsights",
+   "url": "/documentation/WirelessInsights",
+   "abstract": "Receive notifications for anticipated changes in cellular data service conditions."
+  },
+  "DeviceActivity": {
+   "slug": "DeviceActivity",
+   "title": "Device Activity",
+   "url": "/documentation/DeviceActivity",
+   "abstract": "Monitor device activity with your app extension while maintaining privacy."
+  },
+  "Xcode-Release-Notes": {
+   "slug": "Xcode-Release-Notes",
+   "title": "Xcode Release Notes",
+   "url": "/documentation/Xcode-Release-Notes",
+   "abstract": "Learn about changes to Xcode."
+  },
+  "ManagedApp": {
+   "slug": "ManagedApp",
+   "title": "ManagedApp",
+   "url": "/documentation/ManagedApp",
+   "abstract": "Customize your app for managed deployments by providing configurable features that rely on secure access to secrets and data that an administrator provisions."
+  },
+  "AppleArchive": {
+   "slug": "AppleArchive",
+   "title": "Apple Archive",
+   "url": "/documentation/AppleArchive",
+   "abstract": "Perform multithreaded lossless compression of directories, files, and data."
+  },
+  "AppLicenseDeliverySDK": {
+   "slug": "AppLicenseDeliverySDK",
+   "title": "App License Delivery SDK",
+   "url": "/documentation/AppLicenseDeliverySDK",
+   "abstract": "Secure the installation of alternative distribution apps on iOS or iPadOS devices by vending licenses from your web server."
+  },
+  "TrustInsights": {
+   "slug": "TrustInsights",
+   "title": "Trust Insights",
+   "url": "/documentation/TrustInsights",
+   "abstract": "Evaluate transactions for potential coercive activity while preserving people’s privacy."
+  },
+  "BackgroundTasks": {
+   "slug": "BackgroundTasks",
+   "title": "Background Tasks",
+   "url": "/documentation/BackgroundTasks",
+   "abstract": "Support background processing in your app by wrapping your app’s most critical work in framework-provided tasks."
+  },
+  "XCUIAutomation": {
+   "slug": "XCUIAutomation",
+   "title": "XCUIAutomation",
+   "url": "/documentation/XCUIAutomation",
+   "abstract": "Replicate sequences of interactions and make sure that your app’s user interface behaves as intended."
+  },
+  "Network": {
+   "slug": "Network",
+   "title": "Network",
+   "url": "/documentation/Network",
+   "abstract": "Create network connections to send and receive data using transport and security protocols."
+  },
+  "AccessoryLiveActivities": {
+   "slug": "AccessoryLiveActivities",
+   "title": "Accessory Live Activities",
+   "url": "/documentation/AccessoryLiveActivities",
+   "abstract": "Forward Live Activity alerts from iPhone to an accessory you develop."
+  },
+  "VideoDriverKit": {
+   "slug": "VideoDriverKit",
+   "title": "VideoDriverKit",
+   "url": "/documentation/VideoDriverKit",
+   "abstract": "Develop drivers for video capture and playback devices."
+  },
+  "applicationservices": {
+   "slug": "applicationservices",
+   "title": "Application Services",
+   "url": "/documentation/applicationservices",
+   "abstract": "Perform common application tasks."
+  },
+  "QuickLookThumbnailing": {
+   "slug": "QuickLookThumbnailing",
+   "title": "Quick Look Thumbnailing",
+   "url": "/documentation/QuickLookThumbnailing",
+   "abstract": "Generate thumbnails for common file types and add a Thumbnail Extension to your app to enable others to create thumbnails of your custom files."
+  },
+  "ExceptionHandling": {
+   "slug": "ExceptionHandling",
+   "title": "Exception Handling",
+   "url": "/documentation/ExceptionHandling",
+   "abstract": "Monitor and debug exceptional conditions in code."
+  },
+  "DataDetection": {
+   "slug": "DataDetection",
+   "title": "DataDetection",
+   "url": "/documentation/DataDetection",
+   "abstract": "Access and utilize common types of data that the data detection system matches."
+  },
+  "CoreMediaIO": {
+   "slug": "CoreMediaIO",
+   "title": "Core Media I/O",
+   "url": "/documentation/CoreMediaIO",
+   "abstract": "Securely support custom camera devices in macOS."
+  },
+  "MessageUI": {
+   "slug": "MessageUI",
+   "title": "Message UI",
+   "url": "/documentation/MessageUI",
+   "abstract": "Create a user interface for composing email and text messages, so users can edit and send messages without leaving your app."
+  },
+  "XcodeKit": {
+   "slug": "XcodeKit",
+   "title": "XcodeKit",
+   "url": "/documentation/XcodeKit",
+   "abstract": "Create extensions to add commands to the Xcode source editor."
+  },
+  "AudioUnit": {
+   "slug": "AudioUnit",
+   "title": "Audio Unit",
+   "url": "/documentation/AudioUnit",
+   "abstract": "Add sophisticated audio manipulation and processing capabilities to your app."
+  },
+  "watchos-release-notes": {
+   "slug": "watchos-release-notes",
+   "title": "watchOS Release Notes",
+   "url": "/documentation/watchos-release-notes",
+   "abstract": "Learn about changes to the watchOS SDK."
+  },
+  "TipKit": {
+   "slug": "TipKit",
+   "title": "TipKit",
+   "url": "/documentation/TipKit",
+   "abstract": "Display tips that help people discover features in your app."
+  },
+  "SigninwithApple": {
+   "slug": "SigninwithApple",
+   "title": "Sign in with Apple",
+   "url": "/documentation/SigninwithApple",
+   "abstract": "Provide users the ability to sign in to your apps and websites using their Apple Account."
+  },
+  "technologies": {
+   "slug": "technologies",
+   "title": "Technologies",
+   "url": "/documentation/technologies",
+   "abstract": ""
+  },
+  "SiriEventSuggestionsMarkup": {
+   "slug": "SiriEventSuggestionsMarkup",
+   "title": "Siri Event Suggestions Markup",
+   "url": "/documentation/SiriEventSuggestionsMarkup",
+   "abstract": "Update users’ calendars and inform suggestions from Siri with reservation data embedded in email and webpages."
+  },
+  "CoreMIDI": {
+   "slug": "CoreMIDI",
+   "title": "Core MIDI",
+   "url": "/documentation/CoreMIDI",
+   "abstract": "Communicate with MIDI devices such as hardware keyboards and synthesizers."
+  },
+  "DriverKit": {
+   "slug": "DriverKit",
+   "title": "DriverKit",
+   "url": "/documentation/DriverKit",
+   "abstract": "Develop device drivers that run in user space."
+  },
+  "CKToolJS": {
+   "slug": "CKToolJS",
+   "title": "CKTool JS",
+   "url": "/documentation/CKToolJS",
+   "abstract": "Manage your CloudKit containers and databases from JavaScript."
+  },
+  "MediaPlayer": {
+   "slug": "MediaPlayer",
+   "title": "Media Player",
+   "url": "/documentation/MediaPlayer",
+   "abstract": "Find and play songs, audio podcasts, audio books, and more from within your app."
+  },
+  "SpriteKit": {
+   "slug": "SpriteKit",
+   "title": "SpriteKit",
+   "url": "/documentation/SpriteKit",
+   "abstract": "Add high-performance 2D content with smooth animations to your app, or create a game with a high-level set of 2D game-based tools."
+  },
+  "dnssd": {
+   "slug": "dnssd",
+   "title": "dnssd",
+   "url": "/documentation/dnssd",
+   "abstract": "Discover, publish, and resolve network services on a local area or wide area network."
+  },
+  "CryptoKit": {
+   "slug": "CryptoKit",
+   "title": "Apple CryptoKit",
+   "url": "/documentation/CryptoKit",
+   "abstract": "Perform cryptographic operations securely and efficiently."
+  },
+  "CoreML": {
+   "slug": "CoreML",
+   "title": "Core ML",
+   "url": "/documentation/CoreML",
+   "abstract": "Integrate machine learning models into your app."
+  },
+  "CoreSpotlight": {
+   "slug": "CoreSpotlight",
+   "title": "Core Spotlight",
+   "url": "/documentation/CoreSpotlight",
+   "abstract": "Add search capabilities to your app, and index your content so people can find it from Spotlight and Safari."
+  },
+  "FileProvider": {
+   "slug": "FileProvider",
+   "title": "File Provider",
+   "url": "/documentation/FileProvider",
+   "abstract": "An extension other apps use to access files and folders managed by your app and synced with a remote storage."
+  },
+  "WalletOrders": {
+   "slug": "WalletOrders",
+   "title": "Wallet Orders",
+   "url": "/documentation/WalletOrders",
+   "abstract": "Create, distribute, and update orders in Wallet."
+  },
+  "Combine": {
+   "slug": "Combine",
+   "title": "Combine",
+   "url": "/documentation/Combine",
+   "abstract": "Customize handling of asynchronous events by combining event-processing operators."
+  },
+  "FSKit": {
+   "slug": "FSKit",
+   "title": "FSKit",
+   "url": "/documentation/FSKit",
+   "abstract": "Implement a file system that runs in user space."
+  },
+  "Evaluations": {
+   "slug": "Evaluations",
+   "title": "Evaluations",
+   "url": "/documentation/Evaluations",
+   "abstract": "Measure the quality of your app’s intelligence-powered features."
+  },
+  "carkey": {
+   "slug": "carkey",
+   "title": "CarKey",
+   "url": "/documentation/carkey",
+   "abstract": "Access the remote keyless features of configured vehicles in the Wallet app."
+  },
+  "HealthKit": {
+   "slug": "HealthKit",
+   "title": "HealthKit",
+   "url": "/documentation/HealthKit",
+   "abstract": "Access and share health and fitness data while maintaining the user’s privacy and control."
+  },
+  "IdentityDocumentServicesUI": {
+   "slug": "IdentityDocumentServicesUI",
+   "title": "IdentityDocumentServicesUI",
+   "url": "/documentation/IdentityDocumentServicesUI",
+   "abstract": "Provide an interface so people can present mobile documents."
+  },
+  "JavaScriptCore": {
+   "slug": "JavaScriptCore",
+   "title": "JavaScriptCore",
+   "url": "/documentation/JavaScriptCore",
+   "abstract": "Evaluate JavaScript programs from within an app, and support JavaScript scripting of your app."
+  },
+  "MultipeerConnectivity": {
+   "slug": "MultipeerConnectivity",
+   "title": "Multipeer Connectivity",
+   "url": "/documentation/MultipeerConnectivity",
+   "abstract": "Support peer-to-peer connectivity and the discovery of nearby devices."
+  },
+  "CoreImage": {
+   "slug": "CoreImage",
+   "title": "Core Image",
+   "url": "/documentation/CoreImage",
+   "abstract": "Use built-in or custom filters to process still and video images."
+  },
+  "WiFiInfrastructure": {
+   "slug": "WiFiInfrastructure",
+   "title": "Wi-Fi Infrastructure",
+   "url": "/documentation/WiFiInfrastructure",
+   "abstract": "Share Wi-Fi network credentials securely between devices and connected accessories."
+  },
+  "ApplePayontheWeb": {
+   "slug": "ApplePayontheWeb",
+   "title": "Apple Pay on the Web",
+   "url": "/documentation/ApplePayontheWeb",
+   "abstract": "Support Apple Pay on your website with JavaScript-based APIs."
+  },
+  "WorkoutKit": {
+   "slug": "WorkoutKit",
+   "title": "WorkoutKit",
+   "url": "/documentation/WorkoutKit",
+   "abstract": "Create, preview, and sync workout compositions to the Workout app."
+  },
+  "NotaryAPI": {
+   "slug": "NotaryAPI",
+   "title": "Notary API",
+   "url": "/documentation/NotaryAPI",
+   "abstract": "Submit your macOS software for notarization through a web interface."
+  },
+  "AVSystemRouting": {
+   "slug": "AVSystemRouting",
+   "title": "AVSystemRouting",
+   "url": "/documentation/AVSystemRouting",
+   "abstract": "Send media from your app to a TV, speaker, or other device through a media device extension."
+  },
+  "Cinematic": {
+   "slug": "Cinematic",
+   "title": "Cinematic",
+   "url": "/documentation/Cinematic",
+   "abstract": "Integrate playback and editing of assets captured in Cinematic mode into your app."
+  },
+  "SwiftData": {
+   "slug": "SwiftData",
+   "title": "SwiftData",
+   "url": "/documentation/SwiftData",
+   "abstract": "Write your model code declaratively to add managed persistence and efficient model fetching."
+  },
+  "AppTrackingTransparency": {
+   "slug": "AppTrackingTransparency",
+   "title": "App Tracking Transparency",
+   "url": "/documentation/AppTrackingTransparency",
+   "abstract": "Request user authorization to access app-related data for tracking the user or the device."
+  },
+  "TabularData": {
+   "slug": "TabularData",
+   "title": "TabularData",
+   "url": "/documentation/TabularData",
+   "abstract": "Import, organize, and prepare a table of data to train a machine learning model."
+  },
+  "Spatial": {
+   "slug": "Spatial",
+   "title": "Spatial",
+   "url": "/documentation/Spatial",
+   "abstract": "Create and manipulate 3D mathematical primitives."
+  },
+  "AutomaticSignInAPI": {
+   "slug": "AutomaticSignInAPI",
+   "title": "Automatic Sign-In API",
+   "url": "/documentation/AutomaticSignInAPI",
+   "abstract": "Manage sign-in tokens from your web server that facilitate single sign-on across the devices of your media-streaming service customers."
+  },
+  "swift-playgrounds": {
+   "slug": "swift-playgrounds",
+   "title": "Swift Playgrounds",
+   "url": "/documentation/swift-playgrounds",
+   "abstract": "Learn to write apps, repurpose sample code, create, and share learning experiences in Swift Playgrounds."
+  },
+  "SiriKit": {
+   "slug": "SiriKit",
+   "title": "SiriKit",
+   "url": "/documentation/SiriKit",
+   "abstract": "Empower users to interact with their devices through voice, intelligent suggestions, and personalized workflows."
+  },
+  "USD": {
+   "slug": "USD",
+   "title": "USD",
+   "url": "/documentation/USD",
+   "abstract": "An efficient and scalable way to represent 3D scenes."
+  },
+  "InputMethodKit": {
+   "slug": "InputMethodKit",
+   "title": "InputMethodKit",
+   "url": "/documentation/InputMethodKit",
+   "abstract": "Develop input methods and manage communication with client applications, candidates windows, and input method modes."
+  },
+  "iAd": {
+   "slug": "iAd",
+   "title": "iAd",
+   "url": "/documentation/iAd",
+   "abstract": "The Apple Search Ads iAd Attribution API is a legacy framework for attributing app data that originates from Apple Search Ads campaigns on iOS devices."
+  },
+  "TabletopKit": {
+   "slug": "TabletopKit",
+   "title": "TabletopKit",
+   "url": "/documentation/TabletopKit",
+   "abstract": "Create multiplayer spatial games on a virtual table surface and use FaceTime to invite players."
+  },
+  "ios-ipados-release-notes": {
+   "slug": "ios-ipados-release-notes",
+   "title": "iOS & iPadOS Release Notes",
+   "url": "/documentation/ios-ipados-release-notes",
+   "abstract": "Learn about changes to the iOS & iPadOS SDK."
+  },
+  "iokit": {
+   "slug": "iokit",
+   "title": "IOKit",
+   "url": "/documentation/iokit",
+   "abstract": "Access hardware devices and drivers from your apps and services."
+  },
+  "AVFoundation": {
+   "slug": "AVFoundation",
+   "title": "AVFoundation",
+   "url": "/documentation/AVFoundation",
+   "abstract": "Work with audiovisual assets, control device cameras, process audio, and configure system audio interactions."
+  },
+  "PDFKit": {
+   "slug": "PDFKit",
+   "title": "PDFKit",
+   "url": "/documentation/PDFKit",
+   "abstract": "Display and manipulate PDF documents in your apps."
+  },
+  "Virtualization": {
+   "slug": "Virtualization",
+   "title": "Virtualization",
+   "url": "/documentation/Virtualization",
+   "abstract": "Create virtual machines and run macOS and Linux-based operating systems."
+  },
+  "SpatialPreview": {
+   "slug": "SpatialPreview",
+   "title": "Spatial Preview",
+   "url": "/documentation/SpatialPreview",
+   "abstract": "Preview spatial content from a macOS app on a connected visionOS device."
+  },
+  "RelevanceKit": {
+   "slug": "RelevanceKit",
+   "title": "RelevanceKit",
+   "url": "/documentation/RelevanceKit",
+   "abstract": "Provide on-device intelligence with contextual clues that increase your widget’s visibility on Apple Watch."
+  },
+  "GameSave": {
+   "slug": "GameSave",
+   "title": "GameSave",
+   "url": "/documentation/GameSave",
+   "abstract": "Store and sync your application’s save files in iCloud."
+  },
+  "AutomaticAssessmentConfiguration": {
+   "slug": "AutomaticAssessmentConfiguration",
+   "title": "Automatic Assessment Configuration",
+   "url": "/documentation/AutomaticAssessmentConfiguration",
+   "abstract": "Enter single-app mode and prevent students from accessing specific system features while taking an exam."
+  },
+  "hvf": {
+   "slug": "hvf",
+   "title": "hvf",
+   "url": "/documentation/hvf",
+   "abstract": "Render Hierarchical Variable Font (HVF) glyph outlines, and support font editors and related tools."
+  },
+  "ApplePayMerchantTokenUsageInformation": {
+   "slug": "ApplePayMerchantTokenUsageInformation",
+   "title": "Apple Pay Merchant Token Usage Information API",
+   "url": "/documentation/ApplePayMerchantTokenUsageInformation",
+   "abstract": "Add details about your merchant token usage information package."
+  },
+  "AppleMusicAPI": {
+   "slug": "AppleMusicAPI",
+   "title": "Apple Music API",
+   "url": "/documentation/AppleMusicAPI",
+   "abstract": "Integrate streaming music with catalog and personal content."
+  },
+  "CoreAI": {
+   "slug": "CoreAI",
+   "title": "Core AI",
+   "url": "/documentation/CoreAI",
+   "abstract": "Run AI models in your app on Apple silicon."
+  },
+  "ClassKit": {
+   "slug": "ClassKit",
+   "title": "ClassKit",
+   "url": "/documentation/ClassKit",
+   "abstract": "Enable teachers to assign activities from your app’s content and to view student progress."
+  },
+  "DockKit": {
+   "slug": "DockKit",
+   "title": "DockKit",
+   "url": "/documentation/DockKit",
+   "abstract": "Interact with accessories that track subjects on camera as they move around."
+  },
+  "AppStoreServerAPI": {
+   "slug": "AppStoreServerAPI",
+   "title": "App Store Server API",
+   "url": "/documentation/AppStoreServerAPI",
+   "abstract": "Manage your customers’ App Store transactions from your server."
+  },
+  "ContactProvider": {
+   "slug": "ContactProvider",
+   "title": "ContactProvider",
+   "url": "/documentation/ContactProvider",
+   "abstract": "Provide contacts managed by your app to the system-wide Contacts ecosystem."
+  },
+  "CoreLocationUI": {
+   "slug": "CoreLocationUI",
+   "title": "CoreLocationUI",
+   "url": "/documentation/CoreLocationUI",
+   "abstract": "Streamline access to users’ location data through a standard, secure UI."
+  },
+  "PCIDriverKit": {
+   "slug": "PCIDriverKit",
+   "title": "PCIDriverKit",
+   "url": "/documentation/PCIDriverKit",
+   "abstract": "Develop device drivers for Peripheral Component Interconnect (PCI) accessories."
+  },
+  "DeviceManagement": {
+   "slug": "DeviceManagement",
+   "title": "Device Management",
+   "url": "/documentation/DeviceManagement",
+   "abstract": "Manage your organization’s devices remotely."
+  },
+  "AddressBookUI": {
+   "slug": "AddressBookUI",
+   "title": "Address Book UI",
+   "url": "/documentation/AddressBookUI",
+   "abstract": "Access users’ contacts and display them in a graphical interface."
+  },
+  "SoundAnalysis": {
+   "slug": "SoundAnalysis",
+   "title": "Sound Analysis",
+   "url": "/documentation/SoundAnalysis",
+   "abstract": "Classify various sounds by analyzing audio files or streams."
+  },
+  "AppleMusicFeed": {
+   "slug": "AppleMusicFeed",
+   "title": "Apple Music Feed",
+   "url": "/documentation/AppleMusicFeed",
+   "abstract": "Access the content of the Apple Music Catalog in bulk."
+  },
+  "AppStoreReceipts": {
+   "slug": "AppStoreReceipts",
+   "title": "App Store Receipts",
+   "url": "/documentation/AppStoreReceipts",
+   "abstract": "Validate app and In-App Purchase receipts with the App Store."
+  },
+  "ComputeGraph": {
+   "slug": "ComputeGraph",
+   "title": "Compute Graph",
+   "url": "/documentation/ComputeGraph",
+   "abstract": "Build and run custom particle effects and compute simulations for RealityKit using a programmable node graph."
+  },
+  "FinanceKit": {
+   "slug": "FinanceKit",
+   "title": "FinanceKit",
+   "url": "/documentation/FinanceKit",
+   "abstract": "Access financial data and interact with Apple Card, Apple Cash, and orders in Wallet."
+  },
+  "MediaIntents": {
+   "slug": "MediaIntents",
+   "title": "Media Intents",
+   "url": "/documentation/MediaIntents",
+   "abstract": "Enable people to use Siri to find and play media from your app."
+  },
+  "SafariServices": {
+   "slug": "SafariServices",
+   "title": "Safari Services",
+   "url": "/documentation/SafariServices",
+   "abstract": "Enable web views and services in your app."
+  },
+  "MediaExtension": {
+   "slug": "MediaExtension",
+   "title": "MediaExtension",
+   "url": "/documentation/MediaExtension",
+   "abstract": "This framework provides a means for developers to create format readers, video decoders, and RAW processors for media that the system doesn’t natively support."
+  },
+  "AdvancedCommerceAPI": {
+   "slug": "AdvancedCommerceAPI",
+   "title": "Advanced Commerce API",
+   "url": "/documentation/AdvancedCommerceAPI",
+   "abstract": "Support In-App Purchases through the App Store for exceptionally large catalogs of custom one-time purchases, subscriptions, and subscriptions with optional add-ons."
+  },
+  "USBSerialDriverKit": {
+   "slug": "USBSerialDriverKit",
+   "title": "USBSerialDriverKit",
+   "url": "/documentation/USBSerialDriverKit",
+   "abstract": "Develop drivers for serial USB devices connected to your Mac."
+  },
+  "BackgroundAssets": {
+   "slug": "BackgroundAssets",
+   "title": "Background Assets",
+   "url": "/documentation/BackgroundAssets",
+   "abstract": "Improve or eliminate the time people wait while your app downloads assets."
+  },
+  "SCSIControllerDriverKit": {
+   "slug": "SCSIControllerDriverKit",
+   "title": "SCSIControllerDriverKit",
+   "url": "/documentation/SCSIControllerDriverKit",
+   "abstract": "Develop drivers for SCSI protocol-based devices."
+  },
+  "visionos-release-notes": {
+   "slug": "visionos-release-notes",
+   "title": "visionOS Release Notes",
+   "url": "/documentation/visionos-release-notes",
+   "abstract": "Learn about changes to the visionOS SDK."
+  },
+  "StoreKitTest": {
+   "slug": "StoreKitTest",
+   "title": "StoreKit Test",
+   "url": "/documentation/StoreKitTest",
+   "abstract": "Create and automate tests in Xcode for your app’s subscription and in-app purchase transactions, and SKAdNetwork implementations."
+  },
+  "Automator": {
+   "slug": "Automator",
+   "title": "Automator",
+   "url": "/documentation/Automator",
+   "abstract": "Develop actions that the Automator app can load and run. View, edit, and run Automator workflows in your app."
+  },
+  "vmnet": {
+   "slug": "vmnet",
+   "title": "vmnet",
+   "url": "/documentation/vmnet",
+   "abstract": "Connect with network interfaces to read and write packets on guest operating systems."
+  },
+  "Messages": {
+   "slug": "Messages",
+   "title": "Messages",
+   "url": "/documentation/Messages",
+   "abstract": "Create app extensions that allow users to send text, stickers, media files, and interactive messages."
+  },
+  "CarPlay": {
+   "slug": "CarPlay",
+   "title": "CarPlay",
+   "url": "/documentation/CarPlay",
+   "abstract": "Integrate CarPlay in apps related to audio, communication, navigation, parking, EV charging, food ordering, and more."
+  },
+  "NetworkExtension": {
+   "slug": "NetworkExtension",
+   "title": "Network Extension",
+   "url": "/documentation/NetworkExtension",
+   "abstract": "Customize and extend core networking features."
+  },
+  "System": {
+   "slug": "System",
+   "title": "System",
+   "url": "/documentation/System",
+   "abstract": "Perform low-level file operations using type-safe APIs."
+  },
+  "AdSupport": {
+   "slug": "AdSupport",
+   "title": "AdSupport",
+   "url": "/documentation/AdSupport",
+   "abstract": "Provide apps with access to an advertising identifier."
+  },
+  "GameController": {
+   "slug": "GameController",
+   "title": "Game Controller",
+   "url": "/documentation/GameController",
+   "abstract": "Support hardware game controllers in your game."
+  },
+  "Updates": {
+   "slug": "Updates",
+   "title": "Updates",
+   "url": "/documentation/Updates",
+   "abstract": "Latest additions to documentation and platform release notes."
+  },
+  "ActivityKit": {
+   "slug": "ActivityKit",
+   "title": "ActivityKit",
+   "url": "/documentation/ActivityKit",
+   "abstract": "Share live updates from your app as Live Activities on iPhone, iPad, Apple Watch, and the Mac."
+  },
+  "LatentSemanticMapping": {
+   "slug": "LatentSemanticMapping",
+   "title": "Latent Semantic Mapping",
+   "url": "/documentation/LatentSemanticMapping",
+   "abstract": "Classify text and other token-based content into developer-defined categories."
+  },
+  "WidgetKit": {
+   "slug": "WidgetKit",
+   "title": "WidgetKit",
+   "url": "/documentation/WidgetKit",
+   "abstract": "Extend the reach of your app by creating widgets, watch complications, Live Activities, and controls."
+  },
+  "Speech": {
+   "slug": "Speech",
+   "title": "Speech",
+   "url": "/documentation/Speech",
+   "abstract": "Perform speech recognition on live or prerecorded audio, and receive transcriptions, alternative interpretations, and confidence levels of the results."
+  },
+  "PHASE": {
+   "slug": "PHASE",
+   "title": "PHASE",
+   "url": "/documentation/PHASE",
+   "abstract": "Create dynamic audio experiences in your game or app that react to events and cues in the environment."
+  },
+  "TelephonyMessagingKit": {
+   "slug": "TelephonyMessagingKit",
+   "title": "TelephonyMessagingKit",
+   "url": "/documentation/TelephonyMessagingKit",
+   "abstract": "Send and receive standards-based messages over cellular networks."
+  },
+  "WalletPasses": {
+   "slug": "WalletPasses",
+   "title": "Wallet Passes",
+   "url": "/documentation/WalletPasses",
+   "abstract": "Create, distribute, and update passes for the Wallet app."
+  },
+  "NotificationCenter": {
+   "slug": "NotificationCenter",
+   "title": "Notification Center",
+   "url": "/documentation/NotificationCenter",
+   "abstract": "Create and manage widgets for the Today view."
+  },
+  "ExternalAccessory": {
+   "slug": "ExternalAccessory",
+   "title": "External Accessory",
+   "url": "/documentation/ExternalAccessory",
+   "abstract": "Communicate with accessories that connect to a device with the Apple Lightning connector, or with Bluetooth wireless technology."
+  },
+  "ShaderGraph": {
+   "slug": "ShaderGraph",
+   "title": "ShaderGraph",
+   "url": "/documentation/ShaderGraph",
+   "abstract": "Create custom materials and effects for 3D content in Reality Composer Pro."
+  },
+  "playgroundsupport": {
+   "slug": "playgroundsupport",
+   "title": "Playground Support",
+   "url": "/documentation/playgroundsupport",
+   "abstract": "Share playground data, manage live views, and control the execution of a playground."
+  },
+  "SuggestedActions": {
+   "slug": "SuggestedActions",
+   "title": "Suggested Actions",
+   "url": "/documentation/SuggestedActions",
+   "abstract": "Offer quick actions next to messages in your messaging app, based on context you provide."
+  },
+  "GLKit": {
+   "slug": "GLKit",
+   "title": "GLKit",
+   "url": "/documentation/GLKit",
+   "abstract": "Speed up OpenGL ES or OpenGL app development. Use math libraries, background texture loading, pre-created shader effects, and a standard view and view controller to implement your rendering loop."
+  },
+  "SCSIPeripheralsDriverKit": {
+   "slug": "SCSIPeripheralsDriverKit",
+   "title": "SCSIPeripheralsDriverKit",
+   "url": "/documentation/SCSIPeripheralsDriverKit",
+   "abstract": "Develop drivers for peripherals that use SCSI Block Command and Multimedia Command protocols."
+  },
+  "FileProviderUI": {
+   "slug": "FileProviderUI",
+   "title": "File Provider UI",
+   "url": "/documentation/FileProviderUI",
+   "abstract": "Add actions to the document browser’s context menu."
+  },
+  "RegexBuilder": {
+   "slug": "RegexBuilder",
+   "title": "RegexBuilder",
+   "url": "/documentation/RegexBuilder",
+   "abstract": "Use an expressive domain-specific language to build regular expressions, for operations like searching and replacing in text."
+  },
+  "AppClip": {
+   "slug": "AppClip",
+   "title": "App Clips",
+   "url": "/documentation/AppClip",
+   "abstract": "Create a lightweight, in-the-moment experience or demo version for your app that’s instantly available."
+  },
+  "PassKit": {
+   "slug": "PassKit",
+   "title": "PassKit (Apple Pay and Wallet)",
+   "url": "/documentation/PassKit",
+   "abstract": "Process Apple Pay payments in your app, and create and distribute passes for the Wallet app."
+  },
+  "CallKit": {
+   "slug": "CallKit",
+   "title": "CallKit",
+   "url": "/documentation/CallKit",
+   "abstract": "Display the system-calling UI for your app’s VoIP services, and coordinate your calling services with other apps and the system."
+  },
+  "MediaSetup": {
+   "slug": "MediaSetup",
+   "title": "Media Setup",
+   "url": "/documentation/MediaSetup",
+   "abstract": "Enable users to configure HomePod speakers to stream music directly from your media service."
+  },
+  "AccessoryTransportExtension": {
+   "slug": "AccessoryTransportExtension",
+   "title": "Accessory Transport Extension",
+   "url": "/documentation/AccessoryTransportExtension",
+   "abstract": "Transfer data securely to connected accessories that you develop."
+  },
+  "VisualIntelligence": {
+   "slug": "VisualIntelligence",
+   "title": "Visual Intelligence",
+   "url": "/documentation/VisualIntelligence",
+   "abstract": "Include your app’s content in search results that visual intelligence provides."
+  },
+  "Synchronization": {
+   "slug": "Synchronization",
+   "title": "Synchronization",
+   "url": "/documentation/Synchronization",
+   "abstract": "Build synchronization constructs using low-level, primitive operations."
+  },
+  "DeviceDiscoveryUI": {
+   "slug": "DeviceDiscoveryUI",
+   "title": "DeviceDiscoveryUI",
+   "url": "/documentation/DeviceDiscoveryUI",
+   "abstract": "Display an interface that lets people connect iOS, iPadOS, tvOS, watchOS, and Mac Catalyst apps over peer-to-peer networks."
+  },
+  "MetalPerformanceShadersGraph": {
+   "slug": "MetalPerformanceShadersGraph",
+   "title": "Metal Performance Shaders Graph",
+   "url": "/documentation/MetalPerformanceShadersGraph",
+   "abstract": "Build, compile, and execute compute graphs utilizing all the different compute devices on the platform, including GPU, CPU, and Neural Engine."
+  },
+  "ExecutionPolicy": {
+   "slug": "ExecutionPolicy",
+   "title": "Execution Policy",
+   "url": "/documentation/ExecutionPolicy",
+   "abstract": "Provide functionality so developer tools can manage execution policy exceptions."
+  },
+  "CompositorServices": {
+   "slug": "CompositorServices",
+   "title": "Compositor Services",
+   "url": "/documentation/CompositorServices",
+   "abstract": "Take control of the drawing environment and render your own content using Metal."
+  },
+  "CoreHaptics": {
+   "slug": "CoreHaptics",
+   "title": "Core Haptics",
+   "url": "/documentation/CoreHaptics",
+   "abstract": "Compose and play haptic patterns to customize your iOS app’s haptic feedback."
+  },
+  "BundleResources": {
+   "slug": "BundleResources",
+   "title": "Bundle Resources",
+   "url": "/documentation/BundleResources",
+   "abstract": "Resources located in an app, framework, or plugin bundle."
+  },
+  "ServiceManagement": {
+   "slug": "ServiceManagement",
+   "title": "Service Management",
+   "url": "/documentation/ServiceManagement",
+   "abstract": "Manage startup items, launch agents, and launch daemons from within an app."
+  },
+  "SensorKit": {
+   "slug": "SensorKit",
+   "title": "SensorKit",
+   "url": "/documentation/SensorKit",
+   "abstract": "Retrieve data and derived metrics from sensors on an iPhone, or paired Apple Watch."
+  },
+  "Hypervisor": {
+   "slug": "Hypervisor",
+   "title": "Hypervisor",
+   "url": "/documentation/Hypervisor",
+   "abstract": "Build virtualization solutions on top of a lightweight hypervisor, without third-party kernel extensions."
+  },
+  "AppDataTransfer": {
+   "slug": "AppDataTransfer",
+   "title": "App Data Transfer",
+   "url": "/documentation/AppDataTransfer",
+   "abstract": "Download App Store information and app-install activity about your app."
+  },
+  "ApplePayWebMerchantRegistrationAPI": {
+   "slug": "ApplePayWebMerchantRegistrationAPI",
+   "title": "Apple Pay Web Merchant Registration API",
+   "url": "/documentation/ApplePayWebMerchantRegistrationAPI",
+   "abstract": "Manage merchant registration through your web platform."
+  },
+  "ImagePlayground": {
+   "slug": "ImagePlayground",
+   "title": "Image Playground",
+   "url": "/documentation/ImagePlayground",
+   "abstract": "Present a system interface to generate images based on descriptive information."
+  },
+  "FamilyControls": {
+   "slug": "FamilyControls",
+   "title": "Family Controls",
+   "url": "/documentation/FamilyControls",
+   "abstract": "Authorize your app to provide parental controls on a device."
+  },
+  "BrowserEngineCore": {
+   "slug": "BrowserEngineCore",
+   "title": "BrowserEngineCore",
+   "url": "/documentation/BrowserEngineCore",
+   "abstract": "Integrate an alternative browser engine into your web browser app."
+  },
+  "MailKit": {
+   "slug": "MailKit",
+   "title": "MailKit",
+   "url": "/documentation/MailKit",
+   "abstract": "Secure, customize, and act on email messages that users send and receive."
+  },
+  "Technotes": {
+   "slug": "Technotes",
+   "title": "Technotes",
+   "url": "/documentation/Technotes",
+   "abstract": "Learn about specific development topics through these in-depth technical articles."
+  },
+  "tvmljs": {
+   "slug": "tvmljs",
+   "title": "TVMLKit JS",
+   "url": "/documentation/tvmljs",
+   "abstract": "Create tvOS client-server apps using web technologies to stream media and respond to events."
+  },
+  "ImageIO": {
+   "slug": "ImageIO",
+   "title": "Image I/O",
+   "url": "/documentation/ImageIO",
+   "abstract": "Read and write most image file formats, and access an image’s metadata."
+  },
+  "professional_video_applications": {
+   "slug": "professional_video_applications",
+   "title": "Professional Video Applications",
+   "url": "/documentation/professional_video_applications",
+   "abstract": "Exchange data with Final Cut Pro, and create effects plug-ins for Final Cut Pro and Motion."
+  },
+  "ClassKitUI": {
+   "slug": "ClassKitUI",
+   "title": "ClassKit UI",
+   "url": "/documentation/ClassKitUI",
+   "abstract": "Display views that enable students to submit and withdraw assigned documents in your app."
+  },
+  "AppStoreConnectAPI": {
+   "slug": "AppStoreConnectAPI",
+   "title": "App Store Connect API",
+   "url": "/documentation/AppStoreConnectAPI",
+   "abstract": "The data structure that represents an app store connect api resource."
+  },
+  "Vision": {
+   "slug": "Vision",
+   "title": "Vision",
+   "url": "/documentation/Vision",
+   "abstract": "Analyze image and video content in your app using computer vision algorithms for object detection, text recognition, and image segmentation."
+  },
+  "AVFAudio": {
+   "slug": "AVFAudio",
+   "title": "AVFAudio",
+   "url": "/documentation/AVFAudio",
+   "abstract": "Play, record, and process audio; configure your app’s system audio behavior."
+  },
+  "AccountDataTransfer": {
+   "slug": "AccountDataTransfer",
+   "title": "Account Data Transfer",
+   "url": "/documentation/AccountDataTransfer",
+   "abstract": "Download App Store information, app install, and push notification activity on behalf of people who use your app."
+  },
+  "DiskImageKit": {
+   "slug": "DiskImageKit",
+   "title": "DiskImageKit",
+   "url": "/documentation/DiskImageKit",
+   "abstract": "Create, open, and manage disk images."
+  },
+  "RealityComposerPro": {
+   "slug": "RealityComposerPro",
+   "title": "Reality Composer Pro",
+   "url": "/documentation/RealityComposerPro",
+   "abstract": "Build, design, and orchestrate 3D content for your RealityKit apps."
+  },
+  "CoreMotion": {
+   "slug": "CoreMotion",
+   "title": "Core Motion",
+   "url": "/documentation/CoreMotion",
+   "abstract": "Process accelerometer, gyroscope, pedometer, and environment-related events."
+  },
+  "CoreTelephony": {
+   "slug": "CoreTelephony",
+   "title": "Core Telephony",
+   "url": "/documentation/CoreTelephony",
+   "abstract": "Access information about a user’s cellular service provider, such as its unique identifier and whether the carrier allows VoIP."
+  },
+  "OSLog": {
+   "slug": "OSLog",
+   "title": "OSLog",
+   "url": "/documentation/OSLog",
+   "abstract": "A unified logging system for the reading of historical data."
+  },
+  "AlarmKit": {
+   "slug": "AlarmKit",
+   "title": "AlarmKit",
+   "url": "/documentation/AlarmKit",
+   "abstract": "Schedule prominent alarms and countdowns to help people manage their time."
+  },
+  "SiriKitCloudMedia": {
+   "slug": "SiriKitCloudMedia",
+   "title": "SiriKit Cloud Media",
+   "url": "/documentation/SiriKitCloudMedia",
+   "abstract": "Stream music directly to HomePod speakers from your media service."
+  },
+  "MediaLibrary": {
+   "slug": "MediaLibrary",
+   "title": "Media Library",
+   "url": "/documentation/MediaLibrary",
+   "abstract": "Access read-only collections of the user’s multimedia content."
+  },
+  "IOBluetoothUI": {
+   "slug": "IOBluetoothUI",
+   "title": "IOBluetooth UI",
+   "url": "/documentation/IOBluetoothUI",
+   "abstract": "Present an interface through which users can pair their devices with other Bluetooth devices."
+  },
+  "Accelerate": {
+   "slug": "Accelerate",
+   "title": "Accelerate",
+   "url": "/documentation/Accelerate",
+   "abstract": "Make large-scale mathematical computations and image calculations, optimized for high performance and low energy consumption."
+  },
+  "Translation": {
+   "slug": "Translation",
+   "title": "Translation",
+   "url": "/documentation/Translation",
+   "abstract": "Translate text in your app from one language to another."
+  },
+  "CoreWLAN": {
+   "slug": "CoreWLAN",
+   "title": "Core WLAN",
+   "url": "/documentation/CoreWLAN",
+   "abstract": "Query AirPort interfaces and choose wireless networks."
+  },
+  "CoreAudioTypes": {
+   "slug": "CoreAudioTypes",
+   "title": "Core Audio Types",
+   "url": "/documentation/CoreAudioTypes",
+   "abstract": "Use specialized data types to interact with audio streams, complex buffers, and audiovisual timestamps."
+  },
+  "IOSurface": {
+   "slug": "IOSurface",
+   "title": "IOSurface",
+   "url": "/documentation/IOSurface",
+   "abstract": "Share hardware-accelerated buffer data (framebuffers and textures) across multiple processes. Manage image memory more efficiently."
+  },
+  "ContactsUI": {
+   "slug": "ContactsUI",
+   "title": "Contacts UI",
+   "url": "/documentation/ContactsUI",
+   "abstract": "Provide an interface that allows people to display information about their contacts."
+  },
+  "GroupActivities": {
+   "slug": "GroupActivities",
+   "title": "Group Activities",
+   "url": "/documentation/GroupActivities",
+   "abstract": "Create app-specific activities your users can share and experience together."
+  },
+  "AudioDriverKit": {
+   "slug": "AudioDriverKit",
+   "title": "AudioDriverKit",
+   "url": "/documentation/AudioDriverKit",
+   "abstract": "Develop drivers for audio devices."
+  },
+  "DeviceDiscoveryExtension": {
+   "slug": "DeviceDiscoveryExtension",
+   "title": "DeviceDiscoveryExtension",
+   "url": "/documentation/DeviceDiscoveryExtension",
+   "abstract": "Stream media to a third-party device that a user selects in a system menu."
+  },
+  "CFNetwork": {
+   "slug": "CFNetwork",
+   "title": "CFNetwork",
+   "url": "/documentation/CFNetwork",
+   "abstract": "Access network services and handle changes in network configurations. Build on abstractions of network protocols to simplify tasks such as working with BSD sockets, administering HTTP and FTP servers, and managing Bonjour services."
+  },
+  "NaturalLanguage": {
+   "slug": "NaturalLanguage",
+   "title": "Natural Language",
+   "url": "/documentation/NaturalLanguage",
+   "abstract": "Analyze natural language text and deduce its language-specific metadata."
+  },
+  "QuickLook": {
+   "slug": "QuickLook",
+   "title": "Quick Look",
+   "url": "/documentation/QuickLook",
+   "abstract": "Create previews of files to use inside your app, or perform simple edits on previews."
+  },
+  "ForceFeedback": {
+   "slug": "ForceFeedback",
+   "title": "Force Feedback",
+   "url": "/documentation/ForceFeedback",
+   "abstract": "Control force feedback devices attached to the system. Develop plug-ins that enable communication with force feedback hardware."
+  },
+  "playgroundbluetooth": {
+   "slug": "playgroundbluetooth",
+   "title": "Playground Bluetooth",
+   "url": "/documentation/playgroundbluetooth",
+   "abstract": "Display and manage connections to Bluetooth peripherals in Swift Playgrounds."
+  },
+  "MarketplaceKit": {
+   "slug": "MarketplaceKit",
+   "title": "MarketplaceKit",
+   "url": "/documentation/MarketplaceKit",
+   "abstract": "Create an alternative app marketplace, distribute your app on an alternative app marketplace, or distribute your app from your website."
+  },
+  "Observation": {
+   "slug": "Observation",
+   "title": "Observation",
+   "url": "/documentation/Observation",
+   "abstract": "Make responsive apps that update the presentation when underlying data changes."
+  },
+  "PaperKit": {
+   "slug": "PaperKit",
+   "title": "PaperKit",
+   "url": "/documentation/PaperKit",
+   "abstract": "Add drawings, shapes, and a consistent markup experience to your app."
+  },
+  "ProximityReader": {
+   "slug": "ProximityReader",
+   "title": "ProximityReader",
+   "url": "/documentation/ProximityReader",
+   "abstract": "Read contactless physical and digital wallet cards using your iPhone."
+  },
+  "Contacts": {
+   "slug": "Contacts",
+   "title": "Contacts",
+   "url": "/documentation/Contacts",
+   "abstract": "Access the user’s contacts, and format and localize contact information."
+  },
+  "ModelIO": {
+   "slug": "ModelIO",
+   "title": "Model I/O",
+   "url": "/documentation/ModelIO",
+   "abstract": "Import, export, and manipulate 3D models using a common infrastructure that integrates MetalKit, GLKit, and SceneKit."
+  },
+  "CreateML": {
+   "slug": "CreateML",
+   "title": "Create ML",
+   "url": "/documentation/CreateML",
+   "abstract": "Create machine learning models for use in your app."
+  },
+  "NearbyInteraction": {
+   "slug": "NearbyInteraction",
+   "title": "Nearby Interaction",
+   "url": "/documentation/NearbyInteraction",
+   "abstract": "Locate and interact with nearby devices using identifiers, distance, and direction."
+  },
+  "TechnologyOverviews": {
+   "slug": "TechnologyOverviews",
+   "title": "Technology Overviews",
+   "url": "/documentation/TechnologyOverviews",
+   "abstract": "Learn about the wide range of technologies you use to develop software for Apple platforms."
+  },
+  "Snapshots": {
+   "slug": "Snapshots",
+   "title": "Maps Web Snapshots",
+   "url": "/documentation/Snapshots",
+   "abstract": "Create a static image of a map from a URL."
+  },
+  "TVUIKit": {
+   "slug": "TVUIKit",
+   "title": "TVUIKit",
+   "url": "/documentation/TVUIKit",
+   "abstract": "Show common user interface elements from Apple TV in your native app."
+  },
+  "MetalKit": {
+   "slug": "MetalKit",
+   "title": "MetalKit",
+   "url": "/documentation/MetalKit",
+   "abstract": "Build Metal apps quicker and easier using a common set of utility classes."
+  },
+  "DeclaredAgeRange": {
+   "slug": "DeclaredAgeRange",
+   "title": "Declared Age Range",
+   "url": "/documentation/DeclaredAgeRange",
+   "abstract": "Create age-appropriate experiences in your app by asking people to share their age range."
+  },
+  "SharedWithYou": {
+   "slug": "SharedWithYou",
+   "title": "Shared with You",
+   "url": "/documentation/SharedWithYou",
+   "abstract": "Surface shared content and collaborate in your app."
+  },
+  "apple-silicon": {
+   "slug": "apple-silicon",
+   "title": "Apple silicon",
+   "url": "/documentation/apple-silicon",
+   "abstract": "Get the resources you need to create software for Macs with Apple silicon."
+  },
+  "AudioToolbox": {
+   "slug": "AudioToolbox",
+   "title": "Audio Toolbox",
+   "url": "/documentation/AudioToolbox",
+   "abstract": "Record or play audio, convert formats, parse audio streams, and configure your audio session."
+  },
+  "QuartzCore": {
+   "slug": "QuartzCore",
+   "title": "Core Animation",
+   "url": "/documentation/QuartzCore",
+   "abstract": "Render, compose, and animate visual elements."
+  },
+  "JournalingSuggestions": {
+   "slug": "JournalingSuggestions",
+   "title": "Journaling Suggestions",
+   "url": "/documentation/JournalingSuggestions",
+   "abstract": "Display a set of recent, personal events that inspire someone to contribute to your app’s creative workflow."
+  },
+  "DeviceCheck": {
+   "slug": "DeviceCheck",
+   "title": "DeviceCheck",
+   "url": "/documentation/DeviceCheck",
+   "abstract": "Reduce fraudulent use of your services by managing device state and asserting app integrity."
+  },
+  "NetworkingDriverKit": {
+   "slug": "NetworkingDriverKit",
+   "title": "NetworkingDriverKit",
+   "url": "/documentation/NetworkingDriverKit",
+   "abstract": "Develop drivers for Ethernet networking devices."
+  },
+  "IdentityLookup": {
+   "slug": "IdentityLookup",
+   "title": "SMS and Call Reporting",
+   "url": "/documentation/IdentityLookup",
+   "abstract": "Create app extensions to manage and report unwanted SMS messages and spam calls."
+  },
+  "ManagedAppDistribution": {
+   "slug": "ManagedAppDistribution",
+   "title": "ManagedAppDistribution",
+   "url": "/documentation/ManagedAppDistribution",
+   "abstract": "Manage the distribution of apps within an organization."
+  },
+  "LightweightCodeRequirements": {
+   "slug": "LightweightCodeRequirements",
+   "title": "LightweightCodeRequirements",
+   "url": "/documentation/LightweightCodeRequirements",
+   "abstract": "Test the identity of executable code on disk and in running processes."
+  },
+  "MetricKit": {
+   "slug": "MetricKit",
+   "title": "MetricKit",
+   "url": "/documentation/MetricKit",
+   "abstract": "Measure your app’s performance using daily metric and diagnostic reports from real users."
+  },
+  "CoreVideo": {
+   "slug": "CoreVideo",
+   "title": "Core Video",
+   "url": "/documentation/CoreVideo",
+   "abstract": "Process digital video, including manipulation of individual frames, using a pipeline-based API and support for both Metal and OpenGL."
+  },
+  "TranslationUIProvider": {
+   "slug": "TranslationUIProvider",
+   "title": "TranslationUIProvider",
+   "url": "/documentation/TranslationUIProvider",
+   "abstract": "Provide UI for translations of text people select."
+  },
+  "Collaboration": {
+   "slug": "Collaboration",
+   "title": "Collaboration",
+   "url": "/documentation/Collaboration",
+   "abstract": "Find and access identities, that is, users and groups. Display the Identity Picker, which lets users create and select identities."
+  },
+  "MIDIDriverKit": {
+   "slug": "MIDIDriverKit",
+   "title": "MIDIDriverKit",
+   "url": "/documentation/MIDIDriverKit",
+   "abstract": "Develop drivers for MIDI devices."
+  },
+  "FoveatedStreaming": {
+   "slug": "FoveatedStreaming",
+   "title": "Foveated Streaming",
+   "url": "/documentation/FoveatedStreaming",
+   "abstract": "Foveated Streaming enables visionOS apps to display high-resolution, low-latency immersive content from streaming endpoints."
+  },
+  "Compression": {
+   "slug": "Compression",
+   "title": "Compression",
+   "url": "/documentation/Compression",
+   "abstract": "Leverage compression algorithms for lossless data compression."
+  },
+  "LiveCommunicationKit": {
+   "slug": "LiveCommunicationKit",
+   "title": "LiveCommunicationKit",
+   "url": "/documentation/LiveCommunicationKit",
+   "abstract": "Initiate and handle VoIP and cellular conversations, coordinate them with other communication apps and the system, and get ready to be a default calling or dialer app."
+  },
+  "AppKit": {
+   "slug": "AppKit",
+   "title": "AppKit",
+   "url": "/documentation/AppKit",
+   "abstract": "Construct and manage a graphical, event-driven user interface for your macOS app."
+  },
+  "AssetsLibrary": {
+   "slug": "AssetsLibrary",
+   "title": "Assets Library",
+   "url": "/documentation/AssetsLibrary",
+   "abstract": "Access the assets in a user’s media library."
+  },
+  "BlockStorageDeviceDriverKit": {
+   "slug": "BlockStorageDeviceDriverKit",
+   "title": "BlockStorageDeviceDriverKit",
+   "url": "/documentation/BlockStorageDeviceDriverKit",
+   "abstract": "Develop drivers for custom storage devices that communicate with the driver using custom protocols."
+  },
+  "StoreKit": {
+   "slug": "StoreKit",
+   "title": "StoreKit",
+   "url": "/documentation/StoreKit",
+   "abstract": "Support In-App Purchases and interactions with the App Store."
+  },
+  "ShazamKit": {
+   "slug": "ShazamKit",
+   "title": "ShazamKit",
+   "url": "/documentation/ShazamKit",
+   "abstract": "Find information about a specific audio recording when a segment of it’s part of captured sound in the Shazam catalog or your custom catalog."
+  },
+  "FoundationModels": {
+   "slug": "FoundationModels",
+   "title": "Foundation Models",
+   "url": "/documentation/FoundationModels",
+   "abstract": "Perform tasks with models that specialize in language understanding, structured output, and tool calling."
+  },
+  "UIKit": {
+   "slug": "UIKit",
+   "title": "UIKit",
+   "url": "/documentation/UIKit",
+   "abstract": "Construct and manage a graphical, event-driven user interface for your iOS, iPadOS, or tvOS app."
+  },
+  "watchOS-Apps": {
+   "slug": "watchOS-Apps",
+   "title": "watchOS apps",
+   "url": "/documentation/watchOS-Apps",
+   "abstract": "Build watchOS apps that combine complications, notifications, and Siri to create a personal experience on Apple Watch."
+  },
+  "WeatherKitRESTAPI": {
+   "slug": "WeatherKitRESTAPI",
+   "title": "WeatherKit REST API",
+   "url": "/documentation/WeatherKitRESTAPI",
+   "abstract": "Obtain historical, current, and predictive weather for your app or service."
+  },
+  "ARKit": {
+   "slug": "ARKit",
+   "title": "ARKit",
+   "url": "/documentation/ARKit",
+   "abstract": "Integrate hardware sensing features to produce augmented reality apps and games."
+  },
+  "IOBluetooth": {
+   "slug": "IOBluetooth",
+   "title": "IOBluetooth",
+   "url": "/documentation/IOBluetooth",
+   "abstract": "Gain user-space access to Bluetooth devices."
+  },
+  "DiskArbitration": {
+   "slug": "DiskArbitration",
+   "title": "Disk Arbitration",
+   "url": "/documentation/DiskArbitration",
+   "abstract": "Provides mechanisms to register and block disk mount or unmount events."
+  },
+  "SensitiveContentAnalysis": {
+   "slug": "SensitiveContentAnalysis",
+   "title": "Sensitive Content Analysis",
+   "url": "/documentation/SensitiveContentAnalysis",
+   "abstract": "Provide a safer experience in your app by detecting and alerting people to sensitive content in images and videos before displaying them."
+  },
+  "VideoSubscriberAccount": {
+   "slug": "VideoSubscriberAccount",
+   "title": "Video Subscriber Account",
+   "url": "/documentation/VideoSubscriberAccount",
+   "abstract": "Support TV provider and Apple TV app functionality."
+  },
+  "MLCompute": {
+   "slug": "MLCompute",
+   "title": "ML Compute",
+   "url": "/documentation/MLCompute",
+   "abstract": "Accelerate training and validation of neural networks across the CPU and one or more GPUs."
+  },
+  "Distributed": {
+   "slug": "Distributed",
+   "title": "Distributed",
+   "url": "/documentation/Distributed",
+   "abstract": "Build systems that run distributed code across multiple processes and devices."
+  },
+  "CoreHID": {
+   "slug": "CoreHID",
+   "title": "Core HID",
+   "url": "/documentation/CoreHID",
+   "abstract": "Interact with keyboards, mice, and other human interface devices."
+  },
+  "Quartz": {
+   "slug": "Quartz",
+   "title": "Quartz",
+   "url": "/documentation/Quartz",
+   "abstract": "Allow users to browse, edit, and save images, using slideshows and Core Image filters."
+  },
+  "OpenDirectory": {
+   "slug": "OpenDirectory",
+   "title": "Open Directory",
+   "url": "/documentation/OpenDirectory",
+   "abstract": "Authenticate users, and search for contact information in Open Directory and LDAP directories."
+  },
+  "ExtensionKit": {
+   "slug": "ExtensionKit",
+   "title": "ExtensionKit",
+   "url": "/documentation/ExtensionKit",
+   "abstract": "Make custom UI from an app extension available in a host app, and manage the list of enabled and disabled app extensions."
+  },
+  "IOUSBHost": {
+   "slug": "IOUSBHost",
+   "title": "IOUSBHost",
+   "url": "/documentation/IOUSBHost",
+   "abstract": "Create host-mode user space drivers for USB devices."
+  },
+  "MetalFX": {
+   "slug": "MetalFX",
+   "title": "MetalFX",
+   "url": "/documentation/MetalFX",
+   "abstract": "Boost your Metal app’s performance by upscaling lower-resolution content to save GPU time."
+  },
+  "Assignables": {
+   "slug": "Assignables",
+   "title": "Assignables",
+   "url": "/documentation/Assignables",
+   "abstract": "A framework that contains wrappers for a PDF to allow creation of an assessment and student work on that assessment."
+  },
+  "CoreNFC": {
+   "slug": "CoreNFC",
+   "title": "Core NFC",
+   "url": "/documentation/CoreNFC",
+   "abstract": "Detect NFC tags, read messages that contain NDEF data, and save data to writable tags."
+  },
+  "AppStoreServerNotifications": {
+   "slug": "AppStoreServerNotifications",
+   "title": "App Store Server Notifications",
+   "url": "/documentation/AppStoreServerNotifications",
+   "abstract": "Monitor In-App Purchase events in real time and learn of unreported external purchase tokens, with server notifications from the App Store."
+  },
+  "RoomPlan": {
+   "slug": "RoomPlan",
+   "title": "RoomPlan",
+   "url": "/documentation/RoomPlan",
+   "abstract": "Create a 3D model of a room by interactively guiding people to scan their physical environment using a device’s camera."
+  },
+  "GameKit": {
+   "slug": "GameKit",
+   "title": "GameKit",
+   "url": "/documentation/GameKit",
+   "abstract": "Enable players to interact with friends, compare leaderboard ranks, earn achievements, and participate in multiplayer games."
+  },
+  "ManagedSettingsUI": {
+   "slug": "ManagedSettingsUI",
+   "title": "Managed Settings UI",
+   "url": "/documentation/ManagedSettingsUI",
+   "abstract": "Define and configure the appearance of shielding views."
+  },
+  "LivePhotosKitJS": {
+   "slug": "LivePhotosKitJS",
+   "title": "LivePhotosKit JS",
+   "url": "/documentation/LivePhotosKitJS",
+   "abstract": "Play Live Photos on the web."
+  },
+  "RetentionMessaging": {
+   "slug": "RetentionMessaging",
+   "title": "Retention Messaging API",
+   "url": "/documentation/RetentionMessaging",
+   "abstract": "Provide a reason for customers to stay subscribed with a preconfigured message that you can choose in real time, appropriate to the product and locale."
+  },
+  "Social": {
+   "slug": "Social",
+   "title": "Social",
+   "url": "/documentation/Social",
+   "abstract": "Post content to supported social networking services, using standard system interfaces."
+  },
+  "Security": {
+   "slug": "Security",
+   "title": "Security",
+   "url": "/documentation/Security",
+   "abstract": "Secure the data your app manages, and control access to your app."
+  },
+  "SampleCode": {
+   "slug": "SampleCode",
+   "title": "Sample Code Library",
+   "url": "/documentation/SampleCode",
+   "abstract": "Enhance and expand your knowledge of Apple technologies by exploring the full library of sample code projects."
+  },
+  "RealityKit": {
+   "slug": "RealityKit",
+   "title": "RealityKit",
+   "url": "/documentation/RealityKit",
+   "abstract": "Simulate and render 3D content for use in your augmented reality apps."
+  },
+  "PreferencePanes": {
+   "slug": "PreferencePanes",
+   "title": "Preference Panes",
+   "url": "/documentation/PreferencePanes",
+   "abstract": "Integrate your app’s custom preferences into the System Preferences app."
+  },
+  "GameplayKit": {
+   "slug": "GameplayKit",
+   "title": "GameplayKit",
+   "url": "/documentation/GameplayKit",
+   "abstract": "Architect and organize your game logic. Incorporate common gameplay behaviors such as random number generation, artificial intelligence, pathfinding, and agent behavior."
+  },
+  "CoreMedia": {
+   "slug": "CoreMedia",
+   "title": "Core Media",
+   "url": "/documentation/CoreMedia",
+   "abstract": "Represent time-based audio-visual assets with essential data types."
+  },
+  "HTTP-Live-Streaming": {
+   "slug": "HTTP-Live-Streaming",
+   "title": "HTTP Live Streaming",
+   "url": "/documentation/HTTP-Live-Streaming",
+   "abstract": "Send audio and video to iOS, tvOS, and macOS devices."
+  },
+  "GeoToolbox": {
+   "slug": "GeoToolbox",
+   "title": "GeoToolbox",
+   "url": "/documentation/GeoToolbox",
+   "abstract": "Determine place descriptor information for map coordinates."
+  },
+  "CoreAudio": {
+   "slug": "CoreAudio",
+   "title": "Core Audio",
+   "url": "/documentation/CoreAudio",
+   "abstract": "Use the Core Audio framework to interact with device’s audio hardware."
+  },
+  "Charts": {
+   "slug": "Charts",
+   "title": "Swift Charts",
+   "url": "/documentation/Charts",
+   "abstract": "Construct and customize charts on every Apple platform."
+  },
+  "UserNotifications": {
+   "slug": "UserNotifications",
+   "title": "User Notifications",
+   "url": "/documentation/UserNotifications",
+   "abstract": "Push user-facing notifications to the user’s device from a server, or generate them locally from your app."
+  },
+  "BrowserKit": {
+   "slug": "BrowserKit",
+   "title": "BrowserKit",
+   "url": "/documentation/BrowserKit",
+   "abstract": "Transfer browser data to another browser or check a device’s eligibility to use an alternative browser engine."
+  },
+  "SKAdNetworkforWebAds": {
+   "slug": "SKAdNetworkforWebAds",
+   "title": "SKAdNetwork for Web Ads",
+   "url": "/documentation/SKAdNetworkforWebAds",
+   "abstract": "Attribute app-install campaigns that originate on the web."
+  },
+  "AppIntentsTesting": {
+   "slug": "AppIntentsTesting",
+   "title": "App Intents Testing",
+   "url": "/documentation/AppIntentsTesting",
+   "abstract": "Test your app intents, entities, queries, and integration with system features like Siri or Spotlight."
+  },
+  "AdServices": {
+   "slug": "AdServices",
+   "title": "AdServices",
+   "url": "/documentation/AdServices",
+   "abstract": "Attribute app-download campaigns that originate from the App Store on iOS devices."
+  },
+  "EndpointSecurity": {
+   "slug": "EndpointSecurity",
+   "title": "Endpoint Security",
+   "url": "/documentation/EndpointSecurity",
+   "abstract": "Develop system extensions that enhance user security."
+  },
+  "CoreText": {
+   "slug": "CoreText",
+   "title": "Core Text",
+   "url": "/documentation/CoreText",
+   "abstract": "Create text layouts, optimize font handling, and access font metrics and glyph data."
+  },
+  "analytics-reports": {
+   "slug": "analytics-reports",
+   "title": "Analytics Reports",
+   "url": "/documentation/analytics-reports",
+   "abstract": "A list of app development reports, their field descriptions, and glossaries."
+  },
+  "XPC": {
+   "slug": "XPC",
+   "title": "XPC",
+   "url": "/documentation/XPC",
+   "abstract": "Access a low-level interprocess communication mechanism."
+  },
+  "LocalAuthenticationEmbeddedUI": {
+   "slug": "LocalAuthenticationEmbeddedUI",
+   "title": "Local Authentication Embedded UI",
+   "url": "/documentation/LocalAuthenticationEmbeddedUI",
+   "abstract": "Present a standard local authentication view icon in a custom authentication view."
+  },
+  "ClockKit": {
+   "slug": "ClockKit",
+   "title": "ClockKit",
+   "url": "/documentation/ClockKit",
+   "abstract": "Display app-specific data on the clock face."
+  },
+  "Swift": {
+   "slug": "Swift",
+   "title": "Swift",
+   "url": "/documentation/Swift",
+   "abstract": "Build apps using a powerful open language."
+  },
+  "HIDDriverKit": {
+   "slug": "HIDDriverKit",
+   "title": "HIDDriverKit",
+   "url": "/documentation/HIDDriverKit",
+   "abstract": "Develop drivers for human-interface devices, such as keyboards, pointing devices, and digitizers like pens and touch pads."
+  },
+  "apple-school-and-business-manager-api": {
+   "slug": "apple-school-and-business-manager-api",
+   "title": "Apple School Manager and Apple Business APIs",
+   "url": "/documentation/apple-school-and-business-manager-api",
+   "abstract": "Automate device management actions and access data about devices that enroll using Automated Device Enrollment with the Apple School Manager and Apple Business APIs."
+  },
+  "PackageDescription": {
+   "slug": "PackageDescription",
+   "title": "PackageDescription",
+   "url": "/documentation/PackageDescription",
+   "abstract": "Create reusable code, organize it in a lightweight way, and share it across your projects and with other developers."
+  },
+  "AccessorySetupKit": {
+   "slug": "AccessorySetupKit",
+   "title": "AccessorySetupKit",
+   "url": "/documentation/AccessorySetupKit",
+   "abstract": "Enable privacy-preserving discovery and configuration of accessories."
+  },
+  "ExposureNotification": {
+   "slug": "ExposureNotification",
+   "title": "Exposure Notification",
+   "url": "/documentation/ExposureNotification",
+   "abstract": "Implement a COVID-19 exposure notification system that protects user privacy."
+  },
+  "webkitjs": {
+   "slug": "webkitjs",
+   "title": "WebKit JS",
+   "url": "/documentation/webkitjs",
+   "abstract": "Access and modify DOM elements within a webpage, including touch events and visual effects."
+  },
+  "PhotoKit": {
+   "slug": "PhotoKit",
+   "title": "PhotoKit",
+   "url": "/documentation/PhotoKit",
+   "abstract": "Work with image and video assets that the Photos app manages, including those from iCloud Photos and Live Photos."
+  },
+  "ColorSync": {
+   "slug": "ColorSync",
+   "title": "ColorSync",
+   "url": "/documentation/ColorSync",
+   "abstract": "Reproduce colors accurately across a range of input, output, and display devices."
+  },
+  "ExternalPurchaseServerAPI": {
+   "slug": "ExternalPurchaseServerAPI",
+   "title": "External Purchase Server API",
+   "url": "/documentation/ExternalPurchaseServerAPI",
+   "abstract": "Send and manage reports you send to Apple for tokens you receive when your app provides external purchases for digital goods and services."
+  },
+  "AuthenticationServices": {
+   "slug": "AuthenticationServices",
+   "title": "Authentication Services",
+   "url": "/documentation/AuthenticationServices",
+   "abstract": "Make it easy for users to log into apps and services."
+  },
+  "CloudKitJS": {
+   "slug": "CloudKitJS",
+   "title": "CloudKit JS",
+   "url": "/documentation/CloudKitJS",
+   "abstract": "Provide access from your web app to your CloudKit app’s containers and databases."
+  },
+  "UserNotificationsUI": {
+   "slug": "UserNotificationsUI",
+   "title": "User Notifications UI",
+   "url": "/documentation/UserNotificationsUI",
+   "abstract": "Customize the interface that displays local and remote notifications."
+  },
+  "OpenGLES": {
+   "slug": "OpenGLES",
+   "title": "OpenGL ES",
+   "url": "/documentation/OpenGLES",
+   "abstract": "Create 3D and 2D graphics effects with this compact, efficient subset of OpenGL."
+  },
+  "Metal": {
+   "slug": "Metal",
+   "title": "Metal",
+   "url": "/documentation/Metal",
+   "abstract": "Render advanced 3D graphics and compute data in parallel with graphics processors."
+  },
+  "safari-developer-tools": {
+   "slug": "safari-developer-tools",
+   "title": "Safari Developer Features",
+   "url": "/documentation/safari-developer-tools",
+   "abstract": "Inspect, debug, and test web content in Safari, in other apps, and on other devices including iPhone and iPad."
+  },
+  "MetalPerformanceShaders": {
+   "slug": "MetalPerformanceShaders",
+   "title": "Metal Performance Shaders",
+   "url": "/documentation/MetalPerformanceShaders",
+   "abstract": "Optimize graphics and compute performance with kernels that are fine-tuned for the unique characteristics of each Metal GPU family."
+  },
+  "PencilKit": {
+   "slug": "PencilKit",
+   "title": "PencilKit",
+   "url": "/documentation/PencilKit",
+   "abstract": "Capture touch and Apple Pencil input as a drawing, and display that content from your app."
+  },
+  "xcselect": {
+   "slug": "xcselect",
+   "title": "xcselect",
+   "url": "/documentation/xcselect",
+   "abstract": "Access the path of the macOS SDK available on the host system."
+  },
+  "AppIntents": {
+   "slug": "AppIntents",
+   "title": "App Intents",
+   "url": "/documentation/AppIntents",
+   "abstract": "Make content and actions discoverable by Apple Intelligence and support system experiences like Siri, Spotlight, Shortcuts, and widgets."
+  },
+  "ObjectiveC": {
+   "slug": "ObjectiveC",
+   "title": "Objective-C Runtime",
+   "url": "/documentation/ObjectiveC",
+   "abstract": "Gain low-level access to the Objective-C runtime and the Objective-C root types."
+  },
+  "ScreenTime": {
+   "slug": "ScreenTime",
+   "title": "Screen Time",
+   "url": "/documentation/ScreenTime",
+   "abstract": "Share and manage web-usage data, and observe changes made by a parent or guardian."
+  },
+  "RosterAPI": {
+   "slug": "RosterAPI",
+   "title": "Roster API",
+   "url": "/documentation/RosterAPI",
+   "abstract": "Read information about people and classes from an Apple School Manager organization."
+  },
+  "TVMLKit": {
+   "slug": "TVMLKit",
+   "title": "TVMLKit",
+   "url": "/documentation/TVMLKit",
+   "abstract": "Create client-server apps by incorporating JavaScript and TVML files in your binary app."
+  },
+  "ExtensionFoundation": {
+   "slug": "ExtensionFoundation",
+   "title": "ExtensionFoundation",
+   "url": "/documentation/ExtensionFoundation",
+   "abstract": "Create executable bundles to extend the functionality of other apps."
+  },
+  "UniformTypeIdentifiers": {
+   "slug": "UniformTypeIdentifiers",
+   "title": "Uniform Type Identifiers",
+   "url": "/documentation/UniformTypeIdentifiers",
+   "abstract": "Provide uniform type identifiers that describe file types for storage or transfer."
+  },
+  "visionOS": {
+   "slug": "visionOS",
+   "title": "visionOS",
+   "url": "/documentation/visionOS",
+   "abstract": "Create a new universe of apps and games for Apple Vision Pro."
+  },
+  "SceneKit": {
+   "slug": "SceneKit",
+   "title": "SceneKit",
+   "url": "/documentation/SceneKit",
+   "abstract": "Create 3D games and add 3D content to apps using high-level scene descriptions, and easily add animations, physics simulation, particle effects, and realistic physically based rendering."
+  },
+  "VideoToolbox": {
+   "slug": "VideoToolbox",
+   "title": "Video Toolbox",
+   "url": "/documentation/VideoToolbox",
+   "abstract": "Work directly with hardware-accelerated video encoding and decoding capabilities."
+  },
+  "EnergyKit": {
+   "slug": "EnergyKit",
+   "title": "EnergyKit",
+   "url": "/documentation/EnergyKit",
+   "abstract": "Provide grid forecasts and energy insights to help people optimize their electricity usage."
+  },
+  "FinderSync": {
+   "slug": "FinderSync",
+   "title": "Finder Sync",
+   "url": "/documentation/FinderSync",
+   "abstract": "Modify the Finder’s user interface to express file synchronization and control."
+  },
+  "WatchConnectivity": {
+   "slug": "WatchConnectivity",
+   "title": "Watch Connectivity",
+   "url": "/documentation/WatchConnectivity",
+   "abstract": "Implement two-way communication between an iOS app and its paired watchOS app."
+  },
+  "ServicesAccountLinking": {
+   "slug": "ServicesAccountLinking",
+   "title": "ServicesAccountLinking",
+   "url": "/documentation/ServicesAccountLinking",
+   "abstract": "Link reseller accounts with Apple Media & Purchases accounts."
+  },
+  "iTunesLibrary": {
+   "slug": "iTunesLibrary",
+   "title": "iTunes Library",
+   "url": "/documentation/iTunesLibrary",
+   "abstract": "Retrieve the properties of the media in the user’s iTunes library."
+  },
+  "DarwinNotify": {
+   "slug": "DarwinNotify",
+   "title": "Darwin Notify",
+   "url": "/documentation/DarwinNotify",
+   "abstract": "Send and receive Darwin notifications."
+  },
+  "WatchKit": {
+   "slug": "WatchKit",
+   "title": "WatchKit",
+   "url": "/documentation/WatchKit",
+   "abstract": "Build watchOS apps that use features the app delegate monitors or controls, such as background tasks and extended runtime sessions."
+  },
+  "os": {
+   "slug": "os",
+   "title": "os",
+   "url": "/documentation/os",
+   "abstract": "Coordinate the scheduling and synchronization of your app’s tasks, and log information to the console to diagnose issues."
+  },
+  "MediaIntelligence": {
+   "slug": "MediaIntelligence",
+   "title": "Media Intelligence",
+   "url": "/documentation/MediaIntelligence",
+   "abstract": "Analyze video content and group faces in images using on-device machine learning."
+  },
+  "PushKit": {
+   "slug": "PushKit",
+   "title": "PushKit",
+   "url": "/documentation/PushKit",
+   "abstract": "Respond to push notifications related to your app’s complications, file providers, and VoIP services."
+  },
+  "CoreGraphics": {
+   "slug": "CoreGraphics",
+   "title": "Core Graphics",
+   "url": "/documentation/CoreGraphics",
+   "abstract": "Harness the power of Quartz technology to perform lightweight 2D rendering with high-fidelity output. Handle path-based drawing, antialiased rendering, gradients, images, color management, PDF documents, and more."
+  },
+  "EventKitUI": {
+   "slug": "EventKitUI",
+   "title": "EventKit UI",
+   "url": "/documentation/EventKitUI",
+   "abstract": "Display an interface for viewing, selecting, and editing calendar events and reminders."
+  },
+  "ScreenCaptureKit": {
+   "slug": "ScreenCaptureKit",
+   "title": "ScreenCaptureKit",
+   "url": "/documentation/ScreenCaptureKit",
+   "abstract": "Stream screen content and audio to your app with fine-grained control over what you capture."
+  },
+  "AutomatedDeviceEnrollment": {
+   "slug": "AutomatedDeviceEnrollment",
+   "title": "Automated Device Enrollment",
+   "url": "/documentation/AutomatedDeviceEnrollment",
+   "abstract": "Allow users of third-party MDM apps to add macOS and iOS devices to their organization."
+  },
+  "AddressBook": {
+   "slug": "AddressBook",
+   "title": "Address Book",
+   "url": "/documentation/AddressBook",
+   "abstract": "Access the centralized database for storing users’ contacts."
+  },
+  "Foundation": {
+   "slug": "Foundation",
+   "title": "Foundation",
+   "url": "/documentation/Foundation",
+   "abstract": "Access essential data types, collections, and operating-system services to define the base layer of functionality for your app."
+  },
+  "Matter": {
+   "slug": "Matter",
+   "title": "Matter",
+   "url": "/documentation/Matter",
+   "abstract": "Communicate with and control smart home devices from a variety of manufacturers."
+  },
+  "EventKit": {
+   "slug": "EventKit",
+   "title": "EventKit",
+   "url": "/documentation/EventKit",
+   "abstract": "Create, view, and edit calendar and reminder events."
+  },
+  "AVKit": {
+   "slug": "AVKit",
+   "title": "AVKit",
+   "url": "/documentation/AVKit",
+   "abstract": "Create user interfaces for media playback, complete with transport controls, chapter navigation, picture-in-picture support, and display of subtitles and closed captions."
+  },
+  "QuickLookUI": {
+   "slug": "QuickLookUI",
+   "title": "Quick Look UI",
+   "url": "/documentation/QuickLookUI",
+   "abstract": "Create previews of files to use inside your macOS app."
+  },
+  "IdentityDocumentServices": {
+   "slug": "IdentityDocumentServices",
+   "title": "IdentityDocumentServices",
+   "url": "/documentation/IdentityDocumentServices",
+   "abstract": "Share mobile documents using the Digital Credentials API."
+  },
+  "Symbols": {
+   "slug": "Symbols",
+   "title": "Symbols",
+   "url": "/documentation/Symbols",
+   "abstract": "Apply universal animations to symbol-based images."
+  },
+  "installer_js": {
+   "slug": "installer_js",
+   "title": "Installer JS",
+   "url": "/documentation/installer_js",
+   "abstract": "Manage and customize the installation and distribution experience."
+  },
+  "DeveloperToolsSupport": {
+   "slug": "DeveloperToolsSupport",
+   "title": "DeveloperToolsSupport",
+   "url": "/documentation/DeveloperToolsSupport",
+   "abstract": "Expose custom views and modifiers in the Xcode library."
+  },
+  "MerchantTokenNotificationServices": {
+   "slug": "MerchantTokenNotificationServices",
+   "title": "Apple Pay Merchant Token Management API",
+   "url": "/documentation/MerchantTokenNotificationServices",
+   "abstract": "Retrieve and manage payment life-cycle events for your Apple Pay merchant tokens."
+  },
+  "CoreBluetooth": {
+   "slug": "CoreBluetooth",
+   "title": "Core Bluetooth",
+   "url": "/documentation/CoreBluetooth",
+   "abstract": "Communicate with Bluetooth low energy and BR/EDR (“Classic”) Devices."
+  },
+  "CoreData": {
+   "slug": "CoreData",
+   "title": "Core Data",
+   "url": "/documentation/CoreData",
+   "abstract": "Persist or cache data on a single device, or sync data to multiple devices with CloudKit."
+  },
+  "safari-release-notes": {
+   "slug": "safari-release-notes",
+   "title": "Safari Release Notes",
+   "url": "/documentation/safari-release-notes",
+   "abstract": "Learn about changes for Safari and Safari View Controller for iOS, iPadOS, macOS, and in visionOS; WKWebView for iOS, iPadOS, macOS, watchOS, and in visionOS; and Web Inspector on macOS."
+  },
+  "MediaToolbox": {
+   "slug": "MediaToolbox",
+   "title": "Media Toolbox",
+   "url": "/documentation/MediaToolbox",
+   "abstract": "Enable support for media format readers; tap and process audio from an audio mix."
+  },
+  "CoreAudioKit": {
+   "slug": "CoreAudioKit",
+   "title": "CoreAudioKit",
+   "url": "/documentation/CoreAudioKit",
+   "abstract": "Add user interfaces to audio units."
+  },
+  "SystemExtensions": {
+   "slug": "SystemExtensions",
+   "title": "System Extensions",
+   "url": "/documentation/SystemExtensions",
+   "abstract": "Install and manage user space code that extends the capabilities of macOS."
+  },
+  "AccessoryAccess": {
+   "slug": "AccessoryAccess",
+   "title": "Accessory Access",
+   "url": "/documentation/AccessoryAccess",
+   "abstract": "Manage access to connected USB accessories."
+  },
+  "SecureElementCredential": {
+   "slug": "SecureElementCredential",
+   "title": "SecureElementCredential",
+   "url": "/documentation/SecureElementCredential",
+   "abstract": "Allow access to credentials inside the Secure Element on device."
+  },
+  "CoreFoundation": {
+   "slug": "CoreFoundation",
+   "title": "Core Foundation",
+   "url": "/documentation/CoreFoundation",
+   "abstract": "Access low-level functions, primitive data types, and various collection types that are bridged seamlessly with the Foundation framework."
+  },
+  "iWorkDocumentExportingAPI": {
+   "slug": "iWorkDocumentExportingAPI",
+   "title": "iWork Document Exporting API",
+   "url": "/documentation/iWorkDocumentExportingAPI",
+   "abstract": "Convert iWork documents to Portable Document Format (PDF) files using a web API."
+  },
+  "ThreadNetwork": {
+   "slug": "ThreadNetwork",
+   "title": "ThreadNetwork",
+   "url": "/documentation/ThreadNetwork",
+   "abstract": "Create robust, smart device networks using Thread Border Routers."
+  },
+  "USDKit": {
+   "slug": "USDKit",
+   "title": "USDKit",
+   "url": "/documentation/USDKit",
+   "abstract": "Author, compose, and manipulate Universal Scene Description content from Swift."
+  },
+  "MusicKit": {
+   "slug": "MusicKit",
+   "title": "MusicKit",
+   "url": "/documentation/MusicKit",
+   "abstract": "Integrate your app with Apple Music."
+  },
+  "AccessoryNotifications": {
+   "slug": "AccessoryNotifications",
+   "title": "Accessory Notifications",
+   "url": "/documentation/AccessoryNotifications",
+   "abstract": "Receive forwarded iOS system notifications on an accessory that you develop."
+  },
+  "CreateMLComponents": {
+   "slug": "CreateMLComponents",
+   "title": "Create ML Components",
+   "url": "/documentation/CreateMLComponents",
+   "abstract": "Create more customizable machine learning models in your app."
+  },
+  "SecurityFoundation": {
+   "slug": "SecurityFoundation",
+   "title": "Security Foundation",
+   "url": "/documentation/SecurityFoundation",
+   "abstract": "Restrict a user’s access to particular features in your Mac app or daemon."
+  },
+  "MediaAccessibility": {
+   "slug": "MediaAccessibility",
+   "title": "Media Accessibility",
+   "url": "/documentation/MediaAccessibility",
+   "abstract": "Make your app’s media more accessible by supporting people’s systemwide preferences for video and audio content."
+  },
+  "CrashReportExtension": {
+   "slug": "CrashReportExtension",
+   "title": "CrashReportExtension",
+   "url": "/documentation/CrashReportExtension",
+   "abstract": "Inspect crashed processes to create crash reports."
+  },
+  "MapKit": {
+   "slug": "MapKit",
+   "title": "MapKit",
+   "url": "/documentation/MapKit",
+   "abstract": "Display map or satellite imagery within your app, call out points of interest, and determine placemark information for map coordinates."
+  },
+  "coreservices": {
+   "slug": "coreservices",
+   "title": "Core Services",
+   "url": "/documentation/coreservices",
+   "abstract": "Access and manage key operating system services, such as launch and identity services."
+  },
+  "FinanceKitUI": {
+   "slug": "FinanceKitUI",
+   "title": "FinanceKitUI",
+   "url": "/documentation/FinanceKitUI",
+   "abstract": "Add orders to Apple Wallet."
+  },
+  "HomeKit": {
+   "slug": "HomeKit",
+   "title": "HomeKit",
+   "url": "/documentation/HomeKit",
+   "abstract": "Configure, control, and communicate with home automation accessories."
+  },
+  "Dispatch": {
+   "slug": "Dispatch",
+   "title": "Dispatch",
+   "url": "/documentation/Dispatch",
+   "abstract": "Execute code concurrently on multicore hardware by submitting work to dispatch queues managed by the system."
+  },
+  "SerialDriverKit": {
+   "slug": "SerialDriverKit",
+   "title": "SerialDriverKit",
+   "url": "/documentation/SerialDriverKit",
+   "abstract": "Develop drivers for serial I/O devices connected to your Mac."
+  },
+  "EnterpriseProgramAPI": {
+   "slug": "EnterpriseProgramAPI",
+   "title": "Enterprise Program API",
+   "url": "/documentation/EnterpriseProgramAPI",
+   "abstract": "Automate the tasks you perform on the Apple Developer website."
+  },
+  "SafetyKit": {
+   "slug": "SafetyKit",
+   "title": "SafetyKit",
+   "url": "/documentation/SafetyKit",
+   "abstract": "Detect and respond to car crash events in your app."
+  },
+  "WiFiAware": {
+   "slug": "WiFiAware",
+   "title": "Wi-Fi Aware",
+   "url": "/documentation/WiFiAware",
+   "abstract": "Securely pair and connect to external devices over peer-to-peer Wi-Fi."
+  },
+  "kernel": {
+   "slug": "kernel",
+   "title": "Kernel",
+   "url": "/documentation/kernel",
+   "abstract": "Develop kernel-resident device drivers and kernel extensions."
+  },
+  "macos-release-notes": {
+   "slug": "macos-release-notes",
+   "title": "macOS Release Notes",
+   "url": "/documentation/macos-release-notes",
+   "abstract": "Learn about changes to the macOS SDK."
+  },
+  "WeatherKit": {
+   "slug": "WeatherKit",
+   "title": "WeatherKit",
+   "url": "/documentation/WeatherKit",
+   "abstract": "Deliver weather conditions and alerts to your users."
+  },
+  "VisionKit": {
+   "slug": "VisionKit",
+   "title": "VisionKit",
+   "url": "/documentation/VisionKit",
+   "abstract": "Identify and extract information in the environment using the device’s camera, or in images that your app displays."
+  },
+  "SecurityInterface": {
+   "slug": "SecurityInterface",
+   "title": "Security Interface",
+   "url": "/documentation/SecurityInterface",
+   "abstract": "Provide user interface elements for security features such as authorization, access to digital certificates, and access to items in keychains."
+  },
+  "NowPlaying": {
+   "slug": "NowPlaying",
+   "title": "Now Playing",
+   "url": "/documentation/NowPlaying",
+   "abstract": "Make your app’s media playback controls available on the Lock Screen, Control Center, and connected accessories."
+  },
+  "StateReporting": {
+   "slug": "StateReporting",
+   "title": "StateReporting",
+   "url": "/documentation/StateReporting",
+   "abstract": "Communicate your app’s state to the system to improve diagnostic actionability."
+  },
+  "AppMigrationKit": {
+   "slug": "AppMigrationKit",
+   "title": "AppMigrationKit",
+   "url": "/documentation/AppMigrationKit",
+   "abstract": "Perform a one-time transfer of your app’s on-device data to or from a device running another platform."
+  },
+  "SwiftUI": {
+   "slug": "SwiftUI",
+   "title": "SwiftUI",
+   "url": "/documentation/SwiftUI",
+   "abstract": "Declare the user interface and behavior for your app on every platform."
+  },
+  "MatterSupport": {
+   "slug": "MatterSupport",
+   "title": "MatterSupport",
+   "url": "/documentation/MatterSupport",
+   "abstract": "Coordinate and control compatible smart home accessories."
+  },
+  "ScreenSaver": {
+   "slug": "ScreenSaver",
+   "title": "Screen Saver",
+   "url": "/documentation/ScreenSaver",
+   "abstract": "Animate screen savers, and interact with the screen saver infrastructure."
+  },
+  "ApplePencil": {
+   "slug": "ApplePencil",
+   "title": "Apple Pencil",
+   "url": "/documentation/ApplePencil",
+   "abstract": "Enhance your iPad app’s user experience by supporting drawing, handwriting, and other features of Apple Pencil."
+  },
+  "CoreTransferable": {
+   "slug": "CoreTransferable",
+   "title": "Core Transferable",
+   "url": "/documentation/CoreTransferable",
+   "abstract": "Declare a transfer representation for your model types to participate in system sharing and data transfer operations."
+  },
+  "GSS": {
+   "slug": "GSS",
+   "title": "GSS",
+   "url": "/documentation/GSS",
+   "abstract": "Conduct secure, authenticated network transactions."
+  },
+  "AVRouting": {
+   "slug": "AVRouting",
+   "title": "AVRouting",
+   "url": "/documentation/AVRouting",
+   "abstract": "Display custom destinations to stream media in the system route picker."
+  },
+  "apple_ads": {
+   "slug": "apple_ads",
+   "title": "Apple Ads",
+   "url": "/documentation/apple_ads",
+   "abstract": "Drive app discovery by creating and managing campaigns with the Apple Ads Campaign Management API."
+  },
+  "MediaDevice": {
+   "slug": "MediaDevice",
+   "title": "Media Device",
+   "url": "/documentation/MediaDevice",
+   "abstract": "Let people stream media from any iOS app to your playback hardware through the media device picker."
+  },
+  "AppleMapsServerAPI": {
+   "slug": "AppleMapsServerAPI",
+   "title": "Apple Maps Server API",
+   "url": "/documentation/AppleMapsServerAPI",
+   "abstract": "Reduce API calls and conserve device power by streamlining your app’s georelated searches."
+  },
+  "XCTest": {
+   "slug": "XCTest",
+   "title": "XCTest",
+   "url": "/documentation/XCTest",
+   "abstract": "Create and run unit tests, performance tests, and UI tests for your Xcode project."
+  },
+  "AudioAccessoryKit": {
+   "slug": "AudioAccessoryKit",
+   "title": "AudioAccessoryKit",
+   "url": "/documentation/AudioAccessoryKit",
+   "abstract": "Support audio features like automatic audio switching."
+  },
+  "ImmersiveMediaSupport": {
+   "slug": "ImmersiveMediaSupport",
+   "title": "Immersive Media Support",
+   "url": "/documentation/ImmersiveMediaSupport",
+   "abstract": "Read and write essential Apple Immersive Video metadata."
+  },
+  "TouchController": {
+   "slug": "TouchController",
+   "title": "Touch Controller",
+   "url": "/documentation/TouchController",
+   "abstract": "Integrate onscreen touch controls into your Metal-based games."
+  },
+  "TVServices": {
+   "slug": "TVServices",
+   "title": "TV Services",
+   "url": "/documentation/TVServices",
+   "abstract": "Display content and descriptions, provide channel guides, and support multiple users on Apple TV."
+  },
+  "ImageCaptureCore": {
+   "slug": "ImageCaptureCore",
+   "title": "ImageCaptureCore",
+   "url": "/documentation/ImageCaptureCore",
+   "abstract": "Browse for media devices and control them programmatically from your app."
+  },
+  "Xcode": {
+   "slug": "Xcode",
+   "title": "Xcode",
+   "url": "/documentation/Xcode",
+   "abstract": "Build, test, and submit your app with Apple’s integrated development environment."
+  },
+  "PermissionKit": {
+   "slug": "PermissionKit",
+   "title": "PermissionKit",
+   "url": "/documentation/PermissionKit",
+   "abstract": "Create communication experiences between a child and their parent or guardian."
+  },
+  "AccountOrganizationalDataSharing": {
+   "slug": "AccountOrganizationalDataSharing",
+   "title": "Account & Organizational Data Sharing",
+   "url": "/documentation/AccountOrganizationalDataSharing",
+   "abstract": "Provide people with the ability to authorize your apps and websites that access information about them on Apple REST services, like Roster API."
+  },
+  "ReplayKit": {
+   "slug": "ReplayKit",
+   "title": "ReplayKit",
+   "url": "/documentation/ReplayKit",
+   "abstract": "Record or stream video from the screen, and audio from the app and microphone."
+  },
+  "SystemConfiguration": {
+   "slug": "SystemConfiguration",
+   "title": "System Configuration",
+   "url": "/documentation/SystemConfiguration",
+   "abstract": "Allow applications to access a device’s network configuration settings. Determine the reachability of the device, such as whether Wi-Fi or cell connectivity are active."
+  },
+  "USBDriverKit": {
+   "slug": "USBDriverKit",
+   "title": "USBDriverKit",
+   "url": "/documentation/USBDriverKit",
+   "abstract": "Develop drivers for USB-based devices."
+  },
+  "ClassKitCatalogAPI": {
+   "slug": "ClassKitCatalogAPI",
+   "title": "ClassKit Catalog API",
+   "url": "/documentation/ClassKitCatalogAPI",
+   "abstract": "Declare the activities supported by your educational app through a web interface."
+  },
+  "MusicUnderstanding": {
+   "slug": "MusicUnderstanding",
+   "title": "Music Understanding",
+   "url": "/documentation/MusicUnderstanding",
+   "abstract": "Analyze audio content and extract music information."
+  },
+  "MapKitJS": {
+   "slug": "MapKitJS",
+   "title": "MapKit JS",
+   "url": "/documentation/MapKitJS",
+   "abstract": "Embed interactive Apple Maps on your website, annotate points of interest, and perform georelated searches."
+  },
+  "quicktime-file-format": {
+   "slug": "quicktime-file-format",
+   "title": "QuickTime File Format",
+   "url": "/documentation/quicktime-file-format",
+   "abstract": "An object-oriented file format for the storage and exchange of digital media between devices, applications, and operating systems."
+  },
+  "AppleNews": {
+   "slug": "AppleNews",
+   "title": "Apple News",
+   "url": "/documentation/AppleNews",
+   "abstract": "Design, create, and publish signature content for Apple News."
+  },
+  "ParavirtualizedGraphics": {
+   "slug": "ParavirtualizedGraphics",
+   "title": "Paravirtualized Graphics",
+   "url": "/documentation/ParavirtualizedGraphics",
+   "abstract": "Add graphics acceleration to your guest driver stack."
+  }
+ }
+}

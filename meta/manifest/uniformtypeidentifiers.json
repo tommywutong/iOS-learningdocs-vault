@@ -1,0 +1,4512 @@
+{
+ "archive": "uniformtypeidentifiers",
+ "included": [
+  "com.apple.uniformtypeidentifiers"
+ ],
+ "page_count": 361,
+ "longform_count": 7,
+ "pages": [
+  {
+   "path": "/documentation/uniformtypeidentifiers",
+   "title": "Uniform Type Identifiers",
+   "type": "module",
+   "breadcrumb": "Uniform Type Identifiers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/defining-file-and-data-types-for-your-app",
+   "title": "Defining file and data types for your app",
+   "type": "article",
+   "breadcrumb": "Uniform Type Identifiers/Defining file and data types for your app",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/system-declared-uniform-type-identifiers",
+   "title": "System-declared uniform type identifiers",
+   "type": "collection",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/threedcontent",
+   "title": "static var threeDContent: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var threeDContent: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/usd",
+   "title": "static var usd: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var usd: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/usdz",
+   "title": "static var usdz: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var usdz: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/realityfile",
+   "title": "static var realityFile: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var realityFile: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/scenekitscene",
+   "title": "static var sceneKitScene: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var sceneKitScene: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/arreferenceobject",
+   "title": "static var arReferenceObject: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var arReferenceObject: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/directory",
+   "title": "static var directory: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var directory: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/symboliclink",
+   "title": "static var symbolicLink: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var symbolicLink: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mountpoint",
+   "title": "static var mountPoint: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mountPoint: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/aliasfile",
+   "title": "static var aliasFile: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var aliasFile: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/folder",
+   "title": "static var folder: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var folder: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/volume",
+   "title": "static var volume: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var volume: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/diskimage",
+   "title": "static var diskImage: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var diskImage: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/heic",
+   "title": "static var heic: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var heic: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/heif",
+   "title": "static var heif: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var heif: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/livephoto",
+   "title": "static var livePhoto: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var livePhoto: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/framework",
+   "title": "static var framework: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var framework: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/applicationbundle",
+   "title": "static var applicationBundle: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var applicationBundle: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/applicationextension",
+   "title": "static var applicationExtension: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var applicationExtension: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/spotlightimporter",
+   "title": "static var spotlightImporter: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var spotlightImporter: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/quicklookgenerator",
+   "title": "static var quickLookGenerator: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var quickLookGenerator: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/xpcservice",
+   "title": "static var xpcService: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var xpcService: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/systempreferencespane",
+   "title": "static var systemPreferencesPane: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var systemPreferencesPane: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/pdf",
+   "title": "static var pdf: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var pdf: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/rtfd",
+   "title": "static var rtfd: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var rtfd: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/flatrtfd",
+   "title": "static var flatRTFD: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var flatRTFD: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/epub",
+   "title": "static var epub: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var epub: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mp3",
+   "title": "static var mp3: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mp3: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/aiff",
+   "title": "static var aiff: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var aiff: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/wav",
+   "title": "static var wav: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var wav: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/midi",
+   "title": "static var midi: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var midi: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/playlist",
+   "title": "static var playlist: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var playlist: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/m3uplaylist",
+   "title": "static var m3uPlaylist: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var m3uPlaylist: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/quicktimemovie",
+   "title": "static var quickTimeMovie: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var quickTimeMovie: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mpeg",
+   "title": "static var mpeg: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mpeg: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mpeg2video",
+   "title": "static var mpeg2Video: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mpeg2Video: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mpeg2transportstream",
+   "title": "static var mpeg2TransportStream: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mpeg2TransportStream: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mpeg4movie",
+   "title": "static var mpeg4Movie: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mpeg4Movie: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/mpeg4audio",
+   "title": "static var mpeg4Audio: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mpeg4Audio: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/appleprotectedmpeg4video",
+   "title": "static var appleProtectedMPEG4Video: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var appleProtectedMPEG4Video: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/appleprotectedmpeg4audio",
+   "title": "static var appleProtectedMPEG4Audio: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var appleProtectedMPEG4Audio: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/avi",
+   "title": "static var avi: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var avi: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/assemblylanguagesource",
+   "title": "static var assemblyLanguageSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var assemblyLanguageSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/cheader",
+   "title": "static var cHeader: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var cHeader: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/csource",
+   "title": "static var cSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var cSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/cplusplusheader",
+   "title": "static var cPlusPlusHeader: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var cPlusPlusHeader: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/cplusplussource",
+   "title": "static var cPlusPlusSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var cPlusPlusSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/objectivecplusplussource",
+   "title": "static var objectiveCPlusPlusSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var objectiveCPlusPlusSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/objectivecsource",
+   "title": "static var objectiveCSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var objectiveCSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/swiftsource",
+   "title": "static var swiftSource: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var swiftSource: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/archive",
+   "title": "static var archive: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var archive: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/zip",
+   "title": "static var zip: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var zip: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/gzip",
+   "title": "static var gzip: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var gzip: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/bz2",
+   "title": "static var bz2: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var bz2: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/applearchive",
+   "title": "static var appleArchive: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var appleArchive: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/pkcs12",
+   "title": "static var pkcs12: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var pkcs12: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/x509certificate",
+   "title": "static var x509Certificate: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var x509Certificate: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/delimitedtext",
+   "title": "static var delimitedText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var delimitedText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/commaseparatedtext",
+   "title": "static var commaSeparatedText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var commaSeparatedText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/tabseparatedtext",
+   "title": "static var tabSeparatedText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var tabSeparatedText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/utf8tabseparatedtext",
+   "title": "static var utf8TabSeparatedText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var utf8TabSeparatedText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/rtf",
+   "title": "static var rtf: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var rtf: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/xml",
+   "title": "static var xml: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var xml: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/yaml",
+   "title": "static var yaml: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var yaml: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/json",
+   "title": "static var json: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var json: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/vcard",
+   "title": "static var vCard: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var vCard: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/executable",
+   "title": "static var executable: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var executable: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/unixexecutable",
+   "title": "static var unixExecutable: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var unixExecutable: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/exe",
+   "title": "static var exe: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var exe: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/ico",
+   "title": "static var ico: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var ico: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/icns",
+   "title": "static var icns: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var icns: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/png",
+   "title": "static var png: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var png: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/gif",
+   "title": "static var gif: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var gif: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/jpeg",
+   "title": "static var jpeg: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var jpeg: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/webp",
+   "title": "static var webP: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var webP: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/tiff",
+   "title": "static var tiff: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var tiff: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/bmp",
+   "title": "static var bmp: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var bmp: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/svg",
+   "title": "static var svg: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var svg: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/rawimage",
+   "title": "static var rawImage: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var rawImage: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/html",
+   "title": "static var html: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var html: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/webarchive",
+   "title": "static var webArchive: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var webArchive: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/internetlocation",
+   "title": "static var internetLocation: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var internetLocation: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/internetshortcut",
+   "title": "static var internetShortcut: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var internetShortcut: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/propertylist",
+   "title": "static var propertyList: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var propertyList: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/xmlpropertylist",
+   "title": "static var xmlPropertyList: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var xmlPropertyList: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/binarypropertylist",
+   "title": "static var binaryPropertyList: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var binaryPropertyList: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/shazamsignature",
+   "title": "static var shazamSignature: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var shazamSignature: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/shazamcustomcatalog",
+   "title": "static var shazamCustomCatalog: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var shazamCustomCatalog: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/script",
+   "title": "static var script: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var script: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/applescript",
+   "title": "static var appleScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var appleScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/javascript",
+   "title": "static var javaScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var javaScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/osascript",
+   "title": "static var osaScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var osaScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/osascriptbundle",
+   "title": "static var osaScriptBundle: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var osaScriptBundle: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/makefile",
+   "title": "static var makefile: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var makefile: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/shellscript",
+   "title": "static var shellScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var shellScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/pythonscript",
+   "title": "static var pythonScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var pythonScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/rubyscript",
+   "title": "static var rubyScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var rubyScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/perlscript",
+   "title": "static var perlScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var perlScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/phpscript",
+   "title": "static var phpScript: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var phpScript: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/text",
+   "title": "static var text: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var text: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/plaintext",
+   "title": "static var plainText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var plainText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/utf8plaintext",
+   "title": "static var utf8PlainText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var utf8PlainText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/utf16plaintext",
+   "title": "static var utf16PlainText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var utf16PlainText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/utf16externalplaintext",
+   "title": "static var utf16ExternalPlainText: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var utf16ExternalPlainText: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/url",
+   "title": "static var url: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var url: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/fileurl",
+   "title": "static var fileURL: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var fileURL: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/urlbookmarkdata",
+   "title": "static var urlBookmarkData: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var urlBookmarkData: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/item",
+   "title": "static var item: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var item: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/content",
+   "title": "static var content: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var content: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/compositecontent",
+   "title": "static var compositeContent: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var compositeContent: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/data",
+   "title": "static var data: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var data: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/resolvable",
+   "title": "static var resolvable: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var resolvable: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/package",
+   "title": "static var package: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var package: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/bundle",
+   "title": "static var bundle: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var bundle: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/pluginbundle",
+   "title": "static var pluginBundle: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var pluginBundle: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/application",
+   "title": "static var application: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var application: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/sourcecode",
+   "title": "static var sourceCode: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var sourceCode: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/bookmark",
+   "title": "static var bookmark: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var bookmark: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/log",
+   "title": "static var log: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var log: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/spreadsheet",
+   "title": "static var spreadsheet: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var spreadsheet: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/presentation",
+   "title": "static var presentation: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var presentation: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/database",
+   "title": "static var database: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var database: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/message",
+   "title": "static var message: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var message: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/contact",
+   "title": "static var contact: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var contact: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/calendarevent",
+   "title": "static var calendarEvent: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var calendarEvent: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/todoitem",
+   "title": "static var toDoItem: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var toDoItem: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/emailmessage",
+   "title": "static var emailMessage: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var emailMessage: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/font",
+   "title": "static var font: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var font: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/image",
+   "title": "static var image: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var image: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/audio",
+   "title": "static var audio: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var audio: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/audiovisualcontent",
+   "title": "static var audiovisualContent: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var audiovisualContent: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/movie",
+   "title": "static var movie: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var movie: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/video",
+   "title": "static var video: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var video: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttagclass/filenameextension",
+   "title": "static var filenameExtension: UTTagClass",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var filenameExtension: UTTagClass",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttagclass/mimetype",
+   "title": "static var mimeType: UTTagClass",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/static var mimeType: UTTagClass",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct",
+   "title": "UTType",
+   "type": "struct",
+   "breadcrumb": "Uniform Type Identifiers/UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/types(tag:tagclass:conformingto:)",
+   "title": "static func types(tag: String, tagClass: UTTagClass, conformingTo: UTType?) -> [UTType]",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static func types(tag: String, tagClass: UTTagClass, conformingTo: UTType?) -> [UTType]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(_:)",
+   "title": "init?(String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init?(String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(mimetype:conformingto:)",
+   "title": "init?(mimeType: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init?(mimeType: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(filenameextension:conformingto:)",
+   "title": "init?(filenameExtension: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init?(filenameExtension: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(tag:tagclass:conformingto:)",
+   "title": "init?(tag: String, tagClass: UTTagClass, conformingTo: UTType?)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init?(tag: String, tagClass: UTTagClass, conformingTo: UTType?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(exportedas:conformingto:)",
+   "title": "init(exportedAs: String, conformingTo: UTType?)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init(exportedAs: String, conformingTo: UTType?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(importedas:conformingto:)",
+   "title": "init(importedAs: String, conformingTo: UTType?)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init(importedAs: String, conformingTo: UTType?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/referencetype",
+   "title": "UTType.ReferenceType",
+   "type": "typealias",
+   "breadcrumb": "Uniform Type Identifiers/UTType/UTType.ReferenceType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/identifier",
+   "title": "var identifier: String",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var identifier: String",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/preferredfilenameextension",
+   "title": "var preferredFilenameExtension: String?",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var preferredFilenameExtension: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/preferredmimetype",
+   "title": "var preferredMIMEType: String?",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var preferredMIMEType: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/tags",
+   "title": "var tags: [UTTagClass : [String]]",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var tags: [UTTagClass : [String]]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/isdeclared",
+   "title": "var isDeclared: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var isDeclared: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/isdynamic",
+   "title": "var isDynamic: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var isDynamic: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/ispublic",
+   "title": "var isPublic: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var isPublic: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/referenceurl",
+   "title": "var referenceURL: URL?",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var referenceURL: URL?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/version",
+   "title": "var version: Int?",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var version: Int?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/supertypes",
+   "title": "var supertypes: Set<UTType>",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var supertypes: Set<UTType>",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/conforms(to:)",
+   "title": "func conforms(to: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTType/func conforms(to: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/issubtype(of:)",
+   "title": "func isSubtype(of: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTType/func isSubtype(of: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/issupertype(of:)",
+   "title": "func isSupertype(of: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTType/func isSupertype(of: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/appkit/navigating-hierarchical-data-using-outline-and-split-views",
+   "title": "Navigating Hierarchical Data Using Outline and Split Views",
+   "type": "sampleCode",
+   "breadcrumb": "Uniform Type Identifiers/UTType/Navigating Hierarchical Data Using Outline and Split Views",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/localizeddescription",
+   "title": "var localizedDescription: String?",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/var localizedDescription: String?",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/markdown",
+   "title": "static var markdown: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var markdown: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/init(identifier:allowundeclared:)",
+   "title": "init?(identifier: String, allowUndeclared: Bool)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTType/init?(identifier: String, allowUndeclared: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/ahap",
+   "title": "static var ahap: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var ahap: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/css",
+   "title": "static var css: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var css: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/dng",
+   "title": "static var dng: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var dng: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/exr",
+   "title": "static var exr: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var exr: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/geojson",
+   "title": "static var geoJSON: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var geoJSON: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/heics",
+   "title": "static var heics: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var heics: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/jpegxl",
+   "title": "static var jpegxl: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var jpegxl: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/linkpresentationmetadata",
+   "title": "static var linkPresentationMetadata: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var linkPresentationMetadata: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/paperkit",
+   "title": "static let paperkit: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static let paperkit: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/tararchive",
+   "title": "static var tarArchive: UTType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/static var tarArchive: UTType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-swift.struct/referenceconvertible-implementations",
+   "title": "ReferenceConvertible Implementations",
+   "type": "collection",
+   "breadcrumb": "Uniform Type Identifiers/UTType/ReferenceConvertible Implementations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttagclass",
+   "title": "UTTagClass",
+   "type": "struct",
+   "breadcrumb": "Uniform Type Identifiers/UTTagClass",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference",
+   "title": "UTTypeReference",
+   "type": "class",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/types(tag:tagclass:conformingto:)",
+   "title": "class func types(tag: String, tagClass: String, conformingTo: UTType?) -> [UTType]",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/class func types(tag: String, tagClass: String, conformingTo: UTType?) -> [UTType]",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(_:)",
+   "title": "convenience init?(String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(mimetype:)-1txq0",
+   "title": "convenience init?(mimeType: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(mimeType: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(mimetype:conformingto:)",
+   "title": "convenience init?(mimeType: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(mimeType: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(filenameextension:)",
+   "title": "convenience init?(filenameExtension: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(filenameExtension: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(filenameextension:conformingto:)",
+   "title": "convenience init?(filenameExtension: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(filenameExtension: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(tag:tagclass:conformingtotype:)",
+   "title": "convenience init?(tag: String, tagClass: String, conformingToType: UTType?)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(tag: String, tagClass: String, conformingToType: UTType?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(exportedas:)",
+   "title": "init(exportedAs: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/init(exportedAs: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(exportedas:conformingto:)",
+   "title": "init(exportedAs: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/init(exportedAs: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(importedas:)",
+   "title": "init(importedAs: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/init(importedAs: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(importedas:conformingto:)",
+   "title": "init(importedAs: String, conformingTo: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/init(importedAs: String, conformingTo: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/isdeclared",
+   "title": "var isDeclared: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/var isDeclared: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/isdynamic",
+   "title": "var isDynamic: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/var isDynamic: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/ispublic",
+   "title": "var isPublic: Bool",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/var isPublic: Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/conforms(to:)",
+   "title": "func conforms(to: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/func conforms(to: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/issubtype(of:)",
+   "title": "func isSubtype(of: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/func isSubtype(of: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/issupertype(of:)",
+   "title": "func isSupertype(of: UTType) -> Bool",
+   "type": "method",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/func isSupertype(of: UTType) -> Bool",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(mimetype:)-7gu84",
+   "title": "convenience init?(MIMEType: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(MIMEType: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(mimetype:conformingtotype:)",
+   "title": "convenience init?(MIMEType: String, conformingToType: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(MIMEType: String, conformingToType: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(coder:)",
+   "title": "init?(coder: NSCoder)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/init?(coder: NSCoder)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(filenameextension:conformingtotype:)",
+   "title": "convenience init?(filenameExtension: String, conformingToType: UTType)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(filenameExtension: String, conformingToType: UTType)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(identifier:)",
+   "title": "convenience init?(identifier: String)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(identifier: String)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(identifier:allowundeclared:)",
+   "title": "convenience init?(identifier: String, allowUndeclared: Bool)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(identifier: String, allowUndeclared: Bool)",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/init(tag:tagclass:conformingto:)",
+   "title": "convenience init?(tag: String, tagClass: String, conformingTo: UTType?)",
+   "type": "init",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/convenience init?(tag: String, tagClass: String, conformingTo: UTType?)",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/uttypereference-implementations",
+   "title": "UTTypeReference Implementations",
+   "type": "collection",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeReference/UTTypeReference Implementations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uniformtypeidentifiers-constants",
+   "title": "UniformTypeIdentifiers Constants",
+   "type": "collection",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift",
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype3dcontent",
+   "title": "UTType3DContent",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTType3DContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeusd",
+   "title": "UTTypeUSD",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUSD",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeusdz",
+   "title": "UTTypeUSDZ",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUSDZ",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttyperealityfile",
+   "title": "UTTypeRealityFile",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeRealityFile",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypescenekitscene",
+   "title": "UTTypeSceneKitScene",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSceneKitScene",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypearreferenceobject",
+   "title": "UTTypeARReferenceObject",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeARReferenceObject",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypedirectory",
+   "title": "UTTypeDirectory",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeDirectory",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypesymboliclink",
+   "title": "UTTypeSymbolicLink",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSymbolicLink",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemountpoint",
+   "title": "UTTypeMountPoint",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMountPoint",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypealiasfile",
+   "title": "UTTypeAliasFile",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAliasFile",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypefolder",
+   "title": "UTTypeFolder",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeFolder",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypevolume",
+   "title": "UTTypeVolume",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeVolume",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypediskimage",
+   "title": "UTTypeDiskImage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeDiskImage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeheic",
+   "title": "UTTypeHEIC",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeHEIC",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeheif",
+   "title": "UTTypeHEIF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeHEIF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypelivephoto",
+   "title": "UTTypeLivePhoto",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeLivePhoto",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeframework",
+   "title": "UTTypeFramework",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeFramework",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeapplicationbundle",
+   "title": "UTTypeApplicationBundle",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeApplicationBundle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeapplicationextension",
+   "title": "UTTypeApplicationExtension",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeApplicationExtension",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypespotlightimporter",
+   "title": "UTTypeSpotlightImporter",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSpotlightImporter",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypequicklookgenerator",
+   "title": "UTTypeQuickLookGenerator",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeQuickLookGenerator",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypexpcservice",
+   "title": "UTTypeXPCService",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeXPCService",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypesystempreferencespane",
+   "title": "UTTypeSystemPreferencesPane",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSystemPreferencesPane",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepdf",
+   "title": "UTTypePDF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePDF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypertfd",
+   "title": "UTTypeRTFD",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeRTFD",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeflatrtfd",
+   "title": "UTTypeFlatRTFD",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeFlatRTFD",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeepub",
+   "title": "UTTypeEPUB",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeEPUB",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemp3",
+   "title": "UTTypeMP3",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMP3",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeaiff",
+   "title": "UTTypeAIFF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAIFF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypewav",
+   "title": "UTTypeWAV",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeWAV",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemidi",
+   "title": "UTTypeMIDI",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMIDI",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeplaylist",
+   "title": "UTTypePlaylist",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePlaylist",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypem3uplaylist",
+   "title": "UTTypeM3UPlaylist",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeM3UPlaylist",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypequicktimemovie",
+   "title": "UTTypeQuickTimeMovie",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeQuickTimeMovie",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypempeg",
+   "title": "UTTypeMPEG",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMPEG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypempeg2video",
+   "title": "UTTypeMPEG2Video",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMPEG2Video",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypempeg2transportstream",
+   "title": "UTTypeMPEG2TransportStream",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMPEG2TransportStream",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypempeg4movie",
+   "title": "UTTypeMPEG4Movie",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMPEG4Movie",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypempeg4audio",
+   "title": "UTTypeMPEG4Audio",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMPEG4Audio",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeappleprotectedmpeg4video",
+   "title": "UTTypeAppleProtectedMPEG4Video",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAppleProtectedMPEG4Video",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeappleprotectedmpeg4audio",
+   "title": "UTTypeAppleProtectedMPEG4Audio",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAppleProtectedMPEG4Audio",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeavi",
+   "title": "UTTypeAVI",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAVI",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeassemblylanguagesource",
+   "title": "UTTypeAssemblyLanguageSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAssemblyLanguageSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecheader",
+   "title": "UTTypeCHeader",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCHeader",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecsource",
+   "title": "UTTypeCSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecplusplusheader",
+   "title": "UTTypeCPlusPlusHeader",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCPlusPlusHeader",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecplusplussource",
+   "title": "UTTypeCPlusPlusSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCPlusPlusSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeobjectivecplusplussource",
+   "title": "UTTypeObjectiveCPlusPlusSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeObjectiveCPlusPlusSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeobjectivecsource",
+   "title": "UTTypeObjectiveCSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeObjectiveCSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeswiftsource",
+   "title": "UTTypeSwiftSource",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSwiftSource",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypearchive",
+   "title": "UTTypeArchive",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeArchive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypezip",
+   "title": "UTTypeZIP",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeZIP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypegzip",
+   "title": "UTTypeGZIP",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeGZIP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypebz2",
+   "title": "UTTypeBZ2",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeBZ2",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeapplearchive",
+   "title": "UTTypeAppleArchive",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAppleArchive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepkcs12",
+   "title": "UTTypePKCS12",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePKCS12",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypex509certificate",
+   "title": "UTTypeX509Certificate",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeX509Certificate",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypedelimitedtext",
+   "title": "UTTypeDelimitedText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeDelimitedText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecommaseparatedtext",
+   "title": "UTTypeCommaSeparatedText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCommaSeparatedText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypetabseparatedtext",
+   "title": "UTTypeTabSeparatedText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeTabSeparatedText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeutf8tabseparatedtext",
+   "title": "UTTypeUTF8TabSeparatedText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUTF8TabSeparatedText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypertf",
+   "title": "UTTypeRTF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeRTF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypexml",
+   "title": "UTTypeXML",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeXML",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeyaml",
+   "title": "UTTypeYAML",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeYAML",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypejson",
+   "title": "UTTypeJSON",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeJSON",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypevcard",
+   "title": "UTTypeVCard",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeVCard",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeexecutable",
+   "title": "UTTypeExecutable",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeExecutable",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeunixexecutable",
+   "title": "UTTypeUnixExecutable",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUnixExecutable",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeexe",
+   "title": "UTTypeEXE",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeEXE",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeico",
+   "title": "UTTypeICO",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeICO",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeicns",
+   "title": "UTTypeICNS",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeICNS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepng",
+   "title": "UTTypePNG",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePNG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypegif",
+   "title": "UTTypeGIF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeGIF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypejpeg",
+   "title": "UTTypeJPEG",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeJPEG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypewebp",
+   "title": "UTTypeWebP",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeWebP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypetiff",
+   "title": "UTTypeTIFF",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeTIFF",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypebmp",
+   "title": "UTTypeBMP",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeBMP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypesvg",
+   "title": "UTTypeSVG",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSVG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttyperawimage",
+   "title": "UTTypeRAWImage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeRAWImage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypehtml",
+   "title": "UTTypeHTML",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeHTML",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypewebarchive",
+   "title": "UTTypeWebArchive",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeWebArchive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeinternetlocation",
+   "title": "UTTypeInternetLocation",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeInternetLocation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeinternetshortcut",
+   "title": "UTTypeInternetShortcut",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeInternetShortcut",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepropertylist",
+   "title": "UTTypePropertyList",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePropertyList",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypexmlpropertylist",
+   "title": "UTTypeXMLPropertyList",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeXMLPropertyList",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypebinarypropertylist",
+   "title": "UTTypeBinaryPropertyList",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeBinaryPropertyList",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypescript",
+   "title": "UTTypeScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeapplescript",
+   "title": "UTTypeAppleScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAppleScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypejavascript",
+   "title": "UTTypeJavaScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeJavaScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeosascript",
+   "title": "UTTypeOSAScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeOSAScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeosascriptbundle",
+   "title": "UTTypeOSAScriptBundle",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeOSAScriptBundle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemakefile",
+   "title": "UTTypeMakefile",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMakefile",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeshellscript",
+   "title": "UTTypeShellScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeShellScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepythonscript",
+   "title": "UTTypePythonScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePythonScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttyperubyscript",
+   "title": "UTTypeRubyScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeRubyScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeperlscript",
+   "title": "UTTypePerlScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePerlScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypephpscript",
+   "title": "UTTypePHPScript",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePHPScript",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypetext",
+   "title": "UTTypeText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeplaintext",
+   "title": "UTTypePlainText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePlainText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeutf8plaintext",
+   "title": "UTTypeUTF8PlainText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUTF8PlainText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeutf16plaintext",
+   "title": "UTTypeUTF16PlainText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUTF16PlainText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeutf16externalplaintext",
+   "title": "UTTypeUTF16ExternalPlainText",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeUTF16ExternalPlainText",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemarkdown",
+   "title": "UTTypeMarkdown",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMarkdown",
+   "longform": false,
+   "deprecated": false,
+   "beta": true,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeurl",
+   "title": "UTTypeURL",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeURL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypefileurl",
+   "title": "UTTypeFileURL",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeFileURL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeurlbookmarkdata",
+   "title": "UTTypeURLBookmarkData",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeURLBookmarkData",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeitem",
+   "title": "UTTypeItem",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeItem",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecontent",
+   "title": "UTTypeContent",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecompositecontent",
+   "title": "UTTypeCompositeContent",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCompositeContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypedata",
+   "title": "UTTypeData",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeData",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttyperesolvable",
+   "title": "UTTypeResolvable",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeResolvable",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepackage",
+   "title": "UTTypePackage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePackage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypebundle",
+   "title": "UTTypeBundle",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeBundle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepluginbundle",
+   "title": "UTTypePluginBundle",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePluginBundle",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeapplication",
+   "title": "UTTypeApplication",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeApplication",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypesourcecode",
+   "title": "UTTypeSourceCode",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSourceCode",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypebookmark",
+   "title": "UTTypeBookmark",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeBookmark",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypelog",
+   "title": "UTTypeLog",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeLog",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypespreadsheet",
+   "title": "UTTypeSpreadsheet",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeSpreadsheet",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypepresentation",
+   "title": "UTTypePresentation",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypePresentation",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypedatabase",
+   "title": "UTTypeDatabase",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeDatabase",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemessage",
+   "title": "UTTypeMessage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMessage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecontact",
+   "title": "UTTypeContact",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeContact",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecalendarevent",
+   "title": "UTTypeCalendarEvent",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeCalendarEvent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypetodoitem",
+   "title": "UTTypeToDoItem",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeToDoItem",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeemailmessage",
+   "title": "UTTypeEmailMessage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeEmailMessage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypefont",
+   "title": "UTTypeFont",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeFont",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeimage",
+   "title": "UTTypeImage",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeImage",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeaudio",
+   "title": "UTTypeAudio",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAudio",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeaudiovisualcontent",
+   "title": "UTTypeAudiovisualContent",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeAudiovisualContent",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypemovie",
+   "title": "UTTypeMovie",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeMovie",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypevideo",
+   "title": "UTTypeVideo",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTypeVideo",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttagclassfilenameextension",
+   "title": "UTTagClassFilenameExtension",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTagClassFilenameExtension",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttagclassmimetype",
+   "title": "UTTagClassMIMEType",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/System-declared uniform type identifiers/UTTagClassMIMEType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/identifier",
+   "title": "identifier",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/identifier",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/preferredfilenameextension",
+   "title": "preferredFilenameExtension",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/preferredFilenameExtension",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/preferredmimetype",
+   "title": "preferredMIMEType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/preferredMIMEType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/tags",
+   "title": "tags",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/tags",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/referenceurl",
+   "title": "referenceURL",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/referenceURL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/version",
+   "title": "version",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/version",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/supertypes",
+   "title": "supertypes",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/supertypes",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypereference/localizeddescription",
+   "title": "localizedDescription",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/localizedDescription",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-c.class/shcustomcatalogcontenttype",
+   "title": "SHCustomCatalogContentType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/SHCustomCatalogContentType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttype-c.class/shsignaturecontenttype",
+   "title": "SHSignatureContentType",
+   "type": "property",
+   "breadcrumb": "Uniform Type Identifiers/UTType/SHSignatureContentType",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeahap",
+   "title": "UTTypeAHAP",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UTTypeAHAP",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/ut_available_begin",
+   "title": "UT_AVAILABLE_BEGIN",
+   "type": "macro",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UT_AVAILABLE_BEGIN",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/ut_available_end",
+   "title": "UT_AVAILABLE_END",
+   "type": "macro",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UT_AVAILABLE_END",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/ut_export",
+   "title": "UT_EXPORT",
+   "type": "macro",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UT_EXPORT",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/ut_export_class",
+   "title": "UT_EXPORT_CLASS",
+   "type": "macro",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UT_EXPORT_CLASS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/ut_subclassing_restricted",
+   "title": "UT_SUBCLASSING_RESTRICTED",
+   "type": "macro",
+   "breadcrumb": "Uniform Type Identifiers/UniformTypeIdentifiers Constants/UT_SUBCLASSING_RESTRICTED",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypecss",
+   "title": "UTTypeCSS",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeCSS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypedng",
+   "title": "UTTypeDNG",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeDNG",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeexr",
+   "title": "UTTypeEXR",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeEXR",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypegeojson",
+   "title": "UTTypeGeoJSON",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeGeoJSON",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypeheics",
+   "title": "UTTypeHEICS",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeHEICS",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypejpegxl",
+   "title": "UTTypeJPEGXL",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeJPEGXL",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypelinkpresentationmetadata",
+   "title": "UTTypeLinkPresentationMetadata",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeLinkPresentationMetadata",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  },
+  {
+   "path": "/documentation/uniformtypeidentifiers/uttypetararchive",
+   "title": "UTTypeTarArchive",
+   "type": "var",
+   "breadcrumb": "Uniform Type Identifiers/UTTypeTarArchive",
+   "longform": false,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "occ"
+   ]
+  }
+ ]
+}

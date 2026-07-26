@@ -1,0 +1,5007 @@
+[
+ {
+  "file": "attachments/a2182d46ae002806e283ee7e36a5932e/detect-lens-smudge-overview-clear@2x.png",
+  "before": 1980656,
+  "dim_before": [
+   859,
+   1024
+  ],
+  "after": 1980656,
+  "dim_after": [
+   859,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/46c6eb2447fc2ecb698f4c8c360f45de/media-3590973@2x.png",
+  "before": 2141470,
+  "dim_before": [
+   1024,
+   771
+  ],
+  "after": 2141470,
+  "dim_after": [
+   1024,
+   771
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/2870c1b20386d99816f59eae94ee9bfb/media-2959656@2x.png",
+  "before": 1730119,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1730119,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/f217ba608fadb4dcc6daeb0f9c6c0128/Landmarks-Building-an-app-with-Liquid-Glass-1@2x.png",
+  "before": 1648782,
+  "dim_before": [
+   1870,
+   816
+  ],
+  "after": 837734,
+  "dim_after": [
+   1280,
+   558
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1254509
+   },
+   {
+    "max_side": 1280,
+    "size": 837734
+   }
+  ]
+ },
+ {
+  "file": "attachments/f217ba608fadb4dcc6daeb0f9c6c0128/landmarks-app-article-hero@2x.png",
+  "before": 1648782,
+  "dim_before": [
+   1870,
+   816
+  ],
+  "after": 837734,
+  "dim_after": [
+   1280,
+   558
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1254509
+   },
+   {
+    "max_side": 1280,
+    "size": 837734
+   }
+  ]
+ },
+ {
+  "file": "attachments/4d8fc4e34d77f0640e1d618ee6f839d0/media-3545014@2x.png",
+  "before": 1646684,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 851007,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1291248
+   },
+   {
+    "max_side": 1024,
+    "size": 851007
+   }
+  ]
+ },
+ {
+  "file": "attachments/ef1d1eea81eeb237b95a654d86f39f33/creating-an-image-classifier-model-11@2x.png",
+  "before": 1643471,
+  "dim_before": [
+   1470,
+   1010
+  ],
+  "after": 880960,
+  "dim_after": [
+   1024,
+   703
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1357808
+   },
+   {
+    "max_side": 1024,
+    "size": 880960
+   }
+  ]
+ },
+ {
+  "file": "attachments/cccc0f4752267119458b0aeb81cb8187/media-4331780@2x.png",
+  "before": 1641220,
+  "dim_before": [
+   2000,
+   715
+  ],
+  "after": 828859,
+  "dim_after": [
+   1280,
+   457
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1210761
+   },
+   {
+    "max_side": 1280,
+    "size": 828859
+   }
+  ]
+ },
+ {
+  "file": "attachments/55a04fef3a7071933a6aecf0bfc0f73f/Destination-video-video-player@2x.png",
+  "before": 1646278,
+  "dim_before": [
+   1880,
+   1056
+  ],
+  "after": 866838,
+  "dim_after": [
+   1280,
+   718
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1265243
+   },
+   {
+    "max_side": 1280,
+    "size": 866838
+   }
+  ]
+ },
+ {
+  "file": "attachments/e908adb6e0ae0a589871d898bcadbfe8/media-3545000@2x.png",
+  "before": 1629365,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 806900,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1241989
+   },
+   {
+    "max_side": 1024,
+    "size": 806900
+   }
+  ]
+ },
+ {
+  "file": "attachments/6d6bbf21f7ffb12672085daa6eb5b656/media-3545008@2x.png",
+  "before": 1640716,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 815116,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1251782
+   },
+   {
+    "max_side": 1024,
+    "size": 815116
+   }
+  ]
+ },
+ {
+  "file": "attachments/8626b81c01b9d410df9b8c80ddbeb324/xcode-hero@2x.png.orig",
+  "before": 1652474,
+  "dim_before": [
+   2624,
+   1624
+  ],
+  "after": 811637,
+  "dim_after": [
+   1280,
+   791
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2205100
+   },
+   {
+    "max_side": 2000,
+    "size": 1761795
+   },
+   {
+    "max_side": 1600,
+    "size": 1184349
+   },
+   {
+    "max_side": 1280,
+    "size": 811637
+   }
+  ]
+ },
+ {
+  "file": "attachments/ae08a9d52f59be43e7c900861b0c25d8/media-3545004@2x.png",
+  "before": 1616818,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 802375,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1233518
+   },
+   {
+    "max_side": 1024,
+    "size": 802375
+   }
+  ]
+ },
+ {
+  "file": "attachments/11ddc00bc9cd17b1fb63d5d03feb95dc/media-3595920@2x.png",
+  "before": 1625846,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 929735,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1379745
+   },
+   {
+    "max_side": 1024,
+    "size": 929735
+   }
+  ]
+ },
+ {
+  "file": "attachments/12547450e33cc19b3db92ed13e1bfc15/media-3545006@2x.png",
+  "before": 1608111,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 795310,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1223277
+   },
+   {
+    "max_side": 1024,
+    "size": 795310
+   }
+  ]
+ },
+ {
+  "file": "attachments/c5f5eb893c740770d52e18ca370d34ba/media-3544967@2x.png",
+  "before": 1601545,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 792890,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1233110
+   },
+   {
+    "max_side": 1024,
+    "size": 792890
+   }
+  ]
+ },
+ {
+  "file": "attachments/751eccb4fed425e0a02b3360948639a3/media-4407336@2x.png",
+  "before": 1606034,
+  "dim_before": [
+   2000,
+   732
+  ],
+  "after": 785702,
+  "dim_after": [
+   1280,
+   468
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1160160
+   },
+   {
+    "max_side": 1280,
+    "size": 785702
+   }
+  ]
+ },
+ {
+  "file": "attachments/f55843916aac0bf24454086ba80927e1/media-3544968@2x.png",
+  "before": 1603543,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 797232,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1238706
+   },
+   {
+    "max_side": 1024,
+    "size": 797232
+   }
+  ]
+ },
+ {
+  "file": "attachments/f16ce1fe17c3c42f0fd7ed3209dc27e0/media-3582224@2x.png",
+  "before": 1600404,
+  "dim_before": [
+   1332,
+   556
+  ],
+  "after": 907705,
+  "dim_after": [
+   1024,
+   427
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1430775
+   },
+   {
+    "max_side": 1024,
+    "size": 907705
+   }
+  ]
+ },
+ {
+  "file": "attachments/7a399b3bb44e1bdda387b6c2966a1d99/media-4407307@2x.png",
+  "before": 1604407,
+  "dim_before": [
+   1000,
+   1325
+  ],
+  "after": 965504,
+  "dim_after": [
+   772,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1499362
+   },
+   {
+    "max_side": 1024,
+    "size": 965504
+   }
+  ]
+ },
+ {
+  "file": "attachments/31bc2cc68e11100dbfd10afe19552daa/media-4336877@2x.png",
+  "before": 1599965,
+  "dim_before": [
+   1360,
+   678
+  ],
+  "after": 977291,
+  "dim_after": [
+   1024,
+   510
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1454269
+   },
+   {
+    "max_side": 1024,
+    "size": 977291
+   }
+  ]
+ },
+ {
+  "file": "attachments/06e9c9e3c330c9ebd347d10cec2ed4b8/media-3544958@2x.png",
+  "before": 1597806,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 802882,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1241132
+   },
+   {
+    "max_side": 1024,
+    "size": 802882
+   }
+  ]
+ },
+ {
+  "file": "attachments/6bdf22ab09bde8745f14009343bb0238/media-4407310@2x.png",
+  "before": 1590130,
+  "dim_before": [
+   1000,
+   1325
+  ],
+  "after": 955492,
+  "dim_after": [
+   772,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1483422
+   },
+   {
+    "max_side": 1024,
+    "size": 955492
+   }
+  ]
+ },
+ {
+  "file": "attachments/3b329edd727be8386d5fe2011d5713fa/media-3545009@2x.png",
+  "before": 1585651,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 789270,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1212101
+   },
+   {
+    "max_side": 1024,
+    "size": 789270
+   }
+  ]
+ },
+ {
+  "file": "attachments/bcec307ffcea638a98721a2178b9ee77/creating-an-image-classifier-model-4@2x.png",
+  "before": 1576438,
+  "dim_before": [
+   1470,
+   1051
+  ],
+  "after": 845597,
+  "dim_after": [
+   1024,
+   732
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1287737
+   },
+   {
+    "max_side": 1024,
+    "size": 845597
+   }
+  ]
+ },
+ {
+  "file": "attachments/3a797ec8266e2c0b3fe657d59c891aa9/media-3545012@2x.png",
+  "before": 1560888,
+  "dim_before": [
+   1444,
+   557
+  ],
+  "after": 818187,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1233205
+   },
+   {
+    "max_side": 1024,
+    "size": 818187
+   }
+  ]
+ },
+ {
+  "file": "attachments/c5374cfc17167bb46fab1f687ed7b1ab/building-your-Windows-game-remotely-on-a-Mac.png",
+  "before": 1582679,
+  "dim_before": [
+   1484,
+   1488
+  ],
+  "after": 728964,
+  "dim_after": [
+   1020,
+   1024
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1149690
+   },
+   {
+    "max_side": 1024,
+    "size": 728964
+   }
+  ]
+ },
+ {
+  "file": "attachments/766ac889f685325ebd5b9c57d324d8ad/media-3544957@2x.png",
+  "before": 1559914,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 782064,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1210479
+   },
+   {
+    "max_side": 1024,
+    "size": 782064
+   }
+  ]
+ },
+ {
+  "file": "attachments/0cbcdb6252550a0cc0a2c515e0460627/avp-robot@2x.png",
+  "before": 1579541,
+  "dim_before": [
+   1754,
+   1314
+  ],
+  "after": 899074,
+  "dim_after": [
+   1280,
+   958
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1291659
+   },
+   {
+    "max_side": 1280,
+    "size": 899074
+   }
+  ]
+ },
+ {
+  "file": "attachments/054dd9d8f9f07d1863a9245fec10d266/media-3545003@2x.png",
+  "before": 1545667,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 767219,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1177912
+   },
+   {
+    "max_side": 1024,
+    "size": 767219
+   }
+  ]
+ },
+ {
+  "file": "attachments/ac7fc9aa7c63ddf5ba37706d1006f2bf/media-3544998@2x.png",
+  "before": 1555316,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 774569,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1185841
+   },
+   {
+    "max_side": 1024,
+    "size": 774569
+   }
+  ]
+ },
+ {
+  "file": "attachments/5dd78a188cc1a50357c4eba0a6e6d012/media-3582227@2x.png",
+  "before": 1536103,
+  "dim_before": [
+   1380,
+   556
+  ],
+  "after": 818344,
+  "dim_after": [
+   1024,
+   412
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1263253
+   },
+   {
+    "max_side": 1024,
+    "size": 818344
+   }
+  ]
+ },
+ {
+  "file": "attachments/6452b204ef978b327ecf448e232eee4e/Landmarks-Building-an-app-with-Liquid-Glass-1@2x.png",
+  "before": 1532932,
+  "dim_before": [
+   1480,
+   1024
+  ],
+  "after": 809242,
+  "dim_after": [
+   1024,
+   708
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1194607
+   },
+   {
+    "max_side": 1024,
+    "size": 809242
+   }
+  ]
+ },
+ {
+  "file": "attachments/ce193ec494e91d4150c3356442824213/landmarks-app-article-hero@2x.png",
+  "before": 1532324,
+  "dim_before": [
+   1840,
+   866
+  ],
+  "after": 816844,
+  "dim_after": [
+   1280,
+   602
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1210415
+   },
+   {
+    "max_side": 1280,
+    "size": 816844
+   }
+  ]
+ },
+ {
+  "file": "attachments/acab774efabed5154c6d6335dce08c44/media-4225940@2x.png",
+  "before": 1550473,
+  "dim_before": [
+   4130,
+   2338
+  ],
+  "after": 955517,
+  "dim_after": [
+   1600,
+   904
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1632946
+   },
+   {
+    "max_side": 2000,
+    "size": 1325289
+   },
+   {
+    "max_side": 1600,
+    "size": 955517
+   }
+  ]
+ },
+ {
+  "file": "attachments/ce193ec494e91d4150c3356442824213/adoption-guide-intoducing-liquid-glass-hero@2x.png",
+  "before": 1532324,
+  "dim_before": [
+   1840,
+   866
+  ],
+  "after": 816844,
+  "dim_after": [
+   1280,
+   602
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1210415
+   },
+   {
+    "max_side": 1280,
+    "size": 816844
+   }
+  ]
+ },
+ {
+  "file": "attachments/a7e9c231f72215bb56f5383e9fe0421f/detect-lens-smudge-overview-obscured@2x.png",
+  "before": 1511912,
+  "dim_before": [
+   859,
+   1024
+  ],
+  "after": 1511912,
+  "dim_after": [
+   859,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/fa5220dbadbf2b769eced63310be06bd/media-4225943@2x.png",
+  "before": 1538826,
+  "dim_before": [
+   4130,
+   2338
+  ],
+  "after": 949496,
+  "dim_after": [
+   1600,
+   904
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1624262
+   },
+   {
+    "max_side": 2000,
+    "size": 1317855
+   },
+   {
+    "max_side": 1600,
+    "size": 949496
+   }
+  ]
+ },
+ {
+  "file": "attachments/541eb7bd69acfac93269719ce60bbb61/media-3544961@2x.png",
+  "before": 1529338,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 773961,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1191303
+   },
+   {
+    "max_side": 1024,
+    "size": 773961
+   }
+  ]
+ },
+ {
+  "file": "attachments/ad1e4bae35fc0ae11f29b1c1b52fcb6e/media-4332587@2x.png",
+  "before": 1527810,
+  "dim_before": [
+   1500,
+   910
+  ],
+  "after": 747666,
+  "dim_after": [
+   1024,
+   620
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1148178
+   },
+   {
+    "max_side": 1024,
+    "size": 747666
+   }
+  ]
+ },
+ {
+  "file": "attachments/b70de5aabb88c9257c2a4a214f8d3554/RosyFilterSS.png",
+  "before": 1525409,
+  "dim_before": [
+   1288,
+   1220
+  ],
+  "after": 1130950,
+  "dim_after": [
+   1024,
+   969
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1732517
+   },
+   {
+    "max_side": 1024,
+    "size": 1130950
+   }
+  ]
+ },
+ {
+  "file": "attachments/e9fa07c22b21abe1fc14cd79873df1d6/media-4331788@2x.png",
+  "before": 1495922,
+  "dim_before": [
+   1000,
+   683
+  ],
+  "after": 1495922,
+  "dim_after": [
+   1000,
+   683
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/73877d8ac27ad7e830e15dd2ce5deaa9/media-3582226@2x.png",
+  "before": 1524588,
+  "dim_before": [
+   1372,
+   556
+  ],
+  "after": 806883,
+  "dim_after": [
+   1024,
+   414
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1268301
+   },
+   {
+    "max_side": 1024,
+    "size": 806883
+   }
+  ]
+ },
+ {
+  "file": "attachments/f5b3c4f11810ad3ba6cfc0310719f7ba/localizing-using-agents-in-progress@2x.png",
+  "before": 1529662,
+  "dim_before": [
+   2624,
+   1624
+  ],
+  "after": 718270,
+  "dim_after": [
+   1280,
+   791
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2027954
+   },
+   {
+    "max_side": 2000,
+    "size": 1591403
+   },
+   {
+    "max_side": 1600,
+    "size": 1062732
+   },
+   {
+    "max_side": 1280,
+    "size": 718270
+   }
+  ]
+ },
+ {
+  "file": "attachments/d95bfbb2d1541d005276bd8e53ad7990/media-3595917@2x.png",
+  "before": 1492446,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 802020,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1230201
+   },
+   {
+    "max_side": 1024,
+    "size": 802020
+   }
+  ]
+ },
+ {
+  "file": "attachments/a4415b346213b41113657f0b0d8a9c7f/media-3544956@2x.png",
+  "before": 1482859,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 760561,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1165715
+   },
+   {
+    "max_side": 1024,
+    "size": 760561
+   }
+  ]
+ },
+ {
+  "file": "attachments/f87f91b3540dad92df7b0c5e58e394f3/media-3544966@2x.png",
+  "before": 1491941,
+  "dim_before": [
+   1441,
+   558
+  ],
+  "after": 761304,
+  "dim_after": [
+   1024,
+   396
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1160872
+   },
+   {
+    "max_side": 1024,
+    "size": 761304
+   }
+  ]
+ },
+ {
+  "file": "attachments/206dfc625e83595d05abbb7fcc14ad93/media-4241168@2x.png",
+  "before": 1508386,
+  "dim_before": [
+   4348,
+   2532
+  ],
+  "after": 748453,
+  "dim_after": [
+   1600,
+   931
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1257265
+   },
+   {
+    "max_side": 2000,
+    "size": 1022721
+   },
+   {
+    "max_side": 1600,
+    "size": 748453
+   }
+  ]
+ },
+ {
+  "file": "attachments/1c2c811615d9562841f9fa7299e7c933/media-4225942@2x.png",
+  "before": 1505532,
+  "dim_before": [
+   4348,
+   2532
+  ],
+  "after": 744836,
+  "dim_after": [
+   1600,
+   931
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1255838
+   },
+   {
+    "max_side": 2000,
+    "size": 1018865
+   },
+   {
+    "max_side": 1600,
+    "size": 744836
+   }
+  ]
+ },
+ {
+  "file": "attachments/ba670b3b9f0aa77973c50ea524a44b67/coding-assistant-history-view@2x.png",
+  "before": 1507323,
+  "dim_before": [
+   2624,
+   1624
+  ],
+  "after": 752182,
+  "dim_after": [
+   1280,
+   791
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 2078715
+   },
+   {
+    "max_side": 2000,
+    "size": 1650921
+   },
+   {
+    "max_side": 1600,
+    "size": 1104030
+   },
+   {
+    "max_side": 1280,
+    "size": 752182
+   }
+  ]
+ },
+ {
+  "file": "attachments/6c7826b025bfcaa86b0448ee76baf2ad/media-3545001@2x.png",
+  "before": 1472160,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 739049,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1128746
+   },
+   {
+    "max_side": 1024,
+    "size": 739049
+   }
+  ]
+ },
+ {
+  "file": "attachments/0ac03af6e23b8c950a25eb573a5e4a2e/media-3545032@2x.png",
+  "before": 1473366,
+  "dim_before": [
+   1444,
+   557
+  ],
+  "after": 756045,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1148107
+   },
+   {
+    "max_side": 1024,
+    "size": 756045
+   }
+  ]
+ },
+ {
+  "file": "attachments/acf116f96f49e9be98f4ad897672e9a5/media-3545035@2x.png",
+  "before": 1467394,
+  "dim_before": [
+   1444,
+   557
+  ],
+  "after": 753240,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1142833
+   },
+   {
+    "max_side": 1024,
+    "size": 753240
+   }
+  ]
+ },
+ {
+  "file": "attachments/9713e2cc186aee76d7c002c4e7babf4b/media-3545011@2x.png",
+  "before": 1466637,
+  "dim_before": [
+   1444,
+   557
+  ],
+  "after": 751317,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1141041
+   },
+   {
+    "max_side": 1024,
+    "size": 751317
+   }
+  ]
+ },
+ {
+  "file": "attachments/2ab7b18d8c8869136e4bafa8ca20d00a/media-3545002@2x.png",
+  "before": 1474063,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 737517,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1127762
+   },
+   {
+    "max_side": 1024,
+    "size": 737517
+   }
+  ]
+ },
+ {
+  "file": "attachments/e13d156f8eeffbdeaa74cb99335d304f/media-4407333@2x.png",
+  "before": 1429773,
+  "dim_before": [
+   1000,
+   617
+  ],
+  "after": 1429773,
+  "dim_after": [
+   1000,
+   617
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/b2c9cf6cee60b0c0f5f8d6b9f5fb3e4a/media-3595915@2x.png",
+  "before": 1461834,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 793209,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1225282
+   },
+   {
+    "max_side": 1024,
+    "size": 793209
+   }
+  ]
+ },
+ {
+  "file": "attachments/e13d156f8eeffbdeaa74cb99335d304f/media-4334871@2x.png",
+  "before": 1429773,
+  "dim_before": [
+   1000,
+   617
+  ],
+  "after": 1429773,
+  "dim_after": [
+   1000,
+   617
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/79da51d3aab1b67fb68ef70c87b56195/media-3545036@2x.png",
+  "before": 1456894,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 749416,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1136361
+   },
+   {
+    "max_side": 1024,
+    "size": 749416
+   }
+  ]
+ },
+ {
+  "file": "attachments/6e6d6f0dd66aad4f24002217ca3e55da/media-3544964@2x.png",
+  "before": 1443864,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 740041,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1134370
+   },
+   {
+    "max_side": 1024,
+    "size": 740041
+   }
+  ]
+ },
+ {
+  "file": "attachments/9a12d3d13c1b1abe47f1127ceaa67dbb/media-3595914@2x.png",
+  "before": 1454781,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 803370,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1223739
+   },
+   {
+    "max_side": 1024,
+    "size": 803370
+   }
+  ]
+ },
+ {
+  "file": "attachments/c27f4cdc20f7deca22b576d1b4a1d9ef/media-3545023@2x.png",
+  "before": 1443566,
+  "dim_before": [
+   1444,
+   557
+  ],
+  "after": 745030,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1128951
+   },
+   {
+    "max_side": 1024,
+    "size": 745030
+   }
+  ]
+ },
+ {
+  "file": "attachments/aef59499184046924bee608515d79e72/gputools-metal-debugger-tv-hero@2x.png",
+  "before": 1431895,
+  "dim_before": [
+   1840,
+   1154
+  ],
+  "after": 954920,
+  "dim_after": [
+   1280,
+   802
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1391550
+   },
+   {
+    "max_side": 1280,
+    "size": 954920
+   }
+  ]
+ },
+ {
+  "file": "attachments/778dded0e09c49a62b4d88af457e50dd/media-3544962@2x.png",
+  "before": 1429658,
+  "dim_before": [
+   1443,
+   558
+  ],
+  "after": 739789,
+  "dim_after": [
+   1024,
+   396
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1132340
+   },
+   {
+    "max_side": 1024,
+    "size": 739789
+   }
+  ]
+ },
+ {
+  "file": "attachments/a1c3a4fcc9c960e384fa6f8337190f41/gputools-metal-debugger-sdp-bug-menu@2x.png",
+  "before": 1428435,
+  "dim_before": [
+   1840,
+   1130
+  ],
+  "after": 801797,
+  "dim_after": [
+   1280,
+   785
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1176536
+   },
+   {
+    "max_side": 1280,
+    "size": 801797
+   }
+  ]
+ },
+ {
+  "file": "attachments/25ec059d543ecc6a1b98a5259e1d98d1/media-3546428@2x.png",
+  "before": 1404069,
+  "dim_before": [
+   1358,
+   1024
+  ],
+  "after": 879464,
+  "dim_after": [
+   1024,
+   772
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1284406
+   },
+   {
+    "max_side": 1024,
+    "size": 879464
+   }
+  ]
+ },
+ {
+  "file": "attachments/05e232c2a39eb51f6c9a6de5ff51777e/media-3544959@2x.png",
+  "before": 1414835,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 725229,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1112593
+   },
+   {
+    "max_side": 1024,
+    "size": 725229
+   }
+  ]
+ },
+ {
+  "file": "attachments/83ba0059fb79ce77761701f6f266e3d2/gputools-metal-debugger-heatmap-overview@2x.png",
+  "before": 1389830,
+  "dim_before": [
+   1840,
+   1182
+  ],
+  "after": 818681,
+  "dim_after": [
+   1280,
+   822
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1192908
+   },
+   {
+    "max_side": 1280,
+    "size": 818681
+   }
+  ]
+ },
+ {
+  "file": "attachments/fda1b546a320cd65554bf49fc08f4b03/media-2926863@2x.png",
+  "before": 1384239,
+  "dim_before": [
+   1048,
+   545
+  ],
+  "after": 1257618,
+  "dim_after": [
+   1024,
+   532
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1257618
+   }
+  ]
+ },
+ {
+  "file": "attachments/658f95096c9c4e02cd99895dd1fd6b3e/requesting-access-to-protected-resources-3@2x.png",
+  "before": 1384938,
+  "dim_before": [
+   3024,
+   2024
+  ],
+  "after": 913709,
+  "dim_after": [
+   2000,
+   1338
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1187702
+   },
+   {
+    "max_side": 2000,
+    "size": 913709
+   }
+  ]
+ },
+ {
+  "file": "attachments/e3e217e5442822ecbf0db71a3fa0686c/media-3544965@2x.png",
+  "before": 1384095,
+  "dim_before": [
+   1444,
+   558
+  ],
+  "after": 709933,
+  "dim_after": [
+   1024,
+   395
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1089704
+   },
+   {
+    "max_side": 1024,
+    "size": 709933
+   }
+  ]
+ },
+ {
+  "file": "attachments/fe256c3d1ce5f5a4201cd9ccc3c6165b/media-3544963@2x.png",
+  "before": 1362348,
+  "dim_before": [
+   1443,
+   558
+  ],
+  "after": 712411,
+  "dim_after": [
+   1024,
+   396
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1082570
+   },
+   {
+    "max_side": 1024,
+    "size": 712411
+   }
+  ]
+ },
+ {
+  "file": "attachments/fb9d0187765b7ad5bcadeb5ced13183e/running-playgrounds-canvas-output@2x.png",
+  "before": 1394583,
+  "dim_before": [
+   2622,
+   1726
+  ],
+  "after": 753181,
+  "dim_after": [
+   1600,
+   1053
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1410948
+   },
+   {
+    "max_side": 2000,
+    "size": 1082745
+   },
+   {
+    "max_side": 1600,
+    "size": 753181
+   }
+  ]
+ },
+ {
+  "file": "attachments/9cb4c50cc5617b43f44000076aea76b0/media-3600001@2x.png",
+  "before": 1359966,
+  "dim_before": [
+   1442,
+   556
+  ],
+  "after": 752595,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1126706
+   },
+   {
+    "max_side": 1024,
+    "size": 752595
+   }
+  ]
+ },
+ {
+  "file": "attachments/8cbc8fdad80345633d34a8719b27ccfd/media-4225969@2x.png",
+  "before": 1383798,
+  "dim_before": [
+   3840,
+   2042
+  ],
+  "after": 902811,
+  "dim_after": [
+   2000,
+   1063
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1120658
+   },
+   {
+    "max_side": 2000,
+    "size": 902811
+   }
+  ]
+ },
+ {
+  "file": "attachments/835168e59d82af09a3b7bc01d47c4209/media-3582228@2x.png",
+  "before": 1357893,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 660417,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1045982
+   },
+   {
+    "max_side": 1024,
+    "size": 660417
+   }
+  ]
+ },
+ {
+  "file": "attachments/8dfb12e72fcd303b50be1aec2f9b8818/media-3595912@2x.png",
+  "before": 1356839,
+  "dim_before": [
+   1443,
+   556
+  ],
+  "after": 756916,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1140767
+   },
+   {
+    "max_side": 1024,
+    "size": 756916
+   }
+  ]
+ },
+ {
+  "file": "attachments/a6ec47d5b184ca96a58fe22c2874e4f3/interface-fundamentals-tvos-home-screen@2x.png",
+  "before": 1352388,
+  "dim_before": [
+   1280,
+   720
+  ],
+  "after": 876221,
+  "dim_after": [
+   1024,
+   576
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 876221
+   }
+  ]
+ },
+ {
+  "file": "attachments/588b92c9ec3e839b49b555eec427c17b/gputools-metal-debugger-av-attachments-hero@2x.png",
+  "before": 1356046,
+  "dim_before": [
+   1840,
+   972
+  ],
+  "after": 795855,
+  "dim_after": [
+   1280,
+   676
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1201647
+   },
+   {
+    "max_side": 1280,
+    "size": 795855
+   }
+  ]
+ },
+ {
+  "file": "attachments/e376dcbc0ffaf16bd04f1b7dc35b00e2/gputools-metal-debugger-bv-custom-layout-resources@2x.png",
+  "before": 1352620,
+  "dim_before": [
+   1840,
+   722
+  ],
+  "after": 806401,
+  "dim_after": [
+   1280,
+   502
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1166668
+   },
+   {
+    "max_side": 1280,
+    "size": 806401
+   }
+  ]
+ },
+ {
+  "file": "attachments/a9c62cc9c3538dce5b7502c1e039c879/media-3600010@2x.png",
+  "before": 1339443,
+  "dim_before": [
+   1444,
+   556
+  ],
+  "after": 783122,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1137203
+   },
+   {
+    "max_side": 1024,
+    "size": 783122
+   }
+  ]
+ },
+ {
+  "file": "attachments/841259ef8e8b5a49e4673a20e199bac8/Customizing-window-styles-and-state-restoration-behavior-in-macOS-zoom@2x.png",
+  "before": 1340892,
+  "dim_before": [
+   1442,
+   942
+  ],
+  "after": 742384,
+  "dim_after": [
+   1024,
+   668
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1112607
+   },
+   {
+    "max_side": 1024,
+    "size": 742384
+   }
+  ]
+ },
+ {
+  "file": "attachments/0c8e9497ef4f8b04e1a24a43058e293b/Destination-video-visionOS.png",
+  "before": 1331953,
+  "dim_before": [
+   1470,
+   1000
+  ],
+  "after": 737330,
+  "dim_after": [
+   1024,
+   696
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1080947
+   },
+   {
+    "max_side": 1024,
+    "size": 737330
+   }
+  ]
+ },
+ {
+  "file": "attachments/86bea3b2d851de88291e52e7845ef990/landing-page-sample-code-hero@2x.png",
+  "before": 1347343,
+  "dim_before": [
+   1350,
+   1012
+  ],
+  "after": 820246,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1219827
+   },
+   {
+    "max_side": 1024,
+    "size": 820246
+   }
+  ]
+ },
+ {
+  "file": "attachments/0c8e9497ef4f8b04e1a24a43058e293b/Enhancing-your-app-content-with-tab-navigation-visionOS.png",
+  "before": 1331953,
+  "dim_before": [
+   1470,
+   1000
+  ],
+  "after": 737330,
+  "dim_after": [
+   1024,
+   696
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1080947
+   },
+   {
+    "max_side": 1024,
+    "size": 737330
+   }
+  ]
+ },
+ {
+  "file": "attachments/0d16ff472dadd4d9ec75f7fb345c7dc3/media-2926876@2x.png",
+  "before": 1325519,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1230284,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1230284
+   }
+  ]
+ },
+ {
+  "file": "attachments/8056ccc356a2072b1685c9e3b45ab803/media-2926848@2x.png",
+  "before": 1317653,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1240780,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1240780
+   }
+  ]
+ },
+ {
+  "file": "attachments/33f36aca98480572130d6655b404442e/media-2926849@2x.png",
+  "before": 1307429,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1216030,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1216030
+   }
+  ]
+ },
+ {
+  "file": "attachments/99d45f3f5b748f9b4ac9dfcc8e81e6ec/dynamic-terrain-with-argument-buffers-1-screenshot.png",
+  "before": 1305382,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 1305382,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/5d2144f62d3ccb693aba751a6535a547/media-3600003@2x.png",
+  "before": 1319621,
+  "dim_before": [
+   1434,
+   556
+  ],
+  "after": 746261,
+  "dim_after": [
+   1024,
+   397
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1093861
+   },
+   {
+    "max_side": 1024,
+    "size": 746261
+   }
+  ]
+ },
+ {
+  "file": "attachments/2e049dab1dd7489ec876eb32fd82cff5/media-3558775@2x.png",
+  "before": 1328412,
+  "dim_before": [
+   1358,
+   1024
+  ],
+  "after": 875272,
+  "dim_after": [
+   1024,
+   772
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1262452
+   },
+   {
+    "max_side": 1024,
+    "size": 875272
+   }
+  ]
+ },
+ {
+  "file": "attachments/76bbbb168b05d43882805d21fe9515e5/media-2926878@2x.png",
+  "before": 1304525,
+  "dim_before": [
+   1057,
+   545
+  ],
+  "after": 1198087,
+  "dim_after": [
+   1024,
+   528
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1198087
+   }
+  ]
+ },
+ {
+  "file": "attachments/16c6d0fddde6b46dcdc88b95c42cfbfb/media-2926877@2x.png",
+  "before": 1303134,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1207432,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1207432
+   }
+  ]
+ },
+ {
+  "file": "attachments/f0df909ff12580234dd7a2b081a92b1b/string-catalog-editor-generate-translations-button@2x.png",
+  "before": 1329537,
+  "dim_before": [
+   2624,
+   1424
+  ],
+  "after": 969042,
+  "dim_after": [
+   1600,
+   868
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1831888
+   },
+   {
+    "max_side": 2000,
+    "size": 1453807
+   },
+   {
+    "max_side": 1600,
+    "size": 969042
+   }
+  ]
+ },
+ {
+  "file": "attachments/641bf77f28363f8449f98946265d6a41/gputools-metal-debugger-tv-stack-mips@2x.png",
+  "before": 1304631,
+  "dim_before": [
+   1840,
+   762
+  ],
+  "after": 786748,
+  "dim_after": [
+   1280,
+   529
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1122365
+   },
+   {
+    "max_side": 1280,
+    "size": 786748
+   }
+  ]
+ },
+ {
+  "file": "attachments/be82179a1110c56d69ee735ea919bae7/accessibility-inspector-overview@2x.png",
+  "before": 1293235,
+  "dim_before": [
+   1468,
+   918
+  ],
+  "after": 967133,
+  "dim_after": [
+   1280,
+   800
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 967133
+   }
+  ]
+ },
+ {
+  "file": "attachments/9fa21135b87a43a7eb3a8e4c6699f41c/media-3624591@2x.png",
+  "before": 1296974,
+  "dim_before": [
+   1444,
+   734
+  ],
+  "after": 671278,
+  "dim_after": [
+   1024,
+   520
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1011533
+   },
+   {
+    "max_side": 1024,
+    "size": 671278
+   }
+  ]
+ },
+ {
+  "file": "attachments/67130492a96d630cbb1c505541a03d6b/metal-hud-config-insights@2x.png",
+  "before": 1303020,
+  "dim_before": [
+   1602,
+   898
+  ],
+  "after": 944976,
+  "dim_after": [
+   1280,
+   717
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1344843
+   },
+   {
+    "max_side": 1280,
+    "size": 944976
+   }
+  ]
+ },
+ {
+  "file": "attachments/02fd8e646805703a4b4b41e6bf133b3e/media-2926857@2x.png",
+  "before": 1281732,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1196109,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1196109
+   }
+  ]
+ },
+ {
+  "file": "attachments/48639ca4efd0b33d2e3c430dd546fc41/media-2926870@2x.png",
+  "before": 1281810,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1199312,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1199312
+   }
+  ]
+ },
+ {
+  "file": "attachments/ee24c6eb22f3a18f06c58a8cd6641f6d/media-3030188@2x.png",
+  "before": 1285297,
+  "dim_before": [
+   1120,
+   897
+  ],
+  "after": 1074558,
+  "dim_after": [
+   1024,
+   820
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1074558
+   }
+  ]
+ },
+ {
+  "file": "attachments/1795dc2f4040ff55fc829b930d00a2c3/media-3600009@2x.png",
+  "before": 1277815,
+  "dim_before": [
+   1444,
+   379
+  ],
+  "after": 984487,
+  "dim_after": [
+   1280,
+   336
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 984487
+   }
+  ]
+ },
+ {
+  "file": "attachments/031dac453d58a6b47b9cee6c72118e4b/game-technologies-metal-ray-tracing-ipad@2x.png",
+  "before": 1284820,
+  "dim_before": [
+   1350,
+   1012
+  ],
+  "after": 810793,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1187858
+   },
+   {
+    "max_side": 1024,
+    "size": 810793
+   }
+  ]
+ },
+ {
+  "file": "attachments/6c81b9001fd2da289793c397b6179cdf/media-4225937@2x.png",
+  "before": 1292334,
+  "dim_before": [
+   3782,
+   2018
+  ],
+  "after": 793370,
+  "dim_after": [
+   1600,
+   852
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1400909
+   },
+   {
+    "max_side": 2000,
+    "size": 1101097
+   },
+   {
+    "max_side": 1600,
+    "size": 793370
+   }
+  ]
+ },
+ {
+  "file": "attachments/3cdbd6c44b3a646262a094a6b745559d/coding-assistant-start-conversation@2x.png",
+  "before": 1292310,
+  "dim_before": [
+   2624,
+   1424
+  ],
+  "after": 938842,
+  "dim_after": [
+   1600,
+   868
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1781216
+   },
+   {
+    "max_side": 2000,
+    "size": 1418327
+   },
+   {
+    "max_side": 1600,
+    "size": 938842
+   }
+  ]
+ },
+ {
+  "file": "attachments/fb7da9eb64faa0b40ce7d521856484e9/media-3624594@2x.png",
+  "before": 1273610,
+  "dim_before": [
+   1445,
+   734
+  ],
+  "after": 672069,
+  "dim_after": [
+   1024,
+   520
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1017565
+   },
+   {
+    "max_side": 1024,
+    "size": 672069
+   }
+  ]
+ },
+ {
+  "file": "attachments/1693b48acd69c4b1e59f06963b766958/power-profiler-2@2x.png",
+  "before": 1291189,
+  "dim_before": [
+   1170,
+   2532
+  ],
+  "after": 989761,
+  "dim_after": [
+   739,
+   1600
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1841672
+   },
+   {
+    "max_side": 2000,
+    "size": 1457163
+   },
+   {
+    "max_side": 1600,
+    "size": 989761
+   }
+  ]
+ },
+ {
+  "file": "attachments/a641476d9c43fa2dbe12b43fe8da0a96/gputools-metal-debugger-sdp-select@2x.png",
+  "before": 1272189,
+  "dim_before": [
+   1840,
+   1282
+  ],
+  "after": 790158,
+  "dim_after": [
+   1280,
+   891
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1134300
+   },
+   {
+    "max_side": 1280,
+    "size": 790158
+   }
+  ]
+ },
+ {
+  "file": "attachments/c95a2dd85e9eb4354559cff298cd8d7e/media-2926867@2x.png",
+  "before": 1268807,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1176878,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1176878
+   }
+  ]
+ },
+ {
+  "file": "attachments/7532bd027580e78f2257fff53abb62fa/media-2926855@2x.png",
+  "before": 1268295,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1172699,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1172699
+   }
+  ]
+ },
+ {
+  "file": "attachments/21b01f157bee42930decfbbfa083c699/media-3595819@2x.png",
+  "before": 1263065,
+  "dim_before": [
+   1024,
+   688
+  ],
+  "after": 1263065,
+  "dim_after": [
+   1024,
+   688
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/88ea435b9d78d945a2ab87d97e614527/media-2926869@2x.png",
+  "before": 1265412,
+  "dim_before": [
+   1057,
+   545
+  ],
+  "after": 1159393,
+  "dim_after": [
+   1024,
+   528
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1159393
+   }
+  ]
+ },
+ {
+  "file": "attachments/421b54bd5b74c7ff0f6ae07982710adb/media-2926854@2x.png",
+  "before": 1263794,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1170678,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1170678
+   }
+  ]
+ },
+ {
+  "file": "attachments/cf6cd6a69d0b87afaea15673fce73dcf/media-3624593@2x.png",
+  "before": 1270240,
+  "dim_before": [
+   1445,
+   734
+  ],
+  "after": 670576,
+  "dim_after": [
+   1024,
+   520
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1015919
+   },
+   {
+    "max_side": 1024,
+    "size": 670576
+   }
+  ]
+ },
+ {
+  "file": "attachments/81b4b5eb53694fd3f54533a324db2107/media-2926882@2x.png",
+  "before": 1257658,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1171806,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1171806
+   }
+  ]
+ },
+ {
+  "file": "attachments/e3dbcbfe6354ff3cbdaf8ab2105e177a/media-2926851@2x.png",
+  "before": 1255926,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1173725,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1173725
+   }
+  ]
+ },
+ {
+  "file": "attachments/c90cfac9e642265717c8ebe437f34419/media-2926865@2x.png",
+  "before": 1253529,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1158837,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1158837
+   }
+  ]
+ },
+ {
+  "file": "attachments/c04b32a94b4e27d5867f5e688ab7b741/debugging-focus-issues-in-your-app-1@2x.png",
+  "before": 1268454,
+  "dim_before": [
+   2624,
+   2024
+  ],
+  "after": 927122,
+  "dim_after": [
+   2000,
+   1542
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1271508
+   },
+   {
+    "max_side": 2000,
+    "size": 927122
+   }
+  ]
+ },
+ {
+  "file": "attachments/0c244bb3341e217960e71527cbdbcb6d/media-3624592@2x.png",
+  "before": 1253477,
+  "dim_before": [
+   1445,
+   734
+  ],
+  "after": 662005,
+  "dim_after": [
+   1024,
+   520
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1003103
+   },
+   {
+    "max_side": 1024,
+    "size": 662005
+   }
+  ]
+ },
+ {
+  "file": "attachments/139a406f36beb0e99eaa893e693cc523/metal-hud-config-panel-metrics@2x.png",
+  "before": 1251033,
+  "dim_before": [
+   1602,
+   898
+  ],
+  "after": 902721,
+  "dim_after": [
+   1280,
+   717
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1288625
+   },
+   {
+    "max_side": 1280,
+    "size": 902721
+   }
+  ]
+ },
+ {
+  "file": "attachments/09ea9f3982c85f7806b7f6d86630a523/media-4266545@2x.png",
+  "before": 1234973,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1234973,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/a7cba2f6c40a790c84564b5ed827fa13/gputools-metal-debugger-hero@2x.png",
+  "before": 1245990,
+  "dim_before": [
+   1840,
+   1130
+  ],
+  "after": 801446,
+  "dim_after": [
+   1280,
+   785
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1151454
+   },
+   {
+    "max_side": 1280,
+    "size": 801446
+   }
+  ]
+ },
+ {
+  "file": "attachments/c7c2a2af4b13e1f40248624d43042691/media-2943334@2x.png",
+  "before": 1250723,
+  "dim_before": [
+   1360,
+   797
+  ],
+  "after": 713219,
+  "dim_after": [
+   1024,
+   600
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1137103
+   },
+   {
+    "max_side": 1024,
+    "size": 713219
+   }
+  ]
+ },
+ {
+  "file": "attachments/ad3c03c0cad6e6f017d8473d7d081ec8/metal-hud-config-panel@2x.png",
+  "before": 1249033,
+  "dim_before": [
+   1602,
+   898
+  ],
+  "after": 905526,
+  "dim_after": [
+   1280,
+   717
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1291418
+   },
+   {
+    "max_side": 1280,
+    "size": 905526
+   }
+  ]
+ },
+ {
+  "file": "attachments/9fa76bd8c6a3167408db44c5fddadffb/media-3595821@2x.png",
+  "before": 1233246,
+  "dim_before": [
+   1024,
+   688
+  ],
+  "after": 1233246,
+  "dim_after": [
+   1024,
+   688
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/1b90efc660e1949a20691f110b8ee034/coding-assistant-propose-code@2x.png",
+  "before": 1253465,
+  "dim_before": [
+   2624,
+   1424
+  ],
+  "after": 867853,
+  "dim_after": [
+   1600,
+   868
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1684567
+   },
+   {
+    "max_side": 2000,
+    "size": 1313728
+   },
+   {
+    "max_side": 1600,
+    "size": 867853
+   }
+  ]
+ },
+ {
+  "file": "attachments/7f951373bc706766d41bd1db2e13acc0/media-4066536@2x.png",
+  "before": 1230291,
+  "dim_before": [
+   1470,
+   934
+  ],
+  "after": 948261,
+  "dim_after": [
+   1280,
+   813
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 948261
+   }
+  ]
+ },
+ {
+  "file": "attachments/4e51011416061f44436a165e3e3d400b/window-examples@2x.png",
+  "before": 1238632,
+  "dim_before": [
+   1840,
+   1000
+  ],
+  "after": 878691,
+  "dim_after": [
+   1280,
+   695
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1265695
+   },
+   {
+    "max_side": 1280,
+    "size": 878691
+   }
+  ]
+ },
+ {
+  "file": "attachments/c9e302687df78ed524037019e81bc989/media-3558713@2x.png",
+  "before": 1237257,
+  "dim_before": [
+   1358,
+   1024
+  ],
+  "after": 789660,
+  "dim_after": [
+   1024,
+   772
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1159212
+   },
+   {
+    "max_side": 1024,
+    "size": 789660
+   }
+  ]
+ },
+ {
+  "file": "attachments/1ced143906c34dc8a459ae3c7f70dddd/media-2926881@2x.png",
+  "before": 1227760,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1138150,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1138150
+   }
+  ]
+ },
+ {
+  "file": "attachments/c21af3f4413072cae4a4679038aceeea/media-2926879@2x.png",
+  "before": 1226974,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1139091,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1139091
+   }
+  ]
+ },
+ {
+  "file": "attachments/5199556d6ce6d0dfbf643d23a2d24423/media-4407275@2x.png",
+  "before": 1224839,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1224839,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/8566fabda6b98e28467a63fa75c2d3e5/media-2934506@2x.png",
+  "before": 1221013,
+  "dim_before": [
+   1016,
+   1024
+  ],
+  "after": 1221013,
+  "dim_after": [
+   1016,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/39d6fe5a49a241ce148d7531b12b1ec9/media-2926874@2x.png",
+  "before": 1221177,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1134547,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1134547
+   }
+  ]
+ },
+ {
+  "file": "attachments/dcedae989b297f2e9f4808e6bebae13a/media-3600008@2x.png",
+  "before": 1226841,
+  "dim_before": [
+   1442,
+   556
+  ],
+  "after": 671869,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1000043
+   },
+   {
+    "max_side": 1024,
+    "size": 671869
+   }
+  ]
+ },
+ {
+  "file": "attachments/8c62673d8ab81285bf31c6f7d365032b/media-2926888@2x.png",
+  "before": 1207065,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1138832,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1138832
+   }
+  ]
+ },
+ {
+  "file": "attachments/0c74ec2bb3474edfd6d7fdf8acdf96be/xcode-cloud-build-report@2x.png",
+  "before": 1228074,
+  "dim_before": [
+   2624,
+   1624
+  ],
+  "after": 976102,
+  "dim_after": [
+   1600,
+   989
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1840603
+   },
+   {
+    "max_side": 2000,
+    "size": 1486654
+   },
+   {
+    "max_side": 1600,
+    "size": 976102
+   }
+  ]
+ },
+ {
+  "file": "attachments/1ed1e6e2b884fbf653f4e9450e90bf1d/dynamic-3D-scene@2x.png",
+  "before": 1222769,
+  "dim_before": [
+   1840,
+   1000
+  ],
+  "after": 887432,
+  "dim_after": [
+   1280,
+   695
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1284426
+   },
+   {
+    "max_side": 1280,
+    "size": 887432
+   }
+  ]
+ },
+ {
+  "file": "attachments/e931ad39e497649ad78d424fcfc7206e/media-4266544@2x.png",
+  "before": 1200040,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1200040,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/ed3b81af16fdb5db1fee7472611adda6/coding-assistant-enter-symbols@2x.png",
+  "before": 1223147,
+  "dim_before": [
+   2624,
+   1424
+  ],
+  "after": 848356,
+  "dim_after": [
+   1600,
+   868
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1638457
+   },
+   {
+    "max_side": 2000,
+    "size": 1283653
+   },
+   {
+    "max_side": 1600,
+    "size": 848356
+   }
+  ]
+ },
+ {
+  "file": "attachments/3f5ca9a121883a0c6d6a19e69b4c7218/finding-and-refactoring-project-navigator-filter@2x.png",
+  "before": 1208263,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 942616,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1201141
+   },
+   {
+    "max_side": 2000,
+    "size": 942616
+   }
+  ]
+ },
+ {
+  "file": "attachments/d4106c34dd37613166b3a29b6530cd92/media-2926871@2x.png",
+  "before": 1198354,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1123373,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1123373
+   }
+  ]
+ },
+ {
+  "file": "attachments/e28011419e03c28b85437191b4877b88/media-4332167@2x.png",
+  "before": 1197789,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1197789,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/c902ea1cf11e2fa48287367f158132d3/configuring-editor-area@2x.png",
+  "before": 1215546,
+  "dim_before": [
+   2420,
+   1532
+  ],
+  "after": 724124,
+  "dim_after": [
+   1600,
+   1012
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1296841
+   },
+   {
+    "max_side": 2000,
+    "size": 1025483
+   },
+   {
+    "max_side": 1600,
+    "size": 724124
+   }
+  ]
+ },
+ {
+  "file": "attachments/e28011419e03c28b85437191b4877b88/media-4332169@2x.png",
+  "before": 1197789,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1197789,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/a962463f019041183abfcdeadfc95d06/media-3571051@2x.png",
+  "before": 1209163,
+  "dim_before": [
+   2388,
+   1668
+  ],
+  "after": 977712,
+  "dim_after": [
+   1280,
+   893
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 2376736
+   },
+   {
+    "max_side": 1600,
+    "size": 1532610
+   },
+   {
+    "max_side": 1280,
+    "size": 977712
+   }
+  ]
+ },
+ {
+  "file": "attachments/2d9d5a2ff59fd104ea49079aaa9bad59/media-4266435@2x.png",
+  "before": 1201339,
+  "dim_before": [
+   1379,
+   744
+  ],
+  "after": 789959,
+  "dim_after": [
+   1024,
+   552
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1177232
+   },
+   {
+    "max_side": 1024,
+    "size": 789959
+   }
+  ]
+ },
+ {
+  "file": "attachments/49b26a031a14cff0f673f1c62e1580e7/media-2926864@2x.png",
+  "before": 1193344,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1113894,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1113894
+   }
+  ]
+ },
+ {
+  "file": "attachments/1aeeb82cff8d3961d5d53c5bb1f7e2d9/media-2926875@2x.png",
+  "before": 1196504,
+  "dim_before": [
+   1048,
+   545
+  ],
+  "after": 1083909,
+  "dim_after": [
+   1024,
+   532
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1083909
+   }
+  ]
+ },
+ {
+  "file": "attachments/25b055a971adaf158512466aa26a0037/media-2926873@2x.png",
+  "before": 1187093,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1117753,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1117753
+   }
+  ]
+ },
+ {
+  "file": "attachments/5495337f65a37b1565eb6255688626ff/icon-composer-gradient-dots@2x.png",
+  "before": 1206412,
+  "dim_before": [
+   2598,
+   1370
+  ],
+  "after": 797146,
+  "dim_after": [
+   1600,
+   843
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1477177
+   },
+   {
+    "max_side": 2000,
+    "size": 1178370
+   },
+   {
+    "max_side": 1600,
+    "size": 797146
+   }
+  ]
+ },
+ {
+  "file": "attachments/243359bef711c87c345432eaf232433d/media-3598060@2x.png",
+  "before": 1186210,
+  "dim_before": [
+   1444,
+   970
+  ],
+  "after": 998501,
+  "dim_after": [
+   1280,
+   860
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 998501
+   }
+  ]
+ },
+ {
+  "file": "attachments/8626b81c01b9d410df9b8c80ddbeb324/xcode-hero@2x.png",
+  "before": 1184349,
+  "dim_before": [
+   1600,
+   989
+  ],
+  "after": 811637,
+  "dim_after": [
+   1280,
+   791
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 811637
+   }
+  ]
+ },
+ {
+  "file": "attachments/03cd5123ceb9be6b74b7c237a7218dd1/media-4334869@2x.png",
+  "before": 1181719,
+  "dim_before": [
+   1000,
+   617
+  ],
+  "after": 1181719,
+  "dim_after": [
+   1000,
+   617
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/e5661cabd2a7e401dbee035b7594de49/media-4266548@2x.png",
+  "before": 1168807,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1168807,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/d0db3fb4a02748b6612403ab73b40a08/gputools-metal-debugger-heatmap-execution-history@2x.png",
+  "before": 1184453,
+  "dim_before": [
+   1840,
+   1182
+  ],
+  "after": 715601,
+  "dim_after": [
+   1280,
+   822
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1029830
+   },
+   {
+    "max_side": 1280,
+    "size": 715601
+   }
+  ]
+ },
+ {
+  "file": "attachments/0dba5d52bde841370d4fff33e7a2a177/Creating-a-tvOS-media-catalog-app-in-SwiftUI-2@2x.png",
+  "before": 1183500,
+  "dim_before": [
+   1827,
+   576
+  ],
+  "after": 988008,
+  "dim_after": [
+   1600,
+   504
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 988008
+   }
+  ]
+ },
+ {
+  "file": "attachments/13a152f8fc708aac6250322275a18a72/media-2926860@2x.png",
+  "before": 1178539,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1101639,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1101639
+   }
+  ]
+ },
+ {
+  "file": "attachments/0350b6a017603e0bfac0b4bf10dd6ed9/media-2926884@2x.png",
+  "before": 1168203,
+  "dim_before": [
+   1048,
+   545
+  ],
+  "after": 1068544,
+  "dim_after": [
+   1024,
+   532
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1068544
+   }
+  ]
+ },
+ {
+  "file": "attachments/e3ef0f4db9e0eb675c326ad786aad5e3/LookAround-cl-01@2x.png",
+  "before": 1155413,
+  "dim_before": [
+   1024,
+   768
+  ],
+  "after": 1155413,
+  "dim_after": [
+   1024,
+   768
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/4b384ad5acffa1467a6d73cbd1fd1c5d/finding-and-refactoring-open-quickly@2x.png",
+  "before": 1181894,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 984856,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1253873
+   },
+   {
+    "max_side": 2000,
+    "size": 984856
+   }
+  ]
+ },
+ {
+  "file": "attachments/2ca9357918eb89b8fdb96cf9e324b12a/media-3335652@2x.png",
+  "before": 1163202,
+  "dim_before": [
+   1302,
+   1000
+  ],
+  "after": 664116,
+  "dim_after": [
+   1024,
+   786
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1068882
+   },
+   {
+    "max_side": 1024,
+    "size": 664116
+   }
+  ]
+ },
+ {
+  "file": "attachments/d950a7772e9d4bfbe652ccb68b3ddc58/xcode-window-areas@2x.png",
+  "before": 1161295,
+  "dim_before": [
+   2764,
+   1550
+  ],
+  "after": 804522,
+  "dim_after": [
+   2000,
+   1121
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1040000
+   },
+   {
+    "max_side": 2000,
+    "size": 804522
+   }
+  ]
+ },
+ {
+  "file": "attachments/abe75fc1944da9a87d2fdffd1c16544c/editing-source-annotate-code@2x.png",
+  "before": 1179677,
+  "dim_before": [
+   2424,
+   1304
+  ],
+  "after": 732442,
+  "dim_after": [
+   1600,
+   860
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1299474
+   },
+   {
+    "max_side": 2000,
+    "size": 1037906
+   },
+   {
+    "max_side": 1600,
+    "size": 732442
+   }
+  ]
+ },
+ {
+  "file": "attachments/62dd2397db3b9e2d0513de821cb6e54b/media-3599999@2x.png",
+  "before": 1152952,
+  "dim_before": [
+   1433,
+   556
+  ],
+  "after": 992004,
+  "dim_after": [
+   1280,
+   496
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 992004
+   }
+  ]
+ },
+ {
+  "file": "attachments/2e1d1326eafb74c9f6d1ca557da8d202/gputools-metal-debugger-essentials-heatmap@2x.png",
+  "before": 1160958,
+  "dim_before": [
+   1840,
+   1090
+  ],
+  "after": 700089,
+  "dim_after": [
+   1280,
+   758
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 1023847
+   },
+   {
+    "max_side": 1280,
+    "size": 700089
+   }
+  ]
+ },
+ {
+  "file": "attachments/f893fe28f346ef28ea79174c0a5623c7/configuring-a-multiplatform-app-target-3@2x.png",
+  "before": 1156843,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 924803,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1196911
+   },
+   {
+    "max_side": 2000,
+    "size": 924803
+   }
+  ]
+ },
+ {
+  "file": "attachments/3d79058eb77403da92385a6bdb239838/media-3599879@2x.png",
+  "before": 1140810,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1140810,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/9fde0c144909c9da0129fffda297698c/metal-hud-app@2x.png",
+  "before": 1146096,
+  "dim_before": [
+   1024,
+   795
+  ],
+  "after": 1146096,
+  "dim_after": [
+   1024,
+   795
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/6d86106a3790e52c54b299173a68ad8c/media-4407314@2x.png",
+  "before": 1140538,
+  "dim_before": [
+   1000,
+   617
+  ],
+  "after": 1140538,
+  "dim_after": [
+   1000,
+   617
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/ca999ea628e2f9bfd34ece670a1b2e92/capture-device-screenshot-and-video@2x.png",
+  "before": 1149134,
+  "dim_before": [
+   1550,
+   1080
+  ],
+  "after": 846643,
+  "dim_after": [
+   1280,
+   892
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 846643
+   }
+  ]
+ },
+ {
+  "file": "attachments/bb6ef3f8d62dddb3c52f3f6e0241987b/lod-with-function-constants-1-LODWithFunctionSpecialization@2x.png",
+  "before": 1138461,
+  "dim_before": [
+   1380,
+   915
+  ],
+  "after": 953657,
+  "dim_after": [
+   1280,
+   848
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 953657
+   }
+  ]
+ },
+ {
+  "file": "attachments/0c099d9a96ef9a75f69f05765eedeff5/finding-and-refactoring-find-navigator@2x.png",
+  "before": 1149355,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 905321,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1142077
+   },
+   {
+    "max_side": 2000,
+    "size": 905321
+   }
+  ]
+ },
+ {
+  "file": "attachments/35d3cf3428c2e2280c4a80e5df08c8c5/media-2926850@2x.png",
+  "before": 1135923,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1075806,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1075806
+   }
+  ]
+ },
+ {
+  "file": "attachments/ddb655ddd8af262670b93b990ec5226d/SwiftUI-FIIAS-resizeToFill-noClip@2x.png",
+  "before": 1123135,
+  "dim_before": [
+   748,
+   962
+  ],
+  "after": 1123135,
+  "dim_after": [
+   748,
+   962
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/3f81258dc8a8af10eb120c771fbb948b/finding-and-refactoring-find-bar@2x.png",
+  "before": 1141198,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 904349,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1153923
+   },
+   {
+    "max_side": 2000,
+    "size": 904349
+   }
+  ]
+ },
+ {
+  "file": "attachments/7a5d92ec8be8fd144426d65574dd3301/media-2943338@2x.png",
+  "before": 1124605,
+  "dim_before": [
+   1360,
+   828
+  ],
+  "after": 648711,
+  "dim_after": [
+   1024,
+   623
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1036184
+   },
+   {
+    "max_side": 1024,
+    "size": 648711
+   }
+  ]
+ },
+ {
+  "file": "attachments/2bbc660fdb93f2cdb69a4d827dcb2c8f/media-3582225@2x.png",
+  "before": 1122230,
+  "dim_before": [
+   1373,
+   556
+  ],
+  "after": 951659,
+  "dim_after": [
+   1280,
+   518
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 951659
+   }
+  ]
+ },
+ {
+  "file": "attachments/6c248a54cea79794d38a66c9c81372ac/media-2943339@2x.png",
+  "before": 1128252,
+  "dim_before": [
+   1360,
+   828
+  ],
+  "after": 648105,
+  "dim_after": [
+   1024,
+   623
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1037501
+   },
+   {
+    "max_side": 1024,
+    "size": 648105
+   }
+  ]
+ },
+ {
+  "file": "attachments/9f0ef10ff10c425bdb46888dafe56445/media-4266546@2x.png",
+  "before": 1106694,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1106694,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/97c4586d7483e9b6020cfb1707ab575a/creating-an-image-classifier-model-10@2x.png",
+  "before": 1118170,
+  "dim_before": [
+   1470,
+   1010
+  ],
+  "after": 656802,
+  "dim_after": [
+   1024,
+   703
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1013513
+   },
+   {
+    "max_side": 1024,
+    "size": 656802
+   }
+  ]
+ },
+ {
+  "file": "attachments/3ca2e98704a9ec01f1bc5c968908aaf7/UISplitViewController-3@2x.png",
+  "before": 1110681,
+  "dim_before": [
+   1450,
+   1152
+  ],
+  "after": 920319,
+  "dim_after": [
+   1280,
+   1017
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 920319
+   }
+  ]
+ },
+ {
+  "file": "attachments/8761d9c43fb16e406df83e47481f3aee/media-3598059@2x.png",
+  "before": 1108624,
+  "dim_before": [
+   1444,
+   970
+  ],
+  "after": 932591,
+  "dim_after": [
+   1280,
+   860
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 932591
+   }
+  ]
+ },
+ {
+  "file": "attachments/bd38636e320900ec285433b2d55bc788/media-2926872@2x.png",
+  "before": 1114126,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1052452,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1052452
+   }
+  ]
+ },
+ {
+  "file": "attachments/dc7ad8bd835b76a7a4439a1d5f7f95dd/media-2959650@2x.png",
+  "before": 1101581,
+  "dim_before": [
+   1006,
+   1024
+  ],
+  "after": 1101581,
+  "dim_after": [
+   1006,
+   1024
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/0b52d2772645d45035621de11df2e387/Filtering-and-sorting-persistent-data-1@2x.png",
+  "before": 1130361,
+  "dim_before": [
+   1179,
+   2556
+  ],
+  "after": 701478,
+  "dim_after": [
+   737,
+   1600
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1404102
+   },
+   {
+    "max_side": 2000,
+    "size": 1040501
+   },
+   {
+    "max_side": 1600,
+    "size": 701478
+   }
+  ]
+ },
+ {
+  "file": "attachments/a6550c1fa4b7508ab1e3178123985143/gputools-metal-debugger-sdp-zoom-pixel@2x.png",
+  "before": 1097975,
+  "dim_before": [
+   1024,
+   1016
+  ],
+  "after": 1097975,
+  "dim_after": [
+   1024,
+   1016
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/43797d1ff098854a34d7064df6353b5d/media-3599892@2x.png",
+  "before": 1096370,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1096370,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/02df49e79d715e136a5de3a9953b6eec/media-3600002@2x.png",
+  "before": 1084250,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1084250,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/7f79d65b99ec177329e6dc785fb9c98b/media-4331784@2x.png",
+  "before": 1084221,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1084221,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/b682127ea75207a119a0f6bf6d9e0cd4/media-4331785@2x.png",
+  "before": 1083858,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1083858,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/46cac0e7bbcdb6c0c381bc0b7fd2b2fd/media-4331787@2x.png",
+  "before": 1083966,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1083966,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/58c261a92b7058628ed326741cf7a6b7/media-4331783@2x.png",
+  "before": 1084171,
+  "dim_before": [
+   1000,
+   626
+  ],
+  "after": 1084171,
+  "dim_after": [
+   1000,
+   626
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/3c82a1096aa4cc8e3b6816f527824405/files-and-directories.png",
+  "before": 1085329,
+  "dim_before": [
+   1400,
+   1400
+  ],
+  "after": 949990,
+  "dim_after": [
+   1280,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 949990
+   }
+  ]
+ },
+ {
+  "file": "attachments/be2d96b843edbfe75cf06ef3f7f658ad/media-4266547@2x.png",
+  "before": 1072633,
+  "dim_before": [
+   1024,
+   767
+  ],
+  "after": 1072633,
+  "dim_after": [
+   1024,
+   767
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/e322cf90620195fa7da546a103559512/media-4225970@2x.png",
+  "before": 1116581,
+  "dim_before": [
+   3840,
+   2053
+  ],
+  "after": 838811,
+  "dim_after": [
+   1600,
+   855
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1399365
+   },
+   {
+    "max_side": 2000,
+    "size": 1150401
+   },
+   {
+    "max_side": 1600,
+    "size": 838811
+   }
+  ]
+ },
+ {
+  "file": "attachments/4c6b4266f6192a6dba4f4eb5fd7e0e96/media-3599891@2x.png",
+  "before": 1068398,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1068398,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/4de96080e62831a613fdcdf644b355a5/processor-trace-flame-graph@2x.png",
+  "before": 1080014,
+  "dim_before": [
+   1470,
+   876
+  ],
+  "after": 909288,
+  "dim_after": [
+   1280,
+   762
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 909288
+   }
+  ]
+ },
+ {
+  "file": "attachments/f2d0e554bc750f5c738c64ef629747cf/media-2926858@2x.png",
+  "before": 1077633,
+  "dim_before": [
+   1039,
+   535
+  ],
+  "after": 1001314,
+  "dim_after": [
+   1024,
+   527
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1001314
+   }
+  ]
+ },
+ {
+  "file": "attachments/e7736aef7eade0673b94b753fa406c5b/media-3599883@2x.png",
+  "before": 1058695,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1058695,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/9559185a8ee4cc31697ba5a67c59bc44/media-2926868@2x.png",
+  "before": 1068120,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 1068120,
+  "dim_after": [
+   1039,
+   538
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 1073776
+   }
+  ],
+  "reverted": true
+ },
+ {
+  "file": "attachments/a09e94421296c218eb1b4a72f924cf98/media-3599890@2x.png",
+  "before": 1062033,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1062033,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/a63ddec93d00a89c915e0e060285232d/media-2926859@2x.png",
+  "before": 1064004,
+  "dim_before": [
+   991,
+   535
+  ],
+  "after": 1064004,
+  "dim_after": [
+   991,
+   535
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/0f190b60d6f39645eb2cfc8f6c5ac2b6/media-2926887@2x.png",
+  "before": 1056419,
+  "dim_before": [
+   991,
+   535
+  ],
+  "after": 1056419,
+  "dim_after": [
+   991,
+   535
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/59407de53b479558caf20e5d720b04b3/creating-your-app-s-interface-with-swiftui-3@2x.png",
+  "before": 1081104,
+  "dim_before": [
+   2416,
+   1576
+  ],
+  "after": 983765,
+  "dim_after": [
+   2000,
+   1304
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1119275
+   },
+   {
+    "max_side": 2000,
+    "size": 983765
+   }
+  ]
+ },
+ {
+  "file": "attachments/e9689178f88b1fbb7ea979a037f7d30b/media-2926885@2x.png",
+  "before": 1058218,
+  "dim_before": [
+   1039,
+   535
+  ],
+  "after": 985082,
+  "dim_after": [
+   1024,
+   527
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 985082
+   }
+  ]
+ },
+ {
+  "file": "attachments/b28be59e19eba78c48c4b89b006553f7/shared-data.png",
+  "before": 1051333,
+  "dim_before": [
+   1400,
+   1400
+  ],
+  "after": 897063,
+  "dim_after": [
+   1280,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 897063
+   }
+  ]
+ },
+ {
+  "file": "attachments/656a4a13d0e38b294c0468de03a81e51/finding-and-refactoring-extract-method@2x.png",
+  "before": 1070041,
+  "dim_before": [
+   2624,
+   1524
+  ],
+  "after": 803561,
+  "dim_after": [
+   2000,
+   1161
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1042195
+   },
+   {
+    "max_side": 2000,
+    "size": 803561
+   }
+  ]
+ },
+ {
+  "file": "attachments/87298ec5e7ccabcd0d47239e3932d1de/media-2926852@2x.png",
+  "before": 1048089,
+  "dim_before": [
+   991,
+   532
+  ],
+  "after": 1048089,
+  "dim_after": [
+   991,
+   532
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/947a5c67182515af315c3b9f0b10482a/multiview-video-content-selection-view@2x.png",
+  "before": 1050611,
+  "dim_before": [
+   1088,
+   692
+  ],
+  "after": 939917,
+  "dim_after": [
+   1024,
+   651
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 939917
+   }
+  ]
+ },
+ {
+  "file": "attachments/890fd9a93dea7a610196251acc1951af/media-3599888@2x.png",
+  "before": 1047367,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1047367,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/e0ce932cdaeac8afdbeb8d36974c762e/combining-code-changes-in-a-source-control-repository-2@2x.png",
+  "before": 1066746,
+  "dim_before": [
+   2480,
+   1456
+  ],
+  "after": 921242,
+  "dim_after": [
+   2000,
+   1174
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1134406
+   },
+   {
+    "max_side": 2000,
+    "size": 921242
+   }
+  ]
+ },
+ {
+  "file": "attachments/ba9b2b0b4658e526cc5879ec352c051a/media-3599882@2x.png",
+  "before": 1041094,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1041094,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/f3e9bc19cd8ae3a39bbc19bdb411ec5e/media-3582221@2x.png",
+  "before": 1048516,
+  "dim_before": [
+   1203,
+   556
+  ],
+  "after": 745879,
+  "dim_after": [
+   1024,
+   473
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 745879
+   }
+  ]
+ },
+ {
+  "file": "attachments/92929c16bb06f5eb8416c9742796684e/storekit-testing-editor@2x.png",
+  "before": 1051292,
+  "dim_before": [
+   2400,
+   1758
+  ],
+  "after": 748983,
+  "dim_after": [
+   1600,
+   1172
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 1135150
+   },
+   {
+    "max_side": 1600,
+    "size": 748983
+   }
+  ]
+ },
+ {
+  "file": "attachments/7a8215c6fe7d69222d5d869b01ef7f46/media-4195196@2x.png",
+  "before": 1045492,
+  "dim_before": [
+   1478,
+   1138
+  ],
+  "after": 829431,
+  "dim_after": [
+   1280,
+   985
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 829431
+   }
+  ]
+ },
+ {
+  "file": "attachments/0dbd0da7daa97279ebedb5cf5a2bf419/media-3624695@2x.png",
+  "before": 1038791,
+  "dim_before": [
+   1420,
+   532
+  ],
+  "after": 856346,
+  "dim_after": [
+   1280,
+   479
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 856346
+   }
+  ]
+ },
+ {
+  "file": "attachments/cf813fd68f2c3089a208db0f5df68e23/media-3599880@2x.png",
+  "before": 1026148,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1026148,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/ffa7ddc4143cbf0c48b7280d85037a82/metal-hud-report@2x.png",
+  "before": 1035712,
+  "dim_before": [
+   1840,
+   1066
+  ],
+  "after": 834502,
+  "dim_after": [
+   1600,
+   927
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 834502
+   }
+  ]
+ },
+ {
+  "file": "attachments/630eeabf08b3e4870829c0206027de09/diagnosing-performance-issues-early-4@2x.png",
+  "before": 1027635,
+  "dim_before": [
+   3024,
+   2024
+  ],
+  "after": 853835,
+  "dim_after": [
+   2400,
+   1606
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 853835
+   }
+  ]
+ },
+ {
+  "file": "attachments/bdb119826be31e73cd9a2f7e133a0e0d/gputools-instruments-game-performance-cpu-blocked@2x.png",
+  "before": 1025256,
+  "dim_before": [
+   1840,
+   748
+  ],
+  "after": 870115,
+  "dim_after": [
+   1600,
+   650
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 870115
+   }
+  ]
+ },
+ {
+  "file": "attachments/7b13fcda86924d353836b16944918927/media-3030183@2x.png",
+  "before": 1021608,
+  "dim_before": [
+   1444,
+   532
+  ],
+  "after": 805560,
+  "dim_after": [
+   1280,
+   471
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 805560
+   }
+  ]
+ },
+ {
+  "file": "attachments/ebaa8ae6231ff7c7187ac51fe51256c8/creating-an-image-classifier-model-13@2x.png",
+  "before": 1031363,
+  "dim_before": [
+   1470,
+   1012
+  ],
+  "after": 703399,
+  "dim_after": [
+   1024,
+   704
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 1077295
+   },
+   {
+    "max_side": 1024,
+    "size": 703399
+   }
+  ]
+ },
+ {
+  "file": "attachments/7c1cce7cc698e5bb56963752abd3f0c2/inspector-example-usages@2x.png",
+  "before": 1031611,
+  "dim_before": [
+   2668,
+   1314
+  ],
+  "after": 808380,
+  "dim_after": [
+   2000,
+   985
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1069064
+   },
+   {
+    "max_side": 2000,
+    "size": 808380
+   }
+  ]
+ },
+ {
+  "file": "attachments/fb89b34e882c8f37021b83d391b4358a/media-3599998@2x.png",
+  "before": 1019707,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1019707,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/ae9c49b06b4997d465af3c19b875ba8b/media-3599881@2x.png",
+  "before": 1019028,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1019028,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/1ea9b42ad35ff3923b3b954b42f05416/auto-complete@2x.png",
+  "before": 1027546,
+  "dim_before": [
+   2424,
+   1304
+  ],
+  "after": 923800,
+  "dim_after": [
+   2000,
+   1076
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1143738
+   },
+   {
+    "max_side": 2000,
+    "size": 923800
+   }
+  ]
+ },
+ {
+  "file": "attachments/1dba8c201e4d0b5e383e1fa0c8a1e99a/media-2926856@2x.png",
+  "before": 1007939,
+  "dim_before": [
+   991,
+   532
+  ],
+  "after": 1007939,
+  "dim_after": [
+   991,
+   532
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/124a2ff66bad5048f726f98e2b95046e/insert-localizable-symbols-in-code@2x.png",
+  "before": 1021527,
+  "dim_before": [
+   2424,
+   1304
+  ],
+  "after": 908372,
+  "dim_after": [
+   2000,
+   1076
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1125538
+   },
+   {
+    "max_side": 2000,
+    "size": 908372
+   }
+  ]
+ },
+ {
+  "file": "attachments/106b0b4066ee31e3597b3a6f0c2eb7f9/media-4332166@2x.png",
+  "before": 1020171,
+  "dim_before": [
+   1000,
+   1313
+  ],
+  "after": 955056,
+  "dim_after": [
+   975,
+   1280
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 955056
+   }
+  ]
+ },
+ {
+  "file": "attachments/6b2c1469b6b8526d2c542d843ddd0a74/media-2926853@2x.png",
+  "before": 1013506,
+  "dim_before": [
+   1039,
+   538
+  ],
+  "after": 949594,
+  "dim_after": [
+   1024,
+   530
+  ],
+  "steps": [
+   {
+    "max_side": 1024,
+    "size": 949594
+   }
+  ]
+ },
+ {
+  "file": "attachments/677c185016ebecdd1c2a9aec138aa828/SwiftUI-FIIAS-resizeToFill-clipped@2x.png",
+  "before": 1006973,
+  "dim_before": [
+   748,
+   962
+  ],
+  "after": 1006973,
+  "dim_after": [
+   748,
+   962
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/913bd66038df2ae6ffda53c904455ae1/sk-pe-editor@2x.png",
+  "before": 1011927,
+  "dim_before": [
+   1995,
+   938
+  ],
+  "after": 771974,
+  "dim_after": [
+   1600,
+   752
+  ],
+  "steps": [
+   {
+    "max_side": 1600,
+    "size": 771974
+   }
+  ]
+ },
+ {
+  "file": "attachments/334a9544f874ff65b346cc4020b154c2/media-3599887@2x.png",
+  "before": 1003820,
+  "dim_before": [
+   1024,
+   394
+  ],
+  "after": 1003820,
+  "dim_after": [
+   1024,
+   394
+  ],
+  "steps": [],
+  "reverted": true
+ },
+ {
+  "file": "attachments/b8ad8666e41c9d807777fb0511420cc7/media-3546397@2x.png",
+  "before": 1007669,
+  "dim_before": [
+   1338,
+   1004
+  ],
+  "after": 972855,
+  "dim_after": [
+   1280,
+   960
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 972855
+   }
+  ]
+ },
+ {
+  "file": "attachments/08b7176c0b276a59f08d4836e5f83173/fix-it-correction@2x.png",
+  "before": 1017759,
+  "dim_before": [
+   2424,
+   1304
+  ],
+  "after": 908682,
+  "dim_after": [
+   2000,
+   1076
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1127677
+   },
+   {
+    "max_side": 2000,
+    "size": 908682
+   }
+  ]
+ },
+ {
+  "file": "attachments/61b5ca67c0c86f92b216d045d8ac8690/running-playgrounds-generate-playground@2x.png",
+  "before": 1011414,
+  "dim_before": [
+   2092,
+   1614
+  ],
+  "after": 711033,
+  "dim_after": [
+   1600,
+   1234
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 1009535
+   },
+   {
+    "max_side": 1600,
+    "size": 711033
+   }
+  ]
+ },
+ {
+  "file": "attachments/8469736ee2a49f0c1638d7780cfd358a/Landmarks-Building-an-app-with-Liquid-Glass-4@2x.png",
+  "before": 1002636,
+  "dim_before": [
+   1574,
+   328
+  ],
+  "after": 663193,
+  "dim_after": [
+   1280,
+   266
+  ],
+  "steps": [
+   {
+    "max_side": 1280,
+    "size": 663193
+   }
+  ]
+ },
+ {
+  "file": "attachments/4dc03154ae06c89dcfd7fc80e35e1b77/editing-source-code-completion@2x.png",
+  "before": 1003987,
+  "dim_before": [
+   2424,
+   1304
+  ],
+  "after": 913927,
+  "dim_after": [
+   2000,
+   1076
+  ],
+  "steps": [
+   {
+    "max_side": 2400,
+    "size": 1125193
+   },
+   {
+    "max_side": 2000,
+    "size": 913927
+   }
+  ]
+ },
+ {
+  "file": "attachments/7f83e09c032cbc1e776922609f55362a/creating-an-image-classifier-model-12@2x.png",
+  "before": 1004016,
+  "dim_before": [
+   2284,
+   1570
+  ],
+  "after": 972908,
+  "dim_after": [
+   1280,
+   879
+  ],
+  "steps": [
+   {
+    "max_side": 2000,
+    "size": 1145567
+   },
+   {
+    "max_side": 1600,
+    "size": 1443764
+   },
+   {
+    "max_side": 1280,
+    "size": 972908
+   }
+  ]
+ }
+]

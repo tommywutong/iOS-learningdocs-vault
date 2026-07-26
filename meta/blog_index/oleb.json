@@ -1,0 +1,1541 @@
+{
+ "key": "oleb",
+ "count": 307,
+ "articles": [
+  {
+   "url": "https://oleb.net/blog/2018/06/dynamic-member-lookup/",
+   "title": "Thoughts on @dynamicMemberLookup",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/06/enumerating-enum-cases/",
+   "title": "Enumerating enum cases in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/06/random-numbers-in-swift/",
+   "title": "Random numbers in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/06/whats-new-in-swift-4-2-playground/",
+   "title": "Playground: What’s new in Swift 4.2",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/05/how-i-do-analytics/",
+   "title": "How I do analytics",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/05/app-architecture-book/",
+   "title": "App Architecture book",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/04/swift-4-1/",
+   "title": "Swift 4.1",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/03/making-illegal-states-unrepresentable/",
+   "title": "Making illegal states unrepresentable",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/03/core-data-sqlite-backup/",
+   "title": "How to make a copy of a Core Data SQLite database",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/03/temp-file-helper/",
+   "title": "A helper for working with temporary files in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/02/xctkvoexpectation-swift-keypaths/",
+   "title": "XCTKVOExpectation for native Swift key paths",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/02/performandwait/",
+   "title": "A better NSManagedObjectContext​.performAndWait",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/01/superduper-last-backup-timestamp/",
+   "title": "A script to save the last backup date in SuperDuper",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2018/01/notificationcenter-removeobserver/",
+   "title": "Do you have to manually unregister block-based NotificationCenter observers?",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/12/swift-imports-fixed-size-c-arrays-as-tuples/",
+   "title": "Swift imports fixed-size C arrays as tuples",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/12/fixed-size-arrays/",
+   "title": "A hack for fixed-size arrays in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/12/importing-c-library-into-swift/",
+   "title": "How to import a C library in Swift using the Swift Package Manager",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/12/dictionary-codable-array/",
+   "title": "Why Dictionary sometimes encodes itself as an array",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/11/swift-4-strings/",
+   "title": "Strings in Swift 4",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/11/advanced-swift-3/",
+   "title": "Advanced Swift, third edition",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/10/chained-foreach/",
+   "title": "Injecting side effects into chained Sequence operations",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/07/mental-models-in-api-design/",
+   "title": "Mental models in API design",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/07/xcode-9-text-macros/",
+   "title": "Customizing the file header comment and other text macros in Xcode 9",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/06/chris-lattner-wwdc-swift-panel/",
+   "title": "Chris Lattner on the Realm WWDC 2017 Swift panel",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/06/optimizing-collections-book/",
+   "title": "Optimizing Collections",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/05/whats-new-in-swift-4-playground/",
+   "title": "Playground: What’s new in Swift 4",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/04/swift-3-1-package-manager-deployment-target/",
+   "title": "Swift Package Manager macOS deployment target override",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/03/testing-swift-packages-on-linux/",
+   "title": "How to test a Swift package on Linux using Docker",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/03/keeping-xctest-in-sync/",
+   "title": "Keeping XCTest in sync on Linux",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/03/swift-themed-releases/",
+   "title": "Swift releases have themes",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/03/dump-as-equatable-safeguard/",
+   "title": "Safeguarding Equatable implementations",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/03/enums-equatable-exhaustiveness/",
+   "title": "Enums, Equatable, and exhaustiveness",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/02/sorted-array/",
+   "title": "A Sorted Array Implementation in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/02/why-is-string-characterview-not-a-mutablecollection/",
+   "title": "Why String.CharacterView is not a MutableCollection",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/02/why-is-dictionary-not-a-mutablecollection/",
+   "title": "Being a Mutable Collection is not Sufficient to be a MutableCollection",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/01/fun-with-string-interpolation/",
+   "title": "Fun with String Interpolation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/01/result-init-helper/",
+   "title": "Working with Asynchronous Objective-C APIs in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2017/01/dictionary-key-paths/",
+   "title": "Accessing Dictionaries with Key Paths",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/12/protocols-have-semantics/",
+   "title": "Protocols are more than Bags of Syntax",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/12/emoji-4-0/",
+   "title": "Emoji 4.0",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/12/optionals-string-interpolation/",
+   "title": "Optionals and String Interpolation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/11/rawrepresentable/",
+   "title": "The RawRepresentable Protocol in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/10/swift-stdlib-source/",
+   "title": "How to Read the Swift Standard Library Source",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/10/swift-array-of-c-strings/",
+   "title": "Passing an Array of Strings from Swift to C",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/10/generic-range-algorithms/",
+   "title": "Generic Range Algorithms",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/10/optional-non-escaping-closures/",
+   "title": "Optional Non-Escaping Closures",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/10/advanced-swift-2/",
+   "title": "Advanced Swift, Second Edition",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/09/playground-print-hook/",
+   "title": "_playgroundPrintHook",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/09/swift-option-sets/",
+   "title": "Option Sets in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/09/collection-associated-types/",
+   "title": "What’s in a Collection?",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/09/swift-3-ranges/",
+   "title": "Ranges in Swift 3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/08/swift-3-strings/",
+   "title": "Strings in Swift 3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/08/measurements-and-units-with-phantom-types/",
+   "title": "Measurements and Units with Phantom Types",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/07/unitsquare/",
+   "title": "Measurements and Units, Part 3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/07/unitproduct/",
+   "title": "Putting the Physics Into Measurements and Units",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/07/measurements-and-units/",
+   "title": "Measurements and Units in Foundation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/wwdc/",
+   "title": "WWDC 2016 Retrospective",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/swift-3/",
+   "title": "Swift 3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/swift-talk/",
+   "title": "Swift Talk",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/daniel-steinberg-swift-time-lapse/",
+   "title": "Daniel Steinberg: A Time Lapse Look at Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/ellen-shapiro-ui-testing/",
+   "title": "Ellen Shapiro: Outside In – Using UI Tests to Start Improving Your App",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/06/lily-ballard-swift-dispatch/",
+   "title": "Method Dispatch in Protocol Extensions",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/05/uikonf-bike-tour/",
+   "title": "The UIKonf Bike Tour",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/05/default-arguments-in-protocols/",
+   "title": "Protocol-Oriented Logging, or: Default Arguments in Swift Protocols",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/04/apple-watch-thoughts/",
+   "title": "Apple Watch, One Year In",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/04/apple-tv-thoughts/",
+   "title": "Thoughts on the Apple TV After Six Months",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/03/fake-ads-as-a-business-model/",
+   "title": "Fake Ads as a Business Model",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/03/ios-camera-app-pauses-audio-playback/",
+   "title": "Camera.app Pauses Audio Playback",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/03/advanced-swift/",
+   "title": "Advanced Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/02/collaborative-writing-on-github/",
+   "title": "Collaborative Writing on GitHub",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2016/01/icu-text-transforms/",
+   "title": "ICU Text Transforms in Foundation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/12/lazy-properties-in-structs-swift/",
+   "title": "Lazy Properties in Structs",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/12/core-data-book/",
+   "title": "The Core Data Book",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/11/rss-feed-item-deletions/",
+   "title": "Deleting RSS Feed Items",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/10/iphone-6s-vs-6-plus/",
+   "title": "You Can Rationalize Anything",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/09/more-pattern-matching-examples/",
+   "title": "More Pattern Matching Examples",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/09/swift-ranges-and-intervals/",
+   "title": "Ranges and Intervals in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/09/swift-pattern-matching/",
+   "title": "Pattern Matching in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/08/how-to-use-updateconstraints/",
+   "title": "How to Use updateConstraints",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/08/swift-compiler-diagnostics/",
+   "title": "Swift Compiler Diagnostics",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/08/is-it-immoral-to-not-block-ads/",
+   "title": "Is it Immoral to not Block Ads?",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/07/swift-type-system/",
+   "title": "Swift’s Type System",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/uikonf-2015-talks/",
+   "title": "UIKonf 2015",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/c-callbacks-in-swift/",
+   "title": "C Callbacks in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/redesign/",
+   "title": "Redesign",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/wwdc-2015/",
+   "title": "WWDC 2015",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/workflow-accessibility-apple-design-awards/",
+   "title": "Accessibility at the Apple Design Awards",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/swift-standard-library-playground/",
+   "title": "Swift Standard Library.playground",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/06/public-library-web/",
+   "title": "The Public Library and the Web",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/05/thoughts-on-google/",
+   "title": "Thoughts on Google",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/02/truncated-text/",
+   "title": "Truncated Text in Mobile UIs",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/02/minus-sign/",
+   "title": "The Minus Sign",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/01/browser-window-management/",
+   "title": "A Proposal for Better Browser Window Management",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2015/01/code-vs-poetry/",
+   "title": "Code vs. Poetry",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/12/pixel-peeping-followup/",
+   "title": "iPhone 6 Plus Pixel Peeping Follow-Up",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/12/programming-languages-mooc/",
+   "title": "Dan Grossman’s Programming Languages Course",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/12/apple-out-of-touch/",
+   "title": "Out of Touch",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/11/iphone-6-plus-screen/",
+   "title": "iPhone 6 Plus Pixel Peeping",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/11/lisa-melton-a-decade-at-the-fruit-company/",
+   "title": "Lisa Melton: A Decade at the Fruit Company",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/10/podcasts/",
+   "title": "Podcasts I Like",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/10/backblaze/",
+   "title": "Backblaze Review",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/09/work-habits-at-apple/",
+   "title": "Work Habits at Apple",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/09/iphone-6-plus-first-impressions/",
+   "title": "iPhone 6 Plus First Impressions",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/08/replacing-launch-images-with-storyboards/",
+   "title": "Replacing Launch Images With Storyboards",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/07/eu-vat-changes-2015/",
+   "title": "Value-Added Tax",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/07/swift-instance-methods-curried-functions/",
+   "title": "Instance Methods are “Curried” Functions in Swift",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/07/swift-strings-updated/",
+   "title": "Strings in Swift Updated",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/07/uikonf-2014-talks/",
+   "title": "UIKonf 2014 Talks",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/07/swift-strings/",
+   "title": "Strings in Swift 1",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/keep-it-simple-the-early-design-years-of-apple/",
+   "title": "Keep it Simple: The Early Design Years of Apple",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/one-for-the-unicode-nerds/",
+   "title": "One for the Unicode Nerds",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/apples-take-on-app-architecture/",
+   "title": "Apple’s Take on App Architecture",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/the-power-of-ios8/",
+   "title": "The Power of iOS 8",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/core-data-concurrency-debugging/",
+   "title": "Core Data Concurrency Debugging",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/swift-in-coderunner/",
+   "title": "Swift Support in CodeRunner",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/apple-app-analytics-privacy/",
+   "title": "Apple on App Analytics and Privacy",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/testflight-beta-builds-app-review/",
+   "title": "Clarification on Beta App Review",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/06/apple-lifted-beta-nda/",
+   "title": "Apple Has (Partly) Lifted the NDA for Beta Releases",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/05/how-dropbox-uses-cplusplus-cross-platform-development/",
+   "title": "How Dropbox Uses C++ for Cross-Platform iOS and Android Development",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/05/scrollviews-inside-scrollviews/",
+   "title": "Scroll Views Inside Scroll Views",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/05/scrollview-inertia-bouncing-rubberbanding/",
+   "title": "Inertia, Bouncing, and Rubber-Banding",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/05/parallax-scrolling-collectionview/",
+   "title": "Parallax Scrolling",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/04/understanding-uiscrollview/",
+   "title": "Understanding UIScrollView",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/03/nsprogress/",
+   "title": "NSProgress",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/03/how-i-learned-to-stop-worrying-and-love-auto-layout/",
+   "title": "How I Learned to Stop Worrying and Love Cocoa Auto Layout",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/02/nsuserdefaults-handling-default-values/",
+   "title": "Handling Default Values With NSUserDefaults",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/02/alarm-clock-apps-ios/",
+   "title": "How Do Alarm Clock Apps Work on iOS?",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/02/objc-io-issue-9/",
+   "title": "objc.io #9",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/geocoding-automator-service/",
+   "title": "A Geocoding Service for OS X",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/sunlit-gives-you-control-over-your-data/",
+   "title": "Sunlit Gives You Control Over Your Data",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/storehouse/",
+   "title": "Storehouse",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/copyrightable-apis-not-a-good-thing/",
+   "title": "Copyrightable APIs Are Not a Good Thing",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/preserving-rss-feed-read-status/",
+   "title": "Preserving the Read Status of Your RSS Feed When Switching Publishing Systems",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2014/01/my-favorite-tech-blogs/",
+   "title": "My Favorite Tech Blogs",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/12/my-favorite-cocoa-programming-blogs/",
+   "title": "My Favorite Cocoa Programming Blogs",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/12/app-store-rules-on-data-collection-and-privacy/",
+   "title": "Apple's App Store Rules on Data Collection and Privacy",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/12/apples-inter-app-sharing-dilemma/",
+   "title": "Apple's Inter-App Sharing Dilemma",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/11/androids-storage-access-framework/",
+   "title": "Android's Storage Access Framework",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/11/crashplan-experience/",
+   "title": "My Experience With CrashPlan",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/10/choosing-a-macbook-pro/",
+   "title": "Choosing a MacBook Pro",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/10/mac-and-i-ios7-unter-der-haube/",
+   "title": "Mac & i: iOS 7 unter der Haube",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/10/rob-rix-postmodern-programming/",
+   "title": "Rob Rix on Postmodern Programming",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/10/uikonf-2014/",
+   "title": "UIKonf 2014",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/08/objc-io-issue-3/",
+   "title": "objc.io #3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/07/parallelize-for-loops-gcd-dispatch_apply/",
+   "title": "Parallelize Your for Loops With GCD",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/07/nsarray-binary-search/",
+   "title": "NSArray Binary Search",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/07/nsurlconnection-api-design/",
+   "title": "On NSURLConnection API Design",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/05/xcode-project-templates-difference/",
+   "title": "Differences Between Xcode Project Templates for iOS Apps",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/04/starting-bluetooth-low-energy-development-ios/",
+   "title": "Starting With Bluetooth Low Energy Development on iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/04/compiler-warnings-for-objective-c-developers/",
+   "title": "Compiler Warnings for Objective-C Developers",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/04/logitech-tablet-keyboard-review/",
+   "title": "Logitech Tablet Keyboard Review",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/03/things-you-need-to-know-about-cocoa-autolayout/",
+   "title": "10 Things You Need to Know About Cocoa Auto Layout",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/nsfetchedresultscontroller-documentation-bug/",
+   "title": "There is a Bug in the NSFetchedResultsControllerDelegate Documentation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/automating-strings-extraction-from-storyboards-for-localization/",
+   "title": "Automating Strings Extraction From Storyboards for Localization",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/passbook-tutorial/",
+   "title": "iOS Passbook Tutorial",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/building-blocks-based-object-system-in-objective-c/",
+   "title": "Building a Blocks-Based Object System in (Objective-)C",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/ios-apps-disable-sleep-timer-long-running-tasks/",
+   "title": "iOS Apps: Disable the Sleep Timer for Long-Running Tasks",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/how-to-undocumented-ios-api-diffs/",
+   "title": "How to Obtain Undocumented API Diffs Between iOS Versions",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/02/new-undocumented-apis-ios-6-1/",
+   "title": "New Undocumented APIs in iOS 6.1",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2013/01/mac-sandboxing-location-services-outgoing-connections/",
+   "title": "Mac Sandboxing: Location Services Access Requires Outgoing Connections",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/12/accessing-pretty-printing-cgpath-elements/",
+   "title": "Accessing and Pretty-Printing the Elements of a CGPath",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/11/prevent-caanimation-snap-back/",
+   "title": "Prevent Layers From Snapping Back to Original Values When Using Explicit CAAnimations",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/10/update-on-remote-view-controllers/",
+   "title": "Update on Remote View Controllers",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/10/more-on-remote-view-controllers/",
+   "title": "More on Remote View Controllers",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/10/remote-view-controllers-in-ios-6/",
+   "title": "Remote View Controllers in iOS 6",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/the-state-of-sharing-in-ios-6/",
+   "title": "The State of Sharing in iOS 6",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/learnable-programming/",
+   "title": "Learnable Programming",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/nshipster-on-uicollectionview/",
+   "title": "NSHipster on UICollectionView",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/uicollectionview/",
+   "title": "UICollectionView",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/udid-apis-in-ios-6/",
+   "title": "UDID Replacement APIs in iOS 6",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/utf-8/",
+   "title": "UTF-8",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/do-not-track-plus/",
+   "title": "Do Not Track Plus",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/09/ios-5-programming-pushing-the-limits/",
+   "title": "Book Review: iOS 5 Programming – Pushing the Limits",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/08/on-estimating/",
+   "title": "On Estimating",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/08/please-dont-use-url-shorteners-on-twitter/",
+   "title": "Please Don't Use URL Shorteners on Twitter",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/08/test-driven-ios-development/",
+   "title": "Book Review: Test-Driven iOS Development",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/08/insanely-simple/",
+   "title": "Book Review: Insanely Simple",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/07/ios-hackers-handbook/",
+   "title": "Book Review: iOS Hacker's Handbook",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/07/qualcomm-gimbal-sdk/",
+   "title": "“Enlightened, Relevant, Context-Rich Push Notifications”",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/07/wwdc-videos-2004-2008/",
+   "title": "WWDC Videos 2004-2008",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/07/pythonista/",
+   "title": "Pythonista",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/07/the-case-for-selective-restore-from-icloud-backups/",
+   "title": "The Case for Selective Restore from iCloud Backups",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/progress/",
+   "title": "Progress",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/obslider-now-available-on-cocoapods/",
+   "title": "OBSlider Now Available on CocoaPods",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/in-praise-of-google-maps/",
+   "title": "In Praise of Google Maps",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/steve-jobs-confirmed-native-iphone-apps-in-2007/",
+   "title": "Steve Jobs Confirmed Native iPhone Apps in 2007",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/steve-jobs-on-native-apps/",
+   "title": "Steve Jobs on Native Apps",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/06/steve-jobs-on-the-file-system/",
+   "title": "Steve Jobs on the File System",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/05/creating-and-deleting-calendars-in-ios/",
+   "title": "Creating and Deleting Calendars in iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/05/15-inch-mbp-mid-2010-crashing-to-black-screen/",
+   "title": "15-inch MacBook Pro (mid-2010) Crashing to Black Screen",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/checking-code-signing-and-sandboxing-status-in-code/",
+   "title": "Checking Code Signing and Sandboxing Status in Code",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/passing-data-between-view-controllers/",
+   "title": "Passing Data Between View Controllers",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/what-ios-should-learn-from-android-and-windows-8/",
+   "title": "What iOS Should Learn From Android and Windows 8",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/share-sheets-only-half-way-there/",
+   "title": "Share Sheets: Only Half Way There",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/app-launch-sequence-ios-revisited/",
+   "title": "Revisiting the App Launch Sequence on iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/cgpath-hit-testing/",
+   "title": "CGPath Hit Testing",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/02/schulung-ios-entwicklung-einsteiger-maerz-2012/",
+   "title": "Schulung iOS-Entwicklung für Einsteiger im März 2012",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/01/docsets-app-for-ios/",
+   "title": "DocSets App for iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/01/new-videos-at-developer-apple-com/",
+   "title": "New Videos at developer.apple.com",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/01/gesture-recognition-on-ios-with-attention-to-detail/",
+   "title": "Gesture Recognition on iOS With Attention to Detail",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/01/initWithNibName-bundle-breaks-encapsulation/",
+   "title": "initWithNibName:bundle: Breaks Encapsulation",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2012/01/ios-and-mac-development-link-roundup-december-2011/",
+   "title": "iOS and Mac Development Link Roundup: December 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/12/uirequireddevicecapabilities-cannot-be-changed-in-app-updates/",
+   "title": "UIRequiredDeviceCapabilities Cannot Be Changed in App Updates",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/12/diamond-dash-for-ios/",
+   "title": "Diamond Dash for iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/12/tutorial-how-to-sort-and-group-uitableview-by-date/",
+   "title": "Tutorial: How to Sort and Group UITableView by Date",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/12/how-to-restrict-your-ios-app-to-modern-hardware/",
+   "title": "How to Restrict Your iOS App to Modern Hardware",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/ios-and-mac-development-link-roundup-november-2011/",
+   "title": "iOS and Mac Development Link Roundup: November 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/date-and-time-in-cocoa-cheat-sheet/",
+   "title": "Date and Time Handling in Cocoa Cheat Sheet",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/working-with-date-and-time-in-cocoa-part-2/",
+   "title": "Working with Date and Time in Cocoa (Part 2)",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/working-with-date-and-time-in-cocoa-part-1/",
+   "title": "Working with Date and Time in Cocoa (Part 1)",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/ios5-tech-talk-michael-jurewitz-on-performance-measurement/",
+   "title": "iOS 5 Tech Talk: Michael Jurewitz on Performance Measurement",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/ios5-tech-talk-allan-schaffer-opengl-es-glkit/",
+   "title": "iOS 5 Tech Talk: Allan Schaffer on OpenGL ES with GLKit",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/ios5-tech-talk-michael-jurewitz-on-icloud-storage/",
+   "title": "iOS 5 Tech Talk: Michael Jurewitz on iCloud Storage",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/11/ios5-tech-talk-mark-kawano-on-ios-user-interface-design/",
+   "title": "iOS 5 Tech Talk: Mark Kawano on iOS User Interface Design",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/10/coderunner/",
+   "title": "CodeRunner",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/09/accessing-image-properties-without-loading-the-image-into-memory/",
+   "title": "Accessing Image Properties Without Loading the Image Into Memory",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/09/how-to-replace-the-udid/",
+   "title": "How to Replace the UDID",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/08/ios-and-mac-development-link-roundup-august-2011/",
+   "title": "iOS and Mac Development Link Roundup: August 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/08/whats-new-for-developers-in-lion-part-3/",
+   "title": "What's New for Developers in Mac OS X Lion (Part 3)",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/08/whats-new-for-developers-in-lion-part-2/",
+   "title": "What's New for Developers in Mac OS X Lion (Part 2)",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/08/ios-and-mac-development-link-roundup-july-2011/",
+   "title": "iOS and Mac Development Link Roundup: July 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/whats-new-for-developers-in-lion-part-1/",
+   "title": "What's New for Developers in Mac OS X Lion (Part 1)",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/just-when-you-think-things-couldnt-get-any-worse/",
+   "title": "“Just when you think things couldn't get any worse”",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/apple-changed-app-store-prices/",
+   "title": "Apple Changed App Store Prices",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/thoughts-on-google-plus-vs-twitter/",
+   "title": "Thoughts on Google+ vs. Twitter",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/working-for-the-empire/",
+   "title": "Working for the Empire",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/07/ios-and-mac-development-link-roundup-june-2011/",
+   "title": "iOS and Mac Development Link Roundup: June 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/iphone-im-ausland-gekauft-umsatzsteuer-verguetung/",
+   "title": "iPhone 4 im Ausland gekauft? Hol dir die Umsatzsteuer zurück",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/app-launch-sequence-ios/",
+   "title": "The App Launch Sequence on iOS",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/wwdc-2011-session-videos-now-available/",
+   "title": "WWDC 2011 Sessions Videos Now Available",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/creating-outlets-and-actions-via-drag-and-drop-in-xcode-4/",
+   "title": "Creating Outlets and Actions Via Drag and Drop in Xcode 4",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/code-signing-changes-in-xcode-4/",
+   "title": "Code Signing Changes in Xcode 4",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/book-review-learn-iphone-ipad-cocos2d-game-development/",
+   "title": "Book Review: Learn iPhone and iPad cocos2d Game Development",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/how-developers-should-handle-stuff-apple-introduced-at-wwdc/",
+   "title": "How Developers Should Handle All the Stuff Apple Introduced at WWDC",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/on-teaching-ios-programming/",
+   "title": "On Teaching iOS Programming",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/thoughts-on-lodsys-patents-and-apple/",
+   "title": "Thoughts on Lodsys, Patents and Apple",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/06/best-ios-and-mac-development-related-links-may-2011/",
+   "title": "Best iOS and Mac Development-Related Links: May 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/on-git-support-in-xcode-4/",
+   "title": "On Git Support in Xcode 4",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/book-review-97-things-every-programmer-should-know/",
+   "title": "Book Review: 97 Things Every Programmer Should Know",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/faking-ivars-in-objc-categories-with-associative-references/",
+   "title": "Faking Instance Variables in Objective-C Categories With Associative References",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/using-cocoa-to-convert-images-from-rgb-to-cmyk/",
+   "title": "Using Cocoa to Convert Images From RGB to CMYK",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/apples-system-of-fixed-exchange-rates-in-app-store/",
+   "title": "Apple's System of Fixed Exchange Rates in the App Store, or: How a Customer From Japan Can Be Worth 75% More Than One From the UK",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/at-what-time-is-an-app-released-on-the-app-store-when-set-to-specific-release-date/",
+   "title": "At What Time Is an App Released on the App Store When Set to a Specific Release Date?",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/inspecting-core-data-attributes/",
+   "title": "Inspecting Core Data Attributes",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/05/best-ios-and-mac-development-related-links-april-2011/",
+   "title": "Best iOS and Mac Development-Related Links: April 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/04/updated-obshapedbutton/",
+   "title": "Updated OBShapedButton",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/04/where-apple-would-stand-without-iphone-and-ipad/",
+   "title": "Where Apple Would Stand Without the iPhone and iPad",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/04/john-siracusa-a-dark-age-of-objective-c/",
+   "title": "John Siracusa: A Dark Age of Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/04/schulung-ios-entwicklung-einsteiger-mai-2011/",
+   "title": "Schulung iOS-Entwicklung für Einsteiger im Mai 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/04/best-ios-and-mac-development-related-links-march-2011/",
+   "title": "Best iOS and Mac Development-Related Links: March 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/03/blue-planet-1-1-now-available/",
+   "title": "Blue Planet 1.1 Now Available",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/03/whats-new-in-ios-sdk-4-3/",
+   "title": "What's New in iOS SDK 4.3",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/03/best-ios-and-mac-development-related-links-february-2011/",
+   "title": "Best iOS and Mac Development-Related Links: February 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/02/announcing-blue-planet-for-mac/",
+   "title": "Announcing Blue Planet for Mac",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/02/new-site-design-now-proudly-serving-static-html/",
+   "title": "New Site Design, Now Proudly Serving Static HTML",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/01/ios-development-highlights-january-2011/",
+   "title": "iOS Development Highlights: January 2011",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/01/ios-hackathon-berlin/",
+   "title": "iOS Hackathon Berlin",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/01/obslider-a-uislider-subclass-with-variable-scrubbing-speed/",
+   "title": "OBSlider, a UISlider Subclass With Variable Scrubbing Speed",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2011/01/the-importance-of-a-unified-buying-experience/",
+   "title": "The Importance of a Unified Buying Experience",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/ios-development-highlights-december-2010/",
+   "title": "iOS Development Highlights: December 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/you-should-really-write-an-alarm-clock-app/",
+   "title": "“You Should Really Write an Alarm Clock App”",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/syntax-additions-for-object-literals-to-objective-c/",
+   "title": "My Wish: Syntax Additions to Objective-C for Object Literals",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/picture-effects-1-1-now-available/",
+   "title": "Picture Effects 1.1 Now Available",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/animating-drawing-of-cgpath-with-cashapelayer/",
+   "title": "Animating the Drawing of a CGPath With CAShapeLayer",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/12/method-names-in-objective-c/",
+   "title": "Method Names in Objective-C",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/11/ios-development-highlights-november-2010/",
+   "title": "iOS Development Highlights: November 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/11/whats-new-in-ios-sdk-4-2/",
+   "title": "What's New in iOS SDK 4.2",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/10/ios-development-highlights-october-2010/",
+   "title": "iOS Development Highlights: October 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/09/ios-development-highlights-september-2010/",
+   "title": "iOS Development Highlights: September 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/08/ios-development-highlights-august-2010/",
+   "title": "iOS Development Highlights: August 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/07/ios-development-highlights-july-2010/",
+   "title": "iOS Development Highlights: July 2010",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/06/wwdc-2010-videos-already-available-and-free/",
+   "title": "WWDC 2010 Videos Already Available. And Free!",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/06/app-store-safe-page-curl-animations/",
+   "title": "App Store-Safe Page Curl Animations",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/06/uiwebview-weird-pdf-display-bug-on-ipad/",
+   "title": "UIWebView's Weird PDF Display Bug on the iPad",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/06/world-cup-2010-spreadsheet/",
+   "title": "World Cup 2010 Tracker Spreadsheet",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/05/how-to-debug-app-launched-by-remote-event/",
+   "title": "How to Debug an App That Was Launched by Push Notification or URL Handler",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/05/iphone-sdk-beta-to-beta-api-diffs/",
+   "title": "iPhone SDK Beta to Beta API Diffs",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/05/set-the-zoom-level-of-mkmapview/",
+   "title": "Set the Zoom Level of MKMapView",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/available-for-contract-work/",
+   "title": "I'm Available for Contract Work",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/obgradientview-a-simple-uiview-wrapper-for-cagradientlayer/",
+   "title": "OBGradientView: A Simple UIView Wrapper for CAGradientLayer",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/picture-effects-is-now-99-cents/",
+   "title": "Picture Effects Is Now $0.99",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/two-icons-for-universal-iphone-ipad-app/",
+   "title": "How to Specify Two Icons for a Universal iPhone/iPad App",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/new-opportunities-for-developers-in-iphone-os-4-0/",
+   "title": "New Opportunities for Developers in iPhone OS 4.0",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/apple-bans-cross-compilers-for-iphone-development/",
+   "title": "Apple Bans Cross-Compilers for iPhone Development",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/steve-jobs-think-of-the-children/",
+   "title": "Steve Jobs: “Think of the children”",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/universal-app-is-not-a-universal-binary/",
+   "title": "Universal App != Universal Binary",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/whats-new-in-xcode-3-2-2/",
+   "title": "What's New in Xcode 3.2.2",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/whats-new-in-iphone-sdk-3-2/",
+   "title": "What's New in iPhone SDK 3.2",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/video-picture-effects-for-ipad/",
+   "title": "Video: Picture Effects for iPad",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/04/announcing-picture-effects-for-ipad-and-iphone/",
+   "title": "Announcing Picture Effects for iPad and iPhone",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/03/if-you-want-to-learn-cocoa/",
+   "title": "If You Want to Learn Cocoa...",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/02/porting-rrglosscausticshader-to-the-iphone/",
+   "title": "Porting RRGlossCausticShader to the iPhone",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/02/book-review-coders-at-work/",
+   "title": "Book Review: Coders at Work",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2010/01/book-review-cocoa-design-patterns/",
+   "title": "Book Review: Cocoa Design Patterns",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/12/chdatastructures-on-the-iphone/",
+   "title": "CHDataStructures on the iPhone",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/11/mutable-properties-of-immutable-objects/",
+   "title": "Mutable Properties of Immutable Objects",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/10/obshapedbutton-non-rectangular-buttons-on-the-iphone/",
+   "title": "OBShapedButton: Non-Rectangular Buttons on the iPhone",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/10/apple-symbols-font-repository-for-iphone-icons/",
+   "title": "The Apple Symbols Font: A Great Repository for iPhone Button Icons",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/09/updated-itunes-connect-financial-reports-to-html-script/",
+   "title": "Updated iTunes Connect Financial Reports to HTML Script",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/09/managing-the-network-activity-indicator/",
+   "title": "Managing the Network Activity Indicator",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/09/formatting-itunes-connect-financial-reports/",
+   "title": "Formatting iTunes Connect Financial Reports",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/08/songtext-stopped-working/",
+   "title": "Songtext Stopped Working",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/07/i-removed-songtext-from-the-app-store/",
+   "title": "I Removed Songtext From the App Store",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/07/lyricwiki-is-down-songtext-showing-errors/",
+   "title": "LyricWiki is Down, Songtext Showing Errors",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/07/iphone-lyrics-apps-market-overview/",
+   "title": "Lyrics Apps for the iPhone: A Market Overview",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/07/the-music-player-framework-in-the-iphone-sdk/",
+   "title": "The Music Player Framework in iPhone SDK 3.0",
+   "date": ""
+  },
+  {
+   "url": "https://oleb.net/blog/2009/07/announcing-songtext-lyrics-for-iphone/",
+   "title": "Announcing Songtext: Lyrics for the iPhone",
+   "date": ""
+  }
+ ]
+}

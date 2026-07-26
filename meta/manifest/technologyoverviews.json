@@ -1,0 +1,538 @@
+{
+ "archive": "technologyoverviews",
+ "included": [
+  "com.apple.TechnologyOverviews"
+ ],
+ "page_count": 44,
+ "longform_count": 44,
+ "pages": [
+  {
+   "path": "/documentation/technologyoverviews",
+   "title": "Technology Overviews",
+   "type": "module",
+   "breadcrumb": "Technology Overviews",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/app-design-and-ui",
+   "title": "App design and UI",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/App design and UI",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/swiftui",
+   "title": "SwiftUI apps",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/App design and UI/SwiftUI apps",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/uikit-appkit",
+   "title": "UIKit and AppKit apps",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/App design and UI/UIKit and AppKit apps",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/interface-fundamentals",
+   "title": "Interface fundamentals",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/App design and UI/Interface fundamentals",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/liquid-glass",
+   "title": "Liquid Glass",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/App design and UI/Liquid Glass",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/adopting-liquid-glass",
+   "title": "Adopting Liquid Glass",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/App design and UI/Liquid Glass/Adopting Liquid Glass",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/games",
+   "title": "Games",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Games",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/games-technologies",
+   "title": "Game technologies",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Games/Game technologies",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/building-your-macos-game-remotely-from-your-pc",
+   "title": "Building your macOS game remotely from your PC",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Games/Building your macOS game remotely from your PC",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/data-management",
+   "title": "Data management",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Data management",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/standard-data-types-and-processes",
+   "title": "Standard data types and processes",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Data management/Standard data types and processes",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/structured-data-models",
+   "title": "Structured data models",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Data management/Structured data models",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/files-and-directories",
+   "title": "Files and directories",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Data management/Files and directories",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/shared-data",
+   "title": "Shared data",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Data management/Shared data",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/personal-data",
+   "title": "Personal data",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Data management/Personal data",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/core-experiences",
+   "title": "Core experiences",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Core experiences",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/convenience",
+   "title": "Convenience",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Core experiences/Convenience",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/communication-and-connection",
+   "title": "Communication and connection",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Core experiences/Communication and connection",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/information",
+   "title": "Information",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Core experiences/Information",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/app-extensions",
+   "title": "App and system extensions",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Core experiences/App and system extensions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/ai-machine-learning",
+   "title": "Apple Intelligence and machine learning",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Apple Intelligence and machine learning",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/built-in-intelligence",
+   "title": "Built-in intelligence",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Apple Intelligence and machine learning/Built-in intelligence",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/apple-intelligence",
+   "title": "Apple Intelligence",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Apple Intelligence and machine learning/Apple Intelligence",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/generative-models",
+   "title": "Generative models and machine learning",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Apple Intelligence and machine learning/Generative models and machine learning",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/audio-and-video",
+   "title": "Audio and video",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Audio and video",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/video",
+   "title": "Video",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Audio and video/Video",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/audio-and-music",
+   "title": "Audio and music",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Audio and video/Audio and music",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/immersive-media",
+   "title": "Spatial and immersive media",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Audio and video/Spatial and immersive media",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/streaming",
+   "title": "Media streaming",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Audio and video/Media streaming",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/graphics-drawing-and-animation",
+   "title": "Graphics, drawing, and animation",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/images-camera-and-photos",
+   "title": "Images, camera, and photos",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation/Images, camera, and photos",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/text-display",
+   "title": "Text display",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation/Text display",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/drawing-and-printing",
+   "title": "Drawing and printing",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation/Drawing and printing",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/3d-content",
+   "title": "3D content",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation/3D content",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/animations",
+   "title": "Animations",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Graphics, drawing, and animation/Animations",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/tools-and-distribution",
+   "title": "Tools and distribution",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Tools and distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/development-process",
+   "title": "Development process",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Tools and distribution/Development process",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/testing-and-performance",
+   "title": "Testing and performance",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Tools and distribution/Testing and performance",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/distribution",
+   "title": "Distribution",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Tools and distribution/Distribution",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/hardware-networking-sensors",
+   "title": "Hardware, networking, and sensors",
+   "type": "collection",
+   "breadcrumb": "Technology Overviews/Hardware, networking, and sensors",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/device-sensors",
+   "title": "Device sensors",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Hardware, networking, and sensors/Device sensors",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/networking-and-communication",
+   "title": "Networking and communication",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Hardware, networking, and sensors/Networking and communication",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  },
+  {
+   "path": "/documentation/technologyoverviews/hardware-level-interactions",
+   "title": "Hardware-level interactions",
+   "type": "article",
+   "breadcrumb": "Technology Overviews/Hardware, networking, and sensors/Hardware-level interactions",
+   "longform": true,
+   "deprecated": false,
+   "beta": false,
+   "langs": [
+    "swift"
+   ]
+  }
+ ]
+}
