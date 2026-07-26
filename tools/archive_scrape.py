@@ -664,7 +664,6 @@ def cmd_classify(args):
             print(f"  classify {n} … net={f.n_net}", flush=True)
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=1))
     f.save()
-    from collections import Counter
     print(Counter(v["class"] for v in state.values()))
 
 
@@ -922,7 +921,7 @@ def cmd_render(args):
                 n_pages += 1
             except Exception as e:
                 print("render fail", aid, u, repr(e)[:150])
-    f.save()
+    # 注意：render 不调用 f.save()——它只读缓存，回写会和后台正在跑的 fetch 抢同一个索引文件
     (STATE / "plans.json").write_text(json.dumps(
         {k: {"rels": v["rels"], "urls": v["urls"], "top": v["top"]} for k, v in plans.items()},
         ensure_ascii=False))
@@ -932,6 +931,15 @@ def cmd_render(args):
 # ---------------------------------------------------------------------------
 # 阶段 2：插图
 # ---------------------------------------------------------------------------
+
+# legacy 页面的界面装饰图（不是正文插图，实测在 798 份 technote 里被引用 2,000+ 次，
+# 而真正的插图是 `tnNNNN_NNN.gif` 这种带文档号的文件名）。侦察报告 §7 也点名要过滤。
+DECOR_IMAGES = {
+    "tnmenutop.gif", "tnmenubottom.gif", "tnmenubody.gif", "acrobatsmall.gif",
+    "arrow_linkup.gif", "1dot.gif", "bluebook.gif", "redbook.gif",
+    "mtop600.gif", "mbot600.gif", "closebutton.png", "spacer.gif", "blank.gif",
+}
+
 
 def cmd_assets(args):
     plans = json.loads((STATE / "plans.json").read_text())
@@ -951,6 +959,8 @@ def cmd_assets(args):
                     continue
                 absu = urllib.parse.urljoin(u, src)
                 if not in_archive(absu) or "/Resources/" in absu:
+                    continue
+                if absu.rsplit("/", 1)[-1].lower() in DECOR_IMAGES:
                     continue
                 sub = re.sub(r"^(\.\./)+", "", src)
                 dest = OUT / os.path.dirname(rel) / "attachments" / sub
@@ -976,7 +986,8 @@ FM_KEYS = ["title", "apple_id", "resource_type", "platform", "topic",
 
 
 def cmd_selftest(args):
-    bad_404, bad_fm, bad_shell, small = [], [], [], []
+    bad_404, bad_fm, bad_shell, small, bad_nav = [], [], [], [], []
+    nav_segs = Counter()
     per_doc = {}
     files = sorted(OUT.rglob("*.md"))
     for p in files:
@@ -988,7 +999,18 @@ def cmd_selftest(args):
         keys = re.findall(r"^([a-z_]+):", fm_txt, re.M)
         if keys != FM_KEYS:
             bad_fm.append((rel, ",".join(keys)))
+        nav = rest.split("\n", 1)[0]
         body = rest.split("\n", 1)[1] if "\n" in rest else ""
+        # 导航行：`../` 层数必须等于路径中的目录层数，第二段标签必须是顶层目录名（§4.2/§4.3）
+        m = re.match(r"> 导航：\[总目录\]\(((?:\.\./)*)README\.md\) · \[([^\]]+)\]", nav)
+        if not m:
+            bad_nav.append((rel, nav[:60]))
+        else:
+            if m.group(1).count("../") != rel.count("/"):
+                bad_nav.append((rel, f"depth {m.group(1).count('../')} != {rel.count('/')}"))
+            elif m.group(2) != rel.split("/")[0]:
+                bad_nav.append((rel, f"label {m.group(2)}"))
+            nav_segs[nav.count(" · ") + 1] += 1
         if re.search(r"Page Not Found|The page you.re looking for", body):
             bad_404.append(rel)
         if len(body.strip()) < 200:
@@ -1001,6 +1023,9 @@ def cmd_selftest(args):
     print(f"页面 {len(files)} 个 / 文档 {len(per_doc)} 份")
     print(f"frontmatter 9 键齐全且顺序正确：{len(files)-len(bad_fm)}/{len(files)}")
     for r in bad_fm[:10]:
+        print("   ✗", r)
+    print(f"导航行合规（层数+顶层标签）：{len(files)-len(bad_nav)}/{len(files)}；段数分布 {dict(nav_segs)}")
+    for r in bad_nav[:8]:
         print("   ✗", r)
     print(f"正文含 404 特征：{len(bad_404)}")
     for r in bad_404[:10]:
@@ -1018,7 +1043,6 @@ def cmd_selftest(args):
     # 分类结果
     cp = STATE / "classify.json"
     if cp.exists():
-        from collections import Counter
         cls = json.loads(cp.read_text())
         print("分类：", dict(Counter(v["class"] for v in cls.values())))
 
