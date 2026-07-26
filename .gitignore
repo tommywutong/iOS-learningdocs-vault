@@ -1,0 +1,12 @@
+.cache/
+.DS_Store
+__pycache__/
+*.pyc
+
+# 抓取暂存区：这是给旧仓库 apple-developer-archive-vault 准备的产物，
+# 核对后会整体移过去，不属于本仓库
+.staging/
+
+# 压缩过程的备份文件（shrink_assets.py 正常结束会自己删，
+# 中途被杀才会残留——它们是未压缩的原图，绝不能进仓库）
+*.orig
