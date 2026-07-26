@@ -1,0 +1,101 @@
+{
+ "CF": {
+  "head": "dc54c6bb1c1e5e0b9486c1d26dd5bef110b20bf3",
+  "head_short": "dc54c6b",
+  "date": "2021-10-06",
+  "subject": "CF-1153.18",
+  "remote": "https://github.com/apple-oss-distributions/CF.git",
+  "branches": 10,
+  "commits": "10"
+ },
+ "distribution-macOS": {
+  "head": "4e290a9b9d3723c65d2a606223d41eb90ecdbf99",
+  "head_short": "4e290a9",
+  "date": "2025-10-21",
+  "subject": "macOS 26.0",
+  "remote": "https://github.com/apple-oss-distributions/distribution-macOS.git",
+  "branches": 25,
+  "commits": "23"
+ },
+ "dyld": {
+  "head": "fd8d0c4d52320ebf64db34f3cb280310d905c5ae",
+  "head_short": "fd8d0c4",
+  "date": "2026-06-15",
+  "subject": "dyld-1378",
+  "remote": "https://github.com/apple-oss-distributions/dyld.git",
+  "branches": 22,
+  "commits": "52"
+ },
+ "libclosure": {
+  "head": "3668b0837f47be3cc1c404fb5e360f4ff178ca13",
+  "head_short": "3668b08",
+  "date": "2025-04-30",
+  "subject": "libclosure-96",
+  "remote": "https://github.com/apple-oss-distributions/libclosure.git",
+  "branches": 4,
+  "commits": "16"
+ },
+ "libdispatch": {
+  "head": "2361ffb78a76f7ee488cd052eb0bc5c767118bf9",
+  "head_short": "2361ffb",
+  "date": "2025-10-16",
+  "subject": "libdispatch-1542.0.4",
+  "remote": "https://github.com/apple-oss-distributions/libdispatch.git",
+  "branches": 20,
+  "commits": "22"
+ },
+ "libmalloc": {
+  "head": "c49dafa25f1efe8607701ae6014a663ad2ee437f",
+  "head_short": "c49dafa",
+  "date": "2026-04-17",
+  "subject": "libmalloc-812.100.31",
+  "remote": "https://github.com/apple-oss-distributions/libmalloc.git",
+  "branches": 17,
+  "commits": "17"
+ },
+ "libplatform": {
+  "head": "2512ffd8bb5c6caff3c8ea83331ab8a0adc820c3",
+  "head_short": "2512ffd",
+  "date": "2026-04-17",
+  "subject": "libplatform-375.100.10",
+  "remote": "https://github.com/apple-oss-distributions/libplatform.git",
+  "branches": 14,
+  "commits": "14"
+ },
+ "libpthread": {
+  "head": "42d026df5b07825070f60134b980a1ec2552dfee",
+  "head_short": "42d026d",
+  "date": "2025-10-16",
+  "subject": "libpthread-539",
+  "remote": "https://github.com/apple-oss-distributions/libpthread.git",
+  "branches": 13,
+  "commits": "15"
+ },
+ "libunwind": {
+  "head": "f709eccad023ec32db53d40146d07805cf3e4ee0",
+  "head_short": "f709ecc",
+  "date": "2021-10-06",
+  "subject": "libunwind-201",
+  "remote": "https://github.com/apple-oss-distributions/libunwind.git",
+  "branches": 4,
+  "commits": "4"
+ },
+ "objc4": {
+  "head": "fb265098298302243cd7eeaa1f63f0ba7786dd9a",
+  "head_short": "fb26509",
+  "date": "2025-12-01",
+  "subject": "objc4-951.1",
+  "remote": "https://github.com/apple-oss-distributions/objc4.git",
+  "branches": 16,
+  "commits": "35"
+ },
+ "swift-evolution": {
+  "head": "ec57ab685747c130f310c3e0052b0babe6a50468",
+  "head_short": "ec57ab6",
+  "date": "2026-07-20",
+  "subject": "[SE-0484] Update proposal status and implementation reference (#3366)",
+  "remote": "https://github.com/swiftlang/swift-evolution.git",
+  "branches": 3,
+  "commits": "649"
+ }
+}

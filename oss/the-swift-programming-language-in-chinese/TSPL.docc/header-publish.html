@@ -1,0 +1,196 @@
+<!--
+This source file is part of the Swift.org open source project
+
+Copyright (c) 2014 - 2023 Apple Inc. and the Swift project authors
+Licensed under Apache License v2.0 with Runtime Library Exception
+
+See https://swift.org/LICENSE.txt for license information
+See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+-->
+<script src="https://swift.org/assets/javascripts/docc/header.js"></script>
+<header id="header" role="banner" hidden>
+  <div class="container">
+    <nav id="home" role="navigation">
+      <a aria-label="Swift.org"
+         href="https://swift.swiftgg.team"
+         id="logo"
+         role="img"
+         title="SwiftGG"
+      >SwiftGG</a>
+    </nav>
+    <button id="small-menu-toggle"></button>
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="https://swift.swiftgg.team/blog/">博客</a></li>
+        <li><a href="https://swift.swiftgg.team/download/">下载</a></li>
+        <li><a href="https://swift.swiftgg.team/getting-started/">入门指南</a></li>
+        <li><a href="https://swift.swiftgg.team/documentation/">文档</a></li>
+        <li><a href="https://swiftgg.team/">翻译组</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Promotional Banner -->
+<style>
+  .promo-banner {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    z-index: 999;
+  }
+  .promo-banner.hidden {
+    display: none;
+  }
+  .promo-banner-inner {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+  }
+  .promo-banner-img {
+    flex: 0 0 480px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .promo-banner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .promo-banner-content {
+    flex: 1;
+    padding: 20px 48px 20px 32px;
+    min-width: 0;
+  }
+  .promo-banner-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.2px;
+  }
+  .promo-banner-desc {
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    opacity: 0.88;
+  }
+  .promo-banner-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #e94560, #c81d5e);
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .promo-banner-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(233, 69, 96, 0.45);
+  }
+  .promo-banner-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    padding: 0;
+    z-index: 10000;
+    pointer-events: auto;
+  }
+  .promo-banner-close:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  /* Mobile */
+  @media (max-width: 768px) {
+    .promo-banner-inner {
+      flex-direction: column;
+    }
+    .promo-banner-img {
+      flex: none;
+      width: 100%;
+      max-height: 160px;
+    }
+    .promo-banner-content {
+      padding: 16px 40px 18px 16px;
+      text-align: center;
+    }
+    .promo-banner-title {
+      font-size: 15px;
+    }
+    .promo-banner-desc {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<div id="promo-banner" class="promo-banner">
+  <div class="promo-banner-inner">
+    <div class="promo-banner-img">
+      <img src="/images/org.swift.tspl/banner.jpg" alt="MiniMax Token Plan" onerror="this.parentElement.style.display='none'" />
+    </div>
+    <div class="promo-banner-content">
+      <div class="promo-banner-title">🚀 MiniMax Token Plan 惊喜上线！新增语音、音乐、视频和图片生成权益。邀请好友享双重好礼，助力开发体验！</div>
+      <div class="promo-banner-desc">好友立享 <strong>8.8折</strong> 专属优惠 + Builder 权益，你赢返利 + 社区特权！</div>
+      <a class="promo-banner-cta" href="https://platform.minimaxi.com/subscribe/token-plan?code=FFaI9OHtgF&source=link" target="_blank" rel="noopener">👉 立即参与</a>
+    </div>
+  </div>
+  <button class="promo-banner-close" id="promo-banner-close" aria-label="关闭"
+    onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('promo-banner-closed','1')}catch(e){}">×</button>
+</div>
+
+<script>
+(function() {
+  // Hide if already closed this session
+  try {
+    if (sessionStorage.getItem('promo-banner-closed') === '1') {
+      var b = document.getElementById('promo-banner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  // Event delegation on document for close button (survives DOM re-renders)
+  document.addEventListener('click', function(e) {
+    var t = e.target;
+    if (t && (t.id === 'promo-banner-close' || t.closest && t.closest('.promo-banner-close'))) {
+      var b = document.getElementById('promo-banner');
+      if (b) b.style.display = 'none';
+      try { sessionStorage.setItem('promo-banner-closed', '1'); } catch(ex) {}
+    }
+  }, true);
+
+  // Watch for SPA re-renders: hide banner if already dismissed
+  new MutationObserver(function() {
+    try {
+      if (sessionStorage.getItem('promo-banner-closed') === '1') {
+        var b = document.getElementById('promo-banner');
+        if (b && b.style.display !== 'none') b.style.display = 'none';
+      }
+    } catch(e) {}
+  }).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+
+<!-- Fallback: if DocC strips <script> tags, use img onerror to bootstrap -->
+<img src="data:," onerror="
+  try{if(sessionStorage.getItem('promo-banner-closed')==='1'){var b=document.getElementById('promo-banner');if(b)b.style.display='none'}}catch(e){}
+  document.addEventListener('click',function(e){var t=e.target;if(t&&(t.id==='promo-banner-close'||(t.closest&&t.closest('.promo-banner-close')))){var b=document.getElementById('promo-banner');if(b)b.style.display='none';try{sessionStorage.setItem('promo-banner-closed','1')}catch(x){}}},true);
+" style="display:none" />

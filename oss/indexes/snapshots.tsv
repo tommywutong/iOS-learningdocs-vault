@@ -1,0 +1,23 @@
+repo	upstream	head_sha	head_date	git_kept	note
+objc4	https://github.com/apple-oss-distributions/objc4.git	fb265098298302243cd7eeaa1f63f0ba7786dd9a	2025-12-01T19:55:20Z	yes	full/deep clone, history retained
+dyld	https://github.com/apple-oss-distributions/dyld.git	fd8d0c4d52320ebf64db34f3cb280310d905c5ae	2026-06-15T21:52:15Z	yes	full/deep clone, history retained
+CF	https://github.com/apple-oss-distributions/CF.git	dc54c6bb1c1e5e0b9486c1d26dd5bef110b20bf3	2021-10-06T04:41:50Z	yes	full/deep clone, history retained
+libdispatch	https://github.com/apple-oss-distributions/libdispatch.git	2361ffb78a76f7ee488cd052eb0bc5c767118bf9	2025-10-16T22:35:48Z	yes	full/deep clone, history retained
+libplatform	https://github.com/apple-oss-distributions/libplatform.git	2512ffd8bb5c6caff3c8ea83331ab8a0adc820c3	2026-04-17T00:41:55Z	yes	full/deep clone, history retained
+libpthread	https://github.com/apple-oss-distributions/libpthread.git	42d026df5b07825070f60134b980a1ec2552dfee	2025-10-16T22:35:50Z	yes	full/deep clone, history retained
+libclosure	https://github.com/apple-oss-distributions/libclosure.git	3668b0837f47be3cc1c404fb5e360f4ff178ca13	2025-04-30T04:19:39Z	yes	full/deep clone, history retained
+libmalloc	https://github.com/apple-oss-distributions/libmalloc.git	c49dafa25f1efe8607701ae6014a663ad2ee437f	2026-04-17T00:41:54Z	yes	full/deep clone, history retained
+libunwind	https://github.com/apple-oss-distributions/libunwind.git	f709eccad023ec32db53d40146d07805cf3e4ee0	2021-10-06T05:25:23Z	yes	full/deep clone, history retained
+distribution-macOS	https://github.com/apple-oss-distributions/distribution-macOS.git	4e290a9b9d3723c65d2a606223d41eb90ecdbf99	2025-10-21T20:58:39-07:00	yes	full/deep clone, history retained
+swift-evolution	https://github.com/swiftlang/swift-evolution.git	ec57ab685747c130f310c3e0052b0babe6a50468	2026-07-20T15:36:05-04:00	yes	full/deep clone, history retained
+swift-book	https://github.com/swiftlang/swift-book.git	29329996c4ec537de0b16e70609e2a6c4ecc2af7	2026-07-14T13:30:00-07:00	no	depth-1 snapshot; .git dropped
+the-swift-programming-language-in-chinese	https://github.com/SwiftGGTeam/the-swift-programming-language-in-chinese.git	cfc700e942e8e45e56e834172c6df55412f864d2	2026-04-08T13:04:28-04:00	no	depth-1 snapshot; .git dropped
+iOS-Weekly	https://github.com/SwiftOldDriver/iOS-Weekly.git	97fa7d432cb2ce1f6d566eecb10bf1a49584063e	2026-07-19T20:53:41+08:00	no	depth-1 snapshot; .git dropped
+analyze	https://github.com/draveness/analyze.git	438494fce5e3226100a6772005e308254dd87f8f	2020-04-03T14:26:09+08:00	no	depth-1 snapshot; .git dropped
+matrix.wiki	https://github.com/Tencent/matrix.wiki.git	7b52a96e7ac1896283d7feef72a3a6248708e4f8	2021-07-06T21:22:41+08:00	no	depth-1 snapshot; .git dropped
+Perspective	https://github.com/kingcos/Perspective.git	d77eec6c5c84ca161b0e128c41af6b6722021195	2019-09-10T13:56:08+08:00	no	depth-1 snapshot; .git dropped
+iOS-Source-Probe	https://github.com/Desgard/iOS-Source-Probe.git	90dc5ec6d683da8b228ea537f2eb4c788fc502a2	2018-07-28T23:14:15+08:00	no	depth-1 snapshot; .git dropped
+swift-docs	https://github.com/swiftlang/swift.git	5ff147b6e3a40184f6d718e5e6cb4f014ada0408	2026-07-25T21:47:58-07:00	no	sparse depth-1 (docs/); .git dropped
+clang-docs	https://github.com/llvm/llvm-project.git	f3f2cd6844f606b804c76e06dca0b9c18af3ec04	2026-07-26T13:15:30-04:00	no	sparse depth-1 (clang/docs + Attr.td); .git dropped
+xnu-headers	https://github.com/apple-oss-distributions/xnu.git	ac9718fb1af618d5ce8678d0dc6e8a58f252216f	2026-06-17T23:28:50Z	no	sparse depth-1 @tag xnu-12377.121.6; .git dropped
+study	https://github.com/ming1016/study.git	e7502b6aa4dd732ba2a5cb807c956e40de19fa9e	2026-02-23T22:46:10+08:00	no	depth-1 snapshot; .git dropped

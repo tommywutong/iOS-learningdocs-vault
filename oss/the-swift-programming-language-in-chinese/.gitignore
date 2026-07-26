@@ -1,0 +1,8 @@
+.DS_Store
+.docc-build
+.swiftpm
+/.build
+/Package.resolved
+/TSPL.docc/header.html
+/TSPL.docc/ReferenceManual/SummaryOfTheGrammar.md
+/swift-book
