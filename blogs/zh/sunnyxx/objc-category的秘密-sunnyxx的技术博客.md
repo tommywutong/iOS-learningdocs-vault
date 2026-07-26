@@ -1,0 +1,234 @@
+---
+title: objc category的秘密 · sunnyxx的技术博客
+source: sunnyxx (孙源)
+source_key: sunnyxx
+source_url: 'http://blog.sunnyxx.com/2014/03/05/objc_category_secret/'
+original_language: zh
+published: 2014-03-05
+status: frozen
+license: 未声明 → 仅私有归档
+archived_at: 2026-07-26
+content_hash: 'sha256:ca57a1f9de460486'
+translated: n/a
+---
+
+> 原文：[objc category的秘密 · sunnyxx的技术博客](http://blog.sunnyxx.com/2014/03/05/objc_category_secret/)　·　sunnyxx (孙源)
+
+# objc category的秘密
+
+2014年3月5日
+
+## [#category的真面目](#category的真面目)category的真面目
+
+objc所有类和对象都是c结构体，category当然也一样，下面是`runtime`中category的结构：
+
+```objc
+struct _category_t {
+	const char *name; // 1
+	struct _class_t *cls; // 2
+	const struct _method_list_t *instance_methods; // 3
+	const struct _method_list_t *class_methods; // 4
+	const struct _protocol_list_t *protocols; // 5
+	const struct _prop_list_t *properties; // 6
+};
+```
+
+1. 注意，并不是category小括号里写的名字，而是类的名字
+2. 要扩展的类对象，编译期间这个值是不会有的，在app被runtime加载时才会根据
+
+  对应到类对象
+3. 这个category所有的
+
+  方法
+4. 这个category所有的
+
+  方法
+5. 这个category实现的protocol，比较不常用在category里面实现协议，但是确实支持的
+6. 这个category所有的property，这也是category里面可以定义属性的原因，不过这个property不会
+
+  实例变量，一般有需求添加实例变量属性时会采用
+
+  和
+
+  方法绑定方法绑定，不过这种方法生成的与一个普通的实例变量完全是两码事。
+
+### [#编译器，你对category干了什么？](#编译器，你对category干了什么？)编译器，你对category干了什么？
+
+举个栗子看，定义下面一个类和它的category，实现忽略，保存为`sark.h`和`sark.m`  
+1  
+2  
+3  
+4  
+5  
+6  
+7  
+@interface Sark : NSObject  
+- (void)speak;  
+@end  
+  
+@interface Sark (GayExtention)  
+- (void)burst;  
+@end
+
+请出clang的重写命令：  
+1  
+$ clang -rewrite-objc sark.m
+
+同级目录下会生成`sark.cpp`，这就是`objc`代码重写成`c++`(基本就是c)的实现。  
+打开生成的文件，发现茫茫多，排除include进来的header，自己的代码都在文件尾部了，看看上面的category被编译器搞成什么样子了：  
+1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+static struct _category_t _OBJC_$_CATEGORY_Sark_$_GayExtention __attribute__ ((used, section ("__DATA,__objc_const"))) =  
+{  
+ "Sark",  
+ 0, // &OBJC_CLASS_$_Sark,  
+ (const struct _method_list_t *)&_OBJC_$_CATEGORY_INSTANCE_METHODS_Sark_$_GayExtention,  
+ 0,  
+ 0,  
+ 0  
+};
+
+先注意这个category的名字`_OBJC_$_CATEGORY_Sark_$_GayExtention`，这是一个按规则生成的符号了，中间的`Sark`是类名，后面的`GayExtention`是类别的名字，这也就是为什么**同一个类的category名不能冲突**了
+
+对应看上面`_category_t`的定义，因为category里面只添加了一个`- burst`方法，所以只有实例方法那一项被填充了值`_OBJC_$_CATEGORY_INSTANCE_METHODS_Sark_$_GayExtention`
+
+其中`_I_Sark_GayExtention_burst`符号就代表了category里面的`- burst`方法，同样遵循了一定的命名规范，里面的`I`表示实例方法
+
+最后，这个类的category们生成了一个数组，存在了`__DATA`段下的`__objc_catlist`section里  
+1  
+2  
+3  
+static struct _category_t *L_OBJC_LABEL_CATEGORY_$ [1] __attribute__((used, section ("__DATA, __objc_catlist,regular,no_dead_strip")))= {  
+ &_OBJC_$_CATEGORY_Sark_$_GayExtention,  
+};
+
+至此编译器的任务完成了。
+
+### [#runtime，我的category哪儿去了？](#runtime，我的category哪儿去了？)runtime，我的category哪儿去了？
+
+我们知道，category动态扩展了原来类的方法，在调用者看来好像原来类本来就有这些方法似的，有两个事实：
+
+1. ，都可以成功调用category的方法，都影响不到category的加载流程，import只是帮助了编译检查和链接过程
+2. 在
+
+  将不会存在
+
+这需要探究下**runtime对category的加载过程**，这里就简单说一下
+
+1. 的方法，在library加载前由libSystem dyld调用，进行初始化操作
+2. 方法将文件中的
+
+  map到内存
+3. 方法初始化map后的
+
+  ，这里面干了很多的事情，像load所有的类、协议和
+
+  ，著名的
+
+  方法就是这一步调用的
+4. 方法，这个方法拿出来看看：
+5. …
+
+```objc
+#define GETSECT(name, type, sectname)                                   \
+    type *name(const header_info *hi, size_t *outCount)  \
+    {                                                                   \
+        unsigned long byteCount = 0;                                    \
+        type *data = (type *)                                           \
+            getsectiondata(hi->mhdr, SEG_DATA, sectname, &byteCount);   \
+        *outCount = byteCount / sizeof(type);                           \
+        return data;                                                    \
+    }
+
+// ... //
+
+GETSECT(_getObjc2CategoryList, category_t *, "__objc_catlist");
+```
+
+眼熟的`__objc_catlist`，就是上面category存放的数据段了，可以串连起来了
+
+在调用完`_getObjc2CategoryList`后，runtime终于开始了**category的处理**，简化的代码如下  
+1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+18  
+19  
+20  
+21  
+// Process this category.  
+// First, register the category with its target class.  
+// Then, rebuild the class's method lists (etc) if  
+// the class is realized.  
+BOOL classExists = NO;  
+if (cat-\>instanceMethods || cat-\>protocols || cat-\>instanceProperties)  
+{  
+ addUnattachedCategoryForClass(cat, cls, hi);  
+ if (isRealized(cls)) {  
+ remethodizeClass(cls);  
+ classExists = YES;  
+ }  
+}  
+  
+if (cat-\>classMethods || cat-\>protocols )  
+{  
+ addUnattachedCategoryForClass(cat, cls-\>isa, hi);  
+ if (isRealized(cls-\>isa)) {  
+ remethodizeClass(cls-\>isa);  
+ }  
+}
+
+首先分成两拨，一拨是实例对象相关的调用`addUnattachedCategoryForClass`，一拨是类对象相关的调用`addUnattachedCategoryForClass`，然后会调到`attachCategoryMethods`方法，这个方法把一个类所有的category_list的所有方法取出来组成一个`method_list_t **`，注意，这里是`倒序`添加的，也就是说，新生成的category的方法会先于旧的category的方法插入
+
+```c
+static voidattachCategoryMethods(class_t *cls, category_list *cats,                      BOOL *inoutVtablesAffected){
+attachCategoryMethods(class_t *cls, category_list *cats,                      BOOL *inoutVtablesAffected)
+                      BOOL *inoutVtablesAffected)
+
+    if (!cats) return;
+    if (PrintReplacedMethods) printReplacements(cls, cats);
+
+    BOOL isMeta = isMetaClass(cls);
+    method_list_t **mlists = (method_list_t **)
+        _malloc_internal(cats->count * sizeof(*mlists));
+
+    // Count backwards through cats to get newest categories first
+    int mcount = 0;
+    int i = cats->count;
+    BOOL fromBundle = NO;
+    while (i--) {
+        method_list_t *mlist = cat_method_list(cats->list[i].cat, isMeta);
+        if (mlist) {
+            mlists[mcount++] = mlist;
+            fromBundle |= cats->list[i].fromBundle;
+        }
+    }
+
+    attachMethodLists(cls, mlists, mcount, NO, fromBundle, inoutVtablesAffected);
+
+    _free_internal(mlists);
+
+}
+```
+
+生成了所有method的list之后，调用`attachMethodLists`将所有方法`前序`添加进类的方法的数组中，也就是说，如果原来类的方法是a,b,c，类别的方法是1,2,3，那么插入之后的方法将会是1,2,3,a,b,c，也就是说，原来类的方法被category的方法`覆盖`了，但被覆盖的方法确实还在那里。

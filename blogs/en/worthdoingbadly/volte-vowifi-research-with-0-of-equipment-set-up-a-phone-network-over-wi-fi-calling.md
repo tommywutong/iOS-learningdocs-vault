@@ -1,0 +1,347 @@
+---
+title: 'VoLTE/VoWiFi research with $0 of equipment: set up a phone network over Wi-Fi calling'
+source: worthdoingbadly (Zhuowei Zhang)
+source_key: worthdoingbadly
+source_url: 'https://worthdoingbadly.com/vowifi2/'
+original_language: en
+published: 2022-01-08
+status: active
+license: 未声明 → 仅私有归档
+archived_at: 2026-07-26
+content_hash: 'sha256:be8a94192cc6fb36'
+translated: false
+---
+
+> 原文：[VoLTE/VoWiFi research with $0 of equipment: set up a phone network over Wi-Fi calling](https://worthdoingbadly.com/vowifi2/)　·　worthdoingbadly (Zhuowei Zhang)
+
+# VoLTE/VoWiFi research with $0 of equipment: set up a phone network over Wi-Fi calling
+
+Jan 8, 2022
+
+You don’t need expensive equipment for VoLTE/VoWiFi research! Learn how VoLTE/VoWiFi works by setting up your own Wi-Fi calling server with free software.
+
+There’s no practical use for this (you can’t connect your private phone network to the real phone network, so you can only call yourself), but it’s fun!
+
+# Introduction
+
+![](https://worthdoingbadly.com/assets/blog/vowifi2/vowifi2_header.jpg)
+
+_This is the second post in a series of VoWifi/VoLTE posts. The first is [here](https://worthdoingbadly.com/vowifi/)._
+
+I’m setting up my own [private phone network](https://excelcoin.org/phone/), and you can too!
+
+This isn’t just an ordinary Discord channel or private VoIP PBX. I’ll show you how to take over the Wi-Fi calling on a jailbroken iPhone to integrate into the native phone dialer and SMS app, just like a real carrier.
+
+My end goal is to issue my own SIM cards that connects any phone, jailbroken or unjailbroken, to my phone network over Wi-Fi.
+
+Useless? Maybe: you can only dial other people on the private phone network. It’d be like an IRC server, but over text messages and phone calls. But if you want to try it, email me!
+
+VoLTE and Wi-Fi calling are based on open standards like IPsec/IKEv2 and SIP, so our phone network will be built out of free software:
+
+iPhone -\> [jailbreak tweak to redirect Wi-Fi calling](https://github.com/ExcelCoin/RedirectVoWiFiTweak) -\> [my Docker container](https://github.com/ExcelCoin/VoWiFiLocalDemo) -\> StrongSwan -\> Kamailio
+
+# Examine VoWiFi
+
+To understand VoLTE and VoWiFi, start by capturing the traffic from your phone when you make a phone call or send an SMS.
+
+All you need is an iPhone and a Mac with Xcode and Wireshark.
+
+Xcode provides the [`rvictl`](https://developer.apple.com/documentation/network/recording_a_packet_trace?language=objc) tool to capture all network traffic from an iPhone, no jailbreak required.
+
+Edit: If you don’t have a Mac, [gh2o’s rvi_capture](https://github.com/gh2o/rvi_capture) can capture on Linux and Windows. (Thanks, Adam, for letting me know!)
+
+All SIP messages between the phone and carrier are visible, fully unencrypted. You can see what happens when you call another phone:
+
+![](https://worthdoingbadly.com/assets/blog/vowifi2/call_another_phone_invite.png)
+
+Or how you receive a text message:
+
+![](https://worthdoingbadly.com/assets/blog/vowifi2/receive_an_sms.png)
+
+On VoWiFi, you can even dump the actual voice codec packets.
+
+In addition, the iPhone also offers logs from the VoWiFi ePDG VPN tunnel and SMS processing:
+
+Open the Console app on a Mac, filter to CommCenter, then enable “Action -\> Include Info Messages / Include Debug Messages”.
+
+Then, filter for CommCenter for VoLTE/VoWiFi messages, such as this IKEv2 handshake:
+
+![](https://worthdoingbadly.com/assets/blog/vowifi2/ike_handshake.png)
+
+# Our own phone network
+
+What if you don’t want to just look at the VoLTE/VoWiFi packets? What if you want to build your own network?
+
+To do that, you need a jailbroken iPhone and a Docker container.
+
+I’m using a jailbroken iPhone 12 on iOS 14.1 with a Verizon SIM.
+
+If you’re on Android, devices launched with Android 10 and above (all devices built in 2020 or later) can likely redirect Wi-Fi calling without root, but I haven’t tried it yet.
+
+# redirecting the ePDG connection
+
+We’re targeting VoWiFi (Wi-Fi calling) since running a VoLTE network requires at least a [$150 radio](https://docs.srsran.com/en/latest/app_notes/source/hw_packs/source/index.html) and approval for broadcasting on LTE frequncies. You don’t need any special hardware or red tape for Wi-Fi.
+
+Wi-Fi calling is protected using an IPsec/IKEv2 VPN tunnel, and authenticated using EAP-AKA, which uses a secret key on the SIM card that only the carrier knows. (See my [previous post](https://worthdoingbadly.com/vowifi/) for details)
+
+Since I don’t have blank SIM cards, I wrote a jailbreak tweak to replace the SIM card check with a simple pre-shared key (password) authentication.
+
+To run the tweak, you’ll need to:
+
+- jailbreak your phone and install Substrate or other method hooking platform.
+- Theos
+- RedirectVoWiFiTweak
+- server address
+
+  to the address of your VoWiFi server
+- `make package install`
+- put your phone in Airplane Mode, then enable Wi-Fi calling (Settings -\> Cellular -\> Wi-Fi Calling)
+
+End result: VoWifi tunnel creates a VPN to your IPsec/IKEv2 VPN server instead of Verizon’s.
+
+# How I built the tweak
+
+iPhones run the entire VoLTE/VoWiFi stack in userspace: with a jailbreak, we can do anything. However, my end goal is to make this work with a custom SIM card on an unjailbroken phone, so I only did the minimum amount of changes.
+
+ePDG is just an IPsec/IKEv2 VPN tunnel with the EAP-AKA authentication on SIM card. To disable EAP-AKA authentication and switch to PSK:
+
+- and saw that it was using
+
+  to start the VPN tunnel.
+- I found the symbol in NetworkExtensions and disassembled it in Ghidra
+- `
+- I hooked that method, and dumped the arguments
+- I made another IPsec/IKEv2 tunnel on a Mac with PSK
+-   - `lldb -n NEIKEv2Provider -w`
+    - `b initWithIKEConfig:firstChildConfig:sessionConfig:queue:ipsecInterface:ikeSocketHandler:saSession:packetDelegate:`
+- I compared its arguments against the VoLTE ePDG tunnel to see how macOS sets up PSK
+- I made my tweak set the same flags for PSK
+
+This was my first iPhone tweak, so thanks to everyone who helped me:
+
+- dlevi309
+
+  for sending me a pull request to auto restart CommCenter
+- hbkirb
+
+  for pointing me to
+
+  HearseDev
+
+  ’s clang-format wrapper for Theos’ Logos language
+
+and thanks to the resources I consulted:
+
+- Kanns103
+
+  ’s guide to tweak development
+- elihwyma
+
+  ’s commcenterpatch13, which also hooked CommCenter
+
+# Wi-Fi calling server with StrongSwan and Kamailio
+
+A phone talks to two services to set up VoWifi:
+
+- the ePDG, an IPsec/IKEv2 VPN server. We use StrongSwan.
+- the P-CSCF, a SIP VoIP server. We use Kamailio.
+
+I made a [Docker container](https://github.com/ExcelCoin/VoWiFiLocalDemo) with both preinstalled.
+
+Tested on macOS 12.1/Mac Mini 2020 (M1)/Docker for Mac.
+
+First, if you’re not on Verizon, change the [IMS domain in the config](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/d229efefbfaa234fcb40814d01709132b7d0b32b/app/kamailio-local.cfg#L5). You can find the domain by capturing the `SIP REGISTER` request with rvictl.
+
+Then, run:
+
+```
+docker compose build
+docker compose up
+```
+
+Wait for the connection from the phone:
+
+```
+12[IKE] IKE_SA ikev2-vpn-iphone[4] established between 172.19.0.2[ims]...172.19.0.1
+12[IKE] IKE_SA ikev2-vpn-iphone[4] state change: CONNECTING => ESTABLISHED
+```
+
+Then try sending the phone a text message:
+
+```
+ssh -p 22222 root@localhost
+Password: vowifi
+$ encodesms 15554443333 19085823275 "hello"
+```
+
+Replace \<19085823275\> with the phone number of the current SIM in the phone.
+
+Or an emergency alert:
+
+```
+$ encodesms_cdma emerg 19085823275 "duck and cover"
+```
+
+Or send a call. (You can’t answer it yet!)
+
+```
+$ baresip
+/uanew sip:+15554443333@localhost
+/dial sip:+19085823275@localhost
+```
+
+Or even try to replicate the [VoLTE/VoWiFi attacks from Purdue’s researchers](https://www.cs.purdue.edu/homes/chunyi/projects/secvoice.html) on your own network.
+
+# A deeper dive into the container
+
+### StrongSwan configs:
+
+- config for PSK
+- config for P-CSCF (SIP server)
+
+  . (21 is
+
+  P_CSCF_IP6_ADDRESS
+
+  )
+- config cipher suite - see the CarrierBundle for Verizon
+- give the iPhone a /64 IPv6 address range
+
+    - Normally, a VPN just gives out a /128 of address, but the iPhone expects a /64 and will always overwrite the bottom 64 bits with a random value.
+    - Alan from Kage Systems
+
+      for documenting how to get StrongSwan to work as an ePDG for iPhones.
+
+### Kamailio resources
+
+- I’m just using the stock Kamailio config for now, with no authentication
+- config
+
+  tweaks to listen on IPv6 and accept
+
+  SIP domain
+- [Nick vs Networking] (https://nickvsnetworking.com/kamailio-introduction/) is a site with a lot of resources on setting up phone networks - including a Kamailio tutorial which was helpful in understanding concepts
+
+### Making a call
+
+- Codecs are hard
+- EVS
+
+  or
+
+  AMR-WB
+
+  , which are protected by patents
+- Linphone can’t do it - it only supports open codecs like Opus
+- Baresip says it supports it, but if I pick up, the call ends
+- The solution is to add an extra server to transcode on the fly
+- urls used by iPhone’s phone app
+- So you can’t dial from the phone
+- patch
+
+  but it’s not upstream
+- did not try it
+
+### Sending a text message to the phone
+
+- normal SIP apps use SIP MESSAGE with `text/plain`
+- not supported on VoLTE/VoWiFi - invalid content type
+- encode in GSM
+
+  or CDMA’s SMS format
+- thankfully plenty of resources online for encoding GSM
+- for GSM, looked at Wireshark capture of an SMS from my phone
+- `sms pdu`
+
+  feature of Android Emulator
+- to see the error
+
+### Receiving a text message from the phone
+
+- Phone can receive SMS from computer, but can’t send to computer (or any other phones on my private network)
+- If you look, it sends the SMS not directly to the other number, but to some number in Texas?
+- SMSC
+
+  - the carrier’s SMS gateway
+- SMS can be sent to a powered off phone
+- SMSC stores the SMS and delivers it when the destination phone is online
+- OpenBTS’s SMQueue
+
+  ,
+
+  Osmocom’s OsmoMSC
+- I have not tried integrating one, but should be simple
+
+### Making a broadcast message
+
+- You can already research SMS through the real phone network
+- I wanted to demo something you can only do on your own private phone network
+- Let’s send a cell broadcast/Emergency Alert/Presidential Alert!
+- private LTE equipment
+- GSM Cell Broadcasts do not use SMS: they use separate SMS-CB messages that we can’t send over VoLTE/VoWiFi
+- but CDMA uses SMS for both!
+- mandates
+
+  GSM (3GPP) and CDMA (3GPP2) SMS formats over VoLTE
+- so encoded CDMA format SMS
+- message from my own code
+- send CDMA format SMS
+
+  , I just change the type of message to broadcast, and set the type to “emergency alert” (or “presidential alert”)
+
+# Join me
+
+Not quite ready yet. But email me!
+
+Here’s why you shouldn’t join me yet:
+
+- A private phone network’s basically useless
+- No calling out to external numbers - I’m not paying VoIP providers to connect to the real phone network
+- this means NO EMERGENCY CALLS - do not use this on a primary phone, and always have another phone turned on for emergencies
+- I still need to get phone-to-phone text messages working
+- No security whatsoever!! Anyone can spoof anyone and send anything
+- VoWiFi may send your phone’s location to me and - because I don’t have filters configured - everyone else on the private network
+- I don’t have an accounts system: it uses the real phone number and IMSI from your phone’s current SIM card
+- So if you don’t want your phone number or location leaked, don’t join yet.
+
+Instead, set up your own network and play around it yourself!
+
+I’m fixing some of these issues:
+
+- add filters, firewall, and authentication to map real phone numbers/IMSI to my own 1-555-xxx-xxxx numbers
+- filter out any location sent by phones
+- send out SIM cards so any phone can join, not just jailbroken iPhones
+- figure out how to secure network against abuse (eg. invites-only system?)
+- set up an SMSC for phone-to-phone texting
+- set up transcoding for VoIP app to phone calling
+
+If you’re interested in joining after I fix these issues, email me at ![](https://worthdoingbadly.com/assets/blog/mail.png) and let me know:
+
+- Your device type (iPhone, Android, VoIP phone app, or something else) - must support Wi-Fi calling
+- the 1-555-xxx-xxxx phone number you want (once I figure out how to map numbers)
+- Do you want a SIM card if I ever figure out how to make one
+- If you’re using a jailbroken device with an existing SIM, the existing SIM’s carrier and number
+
+# Conclusions
+
+- You don’t need special equipment to set up your own phone network
+- You can capture your phone’s VoLTE/VoWiFi traffic with just your iPhone and Mac
+- You can set up your own Wi-Fi calling server with just a jailbreak tweak and free software
+- We really, really need more researchers in VoLTE/VoWiFi.
+- This is my way to help lower the barrier of entry.
+
+40 years ago, the January 8, 1982 [settlement](https://en.wikipedia.org/wiki/Breakup_of_the_Bell_System) broke up AT&T.
+
+It’s time to rebuild the telephone lab.
+
+If you have any questions, please reach out over email or [Twitter](https://twitter.com/zhuowei)!
+
+# What I learned
+
+- How to use StrongSwan
+- How to use Kamailio
+- How to run both in Docker
+- How to build an iOS jailbreak tweak
+- How to inspect VoWiFi traffic from an iPhone
+- How to use IPv6
+- How to encode SMS in both GSM and CDMA

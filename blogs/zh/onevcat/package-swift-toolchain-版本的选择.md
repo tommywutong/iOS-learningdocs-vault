@@ -1,0 +1,65 @@
+---
+title: Package.swift toolchain 版本的选择
+source: onevcat (王巍/喵神)
+source_key: onevcat
+source_url: 'https://onevcat.com/2020/09/swift-package-version/'
+original_language: zh
+published: 2020-09-05
+status: active
+license: CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接
+archived_at: 2026-07-27
+content_hash: 'sha256:2e1fee26cc58a95d'
+translated: n/a
+---
+
+> 原文：[Package.swift toolchain 版本的选择](https://onevcat.com/2020/09/swift-package-version/)　·　onevcat (王巍/喵神)
+
+WWDC 2020 上 Swift Package Manager (SPM) 开始支持 [Resource bundle](https://developer.apple.com/videos/play/wwdc2020/10169/) 和 [Binary Framework](https://developer.apple.com/videos/play/wwdc2020/10147/)。对于 Package 的维护者来说，如果有需求，当然是应该尽快适配这些内容。首先要做的，就是将 Package.swift 中的 Swift Toolchain 版本改到最新的 5.3：只有最新的 tool chain 才具备这些功能。
+
+```plaintext
+// swift-tools-version:5.3
+```
+
+但是，如果之前你就支持了 SPM 的话，直接在 Package.swift 文件上进行修改，会破坏旧版本的兼容性。比如 5.3 的 toolchain 是集成在 Xcode 12 中的，如果这样改动以后，现有的使用 Xcode 11 的用户由于 toolchain 版本过低，就无法再 build 这个 package，造成问题。
+
+> package at ‘xxx’ is using Swift tools version 5.3.0 but the installed version is 5.2.0
+
+你不能假设用户永远都使用最新的版本，不顾兼容性的更新也会带来严重的后果。那要如何让一个 package 支持多个版本的 toolchain 呢？
+
+### Package.swift 文件后缀
+
+你可能已经看到过，有的项目中 (比如 [PromiseKit](https://github.com/mxcl/PromiseKit)) 会有多个 Package.swift 的声明：它们带有不同的后缀，比如 `Package.swift`，`Package@swift-4.2.swift` 或者 `Package@swift-5.3.swift`。SPM 在选取声明文件时，会按照当前 toolchain 版本从新到旧，去选取最近的一个兼容版本的文件。举个几个例子，上面三个文件存在的情况下：
+
+- ；
+- (由于不符合最低版本)。同时，由于不存在
+
+  这一恰好兼容的版本，SPM 会向下寻找最近的一个兼容版本，即 转而使用
+
+  。
+- 。
+
+### swift-tools-version
+
+在选取了合适的 Package.swift 文件后，第一行的 `swift-tools-version` 注释将会最终决定实际使用的 toolchain 版本。虽然没有强制要求这个注释指定的版本号必须和 `Package@swift-x.y.swift` 文件名中的版本号一致，但是选取不同的数字显然会引起不必要的误解。
+
+## 那我该怎么做呢
+
+因此，在添加 SPM 新版本支持的时候，正确的做法是：
+
+1. 的首行中，声明你的 package 所能支持的最低的 toolchain 版本。
+2. 和
+
+  不变：这可以让旧版本的 toolchain 继续使用已有的 package 描述。
+3. 添加
+
+  文件，并在文件中首行将 toolchain 版本设置为同样的版本，即
+
+  。然后为新版编写合适的 package 声明。
+
+你可以通过切换 Xcode 中的 Command Line Tools 设定，并使用下面的命令来检查当前设定下所被选用的 toolchain version。
+
+```plaintext
+$ swift package tools-version
+```
+
+确保每个组合都按照预想工作，就这么简单。

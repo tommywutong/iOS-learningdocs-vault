@@ -1,0 +1,79 @@
+---
+title: 带边框的UIImage缩放
+source: onevcat (王巍/喵神)
+source_key: onevcat
+source_url: 'https://onevcat.com/2011/12/uiimage/'
+original_language: zh
+published: 2011-12-21
+status: active
+license: CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接
+archived_at: 2026-07-27
+content_hash: 'sha256:3e873ea8da182910'
+translated: n/a
+---
+
+> 原文：[带边框的UIImage缩放](https://onevcat.com/2011/12/uiimage/)　·　onevcat (王巍/喵神)
+
+一个带边框的UIImage如果使用常规的缩放，边框部分将被按照缩放比例拉伸或压缩，有些时候这并不是我们所期望的..比如这个边框是根据图片大小变化的外框。比如下面的类似按钮的不明物体图片：主体为渐变蓝色，边框为外圈白色，灰色底板为背景。
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
+
+常见的按钮添加和背景设置如下：
+
+```objc
+UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(80, 130, 160, 44)];
+[button setTitle:@”Test Button” forState:UIControlStateNormal];
+// Image with without cap insets
+UIImage *buttonImage = [UIImage imageNamed:@”blueButton”];
+[button addTarget:self action:@selector(buttonPressed:) forControlEvents: UIControlEventTouchUpInside];
+[button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+[[self view] addSubview:button];
+```
+
+所得到的按钮会相当悲剧…
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
+
+边框，特别是左右边框由于按钮frame过大被惨烈拉伸… iOS5中提供了一个新的UIImage方法，[resizableImageWithCapInsets:](http://developer.apple.com/library/IOs/#documentation/UIKit/Reference/UIImage_Class/Reference/Reference.html)，可以将图片转换为以某一偏移值为偏移的可伸缩图像（偏移值内的图像将不被拉伸或压缩）。
+
+用法引述如下：
+
+```objc
+resizableImageWithCapInsets:
+  Creates and returns a new image object with the specified cap insets.
+  - (UIImage *)resizableImageWithCapInsets:(UIEdgeInsets)capInsets
+    Parameters
+      capInsets
+      The values to use for the cap insets.
+    Return Value
+      A new image object with the specified cap insets.
+    Discussion
+      You use this method to add cap insets to an image or to change the existing cap insets of an image. In both cases, you get back a new image and the original image remains untouched.
+
+      During scaling or resizing of the image, areas covered by a cap are not scaled or resized. Instead, the pixel area not covered by the cap in each direction is tiled, left-to-right and top-to-bottom, to resize the image. This technique is often used to create variable-width buttons, which retain the same rounded corners but whose center region grows or shrinks as needed. For best performance, use a tiled area that is a 1x1 pixel area in size.
+```
+
+输入参数为一个capInsets结构体：
+
+```objc
+//Defines inset distances for views.
+typedef struct {
+CGFloat top, left, bottom, right;
+} UIEdgeInsets;
+```
+
+分别表示上左下右四个方向的偏移量。于是把上面按钮的UIImage改为如下形式：
+
+```objc
+// Image with cap insets
+UIImage *buttonImage = [[UIImage imageNamed:@”blueButton”]
+resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16, 0, 16)];
+```
+
+可以得到如下按钮：
+
+![](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 )
+
+问题得到解决。
+
+但是值得注意的是该方法需要至少iOS5的运行环境，因此对于需要开发支持iOS5之前的App来说是不可行的。替代方案是[stretchableImageWithLeftCapWidth:topCapHeight:](http://developer.apple.com/library/IOs/#documentation/UIKit/Reference/UIImage_Class/DeprecationAppendix/AppendixADeprecatedAPI.html#//apple_ref/occ/instm/UIImage/stretchableImageWithLeftCapWidth:topCapHeight:)，但是在iOS5中，这已经是被Deprecated的方法了，而且该方法只能以1px作为重复铺满拉伸区域，无法做到类似渐变等图片效果，是存在一定局限的。

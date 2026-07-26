@@ -1,0 +1,47 @@
+---
+title: Posts from 2015
+source: Belkadan (Jordan Rose, 前 Swift 编译器工程师)
+source_key: belkadan
+source_url: 'https://belkadan.com/blog/2015'
+original_language: en
+published: ''
+status: active
+license: Copyright 2012–2020 Jordan Rose → 仅私有归档
+archived_at: 2026-07-26
+content_hash: 'sha256:9090c19d7600525d'
+translated: false
+---
+
+> 原文：[Posts from 2015](https://belkadan.com/blog/2015)　·　Belkadan (Jordan Rose, 前 Swift 编译器工程师)
+
+## 2015
+
+### December
+
+1. 29
+
+  Re: Contempt Culture
+
+### November
+
+1. 18
+
+  Recommendations
+
+### May
+
+1. 09
+
+  Nibblesort: Adventures in Optimization
+
+### February
+
+1. 22
+
+  AlterConf SF/Oakland
+
+### January
+
+1. 24
+
+  “Skip the FFI”

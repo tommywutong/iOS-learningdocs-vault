@@ -1,0 +1,49 @@
+---
+title: Objective-C中的Debug表达式
+source: onevcat (王巍/喵神)
+source_key: onevcat
+source_url: 'https://onevcat.com/2011/12/debug-2/'
+original_language: zh
+published: 2011-12-03
+status: active
+license: CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接
+archived_at: 2026-07-27
+content_hash: 'sha256:9c0e8cae5e3b99c5'
+translated: n/a
+---
+
+> 原文：[Objective-C中的Debug表达式](https://onevcat.com/2011/12/debug-2/)　·　onevcat (王巍/喵神)
+
+有程序的地方就有bug，有bug的地方就需要debug。对于程序员来说，coding的过程便是制造bug和解决bug。Objective定义了不少表达式来协助debug的流程，将这些表达式用在NSLog中，可以简化部分工作，快速定义到debug的部分。 比如以下代码：
+
+```objc
+-(id) initWithPlayer:(VVPlayer *)aPlayer seatsNum:(int)seatsNum
+{ if (self = [super init])
+{
+NSLog(@”\n Function: %s\n Pretty function: %s\n Line: %d\n File: %s\n Object: %@”,__func__, __PRETTY_FUNCTION__, __LINE__, __FILE__, aPlayer);
+}
+…
+}
+```
+
+输出结果为：
+
+`__func__`, `__PRETTY_FUNCTION__`, `__LINE__`, `__FILE__`等都是系统预留的定义词，简单易用。
+
+另外有一些Core Foundation的方法可以从CFString的层级拿到一些有用的字符串，包括且不限于selector，class，protocol等，参考下面的代码：
+
+```plaintext
+-(id) initWithPlayer:(VVPlayer *)aPlayer seatsNum:(int)seatsNum
+{ if (self = [super init])
+{
+NSLog(@”Current selector: %@”, NSStringFromSelector(_cmd));
+NSLog(@”Object class: %@”, NSStringFromClass([self class]));
+NSLog(@”Filename: %@”, [[NSString stringWithUTF8String:__FILE__] lastPathComponent]);
+}
+…
+}
+```
+
+输出结果为：
+
+拿到了相关的字符串，其实这并不仅在调试中有用，在进行selector的传递时也很好用～
