@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:89d66ed249c7e91c'
 translated: false
 ---
@@ -48,47 +48,27 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https:
 
 ## Older Posts
 
-1. 2021-09-10
-
-  Swift Regrets
-2. 2018-02-26
-
-  Many-to-Many Protocols
-3. 2017-09-07
-
-  The New Kingdom of Nouns
-4. 2015-12-29
-
-  Re: Contempt Culture
-5. 2015-11-18
-
-  Recommendations
-6. 2011-06-16
-
-  Dealing with "Sandwich Code"
-7. 2009-06-26
-
-  Garbage Collectors and Stack Drawers
-8. 2009-05-05
-
-  C++ Templates are Turing-Complete
-9. 2009-03-27
-
-  Const Correctness
-10. 2008-09-04
-
-  Objective-J and Objective-C
+1. 2021-09-10[Swift Regrets](https://belkadan.com/blog/2021/09/Swift-Regrets/?tag=programming-languages)
+2. 2018-02-26[Many-to-Many Protocols](https://belkadan.com/blog/2018/02/Many-to-Many-Protocols/?tag=programming-languages)
+3. 2017-09-07[The New Kingdom of Nouns](https://belkadan.com/blog/2017/09/The-New-Kingdom-of-Nouns/?tag=programming-languages)
+4. 2015-12-29[Re: Contempt Culture](https://belkadan.com/blog/2015/12/Re-Contempt-Culture/?tag=programming-languages)
+5. 2015-11-18[Recommendations](https://belkadan.com/blog/2015/11/Recommendations/?tag=programming-languages)
+6. 2011-06-16[Dealing with "Sandwich Code"](https://belkadan.com/blog/2011/06/Sandwich-Code/?tag=programming-languages)
+7. 2009-06-26[Garbage Collectors and Stack Drawers](https://belkadan.com/blog/2009/06/Garbage-Collectors-and-Stack-Drawers/?tag=programming-languages)
+8. 2009-05-05[C++ Templates are Turing-Complete](https://belkadan.com/blog/2009/05/C-plus-plus-Templates-are-Turing-Complete/?tag=programming-languages)
+9. 2009-03-27[Const Correctness](https://belkadan.com/blog/2009/03/Const-Correctness/?tag=programming-languages)
+10. 2008-09-04[Objective-J and Objective-C](https://belkadan.com/blog/2008/09/Objective-J-and-Objective-C/?tag=programming-languages)
 
 ### Possibly Related Tags
 
-- Book
-- C++
-- Compilers
-- Diversity in tech
-- Functional programming
-- Mac OS X
-- Math
-- Objective-C
-- Rust
-- Swift
-- Swift regrets
+- [Book](https://belkadan.com/blog/tags/book)
+- [C++](https://belkadan.com/blog/tags/cxx)
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Diversity in tech](https://belkadan.com/blog/tags/diversity-in-tech)
+- [Functional programming](https://belkadan.com/blog/tags/functional-programming)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Math](https://belkadan.com/blog/tags/math)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Rust](https://belkadan.com/blog/tags/rust)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Swift regrets](https://belkadan.com/blog/tags/swift-regrets)

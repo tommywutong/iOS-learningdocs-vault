@@ -48,9 +48,7 @@ Its implementation must therefore look something pretty close to:
     }
 ```
 
-The
-
-method is similar:
+The `-runUntilDate:` method is similar:
 
 If no input sources or timers are attached to the run loop, this method exits immediately; otherwise, it runs the receiver in the NSDefaultRunLoopMode by repeatedly invoking runMode:beforeDate: until the specified expiration date.
 
@@ -71,9 +69,7 @@ Its implementation would then be like this:
     }
 ```
 
-That was easy enough. How about
-
-, then? Well, that's where all the complication lies.
+That was easy enough. How about `-runMode:beforeDate:`, then? Well, that's where all the complication lies.
 
 **Input Sources**  
  As described in [Apple's Run Loops programming guide](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html), a run loop contains two types of sources: inputs and timers. An input source is basically some kind of external signal from outside the runloop itself.
@@ -110,18 +106,14 @@ Next, create an empty FD set:
         FD_ZERO(&fdset);
 ```
 
-Then, set each input source's FD within the set. I assume that the input source class has a
-
-method that returns the FD it wants to monitor:
+Then, set each input source's FD within the set. I assume that the input source class has a `-fileDescriptor` method that returns the FD it wants to monitor:
 
 ```
         for(inputSource in [self inputSources])
             FD_SET([inputSource fileDescriptor], &fdset);
 ```
 
-Now call
-
-. Remember, to simplify, I'm pretending that it only takes one file descriptor set rather than three. I'm also ignoring all error checking:
+Now call `select`. Remember, to simplify, I'm pretending that it only takes one file descriptor set rather than three. I'm also ignoring all error checking:
 
 ```
         select(fdset, NULL);
@@ -135,18 +127,15 @@ Once it returns, check each input source to see if it's ready for processing now
                 [inputSource fileDescriptorIsReady];
 ```
 
-The documentation states that this method returns
-
-the runloop was run in any way, so that's the last thing to do here:
+The documentation states that this method returns `YES` the runloop was run in any way, so that's the last thing to do here:
 
 ```
         return YES;
     }
 ```
 
-So far so good, but it has a way to go. This method completely ignores its parameters! First, we'll look at the
-
-parameter.
+**Modes**  
+ So far so good, but it has a way to go. This method completely ignores its parameters! First, we'll look at the `mode` parameter.
 
 Just what is the `mode` parameter, anyway? A mode is essentially a grouping of input and timer sources. Different sources are active in different modes. `NSRunLoop` has `NSDefaultRunLoopMode`, which as the name would expect is where most sources are added. In Cocoa, you also have secondary modes like `NSEventTrackingRunLoopMode`, which is used when the mouse is held down on a control. By switching to this mode, sources which were only added to the default mode will not fire, which prevents unwanted code from running while the user is in the middle of making a menu selection or moving a slider. Sources which need to fire during event tracking can be added to that mode. Sources which need to fire in both circumstances can be added to both.
 
@@ -156,9 +145,7 @@ You can then imagine `NSRunLoop` containing an instance variable for input sourc
     NSMutableDictionary *_inputSources; // maps modes to NSMutableSets
 ```
 
-'s method to add an input source is called
-
-, and its implementation would then look like this:
+`NSRunLoop`'s method to add an input source is called `-addPort:forMode:`, and its implementation would then look like this:
 
 ```
     - (void)addPort: (NSPort *)aPort forMode: (NSString *)mode
@@ -215,13 +202,8 @@ And then the run method needs to be changed to match:
     }
 ```
 
-This code still ignores one parameter,
-
-. The purpose of this parameter is to force the method to return even if no input sources were ready. It functions as a timeout. To make this work, the code simply computes the timeout and passes it as the last parameter to
-
-(which in reality requires a more complicated timeout structure, not just an
-
-, but remember, pseudocode!):
+**Timeout**  
+ This code still ignores one parameter, `limitDate`. The purpose of this parameter is to force the method to return even if no input sources were ready. It functions as a timeout. To make this work, the code simply computes the timeout and passes it as the last parameter to `select` (which in reality requires a more complicated timeout structure, not just an `NSTimeInterval`, but remember, pseudocode!):
 
 ```
      - (BOOL)runMode: (NSString *)mode beforeDate: (NSDate *)limitDate
@@ -249,7 +231,8 @@ This code still ignores one parameter,
     }
 ```
 
-This implementation deals with input sources and the timeout parameter well enough, but completely ignores timers.
+**Timer Sources**  
+ This implementation deals with input sources and the timeout parameter well enough, but completely ignores timers.
 
 As with input sources, I'll assume an instance variable which holds timers. And like input sources, timers are grouped into modes:
 
@@ -257,11 +240,7 @@ As with input sources, I'll assume an instance variable which holds timers. And 
     NSMutableDictionary *_timerSources; // maps modes to NSMutableSets
 ```
 
-I'll skip over the implementation of
-
-, as it should be pretty obvious and is basically identical to
-
-.
+I'll skip over the implementation of `-addTimer:forMode:`, as it should be pretty obvious and is basically identical to `-addPort:forMode:`.
 
 Adding timer support to the above code is relatively straightforward. The list of timers can be consulted to find the one that fires earliest. If that time is earlier than `limitDate`, then it gets to be the timeout instead of `limitDate`. After `select` runs, check the list of timers to see if any of them are ready to fire, and fire the ones that are.
 
@@ -349,7 +328,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-01-01-nsrunloop-internals.html)
 
 Add your thoughts, post a comment:
 

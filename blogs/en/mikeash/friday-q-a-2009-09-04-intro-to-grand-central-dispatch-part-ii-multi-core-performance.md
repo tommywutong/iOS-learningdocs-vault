@@ -36,11 +36,7 @@ There are essentially two ways to extract multi-core performance out of GCD: by 
         [self doSomethingIntensiveWith:obj];
 ```
 
-Assume that
-
-is thread safe and can be run in parallel with other uses of that same method. If this is true, and
-
-regularly contains more than one object, it's easy to use GCD to parallelize this code:
+Assume that `-doSomethingIntensiveWith:` is thread safe and can be run in parallel with other uses of that same method. If this is true, and `array` regularly contains more than one object, it's easy to use GCD to parallelize this code:
 
 ```
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -60,11 +56,7 @@ Of course code isn't always this nice. Sometimes you have code which manipulates
     [self doSomethingWith:array];
 ```
 
-The use of
-
-in the GCD example means that this doesn't work. And you can't solve it just by switching to
-
-, because that will cause each individual iteration to block, destroying all parallelism.
+The use of `dispatch_async` in the GCD example means that this doesn't work. And you can't solve it just by switching to `dispatch_sync`, because that will cause each individual iteration to block, destroying all parallelism.
 
 One way to solve this problem is by using dispatch groups. A dispatch group is a way to group together multiple blocks, and either wait for them to complete or be notified once they complete. They are created using `dispatch_group_create`, and the `dispatch_group_async` function allows submitting a block to a dispatch queue and also adding it to the group. We could then rewrite this code to use GCD like so:
 
@@ -81,11 +73,7 @@ One way to solve this problem is by using dispatch groups. A dispatch group is a
     [self doSomethingWith:array];
 ```
 
-If this work can be performed asynchronously relative to the calling code, then we can get even fancier than this, and run
-
-in the background instead of waiting. To do this, we'll use
-
-to set a block to run when the group completes:
+If this work can be performed asynchronously relative to the calling code, then we can get even fancier than this, and run `-doSomethingWith:` in the background instead of waiting. To do this, we'll use `dispatch_group_async` to set a block to run when the group completes:
 
 ```
     dispatch_queue_t queue = dispatch_get_global_qeueue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -100,11 +88,7 @@ to set a block to run when the group completes:
     dispatch_release(group);
 ```
 
-Now not only will all of the work on the array objects run in parallel, but the final work will also run asynchronously with respect to the rest of the application, giving even more parallelism. Note that if
-
-needed to run on the main thread, for example to manipulate the GUI, all you need to do is pass the main queue to
-
-instead of a global queue.
+Now not only will all of the work on the array objects run in parallel, but the final work will also run asynchronously with respect to the rest of the application, giving even more parallelism. Note that if `-doSomethingWith:` needed to run on the main thread, for example to manipulate the GUI, all you need to do is pass the main queue to `dispatch_group_notify` instead of a global queue.
 
 For the synchronous case, GCD provides a nice shortcut with the `dispatch_apply` function. This function calls a single block multiple times in parallel and waits for it to complete, just like what we wanted:
 
@@ -116,11 +100,7 @@ For the synchronous case, GCD provides a nice shortcut with the `dispatch_apply`
     [self doSomethingWith:array];
 ```
 
-This is nice, but what about the asynchronous case? There's no asynchronous version of
-
-that we can use. But we're using an API built around asynchronous invocation! We can just use
-
-to push the whole thing into the background:
+This is nice, but what about the asynchronous case? There's no asynchronous version of `dispatch_apply` that we can use. But we're using an API built around asynchronous invocation! We can just use `dispatch_async` to push the whole thing into the background:
 
 ```
     dispatch_queue_t queue = dispatch_get_global_qeueue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -160,7 +140,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-09-04-intro-to-grand-central-dispatch-part-ii-multi-core-performance.html)
 
 Add your thoughts, post a comment:
 

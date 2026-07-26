@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0812d0fa46cc9019'
 translated: false
 ---
@@ -32,8 +32,8 @@ Except that _our programs themselves are invariant_. The code is fixed before th
 
 A better way to think about imperative versus declarative is not to focus on “invariant” but instead to focus on timing, conditions and checkpoints:
 
-- : you run the system to the next lifecycle checkpoint and then you read state of the system, looking for specific conditions, running your code if one of those conditions are discovered
-- : you load your handlers and their conditions into the system before starting and the system runs itself to completion, calling your handlers if their conditions are met at any point
+- **Imperative**: you run the system to the next lifecycle checkpoint and then you read state of the system, looking for specific conditions, running your code if one of those conditions are discovered
+- **Declarative**: you load your handlers and their conditions into the system before starting and the system runs itself to completion, calling your handlers if their conditions are met at any point
 
 Imperative often feels easier because if you know one broadly useful checkpoint, you can set a breakpoint there, inspect the variables on the stack at that time and try to correct every value that doesn’t match what you want it to be. Programming solved!
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f44dcea8d61842a8'
 translated: false
 ---
@@ -26,9 +26,7 @@ The column on the left is handled by the `ColumnView` class, a class which suppo
 
 In fact, if the `ABAddressBook` and its children were KVO compliant, there would be no project-specific code in this program at all (just the generic `ColumnView` class, its children and default application template code).
 
-> ColumnViewSample.zip
-> 
-> (70kb)
+> You can download the project here: [ColumnViewSample.zip](https://www.cocoawithlove.com/assets/objc-era/ColumnViewSample.zip) (70kb)
 
 ## Interface Builder integration
 
@@ -63,7 +61,7 @@ I've previously written a post showing [all the steps required to create an IBPl
 
 The _ColumnPlugin_ project is in a subfolder of the _ColumnViewSample_ project folder. You must build and run _ColumnPlugin_ in the Release configuration to install it in your `~/Library/Frameworks` directory. After that, you will be able to use the `ColumnView`'s bindings in Interface Builder.
 
-> You will get an error — Unable to resolve plug-in dependency for "ColumnViewSampleWindow.xib" — unless you build the "Release" build of ColumnPlugin.xcodeproj before you build the ColumnViewSample project.
+> **Note:** You will get an error — Unable to resolve plug-in dependency for "ColumnViewSampleWindow.xib" — unless you build the "Release" build of ColumnPlugin.xcodeproj before you build the ColumnViewSample project.
 
 ## Exposing bindings
 
@@ -91,24 +89,14 @@ If you add no other support, this will be sufficient to support basic binding of
 
 However, I designed my class to expect a number of keys to be set at the same time as the binding. These include:
 
-- —A key path (relative to each section object) where the rows array can be found (if not present, it is assumed that the section
-
-  the rows array).
-- — A key path (relative to each section object) where the default class to use for all rows in the section can be found (if not present the default
-
-  class is used). This property is overridden by the
-
-  .
-- — A key path (relative to each row object) where the class for the row can be found (if not present, it is assumed the section
-
-  the rows array).
-- — A key path (relative to each row object) where a separate object used for display is found (if not present, the row object is used directly for display).
-- — A key path (relative to each section object) where the object for the header is found (if not present, no header is shown for the section).
-- — A key path (relative to each section object) where the class for the header row is found (if not present, the default
-
-  class is used).
-- — A key path (relative to each row object) by which every section should be sorted.
-- — A key path (relative to each section object) where the key by which that section should be sorted can be found (this will override the allSectionsSortKey).
+- `sectionContentKey` —A key path (relative to each section object) where the rows array can be found (if not present, it is assumed that the section _is_ the rows array).
+- `sectionClassKey` — A key path (relative to each section object) where the default class to use for all rows in the section can be found (if not present the default `RowView` class is used). This property is overridden by the `rowClassKey`.
+- `rowClassKey` — A key path (relative to each row object) where the class for the row can be found (if not present, it is assumed the section _is_ the rows array).
+- `rowDisplayKey` — A key path (relative to each row object) where a separate object used for display is found (if not present, the row object is used directly for display).
+- `headerDataKey` — A key path (relative to each section object) where the object for the header is found (if not present, no header is shown for the section).
+- `headerClassKey` — A key path (relative to each section object) where the class for the header row is found (if not present, the default `RowView` class is used).
+- `allSectionsSortKey` — A key path (relative to each row object) by which every section should be sorted.
+- `sectionRowSortKey` — A key path (relative to each section object) where the key by which that section should be sorted can be found (this will override the allSectionsSortKey).
 
 So we need to set up these properties as editable fields in the bindings editor.
 
@@ -238,9 +226,7 @@ Fields will automatically show "No selection" and "(None)" when there is no sele
 
 ## Conclusion
 
-> ColumnViewSample.zip
-> 
-> (70kb)
+> You can download the project here: [ColumnViewSample.zip](https://www.cocoawithlove.com/assets/objc-era/ColumnViewSample.zip) (70kb)
 
 The final ColumnViewSample project shows a Master-Detail-style interface, constructed with almost no code. This is due to classes which are designed to work with bindings. A code-less implementation only works when when your classes are fully KVC and KVO compliant as bindings cannot operate without these design patterns.
 

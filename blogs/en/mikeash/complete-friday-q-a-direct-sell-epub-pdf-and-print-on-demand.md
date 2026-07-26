@@ -39,7 +39,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/complete-friday-qa-direct-sell-epub-pdf-and-print-on-demand.html)
 
 Add your thoughts, post a comment:
 

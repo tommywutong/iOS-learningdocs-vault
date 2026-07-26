@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:87514573c08e42f5'
 translated: false
 ---
@@ -53,19 +53,8 @@ The `GameObject` is the version of the object as handled in the `GameData`. Sinc
 
 The `GameObject`s are held by the `GameData` object. It tracks all of the `GameObject`s in a dictionary, so all `GameObject`s can be accessed at any time by their unique key in the `GameData`'s `gameObjects` dictionary.
 
-> The biggest quirk about how I decided to implement the
-> 
-> is that it is totally resolution independent. All coordinates and sizes are measured in units where
-> 
-> is the height of the game window. So the coordinates
-> 
-> ,
-> 
-> and
-> 
-> are the bottom-left corner, center and top-right corners of the screen respectively (
-> 
-> is the window aspect ratio: width of the window divided by the height).
+> **Resolution independence:**  
+> The biggest quirk about how I decided to implement the `GameObject` is that it is totally resolution independent. All coordinates and sizes are measured in units where `1.0` is the height of the game window. So the coordinates `(0, 0)`, `(0.5 * GAME_ASPECT, 0.5)` and `(GAME_ASPECT, 1.0)` are the bottom-left corner, center and top-right corners of the screen respectively (`GAME_ASPECT` is the window aspect ratio: width of the window divided by the height).
 
 With the `GameObject` being just a long list of Objective-C properties, most of the code in `GameObject` exists to set, modify or update those properties. The biggest common "update" that needs to be performed is to move the object according to its speed and trajectory and "wrap" the object if it goes off the edge of the screen:
 
@@ -193,9 +182,7 @@ So I look to see if the new `GameObject` is added to the `gameObjects` dictionar
 
 ## Conclusion
 
-> Quartzeroids2 Part 2 project
-> 
-> (225kB) which demonstrates the classes presented in this post.
+> You can download the [Quartzeroids2 Part 2 project](https://www.cocoawithlove.com/assets/objc-era/Quartzeroids2Part2.zip) (225kB) which demonstrates the classes presented in this post.
 
 The project for this part shows the `GameObject`, `GameObjectLayer` and `AsteroidFrontLayer` in a simple, non-interactive display. To show everything on screen, the `GameData` class contains a `newGame` method which constructs some sample objects and then starts a timer running to call the ` updateWithTimeInterval:` methods repeatedly.
 

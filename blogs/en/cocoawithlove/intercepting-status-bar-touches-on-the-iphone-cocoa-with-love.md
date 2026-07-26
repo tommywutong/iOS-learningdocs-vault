@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:028de792d2351f43'
 translated: false
 ---
@@ -137,9 +137,7 @@ If you download the whole project, you'll see that there's also an animate up an
 
 ## Conclusion
 
-> HiddenDrawer sample project
-> 
-> (30kB) to see the whole application in action.
+> You can download the [HiddenDrawer sample project](https://www.cocoawithlove.com/assets/objc-era/HiddenDrawer.zip) (30kB) to see the whole application in action.
 
 A hidden drawer under the status bar isn't necessarily something that every iPhone application should have but the obscure, secretive nature of it appeals to me.
 

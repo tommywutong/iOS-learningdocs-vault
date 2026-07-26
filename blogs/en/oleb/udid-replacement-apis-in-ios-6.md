@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cad859586436587a'
 translated: false
 ---
@@ -18,13 +18,13 @@ translated: false
 
 In a last minute change to iOS 6, Apple added an option for users to opt out of targeted advertising. The setting can be found in the iOS Settings app under General \> About \> Advertising. I see no reason why Apple did not place it in the more obvious new Privacy section other than to hide it from most casual users.
 
-![The Limit Ad Tracking option in iOS 6 Settings](https://oleb.net/media/ios-6-limit-ad-tracking.png)
+[![The Limit Ad Tracking option in iOS 6 Settings](https://oleb.net/media/ios-6-limit-ad-tracking.png)](https://oleb.net/media/ios-6-limit-ad-tracking.png)
 
 <sub>The Limit Ad Tracking option in iOS 6 Settings. It can be found under General \> About \> Advertising.</sub>
 
 > iOS 6 introduces the Advertising Identifier, a non-permanent, non-personal device identifier, that advertising networks will use to give you more control over advertisers’ ability to use tracking methods. If you choose to limit ad tracking, advertising networks using the Advertising Identifier may no longer gather information to serve you targeted ads. In the future all advertising networks will be required to use the Advertising Identifier. However, until advertising networks transition to using the Advertising Identifier you may still receive targeted ads from other networks.
 
-iOS apps can read the state of this preference and are required to respect it (see below). I would have loved if Mobile Safari also used this setting to send an appropriate [Do Not Track HTTP header](https://en.wikipedia.org/wiki/Do_Not_Track) but unfortunately that is not (yet?) the case.[1](#fn:1)
+iOS apps can read the state of this preference and are required to respect it (see below). I would have loved if Mobile Safari also used this setting to send an appropriate [Do Not Track HTTP header](https://en.wikipedia.org/wiki/Do_Not_Track) but unfortunately that is not (yet?) the case.^[1](#fn:1)
 
 # `identifierForVendor`
 
@@ -40,7 +40,7 @@ The `identifierForVendor` can be used by companies to follow users across multip
 
 **Update September 24, 2012:** Note that the OS automatically deletes the current `identifierForVendor` when the user deletes the last application from a particular vendor. If he later reinstalls one or more apps from that vendor, the OS will generate a new identifier. The `identifierForVendor` gets backed up during normal device backups. Restoring a backup to the same device will also restore all existing vendor identifiers. Because the identifier is device-specific, it will not be restored to a different device, though.
 
-If `identifierForVendor` were the only replacement API for the UDID, I suppose ad network companies would be pretty pissed at Apple. For whatever reason, Apple felt it needed to provide a better tracking method for advertisers. The new AdSupport framework consists of one small class, [`ASIdentifierManager`](https://developer.apple.com/library//ios/#documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html), which encapsulates access to an [`advertisingIdentifier`](https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/doc/uid/TP40012654-CH1-SW4)[2](#fn:2). Moreover, the [`advertisingTrackingEnabled`](https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/doc/uid/TP40012654-CH1-SW3) property tells you whether the user has opted out of ad tracking with the switch in Settings mentioned above.[3](#fn:3)
+If `identifierForVendor` were the only replacement API for the UDID, I suppose ad network companies would be pretty pissed at Apple. For whatever reason, Apple felt it needed to provide a better tracking method for advertisers. The new AdSupport framework consists of one small class, [`ASIdentifierManager`](https://developer.apple.com/library//ios/#documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html), which encapsulates access to an [`advertisingIdentifier`](https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/doc/uid/TP40012654-CH1-SW4)^[2](#fn:2). Moreover, the [`advertisingTrackingEnabled`](https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/doc/uid/TP40012654-CH1-SW3) property tells you whether the user has opted out of ad tracking with the switch in Settings mentioned above.^[3](#fn:3)
 
 Let’s have a look at the documentation for these properties:
 

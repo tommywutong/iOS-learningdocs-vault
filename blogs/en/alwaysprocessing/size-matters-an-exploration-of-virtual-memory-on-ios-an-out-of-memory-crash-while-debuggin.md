@@ -7,7 +7,7 @@ original_language: en
 published: 2022-02-20
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8a5cb66d0e6554e7'
 translated: false
 ---
@@ -74,7 +74,7 @@ if (arm64_pmap_max_offset_default) {
 }
 ```
 
-Using the above information[[1](#_footnotedef_1)], we can calculate the size of the virtual memory address space for various iOS devices running iOS 12 or later. (Subtract 3 GiB for iOS 11 and earlier.)
+Using the above information^[[1](#_footnotedef_1)], we can calculate the size of the virtual memory address space for various iOS devices running iOS 12 or later. (Subtract 3 GiB for iOS 11 and earlier.)
 
 RAM
 
@@ -122,7 +122,7 @@ Devices
 
 ### Available Address Space
 
-8 GiB[[2](#_footnotedef_2)] of the virtual address space is not available for use by the process. As mentioned earlier:
+8 GiB^[[2](#_footnotedef_2)] of the virtual address space is not available for use by the process. As mentioned earlier:
 
 - The first 4 GiB of the 64-bit virtual address space (which is also the entire 32-bit address space!) cannot be read from, written to, or executed by the process. The Mach-O executable file format designates this area as `PAGE_ZERO`, and the kernel [requires `PAGE_ZERO` for arm64 processes](https://github.com/apple-oss-distributions/xnu/blob/xnu-7195.141.2/bsd/kern/mach_loader.c#L622-L630).
 - The size of the [shared region](https://github.com/apple-oss-distributions/xnu/blob/xnu-7195.141.2/osfmk/vm/vm_shared_region.c#L30-L76), for use by the system, is [fixed to 4 GiB](https://github.com/apple-oss-distributions/xnu/blob/xnu-7195.141.2/osfmk/mach/shared_region.h#L87).

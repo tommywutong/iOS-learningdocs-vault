@@ -27,7 +27,8 @@
         "type": "index",
         "url": "https://www.objc.io/issues/",
         "link_xpath": "//a/@href",
-        "url_filter": "^/issues/\\d+-[A-Za-z0-9-]+/[A-Za-z0-9_-]+/?$"
+        "url_filter": "^/issues/\\d+-[A-Za-z0-9-]+/[A-Za-z0-9_-]+/?$",
+        "title_xpath": ".//h4[contains(@class,'__name')]"
       },
       "container": "//div[contains(@class,'c-article__body')]",
       "strip": [],
@@ -112,9 +113,13 @@
       },
       "container": "//main",
       "strip": [
-        ".//div[contains(@class,'newsletter')]",
-        ".//section[contains(@class,'newsletter')]"
+        ".//a[normalize-space(.)='Back to blog']",
+        ".//div[a[contains(@href,'twitter.com/intent')]]",
+        ".//div[contains(@class,'tw-pt-24')]",
+        ".//section[.//div[contains(@class,'newsletter_')]]",
+        ".//div[contains(@class,'newsletter_')]"
       ],
+      "_note_strip": "Next.js + Tailwind，class 全是原子类没有语义名，只能靠「内含什么」定位样板：分享条（含 twitter intent 链接的 sticky 块）、Related articles、订阅区、Back to blog",
       "code_mode": "pre",
       "license": "All rights reserved（页脚明示）→ 严格私有",
       "_discover_probe": "sitemap 共 38 条，其中 34 条 /blog/posts/；另有 2 条拼接错误的外链（netloc 不匹配，自动剔除）。/blog 索引页只给 13 篇，反而不如 sitemap 全",

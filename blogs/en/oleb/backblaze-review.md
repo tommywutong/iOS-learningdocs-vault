@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c1b75e0f04b15f26'
 translated: false
 ---
@@ -30,7 +30,7 @@ The Backblaze Mac client installs its GUI component as a panel in System Prefere
 
 The backup daemon works very unobtrusively. I never noticed it taxing the system in any way. Everything feels way faster than with CrashPlan’s client app. The four Backblaze processes that are running on my system while I’m writing this consume about 500 MB of memory (as reported by Activity Monitor), and that’s with a backup size of almost 2 TB (comprising 1.2 million files).
 
-![Activity Monitor screenshot showing the memory consumption of Backblaze processes](https://oleb.net/media/activity-monitor-screenshot-backblaze.png)
+[![Activity Monitor screenshot showing the memory consumption of Backblaze processes](https://oleb.net/media/activity-monitor-screenshot-backblaze.png)](https://oleb.net/media/activity-monitor-screenshot-backblaze.png)
 
 <sub>On my computer, all running Backblaze processes consume about 500 MB of memory.</sub>
 
@@ -40,7 +40,7 @@ Backblaze will back up your entire computer except the following by default:
 - Certain file types are excluded based on their file extension. The default list includes disk images (`.dmg`, `.iso`, `.sparseimage`) and virtual machine images among others. Can be customized freely.
 - Files larger than 4 GB. This can be customized or turned off entirely.
 
-![Backblaze’s default list of excluded directories and file extensions](https://oleb.net/media/backblaze-exclusions-screenshot.png)
+[![Backblaze’s default list of excluded directories and file extensions](https://oleb.net/media/backblaze-exclusions-screenshot.png)](https://oleb.net/media/backblaze-exclusions-screenshot.png)
 
 <sub>Backblaze’s default list of excluded directories and file extensions.</sub>
 
@@ -58,7 +58,7 @@ One of Backblaze’s biggest downsides for me is its policy towards external har
 
 We live in a time where almost nobody owns a computer with multiple internal drive bays anymore. Laptops generally come with smallish and often non-upgradeable SSDs these days, which means that the internal storage capacity of the average computer may actually have gone down in recent years. At the same time, the amount of storage our photo and video collections take up is constantly growing. All this means that many users have more important data than they can fit on their laptop’s internal storage. External drives have become a necessity, not just for local backup purposes.
 
-As an example, the amount of data I have that I consider important enough to back up (about 2 TB) is more than I can fit on any laptop currently sold by Apple. So I have an external hard drive with archived data. I don’t need to access this data regularly, but I still have to remember[1](#fn:1) to connect it regularly to my computer so that Backblaze won’t forget it. And it’s not enough to attach the drive for just a few seconds. Even if no data on the drive has changed, you have to give the Backblaze app enough time to rescan it. How much time is enough, you ask? I don’t know because the app doesn’t indicate when it’s done, so you better leave it attached for a number of hours at least. [This is from Backblaze’s FAQ](https://help.backblaze.com/entries/20200433-Backing-up-External-Hard-Drives/#unplugged):
+As an example, the amount of data I have that I consider important enough to back up (about 2 TB) is more than I can fit on any laptop currently sold by Apple. So I have an external hard drive with archived data. I don’t need to access this data regularly, but I still have to remember^[1](#fn:1) to connect it regularly to my computer so that Backblaze won’t forget it. And it’s not enough to attach the drive for just a few seconds. Even if no data on the drive has changed, you have to give the Backblaze app enough time to rescan it. How much time is enough, you ask? I don’t know because the app doesn’t indicate when it’s done, so you better leave it attached for a number of hours at least. [This is from Backblaze’s FAQ](https://help.backblaze.com/entries/20200433-Backing-up-External-Hard-Drives/#unplugged):
 
 > When an external drive is plugged back in, it may take Backblaze a minute or two hours to schedule the files on the external drive to be backed up online.
 

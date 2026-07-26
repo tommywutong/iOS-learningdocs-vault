@@ -85,15 +85,14 @@ Lastly, APE is non-free and requires a license fee for commercial/shareware prod
 **Miscellaneous**  
  Those are the main mechanisms, but the system provides a few more, of varying utility:
 
-1. These are Finder plugins intended to extend the contextual menu in the Finder. Of course once they're loaded, they can do whatever they want. The downside is that, as I understand it, they're loaded lazily on Leopard so you don't get your shot until and unless the user actually brings up the plugins section of the contextual menu. And of course it only gets you into the Finder.
-2. These are meant to be used to extend the capabilities of AppleScript on the system, but they actually work by loading into an application which is responding to the appropriate Apple Event. For example, run this command in your shell:
+1. **Contextual menu plugins.** These are Finder plugins intended to extend the contextual menu in the Finder. Of course once they're loaded, they can do whatever they want. The downside is that, as I understand it, they're loaded lazily on Leopard so you don't get your shot until and unless the user actually brings up the plugins section of the contextual menu. And of course it only gets you into the Finder.
+2. **Scripting Additions.** These are meant to be used to extend the capabilities of AppleScript on the system, but they actually work by loading into an application which is responding to the appropriate Apple Event. For example, run this command in your shell: `osascript -e 'tell app "Finder" to display dialog "I just injected some code into Finder!"'` Replace that standard scripting additions command with your own and off you go.
+3. **WebKit plugins.** These are rarely useful unless you really are implementing a browser plugin, but it's a way to potentially get code into Safari and other WebKit-using applications.
+4. **Kernel extensions.** Not really an injection mechanism, but once you're in the kernel you rule the system and can do whatever you want to anything.
+5. **Buffer overflows.** Don't laugh too hard, people have done this! One of the older iPhone jailbreaking mechanisms used a buffer overflow in Safari to get in and do its dirty work. Of course these are absolutely not something to rely on, as vendors have this weird idea that they ought to fix them once they're discovered.
 
-  Replace that standard scripting additions command with your own and off you go.
-3. These are rarely useful unless you really are implementing a browser plugin, but it's a way to potentially get code into Safari and other WebKit-using applications.
-4. Not really an injection mechanism, but once you're in the kernel you rule the system and can do whatever you want to anything.
-5. Don't laugh too hard, people have done this! One of the older iPhone jailbreaking mechanisms used a buffer overflow in Safari to get in and do its dirty work. Of course these are absolutely not something to rely on, as vendors have this weird idea that they ought to fix them once they're discovered.
-
-Code injection is a powerful tool for extending applications you don't control. For example, my own LiveDictionary uses the Input Manager mechanism to load into Safari so that it can monitor the user's keyboard and mouse inputs in that app, and read the text under the mouse cursor at the appropriate times. (This is something that could be done using the Accessibility API today, but at the time LiveDictionary was written it wasn't yet functional enough.)
+**What's It Good For?**  
+ Code injection is a powerful tool for extending applications you don't control. For example, my own LiveDictionary uses the Input Manager mechanism to load into Safari so that it can monitor the user's keyboard and mouse inputs in that app, and read the text under the mouse cursor at the appropriate times. (This is something that could be done using the Accessibility API today, but at the time LiveDictionary was written it wasn't yet functional enough.)
 
 For more examples, just take a look at [Unsanity](http://www.unsanity.com/). They have a whole line of products based around APE and code injection, doing things ranging from GUI themes to mouse cursor customization to custom menus.
 
@@ -114,8 +113,8 @@ The second reason is more of a political one. It's extremely rude to crash anoth
 1. Avoid code injection if at all possible. Take another look at your options. Can you use Accessibility to do what you want? AppleScript? Is there an official plugin interface? Sometimes you really have no choice, but exhaust all other options first.
 2. Load into as few programs as possible. If you're using a mechanism like Input Managers that loads into a lot of applications but you only want to hit a few, be sure to restrict your module to just the ones you want. This reduces the chances of affecting an application you didn't even need to be in. For Input Managers, you can use SIMBL to accomplish this.
 3. Do as little in the injected code as possible. If you do a lot of complicated work in your code, move that into a background process and talk to it using Distributed Objects or another IPC mechanism. That way, if something in the background process crashes, it won't take other applications down with it. (LiveDictionary is a good example of this, the Input Manager itself basically just grabs input and text out of the target application, and all of the dictionary parsing, lookup, and display is done in an LSUIElement application.)
-4. need? Best to avoid it if you can. Any large application is going to have hidden assumptions about the environment it runs it, often completely inadvertently. Try to modify as little as possible to avoid make it crash when you step over one of those invisible lines.
-5. defensively. Check every potential failure spot thoroughly, and fail as gracefully as possible. Remember, it's much better for your injected code to stop working or disable itself but leave the application running than it is to crash the application.
+4. Modify your environment as little as possible. Got a handy Cocoa programming trick that involves posing as a common AppKit class? Don't do it. Need to install some category methods with common names on NSObject? Forget about it. Want to load some enormous framework that you don't _really_ need? Best to avoid it if you can. Any large application is going to have hidden assumptions about the environment it runs it, often completely inadvertently. Try to modify as little as possible to avoid make it crash when you step over one of those invisible lines.
+5. Program defensively. I mean _really_ defensively. Check every potential failure spot thoroughly, and fail as gracefully as possible. Remember, it's much better for your injected code to stop working or disable itself but leave the application running than it is to crash the application.
 
 **Wrapping Up**  
  That's it for this week's Friday Q&A.; Come back next week for another show. Bring a friend and get 50% off the price of admission!
@@ -132,7 +131,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-01-30-code-injection.html)
 
 Add your thoughts, post a comment:
 

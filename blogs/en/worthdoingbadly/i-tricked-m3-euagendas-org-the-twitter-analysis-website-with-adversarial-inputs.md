@@ -7,7 +7,7 @@ original_language: en
 published: 2019-07-07
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:872aea9346caf2b0'
 translated: false
 ---
@@ -259,9 +259,7 @@ First, just modifying how you train neural networks [helps, but doesn’t preven
 
 Next, you might’ve noticed that I have full access to the trained model. Restricting access to the model would slow the generation of adversarial inputs, but won’t prevent it. Black-box approaches exist, where I:
 
-- train my own
-
-  similar neural network
+- [train my own](https://github.com/tensorflow/cleverhans#tutorials-cleverhans_tutorials-directory) similar neural network
 - generate adversarial inputs on my own network
 - and use those on the original network.
 
@@ -274,3 +272,5 @@ As a developer, I conducted this experiment because I believe it’s important t
 - Generating adversarial inputs for neural networks
 - How easy it is to fool a neural network
 - Before deploying new technology, first find out how it can fail, so you can find ways to mitigate the impact
+
+[https://worthdoingbadly.com/nn-adversarial/](https://worthdoingbadly.com/nn-adversarial/)

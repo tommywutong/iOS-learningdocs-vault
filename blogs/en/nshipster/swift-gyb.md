@@ -1,0 +1,187 @@
+---
+title: Swift GYB
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/swift-gyb/'
+original_language: en
+published: 2018-07-09
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:b0f762b27c9cbd0d'
+translated: false
+---
+
+> 原文：[Swift GYB](https://nshipster.com/swift-gyb/)　·　NSHipster (Mattt)
+
+# [Swift GYB](https://nshipster.com/swift-gyb/)
+
+Written by  [Mattt](https://nshipster.com/authors/mattt/)  January 19^th, 2019 ([revised](https://github.com/nshipster/articles/commits/master/2018-07-09-swift-gyb.md))
+
+The term _“boilerplate”_ goes back to the early days of print media. Small regional newspapers had column inches to fill, but typically lacked the writing staff to make this happen, so many of them turned to large print syndicates for a steady flow of content that could be added verbatim into the back pages of their dailies. These stories would often be provided on pre-set plates, which resembled the rolled sheets of steel used to make boilers, hence the name.
+
+Through a process of metonymy, the content itself came to be known as “boilerplate”, and the concept was appropriated to encompass standardized, formulaic text in contracts, form letters, and, most relevant to this week’s article on NSHipster, code.
+
+---
+
+Not all code can be glamorous. In fact, a lot of the low-level infrastructure that makes everything work is a slog of boilerplate.
+
+This is true of the Swift standard library, which includes families of types like signed integers (`Int8`, `Int16`, `Int32`, `Int64`) whose implementation varies only in the size of the respective type.
+
+Copy-pasting code may work as a one-off solution (assuming you manage to get it right the first time), but it’s not sustainable. Each time you want to make changes to these derived implementations, you risk introducing slight inconsistencies that cause the implementations to diverge over time — not unlike the random mutations responsible for the variation of life on Earth.
+
+Languages have various techniques to cope with this, from C++ templates and Lisp macros to `eval` and C preprocessor statements.
+
+Swift doesn’t have a macro system, and because the standard library is itself written in Swift, it can’t take advantage of C++ metaprogramming capabilities. Instead, the Swift maintainers use a Python script called [gyb.py](https://github.com/apple/swift/blob/main/utils/gyb.py) to generate source code using a small set of template tags.
+
+## How GYB Works
+
+GYB is a lightweight templating system that allows you to use Python code for variable substitution and flow control:
+
+- The sequence `%{ code }` evaluates a block of Python code
+- The sequence `% code: ... % end` manages control flow
+- The sequence `${ code }` substitutes the result of an expression
+
+All other text is passed through unchanged.
+
+A good example of GYB can be found in [Codable.swift.gyb](https://github.com/apple/swift/blob/6eef42d6dd3b58cdef32e34dc8cf94b4945efce6/stdlib/public/core/Codable.swift.gyb). At the top of the file, the base `Codable` types are assigned to an instance variable:
+
+```
+%{
+codable_types = ['Bool', 'String', 'Double', 'Float',
+                 'Int', 'Int8', 'Int16', 'Int32', 'Int64',
+                 'UInt', 'UInt8', 'UInt16', 'UInt32', 'UInt64']
+}%
+```
+
+Later on, in the implementation of `SingleValueEncodingContainer`, these types are iterated over to generate the methods declarations for the protocol’s requirements:
+
+```
+% for type in codable_types:
+  mutating func encode(_ value: ${type}) throws
+% end
+```
+
+Evaluating the GYB template results in the following declarations:
+
+```
+mutating func encode(_ value: Bool) throws
+mutating func encode(_ value: String) throws
+mutating func encode(_ value: Double) throws
+mutating func encode(_ value: Float) throws
+mutating func encode(_ value: Int) throws
+mutating func encode(_ value: Int8) throws
+mutating func encode(_ value: Int16) throws
+mutating func encode(_ value: Int32) throws
+mutating func encode(_ value: Int64) throws
+mutating func encode(_ value: UInt) throws
+mutating func encode(_ value: UInt8) throws
+mutating func encode(_ value: UInt16) throws
+mutating func encode(_ value: UInt32) throws
+mutating func encode(_ value: UInt64) throws
+```
+
+This pattern is used throughout the file to generate similarly formulaic declarations for methods like `encode(_:forKey:)`, `decode(_:forKey:)`, and `decodeIfPresent(_:forKey:)`. In total, GYB reduces the amount of boilerplate code by a few thousand LOC:
+
+```
+$ wc -l Codable.swift.gyb
+2183 Codable.swift.gyb
+$ wc -l Codable.swift
+5790 Codable.swift
+```
+
+## Installing GYB
+
+GYB isn’t part of the standard Xcode toolchain, so you won’t find it with `xcrun`. Instead, you can download it using [Homebrew](https://nshipster.com/homebrew/):
+
+```
+$ brew install nshipster/formulae/gyb
+```
+
+Alternatively, you can download the source code and use the `chmod` command to make `gyb` executable (the default installation of Python on macOS should be able to run `gyb`):
+
+```
+$ wget https://github.com/apple/swift/raw/main/utils/gyb
+$ wget https://github.com/apple/swift/raw/main/utils/gyb.py
+$ chmod +x gyb
+```
+
+If you go this route, be sure to move these somewhere that can be accessed from your Xcode project, but keep them separate from your source files (for example, a `Vendor` directory at your project root).
+
+## Using GYB in Xcode
+
+In Xcode, click on the blue project file icon in the navigator, select the active target in your project, and navigate to the “Build Phases” panel. At the top, you’ll see a `+` symbol that you can click to add a new build phase. Select “Add New Run Script Phase”, and enter the following into the source editor:
+
+```
+find . -name '*.gyb' |                                               \
+    while read file; do                                              \
+        ./path/to/gyb --line-directive '' -o "${file%.gyb}" "$file"; \
+    done
+```
+
+Now when you build your project any file with the `.swift.gyb` file extension is evaluated by GYB, which outputs a `.swift` file that’s compiled along with the rest of the code in the project.
+
+## When to Use GYB
+
+As with any tool, knowing when to use it is just as important as knowing how. Here are some examples of when you might open your toolbox and reach for GYB.
+
+### Generating Formulaic Code
+
+Are you copy-pasting the same code for elements in a set or items in a sequence? A for-in loop with variable substitution might be the solution.
+
+As seen in the example with `Codable` from before, you can declare a collection at the top of your GYB template file and then iterate over that collection for type, property, or method declarations:
+
+```
+%{
+    abilities = ['strength', 'dexterity', 'constitution',
+                 'intelligence', 'wisdom', 'charisma']
+}%
+class Character {
+  var name: String
+
+% for ability in abilities:
+  var ${ability}: Int
+% end
+}
+```
+
+Evaluating this with GYB produces the following Swift code:
+
+```
+class Character {
+  var name: String
+
+  var strength: Int
+  var dexterity: Int
+  var constitution: Int
+  var intelligence: Int
+  var wisdom: Int
+  var charisma: Int
+}
+```
+
+A lot of repetition in code is a smell and may indicate that there’s a better way to accomplish your task. Built-in language feature like protocol extensions and generics can eliminate a lot of code duplication, so be on the lookout to use these instead of brute-forcing with GYB.
+
+### Generating Code Derived from Data
+
+Are you writing code based on a data source? Try incorporating GYB into your development!
+
+GYB files can import Python packages like `json`, `xml`, and `csv`, so you can parse pretty much any kind of file you might encounter:
+
+```
+%{ import csv }
+% with open('path/to/file.csv') as file:
+    % for row in csv.DictReader(file):
+```
+
+If you want to see this in action, check out [Currencies.swift.gyb](https://github.com/Flight-School/Money/blob/master/Sources/Money/Currency.swift.gyb) which generates Swift enumerations for each of the currencies defined by the [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) specification.
+
+Code generation makes it trivial to keep your code in sync with the relevant standards. Simply update the data file and re-run GYB.
+
+---
+
+Swift has done a lot to cut down on boilerplate recently with the addition of compiler synthesis of `Encodable` and `Decodable` in 4.0, `Equatable` and `Hashable` in 4.1, and `CaseIterable` in 4.2. We hope that this momentum is carried in future updates to the language.
+
+In the meantime, for everything else, GYB is a useful tool for code generation.
+
+“Don’t Repeat Yourself” may be a virtue in programming, but sometimes you have to say things a few times to make things work. When you do, you’ll be thankful to have a tool like GYB to say it for you.

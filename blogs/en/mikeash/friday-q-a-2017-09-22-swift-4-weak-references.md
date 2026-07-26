@@ -110,7 +110,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-09-22-swift-4-weak-references.html)
 
 Add your thoughts, post a comment:
 

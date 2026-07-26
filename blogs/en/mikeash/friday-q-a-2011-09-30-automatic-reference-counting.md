@@ -44,20 +44,8 @@ Fortunately, Xcode offers a tool to convert existing code. Select Edit -\> Refac
 **Basic Functionality**  
 Cocoa memory management rules are fairly simple. In short:
 
-1. ,
-
-  ,
-
-  , or
-
-  an object, you must balance that with
-
-  or
-
-  .
-2. or
-
-  it. This must, of course, be balanced later.
+1. If you `alloc`, `new`, `copy`, or `retain` an object, you must balance that with `release` or `autorelease`.
+2. If you obtain an object from something other than the above, and you need it to stay alive long-term, you must `retain` or `copy` it. This must, of course, be balanced later.
 
 These are highly suitable for automation. If you write this:
 
@@ -399,11 +387,9 @@ As before, this fails under ARC, because normal casts between object and non-obj
 
 To summarize:
 
-- simply transfers a pointer between ARC and non-ARC with no transfer of ownership.
-- moves a non-Objective-C pointer to Objective-C and also transfers ownership, such that ARC will release the value for you.
-- moves an Objective-C pointer to a non-Objective-C pointer and also transfers ownership, such that you, the programmer, are responsible for later calling
-
-  or otherwise releasing ownership of the object.
+- `__bridge` simply transfers a pointer between ARC and non-ARC with no transfer of ownership.
+- `__bridge_transfer` moves a non-Objective-C pointer to Objective-C and also transfers ownership, such that ARC will release the value for you.
+- `__bridge_retained` moves an Objective-C pointer to a non-Objective-C pointer and also transfers ownership, such that you, the programmer, are responsible for later calling `CFRelease` or otherwise releasing ownership of the object.
 
 **Structs**  
 Under ARC, structs and Objective-C object pointers pretty much don't mix. The problem is that there is no good way for the compiler to know when a particular struct is destroyed or copied, and thus no good place for the compiler to insert the necessary `retain` and `release` calls. Because it's such a difficult problem, and because putting object pointers in structs is so unusual anyway, ARC just gives up on the whole proposition. If you want to put an Objective-C object pointer in a struct, you _must_ qualify it with `__unsafe_unretained`, and deal with all of the problems and danger that this implies.
@@ -428,7 +414,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-09-30-automatic-reference-counting.html)
 
 Add your thoughts, post a comment:
 

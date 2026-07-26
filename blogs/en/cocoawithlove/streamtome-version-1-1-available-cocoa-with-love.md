@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:57b8ba0025e541c0'
 translated: false
 ---
@@ -18,9 +18,7 @@ The latest version of [StreamToMe](http://zqueue.com/streamtome/index.html) — 
 
 ## New Features
 
-> download the latest version of ServeToMe
-> 
-> to take advantage of these new features.
+> You will need to [download the latest version of ServeToMe](http://zqueue.com/servetome/index.html) to take advantage of these new features.
 
 ### The "Seek to anywhere" update
 

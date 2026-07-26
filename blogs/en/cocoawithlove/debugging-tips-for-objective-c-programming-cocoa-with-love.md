@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:01c5f7f98ec0e911'
 translated: false
 ---
@@ -172,9 +172,7 @@ and gdb will tell you:
 
 which tells us that the problem occurred in the method performTransition.
 
-> As noted by "g" in the comments, there is a better way to determine the method and line of code for an address in this case.
-> 
-> will give the line in the original source code file, not just the byte offset from the start of the function.
+> **Update:** As noted by "g" in the comments, there is a better way to determine the method and line of code for an address in this case. `info line *11076` will give the line in the original source code file, not just the byte offset from the start of the function.
 
 If you look at the 5 addresses above 11076 in the list, they are all associated with throwing the exception itself — which makes it annoying that the Mac OS X 10.5 objc_exception_throw only returns the top 5 addresses because these 5 addresses are often the same exception throwing addresses (they don't say anything about _why_ the exception is thrown).
 

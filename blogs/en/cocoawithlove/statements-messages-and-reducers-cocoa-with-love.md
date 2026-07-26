@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0d89028763a97b6d'
 translated: false
 ---
@@ -141,10 +141,8 @@ This code produces the same output as the previous example and uses a very simil
 
 It should now be much clearer that our program’s logic is composed of logic on two different tiers:
 
-1. and
-
-  which interpret and execute each instruction
-2. which contains a sequence of messages that need to be interpreted
+1. Swift statements in `handleInstruction` and `printCode` which interpret and execute each instruction
+2. The `Instructions.array` which contains a sequence of messages that need to be interpreted
 
 Our second tier of computational unit is the **message** and it is any data which can be fed to a component in a stream, where the structure of data in the stream itself determines the result.
 

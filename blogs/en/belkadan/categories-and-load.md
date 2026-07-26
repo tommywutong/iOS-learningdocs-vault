@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:360a450f63695bbe'
 translated: false
 ---
@@ -36,13 +36,9 @@ Well, today I was absentmindedly reading through GCC extensions to the C languag
 
 !! Categories get their own `+load` methods? It’s just like every class getting its own `+initialize`! With this here, you can safely add functionality to existing methods using categories:
 
-1. .
-2. when it would be calling the original method.
-3. , swap the implementations of the two methods (using something like
-
-  JRSwizzle
-
-  ).
+1. Create a method with an unlikely prefix: `-(id)ComBelkadan_valueForKey:(NSString *)key`.
+2. Have that method call _itself_ when it would be calling the original method.
+3. In `+load`, swap the implementations of the two methods (using something like [JRSwizzle](http://rentzsch.com/trac/wiki/JRSwizzle)).
 
 Now if someone else comes along and does the same thing, the methods will chain together, eventually calling the original implementation as intended. Has anyone been using this before or has no one known about it? (And, will the alternative compiler [Clang/LLVM](http://clang.llvm.org/) offer the same functionality?)
 

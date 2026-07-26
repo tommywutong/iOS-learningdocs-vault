@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d48bdd54dba4af5d'
 translated: false
 ---
@@ -22,10 +22,10 @@ Together with the freely available WWDC 2010-2012 sessions, Apple developers now
 
 Despite the Mac-centric nature of the videos, it seems that both registered Mac and iOS developers can download them. To access the videos, go to [developer.apple.com/videos/](https://developer.apple.com/videos/) and click the [OS X Videos](https://developer.apple.com/itunes/?destination=adc.apple.com.3393701973) link. This will open iTunes with this page:
 
-![Mac Development Videos section in iTunes](https://oleb.net/media/itunes-mac-development-videos.jpg)
+[![Mac Development Videos section in iTunes](https://oleb.net/media/itunes-mac-development-videos.jpg)](https://oleb.net/media/itunes-mac-development-videos.jpg)
 
 Now click through to the categories under “Foundation Videos”. Each category contains a separate tab for each year between 2008 and 2004. So you’ll have to visit all five sections in order to download all the sessions for a particular year.
 
-![Mac Development Application Technologies Videos section in iTunes](https://oleb.net/media/itunes-mac-development-videos-application-technologies.jpg)
+[![Mac Development Application Technologies Videos section in iTunes](https://oleb.net/media/itunes-mac-development-videos-application-technologies.jpg)](https://oleb.net/media/itunes-mac-development-videos-application-technologies.jpg)
 
 Beware: the full set of videos and slides for 2004-2008 is a whopping 176 gigabytes so be sure to bring some time for the download.

@@ -7,7 +7,7 @@ original_language: en
 published: 2015-11-18
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:16ea5a9b28bb3a09'
 translated: false
 ---
@@ -34,13 +34,11 @@ A few weeks ago I asked people a question on Twitter:
 
 > So, for people working on developer tools (compilers, debuggers, IDEs, many other things), how did you get into it?
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> November 2, 2015
+> — Jordan Rose (@UINT_MIN) [November 2, 2015](https://twitter.com/UINT_MIN/status/661221125381197824)
 
 I got many interesting responses, but one of them asked if I had any recommendations for books on compilers.
 
-Oh gosh. Books? Books about computer science? I’m actually not very well-read: while I’ve been programming since I was a kid, I “only” have an undergraduate formal education. That means the set of books I’ve read about CS is rather haphazard. But I suppose I do have a few things that come to mind.more
+Oh gosh. Books? Books about computer science? I’m actually not very well-read: while I’ve been programming since I was a kid, I “only” have an undergraduate formal education. That means the set of books I’ve read about CS is rather haphazard. But I suppose I do have a few things that come to mind.
 
 ### [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/)
 
@@ -58,7 +56,7 @@ Meyer’s _Object-Oriented Software Construction_ is the first book I read that 
 
 (I haven’t picked up a copy of OOSC in almost a decade, so forgive me if I’ve misremembered some of the details.)
 
-There are lots of books on _compilers_ out there, but most of them really are about compilers: different techniques for parsing source text into abstract syntax trees (“ASTs”), a discussion of the formal semantics of various constructs (“semantic analysis”), and then a lowering to machine code (“code generation”). All of this is important, but (a) not all of it is practical in real compilers[1](#fn:parser), and (b) it felt like there was no sense of design; it’s just different techniques for getting from point A to point B. Problem-solving.
+There are lots of books on _compilers_ out there, but most of them really are about compilers: different techniques for parsing source text into abstract syntax trees (“ASTs”), a discussion of the formal semantics of various constructs (“semantic analysis”), and then a lowering to machine code (“code generation”). All of this is important, but (a) not all of it is practical in real compilers^[1](#fn:parser), and (b) it felt like there was no sense of design; it’s just different techniques for getting from point A to point B. Problem-solving.
 
 I don’t want to slander compiler work; I was just tired of the tried-and-true academic approach to compilers. And it turned out I was more interested in program semantics and language design anyway.
 
@@ -72,7 +70,7 @@ There are probably other compiler tutorials out there that are even more compact
 
 ### [Crafting Interpreters](https://craftinginterpreters.com)
 
-_(added 2020-04-12)_ I had to come back to this post almost five years later to recommend Bob Nystrom’s _Crafting Interpreters,_ which walks through making an interpreter for a simple, garbage-collected object-oriented language…and then goes through it a second time to make a bytecode compiler and VM instead. One of the things I appreciated about it was the commitment to “no magic”: not only does Nystrom explain everything from the lexer to the garbage collector, but he includes _every line of code_ in the book itself. (And wrote a [heck of a blog post](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/) about how he went about _testing_ such a thing.[2](#fn:ht)) On top of that, his writing style is fun and whimsical (all the examples are about breakfast), and the book contains dozens of hand-drawn diagrams and sketches with hand-lettered annotations.
+_(added 2020-04-12)_ I had to come back to this post almost five years later to recommend Bob Nystrom’s _Crafting Interpreters,_ which walks through making an interpreter for a simple, garbage-collected object-oriented language…and then goes through it a second time to make a bytecode compiler and VM instead. One of the things I appreciated about it was the commitment to “no magic”: not only does Nystrom explain everything from the lexer to the garbage collector, but he includes _every line of code_ in the book itself. (And wrote a [heck of a blog post](https://journal.stuffwithstuff.com/2020/04/05/crafting-crafting-interpreters/) about how he went about _testing_ such a thing.^[2](#fn:ht)) On top of that, his writing style is fun and whimsical (all the examples are about breakfast), and the book contains dozens of hand-drawn diagrams and sketches with hand-lettered annotations.
 
 I enjoyed _Crafting Interpreters,_ but as someone who’s been interested in compilers and interpreters and programming languages for years there wasn’t _too_ much that was new for me. So if you’ve already got baseline compiler knowledge, you may end up wanting to skip section II (the straightforward direct-from-parsed-code interpreter written in Java) and going straight to section III (the bytecode-based interpreter). But if you’re new to the field, I can recommend the whole thing as a sensible and approachable introduction to the main concepts.
 

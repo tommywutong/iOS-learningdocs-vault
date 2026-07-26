@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e1c506b190469004'
 translated: false
 ---
@@ -181,6 +181,8 @@ There is certainly NSCollectionView which handles grids of actual NSViews but th
 What's wrong with NSCollectionView? Simple: it constructs every view, including those that aren't visible. If your NSCollectionView contains 1 million views, this isn't going to work well. Further: NSCollectionView doesn't handle table-like interaction (you can't use column or row operations by default).
 
 The reality is that NSCollectionView is designed to fill a slightly different niche; what we really need is a better NSTableView.
+
+> More generally than NSTableView: the entire NSCell concept seems dated. I would not be sad to see Apple deprecate them entirely. In some respects: leaving them out of UIKit is a mild form of deprecation. Now they just need to take the next step and start offering a way to use AppKit without NSCells.
 
 ## 8. Get rid of NSNib
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3cd7c7380aa5cc2d'
 translated: false
 ---
@@ -18,18 +18,18 @@ translated: false
 
 ## External Links Never Open in the Right Window
 
-My window management habits are nowhere near [Siracusean levels](http://atp.fm/episodes/96),[1](#fn:1) but at any given time I do have several browser windows open, with multiple tabs each.
+My window management habits are nowhere near [Siracusean levels](http://atp.fm/episodes/96),^[1](#fn:1) but at any given time I do have several browser windows open, with multiple tabs each.
 
 - One window is usually reserved for the task I’m currently working on; it contains relevant documentation, blog posts, Stack Overflow answers, etc. There may be several of these windows, separated by task.
 - I have one or more additional windows to collect stuff I found online but haven’t read yet. Most of the tabs in these windows come from links I click in my Twitter or RSS client.
 - Depending on the situation, there may be several more windows that acts as reminders for things I want to write about, products I consider buying, etc. These are usually minimized.
 - When I do web development, the browser is also used to test the site I work on. This quickly adds four to six additional browser windows to the list (for mobile and desktop layout in multiple browsers), all of which are carefully sized and positioned. When the same app is used for both research and testing, window management becomes even more of a hassle.
 
-Whenever I open a new link (say, from my Twitter client), it creates a tab in the most recently used window of my default browser.[2](#fn:2) More often than not, this is not what I want. I constantly end up moving tabs between windows.
+Whenever I open a new link (say, from my Twitter client), it creates a tab in the most recently used window of my default browser.^[2](#fn:2) More often than not, this is not what I want. I constantly end up moving tabs between windows.
 
 **A locked browser window would never be used to open links from external sources. The browser would use the most recently used unlocked window to open those links.**
 
-Here’s an idea how to solve this: I’d like to be able to “lock” a browser window.[3](#fn:3) A locked window would never be used to open links from external sources (Twitter client, Mail app, Alfred, etc.). Instead, the browser would use the most recently used unlocked window to open those links. If no unlocked window exists, it should create a new one.
+Here’s an idea how to solve this: I’d like to be able to “lock” a browser window.^[3](#fn:3) A locked window would never be used to open links from external sources (Twitter client, Mail app, Alfred, etc.). Instead, the browser would use the most recently used unlocked window to open those links. If no unlocked window exists, it should create a new one.
 
 Aside from that change, locked windows would behave like any other window. You would still be able to manually open a link in a new tab, create new tabs, reorder tabs, or move tabs between windows.
 
@@ -40,6 +40,12 @@ I haven’t found a browser extension for Safari or Chrome that does this. I’m
 David Owens recently [suggested a somewhat similar idea on Twitter](https://twitter.com/owensd/status/553349421174632450):
 
 > An awesome OS X feature would be to "suspend" an entire Space. Easy to shutdown the work and resume it the next day.
+> 
+> [@owensd](https://twitter.com/owensd)
+> 
+> David Owens II
+> 
+> [June 9, 2015](https://twitter.com/owensd/status/553349421174632450)
 
 1. In [ATP episode 96](http://atp.fm/episodes/96), John Siracusa talked about his approach to window management, to the amazement of his co-hosts:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:96329bf7cd4c38d8'
 translated: false
 ---
@@ -18,16 +18,8 @@ translated: false
 
 Making a copy (e.g. for a backup) of a SQLite database file while it’s being used by [Core Data](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/) is not trivial:
 
-1. multiple files to contend with
-
-  : the main database file, the write-ahead log (ending in
-
-  ), and the shared memory file (ending in
-
-  ).
-2. result in a corrupt copy
-
-  .
+1. There are [multiple files to contend with](https://sqlite.org/tempfiles.html): the main database file, the write-ahead log (ending in `-wal`), and the shared memory file (ending in `-shm`).
+2. Making a copy of the database file while a transaction is in progress can [result in a corrupt copy](https://www.sqlite.org/howtocorrupt.html#_backup_or_restore_while_a_transaction_is_active).
 
 You should use official Core Data APIs to make copies of your database. I don’t know if Apple has official sample code for this task, but [`NSPersistent​Store​Coordinator.​migrate​Persistent​Store​(_:to:​options:​withType:)`](https://developer.apple.com/documentation/coredata/nspersistentstorecoordinator/1468927-migratepersistentstore) seems to be the right method. I found using it not very easy, though, mainly because of this note in the documentation:
 
@@ -133,18 +125,8 @@ The code uses the [`TemporaryFile` helper type I wrote about yesterday](https://
 
 Some things I particularly like about the code:
 
-- write-ahead logging disabled
-
-  . This means the entire store will be contained in a single
-
-  file. You don’t have to deal with the
-
-  and
-
-  files.
-- `NSSQLite​Manual​Vacuum​Option`
-
-  enabled, minimizing its file size.
+- The target store is configured with [write-ahead logging disabled](https://developer.apple.com/library/content/qa/qa1809/_index.html). This means the entire store will be contained in a single `.sqlite` file. You don’t have to deal with the `-wal` and `-shm` files.
+- The target store has the [`NSSQLite​Manual​Vacuum​Option`](https://developer.apple.com/documentation/coredata/nssqlitemanualvacuumoption#) enabled, minimizing its file size.
 - Both the source and the target store are configured read-only.
 
 # Works with external BLOB storage

@@ -30,14 +30,14 @@ NSNotifications are both simple and powerful, which is why they show up so often
 
 1. Loose coupling between notification senders and receivers.
 2. Support for multiple receivers for a single notification.
-3. property.
+3. Support for custom data on the notification using the `userInfo` property.
 
 There are some disadvantages as well:
 
 1. Sending and registering for notifications involves interacting with a singleton instance with no clear relationship to your classes.
 2. It's not always clear what notifications are available for a particular class.
-3. , it's not always clear what keys are available in the dictionary.
-4. keys are dynamically typed and require cooperation between the sender and receiver that can't be expressed in the language, and messy boxing/unboxing for non-object types.
+3. For notifications which use `userInfo`, it's not always clear what keys are available in the dictionary.
+4. `userInfo` keys are dynamically typed and require cooperation between the sender and receiver that can't be expressed in the language, and messy boxing/unboxing for non-object types.
 5. Removing a notification registration requires an explicit removal call.
 6. It's difficult to inspect which objects are registered for any given notification, which can make it hard to debug.
 
@@ -108,7 +108,7 @@ Sending a notification involves calling `notify` and passing the appropriate par
 
 This makes for a really nice API. Going through the disadvantages listed above:
 
-1. pair is represented with a separate observer set instance.
+1. There's no singleton involved. Each `(object, notification)` pair is represented with a separate observer set instance.
 2. All notifications available for a class are public properties of that class.
 3. Explicit parameters are used to pass data to observers. They can be named in code to make it clear exactly what they are.
 4. Notification parameters are statically typed. The types are specified in the observer set property and notification senders and receivers are checked by the compiler. All types are supported, with no need for boxing.
@@ -324,7 +324,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-01-23-lets-build-swift-notifications.html)
 
 Add your thoughts, post a comment:
 

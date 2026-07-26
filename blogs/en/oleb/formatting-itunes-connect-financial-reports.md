@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7f7639a410bd3a63'
 translated: false
 ---
@@ -32,7 +32,7 @@ The HTML template code, complete with CSS, is directly embedded in the script fi
 
 The result looks like this:
 
-![Output from financialreport_to_html.rb](https://oleb.net/media/financialreport_to_html-output-screenshot.png)
+[![Output from financialreport_to_html.rb](https://oleb.net/media/financialreport_to_html-output-screenshot.png)](https://oleb.net/media/financialreport_to_html-output-screenshot.png)
 
 <sub>Output from `financialreport_to_html.rb`.</sub>
 

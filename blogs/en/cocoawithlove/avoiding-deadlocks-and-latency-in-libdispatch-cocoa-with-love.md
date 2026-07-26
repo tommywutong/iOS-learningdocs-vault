@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:732229487d0cde8c'
 translated: false
 ---
@@ -119,11 +119,7 @@ int main(int argc, const char * argv[])
 
 The result is that all 20 blocks are started simultaneously. All run at approximately the same speed and all finish at approximately the same time.
 
-> : as suggested by Keith in the comments, since these operations are I/O bound, not CPU bound, a better solution would be to use a
-> 
-> file write source
-> 
-> in the queue instead of standard operation queue blocks. File write sources are removed from the queue when they are blocked on I/O and this would allow all 20 sources to operate equitably in the global concurrent queue (or any other single queue).
+> **Alternative solution**: as suggested by Keith in the comments, since these operations are I/O bound, not CPU bound, a better solution would be to use a [file write source](http://developer.apple.com/mac/library/documentation/General/Conceptual/ConcurrencyProgrammingGuide/GCDWorkQueues/GCDWorkQueues.html#//apple_ref/doc/uid/TP40008091-CH103-SW21) in the queue instead of standard operation queue blocks. File write sources are removed from the queue when they are blocked on I/O and this would allow all 20 sources to operate equitably in the global concurrent queue (or any other single queue).
 
 ## Deadlocking
 

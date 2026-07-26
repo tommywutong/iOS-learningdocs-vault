@@ -181,7 +181,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-04-05-windows-and-window-controllers.html)
 
 Add your thoughts, post a comment:
 

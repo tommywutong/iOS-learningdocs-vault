@@ -264,7 +264,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-05-18-a-tour-of-plweakcompatibility-part-i.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:33b136b6ed072caa'
 translated: false
 ---
@@ -22,11 +22,7 @@ Escaping closures are often associated with asynchronous control flow, like in t
 
 - A function starts a background task and returns immediately, reporting the result of the background task via a completion handler.
 - A view class stores a closure in a property as an event handler for a button tap event. The class calls the closure every time the user taps the button. The closure escapes the property setter.
-- `DispatchQueue.async`
-
-  . The task closure outlives the call to
-
-  .
+- You schedule a task for asynchronous execution on a dispatch queue using [`DispatchQueue.async`](https://developer.apple.com/reference/dispatch/dispatchqueue/2016098-async). The task closure outlives the call to `async`.
 
 Contrast this with [`DispatchQueue.sync`](https://developer.apple.com/reference/dispatch/dispatchqueue/2016081-sync), which waits until the task closure has finished executing before it returns — the closure never escapes. The same is true for [`map`](https://developer.apple.com/reference/swift/sequence/1641748-map) and the other common sequence and collection algorithms in the standard library.
 

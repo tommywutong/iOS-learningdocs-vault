@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b5dffc3664583ac8'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # WWDC 2011 Sessions Videos Now Available
 
-![WWDC 2011 Session Videos Teaser](https://oleb.net/media/wwdc-2011-session-videos-teaser.jpg)
+[![WWDC 2011 Session Videos Teaser](https://oleb.net/media/wwdc-2011-session-videos-teaser.jpg)](https://oleb.net/media/wwdc-2011-session-videos-teaser.jpg)
 
 If you’re a member of Apple’s iOS or Mac developer program, head over to [Apple’s Development Videos Site](http://developer.apple.com/videos/), where Apple has just published the [videos of the WWDC 2011 sessions](http://developer.apple.com/videos/wwdc/2011/). As last year, the videos are a free download for all registered developers and not only for WWDC attendees.
 

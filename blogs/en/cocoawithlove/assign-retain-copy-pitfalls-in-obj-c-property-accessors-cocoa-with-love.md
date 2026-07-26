@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f9e7e2f8c212bc57'
 translated: false
 ---
@@ -16,11 +16,7 @@ translated: false
 
 In this post, I'll look at some very subtle problems that can occur if a getter or setter method chooses the wrong memory management pattern and in the process, explain why NSDictionary copies its keys rather than simply retains them.
 
-> : in this post I'll be discussing basic memory and mutability considerations in Objective-C accessor methods. If you're interested in atomicity and thread safety issues in accessor methods, please read my earlier post on
-> 
-> Memory and thread-safe custom property methods
-> 
-> . This post will only look at non-atomic accessors.
+> **Scope of this article**: in this post I'll be discussing basic memory and mutability considerations in Objective-C accessor methods. If you're interested in atomicity and thread safety issues in accessor methods, please read my earlier post on [Memory and thread-safe custom property methods](https://www.cocoawithlove.com/2009/10/memory-and-thread-safe-custom-property.html). This post will only look at non-atomic accessors.
 
 ## Why implement your own accessors?
 
@@ -97,13 +93,7 @@ In this case, we don't care about the comparison optimisation and we use the aut
 
 This method has the same safety as the `retain`/`release` dance but requires an autorelease pool and is marginally slower if someInstance and aSomeInstanceValue are actually the same. In reality, there's almost always an autorelease pool in a Cocoa application and the performance difference is more theoretical than real (you'd have difficulty constructing a test program to ever show a difference) until you start creating copy setters (see below).
 
-> : There are some situations where a setter method that takes an Objective-C object should
-> 
-> retain its parameter. Specifically: objects in a hierarchy should not normally retain their parents. Look at
-> 
-> Rules to avoid retain cycles
-> 
-> for more on this topic.
+> **Not all Objective-C setters should retain**: There are some situations where a setter method that takes an Objective-C object should _not_ retain its parameter. Specifically: objects in a hierarchy should not normally retain their parents. Look at [Rules to avoid retain cycles](https://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) for more on this topic.
 
 ## The other half of the retain access pattern
 
@@ -188,19 +178,7 @@ The implementation of a non-atomic copy setter is as simple as you'd imagine:
 }
 ```
 
-> : I had previously stated that you don't need the equality comparison for a copy (since I wrongly claimed the
-> 
-> would ensure you always have a different block of memory). I was wrong, of course. As was immediately pointed out in the comments:
-> 
-> does not always return a copy; for immutable objects,
-> 
-> can return the
-> 
-> object. I forgot about this, even though I've certainly written copy setters that work this way (see the
-> 
-> SynthesizeSingleton code
-> 
-> ). The result is that we still need the comparison to ensure that setting the property to the same value doesn't cause the same potential release problems that the previous retain pattern had. Did I mention it is possible to screw up property accessors?
+> **Correction**: I had previously stated that you don't need the equality comparison for a copy (since I wrongly claimed the `copy` would ensure you always have a different block of memory). I was wrong, of course. As was immediately pointed out in the comments: `copy` does not always return a copy; for immutable objects, `copy` can return the **same** object. I forgot about this, even though I've certainly written copy setters that work this way (see the [SynthesizeSingleton code](https://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html)). The result is that we still need the comparison to ensure that setting the property to the same value doesn't cause the same potential release problems that the previous retain pattern had. Did I mention it is possible to screw up property accessors?
 
 This finally explains why `NSDictionary` copies its keys.
 

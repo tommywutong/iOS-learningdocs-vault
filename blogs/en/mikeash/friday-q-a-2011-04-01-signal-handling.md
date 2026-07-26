@@ -91,17 +91,7 @@ Next, add the signal filter to the queue:
     kevent(fd, &event, 1, NULL, 0, NULL);
 ```
 
-This tells the
-
-to watch for
-
-being delivered to the process. Note that
-
-exists separately from the lower level
-
-handling. Because we don't want the program to terminate when the signal is delivered, which is the default behavior, we also have to tell
-
-to ignore it:
+This tells the `kqueue` to watch for `SIGUSR1` being delivered to the process. Note that `kqueue` exists separately from the lower level `sigaction` handling. Because we don't want the program to terminate when the signal is delivered, which is the default behavior, we also have to tell `sigaction` to ignore it:
 
 ```
     struct sigaction action = { 0 };
@@ -109,11 +99,7 @@ to ignore it:
     sigaction(SIGUSR1, &action, NULL);
 ```
 
-The
-
-is now ready. We can wait for it to receive an event by calling
-
-again, this time not adding anything, but having it give us an event:
+The `kqueue` is now ready. We can wait for it to receive an event by calling `kevent` again, this time not adding anything, but having it give us an event:
 
 ```
     struct kevent event;
@@ -125,9 +111,7 @@ again, this time not adding anything, but having it give us an event:
     }
 ```
 
-Note that because the handler runs normally, we can safely use
-
-or any other code when handling the signal. Convenient!
+Note that because the handler runs normally, we can safely use `printf` or any other code when handling the signal. Convenient!
 
 `kqueue` isn't always all that convenient to use in real programs, though. There are two reasonable ways to do it. One way is to have a dedicated signal handling thread which sits in a loop calling `kevent` repeatedly. Another way is to add the `kqueue` file descriptor to your runloop using something like `CFFileDescriptor` to integrate it with your Cocoa runloop. However neither of these is particularly great.
 
@@ -149,13 +133,7 @@ Next, we set its event handler with a block to execute, and then resume the sour
     dispatch_resume(source);
 ```
 
-Like with
-
-, this exists separately from
-
-, so we have to tell
-
-to ignore the signal:
+Like with `kqueue`, this exists separately from `sigaction`, so we have to tell `sigaction` to ignore the signal:
 
 ```
     struct sigaction action = { 0 };
@@ -182,7 +160,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-04-01-signal-handling.html)
 
 Add your thoughts, post a comment:
 

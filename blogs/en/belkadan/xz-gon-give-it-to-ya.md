@@ -7,7 +7,7 @@ original_language: en
 published: 2024-04-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:16251d74879602be'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 Last Friday the internet was rocked with the discovery of [an exploit in xz-utils](https://boehs.org/node/everything-i-know-about-the-xz-backdoor) that was not only well-put-together technically, but also an example of extremely effective long game social engineering. I could share my opinions, but the takes I’ve seen have actually been fairly nuanced and thoughtful, if (justifiably!) pessimistic, from people with more experience and more familiarity than I have.
 
-So instead I did this. Which, if you recognize the title, is exactly what you think it is.more [Listen along to the original here](https://www.youtube.com/watch?v=fGx6K90TmCI), or if you’re around my age you may [enjoy this variation](https://www.youtube.com/watch?v=wkx8Mw6uMdM).
+So instead I did this. Which, if you recognize the title, is exactly what you think it is. [Listen along to the original here](https://www.youtube.com/watch?v=fGx6K90TmCI), or if you’re around my age you may [enjoy this variation](https://www.youtube.com/watch?v=wkx8Mw6uMdM).
 
 > [Intro]  
 >  _(Apt-get!)_  

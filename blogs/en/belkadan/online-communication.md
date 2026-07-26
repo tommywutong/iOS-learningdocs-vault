@@ -7,7 +7,7 @@ original_language: en
 published: 2024-01-20
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cb2774a595f3ae43'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 ## [Online Communication](#)
 
-I’ve been thinking about different sorts of internet communities, and how they can feel pretty different based on their primary medium. By “community” I mean a group you specifically choose to be part of, a group where you can recognize other “regulars”…a group that feels like a “place” that feels comfortable. Sometimes this is going to be a closed group of friends; other times it’s friends-of-friends that come and go; still others it’s people oriented around a common interest. But as far as text-based online media go, I think they fit into five main categories: **Messaging**, **Chat Rooms**, **Livestream Chat**, **Comment Threads**, and **Forums**.more
+I’ve been thinking about different sorts of internet communities, and how they can feel pretty different based on their primary medium. By “community” I mean a group you specifically choose to be part of, a group where you can recognize other “regulars”…a group that feels like a “place” that feels comfortable. Sometimes this is going to be a closed group of friends; other times it’s friends-of-friends that come and go; still others it’s people oriented around a common interest. But as far as text-based online media go, I think they fit into five main categories: **Messaging**, **Chat Rooms**, **Livestream Chat**, **Comment Threads**, and **Forums**.
 
 |  | Examples | Sync or Async? | Send with | Grouped into… |
 |---|---|---|---|---|

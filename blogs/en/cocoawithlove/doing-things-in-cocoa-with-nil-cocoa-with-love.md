@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:09587b4ad7ac0ee3'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 It is possible you don't know what "nil" means in Objective-C. Just so there's no confusion let me quickly explain:
 
-> is the value an object pointer has when it isn't pointing to anything
+> _**nil**_ is the value an object pointer has when it isn't pointing to anything
 
 If you're familiar with other C derived languages, you might think: "doesn't 'NULL' do the same thing?"
 
@@ -62,29 +62,7 @@ which allows the false return value from sending a message to "nil" as one of po
 
 Sending messages to "nil" does have some drawbacks:
 
-- long long
-
-  ,
-
-  double
-
-  or
-
-  struct
-
-  . Support for
-
-  long long
-
-  ,
-
-  double
-
-  and
-
-  struct
-
-  is new in Mac OS X 10.5.
+- The returned zero value will only work if the size of the expected return type from the method is less or equal to the size of a pointer, or if the return type is a long long, double or struct. Support for long long, double and struct is new in Mac OS X 10.5.
 - Sometimes code is clearer when you account for "nil" values as a separate case (acknowledging that you've considered and planned for it as an input case).
 - If the object is not supposed to be "nil", the fact that Objective-C will quietly continue can hide the misbehaviour. You should consider this when debugging.
 
@@ -142,22 +120,6 @@ Key value coding (the setValue:forKey: case) requires NSString keys, so if your 
 
 "nil" is a zero valued object pointer. Cocoa conveniently provides a few other zero values for different purposes. They include:
 
-- NSZeroPoint
-
-  — an
-
-  NSPoint
-
-  at the origin
-- NSZeroSize
-
-  — a zero width and height
-
-  NSSize
-- NSZeroRect
-
-  — a zero width and height
-
-  NSRect
-
-  at the origin
+- NSZeroPoint — an NSPoint at the origin
+- NSZeroSize — a zero width and height NSSize
+- NSZeroRect — a zero width and height NSRect at the origin

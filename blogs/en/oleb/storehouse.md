@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1baa350c3fa1654f'
 translated: false
 ---
@@ -16,11 +16,11 @@ translated: false
 
 # Storehouse
 
-![Editing a story in Storehouse on the iPad](https://oleb.net/media/ipad-storehouse-screenshot-editing.jpg)
+[![Editing a story in Storehouse on the iPad](https://oleb.net/media/ipad-storehouse-screenshot-editing.jpg)](https://oleb.net/media/ipad-storehouse-screenshot-editing.jpg)
 
 [Storehouse](https://www.storehouse.co/) released their iPad app yesterday, and it is stunning. Storehouse is a storytelling app that allows you to combine text, images and video into beautifully designed one-page stories that can be consumed inside the app and on the web.
 
-![Partial screenshot of the sample story I created with Storehouse](https://oleb.net/media/storehouse-galapagos-story-fullheight-400px.jpg)
+[![Partial screenshot of the sample story I created with Storehouse](https://oleb.net/media/storehouse-galapagos-story-fullheight-400px.jpg)](https://www.storehouse.co/stories/t0wv-galapagos-islands)
 
 <sub>The [Storehouse story I created](https://www.storehouse.co/stories/t0wv-galapagos-islands) to test the app. It looks beautiful and I'd love to have a tool that lets me easily create pages like this and host it under my own domain.</sub>
 

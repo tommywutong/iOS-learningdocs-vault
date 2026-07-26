@@ -7,7 +7,7 @@ original_language: en
 published: 2015-12-29
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:68baed3e26458964'
 translated: false
 ---
@@ -32,15 +32,13 @@ Two weeks ago Aurynn Shaw wrote a piece called “[Contempt Culture](http://blog
 
 > OKAY finally got it together. My post on why you need to shut up on bashing languages [http://blog.aurynn.com/86/contempt-culture](http://blog.aurynn.com/86/contempt-culture)
 > 
-> — cute af (@aurynn)
-> 
-> December 16, 2015
+> — cute af (@aurynn) [December 16, 2015](https://twitter.com/aurynn/status/676918280062373888)
 
 And even before I finished reading it I had a thought:
 
 > _Oh, this is not the article I expected to be reading._
 
-So here’s the article I thought I was going to read, based on the tweet. A short version, anyway.more
+So here’s the article I thought I was going to read, based on the tweet. A short version, anyway.
 
 ---
 
@@ -56,13 +54,9 @@ Shaw points out that this is exclusionary and drives other programmers away. Tha
 
 That applies both to what it does poorly and what it does well. You’re likely to have some examples of the former (presumably you have some idea of why the language is considered “bad”), but that doesn’t mean you won’t make some _other_ mistake that you didn’t realize has been made before. As for the latter…
 
-- Liquid
-
-  is used for (e.g. on GitHub Pages), but more powerful.
+- PHP was (and arguably still is) great for templating—the sort of thing [Liquid](http://liquidmarkup.org) is used for (e.g. on GitHub Pages), but more powerful.
 - C++ has supported Swift-style value semantics from the start.
-- ) and “the entire world” (
-
-  ). It’s even the default, just like in Swift.
+- Java has a level of access control, “package”, between “just this file” (`private`) and “the entire world” (`public`). It’s even the default, just like in Swift.
 - JavaScript’s compact object literal syntax is used as today’s interchange format (JSON).
 - BASIC allows top-level imperative code, while most of its contemporaries didn’t.
 

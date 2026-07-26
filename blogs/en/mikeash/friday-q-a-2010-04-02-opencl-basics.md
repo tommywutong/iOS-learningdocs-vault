@@ -70,9 +70,8 @@ Or just click on the URL above to browse it.
     }
 ```
 
-An OpenCL kernel gets invoked multiple times in parallel by OpenCL with the same parameters. The kernel can differentiate between these different instances by examining its work-item ID. These work-item IDs can get complex, but in the simplest case, each call to the kernel has one ID which you can fetch by calling
-
-.
+**OpenCL Strategy**  
+ An OpenCL kernel gets invoked multiple times in parallel by OpenCL with the same parameters. The kernel can differentiate between these different instances by examining its work-item ID. These work-item IDs can get complex, but in the simplest case, each call to the kernel has one ID which you can fetch by calling `get_global_id(0)`.
 
 Because the kernels can execute in parallel, there are the standard problems with concurrent data access. To avoid clashes, I decided to write the frequency count in two stages.
 
@@ -86,11 +85,7 @@ The first stage will go through the input data in blocks of 256 bytes and comput
     {
 ```
 
-This should be pretty familiar to any C programmer. The only strange part is the
-
-keyword. This is an OpenCL-specific keyword which indicates that this function is a
-
-, which is to say that it can be accessed from the outside program. It's also possible to write functions that can only be accessed by other OpenCL functions.
+This should be pretty familiar to any C programmer. The only strange part is the `__kernel` keyword. This is an OpenCL-specific keyword which indicates that this function is a _kernel_, which is to say that it can be accessed from the outside program. It's also possible to write functions that can only be accessed by other OpenCL functions.
 
 Next, the kernel gets its work-item ID:
 
@@ -104,11 +99,7 @@ It uses this to compute a starting place in the array. Since we're working with 
         const uint start = index * 256;
 ```
 
-Then I simply loop through
-
-, getting the value of each byte, and incrementing the value in the corresponding spot in
-
-:
+Then I simply loop through `input`, getting the value of each byte, and incrementing the value in the corresponding spot in `output`:
 
 ```
         for(uint i = 0; i < 256; i++)
@@ -119,9 +110,7 @@ Then I simply loop through
     }
 ```
 
-The
-
-kernel is the second stage. It uses a fixed number of work items, 256, one for each entry in the frequency count. Each work item then loops through all of the local count arrays to compute a final total. This is what the kernel looks like:
+The `freqsum` kernel is the second stage. It uses a fixed number of work items, 256, one for each entry in the frequency count. Each work item then loops through all of the local count arrays to compute a final total. This is what the kernel looks like:
 
 ```
 __kernel void freqsum(const unsigned int count, unsigned short *freqs, unsigned int *totals)
@@ -132,7 +121,8 @@ __kernel void freqsum(const unsigned int count, unsigned short *freqs, unsigned 
 }
 ```
 
-Building the kernels was easy in this case, calling them is a bit more work. The first thing I do is pad the incoming data to a multiple of 256, so that it plays nice with the kernel's chunking:
+**Calling the Kernels**  
+ Building the kernels was easy in this case, calling them is a bit more work. The first thing I do is pad the incoming data to a multiple of 256, so that it plays nice with the kernel's chunking:
 
 ```
     static NSData *CLFreqCount(NSData *inData)
@@ -146,9 +136,7 @@ Building the kernels was easy in this case, calling them is a bit more work. The
         [data setLength: paddedLength];
 ```
 
-(This will change the final frequency count, of course, so the amount of padding is kept in the
-
-variable so that it can be subtracted off at the end.)
+(This will change the final frequency count, of course, so the amount of padding is kept in the `pad` variable so that it can be subtracted off at the end.)
 
 Next I create buffers to hold the local counts and the final count. The local counts array is twice as large as the incoming data, because it needs two bytes for each byte value for each 256-byte block. The final count array is just enough to hold 256 32-bit integers:
 
@@ -167,9 +155,7 @@ The first thing to do is to set up a context in which the kernels can be execute
         SMUGOpenCLContext *context = [[SMUGOpenCLContext alloc] initCPUContext];
 ```
 
-Note that you can substitute
-
-instead to execute code on the GPU. It's your choice, not the system's, and it will fail if your GPU can't handle OpenCL, so you need to handle this carefully. For this simple example, I just always use a CPU context.
+Note that you can substitute `initGPUContext` instead to execute code on the GPU. It's your choice, not the system's, and it will fail if your GPU can't handle OpenCL, so you need to handle this carefully. For this simple example, I just always use a CPU context.
 
 Next, I load the OpenCL program into the context, and fetch the two kernels out of the program. The `CLFreqCountSourceString` function just returns an `NSString` containing the code to the two kernels:
 
@@ -179,9 +165,7 @@ Next, I load the OpenCL program into the context, and fetch the two kernels out 
         SMUGOpenCLKernel *freqSumKernel = [program kernelNamed: @"freqsum"];
 ```
 
-I need to pass the buffers I created as arguments, but I can't pass them directly. Instead, I need to turn them into
-
-objects. SMUGOpenCL makes this really easy:
+I need to pass the buffers I created as arguments, but I can't pass them directly. Instead, I need to turn them into `cl_mem` objects. SMUGOpenCL makes this really easy:
 
 ```
         cl_mem dataCL = [data getOpenCLBufferForReadingInContext: context];
@@ -212,9 +196,7 @@ Next, I set the arguments for both kernels. This is a little tedious. In additio
             ERROR("OpenCL error: %lld", (long long)err);
 ```
 
-Now it's finally time to run the kernels. In addition to the kernel to run, the context also wants a global and local work size. The global work size is just the number of work items to run, and is essentially the maximum number that
-
-can return. The local work size is something I honestly don't quite understand, and I just use a SMUGOpenCL method to get a good size. The sizes are passed as arrays because some fancy stuff can be done (presumably for multi-dimensional data and such) by passing multiple values, but I only need one:
+Now it's finally time to run the kernels. In addition to the kernel to run, the context also wants a global and local work size. The global work size is just the number of work items to run, and is essentially the maximum number that `get_global_id(0)` can return. The local work size is something I honestly don't quite understand, and I just use a SMUGOpenCL method to get a good size. The sizes are passed as arrays because some fancy stuff can be done (presumably for multi-dimensional data and such) by passing multiple values, but I only need one:
 
 ```
         size_t globalSizeCount[] = { paddedLength / 256 };
@@ -238,9 +220,7 @@ Now the kernels are running. Enqueueing the kernels just makes them eligible to 
         [context finish];
 ```
 
-Now the results are sitting in
-
-, except that they're incorrect due to padding. To fix this, I do a quick fix-up of the frequency count for zero:
+Now the results are sitting in `freqCount`, except that they're incorrect due to padding. To fix this, I do a quick fix-up of the frequency count for zero:
 
 ```
         uint32_t *freqs = [freqCount mutableBytes];
@@ -273,7 +253,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-04-02-opencl-basics.html)
 
 Add your thoughts, post a comment:
 

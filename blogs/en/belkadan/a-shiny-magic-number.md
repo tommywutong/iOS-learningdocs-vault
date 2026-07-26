@@ -7,7 +7,7 @@ original_language: en
 published: 2019-02-21
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e04fe59324584983'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [A Shiny Magic Number](#)
 
-Now that a particular code name for Swift has been [leaked from a Definitive Source](https://oleb.net/2019/chris-lattner-swift-origins/), I’ll point out a little easter egg I put in: the “magic number” for swiftmodule files is `E2 9C A8 0E`. Those first three bytes are UTF-8 for ✨ (U+2728 SPARKLES).more
+Now that a particular code name for Swift has been [leaked from a Definitive Source](https://oleb.net/2019/chris-lattner-swift-origins/), I’ll point out a little easter egg I put in: the “magic number” for swiftmodule files is `E2 9C A8 0E`. Those first three bytes are UTF-8 for ✨ (U+2728 SPARKLES).
 
 The last byte is also relevant: as a character it’s U+000E SHIFT OUT, a basically-unused ASCII control code. It’s also “14” in decimal, as in “2014”, the year we were hoping would see the release of Swift 1. (IIRC it was 2013 when I made this.)
 

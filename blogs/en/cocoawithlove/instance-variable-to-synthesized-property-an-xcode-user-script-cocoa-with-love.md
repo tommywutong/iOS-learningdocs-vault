@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3801a389bf6a431e'
 translated: false
 ---
@@ -16,19 +16,9 @@ translated: false
 
 Xcode user scripts take the repetition out of many aspects of programming. To show you how this can work, here's a script I wrote to turn an instance variable into a property (complete with declaration and synthesis) just by selecting the variable and invoking the script.
 
-> PropertyFromInstanceVariable.zip
-> 
-> .
-> 
-> the script now contains additions from Yung-Luen Lan &
-> 
-> Mike Schrag
-> 
-> (multiple line support) and
-> 
-> Pierre Bernard
-> 
-> (underbar storage name, behavior, dealloc).
+> If you just want the solution, download the script here: [PropertyFromInstanceVariable.zip](https://www.cocoawithlove.com/assets/objc-era/PropertyFromInstanceVariable.zip).  
+>   
+> **Update 2008-09-29:** the script now contains additions from Yung-Luen Lan & [Mike Schrag](http://github.com/mschrag/xcode_property_from_ivar) (multiple line support) and [Pierre Bernard](http://www.bernard-web.com/pierre/blog/) (underbar storage name, behavior, dealloc).
 
 ## The repetition that I want to eliminate
 
@@ -134,7 +124,7 @@ The other important step for a user script to turn a variable declaration into a
 This will serve two purposes:
 
 - Verify that the user has actually selected a variable declaration
-- instead of default access.
+- Detect a pointer (we will assume pointer variables are objects) and use the access specifiers `(nonatomic, retain)` instead of default access.
 
 The regular expression I use to match is:
 
@@ -156,9 +146,7 @@ These three matched values are used to build the property declaration and the sy
 
 This isn't a particularly thorough attempt to match a variable declaration. Lots of valid variable declarations will fail to be matched by this pattern. These include:
 
-- " written to the right of the pointer asterisk (i.e.
-
-  )
+- Variables with "`const`" written to the right of the pointer asterisk (i.e. `SomePointerType * const myPointer;`)
 - Most C-style function pointers
 - Any variable declaration with a character that isn't an underscore, alphanumeric or asterisk
 - Any declaration where the last non-whitespace character is not a semi-colon
@@ -177,7 +165,7 @@ The script performs the following tasks in order:
 3. Build a property declaration as appropriate for the matched variable declaration and insert it after the first closing brace found at the start of a line following the selection (this is assumed to be the end of the variables section of the class declaration)
 4. Apply this modification to the header file
 5. Get the contents of the implementation file, using the Perl/Applescript shown above
-6. statement found in the file (it is assumed that the first statement is the appropriate one
+6. Insert a synthesize statement after the first `@implementation` statement found in the file (it is assumed that the first statement is the appropriate one
 7. Commit the changes to the implementation file using Applescript again
 
 To see how this is done, download the [PropertyFromInstanceVariable.zip](https://www.cocoawithlove.com/assets/objc-era/PropertyFromInstanceVariable.zip) and have a look. It should be adequately readable — I've commented most of it and Perl is relatively C-like.

@@ -28,29 +28,9 @@ What exactly does a root class do? In terms of Objective-C itself, there is prec
 
 A root class that only provides that wouldn't be very useful, of course. `NSObject` provides a lot more. The functionality it provides can be broken down into three categories:
 
-1. standard memory management methods like
-
-  and
-
-  are implemented in
-
-  . The
-
-  method is also implemented there.
-2. provides a bunch of methods that are essentially wrappers around Objective-C runtime functionality, such as
-
-  ,
-
-  , and
-
-  .
-3. there are a bunch of methods that we count on every object implementing, such as
-
-  and
-
-  . In order to ensure that every object has an implementation,
-
-  provides a default implementation that every subclass gets if it doesn't bring its own.
+1. **Memory management:** standard memory management methods like `retain` and `release` are implemented in `NSObject`. The `alloc` method is also implemented there.
+2. **Introspection:**`NSObject` provides a bunch of methods that are essentially wrappers around Objective-C runtime functionality, such as `class`, `respondsToSelector:`, and `isKindOfClass:`.
+3. **Default implementations of miscellaneous methods:** there are a bunch of methods that we count on every object implementing, such as `isEqual:` and `description`. In order to ensure that every object has an implementation, `NSObject` provides a default implementation that every subclass gets if it doesn't bring its own.
 
 **Code**  
 I'll be reimplementing `NSObject` functionality as `MAObject`. I've posted the full code for this article on GitHub:
@@ -454,7 +434,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-01-25-lets-build-nsobject.html)
 
 Add your thoughts, post a comment:
 

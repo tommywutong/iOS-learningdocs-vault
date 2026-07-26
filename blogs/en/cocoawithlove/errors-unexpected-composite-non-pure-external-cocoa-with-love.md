@@ -7,7 +7,7 @@ original_language: en
 published: 2016-03-17
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2943164f5f7c301e'
 translated: false
 ---
@@ -208,15 +208,9 @@ func sizeOfFile(path: String) throws -> Int {
 This function attempts to get the size of a file at the specified path. It’s not a complicated idea. Looking at this function, consider the following questions:
 
 - How many ways can an attempt to get the attributes of a file fail?
-- documentation simply states that attributes will be present – does it mean
-
-  attributes?
-- will be missing from the attributes?
-- a sensible result (correct interpretation when
-
-  is missing) or would a missing
-
-  convey a different meaning?
+- The `attributesOfItem(atPath:)` documentation simply states that attributes will be present – does it mean _all_ attributes?
+- Is it possible that `FileAttributeKey.size` will be missing from the attributes?
+- Is returning `0` a sensible result (correct interpretation when `FileAttributeKey.size` is missing) or would a missing `FileAttributeKey.size` convey a different meaning?
 
 Unless you have access to the Foundation source code and the source code of the filesystem, you might not be able to answer _any_ of these questions. Errors due to external state are a nightmare because there _aren’t_ clear answers. You can guess about likely errors and scenarios but it’s almost impossible to know.
 

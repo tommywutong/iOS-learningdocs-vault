@@ -7,7 +7,7 @@ original_language: en
 published: 2014-12-28
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a0d1d5927f92f19b'
 translated: false
 ---
@@ -30,6 +30,6 @@ In case you were wondering, my favorite POSIX-style signal is SIGWINCH.
 
 ![(a Terminal window on macOS with a physical winch attached)](https://belkadan.com/blog/2014/12/SIGWINCH/sigwinch.gif)
 
-_Originally posted [on Twitter](https://twitter.com/UINT_MIN/status/549425570551853056)._more
+_Originally posted [on Twitter](https://twitter.com/UINT_MIN/status/549425570551853056)._
 
 This entry was posted on [December](https://belkadan.com/blog/2014/12) 28, [2014](https://belkadan.com/blog/2014) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Unix](https://belkadan.com/blog/tags/unix), [Humor](https://belkadan.com/blog/tags/humor), [Social media import](https://belkadan.com/blog/tags/social-media-import)

@@ -7,7 +7,7 @@ original_language: en
 published: 2021-12-31
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f9f8a51aaaf11e78'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 ## [Swift Regrets: Wrap-up](#)
 
-Thus ends five months of [Swift regrets](https://belkadan.com/blog/2021/09/Swift-Regrets/) (and delights), things that I had been collecting during my last year at Apple…and things that came up during the ensuing discussion on Twitter. I wanted to talk about these things because every project learns from those that came before it, and that should include both the good parts and the bad parts. I have a memory of my former colleague [Joe Groff](https://twitter.com/jckarter) saying that we should normalize and encourage talking about mistakes and missteps in our field, and so this is a contribution.more
+Thus ends five months of [Swift regrets](https://belkadan.com/blog/2021/09/Swift-Regrets/) (and delights), things that I had been collecting during my last year at Apple…and things that came up during the ensuing discussion on Twitter. I wanted to talk about these things because every project learns from those that came before it, and that should include both the good parts and the bad parts. I have a memory of my former colleague [Joe Groff](https://twitter.com/jckarter) saying that we should normalize and encourage talking about mistakes and missteps in our field, and so this is a contribution.
 
 All of the Twitter threads have been collected on this site under the “[Swift regrets](https://belkadan.com/blog/tags/swift-regrets/)” tag. It’s not an exhaustive list of all things good or bad about Swift, but it does span quite a range. My personal favorite is probably one of the first ones I did, [Sequence](https://belkadan.com/blog/2021/08/Swift-Regret-Sequence/). It lays out the problem and the possible solution well—in my opinion, of course.
 

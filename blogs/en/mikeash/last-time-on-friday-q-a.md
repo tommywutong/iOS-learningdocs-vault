@@ -181,9 +181,9 @@ Next, it loads the stack argument pointer from offset `64` in the `struct RawArg
 
 Let's take a moment to recap what the temporary registers contain at the moment:
 
-- : the number of stack arguments to copy.
-- : the number of bytes needed for stack arguments.
-- : the stack argument pointer.
+- `r10`: the number of stack arguments to copy.
+- `r11`: the number of bytes needed for stack arguments.
+- `r13`: the stack argument pointer.
 
 We don't get to give things convenient names in assembly, so it's essential to keep careful track of what contains what at any given moment.
 
@@ -356,11 +356,9 @@ Then the function performs the standard prologue of setting up the frame pointer
 
 Now it's finally time to construct the `struct RawArguments`. This is done by pushing values onto the stack. First, a quick recap of what the various register contain right now:
 
-- : the
-
-  flag.
-- : the pointer to the stack arguments.
-- : register arguments.
+- `r10`: the `isStretCall` flag.
+- `r11`: the pointer to the stack arguments.
+- `rdi-r9`: register arguments.
 
 The handler uses the `pushq` instruction to construct the `struct` on the stack. Because it's pushing onto the stack, it needs to push everything in reverse order. Because `isStretCall` is the last thing in the `struct`, it's the first thing to be pushed:
 

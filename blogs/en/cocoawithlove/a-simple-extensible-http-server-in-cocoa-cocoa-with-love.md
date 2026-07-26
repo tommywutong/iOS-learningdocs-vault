@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:16fb67d94b076a2b'
 translated: false
 ---
@@ -34,11 +34,9 @@ The approach I use for an HTTP server involves two classes: the server (which li
 
 The key design choice for me was simplicity of each new response implementation: the server and response classes are designed so that a new response implementation need only implement three methods:
 
-- — to decide if the implementation can handle a specific request
-- — to begin writing (or completely write) the response
-- — all subclasses should implement the standard
-
-  method to register themselves with the base class
+- `canHandleRequest:method:url:headerFields:` — to decide if the implementation can handle a specific request
+- `startResponse` — to begin writing (or completely write) the response
+- `load` — all subclasses should implement the standard `+[NSObject load]` method to register themselves with the base class
 
 It is just a tiny HTTP server but the approach should allow you to quickly integrate HTTP communications into any application.
 
@@ -112,14 +110,8 @@ listeningHandle = [[NSFileHandle alloc]
 
 When `receiveIncomingConnectionNotification:` is invoked, each new incoming connection will get its own `NSFileHandle`. If you're keeping track, that was:
 
-- ) manually created from the socket
-
-  to listen on the socket for new connections.
-- new connection received through
-
-  . We'll continue to listen to these new handles (the keys in the
-
-  dictionary) to record the data for each connection.
+- 1 file handle (`listeningHandle`) manually created from the socket `fileDesriptor` to listen on the socket for new connections.
+- 1 file handle automatically created for _each_ new connection received through `listeningHandle`. We'll continue to listen to these new handles (the keys in the `incomingRequests` dictionary) to record the data for each connection.
 
 So, now that we've received a new, automatically created file handle, we create a `CFHTTPMessageRef` (which will store the incoming data) we receive over the file handle. We store these as the objects in `incomingRequests` dictionary to allow easy access to the `CFHTTPMessageRef` for each file handle
 
@@ -248,15 +240,7 @@ The reason for this is that a general HTTP body solution is very complicated. Th
 
 However, I have never needed to implement a generic solution. It is normally easiest to determine what is needed for your specific needs and handle the HTTP body in accordance with those needs. You can handle the request body by overriding `-[HTTPRequestHandler receiveIncomingDataNotification:]`. The default implementation ignores all data it receives after the HTTP request headers.
 
-> : the first time the
-> 
-> method is called, the initial bytes of the HTTP body will already have been read from the
-> 
-> and appended to the
-> 
-> instance variable. If you need to read the body, either continue reading into the
-> 
-> object, or remember to include this initial data.
+> **Data handling note**: the first time the `-[HTTPRequestHandler receiveIncomingDataNotification:]` method is called, the initial bytes of the HTTP body will already have been read from the `fileHandle` and appended to the `request` instance variable. If you need to read the body, either continue reading into the `request` object, or remember to include this initial data.
 
 Another task not handled are Keep-Alive connections. These also need to be handled in `-[HTTPRequestHandler receiveIncomingDataNotification:]` and I've left a big comment on the method about what would be involved. The reality is that it's probably easier to set the `Connection` header field to `close` for every response to tell the client that you're not going to handle Keep-Alive (see the `startResponse` code sample above for an example).
 
@@ -266,13 +250,7 @@ Finally, this server does not handle SSL/TLS. It is intended for local network t
 
 ## Conclusion
 
-> Download the sample app TextTransfer.zip
-> 
-> (45kB) which includes the
-> 
-> and
-> 
-> classes.
+> [Download the sample app TextTransfer.zip](https://www.cocoawithlove.com/assets/objc-era/TextTransfer.zip) (45kB) which includes the `HTTPServer` and `HTTPResponseHandler` classes.
 
 Just because mainstream HTTP servers are large, complex pieces of software, doesn't mean an HTTP server is necessarily large and complex — the core implementation here is only two classes, yet is flexible and configurable.
 

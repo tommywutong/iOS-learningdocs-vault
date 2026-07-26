@@ -62,11 +62,7 @@ But what do they look like when they're allocated? Let's find out:
     }
 ```
 
-We construct a class hierarchy that just has some instance variables, then we put obvious values into each ivar. Then we extract the data in nice printable form using
-
-to get the right length, and use
-
-to print a nice hex representation. Here's what we get:
+We construct a class hierarchy that just has some instance variables, then we put obvious values into each ivar. Then we extract the data in nice printable form using `malloc_size` to get the right length, and use `NSData` to print a nice hex representation. Here's what we get:
 
 ```
     2009-01-27 15:58:04.904 a.out[22090:10b] Object contains <20300000 aaaaaaaa bbbbbbbb cccccccc>
@@ -84,19 +80,13 @@ But what's this `20300000` thing at the beginning? Well, it comes before A's iva
     }
 ```
 
-Sure enough, there's another ivar. But what's this
-
-business? If we tell Xcode to take us to the definition we find ourselves in
-
-which contains:
+Sure enough, there's another ivar. But what's this `Class` business? If we tell Xcode to take us to the definition we find ourselves in `/usr/include/objc/objc.h` which contains:
 
 ```
     typedef struct objc_class *Class;
 ```
 
-And following it further we get to
-
-which contains:
+And following it further we get to `/usr/include/objc/runtime.h` which contains:
 
 ```
     struct objc_class {
@@ -117,11 +107,7 @@ which contains:
     } OBJC2_UNAVAILABLE;
 ```
 
-So a
-
-is a pointer to a structure which... starts with another
-
-.
+So a `Class` is a pointer to a structure which... starts with another `Class`.
 
 Let's look at another root class, `NSProxy`:
 
@@ -131,9 +117,7 @@ Let's look at another root class, `NSProxy`:
     }
 ```
 
-It's there too. Let's look in one more place, the definition of
-
-, the Objective-C type for "any object":
+It's there too. Let's look in one more place, the definition of `id`, the Objective-C type for "any object":
 
 ```
     typedef struct objc_object {
@@ -141,9 +125,7 @@ It's there too. Let's look in one more place, the definition of
     } *id;
 ```
 
-There it is again. Clearly every single Objective-C object must start with
-
-, even class objects. But what is it?
+There it is again. Clearly every single Objective-C object must start with `Class isa`, even class objects. But what is it?
 
 As the name and type imply, the `isa` ivar indicates what class a particular object is. Every Objective-C object must begin with an isa pointer, otherwise the runtime won't know how to work with it. Everything about a particular object's type is wrapped up in that one little pointer. The remainder of an object is basically just a big blob and as far as the runtime is concerned, it is irrelevant. It's up to the individual classes to give that blob meaning.
 
@@ -157,19 +139,13 @@ Looking at the rest of `runtime.h` you'll see a lot of functions for accessing a
 **Practical Applications**  
  There are tons of useful things that can be done with this kind of runtime meta-information, but here are some ideas.
 
-1. Apple's Key-Value Coding does this kind of thing already: you give it a name, and it looks up a method or ivar based on that name and does some stuff with it. You can do that kind of thing yourself, in case you need to look up an ivar based on a name or something of the sort.
-2. Using
-
-  you can get a list of all classes currently known to the runtime, and by tracing out the class hierarchy, you can identify which ones subclass a given class. This can let you write subclasses to handle specialized data formats or other such situations and let the superclass look them up without having to tediously register every subclass manually.
-3. This can be useful for custom unit testing frameworks and the like. Similar to #2, but look for a method being implemented rather than a particular class hierarchy.
-4. The runtime provides a complete set of tools for re-pointing methods to custom implementations so that you can change what classes do without touching their source code.
-5. The
-
-  keyword is handy for making the compiler generate setters/getters but it still forces you to write cleanup code in
-
-  . By reading meta-information about the class's properties, you can write code that will go through and clean up all synthesized properties automatically instead of having to write code for each case.
-6. By dynamically generating classes at runtime, and by looking up the necessary properties on demand, you can create a bridge between Objective-C and another (sufficiently dynamic) language.
-7. Don't feel limited to the above, come up with your own ideas!
+1. **Automatic ivar/method searches.** Apple's Key-Value Coding does this kind of thing already: you give it a name, and it looks up a method or ivar based on that name and does some stuff with it. You can do that kind of thing yourself, in case you need to look up an ivar based on a name or something of the sort.
+2. **Automatically register/invoke subclasses.** Using `objc_getClassList` you can get a list of all classes currently known to the runtime, and by tracing out the class hierarchy, you can identify which ones subclass a given class. This can let you write subclasses to handle specialized data formats or other such situations and let the superclass look them up without having to tediously register every subclass manually.
+3. **Automatically call a method on every class.** This can be useful for custom unit testing frameworks and the like. Similar to #2, but look for a method being implemented rather than a particular class hierarchy.
+4. **Override methods at runtime.** The runtime provides a complete set of tools for re-pointing methods to custom implementations so that you can change what classes do without touching their source code.
+5. **Automatically deallocate synthesized properties.** The `@synthesize` keyword is handy for making the compiler generate setters/getters but it still forces you to write cleanup code in `-dealloc`. By reading meta-information about the class's properties, you can write code that will go through and clean up all synthesized properties automatically instead of having to write code for each case.
+6. **Bridging.** By dynamically generating classes at runtime, and by looking up the necessary properties on demand, you can create a bridge between Objective-C and another (sufficiently dynamic) language.
+7. **Much more.** Don't feel limited to the above, come up with your own ideas!
 
 **Wrapping Up**  
  Objective-C is a powerful language and the comprehensive runtime API is an extremely useful part of it. While it may be a bit ugly groveling around in all that C code, it's really not that difficult to work with, and it's well worth the power it provides.
@@ -186,7 +162,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-03-13-intro-to-the-objective-c-runtime.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2018-06-28
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d87978134dba8e5f'
 translated: false
 ---
@@ -239,3 +239,5 @@ So while my original pull request wasn’t up to VS Code’s standards, I now kn
 - Overriding methods is easy with macOS and Objective-C
 - When making a change, be as specific as possible to minimize side effects
 - Try to fix issues without creating more bugs
+
+[https://worthdoingbadly.com/vscodetabs/](https://worthdoingbadly.com/vscodetabs/)

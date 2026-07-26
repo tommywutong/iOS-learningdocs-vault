@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:64bfd63fccb4197a'
 translated: false
 ---
@@ -44,18 +44,10 @@ You can also [enable AirPlay for web-based video content](http://developer.apple
 
 Some new properties of `AVAsset` provide information on what this asset can be used for:
 
-- `composable`
-
-  :
-- `exportable`
-
-  :
-- `playable`
-
-  :
-- `readable`
-
-  :
+- [`composable`](https://developer.apple.com/reference/avfoundation/avasset/1386129-iscomposable): Indicates whether the asset can be used within a segment of an `AVCompositionTrack` object.
+- [`exportable`](https://developer.apple.com/reference/avfoundation/avasset/1389245-isexportable): Indicates whether the asset can be exported using `AVAssetExportSession`.
+- [`playable`](https://developer.apple.com/reference/avfoundation/avasset/1385974-isplayable): Indicates whether the asset, or its URL, can be used to initialize an instance of `AVPlayerItem`.
+- [`readable`](https://developer.apple.com/reference/avfoundation/avasset/1390475-isreadable): Indicates whether the asset’s media data can be extracted using `AVAssetReader`.
 
 ### Network playback statistics
 
@@ -81,26 +73,10 @@ Let me just quote from [Apple’s What’s New document](http://developer.apple.
 
 > The Audio Unit and Audio Toolbox frameworks include the following enhancements:
 > 
-> - `AudioUnitParameterHistoryInfo`
-> 
->   struct (in the Audio Unit framework) along with supporting audio unit properties adds the ability to track and use parameter automation history.
-> - `ExtendedAudioFormatInfo`
-> 
->   struct (in the Audio Toolbox framework) lets you specify which codec to use when accessing the
-> 
->   `kAudioFormatProperty_FormatList`
-> 
->   property.
-> - `kAFInfoDictionary_SourceBitDepth`
-> 
->   dictionary key and the
-> 
->   `kAudioFilePropertySourceBitDepth`
-> 
->   property (in the Audio Toolbox framework) provide access to the bit depth of an audio stream.
-> - `kAudioConverterErr_NoHardwarePermission`
-> 
->   result code (in the Audio Toolbox framework) indicates that a request to create a new audio converter object cannot be satisfied because the application does not have permission to use the requested hardware codec.
+> - The [`AudioUnitParameterHistoryInfo`](http://developer.apple.com/library/ios/documentation/AudioUnit/Reference/AudioUnitPropertiesReference/Reference/reference.html#//apple_ref/c/tdef/AudioUnitParameterHistoryInfo) struct (in the Audio Unit framework) along with supporting audio unit properties adds the ability to track and use parameter automation history.
+> - The [`ExtendedAudioFormatInfo`](http://developer.apple.com/library/ios/#releasenotes/General/WhatsNewIniPhoneOS/Articles/iOS4_3.html#//apple_ref/doc/uid/TP40010567-SW1) struct (in the Audio Toolbox framework) lets you specify which codec to use when accessing the [`kAudioFormatProperty_FormatList`](http://developer.apple.com/library/ios/documentation/AudioToolbox/Reference/AudioFormatServicesReference/Reference/reference.html#//apple_ref/c/econst/kAudioFormatProperty_FormatList) property.
+> - The [`kAFInfoDictionary_SourceBitDepth`](http://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioFileConvertRef/Reference/reference.html#//apple_ref/c/macro/kAFInfoDictionary_SourceBitDepth) dictionary key and the [`kAudioFilePropertySourceBitDepth`](http://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioFileConvertRef/Reference/reference.html#//apple_ref/c/econst/kAudioFilePropertySourceBitDepth) property (in the Audio Toolbox framework) provide access to the bit depth of an audio stream.
+> - The [`kAudioConverterErr_NoHardwarePermission`](http://developer.apple.com/library/ios/documentation/MusicAudio/Reference/AudioConverterServicesReference/Reference/reference.html#//apple_ref/c/econst/kAudioConverterErr_NoHardwarePermission) result code (in the Audio Toolbox framework) indicates that a request to create a new audio converter object cannot be satisfied because the application does not have permission to use the requested hardware codec.
 
 ## Core Foundation
 
@@ -110,39 +86,11 @@ In iOS SDK 4.2, the `CFStringGetHyphenationLocationBeforeIndex()` function was a
 
 Apple added some new constants to the Core Text framework. They are not documented yet (besides the comments in the header files), but it seems that Core Text on iOS supports a few new font traits and formatting settings, such as line spacing in paragraphs or non-rectangular clipping paths for `CTFrame`s. The new stuff:
 
-- (
-
-  ;
-
-  )
-- (
-
-  ;
-
-  )
-- and
-
-  (
-
-  ;
-
-  )
-- ,
-
-  , and
-
-  (
-
-  ;
-
-  )
-- `kCTVerticalFormsAttributeName`
-
-  (
-
-  ;
-
-  )
+- `kCTFontTableKerx` (`CTFont`; Extended kerning)
+- `kCTFontColorGlyphsTrait` (`CTFontTraits`; Color bitmap glyphs are available)
+- `kCTFrameClippingPathsAttributeName` and `kCTFramePathClippingPathAttributeName` (`CTFrame`; Specifies array of paths to clip frame)
+- `kCTParagraphStyleSpecifierLineSpacingAdjustment`, `kCTParagraphStyleSpecifierMaximumLineSpacing`, and `kCTParagraphStyleSpecifierMinimumLineSpacing` (`CTParagraphStyle`; The space in points added between lines within the paragraph)
+- [`kCTVerticalFormsAttributeName`](http://developer.apple.com/library/ios/#documentation/Carbon/Reference/CoreText_StringAttributes_Ref/Reference/reference.html#//apple_ref/c/data/kCTVerticalFormsAttributeName) (`CTStringAttributes`; A value of `False` indicates that horizontal glyph forms are to be used; `True` indicates that vertical glyph forms are to be used.)
 
 ## iAd
 

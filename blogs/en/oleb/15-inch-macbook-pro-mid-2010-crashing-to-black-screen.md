@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:abfb6b4454dbbf50'
 translated: false
 ---
@@ -95,7 +95,7 @@ Fortunately, Apple offers a free repair for affected computers if they are not o
 
 I bought my MBP in June 2010 so I was lucky enough to get it repaired for free. They replaced the entire logic board, which otherwise would have cost me hundreds of euros. I had a look inside the case and it seems they even replaced the fans with brand-new ones (or cleaned the old ones really thoroughly)!
 
-![My mid-2010 MacBook Pro from the inside](https://oleb.net/media/2012-05-30-iPh-010590.jpg)
+[![My mid-2010 MacBook Pro from the inside](https://oleb.net/media/2012-05-30-iPh-010590.jpg)](https://oleb.net/media/2012-05-30-iPh-010590.jpg)
 
 <sub>My mid-2010 MacBook Pro with its brand-new replaced logic board. They even replaced the old fans!</sub>
 

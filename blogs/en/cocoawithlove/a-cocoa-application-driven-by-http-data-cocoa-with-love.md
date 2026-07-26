@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c57642c520fdb90c'
 translated: false
 ---
@@ -163,9 +163,7 @@ The final result has the newItems array filled with absolute URLs and link text 
 
 The user interface, as assembled in Interface Builder, handles the details of displaying the "linkText" from each item. A connector object tracks selection changes in the table and displays the "linkURL" of the selected item in the WebView.
 
-> download the complete XCode project
-> 
-> for the example presented. It's XCode 3.1 but should also load in 3.0 (with a warning you can ignore).
+> You can [download the complete XCode project](https://www.cocoawithlove.com/assets/objc-era/NewToTheStore.zip) for the example presented. It's XCode 3.1 but should also load in 3.0 (with a warning you can ignore).
 
 ## Conclusion
 

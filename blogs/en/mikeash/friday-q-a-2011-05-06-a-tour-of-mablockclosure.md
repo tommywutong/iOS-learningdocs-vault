@@ -122,9 +122,7 @@ I also built a couple of wrapper functions for retrieving the implementation poi
     }
 ```
 
-The function for extracting the type signature is a little more complicated. Blocks have a
-
-field which indicates various properties about the block. One of the flags indicates whether the type signature is present, which we check to ensure that the code fails early and obviously if it's not there. Another flag indicates whether the block contains a copy and dispose callback. If it does, then the location of the type signature information moves within the block descriptor struct. Here's the code for properly extracting the type signature:
+The function for extracting the type signature is a little more complicated. Blocks have a `flags` field which indicates various properties about the block. One of the flags indicates whether the type signature is present, which we check to ensure that the code fails early and obviously if it's not there. Another flag indicates whether the block contains a copy and dispose callback. If it does, then the location of the type signature information moves within the block descriptor struct. Here's the code for properly extracting the type signature:
 
 ```
     static const char *BlockSig(id blockObj)
@@ -145,9 +143,8 @@ field which indicates various properties about the block. One of the flags indic
     }
 ```
 
-Most of the code and data structures are encapsulated in a class called
-
-.
+**The Class**  
+ Most of the code and data structures are encapsulated in a class called `MABlockClosure`.
 
 A lot of the necessary `libffi` data structures have to be created dynamically depending on the type signature. Manually managing that memory gets irritating. Since their lifetime is tied to the life of the closure object itself, the simplest way to deal with this is to track allocations in the object. To do this, I have an `NSMutableArray`. When I need to allocate memory, I create an `NSMutableData` of the appropriate size, add it to this array, and then return its `mutableBytes` pointer. This array is the class's first instance variable:
 
@@ -157,13 +154,7 @@ A lot of the necessary `libffi` data structures have to be created dynamically d
         NSMutableArray *_allocations;
 ```
 
-Next comes some type information.
-
-stores function types in a struct called
-
-. I don't know what the
-
-part stands for, but this struct basically just holds an array of argument types, plus a return type. The class needs two of these: one for the function and one for the block. Although these two are similar, they aren't identical, and it's easier to just have two than try to reuse one. It's also useful to know how many arguments there are in total when doing the argument shifting, so that is also stored in an instance variable:
+Next comes some type information. `libffi` stores function types in a struct called `ffi_cif`. I don't know what the `cif` part stands for, but this struct basically just holds an array of argument types, plus a return type. The class needs two of these: one for the function and one for the block. Although these two are similar, they aren't identical, and it's easier to just have two than try to reuse one. It's also useful to know how many arguments there are in total when doing the argument shifting, so that is also stored in an instance variable:
 
 ```
         ffi_cif _closureCIF;
@@ -171,9 +162,7 @@ part stands for, but this struct basically just holds an array of argument types
         int _closureArgCount;
 ```
 
-Finally come the
-
-structure, a pointer to the actual function pointer that this provides, and a pointer to the block that this whole thing is intended for:
+Finally come the `ffi_closure` structure, a pointer to the actual function pointer that this provides, and a pointer to the block that this whole thing is intended for:
 
 ```
         ffi_closure *_closure;
@@ -192,9 +181,7 @@ The class has only two public methods: an initializer, which takes a block, and 
     @end
 ```
 
-The
-
-method is just an accessor:
+The `-fptr` method is just an accessor:
 
 ```
     - (void *)fptr
@@ -203,13 +190,7 @@ method is just an accessor:
     }
 ```
 
-All of the real work happens in the initializer. First, it sets up the
-
-ivar, assigns the block, and allocates a closure. It then fills out the
-
-structures to match the block's type signature. Finally, it initializes the
-
-closure:
+All of the real work happens in the initializer. First, it sets up the `_allocations` ivar, assigns the block, and allocates a closure. It then fills out the `ffi_cif` structures to match the block's type signature. Finally, it initializes the `libffi` closure:
 
 ```
     - (id)initWithBlock: (id)block
@@ -227,11 +208,8 @@ closure:
     }
 ```
 
-has changed how it deals with closures over time. Originally, closures had to be allocated by the calling code. This chunk of memory was then passed to
-
-which did its thing. Afterwards, the client had to mark that code as executable. The version of
-
-which ships with Mac OS X works this way.
+**Closure Allocation**  
+`libffi` has changed how it deals with closures over time. Originally, closures had to be allocated by the calling code. This chunk of memory was then passed to `libffi` which did its thing. Afterwards, the client had to mark that code as executable. The version of `libffi` which ships with Mac OS X works this way.
 
 Newer versions of `libffi` encapsulate all of this in calls to allocate, prepare, and deallocate closures. This is what you'll get if you build `libffi` from source, and it's what you can get on iOS. `MABlockClosure` is built to handle both ways.
 
@@ -255,11 +233,7 @@ The `AllocateClosure` function uses conditional compilation to decide which tech
     }
 ```
 
-There's also a matching function to deallocate the closure. This just calls into
-
-or
-
-depending on which mode it's operating in:
+There's also a matching function to deallocate the closure. This just calls into `libffi` or `munmap` depending on which mode it's operating in:
 
 ```
     static void DeallocateClosure(void *closure)
@@ -272,15 +246,8 @@ depending on which mode it's operating in:
     }
 ```
 
-After allocating the closure,
-
-then prepares the CIF structs which hold the type information for
-
-. The type information can be obtained from the block using the
-
-helper function shown earlier. However, this type information is in Objective-C
-
-format. Converting from one to the other is not entirely trivial.
+**CIF Preparation**  
+ After allocating the closure, `-initWithBlock:` then prepares the CIF structs which hold the type information for `libffi`. The type information can be obtained from the block using the `BlockSig` helper function shown earlier. However, this type information is in Objective-C `@encode` format. Converting from one to the other is not entirely trivial.
 
 The two `prep` methods called by `-initWithBlock:` just call through to a single common method with slightly different arguments:
 
@@ -296,9 +263,7 @@ The two `prep` methods called by `-initWithBlock:` just call through to a single
     }
 ```
 
-The main difference here is the
-
-argument. This tells the method whether to skip over the first argument to the function. When generating the block's type signature, all arguments are included. When generating the closure's type signature, the first argument is skipped, and the rest are included.
+The main difference here is the `skipArg` argument. This tells the method whether to skip over the first argument to the function. When generating the block's type signature, all arguments are included. When generating the closure's type signature, the first argument is skipped, and the rest are included.
 
 The `-_prepCIF:withEncodeString:skipArg:` method in turn calls through to another method which does the real work of the conversion of the `@encode` string to an array of `ffi_type`. It then skips over the first argument if needed, and calls `ffi_prep_cif` to fill out the `ffi_cif` struct:
 
@@ -325,11 +290,8 @@ The `-_prepCIF:withEncodeString:skipArg:` method in turn calls through to anothe
     }
 ```
 
-Objective-C
-
-strings are not very fun to work with. They are essentially a single character which indicates a primitive, or some special notation to indicate structs. In the case of method signatures, the signature string is basically just a sequence of these
-
-types concatenated together. The first one indicates the return type, and the rest indicate the arguments. Block signatures follow this same format.
+**`@encode` Parsing**  
+ Objective-C `@encode` strings are not very fun to work with. They are essentially a single character which indicates a primitive, or some special notation to indicate structs. In the case of method signatures, the signature string is basically just a sequence of these `@encode` types concatenated together. The first one indicates the return type, and the rest indicate the arguments. Block signatures follow this same format.
 
 Foundation provides a handy function called `NSGetSizeAndAlignment` which helps a great deal when parsing these strings. When passed an `@encode` string, it returns the size and alignment of the first type in the string, and returns a pointer to the next type. In theory, we can iterate through the types in a block signature by just calling this function in a loop.
 
@@ -347,9 +309,7 @@ In practice, there's a complication. For reasons I have never discovered, method
     }
 ```
 
-I also wrote a quick helper function to count the number of arguments in a signature, which is handy when building the
-
-structures:
+I also wrote a quick helper function to count the number of arguments in a signature, which is handy when building the `libffi` structures:
 
 ```
     static int ArgCount(const char *str)
@@ -364,21 +324,8 @@ structures:
     }
 ```
 
-The
-
-method parses an
-
-string and returns an array of
-
-. It uses another method,
-
-, to do the final conversion of a single
-
-type to an
-
-. The first thing it does is use the
-
-helper function to figure out how many types will be present, and then allocates an array of the appropriate size:
+**Creating Argument Structures**  
+ The `-_argsWithEncodeString:getCount:` method parses an `@encode` string and returns an array of `ffi_type *`. It uses another method, `-_ffiArgForEncode:`, to do the final conversion of a single `@encode` type to an `ffi_type *`. The first thing it does is use the `ArgCount` helper function to figure out how many types will be present, and then allocates an array of the appropriate size:
 
 ```
     - (ffi_type **)_argsWithEncodeString: (const char *)str getCount: (int *)outCount
@@ -387,13 +334,7 @@ helper function to figure out how many types will be present, and then allocates
         ffi_type **argTypes = [self _allocate: argCount * sizeof(*argTypes)];
 ```
 
-Next, it enters a loop, calling
-
-to iterate through all of the types in the string. For all of the argument types, it uses the
-
-method, the final piece in our puzzle, to create an individual
-
-and put it in the array:
+Next, it enters a loop, calling `SizeAndAlignment` to iterate through all of the types in the string. For all of the argument types, it uses the `-_ffiArgForEncode:` method, the final piece in our puzzle, to create an individual `ffi_type *` and put it in the array:
 
 ```
         int i = -1;
@@ -407,9 +348,7 @@ and put it in the array:
         }
 ```
 
-Once this is done, it stores the count in
-
-and returns the argument types:
+Once this is done, it stores the count in `outCount` and returns the argument types:
 
 ```
         *outCount = argCount;
@@ -418,22 +357,14 @@ and returns the argument types:
     }
 ```
 
-Now we are left with
-
-, the final piece of the puzzle. Here is the very beginning of it:
+Now we are left with `-_ffiArgForEncode:`, the final piece of the puzzle. Here is the very beginning of it:
 
 ```
     - (ffi_type *)_ffiArgForEncode: (const char *)str
     {
 ```
 
-There is no generalized way to convert from an
-
-string to an
-
-. To convert primitives, I use a simple lookup table approach. I build a table of every C primitive type I can think of, and the corresponding
-
-.
+There is no generalized way to convert from an `@encode` string to an `ffi_type *`. To convert primitives, I use a simple lookup table approach. I build a table of every C primitive type I can think of, and the corresponding `ffi_type *`.
 
 `libffi` differentiates integer types by size, and has no direct equivalent to `int` or `long`. To help me convert between the two, I built some macros. (It turns out that `libffi` built some macros for this as well. There are `#define`s like `ffi_type_sint` which map to the correct base `ffi_type`. I didn't know about these when I wrote the code, so my method is _slightly_ more roundabout than it needs to be.)
 
@@ -485,9 +416,7 @@ A second macro does the same thing but for unsigned types:
         } while(0)
 ```
 
-This one probably isn't strictly necessary, as it's unlikely to matter if the signed and unsigned variants of the
-
-s are mixed, but better safe than sorry in this case.
+This one probably isn't strictly necessary, as it's unlikely to matter if the signed and unsigned variants of the `ffi_type`s are mixed, but better safe than sorry in this case.
 
 To round out the integer macros, I have a quick one which takes an integer type and then generates code to check for both signed and unsigned variants:
 
@@ -498,17 +427,7 @@ To round out the integer macros, I have a quick one which takes an integer type 
         } while(0)
 ```
 
-Other pre-made
-
-s are named in the form
-
-, where
-
-is something close to the name in C. To aid in mapping other primitives, I made a macro to do the
-
-check and then return the specified pre-made
-
-:
+Other pre-made `ffi_type`s are named in the form `ffi_type_TYPE`, where `TYPE` is something close to the name in C. To aid in mapping other primitives, I made a macro to do the `@encode` check and then return the specified pre-made `ffi_type`:
 
 ```
         #define COND(type, name) do { \
@@ -517,9 +436,7 @@ check and then return the specified pre-made
         } while(0)
 ```
 
-There are a lot of pointer types which get different
-
-strings but which are all represented and passed in exactly the same way at the machine level. To make this a bit shorter, I wrote a short macro to check for all of the various pointer types:
+There are a lot of pointer types which get different `@encode` strings but which are all represented and passed in exactly the same way at the machine level. To make this a bit shorter, I wrote a short macro to check for all of the various pointer types:
 
 ```
         #define PTR(type) COND(type, pointer)
@@ -547,13 +464,7 @@ One last macro handles structs. It takes a struct type and a list of correspondi
         } while(0)
 ```
 
-Now that all of the macros are in place, all that remains is to build the table. First we start with integers. In addition to the usual kinds, I also include the C99
-
-type. Also note the special handling for
-
-, since a plain, unqualified
-
-can be either signed or unsigned:
+Now that all of the macros are in place, all that remains is to build the table. First we start with integers. In addition to the usual kinds, I also include the C99 `_Bool` type. Also note the special handling for `char`, since a plain, unqualified `char` can be either signed or unsigned:
 
 ```
         SINT(_Bool);
@@ -565,11 +476,7 @@ can be either signed or unsigned:
         INT(long long);
 ```
 
-Next, the various pointer types. Note that for the most part,
-
-does not discriminate between pointer types other than a few different kinds. The
-
-case handles almost everything, and the other cases pick up the special ones:
+Next, the various pointer types. Note that for the most part, `@encode` does not discriminate between pointer types other than a few different kinds. The `void *` case handles almost everything, and the other cases pick up the special ones:
 
 ```
         PTR(id);
@@ -580,11 +487,7 @@ case handles almost everything, and the other cases pick up the special ones:
         PTR(void (*)(void));
 ```
 
-Next come floating-point types and
-
-, all of which have corresponding
-
-types:
+Next come floating-point types and `void`, all of which have corresponding `libffi` types:
 
 ```
         COND(float, float);
@@ -593,9 +496,7 @@ types:
         COND(void, void);
 ```
 
-This function is used to translate return types, not just argument types, thus the need to handle
-
-.
+This function is used to translate return types, not just argument types, thus the need to handle `void`.
 
 That takes care of primitives. Now it's time for structs. I only handle `CGRect`, `CGPoint`, `CGSize`, and their NS equivalents. Others could easily be added if necessary.
 
@@ -623,9 +524,7 @@ Then do the same for the NS versions. Since these only exist on the Mac, don't t
     #endif
 ```
 
-That takes care of building the table of types. Each macro returns the appropriate
-
-in the event of a match. If execution reaches this far, then there were no matches. Since it's best to find out about an omission as quickly as possible, the end of the code simply logs an error and aborts:
+That takes care of building the table of types. Each macro returns the appropriate `ffi_type *` in the event of a match. If execution reaches this far, then there were no matches. Since it's best to find out about an omission as quickly as possible, the end of the code simply logs an error and aborts:
 
 ```
         NSLog(@"Unknown encode string %s", str);
@@ -633,9 +532,8 @@ in the event of a match. If execution reaches this far, then there were no match
     }
 ```
 
-If you're still with me, then good news: the hard parts are done! All that remains is to use these
-
-type structures to build the closure.
+**Building the Closure**  
+ If you're still with me, then good news: the hard parts are done! All that remains is to use these `libffi` type structures to build the closure.
 
 When a closure is prepared, it takes three important pieces of data. One is the type information that all of the previous code worked so hard to build. One is a C function which receives the arguments in `libffi` format. The last one is a context pointer which is passed into that C function. This context pointer is what allows all of the magic to happen. It allows the function to determine which instance of `MABlockClosure` the call is associated with, and call through to the associated block.
 
@@ -668,11 +566,7 @@ Like with closure allocation and deallocation, how the closure is prepared depen
     }
 ```
 
-The
-
-function is what handles calls to the closure. It receives the
-
-associated with the closure, a place to put a return value, an array of arguments, and a context pointer:
+The `BlockClosure` function is what handles calls to the closure. It receives the `ffi_cif *` associated with the closure, a place to put a return value, an array of arguments, and a context pointer:
 
 ```
     static void BlockClosure(ffi_cif *cif, void *ret, void **args, void *userdata)
@@ -680,9 +574,7 @@ associated with the closure, a place to put a return value, an array of argument
         MABlockClosure *self = userdata;
 ```
 
-Once it has the
-
-instance, it can take advantage of all of the data that was previously constructed for the block. The first thing to do is to construct a new arguments array that can hold one more argument. The block goes into the first argument, and then the other arguments are copied in, shifted down by one:
+Once it has the `MABlockClosure` instance, it can take advantage of all of the data that was previously constructed for the block. The first thing to do is to construct a new arguments array that can hold one more argument. The block goes into the first argument, and then the other arguments are copied in, shifted down by one:
 
 ```
         int count = self->_closureArgCount;
@@ -691,13 +583,7 @@ instance, it can take advantage of all of the data that was previously construct
         memcpy(innerArgs + 1, args, count * sizeof(*args));
 ```
 
-Next,
-
-is used to call the block's implementation pointer. It requires a type signature, which we already generated previously. It requires a function pointer, which the
-
-helper function can provide. It requires a place to put the return value, for which we can just pass
-
-, since the return value should simply pass through. Finally, it requires an array of arguments, which we just built up:
+Next, `ffi_call` is used to call the block's implementation pointer. It requires a type signature, which we already generated previously. It requires a function pointer, which the `BlockImpl` helper function can provide. It requires a place to put the return value, for which we can just pass `ret`, since the return value should simply pass through. Finally, it requires an array of arguments, which we just built up:
 
 ```
         ffi_call(&self-;>_innerCIF, BlockImpl(self->_block), ret, innerArgs);
@@ -710,7 +596,7 @@ The block has now been called! All that remains is to clean up the new arguments
     }
 ```
 
-is now fully functional.
+`MABlockClosure` is now fully functional.
 
 **Convenience Functions**  
  Using `MABlockClosure` directly is slightly inconvenient. I built two convenience functions to make this a bit easier. The `BlockFptr` function creates an `MABlockClosure` instance as an associated object on the block itself. This ensures that the function pointer remains valid for as long as the block is valid:
@@ -732,9 +618,7 @@ is now fully functional.
     }
 ```
 
-This only works with blocks which are on the heap, not stack blocks, so I also built a quick
-
-function which copies the block onto the heap, then returns the appropriate function pointer for that:
+This only works with blocks which are on the heap, not stack blocks, so I also built a quick `BlockFptrAuto` function which copies the block onto the heap, then returns the appropriate function pointer for that:
 
 ```
     void *BlockFptrAuto(id block)
@@ -751,9 +635,8 @@ Finally, after all of this work, we can simply build a function pointer from a b
     fptr(); // prints 42!
 ```
 
-is an extremely useful library when dealing with low-level function calls where you don't know everything about them in advance. It's especially useful when coupled with Objective-C's runtime type information. The biggest hurdle is converting between the two ways of representing type information. The code presented here shows how that can be done without too much pain, and also demonstrates how to use the facilities provided by
-
-to get work done.
+**Conclusion**  
+`libffi` is an extremely useful library when dealing with low-level function calls where you don't know everything about them in advance. It's especially useful when coupled with Objective-C's runtime type information. The biggest hurdle is converting between the two ways of representing type information. The code presented here shows how that can be done without too much pain, and also demonstrates how to use the facilities provided by `libffi` to get work done.
 
 That wraps up this week's (late) Friday Q&A. Come back in two weeks for the next installment. Until then, as always, keep [sending me your ideas](mailto:mike@mikeash.com) for topics to cover here.
 
@@ -765,7 +648,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-05-06-a-tour-of-mablockclosure.html)
 
 Add your thoughts, post a comment:
 

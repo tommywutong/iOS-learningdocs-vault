@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:221a4042ef49b997'
 translated: false
 ---
@@ -56,32 +56,24 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Mac OS X](htt
 
 ## Older Posts
 
-1. 2011-07-14
-
-  Priorities
-2. 2011-06-03
-
-  Chrome vs. Safari
-3. 2011-05-31
-
-  User-Side Troubleshooting
-4. 2009-06-26
-
-  Garbage Collectors and Stack Drawers
+1. 2011-07-14[Priorities](https://belkadan.com/blog/2011/07/Priorities/?tag=mac-os-x)
+2. 2011-06-03[Chrome vs. Safari](https://belkadan.com/blog/2011/06/Chrome-vs-Safari/?tag=mac-os-x)
+3. 2011-05-31[User-Side Troubleshooting](https://belkadan.com/blog/2011/05/User-Side-Troubleshooting/?tag=mac-os-x)
+4. 2009-06-26[Garbage Collectors and Stack Drawers](https://belkadan.com/blog/2009/06/Garbage-Collectors-and-Stack-Drawers/?tag=mac-os-x)
 
 ### Possibly Related Tags
 
-- Apple
-- Book
-- Chrome
-- Filesystems
-- Keystone
-- Programming languages
-- Safari
-- Source code
-- Text
-- Time Machine
-- Unix
-- User experience
-- Webmailer
-- Windows
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [Book](https://belkadan.com/blog/tags/book)
+- [Chrome](https://belkadan.com/blog/tags/chrome)
+- [Filesystems](https://belkadan.com/blog/tags/filesystems)
+- [Keystone](https://belkadan.com/blog/tags/keystone)
+- [Programming languages](https://belkadan.com/blog/tags/programming-languages)
+- [Safari](https://belkadan.com/blog/tags/safari)
+- [Source code](https://belkadan.com/blog/tags/source-code)
+- [Text](https://belkadan.com/blog/tags/text)
+- [Time Machine](https://belkadan.com/blog/tags/time-machine)
+- [Unix](https://belkadan.com/blog/tags/unix)
+- [User experience](https://belkadan.com/blog/tags/user-experience)
+- [Webmailer](https://belkadan.com/blog/tags/webmailer)
+- [Windows](https://belkadan.com/blog/tags/windows)

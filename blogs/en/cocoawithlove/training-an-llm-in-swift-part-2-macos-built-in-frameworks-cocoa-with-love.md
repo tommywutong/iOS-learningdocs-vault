@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a45e5930c43aaa37'
 translated: false
 ---
@@ -114,16 +114,10 @@ Remember when I said that BLAS stands for “Basic Linear Algebra Subprograms”
 
 BNNS has had a few iterations. There are:
 
-- stuff (deprecated)
-- namespace (maybe the semi-Classic API because it’s also deprecated)
+- the “Classic BNNS API” which includes `BNNSNDArrayDescriptor` stuff (deprecated)
+- the `BNNS.` namespace (maybe the semi-Classic API because it’s also deprecated)
 - the ML Compute framework which was based on at least one of the older BNNS APIs (and guess what: deprecated)
-- ← this is the good one and includes
-
-  ,
-
-  ,
-
-  and
+- `BNNSGraph` ← this is the good one and includes `BNNSTensor`, `BNNSGraph.Builder`, `BNNSGraph.Builder.Tensor` and `BNNSGraph.Context`
 
 Fair warning: searching the documentation for BNNS is a mess. Xcode’s documentation has many flaws and trying to find the non-deprecated BNNS APIs runs into a few of them.
 
@@ -293,7 +287,7 @@ Last but sadly least, is Apple’s favorite machine-learning framework on macOS:
 
 Here are the problems with `CoreML`, when viewed from the perspective of someone who wants to write Swift code and train neural networks:
 
-1. programs from Swift
+1. You can’t create `CoreML` programs from Swift
 2. It can’t train neural networks
 
 I really don’t understand why there’s no way to create a `CoreML` .mlpackage file from Swift. Surely, we should be able to create a `BNNSGraph` or `MPSGraph` and then export to `CoreML`? But no, that’s not offered. The only way Apple offers to create a `CoreML` file is by starting in Python.
@@ -313,10 +307,8 @@ For inference, `CoreML` is faster than anything else we’ve tried. Admittedly, 
 
 Okay, that’s not entirely true. There are two different ways that we could _almost_ do this.
 
-1. .mlpackage contains the
-
-  as a separate file (we could update this as an ad hoc training step)
-2. ’s MLTensor
+1. A `CoreML` .mlpackage contains the `weight.bin` as a separate file (we could update this as an ad hoc training step)
+2. We could use `CoreML`’s MLTensor
 
 I did try updating the weights but because it takes 2 seconds to reload an .mlpackage, the performance is staggeringly slow and I abandoned the effort.
 

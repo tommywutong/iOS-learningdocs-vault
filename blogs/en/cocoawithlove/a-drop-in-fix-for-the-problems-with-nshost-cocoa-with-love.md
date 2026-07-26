@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e5c34770ac1f919c'
 translated: false
 ---
@@ -142,9 +142,7 @@ and the implementation of the `HostLookupOperation`'s `main` method is extremely
 
 ## Conclusion
 
-> download the complete code for `NSHost+ThreadedAdditions`
-> 
-> (3kB).
+> You can [download the complete code for `NSHost+ThreadedAdditions`](https://www.cocoawithlove.com/assets/objc-era/NSHost_ThreadedAdditions.zip) (3kB).
 
 The main advantage of this approach shown here is that you only need to add the files to your project — you do not need to add or change any other code to make this work.
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2020-04-12
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bc4a0ba481c6f14d'
 translated: false
 ---
@@ -24,13 +24,7 @@ Like them or not, [null-terminated strings](https://en.wikipedia.org/wiki/Null-t
 2. Upon return the function should ensure that the destination buffer points to a null-terminated string containing a prefix of the source string when possible (specifically, when the destination buffer has a non-zero size) to avoid issues in the future with unterminated strings. (While string truncation has its own issues, it is often a fairly reasonable fallback.)
 3. The function should indicate how many characters it copied from the source, as well as indicate if an overflow occurred. (This allows for dealing with the overflow, if desired.)
 4. The function should be efficient, and it should not read or write memory that it does not have to. These go partially hand-in-hand: the function should run in a single pass, not write to the destination buffer past the NUL byte it places, or read characters from the source string once it’s determined that it has filled the destination buffer. Ideally, the implementation would be vectorizable (relaxing some of the previous constraints slightly to within platform alignment guarantees).
-5. ISO C
-
-  or
-
-  POSIX.1
-
-  are generally the most desirable.
+5. The function should be standardized, so that it may be used portably across systems. Conformance to [ISO C](https://en.wikipedia.org/wiki/ANSI_C) or [POSIX.1](https://en.wikipedia.org/wiki/POSIX) are generally the most desirable.
 
 That is, what is often necessary is the function below, which we’ll call `strxcpy`:
 

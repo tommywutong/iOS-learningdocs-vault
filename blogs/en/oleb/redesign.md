@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:55af43c68a6a38b4'
 translated: false
 ---
@@ -20,7 +20,7 @@ I redesigned my site. If you are reading this, you should already see the new de
 
 - **Responsive layout for mobile devices.** _Finally._
 - **Dynamically resizing images to the viewport width.** Check out [UIKonf 2014 Talks](https://oleb.net/blog/2014/07/uikonf-2014-talks/) for an example.
-- **Footnote popups[1](#fn:1) with [bigfoot.js](http://www.bigfootjs.com/).** This is another thing I had wanted to add for a long time.
+- **Footnote popups^[1](#fn:1) with [bigfoot.js](http://www.bigfootjs.com/).** This is another thing I had wanted to add for a long time.
 
 ---
 
@@ -52,10 +52,10 @@ I’d welcome your feedback on the new design, especially if you encounter error
 
 The old design:
 
-![Screenshot of the oleb.net design from 2011 to 2015](https://oleb.net/media/olebnet-design-2011-2015.png)
+[![Screenshot of the oleb.net design from 2011 to 2015](https://oleb.net/media/olebnet-design-2011-2015.png)](https://oleb.net/media/olebnet-design-2011-2015.png)
 
 And the new one:
 
-![Screenshot of the oleb.net design as of June 2015](https://oleb.net/media/olebnet-design-from-2015.png)
+[![Screenshot of the oleb.net design as of June 2015](https://oleb.net/media/olebnet-design-from-2015.png)](https://oleb.net/media/olebnet-design-from-2015.png)
 
 1. Like this one. [↩︎](#fnref:1)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a864f2ff1ac0c382'
 translated: false
 ---
@@ -18,9 +18,5 @@ translated: false
 
 ### September
 
-1. 07
-
-  The New Kingdom of Nouns
-2. 05
-
-  Over-abstraction
+1. 07[The New Kingdom of Nouns](https://belkadan.com/blog/2017/09/The-New-Kingdom-of-Nouns/)
+2. 05[Over-abstraction](https://belkadan.com/blog/2017/09/Over-abstraction/)

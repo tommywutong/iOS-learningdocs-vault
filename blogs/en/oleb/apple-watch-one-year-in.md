@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:17edf9276906a4bf'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Apple Watch, One Year In
 
-![Press image of several Apple Watch models](https://oleb.net/media/apple-watches-marketing-image.jpg)
+[![Press image of several Apple Watch models](https://oleb.net/media/apple-watches-marketing-image.jpg)](https://oleb.net/media/apple-watches-marketing-image.jpg)
 
 I’ve worn [my Apple Watch](http://www.apple.com/watch/gallery/#/42/space-gray-aluminum-case/black-sport-band) every single day since I got it in May 2015. Despite its many problems, the watch has quickly become a device for me that I don’t want to miss anymore. The main, and perhaps only, reason for this is the activity tracking.
 
@@ -26,9 +26,9 @@ The Activity app on the watch and on the iPhone breaks down your daily activity 
 
 1. _Stand_: stand up and walk around for at least 1 minute in at least 12 hours of the day.
 2. _Exercise_: get your heart rate elevated for at least 30 minutes every day. Anything that brings up your heart rate to more than about 100 beats per minute counts as exercise. For me, a brisk walk does it. You don’t have to start an explicit workout to fill up your exercise ring.
-3. _Move_: reach your daily “active calories” goal, i.e. the calories you burn on top of your [basal metabolic rate](https://en.wikipedia.org/wiki/Basal_metabolic_rate), which represents the calories you would expend if you lay motionless in bed all day. Unlike the other two metrics, you can set the amount of calories that counts as an achievement for this goal yourself.[1](#fn:1) This is obviously not an exact science, but that doesn’t matter. The calorie measurements don’t have to be very accurate to be useful (and I have no way of verifying whether they are[2](#fn:2)), they just have to consistent from day to day.
+3. _Move_: reach your daily “active calories” goal, i.e. the calories you burn on top of your [basal metabolic rate](https://en.wikipedia.org/wiki/Basal_metabolic_rate), which represents the calories you would expend if you lay motionless in bed all day. Unlike the other two metrics, you can set the amount of calories that counts as an achievement for this goal yourself.^[1](#fn:1) This is obviously not an exact science, but that doesn’t matter. The calorie measurements don’t have to be very accurate to be useful (and I have no way of verifying whether they are^[2](#fn:2)), they just have to consistent from day to day.
 
-In addition, the Activity app will award you badges for certain achievements, such as doubling your _Move_ goal or having a perfect week or month (reaching your _Move_ goal every single day of a month). The gamification aspect is very simple, and I don’t know if the system is the result of years of highly scientific experiments by Apple to achieve the perfect balance between motivation, simplicity, and inconvenience, or if it’s just a lucky strike. All I can say is that it works extremely well for me. Getting perfect months and not breaking a long streak has become a little addictive — at times even to the point where it may actually be counterproductive because rest days are important, too.[3](#fn:3)
+In addition, the Activity app will award you badges for certain achievements, such as doubling your _Move_ goal or having a perfect week or month (reaching your _Move_ goal every single day of a month). The gamification aspect is very simple, and I don’t know if the system is the result of years of highly scientific experiments by Apple to achieve the perfect balance between motivation, simplicity, and inconvenience, or if it’s just a lucky strike. All I can say is that it works extremely well for me. Getting perfect months and not breaking a long streak has become a little addictive — at times even to the point where it may actually be counterproductive because rest days are important, too.^[3](#fn:3)
 
 Activity tracking with the Apple Watch has turned me into someone who cares about daily exercise, and it helped me lose a significant amount of weight over the last year. That alone is reason enough for me to wear the watch every day.
 
@@ -50,7 +50,7 @@ The Apple Watch looks better than most (all?) other smartwatches out there in my
 
 Wearing a watch is a fashion statement. The Apple Watch screams “smartwatch” to me, putting its wearer automatically — justified or not — into the nerd category. I’m not particularly comfortable with that for myself. (Although I unquestionably am one.) Moreover, Apple’s huge popularity means that many people can readily identify the watch as an Apple product. Wearing an Apple Watch in 2015/2016 inevitably (I think) pigeonholes a person as an avid Apple fan, and I’m not comfortable with that characterization, either.
 
-I’m sure some of my uneasiness will disappear over time as smartwatches get more popular, but given that I feel the same way about the blatantly obtrusive Apple logo on my laptop and that I try to avoid visible logos on my shoes and clothing as much as possible, I doubt it will ever go away.[4](#fn:4) I just don’t want to be a walking advertisement for the products I use, and/or have everybody know how much I paid for them (especially if they were expensive). That is a significant downside to any wearable Apple product for the foreseeable future for me.
+I’m sure some of my uneasiness will disappear over time as smartwatches get more popular, but given that I feel the same way about the blatantly obtrusive Apple logo on my laptop and that I try to avoid visible logos on my shoes and clothing as much as possible, I doubt it will ever go away.^[4](#fn:4) I just don’t want to be a walking advertisement for the products I use, and/or have everybody know how much I paid for them (especially if they were expensive). That is a significant downside to any wearable Apple product for the foreseeable future for me.
 
 The sport band is comfortable and of a very high quality. I haven’t gotten any additional bands yet, mainly because I find Apple’s other bands too expensive. I like the [link bracelet](http://www.apple.com/watch/gallery/#/42/stainless-steel-case/link-bracelet) and [classic buckle](http://www.apple.com/watch/gallery/#/42/stainless-steel-case/marigold-classic-buckle), though. I ordered one of the new [nylon bands](http://www.apple.com/watch/gallery/#/42/space-gray-aluminum-case/gold-royal-blue-woven-nylon), but it hasn’t arrived yet.
 

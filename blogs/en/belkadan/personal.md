@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0f983a75209f6a77'
 translated: false
 ---
@@ -48,35 +48,21 @@ Tags: [Games](https://belkadan.com/blog/tags/games)
 
 ## Older Posts
 
-1. 2023-08-12
-
-  Multiplayer Slipways
-2. 2022-12-03
-
-  Re: Twitter
-3. 2021-07-05
-
-  Keyboard Pants
-4. 2020-07-18
-
-  A Letter To My Congressional Representatives on the DHS Abuses of Power in Portland, Oregon
-5. 2019-11-13
-
-  Homestuck
-6. 2019-11-01
-
-  Leaving Apple
-7. 2012-05-16
-
-  Big News
+1. 2023-08-12[Multiplayer Slipways](https://belkadan.com/blog/2023/08/Multiplayer-Slipways/)
+2. 2022-12-03[Re: Twitter](https://belkadan.com/blog/2022/12/Re-Twitter/)
+3. 2021-07-05[Keyboard Pants](https://belkadan.com/blog/2021/07/Keyboard-Pants/)
+4. 2020-07-18[A Letter To My Congressional Representatives on the DHS Abuses of Power in Portland, Oregon](https://belkadan.com/blog/2020/07/On-the-DHS-in-Portland/)
+5. 2019-11-13[Homestuck](https://belkadan.com/blog/2019/11/Homestuck/)
+6. 2019-11-01[Leaving Apple](https://belkadan.com/blog/2019/11/Leaving-Apple/)
+7. 2012-05-16[Big News](https://belkadan.com/blog/2012/05/Big-News/)
 
 ### Possibly Related Tags
 
-- Apple
-- Games
-- LLVM
-- Mac OS Classic
-- Meta
-- Running a website
-- Swift
-- Tech industry
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [Games](https://belkadan.com/blog/tags/games)
+- [LLVM](https://belkadan.com/blog/tags/llvm)
+- [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)
+- [Meta](https://belkadan.com/blog/tags/meta)
+- [Running a website](https://belkadan.com/blog/tags/running-a-website)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Tech industry](https://belkadan.com/blog/tags/tech-industry)

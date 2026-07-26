@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c361bd7dc40fba5e'
 translated: false
 ---
@@ -28,11 +28,11 @@ To top it off, satellite imagery not just for major cities but for entire countr
 
 # A Treasure of Data for Future Generations
 
-What began as impressive technology (much of it developed by other companies and then acquired by Google) combined with existing data sources (licensed by Google) has turned into the creation of massive sets of original and often unique data over the past seven years. It cannot be underestimated what an achievement the [Street View project](https://en.wikipedia.org/wiki/Google_Street_View) is. The early 21st century will go down in history as the first time entire countries were systematically photographed and these photos made available to the public. Assuming that this data will still be available in a hundred or a thousand years, what a tremendous treasure this is for future generations![1](#fn:1)
+What began as impressive technology (much of it developed by other companies and then acquired by Google) combined with existing data sources (licensed by Google) has turned into the creation of massive sets of original and often unique data over the past seven years. It cannot be underestimated what an achievement the [Street View project](https://en.wikipedia.org/wiki/Google_Street_View) is. The early 21st century will go down in history as the first time entire countries were systematically photographed and these photos made available to the public. Assuming that this data will still be available in a hundred or a thousand years, what a tremendous treasure this is for future generations!^[1](#fn:1)
 
 And having mapped and photographed many of its most important markets, Google is not standing still but focusing on the entire world. In many countries, Google, with the help from their users, has created the best maps that are available for these locations. Credit for this must go the awesome [Open Street Map](https://www.openstreetmap.org/) project, too, of course.
 
-While Open Street Map volunteers managed to create map data that rivals or even surpasses Google’s maps in many areas, I have no idea whether we will see a crowdsourced Street View competitor any time soon. And it’s even more unlikely for Google’s next big thing, 3D cityscapes. Using lots of money and some intelligent algorithm, we will soon be able to fly freely over select photorealistic cities.[2](#fn:2) Again, imagine how valuable this data will be not only for us today but also for later generations.
+While Open Street Map volunteers managed to create map data that rivals or even surpasses Google’s maps in many areas, I have no idea whether we will see a crowdsourced Street View competitor any time soon. And it’s even more unlikely for Google’s next big thing, 3D cityscapes. Using lots of money and some intelligent algorithm, we will soon be able to fly freely over select photorealistic cities.^[2](#fn:2) Again, imagine how valuable this data will be not only for us today but also for later generations.
 
 # Google Deserves Credit
 

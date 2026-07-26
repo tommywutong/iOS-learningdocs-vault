@@ -7,7 +7,7 @@ original_language: en
 published: 2020-11-09
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:61450df01f563528'
 translated: false
 ---
@@ -25,10 +25,10 @@ I booted the arm64e kernel of macOS 11.0.1 beta 1 kernel in QEMU up to launchd. 
 This is similar to my previous guide on running [iOS kernel in QEMU](https://worthdoingbadly.com/xnuqemu2/):
 
 - install macOS 11.0.1 beta 1 (20B5012D)
-- `build_arm64e_kcache.sh`
+- run [`build_arm64e_kcache.sh`](https://github.com/zhuowei/XNUQEMUScripts/blob/macos1101b1/macos11/build_arm64e_kcache.sh) to create an Apple Silicon Boot Kext Collection
+- build the modified QEMU:
 
-  to create an Apple Silicon Boot Kext Collection
-- ```
+  ```
   git clone https://github.com/zhuowei/qemu
   cd qemu
   git checkout a12z-macos
@@ -37,19 +37,15 @@ This is similar to my previous guide on running [iOS kernel in QEMU](https://wor
   ../configure --target-list=aarch64-softmmu
   make
   ```
-- DTRewriter
-
-  on
-
-  iPad Pro firmware
-
-  :
+- create a modified device tree by running [DTRewriter](https://github.com/zhuowei/XNUQEMUScripts/blob/macos1101b1/FourthTry/DTRewriter.java) on [iPad Pro firmware](https://updates.cdn-apple.com/2020SummerSeed/fullrestores/001-30235/6D8C0CA3-5952-4FD8-AEB3-4B4CADB626BC/iPad8,11,iPad8,12_14.0_18A5332f_Restore.ipsw):
 
   ```
   python3 extractfilefromim4p.py Firmware/all_flash/DeviceTree.j421ap.im4p DeviceTree_iPad_Pro_iOS_14.0_b3.devicetree
   java DTRewriter DeviceTree_iPad_Pro_iOS_14.0_b3.devicetree DeviceTree_iPad_Pro_iOS_14.0_b3_Modified.dtb
   ```
-- ```
+- run QEMU:
+
+  ```
   ./aarch64-softmmu/qemu-system-aarch64 -M virt -cpu max \
     -kernel /path/to/bootcache-arm64e \
     -dtb /path/to/DeviceTree_iPad_Pro_iOS_14.0_b3_Modified.dtb  \
@@ -58,9 +54,7 @@ This is similar to my previous guide on running [iOS kernel in QEMU](https://wor
     -append "-noprogress cs_enforcement_disable=1 amfi_get_out_of_my_way=1 nvram-log=1 debug=0x8 kextlog=0xffff io=0xfff serial=0x7 cpus=1 rd=md0 apcie=0xffffffff" \
     -initrd /path/to/ios14.0b3/ramdisk.dmg $@
   ```
-- this script
-
-  :
+- run gdb with [this script](https://github.com/zhuowei/XNUQEMUScripts/blob/macos1101b1/macos11/bootit.gdbscript):
 
   ```
   ~/Library/Android/sdk/ndk/21.0.6113669/prebuilt/darwin-x86_64/bin/gdb \
@@ -148,9 +142,7 @@ Like the [iOS in QEMU experiments](https://worthdoingbadly.com/xnuqemu2/), I fir
 Unlike iOS, macOS expects some more information in the device tree:
 
 - ram size (since Macs have upgradeable RAM)
-- bazad’s dump of an iPhone device tree
-
-  .)
+- nvram, otherwise panics with a null pointer while reading nonce-seed. (I copied nvram from [bazad’s dump of an iPhone device tree](https://gist.github.com/bazad/1faef1a6fe396b820a43170b43e38be1).)
 - AMCC (KTRR) register positions
 - System Integrity Protection status
 
@@ -183,10 +175,10 @@ It’s now November 9th and Apple’s holding their press conference tomorrow: s
 I’m probably not going to be working further on this, but here’s what one can do to make this an actual useful research platform:
 
 - Figure out why half the drivers aren’t loading at all
--   - probably emulate AIC in QEMU (based on Project Sandcastle’s Linux driver) since a custom interrupt controller Kext would be hard to write
-    - PowerPC PCIE
+- Write basic drivers/emulations:
 
-      drivers, since it’s too hard to emulate the Apple Silicon PCIE controller. This will allow us to connect a virtual hard drive.
+    - probably emulate AIC in QEMU (based on Project Sandcastle’s Linux driver) since a custom interrupt controller Kext would be hard to write
+    - port Apple’s old [PowerPC PCIE](https://opensource.apple.com/source/AppleMacRiscPCI/AppleMacRiscPCI-3.4/AppleMacRiscPCI.cpp.auto.html) drivers, since it’s too hard to emulate the Apple Silicon PCIE controller. This will allow us to connect a virtual hard drive.
 - Switch to the A14 kernel when Apple releases Apple Silicon Macs, so we can test virtualization
 
 ## What I learned
@@ -194,5 +186,7 @@ I’m probably not going to be working further on this, but here’s what one ca
 - How to modify QEMU to disable PAC
 - How iBoot on Apple Silicon passes boot options in the device tree
 - How to generate an Apple Silicon kernel cache without an Apple Silicon Mac
-- for the real error message
+- How to fight `kmutil` for the real error message
 - Never procrastinate on a blog post for three months
+
+[https://worthdoingbadly.com/xnuqemu3/](https://worthdoingbadly.com/xnuqemu3/)

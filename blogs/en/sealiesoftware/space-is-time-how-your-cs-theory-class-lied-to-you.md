@@ -7,7 +7,7 @@ original_language: en
 published: 2008-10-14
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b0fffecc6b15c2c3'
 translated: false
 ---
@@ -58,4 +58,4 @@ Most of Mac OS X is compiled with `-Os` instead of `-O3`, to reduce code size. M
 
 CPU-focused optimization can be just as evil as the infamous premature optimization. Space _is_ time.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

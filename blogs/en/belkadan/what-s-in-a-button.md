@@ -7,7 +7,7 @@ original_language: en
 published: 2025-11-27
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:39df1790ddf7ff0f'
 translated: false
 ---
@@ -28,7 +28,7 @@ A while back I posted this spicily-phrased take:
 
 > I appreciate that someone else understands that being a GUI has some basic requirements and “draws to the screen” is not the interesting one. The bar is about 20cm off the floor but everyone forgets to jump.
 
-Despite mostly not working on GUIs in my career, I have strong opinions about consistency and about affordances for beginners and power users alike. So today, let’s take a simple case study: a button.more No one _really_ agrees these days on what a button should look like, but we can figure that out later. For now, we can take an icon and draw a border around it and that probably counts:
+Despite mostly not working on GUIs in my career, I have strong opinions about consistency and about affordances for beginners and power users alike. So today, let’s take a simple case study: a button. No one _really_ agrees these days on what a button should look like, but we can figure that out later. For now, we can take an icon and draw a border around it and that probably counts:
 
 ![](https://belkadan.com/blog/../logo)
 
@@ -40,7 +40,7 @@ Buttons are specifically UI elements that do things, so let’s add an action wh
 
 Perfect! We’re basically done, right?
 
-(Note to voice control users: for this article I have specifically hidden the first several examples from readers/tools (that's what aria-hidden="true" is for) so you don’t have to wade through iterations of the same boring thing. It’s just bringing up a dialog. Unfortunately, when we get to the point of talking about focused elements you’ll start hearing some incomplete descriptions.)
+(Note to voice control users: for this article I have specifically hidden the first several examples from readers/tools  so you don’t have to wade through iterations of the same boring thing. It’s just bringing up a dialog. Unfortunately, when we get to the point of talking about focused elements you’ll start hearing some incomplete descriptions.)
 
 ### There are lots of ways to submit an action
 
@@ -50,7 +50,7 @@ I implemented this using an event called “mouse down”. What if you’re on a
 
 Oops! Phone browsers try to adapt for desktop-only sites—they’ll actually translate a tap to “mouse down”. On iOS Safari, this new version actually shows _two_ dialogs. This wasn’t intentional: it’s a consequence of me testing the “mouse _up”_ event, which _doesn’t_ (usually?) get translated the same way, but then using “mouse down” in the final version of the blog post and not re-testing before I published. (Thanks to @guenther@chaos.social for pointing this out.)
 
-But really “mouse down” is the wrong event to begin with. Users sometimes misclick, and so OSs back to [System 1.0 for the Mac](https://infinitemac.org/1984/System%201.0) (possibly even earlier) have a feature called _drag cancellation_ or _pointer cancellation,_ where if you drag away from the button before letting go of the click/tap, it doesn’t fire. This behavior can’t be provided with only one of “mouse down on my UI element” and “mouse up on my UI element”; you need both, or some higher-level operation.[1](#fn:cancellation)
+But really “mouse down” is the wrong event to begin with. Users sometimes misclick, and so OSs back to [System 1.0 for the Mac](https://infinitemac.org/1984/System%201.0) (possibly even earlier) have a feature called _drag cancellation_ or _pointer cancellation,_ where if you drag away from the button before letting go of the click/tap, it doesn’t fire. This behavior can’t be provided with only one of “mouse down on my UI element” and “mouse up on my UI element”; you need both, or some higher-level operation.^[1](#fn:cancellation)
 
 To be fair I had to go a little out of my way to do this section, for demonstration purposes. Modern web browsers pack up everything we’ve been talking about in a single “click” event that handles both clicks and taps as well as drag-cancellation. But if you’re trying to make a button from scratch _outside_ of a web browser, you might have made this mistake.
 
@@ -80,6 +80,8 @@ Some people don’t use a mouse _or_ keyboard to control their computers. Instea
 
 However, voice control is often paired with screen reading: a navigation for people who can’t use a display (usually because of visual impairment, but I have on a handful of occasions used it to work with a computer I had no monitor for). There are a number of ways interactable UI elements show up there, but in this case let’s just see what happens when the user focuses the button (using keyboard navigation, or a scroll wheel, or something):
 
+"logo, group."
+
 Oh dear. We used an icon with no [alt text](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#authoring_meaningful_alternate_descriptions), so the user has no idea what this button does. This is more about _images_ than about _buttons_ specifically, but even with a text button you may still want your screen-reader label / “accessibility label” to be different from the displayed text, since the user may not have the same contextual information when they navigate to it.
 
 ![Surprise Button (8 of 11)](https://belkadan.com/blog/../logo)
@@ -100,11 +102,7 @@ Even with all this, we _still_ don’t have something that behaves like a normal
 
 It turns out this has been the wrong approach from the start, at least for an application or web page. We don’t need to do any of this. We can start with a system-provided button:
 
-ignoring the accesskey this time so it's not duplicated
-
 And then customize it to do our own drawing.
-
-ignoring the accesskey this time so it's not duplicated
 
 It’s still a chunk of the work we had before, but _now_ we and the web browser agree that it’s a button, and we get most of what we discussed for free. As well as anything else I forgot in making this blog post.
 

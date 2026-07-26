@@ -7,7 +7,7 @@ original_language: en
 published: 2023-02-16
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a35b9c1ea90ab378'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 Objective-C unrealized classes may refer to future classes or class stubs. Future classes (a private runtime feature) facilitate toll-free bridging with CoreFoundation. And, class stubs are emitted by the Swift compiler to support interoperability between the stable Swift ABI and Objective-C.
 
-An earlier post that explored the Objective-C class implementation ignored[[1](#_footnotedef_1)] an interesting detail of the functions used to [identify a metaclass](https://alwaysprocessing.blog/2023/01/10/objc-class-graph-impl#metaclass-identity): the concept of _unrealized classes_.
+An earlier post that explored the Objective-C class implementation ignored^[[1](#_footnotedef_1)] an interesting detail of the functions used to [identify a metaclass](https://alwaysprocessing.blog/2023/01/10/objc-class-graph-impl#metaclass-identity): the concept of _unrealized classes_.
 
 ```
 // Like isMetaClass, but also valid on un-realized classes

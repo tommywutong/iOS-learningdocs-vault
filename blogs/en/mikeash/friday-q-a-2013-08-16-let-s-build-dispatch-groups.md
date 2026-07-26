@@ -84,22 +84,10 @@ The API for `ma_dispatch_group` closely mirrors that of `dispatch_group`:
 
 There are a few differences from the `dispatch_group` interface:
 
-1. is not a dispatch object, so it doesn't use retain/release semantics, instead using a single
-
-  function to clean one up.
-2. functions are missing. These are just simple wrappers around
-
-  ,
-
-  , and
-
-  , so not all that important.
-3. function doesn't take a dispatch queue, and instead invokes the block immediately in the context of the last piece of code to call
-
-  . It's trivial to wrap the block in a
-
-  , so this is no major change.
-4. function doesn't take a timeout. This simplifies the code considerably while still illustrating the overall concept.
+1. A `ma_dispatch_group_t` is not a dispatch object, so it doesn't use retain/release semantics, instead using a single `destroy` function to clean one up.
+2. The `dispatch_group_async` functions are missing. These are just simple wrappers around `enter`, `leave`, and `dispatch_async`, so not all that important.
+3. The `notify` function doesn't take a dispatch queue, and instead invokes the block immediately in the context of the last piece of code to call `leave`. It's trivial to wrap the block in a `dispatch_async`, so this is no major change.
+4. The `wait` function doesn't take a timeout. This simplifies the code considerably while still illustrating the overall concept.
 
 **Fields**  
 The `struct ma_dispatch_group_internal` contains two fields, a counter and an action block:
@@ -184,23 +172,15 @@ Once it returns, destroy the block and set the action to `NULL`:
 **Notify**  
 The implementation of `ma_dispatch_group_notify` is interesting, but ultimately extremely simple. Conceptually, there are two completely separate cases to consider:
 
-1. calls that have not been balanced with a
-
-  . In that case, set the group's
-
-  block.
-2. calls have been balanced with a
-
-  . In that case, execute the block immediately.
+1. There are still pending `enter` calls that have not been balanced with a `leave`. In that case, set the group's `action` block.
+2. All `enter` calls have been balanced with a `leave`. In that case, execute the block immediately.
 
 Seems straightforward enough. However, a simple implementation of the first case creates a race condition. Consider the following sequence of events:
 
-1. function checks
-
-  and sees that it is non-zero.
-2. and decrease the count to zero.
+1. The `notify` function checks `count` and sees that it is non-zero.
+2. The pending actions call `leave` and decrease the count to zero.
 3. The action that decreases the count to zero checks the action. No action is set, so it does nothing.
-4. function sets the group's action.
+4. The `notify` function sets the group's action.
 5. The action never runs, because no code is left to run it.
 
 There's an elegant solution that both fixes this race condition and consolidates both separate cases into a single code path. The solution is to wrap the assignment of the action in an `enter`/`leave` pair. This effectively eliminates the second case, since there's always at least one unbalanced `enter` when assigning the action. This also solves the potential race condition, since the assignment occurs before at least one of the pending `leave` calls. Here's what the function looks like:
@@ -319,7 +299,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-08-16-lets-build-dispatch-groups.html)
 
 Add your thoughts, post a comment:
 

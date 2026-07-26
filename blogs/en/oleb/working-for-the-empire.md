@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90042a5da5d7e05e'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 > Imagine you’re an X-wing fighter for the Rebel Alliance. You’re fighting the Empire, hard. You’re bunking down on the Snow Planet and you’re fighting hunger. You probably miss your family ‘cause you don’t get to see them too often because you’re going from planet to planet, hiding.
 > 
-> One day, Mons Calamari [sic![1](#fn:1)] calls a meeting of all the fighter pilots and says: “Guess what guys, I made this great deal! We work for the Empire now.”
+> One day, Mons Calamari [sic!^[1](#fn:1)] calls a meeting of all the fighter pilots and says: “Guess what guys, I made this great deal! We work for the Empire now.”
 > 
 > That’s a really boring movie. But that seems to be the prevailing culture [in Silicon Valley]: to build something small and threatening enough to the Empire that the Empire eventually absorbs you.
 > 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:726b04214f483597'
 translated: false
 ---
@@ -26,7 +26,7 @@ All timing is done on the construct/load only. Adding cells to the table, config
 
 The dark line across the right-hand side of each cell is just the word "placeholder" written 19 times on top of itself by the labels added to the cell.
 
-> NibOrNot.zip
+> You can download the sample project: [NibOrNot.zip](https://www.cocoawithlove.com/assets/objc-era/NibOrNot.zip)
 
 ## Creating the cell in code
 
@@ -137,7 +137,7 @@ This now swings the performance advantage back to handwritten code by 7%.
 
 ## Conclusion
 
-> NibOrNot.zip
+> You can download the sample project: [NibOrNot.zip](https://www.cocoawithlove.com/assets/objc-era/NibOrNot.zip)
 
 Don't assume that NIB files are always slower than generating views in code — it is not always true. While in general, generating user interface views in code appears to be 5-10% faster than loading from a NIB, the reality is that this difference is small enough that it doesn't matter and there are certainly some views that load faster from a NIB than from code.
 

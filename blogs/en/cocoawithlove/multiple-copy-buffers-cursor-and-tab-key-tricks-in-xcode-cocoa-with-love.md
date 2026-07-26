@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bbc25ba7bdc373ed'
 translated: false
 ---
@@ -76,7 +76,7 @@ The first configuration change you need to make is to set up a binding for `yank
 _The key string is actually caret-y, not Ctrl-Y. You may need to create the KeyBindings  
 directory in your Library directory as it is not there by default._
 
-> : The "Property List Editor.app" is long gone. Xcode will still edit "Property List - Text" format files but Xcode wants them to have the ".plist" extension, rather than the ".dict" extension required for the "DefaultKeyBinding.dict" file. It's probably just easier to create a plain text file at the "DefaultKeyBinding.dict" path with the contents:
+> **Update 2016/03/29**: The "Property List Editor.app" is long gone. Xcode will still edit "Property List - Text" format files but Xcode wants them to have the ".plist" extension, rather than the ".dict" extension required for the "DefaultKeyBinding.dict" file. It's probably just easier to create a plain text file at the "DefaultKeyBinding.dict" path with the contents:
 > 
 > ```
 > {
@@ -118,7 +118,7 @@ I found this particularly frustrating since I normally use Ctrl-/ to select auto
 
 Fortunately, Xcode supports a "Insert Tab without Extra Action" that is normally bound to Option-Tab which will only ever insert a Tab character (will never perform other UI actions). By exchanging the key bindings between "Insert Tab" and "Insert Tab without Extra Action", my complaint was solved.
 
-> a change to menus in Xcode 3.2 means that single file Search and Replace no longer appears in the menu (unless you're holding down the Control key, since its binding is now Ctrl-Command-F and "Ctrl" variants of menu items aren't shown unless "Ctrl" is held). This can make search and replace hard to find in Xcode 3.2. Another feature that has become harder to find are the search options — the little magnifying glass on the search field hides a popup menu that contains the essential options like "Ignore case".
+> **On the topic of search and replace:** a change to menus in Xcode 3.2 means that single file Search and Replace no longer appears in the menu (unless you're holding down the Control key, since its binding is now Ctrl-Command-F and "Ctrl" variants of menu items aren't shown unless "Ctrl" is held). This can make search and replace hard to find in Xcode 3.2. Another feature that has become harder to find are the search options — the little magnifying glass on the search field hides a popup menu that contains the essential options like "Ignore case".
 
 A sideeffect of changing the tab bindings is that all text fields in the user interface — including the Search and Replace text fields — will change their behavior when the Tab key is pressed. Once the bindings are changed, Tab will no longer move the input focus from the search field to the replace field — it will instead insert the tab character into the selected field. This means that to jump from the Search field to the Replace field you will need to type Option-Tab. Of course, the ability to easily enter tab characters in the search field has its advantages too.
 

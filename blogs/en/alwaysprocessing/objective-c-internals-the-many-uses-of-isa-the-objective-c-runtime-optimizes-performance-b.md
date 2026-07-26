@@ -7,7 +7,7 @@ original_language: en
 published: 2023-01-19
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d9c27a69ebece0ab'
 translated: false
 ---
@@ -241,11 +241,11 @@ void objc_object::rootDealloc() {
 ```
 
 - `has_assoc`: Set if an object has an [associated object](https://alwaysprocessing.blog/2023/06/05/objc-assoc-obj) created through the use of the `objc_setAssociatedObject()` runtime API. If an object has one or more associated objects, the runtime must remove the entries from its side table before freeing the object’s memory.
-- `has_cxx_dtor`: Set if the class or a superclass has a `.cxx_destruct` method. If an Objective-C object has one or more instance variables with a C++ type[[1](#_footnotedef_1)], the runtime calls the class’s `.cxx_construct` instance method to run any non-trivial constructors during object allocation (before any `init` method). After the `dealloc` method chain completes, the runtime calls the class’s `.cxx_destruct` instance method to run any non-trivial destructors before freeing the object’s memory.
+- `has_cxx_dtor`: Set if the class or a superclass has a `.cxx_destruct` method. If an Objective-C object has one or more instance variables with a C++ type^[[1](#_footnotedef_1)], the runtime calls the class’s `.cxx_construct` instance method to run any non-trivial constructors during object allocation (before any `init` method). After the `dealloc` method chain completes, the runtime calls the class’s `.cxx_destruct` instance method to run any non-trivial destructors before freeing the object’s memory.
 
     - When Automatic Reference Counting (ARC) is enabled, the compiler implements releasing of a class’s instance variables in its `.cxx_destruct` method, inhibiting the optimization to call `free()` directly. The [`object_dispose()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime-new.mm#L8582-L8591:) code path calls [`objc_destructInstance()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime-new.mm#L8560-L8574:), which uses the non-pointer `isa` bits, if available, to elide unnecessary clean-up operations.
     - Note this bit isn’t available when pointer authentication is enabled, but the information is available on the class object at the cost of an additional memory load.
-- `weakly_referenced`: Set whenever a weak reference[[2](#_footnotedef_2)] to the object is created. Like associated objects, the runtime must remove the entries from its side table before freeing the object’s memory.
+- `weakly_referenced`: Set whenever a weak reference^[[2](#_footnotedef_2)] to the object is created. Like associated objects, the runtime must remove the entries from its side table before freeing the object’s memory.
 - `has_sidetable_rc`: If the [retain count](https://alwaysprocessing.blog/2023/07/22/objc-retain#the-full-variant) has overflowed [extra_rc](#extra_rc), a side table stores the additional retain counts where, again, the runtime must remove the entries before freeing the object’s memory.
 
 ### shiftcls and shiftcls_and_sig
@@ -258,7 +258,7 @@ The runtime signs the class pointer on Apple Silicon with Pointer Authentication
 
 The Objective-C runtime on Apple Watch stores class pointers in an array and stores the class’s array index in the `isa`’s `indexcls` field. Indexes are [assigned lazily at runtime](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime-new.mm#L7171-L7189), and the runtime falls back to using a pointer `isa` if the array’s capacity (32,767 entries) is exhausted.
 
-The Apple Watch ABI uses 32-bit pointers[[3](#_footnotedef_3)], which don’t have enough unused bits to store both the pointer value and packed bits. Using an array to store the class pointers reduces the number of bits required for the class identity, enabling the performance advantages of the non-pointer isa at the cost of some indirection.
+The Apple Watch ABI uses 32-bit pointers^[[3](#_footnotedef_3)], which don’t have enough unused bits to store both the pointer value and packed bits. Using an array to store the class pointers reduces the number of bits required for the class identity, enabling the performance advantages of the non-pointer isa at the cost of some indirection.
 
 ### magic
 

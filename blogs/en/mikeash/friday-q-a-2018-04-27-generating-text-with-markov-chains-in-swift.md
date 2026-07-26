@@ -333,7 +333,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2018-04-27-generating-text-with-markov-chains-in-swift.html)
 
 Add your thoughts, post a comment:
 

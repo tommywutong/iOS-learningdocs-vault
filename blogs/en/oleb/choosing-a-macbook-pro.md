@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8532d9fe4210385b'
 translated: false
 ---
@@ -22,7 +22,7 @@ I am in the market for a new Retina MacBook Pro, but which one of the [new Haswe
 
 This decision was relatively easy for me. While I obviously like the lower weight and better portability of the 13-inch model, I usually do not carry my laptop around every day. It stays in one place for most of the week so portability is not my largest concern. On the other hand, I do work from time to time at places where I have no external display available so I value the additional pixels and screen area of the 15-inch model.
 
-I also like the prospect of getting a quad-core CPU, if only to minimize compile times and the overall responsiveness of Xcode. While my current mid-2010 MacBook Pro has worked very well for me for more than three years[1](#fn:1), I lately found it to be uncomfortably slow when working with large projects in Xcode, despite upgrades to 8 GB RAM and a fast SSD.
+I also like the prospect of getting a quad-core CPU, if only to minimize compile times and the overall responsiveness of Xcode. While my current mid-2010 MacBook Pro has worked very well for me for more than three years^[1](#fn:1), I lately found it to be uncomfortably slow when working with large projects in Xcode, despite upgrades to 8 GB RAM and a fast SSD.
 
 So it’s gonna be a 15-inch MacBook Pro for me. Which leads me to the next question.
 
@@ -38,7 +38,7 @@ And while there are software tools like [gfxCardStatus](http://gfx.io) that let 
 
 The same is true when you connect an external display: although the integrated GPU can drive up to three displays (including the internal one), the system will force-activate the discrete GPU.
 
-![gfxCardStatus listing apps that prevent switching to the integrated GPU](https://oleb.net/media/gfxcardstatus-screenshot.png)
+[![gfxCardStatus listing apps that prevent switching to the integrated GPU](https://oleb.net/media/gfxcardstatus-screenshot.png)](https://oleb.net/media/gfxcardstatus-screenshot.png)
 
 <sub>gfxCardStatus prevents switching to the integrated GPU on a 2012 Retina MacBook Pro.</sub>
 
@@ -46,7 +46,7 @@ In fact, Intel’s new Iris Pro 5200 GPU in the quad-core Haswell CPUs has becom
 
 ## 4K Display Support
 
-The most important graphics feature for me is support for external high-resolution displays, whether they come from Apple in the form of Retina Cinema Display or 4K monitors from other manufacturers. In the [MacBook Pro Tech Specs](http://www.apple.com/macbook-pro/specs-retina/), Apple lists a maximum resolution of 2560 × 1600 px over DisplayPort while 4K resolutions are officially supported over HDMI.[2](#fn:2)
+The most important graphics feature for me is support for external high-resolution displays, whether they come from Apple in the form of Retina Cinema Display or 4K monitors from other manufacturers. In the [MacBook Pro Tech Specs](http://www.apple.com/macbook-pro/specs-retina/), Apple lists a maximum resolution of 2560 × 1600 px over DisplayPort while 4K resolutions are officially supported over HDMI.^[2](#fn:2)
 
 On the other hand, Intel [actively advertises](http://software.intel.com/en-us/articles/quick-reference-guide-to-intel-processor-graphics) the [4K support](http://www.hardwareluxx.com/index.php/reviews/hardware/cpu/26405-haswell-test-intel-core-i7-4770k-and-i5-4670k.html?start=2) of the Haswell GPUs so I hope that Apple just doesn’t tell us the entire truth here because their own 4K Cinema Displays are not ready yet.
 

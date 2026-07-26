@@ -7,7 +7,7 @@ original_language: en
 published: 2018-06-06
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:13a6619a6d65ded2'
 translated: false
 ---
@@ -200,3 +200,5 @@ If you encounter any problems, please [open an issue](https://github.com/zhuowei
 ## Thanks
 
 Thanks to [@stroughtonsmith](https://twitter.com/stroughtonsmith/status/1004277030014287872), [@mistydemeo](https://twitter.com/mistydemeo/status/1003837651269533696), and [@KhaosT](https://twitter.com/KhaosT/status/1003888058477920257) for their help on Twitter, and thanks to [@hamzazood](https://twitter.com/hamzasood/status/1004036460150968320) for showing iOSMac for third-party applications is possible.
+
+[https://worthdoingbadly.com/iosmac/](https://worthdoingbadly.com/iosmac/)

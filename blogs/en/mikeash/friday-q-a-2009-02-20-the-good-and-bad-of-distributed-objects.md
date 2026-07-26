@@ -46,12 +46,10 @@ From this point, theObject acts as though it were local. You can send messages t
 **The Good**  
  I think this should be pretty clear from the above description, but let's quickly compare it to other IPC mechanisms:
 
-1. Just a few lines of code to set up a fully functional connection.
-2. For the most part, remote objects can be passed around just like local objects. This means that little of your code needs to be DO-aware.
-3. DO can be used over mach ports or sockets. It can be used to communicate between threads or between processes. It's reasonably configurable.
-4. Because DO works the same way as Objective-C messages, you don't have the same problems you might have trying to support two different protocol versions. Of course it's not always rosy, but if your changes involve implementing different methods, it's easy to check for what's going on using
-
-  and the like, rather than having to give up.
+1. **It's easy.** Just a few lines of code to set up a fully functional connection.
+2. **It's transparent.** For the most part, remote objects can be passed around just like local objects. This means that little of your code needs to be DO-aware.
+3. **It's flexible.** DO can be used over mach ports or sockets. It can be used to communicate between threads or between processes. It's reasonably configurable.
+4. **It's robust.** Because DO works the same way as Objective-C messages, you don't have the same problems you might have trying to support two different protocol versions. Of course it's not always rosy, but if your changes involve implementing different methods, it's easy to check for what's going on using `respondsToSelector:` and the like, rather than having to give up.
 
 All of this makes DO a very useful facility.
 
@@ -66,11 +64,7 @@ For primitives, things get harder. For scalars and even structs, the Objective-C
     [array getObjects:objarray range:NSMakeRange(5, 13)];
 ```
 
-It basically can't be done. DO would have to somehow know that the length of the
-
-parameter is determined by the length of the range being passed in, and copy only that much memory across the connection. It would also have to know that this is a return-by-reference only, and that it shouldn't be trying to serialize or proxy the contents of
-
-across the connection (it could be filled with junk, and an attempt to proxy that junk would crash). Yes, DO could special-case this particular method, but it won't be able to deal with arbitrary such methods.
+It basically can't be done. DO would have to somehow know that the length of the `objarray` parameter is determined by the length of the range being passed in, and copy only that much memory across the connection. It would also have to know that this is a return-by-reference only, and that it shouldn't be trying to serialize or proxy the contents of `objarray` across the connection (it could be filled with junk, and an attempt to proxy that junk would crash). Yes, DO could special-case this particular method, but it won't be able to deal with arbitrary such methods.
 
 DO does have some interesing language-level facilities to help with this. You can specify a pointer parameter as being `in`, `out`, or `inout` so that it knows which way to serialize or proxy. But this only works with pointers to single objects. For arrays, it just can't cope.
 
@@ -82,15 +76,7 @@ Another leaky abstraction is that the process that you're talking to could disap
     [obj thing2];
 ```
 
-In normal Objective-C,
-
-is either broken from the start (in which case you'll crash) or it remains valid throughout the method. But if
-
-is a distant object, suddenly things are not so clear. The remote process could disappear (or freeze up and time out) in between the call to
-
-and
-
-.
+In normal Objective-C, `obj` is either broken from the start (in which case you'll crash) or it remains valid throughout the method. But if `obj` is a distant object, suddenly things are not so clear. The remote process could disappear (or freeze up and time out) in between the call to `thing1` and `thing2`.
 
 When that happens, DO deals with it by throwing an exception. Surprise!
 
@@ -117,7 +103,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-02-20-the-good-and-bad-of-distributed-objects.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2023-10-09
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c4280e09ad2a0c9b'
 translated: false
 ---
@@ -24,9 +24,9 @@ translated: false
 
 ## [Soft Orders of Magnitude](#)
 
-If there’s one safe thing to complain about for any software development process, it’s that build times are too long. It doesn’t matter if it’s a minute, five minutes, or a hour—it could always be shorter. No one’s going to argue with that, right?more
+If there’s one safe thing to complain about for any software development process, it’s that build times are too long. It doesn’t matter if it’s a minute, five minutes, or a hour—it could always be shorter. No one’s going to argue with that, right?
 
-Obviously that’s _too_ glib—someone might wait an hour for a build, or at least for CI, but only if they feel it’s doing commensurate work. This was on our minds a lot on my first full-time team at Apple, the [Clang Static Analyzer](https://clang-analyzer.llvm.org) team. The analyzer is in some ways an _inherently_ slow tool: it does a path-sensitive walk through each function in your program, which has a naive order of growth of O(2number of conditions). Yet with some clever tricks—and the limitations of C—it was fast enough and caught useful enough bugs that not only did people run it, some of them ran it on _every build._
+Obviously that’s _too_ glib—someone might wait an hour for a build, or at least for CI, but only if they feel it’s doing commensurate work. This was on our minds a lot on my first full-time team at Apple, the [Clang Static Analyzer](https://clang-analyzer.llvm.org) team. The analyzer is in some ways an _inherently_ slow tool: it does a path-sensitive walk through each function in your program, which has a naive order of growth of O(2^number of conditions). Yet with some clever tricks—and the limitations of C—it was fast enough and caught useful enough bugs that not only did people run it, some of them ran it on _every build._
 
 We talked a fair bit about how we could make the analyzer faster…and on the flip side, how to make sure new features wouldn’t slow it down too much. What we came to realize was that absolute or percentage speedups, while obviously important, weren’t going to change how someone used the tool unless it crossed a “soft order of magnitude”:
 
@@ -40,7 +40,7 @@ We talked a fair bit about how we could make the analyzer faster…and on the fl
 - Long enough to go home for the day.
 - Long enough to go home for the weekend. (I’ve never worked on anything with a task this long, thankfully.)
 
-The uneven nature of these categories means that improvements are not distributed the same way for all users. Oh, you got CI to take 8 minutes instead of 16? That’s not a _bad_ thing, but I’m still going to switch tasks rather than just wait for it. But taking 30 seconds instead of 1 minute means I might stay at my desk instead of getting up for a break.[1](#fn:break)
+The uneven nature of these categories means that improvements are not distributed the same way for all users. Oh, you got CI to take 8 minutes instead of 16? That’s not a _bad_ thing, but I’m still going to switch tasks rather than just wait for it. But taking 30 seconds instead of 1 minute means I might stay at my desk instead of getting up for a break.^[1](#fn:break)
 
 You can use the list in reverse, too. It’s okay to make things a little slower, until they cross a threshold. As a specific example, this is why the [`tsc`](https://www.typescriptlang.org) step in a particular work project is more frustrating than the [`cargo`](https://doc.rust-lang.org/cargo/) step, even though the `cargo` step takes longer. The `tsc` step _was_ a short pause, but now it has crossed over into a long pause instead. Whereas the `cargo` step has always been a long pause.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d0fcad5a6e60099f'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Today, my friend [Ole Zorn](https://twitter.com/olemoritz) released [Pythonista](http://omz-software.com/pythonista/) on the App Store. Pythonista can perhaps best be described as a full-fledged Python IDE for the iPad.
 
-![Pythonista Source Code Editor](https://oleb.net/media/pythonista-screenshot-code-editor.png)
+[![Pythonista Source Code Editor](https://oleb.net/media/pythonista-screenshot-code-editor.png)](https://oleb.net/media/pythonista-screenshot-code-editor.png)
 
 It comes with a great source editor, complete with syntax highlighting, an extended keyboard (best feature: swipe left/right to navigate in the current line) and basic code completion for Python. The app’s built-in Python interpreter comes with the (almost) complete set of Python’s standard modules so a lot of existing Python code should work out of the box. You can either write a complete “mini-app” in the code editor and run it or explore the Python APIs from the interactive console.
 
@@ -26,48 +26,16 @@ Ole even wrote five new modules especially for Pythonista. These allow you to pl
 
 Pythonista includes complete documentation for the Python language, standard library and the custom extensions. The documentation browser is accessible from the code editor with a single tap. It also comes with ten examples that demonstrate the features and are a great way to learn some Python basics:
 
-- Memory
-
-  -style game (
-
-  screenshot
-
-  )
-- SameGame
-
-  variant (
-
-  screenshot
-
-  )
-- screenshot
-
-  )
-- screenshot
-
-  )
-- screenshot
-
-  )
-- screenshot
-
-  )
-- screenshot
-
-  )
-- Snake
-
-  game (
-
-  screenshot
-
-  )
-- screenshot
-
-  )
-- screenshot
-
-  )
+- A [Memory](https://en.wikipedia.org/wiki/Concentration_(game))-style game ([screenshot](https://oleb.net/media/pythonista-screenshot-memory.png))
+- A [SameGame](https://en.wikipedia.org/wiki/Same_Game) variant ([screenshot](https://oleb.net/media/pythonista-screenshot-samegame.png))
+- An analog clock ([screenshot](https://oleb.net/media/pythonista-screenshot-analog-clock.png))
+- A particle generator that you can control with your fingers ([screenshot](https://oleb.net/media/pythonista-screenshot-particles.png))
+- A simple multi-touch piano ([screenshot](https://oleb.net/media/pythonista-screenshot-piano.png))
+- A graph plotter for mathematical functions ([screenshot](https://oleb.net/media/pythonista-screenshot-plotter.png))
+- A lottery number generator ([screenshot](https://oleb.net/media/pythonista-screenshot-lottery.png))
+- A variant of the [Snake](https://en.wikipedia.org/wiki/Snake_(video_game)) game ([screenshot](https://oleb.net/media/pythonista-screenshot-snake.png))
+- A simple stop watch ([screenshot](https://oleb.net/media/pythonista-screenshot-stopwatch.png))
+- A demo of the customization features of the interactive console ([screenshot](https://oleb.net/media/pythonista-screenshot-zen.png))
 
 To test Pythonista out, I wrote a very simple Twitter search client today. It takes a keyword, performs a Twitter search on it and displays the most recent results. Despite the fact that I only have a very basic knowledge of Python and I have to look up pretty much every single API I use, it only took me about an hour to get [a decent result](https://oleb.net/media/pythonista-screenshot-twittersearch.png). [Download the code](https://oleb.net/media/pythonista-twitter-search.py) if you’re interested.
 

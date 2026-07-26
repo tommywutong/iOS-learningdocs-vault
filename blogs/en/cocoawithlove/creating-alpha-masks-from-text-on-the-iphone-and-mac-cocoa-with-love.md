@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:458552def82b8b08'
 translated: false
 ---
@@ -26,13 +26,7 @@ The program shows the current time, updating every second, on the Mac or iPhone.
 
 This is done by drawing the image of the shuttle over a white background using an alpha mask — where the mask is white (100% opaque) for the text and dark gray (30% opaque) for the background.
 
-> TextMasking-iPhone.zip
-> 
-> (37kB) and the
-> 
-> TextMasking-Mac.zip
-> 
-> (42kB) projects.
+> Download the [TextMasking-iPhone.zip](https://www.cocoawithlove.com/assets/objc-era/TextMasking-iPhone.zip) (37kB) and the [TextMasking-Mac.zip](https://www.cocoawithlove.com/assets/objc-era/TextMasking-Mac.zip) (42kB) projects.
 
 ## Clipping regions in Core Graphics
 
@@ -49,22 +43,14 @@ CGContextEOClip(context);
 
 will ensure that subsequent drawing only has an effect if it is inside the rectangle (x=10, y=10, width=80, height=80) but outside the rectangle (x=20, y=20, width=10, height=10).
 
-> stands for "Even-Odd". When you use this function instead of
-> 
-> , subsequent nested regions (an even or an odd number of nestings) continue to toggle clipping on and off. That is why the second
-> 
-> is excluded from the clipping region. If I had used
-> 
-> , the nested rectangle would have no effect (it is
-> 
-> inside the clipping region).
+> The "EO" in `CGContextEOClip` stands for "Even-Odd". When you use this function instead of `CGContextClip`, subsequent nested regions (an even or an odd number of nestings) continue to toggle clipping on and off. That is why the second `CGContextAddRect` is excluded from the clipping region. If I had used `CGContextClip`, the nested rectangle would have no effect (it is _already_ inside the clipping region).
 
 ## Clipping with image masks in Core Graphics
 
 A mask affects the opacity/transparency of drawn pixels like a clipping region but the affected areas are specified by the color values in an image, not from a region. This is the approach used in the sample applications. A mask is used instead of a clipping region for two reasons:
 
 - A mask allows varying levels of transparency, not just on or off (for the partially transparent regions in the image).
-- ), making a clipping region from a text boundary impractical.
+- On the iPhone, it's very difficult to get the region outline of text characters (on the Mac you can use `appendBezierPathWithGlyph:inFont:`), making a clipping region from a text boundary impractical.
 
 ## Creating a mask
 
@@ -152,7 +138,7 @@ CGImageRef alphaMask = CGBitmapContextCreateImage(maskContext);
 Using the mask is much easier than creating it:
 
 1. Save the state of the current context (so that we can go back to a non-masked state when we're done).
-2. .
+2. Apply the mask using `CGContextClipToMask`.
 3. Perform whatever drawing we want masked.
 4. Restore the saved context state to remove the mask again.
 
@@ -175,13 +161,7 @@ The Mac version substitutes `NSColor` and `NSImage` for `UIColor` and `UIImage` 
 
 ## Conclusion
 
-> TextMasking-iPhone.zip
-> 
-> (37kB) and the
-> 
-> TextMasking-Mac.zip
-> 
-> (42kB) projects.
+> Download the [TextMasking-iPhone.zip](https://www.cocoawithlove.com/assets/objc-era/TextMasking-iPhone.zip) (37kB) and the [TextMasking-Mac.zip](https://www.cocoawithlove.com/assets/objc-era/TextMasking-Mac.zip) (42kB) projects.
 
 Clipping and masking are two of the most powerful operations available when drawing in code but as highly abstract concepts they can be difficult to use for the first time since a mistake normally results in nothing happening (a difficult scenario from which to learn).
 

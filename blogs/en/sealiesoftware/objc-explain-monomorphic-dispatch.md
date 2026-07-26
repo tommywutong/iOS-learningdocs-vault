@@ -7,7 +7,7 @@ original_language: en
 published: 2009-05-14
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cf2206dd21885e21'
 translated: false
 ---
@@ -58,4 +58,4 @@ There are some important cases where monomorphic dispatch would still work in Ob
 
 The monomorphic dispatch optimization will be present in some future dynamic-recompiling Objective-C runtime, but it won't work as well as it does in other less-dynamic languages.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

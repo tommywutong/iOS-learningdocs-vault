@@ -65,9 +65,7 @@ Since C already has these operators, why are these functions needed? As with the
     x += 1;
 ```
 
-And then consider what can happen if multiple threads execute it, with the same
-
-, simultaneously. At a low level, this single line of code breaks down into multiple operations:
+And then consider what can happen if multiple threads execute it, with the same `x`, simultaneously. At a low level, this single line of code breaks down into multiple operations:
 
 ```
     fetch value of x
@@ -110,13 +108,7 @@ There are also functions for doing bitwise logical options. The `|=`, `&=`, and 
     }
 ```
 
-This is how a compare and swap operation works, except that compare and swap is an atomic operation. It cannot be interrupted or preempted in the middle. If the new value is assigned and the function returns
-
-then you can be absolutely certain that the value transitioned directly from
-
-to
-
-without any other intermediate value.
+This is how a compare and swap operation works, except that compare and swap is an atomic operation. It cannot be interrupted or preempted in the middle. If the new value is assigned and the function returns `true` then you can be absolutely certain that the value transitioned directly from `old` to `new` without any other intermediate value.
 
 This gives us the building blocks to create more complex and useful atomic operations. The basic model of using compare and swap is that of a transaction, as you might find in databases. Conceptually, you build code that begins a transaction, carries out a local modification, then attempts to commit the transaction. The commit is done using a compare and swap. If the commit fails, which is indicated by the compare and swap returning `false`, then you go back to the beginning and start a new transaction to try it again.
 
@@ -157,11 +149,7 @@ For example, here is a function which adds a node to the head of a linked list:
     }
 ```
 
-Note that I use the
-
-variant here. This is because the compare and swap operation makes the data contained inside
-
-visible to other threads, and the barrier is necessary to ensure that that data is properly updated for all threads before they can see it. As I mentioned before, I will go into more detail about barriers later.
+Note that I use the `Barrier` variant here. This is because the compare and swap operation makes the data contained inside `node` visible to other threads, and the barrier is necessary to ensure that that data is properly updated for all threads before they can see it. As I mentioned before, I will go into more detail about barriers later.
 
 Here is a companion function which "steals" the list. This replaces the list with an empty list (which is to say, `NULL`) and returns the old list head so that it can be operated on:
 
@@ -180,11 +168,7 @@ Here is a companion function which "steals" the list. This replaces the list wit
     }
 ```
 
-This kind of structure can be really useful in multithreaded programming. Many threads can safely use
-
-to add new nodes to the structure. A worker thread can then use
-
-to grab the list and process it.
+This kind of structure can be really useful in multithreaded programming. Many threads can safely use `AddNode` to add new nodes to the structure. A worker thread can then use `StealList` to grab the list and process it.
 
 **ABA Problem**  
  You might wonder why I implemented `StealList` instead of, say, `RemoveNode`. The answer is that `RemoveNode` is harder than it looks. You might think that you could implement it like so:
@@ -211,13 +195,7 @@ Trouble is, there's a subtle scenario where this fails badly. Let's imagine that
     A -> B -> C
 ```
 
-This function executes.
-
-points to A, and
-
-points to B. However, before it gets to the compare and swap, it is preempted and another thread runs. That thread then calls
-
-twice, leaving the list like this:
+This function executes. `orig` points to A, and `next` points to B. However, before it gets to the compare and swap, it is preempted and another thread runs. That thread then calls `RemoveNode` twice, leaving the list like this:
 
 ```
     C
@@ -271,13 +249,7 @@ For an example scenario where this could cause trouble, consider the following c
     printf("%d\n", s->field2);
 ```
 
-There is the very real possibility with this code that thread 2 will not print the correct value. This could happen if the CPU reorders the writes in thread 1 such that the assignment to
-
-happens before the assignments to the fields. Marking things as
-
-doesn't do anything to fix this, as that only controls potential
-
-reordering, not CPU reordering.
+There is the very real possibility with this code that thread 2 will not print the correct value. This could happen if the CPU reorders the writes in thread 1 such that the assignment to `gStructure` happens before the assignments to the fields. Marking things as `volatile` doesn't do anything to fix this, as that only controls potential _compiler_ reordering, not CPU reordering.
 
 Memory barriers are a way to solve this. A memory barrier forces all all reads before the barrier to complete before any reads after the barrier complete. The same goes for writes. Technically, there can be separate barriers for reads and writes, but OSAtomic rolls them both into a single concept.
 
@@ -299,13 +271,7 @@ If you just want a plain memory barrier, you can get one by using `OSMemoryBarri
     printf("%d\n", s->field2);
 ```
 
-This is safe. Technically, the barrier in the second thread should not be necassary, as the second read depends on the first. (The value of
-
-needs to be available before the value of
-
-can be retrieved.) However, these things can be difficult to reason through and I often prefer to simply be safe rather than try to figure out whether it's
-
-needed.
+This is safe. Technically, the barrier in the second thread should not be necassary, as the second read depends on the first. (The value of `s` needs to be available before the value of `s->field2` can be retrieved.) However, these things can be difficult to reason through and I often prefer to simply be safe rather than try to figure out whether it's _really_ needed.
 
 In addition to this function, OSAtomic also offers memory barriers with all of its atomic operations. The `Barrier` variants of all the atomic functions means that they not only accomplish the given atomic operation, but also incorporate a memory barrier. This is extremely useful when you're performing an atomic operation which has implications about data beyond the single chunk that you're operating on.
 
@@ -326,7 +292,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-03-04-a-tour-of-osatomic.html)
 
 Add your thoughts, post a comment:
 

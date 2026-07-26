@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a306cb0a8b0ba03e'
 translated: false
 ---
@@ -24,7 +24,7 @@ Blue Planet uses the Core Location framework to determine the user’s location.
 
 When the app review team called me, they asked me to submit an update to Blue Planet that included the “Allow Outgoing Connections” entitlement (`com.apple.security.network.client`) as the only change. In the future, only those sandboxed apps that requested both entitlements would be allowed to access Location Services on the Mac.
 
-![Screenshot of the Sandboxing Entitlements in Xcode with Allow Outgoing Connections and Allow Location Services Access activated](https://oleb.net/media/xcode-sandboxing-entitlements-blueplanet.png)
+[![Screenshot of the Sandboxing Entitlements in Xcode with Allow Outgoing Connections and Allow Location Services Access activated](https://oleb.net/media/xcode-sandboxing-entitlements-blueplanet.png)](https://oleb.net/media/xcode-sandboxing-entitlements-blueplanet.png)
 
 <sub>If your sandboxed Mac app uses Location Services, make sure to request the “Allow Location Services Access” and the “Allow Outgoing Connections” entitlements.</sub>
 

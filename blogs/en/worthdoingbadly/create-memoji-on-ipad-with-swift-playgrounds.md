@@ -7,7 +7,7 @@ original_language: en
 published: 2018-08-11
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:30e2ba746eccc468'
 translated: false
 ---
@@ -30,13 +30,13 @@ You need an iPad running iOS 12 beta 6 and Swift Playgrounds. The original iPad 
 
 To run the Playground:
 
-- to download the Playground:
+- **Sign up for my mailing list** to download the Playground:
 
 - Unzip the downloaded Playground, and AirDrop it to your iPad.
 - turn your iPad to landscape.
-- .
-- sign.
-- to open the Memoji creator.
+- open the playground, and press **Run My Code**.
+- A carousel of Animoji should appear. The leftmost should be a **+** sign.
+- tap on the **+** to open the Memoji creator.
 
 ## Introduction
 
@@ -178,3 +178,5 @@ The source for the app can be [found here](https://github.com/zhuowei/iOSAvatarU
 ## Thanks
 
 Thanks to Filippo Claudi for the screenshot of the Playground running on an iPad Pro.
+
+[https://worthdoingbadly.com/memoji/](https://worthdoingbadly.com/memoji/)

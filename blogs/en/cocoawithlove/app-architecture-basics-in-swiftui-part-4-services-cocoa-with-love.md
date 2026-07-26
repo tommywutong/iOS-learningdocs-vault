@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:70fda86240249a0f'
 translated: false
 ---
@@ -41,7 +41,7 @@ public class Model: ObservableObject {
 To test this interface, we need tests that call each of:
 
 1. `init`
-2. and
+2. `setIsRead` and
 3. `reload`
 
 that validate the behavior of these functions by reading the changes to `feed`, `error` and `isReadStatuses`.
@@ -149,7 +149,7 @@ I want to separate the Model interface from the Services interface. Separating t
 Let’s consider the network-data request pipeline that involves `URLSession` in the CwlFeedReader app. The major features of the pipeline are:
 
 1. the Cocoa with Love domain name
-2. type
+2. use of the `URLSession` type
 3. use of the relative path for the feed.json file, parameters and JSON encoding/decoding to marshal parameters to `URLSession`
 
 It’s possible to separate an app along any of these 3 lines. I consider only one of these choices “correct” but let’s look at the arguments used in favor of each.
@@ -168,7 +168,7 @@ This approach lets you test every single line of code and, if retro-fitted to an
 
 This approach has many limitations:
 
-- ) so it isn’t really usable for general service isolation.
+- Works for network dependencies but is harder to apply to other dependencies (like `UserDefaults`) so it isn’t really usable for general service isolation.
 - Even for network dependencies, it decouples network data but not network APIs. Our app can’t swap to a different network library or data source using this approach.
 - You need to start the stub server before testing, meaning that your tests don’t “just work” without extra setup.
 - Switching configurations on the server for testing requires side-channel configuration of the server.

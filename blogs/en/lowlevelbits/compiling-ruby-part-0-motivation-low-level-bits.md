@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a87e4eb8719480c9'
 translated: false
 ---
@@ -25,23 +25,15 @@ This series is mostly a brain dump, though sometimes I'm trying to make things e
 Here is what you can expect from the series:
 
 - **[Motivation](https://lowlevelbits.org/compiling-ruby-part-0/): some background reading on what and why**
-- Compilers vs Interpreters
-
-  : a high level overview of the chosen approach
-- RiteVM
-
-  : a high-level overview of the mruby Virtual Machine
-- MLIR and compilation
-
-  : covers what is MLIR and how it fits into the whole picture
-- Progress update
-
-  : short progress update with what's done and what's next
-- Exceptions
-
-  : an overview of how exceptions work in Ruby
+- [Compilers vs Interpreters](https://lowlevelbits.org/compiling-ruby-part-1/): a high level overview of the chosen approach
+- [RiteVM](https://lowlevelbits.org/compiling-ruby-part-2/): a high-level overview of the mruby Virtual Machine
+- [MLIR and compilation](https://lowlevelbits.org/compiling-ruby-part-3/): covers what is MLIR and how it fits into the whole picture
+- [Progress update](https://lowlevelbits.org/compiling-ruby-part-4/): short progress update with what's done and what's next
+- [Exceptions](https://lowlevelbits.org/compiling-ruby-part-5/): an overview of how exceptions work in Ruby
 - Garbage Collection (TBD): an overview of how mruby manages memory
 - Fibers (TBD): what are fibers in Ruby, and how mruby makes them work
+
+_Note: the list of TBD articles may change as I may want to split some parts into smaller chunks._
 
 ---
 
@@ -52,7 +44,7 @@ GTK is a professional-grade 2D game engine. Among the many incredible features:
 - you can build games in Ruby
 - it targets many (like, many!) platforms (Windows, Linux, macOS, iOS, Android, WASM, Nintendo Switch, Xbox, PlayStation, Oculus VR, Steam Deck)
 - super lightweight (~3.5 megabytes)
-- and many more really
+- [and many more really](https://dragonruby.org/toolkit/game)
 
 GTK is built on top of a slightly customized mruby runtime and allows you to write games purely in Ruby. It comes with all the batteries included, but if you need more in a specific case, you can always fall back to C via the C extensions mechanism.
 

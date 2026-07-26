@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:75dd4105e3b689f0'
 translated: false
 ---
@@ -33,10 +33,12 @@ Point 2 can also be a serious impediment for small developers who simply don't m
 
 With Snow Leopard now installed on my main development machine though, I'm forced to go through the backwards compatibility rigamarole just to ensure Leopard compatibility. As fast as the uptake of Snow Leopard was, it still isn't the dominant Mac OS X version — it is far too soon for me to demand users upgrade (although Gus Mueller has already ripped that band-aid off with the 10.6-only release of [Acorn 2](http://flyingmeat.com/acorn/)).
 
+> While I'm talking about Mac OS X here, these settings are the same when building for different iPhone OS versions.
+
 Building against earlier SDKs in Xcode is the easy part. There are two settings involved:
 
-1. (the OS version whose headers you'll use and the newest OS version from which you'll use optional features)
-2. (the oldest OS version supported)
+1. **Base SDK** (the OS version whose headers you'll use and the newest OS version from which you'll use optional features)
+2. **Mac OS X Deployment Target** (the oldest OS version supported)
 
 The Base SDK controls what SDK you actually link against and the Mac OS X Deployment Target controls the minimum OS version allowed. In simple cases, just set both of these to the same value.
 
@@ -63,9 +65,9 @@ This causes everything newer than the Mac OS X Deployment Target to be **weak li
 
 If a program is run on an older OS than the Base SDK:
 
-- function pointers
-- from
-- method.
+- unavailable weak linked functions will have `NULL` function pointers
+- unavailable weak linked class names will return `nil` from `NSClassFromString`
+- unavailable weak linked methods will return NO from the containing objects' `respondsToSelector:` method.
 
 The important point to remember is that anything weak-linked should be checked to ensure it is non-zero before use.
 

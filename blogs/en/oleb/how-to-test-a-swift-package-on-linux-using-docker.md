@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6ac88151a1353ee8'
 translated: false
 ---
@@ -39,7 +39,7 @@ Follow these steps:
 
   The [`Dockerfile`](https://docs.docker.com/engine/reference/builder/) is a recipe for building an _image_. The image then forms the base from which we later create the _container_ that will run the tests.
 
-  The `FROM swift:3.1` line sets the base image from which we derive our own image. We use the [“official” Swift image](https://hub.docker.com/r/library/swift/)[1](#fn:official) in Docker’s public image repository. It’s a standard [Ubuntu](https://www.ubuntu.com) that has the Swift toolchain installed. You can use different tags (the part behind the colon) to select a specific Swift version, or `swift:latest` for the latest version.
+  The `FROM swift:3.1` line sets the base image from which we derive our own image. We use the [“official” Swift image](https://hub.docker.com/r/library/swift/)^[1](#fn:official) in Docker’s public image repository. It’s a standard [Ubuntu](https://www.ubuntu.com) that has the Swift toolchain installed. You can use different tags (the part behind the colon) to select a specific Swift version, or `swift:latest` for the latest version.
 
   The subsequent lines create a working directory in the image and copy the contents of the project directory from the host (your machine) to the image. If you place your `Dockerfile` in a different directory than your project root, you’ll have to modify the paths in the `COPY . ./` line.
 
@@ -122,15 +122,11 @@ $ docker run --rm \
 
 This tells Docker to:
 
-- image,
-- ),
-- in the container (
-
-  ),
-- directory in the container (
-
-  ),
-- and exit.
+- run a container based on the `swift:3.1` image,
+- delete the container when it exits (`--rm`),
+- map the current directory on the host to `/package` in the container (`--volume "$(pwd):/package"`),
+- change into the `/package` directory in the container (`--workdir "/package"`),
+- and execute a Bash shell inside the container, telling the shell to run the command `swift package fetch && swift test ...` and exit.
 
 Note the `--build-path ./.build/linux` parameter we’re passing to `swift test`: now that host and container share the same directory, we have to tell SwiftPM to use a custom location for the Linux build products to avoid conflicts with the binaries built for macOS.
 

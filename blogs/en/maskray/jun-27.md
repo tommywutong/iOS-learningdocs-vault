@@ -7,7 +7,7 @@ original_language: en
 published: 2026-06-27
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b12c36b563d7941d'
 translated: false
 ---
@@ -294,53 +294,11 @@ SmallVectorBase<Size_T>               // independent of T
         SmallVector<T, N>             // adds the inline buffer
 ```
 
-- holds the three members (
-
-  ,
-
-  ,
-
-  ) and the out-of-line
-
-  /
-
-  . It is templated only on the size type, so those two heavyweight functions are emitted twice for the whole program — one
-
-  , one
-
-  — not once per element type.
-- adds what is identical for trivial and non-trivial
-
-  : the iterators,
-
-  /
-
-  /
-
-  /
-
-  , and the internal-reference helpers.
-- is the specialization point. The
-
-  half uses
-
-  and
-
-  ; the
-
-  half uses constructors,
-
-  , and
-
-  .
-- erases
-
-  . A
-
-  parameter accepts any inline capacity, and is the canonical way to pass a
-
-  around.
-- carries the inline buffer.
+- `SmallVectorBase<Size_T>` holds the three members (`BeginX`, `Size`, `Capacity`) and the out-of-line `grow_pod`/`mallocForGrow`. It is templated only on the size type, so those two heavyweight functions are emitted twice for the whole program — one `uint32_t`, one `uint64_t` — not once per element type.
+- `SmallVectorTemplateCommon<T>` adds what is identical for trivial and non-trivial `T`: the iterators, `front`/`back`/`data`/`operator[]`, and the internal-reference helpers.
+- `SmallVectorTemplateBase<T, bool>` is the specialization point. The `true` half uses `memcpy` and `grow_pod`; the `false` half uses constructors, `destroy_range`, and `growAndEmplaceBack`.
+- `SmallVectorImpl<T>` erases `N`. A `SmallVectorImpl<T> &` parameter accepts any inline capacity, and is the canonical way to pass a `SmallVector` around.
+- `SmallVector<T, N>` carries the inline buffer.
 
 ## Aside: a smaller header than `std::vector`
 

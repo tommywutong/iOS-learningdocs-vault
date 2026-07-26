@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0cd6dc7ede82807a'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 A few months ago I accidentally hit the _Publish_ button on an article for this site too early. I ended up publishing a post that had a title but no other text. When a reader notified me about my mistake a few minutes later, I immediately deleted the page. That fixed things on my site, but unfortunately did not reverse all the damage. Several [feed aggregators](https://en.wikipedia.org/wiki/News_aggregator) had already fetched my [feed](https://en.wikipedia.org/wiki/Web_feed) while the empty article was up, and readers were seeing this:
 
-![Screenshot of ReadKit showing my empty article](https://oleb.net/media/readkit-screenshot-empty-article.png)
+[![Screenshot of ReadKit showing my empty article](https://oleb.net/media/readkit-screenshot-empty-article.png)](https://oleb.net/media/readkit-screenshot-empty-article.png)
 
 <sub>The empty article appeared in my readers’ feed readers although it had long been deleted.</sub>
 
@@ -29,6 +29,12 @@ I hate when this happens because I value the quality of my feed. (For example, I
 The problem is that there is seemingly no good way to tell a news aggregator that a feed item has been deleted. [I tweeted at the time](https://twitter.com/olebegemann/status/644955305906937857) that aggregators could (should?) probably be smarter about this than they currently are:
 
 > … I think it could be handled more intelligently. E.g. if the latest item vanishes but the one before that is still there it’s very likely that the former got deleted.
+> 
+> [@olebegemann](https://twitter.com/olebegemann)
+> 
+> Ole Begemann
+> 
+> [September 18, 2015 19:25 GMT](https://twitter.com/olebegemann/status/644955305906937857)
 
 But it is a difficult problem. Simply removing an entry from the feed (as I had done by deleting the article) is not enough because feeds commonly only include the most recent posts, so 99.999% of the time the fact that an item is no longer in the feed does _not_ mean it has been deleted at the source.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:247a0707b3026a06'
 translated: false
 ---
@@ -18,9 +18,9 @@ translated: false
 
 ## [Mail Aliases](#)
 
-Even though I’m the developer of [Webmailer](http://belkadan.com/webmailer), I mostly use Apple Mail for e-mail these days. Sometimes it’s nice to be able to send e-mails using different identities; for Belkadan Software tech support I’m “Jordy Rose”, but for school-related communication I’d prefer my name to show up as “Jordan Rose” and use my school e-mail address. Mail supports this, but doesn’t actually have a preference for it without creating separate accounts.[1](#fn:names) You have to edit the settings file manually.
+Even though I’m the developer of [Webmailer](http://belkadan.com/webmailer), I mostly use Apple Mail for e-mail these days. Sometimes it’s nice to be able to send e-mails using different identities; for Belkadan Software tech support I’m “Jordy Rose”, but for school-related communication I’d prefer my name to show up as “Jordan Rose” and use my school e-mail address. Mail supports this, but doesn’t actually have a preference for it without creating separate accounts.^[1](#fn:names) You have to edit the settings file manually.
 
-So I wrote **[Mail Aliases](https://github.com/downloads/belkadan/Mail-Aliases/Mail%20Aliases.zip)**, a little app that can edit this data for you.more It’s not particularly polished, but it might come in handy for some of you. Note that this comes WITHOUT WARRANTY, so if you’re at all worried, back up your Mail account settings in `~/Library/Mail/V2/MailData/Accounts.plist`.
+So I wrote **[Mail Aliases](https://github.com/downloads/belkadan/Mail-Aliases/Mail%20Aliases.zip)**, a little app that can edit this data for you. It’s not particularly polished, but it might come in handy for some of you. Note that this comes WITHOUT WARRANTY, so if you’re at all worried, back up your Mail account settings in `~/Library/Mail/V2/MailData/Accounts.plist`.
 
 Mail Aliases has been tested on Mac OS X v10.7 (Lion), but should work with 10.6 (Snow Leopard) as well. You can check out the source [on Github](https://github.com/belkadan/Mail-Aliases).
 

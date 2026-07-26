@@ -7,7 +7,7 @@ original_language: en
 published: 2019-08-01
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:42373b309d8a23cf'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 ## [\> go east](#)
 
-I’ve had a connection with [text adventures](https://en.wikipedia.org/wiki/Interactive_fiction) for a long time, coming back to the format year after year. For the most part I’m not a _player_ of text adventures, but instead an enthusiast for implementations thereof. I’ve [talked before](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/#little-projects) about using this as a way to learn a new language _and_ to learn about [parsers](https://en.wikipedia.org/wiki/Parsing), but I also just like making them, an effort that has shaded off from actual plausible implementations into mildly unusual attempts at the format. The latest of these is to just host the world in the filesystem.[1](#fn:tre)more
+I’ve had a connection with [text adventures](https://en.wikipedia.org/wiki/Interactive_fiction) for a long time, coming back to the format year after year. For the most part I’m not a _player_ of text adventures, but instead an enthusiast for implementations thereof. I’ve [talked before](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/#little-projects) about using this as a way to learn a new language _and_ to learn about [parsers](https://en.wikipedia.org/wiki/Parsing), but I also just like making them, an effort that has shaded off from actual plausible implementations into mildly unusual attempts at the format. The latest of these is to just host the world in the filesystem.^[1](#fn:tre)
 
 ```
 world

@@ -7,7 +7,7 @@ original_language: en
 published: 2023-06-11
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6a89da59c7154bf4'
 translated: false
 ---
@@ -26,7 +26,7 @@ Over the years, I accumulated various systems, devices, and services in respondi
 
 ### Network, Version 1
 
-I moved into a new townhouse in September 2014 and brought the only infra I had at the time: an AirPort Extreme[[1](#_footnotedef_1)]. I installed it in the [wiring enclosure](https://www.legrand.us/audio-visual/structured-wiring-enclosures/metal-enclosures/28-inch-enclosure-with-hinged-door/p/en2850) on the third floor, which kept it and the cable modem out of sight. However, the install location (at the end of both the horizontal and vertical footprints of the home) and placement (in a metal box) are both sub-optimal choices for whole-house coverage, so I added a wired [AirPort Express 802.11n (2nd Generation)](https://support.apple.com/kb/SP651?locale=en_US) access point on the first floor.
+I moved into a new townhouse in September 2014 and brought the only infra I had at the time: an AirPort Extreme^[[1](#_footnotedef_1)]. I installed it in the [wiring enclosure](https://www.legrand.us/audio-visual/structured-wiring-enclosures/metal-enclosures/28-inch-enclosure-with-hinged-door/p/en2850) on the third floor, which kept it and the cable modem out of sight. However, the install location (at the end of both the horizontal and vertical footprints of the home) and placement (in a metal box) are both sub-optimal choices for whole-house coverage, so I added a wired [AirPort Express 802.11n (2nd Generation)](https://support.apple.com/kb/SP651?locale=en_US) access point on the first floor.
 
 I didn’t have many leaf nodes in my network topology at the time (a phone, a laptop, a work laptop, an Apple TV, and probably a few others), so this setup worked well enough for a few years. (I don’t consider the leaf nodes part of the home lab, so I’ll keep any mention brief to stay on point.)
 
@@ -38,7 +38,7 @@ I had gained a few new housemates by the summer of 2017, and the questionable Wi
 
 With more people living in the home and less space to store things, I looked at what I could discard. I had too many hard drives, so I decided to buy a [network-attached storage (NAS)](https://en.wikipedia.org/wiki/Network-attached_storage) device to:
 
-1. **Consolidate into a single device.** I had 4 USB 2.0 drives, 1 FireWire 400/800 drive, 2 USB 3.0 drives, and 1 Thunderbolt 2 drive. Apple went all-in on USB-C/Thunderbolt 3 in 2016, so the clock was ticking on my ability to connect some of the drive enclosures. I was particularly concerned about the FireWire enclosure, which not only had an obsolete connector but also had two disks in a [RAID 0](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0) configuration _with my most precious data_, and I was not confident this would be readable by another enclosure if that were to become necessary[[2](#_footnotedef_2)].
+1. **Consolidate into a single device.** I had 4 USB 2.0 drives, 1 FireWire 400/800 drive, 2 USB 3.0 drives, and 1 Thunderbolt 2 drive. Apple went all-in on USB-C/Thunderbolt 3 in 2016, so the clock was ticking on my ability to connect some of the drive enclosures. I was particularly concerned about the FireWire enclosure, which not only had an obsolete connector but also had two disks in a [RAID 0](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0) configuration _with my most precious data_, and I was not confident this would be readable by another enclosure if that were to become necessary^[[2](#_footnotedef_2)].
 2. **Improve hardware failure resiliency.** I’ve had two hard drives fail while in use. One did not have any backups, and that was very painful. I thought I was safe for a while as the drive was new, but it failed within three months of purchase. The other drive failure was a backup drive, which I replaced without additional trouble.
 3. **Make the data accessible.** I didn’t have a desk at home, so mounting a drive required putting it somewhere stable (all the drives were spinning disks), finding the correct power adapter and data cable, and plugging everything in. While workable for occasional use, a network mount is far easier to attach and usable anywhere in the home.
 

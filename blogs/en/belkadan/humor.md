@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:725167718a2cf06f'
 translated: false
 ---
@@ -58,17 +58,13 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Humor](https:
 
 ## Older Posts
 
-1. 2019-09-13
-
-  Presentation on PrintAsObjC
-2. 2014-12-28
-
-  SIGWINCH
+1. 2019-09-13[Presentation on PrintAsObjC](https://belkadan.com/blog/2019/09/Presentation-on-PrintAsObjC/?tag=humor)
+2. 2014-12-28[SIGWINCH](https://belkadan.com/blog/2014/12/SIGWINCH/?tag=humor)
 
 ### Possibly Related Tags
 
-- C++
-- Objective-C
-- Security
-- Social media import
-- Unix
+- [C++](https://belkadan.com/blog/tags/cxx)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Security](https://belkadan.com/blog/tags/security)
+- [Social media import](https://belkadan.com/blog/tags/social-media-import)
+- [Unix](https://belkadan.com/blog/tags/unix)

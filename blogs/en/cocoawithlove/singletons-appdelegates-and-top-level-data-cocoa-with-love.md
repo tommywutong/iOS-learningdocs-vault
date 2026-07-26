@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ffefd4659ffd8aad'
 translated: false
 ---
@@ -34,11 +34,11 @@ The reality is that applications need to have _some_ global state; we must have 
 
 If all of these are true, then you should use a global variable.
 
+> If you're wondering, variables that fall outside these rules should be (respectively):
+> 
 > 1. child variables of the object that manages them
 > 2. children of the object that manages the collection
-> 3. or a
-> 
->   (constants are state for the compiler, not the program)
+> 3. a `#define` or a `const` (constants are state for the compiler, not the program)
 
 ### In Cocoa, they're not quite global
 
@@ -47,7 +47,7 @@ Actually, what I will be showing are the "in practice" global variables of a Coc
 I will be showing you top-level child objects (children of the application delegate) and singleton objects. Explaining why these are normally considered equivalent to globals:
 
 - The application object is the first constructed object in the program from which all other hierarchically arranged objects are constructed, making it effectively the top-level scope in the program (like a global scope). The application delegate should be considered a basic extension of the application object itself (especially since you should never override the application class).
-- is an object that can be allocated only once (and can't be deleted) — making it a single, global instance. While singletons are stored in a true global variable, they are never accessed that way in Objective-C (a class method is used to access them), providing a least some abstraction around the implementation.
+- A _[singleton](http://en.wikipedia.org/wiki/Singleton_pattern)_ is an object that can be allocated only once (and can't be deleted) — making it a single, global instance. While singletons are stored in a true global variable, they are never accessed that way in Objective-C (a class method is used to access them), providing a least some abstraction around the implementation.
 
 ## AppDelegates and AppControllers
 
@@ -103,9 +103,7 @@ from anywhere that includes your delegate's header.
 
 Having explained that the above _could_ be done, I will tell you that in my programs, I avoid using the `AppDelegate` for anything other than:
 
-- delegate methods (including
-
-  to finalize application construction)
+- implemenations of the `NSApplication` delegate methods (including `applicationDidFinishLaunching:` to finalize application construction)
 - handling menu items for items that don't exist in a window (for example, opening the application Preferences window)
 
 Relying on your `AppDelegate` object to manage your global variables can quickly get scary for the same reason that global variables in general are considered scary: you can easily put too much into this top level and it becomes a big, unstructured mess. This problem is an anti-pattern, often called the [Big Ball of Mud](http://en.wikipedia.org/wiki/Big_ball_of_mud).
@@ -142,13 +140,7 @@ Once your class is a singleton, you can access the instance of it using the line
 [MyClassName sharedMyClassName];
 ```
 
-> : A singleton does not need to be explicitly allocated or initialized (the
-> 
-> and
-> 
-> methods will be called automatically on first access) but you can still implement the default
-> 
-> method if you want to perform initialization.
+> **Note**: A singleton does not need to be explicitly allocated or initialized (the `alloc` and `init` methods will be called automatically on first access) but you can still implement the default `init` method if you want to perform initialization.
 
 ## Advantages of a singleton
 

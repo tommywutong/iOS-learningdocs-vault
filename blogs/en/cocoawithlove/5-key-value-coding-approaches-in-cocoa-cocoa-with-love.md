@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d01eb4e58ffcfe37'
 translated: false
 ---
@@ -91,22 +91,16 @@ This category implements the `setValue:forKey:` and `valueForKey:` methods that 
 
 ### Advantages
 
-- . Learn more about the search paths in my
-
-  Key Value Information post
-
-  .
+- Finds getter and setter methods automatically and will even get or set ivars directly if a getter or setter can't be found. This means that most properties automatically support `NSKeyValueCoding`. Learn more about the search paths in my [Key Value Information post](https://www.cocoawithlove.com/2008/07/key-value-information.html).
 - Includes key paths (for traversing multiple properties).
-- for implementing the Observer design pattern.
+- Integrates with `NSKeyValueObserving` for implementing the Observer design pattern.
 - Offers fallbacks and ways of dealing with undefined keys.
 
 ### Disadvantages
 
-- Replacing Core Data Key Paths
-
-  ).
-- .
-- s as property keys.
+- The extended search path makes this one of the slowest key-value coding approaches (see my earlier performance-related post on [Replacing Core Data Key Paths](https://www.cocoawithlove.com/2009/11/performance-tests-replacing-core-data.html)).
+- Requires either a method or ivar on the class matching the property name that can be found by `NSKeyValueCoding`.
+- Only supports `NSString`s as property keys.
 
 ## KVC approach 2: Manual subsets of NSKeyValueCoding behavior
 
@@ -127,17 +121,15 @@ Why would you do this instead of using the `NSKeyValueCoding` approach? You woul
 
 ### Advantages
 
-- .
-- .
-- and hence don't have
-
-  implementations.
+- More control over the lookup path than with `NSKeyValueCoding`.
+- Potentially faster than `NSKeyValueCoding`.
+- Will work for classes that don't inherit from `NSObject` and hence don't have `NSKeyValueCoding` implementations.
 - Manual method implementations can get and set non-object values.
 
 ### Disadvantages
 
-- .
-- .
+- Less flexible than `NSKeyValueCoding`.
+- In most cases, it is more work than using `NSKeyValueCoding`.
 
 ## KVC approach 3: Associated objects
 
@@ -152,7 +144,7 @@ The main reason why you would use this approach is that you want to set properti
 ### Advantages
 
 - No support from the object (methods or ivars) required.
-- is used).
+- Key can be any pointer (so can the object if `OBJC_ASSOCIATION_ASSIGN` is used).
 - Potentially the fastest KVC approach.
 
 ### Disadvantages
@@ -177,20 +169,12 @@ The disadvantage this approach has is that separate selectors are needed for get
 ### Advantages
 
 - Fastest approach that goes through methods (which is good since methods are overrideable and hence more subclass friendly).
-- and
-
-  need to be used to get
-
-  ,
-
-  and
-
-  properties).
+- Can get and set non-object data (although `objc_msgSend_fpret` and `objc_msgSend_stret` need to be used to get `float`, `double` and `struct` properties).
 
 ### Disadvantages
 
 - Different keys required for getting and setting.
-- wrappers).
+- Selectors are not objects and are therefore can't be stored directly in Objective-C arrays and dictionaries (must use CoreFoundation or `NSValue` wrappers).
 
 ## KVC approach 5: do it yourself
 
@@ -215,7 +199,7 @@ To handle the internal storage of the values, you could use any of the key-value
 - `NSMutableDictionary`
 - `NSMapTable`
 - `CFMutableDictionaryRef`
-- or other objects (see above)
+- associated objects on `self` or other objects (see above)
 
 or your own storage solution.
 
@@ -228,9 +212,7 @@ or your own storage solution.
 ### Disadvantages
 
 - Must be implemented by the target class (will not work for arbitrary objects).
-- or any of the other
-
-  concepts.
+- Doesn't interoperate with `NSKeyValueObserving` or any of the other `NSKeyValueCoding` concepts.
 
 ## Conclusion
 

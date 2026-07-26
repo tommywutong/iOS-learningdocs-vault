@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c817a8a951417bb9'
 translated: false
 ---
@@ -16,13 +16,13 @@ translated: false
 
 # Book Review: Test-Driven iOS Development
 
-![Test-Driven iOS Development Book Cover](https://oleb.net/media/test-driven-ios-development-cover-500px.jpg)
+[![Test-Driven iOS Development Book Cover](https://oleb.net/media/test-driven-ios-development-cover-500px.jpg)](https://www.amazon.com/Test-Driven-iOS-Development-Developers-Library/dp/0321774183/)
 
-The [testing](https://en.wikipedia.org/wiki/Software_testing)[1](#fn:1) mindset is something that is deeply ingrained in some programming communities and almost absent in others. How a community treats testing seems to be largely a factor of built-in tools support and how much the practice is promoted by the founders or protagonists of that community. For instance, testing has been a big thing in the Ruby on Rails community because the framework had built-in unit testing support and [DHH](https://en.wikipedia.org/wiki/David_Heinemeier_Hansson) mentioned it in every talk he gave. This, in turn, led to testing being covered even by beginner books from the get-go.
+The [testing](https://en.wikipedia.org/wiki/Software_testing)^[1](#fn:1) mindset is something that is deeply ingrained in some programming communities and almost absent in others. How a community treats testing seems to be largely a factor of built-in tools support and how much the practice is promoted by the founders or protagonists of that community. For instance, testing has been a big thing in the Ruby on Rails community because the framework had built-in unit testing support and [DHH](https://en.wikipedia.org/wiki/David_Heinemeier_Hansson) mentioned it in every talk he gave. This, in turn, led to testing being covered even by beginner books from the get-go.
 
 # Testing in the Cocoa Community
 
-It always seemed to me that the Cocoa developer community did not have a similar attachment to testing. Although [OCUnit](http://www.sente.ch/software/ocunit/) was one of the first testing frameworks in any language (the first release was in 1998) and has been integrated into Xcode since version 2.1 (1995), I haven’t seen many discussions of the benefits and drawbacks of automated testing, be it from Apple or other people.[2](#fn:2) Considering that I’m only part of this community since 2008, my impression may be wrong, of course. In fact, you should read Wil Shipley’s article [Unit testing is teh suck, Urr](http://wilshipley.com/blog/2005/09/unit-testing-is-teh-suck-urr.html) and [Bill Bumgarner’s response](http://www.friday.com/bbum/2005/09/24/unit-testing/) for a great discussion on the topic from 2005.
+It always seemed to me that the Cocoa developer community did not have a similar attachment to testing. Although [OCUnit](http://www.sente.ch/software/ocunit/) was one of the first testing frameworks in any language (the first release was in 1998) and has been integrated into Xcode since version 2.1 (1995), I haven’t seen many discussions of the benefits and drawbacks of automated testing, be it from Apple or other people.^[2](#fn:2) Considering that I’m only part of this community since 2008, my impression may be wrong, of course. In fact, you should read Wil Shipley’s article [Unit testing is teh suck, Urr](http://wilshipley.com/blog/2005/09/unit-testing-is-teh-suck-urr.html) and [Bill Bumgarner’s response](http://www.friday.com/bbum/2005/09/24/unit-testing/) for a great discussion on the topic from 2005.
 
 Most of us probably write iOS apps and, as Bill pointed out, Unit Testing cannot test User Experience. Nevertheless, I think testing can be a very useful tool for app developers and more developers should learn about it. Which brings us to the book I want to talk about.
 

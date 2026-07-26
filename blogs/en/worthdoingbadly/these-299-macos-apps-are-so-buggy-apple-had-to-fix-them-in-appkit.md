@@ -7,7 +7,7 @@ original_language: en
 published: 2018-05-17
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5c2fa7d3c1cb8f9b'
 translated: false
 ---
@@ -122,7 +122,7 @@ Device drivers, because the manufacturers ain’t gonna fix ‘em
 Apple Internal apps:
 
 - `com.apple.ist.Merlin`
-- (probably the most ironic)
+- `com.apple.ist.Radar7` (probably the most ironic)
 - `com.apple.ist.SoftwareDepot.Checker`
 - `com.apple.ist.appledirectory4`
 - `com.apple.ist.hr.Merlin`
@@ -172,7 +172,7 @@ Microsoft Excel/PowerPoint/Word have a patch in `_CFArraySortValues` to change t
 
 Some compatiblity patches only affects apps from one company: for example, `_NSSavePanelUseLocalhostURLsDefaultValueFunction` fixes the save panel for a bunch of Adobe apps.
 
-Other compatibility patches affect apps from many different developers: for example, `NSTableView` related patches affected apps from HP Installer to Sketch to TeamViewer, demonstrating that Tables Are HardTM.
+Other compatibility patches affect apps from many different developers: for example, `NSTableView` related patches affected apps from HP Installer to Sketch to TeamViewer, demonstrating that Tables Are Hard^TM.
 
 Photoshop and VectorWorks CAD have Touch Bar API patches: The Touch Bar API is so new that I’m surposed there’s already compatibility issues.
 
@@ -218,14 +218,10 @@ strings -a "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platfo
 
 and found:
 
-- 0xced examined this:
-
-  it returns a random resource from
+- com.popcap.* - [0xced examined this:](https://twitter.com/0xced/status/429725803858128897) it returns a random resource from `-[NSBundle pathForResource:ofType]`
 - com.ea.realracing3
 - com.mackiev.
-- @SlaunchaMan
-
-  found that this app was the most popular app on the App Store… in 2009.)
+- com.stuckpixelinc.funnypictures ([@SlaunchaMan](https://twitter.com/SlaunchaMan/status/429756162100051968) found that this app was the most popular app on the App Store… in 2009.)
 
 ## How I extracted the data
 
@@ -241,10 +237,14 @@ First, I loaded `/System/Library/Frameworks/AppKit.framework/Appkit`, Foundation
 
 Next, I needed a script that:
 
-- . These are called “xrefs” (cross-references) in IDA.
--   - find the argument passed into the function
-    -     - .
-          - , by the way)
+- Looked for code that invokes `__CFAppVersionCheckLessThan`. These are called “xrefs” (cross-references) in IDA.
+- for each xref:
+
+    - find the argument passed into the function
+    - find one function that calls this function
+
+          - since we want to know, for example, what function actually uses `_NSBundleRunningDragonAge2Inf104DefaultValueFunction`.
+          - (It’s `-[NSBundle _newImageForResourceWithProspectiveName:imageClass:]`, by the way)
     - dump this information to IDA’s output window
 
 IDA is usually scripted using IDAPython, but the free version only supports IDC, a C-like scripting language. I’ve only written one IDC script before, so I had to consult other IDC scripts, such as [this script that also looks for xrefs](https://github.com/gdbinit/idc-scripts/blob/master/create_and_label_sysent_entries.idc). In addition, IDA renamed all IDC methods in IDA 6; while the older function names are still present in IDA 7, I decided to update to the newer names by checking IDA’s `idc.idc` header file for the name mappings.
@@ -268,9 +268,9 @@ Apple [gets a bad reputation](https://www.quora.com/Why-is-Apple-so-bad-at-makin
 
 - Backwards compatbility is hard.
 - Complicated user interface elements are hard. (See: the many, many NSTableView patches, and the wide list of apps affected)
-- patch above
-- η
-
-  )
+- It’s sometimes better to special-case some apps than to reduce performance for all apps - see the `_NSCGSIsSynchronousM7DefaultValueFunction` patch above
+- IDA Free’s scripting language, IDC, isn’t that bad, compared to IDAPython. (IDASwift wen [η](https://www.google.com/search?q=wen+eta))
 
 Thanks to @theslinker for [advice on this post](https://twitter.com/theslinker/status/995505415394750465).
+
+[https://worthdoingbadly.com/appkitcompat/](https://worthdoingbadly.com/appkitcompat/)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fb39197ca64d2287'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 Of all the things I learned at [UIKonf 2014](http://www.uikonf.com/) last week, the one that impressed me most was Dropbox’s story of how they use C++ to share non-UI code between iOS and Android apps. (UIKonf was awesome, by the way; you shouldn’t miss it next year.)
 
-![The UIKonf 2014 venue at Heimathafen Neukölln, Berlin](https://oleb.net/media/uikonf-2014-venue.jpg)
+[![The UIKonf 2014 venue at Heimathafen Neukölln, Berlin](https://oleb.net/media/uikonf-2014-venue.jpg)](https://www.flickr.com/photos/thewavingcat/14181205181/in/set-72157644254871277)
 
 <sub>The UIKonf venue. Since Dropbox was a sponsor of the conference and their talks were not part of the regular schedule, they got moved to a side stage. They would definitely have deserved a place on the regular stage. [Photo by Rebel Labs](https://www.flickr.com/photos/thewavingcat/14181205181/in/set-72157644254871277), [CC-BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/2.0/).</sub>
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2011-06-17
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1cf86dd029518248'
 translated: false
 ---
@@ -75,4 +75,4 @@ Currently, the runtime uses sixteen different `objc_msgSend_vtable` functions, o
 The vtable's contents differ for GC and non-GC, for obvious reasons. `-isFlipped` is part of NSView. `-countByEnumeratingWithState:objects:count:` is the fast enumeration implementation, including `for (x in
        y)`. Together these methods make up roughly 30-50% of calls in typical Objective-C applications.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

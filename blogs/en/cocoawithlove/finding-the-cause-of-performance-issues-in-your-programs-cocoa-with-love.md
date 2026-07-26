@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f4bd5115ccff72f9'
 translated: false
 ---
@@ -79,7 +79,7 @@ By default, the Time Profiler will sample once every millisecond. If your tests 
 
 Build the project (but don't run it directly from Xcode). Then select the "Run→Run with Performance Tool→Time Profiler" menu. You can also use "Shark" for this but they both work in a similar way and the Time Profiler runs in Instruments which has a nicer, newer interface (although Shark can track a few lower level metrics that Instruments still lacks).
 
-> The Time Profiler is not available to iPhone projects. For iPhone projects, select the "CPU Sampler" in the "Run with Performance Tool" menu. The "CPU Sampler" is higher overhead and cannot sample as often or as rigorously but will normally provide similar information.
+> **iPhone note:** The Time Profiler is not available to iPhone projects. For iPhone projects, select the "CPU Sampler" in the "Run with Performance Tool" menu. The "CPU Sampler" is higher overhead and cannot sample as often or as rigorously but will normally provide similar information.
 
 The PropertyAccessors test will self-run, so you can just watch it go. For other projects where some interactivity may be required, you'll need to interact with the program until it runs the code you want to examine. If your test has a short duration or a large amount of code, you may need to click the "i" next to the "Time Profiler" Instruments icon at the top to change the sample rate to get good coverage for your program (you'll need to rerun the test if you make this change).
 
@@ -121,19 +121,9 @@ Similarly navigating into the `valueForKeyPath:` of the other test, reveals the 
 
 However, there are three big differences between the memory performances of the `__CFBasicHashRehash` in each case:
 
-1. version performs 800,000 allocations whereas the
-
-  version performs exactly 100,000 (equal to the number of tests).
-2. version allocates 210.57MB whereas the
-
-  version allocates just 97.66MB.
-3. version is found inside
-
-  where the
-
-  version is found inside
-
-  .
+1. The `slowObjectValuesForProperty:` version performs 800,000 allocations whereas the `valueForKeyPath:` version performs exactly 100,000 (equal to the number of tests).
+2. The `slowObjectValuesForProperty:` version allocates 210.57MB whereas the `valueForKeyPath:` version allocates just 97.66MB.
+3. The `slowObjectValuesForProperty:` version is found inside `CFSetAddValue` where the `valueForKeyPath:` version is found inside `CFSetCreate`.
 
 From the first point, it would appear that the presumption that the slow version is slow because it unnecessarily repeats itself is looking accurate — it is repeatedly reallocating.
 
@@ -161,10 +151,10 @@ Generally though, allocations and reallocations are always a prime place to look
 
 When optimizing, the first things to look for are:
 
-- . They're easy to find and easy to tweak. They don't always give the best performance improvements but they're a good first point to examine.
-- . If you need to search large arrays often, you should be storing in a dictionary or other constant time access structure. Depending on the size of the array, this can be a near 100% speed improvement. i.e. never, ever search anything bigger than a trivial array.
-- . Easy to find. Eliminate the nesting if you can. Although they can be hard to eliminate since you need to rethink how you access your data but you can often do something to reduce their impact. If you have 1 loop inside another, always put the smallest loop (in terms of number of elements) inside the bigger one if you can, since memory scales better to doing small packets of work huge numbers of times.
-- . Non-polynomial actions are the slowest, worst things you can do. They are occasionally required but if at all possible, think up another design. What's non-polynomial? Anything where the number of packets of work involved in processing a collection grows greater than polynomially with respect to the size of the collection (i.e. if the packets of work are "y" and the number of objects in the collection is "x", then non-polynomial means the number of packets of work exceed y=x^a for large values of x, where a is any constant). Exponential growth (i.e. y=a^x) or factorial (i.e. y=x!) are the most common kinds of non-polynomial growth. If all this is confusing, then at least know the common case: trying to find an ordering or arrangement for a set of objects by exhaustively testing every combination is non-polynomial.
+- **Memory allocations**. They're easy to find and easy to tweak. They don't always give the best performance improvements but they're a good first point to examine.
+- **Iteration over large arrays to find elements**. If you need to search large arrays often, you should be storing in a dictionary or other constant time access structure. Depending on the size of the array, this can be a near 100% speed improvement. i.e. never, ever search anything bigger than a trivial array.
+- **Nested loops over medium to large data sets**. Easy to find. Eliminate the nesting if you can. Although they can be hard to eliminate since you need to rethink how you access your data but you can often do something to reduce their impact. If you have 1 loop inside another, always put the smallest loop (in terms of number of elements) inside the bigger one if you can, since memory scales better to doing small packets of work huge numbers of times.
+- **Anything non-polynomial on more than trivial data sets**. Non-polynomial actions are the slowest, worst things you can do. They are occasionally required but if at all possible, think up another design. What's non-polynomial? Anything where the number of packets of work involved in processing a collection grows greater than polynomially with respect to the size of the collection (i.e. if the packets of work are "y" and the number of objects in the collection is "x", then non-polynomial means the number of packets of work exceed y=x^a for large values of x, where a is any constant). Exponential growth (i.e. y=a^x) or factorial (i.e. y=x!) are the most common kinds of non-polynomial growth. If all this is confusing, then at least know the common case: trying to find an ordering or arrangement for a set of objects by exhaustively testing every combination is non-polynomial.
 
 You may be tempted to think that pervasive multi-threading, OpenCL, SSE vectorization or assembly optimizations are the best way to solve performance issues, since they are all "high performance" technologies and the fastest programs all use them in some combination. However, these technologies are much harder to implement than simple design improvements so they should always be something you consider once you're sure that the design can't be further improved.
 

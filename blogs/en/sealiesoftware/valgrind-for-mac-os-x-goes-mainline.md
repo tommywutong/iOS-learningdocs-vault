@@ -7,7 +7,7 @@ original_language: en
 published: 2009-06-03
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8a81c94fd367074f'
 translated: false
 ---
@@ -44,4 +44,4 @@ Thanks to the heroic work of Nicholas Nethercote and Julian Seward, the Mac OS X
 
 For those of you with [Snow Leopard](http://www.apple.com/macosx/snowleopard/) seeds, Valgrind won't work. Valgrind operates at the low-level unsupported guts of the kernel/Libc interface. When the kernel and Libc change, Valgrind needs to adapt or die. Valgrind support for Snow Leopard will not be available until the open-source release of Snow Leopard's kernel and Libc at the earliest, which in turn is not before Snow Leopard itself ships.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

@@ -1,0 +1,33 @@
+---
+title: Empathy
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/empathy/'
+original_language: en
+published: 2014-03-17
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:e348170f16b8a190'
+translated: false
+---
+
+> 原文：[Empathy](https://nshipster.com/empathy/)　·　NSHipster (Mattt)
+
+# [Empathy](https://nshipster.com/empathy/)
+
+Written by  [Mattt](https://nshipster.com/authors/mattt/)  March 17^th, 2014
+
+Great software is created to scratch one’s own itch. Being close to a problem provides not only insight for how to solve it, but the motivation to actually follow through.
+
+It’s the better angels of our nature that compel us to share these solutions with one other. And in the open source world, we do so freely, with only a karmic expectation of paying the favor forward.
+
+We naturally want to help one another, to explain ideas, to be generous and patient. However, on the Internet, human nature seems to drop a few packets. Practicing empathy online becomes a feat of moral athleticism. Lacking many of the faculties to humanize and understand one another (facial expressions, voice tonality, non-verbal cues) we can lose sight of who we’re talking to, and become less human ourselves.
+
+Before engaging with someone, take a moment to visualize how that encounter would play out in real life. Would you be proud of how you conducted yourself?
+
+Rather than responding defensively to snark or aggression, stop to consider what could have motivated that reaction. Is there something you could be doing better as a programmer or community member? Or are they just having a bad day? (We’ve all had our bad days).
+
+And let it never be that someone is marginalized for their ability to communicate in English. Be patient and ask questions. Respond simply and clearly.
+
+Everything you need to succeed as a software developer extends from a conscious practice of empathy.

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:498d586e828e9801'
 translated: false
 ---
@@ -44,9 +44,7 @@ This is the key rationale behind this week's variation on the build script: a st
 
 _The Cocoa Build Script application showing the display with progress, errors and error highlighting._
 
-> CocoaScript.zip
-> 
-> (255kb)
+> You can download the complete sample project used in this post here [CocoaScript.zip](https://www.cocoawithlove.com/assets/objc-era/CocoaScript.zip) (255kb)
 
 This program runs a generic series of steps and captures their standard output and standard error (or for non-process steps, whatever they choose to emit as their output and error).
 
@@ -54,11 +52,9 @@ In the sample application, the steps executed by the script are largely the same
 
 However, running a deployment script is not the only possible use for the classes in this project. The step classes are generic enough that most common script-like operations can be handled or you can choose to run standard Cocoa code as a step. I use variations of these classes as a lightweight job running framework for a number of different (mostly in-house) purposes.
 
-> Please don't confuse this with efforts like
-> 
-> F-Script
-> 
-> that actually execute an interpreted script within the Cocoa runtime.
+> To be clear: when I use the word "script" in this post, I'm referring to a series of steps that are largely invocations of other utility programs (the role that "shell scripts" normally fullfil). I am not using the word script to mean an interpreted programming language. The steps are not extracted by interpreting a text file at runtime — the actual program is compiled Cocoa/Objective-C.  
+>   
+> Please don't confuse this with efforts like [F-Script](http://www.fscript.org/) that actually execute an interpreted script within the Cocoa runtime.
 
 ## Explaining the design of the application
 
@@ -76,15 +72,9 @@ This `steps` array is the document of the application.
 
 While the queue is running, the controllers observe progress in the following ways:
 
-- observes the number of items left in the queue
-- (connected to the
-
-  array in Interface Builder) observes the original steps in the queue
-- (which are constructed automatically by the
-
-  due to its binding with the
-
-  ) observe the selected status of each step and the completion/error status of each step
+- the `CocoaScriptWindowController` observes the number of items left in the queue
+- the `NSArrayController` (connected to the `steps` array in Interface Builder) observes the original steps in the queue
+- the array of `ScriptStepCollectionViewItems` (which are constructed automatically by the `NSCollectionView` due to its binding with the `NSArrayController`) observe the selected status of each step and the completion/error status of each step
 
 ### Views
 
@@ -120,9 +110,7 @@ To allow you to pass runtime state values into a step, many steps will accept `S
 
 ## Conclusion
 
-> CocoaScript.zip
-> 
-> (255kb)
+> You can download the complete sample project used in this post here [CocoaScript.zip](https://www.cocoawithlove.com/assets/objc-era/CocoaScript.zip) (255kb)
 
 The steps used in this sample application's script are largely the same as last week's bash script. You can read the two side-by-side to see how different operations are done in each.
 

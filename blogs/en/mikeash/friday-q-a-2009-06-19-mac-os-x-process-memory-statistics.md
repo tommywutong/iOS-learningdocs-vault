@@ -45,27 +45,19 @@ These techniques can be combined. For example, shared frameworks are typically l
 **Definitions**  
  Now that we know roughly how the stuff works, let's define some memory-related terms:
 
-- memory which is located in physical RAM.
-- memory which is only mapped into one process.
-- memory which is mapped into multiple processes.
-- the quantity of address space occupied by a particular section of virtual memory.
-- the amount of actual physical memory occupied.
+- **Resident:** memory which is located in physical RAM.
+- **Private:** memory which is only mapped into one process.
+- **Shared:** memory which is mapped into multiple processes.
+- **Address space size:** the quantity of address space occupied by a particular section of virtual memory.
+- **Memory size:** the amount of actual physical memory occupied.
 
-And with that, we can now see what the various fields in
+And with that, we can now see what the various fields in `top` mean, from looking at the man page and using these definitions:
 
-mean, from looking at the man page and using these definitions:
-
-- The amount of address space, local to this process, which corresponds to items currently present in physical RAM.
-- The amount of address space, shared between this process and at least one other, which corresponds to items currently present in physical RAM.
-- The total amount of physical RAM used by this process. (This is
-
-  equal to
-
-  +
-
-  because they measure address space, but this measures actual memory.)
-- The amount of address space in the process mapped to items which are not shared with other processes.
-- The total amount of address space in the process that's mapped to anything.
+- **RPRVT:** The amount of address space, local to this process, which corresponds to items currently present in physical RAM.
+- **RSHRD:** The amount of address space, shared between this process and at least one other, which corresponds to items currently present in physical RAM.
+- **RSIZE:** The total amount of physical RAM used by this process. (This is _not_ equal to **RPRVT** + **RSHRD** because they measure address space, but this measures actual memory.)
+- **VPRVT:** The amount of address space in the process mapped to items which are not shared with other processes.
+- **VSIZE:** The total amount of address space in the process that's mapped to anything.
 
 It should also be noted that these numbers are derived from an accounting system which does not always completely correspond to the true numbers, especially when distinguishing between shared and private memory. They're generally close enough to be useful, at least.
 
@@ -99,7 +91,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-06-19-mac-os-x-process-memory-statistics.html)
 
 Add your thoughts, post a comment:
 

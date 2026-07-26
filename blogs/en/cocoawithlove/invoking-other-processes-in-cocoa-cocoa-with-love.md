@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0544bb8c6d89f943'
 translated: false
 ---
@@ -30,6 +30,8 @@ This program invokes two other processes to perform its work:
 
 - lsof - to find the processes that have the specified file open
 - sh - run with administrator privileges to send a SIGKILL to processes
+
+> Be careful when using the "Kill process" button — arbitrarily killing system processes can be dangerous to data and system stability so use with caution.
 
 ## Starting another process with NSTask
 
@@ -159,11 +161,7 @@ This method extracts runs of characters not in the separator character set from 
 
 If we pass `[NSCharacterSet whitespaceCharacterSet]` into this method, it will break the string up by blocks of whitespace, allowing us to extract the columns of text from a row of the `lsof` output (where the rows are extracted using the `arrayBySeparatingIntoParagraphs` method).
 
-> output by character index using
-> 
-> and then uses the
-> 
-> method to remove whitespace from the end. I'll leave the method in the post — it is still useful, just not in this case.
+> This method isn't used in the sample app anymore. It didn't handle application names with spaces in them. I've replaced it with an approach that extracts the columns from the `lsof` output by character index using `substringWithRange:` and then uses the `stringByTrimmingCharactersInSet:` method to remove whitespace from the end. I'll leave the method in the post — it is still useful, just not in this case.
 
 In this way we can parse the output of `lsof` and get the names and process IDs of any process that has a given file path open.
 
@@ -215,46 +213,20 @@ OSErr processError =
 
 The C-style `argv` array is a bit annoying to create from an Objective-C `NSArray` of `NSStrings` and using `fread` to read the output from `processOutput` is also a pain but once the input and output data wrangling is done, this can work as simply as the `NSTask`-based invocation.
 
-> running with elevated privileges is
-> 
-> . Don't do this casually in your code, think about it first. And as a user of programs, don't enter your administrator password unless you trust the program you're running (be careful of potential malware and trojans).
+> **Warning:** running with elevated privileges is _dangerous_. Don't do this casually in your code, think about it first. And as a user of programs, don't enter your administrator password unless you trust the program you're running (be careful of potential malware and trojans).
 
 ## Other things that make an application
 
 The application in this week's post contains a number of features that aren't relevant to this post but are interesting and useful nevertheless. These include:
 
-- using
-
-  ,
-
-  and
-
-  to handle the drag and drawing a highlighting rect to indicate drag focus using
-
-  and
-
-  . See the
-
-  that I've set as the
-
-  of the window.
-- using the
-
-  delegate method
-
-  and an "any"
-
-  listed in the
-
-  file.
+- **Drag and drop of files onto the view** using `draggingEntered:`, `draggingExited:` and `performDragOperation:` to handle the drag and drawing a highlighting rect to indicate drag focus using `NSSetFocusRingStyle` and `bezierPathWithRect:`. See the `FileDragReceivingView` that I've set as the `contentView` of the window.
+- **Opening files from the Finder/Dock without NSDocument** using the `NSApplication` delegate method `application:openFiles:` and an "any" `DocumentType` listed in the `Info.plist` file.
 
 And oh, how I miss `NSArrayController` and bindings on `NSTableView` when I'm working on the iPhone. They make populating a table of results so much easier.
 
 ## Conclusion
 
-> Open File Killer project
-> 
-> (70kB).
+> You can download the complete [Open File Killer project](https://www.cocoawithlove.com/assets/objc-era/OpenFileKiller.zip) (70kB).
 
 The default process-launching and string-handling in Cocoa are not heavily geared towards command-line shell style invocation and handling but it doesn't take much to create a few wrapper methods that will make this a lot easier.
 

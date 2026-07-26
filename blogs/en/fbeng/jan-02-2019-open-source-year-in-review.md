@@ -1,0 +1,37 @@
+---
+title: Jan 02, 2019 Open source year in review
+source: Meta Engineering — iOS
+source_key: fbeng
+source_url: 'https://engineering.fb.com/2019/01/02/open-source/open-source-2018/'
+original_language: en
+published: 2019-01-02
+status: active
+license: © Meta → 仅私有归档
+archived_at: 2026-07-27
+content_hash: 'sha256:39b570d2a38b7966'
+translated: false
+---
+
+> 原文：[Jan 02, 2019 Open source year in review](https://engineering.fb.com/2019/01/02/open-source/open-source-2018/)　·　Meta Engineering — iOS
+
+At Facebook, we believe in the value of [open source technology](https://opensource.fb.com) to achieve a shared goal of improving tools and frameworks used by the entire community. To continue our work toward that goal, we released 153 new open source projects in 2018. Our active portfolio (after removing or archiving outdated repos) contains a total of 474 projects. Collectively, these projects had more than 94,000 commits this year, nearly 28,000 of which came from amongst our over 2,700 external contributors. This healthy and vibrant ecosystem has grown to more than 1.03 million followers, including 257,000 new followers this year.
+
+![Number of Open Source projects released in 2018 by Facebook](https://engineering.fb.com/wp-content/uploads/2019/01/Code-Blog-Year-in-Review-Infographic_FINAL.jpg)
+
+[PyTorch](https://pytorch.org/), our open source Python-based deep learning platform, announced its [1.0 stable release](https://engineering.fb.com/ai-research/pytorch-developer-ecosystem-expands-1-0-stable-release/) with [new capabilities and partners](https://engineering.fb.com/ai-research/facebook-accelerates-ai-development-with-new-partners-and-production-capabilities-for-pytorch-1-0/). PyTorch is now the [second-fastest-growing](https://octoverse.github.com/projects) open source project on GitHub. We also a released pair of kernel libraries ([QNNPACK](https://engineering.fb.com/ml-applications/qnnpack/) and [FBGEMM](https://engineering.fb.com/ml-applications/fbgemm/)) that make it easier for mobile devices and servers to run the latest AI models, and [PyText](https://engineering.fb.com/ai-research/pytext-open-source-nlp-framework/), a framework that accelerates NLP development.
+
+PyTorch also provided the foundation for [Horizon](https://engineering.fb.com/ml-applications/horizon/), the first open source end-to-end platform that uses applied reinforcement learning (RL) to optimize systems in large-scale production environments. We also expanded [ONNX](https://engineering.fb.com/developer-tools/onnx-expansion-speeds-ai-development/) to support additional AI tools. And [Glow](https://github.com/pytorch/glow), our compiler for neural network hardware accelerators, used the [power of community](https://engineering.fb.com/ml-applications/glow-a-community-driven-approach-to-ai-infrastructure/) to gain industry partnerships for supporting it in future silicon products.
+
+Facebook AI Research (FAIR) [released](https://research.fb.com/facebook-open-sources-detectron/) its object detection framework, [Detectron](https://github.com/facebookresearch/Detectron), as well as [Mask R-CNN2Go](https://engineering.fb.com/ml-applications/mask-r-cnn2go/), a computer vision model optimized for embedded and mobile devices. Through the [Open Compute Project](https://www.opencompute.org/) (OCP), we open-sourced the specifications for [two AI-based server designs](https://engineering.fb.com/ml-applications/the-next-step-in-facebook-s-ai-hardware-infrastructure/), Big Sur and Big Basin. Other projects, including [TensorComprehensions](https://research.fb.com/announcing-tensor-comprehensions/), [DensePose](https://github.com/facebookresearch/DensePose), [Translate](https://github.com/pytorch/translate), and [TorchCraftAI](https://torchcraft.github.io/TorchCraftAI/), were released as part of our [open frameworks effort around artificial intelligence](https://engineering.fb.com/ml-applications/ai-at-f8-2018-open-frameworks-and-responsible-development/).
+
+In addition to our work on machine learning, our work on development tools, mobile, networking, data infrastructure, virtual reality, and other pillars was well represented this year. We open-sourced [Flipper](https://engineering.fb.com/android/open-sourcing-sonar-a-new-extensible-debugging-tool-2/), our new, extensible debugging tool for iOS and Android. For Python developers, we released a type-checker called [Pyre](https://pyre-check.org/) and a code refactoring tool called [Bowler](https://pybowler.io/). In networking, we released [Katran](https://engineering.fb.com/open-source/open-sourcing-katran-a-scalable-network-load-balancer/), a scalable network load balancer, and [Fizz](https://engineering.fb.com/networking-traffic/deploying-tls-1-3-at-scale-with-fizz-a-performant-open-source-tls-library/), our C++14 implementation of the TLS-1.3 standard. We also released [LogDevice](https://engineering.fb.com/core-data/open-sourcing-logdevice-a-distributed-data-store-for-sequential-data/), our distributed data store for sequential data, and the [XAR](https://engineering.fb.com/data-infrastructure/xars-a-more-efficient-open-source-system-for-self-contained-executables/) system for self-contained executables.
+
+[Docusaurus](http://docusaurus.io), released in December 2017, gained a lot of traction as a premier tool to help open source projects build websites and documentation. In just over a year, the number of projects [using Docusaurus](https://docusaurus.io/en/users) has grown to more than 55, including [React 360](https://facebook.github.io/react-360) ([rebranded](https://engineering.fb.com/virtual-reality/react-360-replaces-react-vr-for-streamlined-development-focus/) this year from ReactVR); [Profilo](https://facebookincubator.github.io/profilo/) (our [high-throughput, mobile-first performance tracing library](https://engineering.fb.com/android/profilo-understanding-app-performance-in-the-wild/)); and [Spectrum](http://libspectrum.io/), a cross-platform image transcoding library.
+
+In November, in partnership with the founders of [GraphQL](https://graphql.org/), the [Linux Foundation](https://www.linuxfoundation.org/), and key participants in the community, we kicked off the [process of forming the GraphQL foundation](https://www.linuxfoundation.org/press-release/2018/11/intent_to_form_graphql/).
+
+Our open source program would be nothing without the tools that allow our project owners to deploy their projects quickly and with high quality. The Facebook Open Source Tooling team continued to build and improve upon these tools. [ShipIt](https://github.com/facebook/fbshipit) allows project owners to both easily export code changes from our internal codebase to GitHub and import pull requests from the community. This provides consistency through automated synchronization. The team also developed new tools for [community interaction](https://github.com/pytorch/pytorch/pull/15355), incorporation of GitHub issues into our internal workflows, and [compliance of repo content](https://github.com/todogroup/repolinter) across our entire project portfolio.
+
+Looking ahead to 2019, we will continue our commitment to open source and to bringing innovative technology to the community.
+
+_This series of posts looks back on the engineering work and new technologies we released in 2018. Read yesterday’s post about our work in Data Centers and check back tomorrow to_learn about our work in Artificial Intelligence.__

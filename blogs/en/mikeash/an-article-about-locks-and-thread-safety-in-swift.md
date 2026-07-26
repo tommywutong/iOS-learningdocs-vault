@@ -36,25 +36,21 @@ A lock, or mutex, is a construct that ensures only one thread is active in a giv
 **APIs**  
 Apple's APIs have a bunch of different mutex facilities. This is a long but not exhaustive list:
 
-1. .
-2. .
-3. .
-4. when configured to be serial.
-5. .
-6. .
+1. `pthread_mutex_t`.
+2. `pthread_rwlock_t`.
+3. `dispatch_queue_t`.
+4. `NSOperationQueue` when configured to be serial.
+5. `NSLock`.
+6. `OSSpinLock`.
 
 In addition to this, Objective-C provides the `@synchronized` language construct, which at the moment is implemented on top of `pthread_mutex_t`. Unlike the others, `@synchronized` doesn't use an explicit lock object, but rather treats an arbitrary Objective-C object as if it were a lock. A `@synchronized(someObject)` section will block access to any other `@synchronized` sections that use the same object pointer. These different facilities all have different behaviors and capabilities:
 
-1. is a blocking lock that can optionally be configured as a recursive lock.
-2. is a blocking reader/writer lock.
-3. can be used as a blocking lock. It can be used as a reader/writer lock by configuring it as a concurrent queue and using barrier blocks. It also supports asynchronous execution of the locked region.
-4. can be used as a blocking lock. Like
-
-  it supports asynchronous execution of the locked region.
-5. is blocking lock as an Objective-C class. Its companion class
-
-  is a recursive lock, as the name indicates.
-6. is a spinlock, as the name indicates.
+1. `pthread_mutex_t` is a blocking lock that can optionally be configured as a recursive lock.
+2. `pthread_rwlock_t` is a blocking reader/writer lock.
+3. `dispatch_queue_t` can be used as a blocking lock. It can be used as a reader/writer lock by configuring it as a concurrent queue and using barrier blocks. It also supports asynchronous execution of the locked region.
+4. `NSOperationQueue` can be used as a blocking lock. Like `dispatch_queue_t` it supports asynchronous execution of the locked region.
+5. `NSLock` is blocking lock as an Objective-C class. Its companion class `NSRecursiveLock` is a recursive lock, as the name indicates.
+6. `OSSpinLock` is a spinlock, as the name indicates.
 
 Finally, `@synchronized` is a blocking recursive lock.
 
@@ -377,7 +373,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-02-06-locks-thread-safety-and-swift.html)
 
 Add your thoughts, post a comment:
 

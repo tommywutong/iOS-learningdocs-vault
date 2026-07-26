@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:379407b8cf034579'
 translated: false
 ---
@@ -18,11 +18,9 @@ When an application crashes on the iPhone, it disappears without telling the use
 
 ## Debug-only hack warning
 
-> The code in this post is for quick and dirty information gathering after a crash bug. The purpose is not to make your shipping code crash-proof, it is to allow better debugging of your application when a crash or exception occurs during user testing.
-> 
-> The code in this post performs signal handling in non re-entrant way —
-> 
-> and is only done because proper re-entrant coding is brutally difficult and the assumption is that your program has already fatally crashed so we're not too worried. If multiple signals are caught, this code probably won't help at all.
+> **Warning:** The code in this post is for quick and dirty information gathering after a crash bug. The purpose is not to make your shipping code crash-proof, it is to allow better debugging of your application when a crash or exception occurs during user testing.  
+>   
+>  The code in this post performs signal handling in non re-entrant way — **this is not a reliable thing to do** and is only done because proper re-entrant coding is brutally difficult and the assumption is that your program has already fatally crashed so we're not too worried. If multiple signals are caught, this code probably won't help at all.
 
 ## Introduction
 
@@ -30,9 +28,7 @@ This post will present a sample application that deliberately raises Objective-C
 
 ![](https://www.cocoawithlove.com/assets/objc-era/uncaughtexception.png)
 
-> UncaughtExceptions.zip
-> 
-> (25kB)
+> You can download the sample project: [UncaughtExceptions.zip](https://www.cocoawithlove.com/assets/objc-era/UncaughtExceptions.zip) (25kB)
 
 This application will deliberately trigger an unhandled message exception after 4 seconds and then will deliberately trigger an `EXC_BAD_ACCESS`/`SIGBUS` signal at the 10 second mark.
 
@@ -42,22 +38,12 @@ A crash (or more accurately: an unexpected termination) is the result of an unha
 
 An unhandled signal can come from three places: the kernel, other processes or the application itself. The two most common signals that cause crashes are:
 
-- is a Mach exception sent by the kernel to your application when you try to access memory that is not mapped for your application. If not handled at the Mach level, it will be translated into a
-
-  or
-
-  BSD signal.
-- is a BSD signal sent by an application to itself when an
-
-  or
-
-  is not caught.
+- `EXC_BAD_ACCESS` is a Mach exception sent by the kernel to your application when you try to access memory that is not mapped for your application. If not handled at the Mach level, it will be translated into a `SIGBUS` or `SIGSEGV` BSD signal.
+- `SIGABRT` is a BSD signal sent by an application to itself when an `NSException` or `obj_exception_throw` is not caught.
 
 In the case of Objective-C exceptions, the most common reason why unexpected exceptions are thrown in Objective-C is sending an unimplemented selector to an object (due to typo, object mixup or sending to an already released object that's been replaced by something else).
 
-> :
-> 
-> on the Mac always catches all Objective-C exceptions in the main run loop — so an exception on the main thread of a Mac application will not immediately crash the program, it will simply log the error. However, an unexpected exception can still leave the application in such a bad state that a crash will subsequently occur.
+> **Mac application note**: `NSApplication` on the Mac always catches all Objective-C exceptions in the main run loop — so an exception on the main thread of a Mac application will not immediately crash the program, it will simply log the error. However, an unexpected exception can still leave the application in such a bad state that a crash will subsequently occur.
 
 ## Catching uncaught exceptions
 
@@ -67,8 +53,8 @@ Of course, programs do sometimes get released with bugs that may lead to a crash
 
 In these cases, there are two ways to catch otherwise uncaught conditions that will lead to a crash:
 
-- to install a handler for uncaught Objective-C exceptions.
-- function to install handlers for BSD signals.
+- Use the function `NSUncaughtExceptionHandler` to install a handler for uncaught Objective-C exceptions.
+- Use the `signal` function to install handlers for BSD signals.
 
 For example, installing an Objective-C exception handler and handlers for common signals might look like this:
 
@@ -87,7 +73,7 @@ void InstallUncaughtExceptionHandler()
 
 Responding to the exceptions and signals can then happen in the implementation of the `HandleException` and `SignalHandler`. In the sample application, these both call through to the same internal implementation so that the same work can be done in either case.
 
-> : The very first task to perform in your uncaught exception handler should be to save data that might need saving or otherwise clean up your application. However: if the exception may have left the data in an invalid state, you may need to save to a separate location (like a "Recovered Documents" folder) so you don't overwrite good data with potentially corrupt data.
+> **Save your data**: The very first task to perform in your uncaught exception handler should be to save data that might need saving or otherwise clean up your application. However: if the exception may have left the data in an invalid state, you may need to save to a separate location (like a "Recovered Documents" folder) so you don't overwrite good data with potentially corrupt data.
 
 While these cover the most common signals, there are many more signals that may be sent that you can add if required.
 
@@ -171,7 +157,7 @@ In this case, we need to remove all the exception handlers and re-raise the exce
 
 Remember from the paragraph at the beginning:
 
-> and is only done because proper re-entrant coding is brutally difficult and the assumption is that your program has already fatally crashed so we're not too worried. If multiple signals are caught, this code probably won't help at all.
+> The code in this post performs signal handling in non re-entrant way — **this is not a reliable thing to do** and is only done because proper re-entrant coding is brutally difficult and the assumption is that your program has already fatally crashed so we're not too worried. If multiple signals are caught, this code probably won't help at all.
 
 If you want to learn how to write signal handlers for non-crash related signals or learn how to write proper re-entrant signal handling, I'm afraid you'll need to look elsewhere — there's not enough space here for me to show you and it's really hard. Ignoring this constraint here is okay for debug code only where we assume we're only going to get 1 signal.
 
@@ -205,9 +191,7 @@ If you want to test signal handling properly, you'll need to run without gdb (Ru
 
 ## Conclusion
 
-> UncaughtExceptions.zip
-> 
-> (25kB)
+> You can download the sample project: [UncaughtExceptions.zip](https://www.cocoawithlove.com/assets/objc-era/UncaughtExceptions.zip) (25kB)
 
 It is possible to make your application continue running for a short period of time after a "crash" signal occurs by handling common exceptional signals and attempting to recover.
 

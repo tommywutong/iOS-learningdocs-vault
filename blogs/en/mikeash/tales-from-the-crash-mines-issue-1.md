@@ -95,7 +95,7 @@ For the purposes of this article, we'll be walking through a complete step-by-st
 At a glance, we can make the following hypothesis about the initial state of the process at the time `objc_autorelease()` was called:
 
 - A SIGBUS with an address of 0x0 _probably_ means we dereferenced a NULL pointer (see [Exploring iOS Crash Reports](https://www.plausible.coop/blog/?p=176)).
-- The `id objc_autorelease (id obj)` function is equivalent to calling `[obj autorelease]`, and like `-autorelease`, it ignores nil object values.[1](#fn-1) If we're crashing due to a NULL pointer in `objc_autorelease`, it's _probably_ because the object's pointer points to real memory, but the data is not actually a valid object.
+- The `id objc_autorelease (id obj)` function is equivalent to calling `[obj autorelease]`, and like `-autorelease`, it ignores nil object values.^[1](#fn-1) If we're crashing due to a NULL pointer in `objc_autorelease`, it's _probably_ because the object's pointer points to real memory, but the data is not actually a valid object.
 
 This gives us a place to start digging — a `frame 0` hypothesis.
 
@@ -132,7 +132,7 @@ However, "likely" isn't good enough. To provide proof, we need to look at the ac
 
 **Dissassembling Frame 0**
 
-The x86-64 implementation of `objc_autorelease` follows; we'll step through the assembly listing in detail, so don't worry if your x86-64 is rusty.[2](#fn-2)
+The x86-64 implementation of `objc_autorelease` follows; we'll step through the assembly listing in detail, so don't worry if your x86-64 is rusty.^[2](#fn-2)
 
 ```
     ; if (!obj || obj->isTaggedPointer())
@@ -150,9 +150,9 @@ The x86-64 implementation of `objc_autorelease` follows; we'll step through the 
     …
 ```
 
-The first pair of instructions test whether the `obj` argument is equal to nil, and if so, we jump to `loc_out_slow`.[3](#fn-3)
+The first pair of instructions test whether the `obj` argument is equal to nil, and if so, we jump to `loc_out_slow`.^[3](#fn-3)
 
-The second pair of instructions test whether the `obj` argument is a tagged pointer[4](#fn-4). This is the inlined implementation of `obj->isTaggedPointer`. If `obj` **is not** a tagged pointer, we jump to `do_autorelease` below. Otherwise, execution continues at the next instruction (which just so happens to be `loc_out_slow`). If you're wondering about the odd `dil` register, on x86-64, the `dil` register is just an alias for the lower 8 bits of the `rdi` register.
+The second pair of instructions test whether the `obj` argument is a tagged pointer^[4](#fn-4). This is the inlined implementation of `obj->isTaggedPointer`. If `obj` **is not** a tagged pointer, we jump to `do_autorelease` below. Otherwise, execution continues at the next instruction (which just so happens to be `loc_out_slow`). If you're wondering about the odd `dil` register, on x86-64, the `dil` register is just an alias for the lower 8 bits of the `rdi` register.
 
 Lastly, `loc_out_slow` copies the `obj` argument (`rdi`) into the return address register (`rax`), and returns it to the caller. If we arrived here from the nil or a tagged pointer test, the original `obj` argument value will be directly returned to the caller, and `objc_autorelease()` will terminate. Since our crash occurred later in the function, we've confirmed the `obj` argument was neither nil, nor a tagged pointer.
 
@@ -165,7 +165,7 @@ At this point, nothing has dereferenced the `obj` pointer, much less `obj`, and 
     … [elided remainder of function]
 ```
 
-Here we arrive at the meat. The first mov instruction fetches the `obj->isa` pointer[5](#fn-5), successfully storing the value in the `rax` register.
+Here we arrive at the meat. The first mov instruction fetches the `obj->isa` pointer^[5](#fn-5), successfully storing the value in the `rax` register.
 
 The second `mov` instruction is the inlined implementation of `hasCustomRR`, and is where we actually crashed attempting to load 8 bytes from `rax+32`.
 
@@ -389,7 +389,7 @@ The x86-64 implementation of `-[EXNetConnection execute:timeout:completionBlock:
 
 The first four instructions fetch the `requestHandler.response` property via `objc_msgSend(requestHandler, @selector(response))` and store the returned `EXResponse *` result in the `r14` register. The fact that this code executed successfully implies that `requestHandler` was valid at the time it was executed.
 
-The last two instructions move the returned `response` value into the first argument register (`rdi`), and then issue a call to `objc_retainAutoreleasedReturnValue(response)` is called. This call will either retain the `response` value, or will skip the retain if `requestHandler.response` transferred its ownership to our method[6](#fn-6) – determining which one of these occurred may allow us to establish _when_ the EXResponse value became invalid.
+The last two instructions move the returned `response` value into the first argument register (`rdi`), and then issue a call to `objc_retainAutoreleasedReturnValue(response)` is called. This call will either retain the `response` value, or will skip the retain if `requestHandler.response` transferred its ownership to our method^[6](#fn-6) – determining which one of these occurred may allow us to establish _when_ the EXResponse value became invalid.
 
 ```
     ; return requestHandler.response
@@ -522,7 +522,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/tales-from-the-crash-mines-issue-1.html)
 
 Add your thoughts, post a comment:
 

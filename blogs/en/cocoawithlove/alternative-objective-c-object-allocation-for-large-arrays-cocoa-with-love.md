@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:685f9a1d65ba0785'
 translated: false
 ---
@@ -146,9 +146,7 @@ The biggest problem that I would have liked to address better — but I don't re
 
 ## Conclusion
 
-> CustomObjectCreation.zip
-> 
-> (20kB) which contains all the code used in the test project for this post.
+> You can download the [CustomObjectCreation.zip](https://www.cocoawithlove.com/assets/objc-era/CustomObjectCreation.zip) (20kB) which contains all the code used in the test project for this post.
 
 For very large arrays of Objective-C objects, it is certainly more efficient to allocate them yourself within C-style arrays. It is faster (on the order of 6 times faster) and more memory efficient (between 20% and 60% lower memory usage).
 

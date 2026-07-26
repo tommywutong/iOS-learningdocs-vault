@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:137965566ec3a7b4'
 translated: false
 ---
@@ -67,11 +67,11 @@ If you're reading this blog at all, you should know that this statement creates 
 But the operator used here is a "dereference", it is not the "make a pointer" (address of) operator. The correct way to read this line is:
 
 1. Declare a variable:  
-   `myVariable`
-2. is therefore a pointer)
-3. :
-
-  .
+  `myVariable`
+2. It can be dereferenced (and by _implication_ is therefore a pointer)  
+  `*myVariable`
+3. If it is deferenced, then the value yielded from the dereference should be treated as an `int`:  
+  `int *myVariable;`.
 
 Let's look at the `alwaysReturnIntZero` declaration from above again and we'll apply this same reading to it.
 
@@ -80,9 +80,11 @@ int (^alwaysReturnIntZero)() = ^{ return 0; };
 ```
 
 1. Declare a variable:  
-   `alwaysReturnIntZero`
-2. is therefore a block pointer):
-3. :
+  `alwaysReturnIntZero`
+2. It can be dereferenced to yield block information (and by _implication_ is therefore a block pointer):  
+  `^alwaysReturnIntZero`
+3. Its block implementation takes no parameters and returns an `int`:  
+  `int (^alwaysReturnIntZero)()`
 
 This approach to reading a declaration is quite simple but you'll need to it to follow the next section.
 
@@ -96,12 +98,8 @@ bool (^compareDoubleToInt)(int i, double j) = ^{ return j > i; };
 
 Easy enough but imagine now that you want to break this into two pieces:
 
-1. and returns a second block, pre-configured to use this
-
-  .
-2. , compares it to its pre-configured
-
-  and returns the result.
+1. A first block which takes only the `int` and returns a second block, pre-configured to use this `int`.
+2. The second block then takes the `double`, compares it to its pre-configured `int` and returns the result.
 
 The first block is then a _factory block_ which creates instances of the second block that operate like the `compareDoubleToInt` shown above for a single, pre-configured value of `i`.
 
@@ -118,7 +116,7 @@ bool (^(^newDoubleToIntComparison)(int))(double) =
     };
 ```
 
-> on any blocks created in this fashion when you're done.
+> Pay careful attention to the "new" in the name — this serves to notify that you must use `Block_destroy` on any blocks created in this fashion when you're done.
 
 If everything about the syntax on that first line (the declaration) makes immediate sense to you, then you may consider yourself skilled at syntactic recursion.
 
@@ -126,10 +124,14 @@ The reason most people find this hard to read is that verbally, we would describ
 
 1. Declare a variable:  
   `newDoubleToIntComparison`
-2. is therefore a block pointer):
-3. parameter:
-4. the return value is therefore a block pointer):
-5. parameter
+2. It can be dereferenced to yield block information (and by _implication_ is therefore a block pointer):  
+  `^newDoubleToIntComparison`
+3. The block takes an `int` parameter:  
+  `(^newDoubleToIntComparison)(int)`
+4. Its return value can be dereferenced to yield block information (and by _implication_ the return value is therefore a block pointer):  
+  `(^(^newDoubleToIntComparison)(int))`
+5. This returned block takes a `double` parameter  
+  `(^(^newDoubleToIntComparison)(int))(double)`
 6. And the returned block returns a `bool`  
   `bool (^(^newDoubleToIntComparison)(int))(double);`
 

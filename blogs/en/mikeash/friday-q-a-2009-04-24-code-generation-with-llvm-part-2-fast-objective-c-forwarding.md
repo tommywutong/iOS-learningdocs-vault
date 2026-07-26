@@ -37,13 +37,7 @@ This should come as no surprise. After all, you perform forwarding by implementi
    NSArray *result = [[array map] stringByAppendingString:@"suffix"];
 ```
 
-What this code will do is iterate through the array, invoke
-
-on every element, and return a new array containing the results. The
-
-call is the higher-order message, and
-
-serves as its argument. This is pretty neat stuff and is an interesting demonstration of the power of Objective-C.
+What this code will do is iterate through the array, invoke `stringByAppendingString:@"suffix"` on every element, and return a new array containing the results. The `map` call is the higher-order message, and `stringByAppendingString:@"suffix"` serves as its argument. This is pretty neat stuff and is an interesting demonstration of the power of Objective-C.
 
 How does it work? It's actually quite straightforward. `map` is defined in a category on NSArray and returns an instance of an `NSProxy` subclass. That proxy then implemets `-forwardInvocation:` to do the work of iterating and returning the new array. Here's the full source code for my minimal proxy that implements this:
 
@@ -79,9 +73,7 @@ How does it work? It's actually quite straightforward. `map` is defined in a cat
     @end
 ```
 
-"Normal" here in contrast to the fancy LLVM solution that's coming up. For completeness, here's the
-
-method on NSArray:
+"Normal" here in contrast to the fancy LLVM solution that's coming up. For completeness, here's the `mapNormal` method on NSArray:
 
 ```
     - (id)mapNormal
@@ -133,13 +125,7 @@ LLVM to the rescue! Using LLVM we can implement nothing, and see what gets used 
     }
 ```
 
-Mostly straightforward stuff there. We get the metadata for the method from an object in the array, and then add a new method to our class. At the end we re-invoke the invocation, which causes it to go back to
-
-and hit the newly-added method. The one tricky bit is the
-
-call. And that is a
-
-tricky bit indeed!
+Mostly straightforward stuff there. We get the metadata for the method from an object in the array, and then add a new method to our class. At the end we re-invoke the invocation, which causes it to go back to `self` and hit the newly-added method. The one tricky bit is the `_trampolineMethodForSignature:selector:` call. And that is a _very_ tricky bit indeed!
 
 **Building the Code**  
  If you'd like to see the entire program at once instead of bit by bit, you can [get it here](https://www.mikeash.com/pyblog/llvmhom.mm).
@@ -159,9 +145,7 @@ As such, the generated method will do the equivalent of this:
     }
 ```
 
-Except that the generated method will take and pass parameters depending on what we tell it to use. By using this template, the
-
-method can be written in Objective-C, simplifying the job.
+Except that the generated method will take and pass parameters depending on what we tell it to use. By using this template, the `_nextObject` method can be written in Objective-C, simplifying the job.
 
 There's a lot of support structure that's needed before we can actually start building methods. First, we need to create an LLVM module and execution engine:
 
@@ -190,17 +174,7 @@ We'll also define a method for printing the module, handy for debugging:
     }
 ```
 
-Next, I define a bunch of convenience functions for creating LLVM types corresponding to
-
-,
-
-, and various pointer types. For
-
-and
-
-I cheated a bit and defined them as
-
-. Since they're never dereferenced it doesn't really matter.
+Next, I define a bunch of convenience functions for creating LLVM types corresponding to `int`, `char`, and various pointer types. For `id` and `SEL` I cheated a bit and defined them as `char *`. Since they're never dereferenced it doesn't really matter.
 
 ```
     static const IntegerType *intType(void)
@@ -229,11 +203,7 @@ I cheated a bit and defined them as
     }
 ```
 
-Another important piece of infrastructure is code to go from an Objective-C type string to an LLVM type. We get the method argument types as C strings that conform to the
-
-directive, but LLVM obviously expects values of its own
-
-class. This function maps from the one to the other:
+Another important piece of infrastructure is code to go from an Objective-C type string to an LLVM type. We get the method argument types as C strings that conform to the `@encode` directive, but LLVM obviously expects values of its own `Type` class. This function maps from the one to the other:
 
 ```
     static const Type *LLVMTypeForObjCType(const char *type)
@@ -264,9 +234,7 @@ class. This function maps from the one to the other:
     }
 ```
 
-You'll note that there is absolutely no handling of any
-
-types. That was simply too involved and I didn't bother trying to implement it. It certainly could be done, but it would require considerably greater sophistication.
+You'll note that there is absolutely no handling of any `struct` types. That was simply too involved and I didn't bother trying to implement it. It certainly could be done, but it would require considerably greater sophistication.
 
 I need to refer to selectors and classes within the generated function, so here are convenience functions that take a `SEL` or a `Class` and generate an LLVM constant with that value:
 
@@ -327,11 +295,7 @@ That's all the infrastructure needed, now let's actually build the method.
     }
 ```
 
-Except that arguments will be added as needed to fit the method signature of the target. And of course
-
-we all know
-
-that this really is a function that looks like this:
+Except that arguments will be added as needed to fit the method signature of the target. And of course [we all know](https://www.mikeash.com/pyblog/friday-qa-2009-03-20-objective-c-messaging.html) that this really is a function that looks like this:
 
 ```
     id Trampoline(id self, SEL _cmd, ...)
@@ -344,9 +308,7 @@ that this really is a function that looks like this:
     }
 ```
 
-With the
-
-replaced by the arguments in question. With our target in mind, let's code.
+With the `...` replaced by the arguments in question. With our target in mind, let's code.
 
 We'll need method which generates the LLVM `Function *` for this function:
 
@@ -355,9 +317,7 @@ We'll need method which generates the LLVM `Function *` for this function:
     {
 ```
 
-The first thing this method does is build a vector of argument types, using the helper function I showed earlier to translate the
-
-into LLVM types:
+The first thing this method does is build a vector of argument types, using the helper function I showed earlier to translate the `NSMethodSignature` into LLVM types:
 
 ```
         std::vector<const Type *> methodArgTypes;
@@ -365,9 +325,7 @@ into LLVM types:
             methodArgTypes.push_back(LLVMTypeForObjCType([sig getArgumentTypeAtIndex:i]));
 ```
 
-Then we'll create the
-
-object and extract the arguments, just like last week:
+Then we'll create the `Function` object and extract the arguments, just like last week:
 
 ```
         const Type *methodReturnType = LLVMTypeForObjCType([sig methodReturnType]);
@@ -386,9 +344,7 @@ object and extract the arguments, just like last week:
         _cmdarg->setName("_cmd");
 ```
 
-The next thing to do is to set up the
-
-objects that this function will contain. That means breaking down the model C code into something a little more low level. Essentially, the function should look like this:
+The next thing to do is to set up the `BasicBlock` objects that this function will contain. That means breaking down the model C code into something a little more low level. Essentially, the function should look like this:
 
 ```
     entry:
@@ -416,11 +372,7 @@ Thus we can see that we'll need four basic blocks:
         BasicBlock *ret = BasicBlock::Create("return", trampoline);
 ```
 
-We'll also take the opportunity to do some more setup here. We need the
-
-object for
-
-since we'll be doing several of those, and we'll also get the selectors for messaging set up:
+We'll also take the opportunity to do some more setup here. We need the `Function` object for `objc_msgSend` since we'll be doing several of those, and we'll also get the selectors for messaging set up:
 
 ```
         Function *msgsend = ObjcMsgSendFunction();
@@ -431,28 +383,20 @@ since we'll be doing several of those, and we'll also get the selectors for mess
         Value *nextObjectSEL = SELValue(@selector(_nextObject), builder);
 ```
 
-Now we can actually start making calls. We already know how to call functions from last week. We know how an Objective-C message translates into a C function call. We have a helper function to push an Objective-C
-
-pointer into LLVM code. All the pieces are therefore set to make the call to
-
-:
+Now we can actually start making calls. We already know how to call functions from last week. We know how an Objective-C message translates into a C function call. We have a helper function to push an Objective-C `Class` pointer into LLVM code. All the pieces are therefore set to make the call to `[NSMutableArray array]`:
 
 ```
         Value *nsmutablearray = ClassValue([NSMutableArray class], builder);
         Value *array = builder.CreateCall2(msgsend, nsmutablearray, arraySEL, "array");
 ```
 
-Easier than I made it sound, huh? Last step, unconditionally branch to the
-
-block:
+Easier than I made it sound, huh? Last step, unconditionally branch to the `loopstart` block:
 
 ```
         builder.CreateBr(loopstart);
 ```
 
-Next, fill in
-
-. This is just a message send and then an if statement, nothing we don't already know how to do. The one tricky thing here is casting the pointer to an integer before comparing it with zero. There may be a better way to do this, but this way works....
+Next, fill in `loopstart`. This is just a message send and then an if statement, nothing we don't already know how to do. The one tricky thing here is casting the pointer to an integer before comparing it with zero. There may be a better way to do this, but this way works....
 
 ```
         builder.SetInsertPoint(loopstart);
@@ -464,17 +408,7 @@ Next, fill in
         builder.CreateCondBr(nextObjectIsNil, ret, loopbody);
 ```
 
-Next,
-
-. Everything is straightforward here. The only tricky bit is dynamically generating the arguments for the trampoline call. This isn't particularly hard: we just copy the original arguments vector, but put
-
-in place of
-
-. After that, a standard call to
-
-, then a branch back to
-
-:
+Next, `loopbody`. Everything is straightforward here. The only tricky bit is dynamically generating the arguments for the trampoline call. This isn't particularly hard: we just copy the original arguments vector, but put `nextObject` in place of `self`. After that, a standard call to `objc_msgSend`, then a branch back to `loopstart`:
 
 ```
         builder.SetInsertPoint(loopbody);
@@ -498,18 +432,14 @@ That's pretty much the whole function. Only the return block is left, and all th
         builder.CreateRet(array);
 ```
 
-Then just return the
-
-:
+Then just return the `Function`:
 
 ```
         return trampoline;
     }
 ```
 
-In addition to this, I'm also going to introduce something else new: optimization. Turns out that running optimizations in LLVM is, like most of the rest, surprisingly easy. A
-
-object manages passes. Add some optimization passes, then run the pass manager on the function, and it's optimized:
+In addition to this, I'm also going to introduce something else new: optimization. Turns out that running optimizations in LLVM is, like most of the rest, surprisingly easy. A `FunctionPassManager` object manages passes. Add some optimization passes, then run the pass manager on the function, and it's optimized:
 
 ```
     + (void)_optimizeFunction:(Function *)f
@@ -531,9 +461,7 @@ object manages passes. Add some optimization passes, then run the pass manager o
     }
 ```
 
-Now all the pieces are in place for the really short
-
-method:
+Now all the pieces are in place for the really short `+_trampolineMethodForSignature:selector:`method:
 
 ```
     + (IMP)_trampolineMethodForSignature:(NSMethodSignature *)sig selector:(SEL)sel
@@ -544,9 +472,7 @@ method:
     }
 ```
 
-And for completeness, the implementation of
-
-:
+And for completeness, the implementation of `-_nextObject`:
 
 ```
     - (id)_nextObject
@@ -654,9 +580,7 @@ And for completeness, the implementation of
     testing [[largeTimeTestArray mapNormal] nop:1 :2 :3]... 8722.084808us/call
 ```
 
-In short, it ranges from about 6 times faster for the one-element array case to a bit over 3 times faster for really long arrays. The difference is not surprising: much of the cost of standard forwarding is in building the invocation object, something that only happens once for the entire array. For long arrays, that cost is amortized into nonexistence, and we only pay the cost of invoking the
-
-, which is expensive but not as much.
+In short, it ranges from about 6 times faster for the one-element array case to a bit over 3 times faster for really long arrays. The difference is not surprising: much of the cost of standard forwarding is in building the invocation object, something that only happens once for the entire array. For long arrays, that cost is amortized into nonexistence, and we only pay the cost of invoking the `NSInvocation`, which is expensive but not as much.
 
 Both techniques also pay a cost for allocating a proxy, allocating an array, and filling that array. While this hurts both equally, it reduces the relative advantage of the LLVM solution.
 
@@ -669,12 +593,10 @@ Conclusion: up to a 6x speedup, pretty cool!
 **Limitations and Improvements**  
  This LLVM forwarding stuff is neat, but it could be better. Here are some areas where it could use work, if you feel like tinkering:
 
-1. I've probably mentioned this about sixteen times already, but it would definitely help with speed.
-2. Right now, the implementation generates a new function for every selector. This is wasteful, because many selectors will have the same signature, and can reuse the same function. A cache that allows reusing functions for different selectors with the same method signature would cut down on overhead.
-3. This implementation simply explodes on empty arrays if the selector has never been seen before, because there's no object to get a method signature from to generate the function, but
-
-  shouldn't break just because it's used on an empty array.
-4. This one is a little scary, but writing some code that can properly generate an LLVM struct definition from an Objective-C type string would be nifty.
+1. **Fast enumeration:** I've probably mentioned this about sixteen times already, but it would definitely help with speed.
+2. **Caching functions:** Right now, the implementation generates a new function for every selector. This is wasteful, because many selectors will have the same signature, and can reuse the same function. A cache that allows reusing functions for different selectors with the same method signature would cut down on overhead.
+3. **Zero-size arrays:** This implementation simply explodes on empty arrays if the selector has never been seen before, because there's no object to get a method signature from to generate the function, but `map` shouldn't break just because it's used on an empty array.
+4. **Struct support:** This one is a little scary, but writing some code that can properly generate an LLVM struct definition from an Objective-C type string would be nifty.
 
 **Conclusion**  
  That wraps up my two week series on runtime code generation with LLVM. In [the first week](http://www.mikeash.com/?page=pyblog/friday-qa-2009-04-17-code-generation-with-llvm-part-1-basics.html) I showed how to get basic code generation up and running with LLVM, then this week you saw how to take that and actually make it do something useful within an Objective-C program.
@@ -693,7 +615,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-04-24-code-generation-with-llvm-part-2-fast-objective-c-forwarding.html)
 
 Add your thoughts, post a comment:
 

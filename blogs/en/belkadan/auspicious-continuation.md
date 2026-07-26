@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:05b985fa2d1291ff'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [Auspicious Continuation](#)
 
-Has it really been a year and a half – almost two years – since I’ve used this blog? I’ve certainly had things I’ve wanted to say, neat little programming tidbits or war stories or musings on Apple’s current directions. But somehow I never got around to bringing this back online.more
+Has it really been a year and a half – almost two years – since I’ve used this blog? I’ve certainly had things I’ve wanted to say, neat little programming tidbits or war stories or musings on Apple’s current directions. But somehow I never got around to bringing this back online.
 
 At the time, I was more focused on the redesign of the site. The old site, if anyone remembers, looked something like this:
 

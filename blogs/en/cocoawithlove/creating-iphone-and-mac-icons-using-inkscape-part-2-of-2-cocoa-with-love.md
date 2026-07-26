@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a8f890ff18e8e5b7'
 translated: false
 ---
@@ -106,7 +106,7 @@ Create a point at the 12 o'clock position, then 9, 6, 3 and then underneath the 
 
 ![](https://www.cocoawithlove.com/assets/objc-era/stroke-creation.png)
 
-> : If you make a mistake with the path, you can either fix it later or press escape to cancel the whole path. Pressing the return-key will end the path without closing it.
+> **Bezier path creation**: If you make a mistake with the path, you can either fix it later or press escape to cancel the whole path. Pressing the return-key will end the path without closing it.
 
 ### Adjusting path control point properties
 
@@ -255,9 +255,7 @@ To texture the circle, I used the RGBA=(176,112,42,140) circle (middle element s
 
 ## Conclusion
 
-> download an Inkscape SVG file containing all the icons and their compositions
-> 
-> (482kB).
+> You can [download an Inkscape SVG file containing all the icons and their compositions](https://www.cocoawithlove.com/assets/objc-era/cocoawithlove-inkscape-icons-part1.svg) (482kB).
 
 This two part series has been outside the normal domain of programming information that I provide. However, applications programmers will regularly find themselves needing to create, edit or adjust artwork-related assets in their applications. I hope I've given some useful tips on the way artwork assets are composed and ways you can make your artwork look good, even if it is very simple.
 

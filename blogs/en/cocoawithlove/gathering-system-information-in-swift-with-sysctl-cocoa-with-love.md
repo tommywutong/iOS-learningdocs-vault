@@ -7,7 +7,7 @@ original_language: en
 published: 2016-03-08
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fbdf504fe3142f11'
 translated: false
 ---
@@ -106,24 +106,10 @@ So `uname` isn’t the source of the information. The value actually comes from 
 
 Of course, `sysctl` isn’t the source either. Following that rabbit hole all the way down gives:
 
-1. sysctl
-
-  gets its information from different OID handlers
-2. sysctl_hw_generic
-
-  handles the information for most of the
-
-  OIDs, including
-
-  .
-3. PEGetMachineName
-
-  handles the
-
-  OID.
-4. IOPlatformExpert::getMachineName
-
-  implementations (essentially a driver for the CPU) will return the machine name.
+1. [sysctl](http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/bsd/kern/kern_newsysctl.c) gets its information from different OID handlers
+2. [sysctl_hw_generic](http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/bsd/kern/kern_mib.c) handles the information for most of the `CTL_HW` OIDs, including `HW_MACHINE`.
+3. [PEGetMachineName](http://www.opensource.apple.com/source/xnu/xnu-792.13.8/iokit/Kernel/IOPlatformExpert.cpp) handles the `HW_MACHINE` OID.
+4. Depending on CPU, one of the [IOPlatformExpert::getMachineName](http://www.opensource.apple.com/source/AppleI386GenericPlatform/AppleI386GenericPlatform-5/AppleI386PlatformExpert.cpp) implementations (essentially a driver for the CPU) will return the machine name.
 
 The value is hardcoded into the `getMachineName` function so this is the true source, although it’s largely irrelevant to us since the `sysctl` API remains the final layer that we can easily access.
 
@@ -164,12 +150,8 @@ You pass a C array of `Int32` which uniquely identifies the value you’re after
 
 The reason why `sysctl` feels so cumbersome in Swift is:
 
-- and passing that by pointer for the first parameter is a nuisance in Swift
-- twice: once with
-
-  equal to
-
-  to get the size required for the result buffer and then a second time with a properly allocated buffer.
+- Creating an array of `Int32` and passing that by pointer for the first parameter is a nuisance in Swift
+- You basically need to call `sysctl` twice: once with `oldp` equal to `nil` to get the size required for the result buffer and then a second time with a properly allocated buffer.
 - The result is returned as an untyped buffer of bytes which you then need to interpret correctly.
 - There are a few different ways in which failure can occur and we want to reduce these different ways to idiomatic Swift errors or preconditions.
 

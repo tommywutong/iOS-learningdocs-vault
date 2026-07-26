@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c325a693b26ef980'
 translated: false
 ---
@@ -34,10 +34,10 @@ A few points about the “new build system” (does it have a catchier name?) st
 
 1. Input xcfilelists can’t be missing on first run
 2. No two build phases in the entire workspace may generate the same output file
-3. further modify the file
+3. If a non-script build step writes to a file in the build products, a script build step should _not_ further modify the file
 4. It’s important to be accurate when specifying input and output files of a build phase
 5. Xcode implicitly and aggressively creates folders in the products directory if a build step declares a subpath as an output
-6. on the command-line to build to the same directory as an Xcode build that may have triggered it
+6. You cannot use `xcodebuild` on the command-line to build to the same directory as an Xcode build that may have triggered it
 7. If any input files are touched during a build, the build is cancelled
 
 I’m not saying that these rules don’t make sense – most of them do make some sense – but they are all new requirements or rules and not all of them produce clear errors; you might just get stale or partially processed data appearing in your products directory.
@@ -54,8 +54,8 @@ Points 6 and 7 might not matter to anyone but me but they eventually led to me g
 
 While it might seem strange to have an update for a library I haven’t yet released, the reality is that I’ve already written two articles using this library:
 
-- Model-View-Controller without the Controller
-- A view construction syntax
+- [Model-View-Controller without the Controller](https://www.cocoawithlove.com/blog/mvc-without-the-c.html)
+- [A view construction syntax](https://www.cocoawithlove.com/blog/a-view-construction-syntax.html)
 
 I’ve updated both of these articles to reflect the latest builds of CwlViews. In fact, the code for each article now includes full implementations of the iOS CwlViews code in a “concatenated” arrangement (the code for CwlViews is concatenated into 4 files which are dropped into the projects instead of requiring frameworks or dependencies).
 
@@ -130,13 +130,9 @@ I’ve continually worked on CwlSignal [since its original release](https://www.
 Since version 1, there have been lots of bug fixes, refactoring and improvements, including:
 
 1. improved Rx operator compatibility
-2. for easier input and output construction in a single expression
-3. to
-
-  (for symmetry with
-
-  )
-4. to
+2. introduced `SignalChannel` for easier input and output construction in a single expression
+3. renamed `SignalEndpoint` to `SignalOutput` (for symmetry with `SignalInput`)
+4. renamed `Cancellable` to `Lifetime`
 
 I’ve added `withLatestFrom` implementations, matched the on-error behaviors of Rx a little more closely and added `just`, `empty` and a couple other common transforms from Rx. I have no intention of making CwlSignal into an RxSwift clone – they are based on some very different principles – but I would like the _transformations_ between stages of the two to be comprehensible between users of both frameworks.
 
@@ -155,8 +151,8 @@ The `SignalChannel` type is literally just a pair of `input` and `signal` values
 
 Renaming `SignalEndpoint` to `SignalOutput` is intended to clarify its role. I originally avoided the `SignalOutput` name and used `SignalEndpoint` instead because the implementation is so different to `SignalInput` so I didn’t think a symmetrical name was appropriate. However, a signal pipeline has a start, middle and end:
 
-- at the start
-- and transformation closures
+- values are sent into the `SignalInput` at the start
+- the middle is a series of `Signal` and transformation closures
 - values are emitted at the end of the graph through…
 
 …the `SignalOutput`.

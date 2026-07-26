@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:363f18761565cda4'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Advanced Swift, Second Edition
 
-![Advanced Swift Cover](https://oleb.net/media/advanced-swift-2.0-cover-600px.png)
+[![Advanced Swift Cover](https://oleb.net/media/advanced-swift-2.0-cover-600px.png)](https://www.objc.io/books/advanced-swift/)
 
 **Today we’re releasing the second edition of our book [Advanced Swift](https://www.objc.io/books/advanced-swift/).**
 
@@ -30,7 +30,7 @@ The new edition has been thoroughly updated for Swift 3, but we didn’t stop th
 
 If you buy the digital version of _Advanced Swift_, we have one more special surprise for you: we’re making the entire book available for Apple’s [Swift Playgrounds iPad app](http://www.apple.com/swift/playgrounds/). This means you can read the book on your iPad _and_ run (and change) the sample code directly inline:
 
-![Screenshot of the Advanced Swift playground book in the Swift Playgrounds app on iOS](https://oleb.net/media/advanced-swift-playground-screenshot-ipad.png)
+[![Screenshot of the Advanced Swift playground book in the Swift Playgrounds app on iOS](https://oleb.net/media/advanced-swift-playground-screenshot-ipad.png)](https://oleb.net/media/advanced-swift-playground-screenshot-ipad.png)
 
 <sub>_Advanced Swift_ in the Swift Playgrounds app on iPad.</sub>
 

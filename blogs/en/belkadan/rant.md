@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c21f1f337c98c021'
 translated: false
 ---
@@ -40,4 +40,4 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [User experien
 
 ### Possibly Related Tags
 
-- User experience
+- [User experience](https://belkadan.com/blog/tags/user-experience)

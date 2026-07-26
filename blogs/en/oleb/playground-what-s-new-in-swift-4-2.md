@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:57a5926ec4f64bfc'
 translated: false
 ---
@@ -20,4 +20,4 @@ I made an Xcode playground to showcase many of the new features coming in Swift 
 
 The easiest way to run the playground is to [install the most recent beta version of Xcode 10](https://developer.apple.com/download/) (which ships with Swift 4.2). You can also run it in Xcode 9.4, but that requires installing a recent [Swift 4.2 snapshot](https://swift.org/download/#snapshots).
 
-![The What’s new in Swift 4.2 playground](https://oleb.net/media/whats-new-in-swift-4-2-playground.png)
+[![The What’s new in Swift 4.2 playground](https://oleb.net/media/whats-new-in-swift-4-2-playground.png)](https://oleb.net/media/whats-new-in-swift-4-2-playground.png)

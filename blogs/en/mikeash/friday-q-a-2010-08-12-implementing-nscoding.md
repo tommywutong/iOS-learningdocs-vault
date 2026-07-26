@@ -46,11 +46,7 @@ The other piece is the `NSCoding` protocol. This is code that _you_ implement in
     @end
 ```
 
-You implement
-
-to tell the archiver how to serialize your object into bytes, and
-
-to tell the archiver how to transform the serialized representation into a new object. It is necessary to implement both methods.
+You implement `encodeWithCoder:` to tell the archiver how to serialize your object into bytes, and `initWithCoder:` to tell the archiver how to transform the serialized representation into a new object. It is necessary to implement both methods.
 
 Note that the parameter to `encodeWithCoder:`, although typed as `NSCoder`, is actually the particular archiver instance (for example, an `NSKeyedArchiver`) that you're working with. Likewise, the parameter to `initWithCoder:` is actually the particular unarchiver instance (e.g. `NSKeyedUnarchiver`) that you're using.
 
@@ -65,9 +61,7 @@ Note that the parameter to `encodeWithCoder:`, although typed as `NSCoder`, is a
     }
 ```
 
-The
-
-implementation is then more or less symmetrical. However, there are a few different ways to implement it, depending on your particular taste.
+The `initWithCoder:` implementation is then more or less symmetrical. However, there are a few different ways to implement it, depending on your particular taste.
 
 One way is to implement it as a normal initializer, directly setting your instance variables:
 
@@ -83,9 +77,7 @@ One way is to implement it as a normal initializer, directly setting your instan
     }
 ```
 
-if you use this style and are not using garbage collection,
-
-. It's easy to forget to do this, but this method follows the standard Cocoa memory management rules and returns an object that you do not own. If you don't retain it, it will disappear and you will crash.
+**Important note:** if you use this style and are not using garbage collection, _you must retain the objects that come out of `decodeObjectForKey:`_. It's easy to forget to do this, but this method follows the standard Cocoa memory management rules and returns an object that you do not own. If you don't retain it, it will disappear and you will crash.
 
 Another way is to use setter methods rather than setting the instance variables directly:
 
@@ -101,11 +93,7 @@ Another way is to use setter methods rather than setting the instance variables 
     }
 ```
 
-Whether it's better to use a setter or set the instance variable directly is, of course,
-
-a matter of some debate
-
-.
+Whether it's better to use a setter or set the instance variable directly is, of course, [a matter of some debate](https://www.mikeash.com/pyblog/friday-qa-2009-11-27-using-accessors-in-init-and-dealloc.html).
 
 Finally, you can implement it in terms of your normal initializer. Decode the objects first, then call through to your normal initializer:
 
@@ -160,13 +148,7 @@ However, sometimes you don't want to encode the entire object graph. Imagine an 
     @end
 ```
 
-You want to be able to serialize an entire board and have all of the pieces automatically included. This is easy, of course: just have
-
-encode its
-
-array. You also want to ensure that the
-
-back reference to the board is preserved. This can be done by simply encoding it and decoding it. Since it's a weak reference, you would decode it and not retain it.
+You want to be able to serialize an entire board and have all of the pieces automatically included. This is easy, of course: just have `GameBoard` encode its `_gamePieces` array. You also want to ensure that the `GamePiece` back reference to the board is preserved. This can be done by simply encoding it and decoding it. Since it's a weak reference, you would decode it and not retain it.
 
 This approach works fine as long as you're serializing an entire board. But perhaps you also want to serialize a single piece by itself. What happens then?
 
@@ -185,9 +167,7 @@ Thus, to solve this problem, you simply change `-[GamePiece encodeWithCoder:]` t
     }
 ```
 
-In general, anything that's a weak reference in memory should be a conditional object in your
-
-implementation.
+In general, anything that's a weak reference in memory should be a conditional object in your `NSCoding` implementation.
 
 **Encoding Non-Object Data**  
  So far I've talked a lot about encoding objects, but what about all of that non-object data floating around?
@@ -202,34 +182,18 @@ For built-in Cocoa structs like `NSRect`, use the built-in functions to transfor
 
 The worst part is arrays. There is no built-in support for archiving C arrays. There are a few workarounds you can use, depending on how big your arrays are and how much code you want to write:
 
-1. containing instances of
+1. Transform your C array into an `NSArray` containing instances of `NSValue`, and encode that. You can either construct a temporary `NSArray` from your C array in your `-initWithCoder:` implementation, or you can do a complete conversion use the `NSArray` throughout.
+2. Construct keys dynamically and encode each entry in the array separately. You can write a loop like this:
 
-  , and encode that. You can either construct a temporary
-
-  from your C array in your
-
-  implementation, or you can do a complete conversion use the
-
-  throughout.
-2. ```
+  ```
           for(int i = 0; i < arrayLength; i++)
               [coder encodeInt: intArray[i] forKey: [NSString stringWithFormat: @"intArray%d", i]];
   ```
 
   And then a similar loop on decoding.
-3. . This requires paying special attention to things like endianness and data type issues. (If you have an array of
+3. Encode raw bytes using `encodeBytes:length:forKey:`. This requires paying special attention to things like endianness and data type issues. (If you have an array of `NSInteger` or `CGFloat`, they will _not_ be the same size between machines. If you have an array of any multi-byte values, they may not be in the same format between machines.) How to handle these issues is somewhat beyond the scope of this article, but research on endianness and serializing raw C data should cover it.
 
-  or
-
-  , they will
-
-  be the same size between machines. If you have an array of any multi-byte values, they may not be in the same format between machines.) How to handle these issues is somewhat beyond the scope of this article, but research on endianness and serializing raw C data should cover it.
-
-For C strings, which are a special case of arrays, the simplest way to handle it is probably to simply convert it to an
-
-and encode that. It would also be safe to run a C string through
-
-.
+For C strings, which are a special case of arrays, the simplest way to handle it is probably to simply convert it to an `NSString` and encode that. It would also be safe to run a C string through `encodeBytes:length:forKey:`.
 
 **Reading Old Archives**  
  If your code lives long enough, eventually you'll change what you encode and decode. Normally, you still want your code to be able to read old archives despite the changes.
@@ -276,7 +240,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-08-12-implementing-nscoding.html)
 
 Add your thoughts, post a comment:
 

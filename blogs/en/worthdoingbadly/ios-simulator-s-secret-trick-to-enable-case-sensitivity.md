@@ -7,7 +7,7 @@ original_language: en
 published: 2018-06-01
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:aa26386e4ff53080'
 translated: false
 ---
@@ -202,3 +202,5 @@ And taskpolicy is able to enable case sensitive mode for our test program. One c
 - When encountering a simulation environment, I should immediately check for potential differences between real and emulated environment - the results may be surprising.
 - You never know what you can find when reading source code, and it may provide answers to questions you didn’t know to ask.
 - Even the smallest feature can be interesting to examine. This will help me choose future blog topics that are interesting and can be covered in a short concise article.
+
+[https://worthdoingbadly.com/casesensitive-iossim/](https://worthdoingbadly.com/casesensitive-iossim/)

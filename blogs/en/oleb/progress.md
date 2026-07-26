@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:70707da39d637597'
 translated: false
 ---
@@ -16,13 +16,13 @@ translated: false
 
 # Progress
 
-![Comparison of the engine compartments of a 1982 Mercedes-Benz W-201 Series 190 and a 2010 Mercedes-Benz “Shooting Break” Concept Car](https://oleb.net/media/mercedes-benz-engine-compartment-1982-vs-2010.jpg)
+[![Comparison of the engine compartments of a 1982 Mercedes-Benz W-201 Series 190 and a 2010 Mercedes-Benz “Shooting Break” Concept Car](https://oleb.net/media/mercedes-benz-engine-compartment-1982-vs-2010.jpg)](https://oleb.net/media/mercedes-benz-engine-compartment-1982-vs-2010.jpg)
 
 <sub>Engine compartments of a 1982 Mercedes-Benz Series 190 (W-201) and a 2010 Mercedes Benz Concept Car called "Shooting Break".   Photo credits:  
  W-201: Mercedes-Benz Press Release, conserved at [Serious Wheels Car Pictures](http://www.seriouswheels.com/cars/1980-1989/top-1982-1993-Mercedes-Benz-W-201-Series.htm).  
  Shooting Break: Daimler Press Release, conserved at [Serious Wheels Car Pictures](http://www.seriouswheels.com/cars/2010/top-2010-Mercedes-Benz-Concept-Shooting-Break.htm).</sub>
 
-![Comparison of the insides of an Apple II and Apple's 2012 Retina Macbook Pro](https://oleb.net/media/apple-ii-insides-vs-macbookpro-retina.jpg)
+[![Comparison of the insides of an Apple II and Apple's 2012 Retina Macbook Pro](https://oleb.net/media/apple-ii-insides-vs-macbookpro-retina.jpg)](https://oleb.net/media/apple-ii-insides-vs-macbookpro-retina.jpg)
 
 <sub>Insides of an Apple II (introduced 1977) and Apple's 2012 Retina Macbook Pro.   Photo credits:  
  Apple II: Listing on Steven Stengel's awesome [oldcomputers.net, the Obsolete Technology Website](http://oldcomputers.net/appleii.html).  

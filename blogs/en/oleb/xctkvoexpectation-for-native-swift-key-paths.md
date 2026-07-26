@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:02135d4e52f4b94b'
 translated: false
 ---
@@ -44,7 +44,7 @@ In this example, we set up an expectation that observes an [`Operation`’s](htt
 
 Note that because Swift key paths are strongly typed, the compiler can enforce the correct type for the `expectedValue` parameter — this wouldn’t be possible with Cocoa key paths.
 
-The implementation relies on [the type-safe observation API for Swift key paths](https://github.com/apple/swift/blob/9cc534a05a94bacb7162d361cc803aa4f9fc0f4d/stdlib/public/SDK/Foundation/NSObject.swift#L185-L200) that Apple added last year when Swift 4.0 was introduced. If you don’t use this yet, you absolutely should — it’s so much nicer to use than the old Objective-C API. I would go so far as to say that it makes KVO a viable option for data binding again, whereas I’d never use the old API voluntarily.[1](#fn:1)
+The implementation relies on [the type-safe observation API for Swift key paths](https://github.com/apple/swift/blob/9cc534a05a94bacb7162d361cc803aa4f9fc0f4d/stdlib/public/SDK/Foundation/NSObject.swift#L185-L200) that Apple added last year when Swift 4.0 was introduced. If you don’t use this yet, you absolutely should — it’s so much nicer to use than the old Objective-C API. I would go so far as to say that it makes KVO a viable option for data binding again, whereas I’d never use the old API voluntarily.^[1](#fn:1)
 
 # Convenience methods on `XCTestCase`
 

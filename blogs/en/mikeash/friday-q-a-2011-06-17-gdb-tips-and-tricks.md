@@ -348,12 +348,10 @@ Note that it's necessary to declare the variable as `volatile` to ensure that th
 **Breakpoints**  
 A breakpoint is a location in the program where, if execution reaches that location, the program is stopped and the debugger activates. As mentioned previously, a breakpoint can be made with the `break` command, abbreviated as `b`. There are several forms which can be used to indicate the target of a breakpoint:
 
-- : write the name of a function, and the breakpoint will target that function.
-- : set a breakpoint on the specified line of the given file.
-- : set a breakpoint on an Objective-C method. Use
-
-  for class methods.
-- : break at a particular address in memory. Not usually useful unless you're debugging assembly or something of the sort.
+- `SymbolName`: write the name of a function, and the breakpoint will target that function.
+- `file.c:1234`: set a breakpoint on the specified line of the given file.
+- `-[ClassName method:name:]`: set a breakpoint on an Objective-C method. Use `+` for class methods.
+- `*0xdeadbeef`: break at a particular address in memory. Not usually useful unless you're debugging assembly or something of the sort.
 
 Breakpoints can be toggled on and off using `enable` and `disable` on the breakpoint number. If you want to remove one completely, use `delete`. To get a list of all existing breakpoints, use the `info breakpoints` command, which can be abbreviated as `info b` or even just `i b`.
 
@@ -578,7 +576,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-06-17-gdb-tips-and-tricks.html)
 
 Add your thoughts, post a comment:
 

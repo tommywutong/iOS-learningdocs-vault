@@ -7,7 +7,7 @@ original_language: en
 published: 2023-03-12
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1d8f40491166d9c8'
 translated: false
 ---
@@ -169,7 +169,7 @@ static Class realizeClassWithoutSwift(Class cls, Class previously) {
 
 An update is only necessary if the superclass has "grown into" the subclass (relative to the layout computed during the compilation of the subclass). The superclass may have increased in size because it added instance variables, changed instance variables to types of larger sizes, added fields to a struct stored as an instance variable, or its superclass grew. (Recall the runtime no-ops if the superclass shrank.)
 
-The [`reconcileInstanceVariables()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime-new.mm#L2484-L2581) function first ensures the class’s `class_ro_t`[[1](#_footnotedef_1)] data structure has been copied to the heap if it is necessary to update the class’s instance variable offsets as the initial data structure value is mapped from a read-only section of the executable. A writable copy is required so that the runtime can store the updated class layout metadata.
+The [`reconcileInstanceVariables()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime-new.mm#L2484-L2581) function first ensures the class’s `class_ro_t`^[[1](#_footnotedef_1)] data structure has been copied to the heap if it is necessary to update the class’s instance variable offsets as the initial data structure value is mapped from a read-only section of the executable. A writable copy is required so that the runtime can store the updated class layout metadata.
 
 ```
 static void reconcileInstanceVariables(Class cls, Class supercls, const class_ro_t*& ro) {

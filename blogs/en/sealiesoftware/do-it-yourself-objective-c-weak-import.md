@@ -7,7 +7,7 @@ original_language: en
 published: 2010-04-08
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:42b4d22e565427b6'
 translated: false
 ---
@@ -57,22 +57,14 @@ To **use** a class `SomeClass` that is unavailable on some of your app's deploym
     asm(".weak_reference _OBJC_CLASS_$_SomeClass");
 ```
 
-To
-
-a class
-
-that is unavailable on some of your app's deployment targets, write this in the file containing your subclass's
-
-:
+To **subclass** a class `SomeClass` that is unavailable on some of your app's deployment targets, write this in the file containing your subclass's `@implementation`:
 
 ```
     asm(".weak_reference _OBJC_CLASS_$_SomeClass");
     asm(".weak_reference _OBJC_METACLASS_$_SomeClass");
 ```
 
-This will not work for apps running on iPhone OS 3.0 or older. Only iPhone OS 3.1 and newer has any hope of success. Of course, since this is
-
-it may not work there either.
+This will not work for apps running on iPhone OS 3.0 or older. Only iPhone OS 3.1 and newer has any hope of success. Of course, since this is **UNTESTED** it may not work there either.
 
 #### How it works
 
@@ -119,4 +111,4 @@ Et voilà: weak import of an Objective-C class. Well, maybe. I have only tested 
 
 (What about the `_OBJC_METACLASS` symbol, you ask? When you subclass a class, your subclass's metaclass's superclass pointer points to the subclass's superclass's metaclass. In other words, your subclass's `@implementation` points to both its superclass and its superclass's [metaclass](http://sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html). That requires two symbols: one for the class and one for the metaclass. When you simply use a class without subclassing it, you don't need the metaclass pointer.)
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

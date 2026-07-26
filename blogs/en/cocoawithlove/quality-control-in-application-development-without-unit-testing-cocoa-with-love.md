@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:20c242b89e3eae84'
 translated: false
 ---
@@ -59,13 +59,13 @@ The reason why system tests are the most efficient and accurate form of product 
 
 There are lots of ways to system test your code. In order from most important to least important for application development:
 
-1. Sanity testing
-2. User interface testing
-3. API testing
-4. Regression testing
-5. Performance testing
-6. Load testing
-7. Scalability testing
+1. [Sanity testing](http://en.wikipedia.org/wiki/Sanity_test)
+2. [User interface testing](http://en.wikipedia.org/wiki/GUI_software_testing)
+3. [API testing](http://www.logigear.com/newsletter/api_vs_unit.asp)
+4. [Regression testing](http://en.wikipedia.org/wiki/Regression_testing)
+5. [Performance testing](http://en.wikipedia.org/wiki/Performance_testing)
+6. [Load testing](http://en.wikipedia.org/wiki/Load_testing)
+7. [Scalability testing](http://en.wikipedia.org/wiki/Scalability_testing)
 
 I'm not going to give full definitions of these tests here — I'm simply going to discuss their importance to applications and related projects. Follow the links to read more about each one.
 

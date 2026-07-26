@@ -7,7 +7,7 @@ original_language: en
 published: 2018-11-25
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:06a12a65c658ee05'
 translated: false
 ---
@@ -87,18 +87,14 @@ I created the `/Library/Preferences/com.apple.usbmuxd.plist` file and increased 
 
 Here’s some sources I consulted during this research that you might find useful:
 
-- Libimobiledevice
-
-  - open source tools to communicate with iOS devices over USB
-- Usbmuxd protocol documentation
-
-  on iPhone Wiki - documents both the usbmuxd protocol and the Lockdownd protocol (which controls USB services on the device)
-- Discovering the iOS Instruments Server
-
-  - Troy Bowman’s presentation on how Xcode communicates with iOS devices
+- [Libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) - open source tools to communicate with iOS devices over USB
+- [Usbmuxd protocol documentation](https://www.theiphonewiki.com/wiki/Usbmux) on iPhone Wiki - documents both the usbmuxd protocol and the Lockdownd protocol (which controls USB services on the device)
+- [Discovering the iOS Instruments Server](https://github.com/troybowman/dtxmsg/blob/master/slides.pdf) - Troy Bowman’s presentation on how Xcode communicates with iOS devices
 
 # What I learned
 
 - Where system daemons on macOS store their preferences
 - Logging levels in the Apple System Logger framework
-- write a short article
+- I _can_ write a short article
+
+[https://worthdoingbadly.com/usbmuxdebug/](https://worthdoingbadly.com/usbmuxdebug/)

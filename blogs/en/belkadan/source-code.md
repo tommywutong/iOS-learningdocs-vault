@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:34694d7c6a3a86a9'
 translated: false
 ---
@@ -19,6 +19,8 @@ translated: false
 28 December 2023
 
 A few weeks ago I posted this:
+
+[(screen recording)](https://belkadan.com/blog/2023/12/CellLVM/CellLVM.mp4)
 
 Which, if you’re not interested in watching a video right now, is a proof-of-concept LLVM to Excel spreadsheet compiler.
 
@@ -56,43 +58,27 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https:
 
 ## Older Posts
 
-1. 2020-02-04
-
-  Introducing the Game 'by Color
-2. 2020-01-28
-
-  ROSE-8: Console Mode
-3. 2020-01-13
-
-  ROSE-8
-4. 2019-12-24
-
-  quasiquarantine
-5. 2019-08-01
-
-  \> go east
-6. 2015-05-09
-
-  Nibblesort: Adventures in Optimization
-7. 2011-06-30
-
-  Quick Look in TextMate
-8. 2008-03-08
-
-  Alerts Without Apps (or nibs)
+1. 2020-02-04[Introducing the Game 'by Color](https://belkadan.com/blog/2020/02/ROSE-8-Game-by-Color/?tag=source-code)
+2. 2020-01-28[ROSE-8: Console Mode](https://belkadan.com/blog/2020/01/ROSE-8-Console/?tag=source-code)
+3. 2020-01-13[ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/?tag=source-code)
+4. 2019-12-24[quasiquarantine](https://belkadan.com/blog/2019/12/Quasiquarantine/?tag=source-code)
+5. 2019-08-01[\> go east](https://belkadan.com/blog/2019/08/go-east/?tag=source-code)
+6. 2015-05-09[Nibblesort: Adventures in Optimization](https://belkadan.com/blog/2015/05/Nibblesort/?tag=source-code)
+7. 2011-06-30[Quick Look in TextMate](https://belkadan.com/blog/2011/06/Quick-Look-in-TextMate/?tag=source-code)
+8. 2008-03-08[Alerts Without Apps (or nibs)](https://belkadan.com/blog/2008/03/Alerts-Without-Apps/?tag=source-code)
 
 ### Possibly Related Tags
 
-- Assembly
-- Cocoa
-- Compilers
-- Filesystems
-- Git
-- LLVM
-- Mac OS X
-- Package
-- ROSE-8
-- Shell
-- Spreadsheets
-- Swift
-- TextMate
+- [Assembly](https://belkadan.com/blog/tags/assembly)
+- [Cocoa](https://belkadan.com/blog/tags/cocoa)
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Filesystems](https://belkadan.com/blog/tags/filesystems)
+- [Git](https://belkadan.com/blog/tags/git)
+- [LLVM](https://belkadan.com/blog/tags/llvm)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Package](https://belkadan.com/blog/tags/package)
+- [ROSE-8](https://belkadan.com/blog/tags/rose-8)
+- [Shell](https://belkadan.com/blog/tags/shell)
+- [Spreadsheets](https://belkadan.com/blog/tags/spreadsheets)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [TextMate](https://belkadan.com/blog/tags/textmate)

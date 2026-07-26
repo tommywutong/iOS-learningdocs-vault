@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ca1ade5d229a1faf'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 ## [Weak Linking](#)
 
-When you compile a program that uses external libraries or frameworks, the last step (or a step near the end, at least) is to hook up all of the functions, etc. you use in your program to their implementations in the libraries. This is called “linking”.[1](#fn:simplified)
+When you compile a program that uses external libraries or frameworks, the last step (or a step near the end, at least) is to hook up all of the functions, etc. you use in your program to their implementations in the libraries. This is called “linking”.^[1](#fn:simplified)
 
 A while back, Apple realized that when they added new features to their frameworks (usually with the release of each new OS version), people might want to take advantage of them, but remain backwards-compatible with old OSs. So they added a feature called [weak linking](http://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html#//apple_ref/doc/uid/20002378-106633-CJBGFCAC). Apple wasn’t the first to realize that this might be a problem, and I don’t know if they were the first to come up with weak linking. (Heck, it wasn’t even their first time; apparently there was a similar capability in Mac OS Classic’s Code Fragment Manager.) But that’s where I heard about it first.
 
@@ -86,7 +86,7 @@ By the way, Greg Parker has a good article on [weakly-linked _classes_](http://w
 
 ### Postscript: How does it work?
 
-In regular code, you know that it’s not possible for the address of a variable to be `NULL`. Clearly, if the variable exists, it lives somewhere in memory, and that address is _guaranteed_ not to be `0` by the C standard.[2](#fn:null) But with weakly-linked symbols, _the variable might not exist,_ and so it’s actually quite appropriate that its “address” might be `NULL`.
+In regular code, you know that it’s not possible for the address of a variable to be `NULL`. Clearly, if the variable exists, it lives somewhere in memory, and that address is _guaranteed_ not to be `0` by the C standard.^[2](#fn:null) But with weakly-linked symbols, _the variable might not exist,_ and so it’s actually quite appropriate that its “address” might be `NULL`.
 
 How does it work? It’s basically like a C++ reference: a weakly-linked symbol `X` actually has a “shadow” symbol with a name like `X$non_lazy_ptr`. Any time you refer to `X`, the compiler replaces it internally with `*X$non_lazy_ptr`.
 

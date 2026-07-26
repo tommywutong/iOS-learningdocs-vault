@@ -7,7 +7,7 @@ original_language: en
 published: 2016-07-30
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3e0f8b857c4013f3'
 translated: false
 ---
@@ -37,7 +37,7 @@ But even in this undesirable delay-only scenario, _the delay state is itself is 
 I am stressing this purpose of timers since it leads to the following expectations:
 
 1. a timer should always be closely tied to an associated temporary resource
-2. synchronously)
+2. changes to either the timer or its associated temporary resource must resolve synchronously with the other (even when they don’t always _occur_ synchronously)
 
 Most problems around timers involve failure to meet one of these expectations.
 
@@ -144,12 +144,10 @@ In all the `Parent` examples, access to the `temporaryChild` was protected by us
 Consider the following order of events:
 
 1. A child is created using `createChild()`
-2. concurrent queue
+2. 10 seconds later, the handler is invoked on the `DispatchQueue.global()` concurrent queue
 3. The handler starts but does not yet enter `s.queue.sync`
-4. function is called again, entering the queue, creating a new child and new timer and exiting the queue.
-5. and deletes the
-
-  child.
+4. While that is happening, the `createChild()` function is called again, entering the queue, creating a new child and new timer and exiting the queue.
+5. The handler from step 3 – which was associated with the old, already deleted child – finally enters `s.queue.sync` and deletes the _new_ child.
 
 A previous timer has deleted the new child. Oops.
 
@@ -427,7 +425,7 @@ I showed two different ways that these requirements can be satisfied: a “gener
 The latter is the more syntactically efficient and involves the following steps:
 
 1. Store the timer and its associated temporary resource together in a compound value.
-2. as a mutex around the timer and its associated temporary resource
+2. Use a `DispatchQueue` as a mutex around the timer and its associated temporary resource
 3. Schedule the timer on the same `DispatchQueue`
 
 The alternative “generation count” pattern avoided the requirement on `DispatchQueue` as a mutex and avoided any constraint on the scheduled queue for the timer. However, it still requires _some_ kind of mutex and adds the additional requirement of tracking the generation count. It also tends to be significantly more verbose.

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e42027315efc3646'
 translated: false
 ---
@@ -54,11 +54,9 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Tech industry
 
 ## Older Posts
 
-1. 2015-02-22
-
-  AlterConf SF/Oakland
+1. 2015-02-22[AlterConf SF/Oakland](https://belkadan.com/blog/2015/02/AlterConf/?tag=tech-industry)
 
 ### Possibly Related Tags
 
-- Diversity in tech
-- Running a website
+- [Diversity in tech](https://belkadan.com/blog/tags/diversity-in-tech)
+- [Running a website](https://belkadan.com/blog/tags/running-a-website)

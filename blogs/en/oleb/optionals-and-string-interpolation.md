@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:82b8849195ce7ddb'
 translated: false
 ---
@@ -35,21 +35,21 @@ Swift 3.1 will actually actually raise [a warning when you use an optional in st
 
 The warning is already implemented in the latest Swift development snapshot (2016-12-01):
 
-![Xcode warning about using an optional value in a string interpolation segment in the latest Swift snapshot](https://oleb.net/media/xcode-warning-string-interpolation-optional-as-any.png)
+[![Xcode warning about using an optional value in a string interpolation segment in the latest Swift snapshot](https://oleb.net/media/xcode-warning-string-interpolation-optional-as-any.png)](https://oleb.net/media/xcode-warning-string-interpolation-optional-as-any.png)
 
 <sub>Xcode warning about using an optional value in a string interpolation segment in the latest Swift snapshot.</sub>
 
 You have several options to silence the warning:
 
-1. .
-2. .
-3. .
+1. Add an explicit cast, as in `someValue as Int?`.
+2. Use `String(describing: someValue)`.
+3. Provide a default value to make the expression non-optional, as in `someValue ?? defaultValue`.
 
 I don’t particularly like any of these in most cases, but it’s the best the compiler can offer. The problem with the third option is that the [nil-coalescing operator](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID72) `??` requires matching types — if the left operand is a `T?`, the right operand must be a `T`. Applied to the example above, this means I can provide another `Int` as a default value, but not a string — which is what I’d like to do in this situation.
 
 # A custom optional-string-coalescing operator
 
-I solved this by defining my own custom optional-string-coalescing operator. I decided to name it `???` because of its obvious connection to the nil-coalescing operator.[1](#fn:1) The `???` operator takes any `Optional` on its left side and a default string value on the right, returning a string. If the optional value is non-`nil`, it unwraps it and returns its string description, otherwise it returns the default value. Here’s the implementation:
+I solved this by defining my own custom optional-string-coalescing operator. I decided to name it `???` because of its obvious connection to the nil-coalescing operator.^[1](#fn:1) The `???` operator takes any `Optional` on its left side and a default string value on the right, returning a string. If the optional value is non-`nil`, it unwraps it and returns its string description, otherwise it returns the default value. Here’s the implementation:
 
 ```
 infix operator ???: NilCoalescingPrecedence

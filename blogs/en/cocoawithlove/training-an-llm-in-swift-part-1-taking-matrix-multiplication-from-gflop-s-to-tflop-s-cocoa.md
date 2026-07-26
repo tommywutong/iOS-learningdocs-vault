@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8a19cfee1ad42d16'
 translated: false
 ---
@@ -377,9 +377,7 @@ out.withUnsafeMutableBufferPointer { outBuffer in
 It’s not literally the worst code ever but:
 
 - there’s a lot of overhead calculating the tiles and chunks and shadowing with `span`
-- scope and the
-
-  scope definitely add visual clutter
+- the `out.withUnsafeMutableBufferPointer` scope and the `DispatchQueue.concurrentPerform` scope definitely add visual clutter
 
 This is the iteration where I think: the C code looks better. It would be a lot nicer to have a slice-and-perform-concurrently operation on `RangeReplaceableCollection` that made this look as simple as replacing the `for` loop line.
 
@@ -693,7 +691,7 @@ We took a basic Swift implementation of matrix multiplication and made it 232 ti
 
 The first 72 times increase occurred due to the basic Swift optimizations you should consider for any algorithm:
 
-- copy-on-write/reference-check overhead (Swift should have applied this automatically; it is maybe just a bug)
+- Avoid `Array` copy-on-write/reference-check overhead (Swift should have applied this automatically; it is maybe just a bug)
 - Use some SIMD optimized fused-multiply-add instructions in Swift (by “relaxing” constraints using the Numerics library)
 - Restructured loops so the traversal is more efficient and SIMD pipelining works better
 - Parallelize using `DispatchQueue.concurrentPerform`

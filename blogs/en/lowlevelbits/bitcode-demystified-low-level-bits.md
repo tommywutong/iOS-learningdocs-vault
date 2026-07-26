@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:adaeb7aa988795c0'
 translated: false
 ---
@@ -24,30 +24,14 @@ A few months ago Apple announced a ’new feature,’ called ‘Bitcode.’ In t
 
 To answer this question let’s look at what compilers do for us. Here is a brief overview of compilation process:
 
-- : takes source code as an input and translates it into a stream of tokens;
-- : takes stream of tokens as an input and translates it into an
-
-  AST
-
-  ;
-- : takes an AST as an input, checks if a program is correct (method called with correct amount of parameters, method called on object actually exists and non-private, etc.), fills in ‘missing types’ (e.g.:
-
-  ,
-
-  has type of
-
-  ) and passes AST to the next phase;
-- : takes an AST as an input and emits some high-level IR (intermediate representation);
-- : takes IR, makes optimizations and emits IR which is potentially faster and/or smaller;
-- : another code generation phase, it takes IR and emits assembly for particular CPU;
-- : takes assembly and converts it into an object code (stream of
-
-  s and
-
-  s);
-- : usually programs refer to already compiled routines from other programs (e.g.:
-
-  ) to avoid recompilation of the same code over and over. Until this phase these links do not have correct addresses, they are just placeholders. Linker’s job is to resolve those placeholders so that they point to the correct addresses of their corresponding routines.
+- `Lexer`: takes source code as an input and translates it into a stream of tokens;
+- `Parser`: takes stream of tokens as an input and translates it into an [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree);
+- `Semantic Analysis`: takes an AST as an input, checks if a program is correct (method called with correct amount of parameters, method called on object actually exists and non-private, etc.), fills in ‘missing types’ (e.g.: `let x = y`, `x` has type of `y`) and passes AST to the next phase;
+- `Code Generation`: takes an AST as an input and emits some high-level IR (intermediate representation);
+- `Optimization`: takes IR, makes optimizations and emits IR which is potentially faster and/or smaller;
+- `AsmPrinter`: another code generation phase, it takes IR and emits assembly for particular CPU;
+- `Assembler`: takes assembly and converts it into an object code (stream of `0`s and `1`s);
+- `Linker`: usually programs refer to already compiled routines from other programs (e.g.: `printf`) to avoid recompilation of the same code over and over. Until this phase these links do not have correct addresses, they are just placeholders. Linker’s job is to resolve those placeholders so that they point to the correct addresses of their corresponding routines.
 
 _You can find more details here: [The Compiler](https://www.objc.io/issues/6-build-tools/compiler/)._
 
@@ -166,20 +150,10 @@ I know only one way to secure the IR - [obfuscation](https://en.wikipedia.org/wi
 
 ### Useful links
 
-- LLVM IR
-
-  - language reference manual
-- LLVM Bitcode
-
-  - Bitcode file format
-- The Compiler
-
-  - Clang/LLVM compilation phases
-- How OS X Executes Applications
-- Parsing Mach-O files
-- bitcode_retriever
-
-  - tool that retrieves xar-archives with bitcode from mach-o binary
-- o-llvm
-
-  - obfuscator based on LLVM
+- [LLVM IR](http://llvm.org/docs/LangRef.html) - language reference manual
+- [LLVM Bitcode](http://llvm.org/docs/BitCodeFormat.html) - Bitcode file format
+- [The Compiler](https://www.objc.io/issues/6-build-tools/compiler/) - Clang/LLVM compilation phases
+- [How OS X Executes Applications](http://0xfe.blogspot.de/2006/03/how-os-x-executes-applications.html)
+- [Parsing Mach-O files](https://lowlevelbits.org/parse-mach-o-files/)
+- [bitcode_retriever](https://github.com/AlexDenisov/bitcode_retriever) - tool that retrieves xar-archives with bitcode from mach-o binary
+- [o-llvm](https://github.com/obfuscator-llvm/obfuscator/wiki) - obfuscator based on LLVM

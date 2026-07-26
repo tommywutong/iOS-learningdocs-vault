@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c1e31eefead0911e'
 translated: false
 ---
@@ -123,12 +123,8 @@ Encoding the block itself and storing a pointer to the `BlockContext` is simple.
 
 - get each pointer offset
 - reading the value of the pointer from the block
-- object using the
-- in an
-
-  using the
-
-  key
+- map the pointer's value to a `BlockWrapper` object using the `blockContext`
+- encoding each referenced `BlockWrapper` in an `NSArray` using the `childBlocks` key
 
 Notice that `NULL` pointers still require a `NSNull` object in the `childBlocks` array so that the indices in this array always correspond to the indices in the `pointerOffsets` array.
 
@@ -181,9 +177,7 @@ The result is that the code which unarchives the linked list is also responsible
 
 ## Conclusion
 
-> LinkedListCoding.zip
-> 
-> (48kB)
+> Download the complete solution (which includes a trivial sample program) [LinkedListCoding.zip](https://www.cocoawithlove.com/assets/objc-era/LinkedListCoding.zip) (48kB)
 
 This solution will let you archive an arbitrary linked list of C structs using `NSKeyedArchiver`. The solution does make some assumptions — specifically, your list nodes must all be the same type and the only pointers must point to other list nodes or `NULL`. Other list arrangements would require changes to the solution.
 

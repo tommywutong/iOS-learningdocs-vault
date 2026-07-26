@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:988c3373c88ad66e'
 translated: false
 ---
@@ -18,9 +18,9 @@ I wrote some experiments around Combine, Apple’s reactive programming framewor
 
 Looking at everything in one article got much too long so I broke it into three parts:
 
-1. re-implementing the core protocols of Combine
+1. [re-implementing the core protocols of Combine](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-1.html)
 2. shared computation, shared reference lifetimes and sharing subscribers
-3. asynchrony, threading and performance
+3. [asynchrony, threading and performance](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-3.html)
 
 This article will be the middle third, an investigation spanning a trio of topics with “shared” in the name: shared computation, shared reference lifetimes and sharing subscribers.
 
@@ -89,10 +89,8 @@ This is almost what we’d expect in a “multicast” scenario except that `D` 
 
 This graph has two conflicting ideas:
 
-1. is a shared “hot” publisher
-2. is a “cold” publisher and a separate value of the
-
-  is created for each subscriber
+1. The shared `PassthroughSubject` is a shared “hot” publisher
+2. `scan` is a “cold” publisher and a separate value of the `state` is created for each subscriber
 
 While the `PassthroughSubject` is shared between `C` and `D`, there are two separate `Subscription` instances created for the `scan` (with different values of `state`) so we get different outputs.
 
@@ -164,13 +162,7 @@ Is carefully keeping references alive strictly necessary?
 The answer is complicated to test for two reasons:
 
 1. In Release builds, Swift may release references in the middle of a scope (like a function) but in Debug builds, Swift usually won’t release until the end of the scope.
-2. is a reference that calls
-
-  automatically on
-
-  . Other types of
-
-  will usually not but might (you never know).
+2. `AnyCancellable` is a reference that calls `cancel()` automatically on `deinit`. Other types of `Cancellable` will usually not but might (you never know).
 
 Neither of these rules make accurate analysis easy. Let’s start with some examples that use `AnyCancellable` (avoiding complications with point 2) and deliberately create our own dummy scopes (which will avoid most complications with point 1).
 

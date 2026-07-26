@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d06ad91fee677543'
 translated: false
 ---
@@ -341,7 +341,7 @@ Here we iterate over passed source files (`main.c`, `hello.c`) stored in the `AR
 
 I added three more things to the final version:
 
-- that stores some additional compile flags one may need
+- I added another variable `C_FLAGS` that stores some additional compile flags one may need
 - the name of the executable passed as a separate argument
 - extracted the linking phase into a separate command
 
@@ -401,10 +401,10 @@ Go and learn about other CMake [functions](https://cmake.org/cmake/help/latest/m
 
 I would highly recommend learning about the following concepts:
 
-- add_subdirectory
-- include
-- properties
+- [add_subdirectory](https://cmake.org/cmake/help/latest/command/add_subdirectory.html)
+- [include](https://cmake.org/cmake/help/latest/command/include.html)
+- [properties](https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html)
 
-    - get_property
-    - set_property
-- All the rest
+    - [get_property](https://cmake.org/cmake/help/latest/command/get_property.html)
+    - [set_property](https://cmake.org/cmake/help/latest/command/set_property.html)
+- [All the rest](https://cmake.org/cmake/help/latest/index.html)

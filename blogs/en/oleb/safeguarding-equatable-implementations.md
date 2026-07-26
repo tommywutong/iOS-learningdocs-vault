@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8db2b9d60859d541'
 translated: false
 ---
@@ -62,7 +62,7 @@ let lisaStansfield = Person(name: "Lisa", city: "Dublin")
 lisaSimpson == lisaStansfield // → true!!!
 ```
 
-Even worse, [_unlike_ the enum example](https://oleb.net/blog/2017/03/enums-equatable-exhaustiveness/), there’s no simple way to secure the `==` function against mistakes like this. The compiler has no equivalent to exhaustiveness checking for other contexts than a `switch` statement.[1](#fn:1)
+Even worse, [_unlike_ the enum example](https://oleb.net/blog/2017/03/enums-equatable-exhaustiveness/), there’s no simple way to secure the `==` function against mistakes like this. The compiler has no equivalent to exhaustiveness checking for other contexts than a `switch` statement.^[1](#fn:1)
 
 # Asserting equality with `dump`
 
@@ -133,7 +133,7 @@ lisaSimpson == lisaStansfield
 // Crash: assertion failed: Expected dumps to be equal.
 ```
 
-![Screenshot of Xcode with the triggered assertion](https://oleb.net/media/xcode-assertion-equatable-dump-1270px.png)
+[![Screenshot of Xcode with the triggered assertion](https://oleb.net/media/xcode-assertion-equatable-dump-1270px.png)](https://oleb.net/media/xcode-assertion-equatable-dump-1270px.png)
 
 <sub>The assertion caught the bug.</sub>
 
@@ -286,7 +286,7 @@ func assertDumpsEqual<T>(_ lhs: @autoclosure () -> T,
 }
 ```
 
-The entire function body inside the [`#if DEBUG`](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID538) block won’t be compiled unless the `DEBUG` conditional compilation flag is set. This would work if we could rely on the `DEBUG` flag always being set in unoptimized builds. Unfortunately, Xcode doesn’t set the flag automatically for playgrounds, nor is it set by default in debug builds with the Swift Package Manager.[2](#fn:2) The standard library’s [`assert`](https://developer.apple.com/reference/swift/1541112-assert) is smarter. It treats all unoptimized builds (including playgrounds) as assertion-worthy. [The way `assert` recognizes an unoptimized build](https://github.com/apple/swift/blob/master/stdlib/public/core/Assert.swift#L40-L53) is not officially available outside the stdlib, however, which is the reason why we should push the entire expensive computation into `assert`.
+The entire function body inside the [`#if DEBUG`](https://developer.apple.com/library/prerelease/content/documentation/Swift/Conceptual/Swift_Programming_Language/Statements.html#//apple_ref/doc/uid/TP40014097-CH33-ID538) block won’t be compiled unless the `DEBUG` conditional compilation flag is set. This would work if we could rely on the `DEBUG` flag always being set in unoptimized builds. Unfortunately, Xcode doesn’t set the flag automatically for playgrounds, nor is it set by default in debug builds with the Swift Package Manager.^[2](#fn:2) The standard library’s [`assert`](https://developer.apple.com/reference/swift/1541112-assert) is smarter. It treats all unoptimized builds (including playgrounds) as assertion-worthy. [The way `assert` recognizes an unoptimized build](https://github.com/apple/swift/blob/master/stdlib/public/core/Assert.swift#L40-L53) is not officially available outside the stdlib, however, which is the reason why we should push the entire expensive computation into `assert`.
 
 Before I saw Tim’s simple solution, my approach to achieve this was to put the code that generates and compares the dumps into a local closure, which we then “call” when we pass it to `assert`. The actual execution of the closure will only occur inside `assert` (and thus only in unoptimized builds) because `assert`’s argument is an `@autoclosure` too. It would look like this:
 

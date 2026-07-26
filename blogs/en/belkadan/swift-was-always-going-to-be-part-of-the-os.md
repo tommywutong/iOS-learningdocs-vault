@@ -7,7 +7,7 @@ original_language: en
 published: 2022-10-09
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a9d4098144ec35ef'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 ## [Swift was always going to be part of the OS](#)
 
-Recently on the Swift Forums, someone complained that putting Swift in the OS has only made things worse for developers. My immediate reaction is a snarky “welcome to the world of libraries shipped with the OS”, but that’s not helpful and also doesn’t refute their point. So here’s a blog post that talks about how we got where we did, covering time when I worked on Swift at Apple. But I’m going to have to start a lot earlier to explain the problem…more
+Recently on the Swift Forums, someone complained that putting Swift in the OS has only made things worse for developers. My immediate reaction is a snarky “welcome to the world of libraries shipped with the OS”, but that’s not helpful and also doesn’t refute their point. So here’s a blog post that talks about how we got where we did, covering time when I worked on Swift at Apple. But I’m going to have to start a lot earlier to explain the problem…
 
 ### OS Dependencies
 
@@ -36,7 +36,7 @@ At this point we can imagine a spectrum, where at one end you use _nothing_ from
 
 - The starting point doesn’t really exist anymore unless you _are_ the operating system, but once upon a time personal computers worked by handing over control of the entire computer to the running process, which was allowed to do whatever it liked with the whole machine, memory, whatever. Even for these programs the OS might provide “library functions” that either got loaded with the program or were left in memory at known locations when the program was loaded, but you _could_ have a program that eschewed all of that and was basically just an OS of its own, with no dynamic dependencies at all.
 - These days, even a program that is “statically linked” still isn’t “in charge” of the entire machine. The operating system _kernel_ is always running as well, providing basic OS services and exposing some sort of “system call” interface by which programs can request certain privileged operations (such as reading a file, or allocating more memory pages). ~~Most modern OSs allow you to produce programs that work this way, including Windows and Linux.~~ Linux is the best-known modern OS that allows programs that work this way, where the only thing you depend on is the set of system calls available to you.
-- The most common way to program these days is to depend on at least _some_ libraries shipped with the OS, even if it’s just the C standard library and its minimal runtime. Today’s Apple OSs have this as the “minimum system API boundary”: the system call interface is _not_ stable across OS versions and so you are “required” to use the C/POSIX standard library and its extensions to do even basic primitive operations.[1](#fn:go) EDIT: Windows is similar, though its “stable” interface is the library _below_ the C standard library (thanks [Slava](https://twitter.com/slava_pestov/status/1579275297408499712) and [Kyle](https://twitter.com/optshiftk/status/1579283783563743232)).
+- The most common way to program these days is to depend on at least _some_ libraries shipped with the OS, even if it’s just the C standard library and its minimal runtime. Today’s Apple OSs have this as the “minimum system API boundary”: the system call interface is _not_ stable across OS versions and so you are “required” to use the C/POSIX standard library and its extensions to do even basic primitive operations.^[1](#fn:go) EDIT: Windows is similar, though its “stable” interface is the library _below_ the C standard library (thanks [Slava](https://twitter.com/slava_pestov/status/1579275297408499712) and [Kyle](https://twitter.com/optshiftk/status/1579283783563743232)).
 - I don’t think you can _really_ claim that _any_ program is at the other extreme, with _all_ its behaviors coming from dependencies, except in certain trivial examples. But from a certain point of view, every _interpreted_ program works like this. A shell script does not directly execute _any_ machine instructions; it’s the shell that does that based on what the script says. (Bytecode runtimes and JIT compilers blur the line here too.)
 
 So given this, we can see that programs can depend on their host OSs to varying degrees, and that Apple in particular goes all-in on the “libraries” model. Let’s take a closer look at that:
@@ -47,7 +47,7 @@ Before Swift, nearly all of Apple’s public APIs were written in either C or Ob
 
 The main downside of this model is that new features and new APIs are tied to the new OS version. If you have an app, and you want to use new API announced alongside OS v9 even when running on OS v7, well, you can’t. Apple of course wants everybody to move to the new OS promptly, but not everybody does; maybe the new OS doesn’t support their computer, or maybe it’s not compatible with an app they use, and so on. So app developers are stuck waiting for enough people to get on OS v9 that they can drop support for OS v7 and v8 without losing revenue, user goodwill, whatever. And on the other side, Apple can’t change the behavior of an existing library without potentially breaking existing apps, even if the existing behavior was buggy.
 
-We’ll talk more about alternatives later, but for now this sets the stage: Swift was designed to not require changes to this model. Libraries would still be compiled native code; new releases would still be binary-compatible with old ones. We accepted those as design constraints, as well as interoperating tightly with Objective-C and not relying on a JIT.[2](#fn:jit)
+We’ll talk more about alternatives later, but for now this sets the stage: Swift was designed to not require changes to this model. Libraries would still be compiled native code; new releases would still be binary-compatible with old ones. We accepted those as design constraints, as well as interoperating tightly with Objective-C and not relying on a JIT.^[2](#fn:jit)
 
 ### Swift “betas” 1..\<5
 
@@ -62,13 +62,13 @@ With Swift 5, we finally reached a point where _most_ things were pretty good, w
 When it came time to put Swift into the OSs, we had to figure out how to do it without breaking
 
 - existing built apps, which embedded their own earlier version of Swift
-- which wanted to continue to support earlier versions of iOS
+- existing _projects,_ which wanted to continue to support earlier versions of iOS
 
 The first problem was solved by _deliberately_ changing Swift’s ABI, so that Swift 5 wouldn’t collide with anything from Swift 1-4. In the few places where old and new Swift needed to interact—Objective-C—metadata for Swift 5 types was marked differently from Swift 1-4, so that the older Swift would see newer classes as weird Objective-C classes. This was a lot to work out but ultimately pretty straightforward.
 
 The second problem couldn’t be solved the same way; we _wanted_ newer apps to interact with the system Swift APIs. So somehow we had to continue allowing shipping the Swift libraries with apps while _also_ avoiding having two copies of Swift on new enough OSs. Certainly we wouldn’t want an app’s embedded Swift 5 library to supersede the following year OS’s Swift 5.1! That would break parts of the next-year OS that depended on Swift 5.1.
 
-We ended up (ab)using a feature called “[rpath](https://www.mikeash.com/pyblog/friday-qa-2009-11-06-linking-and-install-names.html)”, or “runtime search path”, which allowed an executable to find its dynamic libraries not by hardcoded path but by searching a series of directories. By making the search order start with `/usr/lib/swift/` and following that with the app bundle, we could guarantee that apps would use the OS version of Swift if present and fall back to their embedded version otherwise.[3](#fn:usr)
+We ended up (ab)using a feature called “[rpath](https://www.mikeash.com/pyblog/friday-qa-2009-11-06-linking-and-install-names.html)”, or “runtime search path”, which allowed an executable to find its dynamic libraries not by hardcoded path but by searching a series of directories. By making the search order start with `/usr/lib/swift/` and following that with the app bundle, we could guarantee that apps would use the OS version of Swift if present and fall back to their embedded version otherwise.^[3](#fn:usr)
 
 ![](https://belkadan.com/blog/2022/10/Swift-in-the-OS/rpath.png)
 
@@ -140,7 +140,7 @@ A final possibility is that Apple could have committed to Swift’s ABI stabilit
 
 ### Conclusions
 
-_Was_ Swift-in-the-OS a bad trade-off for app developers? Maybe, if you’re not pressed for code size.[4](#fn:code-size) But then Apple wouldn’t have been able to write system libraries in Swift, and that was never an option.
+_Was_ Swift-in-the-OS a bad trade-off for app developers? Maybe, if you’re not pressed for code size.^[4](#fn:code-size) But then Apple wouldn’t have been able to write system libraries in Swift, and that was never an option.
 
 P.S. Swift on Windows is still a young project, and it doesn’t have the same OS library concerns that Apple platforms do…but Windows is also home to many more closed-source third-party libraries than Linux is. So there’s a possibility [we’ll have a platform with ABI stability but _without_ Swift-in-the-OS](https://forums.swift.org/t/question-is-swift-abi-stable-on-windows-how-far-are-we-from-there/59601) in the not-too-distant future.
 

@@ -26,51 +26,27 @@ by [Mike Ash](https://www.mikeash.com/)
 **Questions**  
 Here are the questions. The answers will follow. Try to answer all of the questions yourself before reading the answers. Try to do it from memory alone first, then check the answer using your compiler, the language spec, or whatever else you want to use. Keep in mind that answers found by testing your compiler may only reflect your environment, and will not necessarily be generally correct.
 
-1. ?
-2. ?
-3. ? How about
-
-  ?
-4. ?
-5. ?
-6. ?
-7. , what is the value of
-
-  ?
-8. , what is the value of
-
-  within the function body?
-9. ?
-10. ?
-11. ?
-12. for types
-
-  ,
-
-  ,
-
-  ,
-
-  , and
-
-  ?
-13. using
-
-  ?
-14. using
-
-  ?
-15. using
-
-  ?
-16. using
-
-  ?
-17. ?
-18. ?
-19. ?
-20. ?
-21. ?
+1. What is the type of the character literal `'a'`?
+2. What is the type of the expression `a == b`?
+3. What is the value of the expression `1 == 1`? How about `0 == 1`?
+4. What is the value of the expression `42 || 0`?
+5. What is the value of the expression `-1 < 1`?
+6. What is the value of the expression `-1 < 1U`?
+7. Given a local variable declared as `char a[10]`, what is the value of `sizeof(a)`?
+8. Given a function declared as `void f(char a[10])`, what is the value of `sizeof(a)` within the function body?
+9. What is the value of `UINT_MAX + 1`?
+10. What is the value of `INT_MAX + 1`?
+11. What is the type of `NULL`?
+12. What is `sizeof` for types `char`, `short`, `int`, `long`, and `long long`?
+13. What is the format specifier for printing an `int` using `printf`?
+14. What is the format specifier for printing a `short` using `printf`?
+15. What is the format specifier for printing a `double` using `printf`?
+16. What is the format specifier for printing a `float` using `printf`?
+17. What is the value of the expression `*(char *)NULL`?
+18. What is the type of the string literal `"abcde"`?
+19. What is the value of `sizeof("abcde")`?
+20. What is the result of executing `free(NULL)`?
+21. What is the result of executing `realloc(NULL, sizeof(int))`?
 
 **Intermission**  
 Let's give a little space for people whose eyes drifted down while reading the last few questions.
@@ -151,9 +127,7 @@ However, while the "it depends" answer is technically correct, it's also useful 
 - `sizeof(char) == 1`
 - `sizeof(short) == 2`
 - `sizeof(int) == 4`
-- in 32-bit code, and
-
-  in 64-bit code
+- `sizeof(long) == 4` in 32-bit code, and `8` in 64-bit code
 - `sizeof(long long) == 8`
 
 Note that you should still use the `uintXX_t` types from `stdint.h` when precise sizes are important in your code, rather than relying on the above quantities. You'll be glad you did when Apple's next big platform suddenly has weird sizes for everything.
@@ -213,7 +187,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-05-31-c-quiz.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:063bd1af5a1435bb'
 translated: false
 ---
@@ -94,9 +94,7 @@ The reason I’m writing this post is to point out [a very good suggestion](http
 Let’s try to identify the _essential interface_ our `random` function needs, i.e. the minimal set of features required to implement the functionality:
 
 - It needs an efficient way to compute the distance between the lower and upper bounds of the input sequence.
-- -th element of the input sequence in order to return it, where
-
-  is the random distance from the lower bound it computed.
+- It needs an efficient way to retrieve the _n_-th element of the input sequence in order to return it, where _n_ is the random distance from the lower bound it computed.
 
 Hooman notes that both countable range types share a common protocol conformance in the form of [`RandomAccessCollection`](https://developer.apple.com/reference/swift/randomaccesscollection). And indeed, `RandomAccessCollection` provides exactly the essential interface we want: random-access collections guarantee that they can measure distances between indices and access elements at arbitrary indices in constant time.
 

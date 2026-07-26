@@ -48,9 +48,7 @@ Callbacks in C have always been clunky. Blocks make callbacks much easier to use
      });
 ```
 
-The confusion is understandable, but it's important to understand the distinction between the two. You can use blocks without GCD, and in fact many new blocks-based Cocoa APIs in 10.6 do just that. You can use GCD without blocks, via the
-
-variants provided for every GCD function that takes a block. They go great together, but they are in fact completely different technologies.
+The confusion is understandable, but it's important to understand the distinction between the two. You can use blocks without GCD, and in fact many new blocks-based Cocoa APIs in 10.6 do just that. You can use GCD without blocks, via the `_f` variants provided for every GCD function that takes a block. They go great together, but they are in fact completely different technologies.
 
 And now you know the rest of the story.
 
@@ -62,7 +60,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/gcd-is-not-blocks-blocks-are-not-gcd.html)
 
 Add your thoughts, post a comment:
 

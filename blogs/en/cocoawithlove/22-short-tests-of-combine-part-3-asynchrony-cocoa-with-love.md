@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:266bfea99f6159ee'
 translated: false
 ---
@@ -18,8 +18,8 @@ I wrote some experiments around Combine, Apple’s reactive programming framewor
 
 Looking at everything in one article got much too long so I broke it into three parts:
 
-1. re-implementing the core protocols of Combine
-2. a trio of topics: shared computation, shared reference lifetimes and sharing subscribers
+1. [re-implementing the core protocols of Combine](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-1.html)
+2. [a trio of topics: shared computation, shared reference lifetimes and sharing subscribers](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-2.html)
 3. asynchrony, threading and performance
 
 This final part will look at asynchronous delivery scenarios. What happens in Combine when the next value arrives while the previous is being processed; in what ways is Combine thread-safe? Can values arrive out-of-order? Can delivered values overwhelm the subscriber? I’ll finish up with a quick look at Combine’s performance.
@@ -522,12 +522,10 @@ I’ve been hard on Combine in these three articles. I don’t think Combine is 
 
 To me, the most important improvements Combine should make are:
 
-1. and other “black boxes” should be fully documented (we shouldn’t be guessing about thread safety and graph lifecycles)
+1. `Subscription` and other “black boxes” should be fully documented (we shouldn’t be guessing about thread safety and graph lifecycles)
 2. support buffered subjects and other ways of sharing cached computations
 3. support scenarios where demand must never be zero
-4. should synchronously establish initial demand (only
-
-  should asynchronously complete construction)
+4. `receive(on:)` should synchronously establish initial demand (only `subscribe(on:)` should asynchronously complete construction)
 
 I’ve shown that we can work around these problems but proper fixes will need to occur in Combine itself.
 

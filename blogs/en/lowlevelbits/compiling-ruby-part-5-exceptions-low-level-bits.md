@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5c72d119d15ed02d'
 translated: false
 ---
@@ -24,24 +24,16 @@ This series is mostly a brain dump, though sometimes I'm trying to make things e
 
 Here is what you can expect from the series:
 
-- Motivation
-
-  : some background reading on what and why
-- Compilers vs Interpreters
-
-  : a high level overview of the chosen approach
-- RiteVM
-
-  : a high-level overview of the mruby Virtual Machine
-- MLIR and compilation
-
-  : covers what is MLIR and how it fits into the whole picture
-- Progress update
-
-  : short progress update with what's done and what's next
+- [Motivation](https://lowlevelbits.org/compiling-ruby-part-0/): some background reading on what and why
+- [Compilers vs Interpreters](https://lowlevelbits.org/compiling-ruby-part-1/): a high level overview of the chosen approach
+- [RiteVM](https://lowlevelbits.org/compiling-ruby-part-2/): a high-level overview of the mruby Virtual Machine
+- [MLIR and compilation](https://lowlevelbits.org/compiling-ruby-part-3/): covers what is MLIR and how it fits into the whole picture
+- [Progress update](https://lowlevelbits.org/compiling-ruby-part-4/): short progress update with what's done and what's next
 - **[Exceptions](https://lowlevelbits.org/compiling-ruby-part-5/): an overview of how exceptions work in Ruby**
 - Garbage Collection (TBD): an overview of how mruby manages memory
 - Fibers (TBD): what are fibers in Ruby, and how mruby makes them work
+
+_Note: the list of TBD articles may change as I may want to split some parts into smaller chunks._
 
 ---
 
@@ -87,12 +79,10 @@ Instead, we can put the responsibility for maintaining the program on the actual
 
 Most languages provide useful features for dealing with this:
 
-- blocks
-- statements
+- Ruby has explicit `ensure` blocks
+- Java has explicit `finally` statements
 - C++ has RAII and implicit destructors
-- /
-
-  , but we are only talking about useful features)
+- (C has `setjmp`/`longjmp`, but we are only talking about useful features)
 
 Here is how it works in the case of Ruby.
 
@@ -112,9 +102,9 @@ Without executing code from the `ensure` block, the hypothetical lock would neve
 
 Now, I can talk about different kinds of exceptions in Ruby. From my perspective, there are three different kinds:
 
-- d exceptions
-- statements
-- statements
+- actual `raise`d exceptions
+- `break` statements
+- `return` statements
 
 Both `break` and `return` statements have special meaning when used in the context of `Proc`s.
 
@@ -165,37 +155,17 @@ This is the most complex example here. Let me write down the steps explicitly. Y
 
 ![Break example](https://lowlevelbits.org/img/compiling-ruby-5/break-example.png)
 
-1. calls the
-
-  function and passes the block to it. The block is just another function under the hood; it’s presented separately here as the
-2. and puts it on the call stack.
-3. calls the passed block (
-
-  ).
-4. and puts it on the stack.
-5. increments
-
-  , checks for equality, and returns to
-
-  , nothing special.
-6. stack frame from the call stack.
-7. s stack frame is kept on the call stack, and the next iteration of
-
-  calls the
-
-  again.
-8. and puts it on the stack.
-9. increments
-
-  , checks for equality, and invokes
-
-  .
-10. initiates stack unwinding and returns from the enclosing function (
-
-  ). See the dashed line.
-11. returns, thus bypassing the endless loop
-
-  .
+1. `top` calls the `loop` function and passes the block to it. The block is just another function under the hood; it’s presented separately here as the `__anonymous_block.`
+2. Runtime creates a new stack frame for `loop` and puts it on the call stack.
+3. `loop` calls the passed block (`__anonymous_block`).
+4. Runtime creates new stack frame for `__anonymous_block` and puts it on the stack.
+5. The `__anonymous_block` increments `i`, checks for equality, and returns to `loop`, nothing special.
+6. Runtime removes the `__anonymous_block` stack frame from the call stack.
+7. `loop`s stack frame is kept on the call stack, and the next iteration of `while true` calls the `__anonymous_block` again.
+8. Runtime creates new stack frame for `__anonymous_block` and puts it on the stack.
+9. The `__anonymous_block` increments `i`, checks for equality, and invokes `break`.
+10. The `break` initiates stack unwinding and returns from the enclosing function (`loop`). See the dashed line.
+11. `loop` returns, thus bypassing the endless loop `while true`.
 
 The `break` construct is effectively equivalent to the following code:
 
@@ -235,7 +205,7 @@ I’d love to describe how I modeled exceptions at the MLIR level, but it will t
 
 - my original approach to constructing SSA right away didn’t work due to the way exceptions work (namely, some registers must spill on the stack), so the dialects have changed a bit, and I need to clean them up a bit
 - the way I model them currently is more of a hack and only works because I have certain conventions, so it’s not a solid model yet
-- ) and need to do some tweaking there to make exceptions work during just-in-time evaluation
+- I added JIT support (for `Kernel.eval`) and need to do some tweaking there to make exceptions work during just-in-time evaluation
 
 I’ll write down all the low-level details at some point, but I don’t have an ETA, so I’ll stop here.
 

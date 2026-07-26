@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:91bba47513aad1a5'
 translated: false
 ---
@@ -42,17 +42,13 @@ To recreate it, we need to know what `UITableViewController` does. Given the cla
 
 As detailed in the API documentation, `UITableViewController` adds the following functionality:
 
-- ) that sets the style for the default contructed table (if the table isn't constructed from a NIB file).
-- that creates the default table if the view controller is used without a NIB file.
-- property.
-- and
-
-  properties but doesn't provide any implementations of the methods.
-- on the
-
-  when it is invoked on the controller.
-- .
-- .
+- A constructor (`initWithStyle:`) that sets the style for the default contructed table (if the table isn't constructed from a NIB file).
+- An implementation of `loadView` that creates the default table if the view controller is used without a NIB file.
+- Implementation of the `tableView` property.
+- Includes the `UITableViewDelegate` and `UITableViewDataSource` properties but doesn't provide any implementations of the methods.
+- Invokes `setEditing:animated:` on the `UITableView` when it is invoked on the controller.
+- Reloads the table data and clears the selection in `viewWillAppear:`.
+- Flashes the scroll indicators of the table in `viewDidAppear:`.
 - Scrolls the table so that selected cells are visible when the keyboard is shown.
 
 I personally consider some of these "optional" and normally leave them out unless I need to use them. I normally leave out the reloading of table data altogether as I feel application logic can handle this more efficiently. What follows are the essential methods.
@@ -144,9 +140,7 @@ The `DetailViewController` (which is constructed when a row is clicked) is also 
 
 ## Conclusion
 
-> download the complete code for the RecreatingTableViewController application
-> 
-> (29kB) discussed in this post.
+> You can [download the complete code for the RecreatingTableViewController application](https://www.cocoawithlove.com/assets/objc-era/RecreatedTableViewController.zip) (29kB) discussed in this post.
 
 `UITableViewController` exists to make working with simple tables slightly quicker, since they are the most common type of primary view on the iPhone.
 

@@ -38,9 +38,8 @@ The toy project I've built allows a block to be transformed into a function poin
     svn co http://mikeash.com/svn/BlockFptr/
 ```
 
-Before I get into specifics, let's talk quickly about how this whole thing is supposed to work, anyway. So I don't have to repeat this a thousand times later, let me state up front that every platform-specific detail I discuss is about
-
-, and may not necessarily apply to other platforms, not even necessarily the other platforms that OS X runs on.
+**Concept**  
+ Before I get into specifics, let's talk quickly about how this whole thing is supposed to work, anyway. So I don't have to repeat this a thousand times later, let me state up front that every platform-specific detail I discuss is about `x86_64`, and may not necessarily apply to other platforms, not even necessarily the other platforms that OS X runs on.
 
 If you're still used to thinking of a 32-bit world, keep in mind that this means pointers are _eight_ bytes long.
 
@@ -79,7 +78,8 @@ If this is confusing (and how could it not be?), here's a diagram:
     ...code...
 ```
 
-Enough jabber, let's get to some code.
+**Assembly**  
+ Enough jabber, let's get to some code.
 
 The trampoline needs to do four things. First, load the intermediary pointer into a register. The particular register in question is `%r11`, a designated scratch register whose value is not expected to survive across the function call:
 
@@ -87,29 +87,19 @@ The trampoline needs to do four things. First, load the intermediary pointer int
     movabsq $0xdeadbeefcafebabe, %r11
 ```
 
-Second, load the block pointer from the intermediary into
-
-, the register which holds the first parameter to a function:
+Second, load the block pointer from the intermediary into `%rdi`, the register which holds the first parameter to a function:
 
 ```
     mov (%r11), %rdi
 ```
 
-Third, extract the function pointer from the block into
-
-, the scratch register:
+Third, extract the function pointer from the block into `%r11`, the scratch register:
 
 ```
     mov BLOCK_FUNCTION_POINTER_OFFSET(%rdi), %r11
 ```
 
-(
-
-is just a macro
-
-d to
-
-.)
+(`BLOCK_FUNCTION_POINTER_OFFSET` is just a macro `#define`d to `16`.)
 
 Fourth, jump to the address contained in `%r11`:
 
@@ -117,9 +107,7 @@ Fourth, jump to the address contained in `%r11`:
     jmp *%r11
 ```
 
-The pointer value
-
-used in the first instruction is literal in the code. I use a recognizable pattern so that it can be searched for later on by the code that modifies this code, so that I don't have to hardcode the offset to the pointer value.
+The pointer value `0xdeadbeefcafebabe` used in the first instruction is literal in the code. I use a recognizable pattern so that it can be searched for later on by the code that modifies this code, so that I don't have to hardcode the offset to the pointer value.
 
 **Finding the Address**  
  The code to search for `0xdeadbeefcafebabe` is simple. First, we start out with a couple of extern definitions which allow the compiler to find the assembly code:
@@ -151,11 +139,7 @@ Given that, the code to find the magic value is pretty simple: just loop through
     }
 ```
 
-Right about now, you might be wondering, but what if the code
-
-to contain the bit pattern
-
-at some spot before the magic pointer value itself, and this gets the wrong offset?
+Right about now, you might be wondering, but what if the code _just so happens_ to contain the bit pattern `0xdeadbeefcafebabe` at some spot before the magic pointer value itself, and this gets the wrong offset?
 
 Well, it's extremely unlikely (and probably impossible, if you look at what instruction sequences that could possibly represent), but ultimately it doesn't matter even if it did. The beauty of writing the trampoline in assembly is that it gives you the exact same output every time it's built. It's not like writing C code, where the compiler might generate different code depending on optimization levels, other code, the compiler version, the phase of the moon, etc. Thus, if this code returns the correct value once, it'll do it every time. Likewise, if it fails, it'll fail immediately. The only risk is after changing the trampoline, so you just have to test it out real quick to make sure that this piece is still functional.
 
@@ -175,13 +159,8 @@ Well, it's extremely unlikely (and probably impossible, if you look at what inst
     };
 ```
 
-Now we're ready to actually copy the trampoline onto the heap and point it to its intermediary. Given a location in the heap, a length (computed from
-
-and
-
-), an offset (from
-
-, and an intermediary pointer), the code to do the copy and modification is easy. First, copy the code:
+**Creating the Trampoline**  
+ Now we're ready to actually copy the trampoline onto the heap and point it to its intermediary. Given a location in the heap, a length (computed from `Trampoline` and `TrampolineEnd`), an offset (from `TrampolineAddrOffset`, and an intermediary pointer), the code to do the copy and modification is easy. First, copy the code:
 
 ```
     static void CreateTrampoline(void *destination, int length, int addrOffset, struct Intermediary *intermediary)
@@ -196,9 +175,7 @@ Fill out the intermediary:
         intermediary->trampoline = destination;
 ```
 
-(The intermediary block pointer isn't being assigned yet, because we do that later, when a block is actually on hand. I set it to
-
-here just for safety.)
+(The intermediary block pointer isn't being assigned yet, because we do that later, when a block is actually on hand. I set it to `NULL` here just for safety.)
 
 Finally, point the newly minted trampoline back at the intermediary:
 
@@ -207,11 +184,8 @@ Finally, point the newly minted trampoline back at the intermediary:
     }
 ```
 
-That's how you create an individual trampoline, but the plan was to build them in bulk to amortize the cost of that
-
-call. To do that, I built a function which creates a page full of them, and then enqueues them all onto the
-
-so they can be fetched later.
+**Creating the Trampoline Factory**  
+ That's how you create an individual trampoline, but the plan was to build them in bulk to amortize the cost of that `mprotect()` call. To do that, I built a function which creates a page full of them, and then enqueues them all onto the `OSQueue` so they can be fetched later.
 
 The first thing to do is to figure out the trampoline's length, the offset of the intermediary address, the system's page size, and how many trampolines will fit into that page size:
 
@@ -225,9 +199,7 @@ The first thing to do is to figure out the trampoline's length, the offset of th
         int howmany = pageSize / trampolineLength;
 ```
 
-Next, allocate a page for the trampolines (using
-
-, to ensure that the resulting address is actually page-aligned) and a block of memory for the intermediaries:
+Next, allocate a page for the trampolines (using `valloc`, to ensure that the resulting address is actually page-aligned) and a block of memory for the intermediaries:
 
 ```
         void *page = valloc(pageSize);
@@ -278,9 +250,7 @@ Next up, we need a bit of code that will dequeue a trampoline off that global ca
     }
 ```
 
-Finally, we can put it all together, with a public-facing function that returns a trampoline. It first tries the cache. If the cache is empty, it creates a page full of trampolines, then tries the cache again. In the unlikely event that the caceh is
-
-empty (other threads used all the trampolines before it could get any), then it creates another page and tries again, and keeps doing this until it gets one:
+Finally, we can put it all together, with a public-facing function that returns a trampoline. It first tries the cache. If the cache is empty, it creates a page full of trampolines, then tries the cache again. In the unlikely event that the caceh is _still_ empty (other threads used all the trampolines before it could get any), then it creates another page and tries again, and keeps doing this until it gets one:
 
 ```
     void *CreateBlockFptr(id block)
@@ -299,7 +269,7 @@ Finally, the returned argument can be used to actually call a block like a funct
     fptr();
 ```
 
-This will print out,
+This will print out, `hello, world!`
 
 **Argument Shifting**  
  If you were to run this code, you'd find that it works fine for the case where the block takes no arguments, but not so well for blocks that do take arguments. The problem is that the function signatures don't match: since the block implementation takes the block pointer as an implicit first argument, all of the other arguments get shifted down. Since the trampoline doesn't touch the arguments that were in place when it got called, the result is that the first argument is obliterated by the block pointer, and the remaining arguments all end up shifted down.
@@ -337,9 +307,7 @@ Just because we can't solve this in the general case doesn't mean we can't solve
         .long 0
 ```
 
-Since the trampoline copying/modifying code is already fully generalized and just searches for the magic pointer value, it doesn't need to be changed at all to accommodate the new trampoline. If you try this, you'll find that it works with arguments... as long as you don't exceed five
-
--type arguments.
+Since the trampoline copying/modifying code is already fully generalized and just searches for the magic pointer value, it doesn't need to be changed at all to accommodate the new trampoline. If you try this, you'll find that it works with arguments... as long as you don't exceed five `INTEGER`-type arguments.
 
 **Examples**  
  That was fun to build, but how about _using_ it?
@@ -356,9 +324,7 @@ The `pthread` API is a classic one that deals with function pointers. You create
     pthread_join(thread, NULL);
 ```
 
-This works just as you'd expect. The
-
-API was never so easy!
+This works just as you'd expect. The `pthread` API was never so easy!
 
 How about some Objective-C runtime hackery?
 
@@ -380,9 +346,7 @@ Again, works perfectly:
     in object 0x1002003d0, the captured integer is 99, the passed integer is -11
 ```
 
-CoreFoundation is a place where function pointers are common. How about creating a
-
-with custom callbacks, all written inline?
+CoreFoundation is a place where function pointers are common. How about creating a `CFArray` with custom callbacks, all written inline?
 
 ```
     CFArrayCallBacks callbacks = {
@@ -424,20 +388,10 @@ That's all there is to it!
 **Caveats**  
  I already mentioned that this code is dangerous and that you should never use it, but wanted to repeat that warning a second time. There are a _lot_ of limitations:
 
-1. arguments.
-2. returns at all, if the
-
-  is big enough to trigger the special
-
-  return calling conventions. Large structs are essentially returned by reference, by passing a pointer as an implicit first argument to the function. The trampoline will put the block pointer there instead, leading to hilarity. This could be worked around by adding a second trampoline just for
-
-  returns.
-3. , you can destroy the trampoline as soon as your block has started running. For uses which persist for the lifetime of the process, like adding a permanent method to an Objective-C object, you can just create it and leave it be. It's when it might be called multiple times but you eventually want to clean it up that it gets tricky, because normal code just assumes that any function pointer will last forever. The
-
-  example is a good example of this: there's no easy way to link the lifetime of the trampolines to the lifetime of the
-
-  . (The best way to do it is probably to use the Objective-C associated object API, but that's pretty ugly.)
-4. . While it could be ported to other architectures, the argument and return-type limitations are likely to be different on those other architectures, breaking previously working code. (On iPhone OS, Apple doesn't even allow this sort of runtime generation of code at all.)
+1. Does not work with more than five `INTEGER` arguments.
+2. Does not work with `struct` returns at all, if the `struct` is big enough to trigger the special `struct` return calling conventions. Large structs are essentially returned by reference, by passing a pointer as an implicit first argument to the function. The trampoline will put the block pointer there instead, leading to hilarity. This could be worked around by adding a second trampoline just for `struct` returns.
+3. Managing the lifetime of a trampoline can be difficult. For one-shot uses, like with `pthread_create`, you can destroy the trampoline as soon as your block has started running. For uses which persist for the lifetime of the process, like adding a permanent method to an Objective-C object, you can just create it and leave it be. It's when it might be called multiple times but you eventually want to clean it up that it gets tricky, because normal code just assumes that any function pointer will last forever. The `CFArray` example is a good example of this: there's no easy way to link the lifetime of the trampolines to the lifetime of the `CFArray`. (The best way to do it is probably to use the Objective-C associated object API, but that's pretty ugly.)
+4. Most importantly: even if you fit within all these limitations, the trampoline only exists for `x86_64`. While it could be ported to other architectures, the argument and return-type limitations are likely to be different on those other architectures, breaking previously working code. (On iPhone OS, Apple doesn't even allow this sort of runtime generation of code at all.)
 
 Despite these problems, it's still a good learning experience and a fun toy to play with.
 
@@ -454,7 +408,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-02-12-trampolining-blocks-with-mutable-code.html)
 
 Add your thoughts, post a comment:
 

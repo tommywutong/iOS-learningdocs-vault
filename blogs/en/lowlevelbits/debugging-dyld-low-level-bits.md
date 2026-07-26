@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:abbf0a55b653c36f'
 translated: false
 ---
@@ -26,25 +26,9 @@ In this article, I want to make a short intro on where to start if you have a si
 
 The source code of dyld is generally available but is outdated. At the time of writing, you can get the source code for macOS High Sierra, 10.13.6, from [here](https://opensource.apple.com). If you are running the latest version of macOS, 10.14, Mojave, then your last resort is binaries shipped with the OS. Though, the source code from previous versions is still helpful. So to get the full picture, I recommend doing the following:
 
-1. https://opensource.apple.com/
-2. Hopper
-
-  ftw) to inspect dyld binaries:
-
-  ,
-
-  , and
-
-  .
-3. SIP
-
-  (optional) and run you binary under
-
-  . You can set breakpoints on all dyld related functions:
-
-  or
-
-  for dyld3 only.
+1. Get the latest version of the source code from [https://opensource.apple.com/](https://opensource.apple.com/)
+2. Use disassembler ([Hopper](https://www.hopperapp.com) ftw) to inspect dyld binaries: `/usr/lib/dyld`, `/usr/lib/system/libdyld.dylib` , and `/usr/lib/closure/libclosured.dylib`.
+3. Disable [SIP](https://en.wikipedia.org/wiki/System_Integrity_Protection) (optional) and run you binary under `lldb`. You can set breakpoints on all dyld related functions: `br set -r dyld` or `br set -r dyld3` for dyld3 only.
 
 During debugging, please be ready to jump a lot between the source code and the three libraries mentioned in step two.
 
@@ -52,7 +36,7 @@ During debugging, please be ready to jump a lot between the source code and the 
 
 There are a few other options to observe the behavior of dyld without looking at the code, source or binary. You will also need to disable [SIP](https://en.wikipedia.org/wiki/System_Integrity_Protection) if you want to exercise it on systems apps. All the options are controlled via environment variables. These are the ones I found the most useful:
 
-- : documented, prints a nice trace of almost everything that is happening inside of dyld. Here is an example output:
+- `DYLD_PRINT_APIS`: documented, prints a nice trace of almost everything that is happening inside of dyld. Here is an example output:
 
 ```
 _dyld_register_func_for_add_image(0x7fff7696ab92)
@@ -66,7 +50,7 @@ dyld_image_path_containing_address(0x7fff75221000)
 
 It looks cryptic, but it greatly helps to understand the program execution flow.
 
-- , documented, prints all the dynamic libraries that are being loaded during the app startup. Here is an example output:
+- `DYLD_PRINT_LIBRARIES`, documented, prints all the dynamic libraries that are being loaded during the app startup. Here is an example output:
 
 ```
 dyld: loaded: /usr/lib/libiconv.2.dylib
@@ -80,20 +64,14 @@ dyld: loaded: /usr/lib/system/libcommonCrypto.dylib
 dyld: loaded: /usr/lib/system/libcompiler_rt.dylib
 ```
 
-- , undocumented, may print some useful information. Currently, it definitely prints some info about
-
-  dyld3 closures
-
-  . An example output:
+- `DYLD_PRINT_WARNINGS`, undocumented, may print some useful information. Currently, it definitely prints some info about [dyld3 closures](https://allegro.tech/2018/05/Static-linking-vs-dyld3.html). An example output:
 
 ```
 dyld: found closure 0x7ffff48ae9ac (size=844) in dyld shared cache
 dyld: closure 0x7ffff48ae9ac not used because DYLD_FRAMEWORK_PATH changed
 ```
 
-- , documented, changes the order of directories where dyld will search for dynamic libraries. The nice side effect of using these variables is that their presence disables the dyld3 closure cache. So if your suspect is dyld3 closures, then export any of the
-
-  variables to disable them. Some examples:
+- `DYLD_*_PATH`, documented, changes the order of directories where dyld will search for dynamic libraries. The nice side effect of using these variables is that their presence disables the dyld3 closure cache. So if your suspect is dyld3 closures, then export any of the `DYLD_*_PATH` variables to disable them. Some examples:
 
 ```
 export DYLD_FRAMEWORK_PATH=

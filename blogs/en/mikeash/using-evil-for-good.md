@@ -25,11 +25,9 @@ by [Mike Ash](https://www.mikeash.com/)
 
 I've been quoted as saying things such as:
 
-Indeed, I shudder every time I think about the autoptr/autorelease or exceptions conversion wrappers I've seen people construct. On the other hand, C++ does have a lot of
+> ObjC++ also allows you to create an incredible menagerie of abominations such as the world has never seen
 
-fast, standard data structures
-
-.
+Indeed, I shudder every time I think about the autoptr/autorelease or exceptions conversion wrappers I've seen people construct. On the other hand, C++ does have a lot of [fast, standard data structures](http://www.sgi.com/tech/stl/).
 
 Ordinarily I don't sympathize much with people who complain about Cocoa lacking data structures. It's true that having nothing but [arrays"](http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html), [sets](http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSSet_Class/Reference/Reference.html), and [dictionaries](https://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSDictionary_Class/Reference/Reference.html) can be a bit limiting at times. On the other hand, people who complain about the limited choice tend to be complaining for its own sake, and don't have any actual need for other things.
 
@@ -174,7 +172,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/using-evil-for-good.html)
 
 Add your thoughts, post a comment:
 

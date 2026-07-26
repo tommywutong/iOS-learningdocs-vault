@@ -57,11 +57,7 @@ For `socklen_t` and `NSInteger` you need to get a little cleverer. You can't use
     NSString *str = [NSString stringWithFormat:@"%.4s", &valSwapped;];
 ```
 
-The
-
-tells
-
-that the string is only four characters long, which keeps it from running off the end.
+The `.4` tells `NSString` that the string is only four characters long, which keeps it from running off the end.
 
 Sometimes you don't know the length ahead of time. This used to happen a lot with Pascal strings, but they're getting pretty rare these days. For this, you can use `*` as your length, and then it will read the length as a separate argument. (Note that this separate argument must be of type int, so beware types of unknown size!)
 
@@ -77,15 +73,14 @@ And here's how you can use that to print a Pascal string, in case you ever run i
     printf("%.*s", pstring[0], pstring + 1);
 ```
 
-Printing pointers is a handy thing to do but many people don't know how to do it right. You often see code like this:
+**Printing Pointers**  
+ Printing pointers is a handy thing to do but many people don't know how to do it right. You often see code like this:
 
 ```
     printf("0x%x", pointer);
 ```
 
-This is wrong! Not only is the output ugly (you don't get leading zeroes) but it's not guaranteed to work at all, because you're passing a pointer but specifying an
-
-.
+This is wrong! Not only is the output ugly (you don't get leading zeroes) but it's not guaranteed to work at all, because you're passing a pointer but specifying an `int`.
 
 The correct way is easy: just use the `%p` specifier. You get nice hexadecimal output and the type always matches.
 
@@ -96,21 +91,13 @@ The correct way is easy: just use the `%p` specifier. You get nice hexadecimal o
     #define NULL 0
 ```
 
-If you then try to pass
-
-as a pointer argument to a vararg function like
-
-, your code is no longer conformant, because you're really passing an
-
-! For example, this is, strictly speaking, wrong:
+If you then try to pass `NULL` as a pointer argument to a vararg function like `NSLog`, your code is no longer conformant, because you're really passing an `int`! For example, this is, strictly speaking, wrong:
 
 ```
     printf("%p", NULL);
 ```
 
-(Note that the same goes for
-
-.)
+(Note that the same goes for `nil`.)
 
 This is easy to fix: if you ever need to do this sort of thing, you can just cast the `NULL` to a pointer type like so:
 
@@ -118,25 +105,13 @@ This is easy to fix: if you ever need to do this sort of thing, you can just cas
     printf("%p", (void *)NULL);
 ```
 
-Note that this problem is most commonly encountered in functions which need a
-
--terminated list of arguments, like
-
-or
-
-. Yes, that means all of the code out there which looks like this is, strictly speaking, wrong:
+Note that this problem is most commonly encountered in functions which need a `NULL`-terminated list of arguments, like `-[NSArray arrayWithObjects:]` or `execl`. Yes, that means all of the code out there which looks like this is, strictly speaking, wrong:
 
 ```
     [NSArray arrayWithObjects:a, b, c, nil];
 ```
 
-How do we get away with it? The compiler helps. As I mentioned before,
-
-and
-
-have a workaround for this. They
-
-to be a magic symbol which has either pointer or integer type depending on the context in which it's used, so the correct pointer value is passed into the function.
+How do we get away with it? The compiler helps. As I mentioned before, `gcc` and `clang` have a workaround for this. They `#define``NULL` to be a magic symbol which has either pointer or integer type depending on the context in which it's used, so the correct pointer value is passed into the function.
 
 **Always Constant Format Strings**  
  I see far too much code which does this:
@@ -145,11 +120,7 @@ to be a magic symbol which has either pointer or integer type depending on the c
     NSLog(someString);
 ```
 
-This works most of the time, but what if
-
-contains the character sequence
-
-, or another format specifier? Then you probably crash.
+This works most of the time, but what if `someString` contains the character sequence `%@`, or another format specifier? Then you probably crash.
 
 It gets worse. What if you do this with `printf` or similar instead, and `someString` comes from a source outside your control, like off the internet? Then horrible things can occur.
 
@@ -159,9 +130,7 @@ One of the format specifiers supported by `printf` (but not Cocoa) is the `%n` s
     printf("%d%n%d", a, &howmany, b);
 ```
 
-After this executes,
-
-will contain the width of the first integer being printed.
+After this executes, `howmany` will contain the width of the first integer being printed.
 
 If an attacker has control over the format string, then they can use the `%n` specifier to write an arbitrary value to a location in memory! This can then be used to take over your program. [This attack is not theoretical](http://en.wikipedia.org/wiki/Format_string_attack).
 
@@ -180,9 +149,7 @@ You can even reuse the same argument more than once. This can be handy when writ
     printf("%1$s could not be accessed, error %d. Try rebooting %1$s.", name, err);
 ```
 
-Note that if you do this, you
-
-skip any arguments. For example, this is invalid:
+Note that if you do this, you _must not_ skip any arguments. For example, this is invalid:
 
 ```
     printf("a = %2$d", b, a);
@@ -205,7 +172,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-07-17-format-strings-tips-and-tricks.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2018-11-10
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:166a5a1e2a135604'
 translated: false
 ---
@@ -22,18 +22,18 @@ I read a novel where the rules for inheriting witchcraft resembles the real-worl
 
 Table of Contents
 
-1. Introduction: all my hobbies combined
-2. The theory behind gene drives
-3. Estimating gene drive behaviour with a mathematical model
-4. Simulation
-5. Importing the Familinx dataset
-6. Why is my SQL index slowing down my query?
-7. First look at the Familinx data
-8. Marking all descendants with breadth-first search
-9. Analysing the Familinx dataset
-10. Conclusion
-11. What I learned
-12. What I need to learn next
+1. [Introduction: all my hobbies combined](#introduction-all-my-hobbies-combined)
+2. [The theory behind gene drives](#the-theory-behind-gene-drives)
+3. [Estimating gene drive behaviour with a mathematical model](#estimating-gene-drive-behaviour-with-a-mathematical-model)
+4. [Simulation](#simulation)
+5. [Importing the Familinx dataset](#importing-the-familinx-dataset)
+6. [Why is my SQL index slowing down my query?](#why-is-my-sql-index-slowing-down-my-query)
+7. [First look at the Familinx data](#first-look-at-the-familinx-data)
+8. [Marking all descendants with breadth-first search](#marking-all-descendants-with-breadth-first-search)
+9. [Analysing the Familinx dataset](#analysing-the-familinx-dataset)
+10. [Conclusion](#conclusion)
+11. [What I learned](#what-i-learned)
+12. [What I need to learn next](#what-i-need-to-learn-next)
 
 # Introduction: all my hobbies combined
 
@@ -90,7 +90,7 @@ q0=20% generations to half: 8.213919597327557 or 213.5619095305165 years
 
 In summary, it should take about 8 to 9 generations, or **about 200-250 years**, for half the population to carry the witchcraft trait. Easy!
 
-However, Unckless cautions that their theory, in addition to inheriting simplications from the [Wright-Fisher model](#wrightfisher-assumptions), has one additional limitation: it assumes that **Se**, the selection coefficient, is small. The selection coefficient for my witchcraft gene is very large (**Se** = 1), so how does that affect the result?
+However, Unckless cautions that their theory, in addition to inheriting simplications from the [Wright-Fisher model](#wrightfisher-assumptions), has one additional limitation: it assumes that **S~e**, the selection coefficient, is small. The selection coefficient for my witchcraft gene is very large (**S~e** = 1), so how does that affect the result?
 
 I wrote a simulation to find out.
 
@@ -293,9 +293,7 @@ I haven’t had a chance to test this theory. I guess, to support or disprove th
 
 - counting the number of descendants starting from an ancestor and comparing it to what I expect
 - start from a recent profile and working backwards, comparing expected number of aunts/uncles (from historical family size estimates) to actual number of aunts/uncles recorded.
-- @cureffi’s post
-
-  that notes potential pitfalls for using the Familinx data.
+- or ask someone with more experience working with the Familinx dataset. There’s a few sites such as [@cureffi’s post](http://www.cureffi.org/2014/10/10/some-musings-on-age-of-death-in-familinx/) that notes potential pitfalls for using the Familinx data.
 
 # Conclusion
 
@@ -326,7 +324,7 @@ My code can be found at [my GitHub repository](https://github.com/zhuowei/Famili
 - Theories’s predictions are only valid if their assumptions are met. Simulations can be used to validate the impact of violating assumptions.
 - Simulating a Gene Drive’s spread
 - Importing and exporting data from PostgreSQL
-- to setup indexes in PostgreSQL
+- How _not_ to setup indexes in PostgreSQL
 - Implementing a breadth-first search in Java
 - Drawing graphs with Graphviz
 - Why genealogy data can’t be used to estimate the number of descendants for a person
@@ -337,4 +335,6 @@ My code can be found at [my GitHub repository](https://github.com/zhuowei/Famili
 - Other experiments I can try with the Familinx data
 - Other sources of open data I can play with
 - How to write these blog posts in parts. (Seriously, this post, out of all the entries on this site, took me the longest to research and write.)
-- .
+- How to draw fanart or write fanfiction, because nobody wants to read fan_code_.
+
+[https://worthdoingbadly.com/familytree/](https://worthdoingbadly.com/familytree/)

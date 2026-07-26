@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:14356216497eef2d'
 translated: false
 ---
@@ -104,7 +104,7 @@ extension Dictionary : Encodable where Key : Encodable, Value : Encodable {
 
 There are three branches: only if the dictionary’s key type is `String` or `Int` does it use a keyed container. Any other key type triggers results in an unkeyed container of alternating keys and values.
 
-`String` and `Int` get special treatment because those are the two valid coding key types in the `Codable` world. Any other coding key is ultimately lowered to a `String` or `Int`.[1](#fn:1) Since the dictionary has no way to tell how other types encode themselves, it has no choice but to resort to an unkeyed container.
+`String` and `Int` get special treatment because those are the two valid coding key types in the `Codable` world. Any other coding key is ultimately lowered to a `String` or `Int`.^[1](#fn:1) Since the dictionary has no way to tell how other types encode themselves, it has no choice but to resort to an unkeyed container.
 
 And the fact that our custom enum is backed by `String` (and thus produces `String` values when encoded) doesn’t matter. The standard library can’t use a rule like “use a keyed container if `Key: RawRepresentable, Key.RawValue == String`” because, however unlikely, the type may have overridden the default compiler-synthesized `Codable` implementation to encode itself differently — there’s no practical way for the standard library to tell.
 

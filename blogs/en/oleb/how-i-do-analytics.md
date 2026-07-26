@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6984a38611ef4007'
 translated: false
 ---
@@ -58,7 +58,7 @@ I thought it would be nice to share some of the data that Google Analytics colle
 
 ## Pageviews per year
 
-![Chart of monthly pageviews as reported by Google Analytics between April 2011 and December 2017](https://oleb.net/media/monthly-pageviews-google-analytics-2011-2017-2526-px.png)
+[![Chart of monthly pageviews as reported by Google Analytics between April 2011 and December 2017](https://oleb.net/media/monthly-pageviews-google-analytics-2011-2017-2526-px.png)](https://oleb.net/media/monthly-pageviews-google-analytics-2011-2017-2526-px.png)
 
 <sub>Monthly pageviews as reported by Google Analytics between April 2011 and December 2017.</sub>
 

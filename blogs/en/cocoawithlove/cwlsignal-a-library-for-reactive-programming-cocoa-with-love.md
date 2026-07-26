@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dc3249b04d4925f6'
 translated: false
 ---
@@ -282,12 +282,8 @@ That’s not how CwlSignal operates.
 
 Instead of reconstructing parts of the graph, CwlSignal is designed around the concept of “activation”. On construction, a signal graph is “inactive”. When a `SignalOutput` is added to an inactive graph (by calling `subscribe`, or `subscribeValues`), every direct antecedent `Signal` becomes “active”. There’s a small handful of effects that may occur during activation but the most common are:
 
-- value) are immediately emitted through the graph – propagating
-
-  during the activation phase (even when their
-
-  would normally be processed asynchronously)
-- closures are invoked so lazily started signal emissions can begin
+- specially cached “activation” values (like the `continous` value) are immediately emitted through the graph – propagating _synchronously_ during the activation phase (even when their `Signal` would normally be processed asynchronously)
+- at the end of the activation phase, `generate` closures are invoked so lazily started signal emissions can begin
 
 The important point to note, in contrast to other reactive programming solutions, is that activation happens per `Signal` in the graph, not per subscriber. A new subscriber activates only those `Signal`s that are _inactive_ between the new subscriber and any previously activated sections of the graph. This makes `Signal`s with multiple outputs a special consideration, since they must handle the activation of each of their outputs at separate times (See [Single-output by default](#single-output-by-default), below, for a discussion of the implications).
 
@@ -384,8 +380,8 @@ You should never expose a `Signal` instance member in a public interface.
 
 A signal exposed by an interface should always be one of:
 
-- , or
-- on each access
+- a `SignalMulti`, or
+- a newly created `Signal` on each access
 
 If you receive a `Signal`, rather than a `SignalMulti` from another interface, subscribe or transform only once. If you need multiple subscribers, either append your own `SignalMulti` transform or call the other interface again to get a new `Signal`.
 
@@ -397,35 +393,11 @@ The CwlSignal library is around 5000 lines (not including code pulled from CwlUt
 
 CwlSignal involves just a few public types:
 
-- the downstream end of a channel (
-
-  is the only subclass)
-- the input end of a channel (the equivalent
-
-  type is provided by transformation closures to fulfill the same sending role
-
-  s)
-- returned when subscribing to
-
-  to extract values
-- and
-
-  , which I’ve
-
-  detailed
-
-  in
-
-  previous articles
-- ,
-
-  ,
-
-  ,
-
-  ,
-
-  which appear only if you’re doing specific things with the graph.
+- `Signal` the downstream end of a channel (`SignalMulti` is the only subclass)
+- `SignalInput` the input end of a channel (the equivalent `SignalNext` type is provided by transformation closures to fulfill the same sending role _between_`Signal`s)
+- `SignalOutput` returned when subscribing to `Signal` to extract values
+- `Result` and `Exec`, which I’ve [detailed](https://www.cocoawithlove.com/blog/2016/08/21/result-types-part-one.html) in [previous articles](https://www.cocoawithlove.com/blog/specifying-execution-contexts.html)
+- `SignalError`, `EitherResult`, `SignalCapture`, `SignalJunction`, `SignalMultiInput` which appear only if you’re doing specific things with the graph.
 
 Seeing 14 type names all at once might seem a little complicated but in reactive programming, it’s very minimalist. All except the last three have already appeared in the code examples in this article – if you didn’t notice that they were there, then they have done their jobs.
 

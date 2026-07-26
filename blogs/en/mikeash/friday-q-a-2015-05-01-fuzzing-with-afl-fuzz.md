@@ -150,11 +150,9 @@ This will present you with a nice terminal interface:
 
 There's a lot of info here, most of which I'll leave you to explore on your own. There are a few bits that are particularly interesting:
 
-- and
-
-  show how many crashes and hangs have been discovered so far. The moment these say something other than zero, you've found something interesting!
-- is how long it's been since the fuzzer found a new path through the program. This is an indication of how much progress it's making. If it's been a long time since the fuzzer found a new path, it may no longer be able to find any interesting inputs.
-- is how quickly it's able to run test cases. The higher this number, the more test cases the fuzzer can run through, and the faster it can discover interesting things.
+- `uniq crashes` and `uniq hangs` show how many crashes and hangs have been discovered so far. The moment these say something other than zero, you've found something interesting!
+- `last new path` is how long it's been since the fuzzer found a new path through the program. This is an indication of how much progress it's making. If it's been a long time since the fuzzer found a new path, it may no longer be able to find any interesting inputs.
+- `exec speed` is how quickly it's able to run test cases. The higher this number, the more test cases the fuzzer can run through, and the faster it can discover interesting things.
 
 As the fuzzer runs, it places information in the `findings` directory. Inputs that cause crashes are placed in files in the `crashes` subdirectory. Inputs that cause hangs go in the `hangs` subdirectory. The `queue` subdirectory contains the inputs that are interesting but haven't caused any crashes or hangs, and can be used to get an idea of the fuzzer's progress, and what kind of inputs it's working with.
 
@@ -267,7 +265,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-05-01-fuzzing-with-afl-fuzz.html)
 
 Add your thoughts, post a comment:
 

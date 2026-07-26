@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b73ee5d9eede2efe'
 translated: false
 ---
@@ -90,7 +90,7 @@ There is certainly variation and some icons that follow their own rules entirely
 
 The tool that I will use to create the icons is Inkscape. Inkscape is a GPL-licensed SVG-based vector illustration program that you can download from [inkscape.org](http://www.inkscape.org/). It is available in a Universal binary for Mac OS X 10.3.9 and newer.
 
-![](https://www.cocoawithlove.com/assets/objc-era/inkscape.png)
+[![](https://www.cocoawithlove.com/assets/objc-era/inkscape.png)](http://inkscape.org)
 
 _A nice multi-purpose icon but clearly not designed with "standard Mac app" as its primary goal._
 
@@ -112,7 +112,7 @@ The reason why we set the units and use the actual pixel sizes in a vector progr
 
 The page area will now look tiny in the window. You can zoom in using the middle mouse button (click and drag with the middle mouse button to pan) or the "+" key. Alternately, you can zoom the document area to fill the window by pressing the "5" key.
 
-> : you will need to be comfortable with zooming in the program. The "+" and "-" keys will zoom in and out at any time. The 3 key will zoom to the selection and 4 will show all drawn elements. Clicking and dragging the middle mouse button will pan the document, clicking the middle mouse button will zoom and shift-middle mouse will zoom out.
+> **Zooming**: you will need to be comfortable with zooming in the program. The "+" and "-" keys will zoom in and out at any time. The 3 key will zoom to the selection and 4 will show all drawn elements. Clicking and dragging the middle mouse button will pan the document, clicking the middle mouse button will zoom and shift-middle mouse will zoom out.
 
 ## Creating the glossy round rectangle
 
@@ -126,13 +126,13 @@ Open the Fill and Stroke palette (menu item "Object"→"Fill and Stroke" or Cont
 
 ![](https://www.cocoawithlove.com/assets/objc-era/fill-and-stroke-palette.png)
 
-> : you can also set solid fill and stroke colors on the selected object by left clicking (fill) or shift-left-clicking (stroke) a swatch at the bottom of the window.
+> **Quick colors**: you can also set solid fill and stroke colors on the selected object by left clicking (fill) or shift-left-clicking (stroke) a swatch at the bottom of the window.
 
 We now need to edit the rectangle properties. Using the rectangle tool again, click the rectangle to select it (if it isn't already selected). In rectangle edit mode, a toolbar will appear at the top of the window labelled "Change" with coordinates "W", "H", "Rx" and "Ry". Set the "W" and "H" to 57 — this will make the rectangle exactly 57 pixels wide and high (if the rectangle auto-locked to the edges of the document, these values may already be set). Set the "Rx" and "Ry" to 10 — this will set the corner radii to 10 (a round rect).
 
 ![](https://www.cocoawithlove.com/assets/objc-era/round-rect.png)
 
-> : I'm going to quote a lot of coordinates and color values in this post but this is only so I can communicate what I'm doing. Most of the time, you do not need to be pixel accurate and can do things more approximately if you prefer.
+> **Numerical accuracy**: I'm going to quote a lot of coordinates and color values in this post but this is only so I can communicate what I'm doing. Most of the time, you do not need to be pixel accurate and can do things more approximately if you prefer.
 
 Using the selection tool (the first tool in the Tool Area) select the rectangle. The object's "X" and "Y" coordinates will appear in the toolbar at the top. Set these to zero. The rectangle is now exactly the size of the document with round corners.
 
@@ -140,7 +140,7 @@ Using the selection tool (the first tool in the Tool Area) select the rectangle.
 
 Copy the red round rectangle object (select it and press Control-C) and paste it (Control-V) somewhere else (when pasted, the object will be centered where the mouse is, so place the mouse over a different part of the document).
 
-> : if the Copy and Paste fails (you get a bitmap instead of a proper editable object or nothing seems to happen), then you may be seeing a bug in Inkscape due to recent X11 changes. To work around this bug, go to the X11 preferences and on the Pasteboard tab, disable "Update Pasteboard when CLIPBOARD changes". Alternatively, you can use "Edit"→"Duplicate" to duplicate without copying.
+> **Copy and Paste bug**: if the Copy and Paste fails (you get a bitmap instead of a proper editable object or nothing seems to happen), then you may be seeing a bug in Inkscape due to recent X11 changes. To work around this bug, go to the X11 preferences and on the Pasteboard tab, disable "Update Pasteboard when CLIPBOARD changes". Alternatively, you can use "Edit"→"Duplicate" to duplicate without copying.
 
 With the copy selected, go to the Fill tab of the Fill and Stroke palette. Set a radial fill for the object (4th icon from the left at the top). If you've set the red color, then the radial gradient will initially look like a red dot fading outwards.
 
@@ -182,7 +182,7 @@ Using the Gradient Tool from the Tool Area, select the rectangle and drag the gr
 
 ![](https://www.cocoawithlove.com/assets/objc-era/blue-green-gradient.png)
 
-> : almost every gradient you use should involve a hue shift. When you want an actual 3D or lighting effect, you can also apply a luminance shift. The gradient here shifts from blue into the green direction as it lightens (a common choice). The other most common gradient would probably be from a darker red or orange towards a lighter yellowy orange. Hues on the green side of yellow or purple hues are rarely ever used.
+> **Gradient colors**: almost every gradient you use should involve a hue shift. When you want an actual 3D or lighting effect, you can also apply a luminance shift. The gradient here shifts from blue into the green direction as it lightens (a common choice). The other most common gradient would probably be from a darker red or orange towards a lighter yellowy orange. Hues on the green side of yellow or purple hues are rarely ever used.
 
 ### Starburst object
 
@@ -196,7 +196,7 @@ Then, set a radial fill on the star from a start color of RGBA=(255,255,255,0) t
 
 With the star object still selected, select the menu item "Filters"→"ABCs"→"Simple Blur". Then select the "Filters"→"Filter Editor..." menu item. This will display the Filter Editor palette.
 
-> : If the Fill and Stroke Palette is still showing when the Filter Editor appears, you'll notice that they don't fit well together down the right margin. I recommend you either close the Fill and Stroke Editor or drag the Filter Editor off into its own window.
+> **Space limitations**: If the Fill and Stroke Palette is still showing when the Filter Editor appears, you'll notice that they don't fit well together down the right margin. I recommend you either close the Fill and Stroke Editor or drag the Filter Editor off into its own window.
 
 There should be one filter listed in the list of filters — this is the filter you just created. When you select the filter in the list, the Effect "Gaussian Blur" will appear in the Effect column at the right. Select the Gaussian Blur and the "Effect Parameters" tab will appear at the bottom. Set the "Standard Deviation" to 0.25.
 
@@ -216,7 +216,7 @@ Select the Bezier Line tool (11th icon down in the Tool Area). Click the mouse a
 
 Select the checkmark and the checkbox. From the Filters menu select "Bevels"→"Ridged Border". Then from the Filters menu select "Shadows and Glows"→"Drop Shadow", set the blur to 2.0, the opacity to 35%, the offset to (3,3), hit the "Apply" button and close the Drop shadow dialog.
 
-> : when zoomed in on objects using effects, the rendering can get slow. To disable effects or to drop entirely into wireframe mode, choose "No Filters" or "Outline" from the "View"→"Display Mode" menu or press Control-Keypad5. The "Ridged border" effect is especially slow in the current version of Inkscape — I recommend zooming out before you apply it and turning effects off before you zoom in close.
+> **Speed tip**: when zoomed in on objects using effects, the rendering can get slow. To disable effects or to drop entirely into wireframe mode, choose "No Filters" or "Outline" from the "View"→"Display Mode" menu or press Control-Keypad5. The "Ridged border" effect is especially slow in the current version of Inkscape — I recommend zooming out before you apply it and turning effects off before you zoom in close.
 
 If you want to fully integrate the checkmark and the checkbox, you can convert the checkbox object to a path, the checkmark stroke to a path and then create a union of the two. I'll leave that to you if you're interested.
 
@@ -232,7 +232,7 @@ Now we need the red glossy round rectangle. If you saved them in a different doc
 
 Drag the gloss and the red rectangle off of the objects they are covering (it doesn't matter where you put them). Select the cloned group and the red round rectangle but not the gloss gradient. Undo the two object moves. This should leave the cloned objects and the red round rectangle selected but all of the objects on top of each other. From the Object menu, select "Clip"→"Set". This should clip the cloned group to the boundary of the red round rectangle, and make the red round rectangle disappear.
 
-> : when clipping in Inkscape, the topmost object is always used as the clipping boundary and all other selected objects are clipped to its boundary.
+> **Clipping**: when clipping in Inkscape, the topmost object is always used as the clipping boundary and all other selected objects are clipped to its boundary.
 
 ![](https://www.cocoawithlove.com/assets/objc-era/side-by-side.png)
 
@@ -244,14 +244,12 @@ You can export the prerendered (cloned, glossed and rounded) version to a PNG by
 
 If you want to send the non-prerendered version to Apple, then select the uncloned group and export from that. 57x57 for the application icon and 512x512 for the high resolution version in your App Store submission.
 
-> : You may get a better effect on the small icon if you export at a larger size and use another program (Preview, GIMP, etc) to scale it down. This may give better anti-aliasing performance — particularly if your resizing program uses Lanczos resampling.
+> **Resampling**: You may get a better effect on the small icon if you export at a larger size and use another program (Preview, GIMP, etc) to scale it down. This may give better anti-aliasing performance — particularly if your resizing program uses Lanczos resampling.
 
 If you'd like your icon as a PDF, SVG or a number of other vector graphics types, you can choose "Save As..." and save to the format of your choice.
 
 ## Conclusion
 
-> download an Inkscape SVG file containing the final icon
-> 
-> (122kb). Note: Safari and other programs will open SVG files but the effects (shadows, blurs, etc) will only appear if the SVG is opened in Inkscape.
+> You can [download an Inkscape SVG file containing the final icon](https://www.cocoawithlove.com/assets/objc-era/cocoawithlove-inkscape-icons-part1.svg) (122kb). Note: Safari and other programs will open SVG files but the effects (shadows, blurs, etc) will only appear if the SVG is opened in Inkscape.
 
 In the second part, I will go through the steps for other icons, showing different stylistic options and explaining more of the effects and graphical elements you can use to create your icons. I'll look closer at filter effects in Inkscape, creating more sophisticated line paths, using gradients in multiple directions to achieve softer effects and creating simple textures to fill blank areas.

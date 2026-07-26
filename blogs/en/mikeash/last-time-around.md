@@ -43,11 +43,11 @@ Probably the most common digital audio representation out there is 44.1kHz, 16-b
 On Apple devices, 32-bit floats are the most common in-memory format for audio, since they can faithfully represent the full range of 24-bit integers, and are convenient to work with.
 
 **A Quick Note on Floating Point**  
-Using a floating-point number to represent only values between -1 and 1 may sound wasteful. After all, a 32-bit `float` can represent values between -3.4×1038 and 3.4×1038. Audio uses only a tiny fraction of that range.
+Using a floating-point number to represent only values between -1 and 1 may sound wasteful. After all, a 32-bit `float` can represent values between -3.4×10^38 and 3.4×10^38. Audio uses only a tiny fraction of that range.
 
 It turns out, however, that restricting the range to [-1, 1] only wastes one bit out of the 32 available. In effect, it's being used as a 31-bit number stored in 32 bits of memory, which doesn't sound so bad at all. This is because of how floating point numbers are stored.
 
-The short version is that `float`s are represented in the form m×2e, where `m` and `e` are stored in the number, along with one bit to indicate the sign. For a 32-bit `float`, the exponent (`e`) can range from -128 to 127. Values with exponents in the range [-128, -1] represent the range between -1 and 1. That range restriction simply cuts the exponent's range in half, which equates to restricting only a single bit from its value.
+The short version is that `float`s are represented in the form m×2^e, where `m` and `e` are stored in the number, along with one bit to indicate the sign. For a 32-bit `float`, the exponent (`e`) can range from -128 to 127. Values with exponents in the range [-128, -1] represent the range between -1 and 1. That range restriction simply cuts the exponent's range in half, which equates to restricting only a single bit from its value.
 
 For more details on the floating-point representation, see [my previous article on floating point arithmetic](https://www.mikeash.com/pyblog/friday-qa-2011-01-04-practical-floating-point.html).
 
@@ -105,9 +105,9 @@ The next step is to tell the audio file object what kind of in-memory format we 
 
 This structure contains what appears to be redundant information, in the form of the channels and bytes per frame/packet. These fields exist for the benefit of non-PCM formats, and because the ASBD `struct` is used in many different situations. To understand the meaning of these fields, here are some quick definitions:
 
-- a single number representing the value of one audio channel at one point in time.
-- a group of one or more samples, with one sample for each channel, representing the audio on all channels at a single point on time.
-- a group of one or more frames, representing the audio format's smallest encoding unit, and the audio for all channels across a short amount of time.
+- **Sample:** a single number representing the value of one audio channel at one point in time.
+- **Frame:** a group of one or more samples, with one sample for each channel, representing the audio on all channels at a single point on time.
+- **Packet:** a group of one or more frames, representing the audio format's smallest encoding unit, and the audio for all channels across a short amount of time.
 
 Many audio formats use packets that are considerably longer than a single frame. MP3, for example, uses packets of 1152 frames, which are the basic atomic unit of an MP3 stream. PCM audio is just a series of samples, so it can be divided down to the individual frame, and it really has no packet size at all. For the ASBD's purpose, the packet size is equal to the frame size.
 
@@ -266,7 +266,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-10-12-obtaining-and-interpreting-audio-data.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a373cc4a79a498fe'
 translated: false
 ---
@@ -16,15 +16,7 @@ translated: false
 
 Learn some limitations associated with cascading deletes in Core Data and find out how to immediately propagate deletes in Core Data, overcoming these potential problems.
 
-> : this post previously indicated that NSManagedObject deletes would fail inside
-> 
-> processPendingChanges
-> 
-> . This issue was fixed in Mac OS X 10.5. The post has been edited to reflect that in Mac OS X 10.5 it is only
-> 
-> processPendingChanges
-> 
-> that cannot be invoked inside itself.
+> **Correction**: this post previously indicated that NSManagedObject deletes would fail inside processPendingChanges. This issue was fixed in Mac OS X 10.5. The post has been edited to reflect that in Mac OS X 10.5 it is only processPendingChanges that cannot be invoked inside itself.
 
 ## Limitations to the default "deleteObject" for change propagation
 
@@ -38,12 +30,8 @@ Deletes in Core Data are always deferred, either to the end of the event (when -
 
 This means that if you want to read a value changed by a delete, you must:
 
-- -[NSManagedObjectContext processPendingChanges]
-
-  invocation (i.e. during a delete propagation)
-- -[NSManagedObjectContext processPendingChanges]
-
-  after the delete to flush the work through
+- not be inside a -[NSManagedObjectContext processPendingChanges] invocation (i.e. during a delete propagation)
+- call -[NSManagedObjectContext processPendingChanges] after the delete to flush the work through
 
 If you are inside processPendingChanges (or you otherwise don't want to call it) but you need to see changes immediately, then you will need to implement your own change propagation instead of relying on the default deleteObject: to apply changes.
 

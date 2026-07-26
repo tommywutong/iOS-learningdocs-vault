@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7bfbebb78479da9b'
 translated: false
 ---
@@ -139,7 +139,7 @@ Now that we have access to a concrete `_UIRemoteViewController` object that clea
 @end
 ```
 
-With this implementation, we can only log selector names but not the particular arguments and return values of the messages that are being sent. To improve this, we have to introspect the `NSInvocation` object that is passed to the `forwardInvocation:` method. It contains all the information about a method’s arguments and return value. Unfortunately, parsing this data into a log-friendly format is pretty cumbersome because every argument type needs to be handled differently. You can have a look at [my test app on GitHub](https://github.com/ole/RemoteViewControllers) to see how I did it.[1](#fn:1)
+With this implementation, we can only log selector names but not the particular arguments and return values of the messages that are being sent. To improve this, we have to introspect the `NSInvocation` object that is passed to the `forwardInvocation:` method. It contains all the information about a method’s arguments and return value. Unfortunately, parsing this data into a log-friendly format is pretty cumbersome because every argument type needs to be handled differently. You can have a look at [my test app on GitHub](https://github.com/ole/RemoteViewControllers) to see how I did it.^[1](#fn:1)
 
 Now we can replace the remote view controller instance we receive in the connectionHandler block with the proxy object:
 

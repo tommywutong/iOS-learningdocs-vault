@@ -7,7 +7,7 @@ original_language: en
 published: 2020-09-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e6f5eb87ac6d74a2'
 translated: false
 ---
@@ -28,7 +28,7 @@ translated: false
 
 ## [The Swift Runtime: Type Layout](#)
 
-Welcome to the second in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about how tuples and structs get laid out at run time.more
+Welcome to the second in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about how tuples and structs get laid out at run time.
 
 As mentioned previously, I implemented my stripped-down runtime in Swift as much as possible, though I had to use a few undocumented Swift features to do so. I’ll be showing excerpts of my runtime code throughout these posts, and you can check out the full thing [in the ppc-swift repository](https://belkadan.com/source/ppc-swift-project/tree/refs/heads/dev:/stdlib/_Runtime).
 
@@ -50,7 +50,7 @@ Let’s not worry about whether this is a _good_ struct; we’re only thinking a
 |---|---|---|---|---|---|---|
 | `id` | `amountInGrams` | `isOnSale` |  |  |  |  |
 
-But this isn’t valid, because Floats have a required _alignment_ of 4 bytes. ([This article from Red Hat explains alignment pretty well.](https://developers.redhat.com/blog/2016/06/01/how-to-avoid-wasting-megabytes-of-memory-a-few-bytes-at-a-time/)[1](#fn:alignment)) Taking that into account, we end up with this:
+But this isn’t valid, because Floats have a required _alignment_ of 4 bytes. ([This article from Red Hat explains alignment pretty well.](https://developers.redhat.com/blog/2016/06/01/how-to-avoid-wasting-megabytes-of-memory-a-few-bytes-at-a-time/)^[1](#fn:alignment)) Taking that into account, we end up with this:
 
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 |---|---|---|---|---|---|---|---|---|
@@ -67,7 +67,7 @@ This would pack the whole struct into only 7 bytes while still following the ali
 So what does Swift do? For now, it just does the simple thing: lay the fields out in order, rounding up to alignment boundaries. (This means you can actually save on memory by carefully ordering your fields, although this probably only matters if you have many many instances of your structs.) But that’s not officially guaranteed by the language except in two specific cases:
 
 - If you’re on a platform with a [stable ABI](https://swift.org/blog/abi-stability-and-apple/) (in practice, Apple’s OSs), then any public struct marked `@frozen` in a module with [library evolution](https://swift.org/blog/swift-5-1-released/#module-stability) enabled must have this layout, so that both a library and its clients can agree on what the layout will be.
-- [Tuples are guaranteed to have this layout.](https://forums.swift.org/t/how-to-define-structures-that-can-be-passed-to-c/23901/4)[2](#fn:tuple)
+- [Tuples are guaranteed to have this layout.](https://forums.swift.org/t/how-to-define-structures-that-can-be-passed-to-c/23901/4)^[2](#fn:tuple)
 
 In practice, every struct defined in Swift has this layout, at least through Swift 5.2. It wouldn’t have made sense for me to change it, especially since the compiler and the runtime have to agree on how structs are laid out.
 
@@ -82,7 +82,7 @@ struct Pair<First, Second> {
 }
 ```
 
-What offset is `second` at? Well, obviously it’s going to depend on the size of `First`, and it’ll also depend on the alignment of `Second`. If the types of `First` and `Second` aren’t known at compile time, it’s up to the runtime to figure it out.[3](#fn:compiletime) But it’s more complicated than that. Consider this code:
+What offset is `second` at? Well, obviously it’s going to depend on the size of `First`, and it’ll also depend on the alignment of `Second`. If the types of `First` and `Second` aren’t known at compile time, it’s up to the runtime to figure it out.^[3](#fn:compiletime) But it’s more complicated than that. Consider this code:
 
 ```
 // A.swift
@@ -143,7 +143,7 @@ The third one is the same idea as the second, but taking advantage of the equiva
 
 What you see above really is the basic algorithm. The actual implementation of type layout takes the opportunity to compute a few other things as well: if any of the fields require custom copying or destruction logic (labeled `isNonPOD`, non-“plain old data”, after a similar C++ concept, though this is better modeled by what C++ calls non-“[trivially copyable](https://en.cppreference.com/w/cpp/named_req/TriviallyCopyable)”), and similarly if they require custom _moving_ logic (`isNonBitwiseTakable`).
 
-Once all fields are looped over, two extra fields are filled in: the stride, which is the size rounded up to the alignment, and whether the type can be stored inline in Swift’s opaque object buffer representation. The latter is a simple condition—“fits in storage that’s big enough for three pointers and aligned for pointers, and still allows bitwise taking”—that I won’t really go into here; they’re mostly only used for `Any` and protocol-typed values (existentials). The stride is used when computing offsets into arrays, where you have several of the same type arranged one after another in memory. (Honestly, I’m not sure how much we’d lose to not compute this up front.)[4](#fn:stride)
+Once all fields are looped over, two extra fields are filled in: the stride, which is the size rounded up to the alignment, and whether the type can be stored inline in Swift’s opaque object buffer representation. The latter is a simple condition—“fits in storage that’s big enough for three pointers and aligned for pointers, and still allows bitwise taking”—that I won’t really go into here; they’re mostly only used for `Any` and protocol-typed values (existentials). The stride is used when computing offsets into arrays, where you have several of the same type arranged one after another in memory. (Honestly, I’m not sure how much we’d lose to not compute this up front.)^[4](#fn:stride)
 
 ### Run-time representation
 
@@ -208,7 +208,7 @@ struct TypeLayoutFlags {
 
 I’ve left out a few flags we haven’t talked about yet, and there are also a number that aren’t currently used for anything. `extractBit(at:)` and `updateBit(at:to:)` are helpers that do what they say; I’m not going to show them here.
 
-As for the “extra inhabitant count”, that’s a count of memory representations that won’t ever be valid values of the type, meaning the runtime can use them to represent `nil` in Optionals. We’ll talk more about that when we talk about enums. For now, we can just talk about Swift’s strategy for computing the extra inhabitant count of structs and tuples: pick the element with the highest count and use that.[5](#fn:loop)
+As for the “extra inhabitant count”, that’s a count of memory representations that won’t ever be valid values of the type, meaning the runtime can use them to represent `nil` in Optionals. We’ll talk more about that when we talk about enums. For now, we can just talk about Swift’s strategy for computing the extra inhabitant count of structs and tuples: pick the element with the highest count and use that.^[5](#fn:loop)
 
 ```
 extraInhabitantCount = fieldTypes.lazy.map { $0.extraInhabitantCount }.max() ?? 0

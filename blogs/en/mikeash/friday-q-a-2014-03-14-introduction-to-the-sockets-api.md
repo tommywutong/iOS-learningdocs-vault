@@ -162,13 +162,7 @@ When reading and writing data to a socket, you _must_ write your code to accept 
     } while(writeCursor < count);
 ```
 
-Really, this is not quite correct. I'm trying to skip over error handling, but there is one error case that can't be ignored here. It is possible for a
-
-or
-
-call to return an
-
-error, which is a transient error that indicates that the system call was interrupted somehow. It doesn't indicate a failure, but rather just requires that you try the call again. Here's corrected code for that:
+Really, this is not quite correct. I'm trying to skip over error handling, but there is one error case that can't be ignored here. It is possible for a `read` or `write` call to return an `EINTR` error, which is a transient error that indicates that the system call was interrupted somehow. It doesn't indicate a failure, but rather just requires that you try the call again. Here's corrected code for that:
 
 ```
     int writeCursor = 0;
@@ -364,7 +358,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-03-14-introduction-to-the-sockets-api.html)
 
 Add your thoughts, post a comment:
 

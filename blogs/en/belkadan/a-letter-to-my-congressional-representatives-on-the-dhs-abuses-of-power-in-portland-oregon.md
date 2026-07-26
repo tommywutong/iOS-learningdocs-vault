@@ -7,7 +7,7 @@ original_language: en
 published: 2020-07-18
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7d9581f99818e58d'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 > Dear Speaker Pelosi / Senator Harris / Senator Feinstein,
 > 
-> There are a lot of crises happening right now, and I could write a letter three pages long simply detailing my fears and frustrations and what I would hope from Congress. “There are a lot of crises” is already a terrifying sentence I never would have hoped to see in my lifetime. But the one that is most concerning at this moment is the abuse of power by the Department of Homeland Security in Portland, Oregon.more In an NPR interview, Deputy Secretary Ken Cuccinelli confirmed that federal agents have used unmarked vehicles to detain at least one protestor, and at the same time did not confirm whether it was /only/ one protestor. [1]
+> There are a lot of crises happening right now, and I could write a letter three pages long simply detailing my fears and frustrations and what I would hope from Congress. “There are a lot of crises” is already a terrifying sentence I never would have hoped to see in my lifetime. But the one that is most concerning at this moment is the abuse of power by the Department of Homeland Security in Portland, Oregon. In an NPR interview, Deputy Secretary Ken Cuccinelli confirmed that federal agents have used unmarked vehicles to detain at least one protestor, and at the same time did not confirm whether it was /only/ one protestor. [1]
 > 
 > ACLU Oregon director Jann Carson said this in the New York Times: “What is happening now in Portland should concern everyone in the United States. Usually when we see people in unmarked cars forcibly grab someone off the street, we call it kidnapping. The actions of the militarized federal officers are flat-out unconstitutional and will not go unanswered.” [2]
 > 

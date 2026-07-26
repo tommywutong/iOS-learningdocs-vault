@@ -65,23 +65,7 @@ As it turns out, there's no particular magic to make this work. It's just pure b
     }
 ```
 
-The first line is an ugly macro that hides the secret to how TFB works on this side of things. It checks the
-
-of the object to see if it matches
-
-. If it doesn't, then it's not a "real"
-
-, but just some other Objective-C class. In that case, the CoreFoundation code doesn't know how to look up the length, so it just sends the
-
-message to the object and returns the result. This is how custom subclasses work. If it
-
-a "real"
-
-, then it simply calls
-
-which does the actual work of looking up the length of the string within the
-
-structure, and returns that value.
+The first line is an ugly macro that hides the secret to how TFB works on this side of things. It checks the `isa` of the object to see if it matches `NSCFString`. If it doesn't, then it's not a "real" `CFString`, but just some other Objective-C class. In that case, the CoreFoundation code doesn't know how to look up the length, so it just sends the `length` message to the object and returns the result. This is how custom subclasses work. If it _is_ a "real" `CFString`, then it simply calls `__CFStrLength` which does the actual work of looking up the length of the string within the `CFString` structure, and returns that value.
 
 In short: every CoreFoundation function for a TFB class first checks to see if the object being passed in is a "real" CoreFoundation object or a pure Objective-C class. If it's pure Objective-C, it simply calls through to the Objective-C side, and it's done. Otherwise, it proceeds normally. This is why I said it's pure brute force: every single function call has one of these checks at the top in order to make TFB work.
 
@@ -116,7 +100,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-01-22-toll-free-bridging-internals.html)
 
 Add your thoughts, post a comment:
 

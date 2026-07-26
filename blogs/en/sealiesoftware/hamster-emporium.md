@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1677d42ee6c7924c'
 translated: false
 ---
@@ -64,4 +64,4 @@ translated: false
 | 2007-4-21 3:01 AM: | [![(link)](http://sealiesoftware.com/link.gif)](http://sealiesoftware.com/blog/archive/2007/4/21/objc_explain_return_value_of_message_to_nil.html) [[objc explain]: return value of message to nil](http://sealiesoftware.com/blog/archive/2007/4/21/objc_explain_return_value_of_message_to_nil.html) |
 | 2007-4-21 3:00 AM: | [![(link)](http://sealiesoftware.com/link.gif)](http://sealiesoftware.com/blog/archive/2007/4/21/Reboot.html) [Reboot](http://sealiesoftware.com/blog/archive/2007/4/21/Reboot.html) |
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

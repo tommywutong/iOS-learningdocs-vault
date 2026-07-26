@@ -7,7 +7,7 @@ original_language: en
 published: 2023-02-12
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:24c3a078f587bf6f'
 translated: false
 ---

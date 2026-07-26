@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:db4bbe8ff73e5f8a'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Possibly the most controversial new feature in Swift 4.2 is _dynamic member lookup_, introduced by [Swift Evolution proposal SE-0195](https://github.com/apple/swift-evolution/blob/master/proposals/0195-dynamic-member-lookup.md).
 
-`@dynamicMemberLookup` is a new attribute that can be applied to a class, struct, enum, or protocol declaration.[1](#fn:1) Instances of a `@dynamic​Member​Lookup` type can be called with _any_ property-style accessor (using dot notation) — the compiler won’t emit an error if a property with the given name doesn’t exist.
+`@dynamicMemberLookup` is a new attribute that can be applied to a class, struct, enum, or protocol declaration.^[1](#fn:1) Instances of a `@dynamic​Member​Lookup` type can be called with _any_ property-style accessor (using dot notation) — the compiler won’t emit an error if a property with the given name doesn’t exist.
 
 # Runtime lookup for properties
 
@@ -160,7 +160,7 @@ json[0]?.name?.first?.stringValue
 
 ## Choosing the correct return type
 
-Observe again that we as authors of the `JSON` type have full flexibility over the return type(s) of our dynamic member subscript(s). This gives us complete freedom[2](#fn:2) how to handle unsuccessful lookups. Do you want your type to behave like a [`Dictionary`](https://developer.apple.com/documentation/swift/dictionary), returning `nil` when a key can’t be found? Make your return type [optional](https://developer.apple.com/documentation/swift/optional). Do you prefer trapping on invalid input? Make the return type non-optional and call [`fatalError`](https://developer.apple.com/documentation/swift/1538698-fatalerror) in your implementation.
+Observe again that we as authors of the `JSON` type have full flexibility over the return type(s) of our dynamic member subscript(s). This gives us complete freedom^[2](#fn:2) how to handle unsuccessful lookups. Do you want your type to behave like a [`Dictionary`](https://developer.apple.com/documentation/swift/dictionary), returning `nil` when a key can’t be found? Make your return type [optional](https://developer.apple.com/documentation/swift/optional). Do you prefer trapping on invalid input? Make the return type non-optional and call [`fatalError`](https://developer.apple.com/documentation/swift/1538698-fatalerror) in your implementation.
 
 This is why the proposal stresses that dynamic member lookup is fully type safe despite the fact that name resolution is happening at runtime and can obviously fail — the point is that (a) the author of a type has complete control over the runtime behavior, and (b) the user of the type can infer how to handle the return value from the subscript’s return type.
 
@@ -174,7 +174,7 @@ It’s important to understand that `@dynamic​Member​Lookup` isn’t some so
 
 That brings me to the central question. Is the syntactic sugar worth it? Should you replace all your existing subscripts with `@dynamic​Member​Lookup`? I don’t think so.
 
-Yes, the syntax is cleaner and more readable, but I’d argue this comes at the expense of clarity in most cases. By hiding a fundamentally “unsafe”[3](#fn:3) string lookup behind the seemingly “safe” construct of member access using dot notation, you may give readers of your code the wrong impression that the compiler has been able to check your code for typos etc.[4](#fn:4)
+Yes, the syntax is cleaner and more readable, but I’d argue this comes at the expense of clarity in most cases. By hiding a fundamentally “unsafe”^[3](#fn:3) string lookup behind the seemingly “safe” construct of member access using dot notation, you may give readers of your code the wrong impression that the compiler has been able to check your code for typos etc.^[4](#fn:4)
 
 Syntax highlighting can help some: Xcode can color declared members differently than dynamic lookups. But not everyone can use an editor with good syntax highlighting, and even Xcode can’t help you if you accidentally insert a typo into a dynamic member lookup expression. (The same is true if you put a typo in a normal string-based subscript, of course. But at least it’s clear to readers of the code that this is a somewhat risky operation.)
 

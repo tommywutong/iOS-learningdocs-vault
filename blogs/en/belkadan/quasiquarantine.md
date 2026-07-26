@@ -7,7 +7,7 @@ original_language: en
 published: 2019-12-24
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:626010fd92deab6d'
 translated: false
 ---
@@ -32,7 +32,7 @@ In Apple’s TN2206, “[macOS Code Signing in Depth](https://developer.apple.co
 > - Download it from its website, or mail it to yourself, or send it to yourself using AirDrop or Message. This will quarantine the downloaded copy. This is necessary to trigger the Gatekeeper check as Gatekeeper only checks quarantined files the first time they’re opened.
 > - Drag-install your app and launch it.
 
-I figured jumping through a “download” or “send” step was overkill. Surely there’s a way to get the same effect programmatically, right?more Turns out the answer is yes, and here’s the code to do it:
+I figured jumping through a “download” or “send” step was overkill. Surely there’s a way to get the same effect programmatically, right? Turns out the answer is yes, and here’s the code to do it:
 
 ```
 #!/usr/bin/swift

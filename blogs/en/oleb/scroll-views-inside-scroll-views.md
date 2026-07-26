@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ef5b8063910cde8e'
 translated: false
 ---
@@ -25,9 +25,7 @@ In this article, I am introducing [`OLEContainerScrollView`](https://github.com/
 You can use `OLEContainerScrollView` to achieve the following things:
 
 - Place multiple scroll views (or table views, or collection views) below each other so that their scrolling behavior still feels perfectly normal. In the case of table and collection views, the built-in cell reuse functionality is not affected.
-- or
-
-  into multiple simple data sources by splitting a table or collection view with multiple sections into one view per section and placing them below each other.
+- Turn one complex `UITableViewDataSource` or `UICollectionViewDataSource` into multiple simple data sources by splitting a table or collection view with multiple sections into one view per section and placing them below each other.
 - Add header or footer views above or below a collection view without the need to have them managed by the collection view layout. These views can themselves be simple UIViews or UIScrollViews.
 
 # Cell Reuse in Table and Collection Views
@@ -42,10 +40,10 @@ Before we take a look at the implementation, let’s review how table views and 
 
 Placing multiple scroll views into a common container scroll view is actually pretty straightforward:
 
-- that acts as the container view for the inner scroll views.
+- Create a `UIScrollView` that acts as the container view for the inner scroll views.
 - Add the inner scroll views to the container view. These can be plain scroll views or table/collection views.
-- . Position the inner scroll views below each other.
-- to the combined size of the frames of its children.
+- Make the frames of the inner scroll views big enough to fit their entire `contentSize`. Position the inner scroll views below each other.
+- Set the container view’s `contentSize` to the combined size of the frames of its children.
 
 By making the frames of the inner scroll views large enough to fit their entire content size, we ensure that they will never need to scroll. The only view that reacts to scrolling gestures is the container view. This avoids any interference between the inner scroll views and the container view in responding to gestures.
 
@@ -70,21 +68,13 @@ As a subview gets added, the container view performs these steps:
 
 During scrolling, the container view continuously adjusts the frames of its child views in the following manner:
 
-- For regular
+- Iterate over all child views in the order they were added and position them in a stacked layout (each view below its predecessor). The width of all views is adjusted to fit the width of the container view.^[1](#fn:1) For regular `UIView`s, reserve space according to the height of their `frame` rectangle. For scroll views, reserve enough vertical space to fit their `contentSize.height`. This means that the view coming after a scroll view will be positioned so far down that there is enough space above it to fit the scroll view’s entire content size.
 
-  s, reserve space according to the height of their
-
-  rectangle. For scroll views, reserve enough vertical space to fit their
-
-  . This means that the view coming after a scroll view will be positioned so far down that there is enough space above it to fit the scroll view’s entire content size.
-
-- to the combined content size of all child views.
+- Set the container view’s `contentSize` to the combined content size of all child views.
 
 So far, this follows the naïve approach discussed above. What we want to do now is adjust the frames of any scroll views in the container view to the absolute minimum size required to fill the current viewport of the container view ([represented by its `bounds` rectangle](https://oleb.net/blog/2014/04/understanding-uiscrollview/)):
 
-- whether its content rectangle intersects with the current viewport, and set its frame accordingly. This means that any scroll view’s frame will never be larger than the container view’s size, and views that are not in the visible region will have their frame heights set to
-
-  .
+- Determine for each scroll view in the container view^[2](#fn:2) whether its content rectangle intersects with the current viewport, and set its frame accordingly. This means that any scroll view’s frame will never be larger than the container view’s size, and views that are not in the visible region will have their frame heights set to `0`.
 
 Have a look at the video below to see how the algorithm works. At the beginning, the first table view fills the viewport of the container view (depicted by the black outline) entirely — its frame (light blue background) is equal to the container view’s bounds. The second table view is fully outside the viewport — its frame has a height of `0`, it is not visible. Consequently, it did not have to create any cells yet (the dashed orange outlines).
 

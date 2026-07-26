@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3c74aed2bc6a1567'
 translated: false
 ---
@@ -40,12 +40,10 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Git](https://
 
 ## Older Posts
 
-1. 2020-01-22
-
-  Setting up gitweb on Shared Hosting
+1. 2020-01-22[Setting up gitweb on Shared Hosting](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/?tag=running-a-website)
 
 ### Possibly Related Tags
 
-- Apache
-- Git
-- Tech industry
+- [Apache](https://belkadan.com/blog/tags/apache)
+- [Git](https://belkadan.com/blog/tags/git)
+- [Tech industry](https://belkadan.com/blog/tags/tech-industry)

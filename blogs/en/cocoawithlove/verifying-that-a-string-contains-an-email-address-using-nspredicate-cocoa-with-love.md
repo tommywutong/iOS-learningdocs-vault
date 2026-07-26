@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2c6a7f67e2b554b1'
 translated: false
 ---
@@ -70,9 +70,7 @@ NSArray *rowsMatchingPredicate = [rows filteredArrayUsingPredicate:johnSmithPred
 
 This is then more like an SQL query where we have selected matching rows from the larger table of data.
 
-> handles filtering only. If you'd like to replicate SQL's "ORDER BY" clause, you can apply
-> 
-> as a separate step.
+> **Note:**`NSPredicate` handles filtering only. If you'd like to replicate SQL's "ORDER BY" clause, you can apply `NSSortDescriptor` as a separate step.
 
 ## Verifying an email address
 

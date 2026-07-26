@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0c5891af42939beb'
 translated: false
 ---
@@ -135,9 +135,7 @@ Normally, it is better to avoid libcrypto on the iPhone. The other functions tha
 
 - md5 — use the CommonCrypto implementation `CC_MD5`
 - sha — use the CommonCrypto implementation `CC_SHA`
-- /
-
-  functions in the Security framework
+- Public/Private Key Encryption/Decryption — use the `SecKeyEncrypt`/`SecKeyDecrypt` functions in the Security framework
 
 You can find the documentation for the Security Framework by performing a standard Xcode API lookup. For some reason though, the CommonCrypto functions only appear in a full-text search.
 
@@ -247,9 +245,7 @@ This is the only part which makes the decode stage sub-optimal. If you had Base6
 
 ## Conclusion
 
-> NSData+Base64 class and header
-> 
-> (4kB).
+> Download the [NSData+Base64 class and header](https://www.cocoawithlove.com/assets/objc-era/NSData_Base64.zip) (4kB).
 
 In this post, I've shown you how to use the default command-line and library options for Base64 handling on Mac OS X. I've also shown you the approach I use for Base64 encoding and decoding on the iPhone.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6e7f56b85411b4d3'
 translated: false
 ---
@@ -48,19 +48,15 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https:
 
 ## Older Posts
 
-1. 2020-04-01
-
-  Swift on Mac OS 9
-2. 2018-01-29
-
-  Color Palette #8
+1. 2020-04-01[Swift on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=mac-os-classic)
+2. 2018-01-29[Color Palette #8](https://belkadan.com/blog/2018/01/Color-Palette-8/?tag=mac-os-classic)
 
 ### Possibly Related Tags
 
-- April Fools
-- Compilers
-- Filesystems
-- Games
-- Graphics
-- ROSE-8
-- Swift
+- [April Fools](https://belkadan.com/blog/tags/april-fools)
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Filesystems](https://belkadan.com/blog/tags/filesystems)
+- [Games](https://belkadan.com/blog/tags/games)
+- [Graphics](https://belkadan.com/blog/tags/graphics)
+- [ROSE-8](https://belkadan.com/blog/tags/rose-8)
+- [Swift](https://belkadan.com/blog/tags/swift)

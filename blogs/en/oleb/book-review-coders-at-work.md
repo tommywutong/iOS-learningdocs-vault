@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:72916e49c2fa69ba'
 translated: false
 ---
@@ -16,57 +16,27 @@ translated: false
 
 # Book Review: Coders at Work
 
-![Coders at Work book cover](https://oleb.net/media/coders-at-work-cover-133x200.jpg)
+[![Coders at Work book cover](https://oleb.net/media/coders-at-work-cover-133x200.jpg)](https://www.amazon.com/Coders-at-Work-Peter-Seibel/dp/1430219483/)
 
 In 2007, Jessica Livingston wrote a book called [Founders at Work](https://www.amazon.com/Founders-Work-Stories-Startups-Problem-Solution/dp/1430210788/), in which she interviewed a number of tech entrepeneurs about their experiences in the early days of their startups. I enjoyed that book very much, and so I was quite excited to see that [Peter Seibel](http://www.gigamonkeys.com/blog/) recently wrote what could be called the second part of what I hope will be a series of interview books. Instead of founders, this time it is all about programmers, and the title of the book is [Coders at Work: Reflections on the Craft of Programming](https://www.amazon.com/Coders-at-Work-Peter-Seibel/dp/1430219483/) (released in late 2009).
 
 _Coders at Work_ consists of extensive interviews (each interview some 40 pages long) with 15 of the best-known programmers of the last 4 decades:
 
-- Jamie Zawinski
-
-  , author of XEmacs and the Unix version of Netscape Navigator.
-- Brad Fitzpatrick
-
-  , creator of LiveJournal, author of memcached.
-- Douglas Crockford
-
-  , creator of JSON.
-- Brendan Eich
-
-  , inventor of JavaScript.
-- Joshua Bloch
-
-  , author of the Java Collections Framework.
-- Joe Armstrong
-
-  , inventor of Erlang.
-- Simon Peyton Jones
-
-  , Co-creator of Haskell.
-- Peter Norvig
-
-  , Director of Research at Google.
-- Guy Steele
-
-  , Co-designer of Scheme.
-- Dan Ingalls
-
-  , principal creator of Smalltalk.
-- L. Peter Deutsch
-
-  , author of Ghostscript and implementor of Smalltalk-80.
-- Ken Thompson
-
-  , creator of Unix.
-- Fran Allen
-
-  , pioneer in optimizing compilers.
-- Bernie Cosell
-
-  , one of the guys who wrote the first routers (Interface Message Processors) for the Arpanet.
-- Donald Knuth
-
-  , über-father and creator of TeX.
+- [Jamie Zawinski](https://en.wikipedia.org/wiki/Jamie_Zawinski), author of XEmacs and the Unix version of Netscape Navigator.
+- [Brad Fitzpatrick](https://en.wikipedia.org/wiki/Brad_Fitzpatrick), creator of LiveJournal, author of memcached.
+- [Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford), creator of JSON.
+- [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), inventor of JavaScript.
+- [Joshua Bloch](https://en.wikipedia.org/wiki/Joshua_Bloch), author of the Java Collections Framework.
+- [Joe Armstrong](https://armstrongonsoftware.blogspot.com/), inventor of Erlang.
+- [Simon Peyton Jones](https://en.wikipedia.org/wiki/Simon_Peyton_Jones), Co-creator of Haskell.
+- [Peter Norvig](https://en.wikipedia.org/wiki/Peter_Norvig), Director of Research at Google.
+- [Guy Steele](https://en.wikipedia.org/wiki/Guy_Steele), Co-designer of Scheme.
+- [Dan Ingalls](https://en.wikipedia.org/wiki/Dan_Ingalls), principal creator of Smalltalk.
+- [L. Peter Deutsch](https://en.wikipedia.org/wiki/L_Peter_Deutsch), author of Ghostscript and implementor of Smalltalk-80.
+- [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson), creator of Unix.
+- [Fran Allen](https://en.wikipedia.org/wiki/Frances_E._Allen), pioneer in optimizing compilers.
+- [Bernie Cosell](http://www.codersatwork.com/bernie-cosell.html), one of the guys who wrote the first routers (Interface Message Processors) for the Arpanet.
+- [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth), über-father and creator of TeX.
 
 The interviews follow the same broad structure: Peter Seibel asks everyone how they got into programming; how they learned it in the first place and how they perfected their skills; which programming languages they like and which they hate; which editors, IDEs and debugging tools they use; how they approach the design of a program, top-down or bottom-up; etc. In addition to the general questions, Seibel digs deep into the projects his subjects are famous for: How did they end up working on these projects? What was it like? How was the project team organized? What did you learn? What were the hardest problems to solve, the fiercest bugs to squash?
 

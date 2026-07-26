@@ -57,111 +57,27 @@ Don't worry if this doesn't make too much sense; thanks to UAL, the meaning of t
 **Registers**  
 ARM specifies sixteen general-purpose registers and one status register for application use. NEON further defines sixteen 128-bit vector registers which overlap with the set of thirty-two double precision floating-point registers used by the earlier VFP specification (these in turn overlap with the set of thirty-two single precision registers). Registers with multiple names can be referred to by either name with the same result, though by convention it is always preferred to use a name (such as `lr`) over a number (such as `r14`) except in specific situations. Of these fifteen, several are reserved for specific purposes.
 
-- - The first four GPRs are used for argument passing and return values, but are freely available for use as scratch storage within a function.
-- - The next three GPRs, as well as
+- `r0-r3` - The first four GPRs are used for argument passing and return values, but are freely available for use as scratch storage within a function.
+- `r4-r6, r8, r10, r11` - The next three GPRs, as well as `r8`, `r10`, and `r11` are documented as being preserved across function calls, but are also otherwise available for use.
+- `r7` - On iOS, `r7` is the frame pointer, much as `rbp` is in x86_64. The ARM architecture in general does not specify a use for `r7`; this is specific to iOS. _To be exact, ARM specifies `r11` as `fp`, but Apple chose not to use that register on iOS, and avoided the `fp` name so as not to make their assembler incompatible with other ARM implementations._
+- `r9` - On iOS 2.x, `r9` is a special register used by the OS for unspecified purposes and must not be modified. On iOS 3.0 and above, `r9` is free for use and does not need to be preserved across function calls.
+- `r12`, `ip` - `r12` is the "intra-procedure scratch register". Between calls, it has the same semantics as `r9` and does not have to be preserved. It is also called `ip` (_not_ to be confused with x86_64's `rip` register - they are _not_ similar), and is used as such for computing destination addresses for long branches.
+- `r13`, `sp` - `r13`, also called `sp`, is the stack pointer. This serves the same purpose as `rsp` on x86_64 and works in much the same way.
+- `r14`, `lr` - The link register is loaded by the `bl` and `blx` instructions, which make subroutine calls (much as `call` does on x86_64). ARM dedicates a register to storing the return address for a call rather than relying on the stack to hold it. This means that a subroutine can, at least in theory, operate without ever touching the stack at all, an important win in real-time and embedded systems.
+- `r15`, `pc` - The program counter holds the address of the next instruction to be excuted. It is the counterpart to x86_64's `rip` register. Some non-branch instructions can access `pc` directly, but it is very strongly discouraged except in very specific situations (for example, as we'll see below, it is a common technique to push `lr` to the stack in a prolog and pop the value into `pc` in an epilogue, which results in a return from subroutine).
+- `q0-q15` - A set of sixteen 128-bit vector registers which are used for parameter passing, result values, and scratch computation. Of these, `q4-q7` are preserved across function calls.
+- `d0-d31` - A set of thirty-two 64-bit double-precision floating-point registers. These are mapped onto the corresponding vector registers such that `d0` and `d1` are the low and high 64 bits of `q0`, `d2` and `d3` are the low and high 64 bits of `q1`, and so on.
+- `s0-s31` - A set of thirty-two 32-bit single-precision floating-point registers. These are mapped onto the corresponding double-precision registers such that `s0` and `s1` are the low and high bits of `d0`, and so forth. This also implies that `s0-s3` are the four 32-bit components of `q0`.
+- `cpsr` - The CPU's status register, partially equivelant to `rflags` in x86_64. It has the following bits, most of which are not preserved across function calls:
 
-  ,
-
-  , and
-
-  are documented as being preserved across function calls, but are also otherwise available for use.
-- - On iOS,
-
-  is the frame pointer, much as
-
-  is in x86_64. The ARM architecture in general does not specify a use for
-
-  ; this is specific to iOS.
-- - On iOS 2.x,
-
-  is a special register used by the OS for unspecified purposes and must not be modified. On iOS 3.0 and above,
-
-  is free for use and does not need to be preserved across function calls.
-- ,
-
-  -
-
-  is the "intra-procedure scratch register". Between calls, it has the same semantics as
-
-  and does not have to be preserved. It is also called
-
-  (
-
-  to be confused with x86_64's
-
-  register - they are
-
-  similar), and is used as such for computing destination addresses for long branches.
-- ,
-
-  -
-
-  , also called
-
-  , is the stack pointer. This serves the same purpose as
-
-  on x86_64 and works in much the same way.
-- ,
-
-  - The link register is loaded by the
-
-  and
-
-  instructions, which make subroutine calls (much as
-
-  does on x86_64). ARM dedicates a register to storing the return address for a call rather than relying on the stack to hold it. This means that a subroutine can, at least in theory, operate without ever touching the stack at all, an important win in real-time and embedded systems.
-- ,
-
-  - The program counter holds the address of the next instruction to be excuted. It is the counterpart to x86_64's
-
-  register. Some non-branch instructions can access
-
-  directly, but it is very strongly discouraged except in very specific situations (for example, as we'll see below, it is a common technique to push
-
-  to the stack in a prolog and pop the value into
-
-  in an epilogue, which results in a return from subroutine).
-- - A set of sixteen 128-bit vector registers which are used for parameter passing, result values, and scratch computation. Of these,
-
-  are preserved across function calls.
-- - A set of thirty-two 64-bit double-precision floating-point registers. These are mapped onto the corresponding vector registers such that
-
-  and
-
-  are the low and high 64 bits of
-
-  ,
-
-  and
-
-  are the low and high 64 bits of
-
-  , and so on.
-- - A set of thirty-two 32-bit single-precision floating-point registers. These are mapped onto the corresponding double-precision registers such that
-
-  and
-
-  are the low and high bits of
-
-  , and so forth. This also implies that
-
-  are the four 32-bit components of
-
-  .
-- - The CPU's status register, partially equivelant to
-
-  in x86_64. It has the following bits, most of which are not preserved across function calls:
-
-    - - Negative flag, i.e. the sign bit of the result of a computation.
-    - - Zero flag, i.e. whether a result is equal to zero.
-    - - Carry flag, i.e. whether an addition carried or a subtraction borrowed.
-    - - Overflow flag, i.e. whether a computation result overflowed its destination.
-    - - Saturation flag, i.e. whether a computation resulted in saturation; this is used by instructons that saturate on overflow (i.e. set all bits to 1 rather than wrapping around the integer range).
-    - - The Greater than or Equal flags, used by parallel arithmetic instructions to represent the results from several additions or subtractions at once.
-    - - Endianness. The ARM architecture supports switching the endianness mode of the CPU at runtime, but iOS specifies that this bit must always remain zero for little-endian mode.
-    - - Thumb. This is the status flag which determines whether Thumb or ARM code is being executed. It can not be modified directly and the preservation of its value is context-dependant. (There is also a
-
-      flag for Jazelle mode, but iOS does not implement or use it.)
+    - `N` - Negative flag, i.e. the sign bit of the result of a computation.
+    - `Z` - Zero flag, i.e. whether a result is equal to zero.
+    - `C` - Carry flag, i.e. whether an addition carried or a subtraction borrowed.
+    - `V` - Overflow flag, i.e. whether a computation result overflowed its destination.
+    - `Q` - Saturation flag, i.e. whether a computation resulted in saturation; this is used by instructons that saturate on overflow (i.e. set all bits to 1 rather than wrapping around the integer range).
+    - `GE` - The Greater than or Equal flags, used by parallel arithmetic instructions to represent the results from several additions or subtractions at once.
+    - `E` - Endianness. The ARM architecture supports switching the endianness mode of the CPU at runtime, but iOS specifies that this bit must always remain zero for little-endian mode.
+    - `T` - Thumb. This is the status flag which determines whether Thumb or ARM code is being executed. It can not be modified directly and the preservation of its value is context-dependant. (There is also a `J` flag for Jazelle mode, but iOS does not implement or use it.)
     - All other bits are system-level and can only be accessed by privileged code.
 
 **Calling conventions**  
@@ -258,12 +174,8 @@ Whew! For a function built with an instruction set specifically designed to be s
 Some quick notes about ARM assembler syntax:
 
 - The order of operands in an ARM instruction is reversed from the "GAS" (GNU ASsembler) syntax used by the x86_64 assembler. A typical instruction is "mnemonic destination, operand1, operand2". This is ironically closer to the original Intel assembler syntax.
-- rather than
-
-  .
-- prefixed by
-
-  .
+- Immediate operands are delimited with `#` rather than `$`.
+- Register names are _not_ prefixed by `%`.
 
 Let's see what we can make of `main`:
 
@@ -411,7 +323,7 @@ Let's take a quick look at the floating-point operations:
                 .long        3197737370
 ```
 
-1. .
+1. Declare a Thumb function `MyFPFunction`.
 2. ```
               vmov.f32        s2, #5.000000e-01
               vldr.32        s0, LCPI7_0
@@ -445,7 +357,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-12-30-disassembling-the-assembly-part-3-arm-edition.html)
 
 Add your thoughts, post a comment:
 

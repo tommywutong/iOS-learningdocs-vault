@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3213fa876eb5ec0c'
 translated: false
 ---
@@ -43,6 +43,12 @@ To me, the same genius can be seen in [`UICollectionViewFlowLayout`](https://dev
 I tweeted this the other day:
 
 > In a few months, GitHub will be full of UICollectionViewLayout subclasses.
+> 
+> [@olebegemann](https://twitter.com/olebegemann)
+> 
+> Ole Begemann
+> 
+> [September 19, 2012](https://twitter.com/olebegemann/status/248380531690045440)
 
 Maybe, UICollectionView_Flow_Layout subclasses would have been more accurate.
 

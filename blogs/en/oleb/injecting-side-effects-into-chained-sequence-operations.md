@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:67aadd57b1bb63b1'
 translated: false
 ---
@@ -20,7 +20,7 @@ A few weeks ago a reader [pointed out an error](https://twitter.com/jasonalexzur
 
 > And it [`forEach`] really shines as part of a sequence of chained operations. For instance, imagine you’ve chained several calls to `map` and `filter` in a single statement, and during debugging you want to log the intermediate values somewhere in the middle of the chain. Inserting a `forEach` step at the desired position is probably the quickest way to do this.
 
-I imagine there was a lot of wishful thinking at play when we wrote this because it sounds like a truly useful feature[1](#fn:1) (and it’s something you can’t do with a `for`-`in` loop). Alas, it’s completely wrong — you can’t use `forEach` in the middle of a chain like this!
+I imagine there was a lot of wishful thinking at play when we wrote this because it sounds like a truly useful feature^[1](#fn:1) (and it’s something you can’t do with a `for`-`in` loop). Alas, it’s completely wrong — you can’t use `forEach` in the middle of a chain like this!
 
 # How I’d like it to work
 
@@ -170,7 +170,7 @@ extension LazySequenceProtocol {
 
 This method differs in several aspects from the non-lazy version:
 
-- because we’re storing it.
+- The function parameter must be `@escaping` because we’re storing it.
 - It doesn’t support throwing functions because that wouldn’t work with lazy evaluation.
 - The return value is not marked as discardable because a lazy operation that no one ever executes later doesn’t make any sense.
 

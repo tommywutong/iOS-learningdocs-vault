@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1bac4365c5dfba47'
 translated: false
 ---
@@ -24,13 +24,13 @@ But first, let’s take a closer look how coordinate systems work in UIKit. Feel
 
 Every [view](https://developer.apple.com/library/ios/documentation/uikit/reference/UIView_Class/UIView/UIView.html) defines its own coordinate system. It looks like this, with the x-axis pointing to the right and the y-axis pointing down:
 
-![A standard x/y coordinate system with the x-axis pointing right and the y-axis pointing down](https://oleb.net/media/uikit-coordinate-system-1400px.png)
+[![A standard x/y coordinate system with the x-axis pointing right and the y-axis pointing down](https://oleb.net/media/uikit-coordinate-system-1400px.png)](https://oleb.net/media/uikit-coordinate-system.png)
 
 <sub>A UIView coordinate system.</sub>
 
-Note that this logical coordinate system does not concern itself with the width and height of the view. It has no boundaries and extends infinitely in all four directions.[1](#fn:1) Now let’s lay out a few items (a.k.a. subviews) in this coordinate system. Each colored rectangle stands for a subview:
+Note that this logical coordinate system does not concern itself with the width and height of the view. It has no boundaries and extends infinitely in all four directions.^[1](#fn:1) Now let’s lay out a few items (a.k.a. subviews) in this coordinate system. Each colored rectangle stands for a subview:
 
-![Four rectangles with different colors and sizes placed at different coordinates in the coordinate system](https://oleb.net/media/uikit-coordinate-system-with-subviews.png)
+[![Four rectangles with different colors and sizes placed at different coordinates in the coordinate system](https://oleb.net/media/uikit-coordinate-system-with-subviews.png)](https://oleb.net/media/uikit-coordinate-system-with-subviews.png)
 
 <sub>Adding subviews to the coordinate system.</sub>
 
@@ -67,9 +67,9 @@ The `UIView` documentation says this about the [`bounds`](https://developer.appl
 
 **A view can be considered a window or viewport into a rectangular area of the plane defined by its coordinate system.** And the view’s `bounds` express the location and size of this rectangle.
 
-Say our view’s `bounds` rectangle has a width and height of 320 by 480 points and its origin is the default `(0, 0)`. The view becomes a viewport into the coordinate system plane, displaying a small part of the entire plane. Everything outside the bounds is still there, only hidden:[2](#fn:2)
+Say our view’s `bounds` rectangle has a width and height of 320 by 480 points and its origin is the default `(0, 0)`. The view becomes a viewport into the coordinate system plane, displaying a small part of the entire plane. Everything outside the bounds is still there, only hidden:^[2](#fn:2)
 
-![A viewport of 320 by 480 points provides a viewport into the coordinate system. Some of the rectangles are inside the viewport and some outside.](https://oleb.net/media/uikit-coordinate-system-viewport.png)
+[![A viewport of 320 by 480 points provides a viewport into the coordinate system. Some of the rectangles are inside the viewport and some outside.](https://oleb.net/media/uikit-coordinate-system-viewport.png)](https://oleb.net/media/uikit-coordinate-system-viewport.png)
 
 <sub>A view provides a viewport into the plane defined by its coordinate system. The view’s bounds rectangle describe the position and size of the visible area.</sub>
 
@@ -85,7 +85,7 @@ mainView.bounds = bounds;
 
 The origin of the bounds rectangle is now at `(0, 100)` so our scene looks like this:
 
-![The viewport has moved down by 100 points, making a different area of the coordinate system visible.](https://oleb.net/media/uikit-coordinate-system-viewport-scrolled.png)
+[![The viewport has moved down by 100 points, making a different area of the coordinate system visible.](https://oleb.net/media/uikit-coordinate-system-viewport-scrolled.png)](https://oleb.net/media/uikit-coordinate-system-viewport-scrolled.png)
 
 <sub>Modifying the origin of the bounds rectangle is equivalent to moving the viewport.</sub>
 
@@ -95,7 +95,7 @@ It looks as though the view has moved down by 100 points, and this is in fact tr
 
 Since the view’s position is fixed (from its own perspective), think of the coordinate system plane as a piece of transparent film we can drag around, and of the view as a fixed window we are looking through. Adjusting the `bounds`’s origin is equivalent to moving the transparent film such that another part of it becomes visible through the view:
 
-![Animation illustrating the movement of the coordinate system caused by a change of the bounds origin](https://oleb.net/media/uikit-coordinate-system-bounds-animation.gif)
+[![Animation illustrating the movement of the coordinate system caused by a change of the bounds origin](https://oleb.net/media/uikit-coordinate-system-bounds-animation.gif)](https://oleb.net/media/uikit-coordinate-system-bounds-animation.gif)
 
 <sub>Modifying the origin of the bounds rectangle is equivalent to moving the coordinate system in the opposite direction while the view’s position remains fixed because its frame does not change.</sub>
 
@@ -159,7 +159,7 @@ Just like the real `UIScrollView`, our class has a `contentSize` property that m
 
 The result:
 
-![Animated GIF showing our custom scroll view implementation](https://oleb.net/media/custom-scrollview-animation.gif)
+[![Animated GIF showing our custom scroll view implementation](https://oleb.net/media/custom-scrollview-animation.gif)](https://oleb.net/media/custom-scrollview-animation.gif)
 
 <sub>Our custom scroll view in action. Note that it lacks momentum scrolling, bouncing, and scroll indicators.</sub>
 

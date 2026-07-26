@@ -7,7 +7,7 @@ original_language: en
 published: 2018-10-30
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4fe17b247f4bb4b1'
 translated: false
 ---
@@ -153,3 +153,5 @@ Qualcomm’s switch to UEFI for their bootloader firmware took more than a gener
 
 - Modifying and repacking a Qualcomm bootloader.
 - Finding a way to chainload a modified bootloader without touching the original bootloader
+
+[https://worthdoingbadly.com/qcomxbl/](https://worthdoingbadly.com/qcomxbl/)

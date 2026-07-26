@@ -25,18 +25,11 @@ by [Mike Ash](https://www.mikeash.com/)
 
 I assume everybody reading this knows what Cocoa is, but may not know what the other two parts are:
 
-- A clean, fairly modern "scripting" language. Its object model is much like Smalltalk, in that pretty much everything is an object and there are no primitives, but the syntax is more C-like. Significantly, for the purposes of this article, Python provides a nice, friendly command-line interpreter that you can access by typing
+- **Python:** A clean, fairly modern "scripting" language. Its object model is much like Smalltalk, in that pretty much everything is an object and there are no primitives, but the syntax is more C-like. Significantly, for the purposes of this article, Python provides a nice, friendly command-line interpreter that you can access by typing `python` into your nearest terminal window.
+- **PyObjC:** A language bridge between Python and Objective-C. It will translate or proxy objects from one language into objects in the other language, bi-directionally. Allows you to write Cocoa apps partly or entirely in Python, and also lets you poke at Cocoa from Python's interpreter.
 
-  into your nearest terminal window.
-- A language bridge between Python and Objective-C. It will translate or proxy objects from one language into objects in the other language, bi-directionally. Allows you to write Cocoa apps partly or entirely in Python, and also lets you poke at Cocoa from Python's interpreter.
-
-PyObjC gets implicitly loaded whenever you load one of the Python modules that need it. Most system frameworks have a corresponding Python module. To load such a module, you can enter
-
-at the Python command line. However, since Python supports namespaces, this requires putting
-
-before any symbol inside that framework that you want to use. This is usually a good thing for "real" code, but if we're just going to experiment with things from the command line, it's better to avoid that. You can tell Python to import everything in the framework into the top-level namespace instead with
-
-. Then you can use symbols from the framework directly. Example:
+**Basics**  
+ PyObjC gets implicitly loaded whenever you load one of the Python modules that need it. Most system frameworks have a corresponding Python module. To load such a module, you can enter `import FrameworkName` at the Python command line. However, since Python supports namespaces, this requires putting `FrameworkName.` before any symbol inside that framework that you want to use. This is usually a good thing for "real" code, but if we're just going to experiment with things from the command line, it's better to avoid that. You can tell Python to import everything in the framework into the top-level namespace instead with `from FrameworkName import *`. Then you can use symbols from the framework directly. Example:
 
 ```
     >>> from Foundation import *
@@ -90,7 +83,7 @@ Instead, you can do a simple pass into Cocoa first to get it to work:
     3
 ```
 
-(Of course in this specific example, you could just use the built in Python way of getting the length, with
+(Of course in this specific example, you could just use the built in Python way of getting the length, with `len('abc').)`
 
 **Errors**  
  Cocoa methods that return `NSError` instances by reference get special treatment by PyObjC. Python cleanly supports returning multiple values from a method, but doesn't cleanly support return-by-reference, so PyObjC translates the `NSError` return by reference into a multiple return. You just assign two variables to the result of the method, and then pass `None` (Python's version of `nil` for the `NSError` argument. Example:
@@ -102,9 +95,7 @@ Instead, you can do a simple pass into Cocoa first to get it to work:
     'Error Domain=NSCocoaErrorDomain Code=257 UserInfo=0x11994b610 "The file \xe2\x80\x9cFear\xe2\x80\x9d couldn\xe2\x80\x99t be opened because you don\xe2\x80\x99t have permission to view it." Underlying Error=(Error Domain=NSPOSIXErrorDomain Code=13 "The operation couldn\xe2\x80\x99t be completed. Permission denied")'
 ```
 
-I have to engage in a bit of trickery to print the error object at the end because of the non-ASCII characters it contains. If I just try to print
-
-directly, Python will complain that its description can't be converted to ASCII, so I have to manually get the description and convert it to UTF-8 for printing.
+I have to engage in a bit of trickery to print the error object at the end because of the non-ASCII characters it contains. If I just try to print `error` directly, Python will complain that its description can't be converted to ASCII, so I have to manually get the description and convert it to UTF-8 for printing.
 
 **Arrays and Dictionaries**  
  A Python array can be written like this:
@@ -200,7 +191,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-11-20-probing-cocoa-with-pyobjc.html)
 
 Add your thoughts, post a comment:
 

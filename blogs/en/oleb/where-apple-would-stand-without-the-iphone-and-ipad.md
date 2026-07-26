@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:512a6288696ab08c'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Have a look at this chart which I compiled after [Apple’s recent quarterly earnings report](http://www.apple.com/pr/library/2011/04/20results.html):
 
-![Apple Revenue by Product Line 2007 Q3–2011 Q2](https://oleb.net/media/apple-revenue-2007q3-2011q2.png)
+[![Apple Revenue by Product Line 2007 Q3–2011 Q2](https://oleb.net/media/apple-revenue-2007q3-2011q2.png)](https://oleb.net/media/apple-revenue-2007q3-2011q2.png)
 
 <sub>Apple Revenue by Product Line Q3 2007–Q2 2011. Source: [Apple's Quarterly Earnings Releases](http://phx.corporate-ir.net/phoenix.zhtml?c=107357&p=irol-news).   
  As of Q1 2010, Apple has adopted different accounting principles that particularly affect recognition of iPhone revenue. Earlier numbers have not been adjusted.</sub>

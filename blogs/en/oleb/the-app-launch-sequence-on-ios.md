@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:15f92b7b9e1174b8'
 translated: false
 ---
@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
 
 The function’s arguments `argc` and `argv` contain info about the command-line arguments passed to the executable on launch. We can safely ignore them for this discussion. Let’s have a look at what the function does, which seems to be very litte:
 
-1. call would fail).
-2. . We will take a deeper look at it below.
+1. It creates an autorelease pool because in every Cocoa app one must exist at all times (otherwise, an `autorelease` call would fail).
+2. It calls a function named `UIApplicationMain()`. We will take a deeper look at it below.
 3. It drains the autorelease pool it just created.
-4. to its caller (which is the shell that launched the executable).
+4. It returns the return value of `UIApplicationMain()` to its caller (which is the shell that launched the executable).
 
 When an (Objective-)C program reaches the end of `main()`, it ends. So this looks like a very short program indeed. Nevertheless, this is how all iOS apps work, so the secret must be the `UIApplicationMain()` function. Should it ever return, our program would end immediately.
 
@@ -53,7 +53,7 @@ Looking at the documentation for `UIApplicationMain()`, we find this:
 
 Let’s take this apart step by step:
 
-![App Launch Sequence on iOS 4](https://oleb.net/media/ios-4-app-launch-flow.png)
+[![App Launch Sequence on iOS 4](https://oleb.net/media/ios-4-app-launch-flow.png)](https://oleb.net/media/ios-4-app-launch-flow.png)
 
 <sub>Flowchart of the app launch sequence on iOS 4. Feel free to share this image under a [Creative Commons Attribution license](http://creativecommons.org/licenses/by/3.0/) (CC-BY).</sub>
 
@@ -70,19 +70,9 @@ Let’s take this apart step by step:
 
 You see, there is no magic here. Besides `application:didFinishLaunchingWithOptions:`, there are several more entry points for custom code during the launch sequence (none of which are usually needed):
 
-- before
-
-  is called.
-- method of a custom
-
-  subclass.
-- or
-
-  methods of our application delegate if it is created from a NIB file (the default).
-- methods of our application delegate class or a custom
-
-  subclass. Any class receives an
-
-  message before it is sent its first message from within the program.
+- Directly in `main()` before `UIApplicationMain()` is called.
+- The `init` method of a custom `UIApplication` subclass.
+- The `initWithCoder:` or `awakeFromNib` methods of our application delegate if it is created from a NIB file (the default).
+- The `+initialize` methods of our application delegate class or a custom `UIApplication` subclass. Any class receives an `+initialize` message before it is sent its first message from within the program.
 
 Note that this sequence only happens at the actual _launch_ of an app. If the app is already running and simply brought back from the background, none of this occurs.

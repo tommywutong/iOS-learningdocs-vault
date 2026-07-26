@@ -43,12 +43,12 @@ Cocoa makes this so easy that we can be lulled into a false sense of security. H
 
 Actually, quite a lot:
 
-1. Maybe the file doesn't exist at that path, maybe it exists but the permissions don't allow you to read it, etc.
-2. Maybe the file got trashed by another program. Or by yours!
-3. Especially possible for files outside your app bundle.
-4. Ditto.
-5. 2TB drives can be had for well under $200 now, and a single file could be enormous. What happens if the file you're pointing at is 2TB long?
-6. Network filesystems like AFP are extremely common these days, and networks can be slow.
+1. **The file is unreadable:** Maybe the file doesn't exist at that path, maybe it exists but the permissions don't allow you to read it, etc.
+2. **The file is truncated or empty:** Maybe the file got trashed by another program. Or by yours!
+3. **The file contains an unexpected data format:** Especially possible for files outside your app bundle.
+4. **The file contains unexpected data in the format you want:** Ditto.
+5. **The file contains an enormous amount of data:** 2TB drives can be had for well under $200 now, and a single file could be enormous. What happens if the file you're pointing at is 2TB long?
+6. **The file takes an unreasonable amount of time to read:** Network filesystems like AFP are extremely common these days, and networks can be slow.
 
 How many of these failure modes does a typical Cocoa program actually handle in any sort of explicit fashion? Generally zero. Depending on the context, these failures could lead to a freeze, a crash, weird behavior, or nothing going wrong at all.
 
@@ -58,13 +58,7 @@ Even extremely mundane code can "fail". For example:
     int x = y + z;
 ```
 
-What happens if the sum of
-
-is greater than
-
-, or less than
-
-? The result, while not a "failure" in the sense of a freeze or crash, may not be what the code expects.
+What happens if the sum of `y + z` is greater than `INT_MAX`, or less than `INT_MIN`? The result, while not a "failure" in the sense of a freeze or crash, may not be what the code expects.
 
 **Ways to Fail**  
  There are a lot of ways that a program can respond to a failure. Ranked from worst to best:
@@ -75,9 +69,7 @@ is greater than
 4. Display an error
 5. Work around the failure
 
-It should be obvious why #1 is the worst. No matter how much your program crashes or fails to do its job, the worst it can do is be useless. But if you destroy your user's data, then your program can actually acquire
-
-value. When he discover the culprit, the user will wish he had never tried your program, and he will tell all of his friends about this.
+It should be obvious why #1 is the worst. No matter how much your program crashes or fails to do its job, the worst it can do is be useless. But if you destroy your user's data, then your program can actually acquire _negative_ value. When he discover the culprit, the user will wish he had never tried your program, and he will tell all of his friends about this.
 
 Everything after #1 is acceptable to some degree. Working around the failure isn't always possible; what if the user is opening a file and the file isn't readable? Ideally, displaying an error is the worst that would ever happen. In reality, it's not practical to trap every failure so that you can display an error message.
 
@@ -101,11 +93,11 @@ Above all, make sure you test these fallback and retry paths! Many errors are ra
 As illustration, consider these two scenarios.
 
 1. Your application crashes in a dealloc method called from NSPopAutoreleasePool called from the main event loop. No messages are logged.
-2. after logging:
+2. Your application crashes in `abort()` after logging:  
+  `Warning: couldn't read file /some/path: error: Error Domain=NSCocoaErrorDomain Code=260 UserInfo=0x100605690 "The file "path" couldn't be opened because there is no such file." Underlying Error=(Error Domain=NSPOSIXErrorDomain Code=2 "The operation couldn't be completed. No such file or directory"`  
+  `assertion failure in -[SomeClass someMethod] line 42: fileData != nil, aborting`
 
-Your response to #1 is likely that nameless dread that we get when seeing a really difficult bug. Your response to #2 is, "Oh, I guess I should put a more intelligent handler in
-
-."
+Your response to #1 is likely that nameless dread that we get when seeing a really difficult bug. Your response to #2 is, "Oh, I guess I should put a more intelligent handler in `someMethod`."
 
 There are two big tricks to making your app be more like #2.
 
@@ -122,9 +114,7 @@ The second trick is to be liberal with asserts. The trick with asserts is that t
     assert(fd >= 0);
 ```
 
-You can easily have
-
-fail, and you'll want better handling than just asserting and blowing up. This is the sort of thing you should be able to get back to the user in the form of a real error message somehow, even if it's not a very useful one. If the error message can't be useful, and the failure isn't considered "normal", consider logging more thorough information right at the site of failure so that the console logs will at least be informative to you.
+You can easily have `open` fail, and you'll want better handling than just asserting and blowing up. This is the sort of thing you should be able to get back to the user in the form of a real error message somehow, even if it's not a very useful one. If the error message can't be useful, and the failure isn't considered "normal", consider logging more thorough information right at the site of failure so that the console logs will at least be informative to you.
 
 On the other hand, this is a good way to use asserts:
 
@@ -151,7 +141,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-10-09-defensive-programming.html)
 
 Add your thoughts, post a comment:
 

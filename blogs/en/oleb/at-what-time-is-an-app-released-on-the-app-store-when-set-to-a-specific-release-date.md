@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1668c0d61b5b7665'
 translated: false
 ---
@@ -25,32 +25,92 @@ To illustrate this, let me document some tweets from the day the [Tapbots](http:
 At midnight (local time), Tweetbot appears on the App Store New Zealand. Tweetbot developer Paul Haddad begins to wonder what’s up. Federico Viticci has the explanation:
 
 > F*ckin' Timezones. How do they work?
+> 
+> [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> tapbot_paul
+> 
+> [April 13, 2011 13:00 GMT](https://twitter.com/tapbot_paul/status/58182894492975105)
 
 > [@tapbot_paul](https://twitter.com/tapbot_paul/status/58182894492975105) The App Store's timezone system sucks. App is rolling out at 12AM internationally.
+> 
+> [@viticci](https://twitter.com/viticci)
+> 
+> Federico Viticci
+> 
+> [April 13, 2011 15:01 GMT](https://twitter.com/viticci/status/58183093101658114)
 
 > [@viticci](https://twitter.com/viticci/status/58183093101658114) I figured that might happen but for some reason thought it would start at midnight GMT
+> 
+> [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> tapbot_paul
+> 
+> [April 13, 2011 15:03 GMT](https://twitter.com/tapbot_paul/status/58183489949929472)
 
 > [@tapbot_paul](https://twitter.com/tapbot_paul/status/58183489949929472) Nah. It always begins in Japan and New Zealand, then slowly rolls out basing on timezone.
+> 
+> [@viticci](https://twitter.com/viticci)
+> 
+> Federico Viticci
+> 
+> [April 13, 2011 15:04 GMT](https://twitter.com/viticci/status/58183686411124737)
 
 A few hours later, Tweetbot says Hello to Japan as it is released on the Japanese App Store. Meanwhile, Paul has to answer lots of questions from users for whom Tweetbot is not yet available:
 
 > Konichiwa!
+> 
+> [@tweetbot](https://twitter.com/tweetbot)
+> 
+> Tweetbot for iPhone
+> 
+> [April 13, 2011 15:43 GMT](https://twitter.com/tweetbot/status/58193686219063296)
 
 > For folks upset Tweetbot isn't available in your store yet blame Sandford Fleming and the International Date Line. Or Apple, I suppose.
+> 
+> [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> tapbot_paul
+> 
+> [April 13, 2011 17:02 GMT](https://twitter.com/tapbot_paul/status/58213409308680192)
 
 Just after 11 pm GMT (midnight in the UK and 1 am in Western Europe), Tweetbot has appeared on the European App Stores.
 
 > Looks like its midnight in Europe and the UK stores. Only US/Canada/World left.
+> 
+> [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> tapbot_paul
+> 
+> [April 13, 2011 23:08 GMT](https://twitter.com/tapbot_paul/status/58305646835138561)
 
 US users still have to wait:
 
 > [fwdr.org/yu8v](http://fwdr.org/yu8v) Can somebody please tell me why the FUCK Tweetbots isn't showing up for me no matter what I do? Kthx. cc: [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> [@rockets](https://twitter.com/rockets)
+> 
+> Buzz Bellamonté
+> 
+> [April 14, 2011 00:17 GMT](https://twitter.com/rockets/status/58323067927150592)
 
 > [@rockets](https://twitter.com/rockets/status/58323067927150592) not out in the US yet, you have to wait a few more hours.
+> 
+> [@tapbot_paul](https://twitter.com/tapbot_paul)
+> 
+> tapbot_paul
+> 
+> [April 14, 2011 00:20 GMT](https://twitter.com/tapbot_paul/status/58323755197399040)
 
 Finally, 16 hours after New Zealand, Tweetbot goes live on the US App Store:
 
 > Tweetbot is live in the US App Store, our review is up! [mcstr.net/fkW2Vn](http://mcstr.net/fkW2Vn)
+> 
+> [@viticci](https://twitter.com/viticci)
+> 
+> Federico Viticci
+> 
+> [April 14, 2011 03:02 GMT](https://twitter.com/viticci/status/58364488155537408)
 
 **Update #1 May 6, 2011:** Ben Zotto wonders [whether this policy also applies to other App Store dates such as price changes or holiday shutdown deadlines](https://twitter.com/bzotto/status/66284027589566464). I don’t know, though I believe at least the daily sales numbers are also calculated based on each international App Store’s local time. I guess that’s one reason why Apple releases the daily sales numbers only around 1:00–2:00 pm GMT the next day (a few hours after the day ended in the “last” App Store).
 

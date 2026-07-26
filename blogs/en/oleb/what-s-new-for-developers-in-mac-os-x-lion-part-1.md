@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:36bc048e85d1f7c1'
 translated: false
 ---
@@ -58,7 +58,7 @@ This is one of the biggest new developer features. The familiar springs and stru
 
 Each constraint is represented by an instance of `NSLayoutConstraint` attached to a view. The best thing: not only does Interface Builder support autolayout in Xcode 4.1, Apple has also developed a domain-specific language called the [Visual Format Language](http://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/AutolayoutPG/Articles/formatLanguage.html#//apple_ref/doc/uid/TP40010853-CH3-SW1) which makes it dead easy to specify autolayout constraints in code with just a little bit of ASCII art that makes for very readable code.
 
-![Examples of the Cocoa Autolayout Visual Format Language syntax](https://oleb.net/media/cocoa-autolayout-format-syntax.png)
+[![Examples of the Cocoa Autolayout Visual Format Language syntax](https://oleb.net/media/cocoa-autolayout-format-syntax.png)](https://oleb.net/media/cocoa-autolayout-format-syntax.png)
 
 <sub>Examples of the Cocoa Autolayout Visual Format Language syntax.</sub>
 
@@ -74,7 +74,7 @@ Apple lists the following advantages over autosizing masks:
 
 For more information, check out the [Cocoa Autolayout Guide](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/).
 
-![Editing Cocoa Autolayout constraints in Interface Builder in Xcode 4.1](https://oleb.net/media/xcode-4-1-editing-autolayout-screenshot.png)
+[![Editing Cocoa Autolayout constraints in Interface Builder in Xcode 4.1](https://oleb.net/media/xcode-4-1-editing-autolayout-screenshot.png)](https://oleb.net/media/xcode-4-1-editing-autolayout-screenshot.png)
 
 <sub>Editing Cocoa Autolayout constraints in Interface Builder in Xcode 4.1.</sub>
 
@@ -84,10 +84,10 @@ Lion’s beautiful full-screen mode is off by default but it takes just one line
 
 A window is taken into or out of fullscreen mode with the [`-toggleFullScreen:`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/Reference/Reference.html#//apple_ref/occ/instm/NSWindow/toggleFullScreen:) action. The [`NSWindowDelegate`](https://developer.apple.com/reference/appkit/nswindowdelegate) protocol was also extended by several new methods that inform the delegate about the entering and exiting of full-screen mode and allow it to set a custom [content size](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/window:willUseFullScreenContentSize:) and [presentation options](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/window:willUseFullScreenPresentationOptions:) for full-screen display. You can also customize the animation into and out of full-screen mode with the following methods:
 
-- `-window:startCustomAnimationToEnterFullScreenWithDuration:`
-- `-window:startCustomAnimationToExitFullScreenWithDuration:`
-- `-customWindowsToEnterFullScreenForWindow:`
-- `-customWindowsToExitFullScreenForWindow:`
+- [`-window:startCustomAnimationToEnterFullScreenWithDuration:`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/window:startCustomAnimationToEnterFullScreenWithDuration:)
+- [`-window:startCustomAnimationToExitFullScreenWithDuration:`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/window:startCustomAnimationToExitFullScreenWithDuration:)
+- [`-customWindowsToEnterFullScreenForWindow:`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/customWindowsToEnterFullScreenForWindow:)
+- [`-customWindowsToExitFullScreenForWindow:`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSWindowDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/NSWindowDelegate/customWindowsToExitFullScreenForWindow:)
 
 The [`NSApplication`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40004004) instance includes the `NSApplicationPresentationFullScreen` flag in its [`-presentationOptions`](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSApplication_Class/Reference/Reference.html#//apple_ref/occ/instm/NSApplication/presentationOptions) when an app is currently in full-screen mode.
 
@@ -105,7 +105,7 @@ While Mac OS X will probably never be as locked down as iOS, Apple offers apps t
 
 Enabling sandboxing is as easy as checking a few checkboxes in Xcode 4.1. By doing so, you restrict your app’s access to the file system and network, certain hardware components such as camera, microphone, USB ports and printer as well as privacy-sensitive APIs like the address book, calendar and location services.
 
-![Application Sandboxing settings in Xcode 4.1](https://oleb.net/media/xcode-4-1-sandboxing-screenshot.png)
+[![Application Sandboxing settings in Xcode 4.1](https://oleb.net/media/xcode-4-1-sandboxing-screenshot.png)](https://oleb.net/media/xcode-4-1-sandboxing-screenshot.png)
 
 <sub>Application Sandboxing settings in Xcode 4.1.</sub>
 

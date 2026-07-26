@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e3e6f4bd4fbca345'
 translated: false
 ---
@@ -22,7 +22,7 @@ I ended [the previous article](https://oleb.net/blog/2016/07/measurements-and-un
 
 # A common form for equations
 
-At the moment, the different `Unit…` classes don’t know anything about each other. As far as the type system is concerned, they are independent entities.[1](#fn:1) In reality, though, quantities are connected to each other, and we express these relations in equations. We have already seen one example above, here are some more:
+At the moment, the different `Unit…` classes don’t know anything about each other. As far as the type system is concerned, they are independent entities.^[1](#fn:1) In reality, though, quantities are connected to each other, and we express these relations in equations. We have already seen one example above, here are some more:
 
 | Dependencies between physical quantities |
 |---|

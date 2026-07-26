@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ff61efb32e2c14ea'
 translated: false
 ---
@@ -18,21 +18,13 @@ translated: false
 
 ### November
 
-1. 27
-
-  What's in a Button?
+1. 27[What's in a Button?](https://belkadan.com/blog/2025/11/Whats-in-a-Button/)
 
 ### April
 
-1. 01
-
-  SICPelago
+1. 01[SICPelago](https://belkadan.com/blog/2025/04/SICPelago/)
 
 ### January
 
-1. 12
-
-  ROSE-8 in customasm
-2. 06
-
-  “Pretty Good, Pretty Good”
+1. 12[ROSE-8 in customasm](https://belkadan.com/blog/2025/01/ROSE-8-in-customasm/)
+2. 06[“Pretty Good, Pretty Good”](https://belkadan.com/blog/2025/01/Pretty-Good-Pretty-Good/)

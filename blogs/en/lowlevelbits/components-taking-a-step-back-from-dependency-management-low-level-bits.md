@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0c6a617469f9325b'
 translated: false
 ---
@@ -48,17 +48,9 @@ Having that said, we have built our concept with the question `How to manage com
 
 The implementation of the concept is pretty simple and robust. Just a few things are needed to make it work:
 
-- ) that will contain ready-for-use components
-- ) that contains set of makefiles, one for each component (e.g.:
-
-  ,
-
-  , etc.)
-- ) that will iterate over those
-
-  makefiles and run
-
-  (or any other defined rule) for every one of them
+- directory (`Components`) that will contain ready-for-use components
+- directory (`Components.make`) that contains set of makefiles, one for each component (e.g.: `AFNetworking.make`, `BloodMagic.make`, etc.)
+- driver script (`components.sh`) that will iterate over those `.make` makefiles and run `make install` (or any other defined rule) for every one of them
 
 ##### Ready for use components
 
@@ -68,23 +60,11 @@ Directory `Components` is intended to contain ready for use components in a form
 
 Due to our conventions each makefile should provide a set of ‘rules’:
 
-- : installs component into
-
-  directory
-- : removes component from
-
-  directory
-- : removes intermediate files (build artefacts, downloaded sources, etc.)
-- : drops current version, installs new one (
-
-  and
-
-  )
-- : removes everything related to component (
-
-  and
-
-  )
+- `install`: installs component into `Components` directory
+- `uninstall`: removes component from `Components` directory
+- `clean`: removes intermediate files (build artefacts, downloaded sources, etc.)
+- `update`: drops current version, installs new one (`uninstall` and `install`)
+- `purge`: removes everything related to component (`uninstall` and `clean`)
 
 They are might be extended in the future, but we have found this set sufficient for everyday use.
 
@@ -539,7 +519,7 @@ Also, the tool operates only on three directories, which means that you could cr
 Our implementation of the concept is fast because:
 
 - the tool doesn’t resolve dependencies, it just installs them
-- each action will be executed only once, so once component was downloaded, extracted or build - any of these actions will not happen again (of course unless you delete those files)
+- because of nature of `GNU/Make` each action will be executed only once, so once component was downloaded, extracted or build - any of these actions will not happen again (of course unless you delete those files)
 - the tool stores components locally on your machine, once you installed specific version of component it may be reused by other project, hence you don’t need to download and build it again
 
 #### Stability

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b5c6c9ed00ec16f6'
 translated: false
 ---
@@ -64,12 +64,8 @@ Oh look, I’ve managed to find one of the few scenarios where UIKit is more syn
 
 Let’s ignore that because there’s a more important difference.
 
-- of the window – a
-
-  property – and that triggered the view update.
-- – my
-
-  property – and that triggered the view update.
+- In UIKit, I changed the `subviews` of the window – a **UIKit** property – and that triggered the view update.
+- In SwiftUI, I changed `showSubview` – my **own** property – and that triggered the view update.
 
 What difference does that make?
 
@@ -85,16 +81,8 @@ In SwiftUI, it should be obvious that `View`s construct themselves however, it�
 
 To explain how this works, I want to look a little closer at the two different kinds of `View`:
 
-1. return
-
-  from their
-
-  function
-2. return another
-
-  from their
-
-  function because they really just serve to configure and aggregate underlying views and may hold observable state
+1. **built-in views** return `Never` from their `body` function
+2. **compositional views** return another `View` from their `body` function because they really just serve to configure and aggregate underlying views and may hold observable state
 
 You could break each of these into sub categories but this is enough for the purposes of this article.
 
@@ -227,20 +215,8 @@ Text(isRead ? "Mark as unread" : "Mark as read")
 
 These lines clearly show:
 
-1. reading
-
-  (a property used in multiple parts of the program and definitely not unique to this button label in the
-
-  )
-2. to give a default value when
-
-  and then
-
-  to transform the
-
-  into a display
-
-  .
+1. the `detailView` reading `model.isReadStatuses` (a property used in multiple parts of the program and definitely not unique to this button label in the `detailView`)
+2. the code performs two transformations on the value: `x ?? false` to give a default value when `nil` and then `isRead ? a : b` to transform the `Bool` into a display `String`.
 
 Each of these are violations of the principles that an MVVM program should aim to follow.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ec186dd0e5e7553a'
 translated: false
 ---
@@ -30,10 +30,8 @@ It isn't that difficult. Sending data between threads (including notifications) 
 
 Simple thread safety in Cocoa requires just two rules:
 
-1. list of explicity thread-safe classes
-
-  ).
-2. and both the receiver and the "object" should belong (or be handed over) to the target thread.
+1. Every variable or object must nominally belong to a thread (although may be completely handed over to a different thread) and must not be used in multiple threads without handover (unless it is on the [list of explicity thread-safe classes](http://developer.apple.com/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html)).
+2. All communication between threads (after thread startup) should use `performSelector:onThread:withObject:waitUntilDone:` and both the receiver and the "object" should belong (or be handed over) to the target thread.
 
 The only limitation with this approach is that any thread that _receives_ communication must be running an `NSRunLoop`. Since communication after construction is normally one-way (from worker thread back to the main thread) this is rarely a significant limitation. Other threads can invoke the `[NSRunLoop currentRunLoop]`'s `runMode:beforeDate` to process the run loop and receive messages.
 
@@ -167,26 +165,10 @@ Some classes follow a different behavior of delivering notifications to the thre
 
 You may have noticed that the notification is passing "`self`" from one thread to another — breaking the thread ownership of "`self`". This is only really safe in one of the following cases:
 
-- — the parameter will never be used on this thread again.
-
-  In this case, if "
-
-  " is complete on the worker thread (for example at the bottom of the
-
-  method shown above). In this case, the object is passing itself back to the other thread.
-- — if the class or specific methods are guaranteed to be thread-safe.
-
-  In this case, if the only methods invoked on
-
-  are
-
-  ,
-
-  and the default pointer comparison
-
-  method (these are the methods invoked when removing from an
-
-  ). These are guaranteed thread-safe methods.
+- **Handover** — the parameter will never be used on this thread again.  
+  In this case, if "`self`" is complete on the worker thread (for example at the bottom of the `main` method shown above). In this case, the object is passing itself back to the other thread.
+- **Thread-safe** — if the class or specific methods are guaranteed to be thread-safe.  
+  In this case, if the only methods invoked on `self` are `retain`, `release` and the default pointer comparison `isEqual:` method (these are the methods invoked when removing from an `NSMutableArray`). These are guaranteed thread-safe methods.
 
 If neither of these are true then you can't pass `self` (or any other parameter) safely between threads.
 

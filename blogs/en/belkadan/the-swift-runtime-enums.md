@@ -7,7 +7,7 @@ original_language: en
 published: 2020-10-20
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:41f2ef88872bcf87'
 translated: false
 ---
@@ -26,13 +26,13 @@ translated: false
 
 ## [The Swift Runtime: Enums](#)
 
-Welcome to the seventh in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. We’ve talked about structs and classes, so the obvious next choice is enums, the last of Swift’s three “concrete” user-definable types.more
+Welcome to the seventh in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. We’ve talked about structs and classes, so the obvious next choice is enums, the last of Swift’s three “concrete” user-definable types.
 
 As mentioned previously, I implemented my stripped-down runtime in Swift as much as possible, though I had to use a few undocumented Swift features to do so. I’ll be showing excerpts of my runtime code throughout these posts, and you can check out the full thing [in the ppc-swift repository](https://belkadan.com/source/ppc-swift-project/tree/refs/heads/dev:/stdlib/_Runtime).
 
 ### “Discriminated unions”
 
-Enums in Swift are defined by a set of cases, each of which may or may not have a payload. The most famous enum is Optional[1](#fn:bool), which has one case with a payload and one without:
+Enums in Swift are defined by a set of cases, each of which may or may not have a payload. The most famous enum is Optional^[1](#fn:bool), which has one case with a payload and one without:
 
 ```
 enum Optional<Wrapped> {
@@ -66,7 +66,7 @@ enum NamedColor<ColorSpace> {
 }
 ```
 
-A no-payload enum is like a C enum: its cases are just mutually-exclusive names. That means the compiler can just assign each case a numeric representation, and we’re done. There’s no run-time layout necessary.[2](#fn:evolution) Of course, a no-payload enum can still have generic parameters, which might get used in methods and such, but there’s nothing _stored_ in the enum values that’s generic, so nothing needs to be done beyond the existing logic in [`swift_allocate­Generic­ValueMetadata`](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/).
+A no-payload enum is like a C enum: its cases are just mutually-exclusive names. That means the compiler can just assign each case a numeric representation, and we’re done. There’s no run-time layout necessary.^[2](#fn:evolution) Of course, a no-payload enum can still have generic parameters, which might get used in methods and such, but there’s nothing _stored_ in the enum values that’s generic, so nothing needs to be done beyond the existing logic in [`swift_allocate­Generic­ValueMetadata`](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/).
 
 There’s one other twist on no-payload enums compared to C enums: if you use Swift’s “raw value” support, the representation in memory might still be different from the raw value:
 
@@ -84,7 +84,7 @@ enum Multiplier: Int {
 }
 ```
 
-The current implementation of the compiler represents the value `Multiplier.kilo` as “2”, and also notes that it only takes one byte. When the user asks for `Multiplier.kilo.rawValue`, that’s calling a compiler-generated (and optimized) switch statement to get the raw value, _not_ just reinterpreting the value as an integer. This is good for saving space, as well as for raw values that are strings![3](#fn:objc)
+The current implementation of the compiler represents the value `Multiplier.kilo` as “2”, and also notes that it only takes one byte. When the user asks for `Multiplier.kilo.rawValue`, that’s calling a compiler-generated (and optimized) switch statement to get the raw value, _not_ just reinterpreting the value as an integer. This is good for saving space, as well as for raw values that are strings!^[3](#fn:objc)
 
 That’s pretty much all there is to say about no-payload enums.
 
@@ -343,7 +343,7 @@ extraTagBitAddr.storeUnalignedBigEndianValue(
   size: numExtraTagBytes)
 ```
 
-Finally, we store the two parts of the index in the payload and the extra bytes. But wait, why is the case index being stored in the _last_ four bytes of the payload instead of the first? It’s because the compiler treats the entire payload as one big integer…and on PowerPC running Classic, integers are stored [big-endian](https://en.wikipedia.org/wiki/Endianness#Classical_example). So storing a payload value that’s less than 2³² is never going to use anything but the last four bytes of the payload.[4](#fn:endian)
+Finally, we store the two parts of the index in the payload and the extra bytes. But wait, why is the case index being stored in the _last_ four bytes of the payload instead of the first? It’s because the compiler treats the entire payload as one big integer…and on PowerPC running Classic, integers are stored [big-endian](https://en.wikipedia.org/wiki/Endianness#Classical_example). So storing a payload value that’s less than 2³² is never going to use anything but the last four bytes of the payload.^[4](#fn:endian)
 
 That’s it: we’ve stored our enum case tag! If there’s no payload involved, we’re done, and if there is, the code that called this function will do the rest.
 

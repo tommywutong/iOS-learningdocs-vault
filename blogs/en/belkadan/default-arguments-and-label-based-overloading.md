@@ -7,7 +7,7 @@ original_language: en
 published: 2022-04-24
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9bb107afd2d9daa6'
 translated: false
 ---
@@ -34,20 +34,20 @@ translated: false
 
 This post is in response to Aria Beingessner’s “[Defaults Affect Inference in Rust: Expressions Instead Of Types](https://gankra.github.io/blah/defaults-affect-inference/)”, which describes how adding default arguments to Rust could help with some Rust stdlib problems around generics. At the same time, the Rust internals forum has a thread on “[Named Arguments](https://internals.rust-lang.org/t/pre-rfc-named-arguments/16413)” something that’s been discussed for Rust off and on for years (at varying levels of seriousness).
 
-Here I’m going to discuss how those two features interact, and why considering them separately is potentially a bad idea. It’s a lot more braindump-y than my usual style, so be warned. The post is written with a Rust audience in mind, but makes frequent reference to Swift, Python, and C# as examples of real-world languages that have some version of these features. It also overlaps quite a bit with Aria’s post.more
+Here I’m going to discuss how those two features interact, and why considering them separately is potentially a bad idea. It’s a lot more braindump-y than my usual style, so be warned. The post is written with a Rust audience in mind, but makes frequent reference to Swift, Python, and C# as examples of real-world languages that have some version of these features. It also overlaps quite a bit with Aria’s post.
 
 Contents:
 
-- Terminology
-- Optional Argument Labels
-- Required Argument Labels
-- Default Arguments Without Overloading
-- Default Arguments with Arity-Based Overloading
-- Default Arguments + Optional Labels + Label-Based Overloading
-- Default Arguments + Required Labels + Label-Based Overloading
-- Type Inference
-- “None of this Nonsense, Please”
-- Bonus Information
+- [Terminology](#terminology)
+- [Optional Argument Labels](#optional-argument-labels)
+- [Required Argument Labels](#required-argument-labels)
+- [Default Arguments Without Overloading](#default-arguments-without-overloading)
+- [Default Arguments with Arity-Based Overloading](#default-arguments-with-arity-based-overloading)
+- [Default Arguments + Optional Labels + Label-Based Overloading](#default-arguments--optional-labels--label-based-overloading)
+- [Default Arguments + Required Labels + Label-Based Overloading](#default-arguments--required-labels--label-based-overloading)
+- [Type Inference](#type-inference)
+- [“None of this Nonsense, Please”](#none-of-this-nonsense-please)
+- [Bonus Information](#bonus-information)
 
 ### Terminology
 
@@ -196,12 +196,8 @@ Unfortunately I can’t speak intimately to what this does to Swift’s already-
 
 [ExpHP neatly summed up the main benefits to argument labels as follows:](https://internals.rust-lang.org/t/pre-rfc-named-arguments/16413/35)
 
-> - parameter is at callsites.”
-> - and
-> 
->   rather than
-> 
->   and
+> - Providing library authors with an easier (for the author and for the user) alternative to newtypes/builders for a function which faces the problem of, “it can be unclear what this `bool` parameter is at callsites.”
+> - Letting a library author provide `::new(bar: ...)` and `::new(foo: ...)` rather than `::new_bar` and `::new_foo`
 
 Both of these are nice, but they’re not _major_ improvements in expressiveness. But also, those two features are separable: you can ditch the second and still get the first! That’s the Python route, where argument labels exist (required or optional), but there’s no overloading. And Aria’s goals only depend on default arguments.
 

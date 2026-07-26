@@ -7,7 +7,7 @@ original_language: en
 published: 2007-04-21
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6cdbd2a53f067e4e'
 translated: false
 ---
@@ -42,4 +42,4 @@ translated: false
 
 *beep*
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f7ab2713c59e3323'
 translated: false
 ---
@@ -50,15 +50,11 @@ Posted in [Personal](https://belkadan.com/blog/personal). Tags: [Games](https://
 
 ## Older Posts
 
-1. 2023-08-12
-
-  Multiplayer Slipways
-2. 2009-03-06
-
-  JavaScript Tetris
+1. 2023-08-12[Multiplayer Slipways](https://belkadan.com/blog/2023/08/Multiplayer-Slipways/?tag=games)
+2. 2009-03-06[JavaScript Tetris](https://belkadan.com/blog/2009/03/JavaScript-Tetris/?tag=games)
 
 ### Possibly Related Tags
 
-- April Fools
-- JavaScript
-- Mac OS Classic
+- [April Fools](https://belkadan.com/blog/tags/april-fools)
+- [JavaScript](https://belkadan.com/blog/tags/javascript)
+- [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)

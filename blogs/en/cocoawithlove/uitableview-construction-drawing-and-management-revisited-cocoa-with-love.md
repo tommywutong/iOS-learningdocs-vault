@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:322d5dd4b9344025'
 translated: false
 ---
@@ -22,9 +22,7 @@ In this post, I present a the following sample application.
 
 ![](https://www.cocoawithlove.com/assets/objc-era/TableViewRevisited.png)
 
-> TableDesignRevisited.zip
-> 
-> (65kB)
+> Download the Xcode project for the sample application: [TableDesignRevisited.zip](https://www.cocoawithlove.com/assets/objc-era/TableDesignRevisited.zip) (65kB)
 
 The application contains a top-level table view with 3 sections. Each section in this table view contains a different kind of row, with different construction, drawing and behaviors. The "Simple text" rows display text and are selectable but then simply deselect with no further action. The "Rows loaded from NIBs", when tapped, push in a "Detail View Controller". The "Editable Text Fields" section contains rows you can tap to edit.
 
@@ -36,35 +34,21 @@ This post is a reply to the handful of different readers who have read some of m
 
 The application's use of table views and cells demonstrates numerous, highly advantageous features:
 
-- (i.e. different kinds of) views in a single table without needing conditional code to separate their behaviors
-- — I realize the rows in this sample application may look very similar to Apple's normal
-
-  s in a grouped
-
-  but if you look close, you'll notice the background of the cells is a subtle left-to-right gradient and the tables background is a subtle gradient instead of the standard table texture (and the selection color is totally different). All custom drawing can be easily modified or tweaked to make the application look novel and distinctive or it can be disabled to revert to the default drawing code.
-- UITableView styles (so you're not locked into one aesthetic)
-- insertion and removal of all table view cells
-- and makes the code path for loading tables and cells from NIBs fast and easy
-- . This means that it avoids the
-
-  limitation of only managing the
-
-  — you can load additional views as part of the hierarchy
-- (which is the biggest advantage of
-
-  ) is handled by the custom
-
-  so this
-
-  functionality is retained
+- **heterogeneous** (i.e. different kinds of) views in a single table without needing conditional code to separate their behaviors
+- **fully custom drawn headers, rows and backgrounds** — I realize the rows in this sample application may look very similar to Apple's normal `UITableViewCell`s in a grouped `UITableView` but if you look close, you'll notice the background of the cells is a subtle left-to-right gradient and the tables background is a subtle gradient instead of the standard table texture (and the selection color is totally different). All custom drawing can be easily modified or tweaked to make the application look novel and distinctive or it can be disabled to revert to the default drawing code.
+- all default row and header drawing can handle **either "grouped" or "plain"** UITableView styles (so you're not locked into one aesthetic)
+- **fully animated** insertion and removal of all table view cells
+- the app demonstrates view and cells **constructed both in code and loaded from NIB files** and makes the code path for loading tables and cells from NIBs fast and easy
+- the table is **managed by a custom `UIViewController`, not a `UITableViewController`**. This means that it avoids the `UITableViewController` limitation of only managing the `UITableView` — you can load additional views as part of the hierarchy
+- **view scrolling to avoid text under the keyboard** (which is the biggest advantage of `UITableViewController`) is handled by the custom `UIViewController` so this `UITableViewController` functionality is retained
 
 ## Evolution over time
 
 Some of these features were part of previous posts that I've written, including:
 
-- Heterogeneous cells in a `UITableViewController`
-- Recreating `UITableViewController` to increase code reuse
-- Easy custom `UITableView` drawing
+- [Heterogeneous cells in a `UITableViewController`](https://www.cocoawithlove.com/2008/12/heterogeneous-cells-in.html)
+- [Recreating `UITableViewController` to increase code reuse](https://www.cocoawithlove.com/2009/03/recreating-uitableviewcontroller-to.html)
+- [Easy custom `UITableView` drawing](https://www.cocoawithlove.com/2009/04/easy-custom-uitableview-drawing.html)
 
 The code in this post is probably closest to being a descendant of the original "Heterogeneous cells" post. Many of the ideas for simplifying the `UITableViewController` implementation remain from that post.
 
@@ -193,33 +177,9 @@ The custom drawn views will all draw themselves in the `UITableViewStyleGrouped`
 
 None of the code is hugely groundbreaking in any way. Most of the code simply works because of the default behaviors in the base classes:
 
-- — handles (almost) all data source and delegate methods. If you make this view controller the delegate for any UITextField in the table, it will also handle scrolling of the table and resizing of the view to keep the text field out from underneath the onscreen keyboard.
-- — loads the
-
-  for the
-
-  from a NIB file (if specified). In addition or as an alternative, you can configure or construct the
-
-  in the
-
-  method. This method also provides the
-
-  with information about row including the row height (which can be extracted from the NIB). Other methods include an overrideable set of methods for handling the configuration of the view (used to connect the view and data or otherwise prepare the view for display) and handling touches in the view.
-- — draws a custom cell background in either
-
-  or
-
-  styles. The
-
-  is applied in the
-
-  's
-
-  default implementation (so you can disable it by subclassing this method and not invoking the super implementation). Alternately, if you just want to change the aesthetic of the cell background, you can change the subclass of
-
-  used by overriding the
-
-  method.
+- **PageViewController** — handles (almost) all data source and delegate methods. If you make this view controller the delegate for any UITextField in the table, it will also handle scrolling of the table and resizing of the view to keep the text field out from underneath the onscreen keyboard.
+- **PageCell** — loads the `contentView` for the `UITableViewCell` from a NIB file (if specified). In addition or as an alternative, you can configure or construct the `contentView` in the `finishConstruction` method. This method also provides the `PageViewController` with information about row including the row height (which can be extracted from the NIB). Other methods include an overrideable set of methods for handling the configuration of the view (used to connect the view and data or otherwise prepare the view for display) and handling touches in the view.
+- **PageCellBackground** — draws a custom cell background in either `UITableViewStylePlain` or `UITableViewStyleGroup` styles. The `PageCellBackground` is applied in the `PageCell`'s `configureForData:tableView:indexPath:` default implementation (so you can disable it by subclassing this method and not invoking the super implementation). Alternately, if you just want to change the aesthetic of the cell background, you can change the subclass of `PageCellBackground` used by overriding the `+[PageCell pageCellBackgroundClass]` method.
 
 ## Missing features or situations this won't handle
 
@@ -245,9 +205,7 @@ Distinctive classes in your program should have their distinctive traits applied
 
 ## Conclusion
 
-> TableDesignRevisited.zip
-> 
-> (65kB)
+> Download the Xcode project for the sample application: [TableDesignRevisited.zip](https://www.cocoawithlove.com/assets/objc-era/TableDesignRevisited.zip) (65kB)
 
 The code in this post is not particularly advanced — most regular iOS programmers could easily figure it out for themselves.
 

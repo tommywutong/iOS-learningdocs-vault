@@ -53,7 +53,8 @@ I wrote [a full post on implementing Cocoa initializers](https://www.mikeash.com
     }
 ```
 
-When your object is destroyed, it must clean up after itself. Naturally, you need to be careful when doing this.
+**Deallocation**  
+ When your object is destroyed, it must clean up after itself. Naturally, you need to be careful when doing this.
 
 First, always write your `dealloc` implementation to tolerate an uninitialized or partially initialized object. It's possible that your initializer, or a superclass initializer, will encounter an error and decide to destroy your object before it's fully formed, and your code should tolerate this. You can take advantage of the fact that Objective-C objects start out zero-filled. For example:
 
@@ -68,9 +69,7 @@ First, always write your `dealloc` implementation to tolerate an uninitialized o
     }
 ```
 
-Note that most of the time, you can simply take advantage of the fact that messages to
-
-do nothing, and not have to write any extra code to handle the case of an uninitialized object.
+Note that most of the time, you can simply take advantage of the fact that messages to `nil` do nothing, and not have to write any extra code to handle the case of an uninitialized object.
 
 **Setters**  
  The same thing goes for setters, especially those which are overridden from a superclass. The superclass may call the setter with `nil` to destroy an object rather than directly using `release`. Always write your code to tolerate this. For example:
@@ -89,9 +88,7 @@ do nothing, and not have to write any extra code to handle the case of an uninit
     }
 ```
 
-You should always do this even if you're sure it will never get called with
-
-. It's just good practice, and doesn't hurt.
+You should always do this even if you're sure it will never get called with `nil`. It's just good practice, and doesn't hurt.
 
 **`+initialize`**  
  Just as you have to code defensively when initializing your objects, so do you have to for initializing your classes.
@@ -109,11 +106,7 @@ For example, say you need a global dictionary to hold certain items:
     }
 ```
 
-However, this is dangerous and wrong! The trouble occurs if there's a subclass which doesn't implement
-
-. The runtime still
-
-the message, and so it ends up invoking your version instead. Suddenly you've leaked the old dictionary and lost all of the data in it. Whoops.
+However, this is dangerous and wrong! The trouble occurs if there's a subclass which doesn't implement `+initialize`. The runtime still _sends_ the message, and so it ends up invoking your version instead. Suddenly you've leaked the old dictionary and lost all of the data in it. Whoops.
 
 The fix is simple: just check the identify of `self` before you do your initialization.
 
@@ -127,11 +120,7 @@ The fix is simple: just check the identify of `self` before you do your initiali
     }
 ```
 
-As a general rule, the first line of any
-
-implementation should always be a check of
-
-to ensure that it's the correct class.
+As a general rule, the first line of any `+initialize` implementation should always be a check of `self` to ensure that it's the correct class.
 
 You might be thinking that you didn't write any subclasses and don't plan to, so you don't need to do this. There are two problems with that approach.
 
@@ -208,15 +197,7 @@ The _sane_ way to implement `copyWithZone:` is to either return `[self retain]` 
     }
 ```
 
-The completely
-
-way to implement
-
-is to use the
-
-function. This function allocates a new object of the same class and returns it. The problem is that it also
-
-. These instance variables include things like pointers to objects. It does not retain them, merely copies their value.
+The completely _insane_ way to implement `copyWithZone:` is to use the `NSCopyObject` function. This function allocates a new object of the same class and returns it. The problem is that it also _performs a bitwise copy of all instance variables_. These instance variables include things like pointers to objects. It does not retain them, merely copies their value.
 
 Never, ever, ever use `NSCopyObject`. Easy, right? The problem is that _Cocoa_ uses it, and if you ever subclass Cocoa objects, you have to be aware.
 
@@ -279,19 +260,7 @@ The solution is simple: override `copyWithZone:` and retain or copy the instance
     }
 ```
 
-This works, but is brittle. If the
-
-implementation changed to no longer call
-
-, this implementation will fail, because
-
-will be
-
-. It won't crash, but the copy won't be a proper copy either. And you can't just switch to using
-
-because that crashes the
-
-case. We need code that works equally well for both.
+This works, but is brittle. If the `NSCell` implementation changed to no longer call `NSCopyObject`, this implementation will fail, because `newObj->_someString` will be `nil`. It won't crash, but the copy won't be a proper copy either. And you can't just switch to using `[newObj setSomeString: _someString]` because that crashes the `NSCopyObject` case. We need code that works equally well for both.
 
 The answer is to directly assign to the instance variable of the other object and do memory management at the same time, like so:
 
@@ -304,9 +273,7 @@ The answer is to directly assign to the instance variable of the other object an
     }
 ```
 
-You'll note that it works for both cases. For the sane case, it retains the string and puts the value into the new object's instance variable. For the
-
-case, it overwrites the existing pointer with a new one, but without releasing the old one.
+You'll note that it works for both cases. For the sane case, it retains the string and puts the value into the new object's instance variable. For the `NSCopyObject` case, it overwrites the existing pointer with a new one, but without releasing the old one.
 
 Note that `NSCell` is by far the most commonly subclassed class that conforms to `NSCopying`. If you ever subclass `NSCell` or one of its subclasses, you _must_ implement `copyWithZone:`, and you _must_ do it correctly using the above technique. Otherwise you leave yourself open to extremely mysterious crashes and corruption problems. I've been there, it's no fun.
 
@@ -320,11 +287,7 @@ Don't do this:
     [self corruptImportantDataIfNil: string];
 ```
 
-Instead, check
-
-and use the error if it's
-
-. At the very least, use an assert to nicely stop the current operation rather than continuing with bad data:
+Instead, check `string` and use the error if it's `nil`. At the very least, use an assert to nicely stop the current operation rather than continuing with bad data:
 
 ```
     NSError *error;
@@ -346,9 +309,7 @@ Always at least check for failure and log the error. Even if subsequent code won
     NSAssert(!error, @"Could not load string, error: %@", error);
 ```
 
-Apple reserves the right to fill your
-
-variable with junk upon success. This is a stupid policy, but it's the policy which is there, so you must take it into account.
+Apple reserves the right to fill your `error` variable with junk upon success. This is a stupid policy, but it's the policy which is there, so you must take it into account.
 
 **Weak References**  
  The standard way to set up an `NSTableView` using a data source is to create an object to be the data source, implement the required methods, and then hook up the `dataSource` outlet of the table view. However, if you don't do anything else, this is actually a dangerous setup.
@@ -389,9 +350,7 @@ For example, say you add a `map:` method to NSArray:
     @end
 ```
 
-This is fine now, but if Apple adds their own
-
-method in 10.7, and it doesn't have identical semantics, you'll be in big trouble.
+This is fine now, but if Apple adds their own `map:` method in 10.7, and it doesn't have identical semantics, you'll be in big trouble.
 
 The only way to avoid this is to ensure that your category methods on Apple classes will never have a name conflict. The most obvious way to ensure this is to add a prefix to the method name:
 
@@ -424,7 +383,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-08-27-defensive-programming-in-cocoa.html)
 
 Add your thoughts, post a comment:
 

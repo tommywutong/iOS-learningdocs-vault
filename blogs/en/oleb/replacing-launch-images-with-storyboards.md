@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0094b6b05b63ed2c'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Replacing Launch Images With Storyboards
 
-![The new Launch Screen File option in Xcode 6](https://oleb.net/media/xcode6-launch-screen-file.png)
+[![The new Launch Screen File option in Xcode 6](https://oleb.net/media/xcode6-launch-screen-file.png)](https://oleb.net/media/xcode6-launch-screen-file.png)
 
 <sub>The new _Launch Screen File_ option in Xcode 6.</sub>
 
@@ -50,7 +50,7 @@ You can use the new adaptive UI features in Interface Builder to fit your layout
 
 Despite the name of the `UILaunchStoryboardName` key, this also seems to work with NIB/XIB files containing a single view. When you open such a XIB file in Xcode, the File Inspector displays a check box named _Use as Launch Screen_, which is not there for storyboards. In my tests with Xcode 6 beta 6, checking it seemed to have no effect, however. You still have to set the _Launch Screen File_ in your target settings.
 
-![The Use as Launch Screen check box for NIB files in Interface Builder](https://oleb.net/media/xcode6-nib-file-use-as-launch-screen.png)
+[![The Use as Launch Screen check box for NIB files in Interface Builder](https://oleb.net/media/xcode6-nib-file-use-as-launch-screen.png)](https://oleb.net/media/xcode6-nib-file-use-as-launch-screen.png)
 
 <sub>The _Use as Launch Screen_ check box for NIB files in Interface Builder seems to have no effect.</sub>
 

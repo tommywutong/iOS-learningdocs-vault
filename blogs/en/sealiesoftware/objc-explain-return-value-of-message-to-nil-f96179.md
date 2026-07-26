@@ -7,7 +7,7 @@ original_language: en
 published: 2007-04-21
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1a4d023372966de4'
 translated: false
 ---
@@ -49,4 +49,4 @@ Ints up to 64 bits: 0
 
 **Updated: [return value of message to nil](http://sealiesoftware.com/blog/325904.html)**
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

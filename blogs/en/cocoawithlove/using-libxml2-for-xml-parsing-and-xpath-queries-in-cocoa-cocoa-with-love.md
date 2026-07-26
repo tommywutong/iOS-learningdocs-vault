@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:13c137edad549ffc'
 translated: false
 ---
@@ -47,28 +47,10 @@ The only difference between the two listed functions is that the the first expec
 
 Each result in the array of nodes returned will be an `NSDictionary` with the following structure:
 
-- — an
-
-  containing the name of the node
-- — an
-
-  containing the textual content of the node
-- — an
-
-  of
-
-  where each dictionary has two keys:
-
-  (
-
-  ) and
-
-  (
-
-  )
-- — an
-
-  of child nodes (same structure as this node)
+- **nodeName** — an `NSString` containing the name of the node
+- **nodeContent** — an `NSString` containing the textual content of the node
+- **nodeAttributeArray** — an `NSArray` of `NSDictionary` where each dictionary has two keys: _attributeName_ (`NSString`) and _nodeContent_ (`NSString`)
+- **nodeChildArray** — an `NSArray` of child nodes (same structure as this node)
 
 Any of these fields may absent if not found in the libxml2 result.
 

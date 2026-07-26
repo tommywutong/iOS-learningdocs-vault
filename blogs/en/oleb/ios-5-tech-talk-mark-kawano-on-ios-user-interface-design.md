@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bdc1464c6aec0418'
 translated: false
 ---
@@ -44,7 +44,7 @@ Ask yourself two questions in this section:
 
 ### What type of app are you building?
 
-![What Type of App? Entertainment or Utility?](https://oleb.net/media/ios5-techtalk-uidesign-what-type-of-app.png)
+[![What Type of App? Entertainment or Utility?](https://oleb.net/media/ios5-techtalk-uidesign-what-type-of-app.png)](https://oleb.net/media/ios5-techtalk-uidesign-what-type-of-app.png)
 
 Depending on where you place your app on this line, you should tend to make your app more or less visually rich and immersive, and make different tradeoffs between stunning looks that may be lots of fun but a bit harder to use and a UI that is optimized for usefulness, efficiency and reliability (no surprises). Sounds like common sense, and it probably is.
 

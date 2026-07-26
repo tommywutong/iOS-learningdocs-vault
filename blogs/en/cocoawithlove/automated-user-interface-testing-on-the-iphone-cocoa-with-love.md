@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a2746f0229b6fd1f'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 Automated testing of application user interfaces can be tricky since user interfaces are designed for use by humans not automated tools. The iPhone is particularly challenging since existing tools that aid user interface testing on the Mac are not available. This post will show you a way to run automated, scripted tests on an iPhone app's user interface.
 
-> Updated to work with iPhone SDK 3.0.
+> **Update 2009-08-15:** Updated to work with iPhone SDK 3.0.
 
 ## A warning before we begin...
 
@@ -50,7 +50,7 @@ To test this, I will create a special Target in the Xcode project that will embe
 
 For the complete implementation, [download the "SelfTesting" project (44kb)](https://www.cocoawithlove.com/assets/objc-era/SelfTesting.zip).
 
-> this test implementation presented in this Project is not a "unit test", rather it will be a command-line invocation that produces either an empty file (success) or a file containing an error message (failure). A unit test would need to wrap this invocation and interpret the result appropriately.
+> **Note:** this test implementation presented in this Project is not a "unit test", rather it will be a command-line invocation that produces either an empty file (success) or a file containing an error message (failure). A unit test would need to wrap this invocation and interpret the result appropriately.
 
 ## Interrogating the user interface
 
@@ -155,11 +155,7 @@ The class that handles this script is `ScriptRunner` in the project.
 
 When the project is compiled with `SCRIPT_DRIVEN_TEST_MODE_ENABLED` defined (i.e. when the "TestScriptRunner" target is selected) an object of this class is created in the `-applicationDidFinishLaunching:` method. Once every two seconds, the `ScriptRunner` selects the next command and invokes the appropriate action. This delay is inserted to allow user interface animations to occur.
 
-> you may notice the "scrollToRow" command. This command is required because rows that are not visible in a
-> 
-> do not have a corresponding
-> 
-> in the view hierarchy. We must scroll to a row before attempting to send a touch event to it.
+> **Note:** you may notice the "scrollToRow" command. This command is required because rows that are not visible in a `UITableView` do not have a corresponding `UITableViewCell` in the view hierarchy. We must scroll to a row before attempting to send a touch event to it.
 
 ## Configuring the project and command-line execution
 

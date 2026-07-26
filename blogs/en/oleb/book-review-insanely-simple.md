@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1672f32981c53975'
 translated: false
 ---
@@ -16,9 +16,9 @@ translated: false
 
 # Book Review: Insanely Simple
 
-![Insanely Simple Book Cover](https://oleb.net/media/insanely-simple-cover-500px.jpg)
+[![Insanely Simple Book Cover](https://oleb.net/media/insanely-simple-cover-500px.jpg)](https://www.amazon.com/Insanely-Simple-Obsession-Drives-Success/dp/1591844835/)
 
-Of all the books about Apple that have come out after Steve Jobs’s death, Ken Segall’s [Insanely Simple: The Obsession That Drives Apple’s Success](https://www.amazon.com/Insanely-Simple-Obsession-Drives-Success/dp/1591844835/) (published April, 2012) is the best I have read.[1](#fn:1) Perhaps that is because the book’s theme is not Apple or Jobs per se. _Insanely Simple_ is a business book that explains Apple’s phenomenal success with Steve Jobs’s passion for simplicity.
+Of all the books about Apple that have come out after Steve Jobs’s death, Ken Segall’s [Insanely Simple: The Obsession That Drives Apple’s Success](https://www.amazon.com/Insanely-Simple-Obsession-Drives-Success/dp/1591844835/) (published April, 2012) is the best I have read.^[1](#fn:1) Perhaps that is because the book’s theme is not Apple or Jobs per se. _Insanely Simple_ is a business book that explains Apple’s phenomenal success with Steve Jobs’s passion for simplicity.
 
 As creative director for the advertising agencies Steve Jobs chose for his companies – first, NeXT, and later, Apple – [Ken Segall](http://kensegall.com) worked closely with Steve for more than a decade. Recounting his experiences with Apple as a company and Steve in particular, the author tries to uncover what makes Apple so successful and different than the competition. Segall breaks down everything from marketing over product design and operations to meeting culture and openness in communication into one aspect: a total obsession with simplicity.
 

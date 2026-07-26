@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2a138bd328b295f1'
 translated: false
 ---
@@ -19,6 +19,8 @@ How does a Cocoa Application start up? Where are the main places to put code so 
 ## The natural first question
 
 After working through the first Cocoa tutorials and learning how to hook up basic methods to buttons and menus, the most common question I hear from new Cocoa programmers is:
+
+> Where do I put my code so that it runs when my Cocoa Application starts up?
 
 Cocoa makes it very easy to edit and connect things in Interface Builder but you quickly reach the limits of this simple program setup. Documents and application windows can magically appear but eventually you'll want to have control over these default operations.
 
@@ -48,9 +50,7 @@ This image shows the application (normally NSApplication but this is configurabl
 
 Instead, you should look towards the three main functions that the application performs on startup (load main NIB, load first document, notify NSApplication delegate). These are the key areas to hook into.
 
-> CFBundleDocumentTypes
-> 
-> is configured in the Info.plist file. Without this value in the Info.plist, the NSApplication will skip document handling (non-document applications).
+> An NSApplication is only considered to handle documents if CFBundleDocumentTypes is configured in the Info.plist file. Without this value in the Info.plist, the NSApplication will skip document handling (non-document applications).
 
 The first of these areas to consider is the "main NIB" file. A NIB file is the standard user-interface file and it is created in Interface Buillder. The "main NIB" is the user-interface file that normally contains the menubar and other "on startup" resources. It is also the common location for the NSApplication delegate. If you don't know what a delegate is, you can read [Apple's description of delegates](http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaFundamentals/CommunicatingWithObjects/chapter_6_section_4.html) but it's really any object that is connected to the NSApplication by its "delegate" outlet (usually in Interface Builder). The delegate is special because NSApplication sends it messages in response to certain events. These are the delegate methods.
 

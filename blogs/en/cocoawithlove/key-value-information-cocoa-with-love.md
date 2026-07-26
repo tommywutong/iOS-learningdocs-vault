@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:899ffe3f83498fb8'
 translated: false
 ---
@@ -24,17 +24,11 @@ Key Value Coding is about connection logic; it does not normally perform the wor
 
 It is particularly useful in at least 5 situations situations:
 
-- NSManagedObject
-
-  ).
-- NSDictionary
-
-  ).
+- It reduces the appearance of an object to that of simple data storage — whether or not it is actually simple under the hood (e.g. NSManagedObject).
+- It provides a simple interface for flexibly dealing with variable numbers of named values (e.g. NSDictionary).
 - It removes the need to know the specific object type that you're dealing with — such as the generic connecting of objects in user-interface bindings.
 - Allows easy chaining of access operations through "key paths" and provides operators for dealing with collections of data accessed in this way.
-- NSKeyValueObserving
-
-  .
+- Generic access to data makes possible other services such as NSKeyValueObserving.
 
 It does (most) of this through two basic methods:
 
@@ -49,21 +43,9 @@ which are defined in the [NSKeyValueCoding](http://developer.apple.com/documenta
 
 Once you start asking how anything works, you immediately plunge into a gray area. [The documentation](http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Protocols/NSKeyValueCoding_Protocol/Reference/Reference.html) at least tells us this:
 
-- -(id)\<key\>
-
-  or
-
-  -(void)set\<key\>:
-
-  methods, if they exist, to perform the work. There are a few other method names tried if these can't be found.
+- The default implementation will invoke the -(id)\<key\> or -(void)set\<key\>: methods, if they exist, to perform the work. There are a few other method names tried if these can't be found.
 - If no method is found, any instance variable with the same name as the key will be automatically accessed (unless this feature is explicitly disabled for the class).
-- -(id)valueForUndefinedKey:(NSString *)key
-
-  method is invoked which raises an
-
-  NSUndefinedKeyException
-
-  by default.
+- If no matching instance variable is found either, the -(id)valueForUndefinedKey:(NSString *)key method is invoked which raises an NSUndefinedKeyException by default.
 
 Distilling this information down, you can (in most cases) presume that key value coding will work for any "key" on any class that supports the methods -(id)\<key\> and -(void)set\<key\>:, or has an attribute named "key". Sometimes overrides valueForUndefinedKey: will support other keys too but that is highly implementation specific. Most other key and object combinations will throw an NSUndefinedKeyException.
 

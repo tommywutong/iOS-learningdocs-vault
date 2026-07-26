@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f29d90d0bbbfe1a5'
 translated: false
 ---
@@ -64,7 +64,7 @@ A few interesting points came out of this work, unrelated to the iPhone itself:
 - Yes, you can now create more than 65536 files in a directory. I remember when Macs couldn't create more than 65536 files on the entire disk.
 - Curiously, when you select files and use the "Copy" menu item in the Finder, the maximum number of items is still 65536.
 - Don't try to drag 10,000 (or more) items from one window to another — I gave up watching the beachball on this action and hard-booted.
-- is a little slower than other approaches because it creates the file in a temporary location and moves it to the target location (a single create at the target location would have been faster).
+- `-[NSFileManager createFileAtPath:contents:attributes:]` is a little slower than other approaches because it creates the file in a temporary location and moves it to the target location (a single create at the target location would have been faster).
 - if you try to create a million MP3s on your computer, be prepared to wait 3 hours while it churns away and then have the Spotlight metadata indexer slow your computer down for a further few hours.
 
 ## Initial results
@@ -83,6 +83,8 @@ Which data sets will load and how long will they take? With no preparation of St
 | 1,000,000 | N/A |
 
 _The asterisk here indicates that the 20,000 row run was not able to reliably play the audio files after loading (it would sometimes quit due to low memory). The one hundred thousand and million row tests both failed to load at all._
+
+> All tests performed on an iPhone 3G connected via 802.11g to a Mac Pro Quad 2.66Ghz (the iPhone was also connected to the Mac Pro via USB for logging purposes). Times are taken from a single cold run.
 
 ## Initial analysis
 
@@ -145,6 +147,8 @@ Of course, this did result in a minor increase in parsing time but the improved 
 
 Finally, I looked at the conversion of parsed data into classes representing each row. This work was primarily assigning strings to properties of an object and couldn't be easily avoided.
 
+> Of course, in an ideal case, parsing and object construction would be an integrated process but since the parser is generic and wasn't written for this program, it doesn't produce data in the best format, requiring this extra "converting" pass through the data. For development time constraints, I didn't consider integrating these two components although this is certainly a point where further speed improvements could be gained.
+
 During this process, I also created an `NSInvocation` for each object to handle its user-interface action when tapped in the table (media rows play the file, folder rows open the folder) and assigned a named `UIImage` (either the file or the folder icon) to the object.
 
 Since there are only two images and two possible actions, these objects could be created outside the loop and either minimally modified for each row (with different parameters in the case of the `NSInvocation`) or assigned as-is (in the case of the `UIImage`).
@@ -185,9 +189,7 @@ Optimization doesn't mean writing assembly code and bleeding from your fingernai
 The biggest improvements to the performance came from three points:
 
 - replacing autoreleased objects with tight alloc and release pairs in just two loops (in some cases removing the allocation entirely)
-- generation and
-
-  lookup work from the key construction loop
-- optimization per se)
+- removing the `NSInvocation` generation and `UIImage` lookup work from the key construction loop
+- reducing the calls to lstat on the server (although this wasn't part of iPhone `UITableView` optimization per se)
 
 And increasing available productive memory actually involved performing _more_ allocations — reallocating discontiguous collections of objects to contiguous memory locations. There was also the typical elimination of unnecessary copying.

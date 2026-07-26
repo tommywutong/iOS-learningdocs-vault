@@ -35,7 +35,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/see-me-speak-at-voices-that-matter-in-boston.html)
 
 Add your thoughts, post a comment:
 

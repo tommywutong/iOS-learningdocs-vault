@@ -7,7 +7,7 @@ original_language: en
 published: 2023-10-01
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9f86ed9ae4033707'
 translated: false
 ---
@@ -63,7 +63,7 @@ bool objc_object::rootRelease() {
 
 The overload called here is the core implementation, which has two parameters:
 
-1. `performDealloc` specifies whether the release operation should deallocate the object instance if the retain count reaches zero. The runtime always passes `true` for this parameter unless the [`_objc_rootReleaseWasZero()`](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/NSObject.mm#L1850-L1856) SPI[[1](#_footnotedef_1)] (_system programming interface_ for first-party use, as opposed to _application programming interface_ for third-party use) is performing the release.
+1. `performDealloc` specifies whether the release operation should deallocate the object instance if the retain count reaches zero. The runtime always passes `true` for this parameter unless the [`_objc_rootReleaseWasZero()`](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/NSObject.mm#L1850-L1856) SPI^[[1](#_footnotedef_1)] (_system programming interface_ for first-party use, as opposed to _application programming interface_ for third-party use) is performing the release.
 2. `variant` provides context about the call path, enabling the core implementation to elide unnecessary work. Releases performed through `NSObject` use `RRVariant::Fast` to skip the check for whether the class has a custom reference counting implementation because the operation occurring through the root class is, by definition, not custom.
 
 ### Automatic Reference Counting
@@ -109,7 +109,7 @@ if (slowpath(isTaggedPointer())) return (id)this;
 
 Although the ARC entry point checks for a tagged pointer, the `NSObject` entry point does not. It’s not immediately apparent to me why the `NSObject` implementation doesn’t perform this check, but it has to happen somewhere, and in this version of the runtime, it’s here.
 
-Next, the runtime loads the object’s `isa` value[[2](#_footnotedef_2)].
+Next, the runtime loads the object’s `isa` value^[[2](#_footnotedef_2)].
 
 `runtime/objc-object.h` lines [746-750](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/objc-object.h#L746-L750)
 
@@ -119,7 +119,7 @@ isa_t newisa, oldisa;
 oldisa = LoadExclusive(&isa().bits);
 ```
 
-If the compiler-private API was the entry point for the release operation, the runtime must check whether the class overrides any reference counting methods[[3](#_footnotedef_3)].
+If the compiler-private API was the entry point for the release operation, the runtime must check whether the class overrides any reference counting methods^[[3](#_footnotedef_3)].
 
 `runtime/objc-object.h` lines [752-764](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/objc-object.h#L752-L764)
 
@@ -172,7 +172,7 @@ do {
 
 The loop first sets `newisa` to the current `isa` value (i.e., `oldisa`), which the following steps will update to reflect the decremented retain count.
 
-Then, the loop checks if the object instance has a [non-pointer `isa`](https://alwaysprocessing.blog/2023/01/19/objc-class-isa#non-pointer-isa). If it does not, the retain count is recorded in a side table[[4](#_footnotedef_4)]. This check is performed in the loop because if this thread loses a compare-and-swap, it could be due to another thread mutating the object in a way that removed its use of a non-pointer `isa`.
+Then, the loop checks if the object instance has a [non-pointer `isa`](https://alwaysprocessing.blog/2023/01/19/objc-class-isa#non-pointer-isa). If it does not, the retain count is recorded in a side table^[[4](#_footnotedef_4)]. This check is performed in the loop because if this thread loses a compare-and-swap, it could be due to another thread mutating the object in a way that removed its use of a non-pointer `isa`.
 
 `runtime/objc-object.h` lines [778-781](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/objc-object.h#L778-L781)
 
@@ -421,7 +421,7 @@ Otherwise, execution continues to the deallocation logic.
 
 ### Deallocate
 
-If the retain count reaches zero (or underflows and the object instance is not storing retain counts in a side table), the runtime deallocates[[5](#_footnotedef_5)] the object.
+If the retain count reaches zero (or underflows and the object instance is not storing retain counts in a side table), the runtime deallocates^[[5](#_footnotedef_5)] the object.
 
 `runtime/objc-object.h` lines [888-901](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/objc-object.h#L888-L901)
 

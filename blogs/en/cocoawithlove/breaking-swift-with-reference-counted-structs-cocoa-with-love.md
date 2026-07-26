@@ -7,7 +7,7 @@ original_language: en
 published: 2016-03-27
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:315e6b092b8fcc25'
 translated: false
 ---
@@ -178,13 +178,7 @@ and the `OnDelete` closure retains this `alloc_box`.
 
 Why is this a problem? It’s a reference counted loop:
 
-- → the boxed version of
-
-  retains
-
-  →
-
-  retains closure
+- closure retains the boxed version of `Counter` → the boxed version of `Counter` retains `OnDelete` → `OnDelete` retains closure
 
 With this loop created, our `OnDelete` object is never deallocated and never invokes its closure.
 

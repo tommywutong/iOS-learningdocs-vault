@@ -60,15 +60,11 @@ This behavior can be really handy. Imagine a loop modifying a bunch of objects w
 
 `NSNotificationQueue` provides three types of coalescing.
 
-- means that no coalescing is performed.
-- means that coalescing is performed if two notifications share the same name.
-- means that coalescing is performed if two notifications share the same sender object.
+- `NSNotificationNoCoalescing` means that no coalescing is performed.
+- `NSNotificationCoalescingOnName` means that coalescing is performed if two notifications share the same name.
+- `NSNotificationCoalescingOnSender` means that coalescing is performed if two notifications share the same sender object.
 
-These are bitwise flags, so you can combine them. Writing
-
-means that coalescing is performed if two notifications share both the same name and the same sender object. (Most of the time when coalescing, this is what you want, and it's what
-
-implicitly uses.)
+These are bitwise flags, so you can combine them. Writing `NSNotificationCoalescingOnName | NSNotificationCoalescingOnSender` means that coalescing is performed if two notifications share both the same name and the same sender object. (Most of the time when coalescing, this is what you want, and it's what `-enqueueNotification:postingStyle:` implicitly uses.)
 
 With coalescing, the semantics of `NSPostNow` make more sense. By using `NSPostNow` with `NSNotificationQueue`, any matching enqueued notifications will be coalesced with the one being posted before it's posted, essentially clearing them out and posting the coalesced notification earlier than would have otherwise happened.
 
@@ -83,24 +79,14 @@ These coalescing flags can also be used to remove notifications from the queue w
         [self updateWithNewSliderValue: [sender doubleValue]];
 ```
 
-But you also have some updates that you only want to run once the mouse has been released. Since the runloop is run in
-
-while the mouse is down, you can just post a notification using
-
-onto the
-
-, and the notification will be posted only once the mouse is released. By coalescing, this code ensures that only one notification is posted when the mouse is released, even though this action message may be called many times:
+But you also have some updates that you only want to run once the mouse has been released. Since the runloop is run in `NSEventTrackingRunLoopMode` while the mouse is down, you can just post a notification using `NSPostASAP` onto the `NSNotificationQueue`, and the notification will be posted only once the mouse is released. By coalescing, this code ensures that only one notification is posted when the mouse is released, even though this action message may be called many times:
 
 ```
         NSNotification *note = [NSNotification notificationWithName: SliderDoneMovingNotification object: self];
         [[NSNotificationQueue defaultQueue] enqueueNotification: note postingStyle: NSPostASAP];
 ```
 
-Imagine that you also want to update a value while the slider is moving, but that this update is expensive to perform, so you want to keep the application responsive. Using
-
-and
-
-will allow this:
+Imagine that you also want to update a value while the slider is moving, but that this update is expensive to perform, so you want to keep the application responsive. Using `NSPostWhenIdle` and `NSEventTrackingRunLoopMode` will allow this:
 
 ```
         note = [NSNotification notificationWithName: ExpensiveSliderUpdate object: self];
@@ -112,11 +98,7 @@ will allow this:
     }
 ```
 
-To avoid a pending notification waiting around a long time if the mouse is immediately released after this code executes, you'll want to observe
-
-and remove
-
-from the queue:
+To avoid a pending notification waiting around a long time if the mouse is immediately released after this code executes, you'll want to observe `SliderDoneMovingNotification` and remove `ExpensiveSliderUpdate` from the queue:
 
 ```
     - (void)sliderDoneMoving: (NSNotification *)note
@@ -127,7 +109,8 @@ from the queue:
     }
 ```
 
-may not be well known in general, but now you know how it works, what it's good for, and have some ideas for how to put it to work.
+**Conclusion**  
+`NSNotificationQueue` may not be well known in general, but now you know how it works, what it's good for, and have some ideas for how to put it to work.
 
 That's it for this week. Come back next week for another exciting edition. (A warning: I'm going to be making a long trip not long before next Friday, and so there's some possibility that I'll miss next week's edition. In that event, my instructions to you, the reader, are to panic as thoroughly as possible until the following Friday.)
 
@@ -141,7 +124,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-01-08-nsnotificationqueue.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b319a9cf16551aa7'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Method Dispatch in Protocol Extensions
 
-We learned in the [Protocol-Oriented Programming session at WWDC 2015](https://developer.apple.com/videos/play/wwdc2015-408/?time=1767) that Swift uses two different dispatch mechanisms for methods in protocol extensions.[1](#fn:1) Methods that are _protocol requirements_ — that is, they are declared in the protocol itself — are dispatched dynamically, whereas methods that are not backed by a requirement use static dispatch.
+We learned in the [Protocol-Oriented Programming session at WWDC 2015](https://developer.apple.com/videos/play/wwdc2015-408/?time=1767) that Swift uses two different dispatch mechanisms for methods in protocol extensions.^[1](#fn:1) Methods that are _protocol requirements_ — that is, they are declared in the protocol itself — are dispatched dynamically, whereas methods that are not backed by a requirement use static dispatch.
 
 I remember wondering last year why Swift made that distinction. It didn’t make sense to me and, [like others](https://nomothetis.svbtle.com/the-ghost-of-swift-bugs-future), I was concerned it had the potential for lots of hard-to-find bugs. (Turns out it hasn’t been a problem in practice for me so far.) I recently came across [this post by Lily Ballard](https://forums.swift.org/t/proposal-universal-dynamic-dispatch-for-method-calls/237/57) on [Swift Evolution](https://forums.swift.org/c/evolution/discuss) that includes the best explanation I have seen for why method dispatch in protocols works the way it does:
 

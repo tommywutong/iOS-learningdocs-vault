@@ -7,7 +7,7 @@ original_language: en
 published: 2010-09-01
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b2e9d15da102f884'
 translated: false
 ---
@@ -44,7 +44,7 @@ Last week, [Rick Ballard](http://twitter.com/rballard) came by my office for a c
 
 The good news was that Rick's crash was reliably reproducible. Running tests on a live patient is better than performing an autopsy on a dead one. The bad news was that the obvious debugging tools had not helped. `NSZombieEnabled` and `guardmalloc` had turned up nothing, and `AUTO_USE_GUARDS=YES` (the GC equivalent of `guardmalloc`) just thrashed the machine for two hours before running out of address space.
 
-[So you crashed in `objc_msgSend()`](http://sealiesoftware.com/blog/archive/2008/09/22/objc_explain_So_you_crashed_in_objc_msgSend.html). The selector was `-isAbsolutePath`, which was reasonable but meant the debugger's backtrace was missing a frame. `objc_msgSend()` had read the class from the object, read the method cache from the class, read a method from the method cache, and crashed while trying to read the `IMP` from the method. Theory: either one of those data structures had been hit by a memory smasher, or the original object was bogus but happened to have dereferenceable pointers in the right places to survive that long. The method cache's mask was invalid - it should have been of the form 2n-1 - so the failure must have been at or before that point in the chain.
+[So you crashed in `objc_msgSend()`](http://sealiesoftware.com/blog/archive/2008/09/22/objc_explain_So_you_crashed_in_objc_msgSend.html). The selector was `-isAbsolutePath`, which was reasonable but meant the debugger's backtrace was missing a frame. `objc_msgSend()` had read the class from the object, read the method cache from the class, read a method from the method cache, and crashed while trying to read the `IMP` from the method. Theory: either one of those data structures had been hit by a memory smasher, or the original object was bogus but happened to have dereferenceable pointers in the right places to survive that long. The method cache's mask was invalid - it should have been of the form 2^n-1 - so the failure must have been at or before that point in the chain.
 
 The object pointer itself looked plausible. Theory: the object was valid, but a previous object at the same location had been used after being freed. We had the great luxury of a reproducible crash, so we turned on `MallocStackLoggingNoCompact` and ran it again. That memory had only been used for one object, and it had not been deallocated. So the evidence did not support the use-after-free theory. But the history showed that the object had been allocated as an `NSPathStore2` - an internal subclass of `NSString` for file pathnames - which matched the selector `-isAbsolutePath` and matched the call site's expectations. The theory that the object pointer was valid looked good.
 
@@ -84,4 +84,4 @@ Diagnosis: `clang` compiler bug in bitfield ivars. The patient's symptoms were t
 
 Elapsed time: about three hours. Too long for an episode of a TV procedural drama, unfortunately.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

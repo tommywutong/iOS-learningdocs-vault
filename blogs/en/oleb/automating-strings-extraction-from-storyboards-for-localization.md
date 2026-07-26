@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e120d702cf8322e3'
 translated: false
 ---
@@ -30,9 +30,9 @@ Base internationalization is the perfect companion to [Cocoa autolayout](https:/
 
 To set up base localization in Xcode, go to your project settings and on the Info pane, select “Use Base Internationalization” checkbox. Xcode will display a popup, asking you which of the languages your app already supports should serve as the basis for the new base localization. When you approve the selection, Xcode treats the storyboards or NIBs for the language you selected as the Base localization. The files are moved into the new `Base.lproj` directory.
 
-![Selecting Base Internationalization in Xcode 4](https://oleb.net/media/xcode-selecting-base-internationalization.png)
+[![Selecting Base Internationalization in Xcode 4](https://oleb.net/media/xcode-selecting-base-internationalization.png)](https://oleb.net/media/xcode-selecting-base-internationalization.png)
 
-![Selecting the source language to use for creating the base localization in Xcode](https://oleb.net/media/xcode-popup-creating-base-localization.png)
+[![Selecting the source language to use for creating the base localization in Xcode](https://oleb.net/media/xcode-popup-creating-base-localization.png)](https://oleb.net/media/xcode-popup-creating-base-localization.png)
 
 <sub>Setting up base internationalization in Xcode.</sub>
 
@@ -40,9 +40,9 @@ If you already have translated NIBs or storyboards in other languages, Xcode doe
 
 In most cases, you will want to convert your existing translated NIBs to the new model. To do that, open the file in Xcode and open the File Inspector. In the Localization section, you can choose between “Interface Builder” (the old way) and “Localizable Strings” (base internationalization) for each language. Selecting “Localizable Strings” will extract the current user-facing strings from the NIB file and place them into a strings file, then delete the now-unnecessary NIB or storyboard file from disk.
 
-![Converting a storyboard file to base localization in Xcode](https://oleb.net/media/xcode-file-inspector-localization-settings.png)
+[![Converting a storyboard file to base localization in Xcode](https://oleb.net/media/xcode-file-inspector-localization-settings.png)](https://oleb.net/media/xcode-file-inspector-localization-settings.png)
 
-![Confirmation alert in Xcode when converting a storyboard file to base localization](https://oleb.net/media/xcode-convert-existing-localization-to-base.png)
+[![Confirmation alert in Xcode when converting a storyboard file to base localization](https://oleb.net/media/xcode-convert-existing-localization-to-base.png)](https://oleb.net/media/xcode-convert-existing-localization-to-base.png)
 
 <sub>Converting an already translated storyboard file to base internationalization.</sub>
 
@@ -62,7 +62,7 @@ As documented by the Stack Overflow thread, the bug was present in April 2011 (X
 
 Unfortunately, the automatic conversion from Interface Builder to strings file is a one-time process. Xcode does not automatically update the strings files whenever you make changes to your base NIB files or storyboards. And manual updating is not only tedious but made especially hard because of the obscure keys Xcode uses to identify an object. For example, the label for a button may appear under the key `"hzx-cM-fkt.normalTitle"` in the strings file. While the button’s object ID `hzx-cM-fkt` can be found in Interface Builder’s Identity Inspector, dealing with those IDs manually is not much fun.
 
-Fortunately, there is a better way. MacRumors forum user [mikezang has written a handy script](http://forums.macrumors.com/showpost.php?p=16060008&postcount=4) that uses Apple’s [ibtool](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/ibtool.1.html) to extract all translatable strings from the base storyboard and then merges the new translatable strings with your existing translations in the per-language strings files. It’s almost[1](#fn:1) perfect.
+Fortunately, there is a better way. MacRumors forum user [mikezang has written a handy script](http://forums.macrumors.com/showpost.php?p=16060008&postcount=4) that uses Apple’s [ibtool](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/ibtool.1.html) to extract all translatable strings from the base storyboard and then merges the new translatable strings with your existing translations in the per-language strings files. It’s almost^[1](#fn:1) perfect.
 
 mikezang’s original script relies on the premise that, for each storyboard file in the `Base.lproj` folder, a corresponding `.strings` file exists in the same folder. The script compares the modification dates of these files to determine if the storyboard has been modified. Normally, you would have to create this base file manually. I updated the script slightly to automatically create the base `.strings` file if it doesn’t exist. Here is my modified version:
 
@@ -166,7 +166,7 @@ ${PROJECT_DIR}/scripts/update_storyboard_strings.sh
 
 That’s it!
 
-![Adding a Run Script build phase in Xcode](https://oleb.net/media/xcode-build-phase-run-script.png)
+[![Adding a Run Script build phase in Xcode](https://oleb.net/media/xcode-build-phase-run-script.png)](https://oleb.net/media/xcode-build-phase-run-script.png)
 
 <sub>The Run Script build phase in Xcode's target settings.</sub>
 

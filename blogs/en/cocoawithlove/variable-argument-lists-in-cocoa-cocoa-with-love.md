@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dd57bc04091a5429'
 translated: false
 ---
@@ -63,7 +63,7 @@ Objective-C, like C, does not have a runtime argument count, nor does it pass ru
 
 The penalty for getting variable argument list wrong can be severe: the compiler won't typically notice a problem and your code will crash or behave very strangely at runtime. The important lesson to learn is that you should only use variable arguments in a situation where the policy for numbers and types of arguments is very clear.
 
-> compiler flag in GCC. See below for more about how this works.
+> You can improve the compiler verification of variable argument lists by using the `-Wformat` compiler flag in GCC. See below for more about how this works.
 
 ## Implementing variable arguments for your own methods
 
@@ -113,18 +113,10 @@ The implementation of this method is as follows:
 
 The `va_list`, `va_start`, `va_arg` and `va_end` are all standard C syntax for handling variable arguments. To describe them simply:
 
-- - A pointer to a list of variable arguments.
-- - Initializes a
-
-  to point to the first argument
-
-  the argument specified.
-- - Fetches the next argument out of the list. You must specify the type of the argument (so that
-
-  knows how many bytes to extract).
-- - Releases any memory held by the
-
-  data structure.
+- `va_list` - A pointer to a list of variable arguments.
+- `va_start` - Initializes a `va_list` to point to the first argument _after_ the argument specified.
+- `va_arg` - Fetches the next argument out of the list. You must specify the type of the argument (so that `va_arg` knows how many bytes to extract).
+- `va_end` - Releases any memory held by the `va_list` data structure.
 
 Generally speaking, you can use this `for` loop for any variable argument situation where your arguments are all the same type. Other cases are a bit trickier but far less common — I'm sure you can work out how they would work if needed.
 

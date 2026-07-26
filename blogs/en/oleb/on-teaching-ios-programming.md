@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f6ef072b42b50f4d'
 translated: false
 ---
@@ -22,7 +22,7 @@ Over two days, we covered the basics of Objective-C, talked about pointers and m
 
 We spent the rest of the day designing a more or less complete little app: I chose a basic RSS reader (called _Feeder_) for this because it lends itself nicely to a classic navigation controller design. It is also a great way to introduce talking with web services (through `NSURLConnection`) and local caching of the results (with Core Data). Everything together yields a fairly complex app that serves as a nice example to illustrate the code design of larger projects.
 
-![iPhones with screenshots of RSS reader app Feeder](https://oleb.net/media/feeder-iphone-screenshots.png)
+[![iPhones with screenshots of RSS reader app Feeder](https://oleb.net/media/feeder-iphone-screenshots.png)](https://oleb.net/media/feeder-iphone-screenshots.png)
 
 <sub>Screenshots of _Feeder_, my little RSS reader sample app.</sub>
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3decac9ef719a434'
 translated: false
 ---
@@ -25,7 +25,7 @@ To make this easier for us, Mac OS X automatically remembers the last ten docume
 We are left with three steps to make this happen:
 
 - Prevent the default "Untitled" document opening
-- NSDocumentController
+- Open the most recent document as reported by the shared NSDocumentController
 - Allow "Untitled" documents to open after startup
 
 ## All in the application delegate

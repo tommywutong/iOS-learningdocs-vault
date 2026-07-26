@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f5edd78cc88de88a'
 translated: false
 ---
@@ -32,17 +32,9 @@ This sucks.
 Let’s take a look at how this workflow might look on iOS 8 (assuming the developers of 1Password do their homework):
 
 1. With the web site open in Mobile Safari, tap the Share/Action button.
-2. Action Extension
-
-  that can work with web pages/URLs).
-3. Touch ID now has a public API
-
-  . Yay, no typing!
-4. full access to the page’s URL and contents
-
-  . It can use this information to find the correct login credentials and automatically fill in the user name and password fields for me.
-
-  All I will have to do is confirm. Again, no typing!
+2. From the activity sheet that pops up, tap on the 1Password icon (the 1Password app will include an [Action Extension](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/Services.html#//apple_ref/doc/uid/TP40014214-CH13-SW1) that can work with web pages/URLs).
+3. The UI of the 1Password extension launches inside Safari. Rather than having to enter your master password to access your 1Password data, you will also have the option to authenticate with your fingerprint because [Touch ID now has a public API](https://developer.apple.com/library/prerelease/ios/documentation/LocalAuthentication/Reference/LocalAuthentication_Framework/index.html). Yay, no typing!
+4. As an extension that works with web site content, the 1Password extension has [full access to the page’s URL and contents](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW12). It can use this information to find the correct login credentials and automatically fill in the user name and password fields for me.^[1](#fn:1) All I will have to do is confirm. Again, no typing!
 
 I can’t wait.
 

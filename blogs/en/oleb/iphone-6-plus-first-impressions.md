@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:23421832dbbd69fa'
 translated: false
 ---
@@ -20,7 +20,7 @@ I got my iPhone 6 Plus last Friday. Here are my thoughts after one week of use.
 
 # Size
 
-It is bigger than I expected. It appears even larger than the cardboard dummy I had made before ordering. I don’t know if that’s attributable to the weight or something else. It is also significantly larger than some Android phones with a 5.5-inch screen, [such as the LG G3](https://twitter.com/dhh/status/514170300666093568).[1](#fn:1)
+It is bigger than I expected. It appears even larger than the cardboard dummy I had made before ordering. I don’t know if that’s attributable to the weight or something else. It is also significantly larger than some Android phones with a 5.5-inch screen, [such as the LG G3](https://twitter.com/dhh/status/514170300666093568).^[1](#fn:1)
 
 I am a big guy (1.94 m) with correspondingly large pockets. I have no problem fitting the iPhone 6 Plus in my jeans pocket, and even biking with the phone in the front pocket is fine. (And no, it hasn’t bent yet.) In my shirt pocket, the 6 Plus does stick out a little bit, but not nearly as much as can be seen in [Nilay Patel’s video review for the The Verge](http://www.theverge.com/2014/9/16/6155009/apple-iphone-6-plus-review).
 
@@ -46,7 +46,7 @@ I felt very self-conscious on my first outing with the iPhone 6 Plus as a camera
 
 Similarly, putting the thing to my ear for a phone call feels awkward. It’s not a problem for me as I very rarely make phone calls.
 
-The fact that the new iPhones still ship with just 1 GB RAM is disappointing. Expect a lot of reloading, especially when switching between tabs in Safari. Yes, more RAM means worse battery life, but I feel Apple made the wrong tradeoff here.[2](#fn:2) RAM seems to be the resource that is most constrained on old devices as new iOS versions come out, so I’d love it if Apple were more generous.[3](#fn:3)
+The fact that the new iPhones still ship with just 1 GB RAM is disappointing. Expect a lot of reloading, especially when switching between tabs in Safari. Yes, more RAM means worse battery life, but I feel Apple made the wrong tradeoff here.^[2](#fn:2) RAM seems to be the resource that is most constrained on old devices as new iOS versions come out, so I’d love it if Apple were more generous.^[3](#fn:3)
 
 Most apps I use are not yet optimized for the new screen resolution. Until they get updated, they appear gigantic and feel quite unnatural in use. I expect the experience to get much better over the next few weeks, especially once developers really take advantage of the larger screen with optimized UIs.
 

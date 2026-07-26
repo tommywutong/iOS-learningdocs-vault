@@ -76,7 +76,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/i-do-not-agree-to-your-terms.html)
 
 Add your thoughts, post a comment:
 

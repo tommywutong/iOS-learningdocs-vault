@@ -1,0 +1,37 @@
+---
+title: Kintsugi
+source: Jesse Squires
+source_key: jessesquires
+source_url: 'https://www.jessesquires.com/blog/2024/10/16/kintsugi/'
+original_language: en
+published: 2024-10-16
+status: active
+license: © 2014–2026 Jesse Squires → 仅私有归档
+archived_at: 2026-07-27
+content_hash: 'sha256:7fe4feec1a2f434e'
+translated: false
+---
+
+> 原文：[Kintsugi](https://www.jessesquires.com/blog/2024/10/16/kintsugi/)　·　Jesse Squires
+
+Kintsugi — no, not [_that_ Kintsugi](https://github.com/Lightricks/Kintsugi) — is the the [Japanese art](https://en.wikipedia.org/wiki/Kintsugi) of repairing broken pottery. The process involves mending the breaks in the ceramics with urushi lacquer, essentially gluing the pieces together and filling in any gaps to smooth it out. At the end, you finish off the cracks with a gold powder, which highlights and emphasizes the flaws in the piece rather than attempting to conceal them. The result is a restored piece of pottery or teaware that can now be put back to use.
+
+However, Kintsugi is not merely a practice centered around mending shattered ceramics. It is also a philosophy about embracing imperfections and the history that produced them. Kintsugi reorients us into treating flaws and breakage as things that are inherent to an object — and to ourselves. Imperfections are part of us and our history, and so is their repair. Kintsugi deliberately accentuates and celebrates the cracks of a formerly broken piece of pottery **with gold**, rather than trying to hide or disguise them. It is a beautiful thing.
+
+#### * * *
+
+About a year ago, I dropped the lid of my favorite teapot, shattering it into multiple pieces. It was a Yixing clay pot that I had seasoned and used for exclusively brewing pu-erhs. With high-end clay teaware, you typically choose only one kind of tea to brew. This is because the unglazed surfaces of the pot absorb traces of the tea. Think of it like seasoning a cast iron skillet. Yixing clay teaware is _not cheap_, but the burden of this accident was not merely a monetary loss. This pot also represented _an investment_ in brewing pu-erhs — for _years_.
+
+![Broken Yixing clay teapot](https://www.jessesquires.com/img/blog/kintsugi-broken.jpg)
+
+I was so sad. My favorite pot for my favorite style of tea was now unusable. I adore this pot. This pot is one of a kind — handmade, not mass produced. I had to figure out how to fix it. I found [a kintsugi repair kit online](https://chimahaga.com/collections/kits) and did my best. The process involves 6 distinct steps. Each step takes a couples hours and you need to wait about a week after each step for things to dry. The entire process from start to finish should last about 2 months — if you are diligent. If you are like me, this 2-month project will be spread out over an entire year. I can’t say I’m proud of that, but that’s simply how most of my side projects go — because life keeps happening. We’re embracing imperfections, right? 😅
+
+If you are interested in the complete process, you [can watch this tutorial video](https://www.youtube.com/watch?v=HSQWRxaKEyw) that accompanies the repair kit.
+
+I’m certainly no expert in kintsugi. And I’m not sure if kintsugi is even the recommended approach for repairing Yixing clay. I’m willing to bet this is not the best option. However, it was the _only_ option accessible to me. So, here we are. Luckily, it worked! I recently finished up the last steps, my teapot is repaired, and I can _finally_ start using it again.
+
+This was my first attempt at kintsugi and there are certainly some flaws in the repair itself. My lines are not super straight and thin and elegant. But done is better than perfect, right? I suppose you really have to appreciate the irony of the imperfections in the repair itself.
+
+![Repaired Yixing clay teapot](https://www.jessesquires.com/img/blog/kintsugi-repaired.jpg)
+
+It was satisfying and rewarding to mend something that was damaged, but in a way that does not try to hide what was broken. The gold finish is like the beautiful scar tissue that patches our deepest wounds, a reminder of where we’ve been what we’re capable of moving through. Sometimes, things are more beautiful after they’ve been broken and put back together.

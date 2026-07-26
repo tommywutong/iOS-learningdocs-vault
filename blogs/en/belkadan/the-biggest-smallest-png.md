@@ -7,7 +7,7 @@ original_language: en
 published: 2024-01-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:556ed500879e8241'
 translated: false
 ---
@@ -30,7 +30,7 @@ However (spoilers!) he later points out that there are _several_ valid 67-byte P
 
 However _again_…are we really limited to one byte of pixel data?
 
-(At this point you should [go read Evan’s article](https://evanhahn.com/worlds-smallest-png/) before continuing with mine.)more
+(At this point you should [go read Evan’s article](https://evanhahn.com/worlds-smallest-png/) before continuing with mine.)
 
 ### When “Compression” Isn’t
 
@@ -60,7 +60,7 @@ At which point I stopped to ask myself: is that really the best we can do?
 
 ### A self-referential format
 
-The LZ77 compression strategy that DEFLATE uses saves space by encoding “backreferences” to earlier parts of the string, rather than wastefully repeating those bytes. (Many years ago [Julia Evans did an extremely neat visualization of how these backreferences work by using poetry](https://jvns.ca/blog/2013/10/24/day-16-gzip-plus-poetry-equals-awesome/), which I highly recommend taking a look at to get some intuition for how this works.) One somewhat surprising property is that these backreferences can overlap with themselves; the explainer Evan found for [DEFLATE](https://zlib.net/feldspar.html) uses the string “Blah blah blah blah blah!” as an example, which compresses to “Blah b`[distance=5, length=18]`!”[1](#fn:infinite) (I’m not going to explain that here, click through to the [DEFLATE](https://zlib.net/feldspar.html) explainer to see how it works.) Can we use that to our advantage?
+The LZ77 compression strategy that DEFLATE uses saves space by encoding “backreferences” to earlier parts of the string, rather than wastefully repeating those bytes. (Many years ago [Julia Evans did an extremely neat visualization of how these backreferences work by using poetry](https://jvns.ca/blog/2013/10/24/day-16-gzip-plus-poetry-equals-awesome/), which I highly recommend taking a look at to get some intuition for how this works.) One somewhat surprising property is that these backreferences can overlap with themselves; the explainer Evan found for [DEFLATE](https://zlib.net/feldspar.html) uses the string “Blah blah blah blah blah!” as an example, which compresses to “Blah b`[distance=5, length=18]`!”^[1](#fn:infinite) (I’m not going to explain that here, click through to the [DEFLATE](https://zlib.net/feldspar.html) explainer to see how it works.) Can we use that to our advantage?
 
 From the breakdown above, we know the block is going to be a minimum of 18 bits: the `last` flag (1 bit) + the compression scheme `fixed` (2 bits) + at least one literal 0 (8 bits) + the `end` marker (7 bits). If we could squeeze out a second byte of output in 6 bits, we’d beat Evan’s record (because our DEFLATE block would only be three total bytes long), but unfortunately there’s no way to do that in DEFLATE. So instead, we assume we’re going to match Evan’s 32 bits total, and we have to decide how to use those remaining 14 bits. Evan’s straightforward encoding used 8 bits to encode the second `00` byte, and left 6 bits as padding. What alternatives do we have?
 
@@ -107,7 +107,7 @@ Which, after updating all the CRC32 and DEFLATE (Adler-32) checksums, produces [
 
 ![(It's a black rectangle, you're not missing anything.)](https://belkadan.com/blog/2024/01/The-Biggest-Smallest-PNG/squarish.png)
 
-Evan set a lower bound on the size of a PNG file, and now I think I’ve set an upper bound on the _contents_ of a valid[2](#fn:valid) smallest-possible PNG file. But I’d love to be wrong!
+Evan set a lower bound on the size of a PNG file, and now I think I’ve set an upper bound on the _contents_ of a valid^[2](#fn:valid) smallest-possible PNG file. But I’d love to be wrong!
 
 ### Appendix A: Do we have to use zeros?
 

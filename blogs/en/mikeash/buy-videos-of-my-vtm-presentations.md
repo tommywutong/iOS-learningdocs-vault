@@ -25,9 +25,9 @@ by [Mike Ash](https://www.mikeash.com/)
 
 You can buy every video from the conference in a package for $159.20 (minus discounts), or buy the individual sessions for $15.99 (less the discounts). Here are links to the various products:
 
-- Every conference video
-- Automatic Reference Counting
-- Defensive Programming in Cocoa
+- [Every conference video](http://www.informit.com/store/product.aspx?isbn=0132979985)
+- [Automatic Reference Counting](http://www.informit.com/store/product.aspx?isbn=013298010X)
+- [Defensive Programming in Cocoa](http://www.informit.com/store/product.aspx?isbn=0132980134)
 
 When checking out, use coupon code `VTMVIDEO` to get the 35% discount. And enjoy!
 

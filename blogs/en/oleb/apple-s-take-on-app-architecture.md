@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7fc21061feef172a'
 translated: false
 ---
@@ -24,7 +24,7 @@ Nevertheless, I think there is a real need for spreading [app architecture best 
 
 In WWDC 2014 [session 232, _Advanced User Interfaces with Collection Views_](https://developer.apple.com/videos/play/wwdc2014-232/), Apple engineer [Jeff Watkins](https://twitter.com/jeffwatkins) talks about the architecture of the recently released version 3.0 of the [iTunes Connect iOS App](https://itunes.apple.com/us/app/itunes-connect/id376771144?mt=8). The talk is accompanied by a fairly complex sample project called [AdvancedCollectionView-1.0](https://developer.apple.com/library/prerelease/ios/samplecode/AdvancedCollectionView/Introduction/Intro.html#//apple_ref/doc/uid/TP40014497), which, as Jeff points out in the talk, is directly derived from the code and architecture of the actual iTunes Connect app. This may be the closest thing we have to the source of an actual app directly from Apple.
 
-![Screenshot of Apple’s Advanced Collection View sample app](https://oleb.net/media/apple-advanced-collection-view-sample-app-screenshot.png)
+[![Screenshot of Apple’s Advanced Collection View sample app](https://oleb.net/media/apple-advanced-collection-view-sample-app-screenshot.png)](https://oleb.net/media/apple-advanced-collection-view-sample-app-screenshot.png)
 
 <sub>The Advanced Collection View sample app.</sub>
 
@@ -34,7 +34,7 @@ The sample app works like your typical productivity app that displays master-det
 
 In the first part of the session, Jeff talks about the overall architecture of the iTunes Connect app. The team found that the traditional approach of having view controllers be the collection view’s data source not only leads to bloated view controllers. It also inhibits code reuse for similar sections of content in different views. The solution is to implement your table or collection view data sources as separate objects. If you read [objc.io](http://www.objc.io), [this is not news to you](http://www.objc.io/issue-1/lighter-view-controllers.html).
 
-![Slides from WWDC 2014 session 232 about aggregate data sources](https://oleb.net/media/wwdc-2014-session-232-data-sources.png)
+[![Slides from WWDC 2014 session 232 about aggregate data sources](https://oleb.net/media/wwdc-2014-session-232-data-sources.png)](https://oleb.net/media/wwdc-2014-session-232-data-sources.png)
 
 ## Composite Data Sources
 

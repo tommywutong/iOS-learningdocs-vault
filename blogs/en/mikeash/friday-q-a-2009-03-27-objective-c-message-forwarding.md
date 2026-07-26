@@ -39,27 +39,9 @@ Right about now, you're probably wondering, "Why is it called _forwarding?_" The
 **What Happens**  
  What happens when you do `[foo bar]` and `foo` doesn't implement a `bar` method? When it _does_ implement such a method, it's pretty straightforward: it looks up the appropriate method, then jumps to it. When no such method can be found, a complicated sequence of events ensues:
 
-1. This is done by sending
-
-  (
-
-  for class methods) to the class in question. If that method returns YES, the message send is restarted under the assumption that the appropriate method has now been added.
-2. This is done by sending
-
-  to the target, if it implements it. If it implements this method and it returns something other than
-
-  or
-
-  , the whole message sending process is restarted with that return value as the new target.
-3. First the runtime will send
-
-  to see what kind of argument and return types are present. If a method signature is returned, the runtime creates an
-
-  describing the message being sent and then sends
-
-  to the object. If no method signature is found, the runtime sends
-
-  .
+1. **Lazy method resolution.** This is done by sending `resolveInstanceMethod:` (`resolveClassMethod:` for class methods) to the class in question. If that method returns YES, the message send is restarted under the assumption that the appropriate method has now been added.
+2. **Fast forwarding path.** This is done by sending `forwardingTargetForSelector:` to the target, if it implements it. If it implements this method and it returns something other than `nil` or `self`, the whole message sending process is restarted with that return value as the new target.
+3. **Normal forwarding path.** First the runtime will send `methodSignatureForSelector:` to see what kind of argument and return types are present. If a method signature is returned, the runtime creates an `NSInvocation` describing the message being sent and then sends `forwardInvocation:` to the object. If no method signature is found, the runtime sends `doesNotRecognizeSelector:`.
 
 **Lazy Resolution**  
  As we learned last week, the runtime sends messages by looking up a method, or `IMP`, and then jumping to it. Sometimes it can be useful to dynamically plug IMPs into a class instead of setting them all up beforehand. Doing this allows for really fast "forwarding", because after the method is resolved, it gets invoked as part of the normal message sending process. The disadvantage is, of course, that this isn't very flexible, since you need to have an IMP ready to plug in, and that in turn means that you need to have already anticipated the argument and return types that will be arriving.
@@ -77,9 +59,7 @@ This technique is great for faking multiple inheritence. You can write a little 
     - (id)forwardingTargetForSelector:(SEL)sel { return _otherObject; }
 ```
 
-This will cause any unknown message to be sent to
-
-, which will make your object appear from the outside as though it combined your object with this other object in one.
+This will cause any unknown message to be sent to `_otherObject`, which will make your object appear from the outside as though it combined your object with this other object in one.
 
 **Normal Forwarding**  
  The first two are basically just optimizations that allow forwarding to go faster. If you don't take advantage of them, the full forwarding mechanism goes into action. This creates an `NSInvocation` object which fully encapsulates the message being sent. It holds the target, the selector, and all of the arguments. It also allows full control over the return value.
@@ -120,9 +100,7 @@ Then you can write code like this:
     [(NSWindow *)windowsArray setHidesOnDeactivate:YES];
 ```
 
-I don't recommend writing code like this. The trouble is that forwarding won't catch any methods already implemented by NSArray, so you'll end up being able to capture some but not others. A much better approach is to write a trampoline class by subclassing
-
-.
+I don't recommend writing code like this. The trouble is that forwarding won't catch any methods already implemented by NSArray, so you'll end up being able to capture some but not others. A much better approach is to write a trampoline class by subclassing `NSProxy`.
 
 `NSProxy` is basically a class that's expilicitly designed for proxying. It implements a minimal subset of methods, leaving everything else up for grabs. This means that a subclass that implements forwarding can capture basically any message.
 
@@ -140,11 +118,7 @@ Then you'd use it like this:
     [[windowsArray do] setHidesOnDeactivate:YES];
 ```
 
-This whole area of writing trampolines to capture messages and have them do interesting things has been well explored and has been given the name
-
-Higher-Order Messaging
-
-. I won't go into more detail about it in this post, but there's a lot of neat stuff out there.
+This whole area of writing trampolines to capture messages and have them do interesting things has been well explored and has been given the name [Higher-Order Messaging](http://cocoadev.com/index.pl?HigherOrderMessaging). I won't go into more detail about it in this post, but there's a lot of neat stuff out there.
 
 **Declarations**  
  Another consequence of Objective-C's C heritage is that the compiler needs to know the full method signature of every message that you're going to send in your code, even purely forwarded ones. To make a contrived example, imagine writing a class that uses forwarding to produce integers from code, so that you can write this:
@@ -181,7 +155,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-03-27-objective-c-message-forwarding.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:56561f873993626f'
 translated: false
 ---
@@ -24,16 +24,8 @@ Then I starting thinking about other collections choices which may be ambiguous.
 
 So there are two situations to test for performance:
 
-- NSArray
-
-  versus
-
-  NSSet
-- NSDictionary
-
-  versus
-
-  NSMapTable
+- NSArray versus NSSet
+- NSDictionary versus NSMapTable
 
 Remember that these tests will only apply to situations where either collection is technically capable of holding the same data.
 
@@ -43,12 +35,8 @@ You can [download the code I used for the tests](https://www.cocoawithlove.com/a
 
 To summarise, I create two arrays of data:
 
-- NSString
-
-  where each string is a 10 digit string containing being a string representation of its index.
-- NSNumbers
-
-  where each number is an integer set to its index.
+- the "keys" — an array of NSString where each string is a 10 digit string containing being a string representation of its index.
+- the "objects" — an array of NSNumbers where each number is an integer set to its index.
 
 I tested with one million objects in each of these arrays (n = 1,000,000).
 

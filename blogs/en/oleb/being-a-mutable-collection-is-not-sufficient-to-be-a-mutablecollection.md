@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:98854566ca705915'
 translated: false
 ---
@@ -18,17 +18,11 @@ translated: false
 
 The [`Collection`](https://developer.apple.com/reference/swift/collection) protocol is the basis for collections in Swift. In addition to `Collection`, the standard library provides four protocols that collections can adopt to document additional capabilities. These protocols _refine_ `Collection` — any type that conforms to one of them must also conform to `Collection`.
 
-![Swift Collection Protocol Hierarchy](https://oleb.net/media/swift-3-collection-protocols-diagram-v2.png)
+[![Swift Collection Protocol Hierarchy](https://oleb.net/media/swift-3-collection-protocols-diagram-v2.png)](https://oleb.net/media/swift-3-collection-protocols-diagram-v2.png)
 
 They are:
 
-- A collection that can be traversed forward
-
-  backward. An example is
-
-  `String.CharacterView`
-
-  .
+- **[`BidirectionalCollection`](https://developer.apple.com/reference/swift/bidirectionalcollection):** A collection that can be traversed forward _and_ backward. An example is [`String.CharacterView`](https://developer.apple.com/reference/swift/string.characterview).^[1](#fn:bidirec)
 
 - **[`RandomAccessCollection`](https://developer.apple.com/reference/swift/randomaccesscollection):** A collection that can access any element in constant time. [`Array`](https://developer.apple.com/reference/swift/array) is the canonical example.
 - **[`MutableCollection`](https://developer.apple.com/reference/swift/mutablecollection):** A collection that supports mutation of its elements through subscript assignment, i.e. `array[index] = newValue`.
@@ -66,7 +60,7 @@ Moreover, even if `Set` could somehow maintain a stable _internal_ element order
 
 # `Dictionary`
 
-The story for [`Dictionary`](https://developer.apple.com/reference/swift/dictionary) is largely the same as for `Set`. Both are unordered collections based on a hash table implementation.[2](#fn:gyb) Hence `Dictionary` can’t conform to `MutableCollection` and `RangeReplaceableCollection` for the same reasons `Set` can’t.
+The story for [`Dictionary`](https://developer.apple.com/reference/swift/dictionary) is largely the same as for `Set`. Both are unordered collections based on a hash table implementation.^[2](#fn:gyb) Hence `Dictionary` can’t conform to `MutableCollection` and `RangeReplaceableCollection` for the same reasons `Set` can’t.
 
 Another aspect is unique to dictionaries. A `Dictionary`’s element type — i.e. the associated [`Iterator.Element`](https://developer.apple.com/reference/swift/iteratorprotocol/element) type it specifies in its `Collection` conformance — is a [`(Key, Value)` tuple](https://developer.apple.com/reference/swift/dictionary/element):
 

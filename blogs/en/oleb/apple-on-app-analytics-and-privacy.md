@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6c8e2d163eeb0d90'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 One more tidbit from Apple’s updated iOS Developer Program License Agreement. In the [Platforms State of the Union session](https://developer.apple.com/videos/wwdc/2014/) at WWDC yesterday, Apple announced that they are going to offer app analytics in iTunes Connect to developers later in 2014:
 
-![Slide from the Platforms State of the Union session at WWDC 2014 presenting app analytics in iTunes Connect](https://oleb.net/media/wwdc-2014-slide-app-analytics.png)
+[![Slide from the Platforms State of the Union session at WWDC 2014 presenting app analytics in iTunes Connect](https://oleb.net/media/wwdc-2014-slide-app-analytics.png)](https://oleb.net/media/wwdc-2014-slide-app-analytics.png)
 
 > These analytics will tell you how many users visited your store pages; how many users went on and purchased your app; how many remained active over time. And best of all, collecting all this information is built right into iOS and is completely automatic.
 

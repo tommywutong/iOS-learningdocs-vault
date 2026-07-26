@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:35d1a5a0bf8254b2'
 translated: false
 ---
@@ -26,7 +26,7 @@ Swift’s string implementation goes to heroic efforts to be as Unicode-correct 
 
 This is great for correctness, but it comes at a price, mostly in terms of unfamiliarity; if you’re used to manipulating strings with integer indices in other languages, Swift’s design will seem unwieldy at first, leaving you wondering. Why can’t I write `str[999]` to access a string’s one-thousandth character? Why doesn’t `str[idx+1]` get the next character? Why can’t I loop over a range of `Character` values such as `"a"..."z"`?
 
-It also has performance implications: `String` does _not_ support random access, i.e. jumping to an arbitrary character is not an _O(1)_ operation. It can’t be — when characters have variable width, the string doesn’t know where the _n_th character is stored without looking at all characters that come before it.
+It also has performance implications: `String` does _not_ support random access, i.e. jumping to an arbitrary character is not an _O(1)_ operation. It can’t be — when characters have variable width, the string doesn’t know where the _n_^th character is stored without looking at all characters that come before it.
 
 In this chapter, we’ll discuss the string architecture in detail, as well as some techniques for getting the most out of Swift strings in terms of functionality and performance. But we’ll start with an overview of the required Unicode terminology.
 
@@ -292,7 +292,7 @@ In practice, the loss in usability and learnability caused by this change turned
 
 ## Bidirectional, Not Random Access
 
-However, for reasons that should be clear from the examples in the previous section, `String` is _not_ a random-access collection. How could it be, when knowing where the _n_th character of a particular string is involves evaluating just how many Unicode scalars precede that character? For this reason, `String` conforms only to [`BidirectionalCollection`](https://developer.apple.com/documentation/swift/bidirectionalcollection). You can start at either end of the string, moving forward or backward, and the code will look at the composition of the adjacent characters and skip over the correct number of bytes. However, you need to iterate up and down one character at a time.
+However, for reasons that should be clear from the examples in the previous section, `String` is _not_ a random-access collection. How could it be, when knowing where the _n_^th character of a particular string is involves evaluating just how many Unicode scalars precede that character? For this reason, `String` conforms only to [`BidirectionalCollection`](https://developer.apple.com/documentation/swift/bidirectionalcollection). You can start at either end of the string, moving forward or backward, and the code will look at the composition of the adjacent characters and skip over the correct number of bytes. However, you need to iterate up and down one character at a time.
 
 Keep the performance implications of this in mind when writing string-processing code. Algorithms that depend on random access to maintain their performance guarantees aren’t a good match for Unicode strings. Consider this `String` extension for generating a list of a string’s prefixes, which works by generating an integer range from zero to the string’s length and then mapping over the range to create the prefix for each length:
 
@@ -307,7 +307,7 @@ let hello = "Hello"
 hello.allPrefixes1 // → ["", "H", "He", "Hel", "Hell", "Hello"]
 ```
 
-As simple as this code looks, it’s very inefficient. It first walks over the string once to calculate the length, which is fine. But then each of the n + 1 calls to [`prefix`](https://developer.apple.com/documentation/swift/substring/2893985-prefix) is another _O(n)_ operation because `prefix` always starts at the beginning and has to work its way through the string to count the desired number of characters. Running a linear process inside another linear loop means this algorithm is accidentally _O(n2)_ — as the length of the string increases, the time this algorithm takes increases quadratically.
+As simple as this code looks, it’s very inefficient. It first walks over the string once to calculate the length, which is fine. But then each of the n + 1 calls to [`prefix`](https://developer.apple.com/documentation/swift/substring/2893985-prefix) is another _O(n)_ operation because `prefix` always starts at the beginning and has to work its way through the string to count the desired number of characters. Running a linear process inside another linear loop means this algorithm is accidentally _O(n^2)_ — as the length of the string increases, the time this algorithm takes increases quadratically.
 
 If possible, an efficient string algorithm should walk over a string only once and then operate on string indices to denote the substrings it’s interested in. Here’s another version of the same algorithm:
 
@@ -342,9 +342,9 @@ One collection-like feature strings do _not_ provide is that of [`MutableCollect
 
 # String Indices
 
-Most programming languages use integers for subscripting strings, e.g. `str[5]` would return the sixth “character” of `str` (for whatever that language’s idea of a “character” is). Swift doesn’t allow this. Why? The answer should sound familiar to you by now: subscripting is supposed to take constant time (intuitively as well as per the requirements of the `Collection` protocol), and looking up the _n_th `Character` is impossible without looking at all bytes that come before it.
+Most programming languages use integers for subscripting strings, e.g. `str[5]` would return the sixth “character” of `str` (for whatever that language’s idea of a “character” is). Swift doesn’t allow this. Why? The answer should sound familiar to you by now: subscripting is supposed to take constant time (intuitively as well as per the requirements of the `Collection` protocol), and looking up the _n_^th `Character` is impossible without looking at all bytes that come before it.
 
-[`String.Index`](https://developer.apple.com/documentation/swift/string.index), the index type used by `String` and its views, is an opaque value that essentially stores a byte offset from the beginning of the string. It’s still an _O(n)_ operation if you want to compute the index for the _n_th character and have to start at the beginning of the string, but once you have a valid index, subscripting the string with it now only takes _O(1)_ time. And crucially, finding the next index after an existing index is also fast because you can start at the existing index’s byte offset — you don’t need to go back to the beginning again. This is why iterating over the characters in a string in order (forward or backward) is efficient.
+[`String.Index`](https://developer.apple.com/documentation/swift/string.index), the index type used by `String` and its views, is an opaque value that essentially stores a byte offset from the beginning of the string. It’s still an _O(n)_ operation if you want to compute the index for the _n_^th character and have to start at the beginning of the string, but once you have a valid index, subscripting the string with it now only takes _O(1)_ time. And crucially, finding the next index after an existing index is also fast because you can start at the existing index’s byte offset — you don’t need to go back to the beginning again. This is why iterating over the characters in a string in order (forward or backward) is efficient.
 
 String index manipulation is based on the same `Collection` APIs you’d use with any other collection. It’s easy to miss this equivalence since the collections we use by far the most — arrays — use integer indices, and we usually use simple arithmetic to manipulate those. The [`index(after:)`](https://developer.apple.com/documentation/swift/string/1782583-index) method returns the index of the next character:
 

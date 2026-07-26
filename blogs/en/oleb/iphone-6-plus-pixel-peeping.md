@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3104bd6995f01292'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # iPhone 6 Plus Pixel Peeping
 
-As you probably know by now, the [iPhone 6 Plus renders things differently](http://www.paintcodeapp.com/news/iphone-6-screens-demystified) than every other iOS device to date. To developers, the device exposes a screen rectangle of 414 × 736 points, which the system renders at 3× scale into a backing store of 1242 × 2208 “logical” pixels.[1](#fn:1) Since the iPhone 6 Plus display has only 1080 × 1920 hardware pixels, the backing store image is then downsampled by approximately 13% to the native resolution in an additional step.
+As you probably know by now, the [iPhone 6 Plus renders things differently](http://www.paintcodeapp.com/news/iphone-6-screens-demystified) than every other iOS device to date. To developers, the device exposes a screen rectangle of 414 × 736 points, which the system renders at 3× scale into a backing store of 1242 × 2208 “logical” pixels.^[1](#fn:1) Since the iPhone 6 Plus display has only 1080 × 1920 hardware pixels, the backing store image is then downsampled by approximately 13% to the native resolution in an additional step.
 
 In practice, I found this not to be a big deal. The device’s pixel density is so high that I have yet to notice the inevitable blurring induced by the downscaling in my day-to-day use of the iPhone 6 Plus.
 
@@ -26,9 +26,9 @@ Nevertheless, I wanted to better understand the impact of the downsampling. Coul
 
 It turns out this is surprisingly difficult to test. Screenshots are always saved in the logical 3× size, so any effect of the final scaling step is not visible in them. Likewise, the iPhone simulator acts as if the difference between logical and hardware pixel resolutions did not exist. I had to resort to taking actual photos of the iPhone 6 screen and interpreting what I saw.
 
-Taking the pictures is not a trivial task, either. In order to resolve individual pixels, you need a tripod, a camera with good manual focus controls (live view with magnification is a must) and a lens with decent macro capabilities. The photos and videos for this article were taken with an [Olympus E-M1](https://en.wikipedia.org/wiki/Olympus_OM-D_E-M1) and a [Panasonic GH3](https://en.wikipedia.org/wiki/Panasonic_Lumix_DMC-GH3) using an [Olympus M 60mm f/2.8 lens](http://www.photozone.de/m43/781-oly6028). I’d like to thank [Andreas Levers](http://andreas-levers.de/) for helping me out with equipment as well as his expertise for this test.[2](#fn:2)
+Taking the pictures is not a trivial task, either. In order to resolve individual pixels, you need a tripod, a camera with good manual focus controls (live view with magnification is a must) and a lens with decent macro capabilities. The photos and videos for this article were taken with an [Olympus E-M1](https://en.wikipedia.org/wiki/Olympus_OM-D_E-M1) and a [Panasonic GH3](https://en.wikipedia.org/wiki/Panasonic_Lumix_DMC-GH3) using an [Olympus M 60mm f/2.8 lens](http://www.photozone.de/m43/781-oly6028). I’d like to thank [Andreas Levers](http://andreas-levers.de/) for helping me out with equipment as well as his expertise for this test.^[2](#fn:2)
 
-![The test setup](https://oleb.net/media/iphone-6-plus-test-pattern-setup.jpg)
+[![The test setup](https://oleb.net/media/iphone-6-plus-test-pattern-setup.jpg)](https://oleb.net/media/iphone-6-plus-test-pattern-setup.jpg)
 
 <sub>The test setup.</sub>
 
@@ -36,7 +36,7 @@ Taking the pictures is not a trivial task, either. In order to resolve individua
 
 To visualize the effects of the downsampling, I wrote a test app that renders a grid of vertical green hairlines with varying spacing on a black background using CoreGraphics. Choosing green instead of white (red or blue would have worked just as well) makes it easier to interpret the photos. White lines with their red, green and blue subpixels would have been somewhat harder to make sense of at large magnifications, but it would not have changed the overall results.
 
-![Rendering of a grid of vertical green hairlines with varying spacing](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-1242x2208.png)
+[![Rendering of a grid of vertical green hairlines with varying spacing](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-1242x2208.png)](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-1242x2208.png)
 
 <sub>A rendering of the test pattern at the logical resolution of 1242 × 2208 pixels. Click to open at full size. Make sure to look at the image at 100% or more to verify that it is pixel-perfect.</sub>
 
@@ -46,13 +46,13 @@ Using the `3.0` scale factor reported by the device, I chose a line width of `1/
 
 I verified the correctness of my drawing code by using the same code to render directly into an image of 1242 × 2208, saving it to disk, and inspecting it in Photoshop. (You can obtain the same result by taking a screenshot on the device.) As you can see, the lines are perfectly crisp:
 
-![Detail rendering of a grid of vertical green hairlines with varying spacing](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-detail-1242x200.png)
+[![Detail rendering of a grid of vertical green hairlines with varying spacing](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-detail-1242x200.png)](https://oleb.net/media/iphone-6-plus-test-pattern-rendered-detail-1242x200.png)
 
 <sub>Detail of the rendered test pattern at 400%.</sub>
 
 The device now downsamples the crisp 1242 × 2208 pixel image for display on the 1080 × 1920 pixel screen. This is a photo of the screen:
 
-![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-logical-pixels-PA220021.png)
+[![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-logical-pixels-PA220021.png)](https://oleb.net/media/iphone-6-plus-test-pattern-photo-logical-pixels-PA220021.png)
 
 <sub>The result of rendering the test pattern at logical 3× scale after it got downsampled by the device. Notice how every line bleeds into neighboring pixels. In the section on the left, every single pixel is lit green at varying brightnesses. The black 1-pixel-wide gaps between each green line have been lost.</sub>
 
@@ -62,7 +62,7 @@ Although the test pattern looks very bad at this extreme magnification, it’s w
 
 Only a direct comparison against the result produced on a device that does not have the scaling step (an iPhone 5 in this case) shows a striking difference. The lines are perfectly crisp and much brighter than on the iPhone 6 Plus. This is how it is supposed to look!
 
-![Detail photo of an iPhone 5 screen rendering the test pattern](https://oleb.net/media/iphone-5-test-pattern-photo-logical-and-native-pixels-PA220016.png)
+[![Detail photo of an iPhone 5 screen rendering the test pattern](https://oleb.net/media/iphone-5-test-pattern-photo-logical-and-native-pixels-PA220016.png)](https://oleb.net/media/iphone-5-test-pattern-photo-logical-and-native-pixels-PA220016.png)
 
 <sub>Photo of an iPhone 5 screen rendering the test pattern (at 2× scale). Perfect result. This is how it is supposed to look. Notice how much brighter the pixels are than on the iPhone 6 Plus (both devices were set to similar screen brightnesses).</sub>
 
@@ -74,7 +74,7 @@ I thought that by drawing lines with a width of `1/2.609 ≈ 0.38333 pt` (result
 
 The end result on screen is not identical to the case presented above but quite similar. In fact, although the magnification looks a bit better to my eye than the 3× rendering, it looks slightly worse at a normal viewing distance.
 
-![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-native-pixels-PA220022.png)
+[![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-native-pixels-PA220022.png)](https://oleb.net/media/iphone-6-plus-test-pattern-photo-native-pixels-PA220022.png)
 
 <sub>Photo of the test pattern rendered at the “native” scale of 2.609×. Not recommended.</sub>
 
@@ -84,13 +84,13 @@ Apps that use OpenGL or Metal for rendering [can opt out](https://developer.appl
 
 You can use Instruments to confirm that your view correctly skips the scaling stage. Your view should be rendered with a blue overlay when the “Color Compositing Fast-Path Blue” option is checked in the Core Animation instrument. If you don’t see the overlay, the view is not set up correctly.
 
-![Checking the Compositing Fast-Path highlighting option in Instruments](https://oleb.net/media/instruments-screenshot-fast-path-blue.png)
+[![Checking the Compositing Fast-Path highlighting option in Instruments](https://oleb.net/media/instruments-screenshot-fast-path-blue.png)](https://oleb.net/media/instruments-screenshot-fast-path-blue.png)
 
 <sub>Use this option in Instruments’s Core Animation instrument to verify that your OpenGL view skips the scaling stage.</sub>
 
 Rendering the test pattern using OpenGL at the native hardware resolution yields a perfect result. The lines are very bright and there’s no bleeding into neighboring pixels. In direct comparison with the plain UIKit results above, it is astonishing how much better this looks.
 
-![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-P1120599.png)
+[![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-P1120599.png)](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-P1120599.png)
 
 <sub>Photo of the test pattern on the iPhone 6 Plus, rendered directly with OpenGL, skipping the scaling step. Perfect result. The slight blurring in the lower right corner is a result of less-than-perfect focus, not a rendering issue. (This image has been taken at a higher magnification than the photos above. One can easily discern every single subpixel.)</sub>
 
@@ -105,9 +105,8 @@ Again, the results are fascinating:
 1. Adding the alpha overlay has no effect on the OpenGL view. The system can do simple alpha blending with views of different scale factors, presumably because the compositing happens directly on the GPU after the overlay view went through the scaling stage.
 2. Activating the blur view immediately degrades the image quality of the line grid. It seems the system now has to upsample the OpenGL view to the logical 3× scale in order to compute the blur before it eventually downsamples everything to the hardware resolution.
 
-![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-alpha-overlay-PB050014.png)
-
-![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-blur-overlay-PB050015.png)
+[![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-alpha-overlay-PB050014.png)](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-alpha-overlay-PB050014.png)  
+[![Detail photo of an iPhone 6 Plus screen rendering the test pattern](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-blur-overlay-PB050015.png)](https://oleb.net/media/iphone-6-plus-test-pattern-photo-opengl-blur-overlay-PB050015.png)
 
 <sub>Illustrating the image degradation that occurs when the scaling stage kicks in. Notice how the top image with a simple alpha overlay blending is perfectly crisp. The bottom image has degraded due to the blur view overlay (look at the lines on the left). The code that renders the test pattern in the OpenGL view is identical in both cases.</sub>
 
@@ -121,7 +120,7 @@ Next time you launch a game on an iPhone 6 Plus, see if you can notice the image
 
 The same effect can be observed during video playback. When you play a native 1080p video in fullscreen, iOS can do the same optimization and skip the scaling stage. Bringing the playback controls on screen requires blending the blurred toolbars with the video and causes a degradation in image quality.
 
-I have never noticed this effect in a normal video but [Hendrik Kueck](http://www.pocketpixels.com/) demonstrates it nicely [in this demo](https://www.youtube.com/watch?v=eH0hyh5cvbU). You can use [this video of a test pattern image](https://vimeo.com/41414940) to test this for yourself.[3](#fn:3)
+I have never noticed this effect in a normal video but [Hendrik Kueck](http://www.pocketpixels.com/) demonstrates it nicely [in this demo](https://www.youtube.com/watch?v=eH0hyh5cvbU). You can use [this video of a test pattern image](https://vimeo.com/41414940) to test this for yourself.^[3](#fn:3)
 
 # Conclusion
 

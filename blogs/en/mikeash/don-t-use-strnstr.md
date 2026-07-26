@@ -44,9 +44,7 @@ int main(int argc, char **argv)
 }
 ```
 
-On my computer running 10.4.10 and everyone else running 10.4 who has tried it, this will crash on the
-
-line.
+On my computer running 10.4.10 and everyone else running 10.4 who has tried it, this will crash on the `strnstr` line.
 
 In order to trigger the crash, several conditions must be met. First, the buffer must be lacking a terminating NUL byte. (Note that this is allowed according to how `strnstr` is [documented to operate](http://developer.apple.com/documentation/Darwin/Reference/Manpages/man3/strnstr.3.html).) The search string must not exist in the buffer. The end of the buffer must terminate on a page boundary. And finally, the page following the buffer must be unreadable.
 
@@ -64,7 +62,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/dont-use-strnstr.html)
 
 Add your thoughts, post a comment:
 

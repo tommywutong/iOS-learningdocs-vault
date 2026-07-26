@@ -163,7 +163,7 @@ Analyzing the magnitudes can produce for interesting visualizations. Since human
 
 The output has one odd feature. Index `0` in the output would normally contain the DC offset, which is always a pure real value with a zero imaginary component. Index `bufferFrames / 2` contains the Nyquist frequency, which _also_ is a pure real value with zero imaginary component. To save a bit of space, vDSP squashes these two together at index `0`. `outReal[0]` contains the DC offset, and `outImaginary[0]` contains the Nyquist component.
 
-The FFT output can be altered to, for example, reduce or increase the strength of certain frequencies. You can then transform the result back into raw audio data, which will reflect the alterations. The alterations are just a matter of twiddling around with `outReal` and `outImaginary`. For example, if you go through and set the first 1/4th of each array to`0`, you'll remove all of the low frequency components from the sound.
+The FFT output can be altered to, for example, reduce or increase the strength of certain frequencies. You can then transform the result back into raw audio data, which will reflect the alterations. The alterations are just a matter of twiddling around with `outReal` and `outImaginary`. For example, if you go through and set the first ^1/~4^th of each array to`0`, you'll remove all of the low frequency components from the sound.
 
 To reverse the transform, just call `vDSP_fft_zrip` again with `FFT_INVERSE`:
 
@@ -201,7 +201,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-10-26-fourier-transforms-and-ffts.html)
 
 Add your thoughts, post a comment:
 

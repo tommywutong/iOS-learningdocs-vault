@@ -28,20 +28,10 @@ This article is also available in [Chinese (translation by neoman)](https://gith
 **Definitions**  
  Before we get started on the mechanisms, we need to define our terms. A lot of people are kind of unclear on exactly what a "method" is versus a "message", for example, but this is critically important for understanding how the messaging system works at the low level.
 
-- an actual piece of code associated with a class, and which is given a particular name. Example:
-- a name and a set of parameters sent to an object. Example: sending "meaning" and no parameters to object
-
-  .
-- a particular way of representing the name of a message or method, represented as the type
-
-  . Selectors are essentially just opaque strings that are managed so that simple pointer equality can be used to compare them, to allow for extra speed. (The implementation may be different, but that's essentially how they look on the outside.) Example:
-
-  .
-- the process of taking a
-
-  and finding and executing the appropriate
-
-  .
+- **Method:** an actual piece of code associated with a class, and which is given a particular name. Example: `- (int)meaning { return 42; }`
+- **Message:** a name and a set of parameters sent to an object. Example: sending "meaning" and no parameters to object `0x12345678`.
+- **Selector:** a particular way of representing the name of a message or method, represented as the type `SEL`. Selectors are essentially just opaque strings that are managed so that simple pointer equality can be used to compare them, to allow for extra speed. (The implementation may be different, but that's essentially how they look on the outside.) Example: `@selector(meaning)`.
+- **Message send:** the process of taking a **message** and finding and executing the appropriate **method**.
 
 **Methods**  
  The next thing that we need to discuss is what exactly a method is at the machine level. From the definition, it's a piece of code given a name and associated with a particular class, but what does it actually end up creating in your application binary?
@@ -104,9 +94,7 @@ That struct is in turn defined:
     }                                                            OBJC2_UNAVAILABLE;
 ```
 
-Which is just declaring a variable-length struct holding
-
-structs. That one is in turn defined as:
+Which is just declaring a variable-length struct holding `objc_method` structs. That one is in turn defined as:
 
 ```
     struct objc_method {
@@ -122,11 +110,7 @@ So even though we're not supposed to touch these structs (don't worry, all the f
     typedef id 			(*IMP)(id, SEL, ...);
 ```
 
-Now we know enough to see how this stuff works. All
-
-has to do is look up the class of the object you give it (available by just dereferencing it and obtaining the
-
-member that all objects contain), get the class's method list, and search through the method list until a method with the right selector is found. If nothing is there, search the superclass's list, and so on up the hierarchy. Once the right method is found, jump to the IMP of method in question.
+Now we know enough to see how this stuff works. All `objc_msgSend` has to do is look up the class of the object you give it (available by just dereferencing it and obtaining the `isa` member that all objects contain), get the class's method list, and search through the method list until a method with the right selector is found. If nothing is there, search the superclass's list, and so on up the hierarchy. Once the right method is found, jump to the IMP of method in question.
 
 One more detail needs to be considered here. The above procedure would work but it would be extremely slow. `objc_msgSend` only takes about a dozen CPU cycles to execute on the x86 architecture, which makes it clear that it's not going through this lengthy procedure every single time you call it. The clue to this is another `objc_class` member:
 
@@ -144,11 +128,7 @@ And that's defined farther down:
     }
 ```
 
-This defines a hash table that stores
-
-structs, using the selector as the key. The way
-
-works is by first hashing the selector and looking it up in the class's method cache. If it's found, which it nearly always will be, it can jump straight to the method implementation with no further fuss. Only if it's not found does it have to do the more laborious lookup, at the end of which it inserts an entry into the cache so that future lookups can be fast.
+This defines a hash table that stores `Method` structs, using the selector as the key. The way `objc_msgSend`_really_ works is by first hashing the selector and looking it up in the class's method cache. If it's found, which it nearly always will be, it can jump straight to the method implementation with no further fuss. Only if it's not found does it have to do the more laborious lookup, at the end of which it inserts an entry into the cache so that future lookups can be fast.
 
 (There is actually one _more_ detail beyond this which ends up being extremely important: what happens when _no_ method can be found for a given selector. But that one is so important that it deserves its own post, so look for it next week.)
 
@@ -165,7 +145,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-03-20-objective-c-messaging.html)
 
 Add your thoughts, post a comment:
 

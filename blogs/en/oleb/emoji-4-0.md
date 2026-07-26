@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2fb0f42e9120d88f'
 translated: false
 ---
@@ -82,7 +82,7 @@ family1.applyingTransform(.toUnicodeName, reverse: false)!
 
 (To learn more about the incredibly useful and flexible text transforms built into Foundation, check out [my article from January 2016](https://oleb.net/blog/2016/01/icu-text-transforms/).)
 
-Your operating system’s emoji font includes glyphs for the most common variants, but it can’t (yet?) handle every possible combination. If no glyph for the requested combination is available, the system falls back to displaying separate emoji for the group. For example, macOS 10.12.2 has no glyphs for families with skin tones — such a group is displayed as four separate faces on my system, rather than a single glyph:[1](#fn:1)
+Your operating system’s emoji font includes glyphs for the most common variants, but it can’t (yet?) handle every possible combination. If no glyph for the requested combination is available, the system falls back to displaying separate emoji for the group. For example, macOS 10.12.2 has no glyphs for families with skin tones — such a group is displayed as four separate faces on my system, rather than a single glyph:^[1](#fn:1)
 
 ```
 let family3 = "👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻"
@@ -157,7 +157,7 @@ We can see that as of Swift 3.0.2, Swift doesn’t handle skin tone modifiers an
 
 The problem is that string handling in Swift 3 is still based on Unicode 8.0. But, you might ask, weren’t skin tones and ZWJ sequences introduced in Unicode 8? Shouldn’t this work then? Yes, they were. Unfortunately, what constitutes an emoji and how text should be segmented into grapheme clusters (i.e. logical characters) are two separate parts of the Unicode spec, and in Unicode 8 these two diverged significantly.
 
-While [UTR #51 (the “emoji standard”)](http://www.unicode.org/reports/tr51/tr51-3-archive.html) already codified skin tones and ZWJ sequences, the [text segmentation rules in UAX #29](http://www.unicode.org/reports/tr29/tr29-27.html#Grapheme_Cluster_Boundaries) weren’t updated to reflect that.[2](#fn:2) Thus, an implementation that aimed to follow the standard to the letter had no choice but to do what Swift did and live with the inconsistencies. I don’t know if this was intentional or an oversight by the Unicode consortium.
+While [UTR #51 (the “emoji standard”)](http://www.unicode.org/reports/tr51/tr51-3-archive.html) already codified skin tones and ZWJ sequences, the [text segmentation rules in UAX #29](http://www.unicode.org/reports/tr29/tr29-27.html#Grapheme_Cluster_Boundaries) weren’t updated to reflect that.^[2](#fn:2) Thus, an implementation that aimed to follow the standard to the letter had no choice but to do what Swift did and live with the inconsistencies. I don’t know if this was intentional or an oversight by the Unicode consortium.
 
 Unicode 9.0 fixed the text segmentation rules to take the new emoji sequences into account. Specifically, [there’s a new rule](http://www.unicode.org/reports/tr29/tr29-29.html#GB10) for determining the boundaries of an extended grapheme cluster that says:
 

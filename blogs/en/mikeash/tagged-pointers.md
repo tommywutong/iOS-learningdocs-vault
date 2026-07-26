@@ -272,7 +272,7 @@ At some point, we have to actually tell the runtime that we want to act as a tag
 
 Now we can get to actually constructing the tagged pointers. I wrote two new methods: `+numberWithLongLong:` and `+numberWithUnsignedLongLong:`. These will try to construct a tagged pointer from their argument if possible, and otherwise fall back to allocating an instance of the class.
 
-These methods can only create a tagged pointer if the value is within certain limits. Namely, the value has to fit within `kLongLongBits - kTagBits - kTypeBits` bits, which is 58 bits on a 64-bit system. The largest `long long` that fits within that space is 257-1. The smallest `long long` that fits is -257. One bit is needed for the sign bit, since `long long` is signed. Based on this, we compute the min and max for a tagged `long long`:
+These methods can only create a tagged pointer if the value is within certain limits. Namely, the value has to fit within `kLongLongBits - kTagBits - kTypeBits` bits, which is 58 bits on a 64-bit system. The largest `long long` that fits within that space is 2^57-1. The smallest `long long` that fits is -2^57. One bit is needed for the sign bit, since `long long` is signed. Based on this, we compute the min and max for a tagged `long long`:
 
 ```
     + (id)numberWithLongLong: (long long)value {
@@ -290,7 +290,7 @@ The rest is simple. If the value lies beyond the bounds, we simply do the regula
     }
 ```
 
-The code for `unsigned long long` is similar. There's only one limit in this case, and it's 258-1:
+The code for `unsigned long long` is similar. There's only one limit in this case, and it's 2^58-1:
 
 ```
     + (id)numberWithUnsignedLongLong:(unsigned long long)value {
@@ -407,7 +407,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-07-27-lets-build-tagged-pointers.html)
 
 Add your thoughts, post a comment:
 

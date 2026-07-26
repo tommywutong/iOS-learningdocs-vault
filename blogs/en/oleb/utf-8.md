@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e012f8ccd59a4ef7'
 translated: false
 ---
@@ -18,13 +18,9 @@ translated: false
 
 [UTF-8](https://en.wikipedia.org/wiki/UTF-8) is 20 years old this month. Today, UTF-8 is the [dominant character encoding on the web](https://googleblog.blogspot.com/2012/02/unicode-over-60-percent-of-web.html) and the basis for pretty much every new internet protocol or API. UTF-8 has some very unique features that have contributed to its success:
 
-- ASCII
-
-  .
+- It is backward-compatible with [ASCII](https://en.wikipedia.org/wiki/ASCII).
 - It is very space-efficient for English and other Latin-based alphabets. That includes common control sequences such as HTML and XML tags, regardless of the document language.
-- UTF-16
-
-  ), and the byte order mark is optional.
+- It does not have to deal with endianness (unlike [UTF-16](https://en.wikipedia.org/wiki/UTF-16)), and the byte order mark is optional.
 - It is self-synchronizing, meaning the start byte of a character can be easily identified even in a partial data stream.
 - Its unique binary signature makes it easy to autodetect UTF-8 encoding in code.
 
@@ -42,7 +38,7 @@ On the other hand, that same benefit might have made the transition to a fully U
 
 The problem is that many developers (especially in the English-speaking world) only deal with ASCII characters all the time. As a consequence, I suppose many tend to test their UTF-8-aware software only with ASCII characters, too. Any encoding-related bugs are easily missed that way.
 
-Now, if UTF-8 had a totally different mapping of characters to bytes for the first 127 characters, any mixup between UTF-8-encoded and ASCII-encoded text would be readily apparent.[1](#fn:1) No-one would ever ship software that contained such a bug.
+Now, if UTF-8 had a totally different mapping of characters to bytes for the first 127 characters, any mixup between UTF-8-encoded and ASCII-encoded text would be readily apparent.^[1](#fn:1) No-one would ever ship software that contained such a bug.
 
 ## Subtle changes can be dangerous
 

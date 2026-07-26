@@ -44,9 +44,7 @@ Here is the full list of events supported by GCD in 10.6.0:
 8. Custom timer.
 9. Custom event.
 
-That's a lot of useful stuff. It's basically everything
-
-supports, plus mach ports, plus built-in support for timers (instead of having to build your own using the timeout parameter), plus custom events.
+That's a lot of useful stuff. It's basically everything `kqueue` supports, plus mach ports, plus built-in support for timers (instead of having to build your own using the timeout parameter), plus custom events.
 
 **Custom Events**  
  Most of these events are pretty much self explanatory, but you may be wondering what a custom event is. In short, this is an event which you signal yourself by calling the `dispatch_source_merge_data` function.
@@ -74,9 +72,7 @@ Enough talk, here's some code:
     });
 ```
 
-(I want to make one note about this code, about something that stymied me to no end when I first started working with dispatch sources. It bothered me enough that I'm going to put it in bold.
-
-)
+(I want to make one note about this code, about something that stymied me to no end when I first started working with dispatch sources. It bothered me enough that I'm going to put it in bold. **Dispatch sources always start out suspended! You must resume them after creating them if you want events to be delivered!**)
 
 Assuming you've configured the progress indicator to have the correct min/max value, this will all work perfectly. The data will be processed in parallel. As each chunk of data finishes, it signals the dispatch source and adds 1 to the dispatch source data, which we treat as the number of work units completed. The event handler increments the progress indicator by the number of work units that have been completed since the last time it ran. If the main thread is idle and work units complete slowly, the event handler will be called for every work unit completion, giving real time results. If the main thread is busy or work units complete quickly, completion events will be coalesced and the progress indicator will only be updated one time each time the main thread becomes available to process it.
 
@@ -132,7 +128,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-09-11-intro-to-grand-central-dispatch-part-iii-dispatch-sources.html)
 
 Add your thoughts, post a comment:
 

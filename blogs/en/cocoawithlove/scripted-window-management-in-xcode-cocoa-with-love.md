@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4d6e841ee57b0d28'
 translated: false
 ---
@@ -85,7 +85,7 @@ Since it is difficult to get the actual screen size using Applescript (see [John
 
 This much is fairly simple. Much more interesting is the "reposition everything" script:
 
-> changed to split strings using a specified delimiter so the extension is extracted consistently (not affected by locale settings).
+> **Update 2009-10-19:** changed to split strings using a specified delimiter so the extension is extracted consistently (not affected by locale settings).
 
 ```objc
 #! /usr/bin/osascript

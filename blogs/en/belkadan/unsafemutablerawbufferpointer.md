@@ -7,7 +7,7 @@ original_language: en
 published: 2022-03-02
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6a66bb4118856168'
 translated: false
 ---
@@ -28,7 +28,7 @@ Because it came up at work, a recap of Swift pointer nomenclature:
 
 - Unsafe - because it is
 - ? Mutable - vs const
-- in its own type
+- ? Raw - vs typed, puts the specialness of C’s `void *` in its own type
 - ? Buffer - knows its length
 - Pointer - because it doesn’t own the data
 

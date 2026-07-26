@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2bd59db205c18e8e'
 translated: false
 ---
@@ -179,9 +179,7 @@ With the `coalescedValuesForProperty:` method we iterate over the whole set twic
 
 ## Conclusion
 
-> PropertyAccessors.zip
-> 
-> (32kB). It's hastily thrown together to accompany this post, so it's not necessarily well written but it's there if you're interested.
+> By request, here's the code used in the testing: [PropertyAccessors.zip](https://www.cocoawithlove.com/assets/objc-era/PropertyAccessors.zip) (32kB). It's hastily thrown together to accompany this post, so it's not necessarily well written but it's there if you're interested.
 
 I wrote this code and ran these performance tests because I have a lot of code that uses Key Value Coding for traversing "to-many" relationships. I was concerned that since Core Data advocates the use of the auto-generated accessor methods for performance reasons, that my use of key value coding in these cases would be significantly slower than it should be.
 

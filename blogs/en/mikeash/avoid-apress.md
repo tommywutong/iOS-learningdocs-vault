@@ -29,79 +29,43 @@ The story is long and involved, and I don't want to bore you with details. Inste
 
 Now for the timeline.
 
-- Apress starts feeling me out as a potential author for
+- **February 2009 -** Apress starts feeling me out as a potential author for _Pro Objective-C for Mac and iPhone_, and a contributor of a chapter to _iPhone Cool Projects_.
+- **February 2009 -** I begin work on a proposed table of contents for _Pro Objective-C_, and on my _iPhone Cool Projects_ chapter.
+- **February 2009 -** I am sent a publication contract for _Pro Objective-C_. As it contains deadlines whose feasibility is completely unknown, I decline to sign it until further progress is made.
 
-  , and a contributor of a chapter to
+- **March 2009 -** I complete a first draft of my _iPhone Cool Projects_ chapter.
+- **March 2009 -** Work begins on _Pro Objective-C_.
+- **March 2009 -** I am sent a new publication contract for _Pro Objective-C_, to reflect a new co-author who has been brought on to the project. As the feasibility of meeting the deadlines remains unknown, I again decline to sign.
 
-  .
-- I begin work on a proposed table of contents for
+- **April 2009 -** Work continues on both projects.
 
-  , and on my
+- **May 2009 -** I turn in the final version of my chapter for _iPhone Cool Projects_. According to Apress's standard multi-author book contract, my advance of $1,000 is now due.
+- **May 2009 -** As a result of various communication problems, I terminate my participation in _Pro Objective-C_ with first drafts of five chapters written by me.
 
-  chapter.
-- I am sent a publication contract for
+- **July 2009 -** Apress brings in a new author to complete _Pro Objective-C_, and we agree that I will receive 25% of the payments to compensate for the work already put in to the book.
 
-  . As it contains deadlines whose feasibility is completely unknown, I decline to sign it until further progress is made.
+- **August 2009 -**_iPhone Cool Projects_ is published. My $1,000 advance is now more than two months overdue.
 
-- I complete a first draft of my
+- **September 2009 -** Having still not received my "advance" (which by now is very much not an advance) for _iPhone Cool Projects_, I contact Apress to find out why I haven't been paid.
+- **September 2009 -** As no contract had been signed for _iPhone Cool Projects_, I am given one to sign now. This contract contains a deadline date that is before I even began work on my chapter, and a table of contents which bears no resemblance to the finished product.
+- **September 2009 -** I sign the contract despite these problems and am assured that payment will be made soon. The payment is now four months overdue.
 
-  chapter.
-- Work begins on
+- **October 2009 -** Still having received no money, I contact Apress again. My contact is surprised that I have not been paid, and assures that it will be processed "as soon as possible". The payment is now five months overdue.
+- **October 2009 -** A week later, still no money, I inquire again. I am told that the payment is "being processed with Accounts at the moment."
 
-  .
-- I am sent a new publication contract for
+- **November 2009 -** Two weeks later, still no money, I send a somewhat nastier inquiry.
+- **November 2009 -** A week after that, I am assured that I will receive my payment within one week.
+- **November 2009 -** The week passes with no money or explanations. The following Monday, a $1,000 check arrives from Apress. This payment is six and a half months late.
+- **November 2009 -** I contact Apress again to start the ball rolling to get my advance for my part of _Pro Objective-C_.
 
-  , to reflect a new co-author who has been brought on to the project. As the feasibility of meeting the deadlines remains unknown, I again decline to sign.
+- **December 2009 -** I am given a contract to sign for _Pro Objective-C_. Like the contract for _iPhone Cool Projects_, it contains deadlines which have long since passed. It contains milestones required for the advance which I do not believe apply to me, because my work on the project is at an end. I refuse to sign, and suggest changes to the contract which will make it acceptable to me.
+- **December 2009 -** I am told that my proposed changes will take some time to discuss, which will delay my payment. I am assured that the contract is "just a formality" and that if I sign it as-is, they will pay my advance in full immediately. I refuse this suggestion.
+- **December 2009 -** After two weeks with no contact, I inquire as to the status of the contract. I am told that the editors are still discussing it. It is now over six months since I ended my work on _Pro Objective-C_.
 
-- Work continues on both projects.
-
-- I turn in the final version of my chapter for
-
-  . According to Apress's standard multi-author book contract, my advance of $1,000 is now due.
-- As a result of various communication problems, I terminate my participation in
-
-  with first drafts of five chapters written by me.
-
-- Apress brings in a new author to complete
-
-  , and we agree that I will receive 25% of the payments to compensate for the work already put in to the book.
-
-- is published. My $1,000 advance is now more than two months overdue.
-
-- Having still not received my "advance" (which by now is very much not an advance) for
-
-  , I contact Apress to find out why I haven't been paid.
-- As no contract had been signed for
-
-  , I am given one to sign now. This contract contains a deadline date that is before I even began work on my chapter, and a table of contents which bears no resemblance to the finished product.
-- I sign the contract despite these problems and am assured that payment will be made soon. The payment is now four months overdue.
-
-- Still having received no money, I contact Apress again. My contact is surprised that I have not been paid, and assures that it will be processed "as soon as possible". The payment is now five months overdue.
-- A week later, still no money, I inquire again. I am told that the payment is "being processed with Accounts at the moment."
-
-- Two weeks later, still no money, I send a somewhat nastier inquiry.
-- A week after that, I am assured that I will receive my payment within one week.
-- The week passes with no money or explanations. The following Monday, a $1,000 check arrives from Apress. This payment is six and a half months late.
-- I contact Apress again to start the ball rolling to get my advance for my part of
-
-  .
-
-- I am given a contract to sign for
-
-  . Like the contract for
-
-  , it contains deadlines which have long since passed. It contains milestones required for the advance which I do not believe apply to me, because my work on the project is at an end. I refuse to sign, and suggest changes to the contract which will make it acceptable to me.
-- I am told that my proposed changes will take some time to discuss, which will delay my payment. I am assured that the contract is "just a formality" and that if I sign it as-is, they will pay my advance in full immediately. I refuse this suggestion.
-- After two weeks with no contact, I inquire as to the status of the contract. I am told that the editors are still discussing it. It is now over six months since I ended my work on
-
-  .
-
-- After another author kicks up a serious fuss, I receive a modified contract to sign. This contract still contains postdated deadlines and obsolete milestones. I request further changes.
-- I am told that my concerns "simply do not matter", that "we don't modify the standard contract", and I am requested to sign it as-is. I refuse.
-- Apress accepts my proposed changes to the contract, and we sign it.
-- I receive a check for my full $2,000 share of the advance for
-
-  , nine months after I finished work on it.
+- **February 2010 -** After another author kicks up a serious fuss, I receive a modified contract to sign. This contract still contains postdated deadlines and obsolete milestones. I request further changes.
+- **February 2010 -** I am told that my concerns "simply do not matter", that "we don't modify the standard contract", and I am requested to sign it as-is. I refuse.
+- **February 2010 -** Apress accepts my proposed changes to the contract, and we sign it.
+- **February 2010 -** I receive a check for my full $2,000 share of the advance for _Pro Objective-C_, nine months after I finished work on it.
 
 I will let you draw your own conclusions about what went on, but for me, this behavior goes beyond what can be tolerated. Many other authors had similar experiences. I'm no longer involved, but from what I hear, these problems continue. If you are a prospective Apress author, then you should strongly consider a different publisher. Likewise, if you are a buyer of technical books, I encourage you to patronize other publishers who are, one hopes, better about paying their authors what they're owed.
 
@@ -113,7 +77,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/avoid-apress.html)
 
 Add your thoughts, post a comment:
 

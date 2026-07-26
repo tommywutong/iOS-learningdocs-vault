@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:63aac7b75e6efbd7'
 translated: false
 ---
@@ -22,15 +22,11 @@ translated: false
 >   
 > Doesn't really hide anything, but at the very least they won't be deadnamed if looking at old PRs?
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926726980820992?ref_src=twsrc%5Etfw)
 
 > Git is terrible for this sort of identity-severing change thanks to burning the committer's name into the validity of the branch, and we-the-industry should probably do something.
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926727647707136?ref_src=twsrc%5Etfw)
 
 [(Continue reading…)](https://belkadan.com/blog/2020/02/Flexible-Identities-in-git/?tag=diversity-in-tech)
 
@@ -49,9 +45,7 @@ If you saw me in the labs at [WWDC](https://developer.apple.com/wwdc/), you migh
 > 1. Buttons as received.  
 > 2. Sharpie line width tests. [pic.twitter.com/jW7oidJa5I](https://t.co/jW7oidJa5I)
 > 
-> — Peter Hosey (@boredzo)
-> 
-> June 7, 2016
+> — Peter Hosey (@boredzo) [June 7, 2016](https://twitter.com/boredzo/status/740015489607303168)
 
 [(Continue reading…)](https://belkadan.com/blog/2016/06/Pronoun-Buttons/?tag=diversity-in-tech)
 
@@ -63,7 +57,7 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Diversity in 
 
 A month or so ago, [@__biancat](https://twitter.com/__biancat) (whose username I can’t help but read as “Bian-cat” even though it’s probably “Bianca T.”) suggested I write up some ideas for getting into compilers and programming languages.
 
-It turns out I’m happy to expound on this, and it doesn’t need a formal CS education either.[1](#fn:education) Unfortunately, pretty much all of them require some amount of free time. I’ll come back to that at the end of the post.
+It turns out I’m happy to expound on this, and it doesn’t need a formal CS education either.^[1](#fn:education) Unfortunately, pretty much all of them require some amount of free time. I’ll come back to that at the end of the post.
 
 [(Continue reading…)](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/?tag=diversity-in-tech)
 
@@ -71,18 +65,14 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Compilers](ht
 
 ## Older Posts
 
-1. 2015-12-29
-
-  Re: Contempt Culture
-2. 2015-02-22
-
-  AlterConf SF/Oakland
+1. 2015-12-29[Re: Contempt Culture](https://belkadan.com/blog/2015/12/Re-Contempt-Culture/?tag=diversity-in-tech)
+2. 2015-02-22[AlterConf SF/Oakland](https://belkadan.com/blog/2015/02/AlterConf/?tag=diversity-in-tech)
 
 ### Possibly Related Tags
 
-- Assembly
-- Compilers
-- Git
-- Open source
-- Programming languages
-- Tech industry
+- [Assembly](https://belkadan.com/blog/tags/assembly)
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Git](https://belkadan.com/blog/tags/git)
+- [Open source](https://belkadan.com/blog/tags/open-source)
+- [Programming languages](https://belkadan.com/blog/tags/programming-languages)
+- [Tech industry](https://belkadan.com/blog/tags/tech-industry)

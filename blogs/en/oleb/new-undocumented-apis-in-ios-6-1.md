@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:73b637e822a52834'
 translated: false
 ---
@@ -26,7 +26,7 @@ With the help of [Nicolas Seriot’s](http://seriot.ch/) excellent [iOS Runtime 
 
 ## MPGobblerGestureRecognizer
 
-The [MediaPlayer framework](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/MediaPlayer.framework)[1](#fn:1) contains a number of new undocumented classes in iOS 6.1.
+The [MediaPlayer framework](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/MediaPlayer.framework)^[1](#fn:1) contains a number of new undocumented classes in iOS 6.1.
 
 The most interesting one to me is [`MPGobblerGestureRecognizer`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/MediaPlayer.framework/MPGobblerGestureRecognizer.h), a UIGestureRecognizer subclass. To be honest, I don’t have the slightest idea what a “gobbler gesture” could be. If you know of a new gesture in iOS that is related to the media player or if you have any idea what kind of gesture this class is meant to detect, I’d love to hear from you.
 
@@ -60,35 +60,11 @@ A large number of Core Data classes saw changes in iOS 6.1, albeit most of them 
 
 Changes include:
 
-- `NSPersistentStore`
-
-  added the method
-
-  .
-- `NSSQLConnection`
-
-  and
-
-  `NSSQLiteConnection`
-
-  added the method
-
-  .
-- `PFUbiquitySetupAssistant`
-
-  added the method
-
-  .
-- `PFUbiquityKnowledgeVector *`
-
-  . I have no idea what this class does.
-- `_PFUbiquityRecordsImporter`
-
-  added the methods
-
-  and
-
-  .
+- [`NSPersistentStore`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/NSPersistentStore.h) added the method `-_storeInfoForEntityDescription:`.
+- [`NSSQLConnection`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/NSSQLConnection.h) and [`NSSQLiteConnection`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/NSSQLiteConnection.h) added the method `-dropUbiquityTables`.
+- [`PFUbiquitySetupAssistant`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/PFUbiquitySetupAssistant.h) added the method `-removeUbiquityMetadataFromStore:`.
+- Several classes got a new property of the type [`PFUbiquityKnowledgeVector *`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/PFUbiquityKnowledgeVector.h). I have no idea what this class does.
+- [`_PFUbiquityRecordsImporter`](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/Frameworks/CoreData.framework/_PFUbiquityRecordsImporter.h) added the methods `-cancelAllOperationsForStoreName:` and `-check­Stores­And­Container`.
 
 # PassKit.framework
 
@@ -108,10 +84,10 @@ The [CMMotionManager](https://github.com/nst/iOS-Runtime-Headers/blob/76cc1d4a6e
 
 [AirPlayDiagnostics](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework) is a new private framework in iOS. It contains these five classes:
 
-- AirPlayDiagnosticsFullscreenController
-- AirPlayDiagnosticsIssuesController
-- AirPlayDiagnosticsPopoverController
-- AirPlayDiagnosticsRoutePicker
-- AirPlayDiagnosticsStateMachine
+- [AirPlayDiagnosticsFullscreenController](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework/AirPlayDiagnosticsFullscreenController.h)
+- [AirPlayDiagnosticsIssuesController](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework/AirPlayDiagnosticsIssuesController.h)
+- [AirPlayDiagnosticsPopoverController](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework/AirPlayDiagnosticsPopoverController.h)
+- [AirPlayDiagnosticsRoutePicker](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework/AirPlayDiagnosticsRoutePicker.h)
+- [AirPlayDiagnosticsStateMachine](https://github.com/nst/iOS-Runtime-Headers/tree/76cc1d4a6e6bc5546f04448535f9e64ec22a9716/PrivateFrameworks/AirPlayDiagnostics.framework/AirPlayDiagnosticsStateMachine.h)
 
 1. Note that all links in this article to specific classes or frameworks inside the iOS Runtime Headers repository point to a specific commit (the iOS 6.1 version of these files). If you are reading this at a later date, the links might not reflect the current state of these APIs. [↩︎](#fnref:1)

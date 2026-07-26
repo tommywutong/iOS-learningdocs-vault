@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:06fd6714eecde38a'
 translated: false
 ---
@@ -30,7 +30,7 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [ROSE-8](https
 
 14 May 2022
 
-POV: You are a compiler targeting arm64[1](#fn:arm64), and you want some code to reference this global variable from the same library. The classic way to do this is to emit an instruction that loads “the address of X”, which will be [determined at run time by the dynamic loader](https://belkadan.com/blog/2022/02/Dynamic-Linking-and-Static-Linking/). But that’s not super efficient! For one thing, addresses are 64 bits long, and instructions are only 32 bits, so you can either break it up into multiple instructions, or load the address from some _other_ location. But more importantly, the global variable is _in the same library._ The dynamic loader isn’t going to break it up from this code[2](#fn:ios), and if we knew _how far away it was_ we could reference it that way.
+POV: You are a compiler targeting arm64^[1](#fn:arm64), and you want some code to reference this global variable from the same library. The classic way to do this is to emit an instruction that loads “the address of X”, which will be [determined at run time by the dynamic loader](https://belkadan.com/blog/2022/02/Dynamic-Linking-and-Static-Linking/). But that’s not super efficient! For one thing, addresses are 64 bits long, and instructions are only 32 bits, so you can either break it up into multiple instructions, or load the address from some _other_ location. But more importantly, the global variable is _in the same library._ The dynamic loader isn’t going to break it up from this code^[2](#fn:ios), and if we knew _how far away it was_ we could reference it that way.
 
 That’s what the `adrp` instruction’s for.
 
@@ -44,7 +44,7 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Assembly](htt
 
 A few weeks ago I got sucked into designing a toy 8-bit CPU, [ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/), and got as far as writing an emulator for the machine that you could manually feed instructions to. At the end, I listed some future projects, the first of which was
 
-> - for manually computing addresses and offsets, so I still want to get to this at some point.
+> - An assembler/interpreter, i.e. running from a text file (and outputting to a binary file, I guess). Writing arrays of instructions by hand (as shown above) isn’t so bad _except_ for manually computing addresses and offsets, so I still want to get to this at some point.
 
 [(Continue reading…)](https://belkadan.com/blog/2020/01/ROSE-8-Console/?tag=assembly)
 
@@ -52,19 +52,15 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Assembly](htt
 
 ## Older Posts
 
-1. 2020-01-13
-
-  ROSE-8
-2. 2016-05-23
-
-  So You Want to Be a (Compiler) Wizard
+1. 2020-01-13[ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/?tag=assembly)
+2. 2016-05-23[So You Want to Be a (Compiler) Wizard](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/?tag=assembly)
 
 ### Possibly Related Tags
 
-- Compilers
-- Debugging
-- Diversity in tech
-- Objective-C
-- Open source
-- ROSE-8
-- Source code
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Debugging](https://belkadan.com/blog/tags/debugging)
+- [Diversity in tech](https://belkadan.com/blog/tags/diversity-in-tech)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Open source](https://belkadan.com/blog/tags/open-source)
+- [ROSE-8](https://belkadan.com/blog/tags/rose-8)
+- [Source code](https://belkadan.com/blog/tags/source-code)

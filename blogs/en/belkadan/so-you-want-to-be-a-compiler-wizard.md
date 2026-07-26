@@ -7,7 +7,7 @@ original_language: en
 published: 2016-05-23
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0e1a677b6bfff511'
 translated: false
 ---
@@ -32,7 +32,7 @@ translated: false
 
 A month or so ago, [@__biancat](https://twitter.com/__biancat) (whose username I can’t help but read as “Bian-cat” even though it’s probably “Bianca T.”) suggested I write up some ideas for getting into compilers and programming languages.
 
-It turns out I’m happy to expound on this, and it doesn’t need a formal CS education either.[1](#fn:education) Unfortunately, pretty much all of them require some amount of free time. I’ll come back to that at the end of the post.more
+It turns out I’m happy to expound on this, and it doesn’t need a formal CS education either.^[1](#fn:education) Unfortunately, pretty much all of them require some amount of free time. I’ll come back to that at the end of the post.
 
 P.S. I know the title is a bit [off-brand](https://twitter.com/jckarter/status/719585924338753537), but I couldn’t resist the [reference](https://en.wikipedia.org/wiki/So_You_Want_to_Be_a_Wizard).
 
@@ -51,7 +51,7 @@ These are things you can do on your own. I’ve arranged them roughly in order o
   snprintf(buffer, bufferLength, "%s %d %s", "first", 2, "last");
   assert(0 == strcmp(buffer, "first 2 last"));
   ```
-- **Write `snprintf` in assembly**…for the exact same reason. Pretty much no one programs in assembly any more, and that’s generally a good thing, but this will (a) force you to learn a new and very suboptimal language, (b) get you to learn a little about your CPU[2](#fn:assembly), and (c) help you later on if you ever need to debug a compiled program without debug info. Bonus points if you can get your assembly version to work correctly with C.
+- **Write `snprintf` in assembly**…for the exact same reason. Pretty much no one programs in assembly any more, and that’s generally a good thing, but this will (a) force you to learn a new and very suboptimal language, (b) get you to learn a little about your CPU^[2](#fn:assembly), and (c) help you later on if you ever need to debug a compiled program without debug info. Bonus points if you can get your assembly version to work correctly with C.
 
   (This was an assignment in one of my lower-div classes at college.)
 - **Learn LISP, Scheme, or [Racket](http://racket-lang.org), then make a tiny Scheme interpreter.** The benefit of doing this in one of these languages is twofold: first, the syntax is very simple, which lets you focus on semantics; and second, making an interpreter for a language _in_ that language feels much more impressive than otherwise. (This is the fourth chapter of the classic programming book _[Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sicp/).)_

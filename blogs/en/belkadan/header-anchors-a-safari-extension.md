@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:192c960551d65eb8'
 translated: false
 ---
@@ -24,9 +24,9 @@ translated: false
 
 ![](https://belkadan.com/blog/freebies/Header-Anchors/icon)
 
-Ever want to link to a specific part of a web page? Well-designed web pages have _anchors_ at the start of each section, which can serve as targets of links.[1](#fn:name) You’ve probably seen URLs that end in `#something`; that _fragment identifier_, or “frag-id”, refers to a specific anchor on the page.
+Ever want to link to a specific part of a web page? Well-designed web pages have _anchors_ at the start of each section, which can serve as targets of links.^[1](#fn:name) You’ve probably seen URLs that end in `#something`; that _fragment identifier_, or “frag-id”, refers to a specific anchor on the page.
 
-What’s annoying, though, is that even if an author includes them, they’re hard to discover. Sometimes there’s a table of contents, sometimes not. What I really wanted was a way to just click on the nearest header and grab the link. So I wrote “Header Anchors”.more
+What’s annoying, though, is that even if an author includes them, they’re hard to discover. Sometimes there’s a table of contents, sometimes not. What I really wanted was a way to just click on the nearest header and grab the link. So I wrote “Header Anchors”.
 
 Header Anchors is a [Safari extension](https://extensions.apple.com/) which turns any header into a link if it has an associated anchor. It won’t look like a link (that’s my preferred design choice) but if you mouse over a header that has an anchor, the cursor will change to the usual “click here” pointer. You can then grab or copy the URL as usual.
 

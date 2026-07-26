@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d80593f8ae0720f0'
 translated: false
 ---
@@ -41,7 +41,7 @@ I came across [this tweet by Joel Spolsky](https://twitter.com/spolsky/status/81
 
 However, rather than try to follow a naming convention, the better (and safer) way to solve this problem in a strongly typed language like Swift would be to take advantage of the type system.
 
-The source of the problem is that “unsafe strings” and “safe strings” are so fundamentally different that we should often treat them differently, yet we tend to use the same [`String`](https://developer.apple.com/reference/swift/string) type for both. So let’s introduce separate types for these concepts. I’m calling these `UnsafeString`[1](#fn:1) and `SanitizedHTML`. Each uses a `String` as its internal storage:
+The source of the problem is that “unsafe strings” and “safe strings” are so fundamentally different that we should often treat them differently, yet we tend to use the same [`String`](https://developer.apple.com/reference/swift/string) type for both. So let’s introduce separate types for these concepts. I’m calling these `UnsafeString`^[1](#fn:1) and `SanitizedHTML`. Each uses a `String` as its internal storage:
 
 ```
 /// An unescaped string from a potentially unsafe
@@ -77,7 +77,7 @@ extension SanitizedHTML {
 }
 ```
 
-Note the differences in the declarations of the `value` property for the two types. For `UnsafeString`, `value` is a `var` because that’s often [what you want for value types](http://chris.eidhof.nl/post/structs-and-mutation-in-swift/) — you’re not giving up any of the safety (simple ownership model, values are copied on assignment) value types provide by doing that. In contrast, `SanitizedHTML`’s `value` property is modified with `fileprivate(set)` to make sure no third party can circumvent the type’s official API and inject an unescaped string value, while still permitting mutation from the type’s own implementation.[2](#fn:2)
+Note the differences in the declarations of the `value` property for the two types. For `UnsafeString`, `value` is a `var` because that’s often [what you want for value types](http://chris.eidhof.nl/post/structs-and-mutation-in-swift/) — you’re not giving up any of the safety (simple ownership model, values are copied on assignment) value types provide by doing that. In contrast, `SanitizedHTML`’s `value` property is modified with `fileprivate(set)` to make sure no third party can circumvent the type’s official API and inject an unescaped string value, while still permitting mutation from the type’s own implementation.^[2](#fn:2)
 
 Let’s add a way to append new content to a sanitized string. We provide two overloads for the `append(_:)` method: one that takes an `UnsafeString` and one that takes another `SanitizedHTML`. For the latter, we can be sure the content is already sanitized so we don’t need to escape it again:
 
@@ -97,7 +97,7 @@ extension SanitizedHTML {
 
 ## Allowing unescaped input from safe sources
 
-We also need a way to add content to `SanitizedHTML` that we know is safe — you wouldn’t want the `<h1>` and `<p>` tags (or even the `<script>` tags) from your HTML template to be escaped. A convenient way to do this is via string [literals](https://en.wikipedia.org/wiki/Literal_%28computer_programming%29), i.e. constant strings in your source code. We can assume that string literals in the source code are always safe; if your source code is compromised, all bets are off in any case.[3](#fn:3)
+We also need a way to add content to `SanitizedHTML` that we know is safe — you wouldn’t want the `<h1>` and `<p>` tags (or even the `<script>` tags) from your HTML template to be escaped. A convenient way to do this is via string [literals](https://en.wikipedia.org/wiki/Literal_%28computer_programming%29), i.e. constant strings in your source code. We can assume that string literals in the source code are always safe; if your source code is compromised, all bets are off in any case.^[3](#fn:3)
 
 To add the ability for your type to be initialized with a string literal, add conformance to the [`ExpressibleByStringLiteral`](https://developer.apple.com/reference/swift/expressiblebystringliteral) protocol. The protocol is a little unwieldy because it requires three initializers, but they can generally forward to each other, so it sounds harder than it is:
 

@@ -94,7 +94,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-05-14-what-every-apple-programmer-should-know.html)
 
 Add your thoughts, post a comment:
 

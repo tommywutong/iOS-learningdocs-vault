@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d56e324db7838725'
 translated: false
 ---
@@ -52,15 +52,11 @@ The minimalist approach to compiling an Objective-C program for Windows is to us
 
 CoreFoundation and the Objective-C runtime are both open source under Apple's APSL license:
 
-- CoreFoundation
-- CFNetwork (from Mac OS X 10.4 —
-
-  later versions not open source
-
-  )
-- CommonCrypto
-- Objective-C runtime
-- Security
+- [CoreFoundation](http://www.opensource.apple.com/source/CF/)
+- [CFNetwork (from Mac OS X 10.4 —](http://www.opensource.apple.com/source/CFNetwork/)[later versions not open source](http://whtconstruct.blogspot.com/2009/09/towards-reopened-cfnetwork.html))
+- [CommonCrypto](http://www.opensource.apple.com/source/CommonCrypto/)
+- [Objective-C runtime](http://www.opensource.apple.com/source/objc4/)
+- [Security](http://www.opensource.apple.com/source/Security/)
 
 This solution is not real "Cocoa" (it is only the very simple subset of CoreFoundation and a few supporting frameworks) but it does have the major advantage of being efficient, thoroughly tested and maintained by Apple.
 

@@ -51,7 +51,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/its-a-poor-carpenter-who-blames-his-tools-or-xcode-sucks-again.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e80586f586112409'
 translated: false
 ---
@@ -93,7 +93,7 @@ On the one hand:
 
 - ARC guarantees lifetimes only to the last _usage_
 - Objective-C’s ARC rules will let a lifetime end immediately after any “consuming” usage
-- , apparently because there’s a need to “extend” lifetimes
+- Swift contains `withExtendedLifetime`, apparently because there’s a need to “extend” lifetimes
 
 On the other hand:
 
@@ -123,9 +123,9 @@ Looking at `mayHaveSymmetricInterference` in [ARCAnalysis.cpp](https://github.co
 
 1. memory accesses to the object’s address
 2. memory accesses to anything in a memory graph connected to object
-3. function
-4. function
-5. function cannot be absolutely determined
+3. memory accesses to any address accessed in the object’s `deinit` function
+4. memory accesses to anything in a memory graph connected to any address accessed in the object’s `deinit` function
+5. any function whose interactions with object, its memory graph or `deinit` function cannot be absolutely determined
 
 That last point is the biggest; outside of basic instructions there is usually some aspect of a function that can’t be absolutely determined.
 

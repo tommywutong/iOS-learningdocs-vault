@@ -7,7 +7,7 @@ original_language: en
 published: 2016-01-25
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2b04cdff78258110'
 translated: false
 ---
@@ -24,8 +24,8 @@ Ultimately, consideration of preconditions and how to avoid partial functions is
 
 Every function has two categories of requirements:
 
-1. : a function must accept arguments and return a result as specified by its type signature. The compiler enforces the type requirements, ensuring both caller and function meet the requirements.
-2. : a description of what the function will achieve by its conclusion. Ensuring runtime expectations are met is the role of the function’s programmer (and testing).
+1. **Type requirements**: a function must accept arguments and return a result as specified by its type signature. The compiler enforces the type requirements, ensuring both caller and function meet the requirements.
+2. **Runtime expectations**: a description of what the function will achieve by its conclusion. Ensuring runtime expectations are met is the role of the function’s programmer (and testing).
 
 What happens when these two categories of requirements conflict?
 
@@ -220,7 +220,7 @@ It's uncommon to see the term "partial function" used in imperative languages li
 
 In the previous example, we created a new type, `NonZeroInt`, but the constructor for this new type can fail (return a `nil` instead of a value). In some sense, we’ve simply taken the burden of ensuring correctness from the call location of `divideFiveBy` and put it somewhere else. However, this change has helped for two reasons:
 
-1. return result
+1. the compiler will ensure that we check the `NonZeroInt?(fromInt:)` return result
 2. we’re validating the value at its construction, not when it is used
 
 The first point stops the function being a partial function but the second point is just as interesting.

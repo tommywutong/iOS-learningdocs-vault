@@ -7,7 +7,7 @@ original_language: en
 published: 2017-09-05
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6154ca61effc11c1'
 translated: false
 ---
@@ -24,9 +24,9 @@ translated: false
 
 ## [Over-abstraction](#)
 
-Back in July I got myself into a [discussion on Twitter](https://twitter.com/UINT_MIN/status/887348345831698432) about whether some of the more algebraic concepts in functional programming were net-useful, after reading [Brandon Williams](http://www.fewbutripe.com)’ (great) articles on how they can be applied in Swift. [Brandon Kase](http://hkr.me) suggested I watch his talk “Beyond Types in Swift” from this year’s [Functional Swift](http://2017.funswiftconf.com) conference.more
+Back in July I got myself into a [discussion on Twitter](https://twitter.com/UINT_MIN/status/887348345831698432) about whether some of the more algebraic concepts in functional programming were net-useful, after reading [Brandon Williams](http://www.fewbutripe.com)’ (great) articles on how they can be applied in Swift. [Brandon Kase](http://hkr.me) suggested I watch his talk “Beyond Types in Swift” from this year’s [Functional Swift](http://2017.funswiftconf.com) conference.
 
-I admit I’m still unconvinced. I also admit that I might still just not get it. But I had two interesting thoughts that I wanted to write out in longform. I thought about cramming them both into one article, but figured it’d be better for discussion purposes to just do one at a time. So this is an exploration of the first idea, “Over-abstraction”.more The next one will come in about a week or so.
+I admit I’m still unconvinced. I also admit that I might still just not get it. But I had two interesting thoughts that I wanted to write out in longform. I thought about cramming them both into one article, but figured it’d be better for discussion purposes to just do one at a time. So this is an exploration of the first idea, “Over-abstraction”. The next one will come in about a week or so.
 
 (I’ve already loaded the discussion just from the title, but hey, it’s my blog.)
 

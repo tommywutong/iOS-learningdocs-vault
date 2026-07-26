@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fb253f0dec7a9f63'
 translated: false
 ---
@@ -42,7 +42,7 @@ Where did I get this list? I've really just transcribed the Groups from some of 
 
 Breaking a huge project into pieces offers lots of advantages: it makes building faster, forces better abstraction and interfaces and makes testing easier (because the interface between components is a great place for system tests). The drawback is that the build process and version management can get a little trickier but once the project becomes that big, you normally have a good process in place to handle that complexity.
 
-> : While applications on different operating systems share much in common, the description here applies most accurately to Cocoa Mac applications. The needs of interacting with different application frameworks and delivering different features to users on different platforms ultimately effect the ontological structure of the application's classes.
+> **Applications on other platforms**: While applications on different operating systems share much in common, the description here applies most accurately to Cocoa Mac applications. The needs of interacting with different application frameworks and delivering different features to users on different platforms ultimately effect the ontological structure of the application's classes.
 
 ### Application initiation, top level control, configuration
 

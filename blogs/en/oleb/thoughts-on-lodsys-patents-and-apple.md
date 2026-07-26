@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ca5dd106960a5a08'
 translated: false
 ---
@@ -26,15 +26,15 @@ But that’s not what bothers me. By licensing the patents in the first place an
 
 I realize I am dreaming here because, with the [hundreds of patents Apple files every year](http://tech.fortune.cnn.com/2010/03/08/counting-patents-apple-google-htc/), they are very much part of the problem. But other than a defense against patent litigation by competitors (which wouldn’t be threat if (software) patents didn’t exist), what good does it do Apple to support the existing patent system? It surely costs a lot of money to file and police all these patents, so that can’t be it. So does the patent portfolio give Apple a competitive advantage? I doubt it.
 
-Remember when Steve Jobs announced the first iPhone 2007? When he mentioned the “magic” capabilities of [multitouch](https://en.wikipedia.org/wiki/Multitouch) in his Macworld keynote, Steve proudly exclaimed: [“And boy have we patented it!”](https://youtu.be/8JZBLjxPBUU) Hell, this point was important enough to him to warrant putting it into his slides! And what did we[1](#fn:1) in the audience do? We cheered and applauded when we should have booed!
+Remember when Steve Jobs announced the first iPhone 2007? When he mentioned the “magic” capabilities of [multitouch](https://en.wikipedia.org/wiki/Multitouch) in his Macworld keynote, Steve proudly exclaimed: [“And boy have we patented it!”](https://youtu.be/8JZBLjxPBUU) Hell, this point was important enough to him to warrant putting it into his slides! And what did we^[1](#fn:1) in the audience do? We cheered and applauded when we should have booed!
 
-![Steve Jobs introduces multitouch in the Macworld 2007 keynote address](https://oleb.net/media/macworld-2007-keynote-multitouch-patented.png)
+[![Steve Jobs introduces multitouch in the Macworld 2007 keynote address](https://oleb.net/media/macworld-2007-keynote-multitouch-patented.png)](https://oleb.net/media/macworld-2007-keynote-multitouch-patented.png)
 
 <sub>“Boy have we patented it!”</sub>
 
 # Patenting multitouch did not make the world a better place, either
 
-Why did Apple feel the need to patent [a concept they haven’t even invented](https://en.wikipedia.org/wiki/Multitouch)[2](#fn:2)? And what good did it bring them? Sure, some Android phones had no multitouch functionality in the beginning but what if they had? The iPhone UI would still have been superior in every way! Hell, four years later, it still is, despite the fact that the devices of the competition all support multitouch. Turns out that the iPhone’s butter-smooth scrolling is a hundred times more important for the user experience. And competitors still haven’t been able to copy it 100%, despite four years of effort and the fact that smooth scrolling can’t be patented! And neither Apple’s patent nor the fact that Apple is actually suing their competitors over it is apparently enough for the likes of Samsung or Motorola to stay out of the market. If innovation leads to a situation [where everybody in the industry sues everybody else](http://bits.blogs.nytimes.com/2010/03/04/an-explosion-of-mobile-patent-lawsuits/) and the result of all this crap will probably be a zero sum game, something is seriously wrong.
+Why did Apple feel the need to patent [a concept they haven’t even invented](https://en.wikipedia.org/wiki/Multitouch)^[2](#fn:2)? And what good did it bring them? Sure, some Android phones had no multitouch functionality in the beginning but what if they had? The iPhone UI would still have been superior in every way! Hell, four years later, it still is, despite the fact that the devices of the competition all support multitouch. Turns out that the iPhone’s butter-smooth scrolling is a hundred times more important for the user experience. And competitors still haven’t been able to copy it 100%, despite four years of effort and the fact that smooth scrolling can’t be patented! And neither Apple’s patent nor the fact that Apple is actually suing their competitors over it is apparently enough for the likes of Samsung or Motorola to stay out of the market. If innovation leads to a situation [where everybody in the industry sues everybody else](http://bits.blogs.nytimes.com/2010/03/04/an-explosion-of-mobile-patent-lawsuits/) and the result of all this crap will probably be a zero sum game, something is seriously wrong.
 
 My point is this: I condemn what Lodsys does and a patent for something like multitouch might be more obvious than Lodsys’s, but neither of the two did make the world a better place.
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2024-04-12
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0716f9092e41a59f'
 translated: false
 ---
@@ -53,13 +53,15 @@ However, the real reason–and one I don’t actually hear very often–is that 
 Going into this projct, I had basically no idea how people put wires in walls. It turned out a lot simpler than I expected, though. At a high level, you need to do the following:
 
 1. Plan where you want your cables to go. Make sure you have good coverage of your house. Keep in mind that just because you have Ethernet in a room doesn’t necessarily mean it is where you want it to be: unless you want an unsightly cable running across your room, you may need to think about where specifically to place the drop in the room. Depending on your house, you might run your cables through the crawlspace, attic, or outside the house. Try to avoid super long runs for no reason.
-2.   - Your Ethernet cable. In my house I ran it through the crawlspace. If you want to pay a bunch extra you can go for “plenum” (roughly, if you run the cable through a place with airflow, it is not supposed to poison you with toxic gas when it catches fire, but you probably aren’t running your cables in ducts) or “shielded” (what it sounds like but I don’t think I need it) but to my knowledge it doesn’t really matter here and it will double your price so I saw no need to go for it.
+2. Buy supplies. Namely:
+
+    - Your Ethernet cable. In my house I ran it through the crawlspace. If you want to pay a bunch extra you can go for “plenum” (roughly, if you run the cable through a place with airflow, it is not supposed to poison you with toxic gas when it catches fire, but you probably aren’t running your cables in ducts) or “shielded” (what it sounds like but I don’t think I need it) but to my knowledge it doesn’t really matter here and it will double your price so I saw no need to go for it.
     - Keystones. If you aren’t familiar with these (as I was) think “Framework laptop ports, but for your walls”. You get an Ethernet female jack and it will go into a mounting slot that can fit any keystone adapter. They’re really neat actually, and look clean and professional.
     - A wall plate with keystone holes in it. The most cost-effective way to wire your house is likely to have one central point where all the wires meet and then run a line to each room, so you probably want say one 6/12 port plate and 1-2 port plates everywhere else. Grab a couple of “blank” keystones while you’re at it to fill in the holes you’re not using.
     - Low-voltage boxes. These go into the holes you cut in the walls and basically give the wall plate something to attach to instead of the empty space behind the drywall.
     - Wire cutters/strippers. You’ll need this for the cables, obviously.
     - Punch-down tool. When you wire the cable you need to basically take each twisted pair in the wire and thread it into the keystone jack in a specific order (in a certain order, of course. I picked T568B for what it’s worth, but it literally does not matter). You should watch a video on how to do this but the punch-down tool makes it far, far easier. Also grab a keystone jack holder while you’re at it.
-    - this but it will make you feel better that each contact is solid.
+    - Cable tester. You can find a cheap one for like $10. You don’t _need_ this but it will make you feel better that each contact is solid.
 3. Figure out if you want someone to do the dirty work for you. I just paid someone to run the cables, because we already had someone in the crawlspace wiring up the car charger, which I absolutely will not touch. If not, you probably need to buy supplies and learn how to make holes in your walls, apply patch-up paint, overcome your fear of spiders under the house, etc.
 4. Run all the cable. Leave a couple feet on each end so you can terminate the wires. Especially if you mess up you want extra length cut your losses (literally, just snip off the failed try) and do it again. You’ll push the extra into the walls anyways.
 5. Terminate everything and test it before closing things up. At the central point where you have all the wires coming in you probably want to label all the wires :)

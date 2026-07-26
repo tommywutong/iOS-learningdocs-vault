@@ -24,9 +24,9 @@ by [Mike Ash](https://www.mikeash.com/)
 
 If you're desperate for some reading, I recommend:
 
-- The Aggregate Magic Algorithms
-- The Basic Laws of Human Stupidity
-- [objc explain]: objc_msgSend_vtable
+- [The Aggregate Magic Algorithms](http://aggregate.org/MAGIC/)
+- [The Basic Laws of Human Stupidity](http://web.archive.org/web/20031008123504/http://www.truestupidity.com/basic.htm)
+- [[objc explain]: objc_msgSend_vtable](http://www.sealiesoftware.com/blog/archive/2011/06/17/objc_explain_objc_msgSend_vtable.html)
 
 See you in a week!
 

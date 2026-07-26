@@ -7,7 +7,7 @@ original_language: en
 published: 2025-04-01
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c5c517204cfdc297'
 translated: false
 ---
@@ -24,7 +24,9 @@ translated: false
 
 ## [SICPelago](#)
 
-SICPelago is a randomized Scheme environment where you unlock core capabilities by solving carefully selected exercises adapted from _[Structure and Interpretation of Computer Programs](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html)._ Starting only with your trusty `lambda` and the supporting `quote`, climb your way to the top of the textbook, exploring math puzzles, composite data structures, and infinite sequences. Happy [April Prototypes Day](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/)!more
+SICPelago is a randomized Scheme environment where you unlock core capabilities by solving carefully selected exercises adapted from _[Structure and Interpretation of Computer Programs](https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html)._ Starting only with your trusty `lambda` and the supporting `quote`, climb your way to the top of the textbook, exploring math puzzles, composite data structures, and infinite sequences. Happy [April Prototypes Day](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/)!
+
+> Tunic: You sent `cons` to Jordan!
 
 ## Where?
 
@@ -96,7 +98,7 @@ In my original post I mentioned Advent of Code as a source of puzzles. However, 
 
 The traditional choice would be to implement the host program in Scheme itself, or perhaps its modern offshoot Racket. But then there’d be an additional dependency for people who wanted to play, and for all I think it’s a good teaching language I _don’t_ actually like making even medium-sized programs in Scheme.
 
-The next choices would be my two usual work/project languages these days, Swift and Rust. These are great languages for building fast and correct compiled programs. But because they _are_ compiled, I wouldn’t be able to say “just download this and run it”. I’d need separate builds for Mac, Windows, and Linux, and sorry to anyone not running one of those; or you’d have to build it from source yourself, and that’s again an extra step.[1](#fn:wasm)
+The next choices would be my two usual work/project languages these days, Swift and Rust. These are great languages for building fast and correct compiled programs. But because they _are_ compiled, I wouldn’t be able to say “just download this and run it”. I’d need separate builds for Mac, Windows, and Linux, and sorry to anyone not running one of those; or you’d have to build it from source yourself, and that’s again an extra step.^[1](#fn:wasm)
 
 So, Python. Many developers have a Python or several installed, so it was a less burdensome requirement than some of the other options. It’s also the language of both Archipelago and the course that replaced the one I TA’d, including its own little Scheme interpreter I could use as a starting point. And as a bonus, I got garbage collection for free.
 
@@ -122,14 +124,8 @@ A part of me feels guilty spending time on something so frivolous when the real 
 
 My defense has been that everyone needs respite, and that includes entertainment and personal projects. I hope this is entertainment for at least some of you as well! But I’ll also add that if you enjoyed this post and are in a reasonable position to do so…
 
-- Hands Off
-
-  ” this Saturday
-- Trans Lifeline
-
-  or
-
-  Rainbow Railroad
+- join a protest, such as “[Hands Off](https://handsoff2025.com)” this Saturday
+- donate to a charity that’s protecting people, such as [Trans Lifeline](https://translifeline.org) or [Rainbow Railroad](https://www.rainbowrailroad.org)
 - take Covid and the flu seriously, and wear a mask whenever you’re indoors with other people, or on public transit
 
 (If you didn’t enjoy this post, you sure spent a lot of time on it to get to this part! Pick your own charity to donate to.)

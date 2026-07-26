@@ -7,7 +7,7 @@ original_language: en
 published: 2018-06-24
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c86d58d42ba6fada'
 translated: false
 ---
@@ -32,18 +32,10 @@ On iOS, since all the system libraries are in the shared cache, the individual l
 
 The [iPhone Dev wiki](http://iphonedevwiki.net/index.php/Dyld_shared_cache#Cache_extraction) lists multiple tools for extracting the dyld_shared_cache: however, each has its shortcomings.
 
-- jtool
-
-  : by Jonathan Levin of NewOSXBook, frequently updated, but doesn’t fix Objective-C selectors.
-- decache
-
-  by Phoenix3200 doesn’t work past iOS 9.
-- dsc_extractor
-
-  , used in Xcode when you first plug in a device for debugging (that’s what “Preparing debugger support” does). Libraries are only usable for providing symbols to debuggers.
-- imaon2
-
-  by @comex. The wiki says it produces the highest quality output, but that it’s hard to compile.
+- [jtool](http://www.newosxbook.com/tools/jtool.html): by Jonathan Levin of NewOSXBook, frequently updated, but doesn’t fix Objective-C selectors.
+- [decache](https://github.com/phoenix3200/decache) by Phoenix3200 doesn’t work past iOS 9.
+- Apple’s own [dsc_extractor](https://opensource.apple.com/source/dyld/dyld-519.2.2/launch-cache/dsc_extractor.cpp.auto.html), used in Xcode when you first plug in a device for debugging (that’s what “Preparing debugger support” does). Libraries are only usable for providing symbols to debuggers.
+- [imaon2](https://github.com/comex/imaon2) by @comex. The wiki says it produces the highest quality output, but that it’s hard to compile.
 
 The last two seems to be the most promising, since they both support iOS 11. It sounded like imaon2 is the only one that can produce a usable library, but I instead chose to improve Apple’s dsc_extractor, because I couldn’t compile imaon2, and because I didn’t need imaon2’s complexity.
 
@@ -63,7 +55,9 @@ There are three segments in most libraries:
 
 - __TEXT: holds code and data that don’t change
 - __DATA: holds data that do change
--   - relocate the library to the correct memory address
+- __LINKEDIT: holds instructions for the dynamic linker to:
+
+    - relocate the library to the correct memory address
     - import functions it needs
     - export functions it contains
 
@@ -276,15 +270,17 @@ When the program starts, each of these pointers in `__la_symbol_ptr` points to a
 The first time an external method is called:
 
 - the code calls stub
-- , which initially points to its resolver, and jumps to it
--   - actually finds the function to call
-    - variable
+- stub loads address from its `la_symbol_ptr`, which initially points to its resolver, and jumps to it
+- the resolver function:
+
+    - actually finds the function to call
+    - writes the address of the real function over the `la_symbol_ptr` variable
     - jumps to the real function
 
 from this point on, future calls will:
 
 - call stub
-- , which now contains the address of the real function stored by the resolver, and jumps to it
+- stub loads address from `la_symbol_ptr`, which now contains the address of the real function stored by the resolver, and jumps to it
 
 This means that the resolver is only invoked the first time, and the overhead is negligible for subsequent calls.
 
@@ -334,3 +330,5 @@ I guess the lesson is: always trying to find out what you really need. Do I need
 ## Notes
 
 Sorry about the delay! I had to shelve my intended project for June 14 due to a lack of time (I’ll eventually come back to it), so I decided to take as much time as I needed to research and write this week’s post. The schedule will be back to normal next week.
+
+[https://worthdoingbadly.com/dscextract/](https://worthdoingbadly.com/dscextract/)

@@ -48,7 +48,7 @@ How exactly do you "sound the alarm"? I used a cheap, simple [piezo buzzer](http
 **Hardware**  
 The microswitches and buzzer would suffice on their own, with some wiring. Hook up the switches in series and have them pass current when in the alarm position. Wire the whole thing to some electricity, and the buzzer will buzz at the appropriate time. However, I wanted to use a microcontroller to drive everything for a few reasons:
 
-1. " It happened to a friend of mine with one of these simple setups. A more complicated pattern stands a better chance of getting my attention.
+1. A constant buzzing is not the most effective for getting someone's attention. Aviation is full of stories that go like, "What's that weird buzzing noise? Oh well, never mind that now, I have to land. _CRUNCH_" It happened to a friend of mine with one of these simple setups. A more complicated pattern stands a better chance of getting my attention.
 2. There's a chance of hardware failure causing the system to get stuck in the alarm position. Having the alarm remain on for the entire flight afterwards would be extremely annoying. With a microcontroller, it can shut the warning off after a couple of minutes. In a situation where the warning is real, the pilot only has a couple of minutes to do something before it's too late anyway, so there's no need to keep it on longer than that.
 3. It's a lot more fun.
 
@@ -519,7 +519,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-09-18-building-a-gear-warning-system.html)
 
 Add your thoughts, post a comment:
 

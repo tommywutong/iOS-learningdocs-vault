@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c8fb436bafae2222'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 My colleague [Michael Ilseman](https://twitter.com/Ilseman) shared a design problem with me today, which came down to something like this:
 
-Today, we have a protocol [RawRepresentable](https://developer.apple.com/documentation/swift/rawrepresentable), which says that “if I have a type `X`, I can convert it to and from `X.RawValue`”. You can then make a whole host of types that use `Int` as the raw value, and indeed that’s how Swift represents enums imported from Objective-C. (Well, those with an `NSInteger` underlying type, at least.) That makes this, in some sense, a “many-to-one” relation, because many types can have the same one raw value type. But what you _can’t_ do is make a single type have _multiple_ `RawValue` types—one of them has to claim the name `X.RawValue`.more
+Today, we have a protocol [RawRepresentable](https://developer.apple.com/documentation/swift/rawrepresentable), which says that “if I have a type `X`, I can convert it to and from `X.RawValue`”. You can then make a whole host of types that use `Int` as the raw value, and indeed that’s how Swift represents enums imported from Objective-C. (Well, those with an `NSInteger` underlying type, at least.) That makes this, in some sense, a “many-to-one” relation, because many types can have the same one raw value type. But what you _can’t_ do is make a single type have _multiple_ `RawValue` types—one of them has to claim the name `X.RawValue`.
 
 So, what can you do about it? One option is to make a one-off protocol that hardcodes one of the types, so that there’s no associated type to worry about. And indeed we have [LosslessStringConvertible](https://developer.apple.com/documentation/swift/losslessstringconvertible), which isn’t _quite_ the same as RawRepresentable with a `RawValue` type of `String`, but it’s pretty close. Now we can have types that have a custom `RawValue` and can also be converted to String. But that doesn’t really scale—one new protocol for each new type. Is there a better answer that works in today’s Swift?
 

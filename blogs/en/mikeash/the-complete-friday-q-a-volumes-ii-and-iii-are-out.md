@@ -43,7 +43,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/the-complete-friday-qa-volumes-ii-and-iii-are-out.html)
 
 Add your thoughts, post a comment:
 

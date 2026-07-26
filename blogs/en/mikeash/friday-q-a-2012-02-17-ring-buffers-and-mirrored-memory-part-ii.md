@@ -500,7 +500,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-02-17-ring-buffers-and-mirrored-memory-part-ii.html)
 
 Add your thoughts, post a comment:
 

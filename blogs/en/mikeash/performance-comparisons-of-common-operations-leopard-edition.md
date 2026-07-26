@@ -107,7 +107,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/performance-comparisons-of-common-operations-leopard-edition.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2016-05-01
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b376ff625b66ad8b'
 translated: false
 ---

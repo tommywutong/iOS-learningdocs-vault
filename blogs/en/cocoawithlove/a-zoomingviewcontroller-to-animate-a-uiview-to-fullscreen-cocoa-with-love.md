@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e07ff7d3ee050a2d'
 translated: false
 ---
@@ -26,11 +26,7 @@ The animation between the inline and fullscreen states is smooth and you can rot
 
 You can attach the `ZoomingViewController` to any view to add this behavior.
 
-> and the complete sample project used in this post here
-> 
-> TapZoomRotate.zip
-> 
-> (160kb)
+> You can download the `ZoomingViewController` and the complete sample project used in this post here [TapZoomRotate.zip](https://www.cocoawithlove.com/assets/objc-era/TapZoomRotate.zip) (160kb)
 
 ## Requirements
 
@@ -101,8 +97,8 @@ Even if you did make the class a `UIViewController` subclass, it still wouldn't 
 So we need to implement rotation ourselves. This requires 3 steps:
 
 - Determine the correct fullscreen bounds for a given orientation
-- to transform from the current bounds to the new bounds after a rotation
-- and actually apply these new values when things change
+- Calculate a `CGAffineTransform` to transform from the current bounds to the new bounds after a rotation
+- Listen to `UIDeviceOrientationDidChangeNotification` and actually apply these new values when things change
 
 Getting the bounds for the fullscreen view based on the orientation is pretty simple too. We do need to account for the strangeness of face up and face down orientations — I do this by taking the status bar orientation in these cases instead (I don't use the status bar all the time in case it is out of sync with the actual device for some reason).
 
@@ -201,10 +197,6 @@ blankingView.backgroundColor = [UIColor blackColor];
 
 ## Conclusion
 
-> and the complete sample project used in this post here
-> 
-> TapZoomRotate.zip
-> 
-> (160kb)
+> You can download the `ZoomingViewController` and the complete sample project used in this post here [TapZoomRotate.zip](https://www.cocoawithlove.com/assets/objc-era/TapZoomRotate.zip) (160kb)
 
 `ZoomingViewController` is as simple to use as possible: create it, set its view and the view will immediately start responding to taps, zooming to fullscreen and rotating in fullscreen mode. You can apply it to any view in your hierarchy at any time where you need fullscreen display behavior.

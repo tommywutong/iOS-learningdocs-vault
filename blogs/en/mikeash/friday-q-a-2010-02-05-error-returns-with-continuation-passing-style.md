@@ -33,11 +33,7 @@ by [Mike Ash](https://www.mikeash.com/)
         // do something with error
 ```
 
-This works, but is a bit painful to type. It's also painful to implement, because the code needs to set the error and return
-
-as two separate steps. The error parameter is also optional, so the method needs to do a
-
-check for every error case, like so:
+This works, but is a bit painful to type. It's also painful to implement, because the code needs to set the error and return `nil` as two separate steps. The error parameter is also optional, so the method needs to do a `NULL` check for every error case, like so:
 
 ```
     if(failure)
@@ -78,11 +74,7 @@ This is because Python has built-in support for returning multiple values from a
     }
 ```
 
-This is still a bit verbose, however that is often compensated by the fact that multiple calls can be placed in the same
-
-block, and share the same
-
-handler.
+This is still a bit verbose, however that is often compensated by the fact that multiple calls can be placed in the same `@try` block, and share the same `@catch` handler.
 
 The other end of it is nice and simple:
 
@@ -188,9 +180,8 @@ This style also simplifies handing errors "up the stack", because the caller's e
     }
 ```
 
-Using CPS for error returns isn't all roses. A problem comes at the interface between CPS code and normal-style code. In other words, where you have a method which needs to return a value, but which calls CPS methods. The problem arises because using the
-
-statement inside a block returns a value from the block, not from the enclosing function:
+**Interfacing Between CPS and Normal Code**  
+ Using CPS for error returns isn't all roses. A problem comes at the interface between CPS code and normal-style code. In other words, where you have a method which needs to return a value, but which calls CPS methods. The problem arises because using the `return` statement inside a block returns a value from the block, not from the enclosing function:
 
 ```
     - (NSString *)contentsOfFile: (NSString *)path
@@ -205,9 +196,7 @@ statement inside a block returns a value from the block, not from the enclosing 
     }
 ```
 
-In order to get around this problem, you need to move the value outside of the continuation using a
-
--qualified local variable, then return from within the main function body:
+In order to get around this problem, you need to move the value outside of the continuation using a `__block`-qualified local variable, then return from within the main function body:
 
 ```
     - (NSString *)contentsOfFile: (NSString *)path
@@ -255,7 +244,7 @@ But obviously the annoyance of having to write adapters makes for a big hit to t
 **Conclusion**  
  The addition of blocks to Objective-C enables some completely new ways of doing things, including a new way to deal with errors. The practicality of this approach remains to be seen, but it certainly does produce nicer-looking code than the traditional Cocoa way.
 
-That's it for this Friday Q&A. Come back in 5.56×1015 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom for the next exciting installment. Friday Q&A is driven by user submissions, so if you have a topic you would like to see covered here, [send it in](mailto:mike@mikeash.com)!
+That's it for this Friday Q&A. Come back in 5.56×10^15 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom for the next exciting installment. Friday Q&A is driven by user submissions, so if you have a topic you would like to see covered here, [send it in](mailto:mike@mikeash.com)!
 
 Did you enjoy this article? I'm selling whole books full of them! Volumes II and III are now out! They're available as ePub, PDF, print, and on iBooks and Kindle. [Click here for more information](https://www.mikeash.com/book.html).
 
@@ -265,7 +254,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-02-05-error-returns-with-continuation-passing-style.html)
 
 Add your thoughts, post a comment:
 

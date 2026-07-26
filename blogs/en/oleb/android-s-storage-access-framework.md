@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b39516825d8584d9'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Android's Storage Access Framework
 
-![Opening a document with Android's Storage Access Framework](https://oleb.net/media/android-storage-access-framework.jpg)
+[![Opening a document with Android's Storage Access Framework](https://oleb.net/media/android-storage-access-framework.jpg)](https://oleb.net/media/android-storage-access-framework.jpg)
 
 <sub>Opening a document in Android's Storage Access Framework. Image: [Google Developer Website](https://developer.android.com/about/versions/kitkat.html#44-storage-access).</sub>
 
@@ -42,12 +42,12 @@ The SAF UI is like a cloud edition of Windows Explorer or the OS X Finder, witho
 
 If Apple added a feature like the Storage Access Framework to a future iOS version, it would elegantly solve at least two problems:
 
-- The lack of a user-accessible (part of the) file system, making document sharing between apps much harder than it should be.[1](#fn:1)
+- The lack of a user-accessible (part of the) file system, making document sharing between apps much harder than it should be.^[1](#fn:1)
 - The downsides of iCloud document storage, namely platform dependence and compartmentalization (each app can only access its own documents).
 
 Given Apple’s strategy with iCloud, I don’t believe this will happen in the foreseeable future. The company is definitely not interested in dismantling platform dependencies, and the strict sandboxing of iCloud storage containers seems to be an important privacy and security feature in Apple’s eyes.
 
-I feel that Apple will have to abandon this reasoning at some time, though. Sharing files between apps is too important a feature to disallow it on the grounds of security – especially since versioning and undelete functionality[2](#fn:2) could mitigate most of the risks. I hope Apple will reevaluate its strategy eventually.
+I feel that Apple will have to abandon this reasoning at some time, though. Sharing files between apps is too important a feature to disallow it on the grounds of security – especially since versioning and undelete functionality^[2](#fn:2) could mitigate most of the risks. I hope Apple will reevaluate its strategy eventually.
 
 1. The current system using URL schemes or the “Open In…” feature in iOS doesn’t allow true document _sharing_ between apps. Files are always _copied_ from one app’s sandbox to another. [↩︎](#fnref:1)
 2. Either built into the operating system or as part of the feature set of the storage providers. For instance, Dropbox already has versioning and undelete features. [↩︎](#fnref:2)

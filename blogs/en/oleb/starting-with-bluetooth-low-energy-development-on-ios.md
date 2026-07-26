@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:05af8162b4f39545'
 translated: false
 ---
@@ -16,11 +16,11 @@ translated: false
 
 # Starting With Bluetooth Low Energy Development on iOS
 
-With the iOS 5 SDK, Apple introduced the [Core Bluetooth](http://developer.apple.com/library/ios/#documentation/CoreBluetooth/Reference/CoreBluetooth_Framework/_index.html) framework. Core Bluetooth allows developers to write apps that talk directly to hardware gadgets or other iOS devices[1](#fn:1) using the [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_low_energy) (BLE, also called Bluetooth Smart) standard.
+With the iOS 5 SDK, Apple introduced the [Core Bluetooth](http://developer.apple.com/library/ios/#documentation/CoreBluetooth/Reference/CoreBluetooth_Framework/_index.html) framework. Core Bluetooth allows developers to write apps that talk directly to hardware gadgets or other iOS devices^[1](#fn:1) using the [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_low_energy) (BLE, also called Bluetooth Smart) standard.
 
 **Update April 30, 2013:** Things work differently for Bluetooth devices that do not use Bluetooth LE. Certain device classes such as headsets and keyboards are managed directly by the OS in a way that is fully transparent (and off limits) to third-party apps.
 
-Other proprietary devices (connected via Bluetooth or the Dock connector) can be accessed by using the [External Accessory Framework](http://developer.apple.com/library/ios/#featuredarticles/ExternalAccessoryPT/Introduction/Introduction.html), available since the iOS 3.0 SDK. Unfortunately, this [only works for devices that have been approved](http://developer.apple.com/library/ios/#qa/qa1657/_index.html) by Apple. The device manufacturer must be a member of [Apple’s MFi program](https://developer.apple.com/programs/mfi/) about which very little public information is available.[2](#fn:2)
+Other proprietary devices (connected via Bluetooth or the Dock connector) can be accessed by using the [External Accessory Framework](http://developer.apple.com/library/ios/#featuredarticles/ExternalAccessoryPT/Introduction/Introduction.html), available since the iOS 3.0 SDK. Unfortunately, this [only works for devices that have been approved](http://developer.apple.com/library/ios/#qa/qa1657/_index.html) by Apple. The device manufacturer must be a member of [Apple’s MFi program](https://developer.apple.com/programs/mfi/) about which very little public information is available.^[2](#fn:2)
 
 The main advantage of the Core Bluetooth and Bluetooth LE way I describe in this article is that any app can communicate with any hardware device without the need to go through a lengthy and costly approval process.
 
@@ -34,7 +34,7 @@ If you want to start with Bluetooth LE development, you need a few things:
 
 # A Bluetooth Smart Heart Rate Sensor
 
-![The Polar H7 Bluetooth heart rate chest strap sensor](https://oleb.net/media/polar-h7-500px.jpg)
+[![The Polar H7 Bluetooth heart rate chest strap sensor](https://oleb.net/media/polar-h7-500px.jpg)](https://www.amazon.com/Polar-Bluetooth-Smart-Heart-Sensor/dp/B007S088F4/)
 
 <sub>The Polar H7.</sub>
 
@@ -46,7 +46,7 @@ Other standardized Bluetooth profiles include [blood pressure measurement](http:
 
 # Texas Instruments CC2541 SensorTag
 
-![The Texas Instruments CC2541 Bluetooth LE SensorTag](https://oleb.net/media/ti-cc2541-sensortag-233px.jpg)
+[![The Texas Instruments CC2541 Bluetooth LE SensorTag](https://oleb.net/media/ti-cc2541-sensortag-233px.jpg)](http://www.ti.com/tool/cc2541dk-sensor)
 
 <sub>The Texas Instruments CC2541 SensorTag.</sub>
 
@@ -54,7 +54,7 @@ This is another option that is both cheaper and more flexible. The [Texas Instru
 
 Even though I am not sure how accurate the sensors really are, this thing is a no-brainer if you are at all interested in Bluetooth LE development and communication with hardware devices. It’s a perfect testing device. Texas Instruments even provides a bad-looking [iOS app on the App Store](https://itunes.apple.com/us/app/ti-sensortag/id552918064?mt=8) that not only lets you check out all the different sensors; it can also generate source code that you can use as a basis for writing your own app that talks to the CC2541.
 
-![Screenshot of Texas Instruments's SensorTag iOS app](https://oleb.net/media/ti-sensortag-app-screenshot-1024px.jpg)
+[![Screenshot of Texas Instruments's SensorTag iOS app](https://oleb.net/media/ti-sensortag-app-screenshot-1024px.jpg)](https://oleb.net/media/ti-sensortag-app-screenshot-1024px.jpg)
 
 <sub>TI's accompanying SensorTag app is universal.</sub>
 

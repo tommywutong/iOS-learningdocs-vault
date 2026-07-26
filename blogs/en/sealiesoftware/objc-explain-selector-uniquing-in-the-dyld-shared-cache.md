@@ -7,7 +7,7 @@ original_language: en
 published: 2009-09-01
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1f9de33b42489426'
 translated: false
 ---
@@ -97,4 +97,4 @@ You can estimate the memory savings with the `allmemory` tool. Record post-launc
 
 The Objective-C runtime does more than just selector uniquing during launch. Future improvements to the dyld shared cache may precompute some of that other work, to further improve launch time, save memory, and reduce the cost of linking to Objective-C code that you don't actually use. But selector uniquing as seen in Snow Leopard is by far the biggest bang for the buck.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

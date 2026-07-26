@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f09d1789bf2ddecd'
 translated: false
 ---
@@ -169,16 +169,8 @@ As you can see this article is not a comprehensive guide, but only a very small 
 
 If you’re looking for a more theoretical and practical information I’d recommend to read the following articles:
 
-- The Architecture of Open Source Applications: LLVM
-
-  by
-
-  Chris Lattner
-- objc.io #6. The Compiler
-
-  by
-
-  Chris Eidhof
+- [The Architecture of Open Source Applications: LLVM](http://aosabook.org/en/llvm.html) by [Chris Lattner](http://nondot.org/~sabre/)
+- [objc.io #6. The Compiler](http://www.objc.io/issue-6/compiler.html) by [Chris Eidhof](https://twitter.com/chriseidhof)
 
 **Stay tuned if you interested how-to write tests for Clang and LLVM.**
 

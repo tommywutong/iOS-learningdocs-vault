@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0aa782ebc7971875'
 translated: false
 ---
@@ -40,13 +40,13 @@ The source code for the demo app is [available on GitHub](https://github.com/ole
 
 # Hit Testing with `CGPathCreateCopyByStrokingPath`
 
-First, let’s deal with hit testing: the user should be able to select a shape by tapping on it. That means we need to figure out if a view coordinate (tap location) lies on one or more paths. To help you with this, the `CGPath` API provides the [`CGPathContainsPoint()`](https://developer.apple.com/library/ios/documentation/graphicsimaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/uid/TP30000959-CH1g-CJBGIGEF) function[1](#fn:1), which
+First, let’s deal with hit testing: the user should be able to select a shape by tapping on it. That means we need to figure out if a view coordinate (tap location) lies on one or more paths. To help you with this, the `CGPath` API provides the [`CGPathContainsPoint()`](https://developer.apple.com/library/ios/documentation/graphicsimaging/Reference/CGPath/Reference/reference.html#//apple_ref/doc/uid/TP30000959-CH1g-CJBGIGEF) function^[1](#fn:1), which
 
 > [c]hecks whether a point is contained in a graphics path. … A point is contained in a path if it would be inside the painted region when the path is filled.
 
 This function is helpful if you want to hit test on the entire region the path covers. As such, `CGPathContainsPoint()` doesn’t work with unclosed paths because those don’t have an interior that would be filled. The method of selecting shapes by tapping anywhere in their interior can also be problematic from a user interface perspective? What if the user taps at a location where multiple shapes overlap? What shape should the app select?
 
-Such ambiguities can be minimized if shape selection only works on the shape’s outline and not its entire interior.[2](#fn:2) And here is where `CGPathCreateCopyByStrokingPath()` comes into play: whenever the user creates or modifies a shape, we call `CGPathCreateCopyByStrokingPath()` on it to create a mirroring `tapTarget` object that only covers the stroked area of the path (ensuring a certain minimum width to make the tap target big enough). When the user taps on the screen, we iterate over the tap targets rather than the actual shapes, now using `CGPathContainsPoint()` on the area that would be filled by the shape’s outline, to determine which shape was selected. In the sample app, the `Shape` class contains a method named `tapTargetForPath:` that generates such a tap target for a given `path` object (which is a `UIBezierPath` in this instance). Note that I am using a minimum width of 35 points for the tap target, regardless of the path’s `lineWidth`:
+Such ambiguities can be minimized if shape selection only works on the shape’s outline and not its entire interior.^[2](#fn:2) And here is where `CGPathCreateCopyByStrokingPath()` comes into play: whenever the user creates or modifies a shape, we call `CGPathCreateCopyByStrokingPath()` on it to create a mirroring `tapTarget` object that only covers the stroked area of the path (ensuring a certain minimum width to make the tap target big enough). When the user taps on the screen, we iterate over the tap targets rather than the actual shapes, now using `CGPathContainsPoint()` on the area that would be filled by the shape’s outline, to determine which shape was selected. In the sample app, the `Shape` class contains a method named `tapTargetForPath:` that generates such a tap target for a given `path` object (which is a `UIBezierPath` in this instance). Note that I am using a minimum width of 35 points for the tap target, regardless of the path’s `lineWidth`:
 
 ```
 - (UIBezierPath *)tapTargetForPath:(UIBezierPath *)path
@@ -131,7 +131,7 @@ I want the dashed outline to appear _around_ the shape’s regular outline, so i
 }
 ```
 
-Note that we are using the delegation pattern to have our view ask its data source for the shapes it should draw, their colors, and which one is the currently selected shape. We then take care to only draw a shape if its bounding box intersects with the rectangle we actually need to redraw to make drawing more efficient. The drawing of the selection outline takes place inside the `if (shapeIndex == indexOfSelectedShape) { … }` block. Note that the first line in the block (`UIBezierPath *pathCopy = [path copy];`) should not be necessary but I found it to be so to make sure that `pathCopy` always reflects the latest changes to the path[3](#fn:3).
+Note that we are using the delegation pattern to have our view ask its data source for the shapes it should draw, their colors, and which one is the currently selected shape. We then take care to only draw a shape if its bounding box intersects with the rectangle we actually need to redraw to make drawing more efficient. The drawing of the selection outline takes place inside the `if (shapeIndex == indexOfSelectedShape) { … }` block. Note that the first line in the block (`UIBezierPath *pathCopy = [path copy];`) should not be necessary but I found it to be so to make sure that `pathCopy` always reflects the latest changes to the path^[3](#fn:3).
 
 # Replicating `CGPathCreateCopyByStrokingPath` in iOS 4 and Mac OS X 10.6
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7e4de669bde21375'
 translated: false
 ---
@@ -20,7 +20,7 @@ I am [a big fan](https://oleb.net/blog/2011/10/coderunner/) of [CodeRunner](http
 
 # Playgrounds and the Swift REPL
 
-Arguably, a tool like CodeRunner is not as valuable for Swift development considering that [Playgrounds](https://developer.apple.com/swift/) and Swift’s built-in [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) largely meet the same requirements. This is especially true because CodeRunner does not have support for code completion or Swift syntax highlighting at this time. Nevertheless, I have found it easier to test a small snippet in CodeRunner than to create a playground in Xcode.[1](#fn:1)
+Arguably, a tool like CodeRunner is not as valuable for Swift development considering that [Playgrounds](https://developer.apple.com/swift/) and Swift’s built-in [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) largely meet the same requirements. This is especially true because CodeRunner does not have support for code completion or Swift syntax highlighting at this time. Nevertheless, I have found it easier to test a small snippet in CodeRunner than to create a playground in Xcode.^[1](#fn:1)
 
 # Set Up Swift Support in CodeRunner
 
@@ -44,7 +44,7 @@ If you see the version information, you’re all set. If the command fails with 
 
 In CodeRunner, open Preferences and switch to the Languages tab. Create a new entry in the list and name it “Swift”. Here is how you configure the settings for the new language:
 
-![Language settings for Swift in CodeRunner](https://oleb.net/media/coderunner-swift-language-settings.png)
+[![Language settings for Swift in CodeRunner](https://oleb.net/media/coderunner-swift-language-settings.png)](https://oleb.net/media/coderunner-swift-language-settings.png)
 
 - The `swift` compiler command supports an immediate mode where it directly executes the code it compiles (like a scripting language interpreter) without first creating a binary on disk. That’s why we don’t need a comilation script, so you can leave the box “Language uses compilation script” unchecked.
 - In the “Run Command:” text field, enter this command:
@@ -65,7 +65,7 @@ In CodeRunner, open Preferences and switch to the Languages tab. Create a new en
 
 That’s it. Happy coding!
 
-![A swift script in CodeRunner](https://oleb.net/media/coderunner-swift-script.png)
+[![A swift script in CodeRunner](https://oleb.net/media/coderunner-swift-script.png)](https://oleb.net/media/coderunner-swift-script.png)
 
 <sub>A Swift script in CodeRunner. Unfortunately, syntax highlighting and code completion are not supported.</sub>
 

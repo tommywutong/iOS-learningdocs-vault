@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:32e77ca350645d52'
 translated: false
 ---
@@ -50,29 +50,19 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [User experien
 
 ## Older Posts
 
-1. 2023-10-09
-
-  Soft Orders of Magnitude
-2. 2018-04-29
-
-  Misleading Metrics and UX Tradeoffs
-3. 2016-05-29
-
-  Webmailer's Update Bar
-4. 2011-08-10
-
-  "Little Big Details"
-5. 2011-07-14
-
-  Priorities
+1. 2023-10-09[Soft Orders of Magnitude](https://belkadan.com/blog/2023/10/Soft-Orders-of-Magnitude/?tag=user-experience)
+2. 2018-04-29[Misleading Metrics and UX Tradeoffs](https://belkadan.com/blog/2018/04/Misleading-Metrics/?tag=user-experience)
+3. 2016-05-29[Webmailer's Update Bar](https://belkadan.com/blog/2016/05/Webmailer-Update-Bar/?tag=user-experience)
+4. 2011-08-10["Little Big Details"](https://belkadan.com/blog/2011/08/Little-Big-Details/?tag=user-experience)
+5. 2011-07-14[Priorities](https://belkadan.com/blog/2011/07/Priorities/?tag=user-experience)
 
 ### Possibly Related Tags
 
-- Apple
-- Book
-- Keystone
-- Mac OS X
-- Rant
-- Unix
-- Webmailer
-- Windows
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [Book](https://belkadan.com/blog/tags/book)
+- [Keystone](https://belkadan.com/blog/tags/keystone)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Rant](https://belkadan.com/blog/tags/rant)
+- [Unix](https://belkadan.com/blog/tags/unix)
+- [Webmailer](https://belkadan.com/blog/tags/webmailer)
+- [Windows](https://belkadan.com/blog/tags/windows)

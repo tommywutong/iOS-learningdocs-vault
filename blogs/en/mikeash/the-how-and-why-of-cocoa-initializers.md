@@ -41,9 +41,7 @@ Minor variations are of course just fine, as long as they're equivalent. For exa
  For the sake of completeness, I'll first cover a more obvious part of this method, the call to `[super init]`. If you're really new to Objective-C and came from a language like C++ or Java, this may puzzle you. It's here because Objective-C initializers are just plain methods like any other method. If you want the superclass initializer to be called, then you have to call it yourself. You also have a choice here, between calling `super` and calling `self`. Which one you use depends on circumstances. If you're not sure, you can apply one of these rules of thumb:
 
 1. Call super if and only if the method name matches.
-2. designated initializer
-
-  . (This rule is more accurate, but sometimes harder to apply.)
+2. Call super if and only if you're implementing your class's [designated initializer](http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaObjects/chapter_3_section_6.html#//apple_ref/doc/uid/TP40002974-CH4-SW3). (This rule is more accurate, but sometimes harder to apply.)
 
 **Checking `nil`**  
  And again for the sake of completeness, some may wonder why the if statement is there at all. The reason is because your superclass may fail to initialize (for example, if the parameters weren't consistent) and the standard way to indicate this is to release the object and return `nil` from the initializer. If you continue initializing your state after this happens, you will crash. The if statement lets you fail gracefully if your superclass failed.
@@ -74,8 +72,8 @@ This is why the standard initializer pattern is the only one that works. Cocoa c
 **Conclusion**  
  To summarize, the superclass's initializer can return one of three things, and the standard Apple pattern deals with them all:
 
-1. (This is what you get the vast, vast majority of the time.)
-2. (On failure.)
+1. `self` (This is what you get the vast, vast majority of the time.)
+2. `nil` (On failure.)
 3. A new instance of your class (Rare but legitimate.)
 
 Many people like to leave off the assignment and just check for nil. This works fine for cases 1 and 2 but will fail in very confusing ways for case 3.
@@ -93,16 +91,8 @@ So there you have it. This is how to write your initializers, and why you should
 
 **References**
 
-1. re: self = [super init] debate.
-
-  - Ben Trumbull posts on
-
-  cocoa-dev
-
-  to explain some key points on the subject.
-2. NSManagedObject Class Reference
-
-  - This class is an example of a class which returns a new, different instance of the class being initialized.
+1. [re: self = [super init] debate.](http://www.cocoabuilder.com/archive/message/cocoa/2008/2/11/198591) - Ben Trumbull posts on [cocoa-dev](http://lists.apple.com/mailman/listinfo/cocoa-dev) to explain some key points on the subject.
+2. [NSManagedObject Class Reference](http://developer.apple.com/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObject_Class/Reference/NSManagedObject.html#//apple_ref/occ/instm/NSManagedObject/initWithEntity:insertIntoManagedObjectContext:) - This class is an example of a class which returns a new, different instance of the class being initialized.
 
 Did you enjoy this article? I'm selling whole books full of them! Volumes II and III are now out! They're available as ePub, PDF, print, and on iBooks and Kindle. [Click here for more information](https://www.mikeash.com/book.html).
 
@@ -112,7 +102,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/the-how-and-why-of-cocoa-initializers.html)
 
 Add your thoughts, post a comment:
 

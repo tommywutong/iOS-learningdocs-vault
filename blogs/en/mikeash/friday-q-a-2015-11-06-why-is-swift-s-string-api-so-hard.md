@@ -493,7 +493,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard.html)
 
 Add your thoughts, post a comment:
 

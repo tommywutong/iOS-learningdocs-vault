@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d325b0312ce73812'
 translated: false
 ---
@@ -34,8 +34,8 @@ So let's look at why value objects in Cocoa should be immutable where possible.
 
 It may be useful to clarify what is meant by "immutable":
 
-> In object-oriented and functional programming, an immutable object is an object whose state cannot be modified after it is created. This is in contrast to a mutable object, which can be modified after it is created.
-> 
+> **_Immutable object_**  
+> In object-oriented and functional programming, an immutable object is an object whose state cannot be modified after it is created. This is in contrast to a mutable object, which can be modified after it is created.  
 > From [http://en.wikipedia.org/wiki/Immutable_object](http://en.wikipedia.org/wiki/Immutable_object)
 
 It may sound like immutable classes are worse than mutable classes since they contain less functionality. It may then be surprising how many Cocoa classes are immutable. Immutable classes in Cocoa include:

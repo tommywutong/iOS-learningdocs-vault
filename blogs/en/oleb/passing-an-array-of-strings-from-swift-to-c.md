@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b6e5f45372afd922'
 translated: false
 ---
@@ -29,7 +29,7 @@ This works even though Swift imports the `const char *` parameter as an `UnsafeP
 func strlen(_ __s: UnsafePointer<Int8>!) -> UInt
 ```
 
-The type checker allows you to [pass a `String` value to an `UnsafePointer<Int8>` or `UnsafePointer<UInt8>` parameter](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-ID17). When you do that, the compiler will transparently create a buffer containing the UTF-8-encoded[1](#fn:1), null-terminated string, and pass a pointer to that buffer to the function.
+The type checker allows you to [pass a `String` value to an `UnsafePointer<Int8>` or `UnsafePointer<UInt8>` parameter](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/InteractingWithCAPIs.html#//apple_ref/doc/uid/TP40014216-CH8-ID17). When you do that, the compiler will transparently create a buffer containing the UTF-8-encoded^[1](#fn:1), null-terminated string, and pass a pointer to that buffer to the function.
 
 # No built-in support for arrays of C strings
 
@@ -39,11 +39,11 @@ An example where this would be useful is the [`posix_spawn`](https://linux.die.n
 
 > `argv` [and `envp`] is a pointer to a null-terminated array of character pointers to null-terminated character strings.
 
-Swift translates these arguments’ C type of `char *const argv[]` to the unwieldy `UnsafePointer<UnsafeMutablePointer<Int8>?>!`.[2](#fn:iou)
+Swift translates these arguments’ C type of `char *const argv[]` to the unwieldy `UnsafePointer<UnsafeMutablePointer<Int8>?>!`.^[2](#fn:iou)
 
 # Converting an array of Swift strings to an array of C strings
 
-Suppose we want to provide a nice Swift interface for `posix_spawn`. [3](#fn:2) Our wrapper function should take the path of the program being launched and an array of strings for the arguments:
+Suppose we want to provide a nice Swift interface for `posix_spawn`. ^[3](#fn:2) Our wrapper function should take the path of the program being launched and an array of strings for the arguments:
 
 ```
 /// Spawns a child process.
@@ -59,7 +59,7 @@ To make this interface work, we need to convert the `arguments` array to the for
 - Convert the element strings to UTF-8-encoded, null-terminated C strings.
 - Copy all these C strings into a single buffer.
 - Add another null byte at the end of the buffer to denote the end of the C array.
-- .
+- Make sure the buffer lives for the lifetime of the call to `posix_spawn`.
 
 ## withArrayOfCStrings in the standard library
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2019-01-11
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:03c0b924fcdc0a74'
 translated: false
 ---
@@ -35,10 +35,8 @@ print(error)
 
 Excusing the unpleasant syntax (`LAContext.canEvaluatePolicy(_:error:)` takes an `NSErrorPointer` rather than throwing an error because it is annotated with `__attribute__((swift_error(none)))` for some reason), the code is relatively straightforward: the function returns a `Bool` indicating whether the device can successfully use biometric authentication, and if it cannot, `error` is populated. Error codes (defined in `LAError.Code`) of note are:
 
-- : This device is missing the requisite hardware to perform biometric authentication.
-- : The device has not enrolled any fingerprints or faces. The iOS Simulator handles other errors, such as
-
-  , for us (since there isn’t a way to set a passcode!), but for this we need to enroll in the Hardware \> Touch ID (or Face ID, depending on your device).
+- `.biometryNotAvailable`: This device is missing the requisite hardware to perform biometric authentication.
+- `.biometryNotEnrolled`: The device has not enrolled any fingerprints or faces. The iOS Simulator handles other errors, such as `.passcodeNotSet`, for us (since there isn’t a way to set a passcode!), but for this we need to enroll in the Hardware \> Touch ID (or Face ID, depending on your device).
 
 After checking for the ability to evaluate the policy, we do the logical thing: evaluate it.
 

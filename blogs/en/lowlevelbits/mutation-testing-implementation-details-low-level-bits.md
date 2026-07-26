@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:87856ee946dc5d1b'
 translated: false
 ---
@@ -212,7 +212,7 @@ Having an SQLite file is very handy: we could do different analysis of the same 
 - optimize algorithms to speed up the system
 - find a nice way to present reports
 - add more mutation operators
-- done!
+- ~~add Linux support~~ done!
 
 ## That’s it
 

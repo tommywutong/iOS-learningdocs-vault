@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90fe50f40da4510a'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Ellen Shapiro: Outside In – Using UI Tests to Start Improving Your App
 
-![Preview of YouTube video: Ellen Shapiro, Outside In – Using UI Tests to Start Improving Your App](https://oleb.net/media/ellen-shapiro-ui-testing-video-preview-2292px.jpg)
+[![Preview of YouTube video: Ellen Shapiro, Outside In – Using UI Tests to Start Improving Your App](https://oleb.net/media/ellen-shapiro-ui-testing-video-preview-2292px.jpg)](https://www.youtube.com/watch?v=hYCUy-9yq_M&list=PLdr22uU_wISqm9QbnczWxXs9qyuWpSU4k&index=7)
 
 <sub>[Watch on YouTube](https://www.youtube.com/watch?v=hYCUy-9yq_M&list=PLdr22uU_wISqm9QbnczWxXs9qyuWpSU4k&index=7) (26 minutes).  
  [The slides](https://speakerdeck.com/designatednerd/outside-in-using-ui-tests-to-start-improving-your-app-uikonf-berlin-2016).  

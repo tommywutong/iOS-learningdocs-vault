@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6fab619385653860'
 translated: false
 ---
@@ -24,9 +24,9 @@ The file itself is familiar to almost all Cocoa programmers since Xcode inserts 
 
 Probably the most common settings are:
 
-- — the identifier for your application, normally in the form "com.[company].[application]". The iPhone tries to fill in the application name from the Project's product name but will fail if you ever try to build for a device if there are spaces or differences in capitalization so you may just want to set this manually.
-- — almost every application I ship names its icon "Icon.[png/icns]". Why Apple can't put a default value here, I don't know.
-- — this isn't the only version number since you can embed a different version in the Project Settings. If you don't have a formal build system in place though, you'll need to make certain that this number is always different every time you give a build to someone to test (a crash log is useless if you can't guarantee which version it came from).
+- `CFBundleIdentifier` — the identifier for your application, normally in the form "com.[company].[application]". The iPhone tries to fill in the application name from the Project's product name but will fail if you ever try to build for a device if there are spaces or differences in capitalization so you may just want to set this manually.
+- `CFBundleIconFile` — almost every application I ship names its icon "Icon.[png/icns]". Why Apple can't put a default value here, I don't know.
+- `CFBundleVersion` — this isn't the only version number since you can embed a different version in the Project Settings. If you don't have a formal build system in place though, you'll need to make certain that this number is always different every time you give a build to someone to test (a crash log is useless if you can't guarantee which version it came from).
 
 ## How Xcode builds the Info.plist
 
@@ -57,9 +57,9 @@ Technically, you can store anything you want in the Info.plist file but generall
 
 A number of fields are required in the Info.plist to control aesthetic options for an iPhone application. These include:
 
-- — set this to disable the gloss highlight that the Springboard applies to your application's icon.
-- — use this to start your application in a non-portrait orientation.
-- — use this to enable black or transparent status bars.
+- `UIPrerenderedIcon` — set this to disable the gloss highlight that the Springboard applies to your application's icon.
+- `UIInterfaceOrientation` — use this to start your application in a non-portrait orientation.
+- `UIStatusBarStyle` — use this to enable black or transparent status bars.
 
 ### Avoiding WiFi disconnections
 

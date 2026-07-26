@@ -44,9 +44,7 @@ The scope of this post is simply building the parts that are special to iPhone s
     <meta name="apple-mobile-web-app-capable" content="yes">
 ```
 
-While you're in there, it can be useful to set the viewport of your web page to achieve 1x zoom instead of the default (which is around ⅓x zoom), and to disallow the user from changing the zoom factor. This helps make your web page act more like a real app. You can do this by adding another
-
-tag:
+While you're in there, it can be useful to set the viewport of your web page to achieve 1x zoom instead of the default (which is around ⅓x zoom), and to disallow the user from changing the zoom factor. This helps make your web page act more like a real app. You can do this by adding another `` tag:
 
 ```
     <meta name="viewport"

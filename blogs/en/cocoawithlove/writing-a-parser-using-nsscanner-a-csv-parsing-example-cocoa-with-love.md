@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dbab23d38c3d8c32'
 translated: false
 ---
@@ -69,30 +69,8 @@ where the method `receiverSelector` must take a single `NSDictionary` parameter.
 
 There are two types of parsing methods that we need to implement:
 
-- ,
-
-  ,
-
-  ,
-
-  ,
-
-  ,
-
-  ,
-
-  )
-- to access the string (
-
-  ,
-
-  ,
-
-  ,
-
-  ,
-
-  )
+- Structural methods which don't directly access the string (`parseFile`, `parseHeader`, `parseRecord`, `parseName`, `parseField`, `parseEscaped`, `parseNonEscaped`)
+- Tokenizing methods which use `NSScanner` to access the string (`parseDoubleQuote`, `parseTwoDoubleQuotes`, `parseSeparator`, `parseLineSeparator`, `parseTextData`)
 
 I'm not going to show all of them here (you can download the full code to see them) but I will show one of each type.
 
@@ -185,9 +163,7 @@ The whole process takes about 0.47 seconds on my Mac Pro with parsing taking 0.2
 
 ## Conclusion
 
-> download the CSVParser class and CSVImporter sample project
-> 
-> (315kB).
+> You can [download the CSVParser class and CSVImporter sample project](https://www.cocoawithlove.com/assets/objc-era/CSVImporter.zip) (315kB).
 
 The aim in this post was to present a complete, flexible CSV parser while making the code as easy to read as possible. I hope that it has shown how you can import data from unconventional formats into Cocoa-friendly formats easily while obeying the more minor quirks that many formats have.
 

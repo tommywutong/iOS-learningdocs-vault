@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a87144be6fab55cc'
 translated: false
 ---
@@ -20,7 +20,7 @@ The icon of an iPhone app must be 57 × 57 pixels, and iPad app icons must be 72
 
 [Apple’s documentation on this](http://developer.apple.com/iphone/library/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW10) is a little hard to find but the solution is very simple: add a `CFBundleIconFiles` (note the plural) key of type Array to your `Info.plist`. The items in the array should be string values containing the filenames of all the icons your app needs. In a universal app, you should provide at least the two main icons (57 × 57 and 72 × 72). Optionally, you can also add two smaller icons used for your app in the Settings app and Spotlight search. These should be 29 × 29 pixels for the iPhone and 48 × 48 for the iPad.
 
-![CFBundleIconFiles key in Info.plist](https://oleb.net/media/picture-effects-info-plist-cfbundleiconfiles.png)
+[![CFBundleIconFiles key in Info.plist](https://oleb.net/media/picture-effects-info-plist-cfbundleiconfiles.png)](https://oleb.net/media/picture-effects-info-plist-cfbundleiconfiles.png)
 
 <sub>The `CFBundleIconFiles` key in Info.plist.</sub>
 

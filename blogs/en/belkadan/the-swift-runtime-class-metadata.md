@@ -7,7 +7,7 @@ original_language: en
 published: 2020-09-29
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ddc2ffc7f0d896d4'
 translated: false
 ---
@@ -28,13 +28,13 @@ translated: false
 
 ## [The Swift Runtime: Class Metadata](#)
 
-Welcome to the fifth in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. Last time we finished talking about how the metadata for structs and enums gets set up; this time we’re going to talk about classes.more
+Welcome to the fifth in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. Last time we finished talking about how the metadata for structs and enums gets set up; this time we’re going to talk about classes.
 
 As mentioned previously, I implemented my stripped-down runtime in Swift as much as possible, though I had to use a few undocumented Swift features to do so. I’ll be showing excerpts of my runtime code throughout these posts, and you can check out the full thing [in the ppc-swift repository](https://belkadan.com/source/ppc-swift-project/tree/refs/heads/dev:/stdlib/_Runtime).
 
 ### Structs and classes
 
-One way in which Swift differs from some of its contemporaries (Rust, Go, Kotlin) is that it makes a distinction between structs and classes. The biggest difference is that struct instances are passed around by _value_ and class instances by _reference._[1](#fn:semantics) But both structs and classes can have stored properties, declare methods, and conform to protocols. There’s just a few important ways that structs and classes differ:[2](#fn:diagram)
+One way in which Swift differs from some of its contemporaries (Rust, Go, Kotlin) is that it makes a distinction between structs and classes. The biggest difference is that struct instances are passed around by _value_ and class instances by _reference._^[1](#fn:semantics) But both structs and classes can have stored properties, declare methods, and conform to protocols. There’s just a few important ways that structs and classes differ:^[2](#fn:diagram)
 
 - Because class instances aren’t implicitly copied when you do an assignment or call a function, they can have _deinitializers_ to clean up resources. ([Move-only value types will also be able to do this.](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md))
 - Because class instances are allocated in one place and stay there for their whole life, their address in memory can be used to uniquely [identify](https://developer.apple.com/documentation/swift/objectidentifier) them, at least while they’re alive. (Raw pointers work like this too.)
@@ -84,7 +84,7 @@ Yeah, classes ain’t so simple.
 There’s a lot going on there! What _is_ all this stuff? Why can’t we get away with storing all the interesting stuff in the type descriptor again? Why do we need any of this? *takes a deep breath* Okay, let’s go through it step by step:
 
 - The **destroyer** calls the deinitializer and then deallocates the class’s memory. We talked about it in [the first post in this series](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/).
-- We _still_ haven’t talked in depth about **value witness tables**, and we still aren’t going to, but every class has the same one, since all “values” used to manipulate classes are just references, and all object references behave the same.[3](#fn:objc)
+- We _still_ haven’t talked in depth about **value witness tables**, and we still aren’t going to, but every class has the same one, since all “values” used to manipulate classes are just references, and all object references behave the same.^[3](#fn:objc)
 - Every metadata has a **kind**. As noted in [the first post in this series](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/), the kind for classes is carefully chosen not to overlap with any valid addresses…except on modern Apple platforms, where it’s replaced by a pointer to a “[metaclass](http://www.sealiesoftware.com/blog/archive/2009/04/14/objc_explain_Classes_and_metaclasses.html)” object for compatibility with Objective-C.
 - Classes can have **superclasses**! And if they don’t have one, the field is `nil`.
 - The next three fields are for compatibility with Objective-C. Swift does not use them for anything, and in fact [they’ve been removed upstream for non-Apple platforms](https://github.com/apple/swift/pull/31811), only a few weeks after I cut my own branch for this project. ([Thanks to Alejandro for the tip.](https://twitter.com/aalonso128/status/1310992586543443969))

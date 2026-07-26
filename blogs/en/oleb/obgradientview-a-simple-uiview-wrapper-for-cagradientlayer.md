@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e70e484b7f8c89a8'
 translated: false
 ---
@@ -34,4 +34,4 @@ backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
 
 [Get the code for OBGradientView from GitHub](https://github.com/ole/OBGradientView). I am releasing it under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
 
-![Screenshot of the OBGradientViewDemo project](https://oleb.net/media/OBGradientViewDemo-screenshot.png)
+[![Screenshot of the OBGradientViewDemo project](https://oleb.net/media/OBGradientViewDemo-screenshot.png)](https://oleb.net/media/OBGradientViewDemo-screenshot.png)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:26ac95b15251c912'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # “Enlightened, Relevant, Context-Rich Push Notifications”
 
-To Robert Scoble, Qualcomm’s new [Gimbal SDK](http://www.gimbal.com) represents [the future of the cell phone](http://scobleizer.com/2012/07/11/mobile-3-0-arrives-how-qualcom-just-showed-us-the-future-of-the-cell-phone-and-why-iphone-sucks-for-this-new-contextual-age/). Maybe. According to Scoble, it also foreshadows problems for Apple because the iOS platform doesn’t give developers as much access to the hardware as the competition.[1](#fn:1) I’m not so sure about that, either, but it’s not what I want to talk about.
+To Robert Scoble, Qualcomm’s new [Gimbal SDK](http://www.gimbal.com) represents [the future of the cell phone](http://scobleizer.com/2012/07/11/mobile-3-0-arrives-how-qualcom-just-showed-us-the-future-of-the-cell-phone-and-why-iphone-sucks-for-this-new-contextual-age/). Maybe. According to Scoble, it also foreshadows problems for Apple because the iOS platform doesn’t give developers as much access to the hardware as the competition.^[1](#fn:1) I’m not so sure about that, either, but it’s not what I want to talk about.
 
 [Qualcomm’s marketing video](https://www.youtube.com/watch?v=H-D3tT6TyF0) is so full of marketing bullshit it’s repulsive and hilarious at the same time. You should really watch it.
 

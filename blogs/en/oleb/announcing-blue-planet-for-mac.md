@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4b3cc5df0e5c72eb'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 My new Mac App [Blue Planet](http://blueplanetapp.com) is now available [on the Mac App Store for just $0.99](http://itunes.apple.com/de/app/blue-planet/id418903397?mt=12). Blue Planet is a small utility that replaces your desktop picture with a beautiful dynamic map of the Earth. As the day progresses and the sun illuminates different portions of the Earth, the map changes in real-time so you always see where it is day and where night.
 
-![Screenshot of Blue Planet on Mac OS X](https://oleb.net/media/blue-planet-screenshot-1.png)
+[![Screenshot of Blue Planet on Mac OS X](https://oleb.net/media/blue-planet-screenshot-1.png)](https://oleb.net/media/blue-planet-screenshot-1.png)
 
 You can choose from four gorgeous day images of the Earth, and the night view is even more beautiful in my opinion. The map can be centered on your current location or set to follow the sun. Visit the [Blue Planet website](http://blueplanetapp.com) for more screenshots and a comprehensive list of features.
 

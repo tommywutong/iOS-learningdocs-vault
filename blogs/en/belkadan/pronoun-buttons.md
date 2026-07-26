@@ -7,7 +7,7 @@ original_language: en
 published: 2016-06-19
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7925818cf66342c2'
 translated: false
 ---
@@ -33,9 +33,7 @@ If you saw me in the labs at [WWDC](https://developer.apple.com/wwdc/), you migh
 > 1. Buttons as received.  
 > 2. Sharpie line width tests. [pic.twitter.com/jW7oidJa5I](https://t.co/jW7oidJa5I)
 > 
-> — Peter Hosey (@boredzo)
-> 
-> June 7, 2016
+> — Peter Hosey (@boredzo) [June 7, 2016](https://twitter.com/boredzo/status/740015489607303168)
 
 I wanted to talk a little more about why I was wearing one (specifically, the he/him/his one) and what it means to me. It’s actually pretty simple:
 
@@ -43,7 +41,7 @@ I wanted to talk a little more about why I was wearing one (specifically, the he
 - This is a heuristic, meaning it will be wrong some of the time.
 - It’s polite to refer to someone correctly.
 
-  _As an example, if you’ve ever referred to me as “she” because my name (“Jordan”) can be female in English…that’s an understandable mistake. But it’s still not correct; “she” is not a correct way to refer to me.[1](#fn:name)_
+  _As an example, if you’ve ever referred to me as “she” because my name (“Jordan”) can be female in English…that’s an understandable mistake. But it’s still not correct; “she” is not a correct way to refer to me.^[1](#fn:name)_
 - It’s polite to refer to someone correctly…but you often don’t need to refer to them in the third person until after your conversation is over (at which point it’s too late to ask).
 - There are some people whose gender isn’t really “male” or “female” (and thus both “he” and “she” would be incorrect).
 

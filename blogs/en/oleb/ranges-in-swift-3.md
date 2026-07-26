@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6efc209d44640242'
 translated: false
 ---
@@ -30,7 +30,7 @@ let lowercaseLetters = Character("a")...Character("z")
 
 Ranges seem like a natural fit to be sequences or collections, so it may surprise you to learn that they _are neither_. At least not all of them are.
 
-In Swift 2, ranges were closely connected to collections. A range’s element type had to be an index type, and ranges themselves were also collections. This model underwent significant changes in Swift 3 as part of [the new collection indexing model](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md). Because the old index protocols no longer exist, the only constraint on a range’s element type is now [`Comparable`](https://developer.apple.com/reference/swift/comparable) conformance. And since the range elements now can no longer advance themselves, it follows that `Range` can’t be a [`Collection`](https://developer.apple.com/reference/swift/collection) anymore, at least not without additional constraints. As a matter of fact, the [`Range`](https://developer.apple.com/reference/swift/range) type in Swift 3 is closer in concept to what used to be called intervals in Swift 2.[1](#fn:1)
+In Swift 2, ranges were closely connected to collections. A range’s element type had to be an index type, and ranges themselves were also collections. This model underwent significant changes in Swift 3 as part of [the new collection indexing model](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md). Because the old index protocols no longer exist, the only constraint on a range’s element type is now [`Comparable`](https://developer.apple.com/reference/swift/comparable) conformance. And since the range elements now can no longer advance themselves, it follows that `Range` can’t be a [`Collection`](https://developer.apple.com/reference/swift/collection) anymore, at least not without additional constraints. As a matter of fact, the [`Range`](https://developer.apple.com/reference/swift/range) type in Swift 3 is closer in concept to what used to be called intervals in Swift 2.^[1](#fn:1)
 
 ## Range types
 
@@ -43,16 +43,8 @@ There are now four range types in the standard library. They can be classified i
 
 The columns correspond to the two range operators we saw above, which create a `[Countable]Range` (half-open) or a `[Countable]ClosedRange` (closed), respectively. Half-open and closed ranges both have their place:
 
-- can represent
-
-  (when the lower and upper bounds are equal, as in
-
-  ).
-- can contain the
-
-  its element type can represent (e.g.
-
-  ). A half-open range always requires at least one representable value that is greater than the highest value in the range.
+- Only **half-open ranges** can represent **empty intervals** (when the lower and upper bounds are equal, as in `5..<5`).
+- Only a **closed range** can contain the **maximum value** its element type can represent (e.g. `0...Int.max`). A half-open range always requires at least one representable value that is greater than the highest value in the range.^[2](#fn:2)
 
 ## Countable vs. non-countable
 

@@ -61,11 +61,7 @@ The next parameter is an `IMP`. This type is a special Objective-C `typedef` for
     typedef id (*IMP)(id, SEL, ...);
 ```
 
-Objective-C methods take two implicit parameters,
-
-and
-
-, which are the first two parameters listed here. The other parameters are not listed, and are up to you.
+Objective-C methods take two implicit parameters, `self` and `_cmd`, which are the first two parameters listed here. The other parameters are not listed, and are up to you.
 
 To create the `IMP` that you pass to this function, implement a function that takes `id self` and `SEL _cmd` as its first two parameters. The rest of the parameters are the parameters that the method will take, and the return type is the method return type.
 
@@ -81,11 +77,7 @@ You'd write the function like this:
     static NSUInteger CountOfObject(id self, SEL _cmd, id obj)
 ```
 
-Unfortunately, the type of this function doesn't match the
-
-typedef, so you have to cast it when passing it to
-
-.
+Unfortunately, the type of this function doesn't match the `IMP` typedef, so you have to cast it when passing it to `class_addMethod`.
 
 The last parameter is a type encoding string which describes the type signature of the method. This is the string that the runtime uses to generate the `NSMethodSignature` that's returned from `methodSignatureForSelector:`, among other uses.
 
@@ -141,7 +133,7 @@ The first two parameters to this function are the class to manipulate and the na
 
 The next parameter is the size of the instance variable. If you're using a plain C type as the instance variable, then you can simply use `sizeof` to get the size.
 
-Next is the alignment of the instance variable. This indicates how the instance variable's storage needs to be aligned in memory, potentially with padding in between it and the end of the previous instance variable. A trick to this parameter is that it's the log2 of the alignment rather than the alignment itself. Passing `1` means aligning it to a 2-byte boundary, passing `4` means 16-byte alignment, etc. Since most types want to be aligned to their size, you can simply use `rint(log2(sizeof(type)))` to generate the value of this parameter.
+Next is the alignment of the instance variable. This indicates how the instance variable's storage needs to be aligned in memory, potentially with padding in between it and the end of the previous instance variable. A trick to this parameter is that it's the log~2 of the alignment rather than the alignment itself. Passing `1` means aligning it to a 2-byte boundary, passing `4` means 16-byte alignment, etc. Since most types want to be aligned to their size, you can simply use `rint(log2(sizeof(type)))` to generate the value of this parameter.
 
 The last parameter is a type encoding string for the parameter. This can be generated using the `@encode` directive and giving it the type of the variable that you're adding.
 
@@ -151,9 +143,8 @@ Here's a full example of adding an `id` instance variable:
     class_addIvar(mySubclass, "foo", sizeof(id), rint(log2(sizeof(id))), @encode(id));
 ```
 
-Accessing this newly-added variable is not as easy as it normally would be. You can't just write
-
-in your code, because the compiler has no idea that this thing even exists.
+**Accessing Added Instance Variables**  
+ Accessing this newly-added variable is not as easy as it normally would be. You can't just write `foo` in your code, because the compiler has no idea that this thing even exists.
 
 The runtime provides two functions for accessing instance variables: `object_setInstanceVariable` and `object_getInstanceVariable`. They take an object and a name, and either a value to set, or a place to put the current value. Here's an example of getting and setting the `foo` variable constructed above:
 
@@ -168,11 +159,7 @@ The runtime provides two functions for accessing instance variables: `object_set
     object_setInstanceVariable(obj, "foo", newValue);
 ```
 
-Another way is to simply use key-value coding to read and write the instance variable. As long as you don't have a method with the same name, it will directly access the variable's contents. It will also do proper memory management on object-type variables. As a potential downside, it will box primitive values in
-
-or
-
-objects, which could add complication.
+Another way is to simply use key-value coding to read and write the instance variable. As long as you don't have a method with the same name, it will directly access the variable's contents. It will also do proper memory management on object-type variables. As a potential downside, it will box primitive values in `NSValue` or `NSNumber` objects, which could add complication.
 
 With either technique, don't forget to add a `dealloc` method to release your object instance variables.
 
@@ -203,9 +190,7 @@ Note that you must register a class before you use it, and you can't add any ins
     NSLog(@"%@", myInstance);
 ```
 
-You can access the class using
-
-as well, and in general it behaves just like any other class at this point.
+You can access the class using `NSClassFromString` as well, and in general it behaves just like any other class at this point.
 
 **Conclusion**  
  Now you know how to create a new class at runtime, how to add methods and instance variables to it, and then use it from code. In two weeks, I'll cover how to actually do useful and interesting things with the above, instead of just using four times the code to imitate what the compiler does. Until then, keep [sending in your suggestions for topics](mailto:mike@mikeash.com); the next article is already booked, but I'm open for ideas after that.
@@ -218,7 +203,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-11-6-creating-classes-at-runtime-in-objective-c.html)
 
 Add your thoughts, post a comment:
 

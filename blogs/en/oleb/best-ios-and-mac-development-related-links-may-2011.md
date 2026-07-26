@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:384ab25570c2ccfe'
 translated: false
 ---
@@ -90,9 +90,7 @@ Let’s move on to happier news:
 # Competition
 
 - Jean-Louis Gassée points out [the flaws in comparing the iPhone vs. Android situation today with the Mac vs. PC “battle”](http://www.mondaynote.com/2011/05/01/carnival-barker-edition-show-me-your-ios-licensing-certificate/) and predicting on that basis that the iPhone will “lose” (whatever that means) to Android.
-- The App Store is projected to account for more than 75% of the market in 2011
-
-  .
+- One reason why developers stick to iOS: [The App Store is projected to account for more than 75% of the market in 2011](http://www.isuppli.com/media-research/news/pages/revenue-for-major-mobile-app-stores-to-rise-77-7-percent-in-2011.aspx).
 - Lukas Mathis gives a [very good and detailed overview of Windows Phone 7](http://ignorethecode.net/blog/2011/05/31/windows_phone_7/) that really makes me want to try it out myself. WP7’s clean and modern UI makes parts of iOS look kind of old. As Lukas puts it:
 
   > After looking at the clean, ascetic visual language of WP7 for such a long time, iOS suddenly seems garish, overdone, and kind of ugly.

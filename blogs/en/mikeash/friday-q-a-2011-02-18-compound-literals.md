@@ -40,9 +40,7 @@ This is not particularly useful, of course. However, more useful things can be d
     (NSSize){ 1, 2 }
 ```
 
-This is equivalent to
-
-but without the need for an external function. Similar syntax will work for any type, even custom-defined structs.
+This is equivalent to `NSMakeSize(1, 2)` but without the need for an external function. Similar syntax will work for any type, even custom-defined structs.
 
 Compound literal syntax closely matches variable initialization syntax. For example:
 
@@ -61,23 +59,7 @@ And in general, if a variable is declared with an initializer, then a compound l
     (Type){ val };
 ```
 
-There is one exception to this rule. Primitive types (like
-
-) don't require
-
-to be initialized, but
-
-is still required to create a compound literal. It is
-
-the same to write
-
-and
-
-, although they act similarly in many cases. The former simply takes the integer constant
-
-and uselessly casts it to
-
-, whereas the latter is essentially a variable declaration with no name.
+There is one exception to this rule. Primitive types (like `int`) don't require `{}` to be initialized, but `{}` is still required to create a compound literal. It is _not_ the same to write `(int)3` and `(int){ 3 }`, although they act similarly in many cases. The former simply takes the integer constant `3` and uselessly casts it to `int`, whereas the latter is essentially a variable declaration with no name.
 
 **Basic Tricks**  
  The ability to create custom struct values is probably the most useful obvious application of compound literals. Although Cocoa takes care of its most common types with `NSMakeRect` and friends, there are still places to put compound literals to good use.
@@ -94,7 +76,8 @@ The ability to create array literals can also be useful. For example, this creat
     [NSString stringWithCharacters: (unichar []){ 0x00a9 } length: 1]
 ```
 
-A compound literal is essentially an anonymous variable declaration and initialization. As such, it follows the same scoping rules as regular variables. For example, this is perfectly legal:
+**Scope**  
+ A compound literal is essentially an anonymous variable declaration and initialization. As such, it follows the same scoping rules as regular variables. For example, this is perfectly legal:
 
 ```
     int *ptr;
@@ -102,9 +85,7 @@ A compound literal is essentially an anonymous variable declaration and initiali
     NSLog(@"%d", *ptr);
 ```
 
-The compound literal is still in scope when the
-
-executes, so it is legal to dereference the pointer. This, however, is not legal:
+The compound literal is still in scope when the `NSLog` executes, so it is legal to dereference the pointer. This, however, is not legal:
 
 ```
     int *ptr;
@@ -114,13 +95,7 @@ executes, so it is legal to dereference the pointer. This, however, is not legal
     NSLog(@"%d", *ptr);
 ```
 
-The compound literal's lifetime is tied to the scope of the
-
-/
-
-loop, and it no longer exists afterwards. The
-
-statement may print junk or crash.
+The compound literal's lifetime is tied to the scope of the `do`/`while` loop, and it no longer exists afterwards. The `NSLog` statement may print junk or crash.
 
 **Mutability**  
  One really unintuitive thing about compound literals is that, unless you declare their type as `const`, they produce mutable values. The following is perfectly legal, albeit completely pointless, code:
@@ -201,9 +176,7 @@ By using a compound literal to create some local storage, you can ensure that th
     }
 ```
 
-This costs some efficiency, because it creates error objects unnecessarily if the parameter is
-
-, but that generally wouldn't matter, and the result is somewhat more readable. It also allows the method to call other error-returning methods in a natural way and make use of the result before returning the error to the caller:
+This costs some efficiency, because it creates error objects unnecessarily if the parameter is `NULL`, but that generally wouldn't matter, and the result is somewhat more readable. It also allows the method to call other error-returning methods in a natural way and make use of the result before returning the error to the caller:
 
 ```
     - (BOOL)doWithError: (NSError **)error
@@ -228,13 +201,8 @@ This costs some efficiency, because it creates error objects unnecessarily if th
     }
 ```
 
-I discussed using compound literals and macros a bit in
-
-my post on C macros
-
-, but it's useful enough that it bears repeating. By using a compound literal to create an array, you can easily create a macro which takes variable arguments and then does something useful with them. As an example, this macro makes it simpler to create
-
-objects:
+**Vararg Macros**  
+ I discussed using compound literals and macros a bit in [my post on C macros](https://www.mikeash.com/pyblog/friday-qa-2010-12-31-c-macro-tips-and-tricks.html), but it's useful enough that it bears repeating. By using a compound literal to create an array, you can easily create a macro which takes variable arguments and then does something useful with them. As an example, this macro makes it simpler to create `NSArray` objects:
 
 ```
     #define ARRAY(...) [NSArray \
@@ -242,11 +210,7 @@ objects:
                          count: sizeof((id []){ __VA_ARGS__ }) / sizeof(id)]
 ```
 
-By using the
-
-syntax with compound literals, and by using
-
-on the resulting array, you can create macros which do useful things with an arbitrary number of arguments.
+By using the `id []` syntax with compound literals, and by using `sizeof` on the resulting array, you can create macros which do useful things with an arbitrary number of arguments.
 
 **Conclusion**  
  Compound literals are a nice trick to simplify and clarify code. They are not universally applicable, and you must take care not to use them in situations where they hurt more than they help. However, they are a nice tool to have in your bag of tricks, and they help make C a little more useful and generic.
@@ -261,7 +225,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-02-18-compound-literals.html)
 
 Add your thoughts, post a comment:
 

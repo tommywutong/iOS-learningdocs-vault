@@ -105,29 +105,25 @@ This is a bit slow! The hash table implementation used for tracking retain count
 
 On ARM64, 19 bits of the `isa` field go to holding the object's reference count inline. That means that the procedure for retaining an object simplifies to:
 
-1. field.
+1. Perform an atomic increment of the correct portion of the `isa` field.
 
 And that's it! This should be much, much faster.
 
 There is a bit more to it than just that, because of some corner cases that need to be handled. The real code looks more like this:
 
-1. indicates whether all this extra data is active for this class. If it's not active, then fall back to the old hash table approach. This allows for a compatibility mode for classes that fall outside the representable range, or programs that incorrectly assume the
-
-  is a pure class pointer.
+1. The bottom bit of the `isa` indicates whether all this extra data is active for this class. If it's not active, then fall back to the old hash table approach. This allows for a compatibility mode for classes that fall outside the representable range, or programs that incorrectly assume the `isa` is a pure class pointer.
 2. If the object is currently deallocating, do nothing.
-3. just yet.
+3. Increment the retain count, but don't store it back into the `isa` just yet.
 4. If it overflowed (an unusual but real possibility with only 19 bits available) then fall back to a hash table.
-5. value.
+5. Perform an atomic store of the new `isa` value.
 
 Most of this was necessary with the old approach as well, and it doesn't add too much overhead. The new approach should still be much, much faster.
 
 There are several other performance improvements stuffed into the remaining free bits that make deallocating objects faster. There's potentially a lot of cleanup that needs to be done when an Objective-C object deallocates, and being able to skip unnecessary cleanup can increase performance. These are:
 
-1. . If not, then associated objects don't need to be cleaned up.
-2. method. If not, then it doesn't need to be called.
-3. variable. If it has, then any remaining
-
-  references need to be zeroed. If not, then this step can be skipped.
+1. Whether the object ever had any associated objects, set with `objc_setAssociatedObject`. If not, then associated objects don't need to be cleaned up.
+2. Whether the object has a C++ destructor method, which is also used as the ARC automatic `dealloc` method. If not, then it doesn't need to be called.
+3. Whether the object has ever been referenced by a `__weak` variable. If it has, then any remaining `__weak` references need to be zeroed. If not, then this step can be skipped.
 
 Previously, all of these flags were tracked per-class. If any instance of a class ever had an associated object set on it, for example, then _every_ instance of that class would perform associated object cleanup when deallocating from that point on. Tracking them for each instance independently helps ensure that only the instances that really need it take the performance hit.
 
@@ -156,7 +152,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-09-27-arm64-and-you.html)
 
 Add your thoughts, post a comment:
 

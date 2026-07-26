@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2be36539bad4facd'
 translated: false
 ---
@@ -28,6 +28,6 @@ I just discovered the site [Little Big Details](http://littlebigdetails.com) (vi
 
 Yes, yes, a thousand times yes. These sorts of details are what separate functional software from _good_ software. This is the sort of thing I was talking about in “[Priorities](https://belkadan.com/blog/2011/07/Priorities)”. This is something that I think Apple gets right more than most people, but something which is good for everyone.
 
-Whenever there’s a place in your program where you can leave things as they are, or make things easier on the user, and you’re not on a deadline, the right choice is always _make things easier on the user_.more
+Whenever there’s a place in your program where you can leave things as they are, or make things easier on the user, and you’re not on a deadline, the right choice is always _make things easier on the user_.
 
 This entry was posted on [August](https://belkadan.com/blog/2011/08) 10, [2011](https://belkadan.com/blog/2011) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [User experience](https://belkadan.com/blog/tags/user-experience)

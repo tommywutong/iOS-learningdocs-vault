@@ -45,11 +45,7 @@ Whereas an empty C++0x lambda looks like this:
     []{}
 ```
 
-So far not much different. They both use the standard C
-
-symbols to separate a block of code, with a special symbol to indicate that this is a block or lambda, not a normal C block. In both cases, the
-
-section takes normal code.
+So far not much different. They both use the standard C `{}` symbols to separate a block of code, with a special symbol to indicate that this is a block or lambda, not a normal C block. In both cases, the `{}` section takes normal code.
 
 The anonymous function can take arguments by writing them in parentheses, in the style of function arguments, after the leading bit:
 
@@ -71,13 +67,7 @@ Here, the two features begin to diverge. With C++0x lambdas, the return type can
     []{ if(something) return 42; else return 43; }
 ```
 
-In a more complicated lambda with an inferred return type, the return type is always inferred to be
-
-. The code above will therefore produce an error, because it's invalid to return
-
-from something with a return type of
-
-.
+In a more complicated lambda with an inferred return type, the return type is always inferred to be `void`. The code above will therefore produce an error, because it's invalid to return `42` from something with a return type of `void`.
 
 In contrast, Objective-C blocks do return type inference no matter how complicated the code is inside of the block. If no return statements are present, the type is inferred as `void`. Otherwise, it examines all of the return statements in the block. If they all return the same type, then the return type of the block is inferred to be that same type. If they conflict, an error is generated. Thus, the equivalent Objective-C example to the invalid C++0x lambda example works fine:
 
@@ -100,9 +90,7 @@ Note that an arguments declaration is required for C++0x lambdas, although it ca
     ^int (void) { if(something) return 42; else return 43; }
 ```
 
-Finally, both Objective-C blocks and C++0x lambdas are called in the same way: use the standard
-
-operator on an expression of the appropriate type. Pass arguments if they are required. This calls the anonymous function.
+Finally, both Objective-C blocks and C++0x lambdas are called in the same way: use the standard `()` operator on an expression of the appropriate type. Pass arguments if they are required. This calls the anonymous function.
 
 **Type**  
  Objective-C blocks introduce a new class of language-level types to represent block types. They match the standard (but tricky) syntax for C function pointer types, but with a `^` in place of the `*`:
@@ -139,13 +127,7 @@ For cases where the block needs to be able to modify a captured variable, the va
     block(); // x is now 43
 ```
 
-It is important to note that the automatic memory management of block and object pointers does
-
-occur for variables qualified with
-
-, so the programmer needs to make sure that everything is built to tolerate that. For primitives like
-
-above, there is no concern.
+It is important to note that the automatic memory management of block and object pointers does _not_ occur for variables qualified with `__block`, so the programmer needs to make sure that everything is built to tolerate that. For primitives like `x` above, there is no concern.
 
 It should come as no surprise that C++0x lambdas offer considerably greater flexibility but also considerably greater complication in this area. The overall philosophy of C++ appears to be to give the programmer as many tools and choices as possible, which has its pros and cons.
 
@@ -160,15 +142,7 @@ The most explicit way to do this is to list the variables to be captured inside 
     lambda(); // y is now 100
 ```
 
-It's not possible to modify
-
-in this case, as a lambda's
-
-is
-
-by default. However, this can be overridden by declaring it to be
-
-:
+It's not possible to modify `x` in this case, as a lambda's `operator()` is `const` by default. However, this can be overridden by declaring it to be `mutable`:
 
 ```
     int x = 42;
@@ -182,11 +156,7 @@ by default. However, this can be overridden by declaring it to be
     lambda(); // prints 44, 101!
 ```
 
-Because
-
-is captured by value, changes made from within the lambda are not seen outside of it. There are essentially two copies of
-
-at this point, and neither one affects the other.
+Because `x` is captured by value, changes made from within the lambda are not seen outside of it. There are essentially two copies of `x` at this point, and neither one affects the other.
 
 It can be inconvenient to list every variable to be captured, so it is possible to specify a default capture behavior by putting either `=` or `&` within the `[]`. For example:
 
@@ -214,11 +184,7 @@ It's even possible to combine the two, to have a default capture with exceptions
     // z is now 1002
 ```
 
-By allowing each lambda to specify how it captures things, the C++0x system allows more flexibility. With Objective-C blocks, a given variable is either
-
-or it's not. Every block which captures that variable must capture it in the same way. C++0x lambdas allow each lambda to make its own choice on how to capture. The
-
-keyword even allows them to capture by value but retain the ability to change the copied value internally. The downside is considerably increased complexity.
+By allowing each lambda to specify how it captures things, the C++0x system allows more flexibility. With Objective-C blocks, a given variable is either `__block` or it's not. Every block which captures that variable must capture it in the same way. C++0x lambdas allow each lambda to make its own choice on how to capture. The `mutable` keyword even allows them to capture by value but retain the ability to change the copied value internally. The downside is considerably increased complexity.
 
 **Memory Management**  
  Both Objective-C blocks and C++0x lambdas start their lives as stack objects. After that point, however, they diverge significantly.
@@ -235,11 +201,7 @@ In order for a block to outlive its slot on the stack, it must be copied. Becaus
     block(); // bad!
 ```
 
-Instead, it must be copied, either by using the Objective-C
-
-method, or the C
-
-function:
+Instead, it must be copied, either by using the Objective-C `copy` method, or the C `Block_copy` function:
 
 ```
     void (^block)(void);
@@ -250,17 +212,7 @@ function:
     block(); // good!
 ```
 
-Blocks follow standard Objective-C reference counting semantics. Each
-
-must be balanced with a
-
-or
-
-, and each
-
-must be balanced with a
-
-. The first copy gets the block onto the heap, subsequent ones simply increment the reference count. When the last live reference is released, the block is destroyed, and any captured objects or blocks are released.
+Blocks follow standard Objective-C reference counting semantics. Each `copy` must be balanced with a `release` or `autorelease`, and each `Block_copy` must be balanced with a `Block_release`. The first copy gets the block onto the heap, subsequent ones simply increment the reference count. When the last live reference is released, the block is destroyed, and any captured objects or blocks are released.
 
 C++0x lambdas are stored by value, not by reference. They can be copied onto the heap if needed, but the process is entirely manual. All captured variables are stored as member variables within the anonymous lambda object, so when the lambda is copied, those get copied as well, firing the appropriate constructors and destructors.
 
@@ -287,9 +239,7 @@ Opportunities for optimization are rare in most use cases. For example, this cod
     }];
 ```
 
-The implementation of
-
-can't know anything about the block which is passed to it here, so it must perform the full dereference and call for each iteration of the loop.
+The implementation of `-do:` can't know anything about the block which is passed to it here, so it must perform the full dereference and call for each iteration of the loop.
 
 The cases where blocks can be optimized are mostly cases where they're not needed in the first place, for example where they are defined and then called in the same scope. One place where useful optimizations could be made are inline functions which take block parameters, since the optimizer is able to improve the inlined code based on the calling code. However, as far as I know, no current blocks-capable compilers perform any of these optimizations, although I haven't investigated it thoroughly.
 
@@ -303,7 +253,7 @@ Because passing a lambda to another function involves templates, there are furth
     });
 ```
 
-is a template function, which means that it gets specialized for this particular type. This makes it an excellent candidate for inlining, and it's likely that an optimizing compiler will end up generating code for the above which would be just as good as the equivalent for loop.
+`for_each` is a template function, which means that it gets specialized for this particular type. This makes it an excellent candidate for inlining, and it's likely that an optimizing compiler will end up generating code for the above which would be just as good as the equivalent for loop.
 
 This is a typical tradeoff between C++ and Objective-C. C++ often favors the fastest possible generated code at the level of individual functions, sacrificing ease and speed of compilation and sometimes ease of programming to get it. Objective-C more often favors implementations which are simpler to create, compile, and use, at the cost of additional runtime overhead.
 
@@ -320,7 +270,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-06-03-objective-c-blocks-vs-c0x-lambdas-fight.html)
 
 Add your thoughts, post a comment:
 

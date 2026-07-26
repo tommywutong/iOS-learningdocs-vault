@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:002349661d70e986'
 translated: false
 ---
@@ -17,6 +17,8 @@ translated: false
 I wanted to get my new blog started with something that's unlikely to be found anywhere else. This is an obscure hack to access a fundamental piece of Objective-C data.
 
 ## Not a trivial question
+
+> "How do you find the IMP of the current method?"
 
 The section title doesn't lie, this isn't a trivial question. Objective-C (a language renowned for its ability to look everything up at runtime) has no variables, functions, operators or identifiers which directly access this value.
 
@@ -117,44 +119,18 @@ So how does this help, given that the return address into the middle of a functi
 Well, we know:
 
 - a Method implementation is contiguous
-- __builtin_return_address(0)
-
-  in a child function of the Method implementation of interest will be an address somewhere inside the implementation of interest
+- the result given by calling __builtin_return_address(0) in a child function of the Method implementation of interest will be an address somewhere inside the implementation of interest
 
 These two facts combined guarantee that if we invoke __builtin_return_address(0) in child function of a Method implementation, then the Method implementation's IMP must be the closest preceding IMP in the program to the result given by __builtin_return_address(0).
 
 Since we can get the set of all Method IMPs for a Class from the method "self" parameter, we now have an approach to solve the problem:
 
 1. During an invocation of the Method of interest,
-2. self
-
-  and
-
-  _cmd
-
-  from the method into our "find IMP" function.
+2. Pass the self and _cmd from the method into our "find IMP" function.
 3. Inside this function, get the set of all Methods from the object's class and super-classes.
-4. __builtin_return_address(0)
-
-  and store its result.
-5. method_name
-
-  is equal to the
-
-  _cmd
-
-  and whose
-
-  method_imp
-
-  is closest to the result from
-
-  __builtin_return_address(0)
-
-  without going over.
-6. method_imp
-
-  is the IMP of the Method of interest.
+4. Invoke __builtin_return_address(0) and store its result.
+5. Find the Method in this set whose method_name is equal to the _cmd and whose method_imp is closest to the result from __builtin_return_address(0) without going over.
+6. This closest method_imp is the IMP of the Method of interest.
 
 So here's the code:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2016-02-02
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1156addf46a1d9ae'
 translated: false
 ---
@@ -116,9 +116,7 @@ Additional problems in decreasing severity include:
 
 - the signal handler is whole process (rather than correctly scoped to the thread where the “catch” occurs)
 - the signal handler doesn’t deal with re-entrancy whereas the mach exception handler remains deterministic in the face of multiple fatal errors
-- red zone
-
-  ” which is technically frowned upon in signal handlers (although unlikely to cause problems here)
+- the signal handler overwrites the “[red zone](https://en.wikipedia.org/wiki/Red_zone_(computing))” which is technically frowned upon in signal handlers (although unlikely to cause problems here)
 
 ## The Mach exception handler: rewriting history
 
@@ -164,17 +162,7 @@ which is a straightforward throw of an `NSException` subclass.
 The other code I wanted to highlight was the setup of the Mach exception handler. There are two reasons for this:
 
 1. Documentation and useful examples for the required functions were really difficult to find, so I’d like to publish it here for visibility.
-2. ,
-
-  ,
-
-  ,
-
-  and
-
-  ; I’m not sure if the result is brilliant or ridiculous but at least there’s no possibility of a
-
-  error here.
+2. This was some of the first Swift 2 code I ever wrote and I went crazy with Swift’s `defer`, `try`, `guard`, `throw` and `catch`; I’m not sure if the result is brilliant or ridiculous but at least there’s no possibility of a `goto fail` error here.
 
 I’ve commented each step in the code so you should just be able to read the comments to see what the code does. **Pay close attention to the order that the steps are numbered**, remember: `defer` statements are executed in the reverse order to their setup.
 
@@ -313,12 +301,8 @@ The [Readme.md file](https://github.com/mattgallagher/CwlPreconditionTesting/blo
 1. `git clone https://github.com/mattgallagher/CwlPreconditionTesting.git`
 2. drag the “CwlPreconditionTesting.xcodeproj” file into your project’s file tree in Xcode
 3. go to your testing target’s Build Phase settings and under “Target Dependencies” press the “+” button and select the relevant “CwlPreconditionTesting” target ("_iOS" or “_OSX”, depending on your testing target’s SDK)
-4. at the top of any test file where you want to use
-
-  (Swift should handle the linkage automatically when you do this)
-5. function as shown in the
-
-  CwlCatchBadInstructionTests.swift tests file
+4. write `import CwlPreconditionTesting` at the top of any test file where you want to use `catchBadInstruction` (Swift should handle the linkage automatically when you do this)
+5. use the `catchBadInstruction` function as shown in the [CwlCatchBadInstructionTests.swift tests file](https://github.com/mattgallagher/CwlPreconditionTesting/blob/master/Tests/CwlPreconditionTestingTests/CwlCatchBadInstructionTests.swift?ts=3)
 
 ## Conclusion
 
@@ -326,9 +310,9 @@ The [Readme.md file](https://github.com/mattgallagher/CwlPreconditionTesting/blo
 
 This post completes my “Return to Cocoa with Love and Be Completely Self-Contradictory” trilogy:
 
-- Part 1: Move away from fun hacks on Cocoa with Love
-- Part 2: Don’t use partial functions
-- Part 3: Let’s test partial functions using fun hacks!
+- [Part 1: Move away from fun hacks on Cocoa with Love](https://www.cocoawithlove.com/blog/2016/01/25/a-new-era-for-cocoa-with-love.html)
+- [Part 2: Don’t use partial functions](https://www.cocoawithlove.com/blog/2016/01/25/partial-functions-part-one-avoidance.html)
+- [Part 3: Let’s test partial functions using fun hacks!](https://www.cocoawithlove.com/blog/2016/02/02/partial-functions-part-two-catching-precondition-failures.html)
 
 I’m being flippant, of course, since this apparent contradiction only exists if we omit the context of the articles’ different problem domains: app implementation, API design and testing, respectively. It’s easy to forget the differences between these domains since we might use Swift, Xcode and other tools across all three. That doesn’t mean they’re the same. What’s good in test code may be bad in a deployed app – and vice versa.
 

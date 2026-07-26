@@ -7,7 +7,7 @@ original_language: en
 published: 2022-06-06
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3884869349dae676'
 translated: false
 ---
@@ -34,12 +34,8 @@ Absolutely not. This is a proof-of-concept that targets iPhone 12 on iOS 14.1 on
 
 Single-core score in Geekbench 5:
 
-- 1573
-- 1504
-
-  to
-
-  1511
+- Native iPhone 12: [1573](https://browser.geekbench.com/ios_devices/iphone-12)
+- Hypervisor.framework: [1504](https://browser.geekbench.com/v5/cpu/15319609) to [1511](https://browser.geekbench.com/v5/cpu/15298464)
 
 This is almost native speed.
 
@@ -61,7 +57,7 @@ M1 (iPad Pro 2021/iPad Air 2022) on jailbroken iOS 14/15:
 
 - These devices already have Hypervisor support unlocked in the kernel
 - so any jailbreak should work, not just Fugu14
-- entitlement and include the decompiled Hypervisor.framework
+- sign with the `com.apple.private.hypervisor` entitlement and include the decompiled Hypervisor.framework
 
 All other devices:
 
@@ -81,15 +77,9 @@ Even if Windows were to boot, software rendered Crysis runs at 1fps at 640x480 o
 
 Unlocking Hypervisor.framework required three parts:
 
-- A modified Fugu14 jailbreak
-
-  to call hypervisor functions in the kernel
-- A hand-decompiled Hypervisor.framework
-
-  to talk with the kernel’s hypervisor support
-- A modified version of UTM
-
-  , the QEMU port for iOS, that uses the Hypervisor.framework support
+- [A modified Fugu14 jailbreak](https://github.com/zhuowei/Fugu14/tree/wip-connect6) to call hypervisor functions in the kernel
+- [A hand-decompiled Hypervisor.framework](https://github.com/zhuowei/HvDecompile) to talk with the kernel’s hypervisor support
+- [A modified version of UTM](https://github.com/zhuowei/UTM), the QEMU port for iOS, that uses the Hypervisor.framework support
 
 # Why Hypervisor syscalls don’t work on iPhones
 
@@ -181,9 +171,7 @@ The only changes I needed to make were:
 - remove all physical memory access functions; replace kernel virtual memory access functions with calls to `libkernrw`
 - replace all physical memory accesses with virtual memory accesses
 - replace anything that maps a physical page into userspace with calls to read/write through `libkernrw`
-- load the kernel from disk
-
-  instead of dumping from memory, which takes minutes using
+- made the patchfinder [load the kernel from disk](https://github.com/zhuowei/Fugu14/blob/d152c6116fd17a7f617e83447d320983ebd71da6/arm/shared/KernelExploit/Sources/KernelExploit/MemoryAccess.swift#L102) instead of dumping from memory, which takes minutes using `libkernrw`
 
 all uses of physical addresses was easily replaced… except one:
 
@@ -241,9 +229,9 @@ I tested this by using `DYLD_FRAMEWORK_PATH=` to replace the system Hypervisor.f
 
 I decided to modify the excellent [UTM](https://getutm.app), a port of QEMU to macOS and iOS. Since QEMU and UTM already support Hypervisor.framework on Apple Silicon, all [I needed to do](https://github.com/zhuowei/UTM/commits/master) was:
 
-- checks in UTM
+- remove a few `os(macOS)` checks in UTM
 - add the entitlements to access Hypervisor.framework and to communicate with the modified Fugu14
-- UTM and Taurine
+- work around an issue with [UTM and Taurine](https://github.com/utmapp/UTM/issues/3628#issuecomment-1144463617)
 
 and it just worked!
 
@@ -263,12 +251,8 @@ Apple, you like service revenue, right? I will pay $10/month to run virtual mach
 
 # Thanks
 
-- well-documented
-
-  jailbreak I’ve ever seen. It’s also modular enough that a script kiddie like me can reuse it for different tasks.
-- UTM developers
-
-  for their excellent QEMU port to iOS.
+- Linux Henze for building Fugu14. It’s the most powerful jailbreak in recent memory, yet it’s also the most [well-documented](https://github.com/LinusHenze/Fugu14/blob/master/Writeup.pdf) jailbreak I’ve ever seen. It’s also modular enough that a script kiddie like me can reuse it for different tasks.
+- The [UTM developers](https://github.com/utmapp/UTM) for their excellent QEMU port to iOS.
 - Everyone in the community for their support and encouragement.
 
 # What I learned
@@ -278,6 +262,6 @@ Apple, you like service revenue, right? I will pay $10/month to run virtual mach
 - How Hypervisor.framework communicates with the kernel
 - How to extract structs from Kernel Debug Kit
 - How not to run Android (spoiler alert: neither Ranchu (the Android Studio emulator) nor Cuttlefish (the cloud emulator) works in vanilla QEMU)
-- build Waydroid
+- How to [build Waydroid](https://docs.waydro.id/development/compile-waydroid-lineage-os-based-images), how long it takes on a cloud VM (3 hours - 1 h to download and 2 h to build), how large it is (190GB), and how much it costs ($10). (I didn’t end up using the build, alas…)
 
-  , how long it takes on a cloud VM (3 hours - 1 h to download and 2 h to build), how large it is (190GB), and how much it costs ($10). (I didn’t end up using the build, alas…)
+[https://worthdoingbadly.com/hv/](https://worthdoingbadly.com/hv/)

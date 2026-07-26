@@ -61,7 +61,7 @@ The hardware that handles this work is called the Memory Management Unit, or MMU
 
 The first thing that happens when the CPU loads a byte of memory is to hand the address to the MMU for translation. (This is not always true. On some CPUs, there is a layer of cache that comes before the MMU. However, the overall principle remains.)
 
-The first thing the MMU does with the address is slice off the bottom 12 bits, leaving a plain page address. 212 equals 4096, so the bottom 12 bits describe the address's location within its page. Once the rest of the address is remapped, the bottom 12 bits can be added on to generate the full physical address.
+The first thing the MMU does with the address is slice off the bottom 12 bits, leaving a plain page address. 2^12 equals 4096, so the bottom 12 bits describe the address's location within its page. Once the rest of the address is remapped, the bottom 12 bits can be added on to generate the full physical address.
 
 With the page address in hand, the MMU consults the Translation Lookaside Buffer, or TLB. The TLB is a cache for page mappings. If the page in question has been accessed recently, the TLB will remember the mapping, and quickly return the physical page address, at which point the MMU's work is done.
 
@@ -137,7 +137,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-12-28-what-happens-when-you-load-a-byte-of-memory.html)
 
 Add your thoughts, post a comment:
 

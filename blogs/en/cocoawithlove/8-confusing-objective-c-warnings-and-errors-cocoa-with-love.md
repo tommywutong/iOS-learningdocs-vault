@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d8ee76d486e249d7'
 translated: false
 ---
@@ -52,21 +52,7 @@ This is a simple error but many people (especially those accustomed to other lan
 
 I'd like to take this opportunity to tell you: if you don't know what a [forward declaration](http://en.wikipedia.org/wiki/Forward_declaration) is, or you've never used `@class` before, you need to [read about it](http://developer.apple.com/DOCUMENTATION/Cocoa/Conceptual/ObjectiveC/Articles/ocDefiningClasses.html). In brief: a `@class` forward declaration tells the compiler that a given name is a class but avoids the need to import the whole declaration (which would create an undesirable cross-dependency in the header file).
 
-> in
-> 
-> files, never
-> 
-> another class from the same framework/application except the super class — always use an
-> 
-> forward definition instead. The
-> 
-> for a class should always be in the
-> 
-> (.m) file. Using
-> 
-> for other frameworks (like
-> 
-> ) is okay.
+> **Basic rule:** in _header_ files, never `#import` another class from the same framework/application except the super class — always use an `@class` forward definition instead. The `#import` for a class should always be in the _implementation_ (.m) file. Using `#import` for other frameworks (like `#import <Cocoa/Cocoa.h>`) is okay.
 
 The cause of this warning is failure to follow the second part of this basic rule: you need to `#import` the actual definition in your implementation file.
 
@@ -104,21 +90,15 @@ The mundane explanation is that there is no `blah` method (you've simply mistype
 
 However, Objective-C provides a few ways to get this error, even when the method _does_ exist.
 
-- is defined may not be in the set of imported classes. This can happen when the object you tried to invoke
-
-  on is declared as an
-
-  or the class is only forward declared.
-- , which is not imported.
+- The class where `-blah` is defined may not be in the set of imported classes. This can happen when the object you tried to invoke `-blah` on is declared as an `id` or the class is only forward declared.
+- You have imported the base class but the method is declared on a `@category`, which is not imported.
 
 In either case, the solution is to find the header that defines the method and `#import` it.
 
 There is one further situation where this error can occur: when there is no implementation of the method at compile-time at all. This can further be broken into two cases:
 
-- s. For methods like this, you should declare the method in a category (even though there will be no implementation at compile-time) and import this category.
-- instead of writing
-
-  and causing compiler warnings.
+- Runtime handled methods with clear association with a particular class. For example: accessor methods for the attributes of a Core Data `NSManagedObject`s. For methods like this, you should declare the method in a category (even though there will be no implementation at compile-time) and import this category.
+- Runtime handled methods with no clear class association. To highlight the runtime and unusual situation involved in this situation you should use `[object performSelector:@selector(weirdRuntimeMethod)]` instead of writing `[object weirdRuntimeMethod]` and causing compiler warnings.
 
 ## 5. Multiple, incompatible methods
 
@@ -199,10 +179,8 @@ You can use your own `AssertCast` macro to make this operation easier if you do 
 
 There are two cases where implict casts are allowed:
 
-- is okay)
-- to anything (
-
-  is the universal object and can be implicitly cast or used as anything)
+- upcasts (i.e. `NSObject *myObject = myClassObject;` is okay)
+- implicit conversions from `id` to anything (`id` is the universal object and can be implicitly cast or used as anything)
 
 This error can also occur in the case where the assignment is actually an upcast but the source class has only a forward declaration — so you may also need to import the declaration if it is not imported.
 

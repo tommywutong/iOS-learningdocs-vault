@@ -52,7 +52,8 @@ However, this really only works if you want to override a method implemented in 
 1. It's impossible to call through to the original implementation of the method. The new implementation replaces the original, which is simply lost. Most overrides want to add functionality, not completely replace it, but it's not possible with a category.
 2. The class in question could implement the method in question in a category too, and the runtime doesn't guarantee which implementation "wins" when two categories contain methods with the same name.
 
-Using a technique called method swizzling, you can replace an existing method from a category without the uncertainty of who "wins", and while preserving the ability to call through to the old method. The secret is to give the override a different method name, then swap them using runtime functions.
+**Swizzling**  
+ Using a technique called method swizzling, you can replace an existing method from a category without the uncertainty of who "wins", and while preserving the ability to call through to the old method. The secret is to give the override a different method name, then swap them using runtime functions.
 
 First, you implement the override with a different name:
 
@@ -71,13 +72,7 @@ First, you implement the override with a different name:
     @end
 ```
 
-Notice how calling through to the original is done by calling the
-
-method, in what looks like a recursive call. This works because the method gets swapped with the original implementation. At runtime, the method called
-
-is actually the
-
-!
+Notice how calling through to the original is done by calling the _same_ method, in what looks like a recursive call. This works because the method gets swapped with the original implementation. At runtime, the method called `override_drawRect:` is actually the _original_!
 
 To swap the method, you need a bit of code to move the new implementation in and the old implementation out:
 
@@ -88,9 +83,7 @@ To swap the method, you need a bit of code to move the new implementation in and
         Method overrideMethod = class_getInstanceMethod(c, overrideSEL);
 ```
 
-To be completely general, this code has to handle two cases. The first case is when the method to be overridden is
-
-implemented in the class in question, but rather in a superclass. The second case is when the method in question does exist in the class itself. These two cases need to be handled a bit differently.
+To be completely general, this code has to handle two cases. The first case is when the method to be overridden is _not_ implemented in the class in question, but rather in a superclass. The second case is when the method in question does exist in the class itself. These two cases need to be handled a bit differently.
 
 For the case where the method only exists in a superclass, the first step is to add a new method to this class, using the override as the implementation. Once that's done, then the override method is replaced with the original one.
 
@@ -118,9 +111,7 @@ If the add failed, then it's the second case; both methods exist in the class in
     }
 ```
 
-You'll notice that the
-
-call just uses the two methods that the code already fetched, and you might wonder why it can't just go straight to that and skip all of the annoying stuff in the middle.
+You'll notice that the `method_exchangeImplementations` call just uses the two methods that the code already fetched, and you might wonder why it can't just go straight to that and skip all of the annoying stuff in the middle.
 
 The reason the code needs the two cases is because `class_getInstanceMethod` will actually return the `Method` for the _superclass_ if that's where the implementation lies. Replacing that implementation will replace the method for the wrong class!
 
@@ -137,7 +128,8 @@ Finally we just need to make sure that this code actually gets called when the p
     }
 ```
 
-This is a bit complicated, though. The swizzling concept is a little weird, and especially the way that you call through to the original implementation tends to bend the mind a bit. It's a pretty standard technique, but I want to propose a way that I believe is a little simpler, both in terms of being easier to understand and easier to implement.
+**Direct Override**  
+ This is a bit complicated, though. The swizzling concept is a little weird, and especially the way that you call through to the original implementation tends to bend the mind a bit. It's a pretty standard technique, but I want to propose a way that I believe is a little simpler, both in terms of being easier to understand and easier to implement.
 
 It turns out that there's no need to preserve the method-ness of the original method. The dynamic dispatch involved in `[self override_drawRect: r]` is completely unnecessary. We know which implementation we want right from the start.
 
@@ -147,9 +139,7 @@ Instead of moving the original method into a new one, just move its implementati
     void (*gOrigDrawRect)(id, SEL, NSRect);
 ```
 
-Then in
-
-you can fill that global with the original implementation
+Then in `+load` you can fill that global with the original implementation
 
 ```
     + (void)load
@@ -158,11 +148,7 @@ you can fill that global with the original implementation
         gOrigDrawRect = (void *)method_getImplementation(origMethod);
 ```
 
-(I like to cast to
-
-for these things just because it's so much easier to type than long, weird function pointer types, and thanks to the magic of C, the
-
-gets implicitly converted to the right pointer type anyway.)
+(I like to cast to `void *` for these things just because it's so much easier to type than long, weird function pointer types, and thanks to the magic of C, the `void *` gets implicitly converted to the right pointer type anyway.)
 
 Next, replace the original. Like before, there are two cases to worry about, so I'll first add the method, then replace the existing one if it turns out that there is one:
 
@@ -201,7 +187,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-01-29-method-replacement-for-fun-and-profit.html)
 
 Add your thoughts, post a comment:
 

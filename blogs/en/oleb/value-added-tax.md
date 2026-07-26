@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:75bfc5022ed90920'
 translated: false
 ---
@@ -22,7 +22,7 @@ My accountant pointed me to an [upcoming change](http://eur-lex.europa.eu/LexUri
 
 # The Current Situation
 
-All App Store sales to consumers in the EU (and many other countries) are handled by iTunes [S.à r.l.](https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_%C3%A0_responsabilit%C3%A9_limit%C3%A9e), an Apple subsidiary based in Luxembourg. When a EU resident buys an app, iTunes S.à r.l. as the contracting partner[1](#fn:1) must charge VAT on the sale price. If the customer is also based in Luxembourg[2](#fn:2), Luxembourg’s VAT rate applies. If seller and buyer are in different countries, the EU has established rules that govern where VAT is collected. Simplified, they are as follows:
+All App Store sales to consumers in the EU (and many other countries) are handled by iTunes [S.à r.l.](https://en.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_%C3%A0_responsabilit%C3%A9_limit%C3%A9e), an Apple subsidiary based in Luxembourg. When a EU resident buys an app, iTunes S.à r.l. as the contracting partner^[1](#fn:1) must charge VAT on the sale price. If the customer is also based in Luxembourg^[2](#fn:2), Luxembourg’s VAT rate applies. If seller and buyer are in different countries, the EU has established rules that govern where VAT is collected. Simplified, they are as follows:
 
 - Physical goods are taxed in the buyer’s country of residence.
 - Most services (incl. software) are taxed in the country of the seller.
@@ -33,7 +33,7 @@ Since [VAT rates differ among EU countries](https://en.wikipedia.org/wiki/Europe
 
 # The New Rules
 
-As of January 1, 2015, this will change. Electronically supplied services (such as apps) sold to private customers will then be taxed in the buyer’s country of residence. This means an added administrative burden for Apple because iTunes S.à r.l. now has to declare the VAT it collects from consumers for each of the 28 EU member states separately.[3](#fn:3)
+As of January 1, 2015, this will change. Electronically supplied services (such as apps) sold to private customers will then be taxed in the buyer’s country of residence. This means an added administrative burden for Apple because iTunes S.à r.l. now has to declare the VAT it collects from consumers for each of the 28 EU member states separately.^[3](#fn:3)
 
 More importantly, the new legislation will have an effect on either consumer app prices in the EU or the proceeds Apple pays out to developers for sales of their apps in the EU.
 
@@ -53,7 +53,7 @@ If Apple decides to keep the consumer price of €0.89 constant across the EU, t
 
 # Conclusion
 
-We don’t know yet which method Apple will choose. Keeping consumer prices constant across the EU would certainly be the least confusing option to App Store customers. For hardware sales in their own online store, Apple’s practice has generally been to reflect different VAT rates in consumer prices, however, albeit not exactly.[4](#fn:4)
+We don’t know yet which method Apple will choose. Keeping consumer prices constant across the EU would certainly be the least confusing option to App Store customers. For hardware sales in their own online store, Apple’s practice has generally been to reflect different VAT rates in consumer prices, however, albeit not exactly.^[4](#fn:4)
 
 If Apple chooses to keep consumer prices constant, developers may see their revenues from EU app sales decline by about 5% compared to current levels. If the tax increase leads to higher app prices for consumers, payouts to developers will remain constant on a per-app basis, but total revenue might drop due to a possible decrease in demand (which is hard to quantify).
 

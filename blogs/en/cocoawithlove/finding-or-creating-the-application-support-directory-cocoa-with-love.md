@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:909be3e5969bc09d'
 translated: false
 ---
@@ -36,11 +36,7 @@ On iPhone OS devices, the running application gets its own copy of the Library d
 
 where `12345678-AAAA-BBBB-CCCC-0123456789AB` is whatever UUID has been assigned to your application.
 
-> . If you want to store user-related preferences, it is generally better to can store them in the
-> 
-> NSUserDefaults
-> 
-> .
+> The application support directory is only for user-related persistent _files_. If you want to store user-related preferences, it is generally better to can store them in the [NSUserDefaults](http://developer.apple.com/mac/library/documentation/cocoa/reference/Foundation/Classes/NSUserDefaults_Class/Reference/Reference.html).
 
 ## Getting paths correctly
 
@@ -170,9 +166,7 @@ NSString *path = [[NSFileManager defaultManager] applicationSupportDirectory];
 
 ## Conclusion
 
-> NSFileManager_DirectoryLocations.zip
-> 
-> (6kb)
+> You can download the complete category here: [NSFileManager_DirectoryLocations.zip](https://www.cocoawithlove.com/assets/objc-era/NSFileManager_DirectoryLocations.zip) (6kb)
 
 I like it when a task that can be unambiguously described in a simple sentence ("Get the path to the application support directory.") is correspondingly achieved in a single line.
 

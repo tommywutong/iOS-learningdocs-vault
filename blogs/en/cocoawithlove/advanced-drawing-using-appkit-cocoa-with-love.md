@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dc6df8aaf4d02139'
 translated: false
 ---
@@ -22,19 +22,13 @@ I was reading an article on the Mac App Store and instead of paying attention to
 
 Only after I'd written the code and decided to write a post on it did I pay attention to the fact that I've already written a [series of posts on creating icons](https://www.cocoawithlove.com/2009/11/creating-iphone-and-mac-icons-using.html). I'm not trying to be repetitive (this post is about Cocoa drawing techniques; it is _not_ a suggested way to create application icons as the previous post was) but now that it's too late to change, I wish I had chosen a more novel visual subject for this post.
 
-> : this post is a Mac application. If you'd like to see the same design drawn using iOS CoreGraphics code,
-> 
-> check out this blog post by Marcus Crafter
-> 
-> .
+> **Update 2011-05-28**: this post is a Mac application. If you'd like to see the same design drawn using iOS CoreGraphics code, [check out this blog post by Marcus Crafter](http://redartisan.com/2011/05/13/porting-iconapp-core-graphics).
 
 ## The sample app
 
 ![](https://www.cocoawithlove.com/assets/objc-era/iconapp.png)
 
-> IconApp.zip
-> 
-> (96kB)
+> You can download the complete sample project used in this post here [IconApp.zip](https://www.cocoawithlove.com/assets/objc-era/IconApp.zip) (96kB)
 
 The application has a single window into which it draws an icon. You can resize the window and the icon always scales to fit. You can export the icon to a PDF or PNG file.
 
@@ -89,15 +83,11 @@ Also, gradients don't anti-alias their edges. Drawing the shape with a flat colo
 [NSShadow clearShadow];
 ```
 
-> If you're a good coder, you should avoid "
-> 
-> magic numbers
-> 
-> ". Magic numbers are unnamed numbers used without explanation in the code. They are considered bad practice (instead, you should assign values to a constant that names the value and explains any derivation, then you may use it).
-> 
-> However, I normally make an exception for drawing code (as I have in this case). If a number is chosen purely for aesthetic purposes and has no real relationship to any other value, I leave it magic on the assumption that its aesthetic purpose (with derivation or geometric relationship) is obvious.
-> 
-> You do need to keep a tight reign on permissive number usage though. You'll notice lower down in this post (in the "Gloss Gradient" code), where there's a blend of calculated, derived and relationship-related values as well as purely aesthetic values, I've bothered to use named constants instead, to clarify what is derived, what is proportionate and which arc is which.
+> **Coding practice aside:** If you're a good coder, you should avoid "[magic numbers](http://en.wikipedia.org/wiki/Magic_number_(programming)#Unnamed_numerical_constants)". Magic numbers are unnamed numbers used without explanation in the code. They are considered bad practice (instead, you should assign values to a constant that names the value and explains any derivation, then you may use it).  
+>   
+>  However, I normally make an exception for drawing code (as I have in this case). If a number is chosen purely for aesthetic purposes and has no real relationship to any other value, I leave it magic on the assumption that its aesthetic purpose (with derivation or geometric relationship) is obvious.  
+>   
+>  You do need to keep a tight reign on permissive number usage though. You'll notice lower down in this post (in the "Gloss Gradient" code), where there's a blend of calculated, derived and relationship-related values as well as purely aesthetic values, I've bothered to use named constants instead, to clarify what is derived, what is proportionate and which arc is which.
 
 The shadow methods in the previous code block are convenience methods from a category implemented as follows:
 
@@ -305,9 +295,7 @@ Ultimately, creating your own `NSBitmapImageRep`, setting the `NSGraphicsContext
 
 ## Conclusion
 
-> IconApp.zip
-> 
-> (96kB)
+> You can download the complete sample project used in this post here [IconApp.zip](https://www.cocoawithlove.com/assets/objc-era/IconApp.zip) (96kB)
 
 Ultimately, it's uncommon to construct this many visual elements in code; these things are invariably easier in a drawing program and a prerendered bitmap would be faster (this is quite slow at large sizes).
 

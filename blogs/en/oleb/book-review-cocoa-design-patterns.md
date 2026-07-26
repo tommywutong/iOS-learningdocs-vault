@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:34642431b962cddc'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Book Review: Cocoa Design Patterns
 
-![Cover of Cocoa Design Patterns by Erik M. Buck and Donald A. Yacktman](https://oleb.net/media/cocoa-design-patterns-cover-155x200.jpg)
+[![Cover of Cocoa Design Patterns by Erik M. Buck and Donald A. Yacktman](https://oleb.net/media/cocoa-design-patterns-cover-155x200.jpg)](https://www.amazon.com/Cocoa-Design-Patterns-Erik-Buck/dp/0321535022/)
 
 Although I [pointed out a minor mistake](https://oleb.net/blog/2009/11/mutable-properties-of-immutable-objects/) in the book in an earlier post, I highly recommend Erik M. Buck’s and Donald A. Yacktman’s [Cocoa Design Patterns](https://www.amazon.com/Cocoa-Design-Patterns-Erik-Buck/dp/0321535022/) (released in late 2009) to every Cocoa programmer who has worked through one or more beginner books to Objective-C and the Cocoa framework.
 
@@ -35,9 +35,7 @@ Here are a few of the patterns discussed in the book that I found most helpful:
 - The ever-present Delegate pattern.
 - The target-action mechanism.
 - Invocations and their role in the undo/redo process.
-- and
-
-  to save memory and performance.
+- The Flyweight pattern and how it is employed by `NSNumber` and `NSCell` to save memory and performance.
 - Proxies and Forwarding and how this can be used to implement Higher Order Messaging.
 
 The book is a little Mac-centric in that it does not specifically talk about the iPhone and some of the examples mentioned only apply to the Mac. That part is small, though, and I would say _Cocoa Design Patterns_ is equally useful to iPhone developers. Again, highly recommended for intermediate Cocoa developers.

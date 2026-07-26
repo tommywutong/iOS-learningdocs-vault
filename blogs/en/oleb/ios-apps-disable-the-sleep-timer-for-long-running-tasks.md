@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:958287a53d941ef1'
 translated: false
 ---
@@ -34,7 +34,7 @@ So background task execution is not a perfect option if a task can potentially t
 
 As a demonstration of my idea, I implemented it in Ole Zorn’s awesome [DocSets app](https://github.com/omz/DocSets-for-iOS). The process of downloading and extracting doc sets can easily take longer than 10 minutes, especially if you are on a slow connection or if you want to download multiple sets at once.
 
-![The DocSets app showing the switch to disable the sleep timer during a download](https://oleb.net/media/docsets-screenshot-idle-timer-toolbar.png)
+[![The DocSets app showing the switch to disable the sleep timer during a download](https://oleb.net/media/docsets-screenshot-idle-timer-toolbar.png)](https://oleb.net/media/docsets-screenshot-idle-timer-toolbar.png)
 
 <sub>The DocSets app showing the toolbar that lets the user disable the sleep timer when a long-running download is in progress.</sub>
 

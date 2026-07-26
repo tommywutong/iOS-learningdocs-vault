@@ -62,20 +62,14 @@ As usual, I have posted the code on GitHub. You can view the repository here:
 
 This code supports an extremely limited subset of the full `NSString` formatting functionality. `NSString` supports a huge number of specifiers, as well as options such as field width, precision, and out-of-order arguments. My reimplementation sticks to a basic set that's enough to illustrate what's going on. In particular, it supports:
 
-- -
-- -
-- -
-- ,
-
-  , and
-
-  , for the unsigned variants of the above.
-- -
-- - C strings
-- - Objective-C objects
-- - Output a single
-
-  character.
+- `%d` - `int`
+- `%ld` - `long`
+- `%lld` - `long long`
+- `%u`, `%lu`, and `%llu`, for the unsigned variants of the above.
+- `%f` - `float`
+- `%s` - C strings
+- `%@` - Objective-C objects
+- `%%` - Output a single `%` character.
 
 Furthermore, no options are supported.
 
@@ -700,7 +694,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-05-17-lets-build-stringwithformat.html)
 
 Add your thoughts, post a comment:
 

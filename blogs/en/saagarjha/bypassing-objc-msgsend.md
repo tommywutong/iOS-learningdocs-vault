@@ -7,7 +7,7 @@ original_language: en
 published: 2019-12-15
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:49cea6adc34fea8f'
 translated: false
 ---
@@ -64,9 +64,9 @@ If we’re correct, not only does this skip the cache lookup that `objc_msgSend`
 
 We’re almost done: the only question that’s left is what goes in the “target is `-[Foo bar]`” condition. As far as I can tell, if we have a `Foo *foo` and send `@selector(bar)` to it, the only cases where execution will not directly proceed to `-[Foo bar]` are if
 
-1. ,
-2. , or
-3. has been swizzled.
+1. the reciever is `nil`,
+2. the reciever is a subclass of `Foo`, or
+3. `-[Foo bar]` has been swizzled.
 
 Checking for the first can be done easily; the second is a bit more complicated. In theory we’re asking `[foo isMemberOfClass:Foo.class]`, but for obvious reasons we don’t really want the overhead that comes with this. We can skip even a call to [`object_getClass`](https://developer.apple.com/documentation/objectivec/1418629-object_getclass?language=objc) by directly ripping the `isa` out of `foo` and comparing it against runtime metadata. There are some subtleties with [non-pointer `isa`s](http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html) and [tagged pointers](https://www.mikeash.com/pyblog/friday-qa-2012-07-27-lets-build-tagged-pointers.html) but we can avoid them entirely by masking the `isa` appropriately and sending nonstandard cases to the slow path if we encounter them.
 

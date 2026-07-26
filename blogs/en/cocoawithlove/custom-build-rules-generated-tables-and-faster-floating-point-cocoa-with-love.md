@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c7603b6d2f722edd'
 translated: false
 ---
@@ -22,9 +22,7 @@ In this post, I'm going to work with a modified version of Apple's default OpenG
 
 ![](https://www.cocoawithlove.com/assets/objc-era/spinner.png)
 
-> Download the complete project for this post: Spinner.zip
-> 
-> (25kb).
+> [Download the complete project for this post: Spinner.zip](https://www.cocoawithlove.com/assets/objc-era/Spinner.zip) (25kb).
 
 To artificially create a situation where this simple program is bound by CPU performance, I will calculate the location of the square thousands of times for every frame.
 
@@ -163,9 +161,7 @@ Custom Build Rules are ideal for generating files that will be picked up by anot
 
 ## Conclusion
 
-> Download the complete project for this post: Spinner.zip
-> 
-> (25kb).
+> [Download the complete project for this post: Spinner.zip](https://www.cocoawithlove.com/assets/objc-era/Spinner.zip) (25kb).
 
 5 times faster, easy to implement and maintain.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:297591de494727d7'
 translated: false
 ---
@@ -62,12 +62,10 @@ However, even if you're not intending to ever localize your application, you sho
 
 There are a few reasons for this:
 
-1. : The future is hard to predict: you never know if you'll want to translate in the future. Needing to go through your code and find rogue literal strings is time consuming and prone to mistakes. Instead, everything should always have
-
-  from the beginning.
-2. : It keeps the exact details of your model/presentation layer at least one level of indirection removed from your controller code. In some cases, you can simply change the .strings files for your program to update the user interface and not need to change code due to this separation.
-3. : It clearly identifies text strings intended for user presentation as opposed to text strings used as keys for programming use only.
-4. : with your user interface strings detached from your controller, you'll be less likely to try to read static strings back from the user interface (a very bad idea) or place programmer-targetted strings in the user-interface.
+1. **Futureproofing**: The future is hard to predict: you never know if you'll want to translate in the future. Needing to go through your code and find rogue literal strings is time consuming and prone to mistakes. Instead, everything should always have `NSLocalizedString` from the beginning.
+2. **MVC practices**: It keeps the exact details of your model/presentation layer at least one level of indirection removed from your controller code. In some cases, you can simply change the .strings files for your program to update the user interface and not need to change code due to this separation.
+3. **Separation of concerns**: It clearly identifies text strings intended for user presentation as opposed to text strings used as keys for programming use only.
+4. **Discourages other bad practices**: with your user interface strings detached from your controller, you'll be less likely to try to read static strings back from the user interface (a very bad idea) or place programmer-targetted strings in the user-interface.
 
 Get into the habit of using `NSLocalizedString`. It's really simple to do — even when you're hacking code together quickly, you should be able to use it.
 
@@ -127,14 +125,12 @@ The ".strings" file will be filled with entries that look like this:
 
 Your translator just needs to translate the right-hand side of the equality statement. Notice that placeholders in your strings are given ordinal positions (1 and 2 in this case) so that the translation can change the order of placeholders if necessary (obviously, if you use placeholders, you should include a comment that explains what they're going to be).
 
-> generally, the whole process of creating new language variants is referred to as localization. In reality though, it comprises two steps:
+> **Localization versus Internationalization:** generally, the whole process of creating new language variants is referred to as localization. In reality though, it comprises two steps:
 > 
-> 1. : where you decouple the program from the original locale
-> 2. : where you add translations and behaviors for each new locale
+> 1. **Internationalization**: where you decouple the program from the original locale
+> 2. **Localization**: where you add translations and behaviors for each new locale
 > 
-> By that terminology, the inclusion of
-> 
-> wrappers and the creation of ".strings" files is the "Internationalizing" phase.
+> By that terminology, the inclusion of `NSLocalizedString` wrappers and the creation of ".strings" files is the "Internationalizing" phase.
 
 ### genstrings will only handle static NSLocalizedString and CFCopyLocalizedString strings
 
@@ -150,10 +146,10 @@ The answer to why you would use `-[NSBundle localizedStringForKey:value:table:]`
 
 From Mac OS X 10.5 onwards, you can put any UTF-8 characters in your `NSLocalizedString` constants. Prior to this, they were required to be pure 7-bit ASCII with all Unicode escaped with \\\\Uxxxx style escaping or you could use MacRoman with the -macRoman command-line option to use MacRoman high-ASCII characters.
 
-> : UTF-8 has been around since 1993 and Unicode 2.0 since 1996; if you have created any 8-bit character content since 1996 in anything other than UTF-8, then I hate you.
-> 
-> I weep to think of the years of programmer time that are still wasted attempting to support non-Unicode formats without characters getting garbled because people are still creating content using ancient encodings without useful identifiers to indicate what nonsense encoding they're using (or worse, people creating content that explicitly uses the wrong encoding for an encoding-specific text field).
-> 
+> **A quick swipe at almost everybody**: UTF-8 has been around since 1993 and Unicode 2.0 since 1996; if you have created any 8-bit character content since 1996 in anything other than UTF-8, then I hate you.  
+>   
+> I weep to think of the years of programmer time that are still wasted attempting to support non-Unicode formats without characters getting garbled because people are still creating content using ancient encodings without useful identifiers to indicate what nonsense encoding they're using (or worse, people creating content that explicitly uses the wrong encoding for an encoding-specific text field).  
+>   
 > MacRoman? Atrocious. Big-5? I hope you want to see garbage output. Windows Latin? You suck. If you're creating new content using anything other than UTF-8, UTF-16 or UTF-32 then you should be forced to serve prison time with whatever idiot monkey decided that UTF-16 should be allowed little-endian and big-endian variants instead of a single authoritative encoding.
 
 The actual text files generated by genstrings are UTF-16 in whatever byte order your system happens to use. i.e. UTF-16BE on PowerPC and UTF-16LE on Intel Macs.
@@ -208,9 +204,9 @@ I haven't really touched on non-string code localization topics in this post. Th
 
 Most programmers should already know the information in this post. Numerous other Mac programming blogs have discussed the topic:
 
-- Call Me Fishmeal: Pimp My Code, Part 17: Lost in Translations.
-- OS X & Cocoa Writings: Internationalizing Cocoa Applications, by Andrew C Stone
-- Internationalizing Cocoa applications, mmalcolm Crawford
+- [Call Me Fishmeal: Pimp My Code, Part 17: Lost in Translations.](http://wilshipley.com/blog/2009/10/pimp-my-code-part-17-lost-in.html)
+- [OS X & Cocoa Writings: Internationalizing Cocoa Applications, by Andrew C Stone](http://www.stone.com/The_Cocoa_Files/Internationalize_Your_App.html)
+- [Internationalizing Cocoa applications, mmalcolm Crawford](http://homepage.mac.com/mmalc/Stepwise/Internationalization/)
 
 See how anciently old those second two links are? I'm not telling you new information. The advice remains the same: always, _ALWAYS_ use `NSLocalizedString` for your user interface strings.
 

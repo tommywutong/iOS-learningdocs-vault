@@ -7,7 +7,7 @@ original_language: en
 published: 2020-04-03
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a1d8bdc8c80eebfb'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 ## [Shallow Git Repositories](#)
 
-When I was getting the code in the [previous post](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/) ready to share, I ran into a problem: my checkouts of LLVM and Swift were _shallow clones,_ i.e. git repositories that _don’t_ store the full history of each branch. Working with those locally is surprisingly easy; trying to set them up on a server using `git push` is a bit trickier. While trying to figure out what was going on, I was dismayed by the lack of up-to-date documentation about shallow repositories, even on my usual go-to site, [git-scm.com](https://www.git-scm.com/doc). So here’s a collection of information I’ve gathered about shallow repositories.more
+When I was getting the code in the [previous post](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/) ready to share, I ran into a problem: my checkouts of LLVM and Swift were _shallow clones,_ i.e. git repositories that _don’t_ store the full history of each branch. Working with those locally is surprisingly easy; trying to set them up on a server using `git push` is a bit trickier. While trying to figure out what was going on, I was dismayed by the lack of up-to-date documentation about shallow repositories, even on my usual go-to site, [git-scm.com](https://www.git-scm.com/doc). So here’s a collection of information I’ve gathered about shallow repositories.
 
 ### What is a shallow repository?
 
@@ -84,7 +84,7 @@ In a [previous article](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosti
 
 #### Part 1: Running `git-http-backend` without being able to edit Apache’s root configuration
 
-As I mentioned in the original article, I can’t edit my web server’s main configuration files; all I can do is add per-directory configuration. For gitweb, that meant putting the script directly in with the rest of my website files.[1](#fn:cgi-bin) But gitweb’s just a little(ish) Perl script, while [`git-http-backend`](https://git-scm.com/docs/git-http-backend) is a whole compiled program. Do I really have to copy that into my website?
+As I mentioned in the original article, I can’t edit my web server’s main configuration files; all I can do is add per-directory configuration. For gitweb, that meant putting the script directly in with the rest of my website files.^[1](#fn:cgi-bin) But gitweb’s just a little(ish) Perl script, while [`git-http-backend`](https://git-scm.com/docs/git-http-backend) is a whole compiled program. Do I really have to copy that into my website?
 
 Fortunately, someone else has gone through this before. Tiago Alves Macambira documented their own approach to [hosting Git repositories on a shared hosting plan](https://github.com/tmacam/private-git-on-dreamhost) (Dreamhost), and while their goals were different from mine they’ve already solved this particular problem. Their answer? Write a wrapper shell script. Here’s mine, which I just named `git-http-backend.cgi`:
 
@@ -108,7 +108,7 @@ RewriteRule \
   git-http-backend.cgi/$0 [L]
 ```
 
-This basically says “send requests in an immediate subdirectory for `HEAD`, `info/refs`, `git-upload-pack`, and anything in `objects/info/` to `git-http-backend.cgi`”.[2](#fn:git-receive-pack) Requests for existing objects or packfiles will still be served through Apache, and any other requests will go to gitweb through the rest of my configuration. (That `[L]` at the end stands for “last”, which keeps the requests intended for `git-http-backend` from subsequently being routed to gitweb.)
+This basically says “send requests in an immediate subdirectory for `HEAD`, `info/refs`, `git-upload-pack`, and anything in `objects/info/` to `git-http-backend.cgi`”.^[2](#fn:git-receive-pack) Requests for existing objects or packfiles will still be served through Apache, and any other requests will go to gitweb through the rest of my configuration. (That `[L]` at the end stands for “last”, which keeps the requests intended for `git-http-backend` from subsequently being routed to gitweb.)
 
 Once again I tested it with `git ls-remote`:
 

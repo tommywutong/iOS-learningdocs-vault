@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0a04fb409e11dfff'
 translated: false
 ---
@@ -74,8 +74,8 @@ While you're coding defensively to support changes, you're still creating risk.
 The reasons I decided to take this risk with StreamToMe 3.5 were:
 
 - The functionality was very simple (one simple method was all that was required)
-- , while the future iOS release is an indeterminate time into the future
-- )
+- StreamToMe 3.5's feature set was complete and it was due for a release _now_, while the future iOS release is an indeterminate time into the future
+- I didn't think anyone would really notice until after iOS 4.3 (**oops: I spot a flaw in my plan**)
 
 Even if you do include changes like this: don't mention them in your text. Clearly, such mentions may slip through accidentally but it is against your developer agreement to mention future functionality.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2759ba1e4c4cf94e'
 translated: false
 ---
@@ -28,15 +28,9 @@ The code property graph (CPG) is a data structure designed to mine large codebas
 
 Currently, the CPG infrastructure is supported by several tools:
 
-- Ocular
-
-  - a proprietary code analysis tool supporting Java, Scala, C#, Go, Python, and JavaScript languages
-- Joern
-
-  - an open-source counterpart of Ocular supporting C and C++
-- Plume
-
-  - an open-source tool supporting Java Bytecode
+- [Ocular](https://ocular.shiftleft.io) - a proprietary code analysis tool supporting Java, Scala, C#, Go, Python, and JavaScript languages
+- [Joern](https://joern.io) - an open-source counterpart of Ocular supporting C and C++
+- [Plume](https://plume-oss.github.io/plume-docs/) - an open-source tool supporting Java Bytecode
 
 This article presents [ShiftLeft](https://www.shiftleft.io)’s open-source implementation of [llvm2cpg](https://github.com/ShiftLeftSecurity/llvm2cpg) - a standalone tool that brings LLVM Bitcode support to Joern. But before we dive into details, let us say few more words about CPG and Joern.
 
@@ -133,37 +127,19 @@ From the high-level perspective, the approach is simple, but there are some tiny
 
 We can map some of the LLVM instructions back onto the internal CPG operations. Here are some examples:
 
-- ,
-
-  -\>
-- -\>
-- ,
-
-  -\>
-- ,
-
-  ,
-
-  -\>
-- -\> a combination of
-
-  ,
-
-  , and
-
-  depending on the underlying types of the GEP operand
+- `add`, `fadd` -\> `<operator>.addition`
+- `bitcast` -\> `<operator>.cast`
+- `fcmp eq`, `icmp eq` -\> `<operator>.equals`
+- `urem`, `srem`, `frem` -\> `<operator>.modulo`
+- `getelementptr` -\> a combination of `<operator>.pointerShift`, `<operator>.indexAccess`, and `<operator>.memberAccess` depending on the underlying types of the GEP operand
 
 Most of these `<operator>.*`s have special semantics, which plays a crucial role in the Joern and Ocular built-in data-flow trackers.
 
 Unfortunately, not every LLVM instruction has a corresponding operator in the CPG. In those cases, we had to fall back to function calls. For example:
 
-- turns into
-- turns into
-
-  (same for any other
-
-  operator)
-- turns into
+- `select i1 %cond, i32 %v1, i32 %v3` turns into `select(cond, v1, v2)`
+- `atomicrmw add i32* %ptr, i32 1` turns into `atomicrmwAdd(ptr, 1)` (same for any other `atomicrmw` operator)
+- `fneg float %val` turns into `fneg(val)`
 
 The only instruction we could not map to the CPG is the `phi`: CPG doesn’t have a Phi node concept. We had to eliminate `phi` instructions using `reg2mem` machinery.
 

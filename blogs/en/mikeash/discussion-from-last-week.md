@@ -36,7 +36,7 @@ _Background futures_ begin the calculation immediately on a background thread as
     [object doSomethingLaterWithData: future];
 ```
 
-do not begin the calculation until the future is resolved. If the future is never resolved, then the calculation is never performed. Lazy futures make it possible to provide an object immediately to an API which may or may not actually make use of it, and not pay the cost of creating that object until and unless it's actually requested. For example, you could use a lazy future to defer the reading of a file until and unless it's needed:
+_Lazy futures_ do not begin the calculation until the future is resolved. If the future is never resolved, then the calculation is never performed. Lazy futures make it possible to provide an object immediately to an API which may or may not actually make use of it, and not pay the cost of creating that object until and unless it's actually requested. For example, you could use a lazy future to defer the reading of a file until and unless it's needed:
 
 ```
     NSString *filename = ...;
@@ -144,9 +144,7 @@ Then the one part that's a bit interesting, a method to wait for the future to r
     }
 ```
 
-This class also has a
-
-method which is abstract. Subclasses must override it and do whatever they need to do:
+This class also has a `-resolveFuture` method which is abstract. Subclasses must override it and do whatever they need to do:
 
 ```
     - (id)resolveFuture
@@ -157,23 +155,7 @@ method which is abstract. Subclasses must override it and do whatever they need 
     }
 ```
 
-Actually there are two interesting parts to this class, and the second one is here. It's an implementation of
-
-. Normally this implementation wouldn't be necessary, as the proxy mechanism will proxy that method just fine. The problem arises in the implementation of
-
-, part of the
-
-toll-free bridging
-
-, and with other bridged classes. That code checks the class of the other object, and if it's an
-
-as well, hits a fast path that depends on internal implementation details of
-
-. If
-
-returns
-
-when the object is really a proxy, that code fails and the two strings will never compare as equal, even when they are.
+Actually there are two interesting parts to this class, and the second one is here. It's an implementation of `-class`. Normally this implementation wouldn't be necessary, as the proxy mechanism will proxy that method just fine. The problem arises in the implementation of `-[NSCFString isEqual:]`, part of the `CFString`[toll-free bridging](http://www.mikeash.com/pyblog/friday-qa-2010-01-22-toll-free-bridging-internals.html), and with other bridged classes. That code checks the class of the other object, and if it's an `NSCFString` as well, hits a fast path that depends on internal implementation details of `NSCFString`. If `-class` returns `NSCFString` when the object is really a proxy, that code fails and the two strings will never compare as equal, even when they are.
 
 The fix is simple, if bizarre. Get the real class, check to see if it starts with `NSCF`, and return the superclass if it does. If the real class is `NSCFString`, this will return `NSString`, the code goes through the general equality path, and all is well. This is the implementation of `-class`:
 
@@ -188,9 +170,7 @@ The fix is simple, if bizarre. Get the real class, check to see if it starts wit
     }
 ```
 
-And that's all there is to
-
-.
+And that's all there is to `MABaseFuture`.
 
 **Deepening the Hierarchy**  
  Building on `MABaseFuture`, I want to then create a tree of subclasses. First, `_MASimpleFuture` will contain some more common facilities for "simple" futures (futures which immediately resolve when accessed), then I'll create two subclasses of that for background and lazy futures.
@@ -205,9 +185,7 @@ And that's all there is to
     }
 ```
 
-Using this class, subclasses just need to provide an initializer method and override
-
-, and they get forwarding for free.
+Using this class, subclasses just need to provide an initializer method and override `-resolveFuture`, and they get forwarding for free.
 
 **Forwarding to `nil`**  
  There's a bad corner case here, which happens if the future returns `nil`. Messaging `nil` is no problem, but `forwardingTargetForSelector:` takes a `nil` return as meaning that there is no forwarding target, and the runtime should start on the slow forwarding path instead.
@@ -230,9 +208,7 @@ And here there's a major problem, because the slow forwarding path requires a me
     }
 ```
 
-The problem comes when there are multiple method signatures for a given selector, which can easily happen if two unrelated classes implement methods with the same name. In that case, there's no way to know which one is meant, and this whole approach falls apart. Unfortunately, with the way the runtime is currently written, there's no generalized way to "forward to
-
-".
+The problem comes when there are multiple method signatures for a given selector, which can easily happen if two unrelated classes implement methods with the same name. In that case, there's no way to know which one is meant, and this whole approach falls apart. Unfortunately, with the way the runtime is currently written, there's no generalized way to "forward to `nil`".
 
 If that's not enough, there's another problem with futures that return `nil`. This problem is quite simple: although the futured value may be nil, the future object itself is not nil. Any code which checks the object pointer for nil before using it will fail in weird ways. Imagine this code using an NSData:
 
@@ -242,17 +218,7 @@ If that's not enough, there's another problem with futures that return `nil`. Th
         [self doSomethingWithBytes: [data bytes]];
 ```
 
-If
-
-is a future that resolves to
-
-, then the
-
-check will pass, but
-
-will return
-
-, causing a crash.
+If `data` is a future that resolves to `nil`, then the `if` check will pass, but `[data bytes]` will return `NULL`, causing a crash.
 
 Because of these two problems, you should avoid futuring any computation which might return `nil`.
 
@@ -272,9 +238,7 @@ Because of these two problems, you should avoid futuring any computation which m
     }
 ```
 
-The implementation of
-
-is then extremely simple. Since the future is already being computed, it just waits for it to finish, then returns the result:
+The implementation of `-resolveFuture` is then extremely simple. Since the future is already being computed, it just waits for it to finish, then returns the result:
 
 ```
     - (id)resolveFuture
@@ -283,9 +247,8 @@ is then extremely simple. Since the future is already being computed, it just wa
     }
 ```
 
-I created
-
-to implement lazy futures. A lazy future doesn't begin computation right away, so it just needs to store a copy of the block when initialized, and release it when deallocating:
+**Lazy Futures**  
+ I created `_MALazyBlockFuture` to implement lazy futures. A lazy future doesn't begin computation right away, so it just needs to store a copy of the block when initialized, and release it when deallocating:
 
 ```
     - (id)initWithBlock: (id (^)(void))block
@@ -321,7 +284,8 @@ Resolution is straightforward as well. Acquire the lock. If the future hasn't be
     }
 ```
 
-This code now has all the functionality that's needed, but I want a couple of wrappers to make it nicer to use:
+**Wrappers**  
+ This code now has all the functionality that's needed, but I want a couple of wrappers to make it nicer to use:
 
 ```
     id MABackgroundFuture(id (^block)(void))
@@ -335,19 +299,13 @@ This code now has all the functionality that's needed, but I want a couple of wr
     }
 ```
 
-Because these functions return
-
-, the compiler won't be able to catch mistakes like:
+Because these functions return `id`, the compiler won't be able to catch mistakes like:
 
 ```
     NSArray *array = MALazyFuture(^{ return [self somethingThatReturnsNSString]; });
 ```
 
-Gcc will also reject this because the block types don't match exactly (returning
-
-instead of
-
-) even though they're completely compatible.
+Gcc will also reject this because the block types don't match exactly (returning `NSString *` instead of `id`) even though they're completely compatible.
 
 I worked around both of these problems by using two really scary-looking macros:
 
@@ -386,13 +344,7 @@ For example, let's say you're building a composite image by loading one image fr
     [imageView setImage: composite];
 ```
 
-By futuring all of the images, you allow the work for
-
-and
-
-to run in parallel, and there's at least the possibility that some of the work for
-
-could run in parallel with main thread work too:
+By futuring all of the images, you allow the work for `image1` and `image2` to run in parallel, and there's at least the possibility that some of the work for `composite` could run in parallel with main thread work too:
 
 ```
     NSImage *image1 = MABackgroundFuture(^{ return [[[NSImage alloc] initWithContentsOfFile: ...] autorelease]; });
@@ -410,9 +362,7 @@ could run in parallel with main thread work too:
     [imageView setImage: composite];
 ```
 
-Quick and easy parallel code, and
-
-never has to know that it's getting a proxy instead of the real thing.
+Quick and easy parallel code, and `imageView` never has to know that it's getting a proxy instead of the real thing.
 
 Lazy futures are useful any time you have objects that may never be needed, or simply may not be needed for a long time. Even if the object is used, deferring computation can spread out the load and improve responsiveness and startup times.
 
@@ -453,7 +403,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](http://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-02-26-futures.html)
 
 Add your thoughts, post a comment:
 

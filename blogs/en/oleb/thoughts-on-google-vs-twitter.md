@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d911b8d9688adbec'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Thoughts on Google+ vs. Twitter
 
-Everybody’s talking about Google+ these days so let me do the same and compare it to the only social network I actively use: Twitter.[1](#fn:1) Many commenters on the web see Google+ becoming a real danger to Twitter or even wonder if Twitter is already [mortally wounded](http://singularityhub.com/2011/07/06/google-is-awesome-facebook-maimed-twitter-mortally-wounded/). I don’t agree with this opinion at all; the reason is that I think Google+’s Circles are fundamentally flawed to compete with Twitter.
+Everybody’s talking about Google+ these days so let me do the same and compare it to the only social network I actively use: Twitter.^[1](#fn:1) Many commenters on the web see Google+ becoming a real danger to Twitter or even wonder if Twitter is already [mortally wounded](http://singularityhub.com/2011/07/06/google-is-awesome-facebook-maimed-twitter-mortally-wounded/). I don’t agree with this opinion at all; the reason is that I think Google+’s Circles are fundamentally flawed to compete with Twitter.
 
 Before I elaborate on this, let me say that this post is based on my first impressions of Google+. It goes without saying that I am much more comfortable with how Twitter works than Google+. So far, I have mainly used my Google+ account for playing around a little bit. I haven’t started using it for real. This is more an analysis of Google+’s design than based on actual experience.
 
@@ -24,7 +24,7 @@ Before I elaborate on this, let me say that this post is based on my first impre
 
 No question, Google+ and Twitter are totally different beasts. Nevertheless, the two services do have some overlap. For instance, in stark contrast to Facebook, Google+ has adopted Twitter’s asymmetric follower model, arguably one of Twitter’s greatest strengths.
 
-Also, like Twitter and perhaps even more so, your activity on Google+ seems to happen _inside_ the web, as opposed to Facebook’s walled garden that is cut off from the rest of the web.[2](#fn:2)
+Also, like Twitter and perhaps even more so, your activity on Google+ seems to happen _inside_ the web, as opposed to Facebook’s walled garden that is cut off from the rest of the web.^[2](#fn:2)
 
 # Differences
 
@@ -34,7 +34,7 @@ Google+ does not maintain the intuitive chronological order of my feed, promotin
 
 Twitter turns all these apparent downsides into a unique advantage: the uniformity and shortness of tweets allow me to follow many more people on Twitter than I probably could on other platforms. The [information density of Twitter’s UI](http://weblog.muledesign.com/2011/07/density_and_difference.php) really brings this point home.
 
-At first glance, Google+ could offset this with its finer-grained control over who sees what: on Twitter, everything you say is public.[3](#fn:3) Everyone of your followers sees every single one of your tweets. Google+ encourages you to think about the audience of each item you share, making some public and others (semi-)private by only sharing them with one or more Circles of people. This should greatly improve the signal-to-noise ratio of your stream. Sounds great and Jeff Jarvis certainly thinks so, too: [Google+ Circles are for noise reduction](http://www.buzzmachine.com/2011/06/30/social-is-for-sharing-not-hiding/).
+At first glance, Google+ could offset this with its finer-grained control over who sees what: on Twitter, everything you say is public.^[3](#fn:3) Everyone of your followers sees every single one of your tweets. Google+ encourages you to think about the audience of each item you share, making some public and others (semi-)private by only sharing them with one or more Circles of people. This should greatly improve the signal-to-noise ratio of your stream. Sounds great and Jeff Jarvis certainly thinks so, too: [Google+ Circles are for noise reduction](http://www.buzzmachine.com/2011/06/30/social-is-for-sharing-not-hiding/).
 
 > when I share with less than everyone it is not out of privacy or security needs. It’s out of relevance. I may have something to tell my TWiT colleagues or my fellow journowonks that would bore everyone else who follows me. So I restrict my audience not to keep a secret but to reduce noise for them, which I can’t do on Twitter or can’t easily do on Facebook. I am still sharing; it’s better sharing.
 
@@ -42,7 +42,7 @@ Alas, it only works as long as everything you share is (semi-)private. Let’s s
 
 # Circles are not compatible with the follower model
 
-I should be the perfect audience for Google+. I am very concerned about creating too much noise for my Twitter followers. Hell, I even created a second Twitter account a few months ago to be able to separate my tweets by both topic and language.[4](#fn:4) If I could do this better with Google+, that would be killer feature for me. Only it doesn’t work that way because Google+’s Circles only work in one direction, and it is the wrong direction to compete with Twitter.
+I should be the perfect audience for Google+. I am very concerned about creating too much noise for my Twitter followers. Hell, I even created a second Twitter account a few months ago to be able to separate my tweets by both topic and language.^[4](#fn:4) If I could do this better with Google+, that would be killer feature for me. Only it doesn’t work that way because Google+’s Circles only work in one direction, and it is the wrong direction to compete with Twitter.
 
 Let’s try this with Google+: I would create separate Circles for each topic I regularly write about: Programming, Apple stuff (both usually in English, with lots of overlap); Berlin, politics, sports (usually in German and mainly of interest to the locals). I would then assign every item I post to one or more of these Circles. I wouldn’t post anything publicly because such a post would go to all my followers and thereby invalidate my aim of reducing noise for you. Everyone who follows me I woult place into the Circle(s) that I think fit them best.
 
@@ -58,7 +58,7 @@ Following people on Google+ asymmetrically relies on the assumption that the peo
 
 Google+ Circles are a nice feature. They considerably improve sharing with groups of people that are inherently _closed and private_ (family, personal friends, coworkers). It gives Google+ an edge over Facebook. What it does not do is help us with _public_ sharing, the way most of us use Twitter.
 
-Using Circles, I can only filter by _person_, not by _topic_.[5](#fn:5) What I would like to have in Google+ are “circles for topics” that my followers could subscribe to. I would then make posts public and assign one or more topics to each one (a “topic” could also be the item’s language; think of them as tags), and every one of my followers could subscribe either to my full feed or to a subset of topics. _That_ would improve the signal-to-noise ratio! And for me the poster, it wouldn’t be harder than assigning a post to a Circle of people.
+Using Circles, I can only filter by _person_, not by _topic_.^[5](#fn:5) What I would like to have in Google+ are “circles for topics” that my followers could subscribe to. I would then make posts public and assign one or more topics to each one (a “topic” could also be the item’s language; think of them as tags), and every one of my followers could subscribe either to my full feed or to a subset of topics. _That_ would improve the signal-to-noise ratio! And for me the poster, it wouldn’t be harder than assigning a post to a Circle of people.
 
 # What Should Twitter Do?
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0e99cf58698ca93a'
 translated: false
 ---
@@ -30,7 +30,7 @@ I’m glad I had the 6 Plus for a year (see, I’m still doing the rationalizati
 
 # Some more observations
 
-[It’s so much faster](http://www.anandtech.com/show/9662/iphone-6s-and-iphone-6s-plus-preliminary-results), which was totally unexpected to me. I never considered the 6 Plus sluggish (and I still don’t), but the 6s is in a different league. App launches in particular are way faster. Data in the Health app loads almost instantly, whereas on the 6 Plus it always took a few seconds for the charts to get populated.[1](#fn:1) I suspect the faster flash storage interface is a major factor in both of these scenarios.
+[It’s so much faster](http://www.anandtech.com/show/9662/iphone-6s-and-iphone-6s-plus-preliminary-results), which was totally unexpected to me. I never considered the 6 Plus sluggish (and I still don’t), but the 6s is in a different league. App launches in particular are way faster. Data in the Health app loads almost instantly, whereas on the 6 Plus it always took a few seconds for the charts to get populated.^[1](#fn:1) I suspect the faster flash storage interface is a major factor in both of these scenarios.
 
 The Touch ID sensor is much, much faster than before.
 

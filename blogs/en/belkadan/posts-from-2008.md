@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d1c5416d0df97799'
 translated: false
 ---
@@ -18,24 +18,16 @@ translated: false
 
 ### September
 
-1. 04
-
-  Objective-J and Objective-C
+1. 04[Objective-J and Objective-C](https://belkadan.com/blog/2008/09/Objective-J-and-Objective-C/)
 
 ### August
 
-1. 28
-
-  HTTPS and Name-based Virtual Hosting
+1. 28[HTTPS and Name-based Virtual Hosting](https://belkadan.com/blog/2008/08/HTTPS-and-Name-based-Virtual-Hosting/)
 
 ### March
 
-1. 08
-
-  Alerts Without Apps (or nibs)
+1. 08[Alerts Without Apps (or nibs)](https://belkadan.com/blog/2008/03/Alerts-Without-Apps/)
 
 ### January
 
-1. 14
-
-  NSNumber, CFNumber, and CFBoolean
+1. 14[NSNumber, CFNumber, and CFBoolean](https://belkadan.com/blog/2008/01/NSNumber-CFNumber-and-CFBoolean/)

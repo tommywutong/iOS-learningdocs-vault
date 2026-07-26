@@ -7,7 +7,7 @@ original_language: en
 published: 2009-09-05
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8cd46c327c03603a'
 translated: false
 ---
@@ -42,4 +42,4 @@ translated: false
 
 I use my MacBook Pro for astronomy. The backlit keyboard would be great in the dark, but its white light is bad for night vision. [This mod](http://sealiesoftware.com/keyboard/index.html) makes it red, or any other color you want.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

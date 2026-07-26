@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1f5fdf053a5d3bf9'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Daniel Steinberg: A Time Lapse Look at Swift
 
-![Preview of YouTube video: Daniel Steinberg, A Time Laps Look at Swift](https://oleb.net/media/daniel-steinberg-a-timelapse-look-at-swift-video-preview-2297px.jpg)
+[![Preview of YouTube video: Daniel Steinberg, A Time Laps Look at Swift](https://oleb.net/media/daniel-steinberg-a-timelapse-look-at-swift-video-preview-2297px.jpg)](https://www.youtube.com/watch?v=kyzN5I-2FoY&index=15&list=PLdr22uU_wISqm9QbnczWxXs9qyuWpSU4k)
 
 <sub>[Watch on YouTube](https://www.youtube.com/watch?v=kyzN5I-2FoY&index=15&list=PLdr22uU_wISqm9QbnczWxXs9qyuWpSU4k) (23 minutes).  
  [The slides](https://speakerdeck.com/dimsumthinking/a-swift-timelapse-uikonf-2016).  

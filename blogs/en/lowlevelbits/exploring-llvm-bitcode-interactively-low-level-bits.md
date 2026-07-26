@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0b401e973ec8a6d4'
 translated: false
 ---
@@ -53,7 +53,7 @@ Let me walk you through an example of how to use `llvm2graphml`. To follow along
 
 There are essentially three steps:
 
-1. file with the following content:
+1. Create `main.ll` file with the following content:
 
 ```ll
 ; main.ll
@@ -196,8 +196,8 @@ These are just some numbers mined from the `libLLVMCore.a`.
 
 Here are some links if you want to learn more about Gremlin Queries and what’s possible:
 
-- Getting Started with TinkerPop
-- Available Graph Traversals
+- [Getting Started with TinkerPop](http://tinkerpop.apache.org/docs/3.4.6/tutorials/getting-started/)
+- [Available Graph Traversals](http://tinkerpop.apache.org/docs/3.4.6/reference/#graph-traversal-steps)
 
 ## Next steps
 

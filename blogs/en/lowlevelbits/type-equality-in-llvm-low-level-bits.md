@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f0b1b384eadb3375'
 translated: false
 ---
@@ -35,7 +35,7 @@ It is highly recommended to read this post from Chris Lattner explaining some of
 Just a few random words on the current type system (if you didn’t read the linked article):
 
 - types belong to an `LLVMContext`
-- )
+- instances of each type allocated on the heap (e.g., `llvm::Type *type = new llvm::Type;`)
 - type comparison is done via pointer comparison
 - types in LLVM go into three groups: primitive types (integers, floats, etc.), derived types (structs, arrays, pointers, etc.), forward-declared types (opaque structs)
 
@@ -251,42 +251,18 @@ We consider each type to be a symbol, and its arity is the number of properties 
 
 Some examples:
 
-- ,
-
-  ,
-
-  : symbol
-
-  , arity is 1 since we only care about bitwidth (e.g., 32, 64, 156)
-- : symbol
-
-  , arity is 0, all
-
-  types are the same
-- : symbol
-
-  , arity is 2, we care only about the length of the array and its element type
-- : symbol
-
-  , arity is 1, we care only about the pointee type
-- : symbol
-
-  , arity is number of elements + 2. We want to store the struct ID and number of its elements.
+- `i32`, `i64`, `i156`: symbol `I`, arity is 1 since we only care about bitwidth (e.g., 32, 64, 156)
+- `float`: symbol `F`, arity is 0, all `float` types are the same
+- `[16 x i32]`: symbol `A`, arity is 2, we care only about the length of the array and its element type
+- `i8*`: symbol `P`, arity is 1, we care only about the pointee type
+- `{ i32, [16 x i8], i8* }`: symbol `S`, arity is number of elements + 2. We want to store the struct ID and number of its elements.
 
 If we care about more or fewer values, then we can simply change the arity for a given symbol. Examples of types represented as a tree:
 
-- -\>
-
-  -\>
-- -\>
-
-  -\>
-- -\>
-
-  -\>
-- -\>
-
-  -\>
+- `i32` -\> `I(32)` -\> `I32`
+- `i177` -\> `I(177)` -\> `I177`
+- `[16 x i8*]` -\> `A(16, P(I(8)))` -\> `A16PI8`
+- `{ i32, i8*, float }` -\> `S(3, S0, I(32), P(I(8)), F)` -\> `S3S0I32PI8F`
 
 _Note: the values in `S` are the number of elements (3), struct ID (`S0`), and all its contained types defined recursively._
 

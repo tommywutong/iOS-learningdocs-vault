@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:556813c6e0bc2bef'
 translated: false
 ---
@@ -22,7 +22,7 @@ I was involved as an editor in several collaborative writing projects in the pas
 
 The editing process for the books worked like this: The authors would write chapters in [Markdown](http://daringfireball.net/projects/markdown/) and push directly to a private repository on [GitHub](https://github.com). I would then submit a pull request with my edits and additional comments or questions. For subsequent changes to chapters after the first review, the authors would open additional pull requests and give me the chance to push additional edits or post comments before merging.
 
-Overall, this setup worked well for us. The actual collaborative editing process may have been easier with tools like [Google Docs](https://www.google.com/docs/about/) or [Quip](https://quip.com),[1](#fn:1) but the benefits of having all the content in plain text files in a directory[2](#fn:2) in the file system are huge for automating the build process. Chris and Florian wrote scripts to check the sample code for compile errors, find broken links, and build the final book PDF, for example.
+Overall, this setup worked well for us. The actual collaborative editing process may have been easier with tools like [Google Docs](https://www.google.com/docs/about/) or [Quip](https://quip.com),^[1](#fn:1) but the benefits of having all the content in plain text files in a directory^[2](#fn:2) in the file system are huge for automating the build process. Chris and Florian wrote scripts to check the sample code for compile errors, find broken links, and build the final book PDF, for example.
 
 # GitHub
 
@@ -50,13 +50,11 @@ As far as I know, the decision to use GitHub for the objc.io articles and the bo
 
 There are lots of specialized collaborative writing services, though, and many of them are probably more beginner-friendly, especially if your co-authors and editors are not developers. Here are the ones I looked at (albeit briefly):
 
-- Penflip
-
-  (I like that it also uses Git under the covers.)
-- Draft
-- Typewrite
-- Poetica
-- Authorea
+- [Penflip](https://www.penflip.com) (I like that it also uses Git under the covers.)
+- [Draft](https://draftin.com/)
+- [Typewrite](https://typewrite.io/)
+- [Poetica](https://poetica.com/)
+- [Authorea](https://www.authorea.com/)
 
 It may very well be that one of these services provides a much better workflow than GitHub. Unfortunately, evaluating them is really hard unless you dive in completely, invite your collaborators, and start working on a real project for at least a couple of weeks. I have not done that.
 

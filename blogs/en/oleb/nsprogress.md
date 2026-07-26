@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:aa483497b9c8b846'
 translated: false
 ---
@@ -22,7 +22,7 @@ If you’d like to read a counterpoint before deciding if `NSProgress` is the ri
 
 ---
 
-Apple introduced the [`NSProgress`](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/Reference/Reference.html) class in iOS 7 and OS X 10.9 with the goal of establishing a standard mechanism for reporting progress of long-running tasks. The central idea behind `NSProgress` is to allow progress reporting between multiple modules in an app without the need for tight [coupling](https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29) between them. For instance, an image processing operation running on a background queue should be able to notify a view controller of its progress (and the view controller should be able to pause or cancel the operation) even though the two objects may not hold a reference to the other.[1](#fn:1)
+Apple introduced the [`NSProgress`](https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSProgress_Class/Reference/Reference.html) class in iOS 7 and OS X 10.9 with the goal of establishing a standard mechanism for reporting progress of long-running tasks. The central idea behind `NSProgress` is to allow progress reporting between multiple modules in an app without the need for tight [coupling](https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29) between them. For instance, an image processing operation running on a background queue should be able to notify a view controller of its progress (and the view controller should be able to pause or cancel the operation) even though the two objects may not hold a reference to the other.^[1](#fn:1)
 
 # Design Goals
 
@@ -61,7 +61,7 @@ See above. If your code does any form of progress reporting, you should consider
 
 > Usability. In many cases a substantial obstacle to using NSProgress would be arranging for code that does work to find the exact instance of NSProgress it should use to report its progress. The size of this obstacle depends on many things, like how layered your code is (would you have to pass the NSProgress as an argument through many layers of functions and methods?), how it is already being used by multiple projects (can you even add NSProgress parameters without breaking things?), how it is divided between framework and application code (does all of this code ship at the same time?), and so on. To help surmount this obstacle there is a notion of current progress, which is the instance of NSProgress that should be the parent for any new progress objects that represent a subdivision of work. You can set a progress object as the current progress, then call into a framework or other section of code. If it supports progress reporting, it can find the current progress object using the currentProgress method, attach its own children if required, and do its work.
 
-The notion of a current progress (each thread can have its own current progress) largely relieves developers of the need to pass `NSProgress` instances back and forth between different layers of code (as we often do with [`NSError`](https://developer.apple.com/library/ios/documentation/cocoa/reference/foundation/classes/NSError_Class/Reference/Reference.html) objects, for example).[2](#fn:2) This design accounts for the fact that the code that displays progress (the UI) is often several levels removed from the code that does the actual work. On the other hand, it feels like a code smell. The current progress is basically a thread-local global variable, something which developers are generally taught to avoid.
+The notion of a current progress (each thread can have its own current progress) largely relieves developers of the need to pass `NSProgress` instances back and forth between different layers of code (as we often do with [`NSError`](https://developer.apple.com/library/ios/documentation/cocoa/reference/foundation/classes/NSError_Class/Reference/Reference.html) objects, for example).^[2](#fn:2) This design accounts for the fact that the code that displays progress (the UI) is often several levels removed from the code that does the actual work. On the other hand, it feels like a code smell. The current progress is basically a thread-local global variable, something which developers are generally taught to avoid.
 
 The design also means that supporting `NSProgress` in a library that performs any kind of long-running task usually does not require the developer to change the library’s public API. While this is generally a good thing, it can turn into a major discoverability problem. Since the API does not contain any reference to `NSProgress`, the developer of the library must take extra care to explicitly document its support for `NSProgress`.
 

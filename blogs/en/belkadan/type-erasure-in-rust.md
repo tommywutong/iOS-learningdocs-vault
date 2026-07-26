@@ -7,7 +7,7 @@ original_language: en
 published: 2023-10-23
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:83793907e8190bff'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 ## [Type Erasure in Rust](#)
 
-Rust traits have the neat property where you can use them _either_ as generic bounds _or_ as dynamic dispatch, with the `&dyn MyTrait` syntax. The latter is necessary in heterogeneous scenarios, where you want to use multiple concrete types together that all implement a common trait. However, that requires that you have an instance, so that the reference actually “refers” to something. What if you have a trait with “static” requirements, like `const`s or methods without `&self`?more
+Rust traits have the neat property where you can use them _either_ as generic bounds _or_ as dynamic dispatch, with the `&dyn MyTrait` syntax. The latter is necessary in heterogeneous scenarios, where you want to use multiple concrete types together that all implement a common trait. However, that requires that you have an instance, so that the reference actually “refers” to something. What if you have a trait with “static” requirements, like `const`s or methods without `&self`?
 
 If the implementing types have instances, or are just marker types, you can wrap the base trait in a new trait, like in this stripped-down example from [my work](https://signal.org):
 

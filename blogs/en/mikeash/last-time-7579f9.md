@@ -418,7 +418,7 @@ Next comes the case for `DOUBLE`. This gets pretty complicated, because floating
 
 `double` can hold a much larger range than `long long`. The first subcase is to figure out the largest possible number a `long long` can hold, and see if `other` is beyond it. If it is, it's obviously larger than `self`, since self is a `long long`.
 
-The built-in macro `LLONG_MAX` gives us the largest number a `long long` can hold. However, we can't directly convert this to a `double`. That number is equal to 263-1, which can't be represented in a `double`. Due to the internal format of `double`, it can only represent even numbers when it gets beyond 254. To perform the comparison accurately, we calculate one number beyond the largest `long long`, careful to use an `unsigned` one when adding, and compare against that:
+The built-in macro `LLONG_MAX` gives us the largest number a `long long` can hold. However, we can't directly convert this to a `double`. That number is equal to 2^63-1, which can't be represented in a `double`. Due to the internal format of `double`, it can only represent even numbers when it gets beyond 2^54. To perform the comparison accurately, we calculate one number beyond the largest `long long`, careful to use an `unsigned` one when adding, and compare against that:
 
 ```
                 double longLongMaxPlusOne = LLONG_MAX + 1ULL;
@@ -583,7 +583,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-07-06-lets-build-nsnumber.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0cabf69c6a4a1c0b'
 translated: false
 ---
@@ -32,7 +32,7 @@ I love how Apple has implemented the content blocking mechanism, maximizing perf
 
 ---
 
-But, the argument goes, isn’t [ad blocking the new stealing](http://www.tomsguide.com/us/ad-blocking-is-stealing,news-20962.html)? Or at least [the new speeding](http://thenextweb.com/insider/2015/06/24/why-adblocking-is-the-new-speeding/), something everybody does even though they know it’s wrong? Nope. As a cyclist who is routinely put in danger by speeding motorists, any argument that compares some non-life-threatening activity to speeding doesn’t go down well with me. But aside from that, it’s not unethical to make it harder for companies to shove [bloatware and spyware down our throats](http://blog.lmorchard.com/2015/07/22/the-verge-web-sucks/). Companies that would love nothing more than tracking our every move. Companies that [deliberately ignore the very standard](http://arstechnica.com/information-technology/2014/05/yahoo-is-the-latest-company-ignoring-web-users-requests-for-privacy/) designed to allow users to opt out[1](#fn:1) of being tracked.
+But, the argument goes, isn’t [ad blocking the new stealing](http://www.tomsguide.com/us/ad-blocking-is-stealing,news-20962.html)? Or at least [the new speeding](http://thenextweb.com/insider/2015/06/24/why-adblocking-is-the-new-speeding/), something everybody does even though they know it’s wrong? Nope. As a cyclist who is routinely put in danger by speeding motorists, any argument that compares some non-life-threatening activity to speeding doesn’t go down well with me. But aside from that, it’s not unethical to make it harder for companies to shove [bloatware and spyware down our throats](http://blog.lmorchard.com/2015/07/22/the-verge-web-sucks/). Companies that would love nothing more than tracking our every move. Companies that [deliberately ignore the very standard](http://arstechnica.com/information-technology/2014/05/yahoo-is-the-latest-company-ignoring-web-users-requests-for-privacy/) designed to allow users to opt out^[1](#fn:1) of being tracked.
 
 Publishers say [they have no choice](https://stratechery.com/2015/why-web-pages-suck/) but to succumb to the ad networks’ practices. Here’s [Rene Ritchie from iMore](http://www.imore.com/content-blockers-bad-ads-and-what-were-doing-about-it):
 
@@ -42,9 +42,9 @@ I don’t know, but if 85% of your ad inventory can’t be served by advertising
 
 **Let’s not forget that advertisers are not our friends. They try to manipulate it us into buying stuff we don’t need.**
 
-But ad blockers are ruining the web, right? Aren’t I actively [harming my favorite web sites](http://arstechnica.com/business/2010/03/why-ad-blocking-is-devastating-to-the-sites-you-love/)? To some extent, that’s probably true. Will it lead to a reduction of good content? Maybe, though anecdotally, the number and obtrusiveness of ads on a site doesn’t seem to be positively correlated with the quality of the content. I also admit that I’m selfish. I’d still run an ad blocker if all web ads were unobtrusive, had no performance impact, and ad networks would not track me. Why? First, because I can.[2](#fn:2) Second, because I think advertising is bad for me and I owe it to myself to fight it.
+But ad blockers are ruining the web, right? Aren’t I actively [harming my favorite web sites](http://arstechnica.com/business/2010/03/why-ad-blocking-is-devastating-to-the-sites-you-love/)? To some extent, that’s probably true. Will it lead to a reduction of good content? Maybe, though anecdotally, the number and obtrusiveness of ads on a site doesn’t seem to be positively correlated with the quality of the content. I also admit that I’m selfish. I’d still run an ad blocker if all web ads were unobtrusive, had no performance impact, and ad networks would not track me. Why? First, because I can.^[2](#fn:2) Second, because I think advertising is bad for me and I owe it to myself to fight it.
 
-Let’s not forget that advertisers are not our friends. They try to manipulate it us into buying stuff we don’t need. [Advertising just isn’t a good thing for society](http://www.abc.net.au/religion/articles/2015/07/14/4273200.htm).[3](#fn:3) I would even argue it’s our moral responsibility to block out as much advertising as we can from our lives. In some sense, blocking ads is like using encryption to make it harder for governments to spy on us – something too few us do.
+Let’s not forget that advertisers are not our friends. They try to manipulate it us into buying stuff we don’t need. [Advertising just isn’t a good thing for society](http://www.abc.net.au/religion/articles/2015/07/14/4273200.htm).^[3](#fn:3) I would even argue it’s our moral responsibility to block out as much advertising as we can from our lives. In some sense, blocking ads is like using encryption to make it harder for governments to spy on us – something too few us do.
 
 **Is there really a web left to ruin?**
 

@@ -217,7 +217,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-05-03-proper-use-of-asserts.html)
 
 Add your thoughts, post a comment:
 

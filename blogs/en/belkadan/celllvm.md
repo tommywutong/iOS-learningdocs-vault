@@ -7,7 +7,7 @@ original_language: en
 published: 2023-12-28
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:292c1de0094be558'
 translated: false
 ---
@@ -28,7 +28,9 @@ translated: false
 
 A few weeks ago I posted this:
 
-Which, if you’re not interested in watching a video right now, is a proof-of-concept LLVM to Excel spreadsheet compiler.more
+[(screen recording)](https://belkadan.com/blog/2023/12/CellLVM/CellLVM.mp4)
+
+Which, if you’re not interested in watching a video right now, is a proof-of-concept LLVM to Excel spreadsheet compiler.
 
 ### What.
 
@@ -41,7 +43,7 @@ As I lay in bed, I realized that this was a better match than I initially though
 
 ### SSA Format
 
-[LLVM](https://llvm.org) is a library for building compilers and related tools—the one used by Swift and Rust, actually.[1](#fn:gcc) At its core is a stripped-down language also called LLVM, or maybe “[the LLVM instruction set](https://llvm.org/docs/LangRef.html)”. What’s unique about this language, besides being designed as an intermediate stage for compiling higher-level languages, is that every local variable is assigned a value exactly once, as a simple expression that can only depend on the variables that come before it. This is called [static single-assignment form](https://en.wikipedia.org/wiki/Static_single-assignment_form).
+[LLVM](https://llvm.org) is a library for building compilers and related tools—the one used by Swift and Rust, actually.^[1](#fn:gcc) At its core is a stripped-down language also called LLVM, or maybe “[the LLVM instruction set](https://llvm.org/docs/LangRef.html)”. What’s unique about this language, besides being designed as an intermediate stage for compiling higher-level languages, is that every local variable is assigned a value exactly once, as a simple expression that can only depend on the variables that come before it. This is called [static single-assignment form](https://en.wikipedia.org/wiki/Static_single-assignment_form).
 
 My insight, which I don’t think is new, is that Excel formulas work the same way. Any cell with a formula has that formula defined up front, and values flow through the spreadsheet based on the references set in the formulas—just like SSA. So it should be possible, for operations supported by both LLVM and Excel, to rewrite an LLVM function as an Excel sheet that performs the same computation!
 
@@ -49,7 +51,7 @@ I went to sleep excited about that idea. I woke up and realized the primary prob
 
 ### Phi Nodes
 
-In order for SSA to represent branching control flow (such as a conditional increment), it has to have some notion of history when the branches join back up. The conventional way to do this is with a special kind of expression called a _phi node,_ which basically says “if we came from the true block, use x1 as the value; if we came from the else block, use x2 as the value”. The name “phi” isn’t short for anything; it’s apparently just meant to be close to “fi”, as in “if” backwards.[2](#fn:args) This form works for switches as well (there are just more possible predecessors), and even loops: the predecessor of a loop body might be the entry of the loop, or it might be the last block in the _previous_ time through the loop.
+In order for SSA to represent branching control flow (such as a conditional increment), it has to have some notion of history when the branches join back up. The conventional way to do this is with a special kind of expression called a _phi node,_ which basically says “if we came from the true block, use x~1 as the value; if we came from the else block, use x~2 as the value”. The name “phi” isn’t short for anything; it’s apparently just meant to be close to “fi”, as in “if” backwards.^[2](#fn:args) This form works for switches as well (there are just more possible predecessors), and even loops: the predecessor of a loop body might be the entry of the loop, or it might be the last block in the _previous_ time through the loop.
 
 But spreadsheets don’t have loops, do they? I searched around a bit and discovered I was incorrect: Excel spreadsheets _do_ support loops, in the form of “iterative calculation”. As long as the formulas converge on a fixed point within a certain number of steps, Excel will find it. So now I need to figure out how to encode loops in such a way that they do, in fact, converge.
 

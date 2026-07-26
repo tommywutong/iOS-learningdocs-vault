@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8752e53c6ff47d3f'
 translated: false
 ---
@@ -197,7 +197,7 @@ path.addCurve(to: CGPoint(x: 200, y: 0),
 path.close()
 ```
 
-![The example path](https://oleb.net/media/uibezierpath-example.png)
+[![The example path](https://oleb.net/media/uibezierpath-example.png)](https://oleb.net/media/uibezierpath-example.png)
 
 <sub>The example path.</sub>
 

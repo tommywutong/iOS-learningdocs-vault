@@ -7,7 +7,7 @@ original_language: en
 published: 2022-05-14
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a18fc978ffae5c96'
 translated: false
 ---
@@ -26,9 +26,9 @@ translated: false
 
 ## [Relative References in ARM64 Disassembly](#)
 
-POV: You are a compiler targeting arm64[1](#fn:arm64), and you want some code to reference this global variable from the same library. The classic way to do this is to emit an instruction that loads “the address of X”, which will be [determined at run time by the dynamic loader](https://belkadan.com/blog/2022/02/Dynamic-Linking-and-Static-Linking/). But that’s not super efficient! For one thing, addresses are 64 bits long, and instructions are only 32 bits, so you can either break it up into multiple instructions, or load the address from some _other_ location. But more importantly, the global variable is _in the same library._ The dynamic loader isn’t going to break it up from this code[2](#fn:ios), and if we knew _how far away it was_ we could reference it that way.
+POV: You are a compiler targeting arm64^[1](#fn:arm64), and you want some code to reference this global variable from the same library. The classic way to do this is to emit an instruction that loads “the address of X”, which will be [determined at run time by the dynamic loader](https://belkadan.com/blog/2022/02/Dynamic-Linking-and-Static-Linking/). But that’s not super efficient! For one thing, addresses are 64 bits long, and instructions are only 32 bits, so you can either break it up into multiple instructions, or load the address from some _other_ location. But more importantly, the global variable is _in the same library._ The dynamic loader isn’t going to break it up from this code^[2](#fn:ios), and if we knew _how far away it was_ we could reference it that way.
 
-That’s what the `adrp` instruction’s for.more In real life, the code was a call to `objc_msgSend`, and the global was the selector[3](#fn:selector). And rather than reference this variable by symbol, the compiler had emitted a [relative reference](https://duriansoftware.com/joe/optimizing-global-constant-data-structures-using-relative-references) using `adrp`.
+That’s what the `adrp` instruction’s for. In real life, the code was a call to `objc_msgSend`, and the global was the selector^[3](#fn:selector). And rather than reference this variable by symbol, the compiler had emitted a [relative reference](https://duriansoftware.com/joe/optimizing-global-constant-data-structures-using-relative-references) using `adrp`.
 
 Which made it hard to figure out what the selector _was_ when all I had was the disassembly.
 

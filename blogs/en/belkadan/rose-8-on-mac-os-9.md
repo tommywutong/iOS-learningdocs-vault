@@ -7,7 +7,7 @@ original_language: en
 published: 2020-05-24
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6045ba216066f83a'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 ## [ROSE-8 on Mac OS 9](#)
 
-[![](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/meme.png)](https://knowyourmeme.com/memes/ah-shit-here-we-go-again)more
+[![](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/meme.png)](https://knowyourmeme.com/memes/ah-shit-here-we-go-again)
 
 It’s been nearly two months since my April Fools’ project this year (not a prank!) where I managed to [get a Swift program to run on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/). I’m still proud of both the technical achievement _and_ the blog post there. But when I finished it…I didn’t want to _stop._
 
@@ -48,12 +48,12 @@ ROSE-8 doesn’t actually use too many complicated Swift features…but of cours
 - generic types
 - generic implementations that aren’t fully optimized away
 
-All of this needs actual _runtime_ support.[1](#fn:runtime) With normal Swift, the runtime is written in C++ and linked in to the standard library. While I had [gotten Clang to emit code for Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/#modern-compiler-classic-linker), C++ has its _own_ standard library, and I didn’t want to try to get _that_ working on Mac OS 9. (And of course, the C++ standard library provided on Mac OS 9 is too old to support many of the features the Swift runtime needs.) So one way or another I was going to have to do some implementing from scratch, not just copying from the real version like I’d done for the standard library.
+All of this needs actual _runtime_ support.^[1](#fn:runtime) With normal Swift, the runtime is written in C++ and linked in to the standard library. While I had [gotten Clang to emit code for Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/#modern-compiler-classic-linker), C++ has its _own_ standard library, and I didn’t want to try to get _that_ working on Mac OS 9. (And of course, the C++ standard library provided on Mac OS 9 is too old to support many of the features the Swift runtime needs.) So one way or another I was going to have to do some implementing from scratch, not just copying from the real version like I’d done for the standard library.
 
 But wait, why is the Swift runtime implemented in C++ anyway? Why not write it in Swift?
 
 1. The runtime was needed pretty early on in the bring-up of Swift, so the oldest bits of it couldn’t have been written in Swift. That’s not going to apply here.
-2. The runtime usually needs to be able to access platform functionality, but Swift has “overlay” libraries that augment the usual platform functionality when you do something like `import Darwin` (or in this case, `import MacTypes`). So you’d have a circular dependency between the runtime (usually linked in with the stdlib) and the platform overlays. _However,_ if I’m always going to use static linking, the linker can handle these circular dependencies.[2](#fn:circular)
+2. The runtime usually needs to be able to access platform functionality, but Swift has “overlay” libraries that augment the usual platform functionality when you do something like `import Darwin` (or in this case, `import MacTypes`). So you’d have a circular dependency between the runtime (usually linked in with the stdlib) and the platform overlays. _However,_ if I’m always going to use static linking, the linker can handle these circular dependencies.^[2](#fn:circular)
 3. There are still some things C++ can do that Swift can’t do, the most important being declaring globals with particular names and declaring complex globals with compile-time constant values. The Swift compiler expects to be able to reference certain things directly, such as the type metadata for basic integer types. This one’s still a problem for me, but maybe I can limit my C++ use to that.
 
 I had avoided taking any dependencies on the runtime before, but maybe it’d be a good learning experience for me. Even when I worked on Swift at Apple, I mostly worked on the user-facing parts of the _compiler,_ with only a few short jaunts into the runtime and standard library. So I decided to forge ahead with a runtime written in Swift (mostly). It may not be the fastest or prettiest, and it certainly wasn’t going to support everything the real runtime does, but I could make it work. Right?
@@ -64,7 +64,7 @@ Like [last time](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/#modern-com
 
 Aside: This post isn’t going to be a discussion of the Swift runtime—the real one _or_ the tiny one I made. I’ve been encouraged to write a post on that too in the future, but for now I’m going to stick to a narrative about how I got the Mac OS 9 Game ’by Color app running.
 
-My approach was basically “compile BitPaint at ‑Onone, try to link, and see what runtime functionality is missing”. There was a fair bit of it at the beginning![3](#fn:unresolved)
+My approach was basically “compile BitPaint at ‑Onone, try to link, and see what runtime functionality is missing”. There was a fair bit of it at the beginning!^[3](#fn:unresolved)
 
 ```
 #  Unresolved external references:
@@ -111,7 +111,7 @@ My approach was basically “compile BitPaint at ‑Onone, try to link, and see 
 
 You can mostly group these into four categories:
 
-1. )
+1. Those global objects I mentioned earlier (the ones that start with `$s`)
 2. Metadata, layout, and associated type utilities
 3. Object allocation and reference counting
 4. Some low-level numeric operations that weren’t implemented in the PowerPC of the day
@@ -143,11 +143,9 @@ And I ended up having to deal with each of these in a different way:
 > }
 > ```
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> May 13, 2020
+> — Jordan Rose (@UINT_MIN) [May 13, 2020](https://twitter.com/UINT_MIN/status/1260696630677757953?ref_src=twsrc%5Etfw)
 
-But this only goes so far. It’s not so helpful when a pointer points to the wrong thing, or when some memory is left uninitialized, or when everything is offset by 4 from its correct address. My debugging techniques ranged from placemarker calls to `puts` (“did we get this far?”), to trying to compile minimal programs that would still crash in the same way (what I called a “playground” app), to early-exiting or even intentionally breaking things to see if they still crashed. These are all fairly standard debugging techniques, but the most powerful ones are missing: directly inspecting memory and stepping through instructions until you find a crash or misbehavior. No backtraces and no live debugging on Mac OS 9, at least not without more specialized tools I didn’t have![4](#fn:MacsBug)
+But this only goes so far. It’s not so helpful when a pointer points to the wrong thing, or when some memory is left uninitialized, or when everything is offset by 4 from its correct address. My debugging techniques ranged from placemarker calls to `puts` (“did we get this far?”), to trying to compile minimal programs that would still crash in the same way (what I called a “playground” app), to early-exiting or even intentionally breaking things to see if they still crashed. These are all fairly standard debugging techniques, but the most powerful ones are missing: directly inspecting memory and stepping through instructions until you find a crash or misbehavior. No backtraces and no live debugging on Mac OS 9, at least not without more specialized tools I didn’t have!^[4](#fn:MacsBug)
 
 The most mysterious problem was one where BitPaint would _appear_ to work, but crash after several seconds of user interaction. What was going on? Want to guess?
 
@@ -165,7 +163,7 @@ The most mysterious problem was one where BitPaint would _appear_ to work, but c
 
 It took me _days_ to think of running out of memory; worse, this was _after_ it had already been suggested to me in bouncing ideas off a friend. (Did you know that in Mac OS 9, an application had to specify the maximum amount of memory it would ever use up front?) To be fair, the code that was causing the problem _shouldn’t have been allocating any memory,_ and the only metadata being allocated in the runtime was when a new generic type was instantiated. Why wasn’t the cache working?
 
-It turned out to be a _compiler_ bug, though fortunately not one that’s gone out in any shipping version of Swift.[5](#fn:master-next) The symptom was that global variables with constant initializers were considered to never change, and therefore the cache for generic metadata was getting allocated from scratch, empty, with every call. The fix ended up being pulling the latest updates for the compiler and merging in my changes once more. That’s it.
+It turned out to be a _compiler_ bug, though fortunately not one that’s gone out in any shipping version of Swift.^[5](#fn:master-next) The symptom was that global variables with constant initializers were considered to never change, and therefore the cache for generic metadata was getting allocated from scratch, empty, with every call. The fix ended up being pulling the latest updates for the compiler and merging in my changes once more. That’s it.
 
 The _second_ most mysterious bug was another one I tweeted:
 
@@ -178,9 +176,7 @@ The _second_ most mysterious bug was another one I tweeted:
 > → All cache keys are 0-length  
 > → Forgot [https://developer.apple.com/documentation/corefoundation/1542375-cfdatasetlength](https://developer.apple.com/documentation/corefoundation/1542375-cfdatasetlength)
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> May 19, 2020
+> — Jordan Rose (@UINT_MIN) [May 19, 2020](https://twitter.com/UINT_MIN/status/1262609197411098624?ref_src=twsrc%5Etfw)
 
 Anyway, with a lot of trial and error, “[psychic debugging](https://devblogs.microsoft.com/oldnewthing/?s=psychic+debugging&submit=%EE%9C%A1)”, and re-reading whatever code I _guessed_ was causing the problem, I eventually got a runtime that would work with an unoptimized BitPaint. And not too long after, with Array as well, and then the Game ’by Color.
 

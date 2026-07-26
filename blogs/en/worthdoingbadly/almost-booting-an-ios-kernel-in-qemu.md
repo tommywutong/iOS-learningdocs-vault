@@ -7,7 +7,7 @@ original_language: en
 published: 2018-07-15
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:471399eb490a571b'
 translated: false
 ---
@@ -79,10 +79,8 @@ That’s real iOS 12 beta 2 code printing that crash. With a bit more work, I’
 
 From research, I already know how an iPhone starts up:
 
-- , the bootloader
-- , a file bundling
-
-  - iOS’s kernel (the core of the operating system) together with all of the kernel’s device drivers
+- the bootrom, burned into the CPU chip, loads **iBoot**, the bootloader
+- iBoot loads the **kernelcache**, a file bundling **XNU** - iOS’s kernel (the core of the operating system) together with all of the kernel’s device drivers
 - the kernel then loads the rest of the operating system components
 
 I decided to boot the XNU kernel directly in an emulator, bypassing iBoot. Previous iOS emulation efforts such as [iEmu](https://www.theiphonewiki.com/wiki/IEmu) (by the team that later made Corellium) tries to emulate iBoot because it’s simpler to understand than the iOS kernel at the time. However, iBoot is closed source, but XNU is now [open source](https://github.com/apple/darwin-xnu). In addition, to obtain iBoot, one needs a jailbroken device, but the kernel itself is unencrypted and can be obtained from an update IPSW file. Therefore, it’s now actually easier to obtain and understand the kernel itself.
@@ -180,4 +178,8 @@ My next goal is to start `launchd` on a virtual iPhone. That’s probably going 
 
 - how iOS boots
 - how to modify QEMU to load code directly into memory
--   - in the emulator, I can single step, examine registers, set breakpoints, and get output even when serial port isn’t working. Meanwhile, when I tried doing low-level bringup on my Nexus 6P, the only way I can check that my code is actually running is by adding a reboot command. No wonder that most developer boards include JTAG support to support the same level of debugging as emulators.
+- the value of a debugger for board bringup
+
+    - in the emulator, I can single step, examine registers, set breakpoints, and get output even when serial port isn’t working. Meanwhile, when I tried doing low-level bringup on my Nexus 6P, the only way I can check that my code is actually running is by adding a reboot command. No wonder that most developer boards include JTAG support to support the same level of debugging as emulators.
+
+[https://worthdoingbadly.com/xnuqemu/](https://worthdoingbadly.com/xnuqemu/)

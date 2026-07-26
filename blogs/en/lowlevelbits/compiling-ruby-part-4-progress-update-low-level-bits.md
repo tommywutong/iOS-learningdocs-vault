@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bf0769c1f84ebf97'
 translated: false
 ---
@@ -24,24 +24,16 @@ This series is mostly a brain dump, though sometimes I'm trying to make things e
 
 Here is what you can expect from the series:
 
-- Motivation
-
-  : some background reading on what and why
-- Compilers vs Interpreters
-
-  : a high level overview of the chosen approach
-- RiteVM
-
-  : a high-level overview of the mruby Virtual Machine
-- MLIR and compilation
-
-  : covers what is MLIR and how it fits into the whole picture
+- [Motivation](https://lowlevelbits.org/compiling-ruby-part-0/): some background reading on what and why
+- [Compilers vs Interpreters](https://lowlevelbits.org/compiling-ruby-part-1/): a high level overview of the chosen approach
+- [RiteVM](https://lowlevelbits.org/compiling-ruby-part-2/): a high-level overview of the mruby Virtual Machine
+- [MLIR and compilation](https://lowlevelbits.org/compiling-ruby-part-3/): covers what is MLIR and how it fits into the whole picture
 - **[Progress update](https://lowlevelbits.org/compiling-ruby-part-4/): short progress update with what's done and what's next**
-- Exceptions
-
-  : an overview of how exceptions work in Ruby
+- [Exceptions](https://lowlevelbits.org/compiling-ruby-part-5/): an overview of how exceptions work in Ruby
 - Garbage Collection (TBD): an overview of how mruby manages memory
 - Fibers (TBD): what are fibers in Ruby, and how mruby makes them work
+
+_Note: the list of TBD articles may change as I may want to split some parts into smaller chunks._
 
 ---
 
@@ -53,23 +45,15 @@ I’m writing a short progress update on where we are and what’s coming next.
 
 During this year, I gave two short talks related to this project:
 
-- a high-level overview of the project
-
-  (EuroLLVM dev meeting)
-- intro into exception handling in LLVM
-
-  (LLVM Social Berlin)
+- [a high-level overview of the project](https://www.youtube.com/watch?v=NfMX-dFMSr0) (EuroLLVM dev meeting)
+- [intro into exception handling in LLVM](https://www.youtube.com/watch?v=gH5-lITYrMg) (LLVM Social Berlin)
 
 The state as of EuroLLVM (May 2023) was as follows:
 
-- out of
-
-  bytecode operations
-- out of
-
-  files
-- out of
-- of tests were passing (1033 out of 1416 it could compile)
+- compiler supported **104** out of **107** bytecode operations
+- it could compile **~150** out of **~180** files
+- it could compile **~15KLoC** out of **~20KLOC**
+- **~72%** of tests were passing (1033 out of 1416 it could compile)
 
 ### Current Status
 
@@ -81,7 +65,7 @@ Some new stats:
 
 - all bytecode operations are implemented 🎉
 - all the ruby code in the repo is now compiled (stdlib, gems, tests) 🎉
-- of the tests are passing (1378 out of 1450) 🎉
+- **~95%** of the tests are passing (1378 out of 1450) 🎉
 
 ### Next Steps
 

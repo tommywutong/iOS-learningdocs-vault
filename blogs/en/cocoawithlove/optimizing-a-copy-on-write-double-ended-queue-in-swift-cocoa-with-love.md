@@ -7,7 +7,7 @@ original_language: en
 published: 2016-09-22
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ed20d3af7671c32c'
 translated: false
 ---
@@ -37,12 +37,8 @@ Ultimately, I found myself in a position where I would need to write the type my
 1. Copy-on-write
 2. No heap allocation until the first element is added
 3. Automatic growing and downsizing of storage (down to a minimum capacity)
-4. (or faster) for pushing 10 elements then popping them all in a FIFO fashion, considerably faster for 50.
-5. ,
-
-  ,
-
-  and
+4. As fast as `Array` (or faster) for pushing 10 elements then popping them all in a FIFO fashion, considerably faster for 50.
+5. Implement all of `RandomAccessCollection`, `RangeReplaceableCollection`, `ExpressibleByArrayLiteral` and `CustomDebugStringConvertible`
 
 Since it is the easiest type of double-ended queue to implement, I’ll be implementing a “circular-buffer” style double-ended queue – one where the first element is allowed to have an “offset” from the front of the storage and successive pops from one end and pushes to the other will cause initialized values in the queue to offset within the storage until they wrap around at the end.
 

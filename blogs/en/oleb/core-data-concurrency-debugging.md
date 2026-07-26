@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:27ae975a05a98c8d'
 translated: false
 ---
@@ -16,15 +16,15 @@ translated: false
 
 # Core Data Concurrency Debugging
 
-In iOS 8 and OS X Yosemite, Core Data gains the ability to detect and report violations of its [concurrency model](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/NSManagedObjectContext.html#//apple_ref/doc/uid/TP30001182-SW39).[1](#fn:1) I think this is a very valuable feature because accessing a managed object context from the wrong queue is a simple mistake to make and can be fatal if it causes your users’ data to get corrupted.[2](#fn:2)
+In iOS 8 and OS X Yosemite, Core Data gains the ability to detect and report violations of its [concurrency model](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/NSManagedObjectContext.html#//apple_ref/doc/uid/TP30001182-SW39).^[1](#fn:1) I think this is a very valuable feature because accessing a managed object context from the wrong queue is a simple mistake to make and can be fatal if it causes your users’ data to get corrupted.^[2](#fn:2)
 
 On the Mac, Core Data [has had the option](https://developer.apple.com/library/mac/technotes/tn2124/_index.html#//apple_ref/doc/uid/DTS10003391-CH1-SECCOREDATA) to debug concurrency issues for a while. However, enabling the feature required developers to manually install a special debug version of the framework, which was frequently not even available because Apple did not keep it up to date. This was not at all a practical solution. For iOS, Apple never released a debug library in the first place.
 
 # Enabling Multi-Threading Assertions
 
-With iOS 8 and Yosemite, the Core Data framework supports concurrency debugging out of the box. It works by throwing an exception whenever your app accesses a managed object context or managed object from the wrong dispatch queue. You enable the assertions by passing `-com.apple.CoreData.ConcurrencyDebug 1` to your app on the command line via Xcode’s Scheme Editor.[3](#fn:3)
+With iOS 8 and Yosemite, the Core Data framework supports concurrency debugging out of the box. It works by throwing an exception whenever your app accesses a managed object context or managed object from the wrong dispatch queue. You enable the assertions by passing `-com.apple.CoreData.ConcurrencyDebug 1` to your app on the command line via Xcode’s Scheme Editor.^[3](#fn:3)
 
-![Configuring command line arguments in Xcode’s Scheme Editor](https://oleb.net/media/xcode-scheme-core-data-concurrency-debug.png)
+[![Configuring command line arguments in Xcode’s Scheme Editor](https://oleb.net/media/xcode-scheme-core-data-concurrency-debug.png)](https://oleb.net/media/xcode-scheme-core-data-concurrency-debug.png)
 
 <sub>Add the`-com.apple.CoreData.ConcurrencyDebug 1`launch argument to the Run action of your build scheme in Xcode.</sub>
 
@@ -68,7 +68,7 @@ backgroundContext!.save(nil)
 
 When I run this code, execution does not even reach the `save()` call. The framework throws an exception on the first line because I violated Core Data’s concurrency model by calling `.insertNewObjectForEntityForName()` with the private queue context as an argument from the main thread.
 
-![Xcode 6 displaying a Core Data multithreading violation exception](https://oleb.net/media/xcode-core-data-multithreading-violation.png)
+[![Xcode 6 displaying a Core Data multithreading violation exception](https://oleb.net/media/xcode-core-data-multithreading-violation.png)](https://oleb.net/media/xcode-core-data-multithreading-violation.png)
 
 <sub>When you violate Core Data’s threading contract, the debugger halts at `+[NSManagedObjectContext __Multithreading_Violation_AllThatIsLeftToUsIsHonor__]:`.</sub>
 

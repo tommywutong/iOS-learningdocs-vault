@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:41387fee2499cb02'
 translated: false
 ---
@@ -18,13 +18,13 @@ translated: false
 
 [`UIWebView`](http://developer.apple.com/iphone/library/documentation/uikit/reference/UIWebView_Class/Reference/Reference.html) seems to have a weird display bug connected to PDFs and interface rotation in iPhone SDK 3.2. This is how a PDF displayed in a UIWebView looks on the iPad after you rotate the device from portrait to landscape:
 
-![UIWebView PDF display bug on the iPad](https://oleb.net/media/uiwebview-pdf-display-bug-screenshot.png)
+[![UIWebView PDF display bug on the iPad](https://oleb.net/media/uiwebview-pdf-display-bug-screenshot.png)](https://oleb.net/media/uiwebview-pdf-display-bug-screenshot.png)
 
 <sub>UIWebView PDF display bug on the iPad (iPhone SDK 3.2).</sub>
 
 The PDF appears to be split in half vertically along an edge that was right in the middle of the page while the device was in portrait orientation. The right half is vertically offset from the left half. [Other people have also noticed it](http://stackoverflow.com/questions/2660578/ipad-uiwebview-pdf-rendering-is-giving-me-weird-visual-artifacts) so I believe it is a genuine bug. To reproduce it, try the following:
 
-1. .
+1. Create a UIWebView and set `scalesPageToFit = YES`.
 2. Embed the web view in a view controller that supports both portrait and landscape orientation.
 3. Load a PDF file into the web view.
 4. Rotate the iPad from portrait to landscape or vice versa.

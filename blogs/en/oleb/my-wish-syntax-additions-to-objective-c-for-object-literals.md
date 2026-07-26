@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:902eadbd59c09c74'
 translated: false
 ---
@@ -65,10 +65,8 @@ Bavarious points to a set of macros Mike Ash has created to simplify the making 
 
 My coworkers Christian and Alexis suggest two more literals:
 
-- for
-- for
-
-  with binary content (in hex)
+- `@/…/` for `NSRegularExpression`
+- `@<>` for `NSData` with binary content (in hex)
 
 ---
 

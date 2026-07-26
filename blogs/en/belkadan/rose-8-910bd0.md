@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d289baee4f63fd75'
 translated: false
 ---
@@ -48,16 +48,12 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Source code](
 
 ## Older Posts
 
-1. 2020-01-28
-
-  ROSE-8: Console Mode
-2. 2020-01-13
-
-  ROSE-8
+1. 2020-01-28[ROSE-8: Console Mode](https://belkadan.com/blog/2020/01/ROSE-8-Console/?tag=rose-8)
+2. 2020-01-13[ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/?tag=rose-8)
 
 ### Possibly Related Tags
 
-- Assembly
-- Mac OS Classic
-- Source code
-- Swift
+- [Assembly](https://belkadan.com/blog/tags/assembly)
+- [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)
+- [Source code](https://belkadan.com/blog/tags/source-code)
+- [Swift](https://belkadan.com/blog/tags/swift)

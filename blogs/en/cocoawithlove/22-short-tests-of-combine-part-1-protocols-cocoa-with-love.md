@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:539f37f4ea9a73b5'
 translated: false
 ---
@@ -19,8 +19,8 @@ I wrote some experiments around Combine, Apple’s reactive programming framewor
 Looking at everything in one article got much too long so I broke it into three parts:
 
 1. re-implementing the core protocols of Combine
-2. a trio of topics: shared computation, shared reference lifetimes and sharing subscribers
-3. asynchrony, threading and performance
+2. [a trio of topics: shared computation, shared reference lifetimes and sharing subscribers](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-2.html)
+3. [asynchrony, threading and performance](https://www.cocoawithlove.com/blog/twenty-two-short-tests-of-combine-part-3.html)
 
 This article will be the first third of my investigation, covering an effort to re-implement the three key protocols of Combine: `Publisher`, `Subscriber` and `Subscription`.
 
@@ -80,19 +80,9 @@ func testSubjectSink() {
 
 This test includes a few of my own additions to make the tests easier:
 
-- is just an “either” over the
-
-  and
-
-  types of a Combine sequence
-- sends all values in the sequence and the completion
-- creates an array of
-
-  from an array of
-
-  and a
-
-  .
+- `Subscribers.Event` is just an “either” over the `Value` and `Completion` types of a Combine sequence
+- `send(sequence:completion:)` sends all values in the sequence and the completion
+- `asEvents` creates an array of `Subscribers.Event` from an array of `Value` and a `Completion`.
 
 This test conforms to the “naïve” interpretation: values are sent to the subject are received by the closure we passed to the sink.
 
@@ -129,23 +119,11 @@ Should the new listener `D` get half the data it expected, even though it doesn�
 
 The answer is complicated. Depending on your program’s logic, you may want _any_ of the following options:
 
-1. –
-
-  receives the second half of the values that
-
-  receives
-2. – the first half is buffered and
-
-  immediately receives the first half of the message upon joining and new values like multicast
-3. –
-
-  receives the last emitted value immediately and new values like multicast
-4. –
-
-  receives only as much as needed (e.g. since the last keyframe or resume point) and new values like multicast
-5. –
-
-  should trigger all upstream nodes to restart their work, go all the way back to the network and re-request all data, performing all calculations, again
+1. **multicast** – `D` receives the second half of the values that `C` receives
+2. **caching** – the first half is buffered and `D` immediately receives the first half of the message upon joining and new values like multicast
+3. **latest value** – `D` receives the last emitted value immediately and new values like multicast
+4. **custom caching** – `D` receives only as much as needed (e.g. since the last keyframe or resume point) and new values like multicast
+5. **resubscribe** – `D` should trigger all upstream nodes to restart their work, go all the way back to the network and re-request all data, performing all calculations, again
 
 In this article, I will focus only on the last of these options since it is, arguably, the default behavior in Combine. In the next article, I’ll look at the other approaches.
 
@@ -257,55 +235,13 @@ The trickiest part is working out when to create a `Subscriber` from a `Publishe
 
 > **NOTE**: the words `Subscriber` and `Subscription` are very similar. I’m sure this is going to get confusing (it was confusing to write).
 
-1. function on your
-
-  , passing your
-
-  .
-2. ’s
-
-  function passing the
-
-  you provided to the
-
-  function
-3. function
-
-  creates a custom
-
-  instance, which should also conform to
-
-  and should hold a reference to the downstream
-
-  .
-4. calls
-
-  on its upstream
-
-  (if any) passing the custom
-
-  (this is why it should conform to
-
-  ).
-5. calls
-
-  on your custom
-
-  , passing its own subscription instance.
-6. should call
-
-  on its downstream
-7. will invoke
-
-  on your
-
-  and your
-
-  should invoke
-
-  on its upstream
-
-  .
+1. You invoke Combine’s `subscribe` function on your `Publisher`, passing your `Subscriber`.
+2. This will call through to your `Publisher`’s `receive` function passing the `Subscriber` you provided to the `subscribe` function
+3. In the `receive` function `Publisher` creates a custom `Subscription` instance, which should also conform to `Subscriber` and should hold a reference to the downstream `Subscriber`.
+4. Your `Publisher` calls `subscribe` on its upstream `Publisher` (if any) passing the custom `Subscription` (this is why it should conform to `Subscriber`).
+5. The upstream `Publisher` calls `receive` on your custom `Subscription`, passing its own subscription instance.
+6. Your `Subscriber` should call `receive` on its downstream `Subscriber`
+7. The downstream `Subscriber` will invoke `request` on your `Subscription` and your `Subscription` should invoke `request` on its upstream `Subscription`.
 
 The exact steps tend to vary based on whether your `Publisher` has an upstream `Publisher` or is a `Subject`.
 

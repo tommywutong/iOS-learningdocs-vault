@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d78acbabe61605c9'
 translated: false
 ---
@@ -105,9 +105,9 @@ This `Var` is an example of a “Model-Adapter”. A Model-Adapter contains a mu
 
 This `Var` Adapter – the most common type of Model-Adapter for view-state – offers three inputs:
 
-1. : set a new value and notify the change (default)
-2. : set a new value but don’t notify
-3. : emit a notification for a new temporary value without changing the persistent value
+1. `set`: set a new value and notify the change (default)
+2. `update`: set a new value but don’t notify
+3. `notify`: emit a notification for a new temporary value without changing the persistent value
 
 These inputs are the `Var` semantics in CwlViews but there are other library provided Model-Adapters which provide different semantics – e.g. `TempVar` which notifies but never stores a persistent value or `ToggleVar` which can switch between `true` and `false` but cannot be explicitly set to a value or `StackAdapter` which pushes and pops values onto an internal array.
 
@@ -244,13 +244,9 @@ View logic in CwlViews (both presentation and interaction) is primarily expresse
 
 To make Bindings easier to abstract and simplify, they are classified into 5 different varieties (plus one that is built upon the others). These varieties are:
 
-- ,
-
-  and
-
-  Bindings (the presentation logic Bindings that set values on views)
-- Bindings (the interaction logic Bindings that communicate view events back to the model)
-- Bindings (view-triggered closures used in a variety of ways)
+- **Constant**, **Dynamic** and **Signal** Bindings (the presentation logic Bindings that set values on views)
+- **Action** Bindings (the interaction logic Bindings that communicate view events back to the model)
+- **Delegate** Bindings (view-triggered closures used in a variety of ways)
 
 Clearly defining variants is one of the primary ways that CwlViews reduces code duplication and makes code more concise. By clearly defining the overall structure of a variant, it is easier to replace with a reusable abstraction.
 
@@ -299,9 +295,7 @@ The most commonly used Action-like Bindings are actually Composite Bindings. Com
 
 The reason Composte Bindings are so common on top of Action bindings is:
 
-1. parameter of
-
-  ) and setting these via the right-hand side Binding-Argument make things look clumsy so a parameter on the left-hand side can help aesthetics
+1. Many actions require additional parameters (e.g. the `for:` parameter of `UIControl.addTarget(_:action:for:)`) and setting these via the right-hand side Binding-Argument make things look clumsy so a parameter on the left-hand side can help aesthetics
 2. The Action often needs to pick up associated view-state from the view to usefully handle the interaction.
 
 The following Composite Binding:

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5f3a002a24a51bf6'
 translated: false
 ---
@@ -22,7 +22,7 @@ In this article, I’ll explain why I consider reactive programming to be one of
 
 The specific scenarios I’ll examine will be:
 
-- status is dependent on two different state values
+- A button whose `isEnabled` status is dependent on two different state values
 - A thread-safe storage type
 - An asynchronous task with a timeout
 
@@ -87,22 +87,14 @@ This code includes a few subtle but common mistakes that occur, not because we�
 
 What problems are in this code that could cause headaches later?
 
-1. : with the server connection updating on a background thread, its closure is called on the background thread, resulting in unsafe access to the
-
-  .
-2. : both observation methods need to access the value reported by the
-
-  observation method, meaning that you might process a change twice or you might process changes in an inconsistent order
+1. **Thread unsafe**: with the server connection updating on a background thread, its closure is called on the background thread, resulting in unsafe access to the `uploadButton`.
+2. **Not transactional**: both observation methods need to access the value reported by the _other_ observation method, meaning that you might process a change twice or you might process changes in an inconsistent order
 
 There are some other issue that are not bugs but are maintenance risks:
 
-1. : We update the
-
-  value in 3 different places. If another dependency were added to this value, we would need to remember to update all three locations.
-2. : Since this approach requires accessing changing values directly when
-
-  values change, it is possible to forget to observe some values at all, leading to change propagation failure.
-3. : When the current selection changes, we need to observe the new selection. Handling observations inside observations is really clumsy and easy to get wrong.
+1. **It’s difficult to refactor**: We update the `uploadButton.isEnabled` value in 3 different places. If another dependency were added to this value, we would need to remember to update all three locations.
+2. **We access values directly**: Since this approach requires accessing changing values directly when _other_ values change, it is possible to forget to observe some values at all, leading to change propagation failure.
+3. **Nested observations**: When the current selection changes, we need to observe the new selection. Handling observations inside observations is really clumsy and easy to get wrong.
 
 In reactive programming, assuming all state values send their changes through reactive programming channels, rather than Key-Value-Observing, you’d only need the following:
 
@@ -122,7 +114,7 @@ The above problems are fixed:
 2. all notifications are issued in sequence without repeated processing of values
 3. no repeated logic
 4. no values accessed outside observation
-5. function which handles the clumsy aspects
+5. nested observation is handled through the dedicated `flatMapLatest` function which handles the clumsy aspects
 
 ## Maintaining a threadsafe dictionary of values
 
@@ -182,43 +174,11 @@ What’s the problem?
 
 Let’s look at the key failings, again:
 
-1. : It is easy for another interface to access the current
-
-  property but it is additional work to properly observe the
-
-  notification, so you’re encouraging dependent interfaces to
-
-  to properly observe changes and fall out-of-sync.
-2. : If you get the
-
-  then start observing notifications, it’s possible that a change could occur
-
-  these two actions (causing you to lose a notification). If you observe notifications first, then get the
-
-  , you might get a first notification before you’ve properly initialized.
-
-  could fix the problem for KVO but with
-
-  s, you’d need some clever coding to work around this problem.
-3. : The
-
-  function on
-
-  deletes an arbitrary value inside a mutex. If there is a
-
-  on this deleted value and the
-
-  tries to change the
-
-  (re-entering the mutex), you’ve created a deadlock.
-4. : There’s no single point that all changes to the
-
-  go through. If you need to add functionality in future – like writing
-
-  to a file on each change – you’d have to carefully integrate this change into multiple places.
-5. : If the
-
-  object is deleted, it doesn’t notify this, by default.
+1. **Bad behavior is encouraged**: It is easy for another interface to access the current `values` property but it is additional work to properly observe the `DocumentValues.changed` notification, so you’re encouraging dependent interfaces to _forget_ to properly observe changes and fall out-of-sync.
+2. **There is no safe way to initialize and subscribe**: If you get the `values` then start observing notifications, it’s possible that a change could occur _between_ these two actions (causing you to lose a notification). If you observe notifications first, then get the `values`, you might get a first notification before you’ve properly initialized. `NSKeyValueObservingOptions.initial` could fix the problem for KVO but with `Notification`s, you’d need some clever coding to work around this problem.
+3. **Prone to deadlocks**: The `removeValue` function on `storage` deletes an arbitrary value inside a mutex. If there is a `deinit` on this deleted value and the `deinit` tries to change the `DocumentValues` (re-entering the mutex), you’ve created a deadlock.
+4. **It’s difficult to refactor**: There’s no single point that all changes to the `storage` go through. If you need to add functionality in future – like writing `DocumentValues` to a file on each change – you’d have to carefully integrate this change into multiple places.
+5. **No lifecycle notifications**: If the `DocumentValues` object is deleted, it doesn’t notify this, by default.
 
 Many of these are the same or similar problems to the previous example. As before, these problems can be solved through additional careful coding but as before, each solution would require additional code and additional complexity and more than that: you’d need to first realize that the problem exists; due to the subtlety of all of these problems, you might not notice any issues during testing.
 
@@ -264,14 +224,10 @@ class DocumentValues {
 The code size is not significantly different (27 non-blank, non-comment lines before versus 23 after) but in this case, every problem mentioned above is solved implicitly.
 
 1. The same work is involved in accessing a value once or subscribing properly so good behavior is encouraged.
-2. and
-
-  sequence as described in the previous article) the stream is correctly paused so you can’t miss a notification.
-3. closure will never be concurrently invoked and re-entrancy is not possible)
-4. function and can be coordinated there.
-5. message is automatically sent to subscribers if
-
-  is released.
+2. If separate handling of initial value and subsequent values is required (e.g. using a `capture` and `subscribe` sequence as described in the previous article) the stream is correctly paused so you can’t miss a notification.
+3. Everything is threadsafe (the `map` closure will never be concurrently invoked and re-entrancy is not possible)
+4. All changes go through the `map` function and can be coordinated there.
+5. A `SignalError.cancelled` message is automatically sent to subscribers if `input` is released.
 
 Associated with being “threadsafe”, notice that there are no longer any mutable variables in the class; state is encapsulated inside the `Signal`.
 
@@ -281,12 +237,8 @@ Not only is this less code than the previous class but there are far fewer imple
 
 I originally gave the following code in a previous article, [Testing Actions over Time](https://www.cocoawithlove.com/blog/testing-actions-over-time.html#let-s-fill-in-the-service-implementation). The code contains a class with a `start` function that does two things:
 
-1. function, which takes a callback and invokes it on completion
-2. the
-
-  function invokes its completion handler, cancels the
-
-  function.
+1. Invokes a `work` function, which takes a callback and invokes it on completion
+2. Starts a timer, which, if it fires _before_ the `work` function invokes its completion handler, cancels the `work` function.
 
 I’ve made the class a little complicated by allowing the user to call `start` multiple times on the `Service` class – possibly while a previous call to `start` still has asynchronous tasks outstanding.
 

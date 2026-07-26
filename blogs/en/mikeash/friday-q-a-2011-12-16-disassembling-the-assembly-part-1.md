@@ -89,7 +89,7 @@ Some things to notice right away:
 
 1. This code uses ARC.
 2. Accordingly, this code is 64-bit only and requires a recent version of the Clang compiler.
-3. " twice.
+3. When run, the program will print "`Prefixname`" twice.
 
 **A Crash Course in x86 Architecture**  
 Before diving into the assembly language itself, here's a quick lesson in the basics of the x86_64 (aka AMD64) architecture. The official reference manuals can be found at [the AMD developer website](http://developer.amd.com/documentation/guides/Pages/default.aspx#manuals), and cover in extremely technical detail almost everything you'll ever need to know about the underlying workings of the CPU. Several gaps are filled in by the [AMD64 Application Binary Interface Specification](http://www.x86-64.org/documentation/abi-0.99.pdf), which defines the Application Binary Interface (ABI) for C and C++ programs running in 64-bit mode on an Intel processor. The AMD64 specifications document the running of the CPU itself, while the ABI spec defines the conventions used by programs running on the CPU.
@@ -122,75 +122,19 @@ A register named `r*x` is 64 bits; `e*x` is 32 bits, `*x` is 16 bits, and `*h` o
 
 The registers that a userland process _is_ concerned with on a regular basis are:
 
-- - These are general-purpose registers, used for just about anything at any given moment, though the ABI locks these down to considerably more specific purposes. These registers can also be called the accumulator (
+- `rax, rbx, rcx, rdx, r8-r15` - These are general-purpose registers, used for just about anything at any given moment, though the ABI locks these down to considerably more specific purposes. These registers can also be called the accumulator (`rax`), the base register (`rbx`), the count register (`rcx`), and the data register (`rdx`).
+- `rsi, rdi` - These are technically index registers ('source index' and 'destination index'), but in modern code they are typically used as general purpose registers, within the specification of the ABI.
+- `rbp, rsp` - The "base pointer" and "stack pointer" registers. These are used for accessing the stack; the CPU's stack instructions will always assume that `rsp` holds the address of the top of the stack.
+- `rflags` - The flags register, holding a long list of flags indicating the results of calculations done by instructions. The flags register can not be directly addressed. Operations affected by CPU flags are generally part of the instructions themselves; for instance, conditional jump instructions work differently depending on the current flags, and arithmetic operations change the flags. Certain instructions affect the flags directly, such as `stc` and `clc`, which respectively set and clear the Carry Flag. It is also possible to read the flags register directly by pushing it to the stack and write to it directly by popping from the stack into it. The flags a userland process can affect are:
 
-  ), the base register (
-
-  ), the count register (
-
-  ), and the data register (
-
-  ).
-- - These are technically index registers ('source index' and 'destination index'), but in modern code they are typically used as general purpose registers, within the specification of the ABI.
-- - The "base pointer" and "stack pointer" registers. These are used for accessing the stack; the CPU's stack instructions will always assume that
-
-  holds the address of the top of the stack.
-- - The flags register, holding a long list of flags indicating the results of calculations done by instructions. The flags register can not be directly addressed. Operations affected by CPU flags are generally part of the instructions themselves; for instance, conditional jump instructions work differently depending on the current flags, and arithmetic operations change the flags. Certain instructions affect the flags directly, such as
-
-  and
-
-  , which respectively set and clear the Carry Flag. It is also possible to read the flags register directly by pushing it to the stack and write to it directly by popping from the stack into it. The flags a userland process can affect are:
-
-    - - Carry Flag.
-
-      is set when the result of an addition is a carry or the result of a subtraction is a borrow. It is also affected by arithmetic bit shifting instructions and bit test instructions, cleared by bitwise logic instructions, and manipulated directly by the
-
-      ,
-
-      , and
-
-      instructions.
-    - - Parity Flag.
-
-      is set when there are an even number of 1 bits in the low byte of the last result of some operations. It can be used for parity checks.
-    - - Auxiliary Carry Flag.
-
-      is set when an arithmetic or BCD operation generates a carry or borrow from bit 3 of the result. Its use is limited to doing decimal math directly on the CPU, and it sees little use.
-    - - Zero Flag.
-
-      is
-
-      when the last arithmetic operation had a result of zero. Compare and test instructions also set or clear
-
-      appropriately. It is often used as for equality testing, as it is set when comparing two equal operands.
-    - - Sign Flag.
-
-      is set if the last arithmetic operation had a negative result. More exactly, after an arithmetic operation,
-
-      is set to the value of the highest significant bit of the result.
-    - - Direction Flag.
-
-      is used to control whether the string instructions increment or decrement
-
-      and
-
-      during their operation, and can be manipulated by the
-
-      and
-
-      instructions. This flag is rarely used in modern code, as the string instructions see little use.
-    - - Overflow Flag.
-
-      is set when the sign of the result of the last signed arithmetic operation is different from the signs of both source operands. This means that the result was too big or too small to hold in the destination.
-- - The instruction pointer register. This holds the memory address of the instruction currently being executed by the CPU.
-
-  can be addressed directly in x86_64, but only for use as a memory offset. To write to
-
-  , one must execute one of the many control transfer instructions. As instructions are executed,
-
-  increases by the size of each one (instructions are of very variable size in the x86 architectures), with the exception of control transfer instructions, which work by changing the value of
-
-  according to the transfer target.
+    - `CF` - Carry Flag. `CF` is set when the result of an addition is a carry or the result of a subtraction is a borrow. It is also affected by arithmetic bit shifting instructions and bit test instructions, cleared by bitwise logic instructions, and manipulated directly by the `stc`, `clc`, and `cmc` instructions.
+    - `PF` - Parity Flag. `PF` is set when there are an even number of 1 bits in the low byte of the last result of some operations. It can be used for parity checks.
+    - `AF` - Auxiliary Carry Flag. `AF` is set when an arithmetic or BCD operation generates a carry or borrow from bit 3 of the result. Its use is limited to doing decimal math directly on the CPU, and it sees little use.
+    - `ZF` - Zero Flag. `ZF` is _set_ when the last arithmetic operation had a result of zero. Compare and test instructions also set or clear `ZF` appropriately. It is often used as for equality testing, as it is set when comparing two equal operands.
+    - `SF` - Sign Flag. `SF` is set if the last arithmetic operation had a negative result. More exactly, after an arithmetic operation, `SF` is set to the value of the highest significant bit of the result.
+    - `DF` - Direction Flag. `DF` is used to control whether the string instructions increment or decrement `rsi` and `rdi` during their operation, and can be manipulated by the `std` and `cld` instructions. This flag is rarely used in modern code, as the string instructions see little use.
+    - `OF` - Overflow Flag. `OF` is set when the sign of the result of the last signed arithmetic operation is different from the signs of both source operands. This means that the result was too big or too small to hold in the destination.
+- `rip` - The instruction pointer register. This holds the memory address of the instruction currently being executed by the CPU. `rip` can be addressed directly in x86_64, but only for use as a memory offset. To write to `rip`, one must execute one of the many control transfer instructions. As instructions are executed, `rip` increases by the size of each one (instructions are of very variable size in the x86 architectures), with the exception of control transfer instructions, which work by changing the value of `rip` according to the transfer target.
 
 **Calling Conventions**  
 The calling conventions of an architecture, which are typically what people mean when they say ABI, specify the ways that functions receive parameters, return values, manage the stack, and other fundamentals not already part of the CPU architecture. x86_64's calling conventions are somewhat complicated, so I'll include an abbreviated version here which will get you through all of the sample code.
@@ -293,33 +237,11 @@ And the compiler's assembly language output, stripped of several confusing direc
 
 Whew! `main`'s pretty long in assembly, huh? There are some important things to recognize here:
 
-1. is the first argument register for integer/pointer arguments, and contains the value of
-
-  .
-2. contains the value of
-
-  .
-3. has the value of
-
-  . This holds true
-
-  !
-4. holds the value of a more mysterious
-
-  parameter, whose presence I only discovered when I peeked at the disassembly of the
-
-  function, part of the C runtime.
-5. points to the top of the stack. Because
-
-  is a subroutine of
-
-  , the 8 bytes pointed to by
-
-  are the return address for
-
-  , the next instruction in
-
-  .
+1. Per the ABI, `rdi` is the first argument register for integer/pointer arguments, and contains the value of `argc`.
+2. Likewise, `rsi` contains the value of `argv`.
+3. Also likewise, `rdx` has the value of `envp`. This holds true _even though `envp` is not declared as a parameter to `main`_!
+4. Finally, `rcx` holds the value of a more mysterious `"exec_path"` parameter, whose presence I only discovered when I peeked at the disassembly of the `start` function, part of the C runtime.
+5. And, per x86 convention, `rsp` points to the top of the stack. Because `main` is a subroutine of `start`, the 8 bytes pointed to by `rsp` are the return address for `main`, the next instruction in `start`.
 
 Let's take it one instruction at a time.
 
@@ -463,7 +385,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-12-16-disassembling-the-assembly-part-1.html)
 
 Add your thoughts, post a comment:
 

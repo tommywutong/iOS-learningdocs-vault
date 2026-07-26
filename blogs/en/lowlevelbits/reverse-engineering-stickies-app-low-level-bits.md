@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5b03182561f8b53f'
 translated: false
 ---
@@ -280,9 +280,9 @@ Here are few helpful tips I can give:
 
 This is a list of tools that may be helpful for reverse engineering:
 
-- MachOView
-- Hopper app
-- class-dump
+- [MachOView](https://sourceforge.net/projects/machoview/)
+- [Hopper app](https://www.hopperapp.com)
+- [class-dump](https://github.com/nygard/class-dump)
 - lldb, xxd, plutil…
 
 The code for this patch is on Github: [ModernStickies](https://github.com/AlexDenisov/ModernStickies).

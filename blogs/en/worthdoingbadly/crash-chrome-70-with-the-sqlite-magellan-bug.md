@@ -7,7 +7,7 @@ original_language: en
 published: 2018-12-14
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:25d74767c9b66953'
 translated: false
 ---
@@ -68,3 +68,5 @@ Not affected:
 - Chrome 71.0.3578.98 on Android 8.1 (already fixed)
 - Safari (doesn't have FTS enabled in SQLite3)
 - Browsers not based on Chrome (no WebSQL support)
+
+[https://worthdoingbadly.com/sqlitebug/](https://worthdoingbadly.com/sqlitebug/)

@@ -67,12 +67,8 @@ This is a major problem because our _code_ doesn't behave that way. Sometimes we
 
 To illustrate the problem this poses, consider the following two questions:
 
-1. a legal argument to pass to
-
-  ?
-2. a legal argument to pass to
-
-  ?
+1. Is `nil` a legal argument to pass to `isEqual:`?
+2. is `nil` a legal argument to pass to `isEqualToString:`?
 
 I'll give you a moment while you check the documentation.
 
@@ -380,7 +376,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-06-20-interesting-swift-features.html)
 
 Add your thoughts, post a comment:
 

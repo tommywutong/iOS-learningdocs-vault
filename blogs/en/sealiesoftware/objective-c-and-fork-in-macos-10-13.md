@@ -7,7 +7,7 @@ original_language: en
 published: 2017-06-05
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9a00adfc7fb64ea3'
 translated: false
 ---
@@ -65,8 +65,8 @@ If you have a class that needs to be `fork`-safe and also overrides `+initialize
 There are three ways to get the old behavior back for source- or binary-compatibility.
 
 - Build your app with an SDK older than macOS 10.13.
-- .
-- section to your executable.
+- Define environment variable `OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`.
+- Add a `__DATA,__objc_fork_ok` section to your executable.
 
 Be warned that incorrect code is more likely to deadlock on macOS 10.13 than before, even with one of these workarounds in place.
 
@@ -78,31 +78,11 @@ Some scripting languages use `fork()` without `exec()` as a substitute for threa
 
 Possible fixes for `fork`-safety problems, from best to worst:
 
-1. or
+1. Use `NSTask` or `posix_spawn()` instead of `fork()` and `exec()`.
+2. Do nothing between `fork()` and `exec()`.
+3. Use only async-signal-safe operations between `fork()` and `exec()`.
+4. Use ObjC classes with no `+initialize` overrides between `fork()` and `exec()`.
+5. Use `pthread_atfork()` to force your `+initialize` methods to run before `fork()`.
+6. Define environment variable `OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`, or add a `__DATA,__objc_fork_ok` section, or build using an SDK older than macOS 10.13. Then cross your fingers.
 
-  instead of
-
-  and
-
-  .
-2. and
-
-  .
-3. and
-
-  .
-4. overrides between
-
-  and
-
-  .
-5. to force your
-
-  methods to run before
-
-  .
-6. , or add a
-
-  section, or build using an SDK older than macOS 10.13. Then cross your fingers.
-
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

@@ -36,12 +36,10 @@ In Mike Ash's article in 2008, circa Leopard, he described three major issues. O
 
 - With Snow Leopard, we got blocks, but KVO has completely ignored them.
 - KVO's inability to deal with objects whose observations are never unregistered has never even been challenged.
-- got blocks and targeted observation removal (returning an object from the add call that could be used to remove that same observation later). KVO also missed that latter.
+- `NSNotificationCenter` got blocks and targeted observation removal (returning an object from the add call that could be used to remove that same observation later). KVO also missed that latter.
 - KVO never had a "remove all observers on this object" or "remove all observations registered by this object" semantic, making subclassing and extension that much more painful.
 - KVO has no syntax for registering more than one key path at a time for observation. Or for observing more than one object at a time.
-- ) imposed an extra retain on both the observing and observed objects, leading to a tendency towards retain cycles and an inability to remove observations in a
-
-  method.
+- Mike's solution (`MAKVONotificationCenter`) imposed an extra retain on both the observing and observed objects, leading to a tendency towards retain cycles and an inability to remove observations in a `dealloc` method.
 
 All of these are things Apple should have dealt with, and bugs filed against all of these limitations resulted in only one change in two major OS releases.
 
@@ -57,22 +55,16 @@ The "new and improved" KVO needed the following features, in my eyes:
 - It had to solve all three of Mike's listed issues, and therefore had to be based on his original implementation to at least some extent.
 - It needed to support blocks as observer callbacks.
 - It needed to support "automatic deregistration", i.e. removing any observations an object had registered, or had registered on it, during deallocation.
-- easier to register multiple key paths, and key paths on multiple objects.
-- to retain observer or observee.
+- It needed to be _much_ easier to register multiple key paths, and key paths on multiple objects.
+- It needed _not_ to retain observer or observee.
 
 **Implementing the new and improved KVO**  
 The first step was to build the interface for this new version of KVO. Starting from `MAKVONotificationCenter`, I added;
 
 - A flag to turn off the automatic deregistration behavior. Since a tiny bit of runtime trickery was definitely going to be involved in that, I figured it'd be best to be able to shut it off on demand.
 - A protocol for an "observation". This would be a generic object returned by observation registration methods that could be used to remove that specific registration. It could be queried as to whether the registration was still valid.
-- ,
-
-  ,
-
-  , and
-
-  got this support for free.
-- . This object would be passed to an observation block and provide convenient access to everything normally hidden in a change dictionary.
+- A protocol for a "key path set". Any object could implement a method that returned a fast-enumerable object and thus be used as a "key path". `NSString`, `NSSet`, `NSArray`, and `NSOrderedSet` got this support for free.
+- An object that represented the information for a single KVO notification, an `MAKVONotification`. This object would be passed to an observation block and provide convenient access to everything normally hidden in a change dictionary.
 - The category on NSObject to provide the selector- and block-based registration methods, as well as the complementary unregistration methods. I also put in "opposite sentiment" methods, since I don't like KVO's order of doing things.
 
   KVO's original methods go "`[target addObserver:observer ...]`". To me, telling the target of the observation to add an observer is backwards. So I added "`[observer observeTarget:target ...]`" methods, which had the daunting and difficult task of sending the parameters to `MAKVONoticationCenter`'s methods in the opposite order.
@@ -250,17 +242,9 @@ If you've been looking at the code while reading this, you may have noticed that
 
 Well, no. Here's why:
 
-- isn't available on OS X 10.6 / iOS 4.x. While there are already other APIs in use (particularly
-
-  ) that break backwards compatibility, they're not
-
-  hard to work around if you want to, and there are other reasons not to use ZWRs.
-- . That would mean you couldn't use such objects as observers or make them the target of observations.
-- in the presence of a swizzled
-
-  method! Either observer or target will always remove the helper before it goes away, at which point it's gone from the other as well. And if the caller happened to pass the "I want to unregister manually" flag, the semantics of original KVO return: It was already illegal/a crashing bug to deallocate an object with registered observers. Making these proper
-
-  references would only mask the problem temporarily, not solve it.
+- `__weak` isn't available on OS X 10.6 / iOS 4.x. While there are already other APIs in use (particularly `imp_implementationWithBlock()`) that break backwards compatibility, they're not _that_ hard to work around if you want to, and there are other reasons not to use ZWRs.
+- You can't take ZWRs to a whole list of classes on OS X, including `NSWindow`. That would mean you couldn't use such objects as observers or make them the target of observations.
+- `__unsafe_unretained`_is not unsafe_ in the presence of a swizzled `-dealloc` method! Either observer or target will always remove the helper before it goes away, at which point it's gone from the other as well. And if the caller happened to pass the "I want to unregister manually" flag, the semantics of original KVO return: It was already illegal/a crashing bug to deallocate an object with registered observers. Making these proper `__weak` references would only mask the problem temporarily, not solve it.
 
 **Who needs an observer at all?**  
 During the development of all these changes, Mike Ash and Tony Xiao were following along fairly closely. Tony in particular came up with a particularly clever method in the `NSObject` category:
@@ -286,7 +270,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-03-02-key-value-observing-done-right-take-2.html)
 
 Add your thoughts, post a comment:
 

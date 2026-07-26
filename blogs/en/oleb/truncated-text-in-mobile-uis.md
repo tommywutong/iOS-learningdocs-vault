@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f4ff3a0927e2e511'
 translated: false
 ---
@@ -18,15 +18,15 @@ translated: false
 
 ## Ellipses Everywhere
 
-Truncated text is ubiquitous in mobile user interfaces. Especially in list views, too many apps cut off text after just one or two lines although the relevant text is often longer. This is almost always annoying, but it can easily become a real problem and even render a UI pretty much unusable (think of a list of search results that all begin with the same text, for example). I consider truncated text to be one of the most glaring design failures of current mobile UIs.[1](#fn:1)
+Truncated text is ubiquitous in mobile user interfaces. Especially in list views, too many apps cut off text after just one or two lines although the relevant text is often longer. This is almost always annoying, but it can easily become a real problem and even render a UI pretty much unusable (think of a list of search results that all begin with the same text, for example). I consider truncated text to be one of the most glaring design failures of current mobile UIs.^[1](#fn:1)
 
 **I consider truncated text to be one of the most glaring design failures of current mobile UIs.**
 
-![Apple’s WWDC app displaying a list of truncated session titles](https://oleb.net/media/wwdc-app-truncated-text.png)
+[![Apple’s WWDC app displaying a list of truncated session titles](https://oleb.net/media/wwdc-app-truncated-text.png)](https://oleb.net/media//wwdc-app-truncated-text.png)
 
 <sub>Apple’s WWDC app. What do you think is “Building Interruptible and Re…”?</sub>
 
-![Google’s YouTube iOS app displaying a list of truncated video titles](https://oleb.net/media/youtube-app-truncated-text.png)
+[![Google’s YouTube iOS app displaying a list of truncated video titles](https://oleb.net/media/youtube-app-truncated-text.png)](https://oleb.net/media/youtube-app-truncated-text.png)
 
 <sub>Google’s YouTube app. All videos in the list start with exactly the same text.</sub>
 
@@ -40,11 +40,11 @@ Your items will take up more vertical space that way, but who cares? Coding tabl
 
 A drawback of this approach is that list views with variable-height rows can appear unbalanced or cluttered. Designing such a list that looks great is hard, but I think it is absolutely worth the effort.
 
-![The Dropbox iOS app displaying a file list with truncated filenames](https://oleb.net/media/dropbox-app-truncated-text.png)
+[![The Dropbox iOS app displaying a file list with truncated filenames](https://oleb.net/media/dropbox-app-truncated-text.png)](https://oleb.net/media/dropbox-app-truncated-text.png)
 
 <sub>A file list in the Dropbox app.</sub>
 
-![The Coursera iOS app displaying a list of truncated lecture titles](https://oleb.net/media/coursera-app-truncated-text.png)
+[![The Coursera iOS app displaying a list of truncated lecture titles](https://oleb.net/media/coursera-app-truncated-text.png)](https://oleb.net/media/coursera-app-truncated-text.png)
 
 <sub>A list of lecture titles in the Coursera app.</sub>
 

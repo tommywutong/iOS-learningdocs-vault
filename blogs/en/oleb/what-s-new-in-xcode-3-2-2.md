@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:58e3fe949f3836ce'
 translated: false
 ---
@@ -31,11 +31,11 @@ Apple has explained this process very well in the _iPad Programming Guide_ so I�
 
 The new Build \> Build and Archive command builds your app as usual, creates an `.ipa` file (the zip archive of your app bundle you need to create to submit your app to iTunes Connect) and then archives the app bundle, the `.ipa` file and the associated `.dSYM` file (containing the debug symbols you need to debug crash logs) in a subfolder of `~/Library/MobileDevice/Archived Applications`. These archives also appear in the new Archived Applications view in the Organizer.
 
-![Xcode 3.2.2 Archived Applications folder](https://oleb.net/media/xcode-3-2-2-archived-applications-folder.png)
+[![Xcode 3.2.2 Archived Applications folder](https://oleb.net/media/xcode-3-2-2-archived-applications-folder.png)](https://oleb.net/media/xcode-3-2-2-archived-applications-folder.png)
 
 <sub>An application build in the Finder as archived by Xcode 3.2.2.</sub>
 
-![/media/xcode-3-2-2-organizer-archived-applications.png](https://oleb.net/media/xcode-3-2-2-organizer-archived-applications.png)
+[![/media/xcode-3-2-2-organizer-archived-applications.png](https://oleb.net/media/xcode-3-2-2-organizer-archived-applications.png)](https://oleb.net/media/xcode-3-2-2-organizer-archived-applications.png)
 
 <sub>/media/xcode-3-2-2-organizer-archived-applications.png.</sub>
 
@@ -45,25 +45,15 @@ Unless you already have another automated method in place to archive your distri
 
 The Organizer now also helps you with the next logical step after you have created a distribution build: sharing your Ad Hoc app with beta testers or uploading the final version to iTunes Connect. Take another look at the screenshot of the Organizer window above and note the three buttons at the bottom:
 
-- lets you sign the build with an Ad Hoc distribution certificate and then save the signed
-
-  file to disk or put it directly into an e-mail for distribution to your beta testers. Very handy.
-- will, in
-
-  Apple’s words
-
-  ,
-
-  It’s not quite clear to me what exactly these tests consist of, but it will definitely give you an error message if you failed to include an icon in your app (or if it has the wrong size) or if your code signing identity does not match the app’s bundle identifier in iTunes Connect. When I first read about this feature, I was very excited because I figured that the tests also include Apple’s apparently automated testing for use of undocumented APIs, but now I doubt this is the case. Does anybody know more?
-- will sign the app with your App Store code signing identity and upload the binary directly to Apple. Before you do this, you must have set up the application with all its metadata (screenshots, 512 x 512 icon, keywords) in iTunes Connect (this is also true for the
-
-  step). Make especially sure that all your keywords are correct because you cannot change them afterwards unless you reject the binary.
+- _Share Application_ lets you sign the build with an Ad Hoc distribution certificate and then save the signed `.ipa` file to disk or put it directly into an e-mail for distribution to your beta testers. Very handy.
+- _Validate Application_ will, in [Apple’s words](http://developer.apple.com/iphone/library/releasenotes/General/RN-iPhoneSDK-3_2/index.html#//apple_ref/doc/uid/TP40009477-CH1-SW16), run all of the validation tests that will be run upon submission to the App Store so that you can fix any problems before submitting your app. It’s not quite clear to me what exactly these tests consist of, but it will definitely give you an error message if you failed to include an icon in your app (or if it has the wrong size) or if your code signing identity does not match the app’s bundle identifier in iTunes Connect. When I first read about this feature, I was very excited because I figured that the tests also include Apple’s apparently automated testing for use of undocumented APIs, but now I doubt this is the case. Does anybody know more?
+- Finally, _Submit Application to iTunes Connect_ will sign the app with your App Store code signing identity and upload the binary directly to Apple. Before you do this, you must have set up the application with all its metadata (screenshots, 512 x 512 icon, keywords) in iTunes Connect (this is also true for the _Validate Application_ step). Make especially sure that all your keywords are correct because you cannot change them afterwards unless you reject the binary.
 
 # Transfer your iPhone developer identity to a new computer
 
 With all the certificates and provisioning profiles Apple requires iPhone developers to manage, it can be quite a hassle to reinstall everything correctly after switching to a fresh install of OS X. In Xcode 3.2.2, there is a new Developer Profile item in the Organizer window that allows you to export all your provisioning profiles and code signing certificates into a single file which you can then import on a new computer with a single click.
 
-![Developer Profile view in the Xcode 3.2.2 Organizer](https://oleb.net/media/xcode-3-2-2-organizer-developer-profile.png)
+[![Developer Profile view in the Xcode 3.2.2 Organizer](https://oleb.net/media/xcode-3-2-2-organizer-developer-profile.png)](https://oleb.net/media/xcode-3-2-2-organizer-developer-profile.png)
 
 <sub>Developer Profile view in the Xcode 3.2.2 Organizer.</sub>
 
@@ -71,7 +61,7 @@ With all the certificates and provisioning profiles Apple requires iPhone develo
 
 Finally, the 3.2 API documentation has gotten a new look. I quite like the design. Functionality-wise, the help system seems to be unchanged.
 
-![Xcode 3.2.2 API Documentation view](https://oleb.net/media/xcode-3-2-2-documentation.png)
+[![Xcode 3.2.2 API Documentation view](https://oleb.net/media/xcode-3-2-2-documentation.png)](https://oleb.net/media/xcode-3-2-2-documentation.png)
 
 <sub>Xcode 3.2.2 API Documentation view.</sub>
 

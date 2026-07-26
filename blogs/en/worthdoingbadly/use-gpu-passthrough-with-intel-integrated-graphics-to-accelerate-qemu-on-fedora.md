@@ -7,7 +7,7 @@ original_language: en
 published: 2019-02-12
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6c086691222c338d'
 translated: false
 ---
@@ -42,10 +42,8 @@ I tested this on Fedora Workstation 29’s Live image, booted from a USB drive.
 
 To [enable PCI passthrough](https://www.linux-kvm.org/page/How_to_assign_devices_with_VT-d_in_KVM), I had to turn on the IOMMU at boot.
 
-- when the boot screen appears to edit boot arguments
-- to the end of the
-
-  line
+- Hit `E` when the boot screen appears to edit boot arguments
+- Add `intel_iommu=on` to the end of the `linuxefi` line
 - Press Ctrl-X to boot with the new argument.
 
 # Disabling the GPU on the host
@@ -65,14 +63,10 @@ That’s because the GPU is still active.
 
 I had to:
 
-1. Login through SSH
-
-  , since these commands will turn off the screen.
+1. [Login through SSH](#appendix-1-setting-up-ssh-on-fedora-workstation-live), since these commands will turn off the screen.
 2. Disable the graphical environment by stopping GDM
-3. Disable the kernel’s text console
-4. Disable the Intel HDA sound card
-
-  , as it communicates with the GPU to support sound over HDMI
+3. [Disable the kernel’s text console](https://bugs.freedesktop.org/show_bug.cgi?id=29828)
+4. [Disable the Intel HDA sound card](https://bugs.freedesktop.org/show_bug.cgi?id=70336), as it communicates with the GPU to support sound over HDMI
 
 After disabling everything that uses the GPU, `rmmod i915` works, and the screen turns dark.
 
@@ -143,7 +137,7 @@ If you’re interested in learning more, the Arch Linux Wiki has [a good tutoria
 
 - GPU passthrough in QEMU
 - Removing the i915 module at runtime
-- support in QEMU
+- `input-linux` support in QEMU
 - It’s strange to see a virtual machine taking over my entire screen
 
 # Appendix 1: setting up SSH on Fedora Workstation Live
@@ -153,5 +147,7 @@ To enable SSH access on Fedora Workstation 29 Live:
 - Go to Settings-\>Details-\>Users
 - Change the password of the live user
 - Open a terminal
-- to start the SSH server
+- Run `sudo systemctl start sshd` to start the SSH server
 - Now you can access the machine with `ssh liveuser@(machine ip)`
+
+[https://worthdoingbadly.com/gpupassthrough/](https://worthdoingbadly.com/gpupassthrough/)

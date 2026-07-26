@@ -7,7 +7,7 @@ original_language: en
 published: 2018-07-28
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a04895ab084df0c8'
 translated: false
 ---
@@ -248,6 +248,6 @@ It took a few system crashes to debug the address calculation, but once I fixed 
 
 - It’s easy to get started with kext programming on macOS
 - ssh doesn’t work when boot time is set before the Unix epoch. Odd. I wonder why.
-- iOS QEMU
+- How to write a short(er) article - I’m learning to make and write up simpler projects so I can dedicate more time for occational larger projects such as the [iOS QEMU](https://worthdoingbadly.com/xnuqemu2/) post.
 
-  post.
+[https://worthdoingbadly.com/uptimekext/](https://worthdoingbadly.com/uptimekext/)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ca872ab8c912c7e3'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Book Review: 97 Things Every Programmer Should Know
 
-![Cover of 97 Things Every Programmer Should Know](https://oleb.net/media/97-things-every-programmer-should-know-cover.png)
+[![Cover of 97 Things Every Programmer Should Know](https://oleb.net/media/97-things-every-programmer-should-know-cover.png)](https://www.amazon.com/Things-Every-Programmer-Should-Know/dp/0596809484/)
 
 I recently finished reading [97 Things Every Programmer Should Know](https://www.amazon.com/Things-Every-Programmer-Should-Know/dp/0596809484/), a compilation of 97 short essays about all facets of programming, published by O’Reilly in February 2010. The essays cover a very broad range of topics, from coding style to unit testing, from handling customer complaints to version control, from command line tools to programming languages. Every one is two pages long so don’t expect to get in-depth coverage of a topic.
 

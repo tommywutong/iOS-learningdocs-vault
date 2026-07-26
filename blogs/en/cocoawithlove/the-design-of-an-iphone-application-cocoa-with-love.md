@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dbde7f5a87b6f943'
 translated: false
 ---
@@ -21,7 +21,7 @@ In this post, I'll discuss iPhone program design using the example of a small bu
 The sample program for this post takes the Core Data SQL database of Australian Postcodes that I [created last week from a CSV file](https://www.cocoawithlove.com/2009/11/writing-parser-using-nsscanner-csv.html) and uses that in an iPhone application that allows you to:
 
 - Browse and search the database.
-- .
+- Display entries in a `MKMapView`.
 - Find the nearest entry to the user's GPS and display that on a map.
 
 The following screenshots show the basic flow of the application.
@@ -34,9 +34,7 @@ The following screenshots show the basic flow of the application.
 
 The "Show current location" step skips the middle screenshot in the workflow and goes straight to the map, displaying the closest "Postcode" in the database for the user's location, or just the user's location (with no pins in the map) if they are more than 0.1 longitude or latitude away from the nearest post office.
 
-> AustralianPostcodes.zip
-> 
-> (961kB).
+> You can download the complete project [AustralianPostcodes.zip](https://www.cocoawithlove.com/assets/objc-era/AustralianPostcodes.zip) (961kB).
 
 ## Steps in designing a program
 
@@ -75,7 +73,7 @@ Core Data runs in an `NSManagedObjectContext`. In some respects, you may conside
 
 Specifically, your program will need:
 
-- for it).
+- A way to construct the Core Data persistence stack (i.e. open a Core Data SQL store and create an `NSManagedObjectContext` for it).
 - A way to access the current context from anywhere in the program.
 - A place to put context processing code (if needed). This might include importing/exporting code, specialized fetching code, editing and validating code.
 
@@ -87,6 +85,7 @@ Simply put: I dislike this approach because it gives the `AppDelegate` multiple 
 
 The `AppDelegate` exists to implement functionality during key points in the `UIApplication`'s lifecycle (most importantly startup and shutdown). The `AppDelegate` doesn't use the `NSManagedObjectContext` for itself and the `AppDelegate`'s primary responsibility is not document management — you should not be using your `AppDelegate` as your application's document manager.
 
+> **Every class should have a single purpose**  
 > Every piece of functionality that a class exposes to the rest of the program (i.e. functionality that is part of the class' external interface) should be obviously part of that class' primary role in the program.
 
 For this reason, I create a class (in this project it is named `PostcodesController`) whose responsibility it is to construct the document (our `NSManagedObjectContext`) and handle access to it or process the document if needed.
@@ -117,23 +116,9 @@ Sometimes, data is so simple to load and so customized to the location where it 
 
 This program started with a "Navigation-based application" template in Xcode and the project name "AustralianPostcodes". This means that the following steps are setup by the template:
 
-1. will load the
-
-  on startup
-2. will construct the
-
-  , a
-
-  and a
-
-  which will load the
-
-  from
-
-  and set it as the top level view in the navigation hierarchy.
-3. 's view into the
-
-  and display the window.
+1. The `UIApplication` will load the _MainWindow.xib_ on startup
+2. The _MainWindow.xib_ will construct the `AustralianPostcodesAppDelegate`, a `UIWindow` and a `UINavigationController` which will load the `RootViewController` from _RootViewController.xib_ and set it as the top level view in the navigation hierarchy.
+3. The AustralianPostcoddesAppDelegate will insert the `UINavigationController`'s view into the `UIWindow` and display the window.
 
 The primary controllers in the program are the `PostcodesController` (which controls the construction of the Core Data persistence stack), the `RootViewController` (which shows the main menu), the `PostcodesViewController` (which displays the table of objects fetched from Core Data) and the `MapViewController` (which displays a single `Postcode` object and the map view).
 
@@ -171,39 +156,22 @@ The `MapViewController` needs to perform the following tasks:
 1. If not given a selected Postcode object, then the Postcode in the database nearest the GPS location must be fetched.
 2. Postcodes around the current location must be fetched and displayed on the map
 3. The map view must be centered on the selected postcode
-4. s at the top of the screen.
+4. Details about the selected postcode must be displayed in the `UILabel`s at the top of the screen.
 
 To enable the easy display of postcodes as points on the map, the `Postcode` class (the subclass of `NSManagedObject` used by the Postcode entity in the Core Data model) implements the `MKAnnotation` protocol. This means that the `Postcode` objects returned from a fetch can be immediately added to the `MKMapView`.
 
 This class needs to perform its own fetching from the Core Data database. Since the `PostcodesViewController` and `MapViewController` both need to fetch (albeit in slightly different ways) and they both use a significant volume of code of to do this fetching, it is possible that a common interface to perform fetch actions for both would be a future improvement.
 
+> **Always be ready to iteratively refactor**  
 > As you implement a program, you should always be on the lookout for easy ways to simplify your program by implementing minor redesigns. Looking for multiple places where your program repeats the same functionality is the most prominent example of this. A corollary to this is that you should never copy and paste blocks of code — a copy and pasted block of code should be a single method/function/macro that you simply invoke from multiple places.
 
 ## Model-View-Controller
 
 Interpreting this program according to model-view-controller would go like this:
 
-- — the
-
-  objects in the
-
-  are the model.
-- — the
-
-  objects on the "Main Menu", "By suburb" and "By postcode" screens and the
-
-  on the map screen.
-- — the
-
-  ,
-
-  ,
-
-  ,
-
-  ,
-
-  .
+- **Model** — the `Postcode` objects in the `NSManagedObjectContext` are the model.
+- **View** — the `UITableViewCell` objects on the "Main Menu", "By suburb" and "By postcode" screens and the `MKMapView` on the map screen.
+- **Controller** — the `AustralianPostcodesAppDelegate`, `RootViewController`, `PostcodesViewController`, `MapViewController`, `PostcodesController`.
 
 ### Why do we need so many controllers?
 
@@ -229,30 +197,18 @@ Generally though, I don't like this type of over-simplification. My problem is t
 
 Despite the simplistic diagram shown above, the reality is that we have the following model-controller relationships in the program:
 
-- in the
-
-  , controlled by
-- which describes the
-
-  , controlled by
-- by suburb or postcodes, controlled by
-
-  in conjunction with
-- , controlled by
+- The `Postcodes` in the `NSManagedObjectContext`, controlled by `PostcodesController`
+- The _Plist_ which describes the _Main Menu_, controlled by `RootViewController`
+- The cached fetch of `Postcodes` by suburb or postcodes, controlled by `NSFetchedResultsController` in conjunction with `PostcodesViewController`
+- The cached fetch of nearest `Postcodes`, controlled by `MapViewController`
 - The GPS location, controlled by `CLLocationManager`
 
 So a full diagram of the data paths through the program would be considerably more complex than the diagram shown above.
 
 An important point to note about the above diagram is that there are two layers of controllers: one layer that controls the model at the top and one layer that controls the views at the bottom. The result of this observation is that the view-and-controller pairs and the the model-and-controller pairs are really two instances of the same design pattern. This means that we can add the following view-controller relationships to the list of model-controller relationships shown above:
 
-- in the
-
-  s, controlled by
-
-  and
-- and the
-
-  , controlled by the
+- The `UITableViewCells` in the `UITableView`s, controlled by `PostcodesViewController` and `RootViewController`
+- The `UILabels` and the `MKMapView`, controlled by the `MapViewController`
 
 ### Module-controller
 
@@ -267,7 +223,8 @@ As your program grows larger and more complex, your controllers may have sub-con
 
 ### Implications of this way of thinking
 
-> A good application has tightly focussed modules which are totally decoupled from the rest of the program and controllers which are lightly coupled to other controllers in a hierarchical arrangement through the program but do nothing other than provide the contextual information for their controlled objects.
+> **The best programs are highly modular and decoupled**  
+>  A good application has tightly focussed modules which are totally decoupled from the rest of the program and controllers which are lightly coupled to other controllers in a hierarchical arrangement through the program but do nothing other than provide the contextual information for their controlled objects.
 
 The idea is to make all aspects of your program clean, decoupled and resusable, in the same way that good view and model classes are.
 
@@ -290,9 +247,7 @@ Specifically: you should always know what the "model" of your program is. All as
 
 ## Conclusion
 
-> AustralianPostcodes.zip
-> 
-> (961kB).
+> You can download the complete project [AustralianPostcodes.zip](https://www.cocoawithlove.com/assets/objc-era/AustralianPostcodes.zip) (961kB).
 
 I wrote a lot of code for this post but I've included none of it here. The code exists to make the abstract discussion about how to design a program seem less abstract — I hope that you can look at the code and understand the sometimes vague statements I've made in this post.
 

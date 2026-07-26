@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5407d4c01d948383'
 translated: false
 ---
@@ -40,8 +40,8 @@ bool isOneOfTheStringsICareAbout(const std::string &s) {
 
 Assuming the `==` operator is smart, this will expand to something like this:
 
-1. is 7 as well. If so, are those 7 characters “B-a-t-t-l-e-r”?
-2. is 6 as well. If so, are those 6 characters “G-e-o-r-g-e”?
+1. “Battler” has 7 letters, so see if the length of `s` is 7 as well. If so, are those 7 characters “B-a-t-t-l-e-r”?
+2. “George” has 6 letters, so see if the length of `s` is 6 as well. If so, are those 6 characters “G-e-o-r-g-e”?
 3. “Jessica” has 7 letters, so…
 
 You get the idea, and in fact you may have already spotted the first possible optimization:
@@ -90,7 +90,7 @@ The problem with both of these approaches is that I had to hardcode the string l
 
 (Okay, yes, I’m going to get bizarre template errors instead.)
 
-So, let’s try it. To make things even simpler, I’m going to use a type called [`std::string_view`](http://en.cppreference.com/w/cpp/string/basic_string_view), which was added to C++ in C++17.[1](#fn:17) `std::string_view` is like `std::string`, but it doesn’t do any memory management; it just assumes that the buffer you created it with will stay alive as long as the `string_view` does. This simplifies the representation and hopefully gives the compiler more to work with.
+So, let’s try it. To make things even simpler, I’m going to use a type called [`std::string_view`](http://en.cppreference.com/w/cpp/string/basic_string_view), which was added to C++ in C++17.^[1](#fn:17) `std::string_view` is like `std::string`, but it doesn’t do any memory management; it just assumes that the buffer you created it with will stay alive as long as the `string_view` does. This simplifies the representation and hopefully gives the compiler more to work with.
 
 I started off with a very basic implementation, just to make sure I had the right idea—
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:322307c1f9cee08f'
 translated: false
 ---
@@ -135,9 +135,7 @@ By default, `NSURLRequest`s have a cache policy of `NSURLRequestUseProtocolCache
 
 ## The LocalSubstitutionCache sample app
 
-> LocalSubstitutionCache.zip
-> 
-> (66kb) sample project
+> You can download the [LocalSubstitutionCache.zip](https://www.cocoawithlove.com/assets/objc-era/LocalSubstitutionCache.zip) (66kb) sample project
 
 Here's a small screenshot of today's [http://www.apple.com](http://www.apple.com) running in a `UIWebView`:
 

@@ -26,9 +26,9 @@ by [Mike Ash](https://www.mikeash.com/)
 **Previous Articles**  
 If you'd like to compare with decades past, here are the links to the previous articles:
 
-- Mac (10.5)
-- Mac (10.4)
-- iPhone OS 1
+- [Mac (10.5)](https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations-leopard-edition.html)
+- [Mac (10.4)](https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations.html)
+- [iPhone OS 1](https://www.mikeash.com/pyblog/performance-comparisons-of-common-operations-iphone-edition.html)
 
 (Note that the name of Apple's mobile OS didn't become "iOS" until 2010.)
 
@@ -185,7 +185,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2016-04-15-performance-comparisons-of-common-operations-2016-edition.html)
 
 Add your thoughts, post a comment:
 

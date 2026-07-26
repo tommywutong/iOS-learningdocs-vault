@@ -31,25 +31,25 @@ Sadly, Apple does not explain their restrictions. [A lot of rationalizations](ht
 
 The most common rationalization is that the iPhone is not powerful enough to support full multitasking. This is a curious argument, and it's hard to see how anyone who's been using a computer for more than a few years could make it. For example, here are the specifications of the first computer I used that could multitask, a [Macintosh LC](http://docs.info.apple.com/article.html?artnum=112178):
 
-- 16MHz Motorola 68020
-- 2MB
-- 40MB
+- **CPU:** 16MHz Motorola 68020
+- **RAM:** 2MB
+- **Nonvolatile storage:** 40MB
 
 (Later I loaded a hack on my [Apple IIGS](http://en.wikipedia.org/wiki/Apple_IIGS), worse in many ways, which also let it multitask. But this was very much a hack, unstable and slow, so it doesn't really count.)
 
 But, you say, this was poorly done cooperative multitasking. The iPhone runs UNIX! Well, here are the specifications of the first computer I ran a [UNIX-alike](http://www.mklinux.org/) on, a [PowerCenter Pro 180](http://www.everymac.com/systems/powercc/powercenter_pro/powercenter_pro180.html):
 
-- 180MHz PowerPC 604e
-- I forgot, but probably 32MB
-- 2GB
+- **CPU:** 180MHz PowerPC 604e
+- **RAM:** I forgot, but probably 32MB
+- **Nonvolatile storage:** 2GB
 
 And of course you can [run UNIX](http://netbsd.org) on [vastly](http://netbsd.org/ports/#suggested-arm) [less](http://netbsd.org/ports/#suggested-m68k).
 
 Now, compare these specs with the [iPhone](http://en.wikipedia.org/wiki/IPhone):
 
-- 620MHz ARM
-- 128MB
-- At least 4GB, up to 16GB, usually 8GB
+- **CPU:** 620MHz ARM
+- **RAM:** 128MB
+- **Nonvolatile storage:** At least 4GB, up to 16GB, usually 8GB
 
 (Here is [the original source for the CPU](http://www.engadget.com/2007/07/01/iphone-processor-found-620mhz-arm/) and [the source for the RAM](http://www.semiconductor.com/resources/reports_database/view_device.asp?sinumber=18016).)
 
@@ -75,14 +75,8 @@ The iPhone has no swap! Panther could get away with 128MB of RAM but it would sw
 
 This is true but misses the point entirely. The question is not whether the iPhone can support multitasking without swap. The proper question is this: _why doesn't it have swap?_
 
-- Swap would be too slow, some say. But swap is essentially random access, thus the single most important factor in swap speed is the seek time of the storage device. The iPhone uses flash memory, and flash has basically no seek time It's 100-1000 times faster than a hard drive. Swapping to flash will in most cases be much faster than swapping to rotating magnetic platters.
-- Flash has limited write cycles! The typical flash drive can only be written to between 100,000 and a million times per cell before it wears out and stops working. People tend to interpret this as meaning that flash drives are delicate and need to be manhandled as little as possible to survive. But this is simply not true; the limit is
-
-  . Modern wear-leveling algorithms spread out the writes across the entire drive. A modern flash drive will
-
-  last for decades
-
-  before failing even when it's being written to at maximum speed all day every day. The flash drive will be the last component of your iPhone to die.
+- **Speed:** Swap would be too slow, some say. But swap is essentially random access, thus the single most important factor in swap speed is the seek time of the storage device. The iPhone uses flash memory, and flash has basically no seek time It's 100-1000 times faster than a hard drive. Swapping to flash will in most cases be much faster than swapping to rotating magnetic platters.
+- **Wear:** Flash has limited write cycles! The typical flash drive can only be written to between 100,000 and a million times per cell before it wears out and stops working. People tend to interpret this as meaning that flash drives are delicate and need to be manhandled as little as possible to survive. But this is simply not true; the limit is _per cell_. Modern wear-leveling algorithms spread out the writes across the entire drive. A modern flash drive will [last for decades](http://www.storagesearch.com/ssdmyths-endurance.html) before failing even when it's being written to at maximum speed all day every day. The flash drive will be the last component of your iPhone to die.
 
 The device is clearly technically capable, so why doesn't it do it? I speculate that it may simply be a holdover from when the iPhone only ran Apple software and therefore didn't need it.
 
@@ -106,7 +100,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/deconstructing-the-iphone-sdk-no-multitasking.html)
 
 Add your thoughts, post a comment:
 

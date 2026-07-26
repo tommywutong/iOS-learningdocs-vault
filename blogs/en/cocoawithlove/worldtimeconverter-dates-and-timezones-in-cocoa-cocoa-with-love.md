@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1e6d6a8febd3480b'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 Recently, I searched for a world time converter — one that would handle future dates as well as the current time. There are web versions but I didn't find a genuine Mac OS X application that matched my desires. How hard could it be? The answer is 1 subtraction — provided you can find the right values to subtract. Read on and I'll show you how it's done.
 
-> The original project contained a timing error that could cause a crash on startup. I've now fixed this bug in the project. See the comments for more details.
+> **Update 2008-10-15:** The original project contained a timing error that could cause a crash on startup. I've now fixed this bug in the project. See the comments for more details.
 
 ## Introduction
 

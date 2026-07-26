@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9d75b7c905e706f4'
 translated: false
 ---
@@ -22,11 +22,11 @@ Let’s have a look at those classes one by one. As you will see, the Cocoa appr
 
 # NSDate
 
-`NSDate` is the central class of the date/time handling in Foundation, and at the same time the simplest imaginable. `NSDate` is nothing more than a wrapper around a single number: the number of seconds since 1 January, 2001, at 00:00 (midnight), [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)[1](#fn:1). For values representing numbers of seconds, the framework uses a custom type, `NSTimeInterval`, which is currently defined as a 64-bit floating point value. According to the documentation, this is enough to yield an impressive [sub-millisecond precision over a range of 10,000 years](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html#//apple_ref/doc/uid/20000018-SW69).
+`NSDate` is the central class of the date/time handling in Foundation, and at the same time the simplest imaginable. `NSDate` is nothing more than a wrapper around a single number: the number of seconds since 1 January, 2001, at 00:00 (midnight), [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)^[1](#fn:1). For values representing numbers of seconds, the framework uses a custom type, `NSTimeInterval`, which is currently defined as a 64-bit floating point value. According to the documentation, this is enough to yield an impressive [sub-millisecond precision over a range of 10,000 years](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_DataTypes/Reference/reference.html#//apple_ref/doc/uid/20000018-SW69).
 
 ## Represents an Absolute Point in Time
 
-An `NSDate` object always represents an absolute point in time.[2](#fn:2) This insight has two important consequences:
+An `NSDate` object always represents an absolute point in time.^[2](#fn:2) This insight has two important consequences:
 
 1. _There is no way to represent a certain date without including a specific time._ For instance, to say that a particular `NSDate` instance represents _17 November 2011_ makes no sense; you always have to include the particular time and time zone, such as _17 November 2011 00:00:00 +00:00_ (or any other time of your choice).
 
@@ -45,7 +45,7 @@ The more generic task of creating an instance that represents a specific date an
 
 # NSCalendar
 
-Most people reading this will probably only ever use the same single calendar with its 12 months named January, February and so on, seven-day weeks, counting the years from the reputed birth of Jesus. It is easy to forget that (1) the current “western” [Gregorian Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar) has only been introduced in 1582 and (2) there are many more calendars in practical use around the world today. The Foundation framework can currently handle [ten different calendars](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html#//apple_ref/doc/uid/TP30001224-SW41)[3](#fn:3).
+Most people reading this will probably only ever use the same single calendar with its 12 months named January, February and so on, seven-day weeks, counting the years from the reputed birth of Jesus. It is easy to forget that (1) the current “western” [Gregorian Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar) has only been introduced in 1582 and (2) there are many more calendars in practical use around the world today. The Foundation framework can currently handle [ten different calendars](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSLocale_Class/Reference/Reference.html#//apple_ref/doc/uid/TP30001224-SW41)^[3](#fn:3).
 
 It should be clear that, to specify a date unambiguously, we need to specify the calendar we use. For instance, while today’s date falls into the year 2011 in the familiar Gregorian calendar, the current year is 2554 and 5772 in the [Buddhist](https://en.wikipedia.org/wiki/Buddhist_calendar) and [Hebrew](https://en.wikipedia.org/wiki/Hebrew_calendar) calendars, respectively.
 
@@ -65,7 +65,7 @@ The rest of the class is pretty straightforward. You can query the calendar for 
 
 Any time specification is not precise enough without also indicating the time zone. I have already discussed that we need a way to reference time zones separately from `NSDate` and the `NSTimeZone` class does just that. There are several methods to create a time zone instance, the most straightforward being `+timeZoneForSecondsFromGMT:`.
 
-Note, though, that the numeric offset from GMT is in many cases not enough to identify a specific time zone due to different daylight saving rules around the world. It is safer to specify a time zone by name using the `+timeZoneWithName:` method. Valid names are of the form `@"Europe/Berlin"`.[4](#fn:4)
+Note, though, that the numeric offset from GMT is in many cases not enough to identify a specific time zone due to different daylight saving rules around the world. It is safer to specify a time zone by name using the `+timeZoneWithName:` method. Valid names are of the form `@"Europe/Berlin"`.^[4](#fn:4)
 
 Another method, `+timeZoneWithAbbreviation:` should be handled with care. It is supposed to create time zones from common abbreviations such as “PST” or “CEST”. The problem is that these abbreviations are not always unique – different countries might use the same abbreviation for different time zones or different abbreviations for the same time zone. You should avoid this ambiguity if possible.
 
@@ -75,7 +75,7 @@ Last but not least, use the `+systemTimeZone` method to get a reference to the u
 
 # NSDateComponents
 
-We have almost everything we need now to manipulate dates in our code. Our fourth class, `NSDateComponents`, represents kind of the same information as `NSDate`: a single point in time. Unlike the latter, however, an `NSDateComponents` instance lets you access and manipulate every single calendrical component of that absolute point[5](#fn:5), from the year down to the second and including such things as era, calendar, time zone and weekday.
+We have almost everything we need now to manipulate dates in our code. Our fourth class, `NSDateComponents`, represents kind of the same information as `NSDate`: a single point in time. Unlike the latter, however, an `NSDateComponents` instance lets you access and manipulate every single calendrical component of that absolute point^[5](#fn:5), from the year down to the second and including such things as era, calendar, time zone and weekday.
 
 ## Constructing Dates
 

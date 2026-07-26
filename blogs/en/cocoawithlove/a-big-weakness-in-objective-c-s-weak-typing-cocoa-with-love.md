@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9ff630dd88d29c83'
 translated: false
 ---
@@ -28,11 +28,7 @@ NSString *description = [[someArray objectAtIndex:0] substringFromIndex:5];
 
 In this code sample, we don't need to cast the result of the `objectAtIndex:` invocation to an `NSString` before sending it the `substringFromIndex:` message — we know that as long as the object at index 0 actually is an object that responds to the `substringFromIndex:` selector, it will work.
 
-> or
-> 
-> . This post does not apply if the variable you invoke a method on is typed to anything else (even
-> 
-> will count as "anything else" and avoid the issues in this post).
+> This post is about invoking methods on either of Objective-C's two "weak" types: `id` or `Class`. This post does not apply if the variable you invoke a method on is typed to anything else (even `id<SomeProtocol>` will count as "anything else" and avoid the issues in this post).
 
 ## False assumptions
 
@@ -66,15 +62,7 @@ The compiler prepares parameters using the method signature (which it gets by lo
 
 Unfortunately, instead of our `MyClass` method, the compiler decided to match against the `NSBezierPath` method named `currentPoint` and has prepared the parameters to match that method's signature. The `NSBezierPath` method returns an `NSPoint` which is a `struct` and handles the return parameter very differently compared to the `int` parameter our real method actually uses. This has lead to our return type getting corrupted.
 
-> value return type here because it is the most likely to generate a bug, since a struct return type causes the compiler to generate an
-> 
-> for the message invocation instead of a regular
-> 
-> . However, it is also possible to create problems with non-return parameters of different lengths, particularly if the conflict is between floating point and non-floating point parameters or
-> 
-> and non-
-> 
-> parameters.
+> I use the example of a `struct` value return type here because it is the most likely to generate a bug, since a struct return type causes the compiler to generate an `objc_msgSend_stret` for the message invocation instead of a regular `objc_msgSend`. However, it is also possible to create problems with non-return parameters of different lengths, particularly if the conflict is between floating point and non-floating point parameters or `struct` and non-`struct` parameters.
 
 ## Fixing the problem (most of the time)
 
@@ -94,24 +82,10 @@ Technically, there is a compiler warning that will alert you to this category of
 
 It would be great if Strict Selector Matching always worked and we could turn it on at all times. That Apple don't turn it on by default is either because they consider the problem rare enough to ignore or it is an admission of the significant limitations of the warning as it currently behaves:
 
-1. . Basically, there's no reason to care if there is a conflict between two methods different but totally compatible method signatures but this compiler warning will still occur.
-2. due to point (1). I'm looking at you, different implementations of
-
-  ,
-
-  and most methods in
-
-  versus
-
-  . These spurious warnings may force you to carefully typecast large numbers of method calls that won't actually cause any problem.
-3. . This one is a bit absurd since a
-
-  object is regularly handled as a generic
-
-  .
-4. . If you failed to import the declaration of the correct method but you did import the declaration of a different method with a matching name but different signature, then I'm not sure the compiler
-
-  warn you about this problem.
+1. **It will over-warn you**. Basically, there's no reason to care if there is a conflict between two methods different but totally compatible method signatures but this compiler warning will still occur.
+2. Plenty of **Apple's own methods will cause spurious warnings** due to point (1). I'm looking at you, different implementations of `objectForKey:`, `count` and most methods in `NSNotificationCenter` versus `NSDistributedNotificationCenter`. These spurious warnings may force you to carefully typecast large numbers of method calls that won't actually cause any problem.
+3. **It will not warn you about conflicts between a class and instance methods**. This one is a bit absurd since a `Class` object is regularly handled as a generic `id`.
+4. **It won't help if you haven't imported the correct definition at all**. If you failed to import the declaration of the correct method but you did import the declaration of a different method with a matching name but different signature, then I'm not sure the compiler _could_ warn you about this problem.
 
 ## A scenario where casting won't fix the problem
 

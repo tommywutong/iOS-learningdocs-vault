@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:838b2654e4f8963b'
 translated: false
 ---
@@ -153,7 +153,7 @@ Maybe it’s a good starting point for a contribution?
 ### Further reading
 
 - man 7 tests
-- FreeBSD Test Suite
-- Kyua: An introduction for NetBSD users
-- Kyua: project wiki
-- Test Anything Protocol
+- [FreeBSD Test Suite](https://wiki.freebsd.org/TestSuite)
+- [Kyua: An introduction for NetBSD users](https://wiki.netbsd.org/kyua/)
+- [Kyua: project wiki](https://github.com/jmmv/kyua/wiki/About)
+- [Test Anything Protocol](https://en.wikipedia.org/wiki/Test_Anything_Protocol)

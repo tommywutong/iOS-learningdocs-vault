@@ -7,7 +7,7 @@ original_language: en
 published: 2020-01-28
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f08f45a32f50ec65'
 translated: false
 ---
@@ -34,16 +34,16 @@ translated: false
 
 A few weeks ago I got sucked into designing a toy 8-bit CPU, [ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/), and got as far as writing an emulator for the machine that you could manually feed instructions to. At the end, I listed some future projects, the first of which was
 
-> - for manually computing addresses and offsets, so I still want to get to this at some point.
+> - An assembler/interpreter, i.e. running from a text file (and outputting to a binary file, I guess). Writing arrays of instructions by hand (as shown above) isn’t so bad _except_ for manually computing addresses and offsets, so I still want to get to this at some point.
 
 This turned out to be quite the endeavor! I found out computing offsets and addresses is tricky in a program where not all instructions are the same length, and doubly so when certain parts of the program have to be located in certain parts of memory. It took me [about a week](https://belkadan.com/source/ROSE-8/shortlog/53a7984e4a9b3994165fbb15d2f02e9dd6c22d7c..ff92269b67a3c2bbd7e94929432b1a0306bb8667) to put together an assembler that had all the features I wanted.
 
 The [readme](https://belkadan.com/source/ROSE-8) shows the architecture I eventually came up with
 
-> - : Declares the basic representation for parsed instructions and such.
-> - : Converting textual assembly code to an in-memory parsed representation.
-> - : Converting the parsed representation to architecture instructions (and then encoding them to machine code).
-> - : The final representation of an assembled program, which can be run directly or emitted to a file.
+> - **Module.swift**: Declares the basic representation for parsed instructions and such.
+> - **Parser.swift**: Converting textual assembly code to an in-memory parsed representation.
+> - **Assembler.swift**: Converting the parsed representation to architecture instructions (and then encoding them to machine code).
+> - **Program.swift**: The final representation of an assembled program, which can be run directly or emitted to a file.
 
 and the fact that I needed an “architecture” at all shows that it was more complicated than I expected going in! I’m pretty happy with what I came up with, though—it’s got a good separation of data and logic, and uses immutability and lots of helper types to make it clear what the invariants are at each step. You can [check it out](https://belkadan.com/source/ROSE-8) on my newly-set-up [gitweb](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/) instance. (Note that that URL is also a valid git “clone” URL if you want to play with ROSE-8 locally.)
 

@@ -32,9 +32,7 @@ Implementing Fast Enumeration is accomplished by implementing the `NSFastEnumera
     - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len;
 ```
 
-Easy enough, right? But what's that
-
-thing?
+Easy enough, right? But what's that `NSFastEnumerationState` thing?
 
 ```
     typedef struct {
@@ -104,11 +102,7 @@ The compiler creates an `NSFastEnumerationState` on the stack, as well as a stac
     }
 ```
 
-Notice how this code never touches or examines the
-
-and
-
-fields. As I mentioned before, these are provided purely for the use of the collection, and to facilitate that, their value is preserved between calls while within the same loop.
+Notice how this code never touches or examines the `state` and `extra` fields. As I mentioned before, these are provided purely for the use of the collection, and to facilitate that, their value is preserved between calls while within the same loop.
 
 **Returning One Object At a Time**  
  A major point of `NSFastEnumeration` is to achieve speed through bulk enumeration. Returning one object at a time defeats that point. However, it's easy to implement, and still gets you the benefit of being able to use `for`/`in` syntax. In the spirit of avoiding premature optimization, if returning one object at a time is easy, then go for it.
@@ -122,9 +116,7 @@ As an example, imagine you have a linked list class:
     }
 ```
 
-Now let's implement
-
-for this class, in the simplest possible way, by returning one object at a time:
+Now let's implement `NSFastEnumeration` for this class, in the simplest possible way, by returning one object at a time:
 
 ```
     - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len
@@ -214,11 +206,7 @@ This is really not bad at all. It gets a little ugly with the pointer/integer ca
     }
 ```
 
-This is not too much harder, and will significantly reduce the number of message sends that occur in the
-
-/
-
-loop.
+This is not too much harder, and will significantly reduce the number of message sends that occur in the `for`/`in` loop.
 
 **Returning a Bulk Interior Pointer**  
  For best efficiency, you can return a pointer to contiguously stored objects. For example, say you have a simple array class like this:
@@ -231,9 +219,7 @@ loop.
     }
 ```
 
-Implementing
-
-for this class is really easy. It can return a single interior pointer to all of the objects, and that's it
+Implementing `NSFastEnumeration` for this class is really easy. It can return a single interior pointer to all of the objects, and that's it
 
 ```
     - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id *)stackbuf count:(NSUInteger)len
@@ -250,9 +236,7 @@ for this class is really easy. It can return a single interior pointer to all of
     }
 ```
 
-That was easy! It'll also be really fast, because the enumeration loop will basically devolve into a straight C
-
-loop.
+That was easy! It'll also be really fast, because the enumeration loop will basically devolve into a straight C `for` loop.
 
 This technique can also be used, with some care, for more complex data structures. If you have a series of contiguous object pointers, you can return pointers to each one in turn, which will result in efficient enumeration over all of the objects in sequence. You can make good use of the `extra` values to keep track of where you are in your internal data structure.
 
@@ -276,9 +260,7 @@ But beware! This will break with this completely legal enumeration code:
     [pool release];
 ```
 
-When the autorelease pool goes away, it'll take your array with it, and the next time you try to access it, you'll explode. And you can't retain the array, either, because there's no guarantee the caller will loop all the way to the end to let you release it; they might
-
-out of the loop early, and then you've leaked the object.
+When the autorelease pool goes away, it'll take your array with it, and the next time you try to access it, you'll explode. And you can't retain the array, either, because there's no guarantee the caller will loop all the way to the end to let you release it; they might `break` out of the loop early, and then you've leaked the object.
 
 There's really no general way to solve this. (I've concocted a completely insane scheme which involves tracking the position of the stack pointer to know when it's safe to destroy temporary objects, but it's, well, completely insane.) If you can, try to avoid storing temporary Objective-C objects in `extra` like this. And if you must do it, just keep in mind that you have to be careful with autorelease pools in the `for`/`in` loops that you use with this object. Since you're likely to be the only client of your `NSFastEnumeration` implementation, this is a reasonable constraint to make, but it's something that you have to be aware of.
 
@@ -295,7 +277,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-04-16-implementing-fast-enumeration.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2026-06-07
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:23fff0df9542aa58'
 translated: false
 ---
@@ -20,44 +20,22 @@ translated: false
 
 LLVM has several hash tables. They used quadratic probing with in-band sentinel keys (empty, tombstone); recent work has been replacing that with linear probing with tombstone key removed.
 
-- (replacement for
+- `DenseMap` (replacement for `std::unordered_map`): `DenseMapInfo::getEmptyKey()` / `getTombstoneKey()`.
 
-  ):
+    - `DenseSet`: implemented using `DenseMap`
+    - `compiler-rt/lib/sanitizer_common/sanitizer_dense_map.h` ports the implementation for sanitizers.
+- `SmallPtrSet` (replacement for `std::unordered_set<T *>`): hard-coded `-1` (empty) and `-2` (tombstone).
+- `StringMap` (replacement for `std::unordered_map<std::string, V>`)
 
-  /
-
-  .
-
-    - : implemented using
-    - ports the implementation for sanitizers.
-- (replacement for
-
-  ): hard-coded
-
-  (empty) and
-
-  (tombstone).
-- (replacement for
-
-  )
-
-    - : implemented using
+    - `StringSet`: implemented using `StringMap`
 
 For the open-addressed `DenseMap` and `SmallPtrSet`, pointers, references, and iterators are invalidated by insert. `StringMap` is different: each entry lives in a heap-allocated `StringMapEntry<V>` node, so entry pointers survive grow. `std::unordered_map`, being node-based, keeps surviving-element pointers valid across both insert and erase and only invalidates the erased element's own iterator. LLVM code rarely needs that stronger contract — callers do not hold long-lived references into the container across mutation — and that gap is what gives pass to relocating erase and bit-array occupancy.
 
 Recently,
 
-- also invalidates pointers.
-- /
-
-  /
-
-  ) had
-
-  /
-
-  reserved — a footgun, now fixed.
-- .
+- Tombstones have been removed from DenseMap and SmallPtrSet. `erase()` also invalidates pointers.
+- DenseMap has also retired its empty-key sentinel, leading to significant performance improvements. DenseMap with integer keys (`int`/`unsigned`/`size_t`) had `-1`/`-2` reserved — a footgun, now fixed.
+- StringMap got Algorithm R deletion too. Its entries are separately heap-allocated, so erase keeps entry pointers valid but invalidates iterators; erase-while-iterating moved to `remove_if`.
 
 ## SmallPtrSet
 
@@ -73,12 +51,8 @@ I've investigated Robin Hood Hashing and Abseil Swiss Table family implementatio
 
 Two major changes have been merged:
 
-- #200595
-
-  )
-- #201281
-
-  )
+- Replace the tombstone state with Algorithm R deletion. ([#200595](https://github.com/llvm/llvm-project/pull/200595))
+- Replace the empty state with a bitarray. ([#201281](https://github.com/llvm/llvm-project/pull/201281))
 
 ### What the workload looks like
 
@@ -152,80 +126,8 @@ After this patch, `DenseMap<int/unsigned/size_t, X>` accepts every value of the 
 
 ### Tree-wide simplification
 
-- went out as
-
-  ADT #200959
-
-  ,
-
-  IR+Analysis #200958
-
-  ,
-
-  CodeGen+Transforms #200956
-
-  ,
-
-  llvm-rest #200957
-
-  ,
-
-  Target #200955
-
-  , and
-
-  clang #200634
-
-  .
-- removal (post-#201281) followed in
-
-  BOLT #201986
-
-  ,
-
-  clang #201987
-
-  ,
-
-  flang #201988
-
-  ,
-
-  lld #201989
-
-  ,
-
-  lldb #201990
-
-  ,
-
-  mlir #201991
-
-  ,
-
-  Polly #201992
-
-  ,
-
-  Target #201993
-
-  ,
-
-  CodeGen+Transforms #201994
-
-  ,
-
-  llvm #201996
-
-  ,
-
-  IR+Analysis #201997
-
-  , and
-
-  ADT #201998
-
-  .
+- `getTombstoneKey()` went out as [ADT #200959](https://github.com/llvm/llvm-project/pull/200959), [IR+Analysis #200958](https://github.com/llvm/llvm-project/pull/200958), [CodeGen+Transforms #200956](https://github.com/llvm/llvm-project/pull/200956), [llvm-rest #200957](https://github.com/llvm/llvm-project/pull/200957), [Target #200955](https://github.com/llvm/llvm-project/pull/200955), and [clang #200634](https://github.com/llvm/llvm-project/pull/200634).
+- `getEmptyKey()` removal (post-#201281) followed in [BOLT #201986](https://github.com/llvm/llvm-project/pull/201986), [clang #201987](https://github.com/llvm/llvm-project/pull/201987), [flang #201988](https://github.com/llvm/llvm-project/pull/201988), [lld #201989](https://github.com/llvm/llvm-project/pull/201989), [lldb #201990](https://github.com/llvm/llvm-project/pull/201990), [mlir #201991](https://github.com/llvm/llvm-project/pull/201991), [Polly #201992](https://github.com/llvm/llvm-project/pull/201992), [Target #201993](https://github.com/llvm/llvm-project/pull/201993), [CodeGen+Transforms #201994](https://github.com/llvm/llvm-project/pull/201994), [llvm #201996](https://github.com/llvm/llvm-project/pull/201996), [IR+Analysis #201997](https://github.com/llvm/llvm-project/pull/201997), and [ADT #201998](https://github.com/llvm/llvm-project/pull/201998).
 
 Several of these commits showed small but consistent wins on the tracker. The IR+Analysis cleanups in particular — [#200958](https://llvm-compile-time-tracker.com/compare.php?from=414b8b986705d24e415e8ef17bc8ddbbd6839712&to=e0f5ce18c04a5c55e5eb4e35e5ab1f1980e15c31&stat=instructions:u) for `getTombstoneKey()` and [#201997](https://llvm-compile-time-tracker.com/compare.php?from=c384de1c688bab5d5d1fbf1bb3d31895c98e34cd&to=3232b4d0e07802a1852874910815489dc3e4774a&stat=instructions:u) for `getEmptyKey()` — each measured around -0.05% to -0.10% stage1-O3 instructions and -0.23% clang wall time. But the headline win is in the trait itself, not the timings: integer keys are now safe, the MLIR #54908 crash class is gone, and the AssertingVH downcast UB becomes moot. The design discussion lives in [#200183](https://github.com/llvm/llvm-project/issues/200183).
 
@@ -243,15 +145,9 @@ No used-bit array: `StringMap` lacks the in-bucket key load that justified it on
 
 Prototyped, measured, rejected on `SmallPtrSet` and `DenseMap`.
 
-- (metadata + home-rooted chains). Wins negative-probe and iteration; loses
-
-  self-build — metadata + chain logic inlines into every call site for
-
-  . Combined allocation, NOINLINE cold paths, fragment removal all tried; ~+3% instructions / ~+5% size at best.
-- . The find-miss early-out depends on knowing each resident's displacement; without stored metadata it requires re-hashing every resident on the probe walk, which costs more than the saved probes. Storing the displacement recovers the early-out but adds a metadata cache line, and the swap-carry on insert is intrinsic —
-
-  regardless of layout.
-- . Bad at pointer keys and code size.
+- **Verstable** (metadata + home-rooted chains). Wins negative-probe and iteration; loses `clang` self-build — metadata + chain logic inlines into every call site for **+4–10% binary**. Combined allocation, NOINLINE cold paths, fragment removal all tried; ~+3% instructions / ~+5% size at best.
+- **Robin Hood**. The find-miss early-out depends on knowing each resident's displacement; without stored metadata it requires re-hashing every resident on the probe walk, which costs more than the saved probes. Storing the displacement recovers the early-out but adds a metadata cache line, and the swap-carry on insert is intrinsic — **+10–20% insert vs Algorithm R** regardless of layout.
+- **`boost::unordered_flat_map`**. Bad at pointer keys and code size.
 
 ## DenseMap variant optimized for pointer key?
 
@@ -259,13 +155,9 @@ I considered whether DenseMap for pointer keys should keep an in-band sentinel v
 
 ## Takeaways
 
-- #197390
-
-  fixed the weak pointer hash.
+- Linear probing + a good mixer beats quadratic + tombstones on a pointer-heavy workload. [#197390](https://github.com/llvm/llvm-project/pull/197390) fixed the weak pointer hash.
 - Swiss Table family implementations are poor at small keys. If deletion performance does not matter, you don't need its heavy implementation.
-- was the dry run that de-risked
-
-  : same algorithm, smaller blast radius, same conclusion on rejected alternatives.
+- `SmallPtrSet` was the dry run that de-risked `DenseMap`: same algorithm, smaller blast radius, same conclusion on rejected alternatives.
 - Tombstones aren't free at 4% erase — they slow down insertion.
 
 ## Aggregate compile-time impact
@@ -273,9 +165,7 @@ I considered whether DenseMap for pointer keys should keep an in-band sentinel v
 All numbers below compare one squashed commit against its parent, the pre-series baseline `5d5220c5` (the commit before `[SmallPtrSet] Drop tombstones in large mode`, #197637). The squash bundles the whole series so the tracker sees the cumulative effect as a single from→to:
 
 - SmallPtrSet/DenseMap: #197637, #198982, #199369, #200540, #200595, #201281, #201742
-- /
-
-  cleanups: #200958, #201997
+- IR/Analysis `getTombstoneKey`/`getEmptyKey` cleanups: #200958, #201997
 - StringMap: #202103, #202237, #202272, #202520
 
 Aggregate measurements from [llvm-compile-time-tracker.com](https://llvm-compile-time-tracker.com/):

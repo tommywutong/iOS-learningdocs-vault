@@ -7,7 +7,7 @@ original_language: en
 published: 2020-09-21
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0ae1d1f225573ab9'
 translated: false
 ---
@@ -28,7 +28,7 @@ translated: false
 
 ## [The Swift Runtime: Uniquing Caches](#)
 
-Welcome to the fourth in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about the caches used to unique type metadata (and other things that need uniquing).more
+Welcome to the fourth in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about the caches used to unique type metadata (and other things that need uniquing).
 
 As mentioned previously, I implemented my stripped-down runtime in Swift as much as possible, though I had to use a few undocumented Swift features to do so. I’ll be showing excerpts of my runtime code throughout these posts, and you can check out the full thing [in the ppc-swift repository](https://belkadan.com/source/ppc-swift-project/tree/refs/heads/dev:/stdlib/_Runtime).
 
@@ -64,7 +64,7 @@ return MetadataResponse(metadata: metadata, state: .complete)
 
 Ooookay, maybe not. We do get the “pattern” that was mentioned last time, but instead of passing it to `swift_allocate­Generic­ValueMetadata`, we call some sort of “instantiation function” stored in the pattern. This is an opportunity for the compiler to insert some custom logic before actually doing the allocation, such as properly signing the arguments for [pointer authentication](https://developer.apple.com/documentation/security/preparing_your_app_to_work_with_pointer_authentication). But it will eventually call `swift_allocate­Generic­ValueMetadata` and give us our new metadata back.
 
-And then we have a _second_ callback that we call immediately if the type is “incomplete” after being instantiated. What’s that about? Turns out the real Swift runtime is set up to handle [circular dependencies between types](https://bugs.swift.org/browse/SR-263), while my implementation, uh, does not. In the real Swift runtime, metadata is instantiated for a type, which can cause its dependencies to be instantiated, but the completion functions for these newly-instantiated metadata allocations don’t get called until all the dependencies have been instantiated and recorded in the cache-we-have-yet-to-build. This, along with making sure that dependencies still only access the basic information in a type (usually just its identity and generic arguments), solves the circular dependency problem. I decided to just not support this, since most types don’t have circular dependencies at instantiation time.[1](#fn:circular) (By the way, the handling of circular dependencies is also what that `request` parameter is about. We’re just going to ignore it.)
+And then we have a _second_ callback that we call immediately if the type is “incomplete” after being instantiated. What’s that about? Turns out the real Swift runtime is set up to handle [circular dependencies between types](https://bugs.swift.org/browse/SR-263), while my implementation, uh, does not. In the real Swift runtime, metadata is instantiated for a type, which can cause its dependencies to be instantiated, but the completion functions for these newly-instantiated metadata allocations don’t get called until all the dependencies have been instantiated and recorded in the cache-we-have-yet-to-build. This, along with making sure that dependencies still only access the basic information in a type (usually just its identity and generic arguments), solves the circular dependency problem. I decided to just not support this, since most types don’t have circular dependencies at instantiation time.^[1](#fn:circular) (By the way, the handling of circular dependencies is also what that `request` parameter is about. We’re just going to ignore it.)
 
 So, the _instantiation function_ allocates and fills in the generic metadata as much as it can, and then there may also be a _completion function_ that does some additional work to make a complete, ready-to-use type. Makes sense, I hope!
 
@@ -101,7 +101,7 @@ Relative pointers offer a more efficient alternative when referring to something
 
 Oh, and that “additional offset” argument is needed for whenever a relative pointer is accessed that _isn’t_ the first field of the pointed-to struct. Ideally I’d use [`MemoryLayout.offset(of:)`](https://developer.apple.com/documentation/swift/memorylayout/2996397-offset) for this, but [that’s not a compile-time constant](https://bugs.swift.org/browse/SR-12961), and I didn’t actually implement a run-time representation of key paths for this project, so that wasn’t an option.
 
-But that’s what’s going on here: the generic metadata pattern stores a relative reference to the instantiation function, and I’ve defined a convenience property to resolve that relative reference.[2](#fn:functions)
+But that’s what’s going on here: the generic metadata pattern stores a relative reference to the instantiation function, and I’ve defined a convenience property to resolve that relative reference.^[2](#fn:functions)
 
 ### Choosing our cache key
 
@@ -156,9 +156,9 @@ When I started, I would have thought `numParams` was the right value, but it tur
 | `Combine.Concatenate<` ` P: Publisher, S: Publisher` `> where P.Output == S.Output,` `P.Failure == S.Failure` | 2 | 4 | 4 | 0 |
 | `extension Array` `where Element == Int {` ` struct Contrived {}` `}` | 1 | 1 | 0 | 0 |
 
-The “key” to understanding the above examples is that the number of key arguments is equal to the number of parameters (including those in parent scopes), minus the parameters that are constrained to be concrete types, plus the number of conformance constraints.[3](#fn:objc-protos) All other kinds of constraints, whether layout (class-bound), superclass, or same-type, can be derived directly from the type without a global lookup.
+The “key” to understanding the above examples is that the number of key arguments is equal to the number of parameters (including those in parent scopes), minus the parameters that are constrained to be concrete types, plus the number of conformance constraints.^[3](#fn:objc-protos) All other kinds of constraints, whether layout (class-bound), superclass, or same-type, can be derived directly from the type without a global lookup.
 
-So, why are _these_ the key arguments instead of the parameters? Well, first of all, the parameters might include types that don’t need to be passed in at run time, like `Array.Element` in the `Contrived` example. But the other reason is a way to deal with conflicting conformances defined in different modules. If two different modules define different conformances to Hashable for the same type, a Set created in one module won’t produce the right results when used from the other! The Swift community is still trying to work out what to do about this in general, but the runtime, at least, will keep you from getting garbage results: it considers these two Sets to be different types even though they might have the same element type. That’s what we get from including conformances in the key arguments.[4](#fn:witness-tables)
+So, why are _these_ the key arguments instead of the parameters? Well, first of all, the parameters might include types that don’t need to be passed in at run time, like `Array.Element` in the `Contrived` example. But the other reason is a way to deal with conflicting conformances defined in different modules. If two different modules define different conformances to Hashable for the same type, a Set created in one module won’t produce the right results when used from the other! The Swift community is still trying to work out what to do about this in general, but the runtime, at least, will keep you from getting garbage results: it considers these two Sets to be different types even though they might have the same element type. That’s what we get from including conformances in the key arguments.^[4](#fn:witness-tables)
 
 And what’s up with that empty `numExtraArguments` entry? Well, it’s currently unused, but my former coworker John McCall confirms [it was _once_ used for conformances](https://twitter.com/pathofshrines/status/1282452532451844097), i.e. they were _not_ considered key arguments in the past. So you can see that the idea of “conflicting conformances” is a tricky one. (In the future, the compiler could use this functionality to add extra “generic arguments” that aren’t part of the uniquing key, though I’m not sure what those would be.)
 
@@ -317,7 +317,7 @@ It’s a little awkward because `CompareAndSwap` is defined in terms of UInt32 r
 
 The reason this works is because the initialization is effectively a one-time, one-way transition. If we had to distinguish between a first compare-and-swap and a subsequent one, this might get a lot more complicated. And I should also note that **this still breaks the [formal rules](https://github.com/apple/swift-evolution/blob/master/proposals/0282-atomics.md)** by reading from a global variable while another thread might be in the middle of modifying it. Swift doesn’t currently have a way to tell the _compiler_ to do a “safe” read. We’re just lucky that the code the compiler emits for a single-threaded mode is going to work for a multi-threaded mode as well.
 
-…oh, and we are also relying on the fact that passing a global variable `inout` to an API that expects a pointer is going to actually use the storage address of that global variable, rather than a temporary.[5](#fn:global)
+…oh, and we are also relying on the fact that passing a global variable `inout` to an API that expects a pointer is going to actually use the storage address of that global variable, rather than a temporary.^[5](#fn:global)
 
 But with this helper, we can now protect all of our global-state-modifying work with a “critical region”. That gives us the final version of `swift_get­GenericMetadata`:
 

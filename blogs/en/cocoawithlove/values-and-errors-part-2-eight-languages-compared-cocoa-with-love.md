@@ -7,7 +7,7 @@ original_language: en
 published: 2016-08-23
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c6d8ae1d2cb251b6'
 translated: false
 ---
@@ -197,9 +197,7 @@ For handling disjunctions over value or error results, the following are used to
 
 - Variations on C-style error handling (result code plus out-pointer).
 - C++ exceptions
-- (or
-
-  in C++17)
+- Tagged unions using `boost::variant` (or `std::variant` in C++17)
 
 I’m going to use the latter two, even though the first might be the most universal (I’ve already written a section in C for this article).
 
@@ -313,9 +311,7 @@ Haskell’s error handling is fundamentally anchored in monads. Often these are 
 Haskell has many good aspects when it comes to code correctness and error handling:
 
 - memory safe programming language
-- partial functions
-
-  than common imperative languages so you’re less unlikely to see exceptions/aborts
+- fewer [partial functions](https://www.cocoawithlove.com/blog/2016/01/25/partial-functions-part-one-avoidance.html) than common imperative languages so you’re less unlikely to see exceptions/aborts
 - no force unwrapping or other cheating
 
 However, Haskell’s approach to error handling does have some limitations. Specifically, monadic handling makes it very easy to “bind” (`>>=`) to get the “success” result and totally ignore what happens in an error case. Monadic handling encourages the ignoring of errors. If this code had omitted the `catch` handling, the `IO` monad would have propagated all the way to the output of the `main` function.
@@ -379,12 +375,8 @@ In this example, Java’s use of `throws`, `throw` and `catch` closely resemble 
 
 Negatives of the approach for common error handling include:
 
-1. in the C# section, below
-
-  .
-2. class captures a full stack trace and other information, which, along with allocation overhead and exception hander overhead,
-
-  makes it 60 times slower than returning an error code
+1. In Java, the exception types thrown must be fully enumerated – a difference that is sometimes an advantage and sometimes a burden. I’ll look at the problems this causes [in the C# section, below](#c-2).
+2. Java’s `Exception` class captures a full stack trace and other information, which, along with allocation overhead and exception hander overhead, [makes it 60 times slower than returning an error code](http://stackoverflow.com/questions/299068/how-slow-are-java-exceptions)
 3. The name “exception” leads to reasonable questions about whether it should be regularly used or used only in exceptional circumstances.
 
 Ignoring poor performance, the biggest problem affecting Java’s checked exceptions is the existence of “unchecked exceptions”. While checked exceptions are usable for common errors, unchecked exceptions are absolutely for exceptional circumstances (programmer errors which should lead to an abort). Despite the fact that they should be a rarer choice, unchecked exceptions are actually easier to use, since they don’t need to be declared.

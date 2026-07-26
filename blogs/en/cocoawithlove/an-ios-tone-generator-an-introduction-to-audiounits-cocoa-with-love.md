@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:93f464a643325ec5'
 translated: false
 ---
@@ -30,11 +30,7 @@ The sample application for this post is really simple: a slider to control frequ
 
 The tone is generated continuously while you change the frequency so you can play with the tone generator like a slide whistle for hours of neighbour-annoying fun.
 
-> and the complete sample project used in this post here
-> 
-> ToneGenerator.zip
-> 
-> (25kb)
+> You can download the ` ToneGenerator ` and the complete sample project used in this post here [ToneGenerator.zip](https://www.cocoawithlove.com/assets/objc-era/ToneGenerator.zip) (25kb)
 
 ## Audio Units
 
@@ -205,11 +201,7 @@ In the sample program, toggling playback performs a full teardown and recreation
 
 ## Conclusion
 
-> and the complete sample project used in this post here
-> 
-> ToneGenerator.zip
-> 
-> (25kb)
+> You can download the ` ToneGenerator ` and the complete sample project used in this post here [ToneGenerator.zip](https://www.cocoawithlove.com/assets/objc-era/ToneGenerator.zip) (25kb)
 
 The aim in this post was to present a sample iOS application that shows `AudioUnit`s in the simplest way possible. Most of the Apple sample projects are considerably more elaborate, involve complex `AUGraph`s or can't be used on iOS because they use Mac-only APIs.
 

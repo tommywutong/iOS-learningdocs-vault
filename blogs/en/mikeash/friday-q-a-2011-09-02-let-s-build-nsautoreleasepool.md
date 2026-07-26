@@ -223,10 +223,10 @@ The class is now complete!
 **Lessons**  
 There are some good lessons to be learned from this exercise. Most importantly is that `NSAutoreleasePool` is a pretty straightforward class without much in the way of hidden gotchas. There's nothing complex going on behind the scenes. People new to Cocoa memory management often imagine that `autorelease` is much more complex than it really is, and ask questions like "How can I tell if an object has been autoreleased?" or "What happens if I autorelease an object twice?" Specifically, we can now see:
 
-- to those objects later. This is perfectly fine, because your code should never care whether an object has already been autoreleased.
+- There's no way to tell if an object has been autoreleased. The pool is a fairly dumb container with only the barest idea of what it contains. It really just keeps a list for the purposes of sending `release` to those objects later. This is perfectly fine, because your code should never care whether an object has already been autoreleased.
 - Objects that are autoreleased twice just get added to the pool twice, and then when the pool is destroyed they get released twice.
 - Autoreleased objects get released when the current autorelease pool is destroyed. Pools are destroyed when the code that created them explicitly destroys them. If you aren't managing your own pools, then autoreleased objects will survive at least until you return to code you don't own (like Cocoa).
-- methods do this for you.)
+- If you autorelease an object on one thread and then pass it to another thread, nothing special happens. The object is still released when the first thread's pool gets destroyed, regardless of what's happening on the new thread. If you need an object to survive the passage, it needs to be retained before sending and then released after receiving. (Fortunately, the cross-thread messaging mechanisms you're likely to use with objects, like GCD/blocks and Cocoa's `perform...` methods do this for you.)
 
 **Conclusion**  
 That wraps up today's exploration of Cocoa internals. Now you know approximately how `NSAutoreleasePool` gets its job done and how it works. The implementation specifics vary (especially on Lion), but the basic ideas are the same. By knowing how memory management internals work, you can write better and less error-prone code.
@@ -241,7 +241,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-09-02-lets-build-nsautoreleasepool.html)
 
 Add your thoughts, post a comment:
 

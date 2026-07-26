@@ -7,7 +7,7 @@ original_language: en
 published: 2022-03-19
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3a4214a0c2187cae'
 translated: false
 ---
@@ -26,13 +26,13 @@ translated: false
 
 In the general interest of pay transparency, here’s a table showing how much I made at Apple (a Big Company that’s nonetheless not known for particularly high compensation in the tech industry), vs Signal (a nonprofit that nonetheless understands that it has to be in Tech Salary Range to be competitive).
 
-(Why “#TalkPay”? It’s a Twitter hashtag that seems to have originally come from 2013’s conversation around the gender wage gap…but I first heard it in the context of openly sharing your name, location, role, and salary, so that others in similar positions could check if they were being paid a fair amount. Lauren Voswinkel, who put out the original call for action in 2015, [has a good rundown](https://recompilermag.com/issues/extras/talkpay-and-the-importance-of-collective-action/).)more
+(Why “#TalkPay”? It’s a Twitter hashtag that seems to have originally come from 2013’s conversation around the gender wage gap…but I first heard it in the context of openly sharing your name, location, role, and salary, so that others in similar positions could check if they were being paid a fair amount. Lauren Voswinkel, who put out the original call for action in 2015, [has a good rundown](https://recompilermag.com/issues/extras/talkpay-and-the-importance-of-collective-action/).)
 
 | Year | Base Salary | W-2 Gross | W-2 Post-tax | Event |
 |---|---|---|---|---|
-| 2012 | $105,000 | [1](#fn:1) | [1](#fn:1) | Joined Apple |
-| 2013 | $115,000[2](#fn:2) | $137,000 | $90,000 | First full year at Apple |
-| 2018 | $185,000[3](#fn:3) | $400,000 | $270,000 | Last full year at Apple |
+| 2012 | $105,000 | ^[1](#fn:1) | ^[1](#fn:1) | Joined Apple |
+| 2013 | $115,000^[2](#fn:2) | $137,000 | $90,000 | First full year at Apple |
+| 2018 | $185,000^[3](#fn:3) | $400,000 | $270,000 | Last full year at Apple |
 | 2021 | $160,000 | $266,000 | $200,000 | First full year at Signal |
 
 Some notes:
@@ -55,7 +55,7 @@ From a market perspective, I’m probably “underpaid”, in that I could go so
 
 So in conclusion, while you should definitely [negotiate your offers](https://belkadan.com/blog/2020/11/Negotiate-Your-Offers/)…fellow software developers, especially those who are white men like me, I expect you to be donating a portion of your salaries to charity and/or mutual aid funds, to be tipping well at restaurants regardless of what service you get, to support unions and strikes, and to not complain about the cost of living when the people all around us are living paycheck to paycheck…and maybe even work for a future where that’s no longer true.
 
-1. I joined in the middle of the year, so the number that shows up on my taxes for these years isn’t accurate. [↩︎](#fnref:1) [↩︎2](#fnref:1:1)
+1. I joined in the middle of the year, so the number that shows up on my taxes for these years isn’t accurate. [↩︎](#fnref:1) [↩︎^2](#fnref:1:1)
 2. Looking at the files I kept from Apple, I got two raises this year, so the salary at the start was $105,000 and at the end was $125,000. (Your base salary is only an important number for negotiation purposes; the IRS doesn’t care, and so I didn’t pay close attention.) I don’t think the double raise was usual; I think it was at least partly making up for my initial hire date being right after a performance review, and my manager looking out for me. [↩︎](#fnref:2)
 3. I’m not 100% sure when this raise happened; it may have been well into 2018 already. But I don’t think I got any further raises, only bonuses, before leaving in 2019. [↩︎](#fnref:3)
 

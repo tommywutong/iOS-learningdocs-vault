@@ -68,9 +68,7 @@ To be safe, Object A should always zero out B's weak reference when it's destroy
     }
 ```
 
-(This is also a good practice to follow with any weak reference, including things like
-
-data sources.)
+(This is also a good practice to follow with any weak reference, including things like `NSTableView` data sources.)
 
 An alternative approach is to have another object act as the parent for both sub-objects. This can work with either retained or weak references between the sub-objects. With retained references:
 
@@ -133,11 +131,7 @@ Which way is better? They're both basically equivalent. I think that using retai
     }
 ```
 
-There's a retain cycle here! This object retains the timer, and the timer retains its target. And note that you can't fix this by not retaining
-
-. The run loop will also retain the timer, and won't release it untill the call to
-
-. This acts as a second retained reference to the timer, causing what is essentially a cycle even without the explicit retained reference.
+There's a retain cycle here! This object retains the timer, and the timer retains its target. And note that you can't fix this by not retaining `_timer`. The run loop will also retain the timer, and won't release it untill the call to `invalidate`. This acts as a second retained reference to the timer, causing what is essentially a cycle even without the explicit retained reference.
 
 This exact same problem also happens with an `NSThread`, when specifying `self` as the target, and then shutting down the thread in `dealloc`. The `dealloc` method will never run, so the thread will never be shut down.
 
@@ -217,13 +211,7 @@ The other way is to split your code into two classes. You have a shell class whi
     @end
 ```
 
-By splitting the implementation from the interface, you avoid the retain cycle. In effect,
-
-becomes the common parent object, with
-
-and
-
-as the sub-objects. The parent then manually breaks the retain cycle between the sub-objects when it's destroyed. Externally, the parent preserves the normal retain/release semantics, with no need for explicit invalidation.
+By splitting the implementation from the interface, you avoid the retain cycle. In effect, `MyClass` becomes the common parent object, with `MyClassImpl` and `NSTimer` as the sub-objects. The parent then manually breaks the retain cycle between the sub-objects when it's destroyed. Externally, the parent preserves the normal retain/release semantics, with no need for explicit invalidation.
 
 **Blocks**  
  Because blocks retain the objects they reference, they're another excellent candidate for a retain cycle. Consider this code:
@@ -247,15 +235,7 @@ as the sub-objects. The parent then manually breaks the retain cycle between the
     }
 ```
 
-Because the notification block references
-
-, the block will retain
-
-. The result is a subtle retain cycle. This can happen even if you don't directly reference
-
-; simply referencing an instance variable will indirectly reference
-
-, which will cause the block to retain it.
+Because the notification block references `self`, the block will retain `self`. The result is a subtle retain cycle. This can happen even if you don't directly reference `self`; simply referencing an instance variable will indirectly reference `self`, which will cause the block to retain it.
 
 The solutions used for `NSTimer` and `NSThread` will work here as well: either add explicit invalidation to the class's API, or break the class into two pieces.
 
@@ -268,15 +248,7 @@ There's a blocks-specific solution that you can use as well, which is to refer t
         }];
 ```
 
-This avoids the cycle, because
-
-is not retained. Be careful if you do this to avoid referring to instance variables directly, as those will still reference the original
-
-. If you need to access an instance variable, explicitly indirect through
-
-by doing
-
-.
+This avoids the cycle, because `blockSelf` is not retained. Be careful if you do this to avoid referring to instance variables directly, as those will still reference the original `self`. If you need to access an instance variable, explicitly indirect through `blockSelf` by doing `blockSelf->_someIvar`.
 
 **Finding Cycles**  
  For the most part, standard leak finding techniques will work fine for finding retain cycles that cause a leak. Instruments is a good way to find them, both the ObjectAlloc instrument and the Leaks instrument. If you have a cycle that's hard to figure out, its ability to track `retain` and `release` calls to each object can help a lot.
@@ -298,7 +270,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-04-30-dealing-with-retain-cycles.html)
 
 Add your thoughts, post a comment:
 

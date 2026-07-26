@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:afba1f459ec6fd5d'
 translated: false
 ---
@@ -22,7 +22,7 @@ Working with [Cocoa Auto Layout](https://developer.apple.com/library/ios/#docume
 
 ## 1. Rule of Thumb: At Least Two Constraints in Each Dimension
 
-In each dimension (vertical and horizontal), each view’s position and size is defined by three values: leading space, size and trailing space.[1](#fn:1) The leading and trailing spaces can be defined either in terms of a view’s superview or in relation to a sibling in the view hierarchy. Generally speaking, your layout constraints must fix two of these values so that the third one can be calculated. As a result, a standard view needs at least two constraints in each dimension for an unambiguous layout.
+In each dimension (vertical and horizontal), each view’s position and size is defined by three values: leading space, size and trailing space.^[1](#fn:1) The leading and trailing spaces can be defined either in terms of a view’s superview or in relation to a sibling in the view hierarchy. Generally speaking, your layout constraints must fix two of these values so that the third one can be calculated. As a result, a standard view needs at least two constraints in each dimension for an unambiguous layout.
 
 ## 2. Embrace Intrinsic Size
 
@@ -34,7 +34,7 @@ Some controls, such as labels and buttons, have a so-called intrinsic size. Depe
 
 The Auto Layout editor in Interface Builder seems to have a mind of its own. An understanding of why the Xcode engineers designed it this way will make working with it much less frustrating.
 
-![The Delete menu item for a layout constraint in Interface Builder is grayed out](https://oleb.net/media/interface-builder-constraints-editor-context-menu.png)
+[![The Delete menu item for a layout constraint in Interface Builder is grayed out](https://oleb.net/media/interface-builder-constraints-editor-context-menu.png)](https://oleb.net/media/interface-builder-constraints-editor-context-menu.png)
 
 <sub>IB won't let you delete a constraint if that would lead to an ambiguous layout.</sub>
 
@@ -46,7 +46,7 @@ IB’s primary goal is to protect you from yourself. It will never let you creat
 
 Use the Size Inspector to see a list of all constraints for a particular view. When the Delete menu item for a constraint is grayed out, this is IB’s way of telling you that deleting this constraint would create an ambiguous layout and is hence not allowed. You need to create at least one more custom constraint before you can delete this one.
 
-![Interface Builder's UI for creating new layout constraints](https://oleb.net/media/interface-builder-create-constraints-ui.png)
+[![Interface Builder's UI for creating new layout constraints](https://oleb.net/media/interface-builder-create-constraints-ui.png)](https://oleb.net/media/interface-builder-create-constraints-ui.png)
 
 <sub>IB's UI for creating new layout constraints.</sub>
 

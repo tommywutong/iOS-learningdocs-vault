@@ -63,17 +63,7 @@ Nothing unusual there. Now let's toss in a compound future:
     printf("%s: %s\n", [first UTF8String], [second UTF8String]);
 ```
 
-Now the futures start to chain. The call to
-
-returns a future thet depends on the future stored in
-
-. The calls to
-
-return futures that depend on the array future. The call to
-
-returns yet another future. Finally, the calls to
-
-can't be futured because they return a primitive, and so they cause the entire chain to be resolved.
+Now the futures start to chain. The call to `componentsSeparatedByString:` returns a future thet depends on the future stored in `string`. The calls to `objectAtIndex:` return futures that depend on the array future. The call to `uppercaseString` returns yet another future. Finally, the calls to `UTF8String` can't be futured because they return a primitive, and so they cause the entire chain to be resolved.
 
 The sequence of futures ends up looking like this:
 
@@ -93,11 +83,7 @@ The sequence of futures ends up looking like this:
                                         uppercaseString
 ```
 
-Just like with simple futures, compound futures come in two varieties: lazy and background. A lazy compound future doesn't perform any computation until it's resolved. A background compound future begins the
-
-as soon as it's created, and futures additional calls until that computation completes. Note that background futures are only one layer deep: the sub-futures that it creates are lazy futures. To pull from the above example,
-
-will never execute until a future in the tree gets resolved, even if the original future was a background future.
+Just like with simple futures, compound futures come in two varieties: lazy and background. A lazy compound future doesn't perform any computation until it's resolved. A background compound future begins the _initial computation_ as soon as it's created, and futures additional calls until that computation completes. Note that background futures are only one layer deep: the sub-futures that it creates are lazy futures. To pull from the above example, `componentsSeparatedByString:` will never execute until a future in the tree gets resolved, even if the original future was a background future.
 
 It would be possible to develop a background compound future that performed each calculation in the tree in the background instead of just the first one, but I didn't take things that far. It would be an interesting mechanism for managing a large number of implicit, interdependent parallel computations.
 
@@ -153,13 +139,8 @@ If the signature passes those two tests, it then checks the parameter types to s
     }
 ```
 
-The implementation of
-
-makes two checks. First, it checks to see if the future has been resolved. If it has, then it forwards the message to the result. If it hasn't, it then checks to see if the selector can be futured. If it can, then it returns
-
-to get on the
-
-path. Finally, if the selector can't be futured, then it resolves the future and forwards the message to it:
+**Forwarding Target**  
+ The implementation of `forwardingTargetForSelector:` makes two checks. First, it checks to see if the future has been resolved. If it has, then it forwards the message to the result. If it hasn't, it then checks to see if the selector can be futured. If it can, then it returns `nil` to get on the `-forwardInvocation:` path. Finally, if the selector can't be futured, then it resolves the future and forwards the message to it:
 
 ```
     - (id)forwardingTargetForSelector: (SEL)sel
@@ -176,9 +157,8 @@ path. Finally, if the selector can't be futured, then it resolves the future and
     }
 ```
 
-The
-
-method is much the same: grab a signature from the futured value if it's available, from the method signature cache if possible, and if all else fails, resolve the future and ask the real value:
+**Method Signature**  
+ The `-methodSignatureForSelector:` method is much the same: grab a signature from the futured value if it's available, from the method signature cache if possible, and if all else fails, resolve the future and ask the real value:
 
 ```
     - (NSMethodSignature *)methodSignatureForSelector: (SEL)sel
@@ -197,9 +177,8 @@ method is much the same: grab a signature from the futured value if it's availab
     }
 ```
 
-The real magic of this class happens in its gigantic
-
-implementation.
+**Invocation Manipulation**  
+ The real magic of this class happens in its gigantic `-forwardInvocation:` implementation.
 
 The beginning is straightforward. Grab the future value and whether it's been resolved. If it's been resolved, forward the invocation to the value. Normally, if the future has been resolved, this would be caught in `-forwardingTargetForSelector:`. However, it's possible that another thread could have caused it to be resolved in between the two calls, and this makes that case behave nicely. It also allows for handling `nil` in cases where the correct method signature can be determined, as a `nil` future value will always trigger `forwardInvocation:` due to the semantics of `forwardingTargetForSelector:`.
 
@@ -243,9 +222,7 @@ Now loop through all the arguments to the method:
             {
 ```
 
-Examine each argument's type. If the type is a pointer to object (starts with
-
-) then we need to future it:
+Examine each argument's type. If the type is a pointer to object (starts with `^@`) then we need to future it:
 
 ```
                 const char *type = [sig getArgumentTypeAtIndex: i];
@@ -261,9 +238,7 @@ The first thing the code has to do is fetch the parameter that the caller passed
                     [invocation getArgument: &parameterValue; atIndex: i];
 ```
 
-Do a quick
-
-check, since there's no need to create a future if the caller didn't ask for a value:
+Do a quick `NULL` check, since there's no need to create a future if the caller didn't ask for a value:
 
 ```
                     // if it's NULL, then we don't need to do anything
@@ -292,15 +267,7 @@ Now that we have that space allocated, we can set it as the new value for that p
                         [invocation setArgument: &newParameterValue; atIndex: i];
 ```
 
-Near the top of the method, I declared
-
-to hold a future that would resolve the invocation. Now I have to check it, and set it if this is the first parameter to need it. This future also keeps all of the
-
-instances alive by capturing the
-
-array. The individual parameter futures may be destroyed before the invocation is invoked, so the fact that they keep their individiual instances alive is not enough. Note that the future's side effect is what's important, not its value, so it just returns
-
-:
+Near the top of the method, I declared `invocationFuture` to hold a future that would resolve the invocation. Now I have to check it, and set it if this is the first parameter to need it. This future also keeps all of the `NSMutableData` instances alive by capturing the `parameterDatas` array. The individual parameter futures may be destroyed before the invocation is invoked, so the fact that they keep their individiual instances alive is not enough. Note that the future's side effect is what's important, not its value, so it just returns `nil`:
 
 ```
                         // create a future to refer to the invocation, so that it
@@ -349,9 +316,7 @@ Arguments are all taken care of, now it's time to create the return value. First
             [invocation retainArguments];
 ```
 
-Next, I create a new compound future for the return value. This future uses the value of
-
-if it's been created. If not, then it manually invokes the invocation. Either way, it then fetches the invocation's return value and returns it as its own value:
+Next, I create a new compound future for the return value. This future uses the value of `invocationFuture` if it's been created. If not, then it manually invokes the invocation. Either way, it then fetches the invocation's return value and returns it as its own value:
 
 ```
             _MACompoundFuture *returnFuture = [[_MACompoundFuture alloc] initWithBlock:^{
@@ -375,9 +340,8 @@ Finally, set this future as the invocation's return value, and we're done!
     }
 ```
 
-Like with the simple futures, I wrap this class in a couple of helper functions.
-
-creates a compound future wrapping a regular background future:
+**Helper Functions**  
+ Like with the simple futures, I wrap this class in a couple of helper functions. `MACompoundBackgroundFuture` creates a compound future wrapping a regular background future:
 
 ```
     id MACompoundBackgroundFuture(id (^block)(void))
@@ -392,9 +356,7 @@ creates a compound future wrapping a regular background future:
     }
 ```
 
-And
-
-just wraps its block directly:
+And `MACompoundLazyFuture` just wraps its block directly:
 
 ```
 id MACompoundLazyFuture(id (^block)(void))
@@ -433,11 +395,7 @@ To illustrate the first problem, imagine the following method, which just happen
     }
 ```
 
-This code is fine. However, consider what happens if you pass a compound future in as the array parameter. Nothing in this code will cause a compound future to resolve. The
-
-object will be a compound future, and every call to
-
-will also produce a compound future. This code will loop forever, and eventually crash when it runs out of memory. Oops!
+This code is fine. However, consider what happens if you pass a compound future in as the array parameter. Nothing in this code will cause a compound future to resolve. The `enumerator` object will be a compound future, and every call to `objectEnumerator` will also produce a compound future. This code will loop forever, and eventually crash when it runs out of memory. Oops!
 
 To illustrate the second problem, consider this code:
 
@@ -448,19 +406,7 @@ To illustrate the second problem, consider this code:
     NSLog(@"%@", s);
 ```
 
-This code works fine normally, but if
-
-is a compound future then it falls apart. The
-
-call will be futured, and then
-
-will resolve the array future and remove the elements. However,
-
-still contains a future. When it's resolved by the
-
-call, it will call
-
-on an array which is now empty, throwing a range error. Oops!
+This code works fine normally, but if `array` is a compound future then it falls apart. The `objectAtIndex:` call will be futured, and then `removeAllObjects` will resolve the array future and remove the elements. However, `s` still contains a future. When it's resolved by the `NSLog` call, it will call `objectAtIndex: 0` on an array which is now empty, throwing a range error. Oops!
 
 You must be careful when writing code that uses compound futures, and ensure that they never escape to code that you don't control. Making explicit calls to `resolveFuture` and passing what it returns is a way to make sure that can't happen.
 

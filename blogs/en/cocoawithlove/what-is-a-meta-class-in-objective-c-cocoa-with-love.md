@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:75eafb2c3b532789'
 translated: false
 ---
@@ -49,9 +49,9 @@ void ReportFunction(id self, SEL _cmd)
 
 On the surface, this is all pretty simple. Creating a class at runtime is just three easy steps:
 
-1. ).
-2. ).
-3. ).
+1. Allocate storage for the "class pair" (using `objc_allocateClassPair`).
+2. Add methods and ivars to the class as needed (I've added one method using `class_addMethod`).
+3. Register the class so that it can be used (using `objc_registerClassPair`).
 
 However, the immediate question is: what is a "class pair"? The function `objc_allocateClassPair` only returns one value: the class. Where is the other half of the pair?
 
@@ -155,33 +155,7 @@ Since there is no declaration of the `report` method, I invoke it using `perform
 
 The `ReportFunction` will now traverse through the `isa` pointers and tell us what objects are used as the class, meta-class and class of the meta-class.
 
-> the
-> 
-> uses
-> 
-> to follow the
-> 
-> pointers because the
-> 
-> pointer is a protected member of the class (you can't directly access other object's
-> 
-> pointers). The
-> 
-> does not use the
-> 
-> method to do this because invoking the
-> 
-> method on a
-> 
-> object does not return the meta-class, it instead returns the
-> 
-> again (so
-> 
-> will return the
-> 
-> class instead of the
-> 
-> meta-class).
+> **Getting the class of an object:** the `ReportFunction` uses `object_getClass` to follow the `isa` pointers because the `isa` pointer is a protected member of the class (you can't directly access other object's `isa` pointers). The `ReportFunction` does not use the `class` method to do this because invoking the `class` method on a `Class` object does not return the meta-class, it instead returns the `Class` again (so `[NSString class]` will return the `NSString` class instead of the `NSString` meta-class).
 
 This is the output (minus `NSLog` prefixes) when the program runs:
 
@@ -198,13 +172,11 @@ NSObject's meta class is 0x7fff71038480
 
 Looking at the addresses reached by following the `isa` value repeatedly:
 
-- .
-- .
-- .
-- meta-class) is address
-
-  .
-- meta-class' class is itself.
+- the object is address `0x10010c810`.
+- the class is address `0x10010c600`.
+- the meta-class is address `0x10010c630`.
+- the meta-class's class (i.e. the `NSObject` meta-class) is address `0x7fff71038480`.
+- the `NSObject` meta-class' class is itself.
 
 The value of the addresses is not really important except that it shows the progress from class to meta-class to `NSObject` meta-class as discussed.
 

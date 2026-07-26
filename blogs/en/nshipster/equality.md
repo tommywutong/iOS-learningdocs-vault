@@ -1,0 +1,276 @@
+---
+title: Equality
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/equality/'
+original_language: en
+published: 2013-08-26
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:a43ab579773f6eb7'
+translated: false
+---
+
+> 原文：[Equality](https://nshipster.com/equality/)　·　NSHipster (Mattt)
+
+# [Equality](https://nshipster.com/equality/)
+
+Written by  [Mattt](https://nshipster.com/authors/mattt/)  August 15^th, 2018 ([revised](https://github.com/nshipster/articles/commits/master/2013-08-26-equality.md))
+
+The concept of equality is a central topic in philosophy and mathematics, with far-reaching implications for matters of ethics, justice, and public policy.
+
+From an empiricist perspective of the universe, two objects are equal if they’re indistinguishable by measurable observation. On a human scale, egalitarians hold that individuals should be considered equal members of the societal, economic, political, and judicial systems they inhabit.
+
+Our task as programmers is to reconcile our logical and physical understanding of equality with the domains we model. And to do this correctly, we must start from a place of understanding.
+
+So I invite you to take a moment to consider these broader questions; resist the urge to skim this article in search of relevant-looking code to copy-paste verbatim. Equality in Objective-C is a topic that remains a frequent source of confusion and deserves our full and undivided attention.
+
+## Equality & Identity
+
+First and foremost, let’s make a distinction between equality and identity.
+
+Two objects may be _equal_ or _equivalent_ to one another if they share a common set of observable properties. Yet those two objects may be thought to be _distinct_, each with their own _identity_.
+
+In Objective-C, an object’s identity is tied to its memory address. When you use the `==` operator to compare two objects in Objective-C, you’re checking to see if they point to the same location in memory.
+
+`NSObject` and its subclasses designate the `isEqual:` method to determine equality between two objects. In its base implementation, an equality check simply tests for equal identity:
+
+```
+NSObject *a = [NSObject new];
+NSObject *b = [NSObject new];
+
+BOOL objectsHaveSameIdentity = (a == b); // NO
+BOOL objectsAreEqual = ([a isEqual:b]); // NO
+```
+
+However, some `NSObject` subclasses override `isEqual:` and thereby redefine the criteria for equality:
+
+An `NSValue` object is a wrapper around an underlying value. If you construct two `NSValue` objects from the same value, they’ll return `NO` when compared with the `==` operator, but `YES` when compared using the `isEqual:` method:
+
+```
+NSPoint point = NSMakePoint(2.0, 3.0);
+NSValue *a = [NSValue valueWithPoint:point];
+NSValue *b = [NSValue valueWithPoint:point];
+
+BOOL valuesHaveSameIdentity = (a == b); // NO
+BOOL valuesAreEqual = ([a isEqual:b]); // YES
+```
+
+`NSObject` and `NSValue` have different semantics for equality, and understanding the difference between them is the key to understanding how equality works in most programming languages.
+
+### Value vs. Reference Semantics
+
+If the most important thing about an object is its **state**, then it’s known as a value type, and its observable properties are used to determine equality.
+
+If the most important thing about an object is its **identity**, then it’s known as a reference type, and its memory address is used to determine equality.
+
+The naming of `NSValue` is therefore appropriate because objects of that type follow value semantics when determining equality in `isEqual:`.
+
+You’ll find plenty of other value types throughout Foundation — just look for their telltale `isEqualToClassName:` method. For example:
+
+- `NSArray -isEqualToArray:`
+- `NSAttributedString -isEqualToAttributedString:`
+- `NSData -isEqualToData:`
+- `NSDate -isEqualToDate:`
+- `NSDictionary -isEqualToDictionary:`
+- `NSHashTable -isEqualToHashTable:`
+- `NSIndexSet -isEqualToIndexSet:`
+- `NSNumber -isEqualToNumber:`
+- `NSOrderedSet -isEqualToOrderedSet:`
+- `NSSet -isEqualToSet:`
+- `NSString -isEqualToString:`
+- `NSTimeZone -isEqualToTimeZone:`
+
+> When comparing two instances of any of these classes, use these high-level methods rather than `isEqual:`.
+
+Types that encapsulate a single value, such as `NSDate`, perform an equality comparison of that value. In the case of `NSDate`, which represents a point in time relative to an absolute reference date (1 Jan 2001 00:00:00 GMT), objects are compared using their [offset value](https://developer.apple.com/documentation/corefoundation/cfabsolutetime?language=objc).
+
+For container classes like `NSArray` and `NSDictionary`, deep equality comparison is performed by checking that each member-wise pair in the collections are equal to each other. Here’s an idea of how `NSArray` might implement `isEqualToArray:`, and how that relates to its implementation of `isEqual:` (ignoring for a moment that, as a [class cluster](https://developer.apple.com/library/ios/documentation/general/conceptual/CocoaEncyclopedia/ClassClusters/ClassClusters.html), the actual implementation would be significantly more complicated):
+
+```
+@implementation NSArray // Simplified
+- (BOOL)isEqualToArray:(NSArray *)array {
+  if (!array || [self count] != [array count]) {
+    return NO;
+  }
+
+  for (NSUInteger idx = 0; idx < [array count]; idx++) {
+      if (![self[idx] isEqual:array[idx]]) {
+          return NO;
+      }
+  }
+
+  return YES;
+}
+
+- (BOOL)isEqual:(nullable id)object {
+  if (object == nil) {
+    return NO;
+  }
+
+  if (self == object) {
+    return YES;
+  }
+
+  if (![object isKindOfClass:[NSArray class]]) {
+    return NO;
+  }
+
+  return [self isEqualToArray:(NSArray *)object];
+}
+@end
+```
+
+### String Interning
+
+After learning about the differences between reference and value semantics, and how they change the behavior of `==` and `isEqual:`, you may be confused by the following behavior:
+
+```
+NSString *a = @"Hello";
+NSString *b = @"Hello";
+
+BOOL valuesHaveSameIdentity = (a == b); // YES (?)
+BOOL valuesAreEqual = ([a isEqual:b]); // YES
+```
+
+_What?_ `NSString` is a value type, so why does `==` return `YES` for what should be two different objects?
+
+It all has to do with an optimization technique known as [string interning](https://en.wikipedia.org/wiki/String_interning), whereby one copy of immutable string value is copied for each distinct value. `NSString *a` and `NSString *b` point to the same copy of the interned string value `@"Hello"`.
+
+Objective-C selector names are also stored as interned strings in a shared pool. This is an important optimization for a language that operates by passing messages back and forth; being able to quickly check strings by pointer equality has a huge impact on runtime performance.
+
+> Note that this only works for statically-defined, immutable strings.
+
+### Tagged Pointers
+
+“Fair enough,” you might say to yourself at this point. “Strings are important and complicated, so I understand why things may not work as I originally expected.”
+
+Unfortunately, your understanding would be further confounded when `NSDate` doesn’t work as you expect, either:
+
+```
+NSTimeInterval timeInterval = 556035120;
+NSDate *a = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
+NSDate *b = [NSDate dateWithTimeIntervalSinceReferenceDate:timeInterval];
+
+BOOL valuesHaveSameIdentity = (a == b); // YES (?)
+BOOL valuesAreEqual = ([a isEqual:b]); // YES
+```
+
+_Seriously?_ We spent all that time explaining the difference between `==` and `isEqual:` only to learn that it’s all a lie?
+
+Well… kinda. Not so much a lie as an omission.
+
+What you’re seeing here is another optimization technique at work, known as [pointer tagging](https://en.wikipedia.org/wiki/Tagged_pointer).
+
+The Objective-C runtime, when running in 64-bit mode, represents object pointers using 64-bit integers. Normally, this integer value points to an address in memory where the object is stored. But as an optimization, some small values can be stored directly in the pointer itself. If the least-significant bit is set to `1`, a pointer is considered to be tagged; the runtime reads the next 3 bits to determine the tagged class and then initializes a value of that class using the next 60 bits.
+
+If we run the `NSDate` comparison code again with the debugger turned on, we can confirm that `a` and `b` are both instances of `__NSTaggedDate *` with odd pointer values (i.e. their least-significant digit is `1`).
+
+> As an interesting tie-in to our previous section, `NSString` gained support for tagged pointers in macOS 10.10 & iOS 8. [Mike Ash](https://github.com/mikeash) has [a fascinating write-up](https://mikeash.com/pyblog/friday-qa-2015-07-31-tagged-pointer-strings.html) of how that works.
+
+Only a handful of Foundation types implement tagged pointers, so don’t expect your own objects to magically get this behavior.
+
+## Hashing
+
+One of the most important applications of object equality is to determine collection membership. In order to keep this fast for `NSDictionary` and `NSSet` collections, subclasses with custom equality implementations are expected to implement the `hash` method in a way that satisfies the following criteria:
+
+- Object equality is _commutative_ (`[a isEqual:b]` ⇒ `[b isEqual:a]`)
+- If objects are equal, then their `hash` values must also be equal (`[a isEqual:b]` ⇒ `[a hash] == [b hash]`)
+- However, the converse does not hold: two objects can have the same hash values, but not be equal to one another (`[a hash] == [b hash]` ¬⇒ `[a isEqual:b]`)
+
+Now for a quick flashback to Computer Science 101:
+
+---
+
+A [hash table](https://en.wikipedia.org/wiki/Hash_table) is a fundamental data structure in programming.
+
+We can best understand hash tables by contrasting them to lists:
+
+**Lists** store elements sequentially. If you want to see whether a particular object is contained by a list, you must check each element in the list sequentially until you either find what you’re looking for or run out of items. Therefore, the amount of time it takes to perform a lookup has a linear relationship to the number of elements in the list (`O(n)`). `NSArray` is the primary list type in Foundation.
+
+**Hash tables** take a slightly different approach. Rather than storing elements sequentially, a hash table allocates a fixed number of positions in memory and uses a function to calculate the position within that range for each object when it’s inserted. A hash function is [deterministic](https://en.wikipedia.org/wiki/Deterministic_algorithm), and a _good_ hash function generates values in a relatively [uniform distribution](https://en.wikipedia.org/wiki/Uniform_distribution_%28discrete%29) without being too computationally expensive. Ideally, the amount of time it takes to find an element in a hash table is constant (`O(1)`), independent of how many elements are stored. `NSSet` and `NSDictionary` are the primary collections in Foundation that implement hash tables.
+
+> There is one important caveat to these performance characteristics, though: If two different objects produce the same hash value, the hash table seeks from the calculated index and places the new object in the first available spot. We call this a hash collision. As a hash table becomes more congested, the likelihood of collision increases, which leads to more time spent looking for a free space (hence why a hash function with a uniform distribution is so desirable).
+
+## Best Practices when Implementing Value Types
+
+If you’re implementing a custom type and want it to follow value semantics, do the following:
+
+- Implement a new `isEqualToClassName:` method to test for value equality.
+- Override the `isEqual:` method, starting with early nil check and class and object identity checks and falling back on the aforementioned value equality test.
+- Override the `hash` method such that equal objects produce the same hash value.
+
+As an example, consider the following `Color` type, which represents a color using floating-point values for red, green, and blue intensities between `0` and `1`:
+
+```
+@interface Color: NSObject
+@property NSNumber *red;
+@property NSNumber *green;
+@property NSNumber *blue;
+@end
+```
+
+### Implementing `isEqualToClassName:`
+
+The `isEqualToClassName:` method should be publicly declared and provide a test for value equality with another object of the same type.
+
+```
+- (BOOL)isEqualToColor:(Color *)color {
+    return [self.red isEqualToNumber:color.red] &&
+        [self.green isEqualToNumber:color.green] &&
+        [self.blue isEqualToNumber:color.blue];
+}
+```
+
+Implementations of this method typically perform member-wise comparison between the receiver and the passed argument for each of the properties of that type. In the case of a `Color`, that means checking the `red`, `green` , and `blue` properties of each color for equality.
+
+> Be sure to use the corresponding value equality method for each of the properties.
+
+### Implementing `isEqual:`
+
+The `isEqual:` method should delegate to the `isEqualToClassName:` method after testing for nil argument, pointer equality, and checking for type identity:
+
+```
+- (BOOL)isEqual:(nullable id)object {
+    if (object == nil) {
+        return NO;
+    }
+
+    if (self == object) {
+        return YES;
+    }
+
+    if (![object isKindOfClass:[Color class]]) {
+        return NO;
+    }
+
+    return [self isEqualToColor:(Color *)object];
+}
+```
+
+### Implementing `hash`
+
+A common misconception about custom `hash` implementations comes from [affirming the consequent](https://en.wikipedia.org/wiki/Affirming_the_consequent): thinking that `hash` values _must_ be distinct. Although an ideal hash function would produce all distinct values, this is significantly more difficult than what’s required — which is, if you’ll recall:
+
+> - Override the `hash` method such that equal objects produce the same hash value.
+
+A simple way to satisfy this requirement is to simply [`XOR`](https://en.wikipedia.org/wiki/Exclusive_or) over the hash values of the properties that determine equality.
+
+```
+- (NSUInteger)hash {
+    return [self.red hash] ^ [self.green hash] ^ [self.blue hash];
+}
+```
+
+Yes, this approach results in collisions for objects with the same values for different properties (for example, cyan and yellow produce the same hash value, because each has color channels with intensity equal to `1`). However, it may be good enough for what you’re doing.
+
+Unless you have reason to believe that a better `hash` implementation would improve performance in a meaningful way, you’re probably better off focusing your time elsewhere. (That’s not to say that _all_ optimizations are premature, but rather that complicated hash functions frequently are).
+
+For the curious and pedantic, Mike Ash has [another blog post](http://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html) with suggestions for improving hash functions using techniques like bit-shifting and rotating composite values that may overlap.
+
+---
+
+Hopefully, after all of this explanation, we can all stand with an equal footing on this slippery subject.
+
+As humans, we strive to understand and implement equality in our society and economy; in the laws and leaders that govern us, and in the understanding that we extend to one another as we journey through existence. May we continue towards that ideal, where individuals are judged by the contents of their character, just as we judge a variable by the contents of its memory address.

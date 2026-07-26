@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:77c5ac28ecd1d29a'
 translated: false
 ---
@@ -19,6 +19,8 @@ I will show you how to use object forwarding to record any message in an NSInvoc
 ## NSInvocation is painful to construct
 
 This article appears to be the second in an ad hoc series I'm writing on Cocoa. If it is, then series title might be something like:
+
+> Doing tricky things simply in Cocoa with one line of code
 
 I refer you to my earlier post [Core Data: one line fetch](https://www.cocoawithlove.com/2008/03/core-data-one-line-fetch.html) where I show a single line fetch for Core Data instead of the suggested 10 line common approach.
 
@@ -125,20 +127,14 @@ By distinguishing forwarding from invocation in those two cases, we will be able
 To summarize all steps, we need:
 
 1. A base class (one which doesn't inherit from any other class)
-2.   - - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+2. Only instance methods are:
+
+    - - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
     - - (void)forwardInvocation:(NSInvocation *)anInvocation
 
   all other work must be done through class methods.
-3. methodSignatureForSelector:
-
-  from a direct invocation of
-
-  methodSignatureForSelector:
-4. forwardInvocation:
-
-  from a direct invocation of
-
-  forwardInvocation:
+3. An approach to distinguish a message forwarded through methodSignatureForSelector: from a direct invocation of methodSignatureForSelector:
+4. An approach to distinguish a message forwarded through  forwardInvocation: from a direct invocation of  forwardInvocation:
 
 Steps 1 and 2 are straightforward class construction. Allocating a base class is a bit unusual but not very hard.
 

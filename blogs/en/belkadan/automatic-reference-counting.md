@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f0a17dee8c28f205'
 translated: false
 ---
@@ -44,24 +44,12 @@ So, why aren’t cycles a problem with _manual_ reference counting? Well, you ju
 
 Now, think about what Apple has done (and NeXT) over the past ten years of Cocoa:
 
-- ownership rules
-
-  , based on a naming convention.
-- Attributes
-
-  for when you really need to violate that convention.
-- Static analysis
-
-  to enforce the ownership rules.
-- ownership semantics of accessors
-
-  , along with a way to automatically generate those accessors.
-- weak references
-
-  , which (until now) has been rather loose.
-- Autorelease
-
-  .
+- Simple [ownership rules](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html), based on a naming convention.
+- [Attributes](http://clang-analyzer.llvm.org/annotations.html#cocoa_mem) for when you really need to violate that convention.
+- [Static analysis](http://clang-analyzer.llvm.org/xcode.html) to enforce the ownership rules.
+- A way to specify the [ownership semantics of accessors](http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmAccessorMethods.html#//apple_ref/doc/uid/TP40003539-SW1), along with a way to automatically generate those accessors.
+- A convention for [weak references](http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmObjectOwnership.html#//apple_ref/doc/uid/20000043-1044135-BCICCFAE), which (until now) has been rather loose.
+- [Autorelease](http://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmObjectOwnership.html#//apple_ref/doc/uid/20000043-SW5).
 
 Seen in retrospect, it almost looks as if Apple’s been working towards this all along. We’ve now been trained to follow naming conventions and to annotate our code to declare the semantics we want. We hardly ever get it wrong because the rules are generally clear. And if we want RAII-type semantics for Cocoa types, [we can do that](http://kickingbear.com/blog/archives/13).
 
@@ -73,7 +61,7 @@ Seen in retrospect, it almost looks as if Apple’s been working towards this al
 } // myObject is sent a release message here.
 ```
 
-But if the rules are clear, then a program with a good understanding of the source code can put in the `retain`s for us.[1](#fn:automatic)
+But if the rules are clear, then a program with a good understanding of the source code can put in the `retain`s for us.^[1](#fn:automatic)
 
 That’s what ARC is.
 

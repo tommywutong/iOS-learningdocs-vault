@@ -7,7 +7,7 @@ original_language: en
 published: 2020-08-31
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b83291eb996539da'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 ## [The Swift Runtime: Heap Objects](#)
 
-Welcome to the first in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. Today we’re going to start with the basis of both class instances and closures: heap objects.more
+Welcome to the first in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. Today we’re going to start with the basis of both class instances and closures: heap objects.
 
 Note that this will not be an exhaustive guide to the entire Swift runtime. There are several parts I didn’t implement in my project, and I have a feeling this series will be long enough as it is.
 
@@ -41,7 +41,7 @@ While instances of different classes all have different data in them, they all s
 | isa pointer |
 | reference count |
 
-The isa pointer is used for a few things, mainly calling overridable methods and making sure the destructor of a class is called properly.[1](#fn:isa) The reference count field is very complicated in the real Swift runtime (at the very least, it has to handle normal retains and the tracking for `unowned` and `weak`), but for my project I simplified it down to just tracking normal strong references.
+The isa pointer is used for a few things, mainly calling overridable methods and making sure the destructor of a class is called properly.^[1](#fn:isa) The reference count field is very complicated in the real Swift runtime (at the very least, it has to handle normal retains and the tracking for `unowned` and `weak`), but for my project I simplified it down to just tracking normal strong references.
 
 The lifetime of an object starts with allocation:
 
@@ -96,7 +96,7 @@ func swift_release(
 
 I’m showing these together so it’s clear that they’re duals: both of them start by checking for `nil`, and then atomically increment or decrement the second field of the object. Again, this is a simplification compared to what the real runtime does, but because retaining and releasing objects can happen a lot, even the real runtime tries to be this fast in the common case.
 
-The way Swift’s flavor of automatic reference counting works is that destruction of the object happens synchronously when the last reference goes away. So while `swift_retain` ends after updating the reference count, `swift_release` has to check to see if the object should be destroyed. If the old reference count representation was 0 (remember, it’s a biased representation), then this release is for the last reference, and it’s time to destroy the object. As mentioned above, this information is stored relative to the class metadata, whose address we get by loading the first field of the object.[2](#fn:negative)
+The way Swift’s flavor of automatic reference counting works is that destruction of the object happens synchronously when the last reference goes away. So while `swift_retain` ends after updating the reference count, `swift_release` has to check to see if the object should be destroyed. If the old reference count representation was 0 (remember, it’s a biased representation), then this release is for the last reference, and it’s time to destroy the object. As mentioned above, this information is stored relative to the class metadata, whose address we get by loading the first field of the object.^[2](#fn:negative)
 
 The destructor has a slightly different calling convention than a normal Swift function, so it’s not actually possible to write a 100% correct call to it in Swift. Instead, I have a C++ helper, `swift_invokeDestroyer`, to call it correctly, which has to be compiled using a Swift-compatible version of Clang. (I’m not going to bother showing that here.)
 
@@ -124,7 +124,7 @@ I hope it’s clear how this all works for classes, but how about closures? Turn
 | function pointer |
 | reference to captures |
 
-The first field of a closure is a function pointer with a special calling convention: it takes the arguments of the closure as well as an additional argument for accessing any captured bindings (parameters, variables, or constants, or explicitly-specified bindings from a capture list). This additional argument is loaded from the second field, and you can think of it as a sort of “anonymous class” that stores the captures. Passing around a closure means retaining and releasing this “captures object”, and it’s destroyed when the reference count hits 0 like any other object. If the closure doesn’t have any captures, this field will be `nil`.[3](#fn:blocks)
+The first field of a closure is a function pointer with a special calling convention: it takes the arguments of the closure as well as an additional argument for accessing any captured bindings (parameters, variables, or constants, or explicitly-specified bindings from a capture list). This additional argument is loaded from the second field, and you can think of it as a sort of “anonymous class” that stores the captures. Passing around a closure means retaining and releasing this “captures object”, and it’s destroyed when the reference count hits 0 like any other object. If the closure doesn’t have any captures, this field will be `nil`.^[3](#fn:blocks)
 
 ### Core Foundation
 
@@ -134,9 +134,7 @@ But Core Foundation was used for another purpose, too: [it was a bridge between 
 
 > Convenient discovery for my further explorations: CF types under Classic still had their first word reserved for an isa pointer, but it never got set to anything. That means I can differentiate Swift and CF objects by whether the first word is null!
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 9, 2020
+> — Jordan Rose (@UINT_MIN) [April 9, 2020](https://twitter.com/UINT_MIN/status/1248154940318482432?ref_src=twsrc%5Etfw)
 
 So my actual version of `swift_retain` looks like this:
 
@@ -179,7 +177,7 @@ private func isNativeSwiftObject(_ objectRef: UnsafeRawPointer) -> Bool {
 }
 ```
 
-Where’s that `0x1000` come from?[4](#fn:cf) On many modern operating systems, including Mac OS X, a section at the low end of the “address space” is reserved to catch bugs that show up as null pointer dereferencing. Mac OS 9 doesn’t _quite_ have this guarantee, but fortunately it reserves the bottom part of memory for various bits of the OS, and so we can rely on values below `0x1000` not being used for application memory. So what we end up checking looks like this:
+Where’s that `0x1000` come from?^[4](#fn:cf) On many modern operating systems, including Mac OS X, a section at the low end of the “address space” is reserved to catch bugs that show up as null pointer dereferencing. Mac OS 9 doesn’t _quite_ have this guarantee, but fortunately it reserves the bottom part of memory for various bits of the OS, and so we can rely on values below `0x1000` not being used for application memory. So what we end up checking looks like this:
 
 | First field of object | First field of type | Classification |
 |---|---|---|
@@ -207,7 +205,7 @@ func swift_initStaticObject(
 }
 ```
 
-This is an optimization for when the compiler sees a global `let` whose type is a class instance. If the compiler can guarantee the size of the class at compile time, the object’s data can be located in static memory rather than on the heap.[5](#fn:immortal) The compiler has to fold in the initialization of the global in this case, so it calls the `swift_once` helper that ensures that the object is only initialized once. And `swift_init­StaticObject` isn’t passed a separate argument for the “token”; it’s got a contract with the compiler that there’ll be one just before the object data.
+This is an optimization for when the compiler sees a global `let` whose type is a class instance. If the compiler can guarantee the size of the class at compile time, the object’s data can be located in static memory rather than on the heap.^[5](#fn:immortal) The compiler has to fold in the initialization of the global in this case, so it calls the `swift_once` helper that ensures that the object is only initialized once. And `swift_init­StaticObject` isn’t passed a separate argument for the “token”; it’s got a contract with the compiler that there’ll be one just before the object data.
 
 How does `swift_once` work? The real one calls something that already exists on the platform to do its dirty work, either [`dispatch_once`](https://developer.apple.com/documentation/dispatch/1447167-dispatch_once_f) or [`std::call_once`](https://en.cppreference.com/w/cpp/thread/call_once). But neither is available on Mac OS 9, so I had to make my own:
 
@@ -236,7 +234,7 @@ func swift_once(
 }
 ```
 
-What’s here is a little state machine: if `token` is 0, nothing’s happened; if it’s 1, initialization is in progress; and if it’s 2, it’s complete. The code uses a `CompareAndSwap` to make sure that only one thread will actually try to run the action, and if that fails, it’ll wait until the initialization is complete, letting another thread run if necessary.[6](#fn:threading) (The “MP” stands for “multiprocessing”, the name of the Classic Mac OS library that implemented preemptive threading.)
+What’s here is a little state machine: if `token` is 0, nothing’s happened; if it’s 1, initialization is in progress; and if it’s 2, it’s complete. The code uses a `CompareAndSwap` to make sure that only one thread will actually try to run the action, and if that fails, it’ll wait until the initialization is complete, letting another thread run if necessary.^[6](#fn:threading) (The “MP” stands for “multiprocessing”, the name of the Classic Mac OS library that implemented preemptive threading.)
 
 The second overload is the one with the C-compatible interface that the compiler uses for normal, unoptimized global initialization.
 

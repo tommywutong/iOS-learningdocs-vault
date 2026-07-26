@@ -32,8 +32,8 @@ Now that we (sort of) know what a character is, a **character encoding** is some
 
 There are many different kinds of encodings, but there are two basic kinds that are of primary interest here:
 
-- These encodings maintain a one-to-one mapping between a byte and a character. Each character gets encoded to a single byte, and each byte represents one character. For obvious reasons, 8-bit encodings can't represent more than 256 characters.
-- These encodings can map a single character to multiple bytes, and the number of bytes varies depending on the character. This allows the encoding to represent more than 256 characters, essential if you're dealing with languages such as Chinese which have far more than this.
+- **8-bit encodings:** These encodings maintain a one-to-one mapping between a byte and a character. Each character gets encoded to a single byte, and each byte represents one character. For obvious reasons, 8-bit encodings can't represent more than 256 characters.
+- **Variable-length encodings:** These encodings can map a single character to multiple bytes, and the number of bytes varies depending on the character. This allows the encoding to represent more than 256 characters, essential if you're dealing with languages such as Chinese which have far more than this.
 
 **ASCII**  
  The most common and fundamental character encoding used today is ASCII. ASCII is a small and simple 7-bit character encoding, which means that it defines 128 characters and maps them to the byte values 0-127. As used on modern systems, ASCII can be thought of as an 8-bit encoding where the values 128-255 go unused.
@@ -135,7 +135,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-02-19-character-encodings.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ddc41940c6c08d85'
 translated: false
 ---
@@ -32,7 +32,7 @@ func / (dividend: Int, divisor: Int) -> Int
 
 Without knowing anything about the function’s implementation, you can deduce that it must perform [integer division](http://mathworld.wolfram.com/IntegerDivision.html) because the return type is incapable of expressing fractional values. In contrast, if the function’s return type were [`NSNumber`](https://developer.apple.com/documentation/foundation/nsnumber), which can express both integer and floating-point values, you’d have to trust that the behavior is adequately documented.
 
-This technique of using types for documenting behavior becomes more and more useful as a type system’s expressiveness grows. If Swift had a `NonZeroInt` type[1](#fn:1) to express the concept of “any integer except zero”, the divide function might be declared like this:
+This technique of using types for documenting behavior becomes more and more useful as a type system’s expressiveness grows. If Swift had a `NonZeroInt` type^[1](#fn:1) to express the concept of “any integer except zero”, the divide function might be declared like this:
 
 ```
 func / (dividend: Int, divisor: NonZeroInt) -> Int
@@ -62,7 +62,7 @@ class URLSession {
 }
 ```
 
-The completion handler receives three optional values: [`Data?`](https://developer.apple.com/documentation/foundation/data), [`URLResponse?`](https://developer.apple.com/documentation/foundation/urlresponse) and [`Error?`](https://developer.apple.com/documentation/swift/error). That makes 2 × 2 × 2 = 8 possible states[2](#fn:2), but how many of those are legal?
+The completion handler receives three optional values: [`Data?`](https://developer.apple.com/documentation/foundation/data), [`URLResponse?`](https://developer.apple.com/documentation/foundation/urlresponse) and [`Error?`](https://developer.apple.com/documentation/swift/error). That makes 2 × 2 × 2 = 8 possible states^[2](#fn:2), but how many of those are legal?
 
 To quote [Brandon and Stephen](https://www.pointfree.co/episodes/ep4-algebraic-data-types), there are a lot of representable states here that don’t make sense. Some are obviously nonsensical, and we can probably rely on Apple’s code to never call the completion handler with all values being `nil` or all being non-`nil`.
 

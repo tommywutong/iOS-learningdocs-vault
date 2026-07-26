@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6f9afc822b6e5d64'
 translated: false
 ---
@@ -30,7 +30,7 @@ _This was originally posted on my personal blog in December 2010. It’s still p
 
 Last week Google ran a program called [Chrome for a Cause](http://chrome.blogspot.com/search/label/chrome%20for%20a%20cause), in which Google donated money to charities based on how many tabs people opened in Chrome. The system was easily game-able, since it didn’t test whether you actually _used_ the tabs, but it was limited to million anyway, so Google was pretty much guaranteed to hit it.
 
-The point of one of these things is, of course, to get more people to try using Chrome; knowing full well that that was the case, I decided to use Chrome for a week, and see how it stacks up to my regular browser, Safari.more
+The point of one of these things is, of course, to get more people to try using Chrome; knowing full well that that was the case, I decided to use Chrome for a week, and see how it stacks up to my regular browser, Safari.
 
 First, a note on why I use Safari. Safari is the browser made by Apple, and the default browser on Mac OS X. I like it because it has very strong support for HTML5 and various experimental-y features of the web, and because it has a pretty solid and well-thought-out user interface. And it _feels_ like a Mac app, and integrates quite well with the rest of the system. (This last is precisely the reason why Safari on Windows sucks, or at least used to suck: it still feels like a Mac app, which is the wrong thing to do on a Windows system.)
 
@@ -62,7 +62,7 @@ This comparison comes after using Chrome for a week, then switching back and usi
 
 Chrome’s actually pretty good. Coming from a UI stickler like me, that’s quite a compliment. It runs smoothly, isn’t missing crucial features, and feels Mac-like enough to fit in. Contrast this with Firefox, which I basically can’t use for a whole day without feeling restricted. I would never switch my primary Mac browser to Firefox, but I actually could switch to Chrome. Google did a pretty good job.
 
-I’m still sticking with Safari, partly because it still is a little more Mac-like, and I don’t really use extensions.[1](#fn:ext) But I wish I could use Chrome as my alternate browser. Unfortunately, my usual reason for an alternate browser is to check out how a site looks with another rendering engine, or because a site doesn’t work in Safari. Chrome’s WebKit engine is too close to Safari’s WebKit engine for it to be useful for this. Looks like Firefox is going to hang on a bit longer.
+I’m still sticking with Safari, partly because it still is a little more Mac-like, and I don’t really use extensions.^[1](#fn:ext) But I wish I could use Chrome as my alternate browser. Unfortunately, my usual reason for an alternate browser is to check out how a site looks with another rendering engine, or because a site doesn’t work in Safari. Chrome’s WebKit engine is too close to Safari’s WebKit engine for it to be useful for this. Looks like Firefox is going to hang on a bit longer.
 
 1. At least, not at the time. Today I have a couple, despite the security risk, the main one being Marc Hoyois’ [ClickToPlugin](http://hoyois.github.com/safariextensions/clicktoplugin/). Sort of a power version of ClickToFlash, and as a proper extension rather than an injected bundle. [↩︎](#fnref:ext)
 

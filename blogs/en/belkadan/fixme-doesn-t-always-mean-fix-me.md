@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4fed5f75c5739fe6'
 translated: false
 ---
@@ -60,7 +60,7 @@ The answer is that “FIXME” doesn’t _really_ mean “this code needs fixing
 
 …or one of many other reasons why code might not be as good as it should be.
 
-There’s an interesting consequence of this slightly different definition, though. Sure, the code isn’t as good as it should be, but _that doesn’t mean you should put effort into improving it,_ at least not right now. Why? Well, if the fix was easy, the original author probably would have done it.[1](#fn:time) That means that if you are trying to “fix” the code, it might end up being a non-trivial change, which means a non-trivial amount of your time writing and debugging and testing. Your efforts may be better spent elsewhere, where something is _actively_ causing a problem. (Perhaps a [starter bug](https://bugs.swift.org/issues/?jql=labels%20%3D%20StarterBug)…)
+There’s an interesting consequence of this slightly different definition, though. Sure, the code isn’t as good as it should be, but _that doesn’t mean you should put effort into improving it,_ at least not right now. Why? Well, if the fix was easy, the original author probably would have done it.^[1](#fn:time) That means that if you are trying to “fix” the code, it might end up being a non-trivial change, which means a non-trivial amount of your time writing and debugging and testing. Your efforts may be better spent elsewhere, where something is _actively_ causing a problem. (Perhaps a [starter bug](https://bugs.swift.org/issues/?jql=labels%20%3D%20StarterBug)…)
 
 So FIXME comments tend to stick around for a long time. That’s not automatically a problem. It just means that whatever deficiencies the original code had, they weren’t so bad that someone had to rewrite them. And if someone ever _does_ come across a problem with the code, there’s a reasonable chance it’s related to whatever was called out in the FIXME. So that’s what it is: a note to future maintainers of the code if a problem _does_ come up.
 

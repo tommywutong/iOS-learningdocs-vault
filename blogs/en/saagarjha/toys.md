@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:492a5429368dece8'
 translated: false
 ---

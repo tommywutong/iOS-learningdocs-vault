@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:18cb4f68949cc50b'
 translated: false
 ---
@@ -20,7 +20,7 @@ When you create a new iOS app project in Xcode, you get to choose between severa
 
 This post is an attempt to answer questions like these and dispel any fears you might have about the choice of your project template. Once you have seen how small the differences between most of the templates are, you will realize that it doesn’t matter much which one you chose as your starting point as you can easily incorporate another template’s features into your existing app.
 
-![The Xcode Project Template Chooser for an iOS app](https://oleb.net/media/xcode-project-template-chooser.png)
+[![The Xcode Project Template Chooser for an iOS app](https://oleb.net/media/xcode-project-template-chooser.png)](https://oleb.net/media/xcode-project-template-chooser.png)
 
 The information in this post is based on Xcode 4.6.2, the latest available version of Xcode at the time of writing. Apple may very well change some aspects of the project templates in the future, though I expect the essential parts to remain largely constant for the foreseeable future.
 
@@ -28,7 +28,7 @@ The information in this post is based on Xcode 4.6.2, the latest available versi
 
 Let’s begin with the simplest template, an “Empty Application”. On the next page of the New Project dialog panel, you can give your app a name and get to set a few options, which I’ll discuss later. For now, select iPhone as your target device and make sure the box for “Use Automatic Reference Counting” is checked. Leave the other options (“Use Core Data” and “Include Unit Tests”) unchecked.
 
-![Options for an Empty Application iOS app project in Xcode](https://oleb.net/media/xcode-empty-application-project-template.png)
+[![Options for an Empty Application iOS app project in Xcode](https://oleb.net/media/xcode-empty-application-project-template.png)](https://oleb.net/media/xcode-empty-application-project-template.png)
 
 As the name suggests, the Empty Application template includes just enough boilerplate to get you started with a valid iOS app. The file `main.m` contains the `main()` function, which is the starting point for every C and, by extension, Objective-C program. The sole task of `main()` is to get the Cocoa event handling system started and pass control to it. See [my earlier post on the iOS application launch sequence](https://oleb.net/blog/2012/02/app-launch-sequence-ios-revisited/) for a detailed look at how it does this. The `main()` function is identical in each project template.
 
@@ -59,7 +59,7 @@ Even the simplest iOS application needs a main window. In the Empty Application 
 
 That is all the relevant code in this template. The `AppDelegate` includes a few other empty method bodies to get you started with your app’s lifecycle management. The comments in these methods are quite helpful in understanding the purpose of each method.
 
-Note that this template does not contain any storyboards or NIB files. It does not even create a view controller, despite the central role view controllers play in UIKit.[1](#fn:1) While you could theoretically proceed by creating your app’s views and controls right here in the app delegate and adding them directly to the window, that is not a good idea.
+Note that this template does not contain any storyboards or NIB files. It does not even create a view controller, despite the central role view controllers play in UIKit.^[1](#fn:1) While you could theoretically proceed by creating your app’s views and controls right here in the app delegate and adding them directly to the window, that is not a good idea.
 
 # Single View Application
 
@@ -80,7 +80,7 @@ Pay attention to the implementation of the app delegate. Contrary to the Empty A
 }
 ```
 
-Where does our app’s main window come from then? It turns out that, by specifying a storyboard in the app’s `Info.plist` file (under the [`UIMainStoryboard`](http://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW9) key), the `UIApplication` object automatically creates a window and assigns it to our app delegate’s `window` property.[2](#fn:2) The `UIApplication` instance also loads the storyboard, initializes the storyboard’s initial view controller and installs it as the window’s [`rootViewController`](http://developer.apple.com/library/ios/documentation/uikit/reference/UIWindow_Class/UIWindowClassReference/UIWindowClassReference.html#//apple_ref/doc/uid/TP40006817-CH3-SW33).
+Where does our app’s main window come from then? It turns out that, by specifying a storyboard in the app’s `Info.plist` file (under the [`UIMainStoryboard`](http://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW9) key), the `UIApplication` object automatically creates a window and assigns it to our app delegate’s `window` property.^[2](#fn:2) The `UIApplication` instance also loads the storyboard, initializes the storyboard’s initial view controller and installs it as the window’s [`rootViewController`](http://developer.apple.com/library/ios/documentation/uikit/reference/UIWindow_Class/UIWindowClassReference/UIWindowClassReference.html#//apple_ref/doc/uid/TP40006817-CH3-SW33).
 
 This way, control reaches your root view controller’s `viewDidLoad` method (where you usually place code to configure your app’s initial view) without a single line of code. We will see this pattern in all other templates that use storyboards, as well.
 
@@ -109,7 +109,7 @@ This also illustrates what changes you would have to make if you wanted to conve
 
 The Utility Application template includes two view controllers. The root view controller (`MainViewController`) is set up exactly like the Single View Application. It contains a button that lets the user switch to another view controller (presented modally) and back. When using storyboards, the transition to the `FlipsideViewController` is modeled with a modal segue inside the storyboard.
 
-![The modal segue to the FlipsideViewController in an Xcode Utility Application project template](https://oleb.net/media/xcode-utility-app-modal-segue.png)
+[![The modal segue to the FlipsideViewController in an Xcode Utility Application project template](https://oleb.net/media/xcode-utility-app-modal-segue.png)](https://oleb.net/media/xcode-utility-app-modal-segue.png)
 
 <sub>The modal storyboard segue to the `FlipsideViewController` in an Xcode Utility Application project template.</sub>
 
@@ -220,7 +220,7 @@ The OpenGL Game template is the odd one out. It too uses UIKit like the other ap
 
 When you create an OpenGL-based app, you will notice two new files in the project: `Shader.vsh` and `Shader.fsh`, a basic vertex and fragment shader. You will also notice that your app’s view controller inherits from [`GLKViewController`](http://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKViewController_ClassRef/Reference/Reference.html#//apple_ref/doc/uid/TP40010925) and its view is a [`GLKView`](http://developer.apple.com/library/ios/documentation/GLkit/Reference/GLKView_ClassReference/Reference/Reference.html#//apple_ref/doc/uid/TP40010923).
 
-The view controller contains almost 400 lines of code for setting up the OpenGL ES 2.0 stack[3](#fn:3) and for a small sample scene. Surprisingly (and unlike the other templates), it even includes a useful implementation for the `didReceiveMemoryWarning` method.
+The view controller contains almost 400 lines of code for setting up the OpenGL ES 2.0 stack^[3](#fn:3) and for a small sample scene. Surprisingly (and unlike the other templates), it even includes a useful implementation for the `didReceiveMemoryWarning` method.
 
 If you want to write an OpenGL-based app, this template is a very good starting point. Setting up the OpenGL stack takes a lot of code that is not particularly well documented in one place anywhere else, and since the setup is platform-dependent, even OpenGL experts will benefit from using the template.
 
@@ -257,7 +257,7 @@ In addition, Xcode creates a bunch of code (about 100 lines) in your app delegat
 Problems with Apple’s sample code include:
 
 - Error handling is missing (though this is clearly documented in the comments).
-- The `-saveContext` method is called from `applicationWillTerminate:` although it is clearly documented that this method is never called in the application lifecycle on modern multitasking-capable iOS devices. The correct place for saving is `applicationDidEnterBackground:`, which lacks a call to `saveContext`. This suggests that Apple has not touched this part of the sample code for years.[4](#fn:4)
+- The `-saveContext` method is called from `applicationWillTerminate:` although it is clearly documented that this method is never called in the application lifecycle on modern multitasking-capable iOS devices. The correct place for saving is `applicationDidEnterBackground:`, which lacks a call to `saveContext`. This suggests that Apple has not touched this part of the sample code for years.^[4](#fn:4)
 - The app delegate is arguably not the right place for managing your Core Data stack. You should create a separate class for it.
 - The sample code creates the app’s data store file in the application documents directory, which is arguably not the right place for it. In most cases, the Library directory is probably a better choice because it does not give users access to the file (e.g. via iTunes file sharing).
 - The code doesn’t use [Core Data’s new concurrency model](http://floriankugler.com/blog/2013/4/2/the-concurrent-core-data-stack), with separate managed objects contexts for the main queue and a background queue, even though Apple recommends to use it.

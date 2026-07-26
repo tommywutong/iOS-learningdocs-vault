@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2e08deb6ab517e3b'
 translated: false
 ---
@@ -16,9 +16,7 @@ translated: false
 
 The purpose of this post is so that I will have a link to give people when they ask: how do I write an iOS application that pulls data from an RSS feed, displays it pretty and can put things on a map. I'll show you all of that and more as I rewrite my oldest iOS application from scratch: FuelView.
 
-> FuelView, is freely available on the Australian App Store
-> 
-> .
+> The app presented in this post, [FuelView, is freely available on the Australian App Store](http://itunes.apple.com/au/app/fuelview/id290932924?mt=8).
 
 ## Introduction
 
@@ -36,71 +34,23 @@ There's a reason why this version is a rewrite from scratch.
 
 While the application in this post is only directly useful to people living in Western Australia, I think this is a _really_ interesting project as it contains a lot of very useful snippets of code (some of which I've written posts on before) including:
 
-- (you can see the Mac version in
-
-  Drawing gloss gradients in CoreGraphics
-
-  )
-- . It seems like a strange scenario that would only be needed in strange situations but the use case turns out to be really common.
-- (something I've previously written about in
-
-  Core Data: one line fetch
-
-  )
-- (which you can also see in my earlier posts:
-
-  WhereIsMyMac, a Snow Leopard CoreLocation project
-
-  and
-
-  A sample iPhone application with complete unit tests
-
-  )
-- (using my
-
-  class from
-
-  Classes for fetching and parsing XML or JSON via HTTP
-
-  )
-- (using a
-
-  category from
-
-  Finding or creating the application support directory
-
-  )
-- (another in a long list of convenience functions that I'm surprised aren't part of Cocoa)
-- (something I discussed in
-
-  Adapter interfaces in Objective-C, using categories
-
-  without giving any concrete examples)
-- (a similar idea but different implementation to my earlier post
-
-  Sliding `UITextFields` around to avoid the keyboard
-
-  )
-- (originally created from a CSV file as shown in
-
-  Writing a parser using `NSScanner`
-
-  )
-- (as I discussed in
-
-  `UITableView` construction, drawing and management
-
-  )
-- (without the
-
-  needing to do anything when the cell is selected, the cells in the section will automatically ensure only one is selected at a time)
-- (
-
-  goes the other way but a non-Cocoa approach is needed to go from an address to longitude/latitude)
+- **An iOS version of my Gloss Gradient drawing code** (you can see the Mac version in [Drawing gloss gradients in CoreGraphics](https://www.cocoawithlove.com/2008/09/drawing-gloss-gradients-in-coregraphics.html))
+- **Two persistent stores with one `NSPersistentStoreCoordinator`**. It seems like a strange scenario that would only be needed in strange situations but the use case turns out to be really common.
+- **A full set of "single line Core Data fetch" methods** (something I've previously written about in [Core Data: one line fetch](https://www.cocoawithlove.com/2008/03/core-data-one-line-fetch.html))
+- **Getting the GPS location** (which you can also see in my earlier posts: [WhereIsMyMac, a Snow Leopard CoreLocation project](https://www.cocoawithlove.com/2009/09/whereismymac-snow-leopard-corelocation.html) and [A sample iPhone application with complete unit tests](https://www.cocoawithlove.com/2009/12/sample-iphone-application-with-complete.html))
+- **Pulling data from an RSS feed** (using my `XMLFetcher` class from [Classes for fetching and parsing XML or JSON via HTTP](https://www.cocoawithlove.com/2011/05/classes-for-fetching-and-parsing-xml-or.html))
+- **Caching data in the Application Support directory** (using a `DirectoryLocations` category from [Finding or creating the application support directory](https://www.cocoawithlove.com/2010/05/finding-or-creating-application-support.html))
+- **Function to create a two point `CGGradientRef` from two `UIColors`** (another in a long list of convenience functions that I'm surprised aren't part of Cocoa)
+- **An example of using a category as an Adapter interface** (something I discussed in [Adapter interfaces in Objective-C, using categories](https://www.cocoawithlove.com/2008/05/adapter-interfaces-in-objective-c-using.html) without giving any concrete examples)
+- **Scrolling a text field that isn't in a table** (a similar idea but different implementation to my earlier post [Sliding `UITextFields` around to avoid the keyboard](https://www.cocoawithlove.com/2008/10/sliding-uitextfields-around-to-avoid.html))
+- **A Core Data Postcode database** (originally created from a CSV file as shown in [Writing a parser using `NSScanner`](https://www.cocoawithlove.com/2009/11/writing-parser-using-nsscanner-csv.html))
+- **A flexible, reusable controller/table/cell structure** (as I discussed in [`UITableView` construction, drawing and management](https://www.cocoawithlove.com/2010/12/uitableview-construction-drawing-and.html))
+- **A `CheckmarkCell` that self-manages radio button style selection** (without the `UITableViewController` needing to do anything when the cell is selected, the cells in the section will automatically ensure only one is selected at a time)
+- **Forward geocoding using Google's Maps API** (`MKReverseGeocoder` goes the other way but a non-Cocoa approach is needed to go from an address to longitude/latitude)
 
 Plus a whole lot more. It really is a densely packed little program.
 
-> If you skip forward to the second last section, I reveal where in the program you can find all of these code samples.
+> **So where is all the "useful code"?** If you skip forward to the second last section, I reveal where in the program you can find all of these code samples.
 
 ## About FuelView
 
@@ -112,11 +62,11 @@ The application looks like this:
 
 ![](https://www.cocoawithlove.com/assets/objc-era/fuelviewscreenshots.png)
 
-> the code is all freely available under a zlib-style license but this license does
-> 
-> extend to the other assets. You may not use the icons or application name in your own programs.
-> 
-> The previous version of FuelView (1.1.10 is available for free from the iTunes App Store in Australia. I'll be resubmitting this version (probably 1.2) in a week or two.
+> **Download the complete project associated with this post: [FuelView.zip](https://www.cocoawithlove.com/assets/objc-era/FuelView.zip) (330kb).**  
+>   
+> **Note:** the code is all freely available under a zlib-style license but this license does _not_ extend to the other assets. You may not use the icons or application name in your own programs.  
+>   
+>  The previous version of FuelView (1.1.10 is available for free from the iTunes App Store in Australia. I'll be resubmitting this version (probably 1.2) in a week or two.
 
 ## Deceptive complexity
 
@@ -148,9 +98,7 @@ Then I have the more straightforward complexity of custom drawing. I want to hav
 
 ![](https://www.cocoawithlove.com/assets/objc-era/locationsavailable.png)
 
-> : I have removed my Google Maps API key from the code. If you want to use this code, you'll need to apply for your own Google Maps API key and set it the
-> 
-> at the top of the LocationsController.m file.
+> **Maps Key Note**: I have removed my Google Maps API key from the code. If you want to use this code, you'll need to apply for your own Google Maps API key and set it the `MapsKey` at the top of the LocationsController.m file.
 
 ## Fifth implementation iteration
 
@@ -172,43 +120,65 @@ I'm _not_ saying that adapter categories are a bad idea. Sometimes you can't or 
 
 ## So where is all the "useful code"?
 
+**An iOS version of my Gloss Gradient drawing code**
+
 The GlossGradients.m code is in the project. It's very similar to the original code except that there aren't HSV conversion methods on `UIColor` like there is on `NSColor`, so I've had to write these methods myself. It is used in the `ResultsView` drawing code.
+
+**Two persistent stores with one `NSPersistentStoreCoordinator`**
 
 The `LocationsController` uses two different persistent stores: a read-only store inside the application bundle that is shipped with the application contains the pre-supplied results for station lookups. But the application bundle can't be changed, so I create a read-write store in the Application Support directory. The `NSPersistentStoreCoordinator` is smart enough to save the store to the correct location automatically.
 
+**A full set of "single line Core Data fetch" methods**
+
 The NSManagedObjectContext+FetchAdditions.m file contains a range of different fetch request creation methods and single line fetching implementations (for set, array and single object results). It is used in the `LocationsController` and the `PostcodesController` to perform the actual queries on the Core Data context.
+
+**Getting the GPS location**
 
 The `ResultsViewController` operates as a `CLLocationManagerDelegate`. The location receiving code is pretty simple but I think the error handling code in locationFailedWithCode: is more interesting.
 
+**Pulling data from an RSS feed**
+
 Of course, an RSS feed is just XML. We're after the \<item\> nodes in the result so I use an `XMLFetcher` to with an XPath query of "//item". You can see this in the `setLocation:` method and the response is handled in the `responseReceived:` method (the `XPathQueryNodes` are turned into an `NSDictionary`).
+
+**Caching data in the Application Support directory**
 
 The application support directory is accessed/created in the `persistentStoreCoordinator` method of the `LocationsController`. As I said above, this is for writing extra Locations to the Locations Core Data context.
 
+**Function to create a two point CGGradientRef from two UIColors**
+
 The function `TwoPointGradient` is pretty simple; it just creates a `CGGradientRef` taking two `UIColors` to use as the endpoints of the gradient. However, it's 23 lines of code that don't need to be retyped in the `ResultCellBackground`, `ResultView` and the `PageCellBackground`.
+
+**An example of using a category as an Adapter interface**
 
 Putting an adapter on a generic container class is a bad idea if you can easily change the class to something of your own implementation. But this is still an example of adapting a class' interface to suit your own needs — something that is very useful when you don't have control over the underlying class.
 
+**Scrolling a text field that isn't in a table**
+
 The manually entered postcode is in a text field on a `UIToolbar` and when the keyboard appears, the entire `UIToolbar` scrolls up with the keyboard. This behavior is handled by the `PageViewController` (everything below the "Handle the sliding/scrolling of the view when the keyboard appears" pragma except the dealloc method). The `PageViewController` needs to be set as the delegate of the `UITextField` for this to work.
+
+**A Core Data Postcode database**
 
 The `PostcodesController` shows how to implement a static data store using Core Data. I think I could probably write a base-class for this type of singleton that would dramatically reduce the common code between the `PostcodesController` and the `LocationsController`.
 
+**A flexible, reusable controller/table/cell structure**
+
 The `PageViewController`, `PageCell`, all the view controllers and all the table cells are directly based on the code I presented in [UITableView construction, drawing and management](https://www.cocoawithlove.com/2010/12/uitableview-construction-drawing-and.html).
 
+**A `CheckmarkCell` that self-manages radio button style selection**
+
 It's strongly reliant on the `PageViewController` and `PageCell` classes but the `CheckmarkCell` shows an easy way (easy for the rest of the program) to manage a section in a table where only one row can be selected.
+
+**Forward geocoding using Google's Maps API**
 
 The `locationForAddress:receiver:` method in `LocationsController` performs an XML request on Googles Maps API to forward geocode addresses into longitude and latitude (the response is handled in `mapsResponseReceived:`). Again: you'll need your own Maps API Key to make this work.
 
 ## Conclusion
 
-> the code is all freely available under a zlib-style license but this license does
-> 
-> extend to the other assets. You may not use the icons or application name in your own programs.
-> 
-> The app presented in this post,
-> 
-> FuelView, is freely available on the Australian App Store
-> 
-> .
+> **Download the complete project associated with this post: [FuelView.zip](https://www.cocoawithlove.com/assets/objc-era/FuelView.zip) (330kb).**  
+>   
+> **Note:** the code is all freely available under a zlib-style license but this license does _not_ extend to the other assets. You may not use the icons or application name in your own programs.  
+>   
+>  The app presented in this post, [FuelView, is freely available on the Australian App Store](http://itunes.apple.com/au/app/fuelview/id290932924?mt=8).
 
 I did this rewrite of FuelView for three reasons:
 

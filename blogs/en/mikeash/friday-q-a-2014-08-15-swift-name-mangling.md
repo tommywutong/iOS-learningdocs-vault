@@ -63,16 +63,10 @@ Unlike C and Objective-C, in C++ and Swift function names by themselves are not 
 
 The simple example of `foo` above is trivially broken down:
 
-1. common to C-style symbols.
-2. , a prefix marking the symbol as a mangled global C++ name.
-3. thus means "the name 'foo'".
-4. and
-
-  are respectively
-
-  and
-
-  builtin type names; return values are not part of a function's signature in C++, so the parameter list simply follows the function's full name.
+1. First, the leading `_` common to C-style symbols.
+2. Next, `_Z`, a prefix marking the symbol as a mangled global C++ name.
+3. The number defines how many characters appear in the next identifier in the name; in this case 3. `3foo` thus means "the name 'foo'".
+4. The `d` and `i` are respectively `double` and `int` builtin type names; return values are not part of a function's signature in C++, so the parameter list simply follows the function's full name.
 
 For more information on how typical C++ compilers mangle names, see the [Itanium C++ ABI documentation](http://mentorembedded.github.io/cxx-abi/abi.html#mangling).
 
@@ -109,80 +103,32 @@ Swift will have generated over 100 more symbols, but this is the complex mangled
 
 Let's take it in order:
 
-1. is there even for Swift symbols.
-2. is the marker for a Swift global symbol.
-3. tells us that the overall type of the symbol is a function.
-4. represents a "class" type. In this case, we're dealing with three nested classes, so it appears 3 times.
-5. is the "module name", and
-
-  is the class name itself, yielding a class named
-
-  .
-6. after
-
-  . It then goes back and unwinds the stack of nested types from the inside out, yielding
-
-  ,
-
-  , and
-
-  as class names. Since
-
-  has no corresponding nesting type (there were only three
-
-  s), it becomes the innermost part of the symbol's name-
-
-  .
-7. marks this symbol as an "uncurried function" type- in this case, a class method taking an implicitly bound first parameter, the instance itself.
-8. is a substitution, meaning it will use the third non substituted
-
-  encountered during parsing of the name thus far (the index is zero-based). In this case, this would be
-
-  (the third class type).
-9. now marks the beginning of the function's parameter list, in the guise of a fresh function type. By now, it should be very obvious that the name mangling is heavily oriented around types.
-10. marks the beginning of a "tuple", which in this context is a list of types.
-11. is a substitution of the first type encountered in parsing, in this case
-
-  ; the first parameter has this type.
-12. is the external name of the second parameter. Notice that Swift does not encode internal names as part of the mangled signature.
-13. is a substitute of the second type encountered in parsing, in this case
-
-  ; the second parameter has this type and the name
-
-  .
-14. is the external name of the third parameter.
-15. marks the start of another function type.
-16. marks the start of another tuple, the function's parameters (the function type is unnamed).
-17. is the external name of the closure's first parameter.
-18. is
-
-  , a shorthand for the
-
-  builtin type.
-19. marks the end of the closure's arguments tuple.
-20. is another
-
-  , the closure's return type
-21. marks the end of the uncurried function's arguments tuple.
-22. marks the start of an
-
-  type.
-23. marks the start of a
-
-  type, which will contain the
-
-  . (As we saw with the classes earlier, types are nested from the inside out in mangled names).
-24. substitutes the (only) seen module name,
-
-  . Notice that this is
-
-  a type substitution!
-25. is the name of the
-
-  .
-26. is the name of the
-
-  .
+1. Sure enough, the leading extra `_` is there even for Swift symbols.
+2. `_T` is the marker for a Swift global symbol.
+3. `F` tells us that the overall type of the symbol is a function.
+4. `C` represents a "class" type. In this case, we're dealing with three nested classes, so it appears 3 times.
+5. `4test` is the "module name", and `1a` is the class name itself, yielding a class named `test.a`.
+6. At this point, the Swift parser will set up a stack of parsed names, looking for the first non-name token in the mangled name. In this case, it will find `f` after `1d`. It then goes back and unwinds the stack of nested types from the inside out, yielding `test.a`, `test.a.b`, and `test.a.b.c` as class names. Since `1d` has no corresponding nesting type (there were only three `C`s), it becomes the innermost part of the symbol's name- `test.a.b.c.d`.
+7. The lowercase `f` marks this symbol as an "uncurried function" type- in this case, a class method taking an implicitly bound first parameter, the instance itself.
+8. Because we're now parsing a function type, the list of argument types comes next, followed by the return type. For an uncurried function type, the curried parameter(s) come first. `S2_` is a substitution, meaning it will use the third non substituted _type_ encountered during parsing of the name thus far (the index is zero-based). In this case, this would be `test.a.b.c` (the third class type).
+9. `F` now marks the beginning of the function's parameter list, in the guise of a fresh function type. By now, it should be very obvious that the name mangling is heavily oriented around types.
+10. `T` marks the beginning of a "tuple", which in this context is a list of types.
+11. `S0_` is a substitution of the first type encountered in parsing, in this case `test.a`; the first parameter has this type.
+12. `1x` is the external name of the second parameter. Notice that Swift does not encode internal names as part of the mangled signature.
+13. `S1_` is a substitute of the second type encountered in parsing, in this case `test.a.b`; the second parameter has this type and the name `x`.
+14. `1v` is the external name of the third parameter.
+15. `F` marks the start of another function type.
+16. `T` marks the start of another tuple, the function's parameters (the function type is unnamed).
+17. `1x` is the external name of the closure's first parameter.
+18. `Si` is `Swift.Int`, a shorthand for the `Int` builtin type.
+19. `_` marks the end of the closure's arguments tuple.
+20. `Si` is another `Int`, the closure's return type
+21. `_` marks the end of the uncurried function's arguments tuple.
+22. `O` marks the start of an `enum` type.
+23. `V` marks the start of a `struct` type, which will contain the `enum`. (As we saw with the classes earlier, types are nested from the inside out in mangled names).
+24. `S_` substitutes the (only) seen module name, `test`. Notice that this is _not_ a type substitution!
+25. `1e` is the name of the `struct`.
+26. `1f` is the name of the `enum`.
 27. The parser sees the end of the mangled name and unwinds through the two parsed names as it did with the class names earlier.
 
 We thus have an uncurried function, named `test.a.b.c.d`, taking a bound parameter of type `test.a.b.c`, parameters of names and types `(test.a, x: test.a.b, v: (x: Swift.Int) -> Swift.Int)`, and return type `test.e.f`. As `swift-demangle` shows us, the "official" demangling of this symbol is:
@@ -231,11 +177,9 @@ In case anyone was wondering, here's what happens when you add Unicode to the mi
 
 `X4GrIh` translates to:
 
-- : eXtended character set
-- : the encoded length of the name
-- : the modified-Punycode encoding of the 💛 emoji (
-
-  )
+- `X`: eXtended character set
+- `4`: the encoded length of the name
+- `GrIh`: the modified-Punycode encoding of the 💛 emoji (`U+1F49B`)
 
 Swift does not use standard Punycode encoding as used in DNS domain names, but it is similar. For more information, see [RFC3492](http://www.ietf.org/rfc/rfc3492.txt), the Punycode standard.
 
@@ -247,7 +191,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-08-15-swift-name-mangling.html)
 
 Add your thoughts, post a comment:
 

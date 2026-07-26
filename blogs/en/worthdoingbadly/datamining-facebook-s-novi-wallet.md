@@ -7,7 +7,7 @@ original_language: en
 published: 2021-11-23
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9344fb11819d9908'
 translated: false
 ---
@@ -32,9 +32,7 @@ Here’s my “hands-on” of the Novi settings screen on Android. I can’t dem
 > ... except I'm not going to give Facebook my driver's license or bank account  
 > You only get to see an empty "Settings" screen. Sorry. [pic.twitter.com/Grh9Fhz22J](https://t.co/Grh9Fhz22J)
 > 
-> — Zhuowei Zhang (@zhuowei)
-> 
-> November 7, 2021
+> — Zhuowei Zhang (@zhuowei) [November 7, 2021](https://twitter.com/zhuowei/status/1457420727838195728?ref_src=twsrc%5Etfw)
 
 I wasn’t eligible for the Novi beta (which requires you to be a resident of selected states in the US or Guatamala, and requires you to upload your photo ID).
 
@@ -42,10 +40,8 @@ To work around this, I:
 
 - rented a cloud server in California
 - modified the APK to replace “prod.novi.com” with my own server
-- to the function that throws the
-
-  error.
-- in the login response to
+- disabled certificate pinning by adding a `return-void` to the function that throws the `pinning error, trusted chain:` error.
+- changed `kyc_status` in the login response to `ONBOARDED`
 
 This allowed me to view… the settings screen, and that’s it. (The actual money UI is controlled by the server, and without a valid account, it just gives a blank homescreen)
 
@@ -94,3 +90,5 @@ Facebook’s Novi wallet has text about… buying Bitcoin, for some reason:
 ## Android strings
 
 Here’s the [strings.xml](https://gist.github.com/zhuowei/fb37eddd1808f31786855f3e3b847b5e) of the Novi Android APK if you want to see if there’s anything else interesting.
+
+[https://worthdoingbadly.com/novi/](https://worthdoingbadly.com/novi/)

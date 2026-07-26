@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6933f2c84e9ebd9c'
 translated: false
 ---
@@ -175,9 +175,7 @@ The only other important behavior is that the `CellController` must invoke `upda
 
 ## Conclusion
 
-> download the complete MultiRowSelect Xcode 3.1 project
-> 
-> (40kB).
+> You can [download the complete MultiRowSelect Xcode 3.1 project](https://www.cocoawithlove.com/assets/objc-era/MultiRowSelect.zip) (40kB).
 
 The final result is a few hundred lines of code. This is not a giant mountain of code by any means but still a considerable volume given how simple "multi-row selection" might seem as a description. I think this serves to show that user-interface implementations can be very time consuming when the desired functionality is not provided by the default libraries.
 

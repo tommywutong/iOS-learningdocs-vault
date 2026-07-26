@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b2673cc238c53019'
 translated: false
 ---
@@ -37,9 +37,9 @@ In response to an event (the user tapping a button), we create and initialize a 
 
 # The Name of the NIB File is an Implementation Detail
 
-Does it make sense for a view controller initializer to have an argument for the name of the view’s NIB file? In other words, should the creator of the view controller decide what NIB file it should load its view from? No. As Joe and Aaron mention in the book[1](#fn:1), the name of its NIB file is an implementation detail that should only concern the view controller itself. Exposing this detail to an outside caller breaks the [encapsulation principle](https://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)) object-oriented programming is based on.
+Does it make sense for a view controller initializer to have an argument for the name of the view’s NIB file? In other words, should the creator of the view controller decide what NIB file it should load its view from? No. As Joe and Aaron mention in the book^[1](#fn:1), the name of its NIB file is an implementation detail that should only concern the view controller itself. Exposing this detail to an outside caller breaks the [encapsulation principle](https://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)) object-oriented programming is based on.
 
-Since we usually subclass `UIViewController` to create our own custom view controllers, fixing this design flaw is easy. We just override the standard `init` method and document it to be our new designated initializer. In that method, we hardcode the values for `nibName` and `bundle` and call the superclass’s designated initializer with them:[2](#fn:2)
+Since we usually subclass `UIViewController` to create our own custom view controllers, fixing this design flaw is easy. We just override the standard `init` method and document it to be our new designated initializer. In that method, we hardcode the values for `nibName` and `bundle` and call the superclass’s designated initializer with them:^[2](#fn:2)
 
 ```
 @implementation MyCustomViewController
@@ -71,7 +71,7 @@ Now, whenever we need to create a new view controller, we just call `init` rathe
 
 # One View Controller, Multiple NIBs
 
-In some cases it can actually make sense to initialize the same view controller with different NIB files. The prime example is different UIs for iPhone and iPad that are contained in separate NIB files but served by the same view controller.[3](#fn:3) But in this case, too, it should be the view controller itself that decides what NIB file to load. The logic for the decision should be placed into its `init` method:
+In some cases it can actually make sense to initialize the same view controller with different NIB files. The prime example is different UIs for iPhone and iPad that are contained in separate NIB files but served by the same view controller.^[3](#fn:3) But in this case, too, it should be the view controller itself that decides what NIB file to load. The logic for the decision should be placed into its `init` method:
 
 ```
 - (id)init

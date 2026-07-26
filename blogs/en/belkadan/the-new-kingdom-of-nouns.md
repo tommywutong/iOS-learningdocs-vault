@@ -7,7 +7,7 @@ original_language: en
 published: 2017-09-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0163f942bfb236b1'
 translated: false
 ---
@@ -32,7 +32,7 @@ translated: false
 
 [Last time](https://belkadan.com/blog/2017/09/Over-abstraction/) I talked about how algebraic abstractions like “monoid” and “semigroup” didn’t seem to be pulling their weight, despite love from functional programmers. That focused on a practical issue: do these abstractions aid or harm comprehension? Do they make programming easier or harder? (Of course, there’s not a simple answer to this question.)
 
-This time, though, I want to talk about something more exploratory: do we have the right tools to _talk_ about these abstractions? This post is therefore going to be _much_ longer and contain a lot more rambling.more
+This time, though, I want to talk about something more exploratory: do we have the right tools to _talk_ about these abstractions? This post is therefore going to be _much_ longer and contain a lot more rambling.
 
 (I’ll note up front that these really are exploratory ideas, not something I’d intend to put into Swift directly. Things to consider for the _next_ language, perhaps, since [we’ll never find a programming language that frees us from the burden of clarifying ideas](https://www.xkcd.com/568/).)
 
@@ -61,7 +61,7 @@ extension Int: Semigroup {
 }
 ```
 
-This works great, because integer addition is associative.[1](#fn:float) And as Brandon Kase mentions in his talk “[Beyond Types in Swift](http://2017.funswiftconf.com)”, this means it’s safe to use with a parallel implementation of `reduce`. This means I can get the sum of a collection of integers much faster than if I do a regular, serial `reduce`.
+This works great, because integer addition is associative.^[1](#fn:float) And as Brandon Kase mentions in his talk “[Beyond Types in Swift](http://2017.funswiftconf.com)”, this means it’s safe to use with a parallel implementation of `reduce`. This means I can get the sum of a collection of integers much faster than if I do a regular, serial `reduce`.
 
 But wait, we could also have written it this way:
 
@@ -140,7 +140,7 @@ let totalScore: Int =
                   .rawValue
 ```
 
-That is, we have to jump in and out of the `Sum` type in order to talk about the summing operation.[2](#fn:lazy)
+That is, we have to jump in and out of the `Sum` type in order to talk about the summing operation.^[2](#fn:lazy)
 
 We could get clever and throw more code at the problem:
 
@@ -273,7 +273,7 @@ protocol Lattice {
 }
 ```
 
-A concrete example of a lattice is a `Set` with its `union` and `intersection` operations.[3](#fn:refines)
+A concrete example of a lattice is a `Set` with its `union` and `intersection` operations.^[3](#fn:refines)
 
 ```
 struct SetInclusion<Element>: RawRepresentable {
@@ -345,7 +345,7 @@ So, we’re in the Kingdom of Nouns again, but now we know why. **The noun isn�
 
 Some of the uneasiness here, at least for me, comes from the clash with normal object-oriented style. We have operations that operate on a particular type, and yet we don’t necessarily want to make them methods of that type. Instead, we’re mapping existing methods into a generic interface, and that generic interface may not have a good choice to be the `self` type.
 
-On the other hand, being able to directly manipulate “structures” lets you do convenient things like having a `Set` that uniques class instances by pointer identity instead of calling `==`.[4](#fn:conformance) Hm, this is starting to sound like the [strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)…
+On the other hand, being able to directly manipulate “structures” lets you do convenient things like having a `Set` that uniques class instances by pointer identity instead of calling `==`.^[4](#fn:conformance) Hm, this is starting to sound like the [strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)…
 
 …and with that we’ve come full circle back to design patterns.
 
@@ -355,7 +355,7 @@ So, to conclude:
 
 - Yes, being able to check properties of operations pulls us into the Kingdom of Nouns in today’s Swift.
 - No, Swift cannot really do better in the general case, because it’s not always about just one operation.
-- struct is the way to go when a type can conform to a protocol in multiple ways.
+- Yes, a `RawRepresentable` struct is the way to go when a type can conform to a protocol in multiple ways.
 
 I think a possible takeaway from this for Swift is that defining such structs could be easier. There are a few ideas floating around about that, primarily a keyword like `newtype` that would handle the `RawRepresentable` conformance, and then some way to forward protocol implementations to the wrapped value. And possibly some automatic wrapping/unwrapping. But we’ll see.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5f4bbadff7f388a6'
 translated: false
 ---
@@ -103,7 +103,7 @@ override func tableView(_ tableView: UITableView,
 
 # Synthesis only works in the same file
 
-Like other compiler-synthesized conformances ([`Equatable`, `Hashable`](https://github.com/apple/swift-evolution/blob/master/proposals/0185-synthesize-equatable-hashable.md), [`Encodable`, `Decodable`](https://github.com/apple/swift-evolution/blob/master/proposals/0166-swift-archival-serialization.md) — the list keeps growing)[1](#fn:1), the automatic code generation only works when you declare the conformance in the same file where the type is defined (either on the type definition itself or, new in Swift 4.2, in a same-file extension).
+Like other compiler-synthesized conformances ([`Equatable`, `Hashable`](https://github.com/apple/swift-evolution/blob/master/proposals/0185-synthesize-equatable-hashable.md), [`Encodable`, `Decodable`](https://github.com/apple/swift-evolution/blob/master/proposals/0166-swift-archival-serialization.md) — the list keeps growing)^[1](#fn:1), the automatic code generation only works when you declare the conformance in the same file where the type is defined (either on the type definition itself or, new in Swift 4.2, in a same-file extension).
 
 The automatic code synthesis is really a feature for _owners_ of a type, not to make retroactive conformances easier.
 
@@ -120,7 +120,7 @@ As a rule of thumb, think twice before adopting `CaseIterable` (and other system
 
 We’ve seen that the automatic synthesis only works for enums without associated values. This makes sense because adding associated values to an enum makes the number of possible values the enum can have potentially infinite.
 
-Ignoring the utility of having access to an infinite sequence of a type’s possible values for a moment, an infinite list is not representable in the confines of `CaseIterable` anyway: the protocol requires `allCases` to return a [`Collection`](https://developer.apple.com/documentation/swift/collection), and collections must be finite (although this could change in the future[2](#fn:2)).
+Ignoring the utility of having access to an infinite sequence of a type’s possible values for a moment, an infinite list is not representable in the confines of `CaseIterable` anyway: the protocol requires `allCases` to return a [`Collection`](https://developer.apple.com/documentation/swift/collection), and collections must be finite (although this could change in the future^[2](#fn:2)).
 
 But as long as the list of all possible values is finite, we can always implement the protocol manually for enums with associated values.
 
@@ -197,7 +197,7 @@ extension Workout: CaseIterable {
 
 Observe what happens now when we add another case to the `Workout` enum:
 
-![Compile-time error at almost the desired source location after adding a new enum case](https://oleb.net/media/swift-caseiterable-assertexhaustiveness-error-v2-1712px.png)
+[![Compile-time error at almost the desired source location after adding a new enum case](https://oleb.net/media/swift-caseiterable-assertexhaustiveness-error-v2-1712px.png)](https://oleb.net/media/swift-caseiterable-assertexhaustiveness-error-v2-1712px.png)
 
 <sub>Swift showing a compile-time error at almost the desired source location after adding a new enum case.</sub>
 
@@ -215,7 +215,7 @@ This clearly states that any type that has a finite number of values can conform
 
 ## Making other types `CaseIterable`
 
-Regardless, let’s conform some non-enum types to `CaseIterable`. The simplest example is [`Bool`](https://developer.apple.com/documentation/swift/bool)[3](#fn:3):
+Regardless, let’s conform some non-enum types to `CaseIterable`. The simplest example is [`Bool`](https://developer.apple.com/documentation/swift/bool)^[3](#fn:3):
 
 ```
 extension Bool: CaseIterable {
@@ -253,7 +253,7 @@ let hugeRange = UInt64.min ... .max
 //   {lowerBound 0, upperBound 9223372036854775807}
 ```
 
-But as soon as you ask this collection for its `count` (or more generally, as you compute a distance between two indices that overflows `Int.max`), things will not end well.[4](#fn:4)
+But as soon as you ask this collection for its `count` (or more generally, as you compute a distance between two indices that overflows `Int.max`), things will not end well.^[4](#fn:4)
 
 ## Applications
 

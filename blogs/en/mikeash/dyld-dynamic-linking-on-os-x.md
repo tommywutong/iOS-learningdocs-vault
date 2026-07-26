@@ -108,47 +108,9 @@ The symbol at index 4 (the fifth entry) is `_puts`. Similarly, the symbol at ind
 
 `ld` has:
 
-1. segment at the standard executable load address for
-
-  ,
-
-  , and the
-
-  section at
-
-  after that. The first
-
-  (actually,
-
-  , since the larger offset doesn't account for the file's Mach-O header) bytes of
-
-  are zeroed out. This aligns the
-
-  segment flush up against the
-
-  segment. I don't know exactly why this is done, though I assume it has something to do with cache efficiency.
-2. with the actual offset from the
-
-  instruction to the
-
-  symbol, which in this case is
-
-  . The resulting address is
-
-  , which a peek at the load commands (
-
-  ) tells us is the exact beginning of the
-
-  section.
-3. with the address of the symbol
-
-  for
-
-  , which comes immediately after
-
-  . Another peek at the load commands puts this in the
-
-  section, which we'll look at in detail later.
+1. Located the `__TEXT` segment at the standard executable load address for `x86_64`, `0x0000000100000000`, and the `__TEXT,__text` section at `0xf36` after that. The first `0xf35` (actually, `0xa0f`, since the larger offset doesn't account for the file's Mach-O header) bytes of `__TEXT` are zeroed out. This aligns the `__TEXT` segment flush up against the `__DATA` segment. I don't know exactly why this is done, though I assume it has something to do with cache efficiency.
+2. Replaced `0` with the actual offset from the `leaq` instruction to the `L_str` symbol, which in this case is `0x29`. The resulting address is `0x100000f61`, which a peek at the load commands (`otool -l test`) tells us is the exact beginning of the `__TEXT,__cstring` section.
+3. Replaced `0` with the address of the symbol _stub_ for `puts()`, which comes immediately after `main`. Another peek at the load commands puts this in the `__TEXT,__stubs` section, which we'll look at in detail later.
 
 Static linking, then, combines object files, resolves symbol references to external libraries, applies the relocations for those symbols, and builds a complete executable. Obviously, this is a huge simplification and applies only to executables. The process of linking dynamic libraries is similar, but not identical, and for brevity's sake I won't go into it here.
 
@@ -159,16 +121,10 @@ Static linking, then, combines object files, resolves symbol references to exter
 2. Recursively and cachingly loads all dependent dynamic libraries the executable links to into the process' memory space, including any necessary perusal of search paths from both the environment and the executable's "runpaths".
 3. Links those libraries into the executable by immediately binding non-lazy symbols and setting up the necessary tables for lazy binding.
 4. Runs static initializers for the executable.
-5. function and calls it.
-6. API), and provides hooks for
-
-  and other debuggers to get critical information.
-7. returns.
-8. 's
-
-  routine once
-
-  returns.
+5. Sets up the parameters to the executable's `main` function and calls it.
+6. During the process' execution, handles calls to lazily-bound symbol stubs by binding the symbols, provides runtime dynamic loading services (via the `dl*()` API), and provides hooks for `gdb` and other debuggers to get critical information.
+7. Runs static terminator routines after `main` returns.
+8. In some scenarios, makes the required call to `libSystem`'s `_exit` routine once `main` returns.
 
 I'll examine each step roughly in order.
 
@@ -194,34 +150,10 @@ I'll examine each step roughly in order.
 In retrospect, I'm not sure that pseudocode is any more sensible than the assembly would have been, but let's walk through it quickly:
 
 1. Push a 0 onto the stack, and align the stack to SSE requirements.
-2. .
-3. 's actual bootstrap routine, which sets up some minimal state for
-
-  itself (such as pulling in certain functions from
-
-  without actually linking to it and setting up Mach messaging) and then runs
-
-  's real
-
-  routine, which does loading, linking, and initializers.
-4. detected that the main executable uses the
-
-  load command to set up its entry point, it returns the address of a glue routine which is responsible for calling
-
-  when the process is done. That address is pushed onto the stack, fooling the entry point into thinking it's the routine's return address; the
-
-  instruction at the end of that function will jump to that glue code.
-5. detected the executable using the older
-
-  load command, it simply restores the stack to its original state and jumps to that entry point, which will be the
-
-  routine from crt1.o, the C runtime. The C runtime basically redoes all the work that
-
-  just did, minus the actual
-
-  startup, which is one of the reasons it was replaced with the
-
-  command.
+2. Calculate the slide of dyld itself by subtracting the address of a symbol whose address is always the same from the current address of `__dyld_start`.
+3. Run `dyld`'s actual bootstrap routine, which sets up some minimal state for `dyld` itself (such as pulling in certain functions from `libSystem` without actually linking to it and setting up Mach messaging) and then runs `dyld`'s real `main` routine, which does loading, linking, and initializers.
+4. If `dyld` detected that the main executable uses the `LC_MAIN` load command to set up its entry point, it returns the address of a glue routine which is responsible for calling `_exit` when the process is done. That address is pushed onto the stack, fooling the entry point into thinking it's the routine's return address; the `ret` instruction at the end of that function will jump to that glue code.
+5. If, on the other hand, `dyld` detected the executable using the older `LC_UNIXTHREAD` load command, it simply restores the stack to its original state and jumps to that entry point, which will be the `start` routine from crt1.o, the C runtime. The C runtime basically redoes all the work that `__dyld_start` just did, minus the actual `dyld` startup, which is one of the reasons it was replaced with the `LC_MAIN` command.
 6. Jump to the entry point.
 
 **Loading**  
@@ -229,13 +161,9 @@ Each time `dyld` has to load a dynamic library, whether at application startup o
 
 Locating the correct binary on disk is _usually_ fairly simple. The `LC_LOAD_DYLIB` command will give an absolute path, and the binary is loaded from that path. Of course, sometimes that path contains a special marker that tells `dyld` to look somewhere else:
 
-- - Up to OS X 10.3, this was the only marker
-
-  supported, and it had rather limited utility.
-
-  will replace this marker with the full path to the main executable.
-- - Added in 10.4, this marker is replaced with the full path to the binary which loaded the binary that is currently being loaded. This is not always the main executable, and primarily enabled frameworks to themselves embed frameworks without resorting to the "umbrella framework" mechanism, which Apple never made entirely public and actively discouraged the use of.
-- - When this marker was added in 10.5, there was much rejoicing. This marker is replaced in sequence with each "run path" embedded in the binary's loading binaries (recursively), enabling frameworks and dynamic libraries to finally be built only once and be used for both system-wide installation and embedding without changes to their install names, and allowing applications to provide alternate locations for a given library, or even override the location specified for a deeply embedded library.
+- `@executable_path` - Up to OS X 10.3, this was the only marker `dyld` supported, and it had rather limited utility. `dyld` will replace this marker with the full path to the main executable.
+- `@loader_path` - Added in 10.4, this marker is replaced with the full path to the binary which loaded the binary that is currently being loaded. This is not always the main executable, and primarily enabled frameworks to themselves embed frameworks without resorting to the "umbrella framework" mechanism, which Apple never made entirely public and actively discouraged the use of.
+- `@rpath` - When this marker was added in 10.5, there was much rejoicing. This marker is replaced in sequence with each "run path" embedded in the binary's loading binaries (recursively), enabling frameworks and dynamic libraries to finally be built only once and be used for both system-wide installation and embedding without changes to their install names, and allowing applications to provide alternate locations for a given library, or even override the location specified for a deeply embedded library.
 
 There are also default search paths, and in some circumstances, further paths can be specified in the environment and load commands.
 
@@ -272,7 +200,7 @@ Conceptually, binding a symbol is simple. In practice, it's rather interesting:
   ```
 
   In short, the non-lazy symbol pointers are just zero bytes, and the lazy symbol pointer points right back to the stub helper section!
-3. section to the real address of the symbol in the loaded library. You're done!
+3. Update the address of the symbol pointer in the appropriate `__DATA` section to the real address of the symbol in the loaded library. You're done!
 
 So what, you may be asking, are all this crazy indirection and all these extra sections all about?
 
@@ -287,28 +215,26 @@ When the process exits, `dyld` will also run static terminators, which mostly me
 
 Finally, `dyld` provides runtime services to binaries it has loaded. The `dl*()` APIs are the preferred interface to `dyld`'s services (and as of 10.5, the only sanctioned interface; the old functions have been deprecated):
 
-- - Performs the load stage of loading a dynamic library, can optionally partially or completely perform the bind stage.
-- - Look up a symbol in a dynamic library (or the entire process). At its simplest, this is no more than a "name to address" lookup.
-- - The inverse of
-
-  , transforming an address into a set of symbol information.
-- - Unloads a dynamic library from the process, if no other handles to it are in use. Unloading invalidates all the symbols provided by the dynamic library and can be something of a touchy operation, particularly in an Objective-C environment.
+- `dlopen` - Performs the load stage of loading a dynamic library, can optionally partially or completely perform the bind stage.
+- `dlsym` - Look up a symbol in a dynamic library (or the entire process). At its simplest, this is no more than a "name to address" lookup.
+- `dladdr` - The inverse of `dlsym`, transforming an address into a set of symbol information.
+- `dlclose` - Unloads a dynamic library from the process, if no other handles to it are in use. Unloading invalidates all the symbols provided by the dynamic library and can be something of a touchy operation, particularly in an Objective-C environment.
 
 **What's missing**  
 While I've gone over quite a bit, I've also left out a _lot_ of information in this article:
 
 - Two-level namespaces, which prevent trivial symbol collisions in dynamic libraries
-- shared cache, which maintains a systemwide map of already-loaded dynamic libraries for fast binding
+- The `dyld` shared cache, which maintains a systemwide map of already-loaded dynamic libraries for fast binding
 - Rebasing
 - Code signing
 - Dynamic library linking
-- 's expansive set of environment variables
-- binaries)
+- `dyld`'s expansive set of environment variables
+- "Restricted" binaries (particularly `setuid` binaries)
 - Most of the kernel's interaction with `dyld`
 - Compression and encryption in Mach-O binaries
-- itself is built
+- How `dyld` itself is built
 - Symbol interposing
-- 's operation on i386 and ARM, which is conceptually the same, but both architectures differ significantly in the details
+- `dyld`'s operation on i386 and ARM, which is conceptually the same, but both architectures differ significantly in the details
 - Details of the Mach-O binary format
 - How "fat" binaries are handled
 
@@ -335,7 +261,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html)
 
 Add your thoughts, post a comment:
 

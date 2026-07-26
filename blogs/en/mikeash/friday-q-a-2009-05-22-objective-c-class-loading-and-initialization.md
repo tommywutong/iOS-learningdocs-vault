@@ -48,13 +48,7 @@ An interesting feature of `+load` is that it's special-cased by the runtime to b
     }
 ```
 
-It is of course considerably more complex than that due to thread safety and many other fun things, but that's the basic idea.
-
-happens once per class, and it happens the first time a message is sent to that class. Like
-
-,
-
-is always sent to all of a class's superclasses before it's sent to the class itself.
+It is of course considerably more complex than that due to thread safety and many other fun things, but that's the basic idea. `+initialize` happens once per class, and it happens the first time a message is sent to that class. Like `+load`, `+initialize` is always sent to all of a class's superclasses before it's sent to the class itself.
 
 This makes `+initialize` safer to use because it's usually called in a much more forgiving environment. Obviously the environment depends on exactly when that first message send happens, but it's virtually certain to at least be after your call to `NSApplicationMain()`.
 
@@ -74,15 +68,7 @@ There's one more trick to `+initialize`. In my pseudocode above I wrote that the
     }
 ```
 
-Without that extra check, your initializations could run twice if you ever have a subclass that doesn't implement its own
-
-method. This is not just a theoretical concern, even if you don't write any subclasses. Apple's Key-Value Observing
-
-creates dynamic subclasses
-
-which don't override
-
-.
+Without that extra check, your initializations could run twice if you ever have a subclass that doesn't implement its own `+initialize` method. This is not just a theoretical concern, even if you don't write any subclasses. Apple's Key-Value Observing [creates dynamic subclasses](http://www.mikeash.com/?page=pyblog/friday-qa-2009-01-23.html) which don't override `+initialize`.
 
 **Conclusion**  
  Objective-C offers two ways to automatically run class-setup code. The `+load` method is guaranteed to run very early, as soon as a class is loaded, and is useful for code that must also run very early. This also makes it dangerous, as it's not a very friendly environment to run it.
@@ -99,7 +85,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-05-22-objective-c-class-loading-and-initialization.html)
 
 Add your thoughts, post a comment:
 

@@ -366,12 +366,8 @@ We can see that the first number in this header field goes up by `2` with every 
 To recap, here's what we've seen so far:
 
 - Weak pointers look like regular pointers in memory.
-- runs, the target is
-
-  deallocated, and the weak pointer is
-
-  zeroed.
-- runs, it is zeroed on access and the weak target is deallocated.
+- When a weak target's `deinit` runs, the target is _not_ deallocated, and the weak pointer is _not_ zeroed.
+- When the weak pointer is accessed after the target's `deinit` runs, it is zeroed on access and the weak target is deallocated.
 - The weak target contains a reference count for weak references, separate from the count of strong references.
 
 **Swift Code**  
@@ -528,35 +524,21 @@ From this, it's clear how the lazy zeroing works. When loading a weak reference,
 We've seen it all from top to bottom now. What's the high-level view on how Swift weak references actually work?
 
 1. Weak references are just pointers to the target object.
-2. individually tracked the way they are in Objective-C.
+2. Weak references are _not_ individually tracked the way they are in Objective-C.
 3. Instead, each Swift object has a weak reference count next to its strong reference count.
 4. Swift decouples object deinitialization from object deallocation. An object can be deinitialized, freeing its external resources, without deallocating the memory occupied by the object itself.
 5. When a Swift object's strong reference count reaches zero while the weak count is still greater than zero, the object is deinitialized but not deallocated.
-6. and can be dereferenced without crashing or loading garbage data. They merely point to an object in a zombie state.
-7. .
+6. This means that weak pointers to a deallocated object _are still valid pointers_ and can be dereferenced without crashing or loading garbage data. They merely point to an object in a zombie state.
+7. When a weak reference is loaded, the runtime checks the target's state. If the target is a zombie, then it zeroes the weak reference, decrements the weak reference count, and returns `nil`.
 8. When all weak references to a zombie object are zeroed out, the zombie is deallocated.
 
 This design has some interesting consequences compared to Objective-C's approach:
 
 - There is no list of weak references maintained anywhere. This simplifies code and improves performance.
 - There is no race condition between zeroing a weak reference on one thread, and loading that weak reference on another thread. This means that loading a weak reference and destroying a weakly-referenced object can be done without acquiring locks. This improves performance.
-- or
-
-  properties) are freed when the last strong reference goes away. A weak reference can cause a single instance to stay allocated, but not a whole tree of objects.
-- by using a
-
-  non-pointer `isa`
-
-  , but I'm not sure how important that is or how it's going to shake out in the long term. For 32-bit, it looks like the weak count increases object sizes by four bytes. The importance of 32-bit is diminishing by the day, however.
-- . Under the hood,
-
-  works exactly like
-
-  , except that it fails loudly if the target went away rather than returning
-
-  . In Objective-C,
-
-  is implemented as a raw pointer with undefined behavior if you access it late because it's supposed to be fast, and loading a weak pointer is somewhat slow.
+- Weak references to an object will cause that object's memory to remain allocated even after there are no strong references to it, until all weak references are either loaded or discarded. This temporarily increases memory usage. Note that the effect is small, because while the target object's memory remains allocated, it's only the memory for the instance itself. All external resources (including storage for `Array` or `Dictionary` properties) are freed when the last strong reference goes away. A weak reference can cause a single instance to stay allocated, but not a whole tree of objects.
+- Extra memory is required to store the weak reference count on every object. In practice it appears that this is inconsequential on 64-bit. The header fields want to occupy a whole number of pointer-sized chunks, and the strong and weak reference counts share one. If the weak reference count weren't there, the strong reference count would just occupy all 64 bits by itself. It's possible that the strong reference could otherwise be moved into the `isa` by using a [non-pointer `isa`](http://www.sealiesoftware.com/blog/archive/2013/09/24/objc_explain_Non-pointer_isa.html), but I'm not sure how important that is or how it's going to shake out in the long term. For 32-bit, it looks like the weak count increases object sizes by four bytes. The importance of 32-bit is diminishing by the day, however.
+- Because accessing a weak pointer is so cheap, the same mechanism can be used to implement reliable semantics for `unowned`. Under the hood, `unowned` works exactly like `weak`, except that it fails loudly if the target went away rather than returning `nil`. In Objective-C, `__unsafe_unretained` is implemented as a raw pointer with undefined behavior if you access it late because it's supposed to be fast, and loading a weak pointer is somewhat slow.
 
 **Conclusion**  
 Swift's weak pointers use an interesting approach that provides correctness, speed, and low memory overhead. By tracking a weak reference count for each object and decoupling object deinitialization from objct deallocation, weak references can be resolved both safely and quickly. The availability of the source code for the standard library lets us see exactly what's going on at the source level, instead of groveling through disassemblies and memory dumps as we often do. Of course, as you can see above, it's hard to break that habit fully.
@@ -571,7 +553,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-12-11-swift-weak-references.html)
 
 Add your thoughts, post a comment:
 

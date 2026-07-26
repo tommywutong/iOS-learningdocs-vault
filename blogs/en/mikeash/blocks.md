@@ -51,18 +51,14 @@ Note that external variable capture gives const copies of those variables by def
     ^{ i++; };
 ```
 
-The way to work around this is to use the
-
-keyword, like so:
+The way to work around this is to use the `__block` keyword, like so:
 
 ```
     __block int i;
     ^{ i++; };
 ```
 
-The reason for requiring explicit marking of local variables like this is because
-
-variables are significantly more costly than the regular kind, and have different semantics when applied to Objective-C object pointers (more details on that later), so rather than figure out a one-size-fits-all policy, the blocks guys decided it was better to just let the programmer choose.
+The reason for requiring explicit marking of local variables like this is because `__block` variables are significantly more costly than the regular kind, and have different semantics when applied to Objective-C object pointers (more details on that later), so rather than figure out a one-size-fits-all policy, the blocks guys decided it was better to just let the programmer choose.
 
 **Examples**  
  I'm going to be showing a bunch of examples for how to use blocks with PLBlocks on 10.5. Those of you who want to follow along may wish to look at the example project I built, which you can get out of my public subversion repository here:
@@ -155,9 +151,7 @@ Another thing that we frequently write is a critical section of code protected b
     [lock unlock];
 ```
 
-However this can be somewhat error prone. For example if you forget to unlock the lock in one code path, or return from the middle, or throw an exception, then your application will deadlock. The safest way to write the above is to use a
-
-block like so:
+However this can be somewhat error prone. For example if you forget to unlock the lock in one code path, or return from the middle, or throw an exception, then your application will deadlock. The safest way to write the above is to use a `@try/@finally` block like so:
 
 ```
     [lock lock];
@@ -192,13 +186,7 @@ Which is sort of cumbersome. We can turn this idiom into a blocks-based method o
     @end
 ```
 
-This isn't exactly the same. For example, with the explicit
-
-you can return a value from the method from within the
-
-block and it works, whereas doing this from inside the block will simply error, because you'll be returning a value from the block instead, which will make the block's type incompatible. This can be worked around by using a
-
-qualified variable to hold the return value. In my opinion this is superior, as it helps discourage tricky behavior inside the critical section, where the potential for bugs is high.
+This isn't exactly the same. For example, with the explicit `@try/@finally` you can return a value from the method from within the `@try` block and it works, whereas doing this from inside the block will simply error, because you'll be returning a value from the block instead, which will make the block's type incompatible. This can be worked around by using a `__block` qualified variable to hold the return value. In my opinion this is superior, as it helps discourage tricky behavior inside the critical section, where the potential for bugs is high.
 
 **A Stylistic Note**  
  There are two interesting choices in the above code, both due to the same reason. The first choice is that these are functions, not methods. Since blocks are NSObjects, category methods on NSObjects can be used for them. Rather than a `RunAfterDelay` function, we could write a `-runAfterDelay:` method on NSObject. The second choice is to always put the block parameter last, even though it's the most significant parameter and would make more sense to go first.
@@ -227,11 +215,7 @@ This is significantly less readable. The code appears first, and what's being do
     }
 ```
 
-This is not really all that interesting. It ends up being just like a
-
-loop, but without the ability to statically type the objects. (It would have been nice to have before Apple introduced
-
-, at least, illustrating the idea of adding your own control constructs using blocks.) Example use:
+This is not really all that interesting. It ends up being just like a `for/in` loop, but without the ability to statically type the objects. (It would have been nice to have before Apple introduced `for/in`, at least, illustrating the idea of adding your own control constructs using blocks.) Example use:
 
 ```
     NSArray *array = ...;
@@ -262,9 +246,7 @@ This shows how you could use it to construct an array of name strings from an ar
     }];
 ```
 
-This is much nicer than manually writing the loop encapsulated in the
-
-method. By passing blocks around, we only have to write that loop once, then reuse it many times.
+This is much nicer than manually writing the loop encapsulated in the `-map:` method. By passing blocks around, we only have to write that loop once, then reuse it many times.
 
 One more example, this allows filtering an array:
 
@@ -285,11 +267,7 @@ An example of using it to filter out strings that are too short:
     NSArray *longStrings = [strings select: ^ BOOL (id obj) { return [obj length] > 5; }];
 ```
 
-Note the explicit return value. The result from C comparison operators is
-
-, not
-
-, so allowing the compiler to infer the return value would produce a block of incompatible type. An alternative would be to cast the expression used in the return statement.
+Note the explicit return value. The result from C comparison operators is `int`, not `BOOL`, so allowing the compiler to infer the return value would produce a block of incompatible type. An alternative would be to cast the expression used in the return statement.
 
 Here's an example of a use in a GUI application, for getting all the text fields inside a particular view:
 
@@ -313,13 +291,7 @@ An obvious example of a callback is notifications. While there's often a benefit
     @end
 ```
 
-The
-
-method is implemented in a category on
-
-, much like the
-
-method seen earlier, except that it takes a parameter and passes that parameter on to the block.
+The `my_callBlockWithObject:` method is implemented in a category on `NSObject`, much like the `my_callBlock` method seen earlier, except that it takes a parameter and passes that parameter on to the block.
 
 You can use it like so:
 
@@ -384,11 +356,7 @@ Here's what the code looks like:
     @end
 ```
 
-There are a couple of notable features here. First, notice how the current thread is saved into a local variable, then later on accessed inside a block which will be executed on a different thread. This shows how blocks can be used to easily pass context around in callbacks. Notice then how the block passed to
-
-ends with a call to
-
-which uses another block to call back to the originating thread. This kind of nested block messaging is handy for making asynchronous callbacks in a concise manner.
+There are a couple of notable features here. First, notice how the current thread is saved into a local variable, then later on accessed inside a block which will be executed on a different thread. This shows how blocks can be used to easily pass context around in callbacks. Notice then how the block passed to `RunInBackground` ends with a call to `RunOnThread` which uses another block to call back to the originating thread. This kind of nested block messaging is handy for making asynchronous callbacks in a concise manner.
 
 Here's an example of using this API:
 
@@ -417,13 +385,7 @@ A simple workaround to this lies in the fact that `__block` variables are _not_ 
     };
 ```
 
-CoreFoundation types need to be retain/released when captured in non-
-
-variables, just like Objective-C objects, since they really are Objective-C objects as well. However, the compiler doesn't see them this way. To help with this, the compilers have added an attribute,
-
-, which causes struct pointers to be treated like Objective-C objects as far as their block retain/release semantics. We can assume that Apple will be applying this attribute to all
-
-on 10.6. While we're stuck in 10.5, however, they won't have this attribute, and so CoreFoundation objects will not be correctly memory managed when captured by blocks. To avoid problems, either avoid capturing CoreFoundation objects in blocks (declaring the variables to be of the equivalent Objective-C toll-free bridged type instead will convince the compiler to retain/release them) or ensure that the lifetime of the CF objects is at least as long as the lifetime of the block.
+CoreFoundation types need to be retain/released when captured in non-`__block` variables, just like Objective-C objects, since they really are Objective-C objects as well. However, the compiler doesn't see them this way. To help with this, the compilers have added an attribute, `__attribute__((NSObject))`, which causes struct pointers to be treated like Objective-C objects as far as their block retain/release semantics. We can assume that Apple will be applying this attribute to all `CFTypes` on 10.6. While we're stuck in 10.5, however, they won't have this attribute, and so CoreFoundation objects will not be correctly memory managed when captured by blocks. To avoid problems, either avoid capturing CoreFoundation objects in blocks (declaring the variables to be of the equivalent Objective-C toll-free bridged type instead will convince the compiler to retain/release them) or ensure that the lifetime of the CF objects is at least as long as the lifetime of the block.
 
 Another pitfall with blocks is due to the fact that they are stack objects. Using the `^{...}` syntax is essentially the same, behind the scenes, as declaring a local variable and then taking its address for something. The address can be passed around, but as soon as you leave the scope in which the local variable was declared, it's no longer valid. Thus, something as innocent as this ends up being broken code:
 
@@ -435,17 +397,7 @@ Another pitfall with blocks is due to the fact that they are stack objects. Usin
         block = ^{...};
 ```
 
-The body of the
-
-statement (and the
-
-clause) is a separate scope from the main body which is destroyed as soon as control flow exits the
-
-/
-
-clause. The block reference which is being stored in
-
-is invalid as soon as control flow returns to the main body! It's simple to fix this just by copying the blocks:
+The body of the `if` statement (and the `else` clause) is a separate scope from the main body which is destroyed as soon as control flow exits the `if`/`else` clause. The block reference which is being stored in `block` is invalid as soon as control flow returns to the main body! It's simple to fix this just by copying the blocks:
 
 ```
     BasicBlock block;
@@ -472,7 +424,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](http://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-08-14-practical-blocks.html)
 
 Add your thoughts, post a comment:
 

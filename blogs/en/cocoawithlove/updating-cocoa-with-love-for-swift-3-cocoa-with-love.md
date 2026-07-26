@@ -7,7 +7,7 @@ original_language: en
 published: 2016-09-14
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8c830aa5c9244948'
 translated: false
 ---
@@ -76,8 +76,8 @@ still runs without a precondition failure and still produces invalid UTF garbage
 
 Since this article involved a lot of C-style pointer manipulation, it was significantly affected by:
 
-- SE-0055 Make unsafe pointer nullability explicit using Optional
-- SE-0107 UnsafeRawPointer API
+- [SE-0055 Make unsafe pointer nullability explicit using Optional](https://github.com/apple/swift-evolution/blob/master/proposals/0055-optional-unsafe-pointers.md)
+- [SE-0107 UnsafeRawPointer API](https://github.com/apple/swift-evolution/blob/master/proposals/0107-unsaferawpointer.md)
 
 The need to pass unsafe pointers through `withMemoryRebound(to:capacity:)` to recast them had a huge impact on this code. Initially, the code was significantly worse, until I created specialized pointer conversion extension functions on the underlying data structures. The result is much nicer than the original Swift 2 code but only because I was kicked into refactoring by an uncomfortable syntax change. I’d prefer to see a helper function that combines `withUnsafeMutablePointer` and `withMemoryRebound(to:capacity:)` into a single step, in future.
 

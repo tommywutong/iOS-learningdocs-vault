@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2ceb9794e17e7210'
 translated: false
 ---
@@ -34,7 +34,7 @@ You can access an instance’s raw value through the [`rawValue`](https://develo
 
 Note that adding raw values to an enum doesn’t affect how the enum [is laid out in memory](https://github.com/apple/swift/blob/master/docs/ABI.rst#fragile-enum-layout). The compiler always determines how many bits it needs to discriminate between all enum cases and then assigns a unique integer tag value to each case. Even for enums with integer raw values, this tag is not the same as the raw value — they are completely different things. This also means you don’t have to worry that an enum with strings as raw values will take up more memory than a “plain” enum — the constant strings are only stored once in the binary, not for each instance.
 
-We can test this by checking the size in memory of a `Terrain` value: it’s 1 byte. (Theoretically, an enum with three cases requires only 2 _bits_ of storage, but every value occupies a multiple of 1 byte.) In contrast, a `String` containing the corresponding raw value takes up 24 bytes (plus the actual storage for the string’s contents, but that’s statically located in the binary in both cases):[1](#fn:1)
+We can test this by checking the size in memory of a `Terrain` value: it’s 1 byte. (Theoretically, an enum with three cases requires only 2 _bits_ of storage, but every value occupies a multiple of 1 byte.) In contrast, a `String` containing the corresponding raw value takes up 24 bytes (plus the actual storage for the string’s contents, but that’s statically located in the binary in both cases):^[1](#fn:1)
 
 ```
 MemoryLayout.size(ofValue: Terrain.forest) // → 1 (byte)

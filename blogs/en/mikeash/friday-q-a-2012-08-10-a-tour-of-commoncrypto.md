@@ -211,7 +211,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-08-10-a-tour-of-commoncrypto.html)
 
 Add your thoughts, post a comment:
 

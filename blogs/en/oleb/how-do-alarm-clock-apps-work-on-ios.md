@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:726c79e2ac4d307f'
 translated: false
 ---
@@ -42,7 +42,7 @@ Rise’s surprising solution is to [opt out of iOS multitasking](https://develop
 
 You can observe this behavior in Rise when you leave the app and immediately reopen it: it relaunches from scratch, showing the launch image again, rather than just wake up from the background.
 
-![Rise.app's Info.plist with the UIApplicationExitsOnSuspend key](https://oleb.net/media/rise-app-info-plist.png)
+[![Rise.app's Info.plist with the UIApplicationExitsOnSuspend key](https://oleb.net/media/rise-app-info-plist.png)](https://oleb.net/media/rise-app-info-plist.png)
 
 <sub>Rise.app's `Info.plist` with the `UIApplicationExitsOnSuspend` key.</sub>
 

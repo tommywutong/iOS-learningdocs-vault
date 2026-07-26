@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bfa3e1277cc55366'
 translated: false
 ---
@@ -35,14 +35,10 @@ This pattern of returning a pair of optional success value and optional error is
 
 The problem with the current API is that the operation really has only _two_ possible outcomes: either the request succeeds and returns a result, or it fails and returns an error. However, the code as it is allows _four_ different states:
 
-1. and error is
-
-  .
-2. and result is
-
-  .
-3. .
-4. .
+1. Result is non-`nil` and error is `nil`.
+2. Error is non-`nil` and result is `nil`.
+3. Both are non-`nil`.
+4. Both are `nil`.
 
 The documentation of the API can take care to explicitly preclude the last two cases, but as a user you can never really be sure that the documentation is correct.
 
@@ -68,7 +64,7 @@ enum Result<T> {
 }
 ```
 
-`Result` is currently not part of the Swift standard library, but it will probably be added at some time. Until then, it’s trivial to define it yourself, or you can use the popular [antitypical/Result](https://github.com/antitypical/Result) library.[1](#fn:1)
+`Result` is currently not part of the Swift standard library, but it will probably be added at some time. Until then, it’s trivial to define it yourself, or you can use the popular [antitypical/Result](https://github.com/antitypical/Result) library.^[1](#fn:1)
 
 With this fictional new API, the compiler could guarantee that the argument that gets passed to the completion block can only ever have two states, success or failure. You wouldn’t have to worry about the possibility that both values are present or both absent.
 

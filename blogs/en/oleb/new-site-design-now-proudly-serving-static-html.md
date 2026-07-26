@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3a130dbb867ace73'
 translated: false
 ---
@@ -32,30 +32,14 @@ If you decide to go forward with a static website, you should use a [static site
 
 My workflow for creating a new blog post now looks like this:
 
-- folder in Textmate and create a new file.
-- kramdown
-
-  , an extended Markdown syntax). Add some metadata, such as the post’s title and creation date, at the top of the file in
-
-  YAML
-
-  .
-- on the command line. nanoc runs the new file through the filters I specified in the config file (in my case,
-
-  erubis
-
-  , kramdown, and
-
-  Pygments
-
-  for syntax highlighting) and updates the web site in the
-
-  directory.
-- to start a local web server to check my changes before they go online.
+- Open my site’s `content` folder in Textmate and create a new file.
+- Write the post in Markdown (or rather [kramdown](http://kramdown.rubyforge.org/), an extended Markdown syntax). Add some metadata, such as the post’s title and creation date, at the top of the file in [YAML](http://www.yaml.org/).
+- Run `nanoc compile` on the command line. nanoc runs the new file through the filters I specified in the config file (in my case, [erubis](http://www.kuwata-lab.com/erubis/), kramdown, and [Pygments](http://pygments.org/) for syntax highlighting) and updates the web site in the `output` directory.
+- Run `nanoc view` to start a local web server to check my changes before they go online.
 - Commit the changes to my local Git repository.
-- to deploy the changes on my server using rsync. The rake task comes with nanoc.
+- Run `rake rsync:deploy` to deploy the changes on my server using rsync. The rake task comes with nanoc.
 
-![Screenshot of my Textmate + nanoc + GitX workflow](https://oleb.net/media/textmate-nanoc-gitx-workflow.png)
+[![Screenshot of my Textmate + nanoc + GitX workflow](https://oleb.net/media/textmate-nanoc-gitx-workflow.png)](https://oleb.net/media/textmate-nanoc-gitx-workflow.png)
 
 # The markup
 

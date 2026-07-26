@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:40e7c1fc51a88765'
 translated: false
 ---
@@ -22,9 +22,7 @@ In this post, I present the following sample project:
 
 ![](https://www.cocoawithlove.com/assets/objc-era/whereismymac.png)
 
-> WhereIsMyMac.zip
-> 
-> (33kB). Mac OS X 10.6 is required.
+> You can download the Xcode 3.2 project here: [WhereIsMyMac.zip](https://www.cocoawithlove.com/assets/objc-era/WhereIsMyMac.zip) (33kB). Mac OS X 10.6 is required.
 
 The program shows your current location, centered in the map. The zoom level is set so that the accuracy radius reported by CoreLocation is exactly half the width of the window.
 
@@ -129,9 +127,7 @@ So my neighbouring networks: "SweetCheeks", "TheSherriff", "MrBojangles" and "Ne
 
 ## Conclusion
 
-> WhereIsMyMac.zip
-> 
-> (33kB). Mac OS X 10.6 is required
+> You can download the Xcode 3.2 project here: [WhereIsMyMac.zip](https://www.cocoawithlove.com/assets/objc-era/WhereIsMyMac.zip) (33kB). Mac OS X 10.6 is required
 
 The only use I've seen for CoreLocation in Snow Leopard so far is setting the Time Zone automatically in the Date & Time System Preferences panel. This doesn't require a great deal of accuracy but it turns out that CoreLocation is capable of much more.
 

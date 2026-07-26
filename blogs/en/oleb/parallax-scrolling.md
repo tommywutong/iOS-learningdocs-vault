@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6857b0d52fdf7804'
 translated: false
 ---
@@ -27,7 +27,7 @@ It looks like we will have to constantly reposition the images according to the 
 1. Whenever the collection view scrolls, compute the center point of the collection view’s `bounds`. This will be the reference point: a cell’s distance from this point should determine the amount by which we shift the image the cell displays.
 2. For each visible cell, compute the distance of its center point (in the collection view’s coordinate system) to the reference point. Move the cell’s image view by a factor that is proportional to the (vertical) distance.
 
-Since a [`UICollectionView`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionView_class/Reference/Reference.html) is a [`UIScrollView`](https://developer.apple.com/library/ios/documentation/uikit/reference/UIScrollView_Class/Reference/UIScrollView.html), we could translate this directly into code. It would just be a matter of implementing the `scrollViewDidScroll:` delegate method in your view controller, asking the collection view for all visible cells, and modifying them directly.[1](#fn:1) Since we are dealing with a collection view, there is a more elegant way, however.
+Since a [`UICollectionView`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionView_class/Reference/Reference.html) is a [`UIScrollView`](https://developer.apple.com/library/ios/documentation/uikit/reference/UIScrollView_Class/Reference/UIScrollView.html), we could translate this directly into code. It would just be a matter of implementing the `scrollViewDidScroll:` delegate method in your view controller, asking the collection view for all visible cells, and modifying them directly.^[1](#fn:1) Since we are dealing with a collection view, there is a more elegant way, however.
 
 The positionign of the images inside the cells is a question of _layout_, and collection views provide a mechanism to encapsulate all layout code in a separate object. By writing a custom collection view layout, we can implement the parallax effect in a fairly transparent way.
 
@@ -168,30 +168,12 @@ These two methods are invoked by the collection view whenever it needs to ask th
 
 **Update May 4, 2014:** Note that the layout attributes array in `layoutAttributesForElementsInRect:` may include layout attributes for supplementary and decoration views. Since we don’t want to apply a parallax to those views, we check the `representedElementCategory` to set the parallax offset only on cells.
 
-Should performance become a problem due to the frequent layout invalidations, we could try caching the results returned from the `super` invocations and only recompute the parallax offset during scrolling.[2](#fn:2) To make this work, we would have to do the following:
+Should performance become a problem due to the frequent layout invalidations, we could try caching the results returned from the `super` invocations and only recompute the parallax offset during scrolling.^[2](#fn:2) To make this work, we would have to do the following:
 
-- `UICollectionViewLayoutInvalidationContext`
-
-  . Define a boolean property called
-
-  in the subclass.
-- `+invalidationContextClass`
-
-  and return the custom
-
-  subclass.
-- `invalidationContextForBoundsChange:`
-
-  . In the implementation, invoke
-
-  first, then check if the bounds change only affected the origin (i.e., the size of the bounds has remained constant). If so, set
-
-  on the context object before you return it.
-- `invalidateLayoutWithContext:`
-
-  . If the context parameter has
-
-  set, throw away the cached layout information.
+- Subclass [`UICollectionViewLayoutInvalidationContext`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionViewLayoutInvalidationContext_class/Reference/Reference.html). Define a boolean property called `invalidateParallaxOffset` in the subclass.
+- Override the [`+invalidationContextClass`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionViewLayout_class/Reference/Reference.html#//apple_ref/doc/uid/TP40012185-CH1-SW38) and return the custom `UICollectionViewLayoutInvalidationContext` subclass.
+- Override [`invalidationContextForBoundsChange:`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionViewLayout_class/Reference/Reference.html#//apple_ref/doc/uid/TP40012185-CH1-SW39). In the implementation, invoke `super` first, then check if the bounds change only affected the origin (i.e., the size of the bounds has remained constant). If so, set `invalidateParallaxOffset = YES` on the context object before you return it.
+- Implement [`invalidateLayoutWithContext:`](https://developer.apple.com/library/ios/documentation/uikit/reference/UICollectionViewLayout_class/Reference/Reference.html#//apple_ref/doc/uid/TP40012185-CH1-SW42). If the context parameter has `parallaxOffset == NO` set, throw away the cached layout information.
 
 ```
 - (CGPoint)parallaxOffsetForLayoutAttributes:(ParallaxLayoutAttributes *)layoutAttributes

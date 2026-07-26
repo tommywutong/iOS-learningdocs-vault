@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:59e6974ef6d42407'
 translated: false
 ---
@@ -30,11 +30,11 @@ I recorded a short video to demonstrate the process (no sound):
 2. Open the corresponding header file. You can either use Xcode’s Assistant Editor (Option + Command + Return) to display the .xib and .h files side by side or open the .h file in a separate window.
 3. Pick the control in your user interface for which you want to create an outlet or action method. Hold down the Control key and drag (or right-click-and-drag) from the control in question over into your class `@interface`. Let the mouse button go when Xcode indicates a successful drag with a horizontal line.
 
-  ![Dragging from Interface Builder directly into the code in Xcode 4](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-1.png)
+  [![Dragging from Interface Builder directly into the code in Xcode 4](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-1.png)](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-1.png)
 4. In the window that pops up, choose whether you want to create an outlet or an action. Give it a name and optionally modify the other parameters. Click Connect when you’re finished.
 
-  ![Popup window in Xcode 4 when creating an outlet via drag and drop](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-2.png)
-5. If you chose to create an outlet, Xcode will declare a `@property` and a corresponding instance variable in your class’s interface.[1](#fn:1) If you check the implementation file, you will see that Xcode added not only the necessary `@synthesize` statement but also releases the ivar in your class’s `-dealloc` method. If the class is a `UIViewController`, Xcode is even smart enough to know about the memory management requirements and sets the outlet to `nil` in the controller’s `-viewDidUnload` method.
+  [![Popup window in Xcode 4 when creating an outlet via drag and drop](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-2.png)](https://oleb.net/media/xcode4-creating-outlet-drag-and-drop-2.png)
+5. If you chose to create an outlet, Xcode will declare a `@property` and a corresponding instance variable in your class’s interface.^[1](#fn:1) If you check the implementation file, you will see that Xcode added not only the necessary `@synthesize` statement but also releases the ivar in your class’s `-dealloc` method. If the class is a `UIViewController`, Xcode is even smart enough to know about the memory management requirements and sets the outlet to `nil` in the controller’s `-viewDidUnload` method.
 
   Feel free to manually remove the ivar from your `@interface` as it is no longer required. The compiler can now generate an ivar for any synthesized property automatically.
 6. If you chose to create an action, Xcode will declare a `-(IBAction)myAction:(id)sender;` method in your class’s interface and insert an empty method body at the bottom of your class’s `@implementation` section.

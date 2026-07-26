@@ -7,7 +7,7 @@ original_language: en
 published: 2026-03-17
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e696826bb5cc90a7'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 ## [YAML is (not) my preferred configuration format](#)
 
-Sometimes you have configuration files or simple data files that you want to maintain by hand, in a text editor. There are dozen of reusable formats for this, but only a few of them really support _hierarchical_ entries. You can argue that configuration files should stay relatively flat, but if you eventually run into a situation where you _need_ hierarchy, you’ll be unhappy not to have it.more
+Sometimes you have configuration files or simple data files that you want to maintain by hand, in a text editor. There are dozen of reusable formats for this, but only a few of them really support _hierarchical_ entries. You can argue that configuration files should stay relatively flat, but if you eventually run into a situation where you _need_ hierarchy, you’ll be unhappy not to have it.
 
 These days, the starting point for such a file is probably something like [JSON](https://www.json.org), at least if you need hierarchy. Everyone can parse it, since it’s used as a program-program interchange format, and its model matches the natural nesting of structs in many languages. Its type system is maybe not ideal, but it’s “good enough” for most use cases.
 
@@ -92,20 +92,10 @@ That’s my favored configuration format, at least at this time. Unfortunately, 
 
 - Values can be unquoted, not just keys
 - Keys can be anything, not just strings
-- several unquoted ways to write booleans
-
-  (and other types), not just
-
-  and
-
-  . 1.2 and later (from 2009!) are stricter, but unless either the parser or the document specifically says it wants to be YAML 1.2, you might not be in that mode. If you want a consistent rule, you need to quote all your strings all the time,
-
-  (Even without this, knowing whether a string needs to be quoted is a bit murky.)
-- it actually supports object
-
-  with “anchor” and “alias” syntax. How does your YAML parser fare when your data types weren’t expecting recursion?
+- YAML 1.1 specified [several unquoted ways to write booleans](https://yaml.org/type/bool.html) (and other types), not just `true` and `false`. 1.2 and later (from 2009!) are stricter, but unless either the parser or the document specifically says it wants to be YAML 1.2, you might not be in that mode. If you want a consistent rule, you need to quote all your strings all the time, _including your keys._ (Even without this, knowing whether a string needs to be quoted is a bit murky.)
+- YAML isn’t just for object _trees;_ it actually supports object _graphs_ with “anchor” and “alias” syntax. How does your YAML parser fare when your data types weren’t expecting recursion?
 - YAML has a syntax for putting multiple top-level documents in one file. I won’t deny this is useful! But once again, what does your YAML parser do with it?
-- So much for a simple data structure! And if your parser blithely uses these tags to direct deserialization, you now have a potential vulnerability in your program, depending on what you were using the YAML for.
+- Finally, YAML allows attaching an arbitrary type tag to _every node._ So much for a simple data structure! And if your parser blithely uses these tags to direct deserialization, you now have a potential vulnerability in your program, depending on what you were using the YAML for.
 - YAML also has some complicated ways to write multiline strings but honestly I don’t mind that one so much—it doesn’t get in the way of “normal” use, and your data model doesn’t have to know about it.
 
 All of these have reasons for existing, and in fact I think I have had occasion to use all of them throughout my career. But it also means YAML’s not a “simple” format by any means, and that means it’s prone to mistakes and misuse…and it’s going to be overkill for configuration files. Even hierarchical ones.
@@ -114,7 +104,7 @@ So my favorite configuration format is not, in fact, YAML. It’s a hypothetical
 
 ---
 
-The format I’d actually recommend today is probably [TOML](https://toml.io), because TOML 1.1 also basically turns back into “nicer JSON” once you get more than one level of nesting (assuming you want to keep the visual indication of nesting).[1](#fn:pygments)
+The format I’d actually recommend today is probably [TOML](https://toml.io), because TOML 1.1 also basically turns back into “nicer JSON” once you get more than one level of nesting (assuming you want to keep the visual indication of nesting).^[1](#fn:pygments)
 
 ```
 user = "jrose"

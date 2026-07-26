@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9903859c9113d650'
 translated: false
 ---
@@ -28,7 +28,7 @@ Even though she had had the feeling that there _must_ be an alarm function somew
 
 What would I need another clock for? The time is right there in the bar at the top, she told me.
 
-![iPhone 3Gs Homescreen](https://oleb.net/media/iphone-3gs-homescreen.png)
+[![iPhone 3Gs Homescreen](https://oleb.net/media/iphone-3gs-homescreen.png)](https://oleb.net/media/iphone-3gs-homescreen.png)
 
 <sub>Why is there another clock? And where the heck is the alarm clock?</sub>
 

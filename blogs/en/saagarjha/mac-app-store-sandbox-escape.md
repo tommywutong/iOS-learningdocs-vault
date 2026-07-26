@@ -7,7 +7,7 @@ original_language: en
 published: 2020-05-20
 status: active
 license: CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8d2654a72a81f424'
 translated: false
 ---
@@ -203,21 +203,19 @@ The code I submitted to Apple to demonstrate the issue is [available online](htt
 
 ## Timeline
 
-- Initial disclosure of library interposing bypass to Apple
-- Acknowledgment of submission by Apple
-- Request for status update after recent updates did not resolve the issue
-- Response from Apple that they were still investigating
-- Request for update and affirmation of 90-day disclosure timeline
-- Response from Apple that they were still looking into the issue
-- Email from Apple stating that Mac App Store applications cannot be interposed
-- Submission of statically linked application to avoid interposing
-- Acknowledgement of the new information
-- Submission of dynamically linked application to bypass
-
-  limitation
-- Request for more time from Apple to analyze the new submission
-- Disclosure deadline extended by 30 days to May 20th
-- Confirmation and appreciation for the extension
-- Request for an update on progress
-- Confirmation that a change had been implemented in Mac App Store
-- Expiration of discretionary disclosure extension
+- **1/20/20:** Initial disclosure of library interposing bypass to Apple
+- **1/22/20:** Acknowledgment of submission by Apple
+- **1/28/20:** Request for status update after recent updates did not resolve the issue
+- **1/29/20:** Response from Apple that they were still investigating
+- **2/26/20:** Request for update and affirmation of 90-day disclosure timeline
+- **2/28:20:** Response from Apple that they were still looking into the issue
+- **3/19:20:** Email from Apple stating that Mac App Store applications cannot be interposed
+- **3/20/20:** Submission of statically linked application to avoid interposing
+- **3/23/20:** Acknowledgement of the new information
+- **4/14/20:** Submission of dynamically linked application to bypass `execve` limitation
+- **4/17/20:** Request for more time from Apple to analyze the new submission
+- **4/19/20:** Disclosure deadline extended by 30 days to May 20th
+- **4/20/20:** Confirmation and appreciation for the extension
+- **5/13/20:** Request for an update on progress
+- **5/15/20:** Confirmation that a change had been implemented in Mac App Store
+- **5/20/20:** Expiration of discretionary disclosure extension

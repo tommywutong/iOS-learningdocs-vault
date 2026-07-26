@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f757d86571d93de7'
 translated: false
 ---
@@ -16,11 +16,7 @@ translated: false
 
 This week, I present a sample application that streams and plays an audio file from a URL on the iPhone or Mac. I'll show how the application was written by expanding upon Apple's AudioFileStreamExample, including a work-around for an Audio File Stream Services' crash bug when handling streaming MP3s.
 
-> I have written a new post detailing and fixing the problems in this implementation titled:
-> 
-> Revisiting an old post: Streaming and playing an MP3 stream
-> 
-> .
+> **Update (2009-06-17):** I have written a new post detailing and fixing the problems in this implementation titled: [Revisiting an old post: Streaming and playing an MP3 stream](https://www.cocoawithlove.com/2009/06/revisiting-old-post-streaming-and.html).
 
 ## Introduction
 
@@ -30,21 +26,11 @@ Of course, there's a way to play an MP3 stream without using QTKit. I'll show yo
 
 ![](https://www.cocoawithlove.com/assets/objc-era/audiostreamer.png)
 
-> Triple J
-> 
-> is an Australian radio station.
+> Since I link to their stream by default in the application, I should probably point out that [Triple J](http://www.abc.net.au/triplej/) is an Australian radio station.
 
 You can download:
 
-> The location of the code has changed. The new, updated version of the code is now located at
-> 
-> AudioStreamer
-> 
-> (you can also
-> 
-> browse the source code repository
-> 
-> ). The same repository includes both iPhone and Mac versions.
+> **Update (2009-06-17):** The location of the code has changed. The new, updated version of the code is now located at [AudioStreamer](http://github.com/mattgallagher/AudioStreamer/zipball/master) (you can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer)). The same repository includes both iPhone and Mac versions.
 
 ## AudioToolbox
 
@@ -79,13 +65,7 @@ if (err) { PRINTERROR("AudioQueueAddPropertyListener"); myData->failed = true; b
 
 With this in place, we can implement the MyAudioQueueIsRunningCallback function and use it to wait until the audio has finished playing before we exit the program.
 
-> MyAudioQueueIsRunningCallback
-> 
-> function will not be called when the audio stops unless the thread from which the stop was issued has a run loop (e.g. call
-> 
-> CFRunLoopRunInMode
-> 
-> in a loop while waiting for completion).
+> The documentation doesn't point it out but the MyAudioQueueIsRunningCallback function will not be called when the audio stops unless the thread from which the stop was issued has a run loop (e.g. call CFRunLoopRunInMode in a loop while waiting for completion).
 
 ### Play the final audio buffer
 
@@ -129,9 +109,7 @@ This is a bit more of an open ended problem. A few different approaches can work
 
 - Use file extensions to guess the file type
 - Use mime types provided in HTTP headers to determine the file type
-- AudioFileStreamParseBytes
-
-  on the first chunk of the file until it returns without an error
+- Continuously invoke AudioFileStreamParseBytes on the first chunk of the file until it returns without an error
 - Hardcode the type, if you can presume it in all cases
 
 I only implemented the first of these options. If you know the URL of the source file, it goes a little something like this:
@@ -183,37 +161,17 @@ and all should be well.
 
 The final step was to take the reworked example and set it up as part of a proper Cocoa application. For this, I decided to further add the following:
 
-- NSURLConnection
-
-  instead of a socket connection.
+- Load the data over an NSURLConnection instead of a socket connection.
 - Handle the connection in a separate thread, so any potential blocking won't affect the user-interface.
 - Wrap the construction and invocation in an Objective-C class.
-- isPlaying
-
-  state an
-
-  NSKeyValueObserving
-
-  compliant variable so the user-interface can update to reflect the state.
-- kAQBufSize
-
-  to reduce waiting for audio to start.
+- Make the isPlaying state an NSKeyValueObserving compliant variable so the user-interface can update to reflect the state.
+- Since the program always fills one buffer completely before audio starts, I halved the kAQBufSize to reduce waiting for audio to start.
 
 I invite you to look at the AudioStreamer code in the sample application to see how this was done. It is fairly straightforward. Where possible, AudioStreamer keeps the code, style and approach of the AudioFileStreamExample. I don't advocate using so many boolean flags or public instance variables in normal situations.
 
 ## Conclusion
 
-> You can download the complete source code for this post
-> 
-> AudioStreamer
-> 
-> from Github (you can also
-> 
-> browse the source code repository
-> 
-> ). The same repository includes both iPhone and Mac versions. This code includes the improvements from my later post
-> 
-> Revisiting an old post: Streaming and playing an MP3 stream
+> **Download:** You can download the complete source code for this post [AudioStreamer](http://github.com/mattgallagher/AudioStreamer/zipball/master) from Github (you can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer)). The same repository includes both iPhone and Mac versions. This code includes the improvements from my later post [Revisiting an old post: Streaming and playing an MP3 stream](https://www.cocoawithlove.com/2009/06/revisiting-old-post-streaming-and.html)
 
 The application works. Given the learning curve of a new API and the MP3 parsing bug, I'm fairly pleased I succeeded.
 

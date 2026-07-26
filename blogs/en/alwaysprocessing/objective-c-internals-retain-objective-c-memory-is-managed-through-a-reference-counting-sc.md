@@ -7,7 +7,7 @@ original_language: en
 published: 2023-07-22
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f04a4c2a6197e049'
 translated: false
 ---
@@ -24,11 +24,11 @@ Objective-C memory is managed through a reference counting scheme, which has evo
 
 OS X 10.7 and iOS 5 introduced [Automatic Reference Counting](https://clang.llvm.org/docs/AutomaticReferenceCounting.html), or ARC, to improve Objective-C programmer productivity by eliminating boilerplate code and reducing the surface area for reference counting bugs (leaks and over-releases).
 
-Before ARC, the `-[NSObject retain]`, `-[NSObject release]`[[1](#_footnotedef_1)], and `-[NSObject autorelease]`[[2](#_footnotedef_2)] methods were the exclusive interface to manage object reference counts. And, until OS X 10.8 and iOS 6, the `NSObject` implementation was part of Foundation, not the Objective-C runtime.
+Before ARC, the `-[NSObject retain]`, `-[NSObject release]`^[[1](#_footnotedef_1)], and `-[NSObject autorelease]`^[[2](#_footnotedef_2)] methods were the exclusive interface to manage object reference counts. And, until OS X 10.8 and iOS 6, the `NSObject` implementation was part of Foundation, not the Objective-C runtime.
 
 The designers of ARC identified a key requirement to improve the likelihood of the feature’s success, learning from Apple’s ill-fated attempt to add garbage collection to Objective-C: Automatic Reference Counting must transparently interoperate with manual reference counting in the same process without requiring recompilation of existing code (e.g., a third-party binary-only library).
 
-In the early days of macOS, it wasn’t unheard of for some objects to override the reference counting methods[[3](#_footnotedef_3)] to use their own implementation, often for performance reasons. ARC had to support transparent interoperability with these custom reference counting implementations to deliver on the aforementioned requirement.
+In the early days of macOS, it wasn’t unheard of for some objects to override the reference counting methods^[[3](#_footnotedef_3)] to use their own implementation, often for performance reasons. ARC had to support transparent interoperability with these custom reference counting implementations to deliver on the aforementioned requirement.
 
 ## Entry Points
 
@@ -36,7 +36,7 @@ There are two interfaces for reference counting operations: the long-standing `N
 
 ### NSObject
 
-The `-[NSObject retain]` implementation[[4](#_footnotedef_4)] is trivial—it simply calls `_objc_rootRetain` to retain `self`.
+The `-[NSObject retain]` implementation^[[4](#_footnotedef_4)] is trivial—it simply calls `_objc_rootRetain` to retain `self`.
 
 `runtime/NSObject.mm` lines [2502-2504](https://github.com/apple-oss-distributions/objc4/blob/objc4-841.13/runtime/NSObject.mm#L2502-L2504)
 
@@ -71,7 +71,7 @@ id objc_object::rootRetain() {
 
 The overload called here is the core implementation, which has two parameters:
 
-1. `tryRetain` enables support to load weak references[[5](#_footnotedef_5)]. The argument is `false` because a weak reference cannot exercise this code path. (The runtime must first load an object from a weak reference before the object can receive a message, and, by definition, the object reference obtained through the load operation is strong.)
+1. `tryRetain` enables support to load weak references^[[5](#_footnotedef_5)]. The argument is `false` because a weak reference cannot exercise this code path. (The runtime must first load an object from a weak reference before the object can receive a message, and, by definition, the object reference obtained through the load operation is strong.)
 2. `variant` provides context about the call path, enabling the core implementation to elide unnecessary work. Retains performed through `NSObject` use `RRVariant::Fast` to skip the check for whether the class has a custom reference counting implementation because performing the operation through the _root_ class is, by definition, not custom.
 
 ### Automatic Reference Counting
@@ -157,7 +157,7 @@ Custom referencing counting implementations are rare, so the runtime uses its [`
 
 If a class has a custom reference counting implementation, the runtime sends the object a `-retain` message to fulfill the ARC-initiated retain operation. Note the object may then call `-[NSObject retain]`, but this code block will not execute again as the `variant` will be `RRVariant::Fast`.
 
-Pure Swift classes (i.e., classes not derived from `NSObject`) derive from the [`SwiftObject` class](https://github.com/apple/swift/blob/swift-5.8.1-RELEASE/stdlib/public/runtime/SwiftObject.h#L41-L78) (only on Apple platforms) for Objective-C compatibility. Swift uses its own reference counting system, so `SwiftObject` [implements](https://github.com/apple/swift/blob/swift-5.8.1-RELEASE/stdlib/public/runtime/SwiftObject.mm#L270) the [reference counting methods](https://github.com/apple/swift/blob/e495eed8914a87aa3403411fbc2cf3f9e6119846/include/swift/Runtime/HeapObject.h#L1108-L1146) to support bridging pure Swift objects to Objective-C. As an optimization for this case, the Objective-C runtime calls the Swift runtime’s `swift_retain()` function directly[[6](#_footnotedef_6)] (vs. retaining the object via a message send).
+Pure Swift classes (i.e., classes not derived from `NSObject`) derive from the [`SwiftObject` class](https://github.com/apple/swift/blob/swift-5.8.1-RELEASE/stdlib/public/runtime/SwiftObject.h#L41-L78) (only on Apple platforms) for Objective-C compatibility. Swift uses its own reference counting system, so `SwiftObject` [implements](https://github.com/apple/swift/blob/swift-5.8.1-RELEASE/stdlib/public/runtime/SwiftObject.mm#L270) the [reference counting methods](https://github.com/apple/swift/blob/e495eed8914a87aa3403411fbc2cf3f9e6119846/include/swift/Runtime/HeapObject.h#L1108-L1146) to support bridging pure Swift objects to Objective-C. As an optimization for this case, the Objective-C runtime calls the Swift runtime’s `swift_retain()` function directly^[[6](#_footnotedef_6)] (vs. retaining the object via a message send).
 
 Continuing to the next block.
 
@@ -200,7 +200,7 @@ It sets `newisa` to the current `isa` value (i.e., `oldisa`), which the loop wil
   }
 ```
 
-First, the loop checks if the object instance has a [non-pointer `isa`](https://alwaysprocessing.blog/2023/01/19/objc-class-isa#non-pointer-isa). If it does not, the retain count is recorded in a side table[[7](#_footnotedef_7)]. This check is performed in the loop because if this thread loses a compare-and-swap, it could be due to another thread mutating the object in a way that removed its use of a non-pointer `isa`.
+First, the loop checks if the object instance has a [non-pointer `isa`](https://alwaysprocessing.blog/2023/01/19/objc-class-isa#non-pointer-isa). If it does not, the retain count is recorded in a side table^[[7](#_footnotedef_7)]. This check is performed in the loop because if this thread loses a compare-and-swap, it could be due to another thread mutating the object in a way that removed its use of a non-pointer `isa`.
 
 Next, the loop checks to see if it lost another race.
 
@@ -310,7 +310,7 @@ After the compare-and-swap succeeds and, if necessary, the side table is updated
 return (id)this;
 ```
 
-The last step is to return `self`[[8](#_footnotedef_8)] to fulfill the [`-[NSObject retain`](https://developer.apple.com/documentation/objectivec/1418956-nsobject/1571946-retain) contract]:
+The last step is to return `self`^[[8](#_footnotedef_8)] to fulfill the [`-[NSObject retain`](https://developer.apple.com/documentation/objectivec/1418956-nsobject/1571946-retain) contract]:
 
 > As a convenience, `retain` returns `self` because it may be used in nested expressions.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6484e776c57d8d9f'
 translated: false
 ---
@@ -67,7 +67,7 @@ The original idea behind Interface Builder was to offer a “what-you-see-is-wha
 Instead, the common uses for Interface Builder are:
 
 1. configuring auto-layout constraints
-2. (but not all) constant properties in Interface Builder
+2. setting values for _some_ (but not all) constant properties in Interface Builder
 3. defining segues
 4. supporting Storyboard-based view-state restoration
 
@@ -398,8 +398,8 @@ And I’ve been omitting the most important part: these parameters are constant 
 
 We need to be able to satisfy any property with a _dynamic value_ – a property that gets its value from a dynamic source, like a reactive programming signal. Of course, just because a property _can_ be dynamic, doesn’t mean it _must_ be dynamic. This means that we need to be able to set any dynamic property in two different ways:
 
-- )
-- )
+- Constant (e.g. a value like `.white`)
+- Dynamic (e.g. a signal like `signal.map { value.isEditing ? .white : .lightGray }`)
 
 To handle these two scenarios, the associated values in our Binding `enum` values will no longer be simple types (like `String` or `UIColor` or `Bool`) and will instead be wrapped in `Dynamic` so we can provide `.constant` or `.dynamic` versions:
 
@@ -640,7 +640,7 @@ The playground includes three different code paths that can construct this `UITe
 
 - standard Cocoa `cocoaViews`
 - reactive programming `reactiveViews`
-- approach
+- the `cwlViews` approach
 
 They should all appear the same to the user.
 

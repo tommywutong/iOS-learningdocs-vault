@@ -143,32 +143,12 @@ It looks similar to an Objective-C object, but there's 16 bytes of metadata inst
 
 There are several interesting things about this:
 
-1. 's name gets mangled to produce an Objective-C class name that contains not only the Swift name, but also the Swift module (in this case, "memory") and some other stuff.
-2. gets an Objective-C instance variable, but its methods don't show up. The instance variable has no type annotation, just a name.
-3. , which is a new root class. Plain Swift classes are not subclasses (directly or indirectly) of
-
-  .
-
-  does implement the
-
-  protocol, so it can play the part of
-
-  to an extent.
-4. contains a single instance variable called
-
-  . Cute.
-5. is actually a
-
-  containing two members. The first is the familiar
-
-  , while the second is a
-
-  called
-
-  .
-6. also contains a method called
-
-  . This tells us that there's such a thing as native Swift reference counting. I'm not sure why it's necessary to check for native Swift reference counting at runtime, but apparently it's done with this method.
+1. `TestClass`'s name gets mangled to produce an Objective-C class name that contains not only the Swift name, but also the Swift module (in this case, "memory") and some other stuff.
+2. `TestClass` gets an Objective-C instance variable, but its methods don't show up. The instance variable has no type annotation, just a name.
+3. Its superclass is `SwiftObject`, which is a new root class. Plain Swift classes are not subclasses (directly or indirectly) of `NSObject`. `SwiftObject` does implement the `NSObject` protocol, so it can play the part of `NSObject` to an extent.
+4. `SwiftObject` contains a single instance variable called `magic`. Cute.
+5. `magic` is actually a `struct` containing two members. The first is the familiar `isa`, while the second is a `long long` called `refCount`.
+6. `SwiftObject` also contains a method called `__usesNativeSwiftReferenceCounting`. This tells us that there's such a thing as native Swift reference counting. I'm not sure why it's necessary to check for native Swift reference counting at runtime, but apparently it's done with this method.
 
 Let's take a closer look at that `refCount` field. Here's what the object looks like originally, and then when retained five times:
 
@@ -347,7 +327,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-07-18-exploring-swift-memory-layout.html)
 
 Add your thoughts, post a comment:
 

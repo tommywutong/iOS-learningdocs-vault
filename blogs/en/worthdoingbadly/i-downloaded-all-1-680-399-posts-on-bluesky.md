@@ -7,7 +7,7 @@ original_language: en
 published: 2023-05-06
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5293a58a04860a5b'
 translated: false
 ---
@@ -176,15 +176,9 @@ Top 10 longest threads:
 
 ## How I downloaded it
 
-- https://bsky.social/xrpc/com.atproto.sync.listRepos
-- Bsky server
-- indexRepo
-
-  for every user in the list to let the Bsky server download each user’s data via the federation protocol. (
-
-  code
-
-  )
+- Listed all users by calling [https://bsky.social/xrpc/com.atproto.sync.listRepos](https://atproto.com/lexicons/com-atproto-sync#comatprotosynclistrepos)
+- Started Bluesky’s [Bsky server](https://github.com/bluesky-social/atproto)
+- called [indexRepo](https://github.com/bluesky-social/atproto/blob/aabbf43a7f86b37cefbba614d408534b59f59525/packages/bsky/src/services/indexing/index.ts#L110) for every user in the list to let the Bsky server download each user’s data via the federation protocol. ([code](https://github.com/zhuowei/atproto/blob/dev20230501/packages/bsky/src/api/force-pull.ts#L7))
 
 ## What I learned
 
@@ -192,3 +186,5 @@ Top 10 longest threads:
 - How to use GNU Parallel
 - How to use DigitalOcean Spaces
 - (Edit:) OneDrive is a terrible way to serve files
+
+[https://worthdoingbadly.com/bsky/](https://worthdoingbadly.com/bsky/)

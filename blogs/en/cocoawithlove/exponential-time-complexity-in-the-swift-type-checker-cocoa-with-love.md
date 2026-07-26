@@ -7,7 +7,7 @@ original_language: en
 published: 2016-07-12
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f255021253ee2278'
 translated: false
 ---
@@ -125,9 +125,7 @@ In general, Swift’s complexity problem won’t be an issue unless you’re usi
 - overloaded functions (including operators)
 - literals
 - closures without explicit types
-- and every float literal is a
-
-  ” choice is wrong
+- expressions where Swift’s default “every integer literal is an `Int` and every float literal is a `Double`” choice is wrong
 
 If you don’t typically combine these features in your code, then you’re unlikely to see the “expression was too complex” error. However, if you _are_ using these features, it isn’t always straightforward to suddenly stop. Mathematics code, large functional-style expressions and declarative code are easier to write with these features and often require a complete rethink to avoid them.
 
@@ -301,37 +299,13 @@ Propagating the constraint on T3 to T2 adds the constraint “T2’s input must 
 
 The half-propagated constraints are now:
 
-1. with
-
-  preferred due to literal rules
-2. with
-
-  preferred due to literal rules
+1. T1 conforms to `ExpressibleByIntegerLiteral` with `Int` preferred due to literal rules
+2. T3 conforms to `ExpressibleByIntegerLiteral` with `Int` preferred due to literal rules
 3. T2 is a function that takes (T3) and returns T4
-4. with
-
-  ,
-
-  or
-
-  preferred due to the preference for specific operator overloads over generic operator overloads
-5. , with
-
-  ,
-
-  or
-
-  preferred due to the preference for specific operator overloads over generic operator overloads
+4. T2 is one of 6 implementations in the Swift standard library named `prefix -` with `Double`, `Float` or `Float80` preferred due to the preference for specific operator overloads over generic operator overloads
+5. T4 must be one of the 6 types output from `prefix -`, with `Double`, `Float` or `Float80` preferred due to the preference for specific operator overloads over generic operator overloads
 6. T0 is a function that takes (T1, T4) and returns T5
-7. where the second parameter is one of the 6 types output from
-
-  , with
-
-  ,
-
-  and
-
-  preferred due to the preference for specific operator overloads over generic operator overloads
+7. T0 is one of the 6 implementations in the Swift standard library named `infix +` where the second parameter is one of the 6 types output from `prefix -`, with `Double`, `Float` and `Float80` preferred due to the preference for specific operator overloads over generic operator overloads
 8. T5 is `Double`
 
 ### Propagating constraints from left to right
@@ -344,8 +318,8 @@ The fully-propagated constraints are now:
 
 1. T1 is `Double`
 2. T3 is `Double`
-3. overload of
-4. overload of
+3. T2 is the `(Double) -> Double` overload of `prefix -`
+4. T0 is the `(Double, Double) -> Double` overload of `infix +`
 5. T5 is `Double`
 
 And the constraints system is solved.

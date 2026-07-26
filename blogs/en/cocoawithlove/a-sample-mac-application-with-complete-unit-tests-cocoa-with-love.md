@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9aa21add006fa5f9'
 translated: false
 ---
@@ -34,10 +34,10 @@ I know people will want to see how this works on the iPhone but since this post 
 
 There are two different ways of configuring Xcode for unit testing: logic test targets and application test targets.
 
-- — these are run in a executable that is separate from your application. The separate build can be easier to manage, faster to build and is easier to run objects in isolation since it avoids the application setup. However, you cannot test components which rely on the application (which is most user interface components). Generally, this type of test target is intended for libraries, frameworks and testing the back-end (model components of model-view-controller) of your application.
+- **Logic tests** — these are run in a executable that is separate from your application. The separate build can be easier to manage, faster to build and is easier to run objects in isolation since it avoids the application setup. However, you cannot test components which rely on the application (which is most user interface components). Generally, this type of test target is intended for libraries, frameworks and testing the back-end (model components of model-view-controller) of your application.
 
   Logic tests are easily run at build-time or from the command-line, which is helpful for continuous integration or automated test processes.
-- — these tests let the application load first and are subsequently loaded into the existing application. This means that the full application environment is available to your tests. In many cases, controller tests and view tests need to be run as application tests since they are reliant on the full environment.
+- **Application tests** — these tests let the application load first and are subsequently loaded into the existing application. This means that the full application environment is available to your tests. In many cases, controller tests and view tests need to be run as application tests since they are reliant on the full environment.
 
   Application tests allow your application to be tested in a more realistic environment, reducing the chance that environment or integration level issues will be missed. They are normally run as a separate step (not as part of the build) and therefore may be less convenient for tests that need to be run every time.
 
@@ -51,7 +51,7 @@ One of the best sources of information on configuring Xcode for Unit Tests is [C
 
 After you've created a blank project, use the "Project→New Target..." menu item to add a new "Cocoa→Unit Testing Bundle" Target to the project.
 
-> The testing target is a separate target. This means that you need to be careful of target membership. All application source files should be added to the application target only. Test code files should be added to the testing target only.
+> **Note:** The testing target is a separate target. This means that you need to be careful of target membership. All application source files should be added to the application target only. Test code files should be added to the testing target only.
 
 It'd be great if that's all that you needed but there's more.
 
@@ -67,7 +67,7 @@ where "WhereIsMyMac" is the name of the application you're unit testing. This wi
 
 Also set the "Build→Unit Testing→Test Host" to `$(BUNDLE_LOADER)` (this will give this property the same value as the above setting). This property lets the automated build-time script know to launch the application and inject the unit testing bundle into it to start the tests.
 
-> If you want to do logic tests instead of application tests, leave the Bundle Loader and Test Host fields empty and add all files you want to test to the test target (so the test target becomes a separate, self-contained target instead of linking against the main application).
+> **Logic tests note:** If you want to do logic tests instead of application tests, leave the Bundle Loader and Test Host fields empty and add all files you want to test to the test target (so the test target becomes a separate, self-contained target instead of linking against the main application).
 
 Finally, [download a copy of OCMock](http://www.mulle-kybernetik.com/software/OCMock/), place the OCMock.framework in the same directory as your .xcodeproj file and set the "Build→Search Paths→Framework Search Paths" to:
 
@@ -90,7 +90,7 @@ and in the custom application's settings (Right click→Get Info) on the Argumen
 
 Most of these settings configure the application to load our test bundle into itself when it runs. The `:$(SRCROOT)` at the end of fallback framework path is to allow the application to find the OCUnit framework in our project directory at runtime.
 
-> : since this test debugging executable is a separate executable, you will need to switch to the debugging executable for debugging tests and switch back when you want to run the application normally.
+> **Separate executable**: since this test debugging executable is a separate executable, you will need to switch to the debugging executable for debugging tests and switch back when you want to run the application normally.
 
 ## AppDelegate Tests
 
@@ -117,9 +117,9 @@ An ideal unit test would test the `NSApplication` in isolation and ensure that i
 
 The next test is to ensure that `applicationDidFinishLaunching:` on the delegate will:
 
-1. and set it on the delegate
-2. 's window
-3. 's window the main and key window
+1. create the `WhereIsMyMacWindowController` and set it on the delegate
+2. load the `WhereIsMyMacWindowController`'s window
+3. make the `WhereIsMyMacWindowController`'s window the main and key window
 
 ```objc
 - (void)testApplicationDidFinishLaunching
@@ -185,47 +185,9 @@ This category overrides the `-[WhereIsMyMacWindowController init]` method to ret
 
 Of course, we only want this override to return the mock object at specific times. This is why the `mockWindowController` must be explicitly set back to `nil` at the end of the method.
 
-> technically, overriding
-> 
-> would prevent any method being invoked on
-> 
-> (making the test perfectly decoupled from other classes) however this would mean that we'd need to invoke
-> 
-> on the mock object and
-> 
-> does not let you mock any methods that it implements for itself (this includes all of the
-> 
-> methods plus
-> 
-> and
-> 
-> ). So instead, we override
-> 
-> and make the acceptable tradeoff to allow
-> 
-> to be invoked.
-> 
-> A related point is that
-> 
-> can't mock
-> 
-> or
-> 
-> . This is why manual checks on the
-> 
-> are used instead of asking the mock object to expect a
-> 
-> . If you expect
-> 
-> to be used instead of
-> 
-> , you'd need to wrap the tested method invocation in an
-> 
-> to flush the
-> 
-> before testing the
-> 
-> .
+> **Notice that the category overrides init, not alloc:** technically, overriding `alloc` would prevent any method being invoked on `WhereIsMyMacWindowController` (making the test perfectly decoupled from other classes) however this would mean that we'd need to invoke `init` on the mock object and `OCClassMockObject` does not let you mock any methods that it implements for itself (this includes all of the `NSProxy` methods plus `initWithClass:` and `mockedClass`). So instead, we override `init` and make the acceptable tradeoff to allow `+[WhereIsMyMacWindowController alloc]` to be invoked.  
+>   
+> A related point is that `OCClassMockObject` can't mock `retain` or `release`. This is why manual checks on the `retainCount` are used instead of asking the mock object to expect a `retain`. If you expect `autorelease` to be used instead of `release`, you'd need to wrap the tested method invocation in an `NSAutoreleasePool` to flush the `autorelease` before testing the `retainCount`.
 
 A final point about this test: it uses `object_getInstanceVariable` and `object_setInstanceVariable` to get the `windowController` from the `appDelegate` instead of the property accessor. The reason for this is that `object_getInstanceVariable` directly reads the value from the object without invoking any accessor methods that might have secondary effects. Some code presented elsewhere uses `valueForKey:` to achieve the same effect but the problem with this is that `valueForKey:` will use the `window` getter method if it exists — we want to directly test that the actual instance variable is set on the class without interference.
 
@@ -429,25 +391,11 @@ Six failing tests for the `WhereIsMyMacWindowController`. You can look at the do
 
 ## Conclusion
 
-> WhereIsMyMac-WithUnitTests.zip
-> 
-> (139kb).
-> 
-> Custom executables (like the
-> 
-> discussed in this post) are part of user data in the project file. If you make changes that you want to share with someone else, you will need to rename the
-> 
-> file in the .xcodeproj bundle to
-> 
-> (so that it applies to all users).
-> 
-> This project includes
-> 
-> OCMock.framework
-> 
-> , which is Copyright (c) 2004-2009 by Mulle Kybernetik. OCMock is covered by its own license (contained in the
-> 
-> file).
+> Download the complete [WhereIsMyMac-WithUnitTests.zip](https://www.cocoawithlove.com/assets/objc-era/WhereIsMyMac-WithUnitTests.zip) (139kb).  
+>   
+> **Warning:** Custom executables (like the _UnitTestWhereIsMyMac_ discussed in this post) are part of user data in the project file. If you make changes that you want to share with someone else, you will need to rename the _(your username).pbxuser_ file in the .xcodeproj bundle to _default.pbxuser_ (so that it applies to all users).  
+>   
+>  This project includes [OCMock.framework](http://www.mulle-kybernetik.com/software/OCMock/), which is Copyright (c) 2004-2009 by Mulle Kybernetik. OCMock is covered by its own license (contained in the _OCMock.framework/Versions/A/Resources/License.txt_ file).
 
 In this post, I created a Mac project, created unit tests for all required functionality (plus two integration tests) and ultimately added code to make the project pass those tests. I've shown the configuration required for unit testing targets in Xcode and the implementation of the tests themselves, which show how to isolate units of a program (using mock objects and category overrides) for properly decoupled unit testing.
 

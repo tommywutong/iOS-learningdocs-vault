@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:6f90bfc025dd6141'
 translated: false
 ---
@@ -18,36 +18,22 @@ translated: false
 
 ### December
 
-1. 24
-
-  quasiquarantine
+1. 24[quasiquarantine](https://belkadan.com/blog/2019/12/Quasiquarantine/)
 
 ### November
 
-1. 13
-
-  Homestuck
-2. 01
-
-  Leaving Apple
+1. 13[Homestuck](https://belkadan.com/blog/2019/11/Homestuck/)
+2. 01[Leaving Apple](https://belkadan.com/blog/2019/11/Leaving-Apple/)
 
 ### September
 
-1. 25
-
-  Queue, Queeu, Quuee
-2. 13
-
-  Presentation on PrintAsObjC
+1. 25[Queue, Queeu, Quuee](https://belkadan.com/blog/2019/09/Queue-Queeu-Quuee/)
+2. 13[Presentation on PrintAsObjC](https://belkadan.com/blog/2019/09/Presentation-on-PrintAsObjC/)
 
 ### August
 
-1. 01
-
-  \> go east
+1. 01[\> go east](https://belkadan.com/blog/2019/08/go-east/)
 
 ### February
 
-1. 21
-
-  A Shiny Magic Number
+1. 21[A Shiny Magic Number](https://belkadan.com/blog/2019/02/A-Shiny-Magic-Number/)

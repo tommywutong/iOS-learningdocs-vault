@@ -29,12 +29,10 @@ by [Mike Ash](https://www.mikeash.com/)
 The preprocessor runs first, as the name implies. It performs some simple textual manipulations, such as:
 
 - Stripping comments.
-- directives and replacing them with the contents of the included file.
-- and
-
-  directives.
-- s.
-- s.
+- Resolving `#include` directives and replacing them with the contents of the included file.
+- Evaluating `#if` and `#ifdef` directives.
+- Evaluating `#define`s.
+- Expading the macros found in the rest of the code according to those `#define`s.
 
 It is, of course, these last two which are most relevant to today's discussion.
 
@@ -54,9 +52,7 @@ And it can count parentheses, so it knows that this comma does not result in two
     ONEARG((@"hello, %@", @"world"));
 ```
 
-But in general, it does not have any concept of what it processes. For example, you can't use
-
-to check whether a type is defined or not:
+But in general, it does not have any concept of what it processes. For example, you can't use `#if` to check whether a type is defined or not:
 
 ```
     // makes no sense
@@ -65,11 +61,7 @@ to check whether a type is defined or not:
     #endif
 ```
 
-The
-
-always comes out true even if the
-
-type is already defined. Type definitions are evaluated as part of the compilation phase, which hasn't even happened yet.
+The `#ifndef` always comes out true even if the `MyInteger` type is already defined. Type definitions are evaluated as part of the compilation phase, which hasn't even happened yet.
 
 Likewise, there is no need for the contents of a `#define` to be syntactically correct on their own. It is completely legal, although a poor idea, to create macros like this:
 
@@ -79,13 +71,7 @@ Likewise, there is no need for the contents of a `#define` to be syntactically c
     STARTLOG "just %@" ENDLOG
 ```
 
-The preprocessor just blindly replaces
-
-and
-
-with their definitions. By the time the compiler comes along to try to make sense of this code, it actually
-
-make sense, and so it compiles as valid code.
+The preprocessor just blindly replaces `STARTLOG` and `ENDLOG` with their definitions. By the time the compiler comes along to try to make sense of this code, it actually _does_ make sense, and so it compiles as valid code.
 
 **A Word of Warning**  
  C macros are at the same time too powerful and not powerful enough. Their somewhat ad-hoc nature makes them dangerous, so treat them with care.
@@ -147,11 +133,7 @@ You would use this macro in some frequently called method to measure just how fr
     }
 ```
 
-This definition works well enough here, but it's unbelievably ugly sitting all on one line like this. Let's split it up onto multiple lines. Normally a
-
-is terminated at the end of the line, but by putting
-
-at the end of the line, you can make the preprocessor continue the definition on the next line:
+This definition works well enough here, but it's unbelievably ugly sitting all on one line like this. Let's split it up onto multiple lines. Normally a `#define` is terminated at the end of the line, but by putting `\` at the end of the line, you can make the preprocessor continue the definition on the next line:
 
 ```
     #define TIME(name, lastTimeVariable) \
@@ -184,13 +166,7 @@ The macro will expand like this:
     }
 ```
 
-This won't compile. Declaring
-
-in the
-
-statement is illegal. Even if that worked, only the first statement is subject to the
-
-, and the following lines would run regardless. Not what we wanted!
+This won't compile. Declaring `NSTimeInterval now` in the `if` statement is illegal. Even if that worked, only the first statement is subject to the `if`, and the following lines would run regardless. Not what we wanted!
 
 This can be solved by putting brackets around the macro definition:
 
@@ -266,11 +242,7 @@ A better way to fix it is to wrap the function in a `do ... while(0)` construct.
         } while(0)
 ```
 
-This works correctly with the
-
-statement and in all other situations. A multi-statement macro should always be wrapped in
-
-for this reason.
+This works correctly with the `if` statement and in all other situations. A multi-statement macro should always be wrapped in `do ... while(0)` for this reason.
 
 This macro defines a variable called `now`. This is a poor choice of names for a macro variable, because it could conflict with a variable from outside. Imagine the following code, with somewhat poor variable naming:
 
@@ -327,9 +299,8 @@ You can use this to combine a macro parameter with a constant string within the 
     COM_URL("apple"); // gives http://www.apple.com
 ```
 
-By placing a
-
-in front of a parameter name, the preprocessor will turn the contents of that parameter into a C string. For example:
+**Stringification**  
+ By placing a `#` in front of a parameter name, the preprocessor will turn the contents of that parameter into a C string. For example:
 
 ```
     #define TEST(condition) \
@@ -342,9 +313,7 @@ in front of a parameter name, the preprocessor will turn the contents of that pa
     // logs: Failed test: 1 == 2
 ```
 
-However, you have to be careful with this. If the parameter contains a macro, it will
-
-be expanded. For example:
+However, you have to be careful with this. If the parameter contains a macro, it will _not_ be expanded. For example:
 
 ```
     #define WITHIN(x, y, delta) (fabs((x) - (y)) < delta)
@@ -379,9 +348,7 @@ For this particular case, the desired behavior is pretty much a matter of opinio
     NSify(String) *s; // gives NSString
 ```
 
-For example, you might use this to generate method combinations. This macro will automatically generate indexed accessors for key-value compliance for a property backed by an
-
-:
+For example, you might use this to generate method combinations. This macro will automatically generate indexed accessors for key-value compliance for a property backed by an `NSMutableArray`:
 
 ```
     #define ARRAY_ACCESSORS(capsname, lowername) \
@@ -453,11 +420,7 @@ If logging is enabled, then it will print output like this:
     Conditional log: hello
 ```
 
-This is handy, but it could be handier.
-
-takes a format string and variable arguments. It would be really useful if
-
-could do the same:
+This is handy, but it could be handier. `NSLog` takes a format string and variable arguments. It would be really useful if `LOG` could do the same:
 
 ```
     LOG("count: %d  name: %s", count, name);
@@ -485,11 +448,7 @@ While this works well, it can be useful to have fixed arguments before the varia
         } while(0)
 ```
 
-This works well, except for one problem: you can't provide just a string for simple logs. If you do something like
-
-, the
-
-line expands to:
+This works well, except for one problem: you can't provide just a string for simple logs. If you do something like `LOG("hello")`, the `NSLog` line expands to:
 
 ```
     NSLog(@"Conditional log: --- " "hello" " ---", );
@@ -504,11 +463,7 @@ To avoid this problem in a completely portable way, you have to go back to takin
     NSLog(@"Conditional log: --- %@ ---", MA_logString);
 ```
 
-This works, but it ugly and a bit less efficient. Fortunately, gcc provides an extension which allows the more natural definition. By placing the magic
-
-operator between the trailing comma and
-
-, the preprocessor will eliminate the trailing comma in the case that no variable arguments are provided:
+This works, but it ugly and a bit less efficient. Fortunately, gcc provides an extension which allows the more natural definition. By placing the magic `##` operator between the trailing comma and `__VA_ARGS__`, the preprocessor will eliminate the trailing comma in the case that no variable arguments are provided:
 
 ```
     #define LOG(fmt, ...) \
@@ -523,13 +478,11 @@ This works just as we'd expect, both with extra arguments and without. (Naturall
 **Magic Identifiers**  
  C provides several built-in identifiers which can be extremely useful when building macros:
 
-- : a built-in macro that expands to the current line number.
-- : another built-in macro that expands to a string literal containing the name of the current source file.
-- : this is an implicit variable which contains the name of the current function as a C string.
+- `__LINE__`: a built-in macro that expands to the current line number.
+- `__FILE__`: another built-in macro that expands to a string literal containing the name of the current source file.
+- `__func__`: this is an implicit variable which contains the name of the current function as a C string.
 
-Note that when used in a macro definition, these will all refer to the place where your macro is
-
-, not where it is defined, which is really useful.
+Note that when used in a macro definition, these will all refer to the place where your macro is _used_, not where it is defined, which is really useful.
 
 As an example, consider this logging macro:
 
@@ -555,9 +508,7 @@ The output will look like this:
     MyFile.m:42 (MyFunction): something happened
 ```
 
-This is an extremely valuable debugging aid. You can sprinkle
-
-statements throughout your code and the log output will automatically contain the file name, line number, and function name of where each log statement was placed.
+This is an extremely valuable debugging aid. You can sprinkle `LOG` statements throughout your code and the log output will automatically contain the file name, line number, and function name of where each log statement was placed.
 
 **Compound Literals**  
  This is another item that's not really part of macros, but is really useful for building macros. Compound literals are a new feature in C99. They allow you to to create literals (that is, a constant expression of a given value, like `42` or `"hello"`) of any type, not just built-in types.
@@ -630,9 +581,7 @@ Let's make a similar one for dictionaries. `NSDictionary` doesn't have a method 
     #define DICT(...) DictionaryWithIDArray(IDARRAY(__VA_ARGS__), IDCOUNT(__VA_ARGS__) / 2)
 ```
 
-The helper function unpacks the object array and then calls through to
-
-to create the dictionary:
+The helper function unpacks the object array and then calls through to `NSDictionary` to create the dictionary:
 
 ```
     NSDictionary *DictionaryWithIDArray(id *array, NSUInteger count)
@@ -656,11 +605,8 @@ Now you can write:
     NSDictionary *d = DICT(@"key", @"value", @"key2", @"value2");
 ```
 
-This is a
-
-extension, not part of standard C, but it's extremely useful. It works like
-
-, except instead of providing the size, it provides the type. If you give it an expression, it evaluates to the type of that expression. If you give it a type, it just regurgitates that type.
+**`typeof`**  
+ This is a `gcc` extension, not part of standard C, but it's extremely useful. It works like `sizeof`, except instead of providing the size, it provides the type. If you give it an expression, it evaluates to the type of that expression. If you give it a type, it just regurgitates that type.
 
 Note that for maximum compatibility, it's best to write it as `__typeof__`. The plain `typeof` keyword is disabled in some `gcc` modes to avoid conflicts.
 
@@ -680,13 +626,7 @@ As you'll recall, this is faulty because it evaluates one of its parameters twic
     }())
 ```
 
-This works, sort of. The trouble is that by hard-coding
-
-, the macro doesn't work correctly for
-
-,
-
-, or other types that don't quite fit.
+This works, sort of. The trouble is that by hard-coding `int`, the macro doesn't work correctly for `float`, `long long`, or other types that don't quite fit.
 
 Using `__typeof__`, this macro can be built to be completely generic:
 
@@ -698,25 +638,20 @@ Using `__typeof__`, this macro can be built to be completely generic:
     }())
 ```
 
-This version behaves as expected. Note that because
-
-is a purely compile-time construct, the extra use of the macro parameters does
-
-cause them to be evaluated twice. You can use a similar trick to create a pointer to any value you want:
+This version behaves as expected. Note that because `__typeof__` is a purely compile-time construct, the extra use of the macro parameters does _not_ cause them to be evaluated twice. You can use a similar trick to create a pointer to any value you want:
 
 ```
     #define POINTERIZE(x) ((__typeof__(x) []){ x })
 ```
 
-While this isn't very useful by itself, it can be a good building block to have. For example, here's a macro which will automatically box any value into an
-
-object:
+While this isn't very useful by itself, it can be a good building block to have. For example, here's a macro which will automatically box any value into an `NSValue` object:
 
 ```
     #define BOX(x) [NSValue valueWithBytes: POINTERIZE(x) objCType: @encode(__typeof__(x))]
 ```
 
-provides two built-in functions which can be useful for building macros.
+**Built-in Functions**  
+`gcc` provides two built-in functions which can be useful for building macros.
 
 The first is `__builtin_types_compatible_p`. You pass two types to this function (`__typeof__` comes in handy here) and it produces `1` if the two types are "compatible" (roughly, if they're equal) and `0` if they aren't.
 
@@ -753,11 +688,7 @@ This allows you to write macros which do different things depending on the type 
         )))))
 ```
 
-Note the
-
-macro. Even though the code branch to follow is chosen at compile time, unused branches still have to be valid code. The compiler won't accept
-
-even though that branch will never be chosen. By pointerizing the value and then casting it before dereferencing it, it ensures that the code will compile. The cast is invalid for everything but the one branch that is taken, but it doesn't need to be valid for any of the others anyway.
+Note the `FORCETYPE` macro. Even though the code branch to follow is chosen at compile time, unused branches still have to be valid code. The compiler won't accept `NSStringFromRect(42)` even though that branch will never be chosen. By pointerizing the value and then casting it before dereferencing it, it ensures that the code will compile. The cast is invalid for everything but the one branch that is taken, but it doesn't need to be valid for any of the others anyway.
 
 **X-Macros**  
  This is something I've never used, but is interesting enough that it deserves mention. X-macros are a way of defining a macro in terms of another macro, which are then redefined multiple times to give that macro new meaning. This is confusing, so here's an example:
@@ -795,11 +726,7 @@ even though that branch will never be chosen. By pointerizing the value and then
     }
 ```
 
-This is an advanced and frightening technique, but it could help eliminate a lot of boring repetition in certain specialized cases. For more information about X-macros, consult
-
-the Wikipedia article
-
-.
+This is an advanced and frightening technique, but it could help eliminate a lot of boring repetition in certain specialized cases. For more information about X-macros, consult [the Wikipedia article](http://en.wikipedia.org/wiki/C_preprocessor#X-Macros).
 
 **Conclusion**  
  C macros are complicated and powerful. If you use them, you must be extremely careful not to abuse them. However, in some situations they can be incredibly useful, and, when used correctly, these tips and tricks can help you create macros which make your code easier to write and easier to read.
@@ -814,7 +741,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-12-31-c-macro-tips-and-tricks.html)
 
 Add your thoughts, post a comment:
 

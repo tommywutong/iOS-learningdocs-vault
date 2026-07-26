@@ -45,7 +45,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/the-iphone-development-story-one-year-later.html)
 
 Add your thoughts, post a comment:
 

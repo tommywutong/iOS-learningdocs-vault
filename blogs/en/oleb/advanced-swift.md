@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e26db9e7e259db44'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Advanced Swift
 
-![Advanced Swift Book Cover](https://oleb.net/media/advanced-swift-book-cover.png)
+[![Advanced Swift Book Cover](https://oleb.net/media/advanced-swift-book-cover.png)](https://www.objc.io/books/advanced-swift/)
 
 The final version of Chris Eidhof and Airspeed Velocity’s [_Advanced Swift_](https://www.objc.io/books/advanced-swift/) is now available. As the book’s technical reviewer I’m obviously biased, but I highly recommend it to anyone who, after reading [Apple’s official Swift book](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/), wants to dive in deeper.
 

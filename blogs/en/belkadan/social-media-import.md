@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:70e5f78d797875d4'
 translated: false
 ---
@@ -38,7 +38,7 @@ Because it came up at work, a recap of Swift pointer nomenclature:
 
 - Unsafe - because it is
 - ? Mutable - vs const
-- in its own type
+- ? Raw - vs typed, puts the specialness of C’s `void *` in its own type
 - ? Buffer - knows its length
 - Pointer - because it doesn’t own the data
 
@@ -64,20 +64,14 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Humor](https:
 
 ## Older Posts
 
-1. 2019-09-13
-
-  Presentation on PrintAsObjC
-2. 2019-02-21
-
-  A Shiny Magic Number
-3. 2014-12-28
-
-  SIGWINCH
+1. 2019-09-13[Presentation on PrintAsObjC](https://belkadan.com/blog/2019/09/Presentation-on-PrintAsObjC/?tag=social-media-import)
+2. 2019-02-21[A Shiny Magic Number](https://belkadan.com/blog/2019/02/A-Shiny-Magic-Number/?tag=social-media-import)
+3. 2014-12-28[SIGWINCH](https://belkadan.com/blog/2014/12/SIGWINCH/?tag=social-media-import)
 
 ### Possibly Related Tags
 
-- C++
-- Humor
-- Objective-C
-- Swift
-- Unix
+- [C++](https://belkadan.com/blog/tags/cxx)
+- [Humor](https://belkadan.com/blog/tags/humor)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Unix](https://belkadan.com/blog/tags/unix)

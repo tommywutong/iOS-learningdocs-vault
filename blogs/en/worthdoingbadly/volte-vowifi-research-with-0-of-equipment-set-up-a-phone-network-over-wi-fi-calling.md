@@ -7,7 +7,7 @@ original_language: en
 published: 2022-01-08
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:be8a94192cc6fb36'
 translated: false
 ---
@@ -89,11 +89,9 @@ Since I don’t have blank SIM cards, I wrote a jailbreak tweak to replace the S
 To run the tweak, you’ll need to:
 
 - jailbreak your phone and install Substrate or other method hooking platform.
-- Theos
-- RedirectVoWiFiTweak
-- server address
-
-  to the address of your VoWiFi server
+- setup [Theos](https://theos.dev/docs/installation-macos)
+- clone [RedirectVoWiFiTweak](https://github.com/ExcelCoin/RedirectVoWiFiTweak)
+- point the [server address](https://github.com/ExcelCoin/RedirectVoWiFiTweak/blob/ca42451ebe27a6dfd2363d7a89c27b8ef4af7a06/Tweak.x#L12) to the address of your VoWiFi server
 - `make package install`
 - put your phone in Airplane Mode, then enable Wi-Fi calling (Settings -\> Cellular -\> Wi-Fi Calling)
 
@@ -105,39 +103,27 @@ iPhones run the entire VoLTE/VoWiFi stack in userspace: with a jailbreak, we can
 
 ePDG is just an IPsec/IKEv2 VPN tunnel with the EAP-AKA authentication on SIM card. To disable EAP-AKA authentication and switch to PSK:
 
-- and saw that it was using
-
-  to start the VPN tunnel.
+- I ran `nm CommCenter` and saw that it was using `NEIPSecIKECreateSessionWithInterface` to start the VPN tunnel.
 - I found the symbol in NetworkExtensions and disassembled it in Ghidra
-- `
+- it’s a wrapper around `-[NEIKEv2Session initWithIKEConfig:firstChildConfig:sessionConfig:queue:ipsecInterface:ikeSocketHandler:saSession:packetDelegate:]``
 - I hooked that method, and dumped the arguments
 - I made another IPsec/IKEv2 tunnel on a Mac with PSK
--   - `lldb -n NEIKEv2Provider -w`
+- I attached to macOS’s VPN implementation:
+
+    - `lldb -n NEIKEv2Provider -w`
     - `b initWithIKEConfig:firstChildConfig:sessionConfig:queue:ipsecInterface:ikeSocketHandler:saSession:packetDelegate:`
 - I compared its arguments against the VoLTE ePDG tunnel to see how macOS sets up PSK
 - I made my tweak set the same flags for PSK
 
 This was my first iPhone tweak, so thanks to everyone who helped me:
 
-- dlevi309
-
-  for sending me a pull request to auto restart CommCenter
-- hbkirb
-
-  for pointing me to
-
-  HearseDev
-
-  ’s clang-format wrapper for Theos’ Logos language
+- [dlevi309](https://github.com/ExcelCoin/RedirectVoWiFiTweak/pull/1) for sending me a pull request to auto restart CommCenter
+- [hbkirb](https://twitter.com/hbkirb/status/1477789560406900736) for pointing me to [HearseDev](https://github.com/HearseDev/logos-format)’s clang-format wrapper for Theos’ Logos language
 
 and thanks to the resources I consulted:
 
-- Kanns103
-
-  ’s guide to tweak development
-- elihwyma
-
-  ’s commcenterpatch13, which also hooked CommCenter
+- [Kanns103](https://github.com/Kanns103/GuideToTweakDevelopment13-14)’s guide to tweak development
+- [elihwyma](https://github.com/elihwyma/commcenterpatch13)’s commcenterpatch13, which also hooked CommCenter
 
 # Wi-Fi calling server with StrongSwan and Kamailio
 
@@ -196,80 +182,50 @@ Or even try to replicate the [VoLTE/VoWiFi attacks from Purdue’s researchers](
 
 ### StrongSwan configs:
 
-- config for PSK
-- config for P-CSCF (SIP server)
-
-  . (21 is
-
-  P_CSCF_IP6_ADDRESS
-
-  )
-- config cipher suite - see the CarrierBundle for Verizon
-- give the iPhone a /64 IPv6 address range
+- [config for PSK](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/main/app/ipsec.secrets)
+- [config for P-CSCF (SIP server)](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/main/app/strongswan-send-p-cscf.conf). (21 is [P_CSCF_IP6_ADDRESS](https://datatracker.ietf.org/doc/html/rfc7651))
+- [config cipher suite - see the CarrierBundle for Verizon](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/d229efefbfaa234fcb40814d01709132b7d0b32b/app/ipsec.conf#L10)
+- [give the iPhone a /64 IPv6 address range](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/d229efefbfaa234fcb40814d01709132b7d0b32b/app/ipsec.conf#L26)
 
     - Normally, a VPN just gives out a /128 of address, but the iPhone expects a /64 and will always overwrite the bottom 64 bits with a random value.
-    - Alan from Kage Systems
-
-      for documenting how to get StrongSwan to work as an ePDG for iPhones.
+    - Thanks to [Alan from Kage Systems](https://lists.strongswan.org/pipermail/users/2017-March/010742.html) for documenting how to get StrongSwan to work as an ePDG for iPhones.
 
 ### Kamailio resources
 
 - I’m just using the stock Kamailio config for now, with no authentication
-- config
-
-  tweaks to listen on IPv6 and accept
-
-  SIP domain
+- [config](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/main/app/kamailio-local.cfg) tweaks to listen on IPv6 and accept `vzims.com` SIP domain
 - [Nick vs Networking] (https://nickvsnetworking.com/kamailio-introduction/) is a site with a lot of resources on setting up phone networks - including a Kamailio tutorial which was helpful in understanding concepts
 
 ### Making a call
 
 - Codecs are hard
-- EVS
-
-  or
-
-  AMR-WB
-
-  , which are protected by patents
+- Phones use [EVS](https://en.wikipedia.org/wiki/Enhanced_Voice_Services) or [AMR-WB](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_Wideband), which are protected by patents
 - Linphone can’t do it - it only supports open codecs like Opus
 - Baresip says it supports it, but if I pick up, the call ends
 - The solution is to add an extra server to transcode on the fly
-- urls used by iPhone’s phone app
+- Also: Kamailio doesn’t support the `tel:` urls used by iPhone’s phone app
 - So you can’t dial from the phone
-- patch
-
-  but it’s not upstream
+- there’s a [patch](https://github.com/kamailio/kamailio/issues/1173) but it’s not upstream
 - did not try it
 
 ### Sending a text message to the phone
 
 - normal SIP apps use SIP MESSAGE with `text/plain`
 - not supported on VoLTE/VoWiFi - invalid content type
-- encode in GSM
-
-  or CDMA’s SMS format
+- For VoLTE/VoWiFi, need to [encode in GSM](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/main/app/encodesms.py) or CDMA’s SMS format
 - thankfully plenty of resources online for encoding GSM
 - for GSM, looked at Wireshark capture of an SMS from my phone
-- `sms pdu`
-
-  feature of Android Emulator
-- to see the error
+- debugged by using [`sms pdu`](https://developer.android.com/studio/run/emulator-console) feature of Android Emulator
+- `adb logcat -b radio` to see the error
 
 ### Receiving a text message from the phone
 
 - Phone can receive SMS from computer, but can’t send to computer (or any other phones on my private network)
 - If you look, it sends the SMS not directly to the other number, but to some number in Texas?
-- SMSC
-
-  - the carrier’s SMS gateway
+- this is an [SMSC](https://en.wikipedia.org/wiki/Short_Message_service_center) - the carrier’s SMS gateway
 - SMS can be sent to a powered off phone
 - SMSC stores the SMS and delivers it when the destination phone is online
-- OpenBTS’s SMQueue
-
-  ,
-
-  Osmocom’s OsmoMSC
+- multiple SMSC implmentations - eg [OpenBTS’s SMQueue](https://github.com/RangeNetworks/smqueue), [Osmocom’s OsmoMSC](https://osmocom.org/projects/osmomsc/wiki)
 - I have not tried integrating one, but should be simple
 
 ### Making a broadcast message
@@ -277,17 +233,13 @@ Or even try to replicate the [VoLTE/VoWiFi attacks from Purdue’s researchers](
 - You can already research SMS through the real phone network
 - I wanted to demo something you can only do on your own private phone network
 - Let’s send a cell broadcast/Emergency Alert/Presidential Alert!
-- private LTE equipment
+- past researchers can only send emergency broadcasts using [private LTE equipment](https://ericw.us/trow/lte-alerts.pdf)
 - GSM Cell Broadcasts do not use SMS: they use separate SMS-CB messages that we can’t send over VoLTE/VoWiFi
 - but CDMA uses SMS for both!
-- mandates
-
-  GSM (3GPP) and CDMA (3GPP2) SMS formats over VoLTE
+- Verizon [mandates](https://opendevelopment-staging.verizonwireless.com/content/dam/opendevelopment/pdf/OpenAccessReq/LTE-SMS_REQ_MAR2016.pdf) GSM (3GPP) and CDMA (3GPP2) SMS formats over VoLTE
 - so encoded CDMA format SMS
-- message from my own code
-- send CDMA format SMS
-
-  , I just change the type of message to broadcast, and set the type to “emergency alert” (or “presidential alert”)
+- tested on Android Emulator by decoding [message from my own code](https://worthdoingbadly.com/assets/blog/vowifi2/MainActivity.java)
+- once I figured out how to [send CDMA format SMS](https://github.com/ExcelCoin/VoWiFiLocalDemo/blob/main/app/encodesms_cdma.py), I just change the type of message to broadcast, and set the type to “emergency alert” (or “presidential alert”)
 
 # Join me
 
@@ -345,3 +297,5 @@ If you have any questions, please reach out over email or [Twitter](https://twit
 - How to inspect VoWiFi traffic from an iPhone
 - How to use IPv6
 - How to encode SMS in both GSM and CDMA
+
+[https://worthdoingbadly.com/vowifi2/](https://worthdoingbadly.com/vowifi2/)

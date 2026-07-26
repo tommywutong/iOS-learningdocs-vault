@@ -7,7 +7,7 @@ original_language: en
 published: 2024-04-06
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9937df14dd40ba8a'
 translated: false
 ---
@@ -24,18 +24,16 @@ translated: false
 
 ## [Run-time Polymorphism in Swift](#)
 
-This has come up several times on the forums over the years, but I’ve never written it up in a standard place, so here it is: **There are only three ways to get run-time polymorphism in Swift.** Well, three and a half.more
+This has come up several times on the forums over the years, but I’ve never written it up in a standard place, so here it is: **There are only three ways to get run-time polymorphism in Swift.** Well, three and a half.
 
 What do I mean by _run-time polymorphism?_ I mean a function/method call (or variable or subscript access) that will (potentially) run different code each time the call happens. This is by contrast with many, even _most_ other function calls: when you call Array’s `append`, it’s always the same method that gets called.
 
 So, what are the three, sorry, three and a half ways to get this behavior?
 
-- Calling a function value
-
-  (closure)
-- Calling a class member
-- Calling a protocol requirement
-- Manually testing the type of a value
+- [Calling a function value](#calling-a-function-value) (closure)
+- [Calling a class member](#calling-a-class-member)
+- [Calling a protocol requirement](#calling-a-protocol-requirement)
+- [Manually testing the type of a value](#manually-testing-the-type-of-a-value)
 
 ### Calling a function value
 
@@ -78,7 +76,7 @@ Whether or not this is a good idea is partly a matter of tradeoffs and partly of
 
 Generics are a powerful and flexible tool, but in general they don’t result in any more run-time polymorphism than `any` types (formerly “protocol composition types”). This often throws people who are used to C++ templates, where overload resolution is done on the _concrete_ type that satisfies the generic constraints rather than on the _generic_ type. Swift didn’t choose that option for two main reasons: it makes it much harder to diagnose issues at compile time, and it means that the entire body of the generic has to be visible to callers (so they can substitute in the concrete type). This is good for optimization, but bad for library evolution. You can think of Swift’s model as “the decision of which overload to call is made based on the knowledge where the call is written, which in this case is inside a generic function with certain constraints”.
 
-I don’t know of any other modern languages that have templates like C++, but there’s still a choice between _monomorphization,_ i.e. generating a separate copy of the code for every concrete type, and _polymorphic_ generics, where a single copy of the code uses dynamic dispatch to work on many different types.[1](#fn:optimizer) Different languages take different approaches to this:
+I don’t know of any other modern languages that have templates like C++, but there’s still a choice between _monomorphization,_ i.e. generating a separate copy of the code for every concrete type, and _polymorphic_ generics, where a single copy of the code uses dynamic dispatch to work on many different types.^[1](#fn:optimizer) Different languages take different approaches to this:
 
 | Language | Generics are… | Generic types are… | Overloads are resolved… |
 |---|---|---|---|
@@ -86,7 +84,7 @@ I don’t know of any other modern languages that have templates like C++, but t
 | Rust | monomorphized | expanded into concrete types | based on constraints |
 | Swift | polymorphic | expanded into concrete types (but sometimes indirected) | based on constraints |
 | Java | polymorphic | “erased” to their constraints | based on constraints |
-| Objective‑C | polymorphic | “erased” to their constraints | what’s an overload[2](#fn:objc) |
+| Objective‑C | polymorphic | “erased” to their constraints | what’s an overload^[2](#fn:objc) |
 
 There _is_ now a way to get C++-like behavior in Swift (and Rust): macros. But Swift’s macros are _entirely_ syntactic and have to be invoked explicitly, so they don’t naturally lend themselves to C++ template-style usage, at least not today. So sometimes instead this is where the “3.5” solution comes into play: a dynamic cast inside the body of a generic method acts as a form of “specialization”, even though it does have a checking cost at run time.
 

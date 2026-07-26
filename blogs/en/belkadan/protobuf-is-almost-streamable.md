@@ -7,7 +7,7 @@ original_language: en
 published: 2023-12-14
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c0627b0f880d148b'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 ## [Protobuf Is Almost Streamable](#)
 
-[Protobuf](https://protobuf.dev) is a binary (non-textual) encoding format invented by Google. It has some nice properties and some less nice properties.[1](#fn:recommendation) But one that’s a little frustrating is that it’s _almost_ a streamable format—that is, one where you can process data as it comes in, rather than waiting until you’ve read all of it.more
+[Protobuf](https://protobuf.dev) is a binary (non-textual) encoding format invented by Google. It has some nice properties and some less nice properties.^[1](#fn:recommendation) But one that’s a little frustrating is that it’s _almost_ a streamable format—that is, one where you can process data as it comes in, rather than waiting until you’ve read all of it.
 
 See, the encoding for protobuf is something like “field number, length of field, bytes of field”, repeated for every field in a message. The [real encoding](https://protobuf.dev/programming-guides/encoding/) packs that in a little tighter for integers, floats, and booleans, but that’s the gist of it. All field types in protobuf v3 (the current version, usually written as “proto3”) have a default value (0, false, empty, or `null` for a nested message), so if you don’t see a field in a stream, you can assume it’s set to its default. Or you can mark the field as `optional` to use `null` as the default for any type, or `repeated` to collect every appearance of a field into a list. All of these modes are a _little_ annoying for streamability, because you don’t have the complete value for a field until you get to the end of the stream, but depending on what’s actually _in_ your top-level record, that might be fine.
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2023-01-22
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3b92539984918c05'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 ## [Rescuing Files From Classic Mac OS...with Swift!](#)
 
-My winter break project was getting the files off an old PowerBook from the 90s (my dad’s old work computer) that I’ve had lying around for a while. (There’s _probably_ not anything of interest there to anyone but our family, but who knows?) I’ve looked at this before, but it’s hard to get a [25-year-old computer](https://en.wikipedia.org/wiki/PowerBook_3400c) to talk to a modern OS.more I can’t compress or image the whole disk because it’s already mostly full. “Standard” file sharing protocols fall short because Classic Mac OS files are a little more complicated than just a stream of data. And I don’t want to mess with the system too much, because it’s old and I don’t want the hard disk to suddenly fail or whatever.
+My winter break project was getting the files off an old PowerBook from the 90s (my dad’s old work computer) that I’ve had lying around for a while. (There’s _probably_ not anything of interest there to anyone but our family, but who knows?) I’ve looked at this before, but it’s hard to get a [25-year-old computer](https://en.wikipedia.org/wiki/PowerBook_3400c) to talk to a modern OS. I can’t compress or image the whole disk because it’s already mostly full. “Standard” file sharing protocols fall short because Classic Mac OS files are a little more complicated than just a stream of data. And I don’t want to mess with the system too much, because it’s old and I don’t want the hard disk to suddenly fail or whatever.
 
 So I decided to just write a dead-simple one-off file transfer program that throws data over a TCP connection. I haven’t even written the decoder yet for this ad-hoc archive format; I’ve just [netcat](https://en.wikipedia.org/wiki/Netcat)-ed the whole stream into files to look at later. But the most fun part is that some of my [past](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/) [work](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) is paying off: I’m writing this in Swift, a modern language running on a decades-old OS.
 
@@ -84,7 +84,7 @@ extension OSStatus { // available on all Int32, not ideal, but worth it
 
 C-style error codes, transformed into Swift’s [propagating errors](https://belkadan.com/blog/2021/12/Swift-Delight-Try/), and capturing the file and line of the operation to boot. Easier to use _and_ more information preserved! You’d have to write a macro to do this in C, and rewrite all your functions to handle error results as well as their normal return values.
 
-We haven’t done a chapter on Errors in the [Swift Runtime](https://belkadan.com/blog/tags/swift-runtime/) series[1](#fn:series), but I’ll quickly lay it out here: Swift errors are implemented as heap allocations containing the original type metadata, the conformance to Error, and the value, inline. This is very much like the usual representation of `any Foo` save for the part where it’s _always_ on the heap. The reason for that is twofold: first, so that the representation can be compatible with the Objective-C class NSError on Apple platforms, and second, so that the type `Error?` fits in a register, and the code can check whether an error was thrown by comparing against `nil`. Only some platforms actually _do_ this; the rest “just” have an out-parameter that would essentially be `Error **` in C.[2](#fn:alloc) So the `check()` method here _is_ less efficient than just returning error codes…but only really in the failure case, and even then not that much.
+We haven’t done a chapter on Errors in the [Swift Runtime](https://belkadan.com/blog/tags/swift-runtime/) series^[1](#fn:series), but I’ll quickly lay it out here: Swift errors are implemented as heap allocations containing the original type metadata, the conformance to Error, and the value, inline. This is very much like the usual representation of `any Foo` save for the part where it’s _always_ on the heap. The reason for that is twofold: first, so that the representation can be compatible with the Objective-C class NSError on Apple platforms, and second, so that the type `Error?` fits in a register, and the code can check whether an error was thrown by comparing against `nil`. Only some platforms actually _do_ this; the rest “just” have an out-parameter that would essentially be `Error **` in C.^[2](#fn:alloc) So the `check()` method here _is_ less efficient than just returning error codes…but only really in the failure case, and even then not that much.
 
 ### Tribulations
 
@@ -102,13 +102,13 @@ Well…it _could_ be a bug in CarbonLib. In fact, CarbonLib had multiple version
 
 Finally I got lucky, noticing a snippet of an article from around that time that said the “new APIs” should work on Mac OS 8 on any HFS+ drive. Surely, surely this laptop was using HFS+, a hard drive format released with Mac OS 8.1 (over a year before 8.6). Modern macOS can’t even _read_ the original HFS anymore.
 
-But that was it. The drive was HFS, or “Mac OS Standard”. It didn’t support Unicode, it didn’t support more than 65536 different files per disk[3](#fn:size), and it didn’t support filenames longer than 31 characters. And it didn’t support the new file system APIs. So I did, in the end, have to rewrite my code, though I kept the other version around too. (In case I have to do this again on a slightly newer computer? I dunno.)
+But that was it. The drive was HFS, or “Mac OS Standard”. It didn’t support Unicode, it didn’t support more than 65536 different files per disk^[3](#fn:size), and it didn’t support filenames longer than 31 characters. And it didn’t support the new file system APIs. So I did, in the end, have to rewrite my code, though I kept the other version around too. (In case I have to do this again on a slightly newer computer? I dunno.)
 
 I’m still tickled that I solved my problem with, essentially, a software update.
 
 ### Roads not taken
 
-When I mentioned this project to my (non-programmer) cousin, she said, “And you can’t just copy it onto a USB drive or whatever?” And, well…this laptop predates USB, but the basic idea is sound. I already had to get a new power adapter, so I totally could have gotten an external hard drive with a [SCSI](https://en.wikipedia.org/wiki/SCSI) port[4](#fn:scsi) and a SCSI-to-USB adapter. Or possibly even just gotten the adapter, and started up the laptop in “target disk mode” where it just acts like one big external hard drive itself. But I’m a software person, so I got hung up on software solutions.
+When I mentioned this project to my (non-programmer) cousin, she said, “And you can’t just copy it onto a USB drive or whatever?” And, well…this laptop predates USB, but the basic idea is sound. I already had to get a new power adapter, so I totally could have gotten an external hard drive with a [SCSI](https://en.wikipedia.org/wiki/SCSI) port^[4](#fn:scsi) and a SCSI-to-USB adapter. Or possibly even just gotten the adapter, and started up the laptop in “target disk mode” where it just acts like one big external hard drive itself. But I’m a software person, so I got hung up on software solutions.
 
 The other possibility is that I could have better trusted the software of the time. Remember I said there were various container formats to deal with Mac files being Different? Many Mac file transfer programs understood that, and automatically encoded files into one of those containers when transferring to another machine (either to preserve the information on a non-Mac, or so the Mac on the other side could immediately decode it). I probably could have gotten one of those programs working too.
 

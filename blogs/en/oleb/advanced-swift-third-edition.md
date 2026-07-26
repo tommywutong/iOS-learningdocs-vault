@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:38a4792843acabda'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Advanced Swift, third edition
 
-![Advanced Swift Cover](https://oleb.net/media/advanced-swift-3.0-cover-600px.png)
+[![Advanced Swift Cover](https://oleb.net/media/advanced-swift-3.0-cover-600px.png)](https://www.objc.io/books/advanced-swift/)
 
 **Today we’re releasing the third edition of our book _[Advanced Swift](https://www.objc.io/books/advanced-swift/)_, updated for Swift 4.**
 
@@ -26,18 +26,12 @@ _Advanced Swift_ is the book for people who have read Apple’s _The Swift Progr
 
 The new edition has been thoroughly updated and expanded for Swift 4. The highlights:
 
-- encoding and decoding
-
-  .
-- chapter has a brand-new section on
-
-  key paths
-
-  , plus more about subscripts, property observers, lazy properties, and escaping vs. non-escaping closures.
-- chapter grew by more than 40%, with lots of new examples and more in-depth explanations.
-- chapter is easier to follow now.
-- (although not all ranges are collections).
-- chapter now includes a step-by-step guide how to set up a C library for use with the Swift Package Manager.
+- An entire new chapter on [encoding and decoding](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types).
+- The _Functions_ chapter has a brand-new section on [key paths](https://github.com/apple/swift-evolution/blob/master/proposals/0161-key-paths.md), plus more about subscripts, property observers, lazy properties, and escaping vs. non-escaping closures.
+- The _Strings_ chapter grew by more than 40%, with lots of new examples and more in-depth explanations.
+- The _Collection Protocols_ chapter is easier to follow now.
+- We explain partial ranges in _Built-in Collections_ (although not all ranges are collections).
+- The _Interoperability_ chapter now includes a step-by-step guide how to set up a C library for use with the Swift Package Manager.
 
 Plus a ton of small revisions and additions throughout the book. All in all, the book is approximately 20% longer than last year’s edition (from 376 to 458 pages for the paperback).
 
@@ -45,13 +39,13 @@ Plus a ton of small revisions and additions throughout the book. All in all, the
 
 The e-book download of _Advanced Swift_ also includes the full text of the book in the form of Xcode playgrounds (one playground per chapter). This means you can read the book on your Mac and play with the sample code directly inline.
 
-![Screenshot of the Strings chapter of Advanced Swift in an Xcode 9.1 playground](https://oleb.net/media/advanced-swift-playground-screenshot-xcode-2212px.png)
+[![Screenshot of the Strings chapter of Advanced Swift in an Xcode 9.1 playground](https://oleb.net/media/advanced-swift-playground-screenshot-xcode-2212px.png)](https://oleb.net/media/advanced-swift-playground-screenshot-xcode-2212px.png)
 
 <sub>_Advanced Swift_ in an Xcode playground.</sub>
 
-Last year, we only offered a playground for the Swift Playgrounds app on iOS because the iOS app’s playground book file format allowed us to hide helper code that didn’t appear in the book but was necessary to run the examples. Xcode’s playground file format doesn’t support this — at least not in a way that’s easy for us to adopt.[1](#fn:1) As a consequence, you’ll come across blocks of utility code (marked as hidden with comments but fully visible). Feel free to ignore these.
+Last year, we only offered a playground for the Swift Playgrounds app on iOS because the iOS app’s playground book file format allowed us to hide helper code that didn’t appear in the book but was necessary to run the examples. Xcode’s playground file format doesn’t support this — at least not in a way that’s easy for us to adopt.^[1](#fn:1) As a consequence, you’ll come across blocks of utility code (marked as hidden with comments but fully visible). Feel free to ignore these.
 
-Ultimately, while the iPad is a great match for reading a book, we feel that having the code available on your Mac is worth the slight inconvenience.[2](#fn:2) And you can still use the playgrounds on your iPad if you wish. Just copy the `.playground` files to iCloud Drive and open them in the Swift Playgrounds app.
+Ultimately, while the iPad is a great match for reading a book, we feel that having the code available on your Mac is worth the slight inconvenience.^[2](#fn:2) And you can still use the playgrounds on your iPad if you wish. Just copy the `.playground` files to iCloud Drive and open them in the Swift Playgrounds app.
 
 # How to buy
 

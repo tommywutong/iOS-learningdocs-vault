@@ -156,17 +156,9 @@ The top-level code that deals with the property list then just needs to wrap it:
 **Caveats**  
 This library isn't perfect, although I think it's _useful_. There are some things about it that are less than ideal, though:
 
-1. tolerant even for required keys, since the
-
-  methods return
-
-  on error. For individual properties or instance variables, this is trivial, but it can cause some pain with collections.
-2. methods. However, only types that are explicitly wrapped get transparent proxies, and values of types that aren't wrapped end up with a generic wrapper that must be passed through a
-
-  method.
-3. gets wrapped in a wrapper object, so naive code that expects to get
-
-  directly out of a dictionary when the key is not present will be surprised.
+1. To avoid irritating checks, deserialization code should be `nil` tolerant even for required keys, since the `cast` methods return `nil` on error. For individual properties or instance variables, this is trivial, but it can cause some pain with collections.
+2. The proxies are transparent for property-list types, meaning that error reporting dictionaries can be passed to code that doesn't use the `cast` methods. However, only types that are explicitly wrapped get transparent proxies, and values of types that aren't wrapped end up with a generic wrapper that must be passed through a `cast` method.
+3. A special case of the above: `nil` gets wrapped in a wrapper object, so naive code that expects to get `nil` directly out of a dictionary when the key is not present will be surprised.
 
 Despite these problems, I think this library will make it much easier to write code that safely decodes property lists and JSON objects. Items 2 and 3 don't apply if you write the entire stack of code to use the `cast` methods, and item 1 is a fairly small price to pay compared to the type-checking code you'd need without this library.
 
@@ -183,7 +175,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-09-13-a-library-for-easier-property-list-type-checking-and-error-reporting.html)
 
 Add your thoughts, post a comment:
 

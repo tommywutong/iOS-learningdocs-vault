@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e187b075018245cc'
 translated: false
 ---
@@ -24,7 +24,7 @@ For example, scroll views must distinguish between a simple tap and the beginnin
 
 We should set ourselves the same high standards for our own apps. In this article, I would like to show you an example where the half-assed implementation of gesture recognition seems to work well enough at first glance. But as the user continues to use the app, they quickly stumble upon little irritations, small annoyances in the user interface that they perhaps cannot even pinpoint but notice nevertheless. And while these irritations do not seem to be a big deal to many developers, I want to show you how getting rid of them can improve the user experience tremendously.
 
-![The sample gesture recognition app](https://oleb.net/media/gesture-recognition-sample-app-screenshot.png)
+[![The sample gesture recognition app](https://oleb.net/media/gesture-recognition-sample-app-screenshot.png)](https://oleb.net/media/gesture-recognition-sample-app-screenshot.png)
 
 <sub>The sample app: using the standard gestures, you can drag the image across the screen, make it bigger or smaller by pinching, and rotate it. A double tap resets the image to its original state.</sub>
 

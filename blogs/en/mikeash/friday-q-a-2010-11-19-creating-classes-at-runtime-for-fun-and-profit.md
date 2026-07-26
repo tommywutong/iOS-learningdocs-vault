@@ -45,9 +45,7 @@ First, write the function that implements the `-bar` method. As you'll recall fr
     }
 ```
 
-Now, a function to create the subclass. The first thing it does is use
-
-to make the class.
+Now, a function to create the subclass. The first thing it does is use `rt_createSubclassNamed:` to make the class.
 
 ```
     static Class CreateMyFoo(void)
@@ -59,11 +57,7 @@ to make the class.
         Class myFoo = [NSFoo rt_createSubclassNamed: @"MyFoo"];
 ```
 
-Now to add the new
-
-method. We first get the method from the superclass so I can borrow its type signature string, then create a new
-
-and add it to the subclass:
+Now to add the new `-bar` method. We first get the method from the superclass so I can borrow its type signature string, then create a new `RTMethod` and add it to the subclass:
 
 ```
         SEL sel = @selector(bar);
@@ -94,19 +88,7 @@ To complete the code, we just need a simple wrapper function that creates the ab
     }
 ```
 
-Because
-
-returns
-
-if
-
-doesn't exist,
-
-will also return
-
-in that case. All the caller has to do to use
-
-is something like this:
+Because `CreateMyFoo` returns `nil` if `NSFoo` doesn't exist, `MyFoo` will also return `nil` in that case. All the caller has to do to use `MyFoo` is something like this:
 
 ```
     Class myFoo = MyFoo();
@@ -117,11 +99,8 @@ is something like this:
     }
 ```
 
-It's very common to call
-
-in an overridden method. Unfortunately, the
-
-keyword isn't valid in a C function, even if you're using it to implement an Objective-C method.
+**Calling `super`**  
+ It's very common to call `super` in an overridden method. Unfortunately, the `super` keyword isn't valid in a C function, even if you're using it to implement an Objective-C method.
 
 It's still possible, and not too hard, but you have to be a little more roundabout. You need to manually retrieve the method pointer from the superclass, then directly call it. Here's what `BarOverride` would look like just calling through to `super`:
 
@@ -134,9 +113,7 @@ It's still possible, and not too hard, but you have to be a little more roundabo
     }
 ```
 
-Simply calling through to
-
-is not all that useful, but you can add your own code before and after the call to augment it.
+Simply calling through to `super` is not all that useful, but you can add your own code before and after the call to augment it.
 
 **Example Subclass**  
  Here's a more realistic example that subclasses the hypothetical `NSMysteryView` to add custom drawing and event handling:
@@ -182,19 +159,8 @@ is not all that useful, but you can add your own code before and after the call 
     }
 ```
 
-Sometimes you need to intercept a call to an arbitrary object without knowing in advance what it will be. By creating a subclass of the target's class at runtime, and then swizzling the class of the target object, you can accomplish this interception. Cocoa's
-
-Key-Value Observing
-
-does this, as does my own
-
-`MAZeroingWeakRef`
-
-. Here, I'll walk through how you can do this for yourself. For a simple example, I'll show a sort of light version of what
-
-does by making code that simply observes when an object is deallocated by overriding its
-
-method.
+**Intercepting Calls with Dynamic Subclassing**  
+ Sometimes you need to intercept a call to an arbitrary object without knowing in advance what it will be. By creating a subclass of the target's class at runtime, and then swizzling the class of the target object, you can accomplish this interception. Cocoa's [Key-Value Observing](https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html) does this, as does my own [`MAZeroingWeakRef`](https://github.com/mikeash/MAZeroingWeakRef). Here, I'll walk through how you can do this for yourself. For a simple example, I'll show a sort of light version of what `MAZeroingWeakRef` does by making code that simply observes when an object is deallocated by overriding its `dealloc` method.
 
 A quick note: none of the code that I'm going to show is thread safe, just to keep it simple. Since this is the sort of low-level code that you might want to use from multiple threads (especially since `dealloc` could happen on other threads), keep in mind that a more practical version would want to lock access to all of the shared data.
 
@@ -227,15 +193,7 @@ Now, a small function to query the dictionary and either return what it contains
     }
 ```
 
-Before we can write
-
-, we need to write a
-
-override. All this override needs to do is post the notification and then call
-
-. However, calling
-
-is complicated because not only is this a dynamically allocated class, but one whose superclass isn't known at compile time. Thus we need to perform a search at runtime to find the correct superclass.
+Before we can write `CreateSubclassForClass`, we need to write a `dealloc` override. All this override needs to do is post the notification and then call `[super dealloc]`. However, calling `super` is complicated because not only is this a dynamically allocated class, but one whose superclass isn't known at compile time. Thus we need to perform a search at runtime to find the correct superclass.
 
 It is _not_ correct to simply use `[self superclass]` in this case. Although our dynamic subclass is _probably_ the very last class to be set, and so `[self superclass]` would _probably_ return the correct answer, it's not guaranteed. Some other piece of code (like KVO) could have pulled the same dynamic subclassing trick that we're pulling after we did it, which means their class would be at the bottom instead of our. To be truly robust, we have to search in a loop until we come across a class that has an entry in `gSubclassesDict`, and then that is the one where we need to send our `dealloc`.
 
@@ -258,9 +216,7 @@ Here's what the full `dealloc` override function looks like:
     }
 ```
 
-Now we're ready to write
-
-. There's nothing complex here, this looks just like the other subclass-creation code we've written:
+Now we're ready to write `CreateSubclassForClass`. There's nothing complex here, this looks just like the other subclass-creation code we've written:
 
 ```
     static Class CreateSubclassForClass(Class c)
@@ -295,30 +251,17 @@ Finally, a function to transform an object to post this notification. We start o
     }
 ```
 
-That's it! You can now call
-
-and then use
-
-to listen for the notification.
+That's it! You can now call `MakeObjectPostDeallocNotification(obj)` and then use `NSNotificationCenter` to listen for the notification.
 
 **Caveats**  
  There are some gotchas to this technique. From easiest to hardest:
 
-1. if a targeted object is archived, the archiver will record the custom subclass. When unarchiving, it will try to instantiate that custom subclass. Since these classes are created dynamically, that class may not exist yet, preventing the unarchiver from instantiating the object. To fix this, you can override
+1. **Archiving:** if a targeted object is archived, the archiver will record the custom subclass. When unarchiving, it will try to instantiate that custom subclass. Since these classes are created dynamically, that class may not exist yet, preventing the unarchiver from instantiating the object. To fix this, you can override `classForCoder` in the subclass to return the superclass, so that the archiver records the correct class.
+2. **KVO subclasses:** as I mentioned previously, KVO makes use of this same technique. Unfortunately, Apple's code does not tolerate having subclasses created beneath its own custom classes. To work around this, you can subclass the "real" class and then insert your new subclass into the class hierarchy between the KVO class and the "real" class. [`MAZeroingWeakRef`](https://github.com/mikeash/MAZeroingWeakRef/blob/master/Source/MAZeroingWeakRef.m) shows how to do this, just search for "KVO".
+3. **CoreFoundation bridged classes:** due to how toll-free bridging is implemented, you cannot subclass the bridged classes, nor can you reliably intercept messages to them in other ways. Depending on exactly what you're doing, you may be able to [use some really nasty hacks](https://www.mikeash.com/pyblog/friday-qa-2010-07-30-zeroing-weak-references-to-corefoundation-objects.html), but in general your best bet is to simply not try to mess with bridged classes.
 
-  in the subclass to return the superclass, so that the archiver records the correct class.
-2. as I mentioned previously, KVO makes use of this same technique. Unfortunately, Apple's code does not tolerate having subclasses created beneath its own custom classes. To work around this, you can subclass the "real" class and then insert your new subclass into the class hierarchy between the KVO class and the "real" class.
-
-  `MAZeroingWeakRef`
-
-  shows how to do this, just search for "KVO".
-3. due to how toll-free bridging is implemented, you cannot subclass the bridged classes, nor can you reliably intercept messages to them in other ways. Depending on exactly what you're doing, you may be able to
-
-  use some really nasty hacks
-
-  , but in general your best bet is to simply not try to mess with bridged classes.
-
-Creating classes at runtime is a powerful technique. Today I've shown how you can use it to create subclasses of classes that you can't reference at compile time, and to dynamically create subclasses of arbitrary classes in order to intercept calls to them. This is the sort of thing you can use to blow a very large hole in your foot, but it can also let you do things that simply can't be done otherwise.
+**Conclusion**  
+ Creating classes at runtime is a powerful technique. Today I've shown how you can use it to create subclasses of classes that you can't reference at compile time, and to dynamically create subclasses of arbitrary classes in order to intercept calls to them. This is the sort of thing you can use to blow a very large hole in your foot, but it can also let you do things that simply can't be done otherwise.
 
 That's it for today. Come back in two weeks for another Friday Q&A. As always, if you have an idea for a topic that you would like to see covered here, please [send it in](mailto:mike@mikeash.com)!
 
@@ -330,7 +273,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html)
 
 Add your thoughts, post a comment:
 

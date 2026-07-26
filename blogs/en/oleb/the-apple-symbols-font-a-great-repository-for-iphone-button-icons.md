@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7c193eb8fdde1edc'
 translated: false
 ---
@@ -26,7 +26,7 @@ If you are not afraid of making your own PNGs, there is another free and hidden 
 
 The set of standard buttons that Apple ships with the iPhone SDK is quite limited in both number and context. For instance, the standard toolbar buttons can only be used inside a `UIBarButtonItem` on a toolbar or navigation bar. Now, this is a good thing, I hear you say, because it enforces consistent UIs. And I agree to a point. Specifically, I urge you to follow Apple’s Human Interface Guidelines and use the system-provided buttons for (and only for) [their documented meanings](http://developer.apple.com/iphone/library/documentation/UserExperience/Conceptual/MobileHIG/SystemProvided/SystemProvided.html#//apple_ref/doc/uid/TP40006556-CH15-SW14) or you risk the rejection of your app.
 
-![Icons for buttons, toolbars/navigation bars and tab bars shipped with the iPhone SDK](https://oleb.net/media/iphone-toolbar-icons.png)
+[![Icons for buttons, toolbars/navigation bars and tab bars shipped with the iPhone SDK](https://oleb.net/media/iphone-toolbar-icons.png)](https://oleb.net/media/iphone-toolbar-icons.png)
 
 <sub>Icons for buttons, toolbars/navigation bars and tab bars shipped with the iPhone SDK.</sub>
 
@@ -34,7 +34,7 @@ The set of standard buttons that Apple ships with the iPhone SDK is quite limite
 
 If the standard buttons do not cover your needs or ff you need to use one of the standard toolbar buttons outside of a toolbar (in a simple `UIButton`, for example), you are out of luck. But the Apple Symbols font contains many more standard icons for your icon-making pleasure. Open the OS X Character Viewer in Glyph View, select the Apple Symbols font and scroll down to the very end of the Glyph Catalog:
 
-![The Apple Symbols font in Character Viewer](https://oleb.net/media/apple-symbols-font-glyphs-table.png)
+[![The Apple Symbols font in Character Viewer](https://oleb.net/media/apple-symbols-font-glyphs-table.png)](https://oleb.net/media/apple-symbols-font-glyphs-table.png)
 
 <sub>The Apple Symbols font in Character Viewer.</sub>
 
@@ -48,7 +48,7 @@ I am not a lawyer but I have not found any restrictions that would forbid the us
 
 And Font Book lists no license or embedding restrictions for Apple Symbols:
 
-![Apple Symbols Font Info](https://oleb.net/media/apple-symbols-font-info.png)
+[![Apple Symbols Font Info](https://oleb.net/media/apple-symbols-font-info.png)](https://oleb.net/media/apple-symbols-font-info.png)
 
 **Updates:**
 

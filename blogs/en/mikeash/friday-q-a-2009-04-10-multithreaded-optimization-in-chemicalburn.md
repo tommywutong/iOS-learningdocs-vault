@@ -69,15 +69,7 @@ The trick to solving this problem was to store not just a single pair of values,
     }
 ```
 
-That
-
-is a trick to implement a variable-length array. I didn't want to hardcode a value for the maximum number of threads, and then have some huge multi-core beast come along in a few years and not be able to take advantage. To set up the storage for the array, I override
-
-in
-
-the implementation
-
-to allocate some extra space:
+That `[0]` is a trick to implement a variable-length array. I didn't want to hardcode a value for the maximum number of threads, and then have some huge multi-core beast come along in a few years and not be able to take advantage. To set up the storage for the array, I override `+allocWithZone:` in [the implementation](http://www.mikeash.com/svn/ChemicalBurn/ChemicalBurnNode.m) to allocate some extra space:
 
 ```
 + allocWithZone: (NSZone *)zone
@@ -98,15 +90,7 @@ I wrote a pair of functions for this:
     void NodeThreadIDCleanup( void *key );
 ```
 
-The idea being that as different threads call
-
-, the returned value starts at 0 and just increments for each new thread that appears. This is accomplished by using
-
-to store the ID per-thread, and using a
-
-CFBag
-
-to keep track of how many threads have already requested IDs for the given key, so that each new thread gets the appropriate ID. Here's how they're implemented:
+The idea being that as different threads call `NodeGetThreadID`, the returned value starts at 0 and just increments for each new thread that appears. This is accomplished by using `pthread_getspecific` to store the ID per-thread, and using a [CFBag](http://developer.apple.com/DOCUMENTATION/CoreFoundation/Reference/CFBagRef/index.html) to keep track of how many threads have already requested IDs for the given key, so that each new thread gets the appropriate ID. Here's how they're implemented:
 
 ```
     int NodeGetThreadID( void *key )
@@ -143,11 +127,7 @@ to keep track of how many threads have already requested IDs for the given key, 
     }
 ```
 
-(The
-
-function is just called once from the class's
-
-method.)
+(The `MakeKey` function is just called once from the class's `+initialize` method.)
 
 And that's all it took to get this code to play nice with multiple worker threads but still allow fast access to the two critical pieces of node metadata.
 

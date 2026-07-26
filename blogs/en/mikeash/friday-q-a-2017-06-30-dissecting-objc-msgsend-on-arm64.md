@@ -42,7 +42,7 @@ Therefore, when looking at `objc_msgSend` itself, it does the following:
 2. Get the method cache of that class.
 3. Use the selector passed in to look up the method in the cache.
 4. If it's not in the cache, call into the C code.
-5. for the method.
+5. Jump to the `IMP` for the method.
 
 How does it do all of that? Let's see!
 
@@ -337,7 +337,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-06-30-dissecting-objc_msgsend-on-arm64.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2018-09-06
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:563c70589792da81'
 translated: false
 ---
@@ -294,11 +294,13 @@ The program checks for options with `getopt`, and handles `-M` using a method na
 
 The `is_eserver` method can return 4 values, depending on the device tree’s root node:
 
-- property on the root node is “C5”, “D5”, or “E5”;
+- If the `ibm,model-class` property on the root node is “C5”, “D5”, or “E5”;
 
-    - node, return 101.
+    - if the root node has the `ibm,aix-diagnostics` node, return 101.
     - otherwise return 100.
--   - node, return 103.
+- Otherwise:
+
+    - if the root node has the `ibm,aix-diagnostics` node, return 103.
     - otherwise return 102.
 
 The diagnostic CD checks for 101 or 103, so to return 103, all we need is to add the `ibm,aix-diagnostics` node to QEMU’s device tree.
@@ -311,17 +313,7 @@ I searched “set property Open Firmware” on the Internet, and found some tuto
 dev /
 ```
 
-- method to add a new node. The property method
-
-  takes four arguments
-
-  ,
-
-  . This is Forth, so the arguments come before the method (since they’re pushed onto the stack.) In addition, the
-
-  and
-
-  arguments can be given using a string literal. So the call to add the property is:
+- Call the `property` method to add a new node. The property method [takes four arguments](https://github.com/qemu/SLOF/blob/7d37babcfa48a6eb08e726a8d13b745cb2eebe1c/slof/fs/property.fs#L48), `data dlen name nlen`. This is Forth, so the arguments come before the method (since they’re pushed onto the stack.) In addition, the `name` and `nlen` arguments can be given using a string literal. So the call to add the property is:
 
 ```
 0 0 s" ibm,aix-diagnostics" property
@@ -453,6 +445,6 @@ I [created a kludge](https://github.com/zhuowei/qemu/commit/c5f305c5d0cd336b2bb3
 - QEMU’s PowerPC emulation has improved significantly in the last six years - so thank you and congratulations to the developers!
 - QEMU’s PowerPC emulation is astonishingly slow since it can’t take any shortcuts like SheepShaver, Dolphin (both of which ignore the MMU), or PearPC (which just emulates one operating system). However, this accuracy pays off as it’s able to emulate more OSes than these other emulators.
 - Edit (Sep 7, 2018): before trying something hard, search on Twitter to see if someone already made a tutorial ;)
-- Raptor Talos II POWER9
+- If you have a [Raptor Talos II POWER9](https://tenfourfox.blogspot.com/2018/05/a-semi-review-of-raptor-talos-ii.html) workstation, can you please try these instructions on your machine? I’m curious how fast AIX would boot with hardware KVM acceleration.
 
-  workstation, can you please try these instructions on your machine? I’m curious how fast AIX would boot with hardware KVM acceleration.
+[https://worthdoingbadly.com/aixqemu/](https://worthdoingbadly.com/aixqemu/)

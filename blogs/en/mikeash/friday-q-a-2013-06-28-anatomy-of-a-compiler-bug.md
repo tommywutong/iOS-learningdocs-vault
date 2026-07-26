@@ -616,11 +616,11 @@ And if we keep going, we'll get to the `fwrite` call again.
 
 Here's a summary of what we know so far:
 
-1. .
+1. Execution reaches the prolog of `+[GCCClass format:]`.
 2. The prolog computes an address and jumps to it.
 3. That address ends up being in the middle of a field of executable zero bytes before the program's code.
 4. The CPU executes these zero bytes repeatedly until it reaches the program's code again, at which point it starts to execute that.
-5. is the first piece of code in the app, it runs again.
+5. Because `+test` is the first piece of code in the app, it runs again.
 6. Because this is triggered from a function prolog, the stack is not entirely set up. This results in something that's kind of halfway between a loop and a recursive call, and explains the messed up stack we saw before.
 
 The question is: what exactly is that computed jump in the prolog of `+[GCCClass format:]`, and why does it end up flying off into hyperspace?
@@ -884,7 +884,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-06-28-anatomy-of-a-compiler-bug.html)
 
 Add your thoughts, post a comment:
 

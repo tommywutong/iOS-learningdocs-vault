@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3539ccbdb297e475'
 translated: false
 ---
@@ -53,7 +53,7 @@ What are the implications of all of this for us developers? Probably none in the
 - The Omni Group put up a post on Lion adoption among their customers: within the first 20 days of Lion’s release, [Lion usage was already over 30%](http://www.omnigroup.com/blog/lion_adoption/). That’s encouraging for developers who are thinking about dropping support for Snow Leopard soon.
 - Similarly, see [Adium’s usage stats of this week](http://sparkle.adium.im/?year=2011&week=35&graph=bar) (late August, 2011): 24% of the users are on Lion (and interestingly, 17% are still on 10.5. I wonder why; it can’t be PowerPC users as those make up only 3.5% of all machines).
 - Marco Arment shared his [device and version stats for Instapaper](http://www.marco.org/2011/08/13/instapaper-ios-device-and-version-stats-update): currently, 98% of his customers are on iOS 4.0+ and 92% have an iPhone 3Gs or better (i.e., a device that is capable of running iOS 5). If you ask me, iOS developers that still support iOS 3.x in their next version are doing something wrong.
-- Interesting thoughts by Federico Viticci for MacStories: users need to [build up trust for indie developers](http://www.macstories.net/stories/a-trusted-system/), otherwise they won’t invest time into switching to a new app. Developers can build trust with their audience by providing great support and regular updates.[1](#fn:1)
+- Interesting thoughts by Federico Viticci for MacStories: users need to [build up trust for indie developers](http://www.macstories.net/stories/a-trusted-system/), otherwise they won’t invest time into switching to a new app. Developers can build trust with their audience by providing great support and regular updates.^[1](#fn:1)
 - [Business Insider interview with Dominique Leca](http://www.businessinsider.com/dom-leca-interview-sparrow-2011-8?op=1), co-creator of the Sparrow mail client for OS X. Sparrow made more than $500,000 in the half year since its introduction.
 - Jeremy Olson, creator of the _Grades 2_ app, reports [impressive download numbers and lots of press after winning the Apple Design Award](http://tapity.com/grades/so-hows-it-going/). Unfortunately, more than 150,000 downloads of the free app resulted in no more than a few hundred dollars of revenue from in-app purchases and ads, though.
 - In late 2008, when the iOS App Store was 6 months old, tap tap tap sold its successful _Where To?_ app to FutureTap in the first acquisition of the App Store era. Now, two and a half years later, Ortwin Gentz from FutureTap [reports how well the app did in an amazing infographic](http://taptaptap.com/blog/where-to-three-exciting-years/): after buying the _Where To?_ for $70,000, it generated just over $500,000 of revenue for FutureTap, who continually invested in improving the app and adding new features.
@@ -77,23 +77,13 @@ What are the implications of all of this for us developers? Probably none in the
 - It’s good to see that [Apple insists to intervene in the Lodsys lawsuit](https://fosspatents.blogspot.com/2011/08/apple-insists-to-intervene-in-lodsys.html) despite Lodsys’s heavy opposition. While it might not help directly in the short term, Apple’s engagement is very good news for app developers.
 - Google has adopted a different strategy than Apple and has [filed reexamination requests against two Lodsys patents](https://fosspatents.blogspot.com/2011/08/googles-reexamination-requests-against.html) with the US Patent and Trademark Office. These may indeed prove to be [devastating](http://www.groklaw.net/article.php?story=20110817200754569) to Lodsys in the long run but don’t help the Android developers much that have already been sued.
 - Meanwhile, Lodsys continues to sue more and more developers on all platforms, [including BlackBerry](http://www.theglobeandmail.com/report-on-business/industry-news/the-law-page/small-blackberry-developer-in-patent-companys-sights/article2147597/). ~~Florian Mueller tweeted about [the first attack on a BlackBerry app developer](https://twitter.com/FOSSpatents/status/107287630173057024) he heard of.~~
--   - Nilay Patel
+- The patent discussion in tech blogs has become a bit more controversial and healthy in August, with the voices in favor (or at least against the total abolishment) of software patents getting more attention than before:
 
-      for The Next Web.
-    - Lukas Mathis
-
-      .
-    - Timothy B. Lee for Ars Technica
-
-      .
-    - David Barnard
-
-      .
-    - Mark Cuban
-
-      .
-- patent pledge
-
-  to not sue companies with less than 25 people for software patent infringement. That wouldn’t help against patent trolls but at least it could raise awareness of the issue.
+    - [Nilay Patel](http://thisismynext.com/2011/08/11/broken-patent-system/) for The Next Web.
+    - [Lukas Mathis](http://ignorethecode.net/blog/2011/08/08/more_on_software_patents/).
+    - [Timothy B. Lee for Ars Technica](https://googleblog.blogspot.com/2011/08/supercharging-android-google-to-acquire.html).
+    - [David Barnard](http://davidbarnard.com/post/8653446531/the-fair-use-of-ideas).
+    - [Mark Cuban](http://blogmaverick.com/2011/08/06/if-you-want-to-see-more-jobs-created-change-patent-laws/).
+- And just today, Paul Graham asks the big tech companies to adopt a [patent pledge](http://paulgraham.com/patentpledge.html) to not sue companies with less than 25 people for software patent infringement. That wouldn’t help against patent trolls but at least it could raise awareness of the issue.
 
 1. I love it that Federico cites my friend and fellow Berlin-based developer Oliver Fürniß, creator of [Mr. Reader](http://www.curioustimes.de/mrreader/) as a prime example of such a trusted indie developer. [↩︎](#fnref:1)

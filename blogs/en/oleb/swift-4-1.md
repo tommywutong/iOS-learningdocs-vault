@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:72751f67a486db7e'
 translated: false
 ---
@@ -46,7 +46,7 @@ extension Sequence {
 }
 ```
 
-![Screenshot of Xcode 9.2 (Swift 4.0) showing a compile error](https://oleb.net/media/swift-4-0-extension-error-missing-constraint.png)
+[![Screenshot of Xcode 9.2 (Swift 4.0) showing a compile error](https://oleb.net/media/swift-4-0-extension-error-missing-constraint.png)](https://oleb.net/media/swift-4-0-extension-error-missing-constraint.png)
 
 <sub>Error in Swift 4.0 because the compiler doesn’t know that the `SubSequence` returned by `dropFirst` is a `Sequence`.</sub>
 
@@ -62,7 +62,7 @@ extension Sequence
 }
 ```
 
-![Screenshot of Xcode 9.2 (Swift 4.0) compiling successfully after adding explicit constraints](https://oleb.net/media/swift-4-0-extension-explicit-constraint.png)
+[![Screenshot of Xcode 9.2 (Swift 4.0) compiling successfully after adding explicit constraints](https://oleb.net/media/swift-4-0-extension-explicit-constraint.png)](https://oleb.net/media/swift-4-0-extension-explicit-constraint.png)
 
 <sub>After adding explicit constraints it compiles in Swift 4.0.</sub>
 

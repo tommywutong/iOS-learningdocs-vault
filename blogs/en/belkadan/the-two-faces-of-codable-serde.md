@@ -7,7 +7,7 @@ original_language: en
 published: 2022-11-28
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ee3a08abcb65e861'
 translated: false
 ---
@@ -28,21 +28,21 @@ translated: false
 
 ## [The Two Faces of Codable/Serde](#)
 
-Swift has a pair of protocols, [Encodable and Decodable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types), which represent generic encoding of a tree structure. These protocols are special in that the compiler can provide a default implementation for them under many circumstances. Similarly, Rust has a project called [Serde](https://serde.rs/) which likewise is used for roughly the same purpose; Serde’s traits are even more complicated than Codable’s, but have even more powerful code synthesis via Rust’s proc-macros. Both tools are very useful but occasionally frustrating, and I think some of the frustrating areas come from a tension between two competing use cases.more
+Swift has a pair of protocols, [Encodable and Decodable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types), which represent generic encoding of a tree structure. These protocols are special in that the compiler can provide a default implementation for them under many circumstances. Similarly, Rust has a project called [Serde](https://serde.rs/) which likewise is used for roughly the same purpose; Serde’s traits are even more complicated than Codable’s, but have even more powerful code synthesis via Rust’s proc-macros. Both tools are very useful but occasionally frustrating, and I think some of the frustrating areas come from a tension between two competing use cases.
 
-_Before we get into this, I want to acknowledge that Codable and Serde will never handle *every* situation, and that’s okay. You can customize their behavior to a certain extent, but at some point it is both easier and *correct* to fall back to handwritten code instead. Codable and Serde *should* follow the 80/20 rule: prioritize the common 80% of use cases and not the “long tail” of complexity in the remaining 20%.[1](#fn:80-20)_
+_Before we get into this, I want to acknowledge that Codable and Serde will never handle *every* situation, and that’s okay. You can customize their behavior to a certain extent, but at some point it is both easier and *correct* to fall back to handwritten code instead. Codable and Serde *should* follow the 80/20 rule: prioritize the common 80% of use cases and not the “long tail” of complexity in the remaining 20%.^[1](#fn:80-20)_
 
 ### Pre-existing formats
 
-One of the things that Codable and Serde give you is a _declarative syntax_ for tree-based formats, particularly JSON. We all know how nesting structs works; we all know how JSON objects work.[2](#fn:know) Seems like they should just line up, right? Bam: with Codable/Serde you’re now off and running sending REST requests to someone else’s API, or even your own across language boundaries. You’re able to parse a dataset made freely available somewhere. You can generate something to spec, and that’s really the common element in all of these cases: there _is_ a spec, and you’re just trying to match it. Using normal struct and enum syntax to do that is way easier than writing all the imperative or functional steps out by hand.
+One of the things that Codable and Serde give you is a _declarative syntax_ for tree-based formats, particularly JSON. We all know how nesting structs works; we all know how JSON objects work.^[2](#fn:know) Seems like they should just line up, right? Bam: with Codable/Serde you’re now off and running sending REST requests to someone else’s API, or even your own across language boundaries. You’re able to parse a dataset made freely available somewhere. You can generate something to spec, and that’s really the common element in all of these cases: there _is_ a spec, and you’re just trying to match it. Using normal struct and enum syntax to do that is way easier than writing all the imperative or functional steps out by hand.
 
-There’s an important corollary to this use case, which is that you almost always only care about one format. “Take this JSON and translate it to a binary plist”, said no one ever. Some of the generic nature of Codable and Serde get wasted at this stage; did you know that by default Serde will generate code to deserialize a struct from an _array_ as well as a dictionary?[3](#fn:serde-array) If you’re writing to a spec, this is a waste of time and code size.
+There’s an important corollary to this use case, which is that you almost always only care about one format. “Take this JSON and translate it to a binary plist”, said no one ever. Some of the generic nature of Codable and Serde get wasted at this stage; did you know that by default Serde will generate code to deserialize a struct from an _array_ as well as a dictionary?^[3](#fn:serde-array) If you’re writing to a spec, this is a waste of time and code size.
 
 It’s not unlikely that the format in the spec is not the most useful format for your program. (At the very least, naming conventions often differ across environments.) Both Codable and Serde have some level of control over this, allowing you to use a more idiomatic description of a field for programmatic use, but adjust that for encoding/decoding. Serde tends to be more feature-complete here than Codable, but writing Codable implementations by hand is simpler than it is for Serde.
 
 #### Defining a format
 
-This looks like a separate use case at first, but in the end it’s really the same: you have some user data in your app, and you want to save it. Maybe it’s the actual contents of a document, maybe it’s preferences that are a little more structured than flags and strings. No need to do custom serialization, just use Codable/Serde.[4](#fn:json-data)
+This looks like a separate use case at first, but in the end it’s really the same: you have some user data in your app, and you want to save it. Maybe it’s the actual contents of a document, maybe it’s preferences that are a little more structured than flags and strings. No need to do custom serialization, just use Codable/Serde.^[4](#fn:json-data)
 
 This is totally valid. It also ends up being the same as the “pre-existing format” use case, because as soon as you write the data out, you have a pre-existing format! One that conveniently matches the model you currently have in your program, but if you ever change anything, it’s on you to translate between the old and new formats, and preserve compatibility as best you can, or at least as best you want to.
 
@@ -56,7 +56,7 @@ Codable originally tried to handle this by setting “encoding strategies” at 
 
 ### Conclusions?
 
-This isn’t a “Codable and Serde are busted” post. They’re definitely not perfect; there are plenty of criticisms of each that don’t have anything to do with the format-specific/format-agnostic dichotomy I’ve described here.[5](#fn:encoder) But I think the dichotomy does exist, and that does affect the design of Codable and Serde. These serialization mechanisms are trying to serve two separate but related needs, and that means there will sometimes be trade-offs. Recognizing this will hopefully improve the design of Codable and Serde and any supporting libraries in the future.
+This isn’t a “Codable and Serde are busted” post. They’re definitely not perfect; there are plenty of criticisms of each that don’t have anything to do with the format-specific/format-agnostic dichotomy I’ve described here.^[5](#fn:encoder) But I think the dichotomy does exist, and that does affect the design of Codable and Serde. These serialization mechanisms are trying to serve two separate but related needs, and that means there will sometimes be trade-offs. Recognizing this will hopefully improve the design of Codable and Serde and any supporting libraries in the future.
 
 Thanks to [Gwynne Raskind](https://github.com/gwynne) for beta-reading this post.
 

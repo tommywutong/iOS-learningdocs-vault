@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e00f9c36a538f066'
 translated: false
 ---
@@ -144,7 +144,7 @@ extension SortedArray {
 
 # Other efficiency gains
 
-Chris and Florian already showed in the episode that we can provide more efficient variants of [`min()`](https://developer.apple.com/reference/swift/sequence/1641174-min) and [`max()`](https://developer.apple.com/reference/swift/sequence/1641492-max) because the minimum and maximum elements in a sorted collection are always the first and last:[1](#fn:minmax)
+Chris and Florian already showed in the episode that we can provide more efficient variants of [`min()`](https://developer.apple.com/reference/swift/sequence/1641174-min) and [`max()`](https://developer.apple.com/reference/swift/sequence/1641492-max) because the minimum and maximum elements in a sorted collection are always the first and last:^[1](#fn:minmax)
 
 ```
 extension SortedArray {
@@ -172,7 +172,7 @@ As with `index(of:)` and `contains(_:)`, our `min()` and `max()` variants are mo
 
 ## Only protocol requirements create customization points
 
-Note that none of these four methods are _protocol requirements_ of the `Sequence` or `Collection` protocols, i.e. they _aren’t_ part of the protocols’ definitions. They are only _default implementations_ without being requirements. As a consequence, calls to these methods are statically dispatched because they aren’t [_customization points_](https://developer.apple.com/videos/play/wwdc2015-408/?time=1767)[2](#fn:1).
+Note that none of these four methods are _protocol requirements_ of the `Sequence` or `Collection` protocols, i.e. they _aren’t_ part of the protocols’ definitions. They are only _default implementations_ without being requirements. As a consequence, calls to these methods are statically dispatched because they aren’t [_customization points_](https://developer.apple.com/videos/play/wwdc2015-408/?time=1767)^[2](#fn:1).
 
 The implementations in `SortedArray` don’t _override_ the default implementations (because only requirements can be overridden), they only _shadow_ them. Your code will take advantage of the more efficient implementations when you work directly with a variable of type `SortedArray`, but they will never be called in a generic context. Example:
 

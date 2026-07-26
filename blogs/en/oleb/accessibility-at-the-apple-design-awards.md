@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:65eb41ffa36e94e8'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Beautiful scene at the Apple Design Awards ceremony on Monday: two blind engineers from Apple’s Accessibility team demonstrate how they can create a workflow in the [Workflow app](https://workflow.is/) using [VoiceOver](https://www.apple.com/accessibility/ios/voiceover/).
 
-![VoiceOver demo of the Workflow app at the Apple Design Awards 2015](https://oleb.net/media/workflow-accessibility.png)
+[![VoiceOver demo of the Workflow app at the Apple Design Awards 2015](https://oleb.net/media/workflow-accessibility.png)](https://oleb.net/media/workflow-accessibility.png)
 
 [Watch the video](https://developer.apple.com/videos/wwdc/2015/?id=103) on the WWDC site. The Workflow demo runs from 36:10 to 43:05.
 

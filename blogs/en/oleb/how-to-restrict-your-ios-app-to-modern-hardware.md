@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:52535af6aee27c79'
 translated: false
 ---
@@ -20,11 +20,11 @@ Marco Arment posted [one of his regular iOS device and OS version stats overview
 
 # iOS 5 Adoption Rate Only at 45%
 
-The most striking number to me is the rate of iOS 5 adoption: across Instapaper users on all iOS devices, 45% are running iOS 5. This strikes me as quite low. I would have expected a number in the range of 70–80%, especially considering that Instapaper users are probably significantly more geeky than the average iOS device owner.[1](#fn:1)
+The most striking number to me is the rate of iOS 5 adoption: across Instapaper users on all iOS devices, 45% are running iOS 5. This strikes me as quite low. I would have expected a number in the range of 70–80%, especially considering that Instapaper users are probably significantly more geeky than the average iOS device owner.^[1](#fn:1)
 
 # How to Forcefully Exclude Older Devices From Running Your App
 
-According to Marco’s numbers, having an app that requires iOS 5 would still exclude a lot of users at this time. Most developers should probably wait a least a few more months until they cut off iOS 4 support.[2](#fn:2) For developers of apps that require a relatively high-performance device to run smoothly, that raises the question: how do I best restrict my app to only run on newer devices?
+According to Marco’s numbers, having an app that requires iOS 5 would still exclude a lot of users at this time. Most developers should probably wait a least a few more months until they cut off iOS 4 support.^[2](#fn:2) For developers of apps that require a relatively high-performance device to run smoothly, that raises the question: how do I best restrict my app to only run on newer devices?
 
 It is important to implement such a restriction in a way that enforces it not only at runtime but also at install time. Otherwise, you will (rightfully) get lots of e-mail from angry iPhone 3G owners (if your app even makes it through the review process). Here are the options you have:
 
@@ -44,7 +44,7 @@ This is a convenient option but you should only use it if your app really uses a
 
 One convenient way to sort of circumvent this rule is to explicitly require a device with a fast CPU: one of the options for `UIRequiredDeviceCapabilities` is `armv7`, which tells Apple and the OS that your app only runs on the modern CPU architecture that is used by the iPhone 3GS and all newer iOS devices. That way, you can allow iOS versions 4.0-4.2 and still restrict your app to modern hardware. (Please only do this if your app is really close to unusable on an iPhone 3G. Users of older hardware are probably used to somewhat slow performance, so they won’t necessarily hold it against you if your app stutters a bit.)
 
-![Requiring the armv7 CPU architecture in the UIRequiredDeviceCapabilities key](https://oleb.net/media/uirequireddevicecapabilities-armv7.png)
+[![Requiring the armv7 CPU architecture in the UIRequiredDeviceCapabilities key](https://oleb.net/media/uirequireddevicecapabilities-armv7.png)](https://oleb.net/media/uirequireddevicecapabilities-armv7.png)
 
 <sub>Requiring the armv7 CPU architecture in the `UIRequiredDeviceCapabilities` key.</sub>
 

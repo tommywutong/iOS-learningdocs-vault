@@ -7,7 +7,7 @@ original_language: en
 published: 2016-06-25
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:993638f0f44dde8d'
 translated: false
 ---
@@ -87,9 +87,13 @@ The full parser is about 120 lines long but it is simply more states like this a
 
 When a `.starSlash` is encountered in the `.multiComment` state, the code implements the following logic:
 
-1.   - pop the comment
+1. if exactly 1 comment is on the stack
+
+    - pop the comment
     - return to body
-2.   - pop the comment
+2. otherwise
+
+    - pop the comment
     - stay at multiline comment.
 
 This logic involves evaluating the condition “if exactly 1 comment is on the stack” which is implemented with the `UniqueScope(.comment)` pattern in the code. It’s fairly unusual to see this type of construction in Swift but it really makes the code clearer and more concise in this situation so I wanted to talk about it a little more.

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:53c6ef2738ae6128'
 translated: false
 ---
@@ -99,16 +99,10 @@ There’s no other data _required_ by the app but I’ve chosen to cache the num
 
 If the app had a separate Model, it would include:
 
-- ,
-
-  and
-
-  values
-- count
-- distribution and
-
-  counts).
-- count).
+- The 100 squares, each with `isMine`, `adjacent` and `covered` values
+- The `nonMineSquaresRemaining` count
+- Functions to generate the squares for a new game (including `isMine` distribution and `adjacent ` counts).
+- A function to handle clicking on a square (which might uncover or flag the square and might need to update the `nonMineSquaresRemaining` count).
 
 Of course, the app doesn’t have a separate Model because that would be too sensible.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7169278b6ccb9383'
 translated: false
 ---
@@ -26,7 +26,7 @@ After posting [iPhone 6 Plus Pixel Peeping](https://oleb.net/blog/2014/11/iphone
 
 [Display Zoom](http://support.apple.com/en-us/HT203073) is a feature on the iPhone 6 and 6 Plus that allows users to trade screen space for a larger user interface. With Display Zoom enabled, an iPhone 6 Plus effectively [behaves as if it had the same logical resolution as the iPhone 6](http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions) (375 × 667 points). Output is first rendered into a 1125 × 2001 pixel backing store (at 3× scale) and finally downsampled to fit the 1080 × 1920 pixel screen resolution.
 
-My tests show that activating Display Zoom on the 6 Plus has no discernible negative or positive effect on output quality. The effective scale factor changes from one non-integral number (2.61 px/pt) to another (2.88 px/pt), resulting in a final image that is just as flawed on a per-pixel level as it was before.[1](#fn:1) I did not take any new close-up photos to back this up, but the line pattern in [my test app](https://github.com/ole/iphone-6-plus-rendering) looks essentially identical in both modes (with respect to image quality; the image becomes larger with Display Zoom activated, of course).
+My tests show that activating Display Zoom on the 6 Plus has no discernible negative or positive effect on output quality. The effective scale factor changes from one non-integral number (2.61 px/pt) to another (2.88 px/pt), resulting in a final image that is just as flawed on a per-pixel level as it was before.^[1](#fn:1) I did not take any new close-up photos to back this up, but the line pattern in [my test app](https://github.com/ole/iphone-6-plus-rendering) looks essentially identical in both modes (with respect to image quality; the image becomes larger with Display Zoom activated, of course).
 
 ## iPhone 6
 

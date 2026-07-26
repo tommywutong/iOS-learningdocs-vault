@@ -53,11 +53,9 @@ If no method and no instance variable are found, KVC calls `setValue:forUndefine
 **The Differences**  
 These two systems are similar but not quite the same. The differences are due to the more modern nature of iOS. Without exception, where the two systems differ, the iOS way is more sensible. Unfortunately, the Mac way can't be changed without severely breaking backwards compatibility. These differences are:
 
-- or
-
-  to load the nib. On iOS, they are autoreleased.
+- Top level objects must be explicitly released on the Mac, unless you use an `NSWindowController` or `NSViewController` to load the nib. On iOS, they are autoreleased.
 - Directly setting the ivar on iOS retains the outlet due to how KVC works. On the Mac, the outlet is not retained.
-- . On the Mac, they can just be ignored there.
+- Because directly setting the ivar results in a retain on iOS, such outlets must be released in `dealloc`. On the Mac, they can just be ignored there.
 - Directly setting the ivar on iOS has a more thorough search pattern than on the Mac, due to KVC.
 
 **The Similarities**  
@@ -92,7 +90,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-04-13-nib-memory-management.html)
 
 Add your thoughts, post a comment:
 

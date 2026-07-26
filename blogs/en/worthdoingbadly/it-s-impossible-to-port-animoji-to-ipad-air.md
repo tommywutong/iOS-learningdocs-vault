@@ -7,7 +7,7 @@ original_language: en
 published: 2018-10-25
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:aa7a338d2164ffd3'
 translated: false
 ---
@@ -155,7 +155,7 @@ OK, so ARKit’s face trackers won’t work on iPad Air. However, iOS includes a
 
 Unfortunately, there are three issues with this face tracker:
 
-1. . The tracker can barely run at 5 fps on my iPad Air.
+1. It is _slow_. The tracker can barely run at 5 fps on my iPad Air.
 2. It is inaccurate. The detection often misaligns the facial features or just doesn’t detect my face altogether.
 
 I’ve seen other AR face trackers work much better and faster (~10-15 fps), on the same device and the same resolution (720p), so that’s no excuse.
@@ -212,7 +212,7 @@ I challenge you to prove me wrong by porting Animoji to the iPhone 8. My source 
 
 # What I learned
 
-- face tracking pipelines in ARKit.
+- There’s not one, but _two_ face tracking pipelines in ARKit.
 - Apple uses CoreML in their own apps, unlike some of their other frameworks (cough WatchKit cough)
 - Samsung and Apple made different trade-offs in their respective AR avatar functionalties
 - The local symbols from the dyld cache are very useful for patching programs
@@ -223,6 +223,6 @@ I challenge you to prove me wrong by porting Animoji to the iPhone 8. My source 
 
 # What I want to learn next
 
-- tried so many tools and spent so much time
+- How do you reverse engineer iOS frameworks inside a Dyld Cache? I’ve [tried so many tools and spent so much time](https://worthdoingbadly.com/dscextract/), but I still can’t extract a framework that preserves method names and Obj-C selectors…
 
-  , but I still can’t extract a framework that preserves method names and Obj-C selectors…
+[https://worthdoingbadly.com/memoji2/](https://worthdoingbadly.com/memoji2/)

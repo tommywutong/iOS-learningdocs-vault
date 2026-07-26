@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f37cc02b9cbb708b'
 translated: false
 ---
@@ -32,9 +32,9 @@ self.musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
 
 The music player uses [notifications](http://developer.apple.com/library/ios/#DOCUMENTATION/Cocoa/Reference/Foundation/Classes/NSNotification_Class/Reference/Reference.html) to inform you about changes of:
 
-- ),
-- ), or
-- ).
+- the current song (`MPMusicPlayerControllerNowPlayingItemDidChangeNotification`),
+- the play/paused/stopped state (`MPMusicPlayerControllerPlaybackStateDidChangeNotification`), or
+- the volume (`MPMusicPlayerControllerVolumeDidChangeNotification`).
 
 So the next thing you typically do is to register yourself as an observer for the notifications you are interested in, e.g. in `viewDidLoad`. We want to receive all 3 notifications:
 
@@ -106,7 +106,7 @@ The notification handlers are where you update your UI in response to changes in
 
 # Accessing song metadata: MPMediaItem
 
-![MPMediaPickerController in single-selection mode](https://oleb.net/media/MPMediaPickerController-single-selection-mode-213x320.png)
+[![MPMediaPickerController in single-selection mode](https://oleb.net/media/MPMediaPickerController-single-selection-mode-213x320.png)](https://oleb.net/media/MPMediaPickerController-single-selection-mode-213x320.png)
 
 <sub>MPMediaPickerController in single-selection mode. Unfortunately, Apple does not provide context information about the selected song.</sub>
 
@@ -164,7 +164,7 @@ Similar to the built-in image picker, Apple provides a complete user interface t
 
 # Limitations of the media picker
 
-![MPMediaPickerController in multiple-selection mode](https://oleb.net/media/MPMediaPickerController-multiple-selection-mode-213x320.png)
+[![MPMediaPickerController in multiple-selection mode](https://oleb.net/media/MPMediaPickerController-multiple-selection-mode-213x320.png)](https://oleb.net/media/MPMediaPickerController-multiple-selection-mode-213x320.png)
 
 <sub>MPMediaPickerController in multiple-selection mode. This works like the editing of the On-The-Go playlist in the iPod app.</sub>
 

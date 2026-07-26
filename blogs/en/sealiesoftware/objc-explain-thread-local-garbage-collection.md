@@ -7,7 +7,7 @@ original_language: en
 published: 2009-08-28
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bc1d47e90874a320'
 translated: false
 ---
@@ -64,4 +64,4 @@ If your thread has just created and discarded a lot of temporary objects, you ca
 	collectIfNeeded]` and `-[NSAutoreleasePool
 	drain]` are two such hints. These may run a thread-local collection first, and may follow up with generational or full collection.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

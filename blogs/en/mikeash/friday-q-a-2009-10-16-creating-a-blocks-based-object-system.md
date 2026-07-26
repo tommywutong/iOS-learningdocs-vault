@@ -99,9 +99,7 @@ Then callers can call parent methods like this:
     obj->parent.doSomethingInteresting(42);
 ```
 
-That
-
-is not ideal, but it's workable. As a bonus, this technique separates the ideas of overriding an existing method and implementing a new method with the same name. In most OO systems it's impossible to implement a new method with the same name, as it's automatically an override. Here, they're two separate actions.
+That `parent` is not ideal, but it's workable. As a bonus, this technique separates the ideas of overriding an existing method and implementing a new method with the same name. In most OO systems it's impossible to implement a new method with the same name, as it's automatically an override. Here, they're two separate actions.
 
 By putting `parent` at the front, this allows subtype polymorphism. By casting an instance of `MyFakeSubclass` to a `struct MyFakeClass *`, the result is still a valid object which continues to work as an instance of its parent class, but with any overridden behavior given by its subclass.
 
@@ -124,11 +122,7 @@ We can then define a root object like this:
     };
 ```
 
-We need a function to create new instances of the root object. We'll call it
-
-. It takes one parameter: the size of the object to allocate. Subclasses may be bigger, and the memory needs to be contiguous, so
-
-needs to know how much to allocate.
+We need a function to create new instances of the root object. We'll call it `NewRootObject`. It takes one parameter: the size of the object to allocate. Subclasses may be bigger, and the memory needs to be contiguous, so `NewRootObject` needs to know how much to allocate.
 
 To ease the task of creating new objects (and figuring out how much memory to allocate), we'll create a convention that new objects are always created using a function called `NewClassName` which takes a single size parameter. We can then create a little macro for creating new objects:
 
@@ -142,9 +136,7 @@ Using this, you'd allocate a new instance of the root class like so:
     struct RootObject *obj = Alloc(RootObject);
 ```
 
-Now, what does
-
-actually look like?
+Now, what does `NewRootObject` actually look like?
 
 The first thing it needs are the "instance variables", which in this case are just `__block` qualified local variables.
 
@@ -162,9 +154,7 @@ Next, it needs to actually allocate memory:
         struct RootObject *self = calloc(size, 1);
 ```
 
-Then it can start filling out methods. It does this by just declaring blocks and assigning them to the slots. One wrinkle: since these blocks need to outlive their enclosing scope, we need to call
-
-on them:
+Then it can start filling out methods. It does this by just declaring blocks and assigning them to the slots. One wrinkle: since these blocks need to outlive their enclosing scope, we need to call `Block_copy` on them:
 
 ```
         // "methods"
@@ -176,17 +166,7 @@ on them:
         });
 ```
 
-Of course, that means that we eventually need to
-
-them. Having to go through and manually release every method in
-
-would be really tedious and error-prone, though. To work around this problem, the
-
-method can just scan the entire object for block pointers and release them all automatically. Since the only data in the object struct itself is block pointers, we can just scan one pointer-sized chunk at a time to get them all. Since we used
-
-to allocate the object, we know that any memory "off the end" that got allocated due to
-
-allocating more memory than necessary will be zeroed, and so any NULL pointer will be a signal to stop. This is what the dealloc method looks like:
+Of course, that means that we eventually need to `Block_release` them. Having to go through and manually release every method in `dealloc` would be really tedious and error-prone, though. To work around this problem, the `dealloc` method can just scan the entire object for block pointers and release them all automatically. Since the only data in the object struct itself is block pointers, we can just scan one pointer-sized chunk at a time to get them all. Since we used `calloc` to allocate the object, we know that any memory "off the end" that got allocated due to `malloc` allocating more memory than necessary will be zeroed, and so any NULL pointer will be a signal to stop. This is what the dealloc method looks like:
 
 ```
         self->dealloc = Block_copy(^{
@@ -199,11 +179,7 @@ allocating more memory than necessary will be zeroed, and so any NULL pointer wi
         });
 ```
 
-Finally, we define the
-
-method (using a method of the as-yet-unseen
-
-class) and return the new object:
+Finally, we define the `copyDescription` method (using a method of the as-yet-unseen `String` class) and return the new object:
 
 ```
         self->copyDescription = Block_copy(^{
@@ -229,11 +205,7 @@ As mentioned before, a subclass gets a `struct` for its parent at the top, and t
     };
 ```
 
-Then it just needs a
-
-function to create one. As with
-
-, the first part of the function is for "instance variables":
+Then it just needs a `NewString` function to create one. As with `NewRootObject`, the first part of the function is for "instance variables":
 
 ```
     struct String *NewString(size_t size)
@@ -241,17 +213,13 @@ function to create one. As with
         __block char *str = NULL;
 ```
 
-And next, just like before, we allocate the object. Only this time, instead of allocating raw memory, we call through to the parent's
-
-function to allocate the object.
+And next, just like before, we allocate the object. Only this time, instead of allocating raw memory, we call through to the parent's `New` function to allocate the object.
 
 ```
         struct String *self = (void *)NewRootObject(size);
 ```
 
-Next up, we want to override a couple of methods from the root object. The first one we want to override is
-
-. Since we don't want to call through to the original implementation, we can just release the old block, then assign a new one:
+Next up, we want to override a couple of methods from the root object. The first one we want to override is `copyDescription`. Since we don't want to call through to the original implementation, we can just release the old block, then assign a new one:
 
 ```
         Block_release(self->parent.copyDescription);
@@ -261,11 +229,7 @@ Next up, we want to override a couple of methods from the root object. The first
         });
 ```
 
-Next, we need to override
-
-to free the
-
-variable. This is a little trickier, though, because we need to call through to the old implementation once we're done. To do this, we'll save off the old implementation into a local variable, and call through to it. We also have to take care of releasing the old implementation:
+Next, we need to override `dealloc` to free the `str` variable. This is a little trickier, though, because we need to call through to the old implementation once we're done. To do this, we'll save off the old implementation into a local variable, and call through to it. We also have to take care of releasing the old implementation:
 
 ```
         void (^superdealloc)(void) = self->parent.dealloc;
@@ -276,13 +240,7 @@ variable. This is a little trickier, though, because we need to call through to 
         Block_release(superdealloc);
 ```
 
-This is some tricky memory management business. At first blush this looks good, but if you look deeper you'll realize that
-
-is being called too early! The body of the new
-
-block won't run until the object is destroyed, but the
-
-runs while the object is still being created.
+This is some tricky memory management business. At first blush this looks good, but if you look deeper you'll realize that `Block_release(superdealloc)` is being called too early! The body of the new `dealloc` block won't run until the object is destroyed, but the `Block_release` runs while the object is still being created.
 
 This actually ends up working perfectly fine, because the compiler automatically does a `Block_copy` on the `superdealloc` instance variable when it gets captured by the new block referencing it. There's a bit of automatic reference counting going on behind the scenes, and this ensures that the block stays alive for as long as it's needed.
 
@@ -364,9 +322,9 @@ To summarize, here's what you need to do to create a new class using this system
 2. As the first member of the struct, add a struct for the parent class.
 3. For subsequent members of the struct, add block pointers for each method.
 4. Pause for breath.
-5. function.
-6. qualifier.
-7. function.
+5. Define an appropriately-named `New` function.
+6. At the top, define any "instance variables" you need using the `__block` qualifier.
+7. Allocate the object by calling through to the superclass's `New` function.
 8. Override any parent methods by releasing the original block pointer and reassigning it. If you need to call through to the old implementation, save it into a local variable, and release that local variable after the reassingnment.
 9. Initialize any new methods by assigning to them.
 
@@ -378,15 +336,7 @@ Some of these differences are good, and some are bad. Let's take tha bad first. 
 - It's pretty ugly and verbose. Almost everything is defined by convention, not syntax. Calling through to an overridden superclass implementation is particularly bad, but overall there's a lot of redundancy in there. A carefully crafted set of macros could help this.
 - The per-object memory footprint is large. In a language like Objective-C, an object is a single chunk of memory containing a pointer to its class followed by any instance-specific data that object's class requires. An object's size grows only with the amount of data it contains. In this system, an object is a chunk of memory containing one pointer per method implemented by the object's class. Each of those points to a new chunk of memory which is not shared with other objects of that class. Finally, they all point to chunks of shared storage for the object's class's "instance variables", and for each superclass's "instance variables". That's a lot of memory allocations, and their quantity and size dwarfs what you'd find in a language like Objective-C.
 - Object creation and destruction is very slow. All of these allocations need to be created and filled out.
-- starts to inherit from
-
-  instead of
-
-  , any calls to
-
-  would have to be replaced with
-
-  .
+- The hierarchy of a class is forcibly exposed to client code because of how superclass methods are accessed. If `MyObject` starts to inherit from `String` instead of `RootObject`, any calls to `myobj->parent.release()` would have to be replaced with `myobj->parent.parent.release()`.
 - There's absolutely no metadata or introspection available.
 - The result of the pointer casting stuff going on to achieve subtype polymorphism does not actually have a defined result in the C language, although it works in almost any real implementation you'll find.
 
@@ -396,7 +346,7 @@ Despite all of this, there are some advantages to it:
 
 - It works in plain old C (with Apple's blocks extension), no need for Objective-C or C++ or anything like that.
 - Since it's a single struct member load followed by a block call (which is just another struct member load followed by a function pointer invocation), invoking a method should be faster than in Objective-C.
-- method really is invoked when an object's retain count reaches zero:
+- Methods can be dynamically replaced on individual objects at any time. For example, this is how I tested to make sure that the `dealloc` method really is invoked when an object's retain count reaches zero:
 
   ```
       obj = Alloc(RootObject);
@@ -428,7 +378,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-10-16-creating-a-blocks-based-object-system.html)
 
 Add your thoughts, post a comment:
 

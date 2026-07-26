@@ -7,7 +7,7 @@ original_language: en
 published: 2020-01-13
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4516739b8fc96db1'
 translated: false
 ---
@@ -32,7 +32,7 @@ translated: false
 
 _or, “How I put too much time into making an 8-bit ISA and accompanying virtual machine”_
 
-It all started with my colleague Cassie [having fun designing a toy 8-bit ISA](https://twitter.com/porglezomp/status/1215183514427174912) (“instruction set architecture”). I love encoding tables (I helped out a little with the one for [Swift’s `String` struct representation](https://github.com/apple/swift/blob/master/stdlib/public/core/StringObject.swift)), and I did [assignments in college](http://inst.eecs.berkeley.edu/~cs61cl/fa08/project/asm/asmproject.html) involving simplified CPUs. So I started thinking about what it would be like to write a program in Cassie’s ISA…and decided its four registers were too limited for me. How could I get up to 8 registers while still keeping most of the instructions in a single byte?more
+It all started with my colleague Cassie [having fun designing a toy 8-bit ISA](https://twitter.com/porglezomp/status/1215183514427174912) (“instruction set architecture”). I love encoding tables (I helped out a little with the one for [Swift’s `String` struct representation](https://github.com/apple/swift/blob/master/stdlib/public/core/StringObject.swift)), and I did [assignments in college](http://inst.eecs.berkeley.edu/~cs61cl/fa08/project/asm/asmproject.html) involving simplified CPUs. So I started thinking about what it would be like to write a program in Cassie’s ISA…and decided its four registers were too limited for me. How could I get up to 8 registers while still keeping most of the instructions in a single byte?
 
 That was the start of the project I named ROSE-8: a toy instruction set for a non-existent CPU with 8-bit registers and 32[KiB](https://en.wikipedia.org/wiki/Kibibyte) of memory. Over the last several days I’ve been coming up with the pieces you need for such a little computer, deciding on the best way to encode them as “ROSE-8 machine code”, and then actually implementing it as a toy VM. You can feed code into the ROSE-8 and it will do things!
 

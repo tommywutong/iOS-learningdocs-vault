@@ -7,7 +7,7 @@ original_language: en
 published: 2009-09-09
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:636c59a750b11ccf'
 translated: false
 ---
@@ -80,4 +80,4 @@ Second, there's nothing you can do with weak import until the first OS update _a
 
 Weak import for Objective-C did not make Snow Leopard for scheduling reasons. Assuming it ships in Mac OS X 10.7 Cat Name Forthcoming, you won't be able to use it until Mac OS X 10.8 LOLcat.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

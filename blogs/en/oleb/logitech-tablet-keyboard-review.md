@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:981818ad707e9e51'
 translated: false
 ---
@@ -20,15 +20,15 @@ I recently bought the [Logitech Tablet Keyboard for iPad](http://www.logitech.co
 
 Unlike many other iPad keyboards on the market, this one is a full-size keyboard, which makes it wider than the 10-inch iPad. It is almost identical in size to Apple’s own wireless keyboard, and it also connects to the iPad via Bluetooth. The Tablet Keyboard comes with a case that doubles as an iPad stand when in use. The iPad’s angle on the stand can be adjusted. It costs 70 dollars/euros.
 
-![The Logitech Tablet Keyboard for iPad](https://oleb.net/media/logitech-tablet-keyboard-ipad-1320px.png)
+[![The Logitech Tablet Keyboard for iPad](https://oleb.net/media/logitech-tablet-keyboard-ipad-1320px.png)](https://oleb.net/media/logitech-tablet-keyboard-ipad.png)
 
 # Made for Stationary Use
 
-Typing on the Tablet Keyboard feels very similar to an Apple Wireless Keyboard. The placement of the keys is practically identical to the Apple model[1](#fn:1), and so is the typing experience. If you are regularly using an Apple external or notebook keyboard, you won’t have to readjust to the Logitech. At 398 grams (incl. batteries), it is noticeably heavier than the Apple Wireless Keyboard (325 g). It is also heavier than an iPad mini, and that is without the case, which weighs another 220 grams.
+Typing on the Tablet Keyboard feels very similar to an Apple Wireless Keyboard. The placement of the keys is practically identical to the Apple model^[1](#fn:1), and so is the typing experience. If you are regularly using an Apple external or notebook keyboard, you won’t have to readjust to the Logitech. At 398 grams (incl. batteries), it is noticeably heavier than the Apple Wireless Keyboard (325 g). It is also heavier than an iPad mini, and that is without the case, which weighs another 220 grams.
 
 The size and weight make for a very sturdy and comfortable feel on a desk. They also make this model less than ideal for constant carrying. Unlike many other keyboards made for the iPad, the Logitech Tablet Keyboard lets you freely position stand and keyboard as the two are not attached to each other. Again, this is great for stationary use at a table; if you are looking for a keyboard and stand combination that is easy to balance on your lap when you are sitting on a train (or on the couch), this is not the model you are looking for.
 
-![Logitech Tablet Keyboard coming out of its carrying case](https://oleb.net/media/logitech-tablet-keyboard-case-1320px.png)
+[![Logitech Tablet Keyboard coming out of its carrying case](https://oleb.net/media/logitech-tablet-keyboard-case-1320px.png)](https://oleb.net/media/logitech-tablet-keyboard-case.png)
 
 # Optimized for iPad
 

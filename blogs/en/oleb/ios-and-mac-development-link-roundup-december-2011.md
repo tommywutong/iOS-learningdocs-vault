@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a13c4909de8b67f8'
 translated: false
 ---
@@ -170,11 +170,11 @@ David McKinney illustrates different approaches how to integrate help into your 
 
 After Flipboard for the iPhone came out earlier this month, members of the design team tweeted some pictures showing the many, many iterations they did for this one app’s design. I love how the photos illustrate the incredible amount of work that went into it.
 
-![Flipboard for iPhone Design Prototype 1](http://distilleryimage1.s3.amazonaws.com/e7432e64212511e19896123138142014_7.jpg)
+[![Flipboard for iPhone Design Prototype 1](http://distilleryimage1.s3.amazonaws.com/e7432e64212511e19896123138142014_7.jpg)](http://instagr.am/p/X3b4p/)
 
-![Flipboard for iPhone Design Prototype 2](http://distilleryimage8.s3.amazonaws.com/7724c43c21d711e180c9123138016265_7.jpg)
+[![Flipboard for iPhone Design Prototype 2](http://distilleryimage8.s3.amazonaws.com/7724c43c21d711e180c9123138016265_7.jpg)](http://instagr.am/p/YAQUs/)
 
-![Flipboard for iPhone Design Prototype 3](http://distilleryimage11.s3.amazonaws.com/eac8d40421d311e180c9123138016265_7.jpg)
+[![Flipboard for iPhone Design Prototype 3](http://distilleryimage11.s3.amazonaws.com/eac8d40421d311e180c9123138016265_7.jpg)](http://instagr.am/p/YADhv/)
 
 ## [UX Critique of Path 2](http://startingup.me/post/13738882378/path-2)
 

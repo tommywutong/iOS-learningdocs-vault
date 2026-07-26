@@ -48,19 +48,9 @@ Here's the C source code for which we'll build our Mach-O binary. To keep the re
 
 Some things to notice:
 
-- and
-
-  , I've manually declared
-
-  and
-
-  , defined the
-
-  type, and macroed
-
-  . This avoids emitting extra debug information for the various stuff defined in the standard headers.
-- as taking no parameters. This is extremely poor practice in general, but because of C's calling conventions, it works correctly.
-- call instead.
+- Rather than `#include <stdio.h>` and `#include <time.h>`, I've manually declared `printf()` and `time()`, defined the `time_t` type, and macroed `NULL`. This avoids emitting extra debug information for the various stuff defined in the standard headers.
+- I've defined `main()` as taking no parameters. This is extremely poor practice in general, but because of C's calling conventions, it works correctly.
+- I've used a format string that actually does a format replacement so that the compiler with which I produced my test files doesn't get all efficient and replace it with a `puts()` call instead.
 
 This generates the following assembly (built with Clang 3.3svn at `-Os`):
 
@@ -276,22 +266,12 @@ The next segment command is more complicated:
 
 So, this is the `__TEXT` segment, which covers all the executable code and a good bit of other data. It contains six sections. Each section is aligned according to its section information, and all the sections are shoved together at the end of the segment, such that the first quite-a-few bytes of `__TEXT` are zeroed. However, because of how the linker maps segments, `__TEXT` actually includes all the Mach-O headers. As we'll see later, the symbol table even has its own entry for `__mh_execute_header`. Here are the sections:
 
-1. - The actual
-
-  code of the executable, where all the functions are. In this case, just one function -
-
-  . It's marked as
-
-  , which means "it's a plain old section", and flagged as containing both "some instructions" (at least some executable code) and "pure instructions" (
-
-  executable code).
-2. - The jump table which redirects into the lazy and non-lazy symbol sections. See my previous article for an explanation of the contents of this section. It's marked as
-
-  , the meaning of which is fairly obvious.
-3. - The helper function for lazy dynamically bound symbols.
-4. - A section containing the read-only C string literals used within the code.
-5. - The compact unwind information for the executable's code. Generated for exception handling on OS X.
-6. - The DWARF2 unwind information for the executable's code. Generated for exception handling and debugging.
+1. `__text` - The actual _code_ code of the executable, where all the functions are. In this case, just one function - `main()`. It's marked as `S_REGULAR`, which means "it's a plain old section", and flagged as containing both "some instructions" (at least some executable code) and "pure instructions" (_only_ executable code).
+2. `__stubs` - The jump table which redirects into the lazy and non-lazy symbol sections. See my previous article for an explanation of the contents of this section. It's marked as `S_SYMBOL_STUBS`, the meaning of which is fairly obvious.
+3. `__stub_helper` - The helper function for lazy dynamically bound symbols.
+4. `__cstring` - A section containing the read-only C string literals used within the code.
+5. `__unwind_info` - The compact unwind information for the executable's code. Generated for exception handling on OS X.
+6. `__eh_frame` - The DWARF2 unwind information for the executable's code. Generated for exception handling and debugging.
 
 Next comes the `__DATA` segment:
 
@@ -461,45 +441,15 @@ The next several load commands deal with static and dynamic linking information:
 
 To summarize, this long blather of data consists of:
 
-1. , meaning that if the version of
-
-  loading the binary doesn't understand the command, it must give up right then rather than continue without the information.
-2. segment. At runtime,
-
-  will perform the calculation
-
-  to get the actual location in memory of the symbol table. This is repeated similarly for the strings table, as well as the offsets given in the
-
-  and
-
-  commands.
+1. A list of dynamic linking info for the binary. This command, along with some others, is marked with `LC_REQ_DYLD`, meaning that if the version of `dyld` loading the binary doesn't understand the command, it must give up right then rather than continue without the information.
+2. The location of the symbol and strings tables. These are given as offsets from the beginning of the file, but it is understood that the data is contained within the `__LINKEDIT` segment. At runtime, `dyld` will perform the calculation `symtable_base_address = linkedit_base_address + (symtab_offset - linkedit_offset)` to get the actual location in memory of the symbol table. This is repeated similarly for the strings table, as well as the offsets given in the `LC_DYLD_INFO` and `LC_DYSYMTAB` commands.
 3. A set of dynamic symbol data for the binary, giving the offsets and counts within the symbol table for various types of symbols.
-4. command which gives the hardcoded path for the dynamic linker to load the executable with. This is used by the kernel rather than the dynamic linker, which will run the specified program when the process is spawned. Don't get the idea that you can use this to subvert the loading process, however; the kernel won't let you pick just any dynamic linker.
-5. , a replacement for the older
-
-  command. It used to be that executables were initialized with a thread state specified within the binary itself, but recently, someone realized this was a waste of time and space with
-
-  running early and the state being exactly the same in practically every executable. Instead,
-
-  gives the address of the entry point (
-
-  ) and
-
-  jumps right to that instead, also replacing the old
-
-  object which contained glue code to set up
-
-  .
-6. is the "I link to this dynamic library for some of my undefined symbols" command. This binary only links to
-
-  , the OS X equivalent of
-
-  .
-7. is a table of data in the
-
-  segment which gives the address of every function entry point in the executable. Among other things, this allows for functions to exist that have no entries in the symbol table.
-8. is similarly a table giving the locations of data bytes which are embedded within executable code. This is useful for any number of purposes, not the least of which is accurate disassembly.
-9. , finally, gives a list of designated requirements for each dynamic library linked with the executable. This allows the code signing machinery to determine the suitability of the executable without having to load every dynamic library it links to.
+4. The `LC_LOAD_DYLINKER` command which gives the hardcoded path for the dynamic linker to load the executable with. This is used by the kernel rather than the dynamic linker, which will run the specified program when the process is spawned. Don't get the idea that you can use this to subvert the loading process, however; the kernel won't let you pick just any dynamic linker.
+5. `LC_MAIN`, a replacement for the older `LC_UNIXTHREAD` command. It used to be that executables were initialized with a thread state specified within the binary itself, but recently, someone realized this was a waste of time and space with `dyld` running early and the state being exactly the same in practically every executable. Instead, `LC_MAIN` gives the address of the entry point (`main()`) and `dyld` jumps right to that instead, also replacing the old `crt1.o` object which contained glue code to set up `main()`.
+6. `LC_LOAD_DYLIB` is the "I link to this dynamic library for some of my undefined symbols" command. This binary only links to `libSystem.B.dylib`, the OS X equivalent of `libc`.
+7. `LC_FUNCTION_STARTS` is a table of data in the `__LINKEDIT` segment which gives the address of every function entry point in the executable. Among other things, this allows for functions to exist that have no entries in the symbol table.
+8. `LC_DATA_IN_CODE` is similarly a table giving the locations of data bytes which are embedded within executable code. This is useful for any number of purposes, not the least of which is accurate disassembly.
+9. `LC_DYLIB_CODE_SIGN_DRS`, finally, gives a list of designated requirements for each dynamic library linked with the executable. This allows the code signing machinery to determine the suitability of the executable without having to load every dynamic library it links to.
 
 **A Few More!**  
 Just when you thought we were done, there're three more load commands we haven't covered yet:
@@ -906,7 +856,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-11-30-lets-build-a-mach-o-executable.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2020-06-12
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bf1eb80c08dea09e'
 translated: false
 ---
@@ -79,7 +79,7 @@ swiftc -target arm64e-apple-macosx10.15.0 -sdk <path to MacOSX.sdk> hello.swift
 
 # Known issues
 
-- won’t work in a path with spaces.
+- `./makesdk.sh` won’t work in a path with spaces.
 - Apps built with this (probably) won’t work on an actual ARM macOS.
 - Deprecated methods are still present, since this is just a find-and-replace on the current macOS SDK.
 
@@ -118,10 +118,10 @@ ld: warning: ignoring file /Users/zhuowei/Documents/repos/iTerm2/ThirdParty/Spar
 
 # What I learned
 
-- files, it’s not too difficult to modify the SDKs shipped in Xcode
+- Thanks to `.tbd` files, it’s not too difficult to modify the SDKs shipped in Xcode
 - modern Xcode only reads SDKSettings.json, not SDKSettings.plist
-- just like PowerPC
-- 20 minutes
-
-  with no output.
+- float to int casts saturate on ARM, [just like PowerPC](https://twitter.com/zhuowei/status/1270878992007155718)
+- When Swift compiles a .swiftinterface to a binary .swiftmodule, errors aren’t printed until the process completes. This means that it could get stuck for [20 minutes](https://twitter.com/zhuowei/status/1270897523176214529) with no output.
 - Apple’s Metal compiler actually checks if the SDK path contains “MacOSX.platform” to determine whether to compile for macOS or iOS
+
+[https://worthdoingbadly.com/sim-macos-arm-sdk/](https://worthdoingbadly.com/sim-macos-arm-sdk/)

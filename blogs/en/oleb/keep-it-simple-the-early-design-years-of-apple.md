@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f4e3cd490cf6ac2c'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Keep it Simple: The Early Design Years of Apple
 
-![Keep it Simple: The Early Design Years of Apple Book Cover](https://oleb.net/media/keep-it-simple-cover-500px.jpg)
+[![Keep it Simple: The Early Design Years of Apple Book Cover](https://oleb.net/media/keep-it-simple-cover-500px.jpg)](https://www.amazon.com/dp/3897904071/)
 
 [_Keep it Simple_](https://www.amazon.com/dp/3897904071/) (published in October 2013) is [Hartmut Esslinger’s](https://en.wikipedia.org/wiki/Hartmut_Esslinger) account of the design work he and his company, [Frog Design](http://www.frogdesign.com), did for Apple between 1982 and 1985.
 

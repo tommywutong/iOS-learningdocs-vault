@@ -228,7 +228,7 @@ Every new element that's added requires a reallocation and incurs a cost proport
 
 More generally, the cost to add \\(\\mathrm{m}\\) elements will be \\(\\mathrm{1 + 2 + 3 + \\cdots + m}\\), or: $$\\frac{m * (m + 1)}{2}$$ In algorithmic complexity terms, this can be expressed simply as \\(\\mathrm{O(m^2)}\\). In other words, the total cost to add `m` elements is proportional to the square of `m`. Double the number of elements, and the time to add them will roughly quadruple. Adding a million elements will take roughly a trillion times longer than adding one element, which is not a very happy number.
 
-Let's take a more realistic case, like increasing the capacity by \\(\\mathrm{1024}\\) for each reallocation. In this case, adding \\(\\mathrm{m}\\) elements will cost \\(\\mathrm{1024 + 2048 + 3076 + 4096 + \\cdots + m}\\). If you work it all out, this still turns out to be `O(m``2``)`, although it's still much faster than before. The cost is still proportional to the square of the number of elements, but the cost is smaller by a large constant factor. This is a much more practical way to implement growing the array, but it still has poor asymptotic behavior.
+Let's take a more realistic case, like increasing the capacity by \\(\\mathrm{1024}\\) for each reallocation. In this case, adding \\(\\mathrm{m}\\) elements will cost \\(\\mathrm{1024 + 2048 + 3076 + 4096 + \\cdots + m}\\). If you work it all out, this still turns out to be `O(m`^`2``)`, although it's still much faster than before. The cost is still proportional to the square of the number of elements, but the cost is smaller by a large constant factor. This is a much more practical way to implement growing the array, but it still has poor asymptotic behavior.
 
 Finally, let's look at the strategy implemented here of doubling the capacity for each reallocation. In this case, the total cost for `m` elements will be approximately \\(\\mathrm{1 + 2 + 4 + 8 + 16 + \\cdots + m}\\), which is just \\(\\mathrm{2m - 1}\\), or \\(\\mathrm{O(m)}\\). In short, the cost to add elements is proportional to the total number of elements added. Add twice as many elements, and it takes about twice as much time.
 
@@ -249,7 +249,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-03-09-lets-build-nsmutablearray.html)
 
 Add your thoughts, post a comment:
 

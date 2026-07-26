@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:51a6efbd9306d8a4'
 translated: false
 ---
@@ -103,7 +103,8 @@ if ([GameData sharedGameData].upKeyDown)
 
 This code is some basic trigonometry to add the ship's current `speed`/`trajectory` vector to the new thrust vector, limiting the ship's maximum speed. The actual `x` and `y` of the ship is modified by invoking the `super` implementation (which applies this `speed` and `trajectory`).
 
-> This approach to key control is not typical of an application. In an application, a user-interface controller chooses the target object and sends the keyboard control directly to that object. In this game, the user-interface sets keyboard state in a game-accessible location and game objects choose whether to incorporate that state into their own. This behavior is good for a game because it allows the game objects to choose their own interaction logic but games represent a special case in this regard.
+> **Model-view-controller design note**  
+>  This approach to key control is not typical of an application. In an application, a user-interface controller chooses the target object and sends the keyboard control directly to that object. In this game, the user-interface sets keyboard state in a game-accessible location and game objects choose whether to incorporate that state into their own. This behavior is good for a game because it allows the game objects to choose their own interaction logic but games represent a special case in this regard.
 
 ## Firing shots
 
@@ -297,9 +298,7 @@ Along with `newGame`, `newLevel` and `endGame` methods, the game now has the abi
 
 ## Conclusion
 
-> Download the complete, finished game Quartzeroids2.zip
-> 
-> (239 kB).
+> [Download the complete, finished game Quartzeroids2.zip](https://www.cocoawithlove.com/assets/objc-era/Quartzeroids2Part3.zip) (239 kB).
 
 With the window and design from the first part, the rendering and layers from the second part and now the game logic, the game is complete. Download it, build it, play it and be underwhelmed by its simplicity.
 

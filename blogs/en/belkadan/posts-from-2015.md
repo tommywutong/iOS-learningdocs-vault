@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9090c19d7600525d'
 translated: false
 ---
@@ -18,30 +18,20 @@ translated: false
 
 ### December
 
-1. 29
-
-  Re: Contempt Culture
+1. 29[Re: Contempt Culture](https://belkadan.com/blog/2015/12/Re-Contempt-Culture/)
 
 ### November
 
-1. 18
-
-  Recommendations
+1. 18[Recommendations](https://belkadan.com/blog/2015/11/Recommendations/)
 
 ### May
 
-1. 09
-
-  Nibblesort: Adventures in Optimization
+1. 09[Nibblesort: Adventures in Optimization](https://belkadan.com/blog/2015/05/Nibblesort/)
 
 ### February
 
-1. 22
-
-  AlterConf SF/Oakland
+1. 22[AlterConf SF/Oakland](https://belkadan.com/blog/2015/02/AlterConf/)
 
 ### January
 
-1. 24
-
-  “Skip the FFI”
+1. 24[“Skip the FFI”](https://belkadan.com/blog/2015/01/Skip-the-FFI/)

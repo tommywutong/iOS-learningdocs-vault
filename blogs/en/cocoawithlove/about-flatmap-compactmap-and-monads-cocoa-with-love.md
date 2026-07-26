@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:08005e127d3f2833'
 translated: false
 ---
@@ -173,20 +173,10 @@ If you have array, optionals or other container types, it’s probably because y
 
 Monads have a purpose but their usage remains uncommon in Swift. It is certainly possible to incorporate them in all your programming but you might instinctively process things another way – including a number of approaches that are highly monad-like without really being monadic:
 
-- loop and concatenating as you go can achieve the same result as using
-
-  on
-- statements or Swift’s optional chaining can similarly unwrap an
-
-  , similar to using
-
-  on
-
-  .
-- syntax lets us apply a “bind”-like transformation (flattening out successive throwing functions) without ever really exposing a monad-like type
-- , letting the layers of nesting build up and then apply a post-processing
-
-  step that does its own container unwrapping and concatenation
+- I’ve already shown that performing your own `for` loop and concatenating as you go can achieve the same result as using `flatMap` on `Array`
+- Successive `if let` statements or Swift’s optional chaining can similarly unwrap an `Optional`, similar to using `flatMap` on `Optional`.
+- Swift’s error handling is a monad-like concept (a “may throw an error” abstraction is added to each throwing function call) but Swift’s `try` syntax lets us apply a “bind”-like transformation (flattening out successive throwing functions) without ever really exposing a monad-like type
+- You can `map`, letting the layers of nesting build up and then apply a post-processing `reduce` step that does its own container unwrapping and concatenation
 
 In Swift, since you can have side-effects (unwrapped values that escape their unwrapping scope) monads are not mandatory.
 
@@ -239,7 +229,7 @@ But we can’t replace the word `map` in the previous example with `flatMap` to 
 Why?
 
 1. the mathematical definition of monad requires the flatten operation be across two nested containers of the same kind
-2. with monads (even though the verb “flat” doesn’t literally imply such a narrow interpretation)
+2. people associate the word `flatMap` with monads (even though the verb “flat” doesn’t literally imply such a narrow interpretation)
 
 ### compactMap
 

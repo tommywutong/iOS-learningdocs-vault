@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2d26b165e127f631'
 translated: false
 ---
@@ -52,7 +52,7 @@ The GCD API has been [thoroughly revamped](https://github.com/apple/swift-evolut
 
 ---
 
-I love all of these changes. Taken together, they go a long way in bringing Cocoa closer to idiomatic Swift.[1](#fn:1) If you had told me in 2014 it would take Apple only two years to turn their frameworks into (almost) first-class Swift citizens, I don’t think I would have believed it.
+I love all of these changes. Taken together, they go a long way in bringing Cocoa closer to idiomatic Swift.^[1](#fn:1) If you had told me in 2014 it would take Apple only two years to turn their frameworks into (almost) first-class Swift citizens, I don’t think I would have believed it.
 
 The migration from Swift 2 to Swift 3 will probably be painful, but I think it will be worth it (and we don’t have a choice anyway, do we?). Almost every line in your code that calls into a Cocoa API will have to change, and the lack of [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) stability means that you have to make the switch at the same time for all your dependencies. The Swift 3 migrator in Xcode 8 should be able to handle most of the grunt work, and the fact that the compiler knows about the old names is also a big help. If you don’t know the new name of an API, simply type the old name and apply the fix-it.
 
@@ -60,7 +60,7 @@ To learn more about the API design guidelines and how Apple has applied them to 
 
 # Open-source Swift
 
-None of the changes I mention in this article were revealed at WWDC. On the contrary, they have been developed in the open during the past six months, and Apple has actively asked for and listened to input from the community. The [Swift Evolution process](https://github.com/apple/swift-evolution/blob/master/process.md) is a great gift to the developer community, whether we actively participate in it or just read along.[2](#fn:2)
+None of the changes I mention in this article were revealed at WWDC. On the contrary, they have been developed in the open during the past six months, and Apple has actively asked for and listened to input from the community. The [Swift Evolution process](https://github.com/apple/swift-evolution/blob/master/process.md) is a great gift to the developer community, whether we actively participate in it or just read along.^[2](#fn:2)
 
 Imagine for a moment Apple had not open-sourced Swift, or that they had open-sourced it but continued development behind closed doors. We would not have known about any of the changes before WWDC, nor would we have had the opportunity to voice our opinion about them. Who knows if Swift 3 would have turned out as well as it has?
 

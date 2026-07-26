@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:296dbd26cf8bd33a'
 translated: false
 ---
@@ -52,12 +52,10 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Meta](https:/
 
 ## Older Posts
 
-1. 2007-01-12
-
-  Inauspicious Beginnings
+1. 2007-01-12[Inauspicious Beginnings](https://belkadan.com/blog/2007/01/Inauspicious-Beginnings/?tag=meta)
 
 ### Possibly Related Tags
 
-- Apple
-- LLVM
-- Swift
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [LLVM](https://belkadan.com/blog/tags/llvm)
+- [Swift](https://belkadan.com/blog/tags/swift)

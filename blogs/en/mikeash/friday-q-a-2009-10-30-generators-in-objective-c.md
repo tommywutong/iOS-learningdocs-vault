@@ -35,13 +35,7 @@ In Python, a simple generator looks like this:
             n += 1
 ```
 
-The
-
-statement takes the place of the
-
-statement that you'd find in a normal function. When execution hits
-
-, the value is returned but the function's state is also saved. The net result is that successive calls return successively increasing numbers.
+The `yield` statement takes the place of the `return` statement that you'd find in a normal function. When execution hits `yield`, the value is returned but the function's state is also saved. The net result is that successive calls return successively increasing numbers.
 
 Things aren't actually quite this simple in Python. A call to `countfrom` doesn't start returning numbers, but rather returns an object. Calling the `next` method on the object it returns will return the successive numbers.
 
@@ -64,9 +58,7 @@ Using my [MAGenerator](http://www.mikeash.com/svn/MAGenerator/), things are much
     }
 ```
 
-Much like in Python, calling
-
-doesn't start returning numbers. Instead, it returns a block. Calling the block will then start returning numbers. Here's an example of how you'd actually use this generator:
+Much like in Python, calling `CountFrom` doesn't start returning numbers. Instead, it returns a block. Calling the block will then start returning numbers. Here's an example of how you'd actually use this generator:
 
 ```
     int (^counter)(void) = CountFrom(42);
@@ -107,17 +99,7 @@ The second problem is that of preserving state. Tatham solved this one by simply
     }
 ```
 
-As you can see, the call to
-
-returns a block, which captures the
-
-parameter as well as the
-
-and
-
-local variables. Those are qualified with
-
-so that they can be mutated from within the block.
+As you can see, the call to `CountFrom` returns a block, which captures the `start` parameter as well as the `state` and `n` local variables. Those are qualified with `__block` so that they can be mutated from within the block.
 
 The `state` variable is where the magic happens. When you call the block, execution always begins at the top, just like with a function. However, the first thing it encounters is a switch statement. By setting the state variable to correspond to the location of the return statement, this switch statement causes execution to resume immediately after it. Since all of our variables are captured from the enclosing scope, they remember their contents across calls.
 
@@ -147,13 +129,7 @@ The `state` variable is where the magic happens. When you call the block, execut
     }
 ```
 
-This works, but is dangerous. The danger comes because
-
-variables don't retain what they point to. Our
-
-variable points to an un-owned string. If the caller happens to pop an autorelease pool in between calls to the path builder generator, that will destroy the string, leave a dangling pointer in
-
-, and cause a crash at the next call.
+This works, but is dangerous. The danger comes because `__block` variables don't retain what they point to. Our `path` variable points to an un-owned string. If the caller happens to pop an autorelease pool in between calls to the path builder generator, that will destroy the string, leave a dangling pointer in `path`, and cause a crash at the next call.
 
 We could fix this by copying the string, like so:
 
@@ -183,9 +159,7 @@ We could fix this by copying the string, like so:
     }
 ```
 
-But this has a new problem, namely that it will leak the last string assigned to
-
-.
+But this has a new problem, namely that it will leak the last string assigned to `path`.
 
 The proper solution is to create a cleanup block which gets executed when the main block is destroyed. This can be accomplished by taking advantage of the fact that blocks _do_ automatically manage the memory of captured non-`__block` object pointer variables. We can create an object:
 
@@ -210,9 +184,7 @@ And then have that object call the cleanup block when it's destroyed:
         [cleanupObj callBlockWhenDeallocated: ^{ ... }];
 ```
 
-This could be done using a custom class, but for the sake of simplicity, I opted instead to use a
-
-with custom callbacks set up so that the retain callback would copy the object, and the release callback would cast it to the appropriate block pointer, call it, and then release it. By adding the cleanup block to the array, it will be automatically invoked when the array (and the generator block) is destroyed.
+This could be done using a custom class, but for the sake of simplicity, I opted instead to use a `CFMutableArray` with custom callbacks set up so that the retain callback would copy the object, and the release callback would cast it to the appropriate block pointer, call it, and then release it. By adding the cleanup block to the array, it will be automatically invoked when the array (and the generator block) is destroyed.
 
 If you assume that `MAGeneratorMakeCleanupArray` does the job of setting up the appropriate `CFMutableArray` (and casting it to an `NSMutableArray` then the final code, with cleanup, looks like this:
 
@@ -261,9 +233,7 @@ To start with, the `GENERATOR` macro takes care of the function declaration as w
             returnType (^GENERATOR_cleanupBlock)(void) = nil;
 ```
 
-Local variables can be declared immediately after
-
-.
+Local variables can be declared immediately after `GENERATOR`.
 
 The `GENERATOR_DECL` works the same as the `GENERATOR` macro, but only produces the prototype, making it suitable for a declaration in a header file.
 
@@ -272,11 +242,7 @@ The `GENERATOR_DECL` works the same as the `GENERATOR` macro, but only produces 
         returnType (^nameAndCreationParams) perCallParams
 ```
 
-Next comes
-
-, which takes the generator's parameters again. This declares the state variable (called
-
-, the cleanup array, and starts off the block:
+Next comes `GENERATOR_BEGIN`, which takes the generator's parameters again. This declares the state variable (called `GENERATOR_where`, the cleanup array, and starts off the block:
 
 ```
     #define GENERATOR_BEGIN(...) \
@@ -289,11 +255,7 @@ Next comes
                 case -1:
 ```
 
-The generator code can follow this macro. Within the generator code, you want to return values, so you do this using the
-
-macro. This macro does exactly the same thing as the sequence we wrote manually above. The one trick here is that we need a unique number to identify the state value for this yield. Previously we could just write 1, 2, 3, 4, etc. in the code. We could make this macro take another parameter for the state value, but it's annoying to have to keep track of them all. Instead, as Tatham did, I chose to use the
-
-macro, which gets replaced by the line number of the current line of code.
+The generator code can follow this macro. Within the generator code, you want to return values, so you do this using the `GENERATOR_YIELD` macro. This macro does exactly the same thing as the sequence we wrote manually above. The one trick here is that we need a unique number to identify the state value for this yield. Previously we could just write 1, 2, 3, 4, etc. in the code. We could make this macro take another parameter for the state value, but it's annoying to have to keep track of them all. Instead, as Tatham did, I chose to use the `__LINE__` macro, which gets replaced by the line number of the current line of code.
 
 ```
     #define GENERATOR_YIELD(...) \
@@ -304,9 +266,7 @@ macro, which gets replaced by the line number of the current line of code.
                         } while(0)
 ```
 
-This works great, with one caveat, that you must never place two
-
-s on the same line.
+This works great, with one caveat, that you must never place two `GENERATOR_YIELD`s on the same line.
 
 Next we want the ability to define a cleanup block, which we'll do with a `GENERATOR_CLEANUP` macro. This macro gets a little funky, because the macros are designed to work whether `GENERATOR_CLEANUP` is present or not. `GENERATOR_END`, which will end the definition of the generator, needs to work properly whether it follows `GENERATOR_CLEANUP` or `GENERATOR_BEGIN`. This is done in this macro by adding a superfluous set of curly braces to the cleanup block:
 
@@ -319,9 +279,7 @@ Next we want the ability to define a cleanup block, which we'll do with a `GENER
             GENERATOR_cleanupBlock = ^{{
 ```
 
-The return statement shuts up the compiler about missing return statements, and also provides a safety net if you let execution fall off the end. Finally we come to the end. Again, this macro has to work whether
-
-is present or not. Thus, it has the same ending with the return statement, which works in both contexts. Finally it checks to see if a cleanup block has been set, adds it to the cleanup array if so, and then returns the newly created generator block.
+The return statement shuts up the compiler about missing return statements, and also provides a safety net if you let execution fall off the end. Finally we come to the end. Again, this macro has to work whether `GENERATOR_CLEANUP` is present or not. Thus, it has the same ending with the return statement, which works in both contexts. Finally it checks to see if a cleanup block has been set, adds it to the cleanup array if so, and then returns the newly created generator block.
 
 ```
     #define GENERATOR_END \
@@ -335,13 +293,7 @@ is present or not. Thus, it has the same ending with the return statement, which
         }
 ```
 
-Note that in order to accommodate the
-
-statement in the cleanup block, the cleanup block needs to have the same return type as the generator block. Since the array has no way to figure out the proper block type to invoke, we wrap the cleanup block in a nice
-
-/
-
-block that it can deal with.
+Note that in order to accommodate the `return GENERATOR_zeroReturnValue;` statement in the cleanup block, the cleanup block needs to have the same return type as the generator block. Since the array has no way to figure out the proper block type to invoke, we wrap the cleanup block in a nice `void`/`void` block that it can deal with.
 
 **Results**  
  These macros are pretty scary, but the results are quite nice. This is the same example that I showed at the beginning:
@@ -363,9 +315,7 @@ block that it can deal with.
     }
 ```
 
-More complicated generators look nice too. Here's the
-
-generator that I used as an example above without the macros, put in macro form:
+More complicated generators look nice too. Here's the `PathBuilder` generator that I used as an example above without the macros, put in macro form:
 
 ```
     GENERATOR(NSString *, PathBuilder(void), (NSString *component))
@@ -396,31 +346,11 @@ Certainly this is not 100% natural, but all in all it's amazingly reasonable and
 **Caveats**  
  As with all blasphemous crimes against nature, MAGenerator has a few caveats.
 
-1. Local variables declared within the generator block will not remember their state between invocation. You can get away with this with carefully structured code, but it's best not to try.
-2. You cannot safely use
-
-  /
-
-  loops (other loop constructs are fine) unless the body contains no invocations of
-
-  .
-3. This is not a big hardship: just separate them with a carriage return. Thankfully, this one will generate a compiler error, not a difficult runtime error.
-4. Because the generator's execution state is resumed using a
-
-  statement, and because
-
-  creates
-
-  labels, using
-
-  inside your own
-
-  statement will cause confusion, because the generated case labels will belong to the inner
-
-  rather than the macro-generated execution dispatch one.
-5. You can't assume that the caller will keep an autorelease pool around for you until you're done.
-
-  takes care of this, but it's still harder than it is in normal code.
+1. **Local variables must be declared at the top, before `GENERATOR_BEGIN`.** Local variables declared within the generator block will not remember their state between invocation. You can get away with this with carefully structured code, but it's best not to try.
+2. **This includes the implicit locals generated by using a `for`/`in` loop.** You cannot safely use `for`/`in` loops (other loop constructs are fine) unless the body contains no invocations of `GENERATOR_YIELD`.
+3. **You can't put two invocations of `GENERATOR_YIELD` on the same line.** This is not a big hardship: just separate them with a carriage return. Thankfully, this one will generate a compiler error, not a difficult runtime error.
+4. **`switch` statements used within the generator must not contain any invocations of `GENERATOR_YIELD`.** Because the generator's execution state is resumed using a `switch` statement, and because `GENERATOR_YIELD` creates `case` labels, using `GENERATOR_YIELD` inside your own `switch` statement will cause confusion, because the generated case labels will belong to the inner `switch` rather than the macro-generated execution dispatch one.
+5. **Object lifetime must be managed carefully if it croses `GENERATOR_YIELD`.** You can't assume that the caller will keep an autorelease pool around for you until you're done. `GENERATOR_CLEANUP` takes care of this, but it's still harder than it is in normal code.
 
 These are all unfortunate, and I wish they weren't there, but all in all they aren't dealbreakers by any stretch of the imagination.
 
@@ -449,11 +379,7 @@ As an example, here's a generator which will find files with a certain extension
     }
 ```
 
-You could just write a function that returns an array, but that requires enumerating over the entire contents of the directory, which is slow if the caller doesn't actually need them all. You could write an
-
-subclass which wraps the
-
-, but that requires a lot more code. You could write code which takes a block as a parameter and invokes it for each one it finds, but that's less natural. Here's what it looks like to use this generator:
+You could just write a function that returns an array, but that requires enumerating over the entire contents of the directory, which is slow if the caller doesn't actually need them all. You could write an `NSEnumerator` subclass which wraps the `NSDirectoryEnumerator`, but that requires a lot more code. You could write code which takes a block as a parameter and invokes it for each one it finds, but that's less natural. Here's what it looks like to use this generator:
 
 ```
     for(NSString *path in MAGeneratorEnumerator(FileFinder(@"/Applications", @"app")))
@@ -603,9 +529,7 @@ When the connection is closed, it signals the end of the stream:
     httpParser(-1);
 ```
 
-And everything else just happens automatically. Any time
-
-provides enough information for the parser to have parsed a new component of the response, the appropriate callback block is invoked.
+And everything else just happens automatically. Any time `newByte` provides enough information for the parser to have parsed a new component of the response, the appropriate callback block is invoked.
 
 This generator is declared to return `int` since MAGenerator doesn't support `void` generators. The return value is simply ignored in this case. Execution begins at the top, with the first character from the data stream stored in `byte`. Each time it invokes `GENERATOR_YIELD`, the effect is to get a new `byte` from the caller. Parsing thus flows naturally from top to bottom, even though this code is in fact heavily asynchronous.
 
@@ -632,7 +556,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-10-30-generators-in-objective-c.html)
 
 Add your thoughts, post a comment:
 

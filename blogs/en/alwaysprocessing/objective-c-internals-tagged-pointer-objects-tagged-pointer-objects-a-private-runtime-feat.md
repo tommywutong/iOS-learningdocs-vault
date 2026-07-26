@@ -7,7 +7,7 @@ original_language: en
 published: 2023-03-19
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0204f51cfe1e305c'
 translated: false
 ---
@@ -64,7 +64,7 @@ At the time of this writing, the Objective-C runtime has two schemes to reserve 
 
 Up to 7 class types can use the 60-bit payload variant (with the eighth type being a special case to identify the 52-bit payload variant). And up to 256 class types can use the 52-bit payload variant. [objc-internal.h](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-internal.h#L447-L509) has an enum that provides some symbolic identity for various class identity bit values.
 
-When the runtime requires the `isa` pointer for an object, it calls `objc_object::getIsa()`[[1](#_footnotedef_1)] (defined in [objc-object.h](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-object.h#L76-L92)), which returns the `isa` instance variable for objects allocated on the heap and the `isa` pointer stored in one of the tag class arrays for tagged pointer objects.
+When the runtime requires the `isa` pointer for an object, it calls `objc_object::getIsa()`^[[1](#_footnotedef_1)] (defined in [objc-object.h](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-object.h#L76-L92)), which returns the `isa` instance variable for objects allocated on the heap and the `isa` pointer stored in one of the tag class arrays for tagged pointer objects.
 
 ```
 inline Class

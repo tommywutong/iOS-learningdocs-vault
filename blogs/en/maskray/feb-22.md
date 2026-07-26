@@ -7,7 +7,7 @@ original_language: en
 published: 2026-02-22
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c51c80a014e8d094'
 translated: false
 ---
@@ -28,26 +28,14 @@ C++ is also terse — `[class.bit]p1`:
 
 The actual rules come from the platform ABI:
 
-- — used on Linux, macOS, BSD, and most non-Windows platforms. The Itanium C++ ABI (
-
-  section 2.4
-
-  ) defers bit-field placement to "the base C ABI" but adds its own constraints (notably: bit-fields are never placed in the tail padding of a base class).
-- AArch64 AAPCS
-
-  has a more detailed description.
-- — used on Windows (MSVC). In GCC and Clang, structs with the
-
-  attribute also mimics this ABI.
+- **Itanium ABI** — used on Linux, macOS, BSD, and most non-Windows platforms. The Itanium C++ ABI ([section 2.4](https://itanium-cxx-abi.github.io/cxx-abi/abi.html#class-types)) defers bit-field placement to "the base C ABI" but adds its own constraints (notably: bit-fields are never placed in the tail padding of a base class).
+- System V ABI Processor Supplement. The x86-64 psABI says little about bit-fields, while the [AArch64 AAPCS](https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst#id115) has a more detailed description.
+- **Microsoft ABI** — used on Windows (MSVC). In GCC and Clang, structs with the `ms_struct` attribute also mimics this ABI.
 
 Clang implements both ABIs in `clang/lib/AST/RecordLayoutBuilder.cpp`. It processes bit-fields in **two distinct phases**:
 
-1. (storage units) — assign a bit offset to every bit-field. This is ABI-specified and determines
-
-  and
-
-  .
-2. (access units) — choose what LLVM IR loads and stores to emit. This is a compiler optimization that affects generated code but not the ABI.
+1. **Layout** (storage units) — assign a bit offset to every bit-field. This is ABI-specified and determines `sizeof` and `alignof`.
+2. **Codegen** (access units) — choose what LLVM IR loads and stores to emit. This is a compiler optimization that affects generated code but not the ABI.
 
 Understanding these separately is the key to understanding bit-fields. This article focuses on Itanium (the default on most platforms), with a section on how the Microsoft ABI differs.
 
@@ -57,9 +45,9 @@ In `clang/lib/AST/RecordLayoutBuilder.cpp`, `ItaniumRecordLayoutBuilder::LayoutF
 
 A **storage unit** is a region of `sizeof(T)` bytes, by default aligned to `alignof(T)`. For an `int` bit-field, that's a 4-byte region at a 4-byte-aligned offset. The alignment can be reduced by the `packed` attribute and `#pragma pack`.
 
-- — the unit's size in bits
-- in bits — the unit's alignment (before modifiers)
-- — the first bit after the last bit-field
+- `StorageUnitSize = sizeof(T) * 8` — the unit's size in bits
+- `FieldAlign = alignof(T)` in bits — the unit's alignment (before modifiers)
+- `FieldOffset` — the first bit after the last bit-field
 
 ### Itanium's Core Rule
 
@@ -85,29 +73,25 @@ struct S1 { int a:14; int b:10; int c:30; };   // sizeof = 8
 
 **Walk-through for `U8`** (all fields have StorageUnitSize = 8, FieldAlign = 8):
 
-- at bit 0. Position = 0, 0 + 7 = 7 \<= 8. Fits.
-- at bit 7. Position = 7, 7 + 7 = 14 \> 8. Doesn't fit. New unit at bit 8.
-- at bit 15. Position = 15 - 8 = 7, 7 + 2 = 9 \> 8. Doesn't fit. New unit at bit 16.
+- `a` at bit 0. Position = 0, 0 + 7 = 7 \<= 8. Fits. **Offset = 0.**
+- `b` at bit 7. Position = 7, 7 + 7 = 14 \> 8. Doesn't fit. New unit at bit 8. **Offset = 8.**
+- `c` at bit 15. Position = 15 - 8 = 7, 7 + 2 = 9 \> 8. Doesn't fit. New unit at bit 16. **Offset = 16.**
 
 Three 1-byte storage units. `sizeof(U8) = 3`. Eight padding bits wasted.
 
 **Walk-through for `U16`** (all fields have StorageUnitSize = 16, FieldAlign = 16):
 
-- at bit 0. Position = 0, 0 + 7 = 7 \<= 16. Fits.
-- at bit 7. Position = 7, 7 + 7 = 14 \<= 16. Fits.
-- at bit 14. Position = 14, 14 + 2 = 16 \<= 16. Fits.
+- `a` at bit 0. Position = 0, 0 + 7 = 7 \<= 16. Fits. **Offset = 0.**
+- `b` at bit 7. Position = 7, 7 + 7 = 14 \<= 16. Fits. **Offset = 7.**
+- `c` at bit 14. Position = 14, 14 + 2 = 16 \<= 16. Fits. **Offset = 14.**
 
 One 2-byte storage unit. `sizeof(U16) = 2`. No waste.
 
 **Walk-through for `S1`** (all fields have StorageUnitSize = 32, FieldAlign = 32):
 
-- at bit 0. Position = 0, 14 fits in 32.
-- at bit 14. Position = 14, 14 + 10 = 24 \<= 32. Fits.
-
-  Bits 24–31 are padding (unfilled tail of the first storage unit).
-- at bit 24. Position = 24, 24 + 30 = 54 \> 32. Doesn't fit. New unit at bit 32.
-
-  Bits 62–63 are padding (unfilled tail of the second storage unit).
+- `a` at bit 0. Position = 0, 14 fits in 32. **Offset = 0.**
+- `b` at bit 14. Position = 14, 14 + 10 = 24 \<= 32. Fits. **Offset = 14.** Bits 24–31 are padding (unfilled tail of the first storage unit).
+- `c` at bit 24. Position = 24, 24 + 30 = 54 \> 32. Doesn't fit. New unit at bit 32. **Offset = 32.** Bits 62–63 are padding (unfilled tail of the second storage unit).
 
 `sizeof(S1) = 8`, `alignof(S1) = 4`.
 
@@ -121,12 +105,8 @@ When bit-fields have different declared types, the storage unit size changes:
 struct S2 { int a:24; short b:8; };   // sizeof = 4
 ```
 
-- is
-
-  (StorageUnitSize = 32). Placed at bit 0.
-- is
-
-  (StorageUnitSize = 16, FieldAlign = 16). Current offset = 24. Position within a 16-bit aligned unit: 24 % 16 = 8. 8 + 8 = 16 \<= 16. Fits.
+- `a` is `int` (StorageUnitSize = 32). Placed at bit 0.
+- `b` is `short` (StorageUnitSize = 16, FieldAlign = 16). Current offset = 24. Position within a 16-bit aligned unit: 24 % 16 = 8. 8 + 8 = 16 \<= 16. Fits. **Offset = 24.**
 
 `sizeof(S2) = 4`. The `short` bit-field overlaps into the `int`'s storage unit. Under Itanium, storage units of different types _can_ share bytes.
 
@@ -136,12 +116,8 @@ The `short` can also reuse space left by a smaller bit-field:
 struct S2b { int a:16; short b:8; };   // sizeof = 4
 ```
 
-- is
-
-  (StorageUnitSize = 32). Placed at bit 0.
-- is
-
-  (StorageUnitSize = 16, FieldAlign = 16). Current offset = 16. Position within a 16-bit aligned unit: 16 % 16 = 0. 0 + 8 = 8 \<= 16. Fits.
+- `a` is `int` (StorageUnitSize = 32). Placed at bit 0.
+- `b` is `short` (StorageUnitSize = 16, FieldAlign = 16). Current offset = 16. Position within a 16-bit aligned unit: 16 % 16 = 0. 0 + 8 = 8 \<= 16. Fits. **Offset = 16.**
 
 Here `b`'s 16-bit storage unit (bits 16–31) falls entirely within `a`'s 32-bit storage unit.
 
@@ -153,18 +129,8 @@ This overlapping extends to non-bit-field members too. A non-bit-field can be al
 struct S2c { uint16_t first:8; uint8_t second; };   // sizeof = 2
 ```
 
-- is
-
-  . Placed at bit 0. Uses 8 bits of a 16-bit storage unit (bytes 0–1).
-- is a non-bit-field
-
-  . The bit-field state resets, but DataSize is only 1 byte.
-
-  (alignment 1) goes at
-
-  (bit 8) — inside
-
-  's storage unit.
+- `first` is `uint16_t:8`. Placed at bit 0. Uses 8 bits of a 16-bit storage unit (bytes 0–1).
+- `second` is a non-bit-field `uint8_t`. The bit-field state resets, but DataSize is only 1 byte. `second` (alignment 1) goes at **byte 1** (bit 8) — inside `first`'s storage unit.
 
 Note that this overlapping means a write to `first` via its access unit could touch byte 1 where `second` lives. Phase 2 must ensure the access units don't clobber each other (see [Hard constraints](#itanium-merging-algorithm)).
 
@@ -178,27 +144,9 @@ When a non-bit-field field cannot fit within the remaining bytes, it resets the 
 struct S3 { int a:10; int b:6; char c; int d:6; };   // sizeof = 4
 ```
 
-- at bit 0,
-
-  at bit 10 — both fit in the first
-
-  storage unit.
-
-  occupy 16 bits = 2 bytes, leaving 16 bits unused in the 32-bit storage unit.
-- is not a bit-field. It resets
-
-  to 0.
-
-  (a
-
-  , alignment 1) goes at
-
-  (bit 16). A subsequent bit-field could have used bits 16–31, but the non-bit-field
-
-  claims byte 2.
-- is a new
-
-  bit-field. Current bit offset = 24 (byte 3). Position = 24 % 32 = 24. 24 + 6 = 30 \<= 32. Fits.
+- `a` at bit 0, `b` at bit 10 — both fit in the first `int` storage unit. `a + b` occupy 16 bits = 2 bytes, leaving 16 bits unused in the 32-bit storage unit.
+- `c` is not a bit-field. It resets `UnfilledBitsInLastUnit` to 0. `c` (a `char`, alignment 1) goes at **byte 2** (bit 16). A subsequent bit-field could have used bits 16–31, but the non-bit-field `c` claims byte 2.
+- `d` is a new `int` bit-field. Current bit offset = 24 (byte 3). Position = 24 % 32 = 24. 24 + 6 = 30 \<= 32. Fits. **Offset = 24.**
 
 `sizeof(S3) = 4`.
 
@@ -212,16 +160,8 @@ The overlap works in the other direction too. When a bit-field follows a non-bit
 struct NB { char a; int b:4; };   // sizeof = 4
 ```
 
-- is a
-
-  at byte 0. DataSize = 1 byte.
-- is
-
-  . FieldOffset = 8, FieldAlign = 32, StorageUnitSize = 32. Position:
-
-  .
-
-  . Fits.
+- `a` is a `char` at byte 0. DataSize = 1 byte.
+- `b` is `int:4`. FieldOffset = 8, FieldAlign = 32, StorageUnitSize = 32. Position: `8 & 31 = 8`. `8 + 4 = 12 ≤ 32`. Fits. **Offset = 8.**
 
 `b`'s 4-byte `int` storage unit (bytes 0–3) encompasses `a` at byte 0. No padding is inserted — the core rule only cares whether the field fits within an aligned unit, not whether that unit overlaps earlier non-bit-field storage.
 
@@ -320,7 +260,7 @@ struct MS_ZW5 { long : 0; char foo : 4; int : 0; char bar; };  // sizeof = 8 (fi
 
 LLVM IR has no bit-field concept. To access a bit-field, the Clang-generated IR must:
 
-1. )
+1. Load an integer from memory (the **access unit**)
 2. Mask and shift to extract or insert the bit-field's bits
 3. Store the integer back
 
@@ -335,16 +275,16 @@ Implementation: `CGRecordLowering::accumulateBitFields` (`clang/lib/CodeGen/CGRe
 
 **Hard constraints** — an access unit must never:
 
-1. The C memory model allows non-bit-field members to be accessed from other threads. A load/store of the access unit must not touch bytes belonging to other members.
-2. at a byte boundary. Zero-width bit-fields define memory location boundaries — they are barriers.
-3. In C++, a derived class may place fields in a non-POD base class's tail padding. The access unit must not overwrite those bytes.
+1. **Overlap non-bit-field storage.** The C memory model allows non-bit-field members to be accessed from other threads. A load/store of the access unit must not touch bytes belonging to other members.
+2. **Cross a zero-width bit-field** at a byte boundary. Zero-width bit-fields define memory location boundaries — they are barriers.
+3. **Extend into reusable tail padding.** In C++, a derived class may place fields in a non-POD base class's tail padding. The access unit must not overwrite those bytes.
 
 **Soft goals** — subject to the hard constraints, access units should be:
 
-- (1, 2, 4, 8 bytes). Non-power-of-2 sizes (e.g., 3 bytes) get lowered as multiple smaller loads plus bit manipulation.
-- Avoids multi-register loads.
-- (on strict-alignment targets). Avoids the compiler synthesizing unaligned access sequences.
-- within the above. Fewer, wider accesses let LLVM combine adjacent bit-field writes into one read-modify-write.
+- **Power-of-2 sized** (1, 2, 4, 8 bytes). Non-power-of-2 sizes (e.g., 3 bytes) get lowered as multiple smaller loads plus bit manipulation.
+- **No wider than a register.** Avoids multi-register loads.
+- **Naturally aligned** (on strict-alignment targets). Avoids the compiler synthesizing unaligned access sequences.
+- **As wide as possible** within the above. Fewer, wider accesses let LLVM combine adjacent bit-field writes into one read-modify-write.
 
 **The algorithm: spans then merging.**
 
@@ -354,10 +294,10 @@ Spans break at byte-aligned boundaries and at zero-width bit-field barriers. A f
 
 _Step 2 — Merge._ Starting from each span, try to widen the access unit by incorporating the next span. Accept the merge if the combined unit:
 
-- )
+- Fits in one register (`<= RegSize`)
 - Is power-of-2 and naturally aligned (on strict-alignment targets)
 - Doesn't cross a barrier (zero-width bit-field or non-bit-field storage)
-- type fits before the limit offset
+- The natural `iN` type fits before the limit offset
 
 Track the best candidate and install it when merging can't improve further.
 

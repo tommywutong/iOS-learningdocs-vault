@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:52d2d50f99aaba66'
 translated: false
 ---
@@ -21,7 +21,7 @@ translated: false
 - You can now hide the Dock icon and show the app in the menu bar. This was by far the most-requested feature.
 - You can take a snapshot of the current map and save it as an image file. Great for sharing via Twitter or Facebook. Here’s a sample snapshot:
 
-  ![Blue Planet Sample Screenshot](https://oleb.net/media/blue-planet-snapshot-2011-03-29-19h42m.jpg)
+  [![Blue Planet Sample Screenshot](https://oleb.net/media/blue-planet-snapshot-2011-03-29-19h42m.jpg)](https://oleb.net/media/blue-planet-snapshot-2011-03-29-19h42m.jpg)
 - The Preferences window got a third tab called “Time Lapse” which allows you to interactively play with date and time and see how the map changes over the course of a day or year.
 - Three new localizations: Spanish, French, and Japanese (in addition to English and German).
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2023-01-02
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5f6e0907d814dbc4'
 translated: false
 ---
@@ -37,7 +37,7 @@ MyObject *object = [[MyObject alloc] init];
 
 Line 6 instantiates the class `MyObject` and assigns the new object instance to the variable `object`. The new object instance has its own state and can respond to messages (i.e. method calls) like `-instanceMethod` and `-init`.
 
-Objective-C uses [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch)[[1](#_footnotedef_1)] for each message send (i.e. for each method call). The runtime finds the method implementation by looking up the selector (i.e. method name) in the class object referenced by the instance’s `isa` variable. (The first instance variable in all Objective-C objects is the `isa` pointer, which is automatically inserted by the compiler and initialized by the runtime.)
+Objective-C uses [dynamic dispatch](https://en.wikipedia.org/wiki/Dynamic_dispatch)^[[1](#_footnotedef_1)] for each message send (i.e. for each method call). The runtime finds the method implementation by looking up the selector (i.e. method name) in the class object referenced by the instance’s `isa` variable. (The first instance variable in all Objective-C objects is the `isa` pointer, which is automatically inserted by the compiler and initialized by the runtime.)
 
 The use of the term _class object_ in the previous paragraph was intentional: in Objective-C, classes are also objects! This ingenious design is the basis for the _class methods_ language feature (e.g. calling `[NSObject alloc]` or `[MyObject classMethod]`): it enables class methods to be fully polymorphic (i.e. a subclass can override a class method), and it erases any runtime distinction between class methods and instance methods (both class and instance methods are dispatched via `objc_msgSend`).
 

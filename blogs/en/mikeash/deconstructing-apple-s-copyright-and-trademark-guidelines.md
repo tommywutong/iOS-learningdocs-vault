@@ -27,47 +27,41 @@ by [Mike Ash](https://www.mikeash.com/)
 
 The SDK agreement binds developers to the Copyright and Trademark Guidelines using the following language:
 
-> http://www.apple.com/legal/trademark/guidelinesfor3rdparties.html
-> 
-> , as modified by Apple from time to time.
+> If You make reference to any Apple products or technology or use Apple's trademarks, You agree to comply with the published guidelines at [http://www.apple.com/legal/trademark/guidelinesfor3rdparties.html](http://www.apple.com/legal/trademark/guidelinesfor3rdparties.html), as modified by Apple from time to time.
 
 Since it's virtually impossible not to make reference to any Apple products or technology as an iPhone app developer (try selling an iPhone app without using the word "iPhone"), it's safe to say that everyone falls under this clause. The interesting thing here is that there is no language which restricts these guidelines to the iPhone. In other words, as best I can tell from the SDK agreement's wording, these published guidelines apply to your entire conduct, not just your iPhone application.
 
 But what do those guidelines actually say? They're big and complex and I don't think many people have actually examined them in detail and considered the ramifications. I'd like to look at a few choice sections here.
 
-> Web sites that serve only as noncommercial electronic informational forums concerning an Apple product or technology may use the appropriate Apple word mark, provided such use complies with the guidelines set forth in Section 3 above.
+> **4. Web Sites:** Web sites that serve only as noncommercial electronic informational forums concerning an Apple product or technology may use the appropriate Apple word mark, provided such use complies with the guidelines set forth in Section 3 above.
 
 Section 3 then contains requirements like this:
+
+> b. The use reflects favorably on both Apple and Apple products or technology.
 
 In other words, it is a violation of your iPhone SDK agreement if you also run a web forum called, "Apple sucks".
 
 Strange enough, but there's more!
 
-> You may not imitate the distinctive Apple packaging, web site design, logos, or typefaces.
+> **7. Apple’s Trade Dress:** You may not imitate the distinctive Apple packaging, web site design, logos, or typefaces.
 
 Lucida Grande is pretty distinctive. It seems that no iPhone developer is allowed to use it, though.
 
 Take a look at this section, emphasis added:
 
-> You may not use an
-> 
-> or other variation of the Apple logo
-> 
-> .
+> **3. Variations, Takeoffs or Abbreviations:** You may not use an _image of a real apple_ or other variation of the Apple logo _for any purpose_.
 
 Now, I'm not a lawyer, but I do read and understand English pretty well. I can't find any language that restricts the scope of this restriction. As best I can tell, it is a violation of your iPhone SDK agreement to have a picture of an apple on your desk, let alone on your web site, even if it's just there so you can caption it with, "This is an apple."
 
 This section goes even further, emphasis added again:
 
-> , takeoff, or abbreviation of an Apple trademark
-> 
-> .
+> Third parties cannot use a variation, phonetic equivalent, _foreign language equivalent_, takeoff, or abbreviation of an Apple trademark _for any purpose_.
 
 Again, I can't find anything that restricts the scope of this. Thus, I must conclude that it is a violation of the iPhone SDK agreement for a developer to ever utter the word "appel", "pomme", "manzano", "苹果", "リンゴ", or "شجرة التفاح‏".
 
 And finally, the real kicker:
 
-> You may not use or imitate an Apple slogan or tagline.
+> **8. Slogans and Taglines:** You may not use or imitate an Apple slogan or tagline.
 > 
 > For example: "Think different."
 
@@ -83,7 +77,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/deconstructing-apples-copyright-and-trademark-guidelines.html)
 
 Add your thoughts, post a comment:
 

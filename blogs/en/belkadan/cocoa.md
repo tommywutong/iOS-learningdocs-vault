@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:450b17e222fa8ce6'
 translated: false
 ---
@@ -58,22 +58,14 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Objective-C](
 
 ## Older Posts
 
-1. 2009-03-19
-
-  Categories and +load
-2. 2008-03-08
-
-  Alerts Without Apps (or nibs)
-3. 2008-01-14
-
-  NSNumber, CFNumber, and CFBoolean
-4. 2007-10-27
-
-  Performance Optimization: Why We Can't Use valueForKeyPath:
+1. 2009-03-19[Categories and +load](https://belkadan.com/blog/2009/03/Categories-and-load/?tag=cocoa)
+2. 2008-03-08[Alerts Without Apps (or nibs)](https://belkadan.com/blog/2008/03/Alerts-Without-Apps/?tag=cocoa)
+3. 2008-01-14[NSNumber, CFNumber, and CFBoolean](https://belkadan.com/blog/2008/01/NSNumber-CFNumber-and-CFBoolean/?tag=cocoa)
+4. 2007-10-27[Performance Optimization: Why We Can't Use valueForKeyPath:](https://belkadan.com/blog/2007/10/Performance-Optimization-Why-We-Cannot-Use-valueForKeyPath/?tag=cocoa)
 
 ### Possibly Related Tags
 
-- Compilers
-- LLVM
-- Objective-C
-- Source code
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [LLVM](https://belkadan.com/blog/tags/llvm)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Source code](https://belkadan.com/blog/tags/source-code)

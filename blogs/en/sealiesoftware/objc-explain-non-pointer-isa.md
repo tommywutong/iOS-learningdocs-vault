@@ -7,7 +7,7 @@ original_language: en
 published: 2013-09-24
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c74d10bd60d32670'
 translated: false
 ---
@@ -91,4 +91,4 @@ For entertainment purposes only. These values will change in future OS versions.
 | 19 | bits | `extra_rc` | Object's retain count above 1. (For example, if `extra_rc` is 5 then the object's real retain count is 6.) |
 | (MSB) |  |  |  |
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

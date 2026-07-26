@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dc847aab64705532'
 translated: false
 ---
@@ -26,9 +26,7 @@ What I hope to demonstrate is that even though the Cocoa API makes it look like 
 
 There are lots of alternative approaches around that demonstrate similar ideas. My implementation is a simple implementation compared to full frameworks (for a more thorough implementation along similar lines, you may want to look at [RestKit](http://restkit.org/)). I hope you'll still be able to see the contrast compared to ad hoc solutions though, especially if you've ever jammed HTTP communication into your projects without thinking about keeping the interface clean and simple.
 
-> HTTPXMLJSONFetchers.zip
-> 
-> (16kB)
+> You can download the four classes discussed in this project: [HTTPXMLJSONFetchers.zip](https://www.cocoawithlove.com/assets/objc-era/HTTPXMLJSONFetchers.zip) (16kB)
 
 ## HTTP connections in Cocoa
 
@@ -116,23 +114,7 @@ fetcher = [[HTTPFetcher alloc]
 
 Ordinarily, your program will want to customize the code that presents the errors and make the presentation consistent to your application. You can do this with the `HTTPFetcher` class by either subclassing or editing the class itself or you can disable the alerts and authentication functionality and perform the work outside the class. However, if you don't have time to do this customization, there is default behavior in the class that will suffice.
 
-> : the
-> 
-> does not retain itself while running and does not retain the
-> 
-> . This is because the expected behavior is that the receiver retains the
-> 
-> and we don't want a
-> 
-> retain cycle
-> 
-> . If you create the
-> 
-> and don't have a retain count on it, it will immediately auto-
-> 
-> itself and
-> 
-> .
+> **HTTPFetcher memory management**: the `HTTPFetcher` does not retain itself while running and does not retain the `receiver`. This is because the expected behavior is that the receiver retains the `HTTPFetcher` and we don't want a [retain cycle](https://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html). If you create the `HTTPFetcher` and don't have a retain count on it, it will immediately auto-`cancel` itself and `dealloc`.
 
 ## XMLFetcher
 
@@ -179,7 +161,7 @@ However, I've addressed a number of the shortcomings of my previous libXML-based
 
 XPath query note: XPath queries can be a little difficult to get used to — if you're not accustomed to XPath, it can be hard to extract the exact nodes you want. Like regular expressions though, they're a highly specialized language for extracting data and once you understand the different functions available, they are the quickest way of getting specific nodes out of XML.
 
-> : the XPathResultNode.m file contains a comment at the time which explains the Xcode compiler settings required to make it work. Basically, you need to include libxml in the include path and link your project with libxml2.dylib.
+> **Compiler note**: the XPathResultNode.m file contains a comment at the time which explains the Xcode compiler settings required to make it work. Basically, you need to include libxml in the include path and link your project with libxml2.dylib.
 
 ## JSONFetcher
 
@@ -201,9 +183,7 @@ With a JSON response, there's not the same expectation of needing to find a subn
 
 ## Conclusion
 
-> HTTPXMLJSONFetchers.zip
-> 
-> (16kB)
+> You can download the four classes discussed in this project: [HTTPXMLJSONFetchers.zip](https://www.cocoawithlove.com/assets/objc-era/HTTPXMLJSONFetchers.zip) (16kB)
 
 I've presented my classes for handling these tasks. I don't expect that everyone has the same data and network requirements as I do, so there's every chance that you would need very different classes to suit your own exact needs.
 

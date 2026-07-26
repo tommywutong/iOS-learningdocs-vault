@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d102827525011ec1'
 translated: false
 ---
@@ -47,7 +47,7 @@ I am assuming here that you have configured a diff tool in your Git configuratio
 
 When you run the `git difftool` command, Kaleidoscope launches and will take a while to compile all the changes. In all, there are 500 modified classes between iOS 6.0 and 6.1:
 
-![Screenshot of Kaleidoscope 2 showing API diffs between iOS 6.0 and 6.1](https://oleb.net/media/kaleidoscope2-screenshot-api-diffs-ios-6.0-6.1.png)
+[![Screenshot of Kaleidoscope 2 showing API diffs between iOS 6.0 and 6.1](https://oleb.net/media/kaleidoscope2-screenshot-api-diffs-ios-6.0-6.1.png)](https://oleb.net/media/kaleidoscope2-screenshot-api-diffs-ios-6.0-6.1.png)
 
 <sub>Kaleidoscope 2 showing API diffs between iOS 6.0 and 6.1.</sub>
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1eaad38549d5ecb0'
 translated: false
 ---
@@ -52,22 +52,18 @@ Posted in [Personal](https://belkadan.com/blog/personal). Tags: [Meta](https://b
 
 ## Older Posts
 
-1. 2011-07-14
-
-  Priorities
-2. 2009-05-22
-
-  “Several New Features”
+1. 2011-07-14[Priorities](https://belkadan.com/blog/2011/07/Priorities/?tag=apple)
+2. 2009-05-22[“Several New Features”](https://belkadan.com/blog/2009/05/Several-New-Features/?tag=apple)
 
 ### Possibly Related Tags
 
-- Book
-- Keystone
-- LLVM
-- Mac OS X
-- Meta
-- Swift
-- Unix
-- User experience
-- Webmailer
-- Windows
+- [Book](https://belkadan.com/blog/tags/book)
+- [Keystone](https://belkadan.com/blog/tags/keystone)
+- [LLVM](https://belkadan.com/blog/tags/llvm)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Meta](https://belkadan.com/blog/tags/meta)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Unix](https://belkadan.com/blog/tags/unix)
+- [User experience](https://belkadan.com/blog/tags/user-experience)
+- [Webmailer](https://belkadan.com/blog/tags/webmailer)
+- [Windows](https://belkadan.com/blog/tags/windows)

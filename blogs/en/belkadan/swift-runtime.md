@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b48b8799d7166231'
 translated: false
 ---
@@ -46,19 +46,11 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https:
 
 ## Older Posts
 
-1. 2020-09-21
-
-  The Swift Runtime: Uniquing Caches
-2. 2020-09-14
-
-  The Swift Runtime: Type Metadata
-3. 2020-09-07
-
-  The Swift Runtime: Type Layout
-4. 2020-08-31
-
-  The Swift Runtime: Heap Objects
+1. 2020-09-21[The Swift Runtime: Uniquing Caches](https://belkadan.com/blog/2020/09/Swift-Runtime-Uniquing-Caches/?tag=swift-runtime)
+2. 2020-09-14[The Swift Runtime: Type Metadata](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Metadata/?tag=swift-runtime)
+3. 2020-09-07[The Swift Runtime: Type Layout](https://belkadan.com/blog/2020/09/Swift-Runtime-Type-Layout/?tag=swift-runtime)
+4. 2020-08-31[The Swift Runtime: Heap Objects](https://belkadan.com/blog/2020/08/Swift-Runtime-Heap-Objects/?tag=swift-runtime)
 
 ### Possibly Related Tags
 
-- Swift
+- [Swift](https://belkadan.com/blog/tags/swift)

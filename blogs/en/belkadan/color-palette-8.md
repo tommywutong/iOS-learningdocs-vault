@@ -7,7 +7,7 @@ original_language: en
 published: 2018-01-29
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9dcb2dbcf7769033'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [Color Palette #8](#)
 
-A few days ago I was poking around the resources for a good old Mac game, [Maelstrom](https://www.libsdl.org/projects/Maelstrom/). The port to Mac OS X (now just “macOS”) mostly left the resources of the old game in their original format, the Macintosh “[resource fork](https://en.wikipedia.org/wiki/Resource_fork)”; the only difference is that it stores the resources as normal data instead of in the special part of the filesystem where they used to live.more
+A few days ago I was poking around the resources for a good old Mac game, [Maelstrom](https://www.libsdl.org/projects/Maelstrom/). The port to Mac OS X (now just “macOS”) mostly left the resources of the old game in their original format, the Macintosh “[resource fork](https://en.wikipedia.org/wiki/Resource_fork)”; the only difference is that it stores the resources as normal data instead of in the special part of the filesystem where they used to live.
 
 I didn’t have any particular goals in mind, but I happened to open one of the old sprites in a hex editor, and
 
@@ -34,7 +34,7 @@ I didn’t have any particular goals in mind, but I happened to open one of the 
 
 Twitter user Félix Fischer‏ [suggested adding “syntax” coloring](https://twitter.com/FelixFischer91/status/956515456302624769) to make the picture more clear. But if I was going to do that, I might as well use the original colors…
 
-These days, the way computers represent colors, at least at a high level, is a set of three decimal numbers representing the amount of “red”, “green”, and “blue”.[1](#fn:hsv) The “correct” way to think about these numbers is as coordinates in some kind of three-dimensional space, but the quick-and-dirty way is to imagine three different colored lights set to different brightnesses, with 0.0 as “completely off” and 1.0 as “completely on”. If you remember your elementary school science classes, mixing red, green, and blue light creates white, or an approximation of white anyway, because of how human eyes work.
+These days, the way computers represent colors, at least at a high level, is a set of three decimal numbers representing the amount of “red”, “green”, and “blue”.^[1](#fn:hsv) The “correct” way to think about these numbers is as coordinates in some kind of three-dimensional space, but the quick-and-dirty way is to imagine three different colored lights set to different brightnesses, with 0.0 as “completely off” and 1.0 as “completely on”. If you remember your elementary school science classes, mixing red, green, and blue light creates white, or an approximation of white anyway, because of how human eyes work.
 
 But once upon a time, computers had really limited storage space, and representing images with full color values, or even an integer approximation, was too expensive. So they would use _color palettes_ instead. Instead of saying “this pixel is `(red: 0.0, green: 1.0, blue: 0.0)`”, you’d say “this pixel is color #3”. The mappings of colors could be baked into the operating system or even the hardware, or they could be [swappable at runtime](http://www.effectgames.com/demos/canvascycle/?sound=0).
 

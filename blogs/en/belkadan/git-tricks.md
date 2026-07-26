@@ -7,7 +7,7 @@ original_language: en
 published: 2012-10-02
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2c85189edef44caa'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 [Git](http://git-scm.com/) is one of the most useful tools in my programming toolbox besides the compiler itself. Sure, there are holy wars over which version control system is best ([Mercurial](http://mercurial.selenic.com), anyone?), but if you’re coming from CVS or Subversion, Git is a huge improvement. Or will be, once you get over the learning curve. I highly recommend _[Pro Git](http://git-scm.com/book)_ as a way to become fluent in Git.
 
-If you already use Git, however, you might be wondering how to make it _more_ useful…moreperhaps by adding these commands to the `[alias]` section of your `.gitconfig` file! Okay, there are tons of these pages on the internet already, but here are the aliases I use, most of them on a close-to-daily basis:
+If you already use Git, however, you might be wondering how to make it _more_ useful…perhaps by adding these commands to the `[alias]` section of your `.gitconfig` file! Okay, there are tons of these pages on the internet already, but here are the aliases I use, most of them on a close-to-daily basis:
 
 ---
 
@@ -113,9 +113,9 @@ The trouble is, what if I’ve been working on an up-to-date branch, but I want 
 
 `git rebranch` skips the `checkout` step. The line labeled “this is the important line” does three things:
 
-1. .
+1. Move the branch you selected to the current `HEAD`.
 2. Switch to that branch.
-3. ’s history.
+3. Cherry-pick everything that’s not in `HEAD`’s history.
 
 It’s more dangerous because if anything fails, it’s harder to get back to the way things were before; `git cherry-pick --abort` will leave `feature-branch` pointing at `origin/master` without any of its own commits. If you find yourself in this situation, **the old `HEAD` of `feature-branch` is still accessible**—for now—**as `feature-branch@{1}`**.
 
@@ -143,7 +143,7 @@ svn-show = ! "zsh -c 'git show ${$(git svn find-rev r${1#r}):-r${1#r}} --' - "
 
 To translate from SVN revision numbers, use `git svn find-rev <revision>`. However, it’s very common for me to just want to _look_ at a particular SVN revision. This command wraps `find-rev` so that it immediately calls `show` with the result. If `find-rev` comes back empty, the alias uses a bit of shell trickery to substitute the SVN revision right back in, so that `show` will come back with a nice error message saying the revision doesn’t exist. (If you call `show` with no revision argument, it shows `HEAD`, and it’s not immediately obvious that `find-rev` failed.)
 
-You might notice that this command and `rebranch` both wrap the command in a call to `zsh`. Doesn’t Git already use a shell to run aliases that start with “!”? Well, Git’s not so happy with some of the shell tricks I’m pulling here. (In particular, ‘#’ usually starts a comment.) Rather than try to figure out what sort of escaping I need, I just stuck the whole thing in another shell.[1](#fn:arguments)
+You might notice that this command and `rebranch` both wrap the command in a call to `zsh`. Doesn’t Git already use a shell to run aliases that start with “!”? Well, Git’s not so happy with some of the shell tricks I’m pulling here. (In particular, ‘#’ usually starts a comment.) Rather than try to figure out what sort of escaping I need, I just stuck the whole thing in another shell.^[1](#fn:arguments)
 
 ---
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d624cb1238af7fe9'
 translated: false
 ---
@@ -28,11 +28,7 @@ The reality is that in most object-oriented languages (including Objective-C bef
 
 Objective-C in conjunction with the Objective-C modern runtime is one of the few compiled language environments to address this problem.
 
-> : by dynamic, I mean that the absolute ivar layout is not known at compile-time. Really, I'm talking about ivars that will appear dynamically from the perspective of subclasses (to the base class, they will appear like a normal ivar). While additional ivars can be added to a class at runtime, they can only be added before the class pair is registered (i.e. before there are any instances of the class). See the
-> 
-> Apple documentation for class_addIvar
-> 
-> for more.
+> **_Dynamic_ does not mean "at any time"**: by dynamic, I mean that the absolute ivar layout is not known at compile-time. Really, I'm talking about ivars that will appear dynamically from the perspective of subclasses (to the base class, they will appear like a normal ivar). While additional ivars can be added to a class at runtime, they can only be added before the class pair is registered (i.e. before there are any instances of the class). See the [Apple documentation for class_addIvar](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/class_addIvar) for more.
 
 ## The fragile base class problem of ivar layouts
 
@@ -75,11 +71,7 @@ Traditionally, this would break every existing subclass of `LibraryBaseObject` b
 
 Yes, code can simply be recompiled with the new headers and all offsets would be corrected to the new values automatically, but until such a recompile, all existing programs that subclass the `LibraryBaseObject` will break.
 
-> has a good post titled
-> 
-> Non-fragile ivars
-> 
-> with more diagrams showing the ivar layout problem.
+> Greg Parker's _Hamster Emporium: [objc explain]_ has a good post titled [Non-fragile ivars](http://www.sealiesoftware.com/blog/archive/2009/01/27/objc_explain_Non-fragile_ivars.html) with more diagrams showing the ivar layout problem.
 
 ### Previous workarounds for the fragile base class problem
 
@@ -97,11 +89,9 @@ and then actually store all your data in the private class, which you can change
 
 However, this has three problems:
 
-- pointer from the beginning
+- You must have had the foresight to include this `private` pointer from the beginning
 - It involves two dereferences (see the performance note below where I explain that the dereference is the slowest part of ivar access)
-- ivar to its actual class before use. You can forward declare a
-
-  and use that instead to eliminate this difficulty.
+- In this untyped scenario, it is unwieldy since all your code must cast this `private` ivar to its actual class before use. You can forward declare a `@class` and use that instead to eliminate this difficulty.
 
 ## A fix requires that one of the compile-time values becomes dynamic
 
@@ -124,7 +114,7 @@ The "modern" Objective-C runtime therefore requires that accessing an ivar follo
 
 Once this is done, the base class' ivar area can grow and the subclass' offsets will shift to accommodate this.
 
-> : Since this procedure is followed for all ivars, that means that all ivars in the modern Objective-C runtime are dynamic in that their absolute offsets are never known at compile-time.
+> **All ivars are dynamic in the modern runtime**: Since this procedure is followed for all ivars, that means that all ivars in the modern Objective-C runtime are dynamic in that their absolute offsets are never known at compile-time.
 
 ### Performance note
 
@@ -246,7 +236,7 @@ Dynamic ivars are a feature of the "modern" runtime; if you are targetting 32-bi
 For other Cocoa platforms, there are numerous reasons why you may want to `@synthesize` ivars:
 
 - They are convenient (don't require an ivar declaration, just a property declaration).
-- declarations since they don't publicly declare anything.
+- They allow for greater information hiding from subclasses than `@private` declarations since they don't publicly declare anything.
 - You can add them to base classes without needing to recompile subclasses.
 
 Dynamic ivars do require the cost of an extra pointer offset at runtime but you are paying this cost whether you use them or not (it is a required part of the iPhone OS and 64-bit Mac OS X Objective-C runtimes). In any case, you're unlikely to ever notice this cost.

@@ -89,13 +89,11 @@ Then `GetImplementation` can do all of the work in a more understandable fashion
 
 The assembly code needs to:
 
-1. won't overwrite them.
-2. .
+1. Save all potential parameters somewhere safe, so that `GetImplementation` won't overwrite them.
+2. Call `GetImplementation`.
 3. Save the return value somewhere.
 4. Restore all of the parameter values.
-5. returned from
-
-  .
+5. Jump to the `IMP` returned from `GetImplementation`.
 
 So let's get started!
 
@@ -389,7 +387,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-11-16-lets-build-objc_msgsend.html)
 
 Add your thoughts, post a comment:
 

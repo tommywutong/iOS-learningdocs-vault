@@ -7,7 +7,7 @@ original_language: en
 published: 2009-04-14
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ea97b01aefaeb850'
 translated: false
 ---
@@ -57,4 +57,4 @@ Confused? The diagram may help. Remember, when a message is sent to any object, 
 
 In proper computer science language theory, a class and metaclass hierarchy can be more free-form, with deeper metaclass chains and multiple classes instantiated from any single metaclass. Objective-C uses metaclasses for practical goals like class methods, but otherwise tends to hide metaclasses. For example, `[NSObject class]` is identical to `[NSObject self]`, even though in formal terms it ought to return the metaclass that `NSObject->isa` points to. The Objective-C language is a set of practical compromises; here it limits the class schema before it gets too, well, _meta_.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d453db772ff35856'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # App Architecture book
 
-![Book cover: App Architecture: iOS Application Design Patterns in Swift, by Chris Eidhof, Matt Gallagher, and Florian Kugler](https://oleb.net/media/app-architecture-book-cover-900px.jpg)
+[![Book cover: App Architecture: iOS Application Design Patterns in Swift, by Chris Eidhof, Matt Gallagher, and Florian Kugler](https://oleb.net/media/app-architecture-book-cover-900px.jpg)](https://oleb.net/media/app-architecture-book-cover-900px.jpg)
 
 The final version of [_App Architecture: iOS Application Design Patterns in Swift_](https://www.objc.io/books/app-architecture/), the new book by Chris Eidhof, [Matt Gallagher](https://www.cocoawithlove.com), and Florian Kugler is now available. As with previous [objc.io](https://www.objc.io) books, I had a small part in its creation as the technical reviewer, a job that [I enjoy immensely](https://twitter.com/olebegemann/status/993152885390274560).
 

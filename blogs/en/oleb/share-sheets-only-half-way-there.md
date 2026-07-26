@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c328d2bd861cebdc'
 translated: false
 ---
@@ -38,9 +38,9 @@ On iOS, sharing content between apps is hard. Yes, there is copy and paste but r
 
 Moreover, iOS could soon be at a major disadvantage compared to its competitors when it comes to sharing content. Both Android (with its existing system of [Activities and Intents](https://developer.android.com/training/sharing/send.html)) and soon Windows (Phone) (with [Contracts](http://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx) coming in Windows 8) offer a system-wide solution for apps to interact with each other. Meanwhile, iOS only offers built-in sharing via e-mail, SMS/iMessage and Twitter.
 
-Imagine if Apple not only ported the existing share sheets API to iOS 6 but also added third-party extensibility along the way. Any app, be it from Apple or a third-party developer, could announce via its `Info.plist` the types of content (text, URLs, photos, videos, etc.) it understands. And every app that had something to share would, when the user taps its share button, ask the OS to display a list of apps that can deal with the current content. The system’s sharing service would automatically launch the app the user selected and ask it to display its special sharing view controller[1](#fn:1).
+Imagine if Apple not only ported the existing share sheets API to iOS 6 but also added third-party extensibility along the way. Any app, be it from Apple or a third-party developer, could announce via its `Info.plist` the types of content (text, URLs, photos, videos, etc.) it understands. And every app that had something to share would, when the user taps its share button, ask the OS to display a list of apps that can deal with the current content. The system’s sharing service would automatically launch the app the user selected and ask it to display its special sharing view controller^[1](#fn:1).
 
-Any app that implemented share sheets would automatically support any other app that can deal with the same content type. You could send URLs from Safari directly to the Instapaper app, without having to install a bookmarklet. A photo editing app would support uploading to any photo service without having to implement dozens of APIs[2](#fn:2). You could post your high score from any game to your social network of choice. The possibilities are endless.
+Any app that implemented share sheets would automatically support any other app that can deal with the same content type. You could send URLs from Safari directly to the Instapaper app, without having to install a bookmarklet. A photo editing app would support uploading to any photo service without having to implement dozens of APIs^[2](#fn:2). You could post your high score from any game to your social network of choice. The possibilities are endless.
 
 I can only hope Apple will still do this for iOS 6. Seeing only part of it in Mountain Lion makes me pessimistic.
 

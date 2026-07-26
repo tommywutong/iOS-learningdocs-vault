@@ -7,7 +7,7 @@ original_language: en
 published: 2016-05-29
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:94aeb713cb7d4b94'
 translated: false
 ---
@@ -30,9 +30,7 @@ A few weeks ago longtime Mac developer [Daniel Jalkut](http://bitsplitting.org) 
 
 > Now to get back to making my own software more Mac-like.
 > 
-> — Daniel Jalkut (@danielpunkass)
-> 
-> May 3, 2016
+> — Daniel Jalkut (@danielpunkass) [May 3, 2016](https://twitter.com/danielpunkass/status/727535726238306304)
 
 This reminded me of a particular time when I spent days working on the experience for a feature that no one would really care about, and might not even see: the “update available” notification for one of my pre-employment programs, Webmailer. So I decided to ~~show off~~ post about it.
 
@@ -42,11 +40,13 @@ Webmailer’s job was to forward `mailto` URLs to your particular webmail system
 
 This worked pretty well! You downloaded Webmailer, double-clicked the prefpane, and were taken to the settings; once everything was set up, you were good.
 
-At the time, the standard (and best) way to add update support to a Mac program was the [Sparkle](https://sparkle-project.org/) framework, originally by [Andy Matuschak](https://andymatuschak.org).[1](#fn:sparkle) Sparkle put a lot of value on the user experience; for example, it wouldn’t ask you whether you wanted automatic updates until the _second_ time you launched a program.
+At the time, the standard (and best) way to add update support to a Mac program was the [Sparkle](https://sparkle-project.org/) framework, originally by [Andy Matuschak](https://andymatuschak.org).^[1](#fn:sparkle) Sparkle put a lot of value on the user experience; for example, it wouldn’t ask you whether you wanted automatic updates until the _second_ time you launched a program.
 
 The problem with Sparkle was that all of its interaction with the user was through dialog panels. In a normal application that’s fine: you might have many windows open, and the Sparkle panel would be on top of them. But OS X’s System Preferences is an all-in-one-window app, so much so that closing the window causes the app to quit. Having another window pop up just felt wrong.
 
 So I ended up doing this:
+
+[![Webmailer's update bar slides into view](https://belkadan.com/blog/2016/05/Webmailer-Update-Bar/webmailer-updates.png)](https://belkadan.com/blog/2016/05/Webmailer-Update-Bar/webmailer-updates.mp4)
 
 I spent a lot of time working out the details there: tweaking the background gradient (which goes from “dark grey” to “slightly lighter dark grey”), adjusting the download arrow icon, changing the text and button baseline to be pixel-exact where I wanted them, trying different animation lengths, seeing if it looked better to _reveal_ the bar’s contents or having the whole thing slide in…not to mention figuring out what text and buttons I wanted to have, based on the original Sparkle dialog.
 

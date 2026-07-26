@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8291a2f246826d75'
 translated: false
 ---
@@ -56,11 +56,9 @@ To minimize your launch time, try to identify the minimum possible stuff your ap
 - `application:openURL:sourceApplication:annotation:`
 - `application:didReceiveRemoteNotification:`
 - `application:didReceiveLocalNotification:`
-- and
-
-  methods
-- and
-- , also in your your root view controller
+- Your root view controller’s `init` and `awakeFromNib` methods
+- `viewDidLoad` and
+- `viewWill/DidAppear:`, also in your your root view controller
 
 Your main focus should probably be on `application:didFinishLaunchingWithOptions:` and `viewDidLoad`.
 
@@ -68,7 +66,7 @@ Common problems you should look out for are synchronous network calls and the sy
 
 ## Instruments: Time Profiler
 
-![The Time Profiler instrument in Instruments](https://oleb.net/media/instruments-time-profiler.png)
+[![The Time Profiler instrument in Instruments](https://oleb.net/media/instruments-time-profiler.png)](https://oleb.net/media/instruments-time-profiler.png)
 
 <sub>The Time Profiler instrument in Instruments.</sub>
 
@@ -80,12 +78,12 @@ When you have collected enough data, stop the recording. Your goal is now to fin
 - Before looking at the Call Tree, always define an Inspection Range, using the buttons in the toolbar. Use the flags you have placed during recording to identify the section of your code you want to analyze.
 - Uncheck the _Invert Call Tree_ and _Hide System Libraries_ options. The former makes it easier to understand the call tree (though it might take you a little longer to click through to the offending method) and the latter shows you time-consuming method calls in the system frameworks. If you decide to hide those, you might overlook an ill-placed synchronous network call that increases your launch time by several seconds.
 
-  ![Time Profiler options](https://oleb.net/media/instruments-time-profiler-options.png)
+  [![Time Profiler options](https://oleb.net/media/instruments-time-profiler-options.png)](https://oleb.net/media/instruments-time-profiler-options.png)
 
   <sub>Time Profiler options.</sub>
 - Now it is time to explore the call tree. Starting with `main()`, click yourself through the tree until you reach your own code (often more than a dozen levels deep in the tree) and try to find the methods that take up a large percentage of the total time. Open the Extended Detail View to see more info about the selected line or double-click one of the methods in your code to jump directly from Instruments into the code.
 
-  ![Time Profiler Call Tree](https://oleb.net/media/instruments-timeprofiler-call-tree.png)
+  [![Time Profiler Call Tree](https://oleb.net/media/instruments-timeprofiler-call-tree.png)](https://oleb.net/media/instruments-timeprofiler-call-tree.png)
 
   <sub>Time Profiler Call Tree.</sub>
 - Pay special attention to the _Self_ column. It tells you how much time was actually spent right inside that method as opposed to methods further down the stack that the selected method has called. A high percentage in _Self_ often indicates a problem in your code such as a long-running loop.
@@ -103,13 +101,13 @@ To notify you of memory pressure, the OS can send a memory warning to the active
 
 Michael has constructed his own combination of instruments to measure an app’s memory usage by combining the Allocations, Leaks, VM Tracker and Activty Monitor instruments. It’s easy to do this yourself by creating a blank instrument and dragging the four mentioned instruments from the Library inspector pane into the main window. You can then save this instrument as a template for reuse.
 
-![Michael Jurewitz's collection of instruments for memory usage measurement](https://oleb.net/media/instruments-memory-usage.png)
+[![Michael Jurewitz's collection of instruments for memory usage measurement](https://oleb.net/media/instruments-memory-usage.png)](https://oleb.net/media/instruments-memory-usage.png)
 
 <sub>Michael Jurewitz's collection of instruments for memory usage measurement.</sub>
 
 The Activity Monitor can be used to compare your app’s resource usage to other apps that are currently in the background. For example, sort the app list by _Real Memory_ and select the _Track inspection head_ option. When you now drag the inspection head across the timeline you just recorded, you will see your own app rise (or fall) among the other backgrounded apps depending on how much memory you use.
 
-![Activity Monitor options](https://oleb.net/media/instruments-activity-monitor-options.png)
+[![Activity Monitor options](https://oleb.net/media/instruments-activity-monitor-options.png)](https://oleb.net/media/instruments-activity-monitor-options.png)
 
 <sub>Activity Monitor options.</sub>
 
@@ -120,7 +118,7 @@ The Allocations instruments can be misleading because it does not show you all o
 
   If you see none or only part of the memory being reclaimed, it is a sign of a leak or a block of _abandoned memory_, possibly caused by a retain cycle. Use Instrument’s Heapshot Analysis to track these problems down. By clicking _Mark Heap_ between repeating the same action, Instruments can show you exactly which objects did not get freed. Looking at the list can usually get you on the right track.
 
-  ![Heapshot analysis options for the Allocations instrument](https://oleb.net/media/instruments-allocations-options.png)
+  [![Heapshot analysis options for the Allocations instrument](https://oleb.net/media/instruments-allocations-options.png)](https://oleb.net/media/instruments-allocations-options.png)
 
   <sub>Heapshot analysis options for the Allocations instrument.</sub>
 - Large memory spikes can cause the system to evict read-only pages from memory because the OS knows it can read them back later from disk. Because your app’s code is also part of these reloadable read-only pages, a large memory spike, even for just a few milliseconds, can cause your app to stutter when the system evicts and later has to reload your app’s code. Try to avoid them if you can.
@@ -135,7 +133,7 @@ The VM Tracker instruments is useful because it can show you the real amount of 
 
 The Core Animation instrument can help you identify performance issues in your drawing code. By color-coding the layers in your app’s UI, you get a quick at-a-glance overview how you are doing.
 
-![Core Animation instrument options](https://oleb.net/media/instruments-coreanimation-options.png)
+[![Core Animation instrument options](https://oleb.net/media/instruments-coreanimation-options.png)](https://oleb.net/media/instruments-coreanimation-options.png)
 
 <sub>Core Animation instrument options.</sub>
 

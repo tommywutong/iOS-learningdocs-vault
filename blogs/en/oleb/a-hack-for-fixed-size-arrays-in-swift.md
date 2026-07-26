@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fd6b611ac9331726'
 translated: false
 ---
@@ -37,6 +37,12 @@ Before I continue, a disclaimer. Here’s what Michael Ilseman, who added this t
 > [@olebegeman](https://twitter.com/olebegemann/status/939903265751425025) I knew I’d live to regret adding that!
 > 
 > Exercise caution in using it. If mishandled it can balloon code size and the tuple’s metadata is not cheap.
+> 
+> [@Ilseman](https://twitter.com/Ilseman)
+> 
+> Michael Ilseman
+> 
+> [December 12, 2017](https://twitter.com/Ilseman/status/940640596754096129)
 
 I’m writing about this because I think it’s an interesting workaround for a real problem, and looking at the implementation is instructive even if you don’t end up using it in production. Eventually, Swift will hopefully gain a native fixed-size array type (or a low-level function to allocate arbitrary memory on the stack, which would allow you to build the type described here without resorting to code generation).
 
@@ -109,16 +115,8 @@ GYB will generate a `_FixedArrayN` struct for any size you put in the `sizes` ar
 
 `_FixedArrayN` is an internal type that the standard library uses in its implementation; it’s not part of the official standard library API. If you want to use it in your own project, you’ll have to copy the code from the Swift repository:
 
-1. `FixedArray.swift.gyb`
-
-  and the
-
-  `gyb.py`
-
-  script from the Swift repository. Alternatively, clone the entire repository.
-2. to add your desired sizes to the
-
-  array.
+1. Download [`FixedArray.swift.gyb`](https://github.com/apple/swift/blob/master/stdlib/public/core/FixedArray.swift.gyb) and the [`gyb.py`](https://github.com/apple/swift/blob/master/utils/gyb.py) script from the Swift repository. Alternatively, clone the entire repository.
+2. Edit `FixedArray.swift.gyb` to add your desired sizes to the `sizes` array.
 3. Run this command in Terminal:
 
   ```

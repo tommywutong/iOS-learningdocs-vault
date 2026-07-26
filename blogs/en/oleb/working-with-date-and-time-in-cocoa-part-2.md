@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:78d884cda2608bd3'
 translated: false
 ---
@@ -51,7 +51,7 @@ If you want to have more control over the output format, you can set a specific 
 
 ## Formatting for Machines: Controlled Environment Needed
 
-It is a whole other matter if you need to create a date string according to the specification of a certain file format or API. In such a case, you usually have to follow a very strict spec to make sure the other party can read the string you are generating.[1](#fn:1)
+It is a whole other matter if you need to create a date string according to the specification of a certain file format or API. In such a case, you usually have to follow a very strict spec to make sure the other party can read the string you are generating.^[1](#fn:1)
 
 It should be clear that we must use the `setDateFormat:` method here. But that is not enough. Remember from [part 1](https://oleb.net/blog/2011/11/working-with-date-and-time-in-cocoa-part-1/) that you can represent the same point in time very differently, depending on the calendar and time zone. By default, `NSDateFormatter` uses the user’s current calendar and time zone, which are possibly different from the requirements. Most file formats and web APIs use the western, Gregorian calendar, so we need to make sure that our date formatter uses it, too:
 
@@ -86,9 +86,9 @@ NSString *myDateString = [dateFormatter stringFromDate:myDate];
 // => 2011-11-22T17:33:19Z
 ```
 
-Again, see the [Unicode standard mentioned above](http://unicode.org/reports/tr35/tr35-10.html#Date_Format_Patterns) for a list of possible format specifiers. Pay special attention to the year format specifier `@"yyyy"`. It is different than the capitalized `@YYYY`, which represents the year of the date’s week and not the year of the day. 99% of the time, you probably want to use @”yyyy”. I have seen this bug so many times in production code that it’s not funny anymore so make sure your unit tests catch it.[2](#fn:2)
+Again, see the [Unicode standard mentioned above](http://unicode.org/reports/tr35/tr35-10.html#Date_Format_Patterns) for a list of possible format specifiers. Pay special attention to the year format specifier `@"yyyy"`. It is different than the capitalized `@YYYY`, which represents the year of the date’s week and not the year of the day. 99% of the time, you probably want to use @”yyyy”. I have seen this bug so many times in production code that it’s not funny anymore so make sure your unit tests catch it.^[2](#fn:2)
 
-Also note that I am using the literal character `'Z'` to represent the UTC time zone we set on the date formatter before. If you need to include the time zone in your format string, make sure to experiment with the possible time zone format specifiers (`z`, `Z`, `v`, `V`, each with 1-4 characters) and different time zones to really understand what you’re getting yourself into.[3](#fn:3) As I said, dealing with time zones is no fun, especially when it comes to ambiguous abbreviations or daylight savings time. It’s best to avoid if at all possible.
+Also note that I am using the literal character `'Z'` to represent the UTC time zone we set on the date formatter before. If you need to include the time zone in your format string, make sure to experiment with the possible time zone format specifiers (`z`, `Z`, `v`, `V`, each with 1-4 characters) and different time zones to really understand what you’re getting yourself into.^[3](#fn:3) As I said, dealing with time zones is no fun, especially when it comes to ambiguous abbreviations or daylight savings time. It’s best to avoid if at all possible.
 
 # 2. Turning Strings Into Dates
 
@@ -98,10 +98,10 @@ Let’s move on to the other side of `NSDateFormatter`: parsing a string represe
 
 In this case, you use the class much like in the reverse case that we just discussed:
 
-1. .
-2. locale and the UTC time zone.
+1. Create an `NSDateFormatter`.
+2. Create a controlled environment by setting the formatter’s locale and possibly time zone as specified by the input format. In most cases, this means the `en_US_POSIX` locale and the UTC time zone.
 3. Set the formatter’s date format string to the specified format.
-4. .
+4. Call `dateFromString:`.
 
 For example, here is how to parse a date from an RSS feed entry of the form `Mon, 06 Sep 2009 16:45:00 -0900` as specified in [RFC 822](http://www.faqs.org/rfcs/rfc822.html):
 
@@ -124,7 +124,7 @@ If a date formatter cannot parse the string, `dateFromString:` returns `nil`. Yo
 
 ## Parsing Free-Form Date Strings
 
-What if you don’t know the exact format of the string, e.g. because you want to let the user enter a date and time in a free-form text field[4](#fn:4)? I am afraid that `NSDateFormatter` will probably not be a big help then. The class does have a `setLenient:` method that enables heuristics when parsing a string. However, even in lenient mode you are still required to specify an exact date format. In lenient mode, the formatter correctly parses a date string containing slashes (`@"03/11/2011 11:03:45"`) when the date format specifies blanks (`@"dd MMM yyyy HH:mm:ss"`) but that seems approximately to be the extent of what it can do.
+What if you don’t know the exact format of the string, e.g. because you want to let the user enter a date and time in a free-form text field^[4](#fn:4)? I am afraid that `NSDateFormatter` will probably not be a big help then. The class does have a `setLenient:` method that enables heuristics when parsing a string. However, even in lenient mode you are still required to specify an exact date format. In lenient mode, the formatter correctly parses a date string containing slashes (`@"03/11/2011 11:03:45"`) when the date format specifies blanks (`@"dd MMM yyyy HH:mm:ss"`) but that seems approximately to be the extent of what it can do.
 
 For really lenient parsing with `NSDateFormatter`, you would probably have to try multiple formats and check for success after each attempt. The Unicode standard includes some [suggestions for lenient parsing](http://unicode.org/reports/tr35/tr35-10.html#Lenient_Parsing) if you want to go that route.
 
@@ -148,7 +148,7 @@ for (NSTextCheckingResult *match in matches) {
 }
 ```
 
-In this case, the detection worked great[5](#fn:5), and the detector can also deal with relative strings such as `@"next Monday at 7 pm"` or `@"tomorrow at noon"`. `NSDataDetector` always seems to use the current locale and time zone to interpret dates in strings.
+In this case, the detection worked great^[5](#fn:5), and the detector can also deal with relative strings such as `@"next Monday at 7 pm"` or `@"tomorrow at noon"`. `NSDataDetector` always seems to use the current locale and time zone to interpret dates in strings.
 
 # Miscellaneous Findings
 

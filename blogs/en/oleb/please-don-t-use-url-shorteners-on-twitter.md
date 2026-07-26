@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bf8bff358ad5be25'
 translated: false
 ---
@@ -19,8 +19,14 @@ translated: false
 In this article, I am going to ignore this otherwise excellent piece of advice:
 
 > Following someone on Twitter and complaining about what they tweet about is like phoning someone to tell them you don't want to talk to them
+> 
+> [@rickygervais](https://twitter.com/rickygervais)
+> 
+> Ricky Gervais
+> 
+> [August 18, 2012](https://twitter.com/rickygervais/status/236814912951836672)
 
-Dear readers, I have a request for you: **if you are still using URL shorteners for posting on Twitter, please stop.**[1](#fn:1) Here are my reasons:
+Dear readers, I have a request for you: **if you are still using URL shorteners for posting on Twitter, please stop.**^[1](#fn:1) Here are my reasons:
 
 # URLs have meaning
 
@@ -32,9 +38,9 @@ If your link points to bit.ly, I either need one more click to make the correct 
 
 # Short URLs don’t save characters anymore
 
-[For almost a year now](https://dev.twitter.com/discussions/2806), Twitter has been wrapping every URL in a [t.co](http://t.co) link. All URLs cost the same amount of characters[2](#fn:2), regardless of their original length. The one reason why link shorteners got so popular (indispensable, in fact) on Twitter is no longer valid.
+[For almost a year now](https://dev.twitter.com/discussions/2806), Twitter has been wrapping every URL in a [t.co](http://t.co) link. All URLs cost the same amount of characters^[2](#fn:2), regardless of their original length. The one reason why link shorteners got so popular (indispensable, in fact) on Twitter is no longer valid.
 
-Thankfully, Twitter was smart enough to preserve the original URLs in the metadata that is included with each tweet. Using the information in these so-called [Tweet Entities](https://dev.twitter.com/docs/tweet-entities), Twitter clients (including the Twitter website) can replace the t.co link with the original URL in their user interface.[3](#fn:3) Links shortened with other URL shorteners do not have this advantage.
+Thankfully, Twitter was smart enough to preserve the original URLs in the metadata that is included with each tweet. Using the information in these so-called [Tweet Entities](https://dev.twitter.com/docs/tweet-entities), Twitter clients (including the Twitter website) can replace the t.co link with the original URL in their user interface.^[3](#fn:3) Links shortened with other URL shorteners do not have this advantage.
 
 # Your links may stop working
 

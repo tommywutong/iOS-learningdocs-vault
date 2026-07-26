@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7f64e561a92f892d'
 translated: false
 ---
@@ -34,18 +34,18 @@ I won't be looking at bindings in Interface Builder in this post. I realize that
 
 Traditionally, Model-View-Controller would work like this:
 
-1. — sends notifications when it changes but otherwise keeps to itself
-2. — receives model notifications and actively changes views in response
-3. — passive and simply shows information the controller shoves at it
+1. **Model** — sends notifications when it changes but otherwise keeps to itself
+2. **Controller** — receives model notifications and actively changes views in response
+3. **View** — passive and simply shows information the controller shoves at it
 
 This works well but the controller ends up being huge because it contains all the logic of responding to changes, configuring the view, plus all of the interactivity work that may be required by the views.
 
 A number of larger views, including the iPhone's UITableView and the Mac's NSTableView (without bindings) operate on a delegate model which breaks the controller up slightly:
 
-1. — (as before) sends notifications when it changes but otherwise keeps to itself
-2. — pushes new data to the delegate and notifies the view that it needs an update
-3. — determines areas needing an update and asks the delegate how to display those areas
-4. — tells the view how to update based on data from the controller
+1. **Model** — (as before) sends notifications when it changes but otherwise keeps to itself
+2. **Controller** — pushes new data to the delegate and notifies the view that it needs an update
+3. **View** — determines areas needing an update and asks the delegate how to display those areas
+4. **View delegate** — tells the view how to update based on data from the controller
 
 A view delegate is really just a controller but since it is invoked by the view, it allows the view to control when data is loaded and changes are made (the view can control lazy load order).
 
@@ -57,13 +57,13 @@ The controller heavy nature of the above approaches can be burdensome as you nee
 
 [Cocoa Bindings](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html) are a way of eliminating implementation specific controller code — the entire controller layer can be handled with reusable controllers and observations and configurations specified in data, not code.
 
-> : If you can simplify your design so that all a controller needs to do is copy data from the model to the view, then the controller's role can be replaced by a simple, reusable "binding" object and all that remains is to configure that binding object with data.
+> **Cocoa Bindings purpose in one sentence**: If you can simplify your design so that all a controller needs to do is copy data from the model to the view, then the controller's role can be replaced by a simple, reusable "binding" object and all that remains is to configure that binding object with data.
 
 The bindings structure is then:
 
-1. — (as before) sends notifications when it changes but otherwise keeps to itself
-2. — ensures that data from the KVO controller is pushed to an object with exposed bindings. May pass the data through an NSValueTransformer before pushing to the exposed binding. A binding may also contain an options dictionary which tells the view how to handle data it receives.
-3. — determines areas needing an update and asks the delegate how to display those areas
+1. **Model** — (as before) sends notifications when it changes but otherwise keeps to itself
+2. **Key Value Binding** — ensures that data from the KVO controller is pushed to an object with exposed bindings. May pass the data through an NSValueTransformer before pushing to the exposed binding. A binding may also contain an options dictionary which tells the view how to handle data it receives.
+3. **View** — determines areas needing an update and asks the delegate how to display those areas
 
 While I've included more layers in this description, most of the time, you'll only deal with two: the model and the view.
 
@@ -73,21 +73,7 @@ The "KVO interface/controller" and "Exposed binding" may or may not be automatic
 
 The real work for bindings, is in designing views to be fully configurable through bindings alone.
 
-> : I've already mentioned KVC and KVO. These technologies are fundamental to how bindings work. If you don't have great familiarity with these terms, you can read the Apple programming guide to
-> 
-> Key Value Coding
-> 
-> and
-> 
-> Key Value Observing
-> 
-> . You could also read my earlier post on
-> 
-> 5 key-value coding approaches in Cocoa
-> 
-> but note that bindings require proper
-> 
-> compatible KVC.
+> **Terminology**: I've already mentioned KVC and KVO. These technologies are fundamental to how bindings work. If you don't have great familiarity with these terms, you can read the Apple programming guide to [Key Value Coding](http://developer.apple.com/mac/library/documentation/cocoa/conceptual/KeyValueCoding/KeyValueCoding.html) and [Key Value Observing](http://developer.apple.com/Mac/library/documentation/Cocoa/Conceptual/KeyValueObserving/index.html). You could also read my earlier post on [5 key-value coding approaches in Cocoa](https://www.cocoawithlove.com/2010/01/5-key-value-coding-approaches-in-cocoa.html) but note that bindings require proper `NSKeyValueCoding` compatible KVC.
 
 ## Implicit bindings support
 
@@ -138,13 +124,13 @@ We need to rethink what the table displays as data that we can set.
 
 Ultimately, a `UITableView` contains two tiers of data: the section and the row. For each of the `UITableView` `dataSource` and `delegate` methods, we can consider the returned value as either a property of a section, row (or the array containing them).
 
-- — Row property
-- — Property of the sections array
-- — Property of the rows array within a section
-- — Section property
-- — Row property
-- — Section property
-- — Section array and rows array controller properties
+- `tableView:cellForRowAtIndexPath:` — Row property
+- `numberOfSectionsInTableView:` — Property of the sections array
+- `tableView:numberOfRowsInSection:` — Property of the rows array within a section
+- `tableView:titleForHeaderInSection:` — Section property
+- `tableView:heightForRowAtIndexPath:` — Row property
+- `tableView:viewForHeaderInSection:` — Section property
+- `tableView:didSelectRowAtIndexPath:` — Section array and rows array controller properties
 
 ## ColumnView, ColumnSection and RowView binding interfaces
 
@@ -164,9 +150,9 @@ I've opted instead to use the row's class as the property instead of a fully rea
 
 To break the implementation down into manageable components, the design will use three classes:
 
-- — does all of the layout and manages the array of sections
-- — manages the array of rows in each section and stores header information
-- — mostly a drawing class but does report the height for the row, given its data
+- `ColumnView` — does all of the layout and manages the array of sections
+- `ColumnSection` — manages the array of rows in each section and stores header information
+- `RowView` — mostly a drawing class but does report the height for the row, given its data
 
 #### ColumnView
 
@@ -174,24 +160,14 @@ The only binding for the `ColumnView` is the `ColumnViewSectionArrayBinding` whi
 
 Along with this binding, the `ColumnView` has the following additional properties that can be set in the `ColumnViewSectionArrayBinding` options:
 
-- —A key path (relative to the section object) where the rows array can be found (if not present, it is assumed that the section
-
-  the rows array).
-- — A key path (relative to the section object) where the default class to use for all rows in the section can be found (if not present the default
-
-  class is used). This property is overridden by the
-
-  .
-- — A key path (relative to the row object) where the class for the row can be found (if not present, it is assume the section
-
-  the rows array).
-- — A key path (relative to the row object) where a separate object used for display is found (if not present, the row object is used directly for display).
-- — A key path (relative to the section object) where the object for the header is found (if not present, no header is shown for the section).
-- — A key path (relative to the section object) where the class for the header row is found (if not present, the default
-
-  class is used).
-- — A key path (relative to each row object) by which every section should be sorted.
-- — A key path (relative to the section object) where the key by which that section should be sorted can be found (this will override the allSectionsSortKey).
+- `sectionContentKey` —A key path (relative to the section object) where the rows array can be found (if not present, it is assumed that the section _is_ the rows array).
+- `sectionClassKey` — A key path (relative to the section object) where the default class to use for all rows in the section can be found (if not present the default `RowView` class is used). This property is overridden by the `rowClassKey`.
+- `rowClassKey` — A key path (relative to the row object) where the class for the row can be found (if not present, it is assume the section _is_ the rows array).
+- `rowDisplayKey` — A key path (relative to the row object) where a separate object used for display is found (if not present, the row object is used directly for display).
+- `headerDataKey` — A key path (relative to the section object) where the object for the header is found (if not present, no header is shown for the section).
+- `headerClassKey` — A key path (relative to the section object) where the class for the header row is found (if not present, the default `RowView` class is used).
+- `allSectionsSortKey` — A key path (relative to each row object) by which every section should be sorted.
+- `sectionRowSortKey` — A key path (relative to the section object) where the key by which that section should be sorted can be found (this will override the allSectionsSortKey).
 
 While you can set these properties directly on the `ColumnView`, it is expected that they will be passed in the `options` dictionary and picked up in the implementation of `bind:toObject:withKeyPath:options:` on the `ColumnView`.
 

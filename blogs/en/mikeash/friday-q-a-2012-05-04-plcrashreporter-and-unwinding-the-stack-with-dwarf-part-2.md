@@ -31,8 +31,8 @@ The first thing I did when I took this project on was look for a simple solution
 The first idea I had was to use Apple's own implementation of `libunwind`. It's built into the system, always available, and does exactly what was needed: providing the addresses of functions on the stack, using all information available. Whoops. Apple's library:
 
 - Has no public API for accessing the stack of any thread other than the current one.
-- (not async-signal safe)
-- (not async-signal safe)
+- Calls into `dyld` (not async-signal safe)
+- Calls `dladdr` (not async-signal safe)
 - Allocates memory (not async-signal safe)
 - Has no fallback when compact unwinding, DWARF, and frame pointer walking all fail.
 - Doesn't symbolicate.
@@ -177,11 +177,9 @@ When an image (keep in mind that in this context, "image" means any bit of execu
 Why, you might ask? Because that's how it finds:
 
 - The address of the image's executable code, also known as its TEXT section. Used by all methods.
-- and
-
-  sections. Used by the DWARF parser.
-- section. Used by the compact unwind parser.
-- segment and symbol tables. Used by symbolication.
+- The address of the image's `__eh_frame` and `__debug_frame` sections. Used by the DWARF parser.
+- The address of the image's `__unwind_info` section. Used by the compact unwind parser.
+- The image's `__LINKEDIT` segment and symbol tables. Used by symbolication.
 
 All of this information could be parsed out at async-signal time, but there's no reason not to parse it as soon as the image is loaded into the process, and there is one advantage to doing it when it's safe to call normal APIs: It can (and does) also call `dladdr()` to get the image's name on disk. It's all very nice to know that someone called a function named `foo`, but was it `foo` in the main application, `foo` in some third-party library, or `foo` in CoreFoundation? (No, there isn't really a `foo` there. :)
 
@@ -244,28 +242,10 @@ The next step is to do the two-level table lookup of the `rip` value, as discuss
 
 The compact unwind encoding has five types of actual information encoding:
 
-- and
-
-  interpret it as meaning "no unwind information available".
-- handles this by simply returning "no info" and letting the DWARF parser search next.
-- is dereferenced to find the new
-
-  ,
-
-  is set to the old
-
-  plus two words (frame pointer and return address), and
-
-  is set to the return address on the stack (
-
-  + 8).
-- instruction, which is parsed to get the stack size.
-
-  is set to the old
-
-  , plus the stack size, minus the number of saved registers, plus 8 (the return address).
-
-  is set to the return address on the stack.
+- Compatibility encoding. This encoding appears to be an historical holdover, and is never used on OS X. Both Apple's `libunwind` and `libtinyunwind` interpret it as meaning "no unwind information available".
+- DWARF encoding. This means the unwind information for the function was too complex to be represented in the compact encoding, and the DWARF data should be searched instead. `libtinyunwind` handles this by simply returning "no info" and letting the DWARF parser search next.
+- RBP frame encoding. The unwind information is for a function with a frame pointer. The saved register numbers are read from the encoding and the register values are updated from the thread's stack. The current `rbp` is dereferenced to find the new `rbp`, `rsp` is set to the old `rbp` plus two words (frame pointer and return address), and `rip` is set to the return address on the stack (`rbp` + 8).
+- Stack immediate encoding and stack indirect encoding. These two encodings are for functions with no frame pointer. Registers are handled identically for both encodings (identically to RBP frame encoding, but with a different encoding for the saved register numbers). The stack size is calculated as a number in the immediate encoding. For the indirect encoding, the function is required to start with a `subl %rsp, $some_number_here` instruction, which is parsed to get the stack size. `rsp` is set to the old `rsp`, plus the stack size, minus the number of saved registers, plus 8 (the return address). `rip` is set to the return address on the stack.
 
 And that's it! With `rsp` and `rip` (and when possible, `rbp`) updated, everything necessary to proceed to the next stack frame has been done. Success is returned at this point.
 
@@ -300,7 +280,7 @@ The actual opcodes are mostly straightforward. The virtual machine maintains a C
 - Modify a register's value (set to n, set to CFA +/- n, set to other register, set undefined, set to result of expression)
 - Save and restore the DWARF state (push/pop the virtual stack)
 - Set CFA register (set to n, set to n +/- m, set to current +/- m, set to result of expression)
-- , as they aren't used on Darwin or in modern code (with one exception; the args_size opcode is parsed but not used).
+- Various GNU extensions and user opcodes, all of which are treated as errors by `libtinyunwind`, as they aren't used on Darwin or in modern code (with one exception; the args_size opcode is parsed but not used).
 
 Once the CFA program has been run, it produces a virtual machine state, a snapshot of the DWARF CFA table at the given `rip`. This state must now be applied to the current register state.
 
@@ -347,7 +327,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-05-04-plcrashreporter-and-unwinding-the-stack-with-dwarf-part-2.html)
 
 Add your thoughts, post a comment:
 

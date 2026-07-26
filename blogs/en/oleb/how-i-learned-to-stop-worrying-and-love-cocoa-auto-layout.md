@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7451f8d4c6882866'
 translated: false
 ---
@@ -20,15 +20,9 @@ I made my peace with [Cocoa Auto Layout](https://developer.apple.com/library/ios
 
 Despite being almost three years old (on the Mac) and having vastly better tool support than in its early stages, Auto Layout remains [a complex topic](http://carpeaqua.com/2012/11/02/issues-with-achieving-auto-layout-zen/). Adopting it requires a totally [different mindset](https://oleb.net/blog/2013/03/things-you-need-to-know-about-cocoa-autolayout/) than the old approach of setting view frames directly. And while Auto Layout clearly is the future and I strongly encourage you to use it wherever practical, there are some cases where Auto Layout seems to create more problems than it solves:
 
-- Animating views under Auto Layout
-
-  requires you to animate the constraints directly, which can be a pain.
-- Auto Layout does not play nicely with view transforms
-
-  .
-- Auto Layout can be too slow
-
-  .
+- [Animating views under Auto Layout](http://kingscocoa.com/tutorials/autolayout-animations/) requires you to animate the constraints directly, which can be a pain.
+- [Auto Layout does not play nicely with view transforms](http://stackoverflow.com/a/14105757/116862).
+- [Auto Layout can be too slow](http://floriankugler.com/blog/2013/4/21/auto-layout-performance-on-ios).
 
 # Mix Auto Layout With Manual Layout Code
 
@@ -38,7 +32,7 @@ Consider this example: one of your custom views contains several subviews, you a
 
 ## Just Another Step In layoutSubviews
 
-You can think of Auto Layout as just an additional step that runs automatically in your view’s [`layoutSubviews`](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/doc/uid/TP40006816-CH3-SW27) method. The Auto Layout algorithm performs some magic[1](#fn:1), at the end of which your subviews’ frames are set correctly according to the layout constraints. When that step is done, the Auto Layout engine halts until a relayout is required (for example, because the parent view size changes or a constraint gets added). What you do to your subviews’ frames after Auto Layout has done its job, doesn’t matter.
+You can think of Auto Layout as just an additional step that runs automatically in your view’s [`layoutSubviews`](https://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/doc/uid/TP40006816-CH3-SW27) method. The Auto Layout algorithm performs some magic^[1](#fn:1), at the end of which your subviews’ frames are set correctly according to the layout constraints. When that step is done, the Auto Layout engine halts until a relayout is required (for example, because the parent view size changes or a constraint gets added). What you do to your subviews’ frames after Auto Layout has done its job, doesn’t matter.
 
 ## Override layoutSubviews
 

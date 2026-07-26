@@ -7,7 +7,7 @@ original_language: en
 published: 2008-11-30
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:63f1ee77c542adcd'
 translated: false
 ---
@@ -55,4 +55,4 @@ Some events still don't happen after infinite time. Infinity isn't as long as yo
 [http://en.wikipedia.org/wiki/Random_walk](http://en.wikipedia.org/wiki/Random_walk)  
  [http://mathworld.wolfram.com/PolyasRandomWalkConstants.html](http://mathworld.wolfram.com/PolyasRandomWalkConstants.html)
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

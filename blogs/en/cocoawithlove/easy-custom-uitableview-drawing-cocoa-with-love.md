@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bb7a4a2cdcf869c6'
 translated: false
 ---
@@ -36,9 +36,9 @@ Coming from Mac OS X made it harder for me — `UITableView` needs to be customi
 
 The following are all _**really bad ways**_ to customize a table (even though you can make it work):
 
-- to customize the drawing of cells
-- to customize the drawing of cell content
-- s and returning these instead of using
+- Subclassing `UITableView` to customize the drawing of cells
+- Subclassing `UITableViewCell` to customize the drawing of cell content
+- Creating your own array of `UITableViewCell`s and returning these instead of using `dequeueReusableCellWithIdentifier:`
 
 About the second point: it is okay to customize `UITableViewCell` — but you shouldn't really use it for drawing. The `UITableViewCell` class is more of a controller class — it handles behaviors and layout, not drawing. You can customize `UITableViewCell` to load a specific `contentView` (and do the custom drawing there).
 
@@ -54,23 +54,11 @@ There are only a few points to understand related to table drawing.
 
 **Third**: `UITableViewCell` is composed of 5 different subviews. Customizing the right subview is the secret to good `UITableViewCell` drawing. The subviews are:
 
-1. — the entire background of the row (including what looks like the
-
-  's background in
-
-  style tables.
-2. — replaces the
-
-  when the row is selected.
-3. — a customizable image (not actually a subview) at the left of the cell.
-4. — a customizable view at the right of the cell.
-5. — a customizable view between the
-
-  and the
-
-  (technically, it extends behind the
-
-  ).
+1. `backgroundView` — the entire background of the row (including what looks like the `UITableView`'s background in `UITableViewStyleGrouped` style tables.
+2. `selectedBackgroundView` — replaces the `backgroundView` when the row is selected.
+3. `image` — a customizable image (not actually a subview) at the left of the cell.
+4. `accessoryView` — a customizable view at the right of the cell.
+5. `contentView` — a customizable view between the `image` and the `accessoryView` (technically, it extends behind the `image`).
 
 You can customize any of these (except `image` which must be a `UIImage`) using your own custom drawn views.
 
@@ -220,9 +208,7 @@ The `accessoryView` is just a `UIImageView`. The `cell.image` is set as a proper
 
 ## Conclusion
 
-> EasyCustomTable project as a zip file
-> 
-> (60kb).
+> You can download the [EasyCustomTable project as a zip file](https://www.cocoawithlove.com/assets/objc-era/EasyCustomTable.zip) (60kb).
 
 The code includes a `#define` at the top that allows you to toggle the custom drawing on and off.
 

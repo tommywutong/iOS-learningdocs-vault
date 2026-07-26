@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:470d579c69f63bb8'
 translated: false
 ---
@@ -18,6 +18,6 @@ translated: false
 
 A quick demo of the realtime editing in [Picture Effects](http://pictureeffectsapp.com):
 
-![Screenshot of YouTube video: Picture Effects for iPad](https://oleb.net/media/picture-effects-ipad-video-preview-1632px.jpg)
+[![Screenshot of YouTube video: Picture Effects for iPad](https://oleb.net/media/picture-effects-ipad-video-preview-1632px.jpg)](https://www.youtube.com/watch?v=zhBrgvCPnTc)
 
 <sub>[Watch on YouTube](https://www.youtube.com/watch?v=zhBrgvCPnTc).</sub>

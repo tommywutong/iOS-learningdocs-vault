@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e4d912c9bc6d61a9'
 translated: false
 ---
@@ -52,9 +52,9 @@ Making a custom window starts with a transparent window. I will use a custom `NS
 
 The three changes made to the window by this constructor are fairly obvious:
 
-- (a window without standard window framing)
-- (so that any part of the window can be transparent)
-- (if we do nothing else, this will paint the window transparent)
+- `NSBorderlessWindowMask` (a window without standard window framing)
+- `setOpaque:NO` (so that any part of the window can be transparent)
+- `setBackgroundColor:[NSColor clearColor]` (if we do nothing else, this will paint the window transparent)
 
 The result is a transparent, rectangular window. This method can be invoked directly (if creating a window in code). It will also be invoked by the NIB loader when loading the window from a NIB.
 
@@ -191,12 +191,4 @@ As a resizable circular window, the `RoundWindow` suffers from its fixed 75 by 7
 
 A custom window may also want to handle truncation of the title when it gets too long. Other window controls like the toolbar button, toolbar, minimize and zoom buttons and the "unsaved changes" status on the close button are all responsibilities of the window frame that have not been investigated here.
 
-> Paramanoir has posted an article that draws a custom window in a different way
-> 
-> : by swizzling a new
-> 
-> method into the default
-> 
-> class at runtime. This has a few advantages (
-> 
-> continues to handle the window controls) so you may want to consider that approach as an alternative.
+> [Paramanoir has posted an article that draws a custom window in a different way](http://parmanoir.com/Custom_NSThemeFrame): by swizzling a new `drawRect:` method into the default `NSThemeFrame` class at runtime. This has a few advantages (`NSThemeFrame` continues to handle the window controls) so you may want to consider that approach as an alternative.

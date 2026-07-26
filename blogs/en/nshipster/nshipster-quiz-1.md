@@ -1,0 +1,178 @@
+---
+title: 'NSHipster Quiz #1'
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/nshipster-quiz-1/'
+original_language: en
+published: 2013-04-22
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:55d82274d942d10b'
+translated: false
+---
+
+> 原文：[NSHipster Quiz #1](https://nshipster.com/nshipster-quiz-1/)　·　NSHipster (Mattt)
+
+# [NSHipster Quiz #1](https://nshipster.com/nshipster-quiz-1/)
+
+Written by  [Mattt](https://nshipster.com/authors/mattt/)  April 22^nd, 2013
+
+On April 9th, the first-ever [NSHipster Pub Quiz](http://www.uikonf.com/2013/04/11/nshipster-pub-quiz.html) was held in Berlin. Think of your traditional pub quiz crossed with “Stump the Experts”, with questions about things that you know and care about: computers, programming, Apple trivia—that sort of thing. The event was hosted by [UIKonf](http://www.uikonf.com), and made possible by its organizers [Chris Eidhof](https://twitter.com/chriseidhof), [Matt Patterson](https://twitter.com/fidothe), and [Peter Bihr](https://twitter.com/peterbihr). Thanks again to Chris, Matt, and Peter, and everyone who came out to make it such an amazing event.
+
+All told, a whopping 50-some folks came out, composing a dozen or so teams of up to 6 people, with names such as “NSBeep”, “alloc] win_it]”, & “- Bug Fixes / - Performance Improvements”. At the end of the evening, it was the [CodeKollectiv](http://codekollektiv.com) team that claimed top prize, with a score of 30pts.
+
+Here are the rules to play along at home:
+
+- There are 4 Rounds, with 10 questions each
+- Record answers on a separate sheet of paper
+- Each correct answer to a question gets you 1 point
+- Play with up to 5 friends for maximum enjoyment
+- Don’t be lame and look things up on the internet or in Xcode
+
+---
+
+## Round 1: General Knowledge
+
+1. What does `NS` stand for?
+2. When Steve Jobs introduced the iPhone, he made a prank call to Starbucks. How many lattés did he order to-go? a. 3000 b. 4000 c. 6000
+3. NSOperation has 4 properties used as keypaths for operation object states. What are they?
+4. On your answer sheet, draw a `UITableViewCell` with `UITableViewCellStyleValue2`.
+5. Which UIKit protocol contains the method `–tableView:heightForRowAtIndexPath:`?
+6. What is the storage type of `BOOL`? _(i.e. `typedef` equivalent)_
+7. When was the Unix Epoch? Hint: NSDate has an initializer referencing this.
+8. What is the current version of Xcode?
+9. What was the first article written on NSHipster?
+10. How many apps were on on the home screen of the first iPhone?
+
+## Round 2: APIs
+
+You will be given the name of the class, and the description of the property or method from the documentation. You need to tell me the name of that method or property.
+
+1. `UIView`: “A flag used to determine how a view lays out its content when its bounds change.”
+2. `UIAccessibility`: “A brief description of the result of performing an action on the accessibility element, in a localized string.”
+3. `UIColor`: “Returns a color object whose RGB values are 0.0, 1.0, and 1.0 and whose alpha value is 1.0.”
+4. `UIAlertView`: “Sent to the delegate when the user clicks a button on an alert view.”
+5. `UIButton`: “A Boolean value that determines whether tapping the button causes it to glow.”
+6. `UITableView`: “Reloads the specified rows using a certain animation effect.”
+7. `UITableViewDataSource`: “Tells the data source to return the number of rows in a given section of a table view.”
+8. `UIWebView`: “Sets the main page content and base URL.”
+9. `UIGestureRecognizer`: “Sent to the receiver when one or more fingers touch down in the associated view.”
+10. `UIDictationPhrase`: “The most likely textual interpretation of a dictated phrase.”
+
+## Round 3: Picture Round
+
+-   1. What is this?
+
+![Question 1](https://nshipster.com/assets/quiz-1/question-1-06a52fb24140053b65d58e8b4e922aaa023263b65ad4fbf21602b3a53c7db4ac89ded60a9ee8480c3681268d912ae1d16abbe1443c04045a959f2c598b741e40.jpg)
+
+-   1. What is this?
+
+![Question 2](https://nshipster.com/assets/quiz-1/question-2-d145d373d17cab060ac6cb7fb704343feacf110dc73333801c136dc2de8b5daa66fdcdb6e5d5d7fe68d4befa40496db7b18773222cdf56db43888f3d246b0f31.jpg)
+
+-   1. What is this?
+
+![Question 3](https://nshipster.com/assets/quiz-1/question-3-3b63303bb9a38aa637634f2c0ba8587b8dd79287be9d36e6fe30039e924d4496ca584cd0bc8060e3d63235614f70159596f1c53524bf55536462027160ad5e9a.jpg)
+
+-   1. What is this?
+
+![Question 4](https://nshipster.com/assets/quiz-1/question-4-097d36b210371999f3c7be33518894371c5f62f7ae169b4b35f1f1151309f33d79c3ff9e6c6828ee02215caf89e71e0dde1721e89d8efa627a8fafcd9377bf7f.jpg)
+
+-   1. WTF is this?
+
+![Question 5](https://nshipster.com/assets/quiz-1/question-5-ef9ea45c4d1cd1d0a38ec2c450938960ce052873f689b53fc7e215d2f3bc8720a0b63b7bac7801e1925b6fd9cd10e811eabb018653228077aa9bbfe61386e432.jpg)
+
+-   1. Who is this?
+
+![Question 6](https://nshipster.com/assets/quiz-1/question-6-3aec3f929a9b5104b39067917c4a433165fc0e32f2e772e129147fc885367fec6b2796b1baeac9e6fd639dde3fe9302dc4fed08e8e248bfc19068f90afa48693.jpg)
+
+-   1. Who is this?
+
+![Question 7](https://nshipster.com/assets/quiz-1/question-7-12d58f7f7fe9e7fa015de6f2786d2c0f56d181ae458a4fb4e1daceffec97bffe1bd3e417fe315b7c535d642d12df4e36bb767a3204ea87ada6f80a6921f9556f.jpg)
+
+-   1. Who is this?
+
+![Question 8](https://nshipster.com/assets/quiz-1/question-8-0fbc47d21d94ada3f4ee93339e6de69fad4ec7578820b395bb90328a9c8b1da39e164a778463351d0b2e5262a8a1b1ccebb24dd970285a4bf0a58599d13545f8.jpg)
+
+-   1. Who is this?
+
+![Question 9](https://nshipster.com/assets/quiz-1/question-9-e9f66686058fb5531edc606a96e7a57194367bd7864558611fd2c9b8c3aa295ba53e7d57929929d5ad57d63e57d68ab7ff330bc235a3c132c268042769414c23.jpg)
+
+-   1. In this photo, Bill Gates & Steve Jobs are being interviewed at the D5 conference in 2007 by a man and a woman just off-screen to the left. Who are they? (One point for each person)
+
+![Question 10](https://nshipster.com/assets/quiz-1/question-10-b29bfb9a1bf9ab95af4d7a83b93797672fb65cb92593651a4a5189fecf1d27a718a7d51788e2ef5446607df2852f6b2eeff8bc18aefe5ee4d0a718130f412431.jpg)
+
+## Round 4: Name That Framework!
+
+For each question, a list of three classes from the same framework have been listed without their two-letter namespace prefix. Name the framework that they all belong to!
+
+1. Color List, Matrix, Sound
+2. Composition, URL Asset, Capture Session
+3. Enclosure, Author, Feed
+4. Geocoder, Location, Region
+5. Merge Policy, Mapping Model, Incremental Store
+6. Analysis, Summary, Search
+7. Record, Person, MultiValue
+8. View, View Controller, Skybox Effect
+9. Central Manager, Descriptor, Peripheral Delegate
+10. Filter, Face Feature, Vector
+
+---
+
+# Answers
+
+## Round 1: General Knowledge
+
+1. [NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP)
+2. [4000](http://www.macrumors.com/2013/03/04/steve-jobs-4000-latte-prank-order-lives-on-at-san-francisco-starbucks/)
+3. [`isReady`, `isExecuting`, `isFinished`, `isCancelled`](https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/NSOperation_class/Reference/Reference.html%23//apple_ref/doc/uid/TP40004591-RH2-DontLinkElementID_1)
+4. [textLabel detailTextLabel](https://developer.apple.com/library/ios/DOCUMENTATION/UserExperience/Conceptual/TableView_iPhone/Art/tvcellstyle_value2.jpg)
+5. [`UITableViewDelegate`](https://developer.apple.com/library/ios/documentation/uikit/reference/UITableViewDelegate_Protocol/Reference/Reference.html#//apple_ref/doc/uid/TP40006942-CH3-SW25)
+6. [`signed char`](https://nshipster.com/bool/)
+7. [Midnight UTC, 1 January 1970](https://en.wikipedia.org/wiki/Unix_epoch)
+8. [4.6.2 (4H1003)](https://en.wikipedia.org/wiki/Xcode)
+9. [NSIndexSet](https://nshipster.com/nsindexset/)
+10. [16](https://en.wikipedia.org/wiki/IPhone_%281st_generation%29)
+
+## Round 2: APIs
+
+1. `@contentMode`
+2. `@accessibilityHint`
+3. `+cyanColor`
+4. `-alertView:clickedButtonAtIndex:`
+5. `@showsTouchWhenHighlighted`
+6. `-reloadRowsAtIndexPaths:withRowAnimation:`
+7. `-tableView:numberOfRowsInSection:`
+8. `-loadHTMLString:baseURL:`
+9. `-touchesBegan:withEvent:`
+10. `@text`
+
+## Round 3: Picture Round
+
+1. [Apple I](https://en.wikipedia.org/wiki/Apple_I)
+2. [Apple eMac](https://en.wikipedia.org/wiki/EMac)
+3. [Apple Bandai Pippin](https://en.wikipedia.org/wiki/Apple_Bandai_Pippin)
+4. [Apple QuickTake](https://en.wikipedia.org/wiki/Apple_QuickTake)
+5. [New Proposed Apple Campus / “Mothership”](http://www.cultofmac.com/108782/apples-magnificent-mothership-campus-gets-new-renders-and-more-details-report/)
+6. [Sir Jonathan “Jony” Ive](https://en.wikipedia.org/wiki/Jonathan_Ive)
+7. [Scott Forstall](https://en.wikipedia.org/wiki/Scott_Forstall)
+8. [Bob Mansfield](https://en.wikipedia.org/wiki/Bob_Mansfield)
+9. [Susan Kare](https://en.wikipedia.org/wiki/Susan_kare)
+10. [Kara Swisher & Walt Mossberg](http://allthingsd.com/20071224/best-of-2007-video-d5-interview-with-bill-gates-and-steve-jobs/)
+
+## Round 4: Name That Framework!
+
+1. [App Kit](https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/ApplicationKit/ObjC_classic/_index.html)
+2. [AV Foundation](https://developer.apple.com/library/mac/#documentation/AVFoundation/Reference/AVFoundationFramework/_index.html)
+3. [Publication Subscription](https://developer.apple.com/library/mac/#documentation/InternetWeb/Reference/PubSubReference/_index.html#//apple_ref/doc/uid/TP40004649)
+4. [Core Location](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)
+5. [Core Data](https://developer.apple.com/library/ios/#documentation/cocoa/Reference/CoreData_ObjC/_index.html)
+6. [Search Kit](https://developer.apple.com/library/mac/#documentation/UserExperience/Reference/SearchKit/Reference/reference.html)
+7. [Address Book](https://developer.apple.com/library/ios/#documentation/AddressBook/Reference/AddressBook_iPhoneOS_Framework/_index.html)
+8. [GLKit](https://developer.apple.com/library/mac/#documentation/GLkit/Reference/GLKit_Collection/_index.html)
+9. [Core Bluetooth](https://developer.apple.com/library/ios/#documentation/CoreBluetooth/Reference/CoreBluetooth_Framework/_index.html)
+10. [Core Image](https://developer.apple.com/library/mac/#documentation/graphicsimaging/Conceptual/CoreImaging/ci_intro/ci_intro.html)
+
+---
+
+So how did you fare? Tweet out your score to see how you stack up to your peers!

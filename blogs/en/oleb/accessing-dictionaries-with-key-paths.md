@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fa406c2c63585d99'
 translated: false
 ---
@@ -187,14 +187,10 @@ extension Dictionary where Key: StringProtocol {
 
 It has to handle four cases:
 
-1. . This should only happen if we get called with an empty key path.
-2. dictionary subscript
-
-  to return the value for this key (or
-
-  if the key doesn’t exist).
+1. If the key path is empty, return `nil`. This should only happen if we get called with an empty key path.
+2. If the key path has only one segment, use the standard [dictionary subscript](https://developer.apple.com/reference/swift/dictionary/1540848-subscript) to return the value for this key (or `nil` if the key doesn’t exist).
 3. If the key path has more than one segment, check if there is a nested dictionary we can traverse down into. If so, call the subscript recursively with the remaining path segments.
-4. .
+4. If there isn’t a nested dictionary, the key path is malformed. Return `nil`.
 
 The setter has a very similar structure:
 

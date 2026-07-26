@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a211e62710fbe8e8'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Developers and users ([myself included](https://oleb.net/blog/2012/02/what-ios-should-learn-from-android-and-windows-8/)) have hoped for a long time that Apple would introduce better inter-app data sharing features to iOS. The lack of new inter-app sharing functionality in iOS 7 was the major letdown of the new version for me.
 
-In fact, Apple didn’t just not add new sharing features to iOS 7, they even took one away: shared named pasteboards. Up until iOS 6, apps could create additional pasteboards and put arbitrary data in them. Any other app that knew the name of such a pasteboard could freely read from and write to it. In iOS 7, this functionality is restricted to apps from the same vendor.[1](#fn:1)
+In fact, Apple didn’t just not add new sharing features to iOS 7, they even took one away: shared named pasteboards. Up until iOS 6, apps could create additional pasteboards and put arbitrary data in them. Any other app that knew the name of such a pasteboard could freely read from and write to it. In iOS 7, this functionality is restricted to apps from the same vendor.^[1](#fn:1)
 
 Named pasteboards got a bit of publicity in recent months because the [TextExpander touch](http://smilesoftware.com/TextExpander/touch/) app used them to share snippets with third-party apps. When this became impossible in iOS 7, TextExpander [switched over to the system’s Reminders database](http://smilesoftware.com/blog/entry/how-ios-7-affects-textexpander-touch) as a shared data storage, a hacky solution that [Apple recently decided not to accept any longer](http://www.smilesoftware.com/blog/entry/important-changes-in-textexpander-touch-for-ios).
 
@@ -30,7 +30,7 @@ I truly believe Apple realizes that better inter-app sharing is a desirable feat
 
 I think Apple faces a real dilemma here. Any API that facilitates data sharing between apps without user interaction can easily be abused for tracking purposes, a practice Apple has opposed pretty strongly – at least in word if not in actual rejections of apps.
 
-Just like ad networks, analytics services and social network companies (trough social sharing buttons) are able to track users across websites, analytics and ad libraries can track a user’s app usage across multiple apps as long as they have a common identifier for each device. Trackers used to use the unique device identifier for this purpose until [Apple forbid it](http://arstechnica.com/apple/2013/03/apple-forcing-developers-to-ditch-unique-device-ids/). Afterwards, many libraries switched to solutions that involved shared pasteboards. I am not sure if tracking companies have found another solution that works in iOS 7 (short of heuristics).[2](#fn:2)
+Just like ad networks, analytics services and social network companies (trough social sharing buttons) are able to track users across websites, analytics and ad libraries can track a user’s app usage across multiple apps as long as they have a common identifier for each device. Trackers used to use the unique device identifier for this purpose until [Apple forbid it](http://arstechnica.com/apple/2013/03/apple-forcing-developers-to-ditch-unique-device-ids/). Afterwards, many libraries switched to solutions that involved shared pasteboards. I am not sure if tracking companies have found another solution that works in iOS 7 (short of heuristics).^[2](#fn:2)
 
 # What Can Apple Do?
 

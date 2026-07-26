@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3c889a4af525db24'
 translated: false
 ---
@@ -28,35 +28,13 @@ Compared to requesting pages of virtual memory directly, `malloc` is finer grain
 
 Of course, internally, `malloc` does receive its memory from the kernel by mapping virtual memory pages. Malloc gains its advantage by dividing those pages (or clusters of pages) into smaller regions and returning pointers to addresses within those regions when smaller allocations are requested.
 
-> " but this article applies to Objective-C's
-> 
-> and
-> 
-> , all CoreFoundation allocations and all related C functions like
-> 
-> ,
-> 
-> ,
-> 
-> ,
-> 
-> ,
-> 
-> ,
-> 
-> ,
-> 
-> and
-> 
-> since all these functions go through the same internal implementation on the Mac.
+> I'm using the term "`malloc`" but this article applies to Objective-C's `alloc` and `allocWithZone:`, all CoreFoundation allocations and all related C functions like `calloc`, `realloc`, `valloc`, `malloc_zone_malloc`, `malloc_zone_calloc`, `malloc_zone_valloc`, `malloc_zone_realloc` and `malloc_zone_batch_malloc` since all these functions go through the same internal implementation on the Mac.
 
 ## A generic malloc implementation
 
 Malloc implementations work by requesting a handful of virtual memory pages from the kernel and returning pointers to free areas within those pages when memory is requested. To know which areas within the pages are free at any given time, a malloc implementation must maintain metadata about the size and location of each allocated block in use and any free space between blocks.
 
-> heap data structure
-> 
-> (which is a form of sorted tree) to track blocks; the two uses of the term "heap" are unrelated.
+> The pages of memory managed by malloc are collectively called "the heap" but it should be noted that malloc generally does not use a [heap data structure](http://en.wikipedia.org/wiki/Heap_(data_structure)) (which is a form of sorted tree) to track blocks; the two uses of the term "heap" are unrelated.
 
 As the program requires more memory, the malloc implementation requests more virtual memory pages, increasing the application's memory footprint. Every reasonable effort should to be made to allocate new blocks in the spaces left by previously free blocks to keep the memory footprint low.
 
@@ -72,8 +50,8 @@ Despite the fact that all C standard library implementations offer a function na
 
 The Mac's implementation of malloc is open source and is composed of two key implementation files:
 
-- malloc.c
-- magazine_malloc.c
+- [malloc.c](http://www.opensource.apple.com/source/Libc/Libc-594.1.4/gen/malloc.c)
+- [magazine_malloc.c](http://www.opensource.apple.com/source/Libc/Libc-594.1.4/gen/magazine_malloc.c)
 
 The _malloc.c_ file is mostly a wrapper around the internal implementation in _magazine_malloc.c_. This external wrapper routes regular `malloc` invocations through the `malloc_zone_malloc` function using the default malloc zone — so all malloc allocations on the Mac are actually zoned allocations sharing the same implementation that's used by Objective-C's `+[NSObject allocWithZone:]`.
 
@@ -138,21 +116,21 @@ When you free memory, your application footprint will not immediately go down. F
 
 One important point to note from reading the malloc.c file is that the Mac memory allocator can be configured at runtime to generate logging information. The following environment variables can be set to have the memory allocator perform debug behaviors:
 
-- \<f\> to create/append messages to file \<f\> instead of stderr
-- to add 2 guard pages for each large block
-- to disable protection (when previous flag set)
-- to disable protection (when previous flag set)
-- to record all stacks. Tools like leaks can then be applied
-- to record all stacks. Needed for malloc_history
-- to set location of stack logs, which can grow large; default is /tmp
-- to detect writing on free blocks and missing initializers: 0x55 is written upon free and 0xaa is written on allocation
-- \<n\> to start checking the heap after \<n\> operations
-- \<s\> to repeat the checking of the heap after \<s\> operations
-- \<t\> to sleep \<t\> seconds on heap corruption
-- \<b\> to abort on heap corruption if \<b\> is non-zero
-- to abort on malloc errors, but not on out of memory for 32-bit processes MallocCorruptionAbort is always set on 64-bit processes
-- to abort on any malloc error, including out of memory
-- - this help!
+- **MallocLogFile** \<f\> to create/append messages to file \<f\> instead of stderr
+- **MallocGuardEdges** to add 2 guard pages for each large block
+- **MallocDoNotProtectPrelude** to disable protection (when previous flag set)
+- **MallocDoNotProtectPostlude** to disable protection (when previous flag set)
+- **MallocStackLogging** to record all stacks. Tools like leaks can then be applied
+- **MallocStackLoggingNoCompact** to record all stacks. Needed for malloc_history
+- **MallocStackLoggingDirectory** to set location of stack logs, which can grow large; default is /tmp
+- **MallocScribble** to detect writing on free blocks and missing initializers: 0x55 is written upon free and 0xaa is written on allocation
+- **MallocCheckHeapStart** \<n\> to start checking the heap after \<n\> operations
+- **MallocCheckHeapEach** \<s\> to repeat the checking of the heap after \<s\> operations
+- **MallocCheckHeapSleep** \<t\> to sleep \<t\> seconds on heap corruption
+- **MallocCheckHeapAbort** \<b\> to abort on heap corruption if \<b\> is non-zero
+- **MallocCorruptionAbort** to abort on malloc errors, but not on out of memory for 32-bit processes MallocCorruptionAbort is always set on 64-bit processes
+- **MallocErrorAbort** to abort on any malloc error, including out of memory
+- **MallocHelp** - this help!
 
 Unfortunately, the normal build of magazine_malloc.c in Mac OS X has the limitation that it won't apply guard pages to "small" or "tiny" allocations. To apply guard pages to all data, you'll need to use the libgmalloc library. Do this by setting the following environment variable:
 

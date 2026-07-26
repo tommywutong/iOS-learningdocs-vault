@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:aa9079f6824c40ea'
 translated: false
 ---
@@ -20,17 +20,7 @@ Objective-2.0 property methods are a nice convenience but if you need to overrid
 
 For implicitly atomic types or for types where memory management doesn't apply, custom getter and setter methods in Objective-C are easy. These "easy" situations include:
 
-- ,
-
-  ,
-
-  ,
-
-  ,
-
-  ,
-
-  , etc).
+- Basic value types (`char`, `short`, `int`, `float`, `long`, `double`, etc).
 - Objective-C objects in a garbage collected environment
 - Assigned (non-retained) pointers
 
@@ -58,7 +48,7 @@ the custom getter and setter simply look like this:
 Non-atomic types require greater care. These types include:
 
 - Objective-C objects in a manually managed memory environment
-- s and other compound types
+- `struct`s and other compound types
 
 Given how simple custom getter and setter methods are for atomic types, it is easy to be complacent about implementing methods for these types. However, following the wrong approach can lead to memory crash bugs and lack of proper thread safety.
 
@@ -80,26 +70,10 @@ A hasty implementation of the setter might be:
 
 This implementation actually contains two bugs:
 
-1. The
-
-  object changes twice: once on
-
-  and again when it is assigned the copied object's address. This method is
-
-  atomic and therefore violates the declaration (which omits the
-
-  keyword and therefore requires atomicity).
-2. If
-
-  is ever assigned its own value, it will
-
-  it before
-
-  ing it, causing potential use of a
-
-  d variable. The code:
-
-  is an example of this potential issue.
+1. **This method is not atomic.**  
+  The `someString` object changes twice: once on `release` and again when it is assigned the copied object's address. This method is _not_ atomic and therefore violates the declaration (which omits the `nonatomic` keyword and therefore requires atomicity).
+2. **The assignment contains a potential memory deallocation bug.**  
+  If `someString` is ever assigned its own value, it will `release` it before `copy`ing it, causing potential use of a `release`d variable. The code: `self.someString = someString;` is an example of this potential issue.
 
 Don't feel too bad if you've ever made these mistakes. I spent some time looking at [clang's](http://clang.llvm.org/) synthesized method implementations when I was researching this post and I noticed that [they've forgotten to handle struct accessor methods in an atomic manner](http://llvm.org/svn/llvm-project/cfe/trunk/lib/CodeGen/CGObjC.cpp) when required.
 
@@ -175,9 +149,7 @@ For `struct` and other compound data types, we don't need to `retain` or `copy`,
 There are two negative points to the custom accessor methods listed above:
 
 - They need to be coded exactly to avoid bugs.
-- section on
-
-  is coarse-grained and slow.
+- The `@synchronized` section on `self` is coarse-grained and slow.
 
 There is another way to implement these methods that doesn't require as much careful coding and uses much more efficient locking: use the same functions that the `synthesized` methods use.
 
@@ -255,6 +227,4 @@ The macros I've provided are all for atomic properties. For non-atomic propertie
 
 1. These setter methods are only thread-safe if the parameters passed to them are immutable. For mutable parameters, you may need to ensure thread safety between mutations on the parameter and the assignment of the property.
 2. Atomic accessors only provide thread safety to an instance variable if they are the sole way you access the instance variable. If non-property access is required, you must ensure shared thread safety between property accessor methods and the non-property access.
-3. qualifiers or a
-
-  section around the assignment to flush caches.
+3. Atomic assignment for the "implicitly atomic" types I listed does not mean that all CPUs/cores see the same thing (since each CPU/core could have its own cache of the value) — it only ensures that value is wholly set without possibility of interruption. If you require all CPUs/core to be synchronized and see the same value at a given moment, then even the "implicitly atomic" types may require `volatile` qualifiers or a `@synchronized` section around the assignment to flush caches.

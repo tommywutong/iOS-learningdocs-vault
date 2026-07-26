@@ -52,11 +52,7 @@ Another useful option is the Zombies instruments in Instruments. This enables zo
     }
 ```
 
-For the size, the caller can use
-
-to get the size of the allocated block of memory. This is left up to the caller because
-
-won't work on a deallocated block, so the caller will need to fetch the size while the object is still live and then keep it around.
+For the size, the caller can use `malloc_size` to get the size of the allocated block of memory. This is left up to the caller because `malloc_size` won't work on a deallocated block, so the caller will need to fetch the size while the object is still live and then keep it around.
 
 Let's create an `NSObject` and log it before and after being destroyed:
 
@@ -75,11 +71,7 @@ Here's a normal run without zombies:
     Destroyed NSObject malloc_size 0 - <68046370 ff7f0000 00000000 00000000>
 ```
 
-Notice how
-
-went to
-
-after being destroyed, indicating that the memory block is now freed. Also notice that nothing else changes. The object contains the exact same thing before and after being destroyed. This object could still be used after being destroyed.
+Notice how `malloc_size` went to `0` after being destroyed, indicating that the memory block is now freed. Also notice that nothing else changes. The object contains the exact same thing before and after being destroyed. This object could still be used after being destroyed.
 
 Let's try another one with zombies enabled:
 
@@ -88,15 +80,7 @@ Let's try another one with zombies enabled:
     Destroyed NSObject malloc_size 16 - <d0011100 01000000 00000000 00000000>
 ```
 
-Now we're seeing some differences. First of all,
-
-is still reporting
-
-, so the memory was never deallocated. Secondly, the contents of the object have changed. The
-
-pointer occupies the first eight bytes of the object (running in 64-bit mode here), or the first two groups in the above dump. The
-
-pointer is completely different afterwards.
+Now we're seeing some differences. First of all, `malloc_size` is still reporting `16`, so the memory was never deallocated. Secondly, the contents of the object have changed. The `isa` pointer occupies the first eight bytes of the object (running in 64-bit mode here), or the first two groups in the above dump. The `isa` pointer is completely different afterwards.
 
 The second eight bytes is just unused here. Let's write a quick dummy class that uses it and see how it behaves:
 
@@ -136,9 +120,7 @@ Here's a run without zombies:
     Destroyed Dummy malloc_size 0 - <28110000 01000000 bebafeca efbeadde>
 ```
 
-As before, nothing changes when it's deallocated. Note that the contents of
-
-are backwards because this code is running on a little-endian architecture.
+As before, nothing changes when it's deallocated. Note that the contents of `secondEight` are backwards because this code is running on a little-endian architecture.
 
 Here's a run with zombies:
 
@@ -147,21 +129,13 @@ Here's a run with zombies:
     Destroyed Dummy malloc_size 16 - <e0071100 01000000 bebafeca efbeadde>
 ```
 
-The rest of the object is left alone, but once again the
-
-pointer is overwritten. Let's see just what this new
-
-pointer is:
+The rest of the object is left alone, but once again the `isa` pointer is overwritten. Let's see just what this new `isa` pointer is:
 
 ```
     NSLog(@"%s", class_getName(object_getClass(obj)));
 ```
 
-Running this tells us that the class is called
-
-. We can see that zombies work by overwriting the
-
-pointer with a special zombie class. This special zombie class incorporates the name of the original class, making it easy to see what the original class was and making diagnostics much simpler.
+Running this tells us that the class is called `_NSZombie_Dummy`. We can see that zombies work by overwriting the `isa` pointer with a special zombie class. This special zombie class incorporates the name of the original class, making it easy to see what the original class was and making diagnostics much simpler.
 
 Let's see just what this class contains. Here's a function which will dump out various information about a class:
 
@@ -186,9 +160,7 @@ Let's see just what this class contains. Here's a function which will dump out v
     }
 ```
 
-Now to run this on the deallocated instance of
-
-:
+Now to run this on the deallocated instance of `Dummy`:
 
 ```
     DumpClass(object_getClass(obj));
@@ -204,9 +176,7 @@ Here's what it prints:
     Methods:
 ```
 
-This class contains essentially nothing. Other than the
-
-ivar (which every class needs to have), there's nothing there. No superclass, no other instance variables, no methods.
+This class contains essentially nothing. Other than the `isa` ivar (which every class needs to have), there's nothing there. No superclass, no other instance variables, no methods.
 
 What, then, happens when we try to message an instance of this empty class? I put `[obj self]` in the code after destroying the object and then ran it in `gdb`. Here's the result:
 
@@ -221,13 +191,7 @@ What, then, happens when we try to message an instance of this empty class? I pu
     #2  0x0000000100001c49 in main (argc=1, argv=0x7fff5fbff690) at zomb.m:62
 ```
 
-The
-
-stuff is the part of the runtime that takes over when the target object doesn't implement the message that was sent to it. It's called "forwarding" because
-
-forwarding messages to other objects
-
-is one of its major uses.
+The `___forwarding___` stuff is the part of the runtime that takes over when the target object doesn't implement the message that was sent to it. It's called "forwarding" because [forwarding messages to other objects](http://www.mikeash.com/pyblog/friday-qa-2009-03-27-objective-c-message-forwarding.html) is one of its major uses.
 
 The forwarding mechanism is throwing a `SIGTRAP` because the class doesn't implement the minimum necessary forwarding methods. What's logging "message sent to deallocated instance", though? Let's put a breakpoint on `CFLog` and find out:
 
@@ -258,7 +222,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-05-20-the-inner-life-of-zombies.html)
 
 Add your thoughts, post a comment:
 

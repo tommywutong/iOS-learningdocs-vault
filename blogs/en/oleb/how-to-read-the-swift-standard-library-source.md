@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d3f769f2d960fbb1'
 translated: false
 ---
@@ -94,8 +94,8 @@ Now you can start the build by invoking the build script. This will first build 
 
 The options are important:
 
-- tells the build script to generate an Xcode project, which allows you to browse the source code in Xcode.
-- specifies a release build. This is (surprisingly to me) faster than doing a debug build — it still takes about 25 minutes on a 2,6 GHz quad-core i7 from 2013, though (vs. 70 minutes for a debug build). More importantly, the build artifacts created for the release build “only” take up about 2 GB on your SSD, vs. 24 GB(!) for a debug build.
+- `-x` tells the build script to generate an Xcode project, which allows you to browse the source code in Xcode.
+- `-R` specifies a release build. This is (surprisingly to me) faster than doing a debug build — it still takes about 25 minutes on a 2,6 GHz quad-core i7 from 2013, though (vs. 70 minutes for a debug build). More importantly, the build artifacts created for the release build “only” take up about 2 GB on your SSD, vs. 24 GB(!) for a debug build.
 
 # Orienting yourself
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:722b4258dfab1522'
 translated: false
 ---
@@ -274,7 +274,7 @@ Other tests follow a bit different approach: they use `run_make_with_options`/`c
 
 or
 
-- /
+- `run_make_with_options`/`compare_output`
 
 These functions are located in the file: `tests/run_make_tests.pl` which is a test driver file for the whole test suite (the file is too long so it is not discussed in this post).
 
@@ -432,7 +432,7 @@ The file `tests/README` contains interesting section that one may read as high-l
 ### Conclusion
 
 1. GNU Make has 581 tests: solid test suite introduced as early as of 1992.
-2. is tested, not the parts of C code.
+2. All of these tests are integration tests: the final executable `make` is tested, not the parts of C code.
 3. Default GNU Make 3.81 on OSX machine is 10 years old, it fails 212 tests compared to the latest GNU Make 4.2 build from source which passes all of its tests green.
 4. There is always space for contribution: more documentation is needed, tests should have better sandboxing to achieve parallelism and removability.
 

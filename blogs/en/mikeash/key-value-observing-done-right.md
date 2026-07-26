@@ -26,19 +26,14 @@ by [Mike Ash](https://www.mikeash.com/)
 **What's Broken**  
  There are three major problems with the KVO API, all of which relate to multiple levels of the class hierarchy registering observers. This is important because even NSObject (as part of its implementation of `-bind:toObject:withKeyPath:options:`) will observe things.
 
-1. If you look at similar APIs such as NSNotificationCenter, you'll see that registering an observer always involves passing a selector to be invoked when the specified event happens. This makes it very easy to separate things from a superclass, because you just direct the message to your own method. With KVO you have to override
+1. **`-addObserver:forKeyPath:options:context:` doesn't allow passing a custom selector to be invoked.**  
+   If you look at similar APIs such as NSNotificationCenter, you'll see that registering an observer always involves passing a selector to be invoked when the specified event happens. This makes it very easy to separate things from a superclass, because you just direct the message to your own method. With KVO you have to override `-observeValueForKeyPath:ofObject:change:context:`, then either handle the message yourself or call super. Deciding whether to handle the message or pass it up the chain is complicated by the fact that super may have registered for the exact same key path and object.
+2. **The context pointer is useless**  
+   This is a consequence of #1. Because you can't specify a custom method to invoke, and you can't tell if your superclass will be interested in the notification by examining the key path or the object, you need some other way to tell if the notification is meant for you or for your superclass. The context pointer is how you do this. You must create a unique pointer that your superclass can't possibly be using, and then pass this to `addObserver:...`. You must then check to see if the context pointer is this unique pointer in your implementation of `-observeValueForKeyPath:...`. A consequence of this fact is that you can't use the context pointer to actually hold context.
+3. **`-removeObserver:forKeyPath:` doesn't take enough parameters**  
+   This method doesn't take a context pointer. This means that if you register for the same object/key path combination as your superclass, but with a different lifetime, you have no way of disabling only your observer. Calling this method may disable yours, it may disable the superclass's, or it could even disable both.
 
-  , then either handle the message yourself or call super. Deciding whether to handle the message or pass it up the chain is complicated by the fact that super may have registered for the exact same key path and object.
-2. This is a consequence of #1. Because you can't specify a custom method to invoke, and you can't tell if your superclass will be interested in the notification by examining the key path or the object, you need some other way to tell if the notification is meant for you or for your superclass. The context pointer is how you do this. You must create a unique pointer that your superclass can't possibly be using, and then pass this to
-
-  . You must then check to see if the context pointer is this unique pointer in your implementation of
-
-  . A consequence of this fact is that you can't use the context pointer to actually hold context.
-3. This method doesn't take a context pointer. This means that if you register for the same object/key path combination as your superclass, but with a different lifetime, you have no way of disabling only your observer. Calling this method may disable yours, it may disable the superclass's, or it could even disable both.
-
-It's too bad that such a powerful tool is so broken. Especially since Apple is starting a trend of omitting traditional NSNotification and delegate callbacks in new APIs, instead simply supporting KVO. A perfect example of this is NSOperation: the only way to get notified when an NSOperation finishes is by using KVO to watch its
-
-property.
+It's too bad that such a powerful tool is so broken. Especially since Apple is starting a trend of omitting traditional NSNotification and delegate callbacks in new APIs, instead simply supporting KVO. A perfect example of this is NSOperation: the only way to get notified when an NSOperation finishes is by using KVO to watch its `isFinished` property.
 
 So what can we do about it? I don't want to complain without helping, so I've written a class to solve the problem. You can get it out of my [public svn repository](http://www.mikeash.com/svn/) like so:
 
@@ -50,9 +45,9 @@ So how does it work? It takes advantage of one pointer that can be guaranteed to
 
 MAKVONotificationCenter then bypasses all three deficiencies described above:
 
-1. method which is invoked when the observed key path changes. The superclass will use a different selector, so the problem is solved. (And in the case of Cocoa superclasses, they'll be observing directly whereas MAKVONotificationCenter observes through a helper, ensuring that they won't interfere.)
-2. parameter is provided which is passed into the observer method. This can be an arbitrary object containing any necessary information about the observation.
-3. method takes not only the target and the key path, but also the selector. This way if both a subclass and a superclass register for the same key path on the same object, each one can de-register without affecting the other by specifying its unique selector.
+1. A custom selector is provided in the `-addObserver:...` method which is invoked when the observed key path changes. The superclass will use a different selector, so the problem is solved. (And in the case of Cocoa superclasses, they'll be observing directly whereas MAKVONotificationCenter observes through a helper, ensuring that they won't interfere.)
+2. A `userInfo` parameter is provided which is passed into the observer method. This can be an arbitrary object containing any necessary information about the observation.
+3. The `-removeObserver:...` method takes not only the target and the key path, but also the selector. This way if both a subclass and a superclass register for the same key path on the same object, each one can de-register without affecting the other by specifying its unique selector.
 
 There are some interesting features to note.
 
@@ -74,7 +69,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/key-value-observing-done-right.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:30a5b8296d286e55'
 translated: false
 ---
@@ -37,11 +37,11 @@ The class is constructed with an asynchronous “work” function and a handler 
 
 Thorough testing might involve a few possible scenarios:
 
-1. is invoked succesfuly
-2. is invoked with an error indicating timeout.
-3. instance is released before success or timeout and the handler is never invoked.
-4. after the first work completes or times out successfully run new work.
-5. after the first work is started but before it completes or times out cancels work-in-progress in favor of the newly started work.
+1. The function completes before timeout and the `handler` is invoked succesfuly
+2. The timeout elapses before the function completes and the `handler` is invoked with an error indicating timeout.
+3. The `TimeoutService` instance is released before success or timeout and the handler is never invoked.
+4. Ensure calls to `start` after the first work completes or times out successfully run new work.
+5. Ensure calls to `start` after the first work is started but before it completes or times out cancels work-in-progress in favor of the newly started work.
 
 However, for this article, I want to focus exclusively on the second scenario: the timeout.
 
@@ -180,7 +180,7 @@ func testTimeoutServiceSuccessHostTime() {
 This mostly works but as you can see:
 
 - There’s a lot of boilerplate associated with getting and measuring host time and measuring both upper and lower bounds
-- on my computer)
+- Even in this trivial case, we’ve had to use 10 milliseconds of leeway (the actual timing is usually between 1 and 5 milliseconds slower than the `targetTime` on my computer)
 - In rare cases, this may still fail since heavy load or “stop the world” events on the host system (compressing memory, virtual memory thrashing, WindowServer crashes, sleep events) can cause many seconds delay.
 
 ## Injecting a scheduler like any other dependency
@@ -299,27 +299,19 @@ func testTimeoutServiceTimeout() {
 
 Some clear points to note here:
 
-- and
-
-  since all actions (even those nominally scheduled over time) are performed immediately when
-
-  is called
-- time (no more range required)
+- We no longer need `expectation` and `waitForExpectations` since all actions (even those nominally scheduled over time) are performed immediately when `runScheduledTasks` is called
+- We’re testing the _exact_ time (no more range required)
 - We can also test that the callback thread matches our specified context
 
 Less visible:
 
 - it now takes less than a millisecond to run (versus 1.1 seconds, previously) since it doesn’t need to wait for any real-world time to elapse to simulate a second in the debug context.
-- uses.
+- pausing the debugger or taking other actions that delay execution will never cause a test to fail its timing test – host time is now unrelated to the virtual time that the `DebugContextCoordinator` uses.
 
 Downsides:
 
-- ,
-
-  or even just getting the current time), you won’t get the same resullts and in some cases, this will prevent your tests working. If possible, remove queries of the execution context or ask the
-
-  instance for information about the execution context.
-- runs single threaded, it won’t help you find threading bugs – thread testing will need to be done a different way.
+- if your code relies on probing its execution context directly (for example, with `Thread.currentThread`, `DispatchSpecificKey` or even just getting the current time), you won’t get the same resullts and in some cases, this will prevent your tests working. If possible, remove queries of the execution context or ask the `Exec` instance for information about the execution context.
+- since `DebugContextCoordinator` runs single threaded, it won’t help you find threading bugs – thread testing will need to be done a different way.
 
 ## Usage
 

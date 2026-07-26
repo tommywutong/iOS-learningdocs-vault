@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:652643d39e7a57fd'
 translated: false
 ---
@@ -61,12 +61,8 @@ Of course, now that the child doesn't retain the parent, the child must be aware
 
 So, either:
 
-- pointer in the child to
-
-  when the relationship is broken.
-- to free children, valid except in the child's
-
-  method).
+- The parent must set the `parent` pointer in the child to `nil` when the relationship is broken.
+- The design must guarantee that the parent pointer is always valid for the child's lifetime (or if the parent uses `autorelease` to free children, valid except in the child's `dealloc` method).
 
 These two options apply to weak pointers in general: once the target becomes invalid, the pointer must be set to `nil` or the design must otherwise prevent invalid use.
 
@@ -80,29 +76,16 @@ It may seem obvious but this is where retain cycles can be subtle: an object mus
 
 This rule applies to many different situations. Some important considerations in Cocoa:
 
-- ,
-
-  or
-
-  that collection must not retain the object or any of its parents.
-- where one of the arguments is the object or one of its ancestors, the
-
-  may not retain its arguments.
+- If an object retains an `NSArray`, `NSDictionary` or `NSSet` that collection must not retain the object or any of its parents.
+- If an object retains an `NSInvocation` where one of the arguments is the object or one of its ancestors, the `NSInvocation` may not retain its arguments.
 
 If you want to store a collection of objects that may include one or more parents, you may want to consider one of the collections capable of non-retained pointers ("weak" collections):
 
-- ,
-
-  or
-
-  with
-
-  for the callbacks structure. i.e.:
-
-  .
-- (Mac OS X only)
-- (Mac OS X only)
-- (Mac OS X only)
+- A `CFArray`, `CFDictionary` or `CFSet` with `NULL` for the callbacks structure. i.e.:  
+  `CFArrayCreateMutable(NULL, 0, NULL);`.
+- `+[NSPointerArray pointerArrayWithWeakObjects]` (Mac OS X only)
+- `+[NSMapTable mapTableWithWeakToWeakObjects]` (Mac OS X only)
+- `+[NSMapTable hashTableWithWeakObjects]` (Mac OS X only)
 
 In the rare situation where you must put a parent into a collection which retains its contents (like `NSArray`) you can wrap the contents in a non-retained object `NSValue`. i.e.:
 

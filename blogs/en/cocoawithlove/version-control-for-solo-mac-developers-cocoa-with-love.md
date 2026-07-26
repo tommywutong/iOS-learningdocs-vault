@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2e016786a0ef4868'
 translated: false
 ---
@@ -69,7 +69,7 @@ Gives a ".gitignore" file suitable for use with Xcode. This will tell git to ign
 
 If you don't have a global .gitigore file set up, then you'll probably want to add the content of this file to your .gitignore as well:
 
-> the question mark.
+> The current version of this .gitignore file contains the line ".DS_Store?". This doesn't work for me unless I _remove_ the question mark.
 
 If you did want to set this up as a global .gitignore file, save it to ~/.gitignore and run the following in the Terminal:
 
@@ -193,9 +193,7 @@ git submodule add -b branchname third-party-repository-url destination_path
 
 This will add a .gitmodules file to the top of the repository. Commit this file and "third-party-repository-url" will be automatically cloned at "destination_path", checked out on the branch "branchname" when this repository is cloned.
 
-> git-hg
-> 
-> for cloning Mercurial repositories into git (although it is a one-way sync and may not be highly robust at this time).
+> You can pull and push changes from svn repositories using git-svn, which is part of git by default. Have a look at this if you need cross repository support. There's also a third-party project named [git-hg](https://github.com/offbytwo/git-hg) for cloning Mercurial repositories into git (although it is a one-way sync and may not be highly robust at this time).
 
 ## Other git features
 
@@ -226,6 +224,8 @@ If you rely on Time Machine to give you an archive of changes to your code, you'
 If the build or feature you'd like to restore or re-instate falls in the gap between updates, you might not be able to pull it out of Time Machine. Worse still, your Time Machine volume will eventually run out of free space, so the oldest versions will start being removed. This will never happen in a version control system.
 
 Additionally, a version control system contains a log for all changes, making them easier to find. You can also use tags to find important changes quickly.
+
+> You should use Time Machine too. Ultimately, your code is safest if your repositories are backed up to another hard drive. Additionally, you should make regular snapshots (as CDs/DVDs, encrypted disk images) of your repositories and store these offsite. For CDs/DVDs, store them in a fireproof safe, offsite somewhere. If you use encrypted disk images, upload them to an online storage location that guarantees high data integrity (uptime is not as critical as data integrity). If a fire burns down your home/office, it should never put more than 1 week's work at risk.
 
 ### Provides a way of reviewing your own code changes
 

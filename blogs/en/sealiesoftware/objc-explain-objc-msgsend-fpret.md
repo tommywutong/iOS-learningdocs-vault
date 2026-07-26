@@ -7,7 +7,7 @@ original_language: en
 published: 2008-11-16
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:79531377e20c0805'
 translated: false
 ---
@@ -65,4 +65,4 @@ What about x86_64? This architecture is one step forward, two steps back. The go
 
 One last thing: Mac OS X 10.4 and earlier did not return zero for floating-point messages to nil on ppc. Be careful if you're writing code for those older systems. All other architectures have always returned floating-point zero, including i386 on 10.4.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

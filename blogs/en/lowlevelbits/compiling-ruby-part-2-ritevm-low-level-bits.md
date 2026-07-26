@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:98dbcea8628e448a'
 translated: false
 ---
@@ -24,24 +24,16 @@ This series is mostly a brain dump, though sometimes I'm trying to make things e
 
 Here is what you can expect from the series:
 
-- Motivation
-
-  : some background reading on what and why
-- Compilers vs Interpreters
-
-  : a high level overview of the chosen approach
+- [Motivation](https://lowlevelbits.org/compiling-ruby-part-0/): some background reading on what and why
+- [Compilers vs Interpreters](https://lowlevelbits.org/compiling-ruby-part-1/): a high level overview of the chosen approach
 - **[RiteVM](https://lowlevelbits.org/compiling-ruby-part-2/): a high-level overview of the mruby Virtual Machine**
-- MLIR and compilation
-
-  : covers what is MLIR and how it fits into the whole picture
-- Progress update
-
-  : short progress update with what's done and what's next
-- Exceptions
-
-  : an overview of how exceptions work in Ruby
+- [MLIR and compilation](https://lowlevelbits.org/compiling-ruby-part-3/): covers what is MLIR and how it fits into the whole picture
+- [Progress update](https://lowlevelbits.org/compiling-ruby-part-4/): short progress update with what's done and what's next
+- [Exceptions](https://lowlevelbits.org/compiling-ruby-part-5/): an overview of how exceptions work in Ruby
 - Garbage Collection (TBD): an overview of how mruby manages memory
 - Fibers (TBD): what are fibers in Ruby, and how mruby makes them work
+
+_Note: the list of TBD articles may change as I may want to split some parts into smaller chunks._
 
 ---
 
@@ -92,26 +84,18 @@ The operands are called `a`, `b`, and `c`. The following bytecode string will be
 42 1 2 3
 ```
 
-- -\>
-- -\>
-
-  ,
-
-  is treated as the next opcode
-- -\>
-- -\>
+- `BBB` -\> `a = 1, b = 2, c = 3`
+- `B` -\> `a = 1, b = undefined, c = undefined`, `2` is treated as the next opcode
+- `BS` -\> `a = 1, b = 2 << 8 | 3, c = undefined`
+- `W` -\> `a = 1 << 16 | 2 << 8 | 3, b = undefined, c = undefined`
 - and so on.
 
 Now the comments from the snippet above make more sense:
 
-- does nothing with all its zero operands
-- copies value from register
-
-  to register
-- maps the operand
-
-  to the flags needed for its logic
-- changes the program counter to point to a new location
+- `NOP` does nothing with all its zero operands
+- `MOVE` copies value from register `b` to register `a`
+- `ENTER` maps the operand `a` to the flags needed for its logic
+- `JMP` changes the program counter to point to a new location `b`
 
 With all this information, we now understand _what_ the operations do. The next question is _how_ do they do it?
 
@@ -166,26 +150,10 @@ Execution of each `RProc` requires a virtual stack to operate on the data, but i
 
 Here is what happens during bytecode execution:
 
-1. is created from an
-
-  and is put onto the “call info” stack or simply a call stack. The new
-
-  points to a new location of the shared virtual stack (see the first picture below).
-2. ’s
-
-  is executed in the context of the top
-
-  on the call stack. The virtual stack and state of the VM are updated accordingly.
-3. ,
-
-  ,
-
-  , etc.) operation is encountered, we move to step 1.
-4. ,
-
-  ) operation is encountered, then the operand is put into the “return register” (for consumption by the caller), and the call stack is popped, effectively removing
-
-  created at step 1.
+1. `mrb_callinfo` is created from an `RProc` and is put onto the “call info” stack or simply a call stack. The new `mrb_callinfo` points to a new location of the shared virtual stack (see the first picture below).
+2. Each operation in `RProc`’s `mrb_irep` is executed in the context of the top `mrb_callinfo` on the call stack. The virtual stack and state of the VM are updated accordingly.
+3. When any “sendable” (`OP_SEND`, `OP_SSEND`, `OP_SENDBV`, etc.) operation is encountered, we move to step 1.
+4. When any “returnable” (`OP_RETURN`, `OP_RETURN_BLK`) operation is encountered, then the operand is put into the “return register” (for consumption by the caller), and the call stack is popped, effectively removing `mrb_callinfo` created at step 1.
 
 Here is how it looks in memory:
 

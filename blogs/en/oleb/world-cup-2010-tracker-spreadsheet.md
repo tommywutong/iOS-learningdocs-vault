@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8770ba13ceffc79d'
 translated: false
 ---
@@ -20,9 +20,9 @@ I haven’t had the need to use a spreadsheet since I quit my job a few years ag
 
 Download: [World Cup 2010 Spreadsheet for Numbers](https://oleb.net/media/WorldCup2010.numbers) (1.4 MB)
 
-![World Cup 2010 Spreadsheet Screenshot 1](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-1.png)
+[![World Cup 2010 Spreadsheet Screenshot 1](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-1.png)](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-1.png)
 
-![World Cup 2010 Spreadsheet Screenshot 2](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-2.png)
+[![World Cup 2010 Spreadsheet Screenshot 2](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-2.png)](https://oleb.net/media/world-cup-2010-spreadsheet-screenshot-2.png)
 
 All you need to do is enter the scores for each on the fixtures sheets (one sheet per group) and, later, on the Knockout Stage sheet. The trickiest part of automating the calculation of the group rankings are the complicated [tie-breaking criteria](https://en.wikipedia.org/wiki/2010_FIFA_World_Cup#Tie-breaking_criteria). To rank the teams, the spreadsheet considers the number of points, the goal difference, and the number of goals scored. If two or more teams are still tied on these criteria, the calculation will break. Let’s just hope that won’t happen. (FIFA then considers the match(es) between the teams to break the tie.)
 

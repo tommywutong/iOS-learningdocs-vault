@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:df423ad64cba8a4d'
 translated: false
 ---
@@ -31,7 +31,7 @@ Strings in Swift are represented by the [`String`](https://developer.apple.com/l
 let encircledLetter: Character = "i\u{20DD}" // "i⃝" U+20DD COMBINING ENCLOSING CIRCLE
 ```
 
-This change has the potential to prevent many common errors when dealing with string lengths or substrings. It is a huge difference to most[1](#fn:1) other Unicode-aware string libraries (including `NSString`) where the building blocks of a string are usually UTF-16 code units or single Unicode scalars.
+This change has the potential to prevent many common errors when dealing with string lengths or substrings. It is a huge difference to most^[1](#fn:1) other Unicode-aware string libraries (including `NSString`) where the building blocks of a string are usually UTF-16 code units or single Unicode scalars.
 
 # String and Character Literals
 
@@ -54,7 +54,7 @@ count(globe)     // -> 1
 count(globe.utf16) // -> 2
 ```
 
-Note that computing the length of a `String` requires iterating over all characters and is therefore an [O(N)](http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/) operation. The reason for this is that different `Character`s require variable amounts of memory to store. While most commonly used characters fit into 16 or even 8 bits, others like emoji need 32 bits[2](#fn:2), and the storage required for a grapheme cluster is theoretically unbounded since a base character can have unlimited combining marks. In my testing, I also found that a string does not cache its length once it has calculated it — it always takes the same time to compute.
+Note that computing the length of a `String` requires iterating over all characters and is therefore an [O(N)](http://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/) operation. The reason for this is that different `Character`s require variable amounts of memory to store. While most commonly used characters fit into 16 or even 8 bits, others like emoji need 32 bits^[2](#fn:2), and the storage required for a grapheme cluster is theoretically unbounded since a base character can have unlimited combining marks. In my testing, I also found that a string does not cache its length once it has calculated it — it always takes the same time to compute.
 
 # Grapheme Clusters
 
@@ -210,7 +210,7 @@ let digits = "0123456789"
 let someDigit = digits[5] // -> error: cannot subscript String with an Int
 ```
 
-Character and range indices are based on the opaque `String.Index` type, which implements the `BidirectionalIndex` protocol (an extension of the `ForwardIndex` protocol). To construct an index for a specific position, you have to first ask the string for its `startIndex` and then use the global `advance()` function[3](#fn:3) to iterate over all characters between the beginning of the string and the target position (again, an O(N) operation; `advance()` will simply call `successor()` several times):
+Character and range indices are based on the opaque `String.Index` type, which implements the `BidirectionalIndex` protocol (an extension of the `ForwardIndex` protocol). To construct an index for a specific position, you have to first ask the string for its `startIndex` and then use the global `advance()` function^[3](#fn:3) to iterate over all characters between the beginning of the string and the target position (again, an O(N) operation; `advance()` will simply call `successor()` several times):
 
 ```
 let position = 3

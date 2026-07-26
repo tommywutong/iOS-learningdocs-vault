@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5e5d9f4236890d22'
 translated: false
 ---
@@ -60,7 +60,7 @@ Max knows a lot about iOS internals, and it really shows in this talk. I learned
 
 # David Rönnqvist: OpenGL (ES) Demystified
 
-David does a really good job explaining the concepts behind OpenGL for people how are not used to the API. I am glad it is not another intro to 3D graphics maths but specifically about getting into OpenGL. This is another presentation built from a fully custom app, this time leveraging SceneKit.[1](#fn:1)
+David does a really good job explaining the concepts behind OpenGL for people how are not used to the API. I am glad it is not another intro to 3D graphics maths but specifically about getting into OpenGL. This is another presentation built from a fully custom app, this time leveraging SceneKit.^[1](#fn:1)
 
 [The video on YouTube](https://www.youtube.com/watch?v=8OHYX2RxBuo&list=PLdr22uU_wISq-xmSdu1QQ4OJxr68qnJ54&index=9) (29:30 min)  
  [The slides](https://speakerdeck.com/ronnqvist/opengl-es-demystified) and the [OS X app to drive the live presentation](https://www.dropbox.com/s/bpzckb5064vwqta/OpenGL%20%28ES%29%20Demysified%20Presentation.zip)  

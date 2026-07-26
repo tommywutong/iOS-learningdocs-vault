@@ -7,7 +7,7 @@ original_language: en
 published: 2024-07-17
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ad2f1187f70ba1bd'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 Last weekend I spent several hours on Tunic’s “offline” puzzle: its written language, dubbed “Trunic” by its fans. Several hours was actually _less_ than I expected it to take! And figuring out the answer was satisfying and I immediately wanted to write something in Trunic myself.
 
-![(Which I have represented here as a screenshot without useful alt text so it doesn't become an unwanted hint.)](https://belkadan.com/blog/2024/07/Trunic/bark.png)more
+![(Which I have represented here as a screenshot without useful alt text so it doesn't become an unwanted hint.)](https://belkadan.com/blog/2024/07/Trunic/bark.png)
 
 [Tunic](https://tunicgame.com) is a game from a few years ago with the aesthetics of a top-down Zelda and the combat of a light Souls-like. But it’s also built on puzzles and hidden lore, and a significant part of that is that most of the game is in some mysterious language, with only bits and pieces of normal English poking through. (Also the [soundtrack](https://lifeformed.bandcamp.com/album/tunic-original-game-soundtrack) is great.)
 

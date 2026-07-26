@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bd176f4f8b65e100'
 translated: false
 ---
@@ -42,20 +42,10 @@ Holding your data in a view-independent class is basic program design — as goo
 
 The trick in this post is handling an arbitrary array of child pages using just two views. It will work as follows:
 
-1. view. The next view will be configured to display the cached data for Page 1
-2. is quickly moved into the location for the next page in the scrolling direction. At the same time as it is positioned,
-
-  is configured with the data for Page 2. Neither of these configuration changes will be visible to the user.
-3. and
-
-  are swapped so that
-
-  now points to the view displaying Page 2 and
-
-  now points to Page 1
-4. is already configured and in position. If the next scroll is to the right,
-
-  will be moved and configured as it was during the first scroll.
+1. Initially, the displayed view will be the `currentPage` view. The next view will be configured to display the cached data for Page 1
+2. As the user begins scrolling to the right, the `nextPage` is quickly moved into the location for the next page in the scrolling direction. At the same time as it is positioned, `nextPage` is configured with the data for Page 2. Neither of these configuration changes will be visible to the user.
+3. As the scroll operation ends, the pointers for `currentPage` and `nextPage` are swapped so that `currentPage` now points to the view displaying Page 2 and `nextPage` now points to Page 1
+4. If the next scroll is to the left, `nextPage` is already configured and in position. If the next scroll is to the right, `nextPage` will be moved and configured as it was during the first scroll.
 
 The code that chooses how to move the views as the scroll view scrolls (step 2 in the above description) looks like this:
 
@@ -162,24 +152,12 @@ These parts of the program exist because `UITextView` (used for the "Some text f
 
 I have addressed this in 2 ways:
 
-1. is offscreen. If it is, set
-
-  to
-
-  . I check this value regularly during a scroll, to see if the
-
-  has appeared and update the view when it does.
-2. instead of the
-
-  to page) this still doesn't work — so I always force one update to the
-
-  at the end of scrolling. This case can result in a visible update if your eyes are quick but it is an uncommon case.
+1. When an update is applied, check if the `UITextView` is offscreen. If it is, set `textViewNeedsUpdate` to `YES`. I check this value regularly during a scroll, to see if the `UITextView` has appeared and update the view when it does.
+2. In some fast scrolling cases (mostly when using the `UIPageControl` instead of the `UIScrollView` to page) this still doesn't work — so I always force one update to the `currentPage` at the end of scrolling. This case can result in a visible update if your eyes are quick but it is an uncommon case.
 
 ## Conclusion
 
-> download the complete Xcode 3.1 project for PagingScrollView
-> 
-> (31kB).
+> You can [download the complete Xcode 3.1 project for PagingScrollView](https://www.cocoawithlove.com/assets/objc-era/PagingScrollView.zip) (31kB).
 
 It is possible to handle a paging scroll view using just 2 child views, no matter how many virtual pages you wish to support.
 

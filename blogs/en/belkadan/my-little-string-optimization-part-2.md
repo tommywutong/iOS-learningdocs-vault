@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:74b6037c75d921d0'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 ## [My Little (String) Optimization, Part 2](#)
 
-[Previously](https://belkadan.com/blog/2018/03/My-Little-Optimization/), I talked about how Clang is smart enough to optimize a series of comparisons against constant strings in C++ by starting out with a switch on the length. I left off with the idea that while this is good, you might be able to do better if your strings have a unique character at a certain offset. Today we’re going to see what that looks like.more
+[Previously](https://belkadan.com/blog/2018/03/My-Little-Optimization/), I talked about how Clang is smart enough to optimize a series of comparisons against constant strings in C++ by starting out with a switch on the length. I left off with the idea that while this is good, you might be able to do better if your strings have a unique character at a certain offset. Today we’re going to see what that looks like.
 
 Once again, the goal is to take something like this:
 
@@ -50,11 +50,9 @@ bool isOneOfTheStringsICareAbout(std::string_view s) {
 
 That is, we only want to write the name of each string once, and we don’t want to hardcode which offset to check. My idea for how to approach this went something like this:
 
-1. is unique for every string.
-2. where this is true.
-3. do the comparison like last time, checking the
-
-  th character.
+1. Write a function to check if the character at offset `I` is unique for every string.
+2. Using this, find the first such `I` where this is true.
+3. Using _this,_ do the comparison like last time, checking the `I`th character.
 
 The first step went smoothly. That code looks like this:
 

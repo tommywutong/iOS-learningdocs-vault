@@ -39,9 +39,7 @@ There are some downsides to this approach. The most obvious one is that the targ
     $ svn co svn://svn.valgrind.org/valgrind/trunk valgrind
 ```
 
-From there, building it is like any other UNIX program. Read the
-
-or just do this:
+From there, building it is like any other UNIX program. Read the `README` or just do this:
 
 ```
     $ cd valgrind
@@ -51,9 +49,9 @@ or just do this:
     $ sudo make install
 ```
 
-At this point you should be able to run Valgrind. You can give it a quick test by just typing
+At this point you should be able to run Valgrind. You can give it a quick test by just typing `valgrind` in the shell. Note that as far as I know, Valgrind for Mac only works on Intel machines. If you have a PowerPC Mac you're probably out of luck, although there's no harm in trying.
 
-in the shell. Note that as far as I know, Valgrind for Mac only works on Intel machines. If you have a PowerPC Mac you're probably out of luck, although there's no harm in trying.
+Note: in the course of preparing this post I discovered an unfortunate incompatibility between Valgrind and Rogue Amoeba's Instant Hijack. We're looking into a fix but for now, if you have Instant Hijack installed, you'll need to temporarily disable it before using Valgrind. (You'll know this is happening to you if Valgrind immediately crashes with a SIGTRAP.) You can do this like so:
 
 ```
     $ sudo /usr/local/hermes/bin/hermesctl unload
@@ -92,13 +90,7 @@ And when you're done using Valgrind, you can re-enable it like so:
     }
 ```
 
-This program contains two bugs. One of them is really obvious: it prints the value of
-
-at the end, even though that variable was never initialized. One of them is more subtle:
-
-doesn't allocate enough memory to hold the
-
-byte at the end of the string. This would normally go undetected, because memory allocations are padded, and that extra byte is often available. It would only fail when the string length were a nice round number, and even then it might simply fail by overwriting something else and causing corrupted data far later.
+This program contains two bugs. One of them is really obvious: it prints the value of `i` at the end, even though that variable was never initialized. One of them is more subtle: `bad_strdup` doesn't allocate enough memory to hold the `NUL` byte at the end of the string. This would normally go undetected, because memory allocations are padded, and that extra byte is often available. It would only fail when the string length were a nice round number, and even then it might simply fail by overwriting something else and causing corrupted data far later.
 
 Let's compile and run with Valgrind:
 
@@ -166,7 +158,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-06-05-introduction-to-valgrind.html)
 
 Add your thoughts, post a comment:
 

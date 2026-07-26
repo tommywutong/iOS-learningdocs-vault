@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9cdc96a9c39c0d6f'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Optimizing Collections
 
-![Optimizing Collections Book Cover](https://oleb.net/media/optimizing-collections-book-cover-600px.png)
+[![Optimizing Collections Book Cover](https://oleb.net/media/optimizing-collections-book-cover-600px.png)](https://www.objc.io/books/optimizing-collections/)
 
 A new Swift book is out: [_Optimzing Collections_](https://www.objc.io/books/optimizing-collections/) by [Károly Lőrentey](https://twitter.com/lorentey). I had a small part in this as the book’s technical reviewer, and I highly recommend it.
 
@@ -24,12 +24,8 @@ Károly first released the book as a beta version a few months ago and now the f
 
 You’ll learn:
 
-- `Collection`
-
-  protocols.
-- copy-on-write
-
-  behavior in your own types.
+- How to write a custom collection type that conforms to Swift’s [`Collection`](https://developer.apple.com/documentation/swift/collection) protocols.
+- How to implement value semantics with [copy-on-write](http://chris.eidhof.nl/post/struct-semantics-in-swift/) behavior in your own types.
 - How to measure the performance of your custom collection and make it a lot faster than the built-in collection types (for certain tasks; different data structures make different tradeoffs).
 
 This isn’t a book that just scratches the surface. Károly really goes into detail, especially on that last point. I love how practially every chapter ends with a set of charts illustrating the performance characteristics of the code written in that chapter — and those results in turn form the basis for subsequent optimizations in the next chapter.

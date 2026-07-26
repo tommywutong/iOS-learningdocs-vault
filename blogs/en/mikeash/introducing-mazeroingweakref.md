@@ -29,23 +29,13 @@ A zeroing weak reference is a reference to an object which does not prevent that
     MAZeroingWeakRef *ref = [[MAZeroingWeakRef alloc] initWithTarget: object];
 ```
 
-You can access the object at any time using the
-
-method:
+You can access the object at any time using the `-target` method:
 
 ```
     NSLog(@"Target is %@", [ref target]);
 ```
 
-As long as the object continues to exist,
-
-will return it. Once it is destroyed,
-
-will return
-
-.
-
-returns a reference that has been retained and autoreleased, ensuring that the returned object will remain valid as you use it even if the last strong reference to it has been released in another thread while you work.
+As long as the object continues to exist, `-target` will return it. Once it is destroyed, `-target` will return `nil`. `-target` returns a reference that has been retained and autoreleased, ensuring that the returned object will remain valid as you use it even if the last strong reference to it has been released in another thread while you work.
 
 You can get `MAZeroingWeakRef` from my public subversion repository:
 
@@ -69,7 +59,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/introducing-mazeroingweakref.html)
 
 Add your thoughts, post a comment:
 

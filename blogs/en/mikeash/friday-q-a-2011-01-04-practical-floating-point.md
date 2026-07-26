@@ -33,9 +33,7 @@ What I intend to cover is how to approach floating-point arithmetic in a practic
 1. Floating point calculations are slow
 2. Floating point calculations are inaccurate
 
-Floating point was slow in the dark ages before a floating-point unit was a standard part of any CPU you'd be programming on. These days, it's pretty fast. On heftier processors (like on the Mac), using floating point can actually make your code go
-
-, due to freeing up integer units for other tasks. Even on iOS devices, the floating point support is entirely reasonable and there's no need to shy away without extensive profiling.
+Floating point was slow in the dark ages before a floating-point unit was a standard part of any CPU you'd be programming on. These days, it's pretty fast. On heftier processors (like on the Mac), using floating point can actually make your code go _faster_, due to freeing up integer units for other tasks. Even on iOS devices, the floating point support is entirely reasonable and there's no need to shy away without extensive profiling.
 
 Floating point accuracy is harder to characterize than simply saying it's inaccurate. Many floating point calculations produce exact results. Most others produce results which are as close to the exact answer as is possible to represent. Accuracy must be properly understood to use floating point properly, but it's not always bad and not always a problem.
 
@@ -46,19 +44,15 @@ Note that there is nothing in C which _requires_ the floating point types to use
 
 You are probably familiar with scientific notation. To put a number in scientific notation, you normalize the number by multiplying or dividing by 10 until the number is in the range `[1, 10)`, and then you multiply it by a power of 10 to get it back where you want it:
 
-- 42 = 4.2 × 101
-- 998.75 = 9.9875 × 102
-- 0.125 = 1.25 × 10-1
+- 42 = 4.2 × 10^1
+- 998.75 = 9.9875 × 10^2
+- 0.125 = 1.25 × 10^-1
 
 By using binary and powers of 2, this concept can be changed to something that's more friendly to computers:
 
-- = 1.01010
-
-  × 2
-- = 1.11110011011
-
-  × 2
-- = 1.0 × 2
+- 42 = 101010~2 = 1.01010~2 × 2^5
+- 998.75 = 1111100110.11~2 = 1.11110011011~2 × 2^9
+- 0.125 = 0.001~2 = 1.0 × 2^-3
 
 The 2 never changes, which means that these numbers can be represented as simple pairs:
 
@@ -66,11 +60,7 @@ The 2 never changes, which means that these numbers can be represented as simple
 - (1.11110011011, 9)
 - (1.0, -3)
 
-The first component of these pairs is called the
-
-, and the second component is the
-
-.
+The first component of these pairs is called the _mantissa_, and the second component is the _exponent_.
 
 You'll notice that the leading digit on all three is 1. In fact, the leading digit will _always_ be 1, except for representing zero, which is a special case. Since the leading digit is always 1, it's not necessary to store it. The pairs can then be reduced to:
 
@@ -85,11 +75,11 @@ There are some special cases. Zero is one of those, as is infinity, and various 
 **Observations**  
  Knowing the representation of these numbers, there are some useful observations that can be made about their properties.
 
-Any integer whose binary representation fits within the mantissa can be precisely represented with no error. For a `double`, this means that any integer up to 253, or about 18 quadrillion, can be represented exactly. In a `float`, integers up to 224, or a bit under 16.8 million can be represented exactly.
+Any integer whose binary representation fits within the mantissa can be precisely represented with no error. For a `double`, this means that any integer up to 2^53, or about 18 quadrillion, can be represented exactly. In a `float`, integers up to 2^24, or a bit under 16.8 million can be represented exactly.
 
 Numbers much larger than this can be represented as well, but with less precision. Only even numbers can be represented when immediately past the above limits. As the numbers grow further, only multiples of 4 can be represented, then multiples of 8, then 16, etc.
 
-Fractions can be represented _if and only if_ they can be expressed as a sum of powers of two. For example, 3/4 = 1/2 + 1/4 = 1.1 × 2-1 = (1, -1). However, a seemingly simple number such as 1/10 cannot be precisely represented in floating point. The best you can do is a close approximation: (10011001100110011..., -4).
+Fractions can be represented _if and only if_ they can be expressed as a sum of powers of two. For example, ^3/~4 = ^1/~2 + ^1/~4 = 1.1 × 2^-1 = (1, -1). However, a seemingly simple number such as ^1/~10 cannot be precisely represented in floating point. The best you can do is a close approximation: (10011001100110011..., -4).
 
 To put it differently: every floating point number can be precisely written out as a finite decimal. However, many finite decimals cannot be exactly represented as a floating point number. This is why [you should never use floating point to represent currency](http://c2.com/cgi/wiki?FloatingPointCurrency).
 
@@ -100,19 +90,7 @@ To put it differently: every floating point number can be precisely written out 
     double halfpi = 1/2 * M_PI;
 ```
 
-The value of
-
-is not the expected approximation, but rather zero. This is because both
-
-and
-
-are integers. The integer division
-
-produces
-
-, and
-
-also produces zero.
+The value of `halfpi` is not the expected approximation, but rather zero. This is because both `1` and `2` are integers. The integer division `1/2` produces `0`, and `0 * M_PI` also produces zero.
 
 To fix this, it is necessary to simply place a decimal point on the literals to make them into floats. In a case like this, only one of the numbers needs it, because the other number will be converted to floating point automatically, but it's more clear to just do it with both:
 
@@ -120,9 +98,7 @@ To fix this, it is necessary to simply place a decimal point on the literals to 
     double halfpi = 1.0/2.0 * M_PI;
 ```
 
-It's best to get into the habit of using
-
-at the end of any integer constant used in a floating point expression to avoid unhappy mistakes like this.
+It's best to get into the habit of using `.0` at the end of any integer constant used in a floating point expression to avoid unhappy mistakes like this.
 
 **Accuracy**  
  There are various accuracy requirements placed on arithmetic operations on floating point numbers. In particular, the four basic operations of addition, subtraction, multiplication, and division, are required to produce exactly the correct result if the correct result is representable. If the correct result is not representable, then they must produce the closest possible floating point number to the correct result.
@@ -170,11 +146,7 @@ This can be used on less precise values:
         // this will be true
 ```
 
-There are also
-
-more advanced ways
-
-to compare floating point values, although in practice they are generally not necessary.
+There are also [more advanced ways](http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm) to compare floating point values, although in practice they are generally not necessary.
 
 **Special Numbers**  
  There are a few kinds of special floating point numbers that are useful to understand.
@@ -203,49 +175,13 @@ NaN can be written in code with the `NAN` macro, and can be detected using `isna
 **Math Functions**  
  There are a ton of useful math functions in the `math.h` header. Each function comes in two variants. The plain function, for example `sin`, takes a `double` and returns a `double` with the result. Functions which end in `f`, for example `sinf`, do the same except they operate on `float`. This makes them a bit faster when your values are all `float`. There are a few categories of functions worth mentioning:
 
-- ,
+- **Trigonometric functions:**`sin`, `cos`, `tan`, and others are all provided. These are, of course, useful for all kinds of geometric calculations.
+- **Exponential functions:**`exp` calculates powers of the mathematical constant `e`, and `log` calculates natural logarithms. Other functions are available to calculate powers of two and logarithms in other bases.
+- **Powers:** the `pow` function will calculate arbitrary exponents. The `sqrt` function is specifically optimized to take square roots.
+- **Integer conversion:** various functions to get a nearby integer from a floating point number, such as `ceil`, `floor`, `trunc`, `round`, and `rint`.
+- **Specialized floating point functions:** many functions which provide better performance or accuracy, or additional capabilities by taking advantage of the nature of floating point, such as `fma` (performs a multiply and an add), `log1p` (calculates the function `log(1 + x)`), and `hypot`.
 
-  ,
-
-  , and others are all provided. These are, of course, useful for all kinds of geometric calculations.
-- calculates powers of the mathematical constant
-
-  , and
-
-  calculates natural logarithms. Other functions are available to calculate powers of two and logarithms in other bases.
-- the
-
-  function will calculate arbitrary exponents. The
-
-  function is specifically optimized to take square roots.
-- various functions to get a nearby integer from a floating point number, such as
-
-  ,
-
-  ,
-
-  ,
-
-  , and
-
-  .
-- many functions which provide better performance or accuracy, or additional capabilities by taking advantage of the nature of floating point, such as
-
-  (performs a multiply and an add),
-
-  (calculates the function
-
-  ), and
-
-  .
-
-There are also a bunch of useful constants defined in this header, such as
-
-(the mathematical constant
-
-) and
-
-(π).
+There are also a bunch of useful constants defined in this header, such as `M_E` (the mathematical constant `e`) and `M_PI` (π).
 
 **Further Reading**  
  Mac OS X ships with some good documentation on floating point numbers. `man float` discusses their general representation and behavior. `man math` discusses the various functions in `math.h`. Most of those functions also have their own man page which goes into more detail.
@@ -265,7 +201,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-01-04-practical-floating-point.html)
 
 Add your thoughts, post a comment:
 

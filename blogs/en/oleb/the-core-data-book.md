@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:781c0872d601e54d'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # The Core Data Book
 
-![Core Data Book Cover](https://oleb.net/media/core-data-book-cover.png)
+[![Core Data Book Cover](https://oleb.net/media/core-data-book-cover.png)](https://www.objc.io/books/core-data/)
 
 Florian Kugler and Daniel Eggert’s [new book about Core Data](https://www.objc.io/books/core-data/) is now available. I also had a small part in this as the technical reviewer.
 

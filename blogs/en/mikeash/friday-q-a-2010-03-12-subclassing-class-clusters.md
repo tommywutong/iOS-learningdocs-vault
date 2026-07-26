@@ -173,9 +173,7 @@ The third technique is to simply add a category to the cluster class instead of 
     @end
 ```
 
-(The method is prefixed to prevent a conflict if Apple should ever add a
-
-method.)
+(The method is prefixed to prevent a conflict if Apple should ever add a `firstObject` method.)
 
 **Conclusion**  
  Class clusters are different from normal classes, but are easy to subclass once you understand the differences and what they mean. You're required to implement the class cluster's _primitive methods_, which you can do by providing a from-scratch implementation, or by passing through to another instance. Finally, if your only purpose in subclassing is to add new methods, create a category instead.
@@ -190,7 +188,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-03-12-subclassing-class-clusters.html)
 
 Add your thoughts, post a comment:
 

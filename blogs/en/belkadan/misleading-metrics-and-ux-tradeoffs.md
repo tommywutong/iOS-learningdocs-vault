@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a43495adb7477590'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [Misleading Metrics and UX Tradeoffs](#)
 
-Imagine you have a search feature, and you find that basically no one is using it. That is, the number of loads you get on the dedicated search page is tiny. You make a tweak to your UI, and suddenly way more people are going to the search page! Sounds like a win, right?more
+Imagine you have a search feature, and you find that basically no one is using it. That is, the number of loads you get on the dedicated search page is tiny. You make a tweak to your UI, and suddenly way more people are going to the search page! Sounds like a win, right?
 
 Except…the tweak to the UI was that previously you had search results loading inline in the search bar, and now it’s just doing _completions._ And your product is Facebook, which means that most searches are for people or pages that the searcher already knows; they’re just using the search bar for quick navigation (like [Spotlight](https://en.wikipedia.org/wiki/Spotlight_(software)) or the Start menu). And this change happened a year or two ago, but it still annoys me every time.
 
@@ -38,7 +38,7 @@ I called this post “Misleading Metrics” because I felt like this _had_ to ha
 
 My original takeaway was that metrics give you numbers, but they don’t give you _reasons,_ and you should always try to think of multiple reasons why the numbers could be what they are—and even to mix your metrics with some in-person user studies and qualitative feedback. That’s still a good lesson, but maybe I need a better example.
 
-(I’m picking on Facebook because I use Facebook[1](#fn:me) and because they’re big enough to stand this kind of critique, but this is the kind of thing any company could do. Also, feedback submitted via [https://www.facebook.com/help/feedback](https://www.facebook.com/help/feedback).)
+(I’m picking on Facebook because I use Facebook^[1](#fn:me) and because they’re big enough to stand this kind of critique, but this is the kind of thing any company could do. Also, feedback submitted via [https://www.facebook.com/help/feedback](https://www.facebook.com/help/feedback).)
 
 1. Please don’t try to find me on Facebook unless we’re friends or coworkers offline, or at least Twitter mutuals. Separate persona. [↩︎](#fnref:me)
 

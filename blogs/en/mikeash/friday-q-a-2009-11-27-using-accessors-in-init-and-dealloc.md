@@ -64,11 +64,8 @@ The alternative is to use accessors, like this:
     }
 ```
 
-The pros of using accessors in
-
-/
-
-are pretty much the same as the pros of using them anywhere else. They decouple the code from your implementation, and in particular help you with memory management. How many times have you accidentally written code like this?
+**Pros of Accessors**  
+ The pros of using accessors in `init`/`dealloc` are pretty much the same as the pros of using them anywhere else. They decouple the code from your implementation, and in particular help you with memory management. How many times have you accidentally written code like this?
 
 ```
     - (id)init
@@ -111,13 +108,7 @@ Worse, if you ever override a setter in a subclass, you need to write it to hand
     }
 ```
 
-If the superclass uses the accessor to destroy
-
-, then the override will execute after
-
-has already executed, causing the override to access a dangling reference to
-
-, probably causing a nice crash.
+If the superclass uses the accessor to destroy `someObj`, then the override will execute after `dealloc` has already executed, causing the override to access a dangling reference to `anotherObj`, probably causing a nice crash.
 
 It's not hard to fix this code to handle the situation gracefully. Simply assign `anotherObj = nil` after releasing it in `dealloc`, and everything works again. In general it's not difficult to make sure that your overrides behave properly, but if you're going to use accessors like this then you must remember to, and that is the difficult part.
 
@@ -141,7 +132,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-11-27-using-accessors-in-init-and-dealloc.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:258b0f0c8022d670'
 translated: false
 ---
@@ -231,9 +231,7 @@ Clearly, detaching threads has a very high overhead — around 1 second per 12,0
 
 ## Conclusion
 
-> ThreadingOverheads.zip
-> 
-> (14kb)
+> You can download the code used in this post [ThreadingOverheads.zip](https://www.cocoawithlove.com/assets/objc-era/ThreadingOverheads.zip) (14kb)
 
 While it is valid to detach new threads for infrequent tasks (as many as dozens per second), the overhead on a completely new thread is non-trivial so if your tasks are small and numerous, a solution that reuses threads is pretty important. Even the overhead of a RunLoop solution (which was the traditional worker thread approach in Cocoa prior to GCD) is noticeable once the number of tasks reaches the tens of thousands.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cf7c228b9f74d439'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Over the last three years, the annual bike tour has become a permanent fixture on the [UIKonf](http://www.uikonf.com/) schedule — first as an [impromptu](https://twitter.com/olebegemann/status/467587350563160064) [meetup](https://twitter.com/olebegemann/status/467723767821918208) on the day after the conference, now as one of several official [social events](http://www.uikonf.com/social-events/).
 
-![The route of the UIKonf Bike Tour 2016](https://oleb.net/media/uikonf-bike-tour-2016.jpg)
+[![The route of the UIKonf Bike Tour 2016](https://oleb.net/media/uikonf-bike-tour-2016.jpg)](https://oleb.net/media/uikonf-bike-tour-2016.jpg)
 
 <sub>The 2016 route was 24.5 km.  
  [Open in Google Maps](https://www.google.com/maps/d/u/0/viewer?mid=1QhhYnn5jioaEWEEuX97N9dTDVPM).  
@@ -26,13 +26,13 @@ Over the last three years, the annual bike tour has become a permanent fixture o
 
 Our route this year took us from [Kulturbrauerei](https://en.wikipedia.org/wiki/Kulturbrauerei) in Prenzlauer Berg to [Kreuzberg](https://en.wikipedia.org/wiki/Kreuzberg). Sights we saw along the way include the [Berlin Wall Memorial](https://en.wikipedia.org/wiki/Gedenkst%C3%A4tte_Berliner_Mauer) at [Bernauer Straße](https://en.wikipedia.org/wiki/Bernauer_Stra%C3%9Fe); the government quarter along the [Spree](https://en.wikipedia.org/wiki/Spree), with the [Reichstag](https://en.wikipedia.org/wiki/Reichstag_building), [central station](https://en.wikipedia.org/wiki/Berlin_Hauptbahnhof), and [Bellevue Palace](https://en.wikipedia.org/wiki/Bellevue_Palace_(Germany)); the [Tiergarten](https://en.wikipedia.org/wiki/Tiergarten_(park)) and [Brandenburg Gate](https://en.wikipedia.org/wiki/Brandenburg_Gate); the [Holocaust Memorial](https://en.wikipedia.org/wiki/Memorial_to_the_Murdered_Jews_of_Europe); [Potsdamer Platz](https://en.wikipedia.org/wiki/Potsdamer_Platz); [Gleisdreieck park](https://de.wikipedia.org/wiki/Park_am_Gleisdreieck) where we stopped for ice cream; and, my personal favorite of any Berlin tour, the abandoned [Tempelhof Airport](https://en.wikipedia.org/wiki/Berlin_Tempelhof_Airport#Post-airport_usage) that is now a public park. Riding your bike on the runway is a great feeling.
 
-![At the Berlin Wall Memorial](https://oleb.net/media/IMG_7604-2016px.jpg)
+[![At the Berlin Wall Memorial](https://oleb.net/media/IMG_7604-2016px.jpg)](https://oleb.net/media/IMG_7604.jpg)
 
 <sub>At the [Berlin Wall Memorial](https://en.wikipedia.org/wiki/Gedenkst%C3%A4tte_Berliner_Mauer).</sub>
 
 In total, we biked almost 25 km in a little less than 4 hours, including breaks. This may not sound like much, but with the hotter-than-usual weather (up to 28 °C) most of us were pretty tired at the end. I also felt that I had to rush the group a little towards the end in order to not fall behind our schedule. Despite having organized several bike tours for larger groups, I’m always surprised anew how slow a group of 20+ cyclists moves. A somewhat shorter route (say about 20 km) would have been better, even if that would have meant leaving out some attractions.
 
-![Enjoying some well-deserved refreshments after the tour](https://oleb.net/media/IMG_7619-2016px.jpg)
+[![Enjoying some well-deserved refreshments after the tour](https://oleb.net/media/IMG_7619-2016px.jpg)](https://oleb.net/media/IMG_7619.jpg)
 
 <sub>Enjoying some well-deserved refreshments after the tour.</sub>
 

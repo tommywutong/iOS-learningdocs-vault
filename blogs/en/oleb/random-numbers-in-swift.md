@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3b973aa819ac8196'
 translated: false
 ---
@@ -164,8 +164,8 @@ Int.random(in: 10..<20, using: &mersenneTwister)
 
 If it makes sense for your own data types to produce random values, you should try to follow the standard library pattern:
 
-- method that always uses the default RNG. This can take additional parameters if it makes sense to constrain the random values to a certain range.
-- , that takes a generic random number generator.
+- Provide a static `random() -> Self` method that always uses the default RNG. This can take additional parameters if it makes sense to constrain the random values to a certain range.
+- Provide a second method, `random<T: RandomNumberGenerator>(using generator: inout T) -> Self`, that takes a generic random number generator.
 
 Example: an enum representing playing card suits. We’re taking advantage of the compiler-synthesized [`allCases`](https://developer.apple.com/documentation/swift/caseiterable) property ([new in Swift 4.2](https://github.com/apple/swift-evolution/blob/master/proposals/0194-derived-collection-of-enum-cases.md)) for the implementation:
 

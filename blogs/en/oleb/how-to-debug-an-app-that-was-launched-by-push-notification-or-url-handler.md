@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e4e0ab9c13fbc1d5'
 translated: false
 ---
@@ -31,8 +31,8 @@ Sometimes, `NSLog()` is just not enough and you want the full power of the debug
 1. Set a breakpoint where you want it, for example in `application:didFinishLaunchingWithOptions:`.
 2. Select Project \> Edit Active Executable. On the Debugging tab, select the Wait for next launch/push notification checkbox:
 
-  ![Xcode Active Executable Settings: Debugging, wait for next launch](https://oleb.net/media/xcode-active-executable-debugging-wait-for-next-launch.png)
+  [![Xcode Active Executable Settings: Debugging, wait for next launch](https://oleb.net/media/xcode-active-executable-debugging-wait-for-next-launch.png)](https://oleb.net/media/xcode-active-executable-debugging-wait-for-next-launch.png)
 3. Build and Debug as you normally would. The Console will show you a message that the debugger is waiting for your app to launch.
 
-  ![Xcode: Debugger waiting for app to launch](https://oleb.net/media/xcode-debugger-waiting-for-app-to-launch.png)
+  [![Xcode: Debugger waiting for app to launch](https://oleb.net/media/xcode-debugger-waiting-for-app-to-launch.png)](https://oleb.net/media/xcode-debugger-waiting-for-app-to-launch.png)
 4. Launch your app by invoking your custom URL or sending a push notification. The debugger will automatically attach to your app’s process and stop at the breakpoint.

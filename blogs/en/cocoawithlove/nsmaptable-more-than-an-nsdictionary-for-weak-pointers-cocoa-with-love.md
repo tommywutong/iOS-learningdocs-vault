@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:80abcfdd0e6d2b95'
 translated: false
 ---
@@ -74,18 +74,10 @@ The options provided to NSMapTable are composed of three parts: a "memory option
 
 Officially, NSMapTable allows the following options:
 
-- NSMapTableStrongMemory
-
-  (a "memory option")
-- NSMapTableWeakMemory
-
-  (a "memory option")
-- NSMapTableObjectPointerPersonality
-
-  (a "personality option")
-- NSMapTableCopyIn
-
-  (a "copy option")
+- NSMapTableStrongMemory (a "memory option")
+- NSMapTableWeakMemory (a "memory option")
+- NSMapTableObjectPointerPersonality (a "personality option")
+- NSMapTableCopyIn (a "copy option")
 
 NSMapTableStrongMemory is the default "memory option". However, the default "personality option" and the default "copy in" behaviors don't have names so these two values can be considered implicitly included in the list.
 
@@ -95,47 +87,22 @@ Since "strong" and "weak" are terms associated with Garbage Collection in Object
 
 Outside garbage collection, the following definitions apply:
 
-- : use retain and release
-- : don't use retain and release
+- **_strong_**: use retain and release
+- **_weak_**: don't use retain and release
 
 NSMapTable only permits NSPointerFunctionsOptions "personality options" that correspond to Objective-C objects. There are other NSPointerFunctionsOptions "personality options" where the behavior for "strong" pointers does not include retain and release but these options are not permitted for NSMapTable.
 
+> _A warning about using "weak" outside of garbage collection:_  
 > The pointer will not be zeroed as in a garbage collected environment so you must be careful not to dereference the pointer if it is released.
 
 ### Personality options
 
 The NSMapTableObjectPointerPersonality option is used to control whether the isEqualTo: and hash methods on the object are used when adding the object to the collection.
 
-- The object's pointer value is used for direct comparison and bit-shifted hash generation (
-
-  isEqualTo:
-
-  and
-
-  hash
-
-  methods are
-
-  used).
-- (default behavior)
-
-  The
-
-  hash
-
-  and
-
-  isEqualTo:
-
-  methods will invoked on the key to determine a storage location in the
-
-  NSMapTable
-
-  . The return values of these methods should not change (be immutable) for the duration that the key is used in the
-
-  NSMapTable
-
-  .
+- _NSMapTableObjectPointerPersonality specified_  
+   The object's pointer value is used for direct comparison and bit-shifted hash generation (isEqualTo: and hash methods are _not_ used).
+- _NSMapTableObjectPointerPersonality **not** specified_ (default behavior)  
+   The hash and isEqualTo: methods will invoked on the key to determine a storage location in the NSMapTable. The return values of these methods should not change (be immutable) for the duration that the key is used in the NSMapTable.
 
 Both behaviors imply that the content implements the NSObject protocol, so methods in this protocol may also be invoked on the keys and objects. In particular, the description method may be invoked on NSMapTable contained keys and objects regardless of the personality option used. The NSMapTable will only support NSCoding if all keys and objects implement the NSCoding protocol too.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4d46a62158b33d08'
 translated: false
 ---
@@ -367,29 +367,11 @@ That’s pretty much it.
 
 Here is a set of links that might be useful if you want to dig deeper and learn more about mach-o:
 
-- OS X ABI Mach-O File Format Reference
-
-  - official documentation from Apple
-- MachOView
-
-  - is a visual Mach-O file browser. It provides a complete solution for exploring and in-place editing Intel and ARM binaries.
-- Mach-O Executables
-
-  - nice article from
-
-  objc.io
-
-  .
-- bitcode_retriever
-
-  - simple C program that retrieves
-
-  Bitcode
-
-  from Mach-O binaries.
-- segment_dumper
-
-  - source code from this article.
+- [OS X ABI Mach-O File Format Reference](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/MachORuntime/index.html) - official documentation from Apple
+- [MachOView](http://sourceforge.net/projects/machoview/) - is a visual Mach-O file browser. It provides a complete solution for exploring and in-place editing Intel and ARM binaries.
+- [Mach-O Executables](http://www.objc.io/issues/6-build-tools/mach-o-executables/) - nice article from [objc.io](http://www.objc.io).
+- [bitcode_retriever](https://github.com/AlexDenisov/bitcode_retriever) - simple C program that retrieves [Bitcode](http://llvm.org/docs/BitCodeFormat.html) from Mach-O binaries.
+- [segment_dumper](https://github.com/AlexDenisov/segment_dumper) - source code from this article.
 
 **Happy hacking!**
 

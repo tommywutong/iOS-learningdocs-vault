@@ -311,17 +311,7 @@ If you look at Clang's version of the assembler code, it's almost exactly the sa
 
 - Clang, of course, names the string and selector references differently.
 - Clang moves the parameters around in a slightly different order; this has no effect on the execution of the code.
-- on the stack, only to ignore that value entirely in the function epilogue. What's actually happening is that Clang is aligning the stack to a 16-byte boundary, as required by both SSE instructions in particular and Cocoa in general. This leads to a total of 32 bytes (an even multiple of 16) on the stack for the function: The return address for
-
-  , saved
-
-  , saved
-
-  , and saved
-
-  . The requirement of stack alignment is sufficient to overcome the desire to save instructions; the code would be incorrect without that alignment, and probably crash the very next time
-
-  was called.
+- For no immediately apparent reason, Clang saves the value of `rax` on the stack, only to ignore that value entirely in the function epilogue. What's actually happening is that Clang is aligning the stack to a 16-byte boundary, as required by both SSE instructions in particular and Cocoa in general. This leads to a total of 32 bytes (an even multiple of 16) on the stack for the function: The return address for `main`, saved `rbp`, saved `rbx`, and saved `rax`. The requirement of stack alignment is sufficient to overcome the desire to save instructions; the code would be incorrect without that alignment, and probably crash the very next time `objc_msgSend` was called.
 
 Here, then, is the final version of the function as we've written it, including an aligned stack:
 
@@ -392,21 +382,7 @@ And here is the assembler Clang produces:
 The function is extremely simple:
 
 1. A standard prologue comes first.
-2. , the function operates directly on that register. The
-
-  instruction, in simple terms, adds two floating-point values ("add signed single-precision"). The constants in the code,
-
-  and
-
-  (subtracting
-
-  is the same as adding
-
-  ) are stored as data in the executable, since neither assembly language nor the actual machine code have a way to express floating-point immediate values. The values themselves are stored as IEEE-754 single-precision numbers. It just so happens that a floating-point return value is
-
-  stored in the first vector register, so by operating directly on
-
-  , the function has already done everything it needed to do.
+2. Then, since the ABI specifies that the first floating-point value is passed in the first vector register, `xmm0`, the function operates directly on that register. The `addss` instruction, in simple terms, adds two floating-point values ("add signed single-precision"). The constants in the code, `0.5` and `-0.3` (subtracting `0.3` is the same as adding `-0.3`) are stored as data in the executable, since neither assembly language nor the actual machine code have a way to express floating-point immediate values. The values themselves are stored as IEEE-754 single-precision numbers. It just so happens that a floating-point return value is _also_ stored in the first vector register, so by operating directly on `xmm0`, the function has already done everything it needed to do.
 3. Finally, a standard function epilogue.
 
 Wasn't that simple? It turns out that the only thing you have to do to use floating-point values is switch to the 128-bit vector registers and the SSE1 instruction set. The old `mmx` and `st(n)` registers, along with the x87 instruction set, are obsolete. They're also inefficient in comparison to SSE1 operations.
@@ -467,52 +443,16 @@ The `start` function consists of the following code:
 
 `start` doesn't work like a C function, since it isn't one. It's intended specifically to transition from a bare-bones executable state to one that C (and Objective-C) can work in. Even the function prologue is unusual.
 
-1. - Push a zero on the stack. This is used by the debugger as a marker for 'end of stack frames', replacing the
-
-  in a normal function's prologue.
-2. - Grab hold of the stack pointer, since the stack is actually used in this function.
-3. - Mask off the last four bits of the stack pointer. This aligns the initial stack to a 16-byte boundary, as SSE instructions and Cocoa in general require. It's probably an effective no-op, as the system will tend to give a properly aligned stack already, but the C runtime doesn't and can't make that assumption.
-4. - The 'kernel frame' the comment mentions above is what exists on the stack when
-
-  calls
-
-  . The first (topmost) value is the familiar
-
-  parameter to
-
-  . Putting it in
-
-  sets it up as the first argument for a function call.
-5. - The second value on the stack is
-
-  , so it's now a second function parameter.
-6. - Grab the low 4 bytes of
-
-  into
-
-  .
-7. - Add 1 to the copy of
-8. - Multiply the value by 8 (shifting left by 3 is equivalent).
-
-  now contains the entire size in bytes of the
-
-  array.
-9. - Add the address of
-
-  to the calculated size, yielding a pointer to the end of
-
-  . Why is this happening? On OS X, the little-used
-
-  array passed as a third parameter to
-
-  occupies the space in memory immediately following
-
-  . The third function parameter is now
-
-  .
-10. - Now copy
-
-  to the fourth function parameter.
+1. `pushq $0` - Push a zero on the stack. This is used by the debugger as a marker for 'end of stack frames', replacing the `pushq %rbp` in a normal function's prologue.
+2. `movq %rsp,%rbp` - Grab hold of the stack pointer, since the stack is actually used in this function.
+3. `andq $-16,%rsp` - Mask off the last four bits of the stack pointer. This aligns the initial stack to a 16-byte boundary, as SSE instructions and Cocoa in general require. It's probably an effective no-op, as the system will tend to give a properly aligned stack already, but the C runtime doesn't and can't make that assumption.
+4. `movq 8(%rbp),%rdi` - The 'kernel frame' the comment mentions above is what exists on the stack when `dyld` calls `start`. The first (topmost) value is the familiar `argc` parameter to `main`. Putting it in `rdi` sets it up as the first argument for a function call.
+5. `leaq 16(%rbp),%rsi` - The second value on the stack is `argv`, so it's now a second function parameter.
+6. `movl %edi,%edx` - Grab the low 4 bytes of `argc` into `rdx`.
+7. `addl $1,%edx` - Add 1 to the copy of `argc`
+8. `sall $3,%edx` - Multiply the value by 8 (shifting left by 3 is equivalent). `edx` now contains the entire size in bytes of the `argv` array.
+9. `addq %rsi,%rdx` - Add the address of `argv` to the calculated size, yielding a pointer to the end of `argv`. Why is this happening? On OS X, the little-used `envp` array passed as a third parameter to `main` occupies the space in memory immediately following `argv`. The third function parameter is now `envp`.
+10. `movq %rdx,%rcx` - Now copy `envp` to the fourth function parameter.
 11. ```
               jmp Lapple2
       Lapple: add $8,%rcx
@@ -521,31 +461,11 @@ The `start` function consists of the following code:
   ```
 
   These four lines constitute a simple loop which increases the value of `rcx` by 8 until the memory location it points to contains zero. In C terms, this would be `while (*((uint64_t *)rcx)++);`. The `jne` instruction means "jump if not equal", or equivalently, "jump if `ZF` is zero". `ZF` was set by the previous instruction, `cmp`, which says "set `rflags` based on the result of subtracting the two operands, discarding the result itself". This loop finds the end of the `NULL`-terminated `envp` array.
-12. - Skip to the next pointer after the end of
-
-  , which is
-
-  , the fourth argument to
-
-  , though it's little-known and even more little-used.
-13. - Finally, call
-
-  itself.
-14. - Load
-
-  's 4-byte return value as the first parameter to a function call.
-15. - Call the
-
-  function, passing it the value returned from
-
-  .
-
-  never returns, so no instructions following this one should ever be executed.
-16. - Just in case somehow execution gets here anyway, "halt" the CPU.
-
-  will cause a privilege violation exception if executed by non-kernel code, so it makes a fitting "you should not be here" epilogue. It's effectively the equivelant of "unreachable". On very old x86 processors, an application would call
-
-  to stop the CPU, but with all the other hardware in a modern computer that needs to be shut down properly, a single instruction is simply inadequate to the purpose. It wouldn't turn off the power, for example.
+12. `addq $8,%rcx` - Skip to the next pointer after the end of `envp`, which is `exec_path`, the fourth argument to `main`, though it's little-known and even more little-used.
+13. `callq _main` - Finally, call `main` itself.
+14. `movl %eax,%edi` - Load `main`'s 4-byte return value as the first parameter to a function call.
+15. `callq _exit` - Call the `exit(2)` function, passing it the value returned from `main`. `exit(2)` never returns, so no instructions following this one should ever be executed.
+16. `hlt` - Just in case somehow execution gets here anyway, "halt" the CPU. `hlt` will cause a privilege violation exception if executed by non-kernel code, so it makes a fitting "you should not be here" epilogue. It's effectively the equivelant of "unreachable". On very old x86 processors, an application would call `hlt` to stop the CPU, but with all the other hardware in a modern computer that needs to be shut down properly, a single instruction is simply inadequate to the purpose. It wouldn't turn off the power, for example.
 
 **Conclusion**  
 There's no need to look at the rest of the sample code's disassembly; there's nothing in it that I haven't already explored elsewhere. If you can't make sense of it on your own by now, I've probably done a poor job of explaining! Therefore, I hereby mark the end of part 2.
@@ -560,7 +480,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-12-23-disassembling-the-assembly-part-2.html)
 
 Add your thoughts, post a comment:
 

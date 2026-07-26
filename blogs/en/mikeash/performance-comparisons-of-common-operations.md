@@ -54,43 +54,35 @@ I put together a Cocoa program to compute timings of a bunch of different operat
 | Write 16MB file | 30 | 10.0 | 334185067.2 |
 | Write 16MB file (atomic) | 30 | 10.0 | 334293782.2 |
 
-All file operations use NSData. The APIs used by the rest are hopefully obvious.
-
-In general few of these results are surprising. However, some of them are still instructive.
-
-IMP cached messaging is the fastest. This is no shock: it's just a call through a C function pointer. C++ virtual dispatch is close behind, about 50% slower, which is to be expected since it just incurs one additional array lookup before calling through a C function pointer.
-
-Objective-C message sends are slower as one would think, but still very reasonable. At 5 nanoseconds each, this comes out to an average of just over 13 cycles per message send, which is fantastically fast.
-
-Malloc/free is considerably more expensive as expected. There is a good amount of bookkeeping which takes place there. However, at 53ns per allocation, this isn't something which must be slavishly avoided.
-
-NSInvocation is ridiculously slow, but once again it comes as no surprise. It has to do a lot more and the extra indirection it provides comes with a price, namely taking about 30 times longer than a straight message send.
-
-The creation and destruction of an NSObject is significantly more expensive than a malloc/free but still just peanuts in the grand scheme of things. NSAutoreleasePool takes little more time to create and destroy, but
-
-you already knew that
-
-.
-
-Allocating large chunks of memory is considerably more expensive than small chunks. This is because once you hit a certain threshold, every allocation goes straight to the kernel and you pay for that in the form of syscall overhead. Ten microseconds is still pretty fast but you might consider caching huge blocks of memory if you use a ton of them in a tight loop.
-
-As expected, anything which hits the disk is tremendously slow. The fastest one, a 16-byte file read which no doubt stayed entirely in RAM cache for the entire test, still took 20 microseconds per read on average.
-
-Delayed performs come in as surprisingly costly at 30 microseconds. Even so, this will support around 30,000 of them per second, hopefully you won't need anywhere near that many.
-
-Creating threads is slow, over 100 microseconds. There's a reason we have
-
-thread pools
-
-.
-
-The large memcpy works out to about 8GB/sec. I believe the Mac Pro has a theoretical max memory bandwidth of about 20GB/sec, but of course the memcpy hits the bus with the data in both directions, so I am willing to call this extremely impressive performance.
-
-Filling in the end of the table are all of the remaining file operations. We can see the cost of using the "atomic" flag for NSData writes; since the amount of data for a 16-byte file is trivial, the write can be thought of as a single operation and the atomic swap adds a second operation, which doubles the time needed for the write. As expected, the cost for "atomic" becomes basically invisible for large files. The large write test comes in at 48.7MB/s which is quite respectable. The large read test comes in at 550MB/s which is obviously a result of OS caching.
-
-A surprise entry near the end of the table is the process spawn test. At over 5 milliseconds per spawn, this is a very expensive operation. This is definitely not one for tight loops.
-
-Soundbite lessons to take away:
+All file operations use NSData. The APIs used by the rest are hopefully obvious.  
+  
+ In general few of these results are surprising. However, some of them are still instructive.  
+  
+ IMP cached messaging is the fastest. This is no shock: it's just a call through a C function pointer. C++ virtual dispatch is close behind, about 50% slower, which is to be expected since it just incurs one additional array lookup before calling through a C function pointer.  
+  
+ Objective-C message sends are slower as one would think, but still very reasonable. At 5 nanoseconds each, this comes out to an average of just over 13 cycles per message send, which is fantastically fast.  
+  
+ Malloc/free is considerably more expensive as expected. There is a good amount of bookkeeping which takes place there. However, at 53ns per allocation, this isn't something which must be slavishly avoided.  
+  
+ NSInvocation is ridiculously slow, but once again it comes as no surprise. It has to do a lot more and the extra indirection it provides comes with a price, namely taking about 30 times longer than a straight message send.  
+  
+ The creation and destruction of an NSObject is significantly more expensive than a malloc/free but still just peanuts in the grand scheme of things. NSAutoreleasePool takes little more time to create and destroy, but [you already knew that](http://www.mikeash.com/blog/pivot/entry.php?id=19).  
+  
+ Allocating large chunks of memory is considerably more expensive than small chunks. This is because once you hit a certain threshold, every allocation goes straight to the kernel and you pay for that in the form of syscall overhead. Ten microseconds is still pretty fast but you might consider caching huge blocks of memory if you use a ton of them in a tight loop.  
+  
+ As expected, anything which hits the disk is tremendously slow. The fastest one, a 16-byte file read which no doubt stayed entirely in RAM cache for the entire test, still took 20 microseconds per read on average.  
+  
+ Delayed performs come in as surprisingly costly at 30 microseconds. Even so, this will support around 30,000 of them per second, hopefully you won't need anywhere near that many.  
+  
+ Creating threads is slow, over 100 microseconds. There's a reason we have [thread pools](http://en.wikipedia.org/wiki/Thread_pool_pattern).  
+  
+ The large memcpy works out to about 8GB/sec. I believe the Mac Pro has a theoretical max memory bandwidth of about 20GB/sec, but of course the memcpy hits the bus with the data in both directions, so I am willing to call this extremely impressive performance.  
+  
+ Filling in the end of the table are all of the remaining file operations. We can see the cost of using the "atomic" flag for NSData writes; since the amount of data for a 16-byte file is trivial, the write can be thought of as a single operation and the atomic swap adds a second operation, which doubles the time needed for the write. As expected, the cost for "atomic" becomes basically invisible for large files. The large write test comes in at 48.7MB/s which is quite respectable. The large read test comes in at 550MB/s which is obviously a result of OS caching.  
+  
+ A surprise entry near the end of the table is the process spawn test. At over 5 milliseconds per spawn, this is a very expensive operation. This is definitely not one for tight loops.  
+  
+ Soundbite lessons to take away:
 
 - Don't fear ObjC messages, they're really quick.
 - Don't fear creating ObjC objects, even in pretty tight loops, it's fast.
@@ -108,7 +100,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/performance-comparisons-of-common-operations.html)
 
 Add your thoughts, post a comment:
 

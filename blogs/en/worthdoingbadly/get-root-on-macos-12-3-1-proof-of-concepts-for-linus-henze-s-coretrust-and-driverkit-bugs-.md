@@ -7,7 +7,7 @@ original_language: en
 published: 2022-07-02
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:28c1882fee2ebc34'
 translated: false
 ---
@@ -98,11 +98,7 @@ You could use the CoreTrust bug on its own to re-sign your semi-untethered iOS 1
 
 - you can already bypass the weekly expiry with an enterprise certificate.
 - again, you need to be jailbroken to install the fakesigned app in the first place.
-- released
-
-  a Taurine build that uses the CoreTrust bug to avoid expiring every 7 days… but it only works on arm64 devices. On arm64e devices, it fails with an
-
-  error.
+- (EDIT 2022-07-02): the Taurine developers have [released](https://www.reddit.com/r/jailbreak/comments/vpuppq/free_release_taurinepermanent_relatively/) a Taurine build that uses the CoreTrust bug to avoid expiring every 7 days… but it only works on arm64 devices. On arm64e devices, it fails with an `ERR_JAILBREAK` error.
 
 ### For DriverKit:
 
@@ -122,14 +118,8 @@ For years, macOS allowed any root certicate when checking code signatures, makin
 
 iOS 12 / macOS Mojave introduced [CoreTrust](https://research.dynastic.co/2019/01/31/coretrust-overview), a new code signature verification framework that runs in the kernel before the traditional `amfid` verification in userspace.
 
-- for verification via userspace
-
-  /
-
-  `Security.framework`
-
-  .
-- the amfid verification, speeding up app launches by avoiding a trip into userspace:
+- For developer-signed apps, CoreTrust acts as an additional line of defense, verifying that code signatures are correctly formed before passing it to `amfid` for verification via userspace `libmis.dylib` / [`Security.framework`](https://github.com/apple-oss-distributions/Security/blob/67353d4e01e66f254b4c9ceb24b959ecf7586e82/trust/headers/SecPolicyPriv.h#L604).
+- on macOS Big Sur / iOS 14 and later, for App Store/Platform apps, CoreTrust _replaces_ the amfid verification, speeding up app launches by avoiding a trip into userspace:
 
 ```
 kernel	AMFI: vnode_check_signature called with platform 2
@@ -147,11 +137,15 @@ AMFI calls CoreTrust via [`CTEvaluateAMFICodeSignatureCMS`](https://github.com/a
 The actual signature check occurs in `X509ChainCheckPathWithOptions`: in pseudocode, it does:
 
 - [policy_flags](https://github.com/apple-oss-distributions/xnu/blob/e7776783b89a353188416a9a346c6cdb4928faad/EXTERNAL_HEADERS/coretrust/CTEvaluate.h#L174) = `0xffffffffffffffff`
--   - to validate that this certificate is signed by the next certificate in the chain
+- for each certificate in chain:
+
+    - call `X509CertificateCheckSignature` to validate that this certificate is signed by the next certificate in the chain
     - `policy_flags = policy_flags & certificate->policy_flags`
     - if this certificate is signed by itself, then it’s the root certificate
--   - if the number of certs in the chain is wrong, return error
-    - ):
+- if we have verification options:
+
+    - if the number of certs in the chain is wrong, return error
+    - if we have a custom root certificate (from `CTEvaluateAMFICodeSignatureCMSPubKey`):
 
           - if the root doesn’t match the specified root certificate, return error
 - return success with the final policy flags (an AND of all the certificates’ policy flags).
@@ -216,7 +210,7 @@ We generate our certificates using OpenSSL 3.0.3 from Homebrew. (macOS’s built
 
 I used [this script](https://github.com/zhuowei/CoreTrustDemo/blob/main/badcert/makecerts.sh) to:
 
-- extension
+- generate a chain of three certificates, all with the `CTOidAppleMacPlatform` extension
 - package the certificates and the leaf certificate’s private key into a .p12 file
 
 If you don’t want to generate your own, you can get my certificate and private key [here](https://github.com/zhuowei/CoreTrustDemo/blob/main/badcert/dev_certificate.p12), so you can re-enact [xkcd/1553](https://xkcd.com/1553/).
@@ -386,52 +380,36 @@ Then we reboot into 1TR recovery, disable SIP, and use `kmutil configure-boot` t
 
 Finally, we:
 
-- our DriverKit extension
-
-  and accompanying app
-
-  without signing
+- build [our DriverKit extension](https://github.com/zhuowei/PCICrash) and accompanying app [without signing](https://stackoverflow.com/a/54296008)
 - manually sign it
-- (if developer mode is disabled)
+- copy it to `/Applications` (if developer mode is disabled)
 - launch app: `/Applications/PCICrashApp.app/Contents/MacOS/PCICrashApp`
 - go to System Preferences and allow the Driver Extension to load
-- to tell our DriverKit to make the
-
-  call
+- run `./pcicrash_userclient 1235` to tell our DriverKit to make the `_MemoryAccess` call
 
 With this, we get a panic.
 
 ## What I still don’t know
 
-- ’s signature check
+- How Fugu15 bypasses `installd`’s signature check
 - How Fugu15 figures out the base address of the PCI mapping to turn virtual memory out-of-bounds access into kernel read/write
 - How Fugu15 exploits a PCI/Thunderbolt/USB4 bug on an iPhone without Thunderbolt/USB4
 - How the other two Fugu15 bugs (PAC bypass, PPL bypass) work
 
 ## Thanks
 
-- Linus Henze
-
-  for finding and reporting these issues responsibly, keeping macOS users safe, and best of all, meticulously documenting research in writeups. I can’t wait to read the Fugu15 writeup.
-- @Fame_G_Monster
-
-  for pointing out the CoreTrust App Store fast path
-- much to
-
-  @littlelailo
-
-  for
-
-  teaching me
-
-  , guiding me through how these bugs worked, and for responding to all my questions with great answers and suggestions.
+- [Linus Henze](https://twitter.com/LinusHenze) for finding and reporting these issues responsibly, keeping macOS users safe, and best of all, meticulously documenting research in writeups. I can’t wait to read the Fugu15 writeup.
+- [@Fame_G_Monster](https://twitter.com/Fame_G_Monster/status/1528904583581274112) for pointing out the CoreTrust App Store fast path
+- and most importantly, thank you so, _so_ much to [@littlelailo](https://twitter.com/littlelailo) for [teaching me](https://twitter.com/littlelailo/status/1527563427455066113), guiding me through how these bugs worked, and for responding to all my questions with great answers and suggestions.
 
 ## What I learned
 
-- and with
+- How to extract codesigning certificates with `codesign` and with `Security.framework`
 - How to create X.509 certificates with extensions using OpenSSL
 - How CoreTrust’s fast path works
 - How to create a simple DeviceKit driver
 - How to disable a kext driver on Apple Silicon
-- disable signing in Xcode
+- How to [disable signing in Xcode](https://stackoverflow.com/a/54296008)
 - You can keep SIP enabled with a custom kernel collection
+
+[https://worthdoingbadly.com/coretrust/](https://worthdoingbadly.com/coretrust/)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f1951dd3ae508b2b'
 translated: false
 ---
@@ -24,12 +24,10 @@ translated: false
 
 Yesterday, I was trying to explain `git add` and `git commit` to someone, and hit upon these very clear ways (IMHO) of explaining them:
 
-- adds changes to the next commit
-- saves any
+- `git add` adds changes to the next commit
+- `git commit` saves any `add`ed changes to the (local) repository
 
-  ed changes to the (local) repository
-
-Why is this particularly clear? It eliminates any notion of “tracked files”.[1](#fn:hunks) You use `add` whenever you want to record changes in your version history, whether files are new or not.more
+Why is this particularly clear? It eliminates any notion of “tracked files”.^[1](#fn:hunks) You use `add` whenever you want to record changes in your version history, whether files are new or not.
 
 For people who prefer the classical workflow of “commit every modification to a tracked file”, there’s `git commit -a`. I used to think of `-a` as “all”, but now I think of it as “add”. I’ve shot myself in the foot a couple of times with this classic style (committing a file that’s not part of the current logical change), so I’ve mostly given it up when working in a Git/Mercurial repo. (Not that I haven’t left a file out of a change using the two-stage commit.)
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5f0d3a6a44ac303b'
 translated: false
 ---
@@ -20,27 +20,7 @@ Objective-C remains an impediment for many programmers coming to the Mac or iPho
 
 Most compiled, object-oriented languages (like C++, Java and C♯) adhere closely to the object-oriented approaches first introduced in [Simula 67](http://en.wikipedia.org/wiki/Simula) — in particular the concept of [virtual methods](http://en.wikipedia.org/wiki/Virtual_function) and how they enable methods to be overridden.
 
-> In much the same way that Objective-C is often called a "pure superset" of C, Simula 67 was a "pure superset" of
-> 
-> Algol 60
-> 
-> . While
-> 
-> Fortran
-> 
-> is sometimes remembered as the first high-level language to gain popularity (and disdain), Algol 60 was the first programming language to actually resemble a modern language as it contained the
-> 
-> ,
-> 
-> /
-> 
-> ,
-> 
-> (of sorts), and other procedural contructs that are expected now in programming languages. While Algol was rarely used past the 1970's,
-> 
-> Pascal
-> 
-> and its descendants closely resemble Algol in syntax.
+> **Origins in Algol:** In much the same way that Objective-C is often called a "pure superset" of C, Simula 67 was a "pure superset" of [Algol 60](http://en.wikipedia.org/wiki/ALGOL). While [Fortran](http://en.wikipedia.org/wiki/Fortran) is sometimes remembered as the first high-level language to gain popularity (and disdain), Algol 60 was the first programming language to actually resemble a modern language as it contained the `for`, `if`/`else`, `while` (of sorts), and other procedural contructs that are expected now in programming languages. While Algol was rarely used past the 1970's, [Pascal](http://en.wikipedia.org/wiki/Pascal_(programming_language)) and its descendants closely resemble Algol in syntax.
 
 In a compiled language, a [regular function](http://en.wikipedia.org/wiki/Subroutine) (non-overrideable) ends up as a basic memory address. When the function is invoked, the CPU jumps to the memory address.
 
@@ -52,19 +32,7 @@ Since different objects have different classes, they will have different address
 
 While virtual method tables do introduce a level of indirection that allows method behavior to change from object to object, the offsets into the table and hence the tables themselves all need to be created at compile-time.
 
-> As with object-orientation itself, message passing was inspired by Simula 67 but Simula's message passing (called "Simulation") wasn't for method invocations — it was instead used for discrete event simulation (mostly queueing and list processing).
-> 
-> Smalltalk
-> 
-> expanded upon this idea by using message passing for method invocation. Smalltalk subsequently inspired the
-> 
-> Actor Model
-> 
-> (used in distributed processing) and
-> 
-> remote procedure calls
-> 
-> (RPC). Originally, Smalltalk messages were conceived to have a large amount of metadata (more like the full headers on an email) but eventually, this was simplified down to an approach syntactically similar to Objective-C's current implementation (minus square brackets).
+> **History of message passing:** As with object-orientation itself, message passing was inspired by Simula 67 but Simula's message passing (called "Simulation") wasn't for method invocations — it was instead used for discrete event simulation (mostly queueing and list processing). [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk) expanded upon this idea by using message passing for method invocation. Smalltalk subsequently inspired the [Actor Model](http://en.wikipedia.org/wiki/Actor_model) (used in distributed processing) and [remote procedure calls](http://en.wikipedia.org/wiki/Remote_procedure_call) (RPC). Originally, Smalltalk messages were conceived to have a large amount of metadata (more like the full headers on an email) but eventually, this was simplified down to an approach syntactically similar to Objective-C's current implementation (minus square brackets).
 
 [Message passing](http://en.wikipedia.org/wiki/Message_passing) presents an alternative way of solving the [method dispatch problem](http://en.wikipedia.org/wiki/Dynamic_dispatch). Instead of the virtual method's compile-time offsets and tables which don't consult the object (except for its type), message passing sends a unique message identifier to the object itself and the object determines at runtime what action to take.
 
@@ -88,16 +56,10 @@ The biggest reason for this is that you can add or change methods on existing ob
 
 This makes the following situations possible:
 
-- Safely fetching an NSManagedObject by URI
-
-  ).
-- Key-Value Observing is implemented in Cocoa
-
-  ).
+- You want to add a convenience method to someone else's object (a quick search of my own posts reveals that about a dozens of my own posts involve adding convenience methods to Cocoa classes, e.g. [Safely fetching an NSManagedObject by URI](https://www.cocoawithlove.com/2008/08/safely-fetching-nsmanagedobject-by-uri.html)).
+- You want to change the behavior of a class you didn't (and can't) allocate because it is created by someone else (this is how [Key-Value Observing is implemented in Cocoa](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/KeyValueObserving/Concepts/KVOImplementation.html)).
 - You want to treat objects generically and handle potential differences with runtime introspection.
-- NSProxy
-
-  to turn a regular object into a distributed object).
+- You want to substitute an object of a completely different class to the expected class (this is used in Cocoa by [NSProxy](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/Foundation/Classes/NSProxy_Class/Reference/Reference.html) to turn a regular object into a distributed object).
 
 These points may seem somewhat mild but they are central to maximizing code reuse when working within someone else's framework: if you need existing code to work differently, you don't need to reimplement the whole class and you don't need to change how it is allocated.
 

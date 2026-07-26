@@ -23,11 +23,9 @@ NSOpenGLContext and one-shot
 
 by [Mike Ash](https://www.mikeash.com/)
 
-The "secret" is to turn off the "One shot" checkbox for your window in Interface Builder. This setting basically destroys your window while it's hidden, including while it's miniaturized to the Dock. Destroying the window breaks the link between your context and the window, resulting in it blanking out as it flies toward the Dock. Disabling this checkbox makes sure the window always sticking around, so that your OpenGL content looks indistinguishable from the rest.
-
-I discovered this in this mailing list post:
-
-http://lists.apple.com/archives/mac-opengl/2003/Apr/msg00132.html
+The "secret" is to turn off the "One shot" checkbox for your window in Interface Builder. This setting basically destroys your window while it's hidden, including while it's miniaturized to the Dock. Destroying the window breaks the link between your context and the window, resulting in it blanking out as it flies toward the Dock. Disabling this checkbox makes sure the window always sticking around, so that your OpenGL content looks indistinguishable from the rest.  
+  
+ I discovered this in this mailing list post: [http://lists.apple.com/archives/mac-opengl/2003/Apr/msg00132.html](http://lists.apple.com/archives/mac-opengl/2003/Apr/msg00132.html)
 
 **No comments:**
 

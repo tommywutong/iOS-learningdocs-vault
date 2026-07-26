@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5999b254fa29b435'
 translated: false
 ---
@@ -56,15 +56,21 @@ In fact, there is no mention anywhere in the iOS documentation that I could find
 
 All we can do is examine the behaviors experimentally. The following are the behaviors I've noticed in iOS 4.3 when switching video into the background.
 
+**Any file that contains a video track of any sort will be paused if the application switches into the background.**
+
 This pause is sent from the `CALayer` displaying the video frames. This is a private class for an `MPMoviePlayerController` and is your own `AVPlayerLayer` for an `AVPlayer`.
 
 You can't really control this — even in the situation where it's your own `AVPlayerLayer` — the pause is sent from private methods (so you can't legally override them), during a private "UIApplicationDidSuspendNotification" (so you can't legally block or intercept this). This notification occurs between the `UIApplicationWillResignActiveNotification` and the `UIApplicationDidEnterBackgroundNotification`.
 
 Nor can you simply disconnect the `AVPlayerLayer` of an `AVPlayer` to avoid the pause being sent — this actually leads to a crash if the file is still playing for reasons that are not explained and could be either a bug in iOS or expected behavior (it's not at all clear).
 
+**If you attempt to start a file playing video in the background it will fail with an error**
+
 While a video file started in the foreground will simply pause, a video file started in the background will actually give an error abort playback entirely.
 
 This can even occur for a file that was pausing on entering the background but which you attempt to resume.
+
+**If you attempt to play a file _without_ video but the previous file contained video, the new file will also fail in many cases**
 
 The video system in iOS has a degree of latency between commands you request and actual changes in playback.
 
@@ -73,6 +79,8 @@ My guess (again, none of this is explained in the documentation) is that this la
 This seems to create a situation where if you cancel the playback of a file and immediately start a new file, some of the properties of the old file will remain for a time.
 
 In the case of playing an audio-only file immediately after a video file, this latency appears to be long enough for the audio-only file to be rejected with an error as though it was a file with video.
+
+**Even a file with the video tracks disabled will still fail**
 
 If you're using an `AVPlayer` or `AVQueuePlayer`, you can disable all the video tracks any time after the `AVPlayerItemStatusReadyToPlay` notification is sent using the following code:
 
@@ -165,11 +173,7 @@ The fix is pretty simple: when we receive `UIApplicationWillResignActiveNotifica
 
 Unfortunately, I didn't realize until the last moment on an update that the `AVPlayerLayer` had also started pausing audio-only files, not just files with video. To me, this seems like a significant change in behavior; why should an audio-only file suddenly start getting paused when the application enters the background? It's not my fault but I need to fix it anyway — unfortuntely due to the slowness in realizing this problem, this separate fix for audio-only files in StreamToMe (files with neither video nor album artwork in a video track) had to be held over until the 3.5.4 update.
 
-> iOS 4.3 actually broke background video for Apple's apps too. While Apple's apps (iPod, Movies, Safari, YouTube) have always paused the current video when switching into the background, you used to be able to resume the video from the multitasking bar, lock screen or headphones.
-> 
-> From iOS 4.3, this behavior has been blocked
-> 
-> ; the video may play for a fraction of a second but then will immediately stop again.
+> **More than StreamToMe was affected:** iOS 4.3 actually broke background video for Apple's apps too. While Apple's apps (iPod, Movies, Safari, YouTube) have always paused the current video when switching into the background, you used to be able to resume the video from the multitasking bar, lock screen or headphones. [From iOS 4.3, this behavior has been blocked](http://www.google.com.au/search?hl=en&safe=off&client=safari&rls=en&q=+site:apple.com+playing+video+background+ios+4.3&sa=X&ei=QZmuTb7iI4SnrAe61oiXCg&ved=0CAIQqAQwAg); the video may play for a fraction of a second but then will immediately stop again.
 
 ### 3G and slow WiFi affecting background audio?
 

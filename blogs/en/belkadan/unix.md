@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9915e48e61442c08'
 translated: false
 ---
@@ -52,31 +52,23 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Mac OS X](htt
 
 ## Older Posts
 
-1. 2011-07-14
-
-  Priorities
-2. 2009-06-21
-
-  Z shell
-3. 2008-08-28
-
-  HTTPS and Name-based Virtual Hosting
-4. 2007-07-15
-
-  Port 25 Blocked?
+1. 2011-07-14[Priorities](https://belkadan.com/blog/2011/07/Priorities/?tag=unix)
+2. 2009-06-21[Z shell](https://belkadan.com/blog/2009/06/Z-shell/?tag=unix)
+3. 2008-08-28[HTTPS and Name-based Virtual Hosting](https://belkadan.com/blog/2008/08/HTTPS-and-Name-based-Virtual-Hosting/?tag=unix)
+4. 2007-07-15[Port 25 Blocked?](https://belkadan.com/blog/2007/07/Port-25-Blocked/?tag=unix)
 
 ### Possibly Related Tags
 
-- Apache
-- Apple
-- Book
-- Filesystems
-- Humor
-- Keystone
-- Mac OS X
-- Shell
-- Social media import
-- Time Machine
-- User experience
-- Webmailer
-- Windows
+- [Apache](https://belkadan.com/blog/tags/apache)
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [Book](https://belkadan.com/blog/tags/book)
+- [Filesystems](https://belkadan.com/blog/tags/filesystems)
+- [Humor](https://belkadan.com/blog/tags/humor)
+- [Keystone](https://belkadan.com/blog/tags/keystone)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Shell](https://belkadan.com/blog/tags/shell)
+- [Social media import](https://belkadan.com/blog/tags/social-media-import)
+- [Time Machine](https://belkadan.com/blog/tags/time-machine)
+- [User experience](https://belkadan.com/blog/tags/user-experience)
+- [Webmailer](https://belkadan.com/blog/tags/webmailer)
+- [Windows](https://belkadan.com/blog/tags/windows)

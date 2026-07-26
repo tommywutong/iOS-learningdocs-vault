@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ed9e107d57090116'
 translated: false
 ---
@@ -68,8 +68,8 @@ In summary, protocols are more flexible and easier to intermix. They are also be
 
 With protocols being so flexible and capable, we should limit subclassing to when one class:
 
-1. of a base class’s behavior, AND,
-2. of a base class’s data layout
+1. wants to share _most_ of a base class’s behavior, AND,
+2. wants to incorporate _all_ of a base class’s data layout
 
 ## The weirdest subclass I’ve ever written
 
@@ -81,12 +81,8 @@ These two classes share a single function interface, with no common implementati
 
 Revisiting the two bullet points from the previous section:
 
-1. does not want to share
-
-  of the base class’s behavior
-2. doesn’t need
-
-  of the base class’s data layout
+1. `SignalMulti` does not want to share _ANY_ of the base class’s behavior
+2. `SignalMulti` doesn’t need _any_ of the base class’s data layout
 
 Despite this, I still implemented `SignalMulti` as a subclass of `Signal`, in violation of every common guideline about interfaces in Swift.
 
@@ -164,8 +160,8 @@ Protocol oriented programming is good – watch the “[Protocol Oriented Progra
 
 I initially gave the following bullet points and claimed that you should favor a subclass over a protocol only if both of the following two points are true for the subclass:
 
-1. of a base class’s behavior, AND,
-2. of a base class’s data layout
+1. the subclass wants to share _most_ of a base class’s behavior, AND,
+2. the subclass wants to incorporate _all_ of a base class’s data layout
 
 The reality is that these bullet points don’t cover the whole range of considerations.
 

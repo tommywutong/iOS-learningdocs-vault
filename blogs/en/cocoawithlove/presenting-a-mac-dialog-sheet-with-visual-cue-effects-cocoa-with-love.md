@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7232ad2fec62ecd0'
 translated: false
 ---
@@ -28,9 +28,7 @@ Of course, this is not a good thing to do frequently. Forcing the user to shift 
 
 ## The sample application
 
-> PresentSheetWithEffect.zip
-> 
-> (190kB)
+> Download the Xcode project for this post: [PresentSheetWithEffect.zip](https://www.cocoawithlove.com/assets/objc-era/PresentSheetWithEffect.zip) (190kB)
 
 The sample application shows the following window:
 
@@ -121,9 +119,7 @@ The following method applies the filters and presents the sheet. The filters wil
 
 ## The rest of the sample application
 
-> PresentSheetWithEffect.zip
-> 
-> (190kB)
+> Download the Xcode project for this post: [PresentSheetWithEffect.zip](https://www.cocoawithlove.com/assets/objc-era/PresentSheetWithEffect.zip) (190kB)
 
 The sample application also shows the expected usage: a separate subview controller controls the subview but invokes the window controller to actually present the sheet.
 

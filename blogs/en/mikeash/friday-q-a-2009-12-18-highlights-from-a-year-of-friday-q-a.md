@@ -47,7 +47,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-12-18-highlights-from-a-year-of-friday-qa.html)
 
 Add your thoughts, post a comment:
 

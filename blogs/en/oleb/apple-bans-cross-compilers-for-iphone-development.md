@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7827acfba8ac0833'
 translated: false
 ---
@@ -26,6 +26,6 @@ John Gruber was the first to notice that [Apple has apparently updated a crucial
 
 I disagree. And not because I think that a [Flash-to-iPhone cross-compiler](http://labs.adobe.com/technologies/flashcs5/appsfor_iphone/) or [MonoTouch](http://monotouch.net/) is great to have (I really couldn’t care less), but because of other languages and environments the iPhone platform could profit from in the future. For example, I’d love to use Ruby both for iPhone development and even more as a dynamic language _on_ the iPhone. [To say it with David Heinemeier Hansson](https://twitter.com/dhh/status/11863765125):
 
-![Being an asshole just because you can is not a sign of strength but of weakness. (re: Apple's new restriction on programming languages)](https://oleb.net/media/dhh-tweet-apple-iphone-developer-agreement.png)
+[![Being an asshole just because you can is not a sign of strength but of weakness. (re: Apple's new restriction on programming languages)](https://oleb.net/media/dhh-tweet-apple-iphone-developer-agreement.png)](https://oleb.net/media/dhh-tweet-apple-iphone-developer-agreement.png)
 
 <sub>Being an asshole just because you can is not a sign of strength but of weakness. (re: Apple's new restriction on programming languages).</sub>

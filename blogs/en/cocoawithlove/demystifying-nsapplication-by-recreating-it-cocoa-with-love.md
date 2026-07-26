@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1716e0e9cbe5de58'
 translated: false
 ---
@@ -33,7 +33,9 @@ Somehow, this one line of code is enough to create a menubar, put a window onscr
 
 Scattered throughout the Cocoa documentation are hints about what must happen in `NSApplicationMain`:
 
--   - The name of the "MainMenu" NIB file to load automatically on startup
+- Read from the "Info.plist" file to determine:
+
+    - The name of the "MainMenu" NIB file to load automatically on startup
     - The name of the application's principal class (the class of the application object)
 - Construct the application object
 - Load the "MainMenu" NIB file
@@ -60,13 +62,7 @@ The `infoDictionary` method returns the "Info.plist" for a bundle (in this case,
 
 Since the application is a singleton, we construct it by calling the `sharedApplication` method on the class. If we try to construct the object using standard `alloc` and `init` calls, the `NSApp` singleton instance won't be set correctly and an exception will be thrown at a later point when a second application is created.
 
-> my earlier post about singletons
-> 
-> or visit Apple's page on
-> 
-> Creating a Singleton Instance
-> 
-> .
+> For more information on singletons, you can see [my earlier post about singletons](https://www.cocoawithlove.com/2008/11/singletons-appdelegates-and-top-level.html) or visit Apple's page on [Creating a Singleton Instance](http://developer.apple.com/documentation/Cocoa/Conceptual/CocoaFundamentals/CocoaObjects/chapter_3_section_10.html).
 
 ### Load the contents of the MainMenu NIB file
 
@@ -81,13 +77,13 @@ NSNib *mainNib =
 
 I briefly considered implementing the `NSNib` code too, to show how that works for loading objects in a NIB file, but since the format of a NIB file is not publicly declared, it wasn't possible. Suffice it to say that the `instantiateNibWithOwner:topLevelObjects` method performs the following steps:
 
--   - (used for
+- Allocates all the objects in the NIB file and initializes them with one of the following methods:
 
-      objects)
-    - (used for most other objects in the Interface Builder library)
-    - (used for all other objects)
-- pointers on objects as specified in the NIB file and establishes all bindings
-- on all objects that implement this method
+    - `initWithFrame:` (used for `NSView` objects)
+    - `initWithCoder:` (used for most other objects in the Interface Builder library)
+    - `init` (used for all other objects)
+- Sets the `IBOutlet` pointers on objects as specified in the NIB file and establishes all bindings
+- Invokes `awakeFromNib` on all objects that implement this method
 
 ### Start the run loop
 
@@ -156,9 +152,7 @@ The specific function of `finishLaunching` method is a bit of a mystery. All I k
 
 ## Conclusion
 
-> RecreatingNSApplication.zip
-> 
-> (60kB)
+> You can download an implementation of the default Cocoa Application Xcode 3.1 project that uses this code: [RecreatingNSApplication.zip](https://www.cocoawithlove.com/assets/objc-era/RecreatingNSApplication.zip) (60kB)
 
 This recreation of `NSApplicationMain` and `NSApplication`'s `run` does not do everything that the real implementations do (I've deliberately kept it simple for clarity) but I think it shows that the key steps involved are straightforward and easy to understand.
 

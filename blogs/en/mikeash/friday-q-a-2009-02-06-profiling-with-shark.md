@@ -113,11 +113,7 @@ Opinions may differ, but mine is solid: Shark is the _only_ tool to even conside
     }
 ```
 
-I've also made a whole package available for today's post, including this source code, the source code for the changes that I'll be making throughout the article, Shark traces for each one, and precompiled x86 binaries for each one. You should download it and follow along.
-
-Download it here
-
-.
+I've also made a whole package available for today's post, including this source code, the source code for the changes that I'll be making throughout the article, Shark traces for each one, and precompiled x86 binaries for each one. You should download it and follow along. [Download it here](https://www.mikeash.com/pyblog/friday-qna-dictfind.zip).
 
 There are a lot of pretty obvious speed problems here, but it's meant to illustrate the usage of Shark, not be a perfect real-world example.
 
@@ -180,7 +176,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-02-06-profiling-with-shark.html)
 
 Add your thoughts, post a comment:
 

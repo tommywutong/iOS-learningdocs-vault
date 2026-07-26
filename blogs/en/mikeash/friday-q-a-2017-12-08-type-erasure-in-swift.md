@@ -277,7 +277,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-12-08-type-erasure-in-swift.html)
 
 Add your thoughts, post a comment:
 

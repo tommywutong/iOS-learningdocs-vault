@@ -7,7 +7,7 @@ original_language: en
 published: 2019-06-15
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:469b1cf1237b65b2'
 translated: false
 ---
@@ -31,14 +31,10 @@ It’s a declarative framework - you just create some structs telling the framew
 It’s similar in concept to React:
 
 - Both SwiftUI and React allows developers to create UIs using functional programming techniques, without worrying about managing state
--   - React adds JSX to JavaScript
-    - function builders
+- Both SwiftUI and React extends their host language to make creating UIs easier:
 
-      and
-
-      property decorators
-
-      .
+    - React adds JSX to JavaScript
+    - SwiftUI adds two new syntax features to Swift: [function builders](https://github.com/apple/swift-evolution/pull/1046) and [property decorators](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md).
 
 # What did I build?
 
@@ -48,21 +44,13 @@ My goals were:
 
 - Understand how SwiftUI uses its new syntax features
 - Understand how SwiftUI leverages the Swift type system
-- SwiftUI tutorial sample app
-
-  ’s first page to HTML
+- Render the [SwiftUI tutorial sample app](https://developer.apple.com/tutorials/swiftui/handling-user-input)’s first page to HTML
 - before WWDC ends ;)
 
 I intentionally avoided many features to make that deadline: my library is:
 
-- - for that, look at
-
-  @MaxDesiatov’s Tokamak
-
-  .
-- @dokun1’s Vaux
-
-  .
+- **Not intended to be a full SwiftUI compatible framework** - for that, look at [@MaxDesiatov’s Tokamak](https://twitter.com/maxdesiatov/status/1135627087790911489).
+- Not intended as an HTML template library - for that, use [@dokun1’s Vaux](https://github.com/dokun1/Vaux).
 - Not implementing the styling features in SwiftUI
 - Not supporting data binding or interactivity - SwiftUI uses a complex render graph to keep track of state for each UI element; there’s no way I could reimplement that in a week.
 
@@ -137,19 +125,19 @@ I tried many approaches:
 
 - generic functions with type constraints: doesn’t work because no dynamic dispatching
 - adding a function to the View protocol and overriding it in each inheriting struct: again, structs, unlike classes, doesn’t have dynamic dispatching, so overrides won’t work
-- .
+- using Mirror to access values via reflection: doesn’t work on computed properties, like `body`.
 
 Finally, after reading many articles about type erasure, I figured out the secret sauce:
 
--   - struct above implements
+- Have each of my structs inherit from a unique access protocol.
 
-      .
-- method
--   - check if the input implements the access protocol
+    - for example, the `Text` struct above implements `MarinaTextAccess`.
+- the protocol would include a `getContent() -> Any` method
+- In my render method, I simply:
 
-      . This is possible because the access protocol has no associated types.
+    - [check if the input implements the access protocol](https://github.com/zhuowei/marina/blob/master/marina_html.swift#L46). This is possible because the access protocol has no associated types.
     - if it matches, cast it to the access protocol, and call getContent.
-    - value.
+    - getContent then returns the content of the view as a type-erased `Any` value.
 
 This avoids problems with associated types. However, it does mean that all my views are passed in as Any: I would love to learn what’s the proper typesafe way to handle this.
 
@@ -183,11 +171,15 @@ This reminds me of C++ templates. The C++ Standard Template Library uses templat
 
 From this, I realized that most programming language designs takes one of two approaches:
 
--   - but app developers don’t gain the skill required to peek behind the curtain and understand/write libraries
+- Give library developers massive power to build abstractions that make app code very simple
+
+    - but app developers don’t gain the skill required to peek behind the curtain and understand/write libraries
 
 or:
 
--   - making application code more verbose, but allowing anyone to understand libraries
+- Design a simple language for both libraries and applications
+
+    - making application code more verbose, but allowing anyone to understand libraries
 
 C++, of course, belongs to the first camp, while Java takes the second approach:
 
@@ -208,14 +200,14 @@ I really like that both Swift and Go took advantage of the upsides of their pred
 
 # How you can help
 
-- @zhuowei
-
-  .
+- Are there any suggestions on how I can improve the rendering code to be more type safe? Let me know [@zhuowei](https://twitter.com/zhuowei).
 
 # Other links you might enjoy
 
-- Swift Evolution pull request for function builders
-- Swift pull request with function builder samples
-- Swift Evolution pull request for property delegates
-- SwiftRocks’s article on SwiftUI’s tricks
-- kateinoigakukun’s article on how SwiftUI uses ABI stability for its magic
+- [Swift Evolution pull request for function builders](https://github.com/apple/swift-evolution/pull/1046)
+- [Swift pull request with function builder samples](https://github.com/apple/swift/pull/25221)
+- [Swift Evolution pull request for property delegates](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md)
+- [SwiftRocks’s article on SwiftUI’s tricks](https://swiftrocks.com/inside-swiftui-compiler-magic.html)
+- [kateinoigakukun’s article on how SwiftUI uses ABI stability for its magic](https://kateinoigakukun.hatenablog.com/entry/2019/06/09/081831)
+
+[https://worthdoingbadly.com/swiftui-html/](https://worthdoingbadly.com/swiftui-html/)

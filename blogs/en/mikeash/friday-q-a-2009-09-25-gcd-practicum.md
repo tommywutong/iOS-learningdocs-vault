@@ -79,21 +79,7 @@ by [Mike Ash](https://www.mikeash.com/)
     }
 ```
 
-For the full listing including all of the auxiliary functions, please
-
-refer to the companion source code download
-
-. This program is
-
-. The important parts are all here, though.
-
-and
-
-are just simple timing functions using
-
-.
-
-uses Cocoa to load the data into an image, shrink it proportionally to be no larger than 320x320, and then encodes the result as JPEG.
+For the full listing including all of the auxiliary functions, please [refer to the companion source code download](https://www.mikeash.com/pyblog/imagegcd.zip). This program is `imagegcd1.m`. The important parts are all here, though. `Start` and `End` are just simple timing functions using `gettimeofday`. `ThumbnailDataForData` uses Cocoa to load the data into an image, shrink it proportionally to be no larger than 320x320, and then encodes the result as JPEG.
 
 **Naïve Parallelization**  
  At first glance this looks pretty easy to parallelize. Each iteration through the loop can be pushed onto a GCD global queue. We can wait for them all to finish at the end by using a dispatch group. One last trick: to ensure that each iteration still gets a unique number for its filename, we'll use `OSAtomicIncrement32` to atomically increment `count`. This is what the new code looks like:
@@ -127,9 +113,7 @@ uses Cocoa to load the data into an image, shrink it proportionally to be no lar
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
 ```
 
-This one is
-
-. But
+This one is `imagegcd2.m`. But _don't run it!_
 
 If you ignored my warning and ran it anyway, you're probably just reloading this page after rebooting your computer. If you haven't run it, what happens (if you have a lot of pictures, at least) is that your computer locks up and you probably can't fix it unless you wait much longer than you'd really like to.
 
@@ -191,9 +175,7 @@ Here's the main loop of our program redone to use an IO queue:
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
 ```
 
-And this one is
-
-. It's great how easy GCD makes it to push different parts of a task onto different queues with some simple nesting. This one will behave fairly well... most of the time.
+And this one is `imagegcd3.m`. It's great how easy GCD makes it to push different parts of a task onto different queues with some simple nesting. This one will behave fairly well... most of the time.
 
 The problem is that it's inherently unstable because the different parts are not synchronized. The flow of data in this code looks like this:
 
@@ -205,9 +187,7 @@ The problem is that it's inherently unstable because the different parts are not
                          write <-----------  process
 ```
 
-The arrows in that diagram are
-
-and will simply buffer the objects being moved around.
+The arrows in that diagram are _non-blocking_ and will simply buffer the objects being moved around.
 
 Now imagine a machine where the disk is fast enough to read files faster than the CPU can process them. This isn't all that hard to imagine: although the CPU is much faster, it's also doing _much_ more work. The data read from the disk begins to pile up in the queue. This data takes up memory, possibly substantial amounts of memory if you have a lot of big pictures.
 
@@ -302,7 +282,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-09-25-gcd-practicum.html)
 
 Add your thoughts, post a comment:
 

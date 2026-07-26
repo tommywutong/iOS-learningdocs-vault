@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9c3ed1dc77e5abf8'
 translated: false
 ---
@@ -20,13 +20,13 @@ This post is about hard-to-find settings in Xcode that most programmers can't li
 
 I'll cover:
 
-- Custom compiler flags for GCC
-- Pre and post build scripts
-- Changing the name of the built program
-- Replacing the annoying "__MyCompanyName__" placeholder in file templates
-- Completely customizing the file templates
-- Customizing, altering and adding autocomplete "Text Macros"
-- Configuring environment variables and executable arguments for Debugging
+- [Custom compiler flags for GCC](#compilersettings)
+- [Pre and post build scripts](#buildscripts)
+- [Changing the name of the built program](#buildname)
+- [Replacing the annoying "__MyCompanyName__" placeholder in file templates](#mycompanyname)
+- [Completely customizing the file templates](#filetemplates)
+- [Customizing, altering and adding autocomplete "Text Macros"](#textmacros)
+- [Configuring environment variables and executable arguments for Debugging](#environmentvariables)
 
 ## Custom compiler settings
 
@@ -35,7 +35,9 @@ The default compiler settings in Xcode projects are pretty good. Even so, it's a
 Custom compile settings are buried pretty deep in Xcode. To access the custom compiler settings, you must:
 
 1. Have a project window or project-contained document window frontmost in Xcode.
-2. Right-click the project icon in the "Groups & Files" tree-view of the Project window and select "Get Info" from the popup menu (the project's icon is a blue document icon located at the very top of this tree-view by default).
+2. Select the menu item "Edit Project Settings" from the "Project" menu in the menubar   
+  **_or_**  
+   Right-click the project icon in the "Groups & Files" tree-view of the Project window and select "Get Info" from the popup menu (the project's icon is a blue document icon located at the very top of this tree-view by default).
 3. Select the "Build" tab at the top of the Project Info window that appears.
 4. Set the "Configuration" to "Debug", "Release" or "All Configurations" from the popup menu at the top of the tab panel (compile settings will only be changed for the configuration that you select).
 5. Scroll down to the heading named "GCC 4.0 - Language".
@@ -64,7 +66,9 @@ A list of variables you can use in your script is listed on the [Run Script Buil
 This can be a little tricky to find since the the built program's name ("MyProgram.app" for example) does not exist in any complete form in Xcode.
 
 1. Have a project window or project-contained document window frontmost in Xcode with the "Active Target" set to the target whose product you'd like to rename.
-2. Right-click the target's name under "Targets" in the "Groups & Files" tree-view of the Project window and select "Get Info" from the popup menu.
+2. Select the menu item "Edit Active Target '...'" from the "Project" menu in the menubar   
+  **_or_**  
+   Right-click the target's name under "Targets" in the "Groups & Files" tree-view of the Project window and select "Get Info" from the popup menu.
 3. Select the "Build" tab at the top of the Project Info window that appears.
 4. Set the "Configuration" to "Debug", "Release" or "All Configurations" from the popup menu at the top of the tab panel (compile settings will only be changed for the configuration that you select).
 5. Scroll down to the heading named "Packaging".
@@ -123,7 +127,7 @@ and modify or add to the macros that Apple provide.
 
 It is not advisable to edit the original "TextMacros.xctxtmacro" definitions contained inside Xcode.app directly. We copy them to our own Library since the Xcode.app versions will be replaced without warning every time you update Xcode.
 
-> : the destination path to which you should copy "TextMacros.xctxtmacro" is correct here but wrong in the Apple-provided "Repeating Code" documentation linked above (the documentation currently omits the "Xcode" directory between "Shared" and "Specifications").
+> **Note**: the destination path to which you should copy "TextMacros.xctxtmacro" is correct here but wrong in the Apple-provided "Repeating Code" documentation linked above (the documentation currently omits the "Xcode" directory between "Shared" and "Specifications").
 
 Macros are sorted by programming language. I'll leave you to work out exactly how the macros are formatted. I'm not aware of any formal documentation for the xctxtmacro file format but it's plain text in a "Property List"-style format so you shouldn't find it too hard to decipher.
 

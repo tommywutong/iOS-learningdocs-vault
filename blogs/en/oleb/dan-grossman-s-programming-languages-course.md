@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9599e6e954b70423'
 translated: false
 ---
@@ -22,23 +22,17 @@ I just completed the University of Washington’s [Programming Languages course]
 
 Two central themes dominate the course: the distinction between [functional](https://en.wikipedia.org/wiki/Functional_programming) and [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) on one side and between [static](https://en.wikipedia.org/wiki/Type_system#STATIC) and [dynamic type-checking](https://en.wikipedia.org/wiki/Type_system#Dynamic_type-checking_and_runtime_type_information) on the other. To that end, Dan uses three different programming languages:
 
-- Standard ML
+- [Standard ML](https://en.wikipedia.org/wiki/Standard_ML) as an example of a functional language with static type-checking.
+- [Racket](https://en.wikipedia.org/wiki/Racket_(programming_language)), a Lisp/Scheme variant, as an example of a dynamically typed functional language.
+- [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)), a dynamically typed object-oriented language.
 
-  as an example of a functional language with static type-checking.
-- Racket
-
-  , a Lisp/Scheme variant, as an example of a dynamically typed functional language.
-- Ruby
-
-  , a dynamically typed object-oriented language.
-
-![Contrasting Standard ML, Racket and Ruby in a matrix: functional vs. object-oriented and dynamically vs. statically typed](https://oleb.net/media/programming-languages-mooc-language-matrix.jpg)
+[![Contrasting Standard ML, Racket and Ruby in a matrix: functional vs. object-oriented and dynamically vs. statically typed](https://oleb.net/media/programming-languages-mooc-language-matrix.jpg)](https://oleb.net/media/programming-languages-mooc-language-matrix.jpg)
 
 <sub>In a matrix contrasting functional vs. object-oriented and dynamically vs. statically typed languages, ML, Racket and Ruby occupy three of the four spots. One reason why the fourth quadrant, a statically typed OOP language, is left out is that most students are likely to know Java, C#, or a similar language. (Image: screenshot from one of the course videos)</sub>
 
-It is important not to dwell too much on the choice of these particular languages – another instructor could have easily chosen Haskell, Clojure and Python to teach the same concepts.[1](#fn:1) And I’m convinced that completing this course will still make you a better programmer even if you don’t expect to work with any of those languages in the future.
+It is important not to dwell too much on the choice of these particular languages – another instructor could have easily chosen Haskell, Clojure and Python to teach the same concepts.^[1](#fn:1) And I’m convinced that completing this course will still make you a better programmer even if you don’t expect to work with any of those languages in the future.
 
-Dan doesn’t hide that he is a big fan of functional programming, and that is clearly where the focus of the class lies.[2](#fn:2) Since most students are probably more familiar with OOP, I think this is a very good choice.
+Dan doesn’t hide that he is a big fan of functional programming, and that is clearly where the focus of the class lies.^[2](#fn:2) Since most students are probably more familiar with OOP, I think this is a very good choice.
 
 # Workload
 

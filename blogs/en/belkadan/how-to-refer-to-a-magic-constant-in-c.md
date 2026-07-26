@@ -7,7 +7,7 @@ original_language: en
 published: 2023-07-15
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:28ee57a38c83819d'
 translated: false
 ---
@@ -32,6 +32,6 @@ translated: false
 | **Neutral** | `UUID_LENGTH` | `16` | `uuidLength` |
 | **Evil** | `NUMBER_``OF_``OCTETS_``IN_``RFC_4122_``UNIVERSALLY_``UNIQUE_``IDENTIFIER` | `128 / CHAR_BIT` | `SIXTEEN` |
 
-_Originally posted [for the Fediverse](https://social.belkadan.com/@jrose/statuses/01H5DE77Z64324VQ61CJT6MS19)._more
+_Originally posted [for the Fediverse](https://social.belkadan.com/@jrose/statuses/01H5DE77Z64324VQ61CJT6MS19)._
 
 This entry was posted on [July](https://belkadan.com/blog/2023/07) 15, [2023](https://belkadan.com/blog/2023) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [C++](https://belkadan.com/blog/tags/cxx), [Humor](https://belkadan.com/blog/tags/humor), [Social media import](https://belkadan.com/blog/tags/social-media-import)

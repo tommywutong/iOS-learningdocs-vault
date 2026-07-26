@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9156702a02b047dd'
 translated: false
 ---
@@ -245,19 +245,9 @@ I’ve been pretty generous here with the LLMs – allowing 15 minutes to clean 
 
 Even Claude, which I’ve named the winner, produced code that used:
 
-1. (would be better replaced by
-
-  )
-2. and
-
-  (would be better replaced by
-
-  containing a
-
-  )
-3. requires
-
-  isolation (audio code should be nonisolated)
+1. `ObservableObject` (would be better replaced by `Observable`)
+2. `Timer.scheduledTimer` and `DispatchQueue.main.asyncAfter` (would be better replaced by `Task` containing a `Task.sleep`)
+3. `RainAudioEngine` requires `MainActor` isolation (audio code should be nonisolated)
 
 Not to mention the oversized UI and the start/stop button that doesn’t stop the noise generators.
 

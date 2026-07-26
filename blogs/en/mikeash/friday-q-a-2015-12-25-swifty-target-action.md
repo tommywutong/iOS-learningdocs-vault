@@ -304,7 +304,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-12-25-swifty-targetaction.html)
 
 Add your thoughts, post a comment:
 

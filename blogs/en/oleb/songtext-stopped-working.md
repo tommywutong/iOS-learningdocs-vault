@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fd95934446ee6644'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Songtext Stopped Working
 
-![Songtext displaying error message](https://oleb.net/media/songtext-stopped-working-screenshot-222x320.png)
+[![Songtext displaying error message](https://oleb.net/media/songtext-stopped-working-screenshot-222x320.png)](https://oleb.net/media/songtext-stopped-working-screenshot-222x320.png)
 
 <sub>Songtext displaying error message.</sub>
 

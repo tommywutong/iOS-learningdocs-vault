@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:262e6ce53038d951'
 translated: false
 ---
@@ -102,7 +102,7 @@ That's an okay solution but if you're generating a lot of hashes in your program
 
 - has an optimized construction method that can generate the hash directly from `NSData`
 - abstracts away the C struct so you can deal exclusively with the Objective-C objects
-- method to easily generate human-readable strings
+- overrides the `description` method to easily generate human-readable strings
 
 So I wrote the `HashValue` class.
 
@@ -185,9 +185,7 @@ It may seem a little odd to simply return the first few bytes of the `value` as 
 
 ## Conclusion
 
-> HashValue class as a .zip file
-> 
-> (2kB)
+> You can download the [HashValue class as a .zip file](https://www.cocoawithlove.com/assets/objc-era/HashValue.zip) (2kB)
 
 Hash values are used everywhere. Git uses SHA1 to track file changes in its repository, BitTorrent uses MD5s to identify torrents and many download programs use hashes to checksum downloaded data.
 

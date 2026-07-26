@@ -7,7 +7,7 @@ original_language: en
 published: 2026-07-12
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e8086bfe84ca20e4'
 translated: false
 ---
@@ -56,14 +56,8 @@ The obvious layout gives each loop the set of all its nodes — its own plus eve
 
 An Euler tour of the forest removes the duplication. Lay every node into one shared array so each loop owns a contiguous slice `[begin, end)` nested inside its parent's. Each node then appears once, memory is `O(N)`, and both queries become interval tests:
 
-- : map the node to its innermost loop, then test that loop's index against
-
-  's slice;
-- nested in
-
-  :
-
-  .
+- is a node inside `L`: map the node to its innermost loop, then test that loop's index against `L`'s slice;
+- is `L2` nested in `L1`: `L1.begin <= L2.begin && L2.end <= L1.end`.
 
 No per-loop set survives — the same trick `DominatorTree` uses for O(1) dominance (`DFSNumIn`/`DFSNumOut`), and the direction `GenericCycleInfo` took.
 
@@ -77,37 +71,11 @@ Natural loops need a dominator tree first. Wei et al. observe that a single DFS 
 
 Let `p` be the current DFS path, the recursion stack from the entry to the node being visited (`DFSP` in the paper). `pos[b]` is `b`'s 1-based position on that path, or 0 once `b` has been popped. Every node carries `iloop_header`, its innermost loop header discovered so far. When visiting `b0`, each successor `b` falls into one of five cases:
 
--   1. is unvisited — a tree edge. Recurse; the call returns
-
-      's innermost header, which we merge into
-
-      's chain.
--   1. is on the current path (
-
-      ) — a back edge.
-
-      is a loop header; merge it into
-
-      .
--   1. is finished and in no loop — a forward or cross edge to a non-loop node; ignore it.
--   1. is finished, inside a loop whose innermost header
-
-      is still on the path —
-
-      belongs to that loop too; merge
-
-      .
--   1. is finished, inside a loop whose innermost header is
-
-      on the path — the edge
-
-      enters the loop below its header: a
-
-      , and the loop is
-
-      . Walk up
-
-      's header chain to the first header that is on the path and merge that.
+-   1. `b` is unvisited — a tree edge. Recurse; the call returns `b`'s innermost header, which we merge into `b0`'s chain.
+-   1. `b` is on the current path (`pos[b] > 0`) — a back edge. `b` is a loop header; merge it into `b0`.
+-   1. `b` is finished and in no loop — a forward or cross edge to a non-loop node; ignore it.
+-   1. `b` is finished, inside a loop whose innermost header `h` is still on the path — `b0` belongs to that loop too; merge `h`.
+-   1. `b` is finished, inside a loop whose innermost header is _not_ on the path — the edge `b0->b` enters the loop below its header: a _re-entry edge_, and the loop is _irreducible_. Walk up `b`'s header chain to the first header that is on the path and merge that.
 
 Merging a header (`tagLoopHeader`) splices it into the node's innermost-to-outermost chain, ordered by DFS position; this replaces the UNION-FIND of the classical Havlak–Tarjan algorithm. The total cost is `O(N + k*E)`, where `k` is an _unstructuredness coefficient_ that measures the case-(E) climbs and the chain splices. On real code `k` is tiny (empirically below 1.5), so the algorithm is near-linear. That near-linearity hides a worst case: each `tagLoopHeader` splice is `O(depth)`, so on deeply nested loops `k` grows toward `O(N)` and the algorithm turns quadratic, whereas the UNION-FIND of Havlak–Tarjan stays near-linear even there. In benchmarks Wei runs 2–4x faster on realistic CFGs but blows up on adversarial deep nests.
 

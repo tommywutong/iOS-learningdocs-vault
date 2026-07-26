@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d854839ee320589a'
 translated: false
 ---
@@ -24,15 +24,15 @@ Both the [Clang compiler frontend](http://clang.llvm.org) and Apple’s default 
 
 To make use of all the help you can get from the compiler, you must edit your project’s build settings and enable more warnings. Most warning types are exposed in Xcode’s Build Settings UI so you can enable additional ones one by one (either for your entire project or on a per-target basis). The Quick Help Inspector can help explain the purpose of each warning. The build settings UI has multiple sections for warnings, so make sure to look at all sections labeled “Apple LLVM compiler - Warnings – …”.
 
-![Configuring Compiler Warnings in Xcode's Build Settings](https://oleb.net/media/xcode-build-settings-compiler-warnings.png)
+[![Configuring Compiler Warnings in Xcode's Build Settings](https://oleb.net/media/xcode-build-settings-compiler-warnings.png)](https://oleb.net/media/xcode-build-settings-compiler-warnings.png)
 
 <sub>Configuring Compiler Warnings in Xcode's Build Settings. The Quick Help Instructor includes documentation for each warning flag.</sub>
 
-But there is an even better (and more future-proof) way: rather than switching on the warnings you want one by one, I think the better approach is to start with _all_ (or almost all) warnings enabled and then to selectively disable the few types of warnings you actively choose to ignore. That way, you can be sure that even your existing projects will profit from better code analysis as the compiler gets smarter and smarter with each release and new warnings are added. For instance, Xcode 4.6 (using LLVM 3.2) gained [several](https://twitter.com/SlaunchaMan/status/295968911705395200) [new](https://useyourloaf.com/blog/2013/03/03/xcode-4-dot-6-recommended-build-settings.html) warnings.[1](#fn:1)
+But there is an even better (and more future-proof) way: rather than switching on the warnings you want one by one, I think the better approach is to start with _all_ (or almost all) warnings enabled and then to selectively disable the few types of warnings you actively choose to ignore. That way, you can be sure that even your existing projects will profit from better code analysis as the compiler gets smarter and smarter with each release and new warnings are added. For instance, Xcode 4.6 (using LLVM 3.2) gained [several](https://twitter.com/SlaunchaMan/status/295968911705395200) [new](https://useyourloaf.com/blog/2013/03/03/xcode-4-dot-6-recommended-build-settings.html) warnings.^[1](#fn:1)
 
 The downside (is it really a downside?) is that you can’t enable such a setup with a few mouse clicks. Instead, you have to add one or more custom build flags to the ~~Other C Flags~~Other Warning Flags build setting (putting them in Other C Flags works but Other Warning Flags is the more appropriate place). The compiler flag `-W…` lets you to enable or disable specific warnings as well as predefined sets. You can include as many `-W…` options as you like. For example, the flags `-Wall -Wno-unused-variable` tell the compiler, “enable ‘all’ warnings (see below for the meaning of ‘all’) but don’t warn me about unused variables”.
 
-![Editing Other C Flags in Xcode's Build Settings](https://oleb.net/media/xcode-build-settings-other-c-flags.png)
+[![Editing Other C Flags in Xcode's Build Settings](https://oleb.net/media/xcode-build-settings-other-c-flags.png)](https://oleb.net/media/xcode-build-settings-other-c-flags.png)
 
 <sub>Customize the compiler's warning level by adding `-W…` options to Other C Flags.</sub>
 
@@ -54,7 +54,7 @@ I recommend you start with `-Wall` and `-Wextra`, especially for fresh projects.
 
 If you encounter a particular warning that you actively want to suppress, check the build log. The compiler will tell you the name of each warning it has issued (`-Wunused-variable` in this example). You can use this name to selectively disable (with `-Wno-unused-variable`) or enable this specific warning in your project. In my experience, you will come up with a very short list of warnings you want to disable (probably no more than a handful).
 
-![Xcode build log showing a compiler warning](https://oleb.net/media/xcode-build-log-warning-name.png)
+[![Xcode build log showing a compiler warning](https://oleb.net/media/xcode-build-log-warning-name.png)](https://oleb.net/media/xcode-build-log-warning-name.png)
 
 <sub>Xcode shows you the internal name of each warning (here, `-Wunused-variable`) it issues in the build log.</sub>
 

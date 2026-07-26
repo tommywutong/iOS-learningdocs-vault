@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:582e915c321e0511'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 It’s always a good idea to build apps that make use of new features when they come out. Competition is likely to be less fierce in the beginning, and since Apple is likely to introduce those features that have been requested most by users or have been deemed most interesting by Apple’s own market research, you can count on the fact that there will be considerable user demand for the new functionality. So let’s have a look at the public information that we got from yesterday’s [iPhone OS 4.0 introduction event](http://events.apple.com.edgesuite.net/1004fk8d5gt/event/) and what new app ideas could come out of it. Rather than talking about the things that Steve Jobs already highlighted in the presentation, I want to focus on some of the other new APIs that Apple showed us on this slide:
 
-![Slide: New APIs in iPhone OS 4.0](https://oleb.net/media/iphone-os-4-0-slide-new-apis.png)
+[![Slide: New APIs in iPhone OS 4.0](https://oleb.net/media/iphone-os-4-0-slide-new-apis.png)](https://oleb.net/media/iphone-os-4-0-slide-new-apis.png)
 
 <sub>Some of the new APIs in iPhone OS 4.0.</sub>
 
@@ -35,14 +35,10 @@ And though [Core Image](https://en.wikipedia.org/wiki/Core_Image) isn’t mentio
 Direct access to the camera’s video feed can be used for:
 
 - New forms of Augmented Reality apps (based on image recognition instead of sensor data).
-- I would count on it
-
-  ).
+- Video chat (if we assume the next iPhone also gets a front-facing camera; if I were Skype, [I would count on it](http://www.tuaw.com/2010/04/08/ichatagent-process-shows-up-in-iphone-os-4-0-video-conferenci/)).
 - Realtime manipulation of the live video. I will certainly look into this for Picture Effects. Hopefully it can become more like Photo Booth with effects being applied in realtime to the live video from the camera.
-- API.
-- Google Goggles
-
-  .
+- Better performance for Barcode scanning apps and others that currently have to rely on the private-but-tolerated `UIGetScreenImage()` API.
+- Apps like [Google Goggles](https://www.google.com/mobile/goggles/).
 
 # Calendar access and Local notifications
 

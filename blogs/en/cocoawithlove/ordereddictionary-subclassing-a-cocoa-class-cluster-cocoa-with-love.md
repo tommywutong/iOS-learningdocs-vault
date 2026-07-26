@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e7bf4626c60f5b5f'
 translated: false
 ---
@@ -26,19 +26,9 @@ Increased risk due to subclassing does not apply to classes that are intended to
 
 ### Aside: design patterns that customize behavior without subclassing
 
-1. has-a
-
-  " design instead of "
-
-  is-a
-
-  ".
-2. Decorator
-
-  object instead. A Decorator is a wrapper around the non-overridden class. All messages to the contained class go through the Decorator first, so the Decorator can control or supplement the behavior of the contained class.
-3. Observer
-
-  to keep the non-overridden object synchronized with dependent objects so that their combined state achieves custom behavior, even though each of the objects remains non-custom. In this case, the Observer acts as a Controller/Manager to the dependent objects.
+1. Put the custom functionality in the parent which contains the non-overridden object, rather than in the non-overridden object itself. This is "[has-a](http://en.wikipedia.org/wiki/Has-a)" design instead of "[is-a](http://en.wikipedia.org/wiki/Is-a)".
+2. Use a [Decorator](http://en.wikipedia.org/wiki/Decorator_pattern) object instead. A Decorator is a wrapper around the non-overridden class. All messages to the contained class go through the Decorator first, so the Decorator can control or supplement the behavior of the contained class.
+3. Use an [Observer](https://www.cocoawithlove.com/2008/06/five-approaches-to-listening-observing.html) to keep the non-overridden object synchronized with dependent objects so that their combined state achieves custom behavior, even though each of the objects remains non-custom. In this case, the Observer acts as a Controller/Manager to the dependent objects.
 
 ## Choosing to override a collection class
 

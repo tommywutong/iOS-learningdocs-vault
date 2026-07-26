@@ -7,7 +7,7 @@ original_language: en
 published: 2021-06-07
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b99f30280819f9f7'
 translated: false
 ---
@@ -352,20 +352,10 @@ Even after macOS adopted some of iOS’s features (eg IOMobileFramebuffer) as pa
 
 I tried running `WindowServer`, responsible for rendering windows on macOS, using my tools. It didn’t work, and shows how much convergence work Apple still needs to do to unify iOS and macOS.
 
-- IOHIDSystem
-
-  , a driver responsible for mouse cursors and keyboard control, is completely missing on iOS. I bypassed that with
-
-  , but..
-- driver instead of iOS’s
-
-  . Patched that and got…
-- instead of iOS’s
-
-  . I tried forcing this, and it didn’t work.
-- memory debug flags
-
-  suggest it’s a use-after-free error, since the address is all 0x55s. I guess it didn’t expect 0 screens?)
+- First, it errored out because [IOHIDSystem](https://opensource.apple.com/source/IOHIDFamily/IOHIDFamily-1633.100.36/IOHIDSystem/IOHIDSystem.cpp.auto.html), a driver responsible for mouse cursors and keyboard control, is completely missing on iOS. I bypassed that with `-virtualonly`, but..
+- IOSurface looks for the `IOSurfaceRoot` driver instead of iOS’s `IOCoreSurfaceRoot`. Patched that and got…
+- Metal looking for macOS’s `IOAccelerator` instead of iOS’s `IOGPU`. I tried forcing this, and it didn’t work.
+- After I set breakpoints to pretend to have 0 screens, skip input initialization, and skip Metal initialization, WindowServer decided to just give up and segfault. (setting [memory debug flags](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/MallocDebug.html) suggest it’s a use-after-free error, since the address is all 0x55s. I guess it didn’t expect 0 screens?)
 
 I, too, give up.
 
@@ -380,3 +370,5 @@ Put macOS on iPad, you [cowards](https://www.theverge.com/2021/4/22/22396449/app
 - why Catalyst took Apple years to build
 - if Apple ever implements reverse-Catalyst, it would probably be in a VM/Classic environment, not seamless: there’s just too many differences and not enough demand to justify another multi-year unification project
 - I should stop doing my research in the last hours before WWDC so I’d have time to revise this post instead of uploading my first draft
+
+[https://worthdoingbadly.com/macappsios/](https://worthdoingbadly.com/macappsios/)

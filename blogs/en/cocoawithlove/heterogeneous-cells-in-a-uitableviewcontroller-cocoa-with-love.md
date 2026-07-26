@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b639c4c600acbff1'
 translated: false
 ---
@@ -16,15 +16,7 @@ translated: false
 
 This post looks at writing a UITableViewController for a table view that contains behaviorally unrelated rows — a common occurrence on the iPhone for tables containing multiple groups. I will present a simple alternative to Apple's UITableViewController template code that will reduce complexity and code as well as refocus areas-of-concern for this heterogeneous arrangement.
 
-> If you're interested in approaches to managing and customizing
-> 
-> s and
-> 
-> s, you might be interested in seeing my more up-to-date post:
-> 
-> UITableView construction, drawing and management (revisited)
-> 
-> ; it represents an evolution and refinement of the ideas presented in this post.
+> **Update:** If you're interested in approaches to managing and customizing `UITableView`s and `UITableViewCell`s, you might be interested in seeing my more up-to-date post: [UITableView construction, drawing and management (revisited)](https://www.cocoawithlove.com/2010/12/uitableview-construction-drawing-and.html); it represents an evolution and refinement of the ideas presented in this post.
 
 ## The sample app
 
@@ -73,14 +65,8 @@ This code implies a situation where each `UITableViewController` you create is d
 From a design perspective, there are three distinct issues with this:
 
 1. If the table contains more than one type of row, the controller must handle this and each type will increase the number of code paths for construction and behavior.
-2. and the
-
-  , which encourages the programmer towards
-
-  subclasses to provide row-specific behaviors that they choose to keep out of the
-
-  (an unnecessary subclass of a view to add controller functionality).
-3. they will each need to replicate this code.
+2. There is no abstraction between the `UITableViewController` and the `UITableViewCell`, which encourages the programmer towards `UITableViewCell` subclasses to provide row-specific behaviors that they choose to keep out of the `UITableViewController` (an unnecessary subclass of a view to add controller functionality).
+3. If your program contains multiple `UITableViewControllers` they will each need to replicate this code.
 
 Following the template exactly, `UITableViewController` subclasses become huge classes, repeated multiple times throughout the program, that spend most of their time managing the behaviors of their cells.
 
@@ -162,9 +148,7 @@ To see how these work, let's look at the cell construction code for `LinkRowCell
 You can see that it's largely the same code that might have appeared in a `UITableViewController` but offers the following advantages:
 
 - won't grow in behavioral complexity (since it manages just one row type)
-- ) to a single piece of data (
-
-  )
+- keeps a narrow area-of-concern by connecting a single view element (`cell`) to a single piece of data (`label`)
 
 ### GenericTableViewController
 
@@ -184,9 +168,7 @@ The `PhoneNumberCellController` shows how to perform custom layout and arrangeme
 
 ## Conclusion
 
-> PhoneNumbers Xcode 3.1 project
-> 
-> (34kB).
+> Download the complete code for the sample app in the [PhoneNumbers Xcode 3.1 project](https://www.cocoawithlove.com/assets/objc-era/PhoneNumbers.zip) (34kB).
 
 When writing a post, it's hard for me to know if a topic is too obvious. This topic is certainly at the obvious end of the spectrum but I'm hoping it will nudge a few culprits to add a proper base-class and move their row-specific behaviors into resuable, row-specific classes.
 

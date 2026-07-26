@@ -7,7 +7,7 @@ original_language: en
 published: 2020-12-31
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:736120772b05a131'
 translated: false
 ---
@@ -69,10 +69,8 @@ However, iOS does include the `WKPreferencesSetWebSecurityEnabled` [C API](https
 
 So, to set the variable, we need to:
 
-- from the Objective-C
-- in a
-
-  for the C API
+- Extract the C++ `WebPreferences` from the Objective-C `WKPreferences`
+- Wrap the `WebPreferences` in a `WKPreferencesRef` for the C API
 
 ## Extracting the C++ `WebPreferences`
 
@@ -111,3 +109,5 @@ I made an Objective-C class with a property named `_apiObject`, stored the point
 - Yet another way to access instance variables
 - WebKit’s C API
 - Most options in the Safari Develop menu can actually be set from code
+
+[https://worthdoingbadly.com/disablesameorigin/](https://worthdoingbadly.com/disablesameorigin/)

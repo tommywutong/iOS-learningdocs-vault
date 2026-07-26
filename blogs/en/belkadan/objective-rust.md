@@ -7,7 +7,7 @@ original_language: en
 published: 2020-08-26
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f126ff2e1823f5d0'
 translated: false
 ---
@@ -30,7 +30,7 @@ translated: false
 
 ## [Objective-Rust](#)
 
-This is going to be another one of those posts where I did something ridiculous and then show you how I got there, so let’s just get right to it.more
+This is going to be another one of those posts where I did something ridiculous and then show you how I got there, so let’s just get right to it.
 
 ```
 use objc_rust::*;
@@ -55,12 +55,12 @@ Yep, that’s Rust code with embedded Objective-C syntax, and it works. Why woul
 
 This post is going to walk through what it took to make this possible, so here’s a table of contents:
 
-1. Background on Objective-C
-2. Objective-C from Rust, manually
-3. Recursive Rust macros
-4. Rust macro gotchas
-5. Related work
-6. Appendix: What about Swift?
+1. [Background on Objective-C](#background-on-objective-c)
+2. [Objective-C from Rust, manually](#objective-c-from-rust-manually)
+3. [Recursive Rust macros](#recursive-rust-macros)
+4. [Rust macro gotchas](#rust-macro-gotchas)
+5. [Related work](#related-work)
+6. [Appendix: What about Swift?](#appendix-what-about-swift)
 
 Sections 3-5 might actually be useful to other people looking to write Rust macros, so even though this project is a toy, you may still get something out of reading the post. However, if you’re looking to use Objective-C from Rust in production, you should not be using my unsafe toy here. Instead, use Steven Sheldon’s [`objc` crate](https://crates.io/crates/objc). Sheldon also has a blog post from near the start of the project that talks about [his design process beyond the bare message-send implementation](https://sasheldon.com/blog/2014/11/28/interoperating-between-objective-c-and-rust/).
 
@@ -68,7 +68,7 @@ That said, if you want to see the full source of my little monstrosity, you can 
 
 ## Background on Objective-C
 
-My normal audience these days is probably Swift developers, but I expect this one to make rounds with at least some Rust people as well. It’d be easy for both groups to not have much direct experience with Objective-C, the primary language used by Apple for both macOS[1](#fn:osx) and iOS since their releases in 2001 and 2007. So, here’s the quick summary: it’s “just” C, except when you start working with “object” types. And nearly everything you do with those objects is based on a dynamic dispatch model implemented in the _runtime._ Because of the two parts of that sentence (“dynamic dispatch” and “implemented in the runtime”), people have come up with a lot of clever and powerful techniques to make programs simpler, more expressive, or more extensible, though sometimes at the cost of security, secrecy, and stability.
+My normal audience these days is probably Swift developers, but I expect this one to make rounds with at least some Rust people as well. It’d be easy for both groups to not have much direct experience with Objective-C, the primary language used by Apple for both macOS^[1](#fn:osx) and iOS since their releases in 2001 and 2007. So, here’s the quick summary: it’s “just” C, except when you start working with “object” types. And nearly everything you do with those objects is based on a dynamic dispatch model implemented in the _runtime._ Because of the two parts of that sentence (“dynamic dispatch” and “implemented in the runtime”), people have come up with a lot of clever and powerful techniques to make programs simpler, more expressive, or more extensible, though sometimes at the cost of security, secrecy, and stability.
 
 More relevant to us, however, is that a language whose features are (nearly) all available in a runtime library is a language that’s easy to bridge to dynamically, as long as you don’t have really tight performance constraints. So here’s the deal: nearly everything you do in Objective-C is calling methods by _sending messages,_ and the way this works is that methods are regular C functions stored in a dispatch table keyed by a uniqued string called a selector. It is likely that the most heavily-optimized piece of code in Apple’s libraries is `objc_msgSend`, which takes a receiver, a selector, and the arguments to the method, does a (cached) lookup of the selector in the receiver’s class’s dispatch table(s), and then jumps directly to the appropriate, polymorphically-selected implementation of the method.
 
@@ -147,7 +147,7 @@ But then there’s a monstrosity of a line involving [`std::mem::transmute`](htt
 
 So, what are we doing? Well, remember what I said about Objective-C and `objc_msgSend`: methods are regular C functions, and `objc_msgSend` “jumps directly to the appropriate, polymorphically-selected implementation of the method”. That means that the correct way to call `objc_msgSend` is to _pretend it has the right type for the method you’re calling._
 
-In C (and Swift, for that matter), that conversion would require explicitly specifying the type of all arguments and return values. But Rust has really powerful type inference within a function body, and that extends to specifying only _some_ generic parameters, and leaving others out.[2](#fn:swift-inference) In this case I need to specify that we’re casting to a C function pointer with two arguments and a non-void return, but not anything more than that. The remaining information will be filled in based on how the function pointer is used.
+In C (and Swift, for that matter), that conversion would require explicitly specifying the type of all arguments and return values. But Rust has really powerful type inference within a function body, and that extends to specifying only _some_ generic parameters, and leaving others out.^[2](#fn:swift-inference) In this case I need to specify that we’re casting to a C function pointer with two arguments and a non-void return, but not anything more than that. The remaining information will be filled in based on how the function pointer is used.
 
 With that, you should understand the (cursed) code above. Go ahead. Try it on your own machine (if your machine is a Mac).
 
@@ -166,9 +166,7 @@ But while that’s clearly the right choice for serious Rust work, I wanted some
 
 > wait a minute. this is just objective-c [pic.twitter.com/dVQMYKKVTI](https://t.co/dVQMYKKVTI)
 > 
-> — Harlan Haskins (@harlanhaskins)
-> 
-> May 28, 2019
+> — Harlan Haskins (@harlanhaskins) [May 28, 2019](https://twitter.com/harlanhaskins/status/1133210047952015360?ref_src=twsrc%5Etfw)
 
 What I wanted was for Objective-C’s messaging syntax, or something like it, to be valid anywhere in Rust code. It didn’t have to be exactly Objective-C, but I quickly realized the _advantage_ of Objective-C’s syntax: it’s delimited, i.e. it’s a self-contained expression that can be dropped into something larger without changing how that larger thing parses. (That’s probably why it’s bracketed in C as well.) Within the brackets, there’s basically two forms:
 
@@ -204,7 +202,7 @@ pub fn MY_MACRO(tokens: TokenStream) -> TokenStream {
 }
 ```
 
-And what is that work? Well, if we’re (1) dealing with a bracketed Group that (2) matches the syntax of a message send, we should generate code that looks like the manual code from above. I did this using the [`quote` crate](https://docs.rs/quote/1.0.7/quote/index.html), which is a very clever library that turns Rust code into…Rust code. But with variable substitution.[3](#fn:quote)
+And what is that work? Well, if we’re (1) dealing with a bracketed Group that (2) matches the syntax of a message send, we should generate code that looks like the manual code from above. I did this using the [`quote` crate](https://docs.rs/quote/1.0.7/quote/index.html), which is a very clever library that turns Rust code into…Rust code. But with variable substitution.^[3](#fn:quote)
 
 ```
 let msg_expr = quote! {
@@ -224,7 +222,7 @@ let msg_expr = quote! {
 This is pretty much the same thing as the manual code, but with some interesting notes:
 
 - The `unsafe` is limited to just the call to `transmute`. That means that if you do unsafe things in computing the arguments, you’ll still have to say `unsafe` in your own code. Of course, you could easily argue that calling Objective-C at all deserves an `unsafe`, especially since **the compiler just believes the types you use**. But, this is just a toy, and this point could still be relevant to someone else.
-- Unlike before, we’re using a helper function `objc_msg_lookup` rather than directly accessing `objc_msgSend`. This is because `objc_msgSend` isn’t the only message dispatch method in Objective-C; there’s also [`objc_msgSend_stret`](http://www.sealiesoftware.com/blog/archive/2008/10/30/objc_explain_objc_msgSend_stret.html), and two more that only show up in rare cases on certain platforms. Why? Because on some platforms, **the calling convention for a C function depends on the return type**, and `objc_msgSend` on its own doesn’t know what method we’re calling until it does its lookup. Rather than deal with this, I sidestepped the issue by doing the lookup separately from the function call. This is going to be a little slower, but again, toy.[4](#fn:objc_msg_lookup)
+- Unlike before, we’re using a helper function `objc_msg_lookup` rather than directly accessing `objc_msgSend`. This is because `objc_msgSend` isn’t the only message dispatch method in Objective-C; there’s also [`objc_msgSend_stret`](http://www.sealiesoftware.com/blog/archive/2008/10/30/objc_explain_objc_msgSend_stret.html), and two more that only show up in rare cases on certain platforms. Why? Because on some platforms, **the calling convention for a C function depends on the return type**, and `objc_msgSend` on its own doesn’t know what method we’re calling until it does its lookup. Rather than deal with this, I sidestepped the issue by doing the lookup separately from the function call. This is going to be a little slower, but again, toy.^[4](#fn:objc_msg_lookup)
 - Doing the function call means passing an unknown number of arguments, which `quote!` handles easily. But `transmute` _also_ needs to know the number of arguments, which is a bit more of a challenge. So `underscores` is just an iterator of N fake underscore tokens, which fill in after the receiver and selector types. I feel rather clever about that. :-)
 
 That’s all the code I’m going to show here. [You can check out the full proc_macro implementation if you want.](https://belkadan.com/source/rust-inline-objc/blob/refs/heads/main:/macros/src/lib.rs)
@@ -252,7 +250,7 @@ The built-in `proc_macro` and the `proc-macro2` crate handle basic “lexing”,
 - **If you want to debug a procedural macro, use `eprintln!`** and the output will be included in the compiler’s stderr. This wasn’t exactly a “gotcha” for me because I happened to spot it in David Tolnay’s “[Procedural Macros Workshop](https://github.com/dtolnay/proc-macro-workshop#debugging-tips)” repo readme, even though I didn’t actually go through the exercises in that workshop. Another important tip here is to **enable the `"extra-traits"` feature for `syn`** if you want to dump parsed syntax trees.
 - **To parse custom syntax with `syn`, you have to make a new type that implements the [`Parse`](https://docs.rs/syn/1.0.39/syn/parse/trait.Parse.html) trait.** This is the only way to have `syn` give you a ParseStream, which has all the useful methods for parsing Rust syntax. Moreover, as far as I can tell you have to parse the _entire_ token stream when you do this; if you want to take some tokens in the middle of the stream, you’ll have to save the ones at the beginning and end to be dumped back out later. (I sidestepped this constraint by parsing an entire bracketed group at once.)
 - **Parsing expressions with `syn` requires the `"full"` feature.** I’m glad I remembered feature flags exist, since they don’t in the Swift ecosystem for dependencies, but before I added this to my Cargo.toml config file expressions just immediately failed to parse.
-- **If your macro introduces more dependencies, those dependencies have to be in a separate module. That should be your main vended library.** Unlike Swift packages, Rust crates can only have one library per crate, and procedural macros are already going to be different from normal libraries because they are built to run as part of compilation. So the simplest thing to do is put the macros in a second crate nested in the main one:[5](#fn:tre)
+- **If your macro introduces more dependencies, those dependencies have to be in a separate module. That should be your main vended library.** Unlike Swift packages, Rust crates can only have one library per crate, and procedural macros are already going to be different from normal libraries because they are built to run as part of compilation. So the simplest thing to do is put the macros in a second crate nested in the main one:^[5](#fn:tre)
 
   ```
   inline-objc
@@ -267,7 +265,7 @@ The built-in `proc_macro` and the `proc-macro2` crate handle basic “lexing”,
           └── lib.rs
   ```
 
-  The top-level crate `inline-objc` depends on `macros` by relative path:[6](#fn:relative)
+  The top-level crate `inline-objc` depends on `macros` by relative path:^[6](#fn:relative)
 
   ```
   inline-objc-macros = { path = "./macros" }

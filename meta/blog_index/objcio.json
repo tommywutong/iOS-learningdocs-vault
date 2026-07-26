@@ -9,22 +9,22 @@
   },
   {
    "url": "https://www.objc.io/issues/24-audio/audio-dog-house",
-   "title": "The Audio Processing Dog House Jack Schaedler",
+   "title": "The Audio Processing Dog House",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/24-audio/functional-signal-processing",
-   "title": "Functional Signal Processing Using Swift Chris Liscio",
+   "title": "Functional Signal Processing Using Swift",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/24-audio/sound-design",
-   "title": "Play, Fail, Iterate: Sound Design for Products Aaron Day",
+   "title": "Play, Fail, Iterate: Sound Design for Products",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/24-audio/audio-api-overview",
-   "title": "Audio API Overview Daniel Eggert and Florian Kugler",
+   "title": "Audio API Overview",
    "date": ""
   },
   {
@@ -34,17 +34,17 @@
   },
   {
    "url": "https://www.objc.io/issues/23-video/capturing-video",
-   "title": "Capturing Video on iOS Adriaan Stellingwerff",
+   "title": "Capturing Video on iOS",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/23-video/core-image-video",
-   "title": "Core Image and Video Daniel Eggert and Chris Eidhof",
+   "title": "Core Image and Video",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/23-video/videotoolbox",
-   "title": "Video Toolbox and Hardware Acceleration Felix Paul Kühne and Carola Nitz",
+   "title": "Video Toolbox and Hardware Acceleration",
    "date": ""
   },
   {
@@ -54,27 +54,27 @@
   },
   {
    "url": "https://www.objc.io/issues/22-scale/omni-group",
-   "title": "Inside Omni Brent Simmons",
+   "title": "Inside Omni",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/22-scale/artsy",
-   "title": "Artsy Orta Therox, Ash Furrow, Laura Brown, and Eloy Durán",
+   "title": "Artsy",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/22-scale/square",
-   "title": "Scaling Square Register Kyle Van Essen",
+   "title": "Scaling Square Register",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/22-scale/dropbox",
-   "title": "The Art of Code Review: A Dropbox Story Ashley Nelson-Hornstein",
+   "title": "The Art of Code Review: A Dropbox Story",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/22-scale/facebook",
-   "title": "React-Inspired Views Adam Ernst",
+   "title": "React-Inspired Views",
    "date": ""
   },
   {
@@ -84,47 +84,47 @@
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/how-your-camera-works",
-   "title": "How Your Camera Works Daniel Eggert",
+   "title": "How Your Camera Works",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/image-formats",
-   "title": "Image Formats Oliver Mason",
+   "title": "Image Formats",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/camera-capture-on-ios",
-   "title": "Camera Capture on iOS Matteo Caldari",
+   "title": "Camera Capture on iOS",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/the-photos-framework",
-   "title": "The Photos Framework Saniul Ahmed",
+   "title": "The Photos Framework",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/photo-extensions",
-   "title": "Photo Extensions Sam Davies",
+   "title": "Photo Extensions",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/core-image-intro",
-   "title": "An Introduction to Core Image Warren Moore",
+   "title": "An Introduction to Core Image",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/gpu-accelerated-image-processing",
-   "title": "GPU-Accelerated Image Processing Janie Clayton",
+   "title": "GPU-Accelerated Image Processing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/gpu-accelerated-machine-vision",
-   "title": "GPU-Accelerated Machine Vision Brad Larson",
+   "title": "GPU-Accelerated Machine Vision",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/21-camera-and-photos/face-recognition-with-opencv",
-   "title": "Face Recognition with OpenCV Engin Kurutepe",
+   "title": "Face Recognition with OpenCV",
    "date": ""
   },
   {
@@ -134,17 +134,17 @@
   },
   {
    "url": "https://www.objc.io/issues/20-interviews/andy-matuschak",
-   "title": "A Generation of Lifelong Learners Andy Matuschak",
+   "title": "A Generation of Lifelong Learners",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/20-interviews/loren-brichter",
-   "title": "Something Slightly Less Terrible Loren Brichter",
+   "title": "Something Slightly Less Terrible",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/20-interviews/natasha-murashev",
-   "title": "Infinite Things to Learn Natasha Murashev",
+   "title": "Infinite Things to Learn",
    "date": ""
   },
   {
@@ -154,27 +154,27 @@
   },
   {
    "url": "https://www.objc.io/issues/19-debugging/debugging-case-study",
-   "title": "Debugging: A Case Study Peter Steinberger",
+   "title": "Debugging: A Case Study",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/19-debugging/lldb-debugging",
-   "title": "Dancing in the Debugger — A Waltz with LLDB Ari Grant",
+   "title": "Dancing in the Debugger — A Waltz with LLDB",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/19-debugging/debugging-checklist",
-   "title": "Debugging Checklist Chris Eidhof",
+   "title": "Debugging Checklist",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/19-debugging/dtrace",
-   "title": "DTrace Daniel Eggert",
+   "title": "DTrace",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/19-debugging/activity-tracing",
-   "title": "Activity Tracing Florian Kugler",
+   "title": "Activity Tracing",
    "date": ""
   },
   {
@@ -184,27 +184,27 @@
   },
   {
    "url": "https://www.objc.io/issues/18-games/designing-elegant-mobile-games",
-   "title": "Designing Elegant Mobile Games Mike Lazer-Walker",
+   "title": "Designing Elegant Mobile Games",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/18-games/metal",
-   "title": "Metal Max Christ and Warren Moore",
+   "title": "Metal",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/18-games/scenekit",
-   "title": "Scene Kit David Rönnqvist",
+   "title": "Scene Kit",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/18-games/multipeer-connectivity-for-games",
-   "title": "Multipeer Connectivity in Games JP Simard",
+   "title": "Multipeer Connectivity in Games",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/18-games/sound-design",
-   "title": "Virtual Soundscapes: The Art of Sound Design Janie Clayton",
+   "title": "Virtual Soundscapes: The Art of Sound Design",
    "date": ""
   },
   {
@@ -214,17 +214,17 @@
   },
   {
    "url": "https://www.objc.io/issues/17-security/why-security",
-   "title": "Why Security Still Matters Today Graham Lee",
+   "title": "Why Security Still Matters Today",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/17-security/inside-code-signing",
-   "title": "Inside Code Signing Thomas 'toto' Kollbach",
+   "title": "Inside Code Signing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/17-security/receipt-validation",
-   "title": "Receipt Validation Laurent Etiemble",
+   "title": "Receipt Validation",
    "date": ""
   },
   {
@@ -234,27 +234,27 @@
   },
   {
    "url": "https://www.objc.io/issues/16-swift/power-of-swift",
-   "title": "The Power of Swift Chris Eidhof",
+   "title": "The Power of Swift",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/16-swift/swift-classes-vs-structs",
-   "title": "A Warm Welcome to Structs and Value Types Andy Matuschak",
+   "title": "A Warm Welcome to Structs and Value Types",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/16-swift/swift-functions",
-   "title": "The Many Faces of Swift Functions Natasha Murashev",
+   "title": "The Many Faces of Swift Functions",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/16-swift/functional-swift-apis",
-   "title": "Functional APIs with Swift Florian Kugler",
+   "title": "Functional APIs with Swift",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/16-swift/rapid-prototyping-in-swift-playgrounds",
-   "title": "Rapid Prototyping in Swift Playgrounds Brad Larson",
+   "title": "Rapid Prototyping in Swift Playgrounds",
    "date": ""
   },
   {
@@ -264,37 +264,37 @@
   },
   {
    "url": "https://www.objc.io/issues/15-testing/behavior-driven-development",
-   "title": "Behavior-Driven Development Pawel Dudek",
+   "title": "Behavior-Driven Development",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/xctest",
-   "title": "Real-World Testing with XCTest Arne Schroppe and Daniel Eggert",
+   "title": "Real-World Testing with XCTest",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/dependency-injection",
-   "title": "Dependency Injection Jon Reid",
+   "title": "Dependency Injection",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/bad-testing-practices",
-   "title": "Bad Testing Practices Luis Solano",
+   "title": "Bad Testing Practices",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/mocking-stubbing",
-   "title": "Test Doubles: Mocks, Stubs, and More Mike Lazer-Walker",
+   "title": "Test Doubles: Mocks, Stubs, and More",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/user-interface-testing",
-   "title": "User Interface Testing Klaas Pieter Annema",
+   "title": "User Interface Testing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/15-testing/snapshot-testing",
-   "title": "Snapshot Testing Orta Therox",
+   "title": "Snapshot Testing",
    "date": ""
   },
   {
@@ -304,27 +304,27 @@
   },
   {
    "url": "https://www.objc.io/issues/14-mac/scripting-data",
-   "title": "Making Your Mac App’s Data Scriptable Brent Simmons",
+   "title": "Making Your Mac App’s Data Scriptable",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/14-mac/sandbox-scripting",
-   "title": "Scripting from a Sandbox Craig Hockenberry",
+   "title": "Scripting from a Sandbox",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/14-mac/plugins",
-   "title": "Plugins Gus Mueller",
+   "title": "Plugins",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/14-mac/xpc",
-   "title": "XPC Daniel Eggert",
+   "title": "XPC",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/14-mac/appkit-for-uikit-developers",
-   "title": "AppKit for UIKit Developers Florian Kugler",
+   "title": "AppKit for UIKit Developers",
    "date": ""
   },
   {
@@ -334,27 +334,27 @@
   },
   {
    "url": "https://www.objc.io/issues/13-architecture/mvvm",
-   "title": "Introduction to MVVM Ash Furrow",
+   "title": "Introduction to MVVM",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/13-architecture/singletons",
-   "title": "Avoiding Singleton Abuse Stephen Poletto",
+   "title": "Avoiding Singleton Abuse",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/13-architecture/behaviors",
-   "title": "Behaviors in iOS Apps Krzysztof Zabłocki",
+   "title": "Behaviors in iOS Apps",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/13-architecture/subclassing",
-   "title": "Subclassing Chris Eidhof",
+   "title": "Subclassing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/13-architecture/viper",
-   "title": "Architecting iOS Apps with VIPER Jeff Gilbert and Conrad Stoll",
+   "title": "Architecting iOS Apps with VIPER",
    "date": ""
   },
   {
@@ -364,32 +364,32 @@
   },
   {
    "url": "https://www.objc.io/issues/12-animations/animations-explained",
-   "title": "Animations Explained Robert Böhnke",
+   "title": "Animations Explained",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/12-animations/animating-custom-layer-properties",
-   "title": "Animating Custom Layer Properties Nick Lockwood",
+   "title": "Animating Custom Layer Properties",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/12-animations/custom-container-view-controller-transitions",
-   "title": "Custom Container View Controller Transitions Joachim Bondo",
+   "title": "Custom Container View Controller Transitions",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/12-animations/view-layer-synergy",
-   "title": "View-Layer Synergy David Rönnqvist",
+   "title": "View-Layer Synergy",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/12-animations/collectionview-animations",
-   "title": "Animating Collection Views Engin Kurutepe",
+   "title": "Animating Collection Views",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/12-animations/interactive-animations",
-   "title": "Interactive Animations Chris Eidhof and Florian Kugler",
+   "title": "Interactive Animations",
    "date": ""
   },
   {
@@ -399,32 +399,32 @@
   },
   {
    "url": "https://www.objc.io/issues/11-android/android_101_for_ios_developers",
-   "title": "Android 101 for iOS Developers Stephen Barnes",
+   "title": "Android 101 for iOS Developers",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/11-android/android-intents",
-   "title": "Android Intents Martin Marconcini",
+   "title": "Android Intents",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/11-android/responsive-android-applications",
-   "title": "Responsive Android Applications Chris Stewart",
+   "title": "Responsive Android Applications",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/11-android/android-notifications",
-   "title": "Android’s Notification Center Kevin Grant",
+   "title": "Android’s Notification Center",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/11-android/sqlite-database-support-in-android",
-   "title": "SQLite Database Support in Android James Kelso",
+   "title": "SQLite Database Support in Android",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/11-android/dependency-injection-in-java",
-   "title": "Dependency Injection, Annotations, and why Java is Better Than you Think it is Bill Phillips",
+   "title": "Dependency Injection, Annotations, and why Java is Better Than you Think it is",
    "date": ""
   },
   {
@@ -434,32 +434,32 @@
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/data-synchronization",
-   "title": "Data Synchronization Drew McCormack",
+   "title": "Data Synchronization",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/icloud-core-data",
-   "title": "iCloud and Core Data Matthew Bischoff and Brian Capps",
+   "title": "iCloud and Core Data",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/icloud-document-store",
-   "title": "Mastering the iCloud Document Store Friedrich Gräter and Max Seelemann",
+   "title": "Mastering the iCloud Document Store",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/sync-case-study",
-   "title": "A Sync Case Study Florian Kugler",
+   "title": "A Sync Case Study",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/networked-core-data-application",
-   "title": "A Networked Core Data Application Chris Eidhof",
+   "title": "A Networked Core Data Application",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/10-syncing-data/ip-tcp-http",
-   "title": "IP, TCP, and HTTP Daniel Eggert",
+   "title": "IP, TCP, and HTTP",
    "date": ""
   },
   {
@@ -469,27 +469,27 @@
   },
   {
    "url": "https://www.objc.io/issues/9-strings/unicode",
-   "title": "NSString and Unicode Ole Begemann",
+   "title": "NSString and Unicode",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/9-strings/working-with-strings",
-   "title": "Working with Strings Daniel Eggert",
+   "title": "Working with Strings",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/9-strings/string-localization",
-   "title": "String Localization Florian Kugler",
+   "title": "String Localization",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/9-strings/string-parsing",
-   "title": "String Parsing Chris Eidhof",
+   "title": "String Parsing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/9-strings/string-rendering",
-   "title": "String Rendering Chris Eidhof, Daniel Eggert, and Florian Kugler",
+   "title": "String Rendering",
    "date": ""
   },
   {
@@ -499,22 +499,22 @@
   },
   {
    "url": "https://www.objc.io/issues/8-quadcopter/the-quadcopter-project",
-   "title": "The Project Florian Kugler",
+   "title": "The Project",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/8-quadcopter/communicating-with-the-quadcopter",
-   "title": "Communicating with the Quadcopter Daniel Eggert",
+   "title": "Communicating with the Quadcopter",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/8-quadcopter/the-quadcopter-navigator-app",
-   "title": "The Navigator App Chris Eidhof",
+   "title": "The Navigator App",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/8-quadcopter/the-quadcopter-client-app",
-   "title": "The Client App Florian Kugler",
+   "title": "The Client App",
    "date": ""
   },
   {
@@ -524,32 +524,32 @@
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/collections",
-   "title": "The Foundation Collection Classes Peter Steinberger",
+   "title": "The Foundation Collection Classes",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/value-objects",
-   "title": "Value Objects Chris Eidhof",
+   "title": "Value Objects",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/key-value-coding-and-observing",
-   "title": "Key-Value Coding and Observing Daniel Eggert",
+   "title": "Key-Value Coding and Observing",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/communication-patterns",
-   "title": "Communication Patterns Florian Kugler",
+   "title": "Communication Patterns",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/nsformatter",
-   "title": "Custom Formatters Klaas Pieter Annema",
+   "title": "Custom Formatters",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/7-foundation/linguistic-tagging",
-   "title": "Linguistic Tagging Oliver Mason",
+   "title": "Linguistic Tagging",
    "date": ""
   },
   {
@@ -559,27 +559,27 @@
   },
   {
    "url": "https://www.objc.io/issues/6-build-tools/build-process",
-   "title": "The Build Process Florian Kugler",
+   "title": "The Build Process",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/6-build-tools/compiler",
-   "title": "The Compiler Chris Eidhof",
+   "title": "The Compiler",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/6-build-tools/mach-o-executables",
-   "title": "Mach-O Executables Daniel Eggert",
+   "title": "Mach-O Executables",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/6-build-tools/cocoapods-under-the-hood",
-   "title": "CocoaPods Under The Hood Michele Titolo",
+   "title": "CocoaPods Under The Hood",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/6-build-tools/travis-ci",
-   "title": "Travis CI for iOS Mattes Groeger",
+   "title": "Travis CI for iOS",
    "date": ""
   },
   {
@@ -589,37 +589,37 @@
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/getting-to-know-textkit",
-   "title": "Getting to Know TextKit Max Seelemann",
+   "title": "Getting to Know TextKit",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/collection-views-and-uidynamics",
-   "title": "UICollectionView + UIKit Dynamics Ash Furrow",
+   "title": "UICollectionView + UIKit Dynamics",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/view-controller-transitions",
-   "title": "View Controller Transitions Chris Eidhof",
+   "title": "View Controller Transitions",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/from-nsurlconnection-to-nsurlsession",
-   "title": "From NSURLConnection to NSURLSession Mattt Thompson",
+   "title": "From NSURLConnection to NSURLSession",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/multitasking",
-   "title": "Multitasking in iOS 7 David Caunt",
+   "title": "Multitasking in iOS 7",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/iOS7-hidden-gems-and-workarounds",
-   "title": "iOS 7: Hidden Gems and Workarounds Peter Steinberger",
+   "title": "iOS 7: Hidden Gems and Workarounds",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/5-ios7/redesigning-for-ios-7",
-   "title": "Re-Designing an App for iOS 7 Holger Riegel and Tobias Kreß",
+   "title": "Re-Designing an App for iOS 7",
    "date": ""
   },
   {
@@ -629,37 +629,37 @@
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/core-data-overview",
-   "title": "Core Data Overview Daniel Eggert",
+   "title": "Core Data Overview",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/full-core-data-application",
-   "title": "A Complete Core Data Application Chris Eidhof",
+   "title": "A Complete Core Data Application",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/SQLite-instead-of-core-data",
-   "title": "On Using SQLite and FMDB Instead of Core Data Brent Simmons",
+   "title": "On Using SQLite and FMDB Instead of Core Data",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/core-data-models-and-model-objects",
-   "title": "Data Models and Model Objects Florian Kugler",
+   "title": "Data Models and Model Objects",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/importing-large-data-sets-into-core-data",
-   "title": "Importing Large Data Sets Florian Kugler",
+   "title": "Importing Large Data Sets",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/core-data-fetch-requests",
-   "title": "Fetch Requests Daniel Eggert",
+   "title": "Fetch Requests",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/4-core-data/core-data-migration",
-   "title": "Custom Core Data Migrations Martin Hwasser",
+   "title": "Custom Core Data Migrations",
    "date": ""
   },
   {
@@ -669,27 +669,27 @@
   },
   {
    "url": "https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen",
-   "title": "Getting Pixels onto the Screen Daniel Eggert",
+   "title": "Getting Pixels onto the Screen",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/3-views/scroll-view",
-   "title": "Understanding Scroll Views Joe Conway",
+   "title": "Understanding Scroll Views",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/3-views/collection-view-layouts",
-   "title": "Custom Collection View Layouts Ole Begemann",
+   "title": "Custom Collection View Layouts",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/3-views/custom-controls",
-   "title": "Custom Controls Chris Eidhof",
+   "title": "Custom Controls",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/3-views/advanced-auto-layout-toolbox",
-   "title": "Advanced Auto Layout Toolbox Florian Kugler",
+   "title": "Advanced Auto Layout Toolbox",
    "date": ""
   },
   {
@@ -699,27 +699,27 @@
   },
   {
    "url": "https://www.objc.io/issues/2-concurrency/concurrency-apis-and-pitfalls",
-   "title": "Concurrent Programming: APIs and Challenges Florian Kugler",
+   "title": "Concurrent Programming: APIs and Challenges",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/2-concurrency/common-background-practices",
-   "title": "Common Background Practices Chris Eidhof",
+   "title": "Common Background Practices",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/2-concurrency/low-level-concurrency-apis",
-   "title": "Low-Level Concurrency APIs Daniel Eggert",
+   "title": "Low-Level Concurrency APIs",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/2-concurrency/thread-safe-class-design",
-   "title": "Thread-Safe Class Design Peter Steinberger",
+   "title": "Thread-Safe Class Design",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/2-concurrency/async-testing",
-   "title": "Testing Concurrent Applications Tobias Kräntzer",
+   "title": "Testing Concurrent Applications",
    "date": ""
   },
   {
@@ -729,22 +729,22 @@
   },
   {
    "url": "https://www.objc.io/issues/1-view-controllers/lighter-view-controllers",
-   "title": "Lighter View Controllers Chris Eidhof",
+   "title": "Lighter View Controllers",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/1-view-controllers/table-views",
-   "title": "Clean Table View Code Florian Kugler",
+   "title": "Clean Table View Code",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/1-view-controllers/testing-view-controllers",
-   "title": "Testing View Controllers Daniel Eggert",
+   "title": "Testing View Controllers",
    "date": ""
   },
   {
    "url": "https://www.objc.io/issues/1-view-controllers/containment-view-controller",
-   "title": "View Controller Containment Ricki Gregersen",
+   "title": "View Controller Containment",
    "date": ""
   }
  ]

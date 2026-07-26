@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9ef2c0a58b85fe47'
 translated: false
 ---
@@ -141,15 +141,9 @@ This is not a case where I’m aiming for maximum syntactic efficiency. The work
 
 Some verbosity remains due to the following three points:
 
-- is not generic over the observed type (you need to dynamically downcast observed values)
-- dictionary is the same as that used by key value observing (although it’s guaranteed to be non-nil)
-- can be used with
-
-  (although the default value of
-
-  +
-
-  is used implicitly, here)
+- the `KeyValueObserver` is not generic over the observed type (you need to dynamically downcast observed values)
+- the `change` dictionary is the same as that used by key value observing (although it’s guaranteed to be non-nil)
+- the full set of `NSKeyValueObservingOptions` can be used with `KeyValueObserver` (although the default value of `new` + `initial` is used implicitly, here)
 
 The advantage to keeping these minor complexities is that this `KeyValueObserver` should be able to replace _any_ usage of Cocoa key-value observing. However, if you want maximum syntactic efficiency, you’ll still want an additional layer that further adapts the output (e.g. CwlSignal or simply a subclass of `KeyValueObserver` that applies a transformation to the `callback` applied to the `init` method).
 

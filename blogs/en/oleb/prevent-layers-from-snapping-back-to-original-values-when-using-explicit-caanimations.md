@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bfd3f5356b1e76bf'
 translated: false
 ---
@@ -33,7 +33,7 @@ animation.duration = 1.0;
 
 The reason for this behavior is that explicit `CAAnimation`s only affect the _presentation layer_ tree. The underlying _model layer_ tree remains unchanged. As long as the animation is running, it assigns interpolated position values to the presentation layer, which is used for displaying the scene on screen. However, when the animation has finished the presentation layer automatically reverts back to the values of its corresponding model layer, which causes the sudden bounce back to the layer’s original position on screen.
 
-To solve the problem, we have to explicitly change the model layer’s `position` property.[1](#fn:1) Unfortunately, doing so just before or after adding the animation to the layer overrides the animation and causes the layer to snap to its new position with no animation at all. Now that we have changed the model value before running the animation, the animation’s `fromValue` and `toValue` are identical, resulting in an “animation” without movement.
+To solve the problem, we have to explicitly change the model layer’s `position` property.^[1](#fn:1) Unfortunately, doing so just before or after adding the animation to the layer overrides the animation and causes the layer to snap to its new position with no animation at all. Now that we have changed the model value before running the animation, the animation’s `fromValue` and `toValue` are identical, resulting in an “animation” without movement.
 
 To avoid this, save the original model value before changing it and explicitly set the animation’s `fromValue`:
 

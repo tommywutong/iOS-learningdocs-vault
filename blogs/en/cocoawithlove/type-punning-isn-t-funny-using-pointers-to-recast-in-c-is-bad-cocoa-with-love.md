@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c1e4fb1b20dfa4bc'
 translated: false
 ---
@@ -43,11 +43,8 @@ Why the difference? Why bother creating a union? Why shouldn't you simply cast t
 
 As common as casting through a pointer is, it is actually bad practice and potentially risky code. Casting through a pointer has the potential to create bugs because of type punning.
 
-> A form of
-> 
-> pointer aliasing
-> 
-> where two pointers and refer to the same location in memory but represent that location as different types. The compiler will treat both "puns" as unrelated pointers. Type punning has the potential to cause dependency problems for any data accessed through both pointers.
+> **Type punning**  
+>  A form of [pointer aliasing](http://en.wikipedia.org/wiki/Pointer_alias) where two pointers and refer to the same location in memory but represent that location as different types. The compiler will treat both "puns" as unrelated pointers. Type punning has the potential to cause dependency problems for any data accessed through both pointers.
 
 Most of the time, type punning won't cause any problems. It is considered undefined behavior by the C standard but will usually do the work you expect.
 
@@ -83,6 +80,8 @@ According to the C standard, anything involving type punning is implementation s
 
 Fortunately, GCC explicitly gives permission to do different. From the GCC documentation:
 
+> The practice of reading from a different union member than the one most recently written to (called “type-punning”) is common. Even with -fstrict-aliasing, type-punning is allowed, provided the memory is accessed through the union type.
+
 Excellent.
 
 ## A macro to reinterpret your own data safely
@@ -93,6 +92,8 @@ Really simple:
 #define UNION_CAST(x, destType) \
    (((union {__typeof__(x) a; destType b;})x).b)
 ```
+
+> This example now incorporates the "__typeof__" suggestion made by Daniel Néri in the comments.
 
 So you could cast a float variable named myFloat to an int as follows:
 

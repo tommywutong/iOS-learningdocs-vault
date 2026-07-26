@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9a620defe3b33920'
 translated: false
 ---
@@ -21,6 +21,12 @@ translated: false
 A few weeks ago, I asked this question on Twitter:
 
 > In iOS 11, is it still necessary to unregister _block-based_ notification center observers? Apple docs are ambiguous: docs for [`addObserver(forName:object:queue:using:)`](https://developer.apple.com/documentation/foundation/notificationcenter/1411723-addobserver) say yes; [`removeObserver(_:)`](https://developer.apple.com/documentation/foundation/notificationcenter/1413994-removeobserver) docs say it’s no longer necessary for iOS 9+.
+> 
+> [@olebegemann](https://twitter.com/olebegemann)
+> 
+> Ole Begemann
+> 
+> [December 5, 2017](https://twitter.com/olebegemann/status/938085544780877824)
 
 I received a lot of conflicting replies. The yes/no split was pretty close to 50/50.
 

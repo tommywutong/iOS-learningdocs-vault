@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0e9c969f71c34409'
 translated: false
 ---
@@ -24,23 +24,9 @@ If you want some background on what The Cocotron is and alternative ways of port
 
 Installing The Cocotron is a three step process:
 
-1. Download the InstallCDT zip file
-
-  , decompress it and run the InstallCDT script it contains. I think CDT stands for Cocotron Developer Tools. This installs a copy of gcc and related tools that you will required for cross-compilation. It will also install required MinGW libraries and W32API libraries for linking Windows projects.
-2. Check out a copy of The Cocotron code
-
-  . The repository has recently moved to Mercurial, so you'll need to have a copy of
-
-  Mercurial
-
-  or check out the
-
-  Subversion mirror
-
-  . Open the Cocoa.xcodeproj and build the project.
-3. Download a copy of xcxdb-Installation.zip
-
-  and run the install-xcxdb,sh script it contains. XCXDB probably stands for Xcode Cocotron (X)cross DeBugger.
+1. [Download the InstallCDT zip file](http://www.cocotron.org/Tools/InstallCDT), decompress it and run the InstallCDT script it contains. I think CDT stands for Cocotron Developer Tools. This installs a copy of gcc and related tools that you will required for cross-compilation. It will also install required MinGW libraries and W32API libraries for linking Windows projects.
+2. [Check out a copy of The Cocotron code](http://code.google.com/p/cocotron/source/checkout). The repository has recently moved to Mercurial, so you'll need to have a copy of [Mercurial](http://mercurial.selenic.com/downloads/) or check out the [Subversion mirror](http://cocotron.googlecode.com/svn/trunk/). Open the Cocoa.xcodeproj and build the project.
+3. [Download a copy of xcxdb-Installation.zip](http://groups.google.com/group/cocotron-dev/files) and run the install-xcxdb,sh script it contains. XCXDB probably stands for Xcode Cocotron (X)cross DeBugger.
 
 The third point is not strictly required for using The Cocotron but is required for remote debugging as it installs a version of gdb that will allow remote debugging between Xcode and Windows. The XCXDB install has the added advantage that it adds a Template to the Project Templates that will create a Windows debuggable project without needing to mess around with specific project settings.
 
@@ -257,11 +243,7 @@ Unfortunately, `stat` doesn't handle UNC paths. These are Windows network paths 
 
 The correct way to do this under Win32 is probably `GetFileAttributesExW`. However, it turns out that it was easier to simply revert to the higher level `NSFileManager` API for getting file system information. This API is fully implemented by The Cocotron, supports UNC paths and worked fairly efficiently in testing.
 
-> the function name
-> 
-> is amusing evidence of the age of Win32 and its efforts to maintain backwards compatibility. The original function,
-> 
-> is still there but is just about useless — it was deprecated in 1999 — and Win32 never fully committed to Unicode so the function has to point out: Warning! "Wide" chars!
+> **Aside:** the function name `GetFileAttributesExW` is amusing evidence of the age of Win32 and its efforts to maintain backwards compatibility. The original function, `GetFileAttributes` is still there but is just about useless — it was deprecated in 1999 — and Win32 never fully committed to Unicode so the function has to point out: Warning! "Wide" chars!
 
 That's right: in some cases, the Windows version of ServeToMe is _more_ Cocoa than the Mac version. But only in some cases.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:379abb91b30e94e2'
 translated: false
 ---
@@ -28,13 +28,13 @@ Each entry in your feed should have a unique identifier. The corresponding XML e
 
 **Your goal as a feed publisher must be to keep the identifiers for existing feed items constant when switching publishing systems.**
 
-Most feed readers use the unique identifier to determine whether they have already seen a particular item in the feed and to associate their own data (such as read or starred status) with it.[1](#fn:1) So your goal as a feed publisher must be to keep the identifiers for existing feed items constant when switching publishing systems. That’s all you have to do.
+Most feed readers use the unique identifier to determine whether they have already seen a particular item in the feed and to associate their own data (such as read or starred status) with it.^[1](#fn:1) So your goal as a feed publisher must be to keep the identifiers for existing feed items constant when switching publishing systems. That’s all you have to do.
 
 # Moving from Wordpress to a Static Site Generator
 
 Most content management systems use an item’s URL as its unique identifier. This isn’t necessarily the “pretty” URL that are exposed to visitors of the site, though. For example, Wordpress always uses its internal URLs of the form `http://example.com/?p=1234` as item IDs, regardless of what permalink format you chose for your site.
 
-When I converted this blog [from Wordpress to nanoc](https://oleb.net/blog/2011/02/new-site-design-now-proudly-serving-static-html/)[2](#fn:2), I solved the problem as follows:
+When I converted this blog [from Wordpress to nanoc](https://oleb.net/blog/2011/02/new-site-design-now-proudly-serving-static-html/)^[2](#fn:2), I solved the problem as follows:
 
 1. For existing posts, include an attribute in the header that contains (a) either the full identifier that has been used in the feed, or (b) enough information to rebuild the item ID later. In the case of Wordpress, the old article ID is sufficient. For example, the post header might look like this (note the `wordpress_id` attribute):
 

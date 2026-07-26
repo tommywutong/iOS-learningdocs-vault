@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:4481ddfb5de911b0'
 translated: false
 ---
@@ -22,16 +22,8 @@ While a button’s shape may be arbitrary, UIButton always responds to touches w
 
 `OBShapedButton` is a replacement for UIButton that solves this issue. Instances of OBShapedButton only respond to touches where the button image is non-transparent. Here’s how to use it:
 
-- Get the code from GitHub
-
-  .
-- ,
-
-  ,
-
-  , and
-
-  to your Xcode project.
+- [Get the code from GitHub](https://github.com/ole/OBShapedButton).
+- Add `OBShapedButton.h`, `OBShapedButton.m`, `UIImage+ColorAtPixel.h`, and `UIImage+ColorAtPixel.m` to your Xcode project.
 - Design your UI in Interface Builder with UIButtons as usual. Set the Button type to Custom and provide transparent PNG images for the different control states as needed.
 - In the Identity Inspector in Interface Builder, set the Class of the button to OBShapedButton.
 

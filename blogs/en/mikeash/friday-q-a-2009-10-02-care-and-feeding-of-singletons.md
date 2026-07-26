@@ -29,25 +29,16 @@ by [Mike Ash](https://www.mikeash.com/)
 **Benefits**  
  Why would you use a singleton instead of a regular class? There are a few basic reasons:
 
-1. A singleton is essentially shared throughout the entire program, making it easier to coordinate activities. A major example of this in Cocoa is
+1. **Global access:** A singleton is essentially shared throughout the entire program, making it easier to coordinate activities. A major example of this in Cocoa is `NSNotificationCenter`.
+2. **Resource management:** Having a single instance of a class is appropriate if that class represents an entity which is inherently singular. An example of this in Cocoa is `NSApplication`.
+3. **Grouping functionality:** Sometimes you have a lot of similar functionality that logically goes together but which doesn't necessarily fit into the object model because there's no long-term state. By using a singleton you simplify access to this functionality. `NSWorkspace` is an exmple of this usage of a singleton in Cocoa.
+4. **Lazy initialization:** Properly-written singleton classes aren't instantiated until something asks for them, meaning that the resources occupied by the singleton aren't allocated until they're needed.
 
-  .
-2. Having a single instance of a class is appropriate if that class represents an entity which is inherently singular. An example of this in Cocoa is
+**Downsides**  
+ Singletons aren't always appropriate. (In fact, they're almost always not appropriate. Just look at the proprotion of singletons to normal classes in any given program.) In general you should not use one unless you need it, but there are some specific pitfalls to look out for:
 
-  .
-3. Sometimes you have a lot of similar functionality that logically goes together but which doesn't necessarily fit into the object model because there's no long-term state. By using a singleton you simplify access to this functionality.
-
-  is an exmple of this usage of a singleton in Cocoa.
-4. Properly-written singleton classes aren't instantiated until something asks for them, meaning that the resources occupied by the singleton aren't allocated until they're needed.
-
-Singletons aren't always appropriate. (In fact, they're almost always not appropriate. Just look at the proprotion of singletons to normal classes in any given program.) In general you should not use one unless you need it, but there are some specific pitfalls to look out for:
-
-1. Singletons are inherently globally accessible, which means that any state which exists as part of the singleton can be accessed and potentially changed from any part of the program. Good encapsulation of singleton state can help with this a lot, but if you're not careful then the problem can be much like that of global variables. This can be particularly vicious in a multithreaded environment. Many Cocoa singletons suffer from not being thread safe and
-
-  their global accessibility makes them inherently limited to only being used from the main thread
-
-  .
-2. You thought there would only be one, so you made a singleton around it. Now there are two. All of your code assumes that there is only one. Time for a big, painful rewrite.
+1. **Shared global state:** Singletons are inherently globally accessible, which means that any state which exists as part of the singleton can be accessed and potentially changed from any part of the program. Good encapsulation of singleton state can help with this a lot, but if you're not careful then the problem can be much like that of global variables. This can be particularly vicious in a multithreaded environment. Many Cocoa singletons suffer from not being thread safe and [their global accessibility makes them inherently limited to only being used from the main thread](https://www.mikeash.com/pyblog/friday-qa-2009-01-09.html).
+2. **Over-specialized code:** You thought there would only be one, so you made a singleton around it. Now there are two. All of your code assumes that there is only one. Time for a big, painful rewrite.
 
 **How to Make One**  
  At its most basic, a singleton is implemented like this:
@@ -66,14 +57,10 @@ That's it! You're done!
 
 Right about now, a bunch of people are thinking back to [a certain Apple document on singletons](http://developer.apple.com/mac/library/DOCUMENTATION/Cocoa/Conceptual/CocoaFundamentals/CocoaObjects/CocoaObjects.html) which shows a much more complicated implementation. There are basically two advantages to Apple's version which this doesn't have.
 
-1. Apple's version correctly deals with the case where multiple threads try to access the singleton before it's been created.
-2. Apple's version tries to cover for a lot of dumb mistakes a programmer might make, like incorrectly releasing a singleton.
+1. **Thread safety:** Apple's version correctly deals with the case where multiple threads try to access the singleton before it's been created.
+2. **Programmer safety:** Apple's version tries to cover for a lot of dumb mistakes a programmer might make, like incorrectly releasing a singleton.
 
-Thread safety is useful but not always necessary. Programmer safety is, in my opinion, counterproductive. Apple's approach, of building a singleton which can't be destroyed by accident and which intercepts attempts to allocate a second instance, covers up errors rather than fixing them. It's much better to trap and eliminate the bad code rather than render it harmless. For example, instead of overriding
-
-to do nothing, override
-
-to log an error and abort the program.
+Thread safety is useful but not always necessary. Programmer safety is, in my opinion, counterproductive. Apple's approach, of building a singleton which can't be destroyed by accident and which intercepts attempts to allocate a second instance, covers up errors rather than fixing them. It's much better to trap and eliminate the bad code rather than render it harmless. For example, instead of overriding `release` to do nothing, override `dealloc` to log an error and abort the program.
 
 Furthermore, it's not always necessary to really strictly enforce singleton-ness. `NSFileManager` is a good example of this from Cocoa. Through 10.4 it was a singleton, and not thread safe and thus could only be used on the main thread. Starting in 10.5, Apple allowed the creation of separate instances which could then be safely used on other threads. Your code might well want to do the same thing. Often, providing the shared globally-accessible instance is the major benefit of having a singleton, and there's no need to prohibit other instances being created on the side.
 
@@ -120,15 +107,7 @@ One fix for this is to take advantage of the Objective-C runtime and use the `+i
     }
 ```
 
-The runtime takes care of all the nasty locking stuff for you, and ensures that
-
-always runs before
-
-can execute. The only downside to this approach is that
-
-will run if
-
-message is sent to your class, possibly initializing the singleton earlier than necessary.
+The runtime takes care of all the nasty locking stuff for you, and ensures that `+initialize` always runs before `+sharedFoo` can execute. The only downside to this approach is that `+initialize` will run if _any_ message is sent to your class, possibly initializing the singleton earlier than necessary.
 
 **Double-Checked Locking**  
  If you search on the above phrase you'll find a bunch of web pages talking about how this technique is a bad idea. And it is, for platform-independent code. However, if you can assume some knowledge of your target platform (and hey, we're all doing OS X development here) then it can be done safely.
@@ -180,9 +159,7 @@ Here's what the GCD solution looks like:
     }
 ```
 
-The
-
-function takes care of all the necessary locking and synchronization. It's actually a macro which expands to something much like the double-checked locking solution above. However, using some extremely underhanded trickery, it doesn't even need to take the hit of a memory barrier. In the common case, this code is a single if check followed by a return. Aside from the fact that it's examining two variables instead of one (an extremely small cost) it's as fast as the non-thread-safe version I started out with, and very nearly as simple. Nice!
+The `dispatch_once` function takes care of all the necessary locking and synchronization. It's actually a macro which expands to something much like the double-checked locking solution above. However, using some extremely underhanded trickery, it doesn't even need to take the hit of a memory barrier. In the common case, this code is a single if check followed by a return. Aside from the fact that it's examining two variables instead of one (an extremely small cost) it's as fast as the non-thread-safe version I started out with, and very nearly as simple. Nice!
 
 **Advanced Topics**  
  There are a couple of interesting advanced techniques with singletons that I want to cover briefly. I won't go over how to build them, but think of them as exercises for the reader.
@@ -204,7 +181,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-10-02-care-and-feeding-of-singletons.html)
 
 Add your thoughts, post a comment:
 

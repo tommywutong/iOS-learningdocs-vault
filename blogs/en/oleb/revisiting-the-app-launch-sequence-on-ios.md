@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b4956547f04e0bc9'
 translated: false
 ---
@@ -22,7 +22,7 @@ Since that time, Apple has revised the default launch sequence in their iOS app 
 
 # Flowchart
 
-![App Launch Sequence as of Xcode 4.2 (without Storyboarding)](https://oleb.net/media/xcode-4-2-app-launch-sequence.png)
+[![App Launch Sequence as of Xcode 4.2 (without Storyboarding)](https://oleb.net/media/xcode-4-2-app-launch-sequence.png)](https://oleb.net/media/xcode-4-2-app-launch-sequence.png)
 
 <sub>Flowchart of the default app launch sequence in iOS as of Xcode 4.2 for a non-storyboarded app. Feel free to share this image under a [Creative Commons Attribution license](http://creativecommons.org/licenses/by/3.0/) (CC-BY). In a storyboarded app, `UIApplicationMain()` would additionally initiate the loading of the app's main storyboard file, which in turn would create the window and initial view controller.</sub>
 
@@ -45,7 +45,7 @@ Looking at [the documentation](https://developer.apple.com/library/ios/documenta
 
 > The name of the class from which the application delegate is instantiated. … Specify `nil` if you load the delegate object from your application’s main nib file.
 
-So apparently our app delegate, which was previously created with Interface Builder inside `MainWindow.xib`, is now created directly by the `UIApplicationMain()` function.[1](#fn:1) In fact, there isn’t even a `MainWindow.xib` file anymore in our project!
+So apparently our app delegate, which was previously created with Interface Builder inside `MainWindow.xib`, is now created directly by the `UIApplicationMain()` function.^[1](#fn:1) In fact, there isn’t even a `MainWindow.xib` file anymore in our project!
 
 # No MainWindow.xib
 

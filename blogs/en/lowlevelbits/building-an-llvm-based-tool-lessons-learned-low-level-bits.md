@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0e0dc572b52b7c6f'
 translated: false
 ---
@@ -240,9 +240,9 @@ add_subdirectory(LLVMCompatibility/${LLVM_COMPATIBILITY_DIR})
 
 What happens here: CMake is looking for a directory with the compatibility layer for the given LLVM version in a special order. For example, for the version 8.0.1 it will do the following:
 
-1. if it exists
-2. if it exists
-3. if it exists
+1. Use `LLVMCompatibility/8.0.1` if it exists
+2. Use `LLVMCompatibility/8.0.x` if it exists
+3. Use `LLVMCompatibility/8.x.x` if it exists
 4. Give up and fail
 
 As soon as it finds the right folder, it will include it in the build process. So far we used only `<number>.x.x`, but the idea is that we can provide a particular library for any version of LLVM if we need to. Here is how two header files look like:
@@ -337,7 +337,7 @@ Let’s consider this picture:
 
 There are three phases: loading, analysis, and transformation:
 
-1. !
+1. We load two modules(#1, #2) within the Thread 1, and the third module (#3) within the Thread 2. What’s important is that each thread should have its own `LLVMContext`!
 2. The next phase is the analysis. At this point we only read information from LLVM IR, so we can distribute all the 8 functions (F1-F8) across two threads evenly: Thread 1 analyzes F1-F4, and Thread 2 deals with F5-F8.
 3. Transformation. Is it essential to ensure that any transformation of a module does not escape the module’s thread boundaries: even such ‘minor’ changes as renaming an instruction is not thread-safe.
 
@@ -363,19 +363,9 @@ The most common answer I’ve seen is the [whole-program-llvm](https://github.co
 
 There are a few other ways to get the bitcode:
 
-1. : passing this flag to the compiler will give you an LLVM Bitcode/IR file as an output. It will break the linking phase of your build system, though.
-2. : with this flag all the intermediate object files will, in fact, be LLVM Bitcode files. The program will compile just fine. It won’t work though if you don’t have any intermediate object files in the pipeline (e.g.
-
-  )
-3. : this should be your choice! Clang will compile your program just fine, but it will also include a special section into the binary containing all the Bitcode files (
-
-  Learn More
-
-  ). You can extract the Bitcode from the binary programmatically using my fork of the awesome
-
-  LibEBC
-
-  tool.
+1. `-emit-llvm`: passing this flag to the compiler will give you an LLVM Bitcode/IR file as an output. It will break the linking phase of your build system, though.
+2. `-flto`: with this flag all the intermediate object files will, in fact, be LLVM Bitcode files. The program will compile just fine. It won’t work though if you don’t have any intermediate object files in the pipeline (e.g. `clang foo.c bar.c -o foobar`)
+3. `-fembed-bitcode`: this should be your choice! Clang will compile your program just fine, but it will also include a special section into the binary containing all the Bitcode files ([Learn More](https://lowlevelbits.org/bitcode-demystified/)). You can extract the Bitcode from the binary programmatically using my fork of the awesome [LibEBC](https://github.com/AlexDenisov/LibEBC) tool.
 
 ### Multi-OS Support
 
@@ -442,13 +432,7 @@ This small snippet will make sure that all the `packages` are installed (`presen
 - install packages
 - download LLVM
 - build & run Mull’s unit tests
-- ,
-
-  ,
-
-  ,
-
-  )
+- create an OS dependent package (`pkg`, `deb`, `rpm`, `sh`)
 - run integration tests
 
 Another great thing about Ansible: you can run it locally, not necessarily in the VM. We use this feature on CI: executing each mentioned step for every pull request.
@@ -477,11 +461,11 @@ In the end, I have packages ready in the `packages` folder for Debian, FreeBSD, 
 
 Just reiterating all those bold statements one more time:
 
-- as part of the build system
-- LLVM/Clang from your distro for development
-- LLVM passes
-- **don’t use** `whole-program-llvm`
-- Vagrant & Ansible for multi-OS support
-- different versions of LLVM for development
+- **don’t use**`llvm-config` as part of the build system
+- **don’t use** LLVM/Clang from your distro for development
+- **don’t use** LLVM passes
+- **don’t use**`whole-program-llvm`
+- **use** Vagrant & Ansible for multi-OS support
+- **use** different versions of LLVM for development
 
 There is another big topic: **Testing**, but I will leave it for the next article.

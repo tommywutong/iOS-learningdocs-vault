@@ -7,7 +7,7 @@ original_language: en
 published: 2015-02-22
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b12f6ef0a46b67a0'
 translated: false
 ---
@@ -30,9 +30,7 @@ _I should note that I am a non-marginalized developer and a person with a lot of
 
 > If you're a manager or in a position to affect company culture and policy, I recommend you attend [@AlterConf](https://twitter.com/AlterConf) to listen and learn.
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> February 1, 2015
+> — Jordan Rose (@UINT_MIN) [February 1, 2015](https://twitter.com/UINT_MIN/status/561977307712483329)
 
 **EDIT:** The AlterConf site now has a [summary of all the talks](http://www.alterconf.com/news/pain-and-hope-alterconf-sfoakland), with quotes and photos.
 
@@ -63,106 +61,66 @@ I put Wallace’s talk last even though it was in the middle of the conference b
 
 AFAIK the plan is still to post [recordings and transcripts of the talks](http://alterconf.com/sessions/sfoakland-ca), so here are some “tracks” for you for when they go up:
 
--   - Coding Like A Girl
+- Workplace culture:
 
-      ”
-    - We Can’t See You, So You Can’t See Us
+    - Wibowo’s “[Coding Like A Girl](http://www.alterconf.com/speakers/amy-wibowo)”
+    - Lipner’s “[We Can’t See You, So You Can’t See Us](http://www.alterconf.com/speakers/mia-lipner)”
+    - Parker’s “[Overcoming Mental Health Hurdles at Work](http://www.alterconf.com/speakers/madalyn-rose-parker)”
+    - Guardado’s “[The System Boundary](http://www.alterconf.com/speakers/dimas-guardado)”
+- Why you might “not have diversity”:
 
-      ”
-    - Overcoming Mental Health Hurdles at Work
+    - Rogers’ “[Conforming to Succeed](http://www.alterconf.com/speakers/marco-rogers)”
+    - Small’s “[How Unconscious Racism Keeps Culturally Marginalized Black People out of Tech Organizations](http://www.alterconf.com/speakers/davida-small)”
+    - Lipner’s “[We Can’t See You, So You Can’t See Us](http://www.alterconf.com/speakers/mia-lipner)”
+- Diversity as opportunity:
 
-      ”
-    - The System Boundary
+    - Oyedele’s “[Increasing Diversity - The Billion Dollar Opportunity](http://www.alterconf.com/speakers/shola-oyedele)”
+    - Wallace’s “[Why There’s No Such Thing As Tech](http://www.alterconf.com/speakers/carvell-wallace)”
+- Harmful policies:
 
-      ”
--   - Conforming to Succeed
+    - Stryker’s “[Branded: Sex Workers on Social Media](http://www.alterconf.com/speakers/kitty-stryker)”
+    - Lipner’s “[We Can’t See You, So You Can’t See Us](http://www.alterconf.com/speakers/mia-lipner)”
+    - Small’s “[How Unconscious Racism Keeps Culturally Marginalized Black People out of Tech Organizations](http://www.alterconf.com/speakers/davida-small)”
+- Games:
 
-      ”
-    - How Unconscious Racism Keeps Culturally Marginalized Black People out of Tech Organizations
+    - Brice’s “[diva ex machina](http://www.alterconf.com/speakers/mattie-brice)”
+    - Iqbal’s “[Queer Mechanics in Competitive Videogames](http://www.alterconf.com/speakers/izzy-iqbal)”
+    - [O’Cando](http://www.alterconf.com/speakers/xandir-ocando) and [Simpson](http://www.alterconf.com/speakers/kevin-simpson)’s “Disability in Games”
+    - Porpentine’s “[Trash Fem Games](http://www.alterconf.com/speakers/porpentine)” (content warnings for violence, hardships in life, and emotional trauma)
+- Personal experiences:
 
-      ”
-    - We Can’t See You, So You Can’t See Us
-
-      ”
--   - Increasing Diversity - The Billion Dollar Opportunity
-
-      ”
-    - Why There’s No Such Thing As Tech
-
-      ”
--   - Branded: Sex Workers on Social Media
-
-      ”
-    - We Can’t See You, So You Can’t See Us
-
-      ”
-    - How Unconscious Racism Keeps Culturally Marginalized Black People out of Tech Organizations
-
-      ”
--   - diva ex machina
-
-      ”
-    - Queer Mechanics in Competitive Videogames
-
-      ”
-    - O’Cando
-
-      and
-
-      Simpson
-
-      ’s “Disability in Games”
-    - Trash Fem Games
-
-      ” (content warnings for violence, hardships in life, and emotional trauma)
--   - Conforming to Succeed
-
-      ”
-    - Overcoming Mental Health Hurdles at Work
-
-      ”
-    - Trash Fem Games
-
-      ” (content warning again)
-    - trans_
+    - Rogers’ “[Conforming to Succeed](http://www.alterconf.com/speakers/marco-rogers)”
+    - Parker’s “[Overcoming Mental Health Hurdles at Work](http://www.alterconf.com/speakers/madalyn-rose-parker)”
+    - Porpentine’s “[Trash Fem Games](http://www.alterconf.com/speakers/porpentine)” (content warning again)
+    - Kelloway’s excerpts from [trans_](http://www.alterconf.com/speakers/harlan-kelloway)
 
 Meanwhile, some semi-actionable takeaways I got from these talks:
 
 - Diversity is not a numbers game. (many people)
 - Current culture ignores valuable talent. Fixing this requires getting the people you’re trying to include. (Oyedele)
 - Accomodating differences is good for company culture. And for the employees. (Parker)
-- way. (Lipner, O’Cando, Simpson)
+- Accessibility means accounting for people who don’t interact with your software in the _default_ way. (Lipner, O’Cando, Simpson)
 - Accessibility needs to be there from the start. (Lipner)
 - “Mental health issues should be treated like any other illness, because they are.” (Parker)
 - “The scene with the biggest problems is the scene that says it has no problems.” (Porpentine)
 - Examine your cultural assumptions; they may be exclusionary. (Small)
 - Reconsider policies that harm others. (Stryker)
-- or
-
-  qualified than you are. Even when presenting as feminine. (Wibowo)
+- Assume people you meet are _as_ or _more_ qualified than you are. Even when presenting as feminine. (Wibowo)
 - Stop claiming expertise over experiences you haven’t had and methods you haven’t used. (Guardado)
 - Problems are best solved by the people who have them. (Wallace)
 - Diversity is an opportunity. (Oyedele)
 
 And here are some links on related topics that I thought of during the talks or while writing this post:
 
-- Spoon Theory
-
-  ”. As someone who has neither a mental illness nor a physical disability, I can’t speak to how accurate this is, but it feels like a useful analogy.
-- includification.com
-
-  .
-- Coming Out Simulator 2014
-
-  .
+- Parker’s experiences of mental health issues reminded me of Christine Miserandino’s “[Spoon Theory](http://www.butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)”. As someone who has neither a mental illness nor a physical disability, I can’t speak to how accurate this is, but it feels like a useful analogy.
+- O’Cando and Simpson pointed to the AbleGamers Foundation at [includification.com](http://includification.com).
+- And Brice mentioned games where the player doesn’t necessarily have a strong effect on the outcome, so I’m going to link to Nicky Case’s [Coming Out Simulator 2014](http://ncase.itch.io/coming-out-simulator-2014).
 
 So, what now?
 
 > An [@AlterConf](https://twitter.com/AlterConf) paradox: a group that could really benefit from going is the group of people who wouldn't have heard of it.
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> February 1, 2015
+> — Jordan Rose (@UINT_MIN) [February 1, 2015](https://twitter.com/UINT_MIN/status/561976690935865344)
 
 I don’t know the answer for this yet, but I _do_ think AlterConf is worthwhile, and that my attending it was likewise worthwhile. (Thanks to organizer [Ashe Dryden](http://www.alterconf.com/speakers/ashe-dryden) and everyone who helped to put it on!)
 

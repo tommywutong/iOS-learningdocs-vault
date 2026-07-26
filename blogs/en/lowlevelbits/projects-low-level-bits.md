@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0c179907f809c6ce'
 translated: false
 ---
@@ -30,7 +30,7 @@ These are some of the projects I work on.
 - Multi-OS support: Linux, macOS, FreeBSD
 - Automated release engineering: packaging for various OSes
 - Driving the design and implementation
-- link
+- Writing research papers: [link](https://ieeexplore.ieee.org/document/8411727/)
 
 ### [RubyMotion](http://www.rubymotion.com)
 

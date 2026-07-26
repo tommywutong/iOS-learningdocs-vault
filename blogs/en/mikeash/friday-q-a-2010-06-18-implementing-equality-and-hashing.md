@@ -35,13 +35,7 @@ It's so important that Cocoa actually gives us a default implementation of it on
     }
 ```
 
-While oversimplified in many cases, this is actually good enough for a lot of objects. For example, an
-
-is never considered equal to another
-
-, only to itself. For
-
-, and many other classes which behave that way, the default implementation is enough. That's good news, because it means that if your class has that same equality semantic, you don't have to do anything, and get the correct behavior for free.
+While oversimplified in many cases, this is actually good enough for a lot of objects. For example, an `NSView` is never considered equal to another `NSView`, only to itself. For `NSView`, and many other classes which behave that way, the default implementation is enough. That's good news, because it means that if your class has that same equality semantic, you don't have to do anything, and get the correct behavior for free.
 
 **Implementing Custom Equality**  
  Sometimes you need a deeper implementation of equality. It's common for objects, typically what you might refer to as a "value object", to be distinct from another object but be logically equal to it. For example:
@@ -53,9 +47,7 @@ is never considered equal to another
     BOOL equal = [s1 isEqual: s2]; // gives you YES!
 ```
 
-Of course
-
-implements this for you in this case. But what if you have a custom object that you want to be able to do the same thing?
+Of course `NSMutableString` implements this for you in this case. But what if you have a custom object that you want to be able to do the same thing?
 
 ```
     MyClass *c1 = ...;
@@ -63,9 +55,7 @@ implements this for you in this case. But what if you have a custom object that 
     BOOL equal = [c1 isEqual: c2];
 ```
 
-In this case you need to implement your own version of
-
-.
+In this case you need to implement your own version of `isEqual:`.
 
 Testing for equality is fairly straightforward most of the time. Gather up the relevant properties of your class, and test them all for equality. If any of them are not equal, then return `NO`. Otherwise, return `YES`.
 
@@ -98,11 +88,8 @@ Your equality implementation would then look like this:
     }
 ```
 
-Hash tables are a commonly used data structure which are used to implement, among other things,
-
-and
-
-. They allow fast lookups of objects no matter how many objects you put in the container.
+**Hashing**  
+ Hash tables are a commonly used data structure which are used to implement, among other things, `NSDictionary` and `NSSet`. They allow fast lookups of objects no matter how many objects you put in the container.
 
 If you're familiar with how hash tables work, you may want to skip the next paragraph or two.
 
@@ -116,9 +103,7 @@ In Cocoa, hashing is implemented with the `hash` method, which has this signatur
     - (NSUInteger)hash;
 ```
 
-As with equality,
-
-gives you a default implementation that just uses your object's identity. Roughly speaking, it does this:
+As with equality, `NSObject` gives you a default implementation that just uses your object's identity. Roughly speaking, it does this:
 
 ```
     - (NSUInteger)hash
@@ -127,9 +112,7 @@ gives you a default implementation that just uses your object's identity. Roughl
     }
 ```
 
-The actual value may differ, but the essential point is that it's based on the actual pointer value of
-
-. And just as with equality, if object identity equality is all you need, then the default implementation will do fine for you.
+The actual value may differ, but the essential point is that it's based on the actual pointer value of `self`. And just as with equality, if object identity equality is all you need, then the default implementation will do fine for you.
 
 **Implementing Custom Hashing**  
  Because of the semantics of `hash`, if you override `isEqual:` then you _must_ override `hash`. If you don't, then you risk having two objects which are equal but which don't have the same hash. If you use these objects in a dictionary, set, or something else which uses a hash table, then hilarity will ensue.
@@ -151,7 +134,8 @@ For data-like properties, you'll want to use some sort of hash algorithm to gene
     [[NSData dataWithBytes: _data length: _length] hash]
 ```
 
-So you know how to generate a hash for each property, but how do you put them together?
+**Combining Property Hashes**  
+ So you know how to generate a hash for each property, but how do you put them together?
 
 The easiest way is to simply add them together, or use the bitwise xor property. However, this can hurt your hash's uniqueness, because these operations are symmetric, meaning that the separation between different properties gets lost. As an example, consider an object which contains a first and last name, with the following hash implementation:
 
@@ -176,7 +160,8 @@ How to best combine hashes is a complicated subject without any single answer. H
     }
 ```
 
-Now we can take all of the above and use it to produce a hash method for the example class. It follows the basic form of the equality method, and uses the above techniques to obtain and combine the hashes of the individual properties:
+**Custom Hash Example**  
+ Now we can take all of the above and use it to produce a hash method for the example class. It follows the basic form of the equality method, and uses the above techniques to obtain and combine the hashes of the individual properties:
 
 ```
     - (NSUInteger)hash
@@ -211,17 +196,7 @@ To see why, consider a subclass of the first/last name class which includes a bi
     }
 ```
 
-Now you have an instance of the superclass for "John Smith", which I'll call
-
-, and an instance of the subclass for "John Smith" with a birthday of 5/31/1982, which I'll call
-
-. Because of the definition of equality above,
-
-equals
-
-, and
-
-also equals itself, which is expected.
+Now you have an instance of the superclass for "John Smith", which I'll call `A`, and an instance of the subclass for "John Smith" with a birthday of 5/31/1982, which I'll call `B`. Because of the definition of equality above, `A` equals `B`, and `B` also equals itself, which is expected.
 
 Now consider an instance of the subclass for "John Smith" with a birthday of 6/7/1994, which I'll call `C`. `C` is not equal to `B`, which is what we expect. `C` is equal to `A`, also expected. But now there's a problem. `A` equals both `B` and `C`, but `B` and `C` do not equal each other! This breaks the standard transitivity of the equality operator, and leads to extremely unexpected results.
 
@@ -243,7 +218,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html)
 
 Add your thoughts, post a comment:
 

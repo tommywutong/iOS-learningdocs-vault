@@ -56,9 +56,9 @@ The implementation is easy: if the predicate contains zero, call the block and s
 **Performance**  
 When talking about the performance of `dispatch_once`, there are really three different scenarios to consider:
 
-1. with a given predicate, which executes the block.
-2. after the first call, but before the block finishes executing. Here, callers have to wait for the block before they proceed.
-3. after the first call and after the block has executed. No waiting is required and they can immediately proceed.
+1. The first ever call to `dispatch_once` with a given predicate, which executes the block.
+2. Calls to `dispatch_once` after the first call, but before the block finishes executing. Here, callers have to wait for the block before they proceed.
+3. Calls to `dispatch_once` after the first call and after the block has executed. No waiting is required and they can immediately proceed.
 
 The performance of scenario #1 is largely unimportant, as long as it's not absurdly slow. It only happens once, after all.
 
@@ -401,7 +401,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-06-06-secrets-of-dispatch_once.html)
 
 Add your thoughts, post a comment:
 

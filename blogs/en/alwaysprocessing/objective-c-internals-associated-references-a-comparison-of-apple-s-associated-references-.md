@@ -7,7 +7,7 @@ original_language: en
 published: 2023-06-05
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fc6148cbab36b6ce'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 A comparison of Apple’s _Associated References_ implementation and one I wrote for historical context, with additional notes about use with tagged pointer objects and what the `assign` association policy actually does.
 
-I remember eagerly awaiting the day we changed the minimum deployment target in what would become [Microsoft Office 2016 for Mac](https://en.wikipedia.org/wiki/Microsoft_Office_2016) to Mac OS X 10.6[[1](#_footnotedef_1)]. [Snow Leopard](https://en.wikipedia.org/wiki/Mac_OS_X_Snow_Leopard) introduced _a lot_ of new APIs, including [Grand Central Dispatch](https://developer.apple.com/documentation/DISPATCH) and [blocks](https://en.wikipedia.org/wiki/Blocks_(C_language_extension)). But, I was most excited to start using Objective-C [Associative References](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) to replace some terrible code.
+I remember eagerly awaiting the day we changed the minimum deployment target in what would become [Microsoft Office 2016 for Mac](https://en.wikipedia.org/wiki/Microsoft_Office_2016) to Mac OS X 10.6^[[1](#_footnotedef_1)]. [Snow Leopard](https://en.wikipedia.org/wiki/Mac_OS_X_Snow_Leopard) introduced _a lot_ of new APIs, including [Grand Central Dispatch](https://developer.apple.com/documentation/DISPATCH) and [blocks](https://en.wikipedia.org/wiki/Blocks_(C_language_extension)). But, I was most excited to start using Objective-C [Associative References](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocAssociativeReferences.html) to replace some terrible code.
 
 ## The Old Way
 
@@ -109,7 +109,7 @@ Next, let’s see how Apple’s Objective-C runtime implements this feature.
 
 ## The Apple Way
 
-The above third-party implementation and commentary align shockingly well with Apple’s implementation. (I say shocking because I wrote it before looking up Apple’s implementation[[2](#_footnotedef_2)].)
+The above third-party implementation and commentary align shockingly well with Apple’s implementation. (I say shocking because I wrote it before looking up Apple’s implementation^[[2](#_footnotedef_2)].)
 
 First, let’s look at [`objc_setAssociatedObject()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-runtime.mm#L657-L661), which simply calls [`_object_set_associative_reference()`](https://github.com/apple-oss-distributions/objc4/blob/689525d556eb3dee1ffb700423bccf5ecc501dbf/runtime/objc-references.mm#L159-L220).
 

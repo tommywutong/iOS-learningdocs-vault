@@ -7,7 +7,7 @@ original_language: en
 published: 2016-08-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:92ac44f9190349ac'
 translated: false
 ---
@@ -39,15 +39,15 @@ In section 6.10.2, paragraph 8 of the C11 standard, this example is specifically
 
 Yikes! Do people really want to do this? If I encountered this in a real program, I’d try to get rid of it—in most cases I figure you can just put the `#include`s inside the `#if` and be done with it. You can’t even do any clever tricks like building up a path, at least not portably.
 
-So of course, after telling someone _else_ about this, my next reaction was how to take it further. (Please do not put this in a real program.)more
+So of course, after telling someone _else_ about this, my next reaction was how to take it further. (Please do not put this in a real program.)
 
-This post expects that you are familiar with C or C++ and know what the C preprocessor is, at least abstractly. You do not need to be an expert, but you should recognize `#if`, `#include`, and `#define`. If you want to follow along, most of the code snippets here can be fed directly into `clang -E` (or `xcrun clang -E` on ~~OS X~~ macOS), which will display the output of preprocessing.[1](#fn:cpp) (Bonus macOS tip: the invocation ``pbpaste | xcrun clang -E -`` will feed the contents of the clipboard directly into the preprocessor.)
+This post expects that you are familiar with C or C++ and know what the C preprocessor is, at least abstractly. You do not need to be an expert, but you should recognize `#if`, `#include`, and `#define`. If you want to follow along, most of the code snippets here can be fed directly into `clang -E` (or `xcrun clang -E` on ~~OS X~~ macOS), which will display the output of preprocessing.^[1](#fn:cpp) (Bonus macOS tip: the invocation ``pbpaste | xcrun clang -E -`` will feed the contents of the clipboard directly into the preprocessor.)
 
 ### The Challenge
 
 > Given a macro that expands to an arbitrary list of headers, include every header in the list, in order.
 
-That is, I want to be able to do something like this:[2](#fn:quotes)
+That is, I want to be able to do something like this:^[2](#fn:quotes)
 
 ```
 #define HEADERS "stdio.h", "stdlib.h", "assert.h"
@@ -133,7 +133,7 @@ COUNT(a, b, c, d)
 4
 ```
 
-This `COUNT` macro counts lists from 1 to 4 elements by _appending_ the numbers `4, 3, 2, 1` to the list. That means we have a new list with at least 5 elements in it, and the fifth element _is always the count of the original list.[3](#fn:empty)_
+This `COUNT` macro counts lists from 1 to 4 elements by _appending_ the numbers `4, 3, 2, 1` to the list. That means we have a new list with at least 5 elements in it, and the fifth element _is always the count of the original list.^[3](#fn:empty)_
 
 (Play with a few examples to convince yourself that it works. It’s really quite clever!)
 
@@ -181,7 +181,7 @@ IS_THE_WORD_FOO(foo)
 1
 ```
 
-If you work it out, the arguments to `IS_THE_WORD_FOO_IMPL` become `(IS_THE_WORD_FOO_CHECK_not_foo, 0, unused)` in the first case, and `(unused, 1, 0, unused)` in the second.[4](#fn:cpp2) Perfect!
+If you work it out, the arguments to `IS_THE_WORD_FOO_IMPL` become `(IS_THE_WORD_FOO_CHECK_not_foo, 0, unused)` in the first case, and `(unused, 1, 0, unused)` in the second.^[4](#fn:cpp2) Perfect!
 
 (`APPLY_N` is just like `APPLY` except that it accepts macros that take variadic arguments. Like before, we’re using it to make sure that the result of the token-pasting is expanded before the replacement of the `IS_THE_WORD_FOO_IMPL` macro.)
 
@@ -189,7 +189,7 @@ This seems like a great plan—I can just put some kind of placeholder at the en
 
 ### The Placeholder Is The Key
 
-I was feeling pretty stuck at this point, and started searching around for more creative answers, at first focusing on the case where the result was _empty._ That led me to [this Stack Overflow answer](http://stackoverflow.com/a/11742317), which included a pattern like this:[5](#fn:empty2)
+I was feeling pretty stuck at this point, and started searching around for more creative answers, at first focusing on the case where the result was _empty._ That led me to [this Stack Overflow answer](http://stackoverflow.com/a/11742317), which included a pattern like this:^[5](#fn:empty2)
 
 ```
 #define CHECK_ZERO_ARGUMENTS_IMPL() something clever here

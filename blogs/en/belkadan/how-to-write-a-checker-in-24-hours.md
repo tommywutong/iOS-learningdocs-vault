@@ -7,7 +7,7 @@ original_language: en
 published: 2012-12-08
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ccdb367cebeba336'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [How to Write a Checker in 24 Hours](#)
 
-At this year’s [LLVM Developers’ Meeting](http://llvm.org/devmtg/2012-11/), my coworker and I gave a talk called “How to Write a Checker in 24 Hours”, about extending the [Clang Static Analyzer](http://clang-analyzer.llvm.org/) with custom “checkers”. The video of the talk is now online, along with all the other talks.more
+At this year’s [LLVM Developers’ Meeting](http://llvm.org/devmtg/2012-11/), my coworker and I gave a talk called “How to Write a Checker in 24 Hours”, about extending the [Clang Static Analyzer](http://clang-analyzer.llvm.org/) with custom “checkers”. The video of the talk is now online, along with all the other talks.
 
 [Watch the video.](http://llvm.org/devmtg/2012-11/videos/Zaks-Rose-Checker24Hours.mp4)
 

@@ -588,7 +588,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2013-08-30-model-serialization-with-property-lists.html)
 
 Add your thoughts, post a comment:
 

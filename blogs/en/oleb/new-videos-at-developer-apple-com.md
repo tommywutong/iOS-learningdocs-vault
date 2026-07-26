@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5889052aafc73b5d'
 translated: false
 ---
@@ -22,7 +22,7 @@ Most of you probably know of the [WWDC session videos](http://developer.apple.co
 
 Occasionally, Apple even updates its selection of developer videos outside the annual WWDC cycle. In fact, Apple just posted 10 new videos to [developer.apple.com/videos/ios/](http://developer.apple.com/videos/ios/) in December 2011:
 
-![List of Video Titles: Building and Optimizing Websites for iOS, Game Center Essentials, In-App Purchase and Notification Essentials, Ingredients of Great Apps, iPhone and iPad User Interface Design, Optimizing App Performance with Instruments, Providing Context, Tuning OpenGL ES Games, Understanding iOS View Compositing, Working with Video in iOS](https://oleb.net/media/new-videos-developer-apple-com-screenshot-660px.png)
+[![List of Video Titles: Building and Optimizing Websites for iOS, Game Center Essentials, In-App Purchase and Notification Essentials, Ingredients of Great Apps, iPhone and iPad User Interface Design, Optimizing App Performance with Instruments, Providing Context, Tuning OpenGL ES Games, Understanding iOS View Compositing, Working with Video in iOS](https://oleb.net/media/new-videos-developer-apple-com-screenshot-660px.png)](https://oleb.net/media/new-videos-developer-apple-com-screenshot-660px.png)
 
 <sub>The list of new videos posted to [developer.apple.com/videos/ios/](http://developer.apple.com/videos/ios/) in December 2011.</sub>
 
@@ -30,8 +30,8 @@ Some of these new videos deal with the same topics that Apple focused on in its 
 
 Other videos I recommend:
 
-- with John Geleynse.
-- with Bill Dudney.
-- with Allan Schaffer.
+- _Ingredients of Great Apps_ with John Geleynse.
+- _Understanding iOS View Compositing_ with Bill Dudney.
+- _Tuning OpenGL ES Games (using Instruments)_ with Allan Schaffer.
 
 To download the new videos, go to [developer.apple.com/videos/ios/](http://developer.apple.com/videos/ios/). It seems they are available for free for all registered iOS developers, just like the WWDC videos.

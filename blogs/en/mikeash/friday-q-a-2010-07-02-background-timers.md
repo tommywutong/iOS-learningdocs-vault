@@ -66,9 +66,7 @@ Or just click on the link above to browse it.
     - (void)cancel;
 ```
 
-After creating the timer, you set up a task by calling
-
-. You give it a delay, and a block to perform after that delay passes. If you call this method multiple times before the delay expires, the timer is either extended or coalesced, depending on settings.
+After creating the timer, you set up a task by calling `afterDelay:do:`. You give it a delay, and a block to perform after that delay passes. If you call this method multiple times before the delay expires, the timer is either extended or coalesced, depending on settings.
 
 Notice that the block passed to `afterDelay:do:` takes a parameter called `self`. The idea is that `MABGTimer` is initialized with a pointer to the object it's supposed to operate on, and it then passes a pointer to that object as a parameter to the block.
 
@@ -130,9 +128,7 @@ There is also a convenience initializer:
     - (id)initWithObject: (id)obj;
 ```
 
-This defaults to
-
-behavior, because I think it's the more common one.
+This defaults to **coalesce** behavior, because I think it's the more common one.
 
 **Target Queue**  
  There's also one method for advanced GCD users:
@@ -141,11 +137,7 @@ behavior, because I think it's the more common one.
     - (void)setTargetQueue: (dispatch_queue_t)target;
 ```
 
-This allows you to specify a dispatch queue where the
-
-will execute its code. This includes the timer block as well as the block passed to
-
-.
+This allows you to specify a dispatch queue where the `MABGTimer` will execute its code. This includes the timer block as well as the block passed to `performWhileLocked:`.
 
 By default, `MABGTimer` runs everything on a private queue targeted to the default-priority global queue. This method could be used to retarget it to a global queue of different priority, to another private queue (to manage suspension behavior) or even to the main queue so you can do GUI work in the timer.
 
@@ -160,9 +152,7 @@ By default, `MABGTimer` runs everything on a private queue targeted to the defau
     NSTimeInterval _nextFireTime;
 ```
 
-The initializers and
-
-are also pretty simple:
+The initializers and `dealloc` are also pretty simple:
 
 ```
     - (id)initWithObject: (id)obj
@@ -193,11 +183,7 @@ are also pretty simple:
     }
 ```
 
-And
-
-and
-
-just call through to the appropriate dispatch function:
+And `setTargetQueue:` and `performWhileLocked:`just call through to the appropriate dispatch function:
 
 ```
     - (void)setTargetQueue: (dispatch_queue_t)target
@@ -211,11 +197,7 @@ just call through to the appropriate dispatch function:
     }
 ```
 
-The
-
-method calls through to an internal
-
-method that's run on the queue. This ensures that cancellation is synchronized with timer activity:
+The `cancel` method calls through to an internal `_cancel` method that's run on the queue. This ensures that cancellation is synchronized with timer activity:
 
 ```
     - (void)cancel
@@ -226,9 +208,7 @@ method that's run on the queue. This ensures that cancellation is synchronized w
     }
 ```
 
-And the
-
-method is also simple: if the timer is active, cancel it and destroy it:
+And the `_cancel` method is also simple: if the timer is active, cancel it and destroy it:
 
 ```
     - (void)_cancel
@@ -242,9 +222,7 @@ method is also simple: if the timer is active, cancel it and destroy it:
     }
 ```
 
-The meat of the functionality is in
-
-. The first thing it does is run everything synchronized to avoid race conditions and the like:
+The meat of the functionality is in `afterDelay:do:`. The first thing it does is run everything synchronized to avoid race conditions and the like:
 
 ```
     - (void)afterDelay: (NSTimeInterval)delay do: (void (^)(id self))block
@@ -275,18 +253,14 @@ Next, if the timer needs to be reset and the GCD timer doesn't exist, create it:
                     _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _queue);
 ```
 
-Then it first sets the GCD timer and the
-
-instance variable:
+Then it first sets the GCD timer and the `_nextFireTime` instance variable:
 
 ```
                 dispatch_source_set_timer(_timer, dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), 0, 0);
                 _nextFireTime = [self _now] + delay;
 ```
 
-Then it sets the event handler on the timer. The event handler first calls the block that's passed in. Since GCD timers are always repeating, it then calls
-
-to make sure it only fires once, and also to signal to any future calls that the timer is no longer active:
+Then it sets the event handler on the timer. The event handler first calls the block that's passed in. Since GCD timers are always repeating, it then calls `_cancel` to make sure it only fires once, and also to signal to any future calls that the timer is no longer active:
 
 ```
                 dispatch_source_set_event_handler(_timer, ^{
@@ -305,11 +279,7 @@ Finally, if the timer was newly created, resume it so it can become active:
     }
 ```
 
-One last thing, we need an implementation of the
-
-method. This is simple: call
-
-, convert it to seconds:
+One last thing, we need an implementation of the `_now` method. This is simple: call `mach_absolute_time`, convert it to seconds:
 
 ```
     - (NSTimeInterval)_now

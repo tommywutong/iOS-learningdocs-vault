@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9ebef0883939b6bf'
 translated: false
 ---
@@ -24,9 +24,7 @@ In this post, I'll present the following sample app:
 
 In this screenshot, the rows are dragged downwards to reveal the three different shadows: under the navigation bar, above the first row and under the last row.
 
-> ShadowedTableView.zip
-> 
-> (26kB). Last updated 2009-08-23.
+> Download the sample project [ShadowedTableView.zip](https://www.cocoawithlove.com/assets/objc-era/ShadowedTableView.zip) (26kB). Last updated 2009-08-23.
 
 ## CAGradientLayer
 
@@ -40,7 +38,7 @@ Since `CAGradientLayer` requires iPhone SDK 3.0, if you need a similar effect on
 
 Adding the shadows can be done using a `UITableView` subclass. In this subclass, we need to perform the following steps:
 
-- s
+- Create the three `CAGradientLayer`s
 - Place them and make sure they stay underneath the table's rows
 - Update the positions of the gradients when the table scrolls or grows
 
@@ -99,9 +97,7 @@ originShadow.frame = originShadowFrame;
 
 The gradients on the rows are a little trickier. First, we only want to add them if the rows are visible. Second, we want to make them child layers of their respective rows so that if the rows animate, the shadows will follow them.
 
-> : adding the shadows as children of the cells themselves is a new addition to improve performance during animation from the original post (which arranged the rows directly in the
-> 
-> .
+> **Update 2009-08-23**: adding the shadows as children of the cells themselves is a new addition to improve performance during animation from the original post (which arranged the rows directly in the `UITableView`.
 
 ```objc
 NSIndexPath *firstRow = [indexPathsForVisibleRows objectAtIndex:0];
@@ -152,9 +148,7 @@ The project also contains the `ClearLabelsCellView` which is a `UITableViewCell`
 
 ## Conclusion
 
-> ShadowedTableView.zip
-> 
-> (26kB). Last updated 2009-08-23.
+> Download the sample project [ShadowedTableView.zip](https://www.cocoawithlove.com/assets/objc-era/ShadowedTableView.zip) (26kB). Last updated 2009-08-23.
 
 The `ShadowedTableView` is self-contained so you can drop it easily into a project.
 

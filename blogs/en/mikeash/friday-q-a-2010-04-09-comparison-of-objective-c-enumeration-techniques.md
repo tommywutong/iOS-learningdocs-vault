@@ -49,9 +49,7 @@ Of course, this sort of object enumeration is not usually practical in Cocoa app
         // do something with obj
 ```
 
-This is extremely verbose and annoying to write. It also has a fair amount of overhead compared to the baseline. First, it has to allocate a whole new object just to manage enumeration. Then, each iteration involves sending a message to the enumerator. The overhead here, while relatively small compared to most activities that would happen
-
-the loop, is much larger than the baseline.
+This is extremely verbose and annoying to write. It also has a fair amount of overhead compared to the baseline. First, it has to allocate a whole new object just to manage enumeration. Then, each iteration involves sending a message to the enumerator. The overhead here, while relatively small compared to most activities that would happen _inside_ the loop, is much larger than the baseline.
 
 **`objectAtIndex:`**  
  For those who preferred something more traditional, or who disliked creating a whole new object just for enumeration, another way to enumerate over an array was to simply call `objectAtIndex:` on it repeatedly:
@@ -65,17 +63,7 @@ the loop, is much larger than the baseline.
     }
 ```
 
-This still requires a message send per iteration, but avoids creating the
-
-object so it can be a bit of a win, depending on just how fast
-
-is for that particular array. (The performance characteristics of
-
-compared to
-
-aren't always completely obvious, especially on very large arrays, due to how
-
-is implemented internally.)
+This still requires a message send per iteration, but avoids creating the `NSEnumerator` object so it can be a bit of a win, depending on just how fast `objectAtIndex:` is for that particular array. (The performance characteristics of `objectAtIndex:` compared to `objectEnumerator` aren't always completely obvious, especially on very large arrays, due to how `NSArray` is implemented internally.)
 
 A big disadvantage, besides being verbose and error-prone, is that it simply doesn't work for enumerating `NSSet` or `NSDictionary`. Conversely, a big advantage is that, with careful management of the loop index, it's safe to mutate the array inside the loop, something that's not true of any other enumeration technique (unless you do something like enumerate over a copy instead).
 
@@ -87,13 +75,7 @@ A big disadvantage, besides being verbose and error-prone, is that it simply doe
         // do something with obj
 ```
 
-works by fetching objects in bulk whenever possible. The compiler generates code that calls the collection and asks the collection to return as many objects as possible. For collections that store objects contiguously, the collection is able to return an interior pointer directly to those objects. If every object in the array is contiguous, the loop turns into something very much like the baseline, and with the same overall performance. If there are multiple contiguous object stores,
-
-allows the collection to return interior pointers one after another, allowing for a quick loop implementation over each store, and requiring an Objective-C message only for getting the next interior pointer. For collections without contiguous storage,
-
-allows the collection to copy objects out to temporary storage in bulk, reaping many of the same benefits. For collections where none of this works,
-
-still allows a collection to efficiently return objects one by one.
+`NSFastEnumeration` works by fetching objects in bulk whenever possible. The compiler generates code that calls the collection and asks the collection to return as many objects as possible. For collections that store objects contiguously, the collection is able to return an interior pointer directly to those objects. If every object in the array is contiguous, the loop turns into something very much like the baseline, and with the same overall performance. If there are multiple contiguous object stores, `NSFastEnumeration` allows the collection to return interior pointers one after another, allowing for a quick loop implementation over each store, and requiring an Objective-C message only for getting the next interior pointer. For collections without contiguous storage, `NSFastEnumeration` allows the collection to copy objects out to temporary storage in bulk, reaping many of the same benefits. For collections where none of this works, `NSFastEnumeration` still allows a collection to efficiently return objects one by one.
 
 Nice syntax, good performance, it's a great combination.
 
@@ -106,17 +88,7 @@ Nice syntax, good performance, it's a great combination.
     }];
 ```
 
-For simple enumeration, the block syntax doesn't really offer any advantage over fast enumeration and the
-
-/
-
-syntax. The syntax is a bit clumsier, and iteration is a bit slower. The code has to call your block for every object. This overhead is less than that of a message send, as in the
-
-case, but is more than the simple C
-
-loop of
-
-. There are two places where the block syntax is useful.
+For simple enumeration, the block syntax doesn't really offer any advantage over fast enumeration and the `for`/`in` syntax. The syntax is a bit clumsier, and iteration is a bit slower. The code has to call your block for every object. This overhead is less than that of a message send, as in the `NSEnumerator` case, but is more than the simple C `for` loop of `NSFastEnumeration`. There are two places where the block syntax is useful.
 
 First is when you need something more than simple enumeration. Apple gives two enumeration options, to enumerate concurrently and to enumerate in reverse. Neither is directly supported by `for`/`in` syntax. Concurrent enumeration is very difficult to do any other way, so if your enumeration can take advantage of multithreading, this is extremely useful. Reverse enumeration can be done by sending `reverseObjectEnumerator` to an array and then using that as the target of a `for`/`in`, but this still has the overhead of creating an `NSEnumerator` and indirecting through it for enumeration, so the blocks-based method is probably a win.
 
@@ -130,13 +102,7 @@ Second is when you're enumerating over a dictionary and need both keys and objec
     }
 ```
 
-Not only is this much more verbose than a normal
-
-/
-
-, it's also much slower. The extra message send and dictionary lookup will kill the nice performance characteristics of
-
-.
+Not only is this much more verbose than a normal `for`/`in`, it's also much slower. The extra message send and dictionary lookup will kill the nice performance characteristics of `NSFastEnumeration`.
 
 `NSDictionary` provides a blocks-based enumeration method that passes both key and object directly to the block:
 
@@ -146,11 +112,7 @@ Not only is this much more verbose than a normal
     }];
 ```
 
-This is somewhat nicer to write, and can be much faster. The dictionary is able to directly iterate over key/object pairs in its internal data structure, skipping the extra message send and key lookup required by the
-
-/
-
-loop.
+This is somewhat nicer to write, and can be much faster. The dictionary is able to directly iterate over key/object pairs in its internal data structure, skipping the extra message send and key lookup required by the `for`/`in` loop.
 
 **Conclusion**  
  With any code, you should always prefer the technique which is easiest to maintain and read unless you know for sure that there's a speed problem which would benefit from a more difficult approach. This is especially true with collection enumeration, where the work that you do inside the loop is virtually certain to dwarf the work that's done by the loop itself.
@@ -167,7 +129,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-04-09-comparison-of-objective-c-enumeration-techniques.html)
 
 Add your thoughts, post a comment:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5b07a4e05f0f0348'
 translated: false
 ---
@@ -20,7 +20,11 @@ It's a lot easier to get your data out of Core Data than the documentation will 
 
 The Core Data documentation avoids giving a simple explanation of what it does. I'm going to help them out.
 
+> Core Data holds onto your data for you.
+
 Lets make the assumption that it holds the data very well. Fair assumption, it's a pretty good API. Once that's done, what would a typical programmer like to do next? I think the following is fair:
+
+> A typical programmer would like to get their data back again.
 
 Wow, what a revelation! I think this could catch on. Programmers might even want to do this **_all the time_**.
 

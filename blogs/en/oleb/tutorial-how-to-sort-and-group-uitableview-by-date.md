@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b068e1cff73e477f'
 translated: false
 ---
@@ -20,7 +20,7 @@ Let me follow up on last month’s little series about [date and time handling i
 
 Say you want to implement a list of your future appointments similar to the List view in Apple’s Calendar app on the iPhone. Calendar events should be listed in a table view, with each day getting its own section. So we have to group the dates by day, which is an interesting task to get familiar with the date handling classes.
 
-![Screenshot of the Appointment List sample application. The list of calendar events ids grouped by date.](https://oleb.net/media/appointmentlist-screenshot-iphone.png)
+[![Screenshot of the Appointment List sample application. The list of calendar events ids grouped by date.](https://oleb.net/media/appointmentlist-screenshot-iphone.png)](https://oleb.net/media/appointmentlist-screenshot-iphone.png)
 
 <sub>The Appointment List sample application. The list of calendar events ids grouped by date.</sub>
 
@@ -62,7 +62,7 @@ So our start date should be the beginning of the current day. How do we determin
 
 This method gives us an `NSDate` representing midnight in the current user’s local time for the specified input date.
 
-For the end date, we want to add exactly one year to the start date. The trivial way to do that would be to add `365 * 24 * 60 * 60` seconds[1](#fn:1) to the start date but this naive approach takes neither leap year nor different calendars into account. The better way is again the one via [`NSCalendar`](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/Reference/NSCalendar.html#//apple_ref/doc/uid/TP40003626) and `NSDateComponents`:
+For the end date, we want to add exactly one year to the start date. The trivial way to do that would be to add `365 * 24 * 60 * 60` seconds^[1](#fn:1) to the start date but this naive approach takes neither leap year nor different calendars into account. The better way is again the one via [`NSCalendar`](http://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSCalendar_Class/Reference/NSCalendar.html#//apple_ref/doc/uid/TP40003626) and `NSDateComponents`:
 
 ```
 - (NSDate *)dateByAddingYears:(NSInteger)numberOfYears toDate:(NSDate *)inputDate
@@ -107,9 +107,9 @@ Next, we have to group the list of events into sections, each section representi
 
 1. Iterate over all events.
 2. Reduce the event’s start date to its date components, i.e. strip off the time (like we did above to determine the start date of our search predicate).
-3. dictionary.
-4. dictionary should be an array containing the events that belong to the day represented by the corresponding key.
-5. dictionary. We need this to display the sections in the correct order.
+3. Use the reduced date as key in a `sections` dictionary.
+4. Each value in the `sections` dictionary should be an array containing the events that belong to the day represented by the corresponding key.
+5. Create a separate array in which we sort the keys of the `sections` dictionary. We need this to display the sections in the correct order.
 
 Make sense? Here is the code:
 
@@ -188,7 +188,7 @@ That’s it! The last thing we need are two [`NSDateFormatter`](http://developer
 
 With the groundwork done, populating the table view is simple. Note that I am using iOS 5 for the sample project so we can configure our prototype table cell directly in Interface Builder:
 
-![Configuring the settings of the prototype cell in Interface Builder](https://oleb.net/media/appointmentlist-interface-builder-prototype-cell-settings.png)
+[![Configuring the settings of the prototype cell in Interface Builder](https://oleb.net/media/appointmentlist-interface-builder-prototype-cell-settings.png)](https://oleb.net/media/appointmentlist-interface-builder-prototype-cell-settings.png)
 
 <sub>Configuring the settings of the prototype cell in Interface Builder.</sub>
 

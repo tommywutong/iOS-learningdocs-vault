@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a474c7ceac789871'
 translated: false
 ---
@@ -22,13 +22,7 @@ The `AudioFileStream` and `AudioQueue` APIs on the Mac and iPhone are useful but
 
 As the only Apple-provided way of streaming audio to the iPhone without a fullscreen movie player, these APIs are important.
 
-> AudioStreamer
-> 
-> (you can also
-> 
-> browse the source code repository
-> 
-> ).
+> The full AudioStreamer class, along with projects for the Mac and iPhone, is available on github: [AudioStreamer](http://github.com/mattgallagher/AudioStreamer/zipball/master) (you can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer)).
 
 ## HE-AAC
 
@@ -175,11 +169,7 @@ Obviously, integrating this required a little bit of massaging so that I could r
 
 I have tested this code with exactly 1 MP3 file, 1 AAC file and 1 HE-AAC file. There are thousands of variations of these formats which may still break the code. You will need to test your own files and ensure they work.
 
-> If you get an error in
-> 
-> , set a breakpoint in
-> 
-> — all errors in AudioStreamer should go through this method so you should be able to look at the previous frame in the stack and see what line caused the error.
+> **Testing/debugging note:** If you get an error in `AudioStreamer`, set a breakpoint in `failWithErrorCode:` — all errors in AudioStreamer should go through this method so you should be able to look at the previous frame in the stack and see what line caused the error.
 
 ### Progressive download
 
@@ -199,13 +189,7 @@ If you absolutely need metadata from the file, then the only possible way to get
 
 ## Conclusion
 
-> AudioStreamer
-> 
-> (you can also
-> 
-> browse the source code repository
-> 
-> ).
+> The full AudioStreamer class, along with projects for the Mac and iPhone, is available on github: [AudioStreamer](http://github.com/mattgallagher/AudioStreamer/zipball/master) (you can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer)).
 
 While the code I've added this time is fairly brief, some of it is very hard to find elsewhere (I was unable to find anyone using `AudioFileStreamSeek` correctly anywhere).
 

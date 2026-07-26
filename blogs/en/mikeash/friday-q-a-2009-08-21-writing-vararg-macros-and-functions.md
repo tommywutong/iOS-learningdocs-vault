@@ -30,9 +30,7 @@ by [Mike Ash](https://www.mikeash.com/)
     #define vararg_macro(a, b, c, ...)
 ```
 
-And then you access them by using
-
-, which just expands to the arguments provided, separated by commas just like they were provided.
+And then you access them by using `__VA_ARGS__`, which just expands to the arguments provided, separated by commas just like they were provided.
 
 Here's an example of a debug logging macro using this technique:
 
@@ -45,11 +43,7 @@ Here's an example of a debug logging macro using this technique:
     } while(0)
 ```
 
-If you haven't seen it before, the
-
-/
-
-construct is a common way to construct a multi-statement macro which is actually a single statement. The worth of this can be seen in this hypothetical code:
+If you haven't seen it before, the `do`/`while` construct is a common way to construct a multi-statement macro which is actually a single statement. The worth of this can be seen in this hypothetical code:
 
 ```
     if(!condition)
@@ -58,11 +52,7 @@ construct is a common way to construct a multi-statement macro which is actually
         do_something_important();
 ```
 
-If this macro were written without the
-
-/
-
-wrapping, this code would fail in hilarious ways.
+If this macro were written without the `do`/`while` wrapping, this code would fail in hilarious ways.
 
 Now let's say we wanted to add logging of the file name and line number where the log is, using the `__FILE__` and `__LINE__` macros. We could do this by adding a third `fprintf` line, but imagine we want to combine it into the first line instead. This is easy enough to do:
 
@@ -73,9 +63,7 @@ Now let's say we wanted to add logging of the file name and line number where th
     } while(0)
 ```
 
-This works, but it has a problem: it requires at least one argument besides the format string. You can't just do
-
-anymore, because that leaves a dangling comma at the end.
+This works, but it has a problem: it requires at least one argument besides the format string. You can't just do `DEBUG_LOG("condition was false!")` anymore, because that leaves a dangling comma at the end.
 
 The easiest solution to this is to take advantage of a gcc-specific extension. Putting `##` in between the comma and the `__VA_ARGS__` will remove the comma when `__VA_ARGS__` is empty:
 
@@ -101,11 +89,7 @@ Let's write a quick example. Imagine that for some reason you find yourself freq
     void PostNotifications(id obj, NSString *firstNotificationName, ... /* terminate with nil */)
 ```
 
-Notice how I just document that the caller must terminate the list with
-
-. Since I can't query for the length of the list, that's how we'll know when to stop. Also notice how
-
-is a fixed parameter. This will make the following code a little simpler.
+Notice how I just document that the caller must terminate the list with `nil`. Since I can't query for the length of the list, that's how we'll know when to stop. Also notice how `firstNotificationName` is a fixed parameter. This will make the following code a little simpler.
 
 Next, we'll set up the `va_list`:
 
@@ -115,9 +99,7 @@ Next, we'll set up the `va_list`:
         va_start(args, firstNotificationName);
 ```
 
-To call
-
-we have to tell it what the last fixed parameter is. This is why there needs to be at least one fixed parameter.
+To call `va_start` we have to tell it what the last fixed parameter is. This is why there needs to be at least one fixed parameter.
 
 Next, we'll run a loop to post the notifications:
 
@@ -160,7 +142,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-08-21-writing-vararg-macros-and-functions.html)
 
 Add your thoughts, post a comment:
 

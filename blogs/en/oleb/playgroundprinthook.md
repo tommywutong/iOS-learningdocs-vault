@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b20d6e07a3b9a847'
 translated: false
 ---
@@ -94,7 +94,7 @@ printed
 
 You’ll see that all three `print` statements are displayed in the console as you’d expect. But only the first (before we re-assigned `_playgroundPrintHook`) also shows up in the sidebar on the right. The next two calls to `print`, after we assigned our own custom closure to `_playgroundPrintHook`, only result in empty strings in the sidebar. Finally, we can verify that our hook really gets executed by inspecting the `printed` array, which we used to capture the text in the hook closure.
 
-![Redirecting _playgroundPrintHook in Xcode](https://oleb.net/media/xcode-playground-print-hook.png)
+[![Redirecting _playgroundPrintHook in Xcode](https://oleb.net/media/xcode-playground-print-hook.png)](https://oleb.net/media/xcode-playground-print-hook.png)
 
 <sub>Customizing `_playgroundPrintHook` trips up the display of `print` statement results in the sidebar.</sub>
 

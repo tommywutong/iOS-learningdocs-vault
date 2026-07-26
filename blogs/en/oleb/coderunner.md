@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:36c6f7eb8901f2f9'
 translated: false
 ---
@@ -28,11 +28,11 @@ I used to launch the interactive [MacRuby](http://www.macruby.org/) shell if I w
 
 [CodeRunner](http://krillapps.com/coderunner/) is a great tool by Nikolai Krill that has solved all these issues for me. You launch it and it opens up with a pre-written `main()` function, ready for you to paste your code snippet in. Press `Cmd + R` and CodeRunner immediately compiles and runs the code (no need to save it first), showing you the log output right under the code editor in the same window. Once you are sure your code is working, simply copy and paste it back to Xcode.
 
-![CodeRunner screenshot](https://oleb.net/media/coderunner-screenshot.png)
+[![CodeRunner screenshot](https://oleb.net/media/coderunner-screenshot.png)](https://oleb.net/media/coderunner-screenshot.png)
 
 I use CodeRunner several times a week. Some examples where I find it especially useful:
 
-- to work.
+- Playing around with date formats when trying to get an `NSDateFormatter` to work.
 - Writing regular expressions and testing them against different strings.
 - Parsing JSON data that I received from a web service and checking how the resulting Cocoa objects look like.
 

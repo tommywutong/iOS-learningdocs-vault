@@ -7,7 +7,7 @@ original_language: en
 published: 2018-07-22
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c120315e8762fbd3'
 translated: false
 ---
@@ -148,9 +148,7 @@ If you want to extract your own files directly from an iOS update, here’s how:
 
 **1.** Download the required files:
 
-- XNUQEMUScripts
-
-  repository:
+- Download my [XNUQEMUScripts](https://github.com/zhuowei/XNUQEMUScripts) repository:
 
 ```
 git clone https://github.com/zhuowei/XNUQEMUScripts.git
@@ -276,7 +274,7 @@ In the terminal running QEMU, you should see boot messages. Congratulations, you
 - Screen
 - Internal storage
 - Everything except the serial port
-- You tell me
+- [You tell me](https://www.xda-developers.com/cameras-custom-roms-developers-make-hardware-work-without-source-code/)
 
 Seriously, though, this only runs a tiny bit of iOS, and is nowhere close to iOS emulation. To borrow a simile from the creator of [Corellium](https://twitter.com/CorelliumHQ), if Corellium is a [DeLorean time machine](https://twitter.com/cmwdotme/status/1018512233305952256), then this is half a wheel at most.
 
@@ -372,8 +370,8 @@ It’s trying to mount the root filesystem!
 If it’s looking for a root filesystm, let’s give it one. I don’t have any drivers for storage, but I can mount an iOS Recovery RAMDisk, which requires no drivers. [All I had to do](https://github.com/zhuowei/qemu/commit/52895a031fa000b7d5721b8d96e29469a8bbb973) was:
 
 - Load the ramdisk at the end of the kernel, just before the device tree blob
-- XNU can find it
-- to boot from ramdisk
+- put its address and size in the device tree so [XNU can find it](https://github.com/apple/darwin-xnu/blob/0a798f6738bc1db01281fc08ae024145e84df927/iokit/bsddev/IOKitBSDInit.cpp#L436)
+- set boot argument to `rd=md0` to boot from ramdisk
 
 ```
 hfs: mounted PeaceSeed16A5327f.arm64UpdateRamDisk on device b(2, 0)
@@ -403,9 +401,7 @@ And, after three weeks, the virtual serial port finally printed out:
 - building QEMU on different platforms
 - modifying QEMU to add new CPU configuration registers
 - differences between GDB and LLDB’s command syntax
-- subscribe to my mailing list
-
-  . (muhahaha, one last signup link.)
+- how to get people to [subscribe to my mailing list](http://eepurl.com/duBpCH). (muhahaha, one last signup link.)
 
 ## Thanks
 
@@ -414,3 +410,5 @@ Thanks to everyone who shared or commented on my [last article](https://worthdoi
 Thanks to [@matteyeux](https://twitter.com/matteyeux), [@h3adsh0tzz](https://twitter.com/h3adsh0tzz), [@_th0ex](https://twitter.com/_th0ex), and [@enzolovesbacon](https://twitter.com/enzolovesbacon) for testing the build instructions.
 
 Thanks to [@winocm](https://github.com/winocm), whose [darwin-on-arm](https://github.com/darwin-on-arm/xnu) project originally inspired me to learn about the XNU kernel.
+
+[https://worthdoingbadly.com/xnuqemu2/](https://worthdoingbadly.com/xnuqemu2/)

@@ -7,7 +7,7 @@ original_language: en
 published: 2012-02-29
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:60827a21090d8f06'
 translated: false
 ---
@@ -56,4 +56,4 @@ C++ objects returned by value are initialized to `{0}`, even if the type has a d
  Floating-point return is undefined on Mac OS X 10.4 and earlier on Power PC.  
  `_Complex long double` return is undefined if you use an older compiler.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

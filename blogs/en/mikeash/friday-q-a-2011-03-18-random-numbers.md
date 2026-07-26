@@ -42,9 +42,7 @@ Often highly important, but somewhat harder to evaluate, is the _quality_ of ran
     }
 ```
 
-While silly, it's also interesting to consider. Theoretically, is this function truly wrong? After all, if you were to roll a die, it's
-
-, although increasingly unlikely, to roll a 3 every time. In practice, of course, such a thing is entirely useless.
+While silly, it's also interesting to consider. Theoretically, is this function truly wrong? After all, if you were to roll a die, it's _possible_, although increasingly unlikely, to roll a 3 every time. In practice, of course, such a thing is entirely useless.
 
 However, it's a good starting point to consider the notion of random number quality. On one end, you have constants, like the above 3. On the other end, you generate a sequence of numbers which even an extremely clever adversary with enormous resources at his disposal could not predict.
 
@@ -56,7 +54,8 @@ These needs can be broken down into a few categories:
 2. Difficult for a human observer to predict even if he's paying attention and making the attempt. An example for this might be a casual card game.
 3. Cryptographic quality randomness, where the sequence cannot be predicted even by a motivated adversary with enormous resources. This is what you want when practicing cryptography.
 
-There are a wealth of random number APIs available on OS X. I will present a few commonly useful ones here.
+**APIs**  
+ There are a wealth of random number APIs available on OS X. I will present a few commonly useful ones here.
 
 **`rand()`**  
  Perhaps the oldest of these APIs is the standard library call `rand()`. At this point it's mostly a historical curiosity and there's little reason to use it, but I'll discuss it for tradition's sake if nothing else.
@@ -107,7 +106,7 @@ For those coming from Linux, a word of caution. On Linux, there are two random d
 OS X has both of these as well, however they both act like `/dev/urandom` does on Linux. If you need a source of nothing but true randomness, I'm afraid you're out of luck. The good news is that the `/dev/random` pseudorandom generator should be good enough for pretty much any purpose.
 
 **Range Limiting**  
- These functions return numbers in different ranges. `random()` returns numbers in the range of [0, 231-1]. `/dev/random` returns an arbitrary number of bytes, which means it can be used to fill the full range of any data type.
+ These functions return numbers in different ranges. `random()` returns numbers in the range of [0, 2^31-1]. `/dev/random` returns an arbitrary number of bytes, which means it can be used to fill the full range of any data type.
 
 Frequently, you want random numbers in a smaller range. For example, you may want to choose a random element in an array, and for this you would need a random number in the range [0, `[array count]` - 1]. To do this, you need a way to cut down the range that comes out of the random number generator.
 
@@ -117,17 +116,9 @@ The simplest and perhaps oldest way to accomplish this is to use the mod operato
     int randomIndex = random() % [array count];
 ```
 
-This works and is often good enough. However, it's flawed, because in most cases it doesn't provide a completely uniform distribution of random indices, even if
+This works and is often good enough. However, it's flawed, because in most cases it doesn't provide a completely uniform distribution of random indices, even if `random()` itself is completely uniformly distributed. The problem comes when the size of the range of random numbers is not evenly divisible by `[array count]`. In this case, there are 2^31 possible random numbers, which means that if `[array count]` is not a power of two, the result will not be uniformly distributed.
 
-itself is completely uniformly distributed. The problem comes when the size of the range of random numbers is not evenly divisible by
-
-. In this case, there are 2
-
-possible random numbers, which means that if
-
-is not a power of two, the result will not be uniformly distributed.
-
-To illustrate, let's take a somewhat absurd case and imagine that `[array count]` is `1431655765`. (This value is 2/3 of 231, which is why I chose it specifically.) The random number generator then works out to:
+To illustrate, let's take a somewhat absurd case and imagine that `[array count]` is `1431655765`. (This value is ^2/~3 of 2^31, which is why I chose it specifically.) The random number generator then works out to:
 
 ```
     random() % 1431655765
@@ -135,13 +126,13 @@ To illustrate, let's take a somewhat absurd case and imagine that `[array count]
 
 There are now two cases to consider.
 
-If `random()` returns a number in the range [0, 1431655764], that same number is used as the random index. If `random()` returns a number in the range [1431655765, 231 - 1], then the random index is equal to the number returned minus 1431655765. The result will lie in the range [0, 715827883], which is roughly the first half of the array.
+If `random()` returns a number in the range [0, 1431655764], that same number is used as the random index. If `random()` returns a number in the range [1431655765, 2^31 - 1], then the random index is equal to the number returned minus 1431655765. The result will lie in the range [0, 715827883], which is roughly the first half of the array.
 
 This is a major problem! Our "random" index is twice as likely to fall within the first half of the array as the second half. As the desired range shrinks, this problem likewise shrinks, but it still exists for any desired range which can't evenly divide the original range.
 
 The solution to this is to use as much as possible of the original range, and discard the number and try a new one if it falls outside what's usable.
 
-The largest possible range is [0, M - 1], where M is the largest number less than 231 which is divisible by the target maximum. This number can be found with a bit of simple integer arithmetic. Once M is known, an uniform distribution of random numbers can be generated:
+The largest possible range is [0, M - 1], where M is the largest number less than 2^31 which is divisible by the target maximum. This number can be found with a bit of simple integer arithmetic. Once M is known, an uniform distribution of random numbers can be generated:
 
 ```
     int count = [array count];
@@ -194,7 +185,8 @@ This returns a number in the range [0, X - 1] for some arbitrary X. This is usua
     }
 ```
 
-Sometimes you need a random floating-point number rather than a random integer. To create a floating-point number with an uniform distribution, it's a simple bit of arithmetic from an uniform distribution of integers. For example, to generate a random number in the range [0.0, 1.0], just divide by the maximum integer value, being sure to carry out the calculation in floating point:
+**Random Floats**  
+ Sometimes you need a random floating-point number rather than a random integer. To create a floating-point number with an uniform distribution, it's a simple bit of arithmetic from an uniform distribution of integers. For example, to generate a random number in the range [0.0, 1.0], just divide by the maximum integer value, being sure to carry out the calculation in floating point:
 
 ```
     double random01 = random() / (double)0x7fffffff;
@@ -215,7 +207,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-03-18-random-numbers.html)
 
 Add your thoughts, post a comment:
 

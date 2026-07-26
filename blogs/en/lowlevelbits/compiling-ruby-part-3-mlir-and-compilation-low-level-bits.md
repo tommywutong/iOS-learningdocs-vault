@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dff4b5d0aff16a09'
 translated: false
 ---
@@ -24,24 +24,16 @@ This series is mostly a brain dump, though sometimes I'm trying to make things e
 
 Here is what you can expect from the series:
 
-- Motivation
-
-  : some background reading on what and why
-- Compilers vs Interpreters
-
-  : a high level overview of the chosen approach
-- RiteVM
-
-  : a high-level overview of the mruby Virtual Machine
+- [Motivation](https://lowlevelbits.org/compiling-ruby-part-0/): some background reading on what and why
+- [Compilers vs Interpreters](https://lowlevelbits.org/compiling-ruby-part-1/): a high level overview of the chosen approach
+- [RiteVM](https://lowlevelbits.org/compiling-ruby-part-2/): a high-level overview of the mruby Virtual Machine
 - **[MLIR and compilation](https://lowlevelbits.org/compiling-ruby-part-3/): covers what is MLIR and how it fits into the whole picture**
-- Progress update
-
-  : short progress update with what's done and what's next
-- Exceptions
-
-  : an overview of how exceptions work in Ruby
+- [Progress update](https://lowlevelbits.org/compiling-ruby-part-4/): short progress update with what's done and what's next
+- [Exceptions](https://lowlevelbits.org/compiling-ruby-part-5/): an overview of how exceptions work in Ruby
 - Garbage Collection (TBD): an overview of how mruby manages memory
 - Fibers (TBD): what are fibers in Ruby, and how mruby makes them work
+
+_Note: the list of TBD articles may change as I may want to split some parts into smaller chunks._
 
 ---
 
@@ -356,28 +348,12 @@ Some more terms for completeness:
 
 Based on the last picture:
 
-- : entry block
-- : single exit block. There could be several exit blocks, yet we can always add one “empty” block as a successor for the exit blocks to have only one exit block.
-- : predecessors: [], successors: [
-
-  ,
-
-  ], terminator:
-- : predecessors: [
-
-  ], successors: [
-
-  ], terminator:
-- : predecessors: [
-
-  ], successors: [
-
-  ], terminator:
-- : predecessors: [
-
-  ,
-
-  ], successors: [], terminator:
+- `B1`: entry block
+- `B4`: single exit block. There could be several exit blocks, yet we can always add one “empty” block as a successor for the exit blocks to have only one exit block.
+- `B1`: predecessors: [], successors: [`B2`, `B3`], terminator: `OP_JMPIF`
+- `B2`: predecessors: [`B1`], successors: [`B4`], terminator: `OP_JMP`
+- `B3`: predecessors: [`B1`], successors: [`B4`], terminator: `OP_LOADI`
+- `B4`: predecessors: [`B2`, `B3`], successors: [], terminator: `OP_ADD`
 
 ### CFGs in MLIR
 

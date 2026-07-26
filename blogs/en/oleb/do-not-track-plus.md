@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8d672c2b77d33b60'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 [Do Not Track Plus](http://www.abine.com/dntdetail.php) is a browser extension that blocks ad networks and social sites from tracking you on the web. I’ve had this extension installed for the past couple of months and I had zero problems with it.
 
-![The Do Not Track Plus extension in action: blocking 14 tracking companies on one website](https://oleb.net/media/do-not-track-plus-blocking-the-verge.png)
+[![The Do Not Track Plus extension in action: blocking 14 tracking companies on one website](https://oleb.net/media/do-not-track-plus-blocking-the-verge.png)](https://oleb.net/media/do-not-track-plus-blocking-the-verge.png)
 
 <sub>Do Not Track Plus in action: blocking 14(!) different tracking cookies on a single web site: 3 social networks (Facebook, Twitter and Google), 4 adnetworks (Microsoft, Quantcast, Lotame and Dedicated Networks) and 7 analytics services (Google Analytics, Comscore, Microsoft Atlas, Quantcast, Lotame, ChartBeat and Doublclick).</sub>
 
@@ -36,6 +36,6 @@ Do Not Track Plus can block these social sites, ad networks and also analytics s
 
 [Do Not Track Plus](http://www.abine.com/dntdetail.php) is available for all major browsers.
 
-![The settings screen of the Do Not Track Plus extension](https://oleb.net/media/do-not-track-plus-settings.png)
+[![The settings screen of the Do Not Track Plus extension](https://oleb.net/media/do-not-track-plus-settings.png)](https://oleb.net/media/do-not-track-plus-settings.png)
 
 <sub>Do Not Track Plus's Settings screen: I suggest you click “Block all” and then selectively unblock services of your choice.</sub>

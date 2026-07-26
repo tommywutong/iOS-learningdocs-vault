@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b3cd628bc418cb6b'
 translated: false
 ---
@@ -20,9 +20,9 @@ _(This post is about a specific German tax issue and is therefore in German.)_
 
 Erinnert ihr euch an den Sommer 2010? Das iPhone 4 erschien und war in vielen Ländern ohne SIM-Lock erhältlich – nur nicht in Deutschland. Als Entwickler _brauchte_ ich ein iPhone 4, aber mir einen Telekom-Vertrag mit zwei Jahren Laufzeit an die Backe zu heften kam nicht in Frage. Also habe ich, wie viele andere auch, im Juli 2010 mein iPhone 4 bei [Apple UK](http://store.apple.com/uk/) bestellt und mir von [Borderlinx](http://www.borderlinx.com/) liefern lassen.
 
-Das hat alles gut geklappt – bis auf eine Kleinigkeit: als Unternehmer, der das iPhone beruflich verwendet, kann ich die gezahlte Umsatzsteuer normalerweise beim Finanzamt als Vorsteuer geltend machen und bekomme sie dann erstattet. Hätte ich das iPhone in Deutschland gekauft, wäre das auch kein Problem gewesen. Für Käufe im europäischen Ausland erstattet mir das deutsche Finanzamt jedoch nichts. Normalerweise sollte in diesem Fall der Verkäufer (Apple UK) dem zum Vorsteuerabzug berechtigten ausländischen Käufer (mir) erst gar keine Umsatzsteuer in Rechnung stellen. Der Apple Online Store scheint einen solchen Vorgang allerdings nicht zu unterstützen.[1](#fn:1)
+Das hat alles gut geklappt – bis auf eine Kleinigkeit: als Unternehmer, der das iPhone beruflich verwendet, kann ich die gezahlte Umsatzsteuer normalerweise beim Finanzamt als Vorsteuer geltend machen und bekomme sie dann erstattet. Hätte ich das iPhone in Deutschland gekauft, wäre das auch kein Problem gewesen. Für Käufe im europäischen Ausland erstattet mir das deutsche Finanzamt jedoch nichts. Normalerweise sollte in diesem Fall der Verkäufer (Apple UK) dem zum Vorsteuerabzug berechtigten ausländischen Käufer (mir) erst gar keine Umsatzsteuer in Rechnung stellen. Der Apple Online Store scheint einen solchen Vorgang allerdings nicht zu unterstützen.^[1](#fn:1)
 
-![Apple UK Online Store Invoice for iPhone 4](https://oleb.net/media/apple-uk-iphone-4-invoice-vat.png)
+[![Apple UK Online Store Invoice for iPhone 4](https://oleb.net/media/apple-uk-iphone-4-invoice-vat.png)](https://oleb.net/media/apple-uk-iphone-4-invoice-vat.png)
 
 So hat Apple UK mir außer dem Nettopreis von £509,79 auch £89,21 (17,5%) Umsatzsteuer in Rechnung gestellt. Kein Weltuntergang, aber es wäre doch schön, wenn man sich dieses Geld zurückholen könnte. Und siehe da, es gibt einen Weg.
 
@@ -42,7 +42,7 @@ Obwohl der Antrag auf USt-Vergütung an die ausländische Steuerbehörde (in mei
 2. Wenn noch nicht geschehen, beim [Online-Portal des BZSt (ElsterOnline)](https://www.elsteronline.de/bportal/) registrieren. Die Website wird vom Bayerischen Landesamt für Steuern betrieben, ist aber bundesweit gültig.
 3. Nach der Anmeldung bei ElsterOnline findet ihr unter Formulare → Umsatzsteuer das Formular [Antrag auf Umsatzsteuervergütung inländischer Unternehmer im Ausland](https://www.elsteronline.de/bportal/bop/formular/ustveu/FormularUStVEUPrepare.tax). Das Ausfüllen des Formulars ist nicht allzu schwierig: eigene Daten eingeben, Empfängerland (UK) und Erstattungszeitraum (01-12/2010) auswählen und die Rechnungsdaten eingeben. Eine Kopie der Rechnung sollte als PDF-Datei angehängt werden. Im Feld „Ergänzende Angaben“ habe ich noch erläutert, warum ich das iPhone nicht im Inland kaufen konnte und warum ich es für mein Unternehmen benötige.
 
-  ![Das Formular „Antrag auf Umsatzsteuervergütung inländischer Unternehmer im Ausland“ bei ElsterOnline](https://oleb.net/media/screenshot-elsteronline-antrag-ust-verguetung.png)
+  [![Das Formular „Antrag auf Umsatzsteuervergütung inländischer Unternehmer im Ausland“ bei ElsterOnline](https://oleb.net/media/screenshot-elsteronline-antrag-ust-verguetung.png)](https://oleb.net/media/screenshot-elsteronline-antrag-ust-verguetung.png)
 
   <sub>Das Formular „Antrag auf Umsatzsteuervergütung inländischer Unternehmer im Ausland“ bei ElsterOnline.</sub>
 
@@ -52,6 +52,6 @@ Der Antrag für das vergangene Jahr muss spätestens bis zum 30.09. des Folgejah
 
 Nach Absendung des Antrags erhielt ich keine 48 Stunden später eine Eingangsbestätigung der britischen Finanzbehörden per E-Mail. Die gesamte Bearbeitung des Antrags bis zur Auszahlung der zu viel gezahlten Umsatzsteuer dauerte gute drei Monate. Als letztens der Betrag von £89,21 auf meinem Konto einging, hatte ich das Ganze schon fast wieder vergessen, umso überraschter war ich. Absender der Zahlung: “HM Revenue & Customs, VAT Overseas Repayment Unit”.
 
-![Kontoauszug mit der erfolgten USt-Erstattungszahlung von “HM Revenue & Customs”](https://oleb.net/media/kontoauszug-ust-erstattung-hm-revenue-customs.png)
+[![Kontoauszug mit der erfolgten USt-Erstattungszahlung von “HM Revenue & Customs”](https://oleb.net/media/kontoauszug-ust-erstattung-hm-revenue-customs.png)](https://oleb.net/media/kontoauszug-ust-erstattung-hm-revenue-customs.png)
 
 1. Und das, obwohl man beim Kauf sehr wohl seine USt-Id-Nummer angeben kann. Diese erscheint auch auf der Rechnung, allerdings hat sie offensichtlich nur informativen Charakter. Ich nehme an, Apple sieht den USt-Abzug für ausländische Käufer nicht vor, weil die länderspezifischen Apple Online Stores sowieso keine Lieferung ins Ausland anbieten. Es gibt auch noch einen [Business Apple Store](http://store.apple.com/uk-business), der evtl. anders funktioniert. Da man im Business Apple Store UK aber nur Mitglied werden kann, wenn man auch ein Büro im Vereinigten Königreich besitzt, war das auch keine Option für mich. [↩︎](#fnref:1)

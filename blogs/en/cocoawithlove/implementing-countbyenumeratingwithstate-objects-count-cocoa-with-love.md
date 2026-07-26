@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:09990ef4b0c1ecb0'
 translated: false
 ---
@@ -24,19 +24,7 @@ The documentation for its only method (countByEnumeratingWithState:objects:count
 
 There are two different ways to enumerate. The first is where your class already has, or is willing to create, a C array of Objective-C id values which point to the objects being enumerated. The second is where you don't have this storage and want to use storage passed to you.
 
-> These examples do not use the
-> 
-> mutationsPtr
-> 
-> and are therefore only safe for use with
-> 
-> collections. If the enumerated collection is
-> 
-> , you will need to point
-> 
-> mutationsPtr
-> 
-> to an appropriate mutation guard value (normally a mutations count value).
+> **Warning:** These examples do not use the mutationsPtr and are therefore only safe for use with _immutable_ collections. If the enumerated collection is _mutable_, you will need to point mutationsPtr to an appropriate mutation guard value (normally a mutations count value).
 
 ## First case: already have a C array of storage
 
@@ -69,22 +57,10 @@ In this case, the implementation of countByEnumeratingWithState:objects:count: w
 
 Quick explanation:
 
-- stackbuf
-
-  and
-
-  count
-
-  (because we already have storage)
-- state-\>state
-
-  to a non zero value (the iteration index after the current items are iterated)
-- state-\>mutationsPtr
-
-  to a non zero value (the self pointer since we have no "array has changed" flag that we can point it to)
-- state-\>state
-
-  will equal ARRAY_LENGTH and we'll return "0", ending the loop)
+- we've ignored stackbuf and count (because we already have storage)
+- as required, we've set state-\>state to a non zero value (the iteration index after the current items are iterated)
+- as required, we've set state-\>mutationsPtr to a non zero value (the self pointer since we have no "array has changed" flag that we can point it to)
+- we've returned the complete length of the array, so it will all be iterated in one pass (on the second pass, state-\>state will equal ARRAY_LENGTH and we'll return "0", ending the loop)
 
 ## Second case: need storage
 
@@ -148,46 +124,8 @@ This is more complicated example because we need to actually gather the data fro
 
 Explanation of this example:
 
-- stackbuf
-
-  to store the data accumulated from the list and we return it in
-
-  state-\>itemsPtr
-
-  .
-- len
-
-  is used now because it is the maximum number of objects we can accumulate in
-
-  stackbuf
-
-  each time.
-- state-\>state == 0
-
-  ), we set the
-
-  currentNode
-
-  to our object's private
-
-  _startOfListNode
-
-  — that we assume we have correctly set to the start of our list.
-- state-\>state
-
-  will hold our
-
-  currentNode
-
-  , saved from the last iteration.
-- currentNode == _endOfListPlusOneNode
-
-  at the end of the list — remember that
-
-  state-\>state
-
-  is not allowed to be nil, which is why we use this non-nil end marker node. If you use a list that ends in nil, then you should detect this and set
-
-  state-\>state
-
-  to a special non-nil "end" flag so that you won't get trapped in an infinite loop.
+- We now use stackbuf to store the data accumulated from the list and we return it in state-\>itemsPtr.
+- len is used now because it is the maximum number of objects we can accumulate in stackbuf each time.
+- When executed the first time (when state-\>state == 0), we set the currentNode to our object's private _startOfListNode — that we assume we have correctly set to the start of our list.
+- Every other time we are run, state-\>state will hold our currentNode, saved from the last iteration.
+- The fast enumeration will repeatedly invoke this method until we reach a currentNode == _endOfListPlusOneNode at the end of the list — remember that state-\>state is not allowed to be nil, which is why we use this non-nil end marker node. If you use a list that ends in nil, then you should detect this and set state-\>state to a special non-nil "end" flag so that you won't get trapped in an infinite loop.

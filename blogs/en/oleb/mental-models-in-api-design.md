@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ecbad6c80af69ef0'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 I recently read Don Normanʼs classic [_The Design of Everyday Things_](https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things). The book is primarily about product design, but some of the principles Norman mentions are just as applicable to API design.
 
-![The user’s mental model is not identical with the product designer’s mental model. Graphic adopted from The Design of Everyday Things by Don Norman.](https://oleb.net/media/design-of-everyday-things-design-model-vs-user-model-2224px.png)
+[![The user’s mental model is not identical with the product designer’s mental model. Graphic adopted from The Design of Everyday Things by Don Norman.](https://oleb.net/media/design-of-everyday-things-design-model-vs-user-model-2224px.png)](https://oleb.net/media/design-of-everyday-things-design-model-vs-user-model-2224px.png)
 
 <sub>The user only interacts with the product through the system image. He doesn’t know the designer’s mental model. When the system image doesn’t reflect the design model, the user’s mental model won’t match the design model and the user will find the product hard to use.</sub>
 
@@ -61,7 +61,7 @@ One must write:
 str.characters.split(separator: " ")
 ```
 
-The next possibly surprising thing is that this returns an array of `String.CharacterView` and not `[String]`. If you want to pass the result into another function, you probably have to do this:[1](#fn:components)
+The next possibly surprising thing is that this returns an array of `String.CharacterView` and not `[String]`. If you want to pass the result into another function, you probably have to do this:^[1](#fn:components)
 
 ```
 str.characters.split(separator: " ")

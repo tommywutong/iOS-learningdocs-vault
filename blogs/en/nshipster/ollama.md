@@ -1,0 +1,269 @@
+---
+title: Ollama
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/ollama/'
+original_language: en
+published: 2025-02-14
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:164b70d97783c354'
+translated: false
+---
+
+> 原文：[Ollama](https://nshipster.com/ollama/)　·　NSHipster (Mattt)
+
+# [Ollama](https://nshipster.com/ollama/)
+
+Written by  [Mattt](https://nshipster.com/authors/mattt/)  February 14^th, 2025
+
+> “Only Apple can do this” Variously attributed to Tim Cook
+
+Apple introduced [Apple Intelligence](https://www.apple.com/apple-intelligence/) at WWDC 2024. After waiting almost a year for Apple to, in Craig Federighi’s words, _“get it right”_, its promise of “AI for the rest of us” feels just as distant as ever.
+
+While we wait for Apple Intelligence to arrive on our devices, something remarkable is already running on our Macs. Think of it as a locavore approach to artificial intelligence: homegrown, sustainable, and available year-round.
+
+This week on NSHipster, we’ll look at how you can use Ollama to run LLMs locally on your Mac — both as an end-user and as a developer.
+
+---
+
+## What is Ollama?
+
+Ollama is the easiest way to run large language models on your Mac. You can think of it as “Docker for LLMs” - a way to pull, run, and manage AI models as easily as containers.
+
+Download Ollama with [Homebrew](https://brew.sh/) or directly from [their website](https://ollama.com/download). Then pull and run [llama3.2](https://ollama.com/library/llama3.2) (2GB).
+
+```
+$ brew install --cask ollama
+$ ollama run llama3.2
+>>> Tell me a joke about Swift programming.
+What's a Apple developer's favorite drink? 
+The Kool-Aid.
+```
+
+Under the hood, Ollama is powered by [llama.cpp](https://github.com/ggerganov/llama.cpp). But where llama.cpp provides the engine, Ollama gives you a vehicle you’d actually want to drive — handling all the complexity of model management, optimization, and inference.
+
+Similar to how Dockerfiles define container images, Ollama uses Modelfiles to configure model behavior:
+
+```
+FROM mistral:latest
+PARAMETER temperature 0.7
+TEMPLATE """
+{{- if .First }}
+You are a helpful assistant.
+{{- end }}
+
+User: {{.Prompt}}
+Assistant: """
+```
+
+Ollama uses the [Open Container Initiative (OCI)](https://opencontainers.org) standard to distribute models. Each model is split into layers and described by a manifest, the same approach used by Docker containers:
+
+```
+{
+  "mediaType": "application/vnd.oci.image.manifest.v1+json",
+  "config": {
+    "mediaType": "application/vnd.ollama.image.config.v1+json",
+    "digest": "sha256:..."
+  },
+  "layers": [
+    {
+      "mediaType": "application/vnd.ollama.image.layer.v1+json",
+      "digest": "sha256:...",
+      "size": 4019248935
+    }
+  ]
+}
+```
+
+Overall, Ollama’s approach is thoughtful and well-engineered. And best of all, _it just works_.
+
+## What’s the big deal about running models locally?
+
+[Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) states that, as something becomes more efficient, we tend to use _more_ of it, not less.
+
+Having AI on your own device changes everything. When computation becomes essentially free, you start to see intelligence differently.
+
+While frontier models like GPT-4 and Claude are undeniably miraculous, there’s something to be said for the small miracle of running open models locally.
+
+- **Privacy**: Your data never leaves your device. Essential for working with sensitive information.
+- **Cost**: Run 24/7 without usage meters ticking. No more rationing prompts like ’90s cell phone minutes. Just a fixed, up-front cost for unlimited inference.
+- **Latency**: No network round-trips means faster responses. Your `/M\d Mac((Book( Pro| Air)?)|Mini|Studio)/` can easily generate dozens of tokens per second. (Try to keep up!)
+- **Control**: No black-box [RLHF](https://knowyourmeme.com/photos/2546581-shoggoth-with-smiley-face-artificial-intelligence) or censorship. The AI works for you, not the other way around.
+- **Reliability**: No outages or API quota limits. 100% uptime for your [exocortex](https://en.wiktionary.org/wiki/exocortex). Like having Wikipedia on a thumb drive.
+
+## Building macOS Apps with Ollama
+
+Ollama also exposes an [HTTP API](https://github.com/ollama/ollama/blob/main/docs/api.md) on port 11434 ([leetspeak](https://en.wikipedia.org/wiki/Leet) for llama 🦙). This makes it easy to integrate with any programming language or tool.
+
+To that end, we’ve created the [Ollama Swift package](https://github.com/mattt/ollama-swift) to help developers integrate Ollama into their apps.
+
+### Text Completions
+
+The simplest way to use a language model is to generate text from a prompt:
+
+```
+import Ollama
+
+let client = Client.default
+let response = try await client.generate(
+    model: "llama3.2",
+    prompt: "Tell me a joke about Swift programming.",
+    options: ["temperature": 0.7]
+)
+print(response.response)
+// How many Apple engineers does it take to document an API? 
+// None - that's what WWDC videos are for.
+```
+
+### Chat Completions
+
+For more structured interactions, you can use the chat API to maintain a conversation with multiple messages and different roles:
+
+```
+let initialResponse = try await client.chat(
+    model: "llama3.2",
+    messages: [
+        .system("You are a helpful assistant."),
+        .user("What city is Apple located in?")
+    ]
+)
+print(initialResponse.message.content)
+// Apple's headquarters, known as the Apple Park campus, is located in Cupertino, California.
+// The company was originally founded in Los Altos, California, and later moved to Cupertino in 1997.
+
+let followUp = try await client.chat(
+    model: "llama3.2",
+    messages: [
+        .system("You are a helpful assistant."),
+        .user("What city is Apple located in?"),
+        .assistant(initialResponse.message.content),
+        .user("Please summarize in a single word")
+    ]
+)
+print(followUp.message.content)
+// Cupertino
+```
+
+### Generating text embeddings
+
+[Embeddings](https://en.wikipedia.org/wiki/Word_embedding) convert text into high-dimensional vectors that capture semantic meaning. These vectors can be used to find similar content or perform semantic search.
+
+For example, if you wanted to find documents similar to a user’s query:
+
+```
+let documents: [String] = …
+
+// Convert text into vectors we can compare for similarity
+let embeddings = try await client.embeddings(
+    model: "nomic-embed-text", 
+    texts: documents
+)
+
+/// Finds relevant documents
+func findRelevantDocuments(
+    for query: String, 
+    threshold: Float = 0.7, // cutoff for matching, tunable
+    limit: Int = 5
+) async throws -> [String] {
+    // Get embedding for the query
+    let [queryEmbedding] = try await client.embeddings(
+        model: "llama3.2",
+        texts: [query]
+    )
+ 
+    // See: https://en.wikipedia.org/wiki/Cosine_similarity
+    func cosineSimilarity(_ a: [Float], _ b: [Float]) -> Float {
+        let dotProduct = zip(a, b).map(*).reduce(0, +)
+        let magnitude = { sqrt($0.map { $0 * $0 }.reduce(0, +)) }
+        return dotProduct / (magnitude(a) * magnitude(b))
+    }
+    
+    // Find documents above similarity threshold
+    let rankedDocuments = zip(embeddings, documents)
+        .map { embedding, document in
+            (similarity: cosineSimilarity(embedding, queryEmbedding),
+             document: document)
+        }
+        .filter { $0.similarity >= threshold }
+        .sorted { $0.similarity > $1.similarity }
+        .prefix(limit)
+    
+    return rankedDocuments.map(\.document)
+}
+```
+
+### Building a RAG System
+
+Embeddings really shine when combined with text generation in a RAG (Retrieval Augmented Generation) workflow. Instead of asking the model to generate information from its training data, we can ground its responses in our own documents by:
+
+1. Converting documents into embeddings
+2. Finding relevant documents based on the query
+3. Using those documents as context for generation
+
+Here’s a simple example:
+
+```
+let query = "What were AAPL's earnings in Q3 2024?"
+let relevantDocs = try await findRelevantDocuments(query: query)
+let context = """
+    Use the following documents to answer the question. 
+    If the answer isn't contained in the documents, say so.
+    
+    Documents:
+    \(relevantDocs.joined(separator: "\n---\n"))
+    
+    Question: \(query)
+    """
+
+let response = try await client.generate(
+    model: "llama3.2",
+    prompt: context
+)
+```
+
+---
+
+To summarize: Different models have different capabilities.
+
+- Models like [llama3.2](https://ollama.com/library/llama3.2) and [deepseek-r1](https://ollama.com/library/deepseek-r1) generate text.
+
+    - Some text models have “base” or “instruct” variants, suitable for fine-tuning or chat completion, respectively.
+    - Some text models are tuned to support [tool use](https://ollama.com/blog/tool-support), which let them perform more complex tasks and interact with the outside world.
+- Models like [llama3.2-vision](https://ollama.com/library/llama3.2-vision) can take images along with text as inputs.
+- Models like [nomic-embed-text](https://ollama.com/library/nomic-embed-text) create numerical vectors that capture semantic meaning.
+
+With Ollama, you get unlimited access to a wealth of these and many more open-source language models.
+
+---
+
+So, what can you build with all of this?  
+ Here’s just one example:
+
+### Nominate.app
+
+[Nominate](https://github.com/nshipster/nominate) is a macOS app that uses Ollama to intelligently rename PDF files based on their contents.
+
+Like many of us striving for a paperless lifestyle, you might find yourself scanning documents only to end up with cryptically-named PDFs like `Scan2025-02-03_123456.pdf`. Nominate solves this by combining AI with traditional NLP techniques to automatically generate descriptive filenames based on document contents.
+
+The app leverages several technologies we’ve discussed:
+
+- Ollama’s API for content analysis via the `ollama-swift` package
+- Apple’s PDFKit for OCR
+- The Natural Language framework for text processing
+- Foundation’s `DateFormatter` for parsing dates
+
+## Looking Ahead
+
+> “The future is already here – it’s just not evenly distributed yet.” William Gibson
+
+Think about the timelines:
+
+- Apple Intelligence was announced last year.
+- Swift came out 10 years ago.
+- SwiftUI 6 years ago.
+
+If you wait for Apple to deliver on its promises, **you’re going to miss out on the most important technological shift in a generation**.
+
+The future is here today. You don’t have to wait. With Ollama, you can start building the next generation of AI-powered apps _right now_.

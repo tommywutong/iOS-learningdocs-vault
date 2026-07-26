@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:512f5f074ad6b6f5'
 translated: false
 ---
@@ -97,11 +97,7 @@ For Fast Enumeration of your own classes, "for...in" constructs will work under 
 
 Two potentially serious issues exist with attempting to run Fast Enumeration code under 10.4:
 
-- countByEnumeratingWithState:objects:count:
-
-  methods of your own design into them at runtime when running under Mac OS X 10.4.
-- objc_enumerationMutation
-
-  function doesn't exist under 10.4, so if you mutate a collection while iterating, you won't throw an exception, you'll crash.
+- None of the Cocoa classes in Mac OS X 10.4 implement the NSFastEnumeration protocol, so you would need to dynamically load countByEnumeratingWithState:objects:count: methods of your own design into them at runtime when running under Mac OS X 10.4.
+- The objc_enumerationMutation function doesn't exist under 10.4, so if you mutate a collection while iterating, you won't throw an exception, you'll crash.
 
 Obviously, you shouldn't do it unless you have a strong compelling case but the option is there if you're prepared to shoulder the extra effort.

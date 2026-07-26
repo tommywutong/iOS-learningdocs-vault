@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:85f258c98c61333e'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # A Geocoding Service for OS X
 
-![My geocoding service for OS X in action](https://oleb.net/media/geocoding-workflow-demo-screencast.gif)
+[![My geocoding service for OS X in action](https://oleb.net/media/geocoding-workflow-demo-screencast.gif)](https://oleb.net/media/geocoding-workflow-demo-screencast.gif)
 
 When I work on an app with location-based features, I often need the geo coordinates of a specific place for testing. Since it’s surprisingly difficult to view a location’s coordinates in Google Maps (let alone copy them in the correct format), I used to get them from a place’s page on Wikipedia, but it became a bit tedious over time.
 
@@ -52,11 +52,11 @@ The script takes its inputs either from the command line or from stdin. You can 
 
 # An Automator Service for OS X
 
-We can further improve the workflow by turning the script into a service for OS X that works on the currently selected text. We can do this with Automator. [Download the workflow](https://oleb.net/media/Geocode.workflow.zip).[1](#fn:1)
+We can further improve the workflow by turning the script into a service for OS X that works on the currently selected text. We can do this with Automator. [Download the workflow](https://oleb.net/media/Geocode.workflow.zip).^[1](#fn:1)
 
 After you have installed the service, select one or multiple place names or addresses (one per line) in any app and choose _[App Name] \> Services \> Geocode_ to replace the selection with the resulting coordinates. You can assign a keyboard shortcut to the service in _System Preferences \> Keyboard \> Shortcuts_.
 
-![My geocoding service for OS X in action](https://oleb.net/media/geocoding-workflow-demo-screencast-2.gif)
+[![My geocoding service for OS X in action](https://oleb.net/media/geocoding-workflow-demo-screencast-2.gif)](https://oleb.net/media/geocoding-workflow-demo-screencast-2.gif)
 
 Keep in mind that you still need to install the Ruby Geocoder gem before you can run the Automator workflow. If you use a Ruby version manager such as rbenv or RVM, make sure to install the gem under the system’s Ruby installation. For example in rbenv:
 

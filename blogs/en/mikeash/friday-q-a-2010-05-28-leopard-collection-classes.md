@@ -44,13 +44,7 @@ The major difference from `NSMutableArray` is in how you create a new `NSPointer
     - initWithPointerFunctions:(NSPointerFunctions *)functions;
 ```
 
-This is where the flexibility comes in. The parameters for these initialiers allow you to fully specify how the
-
-treats its contents. You can use an
-
-any time you want an
-
-that points to special kinds of objects or otherwise needs special treatment.
+This is where the flexibility comes in. The parameters for these initialiers allow you to fully specify how the `NSPointerArray` treats its contents. You can use an `NSPointerArray` any time you want an `NSArray` that points to special kinds of objects or otherwise needs special treatment.
 
 **`NSPointerFunctions`**  
  `NSPointerFunctions` is a class whose main purpose is to hold a bunch of function pointers. There are function pointers for hashing, equality, memory management, and more. There are also two flags you can set to have it use different garbage collection read/write barriers. By stuffing function pointers into this class, you can specify how everything works.
@@ -75,11 +69,7 @@ Equality is just as easy, dereference both pointers and compare:
     }
 ```
 
-Note the final
-
-parameter to both functions. If necessary, this will get the size of the pointed-to object. We already know the size, so there's no need to use it. Since it's unnecessary, I won't provide a size function to the
-
-object either.
+Note the final `size` parameter to both functions. If necessary, this will get the size of the pointed-to object. We already know the size, so there's no need to use it. Since it's unnecessary, I won't provide a size function to the `NSPointerFunctions` object either.
 
 For the description, we just return a simple string using the integer obtained from dereferencing the pointer:
 
@@ -90,11 +80,7 @@ For the description, we just return a simple string using the integer obtained f
     }
 ```
 
-Relinquish and acquire are a bit trickier. They assume reference counting memory management, but I want to use plain
-
-and
-
-. I decided to just have relinquish always free the item, and acquire return a copy. The relinquish function is simple:
+Relinquish and acquire are a bit trickier. They assume reference counting memory management, but I want to use plain `malloc` and `free`. I decided to just have relinquish always free the item, and acquire return a copy. The relinquish function is simple:
 
 ```
     static void Relinquish(const void *item, NSUInteger (*size)(const void *item))
@@ -103,9 +89,7 @@ and
     }
 ```
 
-The acquire function isn't much more complicated. It
-
-s some new memory, copies the value, and returns the new pointer:
+The acquire function isn't much more complicated. It `malloc`s some new memory, copies the value, and returns the new pointer:
 
 ```
     static void *Acquire(const void *src, NSUInteger (*size)(const void *item), BOOL shouldCopy)
@@ -116,11 +100,7 @@ s some new memory, copies the value, and returns the new pointer:
     }
 ```
 
-And now with all of this in place, we can create a new
-
-, and a new
-
-from it:
+And now with all of this in place, we can create a new `NSPointerFunctions`, and a new `NSPointerArray` from it:
 
 ```
     NSPointerFunctions *functions = [[NSPointerFunctions alloc] init];
@@ -153,11 +133,9 @@ Apple has only given us one flag at the moment: `NSPointerFunctionsCopyIn`. When
 
 Some examples:
 
-- .
-- .
-- memory, copied when inserted:
-
-  .
+- Strong references with copied objects using object value comparison: `NSPointerFunctionsStrongMemory | NSPointerFunctionsObjectPersonality | NSPointerFunctionsCopyIn`.
+- Zeroing weak references and object identity: `NSPointerFunctionsZeroingWeakMemory | NSPointerFunctionsObjectPointerPersonality`.
+- C strings stored in `malloc` memory, copied when inserted: `NSPointerFunctionsMallocMemory | NSPointerFunctionsCStringPersonality | NSPointerFunctionsCopyIn`.
 
 As you can see, there's a lot of flexibility to be had here without ever having to define your own functions.
 
@@ -216,7 +194,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-05-28-leopard-collection-classes.html)
 
 Add your thoughts, post a comment:
 

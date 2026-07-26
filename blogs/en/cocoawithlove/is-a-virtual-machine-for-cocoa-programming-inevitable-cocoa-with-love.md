@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d5a83bff503c8d9b'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 Recent articles by [John Siracusa](http://arstechnica.com/apple/news/2010/06/copland-2010-revisited.ars/) and [Jesper](http://waffle.wootest.net/2010/06/19/surpass/) have re-ignited some discussion about whether Apple might be working on another programming language to replace Objective-C. Neither of these articles closely examined a related but possibly more important question: is Apple planning to move application development to a virtual machine? In this article, I'll look at why I think moving to a virtual machine might happen along with a possible language transition.
 
-> : this entire post is either a) speculation, b) aspiration or c) incrimination.
+> **Disclaimer**: this entire post is either a) speculation, b) aspiration or c) incrimination.
 
 ## Introduction: criticisms of Objective-C
 
@@ -54,7 +54,7 @@ It is possible to create a memory model abstraction without using a genuine virt
 
 The virtual machine does this by removing instructions that offer direct access to memory. Instead, the instructions on the machine relate to objects, properties and values — you cannot access the wrong piece of memory and garbage collection can be precise rather than conservative because all memory references are known absolutely.
 
-> : A virtual machine is a description of a computer that is not directly tied to any specific computer implementation but instead can be mapped onto an actual machine. This mapping is normally either through runtime interpretation (like a scripting language), runtime simulation (like a computer emulator) or just-in-time compilation into native machine code (like Java's JVM). Regardless of how the virtual machine is run, the point is that the programmer only ever deals with this virtual scenario and the exact architecture and behaviors of the target machine are never directly accessed.
+> **Clarification on what I mean by virtual machine**: A virtual machine is a description of a computer that is not directly tied to any specific computer implementation but instead can be mapped onto an actual machine. This mapping is normally either through runtime interpretation (like a scripting language), runtime simulation (like a computer emulator) or just-in-time compilation into native machine code (like Java's JVM). Regardless of how the virtual machine is run, the point is that the programmer only ever deals with this virtual scenario and the exact architecture and behaviors of the target machine are never directly accessed.
 
 ## Platform independence
 
@@ -65,6 +65,8 @@ Apple have already switched CPU architectures twice in 17 years. It will almost 
 With Apple's additional focus on iOS devices, it's also possible to imagine a range of different CPUs could be used across a single lineup and fat binaries (such as the existing armv6/armv7 iOS binaries) are only convenient for a small number of CPUs. If Apple wanted to use a dozen different CPUs, a single bytecode runtime would be the only way.
 
 Wherever possible, good programming generally avoids coding to specific hardware components. Abstracting the CPU and the platform away from our programs is simply a logical step along the same lines.
+
+> On the topic of running across different CPUs, an interesting point to consider is that Apple actually did recently introduce a new, platform independent language that runs in JIT compiled virtual machine: OpenCL. I don't foresee any push to re-implement Cocoa in OpenCL (it's way more cryptic than Objective-C) but the technology to do these things certainly exists.
 
 ## Virtual machine without a new language
 
@@ -78,10 +80,8 @@ The first is that an implementation of Objective-C adapted to run inside a virtu
 
 The second advantage of keeping Objective-C during the transition to a virtual machine is that Cocoa is currently written to match Objective-C's feature set. Cocoa might be able to remain substantially similar, making Apple's work upfront much easier.
 
-> Jesper has responded to this point
-> 
-> and explained why virtualizing Objective-C while keeping some level of compatibility with non-virtualized Objective-C is probably not a good idea.
-> 
+> **Update:**[Jesper has responded to this point](http://waffle.wootest.net/2010/07/16/objective-dash/) and explained why virtualizing Objective-C while keeping some level of compatibility with non-virtualized Objective-C is probably not a good idea.  
+>   
 > In short: a virtualized version of Objective-C would (like C++.NET before it) need to have a number of language features removed (to the point where it is not source compatible enough to matter) or it would need to throw runtime exceptions all over the place if your code violated a long list of rules (which doesn't solve the memory abstraction problem it just hurts you if you get it wrong).
 
 ## A different path

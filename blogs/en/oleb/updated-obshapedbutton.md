@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3593d6b828658022'
 translated: false
 ---
@@ -20,6 +20,6 @@ I finally found the time to fix some embarrassing bugs in my [`OBShapedButton`](
 
 The updated code should now also work with non-symmetrical button shapes and on the iPhone 4’s retina display. Thanks to all of you who reported bugs and fixes.
 
-![The demo project for OBShapedButton](https://oleb.net/media/obshapedbutton-demo.png)
+[![The demo project for OBShapedButton](https://oleb.net/media/obshapedbutton-demo.png)](https://oleb.net/media/obshapedbutton-demo.png)
 
 <sub>The demo project for OBShapedButton.</sub>

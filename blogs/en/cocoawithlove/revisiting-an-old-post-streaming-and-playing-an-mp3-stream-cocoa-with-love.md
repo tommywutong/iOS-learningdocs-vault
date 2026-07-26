@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c2b04e2f31181f1a'
 translated: false
 ---
@@ -29,13 +29,7 @@ Unexpectedly, the post became one of my most popular. The attention quickly reve
 
 I've finally decided to take the time to present a solution to these issues and present an approach which is a little more robust and a little easier to extend if needed.
 
-> AudioStreamer project as a zip file
-> 
-> (around 110kB) which contains Xcode projects for both iPhone and Mac OS. You can also
-> 
-> browse the source code repository
-> 
-> .
+> You can download the complete [AudioStreamer project as a zip file](http://github.com/mattgallagher/AudioStreamer/zipball/master) (around 110kB) which contains Xcode projects for both iPhone and Mac OS. You can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer).
 
 ## Limited scope
 
@@ -93,11 +87,9 @@ My original approach to state came from Apple's original example. This example h
 The problem with this flag is how simple it is. It is unable to distinguish between the following:
 
 1. End of file, normal automatic stop.
-2. to stop but the
-
-  thread has not yet responded.
-3. thread is created and we must exit.
-4. for temporary reasons (clearing it, changing device, seeking to a new point) but we don't want the loop to stop.
+2. The user has asked the `AudioStreamer` to stop but the `AudioQueue` thread has not yet responded.
+3. An error has occurred before the `AudioQueue` thread is created and we must exit.
+4. We are stopping the `AudioQueue` for temporary reasons (clearing it, changing device, seeking to a new point) but we don't want the loop to stop.
 
 For Apple's example, there was no problem: the first case was the only one that ever occurred.
 
@@ -179,17 +171,9 @@ When do deadlocks occurs? Only when you're waiting for another thread to do some
 
 `AudioStreamer` has three situations where 1 thread waits for another:
 
-1. thread waits for any kind of control communication from the main thread or playback finished notification from the
-
-  thread).
-2. method (
-
-  thread waits for the
-
-  thread to free up a buffer).
-3. invocations (waits for the
-
-  to release all buffers).
+1. The run loop (the `AudioFileStream` thread waits for any kind of control communication from the main thread or playback finished notification from the `AudioQueue` thread).
+2. The `enqueueBuffer` method (`AudioFileStream` thread waits for the `AudioQueue` thread to free up a buffer).
+3. Synchronous `AudioQueueStop` invocations (waits for the `AudioQueue` to release all buffers).
 
 The first two points are easy: perform these actions (any any method invocation which invokes them) outside of the `@synchronized` section.
 
@@ -229,13 +213,7 @@ Incidentally, if you're curious to know how many audio buffers are in use at any
 
 ## Conclusion
 
-> AudioStreamer project as a zip file
-> 
-> (around 110kB) which contains Xcode projects for both iPhone and Mac OS. You can also
-> 
-> browse the source code repository
-> 
-> .
+> You can download the complete [AudioStreamer project as a zip file](http://github.com/mattgallagher/AudioStreamer/zipball/master) (around 110kB) which contains Xcode projects for both iPhone and Mac OS. You can also [browse the source code repository](http://github.com/mattgallagher/AudioStreamer).
 
 The functionality of this new version has not changed greatly — my purposed was to present a version that is more stable and tolerant of unexpected situations, rather than add new features.
 

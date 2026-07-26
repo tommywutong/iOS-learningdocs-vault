@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:35e7080cdbf79d80'
 translated: false
 ---
@@ -54,17 +54,15 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Swift](https:
 
 ## Older Posts
 
-1. 2011-07-22
-
-  rm vs. Time Machine
+1. 2011-07-22[rm vs. Time Machine](https://belkadan.com/blog/2011/07/rm-vs-Time-Machine/?tag=filesystems)
 
 ### Possibly Related Tags
 
-- Git
-- Mac OS Classic
-- Mac OS X
-- Package
-- Source code
-- Swift
-- Time Machine
-- Unix
+- [Git](https://belkadan.com/blog/tags/git)
+- [Mac OS Classic](https://belkadan.com/blog/tags/mac-os-classic)
+- [Mac OS X](https://belkadan.com/blog/tags/mac-os-x)
+- [Package](https://belkadan.com/blog/tags/package)
+- [Source code](https://belkadan.com/blog/tags/source-code)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Time Machine](https://belkadan.com/blog/tags/time-machine)
+- [Unix](https://belkadan.com/blog/tags/unix)

@@ -7,7 +7,7 @@ original_language: en
 published: 2012-05-16
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8892bfc5e097dbcf'
 translated: false
 ---
@@ -34,7 +34,7 @@ I’m going to Apple.
 
 This is not as exciting for me as it would be for someone else. I actually grew up in Cupertino, and I’ve interned there a few summers ago. I have a lot of respect for Apple’s emphasis on design and quality in their products (there are always exceptions, but the general trend is very good), but I haven’t been _dying_ to work there the way some people might.
 
-What _is_ exciting is what I’ll be doing. As I mentioned a few weeks back, I’ve shifted away from Cocoa development and gotten involved with [Clang](http://clang.llvm.org/).more I’m happy to say that the group I’ll be joining at Apple is one of the Clang teams, which is primarily responsible for the [static analyzer](http://clang-analyzer.llvm.org/), among other things.
+What _is_ exciting is what I’ll be doing. As I mentioned a few weeks back, I’ve shifted away from Cocoa development and gotten involved with [Clang](http://clang.llvm.org/). I’m happy to say that the group I’ll be joining at Apple is one of the Clang teams, which is primarily responsible for the [static analyzer](http://clang-analyzer.llvm.org/), among other things.
 
 _Edit from the future: I now work on [Swift](https://developer.apple.com/swift)._
 

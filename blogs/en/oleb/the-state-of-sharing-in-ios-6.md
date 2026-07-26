@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:95e6db7eb6b8e8f1'
 translated: false
 ---
@@ -22,7 +22,7 @@ In February 2012 I wrote an article outlining [my hope that Apple would introduc
 
 iOS 6 still does not have a full-fledged inter-app sharing mechanism. Instead, Apple chose to add two more very popular services, Facebook and [SinaWeibo](https://en.wikipedia.org/wiki/Sina_Weibo), to its existing support for Twitter in [Social.framework](https://developer.apple.com/reference/social). These are welcome additions, but certainly not a bold design that would allow third-party apps to offer their own sharing options.
 
-![Mobile Safari showing a UIActivityViewController in iOS 6](https://oleb.net/media/ios-6-uiactivityviewcontroller.png)
+[![Mobile Safari showing a UIActivityViewController in iOS 6](https://oleb.net/media/ios-6-uiactivityviewcontroller.png)](https://oleb.net/media/ios-6-uiactivityviewcontroller.png)
 
 <sub>`UIActivityViewController` in action.</sub>
 
@@ -44,7 +44,7 @@ Apple has created a simple and easy-to-use sharing system. The generic sharing U
 
 The only problem – and it is a big problem – is that the extensibility of `UIActivity` stops at app boundaries. It is not enough that a hypothetical Flickr app offered a generic “`FlickrActivity`”, which then could be used by any app that knew how to share images. On the contrary, _every_ app that wants to be able to upload to Flickr must provide a Flickr activity on its own inside its app bundle.
 
-The obvious reason for this design is that, under the current iOS security model, apps simply cannot communicate or share code between each other. iOS would need some kind of plugin interface to make this work.[1](#fn:1) Still, the resulting amount of code duplication and ineffeciency is regrettable.
+The obvious reason for this design is that, under the current iOS security model, apps simply cannot communicate or share code between each other. iOS would need some kind of plugin interface to make this work.^[1](#fn:1) Still, the resulting amount of code duplication and ineffeciency is regrettable.
 
 One solution to the dilemma is the open-source community. I’d love to see `UIActivity` implementations for all popular web services that developers can then integrate into their apps. I have already seen activities for [Buffer](http://www.andydev.co.uk/blog/projects/buffer-uiactivity/) and [Instagram](https://github.com/coryalder/DMActivityInstagram) on GitHub. It’s not a perfect solution but it’s the best developers can do.
 

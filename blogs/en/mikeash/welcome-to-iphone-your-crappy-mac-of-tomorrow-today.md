@@ -94,12 +94,10 @@ Try Again
 Now, before you post a comment, or write about this, or even criticize this post in your head, there are some points I would like you to keep in mind:
 
 1. No, I haven't forgotten how resource constrained the device is. I am concerned that a lot of people have forgotten how resource constrained their once-powerful desktop systems of yesteryear were. 128MB of RAM and a 600MHz ARM is more than enough to run a modern mobile operating system, a music player, a chat client, and a web browser.
-2. You want to know why Apple doesn't have a switch in the settings that says "enable background applications"? Because
-
-  . Apple doesn't feel like putting in the effort to do it right. They're taking the cop-out of simply disabling it (except for their own apps, because don't forget, they know better than you), and then telling us what a great favor they're doing to all of us by destroying the functionality of our devices.
-3. of the Mac OS X installed base, and as such represents an even smaller target.
-4. experience.
-5. ?
+2. Hunting down a runaway process that's destroying your battery life sucks, to be sure. But you know what sucks more? _Not being able to listen to music while I chat._ You want to know why Apple doesn't have a switch in the settings that says "enable background applications"? Because _everybody would turn it on as soon as they found it_. Apple doesn't feel like putting in the effort to do it right. They're taking the cop-out of simply disabling it (except for their own apps, because don't forget, they know better than you), and then telling us what a great favor they're doing to all of us by destroying the functionality of our devices.
+3. Don't even think about mentioning viruses, worms, trojans, or other forms of malware. Mac OS X is an open system which will run any code you hand it, and somehow it has not been overrun with malware. The iPhone installed base is currently about _one tenth the size_ of the Mac OS X installed base, and as such represents an even smaller target.
+4. Likewise, no talk of how rich people are going to get off the App Store. First of all, I'm doubtful that anyone will get rich. With only a few million iPhones in the world, you'd have to get an extremely large percentage of them to buy your stuff to get rich. Secondly, even if a few select developers do get rich, this has no bearing on how much Apple is destroying my _user_ experience.
+5. And last, none of this stuff about it not being a miniature laptop. I know it's not a miniature laptop. But when a device is advertised as being able to play music and browse the web, is it too much to ask that it can do _both at the same time_?
 6. Yeah, I'm angry. I'm tired of being fed crap and being told that it's caviar. I'm a very long-time Apple user, and I don't think that they are going in the right direction with any of this stuff. And no, the fact that several million people are willing to plunk down hundreds of dollars for an iPhone 3G of their very own is not going to convince me otherwise.
 
 And I think that's it. Flame away!
@@ -112,7 +110,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/welcome-to-iphone-your-crappy-mac-of-tomorrow-today.html)
 
 Add your thoughts, post a comment:
 

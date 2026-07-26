@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b43c52664fefcdbd'
 translated: false
 ---
@@ -26,9 +26,9 @@ Having that in mind, I decided to start a short series of posts called “System
 
 Here is a list of projects I want to start with:
 
-- LLVM
-- FreeBSD
-- GNU Make
+- [LLVM](http://systemundertest.org/llvm/)
+- [FreeBSD](http://systemundertest.org/freebsd/)
+- [GNU Make](http://systemundertest.org/gnu-make/)
 - PostgreSQL: TBD
 
 If you want to see a post about particular project which is not on the list: please [send me an email](https://lowlevelbits.org/cdn-cgi/l/email-protection#1928282928377d7c7b707877597e74787075377a7674) or leave a comment here with a name of the project.

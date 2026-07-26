@@ -7,7 +7,7 @@ original_language: en
 published: 2026-05-10
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c676107569261153'
 translated: false
 ---
@@ -148,11 +148,9 @@ void __debug_randomize_range(_Iterator __first, _Sentinel __last) {
 
 Three callsites:
 
-- — pre-shuffles the input.
-- — pre-shuffles the input
-
-  re-shuffles the unsorted tail afterward.
-- — pre-shuffles, then re-shuffles each side of the partition.
+- `std::sort` — pre-shuffles the input.
+- `std::partial_sort` — pre-shuffles the input _and_ re-shuffles the unsorted tail afterward.
+- `std::nth_element` — pre-shuffles, then re-shuffles each side of the partition.
 
 Seed handling rhymes with `get_execution_seed`: ASLR or static `std::random_device` for per-process variation, with `_LIBCPP_RANDOMIZE_UNSPECIFIED_STABILITY_SEED=<n>` as a fixed-seed escape hatch. Off by default; C++11 and later only.
 
@@ -164,12 +162,10 @@ It cites [PR20837](https://llvm.org/PR20837) — a worst-case `O(n²)` `std::sor
 
 Comparing the two is more interesting than either alone:
 
-- 's wrapper is internal hygiene: LLVM is its own primary user, so the shuffle lives in
-
-  behind a build flag with no docs.
-- page, public macro, public seed override, explicit "Patches welcome." invitation. It has to be: libc++'s users are not libc++, and the contract being defended is the C++ standard itself.
-- applies at three callsites, each declaring which sub-range the algorithm leaves unspecified. LLVM's wrapper only covers the simpler equal-element case.
-- iteration order — are unspecified in both, but libc++ does not randomize them. LLVM-the-library does; on this one surface LLVM is ahead of its own stdlib.
+- `llvm::sort`'s wrapper is internal hygiene: LLVM is its own primary user, so the shuffle lives in `STLExtras.h` behind a build flag with no docs.
+- libc++'s wrapper is user-facing — `DesignDocs/` page, public macro, public seed override, explicit "Patches welcome." invitation. It has to be: libc++'s users are not libc++, and the contract being defended is the C++ standard itself.
+- libc++ generalizes the primitive: `__debug_randomize_range` applies at three callsites, each declaring which sub-range the algorithm leaves unspecified. LLVM's wrapper only covers the simpler equal-element case.
+- Hashed containers — `std::unordered_*` iteration order — are unspecified in both, but libc++ does not randomize them. LLVM-the-library does; on this one surface LLVM is ahead of its own stdlib.
 
 ## Linker output: `--shuffle-sections` and `--randomize-section-padding`
 
@@ -198,17 +194,9 @@ for (const auto &patAndSeed : ctx.arg.shuffleSections) {
 
 Three regimes in one option:
 
-- — deterministic reverse, stable even as new sections appear. Glob
-
-  to
-
-  , rebuild, run the test suite: anything that breaks is a real static-init-order bug. One flag, no Frankenstein link script.
-- — deterministic random shuffle, reproducible across runs and hosts (because
-
-  is host-independent). Useful in CI without breaking bisection.
-- —
-
-  -seeded. Fresh nondeterminism every link.
+- `seed = -1` — deterministic reverse, stable even as new sections appear. Glob `.init_array*` to `-1`, rebuild, run the test suite: anything that breaks is a real static-init-order bug. One flag, no Frankenstein link script.
+- `seed > 0` — deterministic random shuffle, reproducible across runs and hosts (because `llvm::shuffle` is host-independent). Useful in CI without breaking bisection.
+- `seed = 0` — `std::random_device()`-seeded. Fresh nondeterminism every link.
 
 History: [`423cb321dfae`](https://github.com/llvm/llvm-project/commit/423cb321dfae) introduced the `=-1` reverse mode; [`16c30c3c23ef`](https://github.com/llvm/llvm-project/commit/16c30c3c23ef) generalized to per-glob seeds, which is what makes the `.init_array*=-1` recipe possible; [`c135a68d426f`](https://github.com/llvm/llvm-project/commit/c135a68d426f) fixed a bug where the feature itself produced an invalid dynamic relocation order — even Hyrum mitigations have correctness traps.
 

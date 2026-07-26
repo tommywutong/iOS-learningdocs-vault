@@ -7,7 +7,7 @@ original_language: en
 published: 2020-07-07
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c91e1b49f599c863'
 translated: false
 ---
@@ -32,11 +32,11 @@ translated: false
 
 ## [Suffusion: Playing with Filesystems](#)
 
-In addition to the personally-long-awaited launch of [Hermit Crab](https://belkadan.com/hermitcrab/), I’ve also spent the last week or so making a limited but easy-to-use Swift wrapper around the [FUSE](https://github.com/libfuse/libfuse/) APIs, which I’ve dubbed [Suffusion](https://belkadan.com/source/Suffusion/). Suffusion is heavily inspired by the [FUSE on macOS project](https://osxfuse.github.io)’s Objective-C APIs, but simplified down to only support read-only filesystems, which is all I really want right now.more
+In addition to the personally-long-awaited launch of [Hermit Crab](https://belkadan.com/hermitcrab/), I’ve also spent the last week or so making a limited but easy-to-use Swift wrapper around the [FUSE](https://github.com/libfuse/libfuse/) APIs, which I’ve dubbed [Suffusion](https://belkadan.com/source/Suffusion/). Suffusion is heavily inspired by the [FUSE on macOS project](https://osxfuse.github.io)’s Objective-C APIs, but simplified down to only support read-only filesystems, which is all I really want right now.
 
 Why FUSE? Because like compilers, filesystems are sometimes seen as mystic-level programming, beyond the abilities of mere mortals. And from my perspective as a former compiler developer, filesystems really are harder in a number of ways: they have to deal with concurrency and mutable state, they have to be fast, they should be secure, and above all else they have to _not corrupt user data._
 
-But like compilers, you don’t have to jump into the deep end to learn about filesystems.[1](#fn:compilers) At its simplest, a filesystem is just a tree structure that you navigate with a shell or a file browser. _Read-only_ filesystems simplify things even further by only requiring you to implement a few operations. And FUSE makes it possible to do that without doing OS-level programming, or even root access.
+But like compilers, you don’t have to jump into the deep end to learn about filesystems.^[1](#fn:compilers) At its simplest, a filesystem is just a tree structure that you navigate with a shell or a file browser. _Read-only_ filesystems simplify things even further by only requiring you to implement a few operations. And FUSE makes it possible to do that without doing OS-level programming, or even root access.
 
 I’ve used FUSE to explore archive formats, git repositories (with the help of [SwiftGit2](https://github.com/SwiftGit2/SwiftGit2)), and even dumps of Classic Mac resource forks. Porting these projects to Suffusion wasn’t hard and left me with code that was easier to maintain (if not actually shorter).
 

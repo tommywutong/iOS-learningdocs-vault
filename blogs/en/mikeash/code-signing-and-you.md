@@ -33,7 +33,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/code-signing-and-you.html)
 
 Add your thoughts, post a comment:
 

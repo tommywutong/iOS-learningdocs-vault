@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:98306dd3af7ef225'
 translated: false
 ---
@@ -24,7 +24,8 @@ None of these storage locations are within an NSManagedObjectContext. So if you 
 
 If one of the attributes on your entity is guaranteed unique, you could store that attribute and use it to find the NSManagedObject later. But you don't need to add a unique attribute: every object already has one provided automatically — the objectID.
 
-> Okay, I've written quite a few Core Data related posts now (relative to other frameworks within Cocoa). That's because it's an amazing API: free file reading/writing, free undo, scaleable, highly optimised. Unless you have explicit reasons to avoid it, every program you write should use it.
+> _— Matt, if you love Core Data so much, why don't you marry it?_  
+>  Okay, I've written quite a few Core Data related posts now (relative to other frameworks within Cocoa). That's because it's an amazing API: free file reading/writing, free undo, scaleable, highly optimised. Unless you have explicit reasons to avoid it, every program you write should use it.
 
 ## The easy part: convert to a URI
 

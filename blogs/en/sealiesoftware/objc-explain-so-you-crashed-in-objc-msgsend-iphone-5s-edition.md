@@ -7,7 +7,7 @@ original_language: en
 published: 2013-09-12
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8a21cdfe2a386566'
 translated: false
 ---
@@ -51,4 +51,4 @@ translated: false
 | arm | r0 | r1 | r1 | r2 |
 | arm64 | x0 | x1 | — | — |
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

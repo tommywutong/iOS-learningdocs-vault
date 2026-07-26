@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:9c47d82b467ac086'
 translated: false
 ---
@@ -24,15 +24,15 @@ That’s a a lot of stuff. If you’re like me, you feel more than a little over
 
 Although WWDC is a developer event, the keynote focused mainly on the new consumer features in Lion and iOS. The most important information for developers is contained in these three all-important slides:
 
-![Steve Jobs introducing iCloud Storage APIs at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-icloud-storage-apis.png)
+[![Steve Jobs introducing iCloud Storage APIs at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-icloud-storage-apis.png)](https://oleb.net/media/wwdc-2011-keynote-icloud-storage-apis.png)
 
 <sub>(1) iCloud will have storage APIs so we can use it in our apps. This is HUGE.</sub>
 
-![Scott Forstall introducing new developer features in iOS 5 at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-ios5-developer-features.png)
+[![Scott Forstall introducing new developer features in iOS 5 at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-ios5-developer-features.png)](https://oleb.net/media/wwdc-2011-keynote-ios5-developer-features.png)
 
 <sub>(2) New developer features in the iOS 5 SDK.</sub>
 
-![Phil Schiller introducing new developer features in Mac OS X Lion at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-lion-developer-features.png)
+[![Phil Schiller introducing new developer features in Mac OS X Lion at WWDC 2011](https://oleb.net/media/wwdc-2011-keynote-lion-developer-features.png)](https://oleb.net/media/wwdc-2011-keynote-lion-developer-features.png)
 
 <sub>(3) New developer features in Lion.</sub>
 
@@ -45,8 +45,8 @@ To learn more about the new APIs, you should dive into the developer documentati
 
 If you are a Mac developer, here are the corresponding documents for Lion. Besides minor modifications, they have been available since we got the first developer release of Lion so you hopefully already know them inside and out.
 
-1. What’s New in Mac OS X Lion
-2. Mac OS X Lion API Diffs
+1. [What’s New in Mac OS X Lion](http://developer.apple.com/technologies/mac/whats-new.html)
+2. [Mac OS X Lion API Diffs](http://developer.apple.com/library/prerelease/mac/#releasenotes/General/MacOSXLionAPIDiffs/)
 
 Now that you have an overview of the new capabilities (both those that are publicly known and the ones only developers see in the beta SDK), you should plan which ones you want to use and how.
 

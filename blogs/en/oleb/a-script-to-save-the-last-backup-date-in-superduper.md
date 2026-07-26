@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:66be99241b61a5dd'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # A script to save the last backup date in SuperDuper
 
-I’m a very happy [SuperDuper](https://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html) user. If you’re not aware, SuperDuper is a Mac app that can create bootable clones from SSDs and hard drives — it’s a great complement to other backup strategies like Time Machine and online backup.[1](#fn:1)
+I’m a very happy [SuperDuper](https://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html) user. If you’re not aware, SuperDuper is a Mac app that can create bootable clones from SSDs and hard drives — it’s a great complement to other backup strategies like Time Machine and online backup.^[1](#fn:1)
 
 # Saving the date of the last backup
 
@@ -53,7 +53,7 @@ I find this very helpful. Sure, you can deduce the time of the backup from syste
 1. Copy the script’s source code from below and save it to a text file. I named mine `superduper-write-date.sh` and saved it to `~/bin` in my home folder.
 2. Open SuperDuper, and click Options…. On the Advanced tab, select the script for the “Run shell script after copy completes” option.
 
-  ![Screenshot of SuperDuper's Options window, with the “Run shell script after copy completes” option highlighted](https://oleb.net/media/superduper-after-copy-script-1134px.png)
+  [![Screenshot of SuperDuper's Options window, with the “Run shell script after copy completes” option highlighted](https://oleb.net/media/superduper-after-copy-script-1134px.png)](https://oleb.net/media/superduper-after-copy-script-1134px.png)
 
   <sub>SuperDuper’s options dialog.</sub>
 

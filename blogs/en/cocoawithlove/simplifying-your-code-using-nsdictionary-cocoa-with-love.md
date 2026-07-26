@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:85468f013838acf4'
 translated: false
 ---
@@ -26,9 +26,7 @@ This is not a novel idea but I think it is a really useful technique that progra
 
 ## The sample program
 
-> XCode 3.1 project file for the sample program here
-> 
-> (62kB).
+> Download the [XCode 3.1 project file for the sample program here](https://www.cocoawithlove.com/assets/objc-era/DictionaryState.zip) (62kB).
 
 To illustrate this and show ways of overcoming conditionals and complexity, I will present the following program:
 

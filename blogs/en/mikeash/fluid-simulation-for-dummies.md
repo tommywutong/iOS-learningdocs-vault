@@ -23,13 +23,7 @@ Fluid Simulation for Dummies
 
 by [Mike Ash](https://www.mikeash.com/)
 
-Real-Time Fluid Dynamics for Games
-
-. If you want a more in-depth look at what's going on, that's the place to go. You can also read all about how to parallelize the simulation and render the output in 3D in my
-
-Master's thesis
-
-.
+[Real-Time Fluid Dynamics for Games](http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf). If you want a more in-depth look at what's going on, that's the place to go. You can also read all about how to parallelize the simulation and render the output in 3D in my [Master's thesis](http://www.mikeash.com/?page=thesis/).
 
 ### Basics
 
@@ -330,9 +324,7 @@ static void lin_solve(int b, float *x, float *x0, float a, float c, int iter, in
 
 ### diffuse
 
-Diffuse is really simple; it just precalculates a value and passes everything off to
-
-. So that means, while I know what it does, I don't really know how, since all the work is in that mysterious function. Code:
+Diffuse is really simple; it just precalculates a value and passes everything off to lin_solve. So that means, while I know what it does, I don't really know how, since all the work is in that mysterious function. Code:
 
 ```
 static void diffuse (int b, float *x, float *x0, float diff, float dt, int iter, int N)
@@ -344,9 +336,7 @@ static void diffuse (int b, float *x, float *x0, float diff, float dt, int iter,
 
 ### project
 
-This function is also somewhat mysterious as to exactly how it works, but it does some more running through the data and setting values, with some calls to
-
-thrown in for fun. Code:
+This function is also somewhat mysterious as to exactly how it works, but it does some more running through the data and setting values, with some calls to lin_solve thrown in for fun. Code:
 
 ```
 static void project(float *velocX, float *velocY, float *velocZ, float *p, float *div, int iter, int N)
@@ -486,7 +476,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/fluid-simulation-for-dummies.html)
 
 Add your thoughts, post a comment:
 

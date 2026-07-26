@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ff4f8bd576192ef1'
 translated: false
 ---
@@ -23,8 +23,14 @@ In fact, Apple is already using a new undocumented concept called _Remote View C
 I first learned about the existence of remote view controllers from a tweet by Grant Paul:
 
 > New, private iOS 6 feature Apple is using: remote view controllers. For example: the Mail compose view is now run in a separate process.
+> 
+> [@chpwn](https://twitter.com/chpwn)
+> 
+> Grant Paul
+> 
+> [September 10, 2012](https://twitter.com/chpwn/statuses/244968969365241856)
 
-This gives us a few hints where to begin the investigation. I wrote a very simple test app that presents one of four built-in sharing screens – [E-mail](http://developer.apple.com/library/ios/#documentation/MessageUI/Reference/MFMailComposeViewController_class/Reference/Reference.html), [SMS](http://developer.apple.com/library/ios/#Documentation/MessageUI/Reference/MFMessageComposeViewController_class/Reference/Reference.html), [Twitter and Facebook](http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html) – of iOS 6 on tapping a button. I use Apple’s documented APIs, which haven’t changed in iOS 6[1](#fn:1), for this purpose. For example, the code to present the e-mail sharing view looks like this:
+This gives us a few hints where to begin the investigation. I wrote a very simple test app that presents one of four built-in sharing screens – [E-mail](http://developer.apple.com/library/ios/#documentation/MessageUI/Reference/MFMailComposeViewController_class/Reference/Reference.html), [SMS](http://developer.apple.com/library/ios/#Documentation/MessageUI/Reference/MFMessageComposeViewController_class/Reference/Reference.html), [Twitter and Facebook](http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/SLComposeViewController_Class/Reference/Reference.html) – of iOS 6 on tapping a button. I use Apple’s documented APIs, which haven’t changed in iOS 6^[1](#fn:1), for this purpose. For example, the code to present the e-mail sharing view looks like this:
 
 ```
 - (IBAction)openMailComposer:(id)sender
@@ -38,13 +44,13 @@ This gives us a few hints where to begin the investigation. I wrote a very simpl
 }
 ```
 
-When we run this app and monitor the system with Activity Monitor[2](#fn:2), we notice that a new process named _MailCompositionService_ launches once the app presents the e-mail compose sheet. Further inspection of the process reveals that this process resides in `/Applications/MailCompositionService.app/` and links with `/System/Library/PrivateFrameworks/XPCObjects.framework/`.
+When we run this app and monitor the system with Activity Monitor^[2](#fn:2), we notice that a new process named _MailCompositionService_ launches once the app presents the e-mail compose sheet. Further inspection of the process reveals that this process resides in `/Applications/MailCompositionService.app/` and links with `/System/Library/PrivateFrameworks/XPCObjects.framework/`.
 
-![Activity Monitor showing the MailCompositionService that is launched in iOS 6](https://oleb.net/media/activity-monitor-mailcompositionservice-ios6.png)
+[![Activity Monitor showing the MailCompositionService that is launched in iOS 6](https://oleb.net/media/activity-monitor-mailcompositionservice-ios6.png)](https://oleb.net/media/activity-monitor-mailcompositionservice-ios6.png)
 
 <sub>Activity Monitor showing the MailCompositionService that is launched in iOS 6 when an app presents an `MFMailComposeViewController`.</sub>
 
-![Activity Monitor showing that MailCompositionService links with XPCObjects.framework](https://oleb.net/media/activity-monitor-mailcompositionservice-xpcobjects-framework.png)
+[![Activity Monitor showing that MailCompositionService links with XPCObjects.framework](https://oleb.net/media/activity-monitor-mailcompositionservice-xpcobjects-framework.png)](https://oleb.net/media/activity-monitor-mailcompositionservice-xpcobjects-framework.png)
 
 <sub>The inspection view reveals that MailCompositionService links with the private XPCObjects.framework.</sub>
 
@@ -60,7 +66,7 @@ Apple introduced XPC in OS X for security reasons. Apps are supposed to split th
 
 On iOS, apps already have a very limited set of permissions. While it might not seem as useful to split up iOS apps into multiple XPC services, the XPC architecture can also be used to allow existing apps to access certain system-wide services in a more secure manner or perhaps even to allow third-party apps to share data with each other without compromising the security model of the OS.
 
-A class dump reveals that iOS 6 indeed includes the private [XPCKit.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCKit.framework)[3](#fn:3), [XPCObjects.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCObjects.framework) and [XPCService.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCService.framework), which seem to be pretty much equivalent to the XPC functionality in OS X 10.8.
+A class dump reveals that iOS 6 indeed includes the private [XPCKit.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCKit.framework)^[3](#fn:3), [XPCObjects.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCObjects.framework) and [XPCService.framework](https://github.com/nst/iOS-Runtime-Headers/tree/master/PrivateFrameworks/XPCService.framework), which seem to be pretty much equivalent to the XPC functionality in OS X 10.8.
 
 # View Hierarchy Ends with `_UIRemoteView`
 
@@ -73,7 +79,7 @@ Next, let’s investigate the view hierarchy of the e-mail compose sheet. I set 
 (MFMailComposeViewController *) $1 = 0x1e04f6d0 <MFMailComposeViewController: 0x1e04f6d0>
 ```
 
-No surprises here. The view controller is indeed an instance of `MFMailComposeViewController`. Let’s have a look at the entire view hierarchy[4](#fn:4):
+No surprises here. The view controller is indeed an instance of `MFMailComposeViewController`. Let’s have a look at the entire view hierarchy^[4](#fn:4):
 
 ```
 (lldb) po [controller.view recursiveDescription]
@@ -176,19 +182,9 @@ Let’s see what we can find out about these new processes that show up in Activ
 
 A [class dump of `MailCompositionService.app`](https://gist.github.com/3813291) reveals the following classes and protocols:
 
-- and
-
-  protocols
-- , a
-
-  subclass.
-- , a
-
-  subclass that implements, among others, the
-
-  protocol. This class contains an ivar
-
-  .
+- The `MFMailComposeRemoteService` and `MFMailComposeRemoteHost` protocols
+- `ComposeNavigationController`, a `UINavigationController` subclass.
+- `ComposeServiceRemoteViewController`, a `UIViewController` subclass that implements, among others, the `MFMailComposeRemoteService` protocol. This class contains an ivar `XPCProxy<MFMailComposeRemoteHost> *_proxy;`.
 
 Without going into too much detail, it seems clear that the host app and the service set up proxy objects on either side of the process boundary. These proxy objects use XPC to communicate with each other. The two protocols, `MFMailComposeRemoteService` and `MFMailComposeRemoteHost`, define what messages can be sent in each direction.
 
@@ -220,7 +216,7 @@ A further hint at such a feature is the presence of the private [`_UIRemoteWebVi
 
 I [swizzled](http://www.mikeash.com/pyblog/friday-qa-2010-01-29-method-replacement-for-fun-and-profit.html) this method in my test app to be able to set a breakpoint and look at the three arguments and the method’s return value. This is what I found:
 
-![Xcode debugger showing call stack for MFMailComposeViewController](https://oleb.net/media/xcode-call-stack-mfmailcomposeviewcontroller-ios6.png)
+[![Xcode debugger showing call stack for MFMailComposeViewController](https://oleb.net/media/xcode-call-stack-mfmailcomposeviewcontroller-ios6.png)](https://oleb.net/media/xcode-call-stack-mfmailcomposeviewcontroller-ios6.png)
 
 <sub>The call stack in Xcode's debugger after we presented an `MFMailComposeViewController` on screen. Note that `MFMailComposeViewController` directly calls `requestViewController:fromServiceWithBundleIdentifier:connectionHandler:` to create the remote view controller and initiate the XPC process.</sub>
 

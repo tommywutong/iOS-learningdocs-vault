@@ -7,7 +7,7 @@ original_language: en
 published: 2018-08-25
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:128a7631ee5814de'
 translated: false
 ---
@@ -116,15 +116,9 @@ I started with the hex dump of the file:
 
 ### Immediately visible things
 
-- a Golang file
-
-  , which only checks for this magic number. That doesn’t tell me anything. I’m on my own.
-- FourCC
-
-  codes in file formats to denote tag types.
-- ” magic number shows up near the end! so there’s some embedded Bitcode. A search shows that “
-
-  ” occurs twice…
+- There’s a 4 byte magic number: “MTLB”. I searched online: the only mention is [a Golang file](https://github.com/martinlindhe/formats/blob/master/parse/macos/macos_mtlb.go), which only checks for this magic number. That doesn’t tell me anything. I’m on my own.
+- Many 4 character strings, e.g. “NAME”, “TYPE” - probably types of structures. Apple is fond of using four character [FourCC](https://en.wikipedia.org/wiki/FourCC) codes in file formats to denote tag types.
+- The “`de c0 17 0b`” magic number shows up near the end! so there’s some embedded Bitcode. A search shows that “`de c0 17 0b`” occurs twice…
 - Once for each of the exported functions in the original shader: “vertexShader” and “fragmentShader”.
 - Those two function names from the shader also shows up, each after a “NAME” tag name.
 
@@ -240,11 +234,15 @@ Now that I know how a metallib is stored, I can try extracting the functions’ 
 Procedure:
 
 - find number of entries by following the offset at `0x18`
--   - read its length
+- for each entry:
+
+    - read its length
     - parse its NAME tag for the function name
     - parse its MDSZ tag for its Bitcode’s size
 - now, start at the first Bitcode
--   - read its Bitcode, using the size from its MDSZ, and write it to a file based on its name
+- for each entry:
+
+    - read its Bitcode, using the size from its MDSZ, and write it to a file based on its name
 
 [I wrote a simple Python script](https://github.com/zhuowei/MetalShaderTools/blob/master/unmetallib.py) to do this, giving me .air Bitcode files bac. As expected, each contained one function, as shown by [disassembling with llvm-dis](https://github.com/zhuowei/MetalShaderTools/blob/master/sampleshader/out_vertexShader.air.ll).
 
@@ -339,15 +337,9 @@ vertexShader:                           // @vertexShader
 
 The output ARM assembly:
 
-- , and the two pointers to structs are passed in
-
-  and
-
-  .
-- .
-- in the original Metal shader, and denoted by
-
-  in the LLVM bitcode, are completely discarded, since there’s only one address space on ARM64, unlike GPUs with separate address spaces for varying attributes and uniform constants.
+- actually follows the ARM calling convention: as expected, the first uint argument is passed in register `w0`, and the two pointers to structs are passed in `x1` and `x2`.
+- The call to the Metal supporting library also respects the hardfloat calling convention, passing in the first vector argument in `d0`.
+- the shader uniform annotation, specified with `constant` in the original Metal shader, and denoted by `addrspace(2)` in the LLVM bitcode, are completely discarded, since there’s only one address space on ARM64, unlike GPUs with separate address spaces for varying attributes and uniform constants.
 - uses ARM NEON to perform the vector divisions
 
 So, to my surprise, LLVM produced fairly reasonable ARM assembly code from this shader. This suggests that a Bitcode based binary compatibility scheme is plausible: the basic code is faithfully translated, although running the code would require significant support code to paper over differences between the original and new architecture.
@@ -372,15 +364,21 @@ gzorin [built a wrapper](https://github.com/gzorin/LLAIR) around the `metal` and
 
 - Metal shaders are just normal LLVM Bitcode and can be manipulated using the usual LLVM tools
 - Experience in reverse engineering simple file formats often comes in handy
--   - compatibility issues
+- A common shader IR is useful.
 
-      .
+    - Without a common intermediate representation, each GPU vendor’s driver must know how to parse, compile, optimize, and emit the shader. This causes duplication of work and [compatibility issues](https://dolphin-emu.org/blog/2013/09/26/dolphin-emulator-and-opengl-drivers-hall-fameshame/).
     - With one intermediate representation, the compile and optimize pass is done ahead of time, so drivers don’t have to implement it themselves. In fact, with Metal, thanks to LLVM, even codegen can be shared between GPUs. This makes compatibility and driver development easier.
     - Perhaps this is why DirectX had an intermediate bytecode early on.
 - LLVM won’t magically turn your shader written for GPU into fast code for the CPU
--   - OpenGL software renderer
+- Apple’s investment in LLVM is justified by LLVM’s amazing versatility: Apple uses it in their:
+
+    - OpenGL software renderer
     - compiler toolchain
     - App Store, with Bitcode submissions
     - Swift
     - and - now - Metal.
--   - I first looked into Metal shader bitcode in 2016, but couldn’t figure out how to turn it into a blog post until I added the metallib reverse engineering tutorial and the clickbait x86/ARM assembly recompile.
+- I should revisit my old projects more often.
+
+    - I first looked into Metal shader bitcode in 2016, but couldn’t figure out how to turn it into a blog post until I added the metallib reverse engineering tutorial and the clickbait x86/ARM assembly recompile.
+
+[https://worthdoingbadly.com/metalbitcode/](https://worthdoingbadly.com/metalbitcode/)

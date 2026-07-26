@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2826d4730a26d0ef'
 translated: false
 ---
@@ -45,15 +45,9 @@ Unfortunately, the `FSRef` here is a campy 1990's throwback (the 90's are now tw
 
 Apple's Low Level File Management Topics include [an approach for resolving an alias from an `NSString` path](http://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/LowLevelFileMgmt/Articles/ResolvingAliases.html) which demonstrates this procedure. While I use an implementation derived from this in my solution, Apple's original implementation suffers from the following problems:
 
-- function used to convert a
-
-  into an
-
-  will fail if the path contains an alias at anywhere other than the last path component.
-- will follow symlinks in the URL to create the
-
-  , no part of this code will actually return a resolved symlink, so that part will require a separate step.
-- will present a user dialog if the alias points to a volume which is not mounted. While potentially desirable in a user application, this is undesirable in all other cases.
+- The `CFURLGetFSRef` function used to convert a `CFURL` into an `FSRef` will fail if the path contains an alias at anywhere other than the last path component.
+- While `CFURLGetFSRef` will follow symlinks in the URL to create the `FSRef`, no part of this code will actually return a resolved symlink, so that part will require a separate step.
+- The function `FSResolveAliasFile` will present a user dialog if the alias points to a volume which is not mounted. While potentially desirable in a user application, this is undesirable in all other cases.
 
 This final point is not too difficult — we'll replace `FSResolveAliasFile` with `FSResolveAliasFileWithMountFlags` which allows us to disable the user dialog using the flags. But the remaining two points will require a little more work to address.
 
@@ -112,18 +106,8 @@ The middle level of the solution iterates over a path where only the final compo
 
 For efficiency, this does two things in an unusual way:
 
-- instead of
-
-  since I only need the
-
-  field, and
-
-  invokes
-
-  internally anyway.
-- method instead of
-
-  since I know that only the final component requires resolution (I've already done the work for earlier components).
+- I use `lstat` instead of `-[NSFileManager attributesOfItemAtPath:error]` since I only need the `st_mode` field, and `NSFileManager` invokes `lstat` internally anyway.
+- I use my own `-[NSString stringByConditionallyResolvingSymlink]` method instead of `- [NSString stringByResolvingSymlinksInPath]` since I know that only the final component requires resolution (I've already done the work for earlier components).
 
 ```objc
 - (NSString *)stringByIterativelyResolvingSymlinkOrAlias
@@ -208,11 +192,7 @@ Hooray, I finally used `NSFileManager` in a post about files! Yes, once again it
 
 ## Conclusion
 
-> NSString+SymLinksAndAliases.zip
-> 
-> (3kb) which contains all the code discussed in this post (plus a few other related methods) as a category on
-> 
-> .
+> You can download [NSString+SymLinksAndAliases.zip](https://www.cocoawithlove.com/assets/objc-era/NSString+SymlinksAndAliases.zip) (3kb) which contains all the code discussed in this post (plus a few other related methods) as a category on `NSString`.
 
 Usage of the category is as simple as importing the header and writing:
 

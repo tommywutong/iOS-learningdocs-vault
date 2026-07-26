@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c55003ef84769c69'
 translated: false
 ---
@@ -24,9 +24,7 @@ The sample app for this post has one window:
 
 When you choose the "Toggle Fullscreen" menu item, the content area of the window (not the window's frame) will animate to fill the entire screen (the Dock and menubar will hide).
 
-> FullscreenImage.zip (277kB)
-> 
-> .
+> You can download the Xcode 3.1 project here: [FullscreenImage.zip (277kB)](https://www.cocoawithlove.com/assets/objc-era/FullscreenImage.zip).
 
 ## Fullscreen windows
 
@@ -54,7 +52,7 @@ This will smoothly zoom a window to fill the available screen area.
 
 On its own though, it has a few limitations:
 
-- the screen.
+- It doesn't hide the menubar or Dock — so it doesn't actually _fill_ the screen.
 - It doesn't hide the frame of the window, so the frame remains visible around the outside.
 - It doesn't change the window's level so panels and other window may still overlap the expanded window.
 
@@ -78,11 +76,7 @@ The first method has more options — the biggest of which is the `kUIOptionAuto
 
 I prefer the `NSMenu` method for its simplicity and Cocoa linkage. This does mean that if you want to show the menubar, you'd need to create an `NSTrackingArea` or something similar to detect when the mouse is over the menubar and show it again.
 
-> : In Snow Leopard, you can use the
-> 
-> method to handle all that
-> 
-> could do and more, all with standard Cocoa linkage.
+> **Update 2009-09-20**: In Snow Leopard, you can use the `-[NSApplication setPresentationOptions:]` method to handle all that `SetSystemUIMode` could do and more, all with standard Cocoa linkage.
 
 The other consideration with hiding the menubar is that you should only do it if the window you are resizing is actually on the `[[NSScreen screens] objectAtIndex:0]` (the screen that shows the menubar). i.e.:
 
@@ -114,17 +108,9 @@ fullscreenWindow = [[FullscreenWindow alloc]
 
 There are three other points to notice in this code:
 
-- (so that the window will appear above
-
-  s and similar windows).
+- The window level is `NSFloatingWindowLevel` (so that the window will appear above `NSPanel`s and similar windows).
 - The window title is set to match the old window (so that the new window will appear the same in Exposé).
-- to return
-
-  (since it returns
-
-  by default for
-
-  windows).
+- The window is actually a subclass so we can override the method `canBecomeKeyWindow` to return `YES` (since it returns `NO` by default for `NSBorderlessWindowMask` windows).
 
 ## Other minor points
 
@@ -134,8 +120,6 @@ If you run the whole process while the window is miniaturized in the Dock, numer
 
 ## Conclusion
 
-> FullscreenImage.zip (277kB)
-> 
-> .
+> You can download the Xcode 3.1 project here:[FullscreenImage.zip (277kB)](https://www.cocoawithlove.com/assets/objc-era/FullscreenImage.zip).
 
 The whole code is one method in the sample app — an easy copy and paste into any application.

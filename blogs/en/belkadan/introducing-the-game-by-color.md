@@ -7,7 +7,7 @@ original_language: en
 published: 2020-02-04
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:251285a353fcc88c'
 translated: false
 ---
@@ -28,7 +28,7 @@ translated: false
 
 ## [Introducing the Game 'by Color](#)
 
-When designing [ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/), I realized that the last 8-bit CPU architecture I had learned about was the Nintendo Game Boy, via Eevee’s [Cheezball Rising](https://eev.ee/blog/2018/06/19/cheezball-rising-a-new-game-boy-color-game/) series. That gave me a goal for ROSE-8: implement a system that could display graphics and receive real-time button presses, and thus play games. As I hinted [last time](https://belkadan.com/blog/2020/01/ROSE-8-Console/), I did indeed manage to achieve this! Introducing the Game ’by Color ([pronounced like “Game B Color”](https://en.wiktionary.org/wiki/enby)).more
+When designing [ROSE-8](https://belkadan.com/blog/2020/01/ROSE-8/), I realized that the last 8-bit CPU architecture I had learned about was the Nintendo Game Boy, via Eevee’s [Cheezball Rising](https://eev.ee/blog/2018/06/19/cheezball-rising-a-new-game-boy-color-game/) series. That gave me a goal for ROSE-8: implement a system that could display graphics and receive real-time button presses, and thus play games. As I hinted [last time](https://belkadan.com/blog/2020/01/ROSE-8-Console/), I did indeed manage to achieve this! Introducing the Game ’by Color ([pronounced like “Game B Color”](https://en.wiktionary.org/wiki/enby)).
 
 ![](https://belkadan.com/blog/2020/02/ROSE-8-Game-by-Color/screen.png)
 
@@ -53,7 +53,7 @@ If you’re interested in any of these pieces for one of your own projects, I su
 
 The screenshot at the top is of a maze game, the same game I used to demonstrate [console mode](https://belkadan.com/blog/2020/01/ROSE-8-Console/). It really works! (Fun fact: the screenshot from [_last_ time](https://belkadan.com/blog/2020/01/ROSE-8-Console/) was the test pattern Eevee used during her own initial forays into Game Boy Color programming.)
 
-I think this is about it for ROSE-8 adventures for me. While I do still have ideas for new instructions to make it easier to program (…in bare assembly…), I’ve accomplished all the basic things I thought about when first starting the project[1](#fn:compiler), and I have other projects and blog posts I’d like to get to. But it was a fun month’s diversion, and I appreciated both the challenge of operating under (virtual, self-imposed) limitations and the opportunity to learn about and make things I hadn’t before. If you have time, I highly recommend learning about and making things you haven’t before.
+I think this is about it for ROSE-8 adventures for me. While I do still have ideas for new instructions to make it easier to program (…in bare assembly…), I’ve accomplished all the basic things I thought about when first starting the project^[1](#fn:compiler), and I have other projects and blog posts I’d like to get to. But it was a fun month’s diversion, and I appreciated both the challenge of operating under (virtual, self-imposed) limitations and the opportunity to learn about and make things I hadn’t before. If you have time, I highly recommend learning about and making things you haven’t before.
 
 1. Except a compiler, cause oof, that would be a lot of work. [↩︎](#fnref:compiler)
 

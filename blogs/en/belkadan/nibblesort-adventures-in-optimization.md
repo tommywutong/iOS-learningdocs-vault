@@ -7,7 +7,7 @@ original_language: en
 published: 2015-05-09
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:896114ab07150d79'
 translated: false
 ---
@@ -36,19 +36,19 @@ I decided to enter the contest because I don’t usually work on low-level optim
 
 This post will walk through the progress of my entry from “all right, I guess” to “actually that’s pretty fast”, detailing both what the various implementations are doing and the thought processes behind them. I’ve attempted to make it fairly accessible—aiming for it to be understandable to anyone who’s comfortable reading C code—but several years as a compiler developer may have led to certain things being taken for granted. (If you spot any of these, please [let me know](https://twitter.com/UINT_MIN/) and I’ll update the post.) It’s also rather long, so feel free to read part of it and come back to it later.
 
-1. The Reference Implementation
-2. Bucket Sort
-3. Building the Result Value
-4. Avoiding Branches
-5. Unroll Loops Manually
-6. Avoid Memory Access?
-7. Do Less Work
-8. Under the Hood
-9. Registers
-10. Preserving Information
-11. The Magic of XOR
-12. The Winning Solution
-13. Epilogue
+1. [The Reference Implementation](#the-reference-implementation)
+2. [Bucket Sort](#bucket-sort)
+3. [Building the Result Value](#building-the-result-value)
+4. [Avoiding Branches](#avoiding-branches)
+5. [Unroll Loops Manually](#unroll-loops-manually)
+6. [Avoid Memory Access?](#avoid-memory-access)
+7. [Do Less Work](#do-less-work)
+8. [Under the Hood](#under-the-hood)
+9. [Registers](#registers)
+10. [Preserving Information](#preserving-information)
+11. [The Magic of XOR](#the-magic-of-xor)
+12. [The Winning Solution](#the-winning-solution)
+13. [Epilogue](#epilogue)
 
 ### The Reference Implementation
 
@@ -90,7 +90,7 @@ uint64_t nibble_sort_word(uint64_t arg) {
 
 It’s not exactly doing any _unnecessary_ work, but even with the optimizer on it’s doing a lot of moderately interesting bitwise manipulation that’s just going to take time. Hey, at least it’s not [bubble sort](http://en.wikipedia.org/wiki/Bubble_sort).
 
-This reference implementation took about 400-500µs on my machine to sort 1024 64-bit words. That’s already not too slow; simply writing 1024 newlines using [`puts`](http://en.cppreference.com/w/cpp/io/c/puts) took over twice as long.[1](#fn:buffer) But we can do much, much better.
+This reference implementation took about 400-500µs on my machine to sort 1024 64-bit words. That’s already not too slow; simply writing 1024 newlines using [`puts`](http://en.cppreference.com/w/cpp/io/c/puts) took over twice as long.^[1](#fn:buffer) But we can do much, much better.
 
 ### Bucket Sort
 
@@ -98,7 +98,7 @@ Sorting normally requires [Ω(N log N)](http://en.wikipedia.org/wiki/Big_O_notat
 
 In this case N is rather low, but I wasn’t thinking about that. Instead, I focused on the fact that a nibble can only have 16 values. When you know what values can appear in your data (and there aren’t too many of them), you don’t actually have to compare them. Instead, you just go through each value and toss it into the correct “bucket”, keeping a count of how many you’ve seen. At the end, you can just go through the _buckets_ in order and write out the answer. This is called a [bucket sort](http://en.wikipedia.org/wiki/Bucket_sort), and since in our case we have only one value per bucket, it’s really just a [counting sort](http://en.wikipedia.org/wiki/Counting_sort).
 
-Here’s my initial implementation:[2](#fn:actually)
+Here’s my initial implementation:^[2](#fn:actually)
 
 ```
 void nibble_sort_bucket(uint64_t buf[static 1024]) {
@@ -307,7 +307,7 @@ Turns out it does! This shaves off another third or so of the time from the prev
 
 I put “manually” in the title of this section because modern compilers will often decide to unroll loops themselves if they think it’s going to help. However, they might not unroll them _all the way_ like this, which is normally a good thing. (Imagine if it unrolled the _outer_ loop over all 1024 input values! That would not only result in a much larger executable file, but could actually result in execution being slower because the processor can’t keep the entire function in its cache.)
 
-Note that this only works because my compiler inlines the helper functions `shift_in` and `read_nibble`—the overhead from a function call is normally bigger than any branch.[3](#fn:macros)
+Note that this only works because my compiler inlines the helper functions `shift_in` and `read_nibble`—the overhead from a function call is normally bigger than any branch.^[3](#fn:macros)
 
 **Moral: Loops are also branches.** And branches are expensive.
 
@@ -349,9 +349,7 @@ There are a few possible factors that might contribute to this result:
 
 - The operations to access a particular count are now more complicated than they were before. Before we just pulled out a single 32-bit value and used it directly.
 - We do have that extra branch, too, to check that the nibbles aren’t all the same.
-- aren’t the cheapest instructions
-
-  in most modern Intel-like CPUs.
+- We’re doing a lot of shifts, some of which are not by constant amounts. It turns out shifts [aren’t the cheapest instructions](http://agner.org/optimize/instruction_tables.pdf) in most modern Intel-like CPUs.
 - We might not have any registers to spare. (By the end of this exercise this turns out to not be the case, but even so.)
 
 But the main thing is probably that I’m not accessing that much memory, and it’s all next to each other, and it’s not being accessed by multiple threads. (There are no other threads.) That means it’ll be pulled into the CPU’s cache and _stay there,_ which makes working with memory a much less expensive proposition.
@@ -420,14 +418,8 @@ result = shift_in(result, counts, 0xE);
 
 The result value starts as 0, and we then shift in the correct number of `F` nibbles. Then we go on to `E`, `D`, etc. However, we know that unless the original value was zero, the leftmost nibble isn’t going to be `0`. That is, _all_ of the original nibbles from that initial assignment are going to disappear by the end of the result-building. We have two cases to consider:
 
-- Then the lines from
-
-  down to
-
-  will build up the result, and the leftmost value will be one of them. We can’t really tell which one.
-- Then we know what the leftmost nibble in the result will end up being:
-
-  .
+- _There are no `F` nibbles in the value._ Then the lines from `E` down to `0` will build up the result, and the leftmost value will be one of them. We can’t really tell which one.
+- _There is at least one `F` in the value._ Then we know what the leftmost nibble in the result will end up being: `F`.
 
 We can actually take this further. The point of that first `shift_in` line there is to guarantee that the rightmost N nibbles are all `F`, where “N” is `counts[0xF]`. We don’t actually care what the other nibbles are, because they’ll all be shifted out by the end of the result-building.
 
@@ -554,23 +546,17 @@ static inline uint64_t shift_in_scaled_counts(uint64_t result,
 Let’s assume the handling of the original result—shift it over, then combine the new nibbles—is already as good as can be. In that case we’re just looking at how to bring in the new nibbles. That means looking at how we compute `repeatedNibbles`. In its final form, it’s something like `0x0000_0000_0000_DDDD`. What do we do to get that result?
 
 1. Compute the shift amount: `64 - countTimesFour`
-2. (The assembly part told us that there’s an efficient way to do this, but it’s still not free.)
-3. to be 0: the other …
-
-  .
-4. by the shift amount.
+2. But don’t shift if the count is 0: … `* !!countTimesFour` (The assembly part told us that there’s an efficient way to do this, but it’s still not free.)
+3. And if we’re not shifting, we need `repeatedNibbles` to be 0: the other … `* !!countTimesFour`.
+4. Actually shift `repeatedNibbles` by the shift amount.
 
 It’d be really nice if we could stop worrying about shifting by 64 (remember, that’s [undefined behavior](http://blog.regehr.org/archives/213)!). But the only way to do that would be to stop shifting everything else _out._ Is there another way to go from `0xDDDD_DDDD_DDDD_DDDD` to `0x0000_0000_0000_DDDD`?
 
 Okay, rather than shifting, how about masking? `0xDDDD_DDDD_DDDD_DDDD & 0x0000_0000_0000_FFFF` is also `0x0000_0000_0000_DDDD`. So if we can get `0x0000_0000_0000_FFFF` in less than three steps, we’ll be doing better than before. Turns out we can!
 
-1. by
-
-  . This produces a mask, e.g.
-
-  .
-2. .
-3. with the inverted mask.
+1. Shift `0xFFFF_FFFF_FFFF_FFFF`_left_ by `countTimesFour`. This produces a mask, e.g. `0xFFFF_FFFF_FFFF_0000`.
+2. Invert that, giving us `0x0000_0000_0000_FFFF`.
+3. Combine `repeatedNibbles` with the inverted mask.
 
 Or, in C code:
 
@@ -617,7 +603,7 @@ I was pretty happy with this result, but couldn’t get away from a nagging noti
 
 ### Registers
 
-A CPU generally only operates on values immediately accessible to it, stored in a fixed set of “variables” called _registers._[4](#fn:memory) You might have noticed in the assembly snippet above that there are only three registers being used: `%cl`/`%rcx`, `%rsi`, and `%rdx`. But my CPU has a lot more named registers than that, more than ten. One of them has to be the loop counter, but what are the other registers being used for?
+A CPU generally only operates on values immediately accessible to it, stored in a fixed set of “variables” called _registers._^[4](#fn:memory) You might have noticed in the assembly snippet above that there are only three registers being used: `%cl`/`%rcx`, `%rsi`, and `%rdx`. But my CPU has a lot more named registers than that, more than ten. One of them has to be the loop counter, but what are the other registers being used for?
 
 Well, looking up at the top of the assembly output shows this:
 
@@ -843,9 +829,9 @@ Not much left to squeeze out of that.
 
 ### The Winning Solution
 
-But I didn’t win the contest, even the non-SIMD division. I didn’t even get close: my solution (though using [packed counts](#avoid-memory-access) with the XOR solution) came in about 13th[5](#fn:about), and the winning solution was twice as fast—three times as fast on John’s machine. What did they do differently?
+But I didn’t win the contest, even the non-SIMD division. I didn’t even get close: my solution (though using [packed counts](#avoid-memory-access) with the XOR solution) came in about 13th^[5](#fn:about), and the winning solution was twice as fast—three times as fast on John’s machine. What did they do differently?
 
-Interestingly, bucket sort seemed to be the right approach when forgoing SIMD: every solution that was faster than mine used some variation of the same basic strategy, except the one by my coworker, [Nadav](https://github.com/regehr/nibble-sort/blob/master/nadav.c).[6](#fn:Nadav)
+Interestingly, bucket sort seemed to be the right approach when forgoing SIMD: every solution that was faster than mine used some variation of the same basic strategy, except the one by my coworker, [Nadav](https://github.com/regehr/nibble-sort/blob/master/nadav.c).^[6](#fn:Nadav)
 
 So what did they do differently? Let’s look at the winning entry by “[Jerome](https://github.com/regehr/nibble-sort/blob/master/jerome.c)”:
 
@@ -933,7 +919,7 @@ So they have the same kind of packed counts I tried. How does their result-build
 offsets[i * 16 + j] = (i + j) << 8;
 ```
 
-This says that `0xC3` corresponds to `(0xC + 0x3) << 8`. In other words, it’s the sum of the two nibbles, times 28. Why “times 28”? We’ll come back to that. For now, just note that all `offsets` is doing is adding up values, which means the variable `offset` is a running total of all the nibbles we’ve seen so far.
+This says that `0xC3` corresponds to `(0xC + 0x3) << 8`. In other words, it’s the sum of the two nibbles, times 2^8. Why “times 2^8”? We’ll come back to that. For now, just note that all `offsets` is doing is adding up values, which means the variable `offset` is a running total of all the nibbles we’ve seen so far.
 
 Now we can look at `table3`. The expression for each element of `table3` is a bit monstrous, so I’m not going to try to take it apart. Instead, let’s figure out what we _want_ to see. Let’s say we’re on the second iteration of the loop, reading the counts for the `2`s and `3`s. After the loop, we want `output` to contain the correct number of `2`s and `3`s based on those counts. Since we’re not doing any shifting, they have to be in the correct position, too. Let’s say we have two `2`s and three `3`s, and we’ve already added three other nibbles (as tracked by `offset`). That means our current result is something like
 
@@ -955,19 +941,19 @@ So we know that the value we get out of `table3` _must_ be
 
 That is, it’s the correct number of `3`s, followed by the correct number of `2`s, at the correct offset. And there are 17 possible offsets, depending on how many nibbles we’ve already filled in (0 up to 16). Having that “completely full” 17th case makes it so that Jerome doesn’t have to test if we’re done already in the middle of the loop.
 
-You’ll have to believe that those are in fact the values in `table3`, because I’m not going to break it down for you. (I didn’t do it myself either.) But why the “times 28”? Well, `table3` is declared like this:
+You’ll have to believe that those are in fact the values in `table3`, because I’m not going to break it down for you. (I didn’t do it myself either.) But why the “times 2^8”? Well, `table3` is declared like this:
 
 ```
 static uint64_t table3[256 * 17];
 ```
 
-…because there are 17 possible entries for each of the 256 two-nibble combinations (16 * 16).[7](#fn:impossible) They could have written it like this:
+…because there are 17 possible entries for each of the 256 two-nibble combinations (16 * 16).^[7](#fn:impossible) They could have written it like this:
 
 ```
 static uint64_t table3[256][17];
 ```
 
-…but at least on my machine, that makes the resulting code run a little slower. So the “times 28” (or “times 256”) is just storing the offset in the form it’ll be used to look things up later on, just like my solution stored counts “times four”.
+…but at least on my machine, that makes the resulting code run a little slower. So the “times 2^8” (or “times 256”) is just storing the offset in the form it’ll be used to look things up later on, just like my solution stored counts “times four”.
 
 Why didn’t I come up with this solution? Essentially, Jerome took many of the morals I’ve already mentioned and applied them in even better ways. The one I’d underscore most?
 

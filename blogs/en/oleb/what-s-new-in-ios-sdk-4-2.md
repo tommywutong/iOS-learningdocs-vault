@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c6b69bad76cffacb'
 translated: false
 ---
@@ -22,19 +22,17 @@ Now that the [final version of iOS SDK 4.2](http://developer.apple.com/devcenter
 
 iOS 4.2 is the release that finally unifies the iPhone and iPad SDKs. Consequently, the iPad gains some features that already came to the iPhone in iOS 4.0 and 4.1, such as:
 
-- C block objects
-- Grand Central Dispatch
-- Multitasking support
-- Local Notifications
-- Core Motion
-- Assets Library
-- Event Kit
-
-  for calendar access
-- iAd
-- Game Center
-- Quick Look
-- Accelerate framework
+- [C block objects](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Blocks/Articles/00_Introduction.html#//apple_ref/doc/uid/TP40007502)
+- [Grand Central Dispatch](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/doc/uid/TP40008079)
+- [Multitasking support](https://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/CoreApplication/CoreApplication.html#//apple_ref/doc/uid/TP40007072-CH3-SW1)
+- [Local Notifications](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008194)
+- [Core Motion](https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/MotionEvents/MotionEvents.html#//apple_ref/doc/uid/TP40009541-CH4)
+- The [Assets Library](https://developer.apple.com/library/ios/documentation/AssetsLibrary/Reference/ALAssetsLibrary_Class/Reference/Reference.html#//apple_ref/occ/cl/ALAssetsLibrary)
+- [Event Kit](https://developer.apple.com/library/ios/documentation/EventKit/Reference/EventKitFrameworkRef/_index.html#//apple_ref/doc/uid/TP40009662) for calendar access
+- [iAd](https://developer.apple.com/library/ios/documentation/UserExperience/Reference/iAd_ReferenceCollection/_index.html#//apple_ref/doc/uid/TP40009705)
+- [Game Center](https://developer.apple.com/library/ios/#documentation/GameKit/Reference/GameKit_Collection/_index.html#//apple_ref/doc/uid/TP40008303)
+- [Quick Look](https://developer.apple.com/library/ios/documentation/QuickLook/Reference/QuickLookFrameworkReference_iPhoneOS/_index.html#//apple_ref/doc/uid/TP40009672)
+- The [Accelerate framework](https://developer.apple.com/library/ios/documentation/Accelerate/Reference/AccelerateFWRef/_index.html#//apple_ref/doc/uid/TP40009465)
 
 iPad developers that have been living under a rock over the summer should also have a look at the [What’s New in iOS 4.0](https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniPhoneOS/Articles/iPhoneOS4.html#//apple_ref/doc/uid/TP40009559-SW1) and [iOS 4.1](https://developer.apple.com/library/ios/releasenotes/General/WhatsNewIniPhoneOS/Articles/iOS4_1.html#//apple_ref/doc/uid/TP40010180-SW1) documents.
 
@@ -66,32 +64,18 @@ Developers can now opt to weak-link certain classes (instead of entire framework
 
 ## AVFoundation
 
-- `AVAsset.hasProtectedContent`
-
-  .
-- `AVMetadataItem.duration`
-
-  .
+- AVAsset now has a property to indicate whether the asset is DRM-protected: [`AVAsset.hasProtectedContent`](https://developer.apple.com/library/ios/#documentation/AVFoundation/Reference/AVAsset_Class/Reference/Reference.html#//apple_ref/occ/instp/AVAsset/hasProtectedContent).
+- An asset’s metadata now includes its duration: [`AVMetadataItem.duration`](https://developer.apple.com/library/ios/#documentation/AVFoundation/Reference/AVMetadataItem_Class/Reference/Reference.html#//apple_ref/occ/instp/AVMetadataItem/duration).
 
 ## Core Location
 
-- `+[CLLocationManager authorizationStatus]`
-- `-[CLLocationManagerDelegate locationManager:didChangeAuthorizationStatus:]`
-
-  that notifies your app about changes in the authorization status of your app (important for multitasking apps).
+- New API for determining if the user has authorized the device/your app to use location services: [`+[CLLocationManager authorizationStatus]`](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/clm/CLLocationManager/authorizationStatus)
+- There is also a new delegate method [`-[CLLocationManagerDelegate locationManager:didChangeAuthorizationStatus:]`](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManagerDelegate_Protocol/CLLocationManagerDelegate/CLLocationManagerDelegate.html#//apple_ref/occ/intfm/CLLocationManagerDelegate/locationManager:didChangeAuthorizationStatus:) that notifies your app about changes in the authorization status of your app (important for multitasking apps).
 
 ## Core Text
 
-- `CTFontDrawGlyphs()`
-
-  . No need to convert CTFont objects to Core Graphics fonts with
-
-  `CTFontCopyGraphicsFont()`
-
-  before drawing them anymore.
-- `CTFontGetLigatureCaretPositions()`
-
-  retrieves a list of possible caret positions inside a ligature.
+- New function: [`CTFontDrawGlyphs()`](https://developer.apple.com/library/ios/#documentation/Carbon/Reference/CTFontRef/Reference/reference.html#//apple_ref/c/func/CTFontDrawGlyphs). No need to convert CTFont objects to Core Graphics fonts with [`CTFontCopyGraphicsFont()`](https://developer.apple.com/library/ios/#documentation/Carbon/Reference/CTFontRef/Reference/reference.html#//apple_ref/doc/uid/TP40005110-CH3-SW56) before drawing them anymore.
+- New function: [`CTFontGetLigatureCaretPositions()`](https://developer.apple.com/library/ios/#documentation/Carbon/Reference/CTFontRef/Reference/reference.html#//apple_ref/c/func/CTFontGetLigatureCaretPositions) retrieves a list of possible caret positions inside a ligature.
 
 ## Event Kit
 
@@ -107,171 +91,29 @@ iAd now supports iPad-sized banners (1024x66 and 768x66 points). Your app should
 
 ## Map Kit
 
-- has a new method:
-
-  `-annotationsInMapRect:`
-
-  returns a set of all map annotations in a specified region. According to Apple, “This method is much faster than doing a linear search of the objects in the annotations property yourself.”
-- ’s new
-
-  `-setDrageState:animated:`
-
-  method to implement drag and drop support for custom annotation views. As the system detects user actions that would indicate a drag, it calls this method to update the drag state. In response, your app can perform animations to visualize state changes.
+- `MKMapView` has a new method: [`-annotationsInMapRect:`](https://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKMapView_Class/MKMapView/MKMapView.html#//apple_ref/doc/uid/TP40008205-CH3-SW46) returns a set of all map annotations in a specified region. According to Apple, “This method is much faster than doing a linear search of the objects in the annotations property yourself.”
+- Apps should override `MKAnnotationView`’s new [`-setDrageState:animated:`](https://developer.apple.com/library/ios/#documentation/MapKit/Reference/MKAnnotationView_Class/Reference/Reference.html#//apple_ref/occ/instm/MKAnnotationView/setDragState:animated:) method to implement drag and drop support for custom annotation views. As the system detects user actions that would indicate a drag, it calls this method to update the drag state. In response, your app can perform animations to visualize state changes.
 
 ## Media Player
 
-- `MPMediaEntity`
-
-  is the new common abstract superclass for
-
-  `MPMediaItem`
-
-  and
-
-  `MPMediaItemCollection`
-
-  . With this change, collections can now contain both items and other collections.
-- `MPVolumeView`
-
-  interface now includes a control for routing audio content to AirPlay-enabled devices. It gained two new properties,
-
-  `showsRouteButton`
-
-  and
-
-  `showsVolumeSlider`
-
-  , to control which UI elements should be visible.
-- artists
-
-  ,
-
-  albums
-
-  ,
-
-  album artists
-
-  ,
-
-  composers
-
-  ,
-
-  genres
-
-  , and
-
-  podcasts
-
-  .
-- `+[MPMediaItem persistentIDPropertyForGroupingType:]`
-
-  helps translate between persistent ID keys and
-
-  `MPMediaGrouping`
-
-  keys. Similarly,
-
-  `+[MPMediaItem titlePropertyForGroupingType:]`
-
-  translates between
-
-  keys and title keys.
-- `MPMediaQuery`
-
-  can now further be divided into sections, represented by the new
-
-  `MPMediaQuerySection`
-
-  class. Each section has a localized
-
-  and identifies the
-
-  of items in the media query that fall into that section. You access a query’s sections through MPMediaQuery’s
-
-  `itemSections`
-
-  or
-
-  `collectionSections`
-
-  properties.
-- `MPMoviePlayerController`
-
-  ’s playback interface has been standardized in the
-
-  `MPMediaPlayback` protocol
-
-  .
+- [`MPMediaEntity`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaEntity_ClassReference/Reference/Reference.html#//apple_ref/occ/cl/MPMediaEntity) is the new common abstract superclass for [`MPMediaItem`](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/occ/cl/MPMediaItem) and [`MPMediaItemCollection`](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItemCollection_ClassReference/Reference/Reference.html#//apple_ref/occ/cl/MPMediaItemCollection). With this change, collections can now contain both items and other collections.
+- The [`MPVolumeView`](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPVolumeView_Class/Reference/Reference.html#//apple_ref/occ/cl/MPVolumeView) interface now includes a control for routing audio content to AirPlay-enabled devices. It gained two new properties, [`showsRouteButton`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPVolumeView_Class/Reference/Reference.html#//apple_ref/occ/instp/MPVolumeView/showsRouteButton) and [`showsVolumeSlider`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPVolumeView_Class/Reference/Reference.html#//apple_ref/occ/instp/MPVolumeView/showsVolumeSlider), to control which UI elements should be visible.
+- Persistent IDs are now not only available for songs, but also for [artists](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyArtistPersistentID), [albums](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyAlbumPersistentID), [album artists](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyAlbumArtistPersistentID), [composers](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyComposerPersistentID), [genres](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyGenrePersistentID), and [podcasts](https://developer.apple.com/library/ios/documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/c/data/MPMediaItemPropertyPodcastPersistentID).
+- [`+[MPMediaItem persistentIDPropertyForGroupingType:]`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/occ/clm/MPMediaItem/persistentIDPropertyForGroupingType:) helps translate between persistent ID keys and [`MPMediaGrouping`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/Reference/Reference.html#//apple_ref/c/tdef/MPMediaGrouping) keys. Similarly, [`+[MPMediaItem titlePropertyForGroupingType:]`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaItem_ClassReference/Reference/Reference.html#//apple_ref/occ/clm/MPMediaItem/titlePropertyForGroupingType:) translates between `MPMediaGrouping` keys and title keys.
+- Results of a [`MPMediaQuery`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/Reference/Reference.html#//apple_ref/occ/cl/MPMediaQuery) can now further be divided into sections, represented by the new [`MPMediaQuerySection`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaQuerySection_ClassReference/Reference/Reference.html#//apple_ref/occ/cl/MPMediaQuerySection) class. Each section has a localized `title` and identifies the `range` of items in the media query that fall into that section. You access a query’s sections through MPMediaQuery’s [`itemSections`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/Reference/Reference.html#//apple_ref/occ/instp/MPMediaQuery/itemSections) or [`collectionSections`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaQuery_ClassReference/Reference/Reference.html#//apple_ref/occ/instp/MPMediaQuery/collectionSections) properties.
+- [`MPMoviePlayerController`](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/MPMoviePlayerController/MPMoviePlayerController.html#//apple_ref/occ/cl/MPMoviePlayerController)’s playback interface has been standardized in the [`MPMediaPlayback` protocol](https://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMediaPlayback_protocol/Reference/Reference.html#//apple_ref/occ/intf/MPMediaPlayback).
 
 ## Quartz Core
 
-- `CAShapeLayer`
-
-  , the layer class to display Core Graphics paths, gained new properties to control the relative start and end points of the path:
-
-  `strokeStart`
-
-  and
-
-  `strokeEnd`
-
-  . These properties are animatable and should come in handy if you want to animate the creation of a path from start to finish.
+- [`CAShapeLayer`](https://developer.apple.com/library/ios/#documentation/GraphicsImaging/Reference/CAShapeLayer_class/Reference/Reference.html), the layer class to display Core Graphics paths, gained new properties to control the relative start and end points of the path: [`strokeStart`](https://developer.apple.com/library/ios/#documentation/GraphicsImaging/Reference/CAShapeLayer_class/Reference/Reference.html#//apple_ref/occ/instp/CAShapeLayer/strokeStart) and [`strokeEnd`](https://developer.apple.com/library/ios/#documentation/GraphicsImaging/Reference/CAShapeLayer_class/Reference/Reference.html#//apple_ref/occ/instp/CAShapeLayer/strokeEnd). These properties are animatable and should come in handy if you want to animate the creation of a path from start to finish.
 
 ## Quick Look
 
-- `QLPreviewControllerDelegate`
-
-  gained two new methods to help provide a smooth transition between a document icon or thumbnail and the full-size quick look view.
-
-  `-previewController:frameForPreviewItem:inSourceView:`
-
-  asks for the frame of the preview item to animate a zoom effect between the preview and the full-screen view.
-
-  `-previewController:transitionImageForPreviewItem:contentRect:`
-
-  requests a
-
-  of the preview item that the quick look controller can crossfade with during the zoom animation.
+- [`QLPreviewControllerDelegate`](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/Reference/Reference.html) gained two new methods to help provide a smooth transition between a document icon or thumbnail and the full-size quick look view. [`-previewController:frameForPreviewItem:inSourceView:`](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewController:frameForPreviewItem:inSourceView:) asks for the frame of the preview item to animate a zoom effect between the preview and the full-screen view. [`-previewController:transitionImageForPreviewItem:contentRect:`](https://developer.apple.com/library/ios/#documentation/NetworkingInternet/Reference/QLPreviewControllerDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/QLPreviewControllerDelegate/previewController:transitionImageForPreviewItem:contentRect:) requests a `UIImage` of the preview item that the quick look controller can crossfade with during the zoom animation.
 
 ## UIKit
 
-- `-accessibilityScroll:`
-
-  method in the
-
-  `UIAccessibilityAction` informal protocol
-
-  .
-- has a new method,
-
-  `-application:openURL:sourceApplication:annotation:`
-
-  , which provides your app with further information when it was launched from another app. You not only get notified which app launched yours, but the calling application can also pass arbitrary data in the form of a property list to your app using the
-
-  argument. Unfortunately, the
-
-  property is only available if the calling app uses
-
-  `UIDocumentInteractionController`
-
-  . If the calling app uses
-
-  `-[UIApplication openURL:]`
-
-  , it still has to resort to
-
-  URL parameters
-
-  to pass information along.
-- now has a
-
-  -playInputClick
-
-  method that lets us play the standard keyboard click sound from our app. A click plays only if the user has enabled keyboard clicks. Yay!
-- class now exposes the language in use for inputting text.
-
-  primaryLanguage
-
-  property.
+- New “scroll by page” capabilities using VoiceOver. If your app contains a view that supports a scroll by page action, you should implement the [`-accessibilityScroll:`](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIAccessibilityAction_Protocol/Introduction/Introduction.html#//apple_ref/occ/instm/NSObject/accessibilityScroll:) method in the [`UIAccessibilityAction` informal protocol](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIAccessibilityAction_Protocol/Introduction/Introduction.html).
+- `UIApplicationDelegate` has a new method, [`-application:openURL:sourceApplication:annotation:`](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIApplicationDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIApplicationDelegate/application:openURL:sourceApplication:annotation:), which provides your app with further information when it was launched from another app. You not only get notified which app launched yours, but the calling application can also pass arbitrary data in the form of a property list to your app using the `annotation` argument. Unfortunately, the `annotation` property is only available if the calling app uses [`UIDocumentInteractionController`](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIDocumentInteractionController_class/Reference/Reference.html). If the calling app uses [`-[UIApplication openURL:]`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40006728-CH3-SW14), it still has to resort to [URL parameters](http://mobileorchard.com/lite-to-paid-iphone-application-data-migrations-with-custom-url-handlers/) to pass information along.
+- `UIDevice` now has a [-playInputClick](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIDevice_Class/Reference/UIDevice.html#//apple_ref/occ/instm/UIDevice/playInputClick) method that lets us play the standard keyboard click sound from our app. A click plays only if the user has enabled keyboard clicks. Yay!
+- The `UITextInputMode` class now exposes the language in use for inputting text. [primaryLanguage](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UITextInputMode_Class/Reference/Reference.html#//apple_ref/occ/instp/UITextInputMode/primaryLanguage) property.

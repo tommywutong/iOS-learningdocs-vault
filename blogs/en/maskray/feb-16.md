@@ -7,7 +7,7 @@ original_language: en
 published: 2026-02-16
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5736c1a7309cc73b'
 translated: false
 ---
@@ -44,22 +44,10 @@ This post describes why I think this happened.
 
 In the static linking model, all symbols are resolved at link time: every symbol is either defined in a relocatable object file or an undefined weak symbol. A branch instruction with a PC-relative displacement—x86 `call`, m68k `bsr.l`, s390 `brasl`—can reuse the same PC-relative data relocation type used for data references.
 
-- for both
-
-  and
-- for both
-
-  and
-- for
-
-  ,
-
-  , and
-- for
-
-  ,
-
-  , and
+- i386: `R_386_PC32` for both `call foo` and `.long foo - .`
+- x86-64: `R_X86_64_PC32` for both `call foo` and `.long foo - .`
+- m68k: `R_68K_PC32` for `bsr.l foo`, `move.l var,%d0`, and `.long foo - .`
+- s390x: `R_390_PC32DBL` for `brasl %r14, foo`, `larl %r1, var`, and `.long foo - .`
 
 No separate "call" relocation type is needed. The linker simply patches the displacement to point to the symbol address.
 
@@ -87,38 +75,16 @@ In addition, the `@plt` notation itself is problematic as a [relocation specifie
 
 **Single type (clean design).** Some architectures recognized from the start that one call relocation type is sufficient. The linker can decide whether a PLT stub is needed based on the symbol's binding and visibility.
 
-- for
-
-  and
-
-  for
-
-  .
-- for
-
-  .
+- AArch64: `R_AARCH64_CALL26` for `bl` and `R_AARCH64_JUMP26` for `b`.
+- PowerPC64 ELFv2: `R_PPC64_REL24` for `bl`.
 
 These architectures never had the naming confusion—there is no "PLT" in the relocation name, and no redundant pair.
 
 **Redundant pairs (misguided).** Some architectures introduced separate "PLT" and "non-PLT" call relocation types, creating a distinction without a real difference.
 
-- alongside
-
-  . The assembler decides at assembly time based on PIC mode and symbol preemptivity, when ideally the linker should make these decisions.
-- (non-PIC) and
-
-  (PIC) have genuinely different semantics (the addend of
-
-  encodes the r30 GOT pointer setup). However,
-
-  is entirely useless—all occurrences can be replaced with
-
-  .
-- alongside the now-removed
-
-  . The community recognized that only one relocation is needed.
-
-  is kept (despite the name, does not mandate a PLT entry).
+- SPARC: `R_SPARC_WPLT30` alongside `R_SPARC_WDISP30`. The assembler decides at assembly time based on PIC mode and symbol preemptivity, when ideally the linker should make these decisions.
+- PPC32: `R_PPC_REL24` (non-PIC) and `R_PPC_PLTREL24` (PIC) have genuinely different semantics (the addend of `R_PPC_PLTREL24` encodes the r30 GOT pointer setup). However, `R_PPC_LOCAL24PC` is entirely useless—all occurrences can be replaced with `R_PPC_REL24`.
+- RISC-V: `R_RISCV_CALL_PLT` alongside the now-removed `R_RISCV_CALL`. The community recognized that only one relocation is needed. `R_RISCV_CALL_PLT` is kept (despite the name, does not mandate a PLT entry).
 
 x86-64 started with `R_X86_64_PC32` for `call foo` (inherited from the static-linking mindset) and `R_X86_64_PLT32` for `call foo@plt` (symbols not compile-time known to be non-preemptible). In 2018, binutils [https://sourceware.org/bugzilla/show_bug.cgi?id=22791](https://sourceware.org/bugzilla/show_bug.cgi?id=22791) switched to `R_X86_64_PLT32` for `call foo`. LLVM integrated assembler followed suit.
 
@@ -142,18 +108,8 @@ This discussion does not apply to intra-function branches, which target local la
 
 ## See also
 
-- All about Procedure Linkage Table
-
-  for how PLT works
-- All about Global Offset Table
-
-  for the data-access counterpart
-- Copy relocations, canonical PLT entries and protected visibility
-
-  for the variable-access complications
-- Relocation generation in assemblers
-
-  for how assemblers decide which relocations to emit
-- Long branches in compilers, assemblers, and linkers
-
-  for range extension thunks
+- [All about Procedure Linkage Table](https://maskray.me/blog/2021-09-19-all-about-procedure-linkage-table) for how PLT works
+- [All about Global Offset Table](https://maskray.me/blog/2021-08-29-all-about-global-offset-table) for the data-access counterpart
+- [Copy relocations, canonical PLT entries and protected visibility](https://maskray.me/blog/2021-01-09-copy-relocations-canonical-plt-entries-and-protected) for the variable-access complications
+- [Relocation generation in assemblers](https://maskray.me/blog/2025-03-16-relocation-generation-in-assemblers) for how assemblers decide which relocations to emit
+- [Long branches in compilers, assemblers, and linkers](https://maskray.me/blog/2026-01-25-long-branches-in-compilers-assemblers-and-linkers) for range extension thunks

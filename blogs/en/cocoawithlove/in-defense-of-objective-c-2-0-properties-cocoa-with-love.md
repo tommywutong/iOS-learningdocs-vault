@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90f495d07d4fc709'
 translated: false
 ---
@@ -20,10 +20,15 @@ Of all the new features in Objective-C 2.0, none were as controversial as declar
 
 My esteemed colleagues in the world of Objective-C blogging are not universally friendly towards Objective-C 2.0's Properties. In case you've missed the vitriol, let me draw your attention to:
 
-- Cocoa Is My Girlfriend — A case against dot syntax
-- Stuff on fire — Does Objective-C Really Need Properties?
-- Cocoadev — Are Objective-C 2.0 Properties Ugly?
-- Bitquabit — Objective-C 2.0: the Bad, the Horrible, and the Ugly
+- [Cocoa Is My Girlfriend — A case against dot syntax](http://www.cimgf.com/2008/07/08/a-case-against-dot-syntax/)  
+  _"It is purely syntactic sugar and adds nothing to the language. However, there are so many cons that I cannot suggest that anyone use it in any situation."_
+- [Stuff on fire — Does Objective-C Really Need Properties?](http://www.stuffonfire.com/2006/12/08/does-objective-c-really-need-properties/)  
+  _"No, synthesized accessors and setters are cool, properties are not. The property syntax sucks rocks, and even the concept sucks rocks. What is it? Is it an ivar? A proxy for another object’s ivar (because it could be)? Is it the return value of a method? Because if it is, why are we doing object.property instead of [object property]?"_
+- [Cocoadev — Are Objective-C 2.0 Properties Ugly?](http://www.cocoadev.com/index.pl?AreObjectiveCTwoPropertiesUgly)  
+  _"I do find the new Objective-C 2 @property implementation to be ugly and confusing. I think it makes a mess of a fine, simple and elegant language."_
+- [Bitquabit — Objective-C 2.0: the Bad, the Horrible, and the Ugly](http://bitquabit.com/2006/08/objective-c-20-the-bad-the-horrible-and-the-ugly/)  
+  _"Objective-C 2.0 also adds properties. This has me fundamentally irked."  
+   "This is another example of Objective-C now modifying C syntax, only this modification is not simply inconsistent; it's deadly."_
 
 I love a good drama. And next season, I hear that the show's writers are really going to knock it up another notch.
 
@@ -33,9 +38,9 @@ The syntax used for accessing properties is the direct target of most hatred. De
 
 So let's start by clarifying the purpose of properties. Let me state very clearly:
 
-1. to provide auto-generated getter and setter methods.
-2. to replace method syntax with dot syntax.
-3. to make attributes public in a different way.
+1. The purpose of properties is _not_ to provide auto-generated getter and setter methods.
+2. The purpose of properties is _not_ to replace method syntax with dot syntax.
+3. The purpose of properties is _not_ to make attributes public in a different way.
 
 Obviously, these things can occur through properties but if they do, then they are an artefact or convenience offered by the implementation while working towards the real purpose.
 
@@ -47,8 +52,9 @@ As support for these statements, let me point out:
 
 ## The purpose
 
-> A clean, abstracted way to expose state values of an object.
-> 
+> **Properties**  
+> A clean, abstracted way to expose state values of an object.  
+>   
 > Properties are one of two metaphors exposed by an object, the other being Methods (which are "a clean, abstracted way to perform an action").
 
 Attributes (ivars) do not occupt the same role as properties (even when public) because they are not abstracted. You cannot override an attribute. You cannot change how an attribute is stored and maintain interface compatibility.

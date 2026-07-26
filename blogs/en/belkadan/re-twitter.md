@@ -7,7 +7,7 @@ original_language: en
 published: 2022-12-03
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ab9f4ba537ce29cb'
 translated: false
 ---
@@ -38,7 +38,7 @@ I want a place for shitposts and other ephemera, so maybe I’ll start a microbl
 
 This blog had comments once, but they weren’t ever that satisfying. The world has just moved on from comments, I think, or at least my world; the sites that have them don’t feel like good conversation. Maybe replies on the microblog (ActivityPub again) will be enough.
 
-I’m not sure yet _what_ microblog to run. This blog (at the time of this writing) uses a forked old version of [Jekyll](https://jekyllrb.com/), but the “conversation” part of ActivityPub means a static generator won’t cut it. Similarly, my brain wants to turn to a web module like [WordPress](https://en.wikipedia.org/wiki/WordPress) that I can just put on my existing website, like I [did with gitweb](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/)…but ActivityPub is a “push” model, like email[1](#fn:listserv), and that doesn’t scale well if I eventually get as many followers as I did on Twitter. So now I’m looking at various minimal installations that just need a database and a place to run.[2](#fn:takahe) I am, however, sure I want to run it myself this time. (Feel free to let me know your recommendations via…oh. Via email, I guess. jrose, at this domain.)
+I’m not sure yet _what_ microblog to run. This blog (at the time of this writing) uses a forked old version of [Jekyll](https://jekyllrb.com/), but the “conversation” part of ActivityPub means a static generator won’t cut it. Similarly, my brain wants to turn to a web module like [WordPress](https://en.wikipedia.org/wiki/WordPress) that I can just put on my existing website, like I [did with gitweb](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/)…but ActivityPub is a “push” model, like email^[1](#fn:listserv), and that doesn’t scale well if I eventually get as many followers as I did on Twitter. So now I’m looking at various minimal installations that just need a database and a place to run.^[2](#fn:takahe) I am, however, sure I want to run it myself this time. (Feel free to let me know your recommendations via…oh. Via email, I guess. jrose, at this domain.)
 
 There was originally going to be more to this post, about leaving Facebook first, about my unrelated temporary Twitter hiatus becoming permanent. Maybe it would have rung true with you too. But it really comes down to the three bullet points above. There were other things I enjoyed about Twitter, but they’re not as important.
 

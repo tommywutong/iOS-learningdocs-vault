@@ -7,7 +7,7 @@ original_language: en
 published: 2020-09-14
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ce8250a287e54d79'
 translated: false
 ---
@@ -28,7 +28,7 @@ translated: false
 
 ## [The Swift Runtime: Type Metadata](#)
 
-Welcome to the third in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about _type metadata,_ the representation of types at run time.more
+Welcome to the third in a series of posts on the [Swift runtime](https://belkadan.com/blog/tags/swift-runtime). The goal is to go over the functions of the Swift runtime, using what I learned in my [Swift on Mac OS 9 project](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/) as a reference. This time we’re going to be talking about _type metadata,_ the representation of types at run time.
 
 As mentioned previously, I implemented my stripped-down runtime in Swift as much as possible, though I had to use a few undocumented Swift features to do so. I’ll be showing excerpts of my runtime code throughout these posts, and you can check out the full thing [in the ppc-swift repository](https://belkadan.com/source/ppc-swift-project/tree/refs/heads/dev:/stdlib/_Runtime).
 
@@ -40,7 +40,7 @@ Swift is one of the in-between languages that uses types both for compile-time a
 
 ### Representing types at run time
 
-In Swift, types are represented by unique pointers to structured data, which can be statically or dynamically allocated. This data has a different representation based on _what_ kind of type we’re talking about, so if we’re not sure what kind of type we have, there are only two fields we can access safely: a **kind** field at offset 0, and a **value witness table** pointer just _before_ the start of the type metadata.[1](#fn:vwt) To get at any other information, we have to check the kind first and then cast to the appropriate type.
+In Swift, types are represented by unique pointers to structured data, which can be statically or dynamically allocated. This data has a different representation based on _what_ kind of type we’re talking about, so if we’re not sure what kind of type we have, there are only two fields we can access safely: a **kind** field at offset 0, and a **value witness table** pointer just _before_ the start of the type metadata.^[1](#fn:vwt) To get at any other information, we have to check the kind first and then cast to the appropriate type.
 
 In this post, we’re going to focus on struct metadata, which actually shares its layout with enum metadata. Struct metadata adds one more required field: a pointer to the **type context descriptor**. What’s that? If type metadata represents a fully concrete type like `Array<Int>`, a type descriptor represents a type declaration like `Array`. It turns out _this_ is where most of the interesting reflection information is for a type, such as its name, a description of its fields or cases, and the constraints on its generic parameters, if any. There’s no reason to have a separate copy of this for every concrete instantiation of a generic type, so Swift stores it separately. (The type descriptor is also the key used to look up whether a type conforms to a protocol, since that has to work regardless of what generic arguments are currently being used.)
 

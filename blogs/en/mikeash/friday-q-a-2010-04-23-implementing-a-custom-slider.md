@@ -39,23 +39,12 @@ Or just click the URL above to browse the source.
 
 There are three main pieces to any custom control:
 
-1. The code with which the control draws itself. As controls are just views, this usually means implementing
+1. **Drawing:** The code with which the control draws itself. As controls are just views, this usually means implementing `drawRect:` to draw whatever you want your control to look like. In the case of the diagonal slider, it needs to draw the slider track and the knob.
+2. **Event Tracking:** This involves getting and responding to events. In this case, looking at mouse down/dragged/up events and moving the slider knob around appropriately.
+3. **Geometry:** This is code which figures out where the various components of the control are located. The geometry information is then used by the drawing and event tracking code to figure out where to draw things and where events are in the control. In this case, the geometry code consists of figuring out where the slider track is, where the knob is, and converting from a point to a slider value.
 
-  to draw whatever you want your control to look like. In the case of the diagonal slider, it needs to draw the slider track and the knob.
-2. This involves getting and responding to events. In this case, looking at mouse down/dragged/up events and moving the slider knob around appropriately.
-3. This is code which figures out where the various components of the control are located. The geometry information is then used by the drawing and event tracking code to figure out where to draw things and where events are in the control. In this case, the geometry code consists of figuring out where the slider track is, where the knob is, and converting from a point to a slider value.
-
-Before getting into the implementation, let's define the interface of the class. It will subclass
-
-. It will implement
-
-and
-
-to return its position. For instance variables, it needs to store its value. Also, because
-
-tends to assume that you have an
-
-, and I don't want to build a cell, I also need instance variables to hold the control's target and action:
+**Interface**  
+ Before getting into the implementation, let's define the interface of the class. It will subclass `NSControl`. It will implement `setDoubleValue:` and `doubleValue` to return its position. For instance variables, it needs to store its value. Also, because `NSControl` tends to assume that you have an `NSCell`, and I don't want to build a cell, I also need instance variables to hold the control's target and action:
 
 ```
     @interface DiagonalSlider : NSControl
@@ -71,7 +60,8 @@ tends to assume that you have an
     @end
 ```
 
-Since magic numbers are evil, the first thing I do for the geometry code is define some constants that determine the geometry of the control. The slider will extend from the bottom left corner to the top right corner of the control, but the ends need to be inset a bit to allow room to draw the slider and knob. These insets are defined here. The slider width and knob size are also defined as constants:
+**Geometry**  
+ Since magic numbers are evil, the first thing I do for the geometry code is define some constants that determine the geometry of the control. The slider will extend from the bottom left corner to the top right corner of the control, but the ends need to be inset a bit to allow room to draw the slider and knob. These insets are defined here. The slider width and knob size are also defined as constants:
 
 ```
     const CGFloat kInsetX = 12;
@@ -97,9 +87,7 @@ First, two methods for getting the slider endpoints:
     }
 ```
 
-Next, finding the center of the knob. To do that, I just take a weighted average of the two endpoints, using
-
-as the weight:
+Next, finding the center of the knob. To do that, I just take a weighted average of the two endpoints, using `_value` as the weight:
 
 ```
     - (NSPoint)_knobCenter
@@ -111,9 +99,7 @@ as the weight:
     }
 ```
 
-Next I create a method that returns an
-
-that describes the knob. You might think that this belongs in drawing, not geometry. However, I plan to use this path not only for drawing the knob, but also for determining whether the mouse is within the knob or not. Conceptually, this bezier path is part of the common geometry code:
+Next I create a method that returns an `NSBezierPath` that describes the knob. You might think that this belongs in drawing, not geometry. However, I plan to use this path not only for drawing the knob, but also for determining whether the mouse is within the knob or not. Conceptually, this bezier path is part of the common geometry code:
 
 ```
     - (NSBezierPath *)_knobPath
@@ -123,9 +109,7 @@ that describes the knob. You might think that this belongs in drawing, not geome
     }
 ```
 
-Next, I'll write code to determine the slider value that corresponds to a point, and whether the slider track contains a point. In order to write those, I need some utility functions. Specifically, I need vector subtraction, vector dot product, and vector length. To keep things simple, I use
-
-as my "vector" type. These three utility functions are then easy to write:
+Next, I'll write code to determine the slider value that corresponds to a point, and whether the slider track contains a point. In order to write those, I need some utility functions. Specifically, I need vector subtraction, vector dot product, and vector length. To keep things simple, I use `NSPoint` as my "vector" type. These three utility functions are then easy to write:
 
 ```
     static NSPoint sub(NSPoint p1, NSPoint p2)
@@ -144,11 +128,7 @@ as my "vector" type. These three utility functions are then easy to write:
     }
 ```
 
-Now, code for determining the value for a point. The math here is not complex, but may not be obvious. I start by doing a
-
-vector projection
-
-of the vector from the slider start to the point in question onto the vector of the slider itself. This projection gives me the distance of the point in question from the slider start in the direction of the slider, ignoring any side component. I then divide this length by the length of the slider, and that gives me a proportion. I want the value to be between 0 and 1, so that number is exactly what I want. Here's the code:
+Now, code for determining the value for a point. The math here is not complex, but may not be obvious. I start by doing a [vector projection](http://en.wikipedia.org/wiki/Vector_projection) of the vector from the slider start to the point in question onto the vector of the slider itself. This projection gives me the distance of the point in question from the slider start in the direction of the slider, ignoring any side component. I then divide this length by the length of the slider, and that gives me a proportion. I want the value to be between 0 and 1, so that number is exactly what I want. Here's the code:
 
 ```
     - (double)_valueForPoint: (NSPoint)p
@@ -199,13 +179,8 @@ Finding that distance is similar to the above code. Instead of projecting onto t
     }
 ```
 
-With all of these geometry methods, drawing is a snap. First, I draw a line between
-
-and
-
-. Then I get the
-
-and fill it. And that's it!
+**Drawing**  
+ With all of these geometry methods, drawing is a snap. First, I draw a line between `_point1` and `_point2`. Then I get the `_knobPath` and fill it. And that's it!
 
 Note that I'm going for technical information, not graphical prettiness, so my slider is ugly. The track is just a blue line, and the knob is just a red circle. Making it beautiful is up to you!
 
@@ -227,7 +202,8 @@ Here's what the drawing code looks like:
     }
 ```
 
-For tracking a mouse down/dragged/up sequence, there are two ways to do things.
+**Event Tracking**  
+ For tracking a mouse down/dragged/up sequence, there are two ways to do things.
 
 One way is to implement `mouseDown:`, `mouseDragged:`, and `mouseUp:`, to do what you need in each situation. The other way is to only implement `mouseDown:`, then run your own event loop inside that to look for dragged/up events.
 
@@ -276,13 +252,7 @@ Now for the actual event tracking. The first thing to do is compute a value offs
         double valueOffset = [self _valueForPoint: p] - _value;
 ```
 
-Next, start the event loop. This consists of calling
-
-in a loop, until a
-
-event is received. I also toss in an
-
-to ensure that memory doesn't build up if the loop continues for a long time:
+Next, start the event loop. This consists of calling `-[NSWindow nextEventMatchingMask:]` in a loop, until a `NSLeftMouseUp` event is received. I also toss in an `NSAutoreleasePool` to ensure that memory doesn't build up if the loop continues for a long time:
 
 ```
         // create a pool to flush each time through the cycle
@@ -314,9 +284,8 @@ And that's it for this method, just dump the last autorelease pool and exit:
     }
 ```
 
-The slider needs a bit more support code. The only one that does anything of consequence is
-
-. It performs several tasks. First, it clamps the incoming value to be between 0 and 1. Then it assigns the value, and finally marks the control as needing a redisplay, so that the GUI updates accordingly. Note that simply redisplaying the entire view is somewhat inefficient, and it would be better to compute a minimal changed rect. However, in the spirit of avoiding premature optimization, I didn't do this.
+**Miscellaneous**  
+ The slider needs a bit more support code. The only one that does anything of consequence is `setDoubleValue:`. It performs several tasks. First, it clamps the incoming value to be between 0 and 1. Then it assigns the value, and finally marks the control as needing a redisplay, so that the GUI updates accordingly. Note that simply redisplaying the entire view is somewhat inefficient, and it would be better to compute a minimal changed rect. However, in the spirit of avoiding premature optimization, I didn't do this.
 
 ```
     - (void)setDoubleValue: (double)value
@@ -379,7 +348,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-04-23-implementing-a-custom-slider.html)
 
 Add your thoughts, post a comment:
 

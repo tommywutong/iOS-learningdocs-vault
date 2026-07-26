@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:52b6ca8ffa2c3970'
 translated: false
 ---
@@ -22,7 +22,7 @@ Blocks are addressable sections of code implemented inline (inside other functio
 
 A block is implemented internally using two pieces:
 
-1. segment of the executable
+1. compiled code in the `.text` segment of the executable
 2. a data structure that predominantly contains the values of the variables that the block uses from its surrounding scope
 
 The compiled code lives in its own separate location and does not actually reside inside inside the code of its surrounding scope. In implementation, the code is a function like any other. If you run:
@@ -156,13 +156,7 @@ Sadly at this time, [Apple's documentation on blocks](http://developer.apple.com
 
 Of course, you don't need to stare at someone else's C++ code to learn about blocks. There are other sources of lighter, more approachable documentation on the topic. In addition to sources that I've already linked, there's also:
 
-- Friday Q&A 2008-12-26
-
-  " — an excellent run-down of potential use-cases for blocks in Objective-C.
-- Programming with C Blocks
-
-  — a good general summary of most aspects of blocks
-- Episode 2: Life Cycles
-
-  — a look at stack and heap allocation of blocks with diagrams
-- BlockLanguageSpec
+- Mike Ash's colorfully titled "[Friday Q&A 2008-12-26](http://www.mikeash.com/?page=pyblog/friday-qa-2008-12-26.html)" — an excellent run-down of potential use-cases for blocks in Objective-C.
+- Joachim Bengtsson's [Programming with C Blocks](http://thirdcog.eu/pwcblocks/) — a good general summary of most aspects of blocks
+- Jim Dovey's Blocks [Episode 2: Life Cycles](http://alanquatermain.net/post/138827791/blocks-episode-2-life-cycles) — a look at stack and heap allocation of blocks with diagrams
+- clang's [BlockLanguageSpec](http://clang.llvm.org/docs/BlockLanguageSpec.txt)

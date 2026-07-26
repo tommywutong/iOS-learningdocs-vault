@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fd28951cdc78033a'
 translated: false
 ---
@@ -18,9 +18,9 @@ translated: false
 
 Swift 3.1 fixes a bug in the [Swift Package Manager](https://swift.org/package-manager/) that prevented overriding the macOS deployment target.
 
-When you run `swift build` on macOS, the package manager currently (as of Swift 3.0 and 3.1) hardcodes the deployment target to macOS 10.10.[1](#fn:check-deployment-target) In Swift 3.0 it was impossible to override this due to [a bug](https://bugs.swift.org/browse/SR-2535) in the order arguments were evaluated.
+When you run `swift build` on macOS, the package manager currently (as of Swift 3.0 and 3.1) hardcodes the deployment target to macOS 10.10.^[1](#fn:check-deployment-target) In Swift 3.0 it was impossible to override this due to [a bug](https://bugs.swift.org/browse/SR-2535) in the order arguments were evaluated.
 
-Because of this, you could not easily[2](#fn:available) compile code that required newer APIs. As an example, consider a very simple package with just a few lines of code in a single source file. The program uses the new [units and measurements types](https://oleb.net/blog/2016/07/measurements-and-units/) introduced in macOS 10.12 to convert a value from _km/h_ to _m/s_:
+Because of this, you could not easily^[2](#fn:available) compile code that required newer APIs. As an example, consider a very simple package with just a few lines of code in a single source file. The program uses the new [units and measurements types](https://oleb.net/blog/2016/07/measurements-and-units/) introduced in macOS 10.12 to convert a value from _km/h_ to _m/s_:
 
 ```
 // main.swift

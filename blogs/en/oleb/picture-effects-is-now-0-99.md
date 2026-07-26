@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:85e2ccf2664245e3'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Picture Effects Is Now $0.99
 
-![pictureeffectsapp.com screenshot](https://oleb.net/media/pictureeffectsapp-com-screenshot.png)
+[![pictureeffectsapp.com screenshot](https://oleb.net/media/pictureeffectsapp-com-screenshot.png)](http://pictureeffectsapp.com/)
 
 <sub>The new web site.</sub>
 

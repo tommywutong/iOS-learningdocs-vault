@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dbe055561b2fb8e2'
 translated: false
 ---
@@ -24,9 +24,9 @@ A Cocoa application would never really get this small since "Cocoa" implies a la
 
 Of course, the answer in this case is entirely dependent on what criteria you require for a program to be considered a "Cocoa Mac application". I decided that a Cocoa Mac application must:
 
-- to run the main event loop
+- Use `NSApplication` to run the main event loop
 - Display a menubar with an application menu and a quit item which must correctly terminate the application
-- -based window
+- Display an `NSWindow`-based window
 - Bring the main window to the front on startup like a normal application
 - Code and program should raise no warnings or errors (preferrably no poor coding practices either but that's subjective)
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:cbc3c05179a8ff62'
 translated: false
 ---
@@ -17,6 +17,8 @@ translated: false
 # Clarification on Beta App Review
 
 > “Beta App Review” – seriously? [https://developer.apple.com/support/appstore/TestFlight/index.php](https://developer.apple.com/support/appstore/TestFlight/index.php)
+> 
+> — [@olebegemann](https://twitter.com/olebegemann) Ole Begemann [June 3, 2014](https://twitter.com/olebegemann/status/473773540848992256)
 
 Following the [TestFlight acquisition](http://techcrunch.com/2014/02/21/rumor-testflight-owner-burstly-is-being-acquired-by-apple/) a few months ago, Apple announced at WWDC yesterday that they will allow [beta app distribution through the App Store](http://techcrunch.com/2014/06/02/ios-testflight/) in the future.
 

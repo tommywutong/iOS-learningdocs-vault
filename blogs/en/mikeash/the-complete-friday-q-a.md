@@ -47,7 +47,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](http://www.mikeash.com/commentsrss.py?page=pyblog/complete-friday-qa-now-available.html)
 
 Add your thoughts, post a comment:
 

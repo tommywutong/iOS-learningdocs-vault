@@ -7,7 +7,7 @@ original_language: en
 published: 2009-01-27
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bff9071576a2553c'
 translated: false
 ---
@@ -119,4 +119,4 @@ The generated code for classic Objective-C ivar access works like a C `struct` f
 
 In the pet shop example, `_OBJC_IVAR_PetShopView_kittens` is 28 at compile time, but the runtime changes it to 32 when it sees the Def Leopard version of `NSView`. No code needs to be recompiled, and the performance overhead of the extra ivar offset variable is small. AppKit is happy, you're happy, and the kittens are happy.
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

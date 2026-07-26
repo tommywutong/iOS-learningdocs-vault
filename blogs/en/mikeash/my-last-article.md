@@ -28,17 +28,9 @@ Serializing values to data that can be stored on disk or transmitted over a netw
 
 So far, the options for serialization in Apple's ecosystem were limited:
 
-1. provides intelligent serialization of complex object graphs and works with your own types, but works with a poorly documented serialization format not suitable for cross-platform work, and requires writing code to manually encode and decode your types.
-2. and
-
-  can convert between standard Cocoa types like
-
-  /
-
-  and property lists or JSON. JSON in particular is used all over the place for server communication. Since these APIs provide low-level values, you have to write a bunch of code to extract meaning from those values. That code is often ad-hoc and handles bad data poorly.
-3. and
-
-  are the choice of masochists or people stuck working with systems that use XML. Converting between the basic parsed data and more meaningful model objects is once again up to the programmer.
+1. `NSCoding` provides intelligent serialization of complex object graphs and works with your own types, but works with a poorly documented serialization format not suitable for cross-platform work, and requires writing code to manually encode and decode your types.
+2. `NSPropertyListSerialization` and `NSJSONSerialization` can convert between standard Cocoa types like `NSDictionary`/`NSString` and property lists or JSON. JSON in particular is used all over the place for server communication. Since these APIs provide low-level values, you have to write a bunch of code to extract meaning from those values. That code is often ad-hoc and handles bad data poorly.
+3. `NSXMLParser` and `NSXMLDocument` are the choice of masochists or people stuck working with systems that use XML. Converting between the basic parsed data and more meaningful model objects is once again up to the programmer.
 4. Finally, there's always the option to build your own from scratch. This is fun, but a lot of work, and error-prone.
 
 These approaches tend to result in a lot of boilerplate code, where you declare a property called `foo` of type `String` which is encoded by storing the `String` stored in `foo` under the key `"foo"` and is decoded by retrieving the value for the key `"foo"`, attempting to cast it to a `String`, storing it into `foo` on success, or throwing an error on failure. Then you declare a property called `bar` of type `String` which....
@@ -259,7 +251,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-07-14-swiftcodable.html)
 
 Add your thoughts, post a comment:
 

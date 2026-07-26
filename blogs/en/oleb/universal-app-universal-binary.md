@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:573c018ce4eb5c84'
 translated: false
 ---
@@ -50,19 +50,19 @@ To remedy this, we need to use a conditional compilation block. [Jeff LaMarche w
     }
 ```
 
-![Picture Effects running in the iPhone Simulator 3.1](https://oleb.net/media/picture-effects-iphone-simulator-3-1-screenshot.png)
+[![Picture Effects running in the iPhone Simulator 3.1](https://oleb.net/media/picture-effects-iphone-simulator-3-1-screenshot.png)](https://oleb.net/media/picture-effects-iphone-simulator-3-1-screenshot.png)
 
 <sub>My universal app Picture Effects running in the iPhone Simulator 3.1.</sub>
 
-![Picture Effects running on the iPad Simulator 3.2](https://oleb.net/media/ipad-device-screenshot-4.jpg)
+[![Picture Effects running on the iPad Simulator 3.2](https://oleb.net/media/ipad-device-screenshot-4.jpg)](https://oleb.net/media/ipad-device-screenshot-4.jpg)
 
 <sub>Picture Effects running on the iPad Simulator 3.2.</sub>
 
 **Update April 9, 2010:** Chris has asked me in the comments to prepare a starting point for a universal app. Sure, no problem: [UniversalViewBasedApp.zip](https://oleb.net/media/UniversalViewBasedApp.zip) is a very simple app that runs on iPhone and iPad. It contains separate NIBs for iPhone and iPad, and both version run on the same view controller code. To understand how the system knows which NIB files to load on which platform, see the `NSMainNibFile` and `NSMainNibFile~ipad` keys in the `Info.plist`. Here’s how I created the app:
 
 - Create a standard view-based app for the iPhone using Xcode’s built-in project template.
-- and select the option to create a Universal app.
-- and save the resulting NIB file as MainViewController-iPad.xib and add it to your project.
+- Choose `Project > Upgrade Target for iPad...` and select the option to create a Universal app.
+- Open MainViewController.xib in Interface Builder, choose `File > Create iPad Version` and save the resulting NIB file as MainViewController-iPad.xib and add it to your project.
 - In MainWindow-iPad.xib, set MainViewController’s NIB name property to MainViewController-iPad.
 
 **Update April 13, 2010:** Jim Dovey has [discovered another solution that does not require adding the conditional compilation directives](https://quatermain.tumblr.com/post/517122761/running-universal-ipad-iphone-apps-in-the-simulator): build your app for the 3.2 Simulator SDK first, then switch your target to the 3.0 Simulator SDK, then run (don’t build).

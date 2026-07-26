@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c5750a6bcf16cf9c'
 translated: false
 ---
@@ -38,7 +38,7 @@ A cubic Bézier is described by the parametric equation:
 F(t) = (1 - t)<sup>3</sup>P<sub>0</sub> + 3t(1 - t)<sup>2</sup>P<sub>1</sub> + 3t<sup>2</sup>(1 - t)P<sub>2</sub> + t<sup>3</sup>P<sub>3</sub>
 ```
 
-where the Bézier is specified by the four control points P0, P1, P2 and P3 (each of which is a pair of coordinates — an X and a Y coordinate) and the parameter "t" moves from zero at P0 to one at P3 (i.e. t ∈ [0, 1]). The whole function produces an output point F for every t value (where F contains an X and a Y coordinate like each of the P values).
+where the Bézier is specified by the four control points P~0, P~1, P~2 and P~3 (each of which is a pair of coordinates — an X and a Y coordinate) and the parameter "t" moves from zero at P~0 to one at P~3 (i.e. t ∈ [0, 1]). The whole function produces an output point F for every t value (where F contains an X and a Y coordinate like each of the P values).
 
 CAMediaTimerFunction does _not_ use the input time as the "t" value in this equation. Instead, input time is used as the X value of F and the output time is obtained by solving for the Y value of F at the same "t" point. This is more flexible than using "t" as the input value but is more computationally complex since you must solve the cubic.
 
@@ -73,6 +73,16 @@ The sample application shows uses parametric functions to generate keyframes so 
 ![](https://www.cocoawithlove.com/assets/objc-era/animationaccelerationscreenshot.png)
 
 The acceleration curves used include
+
+- _Linear_
+
+- _Ease-in/Ease-out_
+
+- _Quadratic_
+
+- _Exponential Decay_
+
+- _Second-order Response Curve_
 
 In the program, each of the curves is described parametrically by an NSObject\<Evaluate\> object which implements the evaluateAt: method. The CAKeyframeAnimation subclass AccelerationAnimation then implements the following method to generate all the keyframe values using the results from this method.
 

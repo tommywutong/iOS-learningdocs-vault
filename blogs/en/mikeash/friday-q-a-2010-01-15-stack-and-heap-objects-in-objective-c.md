@@ -42,13 +42,7 @@ The precise location of that memory is less important. As long as you have some 
     NSObject *obj = [[NSObject alloc] init];
 ```
 
-The storage for the
-
-variable itself is on the stack, but the object it points to is in the heap. The
-
-call allocates a chunk of heap memory, and fills it out to match the layout needed for an
-
-.
+The storage for the `obj` variable itself is on the stack, but the object it points to is in the heap. The `[NSObject alloc]` call allocates a chunk of heap memory, and fills it out to match the layout needed for an `NSObject`.
 
 A stack object is just an object where the memory for that object is allocated on the stack. Objective-C doesn't have any support for this directly, but you can construct one manually without too much trouble:
 
@@ -76,10 +70,11 @@ Why allow both?
 
 Stack objects have two compelling advantages:
 
-1. Allocating memory on the stack is really fast. All of the bookkeeping is done by the compiler when you build your program. At runtime, the function prolog just carves out the amount of space it needs for all local variables, and the code knows what goes where because it was all computed in advance. Stack allocations are essentially free, whereas heap allocations can be quite expensive.
-2. Stack objects have a defined lifetime. You can never leak one, because it always gets destroyed at the end of the scope where it was declared.
+1. **Speed:** Allocating memory on the stack is really fast. All of the bookkeeping is done by the compiler when you build your program. At runtime, the function prolog just carves out the amount of space it needs for all local variables, and the code knows what goes where because it was all computed in advance. Stack allocations are essentially free, whereas heap allocations can be quite expensive.
+2. **Simplicity:** Stack objects have a defined lifetime. You can never leak one, because it always gets destroyed at the end of the scope where it was declared.
 
-The strictly defined lifetime of a stack object is a disadvantage as well, and a major one. In Objective-C (and C++, and many other languages), it is impossible to move an object after it's created. The reason for this is because there may be many pointers to that object, and those pointers are not tracked. They would all need to be updated to track the move, but there's no way to accomplish this.
+**Disadvantages of Stack Objects**  
+ The strictly defined lifetime of a stack object is a disadvantage as well, and a major one. In Objective-C (and C++, and many other languages), it is impossible to move an object after it's created. The reason for this is because there may be many pointers to that object, and those pointers are not tracked. They would all need to be updated to track the move, but there's no way to accomplish this.
 
 (Note: it's not an impossibility in general, and many languages move objects around as a matter of course, often as part of garbage collection schemes. However, this requires more runtime smarts and a stricter type system than you get in Objective-C.)
 
@@ -115,19 +110,13 @@ The stack nature of blocks does have some pitfalls, though. For example, this co
     block();
 ```
 
-Block stack objects are only valid through the lifetime of their enclosing scope, and here, their enclosing scopes cease to exist before the call to
-
-at the end. Other gotchas can happen when you pass blocks to code that doesn't know that they're blocks:
+Block stack objects are only valid through the lifetime of their enclosing scope, and here, their enclosing scopes cease to exist before the call to `block()` at the end. Other gotchas can happen when you pass blocks to code that doesn't know that they're blocks:
 
 ```
     [dictionary setObject: ^{ printf("hey hey\n"); } forKey: key];
 ```
 
-The dictionary will
-
-that block object rather than
-
-it, leading to a dangling reference.
+The dictionary will `retain` that block object rather than `copy` it, leading to a dangling reference.
 
 The speed and simplicity of stack objects are a great boon for blocks, but it also creates a whole new class of bugs for unwary programmers.
 
@@ -142,7 +131,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-01-15-stack-and-heap-objects-in-objective-c.html)
 
 Add your thoughts, post a comment:
 

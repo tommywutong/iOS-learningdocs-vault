@@ -74,9 +74,7 @@ I nearly gave up on the problem, resigned to simply forbidding weak references t
     }
 ```
 
-The comment about resurrection is key. While I can't intercept the
-
-to eliminate the race condition, I can detect it and allow the object to resurrect so that I can recover from the situation. I was on my way!
+The comment about resurrection is key. While I can't intercept the `CFRelease` to eliminate the race condition, I can detect it and allow the object to resurrect so that I can recover from the situation. I was on my way!
 
 Implementing this solution requires overriding the CoreFoundation finalize function. CoreFoundation has no supported mechanism for this, so I had to get down and dirty with the CF source code and hack my way in. This means that everything I'm doing is not entirely supported and could break, although I believe that this stuff is actually pretty stable.
 
@@ -106,9 +104,7 @@ Overriding the finalize function then becomes easy. First, look up the `CFRuntim
     extern CFRuntimeClass * _CFRuntimeGetClassWithTypeID(CFTypeID typeID);
 ```
 
-I can then replace the
-
-function pointer with my own function. I still need to call through to the original, so I make my own table for the original function pointers, indexed by CF type ID:
+I can then replace the `finalize` function pointer with my own function. I still need to call through to the original, so I make my own table for the original function pointers, indexed by CF type ID:
 
 ```
     typedef void (*CFFinalizeFptr)(CFTypeRef);
@@ -116,11 +112,7 @@ function pointer with my own function. I still need to call through to the origi
     static size_t gCFOriginalFinalizesSize;
 ```
 
-If you'll remember from last time, my utility function
-
-is responsible for creating a dynamic Objective-C subclass for a given object. The original implementation checked to see if the object was a bridged CoreFoundation object and simply asserted if it was. The new implementation handles swizzling out the
-
-function pointer to my custom function:
+If you'll remember from last time, my utility function `CreateCustomSubclass` is responsible for creating a dynamic Objective-C subclass for a given object. The original implementation checked to see if the object was a bridged CoreFoundation object and simply asserted if it was. The new implementation handles swizzling out the `finalize` function pointer to my custom function:
 
 ```
     static Class CreateCustomSubclass(Class class, id obj)
@@ -145,9 +137,7 @@ function pointer to my custom function:
             // original ObjC dynamic subclassing code is here
 ```
 
-There's nothing too complicated here. The first part just gets the requisite information. The
-
-statement in the middle handles resizing the table if it's too small. (CF type IDs are small integers, so a flat array indexed by them works nicely.) The last part swizzles out the original function pointer, using an atomic call to ensure that it's thread safe just in case anybody else happens to be trying the same thing at the exact same time.
+There's nothing too complicated here. The first part just gets the requisite information. The `if` statement in the middle handles resizing the table if it's too small. (CF type IDs are small integers, so a flat array indexed by them works nicely.) The last part swizzles out the original function pointer, using an atomic call to ensure that it's thread safe just in case anybody else happens to be trying the same thing at the exact same time.
 
 With this change, it's now critical that `IsTollFreeBridged` be 100% reliable. The old implementation simply looked for a class name that started with `NSCF`, and that's not good enough. I came up with a completely reliable test using a private CoreFoundation table of Objective-C classes:
 
@@ -155,9 +145,7 @@ With this change, it's now critical that `IsTollFreeBridged` be 100% reliable. T
     extern Class *__CFRuntimeObjCClassTable;
 ```
 
-This table maps a CF type ID to the
-
-Objective-C class. Checking for bridgedness is then just a matter of getting the type ID of the object in question, getting the bridged class of the type ID, and seeing if the object's class matches it or not:
+This table maps a CF type ID to the `NSCF` Objective-C class. Checking for bridgedness is then just a matter of getting the type ID of the object in question, getting the bridged class of the type ID, and seeing if the object's class matches it or not:
 
 ```
     static BOOL IsTollFreeBridged(Class class, id obj)
@@ -168,15 +156,7 @@ Objective-C class. Checking for bridgedness is then just a matter of getting the
     }
 ```
 
-The
-
-swizzling re-points to
-
-. This function simply checks for resurrection by looking at
-
-, and then if resurrection has not taken place, it clears out all weak references to the object and calls the original
-
-function:
+The `finalize` swizzling re-points to `CustomCFFinalize`. This function simply checks for resurrection by looking at `CFGetRetainCount`, and then if resurrection has not taken place, it clears out all weak references to the object and calls the original `finalize` function:
 
 ```
     static void CustomCFFinalize(CFTypeRef cf)
@@ -198,29 +178,27 @@ Easy! Right? Right...?
 **Resurrection Comes Back From the Dead**  
  Unfortunately, there's a race condition here. Imagine the following sequence:
 
-1.   1. `CFRelease(obj)`
-    2. calls
-    3. begins executing, the thread is preempted
-2.   1. obtains reference to
-    2. is retained and autoreleased by
-    3. The enclosing autorelease pool is drained, resulting in `CFRelease(obj)`
-    4. calls
-    5. clears weak references and calls the original
-    6. returns
-3.   1. Resumes execution at the beginning of `CustomCFFinalize`
-    2. checks the retain count, which is still 1
-    3. calls the original
+1. **Thread 1**
 
-      a second time on the same object
+    1. `CFRelease(obj)`
+    2. `CFRelease` calls `CustomCFFinalize`
+    3. Before `CustomCFFinalize` begins executing, the thread is preempted
+2. **Thread 2**
+
+    1. `[ref target]` obtains reference to `obj`
+    2. `obj` is retained and autoreleased by `MAZeroingWeakRef`
+    3. The enclosing autorelease pool is drained, resulting in `CFRelease(obj)`
+    4. `CFRelease` calls `CustomCFFinalize`
+    5. `CustomCFFinalize` clears weak references and calls the original `finalize`
+    6. `CustomCFFinalize` returns
+3. **Thread 1**
+
+    1. Resumes execution at the beginning of `CustomCFFinalize`
+    2. `CustomCFFinalize` checks the retain count, which is still 1
+    3. `CustomCFFinalize` calls the original `finalize` a second time on the same object
     4. A horrible flaming crash occurs
 
-What's worse,
-
-isn't even safe in the presence of resurrecting finalizers. It checks the object's reference count a second time after the finalizer returns. However, the object could have been resurrected and destroyed in the intervening time, causing a bad memory access. In order to make this safe, we
-
-allow any possibility that the object is destroyed until
-
-itself returns.
+What's worse, `CFRelease` isn't even safe in the presence of resurrecting finalizers. It checks the object's reference count a second time after the finalizer returns. However, the object could have been resurrected and destroyed in the intervening time, causing a bad memory access. In order to make this safe, we _can't_ allow any possibility that the object is destroyed until `CFRetain` itself returns.
 
 Thus there is an extremely narrow, difficult-to-hit, but entirely real race condition that could cause this code to crash.
 
@@ -241,9 +219,7 @@ static void CustomCFFinalize(CFTypeRef cf)
                 {
 ```
 
-If the retain count is still 1 then the object has not been resurrected. It's still not safe to destroy, however, as multiple threads may be sitting in this spot. Instead, the code clears out all weak references,
-
-the object to deliberately resurrect it, and then arranges for it to be released later:
+If the retain count is still 1 then the object has not been resurrected. It's still not safe to destroy, however, as multiple threads may be sitting in this spot. Instead, the code clears out all weak references, _retains_ the object to deliberately resurrect it, and then arranges for it to be released later:
 
 ```
                     ClearWeakRefsForObject((id)cf);
@@ -267,9 +243,7 @@ If the object has no weak references, then simply call through to the original f
     }
 ```
 
-Easy enough, right? But how exactly does that
-
-function work?
+Easy enough, right? But how exactly does that `CallCFReleaseLater` function work?
 
 Using `autorelease` would do the trick, except that this is pure CF code and there's no guarantee that the caller actually has an autorelease pool in place. A nice idea, but it just doesn't work out.
 
@@ -295,13 +269,7 @@ static void CallCFReleaseLater(CFTypeRef cf)
         mach_port_mod_refs(mach_task_self(), thread, MACH_PORT_RIGHT_SEND, 1 ); // "retain"
 ```
 
-Next up, send this thread reference and the CF object pointer to a background thread. I use
-
-to handle the backgrounding. I create an
-
-to handle the release (pointing it towards a class method on
-
-, since it can't deal with pure functions) and add it to the queue. Everything is wrapped in an autorelease pool in case this code is being called from a context which doesn't already have one:
+Next up, send this thread reference and the CF object pointer to a background thread. I use `NSOperationQueue` to handle the backgrounding. I create an `NSInvocationOperation` to handle the release (pointing it towards a class method on `MAZeroingWeakRef`, since it can't deal with pure functions) and add it to the queue. Everything is wrapped in an autorelease pool in case this code is being called from a context which doesn't already have one:
 
 ```
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -319,9 +287,7 @@ to handle the release (pointing it towards a class method on
     }
 ```
 
-The code for
-
-is based around a loop. It continuously checks the PC of the target thread until that PC has moved out of the target range. Once it's out, it releases the object as well as the thread that was passed in to it. To start with, the loop:
+The code for `releaseLater:fromThread:` is based around a loop. It continuously checks the PC of the target thread until that PC has moved out of the target range. Once it's out, it releases the object as well as the thread that was passed in to it. To start with, the loop:
 
 ```
     + (void)releaseLater: (CFTypeRef)cf fromThread: (mach_port_t)thread
@@ -332,9 +298,7 @@ is based around a loop. It continuously checks the PC of the target thread until
         {
 ```
 
-Next, fetch the PC of the target thread. (
-
-is a helper function I'll get to in a moment.)
+Next, fetch the PC of the target thread. (`GetPC` is a helper function I'll get to in a moment.)
 
 ```
             BLOCK_QUALIFIER void *pc;
@@ -352,30 +316,14 @@ Now start checking the PC for validity. First see if it contains anything at all
             {
 ```
 
-Next, see if the PC is within
-
-. Since that's called from
-
-, it's possible that the target is still in there, and we need to wait for it to exit. To do this, check the PC to see if it's between the start of that function and the start of the one following it. (The compiler lays out functions in order in memory, so the beginning of
-
-is right after the end of
-
-):
+Next, see if the PC is within `CustomCFFinalize`. Since that's called from `CFRelease`, it's possible that the target is still in there, and we need to wait for it to exit. To do this, check the PC to see if it's between the start of that function and the start of the one following it. (The compiler lays out functions in order in memory, so the beginning of `IsTollFreeBridged` is right after the end of `CustomCFFinalize`):
 
 ```
                 if(pc < (void *)CustomCFFinalize || pc > (void *)IsTollFreeBridged)
                 {
 ```
 
-If that test passes, see if the PC is within
-
-. I don't know the order of functions in CoreFoundation so I can't use that same trick. Instead, I use the
-
-call. This returns the last symbol that comes before the specified address, among other info. I can just check that against
-
-(the private function that actually handles the guts of a
-
-call). If it matches, try again later:
+If that test passes, see if the PC is within `CFRelease`. I don't know the order of functions in CoreFoundation so I can't use that same trick. Instead, I use the `dladdr` call. This returns the last symbol that comes before the specified address, among other info. I can just check that against `_CFRelease` (the private function that actually handles the guts of a `CFRelease` call). If it matches, try again later:
 
 ```
                     Dl_info info;
@@ -386,11 +334,7 @@ call). If it matches, try again later:
                         {
 ```
 
-If all the tests pass, then it's good to go. Clear
-
-to indicate that the test succeeded, call
-
-, and dispose of the thread reference:
+If all the tests pass, then it's good to go. Clear `retry` to indicate that the test succeeded, call `CFRelease`, and dispose of the thread reference:
 
 ```
                             retry = NO; // success!
@@ -404,9 +348,7 @@ to indicate that the test succeeded, call
     }
 ```
 
-One last thing, the
-
-function. The implementation is highly architecture-specific. The generalized part looks like this:
+One last thing, the `GetPC` function. The implementation is highly architecture-specific. The generalized part looks like this:
 
 ```
     static void *GetPC(mach_port_t thread)
@@ -421,11 +363,7 @@ function. The implementation is highly architecture-specific. The generalized pa
     }
 ```
 
-The real code in the repository has conditionals that define
-
-,
-
-, and the rest for Intel 32/64, PPC 32/64, and ARM.
+The real code in the repository has conditionals that define `state`, `flavor`, and the rest for Intel 32/64, PPC 32/64, and ARM.
 
 And that's it!
 
@@ -453,7 +391,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-07-30-zeroing-weak-references-to-corefoundation-objects.html)
 
 Add your thoughts, post a comment:
 

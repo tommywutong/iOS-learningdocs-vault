@@ -7,7 +7,7 @@ original_language: en
 published: 2026-07-04
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d628466b2fe5b8e1'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 ## [What I Didn't Know About Jury Duty](#)
 
-As of this year I’ve had my first experience serving on a jury, in a criminal case in a California court. Years of TV and a few school electives told me what to expect, while still knowing an _actual_ trial probably wouldn’t be like that at all. And…it was and it wasn’t! Hence this post.more
+As of this year I’ve had my first experience serving on a jury, in a criminal case in a California court. Years of TV and a few school electives told me what to expect, while still knowing an _actual_ trial probably wouldn’t be like that at all. And…it was and it wasn’t! Hence this post.
 
 I’m not going to talk very much about the _specific_ case, partly because (spoiler) we ended up with a deadlocked jury and thus a mistrial, and therefore they’ll most likely be doing this all over again in the future. But more than that, even though the charges in this case were relatively minor, the defendant is still a person and deserves some privacy and respect.
 
@@ -64,8 +64,8 @@ _*gestures pointedly at current federal government*_
 Given the time spent on this, I was surprised there _wasn’t_ more emphasis on the difference between “not guilty” and “innocent”. “Not guilty” means the prosecution didn’t meet the requirement for “guilty”. It doesn’t have to mean a juror actually thinks the person is innocent! That’s not the question! It could mean
 
 - I think the person didn’t do anything
-- but what they did didn’t break the law
-- possibility they didn’t
+- I think the person did _something,_ but what they did didn’t break the law
+- I think the person broke the law, but given the information we have there’s a _reasonable_ possibility they didn’t
 
 This ended up being relevant.
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:af1b21790c617be2'
 translated: false
 ---
@@ -19,6 +19,8 @@ translated: false
 28 December 2023
 
 A few weeks ago I posted this:
+
+[(screen recording)](https://belkadan.com/blog/2023/12/CellLVM/CellLVM.mp4)
 
 Which, if you’re not interested in watching a video right now, is a proof-of-concept LLVM to Excel spreadsheet compiler.
 
@@ -55,27 +57,19 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [LLVM](https:/
 
 ## Older Posts
 
-1. 2012-12-08
-
-  How to Write a Checker in 24 Hours
-2. 2012-05-16
-
-  Big News
-3. 2011-07-25
-
-  Using Clang from SVN in Xcode
-4. 2011-06-20
-
-  Automatic Reference Counting
+1. 2012-12-08[How to Write a Checker in 24 Hours](https://belkadan.com/blog/2012/12/How-to-Write-a-Checker/?tag=llvm)
+2. 2012-05-16[Big News](https://belkadan.com/blog/2012/05/Big-News/?tag=llvm)
+3. 2011-07-25[Using Clang from SVN in Xcode](https://belkadan.com/blog/2011/07/Using-Clang-from-SVN-in-Xcode/?tag=llvm)
+4. 2011-06-20[Automatic Reference Counting](https://belkadan.com/blog/2011/06/Automatic-Reference-Counting/?tag=llvm)
 
 ### Possibly Related Tags
 
-- Apple
-- Cocoa
-- Compilers
-- Meta
-- Objective-C
-- Source code
-- Spreadsheets
-- Swift
-- Xcode
+- [Apple](https://belkadan.com/blog/tags/apple)
+- [Cocoa](https://belkadan.com/blog/tags/cocoa)
+- [Compilers](https://belkadan.com/blog/tags/compilers)
+- [Meta](https://belkadan.com/blog/tags/meta)
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Source code](https://belkadan.com/blog/tags/source-code)
+- [Spreadsheets](https://belkadan.com/blog/tags/spreadsheets)
+- [Swift](https://belkadan.com/blog/tags/swift)
+- [Xcode](https://belkadan.com/blog/tags/xcode)

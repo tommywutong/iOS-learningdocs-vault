@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7f45c65c31bafb2b'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 > As far as the copyrightability of Oracle’s Java API declaring code is concerned, I would go even further: it’s practically inconceivable that the district court’s non-copyrightability holding will be upheld considering that the circuit judges made perfectly clear that District Judge Alsup confused “fair use” and copyrightability issues and that Google’s whole non-copyrightability theory, which Judge Alsup adopted in its entirety, rests on a complete misreading of two key cases (_Sega_ and _Sony_).
 
-Just to be clear, this is not about outright copying of the Java codebase.[1](#fn:1) The judges of the appeals court seem to hold the opinion that the [design of the Java API](https://en.wikipedia.org/wiki/Structure,_sequence_and_organization) itself—and not just its implementation—is copyrightable, at least in cases where the API in question is substantial enough to be deemed a considerable creative effort, which the Java API undoubtedly is.
+Just to be clear, this is not about outright copying of the Java codebase.^[1](#fn:1) The judges of the appeals court seem to hold the opinion that the [design of the Java API](https://en.wikipedia.org/wiki/Structure,_sequence_and_organization) itself—and not just its implementation—is copyrightable, at least in cases where the API in question is substantial enough to be deemed a considerable creative effort, which the Java API undoubtedly is.
 
 To Florian Mueller, this is a good thing:
 

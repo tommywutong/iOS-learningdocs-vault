@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:eb31e1e828806d3f'
 translated: false
 ---
@@ -20,8 +20,8 @@ In this post, I'll show you ways to determine which version of iOS you are runni
 
 To make an application target that runs on multiple versions of iOS is relatively simple:
 
-- version number of iOS whose features you may want.
-- version number of iOS that you will support
+- Set the "Base SDK" in your projects settings to the _newest_ version number of iOS whose features you may want.
+- Set the "iPhone OS Deployment Target" to the _oldest_ version number of iOS that you will support
 
 However, getting the target settings correct is the easy part of the problem. The hard part is using new features on newer iOS versions without breaking the app on older versions.
 
@@ -58,13 +58,9 @@ For example, if you want to start an iOS4 background task in an application that
 
 There are three important components:
 
-1. compile-time conditional. This ensures that if we choose to build this project with a Base SDK lower than 4.0, then it won't cause compile problems. This is essential for running in older versions of the simulator.
-2. supports the
-
-  method. Since the final release build will be built against the 4.0 SDK (even if users install on SDK 3.0) this runtime check ensures that the method we need is available.
-3. and the
-
-  is the iPhone OS 4 code.
+1. The `#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000` compile-time conditional. This ensures that if we choose to build this project with a Base SDK lower than 4.0, then it won't cause compile problems. This is essential for running in older versions of the simulator.
+2. The runtime check that ` UIApplication ` supports the ` beginBackgroundTaskWithExpirationHandler ` method. Since the final release build will be built against the 4.0 SDK (even if users install on SDK 3.0) this runtime check ensures that the method we need is available.
+3. Everything else between the `#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000` and the `#endif` is the iPhone OS 4 code.
 
 ## Making the conditional work less ugly
 
@@ -114,16 +110,8 @@ If we want to include something only in OS versions _prior_ to a a specific vers
 
 Three interesting points to note about these macros:
 
-1. to determine the iPhone OS at runtime. There are many examples on the web using
-
-  but that method requires a string comparison and potentially handling of major and minor numbers within the string components. A single
-
-  comparison is far more straightforward.
-2. wrapper around the macro, so you
-
-  simply tack an
-
-  onto the end if you choose (and it doesn't need conditional compilation of its own).
+1. I use the `kCFCoreFoundationVersionNumber` to determine the iPhone OS at runtime. There are many examples on the web using `[[UIDevice currentDevice] systemVersion]` but that method requires a string comparison and potentially handling of major and minor numbers within the string components. A single `double` comparison is far more straightforward.
+2. I have not used the typical `do { x } while (0)` wrapper around the macro, so you _can_ simply tack an `else` onto the end if you choose (and it doesn't need conditional compilation of its own).
 3. I use a variable argument list for the macro. This is so that any number of commas may appear in the contents without causing problems.
 
 A final point... the `kCFCoreFoundationVersionNumber` definitions may not be in every version of the SDK (each SDK normally contains definitions for versions up to but not including itself), so you should conditionally define them yourself in case they're missing. Here's a handy list:

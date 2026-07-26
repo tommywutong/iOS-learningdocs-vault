@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fcc676132c117f72'
 translated: false
 ---
@@ -43,33 +43,17 @@ Yes, Standard C does have some implicit naming conventions. Many standard C func
 
 We can see examples of these in these functions:
 
-- - "s" (acts upon a
-
-  ), "scan" (extract character data from the string), "f" (format string is the secondary object)
-- - "f" (acts upon a
-
-  ), "print" (outputs character data to the file), "f" (format string is the secondary object)
-- - "str" (acts upon a
-
-  ), "len" (compute the length). No secondary object.
-- - "fe" (acts upon the "floating point environment"), "set" (changes a state value), "round" (a new rounding value is the secondary object).
+- `sscanf` - "s" (acts upon a `char *`), "scan" (extract character data from the string), "f" (format string is the secondary object)
+- `fprintf` - "f" (acts upon a `FILE`), "print" (outputs character data to the file), "f" (format string is the secondary object)
+- `strlen` - "str" (acts upon a `char *`), "len" (compute the length). No secondary object.
+- `fesetround` - "fe" (acts upon the "floating point environment"), "set" (changes a state value), "round" (a new rounding value is the secondary object).
 
 ### Standard C's naming style fails
 
 For these methods, this style works well. The problem is that components are so short (often single letters) that it is difficult to know for certain to what they refer. Many of the methods in math.h show these limitations:
 
-- - "l" (no longer an "acts upon", this first part now indicates "returns a
-
-  "), "round" (round to the nearest integer). No description of the primary parameter — you are expected to assume a
-
-  .
-- - The "l" in this case is the primary parameter and means
-
-  whereas it meant
-
-  in the
-
-  method above. The "a" here is not a prefix, it is part of the action component.
+- `lround` - "l" (no longer an "acts upon", this first part now indicates "returns a `long`"), "round" (round to the nearest integer). No description of the primary parameter — you are expected to assume a `double`.
+- `acosl` - The "l" in this case is the primary parameter and means `long double` whereas it meant `long` in the `lround` method above. The "a" here is not a prefix, it is part of the action component.
 
 This is where naming styles in C break down — while math.h does have naming conventions, they are all its own. You can learn the tricks of math.h but they are unique to that library, not a standard that applies to all functions.
 
@@ -239,6 +223,8 @@ The purpose is to make the method as quick to read as possible.
 
 This is a good trade to make since you will read a method many times but only type it once (with code completion, less than once).
 
+> Xcode will suggest code completion automatically. Hit return at any time to pick the completion it offers. Hit the Code Sense Completion key (F5 by default) and it will present a popup list of matching options. Control-/ will step through the parameters so you can fill them in.
+
 ### Repetitious or redundant
 
 While methods like `+[UIApplication sharedApplication]` may seem redundant, the reality is that `+[UIApplication shared]` would have a different meaning (it would be an accessor for the static class property named "shared") and `+[UIApplication singleton]` by omitting a class name fails to communicate that the method also works as a factory method on the first invocation — repeating the class name has meaning, it is not redundant.
@@ -257,5 +243,5 @@ Few other languages have conventions that are as rigourously applied as those in
 
 Further reading:
 
-- Naming conventions in the Objective C 2.0 Language Summary
-- Coding Guidelines for Cocoa: Naming Methods
+- [Naming conventions in the Objective C 2.0 Language Summary](http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/Articles/ocLanguageSummary.html#//apple_ref/doc/uid/TP30001163-CH3-TPXREF106)
+- [Coding Guidelines for Cocoa: Naming Methods](http://developer.apple.com/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282)

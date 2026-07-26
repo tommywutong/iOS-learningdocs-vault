@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0329e9af0b142684'
 translated: false
 ---
@@ -24,19 +24,19 @@ translated: false
 
 Earlier this month, I wrote about [How to Restrict Your iOS App to Modern Hardware](https://oleb.net/blog/2011/12/how-to-restrict-your-ios-app-to-modern-hardware/). One of the suggestions I made was to use the `UIRequiredDeviceCapabilities` key in your `Info.plist` file to make your app run only on devices with armv7 CPUs. Several people contacted me afterwards to tell me that this approach only works for new apps.
 
-You heard that right: **when updating an app, it seems you cannot add new restrictions to the Required Device Capabilities.** One developer who contacted me said he has been fighting with this for more than 2 years, and all due to the simple mistake of omitting the “telephony” requirement in version 1.0 of his app.[1](#fn:1)
+You heard that right: **when updating an app, it seems you cannot add new restrictions to the Required Device Capabilities.** One developer who contacted me said he has been fighting with this for more than 2 years, and all due to the simple mistake of omitting the “telephony” requirement in version 1.0 of his app.^[1](#fn:1)
 
 ## Automatic Rejection by Xcode’s Validator
 
 According to the feedback I got, this is not even an issue that could be discussed during the app review process. Instead, it seems that the automatic validation service that Apple has integrated into Xcode will reject any update with more restrictive `UIRequiredDeviceCapabilities` than the earlier version before you can even upload it to iTunes Connect.
 
-![Xcode validation error after updating UIRequiredDeviceCapabilities](https://oleb.net/media/xcode-validation-uirequireddevicecapabilities.jpg)
+[![Xcode validation error after updating UIRequiredDeviceCapabilities](https://oleb.net/media/xcode-validation-uirequireddevicecapabilities.jpg)](https://oleb.net/media/xcode-validation-uirequireddevicecapabilities.jpg)
 
 <sub>Xcode validation error after updating `UIRequiredDeviceCapabilities`. [Screenshot by Noel Llopis](https://twitter.com/noel_llopis/status/156428438994042880).</sub>
 
 # How About Not Changing the Deployment Target for Your App’s Lifetime?
 
-I think this is a very bad rule on Apple’s side and I wonder how it can be reconciled with other Apple policies regarding app updates. Ultimately, raising the required device capabilities is equivalent to increasing your app’s Deployment Target[2](#fn:2), something that Apple has no problem with in an app update.
+I think this is a very bad rule on Apple’s side and I wonder how it can be reconciled with other Apple policies regarding app updates. Ultimately, raising the required device capabilities is equivalent to increasing your app’s Deployment Target^[2](#fn:2), something that Apple has no problem with in an app update.
 
 One could argue that from the perspective of the users, [a minimum OS version is easier to communicate than changed hardware requirements](https://twitter.com/olemoritz/status/142587108509491200) but I find that unconvincing. If anything, changed hardware requirements should be easier to understand than changes on the software side since every user knows that hardware cannot be updated while it’s a lot harder to grasp why an old device should not be able to run a new OS version. And Apple does a bad job of communicating changed OS version requirements anyway so it strikes me as odd that they should care so much about the hardware side of things.
 

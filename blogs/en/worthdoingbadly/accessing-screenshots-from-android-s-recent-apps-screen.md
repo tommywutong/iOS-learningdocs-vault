@@ -7,7 +7,7 @@ original_language: en
 published: 2018-05-10
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:72be8280d66f74a5'
 translated: false
 ---
@@ -86,7 +86,7 @@ private IActivityManager mAm;
 mAm = ActivityManager.getService();
 ```
 
-Note that it accesses an IActivityManager, not the regular ActivityManager - which needs a Context[note 1](#note-1-context). As it turns out, ActivityManager is just a wrapper around IActivityManager: all ActivityManager methods eventually call the equivalent IActivityManager method.
+Note that it accesses an IActivityManager, not the regular ActivityManager - which needs a Context^[note 1](#note-1-context). As it turns out, ActivityManager is just a wrapper around IActivityManager: all ActivityManager methods eventually call the equivalent IActivityManager method.
 
 Therefore, if I use IActivityManager, I can talk to Android from a command line app, without a `Context`!
 
@@ -197,12 +197,8 @@ Therefore, I decided to simply create a local HTTP server. Sure, it’s insecure
 
 I used the well-known [NanoHTTPD library](https://github.com/NanoHttpd/nanohttpd), which is a single file HTTP server that can be easily integrated into any app. I made two endpoints:
 
-- , calls the
-
-  method and returns the tasks in JSON format.
-- , calls the
-
-  method and returns a JPEG of the desired task.
+- The root page, `GET /`, calls the `getRecentTasksForUser` method and returns the tasks in JSON format.
+- The thumbnail endpoint, `GET /thumbs/(id)`, calls the `getTaskSnapshot` method and returns a JPEG of the desired task.
 
 Originally, I only had one endpoint, which sent the images along with the tasks; however, it turns out converting a GraphicsBuffer to a Bitmap takes almost half a second each, and it takes several seconds to get the list of apps. They were broken out into a separate endpoint to allow the main app to load the thumbnails on demand.
 
@@ -230,3 +226,5 @@ Next, I’ll work on making an actual task switcher - that’ll be the subject o
 ## Note 1: Context
 
 Why can’t I just make a Context, then? A Context needs an ApplicationThread, which I can’t make from a command line app. I can go more in-depth on this: let me know if how an Android app starts up interests you.
+
+[https://worthdoingbadly.com/androidrecents/](https://worthdoingbadly.com/androidrecents/)

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:67d9d02d12b5e60c'
 translated: false
 ---
@@ -26,13 +26,13 @@ Michael began with a general overview of iCloud and its features. He then procee
 
 The process is really quite simple. First, you have to visit the [iOS Provisioning Portal](http://developer.apple.com/ios/manage/overview/index.action) and create a new App ID for your app. When you configure the App ID, make sure to check the “Enable for iCloud” option.
 
-![iOS Provisioning Portal: Enable for iCloud](https://oleb.net/media/ios-provisioning-portal-enable-for-icloud.png)
+[![iOS Provisioning Portal: Enable for iCloud](https://oleb.net/media/ios-provisioning-portal-enable-for-icloud.png)](https://oleb.net/media/ios-provisioning-portal-enable-for-icloud.png)
 
 Next, switch to the Provisioning section and create a new Development Provisioning Profile for the App ID you just generated. Once you have downloaded the provisioning profile and imported it into Xcode, you can close the browser.
 
 The last step is to configure your Xcode project for iCloud. The way to do this is to create a so-called “Entitlements” file that contains the key(s) of the iCloud Storage containers. Normally, all you have to do is navigate to the Project settings in Xcode, select your Target and then the “Summary” tab. Scroll down and check the “Enable Entitlements” checkbox. If you have set the correct bundle ID and unless you have specific requirements (such as writing to the same section in your iCloud container from multiple apps), Xcode should have filled in all fields correctly.
 
-![iCloud entitlements in Xcode 4.2](https://oleb.net/media/xcode-4-2-icloud-entitlements.png)
+[![iCloud entitlements in Xcode 4.2](https://oleb.net/media/xcode-4-2-icloud-entitlements.png)](https://oleb.net/media/xcode-4-2-icloud-entitlements.png)
 
 # The iCloud Key-Value Store
 
@@ -164,8 +164,8 @@ In the third part of the session, Michael talked about integrating Core Data wit
 
 It turns out that getting started with iCloud in this case is surprisingly easy. All you have to do is specify two additional options when creating your persistent store:
 
-- : This one is required. The value must be a unique string that identifies your store file.
-- : Not required but recommended. Its value indicates where in the ubiquity container the Core Data transaction logs should be stored.
+- `NSPersistentStoreUbiquitousContentNameKey`: This one is required. The value must be a unique string that identifies your store file.
+- `NSPersistentStoreUbiquitousContentURLKey`: Not required but recommended. Its value indicates where in the ubiquity container the Core Data transaction logs should be stored.
 
 That last sentence already hints at how iCloud storage works with Core Data. Instead of copying the SQLite database file between devices, Core Data only stores transaction logs in iCloud. These logs can then be used to recreate the database file on another device. This process is not only much safer (SQLite files are not designed to be accessed from multiple processes), it also saves bandwidth because only the recent changes have to be transferred via the cloud (and Apple has optimized the transaction logs to be very small).
 

@@ -7,7 +7,7 @@ original_language: en
 published: 2024-07-02
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:67a612dc4c63b324'
 translated: false
 ---
@@ -22,9 +22,9 @@ translated: false
 
 ## [AnyObject](#)
 
-When is AnyObject not AnyObject? When it’s a protocol type.more
+When is AnyObject not AnyObject? When it’s a protocol type.
 
-Swift has a type called AnyObject that represents a single reference-counted object, with no available operations.[1](#fn:objc) This doesn’t sound very useful, but sometimes you’re just using the object for its lifetime (a sort of dynamic RAII), and other times you’re planning to downcast it to a concrete type.
+Swift has a type called AnyObject that represents a single reference-counted object, with no available operations.^[1](#fn:objc) This doesn’t sound very useful, but sometimes you’re just using the object for its lifetime (a sort of dynamic RAII), and other times you’re planning to downcast it to a concrete type.
 
 AnyObject can also be used as a generic constraint. If you use `T: AnyObject`, you’re guaranteed that T will have that single-object-reference representation. This allows you to have `weak` and `unowned` references to T, as you might expect.
 
@@ -34,7 +34,7 @@ What you might run into, though, is that `any MyDelegate` is not itself AnyObjec
 
 (What?)
 
-If you try to use `any MyDelegate` as a `T: AnyObject`, you’ll find the compiler is unhappy with you. Even though every concrete MyDelegate type is a valid AnyObject type, `any MyDelegate` itself is not. Why not? Because it carries more information than just a single object reference: it also has a “witness table” pointer, the run-time representation of a protocol conformance. That’s how protocol types (`any` types) _work_ in Swift: they have the normal value, stored in-line or out-of-line depending on size, plus the additional witness table that’s full of method pointers, basically. When you call a protocol method through an `any` type, the code at run time will look in the table that was given, and pull out the appropriate implementation of that method, then call it using the value part as `self`.[2](#fn:extension)
+If you try to use `any MyDelegate` as a `T: AnyObject`, you’ll find the compiler is unhappy with you. Even though every concrete MyDelegate type is a valid AnyObject type, `any MyDelegate` itself is not. Why not? Because it carries more information than just a single object reference: it also has a “witness table” pointer, the run-time representation of a protocol conformance. That’s how protocol types (`any` types) _work_ in Swift: they have the normal value, stored in-line or out-of-line depending on size, plus the additional witness table that’s full of method pointers, basically. When you call a protocol method through an `any` type, the code at run time will look in the table that was given, and pull out the appropriate implementation of that method, then call it using the value part as `self`.^[2](#fn:extension)
 
 But wait, Objective-C never had this problem! The `id <MyDelegate>` type doesn’t take up more than a single-object-reference to store! But that’s because ObjC protocols aren’t represented as tables of methods; they’re just promises that the implementing class _has_ methods with particular names. So the “table” for a protocol is the same as the “table” for _all_ of a class’s methods…at the cost of a single namespace for method names (selectors) and a bit of extra overhead on app launch and on method calls. And that’s stored in the type, and every object knows its type, so there’s no secondary pointer attached to the value.
 

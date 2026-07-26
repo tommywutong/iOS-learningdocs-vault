@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:0b80e1a815648571'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 For your debugging pleasure: a DebugBreak() macro to programmatically stop the debugger at a line of code (not inside a child function). Some of this code can be found elsewhere but I present it here, PPC and Intel capable and ready to run.
 
-> Fixed assembler statements so that they work again.
+> **Updated July 31, 2008:** Fixed assembler statements so that they work again.
 
 ## Why programmatically stop the debugger?
 
@@ -34,6 +34,7 @@ The way around this stack issue is to invoke the sys_kill system call or int mac
 
 ## The code
 
+> **Language note:**  
 > Most code in this blog is Objective-C only but the following code should compile in any of C, Objective-C or C++ under GCC.
 
 Here's the code to do it. Put it in a header somewhere. Maybe even include the header in your .pch (precompiled header) file.
@@ -82,14 +83,10 @@ On PPC platforms, there's more to do (RISC is more wordy than CISC). Relevant PP
 So here's what the PPC assembly code does:
 
 1. loads 20 into register 0
-2. sys_getpid
-
-  ) which returns the process ID of the current process into register 3.
+2. makes a system call, which will be call "20" (sys_getpid) which returns the process ID of the current process into register 3.
 3. wait for "sc" to complete
 4. loads 37 into register 0
 5. loads 2 into register 4
-6. sys_kill
-
-  ) which sends the signal identified by the integer in register 4 (2 = SIGINT) to the process with ID specified by register 3 (our own PID as returned from the last system call).
+6. makes a system call, which will be call "37" (sys_kill) which sends the signal identified by the integer in register 4 (2 = SIGINT) to the process with ID specified by register 3 (our own PID as returned from the last system call).
 
 If you're wondering what the : : : "memory","r0","r3","r4" stuff is all about, it's just telling the compiler that the assembly block may alter the contents of "memory" and registers 0, 3 and 4.

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dab095326a94b153'
 translated: false
 ---
@@ -48,6 +48,8 @@ We need four different color values:
 - The caustic color (brighter than background and incorporating a subtle hue change)
 
 Once we have these values, we can simply create a gradient out of them.
+
+> I'm going to use a CoreGraphics CGShadingRef. It would be possible to produce a fairly similar effect using an NSGradient but that class only handles constant-slope gradients and I want to incorporate a subtle exponential in the gradients.
 
 ## The gloss highlight color
 

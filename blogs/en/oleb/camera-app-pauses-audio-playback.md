@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5de833b233f927b3'
 translated: false
 ---
@@ -19,6 +19,12 @@ translated: false
 I tweeted this yesterday:
 
 > Launching the camera app still halts music playback on iOS 9.3. I’m starting to think Apple doesn’t see this as a bug (but why?).
+> 
+> [@olebegemann](https://twitter.com/olebegemann)
+> 
+> Ole Begemann
+> 
+> [March 21, 2016 22:57 GMT](https://twitter.com/olebegemann/status/712049266894741504)
 
 The replies I got varied wildly between [agreement that this is extremely annoying](https://twitter.com/mjtsai/status/712120360129454081) to various explanation attempts or confusion because it doesn’t happen all the time on every device. So let’s try to take this apart.
 
@@ -39,6 +45,12 @@ I can imagine many situations where I would want music playback to continue whil
 **Apple indeed sees this as a bug.** Many thanks to Elliott Harris, who works on the camera team at Apple and replied to me on Twitter:
 
 > It’s definitely seen as a bug.
+> 
+> [@eharris](https://twitter.com/eharris)
+> 
+> Elliott Harris
+> 
+> [March 22, 2016 14:08 GMT](https://twitter.com/eharris/status/712279668351586304)
 
 Fingers crossed for iOS 10.
 

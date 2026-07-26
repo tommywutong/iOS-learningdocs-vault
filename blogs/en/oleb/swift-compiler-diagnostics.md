@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e9e5f482638d4fc4'
 translated: false
 ---
@@ -58,7 +58,7 @@ Really, I have no idea what you want to tell me.
 
 Let’s try the same in Xcode 7 beta 5:
 
-![The Swift compiler displays an error message in Xcode](https://oleb.net/media/swift-compiler-error-message.png)
+[![The Swift compiler displays an error message in Xcode](https://oleb.net/media/swift-compiler-error-message.png)](https://oleb.net/media/swift-compiler-error-message.png)
 
 <sub>With the right error message, the fix is trivial.</sub>
 

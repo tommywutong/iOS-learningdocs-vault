@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:63c82f952e31e224'
 translated: false
 ---
@@ -133,13 +133,7 @@ The "`for`" loop is an annoying necessity: if you don't do this for a CoreAnimat
 
 ## Conclusion
 
-> Quartzeroids2 Part 1 (20kb)
-> 
-> which shows the full implementation of the window,
-> 
-> and
-> 
-> .
+> You can download [Quartzeroids2 Part 1 (20kb)](https://www.cocoawithlove.com/assets/objc-era/Quartzeroids2Part1.zip) which shows the full implementation of the window, `contentView` and `backgroundLayer`.
 
 A simple as this game is, it is too big to describe in one post — this is as far as I'll get this week. I've presented a few goals, a rough design and the window management code for the game.
 

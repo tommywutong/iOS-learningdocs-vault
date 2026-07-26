@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b953bf0ad46292cb'
 translated: false
 ---
@@ -22,9 +22,9 @@ With Xcode 4, Apple improved the way Code Signing works for distribution builds 
 
 # Use the same build process for Ad Hoc and App Store builds
 
-In the past, the process of preparing a build for Ad Hoc distribution varied slightly from the steps required to make a build for the App Store. In addition to requiring different provisioning profiles, an Ad Hoc build required you to create an `Entitlements.plist` file, uncheck the `get-task-allow` option and include this file in your build settings. This difference usually meant you would create separate build configurations for Ad Hoc and one for App Store distribution in Xcode. It also meant you had to create a fresh build of your app when it was ready for the App Store rather than using the last Ad Hoc build that had been successfully tested by our beta testers[1](#fn:1).
+In the past, the process of preparing a build for Ad Hoc distribution varied slightly from the steps required to make a build for the App Store. In addition to requiring different provisioning profiles, an Ad Hoc build required you to create an `Entitlements.plist` file, uncheck the `get-task-allow` option and include this file in your build settings. This difference usually meant you would create separate build configurations for Ad Hoc and one for App Store distribution in Xcode. It also meant you had to create a fresh build of your app when it was ready for the App Store rather than using the last Ad Hoc build that had been successfully tested by our beta testers^[1](#fn:1).
 
-With Xcode 4, this is no longer necessary. While you still need to sign your app with different provisioning profiles for Ad Hoc and App Store distribution, the code signing can be deferred until after building and archiving[2](#fn:2). Ad Hoc builds no longer require special Code Signing Entitlements so you can use a single build configuration for all your release builds.
+With Xcode 4, this is no longer necessary. While you still need to sign your app with different provisioning profiles for Ad Hoc and App Store distribution, the code signing can be deferred until after building and archiving^[2](#fn:2). Ad Hoc builds no longer require special Code Signing Entitlements so you can use a single build configuration for all your release builds.
 
 # Step by Step Guide to Code Signing with Xcode 4
 
@@ -33,13 +33,13 @@ With Xcode 4, this is no longer necessary. While you still need to sign your app
 3. If you have created separate build configurations for Ad Hoc and App Store builds, you can also delete them (unless you are using any custom build settings to customize these builds in another way than code signing). The default “Release” build configuration is enough.
 4. The “Code Signing Identity” setting in your target’s Build Settings can be set to your default development provisioning profile (“iPhone Developer”) for both the Debug and the Release configuration. The actual code signing for distribution will be done separately after the build.
 
-  ![Code Signing Build Settings in Xcode 4](https://oleb.net/media/xcode4-code-signing-build-settings.png)
+  [![Code Signing Build Settings in Xcode 4](https://oleb.net/media/xcode4-code-signing-build-settings.png)](https://oleb.net/media/xcode4-code-signing-build-settings.png)
 
   <sub>You can use your default development provisioning profile to sign all builds initially. The correct signing for distribution builds is deferred until later.</sub>
 
   **Update:** Colin Humber, developer at [TestFlight](http://testflightapp.com/), made me aware of a potential problem with this approach. Apparently, the App ID of the provisioning profile that is used for building the app is hardcoded into the binary during the build process. If you later resign the app with a provisioning profile that belongs to different App ID, the one in the binary will no longer match the provisioning profile’s App ID since the binary will not be recompiled. This can cause all sorts of problems with services that rely on the App ID, such as access to the keychain, Push Notifications, or In-App Purchasing.
 
-  ![Hex editor showing the App ID in an iOS app binary](https://oleb.net/media/ios-binary-hex-containing-app-id.png)
+  [![Hex editor showing the App ID in an iOS app binary](https://oleb.net/media/ios-binary-hex-containing-app-id.png)](https://oleb.net/media/ios-binary-hex-containing-app-id.png)
 
   <sub>The App ID of the provisioning profile that is used for building the app is embedded in the application binary.</sub>
 

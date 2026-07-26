@@ -7,7 +7,7 @@ original_language: en
 published: 2026-04-12
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:90b3f001f894e795'
 translated: false
 ---
@@ -44,15 +44,9 @@ wild does not yet implement `--gdb-index` — it silently warns and skips, produ
 
 A few observations before diving in:
 
-- surcharge on the Chromium link is
-
-  for lld (5.65 s → 7.07 s) versus
-
-  for mold (2.86 s → 4.20 s). This is currently one of the biggest remaining gaps.
-- , mold is 1.47x–1.97x as fast and wild 2.50x–2.78x as fast on this machine. There is plenty of room left.
-- (workload 1) has collapsed from 1.262 s to 941 ms, a 1.34x speedup over ~15 weeks. Most of that came from the parallel
-
-  mark, parallel input loading, and the task-runtime cleanup below — each contributing a multiplicative factor.
+- The `--gdb-index` surcharge on the Chromium link is `+1.42 s` for lld (5.65 s → 7.07 s) versus `+1.33 s` for mold (2.86 s → 4.20 s). This is currently one of the biggest remaining gaps.
+- Excluding `--gdb-index`, mold is 1.47x–1.97x as fast and wild 2.50x–2.78x as fast on this machine. There is plenty of room left.
+- `clang-23 Release+Asserts --gc-sections` (workload 1) has collapsed from 1.262 s to 941 ms, a 1.34x speedup over ~15 weeks. Most of that came from the parallel `--gc-sections` mark, parallel input loading, and the task-runtime cleanup below — each contributing a multiplicative factor.
 
 ### macOS (Apple M4) notes
 
@@ -71,31 +65,15 @@ Garbage collection had been a single-threaded BFS over `InputSection` graph. On 
 
 [commit 6f9646a598f2](https://github.com/llvm/llvm-project/commit/6f9646a598f25efa3c4db066d2d51fb248b13526) adds `markParallel`, a level-synchronized BFS. Each BFS level is processed with `parallelFor`; newly discovered sections land in per-thread queues, which are merged before the next level. The parallel path activates when `!TrackWhyLive && partitions.size() == 1`. Implementation details that turned out to matter:
 
-- ) before pushing to the next-level queue. Shallow reference chains stay hot in cache and avoid queue overhead.
+- Depth-limited inline recursion (`depth < 3`) before pushing to the next-level queue. Shallow reference chains stay hot in cache and avoid queue overhead.
 - Optimistic "load then compare-exchange" section-flag dedup instead of atomic fetch-or. The vast majority of sections are visited once, so the load almost always wins.
 
 On the Release+Asserts clang link, `markLive` dropped from 315 ms to 82 ms at `--threads=8` (from 199 ms to 50 ms at `--threads=16`); total wall time 1.16x–1.18x.
 
 Two prerequisite cleanups were needed for correctness:
 
-- commit 6a874161621e
-
-  moved
-
-  into the existing
-
-  . The bitfield was previously racing with other mark threads.
-- commit 2118499a898b
-
-  decoupled
-
-  from the mark walk.
-
-  used to flip
-
-  inside
-
-  , which would have required coordinated writes across threads; it is now a post-GC scan of global symbols.
+- [commit 6a874161621e](https://github.com/llvm/llvm-project/commit/6a874161621ec52b8efa125790e3e8e72bb9167a) moved `Symbol::used` into the existing `std::atomic<uint16_t> flags`. The bitfield was previously racing with other mark threads.
+- [commit 2118499a898b](https://github.com/llvm/llvm-project/commit/2118499a898b514f70fb1754ad8713a4267f7bd3) decoupled `SharedFile::isNeeded` from the mark walk. `--as-needed` used to flip `isNeeded` inside `resolveReloc`, which would have required coordinated writes across threads; it is now a post-GC scan of global symbols.
 
 ## Parallelize input file loading
 
@@ -105,31 +83,9 @@ Historically, `LinkerDriver::createFiles` walked the command line and called `ad
 
 A few subtleties made this harder than it sounds:
 
-- and fatLTO construction call
-
-  /
-
-  , both of which are non-thread-safe
-
-  /
-
-  . I serialized those constructors behind a mutex; pure-ELF links hit it zero times.
-- directly. To keep the output deterministic across
-
-  values, each job now accumulates into a per-job
-
-  which is merged into
-
-  in command-line order.
-- used to be assigned inside the
-
-  constructor from a global counter. With parallel construction the assignment race would have been unobservable but still ugly;
-
-  b6c8cba516daabced0105114a7bcc745bc52faae
-
-  hoists
-
-  into the serial driver loop and stores the value into each file after construction.
+- `BitcodeFile` and fatLTO construction call `ctx.saver` / `ctx.uniqueSaver`, both of which are non-thread-safe `StringSaver` / `UniqueStringSaver`. I serialized those constructors behind a mutex; pure-ELF links hit it zero times.
+- Thin-archive member buffers used to be appended to `ctx.memoryBuffers` directly. To keep the output deterministic across `--threads` values, each job now accumulates into a per-job `SmallVector` which is merged into `ctx.memoryBuffers` in command-line order.
+- `InputFile::groupId` used to be assigned inside the `InputFile` constructor from a global counter. With parallel construction the assignment race would have been unobservable but still ugly; [b6c8cba516daabced0105114a7bcc745bc52faae](https://github.com/llvm/llvm-project/commit/b6c8cba516daabced0105114a7bcc745bc52faae) hoists `++nextGroupId` into the serial driver loop and stores the value into each file after construction.
 
 The output is byte-identical to the old lld and deterministic across `--threads` values, which I verified with `diff` across `--threads={1,2,4,8}` on Chromium.
 
@@ -139,15 +95,9 @@ A `--time-trace` breakdown is useful to set expectations. On Chromium, the seria
 
 Relocation scanning has been parallel since LLVM 17, but three cases had opted out via `bool serial`:
 
-1. , because
-
-  merged relative and non-relative relocations and needed deterministic ordering.
-2. is mutated during scanning.
-3. (a
-
-  of
-
-  pairs) was written without a lock.
+1. `-z nocombreloc`, because `.rela.dyn` merged relative and non-relative relocations and needed deterministic ordering.
+2. MIPS, because `MipsGotSection` is mutated during scanning.
+3. PPC64, because `ctx.ppc64noTocRelax` (a `DenseSet` of `(Symbol*, offset)` pairs) was written without a lock.
 
 [commit 076226f378df](https://github.com/llvm/llvm-project/commit/076226f378df115622d0d959e975ee7c7fb3c051) and [commit dc4df5da886e](https://github.com/llvm/llvm-project/commit/dc4df5da886e09d36577b3302952bc91b5e7e154) separate relative and non-relative dynamic relocations unconditionally and always build `.rela.dyn` with `combreloc=true`; the only remaining effect of `-z nocombreloc` is suppressing `DT_RELACOUNT`. [commit 2f7bd4fa9723](https://github.com/llvm/llvm-project/commit/2f7bd4fa97232dfab7f2347c745005eb9e2ffd2d) then protects `ctx.ppc64noTocRelax` with the already-existing `ctx.relocMutex`, which is only taken on rare slow paths. After these changes, only MIPS still runs scanning serially.
 
@@ -157,44 +107,8 @@ Relocation scanning used to go through a generic loop in `Relocations.cpp` that 
 
 The fix is to move the whole per-section scan loop into target-specific code, so each `Target::scanSection` / `scanSectionImpl` pair can inline its own `getRelExpr`, handle TLS optimization in-place, and specialize for the two or three relocation kinds that dominate on that architecture. Rolled out across most backends in early 2026:
 
-- 4b887533389c
-
-  x86 (i386 / x86-64). On lld's own object files,
-
-  and
-
-  make up ~95% of relocations and now hit an inlined hot path.
-- 371e0e2082e9
-
-  AArch64,
-
-  4ea72c1e8cbd
-
-  RISC-V,
-
-  cd01e6526af6
-
-  LoongArch,
-
-  c04b00de7508
-
-  ARM,
-
-  6d9169553029
-
-  Hexagon,
-
-  aec1c984266c
-
-  SystemZ,
-
-  5e87f8147d68
-
-  PPC32,
-
-  aecc4997bf12
-
-  PPC64.
+- [4b887533389c](https://github.com/llvm/llvm-project/commit/4b887533389c78e3e678b3af85d1dc8e3bf59e83) x86 (i386 / x86-64). On lld's own object files, `R_X86_64_PC32` and `R_X86_64_PLT32` make up ~95% of relocations and now hit an inlined hot path.
+- [371e0e2082e9](https://github.com/llvm/llvm-project/commit/371e0e2082e9) AArch64, [4ea72c1e8cbd](https://github.com/llvm/llvm-project/commit/4ea72c1e8cbd) RISC-V, [cd01e6526af6](https://github.com/llvm/llvm-project/commit/cd01e6526af6) LoongArch, [c04b00de7508](https://github.com/llvm/llvm-project/commit/c04b00de7508) ARM, [6d9169553029](https://github.com/llvm/llvm-project/commit/6d9169553029) Hexagon, [aec1c984266c](https://github.com/llvm/llvm-project/commit/aec1c984266c) SystemZ, [5e87f8147d68](https://github.com/llvm/llvm-project/commit/5e87f8147d68) PPC32, [aecc4997bf12](https://github.com/llvm/llvm-project/commit/aecc4997bf12) PPC64.
 
 Besides devirtualization, inlining TLS relocation handling into `scanSectionImpl` let the TLS-optimization-specific expression kinds be replaced with general ones: `R_RELAX_TLS_GD_TO_LE` / `R_RELAX_TLS_LD_TO_LE` / `R_RELAX_TLS_IE_TO_LE` fold into `R_TPREL`, `R_RELAX_TLS_GD_TO_IE` folds into `R_GOT_PC`, and `getTlsGdRelaxSkip` goes away. What remains in the shared dispatch path — `getRelExpr` called from `relocateNonAlloc` and `relocateEH` — is a much smaller set.
 
@@ -206,16 +120,8 @@ Merge sections (`SHF_MERGE`) split their input into "pieces". Every reference in
 
 [commit 42cc45477727](https://github.com/llvm/llvm-project/commit/42cc454777274a06933abcd098ec3281158717f9) changes this in two ways:
 
-1. uses
-
-  directly.
-2. symbols pointing into merge sections, the piece index is pre-resolved during
-
-  and packed into
-
-  as
-
-  .
+1. For non-string fixed-size merge sections, `getSectionPiece` uses `offset / entsize` directly.
+2. For non-section `Defined` symbols pointing into merge sections, the piece index is pre-resolved during `splitSections` and packed into `Defined::value` as `((pieceIdx + 1) << 32) | intraPieceOffset`.
 
 The binary search is now limited to references via section symbols (addend-based), which is common on AArch64 but rare on x86-64 where the assembler emits local labels for `.L` references into mergeable strings. The clang-relassert link with `--gc-sections` is 1.05x as fast.
 
@@ -223,86 +129,14 @@ The binary search is now limited to references via section symbols (addend-based
 
 All of the wins above rely on `llvm/lib/Support/Parallel.cpp`, the tiny work-stealing-ish task runtime shared by lld, dsymutil, and a handful of debug-info tools. Four changes in that file mattered:
 
-- commit c7b5f7c635e2
-
-  —
-
-  used to pre-split work into up to
-
-  (1024) tasks and spawn each through the executor's mutex + condvar. It now spawns only
-
-  workers; each grabs the next chunk via an atomic
-
-  . On a clang-14 link (
-
-  ), futex calls dropped from ~31K to ~1.4K (glibc release+asserts); wall time 927 ms → 879 ms. This is the reason the parallel mark and parallel scan numbers are worth quoting at all — on the old runtime, spawn overhead was a real fraction of the work being parallelized.
-- commit 9085f74018a4
-
-  —
-
-  replaced the mutex-based
-
-  with an atomic
-
-  and passes the
-
-  through
-
-  so the worker calls
-
-  directly. Eliminates one
-
-  construction per spawn.
-- commit 5b1be759295c
-
-  — removed the
-
-  abstract base class.
-
-  was always the only implementation;
-
-  and
-
-  are now direct calls instead of virtual dispatches.
-- commit 8daaa26efdda
-
-  — enables nested parallel
-
-  via work-stealing. Historically, nested groups ran serially to avoid deadlock (the thread that was supposed to run a nested task might be blocked in the outer group's
-
-  ). Worker threads now actively execute tasks from the queue while waiting, instead of just blocking. Root-level groups on the main thread keep the efficient blocking
-
-  , so the common non-nested case pays nothing. In lld this lets
-
-  calls with internal parallelism (
-
-  ,
-
-  ) parallelize automatically when called from inside
-
-  , instead of degenerating to serial execution on a worker thread — which was the exact situation
-
-  D131247
-
-  had worked around by threading a root
-
-  all the way down.
+- [commit c7b5f7c635e2](https://github.com/llvm/llvm-project/commit/c7b5f7c635e2534a9b2b2b204998b0bc39921b7e) — `parallelFor` used to pre-split work into up to `MaxTasksPerGroup` (1024) tasks and spawn each through the executor's mutex + condvar. It now spawns only `ThreadCount` workers; each grabs the next chunk via an atomic `fetch_add`. On a clang-14 link (`--threads=8`), futex calls dropped from ~31K to ~1.4K (glibc release+asserts); wall time 927 ms → 879 ms. This is the reason the parallel mark and parallel scan numbers are worth quoting at all — on the old runtime, spawn overhead was a real fraction of the work being parallelized.
+- [commit 9085f74018a4](https://github.com/llvm/llvm-project/commit/9085f74018a4f465afa84815d64af850f09b733f) — `TaskGroup::spawn()` replaced the mutex-based `Latch::inc()` with an atomic `fetch_add` and passes the `Latch&` through `Executor::add()` so the worker calls `dec()` directly. Eliminates one `std::function` construction per spawn.
+- [commit 5b1be759295c](https://github.com/llvm/llvm-project/commit/5b1be759295c4a2f357fbad852e04c74fc012dc1) — removed the `Executor` abstract base class. `ThreadPoolExecutor` was always the only implementation; `add()` and `getThreadCount()` are now direct calls instead of virtual dispatches.
+- [commit 8daaa26efdda](https://github.com/llvm/llvm-project/commit/8daaa26efdda3802f73367d844b267bda3f84cbe) — enables nested parallel `TaskGroup` via work-stealing. Historically, nested groups ran serially to avoid deadlock (the thread that was supposed to run a nested task might be blocked in the outer group's `sync()`). Worker threads now actively execute tasks from the queue while waiting, instead of just blocking. Root-level groups on the main thread keep the efficient blocking `Latch::sync()`, so the common non-nested case pays nothing. In lld this lets `SyntheticSection::writeTo` calls with internal parallelism (`GdbIndexSection`, `MergeNoTailSection`) parallelize automatically when called from inside `OutputSection::writeTo`, instead of degenerating to serial execution on a worker thread — which was the exact situation [D131247](https://reviews.llvm.org/D131247) had worked around by threading a root `TaskGroup` all the way down.
 
 ## Small wins worth mentioning
 
-- 036b755daedb
-
-  parallelizes
-
-  . Each file collects local
-
-  pointers in a per-file vector via
-
-  , which are merged into the symbol table serially. Linking clang-14 (
-
-  ) with its 208K
-
-  entries is 1.04x as fast.
+- [036b755daedb](https://github.com/llvm/llvm-project/commit/036b755daedb) parallelizes `demoteAndCopyLocalSymbols`. Each file collects local `Symbol*` pointers in a per-file vector via `parallelFor`, which are merged into the symbol table serially. Linking clang-14 (`--no-gc-sections`) with its 208K `.symtab` entries is 1.04x as fast.
 
 The xxh3 `hash_combine` swap ([71d78b2220e4](https://github.com/llvm/llvm-project/commit/71d78b2220e4dc4b022fd74aec16ed8d93fc419e)) and the `Symbol` constructor-init plus redundant-`memset` removal ([905a88b92343](https://github.com/llvm/llvm-project/commit/905a88b923433eb8cd83677ea55bee82eb9ba498), [20b0089ea340](https://github.com/llvm/llvm-project/commit/20b0089ea340d6c9355e631c81f0ce82d80263e5)) have minor improvements.
 
@@ -338,20 +172,8 @@ Meaningful gaps, in order of absolute impact:
 
 **`markLive`: 76 ms, 3.7x faster than the Feb 1 baseline (285 ms).** This is apples-to-oranges comparison: lld supports `__start_`/`__stop_` edges, `SHF_LINK_ORDER` dependencies, linker scripts `KEEP`, and others features. lld correctly handles `--gc-sections --as-needed` with `Symbol::used` (tests `gc-sections-shared.s`, `weak-shared-gc.s`, `as-needed-not-in-regular.s`):
 
-- : it emits
-
-  for DSOs referenced only via weak relocs, and for DSOs referenced only from GC'd sections. It also retains undefined symbols that are only reachable from dead sections in
-
-  .
-- : weak-only references do not force
-
-  (matching lld), but DSOs referenced only from GC'd sections still get
-
-  entries. wild does drop the corresponding undefined symbols from
-
-  , so its
-
-  decision and its symtab-inclusion decision diverge slightly.
+- **mold over-approximates `DT_NEEDED` on two axes**: it emits `DT_NEEDED` for DSOs referenced only via weak relocs, and for DSOs referenced only from GC'd sections. It also retains undefined symbols that are only reachable from dead sections in `.dynsym`.
+- **wild handles weak refs correctly but not dead-section refs**: weak-only references do not force `DT_NEEDED` (matching lld), but DSOs referenced only from GC'd sections still get `DT_NEEDED` entries. wild does drop the corresponding undefined symbols from `.dynsym`, so its `DT_NEEDED` decision and its symtab-inclusion decision diverge slightly.
 - **lld is strictest on all three axes**
 
 **Scan relocations: 91 ms vs 61 ms.** Clean 1.5x ratio, small absolute. Target-specific scanning (the `Add target-specific relocation scanning for …`) removed some dispatch overhead; what remains is `InputSectionBase::relocations` overhead. wild folds relocation-driven liveness into `Find required sections`, which is why there's no separate wild row.

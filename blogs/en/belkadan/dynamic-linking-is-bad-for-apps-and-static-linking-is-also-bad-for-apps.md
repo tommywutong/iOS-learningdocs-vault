@@ -7,7 +7,7 @@ original_language: en
 published: 2022-02-21
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2a7dca0bec4ebfd7'
 translated: false
 ---
@@ -22,7 +22,7 @@ translated: false
 
 ## [Dynamic Linking Is Bad For Apps And Static Linking Is Also Bad For Apps](#)
 
-[A recent question on the Swift forums](https://forums.swift.org/t/exported-and-fixing-import-visibility/9415/63) prompted me to actually write this blog post I’ve been idly thinking about for a long time. These days, it’s common for apps to have external dependencies, but both statically linking and dynamically linking those dependencies comes with drawbacks. (This is the same thing as the title, only less provocative.) Why is there this tension and what can be done about it?more
+[A recent question on the Swift forums](https://forums.swift.org/t/exported-and-fixing-import-visibility/9415/63) prompted me to actually write this blog post I’ve been idly thinking about for a long time. These days, it’s common for apps to have external dependencies, but both statically linking and dynamically linking those dependencies comes with drawbacks. (This is the same thing as the title, only less provocative.) Why is there this tension and what can be done about it?
 
 > UPDATE: At WWDC 2023, Apple announced “[mergeable libraries](https://developer.apple.com/documentation/xcode/configuring-your-project-to-use-mergeable-libraries)”: dynamic libraries with sufficient metadata to be statically linked into a client that chooses to do so. I’m super excited about this because they seem to address nearly all the trade-offs I discuss here. You can learn more about them in [an excellent presentation by engineer Cyndy Ishida](https://developer.apple.com/videos/play/wwdc2023/10268). I’ll talk more about them at the end of this post, but let’s summarize it as “Mergeable Libraries Are Meant For Apps”!
 
@@ -39,9 +39,9 @@ This post is going to focus on the third category; maybe I’ll come back to tal
 
 ### Dynamic linking is for flexibility
 
-The names hint at what’s different: static linking means the library is merged into your app ahead of time (when the app is built); dynamic linking means the library will be loaded into the process when the app is launched. This means not only allocating memory for the code in the dynamic library (and loading any of _its_ dependencies), but also fixing up the places where the main app tries to use APIs from the library so that they point to where the code is being loaded, not to mention just the baseline work of reading from additional files on disk.[1](#fn:aslr)
+The names hint at what’s different: static linking means the library is merged into your app ahead of time (when the app is built); dynamic linking means the library will be loaded into the process when the app is launched. This means not only allocating memory for the code in the dynamic library (and loading any of _its_ dependencies), but also fixing up the places where the main app tries to use APIs from the library so that they point to where the code is being loaded, not to mention just the baseline work of reading from additional files on disk.^[1](#fn:aslr)
 
-What’s all this for? Flexibility…that the app probably isn’t using. With libraries in categories 1 and 2, dynamic linking allows apps to keep working even when libraries get updated for bug fixes and performance improvements. It can even be used to _replace_ a dependency, say, with a version of a library that does extra checks for debugging purposes, or one from a _different vendor_ that provides a compatible implementation of the public interface.[2](#fn:swift)
+What’s all this for? Flexibility…that the app probably isn’t using. With libraries in categories 1 and 2, dynamic linking allows apps to keep working even when libraries get updated for bug fixes and performance improvements. It can even be used to _replace_ a dependency, say, with a version of a library that does extra checks for debugging purposes, or one from a _different vendor_ that provides a compatible implementation of the public interface.^[2](#fn:swift)
 
 But for category 3, all this flexibility is wasted. The libraries are shipped with the app; if you want to update the libraries, you can ship an update to the app. (I’m glad _that’s_ a solved problem in 2022.)
 
@@ -53,7 +53,7 @@ Static linking doesn’t have any of this wasted work. You’re taking a library
 
 The problem is that this only works nicely if you have exactly one executable. In a modern iOS app, like, oh, let’s say [Signal](https://twitter.com/UINT_MIN/status/1310718499719794688), there are usually several: the main app, but also _extensions_ that the OS can spin up for specific purposes. In Signal’s case, there’s a “share extension” (to work with the standard system share sheet), and a “notification service extension” (to handle push notifications without having to launch the whole app). Both of these use only a subset of the libraries that the main app uses, and indeed iOS _requires_ that with strict limits on processing time and memory usage. But they also share a lot with the main app.
 
-If we static-linked everything, there’d be three copies of the common code, wasting space on the user’s phone. (Not to mention increasing build times.) We can’t even static-link a single mega-library and then dynamically load that, because that would use too many resources in those limited extension contexts.[3](#fn:busybox)
+If we static-linked everything, there’d be three copies of the common code, wasting space on the user’s phone. (Not to mention increasing build times.) We can’t even static-link a single mega-library and then dynamically load that, because that would use too many resources in those limited extension contexts.^[3](#fn:busybox)
 
 ### They don’t mix
 
@@ -69,7 +69,7 @@ But if you can’t rely on that, the rule of thumb is that you can only use stat
 
 ### The static archive format is also bad
 
-Dynamic libraries have an actual format. Static libraries are a bunch of object files glued together, at least on Unixy systems like iOS _and_ Android. [Seriously!](https://en.wikipedia.org/wiki/Ar_(Unix)) The standard extension is `.a`, for “archive”. The base format is so old it predates today’s more common `tar` (and forget about `zip`). And, like, old doesn’t mean bad, so instead I’ll complain about how this approach wastes a bunch of space: any functions that are copied into more than one object file are going to preserve all the copies instead of deduplicating them like proper linking does.[4](#fn:copied)
+Dynamic libraries have an actual format. Static libraries are a bunch of object files glued together, at least on Unixy systems like iOS _and_ Android. [Seriously!](https://en.wikipedia.org/wiki/Ar_(Unix)) The standard extension is `.a`, for “archive”. The base format is so old it predates today’s more common `tar` (and forget about `zip`). And, like, old doesn’t mean bad, so instead I’ll complain about how this approach wastes a bunch of space: any functions that are copied into more than one object file are going to preserve all the copies instead of deduplicating them like proper linking does.^[4](#fn:copied)
 
 But it’s not just about file size. Swift’s `fileprivate`, `internal`, and `public` correspond, ish, to access levels supported by linkers: “only available in this file”, “only available in this library”, and “available to clients”. But because static libraries are just object files glued together, there’s no distinction between the “internal” and “public” parts. This isn’t just about preventing people from using some non-public symbol; it’s how dead-code stripping works across compilation units. Although that’s most useful when you link a static library into a larger program…
 
@@ -83,13 +83,13 @@ What I want is a format that behaves like an object file or static library, but 
 
 I do want to point out that this ought to be a client-side problem, rather than a library-side problem; the split isn’t between static or dynamic _libraries_ as much as static or dynamic _linking._ If you distributed your code in New Super Library Format DX, a client could statically link it as an implementation detail and hide all your public symbols (assuming it’s safe to do so), or they could statically link it and _re-export_ all your public symbols, or they could leave it up to the build system to statically link if it’s safe and dynamically link otherwise, or they could package it in a dynamically-loadable wrapper and use it from multiple executables, or as a plug-in.
 
-This doesn’t fix the fundamental “two copies” problem with static linking, though. The only way I can think of to deal with that is to use dynamic linking, but make it less dynamic: if you link a dynamic library that you _know_ is shipped with the app, you don’t have to search the filesystem for the right library, or match symbols by name at runtime. And the (build-time) linker and (run-time) loader should be able to take that into account.[5](#fn:dyld3)
+This doesn’t fix the fundamental “two copies” problem with static linking, though. The only way I can think of to deal with that is to use dynamic linking, but make it less dynamic: if you link a dynamic library that you _know_ is shipped with the app, you don’t have to search the filesystem for the right library, or match symbols by name at runtime. And the (build-time) linker and (run-time) loader should be able to take that into account.^[5](#fn:dyld3)
 
 But we’re never going to get dynamic libraries down to being as fast to load as static linking, and static linking will always make two copies of a library’s code if there are two executables.
 
 ~~P.S. I didn’t talk to any of the Apple linker folks before writing this post. They very well could be working on improvements here. Same goes for every platform, really. But this is the current state of things.~~
 
-> UPDATE: Apple’s Mergeable Libraries really do seem to be New Super Library Format DX. You can dynamically link against them, or have them “merged” into the client binary, which is effectively static linking. The only remaining tradeoff here is about when you leave the library dynamic because it has multiple dependencies, and that’s hopefully something Apple continues to address in other ways.[5](#fn:dyld3)
+> UPDATE: Apple’s Mergeable Libraries really do seem to be New Super Library Format DX. You can dynamically link against them, or have them “merged” into the client binary, which is effectively static linking. The only remaining tradeoff here is about when you leave the library dynamic because it has multiple dependencies, and that’s hopefully something Apple continues to address in other ways.^[5](#fn:dyld3)
 > 
 > Unfortunately, Apple’s new linker isn’t open source. I haven’t seen anyone discussing bringing the format to [lld](https://lld.llvm.org) or [mold](https://github.com/rui314/mold)/[sold](https://github.com/bluewhalesystems/sold), or to experiment with it for ELF (Linux, Android) as well. And I don’t know enough about Windows to know whether the approach translates at all, though I suspect Windows apps don’t have the same launch time pressures that mobile apps do. (Android has of course merged the _Java_ classes from all your dependencies ahead of time for several years, but to my knowledge those classes’ native dependencies are still second-class citizens.)
 
@@ -110,6 +110,6 @@ But we’re never going to get dynamic libraries down to being as fast to load a
 4. Why would functions be copied into more than one file? If they don’t have a particular object file to call home. `static` C functions defined in header files, instantiations of C++ templates and Rust generics, and the implicit helper functions Swift generates to smooth over interoperation with Objective‑C are all examples of such functions. [↩︎](#fnref:copied)
 5. Apple’s [dyld3](https://developer.apple.com/videos/play/wwdc2017/413/) project was about precomputing a bunch of this information at app install time, or at first launch if the app wasn’t installed from the store. This really can help, and harkens back to the pre-ASLR days of [prebinding](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/FrameworkBinding.html#//apple_ref/doc/uid/20002256-106894-BAJDCHID). But it’s also very after-the-fact, and doesn’t directly work for plug-in-style library loading while the program is already running. (They might have found a way to do some of the same optimizations here too; it’s just trickier.)
 
-  They’re up to [dyld4](https://github.com/apple-oss-distributions/dyld/blob/dyld-940/doc/dyld4.md) now, by the way. [↩︎](#fnref:dyld3) [↩︎2](#fnref:dyld3:1)
+  They’re up to [dyld4](https://github.com/apple-oss-distributions/dyld/blob/dyld-940/doc/dyld4.md) now, by the way. [↩︎](#fnref:dyld3) [↩︎^2](#fnref:dyld3:1)
 
 This entry was posted on [February](https://belkadan.com/blog/2022/02) 21, [2022](https://belkadan.com/blog/2022) and is filed under [Technical](https://belkadan.com/blog/technical). Tags: [Linking](https://belkadan.com/blog/tags/linking)

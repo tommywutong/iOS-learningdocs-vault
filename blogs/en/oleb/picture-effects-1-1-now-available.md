@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8540e7a67d64f7f5'
 translated: false
 ---
@@ -20,13 +20,11 @@ A significant update for my app [Picture Effects](http://pictureeffectsapp.com) 
 
 - iOS 4 multitasking support and high-res graphics for the retina display (finally! Sorry it took me so long).
 - Better rendering performance, especially on the iPad.
-- ShareKit
-
-  library).
+- Built-in sharing to Facebook and Twitter (using the [ShareKit](http://www.getsharekit.com/) library).
 - German localization.
 
 Picture Effects 1.1 requires iOS 3.2 or higher. The price is $2.99.
 
-![Picture Effects 1.1 Screenshot iPhone 4](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPhone-4.png)
+[![Picture Effects 1.1 Screenshot iPhone 4](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPhone-4.png)](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPhone-4.png)
 
-![Picture Effects 1.1 Screenshot iPad](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPad.png)
+[![Picture Effects 1.1 Screenshot iPad](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPad.png)](https://oleb.net/media/Picture-Effects-1.1-Screenshot-iPad.png)

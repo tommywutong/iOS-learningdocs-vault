@@ -252,7 +252,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-11-10-observing-the-a11s-heterogenous-cores.html)
 
 Add your thoughts, post a comment:
 

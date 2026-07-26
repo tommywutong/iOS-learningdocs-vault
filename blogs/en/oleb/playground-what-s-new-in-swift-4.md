@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ad0d8aa04de2c366'
 translated: false
 ---
@@ -20,17 +20,15 @@ I made an Xcode playground that lets you try out many of the new features coming
 
 The cool thing is that you can run the playground right now in Xcode 8.3; you don’t have to wait for the first official Swift 4.0 beta, which will probably come as part of Xcode 9 at WWDC. All you need to do is install [the latest Swift snapshot from swift.org](https://swift.org/download/#snapshots) (don’t worry, it’s easy).
 
-![The What’s new in Swift 4 playground](https://oleb.net/media/whats-new-in-swift-4-playground.png)
+[![The What’s new in Swift 4 playground](https://oleb.net/media/whats-new-in-swift-4-playground.png)](https://oleb.net/media/whats-new-in-swift-4-playground.png)
 
 # Toolchain installation
 
-1. the snapshots download page on swift.org
-
-  and download the latest snapshot for Xcode.
+1. Go to [the snapshots download page on swift.org](https://swift.org/download/#snapshots) and download the latest snapshot for Xcode.^[1](#fn:snapshots)
 2. Run the installer to install the snapshot.
 3. In Xcode, go to _Xcode \> Toolchains \> Manage Toolchains…_ and select the snapshot. It might be a good idea to quit and relaunch Xcode after switching snapshots. I had occasional problems with syntax highlighting and error reporting, and a relaunch fixed them.
 
-  ![Toolchain selection in Xcode 8.3](https://oleb.net/media/xcode-8-3-toolchain-dialog.png)
+  [![Toolchain selection in Xcode 8.3](https://oleb.net/media/xcode-8-3-toolchain-dialog.png)](https://oleb.net/media/xcode-8-3-toolchain-dialog.png)
 
   <sub>Toolchain selection in Xcode.</sub>
 

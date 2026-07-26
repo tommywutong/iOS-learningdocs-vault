@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:bff8bdccc4600a94'
 translated: false
 ---
@@ -28,7 +28,7 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Encoding](htt
 
 14 December 2023
 
-[Protobuf](https://protobuf.dev) is a binary (non-textual) encoding format invented by Google. It has some nice properties and some less nice properties.[1](#fn:recommendation) But one that’s a little frustrating is that it’s _almost_ a streamable format—that is, one where you can process data as it comes in, rather than waiting until you’ve read all of it.
+[Protobuf](https://protobuf.dev) is a binary (non-textual) encoding format invented by Google. It has some nice properties and some less nice properties.^[1](#fn:recommendation) But one that’s a little frustrating is that it’s _almost_ a streamable format—that is, one where you can process data as it comes in, rather than waiting until you’ve read all of it.
 
 [(Continue reading…)](https://belkadan.com/blog/2023/12/Protobuf-Is-Almost-Streamable/?tag=encoding)
 

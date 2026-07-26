@@ -7,7 +7,7 @@ original_language: en
 published: 2026-06-28
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:340231e9e29a9f34'
 translated: false
 ---
@@ -162,10 +162,6 @@ Significant (≥3σ vs. measured noise): 🟢 improvement. Unmarked = within noi
 ## Takeaways
 
 - A bump allocator's fast path is a few instructions of real work wrapped in a realign and accounting; each can be hoisted out of the common case.
-- sentinel folds a null check into the bound compare.
-- unlocks, not the removed micro-op — and it appears as a size
-
-  , not a uniform shrink.
-- (link-enforced) but never on the per-TU
-
-  .
+- Encoding "empty" as a `0` sentinel folds a null check into the bound compare.
+- The measurable instruction-count win is the inlining a cheaper `Allocate` unlocks, not the removed micro-op — and it appears as a size _redistribution_, not a uniform shrink.
+- A layout-affecting member may key on `LLVM_ENABLE_ABI_BREAKING_CHECKS` (link-enforced) but never on the per-TU `LLVM_ADDRESS_SANITIZER_BUILD`.

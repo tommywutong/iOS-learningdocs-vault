@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:02f251ce949ee1bc'
 translated: false
 ---
@@ -25,7 +25,7 @@ Our plan for today:
 - grab latest version of LLVM
 - build it using CMake and llvm-config
 - create simple Swift program (~50 LoC), build and link it against LLVM
-- function in memory and execute it using LLVM interpreter
+- create simple `sum` function in memory and execute it using LLVM interpreter
 
 So, let’s go to town!
 
@@ -353,24 +353,12 @@ As you may see using LLVM from Swift is a bit tricky, but it’s still doable. I
 
 If you curious and want to learn more about the topic, please consider looking at these resources:
 
-- How to get started with the LLVM C API
-
-  - great how-to on LLVM C API. This article basically based on it.
-- Kaleidoscope Tutorials
-
-  - tutorial on implementing simple but powerful language. Currently, there are two versions - for C++ and OCaml.
-- Kaleidoscope Implementation
-
-  - same language as above implemented using Swift. Trove of treasures there.
-- Auspicion
-
-  - LLVM C API bindings for Swift.
-- LLVM.swift
-
-  - another Swift wrapper for LLVM C API.
-- Source code
-
-  - source code for this article.
+- [How to get started with the LLVM C API](https://pauladamsmith.com/blog/2015/01/how-to-get-started-with-llvm-c-api.html) - great how-to on LLVM C API. This article basically based on it.
+- [Kaleidoscope Tutorials](http://llvm.org/docs/tutorial/index.html) - tutorial on implementing simple but powerful language. Currently, there are two versions - for C++ and OCaml.
+- [Kaleidoscope Implementation](https://github.com/bencochran/Kaleidoscope) - same language as above implemented using Swift. Trove of treasures there.
+- [Auspicion](https://github.com/robrix/Auspicion) - LLVM C API bindings for Swift.
+- [LLVM.swift](https://github.com/bencochran/LLVM.swift) - another Swift wrapper for LLVM C API.
+- [Source code](https://github.com/AlexDenisov/swift_llvm) - source code for this article.
 
 Thank you for your attention.
 

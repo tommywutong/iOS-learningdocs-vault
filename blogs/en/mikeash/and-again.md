@@ -30,7 +30,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/and-again.html)
 
 Add your thoughts, post a comment:
 

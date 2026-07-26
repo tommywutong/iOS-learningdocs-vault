@@ -7,7 +7,7 @@ original_language: en
 published: 2023-01-10
 status: frozen
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:eda6c7fbf8e91717'
 translated: false
 ---

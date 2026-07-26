@@ -482,16 +482,14 @@ _For the curious, `__attribute__((malloc))` marks the function as returning a po
 This error handling trick takes a hybrid exception/error-object approach to the problem, and comes with a laundry list of drawbacks:
 
 - Relies heavily on lots of compiler-specific language extensions which are definitely not universally portable
-- , a qualifier which makes no sense to anyone looking at the code on Linux
+- Requires all modified variables in "finally" handlers to use `__block`, a qualifier which makes no sense to anyone looking at the code on Linux
 - Severely abuses the preprocessor, making the actual functionality of the code obscure to a newcomer
 - Severely abuses goto, resulting in a non-linear and unobvious control flow.
 - Any variable that needs to be available in more than one of the blocks of the function must be declared outside the error handler scope
 - Empty "catch" or "finally" handlers can't be ommitted
 - Error handling scopes can't be nested
 - The macros are somewhat poorly named in this implementation
-- object around is cumbersome unless you're used to the
-
-  style of error handling
+- Passing the `error_t` object around is cumbersome unless you're used to the `NSError` style of error handling
 - Probably isn't thread-safe (I haven't tested this)
 - Doesn't emulate either exceptions or error objects perfectly, meaning experience from neither can be fully applied
 - Is in no way superior to simply using C++'s exceptions unless you have an aversion to, or are unable to use, C++
@@ -510,7 +508,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2012-08-24-things-you-never-wanted-to-know-about-c.html)
 
 Add your thoughts, post a comment:
 

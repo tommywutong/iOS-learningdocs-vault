@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:75681ba4a3729ed1'
 translated: false
 ---
@@ -24,11 +24,11 @@ Note that I am no expert on either of the two platforms so my remarks will proba
 
 ## Activities
 
-![Android displaying a list of apps that can receive the content to be shared](https://oleb.net/media/android-app-sharing-text.png)
+[![Android displaying a list of apps that can receive the content to be shared](https://oleb.net/media/android-app-sharing-text.png)](https://oleb.net/media/android-app-sharing-text.png)
 
 <sub>Android displaying a list of apps that can receive the content to be shared.</sub>
 
-A typical Android app consists of several so-called [Activities](https://developer.android.com/guide/topics/fundamentals/activities.html). An activity is an app component that provides a single screen[1](#fn:1) in an app and manages how users can interact with this screen. As such, the concept is somewhat comparable to [view controllers in iOS](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457-CH1-SW1).
+A typical Android app consists of several so-called [Activities](https://developer.android.com/guide/topics/fundamentals/activities.html). An activity is an app component that provides a single screen^[1](#fn:1) in an app and manages how users can interact with this screen. As such, the concept is somewhat comparable to [view controllers in iOS](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007457-CH1-SW1).
 
 But there is an important difference: while iOS view controllers are pretty tightly coupled to the app they belong to, activities on Android are more loosely bound to each other. An Android app can not only launch its own activities but also access and launch activities that have been provided by other apps. This way, activities from many different apps can end up on the activity stack. The user can use the device’s back button to navigate back up the stack, thereby implicitly switching from app to app.
 
@@ -36,7 +36,7 @@ Android uses activities to enable sharing between apps. An Android app has a man
 
 ## Intents
 
-The launch of an activity is done with so-called [Intents](https://developer.android.com/guide/topics/intents/intents-filters.html). Intent is just another name for a message data structure that contains an operation to be performed by the system. One of the several possible message types is to start an activity. Activities to be launched can be either named directly (if you want to launch a specific activity in a specific app) or the intent can specify the predefined action [`ACTION_SEND`](https://developer.android.com/training/sharing/send.html) to indicate that it wants to send data from one activity to another. Based on the data and its type that your app passes to the intent object, the OS will then identify all activities from all apps that can handle this type of data[2](#fn:2) and present them to the user in a list.
+The launch of an activity is done with so-called [Intents](https://developer.android.com/guide/topics/intents/intents-filters.html). Intent is just another name for a message data structure that contains an operation to be performed by the system. One of the several possible message types is to start an activity. Activities to be launched can be either named directly (if you want to launch a specific activity in a specific app) or the intent can specify the predefined action [`ACTION_SEND`](https://developer.android.com/training/sharing/send.html) to indicate that it wants to send data from one activity to another. Based on the data and its type that your app passes to the intent object, the OS will then identify all activities from all apps that can handle this type of data^[2](#fn:2) and present them to the user in a list.
 
 When the user selects the activity/app he wants to use, the system launches the activity and passes it the data contained in the intent object. By default, activities do not report anything back to their caller. A backchannel from the launched to the launching activity can optionally be established by using the [`startActivityForResult()`](https://developer.android.com/reference/android/app/Activity.html#startActivityForResult(android.content.Intent,%20int)) method, however.
 
@@ -46,7 +46,7 @@ I have chosen to take a look at the Windows 8 APIs rather than Windows Phone 7 h
 
 ## Charms
 
-![Windows 8 displaying the Share action in the Charms bar](https://oleb.net/media/windows-8-metro-share-contract.png)
+[![Windows 8 displaying the Share action in the Charms bar](https://oleb.net/media/windows-8-metro-share-contract.png)](https://oleb.net/media/windows-8-metro-share-contract.png)
 
 <sub>Windows 8 displaying the Share action in the Charms bar.</sub>
 
@@ -60,25 +60,17 @@ Each of those charms is related to and governed by a so-called [Contract](http:/
 
 Similar to Android, Metro apps must declare the contracts they support. They can do this either by specifying them in the app’s manifest file or even dynamically at runtime. In the current developer preview release, Windows 8 supports [five contracts](http://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx):
 
-- to search an app’s locally stored content or have an app control a search query that goes out to the web for searching. For example, a YouTube app could offer YouTube online search through this contract.
-- to share content from your app with another app or web service.
-- to play music and video from an app on other connected devices that support the
-
-  DLNA
-
-  standard. This looks similar to Apple’s
-
-  AirPlay
-
-  .
-- to provide access to an app’s settings.
-- to let an app directly pick files from another app. This looks like a very elegant solution to the problem that, when all apps are sandboxed, there does not exist a shared folder on the file system that users could use to exchange files between apps. With this contract, a Dropbox client for Windows Metro could offer the user the option to open files that are in the Dropbox directly from within another app, for example.
+- **Search:** to search an app’s locally stored content or have an app control a search query that goes out to the web for searching. For example, a YouTube app could offer YouTube online search through this contract.
+- **Sharing:** to share content from your app with another app or web service.
+- **Play To:** to play music and video from an app on other connected devices that support the [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance) standard. This looks similar to Apple’s [AirPlay](https://en.wikipedia.org/wiki/AirPlay).
+- **Settings:** to provide access to an app’s settings.
+- **App to App Picking:** to let an app directly pick files from another app. This looks like a very elegant solution to the problem that, when all apps are sandboxed, there does not exist a shared folder on the file system that users could use to exchange files between apps. With this contract, a Dropbox client for Windows Metro could offer the user the option to open files that are in the Dropbox directly from within another app, for example.
 
 ## The Sharing Contract
 
 Let’s have a look at how content sharing works with the Sharing contract. To make this work, the source application must first declare to the OS that it supports the role of acting as a [sharing source](http://msdn.microsoft.com/en-us/library/windows/apps/hh465261.aspx). The application listens for an event that signifies to the app that the user activated the Share charm. In response to this event, it will then create a [`DataPackage`](http://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx) object that contains the content to be shared. DataPackages are very flexible: they can contain any combination of plain text, URLs, HTML, rich text, images, files or arbitrary binary data. The source application passes the packaged data on to the operating system.
 
-If large amounts of data should be shared, or if the format of the data is not yet determined because it is up to the target application to select one of multiple supported formats, the source application can also set up a sharing delegate that only prepares and packages the data once it has been requested by the target application.[3](#fn:3)
+If large amounts of data should be shared, or if the format of the data is not yet determined because it is up to the target application to select one of multiple supported formats, the source application can also set up a sharing delegate that only prepares and packages the data once it has been requested by the target application.^[3](#fn:3)
 
 The OS will now present the user with a list of apps that can handle the shared content. Again, the set of suitable apps is determined by parsing the manifest files of all installed apps. Valid apps are those that support the “Receive Shared Content” contract and have indicated that they can handle the data types the OS is currently dealing with.
 
@@ -96,7 +88,7 @@ So far, Apple’s approach to content sharing in iOS seems to be offering piecem
 
 What’s missing is the generic design. Even if we will see `FBFacebookShareViewController` and `IGInstagramSharePhotoViewController` in the next iOS release, Apple will never be able (or willing) to support a large enough number of sharing services and apps. And interaction between apps via custom URL schemes as currently implemented in iOS also doesn’t cut it: since a source application would need to know about and implement the URL schemes of all potential target apps, this idea just doesn’t scale to 500,000 apps.
 
-A generic sharing API like the ones described above would solve tons of developer issues at one go. For instance, Instapaper developer Marco Arment has been complaining for a long time that [requiring your users to install a bookmarklet in Mobile Safari sucks](http://www.marco.org/2010/10/10/an-open-enhancement-request-to-the-mobile-safari-team). If both Safari and the Instapaper app supported the sharing of URLs and/or web page content, this problem would be solved. Similarly, developers of Twitter apps would no longer have to talk to the Instapaper API directly if they could just share a link with the Instapaper app on the device.[4](#fn:4)
+A generic sharing API like the ones described above would solve tons of developer issues at one go. For instance, Instapaper developer Marco Arment has been complaining for a long time that [requiring your users to install a bookmarklet in Mobile Safari sucks](http://www.marco.org/2010/10/10/an-open-enhancement-request-to-the-mobile-safari-team). If both Safari and the Instapaper app supported the sharing of URLs and/or web page content, this problem would be solved. Similarly, developers of Twitter apps would no longer have to talk to the Instapaper API directly if they could just share a link with the Instapaper app on the device.^[4](#fn:4)
 
 My dream feature for iOS 6 is a combination of the share sheets introduced in Mountain Lion (for displaying the available sharing options) and an implementation similar to Windows 8 contracts that allow for both silent (non-invasive, no UI) and more explicit (with a custom UI like the current mail or tweet compose view controllers) content sharing between apps. If you agree, please [file an enhancement request with Apple](http://bugreport.apple.com/).
 

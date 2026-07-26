@@ -7,7 +7,7 @@ original_language: en
 published: 2016-04-14
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e3f4fc9e9d940830'
 translated: false
 ---
@@ -26,10 +26,10 @@ We need a base level tier of error handling and reporting to the user. This base
 
 First, some quick terminology:
 
-1. is a failed conditional check that results in a function skipping its usual functionality and instead returning an nominated error value.
-2. is a value used to report that an error condition occurred and normal functionality was skipped
-3. is code that looks for errors and performs different actions based on the presence of those errors
-4. communicates an error result from a user task to the user
+1. an **error condition** is a failed conditional check that results in a function skipping its usual functionality and instead returning an nominated error value.
+2. an **error** is a value used to report that an error condition occurred and normal functionality was skipped
+3. **error handling** is code that looks for errors and performs different actions based on the presence of those errors
+4. **error reporting** communicates an error result from a user task to the user
 
 In my previous article, [“Errors: unexpected, composite, non-pure, external”](http://www.cocoawithlove.com/blog/2016/03/17/non-pure-errors.html) I focussed on the first two points and discussed how, from the perspective of the function that _creates_ the error, the error always represents an “unexpected” condition.
 
@@ -282,7 +282,7 @@ If you want to play with the example error handling code used in this article, i
 This article discussed two key points:
 
 1. The importance of propagating errors all the way back to their origin
-2. implementation for diagnostic purposes
+2. Using an error that embeds an `NSErrorRecoveryAttempting` implementation for diagnostic purposes
 
 Combined with some wrapper functions, Swift’s error handling and Cocoa’s error reporting capabilities, these two techniques provide a solid base level of error management that you can start to use, even at a hastily implemented prototype stage, and iteratively replace with better error handling and reporting as needed.
 

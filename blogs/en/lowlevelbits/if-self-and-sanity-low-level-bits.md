@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:5bdcac939debd010'
 translated: false
 ---
@@ -47,9 +47,7 @@ Which is completely OK, but **why should we check if self is nil or not**?
 
 To get the answer let’s take a look at a few possible variations of a constructor:
 
-- returns
-
-  , programmer uses properties (send messages)
+- `super.init` returns `nil`, programmer uses properties (send messages)
 
 ```objective
 self = [super init];
@@ -57,9 +55,7 @@ self.foo = @"Foo";
 return self;
 ```
 
-- returns
-
-  , programmer uses ivars
+- `super.init` returns `nil`, programmer uses ivars
 
 ```objective
 self = [super init];

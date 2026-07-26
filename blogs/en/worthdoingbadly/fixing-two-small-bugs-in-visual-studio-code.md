@@ -7,7 +7,7 @@ original_language: en
 published: 2018-05-24
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3e39cba68f1ae5af'
 translated: false
 ---
@@ -24,8 +24,8 @@ VSCode is my favorite editor, and I wanted to contribute back to this open sourc
 
 Every year, I contribute to one Electron application to keep up with [fellow kids](http://i0.kym-cdn.com/photos/images/original/000/683/526/4b2.gif) and to learn trendy web technologies. Last year, I made [two](https://github.com/desktop/desktop/pull/1677) [patches](https://github.com/desktop/desktop/pull/1678) to the new GitHub Desktop, to learn about TypeScript and the organization of an Electron app. This year, I decided to look at to Visual Studio Code: it’s rapidly becoming my favorite editor, as it’s feature rich, yet never obtrusive like a full IDE, and I wanted a chance to make it even better. Once again, I fixed two interesting bugs, both in the Git extension component. Here are my pull requests:
 
-- #50252: Fix Git merge conflict resolution for “both added” files
-- #50376: Fix `includeIf` support for Git on Windows
+- [#50252: Fix Git merge conflict resolution for “both added” files](https://github.com/Microsoft/vscode/pull/50252)
+- [#50376: Fix `includeIf` support for Git on Windows](https://github.com/Microsoft/vscode/pull/50376)
 
 ## Finding good bugs
 
@@ -39,8 +39,8 @@ I was able to find two bugs that looked simple for a beginner to triage. Both ar
 
 The bugs are:
 
-- #44106: Merge conflict warning when there are none
-- #40354: Git integration does not correctly support `includeIf` directive
+- [#44106: Merge conflict warning when there are none](https://github.com/Microsoft/vscode/issues/44106)
+- [#40354: Git integration does not correctly support `includeIf` directive](https://github.com/Microsoft/vscode/issues/40354)
 
 Now that I identified where I could help, I need to know how I could help.
 
@@ -172,3 +172,5 @@ After applying this change, VSCode loads the Git config from the includeIf direc
 - that regression tests are important for giving contributors confidence that their fix hasn’t broken anything else
 - debugging mysterious problems by narrowing down the differences between execution environments.
 - using Visual Studio Code’s Node debugger (to debug itself)
+
+[https://worthdoingbadly.com/vscodetwofixes/](https://worthdoingbadly.com/vscodetwofixes/)

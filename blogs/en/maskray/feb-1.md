@@ -7,7 +7,7 @@ original_language: en
 published: 2026-02-01
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:be9aeed68158be6a'
 translated: false
 ---
@@ -26,93 +26,23 @@ For the first time, I used an LLM agent (Claude Code) to help look through commi
 
 I'll delve into some of the key changes.
 
-- has been added to redirect garbage collection section listing to a file, avoiding contamination of stdout with other linker output. (
-
-  #159706
-
-  )
-- lexer state has been added for better version script parsing. This brings the lexer behavior closer to GNU ld. (
-
-  #174530
-
-  )
-- #168189
-
-  )
-- and
-
-  are now recognized as RELRO sections, allowing profile-guided static data partitioning. (
-
-  #148920
-
-  )
-- #157043
-
-  )
-- has been added to prepend an argument to the remote compiler's command line. (
-
-  #162456
-
-  )
-- #149265
-
-  ) (
-
-  #151685
-
-  )
-- with synthetic sections and improved handling when patched code is far from the short jump. (
-
-  #170495
-
-  )
-- dynamic relocation type for relocating word-sized data using the return value of a function. (
-
-  #156564
-
-  )
-- relocation type to support deactivation symbols. (
-
-  #133534
-
-  )
-- #147970
-
-  )
-- #165263
-
-  )
-- now synthesizes
-
-  at input section start to preserve alignment information. (
-
-  #153935
-
-  )
-- #172618
-
-  ) (
-
-  #176312
-
-  )
-- #159987
-
-  )
-- #169273
-
-  )
-- now synthesizes
-
-  at input section start to preserve alignment information during two-stage linking. (
-
-  #151639
-
-  ) This is an interesting
-
-  relocatable linking challenge
-
-  for linker relaxation.
+- `--print-gc-sections=<file>` has been added to redirect garbage collection section listing to a file, avoiding contamination of stdout with other linker output. ([#159706](https://github.com/llvm/llvm-project/pull/159706))
+- A `VersionNode` lexer state has been added for better version script parsing. This brings the lexer behavior closer to GNU ld. ([#174530](https://github.com/llvm/llvm-project/pull/174530))
+- Unversioned undefined symbols now use version index 0, aligning with GNU ld 2.46 behavior. ([#168189](https://github.com/llvm/llvm-project/pull/168189))
+- `.data.rel.ro.hot` and `.data.rel.ro.unlikely` are now recognized as RELRO sections, allowing profile-guided static data partitioning. ([#148920](https://github.com/llvm/llvm-project/pull/148920))
+- DTLTO now supports archive members and bitcode members of thin archives. ([#157043](https://github.com/llvm/llvm-project/pull/157043))
+- For DTLTO, `--thinlto-remote-compiler-prepend-arg=<arg>` has been added to prepend an argument to the remote compiler's command line. ([#162456](https://github.com/llvm/llvm-project/pull/162456))
+- Balanced Partitioning (BP) section ordering now skips input sections with null data, and filters out section symbols. ([#149265](https://github.com/llvm/llvm-project/pull/149265)) ([#151685](https://github.com/llvm/llvm-project/pull/151685))
+- For AArch64, fixed a crash when using `--fix-cortex-a53-843419` with synthetic sections and improved handling when patched code is far from the short jump. ([#170495](https://github.com/llvm/llvm-project/pull/170495))
+- For AArch64, added support for the `R_AARCH64_FUNCINIT64` dynamic relocation type for relocating word-sized data using the return value of a function. ([#156564](https://github.com/llvm/llvm-project/pull/156564))
+- For AArch64, added support for the `R_AARCH64_PATCHINST` relocation type to support deactivation symbols. ([#133534](https://github.com/llvm/llvm-project/pull/133534))
+- For AArch64, added support for reading AArch64 Build Attributes and converting them into GNU Properties. ([#147970](https://github.com/llvm/llvm-project/pull/147970))
+- For ARM, fixed incorrect veneer generation for wraparound branches at the high end of the 32-bit address space branching to the low end. ([#165263](https://github.com/llvm/llvm-project/pull/165263))
+- For LoongArch, `-r` now synthesizes `R_LARCH_ALIGN` at input section start to preserve alignment information. ([#153935](https://github.com/llvm/llvm-project/pull/153935))
+- For LoongArch, added relocation types for LA32R/LA32S. ([#172618](https://github.com/llvm/llvm-project/pull/172618)) ([#176312](https://github.com/llvm/llvm-project/pull/176312))
+- For RISC-V, added infrastructure for handling vendor-specific relocations. ([#159987](https://github.com/llvm/llvm-project/pull/159987))
+- For RISC-V, added support for statically resolved vendor-specific relocations. ([#169273](https://github.com/llvm/llvm-project/pull/169273))
+- For RISC-V, `-r` now synthesizes `R_RISCV_ALIGN` at input section start to preserve alignment information during two-stage linking. ([#151639](https://github.com/llvm/llvm-project/pull/151639)) This is an interesting [relocatable linking challenge](https://maskray.me/blog/2021-03-14-the-dark-side-of-riscv-linker-relaxation#:~:text=relocatable%20linking%20challenge) for linker relaxation.
 
 Besides me, Peter Smith (smithp35) and Jessica Clarke (jrtc27) have done a lot of reviews.
 
@@ -196,10 +126,8 @@ PFP is AArch64-specific because it relies on Pointer Authentication (PAC), a har
 
 Takeaways:
 
-- TU exposes a field's address, the linker disables protection for this field
-
-  The implementation is usually lightweight.
-- conditionally patches instructions to NOPs based on symbol resolution. This is a different paradigm from traditional "compute address, write it" relocations.
+- Security features need linker support. This is because many features require aggregated information across all translation units. In this case, if _any_ TU exposes a field's address, the linker disables protection for this field _everywhere_ The implementation is usually lightweight.
+- Relocations can do more than fill in addresses: `R_AARCH64_PATCHINST` conditionally patches instructions to NOPs based on symbol resolution. This is a different paradigm from traditional "compute address, write it" relocations.
 
 ## RISC-V vendor relocations
 
@@ -216,18 +144,8 @@ The `R_RISCV_VENDOR` marker identifies the vendor namespace via its symbol refer
 
 In lld 22:
 
-- #159987
-
-  ). The implementation folds vendor namespace information into the upper bits of
-
-  , allowing existing relocation processing code to work with minimal changes.
-- #169273
-
-  ), including Qualcomm and Andes relocation types. The patch landed without involving the regular lld/ELF reviewer pool. For changes that set architectural precedents, broader consensus should be sought before merging. I've
-
-  commented
-
-  on this.
+- Infrastructure for vendor relocations was added ([#159987](https://github.com/llvm/llvm-project/pull/159987)). The implementation folds vendor namespace information into the upper bits of `RelType`, allowing existing relocation processing code to work with minimal changes.
+- Support for statically-resolved vendor relocations was added ([#169273](https://github.com/llvm/llvm-project/pull/169273)), including Qualcomm and Andes relocation types. The patch landed without involving the regular lld/ELF reviewer pool. For changes that set architectural precedents, broader consensus should be sought before merging. I've [commented](https://github.com/llvm/llvm-project/pull/178584#pullrequestreview-3736342355) on this.
 
 The [RISC-V toolchain conventions](https://github.com/riscv-non-isa/riscv-toolchain-conventions) document the vendor relocation scheme.
 

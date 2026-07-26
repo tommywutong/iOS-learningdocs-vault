@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d6d34dfeab659ce1'
 translated: false
 ---
@@ -92,9 +92,7 @@ Now we'll look quickly at what this means in an AppKit-based application. This a
 
 ![](https://www.cocoawithlove.com/assets/objc-era/DetailedAppKitDesign.png)
 
-> project described in this diagram
-> 
-> , although it isn't necessary to understand the discussion.
+> You can download the [project described in this diagram](https://www.cocoawithlove.com/assets/objc-era/NameListEditor.zip), although it isn't necessary to understand the discussion.
 
 The application object is an unmodified NSApplication. This will almost always be the case in any Cocoa Application. You can achieve most customisation of the NSApplication object through data (in the Info.plist file) or by attaching an application delegate object (which can intercept control at predetermined points). The application instance handles our startup, event loop and contruction of documents (I have discussed how a Cocoa application loads in a [previous post](https://www.cocoawithlove.com/2008/03/cocoa-application-startup.html)).
 

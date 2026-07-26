@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c6711baad70cdac6'
 translated: false
 ---
@@ -116,7 +116,7 @@ Winding count is the default way that CoreGraphics determines if a pixel is insi
 
 If that's a little hard to follow then the simple description of winding count is:
 
-> : If a boundary is drawn clockwise, then a counter-clockwise boundary inside it will switch the shape off. If a boundary is drawn counter-clockwise, then a clockwise boundary inside it will switch it off.
+> **Simple winding count**: If a boundary is drawn clockwise, then a counter-clockwise boundary inside it will switch the shape off. If a boundary is drawn counter-clockwise, then a clockwise boundary inside it will switch it off.
 
 This is how we use winding count to draw the shape:
 
@@ -205,9 +205,7 @@ You can see that this approach is actually quite complicated since a clipping re
 
 ## Conclusion
 
-> GraphicalSubtraction.zip
-> 
-> (25kB)
+> You can download the code for drawing these shapes here: [GraphicalSubtraction.zip](https://www.cocoawithlove.com/assets/objc-era/GraphicalSubtraction.zip) (25kB)
 
 A very simple shape but you can draw it in some very different ways. As you can see, the "wrong" ways of solving the problem don't actually save any code — the proper solutions are roughly the same length.
 

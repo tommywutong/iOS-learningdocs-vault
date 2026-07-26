@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ee9998143114d3f5'
 translated: false
 ---
@@ -77,7 +77,7 @@ func greaterThan<T: Comparable>(_ a: T) -> (T) -> Bool {
 }
 ```
 
-Functions of this kind, where the function takes one parameter and then returns a function that takes another parameter (and so on), are called [curried functions](https://en.wikipedia.org/wiki/Currying).[1](#fn:currying)
+Functions of this kind, where the function takes one parameter and then returns a function that takes another parameter (and so on), are called [curried functions](https://en.wikipedia.org/wiki/Currying).^[1](#fn:currying)
 
 The `lessThan` function looks exactly the same, only using `<` instead of `>`:
 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e14b5dd012a15909'
 translated: false
 ---
@@ -126,7 +126,7 @@ Measurement(value: 25, unit: UnitLength.nauticalMiles) / Measurement(value: 2, u
 
 ## Is this a good idea?
 
-I’m not sure if this is actually a good idea. It makes the code considerably more complex and the benefit is arguably small. Iterating over the array of preferred unit mappings in every single computation also makes the code slower[1](#fn:1), which could be a problem in loops. Simple calculations such as the ones we do here should arguably be as fast as possible.
+I’m not sure if this is actually a good idea. It makes the code considerably more complex and the benefit is arguably small. Iterating over the array of preferred unit mappings in every single computation also makes the code slower^[1](#fn:1), which could be a problem in loops. Simple calculations such as the ones we do here should arguably be as fast as possible.
 
 # Problems with squares
 

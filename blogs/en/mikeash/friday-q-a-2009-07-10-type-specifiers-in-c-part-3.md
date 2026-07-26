@@ -39,13 +39,13 @@ This should give you a big clue as to when `volatile` _is_ useful.
     int GetCurrent(void) { return gCounter; }
 ```
 
-If multiple threads use
+If multiple threads use `Increment` then this code is not safe! On most systems, `gCounter++` will break down into multiple steps: `
 
-then this code is not safe! On most systems,
+load current value into register
+    increment register
+    store register into current value
 
-will break down into multiple steps:
-
-And those individual steps can be interleaved, so you can end up losing increments due to the overlap.
+` And those individual steps can be interleaved, so you can end up losing increments due to the overlap.
 
 Note that making `gCounter` be `volatile` does not help in any way.
 
@@ -128,17 +128,7 @@ What about `gFlag`? This is a bit more complex. Here's an example where it would
     }
 ```
 
-As far as the compiler is concerned, nothing could possibly change
-
-as long as it's false, because you never hit any external code. If
-
-is not
-
-, the compiler is free to read
-
-once, then use the cached value each time through the loop, so it would never see any change to it. Thus it must be made
-
-for this code to be correct.
+As far as the compiler is concerned, nothing could possibly change `gFlag` as long as it's false, because you never hit any external code. If `gFlag` is not `volatile`, the compiler is free to read `gFlag` once, then use the cached value each time through the loop, so it would never see any change to it. Thus it must be made `volatile` for this code to be correct.
 
 Now here's an example where it has no need to be `volatile`:
 
@@ -151,9 +141,7 @@ Now here's an example where it has no need to be `volatile`:
     }
 ```
 
-Here, the compiler must consider the caller to be foreign code, so it will re-read
-
-every time.
+Here, the compiler must consider the caller to be foreign code, so it will re-read `gFlag` every time.
 
 (Note: this is _largely_ true if this were a function instead of an Objective-C method, but can be false in the face of inlining and whole-program optimization such as is performed by gcc-llvm and clang. Be careful!)
 
@@ -171,9 +159,7 @@ Here is another example where `volatile` is useful:
         ;
 ```
 
-As before, the while loop is not guaranteed to work properly unless
-
-is marked as volatile.
+As before, the while loop is not guaranteed to work properly unless `gCount` is marked as volatile.
 
 At this point it's important to note that even marking it as `volatile` won't be enough if `gCount` cannot be read or written atomically by your CPU. Whether this is true depends on your individual CPU. General guidelines are that the data must be aligned to a multiple of its size (true of a global, but not always true if you're doing skanky stuff) and that for integers it must be equal to or smaller than the CPU's native size. In other words, if you declared `volatile int64_t gCount` on a 32-bit CPU this code would not necessarily work. Your program could see half-written values, with the top and bottom mismatched, which would not be a good thing.
 
@@ -182,27 +168,13 @@ Finally, you need to be careful with `volatile` because it's a common place to f
 **Conclusion**  
  To break down what we've learned:
 
-1. is necessary when reading or writing a shared value in a loop whose body does not touch "foreign" code.
-2. is
+1. `volatile` is necessary when reading or writing a shared value in a loop whose body does not touch "foreign" code.
+2. `volatile` is _not_ sufficient when doing this on multiple pieces of dependent data when ordering is important. In order for this to work, `OSMemoryBarrier` must be used. Since this is foreign code, this _may_ remove the requirement to use `volatile`, depending on the exact structure of your code.
+3. `volatile` does not help in a multithreading context with variables that cannot be atomically written or read by your CPU.
+4. `volatile` is neither necessary nor helpful when working with complex shared data protected by locks or using atomic operations.
+5. Be wary of using `volatile` even where it's perfectly correct, as you stand a decent chance of encountering a compiler bug which defeats your correct code.
 
-  sufficient when doing this on multiple pieces of dependent data when ordering is important. In order for this to work,
-
-  must be used. Since this is foreign code, this
-
-  remove the requirement to use
-
-  , depending on the exact structure of your code.
-3. does not help in a multithreading context with variables that cannot be atomically written or read by your CPU.
-4. is neither necessary nor helpful when working with complex shared data protected by locks or using atomic operations.
-5. even where it's perfectly correct, as you stand a decent chance of encountering a compiler bug which defeats your correct code.
-
-In short,
-
-can be occasionally useful for certain types of shared data access in a lockless context. However, when in doubt, use locks! Lockless shared data is
-
-difficult to get right. I hope that this guide gives you some idea of how
-
-can help you get it right, and more importantly how it can't help you get it right, but unless you absolutely must not use locks in any way, it's much better to protect your shared data with a lock instead. (And if you can, avoid shared data altogether! Message passing is usually a much nicer way to do multithreading.)
+In short, `volatile` can be occasionally useful for certain types of shared data access in a lockless context. However, when in doubt, use locks! Lockless shared data is _extremely_ difficult to get right. I hope that this guide gives you some idea of how `volatile` can help you get it right, and more importantly how it can't help you get it right, but unless you absolutely must not use locks in any way, it's much better to protect your shared data with a lock instead. (And if you can, avoid shared data altogether! Message passing is usually a much nicer way to do multithreading.)
 
 That wraps up this week's Friday Q&A, and also wraps up the three-part series on type qualifiers. Come back next week for another exciting edition. As always, Friday Q&A is powered by your ideas, so please [send them in](mailto:mike@mikeash.com) or post them in the comments below.
 
@@ -214,7 +186,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-07-10-type-specifiers-in-c-part-3.html)
 
 Add your thoughts, post a comment:
 

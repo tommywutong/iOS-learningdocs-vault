@@ -7,7 +7,7 @@ original_language: en
 published: 2024-12-26
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dad6492306fffa63'
 translated: false
 ---
@@ -24,7 +24,7 @@ translated: false
 
 ## [The Shell is a Program](#)
 
-I have a friend who switched to Linux because they didn’t want to pay for a new license for Windows and thereby end up running modern Windows. They’re not very computer-minded, so troubleshooting doesn’t come naturally, and anything that requires dropping down to the command line is something that has to be done by rote. And on one occasion, when I asked them to run something, they asked where to type it in.more
+I have a friend who switched to Linux because they didn’t want to pay for a new license for Windows and thereby end up running modern Windows. They’re not very computer-minded, so troubleshooting doesn’t come naturally, and anything that requires dropping down to the command line is something that has to be done by rote. And on one occasion, when I asked them to run something, they asked where to type it in.
 
 …
 
@@ -36,7 +36,7 @@ And, well, that’s not totally true, is it? If this were Windows, you _could_ d
 
 And it doesn’t even stop there. Most commands are going to be generic enough that they’ll work in any shell, but maybe a few are going to rely on `bash` syntax. What if someone has switched to `zsh`, `fish`, or nushell? Or prefers the venerable `ksh` or `tcsh`. This usually isn’t a problem because `zsh` and `bash` and `ksh` support a lot of the same extended syntax, and most systems have _one_ of those as a default these days, and if you’ve switched to something else, you at least know you’ve done it. Probably. It does underscore the point, though: your shell is a program, interpreting the commands you give it.
 
-So, then, let’s turn it around. Why _is_ the shell a default line to the operating system? Well, because the main thing it does is _run other programs._ (I’ve said on occasion that shell syntax is a DSL for [`posix_spawn`](https://pubs.opengroup.org/onlinepubs/009696899/functions/posix_spawn.html).) And on top of that, Unix programs are often designed to be non-interactive, doing everything you need via arguments provided when the program is launched. You could use any program to do this—a Python script, a compiled executable, even a [custom GUI for running commands](https://belkadan.com/hermitcrab/)[1](#fn:crab)—but for 50 years of Unix it’s been _assumed_ that there’s a shell available and that this is a good default way to write programs. And so we share commands as text instead of executable scripts or files.
+So, then, let’s turn it around. Why _is_ the shell a default line to the operating system? Well, because the main thing it does is _run other programs._ (I’ve said on occasion that shell syntax is a DSL for [`posix_spawn`](https://pubs.opengroup.org/onlinepubs/009696899/functions/posix_spawn.html).) And on top of that, Unix programs are often designed to be non-interactive, doing everything you need via arguments provided when the program is launched. You could use any program to do this—a Python script, a compiled executable, even a [custom GUI for running commands](https://belkadan.com/hermitcrab/)^[1](#fn:crab)—but for 50 years of Unix it’s been _assumed_ that there’s a shell available and that this is a good default way to write programs. And so we share commands as text instead of executable scripts or files.
 
 But that idea that the shell _is_ the default, on any OS, is not some innate truth about computers, especially now that a [teletype](https://sfba.social/@williampietri/113387049693365012) isn’t the most common way to interact with them. It’s just a program that comes installed with your system. And people have to learn that, just like everything else about how to use a computer.
 

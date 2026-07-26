@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c5471e3f9056403c'
 translated: false
 ---
@@ -50,15 +50,11 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Git](https://
 >   
 > Doesn't really hide anything, but at the very least they won't be deadnamed if looking at old PRs?
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926726980820992?ref_src=twsrc%5Etfw)
 
 > Git is terrible for this sort of identity-severing change thanks to burning the committer's name into the validity of the branch, and we-the-industry should probably do something.
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926727647707136?ref_src=twsrc%5Etfw)
 
 [(Continue reading…)](https://belkadan.com/blog/2020/02/Flexible-Identities-in-git/?tag=git)
 
@@ -66,21 +62,15 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Git](https://
 
 ## Older Posts
 
-1. 2020-01-22
-
-  Setting up gitweb on Shared Hosting
-2. 2012-10-02
-
-  Git Tricks
-3. 2011-06-27
-
-  git add
+1. 2020-01-22[Setting up gitweb on Shared Hosting](https://belkadan.com/blog/2020/01/Gitweb-on-Shared-Hosting/?tag=git)
+2. 2012-10-02[Git Tricks](https://belkadan.com/blog/2012/10/Git-Tricks/?tag=git)
+3. 2011-06-27[git add](https://belkadan.com/blog/2011/06/git-add/?tag=git)
 
 ### Possibly Related Tags
 
-- Apache
-- Diversity in tech
-- Filesystems
-- Running a website
-- Source code
-- Swift
+- [Apache](https://belkadan.com/blog/tags/apache)
+- [Diversity in tech](https://belkadan.com/blog/tags/diversity-in-tech)
+- [Filesystems](https://belkadan.com/blog/tags/filesystems)
+- [Running a website](https://belkadan.com/blog/tags/running-a-website)
+- [Source code](https://belkadan.com/blog/tags/source-code)
+- [Swift](https://belkadan.com/blog/tags/swift)

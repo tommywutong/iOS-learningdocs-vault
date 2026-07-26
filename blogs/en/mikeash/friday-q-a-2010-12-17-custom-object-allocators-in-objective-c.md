@@ -44,13 +44,7 @@ Another reason is overhead. The standard allocator requires a certain amount of 
     {
 ```
 
-For a simple allocator example, I'll just call
-
-. This will have roughly zero advantages over the standard allocator, but shows how it can be done. (I'm using
-
-instead of
-
-because Objective-C code assumes that instance variables are zeroed out.)
+For a simple allocator example, I'll just call `calloc`. This will have roughly zero advantages over the standard allocator, but shows how it can be done. (I'm using `calloc` instead of `malloc` because Objective-C code assumes that instance variables are zeroed out.)
 
 In order to call `calloc`, you need to know how much memory to allocate. Fortunately, the Objective-C runtime makes it easy. The `class_getInstanceSize` function will tell you exactly this:
 
@@ -71,11 +65,7 @@ You can now return the newly created object:
     }
 ```
 
-We're not done yet. We also have to override
-
-to call
-
-:
+We're not done yet. We also have to override `-dealloc` to call `free`:
 
 ```
     - (void)dealloc
@@ -83,13 +73,7 @@ to call
         free(self);
 ```
 
-Normally this would be all. However, the compiler has a warning for
-
-methods that don't call through to
-
-. In order to shut up this warning, I insert a dummy call after a
-
-statement which prevents it from executing:
+Normally this would be all. However, the compiler has a warning for `-dealloc` methods that don't call through to `super`. In order to shut up this warning, I insert a dummy call after a `return` statement which prevents it from executing:
 
 ```
         return;
@@ -117,13 +101,7 @@ In order to reach maximum speed, I'll make a few assumptions about how this clas
 - Its initializer methods can deal with a "dirty" object; i.e. the instance variables don't need to be zeroed out. (This saves time zeroing out each instance when pulling it out of the cache.)
 - It is only ever allocated and destroyed from the same thread. (This makes it unnecessary to create a thread-safe cache.)
 
-I'll ignore just how the cache works for now, and just assume it presents a simple interface of two functions:
-
-and
-
-. The
-
-override then looks like this:
+I'll ignore just how the cache works for now, and just assume it presents a simple interface of two functions: `AddObjectToCache` and `GetObjectFromCache`. The `+allocWithZone:` override then looks like this:
 
 ```
     + (id)allocWithZone: (NSZone *)zone
@@ -137,9 +115,7 @@ override then looks like this:
     }
 ```
 
-The
-
-override simply returns the object to the cache:
+The `-dealloc` override simply returns the object to the cache:
 
 ```
     - (void)dealloc
@@ -153,17 +129,13 @@ override simply returns the object to the cache:
     }
 ```
 
-The cache itself is just a linked list, using the
-
-slot of each object to point to the next entry in the list. The list head is a global variable:
+The cache itself is just a linked list, using the `isa` slot of each object to point to the next entry in the list. The list head is a global variable:
 
 ```
     static id gCacheListHead;
 ```
 
-Next, I want a couple of helper functions for accessing the
-
-pointer of each list item:
+Next, I want a couple of helper functions for accessing the `next` pointer of each list item:
 
 ```
     static id GetNext(id cachedObj)
@@ -214,11 +186,7 @@ With this system in place, objects are initially allocated normally, but then go
     }
 ```
 
-All of the interesting stuff will then happen in
-
-. The first thing this function will do is allocate a large block of memory. I chose
-
-for the block size as it matches the page size used by OS X and is a convenient number to work with:
+All of the interesting stuff will then happen in `AllocateNewBlockAndCache`. The first thing this function will do is allocate a large block of memory. I chose `4096` for the block size as it matches the page size used by OS X and is a convenient number to work with:
 
 ```
     static void AllocateNewBlockAndCache(Class class)
@@ -227,11 +195,7 @@ for the block size as it matches the page size used by OS X and is a convenient 
         char *newBlock = malloc(kBlockSize);
 ```
 
-Once it has this block, it needs to chop it into pieces and add each piece to the cache. To do this, it will walk through the block using
-
-to mark off each instance-sized section, and then use
-
-to get each section into the cache:
+Once it has this block, it needs to chop it into pieces and add each piece to the cache. To do this, it will walk through the block using `class_getInstanceSize` to mark off each instance-sized section, and then use `AddObjectToCache` to get each section into the cache:
 
 ```
         int instanceSize = class_getInstanceSize(class);
@@ -249,22 +213,10 @@ That's all there is to it. The object caching mechanism takes care of recycling 
 **Conclusion**  
  Writing a custom object allocator in Objective-C is relatively simple. The hard part is the allocator itself, which is largely up to you. Once you have the allocator, you can plug it into your Objective-C class by:
 
-1. to call your custom allocator, set the
-
-  of the block to
-
-  , and optionally zero out the rest of the memory.
-2. to call your custom allocator, and do
-
-  call through to
-
-  .
-3. in
-
-  if there's a chance of your object containing associated objects.
-4. directly, and not subclassing any subclass of
-
-  .
+1. Overriding `+allocWithZone:` to call your custom allocator, set the `isa` of the block to `self`, and optionally zero out the rest of the memory.
+2. Overriding `-dealloc` to call your custom allocator, and do _not_ call through to `super`.
+3. Calling `objc_removeAssociatedObjects` in `-dealloc` if there's a chance of your object containing associated objects.
+4. Only subclassing `NSObject` directly, and not subclassing any subclass of `NSObject`.
 
 In addition to a full-blown custom allocator, techniques like object caching can give you a speed boost with less complexity.
 
@@ -278,7 +230,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-12-17-custom-object-allocators-in-objective-c.html)
 
 Add your thoughts, post a comment:
 

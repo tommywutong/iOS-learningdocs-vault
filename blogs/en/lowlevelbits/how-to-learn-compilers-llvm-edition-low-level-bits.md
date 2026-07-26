@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:89651574a51c1a4b'
 translated: false
 ---
@@ -51,9 +51,7 @@ There are a lot of excellent resources out there! Some of them are not on the li
 
 or
 
-- Theory of Computation
-
-  . This course is taught by Michael Sipser. It is similar to the one above but delivered in a different style. It goes into more detail on specific topics.
+- [Theory of Computation](https://ocw.mit.edu/courses/mathematics/18-404j-theory-of-computation-fall-2020/). This course is taught by Michael Sipser. It is similar to the one above but delivered in a different style. It goes into more detail on specific topics.
 
 ### Front-end
 

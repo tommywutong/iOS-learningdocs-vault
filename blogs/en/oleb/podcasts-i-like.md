@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:52d01883a3903b43'
 translated: false
 ---
@@ -18,7 +18,7 @@ translated: false
 
 Here are some podcasts that I particularly like currently:
 
-![Debug Podcast Logo](https://oleb.net/media/debug-podcast-cover.jpg)
+[![Debug Podcast Logo](https://oleb.net/media/debug-podcast-cover.jpg)](http://www.imore.com/debug)
 
 # [Debug](https://www.imore.com/debug)
 
@@ -28,7 +28,7 @@ Favorite episode: [Debug 11: Lisa Melton and Safari](https://www.imore.com/debug
 
 ---
 
-![Internet History Podcast Logo](https://oleb.net/media/internet-history-podcast-cover.jpg)
+[![Internet History Podcast Logo](https://oleb.net/media/internet-history-podcast-cover.jpg)](http://www.internethistorypodcast.com/)
 
 # [The Internet History Podcast](https://www.internethistorypodcast.com/)
 
@@ -38,7 +38,7 @@ Favorite episode: [Chapter 1, Part 2: The Creation of Netscape](https://www.inte
 
 ---
 
-![Hardcore History Podcast Logo](https://oleb.net/media/hardcore-history-podcast-cover.jpg)
+[![Hardcore History Podcast Logo](https://oleb.net/media/hardcore-history-podcast-cover.jpg)](http://www.dancarlin.com/hardcore-history-series/)
 
 # [Hardcore History](https://www.dancarlin.com/hardcore-history-series/)
 
@@ -46,7 +46,7 @@ Dan Carlin shows that history doesn’t have to be boring at all. With his very 
 
 ---
 
-![Germany: Memories of a Nation Podcast Logo](https://oleb.net/media/germany-memories-of-a-nation-podcast-cover.jpg)
+[![Germany: Memories of a Nation Podcast Logo](https://oleb.net/media/germany-memories-of-a-nation-podcast-cover.jpg)](http://www.bbc.co.uk/podcasts/series/germany)
 
 # [Germany: Memories of a Nation](http://www.bbc.co.uk/podcasts/series/germany)
 
@@ -56,7 +56,7 @@ Favorite episode: [Divided Heaven](https://www.bbc.co.uk/programmes/b04jk08q)
 
 ---
 
-![Radio Spätkauf Podcast Logo](https://oleb.net/media/radio-spaetkauf-podcast-cover.jpg)
+[![Radio Spätkauf Podcast Logo](https://oleb.net/media/radio-spaetkauf-podcast-cover.jpg)](http://www.radiospaetkauf.com/)
 
 # [Radio Spätkauf](https://www.radiospaetkauf.com/)
 

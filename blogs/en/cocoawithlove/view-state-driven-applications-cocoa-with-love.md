@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e5be920240066153'
 translated: false
 ---
@@ -406,8 +406,8 @@ In portrait on an iPhone, the detail view of the split view will also collapse o
 
 > You can explore the two versions of the Clocks app on github:
 
-> - the “undoredo” branch of the Clocks app
-> - the master, aka “timetravel” branch of the Clocks app
+> - [the “undoredo” branch of the Clocks app](https://github.com/mattgallagher/Clocks/tree/undoredo)
+> - [the master, aka “timetravel” branch of the Clocks app](https://github.com/mattgallagher/Clocks)
 > 
 > (**Minor note**: when debugging one branch after using the other, you may see non-fatal state restoration errors as the two apps contain incompatible state restoration formats.)
 

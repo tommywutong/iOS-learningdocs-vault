@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fe8d37576a66d284'
 translated: false
 ---
@@ -20,16 +20,8 @@ translated: false
 
 [Swift is cross-platform](https://swift.org/about/#platform-support), but it behaves differently on Apple platforms vs. all other operating systems, mainly for two reasons:
 
-- Objective-C runtime
-
-  is only available on Apple platforms.
-- Foundation
-
-  and the other
-
-  core libraries
-
-  have separate implementations for non-Apple OSes. This means some Foundation APIs may produce divergent results on macOS/iOS and Linux (though the stated goal is implementation parity), or they may simply not be fully implemented yet.
+- The [Objective-C runtime](https://developer.apple.com/reference/objectivec/objective_c_runtime) is only available on Apple platforms.
+- [Foundation](https://github.com/apple/swift-corelibs-foundation) and the other [core libraries](https://swift.org/core-libraries) have separate implementations for non-Apple OSes. This means some Foundation APIs may produce divergent results on macOS/iOS and Linux (though the stated goal is implementation parity), or they may simply not be fully implemented yet.
 
 Therefore, when you write a library that doesn’t depend on any Apple-specific functionality, it’s a good idea to test your code on macOS/iOS _and_ Linux.
 
@@ -76,10 +68,8 @@ XCTMain([
 
 This approach is obviously not ideal because it requires manual maintenance in two places:
 
-1. .
-2. call in
-
-  .
+1. Every time you add a new test, you must also add it to its class’s `allTests`.
+2. Every time you create a new test suite, you must add it to the `XCTMain` call in `LinuxMain.swift`.
 
 Both of these steps are easy to forget. Even worse, when you inevitably forget one of them it’s not at all obvious that something is wrong — your tests will still pass on Linux, and unless you manually compare the _number_ of executed tests on macOS vs. Linux you might not even notice that some tests didn’t run on Linux.
 
@@ -131,7 +121,7 @@ class BananaTests: XCTestCase {
 
 This test compares the number of items in the `allTests` array to the number of tests discovered by the Objective-C runtime and will fail if it finds a discrepancy between the two, which is exactly what we want.
 
-(The dependency on the Obj-C runtime means the test only works on Apple platforms — it won’t even compile on Linux, which is why we need to wrap it in the `#if os(macOS) ...` block.[1](#fn:canImport))
+(The dependency on the Obj-C runtime means the test only works on Apple platforms — it won’t even compile on Linux, which is why we need to wrap it in the `#if os(macOS) ...` block.^[1](#fn:canImport))
 
 ## A failing test when you forget to add a test to `allTests`
 
@@ -160,7 +150,7 @@ class BananaTests: XCTestCase {
 
 When we now run the tests on macOS, our safeguard test will fail:
 
-![Xcode showing the failing test](https://oleb.net/media/xcode-xctest-linux-safeguard-1550px.png)
+[![Xcode showing the failing test](https://oleb.net/media/xcode-xctest-linux-safeguard-1550px.png)](https://oleb.net/media/xcode-xctest-linux-safeguard-1550px.png)
 
 <sub>The safeguard test is failing because we forgot to add one test to the `allTests` array.</sub>
 
@@ -170,7 +160,7 @@ I really like this. Obviously, it only works if you _want_ the `allTests` array 
 
 What about the other problem, verifying that `LinuxMain.swift` is complete? This is harder. `LinuxMain.swift` is not (and cannot be) part of the actual test target, so you can’t easily verify what gets passed into `XCTMain`.
 
-![Xcode showing build errors when you add LinuxMain.swift to the test target.](https://oleb.net/media/xcode-adding-LinuxMain-to-test-target-1400px.png)
+[![Xcode showing build errors when you add LinuxMain.swift to the test target.](https://oleb.net/media/xcode-adding-LinuxMain-to-test-target-1400px.png)](https://oleb.net/media/xcode-adding-LinuxMain-to-test-target-1400px.png)
 
 <sub>The errors you get when you try to add `LinuxMain.swift` to the test target.</sub>
 
@@ -182,12 +172,12 @@ The only solution I can see would be to add a _Run Script_ build phase to your t
 
 Even with the new test, things are far from perfect since there are still two things you can potentially forget. Every time you create a new `XCTestCase` class, you must:
 
-1. test into the new class.
-2. .
+1. Copy and paste the `testLinuxTestSuiteIncludesAllTests` test into the new class.
+2. Update `LinuxMain.swift`.
 
 Still, I think this is considerably better than the status quo because the new test covers the most common case — adding a single test to an existing test suite and forgetting to update the `allTests` array.
 
-I can’t wait for Swift’s reflection capabilities to become more powerful[2](#fn:bug), making all this unnecessary.
+I can’t wait for Swift’s reflection capabilities to become more powerful^[2](#fn:bug), making all this unnecessary.
 
 # Appendix: Code generation with Sourcery
 

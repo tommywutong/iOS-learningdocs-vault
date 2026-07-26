@@ -26,11 +26,11 @@ by [Mike Ash](https://www.mikeash.com/)
 **User Defaults**  
 `NSUserDefaults`, or just `UserDefaults` in Swift, is a typical dynamically-typed string-oriented Objective-C API. It stores string keys and property list values. This is perfectly fine, but I wanted to do better. I came up with this wishlist:
 
-1. by declaring string constants, but it's easy to get lazy and not do it.
+1. Keys should be declared, not written ad hoc at the point of use. You can do this with `UserDefaults` by declaring string constants, but it's easy to get lazy and not do it.
 2. There should be no repetition in the common case. A key's string should automatically be made to match its identifier in the code.
 3. No casting should be required. Keys should have a value type associated with them and the conversion handled internally.
-4. .
-5. .
+4. It should interoperate smoothly with values read and written directly through `UserDefaults`.
+5. Non-plist value types should be supported through `Codable`.
 6. Default values should be specified as part of the key rather than registered separately.
 7. The value should be made available as a property so that it can be the target of mutating methods and operators.
 
@@ -320,7 +320,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2017-10-06-type-safe-user-defaults.html)
 
 Add your thoughts, post a comment:
 

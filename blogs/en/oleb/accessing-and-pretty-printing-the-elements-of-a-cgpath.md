@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:2fcaab33eee27cf8'
 translated: false
 ---
@@ -19,6 +19,12 @@ translated: false
 [Peter Steinberger](http://petersteinberger.com) asked this question on Twitter yesterday:
 
 > Is there an easy way to pretty-print CGPath’s?
+> 
+> [@steipete](https://twitter.com/steipete)
+> 
+> steipete
+> 
+> [December 6th, 2012](https://twitter.com/steipete/status/276825138874445824)
 
 The short answer is: there may not be an easy way to log the contents of a [`CGPath`](https://developer.apple.com/library/ios/#documentation/graphicsimaging/Reference/CGPath/Reference/reference.html), but it is certainly possible.
 

@@ -1,0 +1,604 @@
+---
+title: 'Reader Submissions -<br/> New Year''s 2016'
+source: NSHipster (Mattt)
+source_key: nshipster
+source_url: 'https://nshipster.com/new-years-2016/'
+original_language: en
+published: 2016-01-04
+status: active
+license: CC BY-NC（页脚明示）→ 可非商业再分发，须署名
+archived_at: 2026-07-27
+content_hash: 'sha256:e527626a1e3a910a'
+translated: false
+---
+
+> 原文：[Reader Submissions -<br/> New Year's 2016](https://nshipster.com/new-years-2016/)　·　NSHipster (Mattt)
+
+# [Reader Submissions - New Year's 2016](https://nshipster.com/new-years-2016/)
+
+Written by  [Nate Cook](https://nshipster.com/authors/nate-cook/)  January 4^th, 2016
+
+With 2015 behind us and the new year begun, it’s time again for an NSHipster tradition: reader submissions! As [in](https://nshipster.com/new-years-2013) [year’s](https://nshipster.com/new-years-2014) [past](https://nshipster.com/new-years-2015), this installment is chock full of tips and tricks that can help ease your days working with Xcode, Swift, and Objective-C.
+
+Many thanks to [Cédric Luthi](https://github.com/0xced), [Josip Ćavar](https://github.com/jcavar), [Juraj Hilje](https://github.com/jurajhilje), [Kyle Van Essen](https://github.com/kyleve), [Luo Jie](https://github.com/beeth0ven), [Mathew Huusko V](https://github.com/mhuusko5), [Nicolás Jakubowski](https://github.com/jakunico), [Nolan O’Brien](https://github.com/NSProgrammer), [Orta Therox](https://github.com/orta), [Ray Fix](https://github.com/rayfix), [Stephen Celis](https://github.com/stephencelis), [Taylor Franklin](https://github.com/tfrank64), [Ursu Dan](https://github.com/thebugcode), [Matthew Flint](https://github.com/mflint), [@biggercoffee](https://github.com/biggercoffee), and [@vlat456](https://github.com/vlat456) for [their contributions](https://gist.github.com/natecook1000/151d8de423eb77fc87bf)!
+
+---
+
+## Swift’s `defer` in Objective-C
+
+From [Nolan O’Brien](https://github.com/NSProgrammer):
+
+> With the excellent addition of `defer` to Swift we Objective-C holdouts can’t help but feel envious of the improvements happening so rapidly to the Swift language. Until Apple officially adds `@defer` devs can actually implement defer support simply enough with a macro in Objective-C. Below I’ve outlined how one can go about doing a `defer` today in Objective-C. Personally, having Apple add `@defer` seem like an easy win for Objective-C, but [we’ll see what happens](https://openradar.appspot.com/radar?id=6105823419826176). :)
+
+Nolan’s macro uses the GCC `(cleanup())` attribute to execute a block when scope exits:
+
+```
+// some helper declarations
+#define _nob_macro_concat(a, b) a##b
+#define nob_macro_concat(a, b) _nob_macro_concat(a, b)
+typedef void(^nob_defer_block_t)();
+NS_INLINE void nob_deferFunc(__strong nob_defer_block_t *blockRef)
+{
+    nob_defer_block_t actualBlock = *blockRef;
+    actualBlock();
+}
+
+// the core macro
+#define nob_defer(deferBlock) \
+__strong nob_defer_block_t nob_macro_concat(__nob_stack_defer_block_, __LINE__) __attribute__((cleanup(nob_deferFunc), unused)) = deferBlock
+```
+
+Blocks used with `nob_defer` are executed in reverse order, just like [Swift `defer` statements](https://nshipster.com/guard-and-defer/):
+
+```
+#include <nob_defer.h>
+
+- (void)dealWithFile
+{
+    FILE *file = fopen(…);
+    nob_defer(^{
+        if (file) {
+            fclose(file);
+        }
+    });
+
+    // continue code where any scope exit will
+    // lead to the defer being executed
+}
+
+- (void)dealWithError
+{
+    __block NSError *scopeError = nil;
+    nob_defer(^{
+        if (scopeError) {
+            [self performCustomErrorHandling: scopeError];
+        }
+    });
+
+    // assign any errors to "scopeError" to handle the error
+    // on exit, no matter how you exit
+}
+
+#define NOBDeferRelease(cfTypeRef) nob_defer(^{ if (cfTypeRef) { CFRelease(cfTypeRef); } })
+
+- (void)cleanUpCFTypeRef
+{
+    CFStringRef stringRef = ... some code to create a CFStringRef ...;
+    NOBDeferRelease(stringRef);
+
+    // continue working without having to worry
+    // about the CFTypeRef needing to be released
+}
+```
+
+> I’ve been using my custom defer macro in production code since June and it is really the Bee’s Knees!
+
+---
+
+## Swift Protocol Extensions
+
+From [Juraj Hilje](https://github.com/jurajhilje):
+
+> Keep inheritance trees shallow and use protocol composition:
+
+```
+protocol Hello {
+    func sayHello() -> String
+}
+
+extension Hello {
+    func sayHello() -> String {
+        return "Hello, stranger"
+    }
+}
+
+class MyClass: Hello {
+}
+
+let c = MyClass()
+c.sayHello() // "Hello, stranger"
+```
+
+---
+
+## Public Read-only Variables
+
+From [Stephen Celis](https://github.com/stephencelis):
+
+> Classes commonly have public, read-only properties but need the ability privately modify them. I’ve come across the following pattern a few times:
+
+```
+public class Person {
+    public var name: String {
+        return _name
+    }
+    private var _name: String
+    …
+}
+```
+
+> Luckily, there’s a better, oft-overlooked way that avoids the extra variable:
+
+```
+public class Person {
+    public private(set) var name: String
+    …
+}
+```
+
+---
+
+## Swift `where` Everywhere
+
+From [Taylor Franklin](https://github.com/tfrank64):
+
+> The addition of the `where` clause has made my code simple and compact while remaining readable. In addition, it has a broad application in Swift, so that it can be applied in nearly any kind of control-flow statement, such as `for` loop, `while` loop, `if`, `guard`, `switch`, and even in extension declarations. One simple way I like to use it is in my `prepareForSegue` method:
+
+```
+if let segueID = segue.identifier where segueID == "mySegue" {
+    ...
+}
+```
+
+> The combo of unwrapping and performing a condition check is most commonly where I use the `where` clause. The `where` clause is not going to change your life, but it should be an easy and useful addition to your Swift skills.
+
+---
+
+## Improved Optional Binding
+
+From [Ursu Dan](https://github.com/thebugcode):
+
+> The improved optional binding in Swift is amazing and I use it virtually everywhere now and avoid the pyramid of doom:
+
+```
+if let
+    url          = NSBundle.mainBundle().URLForResource("users", withExtension: "json"),
+    data         = NSData(contentsOfURL: url),
+    deserialized = try? NSJSONSerialization.JSONObjectWithData(data, options: []),
+    userList     = deserialized as? [ [String: AnyObject] ]
+{
+
+    for userDict in userList {
+        if let
+            id          = userDict["id"] as? Int,
+            name        = userDict["name"] as? String,
+            username    = userDict["username"] as? String,
+            email       = userDict["email"] as? String,
+            phone       = userDict["phone"] as? String,
+            address     = userDict["address"] as? [String: AnyObject]
+        {
+            users.append(User(id: id, name: name, ...))
+        }
+    }
+}
+```
+
+---
+
+## Unbuffered `xcodebuild` Output
+
+From [Cédric Luthi](https://github.com/0xced):
+
+> Using `xcpretty` because the output of `xcodebuild test` is unreadable? Unfortunately, the output of the test results becomes buffered when piped. Solution: set the `NSUnbufferedIO` environment variable for a smooth experience. 😎
+
+```
+env NSUnbufferedIO=YES xcodebuild [flags] | xcpretty
+```
+
+---
+
+## Multiline Labels in a Table View
+
+From [Ray Fix](https://github.com/rayfix):
+
+> Using autolayout to toggle a label in a table view from one line to many:
+
+```
+tableView.beginUpdates()
+label.numberOfLines = label.numberOfLines == 0 ? 1 : 0
+tableView.endUpdates()
+```
+
+You can see Ray’s technique in action in [an example project](https://github.com/rayfix/MultilineDemo):
+
+![Multiline demo](https://raw.githubusercontent.com/rayfix/MultilineDemo/master/demo.gif)
+
+---
+
+## `AmIRunningAsAnExtension`
+
+Another from [Nolan O’Brien](https://github.com/NSProgrammer):
+
+> With extensions in iOS, it is critical that frameworks that can be linked to both extensions and apps be cognizant of their uses so they don’t call any APIs that might not be available to an extension (like UIApplication). Here’s a function to help determine if you are running in an extension at runtime:
+
+> ([Per Apple](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/SystemExtensionKeys.html), an extension will have a top level “NSExtension” dictionary in the info.plist.)
+
+```
+let NOBAmIRunningAsAnExtension: Bool = {
+    let extensionDictionary: AnyObject? = NSBundle.mainBundle().infoDictionary?["NSExtension"]
+    return extensionDictionary?.isKindOfClass(NSDictionary.self) ?? false
+}()
+```
+
+```
+FOUNDATION_EXTERN BOOL AmIRunningAsAnExtension() __attribute__((const));
+
+BOOL NOBAmIRunningAsAnExtension()
+{
+
+    static BOOL sIsExtension;
+    static dispatch_once_t sOnceToken;
+    dispatch_once(& sOnceToken, ^{
+        NSDictionary *extensionDictionary = [[NSBundle mainBundle] infoDictionary][@"NSExtension"];
+        sIsExtension = [extensionDictionary isKindOfClass:[NSDictionary class]];
+    });
+    return sIsExtension;
+}
+```
+
+> That frees you to do things like this:
+
+```
+- (void)startBackgroundTask
+{
+#if TARGET_OS_IPHONE
+    if (!NOBAmIRunningAsAnExtension()) {
+        Class UIApplicationClass = NSClassFromString(@"UIApplication");
+        id sharedApplication = [UIApplicationClass sharedApplication];
+        self.backgroundTaskIdentifier = [sharedApplication beginBackgroundTaskWithExpirationHandler:^{
+            if (self.backgroundTaskIdentifier != UIBackgroundTaskInvalid) {
+                [sharedApplication endBackgroundTask:self.backgroundTaskIdentifier];
+                self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+            }
+        }];
+    }
+#endif
+}
+
+- (void)endBackgroundTask
+{
+#if TARGET_OS_IPHONE
+    if (self.backgroundTaskIdentifier != UIBackgroundTaskInvalid) {
+        NSAssert(!NOBAmIRunningAsAnExtension());
+        Class UIApplicationClass = NSClassFromString(@"UIApplication");
+        id sharedApplication = [UIApplicationClass sharedApplication];
+        [sharedApplication endBackgroundTask:self.backgroundTaskIdentifier];
+        self.backgroundTaskIdentifier = UIBackgroundTaskInvalid;
+    }
+#endif
+}
+```
+
+---
+
+## Beyond Breakpoints
+
+From [Matthew Flint](https://github.com/mflint):
+
+> This has been my year of truly appreciating Xcode breakpoints, beyond the standard “break at this line” type. It breaks my heart to see other developers not using them to their potential.
+
+Right click on a breakpoint and choose **Edit Breakpoint…** for access to advanced features:
+
+![Breakpoint Options Popup](https://nshipster.com/assets/2016-breakpoint-59f0f499e1efbf17dd2f00ef199f39cbdc935a33f78b59092065abe2b1d2c4ab54f51690b55fb8de483009114022d0c66eeaf87459561f7762d0f842a8afcd2e.png)
+
+> Particularly the ones with actions (such as logging to the console) that continue automatically without pausing any threads, because you can add/edit them without recompiling. I’ll never accidentally commit NSLogs again. :)
+
+---
+
+## Fix Console `po frame` Printing
+
+[GitHub user @biggercoffee](https://github.com/biggercoffee) reminds us that `po frame` printing fails in the LLDB console by default:
+
+![Broken po frame](https://nshipster.com/assets/2016-po-frame-fail-4e30c8c081e4af7ab4f87dc29f95b16e1d99773ed9110a80f84c359ecc3b95f155a99e13ea6fcebef85602a56bdc6e43f7a6bf918d40d5542d11cefc9dbae16e.png)
+
+Fix it mid-debugging session with `expr @import UIKit`, or fix it once and for all by adding a couple lines to your “.lldbinit”. From the command line:
+
+```
+touch ~/.lldbinit
+echo display @import UIKit >> ~/.lldbinit
+echo target stop-hook add -o \"target stop-hook disable\" >> ~/.lldbinit
+```
+
+![Fixed po frame](https://nshipster.com/assets/2016-po-frame-win-f3be315949539462148af1a864976a9f7d6a9a7d8af50b98c692ee2523b2e0769d256d3a1ef59b0131a0bb8f1456745bf5a1c573217a9d2b7589b9ca47faf31b.png)
+
+---
+
+## Avoiding `-DDEBUG` in Swift
+
+From [GitHub user @vlat456](https://github.com/vlat456):
+
+> For those, who like me, are trying to avoid the mess with `-DDEBUG` in Swift, but have to know which version of executable is running, Debug or Release.
+
+```
+// PreProcessorMacros.m:
+#include "PreProcessorMacros.h"
+#ifdef DEBUG
+BOOL const DEBUG_BUILD = YES;
+#else
+BOOL const DEBUG_BUILD = NO;
+#endif
+
+// PreProcessorMacros.h:
+#ifndef PreProcessorMacros_h
+#define PreProcessorMacros_h
+#include
+
+extern BOOL const DEBUG_BUILD;
+
+#endif /* PreProcessorMacros_h */
+
+// in Bridged header:
+#import "PreProcessorMacros.h"
+```
+
+And then from Swift:
+
+```
+if DEBUG_BUILD {
+debugPrint("It's Debug build")
+} else {
+debugPrint("It's Release build")
+}
+```
+
+---
+
+## Checking For Null Blocks
+
+From [Nicolás Jakubowski](https://github.com/jakunico):
+
+> This macro for checking block nullability before executing them:
+
+```
+#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
+```
+
+Old and busted:
+
+```
+if (completionBlock)
+{
+    completionBlock(arg1, arg2);
+}
+```
+
+New and shiny:
+
+```
+BLOCK_EXEC(completionBlock, arg1, arg2);
+```
+
+---
+
+## Swiftier GCD
+
+From [Luo Jie](https://github.com/beeth0ven):
+
+> You can use enums and protocol extensions to provide a GCD convenience API:
+
+```
+protocol ExcutableQueue {
+    var queue: dispatch_queue_t { get }
+}
+
+extension ExcutableQueue {
+    func execute(closure: () -> Void) {
+        dispatch_async(queue, closure)
+    }
+}
+
+enum Queue: ExcutableQueue {
+    case Main
+    case UserInteractive
+    case UserInitiated
+    case Utility
+    case Background
+
+    var queue: dispatch_queue_t {
+        switch self {
+        case .Main:
+            return dispatch_get_main_queue()
+        case .UserInteractive:
+            return dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
+        case .UserInitiated:
+            return dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+        case .Utility:
+            return dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
+        case .Background:
+            return dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        }
+    }
+}
+
+enum SerialQueue: String, ExcutableQueue {
+    case DownLoadImage = "myApp.SerialQueue.DownLoadImage"
+    case UpLoadFile = "myApp.SerialQueue.UpLoadFile"
+
+    var queue: dispatch_queue_t {
+        return dispatch_queue_create(rawValue, DISPATCH_QUEUE_SERIAL)
+    }
+}
+```
+
+> Downloading something then could be written like this:
+
+```
+Queue.UserInitiated.execute {
+    let url = NSURL(string: "http://image.jpg")!
+    let data = NSData(contentsOfURL: url)!
+    let image = UIImage(data: data)
+
+    Queue.Main.execute {
+        imageView.image = image
+    }
+}
+```
+
+---
+
+## `_ObjectiveCBridgeable`
+
+From [Mathew Huusko V](https://github.com/mhuusko5):
+
+> Using Swift’s _ObjectiveCBridgeable (implicit castability between types) to create a generic protocol for Obj-C compatible objects that wrap pure Swift structs (keeping Swift framework API clean, but Obj-C compatible for as long as desired).
+
+This first part defines an extension with default implementations for the bridging bookkeeping methods:
+
+```
+public protocol BackedObjectType: AnyObject {
+    typealias Backing
+
+    var backingObject: Backing { get }
+
+    init(_ backingObject: Backing)
+}
+
+public protocol ObjectBackable: _ObjectiveCBridgeable {
+    typealias Backed: BackedObjectType
+}
+
+public extension ObjectBackable where Backed.Backing == Self {
+    static func _isBridgedToObjectiveC() -> Bool {
+        return true
+    }
+
+    static func _getObjectiveCType() -> Any.Type {
+        return Backed.self
+    }
+
+    func _bridgeToObjectiveC() -> Backed {
+        return Backed(self)
+    }
+
+    static func _forceBridgeFromObjectiveC(source: Backed, inout result: Self?) {
+        result = source.backingObject
+    }
+
+    static func _conditionallyBridgeFromObjectiveC(source: Backed, inout result: Self?) -> Bool {
+        _forceBridgeFromObjectiveC(source, result: &result)
+        return true
+    }
+
+    func toBridgedObject() -> Backed {
+        return _bridgeToObjectiveC()
+    }
+}
+```
+
+Here the Swift struct `SomeModel` and Objective-C class `M5SomeModel` are declared and bridged. Bridging between them is accomplished with an `as` cast:
+
+```
+public struct SomeModel {
+    public let ID: Int
+    public let name: String
+    public let category: String
+}
+
+extension SomeModel: ObjectBackable {
+    public typealias Backed = M5SomeModel
+}
+
+@objc public final class M5SomeModel: NSObject, BackedObjectType {
+    public let backingObject: SomeModel
+    public init(_ backingObject: SomeModel) {
+        self.backingObject = backingObject
+    }
+
+    public var ID: Int { return backingObject.ID }
+    public var name: String { return backingObject.name }
+    public var category: String { return backingObject.category }
+}
+
+// Usage:
+let model = SomeModel(ID: 2, name: "awesome", category: "music")
+let objcCompatibleModel = model as M5SomeModel
+let originalModel = objcCompatibleModel as SomeModel
+```
+
+---
+
+## Phantom Types
+
+[Josip Ćavar](https://github.com/jcavar) writes in about getting additional type safety with phantom types. In the example below, `Kilometer` and `Meter` are used to constrain what kinds of `DistanceT` instances can be added together:
+
+```
+struct Kilometer {}
+struct Meter {}
+
+struct DistanceT<T> {
+    private let value: Int
+
+    init(value: Int) {
+        self.value = value
+    }
+}
+
+func +<T>(left: DistanceT<T>, right: DistanceT<T>) -> DistanceT<T> {
+    return DistanceT(value: left.value + right.value)
+}
+
+extension Int {
+    var km: DistanceT<Kilometer> {
+        return DistanceT<Kilometer>(value: self)
+    }
+    var m: DistanceT<Meter> {
+        return DistanceT<Meter>(value: self)
+    }
+}
+
+let distanceKilometers = 5.km
+let distanceMeters = 15.m
+let newDistance = distanceKilometers + distanceKilometers // Ok
+let newDistance = distanceKilometers + distanceMeters // Compiler error
+```
+
+---
+
+## Easier Configuration
+
+From [Kyle Van Essen](https://github.com/kyleve) by way of [Orta Therox](https://github.com/orta) comes a function that streamlines multi-step initialization and configuration processes.
+
+```
+@warn_unused_result
+public func Init<Type>(value : Type, @noescape block: (object: Type) -> Void) -> Type
+{
+    block(object: value)
+    return value
+}
+
+func example()
+{
+    let label = Init(UILabel()) {
+        $0.font = UIFont.boldSystemFontOfSize(13.0)
+
+        $0.text = "Hello, World"
+        $0.textAlignment = .Center
+    }
+}
+```
+
+---
+
+Well, that rounds out _this_ year’s list—thanks again to all who contributed!
+
+Happy New Year! May your code continue to compile and inspire.

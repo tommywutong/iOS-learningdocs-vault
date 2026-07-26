@@ -415,17 +415,9 @@ What about the case where the length is `10` or more? The code there is almost i
 
 Thus we can see that the structure of the tagged pointer strings is:
 
-1. and
-
-  , store the string as raw eight-bit characters.
-2. or
-
-  , store the string in a six-bit encoding, using the alphabet
-
-  .
-3. or
-
-  , store the string in a five-bit encoding, using the alphabet
+1. If the length is between `0` and `7`, store the string as raw eight-bit characters.
+2. If the length is `8` or `9`, store the string in a six-bit encoding, using the alphabet `"eilotrm.apdnsIc ufkMShjTRxgC4013bDNvwyUL2O856P-B79AFKEWV_zGJ/HYX"`.
+3. If the length is `10` or `11`, store the string in a five-bit encoding, using the alphabet `"eilotrm.apdnsIc ufkMShjTRxgC4013"`
 
 Let's compare with the data we generated earlier:
 
@@ -519,7 +511,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2015-07-31-tagged-pointer-strings.html)
 
 Add your thoughts, post a comment:
 

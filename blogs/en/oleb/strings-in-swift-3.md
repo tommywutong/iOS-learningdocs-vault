@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:e0722dc84bfdf85a'
 translated: false
 ---
@@ -192,7 +192,7 @@ To this end, the collection-of-characters view of strings was moved to a propert
 
 [`CharacterView`](https://developer.apple.com/reference/swift/string.characterview), however, has a special place amongst those views. `String.Index` is actually just a type alias for `CharacterView.Index`. This means that once you have found an index into the character view, you can then index directly into the string with it.
 
-But for reasons that should be clear from the examples in the previous section, the characters view is not a random-access collection. How could it be, when knowing where the _n_th character of a particular string is involves evaluating just how many code points precede that character?
+But for reasons that should be clear from the examples in the previous section, the characters view is not a random-access collection. How could it be, when knowing where the _n_^th character of a particular string is involves evaluating just how many code points precede that character?
 
 For this reason, `CharacterView` conforms only to [`BidirectionalCollection`](https://developer.apple.com/reference/swift/bidirectionalcollection). You can start at either end of the string, moving forward or backward, and the code will look at the composition of the adjacent characters and skip over the correct number of bytes. However, you need to iterate up and down one character at a time.
 
@@ -411,7 +411,7 @@ The good news is, even after going through this fairly extensive pipeline, the s
 
 A second reason for using these views is that operating on code units rather than fully composed characters can be much faster. This is because to compose grapheme clusters, you must look ahead of every character to see if it’s followed by combining characters. To see just how much faster these views can be, take a look at the performance section later on _[that section is in the book, but not part of this article]_.
 
-Finally, the UTF-16 view has one benefit the other views do not have: it can be random access. This is possible for just this view type because, as we’ve seen, this is how strings are held internally within the `String` type. What this means is the _n_th UTF-16 code unit is always at the _n_th position in the buffer (even if the string is in “ASCII buffer mode” – it’s just a question of the width of the entries to advance over).
+Finally, the UTF-16 view has one benefit the other views do not have: it can be random access. This is possible for just this view type because, as we’ve seen, this is how strings are held internally within the `String` type. What this means is the _n_^th UTF-16 code unit is always at the _n_^th position in the buffer (even if the string is in “ASCII buffer mode” – it’s just a question of the width of the entries to advance over).
 
 The Swift team made the decision _not_ to conform `String.UTF16View` to `RandomAccessCollection` in the standard library, though. Instead, they moved the conformance into Foundation, so you need to `import Foundation` to take advantage of it. A comment [in the Foundation source code](https://github.com/apple/swift/blob/master/stdlib/public/SDK/Foundation/ExtraStringAPIs.swift) explains why:
 

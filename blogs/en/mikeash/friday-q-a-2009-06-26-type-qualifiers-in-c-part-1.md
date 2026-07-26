@@ -40,11 +40,7 @@ By way of illustration, it makes perfect sense to use `const` in a `typedef`, li
     typedef const int MyConstInt;
 ```
 
-But it makes no sense to use
-
-in this way, because
-
-is not part of the type:
+But it makes no sense to use `static` in this way, because `static` is not part of the type:
 
 ```
     typedef static int MyStaticInt; // will not compile, does not make sense!
@@ -63,34 +59,10 @@ This week I will discuss `const` and `restrict`, and I'll finish up next week wi
 
 There are several places where `const` can be useful:
 
-1. A
-
-  function pointer parameter means that the function won't modify the value that the pointer points to. For example, look at the standard
-
-  function. The first parameter is declared of type
-
-  , because this function only reads the string, and doesn't modify it. This is a useful thing to do with your own code as well when taking pointer parameters that won't be modified.
-2. Used here,
-
-  indicates that the data being returned is read-only and the caller is not allowed to modify it. For example, the
-
-  method in Cocoa returns a
-
-  . This means you can use the data but you're not allowed to write to it. The data may be a pointer to some kind of internal storage or cache, and the
-
-  is used to enforce access to make this useful.
-3. When used here,
-
-  indicates that this pointer can't be used to modify its contents. This can be useful to preserve correctness when you know that your use is read-only, but is most often useful to shut up the compiler when accessing
-
-  return values from functions that return
-
-  pointers as in #2.
-4. This is handy to declare a compile-time constant. For example,
-
-  declares a constant. The
-
-  here will help prevent you from changing this value by accident, and may also allow the compiler to do some optimizations that otherwise would not be possible.
+1. **On a function pointer parameter.** A `const` function pointer parameter means that the function won't modify the value that the pointer points to. For example, look at the standard `strchr` function. The first parameter is declared of type `const char *`, because this function only reads the string, and doesn't modify it. This is a useful thing to do with your own code as well when taking pointer parameters that won't be modified.
+2. **On a function pointer return value.** Used here, `const` indicates that the data being returned is read-only and the caller is not allowed to modify it. For example, the `-[NSString UTF8String]` method in Cocoa returns a `const char *`. This means you can use the data but you're not allowed to write to it. The data may be a pointer to some kind of internal storage or cache, and the `const` is used to enforce access to make this useful.
+3. **On a local or global pointer variable.** When used here, `const` indicates that this pointer can't be used to modify its contents. This can be useful to preserve correctness when you know that your use is read-only, but is most often useful to shut up the compiler when accessing `const` return values from functions that return `const` pointers as in #2.
+4. **On a local or global non-pointer variable.** This is handy to declare a compile-time constant. For example, `const int kMeaning = 42;` declares a constant. The `const` here will help prevent you from changing this value by accident, and may also allow the compiler to do some optimizations that otherwise would not be possible.
 
 Note that this is not meant to be an exhaustive list, and there are probably other interesting places to use it as well.
 
@@ -100,25 +72,7 @@ Since this is a heavily Mac-centric blog, I also want to briefly discuss `const`
 const NSString *immutableNSStringPointer;
 ```
 
-What
-
-means here is that you can't use
-
-to modify the memory at that location. But the immutability of an
-
-is part of the API contract only. Nothing says that the memory of an
-
-can't be modified, only that the
-
-contents of the
-
-can't be modified. For example,
-
-might have some internal caches that get updated, but which don't affect the conceptual contents of the string. Changing those caches would violate the
-
-requirement, but not the immutability of the
-
-.
+What `const` means here is that you can't use `immutableNSStringPointer` to modify the memory at that location. But the immutability of an `NSString` is part of the API contract only. Nothing says that the memory of an `NSString` can't be modified, only that the _semantic_ contents of the `NSString` can't be modified. For example, `NSString` might have some internal caches that get updated, but which don't affect the conceptual contents of the string. Changing those caches would violate the `const` requirement, but not the immutability of the `NSString`.
 
 More concretely, if you declare a variable like this and then try to use it anywhere, you'll get a huge number of useless warnings about violating the `const`ness of your variable.
 
@@ -128,9 +82,8 @@ What if you want a constant NSString pointer? Not a pointer to a constant NSStri
     NSString * const kConstantStringPointer = @"hello, world";
 ```
 
-The
-
-keyword is new in C99. (The other two date from C89.) This one is purely for the purposes of optimization. That fact, combined with the fact that it's kind of hard to understand, means that this keyword is extremely rare to see and even more rare to actually use.
+**The `restrict` Keyword**  
+ The `restrict` keyword is new in C99. (The other two date from C89.) This one is purely for the purposes of optimization. That fact, combined with the fact that it's kind of hard to understand, means that this keyword is extremely rare to see and even more rare to actually use.
 
 So what does `restrict` mean, exactly? It's actually pretty simple: when a pointer is declared with `restrict`, it tells the compiler that this is the only pointer which will be accessing a particular chunk of memory in that scope.
 
@@ -143,11 +96,7 @@ But what does that _mean_? Consider the following code:
         dst[i] = src[i];
 ```
 
-When compiling this code, the compiler will need to generate an individual memory load followed by an individual memory store for each iteration of this loop. There are techniques to make this loop run significantly faster by loading and storing larger chunks of memory at once, but the compiler can't use them. Imagine what would happen if
-
-pointed to
-
-. Each time the assignment is made, it also alters the value that will be used for the next iteration of the loop. Unless the compiler can rule out this possibility (which is extremely difficult to do automatically) it's forced to generate very slow code.
+When compiling this code, the compiler will need to generate an individual memory load followed by an individual memory store for each iteration of this loop. There are techniques to make this loop run significantly faster by loading and storing larger chunks of memory at once, but the compiler can't use them. Imagine what would happen if `dst` pointed to `src + 1`. Each time the assignment is made, it also alters the value that will be used for the next iteration of the loop. Unless the compiler can rule out this possibility (which is extremely difficult to do automatically) it's forced to generate very slow code.
 
 This is where the `restrict` keyword comes in. By declaring `src` and `dst` as `restrict`, you tell the compiler that you are personally guaranteeing that they won't point into the same block of memory, and thus that the compiler should feel free to generate nice, fast code for this loop.
 
@@ -157,13 +106,7 @@ It's unlikely that you'll have occasion to use `restrict` in your own code. Howe
     void *memcpy(void *restrict s1, const void *restrict s2, size_t n);
 ```
 
-When used on a function argument like this, it means that you must not provide overlapping pointers to this function. That's part of
-
-API contract: it only works on blocks which don't overlap. (The
-
-function is provided for blocks which potentially do overlap.) Previously this was only expressed in the documentation, but using
-
-it can actually be expressed right in the code.
+When used on a function argument like this, it means that you must not provide overlapping pointers to this function. That's part of `memcpy's` API contract: it only works on blocks which don't overlap. (The `memmove` function is provided for blocks which potentially do overlap.) Previously this was only expressed in the documentation, but using `restrict` it can actually be expressed right in the code.
 
 **Wrapping Up**  
  That brings us to the end of Part 1. Now you know what `const` and `restrict` mean and how to use them. The `const` can be very useful and every C programmer should know how to use it. The `restrict` keyword is mostly useless unless you're writing certain kinds of highly optimized code, but it's still good to know the basics.
@@ -180,7 +123,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-06-26-type-qualifiers-in-c-part-1.html)
 
 Add your thoughts, post a comment:
 

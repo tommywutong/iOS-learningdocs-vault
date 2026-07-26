@@ -37,9 +37,7 @@ The behavior of any given chunk of C code is written into the standard. The `+` 
     x = x + y;
 ```
 
-There's a fair amount of redundancy here. First, the initial values of the three variables are unused. Then the expression
-
-is used twice. It would be inefficient to compile all of this code literally.
+There's a fair amount of redundancy here. First, the initial values of the three variables are unused. Then the expression `x + y` is used twice. It would be inefficient to compile all of this code literally.
 
 The C standard has an answer to this problem. It states that the program must execute _as if_ all the specified actions were executed in a virtual machine. In other words, given the code above, at the end of the day `x` must contain 7, `y` must contain 4, and `z` must contain 7. But how it actually gets there is entirely up for grabs. A smart compiler will just do all of the computations at compile time and generate code that dumps those final values into the variables right away, instead of doing math every time through.
 
@@ -55,11 +53,7 @@ The C standard has an answer to this problem. It states that the program must ex
     y = *x;
 ```
 
-Again, this code has a bunch of redundancies in it. The compiler would be entirely within its rights to rip out most of this and simply execute a single load from
-
-, because there's no way that the value pointed to by
-
-or anything else could possibly be changed by executing all the intermediate statements.
+Again, this code has a bunch of redundancies in it. The compiler would be entirely within its rights to rip out most of this and simply execute a single load from `x`, because there's no way that the value pointed to by `x` or anything else could possibly be changed by executing all the intermediate statements.
 
 This is true according to the C standard, where memory is just another component of the virtual machine, and doesn't have to have any real relationship to the actual physical RAM that's sitting in your computer.
 
@@ -81,11 +75,7 @@ And what's wrong with that? Well, nothing really, except for when you go outside
         response[i] = *readAddr;
 ```
 
-In this case, every read from readAddr would actually fetch a new character from the serial port, and every write to writeAddr would actually push a new character into it. This is called
-
-memory-mapped IO
-
-.
+In this case, every read from readAddr would actually fetch a new character from the serial port, and every write to writeAddr would actually push a new character into it. This is called [memory-mapped IO](http://en.wikipedia.org/wiki/IO_port).
 
 The trouble is that the C compiler (and the C standard) has no idea about this magical pointer that gives you a different value every time you read from it, and this other magical pointer that causes electrons to flow through a wire every time you write to it. As far as it knows, this is just memory like anything else, and the compiler may very well decide that your loops are pointless and redundant, and hoist all of the pointer reading/writing out of them so that you only do one load and one store instead of a whole bunch of redundant ones.
 
@@ -130,7 +120,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-07-03-type-specifiers-in-c-part-2.html)
 
 Add your thoughts, post a comment:
 

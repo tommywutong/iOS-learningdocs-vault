@@ -154,7 +154,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/objc_msgsends-new-prototype.html)
 
 Add your thoughts, post a comment:
 

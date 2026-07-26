@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:186d7c03b2688ddd'
 translated: false
 ---
@@ -38,6 +38,6 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Apache](https
 
 ### Possibly Related Tags
 
-- Git
-- Running a website
-- Unix
+- [Git](https://belkadan.com/blog/tags/git)
+- [Running a website](https://belkadan.com/blog/tags/running-a-website)
+- [Unix](https://belkadan.com/blog/tags/unix)

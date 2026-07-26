@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:60f2313a4c234b76'
 translated: false
 ---
@@ -156,9 +156,9 @@ Why do we assign `[super init]` to self here?
 
 The textbook reason is because `[super init]` is permitted to do one of three things:
 
-1. pointer doesn't change) with inherited instance values initialized.
+1. Return its own receiver (the `self` pointer doesn't change) with inherited instance values initialized.
 2. Return a different object with inherited instance values initialized.
-3. , indicating failure.
+3. Return `nil`, indicating failure.
 
 In the first case, the assignment has no effect on `self` and the `instanceString` is set on in the original object (the line `instanceString = [aString retain];` could have been the first line of the method and the result would be the same).
 
@@ -187,7 +187,7 @@ The question to consider is then: when would `[super init]` return a different o
 The answer is that it will return different objects in one of the following situations:
 
 - Singleton object (always returns the singleton instead of any subsequent allocation)
-- always returns the global "zero" object)
+- Other unique objects (`[NSNumber numberWithInteger:0]` always returns the global "zero" object)
 - Class clusters substitute private subclasses when you initialize an instance of the superclass.
 - Classes which choose to reallocate the same (or compatible) class based on parameters passed into the initializer.
 
@@ -195,10 +195,10 @@ In all but the final case, continuing to initialize the returned object if it ch
 
 So the list of three things that `[super init]` is permitted to return can now be expanded to four by splitting the "Return a different object" point into two:
 
-1. pointer doesn't change) with inherited instance values initialized.
+1. Return its own receiver (the `self` pointer doesn't change) with inherited instance values initialized.
 2. Return an object of the same class, requiring further initialization.
 3. Return a different object that is already completely initialized.
-4. , indicating failure.
+4. Return `nil`, indicating failure.
 
 In this list, we now have two cases (2 and 3) which are incompatible. The typical "assign `[super init]` to `self`" initializer handles cases 1, 2 and 4.
 
@@ -220,11 +220,7 @@ So class clusters, singletons and unique objects all use case 3, putting dozens 
 
 ## Conclusion
 
-> : I have rewritten this conclusion to reflect the fact that I'm not actually suggesting you should stop using "assign
-> 
-> to
-> 
-> " initializers. Thank you to everyone who invented creative ways to tell me I was wrong about this implication.
+> _Update_: I have rewritten this conclusion to reflect the fact that I'm not actually suggesting you should stop using "assign `[super init]` to `self`" initializers. Thank you to everyone who invented creative ways to tell me I was wrong about this implication.
 
 You don't _need_ to assign `[super init]` to `self` to make most classes work. In some obscure cases, it is actually the wrong thing to do.
 

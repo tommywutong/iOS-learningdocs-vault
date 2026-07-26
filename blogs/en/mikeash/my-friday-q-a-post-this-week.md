@@ -33,11 +33,7 @@ by [Mike Ash](https://www.mikeash.com/)
     }
 ```
 
-Because the setter does not use
-
-, the reference does not keep the new object alive. It will stay alive as long as it's retained by other references, of course. But once those go away, the object will be deallocated even if
-
-still points to it.
+Because the setter does not use `retain`, the reference does not keep the new object alive. It will stay alive as long as it's retained by other references, of course. But once those go away, the object will be deallocated even if `_foo` still points to it.
 
 Weak references are common in Cocoa in order to deal with [retain cycles](https://www.mikeash.com/pyblog/friday-qa-2010-04-30-dealing-with-retain-cycles.html). Delegates in Cocoa are almost always weak references for exactly this reason.
 
@@ -80,11 +76,7 @@ What if you aren't using garbage collection, though? While it would be great if 
     @end
 ```
 
-Usage is extremely simple. Initialize it with a target object. Retrieve the target object when you need to use it. The
-
-method will either return the target object (retained/autoreleased to guarantee that it will stay alive until you're done with it) or, if the target has already been destroyed, it will return
-
-.
+Usage is extremely simple. Initialize it with a target object. Retrieve the target object when you need to use it. The `-target` method will either return the target object (retained/autoreleased to guarantee that it will stay alive until you're done with it) or, if the target has already been destroyed, it will return `nil`.
 
 The `-setCleanupBlock:` method exists for more advanced uses. Normally a zeroing weak reference is a passive object. You can query its target at any time, and it either gives you an object or `nil`. But sometimes you want to take some additional action when the reference is zeroed out, such as unregistering a notification observer. The block passed to `-setCleanupBlock:` runs when the reference is zeroed out, allowin gyou to set up additional actions like that.
 
@@ -111,11 +103,7 @@ As an example, here's how to write the standard delegate pattern using `MAZeroin
     }
 ```
 
-This is only slightly harder than using normal, dangerous weak references, and provides complete safety. (If you use this pattern, remember that you must now release
-
-in
-
-!)
+This is only slightly harder than using normal, dangerous weak references, and provides complete safety. (If you use this pattern, remember that you must now release `_delegateRef` in `-dealloc`!)
 
 `MAZeroingWeakRef` is completely thread safe, both in terms of accessing it from multiple threads, and in terms of having the target object be destroyed in one thread while the weak reference is accessed from another thread.
 
@@ -165,24 +153,14 @@ Next up, a `CFMutableDictionary` is needed to map the target objects to the weak
     static CFMutableDictionaryRef gObjectWeakRefsMap; // maps (non-retained) objects to CFMutableSetRefs containing weak refs
 ```
 
-Next, an
-
-is used to track the dynamic subclasses that are created, and an
-
-is used to map from normal classes to their dynamic subclasses:
+Next, an `NSMutableSet` is used to track the dynamic subclasses that are created, and an `NSMutableDictionary` is used to map from normal classes to their dynamic subclasses:
 
 ```
     static NSMutableSet *gCustomSubclasses;
     static NSMutableDictionary *gCustomSubclassMap; // maps regular classes to their custom subclasses
 ```
 
-Finally, implement
-
-to set up all of these variables. The only tricky business here is that it uses a recursive mutex rather than a regular one. There are cases where the critical section can be re-entered, such as creating a
-
-pointing to another
-
-, and using a recursive mutex allows that to function.
+Finally, implement `+initialize` to set up all of these variables. The only tricky business here is that it uses a recursive mutex rather than a regular one. There are cases where the critical section can be re-entered, such as creating a `MAZeroingWeakRef` pointing to another `MAZeroingWeakRef`, and using a recursive mutex allows that to function.
 
 ```
     + (void)initialize
@@ -213,9 +191,7 @@ I also write a quick helper to execute a block of code while holding the lock:
     }
 ```
 
-And three more helpers to deal with adding a weak reference to an object's
-
-, removing a weak reference from an object, and clearing out all weak references to an object:
+And three more helpers to deal with adding a weak reference to an object's `CFMutableSet`, removing a weak reference from an object, and clearing out all weak references to an object:
 
 ```
     static void AddWeakRefToObject(id obj, MAZeroingWeakRef *ref)
@@ -244,7 +220,8 @@ And three more helpers to deal with adding a weak reference to an object's
     }
 ```
 
-With those basics in place, I'll now take a top-down approach to the rest of the implementation.
+**Implementation of `MAZeroingWeakRef`**  
+ With those basics in place, I'll now take a top-down approach to the rest of the implementation.
 
 First, the convenience constructor and initializer. Mostly straightforward:
 
@@ -265,9 +242,7 @@ First, the convenience constructor and initializer. Mostly straightforward:
     }
 ```
 
-The only tricky bit is that call to
-
-. That's an internal utility function which takes care of connecting the weak reference object to the target object, subclassing the target's class if necessary, and changing the target's class to be the custom subclass.
+The only tricky bit is that call to `RegisterRef`. That's an internal utility function which takes care of connecting the weak reference object to the target object, subclassing the target's class if necessary, and changing the target's class to be the custom subclass.
 
 The `dealloc` implementation similarly calls a utility function to remove the weak reference object:
 
@@ -280,9 +255,7 @@ The `dealloc` implementation similarly calls a utility function to remove the we
     }
 ```
 
-Toss in a simple
-
-method so we can see what's going on internally:
+Toss in a simple `description` method so we can see what's going on internally:
 
 ```
     - (NSString *)description
@@ -302,11 +275,7 @@ And a standard setter for setting the cleanup block:
     }
 ```
 
-The
-
-method gets a little more complicated. Because the target can be destroyed at any time, it needs to fetch its value while holding the global weak reference lock. It also needs to retain the target while holding that lock, to ensure that, if the target is alive, it
-
-alive until the receiver is done using it. This is of course balanced with an autorelease afterwards:
+The `target` method gets a little more complicated. Because the target can be destroyed at any time, it needs to fetch its value while holding the global weak reference lock. It also needs to retain the target while holding that lock, to ensure that, if the target is alive, it _stays_ alive until the receiver is done using it. This is of course balanced with an autorelease afterwards:
 
 ```
     - (id)target
@@ -334,9 +303,7 @@ Finally there's a private method used to zero out the target, which is called by
     }
 ```
 
-And that's it! Easy, right? Of course, all the interesting bits are in those utility functions, the utility functions
-
-call, and on and on....
+And that's it! Easy, right? Of course, all the interesting bits are in those utility functions, the utility functions _they_ call, and on and on....
 
 **Implementation of Utility Functions**  
  The implementation of `UnregisterRef` is simple. Get the target out of the `MAZeroingWeakRef`, get the table of references to the target, and remove the given reference. Wrap it all in a lock to ensure that the target can't be deallocated in the middle of this operation:
@@ -353,9 +320,7 @@ call, and on and on....
     }
 ```
 
-is similar. In addition to adding the reference to the table of references, it also calls
-
-. That function will, if necessary, create a new custom subclass and set the class of the target object to that subclass.
+`RegisterRef` is similar. In addition to adding the reference to the table of references, it also calls `EnsureCustomSubclass`. That function will, if necessary, create a new custom subclass and set the class of the target object to that subclass.
 
 ```
     static void RegisterRef(MAZeroingWeakRef *ref, id target)
@@ -367,11 +332,7 @@ is similar. In addition to adding the reference to the table of references, it a
     }
 ```
 
-The implementation of
-
-is broken into many pieces. First it checks to see if the object is
-
-an instance of a custom subclass. If it is, then nothing has to be done. If it's not, it then looks up the custom subclass that corresponds to the object's current class, and sets the class of the target object accordingly. If no custom subclass has yet been created, it creates it.
+The implementation of `EnsureCustomSubclass` is broken into many pieces. First it checks to see if the object is _already_ an instance of a custom subclass. If it is, then nothing has to be done. If it's not, it then looks up the custom subclass that corresponds to the object's current class, and sets the class of the target object accordingly. If no custom subclass has yet been created, it creates it.
 
 ```
     static void EnsureCustomSubclass(id obj)
@@ -391,13 +352,7 @@ an instance of a custom subclass. If it is, then nothing has to be done. If it's
     }
 ```
 
-The implementation of
-
-is easy. Get the object's class, and check to see if it's in the
-
-set. If not, get the superclass, and follow it up the chain until one is found. If none are found, then there is no custom subclass for this object. (The reason for following the chain is so that this code will still behave correctly even if some other code, such as Key-Value Observing, sets its own custom subclass after
-
-set one.)
+The implementation of `GetCustomSubclass` is easy. Get the object's class, and check to see if it's in the `gCustomSubclasses` set. If not, get the superclass, and follow it up the chain until one is found. If none are found, then there is no custom subclass for this object. (The reason for following the chain is so that this code will still behave correctly even if some other code, such as Key-Value Observing, sets its own custom subclass after `MAZeroingWeakRef` set one.)
 
 ```
     static Class GetCustomSubclass(id obj)
@@ -409,9 +364,7 @@ set one.)
     }
 ```
 
-Again, not too hard. The real fun begins in
-
-. The first thing it does is check to see if the object is a CoreFoundation toll-free bridged object. As I discussed above, the subclassing approach breaks for those objects, so they need to be rejected:
+Again, not too hard. The real fun begins in `CreateCustomSubclass`. The first thing it does is check to see if the object is a CoreFoundation toll-free bridged object. As I discussed above, the subclassing approach breaks for those objects, so they need to be rejected:
 
 ```
     static Class CreateCustomSubclass(Class class, id obj)
@@ -425,11 +378,7 @@ Again, not too hard. The real fun begins in
         {
 ```
 
-(
-
-is the
-
-which determines how much CoreFoundation hackery to enable. As I mentioned above, I'm going through the code as through it's not enabled.)
+(`COREFOUNDATION_HACK_LEVEL` is the `#define` which determines how much CoreFoundation hackery to enable. As I mentioned above, I'm going through the code as through it's not enabled.)
 
 The implementation of `IsTollFreeBridged` simply checks to see if the class name starts with `NSCF`:
 
@@ -440,30 +389,20 @@ The implementation of `IsTollFreeBridged` simply checks to see if the class name
     }
 ```
 
-For the
-
-branch, the first order of business is to create a name for the new class. Since Objective-C class names have to be unique, it constructs a new name based on the original name and a unique suffix:
+For the `else` branch, the first order of business is to create a name for the new class. Since Objective-C class names have to be unique, it constructs a new name based on the original name and a unique suffix:
 
 ```
             NSString *newName = [NSString stringWithFormat: @"%s_MAZeroingWeakRefSubclass", class_getName(class)];
             const char *newNameC = [newName UTF8String];
 ```
 
-Next, call
-
-to create a new class pair. (In Objective-C, each class has a corresponding metaclass, which is related to how the runtime works. The
-
-function creates both in one shot.)
+Next, call `objc_allocateClassPair` to create a new class pair. (In Objective-C, each class has a corresponding metaclass, which is related to how the runtime works. The `objc_allocateClassPair` function creates both in one shot.)
 
 ```
             Class subclass = objc_allocateClassPair(class, newNameC, 0);
 ```
 
-The new class implements two methods,
-
-and
-
-. The next step is then to add those two methods to the class, pointing them to the functions which implement them:
+The new class implements two methods, `release` and `dealloc`. The next step is then to add those two methods to the class, pointing them to the functions which implement them:
 
 ```
             Method release = class_getInstanceMethod(class, @selector(release));
@@ -472,9 +411,7 @@ and
             class_addMethod(subclass, @selector(dealloc), (IMP)CustomSubclassDealloc, method_getTypeEncoding(dealloc));
 ```
 
-Finally, call
-
-to register the new class with the runtime, and return the newly created class:
+Finally, call `objc_registerClassPair` to register the new class with the runtime, and return the newly created class:
 
 ```
             objc_registerClassPair(subclass);
@@ -484,11 +421,7 @@ to register the new class with the runtime, and return the newly created class:
     }
 ```
 
-Next,
-
-. Conceptually, the implementation of this class is simple. Acquire the global weak reference lock, and call
-
-while it's acquired. The purpose of this is to ensure that the final release for an object and its deallocation happens atomically, and an object can't be resurrected in between the two by a weak reference that hasn't yet been zeroed out.
+Next, `CustomSubclassRelease`. Conceptually, the implementation of this class is simple. Acquire the global weak reference lock, and call `[super release]` while it's acquired. The purpose of this is to ensure that the final release for an object and its deallocation happens atomically, and an object can't be resurrected in between the two by a weak reference that hasn't yet been zeroed out.
 
 The trouble is that simply writing `[super release]` won't work, because the compiler only allows that in a true, compile-time method implementation. In order to perform the equivalent action, it's necessary to figure out the superclass of the custom weak reference subclass. This is done using a simple helper function which calls `GetCustomSubclass` and returns the superclass of that class:
 
@@ -501,11 +434,7 @@ The trouble is that simply writing `[super release]` won't work, because the com
     }
 ```
 
-With that helper in place, the implementation of
-
-can use it to look up the superclass, use that to look up the superclass's implementation of
-
-, and then call that with the lock held:
+With that helper in place, the implementation of `CustomSubclassRelease` can use it to look up the superclass, use that to look up the superclass's implementation of `release`, and then call that with the lock held:
 
 ```
     static void CustomSubclassRelease(id self, SEL _cmd)
@@ -518,15 +447,7 @@ can use it to look up the superclass, use that to look up the superclass's imple
     }
 ```
 
-Almost done! The one remaining function is
-
-. It gets the table of weak references to the object and tells all of them to
-
-. It then invokes the superclass implementation of
-
-using the same technique as
-
-uses.
+Almost done! The one remaining function is `CustomSubclassDealloc`. It gets the table of weak references to the object and tells all of them to `_zeroTarget`. It then invokes the superclass implementation of `dealloc` using the same technique as `CustomSubclassRelease` uses.
 
 ```
     static void CustomSubclassDealloc(id self, SEL _cmd)
@@ -555,13 +476,7 @@ That's it! You now have zeroing weak references to Objective-C objects (except t
     NSLog(@"%@", [ref target]);
 ```
 
-The first
-
-will print the object, and the second will print
-
-. The autorelease pool is used to ensure that the object is truly destroyed, because the use of
-
-will put the object into the pool and otherwise it will stay alive longer.
+The first `NSLog` will print the object, and the second will print `(null)`. The autorelease pool is used to ensure that the object is truly destroyed, because the use of `target` will put the object into the pool and otherwise it will stay alive longer.
 
 Using a cleanup block is similarly simple:
 
@@ -572,11 +487,7 @@ Using a cleanup block is similarly simple:
     [obj release];
 ```
 
-The log will print when
-
-is called. Of course you can take more actions than simply printing. However, because the cleanup block is called while the global weak reference lock is held, you should try to keep your activities in there to a minimum. If you need to do a lot of work, set up a deferred call, using
-
-, GCD, NSOperationQueue, etc. and do the extra work there.
+The log will print when `[obj release]` is called. Of course you can take more actions than simply printing. However, because the cleanup block is called while the global weak reference lock is held, you should try to keep your activities in there to a minimum. If you need to do a lot of work, set up a deferred call, using `performSelectorOnMainThread:`, GCD, NSOperationQueue, etc. and do the extra work there.
 
 A simple way to turn a regular instance variable into a zeroing weak reference is to use `MAZeroingWeakRef` in your getter and setter, and then make sure to always use your getter in other code:
 
@@ -603,9 +514,7 @@ A simple way to turn a regular instance variable into a zeroing weak reference i
     }
 ```
 
-And of course if you do that, you have to be sure to release your reference in
-
-, just like any other object you allocate. Just don't release the target.
+And of course if you do that, you have to be sure to release your reference in `-dealloc`, just like any other object you allocate. Just don't release the target.
 
 For a more advanced use, here's an addition to `NSNotificationCenter` that eliminates the need to manually remove an observer in `dealloc`:
 
@@ -626,13 +535,7 @@ For a more advanced use, here's an addition to `NSNotificationCenter` that elimi
     @end
 ```
 
-Note the use of a cleanup block to remove the notification observer when the object is destroyed. All you have to do is call
-
-instead of
-
-in notification observers, and you'll never again forget to remove an observer in
-
-.
+Note the use of a cleanup block to remove the notification observer when the object is destroyed. All you have to do is call `addWeakObserver:` instead of `addObserver:` in notification observers, and you'll never again forget to remove an observer in `dealloc`.
 
 Similarly, if you're tired of mysterious crashes caused by NSTableView data sources being deallocated before the views themselves, you can easily fix it:
 
@@ -680,7 +583,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2010-07-16-zeroing-weak-references-in-objective-c.html)
 
 Add your thoughts, post a comment:
 

@@ -68,9 +68,7 @@ A major use of this is for lazily initializing singletons or other shared data i
     }
 ```
 
-This is fine, but expensive; every call to
-
-incurs the expense of taking a lock, even though that lock is basically only needed once. There are fancier ways to approach this, using things like double-checked locking or atomic operations, but they're difficult and extremely error-prone.
+This is fine, but expensive; every call to `+sharedWhatever` incurs the expense of taking a lock, even though that lock is basically only needed once. There are fancier ways to approach this, using things like double-checked locking or atomic operations, but they're difficult and extremely error-prone.
 
 Using GCD you can rewrite the above method using `dispatch_once` like so:
 
@@ -86,13 +84,7 @@ Using GCD you can rewrite the above method using `dispatch_once` like so:
     }
 ```
 
-This is actually slightly simpler than the
-
-method, and GCD makes sure to do these checks in a fast manner. It ensures that the code in the block will have run before any threads can pass beyond the call to
-
-, but doesn't force code to take the hit of synchronization every time it uses this function. In fact, if you look at the header where this function is declared, you'll discover that the current implementation is actually a macro which performs the initial test inline, meaning that you don't even incur
-
-overhead, much less synchronization overhead, for the common case.
+This is actually slightly simpler than the `@synchronized` method, and GCD makes sure to do these checks in a fast manner. It ensures that the code in the block will have run before any threads can pass beyond the call to `dispatch_once`, but doesn't force code to take the hit of synchronization every time it uses this function. In fact, if you look at the header where this function is declared, you'll discover that the current implementation is actually a macro which performs the initial test inline, meaning that you don't even incur _function call_ overhead, much less synchronization overhead, for the common case.
 
 **Conclusion**  
  That wraps up this series on Grand Central Dispatch. This week you saw how to suspend, resume, and retarget dispatch queues, and some uses for these facilities. You also saw how to use dispatch semaphores and one-time initialization facilities. In previous weeks you saw how to manage dispatch objects, how to create/access and use the different types of dispatch queues available for different tasks, strategies for taking advantage of multi-core systems, and how to monitor for events using GCD's events system. Now you have the complete picture of how GCD operates and how to use it, so go out there and write some great new software with it!
@@ -107,7 +99,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-09-18-intro-to-grand-central-dispatch-part-iv-odds-and-ends.html)
 
 Add your thoughts, post a comment:
 

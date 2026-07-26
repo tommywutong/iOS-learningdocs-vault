@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f258d2245b3c7e63'
 translated: false
 ---
@@ -40,11 +40,11 @@ It goes on with specific rules for advertising, specifically restrictions for th
 
 We can obviously argue endlessly about the meaning of specific terms. What is meant by “user data” or “device data”? Does user data include anonymized usage stats? Are the OS version or the device model identifier examples of device data in the context of these rules? My answer would be yes on both counts but Apple does not define those terms.
 
-Regardless, I think the intention of the rules is quite clear: Apple cares about the privacy of their users[1](#fn:1) and app developers are supposed to respect it, too. Read that quote again:
+Regardless, I think the intention of the rules is quite clear: Apple cares about the privacy of their users^[1](#fn:1) and app developers are supposed to respect it, too. Read that quote again:
 
 > You … may not collect user or device data without prior user consent, and then only to provide a service or function that is directly relevant to the use of the Application, or to serve advertising …. You may not use analytics software in Your Application to collect and send device data to a third party.
 
-Now check out [the kinds of data an analytics service like Flurry collects](http://support.flurry.com/index.php?title=Analytics/Overview/Lexicon) from the hundreds of thousands of apps[2](#fn:2) that use it:
+Now check out [the kinds of data an analytics service like Flurry collects](http://support.flurry.com/index.php?title=Analytics/Overview/Lexicon) from the hundreds of thousands of apps^[2](#fn:2) that use it:
 
 - Device (model, OS version) and carrier information
 - User demographics: age, gender, personas and interests (estimated from Flurry’s wealth of data)
@@ -57,7 +57,7 @@ Now check out [the kinds of data an analytics service like Flurry collects](http
 
 (I am not certain [if and how Flurry and similar services still manage to track users across multiple apps in iOS 7](https://oleb.net/blog/2013/12/apples-inter-app-sharing-dilemma/). Unless they abuse the advertising identifier or employ some kind of [fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint), they may not be able to now that Apple has removed the ability to share named pasteboards.)
 
-![Flurry Analytics Feature Set](https://oleb.net/media/flurry-analytics-feature-set.png)
+[![Flurry Analytics Feature Set](https://oleb.net/media/flurry-analytics-feature-set.png)](https://oleb.net/media/flurry-analytics-feature-set.png)
 
 <sub>The feature set of Flurry Analytics. Source: [Flurry](http://support.flurry.com/index.php?title=Analytics/Overview/RestrictedFeatureSet).</sub>
 
@@ -67,7 +67,7 @@ Although the data is anonymous – at least in the sense that the user’s name 
 
 What does this mean in practice? Unfortunately (from the perspective of a user who is concerned about privacy), the answer is, next to nothing, because Apple doesn’t seem to enforce these rules very actively, if at all.
 
-While I currently do not use any analytics in my apps[3](#fn:3), I have worked for clients that do and I am not against the data collection per se. I do realize that things like usage stats, OS versions and language preferences of your user base can be extremely useful to steer the development of an app into the right direction. And let’s face it, the monitoring of users’ every move won’t go away anyway, and neither is the collection of such data by aggregators; building and running your own analytics service is not trivial.
+While I currently do not use any analytics in my apps^[3](#fn:3), I have worked for clients that do and I am not against the data collection per se. I do realize that things like usage stats, OS versions and language preferences of your user base can be extremely useful to steer the development of an app into the right direction. And let’s face it, the monitoring of users’ every move won’t go away anyway, and neither is the collection of such data by aggregators; building and running your own analytics service is not trivial.
 
 Nevertheless, I would love if this post causes some developers to think harder about the integration of analytics in their apps. If you just sign up for a third-party service like Flurry or Google Analytics, download their SDK and embed it in your app with one line of code, that’s not good enough. If your next client asks you to do just that, please argue with them for more transparency.
 

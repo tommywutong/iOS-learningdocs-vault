@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:01e36e97df0e52e8'
 translated: false
 ---
@@ -22,14 +22,8 @@ In my opinion, the most fun feature of Objective-C's dynamic method lookup is be
 
 This is done through an approach called method swizzling. An example of Method swizzling to replace -[NSWindow dealloc] method would work like this:
 
-- MyClass
-
-  , with a class method,
-
-  +(void)myReplacementMethod
-- main()
-
-  function:
+- Create a class, MyClass, with a class method, +(void)myReplacementMethod
+- Put the following code at the start of your main() function:
 
 ```objc
 Method myReplacementMethod =
@@ -94,10 +88,8 @@ The lookup itself is relatively safe in that it will invoke any "super" implemen
 
 The process works like this:
 
-1. IMP of the current method
-
-  .
-2. the current method (identified using the IMP from step 1) that responds to the same selector.
+1. Find the [IMP of the current method](https://www.cocoawithlove.com/2008/02/imp-of-current-method.html).
+2. Look through the current Class's hierarchy and find the next method in the list _after_ the current method (identified using the IMP from step 1) that responds to the same selector.
 3. Invoke that method
 
 Step one comes from my [earlier post of the same name](https://www.cocoawithlove.com/2008/02/imp-of-current-method.html).
@@ -192,12 +184,8 @@ double result =
 
 Hideous but required if any of the following is true:
 
-- s are acceptable)
-- or
-
-  ) or
-
-  s.
+- your return type is not a pointer or smaller size value (`float`s are acceptable)
+- your parameters not pointers, pointer sized integers (`long` or `NSInteger`) or `double`s.
 
 ## Conclusion
 

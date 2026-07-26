@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:03ca322516095c3a'
 translated: false
 ---
@@ -32,7 +32,7 @@ A few years ago I took a class on Phonetics and Phonology, and found myself need
 
 _(mouse over if you’ve forgotten what regular Dvorak looks like)_
 
-What are all those orange keys? Those are _[dead keys](http://en.wikipedia.org/wiki/Dead_key),_ usually used to make accented characters and co-opted by me for typing characters linguistically similar to the first one.[1](#fn:example) Ukelele can handle these as well.
+What are all those orange keys? Those are _[dead keys](http://en.wikipedia.org/wiki/Dead_key),_ usually used to make accented characters and co-opted by me for typing characters linguistically similar to the first one.^[1](#fn:example) Ukelele can handle these as well.
 
 To use your custom keyboard, just save the `keylayout` file from Ukelele in a “Keyboard Layouts” folder inside your Library folder. You can even give your keyboard an icon for the menu bar switcher by putting a 16x16 icon file in the folder, as long as it’s in ICNS format and has the same name as the layout file.
 
@@ -50,7 +50,7 @@ Fortunately, [someone’s already solved this problem](http://apple.stackexchang
 
 ### The Text Input System
 
-The OS X text input system is a complicated beast, but then again text input is pretty complicated in and of itself. Keyboard layouts are well and good for many alphabetic languages, but for something like Japanese or Chinese you need a bit more power. For this, there are programs called _[input methods](https://developer.apple.com/library/mac/#releasenotes/Cocoa/RN-InputMethodKit/_index.html),_ which handle, say, the translation from Latin characters to Chinese ones with the corresponding Mandarin pronunciation.[2](#fn:palettes)
+The OS X text input system is a complicated beast, but then again text input is pretty complicated in and of itself. Keyboard layouts are well and good for many alphabetic languages, but for something like Japanese or Chinese you need a bit more power. For this, there are programs called _[input methods](https://developer.apple.com/library/mac/#releasenotes/Cocoa/RN-InputMethodKit/_index.html),_ which handle, say, the translation from Latin characters to Chinese ones with the corresponding Mandarin pronunciation.^[2](#fn:palettes)
 
 The press-and-hold feature is implemented as an input method that listens for held-down key events. Unlike the Japanese or Chinese input methods, the press-and-hold feature is not exclusive, and does not appear in the input menu. Other than that, though, the text input system treats it like any other input method, and in theory you could write my own input method that did exactly the same thing. (More on this later…)
 
@@ -105,11 +105,11 @@ So, this ought to be enough, right? I managed to get the accents popover to show
 
 I said before that it’s possible to write your own input method that does everything PressAndHold.app does. But…
 
+> **Problem:** Some applications do about 90% of what I want. **Solution:** Develop my own applications. **Better Solution:** Patch the application myself…
+
 That comes from the developer of [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php), a program specifically designed for injecting code into existing OS X applications. While this can be a HUGE security risk, it’s also what allows me to build a plugin like [Keystone](http://belkadan.com/keystone/) that runs inside Safari. In this case, I decided to make a plugin that ran inside PressAndHold.app. In a fit of grandeur I called it MagicPressAndHold.
 
 The actual implementation of that plug-in wasn’t so hard. Using the [`class-dump`](http://www.codethecode.com/projects/class-dump/) utility (and, uh, breaking Apple’s Terms of Service a bit), I found that there’s a single method that serves as the entry point for accented character suggestions: `-accentsStringForString:language:`. So I just had to inject my own implementation of that method to gain control over the set of variant characters.
-
-The above uses explicit \<code\>\</code\> tags so that the text inside is still valid for abbreviations. Yay for Kramdown.
 
 I ran into a slight snag because PressAndHold.app doesn’t run like a normal Mac OS X application. Instead, it’s launched by the text input system as necessary and doesn’t show up in NSWorkspace’s usual “application launched” notifications. That means SIMBL doesn’t get a chance to look at it. Manually sending SIMBL’s “please load me” AppleEvent to PressAndHold.app did the trick.
 

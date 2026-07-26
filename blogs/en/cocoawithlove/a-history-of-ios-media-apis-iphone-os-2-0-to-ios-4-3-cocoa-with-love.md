@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a1d3f4bf3fbea04e'
 translated: false
 ---
@@ -110,11 +110,7 @@ Arriving approximately 1 year after iPhone OS 2.0, iPhone OS 3.0 brought the fol
 
 - `AVAudioRecorder`
 - `AVAudioSession`
-- ,
-
-  and
-
-  classes
+- `MPMediaQuery`, `MPMediaPickerController` and `MPMusicPlayerController` classes
 
 **[AVAudioRecorder](http://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVAudioRecorder_ClassReference/Reference/Reference.html)** provided the first Objective-C approach for recording sound. It offers a simple way to record sound to a file but doesn't allow processing of the sound on-the-fly (for that, `AudioQueueNewInput` is still required).
 
@@ -183,23 +179,15 @@ The "Done" button of the `MPMoviePlayerController` (visible in fullscreen) no lo
 
 The biggest update since iPhone OS 2.0, iOS 4 brought a huge number of changes to media APIs.
 
-- (and related classes)
-- (and related classes)
-- (and related classes)
-- ,
-
-  ,
-
-  (and related classes)
+- `ALAsset` (and related classes)
+- `AVCaptureSession` (and related classes)
+- `AVComposition` (and related classes)
+- `AVPlayer`, `AVPlayerItem`, `AVAsset` (and related classes)
 - The ability to get the URL for an `MPMediaItem`
-- and
-
-  in
-- and
-
-  changes from iOS 3.2 brought to non-iPad devices
+- `startVideoCapture` and `stopVideoCapture` in `UIImagePickerController`
+- `UIScreen` and `MPMoviePlayerController` changes from iOS 3.2 brought to non-iPad devices
 - Background audio
-- and
+- `beginReceivingRemoteControlEvents` and `endReceivingRemoteControlEvents`
 
 The huge additions to the [AVFoundation.framework](http://developer.apple.com/library/ios/#DOCUMENTATION/AVFoundation/Reference/AVFoundationFramework/_index.html%23//apple_ref/doc/uid/TP40008072) — particularly the **[AVPlayer](http://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVPlayer_Class/Reference/Reference.html)** and **[AVComposition](http://developer.apple.com/library/ios/DOCUMENTATION/AVFoundation/Reference/AVComposition_Class/Reference/Reference.html)** class hierarchies — reflect Apple providing APIs that replace what Quicktime's API used to provide on the Mac: sophisticated media handling that could be used to implement a complete music or movie editing program if required. Ultimately, since Quicktime 7 is deprecated in favor of Quicktime X on the Mac, I expect that these APIs will probably appear in a future version of Mac OS X and represent multi-track mixing, editing and composition in Cocoa for the future.
 

@@ -248,7 +248,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2014-01-24-introduction-to-libclang.html)
 
 Add your thoughts, post a comment:
 

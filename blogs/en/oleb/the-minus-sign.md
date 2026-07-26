@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:457a9a8128dd294c'
 translated: false
 ---
@@ -47,6 +47,6 @@ formatter.minusSign = @"\u2212"; // U+2212 MINUS SIGN
 
 The difference is significant:
 
-![Hyphen-minus vs. minus sign](https://oleb.net/media/hyphen-minus-vs-minus-sign.png)
+[![Hyphen-minus vs. minus sign](https://oleb.net/media/hyphen-minus-vs-minus-sign.png)](https://oleb.net/media/hyphen-minus-vs-minus-sign.png)
 
 <sub>Hyphen-minus vs. minus sign.</sub>

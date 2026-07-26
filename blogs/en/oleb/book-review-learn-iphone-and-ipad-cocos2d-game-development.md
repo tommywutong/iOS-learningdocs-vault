@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3e828bd6533086f3'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Book Review: Learn iPhone and iPad cocos2d Game Development
 
-![Cover of Learn iPhone and iPad cocos2d Game Development](https://oleb.net/media/learn-iphone-ipad-cocos2d-game-development-cover-250px.png)
+[![Cover of Learn iPhone and iPad cocos2d Game Development](https://oleb.net/media/learn-iphone-ipad-cocos2d-game-development-cover-250px.png)](https://www.amazon.com/Learn-iPhone-iPad-cocos2d-Development/dp/1430233036/)
 
 I recently found the time to learn a bit about game development on iOS, something I’ve been wanting to do for a long time. Most iOS games use OpenGL ES to get more performance and flexibility than what is possible with UIKit views and Core Animation layers. OpenGL is quite a different beast than those frameworks, though. For most iOS developers, the learning curve is very steep. And as soon as your game logic gets a little more complex, you make your life a lot easier by using an object-oriented game framework that builds on OpenGL ES.
 
@@ -36,13 +36,7 @@ On fewer than 400 pages, Steffen manages to walk the reader through the entire f
 - Collision detection.
 - Particle effects.
 - Map-based games (with both top-view and isometric maps).
-- Box2D
-
-  and
-
-  Chipmunk
-
-  . Both are not technically part of cocos2d but they ship with the source package and are easy to integrate with cocos2d.
+- Working with the physics engines [Box2D](http://www.box2d.org/) and [Chipmunk](https://code.google.com/p/chipmunk-physics/). Both are not technically part of cocos2d but they ship with the source package and are easy to integrate with cocos2d.
 
 # The Good
 

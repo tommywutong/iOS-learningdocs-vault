@@ -52,9 +52,7 @@ Due to the heavy use of generators, you'll need to know what those are and how `
         int port = atoi(argv[1]);
 ```
 
-Next, it will set up sockets to listen on that port (one socket each for IPv4 and IPv6), then call
-
-to let GCD start doing its thing:
+Next, it will set up sockets to listen on that port (one socket each for IPv4 and IPv6), then call `dispatch_main` to let GCD start doing its thing:
 
 ```
         SetupSockets(port);
@@ -67,11 +65,8 @@ to let GCD start doing its thing:
     }
 ```
 
-The code to set up the sockets is straightforward sockets code, and I won't go into details on that. If you're unfamiliar with sockets, there are lots of references out there. Note that the
-
-macro is just something that tests for a
-
-return value and prints an error and exits the program if so.
+**Setup**  
+ The code to set up the sockets is straightforward sockets code, and I won't go into details on that. If you're unfamiliar with sockets, there are lots of references out there. Note that the `CHECK` macro is just something that tests for a `-1` return value and prints an error and exits the program if so.
 
 ```
     static void SetupSockets(int port)
@@ -93,15 +88,7 @@ return value and prints an error and exits the program if so.
     }
 ```
 
-The
-
-function is where things start to get interesting. This first calls
-
-on the socket to make it start listening for connections. It then creates a new
-
-to handle events on the socket. Note that, just as with
-
-, GCD treats a new connection on a listening socket as a read event, so that's the type of dispatch source that this function creates:
+The `SetupListenSource` function is where things start to get interesting. This first calls `listen` on the socket to make it start listening for connections. It then creates a new `dispatch_source_t` to handle events on the socket. Note that, just as with `select`, GCD treats a new connection on a listening socket as a read event, so that's the type of dispatch source that this function creates:
 
 ```
     static void SetupListenSource(int s)
@@ -117,9 +104,7 @@ to handle events on the socket. Note that, just as with
     }
 ```
 
-The
-
-function is just a simple wrapper for a couple of GCD calls:
+The `NewFDSource` function is just a simple wrapper for a couple of GCD calls:
 
 ```
     static dispatch_source_t NewFDSource(int s, dispatch_source_type_t type, dispatch_block_t block)
@@ -130,11 +115,8 @@ function is just a simple wrapper for a couple of GCD calls:
     }
 ```
 
-When a new connection arrives,
-
-is called to set up the connection. The first thing it does is call
-
-to get the socket for that specific connection:
+**Reading**  
+ When a new connection arrives, `AcceptConnection` is called to set up the connection. The first thing it does is call `accept` to get the socket for that specific connection:
 
 ```
     static void AcceptConnection(int listenSock)
@@ -145,17 +127,13 @@ to get the socket for that specific connection:
         LOG("new connection on socket %d, new socket is %d", listenSock, newSock);
 ```
 
-Next, it creates a new
-
-structure:
+Next, it creates a new `Connection` structure:
 
 ```
         struct Connection *connection = NewConnection(newSock);
 ```
 
-I initially thought that I could get away with not having such a structure at all, and let everything about a connection be managed as implicit block/generator state. However, there's a wrinkle. It starts with this text on the
-
-man page:
+I initially thought that I could get away with not having such a structure at all, and let everything about a connection be managed as implicit block/generator state. However, there's a wrinkle. It starts with this text on the `dispatch_source` man page:
 
 ```
      Important: a cancellation handler is required for file descriptor and
@@ -175,9 +153,7 @@ The next step is to create a request reader, which is a generator that parses th
         int (^requestReader)(char) = RequestReader(connection);
 ```
 
-Next, it creates a dispatch source to look for available data on the new socket. The event handler reads a single character from the socket, then passes that character off to the request reader. On
-
-, it writes out an error response if the request wasn't complete enough to generate a normal response, then cancels the handler. Since this is an HTTP 1.0 server, not a 1.1 server, the connection is not reusable for subsequent requests, but rather the client must open a new one each time.
+Next, it creates a dispatch source to look for available data on the new socket. The event handler reads a single character from the socket, then passes that character off to the request reader. On `EOF`, it writes out an error response if the request wasn't complete enough to generate a normal response, then cancels the handler. Since this is an HTTP 1.0 server, not a 1.1 server, the connection is not reusable for subsequent requests, but rather the client must open a new one each time.
 
 ```
         __block BOOL didSendResponse = NO;
@@ -220,18 +196,14 @@ The cancel handler simply releases the connection and the dispatch source:
         });
 ```
 
-And as its last act,
-
-"resumes" the source so that it can start processing:
+And as its last act, `AcceptConnection` "resumes" the source so that it can start processing:
 
 ```
         dispatch_resume(source);
     }
 ```
 
-The request reader generator simply accepts a character at a time as a parameter, and parses the HTTP request. The big advantage of using a generator can be seen here, where the parser is written completely top-down, and yet is fully asynchronous. It returns an integer to indicate to the caller whether it sent a response or not, so that the caller can know whether it needs to send its own fail-safe error response. If it hits a parse error at any point, it responds with an error and bails out, otherwise it makes a call to
-
-and tells it which resource it's supposed to process. This parser completely ignores any headers sent by the client, so once the method and resource have been read, it simply enters a loop and skips over any remaining input.
+The request reader generator simply accepts a character at a time as a parameter, and parses the HTTP request. The big advantage of using a generator can be seen here, where the parser is written completely top-down, and yet is fully asynchronous. It returns an integer to indicate to the caller whether it sent a response or not, so that the caller can know whether it needs to send its own fail-safe error response. If it hits a parse error at any point, it responds with an error and bails out, otherwise it makes a call to `ProcessResource` and tells it which resource it's supposed to process. This parser completely ignores any headers sent by the client, so once the method and resource have been read, it simply enters a loop and skips over any remaining input.
 
 ```
     GENERATOR(int, RequestReader(struct Connection *connection), (char))
@@ -293,9 +265,8 @@ and tells it which resource it's supposed to process. This parser completely ign
     }
 ```
 
-The
-
-function is extremely simple. It simply gets a content generator for the resource in question, and writes it:
+**Responding**  
+ The `ProcessResource` function is extremely simple. It simply gets a content generator for the resource in question, and writes it:
 
 ```
     static void ProcessResource(struct Connection *connection, NSString *resource)
@@ -304,7 +275,7 @@ function is extremely simple. It simply gets a content generator for the resourc
     }
 ```
 
-just checks for known resources and returns the appropriate handler if it finds one, otherwise returning a "not found" handler. If you wanted to add more handlers, this is where they would go:
+`ContentGeneratorForResource` just checks for known resources and returns the appropriate handler if it finds one, otherwise returning a "not found" handler. If you wanted to add more handlers, this is where they would go:
 
 ```
     static NSData *(^ContentGeneratorForResource(NSString *resource))(void)
@@ -318,9 +289,7 @@ just checks for known resources and returns the appropriate handler if it finds 
     }
 ```
 
-The
-
-function is basically the inverse of the read handler shown above. It takes the content generator, and wraps it in a byte generator which generates one byte at a time. It then writes those bytes until no more remain, or an error occurs, at which point it shuts down the write side of the socket and releases the connection and dispatch source:
+The `Write` function is basically the inverse of the read handler shown above. It takes the content generator, and wraps it in a byte generator which generates one byte at a time. It then writes those bytes until no more remain, or an error occurs, at which point it shuts down the write side of the socket and releases the connection and dispatch source:
 
 ```
     static void Write(struct Connection *connection, NSData *(^contentGenerator)(void))
@@ -360,19 +329,7 @@ function is basically the inverse of the read handler shown above. It takes the 
     }
 ```
 
-As you can see from the declaration, a content generator is a generator that returns
-
-instances. The idea is that it can return its response in nice manageable chunks, but not have to build up the entire response in memory ahead of time. However, to simplify writing, the server writes only one byte at a time. The
-
-generator takes an
-
-generator and returns the individual bytes, one by one. Since it needs to be able to signal when it reaches the end, it actually returns an
-
-, using
-
-as the
-
-signal and positive numbers for byte values:
+As you can see from the declaration, a content generator is a generator that returns `NSData` instances. The idea is that it can return its response in nice manageable chunks, but not have to build up the entire response in memory ahead of time. However, to simplify writing, the server writes only one byte at a time. The `ByteGenerator` generator takes an `NSData` generator and returns the individual bytes, one by one. Since it needs to be able to signal when it reaches the end, it actually returns an `int`, using `-1` as the `EOF` signal and positive numbers for byte values:
 
 ```
     GENERATOR(int, ByteGenerator(NSData *(^contentGenerator)(void)), (void))
@@ -434,9 +391,7 @@ With this, the server is essentially complete except for the handlers.
     }
 ```
 
-Next, the "not found" handler simply generates a typical
-
-error page:
+Next, the "not found" handler simply generates a typical `404` error page:
 
 ```
     GENERATOR(NSData *, NotFoundHandler(NSString *resource), (void))
@@ -472,11 +427,7 @@ The root handler just displays a little welcome page with a link to a more inter
     }
 ```
 
-Finally there's a listing handler, which serves to illustrate the asynchronous nature of this server. It just lists the full contents of
-
-using an
-
-. The server architecture allows the response to be generated incrementally and sent to the client as the response is created, rather than buffering it all and sending it in one big chunk, and yet the response handler code is, once again, completely straightforward top-to-bottom:
+Finally there's a listing handler, which serves to illustrate the asynchronous nature of this server. It just lists the full contents of `/tmp` using an `NSDirectoryEnumerator`. The server architecture allows the response to be generated incrementally and sent to the client as the response is created, rather than buffering it all and sending it in one big chunk, and yet the response handler code is, once again, completely straightforward top-to-bottom:
 
 ```
     GENERATOR(NSData *, ListingHandler(NSString *resource), (void))
@@ -511,13 +462,7 @@ using an
     }
 ```
 
-And that's all of the significant code in the server. There are a couple of helpers, and the code to manage the
-
-structure, which i won't go over here, but you can always
-
-read the source
-
-if you want to see them.
+And that's all of the significant code in the server. There are a couple of helpers, and the code to manage the `Connection` structure, which i won't go over here, but you can always [read the source](http://www.mikeash.com/svn/GCDWeb/GCDWeb.m) if you want to see them.
 
 **Conclusion**  
  The combination of GCD and generators makes for a relatively simple asynchronous server architecture. 400 lines of code gives us a fairly complete, if not very featureful, web server which is fully multithreaded to handle multiple connections simultaneously, and which automatically uses thread pools to distribute work.
@@ -538,7 +483,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-12-11-a-gcd-case-study-building-an-http-server.html)
 
 Add your thoughts, post a comment:
 

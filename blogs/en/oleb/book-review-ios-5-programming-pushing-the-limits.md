@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:b0a42960f85025ee'
 translated: false
 ---
@@ -16,7 +16,7 @@ translated: false
 
 # Book Review: iOS 5 Programming – Pushing the Limits
 
-![iOS 5 Programming – Pushing the Limits Book Cover](https://oleb.net/media/ios-5-programming-pushing-the-limits-cover.png)
+[![iOS 5 Programming – Pushing the Limits Book Cover](https://oleb.net/media/ios-5-programming-pushing-the-limits-cover.png)](https://www.amazon.com/iOS-Programming-Pushing-Limits-Extraordinary/dp/1119961327/)
 
 **Update September 12, 2012:** I updated the article with some fixes for places where I was wrong, comments from Rob Napier and Mugunth Kumar, the two authors, and added a few more references. I apologize for the wrong statements I made. See the highlighted paragraphs below.
 
@@ -36,17 +36,13 @@ To me, the errors I found are a sign of either serious sloppiness or lack of kno
 
 My other criticism is about the level of the book and therefore much more subjective. In my opinion, only about one third of the contents really are about “pushing the limits” in that it deals with truly advanced topics. Some examples that I liked:
 
-- drawing model.
+- A description of the `CALayer` drawing model.
 - An explanation of the notion of time in Core Animation animations.
-- and
-
-  and the differences between dirty and resident memory in Instruments’ VM Tracker.
-- .
+- The discussion of `NSCache` and `NSPurgeableData` and the differences between dirty and resident memory in Instruments’ VM Tracker.
+- An explanation of run loops and blocking, read/write locks with concurrent queues and `dispatch_barrier_async`.
 - The very thorough chapter on Security with tutorials about verifying and trusting certificates, as well as symmetric encryption.
 - The how-to on the inner workings of key-value coding and observing.
-- Ridiculous Fish article on the origins of toll-free bridging
-
-  .)
+- The chapter on Core Foundation with a discussions on memory management, memory allocators, strings and collections. (Which pointed me to this wonderful [Ridiculous Fish article on the origins of toll-free bridging](http://ridiculousfish.com/blog/posts/bridge.html).)
 - The chapter on the Objective-C runtime.
 
 On the other side of the spectrum are introductory chapters on Xcode and basic language features like naming conventions, categories and properties that should not waste space in an advanced book. Readers know this stuff already. If they don’t, they know they should read a beginner’s book first.
@@ -79,11 +75,13 @@ Throughout the book, the authors speak of “category classes” when they mean 
 
 Talking about Build Schemes in Xcode:
 
+> You can duplicate the profile scheme so that you have two schemes: one launching Leaks and the other launching Time Profiler.
+
 It would be great if Xcode schemes worked that way but unfortunately they don't. It's not possible to create custom or duplicate existing _actions_ (such as Profile) in a scheme; the only thing you can do is duplicate the entire scheme with all its actions, which is overkill and hard to manage if all you want is edit a parameter for one of the several actions.
 
 39
 
-> . I avoid prefixing with underscore because Apple reserves the leading underscore
+> Suffix instance variables (ivars) with an underscore or prefix them with `m`. I avoid prefixing with underscore because Apple reserves the leading underscore
 
 No, Apple does not reserve the leading underscore for ivars. In fact, [they recommend using it](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-1001757). Rob Napier [acknowledges this error in the errata](http://iosptl.com/posts/leading-underscores/).
 
@@ -91,17 +89,13 @@ No, Apple does not reserve the leading underscore for ivars. In fact, [they reco
 
 The discussion of Automatic Reference Counting is confusing in places. The authors say multiple times that, under ARC, you should not call `retain`, `release` or `autorelease` anymore, but fail to mention that doing so is explicitly forbidden. Readers will quickly notices because the compiler will throw an error but I think things like this should be noted in a book.
 
-> The lead-in paragraph is
-> 
-> followed by
-> 
-> as one of the four restrictions. Is “restrictions” and “No” not explicit enough?
+> **Rob Napier:** The lead-in paragraph is ARC introduces four restrictions on your code… followed by No calls to `retain`, `release`, or `autorelease` as one of the four restrictions. Is “restrictions” and “No” not explicit enough?
 
 72
 
 In the discussion of the singleton pattern, ~~the authors do not distinguish between real singletons (classes of which only one instance can exist) and classes like `NSNotificationCenter`, which aren't singletons despite the fact that only one instance of these will exist in most apps (in this case, the `+defaultCenter`). Furthermore,~~ the authors recommend a pattern for implementing a singleton that is no longer the recommended way. The better method is [mentioned in the errata](http://iosptl.com/posts/the-singleton-pattern/).
 
-> I really tried to explain the difference between real (I call them “strict”) and “shared” singletons on pp. 70-71. Is this not clear? Agreed that my pattern was out-dated, which is why I wrote the errata.
+> **Rob Napier:** I really tried to explain the difference between real (I call them “strict”) and “shared” singletons on pp. 70-71. Is this not clear? Agreed that my pattern was out-dated, which is why I wrote the errata.
 
 Upon re-reading this section, I have to agree with Rob. This is well described in this section and I did not read it carefully enough. I apologize for pointing this out as an error.
 
@@ -111,6 +105,8 @@ The protocols `UITableViewDelegate` and `UITableViewDataSource` are labeled “c
 
 77
 
+> In most cases, nib files do not lower the performance compared to an equivalently coded UI.
+
 If there is any evidence for cases where NIB files cause significantly lower performance than a UI created in code, the authors fail to mention it. The example they give compares a table cell composed in Interface Builder (with multiple subviews) to a [performance-optimized table cell that does its own drawing](https://atebits.tumblr.com/post/197580827/fast-scrolling-in-tweetie-with-uitableview), which I don't consider equivalent.
 
 79
@@ -119,17 +115,21 @@ The sample code to manually load a NIB file uses `-[NSBundle loadNibNamed:owner:
 
 **Update:** Here's a relevant quote from the [`UINib` class reference](http://developer.apple.com/library/ios/#documentation/uikit/reference/UINib_Ref/Reference/Reference.html):
 
-> objects whenever it needs to repeatedly instantiate the same nib data. For example, if your table view uses a nib file to instantiate table view cells, caching the nib in a
-> 
-> object can provide a significant performance improvement.
+> Your application should use `UINib` objects whenever it needs to repeatedly instantiate the same nib data. For example, if your table view uses a nib file to instantiate table view cells, caching the nib in a `UINib` object can provide a significant performance improvement.
 
 87
 
+> once loaded, nibs are cached.
+
 The authors provide no reference for this statement and I could not find any place where this is documented. My understanding is that the `UINib` class (which is not used in the book) was introduced for exactly that reason and that `loadNibNamed:owner:options:` does not provide any caching. If this is not the case, I do not see why `UINib` should even exist. From the [documentation for `UINib`](http://developer.apple.com/library/ios/#documentation/uikit/reference/UINib_Ref/Reference/Reference.html):
+
+> An UINib object caches the contents of a nib file in memory, ready for unarchiving and instantiation. When your application needs to instantiate the contents of the nib file it can do so without having to load the data from the nib file first, improving performance.
 
 91
 
 The authors confound the terms “superclass” and “owning object”:
+
+> But a good design practice is to let the table cell handle the delegate and notify its super class.
 
 The cell should notify its owner or delegate. It rarely makes sense for an instance to notify its superclass about an event.
 
@@ -139,6 +139,8 @@ The authors make no distinction between drawing and compositing systems. UIKit a
 
 Also:
 
+> [UIKit] is the highest-level interface, and the only interface in Objective-C.
+
 Wrong. Core Animation and Core Image also have object-oriented interfaces.
 
 124
@@ -147,21 +149,13 @@ Sample drawing code steps down to the Core Graphics level to set various advance
 
 128
 
-> is the same as
-> 
-> . The entire view will be redrawn.
+> iOS does not perform partial view drawing, and `setNeedsDisplayInRect:` is the same as `setNeedsDisplay`. The entire view will be redrawn.
 
 [The documentation says the opposite](http://developer.apple.com/library/ios/documentation/uikit/reference/uiview_class/UIView/UIView.html#//apple_ref/doc/uid/TP40006816-CH3-BBCCCHHI). It's in the hand of the programmer whether the entire view will be redrawn or not. It's your responsibility to check the argument of `drawRect:` and decide what needs to be drawn. The authors seem to not have understood how `setNeedsDisplayInRect:` and `drawRect:` are related or they fail to mention it.
 
 **Update:** [Ole Zorn pointed me](https://twitter.com/olemoritz/statuses/245638200478031872) to a quote in [Apple's Technical Q&A QA1708](https://developer.apple.com/library/ios/#qa/qa1708/_index.html):
 
-> Each
-> 
-> is treated as a single element. When you request a redraw, in part or whole, by calling
-> 
-> or
-> 
-> , the entire view will be marked for updates.
+> **Important** Each `UIView` is treated as a single element. When you request a redraw, in part or whole, by calling `-setNeedsDisplayInRect:` or `-setNeedsDisplay:`, the entire view will be marked for updates.
 
 I tested this again and I can confirm that, on iOS 5.1.1, UIKit definitely passes the rectangle specified in `setNeedsDisplayInRect:` to `drawRect:`, so the developer can choose to only redraw those elements that are inside that area. It seems to me that the information in QA1708 is incorrect.
 
@@ -170,6 +164,8 @@ I tested this again and I can confirm that, on iOS 5.1.1, UIKit definitely passe
 Again, UIKit is called the Objective-C descendant of Core Graphics. I imagine that this is confusing for readers who are not certain about the terminology themselves.
 
 138
+
+> [UIView] is a pretty heavyweight object, so you need to be careful about how many of them you use.
 
 The authors don't offer evidence for this assumption. In my experiments with hundreds of views and layers, the memory overhead of views is negligible and the animation performance of views and layers is identical. From the standpoint of the graphics system, views and layers are identical.
 
@@ -191,6 +187,8 @@ Sample code using ARC uses the `__block` specifier in order to avoid a retain cy
 
 On `NSXMLParser`:
 
+> Because the parser uses delegation to return data, you need a subclass of NSXMLParser for every object you are handling.
+
 On the contrary. Because it uses delegation, you don't have to subclass `NSXMLParser`, ever. The authors probably want to say that they recommend to create a new custom `NSObject` subclass to act as a delegate for each type of XML data you want to parse, which is good advice.
 
 191
@@ -199,11 +197,15 @@ Under the headline _Parsing XML on iOS_, the book discusses both XML SAX and DOM
 
 193
 
+> Internally, every web server is coded using some object-oriented programming language.
+
 This claim is obviously wrong and also beside the point. The book is not about web server API design.
 
 193/194
 
 Something from the WTF? department in a discussion about designing model objects that should interface with web services:
+
+> When the reconstructed objects on your iOS app match 100 percent with the objects on the server, the goal of data exchange is attained and your app will be error free.
 
 I never knew it was so easy to make my app error free.
 
@@ -227,25 +229,21 @@ In the same context, the reader learns that he has to include KVO notifications 
 
 214
 
-> directory is special because it isn't backed up but is preserved between application upgrades. This is where you should put most things you don't want copied to the desktop [i.e., the stuff you don't want to be visible to the user of the app].
+> The `Library/Caches` directory is special because it isn't backed up but is preserved between application upgrades. This is where you should put most things you don't want copied to the desktop [i.e., the stuff you don't want to be visible to the user of the app].
 
 This is very dangerous advice because the authors neglect to mention that the Caches directory is not guaranteed to remain intact. The OS is free to purge it at regular intervals or when storage space is limited. If an app puts data into the Caches directory that it cannot recreate, it will be irretrievably lost.
 
 [Apple modified the OS's cleaning behavior](http://www.marco.org/2011/10/13/ios5-caches-cleaning) regarding the Caches directory in iOS 5. Given the book's timeframe, it was perhaps difficult to say anything concrete about the actual behavior of the OS, but the authors should definitely not have advised reader to put stuff into the Caches directory that is not meant for caching.
 
-> Apple
-> 
-> explicitly recommend
-> 
-> putting files here you don't want backed up, and it wasn't clear during the betas that these files could be deleted (they weren't in iOS 4). This should have made the errata, however. It has been fixed in the iOS 6 book.
+> **Rob Napier:** Apple [explicitly recommend](http://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html) putting files here you don't want backed up, and it wasn't clear during the betas that these files could be deleted (they weren't in iOS 4). This should have made the errata, however. It has been fixed in the iOS 6 book.
 
 214
 
-> because these are not backed up.
+> If you have information that you would rather the user not have access to, you can store it in the keychain or in `Library/Caches` because these are not backed up.
 
 Again, this is a totally wrong way to use the Caches directory. If you don't want files to be readable in a device backup, use Apple's own [Data Protection API](http://developer.apple.com/library/ios/DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW11), which seamlessly encrypts files on disk and has been available since iOS 4 (a topic the authors even discuss a few pages later).
 
-> The Data Protection API does not apply if the user does not provide a PIN. So if the goal is to provide a little data hiding from casual investigation (which is the topic here), then Data Protection can't help. Given the pre-5.0GM behavior of not deleting these files, I believe this was reasonable advice when it was written. There are better ways now and the book has been updated.
+> **Rob Napier:** The Data Protection API does not apply if the user does not provide a PIN. So if the goal is to provide a little data hiding from casual investigation (which is the topic here), then Data Protection can't help. Given the pre-5.0GM behavior of not deleting these files, I believe this was reasonable advice when it was written. There are better ways now and the book has been updated.
 
 243
 
@@ -255,7 +253,9 @@ In a code snippet, a view controller registers itself as a listener for a notifi
 
 The occasional plug for your own projects in your book is totally fine, especially if it is about stuff you're not making any money off. In fact, I'd expect it. I'd also expect that you disclose the fact that you are recommending your own stuff. In the chapter about in-app purchase, the authors recommend Mugunth Kumar's own [MKStoreKit](https://github.com/MugunthKumar/MKStoreKit) without mentioning this. The book devotes five pages to MKStoreKit alone and they sound like a commercial in places:
 
-> We talk about ASIHTTPRequest, DTCoreText, EGOPullToRefreshView, SFHFKeychainUtils, SBJSON, JSONKit and a variety of selectively chosen third-party libraries as well. You can't push the limits if you write every component yourself. One should get rid of the “Not-invented-here” syndrome, choose the right third-party component and try to understand and use the library in their app. MKStoreKit has been used in a majority of games, including some from big-named publishers. Thirdly, I'm not selling MKStoreKit. There are no “commercial” intentions behind.
+> MKStoreKit … reduces [coding effort] to somewhere near zero. … With frameworks like MKStoreKit minimizing your coding efforts, why not give it a try?
+
+> **Mugunth Kumar:** We talk about ASIHTTPRequest, DTCoreText, EGOPullToRefreshView, SFHFKeychainUtils, SBJSON, JSONKit and a variety of selectively chosen third-party libraries as well. You can't push the limits if you write every component yourself. One should get rid of the “Not-invented-here” syndrome, choose the right third-party component and try to understand and use the library in their app. MKStoreKit has been used in a majority of games, including some from big-named publishers. Thirdly, I'm not selling MKStoreKit. There are no “commercial” intentions behind.
 
 291
 
@@ -268,7 +268,7 @@ NSArray *capitalLength = [array valueForKeyPath:@"capitalizedString.length"];
 
 While technically correct, this is horrible code! Please use a method like `enumerateObjectsUsingBlock:` to do something like this (or write your own `-mapUsingBlock:` method with it).
 
-> The goal here was to demonstrate higher order messaging in a simple example. I don't think enumerateObjectsUsingBlock: is the obvious solution … But that's not the point. The point was to demonstrate higher order messaging, which can be very powerful. For instance, the string above could be looked up dynamically, or even built dynamically, which allows operations that are can be difficult using blocks. It's not an everyday tool, but it is useful to know it exists.
+> **Rob Napier:** The goal here was to demonstrate higher order messaging in a simple example. I don't think enumerateObjectsUsingBlock: is the obvious solution … But that's not the point. The point was to demonstrate higher order messaging, which can be very powerful. For instance, the string above could be looked up dynamically, or even built dynamically, which allows operations that are can be difficult using blocks. It's not an everyday tool, but it is useful to know it exists.
 
 I stand by my point that using KVC for other purposes than accessing attributes is a very bad practice. There are clearer ways to implement [higher order messaging](https://en.wikipedia.org/wiki/Higher_order_message) in Cocoa (blocks, invocations). Granted, these other solutions are not one-liners, but you don't need a one-liner for something you rarely use and can encapsulate nicely. A very good example of this concept (not using blocks) is given in [Cocoa Design Patterns](https://oleb.net/blog/2010/01/book-review-cocoa-design-patterns/) on pp. 321-326.
 
@@ -276,27 +276,35 @@ I stand by my point that using KVC for other purposes than accessing attributes 
 
 The authors implement a `UIAlertView` category that uses blocks instead of delegation. In the implementation, they use a static variable to store the completion block and therefore this category only works for one alert view at a time. I don't necessarily expect perfect sample code in a book. But an ackknowledgement of the limitations of your own code would be nice – especially when it helps learning. Since [associative references](https://oleb.net/blog/2011/05/faking-ivars-in-objc-categories-with-associative-references/) were mentioned much earlier in the book, I'd rather have seen an implementation using that technique.
 
-> True, but this was intentional. I wanted to focus on one thing. That one thing here is blocks. Talking about associative references + blocks + delegates means the chapter will lose its essence. Readers are not going to understand anything.
+> **Mugunth Kumar:** True, but this was intentional. I wanted to focus on one thing. That one thing here is blocks. Talking about associative references + blocks + delegates means the chapter will lose its essence. Readers are not going to understand anything.
 
 318
 
+> Any sqlite3 library … is almost always going to be slower than Core Data.
+
 Again, a claim with no evidence. It goes on:
+
+> In addition, while sqlite3 is thread-safe, the binary bundled with iOS is not. So unless you ship a custom-built sqlite3 library (compiled with the thread-safe flag), it becomes your responsibility to ensure that data access to and from the sqlite3 database is thread-safe. Because Core Data has so much more to offer and is thread-safe, I suggest avoiding native SQLite as far as possible on iOS.
 
 That sounds as if Core Data made multi-threaded access really easy. My experience is rather different.
 
-> A book is not a research publication where every claim needs evidence. In a chapter that doesn't talk about Core Data (this chapter talks about caching), I wouldn't prefer writing in depth about multi-threading with Core Data.
+> **Mugunth Kumar:** A book is not a research publication where every claim needs evidence. In a chapter that doesn't talk about Core Data (this chapter talks about caching), I wouldn't prefer writing in depth about multi-threading with Core Data.
 
 338
 
 In a discussion about `-[CALayer renderInContext:]`:
 
+> For web views larger than 1024×1024, you need to break them up into smaller pieces and render them individually.
+
 I am not entirely certain, but I believe this advice is no longer correct. Views had a maximum size of 1024×1024 in the early days of iOS but this limit is long gone. If I remember correctly, I just recently used `renderInContex:` successfully on a web view that was larger than 1024 points in one dimension (though not in both).
 
 342
 
+> Core Text was originally designed on the Mac, and it performs all calculations in Mac coordinates. The origin is in the lower-left corner
+
 Really, Mac coordinates? As if Core Graphics used different coordinate systems on iOS and Mac.
 
-> I think “Mac coordinates” is a fair way to describe lower-left origin without confusing the reader.
+> **Rob Napier:** I think “Mac coordinates” is a fair way to describe lower-left origin without confusing the reader.
 
 # The iOS 6 Edition
 

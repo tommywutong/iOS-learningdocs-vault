@@ -7,7 +7,7 @@ original_language: en
 published: 2021-12-08
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:d87c8576486ab759'
 translated: false
 ---
@@ -32,8 +32,8 @@ VoLTE and VoWifi may seem [complicated](https://twitter.com/the6p4c/status/12999
 
 As documented in the excellent presentations by ERNW ([first](https://ernw.de/download/telco/ERNW_Area41_IMSecure.pdf), [second](https://deepsec.net/docs/Slides/2017/How_secure_are_your_VoLTE_and_VoWiFi_Calls_Sreepriya_Chalakkal.pdf)), VoLTE and VoWifi are based on common technologies:
 
-- , which is the carrier’s SIP VoIP server.
-- , the carrier’s VPN server for VoWifi. Then it connects over the VPN to the P-CSCF SIP server, like VoLTE.
+- In VoLTE, the phone connects via SIP to the **P-CSCF**, which is the carrier’s SIP VoIP server.
+- In VoWifi, the phone first makes a IPSec VPN connection to the **ePDG**, the carrier’s VPN server for VoWifi. Then it connects over the VPN to the P-CSCF SIP server, like VoLTE.
 
 However, VoLTE’s implementation is not compatible with our everyday VPNs and VoIP software. [This report from Sysmocom](https://www.jeroenbaten.nl/UT-VoLTE-proposed-technical-architecture.pdf) shows that it would take months to modify Ubuntu Touch for VoLTE support.
 
@@ -48,28 +48,14 @@ To connect to the special VoWifi VPN, I used [fasferraz’s **SWu-IKEv2**](https
 In [EAP-AKA’](https://realtimecommunication.wordpress.com/2016/04/06/epdg-and-ipsec/):
 
 - Only the carrier and the SIM card itself knows a secret key, `K`
-- value and a
-
-  value
-- value proves to the SIM card that it’s the real carrier
-- value with the secret K key to derive two secret keys:
-
-  ,
-
-  ; and a response value,
-- value back to the carrier to prove that it’s the real SIM card
-- and
-- key to obtain the expected
-
-  ,
-
-  , and
-
-  values
-- value before decrypting the connection with
-
-  and
-- key, they can’t eavesdrop or pretend to be the user/carrier
+- When authenticating, the carrier sends two values: an `AUTN` value and a `RAND` value
+- The `AUTN` value proves to the SIM card that it’s the real carrier
+- The SIM card encrypts the `RAND` value with the secret K key to derive two secret keys: `IK`, `CK`; and a response value, `RES`
+- It sends the `RES` value back to the carrier to prove that it’s the real SIM card
+- The phone starts encrypting the connection with `IK` and `CK`
+- The carrier does the same encryption with the `K` key to obtain the expected `IK`, `CK`, and `RES` values
+- The carrier compares the `RES` value before decrypting the connection with `IK` and `CK`
+- Since nobody else has the `K` key, they can’t eavesdrop or pretend to be the user/carrier
 
 In summary, I need to send `AUTN` and `RAND` to the SIM card, and get `RES`, `IK`, and `CK` back.
 
@@ -77,20 +63,10 @@ SWu-IKEv2 supports talking to a real SIM card for EAP-AKA’, defining an [HTTP 
 
 I decided to implement that API as an Android app so I can use the SIM card in my phone:
 
-- `TelephonyManager.getIccAuthentication`
-
-  to run this authentication flow
-- Android’s Wi-Fi
-
-  framework, since there are Wi-Fi hotspots that use the SIM card to
-
-  authenticate
-- from ADB
-
-  on Android 10 and above
-- using other SIM card APIs
-
-  to try to get this value, but it blocked me every time)
+- Android has a public API, [`TelephonyManager.getIccAuthentication`](https://developer.android.com/reference/android/telephony/TelephonyManager#getIccAuthentication(int,%20int,%20java.lang.String)) to run this authentication flow
+- Added for [Android’s Wi-Fi](https://cs.android.com/android/platform/superproject/+/master:packages/modules/Wifi/service/java/com/android/server/wifi/WifiCarrierInfoManager.java;l=1323;drc=4367f1ec9fa7f060f942c0bf1b4b9c978b578e4f) framework, since there are Wi-Fi hotspots that use the SIM card to [authenticate](https://twitter.com/zhuowei/status/1459668374502481924)
+- Also available [from ADB](https://cs.android.com/android/platform/superproject/+/android-11.0.0_r48:frameworks/base/packages/Shell/AndroidManifest.xml;l=33;drc=907c235865ef3e8f6113db419d268e62a16d497f) on Android 10 and above
+- (Not available on Android 8.1. I tried [using other SIM card APIs](https://github.com/zhuowei/SimServerAndroid/tree/failed-apdu-auth) to try to get this value, but it blocked me every time)
 
 I built a [an HTTP server Android app](https://github.com/zhuowei/SimServerAndroid) that generates SIM authentication requests:
 
@@ -264,3 +240,5 @@ And there’s my IMSI, sent to any adversary that controls a Wi-Fi network, a DN
 - How to send a SIP register command
 - How to setup an IKEv2 StrongSwan server
 - How Wi-Fi calling may leak IMSIs to adversarial Wi-Fi hotspots
+
+[https://worthdoingbadly.com/vowifi/](https://worthdoingbadly.com/vowifi/)

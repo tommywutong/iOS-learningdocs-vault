@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:089a23d1a3bcdeb6'
 translated: false
 ---
@@ -26,7 +26,7 @@ On Sunday afternoon, each team gave a short presentation of their app; a jury th
 
 # Winners: LineTime
 
-![LineTime screenshot on iPad](https://oleb.net/media/linetime-screenshot-ipad.png)
+[![LineTime screenshot on iPad](https://oleb.net/media/linetime-screenshot-ipad.png)](https://oleb.net/media/linetime-screenshot-ipad.png)
 
 LineTime is an iPhone and iPad app that lets you interact very smoothly with a timeline of world events. The app retrieves dates and info about historical events from Wikipedia and displays them in a very cool horizontal timeline UI. Users can pan the timeline left and right to go back and forth in history, and pinch to zoom in and out in order to get a more detailed look at a certain period of time (zooming by pinching was implemented in the UI but, understandably given the limited development time, the team had not yet gotten to retrieving more info from the datasource as the user zoomed in further).
 
@@ -38,7 +38,7 @@ Congratulations to the LineTime team who I think totally deserved to win! Their 
 
 # Second place: Carl the Tamagotchi for non-smokers
 
-![Carl screenshot on an iPhone](https://oleb.net/media/carl-screenshot-iphone.png)
+[![Carl screenshot on an iPhone](https://oleb.net/media/carl-screenshot-iphone.png)](https://oleb.net/media/carl-screenshot-iphone.png)
 
 Are you a non-smoker? Do you envy the smokers at work for the regular five-minute breaks they seem to have? Are you always the last to learn about the latest gossip at the office? Then Carl is for you. Just define in the preferences what kind of smoker (light, heavy, chain) Carl is and he will nag you so hard when it is time for the next cigarette break you won’t be able to ignore him. That way, you can get the same breaks as the smokers without the negative health effects because Carl smokes your virtual cigarette for you. Carl’s path from being a totally relaxed chicken (right after a smoking break) via becoming more and more nervous (is it time yet?) to intolerable angry bird™ (when you don’t give him a break on time) is illustrated with some very cool artwork, animations, and sound effects. Kudos to the design team for pulling this off in such a short time.
 
@@ -50,7 +50,7 @@ Carl is perhaps the app that was best suited for the hackathon format. While it 
 
 # Third place: CrowdVideo
 
-![CrowdVideo screenshot on iPhone](https://oleb.net/media/crowdvideo-screenshot-iphone.png)
+[![CrowdVideo screenshot on iPhone](https://oleb.net/media/crowdvideo-screenshot-iphone.png)](https://oleb.net/media/crowdvideo-screenshot-iphone.png)
 
 What if your iPhone, while you recorded a video, would also continuously log your current location and the direction you are holding your iPhone in? As you move around or turn, your video would get a unique “trail” that you can later follow along with on a map when replaying the video. Now imagine you’re at a concert or sports event where hundreds of people recorded such geocoded video and uploaded it to a website. You could then re-experience the event from many different angles. In essence, you would be your own director. This is exactly what the CrowdVideo team built, and I think it’s an awesome idea.
 
@@ -60,7 +60,7 @@ Unfortunately, such a thing is not only difficult to build in one day, it is als
 
 # Proud forth place: Fridge Notes
 
-![Fridge Notes screenshot on iPad](https://oleb.net/media/fridgenotes-screenshot-ipad.png)
+[![Fridge Notes screenshot on iPad](https://oleb.net/media/fridgenotes-screenshot-ipad.png)](https://oleb.net/media/fridgenotes-screenshot-ipad.png)
 
 This was my team. Our idea was to build yet another note-taking/to-do app, this time with a focus on real-world design and family collaboration. We chose the family fridge as the metaphor where people would post sticky notes for themselves or other family members to see. The entire family would then be able to check what’s on the fridge from their iPads, iPhones, or iPod touches (though we did not have time to build the server component or an iPhone client on the weekend; it’s iPad-only at the moment).
 
@@ -72,9 +72,9 @@ One more personal lesson learned: I spent all four coding hours on Sunday on a n
 
 # More videos and photos
 
-- More videos, shot by Viktoria Trosien for tiburon-tv.com
-- Photos from the hackathon on Facebook
-- More photos by Leon Weidauer
+- [More videos, shot by Viktoria Trosien for tiburon-tv.com](http://tiburontv.blip.tv/search?q=appbackrthon)
+- [Photos from the hackathon on Facebook](https://www.facebook.com/album.php?aid=301228&amp;id=313009587257)
+- [More photos by Leon Weidauer](http://galleries.techpriester.net/appbackrthon/)
 
 # Conclusion
 

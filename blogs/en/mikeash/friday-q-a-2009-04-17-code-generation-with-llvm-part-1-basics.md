@@ -70,9 +70,7 @@ Let's look at `BuildMulAdd`. The purpose of this function is just to compute `x*
         mul_add->setCallingConv(CallingConv::C);
 ```
 
-The first line creates the object, which for some reason is typed
-
-. (My understanding of the system is not quite at 100% yet.) You give it a name, and the return and argument types, and it creates the object. We cast it to the right type, and set up the calling conventions. So far, so good.
+The first line creates the object, which for some reason is typed `Constant`. (My understanding of the system is not quite at 100% yet.) You give it a name, and the return and argument types, and it creates the object. We cast it to the right type, and set up the calling conventions. So far, so good.
 
 The next thing to do is extract the individual arguments so that we can use them when creating the function body. While we're at it, we'll also give them names. LLVM works by building code in what's called the LLVM intermediate representation, which acts as a kind of high level, portable assembly language. That IR is then translated into machine code when required. These names are used when building the IR to make it easier to read, but are not required. Here's how to set up the arguments:
 
@@ -92,11 +90,7 @@ The next thing to do is to set up a basic block. LLVM code is organized in terms
         BasicBlock* block = BasicBlock::Create("entry", mul_add);
 ```
 
-The next thing is to create an
-
-. This is an object that helps with building the intermediate representation. It's basically a helper object. It's possible to create things more directly, but
-
-makes building code much easier:
+The next thing is to create an `IRBuilder`. This is an object that helps with building the intermediate representation. It's basically a helper object. It's possible to create things more directly, but `IRBuilder` makes building code much easier:
 
 ```
         IRBuilder<> builder(block);
@@ -111,18 +105,14 @@ The next thing is to actually create the instructions for the function body. Thi
                                           tmp, z, "tmp2");
 ```
 
-Like the arguments, the intermediate values also get names that will show up in the IR code.
-
-contains the desired result, so now we return it:
+Like the arguments, the intermediate values also get names that will show up in the IR code. `tmp2` contains the desired result, so now we return it:
 
 ```
         builder.CreateRet(tmp2);
     }
 ```
 
-And that's it! Easy enough. Of course we can't actually execute the thing yet. But before we get to that, let's look at the
-
-function.
+And that's it! Easy enough. Of course we can't actually execute the thing yet. But before we get to that, let's look at the `BuildGCD` function.
 
 **Greatest Common Denominator**  
  The goal is to build a `gcd` function using the standard recursive algorithm, like so:
@@ -158,15 +148,7 @@ The initial setup to the function is virtually identical:
         y->setName("y");
 ```
 
-Next we'll set up the basic blocks needed by the function. In this case there are five needed. We need one entry block, which will contain the first
-
-. We need a block to execute the
-
-for the case where the
-
-is true. A third block contains the second
-
-The forth and fifth blocks handle the true and false branches of that:
+Next we'll set up the basic blocks needed by the function. In this case there are five needed. We need one entry block, which will contain the first `if`. We need a block to execute the `return` for the case where the `if` is true. A third block contains the second `if` The forth and fifth blocks handle the true and false branches of that:
 
 ```
         BasicBlock *entry = BasicBlock::Create("entry", gcd);
@@ -208,9 +190,7 @@ Next we'll build code for these blocks. Since it's all relatively straightforwar
     }
 ```
 
-Notice how all of the intermediate variables are called
-
-. This is not a very useful thing to do, but it does illustrate that LLVM will automatically change these names as needed to ensure that they don't conflict, which is useful. You'll be able to see this in the generated intermediate representation, which we'll get to in a bit.
+Notice how all of the intermediate variables are called `"tmp"`. This is not a very useful thing to do, but it does illustrate that LLVM will automatically change these names as needed to ensure that they don't conflict, which is useful. You'll be able to see this in the generated intermediate representation, which we'll get to in a bit.
 
 That's how to build the functions, now let's see how to use them. First thing is to actually call the function to build the module, with the functions within:
 
@@ -220,11 +200,7 @@ That's how to build the functions, now let's see how to use them. First thing is
         Module* Mod = makeLLVMModule();
 ```
 
-The next thing is to call the
-
-function on the new
-
-. I'll be honest with you: I have no idea what this does, but the tutorial did it so I'm doing it too!
+The next thing is to call the `verifyModule` function on the new `Module`. I'll be honest with you: I have no idea what this does, but the tutorial did it so I'm doing it too!
 
 ```
         verifyModule(*Mod, PrintMessageAction);
@@ -239,21 +215,13 @@ Now that the module is ready, I want to print it out. This just dumps the interm
         PM.run(*Mod);
 ```
 
-Now on to the really interesting stuff: compiling and running the code. This is done by using an
-
-object:
+Now on to the really interesting stuff: compiling and running the code. This is done by using an `ExceutionEngine` object:
 
 ```
         ExecutionEngine *engine = ExecutionEngine::create(Mod);
 ```
 
-Here's the really cool part. You use
-
-to get a function pointer from the
-
-. And this is a
-
-function pointer. You can call it like you would any other function. Just cast it to the right type, add parentheses and parameters, and off you go.
+Here's the really cool part. You use `getPointerToFunction` to get a function pointer from the `ExecutionEngine`. And this is a _real_ function pointer. You can call it like you would any other function. Just cast it to the right type, add parentheses and parameters, and off you go.
 
 ```
         typedef int (*MulAddFptr)(int, int, int);
@@ -327,7 +295,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2009-04-17-code-generation-with-llvm-part-1-basics.html)
 
 Add your thoughts, post a comment:
 

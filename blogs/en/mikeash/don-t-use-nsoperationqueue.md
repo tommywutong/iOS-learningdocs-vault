@@ -110,24 +110,12 @@ From what I was able to determine from examining a crashed program, it appears t
 
 Unfortunately the answer is, "not much". The bug is firmly in Apple's code and at this point it's doubtful that they'll fix it in Leopard. Your options are:
 
-1. Apple probably won't fix it for Leopard, but if enough people complain maybe they'll change their mind. If you do file a bug, you can reference my bug, which is bug ID
+1. **File a bug.** Apple probably won't fix it for Leopard, but if enough people complain maybe they'll change their mind. If you do file a bug, you can reference my bug, which is bug ID [6332143](rdar://6332143).
+2. **Wait for 10.6.**. It appears likely that 10.6 will not share this bug. If you can wait for 10.6 to ship, writing your software to require 10.6 is an easy "fix" for this bug.
+3. **Go back to older concurrency models.** Switch to raw threads and you'll (mostly) only have your own bugs to contend with, not Apple's. Depending on your needs, it may not be difficult to implement an NSOperationQueue workalike which supports the subset of NSOperationQueue's capabilities that you need. For the software which led me to find this bug, I wrote my own queue subclass which offered prioritized access to a single worker thread in about a day, and made it [lockless](https://www.mikeash.com/pyblog/late-night-cocoa.html) to boot.
+4. **Eliminate concurrency.** Sometimes NSOperation is used just as an optimization to take advantage of multiple cores, or to avoid blocking a thread. In those cases it may be reasonable to simply drop back to a slower serialized method or to simply block until the work is complete.
 
-  6332143
-
-  .
-2. . It appears likely that 10.6 will not share this bug. If you can wait for 10.6 to ship, writing your software to require 10.6 is an easy "fix" for this bug.
-3. Switch to raw threads and you'll (mostly) only have your own bugs to contend with, not Apple's. Depending on your needs, it may not be difficult to implement an NSOperationQueue workalike which supports the subset of NSOperationQueue's capabilities that you need. For the software which led me to find this bug, I wrote my own queue subclass which offered prioritized access to a single worker thread in about a day, and made it
-
-  lockless
-
-  to boot.
-4. Sometimes NSOperation is used just as an optimization to take advantage of multiple cores, or to avoid blocking a thread. In those cases it may be reasonable to simply drop back to a slower serialized method or to simply block until the work is complete.
-
-This bug is really unfortunate, as NSOperation/NSOperationQueue present a fairly nice API (although far too dependent on
-
-KVO
-
-) and there's no decent workaround and a low probability of a fix before Snow Leopard ships. But at least now you know about it!
+This bug is really unfortunate, as NSOperation/NSOperationQueue present a fairly nice API (although far too dependent on [KVO](https://www.mikeash.com/pyblog/key-value-observing-done-right.html)) and there's no decent workaround and a low probability of a fix before Snow Leopard ships. But at least now you know about it!
 
 Did you enjoy this article? I'm selling whole books full of them! Volumes II and III are now out! They're available as ePub, PDF, print, and on iBooks and Kindle. [Click here for more information](https://www.mikeash.com/book.html).
 
@@ -137,7 +125,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/dont-use-nsoperationqueue.html)
 
 Add your thoughts, post a comment:
 

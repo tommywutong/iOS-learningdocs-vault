@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:06a3e98164f47d06'
 translated: false
 ---
@@ -18,13 +18,13 @@ translated: false
 
 _Disclaimer: my brother Jens is Wooga’s founder and CEO. It is unlikely that I would have been involved in this project if that were not the case, if only for the fact that I would probably never have learned about it in the first place. That said, I think we managed to separate family and business quite well._
 
-![Diamond Dash for iOS App Icon](https://oleb.net/media/diamond-dash-ios-app-icon.png)
+[![Diamond Dash for iOS App Icon](https://oleb.net/media/diamond-dash-ios-app-icon.png)](https://oleb.net/media/diamond-dash-ios-app-icon.png)
 
 Yesterday at the Le Web conference in Paris, social game developer [Wooga launched Diamond Dash for iPhone and iPad](http://www.wooga.com/2011/12/diamond-dash-mobile/), their first native iOS title. Diamond Dash originally launched as a Flash game on Facebook in March 2011 and, with more than 11 million active players per month, today is one of the top 10 games on the platform.
 
 During the past months, I helped port the game to iOS. Our goal was to make the iOS version even more fun to play than the game on Facebook, and I think we succeeded. The simple gameplay makes Diamond Dash a perfect game for touchscreen control and the incredibly fast-paced action comes across perfectly on both iPhone and iPad. Although the gameplay is trivial (tap groups of 3 or more same-colored gems to make them explode), it is highly addictive and I encourage you to try it out.
 
-![Diamond Dash on iPad and iPhone](https://oleb.net/media/wooga-diamond-dash-ios-screenshot.png)
+[![Diamond Dash on iPad and iPhone](https://oleb.net/media/wooga-diamond-dash-ios-screenshot.png)](https://oleb.net/media/wooga-diamond-dash-ios-screenshot.png)
 
 <sub>Diamond Dash on iPad and iPhone. Photo: Wooga.</sub>
 
@@ -36,7 +36,7 @@ From a developer’s perspective, the tight integration with Facebook and the ex
 
 # Already Featured by Apple
 
-![Initial ratings for Diamond Dash on the App Store in Germany: 727 ratings with a 4.5 star average](https://oleb.net/media/diamond-dash-ios-ratings.png)
+[![Initial ratings for Diamond Dash on the App Store in Germany: 727 ratings with a 4.5 star average](https://oleb.net/media/diamond-dash-ios-ratings.png)](https://oleb.net/media/diamond-dash-ios-ratings.png)
 
 <sub>Ratings for Diamond Dash on the German App Store less than 48 hours after it went live.</sub>
 

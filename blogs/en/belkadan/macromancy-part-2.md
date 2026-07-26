@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:eb41b0300c5bb545'
 translated: false
 ---
@@ -36,7 +36,7 @@ translated: false
 
 ### Progress So Far
 
-The C preprocessor is a powerful tool, but not a particularly versatile one. Rather, it does a few specific things, and people have taken advantage of its workings to compose those capabilities to accomplish their tasks. And sometimes, to do something ridiculous and overengineered…like this.more
+The C preprocessor is a powerful tool, but not a particularly versatile one. Rather, it does a few specific things, and people have taken advantage of its workings to compose those capabilities to accomplish their tasks. And sometimes, to do something ridiculous and overengineered…like this.
 
 I ended [part 1](https://belkadan.com/blog/2016/08/Macromancy/) here:
 
@@ -66,7 +66,7 @@ In order to have any chance of solving this problem, I’d like to lay out some 
 3. If a macro name appears in its own expansion, it is not expanded again. (C11 6.10.3.4p2)
 4. A macro is not expanded until it is used, e.g. in `#include` or `#if` (and definitely not within `#define`).
 
-This last rule blocks the most obvious approach. In normal C programming, you could say `headers = rest(headers)` and be done, but the equivalent macro doesn’t do what you want at all.[1](#fn:illegal)
+This last rule blocks the most obvious approach. In normal C programming, you could say `headers = rest(headers)` and be done, but the equivalent macro doesn’t do what you want at all.^[1](#fn:illegal)
 
 ```
 #define FIRST(A, ...) A
@@ -161,7 +161,7 @@ c
 3. If a macro name appears in its own expansion, it is not expanded again.
 4. A macro is not expanded until it is used, e.g. in `#include` or `#if` (and definitely not within `#define`).
 
-Incrementing a counter requires us either to update the macro to have an additional `+1` at the end (e.g. `1` becoming `1+1`), which would violate rule (3), or it would have to get a new value based on its previous value (e.g. `1` becoming `2`), which would violate either rule (1) or rule (4) (depending on how you approach it). To put it another way, incrementing a counter macro is going to _require_ expanding that macro. We don’t want to include arbitrary headers, so we’re going to _have_ to use `#if` in some way.[2](#fn:line)
+Incrementing a counter requires us either to update the macro to have an additional `+1` at the end (e.g. `1` becoming `1+1`), which would violate rule (3), or it would have to get a new value based on its previous value (e.g. `1` becoming `2`), which would violate either rule (1) or rule (4) (depending on how you approach it). To put it another way, incrementing a counter macro is going to _require_ expanding that macro. We don’t want to include arbitrary headers, so we’re going to _have_ to use `#if` in some way.^[2](#fn:line)
 
 This is this post’s preprocessor challenge, although there actually is a fairly straightforward solution. Given these hints, can you figure out how to increment a given macro? (Even within a finite range of values.) If you’re not interested in a puzzle, just scroll down.
 
@@ -345,7 +345,7 @@ At this point we’re _nearly_ done. Incrementing `INDEX` using `REPEAT` seems a
 #define INDEX_PLUS_ONE REPEAT_N(INCREMENT, 1)
 ```
 
-This is going to expand to a _monster_ list of `(1+(1+(1+…)))`, but it should get the job done.[3](#fn:limits) But we don’t want a different macro that has the value “`INDEX` plus 1”. We want it to be the _same_ macro.
+This is going to expand to a _monster_ list of `(1+(1+(1+…)))`, but it should get the job done.^[3](#fn:limits) But we don’t want a different macro that has the value “`INDEX` plus 1”. We want it to be the _same_ macro.
 
 ```
 #undef INDEX
@@ -417,7 +417,7 @@ Okay, so this was all very cute, but I do want to point out some specific reason
 - It’s not reentrant, meaning that if one of the headers you include is itself trying to use this trick, everything falls down. (It’s easy to check for this, at least, and I put that in the download, but still.)
 - It’s brittle: a typo or bad input leads to a bunch of bizarre error messages.
 - It messes up your diagnostics (because of the include stack).
-- without any issues, but that’s not a guarantee. I also didn’t try it in C++ mode.
+- I’m not 100% sure it’s standards-compliant, which means it’s not portable. It passes Clang `-Weverything` without any issues, but that’s not a guarantee. I also didn’t try it in C++ mode.
 - Preprocessing may be pretty fast but it still takes time. Why would you slow down your build?
 - It’s “clever”. Clever code is unmaintainable code. I worked on a C++ compiler for two years and I find this confusing.
 - Remember “global variables are bad”? Macros are global variables in a shared namespace.

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:1806b6a6852211da'
 translated: false
 ---
@@ -62,21 +62,13 @@ At its heart, `NSDateFormatter` is very simple to use and yet it repeatedly baff
 
 Despite `NSDateFormatterBehavior10_4` being the only date formatting you should ever use and the only style that _should_ exist in the documentation, Apple's documentation has the following quirks:
 
-1. is never given in the documentation and you can easily miss the links to
-
-  Unicode Standard (tr35)
-
-  which describe it.
-2. style formatter behavior even though this is functionally deprecated.
-3. claims
-
-  is the default style but it is actually
-
-  in Leopard and iPhoneSDK2.0.
+1. The actual syntax for `NSDateFormatterBehavior10_4` is never given in the documentation and you can easily miss the links to [Unicode Standard (tr35)](http://unicode.org/reports/tr35/tr35-4.html#Date_Format_Patterns) which describe it.
+2. A majority of the pages in the date formatting documentation seem concerned with the old `NSDateFormatterBehavior10_0` style formatter behavior even though this is functionally deprecated.
+3. The documentation for `defaultFormatterBehavior` claims `NSDateFormatterBehavior10_0` is the default style but it is actually `NSDateFormatterBehavior10_4` in Leopard and iPhoneSDK2.0.
 
 Then, if you've been skimming through the documentation getting confused by the different styles, you may overlook one line at the top of the `NSDateFormatter` API reference page:
 
-> iPhone OS supports only the modern 10.4+ behavior. 10.0-style methods and format strings are not available on iPhone OS.
+> **iPhone OS Note:** iPhone OS supports only the modern 10.4+ behavior. 10.0-style methods and format strings are not available on iPhone OS.
 
 All that documentation in the iPhone SDK concerned with the old `NSDateFormatterBehavior10_0` style is completely meaningless — _you can't use `NSDateFormatterBehavior10_0` at all on the iPhone_.
 

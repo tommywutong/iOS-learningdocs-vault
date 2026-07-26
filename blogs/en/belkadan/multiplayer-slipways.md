@@ -7,7 +7,7 @@ original_language: en
 published: 2023-08-12
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:7e337af85ab84a61'
 translated: false
 ---
@@ -26,7 +26,7 @@ translated: false
 
 I’ve been enjoying [Slipways](https://slipways.net), a space exploration/economy game with the tagline “Build vast space empires. Still be done in time for lunch.” Roughly speaking, Slipways is a mini version of [Stellaris](https://www.paradoxinteractive.com/games/stellaris/) the way [Polytopia](https://polytopia.io) (also recommended) is a mini version of [Civilization](https://civilization.com).
 
-But Polytopia is a multiplayer game, and I like casual multiplayer games like that. And Stellaris and Civilization support multiplayer too. And even though Slipways isn’t a combat game, or really a competitive game in any way[1](#fn:OTC), I think you could make a good _cooperative_ multiplayer game out of it: two empires trying to achieve the highest possible score together.more
+But Polytopia is a multiplayer game, and I like casual multiplayer games like that. And Stellaris and Civilization support multiplayer too. And even though Slipways isn’t a combat game, or really a competitive game in any way^[1](#fn:OTC), I think you could make a good _cooperative_ multiplayer game out of it: two empires trying to achieve the highest possible score together.
 
 ![](https://belkadan.com/blog/2023/08/Multiplayer-Slipways/screenshot.jpg)
 

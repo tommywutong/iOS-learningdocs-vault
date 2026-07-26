@@ -7,7 +7,7 @@ original_language: en
 published: 2010-08-16
 status: frozen
 license: 未声明 → 保守视为保留所有权利，仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:16cc7cd18fe74d4d'
 translated: false
 ---
@@ -54,4 +54,4 @@ Updated 2017-2-27
 | TARGET_OS_EMBEDDED | 0 | 1 | 0 | 1 | 0 | 1 | 0 |
 | TARGET_IPHONE_SIMULATOR | same as TARGET_OS_SIMULATOR |  |  |  |  |  |  |
 
-Sealie Software
+[Sealie Software](http://sealiesoftware.com/index.html)

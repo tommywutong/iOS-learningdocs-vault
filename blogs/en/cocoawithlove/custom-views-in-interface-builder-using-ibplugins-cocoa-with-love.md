@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:f668669fd10b8d23'
 translated: false
 ---
@@ -76,13 +76,7 @@ A better solution would be to edit the button's color in Interface Builder. That
 
 My process normally starts by creating a custom view component. In this case, I have already created a class named `CustomButtonCell` in the project for my main application (AppWithButton). After creating the class, I have decided it would be a good idea to have an Interface Builder Plug-In.
 
-> : every property we want to configure in Interface Builder must be encoded and decoded for the object using implementations of the
-> 
-> protocol methods
-> 
-> and
-> 
-> overrides. Download the project linked below to see how this is done.
+> **A quick point about class requirements**: every property we want to configure in Interface Builder must be encoded and decoded for the object using implementations of the `NSCoder` protocol methods `initWithCoder:` and `encodedWithCoder:` overrides. Download the project linked below to see how this is done.
 
 ### 1. Create and name the project
 
@@ -117,15 +111,9 @@ Rename the file ButtonPluginViewIntegration.m to CustomButtonCellIntegration.m a
 Make the following file changes:
 
 1. Find the ButtonPluginView.classdescription and rename this file to CustomButtonCell.classdecription (same as our custom cell).
-2. to match the actual class name
-
-  and change the
-
-  to be
-
-  (again, matching the actual super class for our custom button cell).
-3. — this needs to be unique among Interface Builder plugins, so you pick an appropriate value each time.
-4. value.
+2. In the contents of this file, change the `ClassName` to match the actual class name `CustomButtonCell` and change the `SuperClass` to be `NSButtonCell` (again, matching the actual super class for our custom button cell).
+3. In ButtonPlugin.m (the top level class in the ButtonPlugin project), set the bundle identifier to something appropriate. I used `com.mattgallagher.ButtonPlugin` — this needs to be unique among Interface Builder plugins, so you pick an appropriate value each time.
+4. Set the bundle identifier in the Info.plist and the ButtonPlugin-Info.plist to the same `com.mattgallagher.ButtonPlugin` value.
 
 ### 4. Configure the display of the button cell for the Interface Builder Library panel
 
@@ -140,8 +128,8 @@ The Library Object Template will contain a "Template" and an "Example" square. T
 If you click on the button in the "Example" square then click again, it will select the `NSButtonCell` inside the button (these clicks should be slower than a double-click, since a double-click will edit the text of the `NSButton` instead of selecting the `NSButtonCell` inside). With the `NSButtonCell` selected:
 
 1. Type Command-6 to select the correct inspector panel.
-2. .
-3. to the right of the "Example" box in the same way.
+2. Enter the custom class name in the "Class" field of the inspector — in our case, we need this to be `CustomButtonCell`.
+3. Set the button cell class for the `NSButton` to the right of the "Example" box in the same way.
 
 Select the Library Object Template (ButtonPluginLibrary.nib window -\> Library Objects -\> Library Object Template) and:
 
@@ -162,7 +150,7 @@ To make the color selector do something, I used bindings. Select the `NSColorWel
 
 1. Type Command-4 to select the correct inspector panel.
 2. Under the "Value" subheading, bind to File's Owner (make sure the checkbox is selected too).
-3. .
+3. Set the Model Key Path to `inspectedObjectsController.selection.buttonColor`.
 
 This binding needs one other change to work. Back in the ButtonPlugin project, open the CustomButtonCellIntegration.m file. Change the `[[keyPaths objectForKey:IBAttributeKeyPaths`... line to:
 
@@ -217,9 +205,7 @@ _The AppWithButton window in Interface Builder, adjusting the color of the butto
 
 ## Conclusion
 
-> AppWithButton project zip file (including the ButtonPlugin project)
-> 
-> (385kB).
+> You can download the complete [AppWithButton project zip file (including the ButtonPlugin project)](https://www.cocoawithlove.com/assets/objc-era/AppWithButton.zip) (385kB).
 
 It takes quite a few steps to set up an Interface Builder plugin. Fortunately, they're all simple, if a little menial.
 

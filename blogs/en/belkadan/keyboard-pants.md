@@ -7,7 +7,7 @@ original_language: en
 published: 2021-07-05
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ae5b556df91b1f2f'
 translated: false
 ---
@@ -20,7 +20,7 @@ translated: false
 
 ## [Keyboard Pants](#)
 
-A year and a half ago, I [left Apple](https://belkadan.com/blog/2019/11/Leaving-Apple/), which among other things gave me a lot more time for personal projects. In particular, last March I put a tremendous amount of effort into getting [Swift running on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/). Which made me happy and proud, but which also had an extremely deleterious effect on my body. And I didn’t really get the message, but continued stressing myself into April and May, and as a consequence, I now have chronic RSI: _repetitive strain injury._more
+A year and a half ago, I [left Apple](https://belkadan.com/blog/2019/11/Leaving-Apple/), which among other things gave me a lot more time for personal projects. In particular, last March I put a tremendous amount of effort into getting [Swift running on Mac OS 9](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/). Which made me happy and proud, but which also had an extremely deleterious effect on my body. And I didn’t really get the message, but continued stressing myself into April and May, and as a consequence, I now have chronic RSI: _repetitive strain injury._
 
 This really stinks.
 
@@ -57,15 +57,11 @@ At some point, I had an idea. The usual standing desk posture requires your shou
 
 > Weird standing desk ergonomics idea: attach bluetooth half-keyboards to my sides so I can use them with my arms completely down. Anyone seen or done something like this before?
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> May 18, 2021
+> — Jordan Rose (@UINT_MIN) [May 18, 2021](https://twitter.com/UINT_MIN/status/1394687437192974337?ref_src=twsrc%5Etfw)
 
 > [“Is it time to reconsider the keyboard pants?”](https://www.theverge.com/2016/4/21/11476984/keyboard-pants-reconsidered)
 > 
-> — August Joki (@augustjoki)
-> 
-> May 19, 2021
+> — August Joki (@augustjoki) [May 19, 2021](https://twitter.com/augustjoki/status/1394807053751775233?ref_src=twsrc%5Etfw)
 
 Okay, not quite like that. But I convinced myself that this was an idea worth exploring, at least, so I got my hands on a Matias Ergo split keyboard (thank you very much, [Adam](https://twitter.com/sharplet)!) and considered how to attach them to my legs. My craftsman girlfriend had the clever idea to reuse the screws for the wristplate, driving them through belt webbing to make simple loops I could put on my belt. And…
 

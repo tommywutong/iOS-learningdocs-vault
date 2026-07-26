@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:17840e8c785de401'
 translated: false
 ---
@@ -73,7 +73,7 @@ For class instances, it can make sense to base equality on instance identity ([`
 
 [Xiaodi Wu](https://forums.swift.org/t/pitch-add-the-defaultconstructible-protocol-to-the-standard-library/4771/69):
 
-> Again, protocols aren’t about just syntax but about semantics. One implication is that **it’s perfectly logical to have protocols with no syntax requirements at all**, i.e. `protocol MyProtocolWithSpecialSemantics { }`.[1](#fn:error) Another implication, therefore, is that **Swift does not automatically conform types to a protocol simply because it implements all requirements, because there’s no way for the compiler to judge semantics.**
+> Again, protocols aren’t about just syntax but about semantics. One implication is that **it’s perfectly logical to have protocols with no syntax requirements at all**, i.e. `protocol MyProtocolWithSpecialSemantics { }`.^[1](#fn:error) Another implication, therefore, is that **Swift does not automatically conform types to a protocol simply because it implements all requirements, because there’s no way for the compiler to judge semantics.**
 
 The requirements a protocol — particularly one that makes it into the standard library — defines should be both necessary and sufficient to implement _useful_ generic algorithms based on them.
 

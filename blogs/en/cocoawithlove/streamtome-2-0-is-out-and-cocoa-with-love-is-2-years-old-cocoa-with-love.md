@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:35ef66f2a49efea1'
 translated: false
 ---
@@ -40,7 +40,7 @@ StreamToMe 2.0 adds:
 
 And more!
 
-> ![](https://www.cocoawithlove.com/assets/objc-era/streamtome_ios_icon.png)
+> [![](https://www.cocoawithlove.com/assets/objc-era/streamtome_ios_icon.png)](http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=325327899&mt=8)
 > 
 > StreamToMe is available to purchase from the iTunes App Store:
 > 

@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3f363a667b61150b'
 translated: false
 ---
@@ -44,7 +44,7 @@ A loading view is not the most complicated piece of custom user-interface but th
 
 The behaviors in my loading view include:
 
-- inset on all sides for aesthetic reasons).
+- Always fill the whole view that it blocks (even though it _looks_ inset on all sides for aesthetic reasons).
 - Fade in and fade out when added and removed.
 - Semi-transparent, allowing the unloaded view to show through.
 - Autoresizeable so that a portrait to landscape rotation during loading won't disrupt the display.
@@ -175,9 +175,7 @@ UIView *firstResponder =
 
 ## Conclusion
 
-> LoadingView.zip
-> 
-> (129kB)
+> You can see all this code and more in the sample project for this post: [LoadingView.zip](https://www.cocoawithlove.com/assets/objc-era/LoadingView.zip) (129kB)
 
 Displaying a loading view is not a very difficult task (lots of people write their own) but implementing all of the different expected behaviors is time consuming — the implementation in this post is at least 65 lines of code, depending on how you count it — so keeping a resusable implementation can save a lot of time.
 

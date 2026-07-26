@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:12536a9ecfd59e0a'
 translated: false
 ---
@@ -16,31 +16,10 @@ translated: false
 
 The iPhone lacks specific methods to create UIEvent and UITouch objects. I'll show you how to add this functionality so you can write programmatically driven user-interfaces.
 
-> : Added a "Device SDK" version that will link correctly outside of the "Simulator SDK".
-> 
-> : Two bugs have been fixed since the code was originally posted... the objects in the
-> 
-> member
-> 
-> are now
-> 
-> s and the
-> 
-> and
-> 
-> in
-> 
-> are now retained.
-> 
-> : changes to the
-> 
-> and
-> 
-> categories as well as
-> 
-> to support SDK 2.2 changes.
-> 
-> : Support for SDK 3.0.
+> **Update #1**: Added a "Device SDK" version that will link correctly outside of the "Simulator SDK".  
+> **Update #2**: Two bugs have been fixed since the code was originally posted... the objects in the `UIEvent` member `_keyedTouches` are now `NSSet`s and the `_view` and `_window` in `UITouch` are now retained.  
+> **Update #3**: changes to the `UITouch` and `UIEvent` categories as well as `performTouchInView:` to support SDK 2.2 changes.  
+> **Update #4**: Support for SDK 3.0.
 
 ## A warning before we begin...
 
@@ -66,15 +45,9 @@ Cocoa Junior on the iPhone doesn't have any methods like this, so we must work o
 
 A basic touch event normally consists of three objects:
 
-- UITouch
-
-  object — which will be used for the touch down and touch up
-- UIEvent
-
-  to wrap the touch down
-- UIEvent
-
-  to wrap the touch up
+- The UITouch object — which will be used for the touch down and touch up
+- A first UIEvent to wrap the touch down
+- A second UIEvent to wrap the touch up
 
 Lets look first at creating the UITouch object. Since most of the fields in this object are private, we can't sublcass it or set them directly — everything must be done on a category. My category goes something like this:
 
@@ -132,7 +105,7 @@ You should note that this category includes the changeToPhase: method. This phas
 
 The UIEvent object is mostly handled through an existing private method (`_initWithEvent:touches:)`. There are two difficulties with this method though:
 
-- object (or something very close to it)
+- We must provide it a `GSEvent` object (or something very close to it)
 - We must allocate the object as a UITouchesEvent on SDK 3.0 and later but as a UIEvent on earlier versions.
 
 Here's how all that will look:
@@ -245,13 +218,7 @@ If you use this code, **only use it in a separate target for testing purposes on
 
 ## Conclusion
 
-> SelfTesting project
-> 
-> (from my later post
-> 
-> Automated User Interface Testing on the iPhone
-> 
-> ).
+> You can download a copy of TouchSynthesis.m as part of the [SelfTesting project](https://www.cocoawithlove.com/assets/objc-era/SelfTesting.zip) (from my later post [Automated User Interface Testing on the iPhone](https://www.cocoawithlove.com/2008/11/automated-user-interface-testing-on.html)).
 
 I have only tested this for performing touch events in UITableViewCells in a UINavigationController — navigating a hierarchy to verify that the hierarchy works. Of course, once you've programmatically navigated, you must also read back from the hierarchy to ensure that required features are present — but that's a post for a different time.
 

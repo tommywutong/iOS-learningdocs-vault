@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:be8be2517365c408'
 translated: false
 ---
@@ -22,7 +22,7 @@ You probably all know that the App Store delivered corrupt binaries for many rec
 
 # Deleting an App Deletes its Data
 
-![iOS 5.1.1 showing a warning about app deletion](https://oleb.net/media/ios-springboard-delete-app-warning.png)
+[![iOS 5.1.1 showing a warning about app deletion](https://oleb.net/media/ios-springboard-delete-app-warning.png)](https://oleb.net/media/ios-springboard-delete-app-warning.png)
 
 In the meantime, however, I am sure many users thought the problem was somehow related to their device or maybe due to a temporary hickup in the installation process that could be fixed by deleting and reinstalling the app. The (many) users who tried this approach would not only discover that it didn’t fix the problem, it also introduced a new one: when an app is deleted, the OS deletes all the app’s data along with it.
 

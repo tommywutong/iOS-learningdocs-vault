@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:8b767f8b9910d5fa'
 translated: false
 ---
@@ -22,7 +22,7 @@ Apple’s remarkable track record of bad decisions in the past few months makes 
 
 - The [free U2 album](http://www.marco.org/2014/09/16/this-u2-album-really-does-suck).
 - The [push notification spam](http://www.marco.org/2014/12/01/app-store-rule-5-6).
-- The arbitrary rejections of [PCalc](http://tidbits.com/article/15198) (later reversed), [Drafts](http://www.macstories.net/ios/goodbye-drafts-widget-for-now/), [Transmit](http://www.panic.com/blog/transmit-ios-1-1-1/), all of them “guilty” of using APIs Apple just introduced in creative ways and in no way harmful to users.[1](#fn:1)
+- The arbitrary rejections of [PCalc](http://tidbits.com/article/15198) (later reversed), [Drafts](http://www.macstories.net/ios/goodbye-drafts-widget-for-now/), [Transmit](http://www.panic.com/blog/transmit-ios-1-1-1/), all of them “guilty” of using APIs Apple just introduced in creative ways and in no way harmful to users.^[1](#fn:1)
 
 # The Purpose of App Review
 

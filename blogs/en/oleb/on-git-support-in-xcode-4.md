@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:13dc47607a30cd79'
 translated: false
 ---
@@ -24,7 +24,7 @@ Let’s start with the good parts. One of the new UI features in Xcode 4 is the 
 
 The same interface is used when doing a merge. Best of all, you can edit the resulting file directly in the merge view if none of the four standard merge options do the right thing. This works mostly well as long as there is no merge conflict in your .pbxproj project file.
 
-![The Xcode 4 Version Editor](https://oleb.net/media/xcode4-version-editor-600px.jpg)
+[![The Xcode 4 Version Editor](https://oleb.net/media/xcode4-version-editor-600px.jpg)](https://oleb.net/media/xcode4-version-editor-600px.jpg)
 
 <sub>The Xcode 4 Version Editor is pretty cool.</sub>
 
@@ -42,7 +42,7 @@ All this makes it much harder and sometimes impossible to use Git as intended by
 
 Here are two more annoyances where Xcode could use its knowledge about a project but doesn’t:
 
-- file for you. It’s not as bad as it could be because the default build location is no longer inside the project folder in Xcode 4 but I’d still like to exclude my user-specific settings from the repository.
+- When creating a new project, you can let Xcode create a Git repository for you automatically, but it doesn’t create a fitting `.gitignore` file for you. It’s not as bad as it could be because the default build location is no longer inside the project folder in Xcode 4 but I’d still like to exclude my user-specific settings from the repository.
 - When switching branches, Xcode should know that the folder structure has just changed and silently close files that are not present in the newly checked out branch. Instead, we get the same “The file has disappeared” message we would get if we used an external tool to switch branches.
 
 # Looks like a Subversion wrapper

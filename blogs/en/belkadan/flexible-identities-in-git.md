@@ -7,7 +7,7 @@ original_language: en
 published: 2020-02-06
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:95451e9f7b965dc6'
 translated: false
 ---
@@ -30,21 +30,17 @@ translated: false
 >   
 > Doesn't really hide anything, but at the very least they won't be deadnamed if looking at old PRs?
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926726980820992?ref_src=twsrc%5Etfw)
 
 > Git is terrible for this sort of identity-severing change thanks to burning the committer's name into the validity of the branch, and we-the-industry should probably do something.
 > 
-> — Jordan Rose (@UINT_MIN)
-> 
-> April 13, 2019
+> — Jordan Rose (@UINT_MIN) [April 13, 2019](https://twitter.com/UINT_MIN/status/1116926727647707136?ref_src=twsrc%5Etfw)
 
 At the time, I decided to play with this a bit. Git is famous for preserving history as hard as possible—not just in commits having a link to their parent, but also in keeping around the local history of branches _even when you reset them._ So I came up with three criteria:
 
 1. Changing name does not affect existing history
 2. Changing name does not leave old name in repo anywhere
-3. will get new names without
+3. `git fetch` will get new names without `--force`
 
 And of course this should all work with plain old git.
 

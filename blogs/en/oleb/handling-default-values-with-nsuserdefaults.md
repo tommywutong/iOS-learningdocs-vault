@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:fc58c6cefb6f4dd7'
 translated: false
 ---
@@ -72,7 +72,7 @@ The most important domain is called the _application domain_. This is where your
 
 There is also a _global domain_ where system-wide settings are stored and language-specific domains that contain regional preferences such as month names or date formats for each locale.
 
-Last but not least, Apple uses the same technique to allow us to override user defaults values via command line arguments. Every Cocoa app automatically inspects its command line arguments for key/value pairs of the form `-KEY VALUE` and will add these to the user defaults under the aptly named _argument domain_. Since the argument domain has the highest priority of all, we can use it to temporarily override any preference. Most of you probably know that this is very useful for testing a localized app in another language, for instance with `-AppleLanguages (de)`[1](#fn:1). In this case, we override the default language, which is normally defined in the global domain.
+Last but not least, Apple uses the same technique to allow us to override user defaults values via command line arguments. Every Cocoa app automatically inspects its command line arguments for key/value pairs of the form `-KEY VALUE` and will add these to the user defaults under the aptly named _argument domain_. Since the argument domain has the highest priority of all, we can use it to temporarily override any preference. Most of you probably know that this is very useful for testing a localized app in another language, for instance with `-AppleLanguages (de)`^[1](#fn:1). In this case, we override the default language, which is normally defined in the global domain.
 
 The complete search order for user defaults domains looks like this:
 

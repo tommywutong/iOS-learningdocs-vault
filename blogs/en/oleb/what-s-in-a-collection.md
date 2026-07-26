@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: 未声明 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:dd846ef0c0b9a164'
 translated: false
 ---
@@ -37,7 +37,7 @@ protocol Collection: Indexable, Sequence {
 }
 ```
 
-The first four are inherited from the base protocols [`Sequence`](https://developer.apple.com/reference/swift/sequence), [`Indexable`](https://developer.apple.com/reference/swift/indexable), and [`IndexableBase`](https://developer.apple.com/reference/swift/indexablebase)[1](#fn:1); `Collection` restates all of them except `Index` with tighter constraints or different default values, though.
+The first four are inherited from the base protocols [`Sequence`](https://developer.apple.com/reference/swift/sequence), [`Indexable`](https://developer.apple.com/reference/swift/indexable), and [`IndexableBase`](https://developer.apple.com/reference/swift/indexablebase)^[1](#fn:1); `Collection` restates all of them except `Index` with tighter constraints or different default values, though.
 
 Notice that `Collection` provides defaults for all but one of its associated types — conforming types only have to specify an `Index` type. Even though you don’t _have_ to care much about the other associated types, let’s go through them one by one.
 
@@ -55,20 +55,10 @@ Also inherited from `Sequence`, but `Collection` restates this type with tighter
 
 `SubSequence` is used as the return type for operations that return slices of the original collection:
 
-- and
-
-  — take the first or last
-
-  elements.
-- and
-
-  — return subsequences where the first or last
-
-  elements have been removed.
-- — break up the sequence at the specified separator elements and return an array of subsequences.
-- with a
-
-  argument — return a slice containing the elements at a range of indices.
+- **[`prefix`](https://developer.apple.com/reference/swift/collection/1641469-prefix)** and **[`suffix`](https://developer.apple.com/reference/swift/collection/1641372-suffix)** — take the first or last _n_ elements.
+- **[`dropFirst`](https://developer.apple.com/reference/swift/collection/1641742-dropfirst)** and **[`dropLast`](https://developer.apple.com/reference/swift/collection/1641794-droplast)** — return subsequences where the first or last _n_ elements have been removed.
+- **[`split`](https://developer.apple.com/reference/swift/collection/1641547-split)** — break up the sequence at the specified separator elements and return an array of subsequences.
+- **[`subscript`](https://developer.apple.com/reference/swift/collection/1641423-subscript)** with a `Range<Index>` argument — return a slice containing the elements at a range of indices.
 
 The default subsequence type for collections is [`Slice<Self>`](https://developer.apple.com/reference/swift/slice), which wraps the original collection (similar to `IndexingIterator`) and stores the slice’s start and end index in terms of the base collection.
 
@@ -80,12 +70,8 @@ An index represents a position in the collection. Every collection has two speci
 
 We are used to indices being integers as is the case for arrays, but integer indices don’t work for every data structure. Again, take `String.CharacterView` as an example. Characters in Swift [are variable-size](https://oleb.net/blog/2016/08/swift-3-strings); if you wanted to use integer indices, you’d have two options:
 
-1. This is very efficient; accessing an element at a given index is an
-
-  operation. But there would be gaps in the index range. For example, if the character at index 0 had twice the normal size, the next character would be at index 2 — accessing an element at index 1 would either trigger a fatal error or be undefined behavior. This would be a huge violation of user expectations.
-2. This is consistent with user expectations — there wouldn’t be any gaps in the index range. However, accessing an element at a given index is now an
-
-  operation; the string must start at the beginning and traverse all elements before the given index to determine where the desired character is stored. This is a big no-no; users expect subscripting on an index to give direct element access in constant time.
+1. **Make the index represent an offset into the string’s internal storage.** This is very efficient; accessing an element at a given index is an _O(1)_ operation. But there would be gaps in the index range. For example, if the character at index 0 had twice the normal size, the next character would be at index 2 — accessing an element at index 1 would either trigger a fatal error or be undefined behavior. This would be a huge violation of user expectations.
+2. **Make the index `n` represent the _n_-th character in the string.** This is consistent with user expectations — there wouldn’t be any gaps in the index range. However, accessing an element at a given index is now an _O(n)_ operation; the string must start at the beginning and traverse all elements before the given index to determine where the desired character is stored. This is a big no-no; users expect subscripting on an index to give direct element access in constant time.
 
 As a result, `String.CharacterView.Index` is an opaque value that points to a position in the string’s internal storage buffer. It really is just a wrapper for a single `Int` offset, but that is an implementation detail that is of no interest to users of the collection.
 

@@ -31,7 +31,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/reading-between-the-lines-of-apples-fcc-reply.html)
 
 Add your thoughts, post a comment:
 

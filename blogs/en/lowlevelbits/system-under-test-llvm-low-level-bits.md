@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: © 2014-2025 → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:23d4349ef0d3f0e8'
 translated: false
 ---
@@ -233,9 +233,9 @@ LLVM mostly uses custom tools for testing.
 
 ### Further Reading / Additional Material
 
-- LLVM Testing Infrastructure Guide
-- LLVM Integrated Tester
-- FileCheck
-- LibFuzzer
-- LLVM test-suite Guide
-- LNT Quickstart Guide
+- [LLVM Testing Infrastructure Guide](http://llvm.org/docs/TestingGuide.html)
+- [LLVM Integrated Tester](http://llvm.org/docs/CommandGuide/lit.html)
+- [FileCheck](http://llvm.org/docs/CommandGuide/FileCheck.html)
+- [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
+- [LLVM test-suite Guide](http://llvm.org/docs/TestSuiteMakefileGuide.html)
+- [LNT Quickstart Guide](http://llvm.org/docs/lnt/quickstart.html)

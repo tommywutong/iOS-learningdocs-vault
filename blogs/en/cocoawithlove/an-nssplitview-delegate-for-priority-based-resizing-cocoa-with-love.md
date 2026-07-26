@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:ff15814f10b38225'
 translated: false
 ---
@@ -28,9 +28,7 @@ For a three section `NSSplitView`, the default proportional resizing behaves lik
 
 Priority-based resizing nominates 1 view as the most important. This is normally the window's "main" view. This highest priority view is the only view that grows in size as the window grows.
 
-> ColumnSplitView.zip
-> 
-> (60kb) to see the priority resizing at work.
+> You can download the sample project [ColumnSplitView.zip](https://www.cocoawithlove.com/assets/objc-era/ColumnSplitView.zip) (60kb) to see the priority resizing at work.
 
 ## Proportional resizing in reverse
 
@@ -170,11 +168,7 @@ If all views are at their minimum and the split view cannot contract any further
 
 ## Conclusion
 
-> ColumnSplitView.zip
-> 
-> (60kb) to see the full
-> 
-> class.
+> You can download the sample project [ColumnSplitView.zip](https://www.cocoawithlove.com/assets/objc-era/ColumnSplitView.zip) (60kb) to see the full `PrioritySplitViewDelegate` class.
 
 The advantage to the `PrioritySplitViewDelegate` class is that it is generic: you don't need to write this code each time and it handles the common case of using an `NSSplitView` to contain columns and a main view. It offers an easy plug in solution for managing a split view in this arrangement.
 

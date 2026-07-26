@@ -23,21 +23,11 @@ Some Light Reading
 
 by [Mike Ash](https://www.mikeash.com/)
 
-- If Windows 3.11 required a 32-bit processor, why was it called a 16-bit operating system?
-
-  - An interesting account of the surprisingly complicated low-level architecture of a classic operating system.
-- How do emulators work and how are they written?
-
-  - Fantastic Stack Overflow answer discussing the internal workings of emulators.
-- An overview of how IntelliSense works
-
-  - Another Stack Overflow answer, this one talking about how Visual Studio's IntelliSense feature works internally.
-- Start in the Middle
-
-  - Great advice about how you should go straight to the meat of new projects and leave the boring framing stuff for later.
-- Reverse debugging with GDB 7
-
-  - Fascinating tutorial about a really cool new feature in the latest version of GDB.
+- [If Windows 3.11 required a 32-bit processor, why was it called a 16-bit operating system?](http://blogs.msdn.com/oldnewthing/archive/2010/05/17/10013609.aspx) - An interesting account of the surprisingly complicated low-level architecture of a classic operating system.
+- [How do emulators work and how are they written?](http://stackoverflow.com/questions/448673/how-do-emulators-work-and-how-are-they-written/448689#448689) - Fantastic Stack Overflow answer discussing the internal workings of emulators.
+- [An overview of how IntelliSense works](http://stackoverflow.com/questions/2840621/c-at-design-time-how-can-i-reliably-determine-the-type-of-a-variable-that-is-d/2840829#2840829) - Another Stack Overflow answer, this one talking about how Visual Studio's IntelliSense feature works internally.
+- [Start in the Middle](http://coderoom.wordpress.com/2010/05/18/start-in-the-middle/) - Great advice about how you should go straight to the meat of new projects and leave the boring framing stuff for later.
+- [Reverse debugging with GDB 7](http://www.jayconrod.com/cgi/view_post.py?28) - Fascinating tutorial about a really cool new feature in the latest version of GDB.
 
 Did you enjoy this article? I'm selling whole books full of them! Volumes II and III are now out! They're available as ePub, PDF, print, and on iBooks and Kindle. [Click here for more information](https://www.mikeash.com/book.html).
 
@@ -47,7 +37,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/some-light-reading.html)
 
 Add your thoughts, post a comment:
 

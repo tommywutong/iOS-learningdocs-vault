@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:3830c3b664a5ae0d'
 translated: false
 ---
@@ -90,14 +90,10 @@ The signficant work was actually across the following tasks (in no particular or
 
 1. Reorganize my folders to follow the convention-based structure expected by the Swift Package Manager (all projects).
 2. Separate my mixed Objective-C/Swift modules into separate modules (all projects except CwlSignal).
-3. guard, be certain to
-
-  the new modules created by the separation in step 2 (all projects except CwlSignal).
+3. Under a `#if SWIFT_PACKAGE` guard, be certain to `import` the new modules created by the separation in step 2 (all projects except CwlSignal).
 4. Separate my “.h” files so that they can be included from a project-wide umbrella header as in Xcode or from a module header as in Swift-PM (all projects except CwlSignal).
-5. were
-
-  so they remained accessible (CwlCatchException).
-6. or other conditions not set by the Swift Package Manager (CwlDeferredWork and tests in CwlUtils and CwlSignal).
+5. Ensure that symbols affected by step 2 that were previously `internal` were `public` so they remained accessible (CwlCatchException).
+6. Remove any reliance on `DEBUG` or other conditions not set by the Swift Package Manager (CwlDeferredWork and tests in CwlUtils and CwlSignal).
 7. In Objective-C files that needed to both reference and be referenced by Swift, changed the references from Objective-C to Swift to dynamic lookups to avoid circular module dependencies (CwlMachBadInstructionHandler).
 8. Move Info.plist files around. These are generated automatically by the Swift-PM but must manually exist for Xcode – Swift-PM must be set to ignore them all (all projects).
 
@@ -129,7 +125,7 @@ Getting Xcode to keep a path through the symlink rather than immediately resolve
 
 We now have two non-transparent steps that we need to eliminate:
 
-1. to get the dependencies.
+1. Run `swift package fetch` to get the dependencies.
 2. Create symlinks in a stable location for all dynamically fetched dependencies.
 
 For this, we’ll need some kind of automated script.

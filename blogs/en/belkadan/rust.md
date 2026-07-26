@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a1a59c072b79711f'
 translated: false
 ---
@@ -48,12 +48,10 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [Rust](https:/
 
 ## Older Posts
 
-1. 2020-08-26
-
-  Objective-Rust
+1. 2020-08-26[Objective-Rust](https://belkadan.com/blog/2020/08/Objective-Rust/?tag=rust)
 
 ### Possibly Related Tags
 
-- Objective-C
-- Programming languages
-- Swift
+- [Objective-C](https://belkadan.com/blog/tags/objective-c)
+- [Programming languages](https://belkadan.com/blog/tags/programming-languages)
+- [Swift](https://belkadan.com/blog/tags/swift)

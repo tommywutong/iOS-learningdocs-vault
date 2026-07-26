@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: frozen
 license: All rights reserved（页脚明示）→ 严格私有
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:a165476c8924bc7e'
 translated: false
 ---
@@ -55,7 +55,9 @@ The basic algorithm is:
 
 1. create a set to track already-visited nodes
 2. create an array to queue nodes-to-process
-3.   1. get the set of nodes linked to the current node
+3. for every node (in order) in the nodes-to-process array:
+
+    1. get the set of nodes linked to the current node
     2. exclude nodes that we've already visited from the linked set
     3. add non-excluded, linked nodes to the nodes-to-process array
 
@@ -84,33 +86,8 @@ This code uses `NSMutableSet`'s own set-operators to exclude already visited nod
 
 So, how did this approach perform? In a word: terrible — and it's the fault of `-[NSMutableSet minusSet:]`.
 
-> Only ever use
-> 
-> if
-> 
-> is bigger than
-> 
-> . This method runs in O(
-> 
-> ) time, where
-> 
-> is the size of
-> 
-> . In the above code, where
-> 
-> can be orders of magnitude bigger than
-> 
-> it is much faster to iterate over
-> 
-> and exclude nodes found in
-> 
-> ourselves. That way we run in O(
-> 
-> ) time, where
-> 
-> is the size of
-> 
-> (and is actually small and constant for this test case).
+> **Lesson 1:**  
+> Only ever use `[setOne minusSet:setTwo]` if `setOne` is bigger than `setTwo`. This method runs in O(_n_) time, where _n_ is the size of `setTwo`. In the above code, where `visitedNodes` can be orders of magnitude bigger than `newNodes` it is much faster to iterate over `newNodes` and exclude nodes found in `visitedNodes` ourselves. That way we run in O(_m_) time, where _m_ is the size of `newNodes` (and is actually small and constant for this test case).
 
 The method `minusSet:` really should iterate over the smaller set between the receiver and the parameter. However, since it doesn't we must avoid it.
 
@@ -158,9 +135,8 @@ while ([queue count] > 0)
 
 The result, testing over graph half-depths of 8, 12, 16 and 20 (from 766 to 3145726 nodes) is that push onto end (the second one) is consistently 5% faster.
 
-> An add to the end of an
-> 
-> is the only operation that works quickly — most other operations are consistently slower. If the number of operations is equal, favor algorithms that add to the end of the array.
+> **Lesson 2:**  
+> An add to the end of an `NSMutableArray` is the only operation that works quickly — most other operations are consistently slower. If the number of operations is equal, favor algorithms that add to the end of the array.
 
 ## Other questions tested
 
@@ -201,15 +177,12 @@ void RecursivelyTraverse(Node *node)
 
 The result, over half-depths of 8, 12, 16 and 20 is that the recursive algorithm is consistently twice as fast.
 
-> Using
-> 
-> as a FIFO queue imposes a constant additional time per node. In this trivial test, the additional time amounted to half the computation for the node but if you have significant additional computations to perform per node, the overhead of the FIFO queue may be insignificant relative to the remainder of your algorithm.
+> **Lesson 3:**  
+> Using `NSMutableArray` as a FIFO queue imposes a constant additional time per node. In this trivial test, the additional time amounted to half the computation for the node but if you have significant additional computations to perform per node, the overhead of the FIFO queue may be insignificant relative to the remainder of your algorithm.
 
 ## Conclusion
 
-> FIFOQueues.zip
-> 
-> (46kB)
+> You can download the test code I used: [FIFOQueues.zip](https://www.cocoawithlove.com/assets/objc-era/FIFOQueues.zip) (46kB)
 
 Even in such a simple algorithm, there are clearly some lessons to learn. The biggest surprise for me was that I couldn't trust `minusSet:` to work in the most efficient manner. I think I'll need to submit a bug for this to Apple.
 

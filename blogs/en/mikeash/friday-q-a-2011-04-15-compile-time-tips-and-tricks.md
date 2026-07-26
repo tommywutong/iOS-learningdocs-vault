@@ -36,9 +36,7 @@ by [Mike Ash](https://www.mikeash.com/)
     #endif
 ```
 
-While limited expressions are allowed, like the above,
-
-is most commonly used with simple identifiers, defined by the user, by system headers, or by the compiler:
+While limited expressions are allowed, like the above, `#if` is most commonly used with simple identifiers, defined by the user, by system headers, or by the compiler:
 
 ```
     #if __LITTLE_ENDIAN__
@@ -55,11 +53,7 @@ is most commonly used with simple identifiers, defined by the user, by system he
     #endif
 ```
 
-These support common C-like expressions such as comparison operators and logical operators like
-
-and
-
-.
+These support common C-like expressions such as comparison operators and logical operators like `&&` and `||`.
 
 In addition to testing the value of identifiers, it's also possible to simply test for whether an identifier is defined. This is done using the `defined` pseudo-function, like so:
 
@@ -69,9 +63,7 @@ In addition to testing the value of identifiers, it's also possible to simply te
     #endif
 ```
 
-Note that, unlike most places in C, using an undefined identifier in
-
-is not illegal, it simply treats it as zero.
+Note that, unlike most places in C, using an undefined identifier in `#if` is not illegal, it simply treats it as zero.
 
 Since testing whether an identifier is defined or not is a pretty common operation, there are shortcuts for it. `#ifdef X` is equivalent to `#if defined(X)`, and `#ifndef X` is equivalent to `#if !defined(X)`. These shortcuts are handy, but can't be easily combined into more complicated logical expressions, so `defined` is often useful as well.
 
@@ -85,11 +77,7 @@ When using these constructs, it's important to understand just when they run and
     #endif
 ```
 
-The intention is to define a type only if it's not already defined. This fails, because the
-
-is evaluated long after the preprocessor runs. As far as the preprocessor is concerned, the
-
-identifier is never defined, even after it evaluates this code. If you need to do something like this, then you need to add a preprocessor define as well:
+The intention is to define a type only if it's not already defined. This fails, because the `typedef` is evaluated long after the preprocessor runs. As far as the preprocessor is concerned, the `MyType` identifier is never defined, even after it evaluates this code. If you need to do something like this, then you need to add a preprocessor define as well:
 
 ```
     #if !MYTYPE_DEFINED
@@ -98,15 +86,7 @@ identifier is never defined, even after it evaluates this code. If you need to d
     #endif
 ```
 
-One last note: while you can use
-
-inside an
-
-to conditionally define macros, you cannot use an
-
-inside a
-
-to build macros which make clever decisions at the point of use.
+One last note: while you can use `#define` inside an `#if` to conditionally define macros, you cannot use an `#if` inside a `#define` to build macros which make clever decisions at the point of use.
 
 **Built-in Defines**  
  The compiler defines a variety of identifiers for every program it compiles. Many of these are obscure and low level, but it can sometimes be handy to see what's made available. To do this, a handy shell command will print them all:
@@ -143,9 +123,7 @@ This warning will show up in the list along with any others from your code. If t
     }
 ```
 
-These directives go especially well in combination with the
-
-directive. They allow you to create conditionally compiled code for certain conditions, and warn or error when a situation comes up that you haven't coded for. For example, if you haven't written a big-endian version of your code yet and don't anticipate needing one soon, you might just make it an error:
+These directives go especially well in combination with the `#if` directive. They allow you to create conditionally compiled code for certain conditions, and warn or error when a situation comes up that you haven't coded for. For example, if you haven't written a big-endian version of your code yet and don't anticipate needing one soon, you might just make it an error:
 
 ```
     #if __LITTLE_ENDIAN__
@@ -180,9 +158,7 @@ Here's an example of a compile-time assert. This would be used in code which dep
     extern char this_code_requires_64_bit_pointers[sizeof(void *) == 8 ? 1 : -1];
 ```
 
-When the size is
-
-, this code compiles fine and doesn't affect anything. When the size is anything else, the array gets a negative size and compilation is halted with an error.
+When the size is `8`, this code compiles fine and doesn't affect anything. When the size is anything else, the array gets a negative size and compilation is halted with an error.
 
 The expressions that this is useful for are fairly limited (they must be compile-time constants, but something the preprocessor couldn't deal with) but when they are useful they are very nice to have.
 
@@ -199,7 +175,7 @@ Comments:
 
 ---
 
-Comments RSS feed for this page
+[Comments RSS feed for this page](https://www.mikeash.com/commentsrss.py?page=pyblog/friday-qa-2011-04-15-compile-time-tips-and-tricks.html)
 
 Add your thoughts, post a comment:
 

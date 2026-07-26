@@ -7,7 +7,7 @@ original_language: en
 published: ''
 status: active
 license: Copyright 2012–2020 Jordan Rose → 仅私有归档
-archived_at: 2026-07-26
+archived_at: 2026-07-27
 content_hash: 'sha256:c67264ff061e00af'
 translated: false
 ---
@@ -52,21 +52,13 @@ Posted in [Technical](https://belkadan.com/blog/technical). Tags: [C++](https://
 
 ## Older Posts
 
-1. 2016-08-21
-
-  Macromancy, Part 2
-2. 2016-08-07
-
-  Macromancy
-3. 2009-05-05
-
-  C++ Templates are Turing-Complete
-4. 2009-03-27
-
-  Const Correctness
+1. 2016-08-21[Macromancy, Part 2](https://belkadan.com/blog/2016/08/Macromancy-2/?tag=cxx)
+2. 2016-08-07[Macromancy](https://belkadan.com/blog/2016/08/Macromancy/?tag=cxx)
+3. 2009-05-05[C++ Templates are Turing-Complete](https://belkadan.com/blog/2009/05/C-plus-plus-Templates-are-Turing-Complete/?tag=cxx)
+4. 2009-03-27[Const Correctness](https://belkadan.com/blog/2009/03/Const-Correctness/?tag=cxx)
 
 ### Possibly Related Tags
 
-- Humor
-- Programming languages
-- Social media import
+- [Humor](https://belkadan.com/blog/tags/humor)
+- [Programming languages](https://belkadan.com/blog/tags/programming-languages)
+- [Social media import](https://belkadan.com/blog/tags/social-media-import)
