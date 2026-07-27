@@ -76,6 +76,27 @@ translated: true                # ← 改成 true
 | `## Transcript`（WWDC） | `## 逐字稿` |
 | `## Resources`（WWDC） | `## 相关资源` |
 | `## Chapters`（WWDC） | `## 章节` |
+| `### Essentials` | `### 基础` |
+| `### Reference` | `### 参考` |
+| `### Related Documentation` | `### 相关文档` |
+| `### Constants` | `### 常量` |
+| `### Variables` | `### 变量` |
+| `### Functions` | `### 函数` |
+| `### Macros` | `### 宏` |
+| `### Classes` | `### 类` |
+| `### Structures` | `### 结构体` |
+| `### Protocols` | `### 协议` |
+| `### Enumerations` | `### 枚举` |
+| `### Enumeration Cases` | `### 枚举 case` |
+| `### Type Aliases` | `### 类型别名` |
+| `### Initializers` | `### 初始化方法` |
+| `### Instance Methods` | `### 实例方法` |
+| `### Instance Properties` | `### 实例属性` |
+| `### Type Methods` | `### 类型方法` |
+| `### Type Properties` | `### 类型属性` |
+| `### Deprecated` | `### 已废弃` |
+| `### Error codes` | `### 错误码` |
+| `### Supporting types` | `### 支持类型` |
 | `_(deprecated)_` | `_(已废弃)_` |
 | `_(beta)_` | `_(beta)_`（保留） |
 | `> [!warning] Deprecated` | `> [!warning] 已废弃` |

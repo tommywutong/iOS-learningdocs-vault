@@ -25,7 +25,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import FIXED_INLINE, FIXED_LINES, ROOT, split_frontmatter  # noqa: E402
+from validate import (  # noqa: E402
+    FIXED_INLINE, FIXED_LINES, HEADING, ROOT, split_frontmatter,
+)
 
 SOURCES = ["apple-docs", "wwdc", "blogs"]
 
@@ -39,11 +41,26 @@ def fix_file(en: Path, zh: Path) -> tuple[str, int]:
     n = 0
 
     lines = zh_text.splitlines(keepends=True)
-    for i, line in enumerate(lines):
-        s = line.strip()
-        if s in FIXED_LINES and s in en_lines:
-            lines[i] = FIXED_LINES[s] + ("\n" if line.endswith("\n") else "")
-            n += 1
+
+    # 标题按序列逐位对齐后强制成固定译法。这样既能修「原样留英文」，也能修
+    # 「各译一个变体」（`### Essentials` 曾有基础 / 基础知识 / 要点 / 基础要点四种）。
+    # 只在标题数量相等时做——不相等说明结构本身有问题，该由 validate.py 报出来，
+    # 这里硬改只会把错位固化下去。
+    en_heads = [ln.strip() for ln in en_body.splitlines() if HEADING.match(ln.strip())]
+    zh_idx = [i for i, ln in enumerate(lines) if HEADING.match(ln.strip())]
+    if len(en_heads) == len(zh_idx):
+        for e, i in zip(en_heads, zh_idx):
+            want = FIXED_LINES.get(e)
+            if want and lines[i].strip() != want:
+                lines[i] = want + ("\n" if lines[i].endswith("\n") else "")
+                n += 1
+    else:
+        # 标题对不齐时退回保守做法：只把原样残留的英文换掉
+        for i, line in enumerate(lines):
+            s = line.strip()
+            if s in FIXED_LINES and s in en_lines:
+                lines[i] = FIXED_LINES[s] + ("\n" if line.endswith("\n") else "")
+                n += 1
     out = "".join(lines)
 
     for en_form, zh_form in FIXED_INLINE.items():

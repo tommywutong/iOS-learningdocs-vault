@@ -67,6 +67,30 @@ FIXED_LINES = {
     "## Transcript": "## 逐字稿",
     "## Resources": "## 相关资源",
     "## Chapters": "## 章节",
+    # DocC 生成的三级分组名。译法取自 tools/audit_consistency.py 的实测多数：
+    # `### Essentials` 曾出现「基础 17 / 基础知识 9 / 要点 6 / 基础要点 1」四种写法。
+    # 与本文件 FIXED_INLINE 里 <sub> 角色标签的译法保持一致。
+    "### Essentials": "### 基础",
+    "### Reference": "### 参考",
+    "### Related Documentation": "### 相关文档",
+    "### Constants": "### 常量",
+    "### Variables": "### 变量",
+    "### Functions": "### 函数",
+    "### Macros": "### 宏",
+    "### Classes": "### 类",
+    "### Structures": "### 结构体",
+    "### Protocols": "### 协议",
+    "### Enumerations": "### 枚举",
+    "### Enumeration Cases": "### 枚举 case",
+    "### Type Aliases": "### 类型别名",
+    "### Initializers": "### 初始化方法",
+    "### Instance Methods": "### 实例方法",
+    "### Instance Properties": "### 实例属性",
+    "### Type Methods": "### 类型方法",
+    "### Type Properties": "### 类型属性",
+    "### Deprecated": "### 已废弃",
+    "### Error codes": "### 错误码",
+    "### Supporting types": "### 支持类型",
 }
 FIXED_INLINE = {
     "> Navigation:": "> 导航：",
@@ -303,13 +327,22 @@ def check_pair(en: Path, zh: Path) -> list[str]:
     if callouts(en_body) != callouts(zh_body):
         issues.append(f"callout 不一致：原文 {callouts(en_body)}，译文 {callouts(zh_body)}")
 
-    # 8. 结构性文字的固定译法（只在原文确实有这段结构时才要求，
-    #    否则正文里偶然出现同名标题会被误判）
-    zh_lines = {ln.strip() for ln in zh_body.splitlines()}
-    en_lines = {ln.strip() for ln in en_body.splitlines()}
-    for en_form, zh_form in FIXED_LINES.items():
-        if en_form in en_lines and en_form in zh_lines:
-            issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
+    # 8. 结构性文字的固定译法。
+    #    按**标题序列逐位对齐**判定，而不是简单看英文有没有残留——因为不统一有
+    #    两种形态：一是原样留英文，二是各译一个变体（`### Essentials` 实测出现过
+    #    「基础 / 基础知识 / 要点 / 基础要点」四种）。只看残留英文抓不到后者。
+    #    对齐的前提是标题数量相等，而这由检查项 5 保证；不相等时它已经报错了，
+    #    这里跳过以免连带产生一串错位的假问题。
+    en_heads = [ln.strip() for ln in en_body.splitlines() if HEADING.match(ln.strip())]
+    zh_heads = [ln.strip() for ln in zh_body.splitlines() if HEADING.match(ln.strip())]
+    if len(en_heads) == len(zh_heads):
+        reported: set[str] = set()
+        for e, z in zip(en_heads, zh_heads):
+            want = FIXED_LINES.get(e)
+            if want and z != want and e not in reported:
+                reported.add(e)
+                actual = "原样保留英文" if z == e else f"实为 `{z}`"
+                issues.append(f"结构性文字未按固定译法：`{e}` 应为 `{want}`（{actual}）")
     for en_form, zh_form in FIXED_INLINE.items():
         if en_form in en_body and en_form in zh_body:
             issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
