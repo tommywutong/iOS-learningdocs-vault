@@ -183,6 +183,75 @@ SYNTH_CASES = {
 }
 
 
+# 第三处被真实译文暴露的判定漏洞：跨行块注释。`/*` 开头的多行注释，续行以
+# 空格加正文开头，COMMENT 只认行首标记，认不出续行，于是把已正确翻译的注释
+# 报成「代码被改动」（apple-docs/zh/foundation/increasing-app-usage-… 就是这么误报的）。
+BLOCK_EN = """---
+title: Demo
+---
+
+```swift
+/*
+ Provide just enough information in the userInfo dictionary.
+ The larger the dictionary, the longer it takes.
+ */
+let x = 1
+var y = 2 /* tail block
+   continues here */
+let z = 3
+```
+"""
+BLOCK_BODY = BLOCK_EN.split("```swift\n")[1].split("```")[0]
+
+BLOCK_CASES = {
+    "基线（块注释已译、代码未动）": """/*
+ 在 userInfo 字典里只放刚好够恢复状态的信息。
+ 字典越大，投递这份载荷和恢复活动就越慢。
+ */
+let x = 1
+var y = 2 /* 行尾块注释
+   续行在这里 */
+let z = 3
+""",
+    "块注释译了但代码也被改": """/*
+ 译文。
+ 译文。
+ */
+let x = 999
+var y = 2 /* 行尾块注释
+   续行在这里 */
+let z = 3
+""",
+    "块注释之后的代码缩进被吃掉": """/*
+ 译文。
+ 译文。
+ */
+let x = 1
+var y = 2 /* 注释
+   续行 */
+    let z = 3
+""",
+}
+
+
+def run_block() -> list[str]:
+    missed = []
+    with tempfile.TemporaryDirectory() as td:
+        en = Path(td) / "en.md"
+        en.write_text(BLOCK_EN, encoding="utf-8")
+        for name, body in BLOCK_CASES.items():
+            zh = Path(td) / "zh.md"
+            zh.write_text(BLOCK_EN.replace("title: Demo", "title: 示例")
+                          .replace(BLOCK_BODY, body), encoding="utf-8")
+            got = check_pair(en, zh)
+            expect_clean = name.startswith("基线")
+            ok = (not got) if expect_clean else bool(got)
+            if not ok:
+                missed.append(name)
+            print(f"  {'OK  ' if ok else '漏报'} {name}  →  {got[0][:66] if got else '无问题'}")
+    return missed
+
+
 def run_synth() -> list[str]:
     """返回漏报的用例名。"""
     missed = []
@@ -232,7 +301,10 @@ def main() -> None:
     print("\n合成样本（补真实样本盖不到的表格行与行尾注释）：")
     synth_missed = run_synth()
 
-    total = missed + synth_missed
+    print("\n合成样本（跨行块注释）：")
+    block_missed = run_block()
+
+    total = missed + synth_missed + block_missed
     print(f"\n合计漏报 {len(total)} 类" + (f"：{total}" if total else "——校验器判定逻辑无回退"))
     sys.exit(1 if total else 0)
 

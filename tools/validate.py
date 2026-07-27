@@ -256,8 +256,19 @@ def check_pair(en: Path, zh: Path) -> list[str]:
             if len(ec) != len(zc):
                 issues.append(f"第 {i} 个代码块行数不一致：{len(ec)} → {len(zc)}")
                 continue
+            # 跨行块注释要单独跟踪：`/*` 开头的多行注释，**续行往往以空格加正文
+            # 开头**（`  Provide just enough information …`），COMMENT 只认行首的
+            # // /* * # 标记，认不出这种续行，于是把已正确翻译的注释报成「代码被改动」。
+            in_block = False
             for ln, (e, z) in enumerate(zip(ec, zc), 1):
+                if in_block:
+                    if "*/" in e:
+                        in_block = False
+                    continue  # 块注释内部允许译
                 if COMMENT.match(e):
+                    # 单行 `/* … */` 不进入块注释状态，只有未闭合的才进
+                    if "/*" in e and "*/" not in e:
+                        in_block = True
                     continue  # 整行注释允许译
                 ecode, ecmt = split_trailing_comment(e)
                 zcode, zcmt = split_trailing_comment(z)
@@ -267,6 +278,10 @@ def check_pair(en: Path, zh: Path) -> list[str]:
                 if ecode.rstrip() != zcode.rstrip():
                     issues.append(f"第 {i} 个代码块第 {ln} 行代码被改动：{e.strip()[:60]!r}")
                     break
+                # 代码后面跟着未闭合的 `/*`：块注释从这一行的行尾开始
+                if ecmt.startswith("/*") and "*/" not in ecmt:
+                    in_block = True
+                    continue
                 # 注释可以译，但不能整条删掉——那是内容丢失
                 if ecmt.strip() and not zcmt.strip():
                     issues.append(
