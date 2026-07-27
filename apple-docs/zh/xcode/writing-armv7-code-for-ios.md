@@ -46,22 +46,22 @@ ARMv7 中的 Thumb 版本与 ARM 汇编指令兼容。具体来说，Thumb 能�
 下面的示例展示了一个保存关键寄存器（包括若干 VFP 寄存器）的序言，它还为局部存储分配了 36 字节。
 
 ```other
-push add  {r4-r7, lr}     // save LR, R7, R4-R6.
-add       r7, sp, #12     // Adjust R7 to point to saved R7.
-push      {r8, r10, r11}  // Save remaining GPRs (R8, R10, R11).
-vstmdb    sp!, {d8-d15}   // Save VFP/Advanced SIMD registers D8 
-                          // (aka S16-S31, Q4-Q7).
-sub       sp, sp, #36     // Allocate space for local storage.
+push add  {r4-r7, lr}     // 保存 LR、R7 和 R4-R6。
+add       r7, sp, #12     // 调整 R7，使其指向保存的 R7。
+push      {r8, r10, r11}  // 保存其余 GPR（R8、R10、R11）。
+vstmdb    sp!, {d8-d15}   // 保存 VFP/Advanced SIMD 寄存器 D8 
+                          //（也称为 S16-S31、Q4-Q7）。
+sub       sp, sp, #36     // 为局部存储分配空间。
 ```
 
 下面的示例展示了恢复前述序言所保存的寄存器的尾声：
 
 ```other
-add       sp, sp, #36     // Deallocate space for local storage.
-vldmia    sp!, {d8-d15}   // Restore VFP/Advanced SIMD registers.
-pop       {r8, r10, r11}  // Restore R8-R11.
-pop       {r4-r7, pc}     // Restore R4-R6, saved R7, and 
-                          // return to saved LR
+add       sp, sp, #36     // 释放局部存储空间。
+vldmia    sp!, {d8-d15}   // 恢复 VFP/Advanced SIMD 寄存器。
+pop       {r8, r10, r11}  // 恢复 R8-R11。
+pop       {r4-r7, pc}     // 恢复 R4-R6、保存的 R7，并 
+                          // 返回保存的 LR
 ```
 
 ## 另请参阅
@@ -69,4 +69,3 @@ pop       {r4-r7, pc}     // Restore R4-R6, saved R7, and
 ### iOS 接口
 
 - [为 iOS 编写 ARMv6 代码](writing-armv6-code-for-ios.md) — 创建符合 iOS 所支持的应用程序二进制接口（ABI）的 ARMv6 汇编语言指令。
-</content>
