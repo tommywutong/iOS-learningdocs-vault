@@ -31,11 +31,11 @@ _加速结构_是 Metal 用来加速 GPU 上光线相交测试的数据结构。
 
 你可以使用加速结构查看器的两个面板浏览加速结构：左侧的结构大纲或右侧的场景视图。
 
-![一张加速结构查看器的屏幕截图，其中包含导航器、场景视图和控制栏。](../../../attachments/ecbae80da1a3679d8a935bbbdd2ccf2e/gputools-metal-debugger-asv-outline-primitive@2x.png)
+![一张加速结构查看器的屏幕截图，其中包含导览器、场景视图和控制栏。](../../../attachments/ecbae80da1a3679d8a935bbbdd2ccf2e/gputools-metal-debugger-asv-outline-primitive@2x.png)
 
 结构大纲会显示加速结构的组件及其各种属性。你可以点按结构大纲中的任意一行，在场景视图中高亮显示加速结构的相应组件；也可以按住 Control 键点按以跳转到该组件。
 
-场景视图会显示加速结构的 3D 表示。你可以使用以下控件在场景中导航或与加速结构交互：
+场景视图会显示加速结构的 3D 表示。你可以使用以下控制在场景中浏览或与加速结构交互：
 
 | 操作 | 结果 |
 |---|---|
@@ -113,7 +113,7 @@ Xcode 使用与 Bounding Volume Traversals 高亮相同的颜色编码，但在�
 
 ### 查看每图元数据
 
-若要查看每图元数据，请先在结构大纲中导航到某个图元。然后点按 data 属性旁边的箭头，打开包含每图元数据的缓冲区查看器。
+若要查看每图元数据，请先在结构大纲中浏览到某个图元。然后点按 data 属性旁边的箭头，打开包含每图元数据的缓冲区查看器。
 
 ![一张实例加速结构中每图元数据弹出框的屏幕截图。](../../../attachments/14ec84775069981237ace89387cdd906/gputools-metal-debugger-asv-primitive-data@2x.png)
 
@@ -130,7 +130,7 @@ Xcode 使用与 Bounding Volume Traversals 高亮相同的颜色编码，但在�
 
 <sub>一张加速结构查看器的屏幕截图，其中高亮显示了实例加速结构中某个实例的运动数据属性。</sub>
 
-控制栏中还会显示其他运动控件。你可以拖动运动时间线播放头来更改预览时间。也可以点按 Play/Pause 按钮，让 Xcode 在最小开始时间和最大结束时间之间反复来回播放当前运动时间。
+控制栏中还会显示其他运动控制。你可以拖动运动时间线播放头来更改预览时间。也可以点按 Play/Pause 按钮，让 Xcode 在最小开始时间和最大结束时间之间反复来回播放当前运动时间。
 
 ![](../../../attachments/c99c8353bfd7db2dfd27fe3ed52a1ca9/gputools-metal-debugger-asv-motion.gif)
 

@@ -35,7 +35,7 @@ translated: true
 
 <sub>一张 Xcode 文档查看器的屏幕截图，其中左侧 Project navigator 中的 Getting started with sloths 文章处于选中状态。右侧面板显示了带文档图标的文章页面。</sub>
 
-文章结构与符号文件或顶层登录页面类似，区别在于第一个一级标题是普通内容，而不是符号引用。例如，Getting Started with Sloths 文章包含以下标题、单句摘要或总结，以及 Overview 部分：
+文章结构与符号文件或顶层落地页类似，区别在于第一个一级标题是普通内容，而不是符号引用。例如，Getting Started with Sloths 文章包含以下标题、单句摘要或总结，以及 Overview 部分：
 
 ```markdown
 # Getting started with sloths

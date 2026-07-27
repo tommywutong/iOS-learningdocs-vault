@@ -56,7 +56,7 @@ Xcode 包含两个测试框架：
 2. **执行（Act）** — 使用你在准备阶段配置的参数和属性，调用要测试的方法或函数。
 3. **断言（Assert）** — 使用 Swift Testing 中的[预期和确认](../testing/expectations.md)，或 [XCTest](../xctest.md) 中的测试断言，将执行阶段所运行代码的行为与预期行为进行比较。任何条件为 false 的预期都会导致测试失败。
 
-在 Swift Testing 中，测试函数只是添加了 `Test` 属性的普通 Swift 函数。它们可以是全局函数，也可以是类型中的方法。你还可以选择使用 `Suite` 属性标记包含测试函数的类型，以标识测试套件。可以将它们标记为 async 或 throws，也可以将它们隔离到全局 actor。
+在 Swift Testing 中，测试函数只是添加了 `Test` 属性的普通 Swift 函数。它们可以是全局函数，也可以是类型中的方法。你还可以选择使用 `Suite` 属性标记包含测试函数的类型，以标识测试套件。可以将它们标记为 async 或 throws，也可以将它们隔离到全局 Actor。
 
 对于使用 XCTest 创建的测试，请创建 [XCTestCase](../xctest/xctestcase.md) 的子类来包含测试方法。向 `XCTestCase` 子类添加一个不接受参数、返回 `Void` 的方法，并让方法名称以“`test`”开头。
 
@@ -99,9 +99,9 @@ class MyAPITests : XCTestCase {
 
 ### 编写 UI 测试
 
-UI 测试的工作方式与单元测试和集成测试不同。新文件所用的 XCTest UI Test 模板包含 UI 测试的常见起点。你可以在 [XCTestCase](../xctest/xctestcase.md) 子类中使用 XCTest 实现 App 的 UI 测试。UI 测试不会直接执行 App 代码，而是使用 App 的用户界面控件，确定用户能否使用 App 完成特定任务。
+UI 测试的工作方式与单元测试和集成测试不同。新文件所用的 XCTest UI Test 模板包含 UI 测试的常见起点。你可以在 [XCTestCase](../xctest/xctestcase.md) 子类中使用 XCTest 实现 App 的 UI 测试。UI 测试不会直接执行 App 代码，而是使用 App 的用户界面控制，确定用户能否使用 App 完成特定任务。
 
-创建 UI 测试，以验证 App 能否响应用户交互完成任务，并且没有引入破坏 UI 控件行为的错误。复现真实用户活动的 UI 测试可以让你确信 App 能够用于其预定任务。例如，基于文稿的 App 的 UI 测试可以验证用户能否创建新文稿、编辑其内容，然后删除文稿。
+创建 UI 测试，以验证 App 能否响应用户交互完成任务，并且没有引入破坏 UI 控制行为的错误。复现真实用户活动的 UI 测试可以让你确信 App 能够用于其预定任务。例如，基于文稿的 App 的 UI 测试可以验证用户能否创建新文稿、编辑其内容，然后删除文稿。
 
 若要在 `XCTestCase` 子类的方法中创建 UI 测试，请使用 Xcode 中的 Record UI Test 功能录制与 App 的交互。设计 UI 测试时，应复现一旦中断就会影响用户的最关键工作流程，并重放已报告的错误以避免回归。
 
@@ -113,7 +113,7 @@ UI 测试的工作方式与单元测试和集成测试不同。新文件所用�
 class MyUITests: XCTestCase {
     let app = XCUIApplication()
 
-    // MARK: - 设置与拆卸
+    // MARK: - 设置与清理
 
     override func setUp() {
         super.setUp()
@@ -124,7 +124,7 @@ class MyUITests: XCTestCase {
     }
 
     override func tearDown() {
-        // 在此处放置拆卸代码。测试运行器会在调用类中的每个测试方法后调用此方法。
+        // 在此处放置清理代码。测试运行器会在调用类中的每个测试方法后调用此方法。
         super.tearDown()
     }
 

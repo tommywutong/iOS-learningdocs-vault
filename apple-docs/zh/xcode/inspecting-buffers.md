@@ -39,11 +39,11 @@ translated: true
 
 ### 更改布局和初始偏移量
 
-你可以使用底部的控件更改缓冲区查看器对缓冲区内容的布局方式。若要更改列参数类型，请点按 Element Type 下拉菜单。若要更改每行的元素数量，请点按其右侧的 Number of Elements per Row 下拉菜单。
+你可以使用底部的控制更改缓冲区查看器对缓冲区内容的布局方式。若要更改列参数类型，请点按 Element Type 下拉菜单。若要更改每行的元素数量，请点按其右侧的 Number of Elements per Row 下拉菜单。
 
 ![](../../../attachments/21cdb24ea552353df212d3e38925b069/gputools-metal-debugger-bv-formatting-0@2x.png)
 
-<sub>一张缓冲区查看器中布局控件的屏幕截图，其中包含 Element Type 下拉菜单和 Number of Elements per Row 下拉菜单。</sub>
+<sub>一张缓冲区查看器中布局控制的屏幕截图，其中包含 Element Type 下拉菜单和 Number of Elements per Row 下拉菜单。</sub>
 
 例如，如果元素类型为 `ushort`，且每行有 `4` 个元素，缓冲区查看器就会以四个 `ushort` 类型的列显示内容。
 
@@ -51,7 +51,7 @@ translated: true
 
 你还可以更改底部的 Offset 字段，调整缓冲区中的初始偏移量。例如，在下面的截图中，将偏移量改为 `0x10` 后，Row 0 会从 `[2 0 1 0]` 变为 `[4 0 2 0]`。
 
-![一张缓冲区查看器的屏幕截图，其中高亮显示 Offset 控件。](../../../attachments/5686838c1b6d0c6605fb9a9d0e548afc/gputools-metal-debugger-bv-formatting-2@2x.png)
+![一张缓冲区查看器的屏幕截图，其中高亮显示 Offset 控制。](../../../attachments/5686838c1b6d0c6605fb9a9d0e548afc/gputools-metal-debugger-bv-formatting-2@2x.png)
 
 ### 创建自定义布局
 

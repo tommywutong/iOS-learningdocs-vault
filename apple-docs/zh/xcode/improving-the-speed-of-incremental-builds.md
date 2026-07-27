@@ -90,7 +90,7 @@ Xcode 构建系统负责管理 target 中代码的编译和链接。常见 targe
 
 ![一张 Xcode 中 Dependencies 构建阶段的屏幕截图。](../../../attachments/1702d5e45d4e6a62ea8e324909ef87df/improving-the-speed-of-incremental-builds-4@2x.png)
 
-如果 target 依赖另一个 Xcode 项目中的代码，请将该项目拖入当前项目的导航器面板以创建引用。另一个项目出现在导航器面板中后，Xcode 就能获得跟踪该项目中项目依赖关系所需的信息。如果没有此引用，远程项目发生更改时，Xcode 不会知道需要构建你的 target。
+如果 target 依赖另一个 Xcode 项目中的代码，请将该项目拖入当前项目的导览器面板以创建引用。另一个项目出现在导览器面板中后，Xcode 就能获得跟踪该项目中项目依赖关系所需的信息。如果没有此引用，远程项目发生更改时，Xcode 不会知道需要构建你的 target。
 
 ### 重构 target 以提高并行程度
 
