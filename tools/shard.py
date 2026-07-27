@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """把待翻译文件切成互不重叠的分片，每片交给一个翻译 agent。
 
-    python3 tools/shard.py --shards 8 --budget 90000            # 全部来源
+    python3 tools/shard.py --shards 8 --budget 130000 --scope core   # 底层相关框架 + WWDC
     python3 tools/shard.py --shards 8 --source apple-docs       # 只切一个来源
     python3 tools/shard.py --status                             # 看现有分片进度
 
@@ -30,6 +30,45 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from translate_plan import ROOT, collect  # noqa: E402
 
 SHARD_DIR = ROOT / "meta" / "shards"
+
+# objc.io 的 149 篇在仓库里已经有 objccn 的**官方中文译文**（配对表
+# meta/blog_index/objcio_objccn_pairs.json，149/149 两侧文件都在、
+# 中文侧正文中位 9,749 字符）。再译一遍是纯浪费 277 万字符，永久排除。
+PAIRED_TABLE = ROOT / "meta" / "blog_index" / "objcio_objccn_pairs.json"
+
+
+def already_translated_elsewhere() -> set[str]:
+    if not PAIRED_TABLE.exists():
+        return set()
+    data = json.loads(PAIRED_TABLE.read_text(encoding="utf-8"))
+    return {p["en_file"] for p in data.get("pairs", [])
+            if (ROOT / p["zh_file"]).exists()}
+
+
+# 命名范围。`core` 对应用户 2026 暑假 8 周 iOS 底层学习计划真正涉及的框架：
+# 对象模型与内存（objectivec / foundation）、runtime、并发（dispatch / swift 并发）、
+# RunLoop 与响应链（uikit）、渲染（quartzcore）、编译链接与启动、调试与性能（xcode）、
+# 内核接口（kernel）。刻意排除 swiftui / storekit / avfoundation / security / metal
+# 这些与「底层」无直接关系的框架。
+CORE_PREFIXES = (
+    "objectivec", "dispatch", "kernel", "uikit", "xcode", "foundation",
+    "os", "quartzcore", "coreanimation", "observation", "swift",
+)
+
+
+def in_scope(rel_en: str, scope: str) -> bool:
+    if scope == "all":
+        return True
+    if rel_en.startswith("wwdc/"):
+        return True
+    if scope == "apple":                      # Apple 官方全部 + WWDC
+        return rel_en.startswith("apple-docs/")
+    if scope == "core":                       # 底层相关框架 + WWDC
+        if not rel_en.startswith("apple-docs/en/"):
+            return False
+        rest = rel_en[len("apple-docs/en/"):]
+        return any(rest.startswith(p) for p in CORE_PREFIXES)
+    raise SystemExit(f"未知范围 {scope!r}，可选 core / apple / all")
 
 
 # 只有 Apple 文档需要按目录聚合：同一份文档的页面互相引用、术语必须一致，
@@ -99,10 +138,18 @@ def pack(groups: list[dict], shards: int, budget: int | None) -> list[list[dict]
     return bins
 
 
-def cmd_shard(shards: int, budget: int | None, source: str | None) -> None:
+def cmd_shard(shards: int, budget: int | None, source: str | None,
+              scope: str = "all") -> None:
     items = collect(source)
+    skip = already_translated_elsewhere()
+    n0, c0 = len(items), sum(i["chars"] for i in items)
+    items = [i for i in items if i["en"] not in skip and in_scope(i["en"], scope)]
+    if n0 != len(items):
+        c1 = sum(i["chars"] for i in items)
+        print(f"范围 {scope}：{n0} 篇 / {c0:,} 字符 → {len(items)} 篇 / {c1:,} 字符"
+              f"（其中 {len(skip)} 篇已有他处官方中文译文，永久排除）")
     if not items:
-        print("没有待翻译的文件了")
+        print("该范围内没有待翻译的文件了")
         return
     # 单组上限取单片 budget 的一半，保证一片总能装下两组以上，装箱才有均衡余地
     bins = pack(group_items(items, (budget or 200_000) // 2), shards, budget)
@@ -147,7 +194,8 @@ def main() -> None:
                 return cast(argv[i + 1])
         return default
 
-    cmd_shard(opt("--shards", 8, int), opt("--budget", None, int), opt("--source"))
+    cmd_shard(opt("--shards", 8, int), opt("--budget", None, int),
+              opt("--source"), opt("--scope", "all"))
 
 
 if __name__ == "__main__":
