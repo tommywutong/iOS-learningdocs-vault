@@ -21,7 +21,7 @@ translated: true
 
 <sub>文章</sub>
 
-使用素材目录（asset catalog）本地化颜色、图像、符号、表冠复杂功能等内容。
+使用素材目录（asset catalog）本地化颜色、图像、符号、Apple Watch 复杂功能等内容。
 
 ## 概述
 
@@ -34,7 +34,7 @@ translated: true
 - 颜色集
 - 图像集
 - 符号集
-- 表冠复杂功能
+- Apple Watch 复杂功能
 - Apple TV 图像堆栈
 - 精灵图集
 
