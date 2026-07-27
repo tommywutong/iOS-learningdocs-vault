@@ -88,6 +88,7 @@ FIXED_LINES = {
     "### Instance Properties": "### 实例属性",
     "### Type Methods": "### 类型方法",
     "### Type Properties": "### 类型属性",
+    "### Operators": "### 运算符",
     "### Deprecated": "### 已废弃",
     "### Error codes": "### 错误码",
     "### Supporting types": "### 支持类型",

@@ -26,7 +26,7 @@ translated: true
 
 [ROSE-8 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/05/ROSE-8-on-Mac-OS-9/?tag=mac-os-classic) »
 
-« [So You Want to Be a (Compiler) Wizard](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/?tag=compilers)
+« [所以你想成为（编译器）巫师](https://belkadan.com/blog/2016/05/So-You-Want-To-Be-A-Compiler-Wizard/?tag=compilers)
 
 [There's No Such Thing As "Implicitly Atomic"](https://belkadan.com/blog/2023/10/Implicity-Atomic/?tag=compilers) »
 

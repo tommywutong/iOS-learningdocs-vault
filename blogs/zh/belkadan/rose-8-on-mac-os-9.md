@@ -24,7 +24,7 @@ translated: true
 
 « [Swift 跑在 Mac OS 9 上](https://belkadan.com/blog/2020/04/Swift-on-Mac-OS-9/?tag=mac-os-classic)
 
-[Rescuing Files From Classic Mac OS...with Swift!](https://belkadan.com/blog/2023/01/Rescuing-Files-with-Swift/?tag=mac-os-classic) »
+[用 Swift 拯救 Classic Mac OS 文件！](https://belkadan.com/blog/2023/01/Rescuing-Files-with-Swift/?tag=mac-os-classic) »
 
 « [Introducing the Game 'by Color](https://belkadan.com/blog/2020/02/ROSE-8-Game-by-Color/?tag=rose-8)
 

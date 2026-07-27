@@ -1,0 +1,4 @@
+# Apple 文档译文的代码块必须与英文基线逐字符一致；部分上游代码行自带行尾空格。
+# 仅关闭这两个语料目录的 blank-at-eol 报警，其他 Git 空白检查保持默认。
+apple-docs/en/** whitespace=-blank-at-eol
+apple-docs/zh/** whitespace=-blank-at-eol

@@ -23,6 +23,6 @@ translated: true
 
 ## 主题
 
-### Operators
+### 运算符
 
 - [==(_:_:)](<==(____).md>)

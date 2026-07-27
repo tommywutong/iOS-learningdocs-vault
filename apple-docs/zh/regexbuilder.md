@@ -86,7 +86,7 @@ if let match = text.firstMatch(of: emailPattern) {
 - [RegexComponentBuilder](regexbuilder/regexcomponentbuilder.md) — 一种自定参数属性，用于从闭包构建正则表达式。
 - [AlternationBuilder](regexbuilder/alternationbuilder.md) — 一种自定参数属性，用于从闭包构建正则表达式的多选项。
 
-### Operators
+### 运算符
 
 - [...(_:_:)](<regexbuilder/'...(____)-16g2a.md>) — 返回一个包含给定范围内字符的字符类。
 - [...(_:_:)](<regexbuilder/'...(____)-629xh.md>) — 返回一个包含给定范围内 Unicode 标量的字符类。
