@@ -1,0 +1,468 @@
+---
+title: DEFCON 26 CTF參賽記
+source: MaskRay (宋方睿)
+source_key: maskray
+source_url: 'https://maskray.me/blog/2018-08-13-defcon-26-ctf'
+original_language: en
+published: 2018-08-13
+status: active
+license: 未声明 → 仅私有归档
+archived_at: 2026-07-27
+content_hash: 'sha256:861bb1e6125dd1e9'
+translated: false
+---
+
+> 原文：[DEFCON 26 CTF參賽記](https://maskray.me/blog/2018-08-13-defcon-26-ctf)　·　MaskRay (宋方睿)
+
+[2018-08-13](https://maskray.me/blog/2018-08-13-defcon-26-ctf)
+
+# DEFCON 26 CTF參賽記
+
+今年作爲Tea Deliverers一員參加DEFCON 26 CTF。Redbud、Nu1L、ROIS、長亭科技幾個員工組成Tea Deliverers，在DEFCON 26 CTF Quals中晉級Finals。DEFCON 21~25 CTF的主辦方Legitimate Business Syndicate退休之後原來Shellphish的一些人組成oooverflow接手了。我們推測賽制可能會發生較大變化(往年使用一種零和賽制，被很多比賽的決賽沿用)。
+
+參加決賽的隊伍從15支增加到了24支：
+
+| 1 | 0daysober |
+|---|---|
+| 2 | A*0*E |
+| 3 | BFS |
+| 4 | binja |
+| 5 | C.G.K.S |
+| 6 | DEFKOR00T |
+| 7 | Dragon Sector |
+| 8 | HITCON |
+| 9 | hxp |
+| 10 | KaisHack+PLUS+GoN |
+| 11 | koreanbadass |
+| 12 | mhackeroni |
+| 13 | pasten |
+| 14 | PPP |
+| 15 | PwnThyBytes |
+| 16 | r3kapig |
+| 17 | RPISEC |
+| 18 | Samurai |
+| 19 | Sauercloud |
+| 20 | Shellphish |
+| 21 | Spaceballs |
+| 22 | Tea Deliverers |
+| 23 | TeamBaguette |
+| 24 | TokyoWesterns |
+
+其中，A*0*E(浙江大學AAA+上海交大0ops+騰訊eee+復旦大學六星)、r3kapig(Eur3kA+FlappyPig)、Tea Deliverers是來自中國大陸的隊伍。BFS(交通大學BambooFox、臺灣大學Balsn、中央大學DoubleSigma以及中科院Kerkeryuan CTF)、HITCON是來自臺灣的隊伍。
+
+賽前我又學習了一些radare2，在缺乏實踐的情況下發了一些簡單的pull requests，改進tab補全、提高switch case的可讀性、修復一些bug、改進meson build system等。 ![](https://maskray.me/static/2018-08-13-defcon-26-ctf/radare2.webp)
+
+> We will run one power cable and one ethernet cable for each team. You will access the game over the ethernet cable using ipv4. We plan to provide internet access over this same link, however, this depends somewhat on the hotel's cooperation, so please be prepared for the contingency where we don't have internet, have filtered internet, or the world suddenly switches to FreeBSD and ipv6.
+
+蠻期待有FreeBSD的，因爲我在llvm裏有一些(微小的)FreeBSD commits，可惜我們都知道FreeBSD ASLR道阻且長。
+
+## 8月8日
+
+北京時間8月8日從北京出發的riatre和marche147在Pacific Daylight Time中午到達，隨後從SJC出發的我也到達了，因爲手機AT&T信號不好沒有注意和他們先匯合，獨自打車去Caesars Palace，造成多餘開銷。到達後check in Palace Tower的兩間房，在樓下去年吃過幾次的北京九號吃推遲的午飯。
+
+Tea Deliverers大部隊乘坐Korean Air航班，在首爾轉機時前一班延誤導致趕不上去Las Vegas的，在首爾多待了一天。他們帶着比賽需要的NUC和路由器。因此我們三個人沒有辦法提前做些準備(riatre稱之爲“修電腦”)。cxm和ckx也到達了，出去採購。
+
+r3kapig一些隊員也在今天到達了。晚上riatre、marche147和我找他們四個隊員(Atum、兩位天津大學學生、一個參加過ISC'16的USTC學生)吃飯，路上遇到了slipper和Tiffany Bao，原来他们也是主辦方oooverflow成員。slipper從對手、聯合戰隊隊友、顧問(DEFCON 25 CTF)到主辦方😮。
+
+## 8月9日
+
+cxm 9:00領取給比賽選手提供的8個badges(進入會場的憑證)，因此同時在賽場的選手只能有8個(其實很多選手更願意待在酒店，因爲現場嘈雜)。今年段海新老師和劉保君給我們提供後勤支持(採購水、食物、訂午餐晚餐)。下午採購東西。
+
+從北京出發的大部隊晚上到達，在Caesars Palace開了一間Forum Classic Suite。有一間Palace Tower房間因爲延遲一天check in被取消了，好在後來升艙了。
+
+下午cxm和ckx去Blackhat會場買T恤衫。riatre和我拿着badge去會場看看。但根據往年經驗，DEFCON第一天並沒有多少活動，主要活動時間和CTF重疊。
+
+晚上段海新老師請我們在Paris Las Vegas的Le Village Buffet吃飯。作爲常年參加DEFCON CTF Finals的選手發現今年熟悉的kelwin、libmaru、eadom不見了，似乎都是新鮮的面孔：ccls用戶iromise(參加過ASC'16，現任清華大學學生網絡安全技術協會會長)、去年還能回答知乎問題“高中生进入各大CTF的Final是怎样的一种体验？”的Misty、清華大學地球系統科學系的wirefish、网络研究院的ckx、三個經常更換id的web手(chromium1337、kericwy、wupco)，友情支援我們的在UC Riverside交换的吴炜。
+
+回去後大家在套房集合，BrieflyX編排了比賽現場和套房採用的網絡環境：現場使用NUC，套房放置極路由(OpenWRT，我們對e1000e驅動傳輸大文件容易出問題的狀況已經有心無力，使用了一個USB to Ethernet adapter)，兩者連接一個美國VPS部署的OpenVPN server。次日獲得比賽現場使用的內網地址後，需要修改OpenVPN server設置push route和iroute推送路由(後來據說r3kapig的iroute配置錯誤導致網絡癱瘓了一段時間)。現場和套房選手連接NUC或路由器後能透明訪問比賽內網。
+
+kelwin轉發我們郵件，因爲次日DEFCON 9:00會有很多人排隊，goon設置了一個快速通道供CTF參賽選手進入Augustus Room(比賽現場)。
+
+## 8月10日Day 1
+
+主辦方因爲網絡配置原因延遲了1個小時開賽。投影的大屏幕上有比賽規則鏈接[http://oooverflow.io/obey](http://oooverflow.io/obey)。除了DEFCON CTF決賽傳統的Attack and Defense類型題目外還設有King of the Hill (KoH)類型題目。
+
+- Attack and Defense：故意隱藏漏洞的服務，隊伍需要找出漏洞、修補服務(抵擋其他隊伍攻擊則獲得防禦分)、攻擊其他隊伍的服務獲得flag、提交flag得分(攻擊分)
+- King of the Hill：根據解的質量得分。第一名每回合獲得10分，第二到五名分別獲得6、3、2、1分。我們推測這可能會考寫最短shellcode、達成最低延遲等。
+
+比賽每5分鐘爲一輪，每輪每個服務，攻擊成功一個隊伍可以獲得1攻擊分，沒有隊伍攻擊成我方服務獲得1防禦分。總分=40%攻擊分+40%防禦分+20% KoH分。我們推測攻擊分最高隊伍獲得400分，其他隊伍按照比例得分；防禦分、KoH分類似。
+
+服務隨着被利用程度(與能利用的隊伍數目有關)會變色：綠、黃、橙、紅，變成紅色後可能會下架服務。因爲服務器帶寬限制、計算資源限制(後來得知本次比賽使用兩臺服務器，但需要服務24支隊伍)和運維複雜性，同時開放的題目不能太多。以往服務往往莫名其妙就下架了，這次有個顏色漸變，是個亮點。
+
+![結束後的portal個題目顏色](https://maskray.me/static/2018-08-13-defcon-26-ctf/final.webp)
+
+<sub>結束後的portal個題目顏色</sub>
+
+與DEFCON 21~23 CTF Finals不同(24爲CGC、25爲cLEMENCy，非常規平臺)，隊伍不能ssh各自的gamebox替換服務，需要通過主辦方提供的方式(根據主辦方發放的private key訪問github private repo，後來改成HTTP POST)patch服務。每次patch時主辦方會檢查合法性。如果patch後影響功能，會被revert。
+
+不允許往其他隊伍機器接入網線。如果發現這類不正當行爲，可能會被長期ban(\>1年)不能参加比赛。
+
+![portal](https://maskray.me/static/2018-08-13-defcon-26-ctf/portal.webp)
+
+<sub>portal</sub>
+
+互聯網和比賽內網使用同一根網線，但今年主辦方沒有使用VLAN隔離。riatre和我9:00到達現場，稍晚6人和我們匯合
+
+入場後發現網絡不通。因爲網絡問題主辦方推遲到了11:00。最早開放的題目是King of the Hill類型的reverse。每輪每支隊伍有12枚coins，投放一枚coin可以玩一次，是個x86-32 x86-64的disassemble選擇題遊戲，猜指令、指令地址等。有隊伍先玩到了90分，我通過r2/pwntools disassemble可以玩到100多分，但不久就有隊伍研製出自動化可以弄到600多分。服務端程序明顯有bug，有時會有重複選項，有時會有錯誤選項。 1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+11  
+12  
+13  
+14  
+15  
+16  
+17  
+We are at level 4  
+Time remaining: 60, score: 1960  
+Lines:  
+ 0x8465eae: mov ecx, dword [edx]  
+ 0x8465eb0: mov edx, dword [edx+0x4]  
+ ?????????: cmp edx, 0xfffffffa  
+ 0x8465eb6: je 0x8466010  
+  
+ 0xba9fb: 4889740??8 mov qword [rdx+rcx+0x8], rsi  
+Choices (4):  
+ 0. '0x8465eb5\\x003 b8 35 '  
+ 1. '0x8465eb3\\x00b 57 64 \\x00[esp+0x1c ]'  
+ 2. '0x8465eb2\\x009 70 a0 \\x00x10ef51]'  
+ 3. '0x8465eb7\\x009 c8 cf '  
+ 4. '0x8465eaf\\x00f 11 b2 '  
+I think the answer is: 0x8465eb4  
+Cannot solve: no solution?. Saving...  
+ 賽後Fish Wang告訴我應該繼續逆向，修復程序的功能，利用隱藏指令簡化遊戲，不需要大力投入到完整的solver上。
+
+BrieflyX根據主辦方提供的`game_states.json`簡單處理了下做了個內網portal。我用`display: grid;`稍微改了改。
+
+新題pointless 1  
+Description: pointless. Flag location /flag. You may patch up to 200 bytes in the pointless binary.  
+ 解压下载的`pointless.tgz`后有32位`EM_MIPS`程序，提供了MIPS的`/usr/lib/` `/lib/`，可以用qemu-mips執行。我們發現用一些新qemu-user(如2.12)運行時會在`<code_gen_buffer+154742>:     movbe  ebp,DWORD PTR gs:[ebp+0x0]`處SIGSEGV。
+
+16:20發現新題twoplustwo，沒有strip，鏈接了`libjemalloc.so.1`。 1  
+2  
+3  
+4  
+Description: A very shy calculator. Flag location is /flag, and you may patch up to 24 bytes in the twoplustwo binary.  
+Your IP: 10.13.37.22  
+Port: 6969  
+Type: NORMAL
+
+```plaintext
+% ./twoplustwo
+welcome to the ooo approved calculation.app
+approved functionality is limited to printing a duck, repeating a string, adding numbers, multiplying numbers, concatinating strings, exiting, and replacing a single character in your name
+any unapproved use of this application is not permitted and will be dealt with swiftly
+
+OOORPC_HELLO(),2: OOORPC_REPEAT_STRING(string, num_times), 3: OOORPC_ADD_NUMBERS(num1, num2), 4: OOORPC_MULTIPLY_NUMBERS(num1, num2), 5: OOORPC_CONCAT_STRINGS(string1, string1), 6: OOORPC_FIND_REPLACE(needle, replace), 7: OOORPC_EXIT(message)
+base64([functionidx]\x00[arg?]\x00[arg?]...[yourname])
+```
+
+17:00 reverse能做level 7了 17:10 DEFKOR00T first blood twoplustwo。之後Sauercloud A*0。 17:30到了23200分，但仍然是第三 Congratulations, you have quite some skills you have anything to say in your defense? It was pure luck, I do not deserve this
+
+PPP可以全場打pointless。
+
+19:50開放新題KoH類型題目doublethink，同時原來的reverse被關閉： 1  
+2  
+3  
+4  
+Description: How many conflicting ideas can you hold in one thought? Files available at oooverflow.io/obey/doublethink.tar.gz.  
+Your IP: 10.13.37.22  
+Port: 9318  
+Type: KING_OF_THE_HILL  
+ 這題很有趣，polyglot shellcode。 * 在現代架構(arm64、amd64、mipsel)上選一，攻擊成功後 * 在[SimH](http://simh.trailing-edge.com)支持的若干古代架構上選一，攻擊成功後 * 可以任意選擇尚未攻擊的古代架構或“未來”架構，持續該過程直到攻擊完所有架構或無法攻擊成功
+
+可選架構： 1  
+2  
+3  
+4  
+5  
+6  
+7  
+available = {  
+ 'past': { 'lgp-30', 'pdp-1', 'pdp-8', 'pdp-10', 'mix', 'ibm-1401', 'nova' },  
+ 'present': { 'amd64', 'arm64', 'mipsel' },  
+ 'future': { 'risc-v', 'hexagon', 'mmix', 'clemency' }  
+}  
+all_available = set.union(*available.values())  
+max_control = len(available['past']) + len(available['future']) + 1
+
+對於支持讀取文件的架構，會在固定地址讀入你的shellcode並執行： 1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+void *mem = mmap((void *)address, 0x4000, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANON, 0, 0);  
+printf("Reading file into %p...\\n", mem);  
+int read_bytes = fread(mem, 1, max_size, shellcode_file);  
+printf("Loaded %d bytes of shellcode at %p (tried for %p)...\\n", read_bytes, mem, (void *)address);  
+  
+printf("Executing!\\n");  
+  
+((void(*)())mem)();
+
+對於SimH支持的模擬器，比如pdp-1，在機器字0處讀入flag，機器字64處用deposit填入程序，在64處模擬運行。shellcode能打印處flag的字串即可。 1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+% ./drive_emu.py pdp-1 flag shellcode  
+d 0100 356424  
+d 0101 760200  
+d 0102 200001  
+...  
+d 0 "ooo"  
+d 01 "fla"  
+d 02 "g "  
+run 100  
+exit
+
+思路是如下編排指令：
+
+- 架構0的jmp指令，在架構1~n-1上能安全執行(類NOP)
+- 架構1的jmp指令，在架構2~n-1上能安全執行(類NOP)
+- 架構2的jmp指令，在架構3~n-1上能安全執行(類NOP)
+- ……
+- 架構0的shellcode
+- 架構1的shellcode
+- 架構2的shellcode。n個架構的shellcode間順序無關緊要
+
+但是查找滿足的要求的jmp指令很困難。大家搜集各個古老架構的手冊、彙編器：
+
+- GNU MIX Development Kit
+- LLVM+Clang，可以用來處理amd64、arm64、mipsel、hexagon、risc-v
+- SimH中的lgp處理lgp-30，macro1處理pdp-1
+- ……
+
+20:00 Day 1結束。oooverflow的zardus召集各個隊伍的隊長開會。
+
+後來得知很多隊伍發現30000/tcp可以訪問“DC 26 Admin Interface”，又是一個主辦方的bug。推測通過git repo(用於上傳patch)可以下載到題目，但好在git repo也掛了，才沒有提前泄漏題目。
+
+## 8月11日Day 2
+
+9:00入場10:00開賽，但主辦方因爲網絡問題推遲到了大約12:20。
+
+在北京遠程參與的f1yyy研製出了amd64+pdp-1 shellcode，可惜沒有派上用場。很多隊伍都能攻擊3、4個架構，PPP有攻擊5個隊伍的polyglot shellcode。Dragon Sector甚至有9個，後來看到HITCON有11個(amd64 pdp10 pdp8 pdp1 nova mix mmix ibm1401 lgp30 risc-v hexagon)。Dragon Sector的一度被主辦方查封，但後來恢復。應該是利用了題目漏洞(各個架構共用同一個flag、沒有sandbox隔離兩個併發的連接)，由一個amd64連接讀到的flag往另一個進程的模擬器進程寫stdin或stdout，後來與主辦方交涉後判作合法了。賽後記者問zardus自己有沒有試過能打多少架構，他巧妙地避開了這個話題，回答說每個架構都試過能打。(但是組合起來就不知道了，PPP的非漏洞正宗5個架構很棒)
+
+12:40看起來我們的twoplustwo補好了， Dragon Sector、PwnThyBytes、koreanbadass、r3kapig、pasten、Spaceballs似乎沒補字節碼注入。 13:00發現新題oooeditor 1  
+2  
+3  
+4  
+Description: The vim vs emacs religious war finally comes to an end. The Order has mandated the use of OOO Editor. Flag location is /flag, and you may patch up to 10 bytes in the oooeditor binary. The binary is available from oooverflow.io/obey/oooeditor  
+Your IP: 10.13.37.22  
+Port: 8297  
+Type: NORMAL  
+ 這是一個酷似radare2的服務，幾乎可以肯定是defcon.org官方網站介紹頁面的lzcnt ("one of the principal developers of the radare2 binary analysis framework")出的。
+
+如果是非Ubuntu 18.04的Debian系環境，沒有libgnustep-base1.25，可以`r2 oooeditor -wqc 'w 4 @ 0x4009a7'`把`DT_NEEDED`字段patch成1.24運行。 1  
+2  
+3  
+4  
+5  
+6  
+7  
+8  
+9  
+10  
+% ./oooeditor  
+[0x00000000]\> ls  
+a.png b.jpg c.elf  
+d.bz2  
+[0x00000000]\> o a.png  
+[0x00000000]\> p 4  
+61 2E 70 6E | a.pn  
+[0x00000000]\> p 4 @ 2  
+70 6E 67 68 | pngh  
+[0x00000000]\>  
+ 這個服務用GNU Objective-C編譯，鏈接了GNUStep，大家都不瞭解這個。在北京遠程參與的hankein95推薦我們閱讀[http://phrack.org/issues/66/4.html](http://phrack.org/issues/66/4.html)。
+
+我們很快注意到了out-of-bound read/write。
+
+15:08 PPP first blood。15:17發現還沒有人修補oooeditor，我就用r2修補了一下： 1  
+2  
+if ((signed int64_t)file_size \> offset)  
+ file_contents[pos] = byte;  
+ 處的-Wsign-compare問題。
+
+16:20出现新题poool，混入了區塊鏈元素，挖礦賺錢兌換flag： 1  
+2  
+3  
+4  
+poool  
+Description: pay per share stratum mining pool. You may patch the poool binary. Each team may only submit 5 patches. Choose wisely. Flag location /flag. Flag format: 000[A-F0-9]{45}. Files available at oooverflow.io/obey/poool.tgz.  
+Your IP: 10.13.37.22  
+Port: 10001  
+ 賽後slipper說：
+
+- 不利用漏洞，燒錢開服務器用4096核可以兌換到flag
+- 有個type confusion漏洞
+- 有個-Wsign-compare漏洞，可以直接拿flag
+- 用scanf讀取nonce，可以算一次提交很多遍
+
+大約有半小時套房內極路由和有線網斷開了。 ![極路由網絡診斷](https://maskray.me/static/2018-08-13-defcon-26-ctf/gee.webp)
+
+我們能攻擊PwnThyBytes的oooeditor。
+
+18:20出現新題bew。是使用Node.js框架Express.js的web服務(在DEFCON CTF Finals上非常罕見，傳統上只考硬核的二進制攻防)。 1  
+2  
+3  
+4  
+Description: Finally the Thought-CyberCrimes Reporting System is up and running. Report your suspects now, because in the new era even thinking about a cybercrime is punishable. You may patch the express-validator.wasm file. Flag location /flag, and you may patch up to 1024 bytes. Download the service from oooverflow.io/obey/bew.tar.gz  
+Your IP: 10.13.37.22  
+Port: 5080  
+Type: NORMAL
+
+- 裏面用的`node_modules/express-validator`和實際1.0.0版本不同，多了wasm模塊`node_modules/express-validator/express-validator.wasm`，`index.js`也有很多集成wasm到js的代碼。
+- `routes/data.js`(`/report`)可以寫入`public/suspects.txt`
+- `routes/suspects.js`(`/suspects`)會讀取`public/suspects.txt`
+
+我們把三個web手喚醒。大家使用[wabt](https://github.com/WebAssembly/wabt)等工具分析。Day 2結束後嘗試了各種web application firewall邏輯檢測惡意代碼執行。
+
+18:00多似乎所有隊伍的oooeditor都修補了。 19:00主辦方宣佈oooeditor有pcap了(實際上已經沒有用了) 19:15主辦方宣佈DEFKOR00T first blood了poool。後來得知他們這天就利用了poool的兩個漏洞。 19:20宣佈每個隊伍今天只能修補兩次，原因是stratum mining很耗資源(後來得知命題人slipper有個在HT後96核系統上運行2 3分鐘的解法，而一輪時間僅爲5分鐘) 19:27發現PwnThyBytes攻擊TokyoWesterns的bew獲取了first blood。很快koreanbadass和mhackeroni也能攻擊這個服務。
+
+因爲開賽浪費了兩個小時，主辦方把今日比賽從20:00延長到21:00。
+
+20:30出現新題vchat，是個使用[gloox](https://camaya.net/gloox)的XMPP client。 1  
+2  
+3  
+4  
+Description: The Order of the Overflow has assigned you a personal virtual assistant. Obey the assistant. You may patch up to 100 bytes in the vbot binary. Files available at oooverflow.io/obey/vchat.tgz **AND AT oooverflow.io/obey/vchat-hint.tgz**. This is a client-server service. The Order runs the *client* on your vulnerable image (on port 2555); the server is on port 5222.  
+Your IP: 10.13.37.22  
+Port: 2555  
+Type: NORMAL
+
+21:00主辦方召集各個隊伍的隊長開會。zardus提到了一些問題：
+
+- 開賽推遲
+- pointless服務的問題。不過這個名字起得不錯，掩飾/解释了這個服務的衆多問題。
+- 用於上傳patch的git服務的可靠性。第一天結束後連夜趕做了portal頁面提交patch的功能。
+- 防禦分計算bug。每輪每個服務沒被攻擊即可得分，但因爲一個bug導致每個服務都沒被攻擊才得分，會修復。
+
+  ```diff
+  - was_service_exploited[service.id] = True
+  + was_service_exploited[event.service.id] = True
+  ```
+- 應該還有一些，但我記不起來了
+
+我後來配置了一下XMPP server prosody，不懂XMPP，發現很難和vbot通信，不知道怎麼把anonymous模式和starttls調好，倒是發現一個XMPP client [profanity](http://www.profanity.im)高仿irssi/weechat，看起來賞心悅目。後來BrieflyX弄出一個自製簡易server可以與vbot通信了，但衆人看不出漏洞。賽後知道gloox cache可以導致use-after-free。
+
+## 8月12日Day 3
+
+2:34 f1yyy說poool可以堆任意讀了，6:00多說可以讀flag了。
+
+10:00比賽開始，按照慣例，爲了留懸念，今天不展示積分榜，但仍然能看到exploitation events。poool的patch次數取消了。我們發現沒有隊伍能利用vchat。主辦方給了vchat的提示，服務端配置是ejabberd SASL ANONYMOUS。
+
+bew主办方把权限配置错误了，有个队伍把其他队伍的文件改了，也有Denial of Service問題。大約12:00主辦方關閉了bew。我們研製的若干個bew exploit浪費了。我們的修復也無效`TOO_MANY_BYTES`，cxm wupco在修復時偷懶寄希望於主辦方使用edit distance判斷字節限制，很可惜。
+
+發現新題reeducation，是個帶符號和調試信息的Rust執行檔。 1  
+2  
+3  
+4  
+Description: You have arrived at the OOO re-education center. You may patch up to 16 bytes in the reeducation binary, available at oooverflow.io/obey/reeducation.  
+Your IP: 10.13.37.22  
+Port: 1221  
+Type: NORMAL
+
+f1yyy的poool exploit可以攻擊17個隊伍。後來發現有個`if ((signed __int64)tmp <= 0x1FFFFFFFFFFLL)` bug，可以加很多錢，很多其他隊伍利用了這個。
+
+11:15發現新King of the Hill題propaganda。用nc連接後顯示可以上傳下載服務。不能用telnet連接，如果發送`1\r\n`會被拒絕請求。 ![](https://maskray.me/static/2018-08-13-defcon-26-ctf/propaganda.webp)
+
+```plaintext
+% ./propaganda 1
+
+ Order through Control.
+
+ -------[ OOO Stamp ]------
+ |      .  . *.           |
+ |     * .  +             |
+ |    . E    * .          |
+ |       .    * *         |
+ |      * .    +          |
+ |     * *    S .         |
+ |    . .  . . * *        |
+ |       .. .   . .       |
+ |        .+*             |
+ |         *x+            |
+ --------------------------
+```
+
+用選項1下載執行檔後發現這個程序把命令行參數、.text .fini和.rodata大部分計算MD5後顯示爲randomart。如果篡改程序，改變輸出的字串`Order through Control`，就會破壞randomart。有兩種思路：
+
+- 修改.text，設法修復hash
+- 修改`__printf_chk`的PLT項，跳轉到.eh_frame。我們選擇了這種，hook這個函數後用`rsi-8!=rsp`、`format[0] != 'O'`等方式檢測是第幾個printf調用，發現要輸出`Order through Control`則替換字串。riatre嫺熟地patch了交了一個版本上去，排到第五，之後又優化了下。我發現了r2 `waf`的幾處問題。
+
+  ![](https://maskray.me/static/2018-08-13-defcon-26-ctf/day3.webp)
+
+```plaintext
+# a solution of 45 bytes
+# a.r2
+wa jmp 0x1920 @ sym.imp.__printf_chk
+wa call 0x193a @ 0x1920
+wz ORDER OF OBEDIENCE.\n @ 0x1925
+waf a.asm @ 0x193a
+
+# a.asm
+pop rax
+cmp byte [rsp], 0x2b  # if return address of the __printf_chk call is what we want to hack
+cmovz rsi,rax
+jmp [0x201fb8]
+
+# shell
+r2 -e 'asm.assembler=x86.ks' -wqi a.r2 propaganda
+```
+
+14:00比賽結束，我去了現場，和riatre、misty找其他隊伍聊天，順便推銷ccls。比較可惜的是大部分A*0*E選手都沒見到，只看到了Azure (eee)。 他提到主辦方提交flag也有bug，有的時候提交同樣flag會都顯示Accept，第一次提交實質上沒有計分，可能是因爲每輪flag推送的同步問題導致的。Misty開心地加日本人微信。見到了HITCON和BFS幾位隊員。iromise和陳仲寬(我沒有認出來QAQ)討論資安社團招新難的話題。
+
+混入了r3kapig的Atum的集體照 ![](https://maskray.me/static/2018-08-13-defcon-26-ctf/team.jpg)
+
+16:30 DEFCON閉幕式，按照慣例最後會宣佈DEFCON CTF前三名。但我們去得太晚，被goon引導到Track 3，後來被告知"sorry"，只好回套房看電視上的dctv (DEF CON TV)。往年我們都忽略了dctv，今年dctv成爲DEFCON一個新的 部門，在六個酒店播出：Caesars、Flamingo、Paris、Bally's、Harrah's。一些網絡設備用了FreeBSD，但主辦方的玩笑(比賽突然變成FreeBSD+ipv6)並沒有發生。DEFCON 27將會在Paris、Bally's和Planet Hollywood三地分佈式運行。DEF CON China將繼續舉辦。
+
+![](https://maskray.me/static/2018-08-13-defcon-26-ctf/oooverflow.webp) 無意中截到這張圖，只有slipper有良好的“認罪”態度，其他人怎麼嬉皮笑臉……
+
+Tea Deliverers第6名。 ![](https://maskray.me/static/2018-08-13-defcon-26-ctf/rank.webp)
+
+BrieflyX總結說，今年每天都很困，不過好的方面是網絡沒有出大問題。晚上我們在Joes Seafood Prime Steak & Stone Crab吃飯。
+
+21:00多段老師和刘保君給我們道別，要去趕USENIX Security'18了。感謝他們這幾天提供的後勤保障！
+
+23:20 scateu來探望我們，接見了幾位清華大學學生網絡安全技術協會同學，介紹了他在Blackhat上的演講，分享了一些段子，給我們帶了幾個ASRC的骰子，談論清華大學的修車鋪和小賣鋪，談論自己未來安全研究的展望，暢談到近1:00才回去。
+
+## 8月13日
+
+早上吃了兩個HITCON送的鳳梨酥作爲早飯(感謝～昨天下午送的，因爲準備倉促，沒有回禮，很監介。。。)一些隊友今日回去，我去San Jose International Airport，riatre和marche147乘坐Delta Air，在Seattle轉機回北京。我因爲和iromise又檢查了下套房衆人落下的東西，離開得稍晚了，就被拋下了😭又只好獨自打車到機場，好在在機場碰頭了，還遇到了A_0_E (0ops)的谭凌霄。大部隊乘坐Korean Air，還有幾個報了旅遊團在Planet Hollywood住兩天再回去。Misty和HITCON乘坐同一個Korean Air航班。我第一次在SJC出發離開，發現有個ride-sharing app的通道。
+
+主辦方的過失很多：
+
+- 網絡環境配置。Day2開賽時間拖延了兩個小時有點長，以前legitbs從沒有拖到過兩小時。
+- 不慎暴露的Admin interface。
+- patch上傳機制。git repo看起來很酷，但用git post-commit hook實現的話容易出問題。穩健的HTTP POST挺好的，還方便限制提交次數。
+- 分數計算bug。還好數據庫記錄了原始事件，方便重新計算。
+- 不注意sandbox隔離。
+- 沒有注意服務的資源消耗
+
+    - bew Denial of Service很難防。Node.js的單進程服務多個連接的模型在攻防裏不好，服務容易被搞壞。後來主辦方改成不停重啓node，又會導致大量資源消耗。
+    - 慎用qemu模擬運行的程序。qemu-mips運行的pointless消耗大量資源。聽說主辦方原來出了一道x86_64的，但後來有人靈機一動把它改成了32位MIPS。據說PPP利用leak時，曾發現服務端不對勁(x86_64沒有被題換成MIPS)，之後主辦方才修復。
+
+但他們扛下legitbs離開後主辦方的大旗，很不容易，爲比賽帶來新的賽制(血液)，感謝他們的辛勤勞動。希望以後能辦得更好。
+
+我們自身的問題：
+
+- 航班延誤一天給大家帶來時差影響。很多人昏昏沉沉的，不能發揮最佳狀態。我雖然沒有時差影響，但彷彿水土不服(旁白：請不要找藉口)
+- 準備不足。去年(cLEMENCy)提前一天知道規則，做了很多準備，如git repo。今年有所欠缺。
+- 今年Day 1結束後沒有總結。
+
+每年八月，放下手頭的工作，在Las Vegas見故交新知，並肩作戰，折騰平時不想折騰的軟件，速成平時用不到的技能，繼續發光發熱(與其讓生命生鏽)，享受這段時光。

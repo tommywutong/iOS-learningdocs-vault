@@ -213,7 +213,37 @@
       "status": "active",
       "discover": {
         "type": "index",
-        "url": "https://maskray.me/blog/archives/",
+        "url": [
+          "https://maskray.me/blog/archives/",
+          "https://maskray.me/blog/archives/page/2/",
+          "https://maskray.me/blog/archives/page/3/",
+          "https://maskray.me/blog/archives/page/4/",
+          "https://maskray.me/blog/archives/page/5/",
+          "https://maskray.me/blog/archives/page/6/",
+          "https://maskray.me/blog/archives/page/7/",
+          "https://maskray.me/blog/archives/page/8/",
+          "https://maskray.me/blog/archives/page/9/",
+          "https://maskray.me/blog/archives/page/10/",
+          "https://maskray.me/blog/archives/page/11/",
+          "https://maskray.me/blog/archives/page/12/",
+          "https://maskray.me/blog/archives/page/13/",
+          "https://maskray.me/blog/archives/page/14/",
+          "https://maskray.me/blog/archives/page/15/",
+          "https://maskray.me/blog/archives/page/16/",
+          "https://maskray.me/blog/archives/page/17/",
+          "https://maskray.me/blog/archives/page/18/",
+          "https://maskray.me/blog/archives/page/19/",
+          "https://maskray.me/blog/archives/page/20/",
+          "https://maskray.me/blog/archives/page/21/",
+          "https://maskray.me/blog/archives/page/22/",
+          "https://maskray.me/blog/archives/page/23/",
+          "https://maskray.me/blog/archives/page/24/",
+          "https://maskray.me/blog/archives/page/25/",
+          "https://maskray.me/blog/archives/page/26/",
+          "https://maskray.me/blog/archives/page/27/",
+          "https://maskray.me/blog/archives/page/28/",
+          "https://maskray.me/blog/archives/page/29/"
+        ],
         "link_xpath": "//a/@href",
         "url_filter": "^/blog/\\d{4}"
       },
@@ -221,7 +251,7 @@
       "strip": [],
       "code_mode": "auto",
       "license": "未声明 → 仅私有归档",
-      "_discover_probe": "改用全量索引页（首页/feed 只给最近几篇）"
+      "_discover_probe": "archives 页按年份分页（Hexo NexT 主题），/blog/archives/ 只是第 1 页，共 29 页（/blog/archives/page/2/ … /29/），已全部列入种子"
     },
     {
       "key": "ibireme",

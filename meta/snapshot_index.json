@@ -1,9 +1,28 @@
 {
- "generated_at": "2026-07-27 02:41",
+ "generated_at": "2026-07-27 08:25",
  "total_targets": 108,
- "ok": 69,
- "failed": 39,
+ "ok": 86,
+ "failed": 22,
  "snapshots": [
+  {
+   "url": "https://juejin.cn/post/6963188936508178469",
+   "domain": "juejin.cn",
+   "group": "platform",
+   "week": "第一周：对象、类与所有权的地基",
+   "day": "Day 1｜先分清“地址空间”，不要一上来背 isa（对应 W1-10）",
+   "title": "iOS 内存分区-- 栈、堆、全局区、常量区、代码区",
+   "path": "blogs/snapshots/juejin.cn/ios-内存分区-栈-堆-全局区-常量区-代码区.md",
+   "original_language": "zh",
+   "published": "2021-05-17",
+   "chars": 1050,
+   "zh_chars": 624,
+   "prose_chars": 1050,
+   "zh_prose_chars": 624,
+   "code_blocks": 0,
+   "content_hash": "sha256:cf4dcc695499c123",
+   "container": "//div[contains(@class,'markdown-body')]",
+   "container_source": "map"
+  },
   {
    "url": "https://www.cnblogs.com/xgao/p/11277935.html",
    "domain": "cnblogs.com",
@@ -81,6 +100,25 @@
    "container_source": "map"
   },
   {
+   "url": "https://blog.csdn.net/u013378438/article/details/82790332",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第二周：weak、属性关键字与 Block",
+   "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）",
+   "title": "Objective-C runtime机制(7)——SideTables, SideTable, weak_table, weak_entry_t",
+   "path": "blogs/snapshots/blog.csdn.net/objective-c-runtime机制-7-sidetables-sidetable-weak-table-weak-entry-t.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 23467,
+   "zh_chars": 3907,
+   "prose_chars": 5842,
+   "zh_prose_chars": 2514,
+   "code_blocks": 28,
+   "content_hash": "sha256:13abc213e00db30f",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
+  },
+  {
    "url": "https://verdagon.dev/blog/surprising-weak-refs",
    "domain": "verdagon.dev",
    "group": "single-site",
@@ -116,6 +154,25 @@
    "code_blocks": 3,
    "content_hash": "sha256:ffe9199df4bcce33",
    "container": "//article",
+   "container_source": "map"
+  },
+  {
+   "url": "https://www.informit.com/articles/article.aspx?p=1749597&seqNum=12",
+   "domain": "informit.com",
+   "group": "single-site",
+   "week": "第二周：weak、属性关键字与 Block",
+   "day": "Day 3｜先看 Block 是什么，再谈捕获（对应 W2-12、W2-13、W2-15）",
+   "title": "Big Nerd Ranch Advanced Mac OS X Programming: Blocks",
+   "path": "blogs/snapshots/informit.com/big-nerd-ranch-advanced-mac-os-x-programming-blocks.md",
+   "original_language": "en",
+   "published": "",
+   "chars": 26925,
+   "zh_chars": 0,
+   "prose_chars": 19487,
+   "zh_prose_chars": 0,
+   "code_blocks": 20,
+   "content_hash": "sha256:c6bf79d578c7fbd1",
+   "container": "//div[contains(@class,'articleProduct')]",
    "container_source": "map"
   },
   {
@@ -366,6 +423,63 @@
    "container_source": "guess"
   },
   {
+   "url": "https://blog.csdn.net/zhoupengju/article/details/53129436",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+   "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）",
+   "title": "KVO的实现原理",
+   "path": "blogs/snapshots/blog.csdn.net/kvo的实现原理.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 2164,
+   "zh_chars": 331,
+   "prose_chars": 1950,
+   "zh_prose_chars": 331,
+   "code_blocks": 2,
+   "content_hash": "sha256:c363343047088ab5",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
+  },
+  {
+   "url": "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
+   "domain": "huberyyang.com",
+   "group": "single-site",
+   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+   "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）",
+   "title": "KVO实现原理",
+   "path": "blogs/snapshots/huberyyang.com/kvo实现原理.md",
+   "original_language": "zh",
+   "published": "2018-04-13",
+   "chars": 2139,
+   "zh_chars": 755,
+   "prose_chars": 2139,
+   "zh_prose_chars": 755,
+   "code_blocks": 0,
+   "content_hash": "sha256:34f8110a22229756",
+   "container": "//article",
+   "container_source": "map"
+  },
+  {
+   "url": "https://blog.csdn.net/weixin_38633659/article/details/149066468",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
+   "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）",
+   "title": "6种iOS开发中常用的设计模式",
+   "path": "blogs/snapshots/blog.csdn.net/6种ios开发中常用的设计模式.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 6886,
+   "zh_chars": 917,
+   "prose_chars": 1518,
+   "zh_prose_chars": 711,
+   "code_blocks": 7,
+   "content_hash": "sha256:315c6520b751eec6",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
+  },
+  {
    "url": "https://www.cnblogs.com/iOS-Blog/archive/2013/02/21/2920926.html",
    "domain": "cnblogs.com",
    "group": "platform",
@@ -439,6 +553,44 @@
    "code_blocks": 0,
    "content_hash": "sha256:2804c7ed9ff2da4d",
    "container": "//body",
+   "container_source": "map"
+  },
+  {
+   "url": "http://stevenwuzheng.com/archives/runloop%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB",
+   "domain": "stevenwuzheng.com",
+   "group": "single-site",
+   "week": "第四周：线程、GCD、Operation 与锁",
+   "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）",
+   "title": "runloop 和线程有什么关系？ - stevenwu",
+   "path": "blogs/snapshots/stevenwuzheng.com/runloop-和线程有什么关系-stevenwu.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 1903,
+   "zh_chars": 365,
+   "prose_chars": 659,
+   "zh_prose_chars": 292,
+   "code_blocks": 1,
+   "content_hash": "sha256:4143db317cdd3025",
+   "container": "//div[contains(@class,'card-content') and contains(@class,'article')]",
+   "container_source": "map"
+  },
+  {
+   "url": "https://bujige.net/blog/iOS-Complete-learning-pthread-and-NSThread.html",
+   "domain": "bujige.net",
+   "group": "single-site",
+   "week": "第四周：线程、GCD、Operation 与锁",
+   "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）",
+   "title": "iOS 多线程：『pthread、NSThread』详尽总结",
+   "path": "blogs/snapshots/bujige.net/ios-多线程-pthread-nsthread-详尽总结.md",
+   "original_language": "zh",
+   "published": "2018-01-26",
+   "chars": 10592,
+   "zh_chars": 2551,
+   "prose_chars": 5543,
+   "zh_prose_chars": 1901,
+   "code_blocks": 12,
+   "content_hash": "sha256:71730a427c692147",
+   "container": "//article",
    "container_source": "map"
   },
   {
@@ -556,6 +708,25 @@
    "container_source": "guess"
   },
   {
+   "url": "https://juejin.cn/post/7070416276564213791",
+   "domain": "juejin.cn",
+   "group": "platform",
+   "week": "第四周：线程、GCD、Operation 与锁",
+   "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）",
+   "title": "对iOS中自旋锁与优先级反转（Priority inversion）的理解",
+   "path": "blogs/snapshots/juejin.cn/对ios中自旋锁与优先级反转-priority-inversion-的理解.md",
+   "original_language": "zh",
+   "published": "2022-03-02",
+   "chars": 2190,
+   "zh_chars": 933,
+   "prose_chars": 2190,
+   "zh_prose_chars": 933,
+   "code_blocks": 0,
+   "content_hash": "sha256:543854c2d1d58661",
+   "container": "//div[contains(@class,'markdown-body')]",
+   "container_source": "map"
+  },
+  {
    "url": "https://solarana.dev/2018/04/15/protecting-critical-sections/",
    "domain": "solarana.dev",
    "group": "single-site",
@@ -651,6 +822,25 @@
    "container_source": "map"
   },
   {
+   "url": "https://ai-chan.top/code/Runloop%E4%B8%8E%E5%8D%A1%E9%A1%BF%E7%9B%91%E6%8E%A7/",
+   "domain": "ai-chan.top",
+   "group": "single-site",
+   "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+   "day": "Day 2｜先会 RunLoop，再理解常驻线程与卡顿监测（对应 W4-03）",
+   "title": "Runloop 源码笔记：如何实现高可用的卡顿监控",
+   "path": "blogs/snapshots/ai-chan.top/runloop-源码笔记-如何实现高可用的卡顿监控.md",
+   "original_language": "zh",
+   "published": "2016-03-22",
+   "chars": 16003,
+   "zh_chars": 1556,
+   "prose_chars": 4113,
+   "zh_prose_chars": 1196,
+   "code_blocks": 14,
+   "content_hash": "sha256:9b5634d479913df7",
+   "container": "//*[contains(@class,'post-body')]",
+   "container_source": "map"
+  },
+  {
    "url": "https://cloud.tencent.com/developer/article/1895911",
    "domain": "cloud.tencent.com",
    "group": "platform",
@@ -667,6 +857,25 @@
    "code_blocks": 6,
    "content_hash": "sha256:51f21d616985bbb2",
    "container": "//div[contains(@class,'rno-markdown')]",
+   "container_source": "map"
+  },
+  {
+   "url": "https://blog.csdn.net/Deft_MKJing/article/details/82947706",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
+   "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）",
+   "title": "Objective-C之Autorelease Pool底层实现原理记录（双向链表）以及在Runloop中是如何参与进去的",
+   "path": "blogs/snapshots/blog.csdn.net/objective-c之autorelease-pool底层实现原理记录-双向链表-以及在runloop中是如何参与进去的.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 8247,
+   "zh_chars": 2233,
+   "prose_chars": 6373,
+   "zh_prose_chars": 2233,
+   "code_blocks": 10,
+   "content_hash": "sha256:74e6dd914a18f136",
+   "container": "//div[@id='content_views']",
    "container_source": "map"
   },
   {
@@ -888,14 +1097,33 @@
    "path": "blogs/snapshots/blog.joyingx.me/nsmutablearray原理揭露.md",
    "original_language": "zh",
    "published": "2015-05-03",
-   "chars": 19300,
-   "zh_chars": 4617,
-   "prose_chars": 12460,
-   "zh_prose_chars": 4617,
-   "code_blocks": 40,
-   "content_hash": "sha256:cf25ae3812656f21",
+   "chars": 19688,
+   "zh_chars": 4648,
+   "prose_chars": 12500,
+   "zh_prose_chars": 4648,
+   "code_blocks": 41,
+   "content_hash": "sha256:2850bdaaef3ba4c2",
    "container": "//*[contains(@class,'article-content')]",
    "container_source": "guess"
+  },
+  {
+   "url": "https://www.laoqingcai.com/ios-nsmutablearray/",
+   "domain": "laoqingcai.com",
+   "group": "single-site",
+   "week": "第六周：UIKit 渲染、UITableView 与性能",
+   "day": "Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）",
+   "title": "普通可变数组",
+   "path": "blogs/snapshots/laoqingcai.com/普通可变数组.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 11352,
+   "zh_chars": 1927,
+   "prose_chars": 4784,
+   "zh_prose_chars": 1801,
+   "code_blocks": 11,
+   "content_hash": "sha256:cddd65be085bf988",
+   "container": "//article",
+   "container_source": "map"
   },
   {
    "url": "https://segmentfault.com/a/1190000047731614",
@@ -1069,6 +1297,25 @@
    "container_source": "guess"
   },
   {
+   "url": "https://tech.meituan.com/2018/12/06/waimai-ios-optimizing-startup.html",
+   "domain": "tech.meituan.com",
+   "group": "single-site",
+   "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
+   "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）",
+   "title": "美团外卖iOS App冷启动治理",
+   "path": "blogs/snapshots/tech.meituan.com/美团外卖ios-app冷启动治理.md",
+   "original_language": "zh",
+   "published": "2018-12-06",
+   "chars": 12986,
+   "zh_chars": 6335,
+   "prose_chars": 11030,
+   "zh_prose_chars": 6190,
+   "code_blocks": 8,
+   "content_hash": "sha256:16c9169a16bf9278",
+   "container": "//main",
+   "container_source": "guess"
+  },
+  {
    "url": "https://www.bswanson.dev/blog/exploring-sqlite-internals/",
    "domain": "bswanson.dev",
    "group": "single-site",
@@ -1104,6 +1351,25 @@
    "code_blocks": 3,
    "content_hash": "sha256:2398ef48b3e899fd",
    "container": "//div[@id='cnblogs_post_body']",
+   "container_source": "map"
+  },
+  {
+   "url": "https://www.w3.org/TR/xml/",
+   "domain": "w3.org",
+   "group": "single-site",
+   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+   "day": "Day 3｜序列化先比较需求，再看二进制细节（对应 W5-09）",
+   "title": "Extensible Markup Language (XML) 1.0 (Fifth Edition)",
+   "path": "blogs/snapshots/w3.org/extensible-markup-language-xml-1-0-fifth-edition.md",
+   "original_language": "en",
+   "published": "",
+   "chars": 141395,
+   "zh_chars": 0,
+   "prose_chars": 136583,
+   "zh_prose_chars": 0,
+   "code_blocks": 48,
+   "content_hash": "sha256:fedb3d61d5b27e12",
+   "container": "//body",
    "container_source": "map"
   },
   {
@@ -1162,6 +1428,44 @@
    "content_hash": "sha256:b0c071ad95366ca9",
    "container": "//*[contains(@class,'post-body')]",
    "container_source": "guess"
+  },
+  {
+   "url": "https://blog.csdn.net/game3108/article/details/52388089",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+   "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）",
+   "title": "YYModel源代码分析（一）整体介绍",
+   "path": "blogs/snapshots/blog.csdn.net/yymodel源代码分析-一-整体介绍.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 4820,
+   "zh_chars": 852,
+   "prose_chars": 3264,
+   "zh_prose_chars": 814,
+   "code_blocks": 6,
+   "content_hash": "sha256:842418bd7838a2d0",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
+  },
+  {
+   "url": "https://blog.csdn.net/Lu_Ca/article/details/114532423",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+   "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）",
+   "title": "YYModel内部实现原理",
+   "path": "blogs/snapshots/blog.csdn.net/yymodel内部实现原理.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 2039,
+   "zh_chars": 584,
+   "prose_chars": 1531,
+   "zh_prose_chars": 584,
+   "code_blocks": 1,
+   "content_hash": "sha256:7d4cc9656b93607c",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
   },
   {
    "url": "https://blog.itlee.top/2017/12/21/YYModel%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%80/",
@@ -1238,6 +1542,25 @@
    "content_hash": "sha256:b2d16286f54d23a1",
    "container": "//*[contains(@class,'post-content')]",
    "container_source": "guess"
+  },
+  {
+   "url": "https://blog.csdn.net/weixin_46818265/article/details/142442895",
+   "domain": "blog.csdn.net",
+   "group": "platform",
+   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
+   "day": "Day 8｜架构是前七天代码的职责重排（对应 W6-06、W6-07）",
+   "title": "iOS 中 KVC 与 KVO 底层原理",
+   "path": "blogs/snapshots/blog.csdn.net/ios-中-kvc-与-kvo-底层原理.md",
+   "original_language": "zh",
+   "published": "",
+   "chars": 1029,
+   "zh_chars": 218,
+   "prose_chars": 990,
+   "zh_prose_chars": 218,
+   "code_blocks": 1,
+   "content_hash": "sha256:1478bfe54cd79c79",
+   "container": "//div[@id='content_views']",
+   "container_source": "map"
   },
   {
    "url": "https://www.jianshu.com/p/e59bb8f59302",
@@ -1318,15 +1641,6 @@
  ],
  "failures": [
   {
-   "url": "https://juejin.cn/post/6963188936508178469",
-   "domain": "juejin.cn",
-   "group": "platform",
-   "week": "第一周：对象、类与所有权的地基",
-   "day": "Day 1｜先分清“地址空间”，不要一上来背 isa（对应 W1-10）",
-   "reason": "抓取失败",
-   "detail": "js-challenge WAF / JS 挑战页（2397 字节）"
-  },
-  {
    "url": "https://roadmap.isylar.com/iOS/Knowledge/RuntimeCls.html",
    "domain": "roadmap.isylar.com",
    "group": "single-site",
@@ -1336,31 +1650,13 @@
    "detail": "robots.txt 对所有爬虫 Disallow: /"
   },
   {
-   "url": "https://blog.csdn.net/u013378438/article/details/82790332",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第二周：weak、属性关键字与 Block",
-   "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）",
-   "reason": "抓取失败",
-   "detail": "http-521 2134 字节，HTTP 521"
-  },
-  {
    "url": "https://www.uiimage.com/post/blog/ios/sidetables/",
    "domain": "uiimage.com",
    "group": "single-site",
    "week": "第二周：weak、属性关键字与 Block",
    "day": "Day 2｜weak 按“写入—读取—销毁”三段学（对应 W2-01～W2-06）",
    "reason": "抓取失败",
-   "detail": "network HTTP 502, 0 字节"
-  },
-  {
-   "url": "https://www.informit.com/articles/article.aspx?p=1749597&seqNum=12",
-   "domain": "informit.com",
-   "group": "single-site",
-   "week": "第二周：weak、属性关键字与 Block",
-   "day": "Day 3｜先看 Block 是什么，再谈捕获（对应 W2-12、W2-13、W2-15）",
-   "reason": "内容不是目标文章（人工核实）",
-   "detail": "原文已下线：站点把 article.aspx?p=… 重定向到了「Articles」全站文章列表页，抓到的是 890 条书摘的目录，不是《Advanced Mac OS X Programming》那一节"
+   "detail": "network HTTP 502, 0 字节；已查 Web Archive：无快照，记为不可归档"
   },
   {
    "url": "https://bytes.vokal.io/objc-block-capture-weakself/",
@@ -1369,7 +1665,7 @@
    "week": "第二周：weak、属性关键字与 Block",
    "day": "Day 5｜循环引用是 Day 4 所有权图的推论（对应 W2-14、W2-16）",
    "reason": "抓取失败",
-   "detail": "network HTTP 502, 0 字节"
+   "detail": "network HTTP 502, 0 字节；已查 Web Archive：无快照，记为不可归档"
   },
   {
    "url": "https://medium.com/fantageek/understanding-weak-and-strong-in-objective-c-d17ba4c2c297",
@@ -1390,51 +1686,6 @@
    "detail": "robots.txt 对所有爬虫 Disallow: /"
   },
   {
-   "url": "https://blog.csdn.net/zhoupengju/article/details/53129436",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
-   "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）",
-   "reason": "抓取失败",
-   "detail": "http-521 2175 字节，HTTP 521"
-  },
-  {
-   "url": "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/",
-   "domain": "huberyyang.com",
-   "group": "single-site",
-   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
-   "day": "Day 5｜KVC 提供间接访问，KVO 在它的约定上插入通知（对应 W3-09）",
-   "reason": "抓取失败",
-   "detail": "http-404 244061 字节，HTTP 404"
-  },
-  {
-   "url": "https://blog.csdn.net/weixin_38633659/article/details/149066468",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第三周：Runtime 行为与 Cocoa 对象通信",
-   "day": "Day 6｜最后才比较对象通信模式（对应 W3-01、W6-07）",
-   "reason": "抓取失败",
-   "detail": "http-521 2208 字节，HTTP 521"
-  },
-  {
-   "url": "http://stevenwuzheng.com/archives/runloop%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB",
-   "domain": "stevenwuzheng.com",
-   "group": "single-site",
-   "week": "第四周：线程、GCD、Operation 与锁",
-   "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）",
-   "reason": "抓取失败",
-   "detail": "http-404 ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'stevenwuzheng.com'. (_ssl.c:1032)"
-  },
-  {
-   "url": "https://bujige.net/blog/iOS-Complete-learning-pthread-and-NSThread.html",
-   "domain": "bujige.net",
-   "group": "single-site",
-   "week": "第四周：线程、GCD、Operation 与锁",
-   "day": "Day 2｜了解原始线程，目的是理解上层抽象（对应 W3-03、W3-04）",
-   "reason": "原站已下线（域名停放 / 广告页）",
-   "detail": "正文命中「域名交易」，原文已不存在，需换镜像源"
-  },
-  {
    "url": "https://ioscoachfrank.com/chaining-nsoperations.html",
    "domain": "ioscoachfrank.com",
    "group": "single-site",
@@ -1453,15 +1704,6 @@
    "detail": "robots.txt 对所有爬虫 Disallow: /"
   },
   {
-   "url": "https://juejin.cn/post/7070416276564213791",
-   "domain": "juejin.cn",
-   "group": "platform",
-   "week": "第四周：线程、GCD、Operation 与锁",
-   "day": "Day 6｜锁的学习方式是“按约束选择”（对应 W3-11）",
-   "reason": "抓取失败",
-   "detail": "js-challenge WAF / JS 挑战页（2397 字节）"
-  },
-  {
    "url": "https://meldstudio.co/blog/macos-cfrunloop-internals-scheduling-high-precision-timers-and-recurring-tasks/",
    "domain": "meldstudio.co",
    "group": "single-site",
@@ -1469,24 +1711,6 @@
    "day": "Day 1｜RunLoop 先学“一轮发生什么”（对应 W4-02）",
    "reason": "robots 禁止",
    "detail": "robots.txt 点名禁止 ['claudebot']：Disallow: /"
-  },
-  {
-   "url": "https://ai-chan.top/code/Runloop%E4%B8%8E%E5%8D%A1%E9%A1%BF%E7%9B%91%E6%8E%A7/",
-   "domain": "ai-chan.top",
-   "group": "single-site",
-   "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
-   "day": "Day 2｜先会 RunLoop，再理解常驻线程与卡顿监测（对应 W4-03）",
-   "reason": "抓取失败",
-   "detail": "network HTTP 502, 0 字节"
-  },
-  {
-   "url": "https://blog.csdn.net/Deft_MKJing/article/details/82947706",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
-   "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）",
-   "reason": "抓取失败",
-   "detail": "http-521 2184 字节，HTTP 521"
   },
   {
    "url": "https://jinxuebin.cn/2019/06/AutoReleasePool%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E6%8E%A2%E7%A9%B6/",
@@ -1504,7 +1728,7 @@
    "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
    "day": "Day 3｜AutoreleasePool 放回事件循环中理解（对应 W4-01）",
    "reason": "抓取失败",
-   "detail": "network HTTP 502, 0 字节"
+   "detail": "network HTTP 502, 0 字节；已查 Web Archive：无快照，记为不可归档"
   },
   {
    "url": "https://medium.com/ios-os-x-development/understanding-cocoa-and-cocoa-touch-responder-chain-12fe558ebe97",
@@ -1531,7 +1755,7 @@
    "week": "第五周：RunLoop、AutoreleasePool、响应者链与生命周期",
    "day": "Day 6｜最后补坐标系，因为它依赖视图层级（对应 W3-12、W5-08）",
    "reason": "抓取失败",
-   "detail": "http-403 HTTP 403, 548 字节"
+   "detail": "http-403 HTTP 403, 548 字节；已查 Web Archive：无快照，记为不可归档"
   },
   {
    "url": "https://www.hackingwithswift.com/articles/155/advanced-uiview-shadow-effects-using-shadowpath",
@@ -1549,7 +1773,7 @@
    "week": "第六周：UIKit 渲染、UITableView 与性能",
    "day": "Day 2｜离屏渲染先学定义，再看触发条件（对应 W5-02）",
    "reason": "内容不是目标文章（人工核实）",
-   "detail": "原站已消失：blog.fearcat.in 现在是广告导流页，整页只有一张追踪像素和一条「Do Not Sell or Share My Personal Information」，没有正文"
+   "detail": "原站已消失：blog.fearcat.in 现在是广告导流页，整页只有一张追踪像素和一条「Do Not Sell or Share My Personal Information」，没有正文；已查 Web Archive（archive.org/wayback/available）——这个 URL 没有任何快照，记为不可归档"
   },
   {
    "url": "https://medium.com/jike-engineering/asyncdisplaykit%E4%BB%8B%E7%BB%8D-%E4%B8%80-6b871d29e005",
@@ -1588,15 +1812,6 @@
    "detail": "robots.txt 对所有爬虫 Disallow: /"
   },
   {
-   "url": "https://www.laoqingcai.com/ios-nsmutablearray/",
-   "domain": "laoqingcai.com",
-   "group": "single-site",
-   "week": "第六周：UIKit 渲染、UITableView 与性能",
-   "day": "Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）",
-   "reason": "抓取失败",
-   "detail": "http-403 5194 字节，HTTP 403"
-  },
-  {
    "url": "https://zhuanlan.zhihu.com/p/597864788",
    "domain": "zhuanlan.zhihu.com",
    "group": "platform",
@@ -1606,15 +1821,6 @@
    "detail": "robots.txt 对所有爬虫 Disallow: /"
   },
   {
-   "url": "https://tech.meituan.com/2018/12/06/waimai-ios-optimizing-startup.html",
-   "domain": "tech.meituan.com",
-   "group": "single-site",
-   "week": "第七周：编译、链接、Mach-O、dyld 与 App 启动",
-   "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）",
-   "reason": "抓取失败",
-   "detail": "network HTTP 502, 0 字节"
-  },
-  {
    "url": "https://mp.weixin.qq.com/s/Drmmx5JtjG3UtTFksL6Q8Q",
    "domain": "mp.weixin.qq.com",
    "group": "platform",
@@ -1622,42 +1828,6 @@
    "day": "Day 5｜把 Runtime 初始化放进 App 冷启动（对应 W6-08）",
    "reason": "robots 禁止",
    "detail": "robots.txt 对所有爬虫 Disallow: /"
-  },
-  {
-   "url": "https://www.w3.org/TR/xml/",
-   "domain": "w3.org",
-   "group": "single-site",
-   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
-   "day": "Day 3｜序列化先比较需求，再看二进制细节（对应 W5-09）",
-   "reason": "抓取失败",
-   "detail": "http-403 HTTP 403, 5848 字节"
-  },
-  {
-   "url": "https://blog.csdn.net/game3108/article/details/52388089",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
-   "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）",
-   "reason": "抓取失败",
-   "detail": "http-521 2162 字节，HTTP 521"
-  },
-  {
-   "url": "https://blog.csdn.net/Lu_Ca/article/details/114532423",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
-   "day": "Day 5｜用同一组问题读 YYModel，才有可比性（对应 W6-04）",
-   "reason": "抓取失败",
-   "detail": "http-521 2106 字节，HTTP 521"
-  },
-  {
-   "url": "https://blog.csdn.net/weixin_46818265/article/details/142442895",
-   "domain": "blog.csdn.net",
-   "group": "platform",
-   "week": "第八阶段：持久化、序列化、源码、架构与网络串联（建议 10 天）",
-   "day": "Day 8｜架构是前七天代码的职责重排（对应 W6-06、W6-07）",
-   "reason": "抓取失败",
-   "detail": "http-521 2169 字节，HTTP 521"
   },
   {
    "url": "https://baijiahao.baidu.com/s?id=1670083688956388773&wfr=spider&for=pc",

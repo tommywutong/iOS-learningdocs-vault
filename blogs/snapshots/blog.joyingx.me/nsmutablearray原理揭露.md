@@ -6,7 +6,7 @@ source_group: single-site
 original_language: zh
 published: 2015-05-03
 archived_at: 2026-07-27
-content_hash: 'sha256:cf25ae3812656f21'
+content_hash: 'sha256:2850bdaaef3ba4c2'
 plan_ref: 第六周：UIKit 渲染、UITableView 与性能 / Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）
 plan_week: 第六周：UIKit 渲染、UITableView 与性能
 plan_day: Day 5｜集合先学稳定语义，再看某版本实现（对应 W6-10）
@@ -503,10 +503,26 @@ Size: 14336
 
 ### 初始化容量几乎完全不重要
 
-```
+我们用设置为2的连续乘方的初始化容量来分配新数组空间：
+
+```objc
 for (int i = 0; i &lt; 16; i++) {
     NSLog(@"%@", [[[NSMutableArray alloc] initWithCapacity:1 &lt;&lt; i] explored_description]);
 }
+```
+
+真是意想不到：
+
+```objc
+Size:2     // requested capacity - 1
+Size:2     // requested capacity - 2
+Size:4     // requested capacity - 4
+Size:8     // requested capacity - 8
+Size:16    // requested capacity - 16
+Size:16    // requested capacity - 32
+Size:16    // requested capacity - 64
+Size:16    // requested capacity - 128
+... // Size:16 all the way down
 ```
 
 ### 在删除的时候不会清除指针

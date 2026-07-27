@@ -1,55 +1,1455 @@
 {
  "key": "maskray",
- "count": 10,
+ "count": 290,
  "articles": [
   {
    "url": "https://maskray.me/blog/2026-07-12-irreducible-loops",
-   "title": "Jul 12",
+   "title": "Irreducible loops",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-06-28-optimizing-llvm-bump-allocator",
-   "title": "Jun 28",
+   "title": "Optimizing LLVM's bump allocator",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-06-27-a-deep-dive-into-smallvector-push-back",
-   "title": "Jun 27",
+   "title": "A deep dive into SmallVector::push_back",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-06-07-recent-llvm-hash-table-improvements",
-   "title": "Jun 7",
+   "title": "Recent LLVM hash table improvements",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-05-10-fighting-hyrums-law-in-llvm",
-   "title": "May 10",
+   "title": "Fighting Hyrum's Law in LLVM",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-04-12-recent-lld-elf-performance-improvements",
-   "title": "Apr 12",
+   "title": "Recent lld/ELF performance improvements",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-02-22-bit-field-layout",
-   "title": "Feb 22",
+   "title": "Bit-field layout",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-02-16-call-relocation-types",
-   "title": "Feb 16",
+   "title": "Call relocation types",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-02-01-lld-22-elf-changes",
-   "title": "Feb 1",
+   "title": "lld 22 ELF changes",
    "date": ""
   },
   {
    "url": "https://maskray.me/blog/2026-01-25-long-branches-in-compilers-assemblers-and-linkers",
-   "title": "Jan 25",
+   "title": "Long branches in compilers, assemblers, and linkers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2026-01-22-maintaining-shadow-branches-for-github-prs",
+   "title": "Maintaining shadow branches for GitHub PRs",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-12-31-summary",
+   "title": "2025年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-12-14-weak-avl-tree",
+   "title": "Weak AVL Tree",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-12-07-sacramento-travelogue",
+   "title": "Sacramento游记",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-10-26-stack-walking-space-and-time-trade-offs",
+   "title": "Stack walking: space and time trade-offs",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-09-28-remarks-on-sframe",
+   "title": "Remarks on SFrame",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-09-07-lld-21-elf-changes",
+   "title": "lld 21 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-08-31-benchmarking-compression-programs",
+   "title": "Benchmarking compression programs",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-08-24-understanding-alignment-from-source-to-object-file",
+   "title": "Understanding alignment - from source to object file",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-08-17-llvm-integrated-assembler-improving-sections-and-symbols",
+   "title": "LLVM integrated assembler: Improving sections and symbols",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-07-27-llvm-integrated-assembler-engineering-better-fragments",
+   "title": "LLVM integrated assembler: Engineering better fragments",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-07-13-gcc-miscompiles-llvm",
+   "title": "GCC 13.3.0 miscompiles LLVM",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-05-26-llvm-integrated-assembler-improving-expressions-and-relocations",
+   "title": "LLVM integrated assembler: Improving expressions and relocations",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-04-06-llvm-integrated-assembler-improving-mcexpr-mcvalue",
+   "title": "LLVM integrated assembler: Improving MCExpr and MCValue",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-03-16-relocation-generation-in-assemblers",
+   "title": "Relocation generation in assemblers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-03-09-compiling-c++-with-clang-api",
+   "title": "Compiling C++ with the Clang API",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-02-17-migrating-comments-to-giscus",
+   "title": "Migrating comments to giscus",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-02-02-lld-20-elf-changes",
+   "title": "lld 20 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-01-20-natural-loops",
+   "title": "Natural loops",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2025-01-12-understanding-and-improving-clang-ftime-report",
+   "title": "Understanding and improving Clang -ftime-report",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-12-31-summary",
+   "title": "2024年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-12-30-skipping-boring-functions-in-debuggers",
+   "title": "Skipping boring functions in debuggers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-12-25-exporting-tweets",
+   "title": "Exporting Tweets",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-12-22-simplifying-disassembly-with-llvm-tools",
+   "title": "Simplifying disassembly with LLVM tools",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-12-01-clang-format-and-single-line-statements",
+   "title": "clang-format and single-line statements",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-11-17-removing-global-state-from-lld",
+   "title": "Removing global state from LLD",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-11-10-keeping-pace-with-llvm-compatibility-strategies",
+   "title": "Keeping pace with LLVM: compatibility strategies",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-11-02-tinkering-with-neovim",
+   "title": "Tinkering with Neovim",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-10-20-ccls-and-lsp-semantic-tokens",
+   "title": "ccls and LSP Semantic Tokens",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-08-18-my-involvement-with-llvm-19",
+   "title": "My involvement with LLVM 19",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-08-04-lld-19-elf-changes",
+   "title": "lld 19 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-07-21-mapping-symbols-rethinking-for-efficiency",
+   "title": "Mapping symbols: rethinking for efficiency",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-07-07-linker-compatibility-and-the-user-agent-problem",
+   "title": "Linker compatibility and the \"User-Agent\" problem",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-06-30-integrated-assembler-improvements-in-llvm-19",
+   "title": "Integrated assembler improvements in LLVM 19",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-06-02-understanding-orphan-sections",
+   "title": "Understanding orphan sections",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-05-26-evolution-of-elf-object-file-format",
+   "title": "Evolution of the ELF object file format",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-05-12-exploring-gnu-extensions-in-linux-kernel",
+   "title": "Exploring GNU extensions in the Linux kernel",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-04-27-clang-o0-output-branch-displacement-and-size-increase",
+   "title": "Clang's -O0 output: branch displacement and size increase",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-04-23-when-qoi-meets-xz",
+   "title": "When QOI meets XZ",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-04-01-light-elf-exploring-potential-size-reduction",
+   "title": "Light ELF: exploring potential size reduction",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-03-31-a-compact-section-header-table-for-elf",
+   "title": "A compact section header table for ELF",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-03-17-c++-exit-time-destructors",
+   "title": "C++ exit-time destructors",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-03-09-a-compact-relocation-format-for-elf",
+   "title": "A compact relocation format for ELF",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-02-25-my-involvement-with-llvm-18",
+   "title": "My involvement with LLVM 18",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-02-20-mmu-less-systems-and-fdpic",
+   "title": "MMU-less systems and FDPIC",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-02-18-lld-18-elf-changes",
+   "title": "lld 18 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-02-11-toolchain-notes-on-z-architecture",
+   "title": "Toolchain notes on z/Architecture",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-01-30-raw-symbol-names-in-inline-assembly",
+   "title": "Raw symbol names in inline assembly",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-01-28-mc-dc-and-compiler-implementations",
+   "title": "Modified condition/decision coverage (MC/DC) and compiler implementations",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-01-23-riscv-tlsdesc-works",
+   "title": "RISC-V TLSDESC works!",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2024-01-14-exploring-object-file-formats",
+   "title": "Exploring object file formats",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-12-31-summary",
+   "title": "2023年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-12-30-reviews.llvm.org-became-read-only-archive",
+   "title": "reviews.llvm.org became a read-only archive",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-12-17-exploring-the-section-layout-in-linker-output",
+   "title": "Exploring the section layout in linker output",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-12-03-linker-notes-on-pe-coff",
+   "title": "Linker notes on PE/COFF",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-10-31-dso-undef-and-non-exported-definition",
+   "title": "DSO undef and non-exported definition",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-10-15-address-sanitizer-global-variable-instrumentation",
+   "title": "AddressSanitizer: global variable instrumentation",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-09-24-a-deep-dive-into-clang-source-file-compilation",
+   "title": "A deep dive into Clang's source file compilation",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-09-09-reflections-on-llvm-switch-to-github-pull-requests",
+   "title": "Reflections on LLVM's switch to GitHub pull requests",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-09-04-toolchain-notes-on-mips",
+   "title": "Toolchain notes on MIPS",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-08-25-clang-wunused-command-line-argument",
+   "title": "Clang -Wunused-command-line-argument",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-08-20-my-involvement-with-llvm-17",
+   "title": "My involvement with LLVM 17",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-07-30-lld-17-elf-changes",
+   "title": "lld 17 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-07-16-precompiled-headers",
+   "title": "Precompiled headers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-07-07-compressed-arbitrary-sections",
+   "title": "Compressed arbitrary sections",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-06-25-c++-standard-library-abi-compatibility",
+   "title": "C++ standard library ABI compatibility",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-06-18-port-llvm-xray-to-apple-systems",
+   "title": "Port LLVM XRay to Apple systems",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-05-14-relocation-overflow-and-code-models",
+   "title": "Relocation overflow and code models",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-05-08-assemblers",
+   "title": "Assemblers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-04-25-compiler-output-files",
+   "title": "Compiler output files",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-04-23-linker-notes-on-aarch32",
+   "title": "Linker notes on AArch32",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-04-12-elf-hash-function",
+   "title": "ELF hash function may overflow",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-03-19-lld-16-elf-changes",
+   "title": "lld 16 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-03-05-linker-notes-on-aarch64",
+   "title": "Linker notes on AArch64",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-02-26-linker-notes-on-power-isa",
+   "title": "Linker notes on Power ISA",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-02-19-linker-notes-on-x86",
+   "title": "Linker notes on x86",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-02-12-all-about-leak-sanitizer",
+   "title": "All about LeakSanitizer",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-02-05-function-multi-versioning",
+   "title": "Function multi-versioning",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-01-29-all-about-undefined-behavior-sanitizer",
+   "title": "All about UndefinedBehaviorSanitizer",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2023-01-08-all-about-sanitizer-interceptors",
+   "title": "All about sanitizer interceptors",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-12-31-summary",
+   "title": "2022年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-12-26-kth-element-in-a-subarray",
+   "title": "kth element in a subarray",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-12-18-control-flow-integrity",
+   "title": "Control-flow integrity",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-11-21-relocatable-linking",
+   "title": "Relocatable linking",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-11-13-odr-violation-detection",
+   "title": "ODR violation detection",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-11-06-fortify-source",
+   "title": "_FORTIFY_SOURCE",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-11-05-lld-musl-powerpc64",
+   "title": "lld linked musl on PowerPC64",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-10-30-distribution-of-debug-information",
+   "title": "Distribution of debug information",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-10-09-c-minifier-with-clang",
+   "title": "C minifier with Clang",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-09-25-layering-check-with-clang",
+   "title": "Layering check with Clang",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-09-09-zstd-compressed-debug-sections",
+   "title": "zstd compressed debug sections",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-09-05-lld-15-elf-changes",
+   "title": "lld 15 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-08-28-march-mcpu-mtune",
+   "title": "-march=, -mcpu=, and -mtune=",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-08-21-glibc-and-dt-gnu-hash",
+   "title": "glibc and DT_GNU_HASH",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-08-14-dwarf-in-reproducible-builds",
+   "title": "DWARF in reproducible builds",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-07-10-riscv-linker-relaxation-in-lld",
+   "title": "RISC-V linker relaxation in lld",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-05-29-glibc",
+   "title": "Everything I know about glibc",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-05-15-c-standard-library-headers-in-c++",
+   "title": "C standard library headers in C++",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-04-24-pi-static-and-hidden-in-glibc-rtld",
+   "title": "PI_STATIC_AND_HIDDEN/HIDDEN_VAR_NEEDS_DYNAMIC_RELOC in glibc rtld",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-04-10-unwinding-through-signal-handler",
+   "title": "Unwinding through a signal handler",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-02-27-analysis-and-introspection-options-in-linkers",
+   "title": "Analysis and introspection options in linkers",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-02-20-lld-14-elf-changes",
+   "title": "lld 14 ELF changes",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-02-06-all-about-common-symbols",
+   "title": "All about COMMON symbols",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-01-23-compressed-debug-sections",
+   "title": "Compressed debug sections",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2022-01-16-archives-and-start-lib",
+   "title": "Archives and --start-lib",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-12-31-summary",
+   "title": "2021年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-12-19-why-isnt-ld.lld-faster",
+   "title": "Why isn't ld.lld faster?",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-11-07-init-ctors-init-array",
+   "title": ".init, .ctors, and .init_array",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-10-31-relative-relocations-and-relr",
+   "title": "Relative relocations and RELR",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-10-10-when-can-glibc-be-built-with-clang",
+   "title": "When can glibc be built with Clang?",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-09-26-competitive-programming-in-nim",
+   "title": "Competitive programming in Nim",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-09-19-all-about-procedure-linkage-table",
+   "title": "All about Procedure Linkage Table",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-09-05-build-glibc-with-lld",
+   "title": "Build glibc with LLD 13",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-08-29-all-about-global-offset-table",
+   "title": "All about Global Offset Table",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-08-22-freebsd-src-browsing-on-linux-and-my-rtld-contribution",
+   "title": "FreeBSD src browsing on Linux and my rtld contribution",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-08-15-extract-archive-member-to-satisfy-dso-undef",
+   "title": "Extract an archive member to satisfy a DSO undef",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-08-08-toolchain-testing",
+   "title": "Toolchain testing",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-07-25-comdat-and-section-group",
+   "title": "COMDAT and section group",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-07-04-sections-and-overwrite-sections",
+   "title": "SECTIONS and OVERWRITE_SECTIONS",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-06-20-symbol-processing",
+   "title": "Symbol processing",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-06-13-dependency-related-linker-options",
+   "title": "Dependency related linker options",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-05-16-elf-interposition-and-bsymbolic",
+   "title": "ELF interposition and -Bsymbolic",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-05-09-fno-semantic-interposition",
+   "title": "-fno-semantic-interposition",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-04-25-weak-symbol",
+   "title": "Weak symbol",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-04-11-segment-tree",
+   "title": "Segment tree",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-03-28-compiler-driver-and-cross-compilation",
+   "title": "Compiler driver and cross compilation",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-03-14-the-dark-side-of-riscv-linker-relaxation",
+   "title": "The dark side of RISC-V linker relaxation",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-02-28-linker-garbage-collection",
+   "title": "Linker garbage collection",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-02-14-all-about-thread-local-storage",
+   "title": "All about thread-local storage",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-01-31-metadata-sections-comdat-and-shf-link-order",
+   "title": "Metadata sections, COMDAT and SHF_LINK_ORDER",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-01-24-gnu-toolchain",
+   "title": "Everything I know about GNU toolchain",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-01-18-gnu-indirect-function",
+   "title": "GNU indirect function",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2021-01-09-copy-relocations-canonical-plt-entries-and-protected",
+   "title": "Copy relocations, canonical PLT entries and protected visibility",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-12-31-summary",
+   "title": "2020年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-12-19-lld-and-gnu-linker-incompatibilities",
+   "title": "LLD and GNU linker incompatibilities",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-12-12-c++-exception-handling-abi",
+   "title": "C++ exception handling ABI",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-12-11-dominator-tree",
+   "title": "Dominator tree",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-11-26-all-about-symbol-versioning",
+   "title": "All about symbol versioning",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-11-15-explain-gnu-linker-options",
+   "title": "Explain GNU style linker options",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-11-08-stack-unwinding",
+   "title": "Stack unwinding",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-10-15-intra-call-and-libc-symbol-renaming",
+   "title": "模塊內函數調用和libc符號重命名",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-10-03-llvm-command-line-processing",
+   "title": "Command line processing in LLVM",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-09-27-gcov-and-llvm",
+   "title": "gcov與LLVM中的實現",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2020-02-01-fpatchable-function-entry",
+   "title": "-fpatchable-function-entry=N[,M]",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2019-12-31-summary",
+   "title": "2019年總結——工具鏈的一年",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2019-04-01-ccls-one-year",
+   "title": "C++ language server ccls一周年",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-12-25-ccls-release",
+   "title": "ccls 0.20181225 release",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-12-09-real-world-ctf-2018-rwext5",
+   "title": "Real World CTF 2018 rwext5命題報告",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-09-09-ccls-update",
+   "title": "2018-09-09 ccls最近更新",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-09-03-ccls-navigate-and-index-multiversion",
+   "title": "$ccls/navigate和index.multiVersion",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-08-13-defcon-26-ctf",
+   "title": "DEFCON 26 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-07-31-real-world-ctf-2018-ccls-fringe",
+   "title": "Real World CTF 2018 ccls-fringe命題報告",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-04-01-c++-language-server-ccls",
+   "title": "ccls: a fork of the C++ language server cquery",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2018-01-14-cquery-usr-and-hierarchical-diff",
+   "title": "cquery USR優化和分層diff",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-12-25-cquery-updates-and-libclang-one-byte-patch",
+   "title": "cquery最近改動與libclang.so一字節補丁",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-12-03-c++-language-server-cquery",
+   "title": "使用cquery：C++ language server",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-09-09-r2con-r2clemency",
+   "title": "r2con 2017 r2cLEMENCy",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-08-01-defcon-25-ctf",
+   "title": "DEFCON 25 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-07-01-emacs-helm-kythe-and-haskell-xrefs",
+   "title": "Emacs helm-kythe与Haskell交叉引用",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2017-02-19-how-i-use-wechat-recent-updates-of-wechatircd",
+   "title": "我是這樣使用微信的——wechatircd最近更新",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-12-10-buffalo-wzr-600dhp-openwrt-comcast-ipv6",
+   "title": "Buffalo WZR-600DHP OpenWrt使用Comcast的IPv6",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-12-10-situation",
+   "title": "近況",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-10-03-discrete-fourier-transform",
+   "title": "整係數Discrete Fourier transform技巧",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-09-24-cgc-defcon-ctf-presentation",
+   "title": "Cyber Grand Challenge及DEFCON 24 CTF決賽介紹",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-08-26-defcon-24-ctf",
+   "title": "DEFCON 24 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-08-13-weechat-rules-all",
+   "title": "WeeChat操作各種聊天軟件",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-07-06-wechatircd-webqqircd-without-scanning-qrcode-daily",
+   "title": "無需每日掃碼的IRC版微信和QQ：wechatircd、webqqircd",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-06-11-yanshi-automaton-generator",
+   "title": "偃師——finite automaton生成工具",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-05-07-telegramircd",
+   "title": "telegramircd——用IRC客戶端控制Telegram",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-04-11-webqqircd",
+   "title": "webqqircd——用IRC客戶端控制WebQQ",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-03-22-terminal-emulator-fullwidth-backspace",
+   "title": "終端模擬器下寬字符退格",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-03-21-bctf-2016-hsab-and-betafour",
+   "title": "BCTF 2016 hsab及BetaFour命題報告",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-03-13-terminal-emulator-fullwidth-color-emoji",
+   "title": "終端模擬器下使用雙倍寬度多色Emoji字體",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-02-21-wechatircd",
+   "title": "wechatircd——用IRC客戶端控制微信網頁版",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2016-02-12-gmail-offlineimap-xoauth2",
+   "title": "Gmail的OfflineIMAP XOAUTH2認證",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-12-31-strongswan",
+   "title": "支持Android、iOS 9內置IPSec客戶端的strongSwan 5.3.5配置",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-10-16-leetcode-expression-add-operators",
+   "title": "LeetCode Expression Add Operators：SLR(1)、meet-in-the-middle及其他",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-10-07-asc14-to-isc15-curtain-call-of-my-cluster-competition",
+   "title": "從ASC'14到ISC'15——我的超算競賽生涯謝幕",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-10-06-nginx-accept-language-zhs-zht",
+   "title": "Nginx根據Accept-Language的簡繁體支持",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-09-29-specify-dynamic-linker-to-use-higher-version-gcc",
+   "title": "指定dynamic linker以使用高版本GCC",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-09-18-conversion-to-emacs",
+   "title": "皈依Emacs",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-09-08-j-programming-language",
+   "title": "J語言初探",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-08-12-defcon-23-ctf",
+   "title": "DEFCON 23 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-06-30-bmc-firmware-reverse-enginnering",
+   "title": "一次服務器BMC固件逆向經歷",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-06-16-morris-post-order-traversal",
+   "title": "常數空間Invert Binary Tree與仿Morris法後序遍歷",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-05-02-jq-internals-bytecode",
+   "title": "jq实现原理——字节码",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-03-27-leetcode-best-time-to-buy-and-sell-stock-iv",
+   "title": "LeetCode Best Time to Buy and Sell Stock IV(k不重疊最大子段和)線性解法",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-03-26-elf-hacks",
+   "title": "ELF Hacks",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-03-23-bctf-2015-camlmaze",
+   "title": "BCTF 2015 CamlMaze命題報告及CTF題目鏡像準備方法",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2015-03-14-debug-hacks-2",
+   "title": "調試技巧2",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-31-summary",
+   "title": "2014年總結——競賽的一年",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-27-js-of-ocaml-and-emscripten",
+   "title": "Js_of_ocaml和Emscripten",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-data-representation",
+   "title": "ML编译器Caml Featherweight——数据表示",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-compiling",
+   "title": "ML编译器Caml Featherweight——编译",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-garbage-collection",
+   "title": "ML编译器Caml Featherweight——垃圾收集",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-design",
+   "title": "ML編譯器Caml Featherweight——設計",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-others",
+   "title": "ML編譯器Caml Featherweight——pretty printer",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-abstract-machine",
+   "title": "ML编译器Caml Featherweight——抽象机器",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-12-24-caml-compiler-overview",
+   "title": "ML編譯器Caml Featherweight——概覽",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-11-24-jsxajs-workgroup",
+   "title": "江蘇信安競賽初賽工作組記事",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-11-06-hackerrank-fp-compilers",
+   "title": "Hackerrank FP Compilers题目",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-10-14-wechat-export",
+   "title": "Android微信數據導出",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-08-31-binary-tree-traversal",
+   "title": "二叉樹遍歷算法總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-08-19-trendmicro-codinsanity-2014",
+   "title": "Trend Micro Codinsanity 2014參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-08-11-defcon-22-ctf",
+   "title": "DEFCON 22 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-06-30-isc14",
+   "title": "ISC'14 Student Cluster Competition",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-06-29-leetcode-solutions",
+   "title": "LeetCode solutions",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-06-08-ko-aluru-suffix-array-construction",
+   "title": "Ko-Aluru suffix array construction algorithm",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2014-05-05-bctf-workgroup",
+   "title": "BCTF工作組記事",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-12-31-summary",
+   "title": "算法、FP、前端、安全、系統管理——2013年總結",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-12-23-student-festival-1001-puzzle-elf",
+   "title": "“1001夜”學生節線上解謎活動1001/key題解",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-12-02-redtigers-hackit-wargame",
+   "title": "RedTigers Hackit Wargame - Level 1 ~ Level 7",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-11-30-dlink-backdoor",
+   "title": "D-Link路由器後門註記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-27-josephus-problem-two-log-n-solutions",
+   "title": "約瑟夫問題的兩個O(log n)解法",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-23-hdu-acm",
+   "title": "HDU OJ一些題目",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-19-popular-posts-with-google-analytics-api",
+   "title": "用Google Analytics API爲靜態站點實現“閱讀最多文章”功能",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-15-interesting-bits-of-email-culture",
+   "title": "E-mail文化拾趣",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-11-overthewire-natas-wargame",
+   "title": "OverTheWire - Natas Wargame - Level 0 ~ Level 17",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-06-defcon-21-ctf",
+   "title": "DEFCON 21 CTF參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-08-05-defcon-21-my-struggle",
+   "title": "DEFCON 21——我的奮鬥",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-07-27-adolescent-developer-conference-2013",
+   "title": "第二屆青少年開發者大會",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-07-26-ids-ips-with-suricata",
+   "title": "使用Suricata進行IDS/IPS",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-07-25-debug-hacks",
+   "title": "《Debug Hacks》和調試技巧",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-07-16-ouroboros-program",
+   "title": "Ouroborus Program - quine-relay 分析",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-05-26-secuinside-ctf-quals-2013",
+   "title": "SECUINSIDE CTF Quals 2013雜記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-05-10-suffix-automaton",
+   "title": "String index structure: suffix automaton",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-02-24-a-pretty-printer-library-in-haskell",
+   "title": "TUNA技術沙龍及A Pretty Printer Library in Haskell",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-02-21-double-array-trie-pac",
+   "title": "使用Double-array trie優化Proxy auto-config",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2013-02-10-bk-tree",
+   "title": "使用Burkhard-Keller tree優化近似串匹配",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-12-26-python-is-ugly",
+   "title": "Python is ugly",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-12-09-alternative-build-system",
+   "title": "異於Make的另一種構建系統",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-25-ructfe-2012",
+   "title": "RuCTFE 2012參賽記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-21-tuna-npm-mirror",
+   "title": "建立清華大學Node Packaged Modules鏡像",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-18-ai9",
+   "title": "智能體大賽與平臺開發",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-14-build-static-website-with-docpad",
+   "title": "用DocPad構建靜態網站",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-13-personal-mail-system",
+   "title": "基於 mutt+offlineimap+notmuch+inotifywait 的個人郵件系統",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-05-regex-engine",
+   "title": "用Pike's VM實現的非回溯正則表達式引擎",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-11-02-perfect-maze-generation",
+   "title": "完美迷宮生成算法",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-10-06-word-extractor",
+   "title": "自然語言處理之詞語抽取",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-10-01-force-directed-drawing-fruchterman-reingold",
+   "title": "Force-directed算法(1)——Fruchterman-Reingold",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-10-01-transfer-to-maskray-me",
+   "title": "域名遷移至maskray.me",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-09-10-parallel-n-body",
+   "title": "並行N-body模擬",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-07-25-svt13117ecs-gentoo",
+   "title": "SVT13117ECS上Gentoo安裝記(含內核配置)",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-07-21-design-thinking-of-eight-programming-languages",
+   "title": "8門編程語言的設計思考",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-06-30-eight-languages-in-eighty-minutes",
+   "title": "80分鐘8語言",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-06-02-emulate-vim-in-emacs",
+   "title": "Evil--在Emacs中模擬Vim",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-04-07-sqrt-in-gcc",
+   "title": "gcc中sqrt實現",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-03-14-xbindkeys-key-sequence",
+   "title": "給xbindkeys添加key sequence支持",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-02-25-introduction-to-makefile",
+   "title": "Makefile介紹",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-02-11-haskell-learning-note",
+   "title": "Haskell學習筆記",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-01-19-rush-hour",
+   "title": "根據計劃求解Rush",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-01-11-tiling-window-manager-application-and-design",
+   "title": "Tiling window manager的應用與設計",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2012-01-08-ranking-suffixes",
+   "title": "計算所有後綴的排名",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-12-24-net-lesson",
+   "title": "網絡學堂feeds2mail",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-12-18-eight-puzzle",
+   "title": "八數碼",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-11-30-xmonad-config",
+   "title": "我的xmonad配置",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-09-28-splay-tree-in-haskell",
+   "title": "Haskell實現的Splay樹",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-08-16-break-out-of-chroot",
+   "title": "脫離chroot的枷鎖",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-08-13-parse-csv-in-perl",
+   "title": "用Perl的正則表達式分析csv文件",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-08-12-udev-automount-usb",
+   "title": "用udev自動掛載usb設備",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-08-11-generate-dependency-in-makefile",
+   "title": "在Makefile中自動生成依賴",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-07-31-get-ssh-password-and-login",
+   "title": "自動獲取SSH密碼並登錄",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-07-20-read-feeds-with-rss2email",
+   "title": "用rss2email閱讀feeds",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-07-19-blogging-with-makefile-2",
+   "title": "用Makefile搭建博客-2",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-07-12-blogging-with-makefile",
+   "title": "用Makefile搭建博客",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2011-07-10-expect-connect-wireless",
+   "title": "用Expect連接無線網絡",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-05-24-genkernel-in-gentoo",
+   "title": "genkernel",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-04-30-awesome-3-debian-menu",
+   "title": "Awesome 3 debian menu",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-04-17-zju-1638-greedy-island",
+   "title": "ZJU 1638. Greedy Island",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-03-13-xv-olimpiada-informatyczna-etap-1-klo",
+   "title": "XV Olimpiada Informatyczna - Etap 1 - klo",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-02-11-algorithm-contest-test-data-checker",
+   "title": "checker",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-01-22-usaco-jan10-gold-solutions",
+   "title": "USACO JAN10 Gold",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-01-15-maze-generator-with-pygtk",
+   "title": "PyGTK迷宮生成器mazer",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-01-10-hanoi-related-problems",
+   "title": "三柱漢諾塔相關擴展問題",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-01-02-reversi-with-gtk",
+   "title": "GTK+黑白棋reversi",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2010-01-01-tic-tac-toe-with-gtk",
+   "title": "GTK+ tic-tac-toe（井字棋）",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2009-12-19-extended-weighing-pool-balls-puzzle",
+   "title": "稱球問題擴展——根據當前已知信息選擇最優稱量方案",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2009-11-23-noip-2004-cryptarithmetic",
+   "title": "NOIP 2004 數字遊戲（蟲食算）",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2009-11-23-sudoku-with-dancing-links-and-algorithm-x",
+   "title": "Dancing Links+Algorithm X求解數獨",
+   "date": ""
+  },
+  {
+   "url": "https://maskray.me/blog/2009-11-14-dotemacs",
+   "title": ".emacs",
    "date": ""
   }
  ]
