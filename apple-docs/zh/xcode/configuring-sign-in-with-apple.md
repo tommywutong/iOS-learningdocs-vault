@@ -78,4 +78,3 @@ translated: true
 
 - [Configuring Apple Pay support](configuring-apple-pay-support.md) — 使用用户存储在其设备上的支付信息，在你的 App 中处理付款。
 - [Configuring Wallet support](configuring-wallet-support.md) — 访问用户的钱包，以添加、更新和显示你的 App 的通行证。
-</content>
