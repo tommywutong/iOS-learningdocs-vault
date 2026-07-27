@@ -27,7 +27,7 @@ translated: true
 
 要处理源自 Siri 的用户请求，首先要将 Siri 功能添加到你的 App 的 target 中。这会告知系统，你的 App 已准备好解析、确认并处理 SiriKit intent，通常是通过其 Intents 扩展来完成；在 iOS 14 及更高版本中，你可以选择在 App 内部完成这些步骤中的每一步。
 
-在配置好你的 App 以处理 SiriKit intent 后，向你的 app delegate 或 Intents 扩展添加代码，将传入的 intent 路由到你的自定处理程序。有关更多信息，请参阅 [Dispatching intents to handlers](../sirikit/dispatching-intents-to-handlers.md)。
+在配置好你的 App 以处理 SiriKit intent 后，向你的 App 委托（app delegate）或 Intents 扩展添加代码，将传入的 intent 路由到你的自定处理程序。有关更多信息，请参阅 [Dispatching intents to handlers](../sirikit/dispatching-intents-to-handlers.md)。
 
 > [!note] 注意
 > watchOS 并不支持所有 intent 类型。例如，watchOS App 无法发起视频通话，也无法处理 CarPlay 领域中的 intent。请查看某个 intent 的可用性信息，以确定你能否在 watchOS 上使用它。
@@ -48,7 +48,7 @@ translated: true
 
 ### 直接在你的 App 中处理 SiriKit intent
 
-在 iOS 14 及更高版本中，你可以选择不使用 Intents 扩展，而是直接从你的 iOS App 内部响应用户的请求。为此，请在你的 app delegate 中重写 [application(_:handlerFor:)](<../uikit/uiapplicationdelegate/application(__handlerfor_).md>) 方法，并使用它将传入的 intent 映射到能够处理这些 intent 的对象。
+在 iOS 14 及更高版本中，你可以选择不使用 Intents 扩展，而是直接从你的 iOS App 内部响应用户的请求。为此，请在你的 App 委托中重写 [application(_:handlerFor:)](<../uikit/uiapplicationdelegate/application(__handlerfor_).md>) 方法，并使用它将传入的 intent 映射到能够处理这些 intent 的对象。
 
 与配置 Intents 扩展的方式相同，你必须指定你的 iOS App 支持的 intent 类型。有关更多信息，请参阅 [Specify the Intents Your Extension Supports](https://developer.apple.com/documentation/sirikit/intent_handling_infrastructure/creating_an_intents_app_extension#2864128)。
 
@@ -60,4 +60,3 @@ translated: true
 - [Configuring custom fonts](configuring-custom-fonts.md) — 将你的 App 注册为系统范围自定字体的提供方或使用方。
 - [Configuring game controllers](configuring-game-controllers.md) — 通过启用对实体游戏控制器的发现、配置和使用，增强游戏输入体验。
 - [Configuring Maps support](configuring-maps-support.md) — 注册你的 iOS 路线规划 App，以向地图和其他 App 提供点对点路线指引。
-</content>

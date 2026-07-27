@@ -27,4 +27,3 @@ translated: true
 
 - [next()](<next()-1g8b3.md>) — `next()` 基于 `next(isolation:)` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
 - [next(isolation:)](<next(isolation_)-5p1be.md>) — `next(isolation:)` 基于 `next()` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
-</content>

@@ -63,4 +63,3 @@ return *e; // 错误：2 超出了 E 的有效范围
 - [无效的移位](invalid-shift.md) — 检测无效和溢出的移位操作。
 - [整数溢出](integer-overflow.md) — 检测算术运算中的溢出。
 - [无效的可变长度数组](invalid-variable-length-array.md) — 检测负数组边界。
-</content>

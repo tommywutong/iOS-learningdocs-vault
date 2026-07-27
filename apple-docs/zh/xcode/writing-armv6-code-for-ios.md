@@ -134,46 +134,46 @@ ARMv6 中的栈环境具有以下特征：
 下面的示例展示了 ARM 模式下的一个序言。这个序言保存了 VFP 寄存器的内容，并额外分配了 36 字节的局部存储。
 
 ```other
-stmfd    sp!, {r4-r7, lr}     // Save LR, R7, R4-R6.
-add      r7, sp, #12          // Adjust R7 to point to saved R7.
-stmfd    sp!, {r8, r10, r11}  // Save remaining GPRs (R8, R10, R11)
-fstmfdd  sp!, {d8-d15}        // Save VFP registers D8-D15,
-                              //  also known as S16-S31 or Q4-Q7.
-sub      sp, sp, #36          // Allocate space for local storage
+stmfd    sp!, {r4-r7, lr}     // 保存 LR、R7 和 R4-R6。
+add      r7, sp, #12          // 调整 R7，使其指向保存的 R7。
+stmfd    sp!, {r8, r10, r11}  // 保存其余 GPR（R8、R10、R11）
+fstmfdd  sp!, {d8-d15}        // 保存 VFP 寄存器 D8-D15，
+                              // 也称为 S16-S31 或 Q4-Q7。
+sub      sp, sp, #36          // 为局部存储分配空间
 ```
 
 下面的示例展示了 ARM 模式下对应的尾声。这段尾声释放局部存储，并恢复序言所保存的寄存器。
 
 ```other
-add      sp, sp, #36         // Deallocate local storage.
-fldmfdd  sp!, {d8-d15}       // Restore VFP registers.
-ldmdd    sp!, {r8, r10, r11} // Restore R8-R11.
-ldmdd    sp!, {r4-r7, pc}    // Restore R4-R6, saved R7,
-                             //  and return to saved LR.
+add      sp, sp, #36         // 释放局部存储。
+fldmfdd  sp!, {d8-d15}       // 恢复 VFP 寄存器。
+ldmdd    sp!, {r8, r10, r11} // 恢复 R8-R11。
+ldmdd    sp!, {r4-r7, pc}    // 恢复 R4-R6、保存的 R7，
+                             // 并返回保存的 LR。
 ```
 
 下面的示例展示了 Thumb 模式下的一个序言。这个序言不保存 VFP 寄存器，因为 Thumb-1 无法访问这些寄存器。
 
 ```other
-push   {r4-r7, lr}     // Save Lr, R7, R4-R6.
-mov    r6, r11         // Move high registers to low registers, so
-mov    r5, r10         //  they can be saved. (Skip this part if
-mov    r4, r8          //  the routine doesn’t use R8, R10, or R11.)
-push   {r4-r6)         // Save R8, R10, R11 (now in R4-R6).
-add    r7, sp, #24     // Adjust R7 to point to saved R7.
-sub    sp, #36         // Allocate space for local storage.
+push   {r4-r7, lr}     // 保存 LR、R7 和 R4-R6。
+mov    r6, r11         // 将高位寄存器移至低位寄存器，以便
+mov    r5, r10         // 保存它们。（如果例程不使用 R8、R10
+mov    r4, r8          // 或 R11，请跳过这一部分。）
+push   {r4-r6)         // 保存 R8、R10、R11（现位于 R4-R6）。
+add    r7, sp, #24     // 调整 R7，使其指向保存的 R7。
+sub    sp, #36         // 为局部存储分配空间。
 ```
 
 下面的示例展示了 Thumb 模式下对应的尾声。这个示例恢复了序言所保存的寄存器。
 
 ```other
-add    sp, #36         // Deallocate space for local storage
-pop    {r4-r6}         // Pop R8, R10, R11
-mov    r8, r4          // Restore high registers.
+add    sp, #36         // 释放局部存储空间
+pop    {r4-r6}         // 弹出 R8、R10、R11
+mov    r8, r4          // 恢复高位寄存器。
 mov    r10, r5
 mov    r11, r6
-pop    {r4-r7, pc)     // Restore R4-R6, saved R7, and
-                       //  return to saved LR.
+pop    {r4-r7, pc)     // 恢复 R4-R6、保存的 R7，并
+                       // 返回保存的 LR。
 
 ```
 
@@ -194,4 +194,3 @@ pop    {r4-r7, pc)     // Restore R4-R6, saved R7, and
 ### iOS 接口
 
 - [为 iOS 编写 ARMv7 代码](writing-armv7-code-for-ios.md) — 创建符合 iOS 所支持的应用程序二进制接口（ABI）的 ARMv7 汇编语言指令。
-</content>

@@ -30,7 +30,7 @@ translated: true
 要在你的 App 中使用通过 Apple 登录，需要在 Xcode 中配置 App 的 target 来添加该功能，设置用户界面和必要的授权，并向 Apple 的中继服务注册你的域名，以确保你可以向用户的个人收件箱发送电子邮件。
 
 > [!note] 注意
-> 如果你的 App 面向的操作系统版本早于通过 Apple 登录功能推出之前，请使用 JavaScript 库来提供同样的功能。有关更多信息，请参阅 [Incorporating Sign in with Apple into other platforms](../signinwithapple/incorporating-sign-in-with-apple-into-other-platforms.md)。
+> 如果你的 App 面向的操作系统版本早于通过 Apple 登录功能的推出时间，请使用 JavaScript 库来提供同样的功能。有关更多信息，请参阅 [Incorporating Sign in with Apple into other platforms](../signinwithapple/incorporating-sign-in-with-apple-into-other-platforms.md)。
 
 ### 将通过 Apple 登录功能添加到你的 App
 
@@ -78,4 +78,3 @@ translated: true
 
 - [Configuring Apple Pay support](configuring-apple-pay-support.md) — 使用用户存储在其设备上的支付信息，在你的 App 中处理付款。
 - [Configuring Wallet support](configuring-wallet-support.md) — 访问用户的钱包，以添加、更新和显示你的 App 的通行证。
-</content>

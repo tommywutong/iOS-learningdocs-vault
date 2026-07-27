@@ -52,4 +52,3 @@ Metal 调试器允许你使用管线状态查看器检查管线状态。双击�
 - [Inspecting sampler states](inspecting-sampler-states.md) — 通过检查采样器状态的属性，验证其配置。
 - [Inspecting shaders](inspecting-shaders.md) — 通过检查和编辑着色器，提升 App 的着色器性能。
 - [Inspecting textures](inspecting-textures.md) — 通过检查纹理内容，发现纹理中的问题。
-</content>

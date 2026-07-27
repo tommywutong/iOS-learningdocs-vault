@@ -33,7 +33,7 @@ translated: true
 
 ```occ
 int32_t x = (1U << 31) - 1;
-x += 1; // Error: the add result can't fit in x
+x += 1; // 错误：加法结果无法存入 x
 ```
 
 > [!note] 注意
@@ -49,19 +49,18 @@ x += 1; // Error: the add result can't fit in x
 
 ### Undefined Behavior Sanitizer
 
-- [Misaligned pointer](misaligned-pointer.md) — 检测代码何时访问了未对齐的指针或创建了未对齐的引用。
-- [Invalid Boolean value](invalid-boolean.md) — 检测程序何时访问了一个布尔变量，且其值既不是 true 也不是 false。
-- [Out-of-bounds array access](out-of-bounds-array-access.md) — 检测数组的越界访问。
-- [Invalid enumeration value](invalid-enumeration-value.md) — 检测枚举变量何时具有无效值。
-- [Reaching of unreachable point](reaching-of-unreachable-point.md) — 检测程序何时到达了一个不可达点。
-- [Dynamic type violation](dynamic-type-violation.md) — 检测对象何时具有错误的动态类型。
-- [Invalid float cast](invalid-float-cast.md) — 检测浮点类型之间、或与浮点类型互相转换时的越界转换。
-- [Division by zero](division-by-zero.md) — 检测除数为零的除法运算。
-- [Nonnull argument violation](nonnull-argument-violation.md) — 检测参数何时错误地接收到空值。
-- [Nonnull return value violation](nonnull-return-value-violation.md) — 检测函数何时错误地返回空值。
-- [Nonnull variable assignment violation](nonnull-variable-assignment-violation.md) — 检测你何时错误地将空值赋给一个变量。
-- [Null reference creation and null pointer dereference](null-reference-creation-and-null-pointer-dereference.md) — 检测空引用的创建以及空指针的解引用。
-- [Invalid object size](invalid-object-size.md) — 检测因类型大小不同而导致的无效指针转换。
-- [Invalid shift](invalid-shift.md) — 检测无效及溢出的移位操作。
-- [Invalid variable-length array](invalid-variable-length-array.md) — 检测负数的数组边界。
-</content>
+- [未对齐的指针](misaligned-pointer.md) — 检测代码何时访问了未对齐的指针或创建了未对齐的引用。
+- [无效的布尔值](invalid-boolean.md) — 检测程序何时访问了一个布尔变量，且其值既不是 true 也不是 false。
+- [数组的越界访问](out-of-bounds-array-access.md) — 检测数组的越界访问。
+- [无效的枚举值](invalid-enumeration-value.md) — 检测枚举变量何时具有无效值。
+- [到达不可达点](reaching-of-unreachable-point.md) — 检测程序何时到达了一个不可达点。
+- [动态类型冲突](dynamic-type-violation.md) — 检测对象何时具有错误的动态类型。
+- [无效的浮点转换](invalid-float-cast.md) — 检测浮点类型之间、或与浮点类型互相转换时的越界转换。
+- [除以零](division-by-zero.md) — 检测除数为零的除法运算。
+- [Nonnull 参数冲突](nonnull-argument-violation.md) — 检测参数何时错误地接收到空值。
+- [Nonnull 返回值冲突](nonnull-return-value-violation.md) — 检测函数何时错误地返回空值。
+- [Nonnull 变量赋值冲突](nonnull-variable-assignment-violation.md) — 检测你何时错误地将空值赋给一个变量。
+- [创建空引用与解引用空指针](null-reference-creation-and-null-pointer-dereference.md) — 检测空引用的创建以及空指针的解引用。
+- [无效的对象大小](invalid-object-size.md) — 检测因类型大小不同而导致的无效指针转换。
+- [无效的移位](invalid-shift.md) — 检测无效及溢出的移位操作。
+- [无效的可变长度数组](invalid-variable-length-array.md) — 检测负数的数组边界。

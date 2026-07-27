@@ -35,11 +35,11 @@ translated: true
 在你的捕获范围上调用 [begin()](<../metal/mtlcapturescope/begin().md>)，以指示 Metal 调试器记录 App 后续的 Metal 活动。要停止记录一帧并呈现 Metal 调试器，调用 [end()](<../metal/mtlcapturescope/end().md>)。
 
 ```swift
-// Create myCaptureScope outside of your rendering loop.
+// 在渲染循环之外创建 myCaptureScope。
 myCaptureScope.begin()
 
 if let commandBuffer = commandQueue.makeCommandBuffer() {
-    // Do Metal work.
+    // 执行 Metal 工作。
     commandBuffer.commit()
 }
 
@@ -77,4 +77,3 @@ MTLCaptureManager.shared().defaultCaptureScope = myCaptureScope
 
 - [Building your project with embedded shader sources](building-your-project-with-embedded-shader-sources.md) — 通过在构建中包含源代码，为调试项目的着色器做好准备。
 - [Naming resources and commands](naming-resources-and-commands.md) — 借助标签和分组，增强对 Metal App 的调试。
-</content>

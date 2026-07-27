@@ -1,5 +1,5 @@
 ---
-title: AsyncIteratorProtocol 的实现
+title: AsyncIteratorProtocol 实现
 framework: Swift
 symbol_kind: article
 role: collectionGroup
@@ -17,7 +17,7 @@ translated: true
 
 > 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncSequence](../../asyncsequence.md) · [AsyncDropFirstSequence](../../asyncdropfirstsequence.md) · [Iterator](../iterator.md)
 
-# AsyncIteratorProtocol 的实现
+# AsyncIteratorProtocol 实现
 
 <sub>API 集合</sub>
 
