@@ -25,10 +25,10 @@ translated: true
 
 ## 概述
 
-这是 [Landmarks](https://developer.apple.com/documentation/swiftui/landmarks-building-an-app-with-liquid-glass) 的未本地化版本。通过添加字符串目录（string catalog）并导入翻译（`de.xcloc`）来完成本地化流程，为其做好本地化准备。
+这是 [Landmarks](https://developer.apple.com/documentation/swiftui/landmarks-building-an-app-with-liquid-glass) 的未本地化版本。添加字符串目录（string catalog）并导入翻译文件（`de.xcloc`），为其完成本地化流程。
 
 > [!note] 注意
-> 此示例代码项目对应 WWDC25 的 225 场次：[Code-along: Explore localization with Xcode](https://developer.apple.com/videos/play/wwdc2025/225)。
+> 此示例代码项目对应 WWDC25 第 225 场：[Code-along: Explore localization with Xcode](https://developer.apple.com/videos/play/wwdc2025/225)。
 
 ## 另请参阅
 
