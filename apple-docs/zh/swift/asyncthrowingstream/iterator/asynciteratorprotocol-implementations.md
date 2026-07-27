@@ -1,5 +1,5 @@
 ---
-title: AsyncIteratorProtocol ??
+title: AsyncIteratorProtocol 实现
 framework: Swift
 symbol_kind: article
 role: collectionGroup
@@ -15,15 +15,15 @@ content_hash: 'sha256:478ff53814db87ba'
 translated: true
 ---
 
-> ???[Technologies](../../../technologies.md) ? [Swift](../../../swift.md) ? [Swift Standard Library](../../swift-standard-library.md) ? [Concurrency](../../concurrency.md) ? [AsyncThrowingStream](../../asyncthrowingstream.md) ? [Iterator](../iterator.md)
+> 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncThrowingStream](../../asyncthrowingstream.md) · [Iterator](../iterator.md)
 
-# AsyncIteratorProtocol ??
+# AsyncIteratorProtocol 实现
 
-<sub>API ??</sub>
+<sub>API 集合</sub>
 
-## ??
+## 主题
 
-### ????
+### 实例方法
 
-- [next()](<next()-2s2hx.md>) ? `next()` ?? `next(isolation:)` ????????????????????????????
-- [next(isolation:)](<next(isolation_)-3l7jg.md>) ? `next(isolation:)` ?? `next()` ????????????????????????????
+- [next()](<next()-2s2hx.md>) — `next()` 基于 `next(isolation:)` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
+- [next(isolation:)](<next(isolation_)-3l7jg.md>) — `next(isolation:)` 基于 `next()` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
