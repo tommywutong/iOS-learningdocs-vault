@@ -15,7 +15,7 @@ content_hash: 'sha256:ae2ce7f214db13ba'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Drag and drop](drag-and-drop.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [拖放](drag-and-drop.md)
 
 # 在表格视图中采用拖放
 

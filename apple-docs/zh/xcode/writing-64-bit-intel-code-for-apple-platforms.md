@@ -15,7 +15,7 @@ content_hash: 'sha256:6c26fe19ab4a67d7'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Application binary interfaces](application-binary-interfaces.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [应用程序二进制接口](application-binary-interfaces.md)
 
 # 为 Apple 平台编写 64 位 Intel 代码
 
@@ -70,7 +70,7 @@ Rosetta 对 64 位 Intel 处理器的支持包括上述全部 ISA 扩展，以�
 数据类型表示方式大体遵循标准 psABI。不过，Apple LLVM 编译器支持若干 psABI 未涵盖的类型；这些类型的规则说明如下。
 
 - Apple LLVM 编译器允许向量具有任意数量的元素。向量类型的存储大小（以字节为单位）始终向上舍入到最接近的 2 的幂。其对齐值等于存储大小，但上限为当前 target CPU 功能决定的最大原生向量大小：启用 AVX-512 时为 64 字节，否则启用 AVX 时为 32 字节，否则为 16 字节。请注意，这意味着大型向量类型的 ABI 取决于 target CPU 功能，使用不同 CPU 功能编译的文件之间可能无法互操作；这一行为继承自标准 psABI。
-- Objective-C ARC 中带 `__strong` 和 `__weak` 限定符的指针类型，与非 ARC Objective-C 中的底层引用类型具有相同布局。不过，包含 `__strong` 和 `__weak` 限定字段的结构体具有非平凡所有权；当调用者将它们作为参数传递时，被调用者负责销毁这些字段。此外，与不可平凡复制的 C++ 类类型一样，你必须间接传递和返回包含 `__weak` 限定字段的结构体。
+- Objective-C ARC 中带 `__strong` 和 `__weak` 限定符的指针类型，与非 ARC Objective-C 中的底层引用类型（reference type）具有相同布局。不过，包含 `__strong` 和 `__weak` 限定字段的结构体具有非平凡所有权；当调用者将它们作为参数传递时，被调用者负责销毁这些字段。此外，与不可平凡复制的 C++ 类类型一样，你必须间接传递和返回包含 `__weak` 限定字段的结构体。
 
 ### 正确地向函数传递参数
 

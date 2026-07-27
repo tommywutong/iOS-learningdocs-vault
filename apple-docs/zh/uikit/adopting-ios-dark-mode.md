@@ -15,7 +15,7 @@ content_hash: 'sha256:229cb9bde40f3327'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Appearance customization](appearance-customization.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [外观自定义](appearance-customization.md)
 
 # 采用 iOS 深色模式
 

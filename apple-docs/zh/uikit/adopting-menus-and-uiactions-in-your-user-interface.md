@@ -15,7 +15,7 @@ content_hash: 'sha256:44c2d77a9b6d032e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Menus and shortcuts](menus-and-shortcuts.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [菜单与快捷键](menus-and-shortcuts.md)
 
 # 在用户界面中采用菜单和 UIAction
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:7761022bb1674ade'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Touches, presses, and gestures](touches-presses-and-gestures.md) · [Coordinating multiple gesture recognizers](coordinating-multiple-gesture-recognizers.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [触控、按压与手势](touches-presses-and-gestures.md) · [协调多个手势识别器](coordinating-multiple-gesture-recognizers.md)
 
 # 允许同时识别多个手势
 

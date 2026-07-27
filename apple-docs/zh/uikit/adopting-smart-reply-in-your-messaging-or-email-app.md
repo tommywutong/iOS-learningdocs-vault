@@ -15,7 +15,7 @@ content_hash: 'sha256:d8a44fa4a9328e92'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Keyboards and input](keyboards-and-input.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md)
 
 # 在信息或邮件 App 中采用智能回复
 

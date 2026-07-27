@@ -15,7 +15,7 @@ content_hash: 'sha256:7e18caabdd70e509'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Touches, presses, and gestures](touches-presses-and-gestures.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [触控、按压与手势](touches-presses-and-gestures.md)
 
 # 采用 Apple Pencil 悬停支持
 
@@ -42,11 +42,11 @@ translated: true
 - 在 Scheme 菜单中选择已连接的 iPad Pro。
 - 运行 App，并使用 Apple Pencil 与 App 交互。
 
-### 创建用于绘图的手势识别器
+### 创建用于绘图的手势识别器（gesture recognizer）
 
 示例项目使用_长按手势识别器（long-press gesture recognizer）_通过 Apple Pencil 绘制笔画；当用户按住触摸达到最短时长时，该识别器就会作出响应。
 
-App 实现了 `DrawGestureRecognizer` 子类，该子类扩展其超类 [UILongPressGestureRecognizer](uilongpressgesturerecognizer.md) 的能力，以跟踪 `currentTouch` 和 `currentEvent`。这些附加属性提供了实现高保真绘图所需的信息。
+App 实现了 `DrawGestureRecognizer` 子类，该子类扩展其超类（superclass）[UILongPressGestureRecognizer](uilongpressgesturerecognizer.md) 的能力，以跟踪 `currentTouch` 和 `currentEvent`。这些附加属性提供了实现高保真绘图所需的信息。
 
 ```swift
 class DrawGestureRecognizer: UILongPressGestureRecognizer {

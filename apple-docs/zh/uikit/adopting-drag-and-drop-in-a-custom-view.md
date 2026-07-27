@@ -15,7 +15,7 @@ content_hash: 'sha256:a4373ad1d5779034'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Drag and drop](drag-and-drop.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [拖放](drag-and-drop.md)
 
 # 在自定义视图中采用拖放
 
@@ -150,7 +150,7 @@ func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDr
 - [将拖动条目理解为承诺](understanding-a-drag-item-as-a-promise.md) — 使用拖动条目在源 App 和目的 App 之间传递数据表示承诺。
 - [将视图设为拖动源](making-a-view-into-a-drag-source.md) — 采用拖动交互 API 来提供可供拖动的条目。
 - [将视图设为放置目的地](making-a-view-into-a-drop-destination.md) — 采用放置交互 API，有选择地使用拖动的内容。
-- [在表格视图中采用拖放](adopting-drag-and-drop-in-a-table-view.md) — 演示如何为表格视图启用和实现拖放。
+- [在表格视图中采用拖放](adopting-drag-and-drop-in-a-table-view.md) — 演示如何为表格视图（table view）启用和实现拖放。
 
 ## 下载
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:619b5749b669cb70'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Distribution](distribution.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [分发](distribution.md)
 
 # 使用最新的代码签名格式
 

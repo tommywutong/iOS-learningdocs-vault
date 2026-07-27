@@ -15,7 +15,7 @@ content_hash: 'sha256:115dc7183194c4ce'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Localization](localization.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [本地化](localization.md)
 
 # 在代码中使用生成的可本地化符号
 
@@ -75,7 +75,7 @@ Xcode 会根据你在字符串目录中输入的键和译文生成符号，以�
 
 <sub>一张 Xcode 截图，其中 Project navigator 选中了 Discover 文件，左侧选中了英语源本地化语言，字符串目录编辑器中选中了 SUBTITLE 键，检查器中显示了生成符号的示例用法。</sub>
 
-然后，在源代码编辑器中编写代码时，使用代码补全快速输入这些符号。先输入句点，后跟键路径。然后从出现的代码补全菜单中选择符号。对于含格式说明符的字符串，请将占位文本替换为你的变量。
+然后，在源代码编辑器中编写代码时，使用代码补全快速输入这些符号。先输入句点，后跟键路径（key path）。然后从出现的代码补全菜单中选择符号。对于含格式说明符的字符串，请将占位文本替换为你的变量。
 
 ![](../../../attachments/124a2ff66bad5048f726f98e2b95046e/insert-localizable-symbols-in-code@2x.png)
 

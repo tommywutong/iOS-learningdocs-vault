@@ -15,7 +15,7 @@ content_hash: 'sha256:c678c341381bfb38'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Keyboards and input](keyboards-and-input.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md)
 
 # 在自定义文本视图中采用系统选择 UI
 
@@ -47,7 +47,7 @@ let selectionDisplayInteraction = UITextSelectionDisplayInteraction(textInput: d
 documentView.addInteraction(selectionDisplayInteraction)
 ```
 
-当自定义文本视图变为活跃状态或成为第一响应者时，激活该交互。
+当自定义文本视图变为活跃状态或成为第一响应者（first responder）时，激活该交互。
 
 ```swift
 // 在文本视图变为活跃状态时激活交互。

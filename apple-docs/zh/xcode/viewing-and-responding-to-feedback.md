@@ -15,7 +15,7 @@ content_hash: 'sha256:0fc36efb1b996a40'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Distribution](distribution.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [分发](distribution.md)
 
 # 查看并回应 Beta 测试人员的反馈
 

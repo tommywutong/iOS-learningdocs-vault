@@ -15,7 +15,7 @@ content_hash: 'sha256:609098037ea1c30e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Keyboards and input](keyboards-and-input.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md)
 
 # 使用键盘布局指南调整布局
 

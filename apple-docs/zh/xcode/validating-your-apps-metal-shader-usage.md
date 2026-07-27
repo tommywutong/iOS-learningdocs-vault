@@ -15,7 +15,7 @@ content_hash: 'sha256:9ccfb14d3d6070f5'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal developer workflows](metal-developer-workflows.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 开发者工作流程](metal-developer-workflows.md)
 
 # 验证 App 的 Metal 着色器用法
 
