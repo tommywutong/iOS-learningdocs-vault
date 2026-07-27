@@ -15,7 +15,7 @@ content_hash: 'sha256:478ff53814db87ba'
 translated: true
 ---
 
-> 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncThrowingStream](../../asyncthrowingstream.md) · [Iterator](../iterator.md)
+> 导航：[技术](../../../technologies.md) · [Swift](../../../swift.md) · [Swift 标准库](../../swift-standard-library.md) · [并发](../../concurrency.md) · [AsyncThrowingStream](../../asyncthrowingstream.md) · [迭代器](../iterator.md)
 
 # AsyncIteratorProtocol 实现
 

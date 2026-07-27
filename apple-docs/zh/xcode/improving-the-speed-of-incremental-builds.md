@@ -15,7 +15,7 @@ content_hash: 'sha256:2a14ffd011d54f69'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Build system](build-system.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [构建系统](build-system.md)
 
 # 提高增量构建速度
 

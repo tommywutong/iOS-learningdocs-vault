@@ -15,7 +15,7 @@ content_hash: 'sha256:128d2807da0b9edc'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Device Hub](device-hub.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Device Hub](device-hub.md)
 
 # 在 Device Hub 中与 App 交互
 
@@ -40,7 +40,7 @@ Device Hub 会在屏幕内容周围显示类似目标设备的边框。在 visio
 | 轻点 | 点按。 |
 | 轻点两下 | 点按两下。 |
 | 触碰并按住 | 点按并按住。 |
-| 拖放 | 点按并按住，直到拖动条目出现，然后将条目拖到目标位置。 |
+| 拖放（drag and drop） | 点按并按住，直到拖动条目出现，然后将条目拖到目标位置。 |
 | 激活 Siri | 按住设备边框上的睡眠/唤醒按钮，或选取 Controls \> Siri。 |
 | 向左旋转模拟器 | 点按设备边框下方的旋转按钮，或选取 Controls \> Rotate Left。 |
 | 向右旋转模拟器 | 按住 Option 键点按设备边框下方的旋转按钮，或选取 Controls \> Rotate Right。 |
@@ -87,7 +87,7 @@ Device Hub 会在屏幕内容周围显示类似目标设备的边框。在 visio
 | 将焦点向上移动 | 按下上箭头键。 |
 | 将焦点向下移动 | 按下下箭头键。 |
 | 触发当前焦点的操作 | 按下 Return 键。 |
-| 在导览层级中向上移动一级 | 按下 Escape 键。 |
+| 在导览层级（navigation hierarchy）中向上移动一级 | 按下 Escape 键。 |
 
 ## 处理实体设备上的相机和麦克风访问冲突
 

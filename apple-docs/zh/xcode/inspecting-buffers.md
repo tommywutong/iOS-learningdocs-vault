@@ -15,7 +15,7 @@ content_hash: 'sha256:164a8d2489be7503'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal debugger](metal-debugger.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
 
 # 检查缓冲区
 

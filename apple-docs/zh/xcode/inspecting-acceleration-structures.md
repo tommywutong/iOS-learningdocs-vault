@@ -15,7 +15,7 @@ content_hash: 'sha256:0a2ad61517fdc051'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal debugger](metal-debugger.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
 
 # 检查加速结构
 
@@ -29,7 +29,7 @@ _加速结构_是 Metal 用来加速 GPU 上光线相交测试的数据结构。
 
 ### 浏览加速结构
 
-你可以使用加速结构查看器的两个面板浏览加速结构：左侧的结构大纲或右侧的场景视图。
+你可以使用加速结构查看器的两个面板浏览加速结构：左侧的结构大纲或右侧的场景视图（scene view）。
 
 ![一张加速结构查看器的屏幕截图，其中包含导览器、场景视图和控制栏。](../../../attachments/ecbae80da1a3679d8a935bbbdd2ccf2e/gputools-metal-debugger-asv-outline-primitive@2x.png)
 

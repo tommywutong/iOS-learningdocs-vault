@@ -15,7 +15,7 @@ content_hash: 'sha256:b85f70c1503849db'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Performance and metrics](performance-and-metrics.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
 
 # 分析已发布 App 中的响应能力问题
 
@@ -54,11 +54,11 @@ Apple 操作系统支持种类广泛、硬件能力和性能特征各不相同�
 
 ### 分析挂起报告以确定处理方案
 
-挂起率提供特定 App 版本平均响应能力的一般信息，而挂起报告会突出显示各个挂起原因。当主线程（main thread）无响应达到 1 秒或更长时间时，系统还会对 App 进行采样以捕获回溯概要，突出显示 App 在挂起期间把时间花在了何处。对于同意与 App 开发者共享数据的用户，系统会向 Apple 发送包含挂起堆栈跟踪的匿名诊断报告。Xcode Organizer 会汇总这些单独的挂起报告，并按相似回溯进行分组，以识别常见挂起原因。你也可以根据 [MetricKit](../metrickit.md) 收集的日志创建自己的报告。
+挂起率提供特定 App 版本平均响应能力的一般信息，而挂起报告会突出显示各个挂起原因。当主线程（main thread）无响应达到 1 秒或更长时间时，系统还会对 App 进行采样以捕获回溯概要，突出显示 App 在挂起期间把时间花在了何处。对于同意与 App 开发者共享数据的用户，系统会向 Apple 发送包含挂起栈回溯（stack trace）的匿名诊断报告。Xcode Organizer 会汇总这些单独的挂起报告，并按相似回溯进行分组，以识别常见挂起原因。你也可以根据 [MetricKit](../metrickit.md) 收集的日志创建自己的报告。
 
 ![一张 Xcode Organizer 窗口中挂起报告面板的屏幕截图。从左到](../../../attachments/34804f84cc01e9d5756358e5d2c8869e/analyzing-responsiveness-issues-in-your-shipping-app-1@2x.png)
 
-Report List 中的每份报告都会显示产生挂起的函数调用，以及该调用在此发布版本总挂起时间中所占的百分比。Report List 按函数调用对 App 发布版本挂起时间的贡献从高到低排序。点按报告会显示主线程堆栈跟踪样本，并在 Inspector 中显示其他详情，包括：
+Report List 中的每份报告都会显示产生挂起的函数调用，以及该调用在此发布版本总挂起时间中所占的百分比。Report List 按函数调用对 App 发布版本挂起时间的贡献从高到低排序。点按报告会显示主线程栈回溯样本，并在 Inspector 中显示其他详情，包括：
 
 - iOS 版本
 - 设备型号
@@ -68,13 +68,13 @@ Report List 中的每份报告都会显示产生挂起的函数调用，以及�
 
 iOS 版本、设备型号、收到的日志数量和 14 天报告趋势等详情针对报告，而总挂起时间等详情针对函数调用。
 
-使用 Report List 中特定报告的函数调用以及相应的堆栈跟踪，识别导致挂起的代码。
+使用 Report List 中特定报告的函数调用以及相应的栈回溯，识别导致挂起的代码。
 
 挂起报告仅适用于 iOS 和 iPadOS 设备。
 
 ### 获取针对挂起问题的编码助理建议
 
-选择挂起报告后，点按 Inspector 中的 Generate Recommendations，在 Xcode 中获得辅助分类。选择工作区后，Xcode 会打开项目，并将调用路径和堆栈跟踪粘贴到编码助理中，帮助你识别并处理挂起的根本原因。
+选择挂起报告后，点按 Inspector 中的 Generate Recommendations，在 Xcode 中获得辅助分类。选择工作区后，Xcode 会打开项目，并将调用路径和栈回溯粘贴到编码助理中，帮助你识别并处理挂起的根本原因。
 
 ### 重现问题以进行分析和修复
 
@@ -90,9 +90,9 @@ Xcode Organizer 中的指标可以让你检测已发布 App 何时出现问题�
 ### 响应能力
 
 - [提高 App 响应能力](improving-app-responsiveness.md) — 消除 App 中的挂起和卡顿，打造响应迅速的用户体验。
-- [了解用户界面响应能力](understanding-user-interface-responsiveness.md) — 通过检查事件处理和渲染循环，提高 App 的响应能力。
+- [了解用户界面响应能力](understanding-user-interface-responsiveness.md) — 通过检查事件处理和渲染循环（render loop），提高 App 的响应能力。
 - [了解并提升 SwiftUI 性能](understanding-and-improving-swiftui-performance.md) — 识别并处理长时间运行的视图更新，并降低更新频率。
-- [了解 App 中的挂起](understanding-hangs-in-your-app.md) — 通过检查主线程和主运行循环，确定用户交互延迟的原因。
+- [了解 App 中的挂起](understanding-hangs-in-your-app.md) — 通过检查主线程和主运行循环（main run loop），确定用户交互延迟的原因。
 - [了解 App 中的卡顿](understanding-hitches-in-your-app.md) — 通过检查渲染循环，确定运动中断的原因。
 - [及早诊断性能问题](diagnosing-performance-issues-early.md) — 在开发和测试期间，使用 Xcode 中的 Thread Performance Checker 工具诊断 App 中的潜在性能问题。
 - [缩短 App 启动时间](reducing-your-app-s-launch-time.md) — 尽量减少启动耗时，打造响应更迅速的 App 体验。

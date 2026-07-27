@@ -15,7 +15,7 @@ content_hash: 'sha256:edcfe8cf0fcbe3a5'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Testing](testing.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [测试](testing.md)
 
 # 向 Xcode 项目添加测试
 

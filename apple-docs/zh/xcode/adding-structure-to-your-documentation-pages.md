@@ -15,7 +15,7 @@ content_hash: 'sha256:165cc3fc1b33b326'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Writing documentation](writing-documentation.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [编写文档](writing-documentation.md)
 
 # 向文档页面添加结构
 
@@ -31,7 +31,7 @@ translated: true
 
 - 自定义文档目录的主落地页，以介绍技术并组织其顶层符号。
 - 添加特定于符号的扩展文件，以组织方法和属性等嵌套符号。
-- 使用集合对多个符号进行分组，并在文档页面的导览中引入层级结构。
+- 使用集合对多个符号进行分组，并在文档页面的导览（navigation）中引入层级结构。
 
 有关如何使用 DocC 为文档添加结构的更多信息，请参阅 [Swift.org 上的“向文档页面添加结构”](https://www.swift.org/documentation/docc/adding-structure-to-your-documentation-pages)。
 

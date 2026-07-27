@@ -15,7 +15,7 @@ content_hash: 'sha256:dbb3a13e3cddbf0c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Localization](localization.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [本地化](localization.md)
 
 # 添加语言和区域支持
 
@@ -37,7 +37,7 @@ translated: true
 
 ![项目编辑器语言弹出式菜单的屏幕截图。](../../../attachments/fd9e1febc244895e8d0d49a6d8a503ee/adding-support-for-languages-and-regions-2@2x.png)
 
-如果项目中有可本地化资源，请在出现的表单中选择要本地化的资源文件，然后点按 Finish。例如，选择添加到项目中的图像、音频、字符串和 `.stringsdict` 文件。
+如果项目中有可本地化资源，请在出现的表单（sheet）中选择要本地化的资源文件，然后点按 Finish。例如，选择添加到项目中的图像、音频、字符串和 `.stringsdict` 文件。
 
 对于 storyboard 和 XIB 界面，请选择用户界面文件（扩展名为 `.storyboard` 或 `.xib` 的文件）。Xcode 会向本地化文件夹添加一个字符串文件，其中包含要翻译的文本以及描述用户界面组件的注释。例如，如果向使用 storyboard 的 iOS App 添加德语，`LaunchScreen.storyboard` 会变成一个组，其中包含 `LaunchScreen.storyboard (Base)` 和 `LaunchScreen.strings (German) ` 文件。
 

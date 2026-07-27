@@ -15,7 +15,7 @@ content_hash: 'sha256:0e46c781c90feb81'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Writing documentation](writing-documentation.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [编写文档](writing-documentation.md)
 
 # 向文档目录添加补充内容
 

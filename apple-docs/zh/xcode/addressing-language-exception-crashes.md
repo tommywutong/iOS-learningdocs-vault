@@ -15,7 +15,7 @@ content_hash: 'sha256:4fb69aa13285a2f5'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Diagnosing issues using crash reports and device logs](diagnosing-issues-using-crash-reports-and-device-logs.md) · [Identifying the cause of common crashes](identifying-the-cause-of-common-crashes.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [使用崩溃报告和设备日志诊断问题](diagnosing-issues-using-crash-reports-and-device-logs.md) · [识别常见崩溃的原因](identifying-the-cause-of-common-crashes.md)
 
 # 处理语言异常崩溃
 
@@ -87,7 +87,7 @@ Application Specific Information:
 对于某些错误，崩溃报告会排除异常信息，以防泄露 App 使用者的私密信息。对于 App 使用框架 API 时生成的许多常见语言异常，崩溃报告会包含异常信息。有关这些异常的更多信息，请参阅[读取异常信息](reading-an-exception-message.md)。
 
 > [!note] 注意
-> [AppKit](../appkit.md) App 具有默认异常处理程序，会捕获从其运行循环执行的代码所引发的所有语言异常。它会记录异常信息，然后允许 App 继续运行。
+> [AppKit](../appkit.md) App 具有默认异常处理程序，会捕获从其运行循环（run loop）执行的代码所引发的所有语言异常。它会记录异常信息，然后允许 App 继续运行。
 
 如果可以重现语言异常崩溃，请设置异常断点来暂停执行，并使用 Xcode 调试器检查 App 状态，具体方法请参阅[在事件发生时暂停执行](https://help.apple.com/xcode/mac/current/#/devfeaa874d0)。若要在异常断点暂停执行时自动输出异常信息，请为异常断点添加一个运行调试器命令的操作：
 

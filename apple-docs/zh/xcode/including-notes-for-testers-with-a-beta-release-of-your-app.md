@@ -15,7 +15,7 @@ content_hash: 'sha256:2b8aa9a898fcad78'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
 
 # 在 App 的 Beta 版本中包含供测试人员参考的说明
 

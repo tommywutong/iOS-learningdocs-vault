@@ -15,7 +15,7 @@ content_hash: 'sha256:48b60c34c7712617'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Performance and metrics](performance-and-metrics.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
 
 # 处理 CPU 瓶颈
 
