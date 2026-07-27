@@ -27,7 +27,7 @@ translated: true
 
 要处理源自 Siri 的用户请求，首先要将 Siri 功能添加到你的 App 的 target 中。这会告知系统，你的 App 已准备好解析、确认并处理 SiriKit intent，通常是通过其 Intents 扩展来完成；在 iOS 14 及更高版本中，你可以选择在 App 内部完成这些步骤中的每一步。
 
-在配置好你的 App 以处理 SiriKit intent 后，向你的 App 委托或 Intents 扩展添加代码，将传入的 intent 路由到你的自定处理程序。有关更多信息，请参阅 [Dispatching intents to handlers](../sirikit/dispatching-intents-to-handlers.md)。
+在配置好你的 App 以处理 SiriKit intent 后，向你的 App 委托（app delegate）或 Intents 扩展添加代码，将传入的 intent 路由到你的自定处理程序。有关更多信息，请参阅 [Dispatching intents to handlers](../sirikit/dispatching-intents-to-handlers.md)。
 
 > [!note] 注意
 > watchOS 并不支持所有 intent 类型。例如，watchOS App 无法发起视频通话，也无法处理 CarPlay 领域中的 intent。请查看某个 intent 的可用性信息，以确定你能否在 watchOS 上使用它。
