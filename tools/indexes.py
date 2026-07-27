@@ -140,11 +140,12 @@ def index_blogs() -> dict:
         "> **本仓库为私有个人学习归档。** 第三方博客大多是 All rights reserved 或未声明",
         "> 授权（法律上默认保留全部权利），存作个人资料与公开发布是两回事。",
         "> 逐源授权状况见下表，也记在 `meta/blog_sources.json` 每条的 `license` 字段。",
+        "> 表内统计的是 Markdown 文件数；同一英文文章及其中文译文分别计为两个文件。",
         "",
         "已按 robots.txt 明确排除、**未抓取**的站点：`massicotte.org`、`casatwy.com`"
         "——它们在 `User-agent: *` 放开的同时单独点名禁止 ClaudeBot / anthropic-ai。",
         "",
-        "| 源 | 篇数 | 中位字数 | 代码率 | 语言 | 状态 | 授权 |",
+        "| 源 | 文件数 | 中位字数 | 代码率 | 语言 | 状态 | 授权 |",
         "|---|---:|---:|---:|---|---|---|",
     ]
     cfgs = {}
@@ -208,8 +209,17 @@ def main() -> None:
         k: len(list((ROOT / k / "zh").rglob("*.md"))) if (ROOT / k / "zh").exists() else 0
         for k in ("apple-docs", "wwdc", "blogs")
     }
+    translated_counts = {}
+    for source in ("apple-docs", "wwdc", "blogs"):
+        en_root = ROOT / source / "en"
+        zh_root = ROOT / source / "zh"
+        translated_counts[source] = sum(
+            1
+            for path in en_root.rglob("*.md")
+            if (zh_root / path.relative_to(en_root)).exists()
+        ) if en_root.exists() and zh_root.exists() else 0
 
-    readme = f"""# Apple 文档与 iOS 底层知识归档
+    readme = rf"""# Apple 文档与 iOS 底层知识归档
 
 > 私有个人学习归档。本文件由 `tools/indexes.py` 扫描实际内容生成，**所有数字都是实测的**，
 > 重跑一遍就刷新。生成于 {date.today()}。
@@ -223,14 +233,18 @@ def main() -> None:
 
 四个来源：
 
-| 来源 | 内容 | 数量 | 已译 |
-|---|---|---:|---:|
-| **Apple 现行文档** | `developer.apple.com/documentation`，{ad.get('frameworks', 0)} 个框架 | {ad.get('total', 0):,} 页（成篇文章 {ad.get('longform', 0):,}） | {zh_counts['apple-docs']:,} |
-| **WWDC 逐字稿** | 按主题从现存 1,560 场里筛出，{ww.get('groups', 0)} 个分组 | {ww.get('total', 0)} 场 | {zh_counts['wwdc']:,} |
-| **第三方技术博客** | 经甄别的一手来源 | {bl.get('total', 0):,} 篇 | {zh_counts['blogs']:,} |
-| **Apple 开源与 Swift 一手资料** | objc4 / dyld / CF / libdispatch / swift-evolution 等 | {n_oss} 个仓库 | — |
+| 来源 | 内容 | 数量 | 中文文件 | 其中由英文翻译 |
+|---|---|---:|---:|---:|
+| **Apple 现行文档** | `developer.apple.com/documentation`，{ad.get('frameworks', 0)} 个框架 | {ad.get('total', 0):,} 页（成篇文章 {ad.get('longform', 0):,}） | {zh_counts['apple-docs']:,} | {translated_counts['apple-docs']:,} |
+| **WWDC 逐字稿** | 按主题从现存 1,560 场里筛出，{ww.get('groups', 0)} 个分组 | {ww.get('total', 0)} 场 | {zh_counts['wwdc']:,} | {translated_counts['wwdc']:,} |
+| **第三方技术博客** | 经甄别的一手来源 | {bl.get('total', 0):,} 个 Markdown 文件 | {zh_counts['blogs']:,} | {translated_counts['blogs']:,} |
+| **Apple 开源与 Swift 一手资料** | objc4 / dyld / CF / libdispatch / swift-evolution 等 | {n_oss} 个仓库 | — | — |
 
 图片附件 {n_att:,} 个 / {sz_att / 1e9:.2f} GB。
+
+> 博客的“中文文件”同时包含原生中文文章和英文文章的中文译文，不能把这个数字
+> 直接当成翻译进度；“其中由英文翻译”才是可与 `blogs/en/` 一一对应的数量。
+> 同一英文文章及其中文译文分别计为两个 Markdown 文件。
 
 ## 二、怎么用
 
@@ -241,6 +255,7 @@ def main() -> None:
 | 找某个主题的 WWDC session | [`_indexes/wwdc.md`](_indexes/wwdc.md) —— 九个主题分组，标注了哪些「讲机制、长期有效」哪些「版本性会过时」 |
 | 看博客归档与**授权状况** | [`_indexes/blogs.md`](_indexes/blogs.md) |
 | 查术语该怎么译 | [`meta/TERMS.md`](meta/TERMS.md) |
+| **让新的 AI 接手** | 先读 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md)，再按 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md) 的进度表领取下一批 |
 
 **在 Obsidian 里打开仓库根目录**即可。英文原文和中文译文路径一一对应，
 `en/` 换成 `zh/` 就是译文。
@@ -320,6 +335,8 @@ python3 tools/snapshot.py targets|fetch|render     # 单页快照
 # 翻译调度与校验
 python3 tools/translate_plan.py status             # 进度
 python3 tools/translate_plan.py next --budget 60000  # 取下一批（按学习计划优先级）
+python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 并行分片
+python3 tools/shard.py --status                    # 当前分片产出情况
 python3 tools/validate.py <目录>                    # 机械校验
 
 # 维护
@@ -379,17 +396,20 @@ python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大�
 
 ## 八、已知缺口
 
-见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 第八节。主要几项：
+见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 与
+[`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md)。主要几项：
 
-- **翻译远未完成**：{zh_counts['apple-docs'] + zh_counts['wwdc'] + zh_counts['blogs']:,} / 约 5,900 篇
-- 学习计划里 190 条外链尚未归档（部分因 robots 禁止、部分原站已消失）
-- 旧归档缺口 1,098 份的补齐工作在另一个仓库进行
+- **翻译远未完成**：Apple / WWDC / 英文博客合计完成
+  {translated_counts['apple-docs'] + translated_counts['wwdc'] + translated_counts['blogs']:,} 篇；
+  完整 A 方案的剩余量和 Token 预算见后续计划表
+- 学习计划单篇快照 108 条中已归档 86 条，剩余 22 条有明确失败原因
+- 旧归档缺口已通过另一个仓库的 PR #10 补入 950 / 1,098 份，剩余 148 份
 - `ming1016/study` 只保留了 Markdown 和技术文章配图，旅游/绘画类配图未收（见 `oss/study/README-归档说明.md`）
 """
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
     print(f"README.md + _indexes/ 已生成")
     print(f"  Apple 文档 {ad.get('total', 0):,} 页（成篇 {ad.get('longform', 0):,}）")
-    print(f"  WWDC {ww.get('total', 0)} 场 · 博客 {bl.get('total', 0):,} 篇 · OSS {n_oss} 仓库")
+    print(f"  WWDC {ww.get('total', 0)} 场 · 博客 {bl.get('total', 0):,} 个文件 · OSS {n_oss} 仓库")
     print(f"  图片 {n_att:,} 个 / {sz_att / 1e9:.2f} GB")
 
 

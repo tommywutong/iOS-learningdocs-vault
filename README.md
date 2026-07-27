@@ -12,14 +12,18 @@
 
 四个来源：
 
-| 来源 | 内容 | 数量 | 已译 |
-|---|---|---:|---:|
-| **Apple 现行文档** | `developer.apple.com/documentation`，282 个框架 | 95,634 页（成篇文章 3,746） | 8 |
-| **WWDC 逐字稿** | 按主题从现存 1,560 场里筛出，9 个分组 | 178 场 | 0 |
-| **第三方技术博客** | 经甄别的一手来源 | 2,733 篇 | 681 |
-| **Apple 开源与 Swift 一手资料** | objc4 / dyld / CF / libdispatch / swift-evolution 等 | 25 个仓库 | — |
+| 来源 | 内容 | 数量 | 中文文件 | 其中由英文翻译 |
+|---|---|---:|---:|---:|
+| **Apple 现行文档** | `developer.apple.com/documentation`，282 个框架 | 95,634 页（成篇文章 3,746） | 441 | 441 |
+| **WWDC 逐字稿** | 按主题从现存 1,560 场里筛出，9 个分组 | 178 场 | 23 | 23 |
+| **第三方技术博客** | 经甄别的一手来源 | 3,091 个 Markdown 文件 | 742 | 61 |
+| **Apple 开源与 Swift 一手资料** | objc4 / dyld / CF / libdispatch / swift-evolution 等 | 25 个仓库 | — | — |
 
 图片附件 2,742 个 / 0.80 GB。
+
+> 博客的“中文文件”同时包含原生中文文章和英文文章的中文译文，不能把这个数字
+> 直接当成翻译进度；“其中由英文翻译”才是可与 `blogs/en/` 一一对应的数量。
+> 同一英文文章及其中文译文分别计为两个 Markdown 文件。
 
 ## 二、怎么用
 
@@ -30,6 +34,7 @@
 | 找某个主题的 WWDC session | [`_indexes/wwdc.md`](_indexes/wwdc.md) —— 九个主题分组，标注了哪些「讲机制、长期有效」哪些「版本性会过时」 |
 | 看博客归档与**授权状况** | [`_indexes/blogs.md`](_indexes/blogs.md) |
 | 查术语该怎么译 | [`meta/TERMS.md`](meta/TERMS.md) |
+| **让新的 AI 接手** | 先读 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md)，再按 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md) 的进度表领取下一批 |
 
 **在 Obsidian 里打开仓库根目录**即可。英文原文和中文译文路径一一对应，
 `en/` 换成 `zh/` 就是译文。
@@ -109,6 +114,8 @@ python3 tools/snapshot.py targets|fetch|render     # 单页快照
 # 翻译调度与校验
 python3 tools/translate_plan.py status             # 进度
 python3 tools/translate_plan.py next --budget 60000  # 取下一批（按学习计划优先级）
+python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 并行分片
+python3 tools/shard.py --status                    # 当前分片产出情况
 python3 tools/validate.py <目录>                    # 机械校验
 
 # 维护
@@ -138,9 +145,7 @@ python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大�
 全靠体检指标（中位正文字数、代码块覆盖率）才发现：
 
 7. **sealiesoftware 报告成功 29 篇零失败，实际每篇只有 23 行、正文全丢**——那个 2013 年的站用 `<table>` 做页面布局，转换器没处理 `<tr>`/`<td>`，递归到一半就断。
-8. **onevcat 176 篇里只有 3 篇有代码**——它用 Hexo 的行号表格高亮，代码在 `<td class="rouge-code">`，直接找 `<pre>` 取到的是**行号那一格**（`1
-2
-3...`）。
+8. **onevcat 176 篇里只有 3 篇有代码**——它用 Hexo 的行号表格高亮，代码在 `<td class="rouge-code">`，直接找 `<pre>` 取到的是**行号那一格**（`1\n2\n3...`）。
 9. **修第 8 条时踩的反向坑**：新逻辑在整棵子树里找代码单元格，命中了外层文章容器，**整篇正文被换成一个代码块**。maskray 中位字数从 15,626 崩到 573。必须加「占比 >90% 才算代码块」的守卫。
 10. **Hexo 的 `figure.highlight` 套在 `<p>` 里**时走行内路径，代码被压成一行、行号粘在代码前（`12(lldb) po ...`）。文件字数看着正常。
 11. **CSDN 的反爬页 HTTP 521、只有 2KB，但混淆 JS 有 1800 多字符**，按 `text_content()` 量比很多真文章还长，差点被当正文收下。判据要改成扣掉 script/style 的**可见文本长度**。
@@ -152,7 +157,7 @@ python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大�
 
 13. **Apple 的 404 页有 82,981 字节**，比大多数真实归档页还大。「响应够大就算成功」会把 404 页写进仓库。必须校验 `status==200` **且** 含 `<article id="contents"`。
 14. **裸目录 URL 返回 1,610 字节空壳，补 `_index.html` 才返回 30,256 字节正文**，两者状态码都是 200。
-15. **`library.json` 是非标准 JSON**（含尾随逗号），要先 `re.sub(r",(\s*[}\]])", r"", raw)` 才能解析。
+15. **`library.json` 是非标准 JSON**（含尾随逗号），要先 `re.sub(r",(\s*[}\]])", r"\1", raw)` 才能解析。
 
 ## 七、版权与授权
 
@@ -170,9 +175,12 @@ python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大�
 
 ## 八、已知缺口
 
-见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 第八节。主要几项：
+见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 与
+[`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md)。主要几项：
 
-- **翻译远未完成**：689 / 约 5,900 篇
-- 学习计划里 190 条外链尚未归档（部分因 robots 禁止、部分原站已消失）
-- 旧归档缺口 1,098 份的补齐工作在另一个仓库进行
+- **翻译远未完成**：Apple / WWDC / 英文博客合计完成
+  525 篇；
+  完整 A 方案的剩余量和 Token 预算见后续计划表
+- 学习计划单篇快照 108 条中已归档 86 条，剩余 22 条有明确失败原因
+- 旧归档缺口已通过另一个仓库的 PR #10 补入 950 / 1,098 份，剩余 148 份
 - `ming1016/study` 只保留了 Markdown 和技术文章配图，旅游/绘画类配图未收（见 `oss/study/README-归档说明.md`）
