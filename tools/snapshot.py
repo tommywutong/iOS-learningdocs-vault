@@ -93,6 +93,17 @@ CONTAINERS: dict[str, tuple[str, list[str]]] = {
     "pubs.opengroup.org": ("//body", []),
     "pewpewthespells.com": ("//body", []),
     "w3.org": ("//body", []),
+
+    # ---- 原站失效，改从 Web Archive 快照取的几个：容器针对快照 HTML 探过 ----
+    "bujige.net": ("//article", []),
+    "informit.com": ("//div[contains(@class,'articleProduct')]", []),
+    "huberyyang.com": ("//article", []),
+    # Bulma 主题：`//div[contains(@class,'content')]` 的启发式会先命中侧栏的
+    # 标签云卡片（同样是 card-content），真正的文章在 card-content 里**同时**
+    # 带 article class 的那个，两个 class 都要一起匹配才不会选错。
+    "stevenwuzheng.com": ("//div[contains(@class,'card-content') and contains(@class,'article')]", []),
+    "ai-chan.top": ("//*[contains(@class,'post-body')]", []),
+    "laoqingcai.com": ("//article", []),
 }
 
 # 一眼看出是反爬 / 登录 / 404 的正文特征
@@ -139,14 +150,14 @@ def is_challenge(html: str) -> bool:
 # 自动规则识别不了这几种（页面本身完整、字数也够），所以在这里点名记账，
 # 而不是让它们混进快照库里冒充成功。
 MANUAL_FAILURES: dict[str, str] = {
-    "https://www.informit.com/articles/article.aspx?p=1749597&seqNum=12":
-        "原文已下线：站点把 article.aspx?p=… 重定向到了「Articles」全站文章列表页，"
-        "抓到的是 890 条书摘的目录，不是《Advanced Mac OS X Programming》那一节",
-    "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/":
-        "原站已消失：huberyyang.com 域名已被转卖，现在是越南博彩站，返回 404 + 赌场首页",
+    # informit.com 和 huberyyang.com 原本也在这里（现网站分别是「重定向到全站
+    # 列表页」「域名转卖成博彩站」）——已经从 Web Archive 找到旧快照换上了真实
+    # 正文，见 CONTAINERS 里补的容器，这两条从清单挪走，不再算失败。
     "https://blog.fearcat.in/a?ID=01750-5926f776-644b-465e-8d4d-d6c7b854e533":
         "原站已消失：blog.fearcat.in 现在是广告导流页，整页只有一张追踪像素和一条"
-        "「Do Not Sell or Share My Personal Information」，没有正文",
+        "「Do Not Sell or Share My Personal Information」，没有正文；"
+        "已查 Web Archive（archive.org/wayback/available）——这个 URL 没有任何快照，"
+        "记为不可归档",
 }
 
 
@@ -838,6 +849,17 @@ SHORT_VERDICTS: dict[str, tuple[str, str]] = {
         "真短文", "计划链接的是这本开放教科书的首页（简介 + 各语言版本入口），不是章节"),
     "https://shakuro.com/blog/nsoperation-and-nsoperationqueue-to-improve-concurrency-in-ios": (
         "真短文", "英文入门短文，2 个代码块，结构完整"),
+    "https://blog.csdn.net/weixin_46818265/article/details/142442895": (
+        "真短文", "KVC/KVO 笔记体短文，本质代码+两张原理图+应用场景列全，结尾自然"),
+    "https://juejin.cn/post/6963188936508178469": (
+        "真短文", "栈/堆/全局区/常量区/代码区五个分区逐条讲完，收在「其他相关」补充点上，完整"),
+    "https://blog.csdn.net/Lu_Ca/article/details/114532423": (
+        "真短文", "YYModel 用 objc_msgSend 而非 KVC 赋值的源码笔记，Json↔Model 双向流程讲完，结尾有作者免责声明，完整"),
+    "http://stevenwuzheng.com/archives/runloop%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB": (
+        "真短文", "经 Web Archive 取回（原站证书失效）。pthread 与 RunLoop 一一对应关系，"
+        "一段 _CFRunLoopGet 源码，结尾自然收束"),
+    "https://huberyyang.com/2018/04/13/KVO%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/": (
+        "真短文", "经 Web Archive 取回（原域名已转卖为博彩站）。KVO 实现原理短文，正文完整"),
 }
 
 
@@ -992,6 +1014,12 @@ def cmd_report() -> None:
       "（见 `tools/blog.py` 的 `robots_allows`）。被禁的直接跳过，不绕过。")
     A("- 探不到正文容器的记为失败写进上面的清单，**没有硬塞容器**。")
     A("- 未改动 `meta/blog_sources.json` 与 `blogs/{en,zh}/` 下的既有内容。")
+    A("- 「抓取失败」重试过两轮（默认 UA、`--browser-ua`）后仍失败、以及内容判定为")
+    A("  「原站已下线 / 内容不对」的条目，额外查过 `archive.org/wayback/available`：")
+    A("  能取到快照的换成 Web Archive 版本（成功清单/短文表里标注「经 Web Archive 取回」），")
+    A("  查无快照的照实记为不可归档，不臆造内容。")
+    A("- `massicotte.org`、`casatwy.com`、`blog.devtang.com` 三站点名禁止 AI 爬虫，")
+    A("  本轮检查过学习计划引用的 URL 里没有这三个域名，无需处理，也未曾抓取。")
     A("")
 
     REPORT.write_text("\n".join(L) + "\n", encoding="utf-8")

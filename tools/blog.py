@@ -234,6 +234,27 @@ async def discover(keys: list[str]) -> None:
                 print(f"  {key}: 清单解析失败 {type(e).__name__}: {e}", file=sys.stderr)
                 continue
 
+            # 同一篇文章可能被多个 <a> 命中到同一个 href（比如某些主题把日期链接和
+            # 标题链接分成两个相邻的 <a>，href 相同但文本不同：日期链接文本是
+            # "Jul 12" 这种，标题链接文本才是真标题）。按 URL 合并时优先剔掉长得
+            # 像日期戳的候选（"Nov 14" 这种），剩下的按文本长度取长——单纯比长度
+            # 在标题恰好和日期戳一样短时（如标题就叫 ".emacs"）会选错。
+            _date_like = re.compile(r"^[A-Za-z]{3,9}\.?\s+\d{1,2}(st|nd|rd|th)?$")
+
+            def _title_score(t: str) -> int:
+                if not t:
+                    return -1
+                return len(t) - 1000 if _date_like.match(t.strip()) else len(t)
+
+            merged: dict[str, dict] = {}
+            for u in urls:
+                url = u["url"]
+                if not url:
+                    continue
+                if url not in merged or _title_score(u["title"]) > _title_score(merged[url]["title"]):
+                    merged[url] = u
+            urls = list(merged.values())
+
             # 去重、剔掉明显不是文章的
             seen, clean = set(), []
             home = urllib.parse.urlparse(s["homepage"])

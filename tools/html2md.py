@@ -377,6 +377,16 @@ class Converter:
         codecell = el.xpath(".//td[contains(@class,'code')]")
         if not (gutter and codecell):
             return None
+        # 必须恰好是「一个 gutter 配一个 code」的单个高亮块。多于一对说明 el 是
+        # 包了好几段代码（甚至连正文一起）的外层容器（如 maskray 的
+        # <div class="article-inner"> 同时裹住标题、散文段落和好几个 <figure>）。
+        # 这时下面的比例守卫可能因为「代码本来就占大头」而误判通过，导致只取
+        # 第一个 codecell、其余代码块和全部散文静默丢失——踩过一次：
+        # noip-2004-cryptarithmetic 有 4 个高亮块，渲染出的正文只剩第 1 个，
+        # 257 字符。这里交回 None 让上层继续往下递归，等真正走到单个
+        # <figure>/<table> 时再命中这个函数。
+        if len(gutter) != 1 or len(codecell) != 1:
+            return None
         # 关键守卫：只有当这个元素**几乎只包含这段代码**时才当代码块处理。
         # 否则命中的是外层文章容器（它子树里恰好有个高亮表格），会把整篇正文
         # 换成一个代码块、其余内容全部丢失。踩过一次：maskray 的中位字数从
