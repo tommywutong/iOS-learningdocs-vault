@@ -49,7 +49,7 @@ ARMv7 中的 Thumb 版本与 ARM 汇编指令兼容。具体来说，Thumb 能�
 push add  {r4-r7, lr}     // 保存 LR、R7 和 R4-R6。
 add       r7, sp, #12     // 调整 R7，使其指向保存的 R7。
 push      {r8, r10, r11}  // 保存其余 GPR（R8、R10、R11）。
-vstmdb    sp!, {d8-d15}   // 保存 VFP/Advanced SIMD 寄存器 D8 
+vstmdb    sp!, {d8-d15}   // 保存 VFP/Advanced SIMD 寄存器 D8
                           //（也称为 S16-S31、Q4-Q7）。
 sub       sp, sp, #36     // 为局部存储分配空间。
 ```
@@ -60,7 +60,7 @@ sub       sp, sp, #36     // 为局部存储分配空间。
 add       sp, sp, #36     // 释放局部存储空间。
 vldmia    sp!, {d8-d15}   // 恢复 VFP/Advanced SIMD 寄存器。
 pop       {r8, r10, r11}  // 恢复 R8-R11。
-pop       {r4-r7, pc}     // 恢复 R4-R6、保存的 R7，并 
+pop       {r4-r7, pc}     // 恢复 R4-R6、保存的 R7，并
                           // 返回保存的 LR
 ```
 
