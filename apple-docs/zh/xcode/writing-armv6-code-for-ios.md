@@ -71,7 +71,7 @@ ARM 架构过程调用标准（AAPCS）可在 [https://developer.arm.com](https:
 | 数据类型 | 大小（字节） | 自然对齐（字节） |
 |---|---|---|
 | `BOOL`、`bool` | 1 | 1 |
-| `unsigned char` | 2 | 2 |
+| `unsigned char` | 1 | 1 |
 | `char`、`signed char` | 1 | 1 |
 | `unsigned short` | 2 | 2 |
 | `signed short` | 2 | 2 |
