@@ -21,13 +21,13 @@ translated: true
 
 <sub>示例代码</sub>
 
-演示如何为 `UIImageView` 实例启用拖放。
+演示如何为 `UIImageView` 实例启用拖放（drag and drop）。
 
 ## 概述
 
 此示例代码项目使用 [UIImageView](uiimageview.md) 实例来展示 [UIView](uiview.md) 类的任意实例或子类如何充当拖动源或放置目的地。
 
-要启用拖放，请向视图添加一个或多个交互对象。要提供或使用数据，请实现交互委托中的协议方法。
+要启用拖放，请向视图添加一个或多个交互对象。要提供或使用数据，请实现交互委托（delegate）中的协议方法。
 
 ### 开始使用
 

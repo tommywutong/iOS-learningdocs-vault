@@ -21,11 +21,11 @@ translated: true
 
 <sub>文章</sub>
 
-了解如何使用委托对象来同时检测多个手势。
+了解如何使用委托（delegate）对象来同时检测多个手势。
 
 ## 概述
 
-在某些情况下，允许同时识别多个手势是合理的。下图展示了一个 App，用户可以在屏幕上拖动、缩放和旋转三个视图。每个视图都维护自己的一组平移、捏合和旋转手势识别器，并且一个视图的三个手势识别器可以同时执行操作。
+在某些情况下，允许同时识别多个手势是合理的。下图展示了一个 App，用户可以在屏幕上拖动、缩放和旋转三个视图。每个视图都维护自己的一组平移、捏合和旋转手势识别器（gesture recognizer），并且一个视图的三个手势识别器可以同时执行操作。
 
 ![](../../../attachments/8559fcb4402d0499f4e131301b8d0e58/media-2880130@2x.png)
 
@@ -67,4 +67,4 @@ func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
 ### 同时识别手势
 
 - [使一个手势优先于另一个手势](preferring-one-gesture-over-another.md) — 使用手势识别器委托对象来确定视图中手势的识别顺序。
-- [将手势识别器附加到 UIKit 控件](attaching-gesture-recognizers-to-uikit-controls.md) — 了解手势识别器如何与按钮、开关和滑块等 UIKit 控件交互。
+- [将手势识别器附加到 UIKit 控制项](attaching-gesture-recognizers-to-uikit-controls.md) — 了解手势识别器如何与按钮、开关和滑块等 UIKit 控制项交互。

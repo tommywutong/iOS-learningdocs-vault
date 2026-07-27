@@ -21,7 +21,7 @@ translated: true
 
 <sub>示例代码</sub>
 
-利用键盘布局指南的跟踪功能，动态响应键盘移动。
+利用键盘布局指南（keyboard layout guide）的跟踪功能，动态响应键盘移动。
 
 ## 概述
 

@@ -205,7 +205,7 @@ Shader Validation 会为你处理的所有管线生成 UID，可将其用作 `MT
 - **MTL_SHADER_VALIDATION_GLOBAL_MEMORY=1** — 检查所有全局内存访问。访问无效内存时遵循 `MTL_SHADER_VALIDATION_FAIL_MODE` 指定的行为。
 - **MTL_SHADER_VALIDATION_THREADGROUP_MEMORY=1** — 检查所有线程组内存访问。访问无效内存时遵循 `MTL_SHADER_VALIDATION_FAIL_MODE` 指定的行为。
 - **`MTL_SHADER_VALIDATION_TEXTURE_USAGE=1`** — 检查所有纹理成员函数，例如 `read`、`write`、`get_width` 等。当 App 触发无效纹理操作时，Metal 会遵循你的 `MTL_SHADER_VALIDATION_FAIL_MODE` 设置；此类操作包括访问 `nil` 纹理实例、有效但非驻留的纹理实例、其类型与着色器签名不匹配的驻留纹理实例，或者未通过 [MTLComputeCommandEncoder](../metal/mtlcomputecommandencoder.md) 或 [MTLRenderCommandEncoder](../metal/mtlrendercommandencoder.md) 实例的某个资源使用方法获得适当 [MTLResourceUsage](../metal/mtlresourceusage.md) 配置的驻留纹理实例（请参阅[参数缓冲区资源准备命令](../metal/argument-buffer-resource-preparation-commands.md)）。
-- **`MTL_SHADER_VALIDATION_STACK_OVERFLOW=1`** — 检查所有间接调用（通过函数指针、可见函数、交叉函数和动态库进行的调用）以及递归调用。如果这些函数的调用栈深度超过相应阶段中 `maxCallStackDepth` 的值，就会发生错误，系统会跳过该函数调用。
+- **`MTL_SHADER_VALIDATION_STACK_OVERFLOW=1`** — 检查所有间接调用（通过函数指针、可见函数、相交函数（intersection function）和动态库进行的调用）以及递归调用。如果这些函数的调用栈深度超过相应阶段中 `maxCallStackDepth` 的值，就会发生错误，系统会跳过该函数调用。
 - **`MTL_SHADER_VALIDATION_TENSOR_VALIDATION=1`** — 检查张量操作是否包含无效参数。如果此值设为任何非零值，Shader Validation 会对所有张量进行插桩。`MTL_SHADER_VALIDATION_FAIL_MODE` 决定访问无效内存的结果。默认值为 `1`。设为 `0` 可停用。
 - **`MTL_SHADER_VALIDATION_GENERIC_ADDRESS_SPACE=1`** — 检查从通用地址空间到特定地址空间的指针类型静态转换是否正确。默认值为 `1`。
 - **`MTL_SHADER_VALIDATION_NAN_INF=1`** — 检查渲染管线状态对象的顶点阶段是否将 `INF` 或 `NaN` 写入任何插值变量。将 `INF` 或 `NaN` 写入插值变量（带 `[[position]]` 属性的插值变量除外）会导致未定义的 GPU 行为。默认值为 `1`。设为 `0` 可停用。

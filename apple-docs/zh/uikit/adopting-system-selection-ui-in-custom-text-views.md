@@ -34,7 +34,7 @@ translated: true
 - 用于选择文本范围的选择手柄
 - 用于在大段文本中放置文本光标的放大镜
 
-如果你使用高度自定义的 UI 显示文本，可以在 UIKit App 中采用此系统选择 UI。在大多数涉及文本选择显示和交互的情况下，请使用 [UITextInteraction](uitextinteraction.md)。它包含系统选择 UI 和标准手势识别器，让用户可以在自定义文本视图中修改选择状态。如果你想自行实现选择手势，但仍希望使用标准系统 UI 表示文本选择，请改用 [UITextSelectionDisplayInteraction](uitextselectiondisplayinteraction.md)。本文介绍采用 [UITextSelectionDisplayInteraction](uitextselectiondisplayinteraction.md) 的步骤。
+如果你使用高度自定义的 UI 显示文本，可以在 UIKit App 中采用此系统选择 UI。在大多数涉及文本选择显示和交互的情况下，请使用 [UITextInteraction](uitextinteraction.md)。它包含系统选择 UI 和标准手势识别器（gesture recognizer），让用户可以在自定义文本视图中修改选择状态。如果你想自行实现选择手势，但仍希望使用标准系统 UI 表示文本选择，请改用 [UITextSelectionDisplayInteraction](uitextselectiondisplayinteraction.md)。本文介绍采用 [UITextSelectionDisplayInteraction](uitextselectiondisplayinteraction.md) 的步骤。
 
 ### 向自定义文本视图添加系统选择 UI
 

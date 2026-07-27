@@ -21,7 +21,7 @@ translated: true
 
 <sub>示例代码</sub>
 
-使用动态颜色和视觉效果，在你的 iOS App 中采用深色模式。
+使用动态颜色和视觉效果，在你的 iOS App 中采用深色模式（Dark Mode）。
 
 ## 概述
 

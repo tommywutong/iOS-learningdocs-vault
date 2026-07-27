@@ -44,7 +44,7 @@ translated: true
 
 ### 创建用于绘图的手势识别器
 
-示例项目使用_长按手势识别器_通过 Apple Pencil 绘制笔画；当用户按住触摸达到最短时长时，该识别器就会作出响应。
+示例项目使用_长按手势识别器（long-press gesture recognizer）_通过 Apple Pencil 绘制笔画；当用户按住触摸达到最短时长时，该识别器就会作出响应。
 
 App 实现了 `DrawGestureRecognizer` 子类，该子类扩展其超类 [UILongPressGestureRecognizer](uilongpressgesturerecognizer.md) 的能力，以跟踪 `currentTouch` 和 `currentEvent`。这些附加属性提供了实现高保真绘图所需的信息。
 

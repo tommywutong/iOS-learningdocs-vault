@@ -21,7 +21,7 @@ translated: true
 
 <sub>文章</sub>
 
-更新旧版 App 代码签名，让你的 App 能够在当前操作系统版本上运行。
+更新旧版 App 代码签名（code signing），让你的 App 能够在当前操作系统版本上运行。
 
 ## 概述
 

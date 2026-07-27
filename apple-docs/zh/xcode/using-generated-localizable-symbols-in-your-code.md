@@ -15,7 +15,7 @@ content_hash: 'sha256:115dc7183194c4ce'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) › [Xcode](../xcode.md) › [Localization](localization.md)
+> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Localization](localization.md)
 
 # 在代码中使用生成的可本地化符号
 

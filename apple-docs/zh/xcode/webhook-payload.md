@@ -15,7 +15,7 @@ content_hash: 'sha256:7c2c5a0e586b4a0f'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) › [Xcode](../xcode.md) › [Xcode Cloud](xcode-cloud.md)
+> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
 
 # Xcode Cloud Webhook payload 参考
 
