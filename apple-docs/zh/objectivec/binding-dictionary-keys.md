@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [observedObject](../appkit/nsbindinginfokey/observedobject.md) — 该绑定所观察的可观察控制器对象。
 - [observedKeyPath](../appkit/nsbindinginfokey/observedkeypath.md) — 一个 `NSString` 对象，包含该绑定的键路径。
@@ -31,7 +31,7 @@ translated: true
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [NSBindingName](../appkit/nsbindingname.md) — 为某些方法指定绑定的值。
 - [NSBindingOption](../appkit/nsbindingoption.md)

@@ -42,13 +42,13 @@ translated: true
 
 - [accessibilityCustomActions](nsobject-swift.class/accessibilitycustomactions.md) — 与内置动作一起显示的自定义动作数组。
 
-### Constants
+### 常量
 
 - [UIAccessibilityScrollDirection](../uikit/uiaccessibilityscrolldirection.md) — 滚动动作的方向。
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Accessibility Programming Guide for iOS](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008785)
 

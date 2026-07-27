@@ -57,7 +57,7 @@ translated: true
 - [NSKeyValueObservingCustomization](../foundation/nskeyvalueobservingcustomization.md) — 使用键值观察并不要求遵循 NSKeyValueObservingCustomization。如果你需要针对某个键禁用自动通知，或添加依赖键，就提供这些函数的实现
 - [observationInfo](nsobject-swift.class/observationinfo.md) — 返回一个指针，标识与被观察对象上已注册的所有观察者相关的信息。
 
-### Constants
+### 常量
 
 - [NSKeyValueObservation](../foundation/nskeyvalueobservation.md)
 - [NSKeyValueObservedChange](../foundation/nskeyvalueobservedchange.md)
@@ -68,6 +68,6 @@ translated: true
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Key-Value Observing Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)

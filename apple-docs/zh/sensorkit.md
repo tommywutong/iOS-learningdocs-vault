@@ -40,7 +40,7 @@ translated: true
 
 ## 主题
 
-### 要点
+### 基础
 
 - [SensorKit updates](updates/sensorkit.md) — 了解 SensorKit 的重要变更。
 

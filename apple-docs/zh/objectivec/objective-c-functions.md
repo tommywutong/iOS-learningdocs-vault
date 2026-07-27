@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Functions
+### 函数
 
 - [autoreleasepool(invoking:)](<autoreleasepool(invoking_).md>)
 - [class_lookupMethod](<class_lookupmethod(____).md>) _(已废弃)_
@@ -68,7 +68,7 @@ translated: true
 
 ## 另请参阅
 
-### Reference
+### 参考
 
 - [Objective-C Runtime](objective-c-runtime.md) — 描述 macOS Objective-C runtime 库的支持函数和数据结构。
 - [Objective-C Structures](objective-c-structures.md)

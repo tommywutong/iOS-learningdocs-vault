@@ -106,7 +106,7 @@ Xcode Cloud 是一套使用 Git 进行源代码管理的 CI/CD 系统，它为�
 
 ## 另请参阅
 
-### Essentials
+### 基础
 
 - [Getting started with Xcode Cloud](getting-started-with-xcode-cloud.md) — 在开发过程中使用 Xcode Cloud 在云端构建和测试你的 App。
 - [Distributing your Xcode Cloud builds through TestFlight](distributing-your-xcode-cloud-builds-through-testflight.md) — 为内部测试人员创建一个 TestFlight 分发工作流。

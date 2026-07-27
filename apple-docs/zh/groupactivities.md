@@ -34,7 +34,7 @@ translated: true
 
 ## 主题
 
-### 基础知识
+### 基础
 
 - [com.apple.developer.group-session](bundleresources/entitlements/com.apple.developer.group-session.md) — 一个布尔值，指示 App 是否可以实现共享的群组体验。
 

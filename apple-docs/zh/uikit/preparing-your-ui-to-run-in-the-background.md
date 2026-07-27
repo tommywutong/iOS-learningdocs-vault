@@ -111,6 +111,6 @@ App 在进入后台之后通常不会获得任何额外的执行时间。不过�
 
 ## 另请参阅
 
-### Essentials
+### 基础
 
 - [Preparing your UI to run in the foreground](preparing-your-ui-to-run-in-the-foreground.md) — 配置你的 App，使其显示在屏幕上。

@@ -49,7 +49,7 @@ GameKit 还提供用户界面组件，让玩家可以直接在你的游戏中查
 
 ## 主题
 
-### 基础知识
+### 基础
 
 - [初始化和配置 Game Center](gamekit/initializing-and-configuring-game-center.md) — 在你的 Xcode 项目中启用 Game Center、配置功能，并在本地测试它们。
 - [验证玩家身份](gamekit/authenticating-a-player.md) — 确认玩家凭据和设备功能，并检查账户限制。

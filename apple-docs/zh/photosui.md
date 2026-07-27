@@ -79,20 +79,20 @@ PhotosUI 提供了一个照片选择器，让用户可以查看自己的照片�
 - [PHProjectExtensionController](photosui/phprojectextensioncontroller.md) — 定义项目扩展生命周期和支持类型的协议。
 - [PHProjectCategory](photosui/phprojectcategory.md) — 「照片」项目扩展分类的表示。
 
-### Classes
+### 类
 
 - [PHSharedAlbumCreationViewController](photosui/phsharedalbumcreationviewcontroller.md) _(beta)_
 - [PHSharedAlbumCustomizationViewController](photosui/phsharedalbumcustomizationviewcontroller.md) _(beta)_
 - [PHSharedAlbumPostingViewController](photosui/phsharedalbumpostingviewcontroller.md) _(beta)_
 
-### Structures
+### 结构体
 
 - [PHPickerMetadataOptions](photosui/phpickermetadataoptions.md) — 为 \\c PHPickerViewController 指定元数据选项的常量。 _(beta)_
 - [PHPickerSearchText](photosui/phpickersearchtext-swift.struct.md) — `PHPickerViewController` 的搜索文本。
 - [PHSharedAlbumCreationConfiguration](photosui/phsharedalbumcreationconfiguration-swift.struct.md) — 用于配置 `PHSharedAlbumCreationViewController` 的对象。
 - [PHSharedAlbumCreationResult](photosui/phsharedalbumcreationresult-swift.struct.md) — 用户创建共享相簿的结果。
 
-### Enumerations
+### 枚举
 
 - [PHSharedAlbumCreationSharingPolicy](photosui/phsharedalbumcreationsharingpolicy.md) — 创建共享相簿的共享策略。 _(beta)_
 

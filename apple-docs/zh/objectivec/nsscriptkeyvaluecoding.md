@@ -51,13 +51,13 @@ Cocoa 脚本编写利用键值编码来获取和设置可脚本化对象中的�
 
 - [- coerceValue:forKey:](<nsobject-swift.class/coercevalue(__forkey_).md>) — 如有需要，使用来自类描述和 `NSScriptCoercionHandler` 的类型信息，尝试将 `key` 的 `value` 转换为正确的类型。
 
-### Constants
+### 常量
 
 - [NSScriptKeyValueCoding Exception Names](nsscriptkeyvaluecoding-exception-names.md) — 键值编码方法引发的异常。
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Cocoa Scripting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40002164)
 - [Key-Value Coding Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107i)

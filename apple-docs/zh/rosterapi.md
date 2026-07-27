@@ -38,7 +38,7 @@ Roster API 提供对 Apple School Manager（ASM）中人员和班级信息的访
 
 ## 主题
 
-### 要点
+### 基础
 
 - [Obtaining information about people and classes](rosterapi/obtaining-information-about-people-and-classes.md) — 准备你的 App，以便从服务器请求组织信息。
 - [Validating with the Roster API test scope](rosterapi/validating-with-the-roster-api-test-scope.md) — 使用测试数据确保你与 Roster API 的集成正常工作。

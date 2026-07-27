@@ -37,7 +37,7 @@ translated: true
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [WebKit Objective-C Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DisplayWebContent/DisplayWebContent.html#//apple_ref/doc/uid/10000164i)
 

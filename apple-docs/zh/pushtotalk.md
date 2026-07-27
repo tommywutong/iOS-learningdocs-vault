@@ -32,7 +32,7 @@ Push to Talk 框架是一套省电、易用且注重隐私的 API。它让你的
 
 ## 主题
 
-### 要点
+### 基础
 
 - [Creating a Push to Talk app](pushtotalk/creating-a-push-to-talk-app.md) — 使用系统用户界面控制构建一款对讲机风格的 App。
 - [PTChannelManager](pushtotalk/ptchannelmanager.md) — 表示 push-to-talk 频道管理器的对象。

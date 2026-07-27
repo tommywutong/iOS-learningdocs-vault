@@ -124,7 +124,7 @@ Xcode Cloud 是内置于 Xcode 中的持续集成与交付 (CI/CD) 系统，用�
 
 ## 另请参阅
 
-### 基础知识
+### 基础
 
 - [通过 TestFlight 分发你的 Xcode Cloud 构建版本](distributing-your-xcode-cloud-builds-through-testflight.md) — 为内部测试人员创建 TestFlight 分发工作流程。
 - [关于使用 Xcode Cloud 进行持续集成与交付](about-continuous-integration-and-delivery-with-xcode-cloud.md) — 了解使用 Xcode Cloud 进行持续集成与交付如何帮助你创建高质量的 App 和框架。

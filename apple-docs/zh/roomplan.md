@@ -58,7 +58,7 @@ translated: true
 
 ## 主题
 
-### 要点
+### 基础
 
 - [Create a 3D model of an interior room by guiding the user through an AR experience](roomplan/create-a-3d-model-of-an-interior-room-by-guiding-the-user-through-an-ar-experience.md) — 高亮物理结构并显示文字,借助框架提供的视图引导用户扫描其物理环境的形状。
 

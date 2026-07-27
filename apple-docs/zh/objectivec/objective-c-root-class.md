@@ -25,13 +25,13 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [OBJC_ROOT_CLASS](objc_root_class.md) — 如果你定义了一个 Objective-C 根类，会收到一个编译器错误，提示该类在未指定基类的情况下被定义。你可以在根类的定义之前（即在 `@interface` 指令之前）加上 `OBJC_ROOT_CLASS` 来避免这个编译器错误。
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Boolean Values](boolean-values.md) — 这些宏定义了方便的常量来表示布尔值。
 - [Null Values](null-values.md) — 这些宏为类和实例定义了空值。

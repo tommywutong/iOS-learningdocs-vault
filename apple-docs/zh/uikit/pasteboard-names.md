@@ -29,14 +29,14 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [UIPasteboardNameGeneral](uipasteboard/name-swift.struct/general.md) — 标识通用粘贴板的名称，你可将其用于一般的复制-剪切-粘贴操作。
 - [UIPasteboardNameFind](uipasteboardnamefind.md) — 标识 Find 粘贴板的名称。_(已废弃)_
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Name](uipasteboard/name-swift.struct.md) — 标识某个粘贴板名称的常量。
 - [OptionsKey](uipasteboard/optionskey.md) — 用于描述粘贴板隐私的选项。

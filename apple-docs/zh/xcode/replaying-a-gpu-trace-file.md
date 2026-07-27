@@ -42,7 +42,7 @@ translated: true
 
 ## 另请参阅
 
-### Essentials
+### 基础
 
 - [Capturing a Metal workload in Xcode](capturing-a-metal-workload-in-xcode.md) — 通过配置你的项目以使用 Metal debugger 来分析 App 的性能。
 - [Capturing a Metal workload programmatically](capturing-a-metal-workload-programmatically.md) — 通过调用 Metal 的帧捕获来分析 App 的性能。

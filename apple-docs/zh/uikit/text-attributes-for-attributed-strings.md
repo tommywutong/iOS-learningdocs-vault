@@ -25,7 +25,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [accessibilityTextCustom](../foundation/nsattributedstring/key/accessibilitytextcustom.md) — 用于指定要应用到文本上的自定义属性的键。
 - [accessibilityTextHeadingLevel](../foundation/nsattributedstring/key/accessibilitytextheadinglevel.md) — 用于指定文本标题级别的键。

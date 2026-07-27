@@ -25,6 +25,6 @@ translated: true
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [NSUnknownUserInfoKey](nsunknownuserinfokey.md) — 键值编码操作失败时所涉及的键。

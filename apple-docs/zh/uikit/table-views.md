@@ -38,7 +38,7 @@ translated: true
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [UITableView](uitableview.md) — 一个视图，以单列中的多行来呈现数据。
 

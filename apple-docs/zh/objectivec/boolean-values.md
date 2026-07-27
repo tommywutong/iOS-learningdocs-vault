@@ -25,14 +25,14 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [YES](yes.md) — 将 `YES` 定义为 `1`。
 - [NO](no.md) — 将 `NO` 定义为 `0`。
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Null Values](null-values.md) — 这些宏为类和实例定义了空值。
 - [Dispatch Function Prototypes](dispatch-function-prototypes.md) — 这个宏指示 dispatch 函数是否必须转换为合适的函数指针类型。

@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Structures
+### 结构体
 
 - [NSZone](nszone.md)
 - [NXHashTablePrototype](nxhashtableprototype.md)
@@ -37,7 +37,7 @@ translated: true
 
 ## 另请参阅
 
-### Reference
+### 参考
 
 - [Objective-C Runtime](objective-c-runtime.md) — 描述 macOS Objective-C runtime 库的支持函数和数据结构。
 - [Objective-C Constants](objective-c-constants.md)

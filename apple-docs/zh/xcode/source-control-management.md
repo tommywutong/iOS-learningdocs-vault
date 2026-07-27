@@ -35,7 +35,7 @@ Xcode 通过对 Git 的内置支持简化了源代码控制管理。你会创建
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [Configuring your Xcode project to use source control](configuring-your-xcode-project-to-use-source-control.md) — 通过将你的 Xcode 项目配置为使用 Git 源代码控制，在团队成员和开发用计算机之间同步代码更改。
 - [Tracking code changes in a source control repository](tracking-code-changes-in-a-source-control-repository.md) — 通过提交并推送到远程仓库，为你的项目创建一份增量更改的历史记录。

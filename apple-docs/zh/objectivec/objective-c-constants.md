@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSIntegerMax](nsintegermax.md) — `NSInteger` 的最大值。
 - [NS_ENFORCE_NSOBJECT_DESIGNATED_INITIALIZER](ns_enforce_nsobject_designated_initializer.md)
@@ -38,7 +38,7 @@ translated: true
 
 ## 另请参阅
 
-### Reference
+### 参考
 
 - [Objective-C Runtime](objective-c-runtime.md) — 描述 macOS Objective-C runtime 库的支持函数和数据结构。
 - [Objective-C Structures](objective-c-structures.md)

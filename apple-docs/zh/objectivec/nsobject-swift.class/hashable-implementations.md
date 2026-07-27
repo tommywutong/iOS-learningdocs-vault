@@ -23,10 +23,10 @@ translated: true
 
 ## 主题
 
-### Instance Properties
+### 实例属性
 
 - [hashValue](hashvalue.md)
 
-### Instance Methods
+### 实例方法
 
 - [hash(into:)](<hash(into_).md>)

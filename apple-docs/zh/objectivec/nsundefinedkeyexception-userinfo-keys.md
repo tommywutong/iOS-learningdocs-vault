@@ -27,14 +27,14 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSTargetObjectUserInfoKey](nstargetobjectuserinfokey.md) — 键值编码操作失败时所涉及的对象。
 - [NSUnknownUserInfoKey](nsunknownuserinfokey.md) — 键值编码操作失败时所涉及的键。
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Key Value Coding Exception Names](key-value-coding-exception-names.md) — 这个常量定义了键值编码操作失败时引发的异常的名称。
 - [NSKeyValueValidationError](../foundation/nskeyvaluevalidationerror-swift.var.md) — 一个键值编码验证错误。

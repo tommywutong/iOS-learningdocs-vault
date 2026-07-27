@@ -29,7 +29,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSDateComponentUndefined](nsdatecomponentundefined.md) — 指定一个没有值的日期分量。
 - [NSUndefinedDateComponent](nsundefineddatecomponent.md) — 指定一个没有值的日期分量。_(已废弃)_

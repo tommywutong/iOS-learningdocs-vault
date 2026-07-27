@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSTextCheckingAllCustomTypes](nstextcheckingallcustomtypes.md) — 客户端可以使用的检查类型。
 - [NSTextCheckingAllSystemTypes](nstextcheckingallsystemtypes.md) — 系统支持的检查类型。前 32 种类型是保留的。
@@ -31,7 +31,7 @@ translated: true
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Keys for Transit Components](keys-for-transit-components.md) — 以下常量标识了在分量字典中可能返回的键。
 - [Keys for Address Components](keys-for-address-components.md) — 以下常量标识了在 [addressComponents](nstextcheckingresult/addresscomponents.md) 字典中可能返回的键。

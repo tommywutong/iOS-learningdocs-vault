@@ -23,14 +23,14 @@ translated: true
 
 ## 主题
 
-### Macros
+### 宏
 
 - [OBJC_API_VERSION](objc_api_version.md)
 - [OBJC_NO_GC](objc_no_gc.md)
 
 ## 另请参阅
 
-### Reference
+### 参考
 
 - [Objective-C Runtime](objective-c-runtime.md) — 描述 macOS Objective-C runtime 库的支持函数和数据结构。
 - [Objective-C Structures](objective-c-structures.md)

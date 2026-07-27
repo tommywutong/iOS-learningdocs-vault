@@ -23,12 +23,12 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSProprietaryStringEncoding](nsproprietarystringencoding.md) — 安装特定的编码。_(已废弃)_
 
 ## 另请参阅
 
-### Deprecated
+### 已废弃
 
 - [NSLinguisticTagger](nslinguistictagger.md) — 分析自然语言文本以标注词性和词法类别，识别名称，执行词形还原，并确定语言和文字系统。_(已废弃)_

@@ -23,11 +23,11 @@ translated: true
 
 ## 主题
 
-### Type Aliases
+### 类型别名
 
 - [ObjectiveCValue](objectivecvalue.md) — 从 Objective-C 调用时链接属性值的类型。
 
-### Type Methods
+### 类型方法
 
 - [objectiveCValue(for:)](<objectivecvalue(for_).md>) — 返回指定 URL 值对应的对象。
 - [value(for:)](<value(for_).md>) — 返回指定对象的 URL 值。

@@ -23,6 +23,6 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [naturalOutputSegment](../naturaloutputsegment.md)

@@ -25,14 +25,14 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [nil](nil-227m0.md) — 定义空实例的 `id`。
 - [Nil](nil-565ns.md)
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Boolean Values](boolean-values.md) — 这些宏定义了方便的常量来表示布尔值。
 - [Dispatch Function Prototypes](dispatch-function-prototypes.md) — 这个宏指示 dispatch 函数是否必须转换为合适的函数指针类型。

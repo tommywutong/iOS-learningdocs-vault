@@ -46,6 +46,6 @@ Cocoa 为 `NSString` 和 `NSAttributedString` 提供了这些脚本比较方法�
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Cocoa Scripting Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_intro/SAppsIntro.html#//apple_ref/doc/uid/TP40002164)

@@ -34,7 +34,7 @@ translated: true
 
 ## 另请参阅
 
-### 基础要点
+### 基础
 
 - [UIPointerInteraction](uipointerinteraction.md) — 一种交互，可为视图启用效果支持，或在 App 的某个区域内自定义指针的外观。
 - [UIPointerInteractionDelegate](uipointerinteractiondelegate.md) — 用于在交互所属视图内处理指针移动的接口。

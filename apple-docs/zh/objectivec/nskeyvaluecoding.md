@@ -74,7 +74,7 @@ translated: true
 - [- unableToSetNilForKey:](<nsobject-swift.class/unabletosetnil(forkey_).md>) — 当 `key` 由一个标量特性表示时被调用。_(已废弃)_
 - [- valuesForKeys:](<nsobject-swift.class/values(forkeys_).md>) — 返回一个字典，其键为 `keys` 中的属性名称，对应的值为相应的属性值。_(已废弃)_
 
-### Constants
+### 常量
 
 - [Key Value Coding Exception Names](key-value-coding-exception-names.md) — 这个常量定义了键值编码操作失败时引发的异常的名称。
 - [NSUndefinedKeyException userInfo Keys](nsundefinedkeyexception-userinfo-keys.md) — 这些常量是 `NSUndefinedKeyException` 的 `userInfo` 字典中的键
@@ -82,7 +82,7 @@ translated: true
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Key-Value Coding Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/index.html#//apple_ref/doc/uid/10000107i)
 

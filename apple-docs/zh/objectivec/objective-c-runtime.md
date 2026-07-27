@@ -205,11 +205,11 @@ macOS 上 Objective-C runtime 库的实现是 Mac 平台独有的。对于其他
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Objective-C Runtime Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048)
 
-### Reference
+### 参考
 
 - [Objective-C Structures](objective-c-structures.md)
 - [Objective-C Constants](objective-c-constants.md)

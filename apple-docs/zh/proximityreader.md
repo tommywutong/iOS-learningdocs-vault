@@ -101,6 +101,6 @@ ProximityReader 框架支持 _iPhone 上的插卡、感应和刷卡付款_，该
 - [PaymentCardReaderError](proximityreader/paymentcardreadererror.md) — 指示读卡器配置问题的错误类型。
 - [MobileDocumentReaderError](proximityreader/mobiledocumentreadererror.md) — 指示准备移动证件读取器会话及执行证件请求时出现问题的错误类型。
 
-### Structures
+### 结构体
 
 - [MobileDocumentHolderName](proximityreader/mobiledocumentholdername.md) — 表示移动身份证件持有者姓名的类型。 _(beta)_

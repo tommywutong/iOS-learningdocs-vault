@@ -158,7 +158,7 @@ _启动画面_ 是一个界面文件，在你的 App 启动时立即出现，随
 
 ## 另请参阅
 
-### 基础知识
+### 基础
 
 - [更改 bundle 标识符](changing-the-bundle-identifier.md) — 修改你 App 的 bundle 标识符，并在其出现的所有位置进行更新。
 </content>

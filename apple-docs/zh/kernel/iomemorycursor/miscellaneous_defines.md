@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [IOPhysicalSegment](../iophysicalsegment.md)
 - [OutputSegmentFunc](../outputsegmentfunc.md)

@@ -23,13 +23,13 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [undefinedKeyException](../foundation/nsexceptionname/undefinedkeyexception.md) — 在键值编码操作失败时引发。
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [NSUndefinedKeyException userInfo Keys](nsundefinedkeyexception-userinfo-keys.md) — 这些常量是 `NSUndefinedKeyException` 的 `userInfo` 字典中的键
 - [NSKeyValueValidationError](../foundation/nskeyvaluevalidationerror-swift.var.md) — 一个键值编码验证错误。

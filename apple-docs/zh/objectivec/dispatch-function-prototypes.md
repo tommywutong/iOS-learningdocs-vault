@@ -25,6 +25,6 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [OBJC_OLD_DISPATCH_PROTOTYPES](objc_old_dispatch_prototypes.md) — `OBJC_OLD_DISPATCH_PROTOTYPES == 0` 强制要求 dispatch 函数必须转换为合适的函数指针类型。

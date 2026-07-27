@@ -25,7 +25,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [UIPasteboardTypeListString](uipasteboard/typeliststring.md) — 一个数组，包含字符串类型统一类型标识符（UTI）对应的粘贴板项目表示类型，包括 `kUTTypeUTF8PlainText` 和 `kUTTypeText` 类型。相关的 [UIPasteboard](uipasteboard.md) 属性有 [string](uipasteboard/string.md) 和 [strings](uipasteboard/strings.md)。
 - [UIPasteboardTypeListURL](uipasteboard/typelisturl.md) — 一个数组，包含 URL 类型统一类型标识符（UTI）对应的粘贴板项目表示类型，包括 `kUTTypeURL`。相关的 [UIPasteboard](uipasteboard.md) 属性有 [URL](uipasteboard/url.md) 和 [URLs](uipasteboard/urls.md)。
@@ -35,7 +35,7 @@ translated: true
 
 ## 另请参阅
 
-### Constants
+### 常量
 
 - [Name](uipasteboard/name-swift.struct.md) — 标识某个粘贴板名称的常量。
 - [Pasteboard Names](pasteboard-names.md) — 标识各系统粘贴板的名称。

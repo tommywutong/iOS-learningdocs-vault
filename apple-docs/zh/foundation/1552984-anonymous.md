@@ -25,7 +25,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSHPUXOperatingSystem](nshpuxoperatingsystem.md) — 表示 HP UX 操作系统。
 - [NSMACHOperatingSystem](nsmachoperatingsystem.md) — 表示 macOS 操作系统。

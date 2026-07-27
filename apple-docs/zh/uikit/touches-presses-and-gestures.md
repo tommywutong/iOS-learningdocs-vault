@@ -32,7 +32,7 @@ translated: true
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [Using responders and the responder chain to handle events](using-responders-and-the-responder-chain-to-handle-events.md) — 了解如何处理在你 App 中传播的事件。
 - [UIResponder](uiresponder.md) — 一个用于响应和处理事件的抽象接口。

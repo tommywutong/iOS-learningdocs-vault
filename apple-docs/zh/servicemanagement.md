@@ -33,7 +33,7 @@ translated: true
 
 ## 主题
 
-### 要点
+### 基础
 
 - [Updating helper executables from earlier versions of macOS](servicemanagement/updating-helper-executables-from-earlier-versions-of-macos.md) — 简化 App 的帮助程序可执行文件，并支持新的授权控制。
 - [Updating your app package installer to use the new Service Management API](servicemanagement/updating-your-app-package-installer-to-use-the-new-service-management-api.md) — 通过一个无图形界面的代理 App 了解 Service Management API。

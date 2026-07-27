@@ -49,7 +49,7 @@ translated: true
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Accessibility Programming Guide for iOS](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008785)
 

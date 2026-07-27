@@ -52,7 +52,7 @@ translated: true
 - [- unbind:](<nsobject-swift.class/unbind(__).md>) — 移除接收者与控制器之间给定的绑定。
 - [NSIsControllerMarker(_:)](<../appkit/nsiscontrollermarker(__).md>) — 测试给定对象是否为用于表示某个键相关的选择状态的特殊标记对象。
 
-### Constants
+### 常量
 
 - [NSBindingName](../appkit/nsbindingname.md) — 为某些方法指定绑定的值。
 - [NSBindingOption](../appkit/nsbindingoption.md)
@@ -60,7 +60,7 @@ translated: true
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Cocoa Bindings Reference](https://developer.apple.com/library/archive/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html#//apple_ref/doc/uid/10000189i)
 - [Cocoa Bindings Programming Topics](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html#//apple_ref/doc/uid/10000167i)

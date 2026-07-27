@@ -15,7 +15,7 @@ content_hash: 'sha256:8cf29d22e2979dd0'
 translated: true
 ---
 
-> 导航： [技术](technologies.md)
+> 导航：[技术](technologies.md)
 
 # App Store Server Notifications
 
@@ -54,7 +54,7 @@ App Store 服务器以版本 2 通知格式发送 `TEST` 通知，无论你在 A
 
 ## 主题
 
-### 基础知识
+### 基础
 
 - [启用 App Store Server Notifications](appstoreservernotifications/enabling-app-store-server-notifications.md) — 配置你的服务器并提供 HTTPS URL，以接收关于 App 内购买事件和未上报外部购买 token 的通知。
 - [接收 App Store Server Notifications](appstoreservernotifications/receiving-app-store-server-notifications.md) — 实现服务器端代码来接收和解析通知投递。

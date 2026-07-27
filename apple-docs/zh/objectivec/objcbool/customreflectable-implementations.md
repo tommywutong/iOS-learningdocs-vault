@@ -23,6 +23,6 @@ translated: true
 
 ## 主题
 
-### Instance Properties
+### 实例属性
 
 - [customMirror](custommirror.md)

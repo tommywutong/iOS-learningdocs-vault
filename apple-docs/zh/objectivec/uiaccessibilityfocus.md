@@ -38,7 +38,7 @@ VoiceOver 和其他辅助技术会在元素上放置一个虚拟焦点，让用�
 
 ## 另请参阅
 
-### Related Documentation
+### 相关文档
 
 - [Accessibility Programming Guide for iOS](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008785)
 

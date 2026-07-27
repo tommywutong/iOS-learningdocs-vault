@@ -49,7 +49,7 @@ translated: true
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [Adapting your app when traits change](adapting-your-app-when-traits-change.md) — 了解系统何时发生会影响你 App 的变化，然后高效地更新你的 App。
 

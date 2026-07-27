@@ -96,7 +96,7 @@ func pointerInteraction(_ interaction: UIPointerInteraction, willExit region: UI
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [UIPointerInteraction](uipointerinteraction.md) — 一种交互，可为视图启用效果支持，或自定 App 某个区域内指针的外观。
 - [UIPointerInteractionDelegate](uipointerinteractiondelegate.md) — 一个用于处理交互所在视图内指针移动的接口。

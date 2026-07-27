@@ -29,7 +29,7 @@ translated: true
 
 ## 主题
 
-### Essentials
+### 基础
 
 - [Video Subscriber Account updates](updates/videosubscriberaccount.md) — 了解 Video Subscriber Account 中的重要变更。
 
@@ -59,6 +59,6 @@ translated: true
 - [VSError](videosubscriberaccount/vserror.md) — 该框架错误域中的错误信息。
 - [Code](videosubscriberaccount/vserror/code.md) — 该框架错误域中的错误代码。
 
-### Deprecated
+### 已废弃
 
 - [VSSubscription](videosubscriberaccount/vssubscription.md) — 描述订阅者对内容的访问权限的对象。_(已废弃)_

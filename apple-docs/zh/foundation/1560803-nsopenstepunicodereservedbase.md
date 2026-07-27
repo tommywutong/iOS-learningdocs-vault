@@ -25,7 +25,7 @@ translated: true
 
 ## 主题
 
-### Constants
+### 常量
 
 - [NSOpenStepUnicodeReservedBase](nsopenstepunicodereservedbase.md) — 指定为 Apple 公司自用保留的 Unicode 字符范围的下限（该范围为 `0xF400–0xF8FF`）。
 
