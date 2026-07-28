@@ -82,7 +82,7 @@ translated: true
 
 ## 另请参阅
 
-### User interactions
+### 用户交互
 
 - [Menus and shortcuts](menus-and-shortcuts.md) — 使用菜单系统、上下文菜单、主屏幕快速操作和键盘快捷键，简化与你 App 的交互。
 - [Drag and drop](drag-and-drop.md) — 通过在视图中使用交互 API，为你的 App 带来拖放功能。

@@ -15,7 +15,7 @@ content_hash: 'sha256:3c6010d4b61103c6'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [编码智能](coding-intelligence.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [编码智能](coding-intelligence.md)
 
 # 在源代码编辑器中使用编码智能
 

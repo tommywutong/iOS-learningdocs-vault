@@ -15,7 +15,7 @@ content_hash: 'sha256:8b6a9ea1447e445e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
 
 # 了解 Xcode Cloud 基础设施验证构建
 

@@ -130,7 +130,7 @@ func pointerInteraction(_ interaction: UIPointerInteraction, willExit region: UI
 
 ## 另请参阅
 
-### User interactions
+### 用户交互
 
 - [Touches, presses, and gestures](touches-presses-and-gestures.md) — 把你 App 的事件处理逻辑封装到手势识别器中，以便在你的 App 中复用这些代码。
 - [Menus and shortcuts](menus-and-shortcuts.md) — 使用菜单系统、上下文菜单、主屏幕快速操作和键盘快捷键，简化与你 App 的交互。

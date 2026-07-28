@@ -15,7 +15,7 @@ content_hash: 'sha256:a29760338b598a5b'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [构建系统](build-system.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [构建系统](build-system.md)
 
 # 了解 Xcode 中构建产品布局的变化
 

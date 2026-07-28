@@ -15,7 +15,7 @@ content_hash: 'sha256:c0d160c990784bd5'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [及早诊断内存、线程和崩溃问题](diagnosing-memory-thread-and-crash-issues-early.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [尽早诊断内存、线程和崩溃问题](diagnosing-memory-thread-and-crash-issues-early.md)
 
 # 未初始化的互斥锁
 
@@ -62,7 +62,7 @@ void performWork() {
 
 ### Thread Sanitizer
 
-- [数据争用](data-races.md) — 检测多个线程对可变状态进行的未同步访问。
+- [数据争用](data-races.md) — 检测多个线程对可变状态（mutable state）进行的未同步访问。
 - [Swift 访问争用](swift-access-races.md) — 检测 Swift 中多个线程对可变状态进行的未同步访问。
 - [集合和其他 API 上的争用](races-on-collections-and-other-apis.md) — 检测一个线程访问可变对象、另一个线程同时写入该对象的情况。
 - [线程泄漏](thread-leaks.md) — 检测你在使用线程后未将其关闭的情况。

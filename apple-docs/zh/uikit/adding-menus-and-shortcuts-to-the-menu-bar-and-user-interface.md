@@ -206,7 +206,7 @@ Mac App 通常使用「设置」窗口来显示特定于 App 的设置。这个�
 
 ## 另请参阅
 
-### User interactions
+### 用户交互
 
 - [Navigating an app’s user interface using a keyboard](navigating-an-app-s-user-interface-using-a-keyboard.md) — 在 iPad App 和使用 Mac Catalyst 构建的 App 中，使用键盘和可获得焦点的 UI 元素在用户界面元素之间导览。
 - [Handling key presses made on a physical keyboard](handling-key-presses-made-on-a-physical-keyboard.md) — 检测用户何时按下和释放物理键盘上的按键。

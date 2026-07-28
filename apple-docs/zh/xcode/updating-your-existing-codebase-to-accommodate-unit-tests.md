@@ -15,7 +15,7 @@ content_hash: 'sha256:d5c5bda2b8f23f39'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [测试](testing.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [测试](testing.md)
 
 # 更新现有代码库以适应单元测试
 
@@ -202,7 +202,7 @@ class DocumentLoader {
 }
 ```
 
-要移除待测代码与其所创建对象之间的耦合，请在受测类上定义一个变量，用于表示该类应构造的对象 _类型_。这种变量称为 _元类型值（metatype value）_。将其默认值设为该类已经使用的类型。你需要确保用于构造实例的初始化方法标记为 `required`。以下代码展示了引入该变量后的文稿浏览器视图控制器（view controller）委托。该委托会使用元类型值所定义的类型创建文稿。
+要移除待测代码与其所创建对象之间的耦合，请在受测类上定义一个变量，用于表示该类应构造的对象 _类型_。这种变量称为 _元类型值（metatype value）_。将其默认值设为该类已经使用的类型。你需要确保用于构造实例的初始化方法标记为 `required`。以下代码展示了引入该变量后的文稿浏览器视图控制器（view controller）委托（delegate）。该委托会使用元类型值所定义的类型创建文稿。
 
 ```swift
 class DocumentLoader {
@@ -419,7 +419,7 @@ class AccountTests : XCTestCase {
 有时，这种模式可以帮助你测试组合了多项职责的现有类，但前提是这些类和方法未标记为 `final`；从头设计可测试代码时，这并不是一种值得采用的良好做法。请将处理不同关注点的代码分离到不同类中，例如：
 
 - 实现 App 自定行为的控制器类。
-- 管理视图层级结构并响应 UI 操作的视图控制器。
+- 管理视图层级结构（view hierarchy）并响应 UI 操作的视图控制器。
 - 准备并更新你在 App 视图中呈现的数据的视图模型。
 
 添加 UI 测试，以端到端工作流验证真实类的行为，覆盖你在单元测试中以桩替换的逻辑。

@@ -15,7 +15,7 @@ content_hash: 'sha256:dd2c5bd480024fed'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
 
 # 了解 App 中的挂起
 
@@ -34,7 +34,7 @@ translated: true
 挂起几乎总是主线程（main thread）上长时间运行的工作所致。本文介绍导致挂起的原因、主线程和主运行循环为何是理解挂起的关键，以及各种工具如何检测 Apple 设备上的挂起。
 
 > [!note] 注意
-> 本文假设你基本了解事件处理与渲染循环，也基本了解挂起和卡顿（hitch）及其区别。如果不熟悉挂起与卡顿，请参阅[了解用户界面响应能力](understanding-user-interface-responsiveness.md)，进一步了解它们以及事件处理与渲染循环。
+> 本文假设你基本了解事件处理与渲染循环（render loop），也基本了解挂起和卡顿（hitch）及其区别。如果不熟悉挂起与卡顿，请参阅[了解用户界面响应能力](understanding-user-interface-responsiveness.md)，进一步了解它们以及事件处理与渲染循环。
 
 ### 了解主线程上的工作
 
@@ -42,7 +42,7 @@ translated: true
 
 1. 将事件递送到正确的位置，并调用正确的处理程序。
 2. 进行所有状态更改、获取数据、更新 UI 等。
-3. 执行 Core Animation 提交（CA commit），将视图层级结构的所有更改提交给渲染服务器。你的代码处理完事件时，UI 框架通常会自动执行 CA 提交。
+3. 执行 Core Animation 提交（CA commit），将视图层级结构（view hierarchy）的所有更改提交给渲染服务器。你的代码处理完事件时，UI 框架通常会自动执行 CA 提交。
 
 ![](../../../attachments/aef125312e584e43c3de0448ce027513/understanding-hangs-in-our-app-1@2x.png)
 
