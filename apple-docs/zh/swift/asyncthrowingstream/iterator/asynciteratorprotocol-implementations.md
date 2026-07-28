@@ -1,0 +1,29 @@
+---
+title: AsyncIteratorProtocol 实现
+framework: Swift
+symbol_kind: article
+role: collectionGroup
+role_heading: API Collection
+platforms: []
+languages: [swift]
+beta: false
+deprecated: false
+doc_path: /documentation/swift/asyncthrowingstream/iterator/asynciteratorprotocol-implementations
+source_url: 'https://developer.apple.com/documentation/swift/asyncthrowingstream/iterator/asynciteratorprotocol-implementations'
+doc_json: 'https://developer.apple.com/tutorials/data/documentation/swift/asyncthrowingstream/iterator/asynciteratorprotocol-implementations.json'
+content_hash: 'sha256:478ff53814db87ba'
+translated: true
+---
+
+> 导航：[技术](../../../technologies.md) · [Swift](../../../swift.md) · [Swift 标准库](../../swift-standard-library.md) · [并发](../../concurrency.md) · [AsyncThrowingStream](../../asyncthrowingstream.md) · [迭代器](../iterator.md)
+
+# AsyncIteratorProtocol 实现
+
+<sub>API 集合</sub>
+
+## 主题
+
+### 实例方法
+
+- [next()](<next()-2s2hx.md>) — `next()` 基于 `next(isolation:)` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
+- [next(isolation:)](<next(isolation_)-3l7jg.md>) — `next(isolation:)` 基于 `next()` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
