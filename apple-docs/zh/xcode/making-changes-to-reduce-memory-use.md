@@ -15,7 +15,7 @@ content_hash: 'sha256:33d4e48188cb7ecb'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Performance and metrics](performance-and-metrics.md) · [Reducing your app’s memory use](reducing-your-app-s-memory-use.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md) · [减少 App 的内存使用](reducing-your-app-s-memory-use.md)
 
 # 进行更改以减少内存使用
 

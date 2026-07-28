@@ -15,7 +15,7 @@ content_hash: 'sha256:770e030a1755ab8f'
 translated: true
 ---
 
-> 导航：[Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [URL Loading System](../url-loading-system.md) · [URLCredential](../urlcredential.md)
+> 导航：[技术](../../technologies.md) · [Foundation](../../foundation.md) · [URL 加载系统](../url-loading-system.md) · [URLCredential](../urlcredential.md)
 
 # NSURLCredential 实现
 
