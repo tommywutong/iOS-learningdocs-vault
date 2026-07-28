@@ -13,7 +13,7 @@
 | — | API Pollution in Swift Modules | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/api-pollution-in-swift-modules.md) · [网页](https://nshipster.com/swift-api-pollution/) | — | 待翻译 |
 | — | Apple Push Notification Device Tokens | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/apple-push-notification-device-tokens.md) · [网页](https://nshipster.com/apns-device-tokens/) | — | 待翻译 |
 | — | As We May Code | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/as-we-may-code.md) · [网页](https://nshipster.com/as-we-may-code/) | — | 待翻译 |
-| — | Associated Objects | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/associated-objects.md) · [网页](https://nshipster.com/associated-objects/) | — | 待翻译 |
+| 关联对象 | Associated Objects | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/associated-objects.md) · [网页](https://nshipster.com/associated-objects/) | [中文](../../../blogs/zh/nshipster/associated-objects.md) | 已翻译 |
 | — | AVSpeech​Synthesizer | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/avspeechsynthesizer.md) · [网页](https://nshipster.com/avspeechsynthesizer/) | — | 待翻译 |
 | — | Benchmarking | NSHipster (Mattt) | 性能与调试 | [英文](../../../blogs/en/nshipster/benchmarking.md) · [网页](https://nshipster.com/benchmarking/) | — | 待翻译 |
 | — | bless | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/bless.md) · [网页](https://nshipster.com/bless/) | — | 待翻译 |
@@ -62,7 +62,7 @@
 | — | iOS 8 | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/ios-8.md) · [网页](https://nshipster.com/ios8/) | — | 待翻译 |
 | — | iOS 9 | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/ios-9.md) · [网页](https://nshipster.com/ios9/) | — | 待翻译 |
 | — | Java​Script​Core | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/javascriptcore.md) · [网页](https://nshipster.com/javascriptcore/) | — | 待翻译 |
-| — | Key-Value Observing | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/key-value-observing.md) · [网页](https://nshipster.com/key-value-observing/) | — | 待翻译 |
+| 键值观察 | Key-Value Observing | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/key-value-observing.md) · [网页](https://nshipster.com/key-value-observing/) | [中文](../../../blogs/zh/nshipster/key-value-observing.md) | 已翻译 |
 | — | Key​Value​Pairs | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/keyvaluepairs.md) · [网页](https://nshipster.com/keyvaluepairs/) | — | 待翻译 |
 | — | KVC Collection Operators | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/kvc-collection-operators.md) · [网页](https://nshipster.com/kvc-collection-operators/) | — | 待翻译 |
 | — | Language Server Protocol | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/language-server-protocol.md) · [网页](https://nshipster.com/language-server-protocol/) | — | 待翻译 |
@@ -75,7 +75,7 @@
 | — | Manim | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/manim.md) · [网页](https://nshipster.com/manim/) | — | 待翻译 |
 | — | Map​Kit JS | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/mapkit-js.md) · [网页](https://nshipster.com/mapkit-js/) | — | 待翻译 |
 | — | Message-ID and Mail.app Deep Linking on iOS and macOS | NSHipster (Mattt) | 启动、链接与二进制 | [英文](../../../blogs/en/nshipster/message-id-and-mail-app-deep-linking-on-ios-and-macos.md) · [网页](https://nshipster.com/message-id/) | — | 待翻译 |
-| — | Method Swizzling | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/method-swizzling.md) · [网页](https://nshipster.com/method-swizzling/) | — | 待翻译 |
+| 方法调配 | Method Swizzling | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/method-swizzling.md) · [网页](https://nshipster.com/method-swizzling/) | [中文](../../../blogs/zh/nshipster/method-swizzling.md) | 已翻译 |
 | — | Metric​Kit | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/metrickit.md) · [网页](https://nshipster.com/metrickit/) | — | 待翻译 |
 | — | Mirror / Custom​Reflectable / Custom​Leaf​Reflectable | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/mirror-customreflectable-customleafreflectable.md) · [网页](https://nshipster.com/mirror/) | — | 待翻译 |
 | — | MKGeodesic​Polyline | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/mkgeodesicpolyline.md) · [网页](https://nshipster.com/mkgeodesicpolyline/) | — | 待翻译 |
@@ -111,7 +111,7 @@
 | — | NSLinguistic​Tagger | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nslinguistictagger.md) · [网页](https://nshipster.com/nslinguistictagger/) | — | 待翻译 |
 | — | NSLocalized​String | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nslocalizedstring.md) · [网页](https://nshipster.com/nslocalizedstring/) | — | 待翻译 |
 | — | NSNotification &NSNotification​Center | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsnotification-br-nsnotificationcenter.md) · [网页](https://nshipster.com/nsnotification-and-nsnotificationcenter/) | — | 待翻译 |
-| — | NSOperation | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsoperation.md) · [网页](https://nshipster.com/nsoperation/) | — | 待翻译 |
+| NSOperation | NSOperation | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsoperation.md) · [网页](https://nshipster.com/nsoperation/) | [中文](../../../blogs/zh/nshipster/nsoperation.md) | 已翻译 |
 | — | NSOrdered​Set | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsorderedset.md) · [网页](https://nshipster.com/nsorderedset/) | — | 待翻译 |
 | — | NSPredicate | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nspredicate.md) · [网页](https://nshipster.com/nspredicate/) | — | 待翻译 |
 | — | NSRange | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsrange.md) · [网页](https://nshipster.com/nsrange/) | — | 待翻译 |

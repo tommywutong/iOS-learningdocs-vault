@@ -47,7 +47,7 @@
 | — | Low Energy (LE) | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/hardware_families/bluetooth/low_energy_le.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/bluetooth/low_energy_le) | — | 待翻译 |
 | — | mach | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/mach.md) · [网页](https://developer.apple.com/documentation/kernel/mach) | — | 待翻译 |
 | — | Mach VM | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/mach/mach_vm.md) · [网页](https://developer.apple.com/documentation/kernel/mach/mach_vm) | — | 待翻译 |
-| — | mach-o | Apple · Kernel | 启动、链接与二进制 | [英文](../../../apple-docs/en/kernel/mach-o.md) · [网页](https://developer.apple.com/documentation/kernel/mach-o) | — | 待翻译 |
+| mach-o | mach-o | Apple · Kernel | 启动、链接与二进制 | [英文](../../../apple-docs/en/kernel/mach-o.md) · [网页](https://developer.apple.com/documentation/kernel/mach-o) | [中文](../../../apple-docs/zh/kernel/mach-o.md) | 已翻译 |
 | — | Mass Storage | Apple · Kernel | 数据与持久化 | [英文](../../../apple-docs/en/kernel/hardware_families/mass_storage.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/mass_storage) | — | 待翻译 |
 | — | Math | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/math.md) · [网页](https://developer.apple.com/documentation/kernel/math) | — | 待翻译 |
 | 内存 | Memory | Apple · Kernel | 内存与 ARC | [英文](../../../apple-docs/en/kernel/iokit_fundamentals/memory.md) · [网页](https://developer.apple.com/documentation/kernel/iokit_fundamentals/memory) | [中文](../../../apple-docs/zh/kernel/iokit_fundamentals/memory.md) | 已翻译 |

@@ -6,13 +6,13 @@
 | 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |
 |---|---:|---:|---:|---|---|
 | swift | 18,401 | 1,027 | 126 | [逐篇查看](sources/apple/swift.md) | [目录](../apple-docs/en/swift) |
-| foundation | 14,127 | 266 | 165 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
-| uikit | 12,614 | 265 | 153 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
-| security | 7,311 | 141 | 1 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
+| foundation | 14,127 | 266 | 176 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
+| uikit | 12,614 | 265 | 158 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
+| security | 7,311 | 141 | 2 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
 | swiftui | 7,106 | 146 | 4 | [逐篇查看](sources/apple/swiftui.md) | [目录](../apple-docs/en/swiftui) |
 | avfoundation | 5,530 | 130 | 0 | [逐篇查看](sources/apple/avfoundation.md) | [目录](../apple-docs/en/avfoundation) |
 | metal | 4,090 | 183 | 50 | [逐篇查看](sources/apple/metal.md) | [目录](../apple-docs/en/metal) |
-| corefoundation | 2,725 | 91 | 0 | [逐篇查看](sources/apple/corefoundation.md) | [目录](../apple-docs/en/corefoundation) |
+| corefoundation | 2,725 | 91 | 1 | [逐篇查看](sources/apple/corefoundation.md) | [目录](../apple-docs/en/corefoundation) |
 | coretext | 2,345 | 18 | 0 | [逐篇查看](sources/apple/coretext.md) | [目录](../apple-docs/en/coretext) |
 | coreimage | 2,116 | 45 | 0 | [逐篇查看](sources/apple/coreimage.md) | [目录](../apple-docs/en/coreimage) |
 | network | 1,975 | 31 | 0 | [逐篇查看](sources/apple/network.md) | [目录](../apple-docs/en/network) |
@@ -26,9 +26,9 @@
 | quartzcore | 699 | 32 | 0 | [逐篇查看](sources/apple/quartzcore.md) | [目录](../apple-docs/en/quartzcore) |
 | avkit | 691 | 22 | 0 | [逐篇查看](sources/apple/avkit.md) | [目录](../apple-docs/en/avkit) |
 | photos | 691 | 2 | 0 | [逐篇查看](sources/apple/photos.md) | [目录](../apple-docs/en/photos) |
-| dispatch | 612 | 17 | 16 | [逐篇查看](sources/apple/dispatch.md) | [目录](../apple-docs/en/dispatch) |
+| dispatch | 612 | 17 | 20 | [逐篇查看](sources/apple/dispatch.md) | [目录](../apple-docs/en/dispatch) |
 | charts | 595 | 6 | 0 | [逐篇查看](sources/apple/charts.md) | [目录](../apple-docs/en/charts) |
-| os | 595 | 19 | 18 | [逐篇查看](sources/apple/os.md) | [目录](../apple-docs/en/os) |
+| os | 595 | 19 | 19 | [逐篇查看](sources/apple/os.md) | [目录](../apple-docs/en/os) |
 | corelocation | 568 | 21 | 0 | [逐篇查看](sources/apple/corelocation.md) | [目录](../apple-docs/en/corelocation) |
 | swiftdata | 545 | 18 | 3 | [逐篇查看](sources/apple/swiftdata.md) | [目录](../apple-docs/en/swiftdata) |
 | regexbuilder | 462 | 1 | 1 | [逐篇查看](sources/apple/regexbuilder.md) | [目录](../apple-docs/en/regexbuilder) |
@@ -43,7 +43,7 @@
 | distributed | 93 | 1 | 0 | [逐篇查看](sources/apple/distributed.md) | [目录](../apple-docs/en/distributed) |
 | updates | 89 | 89 | 0 | [逐篇查看](sources/apple/updates.md) | [目录](../apple-docs/en/updates) |
 | bundleresources | 86 | 4 | 0 | [逐篇查看](sources/apple/bundleresources.md) | [目录](../apple-docs/en/bundleresources) |
-| kernel | 72 | 71 | 12 | [逐篇查看](sources/apple/kernel.md) | [目录](../apple-docs/en/kernel) |
+| kernel | 72 | 71 | 13 | [逐篇查看](sources/apple/kernel.md) | [目录](../apple-docs/en/kernel) |
 | backgroundtasks | 64 | 5 | 0 | [逐篇查看](sources/apple/backgroundtasks.md) | [目录](../apple-docs/en/backgroundtasks) |
 | avfaudio | 48 | 5 | 0 | [逐篇查看](sources/apple/avfaudio.md) | [目录](../apple-docs/en/avfaudio) |
 | technologyoverviews | 44 | 44 | 0 | [逐篇查看](sources/apple/technologyoverviews.md) | [目录](../apple-docs/en/technologyoverviews) |
@@ -205,4 +205,4 @@
 | mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
 | callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
 | opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
-| **合计** | **95,634** | **3,746** | **967** | | |
+| **合计** | **95,634** | **3,746** | **991** | | |
