@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
 import deepseek_pipeline as pipeline_module  # noqa: E402
+import shard as shard_module  # noqa: E402
 from deepseek_pipeline import (  # noqa: E402
     AccountBalanceError,
     Completion,
@@ -102,6 +103,11 @@ class UsageTests(unittest.TestCase):
 
 
 class ShardTests(unittest.TestCase):
+    def test_repository_allowlists_have_reviewed_exact_sizes(self):
+        self.assertEqual(len(shard_module.summer_allowlist()), 69)
+        self.assertEqual(len(shard_module.summer_b1_allowlist()), 32)
+        self.assertEqual(len(shard_module.legacy_review_allowlist()), 36)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
@@ -248,6 +254,72 @@ class FakeBalanceClient:
 
 
 class PipelineIntegrationTests(unittest.TestCase):
+    def test_review_existing_uses_one_review_call_and_overwrites_atomically(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            en = root / "apple-docs/en/demo/example.md"
+            target = root / "apple-docs/zh/demo/example.md"
+            en.parent.mkdir(parents=True)
+            target.parent.mkdir(parents=True)
+            en.write_text(CandidateValidationTests.EN, encoding="utf-8")
+            target.write_text(CandidateValidationTests.GOOD, encoding="utf-8")
+            run_dir = root / ".staging/deepseek/review-existing"
+            config = PipelineConfig(
+                translation_model="translate-model",
+                review_model="review-model",
+                translation_concurrency=2,
+                review_concurrency=1,
+                max_output_tokens=4096,
+                validation_attempts=1,
+                max_cost_usd=None,
+                translation_pricing={
+                    "cache_hit_input": 0,
+                    "cache_miss_input": 1,
+                    "output": 1,
+                },
+                review_pricing={
+                    "cache_hit_input": 0,
+                    "cache_miss_input": 1,
+                    "output": 1,
+                },
+                review_existing=True,
+            )
+            state = RunState(
+                run_dir / "state.json",
+                run_id="review-existing",
+                shard_path="meta/shards/review.json",
+                shard_digest="c" * 64,
+                config={},
+            )
+            client = FakeClient(CandidateValidationTests.GOOD)
+            item = {
+                "en": "apple-docs/en/demo/example.md",
+                "zh": "apple-docs/zh/demo/example.md",
+                "chars": len(CandidateValidationTests.EN),
+            }
+            with patch.object(pipeline_module, "ROOT", root):
+                pipeline = Pipeline(
+                    client=client,
+                    state=state,
+                    run_dir=run_dir,
+                    config=config,
+                    style_text="测试规范",
+                    terms_text="| 英文 | 中文 |\n| guide | 指南 |",
+                )
+                result = asyncio.run(pipeline.process(item))
+            self.assertEqual(result, "completed")
+            self.assertEqual(len(client.calls), 1)
+            self.assertEqual(client.calls[0]["model"], "review-model")
+            self.assertEqual(
+                target.read_text(encoding="utf-8"),
+                CandidateValidationTests.GOOD,
+            )
+            saved = json.loads((run_dir / "state.json").read_text(encoding="utf-8"))
+            entry = saved["files"][item["en"]]
+            self.assertEqual(entry["status"], "completed")
+            self.assertIn("original_output_sha256", entry)
+            self.assertEqual(len(entry["calls"]), 1)
+
     def test_two_independent_calls_then_atomic_target_write(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

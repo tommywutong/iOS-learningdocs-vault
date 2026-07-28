@@ -2,6 +2,8 @@
 """把待翻译文件切成互不重叠的分片，每片交给一个翻译 agent。
 
     python3 tools/shard.py --shards 12 --scope summer               # 暑期计划严格白名单
+    python3 tools/shard.py --shards 8 --scope summer-b1             # 高价值博客补强白名单
+    python3 tools/shard.py --shards 4 --scope legacy-review         # 36 篇早期译文补审
     python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 已停止的旧宽泛范围
     python3 tools/shard.py --shards 8 --source apple-docs       # 只切一个来源
     python3 tools/shard.py --status                             # 看现有分片进度
@@ -25,6 +27,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from functools import lru_cache
 from pathlib import Path
@@ -38,6 +41,7 @@ SHARD_DIR = ROOT / "meta" / "shards"
 # meta/blog_index/objcio_objccn_pairs.json，149/149 两侧文件都在、
 # 中文侧正文中位 9,749 字符）。再译一遍是纯浪费 277 万字符，永久排除。
 PAIRED_TABLE = ROOT / "meta" / "blog_index" / "objcio_objccn_pairs.json"
+LEGACY_REVIEW_COMMIT = "9ee8b4b4efd0191076d07f11a8ed153ee12679d1"
 
 
 def already_translated_elsewhere() -> set[str]:
@@ -84,9 +88,63 @@ def summer_allowlist() -> frozenset[str]:
     return frozenset(paths)
 
 
+@lru_cache(maxsize=1)
+def summer_b1_allowlist() -> frozenset[str]:
+    """从计划的 B1 章节提取逐篇筛选后的高价值博客白名单。"""
+    plan = ROOT / "meta" / "SUMMER_TRANSLATION_PLAN.md"
+    text = plan.read_text(encoding="utf-8")
+    start, end = "## 5. B1", "## 6."
+    if start not in text or end not in text.split(start, 1)[1]:
+        raise SystemExit(f"暑期计划缺少预期章节边界：{start} → {end}")
+    block = text.split(start, 1)[1].split(end, 1)[0]
+    paths = {
+        path
+        for path in re.findall(r"^- `([^`]+)`", block, re.MULTILINE)
+        if path.startswith("blogs/en/")
+    }
+    if len(paths) != 32:
+        raise SystemExit(f"B1 白名单应为 32 篇，实得 {len(paths)}；请先审阅计划格式变化")
+    return frozenset(paths)
+
+
+@lru_cache(maxsize=1)
+def legacy_review_allowlist() -> frozenset[str]:
+    """从恢复提交提取 36 篇新增 Apple 译文对应的英文原文。"""
+    result = subprocess.run(
+        [
+            "git",
+            "diff-tree",
+            "--no-commit-id",
+            "--name-only",
+            "--diff-filter=A",
+            "-r",
+            LEGACY_REVIEW_COMMIT,
+        ],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    paths = {
+        path.replace("/zh/", "/en/", 1)
+        for path in result.stdout.splitlines()
+        if path.startswith("apple-docs/zh/") and path.endswith(".md")
+    }
+    if len(paths) != 36:
+        raise SystemExit(f"早期补审范围应为 36 篇，实得 {len(paths)}")
+    missing = [path for path in paths if not (ROOT / path).is_file()]
+    if missing:
+        raise SystemExit(f"早期补审英文原文不存在：{missing[0]}")
+    return frozenset(paths)
+
+
 def in_scope(rel_en: str, scope: str) -> bool:
     if scope == "summer":
         return rel_en in summer_allowlist()
+    if scope == "summer-b1":
+        return rel_en in summer_b1_allowlist()
+    if scope == "legacy-review":
+        return rel_en in legacy_review_allowlist()
     if scope == "all":
         return True
     if rel_en.startswith("wwdc/"):
@@ -98,21 +156,28 @@ def in_scope(rel_en: str, scope: str) -> bool:
             return False
         rest = rel_en[len("apple-docs/en/"):]
         return any(rest.startswith(p) for p in CORE_PREFIXES)
-    raise SystemExit(f"未知范围 {scope!r}，可选 summer / core / apple / all")
+    raise SystemExit(
+        f"未知范围 {scope!r}，可选 summer / summer-b1 / legacy-review / core / apple / all"
+    )
 
 
-def collect_summer(source: str | None = None) -> list[dict]:
-    """直接从严格白名单构造任务，不经过会排除短 API 页的通用 collect()。"""
+def collect_allowlist(
+    paths: frozenset[str],
+    source: str | None = None,
+    *,
+    include_existing: bool = False,
+) -> list[dict]:
+    """直接从显式白名单构造任务，不经过会排除短 API 页的通用 collect()。"""
     items: list[dict] = []
-    for rel in sorted(summer_allowlist()):
+    for rel in sorted(paths):
         source_name = rel.split("/", 1)[0]
         if source and source_name != source:
             continue
         en = ROOT / rel
         if not en.exists():
-            raise SystemExit(f"暑期白名单英文原文不存在：{rel}")
+            raise SystemExit(f"白名单英文原文不存在：{rel}")
         zh = rel.replace("/en/", "/zh/", 1)
-        if (ROOT / zh).exists():
+        if (ROOT / zh).exists() and not include_existing:
             continue
         priority = 0 if source_name == "blogs" else 1 if source_name == "apple-docs" else 2
         items.append({
@@ -193,9 +258,26 @@ def pack(groups: list[dict], shards: int, budget: int | None) -> list[list[dict]
     return bins
 
 
-def cmd_shard(shards: int, budget: int | None, source: str | None,
-              scope: str = "all") -> None:
-    items = collect_summer(source) if scope == "summer" else collect(source)
+def cmd_shard(
+    shards: int,
+    budget: int | None,
+    source: str | None,
+    scope: str = "all",
+    prefix: str = "shard",
+) -> None:
+    allowlists = {
+        "summer": summer_allowlist,
+        "summer-b1": summer_b1_allowlist,
+        "legacy-review": legacy_review_allowlist,
+    }
+    if scope in allowlists:
+        items = collect_allowlist(
+            allowlists[scope](),
+            source,
+            include_existing=scope == "legacy-review",
+        )
+    else:
+        items = collect(source)
     skip = already_translated_elsewhere()
     n0, c0 = len(items), sum(i["chars"] for i in items)
     items = [i for i in items if i["en"] not in skip and in_scope(i["en"], scope)]
@@ -206,19 +288,25 @@ def cmd_shard(shards: int, budget: int | None, source: str | None,
     if not items:
         print("该范围内没有待翻译的文件了")
         return
-    if scope == "summer":
+    if scope in allowlists:
+        allowlist = allowlists[scope]()
         expected = sum(
             1
-            for rel in summer_allowlist()
+            for rel in allowlist
             if (not source or rel.startswith(source + "/"))
-            and not (ROOT / rel.replace("/en/", "/zh/", 1)).exists()
+            and (
+                scope == "legacy-review"
+                or not (ROOT / rel.replace("/en/", "/zh/", 1)).exists()
+            )
         )
         if len(items) != expected:
-            raise SystemExit(f"暑期分片覆盖异常：应有 {expected} 篇，实得 {len(items)}")
+            raise SystemExit(f"{scope} 分片覆盖异常：应有 {expected} 篇，实得 {len(items)}")
     # 单组上限取单片 budget 的一半，保证一片总能装下两组以上，装箱才有均衡余地
     bins = pack(group_items(items, (budget or 200_000) // 2), shards, budget)
     SHARD_DIR.mkdir(parents=True, exist_ok=True)
-    for old in SHARD_DIR.glob("shard-*.json"):
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,39}", prefix):
+        raise SystemExit("分片前缀只能包含字母、数字、点、下划线和连字符")
+    for old in SHARD_DIR.glob(f"{prefix}-*.json"):
         old.unlink()
 
     print(f"待译 {len(items)} 个文件 / {sum(i['chars'] for i in items):,} 字符 → {shards} 片\n")
@@ -227,13 +315,16 @@ def cmd_shard(shards: int, budget: int | None, source: str | None,
             continue
         files = [f for g in groups for f in g["files"]]
         chars = sum(g["chars"] for g in groups)
-        out = SHARD_DIR / f"shard-{n:02d}.json"
+        out = SHARD_DIR / f"{prefix}-{n:02d}.json"
         out.write_text(json.dumps({
             "shard": n, "groups": groups,
             "file_count": len(files), "chars": chars,
         }, ensure_ascii=False, indent=1), encoding="utf-8")
         head = ", ".join(g["group"].split("/")[-1] for g in groups[:3])
-        print(f"  shard-{n:02d}  {len(files):>4} 篇  {chars:>9,} 字符  {len(groups):>3} 组   {head}…")
+        print(
+            f"  {prefix}-{n:02d}  {len(files):>4} 篇  {chars:>9,} 字符  "
+            f"{len(groups):>3} 组   {head}…"
+        )
 
 
 def cmd_status() -> None:
@@ -258,8 +349,13 @@ def main() -> None:
                 return cast(argv[i + 1])
         return default
 
-    cmd_shard(opt("--shards", 8, int), opt("--budget", None, int),
-              opt("--source"), opt("--scope", "all"))
+    cmd_shard(
+        opt("--shards", 8, int),
+        opt("--budget", None, int),
+        opt("--source"),
+        opt("--scope", "all"),
+        opt("--prefix", "shard"),
+    )
 
 
 if __name__ == "__main__":
