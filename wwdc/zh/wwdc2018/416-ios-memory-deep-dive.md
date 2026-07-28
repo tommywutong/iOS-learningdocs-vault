@@ -23,6 +23,8 @@ translated: true
 
 ## 相关资源
 
+- [已归档的演讲幻灯片](../../slides/wwdc2018/416/slides.md)
+
 - [HD 视频](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_hd_ios_memory_deep_dive.mp4?dl=1)
 - [SD 视频](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_sd_ios_memory_deep_dive.mp4?dl=1)
 - [演讲幻灯片 (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_ios_memory_deep_dive.pdf?dl=1)
