@@ -60,6 +60,12 @@ if [[ -n "$DEEPSEEK_API_KEY" ]]; then echo set; else echo unset; fi
 `.staging/` 已被 `.gitignore` 排除。状态文件不含 API Key，但含 DeepSeek 请求 ID、
 Token 数和失败信息，仍然不应提交。
 
+因此断点恢复分两种情况：
+
+- 同一工作区：保留 `.staging/deepseek/<run-id>/` 和原分片，使用相同 `run-id` 恢复；
+- 新电脑或新 clone：状态和分片不在 Git 中，先从已提交译文重新生成分片，再换一个新的
+  `run-id`。正式 `zh/` 文件会自动跳过，但未落盘的阶段候选无法跨机器复用。
+
 ## 3. 生成本轮互斥分片
 
 core Apple 文档和 WWDC：

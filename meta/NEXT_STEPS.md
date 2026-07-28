@@ -43,8 +43,9 @@ python3 tools/audit_consistency.py
 
 ### P2：完成 core
 
-当前剩余 1,519 篇、9,204,757 字符。64 个互不重叠分片已经生成，并绑定到
-`core-r04-all`；**完成前不要重新运行 `shard.py` 覆盖这些分片**。
+当前剩余 1,519 篇、9,204,757 字符。在**当前这台 Mac 的工作区**中，64 个互不重叠
+分片已经生成，并绑定到 `core-r04-all`；**本机完成前不要重新运行 `shard.py` 覆盖这些
+分片**。
 
 ```bash
 python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
@@ -66,6 +67,24 @@ python3 tools/deepseek_pipeline.py run \
 `Insufficient Balance` 会触发全局熔断；这不是限流，必须先充值。基于已完成批次的真实
 消耗，建议余额至少补到 **20 美元**，为 Pro 审校和失败重试留余量；这是运行估算，不是
 DeepSeek 的计费承诺。
+
+如果是在朋友的电脑或全新 clone 中接手，不能复用本机的精确断点：`.staging/` 和
+`meta/shards/` 包含请求状态与派生任务清单，按安全规则不会提交 Git。应先检出 PR #17
+的分支，再重新生成只包含剩余文件的分片，并使用新的 `run-id`：
+
+```bash
+git fetch origin
+git switch --track origin/translate/deepseek-core-checkpoint
+python3 tools/shard.py --shards 64 --scope core
+python3 tools/deepseek_pipeline.py run \
+  --shard meta/shards/shard-*.json \
+  --run-id core-r05-remote \
+  --concurrency 64 \
+  --review-concurrency 32
+```
+
+新 clone 无法复用尚未落盘的模型候选，但 PR #17 中已经完成的 218 篇会因目标文件存在而
+自动跳过，不会重译。
 
 后续仍按以下质量流水线执行：
 
