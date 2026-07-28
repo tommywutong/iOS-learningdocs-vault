@@ -402,6 +402,17 @@
 | data protection | 数据保护 | 社区 | |
 | encryption | 加密 | 官方（HIG 隐私页「加密的钥匙串」） | |
 
+### 3.9 Xcode / App 图标
+
+| 英文 | 中文 | 依据来源 | 备注 |
+|---|---|---|---|
+| alternate app icon | 备用 App 图标 | 项目既有译文（Xcode 构建设置参考及关联页面） | 不用「备选 App 图标」 |
+| Alternate App Icon Sets | 备用 App 图标集 | 项目既有译文（Xcode 构建设置参考） | 作为 Xcode 构建设置名时，首次写成「备用 App 图标集（Alternate App Icon Sets）」 |
+| project navigator | 项目导航器 | 项目既有译文 | 常用界面名称，无需单独附英文 |
+| source control | 源代码管理 | 项目既有译文 | 不用「源代码控制」 |
+| Thread Sanitizer | **保留英文** | Xcode 工具名 / 项目既有多数译文 | 不译成「线程消毒器」 |
+| Undefined Behavior Sanitizer | **保留英文** | Xcode 工具名 / 项目既有多数译文 | 不译成「未定义行为消毒器 / 清理器」 |
+
 ---
 
 ## 四、一律保留英文（含判断规则）

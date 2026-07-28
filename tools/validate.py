@@ -92,6 +92,10 @@ FIXED_LINES = {
     "### Deprecated": "### 已废弃",
     "### Error codes": "### 错误码",
     "### Supporting types": "### 支持类型",
+    # Xcode 工具名称。项目现有正文和 Xcode 界面均以英文产品名使用，
+    # 不把 Sanitizer 机械译成「消毒器」或「清理器」。
+    "### Thread Sanitizer": "### Thread Sanitizer",
+    "### Undefined Behavior Sanitizer": "### Undefined Behavior Sanitizer",
 }
 FIXED_INLINE = {
     "> Navigation:": "> 导航：",
@@ -274,7 +278,14 @@ def check_pair(en: Path, zh: Path) -> list[str]:
             and en_fm.get("symbol_kind") == "module"
             and en_fm.get("role") == "collection"
         )
-        if not looks_like_identifier and not is_framework_landing:
+        # 少数产品集合页也直接以不可翻译的产品名作标题，但其 frontmatter 的
+        # framework 是抓取器内部分类值，不能用上面的 framework 判据识别。
+        is_preserved_product_title = t in {"Xcode Cloud"}
+        if (
+            not looks_like_identifier
+            and not is_framework_landing
+            and not is_preserved_product_title
+        ):
             issues.append("title 未翻译（与原文相同）")
 
     # 2 & 3. 链接与图片目标
