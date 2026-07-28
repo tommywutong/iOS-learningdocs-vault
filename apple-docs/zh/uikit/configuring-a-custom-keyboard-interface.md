@@ -15,7 +15,7 @@ content_hash: 'sha256:f94b02dc8d40075b'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md) · [创建自定键盘](creating-a-custom-keyboard.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md) · [创建自定键盘](creating-a-custom-keyboard.md)
 
 # 配置自定键盘界面
 
@@ -35,7 +35,7 @@ translated: true
 
 ### 支持不同的输入类型
 
-使用 [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) 确定当前文本输入视图的键盘输入类型。针对你的 App 支持的每一种键盘类型，相应地配置界面。一种做法是在视图控制器中实现 [- textWillChange:](<uitextinputdelegate/textwillchange(__).md>)，然后将 [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) 的 [keyboardType](uitextinputtraits/keyboardtype.md) 与键盘当前显示进行比较。如果两者不同，请相应地更新界面。
+使用 [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) 确定当前文本输入视图的键盘输入类型。针对你的 App 支持的每一种键盘类型，相应地配置界面。一种做法是在视图控制器（view controller）中实现 [- textWillChange:](<uitextinputdelegate/textwillchange(__).md>)，然后将 [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) 的 [keyboardType](uitextinputtraits/keyboardtype.md) 与键盘当前显示进行比较。如果两者不同，请相应地更新界面。
 
 ```swift
 let keyboardType = textDocumentProxy.keyboardType

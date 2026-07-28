@@ -15,7 +15,7 @@ content_hash: 'sha256:7e972e5dc5ac5e90'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [集合视图](collection-views.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [集合视图](collection-views.md)
 
 # 支持集合视图中的拖放
 

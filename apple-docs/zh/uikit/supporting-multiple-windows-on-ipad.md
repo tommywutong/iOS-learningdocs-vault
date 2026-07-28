@@ -15,7 +15,7 @@ content_hash: 'sha256:527c9ecf7aa64c8e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [iPad、Mac 和 Apple Vision Pro 上的多任务处理](multitasking-on-ipad-mac-and-apple-vision-pro.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [iPad、Mac 和 Apple Vision Pro 上的多任务处理](multitasking-on-ipad-mac-and-apple-vision-pro.md)
 
 # 在 iPad 上支持多个窗口
 
@@ -67,7 +67,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 }
 ```
 
-通过在 `Info.plist` 场景清单中使用 [`UISceneConfigurations`](../bundleresources/information-property-list/uiapplicationscenemanifest/uisceneconfigurations.md) 键，该示例的此场景窗口会自动配置，并从 Storyboard 加载根视图控制器。
+通过在 `Info.plist` 场景清单中使用 [`UISceneConfigurations`](../bundleresources/information-property-list/uiapplicationscenemanifest/uisceneconfigurations.md) 键，该示例的此场景窗口会自动配置，并从 Storyboard 加载根视图控制器（view controller）。
 
 ### 恢复场景
 
@@ -96,7 +96,7 @@ func configure(window: UIWindow?, with activity: NSUserActivity) -> Bool {
 
 ### 通过拖放（drag and drop）创建多个窗口
 
-当用户将图像从集合视图拖到 iPad 屏幕的左侧或右侧时，此示例会创建一个单独窗口。示例通过实现 `UICollectionViewDragDelegate` 函数 [- collectionView:itemsForBeginningDragSession:atIndexPath:](<uicollectionviewdragdelegate/collectionview(__itemsforbeginning_at_).md>)，并提供带有关联 [`NSItemProvider`](../foundation/nsitemprovider.md) 的 [UIDragItem](uidragitem.md) 来创建新窗口。然后，示例使用已注册的 `NSUserActivity` 将照片数据传递给新窗口场景。
+当用户将图像从集合视图（collection view）拖到 iPad 屏幕的左侧或右侧时，此示例会创建一个单独窗口。示例通过实现 `UICollectionViewDragDelegate` 函数 [- collectionView:itemsForBeginningDragSession:atIndexPath:](<uicollectionviewdragdelegate/collectionview(__itemsforbeginning_at_).md>)，并提供带有关联 [`NSItemProvider`](../foundation/nsitemprovider.md) 的 [UIDragItem](uidragitem.md) 来创建新窗口。然后，示例使用已注册的 `NSUserActivity` 将照片数据传递给新窗口场景。
 
 ```swift
 func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {

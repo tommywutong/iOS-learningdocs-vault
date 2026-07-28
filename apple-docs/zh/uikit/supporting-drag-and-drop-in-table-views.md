@@ -15,7 +15,7 @@ content_hash: 'sha256:c5c9fe0ae494a771'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [表格视图](table-views.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [表格视图](table-views.md)
 
 # 支持表格视图中的拖放
 

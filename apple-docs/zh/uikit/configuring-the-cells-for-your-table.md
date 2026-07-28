@@ -15,7 +15,7 @@ content_hash: 'sha256:caf3189caef8bf6e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [表格视图](table-views.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [表格视图](table-views.md)
 
 # 为表格配置单元格
 
@@ -35,7 +35,7 @@ translated: true
 
 ### 为每个单元格分配复用标识符（reuse identifier）
 
-复用标识符有助于创建和回收表格单元格。复用标识符是你为表格的每个原型单元格分配的字符串。在 Storyboard 中，选择原型单元格，并为其 Identifier 属性分配一个非空值。表格视图中的每个单元格都必须具有唯一的复用标识符。
+复用标识符有助于创建和回收表格单元格。复用标识符是你为表格的每个原型单元格分配的字符串。在 Storyboard 中，选择原型单元格，并为其 Identifier 属性分配一个非空值。表格视图（table view）中的每个单元格都必须具有唯一的复用标识符。
 
 在运行时需要单元格对象时，请调用表格视图的 [- dequeueReusableCellWithIdentifier:forIndexPath:](<uitableview/dequeuereusablecell(withidentifier_for_).md>) 方法，并传入所需单元格的复用标识符。表格视图会维护一个由已创建单元格组成的内部队列。如果队列中包含所请求类型的单元格，表格视图就返回该单元格；否则，它会使用 Storyboard 中的原型单元格创建一个新单元格。复用单元格可以最大限度地减少滚动等关键时刻的内存分配，从而提高性能。
 
@@ -68,7 +68,7 @@ override func tableView(_ tableView: UITableView,
 
 ### 使用自定视图配置单元格
 
-对于标准样式以外的外观，请使用自定单元格样式。使用自定单元格时，你需要指定单元格中要使用的视图、这些视图的配置以及它们的大小和位置。标签和图像等静态视图最适合作为单元格内容。请避免使用控制等需要用户交互的视图。不要在单元格中包含滚动视图、表格视图、集合视图或其他复杂容器视图。可以在单元格中包含叠放视图（stack view），但应尽量减少叠放视图中的条目数量，以提高性能。
+对于标准样式以外的外观，请使用自定单元格样式。使用自定单元格时，你需要指定单元格中要使用的视图、这些视图的配置以及它们的大小和位置。标签和图像等静态视图最适合作为单元格内容。请避免使用控制等需要用户交互的视图。不要在单元格中包含滚动视图（scroll view）、表格视图、集合视图（collection view）或其他复杂容器视图。可以在单元格中包含叠放视图（stack view），但应尽量减少叠放视图中的条目数量，以提高性能。
 
 要配置自定单元格，请将视图拖入表格的原型单元格中。下图展示了一个采用自定布局和视图格式的单元格。你可以使用约束在单元格内容区域内定位视图。设置约束时，请使用“Constrain to margins”选项，以保留各单元格内容区域之间的间隙。
 
@@ -131,7 +131,7 @@ override func tableView(_ tableView: UITableView,
 
 ### 在复用前恢复单元格的原始外观
 
-当单元格移出屏幕时，表格视图会将其从视图层级结构中移除，并放入内部管理的回收队列。当你使用表格视图的 [- dequeueReusableCellWithIdentifier:forIndexPath:](<uitableview/dequeuereusablecell(withidentifier_for_).md>) 方法请求新单元格时，表格视图会优先返回回收队列中的单元格。如果队列为空，表格视图就会从 Storyboard 实例化一个新单元格。
+当单元格移出屏幕时，表格视图会将其从视图层级结构（view hierarchy）中移除，并放入内部管理的回收队列。当你使用表格视图的 [- dequeueReusableCellWithIdentifier:forIndexPath:](<uitableview/dequeuereusablecell(withidentifier_for_).md>) 方法请求新单元格时，表格视图会优先返回回收队列中的单元格。如果队列为空，表格视图就会从 Storyboard 实例化一个新单元格。
 
 如果你更改了自定单元格视图的外观，请实现单元格子类的 [- prepareForReuse](<uitableviewcell/prepareforreuse().md>) 方法。在实现中，将单元格视图的外观恢复到原始状态。例如，如果更改单元格中某个视图的 [alpha](uiview/alpha.md) 属性，请将该属性恢复为原始值。你不需要清除标签文本、将图像设为 `nil`，也无需执行任何会在你的 [- tableView:cellForRowAtIndexPath:](<uitableviewdatasource/tableview(__cellforrowat_).md>) 方法配置单元格以供显示时得到纠正的操作。
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:7e035f8267eac981'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [触摸、按压与手势](touches-presses-and-gestures.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [触摸、按压与手势](touches-presses-and-gestures.md)
 
 # 在你的 App 中支持手势交互
 
@@ -89,7 +89,7 @@ func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
 }
 ```
 
-为使委托（delegate）方法生效，此示例将手势识别器的 [delegate](uigesturerecognizer/delegate.md) 属性设为 `self`，也就是实现该方法的视图控制器。
+为使委托（delegate）方法生效，此示例将手势识别器的 [delegate](uigesturerecognizer/delegate.md) 属性设为 `self`，也就是实现该方法的视图控制器（view controller）。
 
 ```swift
 resetGestureRecognizer.delegate = self

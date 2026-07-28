@@ -15,7 +15,7 @@ content_hash: 'sha256:80339d75e5e30dcd'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [绘图](drawing.md) · [UIColor](uicolor.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [绘图](drawing.md) · [UIColor](uicolor.md)
 
 # 创建颜色
 

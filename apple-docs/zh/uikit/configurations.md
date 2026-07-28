@@ -15,7 +15,7 @@ content_hash: 'sha256:cd18373a01de88f2'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [外观自定](appearance-customization.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [外观自定](appearance-customization.md)
 
 # 配置
 

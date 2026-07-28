@@ -15,7 +15,7 @@ content_hash: 'sha256:25fe31659c3ee278'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md)
 
 # 集合视图
 
@@ -35,7 +35,7 @@ translated: true
 - 布局。布局定义集合视图中内容的视觉排布。
 - 你的数据源对象。此对象采用 [UICollectionViewDataSource](uicollectionviewdatasource.md) 协议，并为集合视图提供数据。
 - 你的委托（delegate）对象。此对象采用 [UICollectionViewDelegate](uicollectionviewdelegate.md) 协议，并管理用户与集合视图内容之间的交互，例如选择和高亮显示。
-- 集合视图控制器。通常使用 [UICollectionViewController](uicollectionviewcontroller.md) 对象来管理集合视图。你也可以使用其他视图控制器，但某些集合相关功能需要集合视图控制器才能工作。
+- 集合视图控制器。通常使用 [UICollectionViewController](uicollectionviewcontroller.md) 对象来管理集合视图。你也可以使用其他视图控制器（view controller），但某些集合相关功能需要集合视图控制器才能工作。
 
 ## 主题
 
@@ -90,7 +90,7 @@ translated: true
 ### 容器视图
 
 - [在 iOS 中为本地化自动调整视图大小](../xcode/autosizing-views-for-localization-in-ios.md) — 向你的 App 添加 Auto Layout 约束，以实现可本地化的视图。
-- [表格视图](table-views.md) — 在由可自定行组成的单列中显示数据。
+- [表格视图（table view）](table-views.md) — 在由可自定行组成的单列中显示数据。
 - [UIStackView](uistackview.md) — 用于将一组视图排布成一列或一行的简化接口。
-- [UIScrollView](uiscrollview.md) — 允许滚动和缩放其中所含视图的视图。
+- [UIScrollView](uiscrollview.md) — 允许滚动和缩放其中所含视图的滚动视图（scroll view）。
 - [UILookToScrollInteraction](uilooktoscrollinteraction.md) _(beta)_

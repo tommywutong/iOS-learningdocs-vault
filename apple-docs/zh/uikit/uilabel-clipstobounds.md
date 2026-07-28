@@ -15,7 +15,7 @@ content_hash: 'sha256:bd9d9d4bc195a19a'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [文本显示与字体](text-display-and-fonts.md) · [UILabel](uilabel.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [文本显示与字体](text-display-and-fonts.md) · [UILabel](uilabel.md)
 
 # clipsToBounds
 
@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-`UILabel` 从父类 `UIView` 继承此属性。此类将该属性的默认值改为 [true](../swift/true.md)。
+`UILabel` 从超类（superclass）`UIView` 继承此属性。此类将该属性的默认值改为 [true](../swift/true.md)。
 
 ## 另请参阅
 

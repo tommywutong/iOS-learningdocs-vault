@@ -15,7 +15,7 @@ content_hash: 'sha256:a8389267c5b936dc'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [外观自定](appearance-customization.md) · [在界面中支持深色模式](supporting-dark-mode-in-your-interface.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [外观自定](appearance-customization.md) · [在界面中支持深色模式](supporting-dark-mode-in-your-interface.md)
 
 # 在 UI 中配置和显示符号图像
 

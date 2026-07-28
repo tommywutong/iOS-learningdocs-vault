@@ -15,7 +15,7 @@ content_hash: 'sha256:08ef8013b6adb06d'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Apple Pencil 交互](apple-pencil-interactions.md) · [处理来自 Apple Pencil 的输入](handling-input-from-apple-pencil.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [Apple Pencil 交互](apple-pencil-interactions.md) · [处理来自 Apple Pencil 的输入](handling-input-from-apple-pencil.md)
 
 # 计算 Apple Pencil 的垂直作用力
 

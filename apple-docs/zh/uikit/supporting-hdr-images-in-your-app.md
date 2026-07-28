@@ -15,7 +15,7 @@ content_hash: 'sha256:a3797680097dd2d2'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [图像与 PDF](images-and-pdf.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [图像与 PDF](images-and-pdf.md)
 
 # 在你的 App 中支持 HDR 图像
 

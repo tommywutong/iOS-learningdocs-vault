@@ -15,7 +15,7 @@ content_hash: 'sha256:be935468370bf9e7'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md)
 
 # UIKit 宏
 

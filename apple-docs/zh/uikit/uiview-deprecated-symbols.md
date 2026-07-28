@@ -15,7 +15,7 @@ content_hash: 'sha256:22f111944a9b9da8'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [UIView](uiview.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [UIView](uiview.md)
 
 # 已废弃符号
 

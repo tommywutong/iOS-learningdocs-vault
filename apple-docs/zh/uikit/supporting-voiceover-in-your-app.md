@@ -15,7 +15,7 @@ content_hash: 'sha256:0f85fed20d4adc19'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
 
 # 在你的 App 中支持「旁白」
 

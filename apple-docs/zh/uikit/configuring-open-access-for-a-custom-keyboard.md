@@ -15,7 +15,7 @@ content_hash: 'sha256:0b2bdbc0284e727f'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md) · [创建自定键盘](creating-a-custom-keyboard.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [键盘与输入](keyboards-and-input.md) · [创建自定键盘](creating-a-custom-keyboard.md)
 
 # 为自定键盘配置开放访问权限
 
