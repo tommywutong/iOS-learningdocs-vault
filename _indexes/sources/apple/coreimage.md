@@ -1,0 +1,52 @@
+# Apple · coreimage · 成篇文章
+
+> 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
+> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+
+| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+|---|---|---|---|---|---|---|
+| — | Applying a Chroma Key Effect | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/applying-a-chroma-key-effect.md) · [网页](https://developer.apple.com/documentation/coreimage/applying-a-chroma-key-effect) | — | 待翻译 |
+| — | Autoadjustment Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/autoadjustment-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/autoadjustment-keys) | — | 待翻译 |
+| — | Blur Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/blur-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/blur-filters) | — | 待翻译 |
+| — | CIContext Implementations | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/cicontext/cicontext-implementations.md) · [网页](https://developer.apple.com/documentation/coreimage/cicontext/cicontext-implementations) | — | 待翻译 |
+| — | CIFilter Implementations | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/cifilter-swift.class/cifilter-implementations.md) · [网页](https://developer.apple.com/documentation/coreimage/cifilter-swift.class/cifilter-implementations) | — | 待翻译 |
+| — | Color Adjustment Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/color-adjustment-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/color-adjustment-filters) | — | 待翻译 |
+| — | Color Attribute Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/color-attribute-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/color-attribute-keys) | — | 待翻译 |
+| — | Color Effect Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/color-effect-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/color-effect-filters) | — | 待翻译 |
+| — | Composite Operations | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/composite-operations.md) · [网页](https://developer.apple.com/documentation/coreimage/composite-operations) | — | 待翻译 |
+| — | Convolution Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/convolution-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/convolution-filters) | — | 待翻译 |
+| — | Core Image | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage.md) · [网页](https://developer.apple.com/documentation/coreimage) | — | 待翻译 |
+| — | Core Image Constants | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/core-image-constants.md) · [网页](https://developer.apple.com/documentation/coreimage/core-image-constants) | — | 待翻译 |
+| — | Customizing Image Transitions | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/customizing-image-transitions.md) · [网页](https://developer.apple.com/documentation/coreimage/customizing-image-transitions) | — | 待翻译 |
+| — | Data Type Attributes | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/data-type-attributes.md) · [网页](https://developer.apple.com/documentation/coreimage/data-type-attributes) | — | 待翻译 |
+| — | Detector Accuracy Options | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/detector-accuracy-options.md) · [网页](https://developer.apple.com/documentation/coreimage/detector-accuracy-options) | — | 待翻译 |
+| — | Detector Configuration Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/detector-configuration-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/detector-configuration-keys) | — | 待翻译 |
+| — | Detector Types | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/detector-types.md) · [网页](https://developer.apple.com/documentation/coreimage/detector-types) | — | 待翻译 |
+| — | Distortion Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/distortion-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/distortion-filters) | — | 待翻译 |
+| — | Exported Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/exported-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/exported-keys) | — | 待翻译 |
+| — | Feature Detection Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/feature-detection-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/feature-detection-keys) | — | 待翻译 |
+| — | Filter Attribute Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/filter-attribute-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/filter-attribute-keys) | — | 待翻译 |
+| — | Filter Category Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/filter-category-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/filter-category-keys) | — | 待翻译 |
+| — | Filter Parameter Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/filter-parameter-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/filter-parameter-keys) | — | 待翻译 |
+| — | Generating an animation with a Core Image Render Destination | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/generating-an-animation-with-a-core-image-render-destination.md) · [网页](https://developer.apple.com/documentation/coreimage/generating-an-animation-with-a-core-image-render-destination) | — | 待翻译 |
+| — | Generator Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/generator-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/generator-filters) | — | 待翻译 |
+| — | Geometry Adjustment Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/geometry-adjustment-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/geometry-adjustment-filters) | — | 待翻译 |
+| — | Gradient Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/gradient-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/gradient-filters) | — | 待翻译 |
+| — | Halftone Effect Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/halftone-effect-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/halftone-effect-filters) | — | 待翻译 |
+| — | Image Attribute Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/image-attribute-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/image-attribute-keys) | — | 待翻译 |
+| — | Options for Applying a Filter | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/options-for-applying-a-filter.md) · [网页](https://developer.apple.com/documentation/coreimage/options-for-applying-a-filter) | — | 待翻译 |
+| — | Processing an Image Using Built-in Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/processing-an-image-using-built-in-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/processing-an-image-using-built-in-filters) | — | 待翻译 |
+| — | RAW Image Options | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/raw-image-options.md) · [网页](https://developer.apple.com/documentation/coreimage/raw-image-options) | — | 待翻译 |
+| — | Reduction Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/reduction-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/reduction-filters) | — | 待翻译 |
+| — | Sampler Option Keys | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/sampler-option-keys.md) · [网页](https://developer.apple.com/documentation/coreimage/sampler-option-keys) | — | 待翻译 |
+| — | Sampler Option Values | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/sampler-option-values.md) · [网页](https://developer.apple.com/documentation/coreimage/sampler-option-values) | — | 待翻译 |
+| — | Selectively Focusing on an Image | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/selectively-focusing-on-an-image.md) · [网页](https://developer.apple.com/documentation/coreimage/selectively-focusing-on-an-image) | — | 待翻译 |
+| — | Sharpening Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/sharpening-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/sharpening-filters) | — | 待翻译 |
+| — | Simulating Scratchy Analog Film | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/simulating-scratchy-analog-film.md) · [网页](https://developer.apple.com/documentation/coreimage/simulating-scratchy-analog-film) | — | 待翻译 |
+| — | Stylizing Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/stylizing-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/stylizing-filters) | — | 待翻译 |
+| — | Tile Effect Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/tile-effect-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/tile-effect-filters) | — | 待翻译 |
+| — | Transition Filters | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/transition-filters.md) · [网页](https://developer.apple.com/documentation/coreimage/transition-filters) | — | 待翻译 |
+| — | User Interface Control Options | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/user-interface-control-options.md) · [网页](https://developer.apple.com/documentation/coreimage/user-interface-control-options) | — | 待翻译 |
+| — | User Interface Options | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/user-interface-options.md) · [网页](https://developer.apple.com/documentation/coreimage/user-interface-options) | — | 待翻译 |
+| — | Vector Quantity Attributes | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/vector-quantity-attributes.md) · [网页](https://developer.apple.com/documentation/coreimage/vector-quantity-attributes) | — | 待翻译 |
+| — | Writing Custom Kernels | Apple · Core Image | UI 与渲染 | [英文](../../../apple-docs/en/coreimage/writing-custom-kernels.md) · [网页](https://developer.apple.com/documentation/coreimage/writing-custom-kernels) | — | 待翻译 |

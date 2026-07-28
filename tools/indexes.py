@@ -1,30 +1,109 @@
 #!/usr/bin/env python3
-"""生成 README.md 和 _indexes/ 下的导航索引。
+"""生成面向读者的导航索引。
 
     python3 tools/indexes.py
 
-所有数字都是**实际统计出来的**，不是写死的——内容增加后重跑一遍就刷新。
-这样避免了旧仓库那种「README 写 35,753 个文件、实测 35,752 / 35,884 三个数都对不上」
-的情况。
+README.md 是人工维护的稳定入口，本脚本不再覆盖它。动态统计、来源目录、文章级目录、
+主题目录和翻译状态全部写入 _indexes/。生成后应运行 tools/check_links.py。
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
-import statistics
+import shutil
 import urllib.parse
-from collections import Counter, defaultdict
+from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 IDX = ROOT / "_indexes"
+SOURCES = IDX / "sources"
+TOPICS = IDX / "topics"
+
+LONGFORM_KINDS = {"article", "overview", "collection", "sampleCode", "module"}
+LONGFORM_ROLES = {"article", "collectionGroup", "sampleCode"}
+
+TOPIC_RULES: tuple[tuple[str, str], ...] = (
+    (
+        "Objective-C Runtime",
+        r"\bobjective-c\b|\bobjc\b|\bruntime\b|\bisa\b|selector|method swizzl|"
+        r"message forwarding|associated object|tagged pointer|class object|metaclass",
+    ),
+    (
+        "内存与 ARC",
+        r"\bmemory\b|\barc\b|retain|release|autorelease|\bweak\b|reference count|"
+        r"\bheap\b|\bstack\b|\bmalloc\b|\bleak\b|\bvmmap\b|allocation|ownership|pointer",
+    ),
+    (
+        "Block 与闭包",
+        r"\bblocks?\b|\bclosures?\b|capture list|escaping closure",
+    ),
+    (
+        "RunLoop 与响应性",
+        r"run\s*loop|runloop|event loop|display\s*link|\btimer\b|\bhangs?\b|\bhitches?\b|"
+        r"responsiveness|main thread stall",
+    ),
+    (
+        "并发与线程",
+        r"concurren|\bthreads?\b|\bgcd\b|grand central dispatch|\bdispatch\b|\blocks?\b|"
+        r"\bmutex\b|semaphore|data race|\bactors?\b|async|await|sendable|atomic",
+    ),
+    (
+        "性能与调试",
+        r"performance|profil|instruments|\bdebug|lldb|\bcrash|optimi[sz]|benchmark|"
+        r"sanitizer|diagnos|memory graph",
+    ),
+    (
+        "启动、链接与二进制",
+        r"\blaunch|\bdyld\b|mach-o|\blinkers?\b|\blinking\b|binary|dylib|"
+        r"dynamic librar|framework|load time|app size|compil",
+    ),
+    (
+        "网络与安全",
+        r"\bnetwork|\bhttp|\bhttps|\btls\b|\bssl\b|urlsession|\bsocket|security|"
+        r"certificate|crypt|authentication|authorization|keychain",
+    ),
+    (
+        "UI 与渲染",
+        r"\buikit\b|\bswiftui\b|\bviews?\b|\blayout\b|\banimation|\brender|graphics|"
+        r"\bmetal\b|\bimages?\b|collection view|table view|core animation",
+    ),
+    (
+        "Swift 语言",
+        r"\bswift\b|\bgenerics?\b|\bprotocols?\b|\bmacros?\b|type inference|"
+        r"value semantics|copyable|existential",
+    ),
+    (
+        "数据与持久化",
+        r"core data|\bdatabase|\bsqlite\b|\bjson\b|file system|persistence|storage|"
+        r"userdefaults|serialization|archive",
+    ),
+    (
+        "架构、测试与工程实践",
+        r"\barchitecture\b|design pattern|\btesting\b|\btests?\b|api design|dependency|"
+        r"modular|package manager|continuous integration|\bci\b",
+    ),
+)
+
+WWDC_GROUP_TOPICS = {
+    "A": ("Objective-C Runtime", "Swift 语言"),
+    "B": ("内存与 ARC",),
+    "C": ("并发与线程",),
+    "D": ("RunLoop 与响应性", "性能与调试"),
+    "E": ("UI 与渲染", "性能与调试"),
+    "F": ("启动、链接与二进制",),
+    "G": ("性能与调试",),
+    "H": ("数据与持久化",),
+    "I": ("网络与安全",),
+}
 
 
-def read_fm(path: Path) -> dict:
+def read_fm(path: Path) -> dict[str, str]:
     try:
-        text = path.read_text(encoding="utf-8")[:2000]
+        text = path.read_text(encoding="utf-8")[:5000]
     except Exception:
         return {}
     if not text.startswith("---\n"):
@@ -32,423 +111,639 @@ def read_fm(path: Path) -> dict:
     end = text.find("\n---\n", 4)
     if end == -1:
         return {}
-    fm = {}
+    fm: dict[str, str] = {}
     for line in text[4:end].splitlines():
         if ": " in line:
-            k, v = line.split(": ", 1)
-            fm[k.strip()] = v.strip().strip("'")
+            key, value = line.split(": ", 1)
+            value = value.strip()
+            if len(value) >= 2 and value.startswith("'") and value.endswith("'"):
+                value = value[1:-1].replace("''", "'")
+            elif len(value) >= 2 and value.startswith('"') and value.endswith('"'):
+                value = value[1:-1]
+            fm[key.strip()] = value
     return fm
 
 
-def count_md(base: Path) -> tuple[int, int]:
-    n = sz = 0
-    for p in base.rglob("*.md"):
-        n += 1
-        sz += p.stat().st_size
-    return n, sz
+def plain_heading(value: str) -> str:
+    value = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", value)
+    value = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", value)
+    value = re.sub(r"<[^>]+>", "", value)
+    return value.replace("`", "").strip()
 
 
-def link(path: Path) -> str:
-    return urllib.parse.quote(str(path.relative_to(ROOT)))
+def display_title(path: Path, fm: dict[str, str] | None = None) -> str:
+    """正文 H1 比易受网页摘要污染的 frontmatter title 更适合作展示标题。"""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except Exception:
+        return path.stem
+    body = text
+    if text.startswith("---\n"):
+        end = text.find("\n---\n", 4)
+        if end != -1:
+            body = text[end + 5 :]
+    heading = re.search(r"^#\s+(.+?)\s*$", body, re.MULTILINE)
+    if heading:
+        return plain_heading(heading.group(1))
+    return plain_heading((fm or read_fm(path)).get("title") or path.stem)
 
 
-# ---------------------------------------------------------------- 各来源索引
+def table_text(value: str) -> str:
+    return re.sub(r"\s+", " ", str(value)).replace("|", r"\|").strip()
 
 
-def index_apple_docs() -> dict:
-    base = ROOT / "apple-docs" / "en"
-    if not base.exists():
-        return {}
-    per_fw: dict[str, dict] = defaultdict(lambda: {"total": 0, "longform": 0, "bytes": 0})
-    LONG = {"article", "overview", "collection", "sampleCode", "module"}
-    for p in base.rglob("*.md"):
-        fw = p.relative_to(base).parts[0]
-        fm = read_fm(p)
-        d = per_fw[fw]
-        d["total"] += 1
-        d["bytes"] += p.stat().st_size
-        if fm.get("symbol_kind") in LONG or fm.get("role") in ("article", "collectionGroup", "sampleCode"):
-            d["longform"] += 1
+def relative_url(target: Path, page: Path) -> str:
+    rel = os.path.relpath(target, page.parent)
+    return urllib.parse.quote(rel, safe="/._~-")
 
-    lines = [
-        "# Apple 现行文档 · 按框架",
-        "",
-        f"> 来源：`developer.apple.com/documentation`，抓取于 {date.today()}。",
-        "> 「成篇文章」是有正文、值得翻译的部分；其余是 API 条目（一两句话的摘要 + 声明）。",
-        "",
-        "| 框架 | 页面总数 | 成篇文章 | 体积 |",
-        "|---|---:|---:|---:|",
+
+def local_link(label: str, target: Path | None, page: Path) -> str:
+    if target is None:
+        return "—"
+    return f"[{table_text(label)}]({relative_url(target, page)})"
+
+
+def external_link(label: str, url: str) -> str:
+    return f"[{table_text(label)}]({url})" if url else ""
+
+
+def is_longform(fm: dict[str, str]) -> bool:
+    return (
+        fm.get("symbol_kind") in LONGFORM_KINDS
+        or fm.get("role") in LONGFORM_ROLES
+    )
+
+
+def classify_topics(text: str) -> tuple[str, ...]:
+    haystack = text.casefold()
+    found = [
+        name
+        for name, pattern in TOPIC_RULES
+        if re.search(pattern, haystack, re.IGNORECASE)
     ]
-    for fw, d in sorted(per_fw.items(), key=lambda x: -x[1]["total"]):
-        lines.append(
-            f"| [{fw}](../apple-docs/en/{urllib.parse.quote(fw)}/) "
-            f"| {d['total']:,} | {d['longform']:,} | {d['bytes'] / 1e6:.1f} MB |"
+    return tuple(found[:3])
+
+
+def item(
+    *,
+    kind: str,
+    source_key: str,
+    source_name: str,
+    en: Path | None,
+    zh: Path | None,
+    source_url: str,
+    en_fm: dict[str, str] | None = None,
+    zh_fm: dict[str, str] | None = None,
+    topics: tuple[str, ...] = (),
+) -> dict:
+    en_fm = en_fm or (read_fm(en) if en else {})
+    zh_fm = zh_fm or (read_fm(zh) if zh else {})
+    en_title = display_title(en, en_fm) if en else ""
+    zh_title = display_title(zh, zh_fm) if zh else ""
+    if en and zh:
+        status = "已翻译"
+    elif en:
+        status = "待翻译"
+    else:
+        status = "原生中文"
+    derived_topics = classify_topics(" ".join([en_title, zh_title, source_name]))
+    return {
+        "kind": kind,
+        "source_key": source_key,
+        "source_name": source_name,
+        "en": en,
+        "zh": zh,
+        "en_title": en_title,
+        "zh_title": zh_title,
+        "source_url": source_url,
+        "status": status,
+        "topics": tuple(dict.fromkeys((*topics, *derived_topics)))[:3],
+    }
+
+
+def catalog_header(title: str, note: str) -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        f"> {note}",
+        f"> 自动生成于 {date.today()}，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。",
+        "",
+        "| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |",
+        "|---|---|---|---|---|---|---|",
+    ]
+
+
+def catalog_row(entry: dict, page: Path) -> str:
+    if entry["en"]:
+        original = local_link("英文", entry["en"], page)
+        if entry["source_url"]:
+            original += " · " + external_link("网页", entry["source_url"])
+    else:
+        original = local_link("中文原文", entry["zh"], page)
+        if entry["source_url"]:
+            original += " · " + external_link("网页", entry["source_url"])
+    translation = local_link("中文", entry["zh"], page) if entry["en"] else "—"
+    topics = "、".join(entry["topics"]) or "—"
+    return (
+        f"| {table_text(entry['zh_title']) or '—'} "
+        f"| {table_text(entry['en_title']) or '—'} "
+        f"| {table_text(entry['source_name'])} "
+        f"| {table_text(topics)} "
+        f"| {original} | {translation} | {entry['status']} |"
+    )
+
+
+def load_blog_configs() -> dict[str, dict]:
+    configs: dict[str, dict] = {}
+    for name in ("blog_sources.json", "blog_sources_batch2.json"):
+        path = ROOT / "meta" / name
+        if not path.exists():
+            continue
+        for source in json.loads(path.read_text(encoding="utf-8")).get("sources", []):
+            configs[source["key"]] = source
+    return configs
+
+
+def collect_apple_docs() -> tuple[list[dict], dict[str, dict]]:
+    en_root = ROOT / "apple-docs" / "en"
+    zh_root = ROOT / "apple-docs" / "zh"
+    entries: list[dict] = []
+    stats: dict[str, dict] = defaultdict(
+        lambda: {"total": 0, "longform": 0, "translated": 0}
+    )
+    for path in en_root.rglob("*.md"):
+        rel = path.relative_to(en_root)
+        framework_key = rel.parts[0] if len(rel.parts) > 1 else path.stem
+        fm = read_fm(path)
+        data = stats[framework_key]
+        data["total"] += 1
+        zh = zh_root / rel
+        if zh.exists():
+            data["translated"] += 1
+        if not is_longform(fm):
+            continue
+        data["longform"] += 1
+        framework = fm.get("framework") or framework_key
+        entries.append(
+            item(
+                kind="Apple 文档",
+                source_key=framework_key,
+                source_name=f"Apple · {framework}",
+                en=path,
+                zh=zh if zh.exists() else None,
+                source_url=fm.get("source_url", ""),
+                en_fm=fm,
+                topics=classify_topics(f"{framework} {fm.get('title', '')}"),
+            )
         )
-    tot = sum(d["total"] for d in per_fw.values())
-    lf = sum(d["longform"] for d in per_fw.values())
-    lines.append(f"| **合计** | **{tot:,}** | **{lf:,}** | |")
-    (IDX / "apple-docs.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"total": tot, "longform": lf, "frameworks": len(per_fw)}
+    return entries, stats
 
 
-def index_wwdc() -> dict:
-    base = ROOT / "wwdc" / "en"
-    if not base.exists():
-        return {}
-    groups: dict[str, list] = defaultdict(list)
-    years = Counter()
-    for p in base.rglob("*.md"):
-        fm = read_fm(p)
-        groups[fm.get("group", "未分组")].append((fm, p))
-        if fm.get("year") and fm["year"] != "null":
-            years[fm["year"]] += 1
+def collect_wwdc() -> list[dict]:
+    en_root = ROOT / "wwdc" / "en"
+    zh_root = ROOT / "wwdc" / "zh"
+    entries: list[dict] = []
+    for path in en_root.rglob("*.md"):
+        rel = path.relative_to(en_root)
+        fm = read_fm(path)
+        group = fm.get("group", "")
+        letter = group[:1]
+        entries.append(
+            item(
+                kind="WWDC",
+                source_key=rel.parts[0],
+                source_name=f"Apple · {rel.parts[0].upper()}",
+                en=path,
+                zh=(zh_root / rel) if (zh_root / rel).exists() else None,
+                source_url=fm.get("source_url", ""),
+                en_fm=fm,
+                topics=WWDC_GROUP_TOPICS.get(letter, ()),
+            )
+        )
+    return entries
 
+
+def collect_blogs() -> tuple[list[dict], dict[str, dict]]:
+    configs = load_blog_configs()
+    en_root = ROOT / "blogs" / "en"
+    zh_root = ROOT / "blogs" / "zh"
+    keys = {
+        p.name
+        for base in (en_root, zh_root)
+        if base.exists()
+        for p in base.iterdir()
+        if p.is_dir()
+    }
+    entries: list[dict] = []
+    per_source: dict[str, dict] = {}
+    for key in sorted(keys):
+        cfg = configs.get(key, {})
+        source_name = cfg.get("name") or key
+        en_files = {
+            p.relative_to(en_root / key): p
+            for p in (en_root / key).glob("*.md")
+        } if (en_root / key).exists() else {}
+        zh_files = {
+            p.relative_to(zh_root / key): p
+            for p in (zh_root / key).glob("*.md")
+        } if (zh_root / key).exists() else {}
+        source_entries: list[dict] = []
+        for rel in sorted(set(en_files) | set(zh_files), key=str):
+            en = en_files.get(rel)
+            zh = zh_files.get(rel)
+            fm = read_fm(en or zh)
+            source_entries.append(
+                item(
+                    kind="技术博客",
+                    source_key=key,
+                    source_name=source_name,
+                    en=en,
+                    zh=zh,
+                    source_url=fm.get("source_url", ""),
+                    en_fm=fm if en else None,
+                    zh_fm=fm if zh else None,
+                )
+            )
+        entries.extend(source_entries)
+        per_source[key] = {
+            "name": source_name,
+            "status": cfg.get("status", ""),
+            "license": cfg.get("license", "未记录"),
+            "entries": source_entries,
+            "en_dir": (en_root / key) if (en_root / key).exists() else None,
+            "zh_dir": (zh_root / key) if (zh_root / key).exists() else None,
+        }
+
+    snapshots = ROOT / "blogs" / "snapshots"
+    snapshot_entries: list[dict] = []
+    if snapshots.exists():
+        for path in sorted(snapshots.rglob("*.md")):
+            fm = read_fm(path)
+            lang = fm.get("original_language", "")
+            snapshot_entries.append(
+                item(
+                    kind="网页快照",
+                    source_key="snapshots",
+                    source_name=fm.get("source") or "学习计划网页快照",
+                    en=path if lang == "en" else None,
+                    zh=path if lang != "en" else None,
+                    source_url=fm.get("source_url", ""),
+                    en_fm=fm if lang == "en" else None,
+                    zh_fm=fm if lang != "en" else None,
+                )
+            )
+        entries.extend(snapshot_entries)
+        per_source["snapshots"] = {
+            "name": "学习计划点名的单页快照",
+            "status": "snapshot",
+            "license": "逐条不同",
+            "entries": snapshot_entries,
+            "en_dir": snapshots,
+            "zh_dir": None,
+        }
+    return entries, per_source
+
+
+def write_source_catalogs(
+    apple_entries: list[dict],
+    wwdc_entries: list[dict],
+    blog_sources: dict[str, dict],
+) -> None:
+    shutil.rmtree(SOURCES, ignore_errors=True)
+    (SOURCES / "apple").mkdir(parents=True)
+    (SOURCES / "blogs").mkdir(parents=True)
+
+    apple_by_source: dict[str, list[dict]] = defaultdict(list)
+    for entry in apple_entries:
+        apple_by_source[entry["source_key"]].append(entry)
+    for key, entries in apple_by_source.items():
+        page = SOURCES / "apple" / f"{key}.md"
+        lines = catalog_header(
+            f"Apple · {key} · 成篇文章",
+            "仅列出有完整正文的 article、overview、collection、sample code 和 module；"
+            "短 API 条目仍保留在原始目录。",
+        )
+        for entry in sorted(entries, key=lambda e: e["en_title"].casefold()):
+            lines.append(catalog_row(entry, page))
+        page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    for key, data in blog_sources.items():
+        page = SOURCES / "blogs" / f"{key}.md"
+        lines = catalog_header(
+            data["name"],
+            f"状态：{data['status'] or '未记录'}；授权：{data['license']}。",
+        )
+        for entry in sorted(
+            data["entries"],
+            key=lambda e: (e["en_title"] or e["zh_title"]).casefold(),
+        ):
+            lines.append(catalog_row(entry, page))
+        page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    page = SOURCES / "wwdc.md"
+    lines = catalog_header(
+        "WWDC session 文章目录",
+        "按年份与标题列出本地逐字稿；幻灯片归档是待完成的独立工程。",
+    )
+    for entry in sorted(
+        wwdc_entries,
+        key=lambda e: (
+            e["source_key"],
+            e["en_title"].casefold(),
+        ),
+        reverse=True,
+    ):
+        lines.append(catalog_row(entry, page))
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_apple_index(entries: list[dict], stats: dict[str, dict]) -> dict:
+    page = IDX / "apple-docs.md"
+    lines = [
+        "# Apple 现行文档",
+        "",
+        f"> 来源：`developer.apple.com/documentation`，索引生成于 {date.today()}。",
+        "> “成篇文章”有逐篇目录；短 API 条目仍可从框架归档目录浏览。",
+        "",
+        "| 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |",
+        "|---|---:|---:|---:|---|---|",
+    ]
+    for key, data in sorted(stats.items(), key=lambda pair: -pair[1]["total"]):
+        catalog = SOURCES / "apple" / f"{key}.md"
+        catalog_cell = local_link("逐篇查看", catalog, page) if catalog.exists() else "—"
+        archive_dir = ROOT / "apple-docs" / "en" / key
+        archive = archive_dir if archive_dir.exists() else archive_dir.with_suffix(".md")
+        lines.append(
+            f"| {key} | {data['total']:,} | {data['longform']:,} "
+            f"| {data['translated']:,} | {catalog_cell} "
+            f"| {local_link('目录', archive, page)} |"
+        )
+    total = sum(v["total"] for v in stats.values())
+    longform = sum(v["longform"] for v in stats.values())
+    translated = sum(v["translated"] for v in stats.values())
+    lines.append(
+        f"| **合计** | **{total:,}** | **{longform:,}** | **{translated:,}** | | |"
+    )
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return {
+        "total": total,
+        "longform": longform,
+        "translated": translated,
+        "frameworks": len(stats),
+    }
+
+
+def write_wwdc_index(entries: list[dict]) -> dict:
+    page = IDX / "wwdc.md"
+    groups: dict[str, list[dict]] = defaultdict(list)
+    for entry in entries:
+        fm = read_fm(entry["en"])
+        groups[fm.get("group", "未分组")].append(entry)
+        entry["_fm"] = fm
     lines = [
         "# WWDC session 逐字稿",
         "",
-        f"> 按主题筛选的 {sum(len(v) for v in groups.values())} 场，抓取于 {date.today()}。",
-        "> 逐字稿是 Apple 的自动语音识别产物，未经人工校对。",
-        "",
-        "**注意**：2013 年及更早的 session 已被 Apple 彻底下架，老年份也被大幅裁剪"
-        "（WWDC2014 只剩 6 场）。这是归档的紧迫性所在。",
+        f"> 共 {len(entries)} 场，索引生成于 {date.today()}。逐字稿可能包含 Apple 自动转写错误。",
+        f"> 也可打开{local_link('文章级总目录', SOURCES / 'wwdc.md', page)}直接比较中英文状态。",
         "",
     ]
-    for g in sorted(groups):
-        # year 可能是 'null'（Tech Talks 这类没有年份的），不能直接 int()
-        def year_of(fm: dict) -> int:
-            v = fm.get("year") or ""
-            return int(v) if v.isdigit() else 0
-
-        items = sorted(groups[g], key=lambda x: (-year_of(x[0]), x[0].get("title", "")))
-        ever = sum(1 for fm, _ in items if fm.get("evergreen") == "true")
-        lines += [f"## {g}", "", f"{len(items)} 场，其中 {ever} 场标为「讲机制、长期有效」", ""]
-        for fm, p in items:
-            tag = "" if fm.get("evergreen") == "true" else " _(版本性)_"
+    for group in sorted(groups):
+        items = sorted(
+            groups[group],
+            key=lambda e: (
+                -(int(e["_fm"].get("year") or 0) if (e["_fm"].get("year") or "").isdigit() else 0),
+                e["en_title"].casefold(),
+            ),
+        )
+        evergreen = sum(e["_fm"].get("evergreen") == "true" for e in items)
+        lines += [
+            f"## {group}",
+            "",
+            f"{len(items)} 场，其中 {evergreen} 场标为“讲机制、长期有效”。",
+            "",
+        ]
+        for entry in items:
+            fm = entry["_fm"]
+            suffix = "" if fm.get("evergreen") == "true" else " _(版本性)_"
+            zh = f" · {local_link('中文', entry['zh'], page)}" if entry["zh"] else ""
             lines.append(
-                f"- [{fm.get('title', p.stem)}]({link(p)}) "
-                f"· {fm.get('collection', '')} · {fm.get('duration', '')}{tag}"
+                f"- {local_link(entry['en_title'], entry['en'], page)}{zh} "
+                f"· {fm.get('collection', '')} · {fm.get('duration', '')}{suffix}"
             )
         lines.append("")
-    (IDX / "wwdc.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"total": sum(len(v) for v in groups.values()), "groups": len(groups)}
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return {
+        "total": len(entries),
+        "translated": sum(e["status"] == "已翻译" for e in entries),
+        "groups": len(groups),
+    }
 
 
-def index_blogs() -> dict:
+def write_blogs_index(blog_sources: dict[str, dict]) -> dict:
+    page = IDX / "blogs.md"
     lines = [
-        "# 第三方技术博客归档",
+        "# 第三方技术博客与网页快照",
         "",
-        "> **本仓库为私有个人学习归档。** 第三方博客大多是 All rights reserved 或未声明",
-        "> 授权（法律上默认保留全部权利），存作个人资料与公开发布是两回事。",
-        "> 逐源授权状况见下表，也记在 `meta/blog_sources.json` 每条的 `license` 字段。",
-        "> 表内统计的是 Markdown 文件数；同一英文文章及其中文译文分别计为两个文件。",
+        "> 本仓库为私有个人学习归档。逐篇查找请进入“文章目录”，不要再从文件名猜文章。",
+        "> 授权状态仅用于约束本仓库的使用范围，不代表取得了再发布授权。",
         "",
-        "已按 robots.txt 明确排除、**未抓取**的站点：`massicotte.org`、`casatwy.com`"
-        "——它们在 `User-agent: *` 放开的同时单独点名禁止 ClaudeBot / anthropic-ai。",
-        "",
-        "| 源 | 文件数 | 中位字数 | 代码率 | 语言 | 状态 | 授权 |",
-        "|---|---:|---:|---:|---|---|---|",
+        "| 来源 | 英文 | 中文 | 其中译文 | 待翻译 | 文章目录 | 原始归档 | 授权 |",
+        "|---|---:|---:|---:|---:|---|---|---|",
     ]
-    cfgs = {}
-    for name in ("blog_sources.json", "blog_sources_batch2.json"):
-        f = ROOT / "meta" / name
-        if f.exists():
-            for s in json.loads(f.read_text(encoding="utf-8")).get("sources", []):
-                cfgs[s["key"]] = s
+    total_entries = total_en = total_zh = total_translated = 0
+    for key, data in sorted(blog_sources.items(), key=lambda pair: pair[1]["name"].casefold()):
+        entries = data["entries"]
+        en_count = sum(bool(e["en"]) for e in entries)
+        zh_count = sum(bool(e["zh"]) for e in entries)
+        translated = sum(e["status"] == "已翻译" for e in entries)
+        pending = sum(e["status"] == "待翻译" for e in entries)
+        total_entries += len(entries)
+        total_en += en_count
+        total_zh += zh_count
+        total_translated += translated
+        archive_links = []
+        if data["en_dir"]:
+            archive_links.append(local_link("英文", data["en_dir"], page))
+        if data["zh_dir"]:
+            archive_links.append(local_link("中文", data["zh_dir"], page))
+        lines.append(
+            f"| {table_text(data['name'])} | {en_count} | {zh_count} | {translated} | {pending} "
+            f"| {local_link('逐篇查看', SOURCES / 'blogs' / f'{key}.md', page)} "
+            f"| {' · '.join(archive_links) or '—'} | {table_text(data['license'])} |"
+        )
+    lines.append(
+        f"| **合计** | **{total_en}** | **{total_zh}** | **{total_translated}** "
+        f"| **{total_en - total_translated}** | | | |"
+    )
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return {
+        "entries": total_entries,
+        "en": total_en,
+        "zh": total_zh,
+        "translated": total_translated,
+    }
 
-    total = 0
-    for lang in ("en", "zh"):
-        base = ROOT / "blogs" / lang
-        if not base.exists():
-            continue
-        for d in sorted(base.iterdir()):
-            if not d.is_dir():
-                continue
-            files = list(d.glob("*.md"))
-            if not files:
-                continue
-            sizes, fenced = [], 0
-            for f in files:
-                body = f.read_text(encoding="utf-8").split("---", 2)[-1]
-                sizes.append(len(body))
-                if "```" in body:
-                    fenced += 1
-            s = cfgs.get(d.name, {})
-            total += len(files)
-            lines.append(
-                f"| [{s.get('name', d.name)}](../blogs/{lang}/{urllib.parse.quote(d.name)}/) "
-                f"| {len(files)} | {int(statistics.median(sizes)):,} "
-                f"| {fenced / len(files) * 100:.0f}% | {lang} "
-                f"| {s.get('status', '')} | {s.get('license', '未记录')[:28]} |"
+
+def write_topics(entries: list[dict]) -> None:
+    shutil.rmtree(TOPICS, ignore_errors=True)
+    TOPICS.mkdir(parents=True)
+    grouped: dict[str, list[dict]] = defaultdict(list)
+    for entry in entries:
+        for topic in entry["topics"]:
+            grouped[topic].append(entry)
+
+    landing = IDX / "topics.md"
+    lines = [
+        "# 按主题找资料",
+        "",
+        "> 主题由标题、来源元数据和 WWDC 人工分组确定，用于发现资料，不代替全文检索。",
+        "> 同一篇文章可以出现在多个主题中；没有可靠匹配的文章仍可从来源目录找到。",
+        "",
+        "| 主题 | 资料数 |",
+        "|---|---:|",
+    ]
+    for topic, items in sorted(grouped.items(), key=lambda pair: (-len(pair[1]), pair[0])):
+        slug = hashlib.sha1(topic.encode("utf-8")).hexdigest()[:10]
+        target = TOPICS / f"{slug}.md"
+        lines.append(f"| {local_link(topic, target, landing)} | {len(items)} |")
+        body = [
+            f"# {topic}",
+            "",
+            f"> 共 {len(items)} 份资料。自动生成于 {date.today()}。",
+            "",
+            "| 标题 | 类型 | 来源 | 英文/原文 | 中文 | 状态 |",
+            "|---|---|---|---|---|---|",
+        ]
+        for entry in sorted(
+            items,
+            key=lambda e: (e["zh_title"] or e["en_title"]).casefold(),
+        ):
+            title = entry["zh_title"] or entry["en_title"]
+            preferred = entry["zh"] or entry["en"]
+            original = local_link("英文", entry["en"], target) if entry["en"] else local_link("中文原文", entry["zh"], target)
+            chinese = local_link("中文", entry["zh"], target) if entry["en"] and entry["zh"] else "—"
+            body.append(
+                f"| {local_link(title, preferred, target)} | {entry['kind']} "
+                f"| {table_text(entry['source_name'])} | {original} | {chinese} | {entry['status']} |"
             )
-    snap = ROOT / "blogs" / "snapshots"
-    if snap.exists():
-        n = len(list(snap.rglob("*.md")))
-        total += n
-        lines.append(f"| [学习计划点名的单页快照](../blogs/snapshots/) | {n} | | | 混合 | | 逐条不同 |")
-    lines.append(f"| **合计** | **{total}** | | | | | |")
-    (IDX / "blogs.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"total": total}
+        target.write_text("\n".join(body) + "\n", encoding="utf-8")
+    landing.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-# ---------------------------------------------------------------- README
+def write_translation_status(
+    apple_entries: list[dict],
+    wwdc_entries: list[dict],
+    blog_sources: dict[str, dict],
+) -> None:
+    page = IDX / "translation-status.md"
+    rows = []
+    apple_groups: dict[str, list[dict]] = defaultdict(list)
+    for entry in apple_entries:
+        apple_groups[entry["source_key"]].append(entry)
+    for key, entries in apple_groups.items():
+        rows.append(
+            (
+                "Apple 文档",
+                key,
+                len(entries),
+                sum(e["status"] == "已翻译" for e in entries),
+                SOURCES / "apple" / f"{key}.md",
+            )
+        )
+    rows.append(
+        (
+            "WWDC",
+            "全部 session",
+            len(wwdc_entries),
+            sum(e["status"] == "已翻译" for e in wwdc_entries),
+            SOURCES / "wwdc.md",
+        )
+    )
+    for key, data in blog_sources.items():
+        en_entries = [e for e in data["entries"] if e["en"]]
+        rows.append(
+            (
+                "技术博客",
+                data["name"],
+                len(en_entries),
+                sum(e["status"] == "已翻译" for e in en_entries),
+                SOURCES / "blogs" / f"{key}.md",
+            )
+        )
+    lines = [
+        "# 翻译状态",
+        "",
+        "> 本页按实际中英文文件配对生成，不把原生中文文章误算成译文。",
+        "> 当前项目采用暑期定向完成标准；“待翻译”不等于全部都在当前白名单。",
+        "",
+        "| 类型 | 来源 | 可翻译原文 | 已有中文译文 | 待翻译 | 完成率 | 逐篇目录 |",
+        "|---|---|---:|---:|---:|---:|---|",
+    ]
+    for kind, name, total, translated, target in sorted(
+        rows, key=lambda row: (row[0], -row[2], row[1])
+    ):
+        pending = total - translated
+        rate = f"{translated / total * 100:.0f}%" if total else "—"
+        lines.append(
+            f"| {kind} | {table_text(name)} | {total} | {translated} | {pending} "
+            f"| {rate} | {local_link('查看', target, page)} |"
+        )
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def write_articles_landing(
+    apple: dict,
+    wwdc: dict,
+    blogs: dict,
+) -> None:
+    page = IDX / "articles.md"
+    lines = [
+        "# 文章目录",
+        "",
+        "> 从这里按资料类型进入文章级目录。每一行都直接提供本地原文、中文译文和翻译状态。",
+        "> 学习计划周次不属于通用资料元数据，因此只保留在独立的学习计划索引中。",
+        "",
+        "| 类型 | 收录范围 | 文章级入口 |",
+        "|---|---|---|",
+        f"| Apple 现行文档 | {apple['longform']:,} 篇成篇文章 | {local_link('按框架查看', IDX / 'apple-docs.md', page)} |",
+        f"| WWDC | {wwdc['total']} 场逐字稿 | {local_link('逐篇查看', SOURCES / 'wwdc.md', page)} |",
+        f"| 技术博客与网页快照 | {blogs['entries']:,} 条独立记录 | {local_link('按来源查看', IDX / 'blogs.md', page)} |",
+        "",
+        "## 其他查找方式",
+        "",
+        f"- {local_link('按主题找资料', IDX / 'topics.md', page)}",
+        f"- {local_link('查看翻译状态', IDX / 'translation-status.md', page)}",
+        f"- {local_link('按暑期学习计划查找', IDX / 'study-plan.md', page)}",
+        "",
+        "在 GitHub 中还可以使用仓库搜索，例如：",
+        "",
+        "```text",
+        'repo:Biscoffee/apple-docs-vault "RunLoop"',
+        "```",
+    ]
+    page.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
     IDX.mkdir(parents=True, exist_ok=True)
-    ad = index_apple_docs()
-    ww = index_wwdc()
-    bl = index_blogs()
+    apple_entries, apple_stats = collect_apple_docs()
+    wwdc_entries = collect_wwdc()
+    blog_entries, blog_sources = collect_blogs()
 
-    att = ROOT / "attachments"
-    n_att = sum(1 for p in att.rglob("*") if p.is_file()) if att.exists() else 0
-    sz_att = sum(p.stat().st_size for p in att.rglob("*") if p.is_file()) if att.exists() else 0
-    oss = ROOT / "oss"
-    n_oss = sum(1 for p in oss.iterdir() if p.is_dir()) if oss.exists() else 0
+    write_source_catalogs(apple_entries, wwdc_entries, blog_sources)
+    apple = write_apple_index(apple_entries, apple_stats)
+    wwdc = write_wwdc_index(wwdc_entries)
+    blogs = write_blogs_index(blog_sources)
+    all_entries = [*apple_entries, *wwdc_entries, *blog_entries]
+    write_topics(all_entries)
+    write_translation_status(apple_entries, wwdc_entries, blog_sources)
+    write_articles_landing(apple, wwdc, blogs)
 
-    zh_counts = {
-        k: len(list((ROOT / k / "zh").rglob("*.md"))) if (ROOT / k / "zh").exists() else 0
-        for k in ("apple-docs", "wwdc", "blogs")
-    }
-    translated_counts = {}
-    for source in ("apple-docs", "wwdc", "blogs"):
-        en_root = ROOT / source / "en"
-        zh_root = ROOT / source / "zh"
-        translated_counts[source] = sum(
-            1
-            for path in en_root.rglob("*.md")
-            if (zh_root / path.relative_to(en_root)).exists()
-        ) if en_root.exists() and zh_root.exists() else 0
-
-    readme = rf"""# Apple 文档与 iOS 底层知识归档
-
-> 私有个人学习归档。本文件由 `tools/indexes.py` 扫描实际内容生成，**所有数字都是实测的**，
-> 重跑一遍就刷新。生成于 {date.today()}。
-
-## 一、这是什么
-
-把 iOS 底层学习需要的一手材料抓成本地 Markdown，放进 Obsidian 阅读，并翻译成中文。
-起因是 2026 暑假的一份八周 iOS 底层学习计划——计划里点名了 338 个外部链接，
-散落在 Apple 官网、WWDC 视频、上百个技术博客里，读起来要不停开浏览器，
-而且其中不少站点随时会消失（已实测到 3 个原站在归档期间已经打不开）。
-
-四个来源：
-
-| 来源 | 内容 | 数量 | 中文文件 | 其中由英文翻译 |
-|---|---|---:|---:|---:|
-| **Apple 现行文档** | `developer.apple.com/documentation`，{ad.get('frameworks', 0)} 个框架 | {ad.get('total', 0):,} 页（成篇文章 {ad.get('longform', 0):,}） | {zh_counts['apple-docs']:,} | {translated_counts['apple-docs']:,} |
-| **WWDC 逐字稿** | 按主题从现存 1,560 场里筛出，{ww.get('groups', 0)} 个分组 | {ww.get('total', 0)} 场 | {zh_counts['wwdc']:,} | {translated_counts['wwdc']:,} |
-| **第三方技术博客** | 经甄别的一手来源 | {bl.get('total', 0):,} 个 Markdown 文件 | {zh_counts['blogs']:,} | {translated_counts['blogs']:,} |
-| **Apple 开源与 Swift 一手资料** | objc4 / dyld / CF / libdispatch / swift-evolution 等 | {n_oss} 个仓库 | — | — |
-
-图片附件 {n_att:,} 个 / {sz_att / 1e9:.2f} GB。
-
-> 博客的“中文文件”同时包含原生中文文章和英文文章的中文译文，不能把这个数字
-> 直接当成翻译进度；“其中由英文翻译”才是可与 `blogs/en/` 一一对应的数量。
-> 同一英文文章及其中文译文分别计为两个 Markdown 文件。
-
-## 二、怎么用
-
-| 我想… | 去哪 |
-|---|---|
-| **按学习计划找材料** | [`_indexes/study-plan.md`](_indexes/study-plan.md) —— 把学习计划的 338 个外链逐个映射到本地文件，按周次和 Day 组织。学到哪天点开哪个文件 |
-| 按框架浏览 Apple 文档 | [`_indexes/apple-docs.md`](_indexes/apple-docs.md) |
-| 找某个主题的 WWDC session | [`_indexes/wwdc.md`](_indexes/wwdc.md) —— 九个主题分组，标注了哪些「讲机制、长期有效」哪些「版本性会过时」 |
-| 看博客归档与**授权状况** | [`_indexes/blogs.md`](_indexes/blogs.md) |
-| 查术语该怎么译 | [`meta/TERMS.md`](meta/TERMS.md) |
-| **让新的 AI 接手** | 先读 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 和 [`meta/SUMMER_TRANSLATION_PLAN.md`](meta/SUMMER_TRANSLATION_PLAN.md)，再按 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md) 领取白名单任务 |
-
-**在 Obsidian 里打开仓库根目录**即可。英文原文和中文译文路径一一对应，
-`en/` 换成 `zh/` 就是译文。
-
-## 三、目录结构
-
-```
-apple-docs/{{en,zh}}/<框架>/**.md    Apple 现行文档
-wwdc/{{en,zh}}/<年份>/*.md           WWDC 逐字稿
-blogs/{{en,zh}}/<源>/*.md            第三方博客（中文源只有 zh/）
-blogs/snapshots/<域名>/*.md        学习计划点名的单页快照
-oss/<仓库>/                        Apple 开源与 Swift 一手资料
-attachments/                       图片，各来源共用
-_indexes/                          导航索引
-meta/                              规范、术语表、清单、侦察报告
-tools/                             抓取与渲染工具链
-.cache/                            原始 JSON/HTML 缓存（已 gitignore）
-```
-
-**为什么英文原文要留着**：现行文档是 Apple 在维护的活内容，每年 WWDC 后会改。
-每个文件 frontmatter 里有 `content_hash`，重抓时对比哈希就知道哪些页面变了，
-只需重译变化的部分。如果原地替换成中文，就失去了这个基线。
-
-## 四、翻译体系
-
-**规范**：[`meta/TRANSLATION_STYLE.md`](meta/TRANSLATION_STYLE.md)
-
-**术语表**：[`meta/TERMS.md`](meta/TERMS.md)，按 **Apple 官方简体中文优先**裁决，
-226 条新增术语里 187 条有官方依据。核实方法是抓 Apple 官方中文 HIG 的
-`/tutorials/data/zh-cn/...json` 接口（网页是 SPA，HTML 里没中文正文）。
-
-几条容易踩的：
-
-- `actor` / `Sendable` / `async` / `await` / `Liquid Glass` **保留英文**——官方中文标题就这么写
-- `view controller` → 视图控制器、`collection view` → 集合视图（**不再保留英文**，Apple 官方中文这么译）
-- `hitch` → **卡顿**、`hang` → **挂起**——不同量级的性能问题，混用会让整个性能章节不可读
-- `delegate` → 委托（不是「代理」）
-
-> 与旧仓库 `apple-developer-archive-vault` 的术语选择**有意分歧**（旧的按旧规范保留英文）。
-> 两个独立语料，不要互相「纠正」。
-
-**三道质量关**：
-
-1. 译者 agent 按规范和术语表翻译
-2. **独立**审校 agent（不是自审）拿原文+译文找问题
-3. `tools/validate.py` 机械校验——**唯一确定性的一关**
-
-第 3 关查的是硬指标：frontmatter 除 title 外零改动、链接与图片目标集合完全一致、
-代码块行数与非注释行逐字符一致、标题层级/列表项数/表格行数/callout 类型一致、
-无残留成句英文。经 **13 类错误注入测试，零漏检零误报**。
-
-```bash
-python3 tools/validate.py apple-docs/zh    # 必须零问题
-```
-
-## 五、工具链
-
-```bash
-# Apple 文档：三阶段，各自可断点续跑
-python3 tools/fetch.py archives                    # 技术清单
-python3 tools/fetch.py index  <archive>...         # 导航树 → manifest
-python3 tools/fetch.py pages  <archive>... [--only-longform]
-python3 tools/render.py       <archive>... [--longform]   # DocC JSON → Markdown
-python3 tools/fetch_assets.py                      # 下载图片
-
-# WWDC
-python3 tools/wwdc.py fetch [--all]                # 默认抓 178 场短名单
-python3 tools/wwdc.py render
-
-# 第三方博客
-python3 tools/blog.py probe <url>                  # 探正文容器 XPath
-python3 tools/blog.py discover <key>...            # 建文章清单
-python3 tools/blog.py fetch <key>...
-python3 tools/blog.py render <key>...
-python3 tools/snapshot.py targets|fetch|render     # 单页快照
-
-# 翻译调度与校验
-python3 tools/translate_plan.py status             # 查看全仓事实，不代表当前白名单
-# 当前不得使用 --scope core；任务必须来自 meta/SUMMER_TRANSLATION_PLAN.md
-python3 tools/shard.py --status                    # 当前分片产出情况
-python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
-python3 tools/deepseek_pipeline.py run --shard meta/shards/shard-*.json \
-  --run-id summer-b0-r01 --limit 3                 # 白名单小批量冒烟
-python3 tools/deepseek_pipeline.py status --run-id summer-b0-r01
-python3 tools/validate.py <目录>                    # 机械校验
-
-# 维护
-python3 tools/indexes.py                           # 重新生成 README 和索引
-python3 tools/studyplan.py                         # 重新生成学习计划映射
-python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大图
-```
-
-**原始数据全部缓存在 `.cache/`**，所以调整 Markdown 格式只需重跑 render，不用重抓。
-
-### DeepSeek 多路翻译
-
-`tools/deepseek_pipeline.py` 只负责缺失的模型执行层，继续复用 `shard.py`、
-`TRANSLATION_STYLE.md`、`TERMS.md`、`validate.py` 和 `audit_consistency.py`。
-详细操作、安全边界、恢复方法与 PR 验收步骤见
-[`meta/DEEPSEEK_RUNBOOK.md`](meta/DEEPSEEK_RUNBOOK.md)。
-
-Key 只放当前终端的环境变量，不写入文件或聊天：
-
-```zsh
-read -s "DEEPSEEK_API_KEY?DeepSeek API Key: "
-export DEEPSEEK_API_KEY
-echo
-```
-
-在 Codex 桌面任务中也可把 Key 保存到 macOS 钥匙串的 generic password 项
-`apple-docs-vault-deepseek`；执行器在环境变量为空时自动读取。详细步骤见运行手册。
-
-推荐先对按 [`meta/SUMMER_TRANSLATION_PLAN.md`](meta/SUMMER_TRANSLATION_PLAN.md)
-白名单生成的分片中的 3 篇做冒烟测试。旧 `core-r04-all` 已停止，不得恢复：
-
-```bash
-python3 tools/deepseek_pipeline.py run \
-  --shard meta/shards/shard-*.json \
-  --run-id summer-b0-r01 \
-  --limit 3 \
-  --concurrency 3 \
-  --review-concurrency 2 \
-  --max-cost-usd 5
-```
-
-确认译文质量后，用**相同** `run-id` 去掉 `--limit` 继续。已完成文件会跳过；初译和审校
-使用两个独立请求，只有两次机械校验都通过的结果才写进 `zh/`。脚本不会执行 Git 命令、
-不会覆盖已有译文，也不会自动合并 PR。
-
-## 六、构建过程中踩过的坑
-
-这一节是给以后维护的人（也包括未来的我）看的。每条都是实际踩过、排查过的。
-
-**抓取层**
-
-1. **引用 URL 大小写不一致**：Apple 的索引端点给全小写路径，但页面内 references 有 21%（3,899 处）带大写。macOS 文件系统大小写不敏感所以本地看不出问题，一推到 Linux/GitHub 上链接全断。规则统一在 `tools/paths.py`，**fetch 和 render 必须共用同一份**。
-2. **7,018 个路径含冒号**（Swift 方法签名 `init(a:b:)`），Windows 非法，会导致仓库无法 checkout。
-3. **单个文件名超 255 字节**：AVFoundation 有个初始化方法百分号编码后超 400 字节，直接 OSError 掀翻整批。**抓取必须容忍单页失败**，否则跑一小时被一个边缘 case 毁掉。
-4. **httpx 默认连接池等待无上限**：一个请求没正常释放连接，后续请求会永久挂起——表现是进程活着、CPU 0%、一页不落。实测卡了 15 分钟才发现。必须设 `pool` 超时 + `asyncio.wait_for` 硬超时。
-5. **RSS/Atom feed 普遍被截断**：onevcat 的 feed 只给 5 篇而 sitemap 有 498 篇。**归档一律优先 sitemap 或全量索引页**。
-6. **sitemap 条数 ≠ 文章数**：lowlevelbits 的 242 条里 202 条是 `/tags/` 标签页，真文章只有 40 篇。每个源都要配 `exclude` 正则。
-
-**渲染层——静默失败是最大的敌人**
-
-「渲染报告说成功 N 篇零失败」**完全不能证明内容没丢**。这个项目踩过六次静默失败，
-全靠体检指标（中位正文字数、代码块覆盖率）才发现：
-
-7. **sealiesoftware 报告成功 29 篇零失败，实际每篇只有 23 行、正文全丢**——那个 2013 年的站用 `<table>` 做页面布局，转换器没处理 `<tr>`/`<td>`，递归到一半就断。
-8. **onevcat 176 篇里只有 3 篇有代码**——它用 Hexo 的行号表格高亮，代码在 `<td class="rouge-code">`，直接找 `<pre>` 取到的是**行号那一格**（`1\n2\n3...`）。
-9. **修第 8 条时踩的反向坑**：新逻辑在整棵子树里找代码单元格，命中了外层文章容器，**整篇正文被换成一个代码块**。maskray 中位字数从 15,626 崩到 573。必须加「占比 >90% 才算代码块」的守卫。
-10. **Hexo 的 `figure.highlight` 套在 `<p>` 里**时走行内路径，代码被压成一行、行号粘在代码前（`12(lldb) po ...`）。文件字数看着正常。
-11. **CSDN 的反爬页 HTTP 521、只有 2KB，但混淆 JS 有 1800 多字符**，按 `text_content()` 量比很多真文章还长，差点被当正文收下。判据要改成扣掉 script/style 的**可见文本长度**。
-12. **行内标签直接挂在块级容器下会被整个丢弃**——`<li><code>x</code>文字</li>` 里的 `<code>` 从来没被读到。这条影响全部已有源，修复后回归找回正文 71,084 词元。
-
-**通用抽取器不能用**：实测 trafilatura 会抹平 mikeash 的代码缩进、丢失 ibireme 全部 15 个代码块、把标题抽成「163 评论」。对代码为主的技术归档，丢缩进等于毁资料。所以 `tools/html2md.py` 自己走 DOM，`<pre>` 一律 `text_content()` 原样输出。
-
-**旧归档那侧（补齐项目用得上）**
-
-13. **Apple 的 404 页有 82,981 字节**，比大多数真实归档页还大。「响应够大就算成功」会把 404 页写进仓库。必须校验 `status==200` **且** 含 `<article id="contents"`。
-14. **裸目录 URL 返回 1,610 字节空壳，补 `_index.html` 才返回 30,256 字节正文**，两者状态码都是 200。
-15. **`library.json` 是非标准 JSON**（含尾随逗号），要先 `re.sub(r",(\s*[}}\]])", r"\1", raw)` 才能解析。
-
-## 七、版权与授权
-
-**本仓库为私有个人学习归档，不得转为公开。**
-
-- **Apple 文档与 WWDC 逐字稿**：Apple 版权所有，无再分发许可
-- **第三方博客**：逐源不同，见 [`_indexes/blogs.md`](_indexes/blogs.md) 和 `meta/blog_sources*.json` 的 `license` 字段
-  - 明确允许再分发的只有三个：`onevcat`（CC BY 4.0，须署名+原文链接）、`saagarjha`（CC BY-SA 4.0，**译文作为衍生作品也必须以 BY-SA 发布**）、`nshipster`（CC BY-NC）
-  - 其余为 All rights reserved 或未声明（法律上默认保留全部权利）
-- **Apple 开源代码**：APSL 2.0 / Apache-2.0。APSL 要求分发时附全文许可 + 不删文件头声明，
-  所以**源码目录保持逐字节原样，笔记一律写在 `oss/notes/`**，永远停在「unmodified copies」
-- **按 robots.txt 明确排除、未抓取**：`massicotte.org`、`casatwy.com`、`blog.devtang.com`
-  ——它们在 `User-agent: *` 放开的同时**单独点名禁止 ClaudeBot / anthropic-ai**。
-  只看通配符段会误判为放开，`tools/blog.py` 里内置了针对性检查
-
-## 八、已知缺口
-
-见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 与
-[`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md)。主要几项：
-
-- **翻译采用定向完成标准**：Apple / WWDC / 英文博客目前一一对应完成
-  {translated_counts['apple-docs'] + translated_counts['wwdc'] + translated_counts['blogs']:,} 篇；
-  当前只剩暑期计划白名单 69 篇，不再把全仓数千篇英文资料视为待办
-- 学习计划单篇快照 108 条中已归档 86 条，剩余 22 条有明确失败原因
-- 旧归档缺口已通过另一个仓库的 PR #10 补入 950 / 1,098 份，剩余 148 份
-- `ming1016/study` 只保留了 Markdown 和技术文章配图，旅游/绘画类配图未收（见 `oss/study/README-归档说明.md`）
-"""
-    (ROOT / "README.md").write_text(readme, encoding="utf-8")
-    print(f"README.md + _indexes/ 已生成")
-    print(f"  Apple 文档 {ad.get('total', 0):,} 页（成篇 {ad.get('longform', 0):,}）")
-    print(f"  WWDC {ww.get('total', 0)} 场 · 博客 {bl.get('total', 0):,} 个文件 · OSS {n_oss} 仓库")
-    print(f"  图片 {n_att:,} 个 / {sz_att / 1e9:.2f} GB")
+    print(f"Apple 成篇文章：{apple['longform']:,}，译文 {sum(e['status'] == '已翻译' for e in apple_entries):,}")
+    print(f"WWDC：{wwdc['total']}，译文 {wwdc['translated']}")
+    print(f"博客/快照记录：{blogs['entries']:,}，配对译文 {blogs['translated']}")
+    print(f"主题页：{len(list(TOPICS.glob('*.md')))}")
+    print("README.md 未改写；请运行 python3 tools/check_links.py 验证导航")
 
 
 if __name__ == "__main__":
