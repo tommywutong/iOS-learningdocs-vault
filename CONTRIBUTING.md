@@ -214,7 +214,7 @@ wwdc/slides/<collection>/<session-id>/
 
 ### 工具接口建议
 
-实现 `tools/wwdc_slides.py`：
+已实现 `tools/wwdc_slides.py`：
 
 ```bash
 python3 tools/wwdc_slides.py plan
@@ -224,7 +224,12 @@ python3 tools/wwdc_slides.py status
 python3 tools/wwdc_slides.py verify
 ```
 
-脚本必须可断点续跑，不覆盖已经通过哈希校验的结果，并提供 `--dry-run`。
+全局 `--dry-run` 放在子命令之前；需要有意重渲染已完成场次时使用 `render --force`。脚本
+可断点续跑，默认不覆盖已经通过哈希校验的结果。
+
+WWDC18 Session 416 样板已采用 72 DPI、WebP quality 78 跑通：官方 PDF 167 页、9,575,316
+字节，正式 WebP 167 张、合计 17,554,438 字节。首页、包含终端细字的中间页和末页已经
+视觉抽查，普通笔记本阅读清晰。后续批量仍需先由仓库所有者审核样板 PR。
 
 ### 验收标准
 

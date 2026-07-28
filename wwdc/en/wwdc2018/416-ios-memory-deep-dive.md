@@ -23,6 +23,8 @@ Discover how memory graphs can be used to get a close up look at what is contrib
 
 ## Resources
 
+- [Archived Presentation Slides](../../slides/wwdc2018/416/slides.md)
+
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_hd_ios_memory_deep_dive.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_sd_ios_memory_deep_dive.mp4?dl=1)
 - [Presentation Slides (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2018/416n2fmzz0fz88f/416/416_ios_memory_deep_dive.pdf?dl=1)
