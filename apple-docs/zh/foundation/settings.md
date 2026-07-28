@@ -50,7 +50,7 @@ translated: true
 ### 文件与数据持久化
 
 - [文件系统](file-system.md) — 在文件系统中创建、读取、写入和检查文件及文件夹。
-- [归档与序列化](archives-and-serialization.md) — 在对象和值与属性列表、JSON 及其他平面二进制表示之间进行转换。
+- [归档（archives）与序列化](archives-and-serialization.md) — 在对象和值与属性列表、JSON 及其他平面二进制表示之间进行转换。
 - [聚焦](spotlight.md) — 搜索本地设备上的文件和其他项目，并为你的 App 内容建立索引以供搜索。
 - [iCloud](icloud.md) — 管理会在用户的 iCloud 设备之间自动同步的文件和键值数据。
 - [优化 App 数据以进行 iCloud 备份](optimizing-your-app-s-data-for-icloud-backup.md) — 通过从备份中排除可清除和不可清除的数据，尽量减少创建备份所需的空间和时间。

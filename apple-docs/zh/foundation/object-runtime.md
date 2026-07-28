@@ -44,12 +44,12 @@ translated: true
 
 ### Swift 支持
 
-- [ReferenceConvertible](referenceconvertible.md) — 应用于由 Foundation 引用类型支持的类型的一种修饰。
-- [桥接到 Swift 标准库值类型的类](classes-bridged-to-swift-standard-library-value-types.md) — 需要引用语义或 Foundation 专属行为时使用桥接的引用类型。
+- [ReferenceConvertible](referenceconvertible.md) — 应用于由 Foundation 引用类型（reference type）支持的类型的一种修饰。
+- [桥接到 Swift 标准库值类型（value type）的类](classes-bridged-to-swift-standard-library-value-types.md) — 需要引用语义或 Foundation 专属行为时使用桥接的引用类型。
 
 ### 远程对象
 
-- [NSProxy](nsproxy.md) — 一个抽象超类，定义供对象作为其他对象或尚不存在的对象之替身使用的 API。
+- [NSProxy](nsproxy.md) — 一个抽象超类（superclass），定义供对象作为其他对象或尚不存在的对象之替身使用的 API。
 
 ### 内存管理
 

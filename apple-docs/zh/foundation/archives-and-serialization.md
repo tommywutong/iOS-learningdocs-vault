@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-使用这些 API 将 App 的内存中类型转换为适合通过 I/O 和网络接口进行序列化，或适合长期存储的表示。
+使用这些 API 将 App 的内存中类型转换为适合通过 I/O 和网络接口进行序列化（serialization），或适合长期存储的表示。
 
 在 Swift 中，标准库定义了 [Encodable](../swift/encodable.md)、[Decodable](../swift/decodable.md) 和 [Codable](../swift/codable.md) 类型，以及用于执行编码和解码的 [Encoder](../swift/encoder.md) 和 [Decoder](../swift/decoder.md) API，详见[编码、解码与序列化](../swift/encoding-decoding-and-serialization.md)。Foundation 通过 [EncodableWithConfiguration](encodablewithconfiguration.md) 和 [DecodableWithConfiguration](decodablewithconfiguration.md) 协议扩展了这些功能；这些协议适用于编码和解码时需要额外静态信息的类型，例如 [AttributedString](attributedstring.md)。
 
@@ -39,13 +39,13 @@ translated: true
 
 - [编码和解码自定义类型](encoding-and-decoding-custom-types.md) — 使你的数据类型可编码和解码，以便兼容 JSON 等外部表示。
 - [Codable](../swift/codable.md) — 一种可以在自身与外部表示之间转换的类型。
-- [NSCoding](nscoding.md) — 一种协议，使对象可以进行编码和解码，以供归档和分发。
+- [NSCoding](nscoding.md) — 一种协议，使对象可以进行编码和解码，以供归档（archiving）和分发。
 - [NSSecureCoding](nssecurecoding.md) — 一种协议，以能抵御对象替换攻击的方式进行编码和解码。
 
 ### 序列化任意有效负载
 
 - [CodableWithConfiguration](codablewithconfiguration.md) — 一种借助配置在自身与外部表示之间转换的类型，该配置负责处理所含类型的编码。
-- [CodableConfiguration](codableconfiguration.md) — 一种属性包装器，通过提供用于补充序列化信息的配置，使类型具备可编码性。
+- [CodableConfiguration](codableconfiguration.md) — 一种属性包装器（property wrapper），通过提供用于补充序列化信息的配置，使类型具备可编码性。
 - [DecodableWithConfiguration](decodablewithconfiguration.md) — 一种协议，适用于在提供额外配置类型时支持解码的类型。
 - [DecodingConfigurationProviding](decodingconfigurationproviding.md) — 一种协议，其符合者提供配置实例，帮助解码自身不支持编码的类型。
 - [EncodableWithConfiguration](encodablewithconfiguration.md) — 一种协议，适用于在提供额外配置类型时支持编码的类型。

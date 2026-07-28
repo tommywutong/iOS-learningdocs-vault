@@ -27,7 +27,7 @@ translated: true
 
 ### 数值
 
-- [Int](../swift/int.md) — 一种有符号整数值类型。
+- [Int](../swift/int.md) — 一种有符号整数值类型（value type）。
 - [Double](../swift/double.md) — 一种双精度（64 位）浮点值类型。
 - [Decimal](decimal.md) — 一种表示十进制数的结构体。
 - [NumberFormatter](numberformatter.md) — 在数值及其文本表示之间进行转换的格式化程序。

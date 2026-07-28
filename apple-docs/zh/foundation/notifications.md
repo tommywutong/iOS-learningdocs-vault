@@ -31,7 +31,7 @@ translated: true
 
 ### 通知
 
-- [Notification](notification.md) — 通过通知中心广播给所有已注册观察者（observer）的信息容器。
+- [Notification](notification.md) — 通过通知中心（notification center）广播给所有已注册观察者（observer）的信息容器。
 - [NotificationCenter](notificationcenter.md) — 一种通知分派机制，可以向已注册的观察者广播信息。
 - [NotificationQueue](notificationqueue.md) — 通知中心缓冲区。
 

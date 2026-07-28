@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-`NSKeyedUnarchiver` 在提取归档时出现问题所引发异常的名称。
+`NSKeyedUnarchiver` 在提取归档（archive）时出现问题所引发异常的名称。
 
 ## 主题
 

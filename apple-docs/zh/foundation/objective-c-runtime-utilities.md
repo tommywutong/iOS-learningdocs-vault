@@ -34,6 +34,6 @@ translated: true
 - [NSStringFromProtocol](<nsstringfromprotocol(__).md>) — 以字符串形式返回协议的名称。
 - [NSProtocolFromString](<nsprotocolfromstring(__).md>) — 返回具有给定名称的协议。
 
-### 序列化
+### 序列化（serialization）
 
 - [NSGetSizeAndAlignment](<nsgetsizeandalignment(______).md>) — 获取已编码类型的实际大小和对齐大小。

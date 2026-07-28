@@ -21,7 +21,7 @@ translated: true
 
 <sub>API 集合</sub>
 
-将 Foundation 的通知中心与 Swift 并发（Swift concurrency）配合使用。
+将 Foundation 的通知中心（notification center）与 Swift 并发（Swift concurrency）配合使用。
 
 ## 概述
 
