@@ -15,7 +15,7 @@
 | P0 | 旧归档缺口补齐 | 已合并主体 | PR #10 合并，950 / 1,098 |
 | P1 | 恢复 Claude 中断前的 36 篇译文 | 已完成机械验收 | Apple 译文 441 / 441 机械校验通过 |
 | P1 | 独立语言审校这 36 篇 | 待办 | 另一 AI 对照原文复核并记录问题 |
-| P2 | core Apple 文档 + WWDC | 进行中 | 已合并 319 篇；剩余 1,737 篇全部通过三道质量关 |
+| P2 | core Apple 文档 + WWDC | 进行中、等待 API 充值 | DeepSeek 新增 218 篇；剩余 1,519 篇全部通过三道质量关 |
 | P3 | 第三方英文博客 | 待办 | 剩余 2,053 篇全部通过三道质量关 |
 | P4 | 全仓一致性、索引与最终报告 | 待办 | 校验、索引、数字、版权边界全部对账 |
 
@@ -43,22 +43,41 @@ python3 tools/audit_consistency.py
 
 ### P2：完成 core
 
-当前剩余 1,737 篇、10,621,133 字符。使用 8 个互不重叠分片，每片约 130,000 字符：
+当前剩余 1,519 篇、9,204,757 字符。64 个互不重叠分片已经生成，并绑定到
+`core-r04-all`；**完成前不要重新运行 `shard.py` 覆盖这些分片**。
 
 ```bash
-python3 tools/shard.py --shards 8 --budget 130000 --scope core
+python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
+python3 tools/deepseek_pipeline.py status --run-id core-r04-all
 ```
 
-按这个预算，大约还需要 11 轮。每一轮都按以下流水线执行：
+充值后直接恢复：
 
-1. 生成分片并确认 8 份文件集合互不重叠；
-2. 每个翻译者只处理自己的 `shard-XX.json`；
-3. 初译者不得改英文原文、术语表或其他分片；
-4. 由另一 AI 对照原文审校；
-5. 运行目标目录的 `validate.py`；
-6. 运行 `audit_consistency.py`；
-7. 只提交本轮通过验收的译文；
-8. 推送后重新生成下一轮分片。
+python3 tools/deepseek_pipeline.py run \
+  --shard meta/shards/shard-*.json \
+  --run-id core-r04-all \
+  --concurrency 64 \
+  --review-concurrency 32 \
+  --retries 8 \
+  --max-cost-usd 100
+```
+
+恢复时会跳过 63 篇已完成译文，并复用仍然有效的阶段候选。HTTP 402
+`Insufficient Balance` 会触发全局熔断；这不是限流，必须先充值。基于已完成批次的真实
+消耗，建议余额至少补到 **20 美元**，为 Pro 审校和失败重试留余量；这是运行估算，不是
+DeepSeek 的计费承诺。
+
+后续仍按以下质量流水线执行：
+
+1. 初译使用 DeepSeek Flash，独立审校使用新的 DeepSeek Pro 请求；
+2. 候选只写入 `.staging/deepseek/`，不得改英文原文、术语表或已有译文；
+3. 初译与审校输出各自通过 `validate.py` 的底层 `check_pair` 后才写入 `zh/`；
+4. 运行目标目录的 `validate.py` 和 `audit_consistency.py`；
+5. 人工抽查并只把合格译文提交 PR，不得由脚本自动合并；
+6. Flash 连续失败的少量文件改用 Pro 兜底，不降低机械校验标准。
+
+Key 不得进入仓库。完整说明见
+[`DEEPSEEK_RUNBOOK.md`](DEEPSEEK_RUNBOOK.md)。
 
 优先级：
 
@@ -97,6 +116,7 @@ python3 tools/validate.py apple-docs/zh
 python3 tools/validate.py wwdc/zh
 python3 tools/validate.py blogs/zh
 python3 tools/test_validate.py
+python3 tools/test_deepseek_pipeline.py
 python3 tools/audit_consistency.py
 python3 tools/indexes.py
 python3 tools/studyplan.py
@@ -116,7 +136,7 @@ git diff --check
 
 ### 完整 A 方案
 
-剩余 33,025,260 个源文件字符。考虑初译、中文输出、独立审校、重读原文、失败重试和公共
+剩余 31,608,884 个源文件字符。考虑初译、中文输出、独立审校、重读原文、失败重试和公共
 上下文，预计总消耗约 **3,000 万到 6,000 万 Token**。这是数量级估算，不是计费承诺。
 
 ### 节省 Token 的三个挡位
@@ -136,6 +156,7 @@ git diff --check
 - 不让多个 AI 领取同一文件；
 - 机械检查交给脚本，不让模型反复数链接和代码行；
 - 分片失败时保留已经通过校验的文件，只重做失败文件；
+- DeepSeek 运行必须复用同一个 `run-id` 才能读到断点和费用记录；
 - 每轮提交后再切下一轮，避免分片清单过时。
 
 ## 4. 每轮记录模板
@@ -146,6 +167,8 @@ git diff --check
 |---|---|---|---:|---:|---:|---|---|---|
 | 2026-07-27 | 恢复批次 | Foundation / Swift / UIKit / Xcode | — | 36 | 约 133K 文件字节 | 待补 | 441 / 441 通过 | `9ee8b4b4e` |
 | 2026-07-28 | core round 1–2 | Foundation / Swift / SwiftUI / UIKit / Xcode | 15 PR | 319 | 1,790,900 源字符 | 通过并修订 | 760 / 760 通过 | PR #2–#16 |
+| 2026-07-28 | `core-r03` | Apple / WWDC | 8 | 155 | 1,037,571 源字符 | DeepSeek Pro 通过；人工抽查 3 篇 | Apple 912 / 912；WWDC 26 / 26 | 待提 PR |
+| 2026-07-28 | `core-r04-all` 部分 | Apple / WWDC | 64 | 63 | 378,805 源字符 | DeepSeek Pro 通过 | Apple 967 / 967；WWDC 34 / 34 | 余额不足暂停，待提 PR |
 
 “独立审校”只能填写“通过”“部分”或“待补”，不得用机械校验结果代替。
 
