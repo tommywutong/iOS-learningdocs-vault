@@ -23,6 +23,8 @@ App 启动缓慢非常令人沮丧。了解新的 App 启动检测工具，并�
 
 ## 相关资源
 
+- [已归档的演讲幻灯片](../../slides/wwdc2019/423/slides.md)
+
 - [HD 视频](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_hd_optimizing_app_launch.mp4?dl=1)
 - [SD 视频](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_sd_optimizing_app_launch.mp4?dl=1)
 - [演示文稿 (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_optimizing_app_launch.pdf?dl=1)

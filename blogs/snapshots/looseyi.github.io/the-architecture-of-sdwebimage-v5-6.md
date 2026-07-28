@@ -18,7 +18,7 @@ container_source: guess
 
 This article is based on SDWebImage 5.6. Why i write this article, cause i found that SD’s API is constantly iterating, and many of the structures are different from earlier versions. Here is to make a record. We will start from the top of the API’s level list below, force on the entire framework’s data flow.
 
-![highlevel](https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageHighLevelDiagram.jpeg)
+![highlevel](../../../attachments/snapshots/looseyi.github.io/524a0c98f8b9/e0600da06eb3edf0207d.jpg)
 
 ## 5.0 Migration Guid
 
@@ -134,7 +134,7 @@ Image context runs through the entire workflow of image processing. It brings da
 
 SDWebImageContextOption is an extensible String enumeration, there are currently 15 types. Basically, you can guess its function just by looking at the name, here is the [document](https://github.com/SDWebImage/SDWebImage/blob/5c3c40288f7e465ba94db9736e624f663831951a/SDWebImage/Core/SDWebImageDefine.h), summarized as follows:
 
-![image context](http://ww1.sinaimg.cn/large/8157560cgy1gcbeto2gb6j20xj1whajv.jpg)
+![image context](../../../attachments/snapshots/looseyi.github.io/524a0c98f8b9/23ebaab5d558bd12f3c8.jpg)
 
 ## ImagePrefetcher
 
@@ -180,7 +180,7 @@ Finally, the task is stored in prefetchQueue, which limit the maximum number of 
 8}
 ```
 
-`loadOperations` and `prefetchOperations` All use **NSPointerArray**, which uses its [NSPointerFunctionsWeakMemory](apple-reference-documentation: // hcx77yk4jV) feature and can store ` Null` values, although its performance is not very good, see: [basic collection Class](https://objccn.io/issue-7-1/)
+`loadOperations` and `prefetchOperations` All use **NSPointerArray**, which uses its [NSPointerFunctionsWeakMemory](apple-reference-documentation://hcx77yk4jV) feature and can store ` Null` values, although its performance is not very good, see: [basic collection Class](https://objccn.io/issue-7-1/)
 
 Another important thing is that PrefetchToken use the [c++11 memory_order_relaxed](https://zhuanlan.zhihu.com/p/45566448) to ensure the thread-safe。
 
@@ -267,7 +267,7 @@ The last **decryptor** is used for image decryption, which provides base64 conve
 
 Processing data through these protocolded objects origins the **[strategy pattern](https://www.wikiwand.com/en/Strategy_pattern)**. By obtaining the protocol object through configuration, the caller only needs to care about the method provided by the protocol object, and does not need to care about its internal implementation to achieve the purpose of decoupling.
 
-###DownloadImageWithURL
+### DownloadImageWithURL
 
 Before downloading, check whether the URL exists.
 
@@ -295,7 +295,7 @@ If the operation is nil、isFinished or isCancelled will call `createDownloaderO
 
 The final operation, url, request, and downloadOperationCancelToken are packaged into **SDWebImageDownloadToken**, which the end of the download task.
 
-###CreateDownloaderOperation
+### CreateDownloaderOperation
 
 After downloading, let’s talk about how the operation is created. The first is to generate a URLRequest:
 
@@ -357,7 +357,7 @@ By default, each task is added to the downloadQueue in FIFO order. If you set it
 8}
 ```
 
-###Data Processing
+### Data Processing
 
 SDWebImageDownloaderOperation is also a protocolization class, which confirm NSURLSessionTaskDelegate, NSURLSessionDataDelegate. It handles URL request data, supports background downloading, supports responseData modification (by responseModifier), and supports download ImageData decryption (by decryptor). The main internal properties are as follows:
 
@@ -814,7 +814,7 @@ The operation of **loadImage** is a combineOperation, which is a combination of 
 
 The cancel method provided by it will gradually check two types of opration and then call the cancel operation one by one.
 
-####CallCacheProcessForOperation
+#### CallCacheProcessForOperation
 
 First check the value of **SDWebImageFromLoaderOnly** to determine whether need to start the download task directly.
 
@@ -836,7 +836,7 @@ There are two situations that need to be handled for the results of the cache qu
 1. When the operation is executing in the queue and operaton was marked as canceled, will end the donwload task;
 2. Otherwise, forward to downloadProcess.
 
-####CallDownloadProcessForOperation
+#### CallDownloadProcessForOperation
 
 The most complex of the 6 methods. First, We need to decide whether we need to create a new download task, which is controlled by three variables:
 
@@ -863,7 +863,7 @@ The most complex of the 6 methods. First, We need to decide whether we need to c
 
 Finally, call the **safelyRemoveOperation** for operation which marked as finished;
 
-####CallStoreCacheProcessForOperation
+#### CallStoreCacheProcessForOperation
 
 Pour out storeCacheType、originalStoreCacheType、transformer、cacheSerializer from imageContext.
 
@@ -886,7 +886,7 @@ If cacheSerializer exists during storage, it will first convert the data format,
 
 When the storage is over, go to the last step, **transformProcess**.
 
-####CallTransformProcessForOperation
+#### CallTransformProcessForOperation
 
 Before the conversion starts, it will routinely judge whether it needs to be converted.
 

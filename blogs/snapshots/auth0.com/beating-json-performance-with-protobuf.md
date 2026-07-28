@@ -57,25 +57,25 @@ Since there are a lot of JavaScript engines available, it is valuable to see how
 
 The following charts exposes the average performance, of these browsers, on 50 subsequent `GET` requests to both endpoints - the Protobuf and JSON endpoints. These 50 requests per endpoint were issued twice: first when running the Spring Boot application with compression turned on, and then when running the application with compression turned off. So, in the end, each browser requested 200 times all these 50 thousand people data.
 
-![Comparison of Protobuf/JSON performance on compressed GET requests](https://images.ctfassets.net/23aumh6u8s0i/2B8sODuyGdunmXjrOpzazG/f13041b66b51f9ef659f75d9e6a89bc0/compressed-env-times)
+![Comparison of Protobuf/JSON performance on compressed GET requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/e25156d80ff22816eb57.png)
 
-![Comparison of Protobuf/JSON payload sizes on compressed GET requests](https://images.ctfassets.net/23aumh6u8s0i/3DV4W20jYqG30RFAKfHR8R/54e80d22b5e6583baa3f432b647c1bbb/compressed-env-sizes)
+![Comparison of Protobuf/JSON payload sizes on compressed GET requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/ac97d1edaeeda91a670a.png)
 
 As you can see in the charts above, the results for the **compressed environment** were quite similar for both Protobuf and JSON. Protobuf messages were **9% smaller** than JSON messages and they took only **4% less time** to be available to the JavaScript code. This can sound like nothing, but considering that Protobuf has to be converted from binary to JSON - JavaScript code uses JSON as its object literal format - it is amazing that Protobuf managed to be faster than its counterpart.
 
 Now, when we have to deal with **non-compressed messages**, the results change quite a bit. Let's analyze the charts below:
 
-![Comparison of Protobuf/JSON performance on non-compressed GET requests](https://images.ctfassets.net/23aumh6u8s0i/3wcp3Hv7fqjMeIYFyjt0Qd/dae84fb1faf16f65c9adc78b92e180d9/non-compressed-env-times)
+![Comparison of Protobuf/JSON performance on non-compressed GET requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/fd69fb93c6ae638317fb.png)
 
-![Comparison of Protobuf/JSON payload sizes on non-compressed GET requests](https://images.ctfassets.net/23aumh6u8s0i/7ea5eSOR1qBoJBfFQ7dH0r/c0e30ed7c5e2e7cee3b47aaae9366daa/non-compressed-env-sizes)
+![Comparison of Protobuf/JSON payload sizes on non-compressed GET requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/85b31b39a49dde26274c.png)
 
 On these situations, Protobuf performs even better when compared to JSON. Messages, on this format, were **34% smaller**, and they took **21% less time** to be available to the JavaScript code.
 
 When issuing `POST` requests, the difference gets almost imperceptible as usually this kind of request doesn't deal with heavy messages. More frequent than not, these requests just handle the update of a few fields on a form or something similar. So, to make the test trustworthy, I issued 50 requests with just one `Person` message and a few properties, like emails addresses and mobiles, on it. The results can be checked below:
 
-![Comparison of Protobuf/JSON performance on POST requests](https://images.ctfassets.net/23aumh6u8s0i/6SElV0h5ukYfNrDiDUXbnT/e1e55790bb1c97a88c51975e619f8561/post-requests-times)
+![Comparison of Protobuf/JSON performance on POST requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/a2f8610a21e787e528e8.png)
 
-![Comparison of Protobuf/JSON payload sizes on POST requests](https://images.ctfassets.net/23aumh6u8s0i/3hSsppboywgKhjrltuStOc/195b61f69e26b0e0baa0f9768ebb22d5/post-requests-sizes)
+![Comparison of Protobuf/JSON payload sizes on POST requests](../../../attachments/snapshots/auth0.com/99d33eb90cba/8d4ec3df516cdab2b977.png)
 
 In this case the messages sizes were not even different, mainly because they were so small that the meta-data about them were heavier than the data itself. And the time to issue the request and get a response back was almost equal as well, with only a **4% better** performance from Protobuf requests when compared to JSON requests.
 
@@ -85,7 +85,7 @@ If we were to use only JavaScript environments, like Node.js applications and we
 
 The chart below was generated with the average performance of 500 `GET` requests issued by one Spring Boot application to another Spring Boot application. Both applications were deployed on different virtual machines hosted by [Digital Ocean](https://www.digitalocean.com/). I chose this strategy to simulate a common scenario where two microservices are communicating through the wire. Let's see how this simulation ran:
 
-![Comparison of Protobuf/JSON performance on GET requests issued by a Java app to another Java app](https://images.ctfassets.net/23aumh6u8s0i/7fE582myNrMvGWhM0xUcLb/ab87c994b0321433417acc25f2c4381e/java-times)
+![Comparison of Protobuf/JSON performance on GET requests issued by a Java app to another Java app](../../../attachments/snapshots/auth0.com/99d33eb90cba/150367ae446ceb9b4d61.png)
 
 Now this is a great performance improvement. When using Protobuf on a **non-compressed** environment, the requests took **78% less time** than the JSON requests. This shows that the binary format performed almost **5 times faster** than the text format. And, when issuing these requests on a **compressed** environment, the difference was even bigger. Protobuf performed **6 times faster**, taking only 25ms to handle requests that took 150ms on a JSON format.
 
@@ -444,7 +444,7 @@ Now, to be able to interact with our endpoints again, we will have to obtain an 
 
 Therefore, we can head back to [the _APIs_ section in our Auth0 dashboard](https://manage.auth0.com/#/apis), click on the API we created before, and then click on the _Test_ section of this API. There, we will find a button called _Copy Token_. Let's click on this button to copy an access token to our clipboard.
 
-![Copying a test token from the Auth0 dashboard.](https://images.ctfassets.net/23aumh6u8s0i/5XRma9uInVMRRjzbCN8liz/8721c0abc74b34af42df88d5f1b033c6/nodejs-hapijs-redis_getting-a-test-token-from-auth0-dashboard.png)
+![Copying a test token from the Auth0 dashboard.](../../../attachments/snapshots/auth0.com/99d33eb90cba/7d3a658a76c626e01c26.png)
 
 After copying this token, we can open a terminal and issue the following commands:
 
@@ -480,7 +480,7 @@ How about you? What do you think about the speed of Protobuf? Are you considerin
 
 About the author
 
-![Bruno Krebs](https://images.ctfassets.net/23aumh6u8s0i/H7mkLrAoB5N10mbKVUc4o/641e80c0533fb487547e9da7fe7a18fc/bruno-krebs)
+![Bruno Krebs](../../../attachments/snapshots/auth0.com/99d33eb90cba/005b400c7301046c537d.jpg)
 
 #### Bruno Krebs
 

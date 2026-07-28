@@ -23,6 +23,8 @@ Slow app launches are frustrating. Learn about the new app launch instrument and
 
 ## Resources
 
+- [Archived Presentation Slides](../../slides/wwdc2019/423/slides.md)
+
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_hd_optimizing_app_launch.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_sd_optimizing_app_launch.mp4?dl=1)
 - [Presentation Slides (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2019/423lzf3qsjedrzivc7/423/423_optimizing_app_launch.pdf?dl=1)

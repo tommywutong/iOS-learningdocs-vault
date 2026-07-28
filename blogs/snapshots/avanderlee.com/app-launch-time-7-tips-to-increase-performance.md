@@ -67,7 +67,7 @@ To create consistent measurements you would ideally test in the following circum
 
 Obviously, these are not realistic for automated testing. However, combining an automated test with manual testing should bring you in the right place to create consistent measures over 5 launches.
 
-![FREE 5-day email course: The Swift Concurrency Playbook by Antoine van der Lee](https://www.avanderlee.com/wp-content/smush-webp/2025/09/tscp-cover-500x500.png.webp)
+![FREE 5-day email course: The Swift Concurrency Playbook by Antoine van der Lee](../../../attachments/snapshots/avanderlee.com/b1dab071c1b0/352819510dff81a84223.webp)
 
 FREE 5-Day Email Course: The Swift Concurrency Playbook
 

@@ -189,7 +189,7 @@
 | 技术博客 | Low Level Bits (Alex Denisov) | 39 | 2 | 37 | 5% | [查看](sources/blogs/lowlevelbits.md) |
 | 技术博客 | worthdoingbadly (Zhuowei Zhang) | 35 | 0 | 35 | 0% | [查看](sources/blogs/worthdoingbadly.md) |
 | 技术博客 | Emerge Tools Blog | 34 | 4 | 30 | 12% | [查看](sources/blogs/emergetools.md) |
-| 技术博客 | 学习计划点名的单页快照 | 30 | 0 | 30 | 0% | [查看](sources/blogs/snapshots.md) |
+| 技术博客 | 学习计划点名的单页快照 | 30 | 28 | 2 | 93% | [查看](sources/blogs/snapshots.md) |
 | 技术博客 | Hamster Emporium (Greg Parker) | 29 | 29 | 0 | 100% | [查看](sources/blogs/sealiesoftware.md) |
 | 技术博客 | Bartosz Ciechanowski | 23 | 2 | 21 | 9% | [查看](sources/blogs/ciechanowski.md) |
 | 技术博客 | Saagar Jha | 20 | 2 | 18 | 10% | [查看](sources/blogs/saagarjha.md) |

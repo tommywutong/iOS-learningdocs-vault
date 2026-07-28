@@ -28,7 +28,7 @@
 | sunnyxx (孙源) | 0 | 50 | 0 | 0 | [逐篇查看](sources/blogs/sunnyxx.md) | [中文](../blogs/zh/sunnyxx) | 未声明 → 仅私有归档 |
 | worthdoingbadly (Zhuowei Zhang) | 35 | 0 | 0 | 35 | [逐篇查看](sources/blogs/worthdoingbadly.md) | [英文](../blogs/en/worthdoingbadly) | 未声明 → 仅私有归档 |
 | 南峰子 (southpeak) | 0 | 86 | 0 | 0 | [逐篇查看](sources/blogs/southpeak.md) | [中文](../blogs/zh/southpeak) | © 2017 南峰子（页脚）→ 仅私有归档 |
-| 学习计划点名的单页快照 | 30 | 56 | 0 | 30 | [逐篇查看](sources/blogs/snapshots.md) | [英文](../blogs/snapshots) | 逐条不同 |
+| 学习计划点名的单页快照 | 30 | 84 | 28 | 2 | [逐篇查看](sources/blogs/snapshots.md) | [英文](../blogs/snapshots) · [中文](../blogs/snapshots-zh) | 逐条不同 |
 | 杨萧玉 | 0 | 114 | 0 | 0 | [逐篇查看](sources/blogs/yulingtianxia.md) | [中文](../blogs/zh/yulingtianxia) | 未声明 → 仅私有归档 |
 | 雷纯锋 | 0 | 16 | 0 | 0 | [逐篇查看](sources/blogs/leichunfeng.md) | [中文](../blogs/zh/leichunfeng) | 未声明 → 仅私有归档 |
-| **合计** | **2293** | **871** | **134** | **2159** | | | |
+| **合计** | **2293** | **899** | **162** | **2131** | | | |

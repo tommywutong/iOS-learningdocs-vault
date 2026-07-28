@@ -1,0 +1,789 @@
+{
+  "version": 1,
+  "scope": "summer-snapshots",
+  "files": 28,
+  "assets": [
+    {
+      "article": "blogs/snapshots/angelolloqui.com/ios-performance-tips-i-drawing-shadows.md",
+      "asset_url": "http://angelolloqui.com/ckeditor_assets/pictures/18/content_ios_simulator_screen_shot_sep_6_2013_4_43_41_pm.png?1378478756",
+      "status": "downloaded",
+      "final_url": "http://angelolloqui.com/ckeditor_assets/pictures/18/content_ios_simulator_screen_shot_sep_6_2013_4_43_41_pm.png?1378478756",
+      "path": "attachments/snapshots/angelolloqui.com/559fe70035ad/f1077fb5cf649fee8aa4.png",
+      "markdown_target": "../../../attachments/snapshots/angelolloqui.com/559fe70035ad/f1077fb5cf649fee8aa4.png",
+      "content_type": "image/png",
+      "bytes": 110854,
+      "sha256": "f1077fb5cf649fee8aa4a5f04f4adf4c0400a5414fd39b35cbae22306fde8ac1"
+    },
+    {
+      "article": "blogs/snapshots/angelolloqui.com/ios-performance-tips-i-drawing-shadows.md",
+      "asset_url": "http://angelolloqui.com/ckeditor_assets/pictures/19/content_screen_shot_2013-09-06_at_4_53_45_pm.png?1378479252",
+      "status": "downloaded",
+      "final_url": "http://angelolloqui.com/ckeditor_assets/pictures/19/content_screen_shot_2013-09-06_at_4_53_45_pm.png?1378479252",
+      "path": "attachments/snapshots/angelolloqui.com/559fe70035ad/5cbd572bba816b0f136b.png",
+      "markdown_target": "../../../attachments/snapshots/angelolloqui.com/559fe70035ad/5cbd572bba816b0f136b.png",
+      "content_type": "image/png",
+      "bytes": 24050,
+      "sha256": "5cbd572bba816b0f136b13f5ed61d032c42d7b7ebc487bb017895364afbf3b35"
+    },
+    {
+      "article": "blogs/snapshots/angelolloqui.com/ios-performance-tips-i-drawing-shadows.md",
+      "asset_url": "https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Art/shadows_2x.png",
+      "status": "downloaded",
+      "final_url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Art/shadows_2x.png",
+      "path": "attachments/snapshots/angelolloqui.com/559fe70035ad/d17afde13c6a6f557271.png",
+      "markdown_target": "../../../attachments/snapshots/angelolloqui.com/559fe70035ad/d17afde13c6a6f557271.png",
+      "content_type": "image/png",
+      "bytes": 39723,
+      "sha256": "d17afde13c6a6f5572717097c3d45c0afc7396652ca038c8eeb85211dab4cdb5"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/2B8sODuyGdunmXjrOpzazG/f13041b66b51f9ef659f75d9e6a89bc0/compressed-env-times",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/2B8sODuyGdunmXjrOpzazG/f13041b66b51f9ef659f75d9e6a89bc0/compressed-env-times",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/e25156d80ff22816eb57.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/e25156d80ff22816eb57.png",
+      "content_type": "image/png",
+      "bytes": 111107,
+      "sha256": "e25156d80ff22816eb5768c8d2e2019602411465b90f67ca443831125149c5df"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/3DV4W20jYqG30RFAKfHR8R/54e80d22b5e6583baa3f432b647c1bbb/compressed-env-sizes",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/3DV4W20jYqG30RFAKfHR8R/54e80d22b5e6583baa3f432b647c1bbb/compressed-env-sizes",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/ac97d1edaeeda91a670a.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/ac97d1edaeeda91a670a.png",
+      "content_type": "image/png",
+      "bytes": 103966,
+      "sha256": "ac97d1edaeeda91a670a25a781d0aeafc3e0411c24f92cbc01a6494c1d7c48e1"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/3hSsppboywgKhjrltuStOc/195b61f69e26b0e0baa0f9768ebb22d5/post-requests-sizes",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/3hSsppboywgKhjrltuStOc/195b61f69e26b0e0baa0f9768ebb22d5/post-requests-sizes",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/8d4ec3df516cdab2b977.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/8d4ec3df516cdab2b977.png",
+      "content_type": "image/png",
+      "bytes": 108241,
+      "sha256": "8d4ec3df516cdab2b977876a0646861677adbb2c901efb099f378deb28e1f824"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/3wcp3Hv7fqjMeIYFyjt0Qd/dae84fb1faf16f65c9adc78b92e180d9/non-compressed-env-times",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/3wcp3Hv7fqjMeIYFyjt0Qd/dae84fb1faf16f65c9adc78b92e180d9/non-compressed-env-times",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/fd69fb93c6ae638317fb.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/fd69fb93c6ae638317fb.png",
+      "content_type": "image/png",
+      "bytes": 111114,
+      "sha256": "fd69fb93c6ae638317fbbcab2d7b1f662bea8cc0a33aaa978fcaa75e6e36a1ff"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/5XRma9uInVMRRjzbCN8liz/8721c0abc74b34af42df88d5f1b033c6/nodejs-hapijs-redis_getting-a-test-token-from-auth0-dashboard.png",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/5XRma9uInVMRRjzbCN8liz/8721c0abc74b34af42df88d5f1b033c6/nodejs-hapijs-redis_getting-a-test-token-from-auth0-dashboard.png",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/7d3a658a76c626e01c26.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/7d3a658a76c626e01c26.png",
+      "content_type": "image/png",
+      "bytes": 222886,
+      "sha256": "7d3a658a76c626e01c265be0a60bd97bbd531e0aa8281c2590bb39129d0b1a5e"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/6SElV0h5ukYfNrDiDUXbnT/e1e55790bb1c97a88c51975e619f8561/post-requests-times",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/6SElV0h5ukYfNrDiDUXbnT/e1e55790bb1c97a88c51975e619f8561/post-requests-times",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/a2f8610a21e787e528e8.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/a2f8610a21e787e528e8.png",
+      "content_type": "image/png",
+      "bytes": 109327,
+      "sha256": "a2f8610a21e787e528e8addd745eae5bf9f0d67ef805c2dc22038aab96bf5faa"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/7ea5eSOR1qBoJBfFQ7dH0r/c0e30ed7c5e2e7cee3b47aaae9366daa/non-compressed-env-sizes",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/7ea5eSOR1qBoJBfFQ7dH0r/c0e30ed7c5e2e7cee3b47aaae9366daa/non-compressed-env-sizes",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/85b31b39a49dde26274c.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/85b31b39a49dde26274c.png",
+      "content_type": "image/png",
+      "bytes": 112369,
+      "sha256": "85b31b39a49dde26274c9ced4f6634a2c19fc03eb40d4a326c2deb935cde5dc8"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/7fE582myNrMvGWhM0xUcLb/ab87c994b0321433417acc25f2c4381e/java-times",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/7fE582myNrMvGWhM0xUcLb/ab87c994b0321433417acc25f2c4381e/java-times",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/150367ae446ceb9b4d61.png",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/150367ae446ceb9b4d61.png",
+      "content_type": "image/png",
+      "bytes": 102935,
+      "sha256": "150367ae446ceb9b4d61d8bc766648595dcbe1347addb73715fe768e150605f2"
+    },
+    {
+      "article": "blogs/snapshots/auth0.com/beating-json-performance-with-protobuf.md",
+      "asset_url": "https://images.ctfassets.net/23aumh6u8s0i/H7mkLrAoB5N10mbKVUc4o/641e80c0533fb487547e9da7fe7a18fc/bruno-krebs",
+      "status": "downloaded",
+      "final_url": "https://images.ctfassets.net/23aumh6u8s0i/H7mkLrAoB5N10mbKVUc4o/641e80c0533fb487547e9da7fe7a18fc/bruno-krebs",
+      "path": "attachments/snapshots/auth0.com/99d33eb90cba/005b400c7301046c537d.jpg",
+      "markdown_target": "../../../attachments/snapshots/auth0.com/99d33eb90cba/005b400c7301046c537d.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 23890,
+      "sha256": "005b400c7301046c537de801f8846d4ffe6fc418fe7012041187e689fb6fb705"
+    },
+    {
+      "article": "blogs/snapshots/avanderlee.com/app-launch-time-7-tips-to-increase-performance.md",
+      "asset_url": "https://www.avanderlee.com/wp-content/smush-webp/2025/09/tscp-cover-500x500.png.webp",
+      "status": "downloaded",
+      "final_url": "https://www.avanderlee.com/wp-content/smush-webp/2025/09/tscp-cover-500x500.png.webp",
+      "path": "attachments/snapshots/avanderlee.com/b1dab071c1b0/352819510dff81a84223.webp",
+      "markdown_target": "../../../attachments/snapshots/avanderlee.com/b1dab071c1b0/352819510dff81a84223.webp",
+      "content_type": "image/webp",
+      "bytes": 157680,
+      "sha256": "352819510dff81a8422303d2a5e7c6967f3a37e92823a6e113498fa57eec54c4"
+    },
+    {
+      "article": "blogs/snapshots/blog.allegro.tech/static-linking-vs-dyld3.md",
+      "asset_url": "https://blog.allegro.tech/assets/img/articles/2018-05-28-Static-linking-vs-dyld3/speedup.png",
+      "status": "downloaded",
+      "final_url": "https://blog.allegro.tech/assets/img/articles/2018-05-28-Static-linking-vs-dyld3/speedup.png",
+      "path": "attachments/snapshots/blog.allegro.tech/c3cdcad9983e/50cdc562d2ba27a7617e.png",
+      "markdown_target": "../../../attachments/snapshots/blog.allegro.tech/c3cdcad9983e/50cdc562d2ba27a7617e.png",
+      "content_type": "image/png",
+      "bytes": 6279,
+      "sha256": "50cdc562d2ba27a7617ecfcb35e8fbcd635da1bf4dda8cf73abdb68af83108d2"
+    },
+    {
+      "article": "blogs/snapshots/blog.allegro.tech/static-linking-vs-dyld3.md",
+      "asset_url": "https://blog.allegro.tech/assets/img/authors/kamil.borzym.jpg",
+      "status": "downloaded",
+      "final_url": "https://blog.allegro.tech/assets/img/authors/kamil.borzym.jpg",
+      "path": "attachments/snapshots/blog.allegro.tech/c3cdcad9983e/79243ece2c24948ef9c0.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.allegro.tech/c3cdcad9983e/79243ece2c24948ef9c0.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 3274,
+      "sha256": "79243ece2c24948ef9c082394af0af3a33b295d891e8ca4fa612baa6d39b6d0a"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!2Wil!,w_2400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38adfd81-f74a-4df6-938a-17eaf8f6bd3c_1680x1200.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!2Wil!,w_2400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38adfd81-f74a-4df6-938a-17eaf8f6bd3c_1680x1200.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a921e75e0955488404e8.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a921e75e0955488404e8.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 207261,
+      "sha256": "a921e75e0955488404e8c19a84d1bc7ba6addec2bce8fd9e12a7b5430e40afbf"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!9Aep!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a4d8f33-eed7-42cf-9c05-4e8ec8fb91a4_1556x524.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!9Aep!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a4d8f33-eed7-42cf-9c05-4e8ec8fb91a4_1556x524.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/1525030d55efe7d6d210.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/1525030d55efe7d6d210.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 105382,
+      "sha256": "1525030d55efe7d6d2107c704d48d44a2c7262a426c62981c65920ac42bdd03d"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!Vf7A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4c79a4e3-8980-4b8f-bf72-8f5b725124ca_788x473.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!Vf7A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4c79a4e3-8980-4b8f-bf72-8f5b725124ca_788x473.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/aa5de86f14e771ee0e0f.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/aa5de86f14e771ee0e0f.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 66239,
+      "sha256": "aa5de86f14e771ee0e0f4133655be8cf6479ee6dd1333eb1e490ed3246d795b3"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!Zo2B!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a07a48d-414c-4989-919d-bca351135acd_1600x428.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!Zo2B!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a07a48d-414c-4989-919d-bca351135acd_1600x428.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a25c0f8a809654317c44.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a25c0f8a809654317c44.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 98722,
+      "sha256": "a25c0f8a809654317c44ee841789f17c3ebd5120b2346b04377af2beae520f50"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!d23d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f45310e-1138-4ee5-af3d-671d7b7e83bf_1574x1036.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!d23d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f45310e-1138-4ee5-af3d-671d7b7e83bf_1574x1036.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/534edd50751d267317ee.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/534edd50751d267317ee.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 111559,
+      "sha256": "534edd50751d267317ee545de0c28a83fff8ba43148e95316ef591904e0744f7"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!pJs-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe56d959e-7b61-4304-a4cd-f837a9c635a7_1600x900.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!pJs-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe56d959e-7b61-4304-a4cd-f837a9c635a7_1600x900.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/59b6ce5696fd326107b9.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/59b6ce5696fd326107b9.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 134435,
+      "sha256": "59b6ce5696fd326107b92f2f38c43b432bfd34781509e6a49b756973572c1214"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!qSLS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57f90734-8038-4f88-b4fa-22abbea19df6_1200x215.jpeg",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!qSLS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57f90734-8038-4f88-b4fa-22abbea19df6_1200x215.jpeg",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/489bba2a3fcec2581a4d.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/489bba2a3fcec2581a4d.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 44104,
+      "sha256": "489bba2a3fcec2581a4d2d9fe317c97986aa8da182cc7412220bf2ef50cbee9f"
+    },
+    {
+      "article": "blogs/snapshots/blog.jacobstechtavern.com/static-dynamic-mergeable-oh-my.md",
+      "asset_url": "https://substackcdn.com/image/fetch/$s_!s80e!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feab1e065-dffc-4096-ad9e-826ddda8a6cd_1304x1304.png",
+      "status": "downloaded",
+      "final_url": "https://substackcdn.com/image/fetch/$s_!s80e!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feab1e065-dffc-4096-ad9e-826ddda8a6cd_1304x1304.png",
+      "path": "attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/82b57dbce3824ce60df3.jpg",
+      "markdown_target": "../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/82b57dbce3824ce60df3.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 1284,
+      "sha256": "82b57dbce3824ce60df35a94a38ff520252c63e2acef0e1fb288324fd5a4a6eb"
+    },
+    {
+      "article": "blogs/snapshots/blog.timac.org/testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object.md",
+      "asset_url": "https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/objc4-680_objc4-706_small.png",
+      "status": "downloaded",
+      "final_url": "https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/objc4-680_objc4-706_small.png",
+      "path": "attachments/snapshots/blog.timac.org/04d7a0553129/3326edd6d80cfee9806b.png",
+      "markdown_target": "../../../attachments/snapshots/blog.timac.org/04d7a0553129/3326edd6d80cfee9806b.png",
+      "content_type": "image/png",
+      "bytes": 82075,
+      "sha256": "3326edd6d80cfee9806b2e30e688290d175fff98428c15eccb4d326def1b486b"
+    },
+    {
+      "article": "blogs/snapshots/blog.timac.org/testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object.md",
+      "asset_url": "https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/tests.png",
+      "status": "downloaded",
+      "final_url": "https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/tests.png",
+      "path": "attachments/snapshots/blog.timac.org/04d7a0553129/c1c822f307d893ea43ca.png",
+      "markdown_target": "../../../attachments/snapshots/blog.timac.org/04d7a0553129/c1c822f307d893ea43ca.png",
+      "content_type": "image/png",
+      "bytes": 130095,
+      "sha256": "c1c822f307d893ea43caa0e0bdbc8c99b4877d15042349cf1834349da1892993"
+    },
+    {
+      "article": "blogs/snapshots/blog.timac.org/testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object.md",
+      "asset_url": "https://blog.timac.org/MarkChart.png",
+      "status": "downloaded",
+      "final_url": "https://blog.timac.org/MarkChart.png",
+      "path": "attachments/snapshots/blog.timac.org/04d7a0553129/5bcf91224f3280e7a675.png",
+      "markdown_target": "../../../attachments/snapshots/blog.timac.org/04d7a0553129/5bcf91224f3280e7a675.png",
+      "content_type": "image/png",
+      "bytes": 138273,
+      "sha256": "5bcf91224f3280e7a67513b13f21be729283229ff7ba68fd8d1a410fe7e4e660"
+    },
+    {
+      "article": "blogs/snapshots/blog.timac.org/testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object.md",
+      "asset_url": "https://blog.timac.org/apps/MarkChart.png",
+      "status": "downloaded",
+      "final_url": "https://blog.timac.org/apps/MarkChart.png",
+      "path": "attachments/snapshots/blog.timac.org/04d7a0553129/39a8ea6243cdb97a3800.png",
+      "markdown_target": "../../../attachments/snapshots/blog.timac.org/04d7a0553129/39a8ea6243cdb97a3800.png",
+      "content_type": "image/png",
+      "bytes": 238073,
+      "sha256": "39a8ea6243cdb97a3800c8948ce334732cc3b2c42ec179700bca130798df8d5e"
+    },
+    {
+      "article": "blogs/snapshots/bpoplauschi.github.io/introduction-to-static-vs-dynamic-libraries-and-frameworks-on-ios-and-macos.md",
+      "asset_url": "https://bpoplauschi.github.io/assets/framework-embed.png",
+      "status": "downloaded",
+      "final_url": "https://bpoplauschi.github.io/assets/framework-embed.png",
+      "path": "attachments/snapshots/bpoplauschi.github.io/787059328ce7/bb471a6c705391ed4834.png",
+      "markdown_target": "../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/bb471a6c705391ed4834.png",
+      "content_type": "image/png",
+      "bytes": 16187,
+      "sha256": "bb471a6c705391ed4834326eb37d06fbdcc6a36a62566a106a5eb2992afccea2"
+    },
+    {
+      "article": "blogs/snapshots/bpoplauschi.github.io/introduction-to-static-vs-dynamic-libraries-and-frameworks-on-ios-and-macos.md",
+      "asset_url": "https://bpoplauschi.github.io/assets/framework-example.png",
+      "status": "downloaded",
+      "final_url": "https://bpoplauschi.github.io/assets/framework-example.png",
+      "path": "attachments/snapshots/bpoplauschi.github.io/787059328ce7/0af62124744a96da7a9c.png",
+      "markdown_target": "../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/0af62124744a96da7a9c.png",
+      "content_type": "image/png",
+      "bytes": 16607,
+      "sha256": "0af62124744a96da7a9cf0292e189cd0918c92d58873de465118cbabe9087e23"
+    },
+    {
+      "article": "blogs/snapshots/bpoplauschi.github.io/introduction-to-static-vs-dynamic-libraries-and-frameworks-on-ios-and-macos.md",
+      "asset_url": "https://bpoplauschi.github.io/assets/xcode-architectures.png",
+      "status": "downloaded",
+      "final_url": "https://bpoplauschi.github.io/assets/xcode-architectures.png",
+      "path": "attachments/snapshots/bpoplauschi.github.io/787059328ce7/7642caad2471ebdd5ddf.png",
+      "markdown_target": "../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/7642caad2471ebdd5ddf.png",
+      "content_type": "image/png",
+      "bytes": 31629,
+      "sha256": "7642caad2471ebdd5ddf4973b4a592f85772df1332d3f472d2fe960abc325584"
+    },
+    {
+      "article": "blogs/snapshots/bswanson.dev/exploring-sqlite-s-internals.md",
+      "asset_url": "https://www.bswanson.dev/_astro/b-tree.BJrzRScc_1ARWDa.webp",
+      "status": "downloaded",
+      "final_url": "https://www.bswanson.dev/_astro/b-tree.BJrzRScc_1ARWDa.webp",
+      "path": "attachments/snapshots/bswanson.dev/1b76dced7128/be2d088c5112845ca8d2.webp",
+      "markdown_target": "../../../attachments/snapshots/bswanson.dev/1b76dced7128/be2d088c5112845ca8d2.webp",
+      "content_type": "image/webp",
+      "bytes": 37304,
+      "sha256": "be2d088c5112845ca8d25f2f9048937e55ec9f822d6f78975c7ec96027488174"
+    },
+    {
+      "article": "blogs/snapshots/bswanson.dev/exploring-sqlite-s-internals.md",
+      "asset_url": "https://www.bswanson.dev/_astro/image.BOCjzkRO_1U2LJV.webp",
+      "status": "downloaded",
+      "final_url": "https://www.bswanson.dev/_astro/image.BOCjzkRO_1U2LJV.webp",
+      "path": "attachments/snapshots/bswanson.dev/1b76dced7128/c4bb74e745574562c24f.webp",
+      "markdown_target": "../../../attachments/snapshots/bswanson.dev/1b76dced7128/c4bb74e745574562c24f.webp",
+      "content_type": "image/webp",
+      "bytes": 15666,
+      "sha256": "c4bb74e745574562c24f82c8a721d5ae8ec535fd96beaec386b0f74c657d15af"
+    },
+    {
+      "article": "blogs/snapshots/bswanson.dev/exploring-sqlite-s-internals.md",
+      "asset_url": "https://www.bswanson.dev/_astro/overflow.BvRggobN_Z1AxzEt.webp",
+      "status": "downloaded",
+      "final_url": "https://www.bswanson.dev/_astro/overflow.BvRggobN_Z1AxzEt.webp",
+      "path": "attachments/snapshots/bswanson.dev/1b76dced7128/359eb28ce66498e342aa.webp",
+      "markdown_target": "../../../attachments/snapshots/bswanson.dev/1b76dced7128/359eb28ce66498e342aa.webp",
+      "content_type": "image/webp",
+      "bytes": 5556,
+      "sha256": "359eb28ce66498e342aab8071697cb92308e66ffd4aa5f611bac145b9ceb6c85"
+    },
+    {
+      "article": "blogs/snapshots/bswanson.dev/exploring-sqlite-s-internals.md",
+      "asset_url": "https://www.bswanson.dev/_astro/sqlite-stack.D0bSgPrb_ZdUerS.webp",
+      "status": "downloaded",
+      "final_url": "https://www.bswanson.dev/_astro/sqlite-stack.D0bSgPrb_ZdUerS.webp",
+      "path": "attachments/snapshots/bswanson.dev/1b76dced7128/0783a92cb771852f2036.webp",
+      "markdown_target": "../../../attachments/snapshots/bswanson.dev/1b76dced7128/0783a92cb771852f2036.webp",
+      "content_type": "image/webp",
+      "bytes": 10038,
+      "sha256": "0783a92cb771852f20360d45cfc3488d36177592dff5b15df213aedbc59426b3"
+    },
+    {
+      "article": "blogs/snapshots/bswanson.dev/exploring-sqlite-s-internals.md",
+      "asset_url": "https://www.bswanson.dev/_astro/tuple-format.BNU3gPQR_Z1n1QvL.webp",
+      "status": "downloaded",
+      "final_url": "https://www.bswanson.dev/_astro/tuple-format.BNU3gPQR_Z1n1QvL.webp",
+      "path": "attachments/snapshots/bswanson.dev/1b76dced7128/777addd3194eb1e050c9.webp",
+      "markdown_target": "../../../attachments/snapshots/bswanson.dev/1b76dced7128/777addd3194eb1e050c9.webp",
+      "content_type": "image/webp",
+      "bytes": 19382,
+      "sha256": "777addd3194eb1e050c969f18e0e61d4ba32c829c2fab094af02ce9379b8c42c"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-13.06.42.png?resize=397%2C71",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-14.55.58.png?resize=384%2C356",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-16.16.58.png?resize=630%2C339",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-16.20.23.png?resize=524%2C353",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-16.20.30.png?resize=254%2C255",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-16.30.18.png?resize=182%2C282",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-16.30.33.png?resize=179%2C281",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-17.27.20.png?resize=450%2C391",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/Screen-Shot-2012-09-29-at-17.34.36.png?resize=588%2C282",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/doc_based.jpg?resize=613%2C133",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/cocoanetics.com/the-amazing-responder-chain.md",
+      "asset_url": "https://i0.wp.com/www.cocoanetics.com/files/iOS_and_OSX_responder_chain_2x.png?resize=633%2C371",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-ios.png",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-ios.png",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/39abf02340c6a64bccc7.png",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/39abf02340c6a64bccc7.png",
+      "content_type": "image/png",
+      "bytes": 203578,
+      "sha256": "39abf02340c6a64bccc7e7b2003ad007ae52037bbb8d70f0a4f1ed3d71063670"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-osx.png",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-osx.png",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/e74a626a606aca7d8121.png",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/e74a626a606aca7d8121.png",
+      "content_type": "image/png",
+      "bytes": 226549,
+      "sha256": "e74a626a606aca7d8121a79aa5fa3fda6ca23b5843bae2c4f943ce0c5e443996"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/dynamic-ios-app.png",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/dynamic-ios-app.png",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/ba1b5d5486b88ef23a94.png",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/ba1b5d5486b88ef23a94.png",
+      "content_type": "image/png",
+      "bytes": 36303,
+      "sha256": "ba1b5d5486b88ef23a94765427cf3eb0490ec1d1fff31394b1bbad6fc94247dc"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/mach_o_format.gif",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/mach_o_format.gif",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/bd3487867fb1542492c6.gif",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/bd3487867fb1542492c6.gif",
+      "content_type": "image/gif",
+      "bytes": 7098,
+      "sha256": "bd3487867fb1542492c6795f86361b551008b48bd35a99843d4b232ae74ca0fc"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/plugin-imported-UTI.png",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/plugin-imported-UTI.png",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/324aee9439577e411b4a.png",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/324aee9439577e411b4a.png",
+      "content_type": "image/png",
+      "bytes": 68596,
+      "sha256": "324aee9439577e411b4a9211340a00b236a1591864ba3cbcc724f257b22a37dd"
+    },
+    {
+      "article": "blogs/snapshots/ddeville.me/dynamic-linking-on-ios.md",
+      "asset_url": "https://ddeville.me/static/media/images/posts/2014/04/plugin-loaded-alert.png",
+      "status": "downloaded",
+      "final_url": "https://ddeville.me/static/media/images/posts/2014/04/plugin-loaded-alert.png",
+      "path": "attachments/snapshots/ddeville.me/ae63c82d161d/d835a3e205e2de94a048.png",
+      "markdown_target": "../../../attachments/snapshots/ddeville.me/ae63c82d161d/d835a3e205e2de94a048.png",
+      "content_type": "image/png",
+      "bytes": 44666,
+      "sha256": "d835a3e205e2de94a0484f74c477a36b1f98489b6e2b6c7ba7fe126d651a359e"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/18z6FVkilMoMo3cJiqUCN8g-1024x292.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/18z6FVkilMoMo3cJiqUCN8g-1024x292.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/16101f39b4e0bd63c5d3.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/16101f39b4e0bd63c5d3.png",
+      "content_type": "image/png",
+      "bytes": 45475,
+      "sha256": "16101f39b4e0bd63c5d349745d4a8f25fa63d6fa33e98766c9ecf15eaf5f7e19"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/19XaXFiuJ-u5ewhG5EminPQ-1024x166.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/19XaXFiuJ-u5ewhG5EminPQ-1024x166.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/0810be5f4b5eb7a698ac.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/0810be5f4b5eb7a698ac.png",
+      "content_type": "image/png",
+      "bytes": 215203,
+      "sha256": "0810be5f4b5eb7a698acf67bed31be41603932d03e4ba8e5da0f07a8aaac55c8"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1AMTEAcQU1PTph-WWeAWW8Q-1024x168.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1AMTEAcQU1PTph-WWeAWW8Q-1024x168.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/1b5b50a904e72510d0cf.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/1b5b50a904e72510d0cf.png",
+      "content_type": "image/png",
+      "bytes": 36937,
+      "sha256": "1b5b50a904e72510d0cf602c679fdf54d419deb17b6886793822e87078d49708"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1Ayou6Pdw9lVVTnO_ISVXiA.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1Ayou6Pdw9lVVTnO_ISVXiA.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/f0c2d193593536f51fcd.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/f0c2d193593536f51fcd.png",
+      "content_type": "image/png",
+      "bytes": 109327,
+      "sha256": "f0c2d193593536f51fcd52280ecfd5adc13946c0b9aec5dc2889d3d326f0742a"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1KZcNErrc9cOXmCY7juJ34Q-1024x347.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1KZcNErrc9cOXmCY7juJ34Q-1024x347.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/49be1f9d94d213494cb6.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/49be1f9d94d213494cb6.png",
+      "content_type": "image/png",
+      "bytes": 102269,
+      "sha256": "49be1f9d94d213494cb67593ef1f64310d9bdd979b17622ffff537c41e776ce3"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1QZByRt7XImjHFq1ZACH0ew-2-1024x145.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1QZByRt7XImjHFq1ZACH0ew-2-1024x145.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/a0996fea90ef7558bc51.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/a0996fea90ef7558bc51.png",
+      "content_type": "image/png",
+      "bytes": 157855,
+      "sha256": "a0996fea90ef7558bc51373c9e8e308a9b6dc0bcdea88da7a5803fde6255cc85"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1lWh0QPT6FTdRR1HHgre8Bg-1024x319.png",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/1lWh0QPT6FTdRR1HHgre8Bg-1024x319.png",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/11dd030c52fcb22eaa29.png",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/11dd030c52fcb22eaa29.png",
+      "content_type": "image/png",
+      "bytes": 80333,
+      "sha256": "11dd030c52fcb22eaa295437017d478c72dce1a4e6865ac75a412dbdc4ec00c0"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://engineering.monday.com/wp-content/uploads/2021/03/Static-framework-1024x599.jpg",
+      "status": "downloaded",
+      "final_url": "https://engineering.monday.com/wp-content/uploads/2021/03/Static-framework-1024x599.jpg",
+      "path": "attachments/snapshots/engineering.monday.com/1f05d8bf9758/2994a990155928e48144.jpg",
+      "markdown_target": "../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/2994a990155928e48144.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 27774,
+      "sha256": "2994a990155928e48144733edc99309b2cdc03b82193eab9d5c2ff8c41c18cd6"
+    },
+    {
+      "article": "blogs/snapshots/engineering.monday.com/is-there-such-a-thing-as-a-static-framework-monday-ai-engineering.md",
+      "asset_url": "https://secure.gravatar.com/avatar/a2ae5ddcf5cef83720a154c905a85f503290c40656f052f76611c2871a1217d0?s=120&d=mm&r=g",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/looseyi.github.io/the-architecture-of-sdwebimage-v5-6.md",
+      "asset_url": "http://ww1.sinaimg.cn/large/8157560cgy1gcbeto2gb6j20xj1whajv.jpg",
+      "status": "downloaded",
+      "final_url": "http://ww1.sinaimg.cn/large/8157560cgy1gcbeto2gb6j20xj1whajv.jpg",
+      "path": "attachments/snapshots/looseyi.github.io/524a0c98f8b9/23ebaab5d558bd12f3c8.jpg",
+      "markdown_target": "../../../attachments/snapshots/looseyi.github.io/524a0c98f8b9/23ebaab5d558bd12f3c8.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 482296,
+      "sha256": "23ebaab5d558bd12f3c840d0f6fdd72657e91ce3c02752729b0ca826d98b13f5"
+    },
+    {
+      "article": "blogs/snapshots/looseyi.github.io/the-architecture-of-sdwebimage-v5-6.md",
+      "asset_url": "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageHighLevelDiagram.jpeg",
+      "status": "downloaded",
+      "final_url": "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/Docs/Diagrams/SDWebImageHighLevelDiagram.jpeg",
+      "path": "attachments/snapshots/looseyi.github.io/524a0c98f8b9/e0600da06eb3edf0207d.jpg",
+      "markdown_target": "../../../attachments/snapshots/looseyi.github.io/524a0c98f8b9/e0600da06eb3edf0207d.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 209170,
+      "sha256": "e0600da06eb3edf0207ddee40c05c3f1a15667046206c573081885ebb1c9cd27"
+    },
+    {
+      "article": "blogs/snapshots/pewpewthespells.com/static-and-dynamic-libraries.md",
+      "asset_url": "https://pewpewthespells.com/media/donate_button.gif",
+      "status": "robots-disallow",
+      "detail": "robots.txt 点名禁止 ['gptbot']：Disallow: /"
+    },
+    {
+      "article": "blogs/snapshots/suelan.github.io/dive-into-cfrunloop.md",
+      "asset_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210125183432020.png",
+      "status": "downloaded",
+      "final_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210125183432020.png",
+      "path": "attachments/snapshots/suelan.github.io/567670489703/a5c4091328cc65125ba6.png",
+      "markdown_target": "../../../attachments/snapshots/suelan.github.io/567670489703/a5c4091328cc65125ba6.png",
+      "content_type": "image/png",
+      "bytes": 129090,
+      "sha256": "a5c4091328cc65125ba6d7e1ec81a01f79410eea1cc193ebe64fde55ddf79f73"
+    },
+    {
+      "article": "blogs/snapshots/suelan.github.io/dive-into-cfrunloop.md",
+      "asset_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128223829153.png",
+      "status": "downloaded",
+      "final_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128223829153.png",
+      "path": "attachments/snapshots/suelan.github.io/567670489703/2a3d0a0ce98848e1eb4b.png",
+      "markdown_target": "../../../attachments/snapshots/suelan.github.io/567670489703/2a3d0a0ce98848e1eb4b.png",
+      "content_type": "image/png",
+      "bytes": 13629,
+      "sha256": "2a3d0a0ce98848e1eb4b63f055123c11eda61ded81cc37367bd82114d88afacb"
+    },
+    {
+      "article": "blogs/snapshots/suelan.github.io/dive-into-cfrunloop.md",
+      "asset_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128230441389.png",
+      "status": "downloaded",
+      "final_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128230441389.png",
+      "path": "attachments/snapshots/suelan.github.io/567670489703/7a785163e3f0657a9c9d.png",
+      "markdown_target": "../../../attachments/snapshots/suelan.github.io/567670489703/7a785163e3f0657a9c9d.png",
+      "content_type": "image/png",
+      "bytes": 49361,
+      "sha256": "7a785163e3f0657a9c9dfaa401912ea89a6110f598eadedde6d2f9aa01eed4ab"
+    },
+    {
+      "article": "blogs/snapshots/suelan.github.io/dive-into-cfrunloop.md",
+      "asset_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210209142244931.png",
+      "status": "downloaded",
+      "final_url": "https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210209142244931.png",
+      "path": "attachments/snapshots/suelan.github.io/567670489703/4779a265a4bebe390c8b.png",
+      "markdown_target": "../../../attachments/snapshots/suelan.github.io/567670489703/4779a265a4bebe390c8b.png",
+      "content_type": "image/png",
+      "bytes": 107239,
+      "sha256": "4779a265a4bebe390c8ba07e547c044ccad471b52b3cd77bb1eff0bab3914ba0"
+    },
+    {
+      "article": "blogs/snapshots/swiftrocks.com/ios-responder-chain-uiresponder-uievent-uicontrol-and-uses.md",
+      "asset_url": "https://i.imgur.com/922BVYT.png",
+      "status": "downloaded",
+      "final_url": "https://i.imgur.com/922BVYT.png",
+      "path": "attachments/snapshots/swiftrocks.com/8bd4c59250e0/84674239753ae466ed42.png",
+      "markdown_target": "../../../attachments/snapshots/swiftrocks.com/8bd4c59250e0/84674239753ae466ed42.png",
+      "content_type": "image/png",
+      "bytes": 11484,
+      "sha256": "84674239753ae466ed42fbeed8bde3ca3df2424fd63af5de0388d1aad2f034a5"
+    },
+    {
+      "article": "blogs/snapshots/swiftrocks.com/ios-responder-chain-uiresponder-uievent-uicontrol-and-uses.md",
+      "asset_url": "https://swiftrocks.com/images/bg/logo2dark.png",
+      "status": "downloaded",
+      "final_url": "https://swiftrocks.com/images/bg/logo2dark.png",
+      "path": "attachments/snapshots/swiftrocks.com/8bd4c59250e0/f3825544610887a24881.png",
+      "markdown_target": "../../../attachments/snapshots/swiftrocks.com/8bd4c59250e0/f3825544610887a24881.png",
+      "content_type": "image/png",
+      "bytes": 78567,
+      "sha256": "f3825544610887a24881f99eb7de1da59cc6c5c9c55cdea93fb5d328f909544f"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-fixed-width-height.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-fixed-width-height.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/0453f7d8a35724689ef1.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/0453f7d8a35724689ef1.webp",
+      "content_type": "image/webp",
+      "bytes": 16904,
+      "sha256": "0453f7d8a35724689ef14640eba37ea9b54edca5638939b51098b2908424c870"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-length-delimited-name.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-length-delimited-name.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/d525cd8a73b11d53c618.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/d525cd8a73b11d53c618.webp",
+      "content_type": "image/webp",
+      "bytes": 27826,
+      "sha256": "d525cd8a73b11d53c61869510a0f7e92d017183de52e6463f0ba7b3b80ce3304"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-packed-repeated-fields.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-packed-repeated-fields.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/4a6169e4f2b68a4f2278.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/4a6169e4f2b68a4f2278.webp",
+      "content_type": "image/webp",
+      "bytes": 20328,
+      "sha256": "4a6169e4f2b68a4f2278f6ac34580407bd9e6d51b95e5b36d4611f0766c01b46"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-repeated-tag-overhead.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-repeated-tag-overhead.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/deef2bae7766a82aeb3d.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/deef2bae7766a82aeb3d.webp",
+      "content_type": "image/webp",
+      "bytes": 27604,
+      "sha256": "deef2bae7766a82aeb3de9f874e4be486b39190c138578c933a8b7884a853b3e"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-tag-encoding.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-tag-encoding.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/4bd3ceaeed01c262702e.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/4bd3ceaeed01c262702e.webp",
+      "content_type": "image/webp",
+      "bytes": 22756,
+      "sha256": "4bd3ceaeed01c262702e0faf59d2ccfcd392085159dd328d0fcbab9f5c6811ea"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-varint-encoding.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-varint-encoding.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/5a0f248ef21199ac2733.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/5a0f248ef21199ac2733.webp",
+      "content_type": "image/webp",
+      "bytes": 27374,
+      "sha256": "5a0f248ef21199ac273363ca6e95bdebf192bb019bfa45070d7d2a8bcb18d4b2"
+    },
+    {
+      "article": "blogs/snapshots/victoriametrics.com/how-protobuf-works-the-art-of-data-encoding.md",
+      "asset_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-varint-id.webp",
+      "status": "downloaded",
+      "final_url": "https://victoriametrics.com/blog/go-protobuf/protobuf-varint-id.webp",
+      "path": "attachments/snapshots/victoriametrics.com/5050c6aa6366/cb7e4171b4384fee1a16.webp",
+      "markdown_target": "../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/cb7e4171b4384fee1a16.webp",
+      "content_type": "image/webp",
+      "bytes": 12702,
+      "sha256": "cb7e4171b4384fee1a160a5531c4c9bdeb5af916b29560cc01b392811468d19e"
+    }
+  ]
+}

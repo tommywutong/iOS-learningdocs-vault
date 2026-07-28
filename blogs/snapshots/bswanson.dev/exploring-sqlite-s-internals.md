@@ -16,7 +16,7 @@ container_source: guess
 
 > 原文：[Exploring SQLite's Internals](https://www.bswanson.dev/blog/exploring-sqlite-internals/)
 
-![](https://www.bswanson.dev/_astro/image.BOCjzkRO_1U2LJV.webp)
+![](../../../attachments/snapshots/bswanson.dev/1b76dced7128/c4bb74e745574562c24f.webp)
 
 Dec 31, 2024
 
@@ -36,7 +36,7 @@ We’re going to start with some larger concepts and end with some bite-sized fu
 
 SQLite can be broken into 6 subsystems, where each subsystem knows nothing about the implementation details of the others. This allows users to swap parts of the system for their own; for example, Bloomberg uses SQLite’s frontend (top 3 layers) with a custom storage engine (bottom 3 layers) in its [Comdb2 project](https://bloomberg.github.io/comdb2/overview_home.html).
 
-![A diagram of the SQLite stack. 6 boxes stacked vertically with arrows pointing down from one to the next. The boxes read: "Parser", "Code Generator", "Virtual Machine", "B-Tree", "Pager", and "OS Interface".](https://www.bswanson.dev/_astro/sqlite-stack.D0bSgPrb_ZdUerS.webp)
+![A diagram of the SQLite stack. 6 boxes stacked vertically with arrows pointing down from one to the next. The boxes read: "Parser", "Code Generator", "Virtual Machine", "B-Tree", "Pager", and "OS Interface".](../../../attachments/snapshots/bswanson.dev/1b76dced7128/0783a92cb771852f2036.webp)
 
 <sub>[Source](https://sqlite.org/talks/howitworks-20240624.pdf) (page 19)</sub>
 
@@ -72,7 +72,7 @@ There are two distinct types of B-trees that can appear in a SQLite file: table 
 
 The [header file](https://github.com/sqlite/sqlite/blob/master/src/btreeInt.h) for SQLite’s in-memory B-tree implementation has some really great documentation on how this works.
 
-![A diagram of a B+ tree. One root node contains keys (row IDs) and pointers, which point to child nodes. The leaf nodes contain integer keys and row data.](https://www.bswanson.dev/_astro/b-tree.BJrzRScc_1ARWDa.webp)
+![A diagram of a B+ tree. One root node contains keys (row IDs) and pointers, which point to child nodes. The leaf nodes contain integer keys and row data.](../../../attachments/snapshots/bswanson.dev/1b76dced7128/be2d088c5112845ca8d2.webp)
 
 <sub>[Source](https://sqlite.org/talks/howitworks-20240624.pdf) (page 65)</sub>
 
@@ -110,7 +110,7 @@ Assuming we’re using the default page size of 4096 bytes, we could read the ro
 
 The leaves on a table B-tree contain rows’ primary keys, which are always 64-bit integers, as well as some arbitrary blob data. This arbitrary blob data is stored using SQLite’s tuple format.
 
-![A diagram of SQLite's tuple format. It starts with variable-length integers representing the size of the tuple and the types of each value, then contains the values at the end.](https://www.bswanson.dev/_astro/tuple-format.BNU3gPQR_Z1n1QvL.webp)
+![A diagram of SQLite's tuple format. It starts with variable-length integers representing the size of the tuple and the types of each value, then contains the values at the end.](../../../attachments/snapshots/bswanson.dev/1b76dced7128/777addd3194eb1e050c9.webp)
 
 The types are constants that represent how SQLite should interpret the data:
 
@@ -140,7 +140,7 @@ Fun fact: since SQLite is a row store, the file format technically allows for di
 
 If a row’s content exceeds the size of the page it’s on, it’s stored as a linked list. Even though this may seem slow, reading many blobs via SQLite is still faster than the file system for blobs up to about 100 KB due to the overhead of calling `fopen`.
 
-![A diagram of a linked list with 4 nodes. The first node contains a key, some data, and a pointer to the next node, which contains some data and another pointer to the next node.](https://www.bswanson.dev/_astro/overflow.BvRggobN_Z1AxzEt.webp)
+![A diagram of a linked list with 4 nodes. The first node contains a key, some data, and a pointer to the next node, which contains some data and another pointer to the next node.](../../../attachments/snapshots/bswanson.dev/1b76dced7128/359eb28ce66498e342aa.webp)
 
 ### Going Deeper
 

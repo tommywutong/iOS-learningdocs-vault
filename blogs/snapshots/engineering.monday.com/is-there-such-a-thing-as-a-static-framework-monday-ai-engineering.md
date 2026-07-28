@@ -16,7 +16,7 @@ container_source: guess
 
 > 原文：[Is there such a thing as a static framework? - monday AI engineering](https://engineering.monday.com/is-there-such-a-thing-as-a-static-framework/)
 
-![Is there such a thing as a static framework?](https://engineering.monday.com/wp-content/uploads/2021/03/Static-framework-1024x599.jpg)
+![Is there such a thing as a static framework?](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/2994a990155928e48144.jpg)
 
 Mobile
 
@@ -34,7 +34,7 @@ Both views offer some truth about frameworks but at the simplest, a framework is
 
 Let us peek inside the [YPImagePicker](https://github.com/Yummypets/YPImagePicker) open source framework:
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/1lWh0QPT6FTdRR1HHgre8Bg-1024x319.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/11dd030c52fcb22eaa29.png)
 
 <sub>YPImagePicker Framework</sub>
 
@@ -46,7 +46,7 @@ MacOS and iOS uses the Mach-O executable format for their binaries. Mach-O binar
 
 The file command provides us with information on the binary Mach-O type.
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/19XaXFiuJ-u5ewhG5EminPQ-1024x166.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/0810be5f4b5eb7a698ac.png)
 
 <sub>file YPImagePicker</sub>
 
@@ -54,13 +54,13 @@ The YPImagePicker framework includes a dynamically linked shared library file, o
 
 Not all frameworks include dynamic libraries. Let us now peek inside the [GoogleSignIn](https://developers.google.com/identity/sign-in/ios/sdk#download_the_google_sign-in_sdk) framework:
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/1AMTEAcQU1PTph-WWeAWW8Q-1024x168.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/1b5b50a904e72510d0cf.png)
 
 <sub>GoogleSignIn Framework</sub>
 
 And run the file command on the binary:
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/1QZByRt7XImjHFq1ZACH0ew-2-1024x145.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/a0996fea90ef7558bc51.png)
 
 <sub>file GoogleSignIn</sub>
 
@@ -68,7 +68,7 @@ The GoogleSignIn framework includes an archive, or static library, which is a co
 
 There is nothing exceptional in having a framework host a static library. Go over the build settings of your Xcode project and check the Mach-O type setting:
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/1KZcNErrc9cOXmCY7juJ34Q-1024x347.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/49be1f9d94d213494cb6.png)
 
 As expected, the default Mach-O type for a Framework project is Dynamic Library, for a Static Libary project is Static Library and for an Application project is Executable. But you are free to edit it.
 
@@ -78,11 +78,11 @@ Some frameworks encapsulate dynamic libraries, others static libraries. It seems
 
 Dynamic frameworks and their dynamically shared libraries are not fully linked into the application executable at the end of the build process. As such, they need to be embedded into the application bundle. On the contrary, once the static linker is done, all symbols have been resolved. Text and data sections have been merged into one self-sufficient executable.
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/18z6FVkilMoMo3cJiqUCN8g-1024x292.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/16101f39b4e0bd63c5d3.png)
 
 The output of the Xcode build process is an Xcode archive (a type of package specific to macOS and iOS, not to be confused with a static archive!). If we were to Xcode archive an app with the framework setup as shown in the above picture, we would get an application bundle with this configuration:
 
-![](https://engineering.monday.com/wp-content/uploads/2021/03/1Ayou6Pdw9lVVTnO_ISVXiA.png)
+![](../../../attachments/snapshots/engineering.monday.com/1f05d8bf9758/f0c2d193593536f51fcd.png)
 
 The application bundle includes the MyApp executable along with frameworks that were embedded into the app, all residing in the Frameworks folder. But the application bundle doesn’t keep any trace of the non-embedded frameworks, the frameworks hosting static libraries. The GoogleSignIn executable is now part of the MyApp executable.
 

@@ -231,6 +231,16 @@ def residual_english(body: str) -> list[str]:
         s = line.strip()
         if not s or s.startswith(">") and "[!" in s:
             continue
+        if re.fullmatch(r"(?:[-*+]\s+)?(?:\[[^\]]+\]\([^)]+\)\s*)+", s):
+            continue
+        if re.fullmatch(r"Copyright © \d{4}(?:-\d{4})?.*All Rights Reserved", s):
+            continue
+        if s.startswith(">") and re.search(
+            r"(?:dyld:|@selector\(|\[\[?[A-Za-z_]|/var/|"
+            r"@(?:executable|loader|rpath)_path)",
+            s,
+        ):
+            continue
         if re.search(r"[一-鿿]", s):
             continue
         s = INLINE_CODE.sub(" ", s)
@@ -273,6 +283,7 @@ def check_pair(en: Path, zh: Path) -> list[str]:
         looks_like_identifier = bool(
             re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*(\([^)]*\))?", t)
             or re.fullmatch(r"[+-]?\s*[A-Za-z_][\w:.\-]*", t)
+            or re.fullmatch(r"<[A-Za-z0-9_.+-]+\.h>", t)
             # 崩溃信号那类标题整个由全大写标识符加括号组成
             # （`EXC_BAD_ACCESS (SIGSEGV)`、
             #  `EXC_BREAKPOINT (SIGTRAP) and EXC_BAD_INSTRUCTION (SIGILL)`），
@@ -401,7 +412,7 @@ def main() -> None:
     target = ROOT / (args[0] if args else "apple-docs")
 
     # 从 zh 路径推 en 路径
-    if "/zh" in str(target) or target.name == "zh":
+    if "/zh" in str(target) or target.name in {"zh", "snapshots-zh"}:
         zh_files = sorted(target.rglob("*.md"))
     else:
         zh_root = target / "zh"
@@ -414,7 +425,10 @@ def main() -> None:
     results: dict[str, list[str]] = {}
     native_zh = 0
     for zh in zh_files:
-        en = Path(str(zh).replace("/zh/", "/en/", 1))
+        if "/snapshots-zh/" in str(zh):
+            en = Path(str(zh).replace("/snapshots-zh/", "/snapshots/", 1))
+        else:
+            en = Path(str(zh).replace("/zh/", "/en/", 1))
         if not en.exists():
             # 中文来源的博客（ibireme、onevcat 这些）本来就没有英文版，
             # 它们直接躺在 zh/ 下，不是译文，不参与结构比对。

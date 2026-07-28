@@ -142,7 +142,7 @@ As you can see, it’s nothing too fancy. We start by retrieving the `Dl_info` s
 
 For these two functions, we will have to walk the Mach-O file load commands. I recommend reading the [OS X ABI Mach-O File Format Reference](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/MachORuntime/Reference/reference.html) from Apple for a good overview of the Mach-O file format. In a nutshell, a Mach-O file is composed of a header, a series of load commands and data composed of multiple segments. Information about the segments (such as their offset and size) is available in the segment load commands.
 
-![Mach-O file format](https://ddeville.me/static/media/images/posts/2014/04/mach_o_format.gif)
+![Mach-O file format](../../../attachments/snapshots/ddeville.me/ae63c82d161d/bd3487867fb1542492c6.gif)
 
 We will start with creating a visitor function that we’ll be able to reuse across both functions.
 
@@ -260,7 +260,7 @@ In the following section, we will attempt to build three products that are commo
 - A framework (a legit one, containing a dynamic shared library)
 - A plugin (i.e. a bundle containing an executable, not packaged with the application but loaded at runtime)
 
-![The Dynamic iOS app](https://ddeville.me/static/media/images/posts/2014/04/dynamic-ios-app.png)
+![The Dynamic iOS app](../../../attachments/snapshots/ddeville.me/ae63c82d161d/ba1b5d5486b88ef23a94.png)
 
 As usual, you can find the sample project on [GitHub](https://github.com/ddeville/Dynamic-iOS).
 
@@ -268,11 +268,11 @@ As usual, you can find the sample project on [GitHub](https://github.com/ddevill
 
 Let’s start by creating a dynamic library target for our iOS application. Oh wait…
 
-![Library choices on iOS](https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-ios.png)
+![Library choices on iOS](../../../attachments/snapshots/ddeville.me/ae63c82d161d/39abf02340c6a64bccc7.png)
 
 Xcode (logically) doesn’t provide a configuration template for a dynamic library on iOS. Luckily we can select a library from the OS X section and simply change the deployment target and architectures to build in the Build Settings.
 
-![Library choices on OS X](https://ddeville.me/static/media/images/posts/2014/04/create-library-choices-osx.png)
+![Library choices on OS X](../../../attachments/snapshots/ddeville.me/ae63c82d161d/e74a626a606aca7d8121.png)
 
 If you do this and create your library however, you will get an error when trying to build
 
@@ -312,7 +312,7 @@ We can then build the plugin and keep the product somewhere safe. We will then c
 
 In the host application, we will need to add an imported UTI for the plugin so that we can recognize its file type.
 
-![Plugin imported UTI](https://ddeville.me/static/media/images/posts/2014/04/plugin-imported-UTI.png)
+![Plugin imported UTI](../../../attachments/snapshots/ddeville.me/ae63c82d161d/324aee9439577e411b4a.png)
 
 With the plugin type declared we can now iterate through the contents of the Documents directory and look for plugins, checking conformance to the type for every found item by using `UTTypeConformsTo`. For each found plugin we can then load the bundle, retrieve the principal class and instantiate it.
 
@@ -454,7 +454,7 @@ codesign --sign "iPhone Developer" --force --verbose=4 Plugin.llplugin
 
 When code signing the plugin bundle by using the `codesign` Terminal utility _dyld_ correctly loads the file at runtime and the plugin code executes correctly, even on the device.
 
-![Plugin Loaded!](https://ddeville.me/static/media/images/posts/2014/04/plugin-loaded-alert.png)
+![Plugin Loaded!](../../../attachments/snapshots/ddeville.me/ae63c82d161d/d835a3e205e2de94a048.png)
 
 We thus have no problem dynamically loading an external plugin bundle containing executable code at runtime, even on a device. There is a big caveat to this: we were able to sign the plugin with our Developer certificate given that our device is present in the provisioning profile. For this scenario to happen with a shipped application, the plugin would need to be signed by Apple just like any application submitted to the App Store.
 

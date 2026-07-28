@@ -65,7 +65,7 @@ iOS supported more architectures over time:
 
 You can see the architecture(s) set for an Xcode target by looking at Build Settings -\> Architectures (`ARCHS`). It’s preset by Xcode to `Standard Architectures` (on Xcode 12.5 and an iOS target, this resolves to `arm64 armv7`).
 
-![xcode-architectures](https://bpoplauschi.github.io/assets/xcode-architectures.png)
+![xcode-architectures](../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/7642caad2471ebdd5ddf.png)
 
 ## What is a framework
 
@@ -73,7 +73,7 @@ You can see the architecture(s) set for an Xcode target by looking at Build Sett
 
 Check out [Apple’s Bundle Programming Guide](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW1).
 
-![framework-example](https://bpoplauschi.github.io/assets/framework-example.png)
+![framework-example](../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/0af62124744a96da7a9c.png)
 
 _Frameworks_ are also bundles ending with `.framework` extension. Note: With Xcode 11, Apple added `xcframework` extensions, also bundles with multiple architectures and platforms.
 
@@ -133,7 +133,7 @@ The impact of this limitation is that you can use dynamic modules, but you have 
 
 By choosing to embed a module in your app (Target - General - Frameworks, Libraries, and Embedded Content), you enable the `Embed Frameworks` Build Phase that copies the modules into your app binary (the `.app` will contain a `Frameworks` folder with them).
 
-![framework-embed](https://bpoplauschi.github.io/assets/framework-embed.png)
+![framework-embed](../../../attachments/snapshots/bpoplauschi.github.io/787059328ce7/bb471a6c705391ed4834.png)
 
 ### How to find out if a library / framework (3rd party) is static or dynamic
 

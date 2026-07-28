@@ -23,6 +23,8 @@ translated: true
 
 ## 相关资源
 
+- [已归档的演讲幻灯片](../../slides/wwdc2018/415/slides.md)
+
 - [高清视频](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_hd_behind_the_scenes_of_the_xcode_build_process.mp4?dl=1)
 - [标清视频](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_sd_behind_the_scenes_of_the_xcode_build_process.mp4?dl=1)
 - [演示文稿 (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_behind_the_scenes_of_the_xcode_build_process.pdf?dl=1)

@@ -16,7 +16,7 @@ container_source: guess
 
 > 原文：[iOS Responder Chain: UIResponder, UIEvent, UIControl and uses](https://swiftrocks.com/understanding-the-ios-responder-chain)
 
-[![SwiftRocks](https://swiftrocks.com/images/bg/logo2dark.png)](https://swiftrocks.com)
+[![SwiftRocks](../../../attachments/snapshots/swiftrocks.com/8bd4c59250e0/f3825544610887a24881.png)](https://swiftrocks.com)
 
 [blog](https://swiftrocks.com/blog)
 
@@ -158,7 +158,7 @@ myViewController.view.responderChain()
 // MyView -> MyViewController -> UIWindow -> UIApplication -> AppDelegate
 ```
 
-![The Responder Chain](https://i.imgur.com/922BVYT.png)
+![The Responder Chain](../../../attachments/snapshots/swiftrocks.com/8bd4c59250e0/84674239753ae466ed42.png)
 
 In the previous example where the action was handled by the `UIViewController`, UIKit first sent the action to the `UIView` first responder - but since it doesn't implement `myCustomMethod` the view forwarded the action to the next responder - the `UIViewController` which happened to have that method in its implementation.
 

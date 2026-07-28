@@ -74,11 +74,7 @@ In today’s discussion, we’ll break down how binary data is structured in Pro
 
 ## Serialization
 
-## #
-
 ### Field Key (or Tag) Encoding
-
-### #
 
 To encode a field, we need two things: where the field is in the message and what its value is. We’ll use the code snippet below along the way to explain the encoding process:
 
@@ -117,19 +113,15 @@ tag = (field_number << 3) | wire_type
 
 This tag number will then be encoded using a technique called variable-length encoding or varint encoding. Since the numbers in our example are small enough, they are encoded as they are written in binary. Therefore, the tag values for those fields in our example would be:
 
-![How Protobuf assigns tags to message fields](https://victoriametrics.com/blog/go-protobuf/protobuf-tag-encoding.webp)
+![How Protobuf assigns tags to message fields](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/4bd3ceaeed01c262702e.webp)
 
 <sub>How Protobuf assigns tags to message fields</sub>
 
 ### Value Encoding
 
-### #
-
 Protobuf doesn’t use the same encoding for every type of value. Instead, it groups them into three categories: varint, length-delimited, and fixed-width encoding.
 
 #### Varint Encoding for Wire Type 0
-
-#### #
 
 Storing small numbers like 1, 2, or 3 in a full 4-byte (`int32`) or 8-byte (`int64`) format would be wasteful—most of those bytes would just be zeros. Instead, Protobuf uses varint encoding, a technique where the number of bytes adjusts based on the size of the value. The smaller the number, the fewer bytes it takes.
 
@@ -138,7 +130,7 @@ There’s a trade-off, though. The leftmost bit of each byte is reserved as a co
 - If the most significant bit (MSB) is 1, more bytes follow.
 - If the MSB is 0, that’s the last byte, and the number is complete.
 
-![Protobuf varint encoding process for the number 300](https://victoriametrics.com/blog/go-protobuf/protobuf-varint-encoding.webp)
+![Protobuf varint encoding process for the number 300](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/5a0f248ef21199ac2733.webp)
 
 <sub>Protobuf varint encoding process for the number 300</sub>
 
@@ -220,13 +212,11 @@ And the output:
 
 At this point, the `id` field equals to 300 can be fully represented in 3 bytes:
 
-![Protobuf varint encoding for the ID field](https://victoriametrics.com/blog/go-protobuf/protobuf-varint-id.webp)
+![Protobuf varint encoding for the ID field](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/cb7e4171b4384fee1a16.webp)
 
 <sub>Protobuf varint encoding for the ID field</sub>
 
 #### Length-Delimited Encoding for Wire Type 2
-
-#### #
 
 Length-delimited encoding is used for data types that **don’t have a fixed size**. This includes strings, byte arrays, embedded messages, and packed repeated fields.
 
@@ -234,7 +224,7 @@ The idea is straightforward, it breaks the value into two parts: first, a prefix
 
 For example, in our case, the `name` field contains `"Phuong Le"`, which is 9 bytes long when encoded in UTF-8. That means the encoded value would be:
 
-![Protobuf length-delimited encoding for a string field](https://victoriametrics.com/blog/go-protobuf/protobuf-length-delimited-name.webp)
+![Protobuf length-delimited encoding for a string field](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/d525cd8a73b11d53c618.webp)
 
 <sub>Protobuf length-delimited encoding for a string field</sub>
 
@@ -244,13 +234,11 @@ We’re not getting into how UTF-8 encoding works here, but just like varint, it
 
 #### Fixed-Width Encoding for Wire Type 1, 5
 
-#### #
-
 Fixed-width encoding is used for fields with a set size, like `fixed32`, `sfixed32`, `fixed64`, `sfixed64`, and floating-point numbers (`float`, `double`). Nothing new here—these values are stored in a simple way without extra length prefixes or varint tricks.
 
 That means the height field is encoded using IEEE 754 32-bit floating-point representation as usual:
 
-![Protobuf fixed-width encoding for a float field](https://victoriametrics.com/blog/go-protobuf/protobuf-fixed-width-height.webp)
+![Protobuf fixed-width encoding for a float field](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/0453f7d8a35724689ef1.webp)
 
 <sub>Protobuf fixed-width encoding for a float field</sub>
 
@@ -266,13 +254,11 @@ For more details on how Protobuf encodes and decodes data, you can refer to the 
 
 #### Repeated Fields
 
-#### #
-
 Elements inside a `repeated` field are encoded using the techniques we’ve covered so far. However, the way the entire `repeated` field is serialized depends on its wire type.
 
 For `repeated` fields containing **primitive numeric types**, Protobuf uses packed mode (enabled by default in `proto3`):
 
-![Protobuf packed repeated fields](https://victoriametrics.com/blog/go-protobuf/protobuf-packed-repeated-fields.webp)
+![Protobuf packed repeated fields](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/4a6169e4f2b68a4f2278.webp)
 
 <sub>Protobuf packed repeated fields</sub>
 
@@ -280,13 +266,11 @@ In packed mode, the tag number appears only once in the serialized data. All ele
 
 In contrast, in unpacked mode, the tag number is repeated for each element in the serialized data:
 
-![Protobuf unpacked repeated fields](https://victoriametrics.com/blog/go-protobuf/protobuf-repeated-tag-overhead.webp)
+![Protobuf unpacked repeated fields](../../../attachments/snapshots/victoriametrics.com/5050c6aa6366/deef2bae7766a82aeb3d.webp)
 
 <sub>Protobuf unpacked repeated fields</sub>
 
 ## Deserialization (in Go)
-
-## #
 
 Protobuf is built with both backward compatibility (newer systems can still read older messages) and forward compatibility (older systems can still handle newer messages).
 
@@ -354,8 +338,6 @@ Even if two types use the same wire type, they don’t necessarily interpret the
 
 ## The Message in .pb.go File
 
-## #
-
 Let’s take a look at the Person struct and see how everything we’ve talked about starts to feel familiar:
 
 ```go
@@ -399,8 +381,6 @@ When you write `p := Message{}`, the `state` field isn’t there; it is lazily s
 And… that’s also the final part of this discussion on the way to understand how Protobuf works.
 
 ## Who We Are
-
-## #
 
 If you want to monitor your services, track metrics, and see how everything performs, you might want to check out [VictoriaMetrics](https://docs.victoriametrics.com/). It’s a fast, **open-source**, and cost-saving way to keep an eye on your infrastructure.
 

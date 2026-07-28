@@ -46,7 +46,7 @@ from pathlib import Path
 from typing import Any, Awaitable, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from validate import check_pair  # noqa: E402
+from validate import COMMENT, FENCE, check_pair  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WORK_ROOT = ROOT / ".staging" / "deepseek"
@@ -209,6 +209,16 @@ def sha256_text(text: str) -> str:
 def unwrap_markdown(content: str) -> str:
     """移除模型偶尔添加的单层外部 Markdown 围栏，保留文档内部围栏。"""
     text = content.strip()
+    prefixed = re.match(
+        r"^[^\n]{1,200}\n+(`{3,}|~{3,})(?:markdown|md)[ \t]*\n",
+        text,
+        re.I,
+    )
+    if prefixed:
+        marker = prefixed.group(1)
+        end = re.search(rf"\n{re.escape(marker)}[ \t]*$", text)
+        if end:
+            text = text[prefixed.end() : end.start()]
     first = re.match(r"^(`{3,}|~{3,})(?:markdown|md)?[ \t]*\n", text, re.I)
     if first:
         marker = first.group(1)
@@ -218,6 +228,58 @@ def unwrap_markdown(content: str) -> str:
     if not text.endswith("\n"):
         text += "\n"
     return text
+
+
+def normalize_code_blocks(source: str, candidate: str) -> str:
+    """确定性恢复代码块中的非注释行，避免模型翻译字符串或顺手修代码。
+
+    只有两边代码块数量、语言和行数完全一致时才处理；结构不一致仍交给校验器拒绝。
+    独立成行的注释和多行块注释保留候选译文，其余代码逐字符恢复为原文。
+    """
+
+    def ranges(text: str) -> tuple[list[str], list[tuple[int, int, str]]]:
+        lines = text.splitlines()
+        found: list[tuple[int, int, str]] = []
+        start: int | None = None
+        language = ""
+        for index, line in enumerate(lines):
+            match = FENCE.match(line)
+            if match and start is None:
+                start, language = index, match.group(1)
+            elif line.strip().startswith("```") and start is not None:
+                found.append((start, index, language))
+                start = None
+        return lines, found
+
+    source_lines, source_ranges = ranges(source)
+    candidate_lines, candidate_ranges = ranges(candidate)
+    if len(source_ranges) != len(candidate_ranges):
+        return candidate
+    output = list(candidate_lines)
+    for (source_start, source_end, source_lang), (
+        candidate_start,
+        candidate_end,
+        candidate_lang,
+    ) in zip(source_ranges, candidate_ranges):
+        if source_end - source_start != candidate_end - candidate_start:
+            return candidate
+        output[candidate_start] = source_lines[source_start]
+        output[candidate_end] = source_lines[source_end]
+        in_block_comment = False
+        for offset in range(1, source_end - source_start):
+            source_line = source_lines[source_start + offset]
+            candidate_index = candidate_start + offset
+            if in_block_comment:
+                if "*/" in source_line:
+                    in_block_comment = False
+                continue
+            if COMMENT.match(source_line):
+                if "/*" in source_line and "*/" not in source_line:
+                    in_block_comment = True
+                continue
+            output[candidate_index] = source_line
+    normalized = "\n".join(output)
+    return normalized + ("\n" if candidate.endswith("\n") else "")
 
 
 def relevant_terms(source: str, terms_text: str, limit: int = 180) -> str:
@@ -398,7 +460,7 @@ def flatten_shard(path: Path, root: Path = ROOT) -> tuple[list[dict[str, Any]], 
     if not files:
         raise PipelineError(f"分片里没有文件：{path}")
 
-    allowed = ("apple-docs/en/", "wwdc/en/", "blogs/en/")
+    allowed = ("apple-docs/en/", "wwdc/en/", "blogs/en/", "blogs/snapshots/")
     seen: set[str] = set()
     clean: list[dict[str, Any]] = []
     for item in files:
@@ -414,7 +476,11 @@ def flatten_shard(path: Path, root: Path = ROOT) -> tuple[list[dict[str, Any]], 
             or ".." in zh_path.parts
         ):
             raise PipelineError(f"分片包含不安全路径：{en!r} → {zh!r}")
-        expected = en.replace("/en/", "/zh/", 1)
+        expected = (
+            en.replace("blogs/snapshots/", "blogs/snapshots-zh/", 1)
+            if en.startswith("blogs/snapshots/")
+            else en.replace("/en/", "/zh/", 1)
+        )
         if zh != expected:
             raise PipelineError(f"中英路径不匹配：{en!r} → {zh!r}，应为 {expected!r}")
         if en in seen:
@@ -711,7 +777,7 @@ class Pipeline:
                 raise PipelineError(
                     f"DeepSeek 拒绝或中断输出：finish_reason={completion.finish_reason!r}"
                 )
-            output = unwrap_markdown(completion.content)
+            output = normalize_code_blocks(source, unwrap_markdown(completion.content))
             key = hashlib.sha256(rel.encode("utf-8")).hexdigest()[:20]
             attempt_path = (
                 self.run_dir
@@ -1003,6 +1069,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     status = sub.add_parser("status", help="查看某个 run-id 的断点状态和费用")
     status.add_argument("--run-id", required=True, type=validate_run_id)
+    adopt = sub.add_parser("adopt", help="确定性修复失败候选并交回独立审校")
+    adopt.add_argument("--run-id", required=True, type=validate_run_id)
     return parser
 
 
@@ -1053,6 +1121,59 @@ def print_status(path: Path) -> int:
     for rel, error in failures[:20]:
         print(f"  失败：{rel}\n        {error}")
     return 1 if failures else 0
+
+
+def adopt_repaired_candidates(run_id: str) -> int:
+    """用当前确定性规则修复失败候选，通过校验后交回独立审校阶段。"""
+    run_dir = WORK_ROOT / run_id
+    state_path = run_dir / "state.json"
+    if not state_path.exists():
+        print(f"找不到状态文件：{state_path}")
+        return 1
+    data = json.loads(state_path.read_text(encoding="utf-8"))
+    adopted = 0
+    for rel, entry in data.get("files", {}).items():
+        if entry.get("status") != "failed":
+            continue
+        last = entry.get("last_candidate")
+        if not isinstance(last, str) or ".translation." not in Path(last).name:
+            continue
+        source_path, candidate_path = ROOT / rel, ROOT / last
+        if not source_path.is_file() or not candidate_path.is_file():
+            continue
+        source = source_path.read_text(encoding="utf-8")
+        candidate = normalize_code_blocks(
+            source,
+            unwrap_markdown(candidate_path.read_text(encoding="utf-8")),
+        )
+        issues = validate_candidate(source_path, candidate, run_dir / "validation-temp")
+        if issues:
+            entry["last_validation_issues"] = issues
+            continue
+        key = hashlib.sha256(rel.encode("utf-8")).hexdigest()[:20]
+        repaired = run_dir / "candidates" / f"{key}.translation.adopted.md"
+        repaired.write_text(candidate, encoding="utf-8")
+        entry.update({
+            "status": "translated",
+            "translation_candidate": str(repaired.relative_to(ROOT)),
+            "translation_sha256": sha256_text(candidate),
+            "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
+            "error": None,
+        })
+        adopted += 1
+    data["updated_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
+    temp = state_path.with_suffix(".tmp")
+    temp.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temp, state_path)
+    remaining = sum(
+        1 for entry in data.get("files", {}).values()
+        if entry.get("status") == "failed"
+    )
+    print(f"采纳修复候选 {adopted} 篇；仍失败 {remaining} 篇")
+    return 0
 
 
 async def run_pipeline(args: argparse.Namespace) -> int:
@@ -1157,6 +1278,8 @@ def main() -> None:
             return
         if args.command == "status":
             raise SystemExit(print_status(WORK_ROOT / args.run_id / "state.json"))
+        if args.command == "adopt":
+            raise SystemExit(adopt_repaired_candidates(args.run_id))
         raise SystemExit(asyncio.run(run_pipeline(args)))
     except PipelineError as exc:
         print(f"错误：{exc}", file=sys.stderr)

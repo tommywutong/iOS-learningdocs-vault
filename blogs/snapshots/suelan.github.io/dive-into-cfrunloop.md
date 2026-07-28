@@ -50,7 +50,7 @@ It can handle
 - periodic or time-delayed events
 - asynchronous callbacks
 
-  ![image-20210128230441389](https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128230441389.png)
+  ![image-20210128230441389](../../../attachments/snapshots/suelan.github.io/567670489703/7a785163e3f0657a9c9d.png)
 
 In Apple’s doc, this kind of event loop is implemented by `CFRunLoop` in low-level. In cocoa, the object is an instance of `NSRunLoop` There is exactly one run loop per thread.
 
@@ -65,7 +65,7 @@ Apple provides two APIs to get runloop object
 
 A run loop mode contains a set of `CFRunLoopSource`, a list of `CFRunLoopTimer` and `CFRunLoopObservers`. They are all inputs for runloop.
 
-![image-20210128223829153](https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210128223829153.png)
+![image-20210128223829153](../../../attachments/snapshots/suelan.github.io/567670489703/2a3d0a0ce98848e1eb4b.png)
 
 ## Inputs
 
@@ -112,7 +112,7 @@ As it is mentioned in this [doc](https://developer.apple.com/library/archive/doc
     - A source is automatically `signaled by the kernel` when a message arrives on the source’s Mach port.
     - see [Configuring a Port-Based Input Source](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-131281)
 
-      ![image-20210125183432020](https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210125183432020.png)
+      ![image-20210125183432020](../../../attachments/snapshots/suelan.github.io/567670489703/a5c4091328cc65125ba6.png)
 
 #### `bits` field
 
@@ -215,7 +215,7 @@ typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
 
 According to [apple doc](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW1), when runloop running in a thread, it processes pending events and generates notifications for attached observers. Briefly, it works as the follow diagram shows.
 
-![image-20210209142244931](https://suelan.github.io/2021/02/13/20210213-dive-into-runloop-ios/image-20210209142244931.png)
+![image-20210209142244931](../../../attachments/snapshots/suelan.github.io/567670489703/4779a265a4bebe390c8b.png)
 
 The implementation is in `CFRunLoopRunSpecific` and `__CFRunLoopRun` in `CFRunloop.c` .
 

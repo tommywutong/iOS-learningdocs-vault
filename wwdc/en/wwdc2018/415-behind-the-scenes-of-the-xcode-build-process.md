@@ -23,6 +23,8 @@ Ever wonder what happens when you build your project in Xcode? Learn how Xcode a
 
 ## Resources
 
+- [Archived Presentation Slides](../../slides/wwdc2018/415/slides.md)
+
 - [HD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_hd_behind_the_scenes_of_the_xcode_build_process.mp4?dl=1)
 - [SD Video](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_sd_behind_the_scenes_of_the_xcode_build_process.mp4?dl=1)
 - [Presentation Slides (PDF)](https://devstreaming-cdn.apple.com/videos/wwdc/2018/415o65ozc2l1bc3/415/415_behind_the_scenes_of_the_xcode_build_process.pdf?dl=1)
