@@ -1,6 +1,6 @@
 # Apple 现行文档 · 按框架
 
-> 来源：`developer.apple.com/documentation`，抓取于 2026-07-27。
+> 来源：`developer.apple.com/documentation`，抓取于 2026-07-28。
 > 「成篇文章」是有正文、值得翻译的部分；其余是 API 条目（一两句话的摘要 + 声明）。
 
 | 框架 | 页面总数 | 成篇文章 | 体积 |
