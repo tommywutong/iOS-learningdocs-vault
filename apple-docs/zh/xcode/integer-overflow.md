@@ -55,7 +55,7 @@ x += 1; // 错误：加法结果无法存入 x
 - [无效的枚举值](invalid-enumeration-value.md) — 检测枚举变量何时具有无效值。
 - [到达不可达点](reaching-of-unreachable-point.md) — 检测程序何时到达了一个不可达点。
 - [动态类型冲突](dynamic-type-violation.md) — 检测对象何时具有错误的动态类型。
-- [无效的浮点转换](invalid-float-cast.md) — 检测浮点类型之间、或与浮点类型互相转换时的越界转换。
+- [无效的浮点转换](invalid-float-cast.md) — 检测转换到、转换自浮点类型以及浮点类型之间的越界转换。
 - [除以零](division-by-zero.md) — 检测除数为零的除法运算。
 - [Nonnull 参数冲突](nonnull-argument-violation.md) — 检测参数何时错误地接收到空值。
 - [Nonnull 返回值冲突](nonnull-return-value-violation.md) — 检测函数何时错误地返回空值。

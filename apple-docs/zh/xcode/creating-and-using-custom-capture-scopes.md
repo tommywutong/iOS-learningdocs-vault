@@ -15,7 +15,7 @@ content_hash: 'sha256:e4fdf9014412efb0'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal developer workflows](metal-developer-workflows.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 开发者工作流程](metal-developer-workflows.md)
 
 # 创建和使用自定捕获范围
 
@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-当你点击 Xcode 调试栏中的 Metal Capture 按钮，使用默认捕获范围捕获一帧时，所得到的捕获结果包含单帧的全部数据。在某些情况下，你可能希望调试部分帧而非整帧。为此，你可以设置并使用自定捕获范围，精确选择要记录哪些 Metal 命令。
+当你点击 Xcode 调试栏中的 Metal Capture 按钮，使用默认捕获范围（capture scope）捕获一帧时，所得到的捕获结果包含单帧的全部数据。在某些情况下，你可能希望调试部分帧而非整帧。为此，你可以设置并使用自定捕获范围，精确选择要记录哪些 Metal 命令。
 
 > [!note] 注意
 > 不要自行分配自定捕获范围。而是应该调用 [MTLCaptureManager](../metal/mtlcapturemanager.md) 的以下某个方法：[makeCaptureScope(device:)](<../metal/mtlcapturemanager/makecapturescope(device_).md>) 或 [makeCaptureScope(commandQueue:)](<../metal/mtlcapturemanager/makecapturescope(commandqueue_)-1rozd.md>)。
@@ -75,5 +75,5 @@ MTLCaptureManager.shared().defaultCaptureScope = myCaptureScope
 
 ### 为调试准备项目
 
-- [Building your project with embedded shader sources](building-your-project-with-embedded-shader-sources.md) — 通过在构建中包含源代码，为调试项目的着色器做好准备。
-- [Naming resources and commands](naming-resources-and-commands.md) — 借助标签和分组，增强对 Metal App 的调试。
+- [构建包含内嵌着色器源代码的项目](building-your-project-with-embedded-shader-sources.md) — 通过在构建中包含源代码，为调试项目的着色器做好准备。
+- [命名资源和命令](naming-resources-and-commands.md) — 借助标签和分组，增强对 Metal App 的调试。

@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-在 iOS 13 及更高版本中，使用 [standardAppearance](uinavigationbar/standardappearance.md)、[compactAppearance](uinavigationbar/compactappearance.md) 和 [scrollEdgeAppearance](uinavigationbar/scrolledgeappearance.md) 属性来自定义你的导航栏。你可以继续使用这些旧版存取方法来直接自定义导航栏的外观，但必须自行为不同的栏配置更新外观。
+在 iOS 13 及更高版本中，使用 [standardAppearance](uinavigationbar/standardappearance.md)、[compactAppearance](uinavigationbar/compactappearance.md) 和 [scrollEdgeAppearance](uinavigationbar/scrolledgeappearance.md) 属性来自定义你的导航栏。你可以继续使用这些旧版存取方法（accessor）来直接自定义导航栏的外观，但必须自行为不同的栏配置更新外观。
 
 ## 主题
 
@@ -42,17 +42,17 @@ translated: true
 
 - [titleTextAttributes](uinavigationbar/titletextattributes.md) — 栏标题文本的显示特性。
 - [largeTitleTextAttributes](uinavigationbar/largetitletextattributes.md) — 栏大标题文本的显示特性。
-- [- titleVerticalPositionAdjustmentForBarMetrics:](<uinavigationbar/titleverticalpositionadjustment(for_).md>) — 返回给定栏度量下标题的垂直位置调整量。
+- [- titleVerticalPositionAdjustmentForBarMetrics:](<uinavigationbar/titleverticalpositionadjustment(for_).md>) — 返回给定栏度量（bar metrics）下标题的垂直位置调整量。
 - [- setTitleVerticalPositionAdjustment:forBarMetrics:](<uinavigationbar/settitleverticalpositionadjustment(__for_).md>) — 设置给定栏度量下标题的垂直位置调整量。
 
 ### 配置栏按钮条目
 
-- [tintColor](uinavigationbar/tintcolor.md) — 应用于导航条目和栏按钮条目的色调颜色。
+- [tintColor](uinavigationbar/tintcolor.md) — 应用于导航条目和栏按钮条目的色调颜色（tint color）。
 
 ### 配置返回按钮
 
 - [backIndicatorImage](uinavigationbar/backindicatorimage.md) — 显示在返回按钮旁边的图像。
-- [backIndicatorTransitionMaskImage](uinavigationbar/backindicatortransitionmaskimage.md) — 在推入和弹出过渡期间用作内容遮罩的图像。
+- [backIndicatorTransitionMaskImage](uinavigationbar/backindicatortransitionmaskimage.md) — 在推入和弹出过渡（push and pop transitions）期间用作内容遮罩（mask）的图像。
 
 ### 更改背景
 
@@ -75,4 +75,4 @@ translated: true
 - [compactAppearance](uinavigationbar/compactappearance.md) — 紧凑高度导航栏的外观设置。
 - [scrollEdgeAppearance](uinavigationbar/scrolledgeappearance.md) — 当可滚动内容的边缘与导航栏的边缘对齐时，导航栏的外观设置。
 - [compactScrollEdgeAppearance](uinavigationbar/compactscrolledgeappearance.md) — 当可滚动内容的边缘与导航栏的边缘对齐时，紧凑高度导航栏的外观设置。
-- [translucent](uinavigationbar/istranslucent.md) — 一个布尔值，表示导航栏是否为半透明。
+- [translucent](uinavigationbar/istranslucent.md) — 一个布尔值，表示导航栏是否为半透明（translucent）。

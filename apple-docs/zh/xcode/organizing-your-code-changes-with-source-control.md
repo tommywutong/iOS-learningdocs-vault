@@ -15,7 +15,7 @@ content_hash: 'sha256:2f9fd708708d89c7'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Source control management](source-control-management.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Source control management](source-control-management.md)
 
 # 使用源代码管理来整理你的代码更改
 
@@ -42,21 +42,21 @@ translated: true
 继续进行代码更改，并定期测试、暂存、提交并推送你的更改到该分支。当你的新特性或错误修复完成，并准备将你的工作并入主分支时，对其进行审阅并合并。更多信息请参阅 [Combining code changes in a source control repository](combining-code-changes-in-a-source-control-repository.md)。
 
 > [!tip] 提示
-> 你可以在当前分支存在未提交更改的情况下创建新分支，你的更改会成为新分支的一部分。如果存在未提交的更改，你无法切换到另一个分支，因此在切换分支前请先提交更改或将其贮存。
+> 你可以在当前分支存在未提交更改的情况下创建新分支，你的更改会成为新分支的一部分。如果存在未提交的更改，你无法切换到另一个分支，因此在切换分支前请先提交更改或将其储存。
 
 ### 搁置进行中的工作以进行其他更改
 
-当你有一些尚未准备好提交的进行中工作，而又需要切换到另一个分支时，可以贮存你的更改，在不提交到仓库的情况下保存它们。选择 Integrate \> Stash Changes，并可以选择输入对更改的描述。
+当你有一些尚未准备好提交的进行中工作，而又需要切换到另一个分支时，可以储存你的更改，在不提交到仓库的情况下保存它们。选择 Integrate \> Stash Changes，并可以选择输入对更改的描述。
 
 ![Xcode 中 Stash Changes 对话框的截图。](../../../attachments/268f7fd730edab7d6d934f859aeaccc1/organizing-your-code-changes-with-source-control-2@2x.png)
 
-Xcode 会创建一个包含你更改的贮存条目，并从当前工作项目中移除这些更改，以便你切换分支或开始处理其他更改。
+Xcode 会创建一个包含你更改的储存条目，并从当前工作项目中移除这些更改，以便你切换分支或开始处理其他更改。
 
-要查看你贮存的更改，请点按源代码管理导航器中的 Repositories 标签页，展开你的仓库，然后展开 Stashed Changes 文件夹。选择一个贮存的更改项目，即可在比较视图中查看更改内容。
+要查看你储存的更改，请点按源代码管理导航器中的 Repositories 标签页，展开你的仓库，然后展开 Stashed Changes 文件夹。选择一个储存的更改项目，即可在比较视图中查看更改内容。
 
-要将这些更改添加回你当前的工作中，请按住 Control 键点按该贮存的更改项目，并选择 Apply Stashed Changes。Xcode 会用贮存的更改更新当前工作项目，以便你继续进行更新或将更改提交到仓库。
+要将这些更改添加回你当前的工作中，请按住 Control 键点按该储存的更改项目，并选择 Apply Stashed Changes。Xcode 会用储存的更改更新当前工作项目，以便你继续进行更新或将更改提交到仓库。
 
-当你不再需要这些贮存的更改时，按住 Control 键点按该贮存的更改项目并选择 Delete 将其移除。
+当你不再需要这些储存的更改时，按住 Control 键点按该储存的更改项目并选择 Delete 将其移除。
 
 ### 标记发布版本和重要里程碑
 

@@ -21,7 +21,7 @@ translated: true
 
 <sub>文章</sub>
 
-通过创建和配置测试计划，控制你在软件工程流程的不同阶段从测试中获取的信息。
+通过创建和配置测试计划（test plan），控制你在软件工程流程的不同阶段从测试中获取的信息。
 
 ## 概述
 
@@ -31,7 +31,7 @@ translated: true
 
 ![](../../../attachments/fb97d06a00af6ecfbd44b2bb7f03d5d6/organizing-tests-hero@2x.png)
 
-<sub>一张图表，展示了 Xcode 项目中 Xcode 用于确定测试活动的各个组成部分：测试计划、方案、测试目标和产品目标。</sub>
+<sub>一张图表，展示了 Xcode 项目中 Xcode 用于确定测试活动的各个组成部分：测试计划、方案（scheme）、测试目标和产品目标。</sub>
 
 借助 [Swift Testing](../testing.md)，你可以为测试声明并添加 _标签（tags）_，这是一种用于标识具有共同特征的测试的注解。
 
@@ -58,7 +58,7 @@ translated: true
 
 有关创建 Xcode 方案以及为方案分配目标的信息，请参阅 [Customizing the build schemes for a project](customizing-the-build-schemes-for-a-project.md)。
 
-如果你的产品有多个目标——比如一个包含静态库和小组件扩展的 iOS App——那么除了创建一个构建适合发布的整个产品的「总括」方案外，还应为每个单独的目标各创建一个方案。团队中的开发者在处理各个目标的任务时，可以使用更具针对性的方案，只运行与该目标相关的测试以更快获得反馈。当他们准备好整合更改时，可以通过在总括方案中运行完整的测试集合，更好地确保没有引入衰退。
+如果你的产品有多个目标——比如一个包含静态库和小组件扩展的 iOS App——那么除了创建一个构建适合发布的整个产品的「总括」方案外，还应为每个单独的目标各创建一个方案。团队中的开发者在处理各个目标的任务时，可以使用更具针对性的方案，只运行与该目标相关的测试以更快获得反馈。当他们准备好整合更改时，可以通过在总括方案中运行完整的测试集合，更好地确保没有引入衰退（regression）。
 
 ### 创建测试计划以整理某个方案的测试
 
@@ -113,7 +113,7 @@ Swift Testing 和 XCTest 都支持在仍然运行某个测试的同时修改它�
 
 ### 调整测试计划的配置
 
-每个测试计划都包含一个或多个配置，用于告知 Xcode 如何为测试搭建运行时环境。在测试计划编辑器的 Configurations 标签页中（如下图所示），你可以设置环境变量、启用诸如地址消毒工具和内存管理防护等附加检查，并为代码选择不同的本地化设置。
+每个测试计划都包含一个或多个配置，用于告知 Xcode 如何为测试搭建运行时环境。在测试计划编辑器的 Configurations 标签页中（如下图所示），你可以设置环境变量、启用诸如 Address Sanitizer 和内存管理防护等附加检查，并为代码选择不同的本地化设置。
 
 ![一张截图，展示了 Xcode 的测试计划配置编辑器。](../../../attachments/cbdf4697b741d31cb64de2281186a857/organizing-tests-configurations@2x.png)
 
@@ -149,7 +149,7 @@ Swift Testing 和 XCTest 都支持在仍然运行某个测试的同时修改它�
 - **Zombie Objects** — 用僵尸对象替换已释放的对象，当这些对象接收到 Objective-C 消息时会使你的 App 崩溃。
 - **Malloc Stack Logging** — 在每次分配内存时记录函数调用栈。
 
-有关地址消毒工具、线程消毒工具、未定义行为消毒工具和主线程检查器的更多信息，请参阅 [Diagnosing memory, thread, and crash issues early](diagnosing-memory-thread-and-crash-issues-early.md)。
+有关 Address Sanitizer、Thread Sanitizer、Undefined Behavior Sanitizer 和 Main Thread Checker 的更多信息，请参阅 [Diagnosing memory, thread, and crash issues early](diagnosing-memory-thread-and-crash-issues-early.md)。
 
 要创建其他测试计划配置，请点按添加按钮（+）。Xcode 会为该计划的每个配置各运行一次测试计划中指定的测试。
 

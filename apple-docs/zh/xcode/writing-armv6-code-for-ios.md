@@ -15,7 +15,7 @@ content_hash: 'sha256:292af4fb881881e1'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Application binary interfaces](application-binary-interfaces.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [应用程序二进制接口](application-binary-interfaces.md)
 
 # 为 iOS 编写 ARMv6 代码
 
@@ -112,7 +112,7 @@ ARMv6 中的栈环境具有以下特征：
 
 ### 为函数创建序言和尾声
 
-当一个函数调用某个子例程时，该子例程必须分配自己的栈帧。它通过序言来完成这项任务，序言是编译器放在函数体之前的一段代码。编译器会在子例程末尾放置一段尾声，用来将进程恢复到之前的状态。
+当一个函数调用某个子例程时，该子例程必须分配自己的栈帧。它通过序言（prolog）来完成这项任务，序言是编译器放在函数体之前的一段代码。编译器会在子例程末尾放置一段尾声（epilog），用来将进程恢复到之前的状态。
 
 序言执行以下任务：
 

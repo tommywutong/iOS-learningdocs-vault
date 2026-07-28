@@ -15,13 +15,13 @@ content_hash: 'sha256:bda77bdf1c6918ea'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Data Formatting](data-formatting.md) · [PersonNameComponentsFormatter](personnamecomponentsformatter.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [Data Formatting](data-formatting.md) · [PersonNameComponentsFormatter](personnamecomponentsformatter.md)
 
 # 组件分隔符
 
 <sub>API 集合</sub>
 
-此常量定义了用于分隔姓名组成部分的分隔符。
+该常量定义了用于分隔姓名组成部分的分隔符。
 
 ## 主题
 
@@ -35,5 +35,5 @@ translated: true
 
 - [Style](personnamecomponentsformatter/style-swift.enum.md) — 姓名组成部分的格式化样式。
 - [Options](personnamecomponentsformatter/options.md) — 用于格式化姓名组成部分的选项。
-- [Attributed String Key](attributed-string-key.md) — 此常量用作 [- annotatedStringFromPersonNameComponents:](<personnamecomponentsformatter/annotatedstring(from_).md>) 方法返回的属性字符串中姓名组成部分属性的键。
-- [Attributed String Components](attributed-string-components.md) — 这些常量用于标识 [- annotatedStringFromPersonNameComponents:](<personnamecomponentsformatter/annotatedstring(from_).md>) 方法返回的属性字符串中的各个组成部分。
+- [Attributed String Key](attributed-string-key.md) — 该常量用作键，对应于 [- annotatedStringFromPersonNameComponents:](<personnamecomponentsformatter/annotatedstring(from_).md>) 方法返回的属性字符串（attributed string）中的姓名组成部分属性。
+- [Attributed String Components](attributed-string-components.md) — 这些常量用于标识 [- annotatedStringFromPersonNameComponents:](<personnamecomponentsformatter/annotatedstring(from_).md>) 方法返回的属性字符串的各个组成部分。

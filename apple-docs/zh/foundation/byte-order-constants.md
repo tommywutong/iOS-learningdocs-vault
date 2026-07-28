@@ -15,13 +15,13 @@ content_hash: 'sha256:1bf689ff92146197'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Streams, Sockets, and Ports](streams-sockets-and-ports.md) · [Byte Order Utilities](byte-order-utilities.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [流、套接字和端口](streams-sockets-and-ports.md) · [字节序实用工具](byte-order-utilities.md)
 
 # 字节序
 
 <sub>API 集合</sub>
 
-用于指定字节序格式的常量。
+识别用于指定字节序（Byte Order）格式的常量。
 
 ## 概述
 

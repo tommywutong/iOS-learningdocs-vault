@@ -15,7 +15,7 @@ content_hash: 'sha256:84f353219f4447dd'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [Views and controls](views-and-controls.md) · [UIToolbar](uitoolbar.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [UIToolbar](uitoolbar.md)
 
 # 旧版自定义
 

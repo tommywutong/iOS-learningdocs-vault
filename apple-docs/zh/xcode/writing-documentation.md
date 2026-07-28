@@ -23,9 +23,9 @@ translated: true
 
 ## 概述
 
-DocC 文档编译器可以将基于 Markdown 的文本转换为丰富的文档，供 Swift 和 Objective-C 框架、包及 App 在 Xcode 的文档窗口中显示，或托管在网站上。
+DocC 文档编译器可以将基于 Markdown 的文本转换为丰富的文档，用于 Swift 和 Objective-C 框架、包及 App，以便在 Xcode 的文档窗口中显示，或托管在网站上。
 
-DocC 语法（称为文档标记）是 Markdown 的一种自定变体，添加了面向开发者文档特有的功能，比如跨符号链接、术语-定义列表、代码清单和旁注。你可以将文档标记添加到源代码中，使用 Xcode 的「构建文档」功能对其进行编译，从而生成你的 API 的参考文档。你还可以将文档标记与一组指示 DocC 如何生成内容的指令结合使用，提供循序渐进的教程，通过交互式编码练习教开发者使用你的 API。
+DocC 语法（称为文档标记）是 Markdown 的一种自定义变体，添加了面向开发者文档特有的功能，比如跨符号链接、术语-定义列表、代码清单和旁注。你可以将文档标记添加到源代码中，使用 Xcode 的「构建文档」功能对其进行编译，从而生成你的 API 的参考文档。你还可以将文档标记与一组指示 DocC 如何生成内容的指令结合使用，提供循序渐进的教程，通过交互式编码练习教开发者使用你的 API。
 
 如需更深入地了解 DocC 及其使用指导，请参阅 [DocC Swift.org](https://www.swift.org/documentation/docc) 上提供的 DocC 文档。
 
@@ -37,7 +37,7 @@ DocC 语法（称为文档标记）是 Markdown 的一种自定变体，添加�
 
 ### 基础
 
-- [记录 App、框架和包](documenting-apps-frameworks-and-packages.md) — 通过源代码内的注释创建开发者文档，添加带有代码片段的文章，并添加教程以提供引导式学习体验。
+- [为 App、框架和包编写文档](documenting-apps-frameworks-and-packages.md) — 通过源代码内的注释创建开发者文档，添加带有代码片段的文章，并添加教程以提供引导式学习体验。
 
 ### 文档内容
 

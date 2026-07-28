@@ -15,7 +15,7 @@ content_hash: 'sha256:b06af2a856c8b31d'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Object Runtime](object-runtime.md) · [Distributed Objects Support](distributed-objects-support.md) · [NSConnection](nsconnection.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [Object Runtime](object-runtime.md) · [Distributed Objects Support](distributed-objects-support.md) · [NSConnection](nsconnection.md)
 
 # 连接异常名称
 
