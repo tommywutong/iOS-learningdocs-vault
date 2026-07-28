@@ -185,11 +185,12 @@ def main() -> None:
         seen.add(key)
 
         if e["file"]:
-            rel = e["file"].relative_to(ROOT)
-            zh = Path(str(rel).replace("/en/", "/zh/", 1))
+            root_rel = e["file"].relative_to(ROOT)
+            zh = Path(str(root_rel).replace("/en/", "/zh/", 1))
+            rel = Path("..") / root_rel
             local = f"[本地]({urllib.parse.quote(str(rel))})"
             if (ROOT / zh).exists():
-                local += f" · [中文]({urllib.parse.quote(str(zh))})"
+                local += f" · [中文]({urllib.parse.quote(str(Path('..') / zh))})"
             lines.append(f"- {local} · [原文]({e['url']}) — {e['cat']}")
         else:
             note = f"（{e['note']}）" if e["note"] else ""

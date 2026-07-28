@@ -1,290 +1,208 @@
-# Apple 现行文档 · 按框架
+# Apple 现行文档
 
-> 来源：`developer.apple.com/documentation`，抓取于 2026-07-28。
-> 「成篇文章」是有正文、值得翻译的部分；其余是 API 条目（一两句话的摘要 + 声明）。
+> 来源：`developer.apple.com/documentation`，索引生成于 2026-07-28。
+> “成篇文章”有逐篇目录；短 API 条目仍可从框架归档目录浏览。
 
-| 框架 | 页面总数 | 成篇文章 | 体积 |
-|---|---:|---:|---:|
-| [swift](../apple-docs/en/swift/) | 18,400 | 1,026 | 30.8 MB |
-| [foundation](../apple-docs/en/foundation/) | 14,126 | 265 | 30.6 MB |
-| [uikit](../apple-docs/en/uikit/) | 12,613 | 264 | 27.9 MB |
-| [security](../apple-docs/en/security/) | 7,310 | 140 | 7.7 MB |
-| [swiftui](../apple-docs/en/swiftui/) | 7,105 | 145 | 15.4 MB |
-| [avfoundation](../apple-docs/en/avfoundation/) | 5,529 | 129 | 13.1 MB |
-| [metal](../apple-docs/en/metal/) | 4,089 | 182 | 9.2 MB |
-| [corefoundation](../apple-docs/en/corefoundation/) | 2,724 | 90 | 6.2 MB |
-| [coretext](../apple-docs/en/coretext/) | 2,344 | 17 | 3.9 MB |
-| [coreimage](../apple-docs/en/coreimage/) | 2,115 | 44 | 4.8 MB |
-| [network](../apple-docs/en/network/) | 1,974 | 30 | 4.1 MB |
-| [coregraphics](../apple-docs/en/coregraphics/) | 1,938 | 48 | 4.7 MB |
-| [storekit](../apple-docs/en/storekit/) | 1,429 | 110 | 3.4 MB |
-| [mapkit](../apple-docs/en/mapkit/) | 1,295 | 24 | 2.6 MB |
-| [coredata](../apple-docs/en/coredata/) | 1,173 | 47 | 2.8 MB |
-| [combine](../apple-docs/en/combine/) | 1,061 | 39 | 1.9 MB |
-| [objectivec](../apple-docs/en/objectivec/) | 849 | 41 | 1.7 MB |
-| [cryptokit](../apple-docs/en/cryptokit/) | 704 | 22 | 1.1 MB |
-| [quartzcore](../apple-docs/en/quartzcore/) | 698 | 31 | 1.4 MB |
-| [avkit](../apple-docs/en/avkit/) | 690 | 21 | 1.4 MB |
-| [photos](../apple-docs/en/photos/) | 690 | 1 | 1.6 MB |
-| [dispatch](../apple-docs/en/dispatch/) | 611 | 16 | 1.2 MB |
-| [charts](../apple-docs/en/charts/) | 594 | 5 | 1.0 MB |
-| [os](../apple-docs/en/os/) | 594 | 18 | 1.1 MB |
-| [corelocation](../apple-docs/en/corelocation/) | 567 | 20 | 1.2 MB |
-| [swiftdata](../apple-docs/en/swiftdata/) | 544 | 17 | 1.0 MB |
-| [regexbuilder](../apple-docs/en/regexbuilder/) | 461 | 0 | 0.7 MB |
-| [uniformtypeidentifiers](../apple-docs/en/uniformtypeidentifiers/) | 359 | 5 | 0.7 MB |
-| [xcode](../apple-docs/en/xcode/) | 359 | 359 | 3.0 MB |
-| [appkit](../apple-docs/en/appkit/) | 355 | 8 | 1.1 MB |
-| [widgetkit](../apple-docs/en/widgetkit/) | 328 | 36 | 0.9 MB |
-| [photosui](../apple-docs/en/photosui/) | 309 | 0 | 0.6 MB |
-| [usernotifications](../apple-docs/en/usernotifications/) | 286 | 28 | 0.8 MB |
-| [synchronization](../apple-docs/en/synchronization/) | 195 | 5 | 0.4 MB |
-| [activitykit](../apple-docs/en/activitykit/) | 120 | 6 | 0.3 MB |
-| [distributed](../apple-docs/en/distributed/) | 92 | 0 | 0.2 MB |
-| [updates](../apple-docs/en/updates/) | 88 | 88 | 0.5 MB |
-| [bundleresources](../apple-docs/en/bundleresources/) | 86 | 4 | 0.3 MB |
-| [kernel](../apple-docs/en/kernel/) | 71 | 71 | 0.6 MB |
-| [backgroundtasks](../apple-docs/en/backgroundtasks/) | 63 | 4 | 0.1 MB |
-| [avfaudio](../apple-docs/en/avfaudio/) | 48 | 5 | 0.2 MB |
-| [technologyoverviews](../apple-docs/en/technologyoverviews/) | 43 | 43 | 0.4 MB |
-| [cfnetwork](../apple-docs/en/cfnetwork/) | 40 | 1 | 0.1 MB |
-| [observation](../apple-docs/en/observation/) | 36 | 0 | 0.0 MB |
-| [mediaplayer](../apple-docs/en/mediaplayer/) | 25 | 0 | 0.1 MB |
-| [pdfkit](../apple-docs/en/pdfkit/) | 23 | 0 | 0.1 MB |
-| [photokit](../apple-docs/en/photokit/) | 22 | 22 | 0.1 MB |
-| [quartz](../apple-docs/en/quartz/) | 19 | 0 | 0.0 MB |
-| [webkit](../apple-docs/en/webkit/) | 18 | 1 | 0.1 MB |
-| [metalkit](../apple-docs/en/metalkit/) | 18 | 0 | 0.1 MB |
-| [passkit](../apple-docs/en/passkit/) | 16 | 4 | 0.1 MB |
-| [gamecontroller](../apple-docs/en/gamecontroller/) | 15 | 2 | 0.0 MB |
-| [visionos](../apple-docs/en/visionos/) | 11 | 11 | 0.2 MB |
-| [corewlan](../apple-docs/en/corewlan/) | 8 | 0 | 0.0 MB |
-| [appintents](../apple-docs/en/appintents/) | 8 | 8 | 0.1 MB |
-| [watchkit](../apple-docs/en/watchkit/) | 8 | 2 | 0.0 MB |
-| [gamekit](../apple-docs/en/gamekit/) | 7 | 4 | 0.1 MB |
-| [accessibility](../apple-docs/en/accessibility/) | 7 | 7 | 0.0 MB |
-| [automator](../apple-docs/en/automator/) | 7 | 0 | 0.0 MB |
-| [addressbook](../apple-docs/en/addressbook/) | 6 | 0 | 0.0 MB |
-| [networkextension](../apple-docs/en/networkextension/) | 5 | 0 | 0.0 MB |
-| [apple-silicon](../apple-docs/en/apple-silicon/) | 5 | 5 | 0.0 MB |
-| [testing](../apple-docs/en/testing/) | 5 | 5 | 0.0 MB |
-| [preferencepanes](../apple-docs/en/preferencepanes/) | 5 | 0 | 0.0 MB |
-| [arkit](../apple-docs/en/arkit/) | 5 | 3 | 0.1 MB |
-| [authenticationservices](../apple-docs/en/authenticationservices/) | 5 | 3 | 0.0 MB |
-| [cloudkit](../apple-docs/en/cloudkit/) | 4 | 2 | 0.0 MB |
-| [healthkit](../apple-docs/en/healthkit/) | 4 | 2 | 0.0 MB |
-| [groupactivities](../apple-docs/en/groupactivities/) | 4 | 3 | 0.1 MB |
-| [vision](../apple-docs/en/vision/) | 4 | 2 | 0.0 MB |
-| [adattributionkit](../apple-docs/en/adattributionkit/) | 4 | 4 | 0.0 MB |
-| [localauthentication](../apple-docs/en/localauthentication/) | 4 | 0 | 0.0 MB |
-| [sharedwithyou](../apple-docs/en/sharedwithyou/) | 4 | 0 | 0.0 MB |
-| [fileprovider](../apple-docs/en/fileprovider/) | 4 | 0 | 0.0 MB |
-| [corespotlight](../apple-docs/en/corespotlight/) | 4 | 3 | 0.0 MB |
-| [iobluetooth](../apple-docs/en/iobluetooth/) | 4 | 0 | 0.0 MB |
-| [watchos-apps](../apple-docs/en/watchos-apps/) | 4 | 4 | 0.0 MB |
-| [eventkit](../apple-docs/en/eventkit/) | 3 | 1 | 0.0 MB |
-| [carplay](../apple-docs/en/carplay/) | 3 | 0 | 0.0 MB |
-| [applepencil](../apple-docs/en/applepencil/) | 3 | 3 | 0.0 MB |
-| [foundationmodels](../apple-docs/en/foundationmodels/) | 3 | 3 | 0.0 MB |
-| [metrickit](../apple-docs/en/metrickit/) | 3 | 0 | 0.0 MB |
-| [wifiaware](../apple-docs/en/wifiaware/) | 3 | 3 | 0.0 MB |
-| [safariservices](../apple-docs/en/safariservices/) | 3 | 3 | 0.0 MB |
-| [audiotoolbox](../apple-docs/en/audiotoolbox/) | 2 | 2 | 0.0 MB |
-| [coretelephony](../apple-docs/en/coretelephony/) | 2 | 0 | 0.0 MB |
-| [messages](../apple-docs/en/messages/) | 2 | 1 | 0.0 MB |
-| [homekit](../apple-docs/en/homekit/) | 2 | 0 | 0.0 MB |
-| [appclip](../apple-docs/en/appclip/) | 2 | 2 | 0.0 MB |
-| [technotes](../apple-docs/en/technotes/) | 2 | 2 | 0.0 MB |
-| [visionkit](../apple-docs/en/visionkit/) | 2 | 2 | 0.0 MB |
-| [appstoreconnectapi](../apple-docs/en/appstoreconnectapi/) | 2 | 2 | 0.0 MB |
-| [imageio](../apple-docs/en/imageio/) | 2 | 2 | 0.0 MB |
-| [coremediaio](../apple-docs/en/coremediaio/) | 2 | 2 | 0.0 MB |
-| [realitykit](../apple-docs/en/realitykit/) | 2 | 2 | 0.0 MB |
-| [externalaccessory](../apple-docs/en/externalaccessory/) | 2 | 0 | 0.0 MB |
-| [corehid](../apple-docs/en/corehid/) | 2 | 2 | 0.0 MB |
-| [developertoolssupport](../apple-docs/en/developertoolssupport/) | 2 | 0 | 0.0 MB |
-| [tvservices](../apple-docs/en/tvservices/) | 2 | 0 | 0.0 MB |
-| [xpc](../apple-docs/en/xpc/) | 2 | 0 | 0.0 MB |
-| [proximityreader](../apple-docs/en/proximityreader/) | 2 | 2 | 0.0 MB |
-| [mapkitjs](../apple-docs/en/mapkitjs/) | 2 | 2 | 0.0 MB |
-| [alarmkit.md](../apple-docs/en/alarmkit.md/) | 1 | 1 | 0.0 MB |
-| [swift.md](../apple-docs/en/swift.md/) | 1 | 1 | 0.0 MB |
-| [swiftui.md](../apple-docs/en/swiftui.md/) | 1 | 1 | 0.0 MB |
-| [activitykit.md](../apple-docs/en/activitykit.md/) | 1 | 1 | 0.0 MB |
-| [safari-release-notes.md](../apple-docs/en/safari-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [wifiaware.md](../apple-docs/en/wifiaware.md/) | 1 | 1 | 0.0 MB |
-| [visionos-release-notes.md](../apple-docs/en/visionos-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [widgetkit.md](../apple-docs/en/widgetkit.md/) | 1 | 1 | 0.0 MB |
-| [uniformtypeidentifiers.md](../apple-docs/en/uniformtypeidentifiers.md/) | 1 | 1 | 0.0 MB |
-| [visionos.md](../apple-docs/en/visionos.md/) | 1 | 1 | 0.0 MB |
-| [mapkit.md](../apple-docs/en/mapkit.md/) | 1 | 1 | 0.0 MB |
-| [mailkit.md](../apple-docs/en/mailkit.md/) | 1 | 1 | 0.0 MB |
-| [dockkit.md](../apple-docs/en/dockkit.md/) | 1 | 1 | 0.0 MB |
-| [appstoreserverapi.md](../apple-docs/en/appstoreserverapi.md/) | 1 | 1 | 0.0 MB |
-| [technologyoverviews.md](../apple-docs/en/technologyoverviews.md/) | 1 | 1 | 0.0 MB |
-| [appkit.md](../apple-docs/en/appkit.md/) | 1 | 1 | 0.0 MB |
-| [managedsettings.md](../apple-docs/en/managedsettings.md/) | 1 | 1 | 0.0 MB |
-| [nearbyinteraction.md](../apple-docs/en/nearbyinteraction.md/) | 1 | 1 | 0.0 MB |
-| [uikit.md](../apple-docs/en/uikit.md/) | 1 | 1 | 0.0 MB |
-| [network.md](../apple-docs/en/network.md/) | 1 | 1 | 0.0 MB |
-| [messages.md](../apple-docs/en/messages.md/) | 1 | 1 | 0.0 MB |
-| [declaredagerange.md](../apple-docs/en/declaredagerange.md/) | 1 | 1 | 0.0 MB |
-| [avkit.md](../apple-docs/en/avkit.md/) | 1 | 1 | 0.0 MB |
-| [walletorders.md](../apple-docs/en/walletorders.md/) | 1 | 1 | 0.0 MB |
-| [familycontrols.md](../apple-docs/en/familycontrols.md/) | 1 | 1 | 0.0 MB |
-| [tvuikit.md](../apple-docs/en/tvuikit.md/) | 1 | 1 | 0.0 MB |
-| [distributed.md](../apple-docs/en/distributed.md/) | 1 | 1 | 0.0 MB |
-| [backgroundtasks.md](../apple-docs/en/backgroundtasks.md/) | 1 | 1 | 0.0 MB |
-| [symbols.md](../apple-docs/en/symbols.md/) | 1 | 1 | 0.0 MB |
-| [extensionkit.md](../apple-docs/en/extensionkit.md/) | 1 | 1 | 0.0 MB |
-| [geotoolbox.md](../apple-docs/en/geotoolbox.md/) | 1 | 1 | 0.0 MB |
-| [createml.md](../apple-docs/en/createml.md/) | 1 | 1 | 0.0 MB |
-| [corelocation.md](../apple-docs/en/corelocation.md/) | 1 | 1 | 0.0 MB |
-| [videosubscriberaccount.md](../apple-docs/en/videosubscriberaccount.md/) | 1 | 1 | 0.0 MB |
-| [createmlcomponents.md](../apple-docs/en/createmlcomponents.md/) | 1 | 1 | 0.0 MB |
-| [gamecontroller.md](../apple-docs/en/gamecontroller.md/) | 1 | 1 | 0.0 MB |
-| [corelocationui.md](../apple-docs/en/corelocationui.md/) | 1 | 1 | 0.0 MB |
-| [identitydocumentservicesui.md](../apple-docs/en/identitydocumentservicesui.md/) | 1 | 1 | 0.0 MB |
-| [energykit.md](../apple-docs/en/energykit.md/) | 1 | 1 | 0.0 MB |
-| [coreml.md](../apple-docs/en/coreml.md/) | 1 | 1 | 0.0 MB |
-| [shazamkit.md](../apple-docs/en/shazamkit.md/) | 1 | 1 | 0.0 MB |
-| [tvos-release-notes.md](../apple-docs/en/tvos-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [driverkit.md](../apple-docs/en/driverkit.md/) | 1 | 1 | 0.0 MB |
-| [watchos-release-notes.md](../apple-docs/en/watchos-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [proximityreader.md](../apple-docs/en/proximityreader.md/) | 1 | 1 | 0.0 MB |
-| [gamesave.md](../apple-docs/en/gamesave.md/) | 1 | 1 | 0.0 MB |
-| [wirelessinsights.md](../apple-docs/en/wirelessinsights.md/) | 1 | 1 | 0.0 MB |
-| [scsiperipheralsdriverkit.md](../apple-docs/en/scsiperipheralsdriverkit.md/) | 1 | 1 | 0.0 MB |
-| [metal.md](../apple-docs/en/metal.md/) | 1 | 1 | 0.0 MB |
-| [photosui.md](../apple-docs/en/photosui.md/) | 1 | 1 | 0.0 MB |
-| [devicediscoveryextension.md](../apple-docs/en/devicediscoveryextension.md/) | 1 | 1 | 0.0 MB |
-| [backgroundassets.md](../apple-docs/en/backgroundassets.md/) | 1 | 1 | 0.0 MB |
-| [packagedescription.md](../apple-docs/en/packagedescription.md/) | 1 | 1 | 0.0 MB |
-| [quartzcore.md](../apple-docs/en/quartzcore.md/) | 1 | 1 | 0.0 MB |
-| [groupactivities.md](../apple-docs/en/groupactivities.md/) | 1 | 1 | 0.0 MB |
-| [storekit.md](../apple-docs/en/storekit.md/) | 1 | 1 | 0.0 MB |
-| [photos.md](../apple-docs/en/photos.md/) | 1 | 1 | 0.0 MB |
-| [macos-release-notes.md](../apple-docs/en/macos-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [weatherkit.md](../apple-docs/en/weatherkit.md/) | 1 | 1 | 0.0 MB |
-| [pushtotalk.md](../apple-docs/en/pushtotalk.md/) | 1 | 1 | 0.0 MB |
-| [touchcontroller.md](../apple-docs/en/touchcontroller.md/) | 1 | 1 | 0.0 MB |
-| [corehaptics.md](../apple-docs/en/corehaptics.md/) | 1 | 1 | 0.0 MB |
-| [notaryapi.md](../apple-docs/en/notaryapi.md/) | 1 | 1 | 0.0 MB |
-| [merchanttokennotificationservices.md](../apple-docs/en/merchanttokennotificationservices.md/) | 1 | 1 | 0.0 MB |
-| [combine.md](../apple-docs/en/combine.md/) | 1 | 1 | 0.0 MB |
-| [kernel.md](../apple-docs/en/kernel.md/) | 1 | 0 | 0.0 MB |
-| [audiodriverkit.md](../apple-docs/en/audiodriverkit.md/) | 1 | 1 | 0.0 MB |
-| [passkit.md](../apple-docs/en/passkit.md/) | 1 | 1 | 0.0 MB |
-| [rosterapi.md](../apple-docs/en/rosterapi.md/) | 1 | 1 | 0.0 MB |
-| [apple-silicon.md](../apple-docs/en/apple-silicon.md/) | 1 | 1 | 0.0 MB |
-| [foundationmodels.md](../apple-docs/en/foundationmodels.md/) | 1 | 1 | 0.0 MB |
-| [usernotifications.md](../apple-docs/en/usernotifications.md/) | 1 | 1 | 0.0 MB |
-| [telephonymessagingkit.md](../apple-docs/en/telephonymessagingkit.md/) | 1 | 1 | 0.0 MB |
-| [servicemanagement.md](../apple-docs/en/servicemanagement.md/) | 1 | 1 | 0.0 MB |
-| [synchronization.md](../apple-docs/en/synchronization.md/) | 1 | 1 | 0.0 MB |
-| [paperkit.md](../apple-docs/en/paperkit.md/) | 1 | 1 | 0.0 MB |
-| [roomplan.md](../apple-docs/en/roomplan.md/) | 1 | 1 | 0.0 MB |
-| [mediaplayer.md](../apple-docs/en/mediaplayer.md/) | 1 | 1 | 0.0 MB |
-| [visualintelligence.md](../apple-docs/en/visualintelligence.md/) | 1 | 1 | 0.0 MB |
-| [coredata.md](../apple-docs/en/coredata.md/) | 1 | 1 | 0.0 MB |
-| [xcode.md](../apple-docs/en/xcode.md/) | 1 | 1 | 0.0 MB |
-| [sharedwithyou.md](../apple-docs/en/sharedwithyou.md/) | 1 | 1 | 0.0 MB |
-| [networkextension.md](../apple-docs/en/networkextension.md/) | 1 | 1 | 0.0 MB |
-| [vision.md](../apple-docs/en/vision.md/) | 1 | 1 | 0.0 MB |
-| [charts.md](../apple-docs/en/charts.md/) | 1 | 1 | 0.0 MB |
-| [sensorkit.md](../apple-docs/en/sensorkit.md/) | 1 | 1 | 0.0 MB |
-| [automaticsigninapi.md](../apple-docs/en/automaticsigninapi.md/) | 1 | 1 | 0.0 MB |
-| [metalfx.md](../apple-docs/en/metalfx.md/) | 1 | 1 | 0.0 MB |
-| [appintents.md](../apple-docs/en/appintents.md/) | 1 | 1 | 0.0 MB |
-| [cryptokit.md](../apple-docs/en/cryptokit.md/) | 1 | 1 | 0.0 MB |
-| [objectivec.md](../apple-docs/en/objectivec.md/) | 1 | 1 | 0.0 MB |
-| [tabulardata.md](../apple-docs/en/tabulardata.md/) | 1 | 1 | 0.0 MB |
-| [homekit.md](../apple-docs/en/homekit.md/) | 1 | 1 | 0.0 MB |
-| [coreimage.md](../apple-docs/en/coreimage.md/) | 1 | 1 | 0.0 MB |
-| [exposurenotification.md](../apple-docs/en/exposurenotification.md/) | 1 | 1 | 0.0 MB |
-| [photokit.md](../apple-docs/en/photokit.md/) | 1 | 1 | 0.0 MB |
-| [deviceactivity.md](../apple-docs/en/deviceactivity.md/) | 1 | 1 | 0.0 MB |
-| [observation.md](../apple-docs/en/observation.md/) | 1 | 1 | 0.0 MB |
-| [swiftdata.md](../apple-docs/en/swiftdata.md/) | 1 | 1 | 0.0 MB |
-| [visionkit.md](../apple-docs/en/visionkit.md/) | 1 | 1 | 0.0 MB |
-| [cinematic.md](../apple-docs/en/cinematic.md/) | 1 | 1 | 0.0 MB |
-| [permissionkit.md](../apple-docs/en/permissionkit.md/) | 1 | 1 | 0.0 MB |
-| [coregraphics.md](../apple-docs/en/coregraphics.md/) | 1 | 1 | 0.0 MB |
-| [ios-ipados-release-notes.md](../apple-docs/en/ios-ipados-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [foundation.md](../apple-docs/en/foundation.md/) | 1 | 1 | 0.0 MB |
-| [extensionfoundation.md](../apple-docs/en/extensionfoundation.md/) | 1 | 1 | 0.0 MB |
-| [appstoreservernotifications.md](../apple-docs/en/appstoreservernotifications.md/) | 1 | 1 | 0.0 MB |
-| [corespotlight.md](../apple-docs/en/corespotlight.md/) | 1 | 1 | 0.0 MB |
-| [appstoreconnectapi.md](../apple-docs/en/appstoreconnectapi.md/) | 1 | 1 | 0.0 MB |
-| [os.md](../apple-docs/en/os.md/) | 1 | 1 | 0.0 MB |
-| [immersivemediasupport.md](../apple-docs/en/immersivemediasupport.md/) | 1 | 1 | 0.0 MB |
-| [virtualization.md](../apple-docs/en/virtualization.md/) | 1 | 1 | 0.0 MB |
-| [relevancekit.md](../apple-docs/en/relevancekit.md/) | 1 | 1 | 0.0 MB |
-| [metrickit.md](../apple-docs/en/metrickit.md/) | 1 | 1 | 0.0 MB |
-| [corefoundation.md](../apple-docs/en/corefoundation.md/) | 1 | 1 | 0.0 MB |
-| [sensitivecontentanalysis.md](../apple-docs/en/sensitivecontentanalysis.md/) | 1 | 1 | 0.0 MB |
-| [carkey.md](../apple-docs/en/carkey.md/) | 1 | 1 | 0.0 MB |
-| [avfoundation.md](../apple-docs/en/avfoundation.md/) | 1 | 1 | 0.0 MB |
-| [coretext.md](../apple-docs/en/coretext.md/) | 1 | 1 | 0.0 MB |
-| [musickit.md](../apple-docs/en/musickit.md/) | 1 | 1 | 0.0 MB |
-| [hypervisor.md](../apple-docs/en/hypervisor.md/) | 1 | 1 | 0.0 MB |
-| [workoutkit.md](../apple-docs/en/workoutkit.md/) | 1 | 1 | 0.0 MB |
-| [identitydocumentservices.md](../apple-docs/en/identitydocumentservices.md/) | 1 | 1 | 0.0 MB |
-| [coretransferable.md](../apple-docs/en/coretransferable.md/) | 1 | 1 | 0.0 MB |
-| [sirikit.md](../apple-docs/en/sirikit.md/) | 1 | 1 | 0.0 MB |
-| [xcode-release-notes.md](../apple-docs/en/xcode-release-notes.md/) | 1 | 1 | 0.0 MB |
-| [updates.md](../apple-docs/en/updates.md/) | 1 | 1 | 0.0 MB |
-| [applepayontheweb.md](../apple-docs/en/applepayontheweb.md/) | 1 | 1 | 0.0 MB |
-| [applemapsserverapi.md](../apple-docs/en/applemapsserverapi.md/) | 1 | 1 | 0.0 MB |
-| [dispatch.md](../apple-docs/en/dispatch.md/) | 1 | 1 | 0.0 MB |
-| [regexbuilder.md](../apple-docs/en/regexbuilder.md/) | 1 | 1 | 0.0 MB |
-| [gamekit.md](../apple-docs/en/gamekit.md/) | 1 | 1 | 0.0 MB |
-| [managedsettingsui.md](../apple-docs/en/managedsettingsui.md/) | 1 | 1 | 0.0 MB |
-| [mapkitjs.md](../apple-docs/en/mapkitjs.md/) | 1 | 1 | 0.0 MB |
-| [security.md](../apple-docs/en/security.md/) | 1 | 1 | 0.0 MB |
-| [pencilkit](../apple-docs/en/pencilkit/) | 1 | 1 | 0.0 MB |
-| [sensitivecontentanalysis](../apple-docs/en/sensitivecontentanalysis/) | 1 | 0 | 0.0 MB |
-| [phase](../apple-docs/en/phase/) | 1 | 1 | 0.0 MB |
-| [familycontrols](../apple-docs/en/familycontrols/) | 1 | 0 | 0.0 MB |
-| [identitylookup](../apple-docs/en/identitylookup/) | 1 | 1 | 0.0 MB |
-| [automaticassessmentconfiguration](../apple-docs/en/automaticassessmentconfiguration/) | 1 | 0 | 0.0 MB |
-| [mediaaccessibility](../apple-docs/en/mediaaccessibility/) | 1 | 1 | 0.0 MB |
-| [virtualization](../apple-docs/en/virtualization/) | 1 | 1 | 0.0 MB |
-| [videosubscriberaccount](../apple-docs/en/videosubscriberaccount/) | 1 | 1 | 0.0 MB |
-| [storekittest](../apple-docs/en/storekittest/) | 1 | 1 | 0.0 MB |
-| [assetslibrary](../apple-docs/en/assetslibrary/) | 1 | 0 | 0.0 MB |
-| [appstoreservernotifications](../apple-docs/en/appstoreservernotifications/) | 1 | 1 | 0.0 MB |
-| [alarmkit](../apple-docs/en/alarmkit/) | 1 | 1 | 0.0 MB |
-| [contacts](../apple-docs/en/contacts/) | 1 | 0 | 0.0 MB |
-| [clockkit](../apple-docs/en/clockkit/) | 1 | 0 | 0.0 MB |
-| [devicediscoveryui](../apple-docs/en/devicediscoveryui/) | 1 | 0 | 0.0 MB |
-| [visualintelligence](../apple-docs/en/visualintelligence/) | 1 | 1 | 0.0 MB |
-| [scenekit](../apple-docs/en/scenekit/) | 1 | 0 | 0.0 MB |
-| [corelocationui](../apple-docs/en/corelocationui/) | 1 | 0 | 0.0 MB |
-| [ituneslibrary](../apple-docs/en/ituneslibrary/) | 1 | 0 | 0.0 MB |
-| [immersivemediasupport](../apple-docs/en/immersivemediasupport/) | 1 | 1 | 0.0 MB |
-| [localauthenticationembeddedui](../apple-docs/en/localauthenticationembeddedui/) | 1 | 0 | 0.0 MB |
-| [deviceactivity](../apple-docs/en/deviceactivity/) | 1 | 0 | 0.0 MB |
-| [screencapturekit](../apple-docs/en/screencapturekit/) | 1 | 1 | 0.0 MB |
-| [createml](../apple-docs/en/createml/) | 1 | 1 | 0.0 MB |
-| [speech](../apple-docs/en/speech/) | 1 | 0 | 0.0 MB |
-| [coreml](../apple-docs/en/coreml/) | 1 | 0 | 0.0 MB |
-| [xcuiautomation](../apple-docs/en/xcuiautomation/) | 1 | 1 | 0.0 MB |
-| [spritekit](../apple-docs/en/spritekit/) | 1 | 0 | 0.0 MB |
-| [soundanalysis](../apple-docs/en/soundanalysis/) | 1 | 1 | 0.0 MB |
-| [system](../apple-docs/en/system/) | 1 | 0 | 0.0 MB |
-| [geotoolbox](../apple-docs/en/geotoolbox/) | 1 | 0 | 0.0 MB |
-| [replaykit](../apple-docs/en/replaykit/) | 1 | 1 | 0.0 MB |
-| [cinematic](../apple-docs/en/cinematic/) | 1 | 1 | 0.0 MB |
-| [accounts](../apple-docs/en/accounts/) | 1 | 0 | 0.0 MB |
-| [coremotion](../apple-docs/en/coremotion/) | 1 | 0 | 0.0 MB |
-| [identitydocumentservices](../apple-docs/en/identitydocumentservices/) | 1 | 1 | 0.0 MB |
-| [applepayontheweb](../apple-docs/en/applepayontheweb/) | 1 | 1 | 0.0 MB |
-| [videotoolbox](../apple-docs/en/videotoolbox/) | 1 | 1 | 0.0 MB |
-| [mididriverkit](../apple-docs/en/mididriverkit/) | 1 | 1 | 0.0 MB |
-| [driverkit](../apple-docs/en/driverkit/) | 1 | 1 | 0.0 MB |
-| [backgroundassets](../apple-docs/en/backgroundassets/) | 1 | 1 | 0.0 MB |
-| [callkit](../apple-docs/en/callkit/) | 1 | 1 | 0.0 MB |
-| [opengles](../apple-docs/en/opengles/) | 1 | 0 | 0.0 MB |
-| [nearbyinteraction](../apple-docs/en/nearbyinteraction/) | 1 | 0 | 0.0 MB |
-| **合计** | **95,634** | **3,746** | |
+| 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |
+|---|---:|---:|---:|---|---|
+| swift | 18,401 | 1,027 | 126 | [逐篇查看](sources/apple/swift.md) | [目录](../apple-docs/en/swift) |
+| foundation | 14,127 | 266 | 165 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
+| uikit | 12,614 | 265 | 153 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
+| security | 7,311 | 141 | 1 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
+| swiftui | 7,106 | 146 | 4 | [逐篇查看](sources/apple/swiftui.md) | [目录](../apple-docs/en/swiftui) |
+| avfoundation | 5,530 | 130 | 0 | [逐篇查看](sources/apple/avfoundation.md) | [目录](../apple-docs/en/avfoundation) |
+| metal | 4,090 | 183 | 50 | [逐篇查看](sources/apple/metal.md) | [目录](../apple-docs/en/metal) |
+| corefoundation | 2,725 | 91 | 0 | [逐篇查看](sources/apple/corefoundation.md) | [目录](../apple-docs/en/corefoundation) |
+| coretext | 2,345 | 18 | 0 | [逐篇查看](sources/apple/coretext.md) | [目录](../apple-docs/en/coretext) |
+| coreimage | 2,116 | 45 | 0 | [逐篇查看](sources/apple/coreimage.md) | [目录](../apple-docs/en/coreimage) |
+| network | 1,975 | 31 | 0 | [逐篇查看](sources/apple/network.md) | [目录](../apple-docs/en/network) |
+| coregraphics | 1,939 | 49 | 0 | [逐篇查看](sources/apple/coregraphics.md) | [目录](../apple-docs/en/coregraphics) |
+| storekit | 1,430 | 111 | 0 | [逐篇查看](sources/apple/storekit.md) | [目录](../apple-docs/en/storekit) |
+| mapkit | 1,296 | 25 | 0 | [逐篇查看](sources/apple/mapkit.md) | [目录](../apple-docs/en/mapkit) |
+| coredata | 1,174 | 48 | 1 | [逐篇查看](sources/apple/coredata.md) | [目录](../apple-docs/en/coredata) |
+| combine | 1,062 | 40 | 0 | [逐篇查看](sources/apple/combine.md) | [目录](../apple-docs/en/combine) |
+| objectivec | 850 | 42 | 42 | [逐篇查看](sources/apple/objectivec.md) | [目录](../apple-docs/en/objectivec) |
+| cryptokit | 705 | 23 | 0 | [逐篇查看](sources/apple/cryptokit.md) | [目录](../apple-docs/en/cryptokit) |
+| quartzcore | 699 | 32 | 0 | [逐篇查看](sources/apple/quartzcore.md) | [目录](../apple-docs/en/quartzcore) |
+| avkit | 691 | 22 | 0 | [逐篇查看](sources/apple/avkit.md) | [目录](../apple-docs/en/avkit) |
+| photos | 691 | 2 | 0 | [逐篇查看](sources/apple/photos.md) | [目录](../apple-docs/en/photos) |
+| dispatch | 612 | 17 | 16 | [逐篇查看](sources/apple/dispatch.md) | [目录](../apple-docs/en/dispatch) |
+| charts | 595 | 6 | 0 | [逐篇查看](sources/apple/charts.md) | [目录](../apple-docs/en/charts) |
+| os | 595 | 19 | 18 | [逐篇查看](sources/apple/os.md) | [目录](../apple-docs/en/os) |
+| corelocation | 568 | 21 | 0 | [逐篇查看](sources/apple/corelocation.md) | [目录](../apple-docs/en/corelocation) |
+| swiftdata | 545 | 18 | 3 | [逐篇查看](sources/apple/swiftdata.md) | [目录](../apple-docs/en/swiftdata) |
+| regexbuilder | 462 | 1 | 1 | [逐篇查看](sources/apple/regexbuilder.md) | [目录](../apple-docs/en/regexbuilder) |
+| uniformtypeidentifiers | 360 | 6 | 0 | [逐篇查看](sources/apple/uniformtypeidentifiers.md) | [目录](../apple-docs/en/uniformtypeidentifiers) |
+| xcode | 360 | 360 | 355 | [逐篇查看](sources/apple/xcode.md) | [目录](../apple-docs/en/xcode) |
+| appkit | 356 | 9 | 0 | [逐篇查看](sources/apple/appkit.md) | [目录](../apple-docs/en/appkit) |
+| widgetkit | 329 | 37 | 0 | [逐篇查看](sources/apple/widgetkit.md) | [目录](../apple-docs/en/widgetkit) |
+| photosui | 310 | 1 | 1 | [逐篇查看](sources/apple/photosui.md) | [目录](../apple-docs/en/photosui) |
+| usernotifications | 287 | 29 | 0 | [逐篇查看](sources/apple/usernotifications.md) | [目录](../apple-docs/en/usernotifications) |
+| synchronization | 196 | 6 | 0 | [逐篇查看](sources/apple/synchronization.md) | [目录](../apple-docs/en/synchronization) |
+| activitykit | 121 | 7 | 0 | [逐篇查看](sources/apple/activitykit.md) | [目录](../apple-docs/en/activitykit) |
+| distributed | 93 | 1 | 0 | [逐篇查看](sources/apple/distributed.md) | [目录](../apple-docs/en/distributed) |
+| updates | 89 | 89 | 0 | [逐篇查看](sources/apple/updates.md) | [目录](../apple-docs/en/updates) |
+| bundleresources | 86 | 4 | 0 | [逐篇查看](sources/apple/bundleresources.md) | [目录](../apple-docs/en/bundleresources) |
+| kernel | 72 | 71 | 12 | [逐篇查看](sources/apple/kernel.md) | [目录](../apple-docs/en/kernel) |
+| backgroundtasks | 64 | 5 | 0 | [逐篇查看](sources/apple/backgroundtasks.md) | [目录](../apple-docs/en/backgroundtasks) |
+| avfaudio | 48 | 5 | 0 | [逐篇查看](sources/apple/avfaudio.md) | [目录](../apple-docs/en/avfaudio) |
+| technologyoverviews | 44 | 44 | 0 | [逐篇查看](sources/apple/technologyoverviews.md) | [目录](../apple-docs/en/technologyoverviews) |
+| cfnetwork | 40 | 1 | 0 | [逐篇查看](sources/apple/cfnetwork.md) | [目录](../apple-docs/en/cfnetwork) |
+| observation | 37 | 1 | 0 | [逐篇查看](sources/apple/observation.md) | [目录](../apple-docs/en/observation) |
+| mediaplayer | 26 | 1 | 0 | [逐篇查看](sources/apple/mediaplayer.md) | [目录](../apple-docs/en/mediaplayer) |
+| photokit | 23 | 23 | 0 | [逐篇查看](sources/apple/photokit.md) | [目录](../apple-docs/en/photokit) |
+| pdfkit | 23 | 0 | 0 | — | [目录](../apple-docs/en/pdfkit) |
+| quartz | 19 | 0 | 0 | — | [目录](../apple-docs/en/quartz) |
+| webkit | 18 | 1 | 0 | [逐篇查看](sources/apple/webkit.md) | [目录](../apple-docs/en/webkit) |
+| metalkit | 18 | 0 | 0 | — | [目录](../apple-docs/en/metalkit) |
+| passkit | 17 | 5 | 0 | [逐篇查看](sources/apple/passkit.md) | [目录](../apple-docs/en/passkit) |
+| gamecontroller | 16 | 3 | 0 | [逐篇查看](sources/apple/gamecontroller.md) | [目录](../apple-docs/en/gamecontroller) |
+| visionos | 12 | 12 | 0 | [逐篇查看](sources/apple/visionos.md) | [目录](../apple-docs/en/visionos) |
+| appintents | 9 | 9 | 0 | [逐篇查看](sources/apple/appintents.md) | [目录](../apple-docs/en/appintents) |
+| gamekit | 8 | 5 | 1 | [逐篇查看](sources/apple/gamekit.md) | [目录](../apple-docs/en/gamekit) |
+| corewlan | 8 | 0 | 0 | — | [目录](../apple-docs/en/corewlan) |
+| watchkit | 8 | 2 | 0 | [逐篇查看](sources/apple/watchkit.md) | [目录](../apple-docs/en/watchkit) |
+| accessibility | 7 | 7 | 0 | [逐篇查看](sources/apple/accessibility.md) | [目录](../apple-docs/en/accessibility) |
+| automator | 7 | 0 | 0 | — | [目录](../apple-docs/en/automator) |
+| apple-silicon | 6 | 6 | 0 | [逐篇查看](sources/apple/apple-silicon.md) | [目录](../apple-docs/en/apple-silicon) |
+| networkextension | 6 | 1 | 0 | [逐篇查看](sources/apple/networkextension.md) | [目录](../apple-docs/en/networkextension) |
+| addressbook | 6 | 0 | 0 | — | [目录](../apple-docs/en/addressbook) |
+| groupactivities | 5 | 4 | 1 | [逐篇查看](sources/apple/groupactivities.md) | [目录](../apple-docs/en/groupactivities) |
+| sharedwithyou | 5 | 1 | 1 | [逐篇查看](sources/apple/sharedwithyou.md) | [目录](../apple-docs/en/sharedwithyou) |
+| vision | 5 | 3 | 0 | [逐篇查看](sources/apple/vision.md) | [目录](../apple-docs/en/vision) |
+| corespotlight | 5 | 4 | 0 | [逐篇查看](sources/apple/corespotlight.md) | [目录](../apple-docs/en/corespotlight) |
+| testing | 5 | 5 | 0 | [逐篇查看](sources/apple/testing.md) | [目录](../apple-docs/en/testing) |
+| preferencepanes | 5 | 0 | 0 | — | [目录](../apple-docs/en/preferencepanes) |
+| arkit | 5 | 3 | 0 | [逐篇查看](sources/apple/arkit.md) | [目录](../apple-docs/en/arkit) |
+| authenticationservices | 5 | 3 | 0 | [逐篇查看](sources/apple/authenticationservices.md) | [目录](../apple-docs/en/authenticationservices) |
+| wifiaware | 4 | 4 | 0 | [逐篇查看](sources/apple/wifiaware.md) | [目录](../apple-docs/en/wifiaware) |
+| foundationmodels | 4 | 4 | 0 | [逐篇查看](sources/apple/foundationmodels.md) | [目录](../apple-docs/en/foundationmodels) |
+| metrickit | 4 | 1 | 0 | [逐篇查看](sources/apple/metrickit.md) | [目录](../apple-docs/en/metrickit) |
+| cloudkit | 4 | 2 | 0 | [逐篇查看](sources/apple/cloudkit.md) | [目录](../apple-docs/en/cloudkit) |
+| healthkit | 4 | 2 | 0 | [逐篇查看](sources/apple/healthkit.md) | [目录](../apple-docs/en/healthkit) |
+| adattributionkit | 4 | 4 | 0 | [逐篇查看](sources/apple/adattributionkit.md) | [目录](../apple-docs/en/adattributionkit) |
+| localauthentication | 4 | 0 | 0 | — | [目录](../apple-docs/en/localauthentication) |
+| fileprovider | 4 | 0 | 0 | — | [目录](../apple-docs/en/fileprovider) |
+| iobluetooth | 4 | 0 | 0 | — | [目录](../apple-docs/en/iobluetooth) |
+| watchos-apps | 4 | 4 | 0 | [逐篇查看](sources/apple/watchos-apps.md) | [目录](../apple-docs/en/watchos-apps) |
+| messages | 3 | 2 | 0 | [逐篇查看](sources/apple/messages.md) | [目录](../apple-docs/en/messages) |
+| proximityreader | 3 | 3 | 1 | [逐篇查看](sources/apple/proximityreader.md) | [目录](../apple-docs/en/proximityreader) |
+| homekit | 3 | 1 | 0 | [逐篇查看](sources/apple/homekit.md) | [目录](../apple-docs/en/homekit) |
+| visionkit | 3 | 3 | 0 | [逐篇查看](sources/apple/visionkit.md) | [目录](../apple-docs/en/visionkit) |
+| appstoreconnectapi | 3 | 3 | 0 | [逐篇查看](sources/apple/appstoreconnectapi.md) | [目录](../apple-docs/en/appstoreconnectapi) |
+| mapkitjs | 3 | 3 | 0 | [逐篇查看](sources/apple/mapkitjs.md) | [目录](../apple-docs/en/mapkitjs) |
+| eventkit | 3 | 1 | 0 | [逐篇查看](sources/apple/eventkit.md) | [目录](../apple-docs/en/eventkit) |
+| carplay | 3 | 0 | 0 | — | [目录](../apple-docs/en/carplay) |
+| applepencil | 3 | 3 | 0 | [逐篇查看](sources/apple/applepencil.md) | [目录](../apple-docs/en/applepencil) |
+| safariservices | 3 | 3 | 0 | [逐篇查看](sources/apple/safariservices.md) | [目录](../apple-docs/en/safariservices) |
+| alarmkit | 2 | 2 | 0 | [逐篇查看](sources/apple/alarmkit.md) | [目录](../apple-docs/en/alarmkit) |
+| nearbyinteraction | 2 | 1 | 0 | [逐篇查看](sources/apple/nearbyinteraction.md) | [目录](../apple-docs/en/nearbyinteraction) |
+| familycontrols | 2 | 1 | 0 | [逐篇查看](sources/apple/familycontrols.md) | [目录](../apple-docs/en/familycontrols) |
+| geotoolbox | 2 | 1 | 1 | [逐篇查看](sources/apple/geotoolbox.md) | [目录](../apple-docs/en/geotoolbox) |
+| createml | 2 | 2 | 0 | [逐篇查看](sources/apple/createml.md) | [目录](../apple-docs/en/createml) |
+| videosubscriberaccount | 2 | 2 | 1 | [逐篇查看](sources/apple/videosubscriberaccount.md) | [目录](../apple-docs/en/videosubscriberaccount) |
+| corelocationui | 2 | 1 | 1 | [逐篇查看](sources/apple/corelocationui.md) | [目录](../apple-docs/en/corelocationui) |
+| coreml | 2 | 1 | 0 | [逐篇查看](sources/apple/coreml.md) | [目录](../apple-docs/en/coreml) |
+| driverkit | 2 | 2 | 0 | [逐篇查看](sources/apple/driverkit.md) | [目录](../apple-docs/en/driverkit) |
+| backgroundassets | 2 | 2 | 0 | [逐篇查看](sources/apple/backgroundassets.md) | [目录](../apple-docs/en/backgroundassets) |
+| visualintelligence | 2 | 2 | 0 | [逐篇查看](sources/apple/visualintelligence.md) | [目录](../apple-docs/en/visualintelligence) |
+| deviceactivity | 2 | 1 | 0 | [逐篇查看](sources/apple/deviceactivity.md) | [目录](../apple-docs/en/deviceactivity) |
+| cinematic | 2 | 2 | 0 | [逐篇查看](sources/apple/cinematic.md) | [目录](../apple-docs/en/cinematic) |
+| appstoreservernotifications | 2 | 2 | 1 | [逐篇查看](sources/apple/appstoreservernotifications.md) | [目录](../apple-docs/en/appstoreservernotifications) |
+| immersivemediasupport | 2 | 2 | 0 | [逐篇查看](sources/apple/immersivemediasupport.md) | [目录](../apple-docs/en/immersivemediasupport) |
+| virtualization | 2 | 2 | 0 | [逐篇查看](sources/apple/virtualization.md) | [目录](../apple-docs/en/virtualization) |
+| sensitivecontentanalysis | 2 | 1 | 1 | [逐篇查看](sources/apple/sensitivecontentanalysis.md) | [目录](../apple-docs/en/sensitivecontentanalysis) |
+| identitydocumentservices | 2 | 2 | 0 | [逐篇查看](sources/apple/identitydocumentservices.md) | [目录](../apple-docs/en/identitydocumentservices) |
+| applepayontheweb | 2 | 2 | 0 | [逐篇查看](sources/apple/applepayontheweb.md) | [目录](../apple-docs/en/applepayontheweb) |
+| audiotoolbox | 2 | 2 | 0 | [逐篇查看](sources/apple/audiotoolbox.md) | [目录](../apple-docs/en/audiotoolbox) |
+| coretelephony | 2 | 0 | 0 | — | [目录](../apple-docs/en/coretelephony) |
+| appclip | 2 | 2 | 0 | [逐篇查看](sources/apple/appclip.md) | [目录](../apple-docs/en/appclip) |
+| technotes | 2 | 2 | 0 | [逐篇查看](sources/apple/technotes.md) | [目录](../apple-docs/en/technotes) |
+| imageio | 2 | 2 | 0 | [逐篇查看](sources/apple/imageio.md) | [目录](../apple-docs/en/imageio) |
+| coremediaio | 2 | 2 | 0 | [逐篇查看](sources/apple/coremediaio.md) | [目录](../apple-docs/en/coremediaio) |
+| realitykit | 2 | 2 | 0 | [逐篇查看](sources/apple/realitykit.md) | [目录](../apple-docs/en/realitykit) |
+| externalaccessory | 2 | 0 | 0 | — | [目录](../apple-docs/en/externalaccessory) |
+| corehid | 2 | 2 | 0 | [逐篇查看](sources/apple/corehid.md) | [目录](../apple-docs/en/corehid) |
+| developertoolssupport | 2 | 0 | 0 | — | [目录](../apple-docs/en/developertoolssupport) |
+| tvservices | 2 | 0 | 0 | — | [目录](../apple-docs/en/tvservices) |
+| xpc | 2 | 0 | 0 | — | [目录](../apple-docs/en/xpc) |
+| safari-release-notes | 1 | 1 | 1 | [逐篇查看](sources/apple/safari-release-notes.md) | [目录](../apple-docs/en/safari-release-notes.md) |
+| visionos-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/visionos-release-notes.md) | [目录](../apple-docs/en/visionos-release-notes.md) |
+| mailkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mailkit.md) | [目录](../apple-docs/en/mailkit.md) |
+| dockkit | 1 | 1 | 0 | [逐篇查看](sources/apple/dockkit.md) | [目录](../apple-docs/en/dockkit.md) |
+| appstoreserverapi | 1 | 1 | 0 | [逐篇查看](sources/apple/appstoreserverapi.md) | [目录](../apple-docs/en/appstoreserverapi.md) |
+| managedsettings | 1 | 1 | 0 | [逐篇查看](sources/apple/managedsettings.md) | [目录](../apple-docs/en/managedsettings.md) |
+| declaredagerange | 1 | 1 | 0 | [逐篇查看](sources/apple/declaredagerange.md) | [目录](../apple-docs/en/declaredagerange.md) |
+| walletorders | 1 | 1 | 0 | [逐篇查看](sources/apple/walletorders.md) | [目录](../apple-docs/en/walletorders.md) |
+| tvuikit | 1 | 1 | 0 | [逐篇查看](sources/apple/tvuikit.md) | [目录](../apple-docs/en/tvuikit.md) |
+| symbols | 1 | 1 | 0 | [逐篇查看](sources/apple/symbols.md) | [目录](../apple-docs/en/symbols.md) |
+| extensionkit | 1 | 1 | 0 | [逐篇查看](sources/apple/extensionkit.md) | [目录](../apple-docs/en/extensionkit.md) |
+| createmlcomponents | 1 | 1 | 0 | [逐篇查看](sources/apple/createmlcomponents.md) | [目录](../apple-docs/en/createmlcomponents.md) |
+| identitydocumentservicesui | 1 | 1 | 0 | [逐篇查看](sources/apple/identitydocumentservicesui.md) | [目录](../apple-docs/en/identitydocumentservicesui.md) |
+| energykit | 1 | 1 | 0 | [逐篇查看](sources/apple/energykit.md) | [目录](../apple-docs/en/energykit.md) |
+| shazamkit | 1 | 1 | 1 | [逐篇查看](sources/apple/shazamkit.md) | [目录](../apple-docs/en/shazamkit.md) |
+| tvos-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/tvos-release-notes.md) | [目录](../apple-docs/en/tvos-release-notes.md) |
+| watchos-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/watchos-release-notes.md) | [目录](../apple-docs/en/watchos-release-notes.md) |
+| gamesave | 1 | 1 | 1 | [逐篇查看](sources/apple/gamesave.md) | [目录](../apple-docs/en/gamesave.md) |
+| wirelessinsights | 1 | 1 | 0 | [逐篇查看](sources/apple/wirelessinsights.md) | [目录](../apple-docs/en/wirelessinsights.md) |
+| scsiperipheralsdriverkit | 1 | 1 | 1 | [逐篇查看](sources/apple/scsiperipheralsdriverkit.md) | [目录](../apple-docs/en/scsiperipheralsdriverkit.md) |
+| devicediscoveryextension | 1 | 1 | 0 | [逐篇查看](sources/apple/devicediscoveryextension.md) | [目录](../apple-docs/en/devicediscoveryextension.md) |
+| packagedescription | 1 | 1 | 0 | [逐篇查看](sources/apple/packagedescription.md) | [目录](../apple-docs/en/packagedescription.md) |
+| macos-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/macos-release-notes.md) | [目录](../apple-docs/en/macos-release-notes.md) |
+| weatherkit | 1 | 1 | 0 | [逐篇查看](sources/apple/weatherkit.md) | [目录](../apple-docs/en/weatherkit.md) |
+| pushtotalk | 1 | 1 | 1 | [逐篇查看](sources/apple/pushtotalk.md) | [目录](../apple-docs/en/pushtotalk.md) |
+| touchcontroller | 1 | 1 | 0 | [逐篇查看](sources/apple/touchcontroller.md) | [目录](../apple-docs/en/touchcontroller.md) |
+| corehaptics | 1 | 1 | 0 | [逐篇查看](sources/apple/corehaptics.md) | [目录](../apple-docs/en/corehaptics.md) |
+| notaryapi | 1 | 1 | 0 | [逐篇查看](sources/apple/notaryapi.md) | [目录](../apple-docs/en/notaryapi.md) |
+| merchanttokennotificationservices | 1 | 1 | 0 | [逐篇查看](sources/apple/merchanttokennotificationservices.md) | [目录](../apple-docs/en/merchanttokennotificationservices.md) |
+| audiodriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/audiodriverkit.md) | [目录](../apple-docs/en/audiodriverkit.md) |
+| rosterapi | 1 | 1 | 1 | [逐篇查看](sources/apple/rosterapi.md) | [目录](../apple-docs/en/rosterapi.md) |
+| telephonymessagingkit | 1 | 1 | 0 | [逐篇查看](sources/apple/telephonymessagingkit.md) | [目录](../apple-docs/en/telephonymessagingkit.md) |
+| servicemanagement | 1 | 1 | 1 | [逐篇查看](sources/apple/servicemanagement.md) | [目录](../apple-docs/en/servicemanagement.md) |
+| paperkit | 1 | 1 | 0 | [逐篇查看](sources/apple/paperkit.md) | [目录](../apple-docs/en/paperkit.md) |
+| roomplan | 1 | 1 | 1 | [逐篇查看](sources/apple/roomplan.md) | [目录](../apple-docs/en/roomplan.md) |
+| sensorkit | 1 | 1 | 1 | [逐篇查看](sources/apple/sensorkit.md) | [目录](../apple-docs/en/sensorkit.md) |
+| automaticsigninapi | 1 | 1 | 0 | [逐篇查看](sources/apple/automaticsigninapi.md) | [目录](../apple-docs/en/automaticsigninapi.md) |
+| metalfx | 1 | 1 | 0 | [逐篇查看](sources/apple/metalfx.md) | [目录](../apple-docs/en/metalfx.md) |
+| tabulardata | 1 | 1 | 0 | [逐篇查看](sources/apple/tabulardata.md) | [目录](../apple-docs/en/tabulardata.md) |
+| exposurenotification | 1 | 1 | 0 | [逐篇查看](sources/apple/exposurenotification.md) | [目录](../apple-docs/en/exposurenotification.md) |
+| permissionkit | 1 | 1 | 0 | [逐篇查看](sources/apple/permissionkit.md) | [目录](../apple-docs/en/permissionkit.md) |
+| ios-ipados-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/ios-ipados-release-notes.md) | [目录](../apple-docs/en/ios-ipados-release-notes.md) |
+| extensionfoundation | 1 | 1 | 0 | [逐篇查看](sources/apple/extensionfoundation.md) | [目录](../apple-docs/en/extensionfoundation.md) |
+| relevancekit | 1 | 1 | 1 | [逐篇查看](sources/apple/relevancekit.md) | [目录](../apple-docs/en/relevancekit.md) |
+| carkey | 1 | 1 | 0 | [逐篇查看](sources/apple/carkey.md) | [目录](../apple-docs/en/carkey.md) |
+| musickit | 1 | 1 | 0 | [逐篇查看](sources/apple/musickit.md) | [目录](../apple-docs/en/musickit.md) |
+| hypervisor | 1 | 1 | 0 | [逐篇查看](sources/apple/hypervisor.md) | [目录](../apple-docs/en/hypervisor.md) |
+| workoutkit | 1 | 1 | 0 | [逐篇查看](sources/apple/workoutkit.md) | [目录](../apple-docs/en/workoutkit.md) |
+| coretransferable | 1 | 1 | 0 | [逐篇查看](sources/apple/coretransferable.md) | [目录](../apple-docs/en/coretransferable.md) |
+| sirikit | 1 | 1 | 0 | [逐篇查看](sources/apple/sirikit.md) | [目录](../apple-docs/en/sirikit.md) |
+| xcode-release-notes | 1 | 1 | 0 | [逐篇查看](sources/apple/xcode-release-notes.md) | [目录](../apple-docs/en/xcode-release-notes.md) |
+| applemapsserverapi | 1 | 1 | 0 | [逐篇查看](sources/apple/applemapsserverapi.md) | [目录](../apple-docs/en/applemapsserverapi.md) |
+| managedsettingsui | 1 | 1 | 0 | [逐篇查看](sources/apple/managedsettingsui.md) | [目录](../apple-docs/en/managedsettingsui.md) |
+| pencilkit | 1 | 1 | 0 | [逐篇查看](sources/apple/pencilkit.md) | [目录](../apple-docs/en/pencilkit) |
+| phase | 1 | 1 | 0 | [逐篇查看](sources/apple/phase.md) | [目录](../apple-docs/en/phase) |
+| identitylookup | 1 | 1 | 0 | [逐篇查看](sources/apple/identitylookup.md) | [目录](../apple-docs/en/identitylookup) |
+| automaticassessmentconfiguration | 1 | 0 | 0 | — | [目录](../apple-docs/en/automaticassessmentconfiguration) |
+| mediaaccessibility | 1 | 1 | 0 | [逐篇查看](sources/apple/mediaaccessibility.md) | [目录](../apple-docs/en/mediaaccessibility) |
+| storekittest | 1 | 1 | 0 | [逐篇查看](sources/apple/storekittest.md) | [目录](../apple-docs/en/storekittest) |
+| assetslibrary | 1 | 0 | 0 | — | [目录](../apple-docs/en/assetslibrary) |
+| contacts | 1 | 0 | 0 | — | [目录](../apple-docs/en/contacts) |
+| clockkit | 1 | 0 | 0 | — | [目录](../apple-docs/en/clockkit) |
+| devicediscoveryui | 1 | 0 | 0 | — | [目录](../apple-docs/en/devicediscoveryui) |
+| scenekit | 1 | 0 | 0 | — | [目录](../apple-docs/en/scenekit) |
+| ituneslibrary | 1 | 0 | 0 | — | [目录](../apple-docs/en/ituneslibrary) |
+| localauthenticationembeddedui | 1 | 0 | 0 | — | [目录](../apple-docs/en/localauthenticationembeddedui) |
+| screencapturekit | 1 | 1 | 0 | [逐篇查看](sources/apple/screencapturekit.md) | [目录](../apple-docs/en/screencapturekit) |
+| speech | 1 | 0 | 0 | — | [目录](../apple-docs/en/speech) |
+| xcuiautomation | 1 | 1 | 0 | [逐篇查看](sources/apple/xcuiautomation.md) | [目录](../apple-docs/en/xcuiautomation) |
+| spritekit | 1 | 0 | 0 | — | [目录](../apple-docs/en/spritekit) |
+| soundanalysis | 1 | 1 | 0 | [逐篇查看](sources/apple/soundanalysis.md) | [目录](../apple-docs/en/soundanalysis) |
+| system | 1 | 0 | 0 | — | [目录](../apple-docs/en/system) |
+| replaykit | 1 | 1 | 0 | [逐篇查看](sources/apple/replaykit.md) | [目录](../apple-docs/en/replaykit) |
+| accounts | 1 | 0 | 0 | — | [目录](../apple-docs/en/accounts) |
+| coremotion | 1 | 0 | 0 | — | [目录](../apple-docs/en/coremotion) |
+| videotoolbox | 1 | 1 | 0 | [逐篇查看](sources/apple/videotoolbox.md) | [目录](../apple-docs/en/videotoolbox) |
+| mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
+| callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
+| opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
+| **合计** | **95,634** | **3,746** | **967** | | |
