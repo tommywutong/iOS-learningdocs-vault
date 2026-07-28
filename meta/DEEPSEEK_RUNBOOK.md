@@ -4,6 +4,12 @@
 > 执行器：`tools/deepseek_pipeline.py`
 > 原则：初译、独立审校、机械校验全部通过后才产生正式 `zh/` 文件；只提 PR，不自动合并。
 
+> [!warning] 当前范围已经改变
+> 旧的 `core-r04-all` 和 `tools/shard.py --scope core` 已停止。当前任务必须严格来自
+> [`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md) 的 69 篇白名单，先做高价值
+> 博客，再做暑期计划点名的官方材料。下面关于执行器、Key、恢复和质量门的规则继续有效；
+> 旧 `core` 命令只属于历史记录，不得直接重跑。
+
 ## 1. 已有基础与新增边界
 
 Claude 已经完成：
@@ -68,11 +74,11 @@ Token 数和失败信息，仍然不应提交。
 
 ## 3. 生成本轮互斥分片
 
-core Apple 文档和 WWDC：
+先从 [`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md) 领取一个批次，只把该批次
+的白名单路径写入互不重叠的分片。当前调度器还没有 `summer` scope，因此不要用
+`--scope core` 近似替代。分片生成后先审阅路径，再执行：
 
 ```bash
-python3 tools/shard.py --shards 8 --budget 130000 --scope core
-python3 tools/shard.py --status
 python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
 ```
 
@@ -92,7 +98,7 @@ python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
 ```bash
 python3 tools/deepseek_pipeline.py run \
   --shard meta/shards/shard-*.json \
-  --run-id core-r03 \
+  --run-id summer-b0-r01 \
   --limit 3 \
   --concurrency 3 \
   --review-concurrency 2 \
@@ -118,7 +124,7 @@ HTTP 402 `Insufficient Balance` 会触发全局熔断：已经完成的文件和
 ## 5. 查看结果与恢复
 
 ```bash
-python3 tools/deepseek_pipeline.py status --run-id core-r03
+python3 tools/deepseek_pipeline.py status --run-id summer-b0-r01
 ```
 
 常见状态：
@@ -175,14 +181,13 @@ git status --short
 ```bash
 python3 tools/deepseek_pipeline.py run \
   --shard meta/shards/shard-*.json \
-  --run-id core-r03 \
+  --run-id summer-b0-r01 \
   --concurrency 8 \
   --review-concurrency 4
 ```
 
-当前生成的 core 下一轮为 8 个分片、155 篇、1,037,571 个英文字符；它只是
-1,737 篇 core/WWDC 剩余范围中的一轮。只有这一轮合并后，才能根据新的 `zh/` 事实重新切
-下一轮。
+当前建议每轮 8–15 篇，或 120K–180K 英文字符。先完成高价值博客 B0，再处理官方白名单
+O1/O2；每轮合并后都要根据新的 `zh/` 事实重新排除已完成文件。
 
 ## 8. PR 流程
 

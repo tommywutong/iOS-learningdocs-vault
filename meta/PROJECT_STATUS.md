@@ -6,11 +6,11 @@
 
 ## 1. 一句话现状
 
-**归档主体已经完成，翻译仍只完成了一部分。** Claude 会话中断前留下的 36 篇
-Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 core 译文。DeepSeek
-流水线已真实运行并新增 218 篇译文（Apple 207、WWDC 11），每篇均经过模型初译
-（默认 Flash，少量失败文件由 Pro 兜底）、独立 Pro 审校和机械校验。当前大批次因
-DeepSeek API 返回 402 `Insufficient Balance` 暂停；充值后可从同一 `run-id` 继续。
+**归档主体已经完成，后续翻译已经收窄为暑期学习定向范围。** Claude 会话中断前留下的
+36 篇 Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 core 译文。DeepSeek
+流水线新增的 218 篇译文（Apple 207、WWDC 11）已经审核并通过 PR #17 合入 `main`，
+合并提交为 `09f2f8563`。旧大批次曾因 DeepSeek API 返回 402 暂停；用户现已改变范围，
+因此即使充值也不得恢复旧的 `core-r04-all`。
 
 不要重新读取完整 Claude 会话来接手。它约 7.3 MB、3,479 条记录，绝大部分是抓取过程、
 工具输出和已经落盘的工作。当前文件、本文和
@@ -41,26 +41,27 @@ DeepSeek API 返回 402 `Insufficient Balance` 暂停；充值后可从同一 `r
 
 这里的 1,062 只统计“英文文件旁边存在同路径中文译文”，不包含 681 篇原生中文博客。
 
-### 2.2 用户已选定的翻译范围：A
+### 2.2 用户当前选定的翻译范围：暑期定向
 
-历史会话最后确认的 A 方案是：
+2026-07-28 的最新裁决取代历史 A 方案：
 
-1. 翻译 `core`：与八周 iOS 底层学习计划直接相关的 Apple 框架，加全部 WWDC；
-2. 翻译第三方英文博客；
-3. 永久排除 objc.io 的 149 篇，因为仓库里已有 objccn 的正式中文译文，并已完成
-   149 / 149 配对。
+1. 暑期计划明确点名的高价值英文博客优先；
+2. Apple 现行文档和 WWDC 只翻译暑期计划直接涉及的白名单；
+3. objc.io 命中项继续使用 objccn 正式中文配对，不重译；
+4. 不再追求全部 core 或全部英文博客完成。
 
-截至本文更新，A 方案剩余：
+当前剩余白名单：
 
 | 部分 | 待译 | 待译字符 |
 |---|---:|---:|
-| core Apple 文档 + WWDC | 1,519 篇 | 9,204,757 |
-| 第三方英文博客（排除 objc.io 149 篇） | 2,053 篇 | 22,404,127 |
-| **A 方案合计** | **3,572 篇** | **31,608,884** |
+| 高价值博客 | 41 | 666,822 |
+| Apple 现行文档 | 24 | 280,211 |
+| WWDC | 4 | 139,289 |
+| **合计** | **69** | **1,086,322** |
 
-这是真正需要大量 Token 的部分。完整翻译加独立审校的数量级预计为
-**3,000 万到 6,000 万 Token**，具体取决于模型、重试次数和审校深度。恢复上下文本身
-不需要这个量级。
+完整路径、批次顺序和排除规则见
+[`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md)。旧 A 方案的 3,572 篇只是
+历史估算，不再是当前欠账。
 
 ### 2.3 2026-07-28 core 合并批次
 
@@ -102,11 +103,14 @@ Apple：967 / 967 通过
 WWDC：34 / 34 通过
 ```
 
-`core-r04-all` 的 64 个分片覆盖原始 1,582 篇；已完成 63 篇，剩余 1,519 篇、
-9,204,757 字符。状态位于 `.staging/deepseek/core-r04-all/state.json`，该目录被
-Git 忽略。余额不足前实际出现的 `failed` 主要是同一批 HTTP 402，不代表内容校验失败；
-充值后同一命令会重新处理这些目标。执行器现已增加 402 全局熔断，后续不会再让排队文件
-批量变成普通失败。
+PR #17 合并前，仓库所有者又核对了 218 个目标的状态记录：全部至少有一次初译和一次独立
+审校调用，168 篇在审校阶段发生实质修改。人工抽检发现并修复了 DocC 示例代码关键字被
+翻译的问题；最终 Apple 967 / 967、WWDC 34 / 34 通过机械校验。
+
+`core-r04-all` 的旧 64 个分片覆盖原始 1,582 篇，范围明显过宽。它们以及本机
+`.staging/deepseek/core-r04-all/` 只作为历史断点保留，不得继续执行。下一次必须按
+[`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md) 重新生成白名单批次并使用
+新的 `run-id`。
 
 ### 2.5 旧归档仓库
 
@@ -182,11 +186,12 @@ robots 禁止的条目不得通过更换 User-Agent、代理或其他方式绕�
 新的 AI 按以下顺序读取即可：
 
 1. 本文件；
-2. [`NEXT_STEPS.md`](NEXT_STEPS.md)；
-3. [`TRANSLATION_STYLE.md`](TRANSLATION_STYLE.md)；
-4. [`TERMS.md`](TERMS.md)；
-5. 领取到的 `meta/shards/shard-XX.json`；
-6. 对应的英文原文与已有相邻译文。
+2. [`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md)；
+3. [`NEXT_STEPS.md`](NEXT_STEPS.md)；
+4. [`TRANSLATION_STYLE.md`](TRANSLATION_STYLE.md)；
+5. [`TERMS.md`](TERMS.md)；
+6. 领取到的白名单分片；
+7. 对应的英文原文与已有相邻译文。
 
 不要首先读取完整历史会话，不要全量扫描 95,634 篇 Apple 文档，也不要重新抓取已经归档的
 内容。
@@ -197,24 +202,13 @@ robots 禁止的条目不得通过更换 User-Agent、代理或其他方式绕�
 # 总体翻译进度
 python3 tools/translate_plan.py status
 
-# 查看当前分片完成度
-python3 tools/shard.py --status
-
 # DeepSeek 多路初译 + 独立审校（第一次必须 --limit 3）
 python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
 python3 tools/deepseek_pipeline.py status --run-id <run-id>
 
-# 当前 64 个 core 分片必须保留到 core-r04-all 完成，不要重新生成
-python3 tools/shard.py --status
-
-# 充值后恢复当前全部 core 批次
-python3 tools/deepseek_pipeline.py run \
-  --shard meta/shards/shard-*.json \
-  --run-id core-r04-all \
-  --concurrency 64 \
-  --review-concurrency 32 \
-  --retries 8 \
-  --max-cost-usd 100
+# 注意：不得继续 core-r04-all，也不得用 --scope core 生成新任务。
+# 新分片必须严格来自 SUMMER_TRANSLATION_PLAN.md 的白名单，
+# 并使用 summer-b0-r01 等新的 run-id。
 
 # 三类译文的机械校验
 python3 tools/validate.py apple-docs/zh
@@ -235,6 +229,7 @@ python3 tools/indexes.py
 - 不要把仓库改成公开；
 - 不要删除英文基线或覆盖 `en/`；
 - 不要重译 objc.io 已配对的 149 篇；
+- 不要恢复 `core-r04-all` 或把整个框架目录当作新范围；
 - 不要把原生中文博客数量当成英文翻译完成量；
 - 不要在未通过 `validate.py` 时提交译文；
 - 不要把 `.cache/`、`.staging/`、`meta/shards/` 或 `*.orig` 提交；

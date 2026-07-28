@@ -34,7 +34,7 @@
 | 找某个主题的 WWDC session | [`_indexes/wwdc.md`](_indexes/wwdc.md) —— 九个主题分组，标注了哪些「讲机制、长期有效」哪些「版本性会过时」 |
 | 看博客归档与**授权状况** | [`_indexes/blogs.md`](_indexes/blogs.md) |
 | 查术语该怎么译 | [`meta/TERMS.md`](meta/TERMS.md) |
-| **让新的 AI 接手** | 先读 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md)，再按 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md) 的进度表领取下一批 |
+| **让新的 AI 接手** | 先读 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 和 [`meta/SUMMER_TRANSLATION_PLAN.md`](meta/SUMMER_TRANSLATION_PLAN.md)，再按 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md) 领取白名单任务 |
 
 **在 Obsidian 里打开仓库根目录**即可。英文原文和中文译文路径一一对应，
 `en/` 换成 `zh/` 就是译文。
@@ -112,14 +112,13 @@ python3 tools/blog.py render <key>...
 python3 tools/snapshot.py targets|fetch|render     # 单页快照
 
 # 翻译调度与校验
-python3 tools/translate_plan.py status             # 进度
-python3 tools/translate_plan.py next --budget 60000  # 取下一批（按学习计划优先级）
-python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 并行分片
+python3 tools/translate_plan.py status             # 查看全仓事实，不代表当前白名单
+# 当前不得使用 --scope core；任务必须来自 meta/SUMMER_TRANSLATION_PLAN.md
 python3 tools/shard.py --status                    # 当前分片产出情况
 python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
 python3 tools/deepseek_pipeline.py run --shard meta/shards/shard-*.json \
-  --run-id core-r03 --limit 3                      # DeepSeek 小批量冒烟
-python3 tools/deepseek_pipeline.py status --run-id core-r03
+  --run-id summer-b0-r01 --limit 3                 # 白名单小批量冒烟
+python3 tools/deepseek_pipeline.py status --run-id summer-b0-r01
 python3 tools/validate.py <目录>                    # 机械校验
 
 # 维护
@@ -148,12 +147,13 @@ echo
 在 Codex 桌面任务中也可把 Key 保存到 macOS 钥匙串的 generic password 项
 `apple-docs-vault-deepseek`；执行器在环境变量为空时自动读取。详细步骤见运行手册。
 
-推荐先对本轮全部分片中的 3 篇做冒烟测试：
+推荐先对按 [`meta/SUMMER_TRANSLATION_PLAN.md`](meta/SUMMER_TRANSLATION_PLAN.md)
+白名单生成的分片中的 3 篇做冒烟测试。旧 `core-r04-all` 已停止，不得恢复：
 
 ```bash
 python3 tools/deepseek_pipeline.py run \
   --shard meta/shards/shard-*.json \
-  --run-id core-r03 \
+  --run-id summer-b0-r01 \
   --limit 3 \
   --concurrency 3 \
   --review-concurrency 2 \
@@ -216,9 +216,9 @@ python3 tools/deepseek_pipeline.py run \
 见 [`meta/PROJECT_STATUS.md`](meta/PROJECT_STATUS.md) 与
 [`meta/NEXT_STEPS.md`](meta/NEXT_STEPS.md)。主要几项：
 
-- **翻译远未完成**：Apple / WWDC / 英文博客合计完成
+- **翻译采用定向完成标准**：Apple / WWDC / 英文博客目前一一对应完成
   1,062 篇；
-  完整 A 方案的剩余量和 Token 预算见后续计划表
+  当前只剩暑期计划白名单 69 篇，不再把全仓数千篇英文资料视为待办
 - 学习计划单篇快照 108 条中已归档 86 条，剩余 22 条有明确失败原因
 - 旧归档缺口已通过另一个仓库的 PR #10 补入 950 / 1,098 份，剩余 148 份
 - `ming1016/study` 只保留了 Markdown 和技术文章配图，旅游/绘画类配图未收（见 `oss/study/README-归档说明.md`）
