@@ -72,13 +72,13 @@ _落地页_概述你的技术、介绍重要术语，并组织_文档目录_中�
 若要覆盖默认组织方式并手动排列技术中的顶层符号，请向技术的落地页添加 Topics 部分。在 Markdown 文件的任何现有内容下方，添加两个井号（`##`）、一个空格和 `Topics` 关键字。
 
 ```markdown
-## 主题
+## Topics
 ```
 
 在 Topics 标题之后，使用三个井号（`###`）为每个组创建一个命名部分，并向每个部分添加一个或多个顶层符号。在每个符号前添加短划线（`-`），并用一对双反引号（``）将其括起来。
 
 ```markdown
-## 主题
+## Topics
 
 ### Creating sloths
 
@@ -132,7 +132,7 @@ Extension File 模板包含一个 Topics 部分，其中有一个可供填写的
 ```markdown
 # ``SlothCreator/Sloth``
 
-## 主题
+## Topics
 
 ### Creating a sloth
 
