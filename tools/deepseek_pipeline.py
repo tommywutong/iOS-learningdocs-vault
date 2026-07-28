@@ -9,12 +9,17 @@
         --shard meta/shards/shard-*.json \
         --run-id core-r03 \
         --limit 3
+    python3 tools/deepseek_pipeline.py run \
+        --shard meta/shards/review-*.json \
+        --run-id legacy-review-r01 \
+        --review-existing
     python3 tools/deepseek_pipeline.py status --run-id core-r03
 
 安全边界：
 
 * API Key 只从 ``DEEPSEEK_API_KEY`` 环境变量读取，不写日志和状态文件。
 * 英文原文只读；已有译文默认永不覆盖。
+* 只有显式传入 ``--review-existing`` 时，才把已有译文作为候选独立审校并原子覆盖。
 * 模型输出先写进被 Git 忽略的 ``.staging/deepseek/``。
 * 初译和独立审校分别使用独立 API 请求；两次机械校验都通过后才写入 ``zh/``。
 * 每篇文件都有可恢复状态、调用用量、保守费用估算和输出哈希。
@@ -563,6 +568,7 @@ class PipelineConfig:
     max_cost_usd: float | None
     translation_pricing: dict[str, float]
     review_pricing: dict[str, float]
+    review_existing: bool = False
 
 
 class Pipeline:
@@ -737,13 +743,20 @@ class Pipeline:
         existing = self.state.entry(rel)
         if existing.get("status") == "completed" and target.exists():
             return "resume-skip"
-        if target.exists():
+        if target.exists() and not self.config.review_existing:
             await self.state.update(
                 rel,
                 status="skipped_existing",
                 target=target_rel,
             )
             return "existing-skip"
+        if self.config.review_existing and not target.exists():
+            await self.state.update(
+                rel,
+                status="skipped_missing_existing",
+                target=target_rel,
+            )
+            return "missing-existing-skip"
         if self.stop_for_balance.is_set():
             await self.state.update(
                 rel,
@@ -751,7 +764,7 @@ class Pipeline:
                 error="DeepSeek 账户余额不足，等待充值后恢复",
             )
             return "balance-skip"
-        if self.stop_for_budget.is_set():
+        if self.stop_for_budget.is_set() and not self.config.review_existing:
             await self.state.update(rel, status="deferred_budget")
             return "budget-skip"
 
@@ -799,53 +812,62 @@ class Pipeline:
                 # 初译候选同样可以跨进程恢复。只有原文哈希、候选哈希和当前
                 # 机械校验同时匹配才复用，状态文件被手改不会绕过质量门。
                 translated: str | None = None
-                translated_rel = existing.get("translation_candidate")
-                if not translated_rel:
-                    last_candidate = existing.get("last_candidate")
-                    if (
-                        isinstance(last_candidate, str)
-                        and ".translation." in Path(last_candidate).name
-                    ):
-                        translated_rel = last_candidate
-                if (
-                    existing.get("source_sha256") == source_sha256
-                    and isinstance(translated_rel, str)
-                ):
-                    translated_path = ROOT / translated_rel
-                    if translated_path.is_file():
-                        possible = translated_path.read_text(encoding="utf-8")
-                        if (
-                            (
-                                not existing.get("translation_sha256")
-                                or sha256_text(possible)
-                                == existing.get("translation_sha256")
-                            )
-                            and not validate_candidate(
-                                en_path,
-                                possible,
-                                self.run_dir / "validation-temp",
-                            )
-                        ):
-                            translated = possible
-
-                if translated is None:
-                    await self.state.update(rel, status="translating")
-                    translated, translated_path = await self.generate_valid(
-                        item=item,
-                        stage="translation",
-                        source=source,
-                        candidate=None,
-                    )
+                if self.config.review_existing:
+                    translated = target.read_text(encoding="utf-8")
                     await self.state.update(
                         rel,
                         status="reviewing",
                         translation_sha256=sha256_text(translated),
-                        translation_candidate=str(
-                            translated_path.relative_to(ROOT)
-                        ),
+                        original_output_sha256=sha256_text(translated),
                     )
                 else:
-                    await self.state.update(rel, status="reviewing")
+                    translated_rel = existing.get("translation_candidate")
+                    if not translated_rel:
+                        last_candidate = existing.get("last_candidate")
+                        if (
+                            isinstance(last_candidate, str)
+                            and ".translation." in Path(last_candidate).name
+                        ):
+                            translated_rel = last_candidate
+                    if (
+                        existing.get("source_sha256") == source_sha256
+                        and isinstance(translated_rel, str)
+                    ):
+                        translated_path = ROOT / translated_rel
+                        if translated_path.is_file():
+                            possible = translated_path.read_text(encoding="utf-8")
+                            if (
+                                (
+                                    not existing.get("translation_sha256")
+                                    or sha256_text(possible)
+                                    == existing.get("translation_sha256")
+                                )
+                                and not validate_candidate(
+                                    en_path,
+                                    possible,
+                                    self.run_dir / "validation-temp",
+                                )
+                            ):
+                                translated = possible
+
+                    if translated is None:
+                        await self.state.update(rel, status="translating")
+                        translated, translated_path = await self.generate_valid(
+                            item=item,
+                            stage="translation",
+                            source=source,
+                            candidate=None,
+                        )
+                        await self.state.update(
+                            rel,
+                            status="reviewing",
+                            translation_sha256=sha256_text(translated),
+                            translation_candidate=str(
+                                translated_path.relative_to(ROOT)
+                            ),
+                        )
+                    else:
+                        await self.state.update(rel, status="reviewing")
 
                 reviewed, reviewed_path = await self.generate_valid(
                     item=item,
@@ -866,7 +888,7 @@ class Pipeline:
             )
             if issues:
                 raise PipelineError(f"写入前最终校验失败：{issues[0]}")
-            if target.exists():
+            if target.exists() and not self.config.review_existing:
                 raise PipelineError(f"准备写入时目标已由其他进程创建：{target_rel}")
             atomic_write(target, reviewed)
             await self.state.update(
@@ -954,6 +976,11 @@ def add_common_run_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--timeout", type=float, default=900)
     parser.add_argument("--retries", type=int, default=5)
     parser.add_argument("--max-cost-usd", type=float)
+    parser.add_argument(
+        "--review-existing",
+        action="store_true",
+        help="把已有译文作为候选，只调用独立审校模型并原子覆盖；默认仍不覆盖已有译文",
+    )
     parser.add_argument(
         "--base-url",
         default=os.environ.get("DEEPSEEK_BASE_URL", DEFAULT_BASE_URL),
@@ -1068,6 +1095,7 @@ async def run_pipeline(args: argparse.Namespace) -> int:
         max_cost_usd=args.max_cost_usd,
         translation_pricing=translation_pricing,
         review_pricing=review_pricing,
+        review_existing=args.review_existing,
     )
     run_dir = WORK_ROOT / args.run_id
     shard_labels: list[str] = []

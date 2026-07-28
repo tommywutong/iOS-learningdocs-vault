@@ -15,7 +15,7 @@ content_hash: 'sha256:0ad76e5cc11d1f93'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [View controllers](view-controllers.md) · [UITabBar](uitabbar.md)
+> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md) · [UITabBar](uitabbar.md)
 
 # 旧版自定义
 
@@ -34,22 +34,22 @@ translated: true
 - [barStyle](uitabbar/barstyle.md) — 指定标签页栏外观的标签页栏样式。
 - [UIBarStyle](uibarstyle.md) — 定义不同类型视图的样式外观。
 
-### 配置标签页栏条目
+### 配置标签页栏项
 
-- [tintColor](uitabbar/tintcolor.md) — 应用于标签页栏条目的色调颜色。
+- [tintColor](uitabbar/tintcolor.md) — 应用于标签页栏项的色调颜色。
 
-### 自定义条目间距
+### 自定义项间距
 
-- [itemPositioning](uitabbar/itempositioning-swift.property.md) — 标签页栏中标签页栏条目的定位方案。
-- [ItemPositioning](uitabbar/itempositioning-swift.enum.md) — 指定标签页栏条目定位方式的常量。
-- [itemSpacing](uitabbar/itemspacing.md) — 标签页栏条目之间使用的间距量（以点为单位）。
-- [itemWidth](uitabbar/itemwidth.md) — 标签页栏条目的宽度（以点为单位）。
+- [itemPositioning](uitabbar/itempositioning-swift.property.md) — 标签页栏中各项的定位方案。
+- [ItemPositioning](uitabbar/itempositioning-swift.enum.md) — 指定标签页栏项定位方式的常量。
+- [itemSpacing](uitabbar/itemspacing.md) — 标签页栏项之间使用的间距量（以点为单位）。
+- [itemWidth](uitabbar/itemwidth.md) — 标签页栏项的宽度（以点为单位）。
 
 ### 配置选中状态外观
 
 - [unselectedItemTintColor](uitabbar/unselecteditemtintcolor.md) — 应用于未选中标签页的色调颜色。
 - [selectionIndicatorImage](uitabbar/selectionindicatorimage.md) — 用于选中指示符的图像。
-- [selectedImageTintColor](uitabbar/selectedimagetintcolor.md) — 应用于选中标签页栏条目的色调颜色。 _(已废弃)_
+- [selectedImageTintColor](uitabbar/selectedimagetintcolor.md) — 应用于选中标签页栏项的色调颜色。 _(已废弃)_
 
 ### 更改背景
 

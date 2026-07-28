@@ -15,7 +15,7 @@ content_hash: 'sha256:b2b29f76341893f6'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Debugging](debugging.md) · [Metal debugger](metal-debugger.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
 
 # 借助 AI agent 调查 GPU 问题
 
@@ -56,15 +56,15 @@ Session 412 created.
 % gpudebug --oneshot -t trace.gputrace -c "go commands/cb0/re0/draw0" -c "info pipeline"
 ```
 
-完整的命令参考，请参阅 `gpudebug(1)` 手册页（`man gpudebug`）。
+如需完整的命令参考，请参阅 `gpudebug(1)` 手册页（`man gpudebug`）。
 
 ## 另请参阅
 
 ### 基础
 
-- [Capturing a Metal workload in Xcode](capturing-a-metal-workload-in-xcode.md) — 通过配置你的项目来使用 Metal debugger，分析 App 的性能。
-- [Capturing a Metal workload programmatically](capturing-a-metal-workload-programmatically.md) — 通过调用 Metal 的帧捕获功能，分析 App 的性能。
-- [Replaying a GPU trace file](replaying-a-gpu-trace-file.md) — 在 Metal debugger 中使用 GPU 跟踪文件调试和分析 App 的性能。
-- [Investigating visual artifacts](investigating-visual-artifacts.md) — 使用 Metal debugger 发现、诊断并修复 App 中的视觉伪影。
-- [Optimizing GPU performance](optimizing-gpu-performance.md) — 使用 Metal debugger 找到并解决性能瓶颈。
-- [Debugging with interactive command-line tools](debugging-with-interactive-command-line-tools.md) — 无需离开终端即可调查 GPU 跟踪记录中的渲染问题。
+- [在 Xcode 中捕捉 Metal 工作负载](capturing-a-metal-workload-in-xcode.md) — 通过配置你的项目以使用 Metal 调试器，分析 App 的性能。
+- [以编程方式捕捉 Metal 工作负载](capturing-a-metal-workload-programmatically.md) — 通过调用 Metal 的帧捕获功能，分析 App 的性能。
+- [回放 GPU 跟踪文件](replaying-a-gpu-trace-file.md) — 在 Metal 调试器中使用 GPU 跟踪文件调试与分析 App 的性能。
+- [调查视觉伪影](investigating-visual-artifacts.md) — 使用 Metal 调试器发现、诊断并修复 App 中的视觉伪影。
+- [优化 GPU 性能](optimizing-gpu-performance.md) — 使用 Metal 调试器找到并解决性能瓶颈。
+- [使用交互式命令行工具进行调试](debugging-with-interactive-command-line-tools.md) — 无需离开终端即可调查 GPU 跟踪记录中的渲染问题。

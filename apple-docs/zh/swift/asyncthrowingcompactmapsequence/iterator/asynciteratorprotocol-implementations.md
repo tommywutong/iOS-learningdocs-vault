@@ -15,7 +15,7 @@ content_hash: 'sha256:493c47c6e570d4b1'
 translated: true
 ---
 
-> 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncSequence](../../asyncsequence.md) · [AsyncThrowingCompactMapSequence](../../asyncthrowingcompactmapsequence.md) · [Iterator](../iterator.md)
+> 导航：[技术](../../../technologies.md) · [Swift](../../../swift.md) · [Swift 标准库](../../swift-standard-library.md) · [并发](../../concurrency.md) · [AsyncSequence](../../asyncsequence.md) · [AsyncThrowingCompactMapSequence](../../asyncthrowingcompactmapsequence.md) · [Iterator](../iterator.md)
 
 # AsyncIteratorProtocol 实现
 
@@ -25,5 +25,5 @@ translated: true
 
 ### 实例方法
 
-- [next()](<next()-1g8b3.md>) — `next()` 基于 `next(isolation:)` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
-- [next(isolation:)](<next(isolation_)-5p1be.md>) — `next(isolation:)` 基于 `next()` 的默认实现，为了维持与现有异步迭代器的向后兼容性而需要。
+- [next()](<next()-1g8b3.md>) — `next()` 的默认实现，基于 `next(isolation:)`，用于保持与现有异步迭代器（async iterator）的向后兼容性。
+- [next(isolation:)](<next(isolation_)-5p1be.md>) — `next(isolation:)` 的默认实现，基于 `next()`，用于保持与现有异步迭代器的向后兼容性。

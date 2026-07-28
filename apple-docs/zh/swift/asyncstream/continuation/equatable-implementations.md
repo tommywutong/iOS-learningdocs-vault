@@ -15,7 +15,7 @@ content_hash: 'sha256:7120724094318671'
 translated: true
 ---
 
-> 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncStream](../../asyncstream.md) · [Continuation](../continuation.md)
+> 导航：[技术](../../../technologies.md) · [Swift](../../../swift.md) · [Swift Standard Library](../../swift-standard-library.md) · [Concurrency](../../concurrency.md) · [AsyncStream](../../asyncstream.md) · [Continuation](../continuation.md)
 
 # Equatable 实现
 

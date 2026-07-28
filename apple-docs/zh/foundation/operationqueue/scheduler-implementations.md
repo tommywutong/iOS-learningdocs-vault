@@ -15,7 +15,7 @@ content_hash: 'sha256:83796bd8d3b88c34'
 translated: true
 ---
 
-> 导航：[Technologies](../../technologies.md) · [Foundation](../../foundation.md) · [Processes and Threads](../processes-and-threads.md) · [OperationQueue](../operationqueue.md)
+> 导航：[技术](../../technologies.md) · [Foundation](../../foundation.md) · [进程与线程](../processes-and-threads.md) · [OperationQueue](../operationqueue.md)
 
 # 调度器实现
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:4d58ed8238454f2d'
 translated: true
 ---
 
-> 导航：[Technologies](../../technologies.md) · [Swift](../../swift.md) · [Swift Standard Library](../swift-standard-library.md) · [Strings and Text](../strings-and-text.md) · [RegexSemanticLevel](../regexsemanticlevel.md)
+> 导航：[技术](../../technologies.md) · [Swift](../../swift.md) · [Swift 标准库](../swift-standard-library.md) · [字符串与文本](../strings-and-text.md) · [RegexSemanticLevel](../regexsemanticlevel.md)
 
 # Equatable 实现
 

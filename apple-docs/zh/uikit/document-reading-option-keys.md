@@ -15,7 +15,7 @@ content_hash: 'sha256:90a2ff273a9e6a60'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [TextKit](textkit.md) · [TextKit string attributes](textkit-string-attributes.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [TextKit](textkit.md) · [TextKit string attributes](textkit-string-attributes.md)
 
 # 文稿读取选项键
 

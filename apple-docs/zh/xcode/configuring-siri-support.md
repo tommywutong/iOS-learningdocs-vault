@@ -15,7 +15,7 @@ content_hash: 'sha256:ef3c78005e4cd436'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Capabilities](capabilities.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [功能](capabilities.md)
 
 # 配置 Siri 支持
 
@@ -34,11 +34,11 @@ translated: true
 
 ### 将 Siri 功能添加到你的 target
 
-按照 [Add a capability](adding-capabilities-to-your-app.md#Add-a-capability) 中的步骤，将该功能添加到你的 App 的 target，确保从 Xcode 的 Capabilities 库中选择 Siri 功能。对于带有独立 WatchKit 扩展的 watchOS App，你必须将该功能添加到 WatchKit Extension target。该功能不适用于 macOS。
+按照 [添加功能](adding-capabilities-to-your-app.md#Add-a-capability) 中的步骤，将该功能添加到你的 App 的 target，确保从 Xcode 的 Capabilities 库中选择 Siri 功能。对于带有独立 WatchKit 扩展的 watchOS App，你必须将该功能添加到 WatchKit Extension target。该功能不适用于 macOS。
 
 ![](../../../attachments/9627343970c7b20046c3823a96824a19/siri@2x.png)
 
-<sub>Xcode 的 Capabilities 库截图，左侧是可用功能列表，右侧是信息面板。列表显示了从 Near Field Communication Tag Reading 到 Wireless Access Configuration 等一系列功能，Siri 功能处于选中状态。信息面板上的文字说明 Siri 功能可让你的应用程序处理 Siri 请求。</sub>
+<sub>Xcode 的 Capabilities 库截图，左侧是可用功能列表，右侧是信息面板。列表显示了从 Near Field Communication Tag Reading 到 Wireless Access Configuration 等一系列功能，Siri 功能处于选中状态。信息面板上的文字说明 Siri 功能可让你的 App 处理 Siri 请求。</sub>
 
 添加 Siri 功能后，Xcode 会自动更新你的 target 的 entitlements 文件，加入 [Siri Entitlement](../bundleresources/entitlements/com.apple.developer.siri.md)。对于任何包含处理非快捷指令 Siri 请求的 Intents 扩展的 App，App Store 都要求具备此 entitlement。
 
@@ -54,9 +54,9 @@ translated: true
 
 ## 另请参阅
 
-### App execution
+### App 执行
 
-- [Configuring background execution modes](configuring-background-execution-modes.md) — 说明你的 App 需要哪些后台服务才能在 iOS、iPadOS、tvOS、visionOS 和 watchOS 中继续在后台执行。
-- [Configuring custom fonts](configuring-custom-fonts.md) — 将你的 App 注册为系统范围自定字体的提供方或使用方。
-- [Configuring game controllers](configuring-game-controllers.md) — 通过启用对实体游戏控制器的发现、配置和使用，增强游戏输入体验。
-- [Configuring Maps support](configuring-maps-support.md) — 注册你的 iOS 路线规划 App，以向地图和其他 App 提供点对点路线指引。
+- [配置后台执行模式](configuring-background-execution-modes.md) — 说明你的 App 需要哪些后台服务才能在 iOS、iPadOS、tvOS、visionOS 和 watchOS 中继续在后台执行。
+- [配置自定字体](configuring-custom-fonts.md) — 将你的 App 注册为系统范围自定字体的提供方或使用方。
+- [配置游戏控制器](configuring-game-controllers.md) — 通过启用对实体游戏控制器的发现、配置和使用，增强游戏输入体验。
+- [配置地图支持](configuring-maps-support.md) — 注册你的 iOS 路线规划 App，以向地图和其他 App 提供点对点路线指引。

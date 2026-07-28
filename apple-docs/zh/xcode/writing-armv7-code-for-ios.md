@@ -15,7 +15,7 @@ content_hash: 'sha256:06ebf4bb4636fdc0'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Application binary interfaces](application-binary-interfaces.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [应用程序二进制接口](application-binary-interfaces.md)
 
 # 为 iOS 编写 ARMv7 代码
 
@@ -61,7 +61,7 @@ add       sp, sp, #36     // 释放局部存储空间。
 vldmia    sp!, {d8-d15}   // 恢复 VFP/Advanced SIMD 寄存器。
 pop       {r8, r10, r11}  // 恢复 R8-R11。
 pop       {r4-r7, pc}     // 恢复 R4-R6、保存的 R7，并
-                          // 返回保存的 LR
+                          // 返回到保存的 LR
 ```
 
 ## 另请参阅
