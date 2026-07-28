@@ -15,7 +15,7 @@ content_hash: 'sha256:0dfe06a775e0a3f2'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
 
 # 分析 Metal 工作负载
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:b7dc4623dab7078e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 开发者工作流](metal-developer-workflows.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 开发者工作流](metal-developer-workflows.md)
 
 # 使用嵌入式着色器源代码构建项目
 

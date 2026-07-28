@@ -15,7 +15,7 @@ content_hash: 'sha256:0f9bc7f8e1c75417'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
 
 # 通知字典键
 

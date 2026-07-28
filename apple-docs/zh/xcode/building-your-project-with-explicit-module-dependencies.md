@@ -15,7 +15,7 @@ content_hash: 'sha256:7f563918175de20d'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [构建系统](build-system.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [构建系统](build-system.md)
 
 # 使用显式模块依赖项构建项目
 

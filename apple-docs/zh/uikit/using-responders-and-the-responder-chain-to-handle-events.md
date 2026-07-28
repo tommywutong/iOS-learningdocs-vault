@@ -15,7 +15,7 @@ content_hash: 'sha256:34754fad45f96e5b'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [触控、按压和手势](touches-presses-and-gestures.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [触控、按压和手势](touches-presses-and-gestures.md)
 
 # 使用响应者和响应者链处理事件
 

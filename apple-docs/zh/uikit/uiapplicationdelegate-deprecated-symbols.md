@@ -15,7 +15,7 @@ content_hash: 'sha256:e01a2224a11f474f'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [UIApplicationDelegate](uiapplicationdelegate.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [UIApplicationDelegate](uiapplicationdelegate.md)
 
 # 已废弃符号
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:55bcadc896923c01'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [管理 App 生命周期](managing-your-app-s-life-cycle.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [管理 App 生命周期](managing-your-app-s-life-cycle.md)
 
 # 响应内存警告
 

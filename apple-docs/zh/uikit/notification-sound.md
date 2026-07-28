@@ -15,7 +15,7 @@ content_hash: 'sha256:01809091e120edfa'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [已废弃符号](deprecated-symbols.md) · [UILocalNotification](uilocalnotification.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [已废弃符号](deprecated-symbols.md) · [UILocalNotification](uilocalnotification.md)
 
 # 通知声音
 

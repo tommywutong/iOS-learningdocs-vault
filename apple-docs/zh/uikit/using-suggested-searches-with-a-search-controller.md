@@ -15,7 +15,7 @@ content_hash: 'sha256:b894674ea5fa1152'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md)
 
 # 通过搜索控制器使用建议搜索
 
@@ -68,7 +68,7 @@ searchController.searchBar.delegate = self
 }
 ```
 
-用户首次轻点搜索栏时，搜索结果控制器会显示建议搜索。用户选择一项建议搜索，然后在搜索栏中输入其他搜索条件。每项建议搜索表示一个 [UISearchToken](uisearchtoken.md)，即搜索查询的视觉表示。轻点建议搜索会为特定颜色创建搜索令牌，搜索控制器会将其放入搜索栏的文本栏中。此文本栏由 [UISearchTextField](uisearchtextfield.md) 表示，支持对搜索令牌进行剪切、拷贝、粘贴和拖放。令牌始终位于文本之前，用户可以选择并删除令牌。
+用户首次轻点搜索栏时，搜索结果控制器会显示建议搜索。用户选择一项建议搜索，然后在搜索栏中输入其他搜索条件。每项建议搜索表示一个 [UISearchToken](uisearchtoken.md)，即搜索查询的视觉表示。轻点建议搜索会为特定颜色创建搜索令牌，搜索控制器会将其放入搜索栏的文本栏中。此文本栏由 [UISearchTextField](uisearchtextfield.md) 表示，支持对搜索令牌进行剪切、拷贝、粘贴和拖放（drag and drop）。令牌始终位于文本之前，用户可以选择并删除令牌。
 
 示例按如下方式创建 `UISearchToken`：
 

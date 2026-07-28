@@ -15,7 +15,7 @@ content_hash: 'sha256:ee2c50293411f934'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [场景](scenes.md) · [准备在前台运行 UI](preparing-your-ui-to-run-in-the-foreground.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [场景](scenes.md) · [准备在前台运行 UI](preparing-your-ui-to-run-in-the-foreground.md)
 
 # 处理排队的通知
 
@@ -37,7 +37,7 @@ translated: true
 | 外接显示器已连接或断开连接 | [UIScreenDidConnectNotification](uiscreen/didconnectnotification.md) ![](../../../attachments/67dc4b07a8d84366d4cc0e812eb40b4a/spacer.png) [UIScreenDidDisconnectNotification](uiscreen/diddisconnectnotification.md) |
 | 配件已连接或断开连接 | [EAAccessoryDidConnect](../foundation/nsnotification/name-swift.struct/eaaccessorydidconnect.md) (Swift) 或 [EAAccessoryDidConnectNotification](../externalaccessory/eaaccessorydidconnectnotification.md) (Objective-C) ![](../../../attachments/67dc4b07a8d84366d4cc0e812eb40b4a/spacer.png) [EAAccessoryDidDisconnect](../foundation/nsnotification/name-swift.struct/eaaccessorydiddisconnect.md) (Swift) 或 [EAAccessoryDidDisconnectNotification](../externalaccessory/eaaccessorydiddisconnectnotification.md) (Objective-C) |
 | 用户的 iCloud 账户状态发生变化 | [NSUbiquityIdentityDidChange](../foundation/nsnotification/name-swift.struct/nsubiquityidentitydidchange.md) |
-| 设备方向发生变化 | [UIDeviceOrientationDidChangeNotification](uidevice/orientationdidchangenotification.md) ![](../../../attachments/67dc4b07a8d84366d4cc0e812eb40b4a/spacer.png)（UIKit 会在适当时自动更新视图控制器的界面方向。） |
+| 设备方向发生变化 | [UIDeviceOrientationDidChangeNotification](uidevice/orientationdidchangenotification.md) ![](../../../attachments/67dc4b07a8d84366d4cc0e812eb40b4a/spacer.png)（UIKit 会在适当时自动更新视图控制器（view controller）的界面方向。） |
 | 出现显著的时间变化 | [UIApplicationSignificantTimeChangeNotification](uiapplication/significanttimechangenotification.md) |
 | 电池电量或电池状态发生变化 | [UIDeviceBatteryLevelDidChangeNotification](uidevice/batteryleveldidchangenotification.md) ![](../../../attachments/67dc4b07a8d84366d4cc0e812eb40b4a/spacer.png) [UIDeviceBatteryStateDidChangeNotification](uidevice/batterystatedidchangenotification.md) |
 | 设备与用户之间的距离发生变化 | [UIDeviceProximityStateDidChangeNotification](uidevice/proximitystatedidchangenotification.md) |

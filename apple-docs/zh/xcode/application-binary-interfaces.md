@@ -15,7 +15,7 @@ content_hash: 'sha256:ec305ece526da45c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md)
 
 # 应用程序二进制接口
 

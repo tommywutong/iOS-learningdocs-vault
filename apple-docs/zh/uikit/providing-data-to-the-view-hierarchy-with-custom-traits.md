@@ -15,7 +15,7 @@ content_hash: 'sha256:6d83f35ff90133e3'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [特性与特性环境](traits-and-the-trait-environment.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [App 与环境](app-and-environment.md) · [特性与特性环境](traits-and-the-trait-environment.md)
 
 # 使用自定义特性向视图层级结构提供数据
 

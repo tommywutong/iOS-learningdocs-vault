@@ -15,7 +15,7 @@ content_hash: 'sha256:37b39b1671c9d07c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md)
 
 # 构建包含调试信息的 App
 
@@ -37,7 +37,7 @@ App 中的每个二进制文件——主 App 可执行文件、框架和 App 扩
 
 ### 连同符号信息一起发布 App
 
-归档 App 以进行分发时，Xcode 会收集 App 的所有二进制文件和 `dSYM` 文件，并将它们存储在 Xcode 归档中。
+归档（archive）App 以进行分发时，Xcode 会收集 App 的所有二进制文件和 `dSYM` 文件，并将它们存储在 Xcode 归档中。
 
 如果通过 App Store 分发 App，或使用 TestFlight 进行 Beta 测试，则可以在将 App 上传到 App Store Connect 时选择包含符号文件。你需要随构建一起上传符号，这样 App Store 才能先将 App 的符号名称添加到崩溃报告中，再将其递送至 Xcode 中的 [Crashes 管理器](https://help.apple.com/xcode/mac/current/#/dev861f46ea8)。如果上传至 App Store 时不包含符号，你仍会通过 Crashes 管理器收到崩溃报告，但其中不含符号名称。如果 Mac 上有正确的 `dSYM` 文件，Xcode 会为这些崩溃报告添加符号名称。有关如何使用 `dSYM` 文件处理崩溃报告，请参阅[使用崩溃报告和设备日志诊断问题](diagnosing-issues-using-crash-reports-and-device-logs.md)。
 

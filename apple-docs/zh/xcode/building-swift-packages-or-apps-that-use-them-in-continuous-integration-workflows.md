@@ -15,7 +15,7 @@ content_hash: 'sha256:56705cf0369dd96a'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Swift 软件包](swift-packages.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Swift 软件包](swift-packages.md)
 
 # 在持续集成工作流中构建 Swift 软件包或使用它们的 App
 
@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-*持续集成（continuous integration，CI）*是对 App 的构建、分析、测试、归档和发布进行自动化与简化的过程，以确保 App 始终处于可发布状态。使用 [Xcode Cloud](xcode-cloud.md)，或在其他 CI 系统上直接使用 `xcodebuild` 命令，来构建 Swift 软件包和使用它们的 App。
+*持续集成（continuous integration，CI）*是对 App 的构建、分析、测试、归档（archiving）和发布进行自动化与简化的过程，以确保 App 始终处于可发布状态。使用 [Xcode Cloud](xcode-cloud.md)，或在其他 CI 系统上直接使用 `xcodebuild` 命令，来构建 Swift 软件包和使用它们的 App。
 
 大多数包含 Swift 软件包或依赖 Swift 软件包的项目都不需要额外配置。不过，请务必将项目的 `Package.resolved` 文件提交到 Git 仓库。这可以确保 CI 工作流可靠，并始终使用软件包依赖项的预期版本。如果项目依赖需要认证的软件包，或者你需要使用 Mac 的 Git 工具而不是 Xcode 随附的工具，则可能需要执行额外配置。
 

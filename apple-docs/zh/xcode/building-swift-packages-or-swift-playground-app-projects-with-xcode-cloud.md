@@ -15,7 +15,7 @@ content_hash: 'sha256:72ec8dea3b56b0e3'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
 
 # 使用 Xcode Cloud 构建 Swift 软件包和 Swift Playgrounds App 项目
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:ee8de812c3bb2c45'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
 
 # 分析 App 的电池使用情况
 

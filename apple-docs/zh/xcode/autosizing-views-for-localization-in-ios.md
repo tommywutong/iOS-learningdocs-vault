@@ -15,7 +15,7 @@ content_hash: 'sha256:0b64f8d19c62a7d9'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [本地化](localization.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [本地化](localization.md)
 
 # 为 iOS 本地化自动调整视图大小
 

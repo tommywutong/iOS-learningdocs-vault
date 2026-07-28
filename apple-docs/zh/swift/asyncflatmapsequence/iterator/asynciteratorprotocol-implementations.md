@@ -15,7 +15,7 @@ content_hash: 'sha256:735f949b1ac0370a'
 translated: true
 ---
 
-> 导航：[Technologies](../../../technologies.md) · [Swift](../../../swift.md) · [Swift 标准库](../../swift-standard-library.md) · [并发](../../concurrency.md) · [AsyncSequence](../../asyncsequence.md) · [AsyncFlatMapSequence](../../asyncflatmapsequence.md) · [Iterator](../iterator.md)
+> 导航：[技术](../../../technologies.md) · [Swift](../../../swift.md) · [Swift 标准库](../../swift-standard-library.md) · [并发](../../concurrency.md) · [AsyncSequence](../../asyncsequence.md) · [AsyncFlatMapSequence](../../asyncflatmapsequence.md) · [迭代器](../iterator.md)
 
 # AsyncIteratorProtocol 实现
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:4bf564bd10a90714'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [UIKit 辅助功能](accessibility-for-uikit.md)
 
 # 通知名称
 

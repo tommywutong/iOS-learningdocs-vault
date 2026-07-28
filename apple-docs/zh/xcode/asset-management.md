@@ -15,7 +15,7 @@ content_hash: 'sha256:52f265b2a43663a0'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md)
 
 # 资源管理
 
@@ -54,7 +54,7 @@ Xcode 还为粒子效果等特定类型的资源提供交互式编辑器，让�
 ### 颜色
 
 - [指定 App 的配色方案](specifying-your-apps-color-scheme.md) — 使用资源目录为 App 设置全局强调色。
-- [在界面中支持深色模式](../uikit/supporting-dark-mode-in-your-interface.md) — 更新颜色、图像和行为，使 App 在深色模式启用时自动适配。
+- [在界面中支持深色模式（Dark Mode）](../uikit/supporting-dark-mode-in-your-interface.md) — 更新颜色、图像和行为，使 App 在深色模式启用时自动适配。
 
 ### 增强现实资源
 

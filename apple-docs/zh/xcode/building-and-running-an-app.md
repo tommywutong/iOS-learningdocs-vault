@@ -15,7 +15,7 @@ content_hash: 'sha256:e08bb521cd37613a'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md)
 
 # 构建和运行 App
 

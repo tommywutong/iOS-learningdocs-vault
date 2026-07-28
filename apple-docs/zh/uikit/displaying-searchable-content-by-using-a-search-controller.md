@@ -15,7 +15,7 @@ content_hash: 'sha256:1ae17da3e2112711'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md)
 
 # 使用搜索控制器显示可搜索内容
 
@@ -27,7 +27,7 @@ translated: true
 
 此示例演示如何创建表格视图控制器（table view controller）和搜索控制器，以管理可搜索内容的显示。它还会创建另一个自定义表格视图控制器来显示搜索结果。这个表格视图控制器也充当呈现者，或为搜索结果提供上下文，使搜索结果在自己的上下文中呈现。
 
-此示例包含可选但推荐使用的 [UIStateRestoring](uistaterestoring.md) 协议。你可以在视图控制器类中采用此协议，以存储搜索栏的活跃状态、第一响应者（first responder）状态和搜索栏文本，并在 App 重新启动时恢复它们。
+此示例包含可选但推荐使用的 [UIStateRestoring](uistaterestoring.md) 协议。你可以在视图控制器（view controller）类中采用此协议，以存储搜索栏的活跃状态、第一响应者（first responder）状态和搜索栏文本，并在 App 重新启动时恢复它们。
 
 ### 创建搜索控制器
 

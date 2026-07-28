@@ -15,7 +15,7 @@ content_hash: 'sha256:5389d2363739ff51'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md)
 
 # 构建系统
 
