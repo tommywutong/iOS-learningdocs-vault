@@ -15,7 +15,7 @@ content_hash: 'sha256:eb3174ad799c8b12'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
 
 # 已废弃符号
 

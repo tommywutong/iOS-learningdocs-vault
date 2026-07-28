@@ -15,7 +15,7 @@ content_hash: 'sha256:f4f3664515fedf8b'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md)
 
 # 从网站下载文件
 

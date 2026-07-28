@@ -25,7 +25,7 @@ translated: true
 
 ### 实例方法
 
-- [allSatisfy(_:)](<allsatisfy(__).md>) — 返回一个布尔值，指示异步序列生成的所有元素是否都满足给定谓词。
+- [allSatisfy(_:)](<allsatisfy(__).md>) — 返回一个布尔值，指示异步序列生成的所有元素是否都满足给定谓词（predicate）。
 - [compactMap(_:)](<compactmap(__)-1rx1n.md>) — 创建一个异步序列，将可抛出错误的闭包映射到基础序列的元素上，并省略未返回值的结果。
 - [compactMap(_:)](<compactmap(__)-91i6y.md>) — 创建一个异步序列，将给定闭包映射到异步序列的元素上，并省略未返回值的结果。
 - [contains(_:)](<contains(__).md>) — 返回一个布尔值，指示异步序列是否包含给定元素。

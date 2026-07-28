@@ -15,7 +15,7 @@ content_hash: 'sha256:88e7b83b5cf4be0d'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
 
 # 文稿读取选项键
 

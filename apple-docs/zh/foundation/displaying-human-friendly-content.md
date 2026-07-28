@@ -15,7 +15,7 @@ content_hash: 'sha256:8e0642585f833632'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [数据格式化](data-formatting.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [数据格式化](data-formatting.md)
 
 # 显示便于阅读的内容
 

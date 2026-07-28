@@ -48,7 +48,7 @@ translated: true
 - App 看门狗。当 App 启动时间过长时会发生 App 超时。系统为启动提供的时间较为宽松，超时通常表示 App 在启动时卡住。许多用户会在达到此限制之前退出 App，而这些退出不会被视为 App 超时。macOS App 没有启动时间限制。
 - 内存压力。作为正常 App 生命周期的一部分，当系统需要的内存多于当前可用内存时，iOS 和 watchOS 会终止 App。当前台 App 需要更多内存时，系统通常会终止后台 App。通过降低 App 挂起时的内存用量，可以减少 App 因内存压力而终止的频率。你可以在 Xcode Organizer 中查看挂起时的内存用量。由于无法消除所有内存压力终止，请确保 App 具备适当的状态恢复（state restoration），以提供流畅的用户体验。
 
-要解决属于崩溃的终止，请在 Xcode 的 Crashes Organizer 中查看崩溃的栈回溯。有关诊断和解决崩溃的更多信息，请参阅[使用崩溃报告和设备日志诊断问题](https://developer.apple.com/documentation/xcode/diagnosing-issues-using-crash-reports-and-device-logs)。
+要解决属于崩溃的终止，请在 Xcode 的 Crashes Organizer 中查看崩溃的栈回溯（stack trace）。有关诊断和解决崩溃的更多信息，请参阅[使用崩溃报告和设备日志诊断问题](https://developer.apple.com/documentation/xcode/diagnosing-issues-using-crash-reports-and-device-logs)。
 
 ### 后台终止原因
 
@@ -65,7 +65,7 @@ translated: true
 - [改进 App 响应能力](improving-app-responsiveness.md) — 消除 App 的挂起和卡顿，打造响应迅速的用户体验。
 - [了解用户界面响应能力](understanding-user-interface-responsiveness.md) — 通过检查事件处理和渲染循环，提高 App 的响应能力。
 - [了解并改进 SwiftUI 性能](understanding-and-improving-swiftui-performance.md) — 识别并处理长时间运行的视图更新，同时降低更新频率。
-- [了解 App 中的挂起](understanding-hangs-in-your-app.md) — 通过检查主线程和主运行循环，确定用户交互延迟的原因。
+- [了解 App 中的挂起](understanding-hangs-in-your-app.md) — 通过检查主线程和主运行循环（run loop），确定用户交互延迟的原因。
 - [了解 App 中的卡顿](understanding-hitches-in-your-app.md) — 通过检查渲染循环，确定动态效果中断的原因。
 - [尽早诊断性能问题](diagnosing-performance-issues-early.md) — 在开发和测试期间使用 Xcode 中的 Thread Performance Checker 工具诊断潜在的性能问题。
 - [缩短 App 启动时间](reducing-your-app-s-launch-time.md) — 尽量减少启动过程所用时间，让 App 提供响应更迅速的体验。

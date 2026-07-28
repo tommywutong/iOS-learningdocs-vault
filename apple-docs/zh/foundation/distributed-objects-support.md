@@ -15,7 +15,7 @@ content_hash: 'sha256:cc829627f9bb21e1'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [对象运行时](object-runtime.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [对象运行时](object-runtime.md)
 
 # 分布式对象支持
 

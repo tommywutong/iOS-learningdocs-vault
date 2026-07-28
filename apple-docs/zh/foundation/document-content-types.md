@@ -15,7 +15,7 @@ content_hash: 'sha256:c0f5d199b27a615c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [归档与序列化](archives-and-serialization.md) · [XML 处理与建模](xml-processing-and-modeling.md) · [XMLDocument](xmldocument.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [归档与序列化](archives-and-serialization.md) · [XML 处理与建模](xml-processing-and-modeling.md) · [XMLDocument](xmldocument.md)
 
 # 文稿内容类型
 

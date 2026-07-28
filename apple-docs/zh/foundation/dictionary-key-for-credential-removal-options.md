@@ -15,7 +15,7 @@ content_hash: 'sha256:2977e488c1ff6c7c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md) · [URLCredentialStorage](urlcredentialstorage.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md) · [URLCredentialStorage](urlcredentialstorage.md)
 
 # 凭证移除选项的字典键
 

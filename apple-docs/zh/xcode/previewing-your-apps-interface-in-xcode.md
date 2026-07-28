@@ -51,7 +51,7 @@ Swift 预览宏是一段用于创建和配置视图的代码。你可以使用�
 ```swift
 // UIKit 预览。
 #Preview {
-    // 要预览的视图或视图控制器。
+    // 要预览的视图或视图控制器（view controller）。
 }
 ```
 
@@ -248,7 +248,7 @@ class WeatherView: NSView {
 
 ### 将内联动态属性与 Previewable 搭配使用
 
-当视图依赖 [Binding](../swiftui/binding.md) 属性包装器时，可以使用 [Previewable()](<../swiftui/previewable().md>) 宏为该属性创建功能完备的绑定，并将其传入预览。此宏适用于任何遵循 [DynamicProperty](../swiftui/dynamicproperty.md) 协议的变量。
+当视图依赖 [Binding](../swiftui/binding.md) 属性包装器（property wrapper）时，可以使用 [Previewable()](<../swiftui/previewable().md>) 宏为该属性创建功能完备的绑定，并将其传入预览。此宏适用于任何遵循 [DynamicProperty](../swiftui/dynamicproperty.md) 协议的变量。
 
 ```swift
 struct PlayButton: View {

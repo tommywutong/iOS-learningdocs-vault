@@ -27,7 +27,7 @@ translated: true
 
 框架会检测与使用其 API 相关的常见错误，并在错误发生时引发异常。如果 App 没有处理这些错误（例如，未通过调用 [NSSetUncaughtExceptionHandler(_:)](<../foundation/nssetuncaughtexceptionhandler(__).md>) 安装异常处理程序），App 就会崩溃。操作系统会记录一份崩溃报告，其中包含 App 崩溃时的状态信息。
 
-以下各节分别说明使用框架 API 时的常见错误，以及 App 遇到这些情况时崩溃报告中出现的异常信息。对于每种情况，崩溃报告中的异常线程栈回溯都会显示 App 在代码中崩溃的位置。有关更多信息，请参阅[分析崩溃报告](analyzing-a-crash-report.md)。
+以下各节分别说明使用框架 API 时的常见错误，以及 App 遇到这些情况时崩溃报告中出现的异常信息。对于每种情况，崩溃报告中的异常线程栈回溯（stack trace）都会显示 App 在代码中崩溃的位置。有关更多信息，请参阅[分析崩溃报告](analyzing-a-crash-report.md)。
 
 ### 处理因向集合添加空对象而导致的崩溃
 
@@ -117,7 +117,7 @@ translated: true
 
 ### 处理因尝试编码或解码不可编码对象而导致的崩溃
 
-要使用 [NSCoder](../foundation/nscoder.md) 序列化或反序列化对象，无论是将其存储在文件中，还是发送到另一个进程或通过网络发送，该对象都必须遵循 [NSCoding](../foundation/nscoding.md)。如果 App 尝试编码或解码不遵循 `NSCoding` 的对象，App 会崩溃，并且崩溃报告中会包含类似以下示例的异常信息：
+要使用 [NSCoder](../foundation/nscoder.md) 序列化（serialization）或反序列化对象，无论是将其存储在文件中，还是发送到另一个进程或通过网络发送，该对象都必须遵循 [NSCoding](../foundation/nscoding.md)。如果 App 尝试编码或解码不遵循 `NSCoding` 的对象，App 会崩溃，并且崩溃报告中会包含类似以下示例的异常信息：
 
 ```
 *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[MyClass encodeWithCoder:]: unrecognized selector sent to instance 0x600002090040'
