@@ -44,6 +44,10 @@ LIST_ITEM = re.compile(r"^\s*(?:[-*+]|\d+\.)\s+")
 TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
 COMMENT = re.compile(r"^\s*(//|/\*|\*|#|--)")
 INLINE_CODE = re.compile(r"`[^`]*`")
+PLATFORM_WORDS = {
+    "iOS", "iPadOS", "macOS", "tvOS", "visionOS", "watchOS",
+    "Mac", "Catalyst",
+}
 
 # 允许译文改动的 frontmatter 字段
 MUTABLE_FIELDS = {"title", "translated", "translated_at", "translator", "reviewed"}
@@ -235,6 +239,10 @@ def residual_english(body: str) -> list[str]:
         s = re.sub(r"^#{1,6}\s+|^\s*(?:[-*+]|\d+\.)\s+|^>\s*", "", s)
         s = re.sub(r"<[^>]+>", " ", s)
         words = re.findall(r"\b[A-Za-z][A-Za-z'’-]*\b", s)
+        # DocC 的 <sub> 平台可用性列表可能刚好达到 8 个词，但这些全是
+        # 不可翻译的平台名，不是残留英文句子。只豁免纯平台词集合。
+        if words and all(word in PLATFORM_WORDS for word in words):
+            continue
         if len(words) >= 8:
             hits.append(line.strip()[:110])
     return hits
