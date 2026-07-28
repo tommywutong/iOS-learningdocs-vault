@@ -20,7 +20,7 @@ It is very common to see shadows in different apps. In many occasions shadows ar
 
 It might seem negligible, but if your view is a composition of multiple views applying shadows then you will actually experience a very big UI performance degradation. For example, in my latest project where I had a grid view with shaded cells like this:
 
-![](http://angelolloqui.com/ckeditor_assets/pictures/18/content_ios_simulator_screen_shot_sep_6_2013_4_43_41_pm.png?1378478756)
+![](../../../attachments/snapshots/angelolloqui.com/559fe70035ad/f1077fb5cf649fee8aa4.png)
 
 the **frame rate plunged from the standard 60FPS to less than 15FPS** (a very poor performance) just by adding shadows. This of course happened because I was not doing it correctly, and with the techniques explained in this post everything came back to normal 60FPS even with the shadows.
 
@@ -35,7 +35,7 @@ myView.layer.shadowOpacity = 0.3f;
 
 Pretty simple right? But what is going on under the hood? Well, a very interesting point is that **shadows are applied based on the alpha channel of your layer**, pixel by pixel. This means that if you have a UIView with transparent areas (very common with UIImageView and UILabel), the shadow will adapt and be drawn following the exact same shapes. This allow you to do nice effects like this one:
 
-![](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Art/shadows_2x.png)
+![](../../../attachments/snapshots/angelolloqui.com/559fe70035ad/d17afde13c6a6f557271.png)
 
 However, what if your shadow is lot more simple? in most cases all you want to draw is a simple shadow, maybe with a rectangular shape or something a little more complex, but still simple enough to be drawn following a path. If that is your case then you are probably wasting a lot of valuable GPU power to check the alpha channel with no sense.
 
@@ -84,7 +84,7 @@ But how do you know if your rasterized view will be reused across frames? well, 
 
 This statement means that even if the view does not change, **it is up to the rendering engine to decide whether to reuse the cache** from one frame to the next one or not. So actually the only way you can be sure about how your app is behaving is profiling your app. To help with that there is an option called “**Color Offscreen-Rendered**” both in Simulator and Instruments that will color offscreen rendered areas. Red color means that your view is rerendered and therefore rasterization is only slowing things down. Green color means that your composited view is being reused across frames, probably getting a performance gain (especially with expensive computations like shadows).
 
-![](http://angelolloqui.com/ckeditor_assets/pictures/19/content_screen_shot_2013-09-06_at_4_53_45_pm.png?1378479252)
+![](../../../attachments/snapshots/angelolloqui.com/559fe70035ad/5cbd572bba816b0f136b.png)
 
 #### Conclusion
 

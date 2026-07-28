@@ -20,7 +20,7 @@ Let’s say you pick a random pointer. Can we know if it points to a valid Objec
 
 Want to support this blog? Please check out
 
-![MarkChart](https://blog.timac.org/apps/MarkChart.png) [MarkChart - Mermaid Editor](https://apps.apple.com/app/apple-store/id6475648822?pt=120357958&ct=blog.timac.org&mt=8)
+![MarkChart](../../../attachments/snapshots/blog.timac.org/04d7a0553129/39a8ea6243cdb97a3800.png) [MarkChart - Mermaid Editor](https://apps.apple.com/app/apple-store/id6475648822?pt=120357958&ct=blog.timac.org&mt=8)
 
 - Easily preview Mermaid diagrams
 - Sequence diagrams, flowcharts, …
@@ -30,7 +30,7 @@ Want to support this blog? Please check out
 - Available on macOS, iOS, and iPadOS
 - [Free download on the App Store](https://apps.apple.com/app/apple-store/id6475648822?pt=120357958&ct=blog.timac.org&mt=8)
 
-[![MarkChart](https://blog.timac.org/MarkChart.png)](https://apps.apple.com/app/apple-store/id6475648822?pt=120357958&ct=blog.timac.org&mt=8)
+[![MarkChart](../../../attachments/snapshots/blog.timac.org/04d7a0553129/5bcf91224f3280e7a675.png)](https://apps.apple.com/app/apple-store/id6475648822?pt=120357958&ct=blog.timac.org&mt=8)
 
 There is not much documentation available on this subject. There is one article written in 2010 by [Matt Gallagher](https://www.cocoawithlove.com/2010/10/testing-if-arbitrary-pointer-is-valid.html) but the content is outdated and not working properly anymore. Most of the information in this post comes from:
 
@@ -43,7 +43,7 @@ The content of this post - as well as the source code - relies on internal struc
 
 In fact I started to write this post based on the objc4-680 sources (mac OS 10.11.6). But just before publishing, Apple released the sources for objc4-706 (macOS 10.12). As you can see in the image below, some internal structures I rely on have been changed:
 
-[![Changes between objc4-680 and objc4-706](https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/objc4-680_objc4-706_small.png)](https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/objc4-680_objc4-706.png)
+[![Changes between objc4-680 and objc4-706](../../../attachments/snapshots/blog.timac.org/04d7a0553129/3326edd6d80cfee9806b.png)](https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/objc4-680_objc4-706.png)
 
 # What is a pointer?
 
@@ -496,7 +496,7 @@ bool IsObjcObject(const void *inPtr)
 
 To test this function, I built a simple iOS application that checks various pointers. Here is the output when running on iOS 10.1.1 (64-bit):
 
-![Tests](https://blog.timac.org/2016/1124-testing-if-an-arbitrary-pointer-is-a-valid-objective-c-object/tests.png)
+![Tests](../../../attachments/snapshots/blog.timac.org/04d7a0553129/c1c822f307d893ea43ca.png)
 
 # Downloads
 

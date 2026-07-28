@@ -16,7 +16,7 @@ container_source: guess
 
 > 原文：[Static linking vs dyld3](https://blog.allegro.tech/2018/05/Static-linking-vs-dyld3.html)
 
-![Kamil Borzym](https://blog.allegro.tech/assets/img/authors/kamil.borzym.jpg)
+![Kamil Borzym](../../../attachments/snapshots/blog.allegro.tech/c3cdcad9983e/79243ece2c24948ef9c0.jpg)
 
 [Kamil Borzym](https://blog.allegro.tech/authors/kamil.borzym)
 
@@ -77,7 +77,7 @@ Each measurement in the following table is an average of 6 samples.
 
 Allegro iOS app launch time decreased by about 2 seconds on iPhone 5c – this was a significant gain. The app launch time improved even more on freshly turned on iPad 2 – the difference was about 4.5 seconds, which was about 38% of the launch time with all libraries being dynamically linked.
 
-![speedup.png](https://blog.allegro.tech/assets/img/articles/2018-05-28-Static-linking-vs-dyld3/speedup.png)
+![speedup.png](../../../attachments/snapshots/blog.allegro.tech/c3cdcad9983e/50cdc562d2ba27a7617e.png)
 
 ### Static linking pitfall [#](#static-linking-pitfall)
 

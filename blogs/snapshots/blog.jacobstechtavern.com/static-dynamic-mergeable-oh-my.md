@@ -20,13 +20,13 @@ container_source: guess
 
 ### A theoretical guide to libraries, frameworks, and linking
 
-[![Jacob Bartlett's avatar](https://substackcdn.com/image/fetch/$s_!s80e!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feab1e065-dffc-4096-ad9e-826ddda8a6cd_1304x1304.png)](https://substack.com/@jacobbartlett)
+[![Jacob Bartlett's avatar](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/82b57dbce3824ce60df3.jpg)](https://substack.com/@jacobbartlett)
 
 [Jacob Bartlett](https://substack.com/@jacobbartlett)
 
 Nov 18, 2024
 
-![](https://substackcdn.com/image/fetch/$s_!2Wil!,w_2400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38adfd81-f74a-4df6-938a-17eaf8f6bd3c_1680x1200.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a921e75e0955488404e8.jpg)
 
 If you want to embarrass a senior iOS engineer, ask them to explain the difference between Dynamic Frameworks and Static Libraries.
 
@@ -63,7 +63,7 @@ Alongside the library, framework folders contain additional resources & metadata
 
 Here’s what a real (dynamic) `.framework` folder looks like:
 
-![](https://substackcdn.com/image/fetch/$s_!Zo2B!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a07a48d-414c-4989-919d-bca351135acd_1600x428.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/a25c0f8a809654317c44.jpg)
 
 <sub>Dynamic framework folder containing assets, code signature, Info.plist, and Unix executable</sub>
 
@@ -75,7 +75,7 @@ Libraries themselves do not contain assets, but you can create them with a resou
 
 This sample app includes a `TavernUI` library, containing a [design system](https://blog.jacobstechtavern.com/p/enums-and-design-systems) & assets. The code from the `TavernUI` library is linked directly into the main executable, `TavernTools`. The `TavernUI.bundle` file which contains the assets was packaged separately inside the main `.app` bundle.
 
-![](https://substackcdn.com/image/fetch/$s_!9Aep!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9a4d8f33-eed7-42cf-9c05-4e8ec8fb91a4_1556x524.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/1525030d55efe7d6d210.jpg)
 
 <sub>An asset bundle from a library visible inside the .app bundle</sub>
 
@@ -127,7 +127,7 @@ If you’re not careful, you might experience the biggest drawback to static lin
 
 This can dramatically bloat the size of your app.
 
-![](https://substackcdn.com/image/fetch/$s_!d23d!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f45310e-1138-4ee5-af3d-671d7b7e83bf_1574x1036.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/534edd50751d267317ee.jpg)
 
 <sub>TavernUI resource bundle copied into an app + each extension target</sub>
 
@@ -153,11 +153,11 @@ Now that we understand the mechanics of dynamic linking, it’s straightforward 
 
 How significant is this negative impact on launch time? You can profile this yourself using the App Launch instrument.
 
-![](https://substackcdn.com/image/fetch/$s_!Vf7A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4c79a4e3-8980-4b8f-bf72-8f5b725124ca_788x473.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/aa5de86f14e771ee0e0f.jpg)
 
 You’ll be able to measure and identify the pre-main launch time for each of your dynamic framework. In my experience, these can vary dramatically from a few hundred nanoseconds to tens of milliseconds per framework. First-time-ever launches tend to be slower than cold starts, due to [dyld caching optimisations](https://developer.apple.com/documentation/xcode/reducing-your-app-s-launch-time).
 
-![](https://substackcdn.com/image/fetch/$s_!qSLS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F57f90734-8038-4f88-b4fa-22abbea19df6_1200x215.jpeg)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/489bba2a3fcec2581a4d.jpg)
 
 #### Dynamic Linking and Optimisations
 
@@ -192,7 +192,7 @@ This ostensibly gives them the best of both worlds:
 - The compile-time benefits of dynamic linking to improve developer experience & iteration speed.
 - The production-user-facing launch-time advantages of static linking.
 
-![](https://substackcdn.com/image/fetch/$s_!pJs-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe56d959e-7b61-4304-a4cd-f837a9c635a7_1600x900.png)
+![](../../../attachments/snapshots/blog.jacobstechtavern.com/4c8fdc0cbdec/59b6ce5696fd326107b9.jpg)
 
 <sub>From WWDC Notes; [Meet Mergeable Libraries](https://wwdcnotes.com/documentation/wwdcnotes/wwdc23-10268-meet-mergeable-libraries/)</sub>
 
