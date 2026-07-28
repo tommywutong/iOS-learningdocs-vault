@@ -7,8 +7,10 @@
 ## 1. 一句话现状
 
 **归档主体已经完成，翻译仍只完成了一部分。** Claude 会话中断前留下的 36 篇
-Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 core 译文。当前
-760 篇 Apple 译文全部通过机械校验，远端没有待合并 PR。
+Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 core 译文。DeepSeek
+流水线已真实运行并新增 218 篇译文（Apple 207、WWDC 11），每篇均经过模型初译
+（默认 Flash，少量失败文件由 Pro 兜底）、独立 Pro 审校和机械校验。当前大批次因
+DeepSeek API 返回 402 `Insufficient Balance` 暂停；充值后可从同一 `run-id` 继续。
 
 不要重新读取完整 Claude 会话来接手。它约 7.3 MB、3,479 条记录，绝大部分是抓取过程、
 工具输出和已经落盘的工作。当前文件、本文和
@@ -20,8 +22,8 @@ Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 c
 
 | 来源 | 已归档 | 当前中文状态 |
 |---|---:|---:|
-| Apple 现行文档 | 95,634 页，其中成篇文章 3,746 篇 | 760 篇译文 |
-| WWDC 逐字稿 | 178 场 | 23 场译文 |
+| Apple 现行文档 | 95,634 页，其中成篇文章 3,746 篇 | 967 篇译文 |
+| WWDC 逐字稿 | 178 场 | 34 场译文 |
 | 英文技术博客 | 2,263 篇 | 61 篇译文 |
 | 原生中文博客 | 681 篇 | 原文即中文，不计入翻译进度 |
 | 学习计划单篇快照 | 108 个目标，成功 86 个 | 56 中文、30 英文 |
@@ -32,12 +34,12 @@ Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 c
 
 | 来源 | 需译 | 已译 | 待译 | 待译字符 |
 |---|---:|---:|---:|---:|
-| Apple 现行文档 | 3,746 | 760 | 2,986 | 15,552,647 |
-| WWDC | 178 | 23 | 155 | 4,378,813 |
+| Apple 现行文档 | 3,746 | 967 | 2,779 | 14,456,182 |
+| WWDC | 178 | 34 | 144 | 4,058,902 |
 | 英文博客 | 2,263 | 61 | 2,202 | 25,177,241 |
-| **合计** | **6,187** | **844** | **5,343** | — |
+| **合计** | **6,187** | **1,062** | **5,125** | — |
 
-这里的 844 只统计“英文文件旁边存在同路径中文译文”，不包含 681 篇原生中文博客。
+这里的 1,062 只统计“英文文件旁边存在同路径中文译文”，不包含 681 篇原生中文博客。
 
 ### 2.2 用户已选定的翻译范围：A
 
@@ -52,9 +54,9 @@ Apple 文档译文已恢复；随后 PR #2–#16 又新增并审校了 319 篇 c
 
 | 部分 | 待译 | 待译字符 |
 |---|---:|---:|
-| core Apple 文档 + WWDC | 1,737 篇 | 10,621,133 |
+| core Apple 文档 + WWDC | 1,519 篇 | 9,204,757 |
 | 第三方英文博客（排除 objc.io 149 篇） | 2,053 篇 | 22,404,127 |
-| **A 方案合计** | **3,790 篇** | **33,025,260** |
+| **A 方案合计** | **3,572 篇** | **31,608,884** |
 
 这是真正需要大量 Token 的部分。完整翻译加独立审校的数量级预计为
 **3,000 万到 6,000 万 Token**，具体取决于模型、重试次数和审校深度。恢复上下文本身
@@ -83,7 +85,30 @@ PR #2–#16 共新增 319 篇 Apple 译文，且文件互不重叠：
 校验器同时修复了 DocC `markdown` 代码围栏内 `## Topics` / `## Overview` 被误当成
 页面正文标题的问题，并加入正反回归测试。不要为消除误报而翻译代码示例。
 
-### 2.4 旧归档仓库
+### 2.4 2026-07-28 DeepSeek 执行批次
+
+已完成并机械复验的新增译文：
+
+| 批次 | Apple | WWDC | 合计 | 状态 |
+|---|---:|---:|---:|---|
+| `core-r03` + Pro 兜底 | 152 | 3 | 155 | 完成 |
+| `core-r04-all` | 55 | 8 | 63 | 余额不足前完成 |
+| **合计** | **207** | **11** | **218** | 均已初译、独立审校、校验 |
+
+当前正式目录复验结果：
+
+```text
+Apple：967 / 967 通过
+WWDC：34 / 34 通过
+```
+
+`core-r04-all` 的 64 个分片覆盖原始 1,582 篇；已完成 63 篇，剩余 1,519 篇、
+9,204,757 字符。状态位于 `.staging/deepseek/core-r04-all/state.json`，该目录被
+Git 忽略。余额不足前实际出现的 `failed` 主要是同一批 HTTP 402，不代表内容校验失败；
+充值后同一命令会重新处理这些目标。执行器现已增加 402 全局熔断，后续不会再让排队文件
+批量变成普通失败。
+
+### 2.5 旧归档仓库
 
 旧仓库：<https://github.com/XiyouMobile3G-iOS/apple-developer-archive-vault>
 
@@ -175,8 +200,21 @@ python3 tools/translate_plan.py status
 # 查看当前分片完成度
 python3 tools/shard.py --status
 
-# 为 core 生成新一轮 8 个互不重叠的分片
-python3 tools/shard.py --shards 8 --budget 130000 --scope core
+# DeepSeek 多路初译 + 独立审校（第一次必须 --limit 3）
+python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
+python3 tools/deepseek_pipeline.py status --run-id <run-id>
+
+# 当前 64 个 core 分片必须保留到 core-r04-all 完成，不要重新生成
+python3 tools/shard.py --status
+
+# 充值后恢复当前全部 core 批次
+python3 tools/deepseek_pipeline.py run \
+  --shard meta/shards/shard-*.json \
+  --run-id core-r04-all \
+  --concurrency 64 \
+  --review-concurrency 32 \
+  --retries 8 \
+  --max-cost-usd 100
 
 # 三类译文的机械校验
 python3 tools/validate.py apple-docs/zh
@@ -185,6 +223,7 @@ python3 tools/validate.py blogs/zh
 
 # 校验器回归测试与术语一致性审计
 python3 tools/test_validate.py
+python3 tools/test_deepseek_pipeline.py
 python3 tools/audit_consistency.py
 
 # 刷新 README 与导航索引
@@ -199,5 +238,6 @@ python3 tools/indexes.py
 - 不要把原生中文博客数量当成英文翻译完成量；
 - 不要在未通过 `validate.py` 时提交译文；
 - 不要把 `.cache/`、`.staging/`、`meta/shards/` 或 `*.orig` 提交；
+- 不要把 DeepSeek API Key、状态文件或模型原始响应提交；
 - 不要声称机械校验等同于独立语言审校；
 - 不要为减少失败数而绕过 robots.txt。

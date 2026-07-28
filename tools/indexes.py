@@ -337,6 +337,10 @@ python3 tools/translate_plan.py status             # 进度
 python3 tools/translate_plan.py next --budget 60000  # 取下一批（按学习计划优先级）
 python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 并行分片
 python3 tools/shard.py --status                    # 当前分片产出情况
+python3 tools/deepseek_pipeline.py plan --shard meta/shards/shard-*.json
+python3 tools/deepseek_pipeline.py run --shard meta/shards/shard-*.json \
+  --run-id core-r03 --limit 3                      # DeepSeek 小批量冒烟
+python3 tools/deepseek_pipeline.py status --run-id core-r03
 python3 tools/validate.py <目录>                    # 机械校验
 
 # 维护
@@ -346,6 +350,40 @@ python3 tools/shrink_assets.py --dir <目录> --limit <字节>  # 压缩超大�
 ```
 
 **原始数据全部缓存在 `.cache/`**，所以调整 Markdown 格式只需重跑 render，不用重抓。
+
+### DeepSeek 多路翻译
+
+`tools/deepseek_pipeline.py` 只负责缺失的模型执行层，继续复用 `shard.py`、
+`TRANSLATION_STYLE.md`、`TERMS.md`、`validate.py` 和 `audit_consistency.py`。
+详细操作、安全边界、恢复方法与 PR 验收步骤见
+[`meta/DEEPSEEK_RUNBOOK.md`](meta/DEEPSEEK_RUNBOOK.md)。
+
+Key 只放当前终端的环境变量，不写入文件或聊天：
+
+```zsh
+read -s "DEEPSEEK_API_KEY?DeepSeek API Key: "
+export DEEPSEEK_API_KEY
+echo
+```
+
+在 Codex 桌面任务中也可把 Key 保存到 macOS 钥匙串的 generic password 项
+`apple-docs-vault-deepseek`；执行器在环境变量为空时自动读取。详细步骤见运行手册。
+
+推荐先对本轮全部分片中的 3 篇做冒烟测试：
+
+```bash
+python3 tools/deepseek_pipeline.py run \
+  --shard meta/shards/shard-*.json \
+  --run-id core-r03 \
+  --limit 3 \
+  --concurrency 3 \
+  --review-concurrency 2 \
+  --max-cost-usd 5
+```
+
+确认译文质量后，用**相同** `run-id` 去掉 `--limit` 继续。已完成文件会跳过；初译和审校
+使用两个独立请求，只有两次机械校验都通过的结果才写进 `zh/`。脚本不会执行 Git 命令、
+不会覆盖已有译文，也不会自动合并 PR。
 
 ## 六、构建过程中踩过的坑
 

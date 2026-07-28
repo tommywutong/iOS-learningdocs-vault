@@ -72,7 +72,7 @@ func writeLetters() {
 
 ## 另请参阅
 
-### 线程消毒器
+### Thread Sanitizer
 
 - [数据争用](data-races.md) — 检测跨多个线程对可变状态的未同步访问。
 - [集合和其他 API 上的竞态](races-on-collections-and-other-apis.md) — 检测一个线程访问可变对象、同时另一个线程正在写入该对象的情况。
