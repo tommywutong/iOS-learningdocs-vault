@@ -167,8 +167,8 @@ git diff --check
 |---|---|---|---:|---:|---:|---|---|---|
 | 2026-07-27 | 恢复批次 | Foundation / Swift / UIKit / Xcode | — | 36 | 约 133K 文件字节 | 待补 | 441 / 441 通过 | `9ee8b4b4e` |
 | 2026-07-28 | core round 1–2 | Foundation / Swift / SwiftUI / UIKit / Xcode | 15 PR | 319 | 1,790,900 源字符 | 通过并修订 | 760 / 760 通过 | PR #2–#16 |
-| 2026-07-28 | `core-r03` | Apple / WWDC | 8 | 155 | 1,037,571 源字符 | DeepSeek Pro 通过；人工抽查 3 篇 | Apple 912 / 912；WWDC 26 / 26 | 待提 PR |
-| 2026-07-28 | `core-r04-all` 部分 | Apple / WWDC | 64 | 63 | 378,805 源字符 | DeepSeek Pro 通过 | Apple 967 / 967；WWDC 34 / 34 | 余额不足暂停，待提 PR |
+| 2026-07-28 | `core-r03` | Apple / WWDC | 8 | 155 | 1,037,571 源字符 | DeepSeek Pro 通过；人工抽查 3 篇 | Apple 912 / 912；WWDC 26 / 26 | PR #17 |
+| 2026-07-28 | `core-r04-all` 部分 | Apple / WWDC | 64 | 63 | 378,805 源字符 | DeepSeek Pro 通过 | Apple 967 / 967；WWDC 34 / 34 | 余额不足暂停；PR #17 |
 
 “独立审校”只能填写“通过”“部分”或“待补”，不得用机械校验结果代替。
 
