@@ -182,8 +182,26 @@ def split_trailing_comment(line: str) -> tuple[str, str]:
     return line, ""
 
 
+def prose_lines(body: str) -> list[str]:
+    """返回代码围栏外的正文行。
+
+    DocC 教程会在 `markdown` 代码围栏中演示 `## Topics`、`## Overview`
+    等标题。这些行是示例代码，不是当前页面的结构性标题，不能参与标题结构
+    或固定译法检查。
+    """
+    out: list[str] = []
+    inside = False
+    for line in body.splitlines():
+        if FENCE.match(line):
+            inside = not inside
+            continue
+        if not inside:
+            out.append(line)
+    return out
+
+
 def headings(body: str) -> list[int]:
-    return [len(m.group(1)) for line in body.splitlines() if (m := HEADING.match(line))]
+    return [len(m.group(1)) for line in prose_lines(body) if (m := HEADING.match(line))]
 
 
 def count(body: str, pattern: re.Pattern) -> int:
@@ -334,8 +352,8 @@ def check_pair(en: Path, zh: Path) -> list[str]:
     #    「基础 / 基础知识 / 要点 / 基础要点」四种）。只看残留英文抓不到后者。
     #    对齐的前提是标题数量相等，而这由检查项 5 保证；不相等时它已经报错了，
     #    这里跳过以免连带产生一串错位的假问题。
-    en_heads = [ln.strip() for ln in en_body.splitlines() if HEADING.match(ln.strip())]
-    zh_heads = [ln.strip() for ln in zh_body.splitlines() if HEADING.match(ln.strip())]
+    en_heads = [ln.strip() for ln in prose_lines(en_body) if HEADING.match(ln.strip())]
+    zh_heads = [ln.strip() for ln in prose_lines(zh_body) if HEADING.match(ln.strip())]
     if len(en_heads) == len(zh_heads):
         reported: set[str] = set()
         for e, z in zip(en_heads, zh_heads):
@@ -344,8 +362,10 @@ def check_pair(en: Path, zh: Path) -> list[str]:
                 reported.add(e)
                 actual = "原样保留英文" if z == e else f"实为 `{z}`"
                 issues.append(f"结构性文字未按固定译法：`{e}` 应为 `{want}`（{actual}）")
+    en_prose = "\n".join(prose_lines(en_body))
+    zh_prose = "\n".join(prose_lines(zh_body))
     for en_form, zh_form in FIXED_INLINE.items():
-        if en_form in en_body and en_form in zh_body:
+        if en_form in en_prose and en_form in zh_prose:
             issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
 
     # 9. 残留英文

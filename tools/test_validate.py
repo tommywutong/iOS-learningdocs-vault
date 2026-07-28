@@ -234,6 +234,48 @@ var y = 2 /* 注释
 }
 
 
+FENCED_HEADING_EN = """---
+title: Demo
+---
+
+## Overview
+
+Use this page to learn the syntax.
+
+```markdown
+## Topics
+```
+"""
+
+FENCED_HEADING_CASES = {
+    "基线（代码围栏内固定标题保持英文）": FENCED_HEADING_EN
+        .replace("title: Demo", "title: 示例")
+        .replace("## Overview", "## 概述")
+        .replace("Use this page to learn the syntax.", "使用此页面了解语法。"),
+    "正文固定标题漏译": FENCED_HEADING_EN
+        .replace("title: Demo", "title: 示例")
+        .replace("Use this page to learn the syntax.", "使用此页面了解语法。"),
+}
+
+
+def run_fenced_headings() -> list[str]:
+    """确认代码示例中的 Markdown 标题不触发正文固定译法检查。"""
+    missed = []
+    with tempfile.TemporaryDirectory() as td:
+        en = Path(td) / "en.md"
+        en.write_text(FENCED_HEADING_EN, encoding="utf-8")
+        for name, text in FENCED_HEADING_CASES.items():
+            zh = Path(td) / "zh.md"
+            zh.write_text(text, encoding="utf-8")
+            got = check_pair(en, zh)
+            expect_clean = name.startswith("基线")
+            ok = (not got) if expect_clean else bool(got)
+            if not ok:
+                missed.append(name)
+            print(f"  {'OK  ' if ok else '漏报'} {name}  →  {got[0][:66] if got else '无问题'}")
+    return missed
+
+
 def run_block() -> list[str]:
     missed = []
     with tempfile.TemporaryDirectory() as td:
@@ -304,7 +346,10 @@ def main() -> None:
     print("\n合成样本（跨行块注释）：")
     block_missed = run_block()
 
-    total = missed + synth_missed + block_missed
+    print("\n合成样本（代码围栏内的 Markdown 标题）：")
+    fenced_heading_missed = run_fenced_headings()
+
+    total = missed + synth_missed + block_missed + fenced_heading_missed
     print(f"\n合计漏报 {len(total)} 类" + (f"：{total}" if total else "——校验器判定逻辑无回退"))
     sys.exit(1 if total else 0)
 

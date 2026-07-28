@@ -47,7 +47,7 @@ for (int i = 0; i < 64; ++i) {
 
 ## 另请参阅
 
-### 未定义行为 Sanitizer
+### Undefined Behavior Sanitizer
 
 - [未对齐的指针](misaligned-pointer.md) — 检测代码何时访问未对齐的指针或创建未对齐的引用。
 - [无效的布尔值](invalid-boolean.md) — 检测程序何时访问布尔变量且其值既不是 true 也不是 false。

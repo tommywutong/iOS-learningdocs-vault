@@ -60,7 +60,7 @@ dog->speak(); // 错误：此调用具有未定义行为
 
 ## 另请参阅
 
-### 未定义行为消毒器
+### Undefined Behavior Sanitizer
 
 - [未对齐的指针](misaligned-pointer.md) — 检测代码访问未对齐指针或创建未对齐引用的情况。
 - [无效布尔值](invalid-boolean.md) — 检测程序访问布尔变量，而其值既非 `true` 也非 `false` 的情况。
