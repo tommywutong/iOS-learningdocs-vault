@@ -52,7 +52,7 @@ Termination Reason: Namespace RUNNINGBOARD, Code 0xdead10cc
 
 ## 另请参阅
 
-### Exceptions
+### 异常
 
 - [EXC_ARITHMETIC](exc_arithmetic.md) — 算术问题终止了该进程，通常是因为除以零或浮点数错误。
 - [EXC_BAD_ACCESS](exc_bad_access.md) — 错误的内存访问终止了该进程。

@@ -33,7 +33,7 @@ translated: true
 
 ## 另请参阅
 
-### Exceptions
+### 异常
 
 - [EXC_ARITHMETIC](exc_arithmetic.md) — 算术问题终止了进程，通常是因为除以零或浮点错误。
 - [EXC_BAD_ACCESS](exc_bad_access.md) — 对内存的错误访问终止了进程。
