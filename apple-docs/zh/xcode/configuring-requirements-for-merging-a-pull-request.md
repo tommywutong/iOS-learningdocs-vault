@@ -15,7 +15,7 @@ content_hash: 'sha256:3df869e578202d60'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [Xcode Cloud](xcode-cloud.md)
 
 # 配置合并拉取请求的要求
 
@@ -45,7 +45,7 @@ translated: true
 1. 配置一个会针对 PR 更改启动新构建的工作流程。有关更多信息，请参阅[针对拉取请求的更改启动构建](configuring-start-conditions.md#Start-builds-for-changes-to-a-pull-request)。
 2. 前往 SCM 提供商网站的配置部分，并按照说明为 PR 添加要求。
 
-例如，配置一个针对 PR 的每项更改启动构建并执行测试和归档操作的 Xcode Cloud 工作流程。在 SCM 提供商的网站上，要求 Xcode Cloud 构建成功，以确保目标分支只接收经过验证的更改。或者，要求归档操作成功，并允许在测试操作失败时仍合并 PR。这种配置的常见使用场景是功能开发期间：即使面向功能分支的 PR 会导致单元测试失败，你也认为可以合并。
+例如，配置一个针对 PR 的每项更改启动构建并执行测试和归档操作（archive action）的 Xcode Cloud 工作流程。在 SCM 提供商的网站上，要求 Xcode Cloud 构建成功，以确保目标分支只接收经过验证的更改。或者，要求归档操作成功，并允许在测试操作失败时仍合并 PR。这种配置的常见使用场景是功能开发期间：即使面向功能分支的 PR 会导致单元测试失败，你也认为可以合并。
 
 ## 另请参阅
 

@@ -15,7 +15,7 @@ content_hash: 'sha256:98937dab9c82890c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md)
 
 # 文件系统
 
@@ -54,7 +54,7 @@ translated: true
 
 ### 文件与数据持久化
 
-- [归档与序列化](archives-and-serialization.md) — 在对象和值与属性列表、JSON 和其他扁平二进制表示之间进行转换。
+- [归档（archives）与序列化](archives-and-serialization.md) — 在对象和值与属性列表、JSON 和其他扁平二进制表示之间进行转换。
 - [设置](settings.md) — 使用持久存储在本地磁盘或 iCloud 中的数据配置你的 App。
 - [聚焦](spotlight.md) — 搜索本地设备上的文件和其他项目，并为 App 内容创建索引以供搜索。
 - [iCloud](icloud.md) — 管理在用户的 iCloud 设备之间自动同步的文件和键值数据。

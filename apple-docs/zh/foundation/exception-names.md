@@ -15,7 +15,7 @@ content_hash: 'sha256:a2a4f4057f844603'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [File System](file-system.md) · [FileHandle](filehandle.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [文件系统](file-system.md) · [FileHandle](filehandle.md)
 
 # 异常名称
 

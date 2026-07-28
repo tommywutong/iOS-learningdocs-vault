@@ -15,7 +15,7 @@ content_hash: 'sha256:f225a7c05b0c1d33'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Data Formatting](data-formatting.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [数据格式化](data-formatting.md)
 
 # 格式样式配置
 

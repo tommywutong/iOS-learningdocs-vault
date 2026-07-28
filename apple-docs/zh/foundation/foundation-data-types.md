@@ -15,7 +15,7 @@ content_hash: 'sha256:8fbbbc7fc83b98d9'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md)
 
 # Foundation 数据类型
 

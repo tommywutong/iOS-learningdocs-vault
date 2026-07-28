@@ -15,7 +15,7 @@ content_hash: 'sha256:f2ef82f7b128e31a'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [File System](file-system.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [文件系统](file-system.md)
 
 # 文件系统错误码
 

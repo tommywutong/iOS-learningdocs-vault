@@ -15,7 +15,7 @@ content_hash: 'sha256:0e7b7bb44a1345a2'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Strings and Text](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSAttributedString](nsattributedstring.md)
 
 # HTML 属性
 

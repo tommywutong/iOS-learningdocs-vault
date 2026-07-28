@@ -15,7 +15,7 @@ content_hash: 'sha256:750cd06072ce2772'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Scripting Support](scripting-support.md) · [NSScriptCommand](nsscriptcommand.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [脚本支持](scripting-support.md) · [NSScriptCommand](nsscriptcommand.md)
 
 # NSScriptCommand——常规命令执行错误
 

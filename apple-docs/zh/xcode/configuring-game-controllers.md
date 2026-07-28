@@ -15,7 +15,7 @@ content_hash: 'sha256:ae94afabbdbe3c3e'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Capabilities](capabilities.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [能力](capabilities.md)
 
 # 配置游戏控制器
 

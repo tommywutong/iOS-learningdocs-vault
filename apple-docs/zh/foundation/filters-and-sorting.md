@@ -15,13 +15,13 @@ content_hash: 'sha256:114e3e3d94f58e61'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md)
 
 # 筛选与排序
 
 <sub>API 集合</sub>
 
-使用谓词、表达式和排序描述符检查集合及其他服务中的元素。
+使用谓词（predicate）、表达式和排序描述符检查集合及其他服务中的元素。
 
 ## 主题
 
@@ -29,7 +29,7 @@ translated: true
 
 - [Predicate](predicate.md) — 用于测试一组输入值以进行搜索或筛选的逻辑条件。
 - [PredicateError](predicateerror.md) — 评估谓词时抛出的错误。
-- [PredicateCodableConfiguration](predicatecodableconfiguration.md) — 对归档谓词中预期类型和键路径的说明。
+- [PredicateCodableConfiguration](predicatecodableconfiguration.md) — 对归档（archived）谓词中预期类型和键路径（key path）的说明。
 - [PredicateCodableKeyPathProviding](predicatecodablekeypathproviding.md) — 提供归档谓词中预期键路径的类型。
 - [PredicateExpression](predicateexpression.md) — 构成谓词一部分的组件表达式。
 - [StandardPredicateExpression](standardpredicateexpression.md) — 构成谓词一部分且受标准谓词类型支持的组件表达式。

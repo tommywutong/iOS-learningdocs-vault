@@ -15,7 +15,7 @@ content_hash: 'sha256:73700e6e2a0b9b84'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Scripting Support](scripting-support.md) · [NSAppleScript](nsapplescript.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [脚本支持](scripting-support.md) · [NSAppleScript](nsapplescript.md)
 
 # 错误字典键
 

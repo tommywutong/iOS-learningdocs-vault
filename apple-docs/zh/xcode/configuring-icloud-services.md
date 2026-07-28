@@ -15,7 +15,7 @@ content_hash: 'sha256:05f6d1d0145dc955'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Capabilities](capabilities.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [能力](capabilities.md)
 
 # 配置 iCloud 服务
 

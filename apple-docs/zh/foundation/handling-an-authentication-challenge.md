@@ -15,7 +15,7 @@ content_hash: 'sha256:023edfc51783a879'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [URL Loading System](url-loading-system.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md)
 
 # 处理认证质询
 
@@ -54,7 +54,7 @@ App 使用 [URLSessionTask](urlsessiontask.md) 发出请求时，服务器可能
 
 收到认证质询时，使用委托方法确定质询类型。委托方法会收到一个描述所发质询的 [URLAuthenticationChallenge](urlauthenticationchallenge.md) 实例。该实例包含 [protectionSpace](urlauthenticationchallenge/protectionspace.md) 属性，其 [authenticationMethod](urlprotectionspace/authenticationmethod.md) 属性表明所发质询的种类，例如请求用户名和密码或客户端证书。你可以使用此值确定自己能否处理该质询。
 
-你可以直接调用传入质询的完成处理程序来响应质询，并传入表明响应方式的 [AuthChallengeDisposition](urlsession/authchallengedisposition.md)。根据具体情况，使用 disposition 参数提供凭据、取消请求或允许继续执行默认处理。
+你可以直接调用传入质询的完成处理程序（completion handler）来响应质询，并传入表明响应方式的 [AuthChallengeDisposition](urlsession/authchallengedisposition.md)。根据具体情况，使用 disposition 参数提供凭据、取消请求或允许继续执行默认处理。
 
 以下示例测试认证方法是否为预期的 HTTP Basic 类型。如果 `authenticationMethod` 属性表明是其他种类的质询，它会使用 [NSURLSessionAuthChallengePerformDefaultHandling](urlsession/authchallengedisposition/performdefaulthandling.md) disposition 调用完成处理程序。让任务使用默认处理可能会满足该质询；否则，任务会继续处理响应中的下一个质询并再次调用此委托。此过程会持续进行，直到任务到达你预期处理的 HTTP Basic 质询。
 

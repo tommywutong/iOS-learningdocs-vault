@@ -15,7 +15,7 @@ content_hash: 'sha256:fb160ad5a192f889'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md)
 
 # Foundation 枚举
 

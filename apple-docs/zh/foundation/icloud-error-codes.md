@@ -15,7 +15,7 @@ content_hash: 'sha256:9bd0ff1255826e42'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [iCloud](icloud.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [iCloud](icloud.md)
 
 # iCloud 错误码
 

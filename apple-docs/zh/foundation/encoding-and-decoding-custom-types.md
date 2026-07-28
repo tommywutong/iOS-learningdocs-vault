@@ -15,7 +15,7 @@ content_hash: 'sha256:cdc201f651cbaf7c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Archives and Serialization](archives-and-serialization.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [归档与序列化](archives-and-serialization.md)
 
 # 对自定义类型进行编码和解码
 
@@ -119,7 +119,7 @@ Codable 类型可以声明名为 `CodingKeys` 的特殊嵌套枚举，该枚举�
 
 如果在解码实例时不会出现某些属性，或某些属性不应包含在编码表示中，请从 `CodingKeys` 枚举中省略这些属性。若要让包含某个属性的类型自动符合 [Decodable](../swift/decodable.md) 或 [Codable](../swift/codable.md)，从 `CodingKeys` 中省略的属性需要具备默认值。
 
-如果序列化数据格式中使用的键与数据类型的属性名称不匹配，请通过将 [String](../swift/string.md) 指定为 `CodingKeys` 枚举的原始值类型来提供替代键。每个枚举 case 使用的字符串原始值就是编码和解码期间使用的键名。case 名称与其原始值之间的关联，让你能够按照 Swift [API 设计指南](https://swift.org/documentation/api-design-guidelines/)为数据结构命名，而不必匹配所建模序列化格式的名称、标点和大小写。
+如果序列化数据格式中使用的键与数据类型的属性名称不匹配，请通过将 [String](../swift/string.md) 指定为 `CodingKeys` 枚举的原始值类型（raw-value type）来提供替代键。每个枚举 case 使用的字符串原始值就是编码和解码期间使用的键名。case 名称与其原始值之间的关联，让你能够按照 Swift [API 设计指南](https://swift.org/documentation/api-design-guidelines/)为数据结构命名，而不必匹配所建模序列化格式的名称、标点和大小写。
 
 以下示例在编码和解码时为 `Landmark` 结构体的 `name` 和 `foundingYear` 属性使用替代键：
 
@@ -211,5 +211,5 @@ extension Coordinate: Encodable {
 ### 采用可编码性
 
 - [Codable](../swift/codable.md) — 可以在自身与外部表示之间进行转换的类型。
-- [NSCoding](nscoding.md) — 让对象能够为归档和分发进行编码与解码的协议。
+- [NSCoding](nscoding.md) — 让对象能够为归档（archiving）和分发进行编码与解码的协议。
 - [NSSecureCoding](nssecurecoding.md) — 让对象能够以抵御对象替换攻击的可靠方式进行编码和解码的协议。

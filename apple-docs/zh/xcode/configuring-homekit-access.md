@@ -15,7 +15,7 @@ content_hash: 'sha256:e9e9a8e305ed9821'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [Capabilities](capabilities.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [能力](capabilities.md)
 
 # 配置 HomeKit 访问
 

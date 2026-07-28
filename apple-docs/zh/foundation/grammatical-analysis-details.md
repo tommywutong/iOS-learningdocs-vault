@@ -15,7 +15,7 @@ content_hash: 'sha256:820aa312edee8d68'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Strings and Text](strings-and-text.md) · [NSSpellServer](nsspellserver.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md) · [NSSpellServer](nsspellserver.md)
 
 # 语法分析详细信息
 
