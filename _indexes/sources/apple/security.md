@@ -78,7 +78,7 @@
 | — | Keychain Import and Export Options | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychain-import-and-export-options.md) · [网页](https://developer.apple.com/documentation/security/keychain-import-and-export-options) | — | 待翻译 |
 | — | Keychain Item Attribute Constants For Keys | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychain-item-attribute-constants-for-keys.md) · [网页](https://developer.apple.com/documentation/security/keychain-item-attribute-constants-for-keys) | — | 待翻译 |
 | — | Keychain items | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychain-items.md) · [网页](https://developer.apple.com/documentation/security/keychain-items) | — | 待翻译 |
-| — | Keychain services | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychain-services.md) · [网页](https://developer.apple.com/documentation/security/keychain-services) | — | 待翻译 |
+| 钥匙串服务 | Keychain services | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychain-services.md) · [网页](https://developer.apple.com/documentation/security/keychain-services) | [中文](../../../apple-docs/zh/security/keychain-services.md) | 已翻译 |
 | — | Keychains | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keychains.md) · [网页](https://developer.apple.com/documentation/security/keychains) | — | 待翻译 |
 | — | Keys | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/keys.md) · [网页](https://developer.apple.com/documentation/security/keys) | — | 待翻译 |
 | — | Managing Shared Credentials | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/managing-shared-credentials.md) · [网页](https://developer.apple.com/documentation/security/managing-shared-credentials) | — | 待翻译 |

@@ -25,7 +25,7 @@
 - [What's new in Swift](../wwdc/en/wwdc2022/110354-what-s-new-in-swift.md) · [中文](../wwdc/zh/wwdc2022/110354-what-s-new-in-swift.md) · wwdc2022 · 38:16 _(版本性)_
 - [ARC in Swift: Basics and beyond](../wwdc/en/wwdc2021/10216-arc-in-swift-basics-and-beyond.md) · [中文](../wwdc/zh/wwdc2021/10216-arc-in-swift-basics-and-beyond.md) · wwdc2021 · 20:42
 - [What‘s new in Swift](../wwdc/en/wwdc2021/10192-what-s-new-in-swift.md) · [中文](../wwdc/zh/wwdc2021/10192-what-s-new-in-swift.md) · wwdc2021 · 32:45 _(版本性)_
-- [Advancements in the Objective-C runtime](../wwdc/en/wwdc2020/10163-advancements-in-the-objective-c-runtime.md) · wwdc2020 · 23:05
+- [Advancements in the Objective-C runtime](../wwdc/en/wwdc2020/10163-advancements-in-the-objective-c-runtime.md) · [中文](../wwdc/zh/wwdc2020/10163-advancements-in-the-objective-c-runtime.md) · wwdc2020 · 23:05
 - [Distribute binary frameworks as Swift packages](../wwdc/en/wwdc2020/10147-distribute-binary-frameworks-as-swift-packages.md) · [中文](../wwdc/zh/wwdc2020/10147-distribute-binary-frameworks-as-swift-packages.md) · wwdc2020 · 7:47 _(版本性)_
 - [Embrace Swift type inference](../wwdc/en/wwdc2020/10165-embrace-swift-type-inference.md) · [中文](../wwdc/zh/wwdc2020/10165-embrace-swift-type-inference.md) · wwdc2020 · 20:53
 - [Refine Objective-C frameworks for Swift](../wwdc/en/wwdc2020/10680-refine-objective-c-frameworks-for-swift.md) · wwdc2020 · 42:42
@@ -132,7 +132,7 @@
 - [Meet mergeable libraries](../wwdc/en/wwdc2023/10268-meet-mergeable-libraries.md) · [中文](../wwdc/zh/wwdc2023/10268-meet-mergeable-libraries.md) · wwdc2023 · 26:15
 - [Verify app dependencies with digital signatures](../wwdc/en/wwdc2023/10061-verify-app-dependencies-with-digital-signatures.md) · wwdc2023 · 17:05
 - [Demystify parallelization in Xcode builds](../wwdc/en/wwdc2022/110364-demystify-parallelization-in-xcode-builds.md) · wwdc2022 · 25:15
-- [Link fast: Improve build and launch times](../wwdc/en/wwdc2022/110362-link-fast-improve-build-and-launch-times.md) · wwdc2022 · 31:09
+- [Link fast: Improve build and launch times](../wwdc/en/wwdc2022/110362-link-fast-improve-build-and-launch-times.md) · [中文](../wwdc/zh/wwdc2022/110362-link-fast-improve-build-and-launch-times.md) · wwdc2022 · 31:09
 - [Meet Swift Package plugins](../wwdc/en/wwdc2022/110359-meet-swift-package-plugins.md) · wwdc2022 · 15:27 _(版本性)_
 - [Explore advanced project configuration in Xcode](../wwdc/en/wwdc2021/10210-explore-advanced-project-configuration-in-xcode.md) · wwdc2021 · 25:37
 - [Symbolication: Beyond the basics](../wwdc/en/wwdc2021/10211-symbolication-beyond-the-basics.md) · wwdc2021 · 37:20
@@ -142,9 +142,9 @@
 - [Adopting Swift Packages in Xcode](../wwdc/en/wwdc2019/408-adopting-swift-packages-in-xcode.md) · wwdc2019 · 33:24 _(版本性)_
 - [All About Notarization](../wwdc/en/wwdc2019/703-all-about-notarization.md) · wwdc2019 · 33:40 _(版本性)_
 - [Creating Swift Packages](../wwdc/en/wwdc2019/410-creating-swift-packages.md) · wwdc2019 · 31:05 _(版本性)_
-- [Optimizing App Launch](../wwdc/en/wwdc2019/423-optimizing-app-launch.md) · wwdc2019 · 43:18
+- [Optimizing App Launch](../wwdc/en/wwdc2019/423-optimizing-app-launch.md) · [中文](../wwdc/zh/wwdc2019/423-optimizing-app-launch.md) · wwdc2019 · 43:18
 - [What's New in Clang and LLVM](../wwdc/en/wwdc2019/409-what-s-new-in-clang-and-llvm.md) · wwdc2019 · 41:03
-- [Behind the Scenes of the Xcode Build Process](../wwdc/en/wwdc2018/415-behind-the-scenes-of-the-xcode-build-process.md) · wwdc2018 · 57:33
+- [Behind the Scenes of the Xcode Build Process](../wwdc/en/wwdc2018/415-behind-the-scenes-of-the-xcode-build-process.md) · [中文](../wwdc/zh/wwdc2018/415-behind-the-scenes-of-the-xcode-build-process.md) · wwdc2018 · 57:33
 - [Building Faster in Xcode](../wwdc/en/wwdc2018/408-building-faster-in-xcode.md) · wwdc2018 · 39:48
 - [Getting to Know Swift Package Manager](../wwdc/en/wwdc2018/411-getting-to-know-swift-package-manager.md) · wwdc2018 · 36:38
 

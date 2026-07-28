@@ -205,6 +205,20 @@ source_url: 'https://example.com'
             issues = validate_candidate(en, bad, root / "work")
             self.assertTrue(any("链接目标" in issue for issue in issues))
 
+    def test_platform_availability_list_is_not_residual_english(self):
+        platform_line = (
+            "\n<sub>iOS, iPadOS, Mac Catalyst, macOS, tvOS, visionOS, watchOS</sub>\n"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            en = root / "en.md"
+            en.write_text(self.EN + platform_line, encoding="utf-8")
+            candidate = self.GOOD + platform_line.replace(", ", "、")
+            self.assertEqual(
+                validate_candidate(en, candidate, root / "work"),
+                [],
+            )
+
 
 class FakeClient:
     def __init__(self, content):
@@ -311,6 +325,31 @@ class PipelineIntegrationTests(unittest.TestCase):
                 resumed_result = asyncio.run(resumed.process(item))
             self.assertEqual(resumed_result, "completed")
             self.assertEqual(resumed_client.calls, [])
+            self.assertEqual(target.read_text(encoding="utf-8"), CandidateValidationTests.GOOD)
+
+            # 模拟审校输出通过前的状态更新中断：只有 last_candidate，尚未
+            # 记录 review_candidate/review_sha256。人工修复并重新校验后的
+            # 审校候选也必须能够零 API 调用恢复。
+            target.unlink()
+            entry = state.data["files"][item["en"]]
+            reviewed_rel = entry.pop("review_candidate")
+            entry.pop("review_sha256")
+            entry["last_candidate"] = reviewed_rel
+            entry["status"] = "failed"
+            state._save()
+            repaired_client = FakeClient("不应被调用")
+            with patch.object(pipeline_module, "ROOT", root):
+                repaired = Pipeline(
+                    client=repaired_client,
+                    state=state,
+                    run_dir=run_dir,
+                    config=config,
+                    style_text="测试规范",
+                    terms_text="| 英文 | 中文 |\n| guide | 指南 |",
+                )
+                repaired_result = asyncio.run(repaired.process(item))
+            self.assertEqual(repaired_result, "completed")
+            self.assertEqual(repaired_client.calls, [])
             self.assertEqual(target.read_text(encoding="utf-8"), CandidateValidationTests.GOOD)
 
     def test_balance_error_stops_later_requests_and_preserves_resume_state(self):

@@ -770,6 +770,13 @@ class Pipeline:
             # 被强制终止，恢复也不需要再次付审校费用。
             reviewed: str | None = None
             reviewed_rel = existing.get("review_candidate")
+            if not reviewed_rel:
+                last_candidate = existing.get("last_candidate")
+                if (
+                    isinstance(last_candidate, str)
+                    and ".review." in Path(last_candidate).name
+                ):
+                    reviewed_rel = last_candidate
             if (
                 existing.get("source_sha256") == source_sha256
                 and isinstance(reviewed_rel, str)
@@ -778,7 +785,10 @@ class Pipeline:
                 if reviewed_path.is_file():
                     possible = reviewed_path.read_text(encoding="utf-8")
                     if (
-                        sha256_text(possible) == existing.get("review_sha256")
+                        (
+                            not existing.get("review_sha256")
+                            or sha256_text(possible) == existing.get("review_sha256")
+                        )
                         and not validate_candidate(
                             en_path, possible, self.run_dir / "validation-temp"
                         )
@@ -790,6 +800,13 @@ class Pipeline:
                 # 机械校验同时匹配才复用，状态文件被手改不会绕过质量门。
                 translated: str | None = None
                 translated_rel = existing.get("translation_candidate")
+                if not translated_rel:
+                    last_candidate = existing.get("last_candidate")
+                    if (
+                        isinstance(last_candidate, str)
+                        and ".translation." in Path(last_candidate).name
+                    ):
+                        translated_rel = last_candidate
                 if (
                     existing.get("source_sha256") == source_sha256
                     and isinstance(translated_rel, str)
@@ -798,8 +815,11 @@ class Pipeline:
                     if translated_path.is_file():
                         possible = translated_path.read_text(encoding="utf-8")
                         if (
-                            sha256_text(possible)
-                            == existing.get("translation_sha256")
+                            (
+                                not existing.get("translation_sha256")
+                                or sha256_text(possible)
+                                == existing.get("translation_sha256")
+                            )
                             and not validate_candidate(
                                 en_path,
                                 possible,

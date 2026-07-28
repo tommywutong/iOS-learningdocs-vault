@@ -7,16 +7,16 @@
 |---|---|---:|---:|---:|---:|---|
 | Apple 文档 | swift | 1027 | 126 | 901 | 12% | [查看](sources/apple/swift.md) |
 | Apple 文档 | xcode | 360 | 355 | 5 | 99% | [查看](sources/apple/xcode.md) |
-| Apple 文档 | foundation | 266 | 165 | 101 | 62% | [查看](sources/apple/foundation.md) |
+| Apple 文档 | foundation | 266 | 166 | 100 | 62% | [查看](sources/apple/foundation.md) |
 | Apple 文档 | uikit | 265 | 153 | 112 | 58% | [查看](sources/apple/uikit.md) |
 | Apple 文档 | metal | 183 | 50 | 133 | 27% | [查看](sources/apple/metal.md) |
 | Apple 文档 | swiftui | 146 | 4 | 142 | 3% | [查看](sources/apple/swiftui.md) |
-| Apple 文档 | security | 141 | 1 | 140 | 1% | [查看](sources/apple/security.md) |
+| Apple 文档 | security | 141 | 2 | 139 | 1% | [查看](sources/apple/security.md) |
 | Apple 文档 | avfoundation | 130 | 0 | 130 | 0% | [查看](sources/apple/avfoundation.md) |
 | Apple 文档 | storekit | 111 | 0 | 111 | 0% | [查看](sources/apple/storekit.md) |
 | Apple 文档 | corefoundation | 91 | 0 | 91 | 0% | [查看](sources/apple/corefoundation.md) |
 | Apple 文档 | updates | 89 | 0 | 89 | 0% | [查看](sources/apple/updates.md) |
-| Apple 文档 | kernel | 71 | 12 | 59 | 17% | [查看](sources/apple/kernel.md) |
+| Apple 文档 | kernel | 71 | 13 | 58 | 18% | [查看](sources/apple/kernel.md) |
 | Apple 文档 | coregraphics | 49 | 0 | 49 | 0% | [查看](sources/apple/coregraphics.md) |
 | Apple 文档 | coredata | 48 | 1 | 47 | 2% | [查看](sources/apple/coredata.md) |
 | Apple 文档 | coreimage | 45 | 0 | 45 | 0% | [查看](sources/apple/coreimage.md) |
@@ -175,25 +175,25 @@
 | Apple 文档 | workoutkit | 1 | 0 | 1 | 0% | [查看](sources/apple/workoutkit.md) |
 | Apple 文档 | xcode-release-notes | 1 | 0 | 1 | 0% | [查看](sources/apple/xcode-release-notes.md) |
 | Apple 文档 | xcuiautomation | 1 | 0 | 1 | 0% | [查看](sources/apple/xcuiautomation.md) |
-| WWDC | 全部 session | 178 | 34 | 144 | 19% | [查看](sources/wwdc.md) |
+| WWDC | 全部 session | 178 | 38 | 140 | 21% | [查看](sources/wwdc.md) |
 | 技术博客 | Ole Begemann | 307 | 1 | 306 | 0% | [查看](sources/blogs/oleb.md) |
-| 技术博客 | mikeash.com Friday Q&A | 305 | 4 | 301 | 1% | [查看](sources/blogs/mikeash.md) |
-| 技术博客 | Jesse Squires | 298 | 1 | 297 | 0% | [查看](sources/blogs/jessesquires.md) |
+| 技术博客 | mikeash.com Friday Q&A | 305 | 23 | 282 | 8% | [查看](sources/blogs/mikeash.md) |
+| 技术博客 | Jesse Squires | 298 | 3 | 295 | 1% | [查看](sources/blogs/jessesquires.md) |
 | 技术博客 | MaskRay (宋方睿) | 290 | 0 | 290 | 0% | [查看](sources/blogs/maskray.md) |
-| 技术博客 | Cocoa with Love (Matt Gallagher) | 206 | 1 | 205 | 0% | [查看](sources/blogs/cocoawithlove.md) |
-| 技术博客 | NSHipster (Mattt) | 196 | 0 | 196 | 0% | [查看](sources/blogs/nshipster.md) |
+| 技术博客 | Cocoa with Love (Matt Gallagher) | 206 | 2 | 204 | 1% | [查看](sources/blogs/cocoawithlove.md) |
+| 技术博客 | NSHipster (Mattt) | 196 | 4 | 192 | 2% | [查看](sources/blogs/nshipster.md) |
 | 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 177 | 24 | 153 | 14% | [查看](sources/blogs/belkadan.md) |
 | 技术博客 | objc.io | 149 | 0 | 149 | 0% | [查看](sources/blogs/objcio.md) |
-| 技术博客 | Meta Engineering — iOS | 95 | 1 | 94 | 1% | [查看](sources/blogs/fbeng.md) |
-| 技术博客 | Kreya Blog | 47 | 0 | 47 | 0% | [查看](sources/blogs/kreya.md) |
+| 技术博客 | Meta Engineering — iOS | 95 | 3 | 92 | 3% | [查看](sources/blogs/fbeng.md) |
+| 技术博客 | Kreya Blog | 47 | 2 | 45 | 4% | [查看](sources/blogs/kreya.md) |
 | 技术博客 | Low Level Bits (Alex Denisov) | 39 | 0 | 39 | 0% | [查看](sources/blogs/lowlevelbits.md) |
 | 技术博客 | worthdoingbadly (Zhuowei Zhang) | 35 | 0 | 35 | 0% | [查看](sources/blogs/worthdoingbadly.md) |
-| 技术博客 | Emerge Tools Blog | 34 | 0 | 34 | 0% | [查看](sources/blogs/emergetools.md) |
+| 技术博客 | Emerge Tools Blog | 34 | 2 | 32 | 6% | [查看](sources/blogs/emergetools.md) |
 | 技术博客 | 学习计划点名的单页快照 | 30 | 0 | 30 | 0% | [查看](sources/blogs/snapshots.md) |
 | 技术博客 | Hamster Emporium (Greg Parker) | 29 | 29 | 0 | 100% | [查看](sources/blogs/sealiesoftware.md) |
-| 技术博客 | Bartosz Ciechanowski | 23 | 0 | 23 | 0% | [查看](sources/blogs/ciechanowski.md) |
+| 技术博客 | Bartosz Ciechanowski | 23 | 2 | 21 | 9% | [查看](sources/blogs/ciechanowski.md) |
 | 技术博客 | Saagar Jha | 20 | 0 | 20 | 0% | [查看](sources/blogs/saagarjha.md) |
-| 技术博客 | Always Processing (Brian T. Kelley) | 13 | 0 | 13 | 0% | [查看](sources/blogs/alwaysprocessing.md) |
+| 技术博客 | Always Processing (Brian T. Kelley) | 13 | 7 | 6 | 54% | [查看](sources/blogs/alwaysprocessing.md) |
 | 技术博客 | ObjC 中国 (objccn.io) | 0 | 0 | 0 | — | [查看](sources/blogs/objccn.md) |
 | 技术博客 | dirtmelon | 0 | 0 | 0 | — | [查看](sources/blogs/dirtmelon.md) |
 | 技术博客 | ibireme (郭曜源) | 0 | 0 | 0 | — | [查看](sources/blogs/ibireme.md) |

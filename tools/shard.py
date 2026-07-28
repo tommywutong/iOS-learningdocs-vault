@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """把待翻译文件切成互不重叠的分片，每片交给一个翻译 agent。
 
-    python3 tools/shard.py --shards 8 --budget 130000 --scope core   # 底层相关框架 + WWDC
+    python3 tools/shard.py --shards 12 --scope summer               # 暑期计划严格白名单
+    python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 已停止的旧宽泛范围
     python3 tools/shard.py --shards 8 --source apple-docs       # 只切一个来源
     python3 tools/shard.py --status                             # 看现有分片进度
 
@@ -23,7 +24,9 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -56,7 +59,34 @@ CORE_PREFIXES = (
 )
 
 
+@lru_cache(maxsize=1)
+def summer_allowlist() -> frozenset[str]:
+    """从 SUMMER_TRANSLATION_PLAN.md 的 B0/O1/O2 三段提取严格白名单。"""
+    plan = ROOT / "meta" / "SUMMER_TRANSLATION_PLAN.md"
+    text = plan.read_text(encoding="utf-8")
+    boundaries = (
+        ("## 2. B0", "## 3.", "blogs/en/"),
+        ("## 3.", "## 4.", "apple-docs/en/"),
+        ("## 4.", "## 5.", "wwdc/en/"),
+    )
+    paths: set[str] = set()
+    for start, end, prefix in boundaries:
+        if start not in text or end not in text.split(start, 1)[1]:
+            raise SystemExit(f"暑期计划缺少预期章节边界：{start} → {end}")
+        block = text.split(start, 1)[1].split(end, 1)[0]
+        paths.update(
+            path
+            for path in re.findall(r"^- `([^`]+)`", block, re.MULTILINE)
+            if path.startswith(prefix)
+        )
+    if len(paths) != 69:
+        raise SystemExit(f"暑期白名单应为 69 篇，实得 {len(paths)}；请先审阅计划格式变化")
+    return frozenset(paths)
+
+
 def in_scope(rel_en: str, scope: str) -> bool:
+    if scope == "summer":
+        return rel_en in summer_allowlist()
     if scope == "all":
         return True
     if rel_en.startswith("wwdc/"):
@@ -68,7 +98,32 @@ def in_scope(rel_en: str, scope: str) -> bool:
             return False
         rest = rel_en[len("apple-docs/en/"):]
         return any(rest.startswith(p) for p in CORE_PREFIXES)
-    raise SystemExit(f"未知范围 {scope!r}，可选 core / apple / all")
+    raise SystemExit(f"未知范围 {scope!r}，可选 summer / core / apple / all")
+
+
+def collect_summer(source: str | None = None) -> list[dict]:
+    """直接从严格白名单构造任务，不经过会排除短 API 页的通用 collect()。"""
+    items: list[dict] = []
+    for rel in sorted(summer_allowlist()):
+        source_name = rel.split("/", 1)[0]
+        if source and source_name != source:
+            continue
+        en = ROOT / rel
+        if not en.exists():
+            raise SystemExit(f"暑期白名单英文原文不存在：{rel}")
+        zh = rel.replace("/en/", "/zh/", 1)
+        if (ROOT / zh).exists():
+            continue
+        priority = 0 if source_name == "blogs" else 1 if source_name == "apple-docs" else 2
+        items.append({
+            "source": source_name,
+            "group": str(Path(rel).parent),
+            "priority": priority,
+            "chars": len(en.read_text(encoding="utf-8")),
+            "en": rel,
+            "zh": zh,
+        })
+    return items
 
 
 # 只有 Apple 文档需要按目录聚合：同一份文档的页面互相引用、术语必须一致，
@@ -140,7 +195,7 @@ def pack(groups: list[dict], shards: int, budget: int | None) -> list[list[dict]
 
 def cmd_shard(shards: int, budget: int | None, source: str | None,
               scope: str = "all") -> None:
-    items = collect(source)
+    items = collect_summer(source) if scope == "summer" else collect(source)
     skip = already_translated_elsewhere()
     n0, c0 = len(items), sum(i["chars"] for i in items)
     items = [i for i in items if i["en"] not in skip and in_scope(i["en"], scope)]
@@ -151,6 +206,15 @@ def cmd_shard(shards: int, budget: int | None, source: str | None,
     if not items:
         print("该范围内没有待翻译的文件了")
         return
+    if scope == "summer":
+        expected = sum(
+            1
+            for rel in summer_allowlist()
+            if (not source or rel.startswith(source + "/"))
+            and not (ROOT / rel.replace("/en/", "/zh/", 1)).exists()
+        )
+        if len(items) != expected:
+            raise SystemExit(f"暑期分片覆盖异常：应有 {expected} 篇，实得 {len(items)}")
     # 单组上限取单片 budget 的一半，保证一片总能装下两组以上，装箱才有均衡余地
     bins = pack(group_items(items, (budget or 200_000) // 2), shards, budget)
     SHARD_DIR.mkdir(parents=True, exist_ok=True)

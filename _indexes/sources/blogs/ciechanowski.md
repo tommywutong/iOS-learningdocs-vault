@@ -16,8 +16,8 @@
 | — | Earth and Sun | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/earth-and-sun-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/earth-and-sun/) | — | 待翻译 |
 | — | Exploring GPGPU on iOS | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exploring-gpgpu-on-ios-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exploring-gpgpu-on-ios/) | — | 待翻译 |
 | — | Exposing Floating Point | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-floating-point-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-floating-point/) | — | 待翻译 |
-| — | Exposing NSDictionary | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-nsdictionary-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-nsdictionary/) | — | 待翻译 |
-| — | Exposing NSMutableArray | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-nsmutablearray-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-nsmutablearray/) | — | 待翻译 |
+| 揭开 NSDictionary 的面纱 | Exposing NSDictionary | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-nsdictionary-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-nsdictionary/) | [中文](../../../blogs/zh/ciechanowski/exposing-nsdictionary-bartosz-ciechanowski.md) | 已翻译 |
+| 揭示 NSMutableArray | Exposing NSMutableArray | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-nsmutablearray-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-nsmutablearray/) | [中文](../../../blogs/zh/ciechanowski/exposing-nsmutablearray-bartosz-ciechanowski.md) | 已翻译 |
 | — | Gears | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/gears-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/gears/) | — | 待翻译 |
 | — | GPS | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/gps-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/gps/) | — | 待翻译 |
 | — | Internal Combustion Engine | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/internal-combustion-engine-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/internal-combustion-engine/) | — | 待翻译 |
