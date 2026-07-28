@@ -375,21 +375,25 @@ def collect_blogs() -> tuple[list[dict], dict[str, dict]]:
         }
 
     snapshots = ROOT / "blogs" / "snapshots"
+    snapshot_zh = ROOT / "blogs" / "snapshots-zh"
     snapshot_entries: list[dict] = []
     if snapshots.exists():
         for path in sorted(snapshots.rglob("*.md")):
             fm = read_fm(path)
             lang = fm.get("original_language", "")
+            translated = snapshot_zh / path.relative_to(snapshots)
+            translated = translated if translated.exists() else None
+            translated_fm = read_fm(translated) if translated else None
             snapshot_entries.append(
                 item(
                     kind="网页快照",
                     source_key="snapshots",
                     source_name=fm.get("source") or "学习计划网页快照",
                     en=path if lang == "en" else None,
-                    zh=path if lang != "en" else None,
+                    zh=path if lang != "en" else translated,
                     source_url=fm.get("source_url", ""),
                     en_fm=fm if lang == "en" else None,
-                    zh_fm=fm if lang != "en" else None,
+                    zh_fm=fm if lang != "en" else translated_fm,
                 )
             )
         entries.extend(snapshot_entries)
@@ -399,7 +403,7 @@ def collect_blogs() -> tuple[list[dict], dict[str, dict]]:
             "license": "逐条不同",
             "entries": snapshot_entries,
             "en_dir": snapshots,
-            "zh_dir": None,
+            "zh_dir": snapshot_zh if snapshot_zh.exists() else None,
         }
     return entries, per_source
 

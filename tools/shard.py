@@ -3,6 +3,7 @@
 
     python3 tools/shard.py --shards 12 --scope summer               # 暑期计划严格白名单
     python3 tools/shard.py --shards 8 --scope summer-b1             # 高价值博客补强白名单
+    python3 tools/shard.py --shards 8 --scope summer-snapshots      # 计划内英文网页快照
     python3 tools/shard.py --shards 4 --scope legacy-review         # 36 篇早期译文补审
     python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 已停止的旧宽泛范围
     python3 tools/shard.py --shards 8 --source apple-docs       # 只切一个来源
@@ -108,6 +109,26 @@ def summer_b1_allowlist() -> frozenset[str]:
 
 
 @lru_cache(maxsize=1)
+def summer_snapshot_allowlist() -> frozenset[str]:
+    """从计划 B2 章节提取与 iOS 暑期计划直接相关的英文网页快照。"""
+    plan = ROOT / "meta" / "SUMMER_TRANSLATION_PLAN.md"
+    text = plan.read_text(encoding="utf-8")
+    start, end = "## 6. B2", "## 7."
+    if start not in text or end not in text.split(start, 1)[1]:
+        raise SystemExit(f"暑期计划缺少预期章节边界：{start} → {end}")
+    block = text.split(start, 1)[1].split(end, 1)[0]
+    block = block.split("明确排除：", 1)[0]
+    paths = {
+        path
+        for path in re.findall(r"^- `([^`]+)`", block, re.MULTILINE)
+        if path.startswith("blogs/snapshots/")
+    }
+    if len(paths) != 28:
+        raise SystemExit(f"B2 快照白名单应为 28 篇，实得 {len(paths)}；请先审阅计划格式变化")
+    return frozenset(paths)
+
+
+@lru_cache(maxsize=1)
 def legacy_review_allowlist() -> frozenset[str]:
     """从恢复提交提取 36 篇新增 Apple 译文对应的英文原文。"""
     result = subprocess.run(
@@ -143,6 +164,8 @@ def in_scope(rel_en: str, scope: str) -> bool:
         return rel_en in summer_allowlist()
     if scope == "summer-b1":
         return rel_en in summer_b1_allowlist()
+    if scope == "summer-snapshots":
+        return rel_en in summer_snapshot_allowlist()
     if scope == "legacy-review":
         return rel_en in legacy_review_allowlist()
     if scope == "all":
@@ -157,8 +180,15 @@ def in_scope(rel_en: str, scope: str) -> bool:
         rest = rel_en[len("apple-docs/en/"):]
         return any(rest.startswith(p) for p in CORE_PREFIXES)
     raise SystemExit(
-        f"未知范围 {scope!r}，可选 summer / summer-b1 / legacy-review / core / apple / all"
+        f"未知范围 {scope!r}，可选 summer / summer-b1 / summer-snapshots / "
+        "legacy-review / core / apple / all"
     )
+
+
+def translation_target(rel: str) -> str:
+    if rel.startswith("blogs/snapshots/"):
+        return rel.replace("blogs/snapshots/", "blogs/snapshots-zh/", 1)
+    return rel.replace("/en/", "/zh/", 1)
 
 
 def collect_allowlist(
@@ -176,7 +206,7 @@ def collect_allowlist(
         en = ROOT / rel
         if not en.exists():
             raise SystemExit(f"白名单英文原文不存在：{rel}")
-        zh = rel.replace("/en/", "/zh/", 1)
+        zh = translation_target(rel)
         if (ROOT / zh).exists() and not include_existing:
             continue
         priority = 0 if source_name == "blogs" else 1 if source_name == "apple-docs" else 2
@@ -268,6 +298,7 @@ def cmd_shard(
     allowlists = {
         "summer": summer_allowlist,
         "summer-b1": summer_b1_allowlist,
+        "summer-snapshots": summer_snapshot_allowlist,
         "legacy-review": legacy_review_allowlist,
     }
     if scope in allowlists:
@@ -296,7 +327,7 @@ def cmd_shard(
             if (not source or rel.startswith(source + "/"))
             and (
                 scope == "legacy-review"
-                or not (ROOT / rel.replace("/en/", "/zh/", 1)).exists()
+                or not (ROOT / translation_target(rel)).exists()
             )
         )
         if len(items) != expected:

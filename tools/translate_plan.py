@@ -38,6 +38,7 @@ SOURCES = {
     "apple-docs": ("apple-docs/en", "apple-docs/zh", True),
     "wwdc": ("wwdc/en", "wwdc/zh", True),
     "blogs": ("blogs/en", "blogs/zh", True),
+    "snapshots": ("blogs/snapshots", "blogs/snapshots-zh", True),
 }
 
 # 用户 2026 暑假学习计划的主题顺序，用来定优先级。
@@ -78,6 +79,8 @@ def read_frontmatter(path: Path) -> dict:
 
 def is_longform(path: Path, source: str) -> bool:
     """只翻译成篇文章。WWDC 和博客整体都算；Apple 文档看 symbol_kind。"""
+    if source == "snapshots":
+        return read_frontmatter(path).get("original_language") == "en"
     if source != "apple-docs":
         return True
     fm = read_frontmatter(path)

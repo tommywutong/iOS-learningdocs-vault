@@ -26,6 +26,7 @@ from deepseek_pipeline import (  # noqa: E402
     flatten_shard,
     flatten_shards,
     load_api_key,
+    normalize_code_blocks,
     relevant_terms,
     unwrap_markdown,
     usage_cost,
@@ -57,6 +58,10 @@ let x = 1
     def test_plain_markdown_only_gets_final_newline(self):
         self.assertEqual(unwrap_markdown("---\ntitle: 示例\n---"), "---\ntitle: 示例\n---\n")
 
+    def test_unwraps_short_model_preamble_before_outer_fence(self):
+        wrapped = "好的，这是完整译文。\n\n```markdown\n---\ntitle: 示例\n---\n```"
+        self.assertEqual(unwrap_markdown(wrapped), "---\ntitle: 示例\n---\n")
+
     def test_relevant_terms_selects_only_present_terms(self):
         terms = """| 英文 | 中文 | 依据 |
 |---|---|---|
@@ -68,6 +73,32 @@ let x = 1
         self.assertIn("delegate | 委托", selected)
         self.assertIn("run loop | 运行循环", selected)
         self.assertNotIn("actor | Actor", selected)
+
+    def test_normalize_code_blocks_restores_code_but_keeps_comment_translation(self):
+        source = """正文
+```objc
+NSAssert(value, @"Value should exist");
+// Explain the assertion.
+```
+"""
+        candidate = """正文译文
+```objc
+NSAssert(value, @"值必须存在");
+// 解释这个断言。
+```
+"""
+        expected = """正文译文
+```objc
+NSAssert(value, @"Value should exist");
+// 解释这个断言。
+```
+"""
+        self.assertEqual(normalize_code_blocks(source, candidate), expected)
+
+    def test_normalize_code_blocks_restores_fence_language(self):
+        source = "```python\nprint('x')\n```\n"
+        candidate = "```c\nprint('x')\n```\n"
+        self.assertEqual(normalize_code_blocks(source, candidate), source)
 
 
 class UsageTests(unittest.TestCase):
@@ -106,6 +137,7 @@ class ShardTests(unittest.TestCase):
     def test_repository_allowlists_have_reviewed_exact_sizes(self):
         self.assertEqual(len(shard_module.summer_allowlist()), 69)
         self.assertEqual(len(shard_module.summer_b1_allowlist()), 32)
+        self.assertEqual(len(shard_module.summer_snapshot_allowlist()), 28)
         self.assertEqual(len(shard_module.legacy_review_allowlist()), 36)
 
     def setUp(self):
@@ -157,6 +189,20 @@ class ShardTests(unittest.TestCase):
         )
         with self.assertRaises(PipelineError):
             flatten_shard(shard, self.root)
+
+    def test_valid_snapshot_mapping(self):
+        source = self.root / "blogs/snapshots/example.com/example.md"
+        source.parent.mkdir(parents=True)
+        source.write_text("demo", encoding="utf-8")
+        shard = self.write_shard(
+            {
+                "en": "blogs/snapshots/example.com/example.md",
+                "zh": "blogs/snapshots-zh/example.com/example.md",
+                "chars": 4,
+            }
+        )
+        items, _ = flatten_shard(shard, self.root)
+        self.assertEqual(items[0]["zh"], "blogs/snapshots-zh/example.com/example.md")
 
     def test_rejects_duplicate_files_across_shards(self):
         item = {
@@ -224,6 +270,22 @@ source_url: 'https://example.com'
                 validate_candidate(en, candidate, root / "work"),
                 [],
             )
+
+    def test_header_title_and_technical_blockquotes_are_preserved(self):
+        source = """---
+title: '<pthread.h>'
+---
+
+> dyld: Library not loaded: @executable_path/Library.dylib
+> [[UIApplication sharedApplication] sendAction:@selector(run:) to:nil from:nil forEvent:nil];
+
+[Concurrency](https://example.com/a) [Documentation](https://example.com/b)
+"""
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            en = root / "en.md"
+            en.write_text(source, encoding="utf-8")
+            self.assertEqual(validate_candidate(en, source, root / "work"), [])
 
 
 class FakeClient:

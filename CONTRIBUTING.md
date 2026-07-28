@@ -144,6 +144,10 @@ attachments/blogs/<来源>/<文章URL哈希>/<文件名>
 attachments/snapshots/<域名>/<文章URL哈希>/<文件名>
 ```
 
+学习计划单页快照的英文原文保存在 `blogs/snapshots/<域名>/`，对应译文保存在
+`blogs/snapshots-zh/<域名>/`，相对路径必须一致。运行
+`python3 tools/validate.py blogs/snapshots-zh` 检查快照译文结构。
+
 ## 六、WWDC 幻灯片工程
 
 这是一项独立的中大型工程，不与普通翻译 PR 混在一起。
@@ -153,11 +157,11 @@ attachments/snapshots/<域名>/<文章URL哈希>/<文件名>
 - 本地有 178 场 WWDC 逐字稿；
 - 其中 56 场的官方页面提供 Presentation Slides PDF；
 - 122 场没有官方 PDF；
-- 34 场已有中文译文，其中 9 场有官方 PDF、25 场没有；
+- 38 场已有中文译文；
 - 2026-07-28 实测 56 份官方 PDF 均可访问，合计约 421.6 MB，中位数约 4.3 MB；
 - 最大单份 PDF 约 152.3 MB，已经超过 GitHub 普通 Git 的 100 MB 单文件限制；
 - 视频不需要长期保存，也不得提交到 Git；
-- 当前逐字稿只链接官方资源，没有批量内嵌幻灯片。
+- 已完成计划相关的 Session 415、416、423；其余 53 场有官方 PDF 的 session 暂停。
 
 ### 交付目标
 
@@ -193,7 +197,7 @@ wwdc/slides/<collection>/<session-id>/
 5. 生成 `manifest.json` 与 `slides.md`；
 6. 在英文和中文逐字稿的 Resources 区链接幻灯片；
 7. 验证 GitHub 与 Obsidian 均可阅读；
-8. 通过样板后再批量处理其余 55 场。
+8. 只有用户明确扩大范围时，才处理其余 53 场。
 
 默认只把渲染后的 WebP 和 manifest 提交到 Git。官方 PDF URL 与哈希写入 manifest，原始 PDF
 留在忽略 Git 的缓存，避免 PDF 与逐页图片双重占用仓库。若确需提交 PDF，必须先统计总体积、
