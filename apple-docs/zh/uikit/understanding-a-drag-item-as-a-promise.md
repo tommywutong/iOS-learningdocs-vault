@@ -49,4 +49,4 @@ UTI 数组构成了来源 App 的承诺，指明它能够应目标 App 的请求
 - [将视图设为拖动来源](making-a-view-into-a-drag-source.md) — 采用拖动交互 API 来提供可供拖动的条目。
 - [将视图设为放置目标](making-a-view-into-a-drop-destination.md) — 采用放置交互 API 来有选择地使用拖动内容。
 - [在自定视图中采用拖放](adopting-drag-and-drop-in-a-custom-view.md) — 演示如何为 `UIImageView` 实例启用拖放。
-- [在表格视图中采用拖放](adopting-drag-and-drop-in-a-table-view.md) — 演示如何为表格视图启用并实现拖放。
+- [在表格视图（table view）中采用拖放](adopting-drag-and-drop-in-a-table-view.md) — 演示如何为表格视图启用并实现拖放。

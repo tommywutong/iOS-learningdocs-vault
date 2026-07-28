@@ -301,7 +301,7 @@ private func createSnapshotOfStandardItems() -> NSDiffableDataSourceSectionSnaps
 - [UICollectionViewDataSourcePrefetching](uicollectionviewdatasourceprefetching.md) — 一种协议，可预先告知集合视图的数据需求，以便触发异步（asynchronous）数据加载操作。
 - [NSDiffableDataSourceSnapshot](nsdiffabledatasourcesnapshot-swift.struct.md) — 视图中数据在特定时间点所处状态的表示。
 - [NSDiffableDataSourceSectionSnapshot](nsdiffabledatasourcesectionsnapshot-swift.struct.md) — 布局区段中数据在特定时间点所处状态的表示。
-- [UIRefreshControl](uirefreshcontrol.md) — 可发起滚动视图内容刷新的标准控制。
+- [UIRefreshControl](uirefreshcontrol.md) — 可发起滚动视图（scroll view）内容刷新的标准控制。
 
 ## 下载
 
