@@ -15,7 +15,7 @@ content_hash: 'sha256:85e0a54893e6f89c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Data Formatting](data-formatting.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [数据格式化](data-formatting.md)
 
 # 构建本地化的餐饮订购 App
 
@@ -94,7 +94,7 @@ App 还可以定义自定属性，Caffé 就通过 `RainbowAttribute` 类型定�
 
 1. 将 `RainbowAttribute` 定义为 [CodableAttributedStringKey](https://developer.apple.com/documentation/foundation/codableattributedstringkey) 的扩展，并提供属性的名称和值类型。
 2. 扩展 [`AttributeScopes`](https://developer.apple.com/documentation/foundation/attributescopes)，定义一个名为 `CaffeAppAttributes` 的新 [AttributeScope](https://developer.apple.com/documentation/foundation/attributescope)，其唯一成员是 `RainbowAttribute` 类型的 `rainbow`。App 还使用 `caffeApp` 扩展 `AttributeScopes`，这是一个 `CaffeAppAttributes` 类型的变量，使其能够通过动态成员查找语法访问 Caffé App 的自定属性。
-3. 扩展 [AttributeDynamicLookup](https://developer.apple.com/documentation/foundation/attributedynamiclookup)，提供一个接受 `CaffeAppAttributes` 类型键路径的下标方法。这使代码能在查找 `CaffeAppAttributes` 成员时使用点语法。
+3. 扩展 [AttributeDynamicLookup](https://developer.apple.com/documentation/foundation/attributedynamiclookup)，提供一个接受 `CaffeAppAttributes` 类型键路径（key path）的下标方法。这使代码能在查找 `CaffeAppAttributes` 成员时使用点语法。
 
 ```swift
 enum RainbowAttribute: CodableAttributedStringKey, MarkdownDecodableAttributedStringKey {

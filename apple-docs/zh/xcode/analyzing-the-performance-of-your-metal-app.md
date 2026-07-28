@@ -15,7 +15,7 @@ content_hash: 'sha256:c5c4cd42283b4e67'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [性能与指标](performance-and-metrics.md)
 
 # 分析 Metal App 的性能
 
@@ -177,4 +177,4 @@ System Load 轨道中的橙色尖峰表示可运行线程的数量超过了可�
 
 ### 图形
 
-- [分析 Metal App 的内存使用情况](analyzing-the-memory-usage-of-your-metal-app.md) — 通过管理 App 的内存占用空间，让它在后台保持运行。
+- [分析 Metal App 的内存使用情况](analyzing-the-memory-usage-of-your-metal-app.md) — 通过管理 App 的内存占用空间（memory footprint），让它在后台保持运行。

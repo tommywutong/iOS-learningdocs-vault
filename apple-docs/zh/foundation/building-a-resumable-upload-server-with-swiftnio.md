@@ -15,7 +15,7 @@ content_hash: 'sha256:e53d65532e02a93a'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [URL Loading System](url-loading-system.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md)
 
 # 使用 SwiftNIO 构建可续传上传服务器
 

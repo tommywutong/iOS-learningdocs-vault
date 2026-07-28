@@ -15,7 +15,7 @@ content_hash: 'sha256:953d3aa92adb7b0b'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Settings](settings.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [设置](settings.md)
 
 # 从代码访问设置
 
@@ -37,7 +37,7 @@ translated: true
 
 ### 使用设置数据配置 SwiftUI 视图
 
-如果使用设置来配置 SwiftUI 界面，请用 [AppStorage](../swiftui/appstorage.md) 属性包装器包装用于存储这些值的变量。虽然你可以通过编程方式从 [UserDefaults](userdefaults.md) 获取值，但属性包装器会自动完成值的获取和设置过程。
+如果使用设置来配置 SwiftUI 界面，请用 [AppStorage](../swiftui/appstorage.md) 属性包装器（property wrapper）包装用于存储这些值的变量。虽然你可以通过编程方式从 [UserDefaults](userdefaults.md) 获取值，但属性包装器会自动完成值的获取和设置过程。
 
 以下示例展示了一个视图，其中的变量从 App 设置中检索其值。声明中的 `"ShowLineNumbers"` 值是 SwiftUI 用于获取和设置该值的设置键。声明中的初始值会成为默认值，SwiftUI 会将其添加到默认值数据库的注册域。
 

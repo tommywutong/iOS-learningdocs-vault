@@ -15,13 +15,13 @@ content_hash: 'sha256:b14bbe69813daf33'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [URL Loading System](url-loading-system.md) · [URLSession](urlsession.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [URL 加载系统](url-loading-system.md) · [URLSession](urlsession.md)
 
 # 后台任务取消
 
 <sub>API 集合</sub>
 
-指明后台任务取消原因的常量。
+指明后台任务取消（task cancellation）原因的常量。
 
 ## 概述
 

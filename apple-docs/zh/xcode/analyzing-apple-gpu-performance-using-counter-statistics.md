@@ -15,7 +15,7 @@ content_hash: 'sha256:43546b46d68ced7f'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
+> 导航：[技术](../technologies.md) · [Xcode](../xcode.md) · [调试](debugging.md) · [Metal 调试器](metal-debugger.md)
 
 # 使用计数器统计数据分析 Apple GPU 性能
 

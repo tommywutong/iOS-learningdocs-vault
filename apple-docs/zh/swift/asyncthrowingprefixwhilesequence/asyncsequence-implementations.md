@@ -15,7 +15,7 @@ content_hash: 'sha256:20628ebe50a27539'
 translated: true
 ---
 
-> 导航：[Technologies](../../technologies.md) · [Swift](../../swift.md) · [Swift Standard Library](../swift-standard-library.md) · [Concurrency](../concurrency.md) · [AsyncSequence](../asyncsequence.md) · [AsyncThrowingPrefixWhileSequence](../asyncthrowingprefixwhilesequence.md)
+> 导航：[技术](../../technologies.md) · [Swift](../../swift.md) · [Swift 标准库](../swift-standard-library.md) · [并发](../concurrency.md) · [AsyncSequence](../asyncsequence.md) · [AsyncThrowingPrefixWhileSequence](../asyncthrowingprefixwhilesequence.md)
 
 # AsyncSequence 实现
 

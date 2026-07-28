@@ -15,7 +15,7 @@ content_hash: 'sha256:a81f8cd219114de4'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Settings](settings.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [设置](settings.md)
 
 # 向 App 添加设置界面
 
@@ -33,7 +33,7 @@ translated: true
 
 在 macOS 中，App 会在可从 App 菜单访问的独立窗口中显示设置。标准 App 菜单为 Settings 菜单项预留了位置，选择该项后会显示设置窗口。
 
-要使用 SwiftUI 定义 macOS App 的设置界面，请向 App 主体添加 [Settings](../swiftui/settings.md) 场景。当 App 中存在此场景类型时，SwiftUI 会更新 App 菜单，加入用于显示设置界面的项目。当用户选择该菜单项时，SwiftUI 会显示一个新窗口，其中包含你提供的场景内容。以下代码展示了 SwiftUI App 主体中的设置场景：
+要使用 SwiftUI 定义 macOS App 的设置界面，请向 App 主体添加 [设置](../swiftui/settings.md) 场景。当 App 中存在此场景类型时，SwiftUI 会更新 App 菜单，加入用于显示设置界面的项目。当用户选择该菜单项时，SwiftUI 会显示一个新窗口，其中包含你提供的场景内容。以下代码展示了 SwiftUI App 主体中的设置场景：
 
 ```swift
 @main
@@ -51,7 +51,7 @@ struct MyApp: App {
 }
 ```
 
-在 SwiftUI 中构建设置场景内容时，请向存储设置的变量添加 [AppStorage](../swiftui/appstorage.md) 属性包装器。此属性包装器会将指定设置的值与变量值同步。随后，你可以将该变量用作场景中相关控制的值。当用户更改控制的值时，SwiftUI 会自动将新值写回默认值数据库。SwiftUI 还会检测 App 外部发生的变化，并相应刷新设置界面。
+在 SwiftUI 中构建设置场景内容时，请向存储设置的变量添加 [AppStorage](../swiftui/appstorage.md) 属性包装器（property wrapper）。此属性包装器会将指定设置的值与变量值同步。随后，你可以将该变量用作场景中相关控制的值。当用户更改控制的值时，SwiftUI 会自动将新值写回默认值数据库。SwiftUI 还会检测 App 外部发生的变化，并相应刷新设置界面。
 
 如果使用 AppKit 构建 App，请添加包含设置内容的窗口和视图控制器（view controller）。Xcode 中的新 AppKit 项目包含用于打开设置界面的菜单项，但一开始并未配置该菜单项。请使用窗口和视图控制器构建设置界面，并将其连接到菜单项。使用 [UserDefaults](userdefaults.md) 对象配置视图控制器的各项控制。当用户更改某项控制的值时，将新值写回该默认值对象。
 

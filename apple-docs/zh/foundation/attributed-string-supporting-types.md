@@ -15,7 +15,7 @@ content_hash: 'sha256:8effd3f2c697f270'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Strings and Text](strings-and-text.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [字符串与文本](strings-and-text.md)
 
 # 属性字符串支持类型
 
@@ -37,7 +37,7 @@ translated: true
 
 ### 带元数据的字符串
 
-- [AttributedString](attributedstring.md) — 一种字符串值类型，可为文本的各个部分关联属性。
+- [AttributedString](attributedstring.md) — 一种字符串值类型（value type），可为文本的各个部分关联属性。
 - [AttributedSubstring](attributedsubstring.md) — 属性字符串的一部分。
 - [NSAttributedString](nsattributedstring.md) — 管理字符范围的数据、布局和样式信息以支持渲染的文本字符串。
 - [NSMutableAttributedString](nsmutableattributedstring.md) — 一种可变字符串，可为文本的各个部分关联属性，例如视觉样式、超链接或辅助功能数据。

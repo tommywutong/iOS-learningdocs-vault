@@ -15,7 +15,7 @@ content_hash: 'sha256:05752e3ddaabd787'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md) · [Data Formatting](data-formatting.md) · [PersonNameComponentsFormatter](personnamecomponentsformatter.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md) · [数据格式化](data-formatting.md) · [PersonNameComponentsFormatter](personnamecomponentsformatter.md)
 
 # 属性字符串组件
 

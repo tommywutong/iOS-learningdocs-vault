@@ -15,7 +15,7 @@ content_hash: 'sha256:d70cb7138c35409c'
 translated: true
 ---
 
-> 导航：[Technologies](../technologies.md) · [Foundation](../foundation.md)
+> 导航：[技术](../technologies.md) · [Foundation](../foundation.md)
 
 # Bonjour
 
