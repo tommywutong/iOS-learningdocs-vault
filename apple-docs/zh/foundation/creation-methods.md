@@ -33,7 +33,7 @@ translated: true
 
 ### 创建格式化字符串
 
-- [init(_:)](<nsattributedstring/init(__).md>) — 使用指定的值类型属性字符串创建引用类型属性字符串。
+- [init(_:)](<nsattributedstring/init(__).md>) — 使用指定的值类型（value type）属性字符串创建引用类型（reference type）属性字符串。
 - [init(_:including:)](<nsattributedstring/init(__including_)-9gogq.md>) — 使用指定的值类型属性字符串创建引用类型属性字符串，并包含一个属性作用域。
 - [init(_:including:)](<nsattributedstring/init(__including_)-8iy4i.md>) — 使用指定的值类型属性字符串创建引用类型属性字符串，并包含由键路径（key path）标识的属性作用域。
 

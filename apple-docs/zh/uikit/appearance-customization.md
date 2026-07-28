@@ -33,7 +33,7 @@ translated: true
 ### 与相邻视图交互
 
 - [UIBackgroundExtensionView](uibackgroundextensionview.md) — 一个扩展内容以填充自身边界的视图。
-- [UIScrollEdgeElementContainerInteraction](uiscrolledgeelementcontainerinteraction.md) — 将此交互添加到覆盖在滚动视图边缘上的视图所处的容器视图。此视图中所有应影响边缘效果形状的后代元素（例如标签、图像、玻璃视图和控制）都会自动产生相应影响。
+- [UIScrollEdgeElementContainerInteraction](uiscrolledgeelementcontainerinteraction.md) — 将此交互添加到覆盖在滚动视图（scroll view）边缘上的视图所处的容器视图。此视图中所有应影响边缘效果形状的后代元素（例如标签、图像、玻璃视图和控制）都会自动产生相应影响。
 
 ### 深色模式
 

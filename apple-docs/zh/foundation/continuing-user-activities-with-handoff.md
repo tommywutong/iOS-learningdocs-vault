@@ -86,7 +86,7 @@ mapViewingActivity.needsSave = true
 mapViewingActivity.becomeCurrent()
 ```
 
-对视图控制器的 `userActivity` 调用 `needsSave`，最终会触发对 `updateUserActivityState(_:)` 方法的回调；此方法在 iOS 的 `UIResponder` 和 macOS 的 `NSResponder` 中声明。这是 App 在 Handoff 收到活动之前刷新活动对象 `userInfo` 的机会。示例 App 的实现会调用便利函数 `updateViewingRegion(_:)`；该函数在 `NSUserActivity` 的扩展（extension）中定义，用于将地图视图的 `MKCoordinateRegion` 编码为 `userInfo` 字典中的键值条目。
+对视图控制器（view controller）的 `userActivity` 调用 `needsSave`，最终会触发对 `updateUserActivityState(_:)` 方法的回调；此方法在 iOS 的 `UIResponder` 和 macOS 的 `NSResponder` 中声明。这是 App 在 Handoff 收到活动之前刷新活动对象 `userInfo` 的机会。示例 App 的实现会调用便利函数 `updateViewingRegion(_:)`；该函数在 `NSUserActivity` 的扩展（extension）中定义，用于将地图视图的 `MKCoordinateRegion` 编码为 `userInfo` 字典中的键值条目。
 
 ```swift
 func updateViewingRegion(_ region: MKCoordinateRegion) {
@@ -159,7 +159,7 @@ func viewingRegion() -> MKCoordinateRegion? {
 
 `NSUserActivity` 类具有一个类型为 `NSUserActivityDelegate` 的 `delegate` 属性。当你在另一台设备上继续活动时，该属性会通知活动的来源设备。来源设备可以借此清理自己的 UI 状态。
 
-在示例 App 中，轻点 Apple Store 零售店的图钉会显示一个弹出窗口，其中包含商店的详细信息，以及用于将商店标记为个人收藏的切换（iOS）或复选框（macOS）。`MapViewContoller` 使用 `storeEditingActivity` 属性表示此活动，并将自身设为活动的委托。当你在第二台设备上继续编辑时，来源设备上的委托会收到此活动已继续的通知，并关闭自己的弹出窗口。
+在示例 App 中，轻点 Apple Store 零售店的图钉会显示一个弹出窗口，其中包含商店的详细信息，以及用于将商店标记为个人收藏的切换（iOS）或复选框（macOS）。`MapViewContoller` 使用 `storeEditingActivity` 属性表示此活动，并将自身设为活动的委托（delegate）。当你在第二台设备上继续编辑时，来源设备上的委托会收到此活动已继续的通知，并关闭自己的弹出窗口。
 
 ```swift
 func userActivityWasContinued(_ userActivity: NSUserActivity) {

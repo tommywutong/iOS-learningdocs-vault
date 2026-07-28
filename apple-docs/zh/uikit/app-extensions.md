@@ -33,7 +33,7 @@ translated: true
 ### 文稿提供程序
 
 - [NSFileProviderExtension](../fileprovider/nsfileproviderextension.md) — 非复制型文件提供程序扩展的主类。
-- [UIDocumentPickerExtensionViewController](uidocumentpickerextensionviewcontroller.md) — 文稿选择器视图控制器扩展的主类。 _(已废弃)_
+- [UIDocumentPickerExtensionViewController](uidocumentpickerextensionviewcontroller.md) — 文稿选择器视图控制器（view controller）扩展的主类。 _(已废弃)_
 
 ### 自定义键盘
 

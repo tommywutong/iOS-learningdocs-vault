@@ -66,12 +66,12 @@ translated: true
 - [- updateConfiguration](<uibutton/updateconfiguration().md>) — 响应按钮状态变化来更新按钮配置。
 - [configurationUpdateHandler](uibutton/configurationupdatehandler-swift.property.md) — 一个在按钮状态发生变化时执行的闭包。
 
-### 集合视图单元格
+### 集合视图（collection view）单元格
 
 - [updateConfiguration(using:)](<uicollectionviewcell/updateconfiguration(using_).md>) — 使用当前状态更新单元格配置。
 - [configurationUpdateHandler](uicollectionviewcell/configurationupdatehandler-7rqbu.md) — 一个 block，用于使用当前状态处理单元格配置的更新。
 
-### 表格视图单元格
+### 表格视图（table view）单元格
 
 - [updateConfiguration(using:)](<uitableviewcell/updateconfiguration(using_).md>) — 使用当前状态更新单元格配置。
 - [configurationUpdateHandler](uitableviewcell/configurationupdatehandler-974.md) — 一个 block，用于使用当前状态处理单元格配置的更新。

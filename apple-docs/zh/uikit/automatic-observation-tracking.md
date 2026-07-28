@@ -27,7 +27,7 @@ translated: true
 
 使用自动观察跟踪，在模型对象发生变化时更新视图，而无需手动使视图失效。使用 [Observable](../observation/observable.md) 宏标记模型类，然后在 [- updateProperties](<uiview/updateproperties().md>) 或 [- layoutSubviews](<uiview/layoutsubviews().md>) 等方法中读取模型属性。UIKit 会跟踪你访问的属性，并在这些属性发生变化时自动再次调用这些方法。这种方式无需在更新模型数据后手动调用 [- setNeedsLayout](<uiview/setneedslayout().md>) 或 [- setNeedsDisplay](<uiview/setneedsdisplay().md>) 等方法，减少了出现错误和显示过时内容的机会。
 
-视图、视图控制器（view controller）、呈现控制器（presentation controller）、按钮、集合视图单元格、表格视图单元格，以及表格视图页眉和页脚中的以下方法支持自动观察跟踪。有关更多信息，请参阅[使用 UIKit 中的观察跟踪自动更新视图](updating-views-automatically-with-observation-tracking-in-uikit.md)。
+视图、视图控制器（view controller）、呈现控制器（presentation controller）、按钮、集合视图（collection view）单元格、表格视图（table view）单元格，以及表格视图页眉和页脚中的以下方法支持自动观察跟踪。有关更多信息，请参阅[使用 UIKit 中的观察跟踪自动更新视图](updating-views-automatically-with-observation-tracking-in-uikit.md)。
 
 ## 主题
 
