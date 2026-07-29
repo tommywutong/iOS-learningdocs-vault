@@ -7,12 +7,14 @@
 
 | 我想做什么 | 入口 |
 |---|---|
-| 找一篇文章 | [文章目录](_indexes/articles.md) |
-| 按 Runtime、内存、并发等主题浏览 | [主题目录](_indexes/topics.md) |
+| 不知道从哪里开始 | [阅读入口](_indexes/reader-guide.md) |
+| 优先阅读已有中文正文的技术博客 | [可直接中文阅读](_indexes/chinese-blogs.md) |
+| 按 Runtime、内存、并发等知识点浏览 | [iOS 底层知识地图](_indexes/topics.md) |
+| 按中文目录标题查找其他英文文章 | [技术博客索引](_indexes/blogs.md) |
+| 查找 Apple 文档、WWDC 或全部资料 | [文章目录](_indexes/articles.md) |
 | 查看哪些已经翻译 | [翻译状态](_indexes/translation-status.md) |
 | 按暑期计划学习 | [学习计划材料索引](_indexes/study-plan.md) |
 | 按 Apple 框架浏览 | [Apple 文档索引](_indexes/apple-docs.md) |
-| 按作者或博客来源浏览 | [技术博客索引](_indexes/blogs.md) |
 | 按主题浏览 WWDC | [WWDC 索引](_indexes/wwdc.md) |
 | 参与翻译或继续工程任务 | [贡献指南](CONTRIBUTING.md) |
 
@@ -20,6 +22,10 @@
 Markdown 相对链接，不依赖 Obsidian 专属语法。
 
 ## 怎样找到一篇资料
+
+最省事的入口是[阅读入口](_indexes/reader-guide.md)：它先展示有完整中文正文的文章，再展示
+只有中文目录标题、正文仍为英文的文章。分页、标签、归档和站点首页等误抓页面仍保留在原始
+归档中，但不会混入读者目录。
 
 ### 按文章标题
 
@@ -29,6 +35,9 @@ Markdown 相对链接，不依赖 Obsidian 专属语法。
 ```text
 中文标题｜英文标题｜作者/来源｜主题｜原文｜译文｜翻译状态
 ```
+
+“仅标题中文，正文待翻译”表示只翻译了目录标题，点击后仍是英文正文；它不会计入译文完成数。
+API、类型名、编译参数和产品名可能保持英文，避免为了出现汉字而误译专有名称。
 
 “学习计划周次”只存在于独立的学习计划索引中，不属于通用文章元数据。
 
@@ -88,6 +97,7 @@ tools/                                抓取、翻译、校验和索引工具
 新增、移动或翻译资料后运行：
 
 ```bash
+python3 tools/title_aliases.py check
 python3 tools/studyplan.py
 python3 tools/indexes.py
 python3 tools/check_links.py

@@ -34,6 +34,15 @@ C 类，也不恢复旧 `core`。** 新范围、九组内容、排除项、机�
 工具输出和已经落盘的工作。当前文件、本文和
 [`NEXT_STEPS.md`](NEXT_STEPS.md) 才是事实来源。
 
+### 读者导航重整
+
+仓库现已增加中文优先的 [`reader-guide.md`](../_indexes/reader-guide.md) 和
+[`chinese-blogs.md`](../_indexes/chinese-blogs.md)，主题目录固定为 12 个稳定知识入口。
+博客目录标题与正文翻译状态分开存储：`meta/blog_title_aliases.json` 只提供中文目录译名，
+不得据此把英文正文记为已翻译。分页、标签、归档、About 等非文章页面只从读者视图隐藏，
+原始归档文件不删除。维护入口为 `tools/reader_navigation.py`、
+`tools/title_aliases.py` 和 `tools/indexes.py`。
+
 ## 2. 当前事实总账
 
 ### 2.1 现行资料仓库
@@ -319,8 +328,10 @@ python3 tools/audit_consistency.py apple-docs
 python3 tools/audit_consistency.py wwdc
 python3 tools/audit_consistency.py blogs
 
-# 刷新 README 与导航索引
+# 检查目录标题并刷新导航索引
+python3 tools/title_aliases.py check
 python3 tools/indexes.py
+python3 tools/check_links.py
 ```
 
 ## 8. 不要做的事

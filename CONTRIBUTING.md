@@ -101,6 +101,8 @@ PR 描述至少包含：
 
 以下内容由脚本生成：
 
+- `_indexes/reader-guide.md`
+- `_indexes/chinese-blogs.md`
 - `_indexes/articles.md`
 - `_indexes/apple-docs.md`
 - `_indexes/blogs.md`
@@ -111,12 +113,19 @@ PR 描述至少包含：
 
 不要手工编辑生成文件。需要改变字段、分类或排序时修改 `tools/indexes.py`，再重新生成。
 
+技术博客的目录中文标题单独保存在 `meta/blog_title_aliases.json`。它只改变目录展示，
+不修改文章正文，也不能把“待翻译”升级为“已翻译”。补译标题时先小批量运行
+`tools/title_aliases.py run`，通过 Flash 初译、Pro 独立审校和 `check` 后再刷新索引。
+分页、标签、归档、About 等非文章入口由 `tools/reader_navigation.py` 过滤，但原始文件保留。
+
 导航验收标准：
 
 - `python3 tools/check_links.py` 返回零失效本地链接；
 - 每篇目录记录能直接打开原文和已有译文；
 - 通用文章目录字段固定为：
   `中文标题｜英文标题｜作者/来源｜主题｜原文｜译文｜翻译状态`；
+- 完整中文正文和原生中文文章排在最前；只有目录译名的英文正文必须显示
+  `仅标题中文，正文待翻译`；
 - 学习计划周次只出现在 `_indexes/study-plan.md`，不进入通用文章目录。
 
 ## 五、图片归档
