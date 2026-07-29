@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
@@ -21,7 +22,11 @@ from reader_navigation import (  # noqa: E402
     title_alias_for,
     topic_slug,
 )
-from title_aliases import normalize_title_alias, validate_response  # noqa: E402
+from title_aliases import (  # noqa: E402
+    normalize_title_alias,
+    summarize_state,
+    validate_response,
+)
 
 
 class ReaderVisibilityTests(unittest.TestCase):
@@ -158,6 +163,32 @@ class AliasFileTests(unittest.TestCase):
             normalize_title_alias("介绍ComponentKit：iOS上的 UI"),
             "介绍 ComponentKit：iOS 上的 UI",
         )
+
+    def test_failed_calls_are_included_in_cost_summary(self):
+        state = {
+            "target_count": 1,
+            "batches": [],
+            "failures": [
+                {
+                    "batch": 1,
+                    "error": "格式错误",
+                    "calls": [
+                        {
+                            "usage": {
+                                "prompt_tokens": 10,
+                                "completion_tokens": 5,
+                            },
+                            "estimated_cost_usd": 0.01,
+                        }
+                    ],
+                }
+            ],
+        }
+        with patch("builtins.print") as mocked_print:
+            summarize_state(state)
+        output = "\n".join(str(call.args[0]) for call in mocked_print.call_args_list)
+        self.assertIn("API 1 次", output)
+        self.assertIn("估算 $0.0100", output)
 
 
 if __name__ == "__main__":

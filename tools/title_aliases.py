@@ -75,6 +75,14 @@ REVIEW_PROMPT = """请独立审校下面的目录标题。source 是英文原题
 """
 
 
+class TitleRequestError(PipelineError):
+    """模型输出未通过标题检查，同时保留已经产生的调用费用。"""
+
+    def __init__(self, message: str, calls: list[dict[str, Any]]):
+        super().__init__(message)
+        self.calls = calls
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -201,8 +209,9 @@ async def request_titles(
     stage: str,
     run_id: str,
     batch_number: int,
-) -> tuple[dict[str, str], dict[str, Any]]:
+) -> tuple[dict[str, str], list[dict[str, Any]]]:
     last_error: Exception | None = None
+    calls: list[dict[str, Any]] = []
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": prompt},
@@ -215,6 +224,18 @@ async def request_titles(
             reasoning_effort="medium" if stage == "review" else None,
             max_tokens=max(1200, len(batch) * 90),
             user_id=f"{run_id}-{stage}-{batch_number:04d}-{attempt}",
+        )
+        pricing = DEFAULT_PRICING[model]
+        calls.append(
+            {
+                "stage": stage,
+                "model": completion.model,
+                "request_id": completion.request_id,
+                "finish_reason": completion.finish_reason,
+                "usage": asdict(completion.usage),
+                "estimated_cost_usd": usage_cost(completion.usage, pricing),
+                "attempt": attempt,
+            }
         )
         try:
             titles = validate_response(completion.content, batch)
@@ -230,17 +251,11 @@ async def request_titles(
                 }
             )
             continue
-        pricing = DEFAULT_PRICING[model]
-        return titles, {
-            "stage": stage,
-            "model": completion.model,
-            "request_id": completion.request_id,
-            "finish_reason": completion.finish_reason,
-            "usage": asdict(completion.usage),
-            "estimated_cost_usd": usage_cost(completion.usage, pricing),
-            "attempt": attempt,
-        }
-    raise PipelineError(str(last_error or "模型输出连续两次无法通过检查"))
+        return titles, calls
+    raise TitleRequestError(
+        str(last_error or "模型输出连续两次无法通过检查"),
+        calls,
+    )
 
 
 async def process_batch(
@@ -252,26 +267,33 @@ async def process_batch(
     translation_model: str,
     review_model: str,
 ) -> dict[str, Any]:
-    translated, translation_call = await request_titles(
-        client,
-        model=translation_model,
-        prompt=TRANSLATE_PROMPT.format(payload=batch_payload(batch)),
-        batch=batch,
-        stage="translation",
-        run_id=run_id,
-        batch_number=batch_number,
-    )
-    reviewed, review_call = await request_titles(
-        client,
-        model=review_model,
-        prompt=REVIEW_PROMPT.format(
-            payload=batch_payload(batch, candidates=translated)
-        ),
-        batch=batch,
-        stage="review",
-        run_id=run_id,
-        batch_number=batch_number,
-    )
+    calls: list[dict[str, Any]] = []
+    try:
+        translated, translation_calls = await request_titles(
+            client,
+            model=translation_model,
+            prompt=TRANSLATE_PROMPT.format(payload=batch_payload(batch)),
+            batch=batch,
+            stage="translation",
+            run_id=run_id,
+            batch_number=batch_number,
+        )
+        calls.extend(translation_calls)
+        reviewed, review_calls = await request_titles(
+            client,
+            model=review_model,
+            prompt=REVIEW_PROMPT.format(
+                payload=batch_payload(batch, candidates=translated)
+            ),
+            batch=batch,
+            stage="review",
+            run_id=run_id,
+            batch_number=batch_number,
+        )
+        calls.extend(review_calls)
+    except TitleRequestError as exc:
+        calls.extend(exc.calls)
+        raise TitleRequestError(str(exc), calls) from exc
     return {
         "batch": batch_number,
         "records": [
@@ -283,7 +305,7 @@ async def process_batch(
             }
             for record in batch
         ],
-        "calls": [translation_call, review_call],
+        "calls": calls,
     }
 
 
@@ -306,7 +328,9 @@ def write_state(path: Path, state: dict[str, Any]) -> None:
 def summarize_state(state: dict[str, Any]) -> None:
     calls = [
         call
-        for batch in state.get("batches", [])
+        for batch in (
+            state.get("batches", []) + state.get("failures", [])
+        )
         for call in batch.get("calls", [])
     ]
     cost = sum(float(call.get("estimated_cost_usd") or 0) for call in calls)
@@ -372,10 +396,13 @@ async def run(args: argparse.Namespace) -> int:
                     review_model=args.review_model,
                 )
             except Exception as exc:  # 每批独立落状态，其他批次仍可完成
-                return {
+                failure = {
                     "batch": batch_number,
                     "error": f"{type(exc).__name__}: {exc}",
                 }
+                if isinstance(exc, TitleRequestError):
+                    failure["calls"] = exc.calls
+                return failure
 
     for start in range(0, len(batches), args.concurrency):
         wave = batches[start : start + args.concurrency]
