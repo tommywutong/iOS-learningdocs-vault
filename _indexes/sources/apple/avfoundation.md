@@ -1,7 +1,7 @@
 # Apple · avfoundation · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -88,7 +88,7 @@
 | — | Integrating AirPlay for long-form video apps | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/integrating-airplay-for-long-form-video-apps.md) · [网页](https://developer.apple.com/documentation/avfoundation/integrating-airplay-for-long-form-video-apps) | — | 待翻译 |
 | — | Lighting | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/capture-device-lighting.md) · [网页](https://developer.apple.com/documentation/avfoundation/capture-device-lighting) | — | 待翻译 |
 | — | Linear PCM format settings | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/linear-pcm-format-settings.md) · [网页](https://developer.apple.com/documentation/avfoundation/linear-pcm-format-settings) | — | 待翻译 |
-| — | Loading media data asynchronously | Apple · AVFoundation | 并发与线程 | [英文](../../../apple-docs/en/avfoundation/loading-media-data-asynchronously.md) · [网页](https://developer.apple.com/documentation/avfoundation/loading-media-data-asynchronously) | — | 待翻译 |
+| 异步加载媒体数据 | Loading media data asynchronously | Apple · AVFoundation | 并发与线程 | [英文](../../../apple-docs/en/avfoundation/loading-media-data-asynchronously.md) · [网页](https://developer.apple.com/documentation/avfoundation/loading-media-data-asynchronously) | [中文](../../../apple-docs/zh/avfoundation/loading-media-data-asynchronously.md) | 已翻译 |
 | — | Machine-readable object types | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/machine-readable-object-types.md) · [网页](https://developer.apple.com/documentation/avfoundation/machine-readable-object-types) | — | 待翻译 |
 | — | macOS capture features | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/macos-capture-features.md) · [网页](https://developer.apple.com/documentation/avfoundation/macos-capture-features) | — | 待翻译 |
 | — | Macros | Apple · AVFoundation | Swift 语言 | [英文](../../../apple-docs/en/avfoundation/avfoundation-macros.md) · [网页](https://developer.apple.com/documentation/avfoundation/avfoundation-macros) | — | 待翻译 |
@@ -128,10 +128,10 @@
 | — | Tagging media with video color information | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/tagging-media-with-video-color-information.md) · [网页](https://developer.apple.com/documentation/avfoundation/tagging-media-with-video-color-information) | — | 待翻译 |
 | — | Time pitch algorithm settings | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/time-pitch-algorithm-settings.md) · [网页](https://developer.apple.com/documentation/avfoundation/time-pitch-algorithm-settings) | — | 待翻译 |
 | — | Tracking photo capture progress | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/tracking-photo-capture-progress.md) · [网页](https://developer.apple.com/documentation/avfoundation/tracking-photo-capture-progress) | — | 待翻译 |
-| — | Using AVFoundation to play and persist HTTP live streams | Apple · AVFoundation | 网络与安全 | [英文](../../../apple-docs/en/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams.md) · [网页](https://developer.apple.com/documentation/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams) | — | 待翻译 |
+| 使用 AVFoundation 播放和存储 HTTP Live Stream | Using AVFoundation to play and persist HTTP live streams | Apple · AVFoundation | 网络与安全 | [英文](../../../apple-docs/en/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams.md) · [网页](https://developer.apple.com/documentation/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams) | [中文](../../../apple-docs/zh/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams.md) | 已翻译 |
 | — | Using HEVC video with alpha | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/using-hevc-video-with-alpha.md) · [网页](https://developer.apple.com/documentation/avfoundation/using-hevc-video-with-alpha) | — | 待翻译 |
 | — | Video effects | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/video-effects.md) · [网页](https://developer.apple.com/documentation/avfoundation/video-effects) | — | 待翻译 |
 | — | Video settings | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/video-settings.md) · [网页](https://developer.apple.com/documentation/avfoundation/video-settings) | — | 待翻译 |
 | — | White balance | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/capture-device-white-balance.md) · [网页](https://developer.apple.com/documentation/avfoundation/capture-device-white-balance) | — | 待翻译 |
-| — | Writing fragmented MPEG-4 files for HTTP Live Streaming | Apple · AVFoundation | 网络与安全 | [英文](../../../apple-docs/en/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming.md) · [网页](https://developer.apple.com/documentation/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming) | — | 待翻译 |
+| 为 HTTP Live Streaming 编写分片 MPEG-4 文件 | Writing fragmented MPEG-4 files for HTTP Live Streaming | Apple · AVFoundation | 网络与安全 | [英文](../../../apple-docs/en/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming.md) · [网页](https://developer.apple.com/documentation/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming) | [中文](../../../apple-docs/zh/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming.md) | 已翻译 |
 | — | Zoom | Apple · AVFoundation | — | [英文](../../../apple-docs/en/avfoundation/capture-device-zoom.md) · [网页](https://developer.apple.com/documentation/avfoundation/capture-device-zoom) | — | 待翻译 |

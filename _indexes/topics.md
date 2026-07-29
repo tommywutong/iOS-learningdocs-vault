@@ -11,7 +11,7 @@
 | [网络与安全](topics/a9af286833.md) | 280 |
 | [性能与调试](topics/18faab0b49.md) | 251 |
 | [并发与线程](topics/375b8e21c9.md) | 187 |
-| [启动、链接与二进制](topics/351b40f720.md) | 175 |
+| [启动、链接与二进制](topics/351b40f720.md) | 176 |
 | [数据与持久化](topics/2c985db148.md) | 155 |
 | [内存与 ARC](topics/181a89f3d7.md) | 152 |
 | [架构、测试与工程实践](topics/04beff8ab6.md) | 144 |

@@ -1,7 +1,7 @@
 # Apple · cryptokit · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -26,5 +26,5 @@
 | — | HPKEPublicKeySerialization Implementations | Apple · Apple CryptoKit | 网络与安全、数据与持久化 | [英文](../../../apple-docs/en/cryptokit/p256/keyagreement/publickey/hpkepublickeyserialization-implementations.md) · [网页](https://developer.apple.com/documentation/cryptokit/p256/keyagreement/publickey/hpkepublickeyserialization-implementations) | — | 待翻译 |
 | — | HPKEPublicKeySerialization Implementations | Apple · Apple CryptoKit | 网络与安全、数据与持久化 | [英文](../../../apple-docs/en/cryptokit/curve25519/keyagreement/publickey/hpkepublickeyserialization-implementations.md) · [网页](https://developer.apple.com/documentation/cryptokit/curve25519/keyagreement/publickey/hpkepublickeyserialization-implementations) | — | 待翻译 |
 | — | HPKEPublicKeySerialization Implementations | Apple · Apple CryptoKit | 网络与安全、数据与持久化 | [英文](../../../apple-docs/en/cryptokit/xwingmlkem768x25519/publickey/hpkepublickeyserialization-implementations.md) · [网页](https://developer.apple.com/documentation/cryptokit/xwingmlkem768x25519/publickey/hpkepublickeyserialization-implementations) | — | 待翻译 |
-| — | Performing Common Cryptographic Operations | Apple · Apple CryptoKit | 网络与安全 | [英文](../../../apple-docs/en/cryptokit/performing-common-cryptographic-operations.md) · [网页](https://developer.apple.com/documentation/cryptokit/performing-common-cryptographic-operations) | — | 待翻译 |
-| — | Storing CryptoKit Keys in the Keychain | Apple · Apple CryptoKit | 网络与安全 | [英文](../../../apple-docs/en/cryptokit/storing-cryptokit-keys-in-the-keychain.md) · [网页](https://developer.apple.com/documentation/cryptokit/storing-cryptokit-keys-in-the-keychain) | — | 待翻译 |
+| 执行常见加密操作 | Performing Common Cryptographic Operations | Apple · Apple CryptoKit | 网络与安全 | [英文](../../../apple-docs/en/cryptokit/performing-common-cryptographic-operations.md) · [网页](https://developer.apple.com/documentation/cryptokit/performing-common-cryptographic-operations) | [中文](../../../apple-docs/zh/cryptokit/performing-common-cryptographic-operations.md) | 已翻译 |
+| 在钥匙串中储存 CryptoKit 密钥 | Storing CryptoKit Keys in the Keychain | Apple · Apple CryptoKit | 网络与安全 | [英文](../../../apple-docs/en/cryptokit/storing-cryptokit-keys-in-the-keychain.md) · [网页](https://developer.apple.com/documentation/cryptokit/storing-cryptokit-keys-in-the-keychain) | [中文](../../../apple-docs/zh/cryptokit/storing-cryptokit-keys-in-the-keychain.md) | 已翻译 |

@@ -1,7 +1,7 @@
 # Bartosz Ciechanowski
 
 > 状态：active；授权：Copyright © Bartosz Ciechanowski（页脚）→ 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -12,7 +12,7 @@
 | — | Cameras and Lenses | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/cameras-and-lenses-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/cameras-and-lenses/) | — | 待翻译 |
 | — | Color Spaces | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/color-spaces-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/color-spaces/) | — | 待翻译 |
 | — | Curves and Surfaces | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/curves-and-surfaces-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/curves-and-surfaces/) | — | 待翻译 |
-| — | Drawing Bézier Curves | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/drawing-b-zier-curves-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/drawing-bezier-curves/) | — | 待翻译 |
+| 绘制贝塞尔曲线 | Drawing Bézier Curves | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/drawing-b-zier-curves-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/drawing-bezier-curves/) | [中文](../../../blogs/zh/ciechanowski/drawing-b-zier-curves-bartosz-ciechanowski.md) | 已翻译 |
 | — | Earth and Sun | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/earth-and-sun-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/earth-and-sun/) | — | 待翻译 |
 | — | Exploring GPGPU on iOS | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exploring-gpgpu-on-ios-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exploring-gpgpu-on-ios/) | — | 待翻译 |
 | — | Exposing Floating Point | Bartosz Ciechanowski | — | [英文](../../../blogs/en/ciechanowski/exposing-floating-point-bartosz-ciechanowski.md) · [网页](https://ciechanow.ski/exposing-floating-point/) | — | 待翻译 |

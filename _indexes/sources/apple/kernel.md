@@ -1,7 +1,7 @@
 # Apple · kernel · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 | — | AppleDSP | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/appledsp.md) · [网页](https://developer.apple.com/documentation/kernel/appledsp) | — | 待翻译 |
 | — | architecture | Apple · Kernel | 架构、测试与工程实践 | [英文](../../../apple-docs/en/kernel/architecture.md) · [网页](https://developer.apple.com/documentation/kernel/architecture) | — | 待翻译 |
 | — | ATA | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/hardware_families/ata.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/ata) | — | 待翻译 |
-| — | Atomic Operations | Apple · Kernel | 并发与线程 | [英文](../../../apple-docs/en/kernel/libkern/atomic_operations.md) · [网页](https://developer.apple.com/documentation/kernel/libkern/atomic_operations) | — | 待翻译 |
+| 原子操作 | Atomic Operations | Apple · Kernel | 并发与线程 | [英文](../../../apple-docs/en/kernel/libkern/atomic_operations.md) · [网页](https://developer.apple.com/documentation/kernel/libkern/atomic_operations) | [中文](../../../apple-docs/zh/kernel/libkern/atomic_operations.md) | 已翻译 |
 | — | Audio | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/hardware_families/audio.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/audio) | — | 待翻译 |
 | — | Bluetooth | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/hardware_families/bluetooth.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/bluetooth) | — | 待翻译 |
 | — | bsm | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/bsm.md) · [网页](https://developer.apple.com/documentation/kernel/bsm) | — | 待翻译 |
@@ -18,7 +18,7 @@
 | — | Byte Order Utilities | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/libkern/byte_order_utilities.md) · [网页](https://developer.apple.com/documentation/kernel/libkern/byte_order_utilities) | — | 待翻译 |
 | — | CD Data Structures | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/hardware_families/mass_storage/cd_data_structures.md) · [网页](https://developer.apple.com/documentation/kernel/hardware_families/mass_storage/cd_data_structures) | — | 待翻译 |
 | — | Data Types | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/libkern/data_types.md) · [网页](https://developer.apple.com/documentation/kernel/libkern/data_types) | — | 待翻译 |
-| — | Debugging | Apple · Kernel | 性能与调试 | [英文](../../../apple-docs/en/kernel/debugging.md) · [网页](https://developer.apple.com/documentation/kernel/debugging) | — | 待翻译 |
+| 调试 | Debugging | Apple · Kernel | 性能与调试 | [英文](../../../apple-docs/en/kernel/debugging.md) · [网页](https://developer.apple.com/documentation/kernel/debugging) | [中文](../../../apple-docs/zh/kernel/debugging.md) | 已翻译 |
 | — | Deprecated Symbols | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/deprecated_symbols.md) · [网页](https://developer.apple.com/documentation/kernel/deprecated_symbols) | — | 待翻译 |
 | — | Determining Instruction Set Characteristics | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/1387446-sysctlbyname/determining_instruction_set_characteristics.md) · [网页](https://developer.apple.com/documentation/kernel/1387446-sysctlbyname/determining_instruction_set_characteristics) | — | 待翻译 |
 | — | Determining system capabilities | Apple · Kernel | — | [英文](../../../apple-docs/en/kernel/1387446-sysctlbyname/determining_system_capabilities.md) · [网页](https://developer.apple.com/documentation/kernel/1387446-sysctlbyname/determining_system_capabilities) | — | 待翻译 |

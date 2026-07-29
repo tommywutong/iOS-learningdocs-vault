@@ -1,7 +1,7 @@
 # Kreya Blog
 
 > 状态：active；授权：Copyright © riok GmbH（页脚）→ 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|

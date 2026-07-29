@@ -1,19 +1,19 @@
 # Apple · swiftdata · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
-| — | Adding and editing persistent data in your app | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/adding-and-editing-persistent-data-in-your-app.md) · [网页](https://developer.apple.com/documentation/swiftdata/adding-and-editing-persistent-data-in-your-app) | — | 待翻译 |
+| 在你的 App 中添加和编辑持久化数据 | Adding and editing persistent data in your app | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/adding-and-editing-persistent-data-in-your-app.md) · [网页](https://developer.apple.com/documentation/swiftdata/adding-and-editing-persistent-data-in-your-app) | [中文](../../../apple-docs/zh/swiftdata/adding-and-editing-persistent-data-in-your-app.md) | 已翻译 |
 | — | Additional query macros | Apple · SwiftData | Swift 语言 | [英文](../../../apple-docs/en/swiftdata/additionalquerymacros.md) · [网页](https://developer.apple.com/documentation/swiftdata/additionalquerymacros) | — | 待翻译 |
 | — | Adopting inheritance in SwiftData | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/adopting-inheritance-in-swiftdata.md) · [网页](https://developer.apple.com/documentation/swiftdata/adopting-inheritance-in-swiftdata) | — | 待翻译 |
-| — | Concurrency support | Apple · SwiftData | 并发与线程 | [英文](../../../apple-docs/en/swiftdata/concurrencysupport.md) · [网页](https://developer.apple.com/documentation/swiftdata/concurrencysupport) | — | 待翻译 |
+| 并发支持 | Concurrency support | Apple · SwiftData | 并发与线程 | [英文](../../../apple-docs/en/swiftdata/concurrencysupport.md) · [网页](https://developer.apple.com/documentation/swiftdata/concurrencysupport) | [中文](../../../apple-docs/zh/swiftdata/concurrencysupport.md) | 已翻译 |
 | — | Defining data relationships with enumerations and model classes | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/defining-data-relationships-with-enumerations-and-model-classes.md) · [网页](https://developer.apple.com/documentation/swiftdata/defining-data-relationships-with-enumerations-and-model-classes) | — | 待翻译 |
-| — | Deleting persistent data from your app | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/deleting-persistent-data-from-your-app.md) · [网页](https://developer.apple.com/documentation/swiftdata/deleting-persistent-data-from-your-app) | — | 待翻译 |
+| 从你的 App 中删除持久化数据 | Deleting persistent data from your app | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/deleting-persistent-data-from-your-app.md) · [网页](https://developer.apple.com/documentation/swiftdata/deleting-persistent-data-from-your-app) | [中文](../../../apple-docs/zh/swiftdata/deleting-persistent-data-from-your-app.md) | 已翻译 |
 | Equatable 实现 | Equatable Implementations | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/persistentmodel/equatable-implementations.md) · [网页](https://developer.apple.com/documentation/swiftdata/persistentmodel/equatable-implementations) | [中文](../../../apple-docs/zh/swiftdata/persistentmodel/equatable-implementations.md) | 已翻译 |
 | — | Fetching and filtering time-based model changes | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/fetching-and-filtering-time-based-model-changes.md) · [网页](https://developer.apple.com/documentation/swiftdata/fetching-and-filtering-time-based-model-changes) | — | 待翻译 |
-| — | Filtering and sorting persistent data | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/filtering-and-sorting-persistent-data.md) · [网页](https://developer.apple.com/documentation/swiftdata/filtering-and-sorting-persistent-data) | — | 待翻译 |
+| 过滤和排序持久化数据 | Filtering and sorting persistent data | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/filtering-and-sorting-persistent-data.md) · [网页](https://developer.apple.com/documentation/swiftdata/filtering-and-sorting-persistent-data) | [中文](../../../apple-docs/zh/swiftdata/filtering-and-sorting-persistent-data.md) | 已翻译 |
 | Hashable 实现 | Hashable Implementations | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/persistentmodel/hashable-implementations.md) · [网页](https://developer.apple.com/documentation/swiftdata/persistentmodel/hashable-implementations) | [中文](../../../apple-docs/zh/swiftdata/persistentmodel/hashable-implementations.md) | 已翻译 |
 | — | Internal symbols | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/persistentmodelinternal.md) · [网页](https://developer.apple.com/documentation/swiftdata/persistentmodelinternal) | — | 待翻译 |
 | — | Internal symbols | Apple · SwiftData | — | [英文](../../../apple-docs/en/swiftdata/schemacomponentsinternal.md) · [网页](https://developer.apple.com/documentation/swiftdata/schemacomponentsinternal) | — | 待翻译 |

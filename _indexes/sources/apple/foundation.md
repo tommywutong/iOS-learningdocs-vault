@@ -1,7 +1,7 @@
 # Apple · foundation · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -245,7 +245,7 @@
 | — | SignedNumeric Implementations | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/decimal/signednumeric-implementations.md) · [网页](https://developer.apple.com/documentation/foundation/decimal/signednumeric-implementations) | — | 待翻译 |
 | — | Spotlight | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/spotlight.md) · [网页](https://developer.apple.com/documentation/foundation/spotlight) | — | 待翻译 |
 | — | Stream Status Constants | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/stream_status_constants.md) · [网页](https://developer.apple.com/documentation/foundation/stream_status_constants) | — | 待翻译 |
-| — | Streams, Sockets, and Ports | Apple · Foundation | 网络与安全 | [英文](../../../apple-docs/en/foundation/streams-sockets-and-ports.md) · [网页](https://developer.apple.com/documentation/foundation/streams-sockets-and-ports) | — | 待翻译 |
+| 流、Socket 与端口 | Streams, Sockets, and Ports | Apple · Foundation | 网络与安全 | [英文](../../../apple-docs/en/foundation/streams-sockets-and-ports.md) · [网页](https://developer.apple.com/documentation/foundation/streams-sockets-and-ports) | [中文](../../../apple-docs/zh/foundation/streams-sockets-and-ports.md) | 已翻译 |
 | — | Strideable Implementations | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/decimal/strideable-implementations.md) · [网页](https://developer.apple.com/documentation/foundation/decimal/strideable-implementations) | — | 待翻译 |
 | Strideable 实现 | Strideable Implementations | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/date/strideable-implementations.md) · [网页](https://developer.apple.com/documentation/foundation/date/strideable-implementations) | [中文](../../../apple-docs/zh/foundation/date/strideable-implementations.md) | 已翻译 |
 | 字符串编码 | String Encodings | Apple · Foundation | — | [英文](../../../apple-docs/en/foundation/1497293-string-encodings.md) · [网页](https://developer.apple.com/documentation/foundation/1497293-string-encodings) | [中文](../../../apple-docs/zh/foundation/1497293-string-encodings.md) | 已翻译 |

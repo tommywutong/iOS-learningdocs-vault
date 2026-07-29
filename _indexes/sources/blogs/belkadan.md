@@ -1,7 +1,7 @@
 # Belkadan (Jordan Rose, 前 Swift 编译器工程师)
 
 > 状态：active；授权：Copyright 2012–2020 Jordan Rose → 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -44,7 +44,7 @@
 | — | Flexible PHP | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/flexible-php.md) · [网页](https://belkadan.com/blog/2007/03/Flexible-PHP/) | — | 待翻译 |
 | — | Freebies | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/freebies.md) · [网页](https://belkadan.com/blog/freebies) | — | 待翻译 |
 | — | Games | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/games.md) · [网页](https://belkadan.com/blog/tags/games) | — | 待翻译 |
-| — | Garbage Collectors and Stack Drawers | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 内存与 ARC、Swift 语言 | [英文](../../../blogs/en/belkadan/garbage-collectors-and-stack-drawers.md) · [网页](https://belkadan.com/blog/2009/06/Garbage-Collectors-and-Stack-Drawers/) | — | 待翻译 |
+| Garbage Collectors and Stack Drawers | Garbage Collectors and Stack Drawers | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 内存与 ARC、Swift 语言 | [英文](../../../blogs/en/belkadan/garbage-collectors-and-stack-drawers.md) · [网页](https://belkadan.com/blog/2009/06/Garbage-Collectors-and-Stack-Drawers/) | [中文](../../../blogs/zh/belkadan/garbage-collectors-and-stack-drawers.md) | 已翻译 |
 | — | gdba | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/gdba.md) · [网页](https://belkadan.com/blog/2011/06/Gdba/) | — | 待翻译 |
 | — | GenericToolbar and IB3 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/generictoolbar-and-ib3.md) · [网页](https://belkadan.com/blog/2007/12/GenericToolbar-and-IB3/) | — | 待翻译 |
 | — | GenericToolbar Icon | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/generictoolbar-icon.md) · [网页](https://belkadan.com/blog/2007/06/GenericToolbar-Icon/) | — | 待翻译 |
@@ -72,18 +72,18 @@
 | — | Many-to-Many Protocols | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/many-to-many-protocols.md) · [网页](https://belkadan.com/blog/2018/02/Many-to-Many-Protocols/) | — | 待翻译 |
 | March 2026 | March 2026 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/march-2026.md) · [网页](https://belkadan.com/blog/2026/03) | [中文](../../../blogs/zh/belkadan/march-2026.md) | 已翻译 |
 | — | Meta | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/meta.md) · [网页](https://belkadan.com/blog/tags/meta) | — | 待翻译 |
-| — | Misleading Metrics and UX Tradeoffs | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/misleading-metrics-and-ux-tradeoffs.md) · [网页](https://belkadan.com/blog/2018/04/Misleading-Metrics/) | — | 待翻译 |
+| Misleading Metrics and UX Tradeoffs | Misleading Metrics and UX Tradeoffs | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/misleading-metrics-and-ux-tradeoffs.md) · [网页](https://belkadan.com/blog/2018/04/Misleading-Metrics/) | [中文](../../../blogs/zh/belkadan/misleading-metrics-and-ux-tradeoffs.md) | 已翻译 |
 | — | Multiplayer Slipways | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/multiplayer-slipways.md) · [网页](https://belkadan.com/blog/2023/08/Multiplayer-Slipways/) | — | 待翻译 |
 | — | My Little (String) Optimization, Part 2 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 性能与调试、Swift 语言 | [英文](../../../blogs/en/belkadan/my-little-string-optimization-part-2.md) · [网页](https://belkadan.com/blog/2018/03/My-Little-String-Optimization-2/) | — | 待翻译 |
 | — | My Little Optimization: The Compiler Is Magic | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 性能与调试、启动、链接与二进制、Swift 语言 | [英文](../../../blogs/en/belkadan/my-little-optimization-the-compiler-is-magic.md) · [网页](https://belkadan.com/blog/2018/03/My-Little-Optimization/) | — | 待翻译 |
 | — | Negotiate Your Offers! | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/negotiate-your-offers.md) · [网页](https://belkadan.com/blog/2020/11/Negotiate-Your-Offers/) | — | 待翻译 |
 | — | NSNumber, CFNumber, and CFBoolean | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/nsnumber-cfnumber-and-cfboolean.md) · [网页](https://belkadan.com/blog/2008/01/NSNumber-CFNumber-and-CFBoolean/) | — | 待翻译 |
-| — | Objective-C | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/belkadan/objective-c.md) · [网页](https://belkadan.com/blog/tags/objective-c) | — | 待翻译 |
-| — | Objective-J and Objective-C | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/belkadan/objective-j-and-objective-c.md) · [网页](https://belkadan.com/blog/2008/09/Objective-J-and-Objective-C/) | — | 待翻译 |
+| Objective-C | Objective-C | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/belkadan/objective-c.md) · [网页](https://belkadan.com/blog/tags/objective-c) | [中文](../../../blogs/zh/belkadan/objective-c.md) | 已翻译 |
+| Objective-J and Objective-C | Objective-J and Objective-C | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/belkadan/objective-j-and-objective-c.md) · [网页](https://belkadan.com/blog/2008/09/Objective-J-and-Objective-C/) | [中文](../../../blogs/zh/belkadan/objective-j-and-objective-c.md) | 已翻译 |
 | — | Objective-Rust | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/objective-rust.md) · [网页](https://belkadan.com/blog/2020/08/Objective-Rust/) | — | 待翻译 |
 | — | Online Communication | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/online-communication.md) · [网页](https://belkadan.com/blog/2024/01/Online-Communication/) | — | 待翻译 |
 | — | Over-abstraction | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/over-abstraction.md) · [网页](https://belkadan.com/blog/2017/09/Over-abstraction/) | — | 待翻译 |
-| — | Performance Optimization: Why We Can't Use valueForKeyPath: | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 性能与调试、Swift 语言 | [英文](../../../blogs/en/belkadan/performance-optimization-why-we-can-t-use-valueforkeypath.md) · [网页](https://belkadan.com/blog/2007/10/Performance-Optimization-Why-We-Cannot-Use-valueForKeyPath/) | — | 待翻译 |
+| Performance Optimization: Why We Can't Use valueForKeyPath: | Performance Optimization: Why We Can't Use valueForKeyPath: | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 性能与调试、Swift 语言 | [英文](../../../blogs/en/belkadan/performance-optimization-why-we-can-t-use-valueforkeypath.md) · [网页](https://belkadan.com/blog/2007/10/Performance-Optimization-Why-We-Cannot-Use-valueForKeyPath/) | [中文](../../../blogs/zh/belkadan/performance-optimization-why-we-can-t-use-valueforkeypath.md) | 已翻译 |
 | — | Personal | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/personal.md) · [网页](https://belkadan.com/blog/personal) | — | 待翻译 |
 | — | Posts from 2007 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/posts-from-2007.md) · [网页](https://belkadan.com/blog/2007) | — | 待翻译 |
 | — | Posts from 2008 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/posts-from-2008.md) · [网页](https://belkadan.com/blog/2008) | — | 待翻译 |
@@ -106,7 +106,7 @@
 | — | Priorities | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/priorities.md) · [网页](https://belkadan.com/blog/2011/07/Priorities/) | — | 待翻译 |
 | — | Programming languages | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/programming-languages.md) · [网页](https://belkadan.com/blog/tags/programming-languages) | — | 待翻译 |
 | — | Pronoun Buttons | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/pronoun-buttons.md) · [网页](https://belkadan.com/blog/2016/06/Pronoun-Buttons/) | — | 待翻译 |
-| — | Protobuf Is Almost Streamable | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/protobuf-is-almost-streamable.md) · [网页](https://belkadan.com/blog/2023/12/Protobuf-Is-Almost-Streamable/) | — | 待翻译 |
+| Protobuf Is Almost Streamable | Protobuf Is Almost Streamable | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/protobuf-is-almost-streamable.md) · [网页](https://belkadan.com/blog/2023/12/Protobuf-Is-Almost-Streamable/) | [中文](../../../blogs/zh/belkadan/protobuf-is-almost-streamable.md) | 已翻译 |
 | — | quasiquarantine | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/quasiquarantine.md) · [网页](https://belkadan.com/blog/2019/12/Quasiquarantine/) | — | 待翻译 |
 | — | Queue, Queeu, Quuee | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/queue-queeu-quuee.md) · [网页](https://belkadan.com/blog/2019/09/Queue-Queeu-Quuee/) | — | 待翻译 |
 | — | Quick Look in TextMate | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/quick-look-in-textmate.md) · [网页](https://belkadan.com/blog/2011/06/Quick-Look-in-TextMate/) | — | 待翻译 |
@@ -162,7 +162,7 @@
 | — | The Symbolism of Pretty URLS | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/the-symbolism-of-pretty-urls.md) · [网页](https://belkadan.com/blog/2007/04/Symbolism-of-Pretty-URLs/) | — | 待翻译 |
 | — | The Two Faces of Codable/Serde | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/the-two-faces-of-codable-serde.md) · [网页](https://belkadan.com/blog/2022/11/Codable-Serde/) | — | 待翻译 |
 | — | There's No Such Thing As "Implicitly Atomic" | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 并发与线程、Swift 语言 | [英文](../../../blogs/en/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) · [网页](https://belkadan.com/blog/2023/10/Implicity-Atomic/) | — | 待翻译 |
-| — | This is the site that will be displayed if mod_rewrite isn't enabled | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/https-and-name-based-virtual-hosting.md) · [网页](https://belkadan.com/blog/2008/08/HTTPS-and-Name-based-Virtual-Hosting/) | — | 待翻译 |
+| 如果未启用 mod_rewrite，将显示此站点 | This is the site that will be displayed if mod_rewrite isn't enabled | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/https-and-name-based-virtual-hosting.md) · [网页](https://belkadan.com/blog/2008/08/HTTPS-and-Name-based-Virtual-Hosting/) | [中文](../../../blogs/zh/belkadan/https-and-name-based-virtual-hosting.md) | 已翻译 |
 | — | Trunic | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/trunic.md) · [网页](https://belkadan.com/blog/2024/07/Trunic/) | — | 待翻译 |
 | — | Type Erasure in Rust | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/type-erasure-in-rust.md) · [网页](https://belkadan.com/blog/2023/10/Type-Erasure-in-Rust/) | — | 待翻译 |
 | — | Unix | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | Swift 语言 | [英文](../../../blogs/en/belkadan/unix.md) · [网页](https://belkadan.com/blog/tags/unix) | — | 待翻译 |

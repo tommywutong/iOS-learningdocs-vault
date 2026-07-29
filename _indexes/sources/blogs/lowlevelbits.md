@@ -1,7 +1,7 @@
 # Low Level Bits (Alex Denisov)
 
 > 状态：active；授权：© 2014-2025 → 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 | — | Bottom-up CMake introduction | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/bottom-up-cmake-introduction-low-level-bits.md) · [网页](https://lowlevelbits.org/bottom-up-cmake-introduction/) | — | 待翻译 |
 | — | Building an LLVM-based tool. Lessons learned | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/building-an-llvm-based-tool-lessons-learned-low-level-bits.md) · [网页](https://lowlevelbits.org/building-an-llvm-based-tool.-lessons-learned/) | — | 待翻译 |
 | — | Building LLVM plugins with Bazel | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/building-llvm-plugins-with-bazel-low-level-bits.md) · [网页](https://lowlevelbits.org/building-llvm-plugins-with-bazel/) | — | 待翻译 |
-| — | Circular Containers in Objective-C | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md) · [网页](https://lowlevelbits.org/circular-containers-in-objective-c/) | — | 待翻译 |
+| Objective-C 中的循环容器 | Circular Containers in Objective-C | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md) · [网页](https://lowlevelbits.org/circular-containers-in-objective-c/) | [中文](../../../blogs/zh/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md) | 已翻译 |
 | — | Compiling Ruby. Part 0: Motivation | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/compiling-ruby-part-0-motivation-low-level-bits.md) · [网页](https://lowlevelbits.org/compiling-ruby-part-0/) | — | 待翻译 |
 | — | Compiling Ruby. Part 1: Compilers vs. Interpreters | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/compiling-ruby-part-1-compilers-vs-interpreters-low-level-bits.md) · [网页](https://lowlevelbits.org/compiling-ruby-part-1/) | — | 待翻译 |
 | — | Compiling Ruby. Part 2: RiteVM | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/compiling-ruby-part-2-ritevm-low-level-bits.md) · [网页](https://lowlevelbits.org/compiling-ruby-part-2/) | — | 待翻译 |
@@ -18,7 +18,7 @@
 | — | Compiling Ruby. Part 4: progress update | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/compiling-ruby-part-4-progress-update-low-level-bits.md) · [网页](https://lowlevelbits.org/compiling-ruby-part-4/) | — | 待翻译 |
 | — | Compiling Ruby. Part 5: exceptions | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/compiling-ruby-part-5-exceptions-low-level-bits.md) · [网页](https://lowlevelbits.org/compiling-ruby-part-5/) | — | 待翻译 |
 | — | Components: taking a step back from Dependency Management | Low Level Bits (Alex Denisov) | 架构、测试与工程实践 | [英文](../../../blogs/en/lowlevelbits/components-taking-a-step-back-from-dependency-management-low-level-bits.md) · [网页](https://lowlevelbits.org/components-taking-a-step-back-from-dependency-management/) | — | 待翻译 |
-| — | Crash-free code with Fuzzer | Low Level Bits (Alex Denisov) | 性能与调试 | [英文](../../../blogs/en/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md) · [网页](https://lowlevelbits.org/crash-free-code-with-fuzzer/) | — | 待翻译 |
+| 使用 Fuzzer 编写无崩溃代码（Crash-free code with Fuzzer） | Crash-free code with Fuzzer | Low Level Bits (Alex Denisov) | 性能与调试 | [英文](../../../blogs/en/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md) · [网页](https://lowlevelbits.org/crash-free-code-with-fuzzer/) | [中文](../../../blogs/zh/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md) | 已翻译 |
 | 调试 dyld | Debugging Dyld | Low Level Bits (Alex Denisov) | 性能与调试、启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/debugging-dyld-low-level-bits.md) · [网页](https://lowlevelbits.org/debugging-dyld/) | [中文](../../../blogs/zh/lowlevelbits/debugging-dyld-low-level-bits.md) | 已翻译 |
 | — | Different ways to build LLVM/MLIR tools | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/different-ways-to-build-llvm-mlir-tools-low-level-bits.md) · [网页](https://lowlevelbits.org/different-ways-to-build-llvm/mlir-tools/) | — | 待翻译 |
 | — | Exploring LLVM Bitcode interactively | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/exploring-llvm-bitcode-interactively-low-level-bits.md) · [网页](https://lowlevelbits.org/exploring-llvm-bitcode-interactively/) | — | 待翻译 |
@@ -43,4 +43,4 @@
 | — | System Under Test: GNU Make | Low Level Bits (Alex Denisov) | 架构、测试与工程实践 | [英文](../../../blogs/en/lowlevelbits/system-under-test-gnu-make-low-level-bits.md) · [网页](https://lowlevelbits.org/system-under-test-gnu-make/) | — | 待翻译 |
 | — | System Under Test: LLVM | Low Level Bits (Alex Denisov) | 架构、测试与工程实践 | [英文](../../../blogs/en/lowlevelbits/system-under-test-llvm-low-level-bits.md) · [网页](https://lowlevelbits.org/system-under-test-llvm/) | — | 待翻译 |
 | — | Type Equality in LLVM | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/type-equality-in-llvm-low-level-bits.md) · [网页](https://lowlevelbits.org/type-equality-in-llvm/) | — | 待翻译 |
-| — | YAML-based Configuration for ObjC Projects | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) · [网页](https://lowlevelbits.org/yaml-based-configuration-for-objc-projects/) | — | 待翻译 |
+| 基于 YAML 的 ObjC 项目配置方法 | YAML-based Configuration for ObjC Projects | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) · [网页](https://lowlevelbits.org/yaml-based-configuration-for-objc-projects/) | [中文](../../../blogs/zh/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) | 已翻译 |

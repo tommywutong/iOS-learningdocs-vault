@@ -1,7 +1,7 @@
 # Apple · coredata · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -17,7 +17,7 @@
 | Core Data | Core Data | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata.md) · [网页](https://developer.apple.com/documentation/coredata) | [中文](../../../apple-docs/zh/coredata.md) | 已翻译 |
 | — | Core Data Constants | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/core-data-constants.md) · [网页](https://developer.apple.com/documentation/coredata/core-data-constants) | — | 待翻译 |
 | — | Core Data model | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/core-data-model.md) · [网页](https://developer.apple.com/documentation/coredata/core-data-model) | — | 待翻译 |
-| — | Core Data stack | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/core-data-stack.md) · [网页](https://developer.apple.com/documentation/coredata/core-data-stack) | — | 待翻译 |
+| Core Data 栈 | Core Data stack | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/core-data-stack.md) · [网页](https://developer.apple.com/documentation/coredata/core-data-stack) | [中文](../../../apple-docs/zh/coredata/core-data-stack.md) | 已翻译 |
 | — | Creating a Core Data model | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/creating-a-core-data-model.md) · [网页](https://developer.apple.com/documentation/coredata/creating-a-core-data-model) | — | 待翻译 |
 | — | Creating a Core Data Model for CloudKit | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/creating-a-core-data-model-for-cloudkit.md) · [网页](https://developer.apple.com/documentation/coredata/creating-a-core-data-model-for-cloudkit) | — | 待翻译 |
 | — | Deprecated Symbols | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/nspersistentstorecoordinator-deprecated-symbols.md) · [网页](https://developer.apple.com/documentation/coredata/nspersistentstorecoordinator-deprecated-symbols) | — | 待翻译 |
@@ -36,11 +36,11 @@
 | — | Mirroring a Core Data store with CloudKit | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/mirroring-a-core-data-store-with-cloudkit.md) · [网页](https://developer.apple.com/documentation/coredata/mirroring-a-core-data-store-with-cloudkit) | — | 待翻译 |
 | — | Modeling data | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/modeling-data.md) · [网页](https://developer.apple.com/documentation/coredata/modeling-data) | — | 待翻译 |
 | — | Notification keys | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/notification-keys.md) · [网页](https://developer.apple.com/documentation/coredata/notification-keys) | — | 待翻译 |
-| — | Persistent history | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/persistent-history.md) · [网页](https://developer.apple.com/documentation/coredata/persistent-history) | — | 待翻译 |
-| — | Persistent Store Types | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/persistent-store-types.md) · [网页](https://developer.apple.com/documentation/coredata/persistent-store-types) | — | 待翻译 |
+| 持久化历史记录 | Persistent history | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/persistent-history.md) · [网页](https://developer.apple.com/documentation/coredata/persistent-history) | [中文](../../../apple-docs/zh/coredata/persistent-history.md) | 已翻译 |
+| 持久化存储类型 | Persistent Store Types | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/persistent-store-types.md) · [网页](https://developer.apple.com/documentation/coredata/persistent-store-types) | [中文](../../../apple-docs/zh/coredata/persistent-store-types.md) | 已翻译 |
 | — | Reading CloudKit Records for Core Data | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/reading-cloudkit-records-for-core-data.md) · [网页](https://developer.apple.com/documentation/coredata/reading-cloudkit-records-for-core-data) | — | 待翻译 |
-| — | Setting up a Core Data stack | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/setting-up-a-core-data-stack.md) · [网页](https://developer.apple.com/documentation/coredata/setting-up-a-core-data-stack) | — | 待翻译 |
-| — | Setting up a Core Data stack manually | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/setting-up-a-core-data-stack-manually.md) · [网页](https://developer.apple.com/documentation/coredata/setting-up-a-core-data-stack-manually) | — | 待翻译 |
+| 配置 Core Data 栈 | Setting up a Core Data stack | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/setting-up-a-core-data-stack.md) · [网页](https://developer.apple.com/documentation/coredata/setting-up-a-core-data-stack) | [中文](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack.md) | 已翻译 |
+| 手动设置 Core Data 堆栈 | Setting up a Core Data stack manually | Apple · Core Data | 内存与 ARC、数据与持久化 | [英文](../../../apple-docs/en/coredata/setting-up-a-core-data-stack-manually.md) · [网页](https://developer.apple.com/documentation/coredata/setting-up-a-core-data-stack-manually) | [中文](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack-manually.md) | 已翻译 |
 | — | Setting Up Core Data with CloudKit | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/setting-up-core-data-with-cloudkit.md) · [网页](https://developer.apple.com/documentation/coredata/setting-up-core-data-with-cloudkit) | — | 待翻译 |
 | — | Sharing Core Data objects between iCloud users | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/sharing-core-data-objects-between-icloud-users.md) · [网页](https://developer.apple.com/documentation/coredata/sharing-core-data-objects-between-icloud-users) | — | 待翻译 |
 | — | Showcase App Data in Spotlight | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/showcase-app-data-in-spotlight.md) · [网页](https://developer.apple.com/documentation/coredata/showcase-app-data-in-spotlight) | — | 待翻译 |
@@ -50,6 +50,6 @@
 | — | Store versions | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/store-versions.md) · [网页](https://developer.apple.com/documentation/coredata/store-versions) | — | 待翻译 |
 | — | Synchronizing a local store to the cloud | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/synchronizing-a-local-store-to-the-cloud.md) · [网页](https://developer.apple.com/documentation/coredata/synchronizing-a-local-store-to-the-cloud) | — | 待翻译 |
 | — | Syncing a Core Data Store with CloudKit | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/syncing-a-core-data-store-with-cloudkit.md) · [网页](https://developer.apple.com/documentation/coredata/syncing-a-core-data-store-with-cloudkit) | — | 待翻译 |
-| — | Using Core Data in the background | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/using-core-data-in-the-background.md) · [网页](https://developer.apple.com/documentation/coredata/using-core-data-in-the-background) | — | 待翻译 |
+| 在后台使用 Core Data | Using Core Data in the background | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/using-core-data-in-the-background.md) · [网页](https://developer.apple.com/documentation/coredata/using-core-data-in-the-background) | [中文](../../../apple-docs/zh/coredata/using-core-data-in-the-background.md) | 已翻译 |
 | — | Validation Error Codes | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/error-codes.md) · [网页](https://developer.apple.com/documentation/coredata/error-codes) | — | 待翻译 |
 | — | Validation error codes | Apple · Core Data | 数据与持久化 | [英文](../../../apple-docs/en/coredata/1535452-validation-error-codes.md) · [网页](https://developer.apple.com/documentation/coredata/1535452-validation-error-codes) | — | 待翻译 |

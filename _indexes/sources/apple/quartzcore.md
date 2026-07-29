@@ -1,7 +1,7 @@
 # Apple · quartzcore · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -23,7 +23,7 @@
 | — | kCAFillModeFrozen | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/kcafillmodefrozen.md) · [网页](https://developer.apple.com/documentation/quartzcore/kcafillmodefrozen) | — | 待翻译 |
 | — | Line Cap Values | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/line-cap-values.md) · [网页](https://developer.apple.com/documentation/quartzcore/line-cap-values) | — | 待翻译 |
 | — | Line Join Values | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/line-join-values.md) · [网页](https://developer.apple.com/documentation/quartzcore/line-join-values) | — | 待翻译 |
-| — | Optimizing iPhone and iPad apps to support ProMotion displays | Apple · Core Animation | 性能与调试、UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays.md) · [网页](https://developer.apple.com/documentation/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays) | — | 待翻译 |
+| 优化 iPhone 和 iPad App 以支持 ProMotion 显示屏 | Optimizing iPhone and iPad apps to support ProMotion displays | Apple · Core Animation | 性能与调试、UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays.md) · [网页](https://developer.apple.com/documentation/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays) | [中文](../../../apple-docs/zh/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays.md) | 已翻译 |
 | — | Predefined Timing Functions | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/predefined-timing-functions.md) · [网页](https://developer.apple.com/documentation/quartzcore/predefined-timing-functions) | — | 待翻译 |
 | — | QuartzCore Functions | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/quartzcore-functions.md) · [网页](https://developer.apple.com/documentation/quartzcore/quartzcore-functions) | — | 待翻译 |
 | — | Rotate Value Functions | Apple · Core Animation | UI 与渲染 | [英文](../../../apple-docs/en/quartzcore/rotate-value-functions.md) · [网页](https://developer.apple.com/documentation/quartzcore/rotate-value-functions) | — | 待翻译 |

@@ -1,0 +1,4530 @@
+{
+  "scope": "summer-related-b",
+  "approved_on": "2026-07-29",
+  "plan": "meta/SUMMER_RELATED_B_PLAN.md",
+  "file_count": 407,
+  "chars": 5625998,
+  "smoke_files": [
+    "apple-docs/en/uikit/about-the-app-launch-sequence.md",
+    "wwdc/en/wwdc2023/10248-analyze-hangs-with-instruments.md",
+    "blogs/en/mikeash/gcd-is-not-blocks-blocks-are-not-gcd.md"
+  ],
+  "files": [
+    {
+      "en": "apple-docs/en/coredata/core-data-stack.md",
+      "zh": "apple-docs/zh/coredata/core-data-stack.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Core Data stack",
+      "themes": [
+        "memory-runtime-blocks",
+        "data-persistence"
+      ],
+      "chars": 5031
+    },
+    {
+      "en": "apple-docs/en/coredata/setting-up-a-core-data-stack-manually.md",
+      "zh": "apple-docs/zh/coredata/setting-up-a-core-data-stack-manually.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Setting up a Core Data stack manually",
+      "themes": [
+        "memory-runtime-blocks",
+        "data-persistence"
+      ],
+      "chars": 4599
+    },
+    {
+      "en": "apple-docs/en/coredata/setting-up-a-core-data-stack.md",
+      "zh": "apple-docs/zh/coredata/setting-up-a-core-data-stack.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Setting up a Core Data stack",
+      "themes": [
+        "memory-runtime-blocks",
+        "data-persistence"
+      ],
+      "chars": 6115
+    },
+    {
+      "en": "apple-docs/en/metal/adjusting-for-gpu-memory-bandwidth-tradeoffs.md",
+      "zh": "apple-docs/zh/metal/adjusting-for-gpu-memory-bandwidth-tradeoffs.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Adjusting for GPU memory bandwidth tradeoffs",
+      "themes": [
+        "memory-runtime-blocks",
+        "rendering-performance"
+      ],
+      "chars": 10576
+    },
+    {
+      "en": "apple-docs/en/metal/assigning-memory-to-sparse-textures.md",
+      "zh": "apple-docs/zh/metal/assigning-memory-to-sparse-textures.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Assigning memory to sparse textures",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 7367
+    },
+    {
+      "en": "apple-docs/en/metal/managing-sparse-texture-memory.md",
+      "zh": "apple-docs/zh/metal/managing-sparse-texture-memory.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Managing sparse texture memory",
+      "themes": [
+        "memory-runtime-blocks",
+        "rendering-performance"
+      ],
+      "chars": 4282
+    },
+    {
+      "en": "apple-docs/en/metal/memory-heaps.md",
+      "zh": "apple-docs/zh/metal/memory-heaps.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Memory heaps",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3119
+    },
+    {
+      "en": "apple-docs/en/metal/reducing-the-memory-footprint-of-metal-apps.md",
+      "zh": "apple-docs/zh/metal/reducing-the-memory-footprint-of-metal-apps.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Reducing the memory footprint of Metal apps",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6618
+    },
+    {
+      "en": "apple-docs/en/security/hardened-runtime.md",
+      "zh": "apple-docs/zh/security/hardened-runtime.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Hardened Runtime",
+      "themes": [
+        "memory-runtime-blocks",
+        "network-security"
+      ],
+      "chars": 6209
+    },
+    {
+      "en": "apple-docs/en/security/preparing-your-app-to-work-with-pointer-authentication.md",
+      "zh": "apple-docs/zh/security/preparing-your-app-to-work-with-pointer-authentication.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Preparing your app to work with pointer authentication",
+      "themes": [
+        "memory-runtime-blocks",
+        "network-security"
+      ],
+      "chars": 5919
+    },
+    {
+      "en": "apple-docs/en/swift/calling-functions-with-pointer-parameters.md",
+      "zh": "apple-docs/zh/swift/calling-functions-with-pointer-parameters.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Calling Functions With Pointer Parameters",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6605
+    },
+    {
+      "en": "apple-docs/en/swift/calling-objective-c-apis-asynchronously.md",
+      "zh": "apple-docs/zh/swift/calling-objective-c-apis-asynchronously.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Calling Objective-C APIs Asynchronously",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6778
+    },
+    {
+      "en": "apple-docs/en/swift/designating-nullability-in-objective-c-apis.md",
+      "zh": "apple-docs/zh/swift/designating-nullability-in-objective-c-apis.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Designating Nullability in Objective-C APIs",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5953
+    },
+    {
+      "en": "apple-docs/en/swift/imported-c-and-objective-c-apis.md",
+      "zh": "apple-docs/zh/swift/imported-c-and-objective-c-apis.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Imported C and Objective-C APIs",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3720
+    },
+    {
+      "en": "apple-docs/en/swift/importing-objective-c-into-swift.md",
+      "zh": "apple-docs/zh/swift/importing-objective-c-into-swift.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Importing Objective-C into Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4223
+    },
+    {
+      "en": "apple-docs/en/swift/importing-swift-into-objective-c.md",
+      "zh": "apple-docs/zh/swift/importing-swift-into-objective-c.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Importing Swift into Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5435
+    },
+    {
+      "en": "apple-docs/en/swift/improving-objective-c-api-declarations-for-swift.md",
+      "zh": "apple-docs/zh/swift/improving-objective-c-api-declarations-for-swift.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Improving Objective-C API Declarations for Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4866
+    },
+    {
+      "en": "apple-docs/en/swift/making-objective-c-apis-unavailable-in-swift.md",
+      "zh": "apple-docs/zh/swift/making-objective-c-apis-unavailable-in-swift.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Making Objective-C APIs Unavailable in Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3308
+    },
+    {
+      "en": "apple-docs/en/swift/using-objective-c-runtime-features-in-swift.md",
+      "zh": "apple-docs/zh/swift/using-objective-c-runtime-features-in-swift.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Using Objective-C Runtime Features in Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6186
+    },
+    {
+      "en": "blogs/en/belkadan/garbage-collectors-and-stack-drawers.md",
+      "zh": "blogs/zh/belkadan/garbage-collectors-and-stack-drawers.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Garbage Collectors and Stack Drawers",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5776
+    },
+    {
+      "en": "blogs/en/belkadan/objective-c.md",
+      "zh": "blogs/zh/belkadan/objective-c.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4193
+    },
+    {
+      "en": "blogs/en/belkadan/objective-j-and-objective-c.md",
+      "zh": "blogs/zh/belkadan/objective-j-and-objective-c.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Objective-J and Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4484
+    },
+    {
+      "en": "blogs/en/cocoawithlove/8-confusing-objective-c-warnings-and-errors-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/8-confusing-objective-c-warnings-and-errors-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "8 Confusing Objective-C Warnings and Errors | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10782
+    },
+    {
+      "en": "blogs/en/cocoawithlove/a-big-weakness-in-objective-c-s-weak-typing-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/a-big-weakness-in-objective-c-s-weak-typing-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "A big weakness in Objective-C's weak typing | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11792
+    },
+    {
+      "en": "blogs/en/cocoawithlove/adapter-interfaces-in-objective-c-using-categories-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/adapter-interfaces-in-objective-c-using-categories-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Adapter interfaces in Objective-C, using categories. | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5568
+    },
+    {
+      "en": "blogs/en/cocoawithlove/alternative-objective-c-object-allocation-for-large-arrays-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/alternative-objective-c-object-allocation-for-large-arrays-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Alternative Objective-C object allocation for large arrays | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10631
+    },
+    {
+      "en": "blogs/en/cocoawithlove/assign-retain-copy-pitfalls-in-obj-c-property-accessors-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/assign-retain-copy-pitfalls-in-obj-c-property-accessors-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Assign, retain, copy: pitfalls in Obj-C property accessors | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11874
+    },
+    {
+      "en": "blogs/en/cocoawithlove/breadth-first-traversal-of-a-graph-of-objective-c-objects-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/breadth-first-traversal-of-a-graph-of-objective-c-objects-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Breadth-first traversal of a graph of Objective-C objects | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9285
+    },
+    {
+      "en": "blogs/en/cocoawithlove/breaking-swift-with-reference-counted-structs-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/breaking-swift-with-reference-counted-structs-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Breaking Swift with reference counted structs | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11665
+    },
+    {
+      "en": "blogs/en/cocoawithlove/debugging-tips-for-objective-c-programming-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/debugging-tips-for-objective-c-programming-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Debugging tips for Objective-C programming | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks",
+        "debugging-observability"
+      ],
+      "chars": 10159
+    },
+    {
+      "en": "blogs/en/cocoawithlove/getting-the-subclasses-of-an-objective-c-class-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/getting-the-subclasses-of-an-objective-c-class-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Getting the subclasses of an Objective-C class | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9462
+    },
+    {
+      "en": "blogs/en/cocoawithlove/in-defense-of-objective-c-2-0-properties-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/in-defense-of-objective-c-2-0-properties-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "In defense of Objective-C 2.0 Properties | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 7383
+    },
+    {
+      "en": "blogs/en/cocoawithlove/method-invocation-formatting-styles-in-objective-c-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/method-invocation-formatting-styles-in-objective-c-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Method invocation formatting styles in Objective-C | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9690
+    },
+    {
+      "en": "blogs/en/cocoawithlove/method-names-in-objective-c-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/method-names-in-objective-c-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Method names in Objective-C | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 18820
+    },
+    {
+      "en": "blogs/en/cocoawithlove/mutexes-and-closure-capture-in-swift-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/mutexes-and-closure-capture-in-swift-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Mutexes and closure capture in Swift | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks",
+        "concurrency"
+      ],
+      "chars": 17161
+    },
+    {
+      "en": "blogs/en/cocoawithlove/objective-c-2-0-fast-enumeration-clarifications-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/objective-c-2-0-fast-enumeration-clarifications-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Objective-C 2.0: Fast enumeration clarifications | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5892
+    },
+    {
+      "en": "blogs/en/cocoawithlove/objective-c-s-niche-why-it-survives-in-a-world-of-alternatives-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/objective-c-s-niche-why-it-survives-in-a-world-of-alternatives-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Objective-C's niche: why it survives in a world of alternatives | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10900
+    },
+    {
+      "en": "blogs/en/cocoawithlove/options-for-porting-objective-c-cocoa-apps-to-windows-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/options-for-porting-objective-c-cocoa-apps-to-windows-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Options for porting Objective-C/Cocoa apps to Windows | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11759
+    },
+    {
+      "en": "blogs/en/cocoawithlove/rules-to-avoid-retain-cycles-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/rules-to-avoid-retain-cycles-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Rules to avoid retain cycles | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11963
+    },
+    {
+      "en": "blogs/en/cocoawithlove/speed-test-nsmanagedobject-objc-2-0-accessors-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/speed-test-nsmanagedobject-objc-2-0-accessors-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Speed test: NSManagedObject ObjC-2.0 accessors | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4591
+    },
+    {
+      "en": "blogs/en/cocoawithlove/streamtome-iphone-app-released-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/streamtome-iphone-app-released-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "StreamToMe iPhone App Released | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 2204
+    },
+    {
+      "en": "blogs/en/cocoawithlove/testing-if-an-arbitrary-pointer-is-a-valid-object-pointer-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/testing-if-an-arbitrary-pointer-is-a-valid-object-pointer-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Testing if an arbitrary pointer is a valid object pointer | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8763
+    },
+    {
+      "en": "blogs/en/cocoawithlove/the-ugly-side-of-blocks-explicit-declarations-and-casting-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/the-ugly-side-of-blocks-explicit-declarations-and-casting-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "The ugly side of blocks: explicit declarations and casting. | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9712
+    },
+    {
+      "en": "blogs/en/cocoawithlove/tracking-tasks-with-stack-traces-in-swift-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/tracking-tasks-with-stack-traces-in-swift-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Tracking tasks with stack traces in Swift | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 18234
+    },
+    {
+      "en": "blogs/en/cocoawithlove/type-punning-isn-t-funny-using-pointers-to-recast-in-c-is-bad-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/type-punning-isn-t-funny-using-pointers-to-recast-in-c-is-bad-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Type punning isn't funny: Using pointers to recast in C is bad. | Cocoa with Love",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6142
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-the-memory-leak-an-xcode-detective-story.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-the-memory-leak-an-xcode-detective-story.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "The Memory Leak: An Xcode Detective Story",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 18011
+    },
+    {
+      "en": "blogs/en/fbeng/automatic-memory-leak-detection-on-ios.md",
+      "zh": "blogs/zh/fbeng/automatic-memory-leak-detection-on-ios.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Automatic memory leak detection on iOS",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 12395
+    },
+    {
+      "en": "blogs/en/jessesquires/automate-merging-release-branches-into-your-main-branch-with-github-actions.md",
+      "zh": "blogs/zh/jessesquires/automate-merging-release-branches-into-your-main-branch-with-github-actions.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Automate merging release branches into your main branch with GitHub Actions",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4663
+    },
+    {
+      "en": "blogs/en/jessesquires/avoiding-the-overuse-of-objc-in-swift.md",
+      "zh": "blogs/zh/jessesquires/avoiding-the-overuse-of-objc-in-swift.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Avoiding the overuse of @objc in Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6994
+    },
+    {
+      "en": "blogs/en/jessesquires/comparing-release-branch-strategies.md",
+      "zh": "blogs/zh/jessesquires/comparing-release-branch-strategies.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Comparing release branch strategies",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8993
+    },
+    {
+      "en": "blogs/en/jessesquires/github-tip-watching-releases.md",
+      "zh": "blogs/zh/jessesquires/github-tip-watching-releases.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "GitHub Tip: watching releases",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 2735
+    },
+    {
+      "en": "blogs/en/jessesquires/mac-app-tests-fail-with-hardened-runtime-enabled.md",
+      "zh": "blogs/zh/jessesquires/mac-app-tests-fail-with-hardened-runtime-enabled.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Mac app tests fail with hardened runtime enabled",
+      "themes": [
+        "memory-runtime-blocks",
+        "network-security"
+      ],
+      "chars": 6912
+    },
+    {
+      "en": "blogs/en/jessesquires/nimble-10-0-released.md",
+      "zh": "blogs/zh/jessesquires/nimble-10-0-released.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Nimble 10.0 released",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3318
+    },
+    {
+      "en": "blogs/en/jessesquires/protocol-composition-in-swift-and-objective-c.md",
+      "zh": "blogs/zh/jessesquires/protocol-composition-in-swift-and-objective-c.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Protocol composition in Swift and Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 13006
+    },
+    {
+      "en": "blogs/en/jessesquires/quick-5-0-released.md",
+      "zh": "blogs/zh/jessesquires/quick-5-0-released.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Quick 5.0 released",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5571
+    },
+    {
+      "en": "blogs/en/jessesquires/quickly-switching-between-xcodes.md",
+      "zh": "blogs/zh/jessesquires/quickly-switching-between-xcodes.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "switch between release and beta xcodes",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 2332
+    },
+    {
+      "en": "blogs/en/jessesquires/swift-concurrency-hack-for-passing-non-sendable-closures.md",
+      "zh": "blogs/zh/jessesquires/swift-concurrency-hack-for-passing-non-sendable-closures.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Swift concurrency hack for passing non-sendable closures",
+      "themes": [
+        "memory-runtime-blocks",
+        "concurrency"
+      ],
+      "chars": 10810
+    },
+    {
+      "en": "blogs/en/jessesquires/what-type-is-self-in-a-swift-self-executing-anonymous-closure-used-to-initialize-a-stored-.md",
+      "zh": "blogs/zh/jessesquires/what-type-is-self-in-a-swift-self-executing-anonymous-closure-used-to-initialize-a-stored-.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "What type is self in a Swift self-executing anonymous closure used to initialize a stored property?",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 15679
+    },
+    {
+      "en": "blogs/en/jessesquires/why-optional-closures-in-swift-are-escaping.md",
+      "zh": "blogs/zh/jessesquires/why-optional-closures-in-swift-are-escaping.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Why optional closures in Swift are escaping",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3276
+    },
+    {
+      "en": "blogs/en/jessesquires/why-swift-closures-are-not-equatable.md",
+      "zh": "blogs/zh/jessesquires/why-swift-closures-are-not-equatable.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Why Swift closures are not Equatable",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3918
+    },
+    {
+      "en": "blogs/en/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md",
+      "zh": "blogs/zh/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md",
+      "source": "blogs",
+      "source_key": "lowlevelbits",
+      "title": "Circular Containers in Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3488
+    },
+    {
+      "en": "blogs/en/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md",
+      "zh": "blogs/zh/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md",
+      "source": "blogs",
+      "source_key": "lowlevelbits",
+      "title": "YAML-based Configuration for ObjC Projects",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5865
+    },
+    {
+      "en": "blogs/en/maskray/all-about-leaksanitizer.md",
+      "zh": "blogs/zh/maskray/all-about-leaksanitizer.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "All about LeakSanitizer",
+      "themes": [
+        "memory-runtime-blocks",
+        "debugging-observability"
+      ],
+      "chars": 18748
+    },
+    {
+      "en": "blogs/en/maskray/ccls-0-20181225-release.md",
+      "zh": "blogs/zh/maskray/ccls-0-20181225-release.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "ccls 0.20181225 release",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4658
+    },
+    {
+      "en": "blogs/en/maskray/linker-notes-on-power-isa.md",
+      "zh": "blogs/zh/maskray/linker-notes-on-power-isa.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker notes on Power ISA",
+      "themes": [
+        "memory-runtime-blocks",
+        "build-link-launch"
+      ],
+      "chars": 30191
+    },
+    {
+      "en": "blogs/en/maskray/optimizing-llvm-s-bump-allocator.md",
+      "zh": "blogs/zh/maskray/optimizing-llvm-s-bump-allocator.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Optimizing LLVM's bump allocator",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9248
+    },
+    {
+      "en": "blogs/en/maskray/stack-unwinding.md",
+      "zh": "blogs/zh/maskray/stack-unwinding.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Stack unwinding",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 62256
+    },
+    {
+      "en": "blogs/en/maskray/stack-walking-space-and-time-trade-offs.md",
+      "zh": "blogs/zh/maskray/stack-walking-space-and-time-trade-offs.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Stack walking: space and time trade-offs",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 23910
+    },
+    {
+      "en": "blogs/en/maskray/weak-symbol.md",
+      "zh": "blogs/zh/maskray/weak-symbol.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Weak symbol",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 26536
+    },
+    {
+      "en": "blogs/en/mikeash/an-objective-c-continuations-library.md",
+      "zh": "blogs/zh/mikeash/an-objective-c-continuations-library.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "An Objective-C Continuations Library",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 1853
+    },
+    {
+      "en": "blogs/en/mikeash/autorelease-is-fast.md",
+      "zh": "blogs/zh/mikeash/autorelease-is-fast.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Autorelease is Fast",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4007
+    },
+    {
+      "en": "blogs/en/mikeash/block-proxying.md",
+      "zh": "blogs/zh/mikeash/block-proxying.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "block proxying",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 14088
+    },
+    {
+      "en": "blogs/en/mikeash/blocks.md",
+      "zh": "blogs/zh/mikeash/blocks.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "blocks",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 23880
+    },
+    {
+      "en": "blogs/en/mikeash/converting-blocks-into-function-pointers.md",
+      "zh": "blogs/zh/mikeash/converting-blocks-into-function-pointers.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "converting blocks into function pointers",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 26211
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-04-24-code-generation-with-llvm-part-2-fast-objective-c-forwarding.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-04-24-code-generation-with-llvm-part-2-fast-objective-c-forwarding.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-04-24: Code Generation with LLVM, Part 2: Fast Objective-C Forwarding",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 28854
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-06-19-mac-os-x-process-memory-statistics.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-06-19-mac-os-x-process-memory-statistics.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-06-19: Mac OS X Process Memory Statistics",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8694
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-10-16-creating-a-blocks-based-object-system.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-10-16-creating-a-blocks-based-object-system.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-10-16: Creating a Blocks-Based Object System",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 19400
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-10-30-generators-in-objective-c.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-10-30-generators-in-objective-c.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-10-30: Generators in Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 28670
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2010-04-09-comparison-of-objective-c-enumeration-techniques.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2010-04-09-comparison-of-objective-c-enumeration-techniques.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2010-04-09: Comparison of Objective-C Enumeration Techniques",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10192
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2010-11-19: Creating Classes at Runtime for Fun and Profit",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 15689
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2010-12-17-custom-object-allocators-in-objective-c.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2010-12-17-custom-object-allocators-in-objective-c.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2010-12-17: Custom Object Allocators in Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 12459
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2011-06-03-objective-c-blocks-vs-c-0x-lambdas-fight.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2011-06-03-objective-c-blocks-vs-c-0x-lambdas-fight.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2011-06-03: Objective-C Blocks vs. C++0x Lambdas: Fight!",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 17604
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2011-09-16-let-s-build-reference-counting.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2011-09-16-let-s-build-reference-counting.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2011-09-16: Let's Build Reference Counting",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11780
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2011-11-11-building-a-memoizing-block-proxy.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2011-11-11-building-a-memoizing-block-proxy.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2011-11-11: Building a Memoizing Block Proxy",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 16413
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2012-02-17-ring-buffers-and-mirrored-memory-part-ii.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2012-02-17-ring-buffers-and-mirrored-memory-part-ii.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2012-02-17: Ring Buffers and Mirrored Memory: Part II",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 25862
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2012-04-13-nib-memory-management.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2012-04-13-nib-memory-management.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2012-04-13: Nib Memory Management",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8731
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2012-05-04-plcrashreporter-and-unwinding-the-stack-with-dwarf-part-2.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2012-05-04-plcrashreporter-and-unwinding-the-stack-with-dwarf-part-2.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2012-05-04: PLCrashReporter and Unwinding the Stack With DWARF, Part 2",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 30815
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2012-12-14-objective-c-pitfalls.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2012-12-14-objective-c-pitfalls.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2012-12-14: Objective-C Pitfalls",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 16396
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2014-05-09-when-an-autorelease-isn-t.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2014-05-09-when-an-autorelease-isn-t.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2014-05-09: When an Autorelease Isn't",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 19416
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2014-05-23-a-heartbleed-inspired-paranoid-memory-allocator.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2014-05-23-a-heartbleed-inspired-paranoid-memory-allocator.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2014-05-23: A Heartbleed-Inspired Paranoid Memory Allocator",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 22680
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2014-08-29-swift-memory-dumping.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2014-08-29-swift-memory-dumping.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2014-08-29: Swift Memory Dumping",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 49598
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2015-12-11-swift-weak-references.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2015-12-11-swift-weak-references.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2015-12-11: Swift Weak References",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 27327
+    },
+    {
+      "en": "blogs/en/mikeash/gcd-is-not-blocks-blocks-are-not-gcd.md",
+      "zh": "blogs/zh/mikeash/gcd-is-not-blocks-blocks-are-not-gcd.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "GCD Is Not Blocks, Blocks Are Not GCD",
+      "themes": [
+        "memory-runtime-blocks",
+        "concurrency"
+      ],
+      "chars": 4783
+    },
+    {
+      "en": "blogs/en/mikeash/more-fun-with-autorelease.md",
+      "zh": "blogs/zh/mikeash/more-fun-with-autorelease.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "More Fun With Autorelease",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3477
+    },
+    {
+      "en": "blogs/en/mikeash/objc-msgsend-s-new-prototype.md",
+      "zh": "blogs/zh/mikeash/objc-msgsend-s-new-prototype.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "objc_msgSend's New Prototype",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 12266
+    },
+    {
+      "en": "blogs/en/mikeash/objective-c-literals-in-serbo-croatian.md",
+      "zh": "blogs/zh/mikeash/objective-c-literals-in-serbo-croatian.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Objective-C Literals in Serbo-Croatian",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 1831
+    },
+    {
+      "en": "blogs/en/mikeash/objective-c-literals.md",
+      "zh": "blogs/zh/mikeash/objective-c-literals.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Objective-C Literals",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 18308
+    },
+    {
+      "en": "blogs/en/mikeash/the-various-options-available-in-objective-c-for-enumerating-over-a-collection.md",
+      "zh": "blogs/zh/mikeash/the-various-options-available-in-objective-c-for-enumerating-over-a-collection.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "the various options available in Objective-C for enumerating over a collection",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10191
+    },
+    {
+      "en": "blogs/en/nshipster/kvc-collection-operators.md",
+      "zh": "blogs/zh/nshipster/kvc-collection-operators.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "KVC Collection Operators",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 7976
+    },
+    {
+      "en": "blogs/en/nshipster/objective-c-direct-methods.md",
+      "zh": "blogs/zh/nshipster/objective-c-direct-methods.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Objective-C Direct Methods",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 11045
+    },
+    {
+      "en": "blogs/en/nshipster/objective-c-documentation.md",
+      "zh": "blogs/zh/nshipster/objective-c-documentation.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Objective-C Documentation",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5663
+    },
+    {
+      "en": "blogs/en/nshipster/swift-the-objective-c-runtime.md",
+      "zh": "blogs/zh/nshipster/swift-the-objective-c-runtime.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Swift & the Objective-C Runtime",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6487
+    },
+    {
+      "en": "blogs/en/nshipster/xctestcase-br-xctestexpectation-br-measureblock.md",
+      "zh": "blogs/zh/nshipster/xctestcase-br-xctestexpectation-br-measureblock.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "XCTest​Case /XCTest​Expectation / measure​Block()",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 17048
+    },
+    {
+      "en": "blogs/en/oleb/accessing-image-properties-without-loading-the-image-into-memory.md",
+      "zh": "blogs/zh/oleb/accessing-image-properties-without-loading-the-image-into-memory.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Accessing Image Properties Without Loading the Image Into Memory",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4991
+    },
+    {
+      "en": "blogs/en/oleb/apple-has-partly-lifted-the-nda-for-beta-releases.md",
+      "zh": "blogs/zh/oleb/apple-has-partly-lifted-the-nda-for-beta-releases.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Apple Has (Partly) Lifted the NDA for Beta Releases",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 1980
+    },
+    {
+      "en": "blogs/en/oleb/at-what-time-is-an-app-released-on-the-app-store-when-set-to-a-specific-release-date.md",
+      "zh": "blogs/zh/oleb/at-what-time-is-an-app-released-on-the-app-store-when-set-to-a-specific-release-date.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "At What Time Is an App Released on the App Store When Set to a Specific Release Date?",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5705
+    },
+    {
+      "en": "blogs/en/oleb/building-a-blocks-based-object-system-in-objective-c.md",
+      "zh": "blogs/zh/oleb/building-a-blocks-based-object-system-in-objective-c.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Building a Blocks-Based Object System in (Objective-)C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 7628
+    },
+    {
+      "en": "blogs/en/oleb/compiler-warnings-for-objective-c-developers.md",
+      "zh": "blogs/zh/oleb/compiler-warnings-for-objective-c-developers.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Compiler Warnings for Objective-C Developers",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 9889
+    },
+    {
+      "en": "blogs/en/oleb/do-you-have-to-manually-unregister-block-based-notificationcenter-observers.md",
+      "zh": "blogs/zh/oleb/do-you-have-to-manually-unregister-block-based-notificationcenter-observers.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Do you have to manually unregister block-based NotificationCenter observers?",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8107
+    },
+    {
+      "en": "blogs/en/oleb/faking-instance-variables-in-objective-c-categories-with-associative-references.md",
+      "zh": "blogs/zh/oleb/faking-instance-variables-in-objective-c-categories-with-associative-references.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Faking Instance Variables in Objective-C Categories With Associative References",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 5130
+    },
+    {
+      "en": "blogs/en/oleb/john-siracusa-a-dark-age-of-objective-c.md",
+      "zh": "blogs/zh/oleb/john-siracusa-a-dark-age-of-objective-c.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "John Siracusa: A Dark Age of Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 8621
+    },
+    {
+      "en": "blogs/en/oleb/method-names-in-objective-c.md",
+      "zh": "blogs/zh/oleb/method-names-in-objective-c.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Method Names in Objective-C",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 3508
+    },
+    {
+      "en": "blogs/en/oleb/my-wish-syntax-additions-to-objective-c-for-object-literals.md",
+      "zh": "blogs/zh/oleb/my-wish-syntax-additions-to-objective-c-for-object-literals.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "My Wish: Syntax Additions to Objective-C for Object Literals",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 4136
+    },
+    {
+      "en": "blogs/en/oleb/objc-io-3.md",
+      "zh": "blogs/zh/oleb/objc-io-3.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "objc.io #3",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 1670
+    },
+    {
+      "en": "blogs/en/oleb/objc-io-9.md",
+      "zh": "blogs/zh/oleb/objc-io-9.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "objc.io #9",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 1270
+    },
+    {
+      "en": "blogs/en/oleb/optional-non-escaping-closures.md",
+      "zh": "blogs/zh/oleb/optional-non-escaping-closures.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Optional Non-Escaping Closures",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 10333
+    },
+    {
+      "en": "blogs/en/oleb/swift-releases-have-themes.md",
+      "zh": "blogs/zh/oleb/swift-releases-have-themes.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Swift releases have themes",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6072
+    },
+    {
+      "en": "blogs/en/oleb/working-with-asynchronous-objective-c-apis-in-swift.md",
+      "zh": "blogs/zh/oleb/working-with-asynchronous-objective-c-apis-in-swift.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Working with Asynchronous Objective-C APIs in Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 6450
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10680-refine-objective-c-frameworks-for-swift.md",
+      "zh": "wwdc/zh/wwdc2020/10680-refine-objective-c-frameworks-for-swift.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Refine Objective-C frameworks for Swift",
+      "themes": [
+        "memory-runtime-blocks"
+      ],
+      "chars": 45859
+    },
+    {
+      "en": "apple-docs/en/kernel/libkern/atomic_operations.md",
+      "zh": "apple-docs/zh/kernel/libkern/atomic_operations.md",
+      "source": "apple-docs",
+      "source_key": "kernel",
+      "title": "Atomic Operations",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 5796
+    },
+    {
+      "en": "apple-docs/en/metal/about-synchronization-events.md",
+      "zh": "apple-docs/zh/metal/about-synchronization-events.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "About synchronization events",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 4223
+    },
+    {
+      "en": "apple-docs/en/metal/creating-threads-and-threadgroups.md",
+      "zh": "apple-docs/zh/metal/creating-threads-and-threadgroups.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Creating threads and threadgroups",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 8757
+    },
+    {
+      "en": "apple-docs/en/metal/resource-synchronization.md",
+      "zh": "apple-docs/zh/metal/resource-synchronization.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Resource synchronization",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 15172
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-a-managed-resource-in-macos.md",
+      "zh": "apple-docs/zh/metal/synchronizing-a-managed-resource-in-macos.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing a managed resource in macOS",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 13416
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-cpu-and-gpu-work.md",
+      "zh": "apple-docs/zh/metal/synchronizing-cpu-and-gpu-work.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing CPU and GPU work",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 15693
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-events-across-multiple-devices-or-processes.md",
+      "zh": "apple-docs/zh/metal/synchronizing-events-across-multiple-devices-or-processes.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing events across multiple devices or processes",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 6004
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-events-between-a-gpu-and-the-cpu.md",
+      "zh": "apple-docs/zh/metal/synchronizing-events-between-a-gpu-and-the-cpu.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing events between a GPU and the CPU",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 7253
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-events-within-a-single-device.md",
+      "zh": "apple-docs/zh/metal/synchronizing-events-within-a-single-device.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing events within a single device",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 5672
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-passes-with-a-fence.md",
+      "zh": "apple-docs/zh/metal/synchronizing-passes-with-a-fence.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing passes with a fence",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 16013
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-passes-with-consumer-barriers.md",
+      "zh": "apple-docs/zh/metal/synchronizing-passes-with-consumer-barriers.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing passes with consumer barriers",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 17436
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-passes-with-producer-barriers.md",
+      "zh": "apple-docs/zh/metal/synchronizing-passes-with-producer-barriers.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing passes with producer barriers",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 16438
+    },
+    {
+      "en": "apple-docs/en/metal/synchronizing-stages-within-a-pass.md",
+      "zh": "apple-docs/zh/metal/synchronizing-stages-within-a-pass.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Synchronizing stages within a pass",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 13488
+    },
+    {
+      "en": "apple-docs/en/security/working-with-concurrency.md",
+      "zh": "apple-docs/zh/security/working-with-concurrency.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Working with Concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 1319
+    },
+    {
+      "en": "apple-docs/en/swift/adoptingswift6.md",
+      "zh": "apple-docs/zh/swift/adoptingswift6.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Adopting strict concurrency in Swift 6 apps",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 4933
+    },
+    {
+      "en": "apple-docs/en/swift/updating-an-app-to-use-strict-concurrency.md",
+      "zh": "apple-docs/zh/swift/updating-an-app-to-use-strict-concurrency.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Updating an app to use strict concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 4535
+    },
+    {
+      "en": "apple-docs/en/swift/updating_an_app_to_use_swift_concurrency.md",
+      "zh": "apple-docs/zh/swift/updating_an_app_to_use_swift_concurrency.md",
+      "source": "apple-docs",
+      "source_key": "swift",
+      "title": "Updating an App to Use Swift Concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 10317
+    },
+    {
+      "en": "apple-docs/en/swiftdata/concurrencysupport.md",
+      "zh": "apple-docs/zh/swiftdata/concurrencysupport.md",
+      "source": "apple-docs",
+      "source_key": "swiftdata",
+      "title": "Concurrency support",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 2763
+    },
+    {
+      "en": "blogs/en/cocoawithlove/safe-threaded-design-and-inter-thread-communication-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/safe-threaded-design-and-inter-thread-communication-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Safe, threaded design and inter-thread communication | Cocoa with Love",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 11884
+    },
+    {
+      "en": "blogs/en/cocoawithlove/the-overhead-of-spawning-threads-a-performance-experiment-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/the-overhead-of-spawning-threads-a-performance-experiment-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "The overhead of spawning threads (a performance experiment) | Cocoa with Love",
+      "themes": [
+        "concurrency",
+        "debugging-observability"
+      ],
+      "chars": 10940
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-async-await-in-swift-the-full-toolkit.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-async-await-in-swift-the-full-toolkit.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "Async await in Swift: The Full Toolkit",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 23217
+    },
+    {
+      "en": "blogs/en/fbeng/how-we-think-about-threads-ios-performance.md",
+      "zh": "blogs/zh/fbeng/how-we-think-about-threads-ios-performance.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "How we think about Threads’ iOS performance",
+      "themes": [
+        "concurrency",
+        "debugging-observability"
+      ],
+      "chars": 22658
+    },
+    {
+      "en": "blogs/en/jessesquires/swift-globals-and-static-members-are-atomic-and-lazily-computed.md",
+      "zh": "blogs/zh/jessesquires/swift-globals-and-static-members-are-atomic-and-lazily-computed.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Swift globals and static members are atomic and lazily computed",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 5214
+    },
+    {
+      "en": "blogs/en/jessesquires/uikit-diffabledatasource-api-inconsistencies-with-swift-concurrency-annotations-explained.md",
+      "zh": "blogs/zh/jessesquires/uikit-diffabledatasource-api-inconsistencies-with-swift-concurrency-annotations-explained.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "UIKit DiffableDataSource API inconsistencies with Swift Concurrency annotations explained",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 5920
+    },
+    {
+      "en": "blogs/en/maskray/all-about-thread-local-storage.md",
+      "zh": "blogs/zh/maskray/all-about-thread-local-storage.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "All about thread-local storage",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 63601
+    },
+    {
+      "en": "blogs/en/mikeash/an-article-about-locks-and-thread-safety-in-swift.md",
+      "zh": "blogs/zh/mikeash/an-article-about-locks-and-thread-safety-in-swift.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "an article about locks and thread safety in Swift",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 20295
+    },
+    {
+      "en": "blogs/en/mikeash/deadlocks-and-lock-ordering-a-vignette.md",
+      "zh": "blogs/zh/mikeash/deadlocks-and-lock-ordering-a-vignette.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Deadlocks and Lock Ordering: a Vignette",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 4887
+    },
+    {
+      "en": "blogs/en/mikeash/don-t-use-nsoperationqueue.md",
+      "zh": "blogs/zh/mikeash/don-t-use-nsoperationqueue.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Don't Use NSOperationQueue",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 6670
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-09-25-gcd-practicum.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-09-25-gcd-practicum.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-09-25: GCD Practicum",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 19101
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-12-11-a-gcd-case-study-building-an-http-server.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-12-11-a-gcd-case-study-building-an-http-server.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-12-11: A GCD Case Study: Building an HTTP Server",
+      "themes": [
+        "concurrency",
+        "network-security"
+      ],
+      "chars": 24305
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2011-03-04-a-tour-of-osatomic.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2011-03-04-a-tour-of-osatomic.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2011-03-04: A Tour of OSAtomic",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 19851
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2011-10-14-what-s-new-in-gcd.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2011-10-14-what-s-new-in-gcd.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2011-10-14: What's New in GCD",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 17049
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2015-02-20-let-s-build-synchronized.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2015-02-20-let-s-build-synchronized.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2015-02-20: Let's Build @synchronized",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 9426
+    },
+    {
+      "en": "blogs/en/mikeash/late-night-cocoa-nsoperationqueue-problems.md",
+      "zh": "blogs/zh/mikeash/late-night-cocoa-nsoperationqueue-problems.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Late Night Cocoa: NSOperationQueue Problems",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 1726
+    },
+    {
+      "en": "blogs/en/mikeash/raoperationqueue-an-open-source-replacement-for-nsoperationqueue.md",
+      "zh": "blogs/zh/mikeash/raoperationqueue-an-open-source-replacement-for-nsoperationqueue.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "RAOperationQueue, an open-source replacement for NSOperationQueue",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 1842
+    },
+    {
+      "en": "blogs/en/mikeash/use-nsoperationqueue.md",
+      "zh": "blogs/zh/mikeash/use-nsoperationqueue.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Use NSOperationQueue",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 1608
+    },
+    {
+      "en": "blogs/en/nshipster/optional-throws-result-async-await.md",
+      "zh": "blogs/zh/nshipster/optional-throws-result-async-await.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Optional, throws, Result, async/await",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 16816
+    },
+    {
+      "en": "blogs/en/oleb/core-data-concurrency-debugging.md",
+      "zh": "blogs/zh/oleb/core-data-concurrency-debugging.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Core Data Concurrency Debugging",
+      "themes": [
+        "concurrency",
+        "debugging-observability",
+        "data-persistence"
+      ],
+      "chars": 7631
+    },
+    {
+      "en": "blogs/en/oleb/method-dispatch-in-protocol-extensions.md",
+      "zh": "blogs/zh/oleb/method-dispatch-in-protocol-extensions.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Method Dispatch in Protocol Extensions",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 3714
+    },
+    {
+      "en": "blogs/en/oleb/parallelize-your-for-loops-with-gcd.md",
+      "zh": "blogs/zh/oleb/parallelize-your-for-loops-with-gcd.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Parallelize Your for Loops With GCD",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 3327
+    },
+    {
+      "en": "wwdc/en/wwdc2016/720-concurrent-programming-with-gcd-in-swift-3.md",
+      "zh": "wwdc/zh/wwdc2016/720-concurrent-programming-with-gcd-in-swift-3.md",
+      "source": "wwdc",
+      "source_key": "wwdc2016",
+      "title": "Concurrent Programming With GCD in Swift 3",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 31007
+    },
+    {
+      "en": "wwdc/en/wwdc2017/706-modernizing-grand-central-dispatch-usage.md",
+      "zh": "wwdc/zh/wwdc2017/706-modernizing-grand-central-dispatch-usage.md",
+      "source": "wwdc",
+      "source_key": "wwdc2017",
+      "title": "Modernizing Grand Central Dispatch Usage",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 56407
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10017-bring-core-data-concurrency-to-swift-and-swiftui.md",
+      "zh": "wwdc/zh/wwdc2021/10017-bring-core-data-concurrency-to-swift-and-swiftui.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Bring Core Data concurrency to Swift and SwiftUI",
+      "themes": [
+        "concurrency",
+        "data-persistence"
+      ],
+      "chars": 26472
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10019-discover-concurrency-in-swiftui.md",
+      "zh": "wwdc/zh/wwdc2021/10019-discover-concurrency-in-swiftui.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Discover concurrency in SwiftUI",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 18550
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10134-explore-structured-concurrency-in-swift.md",
+      "zh": "wwdc/zh/wwdc2021/10134-explore-structured-concurrency-in-swift.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Explore structured concurrency in Swift",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 30698
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10194-swift-concurrency-update-a-sample-app.md",
+      "zh": "wwdc/zh/wwdc2021/10194-swift-concurrency-update-a-sample-app.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Swift concurrency: Update a sample app",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 45436
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10254-swift-concurrency-behind-the-scenes.md",
+      "zh": "wwdc/zh/wwdc2021/10254-swift-concurrency-behind-the-scenes.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Swift concurrency: Behind the scenes",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 36116
+    },
+    {
+      "en": "wwdc/en/wwdc2022/110350-visualize-and-optimize-swift-concurrency.md",
+      "zh": "wwdc/zh/wwdc2022/110350-visualize-and-optimize-swift-concurrency.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Visualize and optimize Swift concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 24126
+    },
+    {
+      "en": "wwdc/en/wwdc2022/110351-eliminate-data-races-using-swift-concurrency.md",
+      "zh": "wwdc/zh/wwdc2022/110351-eliminate-data-races-using-swift-concurrency.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Eliminate data races using Swift Concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 31265
+    },
+    {
+      "en": "wwdc/en/wwdc2022/110355-meet-swift-async-algorithms.md",
+      "zh": "wwdc/zh/wwdc2022/110355-meet-swift-async-algorithms.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Meet Swift Async Algorithms",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 13928
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10170-beyond-the-basics-of-structured-concurrency.md",
+      "zh": "wwdc/zh/wwdc2023/10170-beyond-the-basics-of-structured-concurrency.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Beyond the basics of structured concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 28659
+    },
+    {
+      "en": "wwdc/en/wwdc2025/250-use-structured-concurrency-with-network-framework.md",
+      "zh": "wwdc/zh/wwdc2025/250-use-structured-concurrency-with-network-framework.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Use structured concurrency with Network framework",
+      "themes": [
+        "concurrency",
+        "network-security"
+      ],
+      "chars": 20789
+    },
+    {
+      "en": "wwdc/en/wwdc2025/266-explore-concurrency-in-swiftui.md",
+      "zh": "wwdc/zh/wwdc2025/266-explore-concurrency-in-swiftui.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Explore concurrency in SwiftUI",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 21494
+    },
+    {
+      "en": "wwdc/en/wwdc2025/268-embracing-swift-concurrency.md",
+      "zh": "wwdc/zh/wwdc2025/268-embracing-swift-concurrency.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Embracing Swift concurrency",
+      "themes": [
+        "concurrency"
+      ],
+      "chars": 31689
+    },
+    {
+      "en": "apple-docs/en/uikit/about-the-app-launch-sequence.md",
+      "zh": "apple-docs/zh/uikit/about-the-app-launch-sequence.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "About the app launch sequence",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 6684
+    },
+    {
+      "en": "apple-docs/en/uikit/about-the-gesture-recognizer-state-machine.md",
+      "zh": "apple-docs/zh/uikit/about-the-gesture-recognizer-state-machine.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "About the Gesture Recognizer State Machine",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 9665
+    },
+    {
+      "en": "apple-docs/en/uikit/coordinating-multiple-gesture-recognizers.md",
+      "zh": "apple-docs/zh/uikit/coordinating-multiple-gesture-recognizers.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Coordinating multiple gesture recognizers",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 4323
+    },
+    {
+      "en": "apple-docs/en/uikit/creating-a-custom-container-view-controller.md",
+      "zh": "apple-docs/zh/uikit/creating-a-custom-container-view-controller.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Creating a custom container view controller",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 10609
+    },
+    {
+      "en": "apple-docs/en/uikit/handling-touches-in-your-view.md",
+      "zh": "apple-docs/zh/uikit/handling-touches-in-your-view.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Handling touches in your view",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 5186
+    },
+    {
+      "en": "apple-docs/en/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md",
+      "zh": "apple-docs/zh/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Illustrating the force, altitude, and azimuth properties of touch input",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 7867
+    },
+    {
+      "en": "apple-docs/en/uikit/implementing-a-continuous-gesture-recognizer.md",
+      "zh": "apple-docs/zh/uikit/implementing-a-continuous-gesture-recognizer.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Implementing a Continuous Gesture Recognizer",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 7713
+    },
+    {
+      "en": "apple-docs/en/uikit/implementing-a-custom-gesture-recognizer.md",
+      "zh": "apple-docs/zh/uikit/implementing-a-custom-gesture-recognizer.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Implementing a custom gesture recognizer",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 4238
+    },
+    {
+      "en": "apple-docs/en/uikit/implementing-a-discrete-gesture-recognizer.md",
+      "zh": "apple-docs/zh/uikit/implementing-a-discrete-gesture-recognizer.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Implementing a discrete gesture recognizer",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 9502
+    },
+    {
+      "en": "apple-docs/en/uikit/leveraging-touch-input-for-drawing-apps.md",
+      "zh": "apple-docs/zh/uikit/leveraging-touch-input-for-drawing-apps.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Leveraging touch input for drawing apps",
+      "themes": [
+        "runloop-events-lifecycle",
+        "rendering-performance"
+      ],
+      "chars": 15555
+    },
+    {
+      "en": "apple-docs/en/uikit/managing-your-app-s-life-cycle.md",
+      "zh": "apple-docs/zh/uikit/managing-your-app-s-life-cycle.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Managing your app’s life cycle",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 9212
+    },
+    {
+      "en": "apple-docs/en/uikit/minimizing-latency-with-predicted-touches.md",
+      "zh": "apple-docs/zh/uikit/minimizing-latency-with-predicted-touches.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Minimizing latency with predicted touches",
+      "themes": [
+        "runloop-events-lifecycle",
+        "rendering-performance"
+      ],
+      "chars": 2943
+    },
+    {
+      "en": "apple-docs/en/uikit/responding-to-control-based-events-using-target-action.md",
+      "zh": "apple-docs/zh/uikit/responding-to-control-based-events-using-target-action.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Responding to control-based events using target-action",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 14369
+    },
+    {
+      "en": "apple-docs/en/uikit/view-controller-transitions.md",
+      "zh": "apple-docs/zh/uikit/view-controller-transitions.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "View controller transitions",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 3161
+    },
+    {
+      "en": "blogs/en/cocoawithlove/intercepting-status-bar-touches-on-the-iphone-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/intercepting-status-bar-touches-on-the-iphone-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Intercepting status bar touches on the iPhone | Cocoa with Love",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 7511
+    },
+    {
+      "en": "blogs/en/jessesquires/swiftui-app-lifecycle-issues-with-scenephase-and-using-appdelegate-adaptors.md",
+      "zh": "blogs/zh/jessesquires/swiftui-app-lifecycle-issues-with-scenephase-and-using-appdelegate-adaptors.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "SwiftUI app lifecycle: issues with ScenePhase and using AppDelegate adaptors",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 18547
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2015-12-25-swifty-target-action.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2015-12-25-swifty-target-action.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2015-12-25: Swifty Target/Action",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 12778
+    },
+    {
+      "en": "blogs/en/oleb/revisiting-the-app-launch-sequence-on-ios.md",
+      "zh": "blogs/zh/oleb/revisiting-the-app-launch-sequence-on-ios.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Revisiting the App Launch Sequence on iOS",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 7993
+    },
+    {
+      "en": "blogs/en/oleb/the-app-launch-sequence-on-ios.md",
+      "zh": "blogs/zh/oleb/the-app-launch-sequence-on-ios.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "The App Launch Sequence on iOS",
+      "themes": [
+        "runloop-events-lifecycle"
+      ],
+      "chars": 7217
+    },
+    {
+      "en": "apple-docs/en/metal/achieving-smooth-frame-rates-with-a-metal-display-link.md",
+      "zh": "apple-docs/zh/metal/achieving-smooth-frame-rates-with-a-metal-display-link.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Achieving smooth frame rates with a Metal display link",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 4027
+    },
+    {
+      "en": "apple-docs/en/metal/customizing-render-pass-setup.md",
+      "zh": "apple-docs/zh/metal/customizing-render-pass-setup.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Customizing render pass setup",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 13785
+    },
+    {
+      "en": "apple-docs/en/metal/improving-rendering-performance-with-vertex-amplification.md",
+      "zh": "apple-docs/zh/metal/improving-rendering-performance-with-vertex-amplification.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Improving rendering performance with vertex amplification",
+      "themes": [
+        "rendering-performance",
+        "debugging-observability"
+      ],
+      "chars": 16773
+    },
+    {
+      "en": "apple-docs/en/metal/render-pass-configuration.md",
+      "zh": "apple-docs/zh/metal/render-pass-configuration.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Render pass configuration",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 6614
+    },
+    {
+      "en": "apple-docs/en/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays.md",
+      "zh": "apple-docs/zh/quartzcore/optimizing-iphone-and-ipad-apps-to-support-promotion-displays.md",
+      "source": "apple-docs",
+      "source_key": "quartzcore",
+      "title": "Optimizing iPhone and iPad apps to support ProMotion displays",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 15583
+    },
+    {
+      "en": "apple-docs/en/uikit/building-high-performance-lists-and-collection-views.md",
+      "zh": "apple-docs/zh/uikit/building-high-performance-lists-and-collection-views.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Building high-performance lists and collection views",
+      "themes": [
+        "rendering-performance",
+        "debugging-observability"
+      ],
+      "chars": 3619
+    },
+    {
+      "en": "apple-docs/en/uikit/customizing-drawings.md",
+      "zh": "apple-docs/zh/uikit/customizing-drawings.md",
+      "source": "apple-docs",
+      "source_key": "uikit",
+      "title": "Customizing drawings",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 2599
+    },
+    {
+      "en": "blogs/en/ciechanowski/drawing-b-zier-curves-bartosz-ciechanowski.md",
+      "zh": "blogs/zh/ciechanowski/drawing-b-zier-curves-bartosz-ciechanowski.md",
+      "source": "blogs",
+      "source_key": "ciechanowski",
+      "title": "Drawing Bézier Curves",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 20048
+    },
+    {
+      "en": "blogs/en/cocoawithlove/5-ways-to-draw-a-2d-shape-with-a-hole-in-coregraphics-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/5-ways-to-draw-a-2d-shape-with-a-hole-in-coregraphics-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "5 ways to draw a 2D shape with a hole in CoreGraphics | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 10918
+    },
+    {
+      "en": "blogs/en/cocoawithlove/advanced-drawing-using-appkit-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/advanced-drawing-using-appkit-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Advanced drawing using AppKit | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 17231
+    },
+    {
+      "en": "blogs/en/cocoawithlove/coregraphics-curves-and-lines-a-sample-app-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/coregraphics-curves-and-lines-a-sample-app-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "CoreGraphics curves and lines: a sample app | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 6953
+    },
+    {
+      "en": "blogs/en/cocoawithlove/drawing-a-custom-window-on-mac-os-x-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/drawing-a-custom-window-on-mac-os-x-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Drawing a custom window on Mac OS X | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 9162
+    },
+    {
+      "en": "blogs/en/cocoawithlove/drawing-gloss-gradients-in-coregraphics-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/drawing-gloss-gradients-in-coregraphics-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Drawing gloss gradients in CoreGraphics | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 12540
+    },
+    {
+      "en": "blogs/en/cocoawithlove/easy-custom-uitableview-drawing-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/easy-custom-uitableview-drawing-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Easy custom UITableView drawing | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 11921
+    },
+    {
+      "en": "blogs/en/cocoawithlove/mac-quartzgl-2d-drawing-on-the-graphics-card-performance-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/mac-quartzgl-2d-drawing-on-the-graphics-card-performance-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Mac QuartzGL (2D drawing on the graphics card) performance | Cocoa with Love",
+      "themes": [
+        "rendering-performance",
+        "debugging-observability"
+      ],
+      "chars": 7102
+    },
+    {
+      "en": "blogs/en/cocoawithlove/parametric-acceleration-curves-in-core-animation-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/parametric-acceleration-curves-in-core-animation-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Parametric acceleration curves in Core Animation | Cocoa with Love",
+      "themes": [
+        "rendering-performance",
+        "debugging-observability"
+      ],
+      "chars": 8818
+    },
+    {
+      "en": "blogs/en/cocoawithlove/uitableview-construction-drawing-and-management-revisited-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/uitableview-construction-drawing-and-management-revisited-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "UITableView construction, drawing and management (revisited) | Cocoa with Love",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 18577
+    },
+    {
+      "en": "blogs/en/nshipster/coregraphics-geometry-primitives.md",
+      "zh": "blogs/zh/nshipster/coregraphics-geometry-primitives.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Core​Graphics Geometry Primitives",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 12119
+    },
+    {
+      "en": "blogs/en/oleb/animating-the-drawing-of-a-cgpath-with-cashapelayer.md",
+      "zh": "blogs/zh/oleb/animating-the-drawing-of-a-cgpath-with-cashapelayer.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Animating the Drawing of a CGPath With CAShapeLayer",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 3997
+    },
+    {
+      "en": "blogs/en/worthdoingbadly/rendering-swiftui-views-to-html.md",
+      "zh": "blogs/zh/worthdoingbadly/rendering-swiftui-views-to-html.md",
+      "source": "blogs",
+      "source_key": "worthdoingbadly",
+      "title": "Rendering SwiftUI views to HTML",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 11573
+    },
+    {
+      "en": "wwdc/en/tech-talks/10855-explore-ui-animation-hitches-and-the-render-loop.md",
+      "zh": "wwdc/zh/tech-talks/10855-explore-ui-animation-hitches-and-the-render-loop.md",
+      "source": "wwdc",
+      "source_key": "tech-talks",
+      "title": "Explore UI animation hitches and the render loop",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 13231
+    },
+    {
+      "en": "wwdc/en/tech-talks/10856-find-and-fix-hitches-in-the-commit-phase.md",
+      "zh": "wwdc/zh/tech-talks/10856-find-and-fix-hitches-in-the-commit-phase.md",
+      "source": "wwdc",
+      "source_key": "tech-talks",
+      "title": "Find and fix hitches in the commit phase",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 10841
+    },
+    {
+      "en": "wwdc/en/tech-talks/10857-demystify-and-eliminate-hitches-in-the-render-phase.md",
+      "zh": "wwdc/zh/tech-talks/10857-demystify-and-eliminate-hitches-in-the-render-phase.md",
+      "source": "wwdc",
+      "source_key": "tech-talks",
+      "title": "Demystify and eliminate hitches in the render phase",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 19360
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10077-eliminate-animation-hitches-with-xctest.md",
+      "zh": "wwdc/zh/wwdc2020/10077-eliminate-animation-hitches-with-xctest.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Eliminate animation hitches with XCTest",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 14430
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10258-understand-and-eliminate-hangs-from-your-app.md",
+      "zh": "wwdc/zh/wwdc2021/10258-understand-and-eliminate-hangs-from-your-app.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Understand and eliminate hangs from your app",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 20432
+    },
+    {
+      "en": "wwdc/en/wwdc2022/10082-track-down-hangs-with-xcode-and-on-device-detection.md",
+      "zh": "wwdc/zh/wwdc2022/10082-track-down-hangs-with-xcode-and-on-device-detection.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Track down hangs with Xcode and on-device detection",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 17705
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10248-analyze-hangs-with-instruments.md",
+      "zh": "wwdc/zh/wwdc2023/10248-analyze-hangs-with-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Analyze hangs with Instruments",
+      "themes": [
+        "rendering-performance",
+        "debugging-observability"
+      ],
+      "chars": 45080
+    },
+    {
+      "en": "wwdc/en/wwdc2026/322-compose-advanced-graphics-effects-with-swiftui.md",
+      "zh": "wwdc/zh/wwdc2026/322-compose-advanced-graphics-effects-with-swiftui.md",
+      "source": "wwdc",
+      "source_key": "wwdc2026",
+      "title": "Compose advanced graphics effects with SwiftUI",
+      "themes": [
+        "rendering-performance"
+      ],
+      "chars": 16480
+    },
+    {
+      "en": "apple-docs/en/metal/compiling-and-linking-metal-dynamic-libraries.md",
+      "zh": "apple-docs/zh/metal/compiling-and-linking-metal-dynamic-libraries.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Compiling and linking Metal dynamic libraries",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 7763
+    },
+    {
+      "en": "apple-docs/en/metal/creating-a-metal-dynamic-library.md",
+      "zh": "apple-docs/zh/metal/creating-a-metal-dynamic-library.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Creating a Metal dynamic library",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 1608
+    },
+    {
+      "en": "apple-docs/en/metal/minimizing-the-binary-size-of-a-shader-library.md",
+      "zh": "apple-docs/zh/metal/minimizing-the-binary-size-of-a-shader-library.md",
+      "source": "apple-docs",
+      "source_key": "metal",
+      "title": "Minimizing the binary size of a shader library",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 5665
+    },
+    {
+      "en": "apple-docs/en/security/applying-launch-environment-and-library-constraints.md",
+      "zh": "apple-docs/zh/security/applying-launch-environment-and-library-constraints.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Applying launch environment and library constraints",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 11276
+    },
+    {
+      "en": "apple-docs/en/security/defining-launch-environment-and-library-constraints.md",
+      "zh": "apple-docs/zh/security/defining-launch-environment-and-library-constraints.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Defining launch environment and library constraints",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 15855
+    },
+    {
+      "en": "blogs/en/cocoawithlove/cocoa-application-startup-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/cocoa-application-startup-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Cocoa Application Startup | Cocoa with Love",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 8415
+    },
+    {
+      "en": "blogs/en/cocoawithlove/open-the-previous-document-on-application-startup-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/open-the-previous-document-on-application-startup-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Open the previous document on application startup | Cocoa with Love",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 3243
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-code-injection-with-dyld-interposing.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-code-injection-with-dyld-interposing.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "Code Injection with Dyld Interposing",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 8911
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-how-these-5-ios-apps-could-improve-their-startup-time.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-how-these-5-ios-apps-could-improve-their-startup-time.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "How 5 iOS apps could improve their startup time by an average of 28%",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 14911
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-how-xcode-14-unintentionally-increases-app-size.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-how-xcode-14-unintentionally-increases-app-size.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "How Xcode 14 unintentionally increases app size",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 12487
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-symbolicating-swiftui-and-any-apple-framework-part-1.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-symbolicating-swiftui-and-any-apple-framework-part-1.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "Symbolicating SwiftUI (and any Apple Framework), Part 1",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 23507
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-symbolicating-swiftui-and-any-apple-framework-part-2.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-symbolicating-swiftui-and-any-apple-framework-part-2.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "Symbolicating SwiftUI (and any Apple Framework), Part 2",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 22316
+    },
+    {
+      "en": "blogs/en/maskray/analysis-and-introspection-options-in-linkers.md",
+      "zh": "blogs/zh/maskray/analysis-and-introspection-options-in-linkers.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Analysis and introspection options in linkers",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 10315
+    },
+    {
+      "en": "blogs/en/maskray/dependency-related-linker-options.md",
+      "zh": "blogs/zh/maskray/dependency-related-linker-options.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Dependency related linker options",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 13706
+    },
+    {
+      "en": "blogs/en/maskray/explain-gnu-style-linker-options.md",
+      "zh": "blogs/zh/maskray/explain-gnu-style-linker-options.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Explain GNU style linker options",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 58328
+    },
+    {
+      "en": "blogs/en/maskray/exploring-the-section-layout-in-linker-output.md",
+      "zh": "blogs/zh/maskray/exploring-the-section-layout-in-linker-output.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Exploring the section layout in linker output",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 30847
+    },
+    {
+      "en": "blogs/en/maskray/linker-compatibility-and-the-user-agent-problem.md",
+      "zh": "blogs/zh/maskray/linker-compatibility-and-the-user-agent-problem.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker compatibility and the \"User-Agent\" problem",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 7247
+    },
+    {
+      "en": "blogs/en/maskray/linker-garbage-collection.md",
+      "zh": "blogs/zh/maskray/linker-garbage-collection.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker garbage collection",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 18854
+    },
+    {
+      "en": "blogs/en/maskray/linker-notes-on-aarch32.md",
+      "zh": "blogs/zh/maskray/linker-notes-on-aarch32.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker notes on AArch32",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 13052
+    },
+    {
+      "en": "blogs/en/maskray/linker-notes-on-aarch64.md",
+      "zh": "blogs/zh/maskray/linker-notes-on-aarch64.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker notes on AArch64",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 10568
+    },
+    {
+      "en": "blogs/en/maskray/linker-notes-on-pe-coff.md",
+      "zh": "blogs/zh/maskray/linker-notes-on-pe-coff.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker notes on PE/COFF",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 13302
+    },
+    {
+      "en": "blogs/en/maskray/linker-notes-on-x86.md",
+      "zh": "blogs/zh/maskray/linker-notes-on-x86.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Linker notes on x86",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 7888
+    },
+    {
+      "en": "blogs/en/maskray/lld-and-gnu-linker-incompatibilities.md",
+      "zh": "blogs/zh/maskray/lld-and-gnu-linker-incompatibilities.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "LLD and GNU linker incompatibilities",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 37726
+    },
+    {
+      "en": "blogs/en/maskray/long-branches-in-compilers-assemblers-and-linkers.md",
+      "zh": "blogs/zh/maskray/long-branches-in-compilers-assemblers-and-linkers.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Long branches in compilers, assemblers, and linkers",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 32805
+    },
+    {
+      "en": "blogs/en/maskray/relocatable-linking.md",
+      "zh": "blogs/zh/maskray/relocatable-linking.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Relocatable linking",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 14350
+    },
+    {
+      "en": "blogs/en/maskray/risc-v-linker-relaxation-in-lld.md",
+      "zh": "blogs/zh/maskray/risc-v-linker-relaxation-in-lld.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "RISC-V linker relaxation in lld",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 15298
+    },
+    {
+      "en": "blogs/en/maskray/the-dark-side-of-risc-v-linker-relaxation.md",
+      "zh": "blogs/zh/maskray/the-dark-side-of-risc-v-linker-relaxation.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "The dark side of RISC-V linker relaxation",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 41011
+    },
+    {
+      "en": "blogs/en/maskray/常數空間invert-binary-tree與仿morris法後序遍歷.md",
+      "zh": "blogs/zh/maskray/常數空間invert-binary-tree與仿morris法後序遍歷.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "常數空間Invert Binary Tree與仿Morris法後序遍歷",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 3597
+    },
+    {
+      "en": "blogs/en/maskray/指定dynamic-linker以使用高版本gcc.md",
+      "zh": "blogs/zh/maskray/指定dynamic-linker以使用高版本gcc.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "指定dynamic linker以使用高版本GCC",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 3886
+    },
+    {
+      "en": "blogs/en/mikeash/dyld-dynamic-linking-on-os-x.md",
+      "zh": "blogs/zh/mikeash/dyld-dynamic-linking-on-os-x.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "dyld: Dynamic Linking On OS X",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 22562
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2017-07-28-a-binary-coder-for-swift.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2017-07-28-a-binary-coder-for-swift.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2017-07-28: A Binary Coder for Swift",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 31189
+    },
+    {
+      "en": "blogs/en/nshipster/message-id-and-mail-app-deep-linking-on-ios-and-macos.md",
+      "zh": "blogs/zh/nshipster/message-id-and-mail-app-deep-linking-on-ios-and-macos.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Message-ID and Mail.app Deep Linking on iOS and macOS",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 8882
+    },
+    {
+      "en": "blogs/en/oleb/nsarray-binary-search.md",
+      "zh": "blogs/zh/oleb/nsarray-binary-search.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "NSArray Binary Search",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 5417
+    },
+    {
+      "en": "blogs/en/oleb/universal-app-universal-binary.md",
+      "zh": "blogs/zh/oleb/universal-app-universal-binary.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Universal App != Universal Binary",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 6410
+    },
+    {
+      "en": "blogs/en/worthdoingbadly/extracting-libraries-from-dyld-shared-cache.md",
+      "zh": "blogs/zh/worthdoingbadly/extracting-libraries-from-dyld-shared-cache.md",
+      "source": "blogs",
+      "source_key": "worthdoingbadly",
+      "title": "Extracting libraries from dyld_shared_cache",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 24297
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10211-symbolication-beyond-the-basics.md",
+      "zh": "wwdc/zh/wwdc2021/10211-symbolication-beyond-the-basics.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Symbolication: Beyond the basics",
+      "themes": [
+        "build-link-launch"
+      ],
+      "chars": 38157
+    },
+    {
+      "en": "apple-docs/en/apple-silicon/debugging-a-custom-kernel-extension.md",
+      "zh": "apple-docs/zh/apple-silicon/debugging-a-custom-kernel-extension.md",
+      "source": "apple-docs",
+      "source_key": "apple-silicon",
+      "title": "Debugging a custom kernel extension",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3885
+    },
+    {
+      "en": "apple-docs/en/apple-silicon/tuning-your-code-s-performance-for-apple-silicon.md",
+      "zh": "apple-docs/zh/apple-silicon/tuning-your-code-s-performance-for-apple-silicon.md",
+      "source": "apple-docs",
+      "source_key": "apple-silicon",
+      "title": "Tuning your code’s performance for Apple silicon",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 10748
+    },
+    {
+      "en": "apple-docs/en/kernel/debugging.md",
+      "zh": "apple-docs/zh/kernel/debugging.md",
+      "source": "apple-docs",
+      "source_key": "kernel",
+      "title": "Debugging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3914
+    },
+    {
+      "en": "apple-docs/en/network/choosing-a-network-debugging-tool.md",
+      "zh": "apple-docs/zh/network/choosing-a-network-debugging-tool.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Choosing a Network Debugging Tool",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 4069
+    },
+    {
+      "en": "apple-docs/en/network/collecting-network-connection-metrics.md",
+      "zh": "apple-docs/zh/network/collecting-network-connection-metrics.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Collecting Network Connection Metrics",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 2047
+    },
+    {
+      "en": "apple-docs/en/network/debugging-https-problems-with-cfnetwork-diagnostic-logging.md",
+      "zh": "apple-docs/zh/network/debugging-https-problems-with-cfnetwork-diagnostic-logging.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Debugging HTTPS Problems with CFNetwork Diagnostic Logging",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 5595
+    },
+    {
+      "en": "apple-docs/en/network/taking-advantage-of-third-party-network-debugging-tools.md",
+      "zh": "apple-docs/zh/network/taking-advantage-of-third-party-network-debugging-tools.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Taking Advantage of Third-Party Network Debugging Tools",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 3556
+    },
+    {
+      "en": "apple-docs/en/technologyoverviews/testing-and-performance.md",
+      "zh": "apple-docs/zh/technologyoverviews/testing-and-performance.md",
+      "source": "apple-docs",
+      "source_key": "technologyoverviews",
+      "title": "Testing and performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 10129
+    },
+    {
+      "en": "apple-docs/en/technotes/tn3125-inside-code-signing-provisioning-profiles.md",
+      "zh": "apple-docs/zh/technotes/tn3125-inside-code-signing-provisioning-profiles.md",
+      "source": "apple-docs",
+      "source_key": "technotes",
+      "title": "TN3125: Inside Code Signing: Provisioning Profiles",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 21761
+    },
+    {
+      "en": "blogs/en/belkadan/misleading-metrics-and-ux-tradeoffs.md",
+      "zh": "blogs/zh/belkadan/misleading-metrics-and-ux-tradeoffs.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Misleading Metrics and UX Tradeoffs",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3854
+    },
+    {
+      "en": "blogs/en/belkadan/performance-optimization-why-we-can-t-use-valueforkeypath.md",
+      "zh": "blogs/zh/belkadan/performance-optimization-why-we-can-t-use-valueforkeypath.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Performance Optimization: Why We Can't Use valueForKeyPath:",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3210
+    },
+    {
+      "en": "blogs/en/cocoawithlove/break-into-debugger-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/break-into-debugger-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Break into Debugger | Cocoa with Love",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 5244
+    },
+    {
+      "en": "blogs/en/cocoawithlove/finding-the-cause-of-performance-issues-in-your-programs-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/finding-the-cause-of-performance-issues-in-your-programs-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Finding the cause of performance issues in your programs | Cocoa with Love",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 15178
+    },
+    {
+      "en": "blogs/en/cocoawithlove/hidden-xcode-build-debug-and-template-settings-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/hidden-xcode-build-debug-and-template-settings-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Hidden Xcode build, debug and template settings | Cocoa with Love",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 10328
+    },
+    {
+      "en": "blogs/en/cocoawithlove/performance-tests-replacing-core-data-key-paths-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/performance-tests-replacing-core-data-key-paths-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Performance tests: Replacing Core Data Key Paths | Cocoa with Love",
+      "themes": [
+        "debugging-observability",
+        "data-persistence"
+      ],
+      "chars": 9857
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-ettrace-reliable-ios-profiling-with-flame-charts.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-ettrace-reliable-ios-profiling-with-flame-charts.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "ETTrace: Reliable iOS Profiling With Flame Charts",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 10445
+    },
+    {
+      "en": "blogs/en/emergetools/emerge-tools-blog-swiftdata-vs-realm-performance-comparison.md",
+      "zh": "blogs/zh/emergetools/emerge-tools-blog-swiftdata-vs-realm-performance-comparison.md",
+      "source": "blogs",
+      "source_key": "emergetools",
+      "title": "SwiftData vs Realm: Performance Comparison",
+      "themes": [
+        "debugging-observability",
+        "data-persistence"
+      ],
+      "chars": 25680
+    },
+    {
+      "en": "blogs/en/fbeng/debugging-file-corruption-on-ios.md",
+      "zh": "blogs/zh/fbeng/debugging-file-corruption-on-ios.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Debugging file corruption on iOS",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6686
+    },
+    {
+      "en": "blogs/en/fbeng/dive-into-react-native-performance.md",
+      "zh": "blogs/zh/fbeng/dive-into-react-native-performance.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Dive into React Native performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 12693
+    },
+    {
+      "en": "blogs/en/fbeng/open-sourcing-flipper-a-new-extensible-debugging-tool.md",
+      "zh": "blogs/zh/fbeng/open-sourcing-flipper-a-new-extensible-debugging-tool.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Open-sourcing Flipper: a new extensible debugging tool",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6845
+    },
+    {
+      "en": "blogs/en/jessesquires/debugging-a-diffabledatasource-cellprovider.md",
+      "zh": "blogs/zh/jessesquires/debugging-a-diffabledatasource-cellprovider.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Debugging a DiffableDataSource CellProvider",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 7433
+    },
+    {
+      "en": "blogs/en/jessesquires/debugging-a-subtle-swift-bug-that-will-make-you-facepalm.md",
+      "zh": "blogs/zh/jessesquires/debugging-a-subtle-swift-bug-that-will-make-you-facepalm.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Debugging a subtle Swift bug that will make you facepalm",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 2849
+    },
+    {
+      "en": "blogs/en/jessesquires/how-to-run-sysdiagnose-on-ios.md",
+      "zh": "blogs/zh/jessesquires/how-to-run-sysdiagnose-on-ios.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "How to run sysdiagnose on iOS",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 5339
+    },
+    {
+      "en": "blogs/en/jessesquires/m3-max-performance.md",
+      "zh": "blogs/zh/jessesquires/m3-max-performance.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "M3 Max Performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 4954
+    },
+    {
+      "en": "blogs/en/jessesquires/obscure-bridgeos-crash.md",
+      "zh": "blogs/zh/jessesquires/obscure-bridgeos-crash.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Obscure bridgeOS crash",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 2142
+    },
+    {
+      "en": "blogs/en/jessesquires/xcode-lldb-rpc-server-crash.md",
+      "zh": "blogs/zh/jessesquires/xcode-lldb-rpc-server-crash.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Xcode LLDB RPC server crash",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6245
+    },
+    {
+      "en": "blogs/en/jessesquires/xcode-tip-filtering-debugger-output.md",
+      "zh": "blogs/zh/jessesquires/xcode-tip-filtering-debugger-output.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Xcode Tip: filtering debugger output",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 1571
+    },
+    {
+      "en": "blogs/en/jessesquires/xcode-tip-using-behaviors-to-improve-debugging.md",
+      "zh": "blogs/zh/jessesquires/xcode-tip-using-behaviors-to-improve-debugging.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Xcode Tip: Using behaviors to improve debugging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3665
+    },
+    {
+      "en": "blogs/en/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md",
+      "zh": "blogs/zh/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md",
+      "source": "blogs",
+      "source_key": "lowlevelbits",
+      "title": "Crash-free code with Fuzzer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 7189
+    },
+    {
+      "en": "blogs/en/maskray/addresssanitizer-global-variable-instrumentation.md",
+      "zh": "blogs/zh/maskray/addresssanitizer-global-variable-instrumentation.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "AddressSanitizer: global variable instrumentation",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 27350
+    },
+    {
+      "en": "blogs/en/maskray/all-about-sanitizer-interceptors.md",
+      "zh": "blogs/zh/maskray/all-about-sanitizer-interceptors.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "All about sanitizer interceptors",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 31048
+    },
+    {
+      "en": "blogs/en/maskray/all-about-undefinedbehaviorsanitizer.md",
+      "zh": "blogs/zh/maskray/all-about-undefinedbehaviorsanitizer.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "All about UndefinedBehaviorSanitizer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 29334
+    },
+    {
+      "en": "blogs/en/maskray/compressed-debug-sections.md",
+      "zh": "blogs/zh/maskray/compressed-debug-sections.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Compressed debug sections",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 21737
+    },
+    {
+      "en": "blogs/en/maskray/debug-hacks-和調試技巧.md",
+      "zh": "blogs/zh/maskray/debug-hacks-和調試技巧.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "《Debug Hacks》和調試技巧",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 16473
+    },
+    {
+      "en": "blogs/en/maskray/distribution-of-debug-information.md",
+      "zh": "blogs/zh/maskray/distribution-of-debug-information.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Distribution of debug information",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 19309
+    },
+    {
+      "en": "blogs/en/maskray/recent-lld-elf-performance-improvements.md",
+      "zh": "blogs/zh/maskray/recent-lld-elf-performance-improvements.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Recent lld/ELF performance improvements",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 21322
+    },
+    {
+      "en": "blogs/en/maskray/skipping-boring-functions-in-debuggers.md",
+      "zh": "blogs/zh/maskray/skipping-boring-functions-in-debuggers.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "Skipping boring functions in debuggers",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6048
+    },
+    {
+      "en": "blogs/en/maskray/zstd-compressed-debug-sections.md",
+      "zh": "blogs/zh/maskray/zstd-compressed-debug-sections.md",
+      "source": "blogs",
+      "source_key": "maskray",
+      "title": "zstd compressed debug sections",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 21254
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2009-02-06-profiling-with-shark.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2009-02-06-profiling-with-shark.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2009-02-06: Profiling With Shark",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 14463
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2015-07-03-address-sanitizer.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2015-07-03-address-sanitizer.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2015-07-03: Address Sanitizer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 16742
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2018-06-29-debugging-with-c-reduce.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2018-06-29-debugging-with-c-reduce.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2018-06-29: Debugging with C-Reduce",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 17466
+    },
+    {
+      "en": "blogs/en/mikeash/performance-comparisons-of-common-operations-iphone-edition.md",
+      "zh": "blogs/zh/mikeash/performance-comparisons-of-common-operations-iphone-edition.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Performance Comparisons of Common Operations, iPhone Edition",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6074
+    },
+    {
+      "en": "blogs/en/mikeash/performance-comparisons-of-common-operations-leopard-edition.md",
+      "zh": "blogs/zh/mikeash/performance-comparisons-of-common-operations-leopard-edition.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Performance Comparisons of Common Operations, Leopard Edition",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 7331
+    },
+    {
+      "en": "blogs/en/mikeash/performance-comparisons-of-common-operations.md",
+      "zh": "blogs/zh/mikeash/performance-comparisons-of-common-operations.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Performance Comparisons of Common Operations",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 7459
+    },
+    {
+      "en": "blogs/en/mikeash/tales-from-the-crash-mines-issue-1.md",
+      "zh": "blogs/zh/mikeash/tales-from-the-crash-mines-issue-1.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Tales From The Crash Mines: Issue #1",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 44606
+    },
+    {
+      "en": "blogs/en/nshipster/metrickit.md",
+      "zh": "blogs/zh/nshipster/metrickit.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Metric​Kit",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 18857
+    },
+    {
+      "en": "blogs/en/nshipster/quick-look-debugging.md",
+      "zh": "blogs/zh/nshipster/quick-look-debugging.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Quick Look Debugging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 6388
+    },
+    {
+      "en": "blogs/en/nshipster/swift-logging.md",
+      "zh": "blogs/zh/nshipster/swift-logging.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Swift Logging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 15393
+    },
+    {
+      "en": "blogs/en/oleb/how-to-debug-an-app-that-was-launched-by-push-notification-or-url-handler.md",
+      "zh": "blogs/zh/oleb/how-to-debug-an-app-that-was-launched-by-push-notification-or-url-handler.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "How to Debug an App That Was Launched by Push Notification or URL Handler",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3292
+    },
+    {
+      "en": "blogs/en/oleb/ios-5-tech-talk-michael-jurewitz-on-performance-measurement.md",
+      "zh": "blogs/zh/oleb/ios-5-tech-talk-michael-jurewitz-on-performance-measurement.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "iOS 5 Tech Talk: Michael Jurewitz on Performance Measurement",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 16652
+    },
+    {
+      "en": "blogs/en/oleb/protocol-oriented-logging-or-default-arguments-in-swift-protocols.md",
+      "zh": "blogs/zh/oleb/protocol-oriented-logging-or-default-arguments-in-swift-protocols.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Protocol-Oriented Logging, or: Default Arguments in Swift Protocols",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 10061
+    },
+    {
+      "en": "blogs/en/oleb/swift-compiler-diagnostics.md",
+      "zh": "blogs/zh/oleb/swift-compiler-diagnostics.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Swift Compiler Diagnostics",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 3756
+    },
+    {
+      "en": "blogs/en/worthdoingbadly/crash-chrome-70-with-the-sqlite-magellan-bug.md",
+      "zh": "blogs/zh/worthdoingbadly/crash-chrome-70-with-the-sqlite-magellan-bug.md",
+      "source": "blogs",
+      "source_key": "worthdoingbadly",
+      "title": "Crash Chrome 70 with the SQLite Magellan bug",
+      "themes": [
+        "debugging-observability",
+        "data-persistence"
+      ],
+      "chars": 3081
+    },
+    {
+      "en": "blogs/en/worthdoingbadly/learn-how-ios-devices-sync-over-usb-by-enabling-usbmuxd-s-debug-logs.md",
+      "zh": "blogs/zh/worthdoingbadly/learn-how-ios-devices-sync-over-usb-by-enabling-usbmuxd-s-debug-logs.md",
+      "source": "blogs",
+      "source_key": "worthdoingbadly",
+      "title": "Learn how iOS devices sync over USB by enabling usbmuxd's debug logs",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 4264
+    },
+    {
+      "en": "wwdc/en/wwdc2015/402-what-s-new-in-lldb.md",
+      "zh": "wwdc/zh/wwdc2015/402-what-s-new-in-lldb.md",
+      "source": "wwdc",
+      "source_key": "wwdc2015",
+      "title": "What's New in LLDB",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 33279
+    },
+    {
+      "en": "wwdc/en/wwdc2015/413-advanced-debugging-and-the-address-sanitizer.md",
+      "zh": "wwdc/zh/wwdc2015/413-advanced-debugging-and-the-address-sanitizer.md",
+      "source": "wwdc",
+      "source_key": "wwdc2015",
+      "title": "Advanced Debugging and the Address Sanitizer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 28749
+    },
+    {
+      "en": "wwdc/en/wwdc2018/405-measuring-performance-using-logging.md",
+      "zh": "wwdc/zh/wwdc2018/405-measuring-performance-using-logging.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Measuring Performance Using Logging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 34382
+    },
+    {
+      "en": "wwdc/en/wwdc2018/407-practical-approaches-to-great-app-performance.md",
+      "zh": "wwdc/zh/wwdc2018/407-practical-approaches-to-great-app-performance.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Practical Approaches to Great App Performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 49500
+    },
+    {
+      "en": "wwdc/en/wwdc2018/410-creating-custom-instruments.md",
+      "zh": "wwdc/zh/wwdc2018/410-creating-custom-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Creating Custom Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 48762
+    },
+    {
+      "en": "wwdc/en/wwdc2018/412-advanced-debugging-with-xcode-and-lldb.md",
+      "zh": "wwdc/zh/wwdc2018/412-advanced-debugging-with-xcode-and-lldb.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Advanced Debugging with Xcode and LLDB",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 57889
+    },
+    {
+      "en": "wwdc/en/wwdc2018/414-understanding-crashes-and-crash-logs.md",
+      "zh": "wwdc/zh/wwdc2018/414-understanding-crashes-and-crash-logs.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Understanding Crashes and Crash Logs",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 51251
+    },
+    {
+      "en": "wwdc/en/wwdc2019/411-getting-started-with-instruments.md",
+      "zh": "wwdc/zh/wwdc2019/411-getting-started-with-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Getting Started with Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 34746
+    },
+    {
+      "en": "wwdc/en/wwdc2019/417-improving-battery-life-and-performance.md",
+      "zh": "wwdc/zh/wwdc2019/417-improving-battery-life-and-performance.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Improving Battery Life and Performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 39443
+    },
+    {
+      "en": "wwdc/en/wwdc2019/421-modeling-in-custom-instruments.md",
+      "zh": "wwdc/zh/wwdc2019/421-modeling-in-custom-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Modeling in Custom Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 43706
+    },
+    {
+      "en": "wwdc/en/wwdc2019/429-lldb-beyond-po.md",
+      "zh": "wwdc/zh/wwdc2019/429-lldb-beyond-po.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "LLDB: Beyond \"po\"",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 19348
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10076-diagnose-performance-issues-with-the-xcode-organizer.md",
+      "zh": "wwdc/zh/wwdc2020/10076-diagnose-performance-issues-with-the-xcode-organizer.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Diagnose performance issues with the Xcode Organizer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 12323
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10081-what-s-new-in-metrickit.md",
+      "zh": "wwdc/zh/wwdc2020/10081-what-s-new-in-metrickit.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "What's new in MetricKit",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 15516
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10111-boost-performance-and-security-with-modern-networking.md",
+      "zh": "wwdc/zh/wwdc2020/10111-boost-performance-and-security-with-modern-networking.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Boost performance and security with modern networking",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 11964
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10168-explore-logging-in-swift.md",
+      "zh": "wwdc/zh/wwdc2020/10168-explore-logging-in-swift.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Explore logging in Swift",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 18173
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10087-diagnose-power-and-performance-regressions-in-your-app.md",
+      "zh": "wwdc/zh/wwdc2021/10087-diagnose-power-and-performance-regressions-in-your-app.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Diagnose Power and Performance regressions in your app",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 16415
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10181-ultimate-application-performance-survival-guide.md",
+      "zh": "wwdc/zh/wwdc2021/10181-ultimate-application-performance-survival-guide.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Ultimate application performance survival guide",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 24725
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10203-triage-testflight-crashes-in-xcode-organizer.md",
+      "zh": "wwdc/zh/wwdc2021/10203-triage-testflight-crashes-in-xcode-organizer.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Triage TestFlight crashes in Xcode Organizer",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 17014
+    },
+    {
+      "en": "wwdc/en/wwdc2021/10212-analyze-http-traffic-in-instruments.md",
+      "zh": "wwdc/zh/wwdc2021/10212-analyze-http-traffic-in-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2021",
+      "title": "Analyze HTTP traffic in Instruments",
+      "themes": [
+        "debugging-observability",
+        "network-security"
+      ],
+      "chars": 29602
+    },
+    {
+      "en": "wwdc/en/wwdc2022/110370-debug-swift-debugging-with-lldb.md",
+      "zh": "wwdc/zh/wwdc2022/110370-debug-swift-debugging-with-lldb.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Debug Swift debugging with LLDB",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 18642
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10160-demystify-swiftui-performance.md",
+      "zh": "wwdc/zh/wwdc2023/10160-demystify-swiftui-performance.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Demystify SwiftUI performance",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 25260
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10226-debug-with-structured-logging.md",
+      "zh": "wwdc/zh/wwdc2023/10226-debug-with-structured-logging.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Debug with structured logging",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 17032
+    },
+    {
+      "en": "wwdc/en/wwdc2024/10198-run-break-inspect-explore-effective-debugging-in-lldb.md",
+      "zh": "wwdc/zh/wwdc2024/10198-run-break-inspect-explore-effective-debugging-in-lldb.md",
+      "source": "wwdc",
+      "source_key": "wwdc2024",
+      "title": "Run, Break, Inspect: Explore effective debugging in LLDB",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 26170
+    },
+    {
+      "en": "wwdc/en/wwdc2025/226-profile-and-optimize-power-usage-in-your-app.md",
+      "zh": "wwdc/zh/wwdc2025/226-profile-and-optimize-power-usage-in-your-app.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Profile and optimize power usage in your app",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 17694
+    },
+    {
+      "en": "wwdc/en/wwdc2025/306-optimize-swiftui-performance-with-instruments.md",
+      "zh": "wwdc/zh/wwdc2025/306-optimize-swiftui-performance-with-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Optimize SwiftUI performance with Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 36768
+    },
+    {
+      "en": "wwdc/en/wwdc2025/308-optimize-cpu-performance-with-instruments.md",
+      "zh": "wwdc/zh/wwdc2025/308-optimize-cpu-performance-with-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "Optimize CPU performance with Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 35921
+    },
+    {
+      "en": "wwdc/en/wwdc2026/222-meet-the-new-metrickit.md",
+      "zh": "wwdc/zh/wwdc2026/222-meet-the-new-metrickit.md",
+      "source": "wwdc",
+      "source_key": "wwdc2026",
+      "title": "Meet the new MetricKit",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 19269
+    },
+    {
+      "en": "wwdc/en/wwdc2026/268-profile-fix-and-verify-improve-app-responsiveness-with-instruments.md",
+      "zh": "wwdc/zh/wwdc2026/268-profile-fix-and-verify-improve-app-responsiveness-with-instruments.md",
+      "source": "wwdc",
+      "source_key": "wwdc2026",
+      "title": "Profile, fix, and verify: Improve app responsiveness with Instruments",
+      "themes": [
+        "debugging-observability"
+      ],
+      "chars": 26294
+    },
+    {
+      "en": "apple-docs/en/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams.md",
+      "zh": "apple-docs/zh/avfoundation/using-avfoundation-to-play-and-persist-http-live-streams.md",
+      "source": "apple-docs",
+      "source_key": "avfoundation",
+      "title": "Using AVFoundation to play and persist HTTP live streams",
+      "themes": [
+        "network-security",
+        "data-persistence"
+      ],
+      "chars": 11801
+    },
+    {
+      "en": "apple-docs/en/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming.md",
+      "zh": "apple-docs/zh/avfoundation/writing-fragmented-mpeg-4-files-for-http-live-streaming.md",
+      "source": "apple-docs",
+      "source_key": "avfoundation",
+      "title": "Writing fragmented MPEG-4 files for HTTP Live Streaming",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 4226
+    },
+    {
+      "en": "apple-docs/en/cryptokit/performing-common-cryptographic-operations.md",
+      "zh": "apple-docs/zh/cryptokit/performing-common-cryptographic-operations.md",
+      "source": "apple-docs",
+      "source_key": "cryptokit",
+      "title": "Performing Common Cryptographic Operations",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 1807
+    },
+    {
+      "en": "apple-docs/en/cryptokit/storing-cryptokit-keys-in-the-keychain.md",
+      "zh": "apple-docs/zh/cryptokit/storing-cryptokit-keys-in-the-keychain.md",
+      "source": "apple-docs",
+      "source_key": "cryptokit",
+      "title": "Storing CryptoKit Keys in the Keychain",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 13156
+    },
+    {
+      "en": "apple-docs/en/foundation/streams-sockets-and-ports.md",
+      "zh": "apple-docs/zh/foundation/streams-sockets-and-ports.md",
+      "source": "apple-docs",
+      "source_key": "foundation",
+      "title": "Streams, Sockets, and Ports",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 2183
+    },
+    {
+      "en": "apple-docs/en/network/creating-an-identity-for-local-network-tls.md",
+      "zh": "apple-docs/zh/network/creating-an-identity-for-local-network-tls.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Creating an Identity for Local Network TLS",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 10855
+    },
+    {
+      "en": "apple-docs/en/network/implementing-netcat-with-network-framework.md",
+      "zh": "apple-docs/zh/network/implementing-netcat-with-network-framework.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "Implementing netcat with Network Framework",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 21340
+    },
+    {
+      "en": "apple-docs/en/network/tcp-options.md",
+      "zh": "apple-docs/zh/network/tcp-options.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "TCP Options",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 4365
+    },
+    {
+      "en": "apple-docs/en/network/tls-options.md",
+      "zh": "apple-docs/zh/network/tls-options.md",
+      "source": "apple-docs",
+      "source_key": "network",
+      "title": "TLS Options",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 2048
+    },
+    {
+      "en": "apple-docs/en/security/certificate-key-and-trust-services.md",
+      "zh": "apple-docs/zh/security/certificate-key-and-trust-services.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Certificate, Key, and Trust Services",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 3182
+    },
+    {
+      "en": "apple-docs/en/security/examining-a-certificate.md",
+      "zh": "apple-docs/zh/security/examining-a-certificate.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Examining a Certificate",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 2859
+    },
+    {
+      "en": "apple-docs/en/security/keychain-items.md",
+      "zh": "apple-docs/zh/security/keychain-items.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Keychain items",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 10193
+    },
+    {
+      "en": "apple-docs/en/security/preventing-insecure-network-connections.md",
+      "zh": "apple-docs/zh/security/preventing-insecure-network-connections.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Preventing Insecure Network Connections",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 12668
+    },
+    {
+      "en": "apple-docs/en/security/searching-for-keychain-items.md",
+      "zh": "apple-docs/zh/security/searching-for-keychain-items.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Searching for keychain items",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 7137
+    },
+    {
+      "en": "apple-docs/en/security/sharing-access-to-keychain-items-among-a-collection-of-apps.md",
+      "zh": "apple-docs/zh/security/sharing-access-to-keychain-items-among-a-collection-of-apps.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Sharing access to keychain items among a collection of apps",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 12389
+    },
+    {
+      "en": "apple-docs/en/security/storing-keys-in-the-keychain.md",
+      "zh": "apple-docs/zh/security/storing-keys-in-the-keychain.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Storing Keys in the Keychain",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 6977
+    },
+    {
+      "en": "apple-docs/en/security/updating-and-deleting-keychain-items.md",
+      "zh": "apple-docs/zh/security/updating-and-deleting-keychain-items.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Updating and deleting keychain items",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 4976
+    },
+    {
+      "en": "apple-docs/en/security/using-keys-for-encryption.md",
+      "zh": "apple-docs/zh/security/using-keys-for-encryption.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Using Keys for Encryption",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 12308
+    },
+    {
+      "en": "apple-docs/en/security/using-the-keychain-to-manage-user-secrets.md",
+      "zh": "apple-docs/zh/security/using-the-keychain-to-manage-user-secrets.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Using the keychain to manage user secrets",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 5142
+    },
+    {
+      "en": "apple-docs/en/security/using-the-secure-socket-layer-for-network-communication.md",
+      "zh": "apple-docs/zh/security/using-the-secure-socket-layer-for-network-communication.md",
+      "source": "apple-docs",
+      "source_key": "security",
+      "title": "Using the Secure Socket Layer for Network Communication",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 4007
+    },
+    {
+      "en": "apple-docs/en/technologyoverviews/networking-and-communication.md",
+      "zh": "apple-docs/zh/technologyoverviews/networking-and-communication.md",
+      "source": "apple-docs",
+      "source_key": "technologyoverviews",
+      "title": "Networking and communication",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 8576
+    },
+    {
+      "en": "blogs/en/belkadan/https-and-name-based-virtual-hosting.md",
+      "zh": "blogs/zh/belkadan/https-and-name-based-virtual-hosting.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "This is the site that will be displayed if mod_rewrite isn't enabled",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 8071
+    },
+    {
+      "en": "blogs/en/cocoawithlove/a-cocoa-application-driven-by-http-data-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/a-cocoa-application-driven-by-http-data-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "A Cocoa application driven by HTTP data | Cocoa with Love",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 8016
+    },
+    {
+      "en": "blogs/en/cocoawithlove/a-simple-extensible-http-server-in-cocoa-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/a-simple-extensible-http-server-in-cocoa-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "A simple, extensible HTTP server in Cocoa | Cocoa with Love",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 13325
+    },
+    {
+      "en": "blogs/en/cocoawithlove/classes-for-fetching-and-parsing-xml-or-json-via-http-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/classes-for-fetching-and-parsing-xml-or-json-via-http-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Classes for fetching and parsing XML or JSON via HTTP | Cocoa with Love",
+      "themes": [
+        "network-security",
+        "data-persistence"
+      ],
+      "chars": 14666
+    },
+    {
+      "en": "blogs/en/cocoawithlove/network-data-requirements-on-iphone-os-devices-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/network-data-requirements-on-iphone-os-devices-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Network data requirements on iPhone OS devices | Cocoa with Love",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 6785
+    },
+    {
+      "en": "blogs/en/fbeng/labyrinth-1-1-making-end-to-end-encrypted-backups-even-more-reliable.md",
+      "zh": "blogs/zh/fbeng/labyrinth-1-1-making-end-to-end-encrypted-backups-even-more-reliable.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Labyrinth 1.1: Making End-to-End Encrypted Backups Even More Reliable",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 2977
+    },
+    {
+      "en": "blogs/en/fbeng/sep-10-2021-how-whatsapp-is-enabling-end-to-end-encrypted-backups.md",
+      "zh": "blogs/zh/fbeng/sep-10-2021-how-whatsapp-is-enabling-end-to-end-encrypted-backups.md",
+      "source": "blogs",
+      "source_key": "fbeng",
+      "title": "Sep 10, 2021 How WhatsApp is enabling end-to-end encrypted backups",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 5379
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2012-08-10-a-tour-of-commoncrypto.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2012-08-10-a-tour-of-commoncrypto.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2012-08-10: A Tour of CommonCrypto",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 15385
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2013-12-06-network-protocol-design.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2013-12-06-network-protocol-design.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2013-12-06: Network Protocol Design",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 15850
+    },
+    {
+      "en": "blogs/en/mikeash/friday-q-a-2014-03-14-introduction-to-the-sockets-api.md",
+      "zh": "blogs/zh/mikeash/friday-q-a-2014-03-14-introduction-to-the-sockets-api.md",
+      "source": "blogs",
+      "source_key": "mikeash",
+      "title": "Friday Q&A 2014-03-14: Introduction to the Sockets API",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 17874
+    },
+    {
+      "en": "blogs/en/nshipster/network-link-conditioner.md",
+      "zh": "blogs/zh/nshipster/network-link-conditioner.md",
+      "source": "blogs",
+      "source_key": "nshipster",
+      "title": "Network Link Conditioner",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 5260
+    },
+    {
+      "en": "blogs/en/oleb/managing-the-network-activity-indicator.md",
+      "zh": "blogs/zh/oleb/managing-the-network-activity-indicator.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Managing the Network Activity Indicator",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 3281
+    },
+    {
+      "en": "wwdc/en/wwdc2018/715-introducing-network-framework-a-modern-alternative-to-sockets.md",
+      "zh": "wwdc/zh/wwdc2018/715-introducing-network-framework-a-modern-alternative-to-sockets.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Introducing Network.framework: A modern alternative to Sockets",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 60070
+    },
+    {
+      "en": "wwdc/en/wwdc2019/712-advances-in-networking-part-1.md",
+      "zh": "wwdc/zh/wwdc2019/712-advances-in-networking-part-1.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Advances in Networking, Part 1",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 48047
+    },
+    {
+      "en": "wwdc/en/wwdc2019/713-advances-in-networking-part-2.md",
+      "zh": "wwdc/zh/wwdc2019/713-advances-in-networking-part-2.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Advances in Networking, Part 2",
+      "themes": [
+        "network-security"
+      ],
+      "chars": 53062
+    },
+    {
+      "en": "apple-docs/en/coredata/persistent-history.md",
+      "zh": "apple-docs/zh/coredata/persistent-history.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Persistent history",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 1880
+    },
+    {
+      "en": "apple-docs/en/coredata/persistent-store-types.md",
+      "zh": "apple-docs/zh/coredata/persistent-store-types.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Persistent Store Types",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 1709
+    },
+    {
+      "en": "apple-docs/en/coredata/using-core-data-in-the-background.md",
+      "zh": "apple-docs/zh/coredata/using-core-data-in-the-background.md",
+      "source": "apple-docs",
+      "source_key": "coredata",
+      "title": "Using Core Data in the background",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 4394
+    },
+    {
+      "en": "apple-docs/en/swiftdata/adding-and-editing-persistent-data-in-your-app.md",
+      "zh": "apple-docs/zh/swiftdata/adding-and-editing-persistent-data-in-your-app.md",
+      "source": "apple-docs",
+      "source_key": "swiftdata",
+      "title": "Adding and editing persistent data in your app",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 13760
+    },
+    {
+      "en": "apple-docs/en/swiftdata/deleting-persistent-data-from-your-app.md",
+      "zh": "apple-docs/zh/swiftdata/deleting-persistent-data-from-your-app.md",
+      "source": "apple-docs",
+      "source_key": "swiftdata",
+      "title": "Deleting persistent data from your app",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 10366
+    },
+    {
+      "en": "apple-docs/en/swiftdata/filtering-and-sorting-persistent-data.md",
+      "zh": "apple-docs/zh/swiftdata/filtering-and-sorting-persistent-data.md",
+      "source": "apple-docs",
+      "source_key": "swiftdata",
+      "title": "Filtering and sorting persistent data",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 10137
+    },
+    {
+      "en": "blogs/en/belkadan/protobuf-is-almost-streamable.md",
+      "zh": "blogs/zh/belkadan/protobuf-is-almost-streamable.md",
+      "source": "blogs",
+      "source_key": "belkadan",
+      "title": "Protobuf Is Almost Streamable",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 4866
+    },
+    {
+      "en": "blogs/en/cocoawithlove/core-data-one-line-fetch-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/core-data-one-line-fetch-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Core Data: one line fetch | Cocoa with Love",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 5858
+    },
+    {
+      "en": "blogs/en/cocoawithlove/propagate-deletes-immediately-in-core-data-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/propagate-deletes-immediately-in-core-data-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Propagate deletes immediately in Core Data | Cocoa with Love",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 9245
+    },
+    {
+      "en": "blogs/en/cocoawithlove/testing-core-data-with-very-big-hierarchical-data-sets-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/testing-core-data-with-very-big-hierarchical-data-sets-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "Testing Core Data with very big hierarchical data sets | Cocoa with Love",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 10107
+    },
+    {
+      "en": "blogs/en/cocoawithlove/the-differences-between-core-data-and-a-database-cocoa-with-love.md",
+      "zh": "blogs/zh/cocoawithlove/the-differences-between-core-data-and-a-database-cocoa-with-love.md",
+      "source": "blogs",
+      "source_key": "cocoawithlove",
+      "title": "The differences between Core Data and a Database | Cocoa with Love",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 12050
+    },
+    {
+      "en": "blogs/en/jessesquires/better-core-data-models-in-swift.md",
+      "zh": "blogs/zh/jessesquires/better-core-data-models-in-swift.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Better Core Data models in Swift",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 10514
+    },
+    {
+      "en": "blogs/en/jessesquires/how-to-more-gracefully-handle-non-optional-core-data-properties-in-swift.md",
+      "zh": "blogs/zh/jessesquires/how-to-more-gracefully-handle-non-optional-core-data-properties-in-swift.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "How to more gracefully handle non-optional Core Data properties in Swift",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 15811
+    },
+    {
+      "en": "blogs/en/jessesquires/supporting-json-feed.md",
+      "zh": "blogs/zh/jessesquires/supporting-json-feed.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Supporting JSON feed",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 4548
+    },
+    {
+      "en": "blogs/en/jessesquires/swift-core-data-and-unit-testing.md",
+      "zh": "blogs/zh/jessesquires/swift-core-data-and-unit-testing.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Swift, Core Data, and unit testing",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 10084
+    },
+    {
+      "en": "blogs/en/jessesquires/using-core-data-in-swift.md",
+      "zh": "blogs/zh/jessesquires/using-core-data-in-swift.md",
+      "source": "blogs",
+      "source_key": "jessesquires",
+      "title": "Using Core Data in Swift",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 3975
+    },
+    {
+      "en": "blogs/en/oleb/how-to-make-a-copy-of-a-core-data-sqlite-database.md",
+      "zh": "blogs/zh/oleb/how-to-make-a-copy-of-a-core-data-sqlite-database.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "How to make a copy of a Core Data SQLite database",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 8472
+    },
+    {
+      "en": "blogs/en/oleb/inspecting-core-data-attributes.md",
+      "zh": "blogs/zh/oleb/inspecting-core-data-attributes.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Inspecting Core Data Attributes",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 3244
+    },
+    {
+      "en": "blogs/en/oleb/steve-jobs-on-the-file-system.md",
+      "zh": "blogs/zh/oleb/steve-jobs-on-the-file-system.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "Steve Jobs on the File System",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 2653
+    },
+    {
+      "en": "blogs/en/oleb/the-core-data-book.md",
+      "zh": "blogs/zh/oleb/the-core-data-book.md",
+      "source": "blogs",
+      "source_key": "oleb",
+      "title": "The Core Data Book",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 2124
+    },
+    {
+      "en": "wwdc/en/wwdc2018/224-core-data-best-practices.md",
+      "zh": "wwdc/zh/wwdc2018/224-core-data-best-practices.md",
+      "source": "wwdc",
+      "source_key": "wwdc2018",
+      "title": "Core Data Best Practices",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 33626
+    },
+    {
+      "en": "wwdc/en/wwdc2019/202-using-core-data-with-cloudkit.md",
+      "zh": "wwdc/zh/wwdc2019/202-using-core-data-with-cloudkit.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "Using Core Data With CloudKit",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 31918
+    },
+    {
+      "en": "wwdc/en/wwdc2019/710-what-s-new-in-apple-file-systems.md",
+      "zh": "wwdc/zh/wwdc2019/710-what-s-new-in-apple-file-systems.md",
+      "source": "wwdc",
+      "source_key": "wwdc2019",
+      "title": "What's New in Apple File Systems",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 25620
+    },
+    {
+      "en": "wwdc/en/wwdc2020/10017-core-data-sundries-and-maxims.md",
+      "zh": "wwdc/zh/wwdc2020/10017-core-data-sundries-and-maxims.md",
+      "source": "wwdc",
+      "source_key": "wwdc2020",
+      "title": "Core Data: Sundries and maxims",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 19881
+    },
+    {
+      "en": "wwdc/en/wwdc2022/10119-optimize-your-use-of-core-data-and-cloudkit.md",
+      "zh": "wwdc/zh/wwdc2022/10119-optimize-your-use-of-core-data-and-cloudkit.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Optimize your use of Core Data and CloudKit",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 25102
+    },
+    {
+      "en": "wwdc/en/wwdc2022/10120-evolve-your-core-data-schema.md",
+      "zh": "wwdc/zh/wwdc2022/10120-evolve-your-core-data-schema.md",
+      "source": "wwdc",
+      "source_key": "wwdc2022",
+      "title": "Evolve your Core Data schema",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 18604
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10186-what-s-new-in-core-data.md",
+      "zh": "wwdc/zh/wwdc2023/10186-what-s-new-in-core-data.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "What’s new in Core Data",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 20158
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10187-meet-swiftdata.md",
+      "zh": "wwdc/zh/wwdc2023/10187-meet-swiftdata.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Meet SwiftData",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 11907
+    },
+    {
+      "en": "wwdc/en/wwdc2023/10196-dive-deeper-into-swiftdata.md",
+      "zh": "wwdc/zh/wwdc2023/10196-dive-deeper-into-swiftdata.md",
+      "source": "wwdc",
+      "source_key": "wwdc2023",
+      "title": "Dive deeper into SwiftData",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 17718
+    },
+    {
+      "en": "wwdc/en/wwdc2024/10075-track-model-changes-with-swiftdata-history.md",
+      "zh": "wwdc/zh/wwdc2024/10075-track-model-changes-with-swiftdata-history.md",
+      "source": "wwdc",
+      "source_key": "wwdc2024",
+      "title": "Track model changes with SwiftData history",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 15699
+    },
+    {
+      "en": "wwdc/en/wwdc2024/10138-create-a-custom-data-store-with-swiftdata.md",
+      "zh": "wwdc/zh/wwdc2024/10138-create-a-custom-data-store-with-swiftdata.md",
+      "source": "wwdc",
+      "source_key": "wwdc2024",
+      "title": "Create a custom data store with SwiftData",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 13836
+    },
+    {
+      "en": "wwdc/en/wwdc2025/291-swiftdata-dive-into-inheritance-and-schema-migration.md",
+      "zh": "wwdc/zh/wwdc2025/291-swiftdata-dive-into-inheritance-and-schema-migration.md",
+      "source": "wwdc",
+      "source_key": "wwdc2025",
+      "title": "SwiftData: Dive into inheritance and schema migration",
+      "themes": [
+        "data-persistence"
+      ],
+      "chars": 22386
+    },
+    {
+      "en": "apple-docs/en/avfoundation/loading-media-data-asynchronously.md",
+      "zh": "apple-docs/zh/avfoundation/loading-media-data-asynchronously.md",
+      "source": "apple-docs",
+      "source_key": "avfoundation",
+      "title": "Loading media data asynchronously",
+      "themes": [
+        "approved-explicit"
+      ],
+      "chars": 6657
+    }
+  ]
+}

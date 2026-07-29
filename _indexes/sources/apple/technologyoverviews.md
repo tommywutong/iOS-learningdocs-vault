@@ -1,7 +1,7 @@
 # Apple · technologyoverviews · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -36,7 +36,7 @@
 | — | Interface fundamentals | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/interface-fundamentals.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/interface-fundamentals) | — | 待翻译 |
 | — | Liquid Glass | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/liquid-glass.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/liquid-glass) | — | 待翻译 |
 | — | Media streaming | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/streaming.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/streaming) | — | 待翻译 |
-| — | Networking and communication | Apple · Technology Overviews | 网络与安全 | [英文](../../../apple-docs/en/technologyoverviews/networking-and-communication.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/networking-and-communication) | — | 待翻译 |
+| 网络与通信 | Networking and communication | Apple · Technology Overviews | 网络与安全 | [英文](../../../apple-docs/en/technologyoverviews/networking-and-communication.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/networking-and-communication) | [中文](../../../apple-docs/zh/technologyoverviews/networking-and-communication.md) | 已翻译 |
 | — | Personal data | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/personal-data.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/personal-data) | — | 待翻译 |
 | — | Shared data | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/shared-data.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/shared-data) | — | 待翻译 |
 | — | Spatial and immersive media | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/immersive-media.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/immersive-media) | — | 待翻译 |
@@ -44,7 +44,7 @@
 | — | Structured data models | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/structured-data-models.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/structured-data-models) | — | 待翻译 |
 | — | SwiftUI apps | Apple · Technology Overviews | UI 与渲染 | [英文](../../../apple-docs/en/technologyoverviews/swiftui.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/swiftui) | — | 待翻译 |
 | — | Technology Overviews | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews.md) · [网页](https://developer.apple.com/documentation/technologyoverviews) | — | 待翻译 |
-| — | Testing and performance | Apple · Technology Overviews | 性能与调试、架构、测试与工程实践 | [英文](../../../apple-docs/en/technologyoverviews/testing-and-performance.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/testing-and-performance) | — | 待翻译 |
+| 测试与性能 | Testing and performance | Apple · Technology Overviews | 性能与调试、架构、测试与工程实践 | [英文](../../../apple-docs/en/technologyoverviews/testing-and-performance.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/testing-and-performance) | [中文](../../../apple-docs/zh/technologyoverviews/testing-and-performance.md) | 已翻译 |
 | — | Text display | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/text-display.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/text-display) | — | 待翻译 |
 | — | Tools and distribution | Apple · Technology Overviews | — | [英文](../../../apple-docs/en/technologyoverviews/tools-and-distribution.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/tools-and-distribution) | — | 待翻译 |
 | — | UIKit and AppKit apps | Apple · Technology Overviews | UI 与渲染 | [英文](../../../apple-docs/en/technologyoverviews/uikit-appkit.md) · [网页](https://developer.apple.com/documentation/technologyoverviews/uikit-appkit) | — | 待翻译 |

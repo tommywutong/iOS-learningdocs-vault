@@ -1,36 +1,36 @@
 # Apple 现行文档
 
-> 来源：`developer.apple.com/documentation`，索引生成于 2026-07-28。
+> 来源：`developer.apple.com/documentation`，索引生成于 2026-07-29。
 > “成篇文章”有逐篇目录；短 API 条目仍可从框架归档目录浏览。
 
 | 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |
 |---|---:|---:|---:|---|---|
-| swift | 18,401 | 1,027 | 126 | [逐篇查看](sources/apple/swift.md) | [目录](../apple-docs/en/swift) |
-| foundation | 14,127 | 266 | 176 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
-| uikit | 12,614 | 265 | 158 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
-| security | 7,311 | 141 | 2 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
+| swift | 18,401 | 1,027 | 138 | [逐篇查看](sources/apple/swift.md) | [目录](../apple-docs/en/swift) |
+| foundation | 14,127 | 266 | 177 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
+| uikit | 12,614 | 265 | 174 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
+| security | 7,311 | 141 | 18 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
 | swiftui | 7,106 | 146 | 4 | [逐篇查看](sources/apple/swiftui.md) | [目录](../apple-docs/en/swiftui) |
-| avfoundation | 5,530 | 130 | 0 | [逐篇查看](sources/apple/avfoundation.md) | [目录](../apple-docs/en/avfoundation) |
-| metal | 4,090 | 183 | 50 | [逐篇查看](sources/apple/metal.md) | [目录](../apple-docs/en/metal) |
+| avfoundation | 5,530 | 130 | 3 | [逐篇查看](sources/apple/avfoundation.md) | [目录](../apple-docs/en/avfoundation) |
+| metal | 4,090 | 183 | 74 | [逐篇查看](sources/apple/metal.md) | [目录](../apple-docs/en/metal) |
 | corefoundation | 2,725 | 91 | 1 | [逐篇查看](sources/apple/corefoundation.md) | [目录](../apple-docs/en/corefoundation) |
 | coretext | 2,345 | 18 | 0 | [逐篇查看](sources/apple/coretext.md) | [目录](../apple-docs/en/coretext) |
 | coreimage | 2,116 | 45 | 0 | [逐篇查看](sources/apple/coreimage.md) | [目录](../apple-docs/en/coreimage) |
-| network | 1,975 | 31 | 0 | [逐篇查看](sources/apple/network.md) | [目录](../apple-docs/en/network) |
+| network | 1,975 | 31 | 8 | [逐篇查看](sources/apple/network.md) | [目录](../apple-docs/en/network) |
 | coregraphics | 1,939 | 49 | 0 | [逐篇查看](sources/apple/coregraphics.md) | [目录](../apple-docs/en/coregraphics) |
 | storekit | 1,430 | 111 | 0 | [逐篇查看](sources/apple/storekit.md) | [目录](../apple-docs/en/storekit) |
 | mapkit | 1,296 | 25 | 0 | [逐篇查看](sources/apple/mapkit.md) | [目录](../apple-docs/en/mapkit) |
-| coredata | 1,174 | 48 | 1 | [逐篇查看](sources/apple/coredata.md) | [目录](../apple-docs/en/coredata) |
+| coredata | 1,174 | 48 | 7 | [逐篇查看](sources/apple/coredata.md) | [目录](../apple-docs/en/coredata) |
 | combine | 1,062 | 40 | 0 | [逐篇查看](sources/apple/combine.md) | [目录](../apple-docs/en/combine) |
 | objectivec | 850 | 42 | 42 | [逐篇查看](sources/apple/objectivec.md) | [目录](../apple-docs/en/objectivec) |
-| cryptokit | 705 | 23 | 0 | [逐篇查看](sources/apple/cryptokit.md) | [目录](../apple-docs/en/cryptokit) |
-| quartzcore | 699 | 32 | 0 | [逐篇查看](sources/apple/quartzcore.md) | [目录](../apple-docs/en/quartzcore) |
+| cryptokit | 705 | 23 | 2 | [逐篇查看](sources/apple/cryptokit.md) | [目录](../apple-docs/en/cryptokit) |
+| quartzcore | 699 | 32 | 1 | [逐篇查看](sources/apple/quartzcore.md) | [目录](../apple-docs/en/quartzcore) |
 | avkit | 691 | 22 | 0 | [逐篇查看](sources/apple/avkit.md) | [目录](../apple-docs/en/avkit) |
 | photos | 691 | 2 | 0 | [逐篇查看](sources/apple/photos.md) | [目录](../apple-docs/en/photos) |
 | dispatch | 612 | 17 | 20 | [逐篇查看](sources/apple/dispatch.md) | [目录](../apple-docs/en/dispatch) |
 | charts | 595 | 6 | 0 | [逐篇查看](sources/apple/charts.md) | [目录](../apple-docs/en/charts) |
 | os | 595 | 19 | 19 | [逐篇查看](sources/apple/os.md) | [目录](../apple-docs/en/os) |
 | corelocation | 568 | 21 | 0 | [逐篇查看](sources/apple/corelocation.md) | [目录](../apple-docs/en/corelocation) |
-| swiftdata | 545 | 18 | 3 | [逐篇查看](sources/apple/swiftdata.md) | [目录](../apple-docs/en/swiftdata) |
+| swiftdata | 545 | 18 | 7 | [逐篇查看](sources/apple/swiftdata.md) | [目录](../apple-docs/en/swiftdata) |
 | regexbuilder | 462 | 1 | 1 | [逐篇查看](sources/apple/regexbuilder.md) | [目录](../apple-docs/en/regexbuilder) |
 | uniformtypeidentifiers | 360 | 6 | 0 | [逐篇查看](sources/apple/uniformtypeidentifiers.md) | [目录](../apple-docs/en/uniformtypeidentifiers) |
 | xcode | 360 | 360 | 355 | [逐篇查看](sources/apple/xcode.md) | [目录](../apple-docs/en/xcode) |
@@ -43,10 +43,10 @@
 | distributed | 93 | 1 | 0 | [逐篇查看](sources/apple/distributed.md) | [目录](../apple-docs/en/distributed) |
 | updates | 89 | 89 | 0 | [逐篇查看](sources/apple/updates.md) | [目录](../apple-docs/en/updates) |
 | bundleresources | 86 | 4 | 0 | [逐篇查看](sources/apple/bundleresources.md) | [目录](../apple-docs/en/bundleresources) |
-| kernel | 72 | 71 | 13 | [逐篇查看](sources/apple/kernel.md) | [目录](../apple-docs/en/kernel) |
+| kernel | 72 | 71 | 15 | [逐篇查看](sources/apple/kernel.md) | [目录](../apple-docs/en/kernel) |
 | backgroundtasks | 64 | 5 | 0 | [逐篇查看](sources/apple/backgroundtasks.md) | [目录](../apple-docs/en/backgroundtasks) |
 | avfaudio | 48 | 5 | 0 | [逐篇查看](sources/apple/avfaudio.md) | [目录](../apple-docs/en/avfaudio) |
-| technologyoverviews | 44 | 44 | 0 | [逐篇查看](sources/apple/technologyoverviews.md) | [目录](../apple-docs/en/technologyoverviews) |
+| technologyoverviews | 44 | 44 | 2 | [逐篇查看](sources/apple/technologyoverviews.md) | [目录](../apple-docs/en/technologyoverviews) |
 | cfnetwork | 40 | 1 | 0 | [逐篇查看](sources/apple/cfnetwork.md) | [目录](../apple-docs/en/cfnetwork) |
 | observation | 37 | 1 | 0 | [逐篇查看](sources/apple/observation.md) | [目录](../apple-docs/en/observation) |
 | mediaplayer | 26 | 1 | 0 | [逐篇查看](sources/apple/mediaplayer.md) | [目录](../apple-docs/en/mediaplayer) |
@@ -64,7 +64,7 @@
 | watchkit | 8 | 2 | 0 | [逐篇查看](sources/apple/watchkit.md) | [目录](../apple-docs/en/watchkit) |
 | accessibility | 7 | 7 | 0 | [逐篇查看](sources/apple/accessibility.md) | [目录](../apple-docs/en/accessibility) |
 | automator | 7 | 0 | 0 | — | [目录](../apple-docs/en/automator) |
-| apple-silicon | 6 | 6 | 0 | [逐篇查看](sources/apple/apple-silicon.md) | [目录](../apple-docs/en/apple-silicon) |
+| apple-silicon | 6 | 6 | 2 | [逐篇查看](sources/apple/apple-silicon.md) | [目录](../apple-docs/en/apple-silicon) |
 | networkextension | 6 | 1 | 0 | [逐篇查看](sources/apple/networkextension.md) | [目录](../apple-docs/en/networkextension) |
 | addressbook | 6 | 0 | 0 | — | [目录](../apple-docs/en/addressbook) |
 | groupactivities | 5 | 4 | 1 | [逐篇查看](sources/apple/groupactivities.md) | [目录](../apple-docs/en/groupactivities) |
@@ -117,7 +117,7 @@
 | audiotoolbox | 2 | 2 | 0 | [逐篇查看](sources/apple/audiotoolbox.md) | [目录](../apple-docs/en/audiotoolbox) |
 | coretelephony | 2 | 0 | 0 | — | [目录](../apple-docs/en/coretelephony) |
 | appclip | 2 | 2 | 0 | [逐篇查看](sources/apple/appclip.md) | [目录](../apple-docs/en/appclip) |
-| technotes | 2 | 2 | 0 | [逐篇查看](sources/apple/technotes.md) | [目录](../apple-docs/en/technotes) |
+| technotes | 2 | 2 | 1 | [逐篇查看](sources/apple/technotes.md) | [目录](../apple-docs/en/technotes) |
 | imageio | 2 | 2 | 0 | [逐篇查看](sources/apple/imageio.md) | [目录](../apple-docs/en/imageio) |
 | coremediaio | 2 | 2 | 0 | [逐篇查看](sources/apple/coremediaio.md) | [目录](../apple-docs/en/coremediaio) |
 | realitykit | 2 | 2 | 0 | [逐篇查看](sources/apple/realitykit.md) | [目录](../apple-docs/en/realitykit) |
@@ -205,4 +205,4 @@
 | mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
 | callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
 | opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
-| **合计** | **95,634** | **3,746** | **991** | | |
+| **合计** | **95,634** | **3,746** | **1,091** | | |
