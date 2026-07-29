@@ -1,9 +1,9 @@
 # onevcat (王巍/喵神)
 
-> 状态：active；授权：CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：active；授权：CC BY 4.0（页脚明示）→ 可公开，须署名并保留原文链接。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | 2019 年终总结 | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/2019-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md) · [网页](https://onevcat.com/2019/12/2019-final/) | — | 原生中文 |
 | 2021 年终总结 | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/2021-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93.md) · [网页](https://onevcat.com/2021/12/2021-final/) | — | 原生中文 |
@@ -26,22 +26,6 @@
 | ObjC 中国的工作回顾和之后的计划 | — | onevcat (王巍/喵神) | Objective-C Runtime | [中文原文](../../../blogs/zh/onevcat/objc-%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE%E5%92%8C%E4%B9%8B%E5%90%8E%E7%9A%84%E8%AE%A1%E5%88%92.md) · [网页](https://onevcat.com/2016/04/objccn-plan/) | — | 原生中文 |
 | Objective-C中的Block | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/objective-c%E4%B8%AD%E7%9A%84block.md) · [网页](https://onevcat.com/2011/11/objc-block/) | — | 原生中文 |
 | Objective-C中的Debug表达式 | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/objective-c%E4%B8%AD%E7%9A%84debug%E8%A1%A8%E8%BE%BE%E5%BC%8F.md) · [网页](https://onevcat.com/2011/12/debug-2/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-0c1d4a.md) · [网页](https://onevcat.com/page14/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-2a5691.md) · [网页](https://onevcat.com/page17/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-3c7041.md) · [网页](https://onevcat.com/page15/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-4378c6.md) · [网页](https://onevcat.com/page4/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-590e23.md) · [网页](https://onevcat.com/page7/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-5e7445.md) · [网页](https://onevcat.com/page9/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-6452a0.md) · [网页](https://onevcat.com/page11/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-6d6000.md) · [网页](https://onevcat.com/page5/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-74f569.md) · [网页](https://onevcat.com/page16/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-8004ed.md) · [网页](https://onevcat.com/page10/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-87c1ef.md) · [网页](https://onevcat.com/page13/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-9ec593.md) · [网页](https://onevcat.com/page3/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-9fa753.md) · [网页](https://onevcat.com/page6/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-c45342.md) · [网页](https://onevcat.com/page8/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den-f71cd1.md) · [网页](https://onevcat.com/page12/) | — | 原生中文 |
-| OneV’s Den | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/onev-s-den.md) · [网页](https://onevcat.com/page2/) | — | 原生中文 |
 | OpenCV 在 iOS 开发环境下的编译和配置 | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/opencv-%E5%9C%A8-ios-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E9%85%8D%E7%BD%AE.md) · [网页](https://onevcat.com/2012/03/opencv-build-and-config/) | — | 原生中文 |
 | Package.swift toolchain 版本的选择 | — | onevcat (王巍/喵神) | Swift 语言 | [中文原文](../../../blogs/zh/onevcat/package-swift-toolchain-%E7%89%88%E6%9C%AC%E7%9A%84%E9%80%89%E6%8B%A9.md) · [网页](https://onevcat.com/2020/09/swift-package-version/) | — | 原生中文 |
 | Pomodoro Do - 拖延症患者的福音 | — | onevcat (王巍/喵神) | — | [中文原文](../../../blogs/zh/onevcat/pomodoro-do-%E6%8B%96%E5%BB%B6%E7%97%87%E6%82%A3%E8%80%85%E7%9A%84%E7%A6%8F%E9%9F%B3.md) · [网页](https://onevcat.com/2012/07/pomodoro-do/) | — | 原生中文 |

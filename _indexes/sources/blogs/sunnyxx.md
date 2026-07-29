@@ -1,9 +1,9 @@
 # sunnyxx (孙源)
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | ( ) -\> ( ) | — | sunnyxx (孙源) | — | [中文原文](../../../blogs/zh/sunnyxx/sunnyxx%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.md) · [网页](http://blog.sunnyxx.com/2014/10/14/fp-essential/) | — | 原生中文 |
 | 0代码ViewController | — | sunnyxx (孙源) | — | [中文原文](../../../blogs/zh/sunnyxx/0%E4%BB%A3%E7%A0%81viewcontroller-sunnyxx%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.md) · [网页](http://blog.sunnyxx.com/2014/07/17/ios_0code_vc/) | — | 原生中文 |

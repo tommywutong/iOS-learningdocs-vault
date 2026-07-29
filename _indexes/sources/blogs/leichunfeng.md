@@ -1,9 +1,9 @@
 # 雷纯锋
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | Functor、Applicative 和 Monad | — | 雷纯锋 | — | [中文原文](../../../blogs/zh/leichunfeng/functor-applicative-%E5%92%8C-monad.md) · [网页](http://leichunfeng.github.io/blog/2015/11/08/functor-applicative-and-monad/) | — | 原生中文 |
 | iOS 并发编程之 Operation Queues | — | 雷纯锋 | — | [中文原文](../../../blogs/zh/leichunfeng/ios-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B-operation-queues.md) · [网页](http://leichunfeng.github.io/blog/2015/07/29/ios-concurrency-programming-operation-queues/) | — | 原生中文 |

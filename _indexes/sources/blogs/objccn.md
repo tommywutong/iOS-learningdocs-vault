@@ -1,11 +1,10 @@
 # ObjC 中国 (objccn.io)
 
-> 状态：frozen；授权：页脚「© 2015 至今」→ 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：页脚「© 2015 至今」→ 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
-| 2 "helloworld.c" 2 | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/mach-o-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.md) · [网页](https://objccn.io/issue-6-3) | — | 原生中文 |
 | Android Intents | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/android-intents.md) · [网页](https://objccn.io/issue-11-2) | — | 原生中文 |
 | Android 中的 SQLite 数据库支持 | — | ObjC 中国 (objccn.io) | Objective-C Runtime、数据与持久化 | [中文原文](../../../blogs/zh/objccn/android-%E4%B8%AD%E7%9A%84-sqlite-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81.md) · [网页](https://objccn.io/issue-11-5) | — | 原生中文 |
 | Android 通知中心 | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/android-%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83.md) · [网页](https://objccn.io/issue-11-4) | — | 原生中文 |
@@ -27,6 +26,7 @@
 | IP，TCP 和 HTTP | — | ObjC 中国 (objccn.io) | Objective-C Runtime、网络与安全 | [中文原文](../../../blogs/zh/objccn/ip-tcp-%E5%92%8C-http.md) · [网页](https://objccn.io/issue-10-6) | — | 原生中文 |
 | KVC 和 KVO | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/kvc-%E5%92%8C-kvo.md) · [网页](https://objccn.io/issue-7-3) | — | 原生中文 |
 | Layer 中自定义属性的动画 | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/layer-%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8A%A8%E7%94%BB.md) · [网页](https://objccn.io/issue-12-2) | — | 原生中文 |
+| Mach-O 可执行文件 | — | ObjC 中国 (objccn.io) | Objective-C Runtime、启动、链接与二进制 | [中文原文](../../../blogs/zh/objccn/mach-o-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6.md) · [网页](https://objccn.io/issue-6-3) | — | 原生中文 |
 | Metal | — | ObjC 中国 (objccn.io) | Objective-C Runtime、UI 与渲染 | [中文原文](../../../blogs/zh/objccn/metal.md) · [网页](https://objccn.io/issue-18-2) | — | 原生中文 |
 | MVVM 介绍 | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/mvvm-%E4%BB%8B%E7%BB%8D.md) · [网页](https://objccn.io/issue-13-1) | — | 原生中文 |
 | NSString 与 Unicode | — | ObjC 中国 (objccn.io) | Objective-C Runtime | [中文原文](../../../blogs/zh/objccn/nsstring-%E4%B8%8E-unicode.md) · [网页](https://objccn.io/issue-9-1) | — | 原生中文 |

@@ -1,9 +1,9 @@
 # 杨萧玉
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | App 二进制文件重排已经被玩坏了 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/app-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%87%8D%E6%8E%92%E5%B7%B2%E7%BB%8F%E8%A2%AB%E7%8E%A9%E5%9D%8F%E4%BA%86.md) · [网页](http://yulingtianxia.com/blog/2019/09/01/App-Order-Files/) | — | 原生中文 |
 | App与Extensions间通信共享数据 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/app%E4%B8%8Eextensions%E9%97%B4%E9%80%9A%E4%BF%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE.md) · [网页](http://yulingtianxia.com/blog/2015/04/06/Communication-between-your-App-and-Extensions/) | — | 原生中文 |

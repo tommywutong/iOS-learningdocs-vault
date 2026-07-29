@@ -1,9 +1,9 @@
 # dirtmelon
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | 2016 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/2016.md) · [网页](https://dirtmelon.github.io/posts/2016/) | — | 原生中文 |
 | 2017 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/2017.md) · [网页](https://dirtmelon.github.io/posts/2017/) | — | 原生中文 |
@@ -14,7 +14,6 @@
 | @return [TargetDefinition] | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/%E4%B8%80%E7%A7%8D%E4%BD%BF%E7%94%A8-cocoapods-%E5%90%8C%E6%AD%A5-git-hooks-%E7%9A%84%E6%96%B9%E6%A1%88.md) · [网页](https://dirtmelon.github.io/posts/cocoapods-sync-githooks/) | — | 原生中文 |
 | Alamofire | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/alamofire.md) · [网页](https://dirtmelon.github.io/posts/Alamofire/) | — | 原生中文 |
 | Apple Keywords | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/apple-keywords.md) · [网页](https://dirtmelon.github.io/posts/Apple-Keywords/) | — | 原生中文 |
-| Archives | — | dirtmelon | 数据与持久化 | [中文原文](../../../blogs/zh/dirtmelon/archives.md) · [网页](https://dirtmelon.github.io/archives/) | — | 原生中文 |
 | Aspects | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/aspects.md) · [网页](https://dirtmelon.github.io/posts/Aspects/) | — | 原生中文 |
 | FBAllocationTracker | — | dirtmelon | 内存与 ARC | [中文原文](../../../blogs/zh/dirtmelon/fballocationtracker.md) · [网页](https://dirtmelon.github.io/posts/fballocationtracker/) | — | 原生中文 |
 | IGListKit - 完结篇 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/iglistkit-%E5%AE%8C%E7%BB%93%E7%AF%87.md) · [网页](https://dirtmelon.github.io/posts/iglistkit-fifth/) | — | 原生中文 |

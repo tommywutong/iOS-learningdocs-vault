@@ -1,9 +1,9 @@
 # ibireme (郭曜源)
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-29，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | 2015年了呢… | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/2015%E5%B9%B4%E4%BA%86%E5%91%A2.md) · [网页](https://blog.ibireme.com/2015/01/02/2015/) | — | 原生中文 |
 | iOS JSON 模型转换库评测 | — | ibireme (郭曜源) | 数据与持久化 | [中文原文](../../../blogs/zh/ibireme/ios-json-%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%BA%93%E8%AF%84%E6%B5%8B.md) · [网页](https://blog.ibireme.com/2015/10/23/ios_model_framework_benchmark/) | — | 原生中文 |
