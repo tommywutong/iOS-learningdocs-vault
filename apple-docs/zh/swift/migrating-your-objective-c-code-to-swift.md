@@ -66,7 +66,7 @@ translated: true
 
 ## 另请参阅
 
-### Language Interoperability with Objective-C and C
+### 与 Objective-C 和 C 的语言互操作性
 
 - [Objective-C and C Code Customization](objective-c-and-c-code-customization.md) — 对你的 Objective-C API 应用宏，自定义它们导入 Swift 的方式。
 - [Cocoa Design Patterns](cocoa-design-patterns.md) — 在你的 Swift App 中采纳并与 Cocoa 设计模式互操作。

@@ -42,7 +42,7 @@ translated: true
 
 Create a sloth and assign personality traits and abilities.
 
-## Overview
+## 概述
 
 Sloths are complex creatures that require careful creation and a suitable
 habitat.
