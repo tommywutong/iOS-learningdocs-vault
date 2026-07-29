@@ -158,6 +158,8 @@ title: Demo
 | 1 | 2 |
 | 3 | 4 |
 
+Use `Demo.value` and [- application:willFinishLaunchingWithOptions:](demo.md).
+
 ```objective-c
     int x = 1; // set the counter
     NSString *u = @"https://example.com";
@@ -170,6 +172,10 @@ def synth(table_rows: str, code: str, comment: str) -> str:
             .replace("title: Demo", "title: 示例")
             .replace("| A | B |", "| 甲 | 乙 |")
             .replace("| 3 | 4 |\n", table_rows)
+            .replace(
+                "Use `Demo.value` and [- application:willFinishLaunchingWithOptions:](demo.md).",
+                "使用 `Demo.value` 和 [- application:willFinishLaunchingWithOptions:](demo.md)。",
+            )
             .replace("    int x = 1;", code)
             .replace(" // set the counter", comment))
 
@@ -180,6 +186,15 @@ SYNTH_CASES = {
     "删行尾注释": synth("| 3 | 4 |\n", "    int x = 1;", ""),
     "改代码但保留注释": synth("| 3 | 4 |\n", "    int x = 2;", " // 设置计数器"),
     "吃掉缩进": synth("| 3 | 4 |\n", "int x = 1;", " // 设置计数器"),
+    "改行内代码": synth("| 3 | 4 |\n", "    int x = 1;", " // 设置计数器").replace(
+        "`Demo.value`", "`Demo.值`"
+    ),
+    "改链接里的 API selector": synth(
+        "| 3 | 4 |\n", "    int x = 1;", " // 设置计数器"
+    ).replace(
+        "application:willFinishLaunchingWithOptions:",
+        "application:willFinishLaunching:",
+    ),
 }
 
 

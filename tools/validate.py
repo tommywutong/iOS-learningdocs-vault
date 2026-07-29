@@ -23,6 +23,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -37,6 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # 一个字符类吃掉了两类假问题，所以这里放宽到「除空白和反引号以外的任何字符」。
 FENCE = re.compile(r"^\s*```([^\s`]*)\s*$")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(<?([^)>]+)>?\)")
+LINK_WITH_LABEL = re.compile(r"(?<!!)\[([^\]]*)\]\(<?([^)>]+)>?\)")
 IMAGE = re.compile(r"!\[[^\]]*\]\(<?([^)>]+)>?\)")
 HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
 CALLOUT = re.compile(r"^>\s*\[!(\w+)\]")
@@ -44,6 +46,12 @@ LIST_ITEM = re.compile(r"^\s*(?:[-*+]|\d+\.)\s+")
 TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
 COMMENT = re.compile(r"^\s*(//|/\*|\*|#|--)")
 INLINE_CODE = re.compile(r"`[^`]*`")
+OBJC_SELECTOR = re.compile(
+    r"(?<![\w])[-+]\s+[A-Za-z_]\w*(?::(?:[A-Za-z_]\w*)?)+"
+)
+PRESERVED_TERM_PATTERNS = {
+    "prewarming": re.compile(r"\bprewarm(?:ing|ed|s)?\b", re.IGNORECASE),
+}
 PLATFORM_WORDS = {
     "iOS", "iPadOS", "macOS", "tvOS", "visionOS", "watchOS",
     "Mac", "Catalyst",
@@ -96,6 +104,10 @@ FIXED_LINES = {
     "### Deprecated": "### 已废弃",
     "### Error codes": "### 错误码",
     "### Supporting types": "### 支持类型",
+    # Swift 与 Objective-C 互操作文档的 DocC 分组名。译法采用现有译文多数形式，
+    # 并由 fix_structural.py 一次性统一存量。
+    "### Customizing Objective-C APIs": "### 自定义 Objective-C API",
+    "### Language Interoperability with Objective-C and C": "### 与 Objective-C 和 C 的语言互操作性",
     # Xcode 工具名称。项目现有正文和 Xcode 界面均以英文产品名使用，
     # 不把 Sanitizer 机械译成「消毒器」或「清理器」。
     "### Thread Sanitizer": "### Thread Sanitizer",
@@ -212,6 +224,32 @@ def headings(body: str) -> list[int]:
     return [len(m.group(1)) for line in prose_lines(body) if (m := HEADING.match(line))]
 
 
+def inline_code_values(body: str) -> list[str]:
+    """提取代码围栏外的行内代码；规范要求译文逐字符保留。"""
+    return [
+        match.group(0)[1:-1]
+        for line in prose_lines(body)
+        for match in INLINE_CODE.finditer(line)
+        if match.group(0)[1:-1]
+        and not re.search(r"[\u3400-\u9fff]", match.group(0)[1:-1])
+    ]
+
+
+def api_tokens_in_link_labels(body: str) -> list[str]:
+    """提取 Markdown 链接显示文字里的 Objective-C selector。"""
+    return [
+        match.group(0)
+        for line in prose_lines(body)
+        for label, _target in LINK_WITH_LABEL.findall(line)
+        for match in OBJC_SELECTOR.finditer(label)
+    ]
+
+
+def preserved_terms(body: str, pattern: re.Pattern) -> list[str]:
+    """提取术语表要求保留英文的变形，比较时忽略大小写但保留词形。"""
+    return [match.group(0).casefold() for match in pattern.finditer(body)]
+
+
 def count(body: str, pattern: re.Pattern) -> int:
     return sum(1 for line in body.splitlines() if pattern.match(line))
 
@@ -220,16 +258,91 @@ def callouts(body: str) -> list[str]:
     return [m.group(1).lower() for line in body.splitlines() if (m := CALLOUT.match(line))]
 
 
-def residual_english(body: str) -> list[str]:
+def looks_like_technical_output_line(line: str) -> bool:
+    """识别代码围栏外仍应逐字符保留的命令、代码和终端输出行。
+
+    只用于“译文与英文原文存在完全相同行”的来源感知豁免，不能单独放过任意英文。
+    """
+    stripped = line.strip()
+    if not stripped:
+        return False
+    if line.startswith(("    ", "\t")):
+        return True
+    if stripped.startswith(("% ", "$ ", ">>> ", "(gdb) ", "(lldb) ")):
+        return True
+    if re.match(r"^--?[A-Za-z0-9]", stripped):
+        return True
+    if re.match(r"^[A-Z_][A-Z0-9_]*=\S", stripped):
+        return True
+    if re.match(
+        r"^(?:printf|clang|gcc|g\+\+|ld(?:\.[A-Za-z0-9_-]+)?|dwp|"
+        r"cmake|make|readelf|objdump|nm|ar|cat|echo)\s",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^(?:call|define|declare|load|store|ret|br|phi|getelementptr)\b",
+        stripped,
+    ) and re.search(r"[@%]", stripped):
+        return True
+    if re.match(r"^[A-Z][A-Za-z0-9.+_-]*\s+\d+\.\d+", stripped) and (
+        "git@" in stripped or re.search(r"\b[0-9a-f]{12,}\b", stripped)
+    ):
+        return True
+    if len(re.findall(r'"[^"]+\.[A-Za-z0-9]{1,5}"', stripped)) >= 2:
+        return True
+    if re.search(r"\b(?:errx|printf|fprintf|puts|return|if|while|for)\s*\(", stripped):
+        return bool(re.search(r"[;{}]\s*$|=>|->|=", stripped))
+    if re.search(r"[;{}]\s*$", stripped) and re.search(
+        r"(?:[A-Za-z_]\w*\s*\(|[=\"']|->|::)",
+        stripped,
+    ):
+        return True
+    return False
+
+
+def looks_like_technical_output_continuation(line: str) -> bool:
+    """识别紧随命令或代码行的终端输出；普通英文段落不能因此连带豁免。"""
+    stripped = line.strip()
+    if not stripped:
+        return False
+    if looks_like_technical_output_line(line):
+        return True
+    first = stripped.split(maxsplit=1)[0]
+    return bool(
+        re.search(r"[./()_:=]", first)
+        or re.match(r"^(?:0x)?[0-9A-Fa-f]{4,}$", first)
+    )
+
+
+def residual_english(body: str, source_body: str | None = None) -> list[str]:
     """找出疑似未翻译的成句英文。
 
     判定：一行里去掉行内代码、链接目标、URL 之后，仍有连续 8 个及以上的
     纯 ASCII 单词，且该行不含中文字符。阈值取 8 是为了放过术语短语和 API 名。
     """
     hits = []
+    preserved_technical = Counter()
+    if source_body is not None:
+        technical_run = False
+        for line in strip_code(source_body).splitlines():
+            if not line.strip():
+                technical_run = False
+                continue
+            starts_run = looks_like_technical_output_line(line)
+            if starts_run or (
+                technical_run and looks_like_technical_output_continuation(line)
+            ):
+                preserved_technical[line.strip()] += 1
+                technical_run = True
+            else:
+                technical_run = False
     for line in strip_code(body).splitlines():
         s = line.strip()
         if not s or s.startswith(">") and "[!" in s:
+            continue
+        if preserved_technical[s]:
+            preserved_technical[s] -= 1
             continue
         if re.fullmatch(r"(?:[-*+]\s+)?(?:\[[^\]]+\]\([^)]+\)\s*)+", s):
             continue
@@ -258,7 +371,7 @@ def residual_english(body: str) -> list[str]:
     return hits
 
 
-def check_pair(en: Path, zh: Path) -> list[str]:
+def check_pair(en: Path, zh: Path, *, strict_identifiers: bool = True) -> list[str]:
     issues: list[str] = []
     en_fm, en_body = split_frontmatter(en.read_text(encoding="utf-8"))
     zh_fm, zh_body = split_frontmatter(zh.read_text(encoding="utf-8"))
@@ -317,6 +430,31 @@ def check_pair(en: Path, zh: Path) -> list[str]:
                 issues.append(f"{name}目标丢失或被改：{only_en[:3]}")
             if only_zh:
                 issues.append(f"{name}目标凭空多出：{only_zh[:3]}")
+
+    if strict_identifiers:
+        # 3.1 行内代码和链接显示文字中的 API 标识符同样属于不可翻译代码。
+        # 允许译文为了清晰给原本是普通文本的标识符补反引号，但原文已有的每一个
+        # 行内代码必须仍以相同内容出现。
+        en_inline = Counter(inline_code_values(en_body))
+        zh_inline = Counter(inline_code_values(zh_body))
+        missing_inline = list((en_inline - zh_inline).elements())
+        if missing_inline:
+            issues.append(f"原文行内代码被改动或删掉：{missing_inline[:3]}")
+        en_api = Counter(api_tokens_in_link_labels(en_body))
+        zh_api = Counter(api_tokens_in_link_labels(zh_body))
+        missing_api = list((en_api - zh_api).elements())
+        if missing_api:
+            issues.append(
+                "链接显示文字中的 API selector 被改动或删掉："
+                f"{missing_api[:3]}"
+            )
+
+        # 3.2 术语表明确要求保留英文的词，所有词形都必须仍出现在译文中。
+        for name, pattern in PRESERVED_TERM_PATTERNS.items():
+            en_terms = Counter(preserved_terms(en_body, pattern))
+            zh_terms = Counter(preserved_terms(zh_body, pattern))
+            if en_terms - zh_terms:
+                issues.append(f"应保留英文的术语 `{name}` 被翻译、删减或改变词形")
 
     # 4. 代码块
     ea, za = code_blocks(en_body), code_blocks(zh_body)
@@ -399,7 +537,7 @@ def check_pair(en: Path, zh: Path) -> list[str]:
             issues.append(f"结构性文字未按固定译法：`{en_form}` 应为 `{zh_form}`")
 
     # 9. 残留英文
-    hits = residual_english(zh_body)
+    hits = residual_english(zh_body, en_body)
     if hits:
         issues.append(f"疑似未翻译的英文 {len(hits)} 处，首条：{hits[0]!r}")
 
@@ -409,6 +547,7 @@ def check_pair(en: Path, zh: Path) -> list[str]:
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     as_json = "--json" in sys.argv
+    strict_identifiers = "--strict-identifiers" in sys.argv
     target = ROOT / (args[0] if args else "apple-docs")
 
     # 从 zh 路径推 en 路径
@@ -439,7 +578,7 @@ def main() -> None:
                 continue
             results[str(zh.relative_to(ROOT))] = ["找不到对应的英文原文"]
             continue
-        issues = check_pair(en, zh)
+        issues = check_pair(en, zh, strict_identifiers=strict_identifiers)
         if issues:
             results[str(zh.relative_to(ROOT))] = issues
 
