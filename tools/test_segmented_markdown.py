@@ -191,6 +191,28 @@ translated: false
         self.assertEqual(residual_english(technical, source), [])
         self.assertEqual(len(residual_english(prose, source)), 1)
 
+    def test_source_aware_residual_check_accepts_toolchain_output(self):
+        technical = "\n".join(
+            [
+                "c.so: c.o; ${LINK.c} -shared $< -o $@",
+                "Num: Value Size Type Bind Vis Ndx Name",
+                "skip -gfi /home/ray/llvm/llvm/include/llvm/ADT/*",
+                "@g0 = dso_local global { i32, [28 x i8] } zeroinitializer",
+                "objcopy -S --add-section=.gnu_debugdata=a.debug.xza a.stripped",
+                "NOTE: This section has relocations against it, but these have NOT been applied to this dump.",
+                "// Poison the metadata. It should not be accessible to user code.",
+                "Contents of the .gnu_debuglink section (loaded from a.stripped):",
+                "Reading symbols from debug//tmp/c/a.debug...",
+                'The directory where separate debug symbols are searched for is "/usr/lib/debug".',
+                "Reading symbols from /usr/lib/debug/.build-id/ff/29703f105c66821e9b10149db8cff3b2e4043a.debug...",
+                "Reading symbols from .gnu_debugdata for /tmp/c/a.stripped...",
+            ]
+        )
+        prose = "This ordinary English sentence should still be translated before publication"
+        source = technical + "\n" + prose
+        self.assertEqual(residual_english(technical, source), [])
+        self.assertEqual(len(residual_english(prose, source)), 1)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

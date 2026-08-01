@@ -1,6 +1,6 @@
 # 项目状态与 AI 交接
 
-> 状态日期：2026-07-29
+> 状态日期：2026-08-01
 > 历史 Claude 会话：`b6659196-95b7-4c6a-84df-44e94ea3d10d`
 > 仓库：<https://github.com/Biscoffee/apple-docs-vault>（私有）
 
@@ -11,11 +11,11 @@ C 类，也不恢复旧 `core`。** 新范围、九组内容、排除项、机�
 [`SUMMER_RELATED_B_PLAN.md`](SUMMER_RELATED_B_PLAN.md)。唯一分片入口为
 `tools/shard.py --scope summer-related-b`。
 
-**B 类冻结白名单为 407 篇；当前已有译文 388 篇。** 3 篇烟雾样本通过修订后的独立复审，
-完整批次 `summer-related-b-full-r01` 完成 385 篇。累计 1,943 次 API 调用，输入
-17,961,601 Token、输出 10,255,812 Token，估算 6.8095 美元。剩余 19 篇均为复杂技术
-博客；停止时 9 篇为失败状态，10 篇停在审校状态。用户已决定停止继续消耗，不再自动
-重试，也不把这 19 篇视为当前计划的交付阻塞项。准确清单见
+**B 类冻结白名单为 407 篇，现已验收 407 / 407。** 3 篇烟雾样本通过修订后的独立复审，
+完整批次 `summer-related-b-full-r01` 完成 385 篇。累计 1,943 次历史 API 调用，输入
+17,961,601 Token、输出 10,255,812 Token，估算 6.8095 美元。2026-08-01，此前剩余的
+19 篇复杂博客已全部使用 Codex 完成人工修订和严格校验；本轮没有调用 DeepSeek，也没有
+恢复完整分片。准确收尾记录见
 [`SUMMER_RELATED_B_REMAINING.md`](SUMMER_RELATED_B_REMAINING.md)。
 
 **归档主体、暑期严格白名单和高价值博客补强均已完成并合入 `main`。** PR #20 已将

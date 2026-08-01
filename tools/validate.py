@@ -266,17 +266,69 @@ def looks_like_technical_output_line(line: str) -> bool:
     stripped = line.strip()
     if not stripped:
         return False
+    if stripped in {
+        "NOTE: This section has relocations against it, but these have NOT been applied to this dump.",
+        "// Poison the metadata. It should not be accessible to user code.",
+    }:
+        return True
     if line.startswith(("    ", "\t")):
         return True
     if stripped.startswith(("% ", "$ ", ">>> ", "(gdb) ", "(lldb) ")):
+        return True
+    if re.match(r"^\$[A-Za-z_][A-Za-z0-9_]*\s", stripped):
         return True
     if re.match(r"^--?[A-Za-z0-9]", stripped):
         return True
     if re.match(r"^[A-Z_][A-Z0-9_]*=\S", stripped):
         return True
+    if stripped.startswith("/*") or stripped.endswith("*/"):
+        return True
     if re.match(
-        r"^(?:printf|clang|gcc|g\+\+|ld(?:\.[A-Za-z0-9_-]+)?|dwp|"
-        r"cmake|make|readelf|objdump|nm|ar|cat|echo)\s",
+        r"^(?:printf|clang(?:\+\+)?|gcc|g\+\+|ld(?:\.[A-Za-z0-9_-]+)?|dwp|"
+        r"cmake|make|readelf|objdump|objcopy|llvm-objcopy|eu-strip|curl|nm|ar|cat|echo)\s",
+        stripped,
+    ):
+        return True
+    if re.match(r"^[A-Za-z_][A-Za-z0-9_]*=\$?\(", stripped):
+        return True
+    if re.match(r"^(?:#\d+\s+0x[0-9A-Fa-f]+|0x[0-9A-Fa-f]+\s)", stripped):
+        return True
+    if re.match(
+        r"^(?:skip|break|run|continue|finish|next|step)\s+-",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^[A-Za-z0-9_./+-]+:\s+.*(?:\$\{?|\$@|(?:^|\s)-[A-Za-z]|"
+        r"\.[A-Za-z0-9_+-]+\b)",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^Num:\s+Value\s+Size\s+Type\s+Bind\s+Vis\s+Ndx\s+Name\s*$",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^Contents of the \.[A-Za-z0-9_.+-]+ section "
+        r"\(loaded from [A-Za-z0-9_./+-]+\):$",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^Reading symbols from (?:[A-Za-z0-9_./+-]+|"
+        r"\.gnu_debugdata for [A-Za-z0-9_./+-]+)\.\.\.$",
+        stripped,
+    ):
+        return True
+    if re.match(
+        r'^The directory where separate debug symbols are searched for is "[^"\n]+"\.$',
+        stripped,
+    ):
+        return True
+    if re.match(
+        r"^@[\w.$-]+\s*=\s*(?:(?:dso_local|private|internal|linkonce_odr)\s+)?"
+        r"(?:global|constant)\b",
         stripped,
     ):
         return True
