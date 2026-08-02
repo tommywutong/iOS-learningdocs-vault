@@ -6,10 +6,11 @@
 
 ## 1. 一句话现状
 
-**2026-07-29 用户把范围从“暑期直接 URL”扩展为“暑期强相关 B 类”，但明确不纳入通用
-C 类，也不恢复旧 `core`。** 新范围、九组内容、排除项、机器白名单和执行质量门见
-[`SUMMER_RELATED_B_PLAN.md`](SUMMER_RELATED_B_PLAN.md)。唯一分片入口为
-`tools/shard.py --scope summer-related-b`。
+**2026-07-29 用户把范围从“暑期直接 URL”扩展为“暑期强相关 B 类”，且不恢复旧
+`core`。** B 类完成后，用户于 2026-08-02 明确授权受控 C1 试点：固定的 4 篇
+NSHipster 文章已完成翻译与严格校验，完整清单与质量门见
+[`C1_SWIFT_API_TYPE_SYSTEM_PLAN.md`](C1_SWIFT_API_TYPE_SYSTEM_PLAN.md)。B 类的范围、九组内容、
+排除项和机器白名单仍以 [`SUMMER_RELATED_B_PLAN.md`](SUMMER_RELATED_B_PLAN.md) 为准。
 
 **B 类冻结白名单为 407 篇，现已验收 407 / 407。** 3 篇烟雾样本通过修订后的独立复审，
 完整批次 `summer-related-b-full-r01` 完成 385 篇。累计 1,943 次历史 API 调用，输入
