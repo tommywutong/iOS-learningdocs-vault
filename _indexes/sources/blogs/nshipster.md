@@ -1,7 +1,7 @@
 # NSHipster (Mattt)
 
 > 状态：active；授权：CC BY-NC（页脚明示）→ 可非商业再分发，须署名。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -12,14 +12,19 @@
 | NSOperation | NSOperation | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/nsoperation.md) · [网页](https://nshipster.com/nsoperation/) | [中文](../../../blogs/zh/nshipster/nsoperation.md) | 已翻译 |
 | Objective-C 文档 | Objective-C Documentation | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/objective-c-documentation.md) · [网页](https://nshipster.com/objective-c-documentation/) | [中文](../../../blogs/zh/nshipster/objective-c-documentation.md) | 已翻译 |
 | Objective-C 直接方法 | Objective-C Direct Methods | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/objective-c-direct-methods.md) · [网页](https://nshipster.com/direct/) | [中文](../../../blogs/zh/nshipster/objective-c-direct-methods.md) | 已翻译 |
+| Optional、throws、Result 与 async/await | Optional, throws, Result, async/await | NSHipster (Mattt) | 并发与线程 | [英文](../../../blogs/en/nshipster/optional-throws-result-async-await.md) · [网页](https://nshipster.com/optional-throws-result-async-await/) | [中文](../../../blogs/zh/nshipster/optional-throws-result-async-await.md) | 已翻译 |
 | Swift 与 Objective-C 运行时 | Swift & the Objective-C Runtime | NSHipster (Mattt) | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/nshipster/swift-the-objective-c-runtime.md) · [网页](https://nshipster.com/swift-objc-runtime/) | [中文](../../../blogs/zh/nshipster/swift-the-objective-c-runtime.md) | 已翻译 |
+| Swift 协议的默认实现 | Swift Default Protocol Implementations | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-default-protocol-implementations.md) · [网页](https://nshipster.com/swift-default-protocol-implementations/) | [中文](../../../blogs/zh/nshipster/swift-default-protocol-implementations.md) | 已翻译 |
+| Swift 属性观察器 | Swift Property Observers | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-property-observers.md) · [网页](https://nshipster.com/swift-property-observers/) | [中文](../../../blogs/zh/nshipster/swift-property-observers.md) | 已翻译 |
 | Swift 日志 | Swift Logging | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-logging.md) · [网页](https://nshipster.com/swift-log/) | [中文](../../../blogs/zh/nshipster/swift-logging.md) | 已翻译 |
+| Swift 模块中的 API 污染 | API Pollution in Swift Modules | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/api-pollution-in-swift-modules.md) · [网页](https://nshipster.com/swift-api-pollution/) | [中文](../../../blogs/zh/nshipster/api-pollution-in-swift-modules.md) | 已翻译 |
 | XCTestCase /XCTestExpectation / measureBlock() | XCTest​Case /XCTest​Expectation / measure​Block() | NSHipster (Mattt) | Block 与闭包 | [英文](../../../blogs/en/nshipster/xctestcase-br-xctestexpectation-br-measureblock.md) · [网页](https://nshipster.com/xctestcase/) | [中文](../../../blogs/zh/nshipster/xctestcase-br-xctestexpectation-br-measureblock.md) | 已翻译 |
 | 关联对象 | Associated Objects | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/associated-objects.md) · [网页](https://nshipster.com/associated-objects/) | [中文](../../../blogs/zh/nshipster/associated-objects.md) | 已翻译 |
 | 快速查看调试 | Quick Look Debugging | NSHipster (Mattt) | 性能与调试 | [英文](../../../blogs/en/nshipster/quick-look-debugging.md) · [网页](https://nshipster.com/quick-look-debugging/) | [中文](../../../blogs/zh/nshipster/quick-look-debugging.md) | 已翻译 |
 | 方法调配 | Method Swizzling | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/method-swizzling.md) · [网页](https://nshipster.com/method-swizzling/) | [中文](../../../blogs/zh/nshipster/method-swizzling.md) | 已翻译 |
+| 类型编码 | Type Encodings | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/type-encodings.md) · [网页](https://nshipster.com/type-encodings/) | [中文](../../../blogs/zh/nshipster/type-encodings.md) | 已翻译 |
 | 网络链路调节器 | Network Link Conditioner | NSHipster (Mattt) | 网络与安全 | [英文](../../../blogs/en/nshipster/network-link-conditioner.md) · [网页](https://nshipster.com/network-link-conditioner/) | [中文](../../../blogs/zh/nshipster/network-link-conditioner.md) | 已翻译 |
-| 键值观察 | Key-Value Observing | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/key-value-observing.md) · [网页](https://nshipster.com/key-value-observing/) | [中文](../../../blogs/zh/nshipster/key-value-observing.md) | 已翻译 |
+| 键值观察 | Key-Value Observing | NSHipster (Mattt) | Objective-C Runtime | [英文](../../../blogs/en/nshipster/key-value-observing.md) · [网页](https://nshipster.com/key-value-observing/) | [中文](../../../blogs/zh/nshipster/key-value-observing.md) | 已翻译 |
 | #pragma | #pragma | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/pragma.md) · [网页](https://nshipster.com/pragma/) | — | 仅标题中文，正文待翻译 |
 | @ | @ | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/at-compiler-directives.md) · [网页](https://nshipster.com/at-compiler-directives/) | — | 仅标题中文，正文待翻译 |
 | @isolated(any) | @isolated(any) | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/isolated-any.md) · [网页](https://nshipster.com/isolated-any/) | — | 仅标题中文，正文待翻译 |
@@ -117,7 +122,6 @@
 | numericCast(_:) | numeric​Cast(_:) | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/numericcast.md) · [网页](https://nshipster.com/numericcast/) | — | 仅标题中文，正文待翻译 |
 | Ollama | Ollama | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/ollama.md) · [网页](https://nshipster.com/ollama/) | — | 仅标题中文，正文待翻译 |
 | op run | op run | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/op-run.md) · [网页](https://nshipster.com/1password-cli/) | — | 仅标题中文，正文待翻译 |
-| Optional、throws、Result、async/await | Optional, throws, Result, async/await | NSHipster (Mattt) | 并发与线程 | [英文](../../../blogs/en/nshipster/optional-throws-result-async-await.md) · [网页](https://nshipster.com/optional-throws-result-async-await/) | — | 仅标题中文，正文待翻译 |
 | OptionSet | Option​Set | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/optionset.md) · [网页](https://nshipster.com/optionset/) | — | 仅标题中文，正文待翻译 |
 | rand(3) / random(3) / arc4random(3) 等 | rand(3) / random(3) / arc4random(3) / et al. | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/rand-3-random-3-arc4random-3-et-al.md) · [网页](https://nshipster.com/random/) | — | 仅标题中文，正文待翻译 |
 | RawRepresentable | Raw​Representable | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/rawrepresentable.md) · [网页](https://nshipster.com/rawrepresentable/) | — | 仅标题中文，正文待翻译 |
@@ -133,12 +137,9 @@
 | Swift 字面量 | Swift Literals | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-literals.md) · [网页](https://nshipster.com/swift-literals/) | — | 仅标题中文，正文待翻译 |
 | Swift 导入声明 | Swift Import Declarations | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-import-declarations.md) · [网页](https://nshipster.com/import/) | — | 仅标题中文，正文待翻译 |
 | Swift 属性包装器 | Swift Property Wrappers | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-property-wrappers.md) · [网页](https://nshipster.com/propertywrapper/) | — | 仅标题中文，正文待翻译 |
-| Swift 属性观察器 | Swift Property Observers | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-property-observers.md) · [网页](https://nshipster.com/swift-property-observers/) | — | 仅标题中文，正文待翻译 |
 | Swift 文档 | Swift Documentation | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-documentation.md) · [网页](https://nshipster.com/swift-documentation/) | — | 仅标题中文，正文待翻译 |
-| Swift 模块中的 API 污染 | API Pollution in Swift Modules | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/api-pollution-in-swift-modules.md) · [网页](https://nshipster.com/swift-api-pollution/) | — | 仅标题中文，正文待翻译 |
 | Swift 系统版本检查 | Swift System Version Checking | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-system-version-checking.md) · [网页](https://nshipster.com/swift-system-version-checking/) | — | 仅标题中文，正文待翻译 |
 | Swift 运算符 | Swift Operators | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-operators.md) · [网页](https://nshipster.com/swift-operators/) | — | 仅标题中文，正文待翻译 |
-| Swift 默认协议实现 | Swift Default Protocol Implementations | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-default-protocol-implementations.md) · [网页](https://nshipster.com/swift-default-protocol-implementations/) | — | 仅标题中文，正文待翻译 |
 | swift-sh | swift-sh | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swift-sh.md) · [网页](https://nshipster.com/swift-sh/) | — | 仅标题中文，正文待翻译 |
 | SwiftSyntax | Swift​Syntax | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/swiftsyntax.md) · [网页](https://nshipster.com/swiftsyntax/) | — | 仅标题中文，正文待翻译 |
 | TextOutputStream | Text​Output​Stream | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/textoutputstream.md) · [网页](https://nshipster.com/textoutputstream/) | — | 仅标题中文，正文待翻译 |
@@ -191,7 +192,6 @@
 | 接触追踪 | Contact Tracing | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/contact-tracing.md) · [网页](https://nshipster.com/contact-tracing/) | — | 仅标题中文，正文待翻译 |
 | 模型上下文协议 (MCP) | Model Context Protocol (MCP) | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/model-context-protocol-mcp.md) · [网页](https://nshipster.com/model-context-protocol/) | — | 仅标题中文，正文待翻译 |
 | 相等性 | Equality | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/equality.md) · [网页](https://nshipster.com/equality/) | — | 仅标题中文，正文待翻译 |
-| 类型编码 | Type Encodings | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/type-encodings.md) · [网页](https://nshipster.com/type-encodings/) | — | 仅标题中文，正文待翻译 |
 | 语言服务器协议 | Language Server Protocol | NSHipster (Mattt) | Swift 语言 | [英文](../../../blogs/en/nshipster/language-server-protocol.md) · [网页](https://nshipster.com/language-server-protocol/) | — | 仅标题中文，正文待翻译 |
 | 语言环境 | Locale | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/locale.md) · [网页](https://nshipster.com/locale/) | — | 仅标题中文，正文待翻译 |
 | 读者投稿——2013 新年特辑 | Reader Submissions - New Year's 2013 | NSHipster (Mattt) | — | [英文](../../../blogs/en/nshipster/reader-submissions-br-new-year-s-2013.md) · [网页](https://nshipster.com/new-years-2013/) | — | 仅标题中文，正文待翻译 |

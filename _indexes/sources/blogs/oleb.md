@@ -1,7 +1,7 @@
 # Ole Begemann
 
 > 状态：active；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -12,8 +12,8 @@
 | iOS 上的 App 启动序列 | The App Launch Sequence on iOS | Ole Begemann | 启动、链接与二进制 | [英文](../../../blogs/en/oleb/the-app-launch-sequence-on-ios.md) · [网页](https://oleb.net/blog/2011/06/app-launch-sequence-ios/) | [中文](../../../blogs/zh/oleb/the-app-launch-sequence-on-ios.md) | 已翻译 |
 | John Siracusa：Objective-C 的黑暗时代 | John Siracusa: A Dark Age of Objective-C | Ole Begemann | Objective-C Runtime | [英文](../../../blogs/en/oleb/john-siracusa-a-dark-age-of-objective-c.md) · [网页](https://oleb.net/blog/2011/04/john-siracusa-a-dark-age-of-objective-c/) | [中文](../../../blogs/zh/oleb/john-siracusa-a-dark-age-of-objective-c.md) | 已翻译 |
 | NSArray 二分查找 | NSArray Binary Search | Ole Begemann | 启动、链接与二进制 | [英文](../../../blogs/en/oleb/nsarray-binary-search.md) · [网页](https://oleb.net/blog/2013/07/nsarray-binary-search/) | [中文](../../../blogs/zh/oleb/nsarray-binary-search.md) | 已翻译 |
-| objc.io 第 3 期 | objc.io #3 | Ole Begemann | Objective-C Runtime | [英文](../../../blogs/en/oleb/objc-io-3.md) · [网页](https://oleb.net/blog/2013/08/objc-io-issue-3/) | [中文](../../../blogs/zh/oleb/objc-io-3.md) | 已翻译 |
-| objc.io 第 9 期 | objc.io #9 | Ole Begemann | Objective-C Runtime | [英文](../../../blogs/en/oleb/objc-io-9.md) · [网页](https://oleb.net/blog/2014/02/objc-io-issue-9/) | [中文](../../../blogs/zh/oleb/objc-io-9.md) | 已翻译 |
+| objc.io 第 3 期 | objc.io #3 | Ole Begemann | — | [英文](../../../blogs/en/oleb/objc-io-3.md) · [网页](https://oleb.net/blog/2013/08/objc-io-issue-3/) | [中文](../../../blogs/zh/oleb/objc-io-3.md) | 已翻译 |
+| objc.io 第 9 期 | objc.io #9 | Ole Begemann | — | [英文](../../../blogs/en/oleb/objc-io-9.md) · [网页](https://oleb.net/blog/2014/02/objc-io-issue-9/) | [中文](../../../blogs/zh/oleb/objc-io-9.md) | 已翻译 |
 | Objective-C 中的方法名称 | Method Names in Objective-C | Ole Begemann | Objective-C Runtime | [英文](../../../blogs/en/oleb/method-names-in-objective-c.md) · [网页](https://oleb.net/blog/2010/12/method-names-in-objective-c/) | [中文](../../../blogs/zh/oleb/method-names-in-objective-c.md) | 已翻译 |
 | Steve Jobs 谈文件系统 | Steve Jobs on the File System | Ole Begemann | 数据与持久化 | [英文](../../../blogs/en/oleb/steve-jobs-on-the-file-system.md) · [网页](https://oleb.net/blog/2012/06/steve-jobs-on-the-file-system/) | [中文](../../../blogs/zh/oleb/steve-jobs-on-the-file-system.md) | 已翻译 |
 | Swift 发布版本有主题 | Swift releases have themes | Ole Begemann | 内存与 ARC、Swift 语言 | [英文](../../../blogs/en/oleb/swift-releases-have-themes.md) · [网页](https://oleb.net/blog/2017/03/swift-themed-releases/) | [中文](../../../blogs/zh/oleb/swift-releases-have-themes.md) | 已翻译 |

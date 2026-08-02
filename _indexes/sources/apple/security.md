@@ -1,7 +1,7 @@
 # Apple · security · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@
 | 处理并发 | Working with Concurrency | Apple · Security | 并发与线程、网络与安全 | [英文](../../../apple-docs/en/security/working-with-concurrency.md) · [网页](https://developer.apple.com/documentation/security/working-with-concurrency) | [中文](../../../apple-docs/zh/security/working-with-concurrency.md) | 已翻译 |
 | 定义启动环境和库约束 | Defining launch environment and library constraints | Apple · Security | 启动、链接与二进制、网络与安全 | [英文](../../../apple-docs/en/security/defining-launch-environment-and-library-constraints.md) · [网页](https://developer.apple.com/documentation/security/defining-launch-environment-and-library-constraints) | [中文](../../../apple-docs/zh/security/defining-launch-environment-and-library-constraints.md) | 已翻译 |
 | 应用启动环境与库约束 | Applying launch environment and library constraints | Apple · Security | 启动、链接与二进制、网络与安全 | [英文](../../../apple-docs/en/security/applying-launch-environment-and-library-constraints.md) · [网页](https://developer.apple.com/documentation/security/applying-launch-environment-and-library-constraints) | [中文](../../../apple-docs/zh/security/applying-launch-environment-and-library-constraints.md) | 已翻译 |
-| 强化运行时 | Hardened Runtime | Apple · Security | Objective-C Runtime、网络与安全 | [英文](../../../apple-docs/en/security/hardened-runtime.md) · [网页](https://developer.apple.com/documentation/security/hardened-runtime) | [中文](../../../apple-docs/zh/security/hardened-runtime.md) | 已翻译 |
+| 强化运行时 | Hardened Runtime | Apple · Security | 网络与安全、Objective-C Runtime | [英文](../../../apple-docs/en/security/hardened-runtime.md) · [网页](https://developer.apple.com/documentation/security/hardened-runtime) | [中文](../../../apple-docs/zh/security/hardened-runtime.md) | 已翻译 |
 | 搜索钥匙串条目 | Searching for keychain items | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/searching-for-keychain-items.md) · [网页](https://developer.apple.com/documentation/security/searching-for-keychain-items) | [中文](../../../apple-docs/zh/security/searching-for-keychain-items.md) | 已翻译 |
 | 更新和删除钥匙串项目 | Updating and deleting keychain items | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/updating-and-deleting-keychain-items.md) · [网页](https://developer.apple.com/documentation/security/updating-and-deleting-keychain-items) | [中文](../../../apple-docs/zh/security/updating-and-deleting-keychain-items.md) | 已翻译 |
 | 检查证书 | Examining a Certificate | Apple · Security | 网络与安全 | [英文](../../../apple-docs/en/security/examining-a-certificate.md) · [网页](https://developer.apple.com/documentation/security/examining-a-certificate) | [中文](../../../apple-docs/zh/security/examining-a-certificate.md) | 已翻译 |

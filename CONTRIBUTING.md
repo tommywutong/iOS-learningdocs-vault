@@ -108,6 +108,7 @@ PR 描述至少包含：
 - `_indexes/blogs.md`
 - `_indexes/wwdc.md`
 - `_indexes/topics.md` 与 `_indexes/topics/`
+- `_indexes/summer.md` 与 `_indexes/summer/`
 - `_indexes/translation-status.md`
 - `_indexes/sources/`
 
@@ -126,7 +127,7 @@ PR 描述至少包含：
   `中文标题｜英文标题｜作者/来源｜主题｜原文｜译文｜翻译状态`；
 - 完整中文正文和原生中文文章排在最前；只有目录译名的英文正文必须显示
   `仅标题中文，正文待翻译`；
-- 学习计划周次只出现在 `_indexes/study-plan.md`，不进入通用文章目录。
+- 学习计划模块只出现在 `_indexes/summer.md` 和 `_indexes/study-plan.md`，不进入通用文章目录。
 
 ## 五、图片归档
 

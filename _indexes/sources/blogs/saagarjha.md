@@ -1,12 +1,12 @@
 # Saagar Jha
 
 > 状态：active；授权：CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | Swift 并发不等待任何人 | Swift Concurrency Waits for No One | Saagar Jha | 并发与线程、Swift 语言 | [英文](../../../blogs/en/saagarjha/swift-concurrency-waits-for-no-one.md) · [网页](https://saagarjha.com/blog/2023/12/22/swift-concurrency-waits-for-no-one/) | [中文](../../../blogs/zh/saagarjha/swift-concurrency-waits-for-no-one.md) | 已翻译 |
-| 绕过 objc_msgSend | Bypassing objc_msgSend | Saagar Jha | — | [英文](../../../blogs/en/saagarjha/bypassing-objc-msgsend.md) · [网页](https://saagarjha.com/blog/2019/12/15/bypassing-objc-msgsend/) | [中文](../../../blogs/zh/saagarjha/bypassing-objc-msgsend.md) | 已翻译 |
+| 绕过 objc_msgSend | Bypassing objc_msgSend | Saagar Jha | Objective-C Runtime | [英文](../../../blogs/en/saagarjha/bypassing-objc-msgsend.md) · [网页](https://saagarjha.com/blog/2019/12/15/bypassing-objc-msgsend/) | [中文](../../../blogs/zh/saagarjha/bypassing-objc-msgsend.md) | 已翻译 |
 | iOS 上的受限即时编译 | Jailed Just-in-Time Compilation on iOS | Saagar Jha | 启动、链接与二进制 | [英文](../../../blogs/en/saagarjha/jailed-just-in-time-compilation-on-ios.md) · [网页](https://saagarjha.com/blog/2020/02/23/jailed-just-in-time-compilation-on-ios/) | — | 仅标题中文，正文待翻译 |
 | Mac App Store 沙盒逃逸 | Mac App Store Sandbox Escape | Saagar Jha | — | [英文](../../../blogs/en/saagarjha/mac-app-store-sandbox-escape.md) · [网页](https://saagarjha.com/blog/2020/05/20/mac-app-store-sandbox-escape/) | — | 仅标题中文，正文待翻译 |
 | Swift Playgrounds 中的 AppKit | AppKit in Swift Playgrounds | Saagar Jha | Swift 语言 | [英文](../../../blogs/en/saagarjha/appkit-in-swift-playgrounds.md) · [网页](https://saagarjha.com/blog/2020/02/11/appkit-in-swift-playgrounds/) | — | 仅标题中文，正文待翻译 |

@@ -1,13 +1,13 @@
 # Low Level Bits (Alex Denisov)
 
 > 状态：active；授权：© 2014-2025 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | Objective-C 中的循环容器 | Circular Containers in Objective-C | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md) · [网页](https://lowlevelbits.org/circular-containers-in-objective-c/) | [中文](../../../blogs/zh/lowlevelbits/circular-containers-in-objective-c-low-level-bits.md) | 已翻译 |
 | 使用 Fuzzer 编写无崩溃代码（Crash-free code with Fuzzer） | Crash-free code with Fuzzer | Low Level Bits (Alex Denisov) | 性能与调试 | [英文](../../../blogs/en/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md) · [网页](https://lowlevelbits.org/crash-free-code-with-fuzzer/) | [中文](../../../blogs/zh/lowlevelbits/crash-free-code-with-fuzzer-low-level-bits.md) | 已翻译 |
-| 基于 YAML 的 ObjC 项目配置方法 | YAML-based Configuration for ObjC Projects | Low Level Bits (Alex Denisov) | Objective-C Runtime | [英文](../../../blogs/en/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) · [网页](https://lowlevelbits.org/yaml-based-configuration-for-objc-projects/) | [中文](../../../blogs/zh/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) | 已翻译 |
+| 基于 YAML 的 ObjC 项目配置方法 | YAML-based Configuration for ObjC Projects | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) · [网页](https://lowlevelbits.org/yaml-based-configuration-for-objc-projects/) | [中文](../../../blogs/zh/lowlevelbits/yaml-based-configuration-for-objc-projects-low-level-bits.md) | 已翻译 |
 | 解析 Mach-O 文件 | Parsing Mach-O files | Low Level Bits (Alex Denisov) | 启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/parsing-mach-o-files-low-level-bits.md) · [网页](https://lowlevelbits.org/parsing-mach-o-files/) | [中文](../../../blogs/zh/lowlevelbits/parsing-mach-o-files-low-level-bits.md) | 已翻译 |
 | 调试 dyld | Debugging Dyld | Low Level Bits (Alex Denisov) | 性能与调试、启动、链接与二进制 | [英文](../../../blogs/en/lowlevelbits/debugging-dyld-low-level-bits.md) · [网页](https://lowlevelbits.org/debugging-dyld/) | [中文](../../../blogs/zh/lowlevelbits/debugging-dyld-low-level-bits.md) | 已翻译 |
 | 'if (self)' 与理智性 | 'if (self)' and Sanity | Low Level Bits (Alex Denisov) | — | [英文](../../../blogs/en/lowlevelbits/if-self-and-sanity-low-level-bits.md) · [网页](https://lowlevelbits.org/if-self-and-sanity/) | — | 仅标题中文，正文待翻译 |

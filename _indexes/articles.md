@@ -5,8 +5,9 @@
 
 ## 优先入口
 
-- [可直接中文阅读的技术博客（1098 篇）](chinese-blogs.md)
+- [可直接中文阅读的技术博客（1123 篇）](chinese-blogs.md)
 - [iOS 底层知识地图](topics.md)
+- [暑期计划知识地图](summer.md)
 - [阅读入口与搜索示例](reader-guide.md)
 
 ## 完整归档
@@ -20,7 +21,7 @@
 ## 其他查找方式
 
 - [查看翻译状态](translation-status.md)
-- [按暑期学习计划查找](study-plan.md)
+- [按暑期计划逐日查找材料](study-plan.md)
 
 在 GitHub 中还可以使用仓库搜索，例如：
 

@@ -1,7 +1,7 @@
 # ibireme (郭曜源)
 
 > 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -12,9 +12,9 @@
 | iOS 如何创建和使用静态库 | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/ios-%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E5%BA%93.md) · [网页](https://blog.ibireme.com/2013/09/18/create-ios-static-framework/) | — | 原生中文 |
 | iOS 第三方开源库的吐槽和备忘 | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/ios-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%BA%93%E7%9A%84%E5%90%90%E6%A7%BD%E5%92%8C%E5%A4%87%E5%BF%98.md) · [网页](https://blog.ibireme.com/2013/09/23/ios-third-party-libs/) | — | 原生中文 |
 | NSArray 丢失的 firstObject 方法 | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/nsarray-%E4%B8%A2%E5%A4%B1%E7%9A%84-firstobject-%E6%96%B9%E6%B3%95.md) · [网页](https://blog.ibireme.com/2013/08/07/nsarray-firstobject/) | — | 原生中文 |
-| objc 中的 block | — | ibireme (郭曜源) | Objective-C Runtime、Block 与闭包 | [中文原文](../../../blogs/zh/ibireme/objc-%E4%B8%AD%E7%9A%84-block.md) · [网页](https://blog.ibireme.com/2013/11/27/objc-block/) | — | 原生中文 |
+| objc 中的 block | — | ibireme (郭曜源) | Block 与闭包 | [中文原文](../../../blogs/zh/ibireme/objc-%E4%B8%AD%E7%9A%84-block.md) · [网页](https://blog.ibireme.com/2013/11/27/objc-block/) | — | 原生中文 |
 | Objective-C 中的消息与消息转发 | — | ibireme (郭曜源) | Objective-C Runtime | [中文原文](../../../blogs/zh/ibireme/objective-c-%E4%B8%AD%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%8E%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91.md) · [网页](https://blog.ibireme.com/2013/11/26/objective-c-messaging/) | — | 原生中文 |
-| Objective-C 中的类和对象 | — | ibireme (郭曜源) | Objective-C Runtime | [中文原文](../../../blogs/zh/ibireme/objective-c-%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.md) · [网页](https://blog.ibireme.com/2013/11/25/objc-object/) | — | 原生中文 |
+| Objective-C 中的类和对象 | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/objective-c-%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1.md) · [网页](https://blog.ibireme.com/2013/11/25/objc-object/) | — | 原生中文 |
 | Rei Ayanami 桌面一枚~ | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/rei-ayanami-%E6%A1%8C%E9%9D%A2%E4%B8%80%E6%9E%9A.md) · [网页](https://blog.ibireme.com/2010/09/19/rei_ayanami_desktop/) | — | 原生中文 |
 | Start constants | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/%E7%94%A8-appledoc-%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3.md) · [网页](https://blog.ibireme.com/2013/08/26/appledoc-guide/) | — | 原生中文 |
 | WWDC2014 | — | ibireme (郭曜源) | — | [中文原文](../../../blogs/zh/ibireme/wwdc2014.md) · [网页](https://blog.ibireme.com/2014/06/03/wwdc2014/) | — | 原生中文 |

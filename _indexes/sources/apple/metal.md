@@ -1,7 +1,7 @@
 # Apple · metal · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -49,7 +49,7 @@
 | 在 iPadOS 中管理你的 Metal App 窗口 | Managing your Metal app window in iPadOS | Apple · Metal | UI 与渲染 | [英文](../../../apple-docs/en/metal/managing-your-metal-app-window-in-ipados.md) · [网页](https://developer.apple.com/documentation/metal/managing-your-metal-app-window-in-ipados) | [中文](../../../apple-docs/zh/metal/managing-your-metal-app-window-in-ipados.md) | 已翻译 |
 | 在 macOS 中为 Metal 管理你的游戏窗口 | Managing your game window for Metal in macOS | Apple · Metal | UI 与渲染 | [英文](../../../apple-docs/en/metal/managing-your-game-window-for-metal-in-macos.md) · [网页](https://developer.apple.com/documentation/metal/managing-your-game-window-for-metal-in-macos) | [中文](../../../apple-docs/zh/metal/managing-your-game-window-for-metal-in-macos.md) | 已翻译 |
 | 在 macOS 中同步受管理资源 | Synchronizing a managed resource in macOS | Apple · Metal | UI 与渲染 | [英文](../../../apple-docs/en/metal/synchronizing-a-managed-resource-in-macos.md) · [网页](https://developer.apple.com/documentation/metal/synchronizing-a-managed-resource-in-macos) | [中文](../../../apple-docs/zh/metal/synchronizing-a-managed-resource-in-macos.md) | 已翻译 |
-| 在 Objective-C 中以延迟光照渲染场景 | Rendering a scene with deferred lighting in Objective-C | Apple · Metal | Objective-C Runtime、UI 与渲染 | [英文](../../../apple-docs/en/metal/rendering-a-scene-with-deferred-lighting-in-objective-c.md) · [网页](https://developer.apple.com/documentation/metal/rendering-a-scene-with-deferred-lighting-in-objective-c) | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-objective-c.md) | 已翻译 |
+| 在 Objective-C 中以延迟光照渲染场景 | Rendering a scene with deferred lighting in Objective-C | Apple · Metal | UI 与渲染、Objective-C Runtime | [英文](../../../apple-docs/en/metal/rendering-a-scene-with-deferred-lighting-in-objective-c.md) · [网页](https://developer.apple.com/documentation/metal/rendering-a-scene-with-deferred-lighting-in-objective-c) | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-objective-c.md) | 已翻译 |
 | 在 Swift 中以延迟光照渲染场景 | Rendering a scene with deferred lighting in Swift | Apple · Metal | UI 与渲染、Swift 语言 | [英文](../../../apple-docs/en/metal/rendering-a-scene-with-deferred-lighting-in-swift.md) · [网页](https://developer.apple.com/documentation/metal/rendering-a-scene-with-deferred-lighting-in-swift) | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-swift.md) | 已翻译 |
 | 在光线追踪场景中渲染曲线图元 | Rendering a curve primitive in a ray tracing scene | Apple · Metal | UI 与渲染 | [英文](../../../apple-docs/en/metal/rendering-a-curve-primitive-in-a-ray-tracing-scene.md) · [网页](https://developer.apple.com/documentation/metal/rendering-a-curve-primitive-in-a-ray-tracing-scene) | [中文](../../../apple-docs/zh/metal/rendering-a-curve-primitive-in-a-ray-tracing-scene.md) | 已翻译 |
 | 在单个设备内同步事件 | Synchronizing events within a single device | Apple · Metal | UI 与渲染 | [英文](../../../apple-docs/en/metal/synchronizing-events-within-a-single-device.md) · [网页](https://developer.apple.com/documentation/metal/synchronizing-events-within-a-single-device) | [中文](../../../apple-docs/zh/metal/synchronizing-events-within-a-single-device.md) | 已翻译 |

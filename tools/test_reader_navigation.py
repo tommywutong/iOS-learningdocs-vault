@@ -27,6 +27,7 @@ from title_aliases import (  # noqa: E402
     summarize_state,
     validate_response,
 )
+from indexes import classify_topics, item  # noqa: E402
 
 
 class ReaderVisibilityTests(unittest.TestCase):
@@ -53,6 +54,30 @@ class ReaderVisibilityTests(unittest.TestCase):
             classify_subtopic("内存与 ARC", "Understanding autorelease pools"),
             "ARC 与引用计数",
         )
+        self.assertEqual(
+            classify_subtopic(
+                "Objective-C Runtime",
+                "Using associated references in an Objective-C category",
+            ),
+            "Category、Swizzling 与关联对象",
+        )
+
+    def test_runtime_rules_do_not_match_unrelated_isa_architectures(self):
+        self.assertNotIn(
+            "Objective-C Runtime",
+            classify_topics("Linker notes on Power ISA"),
+        )
+
+    def test_source_name_alone_does_not_assign_a_topic(self):
+        entry = item(
+            kind="技术博客",
+            source_key="objccn",
+            source_name="ObjC 中国",
+            en=None,
+            zh=None,
+            source_url="",
+        )
+        self.assertEqual(entry["topics"], ())
 
 
 class ReaderPriorityTests(unittest.TestCase):

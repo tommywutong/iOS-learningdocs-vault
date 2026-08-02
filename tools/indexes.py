@@ -18,6 +18,7 @@ from datetime import date
 from pathlib import Path
 
 from reader_navigation import (
+    SUBTOPIC_RULES,
     TOPIC_BY_NAME,
     TOPIC_SPECS,
     classify_subtopic,
@@ -42,8 +43,12 @@ LONGFORM_ROLES = {"article", "collectionGroup", "sampleCode"}
 TOPIC_RULES: tuple[tuple[str, str], ...] = (
     (
         "Objective-C Runtime",
-        r"\bobjective-c\b|\bobjc\b|\bruntime\b|\bisa\b|selector|method swizzl|"
-        r"message forwarding|associated object|tagged pointer|class object|metaclass",
+        r"objc_msgsend|objective-c runtime|objc runtime|runtime internals|"
+        r"isa pointer|isa 指针|selector|method swizzl|message forwarding|associated object|"
+        r"tagged pointer|class object|metaclass|运行时|对象模型|元类|消息发送|"
+        r"方法查找|消息转发|方法交换|关联对象|键值编码|键值观察|类加载|"
+        r"(?:\bobjective-c\b|\bobjc\b).*(?:runtime|internals|object|class|meta|"
+        r"isa|message|selector|method|category|swizzl|associated|kvc|kvo|forward)",
     ),
     (
         "内存与 ARC",
@@ -228,7 +233,7 @@ def item(
         current_title=en_title,
     )
     derived_topics = classify_topics(
-        " ".join([en_title, zh_title, title_alias, source_name])
+        " ".join([en_title, zh_title, title_alias])
     )
     return {
         "kind": kind,
@@ -658,74 +663,82 @@ def write_topics(entries: list[dict]) -> None:
         for topic in entry["topics"]:
             grouped[topic].append(entry)
 
-    def append_section(
-        body: list[str],
-        heading: str,
-        section_entries: list[dict],
-        target: Path,
-    ) -> None:
-        if not section_entries:
-            return
-        body += [
-            f"## {heading}",
-            "",
-            f"共 {len(section_entries)} 份。",
-            "",
-            "| 中文标题／目录译名 | 子主题 | 类型 | 来源 | 原文 | 中文正文 | 状态 |",
-            "|---|---|---|---|---|---|---|",
-        ]
-        for entry in sorted(
-            section_entries,
-            key=lambda value: (
-                classify_subtopic(
-                    value["_topic"],
-                    " ".join(
-                        [
-                            value["en_title"],
-                            value["zh_title"],
-                            value["title_alias"],
-                        ]
-                    ),
-                ),
-                preferred_title(value).casefold(),
-                value["source_name"].casefold(),
-            ),
+    def topic_text(entry: dict) -> str:
+        return " ".join(
+            [entry["en_title"], entry["zh_title"], entry["title_alias"]]
+        )
+
+    def subtopic_names(topic: str) -> tuple[str, ...]:
+        names = tuple(name for name, _ in SUBTOPIC_RULES.get(topic, ()))
+        if topic == "Objective-C Runtime":
+            names += ("Runtime API 参考",)
+        return names + ("延伸阅读",)
+
+    def subtopic_path(topic: str, subtopic: str) -> Path:
+        names = subtopic_names(topic)
+        return TOPICS / topic_slug(topic) / f"{names.index(subtopic) + 1:02d}.md"
+
+    def classify_topic_entry(topic: str, entry: dict) -> str:
+        subtopic = classify_subtopic(topic, topic_text(entry))
+        if (
+            topic == "Objective-C Runtime"
+            and subtopic == "延伸阅读"
+            and entry["kind"] == "Apple 文档"
+            and entry["source_key"] == "objectivec"
         ):
-            title = preferred_title(entry)
+            return "Runtime API 参考"
+        return subtopic
+
+    def article_sort(entry: dict) -> tuple[int, str, str]:
+        return (
+            status_rank(entry),
+            preferred_title(entry).casefold(),
+            entry["source_name"].casefold(),
+        )
+
+    def append_article_table(
+        body: list[str], section_entries: list[dict], target: Path
+    ) -> None:
+        body += [
+            "| 文章 | 类型 | 来源 | 阅读 | 状态 |",
+            "|---|---|---|---|---|",
+        ]
+        for entry in sorted(section_entries, key=article_sort):
             preferred = entry["zh"] or entry["en"]
-            original = (
-                local_link("英文", entry["en"], target)
-                if entry["en"]
-                else local_link("中文原文", entry["zh"], target)
-            )
-            chinese = (
-                local_link("中文", entry["zh"], target)
-                if entry["en"] and entry["zh"]
-                else (
-                    local_link("中文原文", entry["zh"], target)
-                    if not entry["en"]
-                    else "—"
-                )
-            )
-            subtopic = classify_subtopic(
-                entry["_topic"],
-                " ".join(
-                    [entry["en_title"], entry["zh_title"], entry["title_alias"]]
-                ),
-            )
+            title = local_link(preferred_title(entry), preferred, target)
+            if entry["zh"]:
+                reading = local_link("中文", entry["zh"], target)
+            else:
+                reading = local_link("英文", entry["en"], target)
             body.append(
-                f"| {local_link(title, preferred, target)} | {table_text(subtopic)} "
-                f"| {entry['kind']} | {table_text(entry['source_name'])} "
-                f"| {original} | {chinese} | {display_status(entry)} |"
+                f"| {title} | {entry['kind']} | {table_text(entry['source_name'])} "
+                f"| {reading} | {display_status(entry)} |"
             )
         body.append("")
+
+    def write_article_list(
+        target: Path,
+        title: str,
+        note: str,
+        section_entries: list[dict],
+    ) -> None:
+        lines = [
+            f"# {title}",
+            "",
+            f"> {note}",
+            "> 文章标题链接优先打开中文正文；没有中文正文时打开英文原文。",
+            "",
+        ]
+        append_article_table(lines, section_entries, target)
+        target.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
     landing = IDX / "topics.md"
     lines = [
         "# iOS 底层知识地图",
         "",
         "> 每个主题先展示可直接阅读的中文资料，再展示只有中文目录标题的英文正文。",
-        "> 同一篇文章可以出现在多个主题中；分类用于发现资料，不代替全文搜索。",
+        "> 同一篇文章可以出现在多个主题中；主题用于系统浏览，不代替全文搜索。",
+        f"> 计划内资料另见{local_link('暑期计划知识地图', IDX / 'summer.md', landing)}。",
         "",
         "## 核心知识",
         "",
@@ -738,6 +751,8 @@ def write_topics(entries: list[dict]) -> None:
         if not items:
             continue
         target = TOPICS / f"{topic_slug(spec.name)}.md"
+        topic_dir = TOPICS / topic_slug(spec.name)
+        topic_dir.mkdir(parents=True, exist_ok=True)
         readable = sum(
             entry["status"] in {"已翻译", "原生中文"}
             and entry["reader_visible"]
@@ -758,45 +773,70 @@ def write_topics(entries: list[dict]) -> None:
         else:
             extension_rows.append(row)
 
+        subgroups: dict[str, list[dict]] = defaultdict(list)
+        for entry in items:
+            subgroups[classify_topic_entry(spec.name, entry)].append(entry)
+
         body = [
             f"# {spec.name}",
             "",
             f"> {spec.description}",
             f"> 共 {len(items)} 份资料。自动生成于 {date.today()}。",
             "",
+            "## 按子主题浏览",
+            "",
+            "| 子主题 | 可中文阅读 | 全部资料 |",
+            "|---|---:|---:|",
         ]
-        visible = [entry for entry in items if entry["reader_visible"]]
-        for entry in visible:
-            entry["_topic"] = spec.name
-        append_section(
-            body,
-            "可直接中文阅读",
-            [
-                entry
-                for entry in visible
-                if entry["status"] in {"已翻译", "原生中文"}
-            ],
-            target,
-        )
-        append_section(
-            body,
-            "仅标题中文，正文仍为英文",
-            [
-                entry
-                for entry in visible
-                if entry["status"] == "待翻译" and entry["title_alias"]
-            ],
-            target,
-        )
-        append_section(
-            body,
-            "尚无中文目录标题",
-            [
-                entry
-                for entry in visible
-                if entry["status"] == "待翻译" and not entry["title_alias"]
-            ],
-            target,
+        for subtopic in subtopic_names(spec.name):
+            subtopic_entries = subgroups.get(subtopic, [])
+            if not subtopic_entries:
+                continue
+            subtopic_target = subtopic_path(spec.name, subtopic)
+            subtopic_readable = sum(
+                entry["status"] in {"已翻译", "原生中文"}
+                for entry in subtopic_entries
+            )
+            body.append(
+                f"| {local_link(subtopic, subtopic_target, target)} "
+                f"| {subtopic_readable} | {len(subtopic_entries)} |"
+            )
+            write_article_list(
+                subtopic_target,
+                f"{spec.name} · {subtopic}",
+                f"共 {len(subtopic_entries)} 份资料；这是“{subtopic}”的完整列表。",
+                subtopic_entries,
+            )
+
+        all_target = topic_dir / "all.md"
+        body += [
+            "",
+            "## 全部资料",
+            "",
+            f"- {local_link(f'查看全部 {len(items)} 份资料', all_target, target)}",
+            "",
+        ]
+        all_lines = [
+            f"# {spec.name} · 全部资料",
+            "",
+            f"> 共 {len(items)} 份资料。按子主题分组，保留主题内的全部条目。",
+            "> 文章标题链接优先打开中文正文；没有中文正文时打开英文原文。",
+            "",
+        ]
+        for subtopic in subtopic_names(spec.name):
+            subtopic_entries = subgroups.get(subtopic, [])
+            if not subtopic_entries:
+                continue
+            subtopic_target = subtopic_path(spec.name, subtopic)
+            all_lines += [
+                f"## {subtopic}",
+                "",
+                f"- {local_link('打开此子主题独立页面', subtopic_target, all_target)}",
+                "",
+            ]
+            append_article_table(all_lines, subtopic_entries, all_target)
+        all_target.write_text(
+            "\n".join(all_lines).rstrip() + "\n", encoding="utf-8"
         )
         target.write_text("\n".join(body).rstrip() + "\n", encoding="utf-8")
 
@@ -889,10 +929,11 @@ def write_reader_guide(
         "",
         "这里是面向学习者的入口。归档路径、工程状态和翻译流水线仍保留在其他页面。",
         "",
-        "## 最常用的两个入口",
+        "## 最常用的三个入口",
         "",
         f"- {local_link(f'可直接中文阅读的技术博客（{chinese_blog_count} 篇）', IDX / 'chinese-blogs.md', page)}",
         f"- {local_link('iOS 底层知识地图', IDX / 'topics.md', page)}",
+        f"- {local_link('暑期计划知识地图', IDX / 'summer.md', page)}",
         "",
         f"另有 {title_only} 篇英文博客已经提供目录中文标题，但正文仍为英文。",
         "",
@@ -1014,6 +1055,7 @@ def write_articles_landing(
         "",
         f"- {local_link('可直接中文阅读的技术博客（' + str(blogs['readable']) + ' 篇）', IDX / 'chinese-blogs.md', page)}",
         f"- {local_link('iOS 底层知识地图', IDX / 'topics.md', page)}",
+        f"- {local_link('暑期计划知识地图', IDX / 'summer.md', page)}",
         f"- {local_link('阅读入口与搜索示例', IDX / 'reader-guide.md', page)}",
         "",
         "## 完整归档",
@@ -1027,7 +1069,7 @@ def write_articles_landing(
         "## 其他查找方式",
         "",
         f"- {local_link('查看翻译状态', IDX / 'translation-status.md', page)}",
-        f"- {local_link('按暑期学习计划查找', IDX / 'study-plan.md', page)}",
+        f"- {local_link('按暑期计划逐日查找材料', IDX / 'study-plan.md', page)}",
         "",
         "在 GitHub 中还可以使用仓库搜索，例如：",
         "",

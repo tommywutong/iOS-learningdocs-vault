@@ -1,7 +1,7 @@
 # Jesse Squires
 
 > 状态：active；授权：© 2014–2026 Jesse Squires → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -35,7 +35,7 @@
 | 神秘的 bridgeOS 崩溃 | Obscure bridgeOS crash | Jesse Squires | 性能与调试 | [英文](../../../blogs/en/jessesquires/obscure-bridgeos-crash.md) · [网页](https://www.jessesquires.com/blog/2020/12/22/obscure-bridgeos-crash/) | [中文](../../../blogs/zh/jessesquires/obscure-bridgeos-crash.md) | 已翻译 |
 | 调试 DiffableDataSource 的 CellProvider | Debugging a DiffableDataSource CellProvider | Jesse Squires | 性能与调试 | [英文](../../../blogs/en/jessesquires/debugging-a-diffabledatasource-cellprovider.md) · [网页](https://www.jessesquires.com/blog/2021/07/11/debugging-diffabledatasource-cellproviders/) | [中文](../../../blogs/zh/jessesquires/debugging-a-diffabledatasource-cellprovider.md) | 已翻译 |
 | 调试一个会让你捂脸的 Swift 微妙 bug | Debugging a subtle Swift bug that will make you facepalm | Jesse Squires | 性能与调试、Swift 语言 | [英文](../../../blogs/en/jessesquires/debugging-a-subtle-swift-bug-that-will-make-you-facepalm.md) · [网页](https://www.jessesquires.com/blog/2018/11/07/debugging-subtle-swift-bug-facepalm/) | [中文](../../../blogs/zh/jessesquires/debugging-a-subtle-swift-bug-that-will-make-you-facepalm.md) | 已翻译 |
-| 避免在 Swift 中过度使用 @objc | Avoiding the overuse of @objc in Swift | Jesse Squires | Objective-C Runtime、Swift 语言 | [英文](../../../blogs/en/jessesquires/avoiding-the-overuse-of-objc-in-swift.md) · [网页](https://www.jessesquires.com/blog/2016/06/04/avoiding-objc-in-swift/) | [中文](../../../blogs/zh/jessesquires/avoiding-the-overuse-of-objc-in-swift.md) | 已翻译 |
+| 避免在 Swift 中过度使用 @objc | Avoiding the overuse of @objc in Swift | Jesse Squires | Swift 语言 | [英文](../../../blogs/en/jessesquires/avoiding-the-overuse-of-objc-in-swift.md) · [网页](https://www.jessesquires.com/blog/2016/06/04/avoiding-objc-in-swift/) | [中文](../../../blogs/zh/jessesquires/avoiding-the-overuse-of-objc-in-swift.md) | 已翻译 |
 | 阅读笔记：关系无政府主义 | Reading Notes: Relationship Anarchy | Jesse Squires | — | [英文](../../../blogs/en/jessesquires/reading-notes-relationship-anarchy.md) · [网页](https://www.jessesquires.com/blog/2019/08/07/reading-notes-2/) | [中文](../../../blogs/zh/jessesquires/reading-notes-relationship-anarchy.md) | 已翻译 |
 | .gitignore 文件 | .gitignore file | Jesse Squires | — | [英文](../../../blogs/en/jessesquires/workaround-xcode-deletes-package-resolved-file-and-produces-missing-package-product-errors.md) · [网页](https://www.jessesquires.com/blog/2024/05/29/swiftpm-package-resolved-xcode/) | — | 仅标题中文，正文待翻译 |
 | 15 年后：那是夏天，我们自由了 | 15 years later: it was summer and we were free | Jesse Squires | — | [英文](../../../blogs/en/jessesquires/15-years-later-it-was-summer-and-we-were-free.md) · [网页](https://www.jessesquires.com/blog/2018/09/26/15-years-later/) | — | 仅标题中文，正文待翻译 |

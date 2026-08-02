@@ -98,9 +98,43 @@ TOPIC_BY_NAME = {topic.name: topic for topic in TOPIC_SPECS}
 
 SUBTOPIC_RULES: dict[str, tuple[tuple[str, str], ...]] = {
     "Objective-C Runtime": (
-        ("对象、类与 isa", r"\bisa\b|class object|metaclass|object model|non-pointer"),
-        ("消息发送与转发", r"objc_msgsend|message|forward|invocation|selector"),
-        ("动态能力", r"swizzl|associated object|method resolution|\bkvo\b|runtime"),
+        (
+            "Category、Swizzling 与关联对象",
+            r"\bcategory\b|swizzl|associated object|分类|方法交换|关联对象",
+        ),
+        (
+            "对象模型、类与 isa",
+            r"isa pointer|isa 指针|class object|metaclass|object model|non-pointer|"
+            r"tagged pointer|instance variable|对象模型|元类|标签指针|"
+            r"实例变量|非脆弱",
+        ),
+        (
+            "消息发送、查找与缓存",
+            r"objc_msgsend|message send|message dispatch|method lookup|"
+            r"method cache|selector|消息发送|方法查找|方法缓存|选择子",
+        ),
+        (
+            "方法解析与消息转发",
+            r"method resolution|message forwarding|fast forwarding|"
+            r"invocation|resolveinstance|转发|方法解析|消息转发|调用",
+        ),
+        (
+            "KVC、KVO 与对象通信",
+            r"\bkvc\b|\bkvo\b|key.?value|键值编码|键值观察|通知",
+        ),
+        (
+            "类加载与初始化",
+            r"\+load\b|\+initialize\b|class loading|class initialization|"
+            r"类加载|类初始化",
+        ),
+        (
+            "Objective-C 语言与 Swift 互操作",
+            r"(?:\bobjective-c\b|\bobjc\b).*(?:literal|macro|function|data type|"
+            r"enum|constant|property|protocol|interoperability|swift)|"
+            r"(?:\bswift\b.*\bobjective-c\b|\bobjective-c\b.*\bswift\b)|"
+            r"Objective-C.*(?:字面量|宏|函数|数据类型|枚举|常量|属性|协议|互操作)|"
+            r"Swift.*(?:Objective-C|互操作)",
+        ),
     ),
     "内存与 ARC": (
         ("ARC 与引用计数", r"\barc\b|reference count|retain|release|\bweak\b|ownership"),
@@ -210,11 +244,11 @@ def topic_slug(topic_name: str) -> str:
 
 
 def classify_subtopic(topic_name: str, text: str) -> str:
-    """在一级主题内给出一个稳定子主题；无法可靠判断时回到“其他”。"""
+    """在一级主题内给出一个稳定子主题；无法可靠判断时单列为延伸阅读。"""
     for name, pattern in SUBTOPIC_RULES.get(topic_name, ()):
         if re.search(pattern, text, re.I):
             return name
-    return "其他"
+    return "延伸阅读"
 
 
 def load_title_aliases(root: Path) -> dict[str, dict[str, str]]:

@@ -1,7 +1,7 @@
 # worthdoingbadly (Zhuowei Zhang)
 
 > 状态：active；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@
 | 一本儿童小说如何启发我在 8600 万个家谱资料上模拟基因驱动 | How a kids' novel inspired me to simulate a gene drive on 86 million genealogy profiles | worthdoingbadly (Zhuowei Zhang) | 性能与调试 | [英文](../../../blogs/en/worthdoingbadly/how-a-kids-novel-inspired-me-to-simulate-a-gene-drive-on-86-million-genealogy-profiles.md) · [网页](https://worthdoingbadly.com/familytree/) | — | 仅标题中文，正文待翻译 |
 | 不可能将 Animoji 移植到 iPad Air | It's impossible to port Animoji to iPad Air | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/it-s-impossible-to-port-animoji-to-ipad-air.md) · [网页](https://worthdoingbadly.com/memoji2/) | — | 仅标题中文，正文待翻译 |
 | 从 Android 的最近应用屏幕访问截图 | Accessing screenshots from Android's Recent Apps screen | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/accessing-screenshots-from-android-s-recent-apps-screen.md) · [网页](https://worthdoingbadly.com/androidrecents/) | — | 仅标题中文，正文待翻译 |
-| 使用内核扩展更改 macOS 的运行时间 | Changing macOS's uptime with a kernel extension | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/changing-macos-s-uptime-with-a-kernel-extension.md) · [网页](https://worthdoingbadly.com/uptimekext/) | — | 仅标题中文，正文待翻译 |
+| 使用内核扩展更改 macOS 的运行时间 | Changing macOS's uptime with a kernel extension | worthdoingbadly (Zhuowei Zhang) | Objective-C Runtime | [英文](../../../blogs/en/worthdoingbadly/changing-macos-s-uptime-with-a-kernel-extension.md) · [网页](https://worthdoingbadly.com/uptimekext/) | — | 仅标题中文，正文待翻译 |
 | 使用私有 API 在 iOS WKWebView 中禁用同源策略 | Disable Same Origin Policy in iOS WKWebView with private API | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/disable-same-origin-policy-in-ios-wkwebview-with-private-api.md) · [网页](https://worthdoingbadly.com/disablesameorigin/) | — | 仅标题中文，正文待翻译 |
 | 修复 Visual Studio Code 中的两个小错误 | Fixing two small bugs in Visual Studio Code | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/fixing-two-small-bugs-in-visual-studio-code.md) · [网页](https://worthdoingbadly.com/vscodetwofixes/) | — | 仅标题中文，正文待翻译 |
 | 修复 Visual Studio Code 的 macOS 原生标签页 | Fixing macOS native tabs for Visual Studio Code | worthdoingbadly (Zhuowei Zhang) | — | [英文](../../../blogs/en/worthdoingbadly/fixing-macos-native-tabs-for-visual-studio-code.md) · [网页](https://worthdoingbadly.com/vscodetabs/) | — | 仅标题中文，正文待翻译 |

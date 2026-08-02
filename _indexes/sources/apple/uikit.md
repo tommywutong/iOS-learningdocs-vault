@@ -1,7 +1,7 @@
 # Apple · uikit · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -119,7 +119,7 @@
 | 已废弃符号 | Deprecated symbols | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/uiview-deprecated-symbols.md) · [网页](https://developer.apple.com/documentation/uikit/uiview-deprecated-symbols) | [中文](../../../apple-docs/zh/uikit/uiview-deprecated-symbols.md) | 已翻译 |
 | 已废弃符号 | Deprecated symbols | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/uiapplication-deprecated-symbols.md) · [网页](https://developer.apple.com/documentation/uikit/uiapplication-deprecated-symbols) | [中文](../../../apple-docs/zh/uikit/uiapplication-deprecated-symbols.md) | 已翻译 |
 | 已废弃符号 | Deprecated symbols | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/uiscreen-deprecated-symbols.md) · [网页](https://developer.apple.com/documentation/uikit/uiscreen-deprecated-symbols) | [中文](../../../apple-docs/zh/uikit/uiscreen-deprecated-symbols.md) | 已翻译 |
-| 延长你的 App 的后台运行时间 | Extending your app’s background execution time | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/extending-your-app-s-background-execution-time.md) · [网页](https://developer.apple.com/documentation/uikit/extending-your-app-s-background-execution-time) | [中文](../../../apple-docs/zh/uikit/extending-your-app-s-background-execution-time.md) | 已翻译 |
+| 延长你的 App 的后台运行时间 | Extending your app’s background execution time | Apple · UIKit | UI 与渲染、Objective-C Runtime | [英文](../../../apple-docs/en/uikit/extending-your-app-s-background-execution-time.md) · [网页](https://developer.apple.com/documentation/uikit/extending-your-app-s-background-execution-time) | [中文](../../../apple-docs/zh/uikit/extending-your-app-s-background-execution-time.md) | 已翻译 |
 | 恢复 App 的状态 | Restoring your app’s state | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/restoring-your-app-s-state.md) · [网页](https://developer.apple.com/documentation/uikit/restoring-your-app-s-state) | [中文](../../../apple-docs/zh/uikit/restoring-your-app-s-state.md) | 已翻译 |
 | 拖放 | Drag and drop | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/drag-and-drop.md) · [网页](https://developer.apple.com/documentation/uikit/drag-and-drop) | [中文](../../../apple-docs/zh/uikit/drag-and-drop.md) | 已翻译 |
 | 拖放自定 | Drag and drop customization | Apple · UIKit | UI 与渲染 | [英文](../../../apple-docs/en/uikit/drag-and-drop-customization.md) · [网页](https://developer.apple.com/documentation/uikit/drag-and-drop-customization) | [中文](../../../apple-docs/zh/uikit/drag-and-drop-customization.md) | 已翻译 |

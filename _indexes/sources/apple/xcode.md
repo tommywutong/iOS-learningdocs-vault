@@ -1,7 +1,7 @@
 # Apple · xcode · 成篇文章
 
 > 仅列出有完整正文的 article、overview、collection、sample code 和 module；短 API 条目仍保留在原始目录。
-> 自动生成于 2026-07-30，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
@@ -179,7 +179,7 @@
 | 在项目中查找与替换内容 | Finding and replacing content in a project | Apple · xcode | — | [英文](../../../apple-docs/en/xcode/finding-and-replacing-content-in-a-project.md) · [网页](https://developer.apple.com/documentation/xcode/finding-and-replacing-content-in-a-project) | [中文](../../../apple-docs/zh/xcode/finding-and-replacing-content-in-a-project.md) | 已翻译 |
 | 在项目中配置新 target | Configuring a new target in your project | Apple · xcode | — | [英文](../../../apple-docs/en/xcode/configuring-a-new-target-in-your-project.md) · [网页](https://developer.apple.com/documentation/xcode/configuring-a-new-target-in-your-project) | [中文](../../../apple-docs/zh/xcode/configuring-a-new-target-in-your-project.md) | 已翻译 |
 | 处理 CPU 瓶颈 | Addressing CPU bottlenecks | Apple · xcode | — | [英文](../../../apple-docs/en/xcode/addressing-cpu-bottlenecks.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-cpu-bottlenecks) | [中文](../../../apple-docs/zh/xcode/addressing-cpu-bottlenecks.md) | 已翻译 |
-| 处理 Swift 运行时错误引发的崩溃 | Addressing crashes from Swift runtime errors | Apple · xcode | Objective-C Runtime、性能与调试、Swift 语言 | [英文](../../../apple-docs/en/xcode/addressing-crashes-from-swift-runtime-errors.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-crashes-from-swift-runtime-errors) | [中文](../../../apple-docs/zh/xcode/addressing-crashes-from-swift-runtime-errors.md) | 已翻译 |
+| 处理 Swift 运行时错误引发的崩溃 | Addressing crashes from Swift runtime errors | Apple · xcode | 性能与调试、Swift 语言、Objective-C Runtime | [英文](../../../apple-docs/en/xcode/addressing-crashes-from-swift-runtime-errors.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-crashes-from-swift-runtime-errors) | [中文](../../../apple-docs/zh/xcode/addressing-crashes-from-swift-runtime-errors.md) | 已翻译 |
 | 处理看门狗终止 | Addressing watchdog terminations | Apple · xcode | — | [英文](../../../apple-docs/en/xcode/addressing-watchdog-terminations.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-watchdog-terminations) | [中文](../../../apple-docs/zh/xcode/addressing-watchdog-terminations.md) | 已翻译 |
 | 处理缺失框架崩溃 | Addressing missing framework crashes | Apple · xcode | 性能与调试、启动、链接与二进制 | [英文](../../../apple-docs/en/xcode/addressing-missing-framework-crashes.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-missing-framework-crashes) | [中文](../../../apple-docs/zh/xcode/addressing-missing-framework-crashes.md) | 已翻译 |
 | 处理语言异常崩溃 | Addressing language exception crashes | Apple · xcode | 性能与调试 | [英文](../../../apple-docs/en/xcode/addressing-language-exception-crashes.md) · [网页](https://developer.apple.com/documentation/xcode/addressing-language-exception-crashes) | [中文](../../../apple-docs/zh/xcode/addressing-language-exception-crashes.md) | 已翻译 |
