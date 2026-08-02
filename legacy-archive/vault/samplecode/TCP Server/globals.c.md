@@ -1,0 +1,51 @@
+---
+title: TCP Server
+apple_id: DTS10000264
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/TCP_Server/Listings/globals_c.html
+archived_at: '2026-07-18T03:26:01.846703Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [TCP Server](TCP%20Server.md)
+
+
+[Next](globals.h.md)[Previous](events.h.md)
+
+# globals.c
+
+```c
+/*
+    TCP Client/Server Queuing Example
+    Steve Falkenburg, MacDTS, Apple Computer
+    3/11/92
+
+    this client/server sample uses MacTCP to implement a simple "greeting" server.  the server
+    opens up several listeners on kGreetingPort (1235).  when a client connects, the data entered
+    in the greeting dialog is sent to the remote connection, and the connection is closed.
+
+    connection management is done through the use of Operating System queues to simplify tracking
+    and usage.
+*/
+
+#ifndef __PROCESSES__
+#include <Processes.h>
+#endif
+
+Boolean     gDone = false;              // set to true when user clicks quit
+short       gTcpDrvrRef;                // MacTCP (.ipp driver) driver reference number
+DialogPtr   gMainDialog;                // pointer to main window
+
+short       gFree,gRunning,gCompleted;  // queue counters indicating number of blocks in each q.
+long        gServiced;                  // counter indicating how many clients have been served
+
+Boolean     gRunningSeven;              // true if we're running System 7
+ProcessSerialNumber gOurPSN;            // process serial number for use in WakeUpProcess()
+
+Str255      gGreetingData;              // greeting string sent to client
+```
+
+[Next](globals.h.md)[Previous](events.h.md)
+

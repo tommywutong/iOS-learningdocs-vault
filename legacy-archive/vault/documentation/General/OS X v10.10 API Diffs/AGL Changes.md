@@ -1,0 +1,67 @@
+---
+title: OS X v10.10 API Diffs
+apple_id: TP40014444
+resource_type: Release Note
+platform: macOS
+topic: General
+technology: null
+published: '2014-10-16'
+source_url: https://developer.apple.com/library/archive/documentation/General/Reference/APIDiffsMacOSX10_10SeedDiff/modules/AGL.html
+archived_at: '2026-07-15T07:34:48.043296Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [OS X v10.10 API Diffs](OS%20X%20v10.9%20to%20OS%20X%20v10.10%20API%20Differences.md)
+
+
+# AGL Changes
+
+## AGL (Added)
+
+Added AGL_0_BITAdded AGL_10_BITAdded AGL_128_BITAdded AGL_12_BITAdded AGL_16_BITAdded AGL_1_BITAdded AGL_24_BITAdded AGL_2_BITAdded AGL_32_BITAdded AGL_3_BITAdded AGL_48_BITAdded AGL_4_BITAdded AGL_5_BITAdded AGL_64_BITAdded AGL_6_BITAdded AGL_8_BITAdded AGL_96_BITAdded AGL_ACCELERATEDAdded AGL_ACCUM_ALPHA_SIZEAdded AGL_ACCUM_BLUE_SIZEAdded AGL_ACCUM_GREEN_SIZEAdded AGL_ACCUM_MODESAdded AGL_ACCUM_RED_SIZEAdded AGL_ALLOW_OFFLINE_RENDERERSAdded AGL_ALL_RENDERERSAdded AGL_ALPHA_SIZEAdded AGL_ARGB12121212_BITAdded AGL_ARGB1555_BITAdded AGL_ARGB16161616_BITAdded AGL_ARGB2101010_BITAdded AGL_ARGB4444_BITAdded AGL_ARGB8888_BITAdded AGL_AUX_BUFFERSAdded AGL_AUX_DEPTH_STENCILAdded AGL_BACKING_STOREAdded AGL_BAD_ALLOCAdded AGL_BAD_ATTRIBUTEAdded AGL_BAD_CONNECTIONAdded AGL_BAD_CONTEXTAdded AGL_BAD_DRAWABLEAdded AGL_BAD_ENUMAdded AGL_BAD_FULLSCREENAdded AGL_BAD_GDEVAdded AGL_BAD_MATCHAdded AGL_BAD_MODULEAdded AGL_BAD_OFFSCREENAdded AGL_BAD_PIXELFMTAdded AGL_BAD_POINTERAdded AGL_BAD_PROPERTYAdded AGL_BAD_RENDINFOAdded AGL_BAD_STATEAdded AGL_BAD_VALUEAdded AGL_BAD_WINDOWAdded AGL_BGR233_A8_BITAdded AGL_BGR233_BITAdded AGL_BLUE_SIZEAdded AGL_BUFFER_MODESAdded AGL_BUFFER_NAMEAdded AGL_BUFFER_RECTAdded AGL_BUFFER_SIZEAdded AGL_CLEAR_FORMAT_CACHEAdded AGL_CLIP_REGIONAdded AGL_CLOSEST_POLICYAdded AGL_COLORMAP_ENTRYAdded AGL_COLORMAP_TRACKINGAdded AGL_COLOR_FLOATAdded AGL_COLOR_MODESAdded AGL_COMPLIANTAdded AGL_CONTEXT_DISPLAY_IDAdded AGL_CONTEXT_SURFACE_IDAdded AGL_DEPTH_MODESAdded AGL_DEPTH_SIZEAdded AGL_DISPLAY_MASKAdded AGL_DOUBLEBUFFERAdded AGL_DOUBLEBUFFER_BITAdded AGL_ENABLE_SURFACE_BACKING_SIZEAdded AGL_FORMAT_CACHE_SIZEAdded AGL_FS_CAPTURE_SINGLEAdded AGL_FULLSCREENAdded AGL_GREEN_SIZEAdded AGL_INDEX16_BITAdded AGL_INDEX8_BITAdded AGL_INVALID_FUNCTIONAdded AGL_LEVELAdded AGL_MAXIMUM_POLICYAdded AGL_MAX_AUX_BUFFERSAdded AGL_MAX_LEVELAdded AGL_MINIMUM_POLICYAdded AGL_MIN_LEVELAdded AGL_MONOSCOPIC_BITAdded AGL_MP_SAFEAdded AGL_MULTISAMPLEAdded AGL_MULTISCREENAdded AGL_NONEAdded AGL_NO_ERRORAdded AGL_NO_RECOVERYAdded AGL_OFFSCREENAdded AGL_ORDER_CONTEXT_TO_FRONTAdded AGL_PBUFFERAdded AGL_PIXEL_SIZEAdded AGL_RASTERIZATIONAdded AGL_RED_SIZEAdded AGL_REMOTE_PBUFFERAdded AGL_RENDERER_COUNTAdded AGL_RENDERER_IDAdded AGL_RETAIN_RENDERERSAdded AGL_RGB101010_A8_BITAdded AGL_RGB101010_BITAdded AGL_RGB121212_BITAdded AGL_RGB161616_BITAdded AGL_RGB332_A8_BITAdded AGL_RGB332_BITAdded AGL_RGB444_A8_BITAdded AGL_RGB444_BITAdded AGL_RGB555_A8_BITAdded AGL_RGB555_BITAdded AGL_RGB565_A8_BITAdded AGL_RGB565_BITAdded AGL_RGB888_A8_BITAdded AGL_RGB888_BITAdded AGL_RGB8_A8_BITAdded AGL_RGB8_BITAdded AGL_RGBAAdded AGL_RGBAFLOAT128_BITAdded AGL_RGBAFLOAT256_BITAdded AGL_RGBAFLOAT64_BITAdded AGL_RGBFLOAT128_BITAdded AGL_RGBFLOAT256_BITAdded AGL_RGBFLOAT64_BITAdded AGL_ROBUSTAdded AGL_SAMPLES_ARBAdded AGL_SAMPLE_ALPHAAdded AGL_SAMPLE_BUFFERS_ARBAdded AGL_SINGLEBUFFER_BITAdded AGL_SINGLE_RENDERERAdded AGL_STATE_VALIDATIONAdded AGL_STENCIL_MODESAdded AGL_STENCIL_SIZEAdded AGL_STEREOAdded AGL_STEREOSCOPIC_BITAdded AGL_SUPERSAMPLEAdded AGL_SURFACE_BACKING_SIZEAdded AGL_SURFACE_OPACITYAdded AGL_SURFACE_ORDERAdded AGL_SURFACE_VOLATILEAdded AGL_SWAP_INTERVALAdded AGL_SWAP_LIMITAdded AGL_SWAP_RECTAdded AGL_TEXTURE_MEMORYAdded AGL_VERSION_3_0Added AGL_VIDEO_MEMORYAdded AGL_VIRTUAL_SCREENAdded AGL_WINDOW
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

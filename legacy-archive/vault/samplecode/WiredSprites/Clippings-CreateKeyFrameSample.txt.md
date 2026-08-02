@@ -1,0 +1,59 @@
+---
+title: WiredSprites
+apple_id: DTS10001044
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-02-25'
+source_url: https://developer.apple.com/library/archive/samplecode/WiredSprites/Listings/Clippings_CreateKeyFrameSample_txt.html
+archived_at: '2026-07-18T03:28:21.573774Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [WiredSprites](WiredSprites.md)
+
+
+[Next](Clippings-CreateMovieFile.txt.md)[Previous](Clippings-AssignImageGroupIDs.txt.md)
+
+# Clippings/CreateKeyFrameSample.txt
+
+```
+    //////////
+    //
+    // create a key frame sample containing six sprites and all of their shared images
+    //
+    //////////
+
+    // create a new, empty key frame sample
+    myErr = QTNewAtomContainer(&mySample);
+    if (myErr != noErr)
+        goto bail;
+
+    myKeyColor.red = 0xffff;                        // white
+    myKeyColor.green = 0xffff;
+    myKeyColor.blue = 0xffff;
+
+    // add images to the key frame sample
+    AddPICTImageToKeyFrameSample(mySample,                      /* the key frame sample */
+                                kGoToBeginningButtonUp,         /* pict resource id */
+                                &myKeyColor,                    /* RGBColor that should be used as the transparency color */
+                                kGoToBeginningButtonUpIndex,    /* atom id for the kSpriteImageAtomType atom */
+                                NULL,                           /* optional sprite registration point */
+                                NULL);                          /* optional sprite image name */
+    AddPICTImageToKeyFrameSample(mySample, kGoToBeginningButtonDown, &myKeyColor, kGoToBeginningButtonDownIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToEndButtonUp, &myKeyColor, kGoToEndButtonUpIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToEndButtonDown, &myKeyColor, kGoToEndButtonDownIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToPrevButtonUp, &myKeyColor, kGoToPrevButtonUpIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToPrevButtonDown, &myKeyColor, kGoToPrevButtonDownIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToNextButtonUp, &myKeyColor, kGoToNextButtonUpIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kGoToNextButtonDown, &myKeyColor, kGoToNextButtonDownIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kPenguinForward, &myKeyColor, kPenguinForwardIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kPenguinLeft, &myKeyColor, kPenguinLeftIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kPenguinRight, &myKeyColor, kPenguinRightIndex, NULL, NULL);
+    AddPICTImageToKeyFrameSample(mySample, kPenguinClosed, &myKeyColor, kPenguinClosedIndex, NULL, NULL);
+
+    for (myIndex = kPenguinDownRightCycleStartIndex, myID = kWalkDownRightCycleStart; myIndex <= kPenguinDownRightCycleEndIndex; myIndex++, myID++)
+        AddPICTImageToKeyFrameSample(mySample, myID, &myKeyColor, myIndex, NULL, NULL);
+```
+
+[Next](Clippings-CreateMovieFile.txt.md)[Previous](Clippings-AssignImageGroupIDs.txt.md)
+

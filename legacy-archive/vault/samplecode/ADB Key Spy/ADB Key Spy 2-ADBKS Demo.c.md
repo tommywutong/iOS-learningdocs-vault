@@ -1,0 +1,120 @@
+---
+title: ADB Key Spy
+apple_id: DTS10000004
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/ADB_Key_Spy/Listings/ADB_Key_Spy_2_ADBKS_Demo_c.html
+archived_at: '2026-07-18T02:59:24.525756Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ADB Key Spy](ADB%20Key%20Spy.md)
+
+
+[Next](ADB%20Key%20Spy%202-ADBKS%20Driver.c.md)[Previous](ADB%20Key%20Spy%202-ADBKS%20csCodes.h.md)
+
+# ADB Key Spy 2/ADBKS Demo.c
+
+```c
+    //
+    //  from 'ADB Key Spy' ¥ Pete Gontier
+    //  Macintosh Developer Technical Support
+    //  ©Ê1995,1996,1998 Apple Computer, Inc.
+    //
+    //  Changes:
+    //
+    //      when        who     what
+    //      --------------------------------------------------------------
+    //      01/11/96    PG      rewrite for extension-based ADBKS
+    //
+
+#ifndef __DIALOGS__
+#   include <Dialogs.h>
+#endif
+
+#ifndef __FONTS__
+#   include <Fonts.h>
+#endif
+
+#ifndef __DEVICES__
+#   include <Devices.h>
+#endif
+
+#include "ADBKS csCodes.h"
+
+static pascal OSErr IsKeyDownAnywhere (unsigned char keyCode, Boolean *isDown)
+{
+    //
+    //  You need not open and close the driver every time; in fact,
+    //  it will be significantly slower to do so. But I do it here
+    //  in order to demonstrate the entire sequence.
+    //
+
+    short drvrRefNum;
+    OSErr err = OpenDriver ("\p.adb_key_spy", &drvrRefNum);
+
+    if (!err)
+    {
+        OSErr err2 = noErr;
+
+        ParamBlockRec pbr;
+        unsigned char *csParam = (unsigned char *) pbr.cntrlParam.csParam;
+
+        pbr.cntrlParam.ioCompletion     = nil;
+        pbr.cntrlParam.ioCRefNum        = drvrRefNum;
+        pbr.cntrlParam.csCode           = kStatusCode_IsKeyDownAnywhere;
+
+        csParam [0] = keyCode;
+
+        //
+        //  Note you cannot merely call 'Status' because it is glue
+        //  wrapped around 'PBStatus' which merely calls 'BlockMove'
+        //  to copy 'pbr.cntrlParam.csParam' into 'csParam' *after*
+        //  the call to 'PBStatus'. [Disassemble it for more info.]
+        //
+
+        if (!(err = PBStatusSync (&pbr)))
+            *isDown = csParam [0];
+
+        err2 = CloseDriver (drvrRefNum);
+        if (!err) err = err2;
+    }
+
+    return err;
+}
+
+void main (void)
+{
+    EventRecord     event;
+    OSErr           err;
+    Boolean         isDown;
+
+    InitGraf (&(qd.thePort));
+    InitFonts ( );
+    InitWindows ( );
+    InitMenus ( );
+    TEInit ( );
+    InitDialogs (nil);
+
+    //
+    //  This is a more interesting sequence than one might guess.
+    //  Since this package performs raw-to-virtual key code translation,
+    //  it's non-trivial to pass the key code from an event record to
+    //  IsKeyDownAnywhere.
+    //
+
+    while (!WaitNextEvent (keyDownMask,&event,0xFFFFFFFF,nil))
+        ;
+
+    err = IsKeyDownAnywhere ((event.message & keyCodeMask) >> 8, &isDown);
+
+    if (err)
+        DebugStr ("\pWhoa! IsKeyDownAnywhere returned an error!");
+    else if (!isDown)
+        DebugStr ("\pWhoa! A keyDown event was posted for a key that isn't down!");
+}
+```
+
+[Next](ADB%20Key%20Spy%202-ADBKS%20Driver.c.md)[Previous](ADB%20Key%20Spy%202-ADBKS%20csCodes.h.md)
+

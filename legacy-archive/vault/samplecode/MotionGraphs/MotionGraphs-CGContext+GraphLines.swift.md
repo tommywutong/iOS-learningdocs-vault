@@ -1,0 +1,66 @@
+---
+title: MotionGraphs
+apple_id: DTS40012333
+resource_type: Sample Code
+platform: iOS
+topic: null
+technology: CoreMotion
+published: '2017-02-02'
+source_url: https://developer.apple.com/library/archive/samplecode/MotionGraphs/Listings/MotionGraphs_CGContext_GraphLines_swift.html
+archived_at: '2026-07-18T03:16:01.660165Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [MotionGraphs](MotionGraphs.md)
+
+
+[Next](MotionGraphs-UIViewController%2BEnumerate.swift.md)[Previous](MotionGraphs-GraphView.swift.md)
+
+# MotionGraphs/CGContext+GraphLines.swift
+
+```swift
+/*
+ Copyright (C) 2016 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+
+ Abstract:
+ An extension to `CGContext` to draw the horizontal lines in a `GraphView`.
+ */
+
+import UIKit
+
+extension CGContext {
+    func drawGraphLines(in size: CGSize) {
+        // Configure context settings.
+        self.saveGState()
+        setShouldAntialias(false)
+        translateBy(x: 0, y: size.height / 2.0)
+
+        // Add lines to the context.
+        let gridLineSpacing = size.height / 8.0
+        for index in -3...3 {
+            // Skip the center line.
+            guard index != 0 else { continue }
+
+            let position = floor(gridLineSpacing * CGFloat(index))
+            move(to: CGPoint(x: 0, y: position))
+            addLine(to: CGPoint(x: size.width, y: position))
+        }
+
+        // Stroke the lines.
+        setStrokeColor(UIColor.darkGray.cgColor)
+        strokePath()
+
+        // Add and stroke the center line.
+        move(to: CGPoint(x: 0, y: 0))
+        addLine(to: CGPoint(x: size.width, y: 0))
+
+        setStrokeColor(UIColor.lightGray.cgColor)
+        strokePath()
+
+        // Restore the context state.
+        self.restoreGState()
+    }
+}
+```
+
+[Next](MotionGraphs-UIViewController%2BEnumerate.swift.md)[Previous](MotionGraphs-GraphView.swift.md)
+

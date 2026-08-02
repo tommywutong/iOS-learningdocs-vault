@@ -1,0 +1,758 @@
+---
+title: iOS 10.0 API Diffs
+apple_id: TP40017327
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2016-09-13'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS10APIDiffs/Swift/CoreImage.html
+archived_at: '2026-07-18T02:55:15.685132Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 10.0 API Diffs](iOS%209.3%20to%20iOS%2010.0%20API%20Differences.md)
+
+
+# CoreImage Changes for Swift
+
+### CoreImage
+
+Added [CIColor.black() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643578-black)Added [CIColor.blue() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643569-blue)Added [CIColor.clear() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643577-clear)Added [CIColor.cyan() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643581-cyan)Added [CIColor.gray() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643573-gray)Added [CIColor.green() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643580-greencolor)Added [CIColor.init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat, colorSpace: CGColorSpace)](https://developer.apple.com/documentation/coreimage/cicolor/1643572-initwithred)Added [CIColor.init(red: CGFloat, green: CGFloat, blue: CGFloat, colorSpace: CGColorSpace)](https://developer.apple.com/documentation/coreimage/cicolor/1643576-initwithred)Added [CIColor.magenta() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643574-magentacolor)Added [CIColor.red() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643570-redcolor)Added [CIColor.white() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643571-white)Added [CIColor.yellow() -> Self [class]](https://developer.apple.com/documentation/coreimage/cicolor/1643582-yellowcolor)Added [CIContext.clearCaches()](https://developer.apple.com/documentation/coreimage/cicontext/1437790-clearcaches)Added [CIContext.createCGImage(_: CIImage, from: CGRect, format: CIFormat, colorSpace: CGColorSpace?, deferred: Bool) -> CGImage?](https://developer.apple.com/documentation/coreimage/cicontext/1642211-createcgimage)Added [CIContext.init()](https://developer.apple.com/documentation/coreimage/cicontext/1642212-init)Added [CIContext.jpegRepresentation(of: CIImage, colorSpace: CGColorSpace, options: [AnyHashable : Any]) -> Data?](https://developer.apple.com/documentation/coreimage/cicontext/1642214-jpegrepresentationofimage)Added [CIContext.tiffRepresentation(of: CIImage, format: CIFormat, colorSpace: CGColorSpace, options: [AnyHashable : Any]) -> Data?](https://developer.apple.com/documentation/coreimage/cicontext/1642220-tiffrepresentationofimage)Added [CIContext.workingFormat](https://developer.apple.com/documentation/coreimage/cicontext/1642215-workingformat)Added [CIContext.writeJPEGRepresentation(of: CIImage, to: URL, colorSpace: CGColorSpace, options: [AnyHashable : Any]) throws](https://developer.apple.com/documentation/coreimage/cicontext/1642218-writejpegrepresentation)Added [CIContext.writeTIFFRepresentation(of: CIImage, to: URL, format: CIFormat, colorSpace: CGColorSpace, options: [AnyHashable : Any]) throws](https://developer.apple.com/documentation/coreimage/cicontext/1642213-writetiffrepresentationofimage)Added [CIFilter.init(cvPixelBuffer: CVPixelBuffer!, properties: [AnyHashable : Any]!, options: [AnyHashable : Any]!)](https://developer.apple.com/documentation/coreimage/cifilter/2138288-filterwithcvpixelbuffer)Added [CIFilter.init(imageData: Data!, options: [AnyHashable : Any]!)](https://developer.apple.com/documentation/coreimage/cifilter/1437879-init)Added [CIFilter.init(imageURL: URL!, options: [AnyHashable : Any]!)](https://developer.apple.com/documentation/coreimage/cifilter/1438096-init)Added [CIImage.applyingGaussianBlur(withSigma: Double) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645897-applyinggaussianblur)Added [CIImage.autoAdjustmentFilters() -> [CIFilter]](https://developer.apple.com/documentation/coreimage/ciimage/1645889-autoadjustmentfilters)Added [CIImage.cgImage](https://developer.apple.com/documentation/coreimage/ciimage/1687603-cgimage)Added [CIImage.clamping(to: CGRect) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645893-clamped)Added [CIImage.matchedFromWorkingSpace(to: CGColorSpace) -> CIImage?](https://developer.apple.com/documentation/coreimage/ciimage/1645898-imagebycolormatchingworkingspace)Added [CIImage.matchedToWorkingSpace(from: CGColorSpace) -> CIImage?](https://developer.apple.com/documentation/coreimage/ciimage/1645896-imagebycolormatchingcolorspaceto)Added [CIImage.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimage/1687604-pixelbuffer)Added [CIImage.premultiplyingAlpha() -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645894-imagebypremultiplyingalpha)Added [CIImage.settingAlphaOne(inExtent: CGRect) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645891-settingalphaone)Added [CIImage.settingProperties(_: [AnyHashable : Any]) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645895-imagebysettingproperties)Added [CIImage.unpremultiplyingAlpha() -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1645892-imagebyunpremultiplyingalpha)Added [CIImageProcessorInput](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput)Added [CIImageProcessorInput.baseAddress](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639645-baseaddress)Added [CIImageProcessorInput.bytesPerRow](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639655-bytesperrow)Added [CIImageProcessorInput.format](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639639-format)Added [CIImageProcessorInput.metalTexture](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639651-metaltexture)Added [CIImageProcessorInput.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639649-pixelbuffer)Added [CIImageProcessorInput.region](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639633-region)Added [CIImageProcessorKernel](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel)Added [CIImageProcessorKernel.apply(withExtent: CGRect, inputs: [CIImage]?, arguments: [String : Any]?) throws -> CIImage [class]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138284-apply)Added [CIImageProcessorKernel.formatForInput(at: Int32) -> CIFormat [class]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138289-formatforinput)Added [CIImageProcessorKernel.outputFormat](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143065-outputformat)Added [CIImageProcessorKernel.process(with: [CIImageProcessorInput]?, arguments: [String : Any]?, output: CIImageProcessorOutput) throws [class]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138290-process)Added [CIImageProcessorKernel.roi(forInput: Int32, arguments: [String : Any]?, outputRect: CGRect) -> CGRect [class]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138287-roiforinput)Added [CIImageProcessorKernel.synchronizeInputs](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143066-synchronizeinputs)Added [CIImageProcessorOutput](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput)Added [CIImageProcessorOutput.baseAddress](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639626-baseaddress)Added [CIImageProcessorOutput.bytesPerRow](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639635-bytesperrow)Added [CIImageProcessorOutput.format](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639628-format)Added [CIImageProcessorOutput.metalCommandBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639641-metalcommandbuffer)Added [CIImageProcessorOutput.metalTexture](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639631-metaltexture)Added [CIImageProcessorOutput.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639647-pixelbuffer)Added [CIImageProcessorOutput.region](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639629-region)Added [CIDetectorMaxFeatureCount](https://developer.apple.com/documentation/coreimage/cidetectormaxfeaturecount)Added [kCIActiveKeys](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438129-activekeys)Added [kCIContextCacheIntermediates](https://developer.apple.com/documentation/coreimage/cicontextoption/1642217-cacheintermediates)Added [kCIContextOutputPremultiplied](https://developer.apple.com/documentation/coreimage/cicontextoption/1642216-outputpremultiplied)Added [kCIInputAllowDraftModeKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438010-allowdraftmode)Added [kCIInputBaselineExposureKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/2202263-baselineexposure)Added [kCIInputBoostKey](https://developer.apple.com/documentation/coreimage/kciinputboostkey)Added [kCIInputBoostShadowAmountKey](https://developer.apple.com/documentation/coreimage/kciinputboostshadowamountkey)Added [kCIInputColorNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/kciinputcolornoisereductionamountkey)Added [kCIInputDecoderVersionKey](https://developer.apple.com/documentation/coreimage/kciinputdecoderversionkey)Added [kCIInputDisableGamutMapKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/2202264-disablegamutmap)Added [kCIInputEnableChromaticNoiseTrackingKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438231-enablechromaticnoisetracking)Added [kCIInputEnableSharpeningKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438016-enablesharpening)Added [kCIInputEnableVendorLensCorrectionKey](https://developer.apple.com/documentation/coreimage/kciinputenablevendorlenscorrectionkey)Added [kCIInputIgnoreImageOrientationKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437949-ignoreimageorientation)Added [kCIInputImageOrientationKey](https://developer.apple.com/documentation/coreimage/kciinputimageorientationkey)Added [kCIInputLinearSpaceFilter](https://developer.apple.com/documentation/coreimage/kciinputlinearspacefilter)Added [kCIInputLuminanceNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/kciinputluminancenoisereductionamountkey)Added [kCIInputNeutralChromaticityXKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437605-neutralchromaticityx)Added [kCIInputNeutralChromaticityYKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438039-neutralchromaticityy)Added [kCIInputNeutralLocationKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437915-neutrallocation)Added [kCIInputNeutralTemperatureKey](https://developer.apple.com/documentation/coreimage/kciinputneutraltemperaturekey)Added [kCIInputNeutralTintKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438113-neutraltint)Added [kCIInputNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437990-noisereductionamount)Added [kCIInputNoiseReductionContrastAmountKey](https://developer.apple.com/documentation/coreimage/kciinputnoisereductioncontrastamountkey)Added [kCIInputNoiseReductionDetailAmountKey](https://developer.apple.com/documentation/coreimage/kciinputnoisereductiondetailamountkey)Added [kCIInputNoiseReductionSharpnessAmountKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438009-noisereductionsharpnessamount)Added [kCIInputScaleFactorKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437936-scalefactor)Added [kCIOutputNativeSizeKey](https://developer.apple.com/documentation/coreimage/kcioutputnativesizekey)Added [kCISupportedDecoderVersionsKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437927-supporteddecoderversions)Modified [CIColor](https://developer.apple.com/documentation/coreimage/cicolor)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIColor : NSObject, NSSecureCoding, NSCopying {     convenience init(CGColor c: CGColor)     class func colorWithCGColor(_ c: CGColor) -> Self     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat)     class func colorWithRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat) -> Self     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat)     class func colorWithRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat) -> Self     convenience init(string representation: String)     class func colorWithString(_ representation: String) -> Self     init(CGColor c: CGColor)     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat)     var numberOfComponents: Int { get }     var components: UnsafePointer<CGFloat> { get }     var alpha: CGFloat { get }     var colorSpace: CGColorSpace { get }     var red: CGFloat { get }     var green: CGFloat { get }     var blue: CGFloat { get }     var stringRepresentation: String { get } } extension CIColor {     convenience init(color color: UIColor) } ``` | NSCopying, NSSecureCoding |
+| To | ``` class CIColor : NSObject, NSSecureCoding, NSCopying {     convenience init(cgColor c: CGColor)     class func withCGColor(_ c: CGColor) -> Self     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat)     class func withRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat) -> Self     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat)     class func withRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat) -> Self     convenience init?(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat, colorSpace colorSpace: CGColorSpace)     class func withRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat, colorSpace colorSpace: CGColorSpace) -> Self?     convenience init?(red r: CGFloat, green g: CGFloat, blue b: CGFloat, colorSpace colorSpace: CGColorSpace)     class func withRed(_ r: CGFloat, green g: CGFloat, blue b: CGFloat, colorSpace colorSpace: CGColorSpace) -> Self?     convenience init(string representation: String)     class func withString(_ representation: String) -> Self     init(cgColor c: CGColor)     convenience init(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat)     convenience init?(red r: CGFloat, green g: CGFloat, blue b: CGFloat, alpha a: CGFloat, colorSpace colorSpace: CGColorSpace)     convenience init?(red r: CGFloat, green g: CGFloat, blue b: CGFloat, colorSpace colorSpace: CGColorSpace)     var numberOfComponents: Int { get }     var components: UnsafePointer<CGFloat> { get }     var alpha: CGFloat { get }     var colorSpace: CGColorSpace { get }     var red: CGFloat { get }     var green: CGFloat { get }     var blue: CGFloat { get }     var stringRepresentation: String { get }     class func black() -> Self     class func white() -> Self     class func gray() -> Self     class func red() -> Self     class func green() -> Self     class func blue() -> Self     class func cyan() -> Self     class func magenta() -> Self     class func yellow() -> Self     class func clear() -> Self     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIColor : CVarArg { } extension CIColor : Equatable, Hashable {     var hashValue: Int { get } } extension CIColor {     convenience init(color color: UIColor) } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [CIColor.init(cgColor: CGColor)](https://developer.apple.com/documentation/coreimage/cicolor/1437821-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CGColor c: CGColor) ``` |
+| To | ``` init(cgColor c: CGColor) ``` |
+
+Modified [CIColorKernel](https://developer.apple.com/documentation/coreimage/cicolorkernel)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class CIColorKernel : CIKernel {     convenience init?(string string: String)     class func kernelWithString(_ string: String) -> Self?     func applyWithExtent(_ extent: CGRect, arguments args: [AnyObject]?) -> CIImage? } ``` |
+| To | ``` class CIColorKernel : CIKernel {     convenience init?(string string: String)     class func withString(_ string: String) -> Self?     func apply(withExtent extent: CGRect, arguments args: [Any]?) -> CIImage? } ``` |
+
+Modified [CIColorKernel.apply(withExtent: CGRect, arguments: [Any]?) -> CIImage?](https://developer.apple.com/documentation/coreimage/cicolorkernel/1438110-applywithextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyWithExtent(_ extent: CGRect, arguments args: [AnyObject]?) -> CIImage? ``` |
+| To | ``` func apply(withExtent extent: CGRect, arguments args: [Any]?) -> CIImage? ``` |
+
+Modified [CIContext](https://developer.apple.com/documentation/coreimage/cicontext)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIContext : NSObject {      init(CGContext cgctx: CGContext, options options: [String : AnyObject]?)     class func contextWithCGContext(_ cgctx: CGContext, options options: [String : AnyObject]?) -> CIContext      init(options options: [String : AnyObject]?)     class func contextWithOptions(_ options: [String : AnyObject]?) -> CIContext      init(EAGLContext eaglContext: EAGLContext)     class func contextWithEAGLContext(_ eaglContext: EAGLContext) -> CIContext      init(EAGLContext eaglContext: EAGLContext, options options: [String : AnyObject]?)     class func contextWithEAGLContext(_ eaglContext: EAGLContext, options options: [String : AnyObject]?) -> CIContext      init(MTLDevice device: MTLDevice)     class func contextWithMTLDevice(_ device: MTLDevice) -> CIContext      init(MTLDevice device: MTLDevice, options options: [String : AnyObject]?)     class func contextWithMTLDevice(_ device: MTLDevice, options options: [String : AnyObject]?) -> CIContext     var workingColorSpace: CGColorSpace { get }     func drawImage(_ image: CIImage, atPoint atPoint: CGPoint, fromRect fromRect: CGRect)     func drawImage(_ image: CIImage, inRect inRect: CGRect, fromRect fromRect: CGRect)     func createCGImage(_ image: CIImage, fromRect fromRect: CGRect) -> CGImage     func createCGImage(_ image: CIImage, fromRect fromRect: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CGImage     func createCGLayerWithSize(_ size: CGSize, info info: CFDictionary?) -> CGLayer     func render(_ image: CIImage, toBitmap data: UnsafeMutablePointer<Void>, rowBytes rowBytes: Int, bounds bounds: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     func render(_ image: CIImage, toCVPixelBuffer buffer: CVPixelBuffer)     func render(_ image: CIImage, toCVPixelBuffer buffer: CVPixelBuffer, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace?)     func render(_ image: CIImage, toMTLTexture texture: MTLTexture, commandBuffer commandBuffer: MTLCommandBuffer?, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace)     func reclaimResources()     func clearCaches()     func inputImageMaximumSize() -> CGSize     func outputImageMaximumSize() -> CGSize } extension CIContext {     class func offlineGPUCount() -> UInt32 } ``` | -- |
+| To | ``` class CIContext : NSObject {      init(cgContext cgctx: CGContext, options options: [String : Any]? = nil)     class func withCGContext(_ cgctx: CGContext, options options: [String : Any]? = nil) -> CIContext      init(options options: [String : Any]? = nil)     class func withOptions(_ options: [String : Any]? = nil) -> CIContext      init()     class func context() -> CIContext     init(options options: [String : Any]? = nil)     init()      init(eaglContext eaglContext: EAGLContext)     class func withEAGLContext(_ eaglContext: EAGLContext) -> CIContext      init(eaglContext eaglContext: EAGLContext, options options: [String : Any]? = nil)     class func withEAGLContext(_ eaglContext: EAGLContext, options options: [String : Any]? = nil) -> CIContext      init(mtlDevice device: MTLDevice)     class func withMTLDevice(_ device: MTLDevice) -> CIContext      init(mtlDevice device: MTLDevice, options options: [String : Any]? = nil)     class func withMTLDevice(_ device: MTLDevice, options options: [String : Any]? = nil) -> CIContext     var workingColorSpace: CGColorSpace? { get }     var workingFormat: CIFormat { get }     func draw(_ image: CIImage, at atPoint: CGPoint, from fromRect: CGRect)     func draw(_ image: CIImage, in inRect: CGRect, from fromRect: CGRect)     func createCGImage(_ image: CIImage, from fromRect: CGRect) -> CGImage?     func createCGImage(_ image: CIImage, from fromRect: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CGImage?     func createCGImage(_ image: CIImage, from fromRect: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?, deferred deferred: Bool) -> CGImage?     func createCGLayer(with size: CGSize, info info: CFDictionary?) -> CGLayer?     func render(_ image: CIImage, toBitmap data: UnsafeMutableRawPointer, rowBytes rowBytes: Int, bounds bounds: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     func render(_ image: CIImage, to buffer: CVPixelBuffer)     func render(_ image: CIImage, to buffer: CVPixelBuffer, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace?)     func render(_ image: CIImage, to texture: MTLTexture, commandBuffer commandBuffer: MTLCommandBuffer?, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace)     func reclaimResources()     func clearCaches()     func inputImageMaximumSize() -> CGSize     func outputImageMaximumSize() -> CGSize     func tiffRepresentation(of image: CIImage, format format: CIFormat, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) -> Data?     func jpegRepresentation(of image: CIImage, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) -> Data?     func writeTIFFRepresentation(of image: CIImage, to url: URL, format format: CIFormat, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) throws     func writeJPEGRepresentation(of image: CIImage, to url: URL, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) throws     class func offlineGPUCount() -> UInt32     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIContext : CVarArg { } extension CIContext : Equatable, Hashable {     var hashValue: Int { get } } extension CIContext {     class func offlineGPUCount() -> UInt32 } extension CIContext {     func tiffRepresentation(of image: CIImage, format format: CIFormat, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) -> Data?     func jpegRepresentation(of image: CIImage, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) -> Data?     func writeTIFFRepresentation(of image: CIImage, to url: URL, format format: CIFormat, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) throws     func writeJPEGRepresentation(of image: CIImage, to url: URL, colorSpace colorSpace: CGColorSpace, options options: [AnyHashable : Any] = [:]) throws } ``` | CVarArg, Equatable, Hashable |
+
+Modified [CIContext.createCGImage(_: CIImage, from: CGRect) -> CGImage?](https://developer.apple.com/documentation/coreimage/cicontext/1437784-createcgimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func createCGImage(_ image: CIImage, fromRect fromRect: CGRect) -> CGImage ``` |
+| To | ``` func createCGImage(_ image: CIImage, from fromRect: CGRect) -> CGImage? ``` |
+
+Modified [CIContext.createCGImage(_: CIImage, from: CGRect, format: CIFormat, colorSpace: CGColorSpace?) -> CGImage?](https://developer.apple.com/documentation/coreimage/cicontext/1437978-createcgimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func createCGImage(_ image: CIImage, fromRect fromRect: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CGImage ``` |
+| To | ``` func createCGImage(_ image: CIImage, from fromRect: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CGImage? ``` |
+
+Modified [CIContext.draw(_: CIImage, in: CGRect, from: CGRect)](https://developer.apple.com/documentation/coreimage/cicontext/1437786-drawimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func drawImage(_ image: CIImage, inRect inRect: CGRect, fromRect fromRect: CGRect) ``` |
+| To | ``` func draw(_ image: CIImage, in inRect: CGRect, from fromRect: CGRect) ``` |
+
+Modified [CIContext.init(cgContext: CGContext, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cicontext/1437864-contextwithcgcontext)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CGContext cgctx: CGContext, options options: [String : AnyObject]?) ``` |
+| To | ``` init(cgContext cgctx: CGContext, options options: [String : Any]? = nil) ``` |
+
+Modified [CIContext.init(eaglContext: EAGLContext)](https://developer.apple.com/documentation/coreimage/cicontext/1620419-contextwitheaglcontext)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(EAGLContext eaglContext: EAGLContext) ``` |
+| To | ``` init(eaglContext eaglContext: EAGLContext) ``` |
+
+Modified [CIContext.init(eaglContext: EAGLContext, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cicontext/1620362-contextwitheaglcontext)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(EAGLContext eaglContext: EAGLContext, options options: [String : AnyObject]?) ``` |
+| To | ``` init(eaglContext eaglContext: EAGLContext, options options: [String : Any]? = nil) ``` |
+
+Modified [CIContext.init(mtlDevice: MTLDevice)](https://developer.apple.com/documentation/coreimage/cicontext/1437609-contextwithmtldevice)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(MTLDevice device: MTLDevice) ``` |
+| To | ``` init(mtlDevice device: MTLDevice) ``` |
+
+Modified [CIContext.init(mtlDevice: MTLDevice, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cicontext/1437711-contextwithmtldevice)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(MTLDevice device: MTLDevice, options options: [String : AnyObject]?) ``` |
+| To | ``` init(mtlDevice device: MTLDevice, options options: [String : Any]? = nil) ``` |
+
+Modified [CIContext.init(options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cicontext/1438261-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(options options: [String : AnyObject]?) ``` |
+| To | ``` init(options options: [String : Any]? = nil) ``` |
+
+Modified [CIContext.render(_: CIImage, to: CVPixelBuffer)](https://developer.apple.com/documentation/coreimage/cicontext/1437853-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func render(_ image: CIImage, toCVPixelBuffer buffer: CVPixelBuffer) ``` |
+| To | ``` func render(_ image: CIImage, to buffer: CVPixelBuffer) ``` |
+
+Modified [CIContext.render(_: CIImage, to: CVPixelBuffer, bounds: CGRect, colorSpace: CGColorSpace?)](https://developer.apple.com/documentation/coreimage/cicontext/1437835-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func render(_ image: CIImage, toCVPixelBuffer buffer: CVPixelBuffer, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace?) ``` |
+| To | ``` func render(_ image: CIImage, to buffer: CVPixelBuffer, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace?) ``` |
+
+Modified [CIContext.render(_: CIImage, to: MTLTexture, commandBuffer: MTLCommandBuffer?, bounds: CGRect, colorSpace: CGColorSpace)](https://developer.apple.com/documentation/coreimage/cicontext/1438026-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func render(_ image: CIImage, toMTLTexture texture: MTLTexture, commandBuffer commandBuffer: MTLCommandBuffer?, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace) ``` |
+| To | ``` func render(_ image: CIImage, to texture: MTLTexture, commandBuffer commandBuffer: MTLCommandBuffer?, bounds bounds: CGRect, colorSpace colorSpace: CGColorSpace) ``` |
+
+Modified [CIContext.render(_: CIImage, toBitmap: UnsafeMutableRawPointer, rowBytes: Int, bounds: CGRect, format: CIFormat, colorSpace: CGColorSpace?)](https://developer.apple.com/documentation/coreimage/cicontext/1437897-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func render(_ image: CIImage, toBitmap data: UnsafeMutablePointer<Void>, rowBytes rowBytes: Int, bounds bounds: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) ``` |
+| To | ``` func render(_ image: CIImage, toBitmap data: UnsafeMutableRawPointer, rowBytes rowBytes: Int, bounds bounds: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) ``` |
+
+Modified [CIContext.workingColorSpace](https://developer.apple.com/documentation/coreimage/cicontext/1438061-workingcolorspace)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var workingColorSpace: CGColorSpace { get } ``` |
+| To | ``` var workingColorSpace: CGColorSpace? { get } ``` |
+
+Modified [CIDetector](https://developer.apple.com/documentation/coreimage/cidetector)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIDetector : NSObject {      init(ofType type: String, context context: CIContext?, options options: [String : AnyObject]?)     class func detectorOfType(_ type: String, context context: CIContext?, options options: [String : AnyObject]?) -> CIDetector     func featuresInImage(_ image: CIImage) -> [CIFeature]     func featuresInImage(_ image: CIImage, options options: [String : AnyObject]?) -> [CIFeature] } ``` | -- |
+| To | ``` class CIDetector : NSObject {      init?(ofType type: String, context context: CIContext?, options options: [String : Any]? = nil)     class func ofType(_ type: String, context context: CIContext?, options options: [String : Any]? = nil) -> CIDetector?     func features(in image: CIImage) -> [CIFeature]     func features(in image: CIImage, options options: [String : Any]? = nil) -> [CIFeature]     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIDetector : CVarArg { } extension CIDetector : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [CIDetector.features(in: CIImage) -> [CIFeature]](https://developer.apple.com/documentation/coreimage/cidetector/1438049-featuresinimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func featuresInImage(_ image: CIImage) -> [CIFeature] ``` |
+| To | ``` func features(in image: CIImage) -> [CIFeature] ``` |
+
+Modified [CIDetector.features(in: CIImage, options: [String : Any]?) -> [CIFeature]](https://developer.apple.com/documentation/coreimage/cidetector/1438189-features)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func featuresInImage(_ image: CIImage, options options: [String : AnyObject]?) -> [CIFeature] ``` |
+| To | ``` func features(in image: CIImage, options options: [String : Any]? = nil) -> [CIFeature] ``` |
+
+Modified [CIDetector.init(ofType: String, context: CIContext?, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cidetector/1437884-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(ofType type: String, context context: CIContext?, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(ofType type: String, context context: CIContext?, options options: [String : Any]? = nil) ``` |
+
+Modified [CIFeature](https://developer.apple.com/documentation/coreimage/cifeature)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIFeature : NSObject {     var type: String { get }     var bounds: CGRect { get } } ``` | -- |
+| To | ``` class CIFeature : NSObject {     var type: String { get }     var bounds: CGRect { get }     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIFeature : CVarArg { } extension CIFeature : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [CIFilter](https://developer.apple.com/documentation/coreimage/cifilter)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIFilter : NSObject, NSSecureCoding, NSCopying {     var outputImage: CIImage? { get }     var name: String { get }     var inputKeys: [String] { get }     var outputKeys: [String] { get }     func setDefaults()     var attributes: [String : AnyObject] { get }     func apply(_ k: CIKernel, arguments args: [AnyObject]?, options dict: [String : AnyObject]?) -> CIImage? } extension CIFilter {      init?(name name: String)     class func filterWithName(_ name: String) -> CIFilter?      init?(name name: String, withInputParameters params: [String : AnyObject]?)     class func filterWithName(_ name: String, withInputParameters params: [String : AnyObject]?) -> CIFilter?     class func filterNamesInCategory(_ category: String?) -> [String]     class func filterNamesInCategories(_ categories: [String]?) -> [String]     class func registerFilterName(_ name: String, constructor anObject: CIFilterConstructor, classAttributes attributes: [String : AnyObject])     class func localizedNameForFilterName(_ filterName: String) -> String?     class func localizedNameForCategory(_ category: String) -> String     class func localizedDescriptionForFilterName(_ filterName: String) -> String?     class func localizedReferenceDocumentationForFilterName(_ filterName: String) -> NSURL? } extension CIFilter {     class func serializedXMPFromFilters(_ filters: [CIFilter], inputImageExtent extent: CGRect) -> NSData     class func filterArrayFromSerializedXMP(_ xmpData: NSData, inputImageExtent extent: CGRect, error outError: NSErrorPointer) -> [CIFilter] } ``` | NSCopying, NSSecureCoding |
+| To | ``` class CIFilter : NSObject, NSSecureCoding, NSCopying {     var outputImage: CIImage? { get }     var name: String     var isEnabled: Bool     var inputKeys: [String] { get }     var outputKeys: [String] { get }     func setDefaults()     var attributes: [String : Any] { get }     func apply(_ k: CIKernel, arguments args: [Any]?, options dict: [String : Any]? = nil) -> CIImage?      init!(imageURL url: URL!, options options: [AnyHashable : Any]! = [:])     class func withImageURL(_ url: URL!, options options: [AnyHashable : Any]! = [:]) -> CIFilter!      init!(imageData data: Data!, options options: [AnyHashable : Any]! = [:])     class func withImageData(_ data: Data!, options options: [AnyHashable : Any]! = [:]) -> CIFilter!      init!(cvPixelBuffer pixelBuffer: CVPixelBuffer!, properties properties: [AnyHashable : Any]!, options options: [AnyHashable : Any]! = [:])     class func withCVPixelBuffer(_ pixelBuffer: CVPixelBuffer!, properties properties: [AnyHashable : Any]!, options options: [AnyHashable : Any]! = [:]) -> CIFilter!     class func serializedXMP(from filters: [CIFilter], inputImageExtent extent: CGRect) -> Data?     class func filterArray(fromSerializedXMP xmpData: Data, inputImageExtent extent: CGRect, error outError: NSErrorPointer) -> [CIFilter]      init?(name name: String)     class func withName(_ name: String) -> CIFilter?      init?(name name: String, withInputParameters params: [String : Any]?)     class func withName(_ name: String, withInputParameters params: [String : Any]?) -> CIFilter?     class func filterNames(inCategory category: String?) -> [String]     class func filterNames(inCategories categories: [String]?) -> [String]     class func registerName(_ name: String, constructor anObject: CIFilterConstructor, classAttributes attributes: [String : Any] = [:])     class func localizedName(forFilterName filterName: String) -> String?     class func localizedName(forCategory category: String) -> String     class func localizedDescription(forFilterName filterName: String) -> String?     class func localizedReferenceDocumentation(forFilterName filterName: String) -> URL?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIFilter : CVarArg { } extension CIFilter : Equatable, Hashable {     var hashValue: Int { get } } extension CIFilter {      init?(name name: String)     class func withName(_ name: String) -> CIFilter?      init?(name name: String, withInputParameters params: [String : Any]?)     class func withName(_ name: String, withInputParameters params: [String : Any]?) -> CIFilter?     class func filterNames(inCategory category: String?) -> [String]     class func filterNames(inCategories categories: [String]?) -> [String]     class func registerName(_ name: String, constructor anObject: CIFilterConstructor, classAttributes attributes: [String : Any] = [:])     class func localizedName(forFilterName filterName: String) -> String?     class func localizedName(forCategory category: String) -> String     class func localizedDescription(forFilterName filterName: String) -> String?     class func localizedReferenceDocumentation(forFilterName filterName: String) -> URL? } extension CIFilter {     class func serializedXMP(from filters: [CIFilter], inputImageExtent extent: CGRect) -> Data?     class func filterArray(fromSerializedXMP xmpData: Data, inputImageExtent extent: CGRect, error outError: NSErrorPointer) -> [CIFilter] } extension CIFilter {      init!(imageURL url: URL!, options options: [AnyHashable : Any]! = [:])     class func withImageURL(_ url: URL!, options options: [AnyHashable : Any]! = [:]) -> CIFilter!      init!(imageData data: Data!, options options: [AnyHashable : Any]! = [:])     class func withImageData(_ data: Data!, options options: [AnyHashable : Any]! = [:]) -> CIFilter!      init!(cvPixelBuffer pixelBuffer: CVPixelBuffer!, properties properties: [AnyHashable : Any]!, options options: [AnyHashable : Any]! = [:])     class func withCVPixelBuffer(_ pixelBuffer: CVPixelBuffer!, properties properties: [AnyHashable : Any]!, options options: [AnyHashable : Any]! = [:]) -> CIFilter! } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [CIFilter.attributes](https://developer.apple.com/documentation/coreimage/cifilter/1437661-attributes)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var attributes: [String : AnyObject] { get } ``` |
+| To | ``` var attributes: [String : Any] { get } ``` |
+
+Modified [CIFilter.filterArray(fromSerializedXMP: Data, inputImageExtent: CGRect, error: NSErrorPointer) -> [CIFilter] [class]](https://developer.apple.com/documentation/coreimage/cifilter/1438237-filterarray)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func filterArrayFromSerializedXMP(_ xmpData: NSData, inputImageExtent extent: CGRect, error outError: NSErrorPointer) -> [CIFilter] ``` |
+| To | ``` class func filterArray(fromSerializedXMP xmpData: Data, inputImageExtent extent: CGRect, error outError: NSErrorPointer) -> [CIFilter] ``` |
+
+Modified [CIFilter.filterNames(inCategories: [String]?) -> [String] [class]](https://developer.apple.com/documentation/coreimage/cifilter/1437595-filternamesincategories)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func filterNamesInCategories(_ categories: [String]?) -> [String] ``` |
+| To | ``` class func filterNames(inCategories categories: [String]?) -> [String] ``` |
+
+Modified [CIFilter.filterNames(inCategory: String?) -> [String] [class]](https://developer.apple.com/documentation/coreimage/cifilter/1438145-filternames)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func filterNamesInCategory(_ category: String?) -> [String] ``` |
+| To | ``` class func filterNames(inCategory category: String?) -> [String] ``` |
+
+Modified [CIFilter.init(name: String, withInputParameters: [String : Any]?)](https://developer.apple.com/documentation/coreimage/cifilter/1437894-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(name name: String, withInputParameters params: [String : AnyObject]?) ``` |
+| To | ``` init?(name name: String, withInputParameters params: [String : Any]?) ``` |
+
+Modified [CIFilter.localizedDescription(forFilterName: String) -> String? [class]](https://developer.apple.com/documentation/coreimage/cifilter/1437591-localizeddescription)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func localizedDescriptionForFilterName(_ filterName: String) -> String? ``` |
+| To | ``` class func localizedDescription(forFilterName filterName: String) -> String? ``` |
+
+Modified [CIFilter.localizedName(forCategory: String) -> String [class]](https://developer.apple.com/documentation/coreimage/cifilter/1438057-localizednameforcategory)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func localizedNameForCategory(_ category: String) -> String ``` |
+| To | ``` class func localizedName(forCategory category: String) -> String ``` |
+
+Modified [CIFilter.localizedName(forFilterName: String) -> String? [class]](https://developer.apple.com/documentation/coreimage/cifilter/1437697-localizednameforfiltername)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func localizedNameForFilterName(_ filterName: String) -> String? ``` |
+| To | ``` class func localizedName(forFilterName filterName: String) -> String? ``` |
+
+Modified [CIFilter.localizedReferenceDocumentation(forFilterName: String) -> URL? [class]](https://developer.apple.com/documentation/coreimage/cifilter/1437642-localizedreferencedocumentation)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func localizedReferenceDocumentationForFilterName(_ filterName: String) -> NSURL? ``` |
+| To | ``` class func localizedReferenceDocumentation(forFilterName filterName: String) -> URL? ``` |
+
+Modified [CIFilter.name](https://developer.apple.com/documentation/coreimage/cifilter/1437997-setname)
+
+|  | Declaration | Readonly |
+| --- | --- | --- |
+| From | ``` var name: String { get } ``` | yes |
+| To | ``` var name: String ``` | -- |
+
+Modified [CIFilter.registerName(_: String, constructor: CIFilterConstructor, classAttributes: [String : Any]) [class]](https://developer.apple.com/documentation/coreimage/cifilter/1437889-registername)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func registerFilterName(_ name: String, constructor anObject: CIFilterConstructor, classAttributes attributes: [String : AnyObject]) ``` |
+| To | ``` class func registerName(_ name: String, constructor anObject: CIFilterConstructor, classAttributes attributes: [String : Any] = [:]) ``` |
+
+Modified [CIFilter.serializedXMP(from: [CIFilter], inputImageExtent: CGRect) -> Data? [class]](https://developer.apple.com/documentation/coreimage/cifilter/1438006-serializedxmp)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func serializedXMPFromFilters(_ filters: [CIFilter], inputImageExtent extent: CGRect) -> NSData ``` |
+| To | ``` class func serializedXMP(from filters: [CIFilter], inputImageExtent extent: CGRect) -> Data? ``` |
+
+Modified [CIFilterConstructor](https://developer.apple.com/documentation/coreimage/cifilterconstructor)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol CIFilterConstructor {     func filterWithName(_ name: String) -> CIFilter? } ``` |
+| To | ``` protocol CIFilterConstructor {     func filter(withName name: String) -> CIFilter? } ``` |
+
+Modified [CIFilterConstructor.filter(withName: String) -> CIFilter?](https://developer.apple.com/documentation/coreimage/cifilterconstructor/1438018-filterwithname)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func filterWithName(_ name: String) -> CIFilter? ``` |
+| To | ``` func filter(withName name: String) -> CIFilter? ``` |
+
+Modified [CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIFilterShape : NSObject, NSCopying {     convenience init(rect r: CGRect)     class func shapeWithRect(_ r: CGRect) -> Self     init(rect r: CGRect)     func transformBy(_ m: CGAffineTransform, interior flag: Bool) -> CIFilterShape     func insetByX(_ dx: Int32, y dy: Int32) -> CIFilterShape     func unionWith(_ s2: CIFilterShape) -> CIFilterShape     func unionWithRect(_ r: CGRect) -> CIFilterShape     func intersectWith(_ s2: CIFilterShape) -> CIFilterShape     func intersectWithRect(_ r: CGRect) -> CIFilterShape     var extent: CGRect { get } } ``` | NSCopying |
+| To | ``` class CIFilterShape : NSObject, NSCopying {     convenience init(rect r: CGRect)     class func withRect(_ r: CGRect) -> Self     init(rect r: CGRect)     func transform(by m: CGAffineTransform, interior flag: Bool) -> CIFilterShape     func insetBy(x dx: Int32, y dy: Int32) -> CIFilterShape     func union(with s2: CIFilterShape) -> CIFilterShape     func union(with r: CGRect) -> CIFilterShape     func intersect(with s2: CIFilterShape) -> CIFilterShape     func intersect(with r: CGRect) -> CIFilterShape     var extent: CGRect { get }     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIFilterShape : CVarArg { } extension CIFilterShape : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying |
+
+Modified [CIFilterShape.insetBy(x: Int32, y: Int32) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1437987-insetby)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func insetByX(_ dx: Int32, y dy: Int32) -> CIFilterShape ``` |
+| To | ``` func insetBy(x dx: Int32, y dy: Int32) -> CIFilterShape ``` |
+
+Modified [CIFilterShape.intersect(with: CGRect) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1437806-intersect)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func intersectWithRect(_ r: CGRect) -> CIFilterShape ``` |
+| To | ``` func intersect(with r: CGRect) -> CIFilterShape ``` |
+
+Modified [CIFilterShape.intersect(with: CIFilterShape) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1437881-intersect)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func intersectWith(_ s2: CIFilterShape) -> CIFilterShape ``` |
+| To | ``` func intersect(with s2: CIFilterShape) -> CIFilterShape ``` |
+
+Modified [CIFilterShape.transform(by: CGAffineTransform, interior: Bool) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1437808-transformby)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func transformBy(_ m: CGAffineTransform, interior flag: Bool) -> CIFilterShape ``` |
+| To | ``` func transform(by m: CGAffineTransform, interior flag: Bool) -> CIFilterShape ``` |
+
+Modified [CIFilterShape.union(with: CGRect) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1437601-unionwithrect)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func unionWithRect(_ r: CGRect) -> CIFilterShape ``` |
+| To | ``` func union(with r: CGRect) -> CIFilterShape ``` |
+
+Modified [CIFilterShape.union(with: CIFilterShape) -> CIFilterShape](https://developer.apple.com/documentation/coreimage/cifiltershape/1438227-unionwith)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func unionWith(_ s2: CIFilterShape) -> CIFilterShape ``` |
+| To | ``` func union(with s2: CIFilterShape) -> CIFilterShape ``` |
+
+Modified [CIImage](https://developer.apple.com/documentation/coreimage/ciimage)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIImage : NSObject, NSSecureCoding, NSCopying {      init(CGImage image: CGImage)     class func imageWithCGImage(_ image: CGImage) -> CIImage      init(CGImage image: CGImage, options options: [String : AnyObject]?)     class func imageWithCGImage(_ image: CGImage, options options: [String : AnyObject]?) -> CIImage      init(CGLayer layer: CGLayer)     class func imageWithCGLayer(_ layer: CGLayer) -> CIImage      init(CGLayer layer: CGLayer, options options: [String : AnyObject]?)     class func imageWithCGLayer(_ layer: CGLayer, options options: [String : AnyObject]?) -> CIImage      init(bitmapData data: NSData, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     class func imageWithBitmapData(_ data: NSData, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CIImage      init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?)     class func imageWithTexture(_ name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?) -> CIImage      init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : AnyObject]?)     class func imageWithTexture(_ name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : AnyObject]?) -> CIImage      init(MTLTexture texture: MTLTexture, options options: [String : AnyObject]?)     class func imageWithMTLTexture(_ texture: MTLTexture, options options: [String : AnyObject]?) -> CIImage      init?(contentsOfURL url: NSURL)     class func imageWithContentsOfURL(_ url: NSURL) -> CIImage?      init?(contentsOfURL url: NSURL, options options: [String : AnyObject]?)     class func imageWithContentsOfURL(_ url: NSURL, options options: [String : AnyObject]?) -> CIImage?      init?(data data: NSData)     class func imageWithData(_ data: NSData) -> CIImage?      init?(data data: NSData, options options: [String : AnyObject]?)     class func imageWithData(_ data: NSData, options options: [String : AnyObject]?) -> CIImage?      init(CVImageBuffer imageBuffer: CVImageBuffer)     class func imageWithCVImageBuffer(_ imageBuffer: CVImageBuffer) -> CIImage      init(CVImageBuffer imageBuffer: CVImageBuffer, options options: [String : AnyObject]?)     class func imageWithCVImageBuffer(_ imageBuffer: CVImageBuffer, options options: [String : AnyObject]?) -> CIImage      init(CVPixelBuffer pixelBuffer: CVPixelBuffer)     class func imageWithCVPixelBuffer(_ pixelBuffer: CVPixelBuffer) -> CIImage      init(CVPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : AnyObject]?)     class func imageWithCVPixelBuffer(_ pixelBuffer: CVPixelBuffer, options options: [String : AnyObject]?) -> CIImage      init(color color: CIColor)     class func imageWithColor(_ color: CIColor) -> CIImage     class func emptyImage() -> CIImage     init(CGImage image: CGImage)     init(CGImage image: CGImage, options options: [String : AnyObject]?)     init(CGLayer layer: CGLayer)     init(CGLayer layer: CGLayer, options options: [String : AnyObject]?)     init?(data data: NSData)     init?(data data: NSData, options options: [String : AnyObject]?)     init(bitmapData data: NSData, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?)     init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : AnyObject]?)     init(MTLTexture texture: MTLTexture, options options: [String : AnyObject]?)     init?(contentsOfURL url: NSURL)     init?(contentsOfURL url: NSURL, options options: [String : AnyObject]?)     init(CVImageBuffer imageBuffer: CVImageBuffer)     init(CVImageBuffer imageBuffer: CVImageBuffer, options options: [String : AnyObject]?)     init(CVPixelBuffer pixelBuffer: CVPixelBuffer)     init(CVPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : AnyObject]?)     init(color color: CIColor)     func imageByApplyingTransform(_ matrix: CGAffineTransform) -> CIImage     func imageByApplyingOrientation(_ orientation: Int32) -> CIImage     func imageTransformForOrientation(_ orientation: Int32) -> CGAffineTransform     func imageByCompositingOverImage(_ dest: CIImage) -> CIImage     func imageByCroppingToRect(_ rect: CGRect) -> CIImage     func imageByClampingToExtent() -> CIImage     func imageByApplyingFilter(_ filterName: String, withInputParameters params: [String : AnyObject]?) -> CIImage     var extent: CGRect { get }     var properties: [String : AnyObject] { get }     var definition: CIFilterShape { get }     var url: NSURL? { get }     var colorSpace: CGColorSpace? { get }     func regionOfInterestForImage(_ image: CIImage, inRect rect: CGRect) -> CGRect } extension CIImage {     func autoAdjustmentFiltersWithOptions(_ options: [String : AnyObject]?) -> [CIFilter] } extension CIImage {      init(imageProvider p: AnyObject, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : AnyObject]?)     class func imageWithImageProvider(_ p: AnyObject, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : AnyObject]?) -> CIImage     init(imageProvider p: AnyObject, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : AnyObject]?) } extension CIImage {     init?(image image: UIImage)     init?(image image: UIImage, options options: [NSObject : AnyObject]?) } ``` | NSCopying, NSSecureCoding |
+| To | ``` class CIImage : NSObject, NSSecureCoding, NSCopying {      init(cgImage image: CGImage)     class func withCGImage(_ image: CGImage) -> CIImage      init(cgImage image: CGImage, options options: [String : Any]? = nil)     class func withCGImage(_ image: CGImage, options options: [String : Any]? = nil) -> CIImage      init(cgLayer layer: CGLayer)     class func withCGLayer(_ layer: CGLayer) -> CIImage      init(cgLayer layer: CGLayer, options options: [String : Any]? = nil)     class func withCGLayer(_ layer: CGLayer, options options: [String : Any]? = nil) -> CIImage      init(bitmapData data: Data, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     class func withBitmapData(_ data: Data, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) -> CIImage      init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?)     class func withTexture(_ name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?) -> CIImage      init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : Any]? = nil)     class func withTexture(_ name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : Any]? = nil) -> CIImage      init?(mtlTexture texture: MTLTexture, options options: [String : Any]? = nil)     class func withMTLTexture(_ texture: MTLTexture, options options: [String : Any]? = nil) -> CIImage?      init?(contentsOf url: URL)     class func withContentsOf(_ url: URL) -> CIImage?      init?(contentsOf url: URL, options options: [String : Any]? = nil)     class func withContentsOf(_ url: URL, options options: [String : Any]? = nil) -> CIImage?      init?(data data: Data)     class func withData(_ data: Data) -> CIImage?      init?(data data: Data, options options: [String : Any]? = nil)     class func withData(_ data: Data, options options: [String : Any]? = nil) -> CIImage?      init(cvImageBuffer imageBuffer: CVImageBuffer)     class func withCVImageBuffer(_ imageBuffer: CVImageBuffer) -> CIImage      init(cvImageBuffer imageBuffer: CVImageBuffer, options options: [String : Any]? = nil)     class func withCVImageBuffer(_ imageBuffer: CVImageBuffer, options options: [String : Any]? = nil) -> CIImage      init(cvPixelBuffer pixelBuffer: CVPixelBuffer)     class func withCVPixelBuffer(_ pixelBuffer: CVPixelBuffer) -> CIImage      init(cvPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : Any]? = nil)     class func withCVPixelBuffer(_ pixelBuffer: CVPixelBuffer, options options: [String : Any]? = nil) -> CIImage      init(color color: CIColor)     class func withColor(_ color: CIColor) -> CIImage     class func empty() -> CIImage     init(cgImage image: CGImage)     init(cgImage image: CGImage, options options: [String : Any]? = nil)     init(cgLayer layer: CGLayer)     init(cgLayer layer: CGLayer, options options: [String : Any]? = nil)     init?(data data: Data)     init?(data data: Data, options options: [String : Any]? = nil)     init(bitmapData data: Data, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?)     init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, colorSpace colorSpace: CGColorSpace?)     init(texture name: UInt32, size size: CGSize, flipped flipped: Bool, options options: [String : Any]? = nil)     init?(mtlTexture texture: MTLTexture, options options: [String : Any]? = nil)     init?(contentsOf url: URL)     init?(contentsOf url: URL, options options: [String : Any]? = nil)     init(cvImageBuffer imageBuffer: CVImageBuffer)     init(cvImageBuffer imageBuffer: CVImageBuffer, options options: [String : Any]? = nil)     init(cvPixelBuffer pixelBuffer: CVPixelBuffer)     init(cvPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : Any]? = nil)     init(color color: CIColor)     func applying(_ matrix: CGAffineTransform) -> CIImage     func applyingOrientation(_ orientation: Int32) -> CIImage     func imageTransform(forOrientation orientation: Int32) -> CGAffineTransform     func compositingOverImage(_ dest: CIImage) -> CIImage     func cropping(to rect: CGRect) -> CIImage     func clampingToExtent() -> CIImage     func clamping(to rect: CGRect) -> CIImage     func applyingFilter(_ filterName: String, withInputParameters params: [String : Any]?) -> CIImage     func matchedToWorkingSpace(from colorSpace: CGColorSpace) -> CIImage?     func matchedFromWorkingSpace(to colorSpace: CGColorSpace) -> CIImage?     func premultiplyingAlpha() -> CIImage     func unpremultiplyingAlpha() -> CIImage     func settingAlphaOne(inExtent extent: CGRect) -> CIImage     func applyingGaussianBlur(withSigma sigma: Double) -> CIImage     func settingProperties(_ properties: [AnyHashable : Any]) -> CIImage     var extent: CGRect { get }     var properties: [String : Any] { get }     var definition: CIFilterShape { get }     var url: URL? { get }     var colorSpace: CGColorSpace? { get }     var pixelBuffer: CVPixelBuffer? { get }     var cgImage: CGImage? { get }     func regionOfInterest(for image: CIImage, in rect: CGRect) -> CGRect      init(imageProvider p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil)     class func withImageProvider(_ p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil) -> CIImage     init(imageProvider p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil)     func autoAdjustmentFilters() -> [CIFilter]     func autoAdjustmentFilters(options options: [String : Any]? = nil) -> [CIFilter]     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIImage : CVarArg { } extension CIImage : Equatable, Hashable {     var hashValue: Int { get } } extension CIImage {     func autoAdjustmentFilters() -> [CIFilter]     func autoAdjustmentFilters(options options: [String : Any]? = nil) -> [CIFilter] } extension CIImage {      init(imageProvider p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil)     class func withImageProvider(_ p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil) -> CIImage     init(imageProvider p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil) } extension CIImage {     init?(image image: UIImage)     init?(image image: UIImage, options options: [AnyHashable : Any]? = nil) } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [CIImage.applying(_: CGAffineTransform) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1438203-imagebyapplyingtransform)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByApplyingTransform(_ matrix: CGAffineTransform) -> CIImage ``` |
+| To | ``` func applying(_ matrix: CGAffineTransform) -> CIImage ``` |
+
+Modified [CIImage.applyingFilter(_: String, withInputParameters: [String : Any]?) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1437589-imagebyapplyingfilter)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByApplyingFilter(_ filterName: String, withInputParameters params: [String : AnyObject]?) -> CIImage ``` |
+| To | ``` func applyingFilter(_ filterName: String, withInputParameters params: [String : Any]?) -> CIImage ``` |
+
+Modified [CIImage.applyingOrientation(_: Int32) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1438223-oriented)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByApplyingOrientation(_ orientation: Int32) -> CIImage ``` |
+| To | ``` func applyingOrientation(_ orientation: Int32) -> CIImage ``` |
+
+Modified [CIImage.autoAdjustmentFilters(options: [String : Any]?) -> [CIFilter]](https://developer.apple.com/documentation/coreimage/ciimage/1437792-autoadjustmentfilterswithoptions)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func autoAdjustmentFiltersWithOptions(_ options: [String : AnyObject]?) -> [CIFilter] ``` |
+| To | ``` func autoAdjustmentFilters(options options: [String : Any]? = nil) -> [CIFilter] ``` |
+
+Modified [CIImage.clampingToExtent() -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1437628-imagebyclampingtoextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByClampingToExtent() -> CIImage ``` |
+| To | ``` func clampingToExtent() -> CIImage ``` |
+
+Modified [CIImage.compositingOverImage(_: CIImage) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1437837-imagebycompositingoverimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByCompositingOverImage(_ dest: CIImage) -> CIImage ``` |
+| To | ``` func compositingOverImage(_ dest: CIImage) -> CIImage ``` |
+
+Modified [CIImage.cropping(to: CGRect) -> CIImage](https://developer.apple.com/documentation/coreimage/ciimage/1437833-cropped)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageByCroppingToRect(_ rect: CGRect) -> CIImage ``` |
+| To | ``` func cropping(to rect: CGRect) -> CIImage ``` |
+
+Modified [CIImage.empty() -> CIImage [class]](https://developer.apple.com/documentation/coreimage/ciimage/1438023-emptyimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func emptyImage() -> CIImage ``` |
+| To | ``` class func empty() -> CIImage ``` |
+
+Modified [CIImage.imageTransform(forOrientation: Int32) -> CGAffineTransform](https://developer.apple.com/documentation/coreimage/ciimage/1437930-orientationtransform)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func imageTransformForOrientation(_ orientation: Int32) -> CGAffineTransform ``` |
+| To | ``` func imageTransform(forOrientation orientation: Int32) -> CGAffineTransform ``` |
+
+Modified [CIImage.init(bitmapData: Data, bytesPerRow: Int, size: CGSize, format: CIFormat, colorSpace: CGColorSpace?)](https://developer.apple.com/documentation/coreimage/ciimage/1437857-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(bitmapData data: NSData, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) ``` |
+| To | ``` init(bitmapData data: Data, bytesPerRow bytesPerRow: Int, size size: CGSize, format format: CIFormat, colorSpace colorSpace: CGColorSpace?) ``` |
+
+Modified [CIImage.init(cgImage: CGImage)](https://developer.apple.com/documentation/coreimage/ciimage/1437986-initwithcgimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CGImage image: CGImage) ``` |
+| To | ``` init(cgImage image: CGImage) ``` |
+
+Modified [CIImage.init(cgImage: CGImage, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1437764-initwithcgimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CGImage image: CGImage, options options: [String : AnyObject]?) ``` |
+| To | ``` init(cgImage image: CGImage, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(contentsOf: URL)](https://developer.apple.com/documentation/coreimage/ciimage/1437908-initwithcontentsofurl)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(contentsOfURL url: NSURL) ``` |
+| To | ``` init?(contentsOf url: URL) ``` |
+
+Modified [CIImage.init(contentsOf: URL, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1437867-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(contentsOfURL url: NSURL, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(contentsOf url: URL, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(cvImageBuffer: CVImageBuffer)](https://developer.apple.com/documentation/coreimage/ciimage/1438012-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CVImageBuffer imageBuffer: CVImageBuffer) ``` |
+| To | ``` init(cvImageBuffer imageBuffer: CVImageBuffer) ``` |
+
+Modified [CIImage.init(cvImageBuffer: CVImageBuffer, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1437617-initwithcvimagebuffer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CVImageBuffer imageBuffer: CVImageBuffer, options options: [String : AnyObject]?) ``` |
+| To | ``` init(cvImageBuffer imageBuffer: CVImageBuffer, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(cvPixelBuffer: CVPixelBuffer)](https://developer.apple.com/documentation/coreimage/ciimage/1438072-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CVPixelBuffer pixelBuffer: CVPixelBuffer) ``` |
+| To | ``` init(cvPixelBuffer pixelBuffer: CVPixelBuffer) ``` |
+
+Modified [CIImage.init(cvPixelBuffer: CVPixelBuffer, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1438209-initwithcvpixelbuffer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(CVPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : AnyObject]?) ``` |
+| To | ``` init(cvPixelBuffer pixelBuffer: CVPixelBuffer, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(data: Data)](https://developer.apple.com/documentation/coreimage/ciimage/1437925-initwithdata)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(data data: NSData) ``` |
+| To | ``` init?(data data: Data) ``` |
+
+Modified [CIImage.init(data: Data, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1438032-initwithdata)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(data data: NSData, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(data data: Data, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(imageProvider: Any, size: Int, _: Int, format: CIFormat, colorSpace: CGColorSpace?, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1437868-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(imageProvider p: AnyObject, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : AnyObject]?) ``` |
+| To | ``` init(imageProvider p: Any, size width: Int, _ height: Int, format f: CIFormat, colorSpace cs: CGColorSpace?, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.init(mtlTexture: MTLTexture, options: [String : Any]?)](https://developer.apple.com/documentation/coreimage/ciimage/1437890-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(MTLTexture texture: MTLTexture, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(mtlTexture texture: MTLTexture, options options: [String : Any]? = nil) ``` |
+
+Modified [CIImage.properties](https://developer.apple.com/documentation/coreimage/ciimage/1437733-properties)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var properties: [String : AnyObject] { get } ``` |
+| To | ``` var properties: [String : Any] { get } ``` |
+
+Modified [CIImage.regionOfInterest(for: CIImage, in: CGRect) -> CGRect](https://developer.apple.com/documentation/coreimage/ciimage/1437994-regionofinterest)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func regionOfInterestForImage(_ image: CIImage, inRect rect: CGRect) -> CGRect ``` |
+| To | ``` func regionOfInterest(for image: CIImage, in rect: CGRect) -> CGRect ``` |
+
+Modified [CIImage.url](https://developer.apple.com/documentation/coreimage/ciimage/1438195-url)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var url: NSURL? { get } ``` |
+| To | ``` var url: URL? { get } ``` |
+
+Modified [CIImageAccumulator](https://developer.apple.com/documentation/coreimage/ciimageaccumulator)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIImageAccumulator : NSObject {     convenience init(extent extent: CGRect, format format: CIFormat)     class func imageAccumulatorWithExtent(_ extent: CGRect, format format: CIFormat) -> Self     convenience init(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace)     class func imageAccumulatorWithExtent(_ extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace) -> Self     init(extent extent: CGRect, format format: CIFormat)     init(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace)     var extent: CGRect { get }     var format: CIFormat { get }     func image() -> CIImage     func setImage(_ image: CIImage)     func setImage(_ image: CIImage, dirtyRect dirtyRect: CGRect)     func clear() } ``` | -- |
+| To | ``` class CIImageAccumulator : NSObject {     convenience init?(extent extent: CGRect, format format: CIFormat)     class func withExtent(_ extent: CGRect, format format: CIFormat) -> Self?     convenience init?(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace)     class func withExtent(_ extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace) -> Self?     init?(extent extent: CGRect, format format: CIFormat)     init?(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace)     var extent: CGRect { get }     var format: CIFormat { get }     func image() -> CIImage     func setImage(_ image: CIImage)     func setImage(_ image: CIImage, dirtyRect dirtyRect: CGRect)     func clear()     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIImageAccumulator : CVarArg { } extension CIImageAccumulator : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [CIImageAccumulator.init(extent: CGRect, format: CIFormat)](https://developer.apple.com/documentation/coreimage/ciimageaccumulator/1427718-initwithextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(extent extent: CGRect, format format: CIFormat) ``` |
+| To | ``` init?(extent extent: CGRect, format format: CIFormat) ``` |
+
+Modified [CIImageAccumulator.init(extent: CGRect, format: CIFormat, colorSpace: CGColorSpace)](https://developer.apple.com/documentation/coreimage/ciimageaccumulator/1427710-initwithextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace) ``` |
+| To | ``` init?(extent extent: CGRect, format format: CIFormat, colorSpace colorSpace: CGColorSpace) ``` |
+
+Modified [CIKernel](https://developer.apple.com/documentation/coreimage/cikernel)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIKernel : NSObject {     class func kernelsWithString(_ string: String) -> [CIKernel]?     convenience init?(string string: String)     class func kernelWithString(_ string: String) -> Self?     var name: String { get }     func setROISelector(_ method: Selector)     func applyWithExtent(_ extent: CGRect, roiCallback callback: CIKernelROICallback, arguments args: [AnyObject]?) -> CIImage? } ``` | -- |
+| To | ``` class CIKernel : NSObject {     class func kernels(with string: String) -> [CIKernel]?     convenience init?(string string: String)     class func withString(_ string: String) -> Self?     var name: String { get }     func setROISelector(_ method: Selector)     func apply(withExtent extent: CGRect, roiCallback callback: CoreImage.CIKernelROICallback, arguments args: [Any]?) -> CIImage?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIKernel : CVarArg { } extension CIKernel : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [CIKernel.apply(withExtent: CGRect, roiCallback: CoreImage.CIKernelROICallback, arguments: [Any]?) -> CIImage?](https://developer.apple.com/documentation/coreimage/cikernel/1438243-applywithextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyWithExtent(_ extent: CGRect, roiCallback callback: CIKernelROICallback, arguments args: [AnyObject]?) -> CIImage? ``` |
+| To | ``` func apply(withExtent extent: CGRect, roiCallback callback: CoreImage.CIKernelROICallback, arguments args: [Any]?) -> CIImage? ``` |
+
+Modified [CIKernel.kernels(with: String) -> [CIKernel]? [class]](https://developer.apple.com/documentation/coreimage/cikernel/1437876-kernelswithstring)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func kernelsWithString(_ string: String) -> [CIKernel]? ``` |
+| To | ``` class func kernels(with string: String) -> [CIKernel]? ``` |
+
+Modified [CIQRCodeFeature](https://developer.apple.com/documentation/coreimage/ciqrcodefeature)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class CIQRCodeFeature : CIFeature {     var bounds: CGRect { get }     var topLeft: CGPoint { get }     var topRight: CGPoint { get }     var bottomLeft: CGPoint { get }     var bottomRight: CGPoint { get }     var messageString: String { get } } ``` |
+| To | ``` class CIQRCodeFeature : CIFeature {     var bounds: CGRect { get }     var topLeft: CGPoint { get }     var topRight: CGPoint { get }     var bottomLeft: CGPoint { get }     var bottomRight: CGPoint { get }     var messageString: String? { get } } ``` |
+
+Modified [CIQRCodeFeature.messageString](https://developer.apple.com/documentation/coreimage/ciqrcodefeature/1438035-messagestring)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var messageString: String { get } ``` |
+| To | ``` var messageString: String? { get } ``` |
+
+Modified [CISampler](https://developer.apple.com/documentation/coreimage/cisampler)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CISampler : NSObject, NSCopying {     convenience init(image im: CIImage)     class func samplerWithImage(_ im: CIImage) -> Self     convenience init(image im: CIImage, options dict: [NSObject : AnyObject]?)     class func samplerWithImage(_ im: CIImage, options dict: [NSObject : AnyObject]?) -> Self     convenience init(image im: CIImage)     init(image im: CIImage, options dict: [NSObject : AnyObject]?)     var definition: CIFilterShape { get }     var extent: CGRect { get } } ``` | NSCopying |
+| To | ``` class CISampler : NSObject, NSCopying {     convenience init(image im: CIImage)     class func withImage(_ im: CIImage) -> Self     convenience init(image im: CIImage, options dict: [AnyHashable : Any]? = nil)     class func withImage(_ im: CIImage, options dict: [AnyHashable : Any]? = nil) -> Self     convenience init(image im: CIImage)     init(image im: CIImage, options dict: [AnyHashable : Any]? = nil)     var definition: CIFilterShape { get }     var extent: CGRect { get }     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CISampler : CVarArg { } extension CISampler : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying |
+
+Modified [CISampler.init(image: CIImage, options: [AnyHashable : Any]?)](https://developer.apple.com/documentation/coreimage/cisampler/1437963-initwithimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(image im: CIImage, options dict: [NSObject : AnyObject]?) ``` |
+| To | ``` init(image im: CIImage, options dict: [AnyHashable : Any]? = nil) ``` |
+
+Modified [CITextFeature](https://developer.apple.com/documentation/coreimage/citextfeature)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class CITextFeature : CIFeature {     var bounds: CGRect { get }     var topLeft: CGPoint { get }     var topRight: CGPoint { get }     var bottomLeft: CGPoint { get }     var bottomRight: CGPoint { get }     var subFeatures: [AnyObject] { get } } ``` |
+| To | ``` class CITextFeature : CIFeature {     var bounds: CGRect { get }     var topLeft: CGPoint { get }     var topRight: CGPoint { get }     var bottomLeft: CGPoint { get }     var bottomRight: CGPoint { get }     var subFeatures: [Any]? { get } } ``` |
+
+Modified [CITextFeature.subFeatures](https://developer.apple.com/documentation/coreimage/citextfeature/1437810-subfeatures)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var subFeatures: [AnyObject] { get } ``` |
+| To | ``` var subFeatures: [Any]? { get } ``` |
+
+Modified [CIVector](https://developer.apple.com/documentation/coreimage/civector)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class CIVector : NSObject, NSCopying, NSSecureCoding {     convenience init(values values: UnsafePointer<CGFloat>, count count: Int)     class func vectorWithValues(_ values: UnsafePointer<CGFloat>, count count: Int) -> Self     convenience init(x x: CGFloat)     class func vectorWithX(_ x: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat)     class func vectorWithX(_ x: CGFloat, y y: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat)     class func vectorWithX(_ x: CGFloat, y y: CGFloat, z z: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat)     class func vectorWithX(_ x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat) -> Self     convenience init(CGPoint p: CGPoint)     class func vectorWithCGPoint(_ p: CGPoint) -> Self     convenience init(CGRect r: CGRect)     class func vectorWithCGRect(_ r: CGRect) -> Self     convenience init(CGAffineTransform t: CGAffineTransform)     class func vectorWithCGAffineTransform(_ t: CGAffineTransform) -> Self     convenience init(string representation: String)     class func vectorWithString(_ representation: String) -> Self     init(values values: UnsafePointer<CGFloat>, count count: Int)     convenience init(x x: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat)     convenience init(CGPoint p: CGPoint)     convenience init(CGRect r: CGRect)     convenience init(CGAffineTransform r: CGAffineTransform)     convenience init(string representation: String)     func valueAtIndex(_ index: Int) -> CGFloat     var count: Int { get }     var X: CGFloat { get }     var Y: CGFloat { get }     var Z: CGFloat { get }     var W: CGFloat { get }     var CGPointValue: CGPoint { get }     var CGRectValue: CGRect { get }     var CGAffineTransformValue: CGAffineTransform { get }     var stringRepresentation: String { get } } ``` | NSCopying, NSSecureCoding |
+| To | ``` class CIVector : NSObject, NSCopying, NSSecureCoding {     convenience init(values values: UnsafePointer<CGFloat>, count count: Int)     class func withValues(_ values: UnsafePointer<CGFloat>, count count: Int) -> Self     convenience init(x x: CGFloat)     class func withX(_ x: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat)     class func withX(_ x: CGFloat, y y: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat)     class func withX(_ x: CGFloat, y y: CGFloat, z z: CGFloat) -> Self     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat)     class func withX(_ x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat) -> Self     convenience init(cgPoint p: CGPoint)     class func withCGPoint(_ p: CGPoint) -> Self     convenience init(cgRect r: CGRect)     class func withCGRect(_ r: CGRect) -> Self     convenience init(cgAffineTransform t: CGAffineTransform)     class func withCGAffineTransform(_ t: CGAffineTransform) -> Self     convenience init(string representation: String)     class func withString(_ representation: String) -> Self     init(values values: UnsafePointer<CGFloat>, count count: Int)     convenience init(x x: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat)     convenience init(x x: CGFloat, y y: CGFloat, z z: CGFloat, w w: CGFloat)     convenience init(cgPoint p: CGPoint)     convenience init(cgRect r: CGRect)     convenience init(cgAffineTransform r: CGAffineTransform)     convenience init(string representation: String)     func value(at index: Int) -> CGFloat     var count: Int { get }     var x: CGFloat { get }     var y: CGFloat { get }     var z: CGFloat { get }     var w: CGFloat { get }     var cgPointValue: CGPoint { get }     var cgRectValue: CGRect { get }     var cgAffineTransformValue: CGAffineTransform { get }     var stringRepresentation: String { get }     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any? } extension CIVector : CVarArg { } extension CIVector : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [CIVector.cgAffineTransformValue](https://developer.apple.com/documentation/coreimage/civector/1438249-cgaffinetransformvalue)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var CGAffineTransformValue: CGAffineTransform { get } ``` |
+| To | ``` var cgAffineTransformValue: CGAffineTransform { get } ``` |
+
+Modified [CIVector.cgPointValue](https://developer.apple.com/documentation/coreimage/civector/1437672-cgpointvalue)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var CGPointValue: CGPoint { get } ``` |
+| To | ``` var cgPointValue: CGPoint { get } ``` |
+
+Modified [CIVector.cgRectValue](https://developer.apple.com/documentation/coreimage/civector/1438108-cgrectvalue)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var CGRectValue: CGRect { get } ``` |
+| To | ``` var cgRectValue: CGRect { get } ``` |
+
+Modified [CIVector.init(cgAffineTransform: CGAffineTransform)](https://developer.apple.com/documentation/coreimage/civector/1438102-initwithcgaffinetransform)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(CGAffineTransform r: CGAffineTransform) ``` |
+| To | ``` convenience init(cgAffineTransform r: CGAffineTransform) ``` |
+
+Modified [CIVector.init(cgPoint: CGPoint)](https://developer.apple.com/documentation/coreimage/civector/1438133-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(CGPoint p: CGPoint) ``` |
+| To | ``` convenience init(cgPoint p: CGPoint) ``` |
+
+Modified [CIVector.init(cgRect: CGRect)](https://developer.apple.com/documentation/coreimage/civector/1437644-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(CGRect r: CGRect) ``` |
+| To | ``` convenience init(cgRect r: CGRect) ``` |
+
+Modified [CIVector.value(at: Int) -> CGFloat](https://developer.apple.com/documentation/coreimage/civector/1438207-value)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func valueAtIndex(_ index: Int) -> CGFloat ``` |
+| To | ``` func value(at index: Int) -> CGFloat ``` |
+
+Modified [CIVector.w](https://developer.apple.com/documentation/coreimage/civector/1438058-w)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var W: CGFloat { get } ``` |
+| To | ``` var w: CGFloat { get } ``` |
+
+Modified [CIVector.x](https://developer.apple.com/documentation/coreimage/civector/1437738-x)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var X: CGFloat { get } ``` |
+| To | ``` var x: CGFloat { get } ``` |
+
+Modified [CIVector.y](https://developer.apple.com/documentation/coreimage/civector/1437843-y)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var Y: CGFloat { get } ``` |
+| To | ``` var y: CGFloat { get } ``` |
+
+Modified [CIVector.z](https://developer.apple.com/documentation/coreimage/civector/1437627-z)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var Z: CGFloat { get } ``` |
+| To | ``` var z: CGFloat { get } ``` |
+
+Modified [CIWarpKernel](https://developer.apple.com/documentation/coreimage/ciwarpkernel)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class CIWarpKernel : CIKernel {     convenience init?(string string: String)     class func kernelWithString(_ string: String) -> Self?     func applyWithExtent(_ extent: CGRect, roiCallback callback: CIKernelROICallback, inputImage image: CIImage, arguments args: [AnyObject]?) -> CIImage? } ``` |
+| To | ``` class CIWarpKernel : CIKernel {     convenience init?(string string: String)     class func withString(_ string: String) -> Self?     func apply(withExtent extent: CGRect, roiCallback callback: CoreImage.CIKernelROICallback, inputImage image: CIImage, arguments args: [Any]?) -> CIImage? } ``` |
+
+Modified [CIWarpKernel.apply(withExtent: CGRect, roiCallback: CoreImage.CIKernelROICallback, inputImage: CIImage, arguments: [Any]?) -> CIImage?](https://developer.apple.com/documentation/coreimage/ciwarpkernel/1437798-apply)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyWithExtent(_ extent: CGRect, roiCallback callback: CIKernelROICallback, inputImage image: CIImage, arguments args: [AnyObject]?) -> CIImage? ``` |
+| To | ``` func apply(withExtent extent: CGRect, roiCallback callback: CoreImage.CIKernelROICallback, inputImage image: CIImage, arguments args: [Any]?) -> CIImage? ``` |
+
+Modified [NSObject.provideImageData(_: UnsafeMutableRawPointer, bytesPerRow: Int, origin: Int, _: Int, size: Int, _: Int, userInfo: Any?)](https://developer.apple.com/documentation/objectivec/nsobject/1438175-provideimagedata)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func provideImageData(_ data: UnsafeMutablePointer<Void>, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: AnyObject?) ``` |
+| To | ``` func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) ``` |
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

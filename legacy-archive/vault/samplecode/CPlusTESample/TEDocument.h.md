@@ -1,0 +1,113 @@
+---
+title: CPlusTESample
+apple_id: DTS10000730
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/CPlusTESample/Listings/TEDocument_h.html
+archived_at: '2026-07-18T03:02:44.042578Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [CPlusTESample](CPlusTESample.md)
+
+
+[Next](TESample.cp.md)[Previous](TEDocument.cp.md)
+
+# TEDocument.h
+
+```c
+/*------------------------------------------------------------------------------------------
+
+    Program:    CPlusTESample 2.0
+    File:       TEDocument.h
+    Uses:       Document.h
+
+    by Andrew Shebanow
+    of Apple Macintosh Developer Technical Support
+
+    Copyright © 1989-1990 Apple Computer, Inc.
+    All rights reserved.
+
+------------------------------------------------------------------------------------------*/
+
+#ifndef __TEDOCUMENT__
+#define __TEDOCUMENT__
+
+#ifndef __TYPES__
+#include <Types.h>
+#endif
+#ifndef __TEXTEDIT__
+#include <TextEdit.h>
+#endif
+#ifndef __CONTROLS__
+#include <Controls.h>
+#endif
+#ifndef __EVENTS__
+#include <Events.h>
+#endif
+
+#ifndef __DOCUMENT__
+#include "Document.h"
+#endif
+
+// kTEFileType is the type of our files - in this case, TEXT
+const OSType kTEFileType = 'TEXT';
+
+class TEDocument : public TDocument {
+private:
+    TEHandle        fDocTE;         // our text
+    ControlHandle   fDocVScroll;    // vertical scrollbar
+    ControlHandle   fDocHScroll;    // horizontal scrollbar
+    TEClickLoopUPP  fDocClick;      // our click loop
+
+    // methods not intended for use outside of this class
+    // They aren't virtual since private routines can
+    // never be overridden, and non-virtual calls are
+    // faster than virtual calls.
+            void    GetTERect(Rect* teRect);
+            void    AdjustTE();
+            void    DrawWindow();
+            void    AdjustViewRect();
+            void    ResizeWindow();
+            void    AdjustHV(Boolean isVert,Boolean mustRedraw);
+            void    AdjustScrollSizes();
+            void    AdjustScrollbars(Boolean needsResize);
+
+protected:
+    // i/o routines
+    virtual void    ReadFromFile(short refNum);
+    virtual void    WriteToFile(short refNum);
+
+public:
+                    TEDocument(short resID);
+    virtual         ~TEDocument();
+
+    // methods from TDocument we override
+    virtual void    DoZoom(short partCode);
+    virtual void    DoGrow(EventRecord* theEvent);
+    virtual void    DoContent(EventRecord* theEvent);
+    virtual void    DoKeyDown(EventRecord* theEvent);
+    virtual void    DoActivate(Boolean becomingActive);
+    virtual void    DoIdle();
+    virtual void    DoUpdate();
+    virtual void    DoCut();
+    virtual void    DoCopy();
+    virtual void    DoPaste();
+    virtual void    DoClear();
+    virtual unsigned long CalcIdle();
+    virtual Boolean HaveSelection();
+    virtual void    DoSelectAll();
+
+    // new public methods
+    void            AdjustScrollValues(Boolean mustRedraw);
+    TEClickLoopUPP  GetClickLoop();
+    TEHandle        GetTEHandle();
+    void            GetVisTERgn(RgnHandle rgn);
+};
+
+#endif
+```
+
+[Next](TESample.cp.md)[Previous](TEDocument.cp.md)
+

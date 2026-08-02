@@ -1,0 +1,140 @@
+---
+title: Tabs LDEF
+apple_id: DTS10000621
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-30'
+source_url: https://developer.apple.com/library/archive/samplecode/Tabs_LDEF/Listings/AppleEvents_c.html
+archived_at: '2026-07-18T03:26:18.453789Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Tabs LDEF](Tabs%20LDEF.md)
+
+
+[Next](BareBones.c.md)[Previous](Tabs%20LDEF.md)
+
+# AppleEvents.c
+
+```c
+/*
+    File:       AppleEvents.c
+
+    Contains:   Handlers for the 4 "required" events
+
+    Written by: Chris White 
+
+    Copyright:  Copyright © 1995-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/10/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+
+
+// System Includes
+
+#ifndef __APPLEEVENTS__
+    #include <AppleEvents.h>
+#endif
+
+
+
+
+// Application includes
+
+#ifndef __BAREBONES__
+    #include "BareBones.h"
+#endif
+
+#ifndef __PROTOTYPES__
+    #include "Prototypes.h"
+#endif
+
+
+
+
+
+// Static Prototypes
+static pascal OSErr HandleOapp ( AEDescList* aevt, AEDescList* reply, long refCon );
+static pascal OSErr HandleQuit ( AEDescList* aevt, AEDescList* reply, long refCon );
+static pascal OSErr HandleOdoc ( AEDescList* aevt, AEDescList* reply, long refCon );
+static pascal OSErr HandlePdoc ( AEDescList* aevt, AEDescList* reply, long refCon );
+
+
+
+#pragma segment Initialize
+
+OSErr InstallAppleEventHandlers ( void )
+{
+    OSErr   theErr;
+
+
+    theErr = AEInstallEventHandler ( kCoreEventClass, kAEOpenApplication, NewAEEventHandlerProc ( HandleOapp ), 0, false );
+    if ( theErr )   goto CleanupAndBail;
+
+    theErr = AEInstallEventHandler ( kCoreEventClass, kAEOpenDocuments, NewAEEventHandlerProc ( HandleOdoc ), 0, false );
+    if ( theErr )   goto CleanupAndBail;
+
+    theErr = AEInstallEventHandler ( kCoreEventClass, kAEPrintDocuments, NewAEEventHandlerProc ( HandlePdoc ), 0, false );
+    if ( theErr )   goto CleanupAndBail;
+
+    theErr = AEInstallEventHandler ( kCoreEventClass, kAEQuitApplication, NewAEEventHandlerProc ( HandleQuit ), 0, false );
+    if ( theErr )   goto CleanupAndBail;
+
+
+CleanupAndBail:
+
+    return theErr;
+
+}   // InstallAppleEventHandlers
+
+
+
+#pragma segment Core
+
+static pascal OSErr HandleOapp ( AEDescList* aevt, AEDescList* reply, long refCon )
+{
+    #pragma unused(aevt,reply,refCon)
+    return errAEEventNotHandled;
+}
+
+
+
+static pascal OSErr HandleOdoc ( AEDescList* aevt, AEDescList* reply, long refCon )
+{
+    #pragma unused(aevt,reply,refCon)
+    return errAEEventNotHandled;
+}
+
+
+
+static pascal OSErr HandlePdoc ( AEDescList* aevt, AEDescList* reply, long refCon )
+{   
+    #pragma unused(aevt,reply,refCon)
+    return errAEEventNotHandled;
+}
+
+
+
+static pascal OSErr HandleQuit ( AEDescList* aevt, AEDescList* reply, long refCon )
+{
+    #pragma unused(aevt,reply,refCon)
+    gQuit = true;
+
+    return noErr;
+}
+```
+
+[Next](BareBones.c.md)[Previous](Tabs%20LDEF.md)
+

@@ -1,0 +1,67 @@
+---
+title: SGDataProcDemo
+apple_id: DTS10000992
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/SGDataProcDemo/Listings/README_txt.html
+archived_at: '2026-07-18T03:22:38.440100Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SGDataProcDemo](SGDataProcDemo.md)
+
+
+[Next](src-SGDataProcDemo.java.md)[Previous](SGDataProcDemo.md)
+
+# README.txt
+
+```
+=============================================================================
+QuickTime for Java SDK                              Updated: 30 November 1998
+
+Read Me Notes to "SGDataProc" Demo and Sample Code
+
+=============================================================================
+This demo program shows how to use the setDataProc method and a Decompression Sequence to display live video within a QTCanvas. 
+
+=============================================================================
+The minimum runtime requirements for this Sample Code are:
+
+- Common
+    - Sun Compliant Java Runtime Environment 1.1
+    - QuickTime 6 
+    - QTJava.zip
+
+- MacOS:
+    - System 9 or later
+    - Macintosh Runtime for Java (MRJ) 2.1
+
+- Windows 95, 98, NT or 2000::
+    - JRE/JDK from Sun Microsystems, Inc. recommended
+
+=============================================================================
+No Media requirements for this Sample Code
+=============================================================================
+Notes & Comments
+
+Windows Caveats: Has not been tested under windows due to a lack of Video in boards that support Quick Time 6.0
+
+=============================================================================
+General Comments
+
+- QTSession.open and close:
+
+A QTSession.open will perform a gestalt check to ensure that QuickTime is present and is initialized. This is a required call before any QuickTime Java classes can be used.
+
+When the user closes the window the program will quit, first calling QTSession.close to terminate QuickTime. It is necessary for programs to call QTSession.close if they have previously called QTSession.open in order to shut down QuickTime properly.
+
+
+=============================================================================
+
+QuickTime and QuickTime for Java are trademarks of Apple Computer, Inc.
+(c) 2002 Apple Computer Inc. All rights reserved.
+```
+
+[Next](src-SGDataProcDemo.java.md)[Previous](SGDataProcDemo.md)
+

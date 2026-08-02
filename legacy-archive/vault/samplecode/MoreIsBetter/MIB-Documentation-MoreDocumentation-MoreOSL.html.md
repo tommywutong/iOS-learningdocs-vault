@@ -1,0 +1,62 @@
+---
+title: MoreIsBetter
+apple_id: DTS10000732
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-10-27'
+source_url: https://developer.apple.com/library/archive/samplecode/MoreIsBetter/Listings/MIB_Documentation_MoreDocumentation_MoreOSL_html.html
+archived_at: '2026-07-18T03:15:17.338721Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [MoreIsBetter](MoreIsBetter.md)
+
+
+[Next](MIB-Documentation-MoreDocumentation-MoreOSUtils.html.md)[Previous](MIB-Documentation-MoreDocumentation-MoreOpenTransport.html.md)
+
+# MIB-Documentation/MoreDocumentation/MoreOSL.html
+
+```swift
+<HTML>
+<HEAD>
+   <TITLE>More OSL</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H1><!--Copyright (c) Apple Computer, Inc., 2000-->MoreOSL</H1>
+
+<P>MoreOSL is a source code library for implementing AppleScript
+support within your application. It has the following key
+features.</P>
+
+<UL>
+   <LI>C implementation -- Many AppleScript support frameworks (for
+   example, PowerPlant, MacApp) are available to C++ applications
+   only. MOSL is entirely written in C.</LI>
+
+   <LI>object focused -- Historically, DTS AppleScript support
+   samples have concentrated on supporting text scripting. MOSL
+   ignores text scripting and concentrates on the scripting of
+   discrete objects, such as windows and items within windows.</LI>
+
+   <LI>modern -- MOSL incorporates modern AppleScript techniques,
+   such as 'deep' object resolution. It is also fully Carbon
+   compatible.</LI>
+
+   <LI>well tested -- MOSL includes a test application, TestMoreOSL,
+   that demonstrates its capabilities. It also includes a large suite
+   of AppleScript-based tests.</LI>
+
+   <LI>comprehensive -- MOSL allows you to easily implement the bulk
+   of the core event suite. MOSL supports all key forms except
+   <CODE>formRelativePosition</CODE>. MOSL also supports data
+   comparison for most revelant data types.</LI>
+</UL>
+
+<P>See the <A HREF="../../MIB-Libraries/MoreOSL/ReadMe.html">MoreOSL</A>
+documentation for more details.</P>
+</BODY>
+</HTML>
+```
+
+[Next](MIB-Documentation-MoreDocumentation-MoreOSUtils.html.md)[Previous](MIB-Documentation-MoreDocumentation-MoreOpenTransport.html.md)
+

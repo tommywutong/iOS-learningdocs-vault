@@ -1,0 +1,124 @@
+---
+title: Live Scroll
+apple_id: DTS10000591
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-30'
+source_url: https://developer.apple.com/library/archive/samplecode/Live_Scroll/Listings/Prototypes_h.html
+archived_at: '2026-07-18T03:13:41.341105Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Live Scroll](Live%20Scroll.md)
+
+
+[Next](ScrollBars.c.md)[Previous](Menus.c.md)
+
+# Prototypes.h
+
+```c
+/*
+    File:       Prototypes.h
+
+    Contains:   
+
+    Written by:     
+
+    Copyright:  Copyright © 1996-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/6/1999    Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+#ifndef __PROTOTYPES__
+#define __PROTOTYPES__
+
+
+
+// System Includes
+#ifndef __WINDOWS__
+    #include <Windows.h>
+#endif
+
+
+
+
+
+// Application Includes
+#ifndef __BAREBONES__
+    #include "BareBones.h"
+#endif
+
+
+
+
+
+// BareBones.c
+void        main ( void );
+
+
+// Initialize.c
+void        InitToolbox ( void );
+void        InitApplication ( void );
+
+
+// AppleEventStuff.c
+OSErr       InstallAppleEventHandlers ( void );
+
+
+// Events.c
+void        EventLoop ( void );
+
+
+// Windows.c
+void        CreateWindow ( void );
+WindowRef   DestroyWindow ( WindowRef windowRef );
+void        DoActivate ( EventRecord* theEvent );
+void        DoUpdate ( WindowRef theWindow );
+void        DoContentClick ( WindowRef theWindow, EventRecord* theEvent );
+void        DoGrowWindow ( WindowRef theWindow, EventRecord* theEvent );
+void        DoDragWindow ( WindowRef theWindow, EventRecord* theEvent );
+void        UpdateWindowContent ( WindowRef theWindow );
+OSErr       DoAboutBox ( void );
+
+
+// Menus.c
+void        MenuDispatch ( SInt32 menuResult );
+
+
+// ActionProc.c
+pascal void ScrollControlActionProc ( ControlRef theControl, SInt16 thePart );
+pascal void ScrollThumbActionProc ( void );
+OSErr       BeginThumbTracking ( ControlRef theControl );
+void        EndThumbTracking ( void );
+
+
+
+// Utilities.c
+StringPtr   CopyPStr ( Str255   inSourceStr, StringPtr outDestStr, SInt16 inDestSize );
+StringPtr   ConcatPStr ( Str255 ioFirstStr, Str255 inSecondStr, SInt16 inDestSize );
+void        OSTypeToPStr ( OSType inOSType, StringPtr outString );
+void        PStrToOSType ( StringPtr inString, OSType* outOSType );
+void        AlertUser ( SInt16 messageCode, SInt16 errorNum, StringPtr theString );
+void        LocalToGlobalRect ( Rect* theRect );
+Boolean     IsMovableModal ( WindowRef theWindow );
+
+#if DEBUGGING
+void        DebugStrNum ( Str255 str, SInt32 num );
+#endif
+
+
+#endif
+```
+
+[Next](ScrollBars.c.md)[Previous](Menus.c.md)
+

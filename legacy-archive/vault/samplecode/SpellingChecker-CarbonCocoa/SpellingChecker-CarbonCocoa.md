@@ -1,0 +1,28 @@
+---
+title: SpellingChecker-CarbonCocoa
+apple_id: DTS10000727
+resource_type: Sample Code
+platform: macOS
+topic: Data Management
+technology: AppKit
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/SpellingChecker-CarbonCocoa/Introduction/Intro.html
+archived_at: '2026-07-18T03:25:19.047762Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md)
+
+
+[Next](SpellCheck-SpellCheck.m.md)
+
+# SpellingChecker-CarbonCocoa
+
+|  |  |
+| --- | --- |
+| __Last Revision:__ | Version 1.0, 2003-01-14 Implements procedural C wrapper around the Cocoa NSSpellChecker, exports it as a Mach-O bundle called "SpellCheck.bundle" |
+| __Build Requirements:__ | Carbon |
+| __Runtime Requirements:__ | Carbon |
+
+About SpellingChecker SpellCheck.pbproj implements a procedural C wrapper around the Cocoa NSSpellChecker and exports it as a Mach-O bundle called "SpellCheck.bundle". The client Carbon application SpellingChecker contains SpellCheck.bundle within its bundles "Frameworks" directory and use the CFBundle APIs to access SpellCheck.bundle. The SpellingChecker carbon application must be therefore be bundled, but can be either CFM or Mach-O. Updated in this version NSApplicationLoad() is an API introduced in 10.2 which is a startup function to call when running Cocoa code from a Carbon application. SpellCheck.m now calls NSApplicationLoad() if available or falls back to calling NSApplication \*NSApp=[NSApplication sharedApplication]; if unavailable. Build Instructions: 1. Build the SpellCheck bundle by opening and building "SpellCheck.pbproj" within ProjectBuilder. This builds the C callable wrappers to the Cocoa NSSpelling classes. 2. Build the Carbon application "SpellingChecker" by opening and building "SpellingChecker.pbproj" within ProjectBuilder. This will build the Mach-O version of the Carbon application as well as create the bundle hierarchy and copy the "SpellCheck.bundle" into the bundles "Frameworks" folder. 3. (Optional) You can now build the CFM version of "SpellingChecker" by opening and building "SpellingChecker.mcp" within CodeWarrior 7. The built binary will replace the previously built Mach-O version of the binary within the "SpellingChecker.app" bundle.
+
+[Next](SpellCheck-SpellCheck.m.md)
+

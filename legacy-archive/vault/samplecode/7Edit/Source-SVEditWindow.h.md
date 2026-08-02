@@ -1,0 +1,116 @@
+---
+title: 7Edit
+apple_id: DTS10000200
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-07-22'
+source_url: https://developer.apple.com/library/archive/samplecode/7Edit/Listings/Source_SVEditWindow_h.html
+archived_at: '2026-07-18T02:59:22.073029Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [7Edit](7Edit.md)
+
+
+[Next](Source-SVToken.h.md)[Previous](Source-SVEditWindow.c.md)
+
+# Source/SVEditWindow.h
+
+```c
+/*
+    File:       SVEditWindow.h
+
+    Contains:   
+
+    Written by: Original version by Jon Lansdell and Nigel Humphreys.
+                            3.1 updates by Greg Sutton. 
+
+    Copyright:  Copyright ©1995-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                7/19/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+
+#ifndef __SVEDITWINDOW__
+#define __SVEDITWINDOW__
+
+#include <Memory.h>
+#include <Types.h>
+#include <Quickdraw.h>
+#include <Fonts.h>
+#include <ToolUtils.h>
+#include <Traps.h>
+#include "SVEditGlobals.h"
+#include "SVEditUtils.h"
+#include "SVAppleEvents.h"
+
+DPtr        DPtrFromWindowPtr(WindowPtr theWindow);
+
+pascal void MyGrowWindow(WindowPtr w,
+                         Point     p);
+
+pascal void GetPageEnds(short          pageHeight,
+                                              TEHandle       theText,
+                                              PageEndsArray  pageBounds,
+                                              short          *nPages);
+
+pascal void DoZoom(WindowPtr w, short c, Point p);
+
+pascal void DoContent(WindowPtr theWindow, EventRecord theEvent);
+
+pascal OSErr DoActivate(WindowPtr theWindow, Boolean   activate);
+
+pascal void DoUpdate(WindowPtr theWindow);
+
+DPtr        NewDocument(Boolean isForOldDoc, WindowPtr behindWindow);
+
+pascal void CloseMyWindow(WindowPtr aWindow);
+
+pascal void ShowSelect(DPtr theDoc);
+
+pascal void AdjustScrollbars(DPtr theDoc, Boolean needsResize);
+
+pascal void GetWinContentRect(WindowPtr theWindow, Rect *r);
+
+pascal void DoResizeWindow(DPtr theDoc);
+
+pascal void ResizePageSetupForDocument(DPtr theDoc);
+
+pascal void InvalidateDocument(DPtr theDoc);
+
+pascal void DrawPageExtras(DPtr theDoc);
+
+pascal void PrintWindow(DPtr theDoc, Boolean askUser);
+
+pascal void VActionProc(ControlHandle control, short part);
+
+pascal void HActionProc(ControlHandle control, short part);
+
+pascal void AdjustTE(DPtr theDoc);
+pascal void AdjustHV(Boolean isVert, ControlHandle control, DPtr theDoc, Boolean canRedraw);
+pascal void AdjustScrollValues(DPtr theDoc, Boolean canRedraw);
+pascal void GetTERect(WindowPtr window, Rect *teRect);
+pascal void AdjustScrollSizes(DPtr theDoc);
+pascal void CommonAction(ControlHandle control, short *amount);
+pascal void OffsetWindow(WindowPtr aWindow);
+pascal void GetLocalUpdateRgn(WindowPtr window, RgnHandle localRgn);
+void                DoBackgroundContent ( WindowPtr theWindow, EventRecord theEvent);
+pascal void DrawPageBreaks(DPtr theDoc);
+
+
+#endif
+```
+
+[Next](Source-SVToken.h.md)[Previous](Source-SVEditWindow.c.md)
+

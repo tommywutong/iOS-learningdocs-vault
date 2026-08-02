@@ -1,0 +1,117 @@
+---
+title: Quartz Composer WWDC 2005 TextEdit
+apple_id: DTS10003654
+resource_type: Sample Code
+platform: macOS
+topic: Graphics & Animation
+technology: Quartz
+published: '2005-06-01'
+source_url: https://developer.apple.com/library/archive/samplecode/QuartzComposer_WWDC_TextEdit/Listings/TextEdit_03_Preferences_h.html
+archived_at: '2026-07-18T03:21:34.026808Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Quartz Composer WWDC 2005 TextEdit](Quartz%20Composer%20WWDC%202005%20TextEdit.md)
+
+
+[Next](TextEdit03-Preferences.m.md)[Previous](TextEdit03-MultiplePageView.m.md)
+
+# TextEdit_03/Preferences.h
+
+```objc
+#import <Cocoa/Cocoa.h>
+
+/* Keys in the dictionary... */   
+#define RichTextFont @"RichTextFont"
+#define PlainTextFont @"PlainTextFont"
+#define DeleteBackup @"DeleteBackup"
+#define SaveFilesWritable @"SaveFilesWritable"
+#define OverwriteReadOnlyFiles @"OverwriteReadOnlyFiles"
+#define RichText @"RichText"
+#define ShowPageBreaks @"ShowPageBreaks"
+#define AddExtensionToNewPlainTextFiles @"AddExtensionToNewPlainTextFiles"
+#define WindowWidth @"WidthInChars"
+#define WindowHeight @"HeightInChars"
+#define PlainTextEncodingForRead @"PlainTextEncoding"
+#define PlainTextEncodingForWrite @"PlainTextEncodingForWrite"
+#define IgnoreRichText @"IgnoreRichText"
+#define IgnoreHTML @"IgnoreHTML"
+#define TabWidth @"TabWidth"
+#define ForegroundLayoutToIndex @"ForegroundLayoutToIndex"
+#define OpenPanelFollowsMainWindow @"OpenPanelFollowsMainWindow"
+#define CheckSpellingAsYouType @"CheckSpellingWhileTyping"
+#define ShowRuler @"ShowRuler"
+#define NumberPagesWhenPrinting @"NumberPagesWhenPrinting"
+#define UseXHTMLDocType @"UseXHTMLDocType"
+#define UseTransitionalDocType @"UseTransitionalDocType"
+#define UseEmbeddedCSS @"UseEmbeddedCSS"
+#define UseInlineCSS @"UseInlineCSS"
+#define HTMLEncoding @"HTMLEncoding"
+#define PreserveWhitespace @"PreserveWhitespace"
+// Use different convention for the key values here, to be consistent with the keys in Document
+#define AuthorProperty @"author"
+#define CompanyProperty @"company"
+#define CopyrightProperty @"copyright"
+
+@interface Preferences : NSObject {
+    IBOutlet id richTextFontNameField;
+    IBOutlet id plainTextFontNameField;
+    IBOutlet id deleteBackupButton;
+    IBOutlet id saveFilesWritableButton;
+    IBOutlet id overwriteReadOnlyFilesButton;
+    IBOutlet id addExtensionToNewPlainTextFilesButton;
+    IBOutlet id richTextMatrix;
+    IBOutlet id showPageBreaksButton;
+    IBOutlet id windowWidthField;
+    IBOutlet id windowHeightField;
+    IBOutlet id plainTextEncodingForReadPopup;
+    IBOutlet id plainTextEncodingForWritePopup;
+    IBOutlet id tabWidthField;
+    IBOutlet id ignoreRichTextButton;
+    IBOutlet id ignoreHTMLButton;
+    IBOutlet id checkSpellingAsYouTypeButton;
+    IBOutlet id showRulerButton;
+    IBOutlet id numberPagesWhenPrintingButton;
+    IBOutlet id authorPropertyField;
+    IBOutlet id companyPropertyField;
+    IBOutlet id copyrightPropertyField;
+    IBOutlet id HTMLDocumentTypePopUp;
+    IBOutlet id HTMLStylingPopUp;
+    IBOutlet id HTMLEncodingPopUp;
+    IBOutlet id preserveWhiteSpaceButton;
+    IBOutlet id panel;
+
+    NSDictionary *curValues;    // Current, confirmed values for the preferences
+    NSDictionary *origValues;   // Values read from preferences at startup
+    NSMutableDictionary *displayedValues;   // Values displayed in the UI
+}
+
++ (id)objectForKey:(id)key; /* Convenience for getting global preferences */
++ (void)saveDefaults;       /* Convenience for saving global preferences */
+- (void)saveDefaults;       /* Save the current preferences */
+
++ (Preferences *)sharedInstance;
+
+- (NSDictionary *)preferences;  /* The current preferences; contains values for the documented keys */
+
+- (void)showPanel:(id)sender;   /* Shows the panel */
+
+- (void)updateUI;       /* Updates the displayed values in the UI */
+- (void)commitDisplayedValues;  /* The displayed values are made current */
+- (void)discardDisplayedValues; /* The displayed values are replaced with current prefs and updateUI is called */
+
+- (void)revert:(id)sender;  /* Reverts the displayed values to the current preferences */
+- (void)ok:(id)sender;      /* Calls commitUI to commit the displayed values as current */
+- (void)revertToDefault:(id)sender;    
+
+- (void)miscChanged:(id)sender;     /* Action message for most of the misc items in the UI to get displayedValues */
+- (void)changeRichTextFont:(id)sender;  /* Request to change the rich text font */
+- (void)changePlainTextFont:(id)sender; /* Request to change the plain text font */
+- (void)changeFont:(id)fontManager; /* Sent by the font manager */
+
++ (NSDictionary *)preferencesFromDefaults;
++ (void)savePreferencesToDefaults:(NSDictionary *)dict;
+
+@end
+```
+
+[Next](TextEdit03-Preferences.m.md)[Previous](TextEdit03-MultiplePageView.m.md)
+

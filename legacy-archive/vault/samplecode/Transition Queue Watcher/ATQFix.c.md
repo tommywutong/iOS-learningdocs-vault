@@ -1,0 +1,80 @@
+---
+title: Transition Queue Watcher
+apple_id: DTS10000269
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Transition_Queue_Watcher/Listings/ATQFix_c.html
+archived_at: '2026-07-18T03:27:11.634890Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Transition Queue Watcher](Transition%20Queue%20Watcher.md)
+
+
+[Next](ATQWatcher.h.md)[Previous](ATQCGlue.c.md)
+
+# ATQFix.c
+
+```c
+/*
+ * File: ATQFix.c
+ *_________________________________________________________________________
+ *
+ * DTS Code Sample
+ *  
+ * ©1992 Apple Computer, Inc.
+ *
+ * Replacement code for LAPAddATQ and LAPRmvATQ for Think C programmers 
+ * to fix the glue code to fix a bug in the Think C library supplied via 
+ * the MPW Interface.o file.  The glue code does not restore the stack to
+ * it's original condition.  Use the following code as opposed
+ * to that in the Think C library instead.
+ *
+ *_________________________________________________________________________
+ */
+
+#ifndef __TYPES__
+#include <Types.h>
+#endif
+
+#define LAPAddATQCall   0x17
+#define LAPRmvATQCall   0x18
+#define LAPMgrPtr   0xB18
+#define LAPMgrCall  2
+
+/**********  Prototypes ****************************/
+pascal OSErr LAPAddATQFix(ATQEntryPtr theATQEntry);
+pascal OSErr LAPRmvATQFix(ATQEntryPtr theATQEntry);
+
+
+pascal OSErr LAPAddATQFix(ATQEntryPtr theATQEntry)
+{
+    asm {
+        MOVE.W     #LAPAddATQCall,D0    /* D0 selector $0017 = LAPAddATQ */
+        MOVEA.L    theATQEntry,A0       /* A0 -> ATQ Proc */
+        MOVEA.L    LAPMgrPtr,A1         /* Set up to call LAP Manager */
+        JSR        LAPMgrCall(A1)       /* call LAP Manager */
+        MOVE.W     D0,12(A6)            /* move result in D0 onto the stack */
+    }
+}
+
+pascal OSErr LAPRmvATQFix(ATQEntryPtr theATQEntry)
+{
+    asm {
+        MOVE.W     #LAPRmvATQCall,D0    /* D0 selector $0018 = LAPRmvATQ */
+        MOVEA.L    theATQEntry,A0       /* A0 -> ATQ Proc */
+        MOVEA.L    LAPMgrPtr,A1         /* Set up to call LAP Manager */
+        MOVE.L     (A7)+,(A7)           /* Move return address up 4 bytes */
+        JSR        LAPMgrCall(A1)       /* call LAP Manager */
+        MOVE.W     D0,12(A6)            /* move result in D0 onto the stack */
+    }
+}
+
+/*
+ * End file: ATQFix.c
+ */
+```
+
+[Next](ATQWatcher.h.md)[Previous](ATQCGlue.c.md)
+

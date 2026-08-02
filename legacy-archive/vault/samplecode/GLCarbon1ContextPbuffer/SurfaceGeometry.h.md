@@ -1,0 +1,85 @@
+---
+title: GLCarbon1ContextPbuffer
+apple_id: DTS10003144
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2004-03-26'
+source_url: https://developer.apple.com/library/archive/samplecode/GLCarbon1ContextPbuffer/Listings/SurfaceGeometry_h.html
+archived_at: '2026-07-18T03:09:53.436546Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [GLCarbon1ContextPbuffer](GLCarbon1ContextPbuffer.md)
+
+
+[Next](trackball.c.md)[Previous](SurfaceGeometry.c.md)
+
+# SurfaceGeometry.h
+
+```c
+/*
+ *  SufaceGeometry.h
+ *  Carbon OpenGL
+ *
+ *  Created by Geoff Stahl.
+    Copyright:  Copyright © 2002-2003 Apple Computer, Inc., All Rights Reserved
+
+    Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+            ("Apple") in consideration of your agreement to the following terms, and your
+            use, installation, modification or redistribution of this Apple software
+            constitutes acceptance of these terms.  If you do not agree with these terms,
+            please do not use, install, modify or redistribute this Apple software.
+
+            In consideration of your agreement to abide by the following terms, and subject
+            to these terms, Apple grants you a personal, non-exclusive license, under AppleÕs
+            copyrights in this original Apple software (the "Apple Software"), to use,
+            reproduce, modify and redistribute the Apple Software, with or without
+            modifications, in source and/or binary forms; provided that if you redistribute
+            the Apple Software in its entirety and without modifications, you must retain
+            this notice and the following text and disclaimers in all such redistributions of
+            the Apple Software.  Neither the name, trademarks, service marks or logos of
+            Apple Computer, Inc. may be used to endorse or promote products derived from the
+            Apple Software without specific prior written permission from Apple.  Except as
+            expressly stated in this notice, no other rights or licenses, express or implied,
+            are granted by Apple herein, including but not limited to any patent rights that
+            may be infringed by your derivative works or by other works in which the Apple
+            Software may be incorporated.
+
+            The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+            WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+            WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+            PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+            COMBINATION WITH YOUR PRODUCTS.
+
+            IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+            CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+            GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+            ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION
+            OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+            (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+            ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+#include <OpenGL/gl.h>
+
+#define kSurfaces 6
+#define kColorSchemes 21
+
+enum {
+    kCube = 0,
+    kTranguloidTrefoil,
+    kTriaxialTritorus,
+    kStilettoSurface,
+    kSlippersSurface,
+    kMaedersOwl
+};
+
+void GetStrings (unsigned int surface, char ** strName, char ** strAuthor, char ** strX, char ** strY, char ** strZ, char ** strRange);
+
+void BuildGeometry (unsigned int surface, unsigned int colorScheme, unsigned int subdivisions, unsigned int xyRatio,
+                    GLuint * polyList, GLuint * lineList, GLuint * pointList, unsigned int width, unsigned int height);
+```
+
+[Next](trackball.c.md)[Previous](SurfaceGeometry.c.md)
+

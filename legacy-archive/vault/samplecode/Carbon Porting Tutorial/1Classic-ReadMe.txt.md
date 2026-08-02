@@ -1,0 +1,26 @@
+---
+title: Carbon Porting Tutorial
+apple_id: DTS10003904
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2006-07-25'
+source_url: https://developer.apple.com/library/archive/samplecode/CarbonPorting/Listings/1_Classic_ReadMe_txt.html
+archived_at: '2026-07-18T03:02:57.697599Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Carbon Porting Tutorial](Carbon%20Porting%20Tutorial.md)
+
+
+[Next](2FirstCarbon-CarbonPrefix.h.md)[Previous](1Classic-PrefsWindow.r.md)
+
+# 1_Classic/ReadMe.txt
+
+```
+ExamplePrefs 1.0
+
+This is the example program which we will be Carbonizing.  It's fairly simple but it's intended to use as many system managers as possible to get a fuller experience.  The major ones are the Appearance, Control, Dialog, Help, Menu, List, and Window Managers, as well as Icon Services.  The 1.0 version actually denotes this as step 1 in your Carbonizing project: make the Classic Mac OS 8/9 version as modern as possible.  Appearance Manager calls are used as opposed to straight QuickDraw calls, and Window Manager 2 calls are used where applicable.  Special effort was taken to not pass around EventRecords where possible; instead parameters are extracted and passed along to functions.  The update event handling is divided into two sections.  The part in the main event handler is the generic part where the window to be updated is set as the current port and BeginUpdate(), EndUpdate() are called.  The other part is its own function that simply draws the contents of the window in the visible (update) region.  Of course in real life, you would want to just use the modeless dialog (unless you had some odd need for a resizable window) and list box control; the window and list turned out to be a LOT of work to achieve the same effect (566 lines to 279 lines, and that's not even counting the extra stuff in the main event handler or the Balloon Help support).  They were done mostly just for completeness and to show an alternate (albeit painful) method to do the same thing.
+```
+
+[Next](2FirstCarbon-CarbonPrefix.h.md)[Previous](1Classic-PrefsWindow.r.md)
+

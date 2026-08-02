@@ -1,0 +1,324 @@
+---
+title: EOModeler User Guide
+apple_id: TP30001018
+resource_type: Guide
+platform: macOS
+topic: Networking, Internet, & Web
+technology: WebObjects
+published: '2006-05-23'
+source_url: https://developer.apple.com/library/archive/documentation/WebObjects/UsingEOModeler/Glossary/Glossary.html
+archived_at: '2026-07-18T02:21:55.683680Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [EOModeler User Guide](Introduction%20to%20EOModeler%20User%20Guide.md)
+
+
+[Previous](Document%20Revision%20History.md)
+
+# Glossary
+
+- __adaptor, database__
+
+  A mechanism that connects your application to a particular database server. For each type of server you use, you need a separate adaptor. WebObjects provides an adaptor for databases conforming to JDBC.
+
+- __adaptor, WebObjects__
+
+  A process (or a part of one) that connects WebObjects applications to an HTTP server.
+
+- __application object__
+
+  An object (of the WOApplication class) that represents a single instance of a WebObjects application. The application object’s main role is to coordinate the handling of HTTP requests, but it can also maintain application-wide state information.
+
+- __attribute__
+
+  In Entity-Relationship modeling, an identifiable characteristic of an entity. For example, `lastName` can be an attribute of an Employee entity. An attribute typically corresponds to a column in a database table. See also [entity](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjjdecq2d); [relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivfegskj).
+
+- __business logic__
+
+  The rules associated with the data in a database that typically encode business policies. An example is automatically adding late fees for overdue items.
+
+- __CGI (Common Gateway Interface)__
+
+  A standard for interfacing external applications with information servers, such as HTTP or Web servers.
+
+- __class__
+
+  In object-oriented languages such as Java, a prototype for a particular kind of object. A class definition declares instance variables and defines methods for all members of the class. Objects that have the same types of instance variables and have access to the same methods belong to the same class.
+
+- __class property__
+
+  An instance variable in an enterprise object that meets two criteria: It’s based on an attribute in your model, and it can be fetched from the database. “Class property” can refer either to an attribute or to a relationship.
+
+- __column__
+
+  In a relational database, the dimension of a table that holds values for a particular attribute. For example, a table that contains employee records might have a column titled “LAST_NAME” that contains the values for each employee’s last name. See also [attribute](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjfdusscd).
+
+- __component__
+
+  An object (of the WOComponent class) that represents a Web page or a reusable portion of one.
+
+- __data modeling__
+
+  The process of building a data model to describe the mapping between a relational database schema and an object model.
+
+- __database server__
+
+  A data storage and retrieval system. Database servers typically run on a dedicated computer and are accessed by client applications over a network.
+
+- __deep fetch__
+
+  An option available to fetch specifications that causes database fetches to occur against the root table and any leaf tables. Applicable to inheritance hierarchies.
+
+- __derived attribute__
+
+  An attribute in a data model that does not directly correspond to a column in a database. Derived attributes are usually calculated from a SQL expression.
+
+- __Direct to Java Client__
+
+  A WebObjects development approach that can generate a Java Client application from a model.
+
+- __Direct to Java Client Assistant__
+
+  A tool used to customize a Direct to Java Client application.
+
+- __Direct to Web__
+
+  A WebObjects development approach that can generate an HTML-based Web application from a model.
+
+- __Direct to Web Assistant__
+
+  A tool used to customize a Direct to Web application.
+
+- __Direct to Web template__
+
+  A component used in Direct to Web applications that can generate a Web page for a particular task (for example, a list page) for any entity.
+
+- __dynamic element__
+
+  A dynamic version of an HTML element. WebObjects includes a list of dynamic elements with which you can build components.
+
+- __enterprise object__
+
+  A Java object that conforms to the key-value coding protocol and whose properties (instance data) can map to stored data. An enterprise object brings together stored data with methods for operating on that data. It allows this data to persist in memory. See also [key-value coding](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivdukqki); [property](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkciveeussj).
+
+- __entity__
+
+  In Entity-Relationship modeling, a distinguishable object about which data is kept. An entity typically corresponds to a table in a relational database; an entity’s attributes, in turn, correspond to a table’s columns. An entity is used to map a relational database table to a Java class. See also attribute; table.
+
+- __Entity-Relationship modeling__
+
+  A discipline for examining and representing the components and interrelationships in a database system. Also known as ER modeling, this discipline factors a database system into entities, attributes, and relationships.
+
+- __EOModeler__
+
+  A tool used to create and edit models.
+
+- __faulting__
+
+  A mechanism used by Enterprise Objects to increase performance whereby destination objects of relationships are not fetched until they are explicitly accessed.
+
+- __fetch specification__
+
+  In Enterprise Objects applications, used to retrieve data from the database server into the client application, usually into enterprise objects.
+
+- __flattened attribute__
+
+  An attribute that is added from one entity to another by traversing a relationship.
+
+- __foreign key__
+
+  An attribute in an entity that gives it access to rows in another entity. This attribute must be the primary key of the related entity. For example, an Employee entity can contain the foreign key `deptID`, which matches the primary key in the entity Department. You can then use `deptID` as the source attribute in Employee and as the destination attribute in Department to form a relationship between the entities. See also [primary key](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjbeucrke); [relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivfegskj).
+
+- __inheritance__
+
+  In object-oriented programming, the ability of a superclass to pass its characteristics (methods and instance variables) on to its subclasses, allowing subclasses to reuse these characteristics.
+
+- __instance__
+
+  In object-oriented languages such as Java, an object that belongs to (is a member of) a particular class. Instances are created at runtime according to the specification in the class definition.
+
+- __Interface Builder__
+
+  A tool used to create and edit graphical user interfaces like those used in Java Client applications.
+
+- __inverse relationship__
+
+  A relationship that goes in the reverse direction of another relationship. Also known as a back relationship.
+
+- __Java Browser__
+
+  A tool used to peruse Java APIs and class hierarchies.
+
+- __Java Client__
+
+  A WebObjects development approach that allows you to create graphical user interface applications that run on the user’s computer and communicate with a WebObjects server.
+
+- __Java Foundation Classes__
+
+  A set of graphical user interface components and services written in Java. The component set is known as Swing.
+
+- __JDBC__
+
+  An interface between Java platforms and databases.
+
+- __join__
+
+  An operation that provides access to data from two tables at the same time, based on values contained in related columns.
+
+- __key__
+
+  An arbitrary value (usually a string) used to locate a datum in a data structure such as a dictionary.
+
+- __key-value coding__
+
+  The mechanism that allows the properties in enterprise objects to be accessed by name (that is, as key-value pairs) by other parts of the application.
+
+- __locking__
+
+  A mechanism to ensure that data isn’t modified by more than one user at a time and that data isn’t read as it is being modified.
+
+- __look__
+
+  In Direct to Web applications, one of three user interface styles. The looks differ in both layout and appearance.
+
+- __many-to-many relationship__
+
+  A relationship in which each record in the source entity may correspond to more than one record in the destination entity, and each record in the destination may correspond to more than one record in the source. For example, an employee can work on many projects, and a project can be staffed by many employees. In Enterprise Objects, a many-to-many relationship is composed of multiple relationships. See also [relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivfegskj).
+
+- __method__
+
+  In object-oriented programming, a procedure that can be executed by an object.
+
+- __model__
+
+  An object (of the EOModel class) that defines, in Entity-Relationship terms, the mapping between enterprise object classes and the database schema. This definition is typically stored in a file created with the EOModeler application. A model also includes the information needed to connect to a particular database server.
+
+- __Monitor__
+
+  A tool used to configure and maintain deployed WebObjects applications capable of handling multiple applications, instances, and application servers at the same time.
+
+- __object__
+
+  A programming unit that groups together a data structure (instance variables) and the operations (methods) that can use or affect that data. Objects are the principal building blocks of object-oriented programs.
+
+- __primary key__
+
+  An attribute in an entity that uniquely identifies rows of that entity. For example, the Employee entity can contain an `empID` attribute that uniquely identifies each employee.
+
+- __Project Builder__
+
+  A tool used to manage the development of a WebObjects application or framework.
+
+- __prefetching__
+
+  A feature in Enterprise Object that allows you to suppress fault creation for an entity’s relationships. Instead of creating faults, the relationship data is fetched when the entity is first fetched. See also [faulting](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcirbeercj).
+
+- __property__
+
+  In Entity-Relationship modeling, an attribute or relationship. See also [attribute](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjfdusscd); [relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivfegskj).
+
+- __prototype attribute__
+
+  An special type of attribute available in EOModeler to provide a template for creating attributes.
+
+- __raw row fetching__
+
+  An possible option in a fetch specification that retrieves database rows without forming enterprise objects from those rows.
+
+- __record__
+
+  The set of values that describes a single instance of an entity; in a relational database, a record is equivalent to a row.
+
+- __referential integrity__
+
+  The rules governing the consistency of relationships.
+
+- __reflexive relationship__
+
+  A relationship within the same entity; the relationship’s source join attribute and destination join attribute are in the same entity.
+
+- __relational database__
+
+  A database designed according to the relational model, which uses the discipline of Entity-Relationship modeling and the data design standards called normal forms.
+
+- __relationship__
+
+  A link between two entities that’s based on attributes of the entities. For example, the Department and Employee entities can have a relationship based on the `deptID` attribute as a foreign key in Employee, and as the primary key in Department (note that although the join attribute `deptID` is the same for the source and destination entities in this example, it doesn’t have to be). This relationship would make it possible to find the employees for a given department. See also [foreign key](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcindeqr2e); [primary key](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjbeucrke); [many-to-many relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjbeuqqsc); [to-many relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcivbeqrcc); [to-one relationship](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjfcuurki).
+
+- __relationship key__
+
+  A key (an attribute) on which a relationship joins.
+
+- __reusable component__
+
+  A component that can be nested within other components and acts like a dynamic element. Reusable components allow you to extend WebObject’s selection of dynamically generated HTML elements.
+
+- __request__
+
+  A message conforming to the Hypertext Transfer Protocol (HTTP) sent from the user’s Web browser to a Web server that asks for a resource like a Web page. See also [response](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcizcekqkf).
+
+- __request-response loop__
+
+  The main loop of a WebObjects application that receives a request, responds to it, and awaits the next request.
+
+- __response__
+
+  A message conforming to the Hypertext Transfer Protocol (HTTP) sent from the Web server to the user’s Web browser that contains the resource specified by the corresponding request. The response is typically a Web page. See also [request](#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpkridgmbqgaytamjyfvbuqmrqhewueqkcjjeueq2g).
+
+- __row__
+
+  In a relational database, the dimension of a table that groups attributes into records.
+
+- __rule__
+
+  In the Direct to Web and Direct to Java Client approaches, a specification used to customize the user interfaces of applications developed with these approaches.
+
+- __Rule Editor__
+
+  A tool used to edit the rules in Direct to Web and Direct to Java Client applications.
+
+- __session__
+
+  A period during which access to a WebObjects application and its resources is granted to a particular client (typically a browser). Also an object (of the WOSession class) representing a session.
+
+- __snapshotting__
+
+  Part of the Enterprise Objects optimistic locking mechanism in which snapshots of database rows in memory are compared with the data in the database.
+
+- __table__
+
+  A two-dimensional set of values corresponding to an entity. The columns of a table represent characteristics of the entity and the rows represent instances of the entity.
+
+- __target__
+
+  A blueprint for building a product from specified files in your project. It consists of a list of the necessary files and specifications on how to build them. Some common types of targets build frameworks, libraries, applications, and command-line tools.
+
+- __template__
+
+  In a WebObjects component, a file containing HTML that specifies the overall appearance of a Web page generated from the component.
+
+- __to-many relationship__
+
+  A relationship in which each source record has zero to many corresponding destination records. For example, a department has many employees.
+
+- __to-one relationship__
+
+  A relationship in which each source record has one corresponding destination record. For example, each employee has one job title.
+
+- __transaction__
+
+  A set of actions that is treated as a single operation that either succeeds completely (COMMIT) or fails completely (ROLLBACK).
+
+- __uniquing__
+
+  A mechanism to ensure that, within a given context, only one object is associated with each row in the database.
+
+- __validation__
+
+  A mechanism to ensure that user-entered data lies within specified limits.
+
+- __WebObjects Builder__
+
+  A tool used to graphically edit WebObjects components.
+
+[Previous](Document%20Revision%20History.md)
+

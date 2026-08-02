@@ -1,0 +1,108 @@
+---
+title: iOS 8.3 API Diffs
+apple_id: TP40015150
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2015-04-08'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS83APIDiffs/index.html
+archived_at: '2026-07-18T02:56:20.367216Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md)
+
+
+# iOS 8.2 to iOS 8.3 API Differences
+
+## Frameworks
+
+- [AVFoundation](AVFoundation%20Changes.md)
+- [CloudKit](CloudKit%20Changes.md)
+- [CoreAudioKit](CoreAudioKit%20Changes.md)
+- [CoreData](CoreData%20Changes.md)
+- [CoreImage](CoreImage%20Changes.md)
+- [CoreMotion](CoreMotion%20Changes.md)
+- [CoreText](CoreText%20Changes.md)
+- [CoreVideo](CoreVideo%20Changes.md)
+- [Foundation](Foundation%20Changes.md)
+- [HomeKit](HomeKit%20Changes.md)
+- [LocalAuthentication](LocalAuthentication%20Changes.md)
+- [Metal](Metal%20Changes.md)
+- [NetworkExtension](NetworkExtension%20Changes.md)
+- [PassKit](PassKit%20Changes.md)
+- [QuartzCore](QuartzCore%20Changes.md)
+- [SceneKit](SceneKit%20Changes.md)
+- [Security](Security%20Changes.md)
+- [SpriteKit](SpriteKit%20Changes.md)
+- [StoreKit](StoreKit%20Changes.md)
+- [UIKit](UIKit%20Changes.md)
+
+## Modules
+
+- [Accelerate](Accelerate%20Changes.md)
+- [Accounts](Accounts%20Changes.md)
+- [AddressBookUI](AddressBookUI%20Changes.md)
+- [AssetsLibrary](AssetsLibrary%20Changes.md)
+- [AudioToolbox](AudioToolbox%20Changes.md)
+- [AudioUnit](AudioUnit%20Changes.md)
+- [AVFoundation](AVFoundation%20Changes-2.md)
+- [CFNetwork](CFNetwork%20Changes.md)
+- [CloudKit](CloudKit%20Changes-2.md)
+- [CoreAudio](CoreAudio%20Changes.md)
+- [CoreAudioKit](CoreAudioKit%20Changes-2.md)
+- [CoreBluetooth](CoreBluetooth%20Changes.md)
+- [CoreData](CoreData%20Changes-2.md)
+- [CoreFoundation](CoreFoundation%20Changes.md)
+- [CoreGraphics](CoreGraphics%20Changes.md)
+- [CoreImage](CoreImage%20Changes-2.md)
+- [CoreLocation](CoreLocation%20Changes.md)
+- [CoreMedia](CoreMedia%20Changes.md)
+- [CoreMIDI](CoreMIDI%20Changes.md)
+- [CoreMotion](CoreMotion%20Changes-2.md)
+- [CoreTelephony](CoreTelephony%20Changes.md)
+- [CoreText](CoreText%20Changes-2.md)
+- [CoreVideo](CoreVideo%20Changes-2.md)
+- [Darwin](Darwin%20Changes.md)
+- [Dispatch](Dispatch%20Changes.md)
+- [EventKit](EventKit%20Changes.md)
+- [EventKitUI](EventKitUI%20Changes.md)
+- [ExternalAccessory](ExternalAccessory%20Changes.md)
+- [Foundation](Foundation%20Changes-2.md)
+- [GameController](GameController%20Changes.md)
+- [GameKit](GameKit%20Changes.md)
+- [GLKit](GLKit%20Changes.md)
+- [GSS](GSS%20Changes.md)
+- [HealthKit](HealthKit%20Changes.md)
+- [HomeKit](HomeKit%20Changes-2.md)
+- [iAd](iAd%20Changes.md)
+- [ImageIO](ImageIO%20Changes.md)
+- [JavaScriptCore](JavaScriptCore%20Changes.md)
+- [libkern](libkern%20Changes.md)
+- [LocalAuthentication](LocalAuthentication%20Changes-2.md)
+- [MachO](MachO%20Changes.md)
+- [MapKit](MapKit%20Changes.md)
+- [MediaPlayer](MediaPlayer%20Changes.md)
+- [MediaToolbox](MediaToolbox%20Changes.md)
+- [MessageUI](MessageUI%20Changes.md)
+- [Metal](Metal%20Changes-2.md)
+- [MultipeerConnectivity](MultipeerConnectivity%20Changes.md)
+- [NetworkExtension](NetworkExtension%20Changes-2.md)
+- [NewsstandKit](NewsstandKit%20Changes.md)
+- [ObjectiveC](ObjectiveC%20Changes.md)
+- [OpenGLES](OpenGLES%20Changes.md)
+- [PassKit](PassKit%20Changes-2.md)
+- [Photos](Photos%20Changes.md)
+- [PushKit](PushKit%20Changes.md)
+- [QuartzCore](QuartzCore%20Changes-2.md)
+- [SafariServices](SafariServices%20Changes.md)
+- [SceneKit](SceneKit%20Changes-2.md)
+- [Security](Security%20Changes-2.md)
+- [Social](Social%20Changes.md)
+- [SpriteKit](SpriteKit%20Changes-2.md)
+- [StoreKit](StoreKit%20Changes-2.md)
+- [Swift](Swift%20Changes.md)
+- [SystemConfiguration](SystemConfiguration%20Changes.md)
+- [UIKit](UIKit%20Changes-2.md)
+- [VideoToolbox](VideoToolbox%20Changes.md)
+- [WatchKit](WatchKit%20Changes.md)
+- [WebKit](WebKit%20Changes.md)

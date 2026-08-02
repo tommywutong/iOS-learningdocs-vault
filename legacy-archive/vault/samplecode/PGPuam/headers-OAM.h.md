@@ -1,0 +1,241 @@
+---
+title: PGPuam
+apple_id: DTS10000259
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-07-22'
+source_url: https://developer.apple.com/library/archive/samplecode/PGPuam/Listings/headers_OAM_h.html
+archived_at: '2026-07-18T03:18:29.582420Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [PGPuam](PGPuam.md)
+
+
+[Next](headers-OAMTypes.h.md)[Previous](headers-LibraryManager.h.md)
+
+# headers/OAM.h
+
+```c
+/*
+    File:       OAM.h
+
+    Contains:   OAM Client Interfaces.
+
+    Copyright:  © 1995-1996 by Apple Computer, Inc.
+                All rights reserved.
+
+*/
+
+#ifndef __OAM__
+#define __OAM__
+
+#ifndef __OAMTYPES__
+#include "OAMTypes.h"
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if PRAGMA_ALIGN_SUPPORTED
+#pragma options align=mac68k
+#endif
+/*******************************************************************************\
+*
+*   Initialization functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMInitialize(int numSessions, int maxNumCalls, OAMBufferDescriptor* buffer_i,OAMOption* flags_i);
+OAMStatus OAMDeInitialize();
+
+/*******************************************************************************\
+*
+*   Lookup functions
+*   
+\*******************************************************************************/
+
+OSStatus OAMFindServer(OAMServerLocator *locator_i,
+                OAMBufferDescriptor *buffer_o,                              
+                int *numInBuffer_o,                                                     
+                int *numFound_o,                                                            
+                OAMOption *options);
+
+OAMStatus OAMFindServerExtract(OAMBufferDescriptor *buffer_i, 
+                int index_i, 
+                OAMServerSpec* spec_o);
+
+/*******************************************************************************\
+*
+*   Session functions
+*   
+\*******************************************************************************/
+
+int OAMGetSize(int numSessions, int maxNumCalls);
+
+
+OSStatus OAMGetLocalServerStatus(UInt32 *serverStatus);
+
+enum {  kOAMOptionMemory = ' mem' };
+OAMStatus OAMOpenSession(OAMServerSpec* server_i,
+                         OAMSessionID* sessID_o,
+                         OAMOption *options);
+
+OAMStatus OAMCloseSession(OAMSessionID sessID_o,
+                         OAMOption *options);
+
+OAMStatus OAMAuthenticateSession(OAMSessionID sessID, 
+                        OAMObjectSpec* user, 
+                        OAMKey* key, 
+                        OAMOption *options);
+
+/*******************************************************************************\
+*
+*   Object functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMCreateObject(OAMSessionID sessID, 
+                        OAMObjectSpec* object, 
+                        OAMAttributeDescriptor *attr, 
+                        OAMOption *options);
+
+OAMStatus OAMDeleteObject(OAMSessionID sessID, 
+                        OAMObjectSpec* object,
+                        OAMOption *options);
+
+OAMStatus OAMGetAttribute(OAMSessionID sessID,
+                        OAMObjectSpec* object, 
+                        OAMAttributeDescriptor *attr, 
+                        OAMOption *options);
+
+OAMStatus OAMSetAttribute(OAMSessionID sessID,
+                        OAMObjectSpec* key,
+                        OAMAttributeDescriptor *attr, 
+                        OAMOption *options);
+
+OAMStatus OAMDeleteAttribute(OAMSessionID sessID,
+                        OAMObjectSpec* object, 
+                        OAMAttributeDescriptor *attr,
+                        OAMOption *options);
+
+/*******************************************************************************\
+*
+*   Group functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMIsGroupMember(OAMSessionID sessID,
+                        OAMObjectSpec* group,
+                        OAMObjectSpec* member,
+                        Boolean *isMember,
+                        OAMOption *options);
+
+OAMStatus OAMAddGroupMember(OAMSessionID sessID,
+                        OAMObjectSpec* group,
+                        OAMObjectSpec* newMember,
+                        OAMOption *options);
+
+OAMStatus OAMRemoveGroupMember(OAMSessionID sessID,
+                        OAMObjectSpec* group,
+                        OAMObjectSpec* oldMember,
+                        OAMOption *options);
+
+/*******************************************************************************\
+*
+*   Iteration functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMIterate(OAMSessionID sessID,
+                        OAMIterationSpec* iterSpec,
+                        OAMAttributeDescriptor *desc,
+                        OAMBufferDescriptor *buffer,
+                        OAMOption *options);
+
+OAMStatus OAMParseAttributeBuffer(OAMBufferDescriptor *buffer, OAMAttributeDescriptor *desc, OAMParseInfo* parseInfo);
+
+OAMStatus OAMParseGetNextObject(OAMParseInfo* parseInfo, OAMObjectSpec* object);
+
+OAMStatus OAMParseGetNextAttribute(OAMParseInfo* parseInfo, OAMAttributeDescriptor* attr);
+
+
+/*******************************************************************************\
+*
+*   Notification functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMSetNotificationProc(OAMSessionID sessID,
+                        OAMNotificationUPP procPtr,
+                        OAMOption *options);
+
+OAMStatus OAMRequestNotification(OAMSessionID sessionID,
+                        OAMNotificationSpec *notificationSpec,
+                        OAMOption *options);
+
+// Remote sessions must call this on a separate thread if they want notifications
+// when no other calls are pending.  This call returns when OAMDeInitialize() is called.
+// NOTE: This call is _not_ needed locally!
+OAMStatus OAMBecomeHelperThread();
+
+/*******************************************************************************\
+*
+*   Service functions
+*   
+\*******************************************************************************/
+
+OAMStatus OAMStartService(OAMSessionID sessID, 
+                        OAMObjectSpec* objectSpec, 
+                        OAMOption *options);
+
+OAMStatus OAMStopService(OAMSessionID sessID, 
+                        OAMObjectSpec* objectSpec, 
+                        OAMOption *options);
+
+
+/*******************************************************************************\
+*
+*   UAM functions
+*   
+\*******************************************************************************/
+
+enum { kOAMAuthLogin, kOAMAuthLoginContinue, kOAMAuthChangeKey, kOAMAuthChangeKeyContinue };
+enum { kOAMAuthStream = 1 };
+
+typedef struct OAMAuthenticateInfo OAMAuthenticateInfo;
+struct OAMAuthenticateInfo {
+    OAMObjectSpec* objectSpec;
+    UInt16 flags;  
+    UInt16 stage;  // intialial set to zero
+    OAMStatus objStatus;
+    UInt8 uam[64];
+    UInt8 reserved[64];
+};
+
+OAMStatus OAMAuthenticateObject(OAMSessionID sessID, 
+                        OAMAuthenticateInfo *authInfo, 
+                        OAMBufferDescriptor* input, 
+                        OAMBufferDescriptor* output,
+                        OAMOption *options);
+
+OAMStatus OAMChangeObjectKey(OAMSessionID sessID, 
+                        OAMAuthenticateInfo *authInfo, 
+                        OAMBufferDescriptor* input,
+                        OAMBufferDescriptor* output,
+                        OAMOption *options);
+
+#if PRAGMA_ALIGN_SUPPORTED
+#pragma options align=reset
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  /* __OAM__ */
+```
+
+[Next](headers-OAMTypes.h.md)[Previous](headers-LibraryManager.h.md)
+

@@ -1,0 +1,106 @@
+---
+title: JSaver
+apple_id: DTS10000219
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/JSaver/Listings/AfterDarkSDK_GraphicsModule_c.html
+archived_at: '2026-07-18T03:13:13.370379Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [JSaver](JSaver.md)
+
+
+[Next](AfterDarkSDK-GraphicsModuleTypes.h.md)[Previous](JSaver.md)
+
+# AfterDarkSDK/GraphicsModule.c
+
+```c
+/*
+    JustOvals.c
+
+    CodeWarior version.
+
+    This file provides a generic interface for writing a After Darkª graphics module.
+    The function "main" is called by After Dark and passed four parameters:
+
+        storage:    A Handle to memory you have allocated.
+        blankRgn:   A region covering all screens.
+        message:    A value indicating which function to call.
+        params:     A pointer to a structure containing useful information.
+
+    To use it, write the five routines:
+
+    OSErr DoInitialize(Handle *storage, RgnHandle blankRgn, GMParamBlockPtr params);
+    OSErr DoClose(Handle storage, RgnHandle blankRgn, GMParamBlockPtr params);
+    OSErr DoBlank(Handle storage, RgnHandle blankRgn, GMParamBlockPtr params);
+    OSErr DoDrawFrame(Handle storage, RgnHandle blankRgn, GMParamBlockPtr params);
+    OSErr DoSetUp(RgnHandle blankRgn, short message, GMParamBlockPtr params);
+
+    For more information, consult the programmer's section of the manual.
+
+    The following people are all conspirators in this code:
+        Patrick Beard
+        Bruce Burkhalter
+        Colin Glassey
+        Andrew Armstrong
+
+    ©1989-1995 Berkeley Systems, Inc.
+ */
+
+#include <QuickDraw.h>
+#include "GraphicsModule_Types.h"
+
+extern OSErr DoInitialize(Handle *storage, RgnHandle blankRgn, GMParamBlockPtr params);
+extern OSErr DoClose(Handle storage,RgnHandle blankRgn,GMParamBlockPtr params);
+extern OSErr DoBlank(Handle storage, RgnHandle blankRgn, GMParamBlockPtr params);
+extern OSErr DoDrawFrame(Handle storage,RgnHandle blankRgn,GMParamBlockPtr params);
+extern OSErr DoSetUp(RgnHandle blankRgn,short message,GMParamBlockPtr params);
+
+pascal OSErr main(Handle *storage, RgnHandle blankRgn, short message, GMParamBlockPtr params)
+{
+    OSErr err=noErr;
+
+    /* dispatch message to appropriate routine. */
+    switch(message) {
+        case Initialize:
+            err = DoInitialize(storage, blankRgn, params);
+            break;
+
+        case Close:
+            err = DoClose(*storage, blankRgn, params);
+            break;
+
+        case Blank:
+            err = DoBlank(*storage, blankRgn, params);
+            break;
+
+        case DrawFrame:
+            err = DoDrawFrame(*storage, blankRgn, params);
+            break;
+
+        /*  There are other messages that can be passed to you. We aren't going to handle them
+            but I've included them to make your life simpler.
+
+        case ModuleSelected:
+            err=DoSelected(*storage, blankRgn, params);
+            break;
+
+        case DoAbout:
+            err=DoAbout(*storage, blankRgn, params);
+            break;
+        */
+
+        default:                            // Check to see if the user pressed a button
+            if(message>=ButtonMessage) {
+                err=DoSetUp(blankRgn, message, params);
+            }
+            break;
+    } /* end switch */
+    return err;
+}
+```
+
+[Next](AfterDarkSDK-GraphicsModuleTypes.h.md)[Previous](JSaver.md)
+

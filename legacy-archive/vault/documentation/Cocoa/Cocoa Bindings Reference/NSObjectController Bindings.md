@@ -1,0 +1,73 @@
+---
+title: Cocoa Bindings Reference
+apple_id: 10000189i
+resource_type: Guide
+platform: macOS
+topic: null
+technology: AppKit
+published: '2014-07-15'
+source_url: https://developer.apple.com/library/archive/documentation/Cocoa/Reference/CocoaBindingsRef/BindingsText/NSObjectController.html
+archived_at: '2026-07-15T07:21:41.016457Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [Cocoa Bindings Reference](Introduction%20to%20Cocoa%20Bindings%20Reference.md)
+
+
+[Next](NSOutlineView%20Bindings.md)[Previous](NSMenuItem%20Bindings.md)
+
+# NSObjectController Bindings
+
+|  |  |
+| --- | --- |
+| __Related class__ | [NSObjectController](https://developer.apple.com/documentation/appkit/nsobjectcontroller) |
+| __Availability__ | Available in OS X v10.3 and later. |
+
+A multiple-value binding that determines if the `NSObjectController` is editable in the user interface.
+
+When `editable` is bound, a new binding, `editable2`, is exposed and can be bound. Binding to `editable2` causes `editable3` to be exposed, and so on.
+
+The contents of the `NSObjectController` are editable if a logical AND operation on all the `editable` bindings results in a Boolean value of `YES`.
+
+__Availability:__Available in OS X v10.3 and later.__Binding is Read-Only.__
+
+Binding Options
+
+| Option | Binding option constant | Value class |
+| --- | --- | --- |
+| Raises for Not Applicable Keys | [NSRaisesForNotApplicableKeysBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljrha3tkmrv) | NSNumber (Boolean) |
+
+Placeholders
+
+| Description | Placeholder constant | Value class |
+| --- | --- | --- |
+| Multiple Values Placeholder | [NSMultipleValuesPlaceholderBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydilktk4zq) | NSNumber (Boolean) or NSNull |
+| No Selection Placeholder | [NSNoSelectionPlaceholderBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydilktk42a) | NSNumber (Boolean) or NSNull |
+| Not Applicable Placeholder | [NSNotApplicablePlaceholderBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydilktk42q) | NSNumber (Boolean) or NSNull |
+| Null Placeholder | [NSNullPlaceholderBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljsgaztonzw) | NSNumber (Boolean) or NSNull |
+
+An object that the `NSObjectController` uses as its content.
+
+__Availability:__Available in OS X v10.3 and later.
+
+Binding Options
+
+| Option | Binding option constant | Value class |
+| --- | --- | --- |
+| Always Presents Application Modal Alerts. Available in OS X v10.4 and later. | [NSAlwaysPresentsApplicationModalAlertsBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljsge4dknzy) | NSNumber (Boolean) |
+| Conditionally Sets Editable | [NSConditionallySetsEditableBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljsge4tcmjt) | NSNumber (Boolean) |
+|  | [NSDeletesObjectsOnRemoveBindingsOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljsge4dmnjr) | NSNumber (Boolean) |
+| Handles Content As Compound Value | [NSHandlesContentAsCompoundValueBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljsgaztomjz) | NSNumber (Boolean) |
+| Raises for Not Applicable Keys | [NSRaisesForNotApplicableKeysBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljrha3tkmrv) | NSNumber (Boolean) |
+| Validates Immediately | [NSValidatesImmediatelyBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljrha3tkojx) | NSNumber (Boolean) |
+
+The NSManagedObjectContext instance that the `NSObjectController` is registered with.
+
+__Availability:__Available in OS X v10.3 and later.__Binding is Read-Only.__
+
+Binding Options
+
+| Option | Binding option constant | Value class |
+| --- | --- | --- |
+| Raises for Not Applicable Keys | [NSRaisesForNotApplicableKeysBindingOption](Binding%20Options.md#apple-f4xwc4dqnrsv64tfmyxwi33df52wszbpgiydambsgmydiljrha3tkmrv) | NSNumber (Boolean) |
+
+[Next](NSOutlineView%20Bindings.md)[Previous](NSMenuItem%20Bindings.md)
+

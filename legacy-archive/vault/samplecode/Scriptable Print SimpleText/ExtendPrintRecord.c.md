@@ -1,0 +1,104 @@
+---
+title: Scriptable Print SimpleText
+apple_id: DTS10000305
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-26'
+source_url: https://developer.apple.com/library/archive/samplecode/Scriptable_Print_SimpleText/Listings/ExtendPrintRecord_c.html
+archived_at: '2026-07-18T03:23:28.815684Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Scriptable Print SimpleText](Scriptable%20Print%20SimpleText.md)
+
+
+[Next](ExtendPrintRecord.h.md)[Previous](CoercePrGeneral.h.md)
+
+# ExtendPrintRecord.c
+
+```c
+/*
+**  File:       ExtendPrintRecord.c
+**
+**  Functions defined in Technote 1161
+**
+** Copyright 1996-1999 Apple Computer. All rights reserved.
+**
+**  You may incorporate this sample code into your applications without
+**  restriction, though the sample code has been provided "AS IS" and the
+**  responsibility for its operation is 100% yours.  However, what you are
+**  not permitted to do is to redistribute the source as "DSC Sample Code"
+**  after having made changes. If you're going to re-distribute the source,
+**  we require that you make it clear in the source that the code was
+**  descended from Apple Sample Code, but that you've made changes.
+*/
+
+#include <Printing.h>
+#include "ExtendPrintRecord.h"
+
+Boolean extendPrValidate(THPrint hPrint)
+/* 
+The current driver is asked to extend the print record.
+If this fails, the print record handle is sized to the standard
+size print record (120 bytes).
+The current printer driver's PrValidate() routine is called to
+validate the print record whether it has been successfully
+extended or not.
+*/
+{
+    /* 
+    In case 'hPrint' is extended and the current printer driver doesn't
+    support the extensible print record, we let extendPrintRecord()
+    truncate the print record. The print record won't be truncated
+    if the print record is already the standard size or if the current 
+    driver supports the extensible print record.
+    */
+    extendPrintRecord(hPrint);
+
+    /* Call the real PrValidate with a correctly sized print record. */
+    return PrValidate(hPrint);
+}
+
+
+void extendPrDefault(THPrint hPrint)
+{
+    /* 
+    The default print record is the standard size for all drivers.
+    So default the 120-byte record.
+    */
+    SetHandleSize((Handle)hPrint, sizeof(TPrint));
+    PrintDefault(hPrint);
+
+    /* 
+    Tell the printer driver it is okay to extend this print record.
+    */
+    extendPrintRecord(hPrint);
+}
+
+
+void extendPrintRecord(THPrint hPrint)
+{
+    TExtendPrintRecord extend;
+    /* 
+    Call the new PrGeneral opcode to see if the current printer driver
+    supports extended print records. If the driver does support extended
+    print records, it returns noErr. It marks the print record as
+    extensible and may also extend it at this time.
+    If the driver does not support extended print records,
+    it returns 'OpNotImpl'.
+    */
+    extend.iOpCode = kExtendPrintRecordOp;
+    extend.lReserved = 0;
+    extend.hPrint = hPrint;
+    PrGeneral((Ptr)&extend);
+
+    /* 
+    If the driver fails to make the print record extensible,
+    we make sure the print record is the standard 120 bytes.
+    */
+    if(extend.iError) SetHandleSize((Handle)hPrint, sizeof(TPrint));
+}
+```
+
+[Next](ExtendPrintRecord.h.md)[Previous](CoercePrGeneral.h.md)
+

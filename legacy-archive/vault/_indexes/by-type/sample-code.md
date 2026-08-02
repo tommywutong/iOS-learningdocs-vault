@@ -1,0 +1,1957 @@
+# Sample Code
+
+> 导航：[总目录](../../README.md)
+
+共 1934 份文档。
+
+## iOS（283 份）
+
+- **[ABUIGroups](../../samplecode/ABUIGroups/ABUIGroups.md)** — Sample Code · 2013-07-29，iOS · AddressBook，12 页
+- **[AccelerometerGraph](../../samplecode/AccelerometerGraph/AccelerometerGraph.md)** — Sample Code · 2013-07-15，iOS，12 页
+- **[Activity Rings: Contributing to Activity Rings on Apple Watch](../../samplecode/Activity%20Rings-%20Contributing%20to%20Activity%20Rings%20on%20Apple%20Watch/Activity%20Rings-%20Contributing%20to%20Activity%20Rings%20on%20Apple%20Watch.md)** — Sample Code · 2016-09-13，watchOS|iOS · HealthKit，8 页
+- **[AdaptiveElements: Implementing Your Own Adaptive Design with UIKit](../../samplecode/AdaptiveElements-%20Implementing%20Your%20Own%20Adaptive%20Design%20with%20UIKit/AdaptiveElements-%20Implementing%20Your%20Own%20Adaptive%20Design%20with%20UIKit.md)** — Sample Code · 2016-09-13，iOS · UIKit，10 页
+- **[AdaptivePhotos: Using UIKit Traits and Size Classes](../../samplecode/AdaptivePhotos-%20Using%20UIKit%20Traits%20and%20Size%20Classes/AdaptivePhotos-%20Using%20UIKit%20Traits%20and%20Size%20Classes.md)** — Sample Code · 2016-09-13，iOS · UIKit，33 页
+- **[AddMusic](../../samplecode/AddMusic/AddMusic.md)** — Sample Code · 2009-10-01，iOS，10 页
+- **[Adopting Metal I: A practical approach to your first Metal app](../../samplecode/Adopting%20Metal%20I-%20A%20practical%20approach%20to%20your%20first%20Metal%20app/Adopting%20Metal%20I-%20A%20practical%20approach%20to%20your%20first%20Metal%20app.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · Metal，12 页
+- **[Adopting Metal II: Designing and Implementing a Real-World Metal Renderer](../../samplecode/Adopting%20Metal%20II-%20Designing%20and%20Implementing%20a%20Real-World%20Metal%20Renderer/Adopting%20Metal%20II-%20Designing%20and%20Implementing%20a%20Real-World%20Metal%20Renderer.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · Metal，11 页
+- **[Advanced UISearchBar](../../samplecode/Advanced%20UISearchBar/Advanced%20UISearchBar.md)** — Sample Code · 2013-07-24，iOS · UIKit，13 页
+- **[AdvancedTableViewCells](../../samplecode/AdvancedTableViewCells/AdvancedTableViewCells.md)** — Sample Code · 2011-01-11，iOS · UIKit，18 页
+- **[AdvancedURLConnections](../../samplecode/AdvancedURLConnections/AdvancedURLConnections.md)** — Sample Code · 2011-01-26，iOS · Foundation，32 页
+- **[AgentsCatalog: Using the Agents System in GameplayKit](../../samplecode/AgentsCatalog-%20Using%20the%20Agents%20System%20in%20GameplayKit/AgentsCatalog-%20Using%20the%20Agents%20System%20in%20GameplayKit.md)** — Sample Code · 2015-09-16，iOS|macOS · GameplayKit，32 页
+- **[AirDrop Examples](../../samplecode/AirDrop%20Examples/AirDrop%20Examples.md)** — Sample Code · 2013-10-17，iOS，28 页
+- **[AirLocate: Using CoreLocation to monitor, range, and configure your device as an iBeacon](../../samplecode/AirLocate-%20Using%20CoreLocation%20to%20monitor%2C%20range%2C%20and%20configure%20your%20device%20as%20an/AirLocate-%20Using%20CoreLocation%20to%20monitor%2C%20range%2C%20and%20configure%20your%20device%20as%20an.md)** — Sample Code · 2014-01-06，iOS · CoreLocation，24 页
+- **[Alternate Views](../../samplecode/Alternate%20Views/Alternate%20Views.md)** — Sample Code · 2014-04-02，iOS，22 页
+- **[AppChat: Using Peek and Pop APIs](../../samplecode/AppChat-%20Using%20Peek%20and%20Pop%20APIs/AppChat-%20Using%20Peek%20and%20Pop%20APIs.md)** — Sample Code · 2016-10-27，iOS · UIKit，22 页
+- **[Application Icons and Launch Images for iOS](../../samplecode/Application%20Icons%20and%20Launch%20Images%20for%20iOS/Application%20Icons%20and%20Launch%20Images%20for%20iOS.md)** — Sample Code · 2017-03-27，iOS，9 页
+- **[ApplicationShortcuts: Using UIApplicationShortcutItems](../../samplecode/ApplicationShortcuts-%20Using%20UIApplicationShortcutItems.md)** — Sample Code · 2017-12-14，iOS · UIKit
+- **[AppPrefs: Storing and Retrieving User Preferences](../../samplecode/AppPrefs-%20Storing%20and%20Retrieving%20User%20Preferences/AppPrefs-%20Storing%20and%20Retrieving%20User%20Preferences.md)** — Sample Code · 2014-09-17，iOS，9 页
+- **[AQOfflineRenderTest](../../samplecode/AQOfflineRenderTest/AQOfflineRenderTest.md)** — Sample Code · 2010-06-28，iOS · AudioToolbox，16 页
+- **[AstroLayout: Building Adaptive UI with Auto Layout](../../samplecode/AstroLayout-%20Building%20Adaptive%20UI%20with%20Auto%20Layout/AstroLayout-%20Building%20Adaptive%20UI%20with%20Auto%20Layout.md)** — Sample Code · 2015-09-16，iOS · UIKit，9 页
+- **[Audio Converter File Convert Test](../../samplecode/Audio%20Converter%20File%20Convert%20Test/Audio%20Converter%20File%20Convert%20Test.md)** — Sample Code · 2016-09-29，iOS · AudioToolbox，11 页
+- **[Audio in ARKit](../../samplecode/Audio%20in%20ARKit/Audio%20in%20ARKit.md)** — Sample Code · 2018-03-28，iOS · ARKit，9 页
+- **[AudioUnitV3Example: A Basic AudioUnit Extension and Host Implementation](../../samplecode/AudioUnitV3Example-%20A%20Basic%20AudioUnit%20Extension%20and%20Host%20Implementation.md)** — Sample Code · 2016-11-14，iOS|macOS · AudioUnit
+- **[aurioTouch](../../samplecode/aurioTouch/aurioTouch.md)** — Sample Code · 2016-08-12，iOS · AudioUnit，25 页
+- **[aurioTouch2](../../samplecode/aurioTouch2/aurioTouch2.md)** — Sample Code · 2011-12-06，iOS · CoreAudio，20 页
+- **[AVARLDelegateDemo](../../samplecode/AVARLDelegateDemo/AVARLDelegateDemo.md)** — Sample Code · 2014-04-18，iOS · AVFoundation，12 页
+- **[AVAudioEngine 3D Audio Example](../../samplecode/AVAudioEngine%203D%20Audio%20Example/AVAudioEngine%203D%20Audio%20Example.md)** — Sample Code · 2016-11-03，tvOS|iOS|macOS · AVFoundation，19 页
+- **[AVAutoWait: Using AVFoundation to play HTTP assets with minimal stalls](../../samplecode/AVAutoWait-%20Using%20AVFoundation%20to%20play%20HTTP%20assets%20with%20minimal%20stalls/AVAutoWait-%20Using%20AVFoundation%20to%20play%20HTTP%20assets%20with%20minimal%20stalls.md)** — Sample Code · 2016-09-13，iOS · AVFoundation，10 页
+- **[AVCamBarcode: Using AVFoundation to Detect Barcodes and Faces](../../samplecode/AVCamBarcode-%20Using%20AVFoundation%20to%20Detect%20Barcodes%20and%20Faces/AVCamBarcode-%20Using%20AVFoundation%20to%20Detect%20Barcodes%20and%20Faces.md)** — Sample Code · 2017-09-19，iOS · AVFoundation，3 页
+- **[AVCamManual: Extending AVCam to Use Manual Capture API](../../samplecode/AVCamManual-%20Extending%20AVCam%20to%20Use%20Manual%20Capture%20API/AVCamManual-%20Extending%20AVCam%20to%20Use%20Manual%20Capture%20API.md)** — Sample Code · 2016-09-15，iOS · AVFoundation，13 页
+- **[AVCaptureAudioDataOutput To AudioUnit iOS](../../samplecode/AVCaptureAudioDataOutput%20To%20AudioUnit%20iOS/AVCaptureAudioDataOutput%20To%20AudioUnit%20iOS.md)** — Sample Code · 2012-10-08，iOS · AVFoundation，22 页
+- **[AVCompositionDebugVieweriOS](../../samplecode/AVCompositionDebugVieweriOS/AVCompositionDebugVieweriOS.md)** — Sample Code · 2014-03-11，iOS · AVFoundation，12 页
+- **[AVCustomEdit](../../samplecode/AVCustomEdit/AVCustomEdit.md)** — Sample Code · 2017-08-17，iOS · AVFoundation，34 页
+- **[AVFoundation Looping Player: Using AVQueuePlayer and AVPlayerLooper to demonstrate loop playback](../../samplecode/AVFoundation%20Looping%20Player-%20Using%20AVQueuePlayer%20and%20AVPlayerLooper%20to%20demonstra/AVFoundation%20Looping%20Player-%20Using%20AVQueuePlayer%20and%20AVPlayerLooper%20to%20demonstra.md)** — Sample Code · 2016-09-13，iOS|macOS · AVFoundation，13 页
+- **[AVFoundationPiPPlayer: Picture-in-Picture Playback with AVKit](../../samplecode/AVFoundationPiPPlayer-%20Picture-in-Picture%20Playback%20with%20AVKit/AVFoundationPiPPlayer-%20Picture-in-Picture%20Playback%20with%20AVKit.md)** — Sample Code · 2018-02-08，iOS · AVFoundation，7 页
+- **[AVFoundationQueuePlayer-iOS: Using a Mixture of Local File Based Assets and HTTP Live Streaming Assets with AVFoundation](../../samplecode/AVFoundationQueuePlayer-iOS-%20Using%20a%20Mixture%20of%20Local%20File%20Based%20Assets%20and%20HTTP/AVFoundationQueuePlayer-iOS-%20Using%20a%20Mixture%20of%20Local%20File%20Based%20Assets%20and%20HTTP.md)** — Sample Code · 2016-09-13，iOS · AVFoundation，17 页
+- **[AVFoundationSimplePlayer-iOS: Using AVFoundation to Play Media](../../samplecode/AVFoundationSimplePlayer-iOS-%20Using%20AVFoundation%20to%20Play%20Media/AVFoundationSimplePlayer-iOS-%20Using%20AVFoundation%20to%20Play%20Media.md)** — Sample Code · 2016-09-13，iOS · AVFoundation，14 页
+- **[AVLoupe](../../samplecode/AVLoupe/AVLoupe.md)** — Sample Code · 2016-08-12，iOS · AVFoundation，9 页
+- **[AVMetadataRecordPlay: Timed Metadata Capture Recording and Playback](../../samplecode/AVMetadataRecordPlay-%20Timed%20Metadata%20Capture%20Recording%20and%20Playback/AVMetadataRecordPlay-%20Timed%20Metadata%20Capture%20Recording%20and%20Playback.md)** — Sample Code · 2017-03-09，iOS · AVFoundation，27 页
+- **[AVMovieExporter](../../samplecode/AVMovieExporter/AVMovieExporter.md)** — Sample Code · 2011-11-29，iOS · AVFoundation，28 页
+- **[AVPlayerDemo](../../samplecode/AVPlayerDemo/AVPlayerDemo.md)** — Sample Code · 2014-07-08，iOS · AVFoundation，22 页
+- **[AVReaderWriter: Offline Audio / Video Processing](../../samplecode/AVReaderWriter-%20Offline%20Audio%20-%20Video%20Processing/AVReaderWriter-%20Offline%20Audio%20-%20Video%20Processing.md)** — Sample Code · 2016-09-13，iOS|macOS · AVFoundation，14 页
+- **[AVSimpleEditoriOS](../../samplecode/AVSimpleEditoriOS/AVSimpleEditoriOS.md)** — Sample Code · 2013-08-22，iOS · AVFoundation，22 页
+- **[AVTimedAnnotationWriter: Using Custom Annotation Metadata for Movie Writing and Playback](../../samplecode/AVTimedAnnotationWriter-%20Using%20Custom%20Annotation%20Metadata%20for%20Movie%20Writing%20and/AVTimedAnnotationWriter-%20Using%20Custom%20Annotation%20Metadata%20for%20Movie%20Writing%20and.md)** — Sample Code · 2014-09-17，iOS · AVFoundation，14 页
+- **[avTouch](../../samplecode/avTouch/avTouch.md)** — Sample Code · 2014-02-12，iOS · AVFoundation，22 页
+- **[Badger: Advanced Rendering in SceneKit](../../samplecode/Badger-%20Advanced%20Rendering%20in%20SceneKit/Badger-%20Advanced%20Rendering%20in%20SceneKit.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · SceneKit，11 页
+- **[Blurring and Tinting an Image](../../samplecode/Blurring%20and%20Tinting%20an%20Image/Blurring%20and%20Tinting%20an%20Image.md)** — Sample Code · 2014-07-31，watchOS|iOS，10 页
+- **[BonjourWeb](../../samplecode/BonjourWeb/BonjourWeb.md)** — Sample Code · 2010-06-16，iOS · Foundation，14 页
+- **[Boxes: GameplayKit Entity-Component Basics](../../samplecode/Boxes-%20GameplayKit%20Entity-Component%20Basics/Boxes-%20GameplayKit%20Entity-Component%20Basics.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · GameplayKit，12 页
+- **[BracketStripes: Using the Bracketed Capture API](../../samplecode/BracketStripes-%20Using%20the%20Bracketed%20Capture%20API/BracketStripes-%20Using%20the%20Bracketed%20Capture%20API.md)** — Sample Code · 2016-09-28，iOS · AVFoundation，18 页
+- **[Breadcrumb: Using CoreLocation to track user movement](../../samplecode/Breadcrumb-%20Using%20CoreLocation%20to%20track%20user%20movement/Breadcrumb-%20Using%20CoreLocation%20to%20track%20user%20movement.md)** — Sample Code · 2018-05-17，iOS · CoreLocation，16 页
+- **[BTLE Central Peripheral Transfer](../../samplecode/BTLE%20Central%20Peripheral%20Transfer/BTLE%20Central%20Peripheral%20Transfer.md)** — Sample Code · 2012-11-15，iOS · CoreBluetooth，13 页
+- **[CardFlip](../../samplecode/CardFlip/CardFlip.md)** — Sample Code · 2008-06-19，Safari|iOS，6 页
+- **[Checking and Requesting Access to Data Classes in Privacy Settings](../../samplecode/Checking%20and%20Requesting%20Access%20to%20Data%20Classes%20in%20Privacy%20Settings/Checking%20and%20Requesting%20Access%20to%20Data%20Classes%20in%20Privacy%20Settings.md)** — Sample Code · 2017-12-21，iOS，27 页
+- **[CircleLayout](../../samplecode/CircleLayout/CircleLayout.md)** — Sample Code · 2015-07-31，iOS · UIKit，13 页
+- **[CloudCaptions: How integrate CloudKit into your application](../../samplecode/CloudCaptions-%20How%20integrate%20CloudKit%20into%20your%20application/CloudCaptions-%20How%20integrate%20CloudKit%20into%20your%20application.md)** — Sample Code · 2014-09-17，iOS · CloudKit，27 页
+- **[CloudKit Catalog: An Introduction to CloudKit (Cocoa and JavaScript)](../../samplecode/CloudKit%20Catalog-%20An%20Introduction%20to%20CloudKit%20%28Cocoa%20and%20JavaScript%29/CloudKit%20Catalog-%20An%20Introduction%20to%20CloudKit%20%28Cocoa%20and%20JavaScript%29.md)** — Sample Code · 2016-09-13，CloudKit JS|iOS · CloudKit，78 页
+- **[CloudPhotos : Using CloudKit with iOS and OS X](../../samplecode/CloudPhotos%20-%20Using%20CloudKit%20with%20iOS%20and%20OS%20X/CloudPhotos%20-%20Using%20CloudKit%20with%20iOS%20and%20OS%20X.md)** — Sample Code · 2017-03-09，iOS|macOS · CloudKit，38 页
+- **[CloudSearch: Query for documents in iCloud using NSMetaDataQuery](../../samplecode/CloudSearch-%20Query%20for%20documents%20in%20iCloud%20using%20NSMetaDataQuery/CloudSearch-%20Query%20for%20documents%20in%20iCloud%20using%20NSMetaDataQuery.md)** — Sample Code · 2016-03-24，iOS|macOS · ApplicationServices，22 页
+- **[Collection View Transition](../../samplecode/Collection%20View%20Transition/Collection%20View%20Transition.md)** — Sample Code · 2013-10-29，iOS，22 页
+- **[CollectionView-Simple](../../samplecode/CollectionView-Simple/CollectionView-Simple.md)** — Sample Code · 2015-10-22，iOS，15 页
+- **[Color Gamut Showcase: Using wide color gamut in Cocoa and Cocoa Touch applications with SceneKit](../../samplecode/Color%20Gamut%20Showcase-%20Using%20wide%20color%20gamut%20in%20Cocoa%20and%20Cocoa%20Touch%20applicatio/Color%20Gamut%20Showcase-%20Using%20wide%20color%20gamut%20in%20Cocoa%20and%20Cocoa%20Touch%20applicatio.md)** — Sample Code · 2016-09-28，iOS|macOS · SceneKit，10 页
+- **[CopyPasteTile](../../samplecode/CopyPasteTile/CopyPasteTile.md)** — Sample Code · 2010-06-28，iOS，10 页
+- **[Core Audio Utility Classes](../../samplecode/Core%20Audio%20Utility%20Classes/Core%20Audio%20Utility%20Classes.md)** — Sample Code · 2014-07-08，iOS|macOS · CoreAudio，199 页
+- **[Core Data Transformable Attributes](../../samplecode/Core%20Data%20Transformable%20Attributes/Core%20Data%20Transformable%20Attributes.md)** — Sample Code · 2013-05-08，iOS · CoreData，16 页
+- **[Core Image Filters with Photos and Video for iOS](../../samplecode/Core%20Image%20Filters%20with%20Photos%20and%20Video%20for%20iOS/Core%20Image%20Filters%20with%20Photos%20and%20Video%20for%20iOS.md)** — Sample Code · 2013-06-13，iOS，33 页
+- **[CoreDataBooks](../../samplecode/CoreDataBooks/CoreDataBooks.md)** — Sample Code · 2014-05-08，iOS · CoreData，16 页
+- **[CoreTextPageViewer](../../samplecode/CoreTextPageViewer/CoreTextPageViewer.md)** — Sample Code · 2014-01-28，iOS，19 页
+- **[CryptoCompatibility](../../samplecode/CryptoCompatibility/CryptoCompatibility.md)** — Sample Code · 2016-11-17，iOS|macOS · Security，56 页
+- **[CryptoExercise](../../samplecode/CryptoExercise/CryptoExercise.md)** — Sample Code · 2018-06-04，iOS · Security，21 页
+- **[CSS Effects: Lightbox](../../samplecode/CSS%20Effects-%20Lightbox/CSS%20Effects-%20Lightbox.md)** — Sample Code · 2010-11-01，Safari|iOS|macOS，8 页
+- **[CSS Effects: Photo Gallery](../../samplecode/CSS%20Effects-%20Photo%20Gallery/CSS%20Effects-%20Photo%20Gallery.md)** — Sample Code · 2010-08-19，Safari|iOS|macOS，16 页
+- **[CurrentAddress](../../samplecode/CurrentAddress.md)** — Sample Code · 2016-01-28，iOS · MapKit
+- **[Custom Animatable Property](../../samplecode/Custom%20Animatable%20Property/Custom%20Animatable%20Property.md)** — Sample Code · 2014-04-02，iOS · CoreGraphics，13 页
+- **[Custom View Controller Presentations and Transitions](../../samplecode/Custom%20View%20Controller%20Presentations%20and%20Transitions/Custom%20View%20Controller%20Presentations%20and%20Transitions.md)** — Sample Code · 2016-01-28，iOS · UIKit，51 页
+- **[CustomContentAccessibility](../../samplecode/CustomContentAccessibility/CustomContentAccessibility.md)** — Sample Code · 2013-12-18，iOS，18 页
+- **[CustomHTTPProtocol](../../samplecode/CustomHTTPProtocol/CustomHTTPProtocol.md)** — Sample Code · 2014-08-20，iOS · Foundation，23 页
+- **[DateCell](../../samplecode/DateCell/DateCell.md)** — Sample Code · 2014-06-17，iOS · UIKit，8 页
+- **[DateSectionTitles: Custom Table Sections with NSFetchedResultsController](../../samplecode/DateSectionTitles-%20Custom%20Table%20Sections%20with%20NSFetchedResultsController/DateSectionTitles-%20Custom%20Table%20Sections%20with%20NSFetchedResultsController.md)** — Sample Code · 2017-12-21，iOS · CoreData，11 页
+- **[DemoBots: Building a Cross Platform Game with SpriteKit and GameplayKit](../../samplecode/DemoBots-%20Building%20a%20Cross%20Platform%20Game%20with%20SpriteKit%20and%20GameplayKit/DemoBots-%20Building%20a%20Cross%20Platform%20Game%20with%20SpriteKit%20and%20GameplayKit.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · SpriteKit，94 页
+- **[Dispenser: GameplayKit State Machine Basics](../../samplecode/Dispenser-%20GameplayKit%20State%20Machine%20Basics/Dispenser-%20GameplayKit%20State%20Machine%20Basics.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · GameplayKit，15 页
+- **[DocInteraction](../../samplecode/DocInteraction/DocInteraction.md)** — Sample Code · 2014-06-17，iOS，12 页
+- **[DownloadFont](../../samplecode/DownloadFont/DownloadFont.md)** — Sample Code · 2013-06-07，iOS，8 页
+- **[DrillDownSave](../../samplecode/DrillDownSave/DrillDownSave.md)** — Sample Code · 2010-06-24，iOS · UIKit，14 页
+- **[EADemo](../../samplecode/EADemo/EADemo.md)** — Sample Code · 2016-08-12，iOS · ExternalAccessory，13 页
+- **[Earthquakes: Populating a Core Data Store Using a Background Queue](../../samplecode/Earthquakes-%20Populating%20a%20Core%20Data%20Store%20Using%20a%20Background%20Queue/Earthquakes-%20Populating%20a%20Core%20Data%20Store%20Using%20a%20Background%20Queue.md)** — Sample Code · 2018-05-03，iOS|macOS · CoreData，2 页
+- **[echoTouch - Using the Voice Processing I/O audio unit](../../samplecode/echoTouch%20-%20Using%20the%20Voice%20Processing%20I-O%20audio%20unit/echoTouch%20-%20Using%20the%20Voice%20Processing%20I-O%20audio%20unit.md)** — Sample Code · 2016-11-29，iOS · AudioToolbox，32 页
+- **[EKReminderSuite](../../samplecode/EKReminderSuite/EKReminderSuite.md)** — Sample Code · 2015-11-13，iOS，53 页
+- **[Emporium: A Simple Shopping Experience with Apple Pay](../../samplecode/Emporium-%20A%20Simple%20Shopping%20Experience%20with%20Apple%20Pay.md)** — Sample Code · 2016-09-28，watchOS|iOS · PassKit
+- **[Enumeration Sample](../../samplecode/Enumeration%20Sample/Enumeration%20Sample.md)** — Sample Code · 2014-02-04，iOS|macOS · Foundation，6 页
+- **[Example app using Photos framework](../../samplecode/Example%20app%20using%20Photos%20framework/Example%20app%20using%20Photos%20framework.md)** — Sample Code · 2017-02-24，tvOS|iOS · Photos，9 页
+- **[Extended Audio File Conversion Test](../../samplecode/Extended%20Audio%20File%20Conversion%20Test/Extended%20Audio%20File%20Conversion%20Test.md)** — Sample Code · 2016-09-29，iOS · AudioToolbox，11 页
+- **[Fit: Store and Retrieve HealthKit Data](../../samplecode/Fit-%20Store%20and%20Retrieve%20HealthKit%20Data/Fit-%20Store%20and%20Retrieve%20HealthKit%20Data.md)** — Sample Code · 2016-10-25，iOS · HealthKit，19 页
+- **[Flags: A demonstration of automatic RTL support in Asset Catalogs and UIStackViews](../../samplecode/Flags-%20A%20demonstration%20of%20automatic%20RTL%20support%20in%20Asset%20Catalogs%20and%20UIStackVie/Flags-%20A%20demonstration%20of%20automatic%20RTL%20support%20in%20Asset%20Catalogs%20and%20UIStackVie.md)** — Sample Code · 2016-10-27，iOS · UIKit，8 页
+- **[Footprint: Indoor Positioning with Core Location](../../samplecode/Footprint-%20Indoor%20Positioning%20with%20Core%20Location/Footprint-%20Indoor%20Positioning%20with%20Core%20Location.md)** — Sample Code · 2016-09-28，iOS · CoreLocation，29 页
+- **[Formulaic](../../samplecode/Formulaic/Formulaic.md)** — Sample Code · 2010-07-01，iOS，12 页
+- **[FourInARow: Using the GameplayKit Minmax Strategist for Opponent AI](../../samplecode/FourInARow-%20Using%20the%20GameplayKit%20Minmax%20Strategist%20for%20Opponent%20AI/FourInARow-%20Using%20the%20GameplayKit%20Minmax%20Strategist%20for%20Opponent%20AI.md)** — Sample Code · 2015-09-16，iOS · GameplayKit，16 页
+- **[Fox 2: SceneKit WWDC 2017 sample code](../../samplecode/Fox%202-%20SceneKit%20WWDC%202017%20sample%20code/Fox%202-%20SceneKit%20WWDC%202017%20sample%20code.md)** — Sample Code · 2018-04-05，tvOS|iOS|macOS · SceneKit，65 页
+- **[Fox: Building a SceneKit Game with the Xcode Scene Editor](../../samplecode/Fox-%20Building%20a%20SceneKit%20Game%20with%20the%20Xcode%20Scene%20Editor/Fox-%20Building%20a%20SceneKit%20Game%20with%20the%20Xcode%20Scene%20Editor.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · SceneKit，29 页
+- **[GenericKeychain](../../samplecode/GenericKeychain/GenericKeychain.md)** — Sample Code · 2016-09-13，iOS · Security，9 页
+- **[GeocoderDemo: Uses CLGeocoder for forward and reverse geocoding](../../samplecode/GeocoderDemo-%20Uses%20CLGeocoder%20for%20forward%20and%20reverse%20geocoding/GeocoderDemo-%20Uses%20CLGeocoder%20for%20forward%20and%20reverse%20geocoding.md)** — Sample Code · 2015-10-30，iOS · CoreLocation，19 页
+- **[Geometric Primitives: Exact Orientation and Incircle Predicates using simd](../../samplecode/Geometric%20Primitives-%20Exact%20Orientation%20and%20Incircle%20Predicates%20using%20simd/Geometric%20Primitives-%20Exact%20Orientation%20and%20Incircle%20Predicates%20using%20simd.md)** — Sample Code · 2016-09-28，iOS|macOS · Accelerate，9 页
+- **[Get Battery Status](../../samplecode/Get%20Battery%20Status/Get%20Battery%20Status.md)** — Sample Code · 2013-08-15，iOS，8 页
+- **[GKAchievements](../../samplecode/GKAchievements/GKAchievements.md)** — Sample Code · 2011-12-06，iOS，10 页
+- **[GKAuthentication](../../samplecode/GKAuthentication/GKAuthentication.md)** — Sample Code · 2011-04-27，iOS，6 页
+- **[GKLeaderboards](../../samplecode/GKLeaderboards/GKLeaderboards.md)** — Sample Code · 2011-12-06，iOS，10 页
+- **[GKRocket](../../samplecode/GKRocket/GKRocket.md)** — Sample Code · 2011-03-15，iOS · GameCenter，14 页
+- **[GKTank](../../samplecode/GKTank/GKTank.md)** — Sample Code · 2009-06-08，iOS · GameCenter，8 页
+- **[GKTapper](../../samplecode/GKTapper/GKTapper.md)** — Sample Code · 2010-12-10，iOS · GameCenter，11 页
+- **[GLAirplay](../../samplecode/GLAirplay/GLAirplay.md)** — Sample Code · 2016-08-12，iOS，19 页
+- **[GLCameraRipple](../../samplecode/GLCameraRipple/GLCameraRipple.md)** — Sample Code · 2013-02-21，iOS · AVFoundation，12 页
+- **[GLES2Sample](../../samplecode/GLES2Sample/GLES2Sample.md)** — Sample Code · 2010-07-07，iOS · OpenGLES，19 页
+- **[GLEssentials](../../samplecode/GLEssentials/GLEssentials.md)** — Sample Code · 2015-08-07，iOS|macOS · OpenGL，37 页
+- **[GLGravity](../../samplecode/GLGravity/GLGravity.md)** — Sample Code · 2010-07-06，iOS · OpenGLES，9 页
+- **[GLImageProcessing](../../samplecode/GLImageProcessing/GLImageProcessing.md)** — Sample Code · 2014-03-25，iOS · OpenGLES，14 页
+- **[GLPaint](../../samplecode/GLPaint/GLPaint.md)** — Sample Code · 2014-05-19，iOS，19 页
+- **[GLSprite](../../samplecode/GLSprite/GLSprite.md)** — Sample Code · 2010-08-18，iOS，8 页
+- **[GLTextureAtlas](../../samplecode/GLTextureAtlas/GLTextureAtlas.md)** — Sample Code · 2014-04-07，iOS · OpenGLES，10 页
+- **[Handling Touches Using Responder Methods and Gesture Recognizers](../../samplecode/Handling%20Touches%20Using%20Responder%20Methods%20and%20Gesture%20Recognizers/Handling%20Touches%20Using%20Responder%20Methods%20and%20Gesture%20Recognizers.md)** — Sample Code · 2013-05-13，iOS，15 页
+- **[HazardMap](../../samplecode/HazardMap/HazardMap.md)** — Sample Code · 2014-01-13，iOS · MapKit，13 页
+- **[HeaderFooter](../../samplecode/HeaderFooter/HeaderFooter.md)** — Sample Code · 2010-06-29，iOS · UIKit，8 页
+- **[HeadsUpUI](../../samplecode/HeadsUpUI/HeadsUpUI.md)** — Sample Code · 2013-05-16，iOS，10 页
+- **[Hello Metronome](../../samplecode/Hello%20Metronome/Hello%20Metronome.md)** — Sample Code · 2017-02-24，watchOS|iOS|macOS · AVFoundation，22 页
+- **[HelloGoodbye: Using the Accessibility API to Widen Your User Base](../../samplecode/HelloGoodbye-%20Using%20the%20Accessibility%20API%20to%20Widen%20Your%20User%20Base/HelloGoodbye-%20Using%20the%20Accessibility%20API%20to%20Widen%20Your%20User%20Base.md)** — Sample Code · 2014-09-17，iOS · UIKit，25 页
+- **[HTML5VideoEventFlow](../../samplecode/HTML5VideoEventFlow/HTML5VideoEventFlow.md)** — Sample Code · 2010-11-18，Safari|iOS|macOS，6 页
+- **[HTML5VideoOverlays](../../samplecode/HTML5VideoOverlays/HTML5VideoOverlays.md)** — Sample Code · 2010-06-23，Safari|iOS|macOS，6 页
+- **[iAdInterstitialSuite](../../samplecode/iAdInterstitialSuite/iAdInterstitialSuite.md)** — Sample Code · 2015-08-13，iOS · iAd，20 页
+- **[iAdSuite](../../samplecode/iAdSuite/iAdSuite.md)** — Sample Code · 2013-05-28，iOS · iAd，37 页
+- **[iAdSuite with Storyboards](../../samplecode/iAdSuite%20with%20Storyboards/iAdSuite%20with%20Storyboards.md)** — Sample Code · 2015-10-29，iOS，43 页
+- **[IntentHandling: Using the Intents framework to handle custom Siri request](../../samplecode/IntentHandling-%20Using%20the%20Intents%20framework%20to%20handle%20custom%20Siri%20request/IntentHandling-%20Using%20the%20Intents%20framework%20to%20handle%20custom%20Siri%20request.md)** — Sample Code · 2016-09-13，iOS · Intents，40 页
+- **[Inter-App Audio Examples](../../samplecode/Inter-App%20Audio%20Examples/Inter-App%20Audio%20Examples.md)** — Sample Code · 2014-03-24，iOS · AudioUnit，63 页
+- **[Interactive Content with ARKit](../../samplecode/Interactive%20Content%20with%20ARKit/Interactive%20Content%20with%20ARKit.md)** — Sample Code · 2018-02-15，iOS · ARKit，8 页
+- **[Internationalization and Localization for iOS](../../samplecode/Internationalization%20and%20Localization%20for%20iOS/Internationalization%20and%20Localization%20for%20iOS.md)** — Sample Code · 2014-07-18，watchOS|iOS，10 页
+- **[iPhoneCoreDataRecipes](../../samplecode/iPhoneCoreDataRecipes/iPhoneCoreDataRecipes.md)** — Sample Code · 2017-07-20，iOS · CoreData，39 页
+- **[iPhoneIntegration](../../samplecode/iPhoneIntegration/iPhoneIntegration.md)** — Sample Code · 2008-06-25，Safari|iOS，5 页
+- **[iPhoneListPatterns](../../samplecode/iPhoneListPatterns/iPhoneListPatterns.md)** — Sample Code · 2007-10-08，Safari|iOS，9 页
+- **[iPhoneOrientation](../../samplecode/iPhoneOrientation/iPhoneOrientation.md)** — Sample Code · 2007-12-04，Safari|iOS，5 页
+- **[iPodNanos](../../samplecode/iPodNanos/iPodNanos.md)** — Sample Code · 2008-08-06，Safari|iOS|macOS，5 页
+- **[iSudoku](../../samplecode/iSudoku/iSudoku.md)** — Sample Code · 2007-10-29，Safari|iOS，10 页
+- **[KeyboardAccessory](../../samplecode/KeyboardAccessory/KeyboardAccessory.md)** — Sample Code · 2014-04-03，iOS，8 页
+- **[KeychainTouchID: Using Touch ID with Keychain and LocalAuthentication](../../samplecode/KeychainTouchID-%20Using%20Touch%20ID%20with%20Keychain%20and%20LocalAuthentication/KeychainTouchID-%20Using%20Touch%20ID%20with%20Keychain%20and%20LocalAuthentication.md)** — Sample Code · 2018-06-04，iOS · LocalAuthentication，15 页
+- **[KMLViewer](../../samplecode/KMLViewer/KMLViewer.md)** — Sample Code · 2015-09-24，iOS · MapKit，11 页
+- **[Large Image Downsizing](../../samplecode/Large%20Image%20Downsizing/Large%20Image%20Downsizing.md)** — Sample Code · 2014-03-27，watchOS|iOS，12 页
+- **[LaunchMe: Using a custom URL scheme to interact with your application](../../samplecode/LaunchMe-%20Using%20a%20custom%20URL%20scheme%20to%20interact%20with%20your%20application/LaunchMe-%20Using%20a%20custom%20URL%20scheme%20to%20interact%20with%20your%20application.md)** — Sample Code · 2017-02-11，iOS，11 页
+- **[LazyTableImages: Populating UITableView content asynchronously](../../samplecode/LazyTableImages-%20Populating%20UITableView%20content%20asynchronously.md)** — Sample Code · 2017-11-30，iOS · UIKit
+- **[ListAdder](../../samplecode/ListAdder/ListAdder.md)** — Sample Code · 2014-09-30，iOS · Foundation，14 页
+- **[LocateMe](../../samplecode/LocateMe/LocateMe.md)** — Sample Code · 2014-09-17，iOS · CoreLocation，17 页
+- **[Locations](../../samplecode/Locations/Locations.md)** — Sample Code · 2010-06-29，iOS · CoreData，10 页
+- **[Logging: Using the os_log APIs](../../samplecode/Logging-%20Using%20the%20oslog%20APIs/Logging-%20Using%20the%20oslog%20APIs.md)** — Sample Code · 2016-09-13，iOS，18 页
+- **[LookInside: Presentation Controllers, Adaptivity, and Custom Animator Objects](../../samplecode/LookInside-%20Presentation%20Controllers%2C%20Adaptivity%2C%20and%20Custom%20Animator%20Objects/LookInside-%20Presentation%20Controllers%2C%20Adaptivity%2C%20and%20Custom%20Animator%20Objects.md)** — Sample Code · 2014-09-17，iOS · UIKit，21 页
+- **[LoopHealth: Using health documents and Activity rings in HealthKit and HealthKitUI](../../samplecode/LoopHealth-%20Using%20health%20documents%20and%20Activity%20rings%20in%20HealthKit%20and%20HealthKit/LoopHealth-%20Using%20health%20documents%20and%20Activity%20rings%20in%20HealthKit%20and%20HealthKit.md)** — Sample Code · 2016-12-02，watchOS|iOS，10 页
+- **[LucidDreams: Protocol and Value Oriented Programming Sample Code](../../LucidDreams/LucidDreams-%20Protocol%20and%20Value%20Oriented%20Programming%20Sample%20Code/LucidDreams-%20Protocol%20and%20Value%20Oriented%20Programming%20Sample%20Code.md)** — Sample Code · 2016-10-27，iOS · UIKit，40 页
+- **[MailComposer](../../samplecode/MailComposer/MailComposer.md)** — Sample Code · 2010-06-22，iOS · MessageUI，8 页
+- **[Managed App Configuration](../../samplecode/Managed%20App%20Configuration/Managed%20App%20Configuration.md)** — Sample Code · 2013-10-01，iOS，8 页
+- **[Managing Contacts: Managing containers, groups, and contacts using the Contacts framework](../../samplecode/Managing%20Contacts-%20Managing%20containers%2C%20groups%2C%20and%20contacts%20using%20the%20Contacts/Managing%20Contacts-%20Managing%20containers%2C%20groups%2C%20and%20contacts%20using%20the%20Contacts.md)** — Sample Code · 2017-02-11，iOS · Contacts，36 页
+- **[ManagingContactsUI: Using ContactsUI View Controllers and Properties](../../samplecode/ManagingContactsUI-%20Using%20ContactsUI%20View%20Controllers%20and%20Properties/ManagingContactsUI-%20Using%20ContactsUI%20View%20Controllers%20and%20Properties.md)** — Sample Code · 2017-07-20，iOS · ContactsUI，22 页
+- **[MapCallouts: Using MapKit Annotations](../../samplecode/MapCallouts-%20Using%20MapKit%20Annotations/MapCallouts-%20Using%20MapKit%20Annotations.md)** — Sample Code · 2016-01-14，iOS|macOS · MapKit
+- **[MessageComposer](../../samplecode/MessageComposer/MessageComposer.md)** — Sample Code · 2013-07-18，iOS，8 页
+- **[Metal Image Filters: Using the image filters provided by the Metal Performance Shaders framework.](../../samplecode/Metal%20Image%20Filters-%20Using%20the%20image%20filters%20provided%20by%20the%20Metal%20Performance%20S/Metal%20Image%20Filters-%20Using%20the%20image%20filters%20provided%20by%20the%20Metal%20Performance%20S.md)** — Sample Code · 2016-09-13，iOS · Metal Performance Shaders，9 页
+- **[Metal N-Body Simulation](../../samplecode/Metal%20N-Body%20Simulation/Metal%20N-Body%20Simulation.md)** — Sample Code · 2015-12-10，iOS · Metal，48 页
+- **[MetalArrayTexture](../../samplecode/MetalArrayTexture/MetalArrayTexture.md)** — Sample Code · 2016-03-21，iOS|macOS，24 页
+- **[MetalGameOfLife: Data-parallel Programming with the MTLComputeCommandEncoder in Metal](../../samplecode/MetalGameOfLife-%20Data-parallel%20Programming%20with%20the%20MTLComputeCommandEncoder%20in/MetalGameOfLife-%20Data-parallel%20Programming%20with%20the%20MTLComputeCommandEncoder%20in.md)** — Sample Code · 2016-09-13，tvOS|iOS|macOS · Metal，13 页
+- **[MetalImageRecognition: Performing Image Recognition with Inception_v3 Network using Metal Performance Shaders Convolutional Neural Network routines](../../samplecode/MetalImageRecognition-%20Performing%20Image%20Recognition%20with%20Inceptionv3%20Network%20usi/MetalImageRecognition-%20Performing%20Image%20Recognition%20with%20Inceptionv3%20Network%20usi.md)** — Sample Code · 2016-11-12，iOS · Metal Performance Shaders，8 页
+- **[MetalInstancedHelix](../../samplecode/MetalInstancedHelix/MetalInstancedHelix.md)** — Sample Code · 2015-01-24，iOS · Metal，17 页
+- **[MetalShaderShowcase](../../samplecode/MetalShaderShowcase/MetalShaderShowcase.md)** — Sample Code · 2016-06-13，iOS · Metal，37 页
+- **[MetalVideoCapture](../../samplecode/MetalVideoCapture/MetalVideoCapture.md)** — Sample Code · 2015-10-29，iOS · Metal，21 页
+- **[Mixer iPodEQ AUGraph Test](../../samplecode/Mixer%20iPodEQ%20AUGraph%20Test/Mixer%20iPodEQ%20AUGraph%20Test.md)** — Sample Code · 2014-01-29，iOS · CoreAudio，20 页
+- **[MotionEffects](../../samplecode/MotionEffects/MotionEffects.md)** — Sample Code · 2014-05-14，iOS，14 页
+- **[MotionGraphs](../../samplecode/MotionGraphs/MotionGraphs.md)** — Sample Code · 2017-02-02，iOS · CoreMotion，14 页
+- **[MoveMe](../../samplecode/MoveMe/MoveMe.md)** — Sample Code · 2015-09-24，iOS，9 页
+- **[MoviePlayer](../../samplecode/MoviePlayer/MoviePlayer.md)** — Sample Code · 2014-04-03，iOS，18 页
+- **[MPRemoteCommandSample: Using MPRemoteCommandCenter respond to remote control events](../../samplecode/MPRemoteCommandSample-%20Using%20MPRemoteCommandCenter%20respond%20to%20remote%20control%20eve/MPRemoteCommandSample-%20Using%20MPRemoteCommandCenter%20respond%20to%20remote%20control%20eve.md)** — Sample Code · 2016-10-27，tvOS|iOS|macOS · AVFoundation，22 页
+- **[MPSCNNHelloWorld: Simple Digit Detection Convolution Neural Networks (CNN)](../../samplecode/MPSCNNHelloWorld-%20Simple%20Digit%20Detection%20Convolution%20Neural%20Networks%20%28CNN%29/MPSCNNHelloWorld-%20Simple%20Digit%20Detection%20Convolution%20Neural%20Networks%20%28CNN%29.md)** — Sample Code · 2016-11-17，iOS · Metal Performance Shaders，14 页
+- **[MPSMatrixMultiplication: Creating and Multiplying Matrices in Metal](../../samplecode/MPSMatrixMultiplication-%20Creating%20and%20Multiplying%20Matrices%20in%20Metal/MPSMatrixMultiplication-%20Creating%20and%20Multiplying%20Matrices%20in%20Metal.md)** — Sample Code · 2016-09-13，iOS · Metal Performance Shaders，6 页
+- **[MTAudioProcessingTap Audio Processor](../../samplecode/MTAudioProcessingTap%20Audio%20Processor/MTAudioProcessingTap%20Audio%20Processor.md)** — Sample Code · 2013-08-17，iOS · AVFoundation，18 页
+- **[MultipeerGroupChat](../../samplecode/MultipeerGroupChat/MultipeerGroupChat.md)** — Sample Code · 2013-08-27，iOS · MultipeerConnectivity，22 页
+- **[Multiple Selection with UITableView](../../samplecode/Multiple%20Selection%20with%20UITableView/Multiple%20Selection%20with%20UITableView.md)** — Sample Code · 2014-01-13，iOS · UIKit，8 页
+- **[MultipleDetailViews](../../samplecode/MultipleDetailViews/MultipleDetailViews.md)** — Sample Code · 2012-09-18，iOS，16 页
+- **[MusicCube](../../samplecode/MusicCube/MusicCube.md)** — Sample Code · 2015-06-30，iOS · GLKit，14 页
+- **[MusicMotion: Adding Motion Awareness to a Music App](../../samplecode/MusicMotion-%20Adding%20Motion%20Awareness%20to%20a%20Music%20App/MusicMotion-%20Adding%20Motion%20Awareness%20to%20a%20Music%20App.md)** — Sample Code · 2016-09-28，iOS · CoreMotion，11 页
+- **[MVCNetworking](../../samplecode/MVCNetworking/MVCNetworking.md)** — Sample Code · 2010-10-22，iOS，47 页
+- **[MyImagePicker](../../samplecode/MyImagePicker/MyImagePicker.md)** — Sample Code · 2013-09-23，iOS，20 页
+- **[MyLife: A simple app for starting iOS development](../../samplecode/MyLife-%20A%20simple%20app%20for%20starting%20iOS%20development/MyLife-%20A%20simple%20app%20for%20starting%20iOS%20development.md)** — Sample Code · 2016-09-13，iOS · UIKit，7 页
+- **[NavBar: Customizing UINavigationBar's appearance](../../samplecode/NavBar-%20Customizing%20UINavigationBar%27s%20appearance/NavBar-%20Customizing%20UINavigationBar%27s%20appearance.md)** — Sample Code · 2017-12-07，iOS，18 页
+- **[NEHotspotConfiguration Sample](../../samplecode/NEHotspotConfiguration%20Sample/NEHotspotConfiguration%20Sample.md)** — Sample Code · 2018-05-10，iOS · NetworkExtension，8 页
+- **[Packaged Document for iOS](../../samplecode/Packaged%20Document%20for%20iOS/Packaged%20Document%20for%20iOS.md)** — Sample Code · 2016-02-04，iOS · Foundation，19 页
+- **[PageControl: Using a Paginated UIScrollView](../../samplecode/PageControl-%20Using%20a%20Paginated%20UIScrollView/PageControl-%20Using%20a%20Paginated%20UIScrollView.md)** — Sample Code · 2017-09-21，iOS，6 页
+- **[pARk](../../samplecode/pARk/pARk.md)** — Sample Code · 2012-06-26，iOS，12 页
+- **[Pathfinder: GameplayKit Pathfinding Basics](../../samplecode/Pathfinder-%20GameplayKit%20Pathfinding%20Basics/Pathfinder-%20GameplayKit%20Pathfinding%20Basics.md)** — Sample Code · 2016-09-28，tvOS|iOS|macOS · GameplayKit，11 页
+- **[PhotoHandoff: Implementing NSUserActivity to hand off user actions](../../samplecode/PhotoHandoff-%20Implementing%20NSUserActivity%20to%20hand%20off%20user%20actions/PhotoHandoff-%20Implementing%20NSUserActivity%20to%20hand%20off%20user%20actions.md)** — Sample Code · 2014-09-17，iOS · UIKit，21 页
+- **[PhotoMap: Loading and displaying geotagged photos as MapKit annotations](../../samplecode/PhotoMap-%20Loading%20and%20displaying%20geotagged%20photos%20as%20MapKit%20annotations/PhotoMap-%20Loading%20and%20displaying%20geotagged%20photos%20as%20MapKit%20annotations.md)** — Sample Code · 2018-04-26，iOS · MapKit，19 页
+- **[PhotoPicker: Using UIImagePickerController to Select Pictures and Take Photos](../../samplecode/PhotoPicker-%20Using%20UIImagePickerController%20to%20Select%20Pictures%20and%20Take%20Photos/PhotoPicker-%20Using%20UIImagePickerController%20to%20Select%20Pictures%20and%20Take%20Photos.md)** — Sample Code · 2018-01-11，iOS，7 页
+- **[PhotoProgress: Using NSProgress](../../samplecode/PhotoProgress-%20Using%20NSProgress/PhotoProgress-%20Using%20NSProgress.md)** — Sample Code · 2016-10-04，iOS · Foundation，13 页
+- **[PhotosByLocation](../../samplecode/PhotosByLocation/PhotosByLocation.md)** — Sample Code · 2012-10-23，iOS，37 页
+- **[PhotoScroller](../../samplecode/PhotoScroller/PhotoScroller.md)** — Sample Code · 2012-11-06，iOS，12 页
+- **[PhotoTransitioning: Using UIViewPropertyAnimator to create a fully interative and interruptible custom view controller transition](../../samplecode/PhotoTransitioning-%20Using%20UIViewPropertyAnimator%20to%20create%20a%20fully%20interative%20an/PhotoTransitioning-%20Using%20UIViewPropertyAnimator%20to%20create%20a%20fully%20interative%20an.md)** — Sample Code · 2016-10-27，iOS · UIKit，12 页
+- **[PocketCoreImage](../../samplecode/PocketCoreImage/PocketCoreImage.md)** — Sample Code · 2011-10-12，iOS，11 页
+- **[Popover Controllers in iOS](../../samplecode/Popover%20Controllers%20in%20iOS/Popover%20Controllers%20in%20iOS.md)** — Sample Code · 2013-09-03，iOS，12 页
+- **[PosterCircle](../../samplecode/PosterCircle/PosterCircle.md)** — Sample Code · 2008-06-19，Safari|iOS，6 页
+- **[PotLoc: CoreLocation with iPhone and Apple Watch](../../samplecode/PotLoc-%20CoreLocation%20with%20iPhone%20and%20Apple%20Watch/PotLoc-%20CoreLocation%20with%20iPhone%20and%20Apple%20Watch.md)** — Sample Code · 2016-10-04，watchOS|iOS · CoreLocation，12 页
+- **[PrintPhoto: Using the Printing API with Photos](../../samplecode/PrintPhoto-%20Using%20the%20Printing%20API%20with%20Photos/PrintPhoto.md)** — Sample Code · 2015-10-22，iOS，7 页
+- **[Proactive Toolbox: Increasing usage of your app with proactive suggestions using NSUserActivity](../../samplecode/Proactive%20Toolbox-%20Increasing%20usage%20of%20your%20app%20with%20proactive%20suggestions%20using.md)** — Sample Code · 2016-10-04，iOS · Foundation
+- **[PVRTextureLoader](../../samplecode/PVRTextureLoader/PVRTextureLoader.md)** — Sample Code · 2014-03-25，iOS · OpenGLES，14 页
+- **[Quadrature: Computing the integral of functions using the Accelerate framework](../../samplecode/Quadrature-%20Computing%20the%20integral%20of%20functions%20using%20the%20Accelerate%20framework/Quadrature-%20Computing%20the%20integral%20of%20functions%20using%20the%20Accelerate%20framework.md)** — Sample Code · 2016-10-04，iOS|macOS · Accelerate，5 页
+- **[Quartz2D for iOS](../../samplecode/Quartz2D%20for%20iOS/Quartz2D%20for%20iOS.md)** — Sample Code · 2017-09-19，iOS，30 页
+- **[QuickContacts](../../samplecode/QuickContacts/QuickContacts.md)** — Sample Code · 2014-07-17，iOS · AddressBook，8 页
+- **[QuickSwitch: Supporting Quick Watch Switching with WatchConnectivity](../../samplecode/QuickSwitch-%20Supporting%20Quick%20Watch%20Switching%20with%20WatchConnectivity/QuickSwitch-%20Supporting%20Quick%20Watch%20Switching%20with%20WatchConnectivity.md)** — Sample Code · 2016-10-04，watchOS|iOS · WatchConnectivity，12 页
+- **[RawExpose: Using CIRAWFilter to Decode RAW Images](../../samplecode/RawExpose-%20Using%20CIRAWFilter%20to%20Decode%20RAW%20Images/RawExpose-%20Using%20CIRAWFilter%20to%20Decode%20RAW%20Images.md)** — Sample Code · 2016-10-04，iOS · CoreImage，10 页
+- **[Reachability](../../samplecode/Reachability/Reachability.md)** — Sample Code · 2016-05-05，iOS · SystemConfiguration，11 页
+- **[Real-time Video Processing Using AVPlayerItemVideoOutput](../../samplecode/Real-time%20Video%20Processing%20Using%20AVPlayerItemVideoOutput/Real-time%20Video%20Processing%20Using%20AVPlayerItemVideoOutput.md)** — Sample Code · 2015-10-01，iOS · AVFoundation，13 页
+- **[Reflection](../../samplecode/Reflection/Reflection.md)** — Sample Code · 2015-09-24，iOS，11 页
+- **[Regions: region monitoring, significant location changes, background location service, location service authorization](../../samplecode/Regions-%20region%20monitoring%2C%20significant%20location%20changes%2C%20background%20location%20se/Regions-%20region%20monitoring%2C%20significant%20location%20changes%2C%20background%20location%20se.md)** — Sample Code · 2016-02-11，iOS，13 页
+- **[RosyWriter](../../samplecode/RosyWriter/RosyWriter.md)** — Sample Code · 2016-09-13，iOS · AVFoundation，30 页
+- **[Sample Photo Editing Extension](../../samplecode/Sample%20Photo%20Editing%20Extension/Sample%20Photo%20Editing%20Extension.md)** — Sample Code · 2016-09-13，iOS|macOS · UIKit，9 页
+- **[Sample Print Page Renderer](../../samplecode/Sample%20Print%20Page%20Renderer/Sample%20Print%20Page%20Renderer.md)** — Sample Code · 2014-02-03，iOS，24 页
+- **[Sampler Unit Presets (LoadPresetDemo)](../../samplecode/Sampler%20Unit%20Presets%20%28LoadPresetDemo%29/Sampler%20Unit%20Presets%20%28LoadPresetDemo%29.md)** — Sample Code · 2011-10-12，iOS · AudioUnit，8 页
+- **[SceneKit State of the Union Demo](../../samplecode/SceneKit%20State%20of%20the%20Union%20Demo/SceneKit%20State%20of%20the%20Union%20Demo.md)** — Sample Code · 2017-03-09，iOS|macOS · SceneKit，14 页
+- **[SceneKit Vehicle Demo](../../samplecode/SceneKit%20Vehicle%20Demo/SceneKit%20Vehicle%20Demo.md)** — Sample Code · 2014-09-17，iOS · SceneKit，12 页
+- **[Scrolling](../../samplecode/Scrolling/Scrolling.md)** — Sample Code · 2010-06-23，iOS，8 页
+- **[ScrollViewSuite](../../samplecode/ScrollViewSuite/ScrollViewSuite.md)** — Sample Code · 2010-10-20，iOS，28 页
+- **[SegueCatalog: Customizing and Unwinding with View Controller Containment](../../samplecode/SegueCatalog-%20Customizing%20and%20Unwinding%20with%20View%20Controller%20Containment/SegueCatalog-%20Customizing%20and%20Unwinding%20with%20View%20Controller%20Containment.md)** — Sample Code · 2016-10-04，iOS · UIKit，8 页
+- **[SeismicXML: Using NSXMLParser to parse XML documents](../../samplecode/SeismicXML-%20Using%20NSXMLParser%20to%20parse%20XML%20documents/SeismicXML-%20Using%20NSXMLParser%20to%20parse%20XML%20documents.md)** — Sample Code · 2016-01-08，iOS，17 页
+- **[ShapeEdit: Building a Simple iCloud Document App](../../samplecode/ShapeEdit-%20Building%20a%20Simple%20iCloud%20Document%20App/ShapeEdit-%20Building%20a%20Simple%20iCloud%20Document%20App.md)** — Sample Code · 2016-09-13，iOS · UIKit，17 页
+- **[Simple Background Transfer](../../samplecode/Simple%20Background%20Transfer/Simple%20Background%20Transfer.md)** — Sample Code · 2013-10-01，iOS · UIKit，8 页
+- **[Simple Core Data Relationships](../../samplecode/Simple%20Core%20Data%20Relationships/Simple%20Core%20Data%20Relationships.md)** — Sample Code · 2013-06-12，iOS · CoreData，18 页
+- **[Simple Gesture Recognizers](../../samplecode/Simple%20Gesture%20Recognizers/Simple%20Gesture%20Recognizers.md)** — Sample Code · 2013-01-24，iOS，8 页
+- **[Simple UISearchBar with State Restoration](../../samplecode/Simple%20UISearchBar%20with%20State%20Restoration/Simple%20UISearchBar%20with%20State%20Restoration.md)** — Sample Code · 2013-05-23，iOS · UIKit，13 页
+- **[SimpleDrillDown](../../samplecode/SimpleDrillDown/SimpleDrillDown.md)** — Sample Code · 2012-02-28，iOS · UIKit，14 页
+- **[SimpleEKDemo](../../samplecode/SimpleEKDemo/SimpleEKDemo.md)** — Sample Code · 2015-09-16，iOS · EventKit，9 页
+- **[SimpleFTPSample](../../samplecode/SimpleFTPSample/SimpleFTPSample.md)** — Sample Code · 2013-04-12，iOS · Foundation，18 页
+- **[SimpleNetworkStreams](../../samplecode/SimpleNetworkStreams/SimpleNetworkStreams.md)** — Sample Code · 2012-05-09，iOS，22 页
+- **[SimpleStocks](../../samplecode/SimpleStocks/SimpleStocks.md)** — Sample Code · 2013-04-03，iOS，15 页
+- **[SimpleTextInput](../../samplecode/SimpleTextInput/SimpleTextInput.md)** — Sample Code · 2013-05-16，iOS，18 页
+- **[SimpleTunnel: Customized Networking Using the NetworkExtension Framework](../../samplecode/SimpleTunnel-%20Customized%20Networking%20Using%20the%20NetworkExtension%20Framework/SimpleTunnel-%20Customized%20Networking%20Using%20the%20NetworkExtension%20Framework.md)** — Sample Code · 2016-10-04，iOS|macOS · NetworkExtension，44 页
+- **[SimpleUndo](../../samplecode/SimpleUndo/SimpleUndo.md)** — Sample Code · 2013-05-03，iOS · Foundation，12 页
+- **[SimpleURLConnections](../../samplecode/SimpleURLConnections/SimpleURLConnections.md)** — Sample Code · 2012-04-11，iOS · Foundation，15 页
+- **[Space Tours iAd](../../samplecode/Space%20Tours%20iAd/Space%20Tours%20iAd.md)** — Sample Code · 2011-03-08，iAd Producer|iOS，27 页
+- **[SpeakToMe: Using Speech Recognition with AVAudioEngine](../../samplecode/SpeakToMe-%20Using%20Speech%20Recognition%20with%20AVAudioEngine.md)** — Sample Code · 2016-09-13，iOS · AVFoundation
+- **[SquareCam](../../samplecode/SquareCam/SquareCam.md)** — Sample Code · 2013-04-04，iOS · AVFoundation，8 页
+- **[State Restoration of Child View Controllers](../../samplecode/State%20Restoration%20of%20Child%20View%20Controllers/State%20Restoration%20of%20Child%20View%20Controllers.md)** — Sample Code · 2013-09-05，iOS，12 页
+- **[StickyCorners: Using UIFieldBehavior and other UIDynamicBehaviors](../../samplecode/StickyCorners-%20Using%20UIFieldBehavior%20and%20other%20UIDynamicBehaviors/StickyCorners-%20Using%20UIFieldBehavior%20and%20other%20UIDynamicBehaviors.md)** — Sample Code · 2016-09-14，iOS · UIKit，7 页
+- **[StitchedStreamPlayer](../../samplecode/StitchedStreamPlayer/StitchedStreamPlayer.md)** — Sample Code · 2016-07-14，iOS · AVFoundation，11 页
+- **[StopNGo for iOS](../../samplecode/StopNGo%20for%20iOS/StopNGo%20for%20iOS.md)** — Sample Code · 2011-10-12，iOS · AVFoundation，8 页
+- **[StreetScroller](../../samplecode/StreetScroller/StreetScroller.md)** — Sample Code · 2013-07-31，iOS，10 页
+- **[Table View Animations and Gestures](../../samplecode/Table%20View%20Animations%20and%20Gestures/Table%20View%20Animations%20and%20Gestures.md)** — Sample Code · 2013-11-14，iOS · UIKit，20 页
+- **[TableViewCell Accessory](../../samplecode/TableViewCell%20Accessory/TableViewCell%20Accessory.md)** — Sample Code · 2014-02-21，iOS · UIKit，16 页
+- **[Tabster: Various techniques in using UITabBarController](../../samplecode/Tabster-%20Various%20techniques%20in%20using%20UITabBarController/Tabster-%20Various%20techniques%20in%20using%20UITabBarController.md)** — Sample Code · 2018-02-15，iOS，27 页
+- **[TalkingToTheLiveView: Sending messages to a Swift Playground live view and saving data to its key-value store](../../samplecode/TalkingToTheLiveView-%20Sending%20messages%20to%20a%20Swift%20Playground%20live%20view%20and%20savin.md)** — Sample Code · 2016-09-13，iOS
+- **[TCPTransports: Using Various Apple APIs to Run a TCP Connection](../../samplecode/TCPTransports-%20Using%20Various%20Apple%20APIs%20to%20Run%20a%20TCP%20Connection/TCPTransports-%20Using%20Various%20Apple%20APIs%20to%20Run%20a%20TCP%20Connection.md)** — Sample Code · 2018-05-10，iOS · NetworkExtension，21 页
+- **[Teslameter](../../samplecode/Teslameter/Teslameter.md)** — Sample Code · 2014-08-25，iOS · CoreLocation，10 页
+- **[TheElements](../../samplecode/TheElements/TheElements.md)** — Sample Code · 2015-08-25，iOS，32 页
+- **[TicTacToe with HTML5 Offline Storage](../../samplecode/TicTacToe%20with%20HTML5%20Offline%20Storage/TicTacToe%20with%20HTML5%20Offline%20Storage.md)** — Sample Code · 2010-11-29，Safari|iOS|macOS，6 页
+- **[TopPaid](../../samplecode/TopPaid/TopPaid.md)** — Sample Code · 2011-01-13，iOS，35 页
+- **[TopSongs](../../samplecode/TopSongs/TopSongs.md)** — Sample Code · 2017-03-23，iOS · CoreData，19 页
+- **[TouchCanvas: Using UITouch efficiently and effectively](../../samplecode/TouchCanvas-%20Using%20UITouch%20efficiently%20and%20effectively.md)** — Sample Code · 2017-11-16，iOS · UIKit
+- **[TouchCells](../../samplecode/TouchCells/TouchCells.md)** — Sample Code · 2010-06-29，iOS · UIKit，2 页
+- **[TransWeb](../../samplecode/TransWeb/TransWeb.md)** — Sample Code · 2010-06-25，iOS，9 页
+- **[Tweeting](../../samplecode/Tweeting/Tweeting.md)** — Sample Code · 2011-10-12，iOS · Twitter，8 页
+- **[UIImagePicker Video Recorder](../../samplecode/UIImagePicker%20Video%20Recorder/UIImagePicker%20Video%20Recorder.md)** — Sample Code · 2013-08-13，iOS，8 页
+- **[UIKit Dynamics Catalog](../../samplecode/UIKit%20Dynamics%20Catalog/UIKit%20Dynamics%20Catalog.md)** — Sample Code · 2013-09-23，iOS，32 页
+- **[UIKit Printing with UIPrintInteractionController and UIViewPrintFormatter](../../samplecode/UIKit%20Printing%20with%20UIPrintInteractionController%20and%20UIViewPrintFormatter/UIKit%20Printing%20with%20UIPrintInteractionController%20and%20UIViewPrintFormatter.md)** — Sample Code · 2012-12-05，iOS，10 页
+- **[UITableView Fundamentals for iOS](../../samplecode/UITableView%20Fundamentals%20for%20iOS/UITableView%20Fundamentals%20for%20iOS.md)** — Sample Code · 2016-04-07，iOS · UIKit，46 页
+- **[UnicornChat: Extending Your Apps with SiriKit](../../samplecode/UnicornChat-%20Extending%20Your%20Apps%20with%20SiriKit/UnicornChat-%20Extending%20Your%20Apps%20with%20SiriKit.md)** — Sample Code · 2016-10-27，iOS · Intents，22 页
+- **[Unit Testing Apps and Frameworks](../../samplecode/Unit%20Testing%20Apps%20and%20Frameworks/Unit%20Testing%20Apps%20and%20Frameworks.md)** — Sample Code · 2018-04-26，iOS|macOS，15 页
+- **[UnwindSegue](../../samplecode/UnwindSegue/UnwindSegue.md)** — Sample Code · 2018-03-15，iOS，26 页
+- **[URLCache](../../samplecode/URLCache/URLCache.md)** — Sample Code · 2010-06-25，iOS，12 页
+- **[User Interface 3D Transforms](../../samplecode/User%20Interface%203D%20Transforms/User%20Interface%203D%20Transforms.md)** — Sample Code · 2017-04-27，iOS · UIKit，8 页
+- **[Using a Search Bar in a Toolbar](../../samplecode/Using%20a%20Search%20Bar%20in%20a%20Toolbar/Using%20a%20Search%20Bar%20in%20a%20Toolbar.md)** — Sample Code · 2013-09-03，iOS，10 页
+- **[Using AirPrint to Print a Banner](../../samplecode/Using%20AirPrint%20to%20Print%20a%20Banner/Using%20AirPrint%20to%20Print%20a%20Banner.md)** — Sample Code · 2014-03-12，iOS，8 页
+- **[Using an AUGraph with the Multi-Channel Mixer and Remote I/O Audio Unit](../../samplecode/Using%20an%20AUGraph%20with%20the%20Multi-Channel%20Mixer%20and%20Remote%20I-O%20Audio%20Unit/Using%20an%20AUGraph%20with%20the%20Multi-Channel%20Mixer%20and%20Remote%20I-O%20Audio%20Unit.md)** — Sample Code · 2015-06-19，iOS · CoreAudio，18 页
+- **[Using AVAudioEngine for Playback, Mixing and Recording (AVAEMixerSample)](../../samplecode/Using%20AVAudioEngine%20for%20Playback%2C%20Mixing%20and%20Recording%20%28AVAEMixerSample%29/Using%20AVAudioEngine%20for%20Playback%2C%20Mixing%20and%20Recording%20%28AVAEMixerSample%29.md)** — Sample Code · 2017-03-23，iOS · AVFoundation，31 页
+- **[Using AVFoundation APIs to record a movie with location metadata](../../samplecode/Using%20AVFoundation%20APIs%20to%20record%20a%20movie%20with%20location%20metadata/Using%20AVFoundation%20APIs%20to%20record%20a%20movie%20with%20location%20metadata.md)** — Sample Code · 2014-09-17，iOS · AVFoundation，10 页
+- **[Using External Displays](../../samplecode/Using%20External%20Displays/Using%20External%20Displays.md)** — Sample Code · 2013-09-16，iOS，10 页
+- **[Using the Watch Connectivity API](../../samplecode/Using%20the%20Watch%20Connectivity%20API.md)** — Sample Code · 2017-10-26，watchOS|iOS · WatchConnectivity
+- **[VideoSnake](../../samplecode/VideoSnake/VideoSnake.md)** — Sample Code · 2016-09-28，iOS · AVFoundation，25 页
+- **[ViewControllerPreviews: Using the UIViewController previewing APIs](../../samplecode/ViewControllerPreviews-%20Using%20the%20UIViewController%20previewing%20APIs/ViewControllerPreviews-%20Using%20the%20UIViewController%20previewing%20APIs.md)** — Sample Code · 2016-09-13，iOS · UIKit，14 页
+- **[ViewTransitions](../../samplecode/ViewTransitions/ViewTransitions.md)** — Sample Code · 2013-07-31，iOS，8 页
+- **[WatchKit Catalog: Using WatchKit Interface Elements](../../samplecode/WatchKit%20Catalog-%20Using%20WatchKit%20Interface%20Elements/WatchKit%20Catalog-%20Using%20WatchKit%20Interface%20Elements.md)** — Sample Code · 2016-09-13，watchOS|iOS · WatchKit，25 页
+- **[WhichWayIsUp](../../samplecode/WhichWayIsUp/WhichWayIsUp.md)** — Sample Code · 2010-06-24，iOS，8 页
+- **[WiTap](../../samplecode/WiTap/WiTap.md)** — Sample Code · 2014-08-05，iOS · Foundation，12 页
+- **[XMLPerformance](../../samplecode/XMLPerformance/XMLPerformance.md)** — Sample Code · 2015-09-16，iOS · Foundation，25 页
+- **[ZoomingPDFViewer](../../samplecode/ZoomingPDFViewer/ZoomingPDFViewer.md)** — Sample Code · 2017-04-27，iOS · CoreGraphics，27 页
+
+## macOS（1624 份）
+
+- **[2BufRecord&Play](../../samplecode/2BufRecord%26Play/2BufRecord%26Play.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[2BufRecordBufferCmd](../../samplecode/2BufRecordBufferCmd/2BufRecordBufferCmd.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[2BufRecordSndPlay](../../samplecode/2BufRecordSndPlay/2BufRecordSndPlay.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[3D Rotation Controller](../../samplecode/3D%20Rotation%20Controller/3D%20Rotation%20Controller.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[3DMF2PICT](../../samplecode/3DMF2PICT/3DMF2PICT.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[7Edit](../../samplecode/7Edit/7Edit.md)** — Sample Code · 2003-07-22，macOS，69 页
+- **[ABPresence](../../samplecode/ABPresence/ABPresence.md)** — Sample Code · 2006-08-04，macOS · InstantMessage，10 页
+- **[AbstractTree](../../samplecode/AbstractTree/AbstractTree.md)** — Sample Code · 2009-07-24，macOS · CoreData，9 页
+- **[AccessibilityUIExamples](../../samplecode/AccessibilityUIExamples/AccessibilityUIExamples.md)** — Sample Code · 2017-09-12，macOS · AppKit，76 页
+- **[ADB Key Spy](../../samplecode/ADB%20Key%20Spy/ADB%20Key%20Spy.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[addflashactions](../../samplecode/addflashactions/addflashactions.md)** — Sample Code · 2003-02-25，macOS · QuickTime，6 页
+- **[addflashactions.win](../../samplecode/addflashactions.win/addflashactions.win.md)** — Sample Code · 2003-02-25，macOS · QuickTime，6 页
+- **[AddFrameToMovie](../../samplecode/AddFrameToMovie/AddFrameToMovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[addhtactions](../../samplecode/addhtactions/addhtactions.md)** — Sample Code · 2003-02-25，macOS，4 页
+- **[addhtactions.win](../../samplecode/addhtactions.win/addhtactions.win.md)** — Sample Code · 2003-02-25，macOS，4 页
+- **[AddNibToNav](../../samplecode/AddNibToNav/AddNibToNav.md)** — Sample Code · 2004-01-22，macOS，5 页
+- **[AddressBookCarbon](../../samplecode/AddressBookCarbon/AddressBookCarbon.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[AddressBookCocoa](../../samplecode/AddressBookCocoa/AddressBookCocoa.md)** — Sample Code · 2013-08-13，macOS · AddressBook，6 页
+- **[AddTextMovie](../../samplecode/AddTextMovie/AddTextMovie.md)** — Sample Code · 2006-06-28，macOS，3 页
+- **[addvractions](../../samplecode/addvractions/addvractions.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[addvractions.win](../../samplecode/addvractions.win/addvractions.win.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ADSP Chat](../../samplecode/ADSP%20Chat/ADSP%20Chat.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[AECoercion](../../samplecode/AECoercion/AECoercion.md)** — Sample Code · 2003-07-22，macOS，6 页
+- **[AEGestalt](../../samplecode/AEGestalt/AEGestalt.md)** — Sample Code · 2003-01-14，macOS，25 页
+- **[AEObject-Edition Sample](../../samplecode/AEObject-Edition%20Sample/AEObject-Edition%20Sample.md)** — Sample Code · 2003-01-14，macOS，23 页
+- **[AESendandReceive](../../samplecode/AESendandReceive/AESendandReceive.md)** — Sample Code · 2003-01-14，macOS，22 页
+- **[AESendThreadSafe](../../samplecode/AESendThreadSafe/AESendThreadSafe.md)** — Sample Code · 2007-03-09，macOS · ApplicationServices，7 页
+- **[AGLSurfaceTexture](../../samplecode/AGLSurfaceTexture/AGLSurfaceTexture.md)** — Sample Code · 2003-07-07，macOS · OpenGL，8 页
+- **[AIFFWriter](../../samplecode/AIFFWriter/AIFFWriter.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[aiffwriter.win](../../samplecode/aiffwriter.win/aiffwriter.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，9 页
+- **[ALaw sdec scom](../../samplecode/ALaw%20sdec%20scom/ALaw%20sdec%20scom.md)** — Sample Code · 2003-03-14，macOS，7 页
+- **[AlbumToSlideshow](../../samplecode/AlbumToSlideshow/AlbumToSlideshow.md)** — Sample Code · 2008-05-15，macOS，7 页
+- **[AlignmentGuides: AppKit Haptic Feedback Filtering using NSAlignmentFeedbackFilter](../../samplecode/AlignmentGuides-%20AppKit%20Haptic%20Feedback%20Filtering%20using%20NSAlignmentFeedbackFilte/AlignmentGuides-%20AppKit%20Haptic%20Feedback%20Filtering%20using%20NSAlignmentFeedbackFilte.md)** — Sample Code · 2017-09-19，macOS · AppKit，14 页
+- **[AlwaysPreview](../../samplecode/AlwaysPreview/AlwaysPreview.md)** — Sample Code · 2003-01-14，macOS · QuickTime，10 页
+- **[Anima](../../samplecode/Anima/Anima.md)** — Sample Code · 2003-10-10，macOS，6 页
+- **[Animalify: Using Safari App Extensions to modify pages and communicate with native code](../../samplecode/Animalify-%20Using%20Safari%20App%20Extensions%20to%20modify%20pages%20and%20communicate%20with%20nati/Animalify-%20Using%20Safari%20App%20Extensions%20to%20modify%20pages%20and%20communicate%20with%20nati.md)** — Sample Code · 2016-11-03，macOS · SafariServices，7 页
+- **[AnimatedSlider](../../samplecode/AnimatedSlider/AnimatedSlider.md)** — Sample Code · 2011-07-18，macOS · AppKit，8 页
+- **[AnimatedTableView](../../samplecode/AnimatedTableView/AnimatedTableView.md)** — Sample Code · 2012-05-31，macOS · AppKit，28 页
+- **[AnimatingViews](../../samplecode/AnimatingViews/AnimatingViews.md)** — Sample Code · 2012-06-05，macOS · AppKit，5 页
+- **[Aperture Edit Plugin - Borders & Titles](../../samplecode/Aperture%20Edit%20Plugin%20-%20Borders%20%26%20Titles/Aperture%20Edit%20Plugin%20-%20Borders%20%26%20Titles.md)** — Sample Code · 2008-06-02，macOS，9 页
+- **[Aperture Image Resizer](../../samplecode/Aperture%20Image%20Resizer/Aperture%20Image%20Resizer.md)** — Sample Code · 2007-06-08，macOS，6 页
+- **[APFSCloning: Using clone APIs with APFS](../../samplecode/APFSCloning-%20Using%20clone%20APIs%20with%20APFS/APFSCloning-%20Using%20clone%20APIs%20with%20APFS.md)** — Sample Code · 2016-09-13，macOS，5 页
+- **[AppearanceSampleUpdated](../../samplecode/AppearanceSampleUpdated/AppearanceSampleUpdated.md)** — Sample Code · 2005-06-27，Xcode Developer Tools|macOS，813 页
+- **[AppleEvent Send and Receive](../../samplecode/AppleEvent%20Send%20and%20Receive/AppleEvent%20Send%20and%20Receive.md)** — Sample Code · 2003-07-22，macOS，11 页
+- **[AppleFWAudio Vendor Specific Override Driver](../../samplecode/AppleFWAudio%20Vendor%20Specific%20Override%20Driver/AppleFWAudio%20Vendor%20Specific%20Override%20Driver.md)** — Sample Code · 2007-06-01，macOS · Kernel，4 页
+- **[AppleJavaExtensions](../../samplecode/AppleJavaExtensions/AppleJavaExtensions.md)** — Sample Code · 2011-11-10，macOS，3 页
+- **[AppleScriptRunner](../../samplecode/AppleScriptRunner/AppleScriptRunner.md)** — Sample Code · 2006-07-31，macOS，3 页
+- **[AppleTalk Libraries](../../samplecode/AppleTalk%20Libraries/AppleTalk%20Libraries.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[AppList](../../samplecode/AppList/AppList.md)** — Sample Code · 2014-05-06，macOS · AppKit，6 页
+- **[Apply Firmware Password](../../samplecode/Apply%20Firmware%20Password/Apply%20Firmware%20Password.md)** — Sample Code · 2007-06-12，macOS，8 页
+- **[AppSandboxLoginItemXPCDemo](../../samplecode/AppSandboxLoginItemXPCDemo/AppSandboxLoginItemXPCDemo.md)** — Sample Code · 2012-06-09，macOS，12 页
+- **[ARPSample](../../samplecode/ARPSample/ARPSample.md)** — Sample Code · 2003-07-22，macOS，6 页
+- **[ASCIIMoviePlayerSample](../../samplecode/ASCIIMoviePlayerSample/ASCIIMoviePlayerSample.md)** — Sample Code · 2009-04-21，macOS · QuickTime，3 页
+- **[ASCIIMoviePlayerSample for Windows](../../samplecode/ASCIIMoviePlayerSample%20for%20Windows/ASCIIMoviePlayerSample%20for%20Windows.md)** — Sample Code · 2005-05-05，macOS，6 页
+- **[ASOCTaskList](../../samplecode/ASOCTaskList/ASOCTaskList.md)** — Sample Code · 2009-10-14，macOS，5 页
+- **[AsyncDriverSample](../../samplecode/AsyncDriverSample/AsyncDriverSample.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[AsyncPB](../../samplecode/AsyncPB/AsyncPB.md)** — Sample Code · 2003-10-27，macOS，7 页
+- **[ATADemo](../../samplecode/ATADemo/ATADemo.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[ATAErrorDetector](../../samplecode/ATAErrorDetector/ATAErrorDetector.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ATP Demo](../../samplecode/ATP%20Demo/ATP%20Demo.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[ATSUICurveAccessDemo](../../samplecode/ATSUICurveAccessDemo/ATSUICurveAccessDemo.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[ATSUIDirectAccessDemo](../../samplecode/ATSUIDirectAccessDemo/ATSUIDirectAccessDemo.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[AttachAScript](../../samplecode/AttachAScript/AttachAScript.md)** — Sample Code · 2011-07-14，macOS · Foundation，13 页
+- **[Audio CD Tool](../../samplecode/Audio%20CD%20Tool/Audio%20CD%20Tool.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Audio Codec Examples](../../samplecode/Audio%20Codec%20Examples/Audio%20Codec%20Examples.md)** — Sample Code · 2013-01-02，macOS · AudioUnit，45 页
+- **[Audio Toolbox Convert File](../../samplecode/Audio%20Toolbox%20Convert%20File/Audio%20Toolbox%20Convert%20File.md)** — Sample Code · 2016-09-29，watchOS|macOS · AudioToolbox，14 页
+- **[Audio Unit Effect Templates](../../samplecode/Audio%20Unit%20Effect%20Templates/Audio%20Unit%20Effect%20Templates.md)** — Sample Code · 2005-06-06，macOS，21 页
+- **[Audio Unit Examples (AudioUnit Effect, Generator, Instrument, MIDI Processor and Offline)](../../samplecode/Audio%20Unit%20Examples%20%28AudioUnit%20Effect%2C%20Generator%2C%20Instrument%2C%20MIDI%20Processor%20and/Audio%20Unit%20Examples%20%28AudioUnit%20Effect%2C%20Generator%2C%20Instrument%2C%20MIDI%20Processor%20and.md)** — Sample Code · 2016-02-19，macOS · AudioUnit，117 页
+- **[AudioBroadcaster](../../samplecode/AudioBroadcaster/AudioBroadcaster.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[AudioBurn](../../samplecode/AudioBurn/AudioBurn.md)** — Sample Code · 2012-06-05，macOS · CoreServices，10 页
+- **[audioburntest](../../samplecode/audioburntest/audioburntest.md)** — Sample Code · 2003-01-14，macOS · DiscRecording，9 页
+- **[AudioCDSample](../../samplecode/AudioCDSample/AudioCDSample.md)** — Sample Code · 2011-07-26，macOS，4 页
+- **[audiocodec](../../samplecode/audiocodec/audiocodec.md)** — Sample Code · 2003-01-14，macOS · QuickTime，8 页
+- **[audiocodec.win](../../samplecode/audiocodec.win/audiocodec.win.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[AudioCodecOld](../../samplecode/AudioCodecOld/AudioCodecOld.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[AudioCodecOld.win](../../samplecode/AudioCodecOld.win/AudioCodecOld.win.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[audioconverter](../../samplecode/audioconverter/audioconverter.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[audioconverter.win](../../samplecode/audioconverter.win/audioconverter.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[AudioDataOutputToAudioUnit](../../samplecode/AudioDataOutputToAudioUnit/AudioDataOutputToAudioUnit.md)** — Sample Code · 2010-10-26，macOS · AudioUnit，5 页
+- **[AudioDeviceNotify](../../samplecode/AudioDeviceNotify/AudioDeviceNotify.md)** — Sample Code · 2012-11-29，macOS · CoreAudio，23 页
+- **[AudioFileStreamExample](../../samplecode/AudioFileStreamExample/AudioFileStreamExample.md)** — Sample Code · 2013-06-29，macOS · AudioToolbox，5 页
+- **[AudioQueueTools](../../samplecode/AudioQueueTools/AudioQueueTools.md)** — Sample Code · 2012-07-17，macOS · AudioToolbox，21 页
+- **[AudioReflectorDriver](../../samplecode/AudioReflectorDriver/AudioReflectorDriver.md)** — Sample Code · 2009-04-21，macOS · IOKit，17 页
+- **[AudioUnitGeneratorExample](../../samplecode/AudioUnitGeneratorExample/AudioUnitGeneratorExample.md)** — Sample Code · 2012-10-08，macOS · AudioUnit，64 页
+- **[AudioUnitInstrumentExample](../../samplecode/AudioUnitInstrumentExample/AudioUnitInstrumentExample.md)** — Sample Code · 2012-10-10，macOS · AudioUnit，79 页
+- **[AuntieDialog](../../samplecode/AuntieDialog/AuntieDialog.md)** — Sample Code · 2003-01-30，macOS，10 页
+- **[Authenticator](../../samplecode/Authenticator/Authenticator.md)** — Sample Code · 2012-06-07，macOS · Foundation，4 页
+- **[AuthForAll](../../samplecode/AuthForAll/AuthForAll.md)** — Sample Code · 2005-10-26，macOS · Security，7 页
+- **[AUTimePitchTest](../../samplecode/AUTimePitchTest/AUTimePitchTest.md)** — Sample Code · 2012-08-21，macOS · AudioUnit，20 页
+- **[Auto-Reader Safari Extension](../../samplecode/Auto-Reader%20Safari%20Extension/Auto-Reader%20Safari%20Extension.md)** — Sample Code · 2011-06-05，Safari|macOS，4 页
+- **[AutomatorHandsOn](../../samplecode/AutomatorHandsOn/AutomatorHandsOn.md)** — Sample Code · 2007-06-12，macOS · Automator，15 页
+- **[AutoSample](../../samplecode/AutoSample/AutoSample.md)** — Sample Code · 2011-09-09，macOS · Foundation，6 页
+- **[AutoUpdater](../../samplecode/AutoUpdater/AutoUpdater.md)** — Sample Code · 2005-06-01，macOS · Foundation，5 页
+- **[AVBNetworkBrowser](../../samplecode/AVBNetworkBrowser/AVBNetworkBrowser.md)** — Sample Code · 2014-03-20，macOS · AudioVideoBridging，15 页
+- **[AVCaptureAudioDataOutput To AudioUnit OS X](../../samplecode/AVCaptureAudioDataOutput%20To%20AudioUnit%20OS%20X/AVCaptureAudioDataOutput%20To%20AudioUnit%20OS%20X.md)** — Sample Code · 2012-10-04，macOS · AVFoundation，18 页
+- **[AVCompositionDebugViewer](../../samplecode/AVCompositionDebugViewer/AVCompositionDebugViewer.md)** — Sample Code · 2013-06-07，macOS · AVFoundation，10 页
+- **[AVCustomEditOSX](../../samplecode/AVCustomEditOSX/AVCustomEditOSX.md)** — Sample Code · 2013-07-26，macOS · AVFoundation，18 页
+- **[AVFoundation - Timecode Reader/Writer (avtimecodereadwrite)](../../samplecode/AVFoundation%20-%20Timecode%20Reader-Writer%20%28avtimecodereadwrite%29/AVFoundation%20-%20Timecode%20Reader-Writer%20%28avtimecodereadwrite%29.md)** — Sample Code · 2014-01-22，macOS · AVFoundation，9 页
+- **[AVFoundationExporter: Exporting and Transcoding Movies](../../samplecode/AVFoundationExporter-%20Exporting%20and%20Transcoding%20Movies/AVFoundationExporter-%20Exporting%20and%20Transcoding%20Movies.md)** — Sample Code · 2016-09-13，macOS · AVFoundation，7 页
+- **[AVGreenScreenPlayer](../../samplecode/AVGreenScreenPlayer/AVGreenScreenPlayer.md)** — Sample Code · 2014-08-20，macOS · AVFoundation，12 页
+- **[AVKitPlayer for OSX](../../samplecode/AVKitPlayer%20for%20OSX/AVKitPlayer%20for%20OSX.md)** — Sample Code · 2013-06-07，macOS · AVKit，8 页
+- **[AVLegibleMeanings for OSX](../../samplecode/AVLegibleMeanings%20for%20OSX/AVLegibleMeanings%20for%20OSX.md)** — Sample Code · 2013-06-07，macOS · AVFoundation，6 页
+- **[AVLocationPlayer: Using AVFoundation Metadata Reading APIs](../../samplecode/AVLocationPlayer-%20Using%20AVFoundation%20Metadata%20Reading%20APIs/AVLocationPlayer-%20Using%20AVFoundation%20Metadata%20Reading%20APIs.md)** — Sample Code · 2015-04-30，macOS · AVFoundation，8 页
+- **[AVMediaSelectionDemo](../../samplecode/AVMediaSelectionDemo/AVMediaSelectionDemo.md)** — Sample Code · 2013-06-07，macOS · AVFoundation，10 页
+- **[avmetadataeditor](../../samplecode/avmetadataeditor/avmetadataeditor.md)** — Sample Code · 2014-10-16，macOS · AVFoundation，5 页
+- **[AVMovieEditor: Editing the QuickTime File Format](../../samplecode/AVMovieEditor-%20Editing%20the%20QuickTime%20File%20Format/AVMovieEditor-%20Editing%20the%20QuickTime%20File%20Format.md)** — Sample Code · 2015-09-16，macOS · AVFoundation，17 页
+- **[AVRecorder](../../samplecode/AVRecorder/AVRecorder.md)** — Sample Code · 2012-11-29，macOS · AVFoundation，10 页
+- **[AVScreenShack](../../samplecode/AVScreenShack/AVScreenShack.md)** — Sample Code · 2014-04-29，macOS · AVFoundation，10 页
+- **[AVSimpleEditorOSX](../../samplecode/AVSimpleEditorOSX/AVSimpleEditorOSX.md)** — Sample Code · 2012-05-18，macOS · AVFoundation，20 页
+- **[AVSimplePlayer](../../samplecode/AVSimplePlayer/AVSimplePlayer.md)** — Sample Code · 2014-07-09，macOS · AVFoundation，6 页
+- **[avvideowall](../../samplecode/avvideowall/avvideowall.md)** — Sample Code · 2011-08-25，macOS · AVFoundation，8 页
+- **[BackGround](../../samplecode/BackGround/BackGround.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[BackgroundExporter](../../samplecode/BackgroundExporter/BackgroundExporter.md)** — Sample Code · 2005-07-22，macOS · QuickTime，7 页
+- **[Basic Drawing and Event Handling](../../samplecode/Basic%20Drawing%20and%20Event%20Handling/Basic%20Drawing%20and%20Event%20Handling.md)** — Sample Code · 2012-07-12，macOS · AppKit，10 页
+- **[Basic Neural Network Subroutines: Using The Accelerate Framework's Convolution Filters](../../samplecode/Basic%20Neural%20Network%20Subroutines-%20Using%20The%20Accelerate%20Framework%27s%20Convolution%20F/Basic%20Neural%20Network%20Subroutines-%20Using%20The%20Accelerate%20Framework%27s%20Convolution%20F.md)** — Sample Code · 2016-09-13，macOS · Accelerate，5 页
+- **[BasicCocoaAnimations](../../samplecode/BasicCocoaAnimations/BasicCocoaAnimations.md)** — Sample Code · 2011-06-28，macOS · AppKit，10 页
+- **[BasicDataBrowser](../../samplecode/BasicDataBrowser/BasicDataBrowser.md)** — Sample Code · 2003-05-08，macOS，4 页
+- **[BasicDiskImage](../../samplecode/BasicDiskImage/BasicDiskImage.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[BasicInputMethod](../../samplecode/BasicInputMethod/BasicInputMethod.md)** — Sample Code · 2003-01-14，macOS · InputMethodKit，29 页
+- **[BasicPlugIn](../../samplecode/BasicPlugIn/BasicPlugIn.md)** — Sample Code · 2003-07-28，macOS · CoreFoundation，5 页
+- **[BetterAuthorizationSample](../../samplecode/BetterAuthorizationSample/BetterAuthorizationSample.md)** — Sample Code · 2007-11-27，macOS · Security，12 页
+- **[BezierPathLab](../../samplecode/BezierPathLab/BezierPathLab.md)** — Sample Code · 2012-06-05，macOS · AppKit，6 页
+- **[BindingsJoystick](../../samplecode/BindingsJoystick/BindingsJoystick.md)** — Sample Code · 2012-04-09，macOS · AppKit，10 页
+- **[Birthdays](../../samplecode/Birthdays/Birthdays.md)** — Sample Code · 2010-07-20，Safari|macOS，12 页
+- **[Bitblitz](../../samplecode/Bitblitz/Bitblitz.md)** — Sample Code · 2003-10-10，macOS，20 页
+- **[BlastApp](../../samplecode/BlastApp/BlastApp.md)** — Sample Code · 2012-06-07，macOS · AppKit，175 页
+- **[BlitNoVBL](../../samplecode/BlitNoVBL/BlitNoVBL.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，6 页
+- **[BlitVBL](../../samplecode/BlitVBL/BlitVBL.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，6 页
+- **[BlockAnimation](../../samplecode/BlockAnimation/BlockAnimation.md)** — Sample Code · 2006-08-01，macOS，4 页
+- **[BlockedEventQueue](../../samplecode/BlockedEventQueue/BlockedEventQueue.md)** — Sample Code · 2006-04-13，macOS，3 页
+- **[bMoviePalette](../../samplecode/bMoviePalette/bMoviePalette.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[BoingX](../../samplecode/BoingX/BoingX.md)** — Sample Code · 2007-11-06，macOS · OpenGL，10 页
+- **[BootstrapDump](../../samplecode/BootstrapDump/BootstrapDump.md)** — Sample Code · 2008-06-18，macOS，4 页
+- **[BouncingSprites](../../samplecode/BouncingSprites/BouncingSprites.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Box](../../samplecode/Box/Box.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[BoxMooV](../../samplecode/BoxMooV/BoxMooV.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[BoxTex](../../samplecode/BoxTex/BoxTex.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[BrideOfMungGrab](../../samplecode/BrideOfMungGrab/BrideOfMungGrab.md)** — Sample Code · 2005-08-12，macOS · QuickTime，3 页
+- **[BrightContrastEngine](../../samplecode/BrightContrastEngine/BrightContrastEngine.md)** — Sample Code · 2003-10-10，macOS，5 页
+- **[BSDLLCTest](../../samplecode/BSDLLCTest/BSDLLCTest.md)** — Sample Code · 2003-06-12，macOS · Kernel，22 页
+- **[BufCallback](../../samplecode/BufCallback/BufCallback.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[BufferedWindows](../../samplecode/BufferedWindows/BufferedWindows.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[bulkerase](../../samplecode/bulkerase/bulkerase.md)** — Sample Code · 2003-01-14，macOS · DiscRecording，9 页
+- **[BundleLoader](../../samplecode/BundleLoader/BundleLoader.md)** — Sample Code · 2012-10-18，macOS · Foundation，24 页
+- **[BurntTextSampleCode](../../samplecode/BurntTextSampleCode/BurntTextSampleCode.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[BusErrorTest](../../samplecode/BusErrorTest/BusErrorTest.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[ButtonMadness: Creating and Customizing AppKit Controls](../../samplecode/ButtonMadness-%20Creating%20and%20Customizing%20AppKit%20Controls/ButtonMadness-%20Creating%20and%20Customizing%20AppKit%20Controls.md)** — Sample Code · 2017-12-21，macOS · AppKit，11 页
+- **[Cache](../../samplecode/Cache/Cache.md)** — Sample Code · 2012-05-30，macOS · AppKit，11 页
+- **[Cache Flushing](../../samplecode/Cache%20Flushing/Cache%20Flushing.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[CALayerEssentials](../../samplecode/CALayerEssentials/CALayerEssentials.md)** — Sample Code · 2011-12-06，macOS · QuartzCore，12 页
+- **[Calc ControlRgn](../../samplecode/Calc%20ControlRgn/Calc%20ControlRgn.md)** — Sample Code · 2003-01-30，macOS，2 页
+- **[CalcCMaskCalcMask](../../samplecode/CalcCMaskCalcMask/CalcCMaskCalcMask.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[Calculator](../../samplecode/Calculator/Calculator.md)** — Sample Code · 2003-01-30，macOS，9 页
+- **[CalendarView](../../samplecode/CalendarView/CalendarView.md)** — Sample Code · 2003-01-30，macOS，7 页
+- **[CallJS](../../samplecode/CallJS/CallJS.md)** — Sample Code · 2011-07-05，macOS，7 页
+- **[CallMachOFramework](../../samplecode/CallMachOFramework/CallMachOFramework.md)** — Sample Code · 2003-07-17，macOS，11 页
+- **[CameraBrowser](../../samplecode/CameraBrowser/CameraBrowser.md)** — Sample Code · 2012-08-31，macOS · ImageCaptureCore，8 页
+- **[Canonicalized String Searching Using a Core Data Derived Property](../../samplecode/Canonicalized%20String%20Searching%20Using%20a%20Core%20Data%20Derived%20Property/Canonicalized%20String%20Searching%20Using%20a%20Core%20Data%20Derived%20Property.md)** — Sample Code · 2013-05-20，macOS · CoreData，10 页
+- **[CapabilitiesSample](../../samplecode/CapabilitiesSample/CapabilitiesSample.md)** — Sample Code · 2003-01-14，macOS · ImageCaptureCore，7 页
+- **[CAPlayThrough](../../samplecode/CAPlayThrough/CAPlayThrough.md)** — Sample Code · 2013-09-23，macOS · AudioUnit，21 页
+- **[CaptureAndCompressIPBMovie](../../samplecode/CaptureAndCompressIPBMovie/CaptureAndCompressIPBMovie.md)** — Sample Code · 2007-08-14，macOS · QuickTime，4 页
+- **[Carbon GLSnapshot](../../samplecode/Carbon%20GLSnapshot/Carbon%20GLSnapshot.md)** — Sample Code · 2003-07-07，macOS，19 页
+- **[Carbon Porting Tutorial](../../samplecode/Carbon%20Porting%20Tutorial/Carbon%20Porting%20Tutorial.md)** — Sample Code · 2006-07-25，macOS，147 页
+- **[CarbonCocoa_PictureCursor](../../samplecode/CarbonCocoaPictureCursor/CarbonCocoaPictureCursor.md)** — Sample Code · 2007-01-12，macOS，5 页
+- **[CarbonCocoaCoreImageTab](../../samplecode/CarbonCocoaCoreImageTab/CarbonCocoaCoreImageTab.md)** — Sample Code · 2006-07-25，macOS，7 页
+- **[CarbonCocoaTempConverter](../../samplecode/CarbonCocoaTempConverter/CarbonCocoaTempConverter.md)** — Sample Code · 2008-03-10，macOS · AppKit，6 页
+- **[CarbonCustomList](../../samplecode/CarbonCustomList/CarbonCustomList.md)** — Sample Code · 2003-01-30，macOS，6 页
+- **[CarbonInCocoa](../../samplecode/CarbonInCocoa/CarbonInCocoa.md)** — Sample Code · 2003-03-26，macOS，5 页
+- **[CarbonMDEF](../../samplecode/CarbonMDEF/CarbonMDEF.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[CarbonQTGraphicImport](../../samplecode/CarbonQTGraphicImport/CarbonQTGraphicImport.md)** — Sample Code · 2003-01-14，macOS · QuickTime，39 页
+- **[CarbonQuartzComposer_TV](../../samplecode/CarbonQuartzComposerTV/CarbonQuartzComposerTV.md)** — Sample Code · 2006-10-02，macOS，5 页
+- **[CarbonQuartzDrawingWPrinting](../../samplecode/CarbonQuartzDrawingWPrinting/CarbonQuartzDrawingWPrinting.md)** — Sample Code · 2003-01-14，macOS · Carbon，10 页
+- **[CarbonSketch](../../samplecode/CarbonSketch/CarbonSketch.md)** — Sample Code · 2005-03-23，macOS，21 页
+- **[CarbonSndPlayDB](../../samplecode/CarbonSndPlayDB/CarbonSndPlayDB.md)** — Sample Code · 2003-03-14，macOS，4 页
+- **[CarbonTransparentWindow](../../samplecode/CarbonTransparentWindow/CarbonTransparentWindow.md)** — Sample Code · 2005-08-10，macOS，7 页
+- **[CASoundLab2](../../samplecode/CASoundLab2/CASoundLab2.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[CD Tracker](../../samplecode/CD%20Tracker/CD%20Tracker.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[CD-ROM Detection](../../samplecode/CD-ROM%20Detection/CD-ROM%20Detection.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[CDROMDriveCheck](../../samplecode/CDROMDriveCheck/CDROMDriveCheck.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[CDROMSample](../../samplecode/CDROMSample/CDROMSample.md)** — Sample Code · 2011-05-05，macOS · IOKit，4 页
+- **[CDTool](../../samplecode/CDTool/CDTool.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[CFFTPSample](../../samplecode/CFFTPSample/CFFTPSample.md)** — Sample Code · 2006-10-13，macOS · CoreFoundation，4 页
+- **[CFHostSample](../../samplecode/CFHostSample/CFHostSample.md)** — Sample Code · 2017-03-14，macOS · CoreServices，12 页
+- **[CFLocalServer](../../samplecode/CFLocalServer/CFLocalServer.md)** — Sample Code · 2005-07-26，macOS · CoreFoundation，8 页
+- **[CFM_MachO_CFM](../../samplecode/CFMMachOCFM/CFMMachOCFM.md)** — Sample Code · 2003-07-17，macOS，6 页
+- **[CFNetworkHTTPDownload](../../samplecode/CFNetworkHTTPDownload/CFNetworkHTTPDownload.md)** — Sample Code · 2006-01-18，macOS · CoreFoundation，3 页
+- **[CFPreferences](../../samplecode/CFPreferences/CFPreferences.md)** — Sample Code · 2010-05-12，macOS · CoreFoundation，3 页
+- **[CFPrefsDumper](../../samplecode/CFPrefsDumper/CFPrefsDumper.md)** — Sample Code · 2003-01-14，macOS · CoreFoundation，4 页
+- **[CFPrefTopScores](../../samplecode/CFPrefTopScores/CFPrefTopScores.md)** — Sample Code · 2006-10-09，macOS · CoreFoundation，5 页
+- **[CFProxySupportTool](../../samplecode/CFProxySupportTool/CFProxySupportTool.md)** — Sample Code · 2007-10-29，macOS · CoreServices，4 页
+- **[CGDrawPicture](../../samplecode/CGDrawPicture/CGDrawPicture.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[CGGamma](../../samplecode/CGGamma/CGGamma.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，6 页
+- **[CGText](../../samplecode/CGText/CGText.md)** — Sample Code · 2003-09-30，macOS，9 页
+- **[ChangeTextStyleRec](../../samplecode/ChangeTextStyleRec/ChangeTextStyleRec.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[Cheap Studio](../../samplecode/Cheap%20Studio/Cheap%20Studio.md)** — Sample Code · 2003-03-14，macOS，8 页
+- **[CheckExecutableArchitecture](../../samplecode/CheckExecutableArchitecture/CheckExecutableArchitecture.md)** — Sample Code · 2006-02-07，macOS · CoreFoundation，4 页
+- **[ChromaKeyMovie](../../samplecode/ChromaKeyMovie/ChromaKeyMovie.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[CIAnnotation](../../samplecode/CIAnnotation/CIAnnotation.md)** — Sample Code · 2012-10-30，macOS · QuartzCore，33 页
+- **[CIBevelSample](../../samplecode/CIBevelSample/CIBevelSample.md)** — Sample Code · 2012-10-30，macOS · QuartzCore，8 页
+- **[CIChromaKeyFilter](../../samplecode/CIChromaKeyFilter/CIChromaKeyFilter.md)** — Sample Code · 2009-08-27，macOS · QuartzCore，3 页
+- **[CIColorTracking](../../samplecode/CIColorTracking/CIColorTracking.md)** — Sample Code · 2008-04-24，macOS · QuartzCore，12 页
+- **[CIDemoImageUnit](../../samplecode/CIDemoImageUnit/CIDemoImageUnit.md)** — Sample Code · 2010-01-21，macOS · QuartzCore，7 页
+- **[CIExposureSample](../../samplecode/CIExposureSample/CIExposureSample.md)** — Sample Code · 2012-10-30，macOS · QuartzCore，6 页
+- **[CIFilterGeneratorTest](../../samplecode/CIFilterGeneratorTest/CIFilterGeneratorTest.md)** — Sample Code · 2012-11-06，macOS · QuartzCore，8 页
+- **[CIHazeFilterSample](../../samplecode/CIHazeFilterSample/CIHazeFilterSample.md)** — Sample Code · 2012-10-31，macOS · QuartzCore，8 页
+- **[CIMicroPaint](../../samplecode/CIMicroPaint/CIMicroPaint.md)** — Sample Code · 2012-11-01，macOS · QuartzCore，8 页
+- **[CIRAWFilterSample](../../samplecode/CIRAWFilterSample/CIRAWFilterSample.md)** — Sample Code · 2009-09-08，macOS · QuartzCore，18 页
+- **[CircleView](../../samplecode/CircleView/CircleView.md)** — Sample Code · 2017-08-17，macOS · AppKit，7 页
+- **[CITransitionSelectorSample](../../samplecode/CITransitionSelectorSample/CITransitionSelectorSample.md)** — Sample Code · 2012-10-31，macOS · QuartzCore，7 页
+- **[CITransitionSelectorSample2](../../samplecode/CITransitionSelectorSample2/CITransitionSelectorSample2.md)** — Sample Code · 2011-08-23，macOS · AppKit，7 页
+- **[CIVideoDemoGL](../../samplecode/CIVideoDemoGL/CIVideoDemoGL.md)** — Sample Code · 2007-10-03，macOS · QuartzCore，9 页
+- **[ClickSound](../../samplecode/ClickSound/ClickSound.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[ClipboardViewer](../../samplecode/ClipboardViewer/ClipboardViewer.md)** — Sample Code · 2012-06-07，macOS，15 页
+- **[Clock Control](../../samplecode/Clock%20Control/Clock%20Control.md)** — Sample Code · 2003-02-25，macOS · AppKit，15 页
+- **[ClockControl](../../samplecode/ClockControl/ClockControl.md)** — Sample Code · 2009-05-26，macOS · AppKit，11 页
+- **[ClockControlPalette](../../samplecode/ClockControlPalette/ClockControlPalette.md)** — Sample Code · 2009-05-27，Xcode Developer Tools|macOS，6 页
+- **[ClockView](../../samplecode/ClockView/ClockView.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[Close Tab Safari Extension](../../samplecode/Close%20Tab%20Safari%20Extension/Close%20Tab%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari|macOS，4 页
+- **[ClosedCaptionImporter](../../samplecode/ClosedCaptionImporter/ClosedCaptionImporter.md)** — Sample Code · 2007-11-15，macOS · QuickTime，9 页
+- **[ClutWind](../../samplecode/ClutWind/ClutWind.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[Cocoa - SGDataProc](../../samplecode/Cocoa%20-%20SGDataProc/Cocoa%20-%20SGDataProc.md)** — Sample Code · 2003-01-14，macOS · QuickTime，7 页
+- **[Cocoa CG aliasing demo](../../samplecode/Cocoa%20CG%20aliasing%20demo/Cocoa%20CG%20aliasing%20demo.md)** — Sample Code · 2003-07-17，macOS · ApplicationServices，6 页
+- **[Cocoa CG arc demo](../../samplecode/Cocoa%20CG%20arc%20demo/Cocoa%20CG%20arc%20demo.md)** — Sample Code · 2010-08-31，macOS · ApplicationServices，6 页
+- **[Cocoa OpenGL](../../samplecode/Cocoa%20OpenGL/Cocoa%20OpenGL.md)** — Sample Code · 2007-10-22，macOS · OpenGL，15 页
+- **[Cocoa PDE with Carbon Printing](../../samplecode/Cocoa%20PDE%20with%20Carbon%20Printing/Cocoa%20PDE%20with%20Carbon%20Printing.md)** — Sample Code · 2007-07-27，macOS · AppKit，15 页
+- **[Cocoa Printing using Core Printing](../../samplecode/Cocoa%20Printing%20using%20Core%20Printing/Cocoa%20Printing%20using%20Core%20Printing.md)** — Sample Code · 2012-08-14，macOS · ApplicationServices，6 页
+- **[Cocoa Tips and Tricks](../../samplecode/Cocoa%20Tips%20and%20Tricks/Cocoa%20Tips%20and%20Tricks.md)** — Sample Code · 2013-08-17，macOS · AppKit，34 页
+- **[Cocoa_With_Carbon_or_CPP](../../samplecode/CocoaWithCarbonorCPP/CocoaWithCarbonorCPP.md)** — Sample Code · 2011-08-05，macOS，10 页
+- **[CocoaAUHost](../../samplecode/CocoaAUHost/CocoaAUHost.md)** — Sample Code · 2009-04-15，macOS · AudioUnit，9 页
+- **[CocoaCreateMovie](../../samplecode/CocoaCreateMovie/CocoaCreateMovie.md)** — Sample Code · 2003-01-14，macOS · QTKit，7 页
+- **[CocoaDragAndDrop](../../samplecode/CocoaDragAndDrop/CocoaDragAndDrop.md)** — Sample Code · 2011-07-26，macOS · Foundation，8 页
+- **[CocoaDVDPlayer](../../samplecode/CocoaDVDPlayer/CocoaDVDPlayer.md)** — Sample Code · 2012-08-17，macOS · DVDPlayback，14 页
+- **[CocoaEcho](../../samplecode/CocoaEcho/CocoaEcho.md)** — Sample Code · 2012-08-17，macOS · Foundation，11 页
+- **[CocoaHTTPServer](../../samplecode/CocoaHTTPServer/CocoaHTTPServer.md)** — Sample Code · 2005-06-01，macOS · Foundation，7 页
+- **[CocoaInCarbon](../../samplecode/CocoaInCarbon/CocoaInCarbon.md)** — Sample Code · 2005-10-04，macOS，8 页
+- **[CocoaPeoplePicker](../../samplecode/CocoaPeoplePicker/CocoaPeoplePicker.md)** — Sample Code · 2013-07-30，macOS · AddressBook，6 页
+- **[CocoaSlideCollection: Using NSCollectionView on OS X 10.11](../../samplecode/CocoaSlideCollection-%20Using%20NSCollectionView%20on%20OS%20X%2010.11/CocoaSlideCollection-%20Using%20NSCollectionView%20on%20OS%20X%2010.11.md)** — Sample Code · 2015-09-16，macOS · AppKit，41 页
+- **[CocoaSlides](../../samplecode/CocoaSlides/CocoaSlides.md)** — Sample Code · 2013-03-27，macOS · AppKit，30 页
+- **[CocoaSOAP](../../samplecode/CocoaSOAP/CocoaSOAP.md)** — Sample Code · 2005-06-06，macOS · Foundation，13 页
+- **[CocoaSpeechSynthesisExample](../../samplecode/CocoaSpeechSynthesisExample/CocoaSpeechSynthesisExample.md)** — Sample Code · 2015-07-10，macOS · ApplicationServices，9 页
+- **[CocoaVideoFrameToGWorld](../../samplecode/CocoaVideoFrameToGWorld/CocoaVideoFrameToGWorld.md)** — Sample Code · 2003-01-14，macOS · QuickTime，7 页
+- **[CocoaVideoFrameToNSImage](../../samplecode/CocoaVideoFrameToNSImage/CocoaVideoFrameToNSImage.md)** — Sample Code · 2003-01-14，macOS · QuickTime，7 页
+- **[CollectPictColors](../../samplecode/CollectPictColors/CollectPictColors.md)** — Sample Code · 2003-10-10，macOS，5 页
+- **[Color Finder Safari Extension](../../samplecode/Color%20Finder%20Safari%20Extension/Color%20Finder%20Safari%20Extension.md)** — Sample Code · 2011-06-07，Safari|macOS，11 页
+- **[Color Marquee](../../samplecode/Color%20Marquee/Color%20Marquee.md)** — Sample Code · 2003-10-10，macOS，3 页
+- **[Color Picker](../../samplecode/Color%20Picker/Color%20Picker.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Color Sampler](../../samplecode/Color%20Sampler/Color%20Sampler.md)** — Sample Code · 2003-01-14，macOS · AppKit，7 页
+- **[ColorBars](../../samplecode/ColorBars/ColorBars.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ColorCDEF](../../samplecode/ColorCDEF/ColorCDEF.md)** — Sample Code · 2003-08-28，macOS，2 页
+- **[ColoredCheckBox](../../samplecode/ColoredCheckBox/ColoredCheckBox.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[ColorizePict](../../samplecode/ColorizePict/ColorizePict.md)** — Sample Code · 2003-10-10，macOS，5 页
+- **[ColorMatching](../../samplecode/ColorMatching/ColorMatching.md)** — Sample Code · 2003-12-18，macOS · ApplicationServices，24 页
+- **[ColorPopUpMenus](../../samplecode/ColorPopUpMenus/ColorPopUpMenus.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[ColorSwatchView](../../samplecode/ColorSwatchView/ColorSwatchView.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[ColorSyncDevices](../../samplecode/ColorSyncDevices/ColorSyncDevices.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，3 页
+- **[ColorSyncDevices-Cocoa](../../samplecode/ColorSyncDevices-Cocoa/ColorSyncDevices-Cocoa.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，19 页
+- **[ColorTextureSample](../../samplecode/ColorTextureSample/ColorTextureSample.md)** — Sample Code · 2003-01-14，macOS，22 页
+- **[ComboBoxPrefs](../../samplecode/ComboBoxPrefs/ComboBoxPrefs.md)** — Sample Code · 2005-10-04，macOS，3 页
+- **[CommonSample](../../samplecode/CommonSample/CommonSample.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[ComplexBrowser: Using NSBrowser class](../../samplecode/ComplexBrowser-%20Using%20NSBrowser%20class/ComplexBrowser-%20Using%20NSBrowser%20class.md)** — Sample Code · 2016-04-07，macOS，13 页
+- **[CompositedEffects](../../samplecode/CompositedEffects/CompositedEffects.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[CompositedEffects.win](../../samplecode/CompositedEffects.win/CompositedEffects.win.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[CompositeLab](../../samplecode/CompositeLab/CompositeLab.md)** — Sample Code · 2011-04-25，macOS · AppKit，6 页
+- **[Compress Picture FKEY](../../samplecode/Compress%20Picture%20FKEY/Compress%20Picture%20FKEY.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Compressed PICT Info](../../samplecode/Compressed%20PICT%20Info/Compressed%20PICT%20Info.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[CompressedPixmapSample](../../samplecode/CompressedPixmapSample/CompressedPixmapSample.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[CompressionSample: Compressing Blocks and Streams of Data](../../samplecode/CompressionSample-%20Compressing%20Blocks%20and%20Streams%20of%20Data/CompressionSample-%20Compressing%20Blocks%20and%20Streams%20of%20Data.md)** — Sample Code · 2015-09-16，macOS，13 页
+- **[CompressMovies](../../samplecode/CompressMovies/CompressMovies.md)** — Sample Code · 2003-01-14，macOS · QuickTime，9 页
+- **[ConcertDemo](../../samplecode/ConcertDemo/ConcertDemo.md)** — Sample Code · 2010-02-10，Safari|macOS，6 页
+- **[Concordia](../../samplecode/Concordia/Concordia.md)** — Sample Code · 2003-08-28，macOS，13 页
+- **[ConditionalRendering](../../samplecode/ConditionalRendering/ConditionalRendering.md)** — Sample Code · 2014-06-17，macOS · OpenGL，15 页
+- **[Configure Preferences Reminder Safari Extension](../../samplecode/Configure%20Preferences%20Reminder%20Safari%20Extension/Configure%20Preferences%20Reminder%20Safari%20Extension.md)** — Sample Code · 2011-06-07，Safari|macOS，7 页
+- **[Contacts Safari Extension](../../samplecode/Contacts%20Safari%20Extension/Contacts%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari|macOS，5 页
+- **[ContentBurn](../../samplecode/ContentBurn/ContentBurn.md)** — Sample Code · 2012-04-11，macOS · CoreServices，5 页
+- **[ControlBackground](../../samplecode/ControlBackground/ControlBackground.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[ControlStripSample](../../samplecode/ControlStripSample/ControlStripSample.md)** — Sample Code · 2003-08-28，macOS，2 页
+- **[Converting an Image with Black Point Compensation](../../samplecode/Converting%20an%20Image%20with%20Black%20Point%20Compensation/Converting%20an%20Image%20with%20Black%20Point%20Compensation.md)** — Sample Code · 2013-07-30，macOS · Accelerate，4 页
+- **[ConvertMovieSndTrack](../../samplecode/ConvertMovieSndTrack/ConvertMovieSndTrack.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[ConvertToMovieJr](../../samplecode/ConvertToMovieJr/ConvertToMovieJr.md)** — Sample Code · 2003-01-14，macOS · QuickTime，6 页
+- **[CopyBits vs. CopyMask](../../samplecode/CopyBits%20vs.%20CopyMask/CopyBits%20vs.%20CopyMask.md)** — Sample Code · 2003-07-22，macOS，7 页
+- **[CopyBitsSpeedPalette](../../samplecode/CopyBitsSpeedPalette/CopyBitsSpeedPalette.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[CopyDeepMask](../../samplecode/CopyDeepMask/CopyDeepMask.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[CopyMask](../../samplecode/CopyMask/CopyMask.md)** — Sample Code · 2003-08-20，macOS，7 页
+- **[Core Animation QuickTime Layer](../../samplecode/Core%20Animation%20QuickTime%20Layer/Core%20Animation%20QuickTime%20Layer.md)** — Sample Code · 2007-09-26，macOS · QuartzCore，8 页
+- **[Core Audio User-Space Driver Examples](../../samplecode/Core%20Audio%20User-Space%20Driver%20Examples/Core%20Audio%20User-Space%20Driver%20Examples.md)** — Sample Code · 2013-10-04，macOS · CoreAudio，3 页
+- **[Core Data HTML Store](../../samplecode/Core%20Data%20HTML%20Store/Core%20Data%20HTML%20Store.md)** — Sample Code · 2007-06-01，macOS · CoreData，16 页
+- **[Core Data Utility](../../samplecode/Core%20Data%20Utility/Core%20Data%20Utility.md)** — Sample Code · 2012-04-04，macOS · CoreData，6 页
+- **[CoreAnimationKioskStyleMenu](../../samplecode/CoreAnimationKioskStyleMenu/CoreAnimationKioskStyleMenu.md)** — Sample Code · 2011-06-01，macOS · QuartzCore，13 页
+- **[CoreAnimationText](../../samplecode/CoreAnimationText/CoreAnimationText.md)** — Sample Code · 2010-04-08，macOS · QuartzCore，10 页
+- **[CoreBluetooth: Health Thermometer](../../samplecode/CoreBluetooth-%20Health%20Thermometer/CoreBluetooth-%20Health%20Thermometer.md)** — Sample Code · 2018-03-08，macOS · IOBluetooth，7 页
+- **[CoreBluetooth: Heart Rate Monitor](../../samplecode/CoreBluetooth-%20Heart%20Rate%20Monitor/CoreBluetooth-%20Heart%20Rate%20Monitor.md)** — Sample Code · 2018-03-08，macOS · IOBluetooth，7 页
+- **[CoreImageGLTextureFBO](../../samplecode/CoreImageGLTextureFBO/CoreImageGLTextureFBO.md)** — Sample Code · 2008-07-30，macOS · OpenGL，6 页
+- **[CoreMediaIO](../../samplecode/CoreMediaIO/CoreMediaIO.md)** — Sample Code · 2012-10-23，macOS，143 页
+- **[CoreRecipes](../../samplecode/CoreRecipes/CoreRecipes.md)** — Sample Code · 2005-06-01，macOS · AppKit，75 页
+- **[CoreSample](../../samplecode/CoreSample/CoreSample.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[CoreTextArc](../../samplecode/CoreTextArc/CoreTextArc.md)** — Sample Code · 2007-06-04，macOS · ApplicationServices，9 页
+- **[CoreTextRTF](../../samplecode/CoreTextRTF/CoreTextRTF.md)** — Sample Code · 2011-08-22，macOS，8 页
+- **[CoreTextTest](../../samplecode/CoreTextTest/CoreTextTest.md)** — Sample Code · 2006-12-19，macOS · ApplicationServices，3 页
+- **[CPlusTESample](../../samplecode/CPlusTESample/CPlusTESample.md)** — Sample Code · 2003-01-14，macOS，21 页
+- **[CPUGestalt](../../samplecode/CPUGestalt/CPUGestalt.md)** — Sample Code · 2003-10-27，macOS，4 页
+- **[CreateDirWCustIcon](../../samplecode/CreateDirWCustIcon/CreateDirWCustIcon.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[CreateMovie](../../samplecode/CreateMovie/CreateMovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，46 页
+- **[CreateMovie - C#](../../samplecode/CreateMovie%20-%20C/CreateMovie%20-%20C.md)** — Sample Code · 2005-11-09，macOS，3 页
+- **[CreateMovie - VB6](../../samplecode/CreateMovie%20-%20VB6/CreateMovie%20-%20VB6.md)** — Sample Code · 2005-11-09，macOS · QuickTime，3 页
+- **[CreateMovieFromReferences](../../samplecode/CreateMovieFromReferences/CreateMovieFromReferences.md)** — Sample Code · 2007-08-31，macOS · QuickTime，3 页
+- **[CreateMovieJava](../../samplecode/CreateMovieJava/CreateMovieJava.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[CreatePictFile](../../samplecode/CreatePictFile/CreatePictFile.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[Creator Changer](../../samplecode/Creator%20Changer/Creator%20Changer.md)** — Sample Code · 2003-07-22，macOS，14 页
+- **[Cropped Image](../../samplecode/Cropped%20Image/Cropped%20Image.md)** — Sample Code · 2003-01-14，macOS · AppKit，17 页
+- **[CrossEvents](../../samplecode/CrossEvents/CrossEvents.md)** — Sample Code · 2007-05-31，macOS，6 页
+- **[Crossing To-Many Relationships with Cocoa Bindings](../../samplecode/Crossing%20To-Many%20Relationships%20with%20Cocoa%20Bindings/Crossing%20To-Many%20Relationships%20with%20Cocoa%20Bindings.md)** — Sample Code · 2013-04-04，macOS · AppKit，6 页
+- **[CryptNoMore](../../samplecode/CryptNoMore/CryptNoMore.md)** — Sample Code · 2008-03-17，macOS · DirectoryService，4 页
+- **[CryptoSample](../../samplecode/CryptoSample/CryptoSample.md)** — Sample Code · 2003-02-06，macOS · Security，11 页
+- **[CSS Showcase: UI Elements and Navigation](../../samplecode/CSS%20Showcase-%20UI%20Elements%20and%20Navigation/CSS%20Showcase-%20UI%20Elements%20and%20Navigation.md)** — Sample Code · 2010-06-22，Safari|macOS，8 页
+- **[CTMClip](../../samplecode/CTMClip/CTMClip.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[CTMDemo](../../samplecode/CTMDemo/CTMDemo.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[CubePuzzle](../../samplecode/CubePuzzle/CubePuzzle.md)** — Sample Code · 2003-04-21，macOS · OpenGL，14 页
+- **[CullGroupSample](../../samplecode/CullGroupSample/CullGroupSample.md)** — Sample Code · 2003-01-14，macOS，22 页
+- **[CurvesDemo](../../samplecode/CurvesDemo/CurvesDemo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[CurvesDemo.win](../../samplecode/CurvesDemo.win/CurvesDemo.win.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Custom_HIView_Tutorial](../../samplecode/CustomHIViewTutorial/CustomHIViewTutorial.md)** — Sample Code · 2005-06-01，macOS，40 页
+- **[CustomAtomicStoreSubclass](../../samplecode/CustomAtomicStoreSubclass/CustomAtomicStoreSubclass.md)** — Sample Code · 2007-06-08，macOS · CoreData，6 页
+- **[CustomGet unresolved alias](../../samplecode/CustomGet%20unresolved%20alias/CustomGet%20unresolved%20alias.md)** — Sample Code · 2003-03-13，macOS，3 页
+- **[CustomIcon](../../samplecode/CustomIcon/CustomIcon.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Customize Reader Safari Extension](../../samplecode/Customize%20Reader%20Safari%20Extension/Customize%20Reader%20Safari%20Extension.md)** — Sample Code · 2012-06-11，Safari|macOS，9 页
+- **[Customizing NSSavePanel](../../samplecode/Customizing%20NSSavePanel/Customizing%20NSSavePanel.md)** — Sample Code · 2014-03-14，macOS · AppKit，6 页
+- **[CustomMedia](../../samplecode/CustomMedia/CustomMedia.md)** — Sample Code · 2006-05-11，macOS，6 页
+- **[CustomMediaIcons](../../samplecode/CustomMediaIcons/CustomMediaIcons.md)** — Sample Code · 2007-07-10，macOS · Kernel，2 页
+- **[CustomMenus](../../samplecode/CustomMenus/CustomMenus.md)** — Sample Code · 2012-10-04，macOS · AppKit，20 页
+- **[CustomPicComments](../../samplecode/CustomPicComments/CustomPicComments.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[CustomPutAppend](../../samplecode/CustomPutAppend/CustomPutAppend.md)** — Sample Code · 2003-03-13，macOS，5 页
+- **[CustomPutSuffix](../../samplecode/CustomPutSuffix/CustomPutSuffix.md)** — Sample Code · 2003-03-13，macOS，5 页
+- **[CustomWindow](../../samplecode/CustomWindow/CustomWindow.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[CustomWindowWidget](../../samplecode/CustomWindowWidget/CustomWindowWidget.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[CWCocoaComponent](../../samplecode/CWCocoaComponent/CWCocoaComponent.md)** — Sample Code · 2006-04-12，macOS，8 页
+- **[CxxNewDelete](../../samplecode/CxxNewDelete/CxxNewDelete.md)** — Sample Code · 2011-05-13，macOS，4 页
+- **[Dashed Lines](../../samplecode/Dashed%20Lines/Dashed%20Lines.md)** — Sample Code · 2003-03-26，macOS，3 页
+- **[Dashed-capped Lines](../../samplecode/Dashed-capped%20Lines/Dashed-capped%20Lines.md)** — Sample Code · 2003-03-26，macOS，3 页
+- **[DataBurn](../../samplecode/DataBurn/DataBurn.md)** — Sample Code · 2012-05-09，macOS · CoreServices，6 页
+- **[databurntest](../../samplecode/databurntest/databurntest.md)** — Sample Code · 2003-01-14，macOS · DiscRecording，9 页
+- **[DateDiff](../../samplecode/DateDiff/DateDiff.md)** — Sample Code · 2012-06-07，macOS · Foundation，7 页
+- **[DatePicker: Using NSDatePicker control to display date and time](../../samplecode/DatePicker-%20Using%20NSDatePicker%20control%20to%20display%20date%20and%20time/DatePicker-%20Using%20NSDatePicker%20control%20to%20display%20date%20and%20time.md)** — Sample Code · 2018-05-03，macOS · AppKit，9 页
+- **[DecompressionAndScaling](../../samplecode/DecompressionAndScaling/DecompressionAndScaling.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[Deep Image Display with OpenGL](../../samplecode/Deep%20Image%20Display%20with%20OpenGL/Deep%20Image%20Display%20with%20OpenGL.md)** — Sample Code · 2015-12-10，macOS · OpenGL，29 页
+- **[Deep Image Display with Quartz](../../samplecode/Deep%20Image%20Display%20with%20Quartz/Deep%20Image%20Display%20with%20Quartz.md)** — Sample Code · 2012-04-04，macOS · Quartz，8 页
+- **[DeepScreen Picker](../../samplecode/DeepScreen%20Picker/DeepScreen%20Picker.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[DefaultOutputUnit](../../samplecode/DefaultOutputUnit/DefaultOutputUnit.md)** — Sample Code · 2009-04-15，macOS · AudioUnit，6 页
+- **[DeferredShading](../../samplecode/DeferredShading/DeferredShading.md)** — Sample Code · 2015-07-08，macOS，22 页
+- **[DefProcs](../../samplecode/DefProcs/DefProcs.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[DelegateOnlyComponent](../../samplecode/DelegateOnlyComponent/DelegateOnlyComponent.md)** — Sample Code · 2005-10-18，macOS · QuickTime，12 页
+- **[DelegateOnlyComponentOld](../../samplecode/DelegateOnlyComponentOld/DelegateOnlyComponentOld.md)** — Sample Code · 2003-10-27，macOS，4 页
+- **[deleteEmptyDir](../../samplecode/deleteEmptyDir/deleteEmptyDir.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[DemoAssistant](../../samplecode/DemoAssistant/DemoAssistant.md)** — Sample Code · 2012-05-30，macOS · Foundation，6 页
+- **[DemoMonkey](../../samplecode/DemoMonkey/DemoMonkey.md)** — Sample Code · 2010-08-31，macOS · AppKit，16 页
+- **[Denoise](../../samplecode/Denoise/Denoise.md)** — Sample Code · 2011-06-27，macOS，106 页
+- **[Departments and Employees](../../samplecode/Departments%20and%20Employees/Departments%20and%20Employees.md)** — Sample Code · 2007-05-31，macOS · CoreData，14 页
+- **[Desktop Sprites](../../samplecode/Desktop%20Sprites/Desktop%20Sprites.md)** — Sample Code · 2003-01-14，macOS，25 页
+- **[DesktopImage](../../samplecode/DesktopImage/DesktopImage.md)** — Sample Code · 2012-08-29，macOS · AppKit，8 页
+- **[DesktopSprites](../../samplecode/DesktopSprites/DesktopSprites.md)** — Sample Code · 2003-02-25，macOS，9 页
+- **[DesktopSprites.win](../../samplecode/DesktopSprites.win/DesktopSprites.win.md)** — Sample Code · 2003-02-25，macOS，13 页
+- **[DetachedController](../../samplecode/DetachedController/DetachedController.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Detecting OpenGL Renderer Changes](../../samplecode/Detecting%20OpenGL%20Renderer%20Changes/Detecting%20OpenGL%20Renderer%20Changes.md)** — Sample Code · 2014-06-25，macOS · OpenGL，18 页
+- **[Deva_Example](../../samplecode/DevaExample/DevaExample.md)** — Sample Code · 2009-08-21，macOS · IOKit，10 页
+- **[DeviceListener](../../samplecode/DeviceListener/DeviceListener.md)** — Sample Code · 2003-07-17，macOS · CoreServices，6 页
+- **[DeviceSelectCL](../../samplecode/DeviceSelectCL/DeviceSelectCL.md)** — Sample Code · 2014-04-18，macOS · OpenCL，7 页
+- **[DeviceSelectCLGL](../../samplecode/DeviceSelectCLGL/DeviceSelectCLGL.md)** — Sample Code · 2014-04-18，macOS · OpenCL，11 页
+- **[DiagnosticAUs](../../samplecode/DiagnosticAUs/DiagnosticAUs.md)** — Sample Code · 2009-04-15，macOS · AudioUnit，16 页
+- **[DialogsToHIViews](../../samplecode/DialogsToHIViews/DialogsToHIViews.md)** — Sample Code · 2005-08-24，macOS，3 页
+- **[Dicey](../../samplecode/Dicey/Dicey.md)** — Sample Code · 2009-06-29，macOS · AppKit，17 页
+- **[Dictionary](../../samplecode/Dictionary/Dictionary.md)** — Sample Code · 2011-04-27，macOS · CoreFoundation，4 页
+- **[DictionaryController](../../samplecode/DictionaryController/DictionaryController.md)** — Sample Code · 2011-01-13，macOS · AppKit，12 页
+- **[DigitizerShell](../../samplecode/DigitizerShell/DigitizerShell.md)** — Sample Code · 2003-01-14，macOS · QuickTime，12 页
+- **[Dimmer2Effect](../../samplecode/Dimmer2Effect/Dimmer2Effect.md)** — Sample Code · 2003-02-25，macOS，23 页
+- **[Dimmer2Effect.win](../../samplecode/Dimmer2Effect.win/Dimmer2Effect.win.md)** — Sample Code · 2003-02-25，macOS，14 页
+- **[Direct Pixel Access](../../samplecode/Direct%20Pixel%20Access/Direct%20Pixel%20Access.md)** — Sample Code · 2003-10-10，macOS，6 页
+- **[DirectSetEntries](../../samplecode/DirectSetEntries/DirectSetEntries.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[DisableEject](../../samplecode/DisableEject/DisableEject.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Disk Icons](../../samplecode/Disk%20Icons/Disk%20Icons.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Dispatch_Compared](../../samplecode/DispatchCompared/DispatchCompared.md)** — Sample Code · 2009-09-08，macOS · System，11 页
+- **[Dispatch_Samples](../../samplecode/DispatchSamples/DispatchSamples.md)** — Sample Code · 2009-05-29，macOS，10 页
+- **[DispatchFractal](../../samplecode/DispatchFractal/DispatchFractal.md)** — Sample Code · 2009-06-05，macOS，12 页
+- **[DispatchLife](../../samplecode/DispatchLife/DispatchLife.md)** — Sample Code · 2009-05-29，macOS，7 页
+- **[DispatchWebServer](../../samplecode/DispatchWebServer/DispatchWebServer.md)** — Sample Code · 2009-05-29，macOS，4 页
+- **[DisplayURL](../../samplecode/DisplayURL/DisplayURL.md)** — Sample Code · 2011-04-18，macOS · CoreFoundation，3 页
+- **[DisplayVideo](../../samplecode/DisplayVideo/DisplayVideo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[dist_fft](../../samplecode/distfft/distfft.md)** — Sample Code · 2004-08-23，macOS · Accelerate，21 页
+- **[DMFkey Source](../../samplecode/DMFkey%20Source/DMFkey%20Source.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[DNSSDObjects](../../samplecode/DNSSDObjects/DNSSDObjects.md)** — Sample Code · 2012-01-06，macOS · Foundation，10 页
+- **[DNSServiceMetaQuery](../../samplecode/DNSServiceMetaQuery/DNSServiceMetaQuery.md)** — Sample Code · 2005-06-01，macOS · CoreServices，3 页
+- **[DockBrowser](../../samplecode/DockBrowser/DockBrowser.md)** — Sample Code · 2011-08-18，macOS · CoreServices，6 页
+- **[DotView](../../samplecode/DotView/DotView.md)** — Sample Code · 2017-08-17，macOS · AppKit，8 页
+- **[DotViewUndo](../../samplecode/DotViewUndo/DotViewUndo.md)** — Sample Code · 2017-08-17，macOS · AppKit，8 页
+- **[Double Buffer](../../samplecode/Double%20Buffer/Double%20Buffer.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[DragAndDrop Shell](../../samplecode/DragAndDrop%20Shell/DragAndDrop%20Shell.md)** — Sample Code · 2003-01-14，macOS · QuickTime，8 页
+- **[DraggingSprites](../../samplecode/DraggingSprites/DraggingSprites.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[DragItemAround](../../samplecode/DragItemAround/DragItemAround.md)** — Sample Code · 2011-06-01，macOS · AppKit，9 页
+- **[DragNDropOutlineView: implementing drag and drop in an NSOutlineView](../../samplecode/DragNDropOutlineView-%20implementing%20drag%20and%20drop%20in%20an%20NSOutlineView/DragNDropOutlineView-%20implementing%20drag%20and%20drop%20in%20an%20NSOutlineView.md)** — Sample Code · 2015-02-09，macOS · AppKit，10 页
+- **[DragWindow INIT](../../samplecode/DragWindow%20INIT/DragWindow%20INIT.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[DragWindowGrid](../../samplecode/DragWindowGrid/DragWindowGrid.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[Draw Pixels](../../samplecode/Draw%20Pixels/Draw%20Pixels.md)** — Sample Code · 2003-07-16，macOS · OpenGL，11 页
+- **[DrawableBroadcaster](../../samplecode/DrawableBroadcaster/DrawableBroadcaster.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[DrawerMadness](../../samplecode/DrawerMadness/DrawerMadness.md)** — Sample Code · 2012-06-05，macOS · AppKit，6 页
+- **[Drawing Along a Path Using Core Text with Cocoa](../../samplecode/Drawing%20Along%20a%20Path%20Using%20Core%20Text%20with%20Cocoa/Drawing%20Along%20a%20Path%20Using%20Core%20Text%20with%20Cocoa.md)** — Sample Code · 2013-09-05，macOS · AppKit，8 页
+- **[DrawSprocketTestOld](../../samplecode/DrawSprocketTestOld/DrawSprocketTestOld.md)** — Sample Code · 2003-10-14，macOS，3 页
+- **[DrawTextCodec](../../samplecode/DrawTextCodec/DrawTextCodec.md)** — Sample Code · 2003-01-14，macOS · QuickTime，7 页
+- **[DRDataBurnCarbonUI](../../samplecode/DRDataBurnCarbonUI/DRDataBurnCarbonUI.md)** — Sample Code · 2004-04-09，macOS，3 页
+- **[DREraseCarbonUI](../../samplecode/DREraseCarbonUI/DREraseCarbonUI.md)** — Sample Code · 2004-04-09，macOS，3 页
+- **[DriverGestalt Demo](../../samplecode/DriverGestalt%20Demo/DriverGestalt%20Demo.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[DriverGestaltExplorer](../../samplecode/DriverGestaltExplorer/DriverGestaltExplorer.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[DroneZoneOld](../../samplecode/DroneZoneOld/DroneZoneOld.md)** — Sample Code · 2003-10-14，macOS，30 页
+- **[DropDraw](../../samplecode/DropDraw/DropDraw.md)** — Sample Code · 2005-08-01，macOS · QuickTime，4 页
+- **[DropPrint USB](../../samplecode/DropPrint%20USB/DropPrint%20USB.md)** — Sample Code · 2003-03-26，macOS，20 页
+- **[Droste image processing effect](../../samplecode/Droste%20image%20processing%20effect/Droste%20image%20processing%20effect.md)** — Sample Code · 2010-06-07，macOS · QuartzCore，3 页
+- **[DSp Context SwitchOld](../../samplecode/DSp%20Context%20SwitchOld/DSp%20Context%20SwitchOld.md)** — Sample Code · 2003-10-14，macOS，3 页
+- **[DTS.Utilities](../../samplecode/DTS.Utilities/DTS.Utilities.md)** — Sample Code · 2003-03-17，macOS，6 页
+- **[DTSCarbonShell](../../samplecode/DTSCarbonShell/DTSCarbonShell.md)** — Sample Code · 2007-09-20，macOS，4 页
+- **[DTSCPlusLibrary](../../samplecode/DTSCPlusLibrary/DTSCPlusLibrary.md)** — Sample Code · 2003-01-14，macOS，71 页
+- **[DukeMovie](../../samplecode/DukeMovie/DukeMovie.md)** — Sample Code · 2006-05-11，macOS，6 页
+- **[DumpARPCache](../../samplecode/DumpARPCache/DumpARPCache.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[DumpNetworkSetup](../../samplecode/DumpNetworkSetup/DumpNetworkSetup.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[Duplicate Finder Items](../../samplecode/Duplicate%20Finder%20Items/Duplicate%20Finder%20Items.md)** — Sample Code · 2005-06-06，macOS，13 页
+- **[Easy Video Grabber](../../samplecode/Easy%20Video%20Grabber/Easy%20Video%20Grabber.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[EasyPlayRecord](../../samplecode/EasyPlayRecord/EasyPlayRecord.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[EgretWakeup](../../samplecode/EgretWakeup/EgretWakeup.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ElectricImageComponent](../../samplecode/ElectricImageComponent/ElectricImageComponent.md)** — Sample Code · 2010-05-17，macOS · QuickTime，43 页
+- **[ElectricImageComponent.win](../../samplecode/ElectricImageComponent.win/ElectricImageComponent.win.md)** — Sample Code · 2004-01-23，macOS，42 页
+- **[Embedding Instruments](../../samplecode/Embedding%20Instruments/Embedding%20Instruments.md)** — Sample Code · 2003-01-14，macOS，28 页
+- **[EmbededAppleScripts](../../samplecode/EmbededAppleScripts/EmbededAppleScripts.md)** — Sample Code · 2003-09-04，macOS · CoreServices，13 页
+- **[Empty Engine](../../samplecode/Empty%20Engine/Empty%20Engine.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[EmptyFS](../../samplecode/EmptyFS/EmptyFS.md)** — Sample Code · 2006-11-09，macOS，6 页
+- **[EnableSoundThrough](../../samplecode/EnableSoundThrough/EnableSoundThrough.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[ENET sample](../../samplecode/ENET%20sample/ENET%20sample.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[enetlognke](../../samplecode/enetlognke/enetlognke.md)** — Sample Code · 2014-05-12，macOS · Kernel，4 页
+- **[EnhancedAudioBurn](../../samplecode/EnhancedAudioBurn/EnhancedAudioBurn.md)** — Sample Code · 2005-07-06，macOS · CoreServices，13 页
+- **[EnhancedDataBurn](../../samplecode/EnhancedDataBurn/EnhancedDataBurn.md)** — Sample Code · 2003-01-14，macOS · CoreServices，29 页
+- **[Eraser](../../samplecode/Eraser/Eraser.md)** — Sample Code · 2003-01-14，macOS · CoreServices，5 页
+- **[EvenBetterAuthorizationSample](../../samplecode/EvenBetterAuthorizationSample/EvenBetterAuthorizationSample.md)** — Sample Code · 2013-09-17，macOS · Security，17 页
+- **[EventMonitorTest](../../samplecode/EventMonitorTest/EventMonitorTest.md)** — Sample Code · 2005-11-09，macOS · Carbon，5 页
+- **[Example Video Panel](../../samplecode/Example%20Video%20Panel/Example%20Video%20Panel.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[ExampleCodec](../../samplecode/ExampleCodec/ExampleCodec.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[ExampleIPBCodec](../../samplecode/ExampleIPBCodec/ExampleIPBCodec.md)** — Sample Code · 2005-08-16，macOS · QuickTime，18 页
+- **[ExampleVideoPanel](../../samplecode/ExampleVideoPanel/ExampleVideoPanel.md)** — Sample Code · 2003-01-14，macOS · QuickTime，20 页
+- **[ExampleVideoPanel.win](../../samplecode/ExampleVideoPanel.win/ExampleVideoPanel.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，29 页
+- **[Exhibition: An Adaptive OS X App](../../samplecode/Exhibition-%20An%20Adaptive%20OS%20X%20App/Exhibition-%20An%20Adaptive%20OS%20X%20App.md)** — Sample Code · 2016-09-28，macOS · AppKit，15 页
+- **[ExtractMovieAudioToAIFF](../../samplecode/ExtractMovieAudioToAIFF/ExtractMovieAudioToAIFF.md)** — Sample Code · 2006-03-31，macOS · QuickTime，7 页
+- **[Fader](../../samplecode/Fader/Fader.md)** — Sample Code · 2007-09-12，Safari|macOS，11 页
+- **[FancyAbout](../../samplecode/FancyAbout/FancyAbout.md)** — Sample Code · 2012-06-07，macOS · AppKit，10 页
+- **[FastDitherUsingQT](../../samplecode/FastDitherUsingQT/FastDitherUsingQT.md)** — Sample Code · 2003-02-25，macOS · QuickTime，3 页
+- **[Favorites Safari Extension](../../samplecode/Favorites%20Safari%20Extension/Favorites%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari|macOS，5 页
+- **[FBOBunnies](../../samplecode/FBOBunnies/FBOBunnies.md)** — Sample Code · 2006-09-18，macOS · OpenGL，6 页
+- **[ficycle](../../samplecode/ficycle/ficycle.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[Fiendishthngs](../../samplecode/Fiendishthngs/Fiendishthngs.md)** — Sample Code · 2007-09-13，macOS · QuickTime，15 页
+- **[File Wrappers with Core Data Documents](../../samplecode/File%20Wrappers%20with%20Core%20Data%20Documents/File%20Wrappers%20with%20Core%20Data%20Documents.md)** — Sample Code · 2009-04-29，macOS · CoreData，8 页
+- **[FileNotification](../../samplecode/FileNotification/FileNotification.md)** — Sample Code · 2005-10-27，macOS · CoreServices，5 页
+- **[FileSharingOn](../../samplecode/FileSharingOn/FileSharingOn.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[filesystem_examples](../../samplecode/filesystemexamples/filesystemexamples.md)** — Sample Code · 2006-01-10，macOS · CoreServices，7 页
+- **[FilterDemo](../../samplecode/FilterDemo/FilterDemo.md)** — Sample Code · 2012-08-28，macOS · AudioUnit，65 页
+- **[Final Cut Pro X Workflows](../../samplecode/Final%20Cut%20Pro%20X%20Workflows/Final%20Cut%20Pro%20X%20Workflows.md)** — Sample Code · 2013-12-19，macOS，28 页
+- **[FinalCutPro_AppleEvents](../../samplecode/FinalCutProAppleEvents/FinalCutProAppleEvents.md)** — Sample Code · 2009-07-24，macOS，15 页
+- **[FinalCutServerIntegrationSample](../../samplecode/FinalCutServerIntegrationSample/FinalCutServerIntegrationSample.md)** — Sample Code · 2008-06-07，macOS，2 页
+- **[FinderDragPro](../../samplecode/FinderDragPro/FinderDragPro.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[FinderLaunch](../../samplecode/FinderLaunch/FinderLaunch.md)** — Sample Code · 2003-10-14，macOS · ApplicationServices，15 页
+- **[FindPrinter](../../samplecode/FindPrinter/FindPrinter.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[FindSerialPorts](../../samplecode/FindSerialPorts/FindSerialPorts.md)** — Sample Code · 2003-01-15，macOS，3 页
+- **[Fire](../../samplecode/Fire/Fire.md)** — Sample Code · 2011-04-15，macOS · QuartzCore，8 页
+- **[Fireworks](../../samplecode/Fireworks/Fireworks.md)** — Sample Code · 2016-03-10，macOS · QuartzCore，9 页
+- **[FloatingWindow](../../samplecode/FloatingWindow/FloatingWindow.md)** — Sample Code · 2003-10-24，macOS，3 页
+- **[Floppy II](../../samplecode/Floppy%20II/Floppy%20II.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[FogStyleSample](../../samplecode/FogStyleSample/FogStyleSample.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[ForceTouchCatalog: Using the Force Touch Trackpad API](../../samplecode/ForceTouchCatalog-%20Using%20the%20Force%20Touch%20Trackpad%20API/ForceTouchCatalog-%20Using%20the%20Force%20Touch%20Trackpad%20API.md)** — Sample Code · 2016-09-28，macOS · AppKit，14 页
+- **[FormatAsDOS](../../samplecode/FormatAsDOS/FormatAsDOS.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Fortune](../../samplecode/Fortune/Fortune.md)** — Sample Code · 2005-06-01，macOS，11 页
+- **[ForwardInvocation](../../samplecode/ForwardInvocation/ForwardInvocation.md)** — Sample Code · 2009-05-26，macOS · Foundation，4 页
+- **[Fractal Performance](../../samplecode/Fractal%20Performance/Fractal%20Performance.md)** — Sample Code · 2006-04-17，macOS，2 页
+- **[Fragment Tool](../../samplecode/Fragment%20Tool/Fragment%20Tool.md)** — Sample Code · 2003-01-30，macOS，21 页
+- **[FrameStepper](../../samplecode/FrameStepper/FrameStepper.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[FrameStepper.win](../../samplecode/FrameStepper.win/FrameStepper.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[FreqForEverChange](../../samplecode/FreqForEverChange/FreqForEverChange.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[From A View to A Movie](../../samplecode/From%20A%20View%20to%20A%20Movie/From%20A%20View%20to%20A%20Movie.md)** — Sample Code · 2013-01-02，macOS，175 页
+- **[From A View to A Picture](../../samplecode/From%20A%20View%20to%20A%20Picture/From%20A%20View%20to%20A%20Picture.md)** — Sample Code · 2013-01-02，macOS · ApplicationServices，119 页
+- **[FSCopyObject](../../samplecode/FSCopyObject/FSCopyObject.md)** — Sample Code · 2004-03-19，macOS · CoreServices，10 页
+- **[FSCreateFileAndOpenForkUnicode](../../samplecode/FSCreateFileAndOpenForkUnicode/FSCreateFileAndOpenForkUnicode.md)** — Sample Code · 2005-06-01，macOS · CoreServices，3 页
+- **[FSFileOperation](../../samplecode/FSFileOperation/FSFileOperation.md)** — Sample Code · 2005-06-06，macOS · CoreServices，3 页
+- **[FSMegaInfo](../../samplecode/FSMegaInfo/FSMegaInfo.md)** — Sample Code · 2008-02-25，macOS，20 页
+- **[FSRemoveInheritedACEs](../../samplecode/FSRemoveInheritedACEs/FSRemoveInheritedACEs.md)** — Sample Code · 2005-06-01，macOS · CoreServices，3 页
+- **[FSReplaceObject](../../samplecode/FSReplaceObject/FSReplaceObject.md)** — Sample Code · 2007-02-14，macOS · CoreServices，4 页
+- **[FullScreen](../../samplecode/FullScreen/FullScreen.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[FullScreenWindow](../../samplecode/FullScreenWindow/FullScreenWindow.md)** — Sample Code · 2012-08-29，macOS · AppKit，10 页
+- **[FunHouse](../../samplecode/FunHouse/FunHouse.md)** — Sample Code · 2014-05-07，macOS · QuartzCore，24 页
+- **[FunkyOverlayWindow](../../samplecode/FunkyOverlayWindow/FunkyOverlayWindow.md)** — Sample Code · 2011-07-26，macOS · AppKit，12 页
+- **[FunWithFileDialogs](../../samplecode/FunWithFileDialogs/FunWithFileDialogs.md)** — Sample Code · 2003-04-30，macOS，6 页
+- **[Gamma Filter for FxPlug and AE](../../samplecode/Gamma%20Filter%20for%20FxPlug%20and%20AE/Gamma%20Filter%20for%20FxPlug%20and%20AE.md)** — Sample Code · 2008-06-02，macOS，9 页
+- **[GDevVideo](../../samplecode/GDevVideo/GDevVideo.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[GeekGameBoard](../../samplecode/GeekGameBoard/GeekGameBoard.md)** — Sample Code · 2007-12-19，macOS · QuartzCore，43 页
+- **[Geometry Samples](../../samplecode/Geometry%20Samples/Geometry%20Samples.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[GeometryTest](../../samplecode/GeometryTest/GeometryTest.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[Get Ethernet Address](../../samplecode/Get%20Ethernet%20Address/Get%20Ethernet%20Address.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Get LAP Connection](../../samplecode/Get%20LAP%20Connection/Get%20LAP%20Connection.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Get Tool Config](../../samplecode/Get%20Tool%20Config/Get%20Tool%20Config.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[GetADevType](../../samplecode/GetADevType/GetADevType.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[GetDragHiliteColor](../../samplecode/GetDragHiliteColor/GetDragHiliteColor.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[GetEnetAddrDirect.ppc](../../samplecode/GetEnetAddrDirect.ppc/GetEnetAddrDirect.ppc.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[GetHWEthernetAddr](../../samplecode/GetHWEthernetAddr/GetHWEthernetAddr.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[GetPPPStatus](../../samplecode/GetPPPStatus/GetPPPStatus.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[GetPrimaryMACAddress](../../samplecode/GetPrimaryMACAddress/GetPrimaryMACAddress.md)** — Sample Code · 2011-05-06，macOS · IOKit，4 页
+- **[GetSetOptions](../../samplecode/GetSetOptions/GetSetOptions.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[GetVInfo](../../samplecode/GetVInfo/GetVInfo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[GetZoneList](../../samplecode/GetZoneList/GetZoneList.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[GiMeDaPalette with Sound](../../samplecode/GiMeDaPalette%20with%20Sound/GiMeDaPalette%20with%20Sound.md)** — Sample Code · 2003-03-12，macOS，3 页
+- **[GL3 Text](../../samplecode/GL3%20Text/GL3%20Text.md)** — Sample Code · 2014-10-16，macOS · OpenGL，31 页
+- **[GLCarbon1ContextPbuffer](../../samplecode/GLCarbon1ContextPbuffer/GLCarbon1ContextPbuffer.md)** — Sample Code · 2004-03-26，macOS，28 页
+- **[GLCarbonSharedPbuffer](../../samplecode/GLCarbonSharedPbuffer/GLCarbonSharedPbuffer.md)** — Sample Code · 2004-03-26，macOS，28 页
+- **[GLChildWindowDemo](../../samplecode/GLChildWindowDemo/GLChildWindowDemo.md)** — Sample Code · 2003-04-21，macOS · OpenGL，18 页
+- **[GLFullScreen](../../samplecode/GLFullScreen/GLFullScreen.md)** — Sample Code · 2010-12-01，macOS · OpenGL，12 页
+- **[GLSL Basics Cocoa](../../samplecode/GLSL%20Basics%20Cocoa/GLSL%20Basics%20Cocoa.md)** — Sample Code · 2008-07-30，macOS · OpenGL，14 页
+- **[GLSL Showpiece Lite](../../samplecode/GLSL%20Showpiece%20Lite/GLSL%20Showpiece%20Lite.md)** — Sample Code · 2007-11-05，macOS · OpenGL，73 页
+- **[GLSLShowpiece](../../samplecode/GLSLShowpiece/GLSLShowpiece.md)** — Sample Code · 2006-07-17，macOS · OpenGL，115 页
+- **[GLUT](../../samplecode/GLUT/GLUT.md)** — Sample Code · 2008-02-08，macOS · OpenGL，119 页
+- **[GLUT_for_OS_X](../../samplecode/GLUTforOSX/GLUTforOSX.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[GLUTBasics](../../samplecode/GLUTBasics/GLUTBasics.md)** — Sample Code · 2004-03-26，macOS · OpenGL，7 页
+- **[GLUTStereo](../../samplecode/GLUTStereo/GLUTStereo.md)** — Sample Code · 2009-07-02，macOS · OpenGL，6 页
+- **[GLUTSurfaceTexture](../../samplecode/GLUTSurfaceTexture/GLUTSurfaceTexture.md)** — Sample Code · 2004-03-26，macOS · OpenGL，7 页
+- **[GlyphaIVOld](../../samplecode/GlyphaIVOld/GlyphaIVOld.md)** — Sample Code · 2003-10-14，macOS，13 页
+- **[Goodbye World](../../samplecode/Goodbye%20World/Goodbye%20World.md)** — Sample Code · 2007-06-28，Safari|macOS，32 页
+- **[GPU Histogram](../../samplecode/GPU%20Histogram/GPU%20Histogram.md)** — Sample Code · 2010-01-04，macOS · OpenCL，6 页
+- **[GrabBag](../../samplecode/GrabBag/GrabBag.md)** — Sample Code · 2003-07-29，macOS，9 页
+- **[Gradients](../../samplecode/Gradients/Gradients.md)** — Sample Code · 2011-04-15，macOS · QuartzCore，8 页
+- **[Grady](../../samplecode/Grady/Grady.md)** — Sample Code · 2012-03-21，macOS · AppKit，14 页
+- **[Graphic Import-Export](../../samplecode/Graphic%20Import-Export/Graphic%20Import-Export.md)** — Sample Code · 2003-01-14，macOS · QuickTime，81 页
+- **[graphicimporter.win](../../samplecode/graphicimporter.win/graphicimporter.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[GrayishOutline](../../samplecode/GrayishOutline/GrayishOutline.md)** — Sample Code · 2003-07-22，macOS，2 页
+- **[GrayText](../../samplecode/GrayText/GrayText.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[GreyscaleEffectSample](../../samplecode/GreyscaleEffectSample/GreyscaleEffectSample.md)** — Sample Code · 2003-02-25，macOS，19 页
+- **[GridCalendar](../../samplecode/GridCalendar/GridCalendar.md)** — Sample Code · 2005-06-01，macOS · XgridFoundation，27 页
+- **[GridMenu](../../samplecode/GridMenu/GridMenu.md)** — Sample Code · 2012-05-16，macOS · AppKit，17 页
+- **[GridWindowGrow](../../samplecode/GridWindowGrow/GridWindowGrow.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Group Dumper](../../samplecode/Group%20Dumper/Group%20Dumper.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[GroupDrawing](../../samplecode/GroupDrawing/GroupDrawing.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[GXSetDefaultDTP](../../samplecode/GXSetDefaultDTP/GXSetDefaultDTP.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Hack TV](../../samplecode/Hack%20TV/Hack%20TV.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[hacktv](../../samplecode/hacktv/hacktv.md)** — Sample Code · 2003-01-14，macOS · QuickTime，8 页
+- **[HackTV Carbon](../../samplecode/HackTV%20Carbon/HackTV%20Carbon.md)** — Sample Code · 2007-11-16，macOS，13 页
+- **[hacktv.win](../../samplecode/hacktv.win/hacktv.win.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[HairLines](../../samplecode/HairLines/HairLines.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[HALExamples](../../samplecode/HALExamples/HALExamples.md)** — Sample Code · 2009-04-15，macOS · CoreAudio，4 页
+- **[HandyScrollingSample](../../samplecode/HandyScrollingSample/HandyScrollingSample.md)** — Sample Code · 2003-01-30，macOS，9 页
+- **[HeightArray](../../samplecode/HeightArray/HeightArray.md)** — Sample Code · 2014-06-17，macOS · OpenGL，14 页
+- **[Hello Welt](../../samplecode/Hello%20Welt/Hello%20Welt.md)** — Sample Code · 2007-06-25，Safari|macOS，16 页
+- **[Hello World](../../samplecode/Hello%20World/Hello%20World.md)** — Sample Code · 2005-06-01，Safari|macOS，4 页
+- **[HelloStudio](../../samplecode/HelloStudio/HelloStudio.md)** — Sample Code · 2006-07-28，macOS，8 页
+- **[HelpHook](../../samplecode/HelpHook/HelpHook.md)** — Sample Code · 2006-04-12，macOS，2 页
+- **[HexEditorView](../../samplecode/HexEditorView/HexEditorView.md)** — Sample Code · 2003-01-30，macOS，7 页
+- **[HICustomLeftRightSwitch](../../samplecode/HICustomLeftRightSwitch/HICustomLeftRightSwitch.md)** — Sample Code · 2003-02-06，macOS，6 页
+- **[HICustomPushButton](../../samplecode/HICustomPushButton/HICustomPushButton.md)** — Sample Code · 2005-10-17，macOS，5 页
+- **[HID Calibrator](../../samplecode/HID%20Calibrator/HID%20Calibrator.md)** — Sample Code · 2014-02-17，macOS · IOKit，28 页
+- **[HID Config Save](../../samplecode/HID%20Config%20Save/HID%20Config%20Save.md)** — Sample Code · 2014-02-28，macOS · IOKit，21 页
+- **[HID Dumper](../../samplecode/HID%20Dumper/HID%20Dumper.md)** — Sample Code · 2013-06-06，macOS · IOKit，11 页
+- **[HID Explorer](../../samplecode/HID%20Explorer/HID%20Explorer.md)** — Sample Code · 2008-05-07，macOS · IOKit，13 页
+- **[HID LED test tool](../../samplecode/HID%20LED%20test%20tool/HID%20LED%20test%20tool.md)** — Sample Code · 2015-01-26，macOS · IOKit，4 页
+- **[HID Manager Basics](../../samplecode/HID%20Manager%20Basics/HID%20Manager%20Basics.md)** — Sample Code · 2003-07-10，macOS · IOKit，6 页
+- **[HID Utilities](../../samplecode/HID%20Utilities/HID%20Utilities.md)** — Sample Code · 2009-10-01，macOS · IOKit，15 页
+- **[HID Utilities Source](../../samplecode/HID%20Utilities%20Source/HID%20Utilities%20Source.md)** — Sample Code · 2003-10-06，macOS · IOKit，21 页
+- **[Hide Images Safari Extension](../../samplecode/Hide%20Images%20Safari%20Extension/Hide%20Images%20Safari%20Extension.md)** — Sample Code · 2010-06-24，Safari|macOS，5 页
+- **[HideMenuBar](../../samplecode/HideMenuBar/HideMenuBar.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[HIDoubleSlider](../../samplecode/HIDoubleSlider/HIDoubleSlider.md)** — Sample Code · 2003-10-27，macOS，6 页
+- **[HIEmbedder](../../samplecode/HIEmbedder/HIEmbedder.md)** — Sample Code · 2003-11-13，macOS，9 页
+- **[HIFleetingControls](../../samplecode/HIFleetingControls/HIFleetingControls.md)** — Sample Code · 2007-05-08，macOS，7 页
+- **[HIFramework](../../samplecode/HIFramework/HIFramework.md)** — Sample Code · 2003-02-06，macOS，8 页
+- **[HIObjectThreadController](../../samplecode/HIObjectThreadController/HIObjectThreadController.md)** — Sample Code · 2005-08-10，macOS，7 页
+- **[HIScrollingTextBox](../../samplecode/HIScrollingTextBox/HIScrollingTextBox.md)** — Sample Code · 2003-11-06，macOS，10 页
+- **[HISimpleList](../../samplecode/HISimpleList/HISimpleList.md)** — Sample Code · 2006-03-03，macOS，7 页
+- **[HITextShowcase](../../samplecode/HITextShowcase/HITextShowcase.md)** — Sample Code · 2003-10-27，macOS，8 页
+- **[HITextViewDemo](../../samplecode/HITextViewDemo/HITextViewDemo.md)** — Sample Code · 2005-06-01，macOS，36 页
+- **[HITextViewShowcase](../../samplecode/HITextViewShowcase/HITextViewShowcase.md)** — Sample Code · 2003-10-30，macOS，3 页
+- **[HIToolboxSOU-Delegates](../../samplecode/HIToolboxSOU-Delegates/HIToolboxSOU-Delegates.md)** — Sample Code · 2006-08-04，macOS，3 页
+- **[HIToolboxSOU-MenuItemViews](../../samplecode/HIToolboxSOU-MenuItemViews/HIToolboxSOU-MenuItemViews.md)** — Sample Code · 2006-08-04，macOS，3 页
+- **[HIView-NSView](../../samplecode/HIView-NSView/HIView-NSView.md)** — Sample Code · 2007-05-29，macOS，5 页
+- **[HIViewTest](../../samplecode/HIViewTest/HIViewTest.md)** — Sample Code · 2003-01-30，macOS，7 页
+- **[HoverTableDemo](../../samplecode/HoverTableDemo/HoverTableDemo.md)** — Sample Code · 2012-10-04，macOS · AppKit，10 页
+- **[How to Detect a CD](../../samplecode/How%20to%20Detect%20a%20CD/How%20to%20Detect%20a%20CD.md)** — Sample Code · 2003-01-14，macOS，15 页
+- **[HTML Editing Toolbar](../../samplecode/HTML%20Editing%20Toolbar/HTML%20Editing%20Toolbar.md)** — Sample Code · 2007-06-11，Safari|macOS，6 页
+- **[HTMLSample](../../samplecode/HTMLSample/HTMLSample.md)** — Sample Code · 2003-01-30，macOS，30 页
+- **[HTMLUserPane](../../samplecode/HTMLUserPane/HTMLUserPane.md)** — Sample Code · 2003-01-30，macOS，15 页
+- **[Http Server](../../samplecode/Http%20Server/Http%20Server.md)** — Sample Code · 2003-01-14，macOS，38 页
+- **[IBFragmentView](../../samplecode/IBFragmentView/IBFragmentView.md)** — Sample Code · 2006-08-01，Xcode Developer Tools|macOS，14 页
+- **[ICADownloadFirst](../../samplecode/ICADownloadFirst/ICADownloadFirst.md)** — Sample Code · 2003-01-14，macOS · ImageCaptureCore，9 页
+- **[ICAObjectDumper](../../samplecode/ICAObjectDumper/ICAObjectDumper.md)** — Sample Code · 2003-01-14，macOS · ImageCaptureCore，3 页
+- **[iChatAppleScriptSamples](../../samplecode/iChatAppleScriptSamples/iChatAppleScriptSamples.md)** — Sample Code · 2018-05-03，macOS · InstantMessage，14 页
+- **[iChatStatusFromApplication](../../samplecode/iChatStatusFromApplication/iChatStatusFromApplication.md)** — Sample Code · 2011-08-25，macOS · InstantMessage，7 页
+- **[iChatTheater](../../samplecode/iChatTheater/iChatTheater.md)** — Sample Code · 2012-08-27，macOS · InstantMessage，18 页
+- **[icon cache demo](../../samplecode/icon%20cache%20demo/icon%20cache%20demo.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Icon Display](../../samplecode/Icon%20Display/Icon%20Display.md)** — Sample Code · 2003-07-22，macOS，7 页
+- **[Icon Play](../../samplecode/Icon%20Play/Icon%20Play.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[IconCollection](../../samplecode/IconCollection/IconCollection.md)** — Sample Code · 2016-05-23，macOS · AppKit，11 页
+- **[IconDimming](../../samplecode/IconDimming/IconDimming.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[IconUtilCheck](../../samplecode/IconUtilCheck/IconUtilCheck.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[ictbSample](../../samplecode/ictbSample/ictbSample.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[IdentitySample](../../samplecode/IdentitySample/IdentitySample.md)** — Sample Code · 2011-05-26，macOS · Collaboration，5 页
+- **[iGetKeys](../../samplecode/iGetKeys/iGetKeys.md)** — Sample Code · 2003-07-10，macOS，9 页
+- **[IKImageViewDemo](../../samplecode/IKImageViewDemo/IKImageViewDemo.md)** — Sample Code · 2013-08-13，macOS · Quartz，6 页
+- **[IKSlideshowDemo](../../samplecode/IKSlideshowDemo/IKSlideshowDemo.md)** — Sample Code · 2012-08-31，macOS · Quartz，5 页
+- **[Image Difference](../../samplecode/Image%20Difference/Image%20Difference.md)** — Sample Code · 2003-01-30，macOS · ApplicationServices，12 页
+- **[ImageApp](../../samplecode/ImageApp/ImageApp.md)** — Sample Code · 2012-06-20，macOS · ApplicationServices，19 页
+- **[ImageBackground](../../samplecode/ImageBackground/ImageBackground.md)** — Sample Code · 2006-10-02，macOS · AppKit，2 页
+- **[ImageBrowser: Using IKImageBrowserView to display images](../../samplecode/ImageBrowser-%20Using%20IKImageBrowserView%20to%20display%20images/ImageBrowser-%20Using%20IKImageBrowserView%20to%20display%20images.md)** — Sample Code · 2018-05-03，macOS · Quartz，7 页
+- **[ImageBrowserView](../../samplecode/ImageBrowserView/ImageBrowserView.md)** — Sample Code · 2005-06-01，macOS，18 页
+- **[ImageBrowserViewAppearance: Customizing IKImageBrowserView](../../samplecode/ImageBrowserViewAppearance-%20Customizing%20IKImageBrowserView/ImageBrowserViewAppearance-%20Customizing%20IKImageBrowserView.md)** — Sample Code · 2018-05-03，macOS · Quartz，13 页
+- **[ImageClient](../../samplecode/ImageClient/ImageClient.md)** — Sample Code · 2005-06-01，macOS · CoreFoundation，58 页
+- **[ImageCompositing](../../samplecode/ImageCompositing/ImageCompositing.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[Imageer](../../samplecode/Imageer/Imageer.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[ImageFile](../../samplecode/ImageFile/ImageFile.md)** — Sample Code · 2006-06-28，macOS，4 页
+- **[ImageKit with Core Data](../../samplecode/ImageKit%20with%20Core%20Data/Image%20Kit%20with%20Core%20Data.md)** — Sample Code · 2008-07-25，macOS · Quartz，10 页
+- **[ImageKitDemo](../../samplecode/ImageKitDemo/ImageKitDemo.md)** — Sample Code · 2009-06-05，macOS · ImageCaptureCore，110 页
+- **[ImageMap](../../samplecode/ImageMap/ImageMap.md)** — Sample Code · 2009-06-29，macOS · AppKit，15 页
+- **[ImageMapExample](../../samplecode/ImageMapExample/ImageMapExample.md)** — Sample Code · 2011-09-09，macOS · AppKit，13 页
+- **[ImageMapView](../../samplecode/ImageMapView/ImageMapView.md)** — Sample Code · 2005-10-17，macOS，20 页
+- **[ImagePicker](../../samplecode/ImagePicker/ImagePicker.md)** — Sample Code · 2006-07-25，macOS · Quartz，5 页
+- **[ImageProducing](../../samplecode/ImageProducing/ImageProducing.md)** — Sample Code · 2006-05-05，macOS，4 页
+- **[ImagesToQTMovie](../../samplecode/ImagesToQTMovie/ImagesToQTMovie.md)** — Sample Code · 2003-01-14，macOS · ImageCaptureCore，10 页
+- **[ImageTransition](../../samplecode/ImageTransition/ImageTransition.md)** — Sample Code · 2011-07-01，macOS · QuartzCore，10 页
+- **[ImageWriter bug](../../samplecode/ImageWriter%20bug/ImageWriter%20bug.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ImportExport](../../samplecode/ImportExport/ImportExport.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[ImportExportMovie](../../samplecode/ImportExportMovie/ImportExportMovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[ImproveYourImage](../../samplecode/ImproveYourImage/ImproveYourImage.md)** — Sample Code · 2005-08-24，macOS · QuickTime，17 页
+- **[INIT - CDEV](../../samplecode/INIT%20-%20CDEV/INIT%20-%20CDEV.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[InkSample](../../samplecode/InkSample/InkSample.md)** — Sample Code · 2003-10-27，macOS · Carbon，20 页
+- **[Inline Input for TextEdit](../../samplecode/Inline%20Input%20for%20TextEdit/Inline%20Input%20for%20TextEdit.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[InputSprocketPPTest](../../samplecode/InputSprocketPPTest/InputSprocketPPTest.md)** — Sample Code · 2003-01-14，macOS，15 页
+- **[InputSprocketTestOld](../../samplecode/InputSprocketTestOld/InputSprocketTestOld.md)** — Sample Code · 2003-10-14，macOS，7 页
+- **[Inside Mac ICM Code](../../samplecode/Inside%20Mac%20ICM%20Code/Inside%20Mac%20ICM%20Code.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[Inside Mac Movie TB Code](../../samplecode/Inside%20Mac%20Movie%20TB%20Code/Inside%20Mac%20Movie%20TB%20Code.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Installer Tiger Examples](../../samplecode/Installer%20Tiger%20Examples/Installer%20Tiger%20Examples.md)** — Sample Code · 2005-06-01，macOS，3 页
+- **[InstallerPluginSample](../../samplecode/InstallerPluginSample/InstallerPluginSample.md)** — Sample Code · 2006-08-30，Xcode Developer Tools|macOS，5 页
+- **[InstancedArrays](../../samplecode/InstancedArrays/InstancedArrays.md)** — Sample Code · 2013-08-22，macOS · OpenGL，13 页
+- **[Internationalization and Localization for OS X](../../samplecode/Internationalization%20and%20Localization%20for%20OS%20X/Internationalization%20and%20Localization%20for%20OS%20X.md)** — Sample Code · 2013-04-11，macOS · AppKit，8 页
+- **[InvertedText](../../samplecode/InvertedText/InvertedText.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[IOKitWithLibrary](../../samplecode/IOKitWithLibrary/IOKitWithLibrary.md)** — Sample Code · 2003-08-27，macOS · IOKit，7 页
+- **[IOPrintSuperClasses](../../samplecode/IOPrintSuperClasses/IOPrintSuperClasses.md)** — Sample Code · 2005-08-17，macOS · IOKit，4 页
+- **[IPCLister](../../samplecode/IPCLister/IPCLister.md)** — Sample Code · 2003-03-14，macOS，5 页
+- **[IRCServicePlugIn](../../samplecode/IRCServicePlugIn/IRCServicePlugIn.md)** — Sample Code · 2011-06-08，macOS · IMServicePlugIn，17 页
+- **[Is PC Exchange Installed](../../samplecode/Is%20PC%20Exchange%20Installed/Is%20PC%20Exchange%20Installed.md)** — Sample Code · 2003-01-23，macOS，3 页
+- **[iso9660](../../samplecode/iso9660/iso9660.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[ISp SampleOld](../../samplecode/ISp%20SampleOld/ISp%20SampleOld.md)** — Sample Code · 2003-10-14，macOS，29 页
+- **[iSpend](../../samplecode/iSpend/iSpend.md)** — Sample Code · 2012-06-07，macOS · AppKit，18 页
+- **[iSpendPlugin](../../samplecode/iSpendPlugin/iSpendPlugin.md)** — Sample Code · 2012-06-07，macOS · CoreServices，6 页
+- **[iSync Sample Document](../../samplecode/iSync%20Sample%20Document/iSync%20Sample%20Document.md)** — Sample Code · 2006-08-01，macOS · SyncServices，3 页
+- **[ItemHider](../../samplecode/ItemHider/ItemHider.md)** — Sample Code · 2003-01-30，macOS，2 页
+- **[iTunesController](../../samplecode/iTunesController/iTunesController.md)** — Sample Code · 2006-02-23，macOS，4 页
+- **[IW-Half-Dither](../../samplecode/IW-Half-Dither/IW-Half-Dither.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[Java Drawing](../../samplecode/Java%20Drawing/Java%20Drawing.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[JavaEOGenerator](../../samplecode/JavaEOGenerator/JavaEOGenerator.md)** — Sample Code · 2007-11-14，macOS，23 页
+- **[JavaFrameEmbedding example](../../samplecode/JavaFrameEmbedding%20example/JavaFrameEmbedding%20example.md)** — Sample Code · 2007-06-12，macOS，8 页
+- **[JavaScriptCoreHeadstart](../../samplecode/JavaScriptCoreHeadstart/JavaScriptCoreHeadstart.md)** — Sample Code · 2011-08-03，macOS · JavaScriptCore，24 页
+- **[JavaSplashScreen](../../samplecode/JavaSplashScreen/JavaSplashScreen.md)** — Sample Code · 2006-04-12，macOS，11 页
+- **[JavaSprites](../../samplecode/JavaSprites/JavaSprites.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[JAWTExample](../../samplecode/JAWTExample/JAWTExample.md)** — Sample Code · 2011-03-09，Java|macOS，7 页
+- **[JDirect Mouse](../../samplecode/JDirect%20Mouse/JDirect%20Mouse.md)** — Sample Code · 2003-07-22，macOS，5 页
+- **[JDirectTalker Example](../../samplecode/JDirectTalker%20Example/JDirectTalker%20Example.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[JDragNDrop](../../samplecode/JDragNDrop/JDragNDrop.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[jGNE Helper](../../samplecode/jGNE%20Helper/jGNE%20Helper.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[jGNEFilter](../../samplecode/jGNEFilter/jGNEFilter.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[JISApplet](../../samplecode/JISApplet/JISApplet.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[JNISample](../../samplecode/JNISample/JNISample.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[JPEG File Interchange Format](../../samplecode/JPEG%20File%20Interchange%20Format/JPEG%20File%20Interchange%20Format.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[JPEG Sample](../../samplecode/JPEG%20Sample/JPEG%20Sample.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[JSaver](../../samplecode/JSaver/JSaver.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[JScriptApplet](../../samplecode/JScriptApplet/JScriptApplet.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[JSheets](../../samplecode/JSheets/JSheets.md)** — Sample Code · 2006-07-11，macOS，10 页
+- **[JSInterpreter](../../samplecode/JSInterpreter/JSInterpreter.md)** — Sample Code · 2007-06-06，macOS · JavaScriptCore，6 页
+- **[JSPong](../../samplecode/JSPong/JSPong.md)** — Sample Code · 2007-06-06，macOS · JavaScriptCore，15 页
+- **[Just Finder](../../samplecode/Just%20Finder/Just%20Finder.md)** — Sample Code · 2003-10-30，macOS，3 页
+- **[JustDraw](../../samplecode/JustDraw/JustDraw.md)** — Sample Code · 2005-06-01，macOS，4 页
+- **[KauthORama](../../samplecode/KauthORama/KauthORama.md)** — Sample Code · 2014-03-26，macOS · Kernel，4 页
+- **[kcapApp](../../samplecode/kcapApp/kcapApp.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Kerberos GSS](../../samplecode/Kerberos%20GSS/Kerberos%20GSS.md)** — Sample Code · 2008-06-04，macOS，7 页
+- **[KeyboardController](../../samplecode/KeyboardController/KeyboardController.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[KeyMapTest](../../samplecode/KeyMapTest/KeyMapTest.md)** — Sample Code · 2003-01-30，macOS，2 页
+- **[Keyword Search Safari Extension](../../samplecode/Keyword%20Search%20Safari%20Extension/Keyword%20Search%20Safari%20Extension.md)** — Sample Code · 2012-06-10，Safari|macOS，4 页
+- **[KillEveryOneButMe](../../samplecode/KillEveryOneButMe/KillEveryOneButMe.md)** — Sample Code · 2005-08-24，macOS，5 页
+- **[LaunchWithDoc](../../samplecode/LaunchWithDoc/LaunchWithDoc.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[LaunchWithDoc2](../../samplecode/LaunchWithDoc2/LaunchWithDoc2.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[LayerBackedOpenGLView](../../samplecode/LayerBackedOpenGLView/LayerBackedOpenGLView.md)** — Sample Code · 2013-04-11，macOS · AppKit，14 页
+- **[LayoutManagerDemo](../../samplecode/LayoutManagerDemo/LayoutManagerDemo.md)** — Sample Code · 2012-06-07，macOS · AppKit，8 页
+- **[Leaves](../../samplecode/Leaves/Leaves.md)** — Sample Code · 2008-05-08，Safari|macOS，12 页
+- **[ledApp](../../samplecode/ledApp/ledApp.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[LightTable](../../samplecode/LightTable/LightTable.md)** — Sample Code · 2017-08-17，macOS · AppKit，28 页
+- **[Link Snoop](../../samplecode/Link%20Snoop/Link%20Snoop.md)** — Sample Code · 2005-06-01，macOS · Quartz，13 页
+- **[LinkedImageFetcher](../../samplecode/LinkedImageFetcher/LinkedImageFetcher.md)** — Sample Code · 2013-03-05，macOS · Foundation，26 页
+- **[ListMania](../../samplecode/ListMania/ListMania.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[LittleArrowsShowcase](../../samplecode/LittleArrowsShowcase/LittleArrowsShowcase.md)** — Sample Code · 2006-11-09，macOS，3 页
+- **[Live Control Scroll](../../samplecode/Live%20Control%20Scroll/Live%20Control%20Scroll.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Live Scroll](../../samplecode/Live%20Scroll/Live%20Scroll.md)** — Sample Code · 2003-01-30，macOS，13 页
+- **[LiveVideoMixer](../../samplecode/LiveVideoMixer/LiveVideoMixer.md)** — Sample Code · 2008-04-24，macOS · OpenGL，9 页
+- **[LiveVideoMixer2](../../samplecode/LiveVideoMixer2/LiveVideoMixer2.md)** — Sample Code · 2006-05-05，macOS · QuickTime，11 页
+- **[LiveVideoMixer3](../../samplecode/LiveVideoMixer3/LiveVideoMixer3.md)** — Sample Code · 2006-08-01，macOS · QuickTime，12 页
+- **[Load PCI Driver](../../samplecode/Load%20PCI%20Driver/Load%20PCI%20Driver.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[LocalServer](../../samplecode/LocalServer/LocalServer.md)** — Sample Code · 2003-01-30，macOS，16 页
+- **[LockFile](../../samplecode/LockFile/LockFile.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[LoginItemsAE](../../samplecode/LoginItemsAE/LoginItemsAE.md)** — Sample Code · 2005-10-17，macOS · ApplicationServices，6 页
+- **[LSMSmartCategorizer](../../samplecode/LSMSmartCategorizer/LSMSmartCategorizer.md)** — Sample Code · 2007-05-09，macOS · LatentSemanticMapping，22 页
+- **[LW8_Hosesample](../../samplecode/LW8Hosesample/LW8Hosesample.md)** — Sample Code · 2003-03-26，macOS，7 页
+- **[MacCalendar](../../samplecode/MacCalendar/MacCalendar.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[MacGamma](../../samplecode/MacGamma/MacGamma.md)** — Sample Code · 2003-07-22，macOS，5 页
+- **[MachPortDump](../../samplecode/MachPortDump/MachPortDump.md)** — Sample Code · 2005-08-10，macOS，4 页
+- **[Magic Oracle](../../samplecode/Magic%20Oracle/Magic%20Oracle.md)** — Sample Code · 2003-07-22，macOS，8 页
+- **[Magnify](../../samplecode/Magnify/Magnify.md)** — Sample Code · 2003-10-10，macOS，3 页
+- **[Make QTVR Object](../../samplecode/Make%20QTVR%20Object/Make%20QTVR%20Object.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[Make QTVR Panorama](../../samplecode/Make%20QTVR%20Panorama/Make%20QTVR%20Panorama.md)** — Sample Code · 2003-01-14，macOS，21 页
+- **[MakeEffectMovie](../../samplecode/MakeEffectMovie/MakeEffectMovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，41 页
+- **[makeeffectslideshow](../../samplecode/makeeffectslideshow/makeeffectslideshow.md)** — Sample Code · 2003-02-25，macOS，16 页
+- **[makeeffectslideshow.win](../../samplecode/makeeffectslideshow.win/makeeffectslideshow.win.md)** — Sample Code · 2003-02-25，macOS，15 页
+- **[MakeIcon](../../samplecode/MakeIcon/MakeIcon.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[MakeiPhoneRefMovie](../../samplecode/MakeiPhoneRefMovie/MakeiPhoneRefMovie.md)** — Sample Code · 2007-08-03，Safari|macOS · QuickTime，3 页
+- **[MakeITable](../../samplecode/MakeITable/MakeITable.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[ManagedObjectDataFormatter](../../samplecode/ManagedObjectDataFormatter/ManagedObjectDataFormatter.md)** — Sample Code · 2005-06-01，Xcode Developer Tools|macOS，3 页
+- **[MapLargeFile](../../samplecode/MapLargeFile/MapLargeFile.md)** — Sample Code · 2003-11-19，macOS，3 页
+- **[MarkerPick](../../samplecode/MarkerPick/MarkerPick.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[MassiveImage](../../samplecode/MassiveImage/MassiveImage.md)** — Sample Code · 2010-01-25，macOS · ApplicationServices，7 页
+- **[MatrixMixerTest](../../samplecode/MatrixMixerTest/MatrixMixerTest.md)** — Sample Code · 2016-02-11，macOS · AudioUnit，20 页
+- **[MCComponent](../../samplecode/MCComponent/MCComponent.md)** — Sample Code · 2003-01-14，macOS · QuickTime，10 页
+- **[MCPlayMovie](../../samplecode/MCPlayMovie/MCPlayMovie.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[MDEF.Sample](../../samplecode/MDEF.Sample/MDEF.Sample.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[mdiplayer.win](../../samplecode/mdiplayer.win/mdiplayer.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[MediaLibraryLoader: Using MLMediaLibrary to load and display photos](../../samplecode/MediaLibraryLoader-%20Using%20MLMediaLibrary%20to%20load%20and%20display%20photos/MediaLibraryLoader-%20Using%20MLMediaLibrary%20to%20load%20and%20display%20photos.md)** — Sample Code · 2016-11-03，macOS，6 页
+- **[MediaPresenter](../../samplecode/MediaPresenter/MediaPresenter.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[MemoryBasedBundle](../../samplecode/MemoryBasedBundle/MemoryBasedBundle.md)** — Sample Code · 2005-08-10，macOS · CoreServices，5 页
+- **[MenuItemView: Embedding an NSView inside an NSMenuItem](../../samplecode/MenuItemView-%20Embedding%20an%20NSView%20inside%20an%20NSMenuItem/MenuItemView-%20Embedding%20an%20NSView%20inside%20an%20NSMenuItem.md)** — Sample Code · 2017-03-09，macOS · AppKit，15 页
+- **[MenuMadness](../../samplecode/MenuMadness/MenuMadness.md)** — Sample Code · 2012-06-05，macOS · AppKit，7 页
+- **[MenuScripter](../../samplecode/MenuScripter/MenuScripter.md)** — Sample Code · 2003-01-14，macOS，82 页
+- **[MenuViews](../../samplecode/MenuViews/MenuViews.md)** — Sample Code · 2003-10-24，macOS，10 页
+- **[Messages Safari Extension](../../samplecode/Messages%20Safari%20Extension/Messages%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari|macOS，4 页
+- **[MetafileRead](../../samplecode/MetafileRead/MetafileRead.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[MetalBasicTessellation: A demonstration of the Metal tessellation pipeline](../../samplecode/MetalBasicTessellation-%20A%20demonstration%20of%20the%20Metal%20tessellation%20pipeline/MetalBasicTessellation-%20A%20demonstration%20of%20the%20Metal%20tessellation%20pipeline.md)** — Sample Code · 2016-09-13，macOS · Metal，16 页
+- **[MeterTest](../../samplecode/MeterTest/MeterTest.md)** — Sample Code · 2003-03-14，macOS · QuickTime，3 页
+- **[MethodReplacement](../../samplecode/MethodReplacement/MethodReplacement.md)** — Sample Code · 2006-08-01，macOS，5 页
+- **[mfc.win](../../samplecode/mfc.win/mfc.win.md)** — Sample Code · 2003-01-14，macOS，44 页
+- **[MFSLives](../../samplecode/MFSLives/MFSLives.md)** — Sample Code · 2006-11-09，macOS，20 页
+- **[MixMash](../../samplecode/MixMash/MixMash.md)** — Sample Code · 2009-04-15，macOS · AudioUnit，6 页
+- **[MLTE_CustomScrolling](../../samplecode/MLTECustomScrolling/MLTECustomScrolling.md)** — Sample Code · 2004-10-15，macOS，5 页
+- **[Mode](../../samplecode/Mode/Mode.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ModeWhacker](../../samplecode/ModeWhacker/ModeWhacker.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ModifyMouseAccl](../../samplecode/ModifyMouseAccl/ModifyMouseAccl.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Monochrome Image](../../samplecode/Monochrome%20Image/Monochrome%20Image.md)** — Sample Code · 2003-07-16，macOS · AppKit，8 页
+- **[MoofWarsOld](../../samplecode/MoofWarsOld/MoofWarsOld.md)** — Sample Code · 2003-10-14，macOS，44 页
+- **[MoreAppleEvents](../../samplecode/MoreAppleEvents/MoreAppleEvents.md)** — Sample Code · 2003-01-14，macOS · CoreServices，22 页
+- **[MoreAutoPush](../../samplecode/MoreAutoPush/MoreAutoPush.md)** — Sample Code · 2003-07-22，macOS，6 页
+- **[MoreFiles](../../samplecode/MoreFiles/MoreFiles.md)** — Sample Code · 2003-01-14，macOS · CoreServices，22 页
+- **[MoreFilesX](../../samplecode/MoreFilesX/MoreFilesX.md)** — Sample Code · 2005-05-13，macOS，5 页
+- **[MoreFinderEvents](../../samplecode/MoreFinderEvents/MoreFinderEvents.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[MoreIsBetter](../../samplecode/MoreIsBetter/MoreIsBetter.md)** — Sample Code · 2003-10-27，macOS，222 页
+- **[MoreNetworkSetup](../../samplecode/MoreNetworkSetup/MoreNetworkSetup.md)** — Sample Code · 2003-07-22，macOS，20 页
+- **[MoreOSL](../../samplecode/MoreOSL/MoreOSL.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，43 页
+- **[MoreSCF](../../samplecode/MoreSCF/MoreSCF.md)** — Sample Code · 2007-06-07，macOS · SystemConfiguration，17 页
+- **[Moriarity](../../samplecode/Moriarity/Moriarity.md)** — Sample Code · 2003-01-14，macOS · Foundation，7 页
+- **[Morse Speech Synthesizer (MorseSynthesizer)](../../samplecode/Morse%20Speech%20Synthesizer%20%28MorseSynthesizer%29/Morse%20Speech%20Synthesizer%20%28MorseSynthesizer%29.md)** — Sample Code · 2011-10-19，macOS · ApplicationServices，18 页
+- **[MouseTracking](../../samplecode/MouseTracking/MouseTracking.md)** — Sample Code · 2005-06-01，macOS，7 页
+- **[Movie From DataRef](../../samplecode/Movie%20From%20DataRef/Movie%20From%20DataRef.md)** — Sample Code · 2003-01-14，macOS · QuickTime，25 页
+- **[Movie Overlay](../../samplecode/Movie%20Overlay/Movie%20Overlay.md)** — Sample Code · 2008-07-25，macOS · AppKit，10 页
+- **[MovieAssembler](../../samplecode/MovieAssembler/MovieAssembler.md)** — Sample Code · 2007-11-14，macOS，11 页
+- **[MovieBrowser](../../samplecode/MovieBrowser/MovieBrowser.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[MovieCallbacks](../../samplecode/MovieCallbacks/MovieCallbacks.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[MovieGWorlds](../../samplecode/MovieGWorlds/MovieGWorlds.md)** — Sample Code · 2003-12-18，macOS · QuickTime，15 页
+- **[MoviePlayer - C#](../../samplecode/MoviePlayer%20-%20C/MoviePlayer%20-%20C.md)** — Sample Code · 2005-11-09，macOS · QuickTime，3 页
+- **[MoviePlayer - Visual Basic](../../samplecode/MoviePlayer%20-%20Visual%20Basic/MoviePlayer%20-%20Visual%20Basic.md)** — Sample Code · 2005-10-13，macOS，3 页
+- **[MovieShell](../../samplecode/MovieShell/MovieShell.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[MovieSprites](../../samplecode/MovieSprites/MovieSprites.md)** — Sample Code · 2003-01-14，macOS，31 页
+- **[MovieTextFinder](../../samplecode/MovieTextFinder/MovieTextFinder.md)** — Sample Code · 2006-05-11，macOS，4 页
+- **[MovieToAIFF](../../samplecode/MovieToAIFF/MovieToAIFF.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[MovieVideoChart](../../samplecode/MovieVideoChart/MovieVideoChart.md)** — Sample Code · 2006-07-11，macOS · QuickTime，8 页
+- **[Moving To GCC 4.0](../../samplecode/Moving%20To%20GCC%204.0/Moving%20To%20GCC%204.0.md)** — Sample Code · 2005-06-01，Xcode Developer Tools|macOS，20 页
+- **[MP3 Player](../../samplecode/MP3%20Player/MP3%20Player.md)** — Sample Code · 2003-01-14，macOS · Foundation，7 页
+- **[MP3Player](../../samplecode/MP3Player/MP3Player.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[MPDelayUntilTest](../../samplecode/MPDelayUntilTest/MPDelayUntilTest.md)** — Sample Code · 2003-10-27，macOS，4 页
+- **[MPFileCopy](../../samplecode/MPFileCopy/MPFileCopy.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[MPPeriodicalTest](../../samplecode/MPPeriodicalTest/MPPeriodicalTest.md)** — Sample Code · 2003-10-27，macOS，4 页
+- **[MRJToolkitStubs](../../samplecode/MRJToolkitStubs/MRJToolkitStubs.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[MRJToolkitStubsOld](../../samplecode/MRJToolkitStubsOld/MRJToolkitStubsOld.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[MultiPhotoFrame](../../samplecode/MultiPhotoFrame/MultiPhotoFrame.md)** — Sample Code · 2013-08-06，macOS · AppKit，12 页
+- **[MultiprecisionFP](../../samplecode/MultiprecisionFP/MultiprecisionFP.md)** — Sample Code · 2007-03-26，macOS，9 页
+- **[MungSaver](../../samplecode/MungSaver/MungSaver.md)** — Sample Code · 2003-11-18，macOS · AppKit，4 页
+- **[Music](../../samplecode/Music/Music.md)** — Sample Code · 2006-05-11，macOS，4 页
+- **[MyCaptureApp](../../samplecode/MyCaptureApp/MyCaptureApp.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[MyComponent](../../samplecode/MyComponent/MyComponent.md)** — Sample Code · 2003-01-14，macOS · QuickTime，6 页
+- **[MyComponentOld](../../samplecode/MyComponentOld/MyComponentOld.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[MyCustomColorPicker: Writing a custom NSColorPicker](../../samplecode/MyCustomColorPicker-%20Writing%20a%20custom%20NSColorPicker/MyCustomColorPicker-%20Writing%20a%20custom%20NSColorPicker.md)** — Sample Code · 2017-03-09，macOS · AppKit，10 页
+- **[MyDeviceLoop](../../samplecode/MyDeviceLoop/MyDeviceLoop.md)** — Sample Code · 2003-10-10，macOS，7 页
+- **[MyFirstJNIProject](../../samplecode/MyFirstJNIProject/MyFirstJNIProject.md)** — Sample Code · 2011-03-01，Java|macOS，17 页
+- **[MyGrabOneFrame](../../samplecode/MyGrabOneFrame/MyGrabOneFrame.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[MyMediaPlayer](../../samplecode/MyMediaPlayer/MyMediaPlayer.md)** — Sample Code · 2011-09-12，macOS · QTKit，10 页
+- **[MyMediaPlayList](../../samplecode/MyMediaPlayList/MyMediaPlayList.md)** — Sample Code · 2011-09-12，macOS · QTKit，8 页
+- **[MyMovieFilter](../../samplecode/MyMovieFilter/MyMovieFilter.md)** — Sample Code · 2008-06-02，macOS · QuickTime，6 页
+- **[MyMultipleMoviesApp](../../samplecode/MyMultipleMoviesApp/MyMultipleMoviesApp.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[MyPhoto](../../samplecode/MyPhoto/MyPhoto.md)** — Sample Code · 2005-06-01，macOS · ImageCaptureCore，34 页
+- **[MyQuickTimeApp](../../samplecode/MyQuickTimeApp/MyQuickTimeApp.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[MyRecorder](../../samplecode/MyRecorder/MyRecorder.md)** — Sample Code · 2011-08-25，macOS · QTKit，16 页
+- **[MyRegisterComponent](../../samplecode/MyRegisterComponent/MyRegisterComponent.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[MyRegisterComponentOld](../../samplecode/MyRegisterComponentOld/MyRegisterComponentOld.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[NameAndAddress](../../samplecode/NameAndAddress/NameAndAddress.md)** — Sample Code · 2003-01-14，macOS · Foundation，5 页
+- **[NameAndPassword](../../samplecode/NameAndPassword/NameAndPassword.md)** — Sample Code · 2006-07-28，macOS · SecurityInterface，9 页
+- **[NamingTableAccess](../../samplecode/NamingTableAccess/NamingTableAccess.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[Neighborhood Watch](../../samplecode/Neighborhood%20Watch/Neighborhood%20Watch.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[NetSprocketTestOld](../../samplecode/NetSprocketTestOld/NetSprocketTestOld.md)** — Sample Code · 2003-10-14，macOS，12 页
+- **[Network Stream](../../samplecode/Network%20Stream/Network%20Stream.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[NetworkAuthentication](../../samplecode/NetworkAuthentication/NetworkAuthentication.md)** — Sample Code · 2005-06-01，macOS · DirectoryService，14 页
+- **[New NewGWorld](../../samplecode/New%20NewGWorld/New%20NewGWorld.md)** — Sample Code · 2003-10-10，macOS，7 页
+- **[NewCCursor](../../samplecode/NewCCursor/NewCCursor.md)** — Sample Code · 2003-01-14，macOS · Carbon，3 页
+- **[NewsReader](../../samplecode/NewsReader/NewsReader.md)** — Sample Code · 2007-06-01，macOS · PublicationSubscription，19 页
+- **[NineSlice](../../samplecode/NineSlice/NineSlice.md)** — Sample Code · 2011-04-15，macOS · QuartzCore，10 页
+- **[NoCopyReceives](../../samplecode/NoCopyReceives/NoCopyReceives.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[NoPowerOffKey](../../samplecode/NoPowerOffKey/NoPowerOffKey.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[NoSound](../../samplecode/NoSound/NoSound.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Notification Hacks](../../samplecode/Notification%20Hacks/Notification%20Hacks.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[NotificationObserver](../../samplecode/NotificationObserver/NotificationObserver.md)** — Sample Code · 2012-06-05，macOS · CoreFoundation，6 页
+- **[NotificationPoster](../../samplecode/NotificationPoster/NotificationPoster.md)** — Sample Code · 2012-06-05，macOS · CoreFoundation，6 页
+- **[NotifyTool](../../samplecode/NotifyTool/NotifyTool.md)** — Sample Code · 2012-08-19，macOS · System，4 页
+- **[NPAPI Core Animation Movie Plugin](../../samplecode/NPAPI%20Core%20Animation%20Movie%20Plugin/NPAPI%20Core%20Animation%20Movie%20Plugin.md)** — Sample Code · 2011-09-06，Safari|macOS，9 页
+- **[NSAlertTest](../../samplecode/NSAlertTest/NSAlertTest.md)** — Sample Code · 2012-06-01，macOS · AppKit，14 页
+- **[NSFontAttributeExplorer](../../samplecode/NSFontAttributeExplorer/NSFontAttributeExplorer.md)** — Sample Code · 2012-06-04，macOS · AppKit，6 页
+- **[NSGLImage](../../samplecode/NSGLImage/NSGLImage.md)** — Sample Code · 2004-12-01，macOS，13 页
+- **[NSLMiniBrowser](../../samplecode/NSLMiniBrowser/NSLMiniBrowser.md)** — Sample Code · 2003-01-14，macOS · AppKit，8 页
+- **[NSOpenGL Fullscreen](../../samplecode/NSOpenGL%20Fullscreen/NSOpenGL%20Fullscreen.md)** — Sample Code · 2004-02-11，macOS · OpenGL，12 页
+- **[NSOperationSample](../../samplecode/NSOperationSample/NSOperationSample.md)** — Sample Code · 2012-03-27，macOS · Foundation，10 页
+- **[NSPathControl Basics](../../samplecode/NSPathControl%20Basics/NSPathControl%20Basics.md)** — Sample Code · 2013-10-29，macOS · AppKit，6 页
+- **[NSTableViewBinding](../../samplecode/NSTableViewBinding/NSTableViewBinding.md)** — Sample Code · 2012-04-23，macOS · AppKit，10 页
+- **[NSTouchBar Catalog: Creating and Customizing NSTouchBar](../../samplecode/NSTouchBar%20Catalog-%20Creating%20and%20Customizing%20NSTouchBar.md)** — Sample Code · 2017-09-21，macOS · AppKit
+- **[NullAuthPlugin](../../samplecode/NullAuthPlugin/NullAuthPlugin.md)** — Sample Code · 2011-01-22，macOS · Security，4 页
+- **[NumberInput_IMKit_Sample](../../samplecode/NumberInputIMKitSample/NumberInputIMKitSample.md)** — Sample Code · 2008-03-17，macOS · InputMethodKit，33 页
+- **[NURBSSurfaceVertexProg](../../samplecode/NURBSSurfaceVertexProg/NURBSSurfaceVertexProg.md)** — Sample Code · 2003-07-07，macOS · OpenGL，13 页
+- **[Obj Hierarchy](../../samplecode/Obj%20Hierarchy/Obj%20Hierarchy.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ODOC](../../samplecode/ODOC/ODOC.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Offline Compilation Using the OpenCL Compiler](../../samplecode/Offline%20Compilation%20Using%20the%20OpenCL%20Compiler/Offline%20Compilation%20Using%20the%20OpenCL%20Compiler.md)** — Sample Code · 2014-03-11，macOS · OpenCL，5 页
+- **[OffSample](../../samplecode/OffSample/OffSample.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[offscreen.win](../../samplecode/offscreen.win/offscreen.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，10 页
+- **[OffScreenControlUpdate](../../samplecode/OffScreenControlUpdate/OffScreenControlUpdate.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OldDelegateOnlyComponent](../../samplecode/OldDelegateOnlyComponent/OldDelegateOnlyComponent.md)** — Sample Code · 2003-10-27，macOS，6 页
+- **[OOPTESample](../../samplecode/OOPTESample/OOPTESample.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[OpenALExample](../../samplecode/OpenALExample/OpenALExample.md)** — Sample Code · 2012-08-19，macOS · OpenAL，11 页
+- **[OpenCL Hello World Example](../../samplecode/OpenCL%20Hello%20World%20Example/OpenCL%20Hello%20World%20Example.md)** — Sample Code · 2011-03-01，macOS · OpenCL，4 页
+- **[OpenCL Matrix Transpose Example](../../samplecode/OpenCL%20Matrix%20Transpose%20Example/OpenCL%20Matrix%20Transpose%20Example.md)** — Sample Code · 2009-05-13，macOS · OpenCL，5 页
+- **[OpenCL N-Body Simulation](../../samplecode/OpenCL%20N-Body%20Simulation/OpenCL%20N-Body%20Simulation.md)** — Sample Code · 2015-12-10，macOS · OpenCL，105 页
+- **[OpenCL Parallel Prefix Sum (aka Scan) Example](../../samplecode/OpenCL%20Parallel%20Prefix%20Sum%20%28aka%20Scan%29%20Example/OpenCL%20Parallel%20Prefix%20Sum%20%28aka%20Scan%29%20Example.md)** — Sample Code · 2017-09-19，macOS · OpenCL，6 页
+- **[OpenCL Parallel Reduction Example](../../samplecode/OpenCL%20Parallel%20Reduction%20Example/OpenCL%20Parallel%20Reduction%20Example.md)** — Sample Code · 2009-09-30，macOS · OpenCL，10 页
+- **[OpenCL Procedural Geometric Displacement Example](../../samplecode/OpenCL%20Procedural%20Geometric%20Displacement%20Example/OpenCL%20Procedural%20Geometric%20Displacement%20Example.md)** — Sample Code · 2009-09-24，macOS · OpenCL，5 页
+- **[OpenCL Procedural Grass and Terrain Example](../../samplecode/OpenCL%20Procedural%20Grass%20and%20Terrain%20Example/OpenCL%20Procedural%20Grass%20and%20Terrain%20Example.md)** — Sample Code · 2011-01-12，macOS · OpenCL，26 页
+- **[OpenCL Procedural Noise Example](../../samplecode/OpenCL%20Procedural%20Noise%20Example/OpenCL%20Procedural%20Noise%20Example.md)** — Sample Code · 2009-10-09，macOS · OpenCL，5 页
+- **[OpenCL RayTraced Quaternion Julia-Set Example](../../samplecode/OpenCL%20RayTraced%20Quaternion%20Julia-Set%20Example/OpenCL%20RayTraced%20Quaternion%20Julia-Set%20Example.md)** — Sample Code · 2011-10-03，macOS · OpenCL，5 页
+- **[OpenCL_FFT](../../samplecode/OpenCLFFT/OpenCLFFT.md)** — Sample Code · 2012-06-26，macOS · OpenCL，12 页
+- **[OpenCL_OceanWave](../../samplecode/OpenCLOceanWave/OpenCLOceanWave.md)** — Sample Code · 2011-04-13，macOS · OpenCL，54 页
+- **[OpenGL Filter Basics Cocoa](../../samplecode/OpenGL%20Filter%20Basics%20Cocoa/OpenGL%20Filter%20Basics%20Cocoa.md)** — Sample Code · 2008-02-06，macOS · OpenGL，32 页
+- **[OpenGL Image](../../samplecode/OpenGL%20Image/OpenGL%20Image.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[OpenGL Movie](../../samplecode/OpenGL%20Movie/OpenGL%20Movie.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[OpenGL Queries](../../samplecode/OpenGL%20Queries/OpenGL%20Queries.md)** — Sample Code · 2015-12-10，macOS · OpenGL，38 页
+- **[OpenGL Stereo](../../samplecode/OpenGL%20Stereo/OpenGL%20Stereo.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[OpenGLCaptureToMovie](../../samplecode/OpenGLCaptureToMovie/OpenGLCaptureToMovie.md)** — Sample Code · 2007-08-30，macOS · OpenGL，15 页
+- **[OpenGLCompositorLab](../../samplecode/OpenGLCompositorLab/OpenGLCompositorLab.md)** — Sample Code · 2003-04-21，macOS · OpenGL，30 页
+- **[OpenGLMovieQT](../../samplecode/OpenGLMovieQT/OpenGLMovieQT.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[OpenGLScreenSnapshot](../../samplecode/OpenGLScreenSnapshot/OpenGLScreenSnapshot.md)** — Sample Code · 2008-08-14，macOS · OpenGL，8 页
+- **[Optimization TN Demos](../../samplecode/Optimization%20TN%20Demos/Optimization%20TN%20Demos.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[OSA Preserve 68K Registers](../../samplecode/OSA%20Preserve%2068K%20Registers/OSA%20Preserve%2068K%20Registers.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[OSXAdapter](../../samplecode/OSXAdapter/OSXAdapter.md)** — Sample Code · 2007-06-01，macOS，5 页
+- **[OT PAPServerSample](../../samplecode/OT%20PAPServerSample/OT%20PAPServerSample.md)** — Sample Code · 2003-07-22，macOS，16 页
+- **[OT Virtual Server](../../samplecode/OT%20Virtual%20Server/OT%20Virtual%20Server.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[OTCheckNetForNBPName](../../samplecode/OTCheckNetForNBPName/OTCheckNetForNBPName.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[OTClassicContext](../../samplecode/OTClassicContext/OTClassicContext.md)** — Sample Code · 2003-07-22，macOS，6 页
+- **[OTCodeResource](../../samplecode/OTCodeResource/OTCodeResource.md)** — Sample Code · 2003-07-22，macOS，4 页
+- **[OTDumpInternetStatus](../../samplecode/OTDumpInternetStatus/OTDumpInternetStatus.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OTDumpPortRegistry](../../samplecode/OTDumpPortRegistry/OTDumpPortRegistry.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OTEndpointInfo](../../samplecode/OTEndpointInfo/OTEndpointInfo.md)** — Sample Code · 2003-08-20，macOS，4 页
+- **[OTFindSerialPorts](../../samplecode/OTFindSerialPorts/OTFindSerialPorts.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OTLLCTest](../../samplecode/OTLLCTest/OTLLCTest.md)** — Sample Code · 2003-07-22，macOS，6 页
+- **[OTLookupNameTest](../../samplecode/OTLookupNameTest/OTLookupNameTest.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[OTMP](../../samplecode/OTMP/OTMP.md)** — Sample Code · 2003-07-22，macOS，21 页
+- **[OTPAPSampleServer](../../samplecode/OTPAPSampleServer/OTPAPSampleServer.md)** — Sample Code · 2003-07-22，macOS，16 页
+- **[OTPingSample](../../samplecode/OTPingSample/OTPingSample.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OTSimpleDownloadHTTP](../../samplecode/OTSimpleDownloadHTTP/OTSimpleDownloadHTTP.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[OTSimpleServerHTTP](../../samplecode/OTSimpleServerHTTP/OTSimpleServerHTTP.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[OTStreamDumper](../../samplecode/OTStreamDumper/OTStreamDumper.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[OTStreamLogViewer](../../samplecode/OTStreamLogViewer/OTStreamLogViewer.md)** — Sample Code · 2003-07-22，macOS，43 页
+- **[OTTCPWillDial](../../samplecode/OTTCPWillDial/OTTCPWillDial.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[OTTraceRouteSample](../../samplecode/OTTraceRouteSample/OTTraceRouteSample.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[Out of This GWorld](../../samplecode/Out%20of%20This%20GWorld/Out%20of%20This%20GWorld.md)** — Sample Code · 2003-03-12，macOS，8 页
+- **[OutlineView](../../samplecode/OutlineView/OutlineView.md)** — Sample Code · 2012-06-05，macOS · AppKit，9 页
+- **[OutputBins2PDE](../../samplecode/OutputBins2PDE/OutputBins2PDE.md)** — Sample Code · 2008-02-08，macOS · AppKit，17 页
+- **[OutputBinsPDE](../../samplecode/OutputBinsPDE/OutputBinsPDE.md)** — Sample Code · 2011-02-07，macOS · ApplicationServices，6 页
+- **[OverlayView](../../samplecode/OverlayView/OverlayView.md)** — Sample Code · 2013-02-28，macOS · AppKit，10 页
+- **[Packaged Document for OS X](../../samplecode/Packaged%20Document%20for%20OS%20X/Packaged%20Document%20for%20OS%20X.md)** — Sample Code · 2017-03-09，macOS · AppKit，17 页
+- **[PackageTool](../../samplecode/PackageTool/PackageTool.md)** — Sample Code · 2003-01-30，macOS，55 页
+- **[PACKman](../../samplecode/PACKman/PACKman.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[Palette and GWorld](../../samplecode/Palette%20and%20GWorld/Palette%20and%20GWorld.md)** — Sample Code · 2003-10-10，macOS，7 页
+- **[PaletteAnimation](../../samplecode/PaletteAnimation/PaletteAnimation.md)** — Sample Code · 2003-03-12，macOS，4 页
+- **[PaletteAnimation gray](../../samplecode/PaletteAnimation%20gray/PaletteAnimation%20gray.md)** — Sample Code · 2003-03-12，macOS，4 页
+- **[Pallete DA](../../samplecode/Pallete%20DA/Pallete%20DA.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Passing IOSurfaces from one process to another via Mach RPC](../../samplecode/Passing%20IOSurfaces%20from%20one%20process%20to%20another%20via%20Mach%20RPC/Passing%20IOSurfaces%20from%20one%20process%20to%20another%20via%20Mach%20RPC.md)** — Sample Code · 2014-10-13，macOS · OpenGL，25 页
+- **[Password](../../samplecode/Password/Password.md)** — Sample Code · 2003-01-30，macOS，6 页
+- **[PasteboardPeeker](../../samplecode/PasteboardPeeker/PasteboardPeeker.md)** — Sample Code · 2005-08-10，macOS · CoreServices，4 页
+- **[PBAllocate](../../samplecode/PBAllocate/PBAllocate.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[PBDTGetAppl](../../samplecode/PBDTGetAppl/PBDTGetAppl.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[PBORenderToVertexArray](../../samplecode/PBORenderToVertexArray/PBORenderToVertexArray.md)** — Sample Code · 2006-10-02，macOS · OpenGL，5 页
+- **[PCCardNetworkSample](../../samplecode/PCCardNetworkSample/PCCardNetworkSample.md)** — Sample Code · 2003-07-22，macOS，17 页
+- **[PCI Sound Input driver](../../samplecode/PCI%20Sound%20Input%20driver/PCI%20Sound%20Input%20driver.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[PDEProject](../../samplecode/PDEProject/PDEProject.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[PDF Annotation Editor](../../samplecode/PDF%20Annotation%20Editor/PDF%20Annotation%20Editor.md)** — Sample Code · 2017-10-30，macOS · Quartz，19 页
+- **[PDF Calendar](../../samplecode/PDF%20Calendar/PDF%20Calendar.md)** — Sample Code · 2006-07-31，macOS · Quartz，8 页
+- **[PDFKitLinker2](../../samplecode/PDFKitLinker2/PDFKitLinker2.md)** — Sample Code · 2005-08-10，macOS · Quartz，13 页
+- **[PDFView](../../samplecode/PDFView/PDFView.md)** — Sample Code · 2003-01-23，macOS · Quartz，9 页
+- **[PDlog Expand](../../samplecode/PDlog%20Expand/PDlog%20Expand.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[People](../../samplecode/People/People.md)** — Sample Code · 2009-07-21，macOS · SyncServices，26 页
+- **[Performing Serial I/O](../../samplecode/Performing%20Serial%20I-O/Performing%20Serial%20I-O.md)** — Sample Code · 2013-11-07，macOS · IOKit，4 页
+- **[PGPuam](../../samplecode/PGPuam/PGPuam.md)** — Sample Code · 2003-07-22，macOS，63 页
+- **[PhotoEditor: Crafting Modern Cocoa Apps](../../samplecode/PhotoEditor-%20Crafting%20Modern%20Cocoa%20Apps/PhotoEditor-%20Crafting%20Modern%20Cocoa%20Apps.md)** — Sample Code · 2016-10-27，macOS，23 页
+- **[PhotoSearch](../../samplecode/PhotoSearch/PhotoSearch.md)** — Sample Code · 2015-12-03，macOS · AppKit，15 页
+- **[PhotoToss: CSS Transforms, Transitions, and Web Fonts](../../samplecode/PhotoToss-%20CSS%20Transforms%2C%20Transitions%2C%20and%20Web%20Fonts/PhotoToss-%20CSS%20Transforms%2C%20Transitions%2C%20and%20Web%20Fonts.md)** — Sample Code · 2008-08-21，Safari|macOS，6 页
+- **[PicCommentsTest](../../samplecode/PicCommentsTest/PicCommentsTest.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[Picking Mesh ShapeParts](../../samplecode/Picking%20Mesh%20ShapeParts/Picking%20Mesh%20ShapeParts.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[PickOne](../../samplecode/PickOne/PickOne.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[PictInfoTest](../../samplecode/PictInfoTest/PictInfoTest.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[PictMovier](../../samplecode/PictMovier/PictMovier.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[PictureSharing](../../samplecode/PictureSharing/PictureSharing.md)** — Sample Code · 2013-08-15，macOS · Foundation，15 页
+- **[PictureSharingBrowser](../../samplecode/PictureSharingBrowser/PictureSharingBrowser.md)** — Sample Code · 2009-06-04，macOS · Foundation，2 页
+- **[PictureShow](../../samplecode/PictureShow/PictureShow.md)** — Sample Code · 2003-03-05，macOS，3 页
+- **[PictureSwiper](../../samplecode/PictureSwiper/PictureSwiper.md)** — Sample Code · 2012-06-04，macOS · AppKit，8 页
+- **[PictureTaker](../../samplecode/PictureTaker/PictureTaker.md)** — Sample Code · 2013-07-30，macOS · Quartz，5 页
+- **[PIDFromBSDProcessName](../../samplecode/PIDFromBSDProcessName/PIDFromBSDProcessName.md)** — Sample Code · 2003-02-13，macOS，6 页
+- **[PIVToken: Using CryptoTokenKit to add support for new types of tokens](../../samplecode/PIVToken-%20Using%20CryptoTokenKit%20to%20add%20support%20for%20new%20types%20of%20tokens/PIVToken-%20Using%20CryptoTokenKit%20to%20add%20support%20for%20new%20types%20of%20tokens.md)** — Sample Code · 2016-09-22，macOS · CryptoTokenKit，14 页
+- **[PixMap2PixPat2ppat](../../samplecode/PixMap2PixPat2ppat/PixMap2PixPat2ppat.md)** — Sample Code · 2003-10-27，macOS，7 页
+- **[Play](../../samplecode/Play/Play.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Play Movie with Controller](../../samplecode/Play%20Movie%20with%20Controller/Play%20Movie%20with%20Controller.md)** — Sample Code · 2003-01-14，macOS · QuickTime，44 页
+- **[Play Video Sample](../../samplecode/Play%20Video%20Sample/Play%20Video%20Sample.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[PlayAudioFileLite](../../samplecode/PlayAudioFileLite/PlayAudioFileLite.md)** — Sample Code · 2004-11-24，macOS，3 页
+- **[PlayFile](../../samplecode/PlayFile/PlayFile.md)** — Sample Code · 2012-07-17，macOS · AudioToolbox，25 页
+- **[PlayMovie](../../samplecode/PlayMovie/PlayMovie.md)** — Sample Code · 2006-05-11，macOS，5 页
+- **[PlayMovieJava](../../samplecode/PlayMovieJava/PlayMovieJava.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[PlayMovieOld](../../samplecode/PlayMovieOld/PlayMovieOld.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[PlaySequence](../../samplecode/PlaySequence/PlaySequence.md)** — Sample Code · 2012-07-05，macOS · AudioToolbox，17 页
+- **[PlaySoftMIDI](../../samplecode/PlaySoftMIDI/PlaySoftMIDI.md)** — Sample Code · 2009-04-15，macOS · AudioUnit，4 页
+- **[PlaySound](../../samplecode/PlaySound/PlaySound.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[PlayTune](../../samplecode/PlayTune/PlayTune.md)** — Sample Code · 2006-05-11，macOS，3 页
+- **[Plug-in  - Attr](../../samplecode/Plug-in%20-%20Attr/Plug-in%20-%20Attr.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[Plug-in  - Sample Renderer](../../samplecode/Plug-in%20-%20Sample%20Renderer/Plug-in%20-%20Sample%20Renderer.md)** — Sample Code · 2003-01-14，macOS，33 页
+- **[Plug-in  -DistanceProxyGroup](../../samplecode/Plug-in%20-DistanceProxyGroup/Plug-in%20-DistanceProxyGroup.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[Plug-in  -QuickDraw Renderer](../../samplecode/Plug-in%20-QuickDraw%20Renderer/Plug-in%20-QuickDraw%20Renderer.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[Plug-in -Postscript Renderer](../../samplecode/Plug-in%20-Postscript%20Renderer/Plug-in%20-Postscript%20Renderer.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[PMPrinterTest](../../samplecode/PMPrinterTest/PMPrinterTest.md)** — Sample Code · 2009-02-13，macOS · ApplicationServices，6 页
+- **[Polygons](../../samplecode/Polygons/Polygons.md)** — Sample Code · 2003-01-14，macOS · AppKit，14 页
+- **[PopMenus](../../samplecode/PopMenus/PopMenus.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Popover: Using NSPopover to display contents of a view controller](../../samplecode/Popover-%20Using%20NSPopover%20to%20display%20contents%20of%20a%20view%20controller/Popover-%20Using%20NSPopover%20to%20display%20contents%20of%20a%20view%20controller.md)** — Sample Code · 2015-12-17，macOS · AppKit，9 页
+- **[PopupBindings](../../samplecode/PopupBindings/PopupBindings.md)** — Sample Code · 2012-04-23，macOS · AppKit，10 页
+- **[PopUpMenuWithCurFont](../../samplecode/PopUpMenuWithCurFont/PopUpMenuWithCurFont.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[PortMapper](../../samplecode/PortMapper/PortMapper.md)** — Sample Code · 2008-07-25，macOS，6 页
+- **[PostScript Output Filters](../../samplecode/PostScript%20Output%20Filters/PostScript%20Output%20Filters.md)** — Sample Code · 2003-03-26，macOS，42 页
+- **[PostScriptHandleDemo](../../samplecode/PostScriptHandleDemo/PostScriptHandleDemo.md)** — Sample Code · 2003-03-26，macOS，2 页
+- **[PPCToolboxKeychain](../../samplecode/PPCToolboxKeychain/PPCToolboxKeychain.md)** — Sample Code · 2003-03-14，macOS，14 页
+- **[PredicateEditorSample](../../samplecode/PredicateEditorSample/PredicateEditorSample.md)** — Sample Code · 2010-03-15，macOS · AppKit，8 页
+- **[Preferences](../../samplecode/Preferences/Preferences.md)** — Sample Code · 2011-05-02，macOS · CoreFoundation，4 页
+- **[PrefsPane](../../samplecode/PrefsPane/PrefsPane.md)** — Sample Code · 2011-09-09，macOS · AppKit，5 页
+- **[PreLoginAgents](../../samplecode/PreLoginAgents/PreLoginAgents.md)** — Sample Code · 2014-04-07，macOS，9 页
+- **[Print Clipped Offscreen](../../samplecode/Print%20Clipped%20Offscreen/Print%20Clipped%20Offscreen.md)** — Sample Code · 2003-03-26，macOS，3 页
+- **[Print multipage PICT](../../samplecode/Print%20multipage%20PICT/Print%20multipage%20PICT.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[PrintDialogMagic](../../samplecode/PrintDialogMagic/PrintDialogMagic.md)** — Sample Code · 2003-03-26，macOS，3 页
+- **[ProcDoggie](../../samplecode/ProcDoggie/ProcDoggie.md)** — Sample Code · 2003-10-30，macOS，2 页
+- **[Processes](../../samplecode/Processes/Processes.md)** — Sample Code · 2006-07-28，macOS，30 页
+- **[ProfileSystem](../../samplecode/ProfileSystem/ProfileSystem.md)** — Sample Code · 2005-05-05，macOS · CoreFoundation，3 页
+- **[ProgressBar](../../samplecode/ProgressBar/ProgressBar.md)** — Sample Code · 2008-02-06，Safari|macOS，6 页
+- **[ProgressBars](../../samplecode/ProgressBars/ProgressBars.md)** — Sample Code · 2003-01-30，macOS，13 页
+- **[PThreadSorts](../../samplecode/PThreadSorts/PThreadSorts.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[PTPPassThrough](../../samplecode/PTPPassThrough/PTPPassThrough.md)** — Sample Code · 2009-06-04，macOS · ImageCaptureCore，9 页
+- **[PushyMac](../../samplecode/PushyMac/PushyMac.md)** — Sample Code · 2011-07-08，macOS · AppKit，5 页
+- **[PutAwayVolumes](../../samplecode/PutAwayVolumes/PutAwayVolumes.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QCCocoaComponent](../../samplecode/QCCocoaComponent/QCCocoaComponent.md)** — Sample Code · 2006-04-12，macOS，6 页
+- **[QDCocoaComponent](../../samplecode/QDCocoaComponent/QDCocoaComponent.md)** — Sample Code · 2005-03-15，macOS，11 页
+- **[qdmediahandler](../../samplecode/qdmediahandler/qdmediahandler.md)** — Sample Code · 2003-01-14，macOS · QuickTime，12 页
+- **[qdmediahandler.win](../../samplecode/qdmediahandler.win/qdmediahandler.win.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[qdmediamaker](../../samplecode/qdmediamaker/qdmediamaker.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qdmediamaker.win](../../samplecode/qdmediamaker.win/qdmediamaker.win.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[QISA](../../samplecode/QISA/QISA.md)** — Sample Code · 2003-05-15，macOS，64 页
+- **[QT Capture Widget](../../samplecode/QT%20Capture%20Widget/QT%20Capture%20Widget.md)** — Sample Code · 2007-08-27，macOS，10 页
+- **[QT Internals](../../samplecode/QT%20Internals/QT%20Internals.md)** — Sample Code · 2003-01-14，macOS · QuickTime，13 页
+- **[QT QDesign decomp](../../samplecode/QT%20QDesign%20decomp/QT%20QDesign%20decomp.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[qt3dtween](../../samplecode/qt3dtween/qt3dtween.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qt3dtween.win](../../samplecode/qt3dtween.win/qt3dtween.win.md)** — Sample Code · 2003-01-14，macOS，15 页
+- **[qtactiontargets](../../samplecode/qtactiontargets/qtactiontargets.md)** — Sample Code · 2003-02-25，macOS，27 页
+- **[qtactiontargets.win](../../samplecode/qtactiontargets.win/qtactiontargets.win.md)** — Sample Code · 2003-02-25，macOS，19 页
+- **[qtaddeffectseg](../../samplecode/qtaddeffectseg/qtaddeffectseg.md)** — Sample Code · 2003-02-25，macOS，4 页
+- **[qtaddeffectseg.win](../../samplecode/qtaddeffectseg.win/qtaddeffectseg.win.md)** — Sample Code · 2003-02-25，macOS，4 页
+- **[QTAudioContextInsert](../../samplecode/QTAudioContextInsert/QTAudioContextInsert.md)** — Sample Code · 2008-01-21，macOS · QuickTime，32 页
+- **[QTAudioExtractionPanel](../../samplecode/QTAudioExtractionPanel/QTAudioExtractionPanel.md)** — Sample Code · 2005-06-27，macOS · QuickTime，27 页
+- **[qtbigscreen](../../samplecode/qtbigscreen/qtbigscreen.md)** — Sample Code · 2003-01-14，macOS · QuickTime，18 页
+- **[qtbigscreen.win](../../samplecode/qtbigscreen.win/qtbigscreen.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QTBRemoteAdmin](../../samplecode/QTBRemoteAdmin/QTBRemoteAdmin.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[qtbroadcast](../../samplecode/qtbroadcast/qtbroadcast.md)** — Sample Code · 2003-03-06，macOS，20 页
+- **[QTButtonDemo](../../samplecode/QTButtonDemo/QTButtonDemo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtcapture](../../samplecode/qtcapture/qtcapture.md)** — Sample Code · 2003-01-14，macOS，21 页
+- **[qtcapture.win](../../samplecode/qtcapture.win/qtcapture.win.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[QTCarbonCoreImage101](../../samplecode/QTCarbonCoreImage101/QTCarbonCoreImage101.md)** — Sample Code · 2006-02-14，macOS，5 页
+- **[QTCarbonShell](../../samplecode/QTCarbonShell/QTCarbonShell.md)** — Sample Code · 2009-03-19，macOS，4 页
+- **[qtchannels](../../samplecode/qtchannels/qtchannels.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtchannels.win](../../samplecode/qtchannels.win/qtchannels.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtcompress](../../samplecode/qtcompress/qtcompress.md)** — Sample Code · 2003-01-14，macOS · QuickTime，18 页
+- **[qtcompress.win](../../samplecode/qtcompress.win/qtcompress.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QTCompressionOptionsWindow](../../samplecode/QTCompressionOptionsWindow/QTCompressionOptionsWindow.md)** — Sample Code · 2008-02-22，macOS · QTKit，7 页
+- **[QTControlCommandLine](../../samplecode/QTControlCommandLine/QTControlCommandLine.md)** — Sample Code · 2008-01-29，macOS · QuickTime，2 页
+- **[qtcontroller](../../samplecode/qtcontroller/qtcontroller.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtcontroller.win](../../samplecode/qtcontroller.win/qtcontroller.win.md)** — Sample Code · 2003-01-14，macOS，15 页
+- **[QTCoreImage101](../../samplecode/QTCoreImage101/QTCoreImage101.md)** — Sample Code · 2009-10-27，macOS · QuartzCore，7 页
+- **[QTCoreVideo101](../../samplecode/QTCoreVideo101/QTCoreVideo101.md)** — Sample Code · 2011-01-22，macOS · QuartzCore，7 页
+- **[QTCoreVideo102](../../samplecode/QTCoreVideo102/QTCoreVideo102.md)** — Sample Code · 2011-06-27，macOS，106 页
+- **[QTCoreVideo103](../../samplecode/QTCoreVideo103/QTCoreVideo103.md)** — Sample Code · 2011-06-27，macOS，106 页
+- **[QTCoreVideo201](../../samplecode/QTCoreVideo201/QTCoreVideo201.md)** — Sample Code · 2011-06-27，macOS，106 页
+- **[QTCoreVideo202](../../samplecode/QTCoreVideo202/QTCoreVideo202.md)** — Sample Code · 2011-06-27，macOS，106 页
+- **[QTCoreVideo301](../../samplecode/QTCoreVideo301/QTCoreVideo301.md)** — Sample Code · 2013-07-18，macOS · QuartzCore，86 页
+- **[qtcreatemovie](../../samplecode/qtcreatemovie/qtcreatemovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，11 页
+- **[qtcreatemovie.win](../../samplecode/qtcreatemovie.win/qtcreatemovie.win.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[qtcustombutton](../../samplecode/qtcustombutton/qtcustombutton.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtcustombutton.win](../../samplecode/qtcustombutton.win/qtcustombutton.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtdataexchange](../../samplecode/qtdataexchange/qtdataexchange.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtdataexchange.win](../../samplecode/qtdataexchange.win/qtdataexchange.win.md)** — Sample Code · 2006-07-20，macOS，15 页
+- **[qtdataref](../../samplecode/qtdataref/qtdataref.md)** — Sample Code · 2003-01-24，macOS · QuickTime，18 页
+- **[qtdataref.win](../../samplecode/qtdataref.win/qtdataref.win.md)** — Sample Code · 2003-01-24，macOS，15 页
+- **[qteffects](../../samplecode/qteffects/qteffects.md)** — Sample Code · 2003-01-14，macOS，28 页
+- **[QTEffects Explode](../../samplecode/QTEffects%20Explode/QTEffects%20Explode.md)** — Sample Code · 2003-02-25，macOS，6 页
+- **[QTEffects Explode.win](../../samplecode/QTEffects%20Explode.win/QTEffects%20Explode.win.md)** — Sample Code · 2003-02-25，macOS，6 页
+- **[qteffects.win](../../samplecode/qteffects.win/qteffects.win.md)** — Sample Code · 2003-01-14，macOS，25 页
+- **[QTEffectsDialog - Cocoa](../../samplecode/QTEffectsDialog%20-%20Cocoa/QTEffectsDialog%20-%20Cocoa.md)** — Sample Code · 2003-09-04，macOS，6 页
+- **[QTEffectsJava](../../samplecode/QTEffectsJava/QTEffectsJava.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[QTExtractAndConvertToMovieFile](../../samplecode/QTExtractAndConvertToMovieFile/QTExtractAndConvertToMovieFile.md)** — Sample Code · 2006-11-08，macOS · AudioToolbox，9 页
+- **[qtfiletransfer](../../samplecode/qtfiletransfer/qtfiletransfer.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtfiletransfer.win](../../samplecode/qtfiletransfer.win/qtfiletransfer.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtflattentohandle](../../samplecode/qtflattentohandle/qtflattentohandle.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[qtflattentohandle.win](../../samplecode/qtflattentohandle.win/qtflattentohandle.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtframestepper](../../samplecode/qtframestepper/qtframestepper.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[qtframestepper.win](../../samplecode/qtframestepper.win/qtframestepper.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtfullscreen](../../samplecode/qtfullscreen/qtfullscreen.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[qtfullscreen.win](../../samplecode/qtfullscreen.win/qtfullscreen.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtgraphics](../../samplecode/qtgraphics/qtgraphics.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtgraphics.win](../../samplecode/qtgraphics.win/qtgraphics.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QTGraphicsImport](../../samplecode/QTGraphicsImport/QTGraphicsImport.md)** — Sample Code · 2003-01-14，macOS · AppKit，7 页
+- **[qtgraphimp](../../samplecode/qtgraphimp/qtgraphimp.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtgraphimp.win](../../samplecode/qtgraphimp.win/qtgraphimp.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qthintmovies](../../samplecode/qthintmovies/qthintmovies.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qthintmovies.win](../../samplecode/qthintmovies.win/qthintmovies.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[QTimadecompression](../../samplecode/QTimadecompression/QTimadecompression.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[qtinfo](../../samplecode/qtinfo/qtinfo.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtinfo.win](../../samplecode/qtinfo.win/qtinfo.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QTJava media samples](../../samplecode/QTJava%20media%20samples/QTJava%20media%20samples.md)** — Sample Code · 2003-01-14，macOS · QuickTime，3 页
+- **[QTKitAdvancedDocument](../../samplecode/QTKitAdvancedDocument/QTKitAdvancedDocument.md)** — Sample Code · 2005-08-01，macOS · QTKit，7 页
+- **[QTKitButtonTester](../../samplecode/QTKitButtonTester/QTKitButtonTester.md)** — Sample Code · 2006-08-01，macOS · QTKit，6 页
+- **[QTKitCommandLine](../../samplecode/QTKitCommandLine/QTKitCommandLine.md)** — Sample Code · 2005-06-01，macOS · QTKit，4 页
+- **[QTKitCreateMovie](../../samplecode/QTKitCreateMovie/QTKitCreateMovie.md)** — Sample Code · 2007-08-31，macOS · QTKit，11 页
+- **[QTKitFrameStepper](../../samplecode/QTKitFrameStepper/QTKitFrameStepper.md)** — Sample Code · 2005-08-01，macOS · QTKit，7 页
+- **[QTKitImport](../../samplecode/QTKitImport/QTKitImport.md)** — Sample Code · 2005-06-01，macOS · QTKit，7 页
+- **[QTKitMovieFrameImage](../../samplecode/QTKitMovieFrameImage/QTKitMovieFrameImage.md)** — Sample Code · 2007-08-31，macOS · QTKit，5 页
+- **[QTKitMovieShuffler](../../samplecode/QTKitMovieShuffler/QTKitMovieShuffler.md)** — Sample Code · 2006-01-03，macOS · QTKit，25 页
+- **[QTKitPlayer](../../samplecode/QTKitPlayer/QTKitPlayer.md)** — Sample Code · 2007-08-31，macOS · QTKit，13 页
+- **[QTKitProgressTester](../../samplecode/QTKitProgressTester/QTKitProgressTester.md)** — Sample Code · 2005-08-01，macOS · QTKit，5 页
+- **[QTKitSimpleDocument](../../samplecode/QTKitSimpleDocument/QTKitSimpleDocument.md)** — Sample Code · 2005-08-01，macOS · QTKit，5 页
+- **[QTKitThreadedExport](../../samplecode/QTKitThreadedExport/QTKitThreadedExport.md)** — Sample Code · 2006-08-01，macOS · QTKit，6 页
+- **[QTKitThreadsExporter](../../samplecode/QTKitThreadsExporter/QTKitThreadsExporter.md)** — Sample Code · 2007-10-08，macOS · QTKit，12 页
+- **[QTKitTimeCode](../../samplecode/QTKitTimeCode/QTKitTimeCode.md)** — Sample Code · 2007-09-19，macOS · QTKit，8 页
+- **[qtmakemovie](../../samplecode/qtmakemovie/qtmakemovie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[QTMetaData](../../samplecode/QTMetaData/QTMetaData.md)** — Sample Code · 2009-03-16，macOS · QuickTime，14 页
+- **[QTMetadataEditor](../../samplecode/QTMetadataEditor/QTMetadataEditor.md)** — Sample Code · 2010-05-27，macOS · QuickTime，18 页
+- **[qtmissingcomp](../../samplecode/qtmissingcomp/qtmissingcomp.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtmissingcomp.win](../../samplecode/qtmissingcomp.win/qtmissingcomp.win.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[QTMLPrintingSample](../../samplecode/QTMLPrintingSample/QTMLPrintingSample.md)** — Sample Code · 2003-10-27，macOS · QuickTime，7 页
+- **[qtmoviefromprocs](../../samplecode/qtmoviefromprocs/qtmoviefromprocs.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtmoviefromprocs.win](../../samplecode/qtmoviefromprocs.win/qtmoviefromprocs.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtmoviefromurl](../../samplecode/qtmoviefromurl/qtmoviefromurl.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtmoviefromurl.win](../../samplecode/qtmoviefromurl.win/qtmoviefromurl.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtmovietrack](../../samplecode/qtmovietrack/qtmovietrack.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtmovietrack.win](../../samplecode/qtmovietrack.win/qtmovietrack.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，14 页
+- **[QTMP3Player](../../samplecode/QTMP3Player/QTMP3Player.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[qtmultiimage](../../samplecode/qtmultiimage/qtmultiimage.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtmultiimage.win](../../samplecode/qtmultiimage.win/qtmultiimage.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtmusic](../../samplecode/qtmusic/qtmusic.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[qtmusic.win](../../samplecode/qtmusic.win/qtmusic.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，15 页
+- **[QTMusicToo](../../samplecode/QTMusicToo/QTMusicToo.md)** — Sample Code · 2003-03-19，macOS，58 页
+- **[QTNoStepsDemo](../../samplecode/QTNoStepsDemo/QTNoStepsDemo.md)** — Sample Code · 2006-08-01，macOS · QTKit，8 页
+- **[QTPixelBufferVCToCGImage](../../samplecode/QTPixelBufferVCToCGImage/QTPixelBufferVCToCGImage.md)** — Sample Code · 2006-07-07，macOS · QuickTime，3 页
+- **[QTQuartzPlayer](../../samplecode/QTQuartzPlayer/QTQuartzPlayer.md)** — Sample Code · 2005-10-04，macOS · QuartzCore，8 页
+- **[qtreadwritejpeg](../../samplecode/qtreadwritejpeg/qtreadwritejpeg.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtreadwritejpeg.win](../../samplecode/qtreadwritejpeg.win/qtreadwritejpeg.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[QTRecorder](../../samplecode/QTRecorder/QTRecorder.md)** — Sample Code · 2011-08-25，macOS · QuickTime，6 页
+- **[QTSetMovieAudioDevice](../../samplecode/QTSetMovieAudioDevice/QTSetMovieAudioDevice.md)** — Sample Code · 2006-03-03，macOS，8 页
+- **[qtshell](../../samplecode/qtshell/qtshell.md)** — Sample Code · 2003-10-27，macOS · QuickTime，16 页
+- **[qtshell.win](../../samplecode/qtshell.win/qtshell.win.md)** — Sample Code · 2003-10-27，macOS · QuickTime，13 页
+- **[qtshellCEvents](../../samplecode/qtshellCEvents/qtshellCEvents.md)** — Sample Code · 2003-01-14，macOS · QuickTime，16 页
+- **[qtshellCEvents.win](../../samplecode/qtshellCEvents.win/qtshellCEvents.win.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[qtshortcut](../../samplecode/qtshortcut/qtshortcut.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtshortcut.win](../../samplecode/qtshortcut.win/qtshortcut.win.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtshoweffect](../../samplecode/qtshoweffect/qtshoweffect.md)** — Sample Code · 2003-02-25，macOS，18 页
+- **[qtshoweffect.win](../../samplecode/qtshoweffect.win/qtshoweffect.win.md)** — Sample Code · 2003-02-25，macOS，16 页
+- **[QTSimpleApplet](../../samplecode/QTSimpleApplet/QTSimpleApplet.md)** — Sample Code · 2006-06-28，macOS，6 页
+- **[qtskins](../../samplecode/qtskins/qtskins.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtskins.win](../../samplecode/qtskins.win/qtskins.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[qtsndtween](../../samplecode/qtsndtween/qtsndtween.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[qtsndtween.win](../../samplecode/qtsndtween.win/qtsndtween.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[QTSPketizerReassem](../../samplecode/QTSPketizerReassem/QTSPketizerReassem.md)** — Sample Code · 2003-01-14，macOS，40 页
+- **[QTSPketizerReassem.win](../../samplecode/QTSPketizerReassem.win/QTSPketizerReassem.win.md)** — Sample Code · 2003-01-14，macOS，53 页
+- **[qtsprites](../../samplecode/qtsprites/qtsprites.md)** — Sample Code · 2003-02-25，macOS，25 页
+- **[qtsprites.win](../../samplecode/qtsprites.win/qtsprites.win.md)** — Sample Code · 2003-02-25，macOS，22 页
+- **[qtspritesplus](../../samplecode/qtspritesplus/qtspritesplus.md)** — Sample Code · 2003-02-25，macOS，25 页
+- **[qtspritesplus.win](../../samplecode/qtspritesplus.win/qtspritesplus.win.md)** — Sample Code · 2003-02-25，macOS，22 页
+- **[QTSSConnectionMonitor](../../samplecode/QTSSConnectionMonitor/QTSSConnectionMonitor.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[QTSSInspector](../../samplecode/QTSSInspector/QTSSInspector.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[qtstdcompr](../../samplecode/qtstdcompr/qtstdcompr.md)** — Sample Code · 2003-01-14，macOS · QuickTime，4 页
+- **[qtstdcompr.win](../../samplecode/qtstdcompr.win/qtstdcompr.win.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[qtstreaming](../../samplecode/qtstreaming/qtstreaming.md)** — Sample Code · 2003-01-14，macOS，41 页
+- **[qtstreaming.win](../../samplecode/qtstreaming.win/qtstreaming.win.md)** — Sample Code · 2003-01-14，macOS，53 页
+- **[QTStreamingApplet](../../samplecode/QTStreamingApplet/QTStreamingApplet.md)** — Sample Code · 2006-06-28，macOS，7 页
+- **[qtstreammsg](../../samplecode/qtstreammsg/qtstreammsg.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtstreammsg.win](../../samplecode/qtstreammsg.win/qtstreammsg.win.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtstreamsplicer](../../samplecode/qtstreamsplicer/qtstreamsplicer.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[qtstreamsplicer.win](../../samplecode/qtstreamsplicer.win/qtstreamsplicer.win.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[QTTestApplet](../../samplecode/QTTestApplet/QTTestApplet.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[qttext](../../samplecode/qttext/qttext.md)** — Sample Code · 2003-01-14，macOS · QuickTime，18 页
+- **[qttext.win](../../samplecode/qttext.win/qttext.win.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[qttimecode](../../samplecode/qttimecode/qttimecode.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[QTtoCG](../../samplecode/QTtoCG/QTtoCG.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[QTtoJavaImage](../../samplecode/QTtoJavaImage/QTtoJavaImage.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[QTVector](../../samplecode/QTVector/QTVector.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[qtvectors](../../samplecode/qtvectors/qtvectors.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[qtvectors.win](../../samplecode/qtvectors.win/qtvectors.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，15 页
+- **[qtwiredactions](../../samplecode/qtwiredactions/qtwiredactions.md)** — Sample Code · 2003-02-25，macOS，27 页
+- **[qtwiredactions.win](../../samplecode/qtwiredactions.win/qtwiredactions.win.md)** — Sample Code · 2003-02-25，macOS，24 页
+- **[qtwiredsprites](../../samplecode/qtwiredsprites/qtwiredsprites.md)** — Sample Code · 2003-02-25，macOS，28 页
+- **[qtwiredsprites.win](../../samplecode/qtwiredsprites.win/qtwiredsprites.win.md)** — Sample Code · 2003-02-25，macOS，24 页
+- **[qtwiredspritesjr](../../samplecode/qtwiredspritesjr/qtwiredspritesjr.md)** — Sample Code · 2003-02-25，macOS，28 页
+- **[qtwiredspritesjr.win](../../samplecode/qtwiredspritesjr.win/qtwiredspritesjr.win.md)** — Sample Code · 2003-02-25，macOS，24 页
+- **[Quartz 2D Shadings](../../samplecode/Quartz%202D%20Shadings/Quartz%202D%20Shadings.md)** — Sample Code · 2007-08-31，macOS · ApplicationServices，13 页
+- **[Quartz 2D Transformer](../../samplecode/Quartz%202D%20Transformer/Quartz%202D%20Transformer.md)** — Sample Code · 2010-04-12，macOS · ApplicationServices，10 页
+- **[Quartz Composer AnimatedCompostionLayer](../../samplecode/Quartz%20Composer%20AnimatedCompostionLayer/Quartz%20Composer%20AnimatedCompostionLayer.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer BatteryInfo](../../samplecode/Quartz%20Composer%20BatteryInfo/Quartz%20Composer%20BatteryInfo.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer Chart](../../samplecode/Quartz%20Composer%20Chart/Quartz%20Composer%20Chart.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer CommandLineTool](../../samplecode/Quartz%20Composer%20CommandLineTool/Quartz%20Composer%20CommandLineTool.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer Conceptual Compositions](../../samplecode/Quartz%20Composer%20Conceptual%20Compositions.md)** — Sample Code · 2009-10-27，macOS · Quartz
+- **[Quartz Composer Core Image](../../samplecode/Quartz%20Composer%20Core%20Image/Quartz%20Composer%20Core%20Image.md)** — Sample Code · 2009-10-27，macOS · Quartz，3 页
+- **[Quartz Composer DesktopRenderer](../../samplecode/Quartz%20Composer%20DesktopRenderer/Quartz%20Composer%20DesktopRenderer.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer FastImage](../../samplecode/Quartz%20Composer%20FastImage/Quartz%20Composer%20FastImage.md)** — Sample Code · 2009-10-27，macOS · Quartz，9 页
+- **[Quartz Composer GLHeightField](../../samplecode/Quartz%20Composer%20GLHeightField/Quartz%20Composer%20GLHeightField.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer GLImage](../../samplecode/Quartz%20Composer%20GLImage/Quartz%20Composer%20GLImage.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer GLSquare](../../samplecode/Quartz%20Composer%20GLSquare/Quartz%20Composer%20GLSquare.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer HistogramOperation](../../samplecode/Quartz%20Composer%20HistogramOperation/Quartz%20Composer%20HistogramOperation.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer ImageExporter](../../samplecode/Quartz%20Composer%20ImageExporter/Quartz%20Composer%20ImageExporter.md)** — Sample Code · 2009-10-29，macOS · Quartz，5 页
+- **[Quartz Composer ImageFX](../../samplecode/Quartz%20Composer%20ImageFX/Quartz%20Composer%20ImageFX.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer ImageInfo](../../samplecode/Quartz%20Composer%20ImageInfo/Quartz%20Composer%20ImageInfo.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer ImageResizer](../../samplecode/Quartz%20Composer%20ImageResizer/Quartz%20Composer%20ImageResizer.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer IMStatus](../../samplecode/Quartz%20Composer%20IMStatus/Quartz%20Composer%20IMStatus.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer iPatch](../../samplecode/Quartz%20Composer%20iPatch/Quartz%20Composer%20iPatch.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer Live DV](../../samplecode/Quartz%20Composer%20Live%20DV/Quartz%20Composer%20Live%20DV.md)** — Sample Code · 2005-06-01，macOS · Quartz，9 页
+- **[Quartz Composer LiveEdit](../../samplecode/Quartz%20Composer%20LiveEdit/Quartz%20Composer%20LiveEdit.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer Matrix](../../samplecode/Quartz%20Composer%20Matrix/Quartz%20Composer%20Matrix.md)** — Sample Code · 2005-06-01，macOS · Quartz，3 页
+- **[Quartz Composer MiniBooth](../../samplecode/Quartz%20Composer%20MiniBooth/Quartz%20Composer%20MiniBooth.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer MiniSOAP](../../samplecode/Quartz%20Composer%20MiniSOAP/Quartz%20Composer%20MiniSOAP.md)** — Sample Code · 2009-10-27，macOS · Quartz，12 页
+- **[Quartz Composer Offline](../../samplecode/Quartz%20Composer%20Offline/Quartz%20Composer%20Offline.md)** — Sample Code · 2009-10-27，macOS · Quartz，4 页
+- **[Quartz Composer Offline Rendering](../../samplecode/Quartz%20Composer%20Offline%20Rendering/Quartz%20Composer%20Offline%20Rendering.md)** — Sample Code · 2005-06-01，macOS · Quartz，3 页
+- **[Quartz Composer OpenCL](../../samplecode/Quartz%20Composer%20OpenCL/Quartz%20Composer%20OpenCL.md)** — Sample Code · 2009-10-27，macOS · Quartz，3 页
+- **[Quartz Composer OverlayComposition](../../samplecode/Quartz%20Composer%20OverlayComposition/Quartz%20Composer%20OverlayComposition.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer ParameterView](../../samplecode/Quartz%20Composer%20ParameterView/Quartz%20Composer%20ParameterView.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer Player](../../samplecode/Quartz%20Composer%20Player/Quartz%20Composer%20Player.md)** — Sample Code · 2009-10-27，macOS · Quartz，4 页
+- **[Quartz Composer Poster](../../samplecode/Quartz%20Composer%20Poster/Quartz%20Composer%20Poster.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer QCTV](../../samplecode/Quartz%20Composer%20QCTV/Quartz%20Composer%20QCTV.md)** — Sample Code · 2005-07-06，macOS · Quartz，17 页
+- **[Quartz Composer RepositoryBrowser](../../samplecode/Quartz%20Composer%20RepositoryBrowser/Quartz%20Composer%20RepositoryBrowser.md)** — Sample Code · 2009-10-27，macOS · Quartz，6 页
+- **[Quartz Composer SimpleText](../../samplecode/Quartz%20Composer%20SimpleText/Quartz%20Composer%20SimpleText.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer SlideShow](../../samplecode/Quartz%20Composer%20SlideShow/Quartz%20Composer%20SlideShow.md)** — Sample Code · 2009-10-27，macOS · Quartz，4 页
+- **[Quartz Composer SpeechSynthesis](../../samplecode/Quartz%20Composer%20SpeechSynthesis/Quartz%20Composer%20SpeechSynthesis.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer SpotlightSearch](../../samplecode/Quartz%20Composer%20SpotlightSearch/Quartz%20Composer%20SpotlightSearch.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer SQLiteQuery](../../samplecode/Quartz%20Composer%20SQLiteQuery/Quartz%20Composer%20SQLiteQuery.md)** — Sample Code · 2009-10-27，macOS · Quartz，5 页
+- **[Quartz Composer Texture](../../samplecode/Quartz%20Composer%20Texture/Quartz%20Composer%20Texture.md)** — Sample Code · 2009-10-27，macOS · Quartz，8 页
+- **[Quartz Composer WWDC 2005 Composition](../../samplecode/Quartz%20Composer%20WWDC%202005%20Composition/Quartz%20Composer%20WWDC%202005%20Composition.md)** — Sample Code · 2005-06-01，macOS · Quartz，2 页
+- **[Quartz Composer WWDC 2005 TextEdit](../../samplecode/Quartz%20Composer%20WWDC%202005%20TextEdit/Quartz%20Composer%20WWDC%202005%20TextEdit.md)** — Sample Code · 2005-06-01，macOS · Quartz，44 页
+- **[Quartz Composer WWDC 2006 Galaxy](../../samplecode/Quartz%20Composer%20WWDC%202006%20Galaxy/Quartz%20Composer%20WWDC%202006%20Galaxy.md)** — Sample Code · 2006-08-07，macOS · Quartz，3 页
+- **[Quartz Composer WWDC 2007 High Scores](../../samplecode/Quartz%20Composer%20WWDC%202007%20High%20Scores/Quartz%20Composer%20WWDC%202007%20High%20Scores.md)** — Sample Code · 2007-06-11，macOS · Quartz，3 页
+- **[Quartz Composer WWDC 2008 Interaction](../../samplecode/Quartz%20Composer%20WWDC%202008%20Interaction/Quartz%20Composer%20WWDC%202008%20Interaction.md)** — Sample Code · 2008-06-04，macOS · Quartz，2 页
+- **[Quartz EB](../../samplecode/Quartz%20EB/Quartz%20EB.md)** — Sample Code · 2003-01-14，macOS · ApplicationServices，86 页
+- **[Quartz2DBasics](../../samplecode/Quartz2DBasics/Quartz2DBasics.md)** — Sample Code · 2006-09-11，macOS · ApplicationServices，17 页
+- **[QuartzCache](../../samplecode/QuartzCache/QuartzCache.md)** — Sample Code · 2005-06-01，macOS · ApplicationServices，19 页
+- **[QuartzComposerSamplePatches](../../samplecode/QuartzComposerSamplePatches/QuartzComposerSamplePatches.md)** — Sample Code · 2007-06-11，macOS · Quartz，3 页
+- **[QuartzLines](../../samplecode/QuartzLines/QuartzLines.md)** — Sample Code · 2005-06-01，macOS · ApplicationServices，5 页
+- **[QuartzShapes](../../samplecode/QuartzShapes/QuartzShapes.md)** — Sample Code · 2005-03-08，macOS · ApplicationServices，12 页
+- **[QuickDraw FX](../../samplecode/QuickDraw%20FX/QuickDraw%20FX.md)** — Sample Code · 2003-10-27，macOS，15 页
+- **[QuickLookDownloader](../../samplecode/QuickLookDownloader/QuickLookDownloader.md)** — Sample Code · 2017-10-26，macOS · QuickLook，15 页
+- **[QuickLookSketch](../../samplecode/QuickLookSketch/QuickLookSketch.md)** — Sample Code · 2009-05-11，macOS · QuickLook，23 页
+- **[QuickTimeMovieControl](../../samplecode/QuickTimeMovieControl/QuickTimeMovieControl.md)** — Sample Code · 2005-08-10，macOS · QuickTime，3 页
+- **[quitapps](../../samplecode/quitapps/quitapps.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[RadiantColorPicker](../../samplecode/RadiantColorPicker/RadiantColorPicker.md)** — Sample Code · 2009-05-29，macOS · AppKit，6 页
+- **[RAMDisk](../../samplecode/RAMDisk/RAMDisk.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[RAVE Starter Samples](../../samplecode/RAVE%20Starter%20Samples/RAVE%20Starter%20Samples.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[RaveContextSample](../../samplecode/RaveContextSample/RaveContextSample.md)** — Sample Code · 2003-01-14，macOS，16 页
+- **[RaveEngineInfoSample](../../samplecode/RaveEngineInfoSample/RaveEngineInfoSample.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[RawAudioFileComponent](../../samplecode/RawAudioFileComponent/RawAudioFileComponent.md)** — Sample Code · 2014-06-26，macOS · AudioToolbox，31 页
+- **[ReadLocation](../../samplecode/ReadLocation/ReadLocation.md)** — Sample Code · 2003-01-30，macOS，2 页
+- **[ReadSector MSDOS](../../samplecode/ReadSector%20MSDOS/ReadSector%20MSDOS.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[RecentItems](../../samplecode/RecentItems/RecentItems.md)** — Sample Code · 2006-10-09，macOS · Carbon，5 页
+- **[Record RetrievePictInfo](../../samplecode/Record%20RetrievePictInfo/Record%20RetrievePictInfo.md)** — Sample Code · 2003-10-10，macOS，3 页
+- **[Record sound specific rate](../../samplecode/Record%20sound%20specific%20rate/Record%20sound%20specific%20rate.md)** — Sample Code · 2003-03-14，macOS，4 页
+- **[Record sound to disk](../../samplecode/Record%20sound%20to%20disk/Record%20sound%20to%20disk.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[RecordAudioToFile](../../samplecode/RecordAudioToFile/RecordAudioToFile.md)** — Sample Code · 2007-02-27，macOS · AudioToolbox，5 页
+- **[RecordToFile](../../samplecode/RecordToFile/RecordToFile.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Red Rocket](../../samplecode/Red%20Rocket/Red%20Rocket.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[Reducer](../../samplecode/Reducer/Reducer.md)** — Sample Code · 2005-06-06，macOS · QuartzCore，23 页
+- **[Reinstallable](../../samplecode/Reinstallable/Reinstallable.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ReKeyTrans](../../samplecode/ReKeyTrans/ReKeyTrans.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[Reload Safari Extension](../../samplecode/Reload%20Safari%20Extension/Reload%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari|macOS，4 页
+- **[Reminders](../../samplecode/Reminders/Reminders.md)** — Sample Code · 2008-07-25，macOS · System，13 页
+- **[RemoteCurrency](../../samplecode/RemoteCurrency/RemoteCurrency.md)** — Sample Code · 2011-09-09，macOS，25 页
+- **[ReplicatorDemo](../../samplecode/ReplicatorDemo/ReplicatorDemo.md)** — Sample Code · 2009-07-21，macOS · QuartzCore，8 页
+- **[RequiredFinderColors](../../samplecode/RequiredFinderColors/RequiredFinderColors.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Resizer](../../samplecode/Resizer/Resizer.md)** — Sample Code · 2006-08-01，Safari|macOS，2 页
+- **[resolveRelativeAlias](../../samplecode/resolveRelativeAlias/resolveRelativeAlias.md)** — Sample Code · 2003-01-14，macOS · CoreServices，2 页
+- **[Restore Screen Cluts](../../samplecode/Restore%20Screen%20Cluts/Restore%20Screen%20Cluts.md)** — Sample Code · 2003-03-12，macOS，12 页
+- **[Reviews](../../samplecode/Reviews/Reviews.md)** — Sample Code · 2011-07-21，macOS · AppKit，10 页
+- **[RGB Image](../../samplecode/RGB%20Image/RGB%20Image.md)** — Sample Code · 2003-01-14，macOS · AppKit，13 页
+- **[RGB ValueTransformers](../../samplecode/RGB%20ValueTransformers/RGB%20ValueTransformers.md)** — Sample Code · 2003-11-18，macOS · ApplicationServices，15 页
+- **[RollerCoaster](../../samplecode/RollerCoaster/RollerCoaster.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[RollerCoaster.win](../../samplecode/RollerCoaster.win/RollerCoaster.win.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[rollercoasterold](../../samplecode/rollercoasterold/rollercoasterold.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[ROMResourceDump](../../samplecode/ROMResourceDump/ROMResourceDump.md)** — Sample Code · 2003-01-30，macOS，2 页
+- **[ROT13AuthPlugin](../../samplecode/ROT13AuthPlugin/ROT13AuthPlugin.md)** — Sample Code · 2012-06-27，macOS · Security，4 页
+- **[Rotate Bitmap 90](../../samplecode/Rotate%20Bitmap%2090/Rotate%20Bitmap%2090.md)** — Sample Code · 2003-10-27，macOS，7 页
+- **[Rotated Thingies](../../samplecode/Rotated%20Thingies/Rotated%20Thingies.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[RotateString](../../samplecode/RotateString/RotateString.md)** — Sample Code · 2003-10-10，macOS，11 页
+- **[RoundTransparentWindow](../../samplecode/RoundTransparentWindow/RoundTransparentWindow.md)** — Sample Code · 2013-05-08，macOS · AppKit，10 页
+- **[Rubber Bandit](../../samplecode/Rubber%20Bandit/Rubber%20Bandit.md)** — Sample Code · 2003-10-27，macOS，7 页
+- **[Rulers](../../samplecode/Rulers/Rulers.md)** — Sample Code · 2012-06-07，macOS · AppKit，10 页
+- **[S3V](../../samplecode/S3V/S3V.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[Sample (Traffic Light)](../../samplecode/Sample%20%28Traffic%20Light%29/Sample%20%28Traffic%20Light%29.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Sample Signed PCI Driver](../../samplecode/Sample%20Signed%20PCI%20Driver/Sample%20Signed%20PCI%20Driver.md)** — Sample Code · 2013-06-06，macOS · Kernel，9 页
+- **[SampleAudioUnits](../../samplecode/SampleAudioUnits/SampleAudioUnits.md)** — Sample Code · 2012-10-10，macOS · AudioUnit，65 页
+- **[SampleButtonPlugin](../../samplecode/SampleButtonPlugin/SampleButtonPlugin.md)** — Sample Code · 2003-07-10，macOS · ImageCaptureCore，3 页
+- **[SampleCMPlugIn](../../samplecode/SampleCMPlugIn/SampleCMPlugIn.md)** — Sample Code · 2006-10-09，macOS，3 页
+- **[SampleD](../../samplecode/SampleD/SampleD.md)** — Sample Code · 2005-10-27，macOS，5 页
+- **[SampleDriverPlugIn](../../samplecode/SampleDriverPlugIn/SampleDriverPlugIn.md)** — Sample Code · 2009-04-15，macOS · CoreAudio，5 页
+- **[SampleDS](../../samplecode/SampleDS/SampleDS.md)** — Sample Code · 2003-07-10，macOS · ImageCaptureCore，15 页
+- **[SampleFilterScheme](../../samplecode/SampleFilterScheme/SampleFilterScheme.md)** — Sample Code · 2006-01-03，macOS · Kernel，5 页
+- **[SampleHardwarePlugIn](../../samplecode/SampleHardwarePlugIn/SampleHardwarePlugIn.md)** — Sample Code · 2009-04-15，macOS · CoreAudio，12 页
+- **[samplemakeeffectmovie](../../samplecode/samplemakeeffectmovie/samplemakeeffectmovie.md)** — Sample Code · 2003-02-25，macOS，18 页
+- **[samplemakeeffectmovie.win](../../samplecode/samplemakeeffectmovie.win/samplemakeeffectmovie.win.md)** — Sample Code · 2003-02-25，macOS，15 页
+- **[SampleRaster](../../samplecode/SampleRaster/SampleRaster.md)** — Sample Code · 2011-09-06，macOS，17 页
+- **[SampleRateAvail](../../samplecode/SampleRateAvail/SampleRateAvail.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[SampleScannerApp](../../samplecode/SampleScannerApp/SampleScannerApp.md)** — Sample Code · 2008-05-07，macOS · ImageCaptureCore，6 页
+- **[SampleSndPlay](../../samplecode/SampleSndPlay/SampleSndPlay.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[SampleUSBAudioOverrideDriver](../../samplecode/SampleUSBAudioOverrideDriver/SampleUSBAudioOverrideDriver.md)** — Sample Code · 2013-06-03，macOS · Kernel，3 页
+- **[SampleUSBAudioPlugin](../../samplecode/SampleUSBAudioPlugin/SampleUSBAudioPlugin.md)** — Sample Code · 2013-08-26，macOS · IOKit，8 页
+- **[SampleUSBMIDIDriver](../../samplecode/SampleUSBMIDIDriver/SampleUSBMIDIDriver.md)** — Sample Code · 2009-03-18，macOS · CoreMIDI，29 页
+- **[SandboxedFetch](../../samplecode/SandboxedFetch/SandboxedFetch.md)** — Sample Code · 2011-07-11，macOS，7 页
+- **[Sandboxing with NSXPCConnection](../../samplecode/Sandboxing%20with%20NSXPCConnection/Sandboxing%20with%20NSXPCConnection.md)** — Sample Code · 2012-08-21，macOS · Foundation，12 页
+- **[Save PICT file](../../samplecode/Save%20PICT%20file/Save%20PICT%20file.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[Save Print Record](../../samplecode/Save%20Print%20Record/Save%20Print%20Record.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SayIt](../../samplecode/SayIt/SayIt.md)** — Sample Code · 2006-08-04，macOS · WebKit，6 页
+- **[SBSendEmail](../../samplecode/SBSendEmail/SBSendEmail.md)** — Sample Code · 2011-08-05，macOS · ScriptingBridge，6 页
+- **[SBSetFinderComment](../../samplecode/SBSetFinderComment/SBSetFinderComment.md)** — Sample Code · 2011-07-14，macOS · ScriptingBridge，6 页
+- **[SBSystemPrefs](../../samplecode/SBSystemPrefs/SBSystemPrefs.md)** — Sample Code · 2011-07-19，macOS · ScriptingBridge，6 页
+- **[Scalable PostScript PICT](../../samplecode/Scalable%20PostScript%20PICT/Scalable%20PostScript%20PICT.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[ScannerBrowser](../../samplecode/ScannerBrowser/ScannerBrowser.md)** — Sample Code · 2012-08-31，macOS · ImageCaptureCore，8 页
+- **[SCAudioCompress](../../samplecode/SCAudioCompress/SCAudioCompress.md)** — Sample Code · 2006-08-22，macOS，4 页
+- **[Scene Kit Document Viewer](../../samplecode/Scene%20Kit%20Document%20Viewer/Scene%20Kit%20Document%20Viewer.md)** — Sample Code · 2012-08-01，macOS · SceneKit，8 页
+- **[SceneKit Animations](../../samplecode/SceneKit%20Animations/Scene%20Kit%20Animations.md)** — Sample Code · 2012-08-31，macOS · SceneKit，6 页
+- **[SceneKit Material Editor](../../samplecode/SceneKit%20Material%20Editor/Scene%20Kit%20Material%20Editor.md)** — Sample Code · 2012-07-31，macOS · SceneKit，12 页
+- **[SceneKit slides for WWDC 2014](../../samplecode/SceneKit%20slides%20for%20WWDC%202014/SceneKit%20slides%20for%20WWDC%202014.md)** — Sample Code · 2014-10-16，macOS，93 页
+- **[SceneKit's presentation for WWDC2013](../../samplecode/SceneKit%27s%20presentation%20for%20WWDC2013/Scene%20Kit%27s%20presentation%20for%20WWDC2013.md)** — Sample Code · 2014-01-07，macOS · SceneKit，84 页
+- **[Scoreboard: A demonstration of RTL support on macOS using NSStackView and localizedStringWithFormat](../../samplecode/Scoreboard-%20A%20demonstration%20of%20RTL%20support%20on%20macOS%20using%20NSStackView%20and%20locali/Scoreboard-%20A%20demonstration%20of%20RTL%20support%20on%20macOS%20using%20NSStackView%20and%20locali.md)** — Sample Code · 2016-10-27，macOS，8 页
+- **[Scrap Parsing](../../samplecode/Scrap%20Parsing/Scrap%20Parsing.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[ScreenDump](../../samplecode/ScreenDump/ScreenDump.md)** — Sample Code · 2003-03-12，macOS，5 页
+- **[ScreenFKey](../../samplecode/ScreenFKey/ScreenFKey.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ScreenSnapshot](../../samplecode/ScreenSnapshot/ScreenSnapshot.md)** — Sample Code · 2011-07-19，macOS · ApplicationServices，10 页
+- **[Scriptable Print SimpleText](../../samplecode/Scriptable%20Print%20SimpleText/Scriptable%20Print%20SimpleText.md)** — Sample Code · 2003-03-26，macOS，35 页
+- **[ScriptingBridgeFinder](../../samplecode/ScriptingBridgeFinder/ScriptingBridgeFinder.md)** — Sample Code · 2011-08-05，macOS · ScriptingBridge，6 页
+- **[ScriptingBridgeiCal](../../samplecode/ScriptingBridgeiCal/ScriptingBridgeiCal.md)** — Sample Code · 2011-08-17，macOS · ScriptingBridge，6 页
+- **[ScriptingDefinitions](../../samplecode/ScriptingDefinitions/ScriptingDefinitions.md)** — Sample Code · 2008-05-30，macOS，5 页
+- **[ScrollAndZoom](../../samplecode/ScrollAndZoom/ScrollAndZoom.md)** — Sample Code · 2005-08-10，macOS，5 页
+- **[SCSI Async Sample](../../samplecode/SCSI%20Async%20Sample/SCSI%20Async%20Sample.md)** — Sample Code · 2003-01-14，macOS，27 页
+- **[SCSI DriveID Sample](../../samplecode/SCSI%20DriveID%20Sample/SCSI%20DriveID%20Sample.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[SCSI Find Devices](../../samplecode/SCSI%20Find%20Devices/SCSI%20Find%20Devices.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[SCSI Inquiry](../../samplecode/SCSI%20Inquiry/SCSI%20Inquiry.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SCSI Inquiry (More)](../../samplecode/SCSI%20Inquiry%20%28More%29/SCSI%20Inquiry%20%28More%29.md)** — Sample Code · 2003-01-14，macOS，10 页
+- **[SCSI Simple Sample](../../samplecode/SCSI%20Simple%20Sample/SCSI%20Simple%20Sample.md)** — Sample Code · 2003-01-14，macOS，26 页
+- **[SCSIHBAEmulator](../../samplecode/SCSIHBAEmulator/SCSIHBAEmulator.md)** — Sample Code · 2007-02-20，macOS · Kernel，12 页
+- **[SCSIOldAndNew](../../samplecode/SCSIOldAndNew/SCSIOldAndNew.md)** — Sample Code · 2006-12-07，macOS · IOKit，8 页
+- **[SDKExample](../../samplecode/SDKExample/SDKExample.md)** — Sample Code · 2005-06-06，macOS，3 页
+- **[SearchField](../../samplecode/SearchField/SearchField.md)** — Sample Code · 2015-06-25，macOS · AppKit，7 页
+- **[SearchProcs & Color Sep](../../samplecode/SearchProcs%20%26%20Color%20Sep/SearchProcs%20%26%20Color%20Sep.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SeedCFill](../../samplecode/SeedCFill/SeedCFill.md)** — Sample Code · 2003-10-27，macOS，7 页
+- **[SeeMyFriends](../../samplecode/SeeMyFriends/SeeMyFriends.md)** — Sample Code · 2006-10-16，macOS · SyncServices，8 页
+- **[SegmentView](../../samplecode/SegmentView/SegmentView.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[Serial Demo](../../samplecode/Serial%20Demo/Serial%20Demo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SerialDriverArbitration](../../samplecode/SerialDriverArbitration/SerialDriverArbitration.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Server Remote Control](../../samplecode/Server%20Remote%20Control/Server%20Remote%20Control.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[Set Folder Windows](../../samplecode/Set%20Folder%20Windows/Set%20Folder%20Windows.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SetCustomIcon](../../samplecode/SetCustomIcon/SetCustomIcon.md)** — Sample Code · 2006-08-01，macOS，3 页
+- **[SetDeskCPatDemo](../../samplecode/SetDeskCPatDemo/SetDeskCPatDemo.md)** — Sample Code · 2003-07-22，macOS，5 页
+- **[SetIndString](../../samplecode/SetIndString/SetIndString.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[SetMouseAcclSample](../../samplecode/SetMouseAcclSample/SetMouseAcclSample.md)** — Sample Code · 2006-11-28，macOS · IOKit，7 页
+- **[SetPDiMC](../../samplecode/SetPDiMC/SetPDiMC.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SetSoundInput](../../samplecode/SetSoundInput/SetSoundInput.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[SettingUpStdFile](../../samplecode/SettingUpStdFile/SettingUpStdFile.md)** — Sample Code · 2003-03-13，macOS，3 页
+- **[SetWindBackColor](../../samplecode/SetWindBackColor/SetWindBackColor.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[SGCapture](../../samplecode/SGCapture/SGCapture.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SGCapture2Disk](../../samplecode/SGCapture2Disk/SGCapture2Disk.md)** — Sample Code · 2003-01-14，macOS，6 页
+- **[SGDataProcDemo](../../samplecode/SGDataProcDemo/SGDataProcDemo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SGDataProcSample](../../samplecode/SGDataProcSample/SGDataProcSample.md)** — Sample Code · 2003-01-14，macOS · QuickTime，9 页
+- **[SGDevices](../../samplecode/SGDevices/SGDevices.md)** — Sample Code · 2003-01-14，macOS · QuickTime，15 页
+- **[ShadingWinds](../../samplecode/ShadingWinds/ShadingWinds.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[SharedMemory](../../samplecode/SharedMemory/SharedMemory.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[SharingServices](../../samplecode/SharingServices/SharingServices.md)** — Sample Code · 2013-04-03，macOS · AppKit，6 页
+- **[Sheets](../../samplecode/Sheets/Sheets.md)** — Sample Code · 2003-10-24，macOS，3 页
+- **[Show Movie](../../samplecode/Show%20Movie/Show%20Movie.md)** — Sample Code · 2003-01-14，macOS · QuickTime，11 页
+- **[ShowInitIcon](../../samplecode/ShowInitIcon/ShowInitIcon.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[SICN LDEF](../../samplecode/SICN%20LDEF/SICN%20LDEF.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[SidebarDemo](../../samplecode/SidebarDemo/SidebarDemo.md)** — Sample Code · 2011-05-02，macOS · AppKit，8 页
+- **[SignalProcessing: Using Biquadratic Filter Functions](../../samplecode/SignalProcessing-%20Using%20Biquadratic%20Filter%20Functions/SignalProcessing-%20Using%20Biquadratic%20Filter%20Functions.md)** — Sample Code · 2015-09-16，macOS · Accelerate，5 页
+- **[SignatureToApp](../../samplecode/SignatureToApp/SignatureToApp.md)** — Sample Code · 2003-01-14，macOS，22 页
+- **[SillyBalls](../../samplecode/SillyBalls/SillyBalls.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[SillyFrequencyLevels](../../samplecode/SillyFrequencyLevels/SillyFrequencyLevels.md)** — Sample Code · 2006-01-25，macOS · QuickTime，5 页
+- **[SIMD Primer](../../samplecode/SIMD%20Primer/SIMD%20Primer.md)** — Sample Code · 2008-06-06，macOS · Accelerate，10 页
+- **[Simon](../../samplecode/Simon/Simon.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Simon Tool](../../samplecode/Simon%20Tool/Simon%20Tool.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[Simple AppKit](../../samplecode/Simple%20AppKit/Simple%20AppKit.md)** — Sample Code · 2003-09-30，macOS，8 页
+- **[Simple Bindings Adoption](../../samplecode/Simple%20Bindings%20Adoption/Simple%20Bindings%20Adoption.md)** — Sample Code · 2014-07-08，macOS，18 页
+- **[Simple DrawSprocket](../../samplecode/Simple%20DrawSprocket/Simple%20DrawSprocket.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[Simple HLE](../../samplecode/Simple%20HLE/Simple%20HLE.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SimpleAudioExtraction](../../samplecode/SimpleAudioExtraction/SimpleAudioExtraction.md)** — Sample Code · 2006-01-03，macOS · QuickTime，11 页
+- **[simpleAVC](../../samplecode/simpleAVC/simpleAVC.md)** — Sample Code · 2003-01-14，macOS · IOKit，4 页
+- **[SimpleCalendar](../../samplecode/SimpleCalendar/SimpleCalendar.md)** — Sample Code · 2006-07-27，macOS · CalendarStore，12 页
+- **[SimpleCameraBrowser](../../samplecode/SimpleCameraBrowser/SimpleCameraBrowser.md)** — Sample Code · 2012-08-29，macOS · ImageCaptureCore，6 页
+- **[SimpleCarbonAppleScript](../../samplecode/SimpleCarbonAppleScript/SimpleCarbonAppleScript.md)** — Sample Code · 2007-03-01，macOS，17 页
+- **[SimpleCocoaApp](../../samplecode/SimpleCocoaApp/SimpleCocoaApp.md)** — Sample Code · 2012-03-20，macOS · AppKit，11 页
+- **[SimpleCocoaBrowser: Using NSBrowser class](../../samplecode/SimpleCocoaBrowser-%20Using%20NSBrowser%20class/SimpleCocoaBrowser-%20Using%20NSBrowser%20class.md)** — Sample Code · 2016-04-29，macOS · AppKit，9 页
+- **[SimpleCocoaJavaMovie](../../samplecode/SimpleCocoaJavaMovie/SimpleCocoaJavaMovie.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SimpleCocoaJavaMovieCocoa](../../samplecode/SimpleCocoaJavaMovieCocoa/SimpleCocoaJavaMovieCocoa.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SimpleCocoaMovie](../../samplecode/SimpleCocoaMovie/SimpleCocoaMovie.md)** — Sample Code · 2003-01-14，macOS · AppKit，7 页
+- **[SimpleCocoaMovieQT](../../samplecode/SimpleCocoaMovieQT/SimpleCocoaMovieQT.md)** — Sample Code · 2003-01-14，macOS · AppKit，7 页
+- **[SimpleComboBox](../../samplecode/SimpleComboBox/SimpleComboBox.md)** — Sample Code · 2012-06-05，macOS · AppKit，6 页
+- **[SimpleDataQueue](../../samplecode/SimpleDataQueue/SimpleDataQueue.md)** — Sample Code · 2003-01-14，macOS · Kernel，8 页
+- **[SimpleDial](../../samplecode/SimpleDial/SimpleDial.md)** — Sample Code · 2005-07-26，macOS · SystemConfiguration，4 页
+- **[SimpleDownload](../../samplecode/SimpleDownload/SimpleDownload.md)** — Sample Code · 2003-01-14，macOS · ImageCaptureCore，5 页
+- **[simpleeditsdi.win](../../samplecode/simpleeditsdi.win/simpleeditsdi.win.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[SimpleHelp](../../samplecode/SimpleHelp/SimpleHelp.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[SimpleHIMovieViewPlayer](../../samplecode/SimpleHIMovieViewPlayer/SimpleHIMovieViewPlayer.md)** — Sample Code · 2005-07-15，macOS · QuickTime，3 页
+- **[SimpleImageFilter](../../samplecode/SimpleImageFilter/SimpleImageFilter.md)** — Sample Code · 2009-05-26，macOS · AppKit，5 页
+- **[simpleJavaLauncher](../../samplecode/simpleJavaLauncher/simpleJavaLauncher.md)** — Sample Code · 2006-04-12，macOS，7 页
+- **[SimpleList](../../samplecode/SimpleList/SimpleList.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[SimplePing](../../samplecode/SimplePing/SimplePing.md)** — Sample Code · 2016-05-05，macOS · System，10 页
+- **[simpleplayersdi.win](../../samplecode/simpleplayersdi.win/simpleplayersdi.win.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[SimpleReach](../../samplecode/SimpleReach/SimpleReach.md)** — Sample Code · 2005-07-26，macOS · SystemConfiguration，4 页
+- **[SimpleScripting](../../samplecode/SimpleScripting/SimpleScripting.md)** — Sample Code · 2011-09-07，macOS · Foundation，9 页
+- **[SimpleScriptingObjects](../../samplecode/SimpleScriptingObjects/SimpleScriptingObjects.md)** — Sample Code · 2011-09-07，macOS · Foundation，19 页
+- **[SimpleScriptingPlugin](../../samplecode/SimpleScriptingPlugin/SimpleScriptingPlugin.md)** — Sample Code · 2009-05-11，macOS · Foundation，51 页
+- **[SimpleScriptingProperties](../../samplecode/SimpleScriptingProperties/SimpleScriptingProperties.md)** — Sample Code · 2011-09-07，macOS · Foundation，9 页
+- **[SimpleScriptingVerbs](../../samplecode/SimpleScriptingVerbs/SimpleScriptingVerbs.md)** — Sample Code · 2011-09-07，macOS · Foundation，13 页
+- **[SimpleService](../../samplecode/SimpleService/SimpleService.md)** — Sample Code · 2012-05-30，macOS · AppKit，6 页
+- **[SimpleSpeechRecExample](../../samplecode/SimpleSpeechRecExample/SimpleSpeechRecExample.md)** — Sample Code · 2003-03-26，macOS · Carbon，4 页
+- **[Simplest Viewer App](../../samplecode/Simplest%20Viewer%20App/Simplest%20Viewer%20App.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[SimpleStickies](../../samplecode/SimpleStickies/SimpleStickies.md)** — Sample Code · 2009-10-14，macOS · SyncServices，16 页
+- **[SimpleTabControl](../../samplecode/SimpleTabControl/SimpleTabControl.md)** — Sample Code · 2003-02-20，macOS，5 页
+- **[SimpleTemperatureConverter](../../samplecode/SimpleTemperatureConverter/SimpleTemperatureConverter.md)** — Sample Code · 2012-06-05，macOS · AppKit，5 页
+- **[SimpleText Sample](../../samplecode/SimpleText%20Sample/SimpleText%20Sample.md)** — Sample Code · 2003-01-14，macOS，31 页
+- **[SimpleThreads](../../samplecode/SimpleThreads/SimpleThreads.md)** — Sample Code · 2003-01-14，macOS · Foundation，7 页
+- **[SimpleToolbar](../../samplecode/SimpleToolbar/SimpleToolbar.md)** — Sample Code · 2012-06-05，macOS · AppKit，6 页
+- **[SimpleUserClient](../../samplecode/SimpleUserClient/SimpleUserClient.md)** — Sample Code · 2008-08-27，macOS · Kernel，12 页
+- **[SimpleVideoOut](../../samplecode/SimpleVideoOut/SimpleVideoOut.md)** — Sample Code · 2010-11-08，macOS · QuickTime，9 页
+- **[SimpleViewer](../../samplecode/SimpleViewer/SimpleViewer.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Sketch](../../samplecode/Sketch/Sketch.md)** — Sample Code · 2012-08-14，macOS · AppKit，37 页
+- **[Sketch+Accessibility](../../samplecode/Sketch%2BAccessibility/Sketch%2BAccessibility.md)** — Sample Code · 2009-07-14，macOS，52 页
+- **[Skinny3DSample](../../samplecode/Skinny3DSample.md)** — Sample Code · 2003-01-14，macOS
+- **[SkyCreator](../../samplecode/SkyCreator/SkyCreator.md)** — Sample Code · 2006-04-12，macOS，5 页
+- **[Sleep Queue Entry](../../samplecode/Sleep%20Queue%20Entry/Sleep%20Queue%20Entry.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[SlideShowImporter](../../samplecode/SlideShowImporter/SlideShowImporter.md)** — Sample Code · 2003-01-14，macOS · QuickTime，19 页
+- **[SlideShowImporter.win](../../samplecode/SlideShowImporter.win/SlideShowImporter.win.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[SlideShowJava](../../samplecode/SlideShowJava/SlideShowJava.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[SlotVInstall](../../samplecode/SlotVInstall/SlotVInstall.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SmallDaemon](../../samplecode/SmallDaemon/SmallDaemon.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[SMARTQuery](../../samplecode/SMARTQuery/SMARTQuery.md)** — Sample Code · 2007-05-30，macOS · IOKit，5 页
+- **[SMJobBless](../../samplecode/SMJobBless/SMJobBless.md)** — Sample Code · 2013-09-17，macOS · ServiceManagement，8 页
+- **[Snapshot](../../samplecode/Snapshot/Snapshot.md)** — Sample Code · 2003-10-10，macOS，4 页
+- **[SnapshotSample](../../samplecode/SnapshotSample/SnapshotSample.md)** — Sample Code · 2003-03-17，macOS，3 页
+- **[sndequalizer](../../samplecode/sndequalizer/sndequalizer.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[SndForEver](../../samplecode/SndForEver/SndForEver.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[SndPlayDoubleBuffer](../../samplecode/SndPlayDoubleBuffer/SndPlayDoubleBuffer.md)** — Sample Code · 2003-03-14，macOS，31 页
+- **[SOAPClient](../../samplecode/SOAPClient/SOAPClient.md)** — Sample Code · 2003-01-14，macOS，28 页
+- **[SOAPServer](../../samplecode/SOAPServer/SOAPServer.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[SocketCancel](../../samplecode/SocketCancel/SocketCancel.md)** — Sample Code · 2005-08-10，macOS，4 页
+- **[softvdig](../../samplecode/softvdig/softvdig.md)** — Sample Code · 2003-08-29，macOS，6 页
+- **[softvdig.win](../../samplecode/softvdig.win/softvdig.win.md)** — Sample Code · 2003-08-29，macOS，7 页
+- **[SoftVideoOutputComponent](../../samplecode/SoftVideoOutputComponent/SoftVideoOutputComponent.md)** — Sample Code · 2005-08-10，macOS · QuickTime，11 页
+- **[Son of Grab](../../samplecode/Son%20of%20Grab/Son%20of%20Grab.md)** — Sample Code · 2015-05-18，macOS · Quartz，7 页
+- **[SonOfSillyBalls](../../samplecode/SonOfSillyBalls/SonOfSillyBalls.md)** — Sample Code · 2011-05-13，macOS · AppKit，8 页
+- **[SonogramViewDemo](../../samplecode/SonogramViewDemo/SonogramViewDemo.md)** — Sample Code · 2012-01-24，macOS · AudioUnit，14 页
+- **[Sound Input](../../samplecode/Sound%20Input/Sound%20Input.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Sound PreMixer effect](../../samplecode/Sound%20PreMixer%20effect/Sound%20PreMixer%20effect.md)** — Sample Code · 2003-03-14，macOS，6 页
+- **[SoundApp](../../samplecode/SoundApp/SoundApp.md)** — Sample Code · 2003-03-14，macOS，5 页
+- **[Soundboard](../../samplecode/Soundboard/Soundboard.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[soundconverter](../../samplecode/soundconverter/soundconverter.md)** — Sample Code · 2003-01-14，macOS · QuickTime，17 页
+- **[soundconverter.win](../../samplecode/soundconverter.win/soundconverter.win.md)** — Sample Code · 2003-01-14，macOS · QuickTime，14 页
+- **[SoundLevel](../../samplecode/SoundLevel/SoundLevel.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[SoundMemRecord](../../samplecode/SoundMemRecord/SoundMemRecord.md)** — Sample Code · 2006-05-05，macOS，4 页
+- **[SoundMeter](../../samplecode/SoundMeter/SoundMeter.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[SoundPlayer](../../samplecode/SoundPlayer/SoundPlayer.md)** — Sample Code · 2003-01-14，macOS · QuickTime，6 页
+- **[SoundPlayer.win](../../samplecode/SoundPlayer.win/SoundPlayer.win.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[SoundRecord](../../samplecode/SoundRecord/SoundRecord.md)** — Sample Code · 2006-05-05，macOS，5 页
+- **[soundsnippets](../../samplecode/soundsnippets/soundsnippets.md)** — Sample Code · 2003-10-27，macOS · QuickTime，4 页
+- **[soundsnippets.win](../../samplecode/soundsnippets.win/soundsnippets.win.md)** — Sample Code · 2003-10-27，macOS，5 页
+- **[SoundSprocketTest](../../samplecode/SoundSprocketTest/SoundSprocketTest.md)** — Sample Code · 2003-10-14，macOS，23 页
+- **[SpecialPictureProtocol](../../samplecode/SpecialPictureProtocol/SpecialPictureProtocol.md)** — Sample Code · 2011-07-11，macOS · Foundation，9 页
+- **[Speech Recognition Sample](../../samplecode/Speech%20Recognition%20Sample/Speech%20Recognition%20Sample.md)** — Sample Code · 2003-03-14，macOS，20 页
+- **[SpeedometerView](../../samplecode/SpeedometerView/SpeedometerView.md)** — Sample Code · 2012-05-31，macOS · AppKit，10 页
+- **[SpellingChecker CarbonCocoa Bundled](../../samplecode/SpellingChecker%20CarbonCocoa%20Bundled/SpellingChecker%20CarbonCocoa%20Bundled.md)** — Sample Code · 2004-08-17，macOS · AppKit，4 页
+- **[SpellingChecker-CarbonCocoa](../../samplecode/SpellingChecker-CarbonCocoa/SpellingChecker-CarbonCocoa.md)** — Sample Code · 2003-01-14，macOS · AppKit，4 页
+- **[SpellingChecker-CocoaCarbon](../../samplecode/SpellingChecker-CocoaCarbon/SpellingChecker-CocoaCarbon.md)** — Sample Code · 2005-08-10，macOS · AppKit，5 页
+- **[Splasher](../../samplecode/Splasher/Splasher.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[SplitView](../../samplecode/SplitView/SplitView.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[SplitViews: Using NSSplitView in a variety of different ways](../../samplecode/SplitViews-%20Using%20NSSplitView%20in%20a%20variety%20of%20different%20ways/SplitViews-%20Using%20NSSplitView%20in%20a%20variety%20of%20different%20ways.md)** — Sample Code · 2015-12-03，macOS · AppKit，15 页
+- **[Spotlight](../../samplecode/Spotlight/Spotlight.md)** — Sample Code · 2005-06-01，macOS · CoreServices，12 页
+- **[SpotlightAPI](../../samplecode/SpotlightAPI/SpotlightAPI.md)** — Sample Code · 2005-06-01，macOS · CoreServices，11 页
+- **[Spotlighter](../../samplecode/Spotlighter/Spotlighter.md)** — Sample Code · 2012-06-05，macOS · Foundation，9 页
+- **[SpotlightFortunes](../../samplecode/SpotlightFortunes/SpotlightFortunes.md)** — Sample Code · 2008-06-06，macOS · AppKit，7 页
+- **[Sprite Tour](../../samplecode/Sprite%20Tour/Sprite%20Tour.md)** — Sample Code · 2013-06-03，macOS · SpriteKit，20 页
+- **[SpriteKit Physics Collisions](../../samplecode/SpriteKit%20Physics%20Collisions/SpriteKit%20Physics%20Collisions.md)** — Sample Code · 2014-06-23，macOS · SpriteKit，10 页
+- **[SprocketInvadersOld](../../samplecode/SprocketInvadersOld/SprocketInvadersOld.md)** — Sample Code · 2003-10-14，macOS，41 页
+- **[Sproing](../../samplecode/Sproing/Sproing.md)** — Sample Code · 2011-08-24，macOS · AppKit，8 页
+- **[SquareWave](../../samplecode/SquareWave/SquareWave.md)** — Sample Code · 2003-03-14，macOS，3 页
+- **[SRVResolver](../../samplecode/SRVResolver/SRVResolver.md)** — Sample Code · 2012-08-29，macOS · System，6 页
+- **[SSLSample](../../samplecode/SSLSample/SSLSample.md)** — Sample Code · 2003-01-14，macOS · Security，18 页
+- **[StandardGetFolder](../../samplecode/StandardGetFolder/StandardGetFolder.md)** — Sample Code · 2003-03-13，macOS，17 页
+- **[StarMenu](../../samplecode/StarMenu/StarMenu.md)** — Sample Code · 2007-05-24，macOS，7 页
+- **[StarterAudioUnitExample](../../samplecode/StarterAudioUnitExample/StarterAudioUnitExample.md)** — Sample Code · 2012-10-16，macOS · AudioUnit，60 页
+- **[StarterAUEffectWithCocoaUI](../../samplecode/StarterAUEffectWithCocoaUI/StarterAUEffectWithCocoaUI.md)** — Sample Code · 2012-10-23，macOS · AudioUnit，65 页
+- **[Std Compression Examples](../../samplecode/Std%20Compression%20Examples/Std%20Compression%20Examples.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[STD File Saver](../../samplecode/STD%20File%20Saver/STD%20File%20Saver.md)** — Sample Code · 2003-03-26，macOS，25 页
+- **[stdFilterHacking](../../samplecode/stdFilterHacking/stdFilterHacking.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[StickiesWithCoreData](../../samplecode/StickiesWithCoreData/StickiesWithCoreData.md)** — Sample Code · 2009-10-14，macOS · SyncServices，16 页
+- **[StillMotion](../../samplecode/StillMotion/StillMotion.md)** — Sample Code · 2007-11-14，macOS · QTKit，5 页
+- **[StopNGo for Mac](../../samplecode/StopNGo%20for%20Mac/StopNGo%20for%20Mac.md)** — Sample Code · 2011-07-26，macOS · AVFoundation，6 页
+- **[StreamNOP](../../samplecode/StreamNOP/StreamNOP.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[String](../../samplecode/String/String.md)** — Sample Code · 2009-05-22，macOS · Foundation，4 页
+- **[STUCAuthoringDeviceCocoaSample](../../samplecode/STUCAuthoringDeviceCocoaSample/STUCAuthoringDeviceCocoaSample.md)** — Sample Code · 2009-07-24，macOS · IOKit，18 页
+- **[STUCAuthoringDeviceTool](../../samplecode/STUCAuthoringDeviceTool/STUCAuthoringDeviceTool.md)** — Sample Code · 2009-07-24，macOS · IOKit，4 页
+- **[STUCOtherDeviceTool](../../samplecode/STUCOtherDeviceTool/STUCOtherDeviceTool.md)** — Sample Code · 2009-09-11，macOS · IOKit，4 页
+- **[StyleFlatteningSample](../../samplecode/StyleFlatteningSample/StyleFlatteningSample.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[StyleMap](../../samplecode/StyleMap/StyleMap.md)** — Sample Code · 2003-01-14，macOS，2 页
+- **[SuperSnapshot](../../samplecode/SuperSnapshot/SuperSnapshot.md)** — Sample Code · 2003-10-10，macOS，6 页
+- **[SurfaceVertexProgram](../../samplecode/SurfaceVertexProgram/SurfaceVertexProgram.md)** — Sample Code · 2003-07-07，macOS · OpenGL，21 页
+- **[SuspendAppleEvent](../../samplecode/SuspendAppleEvent/SuspendAppleEvent.md)** — Sample Code · 2003-10-14，macOS，6 页
+- **[SwapLAF](../../samplecode/SwapLAF/SwapLAF.md)** — Sample Code · 2005-02-28，macOS，5 页
+- **[Switch Stack](../../samplecode/Switch%20Stack/Switch%20Stack.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Syncer](../../samplecode/Syncer/Syncer.md)** — Sample Code · 2006-08-01，Safari|macOS，24 页
+- **[Sys7 popUpCDEF](../../samplecode/Sys7%20popUpCDEF/Sys7%20popUpCDEF.md)** — Sample Code · 2003-01-30，macOS，4 页
+- **[System 7.0 Menu Def Info](../../samplecode/System%207.0%20Menu%20Def%20Info/System%207.0%20Menu%20Def%20Info.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[System 7.0 WDEF](../../samplecode/System%207.0%20WDEF/System%207.0%20WDEF.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[TableViewPlayground: Using View-Based NSTableView and NSOutlineView](../../samplecode/TableViewPlayground-%20Using%20View-Based%20NSTableView%20and%20NSOutlineView/TableViewPlayground-%20Using%20View-Based%20NSTableView%20and%20NSOutlineView.md)** — Sample Code · 2017-04-14，macOS · AppKit，27 页
+- **[Tabs LDEF](../../samplecode/Tabs%20LDEF/Tabs%20LDEF.md)** — Sample Code · 2003-01-30，macOS，14 页
+- **[TabsShowcase](../../samplecode/TabsShowcase/TabsShowcase.md)** — Sample Code · 2005-10-28，macOS，5 页
+- **[Talking Heads](../../samplecode/Talking%20Heads.md)** — Sample Code · 2003-01-14，macOS
+- **[TalkTool](../../samplecode/TalkTool/TalkTool.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Target-Action using Cocoa Bindings](../../samplecode/Target-Action%20using%20Cocoa%20Bindings/Target-Action%20using%20Cocoa%20Bindings.md)** — Sample Code · 2013-04-18，macOS · AppKit，6 页
+- **[TargetGallery](../../samplecode/TargetGallery/TargetGallery.md)** — Sample Code · 2011-07-18，macOS · AppKit，12 页
+- **[TbltDrvr](../../samplecode/TbltDrvr/TbltDrvr.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[TCP](../../samplecode/TCP/TCP.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[TCP Server](../../samplecode/TCP%20Server/TCP%20Server.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[TCPClose](../../samplecode/TCPClose/TCPClose.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[tcplognke](../../samplecode/tcplognke/tcplognke.md)** — Sample Code · 2006-11-27，macOS · Kernel，5 页
+- **[TE Over Background](../../samplecode/TE%20Over%20Background/TE%20Over%20Background.md)** — Sample Code · 2003-07-22，macOS，7 页
+- **[TemperatureConverter](../../samplecode/TemperatureConverter/TemperatureConverter.md)** — Sample Code · 2012-06-05，macOS · Foundation，11 页
+- **[TESample](../../samplecode/TESample/TESample.md)** — Sample Code · 2003-01-14，macOS，13 页
+- **[Test Code](../../samplecode/Test%20Code/Test%20Code.md)** — Sample Code · 2003-01-14，macOS，8 页
+- **[Test64BitMultiprec](../../samplecode/Test64BitMultiprec/Test64BitMultiprec.md)** — Sample Code · 2006-06-09，macOS，4 页
+- **[TestCarbonAppTiger](../../samplecode/TestCarbonAppTiger/TestCarbonAppTiger.md)** — Sample Code · 2012-07-24，macOS，3 页
+- **[testNBP](../../samplecode/testNBP/testNBP.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[TestQD](../../samplecode/TestQD/TestQD.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[TestVM](../../samplecode/TestVM/TestVM.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[TextDemo](../../samplecode/TextDemo/TextDemo.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[TextEdit](../../samplecode/TextEdit/TextEdit.md)** — Sample Code · 2013-08-26，macOS · AppKit，33 页
+- **[TextEditPlus](../../samplecode/TextEditPlus/TextEditPlus.md)** — Sample Code · 2006-07-28，macOS，50 页
+- **[TextInputView](../../samplecode/TextInputView/TextInputView.md)** — Sample Code · 2012-06-05，macOS · AppKit，7 页
+- **[TextLayoutDemo](../../samplecode/TextLayoutDemo/TextLayoutDemo.md)** — Sample Code · 2012-06-09，macOS · AppKit，10 页
+- **[TextLinks](../../samplecode/TextLinks/TextLinks.md)** — Sample Code · 2003-07-29，macOS · AppKit，7 页
+- **[TextNameTool](../../samplecode/TextNameTool/TextNameTool.md)** — Sample Code · 2003-10-27，macOS，11 页
+- **[TextSizingExample](../../samplecode/TextSizingExample/TextSizingExample.md)** — Sample Code · 2012-06-05，macOS · AppKit，17 页
+- **[TEXTtotypeIntlCoercion](../../samplecode/TEXTtotypeIntlCoercion/TEXTtotypeIntlCoercion.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[TextTrack](../../samplecode/TextTrack/TextTrack.md)** — Sample Code · 2005-06-27，macOS，2 页
+- **[TexturePerformanceDemo](../../samplecode/TexturePerformanceDemo/TexturePerformanceDemo.md)** — Sample Code · 2005-06-01，macOS · OpenGL，9 页
+- **[TextureRange](../../samplecode/TextureRange/TextureRange.md)** — Sample Code · 2003-07-16，macOS · OpenGL，9 页
+- **[TextureUpload](../../samplecode/TextureUpload/TextureUpload.md)** — Sample Code · 2010-05-19，macOS · OpenGL，6 页
+- **[TextViewConfig](../../samplecode/TextViewConfig/TextViewConfig.md)** — Sample Code · 2003-01-14，macOS · AppKit，5 页
+- **[TextViewDelegate](../../samplecode/TextViewDelegate/TextViewDelegate.md)** — Sample Code · 2011-08-23，macOS · AppKit，8 页
+- **[ThreadsExporter](../../samplecode/ThreadsExporter/ThreadsExporter.md)** — Sample Code · 2005-07-26，macOS · QuickTime，19 页
+- **[ThreadsExportMovie](../../samplecode/ThreadsExportMovie/ThreadsExportMovie.md)** — Sample Code · 2006-01-03，macOS · QuickTime，11 页
+- **[ThreadsImporter](../../samplecode/ThreadsImporter/ThreadsImporter.md)** — Sample Code · 2005-07-22，macOS · QuickTime，20 页
+- **[ThreadsImportMovie](../../samplecode/ThreadsImportMovie/ThreadsImportMovie.md)** — Sample Code · 2005-07-26，macOS · QuickTime，19 页
+- **[Thumbnail Test](../../samplecode/Thumbnail%20Test/Thumbnail%20Test.md)** — Sample Code · 2003-03-12，macOS，5 页
+- **[Tic Tac Toe: Creating Accessible Apps with Custom UI](../../samplecode/Tic%20Tac%20Toe-%20Creating%20Accessible%20Apps%20with%20Custom%20UI/Tic%20Tac%20Toe-%20Creating%20Accessible%20Apps%20with%20Custom%20UI.md)** — Sample Code · 2016-02-18，macOS · AppKit，33 页
+- **[TickAnimate](../../samplecode/TickAnimate/TickAnimate.md)** — Sample Code · 2003-07-22，macOS，2 页
+- **[TickerView](../../samplecode/TickerView/TickerView.md)** — Sample Code · 2003-01-30，macOS，5 页
+- **[Tiler](../../samplecode/Tiler/Tiler.md)** — Sample Code · 2003-10-24，macOS，11 页
+- **[TimeCallbackDemo](../../samplecode/TimeCallbackDemo/TimeCallbackDemo.md)** — Sample Code · 2006-05-11，macOS，4 页
+- **[TimeCode](../../samplecode/TimeCode/TimeCode.md)** — Sample Code · 2006-06-28，macOS，5 页
+- **[TimeCode Media Handlers](../../samplecode/TimeCode%20Media%20Handlers.md)** — Sample Code · 2003-01-14，macOS
+- **[TimelineToTC](../../samplecode/TimelineToTC/TimelineToTC.md)** — Sample Code · 2007-06-01，macOS，8 页
+- **[TimerEventSample](../../samplecode/TimerEventSample/TimerEventSample.md)** — Sample Code · 2003-01-14，macOS · Kernel，4 页
+- **[TimerTst](../../samplecode/TimerTst/TimerTst.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[TimeSlaving](../../samplecode/TimeSlaving/TimeSlaving.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[TimeZone.Daylight](../../samplecode/TimeZone.Daylight/TimeZone.Daylight.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[Tinted Image](../../samplecode/Tinted%20Image/Tinted%20Image.md)** — Sample Code · 2003-01-14，macOS · AppKit，7 页
+- **[TipWrapper](../../samplecode/TipWrapper/TipWrapper.md)** — Sample Code · 2003-12-18，macOS · AppKit，9 页
+- **[TLSTool](../../samplecode/TLSTool/TLSTool.md)** — Sample Code · 2016-05-23，macOS · Foundation，17 页
+- **[ToolbarSample: Using NSToolbar to construct a window toolbar](../../samplecode/ToolbarSample-%20Using%20NSToolbar%20to%20construct%20a%20window%20toolbar.md)** — Sample Code · 2018-05-03，macOS · AppKit
+- **[TPIFile](../../samplecode/TPIFile/TPIFile.md)** — Sample Code · 2003-07-22，macOS，8 页
+- **[TrackBall](../../samplecode/TrackBall/TrackBall.md)** — Sample Code · 2011-07-01，macOS · AppKit，14 页
+- **[TrackFormatDemo](../../samplecode/TrackFormatDemo/TrackFormatDemo.md)** — Sample Code · 2006-08-01，macOS · QTKit，6 页
+- **[TrackIt](../../samplecode/TrackIt/TrackIt.md)** — Sample Code · 2011-03-18，macOS · AppKit，10 页
+- **[TradDriverLoaderLib](../../samplecode/TradDriverLoaderLib/TradDriverLoaderLib.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[Trajectories](../../samplecode/Trajectories/Trajectories.md)** — Sample Code · 2009-09-24，macOS · OpenCL，15 页
+- **[TransferProvider](../../samplecode/TransferProvider/TransferProvider.md)** — Sample Code · 2003-07-22，macOS，5 页
+- **[Transformed Image](../../samplecode/Transformed%20Image/Transformed%20Image.md)** — Sample Code · 2003-01-14，macOS · AppKit，13 页
+- **[Transition Queue Watcher](../../samplecode/Transition%20Queue%20Watcher/Transition%20Queue%20Watcher.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[Transitions](../../samplecode/Transitions/Transitions.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[TranslateRotate](../../samplecode/TranslateRotate/TranslateRotate.md)** — Sample Code · 2003-07-22，macOS，2 页
+- **[TriGrids](../../samplecode/TriGrids/TriGrids.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[TubeTest](../../samplecode/TubeTest/TubeTest.md)** — Sample Code · 2003-03-12，macOS，4 页
+- **[Tumbler and Podium](../../samplecode/Tumbler%20and%20Podium/Tumbler%20and%20Podium.md)** — Sample Code · 2003-01-14，macOS，43 页
+- **[TweenCamera](../../samplecode/TweenCamera/TweenCamera.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[TwoColumn LDEF](../../samplecode/TwoColumn%20LDEF/TwoColumn%20LDEF.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[txRatio PICT](../../samplecode/txRatio%20PICT/txRatio%20PICT.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[TypeServicesForUnicode](../../samplecode/TypeServicesForUnicode/TypeServicesForUnicode.md)** — Sample Code · 2005-08-10，macOS，10 页
+- **[UDPEcho](../../samplecode/UDPEcho/UDPEcho.md)** — Sample Code · 2012-08-17，macOS · CoreFoundation，6 页
+- **[UDPSample](../../samplecode/UDPSample/UDPSample.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[UIElementInspector](../../samplecode/UIElementInspector/UIElementInspector.md)** — Sample Code · 2010-06-03，macOS · ApplicationServices，15 页
+- **[UniversalHIDModuleTest](../../samplecode/UniversalHIDModuleTest/UniversalHIDModuleTest.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Unread Tabs Safari Extension](../../samplecode/Unread%20Tabs%20Safari%20Extension/Unread%20Tabs%20Safari%20Extension.md)** — Sample Code · 2011-06-07，Safari|macOS，4 页
+- **[UnsharpMask](../../samplecode/UnsharpMask/UnsharpMask.md)** — Sample Code · 2005-06-06，macOS · Automator，18 页
+- **[UpdateXcodeSubprojects](../../samplecode/UpdateXcodeSubprojects/UpdateXcodeSubprojects.md)** — Sample Code · 2005-06-06，Xcode Developer Tools|macOS，3 页
+- **[URL CacheInfo](../../samplecode/URL%20CacheInfo/URL%20CacheInfo.md)** — Sample Code · 2008-06-05，macOS · Foundation，5 页
+- **[URLTextView](../../samplecode/URLTextView/URLTextView.md)** — Sample Code · 2003-01-30，macOS，6 页
+- **[USBPrivateDataSample](../../samplecode/USBPrivateDataSample/USBPrivateDataSample.md)** — Sample Code · 2006-10-16，macOS · IOKit，4 页
+- **[UserDefaults](../../samplecode/UserDefaults/UserDefaults.md)** — Sample Code · 2012-06-05，macOS · Foundation，6 页
+- **[usher](../../samplecode/usher/usher.md)** — Sample Code · 2003-01-14，macOS，30 页
+- **[Using NSPageController](../../samplecode/Using%20NSPageController/Using%20NSPageController.md)** — Sample Code · 2014-02-21，macOS · AppKit，10 页
+- **[Using NSTokenField](../../samplecode/Using%20NSTokenField/Using%20NSTokenField.md)** — Sample Code · 2016-06-03，macOS · AppKit，13 页
+- **[Using NSViewController for managing views](../../samplecode/Using%20NSViewController%20for%20managing%20views/Using%20NSViewController%20for%20managing%20views.md)** — Sample Code · 2014-04-24，macOS · AppKit，14 页
+- **[Utility Library](../../samplecode/Utility%20Library/Utility%20Library.md)** — Sample Code · 2003-01-14，macOS，7 页
+- **[UTXplorer](../../samplecode/UTXplorer/UTXplorer.md)** — Sample Code · 2008-03-19，macOS，4 页
+- **[VBL](../../samplecode/VBL/VBL.md)** — Sample Code · 2003-07-07，macOS · OpenGL，6 页
+- **[VBLSnippet](../../samplecode/VBLSnippet/VBLSnippet.md)** — Sample Code · 2003-10-30，macOS，3 页
+- **[VCDemo](../../samplecode/VCDemo/VCDemo.md)** — Sample Code · 2003-01-14，macOS，11 页
+- **[VDTextSample](../../samplecode/VDTextSample/VDTextSample.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[VelEng FFT](../../samplecode/VelEng%20FFT/VelEng%20FFT.md)** — Sample Code · 2003-01-14，macOS · Accelerate，5 页
+- **[VelEng Multiprecision](../../samplecode/VelEng%20Multiprecision/VelEng%20Multiprecision.md)** — Sample Code · 2003-01-14，macOS · Accelerate，11 页
+- **[VelEng Wavelet](../../samplecode/VelEng%20Wavelet/VelEng%20Wavelet.md)** — Sample Code · 2003-01-14，macOS · Accelerate，17 页
+- **[VendorSpecificType00](../../samplecode/VendorSpecificType00/VendorSpecificType00.md)** — Sample Code · 2006-10-02，macOS · Kernel，6 页
+- **[Verification](../../samplecode/Verification/Verification.md)** — Sample Code · 2004-01-23，macOS · CoreServices，7 页
+- **[Versions](../../samplecode/Versions/Versions.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Vertest](../../samplecode/Vertest/Vertest.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[Vertex Optimization](../../samplecode/Vertex%20Optimization/Vertex%20Optimization.md)** — Sample Code · 2003-07-07，macOS · OpenGL，16 页
+- **[VertexPerformanceDemo](../../samplecode/VertexPerformanceDemo/VertexPerformanceDemo.md)** — Sample Code · 2005-06-01，macOS · OpenGL，11 页
+- **[VertexPerformanceTest](../../samplecode/VertexPerformanceTest/VertexPerformanceTest.md)** — Sample Code · 2003-01-14，macOS · OpenGL，13 页
+- **[Video Hardware Info](../../samplecode/Video%20Hardware%20Info/Video%20Hardware%20Info.md)** — Sample Code · 2004-02-12，macOS · OpenGL，6 页
+- **[VideoFrameToGWorld](../../samplecode/VideoFrameToGWorld/VideoFrameToGWorld.md)** — Sample Code · 2003-01-14，macOS · QuickTime，5 页
+- **[VideoHardwareInfo](../../samplecode/VideoHardwareInfo/VideoHardwareInfo.md)** — Sample Code · 2007-05-14，macOS · OpenGL，6 页
+- **[VideoProcessing](../../samplecode/VideoProcessing/VideoProcessing.md)** — Sample Code · 2003-10-06，macOS，27 页
+- **[VideoViewer](../../samplecode/VideoViewer/VideoViewer.md)** — Sample Code · 2005-08-01，macOS · OpenGL，13 页
+- **[ViewerCallbackSample](../../samplecode/ViewerCallbackSample/ViewerCallbackSample.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[ViewerFrameWorkSample](../../samplecode/ViewerFrameWorkSample/ViewerFrameWorkSample.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ViewerGWorldTest](../../samplecode/ViewerGWorldTest/ViewerGWorldTest.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[ViewerOptBtnSample](../../samplecode/ViewerOptBtnSample/ViewerOptBtnSample.md)** — Sample Code · 2003-01-14，macOS，12 页
+- **[VirtualScanner](../../samplecode/VirtualScanner/VirtualScanner.md)** — Sample Code · 2012-06-12，macOS · ImageCaptureCore，10 页
+- **[VMSify](../../samplecode/VMSify/VMSify.md)** — Sample Code · 2003-07-22，macOS，3 页
+- **[Voices](../../samplecode/Voices/Voices.md)** — Sample Code · 2007-06-25，Safari|macOS，8 页
+- **[VolumeToBSDNode](../../samplecode/VolumeToBSDNode/VolumeToBSDNode.md)** — Sample Code · 2006-10-16，macOS · IOKit，4 页
+- **[vox recording](../../samplecode/vox%20recording/vox%20recording.md)** — Sample Code · 2003-03-14，macOS，4 页
+- **[VoxelPanda: Getting Started with Voxels Using ModelIO and SceneKit](../../samplecode/VoxelPanda-%20Getting%20Started%20with%20Voxels%20Using%20ModelIO%20and%20SceneKit/VoxelPanda-%20Getting%20Started%20with%20Voxels%20Using%20ModelIO%20and%20SceneKit.md)** — Sample Code · 2015-12-10，macOS · ModelIO，9 页
+- **[vrbackbuffer](../../samplecode/vrbackbuffer/vrbackbuffer.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[vrbackbuffer.win](../../samplecode/vrbackbuffer.win/vrbackbuffer.win.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[vrcursors](../../samplecode/vrcursors/vrcursors.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[vrcursors.win](../../samplecode/vrcursors.win/vrcursors.win.md)** — Sample Code · 2003-01-14，macOS，18 页
+- **[vrflattenmovie](../../samplecode/vrflattenmovie/vrflattenmovie.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[VRInteraction](../../samplecode/VRInteraction/VRInteraction.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[vrmakeobject](../../samplecode/vrmakeobject/vrmakeobject.md)** — Sample Code · 2003-01-14，macOS，19 页
+- **[vrmakeobject.win](../../samplecode/vrmakeobject.win/vrmakeobject.win.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[vrmakepano](../../samplecode/vrmakepano/vrmakepano.md)** — Sample Code · 2003-01-14，macOS，21 页
+- **[VRMakePano Library](../../samplecode/VRMakePano%20Library/VRMakePano%20Library.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[vrmakepano.win](../../samplecode/vrmakepano.win/vrmakepano.win.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[vrmovies](../../samplecode/vrmovies/vrmovies.md)** — Sample Code · 2003-01-14，macOS，20 页
+- **[vrmovies.win](../../samplecode/vrmovies.win/vrmovies.win.md)** — Sample Code · 2003-01-14，macOS，17 页
+- **[vrscript](../../samplecode/vrscript/vrscript.md)** — Sample Code · 2003-01-14，macOS，43 页
+- **[vrscript.win](../../samplecode/vrscript.win/vrscript.win.md)** — Sample Code · 2003-01-14，macOS，41 页
+- **[vrspeech](../../samplecode/vrspeech/vrspeech.md)** — Sample Code · 2003-01-14，macOS，14 页
+- **[VwrFrameWork](../../samplecode/VwrFrameWork/VwrFrameWork.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[Wake100](../../samplecode/Wake100/Wake100.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[Watcher](../../samplecode/Watcher/Watcher.md)** — Sample Code · 2006-08-04，macOS · CoreServices，4 页
+- **[watchme](../../samplecode/watchme/watchme.md)** — Sample Code · 2003-02-25，macOS，17 页
+- **[watchme.win](../../samplecode/watchme.win/watchme.win.md)** — Sample Code · 2003-02-25，macOS，15 页
+- **[WaveformViewDemo](../../samplecode/WaveformViewDemo/WaveformViewDemo.md)** — Sample Code · 2009-04-15，macOS，14 页
+- **[WaveTable Sounds](../../samplecode/WaveTable%20Sounds/WaveTable%20Sounds.md)** — Sample Code · 2003-01-14，macOS，4 页
+- **[WcharDataFormatter](../../samplecode/WcharDataFormatter/WcharDataFormatter.md)** — Sample Code · 2006-03-31，Xcode Developer Tools|macOS，4 页
+- **[WDEFColorSample](../../samplecode/WDEFColorSample/WDEFColorSample.md)** — Sample Code · 2003-01-30，macOS，6 页
+- **[WDEFPatch](../../samplecode/WDEFPatch/WDEFPatch.md)** — Sample Code · 2003-01-14，macOS，3 页
+- **[WebKitCIPlugIn](../../samplecode/WebKitCIPlugIn/WebKitCIPlugIn.md)** — Sample Code · 2005-11-28，macOS，8 页
+- **[WebKitDOMElementPlugIn](../../samplecode/WebKitDOMElementPlugIn/WebKitDOMElementPlugIn.md)** — Sample Code · 2006-08-04，macOS · Security，2 页
+- **[WebKitPluginStarter](../../samplecode/WebKitPluginStarter/WebKitPluginStarter.md)** — Sample Code · 2007-06-06，macOS，10 页
+- **[WebKitPluginWithJavaScript](../../samplecode/WebKitPluginWithJavaScript/WebKitPluginWithJavaScript.md)** — Sample Code · 2007-06-06，macOS，10 页
+- **[WebKitPluginWithSimpleGUI](../../samplecode/WebKitPluginWithSimpleGUI/WebKitPluginWithSimpleGUI.md)** — Sample Code · 2007-06-04，macOS，6 页
+- **[WhackedTV](../../samplecode/WhackedTV/WhackedTV.md)** — Sample Code · 2011-09-06，macOS · QuickTime，27 页
+- **[WikiSampleThemeWithCSS](../../samplecode/WikiSampleThemeWithCSS/WikiSampleThemeWithCSS.md)** — Sample Code · 2008-06-02，macOS，6 页
+- **[WikiSampleThemeWithJavaScript](../../samplecode/WikiSampleThemeWithJavaScript/WikiSampleThemeWithJavaScript.md)** — Sample Code · 2008-06-02，macOS，6 页
+- **[Win2MacCounterSamples](../../samplecode/Win2MacCounterSamples/Win2MacCounterSamples.md)** — Sample Code · 2003-01-14，macOS，31 页
+- **[WindowColors](../../samplecode/WindowColors/WindowColors.md)** — Sample Code · 2003-01-30，macOS，3 页
+- **[WindowFun](../../samplecode/WindowFun/WindowFun.md)** — Sample Code · 2005-08-24，macOS，7 页
+- **[WiredSprites](../../samplecode/WiredSprites/WiredSprites.md)** — Sample Code · 2003-02-25，macOS，38 页
+- **[WiredSprites.win](../../samplecode/WiredSprites.win/WiredSprites.win.md)** — Sample Code · 2003-02-25，macOS，6 页
+- **[WiredSpritesJava](../../samplecode/WiredSpritesJava/WiredSpritesJava.md)** — Sample Code · 2003-02-25，macOS，6 页
+- **[WorldRayPickSample](../../samplecode/WorldRayPickSample/WorldRayPickSample.md)** — Sample Code · 2003-01-14，macOS，22 页
+- **[Worm](../../samplecode/Worm/Worm.md)** — Sample Code · 2012-06-04，macOS · AppKit，20 页
+- **[WritableFileDemo](../../samplecode/WritableFileDemo/WritableFileDemo.md)** — Sample Code · 2006-08-01，macOS · QTKit，6 页
+- **[Writing Subtitles to a Movie from the Command Line for OS X](../../samplecode/Writing%20Subtitles%20to%20a%20Movie%20from%20the%20Command%20Line%20for%20OS%20X/Writing%20Subtitles%20to%20a%20Movie%20from%20the%20Command%20Line%20for%20OS%20X.md)** — Sample Code · 2013-06-11，macOS · AVFoundation，7 页
+- **[X11CallCarbonAndCocoa](../../samplecode/X11CallCarbonAndCocoa/X11CallCarbonAndCocoa.md)** — Sample Code · 2003-07-28，macOS，12 页
+- **[XcodeClientServer](../../samplecode/XcodeClientServer/XcodeClientServer.md)** — Sample Code · 2005-06-06，Xcode Developer Tools|macOS，11 页
+- **[XML_Transport](../../samplecode/XMLTransport/XMLTransport.md)** — Sample Code · 2003-01-14，macOS，9 页
+- **[XMLBrowser](../../samplecode/XMLBrowser/XMLBrowser.md)** — Sample Code · 2012-05-30，macOS · WebKit，7 页
+- **[YASTControl](../../samplecode/YASTControl/YASTControl.md)** — Sample Code · 2003-10-27，macOS，5 页
+- **[ZAM](../../samplecode/ZAM/ZAM.md)** — Sample Code · 2003-01-14，macOS，60 页
+- **[ZapTCP Application](../../samplecode/ZapTCP%20Application/ZapTCP%20Application.md)** — Sample Code · 2003-01-14，macOS，5 页
+- **[ZipBrowser](../../samplecode/ZipBrowser/ZipBrowser.md)** — Sample Code · 2009-06-03，macOS · AppKit，21 页
+- **[Zoo Tutorial](../../samplecode/Zoo%20Tutorial/Zoo%20Tutorial.md)** — Sample Code · 2003-01-14，macOS，108 页
+- **[ZoomRecter](../../samplecode/ZoomRecter/ZoomRecter.md)** — Sample Code · 2003-10-10，macOS，7 页
+- **[ZoomWindow](../../samplecode/ZoomWindow/ZoomWindow.md)** — Sample Code · 2003-01-30，macOS，3 页
+
+## Safari（9 份）
+
+- **[Blocker Safari Extension](../../samplecode/Blocker%20Safari%20Extension/Blocker%20Safari%20Extension.md)** — Sample Code · 2010-06-08，Safari，6 页
+- **[DrillDown](../../samplecode/DrillDown/DrillDown.md)** — Sample Code · 2008-06-19，Safari，2 页
+- **[EmporiumWeb: Request and handle Apple Pay payments on the web](../../samplecode/EmporiumWeb-%20Request%20and%20handle%20Apple%20Pay%20payments%20on%20the%20web.md)** — Sample Code · 2016-10-25，Safari · ApplePay JS
+- **[FingerTips](../../samplecode/FingerTips/FingerTips.md)** — Sample Code · 2008-12-09，Safari，7 页
+- **[Geolocation](../../samplecode/Geolocation/Geolocation.md)** — Sample Code · 2010-10-06，Safari，3 页
+- **[HTML Video Example](../../samplecode/HTML%20Video%20Example/HTML%20Video%20Example.md)** — Sample Code · 2008-06-02，Safari，5 页
+- **[iPhoneButtons](../../samplecode/iPhoneButtons/iPhoneButtons.md)** — Sample Code · 2007-12-03，Safari，4 页
+- **[Puzzler](../../samplecode/Puzzler/Puzzler.md)** — Sample Code · 2007-10-29，Safari，2 页
+- **[SlideMe](../../samplecode/SlideMe/SlideMe.md)** — Sample Code · 2008-09-24，Safari，2 页
+
+## tvOS（5 份）
+
+- **[TVML Catalog: Using TVML Templates](../../samplecode/TVML%20Catalog-%20Using%20TVML%20Templates/TVML%20Catalog-%20Using%20TVML%20Templates.md)** — Sample Code · 2017-06-06，tvOS · TVMLKit，13 页
+- **[TVML Guide: Core concepts in TVML and TVMLKit](../../samplecode/TVML%20Guide-%20Core%20concepts%20in%20TVML%20and%20TVMLKit.md)** — Sample Code · 2017-06-06，tvOS · TVMLKit
+- **[TVMLAudioVideo: Audio and Video Playback on tvOS](../../samplecode/TVMLAudioVideo-%20Audio%20and%20Video%20Playback%20on%20tvOS.md)** — Sample Code · 2015-10-21，tvOS · TVMLKit
+- **[tvOSMaps: Using MapKit in a tvOS application](../../samplecode/tvOSMaps-%20Using%20MapKit%20in%20a%20tvOS%20application/tvOSMaps-%20Using%20MapKit%20in%20a%20tvOS%20application.md)** — Sample Code · 2016-10-04，tvOS · MapKit，10 页
+- **[UIKit Catalog (tvOS): Creating and Customizing UIKit Controls](../../samplecode/UIKit%20Catalog%20%28tvOS%29-%20Creating%20and%20Customizing%20UIKit%20Controls/UIKit%20Catalog%20%28tvOS%29-%20Creating%20and%20Customizing%20UIKit%20Controls.md)** — Sample Code · 2017-02-02，tvOS · UIKit，32 页
+
+## watchOS（5 份）
+
+- **[HelloGameKit: A skeleton app for turn based games on watchOS](../../samplecode/HelloGameKit-%20A%20skeleton%20app%20for%20turn%20based%20games%20on%20watchOS/HelloGameKit-%20A%20skeleton%20app%20for%20turn%20based%20games%20on%20watchOS.md)** — Sample Code · 2016-10-27，watchOS · GameCenter，17 页
+- **[SpeedySloth: Using HealthKit to build a workout app for Apple Watch](../../samplecode/SpeedySloth-%20Using%20HealthKit%20to%20build%20a%20workout%20app%20for%20Apple%20Watch/SpeedySloth-%20Using%20HealthKit%20to%20build%20a%20workout%20app%20for%20Apple%20Watch.md)** — Sample Code · 2016-10-04，watchOS · HealthKit，14 页
+- **[SwingWatch: Using Device Motion on the Watch](../../samplecode/SwingWatch-%20Using%20Device%20Motion%20on%20the%20Watch/SwingWatch-%20Using%20Device%20Motion%20on%20the%20Watch.md)** — Sample Code · 2016-09-13，watchOS · CoreMotion，11 页
+- **[WatchKitAudioRecorder: Audio Recording and Playback](../../samplecode/WatchKitAudioRecorder-%20Audio%20Recording%20and%20Playback/WatchKitAudioRecorder-%20Audio%20Recording%20and%20Playback.md)** — Sample Code · 2015-09-16，watchOS · WatchKit，15 页
+- **[WatchPuzzle: Using SceneKit and SpriteKit on watchOS](../../samplecode/WatchPuzzle-%20Using%20SceneKit%20and%20SpriteKit%20on%20watchOS/WatchPuzzle-%20Using%20SceneKit%20and%20SpriteKit%20on%20watchOS.md)** — Sample Code · 2016-10-27，watchOS · SceneKit，8 页
+
+## Xcode Developer Tools（8 份）
+
+- **[ASLM C++](../../samplecode/ASLM%20C%2B%2B/ASLM%20C%2B%2B.md)** — Sample Code · 2003-01-14，Xcode Developer Tools，8 页
+- **[bMoviePaletteCocoa](../../samplecode/bMoviePaletteCocoa/bMoviePaletteCocoa.md)** — Sample Code · 2003-01-14，Xcode Developer Tools，12 页
+- **[DebuggerPresence](../../samplecode/DebuggerPresence/DebuggerPresence.md)** — Sample Code · 2003-07-22，Xcode Developer Tools，3 页
+- **[ScriptView](../../samplecode/ScriptView/ScriptView.md)** — Sample Code · 2005-06-01，Xcode Developer Tools，20 页
+- **[StarterPlaygroundBook: A simple Swift Playground Book](../../samplecode/StarterPlaygroundBook-%20A%20simple%20Swift%20Playground%20Book/StarterPlaygroundBook-%20A%20simple%20Swift%20Playground%20Book.md)** — Sample Code · 2018-04-30，Xcode Developer Tools，6 页
+- **[TemperatureTester](../../samplecode/TemperatureTester/TemperatureTester.md)** — Sample Code · 2010-07-09，Xcode Developer Tools，14 页
+- **[Trailers](../../samplecode/Trailers/Trailers.md)** — Sample Code · 2010-04-20，Safari (Mobile)|Safari|Xcode Developer Tools，3 页
+- **[UserFunction Gestalt](../../samplecode/UserFunction%20Gestalt/UserFunction%20Gestalt.md)** — Sample Code · 2003-07-22，Xcode Developer Tools，4 页

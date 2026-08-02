@@ -1,0 +1,28 @@
+---
+title: Skinny3DSample
+apple_id: DTS10000104
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Skinny3DSample/Introduction/Intro.html
+archived_at: '2026-07-18T03:24:46.388261Z'
+---
+> 导航：[总目录](../README.md) · [samplecode](../_indexes/samplecode.md)
+
+
+[Next](https://developer.apple.com/library/archive/samplecode/Skinny3DSample/Listings/Skinny3DSources_%C3%86%C2%92_3DAppSpecific_c.html)
+
+# Skinny3DSample
+
+|  |  |
+| --- | --- |
+| __Last Revision:__ | Version 1.0, 2003-01-14 First Version |
+| __Build Requirements:__ |  |
+| __Runtime Requirements:__ | Carbon |
+
+QuickDraw 3D Skinny3DSample This is not Sample Code in the sense of "this is how it should be done". Rather, it is a preliminary outcome of a beginner's approach to QuickDraw3D, and reflects some fairly innocent, immature exploration and experimentation. Specifically, quite a lot of memory leaks are remaining; there was not enough time to track them down (and it wasn't enough of a priority, yet). I started out with Brigham Stevens' "Skinny Thing" (see e.g. MWPBDTGetAppl in the Metrowerks examples), and tried to keep the shell code (SkinnyMain) as separated from the application-specific code (3DAppSpecific) as possible. This lead to declare all functions that are not called from outside a file as static, and not to include their prototypes in the header files. The originality of Skinny3DSample is the "ValueControlCluster" that allows to experiment conveniently with the parameters of the Box, Camera and Light objects. It is not at all meant as a HI suggestion, but just an easy tool to learn one's way around the effects of varying QuickDraw3D object data. Double-clicking in a value-control line brings up a settings dialog for minimum, maximum and increment/decrement values. At best, Skinny3DSample may be useful as starting point for other quick and dirty experiments while climbing up the learning curve!
+
+[Next](https://developer.apple.com/library/archive/samplecode/Skinny3DSample/Listings/Skinny3DSources_%C3%86%C2%92_3DAppSpecific_c.html)
+

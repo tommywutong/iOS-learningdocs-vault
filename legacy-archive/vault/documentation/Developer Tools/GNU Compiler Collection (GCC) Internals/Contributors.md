@@ -1,0 +1,605 @@
+---
+title: GNU Compiler Collection (GCC) Internals
+apple_id: TP40006804
+resource_type: Guide
+platform: Xcode Developer Tools
+topic: null
+technology: null
+published: '2012-07-23'
+source_url: https://developer.apple.com/library/archive/documentation/DeveloperTools/gcc-4.0.1/gccint/Contributors.html
+archived_at: '2026-07-15T07:30:59.633031Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [GNU Compiler Collection (GCC) Internals](index.md)
+
+
+
+Next: [Option Index](Option-Index.md#apple-j5yhi2lpnywus3temv4a),
+Previous: [GNU Free Documentation License](GNU-Free-Documentation-License.md#apple-i5hfklkgojswklken5rxk3lfnz2gc5djn5xc2tdjmnsw443f),
+Up: [Top](index.md#apple-krxxa)
+
+---
+
+## Contributors to GCC
+
+The GCC project would like to thank its many contributors. Without them the
+project would not have been nearly as successful as it has been. Any omissions
+in this list are accidental. Feel free to contact
+[law@redhat.com](mailto:law@redhat.com) or [gerald@pfeifer.com](mailto:gerald@pfeifer.com) if you have been left
+out or some of your contributions are not listed. Please keep this list in
+alphabetical order.
+
+- Analog Devices helped implement the support for complex data types
+  and iterators.
+- John David Anglin for threading-related fixes and improvements to
+  libstdc++-v3, and the HP-UX port.
+- James van Artsdalen wrote the code that makes efficient use of
+  the Intel 80387 register stack.
+- Abramo and Roberto Bagnara for the SysV68 Motorola 3300 Delta Series
+  port.
+- Alasdair Baird for various bug fixes.
+- Giovanni Bajo for analyzing lots of complicated C++ problem reports.
+- Peter Barada for his work to improve code generation for new
+  ColdFire cores.
+- Gerald Baumgartner added the signature extension to the C++ front end.
+- Godmar Back for his Java improvements and encouragement.
+- Scott Bambrough for help porting the Java compiler.
+- Wolfgang Bangerth for processing tons of bug reports.
+- Jon Beniston for his Microsoft Windows port of Java.
+- Daniel Berlin for better DWARF2 support, faster/better optimizations,
+  improved alias analysis, plus migrating GCC to Bugzilla.
+- Geoff Berry for his Java object serialization work and various patches.
+- Eric Blake for helping to make GCJ and libgcj conform to the
+  specifications.
+- Janne Blomqvist for contributions to gfortran.
+- Segher Boessenkool for various fixes.
+- Hans-J. Boehm for his [garbage collector](http://www.hpl.hp.com/personal/Hans_Boehm/gc/), IA-64 libffi port, and other Java work.
+- Neil Booth for work on cpplib, lang hooks, debug hooks and other
+  miscellaneous clean-ups.
+- Steven Bosscher for integrating the gfortran front end into GCC and for
+  contributing to the tree-ssa branch.
+- Eric Botcazou for fixing middle- and backend bugs left and right.
+- Per Bothner for his direction via the steering committee and various
+  improvements to the infrastructure for supporting new languages. Chill
+  front end implementation. Initial implementations of
+  cpplib, fix-header, config.guess, libio, and past C++ library (libg++)
+  maintainer. Dreaming up, designing and implementing much of GCJ.
+- Devon Bowen helped port GCC to the Tahoe.
+- Don Bowman for mips-vxworks contributions.
+- Dave Brolley for work on cpplib and Chill.
+- Paul Brook for work on the ARM architecture and maintaining gfortran.
+- Robert Brown implemented the support for Encore 32000 systems.
+- Christian Bruel for improvements to local store elimination.
+- Herman A.J. ten Brugge for various fixes.
+- Joerg Brunsmann for Java compiler hacking and help with the GCJ FAQ.
+- Joe Buck for his direction via the steering committee.
+- Craig Burley for leadership of the G77 Fortran effort.
+- Stephan Buys for contributing Doxygen notes for libstdc++.
+- Paolo Carlini for libstdc++ work: lots of efficiency improvements to
+  the C++ strings, streambufs and formatted I/O, hard detective work on
+  the frustrating localization issues, and keeping up with the problem reports.
+- John Carr for his alias work, SPARC hacking, infrastructure improvements,
+  previous contributions to the steering committee, loop optimizations, etc.
+- Stephane Carrez for 68HC11 and 68HC12 ports.
+- Steve Chamberlain for support for the Renesas SH and H8 processors
+  and the PicoJava processor, and for GCJ config fixes.
+- Glenn Chambers for help with the GCJ FAQ.
+- John-Marc Chandonia for various libgcj patches.
+- Scott Christley for his Objective-C contributions.
+- Eric Christopher for his Java porting help and clean-ups.
+- Branko Cibej for more warning contributions.
+- The [GNU Classpath project](http://www.gnu.org/software/classpath/)
+  for all of their merged runtime code.
+- Nick Clifton for arm, mcore, fr30, v850, m32r work, `--help`, and
+  other random hacking.
+- Michael Cook for libstdc++ cleanup patches to reduce warnings.
+- R. Kelley Cook for making GCC buildable from a read-only directory as
+  well as other miscellaneous build process and documentation clean-ups.
+- Ralf Corsepius for SH testing and minor bugfixing.
+- Stan Cox for care and feeding of the x86 port and lots of behind
+  the scenes hacking.
+- Alex Crain provided changes for the 3b1.
+- Ian Dall for major improvements to the NS32k port.
+- Paul Dale for his work to add uClinux platform support to the
+  m68k backend.
+- Dario Dariol contributed the four varieties of sample programs
+  that print a copy of their source.
+- Russell Davidson for fstream and stringstream fixes in libstdc++.
+- Bud Davis for work on the G77 and gfortran compilers.
+- Mo DeJong for GCJ and libgcj bug fixes.
+- DJ Delorie for the DJGPP port, build and libiberty maintenance, and
+  various bug fixes.
+- Arnaud Desitter for helping to debug gfortran.
+- Gabriel Dos Reis for contributions to G++, contributions and
+  maintenance of GCC diagnostics infrastructure, libstdc++-v3,
+  including `valarray<>`, `complex<>`, maintaining the numerics library
+  (including that pesky `<limits>` :-) and keeping up-to-date anything
+  to do with numbers.
+- Ulrich Drepper for his work on glibc, testing of GCC using glibc, ISO C99
+  support, CFG dumping support, etc., plus support of the C++ runtime
+  libraries including for all kinds of C interface issues, contributing and
+  maintaining `complex<>`, sanity checking and disbursement, configuration
+  architecture, libio maintenance, and early math work.
+- Zdenek Dvorak for a new loop unroller and various fixes.
+- Richard Earnshaw for his ongoing work with the ARM.
+- David Edelsohn for his direction via the steering committee, ongoing work
+  with the RS6000/PowerPC port, help cleaning up Haifa loop changes,
+  doing the entire AIX port of libstdc++ with his bare hands, and for
+  ensuring GCC properly keeps working on AIX.
+- Kevin Ediger for the floating point formatting of num_put::do_put in
+  libstdc++.
+- Phil Edwards for libstdc++ work including configuration hackery,
+  documentation maintainer, chief breaker of the web pages, the occasional
+  iostream bug fix, and work on shared library symbol versioning.
+- Paul Eggert for random hacking all over GCC.
+- Mark Elbrecht for various DJGPP improvements, and for libstdc++
+  configuration support for locales and fstream-related fixes.
+- Vadim Egorov for libstdc++ fixes in strings, streambufs, and iostreams.
+- Christian Ehrhardt for dealing with bug reports.
+- Ben Elliston for his work to move the Objective-C runtime into its
+  own subdirectory and for his work on autoconf.
+- Marc Espie for OpenBSD support.
+- Doug Evans for much of the global optimization framework, arc, m32r,
+  and SPARC work.
+- Christopher Faylor for his work on the Cygwin port and for caring and
+  feeding the gcc.gnu.org box and saving its users tons of spam.
+- Fred Fish for BeOS support and Ada fixes.
+- Ivan Fontes Garcia for the Portuguese translation of the GCJ FAQ.
+- Peter Gerwinski for various bug fixes and the Pascal front end.
+- Kaveh Ghazi for his direction via the steering committee,
+  amazing work to make ``-W -Wall`' useful, and continuously testing
+  GCC on a plethora of platforms.
+- John Gilmore for a donation to the FSF earmarked improving GNU Java.
+- Judy Goldberg for c++ contributions.
+- Torbjorn Granlund for various fixes and the c-torture testsuite,
+  multiply- and divide-by-constant optimization, improved long long
+  support, improved leaf function register allocation, and his direction
+  via the steering committee.
+- Anthony Green for his `-Os` contributions and Java front end work.
+- Stu Grossman for gdb hacking, allowing GCJ developers to debug Java code.
+- Michael K. Gschwind contributed the port to the PDP-11.
+- Ron Guilmette implemented the `protoize` and `unprotoize`
+  tools, the support for Dwarf symbolic debugging information, and much of
+  the support for System V Release 4. He has also worked heavily on the
+  Intel 386 and 860 support.
+- Mostafa Hagog for Swing Modulo Scheduling (SMS) and post reload GCSE.
+- Bruno Haible for improvements in the runtime overhead for EH, new
+  warnings and assorted bug fixes.
+- Andrew Haley for his amazing Java compiler and library efforts.
+- Chris Hanson assisted in making GCC work on HP-UX for the 9000 series 300.
+- Michael Hayes for various thankless work he's done trying to get
+  the c30/c40 ports functional. Lots of loop and unroll improvements and
+  fixes.
+- Dara Hazeghi for wading through myriads of target-specific bug reports.
+- Kate Hedstrom for staking the G77 folks with an initial testsuite.
+- Richard Henderson for his ongoing SPARC, alpha, ia32, and ia64 work, loop
+  opts, and generally fixing lots of old problems we've ignored for
+  years, flow rewrite and lots of further stuff, including reviewing
+  tons of patches.
+- Aldy Hernandez for working on the PowerPC port, SIMD support, and
+  various fixes.
+- Nobuyuki Hikichi of Software Research Associates, Tokyo, contributed
+  the support for the Sony NEWS machine.
+- Kazu Hirata for caring and feeding the Renesas H8/300 port and various fixes.
+- Katherine Holcomb for work on gfortran.
+- Manfred Hollstein for his ongoing work to keep the m88k alive, lots
+  of testing and bug fixing, particularly of GCC configury code.
+- Steve Holmgren for MachTen patches.
+- Jan Hubicka for his x86 port improvements.
+- Falk Hueffner for working on C and optimization bug reports.
+- Bernardo Innocenti for his m68k work, including merging of
+  ColdFire improvements and uClinux support.
+- Christian Iseli for various bug fixes.
+- Kamil Iskra for general m68k hacking.
+- Lee Iverson for random fixes and MIPS testing.
+- Andreas Jaeger for testing and benchmarking of GCC and various bug fixes.
+- Jakub Jelinek for his SPARC work and sibling call optimizations as well
+  as lots of bug fixes and test cases, and for improving the Java build
+  system.
+- Janis Johnson for ia64 testing and fixes, her quality improvement
+  sidetracks, and web page maintenance.
+- Kean Johnston for SCO OpenServer support and various fixes.
+- Tim Josling for the sample language treelang based originally on Richard
+  Kenner's “toy” language.
+- Nicolai Josuttis for additional libstdc++ documentation.
+- Klaus Kaempf for his ongoing work to make alpha-vms a viable target.
+- Steven G. Kargl for work on gfortran.
+- David Kashtan of SRI adapted GCC to VMS.
+- Ryszard Kabatek for many, many libstdc++ bug fixes and optimizations of
+  strings, especially member functions, and for auto_ptr fixes.
+- Geoffrey Keating for his ongoing work to make the PPC work for GNU/Linux
+  and his automatic regression tester.
+- Brendan Kehoe for his ongoing work with G++ and for a lot of early work
+  in just about every part of libstdc++.
+- Oliver M. Kellogg of Deutsche Aerospace contributed the port to the
+  MIL-STD-1750A.
+- Richard Kenner of the New York University Ultracomputer Research
+  Laboratory wrote the machine descriptions for the AMD 29000, the DEC
+  Alpha, the IBM RT PC, and the IBM RS/6000 as well as the support for
+  instruction attributes. He also made changes to better support RISC
+  processors including changes to common subexpression elimination,
+  strength reduction, function calling sequence handling, and condition
+  code support, in addition to generalizing the code for frame pointer
+  elimination and delay slot scheduling. Richard Kenner was also the
+  head maintainer of GCC for several years.
+- Mumit Khan for various contributions to the Cygwin and Mingw32 ports and
+  maintaining binary releases for Microsoft Windows hosts, and for massive libstdc++
+  porting work to Cygwin/Mingw32.
+- Robin Kirkham for cpu32 support.
+- Mark Klein for PA improvements.
+- Thomas Koenig for various bug fixes.
+- Bruce Korb for the new and improved fixincludes code.
+- Benjamin Kosnik for his G++ work and for leading the libstdc++-v3 effort.
+- Charles LaBrec contributed the support for the Integrated Solutions
+  68020 system.
+- Jeff Law for his direction via the steering committee, coordinating the
+  entire egcs project and GCC 2.95, rolling out snapshots and releases,
+  handling merges from GCC2, reviewing tons of patches that might have
+  fallen through the cracks else, and random but extensive hacking.
+- Marc Lehmann for his direction via the steering committee and helping
+  with analysis and improvements of x86 performance.
+- Victor Leikehman for work on gfortran.
+- Ted Lemon wrote parts of the RTL reader and printer.
+- Kriang Lerdsuwanakij for C++ improvements including template as template
+  parameter support, and many C++ fixes.
+- Warren Levy for tremendous work on libgcj (Java Runtime Library) and
+  random work on the Java front end.
+- Alain Lichnewsky ported GCC to the MIPS CPU.
+- Oskar Liljeblad for hacking on AWT and his many Java bug reports and
+  patches.
+- Robert Lipe for OpenServer support, new testsuites, testing, etc.
+- Weiwen Liu for testing and various bug fixes.
+- Dave Love for his ongoing work with the Fortran front end and
+  runtime libraries.
+- Martin von Löwis for internal consistency checking infrastructure,
+  various C++ improvements including namespace support, and tons of
+  assistance with libstdc++/compiler merges.
+- H.J. Lu for his previous contributions to the steering committee, many x86
+  bug reports, prototype patches, and keeping the GNU/Linux ports working.
+- Greg McGary for random fixes and (someday) bounded pointers.
+- Andrew MacLeod for his ongoing work in building a real EH system,
+  various code generation improvements, work on the global optimizer, etc.
+- Vladimir Makarov for hacking some ugly i960 problems, PowerPC hacking
+  improvements to compile-time performance, overall knowledge and
+  direction in the area of instruction scheduling, and design and
+  implementation of the automaton based instruction scheduler.
+- Bob Manson for his behind the scenes work on dejagnu.
+- Philip Martin for lots of libstdc++ string and vector iterator fixes and
+  improvements, and string clean up and testsuites.
+- All of the Mauve project
+  [contributors](http://sources.redhat.com/cgi-bin/cvsweb.cgi/~checkout~/mauve/THANKS?rev=1.2&cvsroot=mauve&only_with_tag=HEAD),
+  for Java test code.
+- Bryce McKinlay for numerous GCJ and libgcj fixes and improvements.
+- Adam Megacz for his work on the Microsoft Windows port of GCJ.
+- Michael Meissner for LRS framework, ia32, m32r, v850, m88k, MIPS,
+  powerpc, haifa, ECOFF debug support, and other assorted hacking.
+- Jason Merrill for his direction via the steering committee and leading
+  the G++ effort.
+- David Miller for his direction via the steering committee, lots of
+  SPARC work, improvements in jump.c and interfacing with the Linux kernel
+  developers.
+- Gary Miller ported GCC to Charles River Data Systems machines.
+- Alfred Minarik for libstdc++ string and ios bug fixes, and turning the
+  entire libstdc++ testsuite namespace-compatible.
+- Mark Mitchell for his direction via the steering committee, mountains of
+  C++ work, load/store hoisting out of loops, alias analysis improvements,
+  ISO C `restrict` support, and serving as release manager for GCC 3.x.
+- Alan Modra for various GNU/Linux bits and testing.
+- Toon Moene for his direction via the steering committee, Fortran
+  maintenance, and his ongoing work to make us make Fortran run fast.
+- Jason Molenda for major help in the care and feeding of all the services
+  on the gcc.gnu.org (formerly egcs.cygnus.com) machine—mail, web
+  services, ftp services, etc etc. Doing all this work on scrap paper and
+  the backs of envelopes would have been... difficult.
+- Catherine Moore for fixing various ugly problems we have sent her
+  way, including the haifa bug which was killing the Alpha & PowerPC
+  Linux kernels.
+- Mike Moreton for his various Java patches.
+- David Mosberger-Tang for various Alpha improvements, and for the initial
+  IA-64 port.
+- Stephen Moshier contributed the floating point emulator that assists in
+  cross-compilation and permits support for floating point numbers wider
+  than 64 bits and for ISO C99 support.
+- Bill Moyer for his behind the scenes work on various issues.
+- Philippe De Muyter for his work on the m68k port.
+- Joseph S. Myers for his work on the PDP-11 port, format checking and ISO
+  C99 support, and continuous emphasis on (and contributions to) documentation.
+- Nathan Myers for his work on libstdc++-v3: architecture and authorship
+  through the first three snapshots, including implementation of locale
+  infrastructure, string, shadow C headers, and the initial project
+  documentation (DESIGN, CHECKLIST, and so forth). Later, more work on
+  MT-safe string and shadow headers.
+- Felix Natter for documentation on porting libstdc++.
+- Nathanael Nerode for cleaning up the configuration/build process.
+- NeXT, Inc. donated the front end that supports the Objective-C
+  language.
+- Hans-Peter Nilsson for the CRIS and MMIX ports, improvements to the search
+  engine setup, various documentation fixes and other small fixes.
+- Geoff Noer for his work on getting cygwin native builds working.
+- Diego Novillo for his SPEC performance tracking web pages and assorted
+  fixes in the middle end and various back ends.
+- David O'Brien for the FreeBSD/alpha, FreeBSD/AMD x86-64, FreeBSD/ARM,
+  FreeBSD/PowerPC, and FreeBSD/SPARC64 ports and related infrastructure
+  improvements.
+- Alexandre Oliva for various build infrastructure improvements, scripts and
+  amazing testing work, including keeping libtool issues sane and happy.
+- Stefan Olsson for work on mt_alloc.
+- Melissa O'Neill for various NeXT fixes.
+- Rainer Orth for random MIPS work, including improvements to GCC's o32
+  ABI support, improvements to dejagnu's MIPS support, Java configuration
+  clean-ups and porting work, etc.
+- Hartmut Penner for work on the s390 port.
+- Paul Petersen wrote the machine description for the Alliant FX/8.
+- Alexandre Petit-Bianco for implementing much of the Java compiler and
+  continued Java maintainership.
+- Matthias Pfaller for major improvements to the NS32k port.
+- Gerald Pfeifer for his direction via the steering committee, pointing
+  out lots of problems we need to solve, maintenance of the web pages, and
+  taking care of documentation maintenance in general.
+- Andrew Pinski for processing bug reports by the dozen.
+- Ovidiu Predescu for his work on the Objective-C front end and runtime
+  libraries.
+- Jerry Quinn for major performance improvements in C++ formatted I/O.
+- Ken Raeburn for various improvements to checker, MIPS ports and various
+  cleanups in the compiler.
+- Rolf W. Rasmussen for hacking on AWT.
+- David Reese of Sun Microsystems contributed to the Solaris on PowerPC
+  port.
+- Volker Reichelt for keeping up with the problem reports.
+- Joern Rennecke for maintaining the sh port, loop, regmove & reload
+  hacking.
+- Loren J. Rittle for improvements to libstdc++-v3 including the FreeBSD
+  port, threading fixes, thread-related configury changes, critical
+  threading documentation, and solutions to really tricky I/O problems,
+  as well as keeping GCC properly working on FreeBSD and continuous testing.
+- Craig Rodrigues for processing tons of bug reports.
+- Ola Rönnerup for work on mt_alloc.
+- Gavin Romig-Koch for lots of behind the scenes MIPS work.
+- David Ronis inspired and encouraged Craig to rewrite the G77
+  documentation in texinfo format by contributing a first pass at a
+  translation of the old `g77-0.5.16/f/DOC` file.
+- Ken Rose for fixes to GCC's delay slot filling code.
+- Paul Rubin wrote most of the preprocessor.
+- Pétur Runólfsson for major performance improvements in C++ formatted I/O and
+  large file support in C++ filebuf.
+- Chip Salzenberg for libstdc++ patches and improvements to locales, traits,
+  Makefiles, libio, libtool hackery, and “long long” support.
+- Juha Sarlin for improvements to the H8 code generator.
+- Greg Satz assisted in making GCC work on HP-UX for the 9000 series 300.
+- Roger Sayle for improvements to constant folding and GCC's RTL optimizers
+  as well as for fixing numerous bugs.
+- Bradley Schatz for his work on the GCJ FAQ.
+- Peter Schauer wrote the code to allow debugging to work on the Alpha.
+- William Schelter did most of the work on the Intel 80386 support.
+- Tobias Schlüter for work on gfortran.
+- Bernd Schmidt for various code generation improvements and major
+  work in the reload pass as well a serving as release manager for
+  GCC 2.95.3.
+- Peter Schmid for constant testing of libstdc++—especially application
+  testing, going above and beyond what was requested for the release
+  criteria—and libstdc++ header file tweaks.
+- Jason Schroeder for jcf-dump patches.
+- Andreas Schwab for his work on the m68k port.
+- Lars Segerlund for work on gfortran.
+- Joel Sherrill for his direction via the steering committee, RTEMS
+  contributions and RTEMS testing.
+- Nathan Sidwell for many C++ fixes/improvements.
+- Jeffrey Siegal for helping RMS with the original design of GCC, some
+  code which handles the parse tree and RTL data structures, constant
+  folding and help with the original VAX & m68k ports.
+- Kenny Simpson for prompting libstdc++ fixes due to defect reports from
+  the LWG (thereby keeping GCC in line with updates from the ISO).
+- Franz Sirl for his ongoing work with making the PPC port stable
+  for GNU/Linux.
+- Andrey Slepuhin for assorted AIX hacking.
+- Christopher Smith did the port for Convex machines.
+- Danny Smith for his major efforts on the Mingw (and Cygwin) ports.
+- Randy Smith finished the Sun FPA support.
+- Scott Snyder for queue, iterator, istream, and string fixes and libstdc++
+  testsuite entries. Also for providing the patch to G77 to add
+  rudimentary support for `INTEGER*1`, `INTEGER*2`, and
+  `LOGICAL*1`.
+- Brad Spencer for contributions to the GLIBCPP_FORCE_NEW technique.
+- Richard Stallman, for writing the original GCC and launching the GNU project.
+- Jan Stein of the Chalmers Computer Society provided support for
+  Genix, as well as part of the 32000 machine description.
+- Nigel Stephens for various mips16 related fixes/improvements.
+- Jonathan Stone wrote the machine description for the Pyramid computer.
+- Graham Stott for various infrastructure improvements.
+- John Stracke for his Java HTTP protocol fixes.
+- Mike Stump for his Elxsi port, G++ contributions over the years and more
+  recently his vxworks contributions
+- Jeff Sturm for Java porting help, bug fixes, and encouragement.
+- Shigeya Suzuki for this fixes for the bsdi platforms.
+- Ian Lance Taylor for his mips16 work, general configury hacking,
+  fixincludes, etc.
+- Holger Teutsch provided the support for the Clipper CPU.
+- Gary Thomas for his ongoing work to make the PPC work for GNU/Linux.
+- Philipp Thomas for random bug fixes throughout the compiler
+- Jason Thorpe for thread support in libstdc++ on NetBSD.
+- Kresten Krab Thorup wrote the run time support for the Objective-C
+  language and the fantastic Java bytecode interpreter.
+- Michael Tiemann for random bug fixes, the first instruction scheduler,
+  initial C++ support, function integration, NS32k, SPARC and M88k
+  machine description work, delay slot scheduling.
+- Andreas Tobler for his work porting libgcj to Darwin.
+- Teemu Torma for thread safe exception handling support.
+- Leonard Tower wrote parts of the parser, RTL generator, and RTL
+  definitions, and of the VAX machine description.
+- Tom Tromey for internationalization support and for his many Java
+  contributions and libgcj maintainership.
+- Lassi Tuura for improvements to config.guess to determine HP processor
+  types.
+- Petter Urkedal for libstdc++ CXXFLAGS, math, and algorithms fixes.
+- Andy Vaught for the design and initial implementation of the gfortran
+  front end.
+- Brent Verner for work with the libstdc++ cshadow files and their
+  associated configure steps.
+- Todd Vierling for contributions for NetBSD ports.
+- Jonathan Wakely for contributing libstdc++ Doxygen notes and XHTML
+  guidance.
+- Dean Wakerley for converting the install documentation from HTML to texinfo
+  in time for GCC 3.0.
+- Krister Walfridsson for random bug fixes.
+- Feng Wang for contributions to gfortran.
+- Stephen M. Webb for time and effort on making libstdc++ shadow files
+  work with the tricky Solaris 8+ headers, and for pushing the build-time
+  header tree.
+- John Wehle for various improvements for the x86 code generator,
+  related infrastructure improvements to help x86 code generation,
+  value range propagation and other work, WE32k port.
+- Ulrich Weigand for work on the s390 port.
+- Zack Weinberg for major work on cpplib and various other bug fixes.
+- Matt Welsh for help with Linux Threads support in GCJ.
+- Urban Widmark for help fixing java.io.
+- Mark Wielaard for new Java library code and his work integrating with
+  Classpath.
+- Dale Wiles helped port GCC to the Tahoe.
+- Bob Wilson from Tensilica, Inc. for the Xtensa port.
+- Jim Wilson for his direction via the steering committee, tackling hard
+  problems in various places that nobody else wanted to work on, strength
+  reduction and other loop optimizations.
+- Carlo Wood for various fixes.
+- Tom Wood for work on the m88k port.
+- Canqun Yang for work on gfortran.
+- Masanobu Yuhara of Fujitsu Laboratories implemented the machine
+  description for the Tron architecture (specifically, the Gmicro).
+- Kevin Zachmann helped port GCC to the Tahoe.
+- Ayal Zaks for Swing Modulo Scheduling (SMS).
+- Xiaoqiang Zhang for work on gfortran.
+- Gilles Zunino for help porting Java to Irix.
+
+The following people are recognized for their contributions to GNAT,
+the Ada front end of GCC:
+
+- Bernard Banner
+- Romain Berrendonner
+- Geert Bosch
+- Emmanuel Briot
+- Joel Brobecker
+- Ben Brosgol
+- Vincent Celier
+- Arnaud Charlet
+- Chien Chieng
+- Cyrille Comar
+- Cyrille Crozes
+- Robert Dewar
+- Gary Dismukes
+- Robert Duff
+- Ed Falis
+- Ramon Fernandez
+- Sam Figueroa
+- Vasiliy Fofanov
+- Michael Friess
+- Franco Gasperoni
+- Ted Giering
+- Matthew Gingell
+- Laurent Guerby
+- Jerome Guitton
+- Olivier Hainque
+- Jerome Hugues
+- Hristian Kirtchev
+- Jerome Lambourg
+- Bruno Leclerc
+- Albert Lee
+- Sean McNeil
+- Javier Miranda
+- Laurent Nana
+- Pascal Obry
+- Dong-Ik Oh
+- Laurent Pautet
+- Brett Porter
+- Thomas Quinot
+- Nicolas Roche
+- Pat Rogers
+- Jose Ruiz
+- Douglas Rupp
+- Sergey Rybin
+- Gail Schenker
+- Ed Schonberg
+- Nicolas Setton
+- Samuel Tardieu
+
+In addition to the above, all of which also contributed time and energy in
+testing GCC, we would like to thank the following for their contributions
+to testing:
+
+- Michael Abd-El-Malek
+- Thomas Arend
+- Bonzo Armstrong
+- Steven Ashe
+- Chris Baldwin
+- David Billinghurst
+- Jim Blandy
+- Stephane Bortzmeyer
+- Horst von Brand
+- Frank Braun
+- Rodney Brown
+- Sidney Cadot
+- Bradford Castalia
+- Jonathan Corbet
+- Ralph Doncaster
+- Richard Emberson
+- Levente Farkas
+- Graham Fawcett
+- Mark Fernyhough
+- Robert A. French
+- Jörgen Freyh
+- Mark K. Gardner
+- Charles-Antoine Gauthier
+- Yung Shing Gene
+- David Gilbert
+- Simon Gornall
+- Fred Gray
+- John Griffin
+- Patrik Hagglund
+- Phil Hargett
+- Amancio Hasty
+- Takafumi Hayashi
+- Bryan W. Headley
+- Kevin B. Hendricks
+- Joep Jansen
+- Christian Joensson
+- Michel Kern
+- David Kidd
+- Tobias Kuipers
+- Anand Krishnaswamy
+- A. O. V. Le Blanc
+- llewelly
+- Damon Love
+- Brad Lucier
+- Matthias Klose
+- Martin Knoblauch
+- Rick Lutowski
+- Jesse Macnish
+- Stefan Morrell
+- Anon A. Mous
+- Matthias Mueller
+- Pekka Nikander
+- Rick Niles
+- Jon Olson
+- Magnus Persson
+- Chris Pollard
+- Richard Polton
+- Derk Reefman
+- David Rees
+- Paul Reilly
+- Tom Reilly
+- Torsten Rueger
+- Danny Sadinoff
+- Marc Schifer
+- Erik Schnetter
+- Wayne K. Schroll
+- David Schuler
+- Vin Shelton
+- Tim Souder
+- Adam Sulmicki
+- Bill Thorson
+- George Talbot
+- Pedro A. M. Vazquez
+- Gregory Warnes
+- Ian Watson
+- David E. Young
+- And many others
+
+And finally we'd like to thank everyone who uses the compiler, submits bug
+reports and generally reminds us why we're doing this work in the first place.

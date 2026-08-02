@@ -1,0 +1,126 @@
+---
+title: MovieSprites
+apple_id: DTS10001040
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/MovieSprites/Listings/Completed_Lab_QTSprites_h.html
+archived_at: '2026-07-18T03:16:12.091061Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [MovieSprites](MovieSprites.md)
+
+
+[Next](Completed%20Lab-QTSprites.r.md)[Previous](Completed%20Lab-QTSprites.c.md)
+
+# Completed Lab/QTSprites.h
+
+```c
+//////////
+//
+//  File:       QTSprites.c
+//
+//  Contains:   QuickTime sprites support for QuickTime movies.
+//              This file is used for BOTH MacOS and Windows.
+//
+//  Written by: ???
+//  Revised by: Tim Monroe and Deeje Cooley
+//              Based (heavily!) on the existing MakeSpriteMovie.c code written by ???.
+//
+//  Copyright:  © 1997-1998 by Apple Computer, Inc., all rights reserved.
+//
+//  Change History (most recent first):
+//
+//     <1>      04/02/98    rtm     first file; integrated existing code with shell framework
+//     
+//////////
+
+//////////
+//
+// header files
+//
+//////////
+
+#include <Endian.h>
+#include <FixMath.h>
+#include <Fonts.h>
+#include <Movies.h>
+#include <Processes.h>
+#include <QuickTimeComponents.h>
+#include <Resources.h>
+#include <Script.h>
+
+#ifndef _SPRITEUTILITIES_
+#include "SpriteUtilities.h"
+#endif
+
+#ifndef __ENDIANUTILITIES__
+#include "EndianUtilities.h"
+#endif
+
+#ifndef __COMAPPLICATION__
+#include "ComApplication.h"
+#endif
+
+#if TARGET_OS_MAC
+#include "MacFramework.h"
+#endif
+
+#if TARGET_OS_WIN32
+#include "WinFramework.h"
+#endif
+
+
+//////////
+//
+// constants
+//
+//////////
+
+#define kSpriteTrackWidth                   640
+#define kSpriteTrackHeight                  480
+
+// PICT resource IDs
+#define kIconPictID                         129
+#define kWorldPictID                        130
+#define kBackgroundPictID                   158
+#define kFirstSpaceShipPictID               (kBackgroundPictID + 1)
+
+// sprite atom IDs
+#define kBackgroundSpriteAtomID             1
+#define kSpaceShipSpriteAtomID              2
+#define kWorldSpriteAtomID                  3
+#define kIconSpriteAtomID                   4
+
+// image indices
+#define kIconImageIndex                     1
+#define kWorldImageIndex                    2
+#define kBackgroundImageIndex               3
+#define kFirstSpaceShipImageIndex           4
+#define kNumSpaceShipImages                 24
+#define kLastSpaceShipImageIndex            (kFirstSpaceShipImageIndex + kNumSpaceShipImages - 1)
+
+#define kSpriteMediaTimeScale               600
+#define kSpriteMediaFrameDuration           8
+#define kSpriteMediaFramesPerSecond         (kSpriteMediaTimeScale / kSpriteMediaFrameDuration)
+
+#define kNumOverrideSamples                 199
+
+#define kSpriteSavePrompt                   "Save New Sprite Movie As:"
+#define kSpriteSaveMovieFileName            "Sprite.mov"
+
+//////////
+//
+// function prototypes
+//
+//////////
+
+ApplicationDataHdl              QTSprites_InitWindowData (WindowObject theWindowObject);
+void                            QTSprites_DumpWindowData (WindowObject theWindowObject);
+OSErr                           QTSprites_CreateSpritesMovie (void);
+Boolean                         QTSprites_HitTestSprites (WindowObject theWindowObject, EventRecord *theEvent);
+```
+
+[Next](Completed%20Lab-QTSprites.r.md)[Previous](Completed%20Lab-QTSprites.c.md)
+

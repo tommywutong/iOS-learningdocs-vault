@@ -1,0 +1,108 @@
+---
+title: Load PCI Driver
+apple_id: DTS10000439
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Load_PCI_Driver/Listings/MoreFiles_Optimization_h.html
+archived_at: '2026-07-18T03:13:44.452141Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Load PCI Driver](Load%20PCI%20Driver.md)
+
+
+[Next](MoreFiles-OptimizationEnd.h.md)[Previous](MoreFiles-MoreFilesExtras.h.md)
+
+# MoreFiles/Optimization.h
+
+```
+/*
+    File:       Optimization.h
+
+    Description:The Optimization changes to MoreFiles source and header files, along with
+                this file and OptimizationEnd.h, let you optimize the code produced
+                by MoreFiles in several ways.
+
+                1 -- MoreFiles contains extra code so that many routines can run under
+                Mac OS systems back to System 6. If your program requires a specific
+                version of Mac OS and your program checks for that version before
+                calling MoreFiles routines, then you can remove a lot of compatibility
+                code by defining one of the following to 1:
+
+                __MACOSSEVENFIVEONEORLATER  // assume Mac OS 7.5.1 or later
+                __MACOSSEVENFIVEORLATER     // assume Mac OS 7.5 or later
+                __MACOSSEVENORLATER         // assume Mac OS 7.0 or later
+
+                By default, all compatibility code is ON.
+
+                2 -- You may disable Pascal calling conventions in all MoreFiles routines
+                except for system callbacks that require Pascal calling conventions.
+                This will make C programs both smaller and faster.
+                Just define __WANTPASCALELIMINATION to be 1 to turn this optimization on
+                when building MoreFiles for use from C programs (you'll need to keep
+                Pascal calling conventions when linking MoreFiles routines with Pascal
+                programs).
+
+                3 -- If Metrowerks compiler is used, "#pragma internal on" may help produce
+                better code. However, this option can also cause problems if you're
+                trying to build MoreFiles as a shared library, so it is by default not used.
+                Just define __USEPRAGMAINTERNAL to be 1 to turn this optimization on.
+
+    Author:     FO
+
+    Copyright:  Copyright: © 1992-1999 by Apple Computer, Inc.
+                all rights reserved.
+
+    Disclaimer: You may incorporate this sample code into your applications without
+                restriction, though the sample code has been provided "AS IS" and the
+                responsibility for its operation is 100% yours.  However, what you are
+                not permitted to do is to redistribute the source as "DSC Sample Code"
+                after having made changes. If you're going to re-distribute the source,
+                we require that you make it clear in the source that the code was
+                descended from Apple Sample Code, but that you've made changes.
+
+    Change History (most recent first):
+                6/25/99 Updated for Metrowerks Codewarror Pro 2.1(KG)
+
+*/
+
+#ifndef __MACOSSEVENFIVEONEORLATER
+    #define __MACOSSEVENFIVEONEORLATER 0
+#endif
+
+#ifndef __MACOSSEVENFIVEORLATER
+    #define __MACOSSEVENFIVEORLATER __MACOSSEVENFIVEONEORLATER
+#endif
+
+#ifndef __MACOSSEVENORLATER
+    #if GENERATINGCFM
+        #define __MACOSSEVENORLATER 1
+    #else
+        #define __MACOSSEVENORLATER __MACOSSEVENFIVEORLATER
+    #endif
+#endif
+
+
+#ifndef __WANTPASCALELIMINATION
+    #define __WANTPASCALELIMINATION 0
+#endif
+
+#if __WANTPASCALELIMINATION
+    #define pascal  
+#endif
+
+
+#ifndef __USEPRAGMAINTERNAL
+    #define __USEPRAGMAINTERNAL 0
+#endif
+
+#if __USEPRAGMAINTERNAL
+    #if defined(__MWERKS__)
+        #pragma internal on
+    #endif
+#endif
+```
+
+[Next](MoreFiles-OptimizationEnd.h.md)[Previous](MoreFiles-MoreFilesExtras.h.md)
+

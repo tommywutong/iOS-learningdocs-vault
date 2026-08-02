@@ -1,0 +1,92 @@
+# qa / hw
+
+> 导航：[总目录](../../README.md) · [qa](../qa.md)
+
+共 84 份文档。
+
+## macOS（84 份）
+
+- **[A SCSI little secret](../../qa/hw/A%20SCSI%20little%20secret/hw81.md)** — QA · 1999-12-20，macOS
+- **[Are the Name Registry device tree nodes unique?](../../qa/hw/Are%20the%20Name%20Registry%20device%20tree%20nodes%20unique/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-10-11，macOS
+- **[Asserting fast-back-to-back transfers in the PCI Power Mac](../../qa/hw/Asserting%20fast-back-to-back%20transfers%20in%20the%20PCI%20Power%20Mac/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Booting after invoking the Open Firmware user interface](../../qa/hw/Booting%20after%20invoking%20the%20Open%20Firmware%20user%20interface/hw48.md)** — QA · 1999-02-15，macOS
+- **[Can you explain the words "begin" and "again"?](../../qa/hw/Can%20you%20explain%20the%20words%20-begin-%20and%20-again/hw70.md)** — QA · 1999-10-11，macOS
+- **[Changing the configuration variable in Open Firmware](../../qa/hw/Changing%20the%20configuration%20variable%20in%20Open%20Firmware/hw40.md)** — QA · 1999-02-15，macOS
+- **[Creating a Monitors Control Panel Extension](../../qa/hw/Creating%20a%20Monitors%20Control%20Panel%20Extension/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[DDC Information Source](../../qa/hw/DDC%20Information%20Source/Legacy%20Documentclose%20button.md)** — QA · 1995-11-22，macOS
+- **[Detecting specific ROM-in-RAM Mac](../../qa/hw/Detecting%20specific%20ROM-in-RAM%20Mac/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-10-05，macOS
+- **[Determining if a PCI Bus Exists](../../qa/hw/Determining%20if%20a%20PCI%20Bus%20Exists/Legacy%20Documentclose%20button.md)** — QA · 1998-09-01，macOS
+- **[Determining Open Firmware version](../../qa/hw/Determining%20Open%20Firmware%20version/hw100.md)** — QA · 2000-10-06，macOS
+- **[Determining the version of Open Firmware on your Mac](../../qa/hw/Determining%20the%20version%20of%20Open%20Firmware%20on%20your%20Mac/hw60.md)** — QA · 1999-03-29，macOS
+- **[Developing a SCSI SIM for a PCI SCSI Controller](../../qa/hw/Developing%20a%20SCSI%20SIM%20for%20a%20PCI%20SCSI%20Controller/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Difference between an Open Firmware word and method](../../qa/hw/Difference%20between%20an%20Open%20Firmware%20word%20and%20method/hw46.md)** — QA · 1999-02-15，macOS
+- **[Difference between PCCard SDK2 and SDK3](../../qa/hw/Difference%20between%20PCCard%20SDK2%20and%20SDK3/Legacy%20Documentclose%20button.md)** — QA · 1999-03-29，macOS
+- **[Difference between using Restart or Shut Down in the Finder's Special menu in Open Firmware](../../qa/hw/Difference%20between%20using%20Restart%20or%20Shut%20Down%20in%20the%20Finder%27s%20Special%20menu%20in%20Op/hw47.md)** — QA · 1999-02-15，macOS
+- **[Differences between iMac models](../../qa/hw/Differences%20between%20iMac%20models/Legacy%20Documentclose%20button.md)** — QA · 1999-01-25，macOS
+- **[Disconnect/Retry](../../qa/hw/Disconnect-Retry/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[dl command in 1 machine mode](../../qa/hw/dl%20command%20in%201%20machine%20mode/hw51.md)** — QA · 1999-03-29，macOS
+- **[Do PowerBooks have a PCI bus?](../../qa/hw/Do%20PowerBooks%20have%20a%20PCI%20bus/hw43.md)** — QA · 1999-02-15，macOS
+- **[DR Emulator Caches](../../qa/hw/DR%20Emulator%20Caches/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-04-08，macOS
+- **[Ethernet Driver Message Blocks](../../qa/hw/Ethernet%20Driver%20Message%20Blocks/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Explanation of SDRAM configuration Nomenclature](../../qa/hw/Explanation%20of%20SDRAM%20configuration%20Nomenclature/hw75.md)** — QA · 1999-10-18，macOS
+- **[Explicitly Forcing PCI Burst Transfers](../../qa/hw/Explicitly%20Forcing%20PCI%20Burst%20Transfers/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[GetDriverDiskFragment and 'ndrv' Drivers](../../qa/hw/GetDriverDiskFragment%20and%20%27ndrv%27%20Drivers/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Getting the Processor Type and Speed on a PCI Mac](../../qa/hw/Getting%20the%20Processor%20Type%20and%20Speed%20on%20a%20PCI%20Mac/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[How do I change the numeric base for the Open Firmware user interface?](../../qa/hw/How%20do%20I%20change%20the%20numeric%20base%20for%20the%20Open%20Firmware%20user%20interface/hw66.md)** — QA · 1999-10-11，macOS
+- **[How do I determine the top of the Open Firmware dictionary?](../../qa/hw/How%20do%20I%20determine%20the%20top%20of%20the%20Open%20Firmware%20dictionary/hw69.md)** — QA · 1999-10-11，macOS
+- **[How does Open Firmware generate the name property?](../../qa/hw/How%20does%20Open%20Firmware%20generate%20the%20name%20property/hw39.md)** — QA · 1999-02-15，macOS
+- **[How many PCI header types exist today?](../../qa/hw/How%20many%20PCI%20header%20types%20exist%20today/hw92.md)** — QA · 2011-07-11，macOS · Kernel
+- **[Implementing read-modify-write on PCI](../../qa/hw/Implementing%20read-modify-write%20on%20PCI/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Interrupt Management](../../qa/hw/Interrupt%20Management/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Invoking the Open Firmware user interface](../../qa/hw/Invoking%20the%20Open%20Firmware%20user%20interface/hw45.md)** — QA · 1999-02-15，macOS
+- **[Is there a relationship between the device tree and the Name Registry?](../../qa/hw/Is%20there%20a%20relationship%20between%20the%20device%20tree%20and%20the%20Name%20Registry/Legacy%20Documentclose%20button.md)** — QA · 1999-02-15，macOS
+- **[Legacy Devices](../../qa/hw/Legacy%20Devices/hw84.md)** — QA · 2000-03-20，macOS
+- **[Locating the 1275-1994 Standard Document](../../qa/hw/Locating%20the%201275-1994%20Standard%20Document/hw85.md)** — QA · 2000-07-17，macOS
+- **[Making the ADBOp call from CFM-68K](../../qa/hw/Making%20the%20ADBOp%20call%20from%20CFM-68K/Legacy%20Documentclose%20button.md)** — QA · 1998-05-11，macOS
+- **[Maximum Memory for the "Firewire" PowerBook](../../qa/hw/Maximum%20Memory%20for%20the%20-Firewire-%20PowerBook/Not%20Recommended%20Documentclose%20button.md)** — QA · 2000-03-13，macOS
+- **[NuBus Declaration ROM](../../qa/hw/NuBus%20Declaration%20ROM/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[NuBus Timing Problem](../../qa/hw/NuBus%20Timing%20Problem/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Open Firmware device tree nodes](../../qa/hw/Open%20Firmware%20device%20tree%20nodes/hw86.md)** — QA · 2000-09-05，macOS
+- **[Open Firmware Memory bus speed](../../qa/hw/Open%20Firmware%20Memory%20bus%20speed/hw97.md)** — QA · 2000-09-22，macOS
+- **[Open Firmware version number](../../qa/hw/Open%20Firmware%20version%20number/hw96.md)** — QA · 2000-09-22，macOS
+- **[PC card Voltage Sense line issues with 5-volt only cards](../../qa/hw/PC%20card%20Voltage%20Sense%20line%20issues%20with%205-volt%20only%20cards/Legacy%20Documentclose%20button.md)** — QA · 1999-10-18，macOS
+- **[PCI address/data stepping](../../qa/hw/PCI%20address-data%20stepping/hw94.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Bus and IEEE Standards](../../qa/hw/PCI%20Bus%20and%20IEEE%20Standards/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI bus on the iMac](../../qa/hw/PCI%20bus%20on%20the%20iMac/hw42.md)** — QA · 1999-02-15，macOS
+- **[PCI Bus Performance with Memory Read and Memory Read Multiple Commands](../../qa/hw/PCI%20Bus%20Performance%20with%20Memory%20Read%20and%20Memory%20Read%20Multiple%20Commands/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Card's Assigned-Address Properties](../../qa/hw/PCI%20Card%27s%20Assigned-Address%20Properties/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI class codes](../../qa/hw/PCI%20class%20codes/hw91.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Device and Driver Matching](../../qa/hw/PCI%20Device%20and%20Driver%20Matching/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Drivers: I/O Queue & KillIO](../../qa/hw/PCI%20Drivers-%20I-O%20Queue%20%26%20KillIO/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Header types](../../qa/hw/PCI%20Header%20types/hw78.md)** — QA · 1999-11-15，macOS
+- **[PCI Interrupts](../../qa/hw/PCI%20Interrupts/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Macintoshes and CardBus controllers](../../qa/hw/PCI%20Macintoshes%20and%20CardBus%20controllers/hw87.md)** — QA · 2000-09-05，macOS · Kernel
+- **[PCI SIG](../../qa/hw/PCI%20SIG/hw55.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Support for the ISA Style Bracket](../../qa/hw/PCI%20Support%20for%20the%20ISA%20Style%20Bracket/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PowerBook and Sleep Mode](../../qa/hw/PowerBook%20and%20Sleep%20Mode/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[SDRAM Problems With Self-Powered USB Devices](../../qa/hw/SDRAM%20Problems%20With%20Self-Powered%20USB%20Devices/hw82.md)** — QA · 2003-08-21，macOS
+- **[Stopping Forth command scrolls](../../qa/hw/Stopping%20Forth%20command%20scrolls/hw57.md)** — QA · 1999-03-29，macOS
+- **[Switching between one and two machine mode for the Open Firmware user interface](../../qa/hw/Switching%20between%20one%20and%20two%20machine%20mode%20for%20the%20Open%20Firmware%20user%20interface/hw37.md)** — QA · 1999-02-15，macOS
+- **[Testing PCI drivers without any device](../../qa/hw/Testing%20PCI%20drivers%20without%20any%20device/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[The "/aliases" node in the device tree](../../qa/hw/The%20--aliases-%20node%20in%20the%20device%20tree/hw89.md)** — QA · 2000-09-05，macOS
+- **[The "chosen" node in the device tree](../../qa/hw/The%20-chosen-%20node%20in%20the%20device%20tree/hw88.md)** — QA · 2000-09-05，macOS
+- **[The "green" PCI bus](../../qa/hw/The%20-green-%20PCI%20bus/hw93.md)** — QA · 2011-07-12，macOS · Kernel
+- **[The "packages" node in the device tree](../../qa/hw/The%20-packages-%20node%20in%20the%20device%20tree/hw90.md)** — QA · 2006-02-22，macOS
+- **[The AAPL, slot-name property and PCI](../../qa/hw/The%20AAPL%2C%20slot-name%20property%20and%20PCI/hw61.md)** — QA · 1999-04-19，macOS
+- **[UpTime's values are consistently slow?](../../qa/hw/UpTime%27s%20values%20are%20consistently%20slow/Legacy%20Documentclose%20button.md)** — QA · 1998-10-19，macOS
+- **[Using "words" in Open Firmware](../../qa/hw/Using%20-words-%20in%20Open%20Firmware/hw73.md)** — QA · 1999-10-11，macOS
+- **[Verifying the PCI Interface](../../qa/hw/Verifying%20the%20PCI%20Interface/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Was that a path I just saw?](../../qa/hw/Was%20that%20a%20path%20I%20just%20saw/hw101.md)** — QA · 2000-10-06，macOS
+- **[What are configuration variables in Open Firmware?](../../qa/hw/What%20are%20configuration%20variables%20in%20Open%20Firmware/hw38.md)** — QA · 1999-02-15，macOS
+- **[What are generic names in Open Firmware?](../../qa/hw/What%20are%20generic%20names%20in%20Open%20Firmware/hw34.md)** — QA · 1999-02-15，macOS
+- **[What are NewWorld and Open Firmware version 3?](../../qa/hw/What%20are%20NewWorld%20and%20Open%20Firmware%20version%203/Legacy%20Documentclose%20button.md)** — QA · 1999-02-15，macOS
+- **[What are snag keys in Open Firmware?](../../qa/hw/What%20are%20snag%20keys%20in%20Open%20Firmware/hw35.md)** — QA · 1999-02-15，macOS
+- **[What is a CardBus host bus adapter HBA?](../../qa/hw/What%20is%20a%20CardBus%20host%20bus%20adapter%20HBA/hw79.md)** — QA · 2011-07-12，macOS · Kernel
+- **[What is a tokenizer?](../../qa/hw/What%20is%20a%20tokenizer/hw58.md)** — QA · 1999-03-29，macOS
+- **[What is an Open Firmware devalias?](../../qa/hw/What%20is%20an%20Open%20Firmware%20devalias/Removed%20Documentclose%20button.md)** — QA · 2000-10-06，macOS
+- **[What is an Open Firmware phandle, and why can't I access it from the Mac OS?](../../qa/hw/What%20is%20an%20Open%20Firmware%20phandle%2C%20and%20why%20can%27t%20I%20access%20it%20from%20the%20Mac%20OS/hw76.md)** — QA · 1999-11-15，macOS
+- **[What is meant by 1 machine mode vs. 2 machine mode with respect to Open Firmware?](../../qa/hw/What%20is%20meant%20by%201%20machine%20mode%20vs.%202%20machine%20mode%20with%20respect%20to%20Open%20Firmware/hw36.md)** — QA · 1999-02-15，macOS
+- **[What is the return stack in Open Firmware and can I use it?](../../qa/hw/What%20is%20the%20return%20stack%20in%20Open%20Firmware%20and%20can%20I%20use%20it/hw67.md)** — QA · 1999-10-11，macOS
+- **[What is the word "see" and how do I use it to help me find what a word does?](../../qa/hw/What%20is%20the%20word%20-see-%20and%20how%20do%20I%20use%20it%20to%20help%20me%20find%20what%20a%20word%20does/hw72.md)** — QA · 1999-10-11，macOS
+- **[When to use PCMCIA, PC Card, and CardBus](../../qa/hw/When%20to%20use%20PCMCIA%2C%20PC%20Card%2C%20and%20CardBus/hw77.md)** — QA · 1999-11-15，macOS
+- **[Which Machines Support Driver Services Library and the MP Nanokernel?](../../qa/hw/Which%20Machines%20Support%20Driver%20Services%20Library%20and%20the%20MP%20Nanokernel/hw63.md)** — QA · 1999-07-12，macOS

@@ -1,0 +1,67 @@
+---
+title: OS X v10.10 API Diffs
+apple_id: TP40014444
+resource_type: Release Note
+platform: macOS
+topic: General
+technology: null
+published: '2014-10-16'
+source_url: https://developer.apple.com/library/archive/documentation/General/Reference/APIDiffsMacOSX10_10SeedDiff/modules/ICADevices.html
+archived_at: '2026-07-15T07:34:55.157437Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [OS X v10.10 API Diffs](OS%20X%20v10.9%20to%20OS%20X%20v10.10%20API%20Differences.md)
+
+
+# ICADevices Changes
+
+## ICADevices (Added)
+
+Added ICARawFileHeader [struct]Added ICARawFileHeader.bitmapInfoAdded ICARawFileHeader.bitsPerComponentAdded ICARawFileHeader.bitsPerPixelAdded ICARawFileHeader.bytesPerRowAdded ICARawFileHeader.cgColorSpaceModelAdded ICARawFileHeader.colorSyncModeStrAdded ICARawFileHeader.dpiAdded ICARawFileHeader.imageDataOffsetAdded ICARawFileHeader.imageHeightAdded ICARawFileHeader.imageWidthAdded ICARawFileHeader.numberOfComponentsAdded ICARawFileHeader.orientationAdded ICARawFileHeader.versionAdded ICD_ObjectSendMessagePB [struct]Added ICD_ObjectSendMessagePB.connectionIDAdded ICD_ObjectSendMessagePB.headerAdded ICD_ObjectSendMessagePB.messageAdded ICD_ObjectSendMessagePB.objectAdded ICD_ObjectSendMessagePB.objectInfoAdded ICD_ObjectSendMessagePB.resultAdded ICD_ObjectSendMessagePB.totalDataSizeAdded ICD_ScannerCloseSessionPB [struct]Added ICD_ScannerCloseSessionPB.connectionIDAdded ICD_ScannerCloseSessionPB.headerAdded ICD_ScannerCloseSessionPB.objectAdded ICD_ScannerCloseSessionPB.objectInfoAdded ICD_ScannerCloseSessionPB.sessionIDAdded ICD_ScannerGetParametersPB [struct]Added ICD_ScannerGetParametersPB.connectionIDAdded ICD_ScannerGetParametersPB.headerAdded ICD_ScannerGetParametersPB.objectAdded ICD_ScannerGetParametersPB.objectInfoAdded ICD_ScannerGetParametersPB.sessionIDAdded ICD_ScannerGetParametersPB.theDictAdded ICD_ScannerInitializePB [struct]Added ICD_ScannerInitializePB.connectionIDAdded ICD_ScannerInitializePB.headerAdded ICD_ScannerInitializePB.objectAdded ICD_ScannerInitializePB.objectInfoAdded ICD_ScannerInitializePB.sessionIDAdded ICD_ScannerObjectSendMessagePB [struct]Added ICD_ScannerObjectSendMessagePB.connectionIDAdded ICD_ScannerObjectSendMessagePB.headerAdded ICD_ScannerObjectSendMessagePB.messageAdded ICD_ScannerObjectSendMessagePB.objectAdded ICD_ScannerObjectSendMessagePB.objectInfoAdded ICD_ScannerObjectSendMessagePB.resultAdded ICD_ScannerObjectSendMessagePB.totalDataSizeAdded ICD_ScannerOpenSessionPB [struct]Added ICD_ScannerOpenSessionPB.connectionIDAdded ICD_ScannerOpenSessionPB.headerAdded ICD_ScannerOpenSessionPB.objectAdded ICD_ScannerOpenSessionPB.objectInfoAdded ICD_ScannerOpenSessionPB.sessionIDAdded ICD_ScannerSetParametersPB [struct]Added ICD_ScannerSetParametersPB.connectionIDAdded ICD_ScannerSetParametersPB.headerAdded ICD_ScannerSetParametersPB.objectAdded ICD_ScannerSetParametersPB.objectInfoAdded ICD_ScannerSetParametersPB.sessionIDAdded ICD_ScannerSetParametersPB.theDictAdded ICD_ScannerStartPB [struct]Added ICD_ScannerStartPB.connectionIDAdded ICD_ScannerStartPB.headerAdded ICD_ScannerStartPB.objectAdded ICD_ScannerStartPB.objectInfoAdded ICD_ScannerStartPB.sessionIDAdded ICD_ScannerStatusPB [struct]Added ICD_ScannerStatusPB.connectionIDAdded ICD_ScannerStatusPB.headerAdded ICD_ScannerStatusPB.objectAdded ICD_ScannerStatusPB.objectInfoAdded ICD_ScannerStatusPB.sessionIDAdded ICD_ScannerStatusPB.statusAdded ICD_Scannerscanner_callback_functions [struct]Added ICD_Scannerscanner_callback_functions.f_ICD_ScannerAddPropertiesToCFDictionaryAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerCleanupAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerCloseDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerCloseSessionAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerGetObjectInfoAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerGetParametersAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerGetPropertyDataAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerInitializeAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenBluetoothDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenFireWireDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenFireWireDeviceWithIORegPathAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenMassStorageDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenSessionAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenTCPIPDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenUSBDeviceAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerOpenUSBDeviceWithIORegPathAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerPeriodicTaskAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerReadFileDataAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerSendMessageAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerSetParametersAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerSetPropertyDataAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerStartAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerStatusAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerWriteDataToFileAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerWriteDataToFileDescriptorAdded ICD_Scannerscanner_callback_functions.f_ICD_ScannerWriteDataToFileDescriptor64Added ICD_Scannerscanner_callback_functions.f_ICD_ScannerWriteFileDataAdded ICD_callback_functions [struct]Added ICD_callback_functions.f_ICD_AddPropertiesToCFDictionaryAdded ICD_callback_functions.f_ICD_CleanupAdded ICD_callback_functions.f_ICD_CloseDeviceAdded ICD_callback_functions.f_ICD_GetObjectInfoAdded ICD_callback_functions.f_ICD_GetPropertyDataAdded ICD_callback_functions.f_ICD_OpenBluetoothDeviceAdded ICD_callback_functions.f_ICD_OpenFireWireDeviceAdded ICD_callback_functions.f_ICD_OpenFireWireDeviceWithIORegPathAdded ICD_callback_functions.f_ICD_OpenMassStorageDeviceAdded ICD_callback_functions.f_ICD_OpenTCPIPDeviceAdded ICD_callback_functions.f_ICD_OpenUSBDeviceAdded ICD_callback_functions.f_ICD_OpenUSBDeviceWithIORegPathAdded ICD_callback_functions.f_ICD_PeriodicTaskAdded ICD_callback_functions.f_ICD_ReadFileDataAdded ICD_callback_functions.f_ICD_SendMessageAdded ICD_callback_functions.f_ICD_SetPropertyDataAdded ICD_callback_functions.f_ICD_WriteDataToFileAdded ICD_callback_functions.f_ICD_WriteDataToFileDescriptorAdded ICD_callback_functions.f_ICD_WriteDataToFileDescriptor64Added ICD_callback_functions.f_ICD_WriteFileDataAdded ObjectInfo [struct]Added ObjectInfo.creationDateAdded ObjectInfo.dataHeightAdded ObjectInfo.dataSizeAdded ObjectInfo.dataSize64Added ObjectInfo.dataWidthAdded ObjectInfo.flagsAdded ObjectInfo.icaObjectAdded ObjectInfo.icaObjectInfoAdded ObjectInfo.nameAdded ObjectInfo.privateDataAdded ObjectInfo.reservedAdded ObjectInfo.tagAdded ObjectInfo.thumbnailSizeAdded ObjectInfo.uniqueIDAdded ObjectInfo.uniqueIDFireWireAdded ScannerObjectInfo [struct]Added ScannerObjectInfo.creationDateAdded ScannerObjectInfo.dataHeightAdded ScannerObjectInfo.dataSizeAdded ScannerObjectInfo.dataWidthAdded ScannerObjectInfo.flagsAdded ScannerObjectInfo.icaObjectAdded ScannerObjectInfo.icaObjectInfoAdded ScannerObjectInfo.nameAdded ScannerObjectInfo.privateDataAdded ScannerObjectInfo.reservedAdded ScannerObjectInfo.tagAdded ScannerObjectInfo.thumbnailSizeAdded ScannerObjectInfo.uniqueIDAdded ScannerObjectInfo.uniqueIDFireWireAdded ICDAddBandInfoToNotificationDictionary(CFMutableDictionary!, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UnsafeMutablePointer<Void>) -> ICAErrorAdded ICDAddImageInfoToNotificationDictionary(CFMutableDictionary!, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UnsafeMutablePointer<Void>) -> ICAErrorAdded ICDConnectBluetoothDevice(CFDictionary!) -> ICAErrorAdded ICDConnectFWDevice(UInt64) -> ICAErrorAdded ICDConnectFWDeviceWithIORegPath(UInt64, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDConnectTCPIPDevice(CFDictionary!) -> ICAErrorAdded ICDConnectUSBDevice(UInt32) -> ICAErrorAdded ICDConnectUSBDeviceWithIORegPath(UInt32, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDCopyDeviceInfoDictionary(UnsafePointer<Int8>, UnsafeMutablePointer<Unmanaged<CFDictionary>?>) -> ICAErrorAdded ICDCreateColorSpace(UInt32, UInt32, ICAObject, CFString!, CFData!, UnsafeMutablePointer<Int8>) -> Unmanaged<CGColorSpace>!Added ICDCreateEventDataCookie(ICAObject, UnsafeMutablePointer<ICAEventDataCookie>) -> ICAErrorAdded ICDDisconnectBluetoothDevice(CFDictionary!) -> ICAErrorAdded ICDDisconnectFWDevice(UInt64) -> ICAErrorAdded ICDDisconnectFWDeviceWithIORegPath(UInt64, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDDisconnectTCPIPDevice(CFDictionary!) -> ICAErrorAdded ICDDisconnectUSBDevice(UInt32) -> ICAErrorAdded ICDDisconnectUSBDeviceWithIORegPath(UInt32, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDGetStandardPropertyData(UnsafePointer<ObjectInfo>, UnsafeMutablePointer<Void>) -> ICAErrorAdded ICDNewObjectCreated(UnsafePointer<ObjectInfo>, UnsafePointer<ObjectInfo>, ICDNewObjectCreatedCompletion) -> ICAErrorAdded ICDNewObjectCreatedCompletionAdded ICDNewObjectInfoCreated(UnsafePointer<ObjectInfo>, UInt32, UnsafeMutablePointer<ICAObject>) -> ICAErrorAdded ICDScannerConnectBluetoothDevice(CFDictionary!) -> ICAErrorAdded ICDScannerConnectFWDevice(UInt64) -> ICAErrorAdded ICDScannerConnectFWDeviceWithIORegPath(UInt64, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDScannerConnectTCPIPDevice(CFDictionary!) -> ICAErrorAdded ICDScannerConnectUSBDevice(UInt32) -> ICAErrorAdded ICDScannerConnectUSBDeviceWithIORegPath(UInt32, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDScannerCopyDeviceInfoDictionary(UnsafePointer<Int8>, UnsafeMutablePointer<Unmanaged<CFDictionary>?>) -> ICAErrorAdded ICDScannerCreateEventDataCookie(ICAObject, UnsafeMutablePointer<ICAEventDataCookie>) -> ICAErrorAdded ICDScannerDisconnectBluetoothDevice(CFDictionary!) -> ICAErrorAdded ICDScannerDisconnectFWDevice(UInt64) -> ICAErrorAdded ICDScannerDisconnectFWDeviceWithIORegPath(UInt64, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDScannerDisconnectTCPIPDevice(CFDictionary!) -> ICAErrorAdded ICDScannerDisconnectUSBDevice(UInt32) -> ICAErrorAdded ICDScannerDisconnectUSBDeviceWithIORegPath(UInt32, UnsafeMutablePointer<Int8>) -> ICAErrorAdded ICDScannerGetStandardPropertyData(UnsafePointer<ScannerObjectInfo>, UnsafeMutablePointer<Void>) -> ICAErrorAdded ICDScannerNewObjectInfoCreated(UnsafePointer<ScannerObjectInfo>, UInt32, UnsafeMutablePointer<ICAObject>) -> ICAErrorAdded ICDSendNotification(UnsafeMutablePointer<ICASendNotificationPB>) -> ICAErrorAdded ICDSendNotificationAndWaitForReply(UnsafeMutablePointer<ICASendNotificationPB>) -> ICAErrorAdded ICD_ScannerMain(Int32, UnsafeMutablePointer<UnsafePointer<Int8>>) -> Int32Added ICD_main(Int32, UnsafeMutablePointer<UnsafePointer<Int8>>) -> Int32Added ICD_scanner_callback_functionsAdded ICLoggingEnabledAdded ICLoggingLevelBasicInfoAdded ICLoggingLevelErrorAdded ICLoggingLevelMaskAdded ICLoggingLevelTimingInfoAdded ICLoggingLevelVerboseInfoAdded ICLoggingLevelWarningAdded addedAfterCCCMaskAdded fileInTempCacheMaskAdded fileLockedMaskAdded gICDCallbackFunctionsAdded gICDScannerCallbackFunctionsAdded hasChildrenMaskAdded hasThumbnailMaskAdded kICD_FileDataAdded kICD_MetaDataAdded kICD_ThumbnailDataAdded kICD_ThumbnailDataFormatJPEGAdded kICD_ThumbnailDataFormatPNGAdded kICD_ThumbnailDataFormatTIFFAdded kICS_FileDataAdded kICS_MetaDataAdded kICS_ThumbnailDataAdded kICS_ThumbnailDataFormatJPEGAdded kICS_ThumbnailDataFormatPNGAdded kICS_ThumbnailDataFormatTIFFAdded kICUTTypeRawAdded largeFileSizeMaskAdded rawImageFormatMask
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

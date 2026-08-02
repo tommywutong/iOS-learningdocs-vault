@@ -1,0 +1,85 @@
+---
+title: qtstreaming
+apple_id: DTS10001051
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/qtstreaming/Listings/IMAAudioRTP_Headers_RTPRssmIMAAudioResources_h.html
+archived_at: '2026-07-26T19:53:06.109770Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [qtstreaming](qtstreaming.md)
+
+
+[Next](IMAAudioRTP-Headers-TCycle.h.md)[Previous](IMAAudioRTP-Headers-RTPRssmIMAAudioDispatch.h.md)
+
+# Retired Document
+
+__Important:__
+This sample code may not represent best practices for current development. The project may use deprecated symbols and illustrate technologies and techniques that are no longer recommended.
+
+# IMAAudioRTP/Headers/RTPRssmIMAAudioResources.h
+
+```c
+/*
+    File:       RTPRssmIMAAudioResources.h
+
+    Contains:   Declarations for IMA Audio RTPReassembler resources
+
+    Copyright:  © 1997-1999 by Apple Computer Inc. all rights reserved.
+
+*/
+
+#ifndef __RTPRSSMCOMPONENTVIDRESOURCES__
+#define __RTPRSSMCOMPONENTVIDRESOURCES__
+
+#include "IMAAudioRTPResources.h"
+
+/* ---------------------------------------------------------------------------
+ *      M A C R O S
+ * ---------------------------------------------------------------------------
+ */
+
+/*  change these for your component */
+/*  type and ID have to match what's in the code warrior project! */
+
+#define COMPONENT_NAME_STRING                   "Sample IMA Audio Reassembler"
+#define COMPONENT_INFO_STRING                   "Sample IMA Audio Reassembler"
+
+#define COMPONENT_ENTRY_POINT_STRING            "RTPRssmIMAAudio_ComponentDispatch"
+#define COMPONENT_PPC_PEF_STRING                "RTPRssmIMAAudio.pef"
+#define COMPONENT_68K_CODE_STRING               "RTPRssmIMAAudio.rsrc"
+
+/* ---------------------------------------------------------------------------
+ *      C O N S T A N T S
+ * ---------------------------------------------------------------------------
+ */
+
+enum
+{
+    kComponentType                  = kRTPReassemblerType,
+    kComponentSubType               = kIMAAudioDataFormat
+};
+
+enum
+{
+    kComponentBaseID                = 256,
+    kComponentBaseIDPPC             = kComponentBaseID
+};
+
+#define kComponentBaseID68K         ( kComponentBaseID + 1 )
+
+enum
+{
+    kComponentVersion               = 0x00010001,
+    kComponentFlags                 = 0
+};
+
+#define kComponentRegFlags          ( componentDoAutoVersion | componentHasMultiplePlatforms )
+
+#endif /* __RTPRSSMCOMPONENTVIDRESOURCES__ */
+```
+
+[Next](IMAAudioRTP-Headers-TCycle.h.md)[Previous](IMAAudioRTP-Headers-RTPRssmIMAAudioDispatch.h.md)
+

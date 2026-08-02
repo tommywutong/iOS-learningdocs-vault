@@ -1,0 +1,171 @@
+# documentation / User Experience
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 20 份文档。
+
+## iOS（12 份）
+
+- **[iOS 辅助功能编程指南](../../documentation/User%20Experience/Accessibility%20Programming%20Guide%20for%20iOS/Introduction.md)** — Guide · 2012-02-16，tvOS|iOS · UIKit，4 页
+  - [理解 iOS 上的辅助功能](../../documentation/User%20Experience/Accessibility%20Programming%20Guide%20for%20iOS/Understanding%20Accessibility%20on%20iOS.md)
+  - [让你的 iOS App 支持辅助功能](../../documentation/User%20Experience/Accessibility%20Programming%20Guide%20for%20iOS/Making%20Your%20iOS%20App%20Accessible.md)
+  - [文档修订历史](../../documentation/User%20Experience/Accessibility%20Programming%20Guide%20for%20iOS/Document%20Revision%20History.md)
+- **[在 iPhone 上采用 3D Touch](../../documentation/User%20Experience/Adopting%203D%20Touch%20on%20iPhone/index.md)** — Guide · 2016-09-13，Safari (Mobile)|iOS · UIKit，3 页
+  - [3D Touch API](../../documentation/User%20Experience/Adopting%203D%20Touch%20on%20iPhone/3DTouchAPIs.md)
+  - [修订历史](../../documentation/User%20Experience/Adopting%203D%20Touch%20on%20iPhone/RevisionHistory.md)
+- **[自动布局指南](../../documentation/User%20Experience/Auto%20Layout%20Guide/index.md)** — Guide · 2016-03-21，tvOS|iOS|macOS · AppKit，19 页
+  - [AutoLayoutWithoutConstraints](../../documentation/User%20Experience/Auto%20Layout%20Guide/AutoLayoutWithoutConstraints.md)
+  - [AnatomyofaConstraint](../../documentation/User%20Experience/Auto%20Layout%20Guide/AnatomyofaConstraint.md)
+  - [WorkingwithConstraintsinInterfaceBuidler](../../documentation/User%20Experience/Auto%20Layout%20Guide/WorkingwithConstraintsinInterfaceBuidler.md)
+  - [LayoutUsingStackViews](../../documentation/User%20Experience/Auto%20Layout%20Guide/LayoutUsingStackViews.md)
+  - [WorkingwithSimpleConstraints](../../documentation/User%20Experience/Auto%20Layout%20Guide/WorkingwithSimpleConstraints.md)
+  - [ViewswithIntrinsicContentSize](../../documentation/User%20Experience/Auto%20Layout%20Guide/ViewswithIntrinsicContentSize.md)
+  - [TypesofErrors](../../documentation/User%20Experience/Auto%20Layout%20Guide/TypesofErrors.md)
+  - [ConflictingLayouts](../../documentation/User%20Experience/Auto%20Layout%20Guide/ConflictingLayouts.md)
+  - [AmbiguousLayouts](../../documentation/User%20Experience/Auto%20Layout%20Guide/AmbiguousLayouts.md)
+  - [LogicalErrors](../../documentation/User%20Experience/Auto%20Layout%20Guide/LogicalErrors.md)
+  - [DebuggingTricksandTips](../../documentation/User%20Experience/Auto%20Layout%20Guide/DebuggingTricksandTips.md)
+  - [ProgrammaticallyCreatingConstraints](../../documentation/User%20Experience/Auto%20Layout%20Guide/ProgrammaticallyCreatingConstraints.md)
+  - [特定尺寸类的布局](../../documentation/User%20Experience/Auto%20Layout%20Guide/Size-ClassSpecificLayout.md)
+  - [WorkingwithScrollViews](../../documentation/User%20Experience/Auto%20Layout%20Guide/WorkingwithScrollViews.md)
+  - [使用自调整大小的 Table View 单元格](../../documentation/User%20Experience/Auto%20Layout%20Guide/WorkingwithSelf-SizingTableViewCells.md)
+  - [ModifyingConstraints](../../documentation/User%20Experience/Auto%20Layout%20Guide/ModifyingConstraints.md)
+  - [VisualFormatLanguage](../../documentation/User%20Experience/Auto%20Layout%20Guide/VisualFormatLanguage.md)
+  - [修订历史](../../documentation/User%20Experience/Auto%20Layout%20Guide/RevisionHistory.md)
+- **[设计扩展广告单元指南](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Introduction.md)** — Guide · 2015-10-29，iAd System JS|iAd Producer|iOS，6 页
+  - [理解展开广告单元体验](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Understanding%20the%20Expanded%20Ad%20Unit%20Experience.md)
+  - [设计展开广告单元](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Designing%20an%20Expanded%20Ad%20Unit.md)
+  - [展开广告单元的功能](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Features%20for%20Expanded%20Ad%20Units.md)
+  - [提交广告以供审批](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Submitting%20Your%20Ad%20for%20Approval.md)
+  - [文档修订历史](../../documentation/User%20Experience/Guide%20to%20Designing%20Expanded%20Ad%20Units/Document%20Revision%20History.md)
+- **[接力编程指南](../../documentation/User%20Experience/Handoff%20Programming%20Guide/About%20Handoff.md)** — Guide · 2016-04-01，watchOS|iOS|macOS，3 页
+  - [采用 Handoff](../../documentation/User%20Experience/Handoff%20Programming%20Guide/Adopting%20Handoff.md)
+  - [文档修订历史](../../documentation/User%20Experience/Handoff%20Programming%20Guide/Document%20Revision%20History.md)
+- **[iAd JS HTML 和 CSS 声明式参考](../../documentation/User%20Experience/iAd%20JS%20HTML%20and%20CSS%20Declarative%20Reference/Introduction.md)** — Guide · 2012-12-13，iAd Producer|iOS · iAd JS，5 页
+  - [iAd JS 声明式类](../../documentation/User%20Experience/iAd%20JS%20HTML%20and%20CSS%20Declarative%20Reference/iAd%20JS%20Declarative%20Classes.md)
+  - [View 处理器](../../documentation/User%20Experience/iAd%20JS%20HTML%20and%20CSS%20Declarative%20Reference/View%20Processors.md)
+  - [View Controller 状态](../../documentation/User%20Experience/iAd%20JS%20HTML%20and%20CSS%20Declarative%20Reference/View%20Controller%20States.md)
+  - [文档修订历史](../../documentation/User%20Experience/iAd%20JS%20HTML%20and%20CSS%20Declarative%20Reference/Document%20Revision%20History.md)
+- **[iOS 7 UI 过渡指南](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/index.md)** — Guide · 2016-03-22，iOS · UIKit，9 页
+  - [Scoping](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/Scoping.md)
+  - [SupportingEarlieriOS](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/SupportingEarlieriOS.md)
+  - [AppearanceCustomization](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/AppearanceCustomization.md)
+  - [Bars](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/Bars.md)
+  - [ContentViews](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/ContentViews.md)
+  - [Controls](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/Controls.md)
+  - [TempViews](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/TempViews.md)
+  - [修订历史](../../documentation/User%20Experience/iOS%207%20UI%20Transition%20Guide/RevisionHistory.md)
+- **[定位与地图编程指南](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/About%20Location%20Services%20and%20Maps.md)** — Guide · 2016-03-21，watchOS|tvOS|iOS|macOS，10 页
+  - [获取用户的位置](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Getting%20the%20User%E2%80%99s%20Location.md)
+  - [区域监测与 iBeacon](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Region%20Monitoring%20and%20iBeacon.md)
+  - [获取设备的方向和航向](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Getting%20the%20Heading%20and%20Course%20of%20a%20Device.md)
+  - [对位置数据进行地理编码](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Geocoding%20Location%20Data.md)
+  - [显示地图](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Displaying%20Maps.md)
+  - [启用搜索](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Enabling%20Search.md)
+  - [注释地图](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Annotating%20Maps.md)
+  - [提供路线指引](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Providing%20Directions.md)
+  - [文档修订历史](../../documentation/User%20Experience/Location%20and%20Maps%20Programming%20Guide/Document%20Revision%20History.md)
+- **[PassKit Package Format Reference](../../documentation/User%20Experience/PassKit%20Package%20Format%20Reference/About%20Pass%20Files.md)** — Guide · 2017-11-16，watchOS|iOS · PassKit，2 页
+  - [Package Structure](../../documentation/User%20Experience/PassKit%20Package%20Format%20Reference/Package%20Structure.md)
+- **[iOS 系统消息编程主题](../../documentation/User%20Experience/System%20Messaging%20Programming%20Topics%20for%20iOS/About%20System%20Messaging.md)** — Guide · 2015-03-09，iOS · MessageUI，4 页
+  - [发送邮件](../../documentation/User%20Experience/System%20Messaging%20Programming%20Topics%20for%20iOS/Sending%20a%20Mail%20Message.md)
+  - [发送短信](../../documentation/User%20Experience/System%20Messaging%20Programming%20Topics%20for%20iOS/Sending%20an%20SMS%20Message.md)
+  - [文档修订历史](../../documentation/User%20Experience/System%20Messaging%20Programming%20Topics%20for%20iOS/Document%20Revision%20History.md)
+- **[Table View Programming Guide for iOS](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/About%20Table%20Views%20in%20iOS%20Apps.md)** — Guide · 2013-09-18，tvOS|iOS · UIKit，10 页
+  - [Table View Styles and Accessory Views](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Table%20View%20Styles%20and%20Accessory%20Views.md)
+  - [Overview of the Table View API](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Overview%20of%20the%20Table%20View%20API.md)
+  - [Navigating a Data Hierarchy with Table Views](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Navigating%20a%20Data%20Hierarchy%20with%20Table%20Views.md)
+  - [Creating and Configuring a Table View](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Creating%20and%20Configuring%20a%20Table%20View.md)
+  - [A Closer Look at Table View Cells](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/A%20Closer%20Look%20at%20Table%20View%20Cells.md)
+  - [Managing Selections](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Managing%20Selections.md)
+  - [Inserting and Deleting Rows and Sections](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Inserting%20and%20Deleting%20Rows%20and%20Sections.md)
+  - [Managing the Reordering of Rows](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Managing%20the%20Reordering%20of%20Rows.md)
+  - [Document Revision History](../../documentation/User%20Experience/Table%20View%20Programming%20Guide%20for%20iOS/Document%20Revision%20History.md)
+- **[钱包开发者指南](../../documentation/User%20Experience/Wallet%20Developer%20Guide/index.md)** — Guide · 2018-01-16，watchOS|iOS · PassKit，9 页
+  - [Ecosystem](../../documentation/User%20Experience/Wallet%20Developer%20Guide/Ecosystem.md)
+  - [YourFirst](../../documentation/User%20Experience/Wallet%20Developer%20Guide/YourFirst.md)
+  - [Creating](../../documentation/User%20Experience/Wallet%20Developer%20Guide/Creating.md)
+  - [DistributingPasses](../../documentation/User%20Experience/Wallet%20Developer%20Guide/DistributingPasses.md)
+  - [Updating](../../documentation/User%20Experience/Wallet%20Developer%20Guide/Updating.md)
+  - [Apps](../../documentation/User%20Experience/Wallet%20Developer%20Guide/Apps.md)
+  - [PassPersonalization](../../documentation/User%20Experience/Wallet%20Developer%20Guide/PassPersonalization.md)
+  - [修订历史](../../documentation/User%20Experience/Wallet%20Developer%20Guide/RevisionHistory.md)
+
+## macOS（7 份）
+
+- **[Mac 通讯录编程指南](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Introduction.md)** — Guide · 2013-04-23，macOS · AddressBook，12 页
+  - [关于 Address Book](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/About%20the%20Address%20Book.md)
+  - [管理 Address Book 记录](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Managing%20Address%20Book%20Records.md)
+  - [访问 Address Book 记录](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Accessing%20Address%20Book%20Records.md)
+  - [搜索 Address Book](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Searching%20an%20Address%20Book.md)
+  - [将 Address Book 群组用作通讯组列表](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Using%20Address%20Book%20Groups%20as%20Distribution%20Lists.md)
+  - [为 Address Book 记录添加属性](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Adding%20Properties%20to%20Address%20Book%20Records.md)
+  - [创建和使用 Address Book 操作插件](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Creating%20and%20Using%20Address%20Book%20Action%20Plug-ins.md)
+  - [导入和导出个人和群组记录](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Importing%20and%20Exporting%20Person%20and%20Group%20Records.md)
+  - [在 Contacts App 中显示记录](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Showing%20Records%20in%20the%20Contacts%20App.md)
+  - [使用 Address Book C API](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Using%20the%20Address%20Book%20C%20API.md)
+  - [文档修订历史](../../documentation/User%20Experience/Address%20Book%20Programming%20Guide%20for%20Mac/Document%20Revision%20History.md)
+- **[词典服务编程指南](../../documentation/User%20Experience/Dictionary%20Services%20Programming%20Guide/Introduction.md)** — Guide · 2007-05-30，macOS · CoreServices，5 页
+  - [词典用户界面和标记](../../documentation/User%20Experience/Dictionary%20Services%20Programming%20Guide/Dictionary%20User%20Interface%20and%20Markup.md)
+  - [创建词典](../../documentation/User%20Experience/Dictionary%20Services%20Programming%20Guide/Creating%20Dictionaries.md)
+  - [访问词典](../../documentation/User%20Experience/Dictionary%20Services%20Programming%20Guide/Accessing%20Dictionaries.md)
+  - [文档修订历史](../../documentation/User%20Experience/Dictionary%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+- **[偏好设置面板编程指南](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Introduction.md)** — Guide · 2012-12-13，macOS，16 页
+  - [偏好设置面板的架构](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Architecture%20of%20Preference%20Panes.md)
+  - [偏好设置应用程序](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/The%20Preference%20Application.md)
+  - [管理用户偏好设置](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Managing%20User%20Preferences.md)
+  - [偏好设置面板的生命周期](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Life%20Cycle%20of%20a%20Preference%20Pane.md)
+  - [偏好设置面板包的剖析](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Anatomy%20of%20a%20Preference%20Pane%20Bundle.md)
+  - [更新偏好设置面板](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Updating%20Preference%20Panes.md)
+  - [避免命名冲突](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Preventing%20Name%20Conflicts.md)
+  - [折行显示长标签](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Wrapping%20Long%20Labels.md)
+  - [使用偏好设置服务](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Using%20Preference%20Services.md)
+  - [与目标应用程序通信](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Communicating%20With%20the%20Target%20Application.md)
+  - [实现偏好设置面板的帮助菜单](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Implementing%20a%20Preference%20Pane%20Help%20Menu.md)
+  - [创建偏好设置面板包](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Creating%20a%20Preference%20Pane%20Bundle.md)
+  - [实现简单的偏好设置面板](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Implementing%20a%20Simple%20Preference%20Pane.md)
+  - [在其他应用程序中使用偏好设置面板](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Using%20Preference%20Panes%20in%20Other%20Applications.md)
+  - [文档修订历史](../../documentation/User%20Experience/Preference%20Pane%20Programming%20Guide/Document%20Revision%20History.md)
+- **[使用 Apple Help 提供用户帮助](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Introduction%20to%20Providing%20User%20Assistance%20With%20Apple%20Help.md)** — Guide · 2007-10-31，macOS，9 页
+  - [Apple Help 概念](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Apple%20Help%20Concepts.md)
+  - [编写用户帮助](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Authoring%20User%20Help.md)
+  - [注册你的帮助手册](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Registering%20Your%20Help%20Book.md)
+  - [在 Help Viewer 中打开帮助书籍](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Opening%20Your%20Help%20Book%20in%20Help%20Viewer.md)
+  - [Apple Help 元标签属性](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Apple%20Help%20Meta%20Tag%20Properties.md)
+  - [Apple Help URL](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Apple%20Help%20URLs.md)
+  - [Apple Help 分段](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Apple%20Help%20Segments.md)
+  - [文档修订历史](../../documentation/User%20Experience/Providing%20User%20Assistance%20With%20Apple%20Help/Document%20Revision%20History.md)
+- **[快速查看编程指南](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Introduction%20to%20Quick%20Look%20Programming%20Guide.md)** — Guide · 2013-12-16，macOS · QuickLook，12 页
+  - [Quick Look 与用户体验](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Quick%20Look%20and%20the%20User%20Experience.md)
+  - [Quick Look 架构](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Quick%20Look%20Architecture.md)
+  - [创建和配置 Quick Look 项目](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Creating%20and%20Configuring%20a%20Quick%20Look%20Project.md)
+  - [生成器实现概述](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Overview%20of%20Generator%20Implementation.md)
+  - [在图形上下文中绘制缩略图和预览](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Drawing%20Thumbnails%20and%20Previews%20In%20a%20Graphics%20Context.md)
+  - [取消预览和缩略图](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Canceling%20Previews%20and%20Thumbnails.md)
+  - [动态生成预览](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Dynamically%20Generating%20Previews.md)
+  - [在文档中保存预览和缩略图](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Saving%20Previews%20and%20Thumbnails%20in%20the%20Document.md)
+  - [将 Core Graphics 图像分配给缩略图](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Assigning%20Core%20Graphics%20Images%20to%20Thumbnails.md)
+  - [调试和测试生成器](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Debugging%20and%20Testing%20a%20Generator.md)
+  - [文档修订历史](../../documentation/User%20Experience/Quick%20Look%20Programming%20Guide/Document%20Revision%20History.md)
+- **[SearchKit 编程指南](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Introduction.md)** — Guide · 2005-12-06，macOS · CoreServices，6 页
+  - [搜索基础](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Search%20Basics.md)
+  - [Search Kit 概念](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Search%20Kit%20Concepts.md)
+  - [Search Kit 任务](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Search%20Kit%20Tasks.md)
+  - [文档修订历史](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Document%20Revision%20History.md)
+  - [术语表](../../documentation/User%20Experience/SearchKit%20Programming%20Guide/Glossary.md)
+- **[语音合成编程指南](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Introduction%20to%20Speech%20Synthesis%20Programming%20Guide.md)** — Guide · 2006-09-05，macOS · ApplicationServices，8 页
+  - [OS X 中的语音合成](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Speech%20Synthesis%20in%20OS%20X.md)
+  - [设计和实现具有语音功能的应用程序](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Designing%20and%20Implementing%20an%20Application%20That%20Speaks.md)
+  - [自定义合成语音的技术](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Techniques%20for%20Customizing%20Synthesized%20Speech.md)
+  - [Phonemes](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Phonemes.md)
+  - [嵌入式语音命令的语法](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Syntax%20of%20Embedded%20Speech%20Commands.md)
+  - [术语表](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/User%20Experience/Speech%20Synthesis%20Programming%20Guide/Document%20Revision%20History.md)
+
+## Safari（1 份）
+
+- **[Safari Extensions Conversion Guide](../../documentation/User%20Experience/Safari%20Extensions%20Conversion%20Guide/About%20Safari%20Extensions.md)** — Guide · 2011-07-20，Safari · Safari Extensions，5 页
+  - [Converting Chrome Extensions](../../documentation/User%20Experience/Safari%20Extensions%20Conversion%20Guide/Converting%20Chrome%20Extensions.md)
+  - [Converting Firefox Extensions](../../documentation/User%20Experience/Safari%20Extensions%20Conversion%20Guide/Converting%20Firefox%20Extensions.md)
+  - [Converting Greasemonkey Scripts](../../documentation/User%20Experience/Safari%20Extensions%20Conversion%20Guide/Converting%20Greasemonkey%20Scripts.md)
+  - [Document Revision History](../../documentation/User%20Experience/Safari%20Extensions%20Conversion%20Guide/Document%20Revision%20History.md)

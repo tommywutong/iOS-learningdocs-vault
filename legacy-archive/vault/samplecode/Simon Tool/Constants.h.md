@@ -1,0 +1,125 @@
+---
+title: Simon Tool
+apple_id: DTS10000003
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Simon_Tool/Listings/Constants_h.html
+archived_at: '2026-07-18T03:23:51.644020Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Simon Tool](Simon%20Tool.md)
+
+
+[Next](FDEF.c.md)[Previous](Simon%20Tool.md)
+
+# Constants.h
+
+```
+/************************************************************************************
+                                P R O J E C T   I N F O
+*************************************************************************************
+
+    Project Name:   Simon
+       File Name:   Constants.h
+
+     Description:   Common defines between our resource file and C code.
+
+                        Copyright © 1992 Apple Computer, Inc.
+                        All rights reserved.
+
+*************************************************************************************
+                            A U T H O R   I D E N T I T Y
+*************************************************************************************
+
+    Initials    Name
+    --------    -----------------------------------------------
+    CH          Craig Hotchkiss
+
+*************************************************************************************
+                            R E V I S I O N   H I S T O R Y
+*************************************************************************************
+
+    Change History (most recent first):
+
+         <0>      5/8/92    CH      Creation date
+
+************************************************************************************/
+
+
+
+#ifndef __CONSTANTS__
+    #define __CONSTANTS__
+
+
+
+/************************************************************************************
+                                Common Definitions
+************************************************************************************/
+#define     BASEResID                       BaseResNumber
+
+#define     rLanguageID                     BASEResID
+
+
+/************************************************************************************
+                                FLST Constants
+************************************************************************************/
+#define     rFlstID                         BASEResID
+
+
+/************************************************************************************
+                                TMPL Constants
+************************************************************************************/
+#define     rXbndTemplateID                 BASEResID
+#define     rDefaultTemplateID              BASEResID + 1
+#define     rFlstTemplateID                 ( -32512 )
+#define     kDefaultResName                 "\pdfCf"
+#define     kFlstResName                    "\pflst"
+
+
+/************************************************************************************
+                                Default Constants
+************************************************************************************/
+#define     kThisToolVersion                1
+#define     kDefaultType                    'dfCf'
+#define     kDefaultQType                   "dfCf"
+#define     rDefaultConfigID                BASEResID
+
+
+/************************************************************************************
+                                Preferences Constants
+************************************************************************************/
+#define     kPrefsFileName                  "\pSimon Tool Prefs"
+
+
+/************************************************************************************
+                                fbnd Constants
+************************************************************************************/
+#define     rFapsID                         BASEResID
+
+
+/************************************************************************************
+                                fbnd Constants
+************************************************************************************/
+#define     LowResID                        0
+#define     HighResID                       31000
+
+#define     rFbndID                         BASEResID
+#define     kBNDLType                       "xbnd"
+
+    /* config strings */
+#define     rEnglishConfigStr               HighResID
+#define     rFrenchConfigStr                rEnglishConfigStr + 1
+#define     rFinnishConfigStr               rEnglishConfigStr + 2
+
+    /* setup DITL for choose dialog */
+#define     rEnglishSetupDITL               HighResID
+
+
+
+#endif __CONSTANTS__
+```
+
+[Next](FDEF.c.md)[Previous](Simon%20Tool.md)
+

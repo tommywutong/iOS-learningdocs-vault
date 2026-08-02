@@ -1,0 +1,165 @@
+---
+title: ScreenDump
+apple_id: DTS10000164
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-12'
+source_url: https://developer.apple.com/library/archive/samplecode/ScreenDump/Listings/DumpScreen_c.html
+archived_at: '2026-07-18T03:23:26.429888Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ScreenDump](ScreenDump.md)
+
+
+[Next](PictInfoTest.c.md)[Previous](ScreenDump.md)
+
+# DumpScreen.c
+
+```c
+/*
+    File:       DumpScreen.c
+
+    Contains:   This snippet shows how to dump an area of the screen.
+
+    Written by:     
+
+    Copyright:  Copyright © 19891999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                7/14/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+#include <QDOffscreen.h>
+#include <PictUtils.h>
+#include <Windows.h>
+
+#ifndef topLeft
+#define topLeft(r)                      (((Point *) &(r))[0])
+#endif
+
+#ifndef botRight
+#define botRight(r)                     (((Point *) &(r))[1])
+#endif
+
+PicHandle DumpScreenArea();
+
+// dump an area of the screen
+// return a PicHandle or nil
+PicHandle DumpScreenArea()
+{
+    CGrafPtr    wPort ;
+    CGrafPtr    savedPort ;
+    GDHandle    oldDevice ;
+    PicHandle   thePict = nil ;
+
+    GWorldPtr   theNewWorld ;
+    GDHandle    gDevice;
+
+    Rect        gDeviceRect;
+    Rect        intersectingRect;
+    Point       anchorPt ;
+
+    OSErr       theErr ;
+    Rect        area ;
+
+    RgnHandle   grayRgn = GetGrayRgn() ;
+    Rect        wideOpenRect = (**grayRgn).rgnBBox ;
+
+    Rect RubberBandIt(Point anchorPt) ;
+
+    // save our world
+    GetGWorld( &savedPort, &oldDevice ) ;
+
+    // get the window managers grafport
+    GetCWMgrPort( &wPort ) ;
+
+    // and make the window managers grafport our current port
+    SetPort( (GrafPtr)wPort ) ;
+
+    ClipRect( &wideOpenRect ) ;
+
+    while (!Button())
+        GetMouse(&anchorPt);        // get the current mouse pos.
+
+    area = RubberBandIt(anchorPt) ;
+
+    // set up a deep - 32 bit - GWorld (you don't have to use GWorld stuff, though,
+    // see forrest tanaka's principia of offscreen tech note in the 
+    // imaging/graphics technotes for alternative methods).
+    // we do this to keep things simple
+
+    if((theErr = NewGWorld( &theNewWorld, 32, &area, nil, nil, 0L )) != noErr)
+        return nil ;
+
+    SetGWorld( (CGrafPtr)theNewWorld, nil ) ;
+
+    // Get the handle to the first device in the global device list.
+    // loop through the device list, checking if the rect defined by area 
+    // intersects the device
+
+    for( gDevice = GetDeviceList(); gDevice != nil; gDevice = GetNextDevice( gDevice )) {
+
+        // Get the device's gdRect and convert it to local coordinates.
+        gDeviceRect = (**gDevice).gdRect;
+
+        GlobalToLocal( &topLeft( gDeviceRect ) );
+        GlobalToLocal( &botRight( gDeviceRect ) );
+
+        // Check if the app's window rect intersects the device's, and if it
+        // does, set the clip region's rect to the intersection and copy into
+        // our offscreen buffer
+
+        if (SectRect( &area, &gDeviceRect, &intersectingRect ))
+        {
+            ClipRect( &intersectingRect );
+            CopyBits( (BitMap *)(*(**gDevice).gdPMap), 
+                      (BitMap *)(*(*theNewWorld).portPixMap), 
+                      &intersectingRect, 
+                      &intersectingRect, 
+                      srcCopy, 
+                      nil );
+        }
+    }
+
+    SetGWorld( (CGrafPtr)theNewWorld, nil ) ;
+
+    thePict = OpenPicture( &area );
+    if(thePict != nil ) {
+
+        ClipRect( &area );
+
+        CopyBits( (BitMap *)(*(*theNewWorld).portPixMap), 
+                  (BitMap *)(*(*theNewWorld).portPixMap), 
+                  &area, 
+                  &area, 
+                  srcCopy, 
+                  nil );
+
+        ClosePicture();
+
+    }
+
+    FlushEvents( mDownMask, 0 ) ;
+
+    // restore the world
+    SetGWorld( savedPort, oldDevice ) ;
+    DisposeGWorld( theNewWorld );
+
+    // return the pict
+    return thePict ;
+}
+```
+
+[Next](PictInfoTest.c.md)[Previous](ScreenDump.md)
+

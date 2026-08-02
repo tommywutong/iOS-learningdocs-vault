@@ -1,0 +1,108 @@
+---
+title: ZAM
+apple_id: DTS10000063
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/ZAM/Listings/CoreSource_MenuDispatch_c.html
+archived_at: '2026-07-18T03:28:32.319244Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ZAM](ZAM.md)
+
+
+[Next](CoreSource-WindowDispatch.c.md)[Previous](CoreSource-Main.c.md)
+
+# CoreSource/MenuDispatch.c
+
+```c
+/*
+    9-30-92  ¥ Brigham Stevens
+    --------------------------
+    Menu.c      This handles Menu command dispatching 
+
+    This is a bare minimum menu initializer and dispatcher.
+    Menus are initialized from an MBAR resource id 128.  To add new menus
+    you must change this resource.
+
+*/
+
+#include "CoreGlobals.h"
+#include "EventLoop.h"
+#include "MenuDispatch.h"
+
+
+void BuildMenuBars(void)
+{
+    Handle mbar;
+
+    mbar=GetNewMBar(128);
+    if(mbar) {
+        SetMenuBar(mbar);
+        AddResMenu(GetMHandle(APPLE_MENU),'DRVR');
+        DrawMenuBar();
+    } else {
+        ErrMsg("\pMenubar resouce not loaded.  Program will abort.");
+        ExitToShell();
+    }
+}
+
+void RunDeskAccesory(short item)
+{
+    GrafPtr     savePort;
+    Str255      daName;
+
+    GetPort(&savePort);
+    GetItem(GetMHandle(APPLE_MENU), item, &daName);
+    (void) OpenDeskAcc(&daName);
+    SetPort(savePort);
+}
+
+void ChooseApple(short itemNumber)
+{
+    short item;
+
+    if(itemNumber == APPLE_ABOUT) {
+        item = Alert(rAboutBoxID,nil);
+    } else {
+        RunDeskAccesory(itemNumber);
+    }
+}
+
+void ChooseFile(short item)
+{
+
+    WindowPtr       fWindow;
+
+    fWindow = FrontWindow();
+
+    switch(item) {
+        case FILE_NEW   :   NewGameWindow();
+        break;
+        case FILE_QUIT  :   gDone = true;
+        break;
+        default:            
+        break;
+    }
+}
+
+
+void MenuDispatch(short menuNumber,short itemNumber)
+{
+    if(menuNumber != 0)
+        switch(menuNumber) {
+            case APPLE_MENU :   ChooseApple(itemNumber);
+            break;
+            case FILE_MENU :    ChooseFile(itemNumber);
+            break;
+            case EDIT_MENU :
+            break;
+            default :           
+            break;
+        }
+}
+```
+
+[Next](CoreSource-WindowDispatch.c.md)[Previous](CoreSource-Main.c.md)
+

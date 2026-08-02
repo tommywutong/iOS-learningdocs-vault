@@ -1,0 +1,221 @@
+# technotes / tn
+
+> 导航：[总目录](../../README.md) · [technotes](../technotes.md)
+
+共 207 份文档。
+
+## Java（1 份）
+
+- **[Java Runtime Properties for Mac OS X](../../technotes/tn/Java%20Runtime%20Properties%20for%20Mac%20OS%20X/tn2031.md)** — Technical Note · 2002-06-12，Java
+
+## macOS（200 份）
+
+- **['pdat' specification](../../technotes/tn/%27pdat%27%20specification/tn2049.md)** — Technical Note · 2002-04-22，macOS
+- **[A Printing Loop That Cares - The Sequel](../../technotes/tn/A%20Printing%20Loop%20That%20Cares%20-%20The%20Sequel/tn1092.md)** — Technical Note · 2000-08-14，macOS
+- **[A Technique for Estimating the Total RAM You Need for a QuickTime VR Project](../../technotes/tn/A%20Technique%20for%20Estimating%20the%20Total%20RAM%20You%20Need%20for%20a%20QuickTime%20VR%20Project/tn1030.md)** — Technical Note · 2000-08-14，macOS
+- **[Access & the Power Manager:Headaches & Cures](../../technotes/tn/Access%20%26%20the%20Power%20Manager-Headaches%20%26%20Cures/tn1039.md)** — Technical Note · 1996-04-01，macOS
+- **[Adding Items to the Printing Manager's Dialogs](../../technotes/tn/Adding%20Items%20to%20the%20Printing%20Manager%27s%20Dialogs/tn1080.md)** — Technical Note · 2000-08-14，macOS
+- **[AEBuild*, AEPrint* and Friends](../../technotes/tn/AEBuild%2C%20AEPrint%20and%20Friends/tn2045.md)** — Technical Note · 2011-07-10，macOS · ApplicationServices
+- **[AEStream and Friends](../../technotes/tn/AEStream%20and%20Friends/tn2046.md)** — Technical Note · 2011-07-10，macOS · ApplicationServices
+- **[Apple Image Capture Camera Module changes for Mac OS X Update 10.1.3](../../technotes/tn/Apple%20Image%20Capture%20Camera%20Module%20changes%20for%20Mac%20OS%20X%20Update%2010.1.3/tn2040.md)** — Technical Note · 2011-07-10，macOS · ImageCaptureCore
+- **[Apple Media Tool's Memory Error Explained](../../technotes/tn/Apple%20Media%20Tool%27s%20Memory%20Error%20Explained/tn1056.md)** — Technical Note · 1996-07-01，macOS
+- **[Applet Signing with MRJ and Javakey](../../technotes/tn/Applet%20Signing%20with%20MRJ%20and%20Javakey/tn1175.md)** — Technical Note · 2000-10-16，macOS
+- **[AppleVision Technote](../../technotes/tn/AppleVision%20Technote/tn1105.md)** — Technical Note · 1997-12-01，macOS
+- **[ATA Device Software Guide Additions and Corrections](../../technotes/tn/ATA%20Device%20Software%20Guide%20Additions%20and%20Corrections/tn1098.md)** — Technical Note · 1997-07-01，macOS
+- **[ATA Interface Modules](../../technotes/tn/ATA%20Interface%20Modules/tn1192.md)** — Technical Note · 1999-12-01，macOS
+- **[Browser Plugins in Mac OS X](../../technotes/tn/Browser%20Plugins%20in%20Mac%20OS%20X/tn2020.md)** — Technical Note · 2011-07-10，macOS
+- **[Building a 3D application that calls RAVE](../../technotes/tn/Building%20a%203D%20application%20that%20calls%20RAVE/tn1125.md)** — Technical Note · 1998-05-01，macOS
+- **[Calling CFM Code From Classic 68K Code](../../technotes/tn/Calling%20CFM%20Code%20From%20Classic%2068K%20Code/tn1077.md)** — Technical Note · 1996-11-01，macOS
+- **[Checklist for Building Applications and Extensions](../../technotes/tn/Checklist%20for%20Building%20Applications%20and%20Extensions/tn1126.md)** — Technical Note · 2000-08-14，macOS
+- **[ChooseMovieClock and Video Output Components](../../technotes/tn/ChooseMovieClock%20and%20Video%20Output%20Components/tn2052.md)** — Technical Note · 2011-07-10，macOS · QuickTime
+- **[Color Cursing: Two Major Causes](../../technotes/tn/Color%20Cursing-%20Two%20Major%20Causes/tn1020.md)** — Technical Note · 2000-08-14，macOS
+- **[Color Picker 2.1](../../technotes/tn/Color%20Picker%202.1/tn1100.md)** — Technical Note · 2000-08-14，macOS
+- **[Compatibility between JDirect 2 and JDirect 3](../../technotes/tn/Compatibility%20between%20JDirect%202%20and%20JDirect%203/tn2002.md)** — Technical Note · 2001-08-03，macOS
+- **[Creating Desktop Printers on the Fly](../../technotes/tn/Creating%20Desktop%20Printers%20on%20the%20Fly/tn1131.md)** — Technical Note · 2000-08-14，macOS
+- **[Creating NetBoot Server-Friendly Applications](../../technotes/tn/Creating%20NetBoot%20Server-Friendly%20Applications/tn1151.md)** — Technical Note · 2000-08-01，macOS
+- **[Creating Off-Screen Bitmaps When Speed is Critical](../../technotes/tn/Creating%20Off-Screen%20Bitmaps%20When%20Speed%20is%20Critical/tn1021.md)** — Technical Note · 2000-08-14，macOS
+- **[Cursor Components](../../technotes/tn/Cursor%20Components/tn1196.md)** — Technical Note · 2000-04-01，macOS
+- **[Customizing Desktop Printer Utility](../../technotes/tn/Customizing%20Desktop%20Printer%20Utility/tn1113.md)** — Technical Note · 2000-08-14，macOS
+- **[Debugging Java Code With MacsBug](../../technotes/tn/Debugging%20Java%20Code%20With%20MacsBug/tn1154.md)** — Technical Note · 2000-08-14，macOS
+- **[Decomposing a QuickDraw GX Mapping](../../technotes/tn/Decomposing%20a%20QuickDraw%20GX%20Mapping/tn1054.md)** — Technical Note · 1996-07-01，macOS
+- **[Decompressing DV frames and accessing the pixels](../../technotes/tn/Decompressing%20DV%20frames%20and%20accessing%20the%20pixels/tn2044.md)** — Technical Note · 2002-04-11，macOS · QuickTime
+- **[Desktop Printing Revealed](../../technotes/tn/Desktop%20Printing%20Revealed/tn1097.md)** — Technical Note · 2000-08-14，macOS
+- **[Dialog Manager Helper Functions](../../technotes/tn/Dialog%20Manager%20Helper%20Functions/tn1148.md)** — Technical Note · 2000-08-14，macOS
+- **[Digital CD Audio](../../technotes/tn/Digital%20CD%20Audio/tn1187.md)** — Technical Note · 2000-04-01，macOS
+- **[Disabling Interrupts on the Traditional Mac OS](../../technotes/tn/Disabling%20Interrupts%20on%20the%20Traditional%20Mac%20OS/tn1137.md)** — Technical Note · 1998-08-01，macOS
+- **[Don't println to a Socket](../../technotes/tn/Don%27t%20println%20to%20a%20Socket/tn1157.md)** — Technical Note · 2000-08-14，macOS
+- **[Driver Loader Library Call GetDriverInformation: A Bug & Workaround](../../technotes/tn/Driver%20Loader%20Library%20Call%20GetDriverInformation-%20A%20Bug%20%26%20Workaround/tn1025.md)** — Technical Note · 1996-02-01，macOS
+- **[Driver Tuning on Panther or G5](../../technotes/tn/Driver%20Tuning%20on%20Panther%20or%20G5/tn2090.md)** — Technical Note · 2003-06-24，macOS
+- **[Exclusive File Access in Mac OS X](../../technotes/tn/Exclusive%20File%20Access%20in%20Mac%20OS%20X/tn2037.md)** — Technical Note · 2002-05-01，macOS · CoreServices
+- **[Extending and Controlling Sherlock](../../technotes/tn/Extending%20and%20Controlling%20Sherlock/tn1141.md)** — Technical Note · 2000-08-14，macOS
+- **[Extending the Print Record for LaserWriter 8](../../technotes/tn/Extending%20the%20Print%20Record%20for%20LaserWriter%208/tn1161.md)** — Technical Note · 2000-08-14，macOS
+- **[Extension Manager 4.0](../../technotes/tn/Extension%20Manager%204.0/tn1091.md)** — Technical Note · 1997-01-01，macOS
+- **[FCBs, Now and Forever](../../technotes/tn/FCBs%2C%20Now%20and%20Forever/tn1184.md)** — Technical Note · 1999-10-01，macOS
+- **[File Mapping in Mac OS 9.1](../../technotes/tn/File%20Mapping%20in%20Mac%20OS%209.1/tn2011.md)** — Technical Note · 2001-01-25，macOS
+- **[Fundamentals of Open Firmware, Part I: The User Interface](../../technotes/tn/Fundamentals%20of%20Open%20Firmware%2C%20Part%20I-%20The%20User%20Interface/tn1061.md)** — Technical Note · 1996-07-01，macOS
+- **[Fundamentals of Open Firmware, Part II: The Device Tree](../../technotes/tn/Fundamentals%20of%20Open%20Firmware%2C%20Part%20II-%20The%20Device%20Tree/tn1062.md)** — Technical Note · 1996-09-01，macOS
+- **[Fundamentals of Open Firmware, Part III: Understanding PCI Expansion ROM Choices for Mac OS](../../technotes/tn/Fundamentals%20of%20Open%20Firmware%2C%20Part%20III-%20Understanding%20PCI%20Expansion%20ROM%20Choices/tn1044.md)** — Technical Note · 2001-06-26，macOS
+- **[GDB for MacsBug Veterans](../../technotes/tn/GDB%20for%20MacsBug%20Veterans/tn2030.md)** — Technical Note · 2001-10-18，Xcode Developer Tools|macOS
+- **[Getting Up to Speed with QuickTime VR: Notes from the Field](../../technotes/tn/Getting%20Up%20to%20Speed%20with%20QuickTime%20VR-%20Notes%20from%20the%20Field/tn1029.md)** — Technical Note · 2000-08-14，macOS
+- **[HFS Elucidations Revisited](../../technotes/tn/HFS%20Elucidations%20Revisited/tn1089.md)** — Technical Note · 2000-08-14，macOS
+- **[HFS Plus Volume Format](../../technotes/tn/HFS%20Plus%20Volume%20Format/tn1150.md)** — Technical Note · 2011-07-25，macOS · CoreServices
+- **[High-Speed SDRAM Design Considerations](../../technotes/tn/High-Speed%20SDRAM%20Design%20Considerations/tn1138.md)** — Technical Note · 1998-08-01，macOS
+- **[History & Peregrinations: The Dogcow Goes QuickTime VR](../../technotes/tn/History%20%26%20Peregrinations-%20The%20Dogcow%20Goes%20QuickTime%20VR/tn1031.md)** — Technical Note · 1996-04-01，macOS
+- **[How To Be a Good Multiple Users Citizen](../../technotes/tn/How%20To%20Be%20a%20Good%20Multiple%20Users%20Citizen/tn1186.md)** — Technical Note · 2000-06-01，macOS
+- **[How to structure your handleCheckUpdate callback](../../technotes/tn/How%20to%20structure%20your%20handleCheckUpdate%20callback/tn1193.md)** — Technical Note · 2000-08-14，macOS
+- **[How to use the ATSUI Low Level APIs to get glyph outlines](../../technotes/tn/How%20to%20use%20the%20ATSUI%20Low%20Level%20APIs%20to%20get%20glyph%20outlines/tn2033.md)** — Technical Note · 2001-11-26，macOS
+- **[How to write a JDBC Plugin (With Example)](../../technotes/tn/How%20to%20write%20a%20JDBC%20Plugin%20%28With%20Example%29/tn2027.md)** — Technical Note · 2001-07-11，macOS
+- **[Importing animated GIFs](../../technotes/tn/Importing%20animated%20GIFs/tn2018.md)** — Technical Note · 2011-07-10，macOS · QuickTime
+- **[In Search of Missing Links](../../technotes/tn/In%20Search%20of%20Missing%20Links/tn1127.md)** — Technical Note · 1998-05-01，macOS
+- **[Inside Macintosh: Devices, Power Manager Addenda](../../technotes/tn/Inside%20Macintosh-%20Devices%2C%20Power%20Manager%20Addenda/tn1046.md)** — Technical Note · 1996-05-01，macOS
+- **[Inside Macintosh: Files Errata](../../technotes/tn/Inside%20Macintosh-%20Files%20Errata/tn1041.md)** — Technical Note · 1999-11-01，macOS
+- **[Inside Macintosh: Operating System Utilities: Addendum to Chapter 4 - Determining If Daylight Savings Time is in Effect](../../technotes/tn/Inside%20Macintosh-%20Operating%20System%20Utilities-%20Addendum%20to%20Chapter%204%20-%20Determinin/tn1064.md)** — Technical Note · 1996-09-01，macOS
+- **[Inside Macintosh: Processes: Time Manager Addenda](../../technotes/tn/Inside%20Macintosh-%20Processes-%20Time%20Manager%20Addenda/tn1063.md)** — Technical Note · 2000-08-14，macOS
+- **[Insights on OpenGL](../../technotes/tn/Insights%20on%20OpenGL/tn2014.md)** — Technical Note · 2001-03-26，macOS
+- **[Interrupt-Safe Routines](../../technotes/tn/Interrupt-Safe%20Routines/tn1104.md)** — Technical Note · 2000-11-08，macOS
+- **[Interrupts in Need of (a Good) Time](../../technotes/tn/Interrupts%20in%20Need%20of%20%28a%20Good%29%20Time/tn1033.md)** — Technical Note · 1996-02-01，macOS
+- **[Introducing the LaserWriter 8 Driver Version 8.6](../../technotes/tn/Introducing%20the%20LaserWriter%208%20Driver%20Version%208.6/tn1143.md)** — Technical Note · 1998-11-01，macOS
+- **[Introducing the LaserWriter 8 Driver version 8.6.5](../../technotes/tn/Introducing%20the%20LaserWriter%208%20Driver%20version%208.6.5/tn1165.md)** — Technical Note · 1999-05-01，macOS
+- **[Introducing the LaserWriter 8 Driver version 8.7](../../technotes/tn/Introducing%20the%20LaserWriter%208%20Driver%20version%208.7/tn1177.md)** — Technical Note · 1999-10-01，macOS
+- **[Introducing the LaserWriter Driver Version 8.5.1](../../technotes/tn/Introducing%20the%20LaserWriter%20Driver%20Version%208.5.1/tn1112.md)** — Technical Note · 1997-09-01，macOS
+- **[Introduction to MRJ Scripting with AppleScript for Java](../../technotes/tn/Introduction%20to%20MRJ%20Scripting%20with%20AppleScript%20for%20Java/tn1162.md)** — Technical Note · 2000-08-14，macOS
+- **[JIS Keyboard Support in Mac OS 8](../../technotes/tn/JIS%20Keyboard%20Support%20in%20Mac%20OS%208/tn1152.md)** — Technical Note · 1999-02-01，macOS
+- **[JNI Tips: Building Your Native-Method Libraries For MacOS](../../technotes/tn/JNI%20Tips-%20Building%20Your%20Native-Method%20Libraries%20For%20MacOS/tn1155.md)** — Technical Note · 2000-08-14，macOS
+- **[LaserWriter 8.5.1: The Extended 'PAPA' Resource](../../technotes/tn/LaserWriter%208.5.1-%20The%20Extended%20%27PAPA%27%20Resource/tn1115.md)** — Technical Note · 2000-08-14，macOS
+- **[LaserWriter 8.5.1: The Settings Library](../../technotes/tn/LaserWriter%208.5.1-%20The%20Settings%20Library/tn1129.md)** — Technical Note · 2000-08-14，macOS
+- **[LaserWriter 8.6 and Fonts](../../technotes/tn/LaserWriter%208.6%20and%20Fonts/tn1146.md)** — Technical Note · 2000-08-14，macOS
+- **[LaserWriter 8.6.5 Job Log Format](../../technotes/tn/LaserWriter%208.6.5%20Job%20Log%20Format/tn1166.md)** — Technical Note · 1999-05-01，macOS
+- **[LaserWriter 8.6: How to Write a Converter Plug-in for the Download Manager](../../technotes/tn/LaserWriter%208.6-%20How%20to%20Write%20a%20Converter%20Plug-in%20for%20the%20Download%20Manager/tn1171.md)** — Technical Note · 2000-08-14，macOS
+- **[Locating Application Support Files under Mac OS X](../../technotes/tn/Locating%20Application%20Support%20Files%20under%20Mac%20OS%20X/tn2015.md)** — Technical Note · 2001-03-27，macOS · CoreServices
+- **[Locking and Unlocking Handles](../../technotes/tn/Locking%20and%20Unlocking%20Handles/tn1122.md)** — Technical Note · 1998-02-01，macOS
+- **[LW 8.5.1 CopyBits Support: Transparent and Clipped Images](../../technotes/tn/LW%208.5.1%20CopyBits%20Support-%20Transparent%20and%20Clipped%20Images/tn1114.md)** — Technical Note · 2000-08-14，macOS
+- **[Mac OS 7.6](../../technotes/tn/Mac%20OS%207.6/tn1090.md)** — Technical Note · 1997-01-01，macOS
+- **[Mac OS 7.6.1](../../technotes/tn/Mac%20OS%207.6.1/tn1096.md)** — Technical Note · 1998-11-01，macOS
+- **[Mac OS 8](../../technotes/tn/Mac%20OS%208/tn1102.md)** — Technical Note · 2000-08-14，macOS
+- **[Mac OS 8.1](../../technotes/tn/Mac%20OS%208.1/tn1121.md)** — Technical Note · 1998-01-01，macOS
+- **[Mac OS 8.5](../../technotes/tn/Mac%20OS%208.5/tn1142.md)** — Technical Note · 1998-10-01，macOS
+- **[Mac OS 8.6](../../technotes/tn/Mac%20OS%208.6/tn1163.md)** — Technical Note · 1999-05-01，macOS
+- **[Mac OS 9](../../technotes/tn/Mac%20OS%209/tn1176.md)** — Technical Note · 2000-04-01，macOS
+- **[Mac OS 9.0.4](../../technotes/tn/Mac%20OS%209.0.4/tn1194.md)** — Technical Note · 2000-04-01，macOS
+- **[Mac OS 9.1](../../technotes/tn/Mac%20OS%209.1/tn2010.md)** — Technical Note · 2001-01-18，macOS
+- **[Mac OS X QuickDraw Performance](../../technotes/tn/Mac%20OS%20X%20QuickDraw%20Performance/tn2051.md)** — Technical Note · 2003-02-13，macOS
+- **[Mac OS X: v10.1.1 - v10.1.3](../../technotes/tn/Mac%20OS%20X-%20v10.1.1%20-%20v10.1.3/tn2043.md)** — Technical Note · 2002-03-06，macOS
+- **[Mac OS X: versions 10.0.1 through 10.0.4](../../technotes/tn/Mac%20OS%20X-%20versions%2010.0.1%20through%2010.0.4/tn2025.md)** — Technical Note · 2001-07-26，Xcode Developer Tools|macOS
+- **[Maximizing Your Media: A Brief Guide To the Latest and Greatest QuickTime Media Types](../../technotes/tn/Maximizing%20Your%20Media-%20A%20Brief%20Guide%20To%20the%20Latest%20and%20Greatest%20QuickTime%20Media/tn1087.md)** — Technical Note · 1996-12-01，macOS · QuickTime
+- **[MicroBug: The ROM Debugger](../../technotes/tn/MicroBug-%20The%20ROM%20Debugger/tn1136.md)** — Technical Note · 2000-08-14，macOS
+- **[Mixing QuickDraw & Post-Script Printing from Your App: Some Gotchas](../../technotes/tn/Mixing%20QuickDraw%20%26%20Post-Script%20Printing%20from%20Your%20App-%20Some%20Gotchas/tn1032.md)** — Technical Note · 1996-02-01，macOS
+- **[Movie Data Security](../../technotes/tn/Movie%20Data%20Security/tn2038.md)** — Technical Note · 2011-07-10，macOS · QuickTime
+- **[Moving Your Code to Mac OS X](../../technotes/tn/Moving%20Your%20Code%20to%20Mac%20OS%20X/tn2003.md)** — Technical Note · 2000-10-05，macOS
+- **[MP-Safe Routines](../../technotes/tn/MP-Safe%20Routines/tn2006.md)** — Technical Note · 2000-12-21，macOS
+- **[New ColorSync 3.0 APIs](../../technotes/tn/New%20ColorSync%203.0%20APIs/tn1185.md)** — Technical Note · 2000-08-14，macOS · ApplicationServices
+- **[New Sound Input Driver Features](../../technotes/tn/New%20Sound%20Input%20Driver%20Features/tn1124.md)** — Technical Note · 1998-04-01，macOS
+- **[NewGWorlds in VRAM and AGP Memory](../../technotes/tn/NewGWorlds%20in%20VRAM%20and%20AGP%20Memory/tn1182.md)** — Technical Note · 2000-08-14，macOS
+- **[Object Support Library Version History](../../technotes/tn/Object%20Support%20Library%20Version%20History/tn1095.md)** — Technical Note · 1998-11-01，macOS
+- **[On Changes to QuickTime Conferencing Components: New Error Codes, Behavior & Methods of Retrieving Errors](../../technotes/tn/On%20Changes%20to%20QuickTime%20Conferencing%20Components-%20New%20Error%20Codes%2C%20Behavior%20%26%20Met/tn1045.md)** — Technical Note · 1996-05-01，macOS
+- **[On Drag Manager Additions (Release 1.1)](../../technotes/tn/On%20Drag%20Manager%20Additions%20%28Release%201.1%29/tn1043.md)** — Technical Note · 2000-08-14，macOS
+- **[On Improving Open Transport Network Server Performance](../../technotes/tn/On%20Improving%20Open%20Transport%20Network%20Server%20Performance/tn1059.md)** — Technical Note · 1996-07-01，macOS
+- **[On Launching an App with a Document](../../technotes/tn/On%20Launching%20an%20App%20with%20a%20Document/tn1002.md)** — Technical Note · 2000-07-01，macOS · ApplicationServices
+- **[On Power Macintosh Interrupt Management](../../technotes/tn/On%20Power%20Macintosh%20Interrupt%20Management/tn1001.md)** — Technical Note · 1995-10-01，macOS
+- **[On QuickTime Component Manager 3.0 & PowerPC Native Components](../../technotes/tn/On%20QuickTime%20Component%20Manager%203.0%20%26%20PowerPC%20Native%20Components/tn1004.md)** — Technical Note · 2000-08-14，macOS
+- **[On the Deferred Task Manager](../../technotes/tn/On%20the%20Deferred%20Task%20Manager/tn1003.md)** — Technical Note · 2000-08-14，macOS
+- **[On the Importance of Print Testing: A Brief Checklist](../../technotes/tn/On%20the%20Importance%20of%20Print%20Testing-%20A%20Brief%20Checklist/tn1027.md)** — Technical Note · 1996-02-01，macOS
+- **[Open Transport STREAMS FAQ](../../technotes/tn/Open%20Transport%20STREAMS%20FAQ/tn1117.md)** — Technical Note · 1997-12-01，macOS
+- **[Opening Resource Files Twice Considered Hard?](../../technotes/tn/Opening%20Resource%20Files%20Twice%20Considered%20Hard/tn1120.md)** — Technical Note · 1998-01-01，macOS
+- **[Optimization Strategies for Mac OS X](../../technotes/tn/Optimization%20Strategies%20for%20Mac%20OS%20X/tn1174.md)** — Technical Note · 1999-09-01，macOS
+- **[Optimizing QD3D 1.5.3 Apps For Maximum Performance](../../technotes/tn/Optimizing%20QD3D%201.5.3%20Apps%20For%20Maximum%20Performance/tn1109.md)** — Technical Note · 1998-02-01，macOS
+- **[Packages in Mac OS 9](../../technotes/tn/Packages%20in%20Mac%20OS%209/tn1188.md)** — Technical Note · 1999-10-01，macOS
+- **[Palette Manager Tidbits](../../technotes/tn/Palette%20Manager%20Tidbits/tn1024.md)** — Technical Note · 2000-08-14，macOS
+- **[Pending Update Perils](../../technotes/tn/Pending%20Update%20Perils/tn1147.md)** — Technical Note · 2000-08-14，macOS
+- **[Plotting Small Icons: The 'SICN' Resource](../../technotes/tn/Plotting%20Small%20Icons-%20The%20%27SICN%27%20Resource/tn1019.md)** — Technical Note · 2000-08-14，macOS
+- **[PostScript Output Filters for LaserWriter 8.7](../../technotes/tn/PostScript%20Output%20Filters%20for%20LaserWriter%208.7/tn1179.md)** — Technical Note · 1999-10-01，macOS
+- **[Power Management & PC Card Manager 3.0](../../technotes/tn/Power%20Management%20%26%20PC%20Card%20Manager%203.0/tn1099.md)** — Technical Note · 1997-07-01，macOS
+- **[Power Management & Servers: Auto Restart From Power Failure](../../technotes/tn/Power%20Management%20%26%20Servers-%20Auto%20Restart%20From%20Power%20Failure/tn1079.md)** — Technical Note · 1996-11-01，macOS
+- **[Power Management & The Energy Saver API](../../technotes/tn/Power%20Management%20%26%20The%20Energy%20Saver%20API/tn1086.md)** — Technical Note · 1996-12-01，macOS
+- **[Power Manager 2.0](../../technotes/tn/Power%20Manager%202.0/tn1190.md)** — Technical Note · 2000-08-14，macOS
+- **[PowerPC G5 Performance Primer](../../technotes/tn/PowerPC%20G5%20Performance%20Primer/tn2087.md)** — Technical Note · 2003-09-03，macOS
+- **[Printer Direct Mode APIs for Macintosh Printer Drivers](../../technotes/tn/Printer%20Direct%20Mode%20APIs%20for%20Macintosh%20Printer%20Drivers/tn1013.md)** — Technical Note · 2000-08-14，macOS
+- **[Programmatic Mounting of AppleShare Volumes](../../technotes/tn/Programmatic%20Mounting%20of%20AppleShare%20Volumes/tn1111.md)** — Technical Note · 2011-07-10，macOS · CoreServices
+- **[Querying PostScript Printers at dtp Creation Time the QuickDraw GX Way](../../technotes/tn/Querying%20PostScript%20Printers%20at%20dtp%20Creation%20Time%20the%20QuickDraw%20GX%20Way/tn1057.md)** — Technical Note · 1996-07-01，macOS
+- **[QuickDraw GX 'ptyp' Resource: Calculations, Uses & Limitations](../../technotes/tn/QuickDraw%20GX%20%27ptyp%27%20Resource-%20Calculations%2C%20Uses%20%26%20Limitations/tn1058.md)** — Technical Note · 1996-07-01，macOS
+- **[QuickDraw GX 'rdip' Resources: The Number of the Beast](../../technotes/tn/QuickDraw%20GX%20%27rdip%27%20Resources-%20The%20Number%20of%20the%20Beast/tn1093.md)** — Technical Note · 1997-02-01，macOS
+- **[QuickDraw GX ConicLibrary.c in Detail: Description and Derivations](../../technotes/tn/QuickDraw%20GX%20ConicLibrary.c%20in%20Detail-%20Description%20and%20Derivations/tn1052.md)** — Technical Note · 1996-06-01，macOS
+- **[QuickDraw GX MappingLibrary.c: Its Uses and Limitations](../../technotes/tn/QuickDraw%20GX%20MappingLibrary.c-%20Its%20Uses%20and%20Limitations/tn1037.md)** — Technical Note · 1996-04-01，macOS
+- **[QuickDraw GX OffscreenLibrary.c in Detail: Description, Uses & Limitations](../../technotes/tn/QuickDraw%20GX%20OffscreenLibrary.c%20in%20Detail-%20Description%2C%20Uses%20%26%20Limitations/tn1038.md)** — Technical Note · 1996-04-01，macOS
+- **[QuickTime 3.0.2](../../technotes/tn/QuickTime%203.0.2/tn1139.md)** — Technical Note · 1998-09-01，macOS
+- **[QuickTime 4.0.3](../../technotes/tn/QuickTime%204.0.3/tn1183.md)** — Technical Note · 1999-10-01，macOS · QuickTime
+- **[QuickTime 4.1.1/4.1.2](../../technotes/tn/QuickTime%204.1.1-4.1.2/tn1197.md)** — Technical Note · 2000-04-01，macOS
+- **[QuickTime For Windows: Resolving Common Installation Issues](../../technotes/tn/QuickTime%20For%20Windows-%20Resolving%20Common%20Installation%20Issues/tn1074.md)** — Technical Note · 1996-10-01，macOS
+- **[QuickTime Teletext Component APIs](../../technotes/tn/QuickTime%20Teletext%20Component%20APIs/tn1010.md)** — Technical Note · 2000-08-14，macOS
+- **[QuickTime TV Tuner APIs](../../technotes/tn/QuickTime%20TV%20Tuner%20APIs/tn1012.md)** — Technical Note · 2000-08-14，macOS
+- **[QuickTime VR 1.0 Object Movie File Format](../../technotes/tn/QuickTime%20VR%201.0%20Object%20Movie%20File%20Format/tn1036.md)** — Technical Note · 2000-08-14，macOS
+- **[QuickTime VR 1.0 Panorama Movie File Format](../../technotes/tn/QuickTime%20VR%201.0%20Panorama%20Movie%20File%20Format/tn1035.md)** — Technical Note · 2000-08-14，macOS
+- **[Running CFM-68K Code at Interrupt Time: Is Your Code at Risk?](../../technotes/tn/Running%20CFM-68K%20Code%20at%20Interrupt%20Time-%20Is%20Your%20Code%20at%20Risk/tn1084.md)** — Technical Note · 1997-03-01，macOS
+- **[Running files from a hard drive in Open Firmware](../../technotes/tn/Running%20files%20from%20a%20hard%20drive%20in%20Open%20Firmware/tn2001.md)** — Technical Note · 2000-09-22，macOS
+- **[Scribbling Into AWT Components](../../technotes/tn/Scribbling%20Into%20AWT%20Components/tn1156.md)** — Technical Note · 2000-08-14，macOS
+- **[Serial Port Apocrypha](../../technotes/tn/Serial%20Port%20Apocrypha/tn1119.md)** — Technical Note · 1998-04-01，macOS
+- **[Sherlock's Find By Content Library](../../technotes/tn/Sherlock%27s%20Find%20By%20Content%20Library/tn1180.md)** — Technical Note · 1999-10-01，macOS
+- **[Sherlock's Find by Content Text Extractor Plug-ins](../../technotes/tn/Sherlock%27s%20Find%20by%20Content%20Text%20Extractor%20Plug-ins/tn1181.md)** — Technical Note · 2000-01-01，macOS
+- **[SIMMs to DIMMs: Making Sense Out of Memory Expansion for the Power Macintosh](../../technotes/tn/SIMMs%20to%20DIMMs-%20Making%20Sense%20Out%20of%20Memory%20Expansion%20for%20the%20Power%20Macintosh/tn1055.md)** — Technical Note · 1996-07-01，macOS
+- **[SimpleCocoaApp: An Overview](../../technotes/tn/SimpleCocoaApp-%20An%20Overview/tn2005.md)** — Technical Note · 2000-10-25，macOS
+- **[Smoothing Fonts](../../technotes/tn/Smoothing%20Fonts/tn1149.md)** — Technical Note · 1999-01-01，macOS
+- **[SndPlayDoubleBuffer and Carbon](../../technotes/tn/SndPlayDoubleBuffer%20and%20Carbon/tn1198.md)** — Technical Note · 2002-06-12，macOS
+- **[Some Sound Advice: Getting the Most Out of the Sound Manager](../../technotes/tn/Some%20Sound%20Advice-%20Getting%20the%20Most%20Out%20of%20the%20Sound%20Manager/tn1048.md)** — Technical Note · 2000-08-14，macOS
+- **[Start Manager Extension Table Mechanism](../../technotes/tn/Start%20Manager%20Extension%20Table%20Mechanism/tn1123.md)** — Technical Note · 2000-08-14，macOS
+- **[Strategies for Dealing with Low-Memory Conditions](../../technotes/tn/Strategies%20for%20Dealing%20with%20Low-Memory%20Conditions/tn1042.md)** — Technical Note · 1996-05-01，macOS
+- **[Supporting Plug-in Rendereds in QD3D 1.5.3 Applications](../../technotes/tn/Supporting%20Plug-in%20Rendereds%20in%20QD3D%201.5.3%20Applications/tn1110.md)** — Technical Note · 2000-08-14，macOS
+- **[System 7.5 Update 2.0; System 7.5.3](../../technotes/tn/System%207.5%20Update%202.0%3B%20System%207.5.3/tn1017.md)** — Technical Note · 1996-04-01，macOS
+- **[System 7.5.3 Revision 2](../../technotes/tn/System%207.5.3%20Revision%202/tn1050.md)** — Technical Note · 1996-06-01，macOS
+- **[System 7.5.5](../../technotes/tn/System%207.5.5/tn1069.md)** — Technical Note · 1996-09-01，macOS
+- **[Tailoring Java 1.3.1 Applications for Mac OS X](../../technotes/tn/Tailoring%20Java%201.3.1%20Applications%20for%20Mac%20OS%20X/tn2042.md)** — Technical Note · 2005-04-01，macOS
+- **[The Browser Control (aka That ListView Thing)](../../technotes/tn/The%20Browser%20Control%20%28aka%20That%20ListView%20Thing%29/tn2009.md)** — Technical Note · 2000-12-05，macOS
+- **[The Care And Feeding Of Runtime.exec](../../technotes/tn/The%20Care%20And%20Feeding%20Of%20Runtime.exec/tn1168.md)** — Technical Note · 2000-08-14，macOS
+- **[The CGDirectDisplay API](../../technotes/tn/The%20CGDirectDisplay%20API/tn2007.md)** — Technical Note · 2000-11-08，macOS
+- **[The CGDirectPalette API](../../technotes/tn/The%20CGDirectPalette%20API/tn2008.md)** — Technical Note · 2011-07-10，macOS · ApplicationServices
+- **[The Compleat Guide To SimpleText](../../technotes/tn/The%20Compleat%20Guide%20To%20SimpleText/tn1005.md)** — Technical Note · 2000-08-14，macOS
+- **[The Download Manager](../../technotes/tn/The%20Download%20Manager/tn1169.md)** — Technical Note · 2000-08-14，macOS
+- **[The Euro Currency Symbol](../../technotes/tn/The%20Euro%20Currency%20Symbol/tn1140.md)** — Technical Note · 2000-01-01，macOS
+- **[The Mac OS X Font Manager](../../technotes/tn/The%20Mac%20OS%20X%20Font%20Manager/tn2024.md)** — Technical Note · 2001-07-11，macOS
+- **[The Monster Disk Driver Technote](../../technotes/tn/The%20Monster%20Disk%20Driver%20Technote/tn1189.md)** — Technical Note · 1999-11-01，macOS
+- **[The New PrGeneral Version Opcode](../../technotes/tn/The%20New%20PrGeneral%20Version%20Opcode/tn1133.md)** — Technical Note · 1998-06-01，macOS
+- **[The Notification Manager: Problems & Fixes](../../technotes/tn/The%20Notification%20Manager-%20Problems%20%26%20Fixes/tn1026.md)** — Technical Note · 1996-02-01，macOS
+- **[The Preferences Problem](../../technotes/tn/The%20Preferences%20Problem/tn1134.md)** — Technical Note · 1998-10-01，macOS
+- **[The Printing Plug-ins Manager](../../technotes/tn/The%20Printing%20Plug-ins%20Manager/tn1170.md)** — Technical Note · 2000-08-14，macOS
+- **[The Problem with & (Simple) Fix to Purgeable WDEFs](../../technotes/tn/The%20Problem%20with%20%26%20%28Simple%29%20Fix%20to%20Purgeable%20WDEFs/tn1082.md)** — Technical Note · 2000-08-14，macOS
+- **[Thread-Safe Toolbox Access From MRJ](../../technotes/tn/Thread-Safe%20Toolbox%20Access%20From%20MRJ/tn1153.md)** — Technical Note · 2000-08-14，macOS
+- **[Threading Architectures](../../technotes/tn/Threading%20Architectures/tn2028.md)** — Technical Note · 2001-08-08，macOS
+- **[Traditional Device Drivers: Sync or Swim](../../technotes/tn/Traditional%20Device%20Drivers-%20Sync%20or%20Swim/tn1067.md)** — Technical Note · 1996-09-01，macOS
+- **[Tuning for G5: A Practical Guide](../../technotes/tn/Tuning%20for%20G5-%20A%20Practical%20Guide/tn2086.md)** — Technical Note · 2003-10-01，macOS
+- **[Understanding Conic Splines](../../technotes/tn/Understanding%20Conic%20Splines/tn1051.md)** — Technical Note · 1996-06-01，macOS
+- **[Understanding Open Transport Asset Tracking](../../technotes/tn/Understanding%20Open%20Transport%20Asset%20Tracking/tn1173.md)** — Technical Note · 2000-11-03，macOS
+- **[Understanding Open Transport Memory Management](../../technotes/tn/Understanding%20Open%20Transport%20Memory%20Management/tn1128.md)** — Technical Note · 2001-01-09，macOS
+- **[Understanding PackBits](../../technotes/tn/Understanding%20PackBits/tn1023.md)** — Technical Note · 2000-08-14，macOS
+- **[Understanding PCI Bus Performance](../../technotes/tn/Understanding%20PCI%20Bus%20Performance/tn1008.md)** — Technical Note · 1995-10-01，macOS
+- **[Understanding the Differences Between Apple and Windows IMA-ADPCM Compressed Sound Files](../../technotes/tn/Understanding%20the%20Differences%20Between%20Apple%20and%20Windows%20IMA-ADPCM%20Compressed%20Sou/tn1081.md)** — Technical Note · 1996-11-01，macOS
+- **[Understanding the SerialDMA Driver](../../technotes/tn/Understanding%20the%20SerialDMA%20Driver/tn1018.md)** — Technical Note · 2000-08-14，macOS
+- **[Understanding Type 11 & No FPU Installed Errors on the Power Macintosh](../../technotes/tn/Understanding%20Type%2011%20%26%20No%20FPU%20Installed%20Errors%20on%20the%20Power%20Macintosh/tn1011.md)** — Technical Note · 1995-10-01，macOS
+- **[Unknown Sound Features](../../technotes/tn/Unknown%20Sound%20Features/tn1108.md)** — Technical Note · 1997-10-01，macOS
+- **[Unlocking GDHandles Considered Harmful](../../technotes/tn/Unlocking%20GDHandles%20Considered%20Harmful/tn1118.md)** — Technical Note · 1998-06-01，macOS
+- **[Update: Borrowed AFP Sessions](../../technotes/tn/Update-%20Borrowed%20AFP%20Sessions/tn1106.md)** — Technical Note · 2000-08-14，macOS
+- **[USB Printer Sharing Compatibility](../../technotes/tn/USB%20Printer%20Sharing%20Compatibility/tn1199.md)** — Technical Note · 2000-06-01，macOS
+- **[USB Software Locator](../../technotes/tn/USB%20Software%20Locator/tn1191.md)** — Technical Note · 2004-07-06，macOS
+- **[Using Launch Services for discovering document binding and launching applications](../../technotes/tn/Using%20Launch%20Services%20for%20discovering%20document%20binding%20and%20launching%20application/tn2017.md)** — Technical Note · 2011-07-10，macOS · CoreServices
+- **[Using QuickDraw GX Functionality from Pascal or Modula-2 - Without Writing Any C Code](../../technotes/tn/Using%20QuickDraw%20GX%20Functionality%20from%20Pascal%20or%20Modula-2%20-%20Without%20Writing%20Any%20C/tn1065.md)** — Technical Note · 1996-09-01，macOS
+- **[Using the Drag Manager to Interact with and Manipulate File System Entities](../../technotes/tn/Using%20the%20Drag%20Manager%20to%20Interact%20with%20and%20Manipulate%20File%20System%20Entities/tn1085.md)** — Technical Note · 1996-12-01，macOS
+- **[Using The GXGraphics Extension](../../technotes/tn/Using%20The%20GXGraphics%20Extension/tn1101.md)** — Technical Note · 2000-08-14，macOS
+- **[Virtual Memory Application Compatibility](../../technotes/tn/Virtual%20Memory%20Application%20Compatibility/tn1094.md)** — Technical Note · 1998-04-01，macOS
+- **[Weak-Linking to a Code Fragment Manager-based Shared Library](../../technotes/tn/Weak-Linking%20to%20a%20Code%20Fragment%20Manager-based%20Shared%20Library/tn1083.md)** — Technical Note · 1996-11-01，macOS
+- **[What's New With ColorSync 2.6](../../technotes/tn/What%27s%20New%20With%20ColorSync%202.6/tn1160.md)** — Technical Note · 1999-04-01，macOS · ApplicationServices
+- **[Working with Multiprocessing Services](../../technotes/tn/Working%20with%20Multiprocessing%20Services/tn1071.md)** — Technical Note · 2000-08-14，macOS
+- **[Write Cache Flushing: Techniques for Properly Handling System Shutdown](../../technotes/tn/Write%20Cache%20Flushing-%20Techniques%20for%20Properly%20Handling%20System%20Shutdown/tn1040.md)** — Technical Note · 1996-04-01，macOS
+- **[Writing Custom Hoses for LaserWriter 8.6](../../technotes/tn/Writing%20Custom%20Hoses%20for%20LaserWriter%208.6/tn1144.md)** — Technical Note · 2000-08-14，macOS
+- **[Writing Plug-ins for Desktop Printer Utility](../../technotes/tn/Writing%20Plug-ins%20for%20Desktop%20Printer%20Utility/tn1172.md)** — Technical Note · 2000-08-14，macOS
+- **[Writing PPD Files for Use With LaserWriter 8, version 8.4.1](../../technotes/tn/Writing%20PPD%20Files%20for%20Use%20With%20LaserWriter%208%2C%20version%208.4.1/tn1068.md)** — Technical Note · 1996-09-01，macOS
+
+## Xcode Developer Tools（6 份）
+
+- **[A Technique for Figuring Out a Resource's Base Value](../../technotes/tn/A%20Technique%20for%20Figuring%20Out%20a%20Resource%27s%20Base%20Value/tn1006.md)** — Technical Note · 2000-08-14，Xcode Developer Tools
+- **[Customizing Apple Media Tool 2.0 & 2.1 Scroll Bars and Movie Controllers](../../technotes/tn/Customizing%20Apple%20Media%20Tool%202.0%20%26%202.1%20Scroll%20Bars%20and%20Movie%20Controllers/tn1073.md)** — Technical Note · 1996-10-01，Xcode Developer Tools
+- **[E.T.O: The Right Tools for the Right Job](../../technotes/tn/E.T.O-%20The%20Right%20Tools%20for%20the%20Right%20Job/tn1066.md)** — Technical Note · 1996-09-01，Xcode Developer Tools
+- **[Getting Started with GDB](../../technotes/tn/Getting%20Started%20with%20GDB/tn2032.md)** — Technical Note · 2011-07-10，Xcode Developer Tools
+- **[Mac OS X v10.1](../../technotes/tn/Mac%20OS%20X%20v10.1/tn2029.md)** — Technical Note · 2001-10-15，Xcode Developer Tools
+- **[On Multiple Inheritance & HandleObjects](../../technotes/tn/On%20Multiple%20Inheritance%20%26%20HandleObjects/tn1009.md)** — Technical Note · 2000-08-14，Xcode Developer Tools

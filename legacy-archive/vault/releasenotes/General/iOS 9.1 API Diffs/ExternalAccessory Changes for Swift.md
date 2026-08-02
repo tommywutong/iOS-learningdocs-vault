@@ -1,0 +1,121 @@
+---
+title: iOS 9.1 API Diffs
+apple_id: TP40016573
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2015-10-21'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS91APIDiffs/Swift/ExternalAccessory.html
+archived_at: '2026-07-18T02:57:08.128944Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 9.1 API Diffs](iOS%209.0%20to%20iOS%209.1%20API%20Differences.md)
+
+
+# ExternalAccessory Changes for Swift
+
+### ExternalAccessory
+
+Modified [EAAccessory](https://developer.apple.com/documentation/externalaccessory/eaaccessory)
+
+|  | Protocols |
+| --- | --- |
+| From | AnyObject |
+| To | -- |
+
+Modified [EAAccessoryManager](https://developer.apple.com/documentation/externalaccessory/eaaccessorymanager)
+
+|  | Protocols |
+| --- | --- |
+| From | AnyObject |
+| To | -- |
+
+Modified [EABluetoothAccessoryPickerErrorCode [enum]](https://developer.apple.com/documentation/externalaccessory/eabluetoothaccessorypickererrorcode)
+
+|  | Protocols |
+| --- | --- |
+| From | Equatable, Hashable, RawRepresentable |
+| To | -- |
+
+Modified [EASession](https://developer.apple.com/documentation/externalaccessory/easession)
+
+|  | Protocols |
+| --- | --- |
+| From | AnyObject |
+| To | -- |
+
+Modified [EAWiFiUnconfiguredAccessory](https://developer.apple.com/documentation/externalaccessory/eawifiunconfiguredaccessory)
+
+|  | Protocols |
+| --- | --- |
+| From | AnyObject |
+| To | -- |
+
+Modified [EAWiFiUnconfiguredAccessoryBrowser](https://developer.apple.com/documentation/externalaccessory/eawifiunconfiguredaccessorybrowser)
+
+|  | Protocols |
+| --- | --- |
+| From | AnyObject |
+| To | -- |
+
+Modified [EAWiFiUnconfiguredAccessoryBrowserState [enum]](https://developer.apple.com/documentation/externalaccessory/eawifiunconfiguredaccessorybrowserstate)
+
+|  | Protocols |
+| --- | --- |
+| From | Equatable, Hashable, RawRepresentable |
+| To | -- |
+
+Modified [EAWiFiUnconfiguredAccessoryConfigurationStatus [enum]](https://developer.apple.com/documentation/externalaccessory/eawifiunconfiguredaccessoryconfigurationstatus)
+
+|  | Protocols |
+| --- | --- |
+| From | Equatable, Hashable, RawRepresentable |
+| To | -- |
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

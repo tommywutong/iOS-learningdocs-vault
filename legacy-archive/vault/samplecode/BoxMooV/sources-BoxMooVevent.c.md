@@ -1,0 +1,155 @@
+---
+title: BoxMooV
+apple_id: DTS10000099
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/BoxMooV/Listings/sources_BoxMooV_event_c.html
+archived_at: '2026-07-18T03:02:14.925719Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [BoxMooV](BoxMooV.md)
+
+
+[Next](sources-BoxMooVQuickTime.c.md)[Previous](sources-BoxMooVdocument.c.md)
+
+# sources/BoxMooV_event.c
+
+```c
+/*  event.c                                                                         
+
+    This contains all the code for routing and handling events.
+
+    Rick Evans  - Sept. 1996    derived from BoxPaint_event.c
+    Michael Bishop - August 21 1996                                                 
+    Nick Thompson
+    (c)1994-96 Apple computer Inc., All Rights Reserved                             
+
+*/
+
+/* --------------------------------------------------------------------
+** Includes
+*/
+
+#include <Devices.h>
+#include <QuickDraw.h>
+
+/*  for QuickDraw 3D */
+#include    "QD3D.h"
+#include    "QD3DMath.h"
+#include    "QD3DDrawContext.h"
+#include    "QD3DShader.h"
+#include    "QD3DTransform.h"
+#include    "QD3DGroup.h"
+
+#include    "BoxMooV_event.h"
+#include    "BoxMooV_document.h"
+#include    "BoxPaint_menu.h"
+#include    "BoxMooV_window.h"
+#include    "BoxPaint_main.h"
+
+
+
+/*  --------------------------------------------------------------------
+**  Event_HandleKeyPress
+**  Handles a Key pressed
+*/
+void Event_HandleKeyPress(EventRecord *theEvent)
+{
+    char    key;
+
+    key = theEvent->message & charCodeMask;
+
+    /*  just check to see if we want to quit... */
+
+    if ( theEvent->modifiers & cmdKey ) {       /* Command key down? */
+        Menu_HandleCommand(MenuKey(key));
+    } 
+
+}
+
+/*  --------------------------------------------------------------------
+**  Event_DoOSEvent
+**  Handles an OSEvent
+*/
+void    Event_DoOSEvent(EventRecord theEvent)
+{   char    mask;
+
+    mask = (theEvent.message >> 24) && 0xFF;
+
+    switch(mask) {
+        case mouseMovedMessage:
+            break;
+        case suspendResumeMessage:
+            Event_DoSuspendResume(theEvent);
+            break;
+    }
+}
+
+/*  --------------------------------------------------------------------
+**  Event_DoSuspendResume
+**  Does nothing at the moment
+*/
+void    Event_DoSuspendResume(EventRecord theEvent)
+{
+/* Code doesn't work */
+    if((theEvent.message & resumeFlag) != 0)
+    {
+        gForeground = true;
+        gTicks = 5;
+    }
+    else
+    {
+        gForeground = false;
+        gTicks = 50;
+    }
+}
+
+
+/*  --------------------------------------------------------------------
+**  Event_DoNull
+**  Do this when your app is idle
+*/
+void Event_DoNull(void)
+{
+    /*  we received a null event, rotate the cube */
+    WindowPtr       theWindow;
+    CGrafPtr            savedPort;
+
+    GetPort((GrafPtr *)&savedPort);
+
+    theWindow = FrontWindow() ;
+
+    while( (theWindow != NULL) && gForeground)
+    {
+        Rect                theRect ;
+        DocumentHdl         theDocument;
+
+        theDocument = Document_GetFromWindow( theWindow ) ;
+
+        if(theDocument != NULL)
+        {
+
+            HLock( (Handle)theDocument  ) ;
+
+            theRect = ((CGrafPtr)theWindow)->portRect ;
+
+            SetPort((GrafPtr)theWindow) ;
+
+            Document_Animate(theDocument);
+
+            InvalRect( &theRect ) ;
+
+            HUnlock( (Handle)theDocument  ) ;
+        }
+
+        theWindow = Window_GetNextWindow(theWindow);
+    }
+
+    SetPort((GrafPtr)savedPort);
+}
+```
+
+[Next](sources-BoxMooVQuickTime.c.md)[Previous](sources-BoxMooVdocument.c.md)
+

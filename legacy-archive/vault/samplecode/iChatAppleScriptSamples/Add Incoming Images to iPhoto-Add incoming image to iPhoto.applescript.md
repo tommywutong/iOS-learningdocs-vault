@@ -1,0 +1,93 @@
+---
+title: iChatAppleScriptSamples
+apple_id: DTS10004062
+resource_type: Sample Code
+platform: macOS
+topic: Audio, Video, & Visual Effects
+technology: InstantMessage
+published: '2018-05-03'
+source_url: https://developer.apple.com/library/archive/samplecode/iChatAppleScriptSamples/Listings/Add_Incoming_Images_to_iPhoto_Add_incoming_image_to_iPhoto_applescript.html
+archived_at: '2026-07-18T03:29:33.368005Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [iChatAppleScriptSamples](iChatAppleScriptSamples.md)
+
+
+[Next](Add%20Incoming%20Images%20to%20iPhoto-ReadMe.txt.md)[Previous](ReadMe.txt.md)
+
+# Add Incoming Images to iPhoto/Add incoming image to iPhoto.applescript
+
+```
+(*
+
+File: Add incoming image to iPhoto.applescript
+
+Abstract: This script demonstrates an AppleScript "Incoming File Transfer" event handler for iChat. When this script is installed, it will automatically import JPGs, GIFs, and PNGs to your iPhoto library.
+
+Version: 1.0
+
+Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
+Computer, Inc. ("Apple") in consideration of your agreement to the
+following terms, and your use, installation, modification or
+redistribution of this Apple software constitutes acceptance of these
+terms.  If you do not agree with these terms, please do not use,
+install, modify or redistribute this Apple software.
+
+In consideration of your agreement to abide by the following terms, and
+subject to these terms, Apple grants you a personal, non-exclusive
+license, under Apple's copyrights in this original Apple software (the
+"Apple Software"), to use, reproduce, modify and redistribute the Apple
+Software, with or without modifications, in source and/or binary forms;
+provided that if you redistribute the Apple Software in its entirety and
+without modifications, you must retain this notice and the following
+text and disclaimers in all such redistributions of the Apple Software. 
+Neither the name, trademarks, service marks or logos of Apple Computer,
+Inc. may be used to endorse or promote products derived from the Apple
+Software without specific prior written permission from Apple.  Except
+as expressly stated in this notice, no other rights or licenses, express
+or implied, are granted by Apple herein, including but not limited to
+any patent rights that may be infringed by your derivative works or by
+other works in which the Apple Software may be incorporated.
+
+The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+
+IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+Copyright © 2006 Apple Computer, Inc., All Rights Reserved
+
+*)
+
+using terms from application "iChat"
+
+    on received file transfer invitation theFileTransfer from buddy theBuddy for service theService
+
+        if (name of theFileTransfer ends with ".png") or (name of theFileTransfer ends with ".jpg") or (name of theFileTransfer ends with ".gif") then
+
+            accept transfer of theFileTransfer
+
+            tell application "iPhoto"
+                import from ("~/Desktop/" & (name of theFileTransfer))
+            end tell
+
+        end if
+
+
+
+
+    end received file transfer invitation
+
+end using terms from
+```
+
+[Next](Add%20Incoming%20Images%20to%20iPhoto-ReadMe.txt.md)[Previous](ReadMe.txt.md)
+

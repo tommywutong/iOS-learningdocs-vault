@@ -1,0 +1,19 @@
+# .github/workflows/pr-review.yml (installed by pr-review-swarm deploy)
+name: PR Review Swarm
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review, edited, converted_to_draft, closed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        required: true
+        type: number
+
+jobs:
+  review:
+    uses: dustPyrotechnic/pr-review-swarm/.github/workflows/reusable-pr-review.yml@0828c1caec91995c0bd6bf3d85b4f9acc6ccb14a
+    with:
+      pr_number: ${{ github.event.pull_request.number || inputs.pr_number }}
+      model: 'deepseek-chat'
+    secrets:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}

@@ -1,0 +1,96 @@
+---
+title: OTTCPWillDial
+apple_id: DTS10000256
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/OTTCPWillDial/Listings/TestOTTCPWillDial_c.html
+archived_at: '2026-07-18T03:17:26.213451Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [OTTCPWillDial](OTTCPWillDial.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](OTTCPWillDial.h.md)
+
+# TestOTTCPWillDial.c
+
+```objc
+/*
+    File:       TestOTTCPWillDial.c
+
+    Contains:   Trivial application to test OTTCPWillDial library.
+
+    Written by: Quinn "The Eskimo!"
+
+    Copyright:  © 1998 by Apple Computer, Inc., all rights reserved.
+
+    Change History (most recent first):
+
+    You may incorporate this sample code into your applications without
+    restriction, though the sample code has been provided "AS IS" and the
+    responsibility for its operation is 100% yours.  However, what you are
+    not permitted to do is to redistribute the source as "DSC Sample Code"
+    after having made changes. If you're going to re-distribute the source,
+    we require that you make it clear in the source that the code was
+    descended from Apple Sample Code, but that you've made changes.
+*/
+
+/////////////////////////////////////////////////////////////////
+// Pick up the standard C console stuff.
+
+#import <stdio.h>
+
+/////////////////////////////////////////////////////////////////
+// Pick up the OT API, just to call InitOpenTransport.
+
+#import <OpenTransport.h>
+
+/////////////////////////////////////////////////////////////////
+// Pick up the library prototypes.
+
+#import "OTTCPWillDial.h"
+
+/////////////////////////////////////////////////////////////////
+
+extern void main(void)
+{
+    OSStatus err;
+    UInt32  willTCPDial;
+
+    printf("TestOTTCPWillDial\n");
+    printf("-- A trivial program to test the OTTCPWillDial library.\n\n");
+
+    err = InitOpenTransport();
+
+    if (err == noErr) {
+        err = OTTCPWillDial(&willTCPDial);
+
+        CloseOpenTransport();
+    }
+
+    if (err == noErr) {
+        switch ( willTCPDial ) {
+            case kOTTCPDialUnknown:
+                printf("We don't know whether opening a TCP endpoint will dial the modem.\n");
+                break;
+            case kOTTCPDialTCPDisabled:
+                printf("TCP/IP is disabled.\n");
+                break;
+            case kOTTCPDialYes:
+                printf("Opening a TCP endpoint will dial the modem.\n");
+                break;
+            case kOTTCPDialNo:
+                printf("Opening a TCP endpoint will not dial the modem.\n");
+                break;
+        }
+    } else {
+        printf("Failed with error %ld.\n", err);
+    }
+    printf("Done.  Press command-Q to Quit.\n");
+}
+```
+
+[Next](Document%20Revision%20History.md)[Previous](OTTCPWillDial.h.md)
+

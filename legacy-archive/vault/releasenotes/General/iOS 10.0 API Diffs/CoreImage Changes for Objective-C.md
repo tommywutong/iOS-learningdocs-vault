@@ -1,0 +1,106 @@
+---
+title: iOS 10.0 API Diffs
+apple_id: TP40017327
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2016-09-13'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS10APIDiffs/Objective-C/CoreImage.html
+archived_at: '2026-07-18T02:54:54.729438Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 10.0 API Diffs](iOS%209.3%20to%20iOS%2010.0%20API%20Differences.md)
+
+
+# CoreImage Changes for Objective-C
+
+### CoreImage
+
+#### CIColor.h
+
+Added [+[CIColor blackColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643578-black)Added [+[CIColor blueColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643569-blue)Added [+[CIColor clearColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643577-clearcolor)Added [+[CIColor colorWithRed:green:blue:alpha:colorSpace:]](https://developer.apple.com/documentation/coreimage/cicolor/1643575-colorwithred)Added [+[CIColor colorWithRed:green:blue:colorSpace:]](https://developer.apple.com/documentation/coreimage/cicolor/1643579-colorwithred)Added [+[CIColor cyanColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643581-cyan)Added [+[CIColor grayColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643573-graycolor)Added [+[CIColor greenColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643580-green)Added [-[CIColor initWithRed:green:blue:alpha:colorSpace:]](https://developer.apple.com/documentation/coreimage/cicolor/1643572-init)Added [-[CIColor initWithRed:green:blue:colorSpace:]](https://developer.apple.com/documentation/coreimage/cicolor/1643576-init)Added [+[CIColor magentaColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643574-magenta)Added [+[CIColor redColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643570-red)Added [+[CIColor whiteColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643571-whitecolor)Added [+[CIColor yellowColor]](https://developer.apple.com/documentation/coreimage/cicolor/1643582-yellowcolor)
+
+#### CIContext.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARYAdded [-[CIContext clearCaches]](https://developer.apple.com/documentation/coreimage/cicontext/1437790-clearcaches)Added [+[CIContext context]](https://developer.apple.com/documentation/coreimage/cicontext/1642219-context)Added [-[CIContext createCGImage:fromRect:format:colorSpace:deferred:]](https://developer.apple.com/documentation/coreimage/cicontext/1642211-createcgimage)Added [-[CIContext init]](https://developer.apple.com/documentation/coreimage/cicontext/1642212-init)Added [-[CIContext initWithOptions:]](https://developer.apple.com/documentation/coreimage/cicontext/1438261-init)Added [-[CIContext JPEGRepresentationOfImage:colorSpace:options:]](https://developer.apple.com/documentation/coreimage/cicontext/1642214-jpegrepresentation)Added [-[CIContext TIFFRepresentationOfImage:format:colorSpace:options:]](https://developer.apple.com/documentation/coreimage/cicontext/1642220-tiffrepresentationofimage)Added [CIContext.workingFormat](https://developer.apple.com/documentation/coreimage/cicontext/1642215-workingformat)Added [-[CIContext writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:]](https://developer.apple.com/documentation/coreimage/cicontext/1642218-writejpegrepresentation)Added [-[CIContext writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:]](https://developer.apple.com/documentation/coreimage/cicontext/1642213-writetiffrepresentationofimage)Added CIContext(ImageRepresentation)Added [kCIContextCacheIntermediates](https://developer.apple.com/documentation/coreimage/kcicontextcacheintermediates)Added [kCIContextOutputPremultiplied](https://developer.apple.com/documentation/coreimage/kcicontextoutputpremultiplied)
+
+#### CIDetector.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARYAdded [CIDetectorMaxFeatureCount](https://developer.apple.com/documentation/coreimage/cidetectormaxfeaturecount)
+
+#### CIFilter.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARYAdded [-[CIFilter name]](https://developer.apple.com/documentation/coreimage/cifilter/1437997-name)Added [-[CIFilter setName:]](https://developer.apple.com/documentation/coreimage/cifilter/1437997-name)Modified [CIFilter.name](https://developer.apple.com/documentation/coreimage/cifilter/1437997-setname)
+
+|  | Declaration | Readonly |
+| --- | --- | --- |
+| From | ``` @property(nonatomic, readonly) NSString *name ``` | yes |
+| To | ``` @property(nonatomic, copy) NSString *name ``` | -- |
+
+#### CIImage.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARYAdded [-[CIImage autoAdjustmentFilters]](https://developer.apple.com/documentation/coreimage/ciimage/1645889-autoadjustmentfilters)Added [CIImage.CGImage](https://developer.apple.com/documentation/coreimage/ciimage/1687603-cgimage)Added [-[CIImage imageByApplyingGaussianBlurWithSigma:]](https://developer.apple.com/documentation/coreimage/ciimage/1645897-imagebyapplyinggaussianblurwiths)Added [-[CIImage imageByClampingToRect:]](https://developer.apple.com/documentation/coreimage/ciimage/1645893-imagebyclampingtorect)Added [-[CIImage imageByColorMatchingColorSpaceToWorkingSpace:]](https://developer.apple.com/documentation/coreimage/ciimage/1645896-imagebycolormatchingcolorspaceto)Added [-[CIImage imageByColorMatchingWorkingSpaceToColorSpace:]](https://developer.apple.com/documentation/coreimage/ciimage/1645898-imagebycolormatchingworkingspace)Added [-[CIImage imageByPremultiplyingAlpha]](https://developer.apple.com/documentation/coreimage/ciimage/1645894-imagebypremultiplyingalpha)Added [-[CIImage imageBySettingAlphaOneInExtent:]](https://developer.apple.com/documentation/coreimage/ciimage/1645891-imagebysettingalphaoneinextent)Added [-[CIImage imageBySettingProperties:]](https://developer.apple.com/documentation/coreimage/ciimage/1645895-imagebysettingproperties)Added [-[CIImage imageByUnpremultiplyingAlpha]](https://developer.apple.com/documentation/coreimage/ciimage/1645892-imagebyunpremultiplyingalpha)Added [CIImage.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimage/1687604-pixelbuffer)
+
+#### CIImageProcessor.h (Added)
+
+Added [CIImageProcessorInput](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput)Added [CIImageProcessorInput.baseAddress](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639645-baseaddress)Added [CIImageProcessorInput.bytesPerRow](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639655-bytesperrow)Added [CIImageProcessorInput.format](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639639-format)Added [CIImageProcessorInput.metalTexture](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639651-metaltexture)Added [CIImageProcessorInput.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639649-pixelbuffer)Added [CIImageProcessorInput.region](https://developer.apple.com/documentation/coreimage/ciimageprocessorinput/1639633-region)Added [CIImageProcessorKernel](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel)Added [+[CIImageProcessorKernel applyWithExtent:inputs:arguments:error:]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138284-applywithextent)Added [+[CIImageProcessorKernel formatForInputAtIndex:]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138289-formatforinput)Added [+[CIImageProcessorKernel outputFormat]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143065-outputformat)Added [CIImageProcessorKernel.outputFormat](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143065-outputformat)Added [+[CIImageProcessorKernel processWithInputs:arguments:output:error:]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138290-processwithinputs)Added [+[CIImageProcessorKernel roiForInput:arguments:outputRect:]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2138287-roi)Added [+[CIImageProcessorKernel synchronizeInputs]](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143066-synchronizeinputs)Added [CIImageProcessorKernel.synchronizeInputs](https://developer.apple.com/documentation/coreimage/ciimageprocessorkernel/2143066-synchronizeinputs)Added [CIImageProcessorOutput](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput)Added [CIImageProcessorOutput.baseAddress](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639626-baseaddress)Added [CIImageProcessorOutput.bytesPerRow](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639635-bytesperrow)Added [CIImageProcessorOutput.format](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639628-format)Added [CIImageProcessorOutput.metalCommandBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639641-metalcommandbuffer)Added [CIImageProcessorOutput.metalTexture](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639631-metaltexture)Added [CIImageProcessorOutput.pixelBuffer](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639647-pixelbuffer)Added [CIImageProcessorOutput.region](https://developer.apple.com/documentation/coreimage/ciimageprocessoroutput/1639629-region)
+
+#### CIImageProvider.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARY
+
+#### CIKernel.h
+
+Removed #def CI_ARRAYRemoved #def CI_DICTIONARY
+
+#### CIRAWFilter.h (Added)
+
+Added [+[CIFilter filterWithCVPixelBuffer:properties:options:]](https://developer.apple.com/documentation/coreimage/cifilter/2138288-filterwithcvpixelbuffer)Added [+[CIFilter filterWithImageData:options:]](https://developer.apple.com/documentation/coreimage/cifilter/1437879-init)Added [+[CIFilter filterWithImageURL:options:]](https://developer.apple.com/documentation/coreimage/cifilter/1438096-init)Added CIFilter(CIRAWFilter)Added [kCIActiveKeys](https://developer.apple.com/documentation/coreimage/kciactivekeys)Added [kCIInputAllowDraftModeKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438010-allowdraftmode)Added [kCIInputBaselineExposureKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/2202263-baselineexposure)Added [kCIInputBoostKey](https://developer.apple.com/documentation/coreimage/kciinputboostkey)Added [kCIInputBoostShadowAmountKey](https://developer.apple.com/documentation/coreimage/kciinputboostshadowamountkey)Added [kCIInputColorNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437640-colornoisereductionamount)Added [kCIInputDecoderVersionKey](https://developer.apple.com/documentation/coreimage/kciinputdecoderversionkey)Added [kCIInputDisableGamutMapKey](https://developer.apple.com/documentation/coreimage/kciinputdisablegamutmapkey)Added [kCIInputEnableChromaticNoiseTrackingKey](https://developer.apple.com/documentation/coreimage/kciinputenablechromaticnoisetrackingkey)Added [kCIInputEnableSharpeningKey](https://developer.apple.com/documentation/coreimage/kciinputenablesharpeningkey)Added [kCIInputEnableVendorLensCorrectionKey](https://developer.apple.com/documentation/coreimage/kciinputenablevendorlenscorrectionkey)Added [kCIInputIgnoreImageOrientationKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437949-ignoreimageorientation)Added [kCIInputImageOrientationKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437637-imageorientation)Added [kCIInputLinearSpaceFilter](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438078-linearspacefilter)Added [kCIInputLuminanceNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/kciinputluminancenoisereductionamountkey)Added [kCIInputNeutralChromaticityXKey](https://developer.apple.com/documentation/coreimage/kciinputneutralchromaticityxkey)Added [kCIInputNeutralChromaticityYKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1438039-neutralchromaticityy)Added [kCIInputNeutralLocationKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437915-neutrallocation)Added [kCIInputNeutralTemperatureKey](https://developer.apple.com/documentation/coreimage/kciinputneutraltemperaturekey)Added [kCIInputNeutralTintKey](https://developer.apple.com/documentation/coreimage/kciinputneutraltintkey)Added [kCIInputNoiseReductionAmountKey](https://developer.apple.com/documentation/coreimage/kciinputnoisereductionamountkey)Added [kCIInputNoiseReductionContrastAmountKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437681-noisereductioncontrastamount)Added [kCIInputNoiseReductionDetailAmountKey](https://developer.apple.com/documentation/coreimage/kciinputnoisereductiondetailamountkey)Added [kCIInputNoiseReductionSharpnessAmountKey](https://developer.apple.com/documentation/coreimage/kciinputnoisereductionsharpnessamountkey)Added [kCIInputScaleFactorKey](https://developer.apple.com/documentation/coreimage/cirawfilteroption/1437936-scalefactor)Added [kCIOutputNativeSizeKey](https://developer.apple.com/documentation/coreimage/kcioutputnativesizekey)Added [kCISupportedDecoderVersionsKey](https://developer.apple.com/documentation/coreimage/kcisupporteddecoderversionskey)
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

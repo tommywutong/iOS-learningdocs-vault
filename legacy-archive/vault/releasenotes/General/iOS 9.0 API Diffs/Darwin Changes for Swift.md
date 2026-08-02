@@ -1,0 +1,1766 @@
+---
+title: iOS 9.0 API Diffs
+apple_id: TP40016222
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2015-09-16'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS90APIDiffs/Swift/Darwin.html
+archived_at: '2026-07-18T02:56:47.871836Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 9.0 API Diffs](iOS%208.3%20to%20iOS%209.0%20API%20Differences.md)
+
+
+# Darwin Changes for Swift
+
+### Darwin
+
+Removed acl_entry_id_t.valueRemoved acl_flag_t.valueRemoved acl_perm_t.valueRemoved acl_tag_t.valueRemoved acl_type_t.valueRemoved ACTION.valueRemoved filesec_property_t.valueRemoved iconv_fallbacks.init(mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback, uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback, mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback, wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback, data: UnsafeMutablePointer<Void>)Removed iconv_hooks.init(uc_hook: iconv_unicode_char_hook, wc_hook: iconv_wide_char_hook, data: UnsafeMutablePointer<Void>)Removed idtype_t.valueRemoved kinfo_lctx [struct]Removed kinfo_lctx.idRemoved kinfo_lctx.init()Removed kinfo_lctx.init(id: pid_t, mc: Int32)Removed kinfo_lctx.mcRemoved kmod_info.init(next: UnsafeMutablePointer<kmod_info>, info_version: Int32, id: UInt32, name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), reference_count: Int32, reference_list: UnsafeMutablePointer<kmod_reference_t>, address: vm_address_t, size: vm_size_t, hdr_size: vm_size_t, start: CFunctionPointer<kmod_start_func_t>, stop: CFunctionPointer<kmod_stop_func_t>)Removed mach_port_guard_exception_codes.valueRemoved malloc_introspection_t.init(enumerator: CFunctionPointer<((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, CFunctionPointer<memory_reader_t>, CFunctionPointer<vm_range_recorder_t>) -> kern_return_t)>, good_size: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)>, check: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, print: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)>, log: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>, force_lock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, force_unlock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, statistics: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)>, zone_locked: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, enable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, disable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, discharge: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>, enumerate_discharged_pointers: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)>)Removed mig_subsystem.init(server: mig_server_routine_t, start: mach_msg_id_t, end: mach_msg_id_t, maxsize: mach_msg_size_t, reserved: vm_address_t, routine: (mig_routine_descriptor))Removed mig_symtab.init(ms_routine_name: UnsafeMutablePointer<Int8>, ms_routine_number: Int32, ms_routine: CFunctionPointer<(() -> Void)>)Removed NXByteOrder.valueRemoved qos_class_t.valueRemoved rb_tree_ops_t.init(rbto_compare_nodes: rbto_compare_nodes_fn, rbto_compare_key: rbto_compare_key_fn, rbto_node_offset: Int, rbto_context: UnsafeMutablePointer<Void>)Removed routine_descriptor.init(impl_routine: mig_impl_routine_t, stub_routine: mig_stub_routine_t, argc: UInt32, descr_count: UInt32, arg_descr: routine_arg_descriptor_t, max_reply_msg: UInt32)Removed rpc_routine_descriptor.init(impl_routine: mig_impl_routine_t, stub_routine: mig_stub_routine_t, argc: UInt32, descr_count: UInt32, arg_descr: rpc_routine_arg_descriptor_t, max_reply_msg: UInt32)Removed sigevent.init(sigev_notify: Int32, sigev_signo: Int32, sigev_value: sigval, sigev_notify_function: CFunctionPointer<((sigval) -> Void)>, sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>)Removed sigvec.init(sv_handler: CFunctionPointer<((Int32) -> Void)>, sv_mask: Int32, sv_flags: Int32)Removed task_latency_qos.valueRemoved task_role.valueRemoved task_throughput_qos.valueRemoved task_vm_info.init(virtual_size: mach_vm_size_t, region_count: integer_t, page_size: integer_t, resident_size: mach_vm_size_t, resident_size_peak: mach_vm_size_t, device: mach_vm_size_t, device_peak: mach_vm_size_t, internal: mach_vm_size_t, internal_peak: mach_vm_size_t, external: mach_vm_size_t, external_peak: mach_vm_size_t, reusable: mach_vm_size_t, reusable_peak: mach_vm_size_t, purgeable_volatile_pmap: mach_vm_size_t, purgeable_volatile_resident: mach_vm_size_t, purgeable_volatile_virtual: mach_vm_size_t, compressed: mach_vm_size_t, compressed_peak: mach_vm_size_t, compressed_lifetime: mach_vm_size_t)Removed uio_rw.valueRemoved VISIT.valueRemoved arc4random() -> UInt32Removed arc4random_uniform() -> UInt32Removed BooleanRemoved close() -> Int32Removed falseRemoved free()Removed KERN_LCTXRemoved KERN_LCTX_ALLRemoved KERN_LCTX_LCIDRemoved read(_: Int32, _: UnsafeMutablePointer<Void>, _: Int) -> IntRemoved strtod(_: UnsafePointer<Int8>, _: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> DoubleRemoved strtof(_: UnsafePointer<Int8>, _: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> FloatRemoved SYS___mac_get_lcidRemoved SYS___mac_get_lctxRemoved SYS___mac_set_lctxRemoved SYS_getlcidRemoved SYS_setlcidRemoved trueRemoved write(_: Int32, _: UnsafePointer<Void>, _: Int) -> IntAdded acl_entry_id_t.init(rawValue: Int32)Added acl_entry_id_t.rawValueAdded acl_flag_t.init(rawValue: UInt32)Added acl_flag_t.rawValueAdded acl_perm_t.init(rawValue: UInt32)Added acl_perm_t.rawValueAdded acl_tag_t.init(rawValue: UInt32)Added acl_tag_t.rawValueAdded acl_type_t.init(rawValue: UInt32)Added acl_type_t.rawValueAdded ACTION.init(rawValue: UInt32)Added ACTION.rawValueAdded DarwinBoolean [struct]Added DarwinBoolean.boolValueAdded DarwinBoolean.descriptionAdded DarwinBoolean.init(_: Bool)Added DarwinBoolean.init(booleanLiteral: Bool)Added filesec_property_t.init(rawValue: UInt32)Added filesec_property_t.rawValueAdded iconv_fallbacks.init(mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback!, uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback!, mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback!, wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback!, data: UnsafeMutablePointer<Void>)Added iconv_hooks.init(uc_hook: iconv_unicode_char_hook!, wc_hook: iconv_wide_char_hook!, data: UnsafeMutablePointer<Void>)Added idtype_t.init(rawValue: UInt32)Added idtype_t.rawValueAdded kmod_info.init(next: UnsafeMutablePointer<kmod_info>, info_version: Int32, id: UInt32, name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), reference_count: Int32, reference_list: UnsafeMutablePointer<kmod_reference_t>, address: vm_address_t, size: vm_size_t, hdr_size: vm_size_t, start: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!, stop: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!)Added mach_core_fileheader [struct]Added mach_core_fileheader.gzip_lengthAdded mach_core_fileheader.gzip_offsetAdded mach_core_fileheader.init()Added mach_core_fileheader.init(signature: UInt64, log_offset: UInt64, log_length: UInt64, gzip_offset: UInt64, gzip_length: UInt64)Added mach_core_fileheader.log_lengthAdded mach_core_fileheader.log_offsetAdded mach_core_fileheader.signatureAdded mach_memory_info [struct]Added mach_memory_info.flagsAdded mach_memory_info.freeAdded mach_memory_info.init()Added mach_memory_info.init(flags: UInt64, site: UInt64, size: UInt64, free: UInt64, largest: UInt64, _resv: (UInt64, UInt64, UInt64))Added mach_memory_info.largestAdded mach_memory_info.siteAdded mach_memory_info.sizeAdded mach_port_guard_exception_codes.init(rawValue: UInt32)Added mach_port_guard_exception_codes.rawValueAdded MachError [enum]Added MachError.KERN_ABORTEDAdded MachError.KERN_ALREADY_IN_SETAdded MachError.KERN_ALREADY_WAITINGAdded MachError.KERN_CODESIGN_ERRORAdded MachError.KERN_DEFAULT_SETAdded MachError.KERN_EXCEPTION_PROTECTEDAdded MachError.KERN_FAILUREAdded MachError.KERN_INVALID_ADDRESSAdded MachError.KERN_INVALID_ARGUMENTAdded MachError.KERN_INVALID_CAPABILITYAdded MachError.KERN_INVALID_HOSTAdded MachError.KERN_INVALID_LEDGERAdded MachError.KERN_INVALID_MEMORY_CONTROLAdded MachError.KERN_INVALID_NAMEAdded MachError.KERN_INVALID_OBJECTAdded MachError.KERN_INVALID_POLICYAdded MachError.KERN_INVALID_PROCESSOR_SETAdded MachError.KERN_INVALID_RIGHTAdded MachError.KERN_INVALID_SECURITYAdded MachError.KERN_INVALID_TASKAdded MachError.KERN_INVALID_VALUEAdded MachError.KERN_LOCK_OWNEDAdded MachError.KERN_LOCK_OWNED_SELFAdded MachError.KERN_LOCK_SET_DESTROYEDAdded MachError.KERN_LOCK_UNSTABLEAdded MachError.KERN_MEMORY_DATA_MOVEDAdded MachError.KERN_MEMORY_ERRORAdded MachError.KERN_MEMORY_FAILUREAdded MachError.KERN_MEMORY_PRESENTAdded MachError.KERN_MEMORY_RESTART_COPYAdded MachError.KERN_NAME_EXISTSAdded MachError.KERN_NO_ACCESSAdded MachError.KERN_NO_SPACEAdded MachError.KERN_NODE_DOWNAdded MachError.KERN_NOT_DEPRESSEDAdded MachError.KERN_NOT_IN_SETAdded MachError.KERN_NOT_RECEIVERAdded MachError.KERN_NOT_SUPPORTEDAdded MachError.KERN_NOT_WAITINGAdded MachError.KERN_OPERATION_TIMED_OUTAdded MachError.KERN_POLICY_LIMITAdded MachError.KERN_POLICY_STATICAdded MachError.KERN_PROTECTION_FAILUREAdded MachError.KERN_RESOURCE_SHORTAGEAdded MachError.KERN_RIGHT_EXISTSAdded MachError.KERN_RPC_CONTINUE_ORPHANAdded MachError.KERN_RPC_SERVER_TERMINATEDAdded MachError.KERN_RPC_TERMINATE_ORPHANAdded MachError.KERN_SEMAPHORE_DESTROYEDAdded MachError.KERN_SUCCESSAdded MachError.KERN_TERMINATEDAdded MachError.KERN_UREFS_OVERFLOWAdded malloc_introspection_t.init(enumerator: ((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, ((task_t, UnsafeMutablePointer<Void>, UInt32, UnsafeMutablePointer<vm_range_t>, UInt32) -> Void)!) -> kern_return_t)!, good_size: ((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)!, check: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, print: ((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)!, log: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!, force_lock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, force_unlock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, statistics: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)!, zone_locked: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, enable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, disable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, discharge: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!, enumerate_discharged_pointers: ((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)!)Added mig_subsystem.init(server: mig_server_routine_t!, start: mach_msg_id_t, end: mach_msg_id_t, maxsize: mach_msg_size_t, reserved: vm_address_t, routine: (mig_routine_descriptor))Added mig_symtab.init(ms_routine_name: UnsafeMutablePointer<Int8>, ms_routine_number: Int32, ms_routine: (() -> Void)!)Added NXByteOrder.init(rawValue: UInt32)Added NXByteOrder.rawValueAdded POSIXError [enum]Added POSIXError.E2BIGAdded POSIXError.EACCESAdded POSIXError.EADDRINUSEAdded POSIXError.EADDRNOTAVAILAdded POSIXError.EAFNOSUPPORTAdded POSIXError.EAGAINAdded POSIXError.EALREADYAdded POSIXError.EAUTHAdded POSIXError.EBADARCHAdded POSIXError.EBADEXECAdded POSIXError.EBADFAdded POSIXError.EBADMACHOAdded POSIXError.EBADMSGAdded POSIXError.EBADRPCAdded POSIXError.EBUSYAdded POSIXError.ECANCELEDAdded POSIXError.ECHILDAdded POSIXError.ECONNABORTEDAdded POSIXError.ECONNREFUSEDAdded POSIXError.ECONNRESETAdded POSIXError.EDEADLKAdded POSIXError.EDESTADDRREQAdded POSIXError.EDEVERRAdded POSIXError.EDOMAdded POSIXError.EDQUOTAdded POSIXError.EEXISTAdded POSIXError.EFAULTAdded POSIXError.EFBIGAdded POSIXError.EFTYPEAdded POSIXError.EHOSTDOWNAdded POSIXError.EHOSTUNREACHAdded POSIXError.EIDRMAdded POSIXError.EILSEQAdded POSIXError.EINPROGRESSAdded POSIXError.EINTRAdded POSIXError.EINVALAdded POSIXError.EIOAdded POSIXError.EISCONNAdded POSIXError.EISDIRAdded POSIXError.ELOOPAdded POSIXError.EMFILEAdded POSIXError.EMLINKAdded POSIXError.EMSGSIZEAdded POSIXError.EMULTIHOPAdded POSIXError.ENAMETOOLONGAdded POSIXError.ENEEDAUTHAdded POSIXError.ENETDOWNAdded POSIXError.ENETRESETAdded POSIXError.ENETUNREACHAdded POSIXError.ENFILEAdded POSIXError.ENOATTRAdded POSIXError.ENOBUFSAdded POSIXError.ENODATAAdded POSIXError.ENODEVAdded POSIXError.ENOENTAdded POSIXError.ENOEXECAdded POSIXError.ENOLCKAdded POSIXError.ENOLINKAdded POSIXError.ENOMEMAdded POSIXError.ENOMSGAdded POSIXError.ENOPOLICYAdded POSIXError.ENOPROTOOPTAdded POSIXError.ENOSPCAdded POSIXError.ENOSRAdded POSIXError.ENOSTRAdded POSIXError.ENOSYSAdded POSIXError.ENOTBLKAdded POSIXError.ENOTCONNAdded POSIXError.ENOTDIRAdded POSIXError.ENOTEMPTYAdded POSIXError.ENOTRECOVERABLEAdded POSIXError.ENOTSOCKAdded POSIXError.ENOTSUPAdded POSIXError.ENOTTYAdded POSIXError.ENXIOAdded POSIXError.EOVERFLOWAdded POSIXError.EOWNERDEADAdded POSIXError.EPERMAdded POSIXError.EPFNOSUPPORTAdded POSIXError.EPIPEAdded POSIXError.EPROCLIMAdded POSIXError.EPROCUNAVAILAdded POSIXError.EPROGMISMATCHAdded POSIXError.EPROGUNAVAILAdded POSIXError.EPROTOAdded POSIXError.EPROTONOSUPPORTAdded POSIXError.EPROTOTYPEAdded POSIXError.EPWROFFAdded POSIXError.EQFULLAdded POSIXError.ERANGEAdded POSIXError.EREMOTEAdded POSIXError.EROFSAdded POSIXError.ERPCMISMATCHAdded POSIXError.ESHLIBVERSAdded POSIXError.ESHUTDOWNAdded POSIXError.ESOCKTNOSUPPORTAdded POSIXError.ESPIPEAdded POSIXError.ESRCHAdded POSIXError.ESTALEAdded POSIXError.ETIMEAdded POSIXError.ETIMEDOUTAdded POSIXError.ETOOMANYREFSAdded POSIXError.ETXTBSYAdded POSIXError.EUSERSAdded POSIXError.EXDEVAdded qos_class_t.init(rawValue: UInt32)Added qos_class_t.rawValueAdded rb_tree_ops_t.init(rbto_compare_nodes: rbto_compare_nodes_fn!, rbto_compare_key: rbto_compare_key_fn!, rbto_node_offset: Int, rbto_context: UnsafeMutablePointer<Void>)Added routine_descriptor.init(impl_routine: mig_impl_routine_t!, stub_routine: mig_stub_routine_t!, argc: UInt32, descr_count: UInt32, arg_descr: routine_arg_descriptor_t, max_reply_msg: UInt32)Added rpc_routine_descriptor.init(impl_routine: mig_impl_routine_t!, stub_routine: mig_stub_routine_t!, argc: UInt32, descr_count: UInt32, arg_descr: rpc_routine_arg_descriptor_t, max_reply_msg: UInt32)Added sa_endpoints [struct]Added sa_endpoints.init()Added sa_endpoints.init(sae_srcif: UInt32, sae_srcaddr: UnsafeMutablePointer<sockaddr>, sae_srcaddrlen: socklen_t, sae_dstaddr: UnsafeMutablePointer<sockaddr>, sae_dstaddrlen: socklen_t)Added sa_endpoints.sae_dstaddrAdded sa_endpoints.sae_dstaddrlenAdded sa_endpoints.sae_srcaddrAdded sa_endpoints.sae_srcaddrlenAdded sa_endpoints.sae_srcifAdded sigevent.init(sigev_notify: Int32, sigev_signo: Int32, sigev_value: sigval, sigev_notify_function: ((sigval) -> Void)!, sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>)Added sigvec.init(sv_handler: ((Int32) -> Void)!, sv_mask: Int32, sv_flags: Int32)Added statfs.init(f_bsize: UInt32, f_iosize: Int32, f_blocks: UInt64, f_bfree: UInt64, f_bavail: UInt64, f_files: UInt64, f_ffree: UInt64, f_fsid: fsid_t, f_owner: uid_t, f_type: UInt32, f_flags: UInt32, f_fssubtype: UInt32, f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_reserved: (UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32))Added task_flags_info [struct]Added task_flags_info.flagsAdded task_flags_info.init()Added task_flags_info.init(flags: UInt32)Added task_latency_qos.init(rawValue: UInt32)Added task_latency_qos.rawValueAdded task_role.init(rawValue: Int32)Added task_role.rawValueAdded task_throughput_qos.init(rawValue: UInt32)Added task_throughput_qos.rawValueAdded task_vm_info.init(virtual_size: mach_vm_size_t, region_count: integer_t, page_size: integer_t, resident_size: mach_vm_size_t, resident_size_peak: mach_vm_size_t, device: mach_vm_size_t, device_peak: mach_vm_size_t, internal: mach_vm_size_t, internal_peak: mach_vm_size_t, external: mach_vm_size_t, external_peak: mach_vm_size_t, reusable: mach_vm_size_t, reusable_peak: mach_vm_size_t, purgeable_volatile_pmap: mach_vm_size_t, purgeable_volatile_resident: mach_vm_size_t, purgeable_volatile_virtual: mach_vm_size_t, compressed: mach_vm_size_t, compressed_peak: mach_vm_size_t, compressed_lifetime: mach_vm_size_t, phys_footprint: mach_vm_size_t)Added task_vm_info.phys_footprintAdded tcp_connection_info [struct]Added tcp_connection_info.init()Added tcp_connection_info.tcpi_flagsAdded tcp_connection_info.tcpi_maxsegAdded tcp_connection_info.tcpi_optionsAdded tcp_connection_info.tcpi_rcv_wndAdded tcp_connection_info.tcpi_rcv_wscaleAdded tcp_connection_info.tcpi_rtoAdded tcp_connection_info.tcpi_rttcurAdded tcp_connection_info.tcpi_rttvarAdded tcp_connection_info.tcpi_rxbytesAdded tcp_connection_info.tcpi_rxoutoforderbytesAdded tcp_connection_info.tcpi_rxpacketsAdded tcp_connection_info.tcpi_snd_cwndAdded tcp_connection_info.tcpi_snd_sbbytesAdded tcp_connection_info.tcpi_snd_ssthreshAdded tcp_connection_info.tcpi_snd_wndAdded tcp_connection_info.tcpi_snd_wscaleAdded tcp_connection_info.tcpi_srttAdded tcp_connection_info.tcpi_stateAdded tcp_connection_info.tcpi_txbytesAdded tcp_connection_info.tcpi_txpacketsAdded tcp_connection_info.tcpi_txretransmitbytesAdded thread_extended_info [struct]Added thread_extended_info.init()Added thread_extended_info.init(pth_user_time: UInt64, pth_system_time: UInt64, pth_cpu_usage: Int32, pth_policy: Int32, pth_run_state: Int32, pth_flags: Int32, pth_sleep_time: Int32, pth_curpri: Int32, pth_priority: Int32, pth_maxpriority: Int32, pth_name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8))Added thread_extended_info.pth_cpu_usageAdded thread_extended_info.pth_curpriAdded thread_extended_info.pth_flagsAdded thread_extended_info.pth_maxpriorityAdded thread_extended_info.pth_nameAdded thread_extended_info.pth_policyAdded thread_extended_info.pth_priorityAdded thread_extended_info.pth_run_stateAdded thread_extended_info.pth_sleep_timeAdded thread_extended_info.pth_system_timeAdded thread_extended_info.pth_user_timeAdded timeval64 [struct]Added timeval64.init()Added timeval64.init(tv_sec: __int64_t, tv_usec: __int64_t)Added timeval64.tv_secAdded timeval64.tv_usecAdded uio_rw.init(rawValue: UInt32)Added uio_rw.rawValueAdded utsname.init(sysname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), nodename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), release: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), machine: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8))Added vfsstatfs.init(f_bsize: UInt32, f_iosize: Int, f_blocks: UInt64, f_bfree: UInt64, f_bavail: UInt64, f_bused: UInt64, f_files: UInt64, f_ffree: UInt64, f_fsid: fsid_t, f_owner: uid_t, f_flags: UInt64, f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_fssubtype: UInt32, f_reserved: (UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>))Added VISIT.init(rawValue: UInt32)Added VISIT.rawValueAdded &&(_: T, _: () -> DarwinBoolean) -> BoolAdded ==(_: DarwinBoolean, _: DarwinBoolean) -> BoolAdded brk(_: UnsafePointer<Void>) -> UnsafeMutablePointer<Void>Added CONNECT_DATA_IDEMPOTENTAdded CONNECT_RESUME_ON_READ_WRITEAdded connectx(_: Int32, _: UnsafePointer<sa_endpoints_t>, _: sae_associd_t, _: UInt32, _: UnsafePointer<iovec>, _: UInt32, _: UnsafeMutablePointer<Int>, _: UnsafeMutablePointer<sae_connid_t>) -> Int32Added copyfile(_: UnsafePointer<Int8>, _: UnsafePointer<Int8>, _: copyfile_state_t, _: copyfile_flags_t) -> Int32Added COPYFILE_ACLAdded copyfile_callback_tAdded COPYFILE_CHECKAdded COPYFILE_CONTINUEAdded COPYFILE_COPY_DATAAdded COPYFILE_COPY_XATTRAdded COPYFILE_DATAAdded COPYFILE_DISABLE_VARAdded COPYFILE_ERRAdded COPYFILE_EXCLAdded COPYFILE_FINISHAdded copyfile_flags_tAdded COPYFILE_MOVEAdded COPYFILE_NOFOLLOW_DSTAdded COPYFILE_NOFOLLOW_SRCAdded COPYFILE_PACKAdded COPYFILE_PROGRESSAdded COPYFILE_QUITAdded COPYFILE_RECURSE_DIRAdded COPYFILE_RECURSE_DIR_CLEANUPAdded COPYFILE_RECURSE_ERRORAdded COPYFILE_RECURSE_FILEAdded COPYFILE_RECURSIVEAdded COPYFILE_SKIPAdded COPYFILE_STARTAdded COPYFILE_STATAdded copyfile_state_alloc() -> copyfile_state_tAdded COPYFILE_STATE_COPIEDAdded COPYFILE_STATE_DST_FDAdded COPYFILE_STATE_DST_FILENAMEAdded copyfile_state_free(_: copyfile_state_t) -> Int32Added copyfile_state_get(_: copyfile_state_t, _: UInt32, _: UnsafeMutablePointer<Void>) -> Int32Added COPYFILE_STATE_QUARANTINEAdded copyfile_state_set(_: copyfile_state_t, _: UInt32, _: UnsafePointer<Void>) -> Int32Added COPYFILE_STATE_SRC_FDAdded COPYFILE_STATE_SRC_FILENAMEAdded COPYFILE_STATE_STATUS_CBAdded COPYFILE_STATE_STATUS_CTXAdded copyfile_state_tAdded COPYFILE_STATE_XATTRNAMEAdded COPYFILE_UNLINKAdded COPYFILE_UNPACKAdded COPYFILE_VERBOSEAdded COPYFILE_XATTRAdded CPUFAMILY_ARM_TWISTERAdded CPUFAMILY_INTEL_BROADWELLAdded disconnectx(_: Int32, _: sae_associd_t, _: sae_connid_t) -> Int32Added eNoteExitReparentedDeprecatedAdded eNoteReapDeprecatedAdded err_set_exit(_: ((Int32) -> Void)!)Added err_set_exit_b(_: ((Int32) -> Void)!)Added err_set_file(_: UnsafeMutablePointer<Void>)Added EV_UDATA_SPECIFICAdded EXC_CORPSE_NOTIFYAdded F_ADDFILESIGS_FOR_DYLD_SIMAdded F_ADDFILESIGS_RETURNAdded F_BARRIERFSYNCAdded fcopyfile(_: Int32, _: Int32, _: copyfile_state_t, _: copyfile_flags_t) -> Int32Added fgetxattr(_: Int32, _: UnsafePointer<Int8>, _: UnsafeMutablePointer<Void>, _: Int, _: UInt32, _: Int32) -> IntAdded flistxattr(_: Int32, _: UnsafeMutablePointer<Int8>, _: Int, _: Int32) -> IntAdded forkpty(_: UnsafeMutablePointer<Int32>, _: UnsafeMutablePointer<Int8>, _: UnsafeMutablePointer<termios>, _: UnsafeMutablePointer<winsize>) -> pid_tAdded fparseln(_: UnsafeMutablePointer<FILE>, _: UnsafeMutablePointer<Int>, _: UnsafeMutablePointer<Int>, _: UnsafePointer<Int8>, _: Int32) -> UnsafeMutablePointer<Int8>Added FPARSELN_UNESCALLAdded FPARSELN_UNESCCOMMAdded FPARSELN_UNESCCONTAdded FPARSELN_UNESCESCAdded FPARSELN_UNESCRESTAdded fremovexattr(_: Int32, _: UnsafePointer<Int8>, _: Int32) -> Int32Added fsetxattr(_: Int32, _: UnsafePointer<Int8>, _: UnsafePointer<Void>, _: Int, _: UInt32, _: Int32) -> Int32Added getxattr(_: UnsafePointer<Int8>, _: UnsafePointer<Int8>, _: UnsafeMutablePointer<Void>, _: Int, _: UInt32, _: Int32) -> IntAdded HOST_DEBUG_INFO_INTERNALAdded host_get_atm_diagnostic_flag(_: host_t, _: UnsafeMutablePointer<UInt32>) -> kern_return_tAdded host_set_atm_diagnostic_flag(_: host_priv_t, _: UInt32) -> kern_return_tAdded KERN_KDSET_BG_TYPEFILTERAdded KERN_KDWAIT_BG_TRACE_RESETAdded KERN_KDWRITEMAP_V3Added KERN_KDWRITETR_V3Added KEV_DL_RRC_STATE_CHANGEDAdded KEVENT_FLAG_ERROR_EVENTSAdded KEVENT_FLAG_IMMEDIATEAdded KEVENT_FLAG_NONEAdded listxattr(_: UnsafePointer<Int8>, _: UnsafeMutablePointer<Int8>, _: Int, _: Int32) -> IntAdded login_tty(_: Int32) -> Int32Added MAC_OS_X_VERSION_10_10_2Added MAC_OS_X_VERSION_10_10_3Added MAC_OS_X_VERSION_10_11Added MACH_CORE_FILEHEADER_SIGNATUREAdded mach_memory_info(_: host_priv_t, _: UnsafeMutablePointer<mach_zone_name_array_t>, _: UnsafeMutablePointer<mach_msg_type_number_t>, _: UnsafeMutablePointer<mach_zone_info_array_t>, _: UnsafeMutablePointer<mach_msg_type_number_t>, _: UnsafeMutablePointer<mach_memory_info_array_t>, _: UnsafeMutablePointer<mach_msg_type_number_t>) -> kern_return_tAdded mach_memory_info_array_tAdded mach_memory_info_tAdded MACH_PORT_QLIMIT_BASICAdded MACH_PORT_QLIMIT_DEFAULTAdded MACH_PORT_QLIMIT_KERNELAdded MACH_PORT_QLIMIT_LARGEAdded MACH_PORT_QLIMIT_MAXAdded MACH_PORT_QLIMIT_MINAdded MACH_PORT_QLIMIT_SMALLAdded MACH_PORT_QLIMIT_ZEROAdded MADV_PAGEOUTAdded MAP_ANONYMOUSAdded MAP_MEM_4K_DATA_ADDRAdded MAP_RESILIENT_CODESIGNAdded MAP_RESILIENT_MEDIAAdded MAXTHREADNAMESIZEAdded NXConvertHostDoubleToSwapped(_: Double) -> NXSwappedDoubleAdded NXConvertHostFloatToSwapped(_: Float) -> NXSwappedFloatAdded NXConvertSwappedDoubleToHost(_: NXSwappedDouble) -> DoubleAdded NXConvertSwappedFloatToHost(_: NXSwappedFloat) -> FloatAdded NXSwapBigDoubleToHost(_: NXSwappedDouble) -> DoubleAdded NXSwapBigFloatToHost(_: NXSwappedFloat) -> FloatAdded NXSwapBigIntToHost(_: UInt32) -> UInt32Added NXSwapBigLongLongToHost(_: UInt64) -> UInt64Added NXSwapBigLongToHost(_: UInt) -> UIntAdded NXSwapBigShortToHost(_: UInt16) -> UInt16Added NXSwapDouble(_: NXSwappedDouble) -> NXSwappedDoubleAdded NXSwapFloat(_: NXSwappedFloat) -> NXSwappedFloatAdded NXSwapHostDoubleToBig(_: Double) -> NXSwappedDoubleAdded NXSwapHostDoubleToLittle(_: Double) -> NXSwappedDoubleAdded NXSwapHostFloatToBig(_: Float) -> NXSwappedFloatAdded NXSwapHostFloatToLittle(_: Float) -> NXSwappedFloatAdded NXSwapHostIntToBig(_: UInt32) -> UInt32Added NXSwapHostIntToLittle(_: UInt32) -> UInt32Added NXSwapHostLongLongToBig(_: UInt64) -> UInt64Added NXSwapHostLongLongToLittle(_: UInt64) -> UInt64Added NXSwapHostLongToBig(_: UInt) -> UIntAdded NXSwapHostLongToLittle(_: UInt) -> UIntAdded NXSwapHostShortToBig(_: UInt16) -> UInt16Added NXSwapHostShortToLittle(_: UInt16) -> UInt16Added NXSwapInt(_: UInt32) -> UInt32Added NXSwapLittleDoubleToHost(_: NXSwappedDouble) -> DoubleAdded NXSwapLittleFloatToHost(_: NXSwappedFloat) -> FloatAdded NXSwapLittleIntToHost(_: UInt32) -> UInt32Added NXSwapLittleLongLongToHost(_: UInt64) -> UInt64Added NXSwapLittleLongToHost(_: UInt) -> UIntAdded NXSwapLittleShortToHost(_: UInt16) -> UInt16Added NXSwapLong(_: UInt) -> UIntAdded NXSwapLongLong(_: UInt64) -> UInt64Added NXSwapShort(_: UInt16) -> UInt16Added O_DP_GETRAWUNENCRYPTEDAdded opendev(_: UnsafeMutablePointer<Int8>, _: Int32, _: Int32, _: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>) -> Int32Added OPENDEV_BLCKAdded OPENDEV_PARTAdded openpty(_: UnsafeMutablePointer<Int32>, _: UnsafeMutablePointer<Int32>, _: UnsafeMutablePointer<Int8>, _: UnsafeMutablePointer<termios>, _: UnsafeMutablePointer<winsize>) -> Int32Added pidlock(_: UnsafePointer<Int8>, _: Int32, _: UnsafeMutablePointer<pid_t>, _: UnsafePointer<Int8>) -> Int32Added PIDLOCK_NONBLOCKAdded PIDLOCK_USEHOSTNAMEAdded readpassphrase(_: UnsafePointer<Int8>, _: UnsafeMutablePointer<Int8>, _: Int, _: Int32) -> UnsafeMutablePointer<Int8>Added removexattr(_: UnsafePointer<Int8>, _: UnsafePointer<Int8>, _: Int32) -> Int32Added RPP_ECHO_OFFAdded RPP_ECHO_ONAdded RPP_FORCELOWERAdded RPP_FORCEUPPERAdded RPP_REQUIRE_TTYAdded RPP_SEVENBITAdded sa_endpoints_tAdded SAE_ASSOCID_ANYAdded sae_associd_tAdded SAE_CONNID_ANYAdded sae_connid_tAdded sbrk(_: Int32) -> UnsafeMutablePointer<Void>Added sem_destroy(_: UnsafeMutablePointer<sem_t>) -> Int32Added sem_getvalue(_: UnsafeMutablePointer<sem_t>, _: UnsafeMutablePointer<Int32>) -> Int32Added sem_init(_: UnsafeMutablePointer<sem_t>, _: Int32, _: UInt32) -> Int32Added setxattr(_: UnsafePointer<Int8>, _: UnsafePointer<Int8>, _: UnsafePointer<Void>, _: Int, _: UInt32, _: Int32) -> Int32Added SF_NOUNLINKAdded SF_SUPPORTEDAdded SIG_DFLAdded SIG_ERRAdded SIG_HOLDAdded SIG_IGNAdded SYS_grab_pgo_dataAdded SYS_kdebug_trace_stringAdded SYS_kevent_qosAdded SYS_microstackshotAdded SYS_netagent_triggerAdded SYS_stack_snapshot_with_configAdded SYS_work_interval_ctlAdded TARGET_OS_IOSAdded TARGET_OS_NANOAdded TARGET_OS_SIMULATORAdded TARGET_OS_WATCHAdded TASK_DEBUG_INFO_INTERNALAdded TASK_FLAGS_INFOAdded task_flags_info_data_tAdded task_flags_info_tAdded TCP_CONNECTION_INFOAdded TCP_FASTOPENAdded TCPCI_FLAG_LOSSRECOVERYAdded TCPCI_FLAG_REORDERING_DETECTEDAdded TCPCI_OPT_ECNAdded TCPCI_OPT_SACKAdded TCPCI_OPT_TIMESTAMPSAdded TCPCI_OPT_WSCALEAdded TCPOLEN_FASTOPEN_REQAdded TCPOPT_FASTOPENAdded tempnam(_: UnsafePointer<Int8>, _: UnsafePointer<Int8>) -> UnsafeMutablePointer<Int8>Added TF_LP64Added TH_FLAGS_GLOBAL_FORCED_IDLEAdded THREAD_DEBUG_INFO_INTERNALAdded THREAD_EXTENDED_INFOAdded thread_extended_info_data_tAdded thread_extended_info_tAdded tmpnam(_: UnsafeMutablePointer<Int8>) -> UnsafeMutablePointer<Int8>Added ttyaction(_: UnsafeMutablePointer<Int8>, _: UnsafeMutablePointer<Int8>, _: UnsafeMutablePointer<Int8>) -> Int32Added ttylock(_: UnsafePointer<Int8>, _: Int32, _: UnsafeMutablePointer<pid_t>) -> Int32Added ttymsg(_: UnsafeMutablePointer<iovec>, _: Int32, _: UnsafePointer<Int8>, _: Int32) -> UnsafeMutablePointer<Int8>Added ttyunlock(_: UnsafePointer<Int8>) -> Int32Added verr(_: Int32, _: UnsafePointer<Int8>, _: __darwin_va_list)Added verrc(_: Int32, _: Int32, _: UnsafePointer<Int8>, _: __darwin_va_list)Added verrx(_: Int32, _: UnsafePointer<Int8>, _: __darwin_va_list)Added VM_FLAGS_RESILIENT_CODESIGNAdded VM_FLAGS_RESILIENT_MEDIAAdded VM_FLAGS_RETURN_4K_DATA_ADDRAdded VM_MEMORY_ASLAdded VM_MEMORY_CORPSEINFOAdded VM_MEMORY_RAWCAMERAAdded VM_PAGE_QUERY_PAGE_CS_NXAdded VM_PROT_MEMORY_TAG_MASKAdded VM_PROT_MEMORY_TAG_SHIFTAdded vwarn(_: UnsafePointer<Int8>, _: __darwin_va_list)Added vwarnc(_: Int32, _: UnsafePointer<Int8>, _: __darwin_va_list)Added vwarnx(_: UnsafePointer<Int8>, _: __darwin_va_list)Added XATTR_CREATEAdded XATTR_FINDERINFO_NAMEAdded xattr_flags_from_name(_: UnsafePointer<Int8>) -> xattr_flags_tAdded xattr_flags_tAdded xattr_intent_with_flags(_: xattr_operation_intent_t, _: xattr_flags_t) -> Int32Added XATTR_MAXNAMELENAdded xattr_name_with_flags(_: UnsafePointer<Int8>, _: xattr_flags_t) -> UnsafeMutablePointer<Int8>Added xattr_name_without_flags(_: UnsafePointer<Int8>) -> UnsafeMutablePointer<Int8>Added XATTR_NODEFAULTAdded XATTR_NOFOLLOWAdded XATTR_NOSECURITYAdded XATTR_OPERATION_INTENT_COPYAdded XATTR_OPERATION_INTENT_SAVEAdded XATTR_OPERATION_INTENT_SHAREAdded XATTR_OPERATION_INTENT_SYNCAdded xattr_operation_intent_tAdded xattr_preserve_for_intent(_: UnsafePointer<Int8>, _: xattr_operation_intent_t) -> Int32Added XATTR_REPLACEAdded XATTR_RESOURCEFORK_NAMEAdded XATTR_SHOWCOMPRESSIONAdded ||(_: T, _: () -> DarwinBoolean) -> BoolModified acl_entry_id_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct acl_entry_id_t {     init(_ value: Int32)     var value: Int32 } ``` | -- |
+| To | ``` struct acl_entry_id_t : RawRepresentable {     init(_ rawValue: Int32)     init(rawValue rawValue: Int32)     var rawValue: Int32 } ``` | RawRepresentable |
+
+Modified acl_flag_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct acl_flag_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct acl_flag_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified acl_perm_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct acl_perm_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct acl_perm_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified acl_tag_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct acl_tag_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct acl_tag_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified acl_type_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct acl_type_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct acl_type_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified ACTION [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct ACTION {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct ACTION : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified dirent [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` struct dirent {     var d_ino: __uint64_t     var d_seekoff: __uint64_t     var d_reclen: __uint16_t     var d_namlen: __uint16_t     var d_type: __uint8_t     var d_name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     init()     init(d_ino d_ino: __uint64_t, d_seekoff d_seekoff: __uint64_t, d_reclen d_reclen: __uint16_t, d_namlen d_namlen: __uint16_t, d_type d_type: __uint8_t, d_name d_name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)) } ``` |
+
+Modified filesec_property_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct filesec_property_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct filesec_property_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified glob_t [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct glob_t {     var gl_pathc: Int     var gl_matchc: Int32     var gl_offs: Int     var gl_flags: Int32     var gl_pathv: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>     var gl_closedir: CFunctionPointer<((UnsafeMutablePointer<Void>) -> Void)>     var gl_readdir: CFunctionPointer<((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<dirent>)>     var gl_opendir: CFunctionPointer<((UnsafePointer<Int8>) -> UnsafeMutablePointer<Void>)>     var gl_lstat: CFunctionPointer<((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)>     var gl_stat: CFunctionPointer<((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)>     init() } ``` |
+| To | ``` struct glob_t {     var gl_pathc: Int     var gl_matchc: Int32     var gl_offs: Int     var gl_flags: Int32     var gl_pathv: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>     var gl_closedir: ((UnsafeMutablePointer<Void>) -> Void)!     var gl_readdir: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<dirent>)!     var gl_opendir: ((UnsafePointer<Int8>) -> UnsafeMutablePointer<Void>)!     var gl_lstat: ((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)!     var gl_stat: ((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)!     init() } ``` |
+
+Modified glob_t.gl_closedir
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gl_closedir: CFunctionPointer<((UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` var gl_closedir: ((UnsafeMutablePointer<Void>) -> Void)! ``` |
+
+Modified glob_t.gl_lstat
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gl_lstat: CFunctionPointer<((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)> ``` |
+| To | ``` var gl_lstat: ((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)! ``` |
+
+Modified glob_t.gl_opendir
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gl_opendir: CFunctionPointer<((UnsafePointer<Int8>) -> UnsafeMutablePointer<Void>)> ``` |
+| To | ``` var gl_opendir: ((UnsafePointer<Int8>) -> UnsafeMutablePointer<Void>)! ``` |
+
+Modified glob_t.gl_readdir
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gl_readdir: CFunctionPointer<((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<dirent>)> ``` |
+| To | ``` var gl_readdir: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<dirent>)! ``` |
+
+Modified glob_t.gl_stat
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gl_stat: CFunctionPointer<((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)> ``` |
+| To | ``` var gl_stat: ((UnsafePointer<Int8>, UnsafeMutablePointer<stat>) -> Int32)! ``` |
+
+Modified iconv_fallbacks [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct iconv_fallbacks {     var mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback     var uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback     var mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback     var wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback     var data: UnsafeMutablePointer<Void>     init()     init(mb_to_uc_fallback mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback, uc_to_mb_fallback uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback, mb_to_wc_fallback mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback, wc_to_mb_fallback wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback, data data: UnsafeMutablePointer<Void>) } ``` |
+| To | ``` struct iconv_fallbacks {     var mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback!     var uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback!     var mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback!     var wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback!     var data: UnsafeMutablePointer<Void>     init()     init(mb_to_uc_fallback mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback!, uc_to_mb_fallback uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback!, mb_to_wc_fallback mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback!, wc_to_mb_fallback wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback!, data data: UnsafeMutablePointer<Void>) } ``` |
+
+Modified iconv_fallbacks.mb_to_uc_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback ``` |
+| To | ``` var mb_to_uc_fallback: iconv_unicode_mb_to_uc_fallback! ``` |
+
+Modified iconv_fallbacks.mb_to_wc_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback ``` |
+| To | ``` var mb_to_wc_fallback: iconv_wchar_mb_to_wc_fallback! ``` |
+
+Modified iconv_fallbacks.uc_to_mb_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback ``` |
+| To | ``` var uc_to_mb_fallback: iconv_unicode_uc_to_mb_fallback! ``` |
+
+Modified iconv_fallbacks.wc_to_mb_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback ``` |
+| To | ``` var wc_to_mb_fallback: iconv_wchar_wc_to_mb_fallback! ``` |
+
+Modified iconv_hooks [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct iconv_hooks {     var uc_hook: iconv_unicode_char_hook     var wc_hook: iconv_wide_char_hook     var data: UnsafeMutablePointer<Void>     init()     init(uc_hook uc_hook: iconv_unicode_char_hook, wc_hook wc_hook: iconv_wide_char_hook, data data: UnsafeMutablePointer<Void>) } ``` |
+| To | ``` struct iconv_hooks {     var uc_hook: iconv_unicode_char_hook!     var wc_hook: iconv_wide_char_hook!     var data: UnsafeMutablePointer<Void>     init()     init(uc_hook uc_hook: iconv_unicode_char_hook!, wc_hook wc_hook: iconv_wide_char_hook!, data data: UnsafeMutablePointer<Void>) } ``` |
+
+Modified iconv_hooks.uc_hook
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var uc_hook: iconv_unicode_char_hook ``` |
+| To | ``` var uc_hook: iconv_unicode_char_hook! ``` |
+
+Modified iconv_hooks.wc_hook
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var wc_hook: iconv_wide_char_hook ``` |
+| To | ``` var wc_hook: iconv_wide_char_hook! ``` |
+
+Modified idtype_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct idtype_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct idtype_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified kmod_info [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct kmod_info {     var next: UnsafeMutablePointer<kmod_info>     var info_version: Int32     var id: UInt32     var name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var reference_count: Int32     var reference_list: UnsafeMutablePointer<kmod_reference_t>     var address: vm_address_t     var size: vm_size_t     var hdr_size: vm_size_t     var start: CFunctionPointer<kmod_start_func_t>     var stop: CFunctionPointer<kmod_stop_func_t>     init()     init(next next: UnsafeMutablePointer<kmod_info>, info_version info_version: Int32, id id: UInt32, name name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), reference_count reference_count: Int32, reference_list reference_list: UnsafeMutablePointer<kmod_reference_t>, address address: vm_address_t, size size: vm_size_t, hdr_size hdr_size: vm_size_t, start start: CFunctionPointer<kmod_start_func_t>, stop stop: CFunctionPointer<kmod_stop_func_t>) } ``` |
+| To | ``` struct kmod_info {     var next: UnsafeMutablePointer<kmod_info>     var info_version: Int32     var id: UInt32     var name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var reference_count: Int32     var reference_list: UnsafeMutablePointer<kmod_reference_t>     var address: vm_address_t     var size: vm_size_t     var hdr_size: vm_size_t     var start: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!     var stop: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!     init()     init(next next: UnsafeMutablePointer<kmod_info>, info_version info_version: Int32, id id: UInt32, name name: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), reference_count reference_count: Int32, reference_list reference_list: UnsafeMutablePointer<kmod_reference_t>, address address: vm_address_t, size size: vm_size_t, hdr_size hdr_size: vm_size_t, start start: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!, stop stop: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)!) } ``` |
+
+Modified kmod_info.start
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var start: CFunctionPointer<kmod_start_func_t> ``` |
+| To | ``` var start: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)! ``` |
+
+Modified kmod_info.stop
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var stop: CFunctionPointer<kmod_stop_func_t> ``` |
+| To | ``` var stop: ((UnsafeMutablePointer<kmod_info>, UnsafeMutablePointer<Void>) -> kern_return_t)! ``` |
+
+Modified mach_port_guard_exception_codes [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct mach_port_guard_exception_codes {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct mach_port_guard_exception_codes : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified malloc_introspection_t [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct malloc_introspection_t {     var enumerator: CFunctionPointer<((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, CFunctionPointer<memory_reader_t>, CFunctionPointer<vm_range_recorder_t>) -> kern_return_t)>     var good_size: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)>     var check: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>     var print: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)>     var log: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>     var force_lock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>     var force_unlock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>     var statistics: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)>     var zone_locked: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>     var enable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>     var disable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>     var discharge: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>     var enumerate_discharged_pointers: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)>     init()     init(enumerator enumerator: CFunctionPointer<((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, CFunctionPointer<memory_reader_t>, CFunctionPointer<vm_range_recorder_t>) -> kern_return_t)>, good_size good_size: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)>, check check: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, print print: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)>, log log: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>, force_lock force_lock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, force_unlock force_unlock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, statistics statistics: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)>, zone_locked zone_locked: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, enable_discharge_checking enable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)>, disable_discharge_checking disable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)>, discharge discharge: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)>, enumerate_discharged_pointers enumerate_discharged_pointers: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)>) } ``` |
+| To | ``` struct malloc_introspection_t {     var enumerator: ((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, ((task_t, UnsafeMutablePointer<Void>, UInt32, UnsafeMutablePointer<vm_range_t>, UInt32) -> Void)!) -> kern_return_t)!     var good_size: ((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)!     var check: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!     var print: ((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)!     var log: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!     var force_lock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!     var force_unlock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!     var statistics: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)!     var zone_locked: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!     var enable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!     var disable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!     var discharge: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!     var enumerate_discharged_pointers: ((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)!     init()     init(enumerator enumerator: ((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, ((task_t, UnsafeMutablePointer<Void>, UInt32, UnsafeMutablePointer<vm_range_t>, UInt32) -> Void)!) -> kern_return_t)!, good_size good_size: ((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)!, check check: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, print print: ((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)!, log log: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!, force_lock force_lock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, force_unlock force_unlock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, statistics statistics: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)!, zone_locked zone_locked: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, enable_discharge_checking enable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)!, disable_discharge_checking disable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)!, discharge discharge: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)!, enumerate_discharged_pointers enumerate_discharged_pointers: ((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)!) } ``` |
+
+Modified malloc_introspection_t.check
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var check: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)> ``` |
+| To | ``` var check: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)! ``` |
+
+Modified malloc_introspection_t.disable_discharge_checking
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var disable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)> ``` |
+| To | ``` var disable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)! ``` |
+
+Modified malloc_introspection_t.discharge
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var discharge: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` var discharge: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)! ``` |
+
+Modified malloc_introspection_t.enable_discharge_checking
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var enable_discharge_checking: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)> ``` |
+| To | ``` var enable_discharge_checking: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)! ``` |
+
+Modified malloc_introspection_t.enumerate_discharged_pointers
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var enumerate_discharged_pointers: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)> ``` |
+| To | ``` var enumerate_discharged_pointers: ((UnsafeMutablePointer<malloc_zone_t>, ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)!) -> Void)! ``` |
+
+Modified malloc_introspection_t.enumerator
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var enumerator: CFunctionPointer<((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, CFunctionPointer<memory_reader_t>, CFunctionPointer<vm_range_recorder_t>) -> kern_return_t)> ``` |
+| To | ``` var enumerator: ((task_t, UnsafeMutablePointer<Void>, UInt32, vm_address_t, ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, ((task_t, UnsafeMutablePointer<Void>, UInt32, UnsafeMutablePointer<vm_range_t>, UInt32) -> Void)!) -> kern_return_t)! ``` |
+
+Modified malloc_introspection_t.force_lock
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var force_lock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)> ``` |
+| To | ``` var force_lock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)! ``` |
+
+Modified malloc_introspection_t.force_unlock
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var force_unlock: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> Void)> ``` |
+| To | ``` var force_unlock: ((UnsafeMutablePointer<malloc_zone_t>) -> Void)! ``` |
+
+Modified malloc_introspection_t.good_size
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var good_size: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)> ``` |
+| To | ``` var good_size: ((UnsafeMutablePointer<malloc_zone_t>, Int) -> Int)! ``` |
+
+Modified malloc_introspection_t.log
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var log: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` var log: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<Void>) -> Void)! ``` |
+
+Modified malloc_introspection_t.print
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var print: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)> ``` |
+| To | ``` var print: ((UnsafeMutablePointer<malloc_zone_t>, boolean_t) -> Void)! ``` |
+
+Modified malloc_introspection_t.statistics
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var statistics: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)> ``` |
+| To | ``` var statistics: ((UnsafeMutablePointer<malloc_zone_t>, UnsafeMutablePointer<malloc_statistics_t>) -> Void)! ``` |
+
+Modified malloc_introspection_t.zone_locked
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var zone_locked: CFunctionPointer<((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)> ``` |
+| To | ``` var zone_locked: ((UnsafeMutablePointer<malloc_zone_t>) -> boolean_t)! ``` |
+
+Modified mig_subsystem [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct mig_subsystem {     var server: mig_server_routine_t     var start: mach_msg_id_t     var end: mach_msg_id_t     var maxsize: mach_msg_size_t     var reserved: vm_address_t     var routine: (mig_routine_descriptor)     init()     init(server server: mig_server_routine_t, start start: mach_msg_id_t, end end: mach_msg_id_t, maxsize maxsize: mach_msg_size_t, reserved reserved: vm_address_t, routine routine: (mig_routine_descriptor)) } ``` |
+| To | ``` struct mig_subsystem {     var server: mig_server_routine_t!     var start: mach_msg_id_t     var end: mach_msg_id_t     var maxsize: mach_msg_size_t     var reserved: vm_address_t     var routine: (mig_routine_descriptor)     init()     init(server server: mig_server_routine_t!, start start: mach_msg_id_t, end end: mach_msg_id_t, maxsize maxsize: mach_msg_size_t, reserved reserved: vm_address_t, routine routine: (mig_routine_descriptor)) } ``` |
+
+Modified mig_subsystem.server
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var server: mig_server_routine_t ``` |
+| To | ``` var server: mig_server_routine_t! ``` |
+
+Modified mig_symtab [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct mig_symtab {     var ms_routine_name: UnsafeMutablePointer<Int8>     var ms_routine_number: Int32     var ms_routine: CFunctionPointer<(() -> Void)>     init()     init(ms_routine_name ms_routine_name: UnsafeMutablePointer<Int8>, ms_routine_number ms_routine_number: Int32, ms_routine ms_routine: CFunctionPointer<(() -> Void)>) } ``` |
+| To | ``` struct mig_symtab {     var ms_routine_name: UnsafeMutablePointer<Int8>     var ms_routine_number: Int32     var ms_routine: (() -> Void)!     init()     init(ms_routine_name ms_routine_name: UnsafeMutablePointer<Int8>, ms_routine_number ms_routine_number: Int32, ms_routine ms_routine: (() -> Void)!) } ``` |
+
+Modified mig_symtab.ms_routine
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var ms_routine: CFunctionPointer<(() -> Void)> ``` |
+| To | ``` var ms_routine: (() -> Void)! ``` |
+
+Modified NXByteOrder [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct NXByteOrder {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct NXByteOrder : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified qos_class_t [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct qos_class_t {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct qos_class_t : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified rb_tree_ops_t [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct rb_tree_ops_t {     var rbto_compare_nodes: rbto_compare_nodes_fn     var rbto_compare_key: rbto_compare_key_fn     var rbto_node_offset: Int     var rbto_context: UnsafeMutablePointer<Void>     init()     init(rbto_compare_nodes rbto_compare_nodes: rbto_compare_nodes_fn, rbto_compare_key rbto_compare_key: rbto_compare_key_fn, rbto_node_offset rbto_node_offset: Int, rbto_context rbto_context: UnsafeMutablePointer<Void>) } ``` |
+| To | ``` struct rb_tree_ops_t {     var rbto_compare_nodes: rbto_compare_nodes_fn!     var rbto_compare_key: rbto_compare_key_fn!     var rbto_node_offset: Int     var rbto_context: UnsafeMutablePointer<Void>     init()     init(rbto_compare_nodes rbto_compare_nodes: rbto_compare_nodes_fn!, rbto_compare_key rbto_compare_key: rbto_compare_key_fn!, rbto_node_offset rbto_node_offset: Int, rbto_context rbto_context: UnsafeMutablePointer<Void>) } ``` |
+
+Modified rb_tree_ops_t.rbto_compare_key
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var rbto_compare_key: rbto_compare_key_fn ``` |
+| To | ``` var rbto_compare_key: rbto_compare_key_fn! ``` |
+
+Modified rb_tree_ops_t.rbto_compare_nodes
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var rbto_compare_nodes: rbto_compare_nodes_fn ``` |
+| To | ``` var rbto_compare_nodes: rbto_compare_nodes_fn! ``` |
+
+Modified routine_descriptor [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct routine_descriptor {     var impl_routine: mig_impl_routine_t     var stub_routine: mig_stub_routine_t     var argc: UInt32     var descr_count: UInt32     var arg_descr: routine_arg_descriptor_t     var max_reply_msg: UInt32     init()     init(impl_routine impl_routine: mig_impl_routine_t, stub_routine stub_routine: mig_stub_routine_t, argc argc: UInt32, descr_count descr_count: UInt32, arg_descr arg_descr: routine_arg_descriptor_t, max_reply_msg max_reply_msg: UInt32) } ``` |
+| To | ``` struct routine_descriptor {     var impl_routine: mig_impl_routine_t!     var stub_routine: mig_stub_routine_t!     var argc: UInt32     var descr_count: UInt32     var arg_descr: routine_arg_descriptor_t     var max_reply_msg: UInt32     init()     init(impl_routine impl_routine: mig_impl_routine_t!, stub_routine stub_routine: mig_stub_routine_t!, argc argc: UInt32, descr_count descr_count: UInt32, arg_descr arg_descr: routine_arg_descriptor_t, max_reply_msg max_reply_msg: UInt32) } ``` |
+
+Modified routine_descriptor.impl_routine
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var impl_routine: mig_impl_routine_t ``` |
+| To | ``` var impl_routine: mig_impl_routine_t! ``` |
+
+Modified routine_descriptor.stub_routine
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var stub_routine: mig_stub_routine_t ``` |
+| To | ``` var stub_routine: mig_stub_routine_t! ``` |
+
+Modified rpc_routine_descriptor [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct rpc_routine_descriptor {     var impl_routine: mig_impl_routine_t     var stub_routine: mig_stub_routine_t     var argc: UInt32     var descr_count: UInt32     var arg_descr: rpc_routine_arg_descriptor_t     var max_reply_msg: UInt32     init()     init(impl_routine impl_routine: mig_impl_routine_t, stub_routine stub_routine: mig_stub_routine_t, argc argc: UInt32, descr_count descr_count: UInt32, arg_descr arg_descr: rpc_routine_arg_descriptor_t, max_reply_msg max_reply_msg: UInt32) } ``` |
+| To | ``` struct rpc_routine_descriptor {     var impl_routine: mig_impl_routine_t!     var stub_routine: mig_stub_routine_t!     var argc: UInt32     var descr_count: UInt32     var arg_descr: rpc_routine_arg_descriptor_t     var max_reply_msg: UInt32     init()     init(impl_routine impl_routine: mig_impl_routine_t!, stub_routine stub_routine: mig_stub_routine_t!, argc argc: UInt32, descr_count descr_count: UInt32, arg_descr arg_descr: rpc_routine_arg_descriptor_t, max_reply_msg max_reply_msg: UInt32) } ``` |
+
+Modified rpc_routine_descriptor.impl_routine
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var impl_routine: mig_impl_routine_t ``` |
+| To | ``` var impl_routine: mig_impl_routine_t! ``` |
+
+Modified rpc_routine_descriptor.stub_routine
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var stub_routine: mig_stub_routine_t ``` |
+| To | ``` var stub_routine: mig_stub_routine_t! ``` |
+
+Modified sigevent [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct sigevent {     var sigev_notify: Int32     var sigev_signo: Int32     var sigev_value: sigval     var sigev_notify_function: CFunctionPointer<((sigval) -> Void)>     var sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>     init()     init(sigev_notify sigev_notify: Int32, sigev_signo sigev_signo: Int32, sigev_value sigev_value: sigval, sigev_notify_function sigev_notify_function: CFunctionPointer<((sigval) -> Void)>, sigev_notify_attributes sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>) } ``` |
+| To | ``` struct sigevent {     var sigev_notify: Int32     var sigev_signo: Int32     var sigev_value: sigval     var sigev_notify_function: ((sigval) -> Void)!     var sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>     init()     init(sigev_notify sigev_notify: Int32, sigev_signo sigev_signo: Int32, sigev_value sigev_value: sigval, sigev_notify_function sigev_notify_function: ((sigval) -> Void)!, sigev_notify_attributes sigev_notify_attributes: UnsafeMutablePointer<pthread_attr_t>) } ``` |
+
+Modified sigevent.sigev_notify_function
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var sigev_notify_function: CFunctionPointer<((sigval) -> Void)> ``` |
+| To | ``` var sigev_notify_function: ((sigval) -> Void)! ``` |
+
+Modified sigvec [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct sigvec {     var sv_handler: CFunctionPointer<((Int32) -> Void)>     var sv_mask: Int32     var sv_flags: Int32     init()     init(sv_handler sv_handler: CFunctionPointer<((Int32) -> Void)>, sv_mask sv_mask: Int32, sv_flags sv_flags: Int32) } ``` |
+| To | ``` struct sigvec {     var sv_handler: ((Int32) -> Void)!     var sv_mask: Int32     var sv_flags: Int32     init()     init(sv_handler sv_handler: ((Int32) -> Void)!, sv_mask sv_mask: Int32, sv_flags sv_flags: Int32) } ``` |
+
+Modified sigvec.sv_handler
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var sv_handler: CFunctionPointer<((Int32) -> Void)> ``` |
+| To | ``` var sv_handler: ((Int32) -> Void)! ``` |
+
+Modified statfs [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` struct statfs {     var f_bsize: UInt32     var f_iosize: Int32     var f_blocks: UInt64     var f_bfree: UInt64     var f_bavail: UInt64     var f_files: UInt64     var f_ffree: UInt64     var f_fsid: fsid_t     var f_owner: uid_t     var f_type: UInt32     var f_flags: UInt32     var f_fssubtype: UInt32     var f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_reserved: (UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32)     init()     init(f_bsize f_bsize: UInt32, f_iosize f_iosize: Int32, f_blocks f_blocks: UInt64, f_bfree f_bfree: UInt64, f_bavail f_bavail: UInt64, f_files f_files: UInt64, f_ffree f_ffree: UInt64, f_fsid f_fsid: fsid_t, f_owner f_owner: uid_t, f_type f_type: UInt32, f_flags f_flags: UInt32, f_fssubtype f_fssubtype: UInt32, f_fstypename f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntonname f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntfromname f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_reserved f_reserved: (UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32)) } ``` |
+
+Modified task_latency_qos [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct task_latency_qos {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct task_latency_qos : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified task_role [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct task_role {     init(_ value: Int32)     var value: Int32 } ``` | -- |
+| To | ``` struct task_role : RawRepresentable {     init(_ rawValue: Int32)     init(rawValue rawValue: Int32)     var rawValue: Int32 } ``` | RawRepresentable |
+
+Modified task_throughput_qos [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct task_throughput_qos {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct task_throughput_qos : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified task_vm_info [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct task_vm_info {     var virtual_size: mach_vm_size_t     var region_count: integer_t     var page_size: integer_t     var resident_size: mach_vm_size_t     var resident_size_peak: mach_vm_size_t     var device: mach_vm_size_t     var device_peak: mach_vm_size_t     var `internal`: mach_vm_size_t     var internal_peak: mach_vm_size_t     var external: mach_vm_size_t     var external_peak: mach_vm_size_t     var reusable: mach_vm_size_t     var reusable_peak: mach_vm_size_t     var purgeable_volatile_pmap: mach_vm_size_t     var purgeable_volatile_resident: mach_vm_size_t     var purgeable_volatile_virtual: mach_vm_size_t     var compressed: mach_vm_size_t     var compressed_peak: mach_vm_size_t     var compressed_lifetime: mach_vm_size_t     init()     init(virtual_size virtual_size: mach_vm_size_t, region_count region_count: integer_t, page_size page_size: integer_t, resident_size resident_size: mach_vm_size_t, resident_size_peak resident_size_peak: mach_vm_size_t, device device: mach_vm_size_t, device_peak device_peak: mach_vm_size_t, `internal` `internal`: mach_vm_size_t, internal_peak internal_peak: mach_vm_size_t, external external: mach_vm_size_t, external_peak external_peak: mach_vm_size_t, reusable reusable: mach_vm_size_t, reusable_peak reusable_peak: mach_vm_size_t, purgeable_volatile_pmap purgeable_volatile_pmap: mach_vm_size_t, purgeable_volatile_resident purgeable_volatile_resident: mach_vm_size_t, purgeable_volatile_virtual purgeable_volatile_virtual: mach_vm_size_t, compressed compressed: mach_vm_size_t, compressed_peak compressed_peak: mach_vm_size_t, compressed_lifetime compressed_lifetime: mach_vm_size_t) } ``` |
+| To | ``` struct task_vm_info {     var virtual_size: mach_vm_size_t     var region_count: integer_t     var page_size: integer_t     var resident_size: mach_vm_size_t     var resident_size_peak: mach_vm_size_t     var device: mach_vm_size_t     var device_peak: mach_vm_size_t     var `internal`: mach_vm_size_t     var internal_peak: mach_vm_size_t     var external: mach_vm_size_t     var external_peak: mach_vm_size_t     var reusable: mach_vm_size_t     var reusable_peak: mach_vm_size_t     var purgeable_volatile_pmap: mach_vm_size_t     var purgeable_volatile_resident: mach_vm_size_t     var purgeable_volatile_virtual: mach_vm_size_t     var compressed: mach_vm_size_t     var compressed_peak: mach_vm_size_t     var compressed_lifetime: mach_vm_size_t     var phys_footprint: mach_vm_size_t     init()     init(virtual_size virtual_size: mach_vm_size_t, region_count region_count: integer_t, page_size page_size: integer_t, resident_size resident_size: mach_vm_size_t, resident_size_peak resident_size_peak: mach_vm_size_t, device device: mach_vm_size_t, device_peak device_peak: mach_vm_size_t, `internal` `internal`: mach_vm_size_t, internal_peak internal_peak: mach_vm_size_t, external external: mach_vm_size_t, external_peak external_peak: mach_vm_size_t, reusable reusable: mach_vm_size_t, reusable_peak reusable_peak: mach_vm_size_t, purgeable_volatile_pmap purgeable_volatile_pmap: mach_vm_size_t, purgeable_volatile_resident purgeable_volatile_resident: mach_vm_size_t, purgeable_volatile_virtual purgeable_volatile_virtual: mach_vm_size_t, compressed compressed: mach_vm_size_t, compressed_peak compressed_peak: mach_vm_size_t, compressed_lifetime compressed_lifetime: mach_vm_size_t, phys_footprint phys_footprint: mach_vm_size_t) } ``` |
+
+Modified uio_rw [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct uio_rw {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct uio_rw : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified utsname [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` struct utsname {     var sysname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var nodename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var release: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var machine: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     init()     init(sysname sysname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), nodename nodename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), release release: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), version version: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), machine machine: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)) } ``` |
+
+Modified vfs_server [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` struct vfs_server {     var vs_minutes: Int32     var vs_server_name: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)     init()     init(vs_minutes vs_minutes: Int32, vs_server_name vs_server_name: (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)) } ``` |
+
+Modified vfsstatfs [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` struct vfsstatfs {     var f_bsize: UInt32     var f_iosize: Int     var f_blocks: UInt64     var f_bfree: UInt64     var f_bavail: UInt64     var f_bused: UInt64     var f_files: UInt64     var f_ffree: UInt64     var f_fsid: fsid_t     var f_owner: uid_t     var f_flags: UInt64     var f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8)     var f_fssubtype: UInt32     var f_reserved: (UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>)     init()     init(f_bsize f_bsize: UInt32, f_iosize f_iosize: Int, f_blocks f_blocks: UInt64, f_bfree f_bfree: UInt64, f_bavail f_bavail: UInt64, f_bused f_bused: UInt64, f_files f_files: UInt64, f_ffree f_ffree: UInt64, f_fsid f_fsid: fsid_t, f_owner f_owner: uid_t, f_flags f_flags: UInt64, f_fstypename f_fstypename: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntonname f_mntonname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_mntfromname f_mntfromname: (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8), f_fssubtype f_fssubtype: UInt32, f_reserved f_reserved: (UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>)) } ``` |
+
+Modified VISIT [struct]
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct VISIT {     init(_ value: UInt32)     var value: UInt32 } ``` | -- |
+| To | ``` struct VISIT : RawRepresentable {     init(_ rawValue: UInt32)     init(rawValue rawValue: UInt32)     var rawValue: UInt32 } ``` | RawRepresentable |
+
+Modified acos(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func acos(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func acos(_ x: Float) -> Float ``` |
+
+Modified acosh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func acosh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func acosh(_ x: Float) -> Float ``` |
+
+Modified asin(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func asin(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func asin(_ x: Float) -> Float ``` |
+
+Modified asinh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func asinh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func asinh(_ x: Float) -> Float ``` |
+
+Modified atan(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func atan(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func atan(_ x: Float) -> Float ``` |
+
+Modified atan2(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func atan2(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func atan2(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified atanh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func atanh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func atanh(_ x: Float) -> Float ``` |
+
+Modified atexit(_: (() -> Void)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func atexit(_ _: CFunctionPointer<(() -> Void)>) -> Int32 ``` |
+| To | ``` func atexit(_ _: (() -> Void)!) -> Int32 ``` |
+
+Modified bsd_signal(_: Int32, _: ((Int32) -> Void)!) -> ((Int32) -> Void)!
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func bsd_signal(_ _: Int32, _ _: CFunctionPointer<((Int32) -> Void)>) -> CFunctionPointer<((Int32) -> Void)> ``` |
+| To | ``` func bsd_signal(_ _: Int32, _ _: ((Int32) -> Void)!) -> ((Int32) -> Void)! ``` |
+
+Modified bsearch(_: UnsafePointer<Void>, _: UnsafePointer<Void>, _: Int, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func bsearch(_ _: UnsafePointer<Void>, _ _: UnsafePointer<Void>, _ _: Int, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func bsearch(_ _: UnsafePointer<Void>, _ _: UnsafePointer<Void>, _ _: Int, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified cbrt(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func cbrt(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func cbrt(_ x: Float) -> Float ``` |
+
+Modified ceil(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ceil(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func ceil(_ x: Double) -> Double ``` |
+
+Modified ceil(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ceil(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func ceil(_ x: Float) -> Float ``` |
+
+Modified copysign(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func copysign(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func copysign(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified cos(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func cos(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func cos(_ x: Double) -> Double ``` |
+
+Modified cos(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func cos(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func cos(_ x: Float) -> Float ``` |
+
+Modified cosh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func cosh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func cosh(_ x: Float) -> Float ``` |
+
+Modified erf(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func erf(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func erf(_ x: Float) -> Float ``` |
+
+Modified erfc(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func erfc(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func erfc(_ x: Float) -> Float ``` |
+
+Modified exp(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func exp(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func exp(_ x: Float) -> Float ``` |
+
+Modified exp(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func exp(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func exp(_ x: Double) -> Double ``` |
+
+Modified exp2(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func exp2(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func exp2(_ x: Double) -> Double ``` |
+
+Modified exp2(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func exp2(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func exp2(_ x: Float) -> Float ``` |
+
+Modified expm1(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func expm1(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func expm1(_ x: Float) -> Float ``` |
+
+Modified fabs(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fabs(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fabs(_ x: Float) -> Float ``` |
+
+Modified fabs(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fabs(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func fabs(_ x: Double) -> Double ``` |
+
+Modified fdim(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fdim(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fdim(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified floor(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func floor(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func floor(_ x: Double) -> Double ``` |
+
+Modified floor(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func floor(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func floor(_ x: Float) -> Float ``` |
+
+Modified fma(_: Float, _: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fma(_ x: Float, _ y: Float, _ z: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fma(_ x: Float, _ y: Float, _ z: Float) -> Float ``` |
+
+Modified fmax(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fmax(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fmax(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified fmin(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fmin(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fmin(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified fmod(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fmod(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func fmod(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified fpclassify(_: Float) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fpclassify(_ x: Float) -> Int ``` |
+| To | ``` @warn_unused_result func fpclassify(_ x: Float) -> Int ``` |
+
+Modified fpclassify(_: Double) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func fpclassify(_ x: Double) -> Int ``` |
+| To | ``` @warn_unused_result func fpclassify(_ x: Double) -> Int ``` |
+
+Modified frexp(_: Float) -> (Float, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func frexp(_ value: Float) -> (Float, Int) ``` |
+| To | ``` @warn_unused_result func frexp(_ value: Float) -> (Float, Int) ``` |
+
+Modified frexp(_: Double) -> (Double, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func frexp(_ value: Double) -> (Double, Int) ``` |
+| To | ``` @warn_unused_result func frexp(_ value: Double) -> (Double, Int) ``` |
+
+Modified ftw(_: UnsafePointer<Int8>, _: ((UnsafePointer<Int8>, UnsafePointer<stat>, Int32) -> Int32)!, _: Int32) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ftw(_ _: UnsafePointer<Int8>, _ _: CFunctionPointer<((UnsafePointer<Int8>, UnsafePointer<stat>, Int32) -> Int32)>, _ _: Int32) -> Int32 ``` |
+| To | ``` func ftw(_ _: UnsafePointer<Int8>, _ _: ((UnsafePointer<Int8>, UnsafePointer<stat>, Int32) -> Int32)!, _ _: Int32) -> Int32 ``` |
+
+Modified funopen(_: UnsafePointer<Void>, _: ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Int8>, Int32) -> Int32)!, _: ((UnsafeMutablePointer<Void>, UnsafePointer<Int8>, Int32) -> Int32)!, _: ((UnsafeMutablePointer<Void>, fpos_t, Int32) -> fpos_t)!, _: ((UnsafeMutablePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<FILE>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func funopen(_ _: UnsafePointer<Void>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Int8>, Int32) -> Int32)>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafePointer<Int8>, Int32) -> Int32)>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>, fpos_t, Int32) -> fpos_t)>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<FILE> ``` |
+| To | ``` func funopen(_ _: UnsafePointer<Void>, _ _: ((UnsafeMutablePointer<Void>, UnsafeMutablePointer<Int8>, Int32) -> Int32)!, _ _: ((UnsafeMutablePointer<Void>, UnsafePointer<Int8>, Int32) -> Int32)!, _ _: ((UnsafeMutablePointer<Void>, fpos_t, Int32) -> fpos_t)!, _ _: ((UnsafeMutablePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<FILE> ``` |
+
+Modified glob(_: UnsafePointer<Int8>, _: Int32, _: ((UnsafePointer<Int8>, Int32) -> Int32)!, _: UnsafeMutablePointer<glob_t>) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func glob(_ _: UnsafePointer<Int8>, _ _: Int32, _ _: CFunctionPointer<((UnsafePointer<Int8>, Int32) -> Int32)>, _ _: UnsafeMutablePointer<glob_t>) -> Int32 ``` |
+| To | ``` func glob(_ _: UnsafePointer<Int8>, _ _: Int32, _ _: ((UnsafePointer<Int8>, Int32) -> Int32)!, _ _: UnsafeMutablePointer<glob_t>) -> Int32 ``` |
+
+Modified heapsort(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func heapsort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> Int32 ``` |
+| To | ``` func heapsort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> Int32 ``` |
+
+Modified host_info_data_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias host_info_data_t = (integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t) ``` |
+
+Modified hypot(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func hypot(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func hypot(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified iconv_unicode_char_hook
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_unicode_char_hook = CFunctionPointer<((UInt32, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_unicode_char_hook = (UInt32, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconv_unicode_mb_to_uc_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_unicode_mb_to_uc_fallback = CFunctionPointer<((UnsafePointer<Int8>, Int, CFunctionPointer<((UnsafePointer<UInt32>, Int, UnsafeMutablePointer<Void>) -> Void)>, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_unicode_mb_to_uc_fallback = (UnsafePointer<Int8>, Int, ((UnsafePointer<UInt32>, Int, UnsafeMutablePointer<Void>) -> Void)!, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconv_unicode_uc_to_mb_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_unicode_uc_to_mb_fallback = CFunctionPointer<((UInt32, CFunctionPointer<((UnsafePointer<Int8>, Int, UnsafeMutablePointer<Void>) -> Void)>, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_unicode_uc_to_mb_fallback = (UInt32, ((UnsafePointer<Int8>, Int, UnsafeMutablePointer<Void>) -> Void)!, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconv_wchar_mb_to_wc_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_wchar_mb_to_wc_fallback = CFunctionPointer<((UnsafePointer<Int8>, Int, CFunctionPointer<((UnsafePointer<wchar_t>, Int, UnsafeMutablePointer<Void>) -> Void)>, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_wchar_mb_to_wc_fallback = (UnsafePointer<Int8>, Int, ((UnsafePointer<wchar_t>, Int, UnsafeMutablePointer<Void>) -> Void)!, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconv_wchar_wc_to_mb_fallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_wchar_wc_to_mb_fallback = CFunctionPointer<((wchar_t, CFunctionPointer<((UnsafePointer<Int8>, Int, UnsafeMutablePointer<Void>) -> Void)>, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_wchar_wc_to_mb_fallback = (wchar_t, ((UnsafePointer<Int8>, Int, UnsafeMutablePointer<Void>) -> Void)!, UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconv_wide_char_hook
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias iconv_wide_char_hook = CFunctionPointer<((wchar_t, UnsafeMutablePointer<Void>) -> Void)> ``` |
+| To | ``` typealias iconv_wide_char_hook = (wchar_t, UnsafeMutablePointer<Void>) -> Void ``` |
+
+Modified iconvlist(_: ((UInt32, UnsafePointer<UnsafePointer<Int8>>, UnsafeMutablePointer<Void>) -> Int32)!, _: UnsafeMutablePointer<Void>)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func iconvlist(_ _: CFunctionPointer<((UInt32, UnsafePointer<UnsafePointer<Int8>>, UnsafeMutablePointer<Void>) -> Int32)>, _ _: UnsafeMutablePointer<Void>) ``` |
+| To | ``` func iconvlist(_ _: ((UInt32, UnsafePointer<UnsafePointer<Int8>>, UnsafeMutablePointer<Void>) -> Int32)!, _ _: UnsafeMutablePointer<Void>) ``` |
+
+Modified ilogb(_: Double) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ilogb(_ x: Double) -> Int ``` |
+| To | ``` @warn_unused_result func ilogb(_ x: Double) -> Int ``` |
+
+Modified ilogb(_: Float) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ilogb(_ x: Float) -> Int ``` |
+| To | ``` @warn_unused_result func ilogb(_ x: Float) -> Int ``` |
+
+Modified isfinite(_: Double) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isfinite(_ value: Double) -> Bool ``` |
+| To | ``` @warn_unused_result func isfinite(_ value: Double) -> Bool ``` |
+
+Modified isfinite(_: Float) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isfinite(_ value: Float) -> Bool ``` |
+| To | ``` @warn_unused_result func isfinite(_ value: Float) -> Bool ``` |
+
+Modified isinf(_: Float) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isinf(_ value: Float) -> Bool ``` |
+| To | ``` @warn_unused_result func isinf(_ value: Float) -> Bool ``` |
+
+Modified isinf(_: Double) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isinf(_ value: Double) -> Bool ``` |
+| To | ``` @warn_unused_result func isinf(_ value: Double) -> Bool ``` |
+
+Modified isnan(_: Double) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isnan(_ value: Double) -> Bool ``` |
+| To | ``` @warn_unused_result func isnan(_ value: Double) -> Bool ``` |
+
+Modified isnan(_: Float) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isnan(_ value: Float) -> Bool ``` |
+| To | ``` @warn_unused_result func isnan(_ value: Float) -> Bool ``` |
+
+Modified isnormal(_: Float) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isnormal(_ value: Float) -> Bool ``` |
+| To | ``` @warn_unused_result func isnormal(_ value: Float) -> Bool ``` |
+
+Modified isnormal(_: Double) -> Bool
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isnormal(_ value: Double) -> Bool ``` |
+| To | ``` @warn_unused_result func isnormal(_ value: Double) -> Bool ``` |
+
+Modified jn(_: Int, _: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func jn(_ n: Int, _ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func jn(_ n: Int, _ x: Double) -> Double ``` |
+
+Modified kernel_boot_info_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias kernel_boot_info_t = (Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8, Int8) ``` |
+
+Modified ldexp(_: Double, _: Int) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ldexp(_ x: Double, _ n: Int) -> Double ``` |
+| To | ``` @warn_unused_result func ldexp(_ x: Double, _ n: Int) -> Double ``` |
+
+Modified ldexp(_: Float, _: Int) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func ldexp(_ x: Float, _ n: Int) -> Float ``` |
+| To | ``` @warn_unused_result func ldexp(_ x: Float, _ n: Int) -> Float ``` |
+
+Modified lfind(_: UnsafePointer<Void>, _: UnsafePointer<Void>, _: UnsafeMutablePointer<Int>, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func lfind(_ _: UnsafePointer<Void>, _ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<Int>, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func lfind(_ _: UnsafePointer<Void>, _ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<Int>, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified lgamma(_: Double) -> (Double, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func lgamma(_ x: Double) -> (Double, Int) ``` |
+| To | ``` @warn_unused_result func lgamma(_ x: Double) -> (Double, Int) ``` |
+
+Modified lgamma(_: Float) -> (Float, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func lgamma(_ x: Float) -> (Float, Int) ``` |
+| To | ``` @warn_unused_result func lgamma(_ x: Float) -> (Float, Int) ``` |
+
+Modified log(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func log(_ x: Double) -> Double ``` |
+
+Modified log(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func log(_ x: Float) -> Float ``` |
+
+Modified log10(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log10(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func log10(_ x: Double) -> Double ``` |
+
+Modified log10(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log10(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func log10(_ x: Float) -> Float ``` |
+
+Modified log1p(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log1p(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func log1p(_ x: Float) -> Float ``` |
+
+Modified log2(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log2(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func log2(_ x: Double) -> Double ``` |
+
+Modified log2(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func log2(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func log2(_ x: Float) -> Float ``` |
+
+Modified logb(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func logb(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func logb(_ x: Float) -> Float ``` |
+
+Modified lsearch(_: UnsafePointer<Void>, _: UnsafeMutablePointer<Void>, _: UnsafeMutablePointer<Int>, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func lsearch(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<Void>, _ _: UnsafeMutablePointer<Int>, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func lsearch(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<Void>, _ _: UnsafeMutablePointer<Int>, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified mach_error_fn_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias mach_error_fn_t = CFunctionPointer<(() -> mach_error_t)> ``` |
+| To | ``` typealias mach_error_fn_t = () -> mach_error_t ``` |
+
+Modified mach_msg_server(_: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _: mach_msg_size_t, _: mach_port_t, _: mach_msg_options_t) -> mach_msg_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_msg_server(_ _: CFunctionPointer<((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)>, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+| To | ``` func mach_msg_server(_ _: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+
+Modified mach_msg_server_importance(_: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _: mach_msg_size_t, _: mach_port_t, _: mach_msg_options_t) -> mach_msg_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_msg_server_importance(_ _: CFunctionPointer<((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)>, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+| To | ``` func mach_msg_server_importance(_ _: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+
+Modified mach_msg_server_once(_: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _: mach_msg_size_t, _: mach_port_t, _: mach_msg_options_t) -> mach_msg_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_msg_server_once(_ _: CFunctionPointer<((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)>, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+| To | ``` func mach_msg_server_once(_ _: ((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> boolean_t)!, _ _: mach_msg_size_t, _ _: mach_port_t, _ _: mach_msg_options_t) -> mach_msg_return_t ``` |
+
+Modified mach_port_destruct(_: ipc_space_t, _: mach_port_name_t, _: mach_port_delta_t, _: mach_port_context_t) -> kern_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_port_destruct(_ task: ipc_space_t, _ name: mach_port_name_t, _ srdelta: mach_port_delta_t, _ guard: mach_port_context_t) -> kern_return_t ``` |
+| To | ``` func mach_port_destruct(_ task: ipc_space_t, _ name: mach_port_name_t, _ srdelta: mach_port_delta_t, _ `guard`: mach_port_context_t) -> kern_return_t ``` |
+
+Modified mach_port_guard(_: ipc_space_t, _: mach_port_name_t, _: mach_port_context_t, _: boolean_t) -> kern_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_port_guard(_ task: ipc_space_t, _ name: mach_port_name_t, _ guard: mach_port_context_t, _ strict: boolean_t) -> kern_return_t ``` |
+| To | ``` func mach_port_guard(_ task: ipc_space_t, _ name: mach_port_name_t, _ `guard`: mach_port_context_t, _ strict: boolean_t) -> kern_return_t ``` |
+
+Modified mach_port_unguard(_: ipc_space_t, _: mach_port_name_t, _: mach_port_context_t) -> kern_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mach_port_unguard(_ task: ipc_space_t, _ name: mach_port_name_t, _ guard: mach_port_context_t) -> kern_return_t ``` |
+| To | ``` func mach_port_unguard(_ task: ipc_space_t, _ name: mach_port_name_t, _ `guard`: mach_port_context_t) -> kern_return_t ``` |
+
+Modified malloc_get_all_zones(_: task_t, _: ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, _: UnsafeMutablePointer<UnsafeMutablePointer<vm_address_t>>, _: UnsafeMutablePointer<UInt32>) -> kern_return_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func malloc_get_all_zones(_ task: task_t, _ reader: CFunctionPointer<memory_reader_t>, _ addresses: UnsafeMutablePointer<UnsafeMutablePointer<vm_address_t>>, _ count: UnsafeMutablePointer<UInt32>) -> kern_return_t ``` |
+| To | ``` func malloc_get_all_zones(_ task: task_t, _ reader: ((task_t, vm_address_t, vm_size_t, UnsafeMutablePointer<UnsafeMutablePointer<Void>>) -> kern_return_t)!, _ addresses: UnsafeMutablePointer<UnsafeMutablePointer<vm_address_t>>, _ count: UnsafeMutablePointer<UInt32>) -> kern_return_t ``` |
+
+Modified mergesort(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func mergesort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> Int32 ``` |
+| To | ``` func mergesort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> Int32 ``` |
+
+Modified mig_impl_routine_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias mig_impl_routine_t = CFunctionPointer<(() -> kern_return_t)> ``` |
+| To | ``` typealias mig_impl_routine_t = () -> kern_return_t ``` |
+
+Modified mig_server_routine_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias mig_server_routine_t = CFunctionPointer<((UnsafeMutablePointer<mach_msg_header_t>) -> mig_routine_t)> ``` |
+| To | ``` typealias mig_server_routine_t = (UnsafeMutablePointer<mach_msg_header_t>) -> mig_routine_t! ``` |
+
+Modified mig_stub_routine_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias mig_stub_routine_t = CFunctionPointer<((UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> Void)> ``` |
+| To | ``` typealias mig_stub_routine_t = (UnsafeMutablePointer<mach_msg_header_t>, UnsafeMutablePointer<mach_msg_header_t>) -> Void ``` |
+
+Modified modf(_: Float) -> (Float, Float)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func modf(_ value: Float) -> (Float, Float) ``` |
+| To | ``` @warn_unused_result func modf(_ value: Float) -> (Float, Float) ``` |
+
+Modified modf(_: Double) -> (Double, Double)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func modf(_ value: Double) -> (Double, Double) ``` |
+| To | ``` @warn_unused_result func modf(_ value: Double) -> (Double, Double) ``` |
+
+Modified nan(_: String) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nan(_ tag: String) -> Float ``` |
+| To | ``` @warn_unused_result func nan(_ tag: String) -> Float ``` |
+
+Modified nearbyint(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nearbyint(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func nearbyint(_ x: Float) -> Float ``` |
+
+Modified nearbyint(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nearbyint(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func nearbyint(_ x: Double) -> Double ``` |
+
+Modified nextafter(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nextafter(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func nextafter(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified nftw(_: UnsafePointer<Int8>, _: ((UnsafePointer<Int8>, UnsafePointer<stat>, Int32, UnsafeMutablePointer<FTW>) -> Int32)!, _: Int32, _: Int32) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nftw(_ _: UnsafePointer<Int8>, _ _: CFunctionPointer<((UnsafePointer<Int8>, UnsafePointer<stat>, Int32, UnsafeMutablePointer<FTW>) -> Int32)>, _ _: Int32, _ _: Int32) -> Int32 ``` |
+| To | ``` func nftw(_ _: UnsafePointer<Int8>, _ _: ((UnsafePointer<Int8>, UnsafePointer<stat>, Int32, UnsafeMutablePointer<FTW>) -> Int32)!, _ _: Int32, _ _: Int32) -> Int32 ``` |
+
+Modified open(_: UnsafePointer<CChar>, _: CInt) -> CInt
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func open(_ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt ``` |
+| To | ``` @warn_unused_result func open(_ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt ``` |
+
+Modified open(_: UnsafePointer<CChar>, _: CInt, _: mode_t) -> CInt
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func open(_ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt ``` |
+| To | ``` @warn_unused_result func open(_ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt ``` |
+
+Modified openat(_: CInt, _: UnsafePointer<CChar>, _: CInt) -> CInt
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func openat(_ fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt ``` |
+| To | ``` @warn_unused_result func openat(_ fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt) -> CInt ``` |
+
+Modified openat(_: CInt, _: UnsafePointer<CChar>, _: CInt, _: mode_t) -> CInt
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func openat(_ fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt ``` |
+| To | ``` @warn_unused_result func openat(_ fd: CInt, _ path: UnsafePointer<CChar>, _ oflag: CInt, _ mode: mode_t) -> CInt ``` |
+
+Modified pow(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pow(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func pow(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified processor_info_data_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias processor_info_data_t = (integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t) ``` |
+
+Modified processor_set_info_data_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias processor_set_info_data_t = (integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t) ``` |
+
+Modified psort(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func psort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) ``` |
+| To | ``` func psort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) ``` |
+
+Modified psort_r(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: UnsafeMutablePointer<Void>, _: ((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func psort_r(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: UnsafeMutablePointer<Void>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) ``` |
+| To | ``` func psort_r(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: UnsafeMutablePointer<Void>, _ _: ((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) ``` |
+
+Modified pthread_atfork(_: (() -> Void)!, _: (() -> Void)!, _: (() -> Void)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pthread_atfork(_ _: CFunctionPointer<(() -> Void)>, _ _: CFunctionPointer<(() -> Void)>, _ _: CFunctionPointer<(() -> Void)>) -> Int32 ``` |
+| To | ``` func pthread_atfork(_ _: (() -> Void)!, _ _: (() -> Void)!, _ _: (() -> Void)!) -> Int32 ``` |
+
+Modified pthread_create(_: UnsafeMutablePointer<pthread_t>, _: UnsafePointer<pthread_attr_t>, _: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)!, _: UnsafeMutablePointer<Void>) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pthread_create(_ _: UnsafeMutablePointer<pthread_t>, _ _: UnsafePointer<pthread_attr_t>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)>, _ _: UnsafeMutablePointer<Void>) -> Int32 ``` |
+| To | ``` func pthread_create(_ _: UnsafeMutablePointer<pthread_t>, _ _: UnsafePointer<pthread_attr_t>, _ _: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)!, _ _: UnsafeMutablePointer<Void>) -> Int32 ``` |
+
+Modified pthread_create_suspended_np(_: UnsafeMutablePointer<pthread_t>, _: UnsafePointer<pthread_attr_t>, _: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)!, _: UnsafeMutablePointer<Void>) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pthread_create_suspended_np(_ _: UnsafeMutablePointer<pthread_t>, _ _: UnsafePointer<pthread_attr_t>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)>, _ _: UnsafeMutablePointer<Void>) -> Int32 ``` |
+| To | ``` func pthread_create_suspended_np(_ _: UnsafeMutablePointer<pthread_t>, _ _: UnsafePointer<pthread_attr_t>, _ _: ((UnsafeMutablePointer<Void>) -> UnsafeMutablePointer<Void>)!, _ _: UnsafeMutablePointer<Void>) -> Int32 ``` |
+
+Modified pthread_key_create(_: UnsafeMutablePointer<pthread_key_t>, _: ((UnsafeMutablePointer<Void>) -> Void)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pthread_key_create(_ _: UnsafeMutablePointer<pthread_key_t>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>) -> Void)>) -> Int32 ``` |
+| To | ``` func pthread_key_create(_ _: UnsafeMutablePointer<pthread_key_t>, _ _: ((UnsafeMutablePointer<Void>) -> Void)!) -> Int32 ``` |
+
+Modified pthread_once(_: UnsafeMutablePointer<pthread_once_t>, _: (() -> Void)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pthread_once(_ _: UnsafeMutablePointer<pthread_once_t>, _ _: CFunctionPointer<(() -> Void)>) -> Int32 ``` |
+| To | ``` func pthread_once(_ _: UnsafeMutablePointer<pthread_once_t>, _ _: (() -> Void)!) -> Int32 ``` |
+
+Modified qsort(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func qsort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) ``` |
+| To | ``` func qsort(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) ``` |
+
+Modified qsort_r(_: UnsafeMutablePointer<Void>, _: Int, _: Int, _: UnsafeMutablePointer<Void>, _: ((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func qsort_r(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: UnsafeMutablePointer<Void>, _ _: CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) ``` |
+| To | ``` func qsort_r(_ _: UnsafeMutablePointer<Void>, _ _: Int, _ _: Int, _ _: UnsafeMutablePointer<Void>, _ _: ((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) ``` |
+
+Modified rbto_compare_key_fn
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias rbto_compare_key_fn = CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)> ``` |
+| To | ``` typealias rbto_compare_key_fn = (UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32 ``` |
+
+Modified rbto_compare_nodes_fn
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias rbto_compare_nodes_fn = CFunctionPointer<((UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)> ``` |
+| To | ``` typealias rbto_compare_nodes_fn = (UnsafeMutablePointer<Void>, UnsafePointer<Void>, UnsafePointer<Void>) -> Int32 ``` |
+
+Modified remainder(_: Float, _: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func remainder(_ lhs: Float, _ rhs: Float) -> Float ``` |
+| To | ``` @warn_unused_result func remainder(_ lhs: Float, _ rhs: Float) -> Float ``` |
+
+Modified remquo(_: Double, _: Double) -> (Double, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func remquo(_ x: Double, _ y: Double) -> (Double, Int) ``` |
+| To | ``` @warn_unused_result func remquo(_ x: Double, _ y: Double) -> (Double, Int) ``` |
+
+Modified remquo(_: Float, _: Float) -> (Float, Int)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func remquo(_ x: Float, _ y: Float) -> (Float, Int) ``` |
+| To | ``` @warn_unused_result func remquo(_ x: Float, _ y: Float) -> (Float, Int) ``` |
+
+Modified rint(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func rint(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func rint(_ x: Float) -> Float ``` |
+
+Modified rint(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func rint(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func rint(_ x: Double) -> Double ``` |
+
+Modified round(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func round(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func round(_ x: Float) -> Float ``` |
+
+Modified round(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func round(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func round(_ x: Double) -> Double ``` |
+
+Modified S_IEXEC
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IEXEC: UInt16 ``` |
+| To | ``` let S_IEXEC: mode_t ``` |
+
+Modified S_IFBLK
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFBLK: UInt16 ``` |
+| To | ``` let S_IFBLK: mode_t ``` |
+
+Modified S_IFCHR
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFCHR: UInt16 ``` |
+| To | ``` let S_IFCHR: mode_t ``` |
+
+Modified S_IFDIR
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFDIR: UInt16 ``` |
+| To | ``` let S_IFDIR: mode_t ``` |
+
+Modified S_IFIFO
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFIFO: UInt16 ``` |
+| To | ``` let S_IFIFO: mode_t ``` |
+
+Modified S_IFLNK
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFLNK: UInt16 ``` |
+| To | ``` let S_IFLNK: mode_t ``` |
+
+Modified S_IFMT
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFMT: UInt16 ``` |
+| To | ``` let S_IFMT: mode_t ``` |
+
+Modified S_IFREG
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFREG: UInt16 ``` |
+| To | ``` let S_IFREG: mode_t ``` |
+
+Modified S_IFSOCK
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFSOCK: UInt16 ``` |
+| To | ``` let S_IFSOCK: mode_t ``` |
+
+Modified S_IFWHT
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IFWHT: UInt16 ``` |
+| To | ``` let S_IFWHT: mode_t ``` |
+
+Modified S_IREAD
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IREAD: UInt16 ``` |
+| To | ``` let S_IREAD: mode_t ``` |
+
+Modified S_IRGRP
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IRGRP: UInt16 ``` |
+| To | ``` let S_IRGRP: mode_t ``` |
+
+Modified S_IROTH
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IROTH: UInt16 ``` |
+| To | ``` let S_IROTH: mode_t ``` |
+
+Modified S_IRUSR
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IRUSR: UInt16 ``` |
+| To | ``` let S_IRUSR: mode_t ``` |
+
+Modified S_IRWXG
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IRWXG: UInt16 ``` |
+| To | ``` let S_IRWXG: mode_t ``` |
+
+Modified S_IRWXO
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IRWXO: UInt16 ``` |
+| To | ``` let S_IRWXO: mode_t ``` |
+
+Modified S_IRWXU
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IRWXU: UInt16 ``` |
+| To | ``` let S_IRWXU: mode_t ``` |
+
+Modified S_ISGID
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_ISGID: UInt16 ``` |
+| To | ``` let S_ISGID: mode_t ``` |
+
+Modified S_ISTXT
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_ISTXT: UInt16 ``` |
+| To | ``` let S_ISTXT: mode_t ``` |
+
+Modified S_ISUID
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_ISUID: UInt16 ``` |
+| To | ``` let S_ISUID: mode_t ``` |
+
+Modified S_ISVTX
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_ISVTX: UInt16 ``` |
+| To | ``` let S_ISVTX: mode_t ``` |
+
+Modified S_IWGRP
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IWGRP: UInt16 ``` |
+| To | ``` let S_IWGRP: mode_t ``` |
+
+Modified S_IWOTH
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IWOTH: UInt16 ``` |
+| To | ``` let S_IWOTH: mode_t ``` |
+
+Modified S_IWRITE
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IWRITE: UInt16 ``` |
+| To | ``` let S_IWRITE: mode_t ``` |
+
+Modified S_IWUSR
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IWUSR: UInt16 ``` |
+| To | ``` let S_IWUSR: mode_t ``` |
+
+Modified S_IXGRP
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IXGRP: UInt16 ``` |
+| To | ``` let S_IXGRP: mode_t ``` |
+
+Modified S_IXOTH
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IXOTH: UInt16 ``` |
+| To | ``` let S_IXOTH: mode_t ``` |
+
+Modified S_IXUSR
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let S_IXUSR: UInt16 ``` |
+| To | ``` let S_IXUSR: mode_t ``` |
+
+Modified scalbn(_: Float, _: Int) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func scalbn(_ x: Float, _ n: Int) -> Float ``` |
+| To | ``` @warn_unused_result func scalbn(_ x: Float, _ n: Int) -> Float ``` |
+
+Modified scalbn(_: Double, _: Int) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func scalbn(_ x: Double, _ n: Int) -> Double ``` |
+| To | ``` @warn_unused_result func scalbn(_ x: Double, _ n: Int) -> Double ``` |
+
+Modified scandir(_: UnsafePointer<Int8>, _: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<dirent>>>, _: ((UnsafePointer<dirent>) -> Int32)!, _: ((UnsafeMutablePointer<UnsafePointer<dirent>>, UnsafeMutablePointer<UnsafePointer<dirent>>) -> Int32)!) -> Int32
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func scandir(_ _: UnsafePointer<Int8>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<dirent>>>, _ _: CFunctionPointer<((UnsafePointer<dirent>) -> Int32)>, _ _: CFunctionPointer<((UnsafeMutablePointer<UnsafePointer<dirent>>, UnsafeMutablePointer<UnsafePointer<dirent>>) -> Int32)>) -> Int32 ``` |
+| To | ``` func scandir(_ _: UnsafePointer<Int8>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<UnsafeMutablePointer<dirent>>>, _ _: ((UnsafePointer<dirent>) -> Int32)!, _ _: ((UnsafeMutablePointer<UnsafePointer<dirent>>, UnsafeMutablePointer<UnsafePointer<dirent>>) -> Int32)!) -> Int32 ``` |
+
+Modified sig_t
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias sig_t = CFunctionPointer<((Int32) -> Void)> ``` |
+| To | ``` typealias sig_t = (Int32) -> Void ``` |
+
+Modified signal(_: Int32, _: ((Int32) -> Void)!) -> ((Int32) -> Void)!
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func signal(_ _: Int32, _ _: CFunctionPointer<((Int32) -> Void)>) -> CFunctionPointer<((Int32) -> Void)> ``` |
+| To | ``` func signal(_ _: Int32, _ _: ((Int32) -> Void)!) -> ((Int32) -> Void)! ``` |
+
+Modified signbit(_: Double) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func signbit(_ value: Double) -> Int ``` |
+| To | ``` @warn_unused_result func signbit(_ value: Double) -> Int ``` |
+
+Modified signbit(_: Float) -> Int
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func signbit(_ value: Float) -> Int ``` |
+| To | ``` @warn_unused_result func signbit(_ value: Float) -> Int ``` |
+
+Modified sigset(_: Int32, _: ((Int32) -> Void)!) -> ((Int32) -> Void)!
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sigset(_ _: Int32, _ _: CFunctionPointer<((Int32) -> Void)>) -> CFunctionPointer<((Int32) -> Void)> ``` |
+| To | ``` func sigset(_ _: Int32, _ _: ((Int32) -> Void)!) -> ((Int32) -> Void)! ``` |
+
+Modified sin(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sin(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func sin(_ x: Double) -> Double ``` |
+
+Modified sin(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sin(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func sin(_ x: Float) -> Float ``` |
+
+Modified sinh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sinh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func sinh(_ x: Float) -> Float ``` |
+
+Modified sqrt(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sqrt(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func sqrt(_ x: Float) -> Float ``` |
+
+Modified tan(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tan(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func tan(_ x: Float) -> Float ``` |
+
+Modified tanh(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tanh(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func tanh(_ x: Float) -> Float ``` |
+
+Modified task_info_data_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias task_info_data_t = (integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t) ``` |
+
+Modified tdelete(_: UnsafePointer<Void>, _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tdelete(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func tdelete(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified tfind(_: UnsafePointer<Void>, _: UnsafePointer<UnsafeMutablePointer<Void>>, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tfind(_ _: UnsafePointer<Void>, _ _: UnsafePointer<UnsafeMutablePointer<Void>>, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func tfind(_ _: UnsafePointer<Void>, _ _: UnsafePointer<UnsafeMutablePointer<Void>>, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified tgamma(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tgamma(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func tgamma(_ x: Float) -> Float ``` |
+
+Modified thread_info_data_t
+
+|  | Declaration |
+| --- | --- |
+| From | ```  ``` |
+| To | ``` typealias thread_info_data_t = (integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t, integer_t) ``` |
+
+Modified trunc(_: Float) -> Float
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func trunc(_ x: Float) -> Float ``` |
+| To | ``` @warn_unused_result func trunc(_ x: Float) -> Float ``` |
+
+Modified trunc(_: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func trunc(_ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func trunc(_ x: Double) -> Double ``` |
+
+Modified tsearch(_: UnsafePointer<Void>, _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void>
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func tsearch(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _ _: CFunctionPointer<((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)>) -> UnsafeMutablePointer<Void> ``` |
+| To | ``` func tsearch(_ _: UnsafePointer<Void>, _ _: UnsafeMutablePointer<UnsafeMutablePointer<Void>>, _ _: ((UnsafePointer<Void>, UnsafePointer<Void>) -> Int32)!) -> UnsafeMutablePointer<Void> ``` |
+
+Modified twalk(_: UnsafePointer<Void>, _: ((UnsafePointer<Void>, VISIT, Int32) -> Void)!)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func twalk(_ _: UnsafePointer<Void>, _ _: CFunctionPointer<((UnsafePointer<Void>, VISIT, Int32) -> Void)>) ``` |
+| To | ``` func twalk(_ _: UnsafePointer<Void>, _ _: ((UnsafePointer<Void>, VISIT, Int32) -> Void)!) ``` |
+
+Modified vprintf_stderr_func
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var vprintf_stderr_func: CFunctionPointer<((UnsafePointer<Int8>, CVaListPointer) -> Int32)> ``` |
+| To | ``` var vprintf_stderr_func: ((UnsafePointer<Int8>, CVaListPointer) -> Int32)! ``` |
+
+Modified yn(_: Int, _: Double) -> Double
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func yn(_ n: Int, _ x: Double) -> Double ``` |
+| To | ``` @warn_unused_result func yn(_ n: Int, _ x: Double) -> Double ``` |
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

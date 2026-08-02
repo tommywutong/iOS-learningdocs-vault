@@ -1,0 +1,79 @@
+---
+title: PostScript Output Filters
+apple_id: DTS10000297
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-26'
+source_url: https://developer.apple.com/library/archive/samplecode/PostScript_Output_Filters/Listings/SampleFilter_Version_h.html
+archived_at: '2026-07-18T03:19:27.649311Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [PostScript Output Filters](PostScript%20Output%20Filters.md)
+
+
+[Next](SectionReport-Debug.h.md)[Previous](SampleFilter-SampleFilterResources.h.md)
+
+# SampleFilter/Version.h
+
+```
+/*
+**  File:           Version.h
+**
+**  Description:    Version information for the SampleFilter.   
+**
+**  Version:        1.0     
+**
+**  Copyright 1999 Apple Computer. All rights reserved.
+**
+**  You may incorporate this sample code into your applications without
+**  restriction, though the sample code has been provided "AS IS" and the
+**  responsibility for its operation is 100% yours.  However, what you are
+**  not permitted to do is to redistribute the source as "ABC Sample Code"
+**  after having made changes. If you're going to re-distribute the source,
+**  we require that you make it clear in the source that the code was
+**  descended from Apple Sample Code, but that you've made changes.
+**
+*/
+#ifndef __VERSION__
+#define __VERSION__ 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* 'vers' resource definitions */
+
+#if rez
+#define kStageDevelopment   development
+#define kStageAlpha         alpha
+#define kStageBeta          beta
+#define kStageFinal         final
+
+#else
+#define kStageDevelopment   0x20
+#define kStageAlpha         0x40
+#define kStageBeta          0x60
+#define kStageFinal         0x80
+#endif
+
+
+#define kMajorRev       0x01
+#define kMinorRev       0x0
+#define kReleaseStage   kStageFinal
+#define kNonRelease     0
+#define kShortVersStr   "1.0"
+
+#define kqDebug         "Db"
+#define kqSym           "Sm"
+#define kqNames         "Nm"
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // __VERSION__
+```
+
+[Next](SectionReport-Debug.h.md)[Previous](SampleFilter-SampleFilterResources.h.md)
+

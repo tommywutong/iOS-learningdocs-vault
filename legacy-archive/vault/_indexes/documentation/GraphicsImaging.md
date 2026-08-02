@@ -1,0 +1,178 @@
+# documentation / Graphics Imaging
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 22 份文档。
+
+## iOS（6 份）
+
+- **[Core Animation 秘笈](../../documentation/Graphics%20Imaging/Core%20Animation%20Cookbook/Core%20Animation%20Cookbook.md)** — Guide · 2015-03-09，iOS|macOS · QuartzCore，4 页
+  - [Drawing](../../documentation/Graphics%20Imaging/Core%20Animation%20Cookbook/Drawing.md)
+  - [Timing](../../documentation/Graphics%20Imaging/Core%20Animation%20Cookbook/Timing.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Core%20Animation%20Cookbook/Document%20Revision%20History.md)
+- **[Core Image Filter 参考](../../documentation/Graphics%20Imaging/Core%20Image%20Filter%20Reference/Core%20Image%20Filter%20Reference.md)** — Guide · 2016-03-10，tvOS|iOS|macOS · CoreImage，2 页
+  - [cifilterref_revhx](../../documentation/Graphics%20Imaging/Core%20Image%20Filter%20Reference/cifilterref_revhx.md)
+- **[Core Image Kernel Language 参考](../../documentation/Graphics%20Imaging/Core%20Image%20Kernel%20Language%20Reference/Introduction.md)** — Guide · 2015-01-12，iOS|macOS · CoreImage，3 页
+  - [Core Image 内核语言](../../documentation/Graphics%20Imaging/Core%20Image%20Kernel%20Language%20Reference/Core%20Image%20Kernel%20Language.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Core%20Image%20Kernel%20Language%20Reference/Document%20Revision%20History.md)
+- **[Core Image 编程指南](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/About%20Core%20Image.md)** — Guide · 2016-09-13，tvOS|iOS|macOS · CoreImage，12 页
+  - [处理图像](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Processing%20Images.md)
+  - [检测图像中的人脸](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Detecting%20Faces%20in%20an%20Image.md)
+  - [查询系统中的滤镜](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Querying%20the%20System%20for%20Filters.md)
+  - [自动增强图像](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Auto%20Enhancing%20Images.md)
+  - [创建 CIFilter 的子类：自定义效果技巧](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Subclassing%20CIFilter-%20Recipes%20for%20Custom%20Effects.md)
+  - [获得最佳性能](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Getting%20the%20Best%20Performance.md)
+  - [使用反馈处理图像](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Using%20Feedback%20to%20Process%20Images.md)
+  - [编写自定义滤镜之前需要了解的内容](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/What%20You%20Need%20to%20Know%20Before%20Writing%20a%20Custom%20Filter.md)
+  - [创建自定义滤镜](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Creating%20Custom%20Filters.md)
+  - [打包和加载 Image Unit](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Packaging%20and%20Loading%20Image%20Units.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Core%20Image%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Image I/O 编程指南](../../documentation/Graphics%20Imaging/Image%20I-O%20Programming%20Guide/Introduction.md)** — Guide · 2016-09-13，watchOS|tvOS|iOS|macOS · ApplicationServices，5 页
+  - [使用 Image I/O 的基础知识](../../documentation/Graphics%20Imaging/Image%20I-O%20Programming%20Guide/Basics%20of%20Using%20Image%20I-O.md)
+  - [创建和使用图像源](../../documentation/Graphics%20Imaging/Image%20I-O%20Programming%20Guide/Creating%20and%20Using%20Image%20Sources.md)
+  - [使用图像目标](../../documentation/Graphics%20Imaging/Image%20I-O%20Programming%20Guide/Working%20with%20Image%20Destinations.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Image%20I-O%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Quartz 2D 编程指南](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Introduction.md)** — Guide · 2017-03-21，watchOS|tvOS|iOS|macOS · Quartz，19 页
+  - [Quartz 2D 概述](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Overview%20of%20Quartz%202D.md)
+  - [图形上下文](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Graphics%20Contexts.md)
+  - [Quartz 2D 中的数据管理](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Data%20Management%20in%20Quartz%202D.md)
+  - [Core Graphics 图层绘制](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Core%20Graphics%20Layer%20Drawing.md)
+  - [Paths](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Paths.md)
+  - [位图图像与图像蒙版](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Bitmap%20Images%20and%20Image%20Masks.md)
+  - [Patterns](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Patterns.md)
+  - [Gradients](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Gradients.md)
+  - [颜色与颜色空间](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Color%20and%20Color%20Spaces.md)
+  - [Text](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Text.md)
+  - [PDF 文档的创建、查看与转换](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/PDF%20Document%20Creation%2C%20Viewing%2C%20and%20Transforming.md)
+  - [PDF 文档解析](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/PDF%20Document%20Parsing.md)
+  - [PostScript 转换](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/PostScript%20Conversion.md)
+  - [Transforms](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Transforms.md)
+  - [Shadows](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Shadows.md)
+  - [透明图层](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Transparency%20Layers.md)
+  - [术语表](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Quartz%202D%20Programming%20Guide/Document%20Revision%20History.md)
+
+## macOS（14 份）
+
+- **[动画概述](../../documentation/Graphics%20Imaging/Animation%20Overview/Introduction%20to%20Animation%20Overview.md)** — Guide · 2008-10-15，macOS · QuartzCore，7 页
+  - [什么是动画？](../../documentation/Graphics%20Imaging/Animation%20Overview/What%20Is%20Animation.md)
+  - [动画基础](../../documentation/Graphics%20Imaging/Animation%20Overview/Animation%20Basics.md)
+  - [OS X 动画技术](../../documentation/Graphics%20Imaging/Animation%20Overview/OS%20X%20Animation%20Technologies.md)
+  - [为应用程序选择动画技术](../../documentation/Graphics%20Imaging/Animation%20Overview/Choosing%20the%20Animation%20Technology%20for%20Your%20Application.md)
+  - [术语表](../../documentation/Graphics%20Imaging/Animation%20Overview/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Animation%20Overview/Document%20Revision%20History.md)
+- **[颜色管理概述](../../documentation/Graphics%20Imaging/Color%20Management%20Overview/Introduction%20to%20Color%20Management%20Overview.md)** — Guide · 2005-07-07，macOS，5 页
+  - [颜色：简要概述](../../documentation/Graphics%20Imaging/Color%20Management%20Overview/Color-%20A%20Brief%20Overview.md)
+  - [颜色空间](../../documentation/Graphics%20Imaging/Color%20Management%20Overview/Color%20Spaces.md)
+  - [颜色管理系统](../../documentation/Graphics%20Imaging/Color%20Management%20Overview/Color%20Management%20Systems.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Color%20Management%20Overview/Document%20Revision%20History.md)
+- **[Core Video 编程指南](../../documentation/Graphics%20Imaging/Core%20Video%20Programming%20Guide/Introduction%20to%20Core%20Video%20Programming%20Guide.md)** — Guide · 2007-04-03，macOS · QuartzCore，5 页
+  - [Core Video 概念](../../documentation/Graphics%20Imaging/Core%20Video%20Programming%20Guide/Core%20Video%20Concepts.md)
+  - [Core Video 任务](../../documentation/Graphics%20Imaging/Core%20Video%20Programming%20Guide/Core%20Video%20Tasks.md)
+  - [术语表](../../documentation/Graphics%20Imaging/Core%20Video%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Core%20Video%20Programming%20Guide/Document%20Revision%20History.md)
+- **[DVD Playback Services 编程指南](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Introduction%20to%20DVD%20Playback%20Services%20Programming%20Guide.md)** — Guide · 2010-03-24，macOS · DVDPlayback，6 页
+  - [编程概念](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Programming%20Concepts.md)
+  - [基本编程任务](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Basic%20Programming%20Tasks.md)
+  - [附加编程任务](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Additional%20Programming%20Tasks.md)
+  - [术语表](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/DVD%20Playback%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Image Unit 教程](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/Introduction.md)** — Guide · 2011-06-06，macOS · QuartzCore，6 页
+  - [图像单元及其组成部分](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/An%20Image%20Unit%20and%20Its%20Parts.md)
+  - [编写内核](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/Writing%20Kernels.md)
+  - [编写 Objective-C 部分](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/Writing%20the%20Objective-C%20Portion.md)
+  - [准备发布图像单元](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/Preparing%20an%20Image%20Unit%20for%20Distribution.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Image%20Unit%20Tutorial/Document%20Revision%20History.md)
+- **[ImageKit 编程指南](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Introduction%20to%20Image%20Kit%20Programming%20Guide.md)** — Guide · 2008-06-09，macOS · Quartz，9 页
+  - [Image Kit 使用基础](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Basics%20of%20Using%20the%20Image%20Kit.md)
+  - [在图像视图中查看、编辑和保存图像](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Viewing%2C%20Editing%2C%20and%20Saving%20Images%20in%20an%20Image%20View.md)
+  - [浏览图像](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Browsing%20Images.md)
+  - [显示幻灯片](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Showing%20Slides.md)
+  - [拍摄快照与设置图片](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Taking%20Snapshots%20and%20Setting%20Pictures.md)
+  - [浏览过滤器与设置输入参数](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Browsing%20Filters%20and%20Setting%20Input%20Parameters.md)
+  - [术语表](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/ImageKit%20Programming%20Guide/Document%20Revision%20History.md)
+- **[在 Mac OS 9 中使用 ColorSync 管理颜色](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/About%20This%20Document.md)** — Guide · 2003-02-01，macOS，10 页
+  - [颜色与颜色管理系统概述](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Overview%20of%20Color%20and%20Color%20Management%20Systems.md)
+  - [ColorSync 概述](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Overview%20of%20ColorSync.md)
+  - [开发支持 ColorSync 的应用程序](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Developing%20ColorSync-Supportive%20Applications.md)
+  - [新增内容](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/What%E2%80%99s%20New.md)
+  - [版本与兼容性信息](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Version%20and%20Compatibility%20Information.md)
+  - [开发支持 ColorSync 的设备驱动程序](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Developing%20ColorSync-Supportive%20Device%20Drivers.md)
+  - [开发颜色管理模块](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Developing%20Color%20Management%20Modules.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Document%20Revision%20History.md)
+  - [索引](../../documentation/Graphics%20Imaging/Managing%20Colors%20With%20ColorSync%20in%20Mac%20OS%209/Index.md)
+- **[Mac 版 OpenGL 编程指南](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/About%20OpenGL%20for%20OS%20X.md)** — Guide · 2018-06-04，macOS · OpenGL，21 页
+  - [Mac 平台上的 OpenGL](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/OpenGL%20on%20the%20Mac%20Platform.md)
+  - [绘制到窗口或视图](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Drawing%20to%20a%20Window%20or%20View.md)
+  - [OpenGL 应用程序设计策略](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/OpenGL%20Application%20Design%20Strategies.md)
+  - [确定渲染器所支持的 OpenGL 功能](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Determining%20the%20OpenGL%20Capabilities%20Supported%20by%20the%20Renderer.md)
+  - [选择渲染器与缓冲区属性](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Choosing%20Renderer%20and%20Buffer%20Attributes.md)
+  - [离屏绘制](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Drawing%20Offscreen.md)
+  - [使用渲染上下文](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Working%20with%20Rendering%20Contexts.md)
+  - [并发与 OpenGL](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Concurrency%20and%20OpenGL.md)
+  - [处理顶点数据的最佳实践](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Best%20Practices%20for%20Working%20with%20Vertex%20Data.md)
+  - [处理纹理数据的最佳实践](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Best%20Practices%20for%20Working%20with%20Texture%20Data.md)
+  - [调优 OpenGL 应用程序](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Tuning%20Your%20OpenGL%20Application.md)
+  - [针对高分辨率优化 OpenGL](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Optimizing%20OpenGL%20for%20High%20Resolution.md)
+  - [绘制到全屏](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Drawing%20to%20the%20Full%20Screen.md)
+  - [更新应用程序以支持 OpenGL 3.2 核心规范](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Updating%20an%20Application%20to%20Support%20the%20OpenGL%203.2%20Core%20Specification.md)
+  - [使用着色器自定义 OpenGL 管线](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Customizing%20the%20OpenGL%20Pipeline%20with%20Shaders.md)
+  - [场景抗锯齿技术](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Techniques%20for%20Scene%20Antialiasing.md)
+  - [按版本划分的旧版 OpenGL 功能](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Legacy%20OpenGL%20Functionality%20by%20Version.md)
+  - [术语表](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Document%20Revision%20History.md)
+  - [设置指向 OpenGL 例程的函数指针](../../documentation/Graphics%20Imaging/OpenGL%20Programming%20Guide%20for%20Mac/Setting%20Up%20Function%20Pointers%20to%20OpenGL%20Routines.md)
+- **[OpenGL Shader Builder 用户指南](../../documentation/Graphics%20Imaging/OpenGL%20Shader%20Builder%20User%20Guide/Introduction.md)** — Guide · 2015-03-09，Xcode Developer Tools|macOS · OpenGL，4 页
+  - [入门](../../documentation/Graphics%20Imaging/OpenGL%20Shader%20Builder%20User%20Guide/Getting%20Started.md)
+  - [构建着色器](../../documentation/Graphics%20Imaging/OpenGL%20Shader%20Builder%20User%20Guide/Building%20Shaders.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/OpenGL%20Shader%20Builder%20User%20Guide/Document%20Revision%20History.md)
+- **[PDFKit 编程指南](../../documentation/Graphics%20Imaging/PDFKit%20Programming%20Guide/Introduction%20to%20PDF%20Kit%20Programming%20Guide.md)** — Guide · 2007-12-11，macOS · Quartz，4 页
+  - [PDF Kit 概念](../../documentation/Graphics%20Imaging/PDFKit%20Programming%20Guide/PDF%20Kit%20Concepts.md)
+  - [PDF Kit 任务](../../documentation/Graphics%20Imaging/PDFKit%20Programming%20Guide/PDF%20Kit%20Tasks.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/PDFKit%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Quartz Composer 自定义 Patch 编程指南](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Introduction%20to%20Quartz%20Composer%20Custom%20Patch%20Programming%20Guide.md)** — Guide · 2010-03-24，macOS · Quartz，7 页
+  - [自定义补丁基础](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/The%20Basics%20of%20Custom%20Patches.md)
+  - [编写处理器补丁](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Writing%20Processor%20Patches.md)
+  - [编写消费者补丁](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Writing%20Consumer%20Patches.md)
+  - [编写图像处理补丁](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Writing%20Image%20Processing%20Patches.md)
+  - [术语表](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Custom%20Patch%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Quartz Composer 编程指南](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Introduction%20to%20Quartz%20Composer%20Programming%20Guide.md)** — Guide · 2013-04-23，macOS · Quartz，6 页
+  - [使用 QCView 创建独立合成](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Using%20QCView%20to%20Create%20a%20Standalone%20Composition.md)
+  - [发布端口并将其绑定到控件](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Publishing%20Ports%20and%20Binding%20Them%20to%20Controls.md)
+  - [使用 QCRenderer 类播放合成](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Using%20the%20QCRenderer%20Class%20to%20Play%20a%20Composition.md)
+  - [将合成添加到网页和小组件](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Adding%20Compositions%20to%20Webpages%20and%20Widgets.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Quartz%20Composer%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Quartz Composer 用户指南](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Introduction%20to%20Quartz%20Composer%20User%20Guide.md)** — Guide · 2007-07-17，macOS · Quartz，7 页
+  - [Quartz Composer 基础概念](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Quartz%20Composer%20Basic%20Concepts.md)
+  - [Quartz Composer 用户界面](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/The%20Quartz%20Composer%20User%20Interface.md)
+  - [基础与高级任务、技巧与窍门](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Basic%20and%20Advanced%20Tasks%2C%20Tips%2C%20and%20Tricks.md)
+  - [教程：创建合成](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Tutorial-%20Creating%20a%20Composition.md)
+  - [术语表](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Quartz%20Composer%20User%20Guide/Document%20Revision%20History.md)
+- **[Quartz Display Services 编程主题](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Introduction%20to%20Quartz%20Display%20Services%20Programming%20Topics.md)** — Guide · 2013-12-16，macOS · ApplicationServices，11 页
+  - [Quartz Display Services 概述](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Overview%20of%20Quartz%20Display%20Services.md)
+  - [获取显示器信息](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Getting%20Information%20About%20Displays.md)
+  - [更改显示模式（OS X v10.6 或更高版本）](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Changing%20Display%20Modes%20%28OS%20X%20v10.6%20or%20later%29.md)
+  - [更改显示模式（OS X v10.5）](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Changing%20Display%20Modes%20%28OS%20X%20v10.5%29.md)
+  - [使用事务配置显示器](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Configuring%20Displays%20Using%20a%20Transaction.md)
+  - [捕获显示器](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Capturing%20Displays.md)
+  - [使用淡入淡出效果](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Using%20Fade%20Effects.md)
+  - [配置更改通知](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Notification%20of%20Configuration%20Changes.md)
+  - [控制鼠标光标](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Controlling%20the%20Mouse%20Cursor.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/Quartz%20Display%20Services%20Programming%20Topics/Document%20Revision%20History.md)
+
+## Xcode Developer Tools（2 份）
+
+- **[OpenGL Driver Monitor 用户指南](../../documentation/Graphics%20Imaging/OpenGL%20Driver%20Monitor%20User%20Guide/Introduction.md)** — Guide · 2015-03-09，Xcode Developer Tools · OpenGL，5 页
+  - [使用 OpenGL Driver Monitor](../../documentation/Graphics%20Imaging/OpenGL%20Driver%20Monitor%20User%20Guide/Using%20OpenGL%20Driver%20Monitor.md)
+  - [识别和解决性能问题](../../documentation/Graphics%20Imaging/OpenGL%20Driver%20Monitor%20User%20Guide/Identifying%20and%20Solving%20Performance%20Issues.md)
+  - [OpenGL Driver Monitor 参数](../../documentation/Graphics%20Imaging/OpenGL%20Driver%20Monitor%20User%20Guide/OpenGL%20Driver%20Monitor%20Parameters.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/OpenGL%20Driver%20Monitor%20User%20Guide/Document%20Revision%20History.md)
+- **[OpenGL Profiler 用户指南](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Introduction.md)** — Guide · 2015-03-09，Xcode Developer Tools · OpenGL，6 页
+  - [入门](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Getting%20Started.md)
+  - [使用断点](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Using%20Breakpoints.md)
+  - [识别和解决性能问题](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Identifying%20and%20Solving%20Performance%20Issues.md)
+  - [以编程方式控制性能分析](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Controlling%20Profiling%20Programmatically.md)
+  - [文档修订历史](../../documentation/Graphics%20Imaging/OpenGL%20Profiler%20User%20Guide/Document%20Revision%20History.md)

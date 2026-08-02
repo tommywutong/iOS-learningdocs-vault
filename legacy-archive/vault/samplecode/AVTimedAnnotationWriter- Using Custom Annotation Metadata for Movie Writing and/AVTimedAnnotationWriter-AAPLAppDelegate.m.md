@@ -1,0 +1,39 @@
+---
+title: 'AVTimedAnnotationWriter: Using Custom Annotation Metadata for Movie Writing
+  and Playback'
+apple_id: TP40014496
+resource_type: Sample Code
+platform: iOS
+topic: null
+technology: AVFoundation
+published: '2014-09-17'
+source_url: https://developer.apple.com/library/archive/samplecode/AVTimedAnnotationWriter/Listings/AVTimedAnnotationWriter_AAPLAppDelegate_m.html
+archived_at: '2026-07-18T03:00:31.693842Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [AVTimedAnnotationWriter: Using Custom Annotation Metadata for Movie Writing and Playback](AVTimedAnnotationWriter-%20Using%20Custom%20Annotation%20Metadata%20for%20Movie%20Writing%20and.md)
+
+
+[Next](AVTimedAnnotationWriter-AAPLViewController.h.md)[Previous](AVTimedAnnotationWriter-AAPLPlayerViewController.h.md)
+
+# AVTimedAnnotationWriter/AAPLAppDelegate.m
+
+```objc
+/*
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+
+ Abstract:
+
+  Implements the main application delegate.
+
+ */
+
+#import "AAPLAppDelegate.h"
+
+@implementation AAPLAppDelegate
+
+@end
+```
+
+[Next](AVTimedAnnotationWriter-AAPLViewController.h.md)[Previous](AVTimedAnnotationWriter-AAPLPlayerViewController.h.md)
+

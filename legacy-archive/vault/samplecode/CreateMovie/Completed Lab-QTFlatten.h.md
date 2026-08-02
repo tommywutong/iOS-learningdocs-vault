@@ -1,0 +1,43 @@
+---
+title: CreateMovie
+apple_id: DTS10001035
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/CreateMovie/Listings/Completed_Lab_QTFlatten_h.html
+archived_at: '2026-07-18T03:05:12.181537Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [CreateMovie](CreateMovie.md)
+
+
+[Next](Completed%20Lab-QTSound.c.md)[Previous](Completed%20Lab-QTFlatten.c.md)
+
+Relevant replacement documents include:
+
+- [http://developer.apple.com/mac/library/samplecode/QTKitCreateMovie/index.html](https://developer.apple.com/mac/library/samplecode/QTKitCreateMovie/index.html)
+
+# Completed Lab/QTFlatten.h
+
+```
+/************************************************************
+*                                                           *
+*    CONSTANTS                                              *
+*                                                           *
+*************************************************************/
+// constants used for QTUtils_SaveMovie
+#define kSavePrompt                 "Save Movie as:"
+#define kSaveMovieFileName          "untitled.mov"
+#define kSaveResName                "Movie Resource"
+
+/************************************************************
+*                                                           *
+*    FUNCTION PROTOTYPES                                    *
+*                                                           *
+*************************************************************/
+OSErr QTSave_FlattenMovie (Movie theMovie, FSSpec *myFile);
+```
+
+[Next](Completed%20Lab-QTSound.c.md)[Previous](Completed%20Lab-QTFlatten.c.md)
+

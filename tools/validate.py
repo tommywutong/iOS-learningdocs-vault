@@ -23,6 +23,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import urllib.parse
 from collections import Counter
 from pathlib import Path
 
@@ -258,6 +259,31 @@ def callouts(body: str) -> list[str]:
     return [m.group(1).lower() for line in body.splitlines() if (m := CALLOUT.match(line))]
 
 
+def resolved_link_targets(body: str, pattern: re.Pattern, page: Path) -> list[str]:
+    """解析链接目标，用于旧归档的跨语言回退链接。
+
+    旧归档只会按需翻译章节。中文页中指向尚未翻译章节的链接需要落到英文
+    基线，因此相对文本会不同，但解析后的资源仍必须与英文原文一致。
+    """
+    targets = []
+    for target in pattern.findall(body):
+        if target.startswith(("http://", "https://", "mailto:")):
+            targets.append(target)
+            continue
+        path, sep, fragment = target.partition("#")
+        path = urllib.parse.unquote(path)
+        resolved = (page.parent / path).resolve() if path else page.resolve()
+        archive_root = ROOT / "legacy-archive"
+        zh_root = archive_root / "zh"
+        if "legacy-archive" in page.parts and "zh" in page.parts:
+            try:
+                resolved = archive_root / "en" / resolved.relative_to(zh_root)
+            except ValueError:
+                pass
+        targets.append(f"{resolved}{sep}{fragment}" if sep else str(resolved))
+    return sorted(targets)
+
+
 def looks_like_technical_output_line(line: str) -> bool:
     """识别代码围栏外仍应逐字符保留的命令、代码和终端输出行。
 
@@ -474,7 +500,11 @@ def check_pair(en: Path, zh: Path, *, strict_identifiers: bool = True) -> list[s
 
     # 2 & 3. 链接与图片目标
     for name, pat in (("链接", LINK), ("图片", IMAGE)):
-        a, b = sorted(pat.findall(en_body)), sorted(pat.findall(zh_body))
+        if "legacy-archive" in en.parts and "legacy-archive" in zh.parts:
+            a = resolved_link_targets(en_body, pat, en)
+            b = resolved_link_targets(zh_body, pat, zh)
+        else:
+            a, b = sorted(pat.findall(en_body)), sorted(pat.findall(zh_body))
         if a != b:
             only_en = [x for x in a if x not in b]
             only_zh = [x for x in b if x not in a]

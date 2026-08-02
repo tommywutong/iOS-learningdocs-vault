@@ -1,0 +1,107 @@
+---
+title: SprocketInvadersOld
+apple_id: DTS10000061
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-10-14'
+source_url: https://developer.apple.com/library/archive/samplecode/SprocketInvadersOld/Listings/Source_ObjectActions_h.html
+archived_at: '2026-07-18T03:25:27.611168Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SprocketInvadersOld](SprocketInvadersOld.md)
+
+
+[Next](Source-Particles.c.md)[Previous](Source-ObjectActions.c.md)
+
+# Source/ObjectActions.h
+
+```c
+/*
+    File:       ObjectActions.h
+
+    Contains:   xxx put contents here xxx
+
+    Version:    xxx put version here xxx
+
+    Copyright:  © 1998 by Apple Computer, Inc., all rights reserved.
+
+    File Ownership:
+
+        DRI:                xxx put dri here xxx
+
+        Other Contact:      xxx put other contact here xxx
+
+        Technology:         xxx put technology here xxx
+
+    Writers:
+
+        (cjd)   Chris DeSalvo
+
+    Change History (most recent first):
+
+         <4>      7/1/98    cjd     Cleaned up
+*/
+
+//¥ ------------------------------------------------------------------------------------------  ¥
+//¥
+//¥ Copyright © 1996 Apple Computer, Inc., All Rights Reserved
+//¥
+//¥
+//¥     You may incorporate this sample code into your applications without
+//¥     restriction, though the sample code has been provided "AS IS" and the
+//¥     responsibility for its operation is 100% yours.  However, what you are
+//¥     not permitted to do is to redistribute the source as "DSC Sample Code"
+//¥     after having made changes. If you're going to re-distribute the source,
+//¥     we require that you make it clear in the source that the code was
+//¥     descended from Apple Sample Code, but that you've made changes.
+//¥
+//¥     Authors:
+//¥         Chris De Salvo
+//¥
+//¥ ------------------------------------------------------------------------------------------  ¥
+
+#ifndef __OBJECTACTIONS__
+#define __OBJECTACTIONS__
+
+//¥ ------------------------------  Includes
+
+#include "GameObject.h"
+
+//¥ ------------------------------  Public Definitions
+
+#define kPlayerDeathDelay           120L    //¥ This controls how long a player is frozen after dying
+
+//¥ ------------------------------  Public Types
+//¥ ------------------------------  Public Variables
+//¥ ------------------------------  Public Functions
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern void ObjectIdle(GameObjectPtr theObject);
+extern void ObjectBounce(GameObjectPtr theObject);
+extern void GreenPlayerAction(GameObjectPtr theObject);
+extern void RedPlayerAction(GameObjectPtr theObject);
+extern void PlayerShotAction(GameObjectPtr theObject);
+extern void PlayerShotAction(GameObjectPtr theObject);
+extern void PlayerShotDestroy(GameObjectPtr theObject);
+extern void EnemyDestroy(GameObjectPtr theObject);
+extern void PointsDestroy(GameObjectPtr theObject);
+extern void PointsAction(GameObjectPtr theObject);
+extern void EnemyAction(GameObjectPtr theObject);
+extern void EnemyShotAction(GameObjectPtr theObject);
+extern void EnemyShotDestroy(GameObjectPtr theObject);
+extern void PlayerDestroy(GameObjectPtr theObject);
+extern void ParticleAction(GameObjectPtr theObject);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
+```
+
+[Next](Source-Particles.c.md)[Previous](Source-ObjectActions.c.md)
+

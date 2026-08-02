@@ -1,0 +1,68 @@
+---
+title: IW-Half-Dither
+apple_id: DTS10000151
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/IW-Half-Dither/Listings/source_OldApp_a.html
+archived_at: '2026-07-18T03:12:14.095140Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [IW-Half-Dither](IW-Half-Dither.md)
+
+
+[Next](source-OldApp.c.md)[Previous](source-NewDriverProtos.h.md)
+
+# source/OldApp.a
+
+```
+;------------------------------------------------------------------------------
+;
+;   FILENAME
+;       OldApp.a
+;
+;   DESCRIPTION
+;       Contains the code necessary to dispatch from a routine in one code
+;       module to a code segment in another module or within the same module
+;
+;   COPYRIGHT
+;       Copyright © Apple Computer, Inc. 1992-1994
+;       All rights reserved. 
+;
+;   MODIFICATION HISTORY
+;
+;       07/24/92        Tom Dowdy   New Today
+;       12/20/93        dmh         Sync'd with the shipping 1.0b3 GX driver.
+;       08/26/94        dmh         Sync'd with the shipping 1.0.1 GX driver.
+;
+;--------------------------------------------------------------------------------
+
+                CASE    OBJ
+                STRING  ASIS
+
+SD_JumpTable    PROC    EXPORT
+                dc.l    0
+
+; Compatibility messages
+
+                IMPORT  SD_ConvertPrintRecordTo
+                JMP     SD_ConvertPrintRecordTo
+
+                IMPORT  SD_ConvertPrintRecordFrom
+                JMP     SD_ConvertPrintRecordFrom
+
+                IMPORT  SD_PrintRecordToJob
+                JMP     SD_PrintRecordToJob
+
+                IMPORT  SD_PrValidate
+                JMP     SD_PrValidate
+
+                IMPORT  SD_PrJobInit
+                JMP     SD_PrJobInit
+
+    END
+```
+
+[Next](source-OldApp.c.md)[Previous](source-NewDriverProtos.h.md)
+

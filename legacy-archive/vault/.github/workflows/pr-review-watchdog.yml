@@ -1,0 +1,10 @@
+# .github/workflows/pr-review-watchdog.yml (installed by pr-review-swarm deploy)
+name: PR Review Swarm Watchdog
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+jobs:
+  watchdog:
+    uses: dustPyrotechnic/pr-review-swarm/.github/workflows/reusable-pr-review-watchdog.yml@0777a30932bf96b30f4d14532e789d578de8e6cb

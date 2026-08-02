@@ -1,0 +1,108 @@
+---
+title: SndPlayDoubleBuffer
+apple_id: DTS10000371
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-14'
+source_url: https://developer.apple.com/library/archive/samplecode/SndPlayDoubleBuffer/Listings/_source_SetupDBHeader_c.html
+archived_at: '2026-07-18T03:24:56.294637Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SndPlayDoubleBuffer](SndPlayDoubleBuffer.md)
+
+
+[Next](source-SimpleAppSound.c.md)[Previous](source-ReadResource.c.md)
+
+# _source/SetupDBHeader.c
+
+```c
+/*
+    File:       SetupDBHeader.c
+
+    Contains:   Routine demonstrating how to set up the DoubleBufferHeader for SndPlayDoubleBuffer.
+
+    Written by: Mark Cookson    
+
+    Copyright:  Copyright © 1996-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/31/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+#include "MyAIFF.h"
+#include "SetupDBHeader.h"
+#include <Sound.h>
+
+/*  Purpose:        This sets up the fields of the SndDoubleBufferHeader
+                    structure.
+                    This sets the value of the compFactor variable so that
+                    you can tell if the sound is compressed, and if so by
+                    how much (this is used for proper buffer sizing).
+    Side Effects:   None.
+*/
+/*-----------------------------------------------------------------------*/
+OSErr   SetupDBHeader   (SoundInfoPtr theSoundInfo,
+                        Fixed sampleRate,
+                        short sampleSize,
+                        short numChannels,
+                        short compressionID,
+                        long compressionType)
+/*-----------------------------------------------------------------------*/
+{
+    CompressionInfo         compInfo;
+    OSErr                   err                 = noErr;
+
+    err = GetCompressionInfo(compressionID, compressionType, numChannels, sampleSize, &compInfo);
+    theSoundInfo->doubleHeader.dbhNumChannels       = numChannels;
+    theSoundInfo->doubleHeader.dbhSampleSize        = compInfo.bytesPerSample * kBitsPerByte;
+    theSoundInfo->doubleHeader.dbhCompressionID     = compInfo.compressionID;
+    theSoundInfo->doubleHeader.dbhPacketSize        = compInfo.bytesPerPacket;
+    theSoundInfo->doubleHeader.dbhSampleRate        = sampleRate;
+    theSoundInfo->doubleHeader.dbhFormat            = compInfo.format;
+
+    theSoundInfo->bytesPerFrame                     = compInfo.bytesPerFrame;
+
+    switch (compressionType) {
+        case NoneType:
+        case kOffsetBinary:
+        case kTwosComplement:
+            theSoundInfo->compFactor = kNoCompression;
+            break;
+        case kULawCompression:
+        case kCDXA2Compression:
+            theSoundInfo->compFactor = kCompressByTwo;
+            break;
+        case kMACE3Compression:
+            theSoundInfo->compFactor = kCompressByThree;
+            break;
+        case kIMACompression:
+        case kCDXA4Compression:
+        case 'ADPM':
+            theSoundInfo->compFactor = kCompressByFour;
+            break;
+        case kMACE6Compression:
+            theSoundInfo->compFactor = kCompressBySix;
+            break;
+        default:
+            DebugPrint ("\pUnknown compression type");
+            theSoundInfo->compFactor = (float)compInfo.samplesPerPacket / compInfo.bytesPerPacket * compInfo.bytesPerSample + 0.5;
+            break;
+    }
+
+    return err;
+}
+```
+
+[Next](source-SimpleAppSound.c.md)[Previous](source-ReadResource.c.md)
+

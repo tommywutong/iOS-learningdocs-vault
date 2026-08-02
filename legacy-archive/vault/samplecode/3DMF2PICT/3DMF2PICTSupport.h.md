@@ -1,0 +1,80 @@
+---
+title: 3DMF2PICT
+apple_id: DTS10000106
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/3DMF2PICT/Listings/3DMF2PICTSupport_h.html
+archived_at: '2026-07-18T02:59:13.912464Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [3DMF2PICT](3DMF2PICT.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](3DMF2PICTSupport.c.md)
+
+# 3DMF2PICTSupport.h
+
+```c
+// Quickdraw 3D sample code
+//
+// Nick Thompson, AppleLink: DEVSUPPORT (devsupport@applelink.apple.com)
+//
+// ©1994-5 Apple Computer Inc., All Rights Reserved
+
+
+#ifndef _MY3DSUPPORT_H_
+#define _MY3DSUPPORT_H_
+
+// Macintosh System Stuff
+#include <Types.h>
+#include <Windows.h>
+
+// QuickDraw 3D stuff
+#include "QD3D.h"
+#include "QD3DErrors.h"
+#include "QD3DView.h"
+
+//-------------------------------------------------------------------------------------------
+
+struct _documentRecord {
+    GWorldPtr       fGWorld ;               // the offscreen used as the basis for this apps
+                                            // pixmap draw context
+    TQ3ViewObject   fView ;                 // the view for the scene
+    TQ3GroupObject  fModel ;                // object in the scene being modelled
+    TQ3StyleObject  fInterpolation ;        // interpolation style used when rendering
+    TQ3StyleObject  fBackFacing ;           // whether to draw shapes that face away from the camera
+    TQ3StyleObject  fFillStyle ;            // whether drawn as solid filled object or decomposed to components
+    TQ3Point3D      fGroupCenter ;          // the center point of the main group
+    float           fGroupScale ;           // how much to scale for the camera
+    TQ3Matrix4x4    fRotation;              // the transform for the model
+};
+
+typedef struct _documentRecord DocumentRec, *DocumentPtr, **DocumentHdl ;
+
+//---------------------------------------------------------------------------------------
+
+OSErr MyQD3DInitialize( void ) ;
+OSErr MyQD3DExit() ;
+
+TQ3ViewObject       MyNewView(GWorldPtr theGWorld) ;
+TQ3DrawContextObject MyNewDrawContext(GWorldPtr theGWorld) ;
+TQ3CameraObject     MyNewCamera(CGrafPtr thePort) ;
+TQ3GroupObject      MyNewLights(void) ;
+TQ3GroupObject      MyNewModelFromFile(FSSpec *theFileSpec) ;
+TQ3Status           SubmitScene( DocumentPtr theDocument ) ;
+
+TQ3Point3D AdjustCamera(
+    DocumentPtr         theDocument,
+    short               winWidth,
+    short               winHeight) ;
+
+Boolean             MetafileFileSpecify( FSSpec *theFile ) ; 
+TQ3Status           MyReadModelFromFile( TQ3FileObject theFile,TQ3GroupObject myGroup) ;
+
+#endif
+```
+
+[Next](Document%20Revision%20History.md)[Previous](3DMF2PICTSupport.c.md)
+

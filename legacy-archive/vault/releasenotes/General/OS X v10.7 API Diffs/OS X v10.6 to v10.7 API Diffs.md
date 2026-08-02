@@ -1,0 +1,82 @@
+---
+title: OS X v10.7 API Diffs
+apple_id: TP40010630
+resource_type: Release Note
+platform: macOS
+topic: General
+technology: null
+published: '2011-06-06'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/MacOSXLionAPIDiffs/index.html
+archived_at: '2026-07-18T02:54:40.999804Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md)
+
+
+# OS X v10.6 to v10.7 API Diffs
+
+- [Accelerate](Accelerate%20Changes.md)
+- [AddressBook](AddressBook%20Changes.md)
+- [AGL](AGL%20Changes.md)
+- [AppKit](AppKit%20Changes.md)
+- [AppleShareClientCore](AppleShareClientCore%20Changes.md)
+- [ApplicationServices](ApplicationServices%20Changes.md)
+- [AudioToolbox](AudioToolbox%20Changes.md)
+- [AudioUnit](AudioUnit%20Changes.md)
+- [Automator](Automator%20Changes.md)
+- [AVFoundation](AVFoundation%20Changes.md) (Added)
+- [CalendarStore](CalendarStore%20Changes.md)
+- [Carbon](Carbon%20Changes.md)
+- [CoreAudio](CoreAudio%20Changes.md)
+- [CoreData](CoreData%20Changes.md)
+- [CoreFoundation](CoreFoundation%20Changes.md)
+- [CoreLocation](CoreLocation%20Changes.md)
+- [CoreMedia](CoreMedia%20Changes.md) (Added)
+- [CoreMediaIO](CoreMediaIO%20Changes.md) (Added)
+- [CoreMIDI](CoreMIDI%20Changes.md)
+- [CoreServices](CoreServices%20Changes.md)
+- [CoreVideo](CoreVideo%20Changes.md)
+- [CoreWLAN](CoreWLAN%20Changes.md)
+- [DirectoryService](DirectoryService%20Changes.md)
+- [DiskArbitration](DiskArbitration%20Changes.md)
+- [DrawSprocket](DrawSprocket%20Changes.md)
+- [Foundation](Foundation%20Changes.md)
+- [GSS](GSS%20Changes.md) (Added)
+- [ICADevices](ICADevices%20Changes.md)
+- [ImageCaptureCore](ImageCaptureCore%20Changes.md)
+- [IMServicePlugIn](IMServicePlugIn%20Changes.md) (Added)
+- [InputMethodKit](InputMethodKit%20Changes.md)
+- [IOBluetooth](IOBluetooth%20Changes.md)
+- [IOBluetoothUI](IOBluetoothUI%20Changes.md)
+- [IOKit](IOKit%20Changes.md)
+- [IOSurface](IOSurface%20Changes.md)
+- [JavaScriptCore](JavaScriptCore%20Changes.md)
+- [Kerberos](Kerberos%20Changes.md)
+- [Kernel](Kernel%20Changes.md)
+- [LatentSemanticMapping](LatentSemanticMapping%20Changes.md)
+- [Message](Message%20Changes.md)
+- [NetFS](NetFS%20Changes.md)
+- [OpenAL](OpenAL%20Changes.md)
+- [OpenCL](OpenCL%20Changes.md)
+- [OpenDirectory](OpenDirectory%20Changes.md)
+- [OpenGL](OpenGL%20Changes.md)
+- [PCSC](PCSC%20Changes.md)
+- [PreferencePanes](PreferencePanes%20Changes.md)
+- [Python](Python%20Changes.md)
+- [QTKit](QTKit%20Changes.md)
+- [Quartz](Quartz%20Changes.md)
+- [QuartzCore](QuartzCore%20Changes.md)
+- [QuickLook](QuickLook%20Changes.md)
+- [QuickTime](QuickTime%20Changes.md)
+- [Ruby](Ruby%20Changes.md)
+- [RubyCocoa](RubyCocoa%20Changes.md)
+- [Security](Security%20Changes.md)
+- [SecurityInterface](SecurityInterface%20Changes.md)
+- [ServiceManagement](ServiceManagement%20Changes.md)
+- [SyncServices](SyncServices%20Changes.md)
+- [SystemConfiguration](SystemConfiguration%20Changes.md)
+- [Tcl](Tcl%20Changes.md)
+- [Tk](Tk%20Changes.md)
+- [vecLib](vecLib%20Changes.md)
+- [VideoDecodeAcceleration](VideoDecodeAcceleration%20Changes.md) (Added)
+- [WebKit](WebKit%20Changes.md)
+- [XgridFoundation](XgridFoundation%20Changes.md)

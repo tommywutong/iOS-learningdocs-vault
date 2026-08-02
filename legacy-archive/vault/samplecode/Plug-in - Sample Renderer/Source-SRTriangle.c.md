@@ -1,0 +1,197 @@
+---
+title: Plug-in  - Sample Renderer
+apple_id: DTS10000120
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Plug-in__-_Sample_Renderer/Listings/Source_SR_Triangle_c.html
+archived_at: '2026-07-18T03:19:19.874208Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Plug-in  - Sample Renderer](Plug-in%20-%20Sample%20Renderer.md)
+
+
+[Next](Source-SRWinDialog.c.md)[Previous](Source-SRRasterizers.c.md)
+
+# Source/SR_Triangle.c
+
+```c
+/******************************************************************************
+ **                                                                          **
+ **     Module:     SR_Triangle.c                                            **
+ **                                                                          **
+ **                                                                          **
+ **     Purpose:    Sample Renderer triangle routines                        **
+ **                                                                          **
+ **                                                                          **
+ **                                                                          **
+ **     Copyright (C) 1996 Apple Computer, Inc.  All rights reserved.        **
+ **                                                                          **
+ **                                                                          **
+ *****************************************************************************/
+#include <assert.h>
+
+#include "QD3D.h"
+
+#include "SR.h"
+#include "SR_Math.h"
+
+
+/*===========================================================================*\
+ *
+ *  Routine:    SR_Geometry_Triangle()
+ *
+ *  Comments:   
+ *
+\*===========================================================================*/
+
+TQ3Status SR_Geometry_Triangle(
+    TQ3ViewObject           view, 
+    TSRPrivate              *srPrivate,
+    TQ3GeometryObject       triangle, 
+    const TQ3TriangleData   *triangleData)
+{
+    unsigned long           numVertices;
+    TQ3Boolean              highlightState;
+    TQ3XClipMaskState       clipMaskState;
+    TQ3ColorRGB             color;
+    TQ3Vector3D             normal;
+
+    UNUSED(triangle);
+
+    assert(view         != NULL);
+    assert(srPrivate    != NULL);
+    assert(triangleData != NULL);
+
+    /*
+     *  Call the application's idle progress method, via the view.  If
+     *  the app's method returns kQ3Failure, then we don't go on.
+     */
+    if (SR_IdleProgress(view, srPrivate) == kQ3Failure) {
+        return (kQ3Success);
+    }
+
+    if (srPrivate->drawRegion == NULL) {
+        return (kQ3Success);
+    }
+
+    /*
+     *  Find out if we're clipped out or not. No reason to go any
+     *  further if the region is obscured or entirely off-screen. 
+     */
+    Q3XDrawRegion_GetClipFlags(srPrivate->drawRegion, &clipMaskState);
+    if (clipMaskState == kQ3XClipMaskNotExposed) {
+        return (kQ3Success);
+    }
+
+    /*
+     *  Lazy-evaluate the various transforms for the pipeline
+     */
+    if (SR_UpdatePipeline(srPrivate) == kQ3Failure) {
+        return (kQ3Failure);
+    }
+
+    /*
+     *  Amazingly enough, triangles have three vertices :-)
+     */
+    numVertices = 3;
+
+    /*
+     *  Highlight state and  color are from the view, unless
+     *  overridden by the triangleAttributeSet
+     */
+    highlightState  = srPrivate->viewHighlightState;
+    color           = srPrivate->viewDiffuseColor;
+
+    /*
+     *  Check if we have a triangle attribute set.
+     *  If so, then see if we can get a color and highlight state
+     *  out of it. 
+     */
+    if (triangleData->triangleAttributeSet != NULL) {
+        TQ3XAttributeMask   attributeMask;
+
+        attributeMask = Q3XAttributeSet_GetMask(triangleData->triangleAttributeSet);
+
+        if (attributeMask & kQ3XAttributeMaskDiffuseColor) {
+            Q3AttributeSet_Get(
+                triangleData->triangleAttributeSet,
+                kQ3AttributeTypeDiffuseColor,
+                &color);
+        }
+
+        if (attributeMask & kQ3XAttributeMaskHighlightState) {
+            Q3AttributeSet_Get(
+                triangleData->triangleAttributeSet, 
+                kQ3AttributeTypeHighlightState, 
+                &highlightState);
+        }
+    }
+
+    /*
+     *  If we're highlighting, then see if we can get a highlight color
+     *  out of the view's attribute set. Use that as the color, if it's there.
+     */
+    if ((highlightState == kQ3True) &&
+        (srPrivate->viewHighlightAttributeSet != NULL)) {
+        TQ3XAttributeMask   attributeMask;
+
+        attributeMask = Q3XAttributeSet_GetMask(
+                            srPrivate->viewHighlightAttributeSet);
+
+        if (attributeMask & kQ3XAttributeMaskDiffuseColor) {
+            Q3AttributeSet_Get( 
+                srPrivate->viewHighlightAttributeSet, 
+                kQ3AttributeTypeDiffuseColor, 
+                &color);
+        }
+    }
+
+    /*
+     *  Get the normal for the triangle
+     */
+    SRTriangle_GetNormal(
+        (TQ3TriangleData *)triangleData, 
+        &normal);
+
+    switch (srPrivate->viewFillStyle) {
+        case kQ3FillStyleFilled:    
+        case kQ3FillStyleEdges: {
+            if (SR_LinePipe(
+                    srPrivate, 
+                    (TQ3Point3D *)triangleData->vertices, 
+                    numVertices, 
+                    sizeof(TQ3Vertex3D),
+                    &color,
+                    &normal,
+                    DO_POLYGON) == kQ3Failure) {
+                return (kQ3Failure);
+            }
+            break;
+        }
+        case kQ3FillStylePoints: {
+            if (SR_PointPipe(
+                    srPrivate, 
+                    (TQ3Point3D *)triangleData->vertices, 
+                    numVertices, 
+                    sizeof(TQ3Vertex3D),
+                    &color,
+                    &normal,
+                    DO_POLYGON) == kQ3Failure) {
+                return (kQ3Failure);
+            }
+            break;
+        }
+        default: {
+            return (kQ3Failure);
+            break;
+        }
+    }
+
+    return (kQ3Success);
+}
+```
+
+[Next](Source-SRWinDialog.c.md)[Previous](Source-SRRasterizers.c.md)
+

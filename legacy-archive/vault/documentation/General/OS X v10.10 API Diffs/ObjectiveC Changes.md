@@ -1,0 +1,67 @@
+---
+title: OS X v10.10 API Diffs
+apple_id: TP40014444
+resource_type: Release Note
+platform: macOS
+topic: General
+technology: null
+published: '2014-10-16'
+source_url: https://developer.apple.com/library/archive/documentation/General/Reference/APIDiffsMacOSX10_10SeedDiff/modules/ObjectiveC.html
+archived_at: '2026-07-15T07:34:56.177172Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [OS X v10.10 API Diffs](OS%20X%20v10.9%20to%20OS%20X%20v10.10%20API%20Differences.md)
+
+
+# ObjectiveC Changes
+
+## ObjectiveC (Added)
+
+Added NSObjectAdded NSObject.init()Added NSObject.alloc() -> Self! [class]Added NSObject.allocWithZone(NSZone) -> Self! [class]Added NSObject.conformsToProtocol(Protocol) -> Bool [class]Added NSObject.copy() -> AnyObjectAdded NSObject.debugDescription() -> String [class]Added NSObject.description() -> String [class]Added NSObject.doesNotRecognizeSelector(Selector)Added NSObject.finalize()Added NSObject.forwardingTargetForSelector(Selector) -> AnyObject?Added NSObject.hash() -> Int [class]Added NSObject.initialize() [class]Added NSObject.instanceMethodForSelector(Selector) -> IMP [class]Added NSObject.instancesRespondToSelector(Selector) -> Bool [class]Added NSObject.isSubclassOfClass(AnyClass) -> Bool [class]Added NSObject.load() [class]Added NSObject.methodForSelector(Selector) -> IMPAdded NSObject.mutableCopy() -> AnyObjectAdded NSObject.new() -> Self! [class]Added NSObject.resolveClassMethod(Selector) -> Bool [class]Added NSObject.resolveInstanceMethod(Selector) -> Bool [class]Added NSObject.superclass() -> AnyClass? [class]Added NSObjectProtocolAdded NSObjectProtocol.conformsToProtocol(Protocol) -> BoolAdded NSObjectProtocol.debugDescriptionAdded NSObjectProtocol.descriptionAdded NSObjectProtocol.hashAdded NSObjectProtocol.isEqual(AnyObject?) -> BoolAdded NSObjectProtocol.isKindOfClass(AnyClass) -> BoolAdded NSObjectProtocol.isMemberOfClass(AnyClass) -> BoolAdded NSObjectProtocol.isProxy() -> BoolAdded NSObjectProtocol.respondsToSelector(Selector) -> BoolAdded NSObjectProtocol.self() -> Self!Added NSObjectProtocol.superclassAdded NSZone [struct]Added NSZone.init()Added NSZone.init(nilLiteral: ())Added NSZone.pointerAdded ObjCBool [struct]Added ObjCBool.init(_: Bool)Added ObjCBool.init(_: Int8)Added ObjCBool.boolValueAdded ObjCBool.init(booleanLiteral: Bool)Added ObjCBool.descriptionAdded ObjCBool.getMirror() -> MirrorTypeAdded ObjCBool.valueAdded ProtocolAdded Selector [struct]Added Selector.init()Added Selector.init(_: String)Added Selector.descriptionAdded Selector.init(extendedGraphemeClusterLiteral: String)Added Selector.getMirror() -> MirrorTypeAdded Selector.hashValueAdded Selector.init(nilLiteral: ())Added Selector.ptrAdded Selector.init(stringLiteral: String)Added Selector.init(unicodeScalarLiteral: String)Added objc_method_description [struct]Added objc_method_description.nameAdded objc_method_description.typesAdded objc_object [struct]Added objc_property_attribute_t [struct]Added objc_property_attribute_t.nameAdded objc_property_attribute_t.valueAdded objc_super [struct]Added objc_super.receiverAdded objc_super.super_classAdded CategoryAdded IMPAdded IvarAdded MethodAdded NSIntegerAdded NSIntegerMaxAdded NSUIntegerMaxAdded OBJC_API_VERSIONAdded OBJC_ASSOCIATION_ASSIGNAdded OBJC_ASSOCIATION_COPYAdded OBJC_ASSOCIATION_COPY_NONATOMICAdded OBJC_ASSOCIATION_RETAINAdded OBJC_ASSOCIATION_RETAIN_NONATOMICAdded OBJC_CLEAR_RESIDENT_STACKAdded OBJC_COLLECT_IF_NEEDEDAdded OBJC_EXHAUSTIVE_COLLECTIONAdded OBJC_FULL_COLLECTIONAdded OBJC_GENERATIONAL_COLLECTIONAdded OBJC_NEXT_METHOD_LISTAdded OBJC_OLD_DISPATCH_PROTOTYPESAdded OBJC_RATIO_COLLECTIONAdded OBJC_SYNC_NOT_INITIALIZEDAdded OBJC_SYNC_NOT_OWNING_THREAD_ERRORAdded OBJC_SYNC_SUCCESSAdded OBJC_SYNC_TIMED_OUTAdded OBJC_WAIT_UNTIL_DONEAdded OBSOLETE_OBJC_GETCLASSESAdded autoreleasepool(() -> ())Added class_addIvar(AnyClass!, UnsafePointer<Int8>, UInt, UInt8, UnsafePointer<Int8>) -> BoolAdded class_addMethod(AnyClass!, Selector, IMP, UnsafePointer<Int8>) -> BoolAdded class_addProperty(AnyClass!, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>, UInt32) -> BoolAdded class_addProtocol(AnyClass!, Protocol!) -> BoolAdded class_conformsToProtocol(AnyClass!, Protocol!) -> BoolAdded class_copyIvarList(AnyClass!, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<Ivar>Added class_copyMethodList(AnyClass!, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<Method>Added class_copyPropertyList(AnyClass!, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<objc_property_t>Added class_copyProtocolList(AnyClass!, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<Protocol?>Added class_getClassMethod(AnyClass!, Selector) -> MethodAdded class_getClassVariable(AnyClass!, UnsafePointer<Int8>) -> IvarAdded class_getImageName(AnyClass!) -> UnsafePointer<Int8>Added class_getInstanceMethod(AnyClass!, Selector) -> MethodAdded class_getInstanceSize(AnyClass!) -> UIntAdded class_getInstanceVariable(AnyClass!, UnsafePointer<Int8>) -> IvarAdded class_getIvarLayout(AnyClass!) -> UnsafePointer<UInt8>Added class_getMethodImplementation(AnyClass!, Selector) -> IMPAdded class_getMethodImplementation_stret(AnyClass!, Selector) -> IMPAdded class_getName(AnyClass!) -> UnsafePointer<Int8>Added class_getProperty(AnyClass!, UnsafePointer<Int8>) -> objc_property_tAdded class_getSuperclass(AnyClass!) -> AnyClass!Added class_getVersion(AnyClass!) -> Int32Added class_getWeakIvarLayout(AnyClass!) -> UnsafePointer<UInt8>Added class_isMetaClass(AnyClass!) -> BoolAdded class_replaceMethod(AnyClass!, Selector, IMP, UnsafePointer<Int8>) -> IMPAdded class_replaceProperty(AnyClass!, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>, UInt32)Added class_respondsToSelector(AnyClass!, Selector) -> BoolAdded class_setIvarLayout(AnyClass!, UnsafePointer<UInt8>)Added class_setVersion(AnyClass!, Int32)Added class_setWeakIvarLayout(AnyClass!, UnsafePointer<UInt8>)Added imp_getBlock(IMP) -> AnyObject!Added imp_implementationWithBlock(AnyObject!) -> IMPAdded imp_removeBlock(IMP) -> BoolAdded ivar_getName(Ivar) -> UnsafePointer<Int8>Added ivar_getOffset(Ivar) -> IntAdded ivar_getTypeEncoding(Ivar) -> UnsafePointer<Int8>Added marg_listAdded method_copyArgumentType(Method, UInt32) -> UnsafeMutablePointer<Int8>Added method_copyReturnType(Method) -> UnsafeMutablePointer<Int8>Added method_exchangeImplementations(Method, Method)Added method_getArgumentType(Method, UInt32, UnsafeMutablePointer<Int8>, UInt)Added method_getDescription(Method) -> UnsafeMutablePointer<objc_method_description>Added method_getImplementation(Method) -> IMPAdded method_getName(Method) -> SelectorAdded method_getNumberOfArguments(Method) -> UInt32Added method_getReturnType(Method, UnsafeMutablePointer<Int8>, UInt)Added method_getTypeEncoding(Method) -> UnsafePointer<Int8>Added method_setImplementation(Method, IMP) -> IMPAdded objc_AssociationPolicyAdded objc_addExceptionHandler(objc_exception_handler, UnsafeMutablePointer<Void>) -> UIntAdded objc_allocateClassPair(AnyClass!, UnsafePointer<Int8>, UInt) -> AnyClass!Added objc_allocateProtocol(UnsafePointer<Int8>) -> Protocol!Added objc_assertRegisteredThreadWithCollector()Added objc_assign_global(AnyObject!, AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_assign_ivar(AnyObject!, AnyObject!, Int) -> AnyObject!Added objc_assign_strongCast(AnyObject!, AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_assign_threadlocal(AnyObject!, AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_assign_weak(AnyObject!, AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_begin_catch(UnsafeMutablePointer<Void>) -> AnyObject!Added objc_clear_stack(UInt)Added objc_collect(UInt)Added objc_collectableZone() -> UnsafeMutablePointer<malloc_zone_t>Added objc_collectingEnabled() -> BoolAdded objc_copyClassList(UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<AnyClass?>Added objc_copyClassNamesForImage(UnsafePointer<Int8>, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<UnsafePointer<Int8>>Added objc_copyImageNames(UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<UnsafePointer<Int8>>Added objc_copyProtocolList(UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<Protocol?>Added objc_disposeClassPair(AnyClass!)Added objc_duplicateClass(AnyClass!, UnsafePointer<Int8>, UInt) -> AnyClass!Added objc_end_catch()Added objc_enumerationMutation(AnyObject!)Added objc_exception_handlerAdded objc_exception_matcherAdded objc_exception_preprocessorAdded objc_exception_rethrow()Added objc_exception_throw(AnyObject!)Added objc_getAssociatedObject(AnyObject!, UnsafePointer<Void>) -> AnyObject!Added objc_getClass(UnsafePointer<Int8>) -> AnyObject!Added objc_getClassList(AutoreleasingUnsafeMutablePointer<AnyClass?>, Int32) -> Int32Added objc_getMetaClass(UnsafePointer<Int8>) -> AnyObject!Added objc_getProtocol(UnsafePointer<Int8>) -> Protocol!Added objc_getRequiredClass(UnsafePointer<Int8>) -> AnyClass!Added objc_is_finalized(UnsafeMutablePointer<Void>) -> BoolAdded objc_loadWeak(AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_lookUpClass(UnsafePointer<Int8>) -> AnyClass!Added objc_memmove_collectable(UnsafeMutablePointer<Void>, UnsafePointer<Void>, UInt) -> UnsafeMutablePointer<Void>Added objc_objectptr_tAdded objc_property_tAdded objc_read_weak(AutoreleasingUnsafeMutablePointer<AnyObject?>) -> AnyObject!Added objc_registerClassPair(AnyClass!)Added objc_registerProtocol(Protocol!)Added objc_registerThreadWithCollector()Added objc_removeAssociatedObjects(AnyObject!)Added objc_removeExceptionHandler(UInt)Added objc_setAssociatedObject(AnyObject!, UnsafePointer<Void>, AnyObject!, objc_AssociationPolicy)Added objc_setCollectionRatio(UInt)Added objc_setCollectionThreshold(UInt)Added objc_setEnumerationMutationHandler(CFunctionPointer<((AnyObject!) -> Void)>)Added objc_setExceptionMatcher(objc_exception_matcher) -> objc_exception_matcherAdded objc_setExceptionPreprocessor(objc_exception_preprocessor) -> objc_exception_preprocessorAdded objc_setForwardHandler(UnsafeMutablePointer<Void>, UnsafeMutablePointer<Void>)Added objc_setUncaughtExceptionHandler(objc_uncaught_exception_handler) -> objc_uncaught_exception_handlerAdded objc_storeWeak(AutoreleasingUnsafeMutablePointer<AnyObject?>, AnyObject!) -> AnyObject!Added objc_sync_enter(AnyObject!) -> Int32Added objc_sync_exit(AnyObject!) -> Int32Added objc_terminate()Added objc_uncaught_exception_handlerAdded objc_unregisterThreadWithCollector()Added object_getClass(AnyObject!) -> AnyClass!Added object_getClassName(AnyObject!) -> UnsafePointer<Int8>Added object_getIvar(AnyObject!, Ivar) -> AnyObject!Added object_isClass(AnyObject!) -> BoolAdded object_setClass(AnyObject!, AnyClass!) -> AnyClass!Added object_setIvar(AnyObject!, Ivar, AnyObject!)Added property_copyAttributeList(objc_property_t, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<objc_property_attribute_t>Added property_copyAttributeValue(objc_property_t, UnsafePointer<Int8>) -> UnsafeMutablePointer<Int8>Added property_getAttributes(objc_property_t) -> UnsafePointer<Int8>Added property_getName(objc_property_t) -> UnsafePointer<Int8>Added protocol_addMethodDescription(Protocol!, Selector, UnsafePointer<Int8>, Bool, Bool)Added protocol_addProperty(Protocol!, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>, UInt32, Bool, Bool)Added protocol_addProtocol(Protocol!, Protocol!)Added protocol_conformsToProtocol(Protocol!, Protocol!) -> BoolAdded protocol_copyMethodDescriptionList(Protocol!, Bool, Bool, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<objc_method_description>Added protocol_copyPropertyList(Protocol!, UnsafeMutablePointer<UInt32>) -> UnsafeMutablePointer<objc_property_t>Added protocol_copyProtocolList(Protocol!, UnsafeMutablePointer<UInt32>) -> AutoreleasingUnsafeMutablePointer<Protocol?>Added protocol_getMethodDescription(Protocol!, Selector, Bool, Bool) -> objc_method_descriptionAdded protocol_getName(Protocol!) -> UnsafePointer<Int8>Added protocol_getProperty(Protocol!, UnsafePointer<Int8>, Bool, Bool) -> objc_property_tAdded protocol_isEqual(Protocol!, Protocol!) -> BoolAdded sel_getName(Selector) -> UnsafePointer<Int8>Added sel_getUid(UnsafePointer<Int8>) -> SelectorAdded sel_isEqual(Selector, Selector) -> BoolAdded sel_isMapped(Selector) -> BoolAdded sel_registerName(UnsafePointer<Int8>) -> Selector
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

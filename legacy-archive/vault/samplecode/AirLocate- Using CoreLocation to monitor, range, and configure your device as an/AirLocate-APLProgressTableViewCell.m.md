@@ -1,0 +1,84 @@
+---
+title: 'AirLocate: Using CoreLocation to monitor, range, and configure your device
+  as an iBeacon'
+apple_id: DTS40013430
+resource_type: Sample Code
+platform: iOS
+topic: null
+technology: CoreLocation
+published: '2014-01-06'
+source_url: https://developer.apple.com/library/archive/samplecode/AirLocate/Listings/AirLocate_APLProgressTableViewCell_m.html
+archived_at: '2026-07-18T03:00:55.851816Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [AirLocate: Using CoreLocation to monitor, range, and configure your device as an iBeacon](AirLocate-%20Using%20CoreLocation%20to%20monitor%2C%20range%2C%20and%20configure%20your%20device%20as%20an.md)
+
+
+[Next](AirLocate-APLRangingViewController.h.md)[Previous](AirLocate-APLProgressTableViewCell.h.md)
+
+# AirLocate/APLProgressTableViewCell.m
+
+```objc
+/*
+     File: APLProgressTableViewCell.m
+ Abstract: A simple table view cell that includes a progress view.
+
+  Version: 1.1
+
+ Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
+ Inc. ("Apple") in consideration of your agreement to the following
+ terms, and your use, installation, modification or redistribution of
+ this Apple software constitutes acceptance of these terms.  If you do
+ not agree with these terms, please do not use, install, modify or
+ redistribute this Apple software.
+
+ In consideration of your agreement to abide by the following terms, and
+ subject to these terms, Apple grants you a personal, non-exclusive
+ license, under Apple's copyrights in this original Apple software (the
+ "Apple Software"), to use, reproduce, modify and redistribute the Apple
+ Software, with or without modifications, in source and/or binary forms;
+ provided that if you redistribute the Apple Software in its entirety and
+ without modifications, you must retain this notice and the following
+ text and disclaimers in all such redistributions of the Apple Software.
+ Neither the name, trademarks, service marks or logos of Apple Inc. may
+ be used to endorse or promote products derived from the Apple Software
+ without specific prior written permission from Apple.  Except as
+ expressly stated in this notice, no other rights or licenses, express or
+ implied, are granted by Apple herein, including but not limited to any
+ patent rights that may be infringed by your derivative works or by other
+ works in which the Apple Software may be incorporated.
+
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+ MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+ OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+ MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+ STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+ Copyright (C) 2014 Apple Inc. All Rights Reserved.
+
+ */
+
+#import "APLProgressTableViewCell.h"
+
+@interface APLProgressTableViewCell ()
+
+@property (nonatomic, weak, readwrite) IBOutlet UIProgressView *progressView;
+
+@end
+
+
+@implementation APLProgressTableViewCell
+
+@end
+```
+
+[Next](AirLocate-APLRangingViewController.h.md)[Previous](AirLocate-APLProgressTableViewCell.h.md)
+

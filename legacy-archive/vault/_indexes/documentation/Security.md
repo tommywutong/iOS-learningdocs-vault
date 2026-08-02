@@ -1,0 +1,75 @@
+# documentation / Security
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 10 份文档。
+
+- **[App Sandbox Design Guide](../../documentation/Security/App%20Sandbox%20Design%20Guide/About%20App%20Sandbox.md)** — Guide · 2016-09-13，macOS，7 页
+  - [App Sandbox Quick Start](../../documentation/Security/App%20Sandbox%20Design%20Guide/App%20Sandbox%20Quick%20Start.md)
+  - [App Sandbox in Depth](../../documentation/Security/App%20Sandbox%20Design%20Guide/App%20Sandbox%20in%20Depth.md)
+  - [Designing for App Sandbox](../../documentation/Security/App%20Sandbox%20Design%20Guide/Designing%20for%20App%20Sandbox.md)
+  - [Migrating an App to a Sandbox](../../documentation/Security/App%20Sandbox%20Design%20Guide/Migrating%20an%20App%20to%20a%20Sandbox.md)
+  - [App Sandbox Checklist](../../documentation/Security/App%20Sandbox%20Design%20Guide/App%20Sandbox%20Checklist.md)
+  - [Document Revision History](../../documentation/Security/App%20Sandbox%20Design%20Guide/Document%20Revision%20History.md)
+- **[身份验证、授权与权限指南](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/About%20Authentication%2C%20Authorization%2C%20and%20Permissions.md)** — Guide · 2013-01-28，macOS，6 页
+  - [深入探讨身份验证与身份识别](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/Authentication%20and%20Identification%20In%20Depth.md)
+  - [使用授权](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/Using%20Authorization.md)
+  - [理解权限](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/Understanding%20Permissions.md)
+  - [其他资源](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/Additional%20Resources.md)
+  - [文档修订历史](../../documentation/Security/Authentication%2C%20Authorization%2C%20and%20Permissions%20Guide/Document%20Revision%20History.md)
+- **[Authorization Services 编程指南](../../documentation/Security/Authorization%20Services%20Programming%20Guide/Introduction%20to%20Authorization%20Services%20Programming%20Guide.md)** — Guide · 2011-10-19，macOS · Security，5 页
+  - [授权概念](../../documentation/Security/Authorization%20Services%20Programming%20Guide/Authorization%20Concepts.md)
+  - [Authorization Services 任务](../../documentation/Security/Authorization%20Services%20Programming%20Guide/Authorization%20Services%20Tasks.md)
+  - [术语表](../../documentation/Security/Authorization%20Services%20Programming%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Security/Authorization%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Certificate, Key, and Trust Services Programming Guide](../../documentation/Security/Certificate%2C%20Key%2C%20and%20Trust%20Services%20Programming%20Guide/Certificate%2C%20Key%2C%20and%20Trust%20Services%20Programming%20Guide.md)** — Guide · 2018-06-04，watchOS|tvOS|iOS|macOS · Security
+- **[代码签名指南](../../documentation/Security/Code%20Signing%20Guide/About%20Code%20Signing.md)** — Guide · 2016-09-13，watchOS|tvOS|iOS|macOS · Security，5 页
+  - [理解代码签名](../../documentation/Security/Code%20Signing%20Guide/Understanding%20the%20Code%20Signature.md)
+  - [代码签名任务](../../documentation/Security/Code%20Signing%20Guide/Code%20Signing%20Tasks.md)
+  - [代码签名需求语言](../../documentation/Security/Code%20Signing%20Guide/Code%20Signing%20Requirement%20Language.md)
+  - [文档修订历史](../../documentation/Security/Code%20Signing%20Guide/Document%20Revision%20History.md)
+- **[加密服务指南](../../documentation/Security/Cryptographic%20Services%20Guide/About%20Cryptographic%20Services.md)** — Guide · 2018-06-04，tvOS|iOS|macOS · Security，9 页
+  - [深入探讨密码学概念](../../documentation/Security/Cryptographic%20Services%20Guide/Cryptography%20Concepts%20In%20Depth.md)
+  - [加密和哈希数据](../../documentation/Security/Cryptographic%20Services%20Guide/Encrypting%20and%20Hashing%20Data.md)
+  - [管理密钥、证书和密码](../../documentation/Security/Cryptographic%20Services%20Guide/Managing%20Keys%2C%20Certificates%2C%20and%20Passwords.md)
+  - [生成随机数](../../documentation/Security/Cryptographic%20Services%20Guide/Generating%20Random%20Numbers.md)
+  - [安全传输数据](../../documentation/Security/Cryptographic%20Services%20Guide/Transmitting%20Data%20Securely.md)
+  - [CDSA 概述](../../documentation/Security/Cryptographic%20Services%20Guide/CDSA%20Overview.md)
+  - [术语表](../../documentation/Security/Cryptographic%20Services%20Guide/Glossary.md)
+  - [文档修订历史](../../documentation/Security/Cryptographic%20Services%20Guide/Document%20Revision%20History.md)
+- **[安全编码指南](../../documentation/Security/Secure%20Coding%20Guide/Introduction%20to%20Secure%20Coding%20Guide.md)** — Guide · 2016-09-13，macOS，14 页
+  - [安全漏洞的类型](../../documentation/Security/Secure%20Coding%20Guide/Types%20of%20Security%20Vulnerabilities.md)
+  - [避免缓冲区溢出和下溢](../../documentation/Security/Secure%20Coding%20Guide/Avoiding%20Buffer%20Overflows%20and%20Underflows.md)
+  - [验证输入和进程间通信](../../documentation/Security/Secure%20Coding%20Guide/Validating%20Input%20and%20Interprocess%20Communication.md)
+  - [竞态条件与安全文件操作](../../documentation/Security/Secure%20Coding%20Guide/Race%20Conditions%20and%20Secure%20File%20Operations.md)
+  - [安全地提升权限](../../documentation/Security/Secure%20Coding%20Guide/Elevating%20Privileges%20Safely.md)
+  - [设计安全的用户界面](../../documentation/Security/Secure%20Coding%20Guide/Designing%20Secure%20User%20Interfaces.md)
+  - [设计安全的辅助程序和守护进程](../../documentation/Security/Secure%20Coding%20Guide/Designing%20Secure%20Helpers%20and%20Daemons.md)
+  - [避免注入攻击和 XSS](../../documentation/Security/Secure%20Coding%20Guide/Avoiding%20Injection%20Attacks%20and%20XSS.md)
+  - [安全开发检查清单](../../documentation/Security/Secure%20Coding%20Guide/Security%20Development%20Checklists.md)
+  - [第三方软件安全指南](../../documentation/Security/Secure%20Coding%20Guide/Third-Party%20Software%20Security%20Guidelines.md)
+  - [文档修订历史](../../documentation/Security/Secure%20Coding%20Guide/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Security/Secure%20Coding%20Guide/Glossary.md)
+  - [索引](../../documentation/Security/Secure%20Coding%20Guide/Index.md)
+- **[安全性概述](../../documentation/Security/Security%20Overview/About%20Software%20Security.md)** — Guide · 2012-12-13，watchOS|tvOS|iOS|macOS，9 页
+  - [风险评估与威胁建模](../../documentation/Security/Security%20Overview/Risk%20Assessment%20and%20Threat%20Modeling.md)
+  - [代码安全](../../documentation/Security/Security%20Overview/Code%20Security.md)
+  - [其他安全资源](../../documentation/Security/Security%20Overview/Other%20Security%20Resources.md)
+  - [身份验证与授权](../../documentation/Security/Security%20Overview/Authentication%20and%20Authorization.md)
+  - [加密服务](../../documentation/Security/Security%20Overview/Cryptographic%20Services.md)
+  - [Security Server 与 Security Agent](../../documentation/Security/Security%20Overview/Security%20Server%20and%20Security%20Agent.md)
+  - [终端用户安全功能](../../documentation/Security/Security%20Overview/End-User%20Security%20Features.md)
+  - [文档修订历史](../../documentation/Security/Security%20Overview/Document%20Revision%20History.md)
+- **[Security Transforms 编程指南](../../documentation/Security/Security%20Transforms%20Programming%20Guide/About%20Security%20Transforms.md)** — Guide · 2018-06-04，macOS · Security，7 页
+  - [Security Transforms 基础](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Security%20Transforms%20Basics.md)
+  - [读取文件](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Reading%20Files.md)
+  - [加密和解密数据](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Encrypting%20and%20Decrypting%20Data.md)
+  - [签名与验证](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Signing%20and%20Verifying.md)
+  - [创建自定义 Transform](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Creating%20Custom%20Transforms.md)
+  - [文档修订历史](../../documentation/Security/Security%20Transforms%20Programming%20Guide/Document%20Revision%20History.md)
+- **[系统完整性保护指南](../../documentation/Security/System%20Integrity%20Protection%20Guide/Introduction.md)** — Guide · 2015-09-16，Xcode Developer Tools|macOS，6 页
+  - [文件系统保护](../../documentation/Security/System%20Integrity%20Protection%20Guide/File%20System%20Protections.md)
+  - [运行时保护](../../documentation/Security/System%20Integrity%20Protection%20Guide/Runtime%20Protections.md)
+  - [内核扩展](../../documentation/Security/System%20Integrity%20Protection%20Guide/Kernel%20Extensions.md)
+  - [配置系统完整性保护](../../documentation/Security/System%20Integrity%20Protection%20Guide/Configuring%20System%20Integrity%20Protection.md)
+  - [文档修订历史](../../documentation/Security/System%20Integrity%20Protection%20Guide/Document%20Revision%20History.md)

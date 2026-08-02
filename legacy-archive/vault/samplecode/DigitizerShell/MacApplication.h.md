@@ -1,0 +1,63 @@
+---
+title: DigitizerShell
+apple_id: DTS10000799
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/DigitizerShell/Listings/MacApplication_h.html
+archived_at: '2026-07-18T03:06:53.908537Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [DigitizerShell](DigitizerShell.md)
+
+
+[Next](MacFramework.c.md)[Previous](MacApplication.c.md)
+
+# MacApplication.h
+
+```
+/*
+    File:       MacApplication.h
+
+    Contains:   Digitizer Shell specific functions concerning the application shell.
+
+    Written by:     
+
+    Copyright:  Copyright © 1994-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                7/28/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+
+#pragma once
+
+
+// APPLICATION SPECIFIC ENUMS
+// MENUS
+enum eAppMenus {
+    mTesting = 131, mCaptureSize = 132
+};
+
+enum eTestingMenu {
+    iTest1 = 1, iTest2, iTest3, iTest4, iTest5, iTest6, iTest7, iTest8, iTest9, iTest10
+};
+
+enum eCaptureSizeVars {
+    iSizeNormal = 1, iSizeSmall, iSizeBig
+};
+```
+
+[Next](MacFramework.c.md)[Previous](MacApplication.c.md)
+

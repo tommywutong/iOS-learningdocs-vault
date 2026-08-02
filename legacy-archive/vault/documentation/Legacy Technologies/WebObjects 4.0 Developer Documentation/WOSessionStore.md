@@ -1,0 +1,133 @@
+---
+title: WebObjects 4.0 Developer Documentation
+apple_id: TP40006774
+resource_type: Guide
+platform: macOS
+topic: null
+technology: null
+published: '2007-12-11'
+source_url: https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Library/Frameworks/WebObjects.framework/Resources/English.lproj/Documentation/Reference/Java/Classes/WOSessionStore.html
+archived_at: '2026-07-18T01:28:52.590902Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [WebObjects 4.0 Developer Documentation](webobjects.md)
+
+
+__PATH__
+[WebObjects 4.0 Documentation](webobjects.md) __>__
+[WebObjects Framework Reference](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Library/Frameworks/WebObjects.framework/Resources/English.lproj/Documentation/Reference/Java/frameset.html)
+
+[!](WOSession.md)
+[!](WOStatisticsStore.md)
+
+---
+
+# WOSessionStore
+
+__Inherits From:__
+NSObject
+
+__Inherits From:__
+com.apple.yellow.webobjects
+
+---
+
+## Class Description
+
+WOSessionStore, an abstract superclass, offers an object abstraction for storing client state per session. The application object ([WOApplication](WOApplication.md)) uses an instance of a concrete WOSessionStore subclass to implement a strategy for storing and retrieving session state. You typically set the WOSessionStore during application initialization through WOApplication's [`setSessionStore`](WOApplication.md#apple-haytenq) method.
+
+An application first creates a session ([WOSession](WOSession.md)) when it receives a request without a session ID. When this first request has been handled, the application stores the WOSession object under a randomly generated session ID by invoking its own [`saveSessionForContext`](#apple-gy4q) method. This method by default forwards the message to the chosen WOSessionStore and that WOSessionStore takes care of the details of saving session state. When the next request comes in for that session, the application restores the session by sending itself [`restoreSessionWithID`](#apple-ge4timi), which by default is forwarded to the application's WOSessionStore. The WOSessionStore then asks the [WOContext](WOContext.md) of the transaction for the session ID of the session. Based on the implementation of the WOSessionStore, the session object is located and returned.
+
+There is one subclass of WOSessionStore implemented for the developer's convenience. A _server_ WOSessionStore (the default) stores session state in the server, in application memory. The [`serverSessionStore`](#apple-gu3dqmq) method returns this WOSessionStore.
+
+See the chapter "Managing State" in the _WebObjects Developers Guide_ for the purposes, mechanisms, and limitations of session store in the server, page, and cookies.
+
+You can create a custom session store by making a subclass of WOSessionStore. The subclass should properly implement the [`saveSessionForContext`](#apple-gy4q) and [`restoreSessionWithID`](#apple-ge4timi) methods (using the session ID as the key for storage) and should have a public method that the application object can use to obtain an instance. Some interesting session stores could be:
+
+- A database session store that stores session data in a database as blobs, with the session ID as the primary key. This kind of WOSessionStore can be shared by many instances of the same WebObjects application, thus distributing the load (requests) among the instances.
+- An adaptive session store that stores session state either in cookies or on the server, depending on what the client supports.
+
+If you create your own WOSessionStore class that generates persistent objects, you should implement an algorithm that cleans up session state after the session is inactive for a long time. The server WOSessionStore provided by WebObjects performs this clean-up properly, but the API is not yet public.
+
+---
+
+## Method Types
+
+**Obtaining a session store**
+
+**[serverSessionStore](#apple-gu3dqmq)**
+
+**Checking a session in and out**
+
+**[checkinSessionForContext](#apple-gm3tmna)
+
+**[checkoutSessionWithID](#apple-gu3toni)****
+
+**Saving and restoring a context**
+
+**[restoreSessionWithID](#apple-ge4timi)
+
+**[saveSessionForContext](#apple-gy4q)****
+
+#
+
+---
+
+### serverSessionStore
+
+public static WOSessionStore `serverSessionStore`()
+
+Returns a WOSessionStore object that stores session state in application memory. Since this is the default storage strategy, you do not need to explicitly set the session store during application initialization if this is the strategy you want.
+
+State storage in the server is the most secure and is the easiest to implement. You can also easily manage the amount of storage consumed by setting session timeouts, limiting the size of the page-instance cache, and page uniquing. (See "Managing State" in the _WebObjects Developers Guide_ for details on these techniques.)
+
+You may use the coding constructor for the session (`[WOSession](WOSession.md#apple-gi2dmmby)(`NSCoder`)`) to restore session state from the archived data.
+
+---
+
+## Instance Methods
+
+---
+
+### checkinSessionForContext
+
+public void `checkinSessionForContext`(WOContext _aContext_)
+
+This method calls [`saveSessionForContext`](#apple-gy4q) (implemented in the concrete subclass) to save the session referred to by _aContext_ using whatever storage technique is supported by the receiver. This method also "checks in" the session so that pending (and future) requests for the same session may procede. This method is called by [WOApplication](WOApplication.md) to save the session even if the session was not previously checked out via [`checkoutSessionWithID`](#apple-gu3toni) (that is, the session is a new session which was just created and, therefore, not restored).
+
+---
+
+### checkoutSessionWithID
+
+public WOSession `checkoutSessionWithID`(java.lang.String _aSessionID,_ WORequest _aRequest_)
+
+This method returns a session for _aSessionID_ if one is stored. This method calls [`restoreSessionWithID`](#apple-ge4timi) (implemented in the concrete subclass) to do the actual session restoration using whatever storage technique is supported by the receiver. If the session is located and restored, this method also "checks out" _aSessionID_ so that simultaneous access to the same session is precluded. If the session is not restored, the _aSessionID_ is not checked out.
+
+---
+
+### restoreSessionWithID
+
+public WOSession `restoreSessionWithID`(java.lang.String _aSessionID_, WORequest _aRequest_)
+
+Implemented by a private concrete subclass to restore the current session object from a particular type of storage.
+
+The default implementation of this method does nothing
+
+---
+
+### saveSessionForContext
+
+public void `saveSessionForContext`(WOContext _aContext_)
+
+Implemented by a private concrete subclass to save the current session object using a particular strategy for state storage. The default implementation of this method does nothing.
+
+You may use the NSCoding interface method `encodeWithCoder` to save session state to archived data.
+
+---
+
+[!](WOSession.md)
+[!](WOStatisticsStore.md)
+
+---
+
+_Copyright © 1998, Apple Computer, Inc. All rights
+reserved._

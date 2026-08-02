@@ -1,0 +1,182 @@
+---
+title: FastDitherUsingQT
+apple_id: DTS10000827
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-02-25'
+source_url: https://developer.apple.com/library/archive/samplecode/FastDitherUsingQT/Listings/FastDither_c.html
+archived_at: '2026-07-18T03:08:26.334771Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [FastDitherUsingQT](FastDitherUsingQT.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](FastDitherUsingQT.md)
+
+# FastDither.c
+
+```c
+/*
+    File:       FastDither.c
+
+    Contains:   This short snippet shows how you can use QuickTime
+                to get faster dithering.
+
+    Written by: John Wang   
+
+    Copyright:  Copyright © 1994-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                7/29/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+#ifdef THINK_C
+#define     applec
+#endif
+
+#include    <Types.h>
+#include    <Memory.h>
+#include    <QuickDraw.h>
+#include    <Palettes.h>
+#include    <QDOffscreen.h>
+#include    <Errors.h>
+#include    <Fonts.h>
+#include    <Dialogs.h>
+#include    <Windows.h>
+#include    <Menus.h>
+#include    <Events.h>
+#include    <Desk.h>
+#include    <DiskInit.h>
+#include    <OSUtils.h>
+#include    <Resources.h>
+#include    <ToolUtils.h>
+#include    <AppleEvents.h>
+#include    <EPPC.h>
+#include    <GestaltEqu.h>
+#include    <Processes.h>
+#include    <Balloons.h>
+#include    <Aliases.h>
+#include    <MixedMode.h>
+#include    <Scrap.h>
+#include    <LowMem.h>
+
+#include    <ImageCompression.h>
+
+WindowPtr   gWindow;
+
+void    main(void);
+void    doTest(void);
+
+/* ------------------------------------------------------------------------- */
+
+void main(void)
+{
+    Rect bounds = {40, 40, 40, 40};
+
+    MaxApplZone();
+    InitGraf(&qd.thePort);
+    InitFonts();
+    FlushEvents(0xffff,0);
+    InitWindows();
+    InitMenus();
+    InitDialogs(0);
+    TEInit();
+    InitCursor();
+    gWindow = NewCWindow(0L, &bounds, "\p", true, documentProc,
+                            (WindowPtr)-1L, false, 0L);
+    SetGWorld((CGrafPtr) gWindow, GetMainDevice());
+    doTest();
+}
+
+void doTest(void)
+{
+    short                   i;
+    GWorldPtr               srcGWorld;
+    PixMapHandle            srcPixMap;
+    PicHandle               pict;
+    Rect                    pictBounds;
+    CGrafPtr                savedPort;
+    GDHandle                savedDevice;
+    ImageDescriptionHandle  desc;
+    Ptr                     imageData;
+    long                    size;
+    OSErr                   err;
+
+    //  Load the picture and define the source and dest rects.
+    pict = GetPicture(128);
+    pictBounds = (**pict).picFrame;
+    OffsetRect(&pictBounds, -pictBounds.left, -pictBounds.top);
+    SizeWindow(gWindow, pictBounds.right, pictBounds.bottom, true);
+
+    //  Create a temporary offscreen used to store the pict.
+    if ( NewGWorld(&srcGWorld, 32, &pictBounds, nil, nil, 0) != noErr )
+        ExitToShell();
+    srcPixMap = GetGWorldPixMap(srcGWorld); 
+    LockPixels(srcPixMap);
+
+    //  Draw the picture into the temporary gworld. 
+    GetGWorld(&savedPort, &savedDevice);
+    SetGWorld(srcGWorld, nil);
+    DrawPicture(pict, &pictBounds);
+    SetGWorld(savedPort, savedDevice);
+
+    //  Now, compress the picture into a data buffer.
+    if ( GetMaxCompressionSize(srcPixMap, &(**srcPixMap).bounds, 32,
+                        codecNormalQuality, kRawCodecType, bestSpeedCodec, &size) )
+        ExitToShell();
+    imageData = NewPtr(size);
+    desc = (ImageDescriptionHandle) NewHandle(sizeof(ImageDescription));
+    if ( err=CompressImage(srcPixMap, &(**srcPixMap).bounds, codecNormalQuality,
+                    kRawCodecType, desc, imageData))
+        ExitToShell();
+
+    //  Decompress the image to the window. 
+    SetWTitle(gWindow, "\pQuickTime ditherCopy");
+    for ( i=0; i<5; i++ ) {
+        EraseRect(&gWindow->portRect);
+        DecompressImage(imageData, desc, ((CGrafPtr)gWindow)->portPixMap, 
+                    &pictBounds, &gWindow->portRect, ditherCopy | 0x80, nil);
+    }
+    while ( !Button() );
+
+    SetWTitle(gWindow, "\pQuickTime srcCopy");
+    for (i=0; i<5; i++) {
+        EraseRect(&gWindow->portRect);
+        DecompressImage(imageData, desc, ((CGrafPtr)gWindow)->portPixMap, 
+                    &pictBounds, &gWindow->portRect, srcCopy, nil);
+    }
+    while ( !Button() );
+
+    SetWTitle(gWindow, "\pQuickDraw ditherCopy");
+    for ( i=0; i<5; i++ ) {
+        EraseRect(&gWindow->portRect);
+        CopyBits((BitMap *)*srcPixMap, &gWindow->portBits, &pictBounds,
+                    &gWindow->portRect, ditherCopy, nil);
+    }
+    while ( !Button() );
+
+    SetWTitle(gWindow, "\pQuickDraw srcCopy");
+    for ( i=0; i<5; i++ ) {
+        EraseRect(&gWindow->portRect);
+        CopyBits((BitMap *)*srcPixMap, &gWindow->portBits, &pictBounds,
+                    &gWindow->portRect, srcCopy, nil);
+    }
+    while ( !Button() );
+
+    DisposeGWorld( srcGWorld ); 
+}
+```
+
+[Next](Document%20Revision%20History.md)[Previous](FastDitherUsingQT.md)
+

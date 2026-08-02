@@ -1,0 +1,109 @@
+---
+title: VCDemo
+apple_id: DTS10000128
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/VCDemo/Listings/Headers_MenuDispatch_h.html
+archived_at: '2026-07-18T03:27:40.160203Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [VCDemo](VCDemo.md)
+
+
+[Next](Source-ErrMsg.c.md)[Previous](Headers-EventLoop.h.md)
+
+# Headers/MenuDispatch.h
+
+```
+/*
+    MenuDispatch.h
+
+    © 1995 Apple Computer, Inc.
+*/
+
+/* Menu resource IDs */
+#define APPLE_MENU  128
+#define FILE_MENU   129
+#define EDIT_MENU   130
+#define VIEW_MENU   131
+#define TEST_MENU   132
+
+/* Menu item numbers */
+
+#define cmdAbout            1
+
+    /* File menu */
+#define cmdNew              1
+#define cmdOpen             2
+#define cmdClose            3
+
+#define cmdSave             5
+#define cmdSaveAs           6
+
+#define cmdQuit             8
+
+    /* Edit menu */
+#define cmdUndo             1
+
+#define cmdCut              3
+#define cmdCopy             4
+#define cmdPaste            5
+#define cmdClear            6
+
+    /* View menu */
+#define cmdBadge            1
+#define cmdViewer           2
+#define cmdController       3
+
+#define cmdDraggingOff      5
+
+#define cmdBtnCamera        7
+#define cmdBtnTruck         8
+#define cmdBtnOrbit         9
+#define cmdBtnZoom          10
+#define cmdBtnDolly         11
+
+#define cmdFullView         13
+#define cmdInsetView        14
+#define cmdFourView         15
+
+#define cmdFrame            17
+
+    /* Test menu */
+#define cmdGetPicture       1
+#define cmdGetDimensions    2
+
+#define cmdGetCameraRect    4
+#define cmdGetTruckRect     5
+#define cmdGetOrbitRect     6
+#define cmdGetZoomRect      7
+#define cmdGetDollyRect     8
+
+#define cmdGetBounds        10
+#define cmdSetBounds        11
+#define cmdGetBackgroundColor   12
+#define cmdSetBackgroundColor   13
+
+#define cmdUseBoxData       15
+#define cmdUseGroupData     16
+#define cmdVerifyGroupData  17
+#define cmdResetPort        18
+
+#define cmdWriteHandle      20
+
+#define cmdNormalMemory     22
+#define cmdPig500           23
+#define cmdPig100           24
+
+/* resource ID of about box Alert */
+
+#define ABOUT_BOX_ID    129
+#define GETINFO_ID      130
+
+/* EOF */
+```
+
+[Next](Source-ErrMsg.c.md)[Previous](Headers-EventLoop.h.md)
+

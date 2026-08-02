@@ -1,0 +1,35 @@
+---
+title: WebObjects 4.0 Developer Documentation
+apple_id: TP40006774
+resource_type: Guide
+platform: macOS
+topic: null
+technology: null
+published: '2007-12-11'
+source_url: https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Documentation/Developer/WebObjects/ServingWebObjects/ServingWebObjects1.html
+archived_at: '2026-07-18T01:23:33.344608Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [WebObjects 4.0 Developer Documentation](webobjects.md)
+
+
+__PATH__
+[WebObjects 4.0 Documentation](webobjects.md) __>__
+[Serving WebObjects](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Documentation/Developer/WebObjects/ServingWebObjects/ServingWebObjectsTOC.html)
+
+[!Table of Contents](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Documentation/Developer/WebObjects/ServingWebObjects/ServingWebObjectsTOC.html) [!Previous Section](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Documentation/Developer/WebObjects/ServingWebObjects/ServingWebObjectsTOC.html)
+
+# WebObjects HTTP Adaptors
+
+A key part of WebObjects administration is dealing with adaptors. This section provides a little background material on what a WebObjects HTTP adaptor is, how it works, and how you can configure it to suit your needs.
+A WebObjects HTTP adaptor (called _WebObjects adaptor_ or sometimes _HTTP adaptor_) routes client requests processed by an HTTP server to WebObjects applications and returns the response to the server, which sends it back to the client. WebObjects makes available several adaptors, of which only one can be active with a particular server at a time. Every transaction with a WebObjects application uses the currently active adaptor.
+However, the relationships between adaptor and application are (potentially) many-to-many. Multiple instances of the same WebObjects application can run on the same machine or a variety of machines and communicate with the same adaptor. In addition, multiple HTTP servers can be running on the same machine or on different machines; each server can have its own adaptor, each with its own constellation of application instances. Although there can be only one active HTTP adaptor per HTTP server, an application can concurrently communicate with other types of adaptors, such as an adaptor that uses Distributed Objects or a secure-socket adaptor.
+There are two general types of HTTP adaptors:
+
+- The CGI adaptor, an executable file named __WebObjects__ or __WebObjects.exe__ which resides in the host HTTP server's __cgi-bin__ or __scripts__ directory. This adaptor is available on all supported platforms. It is generic in that it works with any HTTP server conforming to the Common Gateway Interface (CGI).
+- API-based adaptors, that is, WebObjects adaptors based on APIs specific to particular web server. The NSAPI adaptor, which is based on the Netscape Server 3.5 API, is available on all supported platforms except the Mach-based Mac OS X Server. A WebObjects adaptor based on Microsoft's Internet Information Server API (ISAPI) is also supported on Windows NT. WebObjects also supports an adaptor based on Apache's module API on UNIX platforms (including the Mac OS X Server). In addition, Netscape's WAI API is provided in this release as an example project but is not supported; the WAI adaptor is suitable for all platforms except Mac OS X Server.
+
+The API-based adaptors have a performance advantage over CGI adaptors in that the associated server can dynamically load the adaptor; servers using CGI adaptors, on the other hand, spawn a new adaptor process for each request and kill the process after the response is provided.
+
+When WebObjects is installed, the CGI adaptor is made active by default. To use an API-based adaptor, you must specifically activate it. Activating the API-based adaptor deactivates the CGI adaptor for a particular server.
+
+[!Table of Contents](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.0/System/Documentation/Developer/WebObjects/ServingWebObjects/ServingWebObjectsTOC.html) [!Next Section](ServingWebObjects2.md)

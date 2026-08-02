@@ -1,0 +1,56 @@
+---
+title: CreateMovie - C#
+apple_id: DTS10003810
+resource_type: Sample Code
+platform: macOS
+topic: Cross Platform
+technology: null
+published: '2005-11-09'
+source_url: https://developer.apple.com/library/archive/samplecode/CreateMovieCSharp/Listings/READ_ME_txt.html
+archived_at: '2026-07-18T03:05:13.511673Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [CreateMovie - C#](CreateMovie%20-%20C.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](CreateMovie%20-%20C.md)
+
+# READ ME.txt
+
+```swift
+READ ME - CreateMovie - C#
+==========================
+1.0
+
+CreateMovie - C# is a Microsoft Visual Studio .NET 2003 C# application which demonstrates how to use the QuickTime COM Control in QuickTime 7 to create a movie from a sequence of images and then save that movie to disk.
+
+This sample uses the CreateNewMovieFromImages method to create the movie.
+
+There are actually a couple of ways to create a movie from a series of images:
+
+1. You can use CreateNewMovieFromImages (instead of CreateNewMovie) as shown in this sample.
+
+2. If you want to piece a movie together, you can have two QTMovie controls. CreateNewMovie in one. In the other you can open images one by one and use InsertSegment to append to the new movie in the other control. Then you could save or export the new movie.
+
+3. As a variation on #2 you could Paste the generated images one-by-one into the new movie, if you can get them onto the clipboard.
+
+
+Building the sample
+-------------------
+
+A Microsoft Visual Studio .NET 2003 C# project is included.
+
+Note: 
+
+You will need to add the QuickTime Control 2.0 to the Toolbox in order to build the project. Here's how:
+
+- Choose Tools | Add/Remove Toolbox Items... and scroll down to the Apple QuickTime Control 2.0. Check the box beside this component in the list and click OK to add it to the Toolbox.
+
+
+Running the sample
+------------------
+
+Build the project and run the executable (.exe) and after a few seconds you should see the new movie created in the window. Use File->Save to save the newly created movie to disk.
+```
+
+[Next](Document%20Revision%20History.md)[Previous](CreateMovie%20-%20C.md)
+

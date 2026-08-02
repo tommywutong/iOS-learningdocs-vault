@@ -1,0 +1,121 @@
+---
+title: Play Movie with Controller
+apple_id: DTS10001041
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Play_Movie_with_Controller/Listings/Start_Code_SetupController_c.html
+archived_at: '2026-07-18T03:19:13.459170Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Play Movie with Controller](Play%20Movie%20with%20Controller.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](Start%20Code-OpenMovieInWindow.c.md)
+
+Relevant replacement documents include:
+
+- [http://developer.apple.com/mac/library/samplecode/QTKitPlayer/index.html](https://developer.apple.com/mac/library/samplecode/QTKitPlayer/index.html)
+
+# Start Code/SetupController.c
+
+```c
+// Play Movie with Controller Sample
+// Based on QTShell
+// WWDC 2000
+
+#include "ComApplication.h"
+#include "ComFramework.h"
+#include "MacFramework.h"
+
+extern Rect gMCResizeBounds;    // maximum size for any movie window
+
+//////////
+//
+// CreateController
+// Create and configure the movie controller.
+//
+//////////
+
+MovieController CreateController (Movie theMovie, WindowReference theWindow, Boolean theMoveWindow)
+{
+#if TARGET_OS_WIN32
+#pragma unused(theMoveWindow)
+#endif
+
+    MovieController         myMC = NULL;
+    Rect                    myRect;
+    WindowObject            myWindowObject = NULL;
+    GrafPtr                 mySavedPort;
+
+    if ((theMovie == NULL) || (theWindow == NULL))
+        return(NULL);
+
+    // get our window specific data
+    myWindowObject = QTFrame_GetWindowObjectFromWindow(theWindow);
+    if (myWindowObject == NULL)
+        return(NULL);
+
+    GetPort(&mySavedPort);
+    MacSetPort(QTFrame_GetPortFromWindowReference(theWindow));
+
+    // resize the movie bounding rect and offset to 0,0
+// Step 1. Insert Resize.clp here...
+
+// Step 2. Insert NewMovieController.clp here...
+
+    // set the initial looping state of the movie
+    QTUtils_SetLoopingStateFromFile(theMovie, myMC);
+
+    // install an action filter that does any application-specific movie controller action processing
+// Step 3. Insert MCSetActionFilter.clp here...
+
+    // add grow box for the movie controller
+    if ((**myWindowObject).fCanResizeWindow) {
+#if TARGET_OS_WIN32
+        RECT                myRect;
+
+        GetWindowRect(GetDesktopWindow(), &myRect);
+        OffsetRect(&myRect, -myRect.left, -myRect.top);
+        QTFrame_ConvertWinToMacRect(&myRect, &gMCResizeBounds);
+#endif
+#if TARGET_OS_MAC
+        GetRegionBounds(GetGrayRgn(), &gMCResizeBounds);
+#endif
+
+// Step 4. Insert MCDoAction.clp here...
+
+    }
+
+#if TARGET_OS_MAC
+    if (theMoveWindow)
+        MoveWindow(theWindow, kDefaultWindowX, kDefaultWindowY, false);
+#endif
+
+    MacSetPort(mySavedPort);
+
+    // add any application-specific controller functionality
+    SetupController(myMC);
+
+    return(myMC);
+}
+
+//////////
+//
+// SetupController
+// Configure the movie controller.
+//
+//////////
+
+void SetupController (MovieController theMC)
+{
+    long            myControllerFlags;
+
+// Step 5. Insert SetupController.clp here...
+
+}
+```
+
+[Next](Document%20Revision%20History.md)[Previous](Start%20Code-OpenMovieInWindow.c.md)
+
