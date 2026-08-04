@@ -1,10 +1,11 @@
 # objc.io
 
 > 状态：frozen；授权：未声明（页面无版权声明，文章版权归各作者）→ 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
-> 自动生成于 2026-08-02，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 自动生成于 2026-08-03，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
 | 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
+| 键值编码与观察 | Key-Value Coding and Observing | objc.io | Objective-C Runtime | [英文](../../../blogs/en/objcio/key-value-coding-and-observing.md) · [网页](https://www.objc.io/issues/7-foundation/key-value-coding-and-observing) | [中文](../../../blogs/zh/objcio/key-value-coding-and-observing.md) | 已翻译 |
 | Android Intent | Android Intents | objc.io | — | [英文](../../../blogs/en/objcio/android-intents.md) · [网页](https://www.objc.io/issues/11-android/android-intents) | — | 仅标题中文，正文待翻译 |
 | Android 中的 SQLite 数据库支持 | SQLite Database Support in Android | objc.io | 数据与持久化 | [英文](../../../blogs/en/objcio/sqlite-database-support-in-android.md) · [网页](https://www.objc.io/issues/11-android/sqlite-database-support-in-android) | — | 仅标题中文，正文待翻译 |
 | Android 的通知中心 | Android’s Notification Center | objc.io | — | [英文](../../../blogs/en/objcio/android-s-notification-center.md) · [网页](https://www.objc.io/issues/11-android/android-notifications) | — | 仅标题中文，正文待翻译 |
@@ -148,7 +149,6 @@
 | 调试：案例研究 | Debugging: A Case Study | objc.io | 性能与调试 | [英文](../../../blogs/en/objcio/debugging-a-case-study.md) · [网页](https://www.objc.io/issues/19-debugging/debugging-case-study) | — | 仅标题中文，正文待翻译 |
 | 通信模式 | Communication Patterns | objc.io | — | [英文](../../../blogs/en/objcio/communication-patterns.md) · [网页](https://www.objc.io/issues/7-foundation/communication-patterns) | — | 仅标题中文，正文待翻译 |
 | 避免滥用单例 | Avoiding Singleton Abuse | objc.io | — | [英文](../../../blogs/en/objcio/avoiding-singleton-abuse.md) · [网页](https://www.objc.io/issues/13-architecture/singletons) | — | 仅标题中文，正文待翻译 |
-| 键值编码与观察 | Key-Value Coding and Observing | objc.io | Objective-C Runtime | [英文](../../../blogs/en/objcio/key-value-coding-and-observing.md) · [网页](https://www.objc.io/issues/7-foundation/key-value-coding-and-observing) | — | 仅标题中文，正文待翻译 |
 | 面向 UIKit 开发者的 AppKit | AppKit for UIKit Developers | objc.io | UI 与渲染 | [英文](../../../blogs/en/objcio/appkit-for-uikit-developers.md) · [网页](https://www.objc.io/issues/14-mac/appkit-for-uikit-developers) | — | 仅标题中文，正文待翻译 |
 | 音频 API 概览 | Audio API Overview | objc.io | — | [英文](../../../blogs/en/objcio/audio-api-overview.md) · [网页](https://www.objc.io/issues/24-audio/audio-api-overview) | — | 仅标题中文，正文待翻译 |
 | 音频处理的困境 | The Audio Processing Dog House | objc.io | — | [英文](../../../blogs/en/objcio/the-audio-processing-dog-house.md) · [网页](https://www.objc.io/issues/24-audio/audio-dog-house) | — | 仅标题中文，正文待翻译 |

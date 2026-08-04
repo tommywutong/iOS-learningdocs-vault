@@ -82,19 +82,19 @@
 
 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|
+| [Cocoa 中的 5 种键值编码方法](../../../blogs/zh/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 已翻译 |
 | [NSKeyValueBindingCreation](../../../apple-docs/zh/objectivec/nskeyvaluebindingcreation.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/nskeyvaluebindingcreation.md) | 已翻译 |
 | [NSKeyValueCoding](../../../apple-docs/zh/objectivec/nskeyvaluecoding.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/nskeyvaluecoding.md) | 已翻译 |
 | [NSKeyValueObserving](../../../apple-docs/zh/objectivec/nskeyvalueobserving.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/nskeyvalueobserving.md) | 已翻译 |
 | [NSScriptKeyValueCoding](../../../apple-docs/zh/objectivec/nsscriptkeyvaluecoding.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/nsscriptkeyvaluecoding.md) | 已翻译 |
 | [NSScriptKeyValueCoding 异常名称](../../../apple-docs/zh/objectivec/nsscriptkeyvaluecoding-exception-names.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/nsscriptkeyvaluecoding-exception-names.md) | 已翻译 |
+| [一个键值观察包装器](../../../blogs/zh/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 已翻译 |
 | [在 Swift 中使用键值观察](../../../apple-docs/zh/swift/using-key-value-observing-in-swift.md) | Apple 文档 | Apple · Swift | [中文](../../../apple-docs/zh/swift/using-key-value-observing-in-swift.md) | 已翻译 |
 | [星期五问答 2012-03-02：正确实现键值观察：第二版](../../../blogs/zh/mikeash/friday-q-a-2012-03-02-key-value-observing-done-right-take-2.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../../blogs/zh/mikeash/friday-q-a-2012-03-02-key-value-observing-done-right-take-2.md) | 已翻译 |
+| [星期五问答 2013-02-08：让我们构建键值编码](../../../blogs/zh/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../../blogs/zh/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 已翻译 |
+| [键值编码与观察](../../../blogs/zh/objcio/key-value-coding-and-observing.md) | 技术博客 | objc.io | [中文](../../../blogs/zh/objcio/key-value-coding-and-observing.md) | 已翻译 |
 | [键值编码异常名称](../../../apple-docs/zh/objectivec/key-value-coding-exception-names.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/key-value-coding-exception-names.md) | 已翻译 |
 | [键值观察](../../../blogs/zh/nshipster/key-value-observing.md) | 技术博客 | NSHipster (Mattt) | [中文](../../../blogs/zh/nshipster/key-value-observing.md) | 已翻译 |
-| [Cocoa 中的 5 种键值编码方法](../../../blogs/en/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [英文](../../../blogs/en/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 仅标题中文，正文待翻译 |
-| [一个键值观察包装器](../../../blogs/en/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [英文](../../../blogs/en/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 仅标题中文，正文待翻译 |
-| [星期五问答 2013-02-08：让我们构建键值编码](../../../blogs/en/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 技术博客 | mikeash.com Friday Q&A | [英文](../../../blogs/en/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 仅标题中文，正文待翻译 |
-| [键值编码与观察](../../../blogs/en/objcio/key-value-coding-and-observing.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/key-value-coding-and-observing.md) | 仅标题中文，正文待翻译 |
 
 ## 类加载与初始化
 

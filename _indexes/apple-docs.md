@@ -1,6 +1,6 @@
 # Apple 现行文档
 
-> 来源：`developer.apple.com/documentation`，索引生成于 2026-08-02。
+> 来源：`developer.apple.com/documentation`，索引生成于 2026-08-03。
 > “成篇文章”有逐篇目录；短 API 条目仍可从框架归档目录浏览。
 
 | 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |

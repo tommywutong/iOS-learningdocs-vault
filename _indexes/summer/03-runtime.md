@@ -57,7 +57,7 @@
 
 ## 中文资料
 
-共 80 份。包含译文和原生中文文章。
+共 84 份。包含译文和原生中文文章。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -90,10 +90,12 @@
 | 官方资料 | [键值编码异常名称](../../apple-docs/zh/objectivec/key-value-coding-exception-names.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../apple-docs/zh/objectivec/key-value-coding-exception-names.md) | 已翻译 |
 | 官方资料 | [Objective-C 运行时的进展](../../wwdc/zh/wwdc2020/10163-advancements-in-the-objective-c-runtime.md) | WWDC | Apple · WWDC2020 | [中文](../../wwdc/zh/wwdc2020/10163-advancements-in-the-objective-c-runtime.md) | 已翻译 |
 | 官方资料 | [改善 App 体积与运行时性能](../../wwdc/zh/wwdc2022/110363-improve-app-size-and-runtime-performance.md) | WWDC | Apple · WWDC2022 | [中文](../../wwdc/zh/wwdc2022/110363-improve-app-size-and-runtime-performance.md) | 已翻译 |
+| 深度补充 | [Cocoa 中的 5 种键值编码方法](../../blogs/zh/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../blogs/zh/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 已翻译 |
 | 深度补充 | [objc_msgSend 的新原型](../../blogs/zh/mikeash/objc-msgsend-s-new-prototype.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/objc-msgsend-s-new-prototype.md) | 已翻译 |
 | 深度补充 | [Objective-C 中的消息与消息转发](../../blogs/zh/ibireme/objective-c-%E4%B8%AD%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%8E%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91.md) | 技术博客 | ibireme (郭曜源) | [中文](../../blogs/zh/ibireme/objective-c-%E4%B8%AD%E7%9A%84%E6%B6%88%E6%81%AF%E4%B8%8E%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91.md) | 原生中文 |
 | 深度补充 | [Objective-C 内部实现：关联引用](../../blogs/zh/alwaysprocessing/objective-c-internals-associated-references-a-comparison-of-apple-s-associated-references-.md) | 技术博客 | Always Processing (Brian T. Kelley) | [中文](../../blogs/zh/alwaysprocessing/objective-c-internals-associated-references-a-comparison-of-apple-s-associated-references-.md) | 已翻译 |
 | 深度补充 | [Swift 与 Objective-C 运行时](../../blogs/zh/nshipster/swift-the-objective-c-runtime.md) | 技术博客 | NSHipster (Mattt) | [中文](../../blogs/zh/nshipster/swift-the-objective-c-runtime.md) | 已翻译 |
+| 深度补充 | [一个键值观察包装器](../../blogs/zh/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../blogs/zh/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 已翻译 |
 | 深度补充 | [关联对象](../../blogs/zh/nshipster/associated-objects.md) | 技术博客 | NSHipster (Mattt) | [中文](../../blogs/zh/nshipster/associated-objects.md) | 已翻译 |
 | 深度补充 | [在 Mobile Orchard 的 Objective-C Runtime 播客节目](../../blogs/zh/mikeash/objective-c-runtime-podcast-episode-at-mobile-orchard.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/objective-c-runtime-podcast-episode-at-mobile-orchard.md) | 已翻译 |
 | 深度补充 | [方法调配](../../blogs/zh/nshipster/method-swizzling.md) | 技术博客 | NSHipster (Mattt) | [中文](../../blogs/zh/nshipster/method-swizzling.md) | 已翻译 |
@@ -104,8 +106,10 @@
 | 深度补充 | [星期五问答 2010-11-19：运行时创建类的乐趣与收益](../../blogs/zh/mikeash/friday-q-a-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.md) | 已翻译 |
 | 深度补充 | [星期五问答 2012-03-02：正确实现键值观察：第二版](../../blogs/zh/mikeash/friday-q-a-2012-03-02-key-value-observing-done-right-take-2.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2012-03-02-key-value-observing-done-right-take-2.md) | 已翻译 |
 | 深度补充 | [星期五问答 2012-11-16：让我们构建 objc_msgSend](../../blogs/zh/mikeash/friday-q-a-2012-11-16-let-s-build-objc-msgsend.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2012-11-16-let-s-build-objc-msgsend.md) | 已翻译 |
+| 深度补充 | [星期五问答 2013-02-08：让我们构建键值编码](../../blogs/zh/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 已翻译 |
 | 深度补充 | [星期五问答 2015-05-29：Objective-C 运行时的并发内存释放](../../blogs/zh/mikeash/friday-q-a-2015-05-29-concurrent-memory-deallocation-in-the-objective-c-runtime.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2015-05-29-concurrent-memory-deallocation-in-the-objective-c-runtime.md) | 已翻译 |
 | 深度补充 | [星期五问答 2017-06-30：剖析 ARM64 上的 objc_msgSend](../../blogs/zh/mikeash/friday-q-a-2017-06-30-dissecting-objc-msgsend-on-arm64.md) | 技术博客 | mikeash.com Friday Q&A | [中文](../../blogs/zh/mikeash/friday-q-a-2017-06-30-dissecting-objc-msgsend-on-arm64.md) | 已翻译 |
+| 深度补充 | [键值编码与观察](../../blogs/zh/objcio/key-value-coding-and-observing.md) | 技术博客 | objc.io | [中文](../../blogs/zh/objcio/key-value-coding-and-observing.md) | 已翻译 |
 | 深度补充 | [键值观察](../../blogs/zh/nshipster/key-value-observing.md) | 技术博客 | NSHipster (Mattt) | [中文](../../blogs/zh/nshipster/key-value-observing.md) | 已翻译 |
 | 补充资料 | [[objc 解析]: dyld 共享缓存中的选择器唯一化](../../blogs/zh/sealiesoftware/objc-explain-selector-uniquing-in-the-dyld-shared-cache.md) | 技术博客 | Hamster Emporium (Greg Parker) | [中文](../../blogs/zh/sealiesoftware/objc-explain-selector-uniquing-in-the-dyld-shared-cache.md) | 已翻译 |
 | 补充资料 | [[objc 解析]: objc_msgSend_fpret](../../blogs/zh/sealiesoftware/objc-explain-objc-msgsend-fpret.md) | 技术博客 | Hamster Emporium (Greg Parker) | [中文](../../blogs/zh/sealiesoftware/objc-explain-objc-msgsend-fpret.md) | 已翻译 |
@@ -144,14 +148,10 @@
 
 ## 未翻译资料
 
-共 7 份。可能已有中文目录标题，但正文仍为英文。
+共 3 份。可能已有中文目录标题，但正文仍为英文。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
 | 计划核心 | [通信模式](../../blogs/en/objcio/communication-patterns.md) | 技术博客 | objc.io | [英文](../../blogs/en/objcio/communication-patterns.md) | 仅标题中文，正文待翻译 |
 | 官方资料 | [Predefined CFCharacterSet Selector Values](../../apple-docs/en/corefoundation/predefined_cfcharacterset_selector_values.md) | Apple 文档 | Apple · Core Foundation | [英文](../../apple-docs/en/corefoundation/predefined_cfcharacterset_selector_values.md) | 待翻译 |
-| 深度补充 | [Cocoa 中的 5 种键值编码方法](../../blogs/en/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [英文](../../blogs/en/cocoawithlove/5-key-value-coding-approaches-in-cocoa-cocoa-with-love.md) | 仅标题中文，正文待翻译 |
-| 深度补充 | [一个键值观察包装器](../../blogs/en/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [英文](../../blogs/en/cocoawithlove/a-key-value-observing-wrapper-cocoa-with-love.md) | 仅标题中文，正文待翻译 |
-| 深度补充 | [星期五问答 2013-02-08：让我们构建键值编码](../../blogs/en/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 技术博客 | mikeash.com Friday Q&A | [英文](../../blogs/en/mikeash/friday-q-a-2013-02-08-let-s-build-key-value-coding.md) | 仅标题中文，正文待翻译 |
-| 深度补充 | [键值编码与观察](../../blogs/en/objcio/key-value-coding-and-observing.md) | 技术博客 | objc.io | [英文](../../blogs/en/objcio/key-value-coding-and-observing.md) | 仅标题中文，正文待翻译 |
 | 补充资料 | [使用内核扩展更改 macOS 的运行时间](../../blogs/en/worthdoingbadly/changing-macos-s-uptime-with-a-kernel-extension.md) | 技术博客 | worthdoingbadly (Zhuowei Zhang) | [英文](../../blogs/en/worthdoingbadly/changing-macos-s-uptime-with-a-kernel-extension.md) | 仅标题中文，正文待翻译 |
