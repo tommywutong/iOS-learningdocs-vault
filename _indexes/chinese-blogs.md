@@ -1,6 +1,6 @@
 # 可直接中文阅读的技术博客
 
-> 共 1129 篇，包含完整中文译文和原生中文文章。
+> 共 1130 篇，包含完整中文译文和原生中文文章。
 > 本页不收录只有中文目录标题、正文仍为英文的文章。
 
 ## Objective-C Runtime
@@ -1181,6 +1181,7 @@
 | [避免 libdispatch 中的死锁和延迟](../blogs/zh/cocoawithlove/avoiding-deadlocks-and-latency-in-libdispatch-cocoa-with-love.md) | Cocoa with Love (Matt Gallagher) | [英文](../blogs/en/cocoawithlove/avoiding-deadlocks-and-latency-in-libdispatch-cocoa-with-love.md) | [中文译文](../blogs/zh/cocoawithlove/avoiding-deadlocks-and-latency-in-libdispatch-cocoa-with-love.md) |
 | [重启](../blogs/zh/sealiesoftware/reboot.md) | Hamster Emporium (Greg Parker) | [英文](../blogs/en/sealiesoftware/reboot.md) | [中文译文](../blogs/zh/sealiesoftware/reboot.md) |
 | [链接：实现 imp_implementationWithBlock](../blogs/zh/mikeash/link-implementing-imp-implementationwithblock.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/link-implementing-imp-implementationwithblock.md) | [中文译文](../blogs/zh/mikeash/link-implementing-imp-implementationwithblock.md) |
+| [键值信息 \| Cocoa with Love](../blogs/zh/cocoawithlove/key-value-information-cocoa-with-love.md) | Cocoa with Love (Matt Gallagher) | [英文](../blogs/en/cocoawithlove/key-value-information-cocoa-with-love.md) | [中文译文](../blogs/zh/cocoawithlove/key-value-information-cocoa-with-love.md) |
 | [阅读笔记：关系无政府主义](../blogs/zh/jessesquires/reading-notes-relationship-anarchy.md) | Jesse Squires | [英文](../blogs/en/jessesquires/reading-notes-relationship-anarchy.md) | [中文译文](../blogs/zh/jessesquires/reading-notes-relationship-anarchy.md) |
 | [难得的休假](../blogs/zh/onevcat/%E9%9A%BE%E5%BE%97%E7%9A%84%E4%BC%91%E5%81%87.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E9%9A%BE%E5%BE%97%E7%9A%84%E4%BC%91%E5%81%87.md) |
 | [雪初音-白无垢](../blogs/zh/ibireme/%E9%9B%AA%E5%88%9D%E9%9F%B3-%E7%99%BD%E6%97%A0%E5%9E%A2.md) | ibireme (郭曜源) | — | [中文原文](../blogs/zh/ibireme/%E9%9B%AA%E5%88%9D%E9%9F%B3-%E7%99%BD%E6%97%A0%E5%9E%A2.md) |

@@ -5,7 +5,7 @@
 
 ## 优先入口
 
-- [可直接中文阅读的技术博客（1129 篇）](chinese-blogs.md)
+- [可直接中文阅读的技术博客（1130 篇）](chinese-blogs.md)
 - [iOS 底层知识地图](topics.md)
 - [暑期计划知识地图](summer.md)
 - [阅读入口与搜索示例](reader-guide.md)
