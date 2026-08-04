@@ -1,6 +1,6 @@
 # 可直接中文阅读的技术博客
 
-> 共 1130 篇，包含完整中文译文和原生中文文章。
+> 共 1131 篇，包含完整中文译文和原生中文文章。
 > 本页不收录只有中文目录标题、正文仍为英文的文章。
 
 ## Objective-C Runtime
@@ -910,6 +910,7 @@
 | [乱世之秋](../blogs/zh/onevcat/%E4%B9%B1%E4%B8%96%E4%B9%8B%E7%A7%8B.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B9%B1%E4%B8%96%E4%B9%8B%E7%A7%8B.md) |
 | [交互式动画](../blogs/zh/objccn/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8A%A8%E7%94%BB.md) | ObjC 中国 (objccn.io) | — | [中文原文](../blogs/zh/objccn/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8A%A8%E7%94%BB.md) |
 | [介绍](../blogs/zh/objccn/%E4%BB%8B%E7%BB%8D.md) | ObjC 中国 (objccn.io) | — | [中文原文](../blogs/zh/objccn/%E4%BB%8B%E7%BB%8D.md) |
+| [介绍 MAZeroingWeakRef](../blogs/zh/mikeash/introducing-mazeroingweakref.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/introducing-mazeroingweakref.md) | [中文译文](../blogs/zh/mikeash/introducing-mazeroingweakref.md) |
 | [从NSArray看类簇](../blogs/zh/sunnyxx/%E4%BB%8Ensarray%E7%9C%8B%E7%B1%BB%E7%B0%87-sunnyxx%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.md) | sunnyxx (孙源) | — | [中文原文](../blogs/zh/sunnyxx/%E4%BB%8Ensarray%E7%9C%8B%E7%B1%BB%E7%B0%87-sunnyxx%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2.md) |
 | [从YYModel源码中可以学到什么：前篇](../blogs/snapshots/blog.itlee.top/%E4%BB%8Eyymodel%E6%BA%90%E7%A0%81%E4%B8%AD%E5%8F%AF%E4%BB%A5%E5%AD%A6%E5%88%B0%E4%BB%80%E4%B9%88-%E5%89%8D%E7%AF%87.md) | 学习计划网页快照 | — | [中文原文](../blogs/snapshots/blog.itlee.top/%E4%BB%8Eyymodel%E6%BA%90%E7%A0%81%E4%B8%AD%E5%8F%AF%E4%BB%A5%E5%AD%A6%E5%88%B0%E4%BB%80%E4%B9%88-%E5%89%8D%E7%AF%87.md) |
 | [代码审查的艺术：Dropbox 的故事](../blogs/zh/objccn/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E8%89%BA%E6%9C%AF-dropbox-%E7%9A%84%E6%95%85%E4%BA%8B.md) | ObjC 中国 (objccn.io) | — | [中文原文](../blogs/zh/objccn/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%E7%9A%84%E8%89%BA%E6%9C%AF-dropbox-%E7%9A%84%E6%95%85%E4%BA%8B.md) |
