@@ -1,6 +1,6 @@
 # 可直接中文阅读的技术博客
 
-> 共 1131 篇，包含完整中文译文和原生中文文章。
+> 共 1132 篇，包含完整中文译文和原生中文文章。
 > 本页不收录只有中文目录标题、正文仍为英文的文章。
 
 ## Objective-C Runtime
@@ -267,6 +267,7 @@
 | [星期五问答 2013-08-16：让我们构建 Dispatch Groups](../blogs/zh/mikeash/friday-q-a-2013-08-16-let-s-build-dispatch-groups.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2013-08-16-let-s-build-dispatch-groups.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2013-08-16-let-s-build-dispatch-groups.md) |
 | [星期五问答 2017-10-27：锁、线程安全与 Swift：2017 版](../blogs/zh/mikeash/friday-q-a-2017-10-27-locks-thread-safety-and-swift-2017-edition.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2017-10-27-locks-thread-safety-and-swift-2017-edition.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2017-10-27-locks-thread-safety-and-swift-2017-edition.md) |
 | [死锁与锁顺序：一则小品](../blogs/zh/mikeash/deadlocks-and-lock-ordering-a-vignette.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/deadlocks-and-lock-ordering-a-vignette.md) | [中文译文](../blogs/zh/mikeash/deadlocks-and-lock-ordering-a-vignette.md) |
+| [没有所谓的“隐式原子”](../blogs/zh/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | [英文](../blogs/en/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | [中文译文](../blogs/zh/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) |
 | [生成线程的开销（性能实验） \| Cocoa with Love](../blogs/zh/cocoawithlove/the-overhead-of-spawning-threads-a-performance-experiment-cocoa-with-love.md) | Cocoa with Love (Matt Gallagher) | [英文](../blogs/en/cocoawithlove/the-overhead-of-spawning-threads-a-performance-experiment-cocoa-with-love.md) | [中文译文](../blogs/zh/cocoawithlove/the-overhead-of-spawning-threads-a-performance-experiment-cocoa-with-love.md) |
 | [用 GCD 并行化你的 for 循环](../blogs/zh/oleb/parallelize-your-for-loops-with-gcd.md) | Ole Begemann | [英文](../blogs/en/oleb/parallelize-your-for-loops-with-gcd.md) | [中文译文](../blogs/zh/oleb/parallelize-your-for-loops-with-gcd.md) |
 | [线程局部存储详解](../blogs/zh/maskray/all-about-thread-local-storage.md) | MaskRay (宋方睿) | [英文](../blogs/en/maskray/all-about-thread-local-storage.md) | [中文译文](../blogs/zh/maskray/all-about-thread-local-storage.md) |

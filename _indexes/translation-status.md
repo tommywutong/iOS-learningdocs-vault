@@ -182,7 +182,7 @@
 | 技术博客 | MaskRay (宋方睿) | 290 | 34 | 256 | 12% | [查看](sources/blogs/maskray.md) |
 | 技术博客 | Cocoa with Love (Matt Gallagher) | 206 | 61 | 145 | 30% | [查看](sources/blogs/cocoawithlove.md) |
 | 技术博客 | NSHipster (Mattt) | 196 | 20 | 176 | 10% | [查看](sources/blogs/nshipster.md) |
-| 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 177 | 35 | 142 | 20% | [查看](sources/blogs/belkadan.md) |
+| 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 177 | 36 | 141 | 20% | [查看](sources/blogs/belkadan.md) |
 | 技术博客 | objc.io | 149 | 1 | 148 | 1% | [查看](sources/blogs/objcio.md) |
 | 技术博客 | Meta Engineering — iOS | 95 | 10 | 85 | 11% | [查看](sources/blogs/fbeng.md) |
 | 技术博客 | Kreya Blog | 47 | 2 | 45 | 4% | [查看](sources/blogs/kreya.md) |

@@ -16,8 +16,8 @@
 | dirtmelon | 49 | 0 | 50 | 0 | 0 | [逐篇查看](sources/blogs/dirtmelon.md) | [中文](../blogs/zh/dirtmelon) | 未声明 → 仅私有归档 |
 | ibireme (郭曜源) | 40 | 0 | 40 | 0 | 0 | [逐篇查看](sources/blogs/ibireme.md) | [中文](../blogs/zh/ibireme) | 未声明 → 仅私有归档 |
 | MaskRay (宋方睿) | 34 | 290 | 34 | 34 | 256 | [逐篇查看](sources/blogs/maskray.md) | [英文](../blogs/en/maskray) · [中文](../blogs/zh/maskray) | 未声明 → 仅私有归档 |
+| Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 33 | 177 | 36 | 36 | 141 | [逐篇查看](sources/blogs/belkadan.md) | [英文](../blogs/en/belkadan) · [中文](../blogs/zh/belkadan) | Copyright 2012–2020 Jordan Rose → 仅私有归档 |
 | Ole Begemann | 33 | 307 | 33 | 33 | 274 | [逐篇查看](sources/blogs/oleb.md) | [英文](../blogs/en/oleb) · [中文](../blogs/zh/oleb) | 未声明 → 仅私有归档 |
-| Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 32 | 177 | 35 | 35 | 142 | [逐篇查看](sources/blogs/belkadan.md) | [英文](../blogs/en/belkadan) · [中文](../blogs/zh/belkadan) | Copyright 2012–2020 Jordan Rose → 仅私有归档 |
 | Jesse Squires | 32 | 298 | 32 | 32 | 266 | [逐篇查看](sources/blogs/jessesquires.md) | [英文](../blogs/en/jessesquires) · [中文](../blogs/zh/jessesquires) | © 2014–2026 Jesse Squires → 仅私有归档 |
 | Hamster Emporium (Greg Parker) | 29 | 29 | 29 | 29 | 0 | [逐篇查看](sources/blogs/sealiesoftware.md) | [英文](../blogs/en/sealiesoftware) · [中文](../blogs/zh/sealiesoftware) | 未声明 → 保守视为保留所有权利，仅私有归档 |
 | NSHipster (Mattt) | 20 | 196 | 20 | 20 | 176 | [逐篇查看](sources/blogs/nshipster.md) | [英文](../blogs/en/nshipster) · [中文](../blogs/zh/nshipster) | CC BY-NC（页脚明示）→ 可非商业再分发，须署名 |
@@ -31,4 +31,4 @@
 | Kreya Blog | 2 | 47 | 2 | 2 | 45 | [逐篇查看](sources/blogs/kreya.md) | [英文](../blogs/en/kreya) · [中文](../blogs/zh/kreya) | Copyright © riok GmbH（页脚）→ 仅私有归档 |
 | Saagar Jha | 2 | 20 | 2 | 2 | 18 | [逐篇查看](sources/blogs/saagarjha.md) | [英文](../blogs/en/saagarjha) · [中文](../blogs/zh/saagarjha) | CC BY-SA 4.0 → 可再分发，但译文必须同样 BY-SA 并署名 |
 | objc.io | 1 | 149 | 1 | 1 | 148 | [逐篇查看](sources/blogs/objcio.md) | [英文](../blogs/en/objcio) · [中文](../blogs/zh/objcio) | 未声明（页面无版权声明，文章版权归各作者）→ 仅私有归档 |
-| **合计** | **1131** | **2293** | **1153** | **416** | **1877** | | | |
+| **合计** | **1132** | **2293** | **1154** | **417** | **1876** | | | |

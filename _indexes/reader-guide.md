@@ -4,11 +4,11 @@
 
 ## 最常用的三个入口
 
-- [可直接中文阅读的技术博客（1131 篇）](chinese-blogs.md)
+- [可直接中文阅读的技术博客（1132 篇）](chinese-blogs.md)
 - [iOS 底层知识地图](topics.md)
 - [暑期计划知识地图](summer.md)
 
-另有 1855 篇英文博客已经提供目录中文标题，但正文仍为英文。
+另有 1854 篇英文博客已经提供目录中文标题，但正文仍为英文。
 
 ## 按知识点进入
 
@@ -18,7 +18,7 @@
 | [内存与 ARC](topics/memory-arc.md) | 127 | 1 |
 | [Block 与闭包](topics/blocks-closures.md) | 28 | 1 |
 | [RunLoop 与响应性](topics/runloop-responsiveness.md) | 24 | 3 |
-| [并发与线程](topics/concurrency.md) | 121 | 10 |
+| [并发与线程](topics/concurrency.md) | 122 | 9 |
 | [性能与调试](topics/performance-debugging.md) | 181 | 26 |
 | [启动、链接与二进制](topics/launch-linking-binary.md) | 86 | 43 |
 | [UI 与渲染](topics/ui-rendering.md) | 333 | 79 |

@@ -8,7 +8,7 @@
 | 子主题 | 可中文阅读 | 全部资料 |
 |---|---:|---:|
 | [GCD 与 Operation](concurrency/01.md) | 35 | 37 |
-| [锁与原子操作](concurrency/02.md) | 9 | 46 |
+| [锁与原子操作](concurrency/02.md) | 10 | 46 |
 | [Swift 并发](concurrency/03.md) | 38 | 57 |
 | [数据竞争与线程安全](concurrency/04.md) | 14 | 16 |
 | [延伸阅读](concurrency/05.md) | 25 | 31 |
