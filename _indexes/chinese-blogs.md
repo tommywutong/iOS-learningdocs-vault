@@ -1,6 +1,6 @@
 # 可直接中文阅读的技术博客
 
-> 共 1128 篇，包含完整中文译文和原生中文文章。
+> 共 1129 篇，包含完整中文译文和原生中文文章。
 > 本页不收录只有中文目录标题、正文仍为英文的文章。
 
 ## Objective-C Runtime
@@ -1078,6 +1078,7 @@
 | [无穷没有你想象的那么长](../blogs/zh/sealiesoftware/infinity-isn-t-as-long-as-you-think.md) | Hamster Emporium (Greg Parker) | [英文](../blogs/en/sealiesoftware/infinity-isn-t-as-long-as-you-think.md) | [中文译文](../blogs/zh/sealiesoftware/infinity-isn-t-as-long-as-you-think.md) |
 | [日常。。](../blogs/zh/ibireme/%E6%97%A5%E5%B8%B8.md) | ibireme (郭曜源) | — | [中文原文](../blogs/zh/ibireme/%E6%97%A5%E5%B8%B8.md) |
 | [星期五问答 2008-12-26](../blogs/zh/mikeash/friday-q-a-2008-12-26.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2008-12-26.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2008-12-26.md) |
+| [星期五问答 2012-06-01：PLWeakCompatibility 探秘：第二部分](../blogs/zh/mikeash/friday-q-a-2012-06-01-a-tour-of-plweakcompatibility-part-ii.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2012-06-01-a-tour-of-plweakcompatibility-part-ii.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2012-06-01-a-tour-of-plweakcompatibility-part-ii.md) |
 | [星期五问答 2014-06-06：dispatch_once 的秘密](../blogs/zh/mikeash/friday-q-a-2014-06-06-secrets-of-dispatch-once.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2014-06-06-secrets-of-dispatch-once.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2014-06-06-secrets-of-dispatch-once.md) |
 | [星期五问答 2015-02-20：让我们构建 @synchronized](../blogs/zh/mikeash/friday-q-a-2015-02-20-let-s-build-synchronized.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2015-02-20-let-s-build-synchronized.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2015-02-20-let-s-build-synchronized.md) |
 | [星期五问答 2015-09-04：让我们构建 dispatch_queue](../blogs/zh/mikeash/friday-q-a-2015-09-04-let-s-build-dispatch-queue.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/friday-q-a-2015-09-04-let-s-build-dispatch-queue.md) | [中文译文](../blogs/zh/mikeash/friday-q-a-2015-09-04-let-s-build-dispatch-queue.md) |
