@@ -1,0 +1,73 @@
+---
+title: API Changes in Snow Leopard
+apple_id: TP40007673
+resource_type: Release Note
+platform: macOS
+topic: General
+technology: null
+published: '2008-06-09'
+source_url: https://developer.apple.com/library/archive/releasenotes/MacOSX/SnowLeopard_API_ReleaseNote/OpenCL.html
+archived_at: '2026-07-18T02:58:44.870927Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [API Changes in Snow Leopard](API%20Changes%20in%20Snow%20Leopard.md)
+
+
+[ADC Home](https://developer.apple.com/) >
+[Reference Library](https://developer.apple.com/library/archive/navigation/redirect.html#//apple_ref/doc/uid/TP30000943) >
+Release Notes >
+OS X >
+[API Changes in Snow Leopard Developer Preview](API%20Changes%20in%20Snow%20Leopard.md) >
+
+# OpenCL Changes
+
+## OpenCL
+
+opencl.hAdded clBuildProgramExecutable()Added clCopyArray()Added clCopyArrayToImage()Added clCopyImage()Added clCopyImageToArray()Added clCreateArray()Added clCreateContext()Added clCreateDeviceGroup()Added clCreateDeviceGroupFromType()Added clCreateImage2D()Added clCreateImage3D()Added clCreateKernel()Added clCreateKernelsInProgram()Added clCreateProgram()Added clCreateProgramWithBinary()Added clCreateProgramWithSource()Added clExecuteDyLibKernel()Added clExecuteKernel()Added clFinish()Added clFlush()Added clGetArrayInfo()Added clGetComputeDevices()Added clGetContextInfo()Added clGetDeviceConfigInfo()Added clGetDeviceConfigString()Added clGetDeviceGroupInfo()Added clGetEventInfo()Added clGetEventStatus()Added clGetImageInfo()Added clGetImageSampler()Added clGetKernelArgs()Added clGetKernelInfo()Added clGetMemObjectInfo()Added clGetProgramBinary()Added clGetProgramBuildLog()Added clGetProgramInfo()Added clGetProgramSource()Added clGetSupportedImageFormats()Added clLoadProgramBinary()Added clLoadProgramSource()Added clLockMemObject()Added clReadArray()Added clReadImage()Added clReleaseContext()Added clReleaseDeviceGroup()Added clReleaseEvent()Added clReleaseKernel()Added clReleaseMemObject()Added clReleaseProgram()Added clRetainContext()Added clRetainDeviceGroup()Added clRetainKernel()Added clRetainMemObject()Added clRetainProgram()Added clSetImageSampler()Added clSetKernelArgs()Added clUnlockMemObject()Added clWaitBarrier()Added clWaitForEvents()Added clWriteArray()Added clWriteImage()opencl_gl.hAdded clAttachGLBuffer()Added clAttachGLRenderbuffer()Added clAttachGLTexture2D()Added clAttachGLTexture3D()Added clCreateDeviceGroupFromCGLContext()Added clCreateDeviceGroupFromCGLShareGroup()Added clDetachGLBuffer()Added clDetachGLRenderbuffer()Added clDetachGLTexture2D()Added clDetachGLTexture3D()Added clGetGLAttachment()opencl_types.hAdded CL_AAdded CL_ADDRESS_CLAMPAdded CL_ADDRESS_CLAMP_TO_EDGEAdded CL_ADDRESS_REPEATAdded CL_API_VERSIONAdded CL_ARGBAdded CL_ARRAY_ELEMENT_SIZEAdded CL_ARRAY_NUM_ELEMENTSAdded CL_ATTACHMENT_GL_BUFFERAdded CL_ATTACHMENT_GL_RENDER_BUFFERAdded CL_ATTACHMENT_GL_TEXTUREAdded CL_ATTACHMENT_GL_TEXTURE_MIPLEVELAdded CL_ATTACHMENT_GL_TEXTURE_TARGETAdded CL_ATTACHMENT_NONEAdded CL_BUILD_ERRORAdded CL_BUILD_FAILUREAdded CL_BUILD_IN_PROGRESSAdded CL_BUILD_SUCCESSAdded CL_COMPLETEAdded CL_CONTEXT_DEVICEAdded CL_CONTEXT_EXEC_MODE_ASYNCAdded CL_CONTEXT_NONEAdded CL_CONTEXT_NUM_INSTANCESAdded CL_CONTEXT_PROFILING_ENABLEAdded CL_DEVICEGROUP_NUM_INSTANCESAdded CL_DEVICE_ADDRESS_BITSAdded CL_DEVICE_CLOCK_FREQUENCYAdded CL_DEVICE_EXTENSIONSAdded CL_DEVICE_GLOBAL_GART_MEM_SIZEAdded CL_DEVICE_GLOBAL_MEM_CACHELINE_SIZEAdded CL_DEVICE_GLOBAL_MEM_CACHE_SIZEAdded CL_DEVICE_GLOBAL_MEM_CACHE_TYPEAdded CL_DEVICE_GLOBAL_MEM_SIZEAdded CL_DEVICE_IDSAdded CL_DEVICE_IMAGE2D_MAX_HEIGHTAdded CL_DEVICE_IMAGE2D_MAX_WIDTHAdded CL_DEVICE_IMAGE3D_MAX_DEPTHAdded CL_DEVICE_IMAGE3D_MAX_HEIGHTAdded CL_DEVICE_IMAGE3D_MAX_WIDTHAdded CL_DEVICE_IMAGE_MIN_PITCH_SIZEAdded CL_DEVICE_IMAGE_PITCH_ALIGNAdded CL_DEVICE_LOCAL_MEM_SIZEAdded CL_DEVICE_LOCAL_MEM_TYPEAdded CL_DEVICE_MAX_COMPUTE_UNITSAdded CL_DEVICE_MAX_CONSTANT_ARGSAdded CL_DEVICE_MAX_CONSTANT_BUFFER_SIZEAdded CL_DEVICE_MAX_GLOBAL_THREAD_SIZEAdded CL_DEVICE_MAX_MEM_ALLOC_SIZEAdded CL_DEVICE_MAX_PARAMETER_SIZEAdded CL_DEVICE_MAX_READ_IMAGE_ARGSAdded CL_DEVICE_MAX_SAMPLERSAdded CL_DEVICE_MAX_THREAD_DIMENSIONSAdded CL_DEVICE_MAX_THREAD_GROUP_SIZEAdded CL_DEVICE_MAX_WRITE_IMAGE_ARGSAdded CL_DEVICE_MEM_BASE_ADDR_ALIGNAdded CL_DEVICE_NAMEAdded CL_DEVICE_PROFILING_TIMER_RESOLUTIONAdded CL_DEVICE_SIMD_THREAD_GROUP_SIZEAdded CL_DEVICE_SINGLE_FP_CONFIGAdded CL_DEVICE_TYPEAdded CL_DEVICE_TYPE_ACCELERATORAdded CL_DEVICE_TYPE_ALLAdded CL_DEVICE_TYPE_CPUAdded CL_DEVICE_TYPE_DEFAULTAdded CL_DEVICE_TYPE_GPUAdded CL_DEVICE_VENDORAdded CL_DEVICE_VERSIONAdded CL_DRIVER_VERSIONAdded CL_EVENT_COMMANDAdded CL_EVENT_CONTEXTAdded CL_EVENT_DEVICEAdded CL_EVENT_STATUSAdded CL_EVENT_WAIT_FOR_COMPLETIONAdded CL_FALSEAdded CL_FILTER_LINEARAdded CL_FILTER_NEARESTAdded CL_FLOATAdded CL_FP_DENORMAdded CL_FP_FMAAdded CL_FP_INF_NANAdded CL_FP_PRECISION_IEEE754Added CL_FP_ROUND_TO_INFAdded CL_FP_ROUND_TO_NEARESTAdded CL_FP_ROUND_TO_ZEROAdded CL_GLOBALAdded CL_HALF_FLOATAdded CL_IMAGE_DEPTHAdded CL_IMAGE_ELEMENT_SIZEAdded CL_IMAGE_FORMATAdded CL_IMAGE_HEIGHTAdded CL_IMAGE_ROW_PITCHAdded CL_IMAGE_SLICE_PITCHAdded CL_IMAGE_WIDTHAdded CL_INVALID_ATTACHMENTAdded CL_INVALID_BINARYAdded CL_INVALID_CONTEXTAdded CL_INVALID_DEVICEAdded CL_INVALID_EVENTAdded CL_INVALID_EXECUTABLEAdded CL_INVALID_KERNELAdded CL_INVALID_KERNEL_ARGSAdded CL_INVALID_MEM_OBJECTAdded CL_INVALID_OPERATIONAdded CL_INVALID_OPTIONSAdded CL_INVALID_PROGRAMAdded CL_INVALID_VALUEAdded CL_KERNEL_ARG_NAMEAdded CL_KERNEL_ARG_TYPEAdded CL_KERNEL_ARG_VALUEAdded CL_KERNEL_DEVICEAdded CL_KERNEL_FUNCTION_NAMEAdded CL_KERNEL_NUM_ARGSAdded CL_KERNEL_NUM_INSTANCESAdded CL_KERNEL_PROGRAMAdded CL_LANGUAGE_VERSIONAdded CL_LOCALAdded CL_LOCK_FLAGS_NONEAdded CL_MEM_ALLOC_CONSTANT_POOLAdded CL_MEM_ALLOC_GLOBAL_POOLAdded CL_MEM_ALLOC_REFERENCEAdded CL_MEM_COPY_HOST_PTRAdded CL_MEM_OBJECT_ARRAYAdded CL_MEM_OBJECT_DEVICEAdded CL_MEM_OBJECT_FLAGSAdded CL_MEM_OBJECT_HOST_PTRAdded CL_MEM_OBJECT_IMAGE2DAdded CL_MEM_OBJECT_IMAGE3DAdded CL_MEM_OBJECT_LOCK_COUNTAdded CL_MEM_OBJECT_NUM_INSTANCESAdded CL_MEM_OBJECT_SIZEAdded CL_MEM_OBJECT_TYPEAdded CL_MEM_READ_ONLYAdded CL_MEM_READ_WRITEAdded CL_MEM_USE_HOST_PTRAdded CL_MEM_WRITE_ONLYAdded CL_NONEAdded CL_PROGRAM_BUILD_STATUSAdded CL_PROGRAM_DEVICEAdded CL_PROGRAM_NUM_INSTANCESAdded CL_QUEUEDAdded CL_RAdded CL_RAAdded CL_READAdded CL_READ_WRITEAdded CL_RGAdded CL_RGBAdded CL_RGBAAdded CL_RUNNINGAdded CL_SIGNED_INT16Added CL_SIGNED_INT32Added CL_SIGNED_INT8Added CL_SNORM_INT16Added CL_SNORM_INT8Added CL_SUCCESSAdded CL_TERMINATEDAdded CL_TRUEAdded CL_UNORM_INT16Added CL_UNORM_INT8Added CL_UNORM_INT_101010Added CL_UNORM_INT_101010_REVAdded CL_UNORM_INT_8888Added CL_UNORM_INT_8888_REVAdded CL_UNORM_SHORT_555Added CL_UNORM_SHORT_555_REVAdded CL_UNORM_SHORT_565Added CL_UNORM_SHORT_565_REVAdded CL_UNSIGNED_INT16Added CL_UNSIGNED_INT32Added CL_UNSIGNED_INT8Added CL_xRGBAdded cl_addressing_modeAdded cl_arg_infoAdded cl_array_infoAdded cl_bitfieldAdded cl_booleanAdded cl_build_statusAdded cl_channel_orderAdded cl_channel_typeAdded cl_contextAdded cl_context_flagsAdded cl_context_infoAdded cl_context_propertiesAdded cl_deviceAdded cl_device_config_infoAdded cl_device_config_stringAdded cl_device_fp_configAdded cl_device_group_infoAdded cl_device_idAdded cl_device_typeAdded cl_errorAdded cl_eventAdded cl_event_flagsAdded cl_event_infoAdded cl_event_statusAdded cl_exec_descAdded cl_filter_modeAdded cl_gl_attachment_typeAdded cl_global_cache_typeAdded cl_image_formatAdded cl_image_infoAdded cl_kernelAdded cl_kernel_infoAdded cl_local_arg_descAdded cl_local_mem_typeAdded cl_lock_flagsAdded cl_memAdded cl_mem_flagsAdded cl_mem_infoAdded cl_mem_object_typeAdded cl_programAdded cl_program_infoAdded cl_samplerAdded cl_stream
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

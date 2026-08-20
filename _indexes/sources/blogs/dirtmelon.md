@@ -1,9 +1,9 @@
 # dirtmelon
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-08-03，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | 2016 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/2016.md) · [网页](https://dirtmelon.github.io/posts/2016/) | — | 原生中文 |
 | 2017 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/2017.md) · [网页](https://dirtmelon.github.io/posts/2017/) | — | 原生中文 |
@@ -14,7 +14,6 @@
 | @return [TargetDefinition] | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/%E4%B8%80%E7%A7%8D%E4%BD%BF%E7%94%A8-cocoapods-%E5%90%8C%E6%AD%A5-git-hooks-%E7%9A%84%E6%96%B9%E6%A1%88.md) · [网页](https://dirtmelon.github.io/posts/cocoapods-sync-githooks/) | — | 原生中文 |
 | Alamofire | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/alamofire.md) · [网页](https://dirtmelon.github.io/posts/Alamofire/) | — | 原生中文 |
 | Apple Keywords | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/apple-keywords.md) · [网页](https://dirtmelon.github.io/posts/Apple-Keywords/) | — | 原生中文 |
-| Archives | — | dirtmelon | 数据与持久化 | [中文原文](../../../blogs/zh/dirtmelon/archives.md) · [网页](https://dirtmelon.github.io/archives/) | — | 原生中文 |
 | Aspects | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/aspects.md) · [网页](https://dirtmelon.github.io/posts/Aspects/) | — | 原生中文 |
 | FBAllocationTracker | — | dirtmelon | 内存与 ARC | [中文原文](../../../blogs/zh/dirtmelon/fballocationtracker.md) · [网页](https://dirtmelon.github.io/posts/fballocationtracker/) | — | 原生中文 |
 | IGListKit - 完结篇 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/iglistkit-%E5%AE%8C%E7%BB%93%E7%AF%87.md) · [网页](https://dirtmelon.github.io/posts/iglistkit-fifth/) | — | 原生中文 |
@@ -31,10 +30,10 @@
 | PhotoKit-使用 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/photokit-%E4%BD%BF%E7%94%A8.md) · [网页](https://dirtmelon.github.io/posts/photoKit-usage/) | — | 原生中文 |
 | PhotoKit-概览 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/photokit-%E6%A6%82%E8%A7%88.md) · [网页](https://dirtmelon.github.io/posts/photokit-overview/) | — | 原生中文 |
 | Promise - 介绍 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/promise-%E4%BB%8B%E7%BB%8D.md) · [网页](https://dirtmelon.github.io/posts/promise-first/) | — | 原生中文 |
-| Promises 的 Objective-C 实现 | — | dirtmelon | Objective-C Runtime | [中文原文](../../../blogs/zh/dirtmelon/promises-%E7%9A%84-objective-c-%E5%AE%9E%E7%8E%B0.md) · [网页](https://dirtmelon.github.io/posts/promise-second/) | — | 原生中文 |
+| Promises 的 Objective-C 实现 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/promises-%E7%9A%84-objective-c-%E5%AE%9E%E7%8E%B0.md) · [网页](https://dirtmelon.github.io/posts/promise-second/) | — | 原生中文 |
 | Promises 的 Swift 实现 | — | dirtmelon | Swift 语言 | [中文原文](../../../blogs/zh/dirtmelon/promises-%E7%9A%84-swift-%E5%AE%9E%E7%8E%B0.md) · [网页](https://dirtmelon.github.io/posts/promise-third/) | — | 原生中文 |
 | slow-motion-video | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/slow-motion-video.md) · [网页](https://dirtmelon.github.io/posts/slow-motion-video/) | — | 原生中文 |
-| Swift 与 Objective-C 互操作中的 Optional | — | dirtmelon | Objective-C Runtime、Swift 语言 | [中文原文](../../../blogs/zh/dirtmelon/swift-%E4%B8%8E-objective-c-%E4%BA%92%E6%93%8D%E4%BD%9C%E4%B8%AD%E7%9A%84-optional.md) · [网页](https://dirtmelon.github.io/posts/Optional-between-Swift-and-Objective-C/) | — | 原生中文 |
+| Swift 与 Objective-C 互操作中的 Optional | — | dirtmelon | Swift 语言 | [中文原文](../../../blogs/zh/dirtmelon/swift-%E4%B8%8E-objective-c-%E4%BA%92%E6%93%8D%E4%BD%9C%E4%B8%AD%E7%9A%84-optional.md) · [网页](https://dirtmelon.github.io/posts/Optional-between-Swift-and-Objective-C/) | — | 原生中文 |
 | Swift 与指针 | — | dirtmelon | Swift 语言 | [中文原文](../../../blogs/zh/dirtmelon/swift-%E4%B8%8E%E6%8C%87%E9%92%88.md) · [网页](https://dirtmelon.github.io/posts/Swift-and-Pointer/) | — | 原生中文 |
 | Texture 开发笔记 | — | dirtmelon | — | [中文原文](../../../blogs/zh/dirtmelon/texture-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0.md) · [网页](https://dirtmelon.github.io/posts/texture-notes/) | — | 原生中文 |
 | Texture-Layout | — | dirtmelon | UI 与渲染 | [中文原文](../../../blogs/zh/dirtmelon/texture-layout.md) · [网页](https://dirtmelon.github.io/posts/texture-layout/) | — | 原生中文 |

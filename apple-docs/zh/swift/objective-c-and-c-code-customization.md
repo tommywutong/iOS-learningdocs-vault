@@ -23,7 +23,7 @@ translated: true
 
 ## 主题
 
-### Customizing Objective-C APIs
+### 自定义 Objective-C API
 
 - [Designating Nullability in Objective-C APIs](designating-nullability-in-objective-c-apis.md) — 使用空性标注，或将区域标记为已标注，以控制 Objective-C 声明导入 Swift 的方式。
 - [Renaming Objective-C APIs for Swift](renaming-objective-c-apis-for-swift.md) — 使用 `NS_SWIFT_NAME` 宏为 Swift 自定义 API 名称。
@@ -38,7 +38,7 @@ translated: true
 
 ## 另请参阅
 
-### Language Interoperability with Objective-C and C
+### 与 Objective-C 和 C 的语言互操作性
 
 - [Migrating Your Objective-C Code to Swift](migrating-your-objective-c-code-to-swift.md) — 了解迁移代码的推荐步骤。
 - [Cocoa Design Patterns](cocoa-design-patterns.md) — 在你的 Swift App 中采纳并与 Cocoa 设计模式互操作。

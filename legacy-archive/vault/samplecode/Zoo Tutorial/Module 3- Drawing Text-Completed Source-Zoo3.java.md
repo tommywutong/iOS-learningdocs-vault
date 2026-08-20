@@ -1,0 +1,146 @@
+---
+title: Zoo Tutorial
+apple_id: DTS10001013
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Zoo_Tutorial/Listings/Module_3__Drawing_Text_Completed_Source_Zoo3_java.html
+archived_at: '2026-07-18T03:28:38.837323Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Zoo Tutorial](Zoo%20Tutorial.md)
+
+
+[Next](Module%203-%20Drawing%20Text-Source-AnimalPane.java.md)[Previous](Module%203-%20Drawing%20Text-Completed%20Source-TextPresenter.java.md)
+
+# Module 3- Drawing Text/Completed Source/Zoo3.java
+
+```
+import java.awt.*;
+import java.awt.event.*;
+
+import quicktime.QTSession;
+import quicktime.QTException;
+
+import quicktime.app.display.QTCanvas;
+
+
+/**
+ * QTZoo Module 3 - Drawing Text Using QTJ
+ * This application requires QuickTime for Java
+ *
+ * @author Michael Hopkins
+ * @author Levi Brown
+ * @author Apple Computer, Inc.
+ * @version 3.0.2 11/15/1999
+ *
+ * Copyright:   © Copyright 1999 Apple Computer, Inc. All rights reserved.
+ *  
+ * Disclaimer:  IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+ *              ("Apple") in consideration of your agreement to the following terms, and your
+ *              use, installation, modification or redistribution of this Apple software
+ *              constitutes acceptance of these terms.  If you do not agree with these terms,
+ *              please do not use, install, modify or redistribute this Apple software.
+ *
+ *              In consideration of your agreement to abide by the following terms, and subject
+ *              to these terms, Apple grants you a personal, non-exclusive license, under AppleÕs
+ *              copyrights in this original Apple software (the "Apple Software"), to use,
+ *              reproduce, modify and redistribute the Apple Software, with or without
+ *              modifications, in source and/or binary forms; provided that if you redistribute
+ *              the Apple Software in its entirety and without modifications, you must retain
+ *              this notice and the following text and disclaimers in all such redistributions of
+ *              the Apple Software.  Neither the name, trademarks, service marks or logos of
+ *              Apple Computer, Inc. may be used to endorse or promote products derived from the
+ *              Apple Software without specific prior written permission from Apple.  Except as
+ *              expressly stated in this notice, no other rights or licenses, express or implied,
+ *              are granted by Apple herein, including but not limited to any patent rights that
+ *              may be infringed by your derivative works or by other works in which the Apple
+ *              Software may be incorporated.
+ *
+ *              The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+ *              WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+ *              WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ *              PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+ *              COMBINATION WITH YOUR PRODUCTS.
+ *
+ *              IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+ *              CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *              GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ *              ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION
+ *              OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+ *              (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+ *              ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Revision History
+ * ---------------------------------------------------------------------------------
+ * 11/15/99 MSH  moved media loading into AnimalPane( ), set client to compositor
+ * 12/02/99 MSH  removed superfluous imports, improved formatting and added comments 
+ * 
+ */
+
+public class Zoo3 extends Frame
+{
+    static public int WIDTH  = 640;
+    static public int HEIGHT = 480;
+
+    /**
+     *  Zoo constructor
+     *  @param string title of window
+     */
+    public Zoo3( String s ) 
+    {
+        super(s);                               
+        setResizable( false );                      // we don't want the window to resize
+        setBounds( 0, 0, WIDTH, HEIGHT );           // make window 640x480
+
+        QTCanvas myQTCanvas = new QTCanvas( QTCanvas.kInitialSize, 0.5F, 0.5F );
+        add( myQTCanvas );
+
+        AnimalPane zebraPane = new AnimalPane();    // load media
+        try
+        {
+            myQTCanvas.setClient( zebraPane.getCompositor(), true );
+        }
+        catch ( QTException e )
+        {
+            e.printStackTrace();
+        }
+
+        addWindowListener( new WindowAdapter()      // anonymous inner class for handling window events
+        {
+            public void windowClosing( WindowEvent we )
+            {
+                QTSession.close();                  // shut down QT and clean up
+                dispose();                          // destroy window
+            }
+            public void windowClosed( WindowEvent we )
+            {
+                System.exit( 0 );                   // exit to shell
+            }
+        });
+    }
+
+    /**
+     * Main entry point for the application
+     */
+    public static void main (String[] args)
+    {
+        try
+        {
+            QTSession.open();                       // perform native QuickTime initialization
+            Zoo3 appWindow = new Zoo3( "QTZoo3" );  // create a new application window
+            appWindow.show();                       // make the window visible
+            appWindow.toFront();                    // bring it to the front
+        }
+        catch ( Exception e )                       // handle any exceptions
+        {
+            QTSession.close();
+            e.printStackTrace();
+        }
+    }   
+}
+```
+
+[Next](Module%203-%20Drawing%20Text-Source-AnimalPane.java.md)[Previous](Module%203-%20Drawing%20Text-Completed%20Source-TextPresenter.java.md)
+

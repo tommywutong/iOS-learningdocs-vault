@@ -1,0 +1,102 @@
+# qa / qd3d
+
+> 导航：[总目录](../../README.md) · [qa](../qa.md)
+
+共 94 份文档。
+
+## macOS（94 份）
+
+- **[-28482 Errors When Selecting Markers](../../qa/qd3d/-28482%20Errors%20When%20Selecting%20Markers.md)** — QA · 1995-06-01，macOS
+- **[3D Acceleration](../../qa/qd3d/3D%20Acceleration.md)** — QA · 1996-04-08，macOS
+- **[Adding File and Clipboard Support to a QuickDraw 3D Application](../../qa/qd3d/Adding%20File%20and%20Clipboard%20Support%20to%20a%20QuickDraw%203D%20Application.md)** — QA · 1995-06-01，macOS
+- **[All Geometry Vertices Need UV Parameterization](../../qa/qd3d/All%20Geometry%20Vertices%20Need%20UV%20Parameterization.md)** — QA · 1997-07-11，macOS
+- **[Ambient Coefficient](../../qa/qd3d/Ambient%20Coefficient.md)** — QA · 1996-04-08，macOS
+- **[Apple Accelerator Card & Textures](../../qa/qd3d/Apple%20Accelerator%20Card%20%26%20Textures.md)** — QA · 1997-07-11，macOS
+- **[Call Q3View_GetWorldToFrustumMatrixState Only In A Rendering Loop](../../qa/qd3d/Call%20Q3ViewGetWorldToFrustumMatrixState%20Only%20In%20A%20Rendering%20Loop.md)** — QA · 1997-07-11，macOS
+- **[Camera Hither Distance Must Be > 0](../../qa/qd3d/Camera%20Hither%20Distance%20Must%20Be%20-%200.md)** — QA · 1997-07-11，macOS
+- **[Can't Turn Off DrawContext's clearImageMethod](../../qa/qd3d/Can%27t%20Turn%20Off%20DrawContext%27s%20clearImageMethod.md)** — QA · 1995-06-01，macOS
+- **[Checking For QD3D Windows DLL's](../../qa/qd3d/Checking%20For%20QD3D%20Windows%20DLL%27s.md)** — QA · 1997-07-11，macOS
+- **[Checking Whether QD3D Is Available](../../qa/qd3d/Checking%20Whether%20QD3D%20Is%20Available.md)** — QA · 1997-07-11，macOS
+- **[Clarification of TQ3HitData's 'distance' Field](../../qa/qd3d/Clarification%20of%20TQ3HitData%27s%20%27distance%27%20Field.md)** — QA · 1996-04-08，macOS
+- **[Clearing the Z-buffer in RAVE](../../qa/qd3d/Clearing%20the%20Z-buffer%20in%20RAVE.md)** — QA · 1998-04-20，macOS
+- **[Collision Detection](../../qa/qd3d/Collision%20Detection.md)** — QA · 1996-04-08，macOS
+- **[Default Number of Surface Planes](../../qa/qd3d/Default%20Number%20of%20Surface%20Planes.md)** — QA · 1997-07-11，macOS
+- **[Default Surface/Shader UV Params For Caps of Cones & Cylinders](../../qa/qd3d/Default%20Surface-Shader%20UV%20Params%20For%20Caps%20of%20Cones%20%26%20Cylinders.md)** — QA · 1997-07-11，macOS
+- **[Determining 3DMF Endian-ness](../../qa/qd3d/Determining%203DMF%20Endian-ness.md)** — QA · 1996-04-08，macOS
+- **[Determining Which Features Are Supported by Specific Renderers](../../qa/qd3d/Determining%20Which%20Features%20Are%20Supported%20by%20Specific%20Renderers.md)** — QA · 1996-04-08，macOS
+- **[Direction of Mesh Contours](../../qa/qd3d/Direction%20of%20Mesh%20Contours.md)** — QA · 1995-09-15，macOS
+- **[Displaying Windows 3DMF Files On A Mac](../../qa/qd3d/Displaying%20Windows%203DMF%20Files%20On%20A%20Mac.md)** — QA · 1997-07-11，macOS
+- **[DONT_NEED_DDRAW Preprocessor Explained](../../qa/qd3d/DONTNEEDDDRAW%20Preprocessor%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Drawing Text into a RAVE Context](../../qa/qd3d/Drawing%20Text%20into%20a%20RAVE%20Context.md)** — QA · 1998-04-20，macOS
+- **[Error Loading: DriverServicesLib (-2804) Error Explained](../../qa/qd3d/Error%20Loading-%20DriverServicesLib%20%28-2804%29%20Error%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Errors in QADrawContextNew](../../qa/qd3d/Errors%20in%20QADrawContextNew.md)** — QA · 1998-04-20，macOS
+- **[Excluding UVs When Building a Vertex List](../../qa/qd3d/Excluding%20UVs%20When%20Building%20a%20Vertex%20List.md)** — QA · 1995-06-01，macOS
+- **[Exporting Light Groups in QuickDraw 3D](../../qa/qd3d/Exporting%20Light%20Groups%20in%20QuickDraw%203D.md)** — QA · 1995-07-15，macOS
+- **[Extensions vs. Libraries](../../qa/qd3d/Extensions%20vs.%20Libraries.md)** — QA · 1996-04-08，macOS
+- **[Finding The Center Of A Model](../../qa/qd3d/Finding%20The%20Center%20Of%20A%20Model.md)** — QA · 1997-07-11，macOS
+- **[GWorld in the 'grafPort' Field of a MacDrawContext Struct](../../qa/qd3d/GWorld%20in%20the%20%27grafPort%27%20Field%20of%20a%20MacDrawContext%20Struct.md)** — QA · 1995-06-01，macOS
+- **[Header Conditions](../../qa/qd3d/Header%20Conditions.md)** — QA · 1996-04-08，macOS
+- **[Highlight State](../../qa/qd3d/Highlight%20State.md)** — QA · 1996-04-08，macOS
+- **[Improper Texture Mapping with Trigrids](../../qa/qd3d/Improper%20Texture%20Mapping%20with%20Trigrids.md)** — QA · 1995-06-01，macOS
+- **[Interactive Renderer Not Drawing Flat Surfaces](../../qa/qd3d/Interactive%20Renderer%20Not%20Drawing%20Flat%20Surfaces.md)** — QA · 1995-06-01，macOS
+- **[Keywords Dropped from 3DMF Specification](../../qa/qd3d/Keywords%20Dropped%20from%203DMF%20Specification.md)** — QA · 1995-06-01，macOS
+- **[Light Color](../../qa/qd3d/Light%20Color.md)** — QA · 1996-02-15，macOS
+- **[Limitations of the Apple QuickDraw 3D Acceleration Card](../../qa/qd3d/Limitations%20of%20the%20Apple%20QuickDraw%203D%20Acceleration%20Card.md)** — QA · 1996-04-08，macOS
+- **[Loading Applications Without QD3D](../../qa/qd3d/Loading%20Applications%20Without%20QD3D.md)** — QA · 1995-09-15，macOS
+- **[Making Objects Invisible](../../qa/qd3d/Making%20Objects%20Invisible.md)** — QA · 1997-07-11，macOS
+- **[Mesh Edge Structure Can Not Have More Than 2 Faces](../../qa/qd3d/Mesh%20Edge%20Structure%20Can%20Not%20Have%20More%20Than%202%20Faces.md)** — QA · 1997-07-11，macOS
+- **[Metafile Specification Discrepancies](../../qa/qd3d/Metafile%20Specification%20Discrepancies.md)** — QA · 1995-06-01，macOS
+- **[Missing Geometries in QuickDraw 3D 1.0.X](../../qa/qd3d/Missing%20Geometries%20in%20QuickDraw%203D%201.0.X.md)** — QA · 1996-04-08，macOS
+- **[No Limit To The Number Of Vertices In A Polygon](../../qa/qd3d/No%20Limit%20To%20The%20Number%20Of%20Vertices%20In%20A%20Polygon.md)** — QA · 1997-07-11，macOS
+- **[No Standard UV Parameters For Mesh](../../qa/qd3d/No%20Standard%20UV%20Parameters%20For%20Mesh.md)** — QA · 1997-07-11，macOS
+- **[Normal Line of Object Pick](../../qa/qd3d/Normal%20Line%20of%20Object%20Pick.md)** — QA · 1995-06-01，macOS
+- **[pointOfInterest](../../qa/qd3d/pointOfInterest.md)** — QA · 1996-04-08，macOS
+- **[Q3Exit Causes Application Crashes and Error Messages](../../qa/qd3d/Q3Exit%20Causes%20Application%20Crashes%20and%20Error%20Messages.md)** — QA · 1995-06-01，macOS
+- **[Q3View_Sync/Q3View_Flush Differences](../../qa/qd3d/Q3ViewSync-Q3ViewFlush%20Differences.md)** — QA · 1997-07-11，macOS
+- **[QD3D Does Not Free Memory Used By Geometries](../../qa/qd3d/QD3D%20Does%20Not%20Free%20Memory%20Used%20By%20Geometries.md)** — QA · 1997-07-11，macOS
+- **[QD3D Does Not Provide Z-Buffer Information](../../qa/qd3d/QD3D%20Does%20Not%20Provide%20Z-Buffer%20Information.md)** — QA · 1997-07-11，macOS
+- **[QD3D Functions Not Interrupt Safe](../../qa/qd3d/QD3D%20Functions%20Not%20Interrupt%20Safe.md)** — QA · 1997-07-11，macOS
+- **[QD3D Is Not Thread-Safe](../../qa/qd3d/QD3D%20Is%20Not%20Thread-Safe.md)** — QA · 1997-07-11，macOS
+- **[QD3D Macintosh High Quality Postscript Output](../../qa/qd3d/QD3D%20Macintosh%20High%20Quality%20Postscript%20Output.md)** — QA · 1997-07-11，macOS
+- **[QD3D Plug-In Renderer Handlers](../../qa/qd3d/QD3D%20Plug-In%20Renderer%20Handlers.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows High Quality Postscript Output](../../qa/qd3d/QD3D%20Windows%20High%20Quality%20Postscript%20Output.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows Interactive Renderer](../../qa/qd3d/QD3D%20Windows%20Interactive%20Renderer.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows Pixel Format Support](../../qa/qd3d/QD3D%20Windows%20Pixel%20Format%20Support.md)** — QA · 1997-07-11，macOS
+- **[Quality of Video Textures](../../qa/qd3d/Quality%20of%20Video%20Textures.md)** — QA · 1996-04-08，macOS
+- **[QuickDraw 3D -- Meshes or Patches?](../../qa/qd3d/QuickDraw%203D%20--%20Meshes%20or%20Patches.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D and Submit Calls](../../qa/qd3d/QuickDraw%203D%20and%20Submit%20Calls.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D Debugging Tools](../../qa/qd3d/QuickDraw%203D%20Debugging%20Tools.md)** — QA · 1996-02-09，macOS
+- **[QuickDraw 3D Documentation](../../qa/qd3d/QuickDraw%203D%20Documentation.md)** — QA · 1996-02-09，macOS
+- **[QuickDraw 3D Projection Chain](../../qa/qd3d/QuickDraw%203D%20Projection%20Chain.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D Rendering](../../qa/qd3d/QuickDraw%203D%20Rendering.md)** — QA · 1995-06-01，macOS
+- **[RAVE and DrawSprocket Integration](../../qa/qd3d/RAVE%20and%20DrawSprocket%20Integration.md)** — QA · 1998-04-20，macOS
+- **[RAVE Multiple GDevice support](../../qa/qd3d/RAVE%20Multiple%20GDevice%20support.md)** — QA · 1998-04-20，macOS
+- **[RAVE Notifications](../../qa/qd3d/RAVE%20Notifications.md)** — QA · 1998-04-20，macOS
+- **[RAVE Support for Apple 3D Accelerator](../../qa/qd3d/RAVE%20Support%20for%20Apple%203D%20Accelerator.md)** — QA · 1998-04-20，macOS
+- **[RAVE Z-Buffer Access](../../qa/qd3d/RAVE%20Z-Buffer%20Access.md)** — QA · 1998-04-20，macOS
+- **[Region Structure](../../qa/qd3d/Region%20Structure.md)** — QA · 1996-04-08，macOS
+- **[Registered Custom-Attribute Types](../../qa/qd3d/Registered%20Custom-Attribute%20Types.md)** — QA · 1995-07-15，macOS
+- **[Reordering of Vertices in a Mesh](../../qa/qd3d/Reordering%20of%20Vertices%20in%20a%20Mesh.md)** — QA · 1995-06-01，macOS
+- **[Screen Flickering](../../qa/qd3d/Screen%20Flickering.md)** — QA · 1996-04-08，macOS
+- **[Setting Data For Q3ViewerUseData](../../qa/qd3d/Setting%20Data%20For%20Q3ViewerUseData.md)** — QA · 1997-07-11，macOS
+- **[ShaderUV/SurfaceUV Attribute Differences](../../qa/qd3d/ShaderUV-SurfaceUV%20Attribute%20Differences.md)** — QA · 1997-07-11，macOS
+- **[Shading Using Trigrids](../../qa/qd3d/Shading%20Using%20Trigrids.md)** — QA · 1995-07-15，macOS
+- **[Sources of 3DMF Documentation](../../qa/qd3d/Sources%20of%203DMF%20Documentation.md)** — QA · 1996-04-08，macOS
+- **[Specular Control Range in QuickDraw 3D](../../qa/qd3d/Specular%20Control%20Range%20in%20QuickDraw%203D.md)** — QA · 1995-06-01，macOS
+- **[Spot Light Not Working](../../qa/qd3d/Spot%20Light%20Not%20Working.md)** — QA · 1995-06-01，macOS
+- **[Textures & BitMaps Explained](../../qa/qd3d/Textures%20%26%20BitMaps%20Explained.md)** — QA · 1996-08-21，macOS
+- **[The Backfacing Option](../../qa/qd3d/The%20Backfacing%20Option.md)** — QA · 1996-04-08，macOS
+- **[TQ3Ellipsoid Data Caps Field Explanation](../../qa/qd3d/TQ3Ellipsoid%20Data%20Caps%20Field%20Explanation.md)** — QA · 1997-07-11，macOS
+- **[TQ3ViewObject and Bounding Box Calculating Routines](../../qa/qd3d/TQ3ViewObject%20and%20Bounding%20Box%20Calculating%20Routines.md)** — QA · 1995-06-01，macOS
+- **[Transparency Not Working on Some Machines](../../qa/qd3d/Transparency%20Not%20Working%20on%20Some%20Machines.md)** — QA · 1996-04-08，macOS
+- **[Triangle Strips](../../qa/qd3d/Triangle%20Strips.md)** — QA · 1998-04-20，macOS
+- **[U and V limits in RAVE](../../qa/qd3d/U%20and%20V%20limits%20in%20RAVE.md)** — QA · 1998-04-20，macOS
+- **[Use QuickDraw 3D B1C3 Library to Eliminate User Breaks](../../qa/qd3d/Use%20QuickDraw%203D%20B1C3%20Library%20to%20Eliminate%20User%20Breaks.md)** — QA · 1995-06-01，macOS
+- **[User Interface Tool Demo at WWDC](../../qa/qd3d/User%20Interface%20Tool%20Demo%20at%20WWDC.md)** — QA · 1995-07-15，macOS
+- **[Using Hardware Acceleration](../../qa/qd3d/Using%20Hardware%20Acceleration.md)** — QA · 1997-07-11，macOS
+- **[UV Support](../../qa/qd3d/UV%20Support.md)** — QA · 1996-02-15，macOS
+- **[UV's in Vertex List](../../qa/qd3d/UV%27s%20in%20Vertex%20List.md)** — QA · 1996-04-08，macOS
+- **[Valid QD3D Metafile Filename Extensions](../../qa/qd3d/Valid%20QD3D%20Metafile%20Filename%20Extensions.md)** — QA · 1997-07-11，macOS
+- **[View Hints](../../qa/qd3d/View%20Hints.md)** — QA · 1996-04-08，macOS
+- **[Viewer Error "xy values outside of the viewing window" Explained](../../qa/qd3d/Viewer%20Error%20-xy%20values%20outside%20of%20the%20viewing%20window-%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Viewer Only Supports Perspective Cameras](../../qa/qd3d/Viewer%20Only%20Supports%20Perspective%20Cameras.md)** — QA · 1997-07-11，macOS

@@ -1,0 +1,128 @@
+---
+title: SndForEver
+apple_id: DTS10000370
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-14'
+source_url: https://developer.apple.com/library/archive/samplecode/SndForEver/Listings/SndForEver_cp.html
+archived_at: '2026-07-18T03:24:54.092094Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SndForEver](SndForEver.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](SndForEver.md)
+
+# SndForEver.cp
+
+```c
+/*
+    File:       SndForEver.cp
+
+    Contains:   This application demonstrates how to play a snd which has a loop in it.
+
+                The resource which I am using for the 'snd ' is 128 and this resource has been 
+                pre-parsed. I took out some of it so that I would be able to make the code for playing 
+                the sound easier to follow.  The part of the header which I have taken out is the 
+
+                format
+                # of Synths
+                Synth resource ID
+                Init option
+                # of commands
+                the command
+                its params
+
+                The original un-cut resource is in resource 100.
+
+                To use the snippet, just double click on it and when you are sick of listening to it, 
+                just click the mouse button.  
+
+    Written by:     
+
+    Copyright:  Copyright © 1984-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/2/1999    Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+#include    <Resources.h>
+#include    <Sound.h>
+#include    <Events.h>
+#include    <Memory.h>
+
+#define TRUE            0xFF
+#define FALSE           0
+
+main()
+{
+    Handle          SoundData;
+    SndChannelPtr   chan;
+    OSErr           err;
+    SndCommand      mycmd;
+
+    SoundData = GetResource ('snd ', 128);
+    if (ResError() != noErr || SoundData == nil)
+        Debugger();
+    HLock (SoundData);
+
+    mycmd.cmd = soundCmd;
+    mycmd.param1 = 0;
+    mycmd.param2 = (long) *SoundData;
+
+    chan = nil;
+    err = SndNewChannel (&chan, sampledSynth, 0, nil);
+    if (err != noErr)
+        Debugger();
+
+    err = SndDoImmediate (chan, &mycmd);
+    if (err != noErr)
+        Debugger();
+
+    mycmd.cmd = freqCmd;
+    mycmd.param1 = 0;
+    mycmd.param2 = 60;
+
+    err = SndDoCommand (chan, &mycmd, FALSE);
+    if (err != noErr)
+        Debugger();
+
+    do {
+        /*mycmd.cmd = noteCmd;
+        mycmd.param1 = 0x1000;
+        mycmd.param2 = 60;
+
+        err = SndDoCommand (chan, &mycmd, FALSE);
+        if (err != noErr)
+            Debugger();*/
+
+        } while (!StillDown());
+
+    mycmd.cmd = quietCmd;
+    mycmd.param1 = 0;
+    mycmd.param2 = 0;
+
+    err = SndDoImmediate (chan, &mycmd);
+    if (err != noErr)
+        Debugger();
+
+    err = SndDisposeChannel (chan,FALSE);
+    if (err != noErr)
+        Debugger();
+
+    HUnlock (SoundData);
+}
+```
+
+[Next](Document%20Revision%20History.md)[Previous](SndForEver.md)
+

@@ -1,0 +1,315 @@
+---
+title: ZAM
+apple_id: DTS10000063
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/ZAM/Listings/GameSource_InitGame_c.html
+archived_at: '2026-07-18T03:28:33.386187Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ZAM](ZAM.md)
+
+
+[Next](GameSource-MissileAEvents.c.md)[Previous](GameSource-IncidentalSounds.c.md)
+
+# GameSource/InitGame.c
+
+```c
+/*
+    InitGame
+
+    This big ole thing is what gets the game up and running.  It starts the timer
+    starts the sprites, loads all the graphics and sets all the flags just right.
+
+*/
+
+/*  AppleEvents.h */
+/*  EPPC.h */
+
+#include "CoreGlobals.h"
+#include "ZAM.h"
+#include "GameDef.h"
+#include "Document.h"
+#include "GameAEvents.h"
+#include "GameSounds.h"
+#include "ZAMProtos.h"
+
+
+gamePtr gGame;
+Boolean gDead;
+
+void MakeGameWindow(gamePtr game);
+
+void InitGame(void)
+{
+
+
+    InitXThingTimer();
+    InitSprites();
+    InitDirectionTable();
+    gGame = MakeGameRecord();
+
+    InstallCustomEvents(gGame);
+    MakeGameWindow(gGame);
+
+    InitSounds("\pZAM Sounds");
+    (void)PlaySndAsynchChannel( kRiffSnd, kMusicChan, kStdPriority);
+
+    LoadExplosionSprites(gGame);
+    LoadMissileSprites(gGame);
+    LoadTankSprites(gGame);
+
+
+    StartIncidentalSounds();
+
+    gDead = false;
+
+#ifdef NO_NET
+    // this will allow testing of the animation and sounds without needing another mac
+    game->gameState = kGameInProgress;
+    /* Set up tank indexes here */
+    game->localTankIndex = 0;
+    game->remoteTankIndex = 1;
+    PlaceTankSprites(game);
+#endif
+
+    MainEvent();
+    MainEvent();
+    MainEvent();
+    MainEvent();
+}
+
+OSErr PortInfoToAddressDesc(PortInfoRec *myPortInfo,
+                    EntityName *nbpEntity,
+                    AEAddressDesc *myTarget)
+{
+    TargetID    toTargetID;
+    OSErr       err;
+
+    toTargetID.location.locationKindSelector = ppcNBPLocation;
+    toTargetID.location.u.nbpEntity = *nbpEntity;
+    toTargetID.name = myPortInfo->name;
+
+    err = AECreateDesc(typeTargetID, 
+                &toTargetID, sizeof(TargetID), myTarget);
+
+    return err;
+}
+
+OSErr GetTargetAddress(PortInfoRec *myPortInfo, 
+                        AEAddressDesc *myTarget,
+                        TargetID    *toTargetID)
+{
+    OSErr   err;
+
+    err = PPCBrowser("\pSelect a ZAM game", "\pOpponents", false, &toTargetID->location,myPortInfo, nil,"\p");
+    if( (err != noErr) && (err != -128) ) {
+        ErrMsgCode("\pPPCBrowser failed. in GetTargetAddress",err);
+        return err;
+    }
+
+    if(err == noErr) {  
+        err = PortInfoToAddressDesc(myPortInfo, &toTargetID->location.u.nbpEntity, myTarget);
+        if(err != noErr) {
+            ErrMsgCode("\pAECreateDesc failed.",err);
+        }
+    }
+
+    return err;
+}
+
+OSErr FindOpponent( AEAddressDesc *oppAddr)
+{
+
+    OSErr               err;
+    TargetID            toTargetID;
+    PortInfoRec         oppPortInfo;
+
+    err = GetTargetAddress(&oppPortInfo, 
+                        oppAddr,
+                        &toTargetID);
+
+    if( (err != noErr) ) {
+        ErrMsgCode("\pPPCBrowser Failed.",err);
+    }
+
+    return err;
+
+}
+
+void MakeGameWindow(gamePtr game)
+{
+
+    WindowPtr       wp;
+    wDispHandle     disp;
+    PicHandle       pict;
+    OSErr           err;
+    PixMapHandle    srcPix, destPix;
+    PaletteHandle   pal;
+    CTabHandle      cTab;
+
+    wp = NewDispatchWindow(128);
+    if(!wp) {
+        ErrMsg("\pERROR CREATIUNG DISP WINDOW");
+        /* mem leak: not dumping ooppAddr */
+        return;
+    }
+
+    pal = GetNewPalette(128);
+    if(!pal) {
+        ErrMsg("\pError getting the palette");
+    }
+
+    cTab = (CTabHandle)NewHandle(256);      // this will be resized by Palette2CTab
+    Palette2CTab(pal,cTab);
+
+    game->gameID = TickCount();
+    pict = GetPicture(128);
+
+    if(pict == nil) {
+        ErrMsg("\pPict not loaded.  In HELL.");
+        ExitToShell();
+    }
+    err = CreateGWorldFromPictWithCTable(&game->backdrop, pict,cTab);
+    err = CreateGWorldFromPictWithCTable(&game->tween, pict, cTab);
+    ReleaseResource(pict);
+
+    /* set the seeds of the gworlds to the same so copying is faster */
+    srcPix = GetGWorldPixMap(game->backdrop);
+    destPix = GetGWorldPixMap(game->tween);
+
+    (**(**srcPix).pmTable).ctSeed = (**(**destPix).pmTable).ctSeed;
+
+    /* now get the window pix map and set the seed */
+    srcPix = GetGWorldPixMap((GWorldPtr)wp);
+
+    (**(**srcPix).pmTable).ctSeed = (**(**destPix).pmTable).ctSeed;
+
+    game->gameCTSeed = (**(**srcPix).pmTable).ctSeed;
+    game->gameCTab = cTab;
+    game->gameWind = wp;
+    game->gameArea = wp->portRect;
+
+    /* set up the game rectangles */
+    game->statusArea = wp->portRect;
+    game->statusArea.top = game->gameArea.bottom;
+
+    SetWRefCon(wp, (long)game);
+
+    /* this sets the window's CTSeed to the same one too, to further prevent color mapping */
+
+    (**(**(*(CGrafPtr)wp).portPixMap).pmTable).ctSeed = game->gameCTSeed;
+
+    ShowWindow(wp);
+
+    srcPix = PreserveGraf(game->tween);
+    destPix = PreserveGraf((GWorldPtr)wp);
+    CopyBits(*srcPix,
+             *destPix,
+             &game->tween->portRect,
+             &wp->portRect,
+             srcCopy,
+             nil);      
+    ValidRect(&wp->portRect);
+    RestoreGraf();
+    RestoreGraf();
+
+
+}
+
+gamePtr MakeGameRecord(void)
+{
+    gamePtr game;
+
+    game = (gamePtr)NewPtrClear(sizeof(gameRec));
+    if(!game) {
+        ErrMsg("\pgame record not allocated.");
+    } else {
+        game->gameState = kWaitingForRequest;
+    }
+
+    return game;
+}
+
+
+DisposeGameWindow(void)
+{
+    WindowPtr   wp;
+    gamePtr game;
+
+    wp = FrontWindow();
+    if(!wp) return;
+
+    game = (gamePtr)GetWData(wp);
+    DisposeHandle(game);
+    DisposeDispatchWindow(wp);
+}
+
+
+OSErr NewGame(void)
+/*
+    This initiates the connection, and is called when the user selects
+    NEW from the file menu.
+*/
+{
+    OSErr           err = noErr;
+    AEAddressDesc   oppAddr;
+    AppleEvent      reqEvent;
+    AppleEvent      reqReply;
+    long            replyResult;
+    long            actualType,longSize;
+    gamePtr         game;
+    WindowPtr       fWind;
+    GrafPtr         savePort;
+
+    /* get the game handle */
+    fWind = FrontWindow();
+    if(fWind == nil) {
+        ErrMsg("\pNo Front Window and New Game occured.");
+        err = paramErr;
+    } else {
+        game = (gamePtr)GetWData(fWind);
+        if(game == nil) {
+            ErrMsg("\pWindow DATA is nil");
+            err = paramErr;
+        }
+    }
+
+    if(err == noErr) {
+        err = FindOpponent( &oppAddr);
+        ForceRefreshGameWindow(fWind, game);
+    }
+
+    if(err == noErr)    {
+
+        game->oppAddr = oppAddr;
+
+        err = AECreateAppleEvent(kZAMEventClass, kRequestGameID, &oppAddr,
+                     kAcceptID, game->gameID, &reqEvent);
+        if(err != noErr) {
+            ErrMsgCode("\p Failure: AECreateAppleEvent",err);
+        }
+
+        if(err == noErr) {
+            err = AESend(&reqEvent, &reqReply, kAEQueueReply + kAECanInteract,
+                     kAENormalPriority, 
+                     60 * 60, nil, nil);
+            if(err != noErr) {
+                ErrMsgCode("\p Failure: AESend -- NewGame",err);
+            }
+        }
+
+        if(err == noErr) {
+            game->gameState = kWaitingForAccept;
+        }
+
+    }
+
+    return err;
+}
+```
+
+[Next](GameSource-MissileAEvents.c.md)[Previous](GameSource-IncidentalSounds.c.md)
+

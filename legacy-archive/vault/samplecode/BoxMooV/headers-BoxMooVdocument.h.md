@@ -1,0 +1,79 @@
+---
+title: BoxMooV
+apple_id: DTS10000099
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/BoxMooV/Listings/headers_BoxMooV_document_h.html
+archived_at: '2026-07-18T03:02:13.865866Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [BoxMooV](BoxMooV.md)
+
+
+[Next](headers-BoxMooVevent.h.md)[Previous](BoxMooV.md)
+
+# headers/BoxMooV_document.h
+
+```c
+/*  document.h                                                                          
+
+    This contains all the document-specific code.
+
+    Michael Bishop - August 21 1996                                                 
+    Nick Thompson
+    Robert Dierkes                                                                              
+    (c)1994-96 Apple computer Inc., All Rights Reserved                             
+
+*/
+
+
+#ifndef _DOCUMENT_H_
+#define _DOCUMENT_H_
+
+#include <QuickDraw.h>
+
+/*  for QuickDraw 3D */
+#include    "QD3D.h"
+
+#include    "BoxMooV_texture.h"
+
+struct _documentRecord {
+
+    WindowPtr           fWindow ;               /* the window associated with this document */
+
+    TQ3ViewObject       fView ;                 /*  the view for the scene */
+    TQ3GroupObject      fModel ;                /*  object in the scene being modelled */
+    TQ3StyleObject      fInterpolation ;        /*  interpolation style used when rendering */
+    TQ3StyleObject      fBackFacing ;           /*  whether to draw shapes that face away from the camera */
+    TQ3StyleObject      fFillStyle ;            /*  whether drawn as solid filled object or decomposed to components */
+    TQ3Matrix4x4        fRotation;              /*  the transform for the model */
+    TQ3Point3D          fGroupCenter ;          /*  the center of the group (for rotation)  */
+    float               fGroupScale ;           /*  scaling factor to apply before drawing */
+
+    TAnimatedTextureHdl fTexture;               /*  The QuickTime texture   */
+
+};
+
+typedef struct _documentRecord DocumentRec, *DocumentPtr, **DocumentHdl ;
+
+/* -------------------------------------------------------------------------------------------
+** 
+*/
+
+DocumentHdl Document_New(void);
+DocumentHdl Document_Open(void);
+DocumentHdl Document_GetFromWindow( WindowPtr theWindow);
+TQ3Status   Document_Draw( DocumentPtr theDocument ) ;
+void        Document_Delete( DocumentHdl theDocument) ;
+void        Document_Remap(DocumentHdl theDocument, int newResolution);
+TQ3Status   Document_SubmitScene( DocumentPtr theDocument ) ;
+void        Document_Animate(DocumentHdl theDocument);
+TQ3Status   Texture_ChangeResolution(TAnimatedTextureHdl pAnimTxtr,int newResolution);
+
+#endif
+```
+
+[Next](headers-BoxMooVevent.h.md)[Previous](BoxMooV.md)
+

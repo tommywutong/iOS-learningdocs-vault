@@ -1,0 +1,142 @@
+---
+title: Fragment Tool
+apple_id: DTS10000572
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-30'
+source_url: https://developer.apple.com/library/archive/samplecode/Fragment_Tool/Listings/DialogStuff_h.html
+archived_at: '2026-07-18T03:08:54.846874Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Fragment Tool](Fragment%20Tool.md)
+
+
+[Next](DragStuff.c.md)[Previous](DialogStuff.c.md)
+
+# DialogStuff.h
+
+```c
+/*
+    File:       DialogStuff.h
+
+    Contains:   Handle application's dialogs
+
+    Written by: Chris White 
+
+    Copyright:  Copyright © 1995-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/5/1999    Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+
+
+#ifndef __DIALOGSTUFF__
+#define __DIALOGSTUFF__
+
+
+
+
+
+#ifndef __FRAGMENTSTUFF__
+    #include "FragmentStuff.h"
+#endif
+
+
+
+
+
+struct AddFragmentExportsRecOut
+{
+    FSSpecPtr   theSpecPtr;
+    tItemPtr    theItem;
+};
+
+
+
+struct AddFragmentExportsRecIn
+{
+    StringPtr   theErrorStr;
+};
+
+
+
+typedef struct AddFragmentExportsRec
+{
+    Boolean     bIn;
+    union
+    {
+        struct AddFragmentExportsRecOut out;
+        struct AddFragmentExportsRecIn  in;
+    } u;
+
+} tAddFragmentExportsRec;
+
+
+
+
+enum
+{
+    // List Dialog Constants
+
+    kListDialogOkay = 2000,
+    kListDialogOkayCancel = 2001,
+
+        // kStdOkItemIndex
+        // kStdCancelItemIndex
+        kListUserItem = 3
+};
+
+
+
+
+enum
+{
+    // Info Dialog Constants
+
+    kInfoDialog = 2002,
+        // kStdOkItemIndex
+        // kStdCancelItemIndex
+        kNameEditText = 3,
+        kArchitectureStaticText,
+        kUpdateLevelPopup,
+        kCurrentMajorEditText,
+        kCurrentMinorEditText,
+        kCurrentBugRevEditText,
+        kCurrentStagePopup,
+        kCurrentNonRelEditText,
+        kOldMajorEditText,
+        kOldMinorEditText,
+        kOldBugRevEditText,
+        kOldStagePopup,
+        kOldNonRelEditText,
+        kStackSizeEditText,
+        kSubFolderIDEditText,
+        kUsagePopup,
+        kLocationStaticText,
+        kOffsetStaticText,
+        kLengthStaticText
+
+};
+
+
+
+
+
+
+
+#endif // define __DIALOGSTUFF__
+```
+
+[Next](DragStuff.c.md)[Previous](DialogStuff.c.md)
+

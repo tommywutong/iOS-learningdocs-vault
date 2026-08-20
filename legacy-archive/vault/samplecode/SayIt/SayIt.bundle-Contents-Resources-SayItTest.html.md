@@ -1,0 +1,74 @@
+---
+title: SayIt
+apple_id: DTS10004048
+resource_type: Sample Code
+platform: macOS
+topic: Networking, Internet, & Web
+technology: WebKit
+published: '2006-08-04'
+source_url: https://developer.apple.com/library/archive/samplecode/SayIt/Listings/SayIt_bundle_Contents_Resources_SayItTest_html.html
+archived_at: '2026-07-18T03:23:09.157066Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SayIt](SayIt.md)
+
+
+[Next](SayItTest.html.md)[Previous](SayIt.md)
+
+# SayIt.bundle/Contents/Resources/SayItTest.html
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>Sample Speaking Plug-In</title>
+
+<script LANGUAGE="JavaScript">
+
+function speakText(whatToSay) 
+{
+    var plugin = document.embeds[0];
+    if(whatToSay == "") {
+        whatToSay = "Alas, I have nothin to say."
+    }
+    plugin.startSpeakingString(whatToSay);
+}
+
+function stopSpeaking() 
+{
+var plugin = document.embeds["SayIt"];
+    plugin.stopSpeaking();
+} 
+</script>
+
+
+</head>
+<body>
+
+    <embed  name="SayIt" width="0px" height="0px" type="application/x-sayit"></embed>
+    <p>Type some text and press the button:</p>
+    <p style="border:solid 1px silver"> 
+        <input type="text" style="width: 200px" value="What am I? Chopped liver?!" id="whatToSay"/>
+        <input type=button value="<- Speak it" onClick="speakText(document.getElementById('whatToSay').value)"/>
+    </p>
+    <p>Read some block content:</p>
+    <input type=button value="Read Below" onClick="speakText(document.getElementById('story').innerText)"/>
+    <input type=button value="Shut Up!" onClick="stopSpeaking()"/> <br/><span style="font-size:x-small">From http://theonion.com</span>
+    <div id="story" style="font-size:small;border:solid 1px silver">
+        <h2><big>Wonder Drug Inspires Deep, Unwavering Love Of Pharmaceutical Companies</big></h2>
+        <p>NEW YORK&#151;The Food and Drug Administration today approved the sale of the drug PharmAmorin, a prescription tablet developed by Pfizer to treat chronic distrust of large prescription-drug manufacturers. </p>
+        <p>Pfizer executives characterized the FDA's approval as a "godsend" for sufferers of independent-thinking-related mental-health disorders. </p>
+        <p>"Many individuals today lack the deep, abiding affection for drug makers that is found in healthy people, such as myself," Pfizer CEO Hank McKinnell said. "These tragic disorders are reaching epidemic levels, and as a company dedicated to promoting the health, well-being, and long life of our company's public image, it was imperative that we did something to combat them."</p>
+    </div>
+    <p>Mouse over text below to read it....mouse out to stop reading it:</p>
+    <p>
+        <span style="border:solid 1px silver;font-weight:bold" onmouseover="speakText(this.firstChild.nodeValue)" onmouseout="stopSpeaking()">Wow wee!</span>
+    </p>
+    <p>Click the cursor in the field to have its purpose spoken to you:</p>
+    <p style="border:solid 1px silver">Favorite Carbonated Beverage: <input alt="Please type the name of your favorite carbonated beverage." onfocus="speakText(this.alt)" ></p>
+
+</body>
+</html>
+```
+
+[Next](SayItTest.html.md)[Previous](SayIt.md)
+

@@ -72,7 +72,7 @@ if #available(iOS 11, *) {
 
 ## 另请参阅
 
-### Customizing Objective-C APIs
+### 自定义 Objective-C API
 
 - [Designating Nullability in Objective-C APIs](designating-nullability-in-objective-c-apis.md) — 使用空性标注，或将区域标记为已标注，以控制 Objective-C 声明导入 Swift 的方式。
 - [Renaming Objective-C APIs for Swift](renaming-objective-c-apis-for-swift.md) — 使用 `NS_SWIFT_NAME` 宏为 Swift 自定义 API 名称。

@@ -1,0 +1,148 @@
+---
+title: QTMusicToo
+apple_id: DTS10000915
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-03-19'
+source_url: https://developer.apple.com/library/archive/samplecode/QTMusicToo/Listings/BigEasy_BigEasyGestalt_c.html
+archived_at: '2026-07-18T03:21:04.306457Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [QTMusicToo](QTMusicToo.md)
+
+
+[Next](BigEasy-BigEasyGestalt.h.md)[Previous](BigEasy-BigEasyDialogs.h.md)
+
+# BigEasy/BigEasyGestalt.c
+
+```c
+/*
+    File:       BigEasyGestalt.c
+
+    Contains:   xxx put contents here xxx
+
+    Written by: xxx put writers here xxx
+
+    Copyright:  © 1992 by Apple Computer, Inc., all rights reserved.
+
+    Change History (most recent first):
+
+         <2>      1/7/93    dvb     More selectors.
+         <1>     1/20/92    dvb     first checked in
+
+*/
+
+/* file: BigEasyGestalt.c
+ *
+ * Started 28 December 1991, more or less.
+ *
+ */
+
+
+
+/*--------------------------
+    Inclusions
+--------------------------*/
+
+#include <GestaltEqu.h>
+
+#include "BigEasyDialogs.h"
+
+#define BigEasyGestaltMe
+#include "BigEasyGestalt.h"
+
+/*--------------------------
+    Constants
+--------------------------*/
+static EasyGestaltItem dKnownFeatureList[] =
+    {
+    'ppc ',0,0,"\pPPC Toolbox not installed. This feature is available in System 7.0 and later.",
+    'qdrw',0,0,"\pColor QuickDraw is not available.",
+    'qtim',0,0,"\pQuickTime is not installed. Please place the QuickTime extension in your System Folder.",
+    'icmp',0,0,"\pImage Compression is not installed. Please place the QuickTime extension in your System Folder.",
+    'cpnt',0,0,"\pComponent Manager is not installed. Please place the QuickTime extension in your System Folder.",
+    'fs  ',0xFFFFFFFF,0,"\pSystem 7.0 or later required.",
+    'fpu ',0xFFFFFFFF,0,"\pFloating Point Unit required. Sorry.",
+    'snd ',0x00000020,0,"\pThere is no sound input device on this Macintosh."
+    };
+
+/*--------------------------
+    Roughage
+--------------------------*/
+
+Boolean CheckEasyGestaltItem(EasyGestaltItem *egi)
+/*
+ * Returns true if its still okay to run.
+ */
+    {
+    OSErr thisError;
+    long gResult;
+    Boolean result;
+
+    result = true;
+
+    thisError = Gestalt(egi->type,&gResult);
+    if(!( (thisError == 0) && ( (egi->mask == 0) || ((gResult & egi->mask) != 0))))
+        {
+        if(egi->canRunWithout)
+            EasyDialogMessage(1,"\pRecommendation",egi->unpresentWarning,
+                    kEasyDialogOkay);
+        else
+            {
+            result = false;
+            EasyDialogMessage(2,"\pRequired Feature Missing",egi->unpresentWarning,
+                    kEasyDialogOkay);
+            }
+        }
+
+    return result;
+    }
+
+Boolean CheckEasyGestaltItemList(long count, EasyGestaltItem egiList[])
+    {
+    short i;
+    Boolean p,q;
+
+    p = true;
+
+    for(i = 0; i< count; i++)
+        {
+        q = CheckEasyGestaltItem(&egiList[i]);
+        p = p && q;
+        }
+
+    return p;
+    }
+
+Boolean CheckEasyGestaltKnownFeature(Boolean canRunWithout,long feature)
+    {
+    EasyGestaltItem *egi;
+
+    if(feature < 0 || feature >= kLastEasyGestaltKnownFeature)
+        return false;
+
+    egi = &dKnownFeatureList[feature];
+    egi->canRunWithout = canRunWithout;
+    return CheckEasyGestaltItem(egi);
+    }
+
+
+Boolean CheckEasyGestaltKnownFeatures(Boolean canRunWithout,
+        short count,long feature1,...)
+    {
+    long *featureWalker;
+    Boolean result;
+
+    result = true;
+
+    featureWalker = &feature1;
+    while(count--)
+        result &= CheckEasyGestaltKnownFeature(canRunWithout,*featureWalker++);
+
+    return result;
+    }
+```
+
+[Next](BigEasy-BigEasyGestalt.h.md)[Previous](BigEasy-BigEasyDialogs.h.md)
+

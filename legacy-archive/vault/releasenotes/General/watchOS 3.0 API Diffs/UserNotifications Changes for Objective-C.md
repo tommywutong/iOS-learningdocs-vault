@@ -1,0 +1,117 @@
+---
+title: watchOS 3.0 API Diffs
+apple_id: TP40017328
+resource_type: Release Note
+platform: watchOS
+topic: General
+technology: null
+published: '2016-09-13'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/watchOS30APIDiffs/Objective-C/UserNotifications.html
+archived_at: '2026-07-18T02:58:16.073692Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [watchOS 3.0 API Diffs](watchOS%202.2%20to%20watchOS%203.0%20API%20Differences.md)
+
+
+# UserNotifications Changes for Objective-C
+
+### UserNotifications (Added)
+
+#### NSString+UserNotifications.h (Added)
+
+Added [+[NSString localizedUserNotificationStringForKey:arguments:]](https://developer.apple.com/documentation/foundation/nsstring/1649585-localizedusernotificationstring)Added NSString(UNUserNotificationCenterSupport)
+
+#### UNError.h (Added)
+
+Added [UNErrorCode](https://developer.apple.com/documentation/usernotifications/unerrorcode)Added [UNErrorCodeAttachmentCorrupt](https://developer.apple.com/documentation/usernotifications/unerrorcode/unerrorcodeattachmentcorrupt)Added [UNErrorCodeAttachmentInvalidFileSize](https://developer.apple.com/documentation/usernotifications/unerror/code/attachmentinvalidfilesize)Added [UNErrorCodeAttachmentInvalidURL](https://developer.apple.com/documentation/usernotifications/unerror/code/attachmentinvalidurl)Added [UNErrorCodeAttachmentMoveIntoDataStoreFailed](https://developer.apple.com/documentation/usernotifications/unerrorcode/unerrorcodeattachmentmoveintodatastorefailed)Added [UNErrorCodeAttachmentNotInDataStore](https://developer.apple.com/documentation/usernotifications/unerror/code/attachmentnotindatastore)Added [UNErrorCodeAttachmentUnrecognizedType](https://developer.apple.com/documentation/usernotifications/unerrorcode/unerrorcodeattachmentunrecognizedtype)Added [UNErrorCodeNotificationInvalidNoContent](https://developer.apple.com/documentation/usernotifications/unerror/code/notificationinvalidnocontent)Added [UNErrorCodeNotificationInvalidNoDate](https://developer.apple.com/documentation/usernotifications/unerrorcode/unerrorcodenotificationinvalidnodate)Added [UNErrorCodeNotificationsNotAllowed](https://developer.apple.com/documentation/usernotifications/unerrorcode/unerrorcodenotificationsnotallowed)Added [UNErrorDomain](https://developer.apple.com/documentation/usernotifications/unerrordomain)
+
+#### UNNotification.h (Added)
+
+Added [UNNotification](https://developer.apple.com/documentation/usernotifications/unnotification)Added [UNNotification.date](https://developer.apple.com/documentation/usernotifications/unnotification/1649326-date)Added [UNNotification.request](https://developer.apple.com/documentation/usernotifications/unnotification/1649324-request)
+
+#### UNNotificationAction.h (Added)
+
+Added [UNNotificationAction](https://developer.apple.com/documentation/usernotifications/unnotificationaction)Added [+[UNNotificationAction actionWithIdentifier:title:options:]](https://developer.apple.com/documentation/usernotifications/unnotificationaction/1648195-actionwithidentifier)Added [UNNotificationAction.identifier](https://developer.apple.com/documentation/usernotifications/unnotificationaction/1648201-identifier)Added [UNNotificationAction.options](https://developer.apple.com/documentation/usernotifications/unnotificationaction/1648202-options)Added [UNNotificationAction.title](https://developer.apple.com/documentation/usernotifications/unnotificationaction/1648191-title)Added [UNTextInputNotificationAction](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction)Added [+[UNTextInputNotificationAction actionWithIdentifier:title:options:textInputButtonTitle:textInputPlaceholder:]](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction/1648200-init)Added [UNTextInputNotificationAction.textInputButtonTitle](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction/1648198-textinputbuttontitle)Added [UNTextInputNotificationAction.textInputPlaceholder](https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction/1648204-textinputplaceholder)Added [UNNotificationActionOptionAuthenticationRequired](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired)Added [UNNotificationActionOptionDestructive](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive)Added [UNNotificationActionOptionForeground](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground)Added [UNNotificationActionOptionNone](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptionnone)Added [UNNotificationActionOptions](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions)
+
+#### UNNotificationAttachment.h (Added)
+
+Added [UNNotificationAttachment](https://developer.apple.com/documentation/usernotifications/unnotificationattachment)Added [+[UNNotificationAttachment attachmentWithIdentifier:URL:options:error:]](https://developer.apple.com/documentation/usernotifications/unnotificationattachment/1649987-attachmentwithidentifier)Added [UNNotificationAttachment.identifier](https://developer.apple.com/documentation/usernotifications/unnotificationattachment/1649985-identifier)Added [UNNotificationAttachment.type](https://developer.apple.com/documentation/usernotifications/unnotificationattachment/1649990-type)Added [UNNotificationAttachment.URL](https://developer.apple.com/documentation/usernotifications/unnotificationattachment/1649984-url)Added [UNNotificationAttachmentOptionsThumbnailClippingRectKey](https://developer.apple.com/documentation/usernotifications/unnotificationattachmentoptionsthumbnailclippingrectkey)Added [UNNotificationAttachmentOptionsThumbnailHiddenKey](https://developer.apple.com/documentation/usernotifications/unnotificationattachmentoptionsthumbnailhiddenkey)Added [UNNotificationAttachmentOptionsThumbnailTimeKey](https://developer.apple.com/documentation/usernotifications/unnotificationattachmentoptionsthumbnailtimekey)Added [UNNotificationAttachmentOptionsTypeHintKey](https://developer.apple.com/documentation/usernotifications/unnotificationattachmentoptionstypehintkey)
+
+#### UNNotificationCategory.h (Added)
+
+Added [UNNotificationCategory](https://developer.apple.com/documentation/usernotifications/unnotificationcategory)Added [UNNotificationCategory.actions](https://developer.apple.com/documentation/usernotifications/unnotificationcategory/1649274-actions)Added [+[UNNotificationCategory categoryWithIdentifier:actions:intentIdentifiers:options:]](https://developer.apple.com/documentation/usernotifications/unnotificationcategory/2196944-init)Added [UNNotificationCategory.identifier](https://developer.apple.com/documentation/usernotifications/unnotificationcategory/1649276-identifier)Added [UNNotificationCategory.intentIdentifiers](https://developer.apple.com/documentation/usernotifications/unnotificationcategory/1649282-intentidentifiers)Added [UNNotificationCategory.options](https://developer.apple.com/documentation/usernotifications/unnotificationcategory/1649283-options)Added [UNNotificationCategoryOptionAllowInCarPlay](https://developer.apple.com/documentation/usernotifications/unnotificationcategoryoptions/unnotificationcategoryoptionallowincarplay)Added [UNNotificationCategoryOptionCustomDismissAction](https://developer.apple.com/documentation/usernotifications/unnotificationcategoryoptions/unnotificationcategoryoptioncustomdismissaction)Added [UNNotificationCategoryOptionNone](https://developer.apple.com/documentation/usernotifications/unnotificationcategoryoptionnone)Added [UNNotificationCategoryOptions](https://developer.apple.com/documentation/usernotifications/unnotificationcategoryoptions)
+
+#### UNNotificationContent.h (Added)
+
+Added [UNMutableNotificationContent](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent)Added [UNMutableNotificationContent.attachments](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649857-attachments)Added [UNMutableNotificationContent.badge](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649875-badge)Added [UNMutableNotificationContent.body](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649874-body)Added [UNMutableNotificationContent.categoryIdentifier](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649862-categoryidentifier)Added [UNMutableNotificationContent.launchImageName](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649861-launchimagename)Added [UNMutableNotificationContent.sound](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649868-sound)Added [UNMutableNotificationContent.subtitle](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649873-subtitle)Added [UNMutableNotificationContent.threadIdentifier](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649872-threadidentifier)Added [UNMutableNotificationContent.title](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649858-title)Added [UNMutableNotificationContent.userInfo](https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent/1649867-userinfo)Added [UNNotificationContent](https://developer.apple.com/documentation/usernotifications/unnotificationcontent)Added [UNNotificationContent.attachments](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649865-attachments)Added [UNNotificationContent.badge](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649864-badge)Added [UNNotificationContent.body](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649863-body)Added [UNNotificationContent.categoryIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649866-categoryidentifier)Added [UNNotificationContent.launchImageName](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649870-launchimagename)Added [UNNotificationContent.sound](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649871-sound)Added [UNNotificationContent.subtitle](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649859-subtitle)Added [UNNotificationContent.threadIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649860-threadidentifier)Added [UNNotificationContent.title](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649855-title)Added [UNNotificationContent.userInfo](https://developer.apple.com/documentation/usernotifications/unnotificationcontent/1649869-userinfo)
+
+#### UNNotificationRequest.h (Added)
+
+Added [UNNotificationRequest](https://developer.apple.com/documentation/usernotifications/unnotificationrequest)Added [UNNotificationRequest.content](https://developer.apple.com/documentation/usernotifications/unnotificationrequest/1649637-content)Added [UNNotificationRequest.identifier](https://developer.apple.com/documentation/usernotifications/unnotificationrequest/1649634-identifier)Added [+[UNNotificationRequest requestWithIdentifier:content:trigger:]](https://developer.apple.com/documentation/usernotifications/unnotificationrequest/1649633-init)Added [UNNotificationRequest.trigger](https://developer.apple.com/documentation/usernotifications/unnotificationrequest/1649635-trigger)
+
+#### UNNotificationResponse.h (Added)
+
+Added [UNNotificationResponse](https://developer.apple.com/documentation/usernotifications/unnotificationresponse)Added [UNNotificationResponse.actionIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationresponse/1649548-actionidentifier)Added [UNNotificationResponse.notification](https://developer.apple.com/documentation/usernotifications/unnotificationresponse/1649549-notification)Added [UNTextInputNotificationResponse](https://developer.apple.com/documentation/usernotifications/untextinputnotificationresponse)Added [UNTextInputNotificationResponse.userText](https://developer.apple.com/documentation/usernotifications/untextinputnotificationresponse/1649547-usertext)Added [UNNotificationDefaultActionIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationdefaultactionidentifier)Added [UNNotificationDismissActionIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationdismissactionidentifier)
+
+#### UNNotificationSettings.h (Added)
+
+Added [UNNotificationSettings](https://developer.apple.com/documentation/usernotifications/unnotificationsettings)Added [UNNotificationSettings.alertSetting](https://developer.apple.com/documentation/usernotifications/unnotificationsettings/1648396-alertsetting)Added [UNNotificationSettings.authorizationStatus](https://developer.apple.com/documentation/usernotifications/unnotificationsettings/1648391-authorizationstatus)Added [UNNotificationSettings.notificationCenterSetting](https://developer.apple.com/documentation/usernotifications/unnotificationsettings/1648401-notificationcentersetting)Added [UNNotificationSettings.soundSetting](https://developer.apple.com/documentation/usernotifications/unnotificationsettings/1648402-soundsetting)Added [UNAlertStyle](https://developer.apple.com/documentation/usernotifications/unalertstyle)Added [UNAuthorizationStatus](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus)Added [UNAuthorizationStatusAuthorized](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/authorized)Added [UNAuthorizationStatusDenied](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/unauthorizationstatusdenied)Added [UNAuthorizationStatusNotDetermined](https://developer.apple.com/documentation/usernotifications/unauthorizationstatus/unauthorizationstatusnotdetermined)Added [UNNotificationSetting](https://developer.apple.com/documentation/usernotifications/unnotificationsetting)Added [UNNotificationSettingDisabled](https://developer.apple.com/documentation/usernotifications/unnotificationsetting/unnotificationsettingdisabled)Added [UNNotificationSettingEnabled](https://developer.apple.com/documentation/usernotifications/unnotificationsetting/enabled)Added [UNNotificationSettingNotSupported](https://developer.apple.com/documentation/usernotifications/unnotificationsetting/notsupported)
+
+#### UNNotificationSound.h (Added)
+
+Added [UNNotificationSound](https://developer.apple.com/documentation/usernotifications/unnotificationsound)Added [+[UNNotificationSound defaultSound]](https://developer.apple.com/documentation/usernotifications/unnotificationsound/1649030-default)
+
+#### UNNotificationTrigger.h (Added)
+
+Added [UNCalendarNotificationTrigger](https://developer.apple.com/documentation/usernotifications/uncalendarnotificationtrigger)Added [UNCalendarNotificationTrigger.dateComponents](https://developer.apple.com/documentation/usernotifications/uncalendarnotificationtrigger/1649784-datecomponents)Added [-[UNCalendarNotificationTrigger nextTriggerDate]](https://developer.apple.com/documentation/usernotifications/uncalendarnotificationtrigger/1649775-nexttriggerdate)Added [+[UNCalendarNotificationTrigger triggerWithDateMatchingComponents:repeats:]](https://developer.apple.com/documentation/usernotifications/uncalendarnotificationtrigger/1649772-triggerwithdatematchingcomponent)Added [UNLocationNotificationTrigger](https://developer.apple.com/documentation/usernotifications/unlocationnotificationtrigger)Added [UNLocationNotificationTrigger.region](https://developer.apple.com/documentation/usernotifications/unlocationnotificationtrigger/1649776-region)Added [UNNotificationTrigger](https://developer.apple.com/documentation/usernotifications/unnotificationtrigger)Added [UNNotificationTrigger.repeats](https://developer.apple.com/documentation/usernotifications/unnotificationtrigger/1649782-repeats)Added [UNPushNotificationTrigger](https://developer.apple.com/documentation/usernotifications/unpushnotificationtrigger)Added [UNTimeIntervalNotificationTrigger](https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger)Added [-[UNTimeIntervalNotificationTrigger nextTriggerDate]](https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger/1649783-nexttriggerdate)Added [UNTimeIntervalNotificationTrigger.timeInterval](https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger/1649779-timeinterval)Added [+[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:repeats:]](https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger/1649777-triggerwithtimeinterval)
+
+#### UNUserNotificationCenter.h (Added)
+
+Added [UNUserNotificationCenter](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter)Added [-[UNUserNotificationCenter addNotificationRequest:withCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649508-addnotificationrequest)Added [+[UNUserNotificationCenter currentNotificationCenter]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649510-current)Added [UNUserNotificationCenter.delegate](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649522-delegate)Added [-[UNUserNotificationCenter getDeliveredNotificationsWithCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649520-getdeliverednotifications)Added [-[UNUserNotificationCenter getNotificationCategoriesWithCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649504-getnotificationcategorieswithcom)Added [-[UNUserNotificationCenter getNotificationSettingsWithCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649524-getnotificationsettingswithcompl)Added [-[UNUserNotificationCenter getPendingNotificationRequestsWithCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649513-getpendingnotificationrequests)Added [-[UNUserNotificationCenter removeAllDeliveredNotifications]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649502-removealldeliverednotifications)Added [-[UNUserNotificationCenter removeAllPendingNotificationRequests]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649509-removeallpendingnotificationrequ)Added [-[UNUserNotificationCenter removeDeliveredNotificationsWithIdentifiers:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649500-removedeliverednotificationswith)Added [-[UNUserNotificationCenter removePendingNotificationRequestsWithIdentifiers:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649517-removependingnotificationrequest)Added [-[UNUserNotificationCenter requestAuthorizationWithOptions:completionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649527-requestauthorization)Added [-[UNUserNotificationCenter setNotificationCategories:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/1649512-setnotificationcategories)Added [UNUserNotificationCenter.supportsContentExtensions](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/2196946-supportscontentextensions)Added [UNUserNotificationCenterDelegate](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate)Added [-[UNUserNotificationCenterDelegate userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649501-usernotificationcenter)Added [-[UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:]](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter)Added [UNAuthorizationOptionAlert](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions/unauthorizationoptionalert)Added [UNAuthorizationOptionBadge](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions/1649526-badge)Added [UNAuthorizationOptionCarPlay](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions/1649525-carplay)Added [UNAuthorizationOptionNone](https://developer.apple.com/documentation/usernotifications/unauthorizationoptionnone)Added [UNAuthorizationOptions](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions)Added [UNAuthorizationOptionSound](https://developer.apple.com/documentation/usernotifications/unauthorizationoptions/1649505-sound)Added [UNNotificationPresentationOptionAlert](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions/unnotificationpresentationoptionalert)Added [UNNotificationPresentationOptionBadge](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions/1649515-badge)Added [UNNotificationPresentationOptionNone](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptionnone)Added [UNNotificationPresentationOptions](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions)Added [UNNotificationPresentationOptionSound](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions/unnotificationpresentationoptionsound)
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

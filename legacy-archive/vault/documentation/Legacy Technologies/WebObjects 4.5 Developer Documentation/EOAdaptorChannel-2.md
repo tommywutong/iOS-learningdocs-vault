@@ -1,0 +1,73 @@
+---
+title: WebObjects 4.5 Developer Documentation
+apple_id: TP40006775
+resource_type: Guide
+platform: macOS
+topic: null
+technology: null
+published: '2007-12-11'
+source_url: https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_4.5/System/Library/Frameworks/EOAccess.framework/Java/Classes/More/EOAdaptorChannel.html
+archived_at: '2026-07-15T08:11:32.095913Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [WebObjects 4.5 Developer Documentation](webobjects.md)
+
+
+__PATH__
+[WebObjects 4.5 Documentation](webobjects.md) __>__
+EOAdaptor Reference
+
+[![Table of Contents](attachments/images/up.gif)](../../EOAccessTOC.md) 
+
+# EOAdaptorChannel
+
+## Creating an EOAdaptorChannel Subclass
+
+EOAdaptorChannel provides many default method implementations
+that are sufficient for concrete subclasses:
+
+- [adaptorContext](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmfsgc4dun5zeg33oorsxq5a)
+- [delegate](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrswyzlhmf2gk)
+- [deleteRowDescribedByQualifier](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrswyzlumvjg652emvzwg4tjmjswiqtzkf2wc3djmzuwk4q)
+- [isDebugEnabled](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpnfzuizlcovtuk3tbmjwgkza)
+- [lockRowComparingAttributes](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpnrxwg22sn53ug33nobqxe2lom5axi5dsnfrhk5dfom)
+- [performAdaptorOperation](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpobsxeztpojwuczdbob2g64spobsxeylunfxw4)
+- [performAdaptorOperations](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpobsxeztpojwuczdbob2g64spobsxeylunfxw44y)
+- [updateValuesInRowDescribedByQualifier](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpovygiylumvlgc3dvmvzus3ssn53uizltmnzgsytfmrbhsulvmfwgsztjmvza)
+
+The following methods establish structure and conventions
+that other Enterprise Objects Framework classes depend on and should
+be overridden with caution:
+
+- [setDebugEnabled](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bponsxirdfmj2worlomfrgyzle)
+- [setDelegate](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bponsxirdfnrswoylumu)
+
+If you override any of the above methods, your implementations
+should incorporate the superclass's implementation through a message
+to __super__.
+
+The remaining EOAdaptorChannel methods must be overridden
+by concrete subclasses in terms of the persistent storage system
+with which it interacts:
+
+- [attributesToFetch](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmf2hi4tjmj2xizltkrxumzlumnua)
+- [cancelFetch](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmnqw4y3fnrdgk5ddna)
+- [closeChannel](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmnwg643finugc3tomvwa)
+- [deleteRowsDescribedByQualifier](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrswyzlumvjg653tirsxgy3snfrgkzccpfixkylmnftgszls)
+- [describeModelWithTableNames](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrsxgy3snfrgktlpmrswyv3jorufiylcnrsu4ylnmvzq)
+- [describeResults](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrsxgy3snfrgkutfon2wy5dt)
+- [describeStoredProcedureNames](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrsxgy3snfrgku3un5zgkzcqojxwgzleovzgkttbnvsxg)
+- [describeTableNames](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmrsxgy3snfrgkvdbmjwgkttbnvsxg)
+- [evaluateExpression](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmv3gc3dvmf2gkrlyobzgk43tnfxw4)
+- [executeStoredProcedure](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmv4gky3vorsvg5dpojswiudsn5rwkzdvojsq)
+- [fetchRow](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpmzsxiy3ikjxxo)
+- [insertRow](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpnfxhgzlsorjg65y)
+- [isFetchInProgress](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpnfzumzlumnues3sqojxwo4tfonzq)
+- [isOpen](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpnfzu64dfny)
+- [openChannel](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpn5ygk3sdnbqw43tfnq)
+- [primaryKeyForNewRowWithEntity](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpobzgs3lboj4uwzlzizxxettfo5jg652xnf2gqrlooruxi6i)
+- [returnValuesForLastStoredProcedureInvocation](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpojsxi5lsnzlgc3dvmvzum33sjrqxg5ctorxxezlekbzg6y3fmr2xezkjnz3g6y3boruw63q)
+- [selectAttributes](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bponswyzldoraxi5dsnfrhk5dfom)
+- [setAttributesToFetch](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bponsxiqluorzgsytvorsxgvdpizsxiy3i)
+- [updateValuesInRowsDescribedByQualifier](EOAdaptorChannel.md#apple-f4xwc4dqnrsv64tfmyxwuylwmexws3ttorws6rkpifsgc4dun5zeg2dbnzxgk3bpovygiylumvlgc3dvmvzus3ssn53xgrdfonrxe2lcmvsee6krovqwy2lgnfsxe)
+
+[![Table of Contents](attachments/images/up.gif)](../../EOAccessTOC.md)

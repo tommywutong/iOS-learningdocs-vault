@@ -1,0 +1,86 @@
+# documentation / Quick Time
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 36 份文档。
+
+## macOS（36 份）
+
+- **[QuickTime 的 Component Manager](../../documentation/Quick%20Time/Component%20Manager%20for%20QuickTime/Introduction%20to%20Component%20Manager%20for%20QuickTime.md)** — Guide · 2005-04-08，macOS · QuickTime，3 页
+  - [QuickTime 的 Component Manager](../../documentation/Quick%20Time/Component%20Manager%20for%20QuickTime/Component%20Manager%20for%20QuickTime.md)
+  - [文档修订历史](../../documentation/Quick%20Time/Component%20Manager%20for%20QuickTime/Document%20Revision%20History.md)
+- **[面向 QuickTime 的 HTML 脚本编写指南](../../documentation/Quick%20Time/HTML%20Scripting%20Guide%20for%20QuickTime/Introduction.md)** — Guide · 2010-01-20，Safari|macOS · QuickTime，3 页
+  - [HTML 脚本编写](../../documentation/Quick%20Time/HTML%20Scripting%20Guide%20for%20QuickTime/HTML%20Scripting.md)
+  - [文档修订历史](../../documentation/Quick%20Time/HTML%20Scripting%20Guide%20for%20QuickTime/Document%20Revision%20History.md)
+- **[交互式影片](../../documentation/Quick%20Time/Interactive%20Movies.md)** — Guide · 2009-06-01，macOS
+- **[QuickTime 5](../../documentation/Quick%20Time/QuickTime%205.md)** — Release Note · 2001-10-01，macOS · QuickTime
+- **[QuickTime 6](../../documentation/Quick%20Time/QuickTime%206.md)** — Release Note · 2002-07-01，macOS · QuickTime
+- **[QuickTime 6.3 + 3GPP](../../documentation/Quick%20Time/QuickTime%206.3%20%2B%203GPP.md)** — Guide · 2018-06-04，macOS · QuickTime
+- **[面向 Windows 的 QuickTime 7 更新指南](../../documentation/Quick%20Time/QuickTime%207%20for%20Windows%20Update%20Guide/Introduction%20to%20QuickTime%207%20for%20Windows.md)** — Guide · 2005-11-09，macOS · QuickTime，4 页
+  - [QuickTime 7 for Windows 的新增内容](../../documentation/Quick%20Time/QuickTime%207%20for%20Windows%20Update%20Guide/What%E2%80%99s%20New%20in%20QuickTime%207%20for%20Windows.md)
+  - [QuickTime 7 for Windows 中的新函数、数据类型和常量](../../documentation/Quick%20Time/QuickTime%207%20for%20Windows%20Update%20Guide/New%20Functions%2C%20Data%20Types%2C%20and%20Constants%20in%20QuickTime%207%20for%20Windows.md)
+  - [文档修订历史](../../documentation/Quick%20Time/QuickTime%207%20for%20Windows%20Update%20Guide/Document%20Revision%20History.md)
+- **[QuickTime 7 更新指南](../../documentation/Quick%20Time/QuickTime%207%20Update%20Guide/Introduction%20to%20QuickTime%207.md)** — Guide · 2005-04-29，macOS · QuickTime，4 页
+  - [QuickTime 7 的新增内容](../../documentation/Quick%20Time/QuickTime%207%20Update%20Guide/What%E2%80%99s%20New%20in%20QuickTime%207.md)
+  - [QuickTime 7 中的新函数、数据类型和常量](../../documentation/Quick%20Time/QuickTime%207%20Update%20Guide/New%20Functions%2C%20Data%20Types%2C%20and%20Constants%20in%20QuickTime%207.md)
+  - [文档修订历史](../../documentation/Quick%20Time/QuickTime%207%20Update%20Guide/Document%20Revision%20History.md)
+- **[QuickTime 7.1 更新指南](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Guide/Introduction%20to%20QuickTime%207.1%20Update%20Guide.md)** — Guide · 2007-03-06，macOS · QuickTime，2 页
+  - [QuickTime 7.1 中的新特性、更改和增强功能](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Guide/New%20Features%2C%20Changes%20and%20Enhancements%20in%20QuickTime%207.1.md)
+- **[QuickTime 7.1 Update Reference](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Reference/index.md)** — Release Note · 2006-08-14，macOS · QuickTime，4 页
+  - [DataTypes](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Reference/DataTypes.md)
+  - [Constants](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Reference/Constants.md)
+  - [RevisionHistory](../../documentation/Quick%20Time/QuickTime%207.1%20Update%20Reference/RevisionHistory.md)
+- **[QuickTime 7.2.1 更新指南](../../documentation/Quick%20Time/QuickTime%207.2.1%20Update%20Guide/Introduction%20to%20QuickTime%207.2.1%20Update%20Guide.md)** — Guide · 2007-10-31，macOS · QuickTime，3 页
+  - [QuickTime 7.2.1 中的新特性、更改和增强功能](../../documentation/Quick%20Time/QuickTime%207.2.1%20Update%20Guide/New%20Features%2C%20Changes%20and%20Enhancements%20in%20QuickTime%207.2.1.md)
+  - [文档修订历史](../../documentation/Quick%20Time/QuickTime%207.2.1%20Update%20Guide/Document%20Revision%20History.md)
+- **[QuickTime Atoms and Resources Reference](../../documentation/Quick%20Time/QuickTime%20Atoms%20and%20Resources%20Reference/QuickTime%20Atoms%20and%20Resources%20Reference.md)** — Guide · 2006-05-23，macOS · QuickTime
+- **[QuickTime 组件创建指南](../../documentation/Quick%20Time/QuickTime%20Component%20Creation%20Guide.md)** — Guide · 2007-01-08，macOS · QuickTime
+- **[QuickTime 压缩与解压缩指南](../../documentation/Quick%20Time/QuickTime%20Compression%20and%20Decompression%20Guide.md)** — Guide · 2006-01-10，macOS · QuickTime
+- **[QuickTime File Format Specification](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Introduction%20to%20QuickTime%20File%20Format%20Specification.md)** — Guide · 2016-09-13，macOS · QuickTime，16 页
+  - [Overview of QTFF](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Overview%20of%20QTFF.md)
+  - [Movie Atoms](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Movie%20Atoms.md)
+  - [Metadata](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Metadata.md)
+  - [Media Data Atom Types](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Media%20Data%20Atom%20Types.md)
+  - [Basic Data Types](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Basic%20Data%20Types.md)
+  - [Some Useful Examples and Scenarios](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Some%20Useful%20Examples%20and%20Scenarios.md)
+  - [QuickTime Image File Format](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/QuickTime%20Image%20File%20Format.md)
+  - [Defining Media Data Layouts](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Defining%20Media%20Data%20Layouts.md)
+  - [Random Access](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Random%20Access.md)
+  - [Metadata Handling](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Metadata%20Handling.md)
+  - [Summary of VR World and Node Atom Types](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Summary%20of%20VR%20World%20and%20Node%20Atom%20Types.md)
+  - [Profile Atom Guidelines](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Profile%20Atom%20Guidelines.md)
+  - [Audio Priming - Handling Encoder Delay in AAC](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Audio%20Priming%20-%20Handling%20Encoder%20Delay%20in%20AAC.md)
+  - [Document Revision History](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Document%20Revision%20History.md)
+  - [Glossary](../../documentation/Quick%20Time/QuickTime%20File%20Format%20Specification/Glossary.md)
+- **[QuickTime 导入与导出指南](../../documentation/Quick%20Time/QuickTime%20Import%20and%20Export%20Guide.md)** — Guide · 2006-01-10，macOS · QuickTime
+- **[QuickTime 初始化指南](../../documentation/Quick%20Time/QuickTime%20Initialization%20Guide/Introduction%20to%20QuickTime%20Initialization%20Guide.md)** — Guide · 2018-06-04，macOS · QuickTime，3 页
+  - [初始化 QuickTime](../../documentation/Quick%20Time/QuickTime%20Initialization%20Guide/Initializing%20QuickTime.md)
+  - [文档修订历史](../../documentation/Quick%20Time/QuickTime%20Initialization%20Guide/Document%20Revision%20History.md)
+- **[QuickTime Kit 编程指南](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Introduction%20to%20QuickTime%20Kit%20Programming%20Guide.md)** — Guide · 2009-10-19，macOS · QTKit，8 页
+  - [QuickTime Kit API](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/The%20QuickTime%20Kit%20API.md)
+  - [构建简单的 QTKitPlayer 应用程序](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Building%20a%20Simple%20QTKitPlayer%20Application.md)
+  - [扩展 QTKitPlayer 应用程序](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Extending%20the%20QTKitPlayer%20Application.md)
+  - [为 QTKitPlayer 应用程序添加新功能](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Adding%20New%20Capabilities%20to%20the%20QTKitPlayer%20Application.md)
+  - [扩展 QTKitPlayer 以流式传输音频和视频](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Extending%20the%20QTKitPlayer%20To%20Stream%20Audio%20and%20Video.md)
+  - [添加多媒体播放功能](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Adding%20Multimedia%20Playback%20Capability.md)
+  - [文档修订历史](../../documentation/Quick%20Time/QuickTime%20Kit%20Programming%20Guide/Document%20Revision%20History.md)
+- **[QuickTime 媒体类型与媒体处理程序指南](../../documentation/Quick%20Time/QuickTime%20Media%20Types%20and%20Media%20Handlers%20Guide.md)** — Guide · 2018-06-04，macOS · QuickTime
+- **[QuickTime 影片基础](../../documentation/Quick%20Time/QuickTime%20Movie%20Basics.md)** — Guide · 2018-06-04，macOS · QuickTime
+- **[QuickTime 影片创建指南](../../documentation/Quick%20Time/QuickTime%20Movie%20Creation%20Guide.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[QuickTime 影片内部原理指南](../../documentation/Quick%20Time/QuickTime%20Movie%20Internals%20Guide.md)** — Guide · 2018-06-04，macOS · QuickTime
+- **[QuickTime 影片播放编程指南](../../documentation/Quick%20Time/QuickTime%20Movie%20Playback%20Programming%20Guide.md)** — Guide · 2009-06-01，macOS
+- **[QuickTime 音乐架构指南](../../documentation/Quick%20Time/QuickTime%20Music%20Architecture%20Guide.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[QuickTime 概述](../../documentation/Quick%20Time/QuickTime%20Overview.md)** — Guide · 2005-08-11，macOS · QuickTime
+- **[QuickTime 流媒体指南](../../documentation/Quick%20Time/QuickTime%20Streaming%20Guide.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[QuickTime 流媒体服务器模块编程指南](../../documentation/Quick%20Time/QuickTime%20Streaming%20Server%20Modules%20Programming%20Guide.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[QuickTime 传输与传送指南](../../documentation/Quick%20Time/QuickTime%20Transport%20and%20Delivery%20Guide.md)** — Guide · 2006-01-10，macOS · QuickTime
+- **[QuickTime 矢量图形](../../documentation/Quick%20Time/QuickTime%20Vector%20Graphics.md)** — Guide · 2000-11-04，macOS
+- **[QuickTime 视频效果与转场指南](../../documentation/Quick%20Time/QuickTime%20Video%20Effects%20and%20Transitions%20Guide.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[QuickTime VR](../../documentation/Quick%20Time/QuickTime%20VR.md)** — Guide · 2009-06-01，macOS · QuickTime
+- **[面向 QuickTime 的 SMIL 脚本编写指南](../../documentation/Quick%20Time/SMIL%20Scripting%20Guide%20for%20QuickTime/Introduction%20To%20SMIL%20Scripting%20Guide%20for%20QuickTime.md)** — Guide · 2005-06-04，macOS · QuickTime，3 页
+  - [用于 QuickTime 的 SMIL 脚本编写](../../documentation/Quick%20Time/SMIL%20Scripting%20Guide%20for%20QuickTime/SMIL%20Scripting%20for%20QuickTime.md)
+  - [文档修订历史](../../documentation/Quick%20Time/SMIL%20Scripting%20Guide%20for%20QuickTime/Document%20Revision%20History.md)
+- **[标准声音对话框组件](../../documentation/Quick%20Time/Standard%20Sound%20Dialog%20Component.md)** — Guide · 2002-09-17，macOS
+- **[What's New In QuickTime](../../documentation/Quick%20Time/What%27s%20New%20In%20QuickTime/What%27s%20New%20In%20QuickTime.md)** — Guide · 2005-09-08，macOS · QuickTime
+- **[Mac OS X 版 QuickTime 6.4 的新增内容](../../documentation/Quick%20Time/What%27s%20New%20in%20QuickTime%206.4%20For%20Mac%20OS%20X.md)** — Guide · 2003-09-01，macOS · QuickTime
+- **[QuickTime 6.5 的新增内容](../../documentation/Quick%20Time/What%27s%20New%20in%20QuickTime%206.5.md)** — Guide · 2003-12-22，macOS · QuickTime

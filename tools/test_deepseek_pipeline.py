@@ -27,7 +27,10 @@ from deepseek_pipeline import (  # noqa: E402
     flatten_shards,
     load_api_key,
     normalize_code_blocks,
+    protect_markdown,
     relevant_terms,
+    restore_markdown_invariants,
+    restore_protected_markdown,
     unwrap_markdown,
     usage_cost,
     validate_candidate,
@@ -99,6 +102,91 @@ NSAssert(value, @"Value should exist");
         source = "```python\nprint('x')\n```\n"
         candidate = "```c\nprint('x')\n```\n"
         self.assertEqual(normalize_code_blocks(source, candidate), source)
+
+    def test_restore_markdown_invariants_keeps_translated_link_labels(self):
+        source = """Use `Demo.value` and [the API](https://example.com/a).
+
+![Diagram](images/original.png)
+
+```swift
+print(`candidate code token`)
+```
+"""
+        candidate = """使用 `Demo.值` 和[这个 API](https://example.com/b)。
+
+![示意图](images/translated.png)
+
+```swift
+print(`candidate code token`)
+```
+"""
+        expected = """使用 `Demo.value` 和[这个 API](https://example.com/a)。
+
+![示意图](images/original.png)
+
+```swift
+print(`candidate code token`)
+```
+"""
+        self.assertEqual(
+            restore_markdown_invariants(source, candidate),
+            expected,
+        )
+
+    def test_restore_markdown_invariants_refuses_unequal_token_counts(self):
+        source = "Use `A` and `B`.\n"
+        candidate = "使用 `甲`。\n"
+        self.assertEqual(
+            restore_markdown_invariants(source, candidate),
+            candidate,
+        )
+
+    def test_restore_markdown_invariants_can_repair_safe_matching_lines(self):
+        source = "Use `A`.\nUse `B` and `C`.\n"
+        candidate = "使用 `甲`。\n使用 `B`。\n"
+        self.assertEqual(
+            restore_markdown_invariants(source, candidate),
+            "使用 `A`。\n使用 `B`。\n",
+        )
+
+    def test_restore_markdown_invariants_wraps_exact_plain_token(self):
+        source = "Use `Demo.value` here.\n"
+        candidate = "在这里使用 Demo.value。\n"
+        self.assertEqual(
+            restore_markdown_invariants(source, candidate),
+            "在这里使用 `Demo.value`。\n",
+        )
+
+    def test_restore_markdown_invariants_pairs_changed_link_targets(self):
+        source = "[A](https://example.com/a) and [B](https://example.com/b)\n"
+        candidate = "[甲](https://wrong.example/a)和[乙](https://wrong.example/b)\n"
+        self.assertEqual(
+            restore_markdown_invariants(source, candidate),
+            "[甲](https://example.com/a)和[乙](https://example.com/b)\n",
+        )
+
+    def test_protect_markdown_round_trips_structural_content(self):
+        source = """正文中的 `Demo.value` 和 [API](https://example.com/a)。
+
+![图](images/demo.png)
+
+```swift
+let value = "do not translate"
+```
+"""
+        protected, mapping = protect_markdown(source)
+        self.assertNotIn("Demo.value", protected)
+        self.assertNotIn("https://example.com/a", protected)
+        self.assertNotIn("images/demo.png", protected)
+        self.assertNotIn('let value = "do not translate"', protected)
+        self.assertIn("APPLE_DOCS_PROTECTED_INLINE_", protected)
+        self.assertIn("APPLE_DOCS_PROTECTED_LINK_TARGET_", protected)
+        self.assertIn("APPLE_DOCS_PROTECTED_IMAGE_TARGET_", protected)
+        self.assertIn("APPLE_DOCS_PROTECTED_CODE_", protected)
+        self.assertEqual(
+            restore_protected_markdown(protected, mapping),
+            source,
+        )
 
 
 class UsageTests(unittest.TestCase):

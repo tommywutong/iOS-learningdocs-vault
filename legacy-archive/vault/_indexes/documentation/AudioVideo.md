@@ -1,0 +1,76 @@
+# documentation / Audio Video
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 10 份文档。
+
+- **[AirPlay 概述](../../documentation/Audio%20Video/AirPlay%20Overview/About%20AirPlay.md)** — Guide · 2012-09-19，Safari (Mobile)|Safari|iOS|macOS，6 页
+  - [为 AirPlay 准备媒体与服务器](../../documentation/Audio%20Video/AirPlay%20Overview/Preparing%20Your%20Media%20and%20Server%20for%20AirPlay.md)
+  - [启用或退出 AirPlay](../../documentation/Audio%20Video/AirPlay%20Overview/Opting%20Into%20or%20Out%20of%20AirPlay.md)
+  - [在你的 App 中丰富 AirPlay 体验](../../documentation/Audio%20Video/AirPlay%20Overview/Enriching%20the%20AirPlay%20Experience%20in%20Your%20App.md)
+  - [加密与身份验证](../../documentation/Audio%20Video/AirPlay%20Overview/Encryption%20and%20Authentication.md)
+  - [文档修订历史](../../documentation/Audio%20Video/AirPlay%20Overview/Document%20Revision%20History.md)
+- **[AVFoundation 编程指南](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/About%20AVFoundation.md)** — Guide · 2015-06-30，tvOS|iOS|macOS · AVFoundation，8 页
+  - [使用资源](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Using%20Assets.md)
+  - [Playback](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Playback.md)
+  - [时间与媒体表示](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Time%20and%20Media%20Representations.md)
+  - [文档修订历史](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Document%20Revision%20History.md)
+  - [Export](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Export.md)
+  - [静态图像与视频媒体采集](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Still%20and%20Video%20Media%20Capture.md)
+  - [Editing](../../documentation/Audio%20Video/AVFoundation%20Programming%20Guide/Editing.md)
+- **[iOS 相机编程主题](../../documentation/Audio%20Video/Camera%20Programming%20Topics%20for%20iOS/About%20the%20Camera%20and%20Photo%20Library.md)** — Guide · 2012-07-17，tvOS|iOS · UIKit，4 页
+  - [拍摄照片与视频](../../documentation/Audio%20Video/Camera%20Programming%20Topics%20for%20iOS/Taking%20Pictures%20and%20Movies.md)
+  - [从照片图库中选取项目](../../documentation/Audio%20Video/Camera%20Programming%20Topics%20for%20iOS/Picking%20an%20Item%20from%20the%20Photo%20Library.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Camera%20Programming%20Topics%20for%20iOS/Document%20Revision%20History.md)
+- **[iTunes Search API](../../documentation/Audio%20Video/iTunes%20Search%20API/index.md)** — Guide · 2017-09-19，iOS|macOS · MediaLibrary，6 页
+  - [Searching](../../documentation/Audio%20Video/iTunes%20Search%20API/Searching.md)
+  - [SearchExamples](../../documentation/Audio%20Video/iTunes%20Search%20API/SearchExamples.md)
+  - [LookupExamples](../../documentation/Audio%20Video/iTunes%20Search%20API/LookupExamples.md)
+  - [UnderstandingSearchResults](../../documentation/Audio%20Video/iTunes%20Search%20API/UnderstandingSearchResults.md)
+  - [修订历史](../../documentation/Audio%20Video/iTunes%20Search%20API/RevisionHistory.md)
+- **[媒体播放编程指南](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/About%20Media%20Playback.md)** — Guide · 2018-01-16，tvOS|iOS|macOS · AVFoundation，8 页
+  - [构建基本的播放 App](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Building%20a%20Basic%20Playback%20App.md)
+  - [为 iOS 和 tvOS 配置音频设置](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Configuring%20Audio%20Settings%20for%20iOS%20and%20tvOS.md)
+  - [探索 AVFoundation](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Exploring%20AVFoundation.md)
+  - [使用 AVKit 平台功能](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Using%20AVKit%20Platform%20Features.md)
+  - [优化用户体验](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Refining%20The%20User%20Experience.md)
+  - [使用 HTTP Live Streaming](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Working%20with%20HTTP%20Live%20Streaming.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Media%20Playback%20Programming%20Guide/Document%20Revision%20History.md)
+- **[用于 HTTP Live Streaming 的 MPEG-2 流加密格式](../../documentation/Audio%20Video/MPEG-2%20Stream%20Encryption%20Format%20for%20HTTP%20Live%20Streaming/1.0%20Introduction.md)** — Guide · 2015-10-29，tvOS|Safari (Mobile)|Safari|iOS|macOS，5 页
+  - [2.0 加密](../../documentation/Audio%20Video/MPEG-2%20Stream%20Encryption%20Format%20for%20HTTP%20Live%20Streaming/2.0%20Encryption.md)
+  - [3.0 传输流信令](../../documentation/Audio%20Video/MPEG-2%20Stream%20Encryption%20Format%20for%20HTTP%20Live%20Streaming/3.0%20Transport%20Stream%20Signaling.md)
+  - [4.0 参考](../../documentation/Audio%20Video/MPEG-2%20Stream%20Encryption%20Format%20for%20HTTP%20Live%20Streaming/4.0%20References.md)
+  - [文档修订历史](../../documentation/Audio%20Video/MPEG-2%20Stream%20Encryption%20Format%20for%20HTTP%20Live%20Streaming/Document%20Revision%20History.md)
+- **[多媒体编程指南](../../documentation/Audio%20Video/Multimedia%20Programming%20Guide/About%20Audio%20and%20Video.md)** — Guide · 2015-03-09，iOS，4 页
+  - [使用音频](../../documentation/Audio%20Video/Multimedia%20Programming%20Guide/Using%20Audio.md)
+  - [使用视频](../../documentation/Audio%20Video/Multimedia%20Programming%20Guide/Using%20Video.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Multimedia%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Safari HTML5 音频和视频指南](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/About%20HTML5%20Audio%20and%20Video.md)** — Guide · 2012-12-13，Safari (Mobile)|Safari|iOS|macOS，7 页
+  - [音频与视频 HTML](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/Audio%20and%20Video%20HTML.md)
+  - [iOS 特定注意事项](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/iOS-Specific%20Considerations.md)
+  - [使用 Web Audio API 播放声音](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/Playing%20Sounds%20with%20the%20Web%20Audio%20API.md)
+  - [使用 JavaScript 控制媒体](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/Controlling%20Media%20with%20JavaScript.md)
+  - [添加 CSS 样式](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/Adding%20CSS%20Styles.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Safari%20HTML5%20Audio%20and%20Video%20Guide/Document%20Revision%20History.md)
+- **[Safari HTML5 Canvas 指南](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/About%20Canvas.md)** — Guide · 2013-09-18，Safari (Mobile)|Safari|iOS|macOS，18 页
+  - [设置画布](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Setting%20Up%20the%20Canvas.md)
+  - [绘制线条与形状](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Drawing%20Lines%20and%20Shapes.md)
+  - [像素操作](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Pixel%20Manipulation.md)
+  - [使用 CSS 修改画布](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Modifying%20the%20Canvas%20with%20CSS.md)
+  - [为画布添加鼠标与触控控制](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Adding%20Mouse%20and%20Touch%20Controls%20to%20Canvas.md)
+  - [为画布添加动画](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Animating%20the%20Canvas.md)
+  - [渐变与图案](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Gradients%20and%20Patterns.md)
+  - [使用预先绘制的图像](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Using%20Predrawn%20Images.md)
+  - [添加阴影](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Adding%20Shadows.md)
+  - [平移、旋转与缩放](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Translation%2C%20Rotation%2C%20and%20Scaling.md)
+  - [添加文本](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Adding%20Text.md)
+  - [矩阵变换](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Matrix%20Transforms.md)
+  - [高级合成](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Advanced%20Compositing.md)
+  - [创建图表](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Creating%20Charts%20and%20Graphs.md)
+  - [创建游戏](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Creating%20Games.md)
+  - [为画布动画添加声音](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Adding%20Sound%20to%20Canvas%20Animations.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Safari%20HTML5%20Canvas%20Guide/Document%20Revision%20History.md)
+- **[HTTP Live Streaming 的定时元数据](../../documentation/Audio%20Video/Timed%20Metadata%20for%20HTTP%20Live%20Streaming/1.0%20Introduction.md)** — Guide · 2011-04-28，Safari|iOS|macOS，4 页
+  - [2.0 详情](../../documentation/Audio%20Video/Timed%20Metadata%20for%20HTTP%20Live%20Streaming/2.0%20Details.md)
+  - [3.0 参考](../../documentation/Audio%20Video/Timed%20Metadata%20for%20HTTP%20Live%20Streaming/3.0%20References.md)
+  - [文档修订历史](../../documentation/Audio%20Video/Timed%20Metadata%20for%20HTTP%20Live%20Streaming/Document%20Revision%20History.md)

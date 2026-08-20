@@ -1,0 +1,76 @@
+---
+title: ZAM
+apple_id: DTS10000063
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/ZAM/Listings/GameHeaders_TankSprite_h.html
+archived_at: '2026-07-18T03:28:32.728660Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ZAM](ZAM.md)
+
+
+[Next](GameHeaders-xqueue.h.md)[Previous](GameHeaders-SpriteFrameRates.h.md)
+
+# GameHeaders/TankSprite.h
+
+```
+#pragma once
+enum {
+        kNumTankSprites = 2,
+        kNumTankFrames = 1,
+        kTankBaseID = 128,
+        kTankOffsetID = 1,
+        kLocalTank = 0,
+        kRemoteTank = 1,
+        kMaxSpeed = 6
+    };
+
+
+typedef struct {
+    short       dir;
+    short       speed;
+    gamePtr     game;
+    short       damage;
+} tankInfoRec;
+
+typedef struct  {
+    fixPt   position;
+    short   direction;
+    short   speed;
+} TankStatus;
+
+#define kRotateLeftKeyCode      0x56
+#define kRotateRightKeyCode     0x58            
+#define kAccelerateKeyCode      0x5b
+#define kDecelerateKeyCode      0x57
+#define kFireKeyCode            0x38
+
+extern spriteLayerPtr   gTankLayer[kNumTankSprites];
+extern frameSetPtr      gTankFrameSetList[kNumDirections];
+extern spritePtr        gTankSprites[kNumTankSprites];
+extern tankInfoRec      gTankInfo[kNumTankSprites];
+
+
+void SetTankSpeed(spritePtr spr, short speed);
+void RotateTank(spritePtr spr, short dir);
+
+void NetworkSetTankSpeed ( spritePtr tank, short speed);
+void NetworkRotateTank ( spritePtr tank, short rotateDir);
+void SynchronizeTank( gamePtr game, fixPt *loc, short direction, short speed);
+void NetworkMoveTank(void);
+
+Boolean TankSynchTask(xthing *xtp, spritePtr spr);
+Boolean TankEngineSoundTask(xthing *xtp, spritePtr spr);
+
+
+
+extern long gLastSynchTime;
+extern long gLocalTime;
+extern long gLastReturnTime;
+```
+
+[Next](GameHeaders-xqueue.h.md)[Previous](GameHeaders-SpriteFrameRates.h.md)
+

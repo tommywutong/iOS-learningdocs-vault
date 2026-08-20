@@ -1,0 +1,807 @@
+---
+title: iOS 8.3 API Diffs
+apple_id: TP40015150
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2015-04-08'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS83APIDiffs/modules/JavaScriptCore.html
+archived_at: '2026-07-18T02:56:26.337458Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 8.3 API Diffs](iOS%208.2%20to%20iOS%208.3%20API%20Differences.md)
+
+
+# JavaScriptCore Changes
+
+## JavaScriptCore
+
+Added JSClassDefinition.init()Added JSClassDefinition.init(version: Int32, attributes: JSClassAttributes, className: UnsafePointer<Int8>, parentClass: JSClassRef, staticValues: UnsafePointer<JSStaticValue>, staticFunctions: UnsafePointer<JSStaticFunction>, initialize: JSObjectInitializeCallback, finalize: JSObjectFinalizeCallback, hasProperty: JSObjectHasPropertyCallback, getProperty: JSObjectGetPropertyCallback, setProperty: JSObjectSetPropertyCallback, deleteProperty: JSObjectDeletePropertyCallback, getPropertyNames: JSObjectGetPropertyNamesCallback, callAsFunction: JSObjectCallAsFunctionCallback, callAsConstructor: JSObjectCallAsConstructorCallback, hasInstance: JSObjectHasInstanceCallback, convertToType: JSObjectConvertToTypeCallback)Added JSStaticFunction.init()Added JSStaticFunction.init(name: UnsafePointer<Int8>, callAsFunction: JSObjectCallAsFunctionCallback, attributes: JSPropertyAttributes)Added JSStaticValue.init()Added JSStaticValue.init(name: UnsafePointer<Int8>, getProperty: JSObjectGetPropertyCallback, setProperty: JSObjectSetPropertyCallback, attributes: JSPropertyAttributes)Added JSClassRelease(JSClassRef)Added JSClassRetain(JSClassRef) -> JSClassRefAdded JSContextGroupRelease(JSContextGroupRef)Added JSContextGroupRetain(JSContextGroupRef) -> JSContextGroupRefAdded JSGlobalContextRelease(JSGlobalContextRef)Added JSGlobalContextRetain(JSGlobalContextRef) -> JSGlobalContextRefAdded JSPropertyNameArrayRelease(JSPropertyNameArrayRef)Added JSPropertyNameArrayRetain(JSPropertyNameArrayRef) -> JSPropertyNameArrayRefAdded JSStringRelease(JSStringRef)Added JSStringRetain(JSStringRef) -> JSStringRefModified JSClassDefinition [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct JSClassDefinition {     var version: Int32     var attributes: JSClassAttributes     var className: UnsafePointer<Int8>     var parentClass: Unmanaged<JSClass>!     var staticValues: UnsafePointer<JSStaticValue>     var staticFunctions: UnsafePointer<JSStaticFunction>     var initialize: JSObjectInitializeCallback     var finalize: JSObjectFinalizeCallback     var hasProperty: JSObjectHasPropertyCallback     var getProperty: JSObjectGetPropertyCallback     var setProperty: JSObjectSetPropertyCallback     var deleteProperty: JSObjectDeletePropertyCallback     var getPropertyNames: JSObjectGetPropertyNamesCallback     var callAsFunction: JSObjectCallAsFunctionCallback     var callAsConstructor: JSObjectCallAsConstructorCallback     var hasInstance: JSObjectHasInstanceCallback     var convertToType: JSObjectConvertToTypeCallback } ``` |
+| To | ``` struct JSClassDefinition {     var version: Int32     var attributes: JSClassAttributes     var className: UnsafePointer<Int8>     var parentClass: JSClassRef     var staticValues: UnsafePointer<JSStaticValue>     var staticFunctions: UnsafePointer<JSStaticFunction>     var initialize: JSObjectInitializeCallback     var finalize: JSObjectFinalizeCallback     var hasProperty: JSObjectHasPropertyCallback     var getProperty: JSObjectGetPropertyCallback     var setProperty: JSObjectSetPropertyCallback     var deleteProperty: JSObjectDeletePropertyCallback     var getPropertyNames: JSObjectGetPropertyNamesCallback     var callAsFunction: JSObjectCallAsFunctionCallback     var callAsConstructor: JSObjectCallAsConstructorCallback     var hasInstance: JSObjectHasInstanceCallback     var convertToType: JSObjectConvertToTypeCallback     init()     init(version version: Int32, attributes attributes: JSClassAttributes, className className: UnsafePointer<Int8>, parentClass parentClass: JSClassRef, staticValues staticValues: UnsafePointer<JSStaticValue>, staticFunctions staticFunctions: UnsafePointer<JSStaticFunction>, initialize initialize: JSObjectInitializeCallback, finalize finalize: JSObjectFinalizeCallback, hasProperty hasProperty: JSObjectHasPropertyCallback, getProperty getProperty: JSObjectGetPropertyCallback, setProperty setProperty: JSObjectSetPropertyCallback, deleteProperty deleteProperty: JSObjectDeletePropertyCallback, getPropertyNames getPropertyNames: JSObjectGetPropertyNamesCallback, callAsFunction callAsFunction: JSObjectCallAsFunctionCallback, callAsConstructor callAsConstructor: JSObjectCallAsConstructorCallback, hasInstance hasInstance: JSObjectHasInstanceCallback, convertToType convertToType: JSObjectConvertToTypeCallback) } ``` |
+
+Modified JSClassDefinition.parentClass
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var parentClass: Unmanaged<JSClass>! ``` |
+| To | ``` var parentClass: JSClassRef ``` |
+
+Modified JSContext.JSGlobalContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var JSGlobalContextRef: JSGlobalContext! { get } ``` |
+| To | ``` var JSGlobalContextRef: JSGlobalContextRef { get } ``` |
+
+Modified JSContext.init(JSGlobalContextRef: JSGlobalContextRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` init!(JSGlobalContextRef jsGlobalContextRef: JSGlobalContext!) -> JSContext ``` | iOS 8.0 |
+| To | ``` init!(JSGlobalContextRef jsGlobalContextRef: JSGlobalContextRef) -> JSContext ``` | iOS 8.3 |
+
+Modified JSStaticFunction [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct JSStaticFunction {     var name: UnsafePointer<Int8>     var callAsFunction: JSObjectCallAsFunctionCallback     var attributes: JSPropertyAttributes } ``` |
+| To | ``` struct JSStaticFunction {     var name: UnsafePointer<Int8>     var callAsFunction: JSObjectCallAsFunctionCallback     var attributes: JSPropertyAttributes     init()     init(name name: UnsafePointer<Int8>, callAsFunction callAsFunction: JSObjectCallAsFunctionCallback, attributes attributes: JSPropertyAttributes) } ``` |
+
+Modified JSStaticValue [struct]
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct JSStaticValue {     var name: UnsafePointer<Int8>     var getProperty: JSObjectGetPropertyCallback     var setProperty: JSObjectSetPropertyCallback     var attributes: JSPropertyAttributes } ``` |
+| To | ``` struct JSStaticValue {     var name: UnsafePointer<Int8>     var getProperty: JSObjectGetPropertyCallback     var setProperty: JSObjectSetPropertyCallback     var attributes: JSPropertyAttributes     init()     init(name name: UnsafePointer<Int8>, getProperty getProperty: JSObjectGetPropertyCallback, setProperty setProperty: JSObjectSetPropertyCallback, attributes attributes: JSPropertyAttributes) } ``` |
+
+Modified JSValue.JSValueRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var JSValueRef: JSValue! { get } ``` |
+| To | ``` var JSValueRef: JSValueRef { get } ``` |
+
+Modified JSValue.init(JSValueRef: JSValueRef, inContext: JSContext!)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` init!(JSValueRef value: JSValue!, inContext context: JSContext!) -> JSValue ``` | iOS 8.0 |
+| To | ``` init!(JSValueRef value: JSValueRef, inContext context: JSContext!) -> JSValue ``` | iOS 8.3 |
+
+Modified JSCheckScriptSyntax(JSContextRef, JSStringRef, JSStringRef, Int32, UnsafeMutablePointer<JSValueRef>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSCheckScriptSyntax(_ ctx: JSContext!, _ script: JSString!, _ sourceURL: JSString!, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSCheckScriptSyntax(_ ctx: JSContextRef, _ script: JSStringRef, _ sourceURL: JSStringRef, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<JSValueRef>) -> Bool ``` | iOS 8.3 |
+
+Modified JSClassCreate(UnsafePointer<JSClassDefinition>) -> JSClassRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSClassCreate(_ definition: UnsafePointer<JSClassDefinition>) -> Unmanaged<JSClass>! ``` | iOS 8.0 |
+| To | ``` func JSClassCreate(_ definition: UnsafePointer<JSClassDefinition>) -> JSClassRef ``` | iOS 8.3 |
+
+Modified JSClassRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSClassRef = JSClass ``` |
+| To | ``` typealias JSClassRef = COpaquePointer ``` |
+
+Modified JSContextGetGlobalContext(JSContextRef) -> JSGlobalContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSContextGetGlobalContext(_ ctx: JSContext!) -> Unmanaged<JSGlobalContext>! ``` |
+| To | ``` func JSContextGetGlobalContext(_ ctx: JSContextRef) -> JSGlobalContextRef ``` |
+
+Modified JSContextGetGlobalObject(JSContextRef) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSContextGetGlobalObject(_ ctx: JSContext!) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSContextGetGlobalObject(_ ctx: JSContextRef) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSContextGetGroup(JSContextRef) -> JSContextGroupRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSContextGetGroup(_ ctx: JSContext!) -> Unmanaged<JSContextGroup>! ``` |
+| To | ``` func JSContextGetGroup(_ ctx: JSContextRef) -> JSContextGroupRef ``` |
+
+Modified JSContextGroupCreate() -> JSContextGroupRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSContextGroupCreate() -> Unmanaged<JSContextGroup>! ``` |
+| To | ``` func JSContextGroupCreate() -> JSContextGroupRef ``` |
+
+Modified JSContextGroupRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSContextGroupRef = JSContextGroup ``` |
+| To | ``` typealias JSContextGroupRef = COpaquePointer ``` |
+
+Modified JSContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSContextRef = JSContext ``` |
+| To | ``` typealias JSContextRef = COpaquePointer ``` |
+
+Modified JSEvaluateScript(JSContextRef, JSStringRef, JSObjectRef, JSStringRef, Int32, UnsafeMutablePointer<JSValueRef>) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSEvaluateScript(_ ctx: JSContext!, _ script: JSString!, _ thisObject: JSObject!, _ sourceURL: JSString!, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSEvaluateScript(_ ctx: JSContextRef, _ script: JSStringRef, _ thisObject: JSObjectRef, _ sourceURL: JSStringRef, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSGarbageCollect(JSContextRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSGarbageCollect(_ ctx: JSContext!) ``` | iOS 8.0 |
+| To | ``` func JSGarbageCollect(_ ctx: JSContextRef) ``` | iOS 8.3 |
+
+Modified JSGlobalContextCopyName(JSGlobalContextRef) -> JSStringRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSGlobalContextCopyName(_ ctx: JSGlobalContext!) -> Unmanaged<JSString>! ``` |
+| To | ``` func JSGlobalContextCopyName(_ ctx: JSGlobalContextRef) -> JSStringRef ``` |
+
+Modified JSGlobalContextCreate(JSClassRef) -> JSGlobalContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSGlobalContextCreate(_ globalObjectClass: JSClass!) -> Unmanaged<JSGlobalContext>! ``` |
+| To | ``` func JSGlobalContextCreate(_ globalObjectClass: JSClassRef) -> JSGlobalContextRef ``` |
+
+Modified JSGlobalContextCreateInGroup(JSContextGroupRef, JSClassRef) -> JSGlobalContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSGlobalContextCreateInGroup(_ group: JSContextGroup!, _ globalObjectClass: JSClass!) -> Unmanaged<JSGlobalContext>! ``` |
+| To | ``` func JSGlobalContextCreateInGroup(_ group: JSContextGroupRef, _ globalObjectClass: JSClassRef) -> JSGlobalContextRef ``` |
+
+Modified JSGlobalContextRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSGlobalContextRef = JSGlobalContext ``` |
+| To | ``` typealias JSGlobalContextRef = COpaquePointer ``` |
+
+Modified JSGlobalContextSetName(JSGlobalContextRef, JSStringRef)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSGlobalContextSetName(_ ctx: JSGlobalContext!, _ name: JSString!) ``` |
+| To | ``` func JSGlobalContextSetName(_ ctx: JSGlobalContextRef, _ name: JSStringRef) ``` |
+
+Modified JSObjectCallAsConstructor(JSContextRef, JSObjectRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectCallAsConstructor(_ ctx: JSContext!, _ object: JSObject!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSObjectCallAsConstructor(_ ctx: JSContextRef, _ object: JSObjectRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSObjectCallAsConstructorCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectCallAsConstructorCallback = CFunctionPointer<((JSContext!, JSObject!, UInt, UnsafePointer<Unmanaged<JSValue>?>, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>!)> ``` |
+| To | ``` typealias JSObjectCallAsConstructorCallback = CFunctionPointer<((JSContextRef, JSObjectRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef)> ``` |
+
+Modified JSObjectCallAsFunction(JSContextRef, JSObjectRef, JSObjectRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectCallAsFunction(_ ctx: JSContext!, _ object: JSObject!, _ thisObject: JSObject!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSObjectCallAsFunction(_ ctx: JSContextRef, _ object: JSObjectRef, _ thisObject: JSObjectRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSObjectCallAsFunctionCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectCallAsFunctionCallback = CFunctionPointer<((JSContext!, JSObject!, JSObject!, UInt, UnsafePointer<Unmanaged<JSValue>?>, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>!)> ``` |
+| To | ``` typealias JSObjectCallAsFunctionCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSObjectRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSValueRef)> ``` |
+
+Modified JSObjectConvertToTypeCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectConvertToTypeCallback = CFunctionPointer<((JSContext!, JSObject!, JSType, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>!)> ``` |
+| To | ``` typealias JSObjectConvertToTypeCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSType, UnsafeMutablePointer<JSValueRef>) -> JSValueRef)> ``` |
+
+Modified JSObjectCopyPropertyNames(JSContextRef, JSObjectRef) -> JSPropertyNameArrayRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectCopyPropertyNames(_ ctx: JSContext!, _ object: JSObject!) -> Unmanaged<JSPropertyNameArray>! ``` | iOS 8.0 |
+| To | ``` func JSObjectCopyPropertyNames(_ ctx: JSContextRef, _ object: JSObjectRef) -> JSPropertyNameArrayRef ``` | iOS 8.3 |
+
+Modified JSObjectDeleteProperty(JSContextRef, JSObjectRef, JSStringRef, UnsafeMutablePointer<JSValueRef>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectDeleteProperty(_ ctx: JSContext!, _ object: JSObject!, _ propertyName: JSString!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSObjectDeleteProperty(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyName: JSStringRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> Bool ``` | iOS 8.3 |
+
+Modified JSObjectDeletePropertyCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectDeletePropertyCallback = CFunctionPointer<((JSContext!, JSObject!, JSString!, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool)> ``` |
+| To | ``` typealias JSObjectDeletePropertyCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSStringRef, UnsafeMutablePointer<JSValueRef>) -> Bool)> ``` |
+
+Modified JSObjectFinalizeCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectFinalizeCallback = CFunctionPointer<((JSObject!) -> Void)> ``` |
+| To | ``` typealias JSObjectFinalizeCallback = CFunctionPointer<((JSObjectRef) -> Void)> ``` |
+
+Modified JSObjectGetPrivate(JSObjectRef) -> UnsafeMutablePointer<Void>
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectGetPrivate(_ object: JSObject!) -> UnsafeMutablePointer<Void> ``` | iOS 8.0 |
+| To | ``` func JSObjectGetPrivate(_ object: JSObjectRef) -> UnsafeMutablePointer<Void> ``` | iOS 8.3 |
+
+Modified JSObjectGetProperty(JSContextRef, JSObjectRef, JSStringRef, UnsafeMutablePointer<JSValueRef>) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectGetProperty(_ ctx: JSContext!, _ object: JSObject!, _ propertyName: JSString!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSObjectGetProperty(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyName: JSStringRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSObjectGetPropertyAtIndex(JSContextRef, JSObjectRef, UInt32, UnsafeMutablePointer<JSValueRef>) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectGetPropertyAtIndex(_ ctx: JSContext!, _ object: JSObject!, _ propertyIndex: UInt32, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSObjectGetPropertyAtIndex(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyIndex: UInt32, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSObjectGetPropertyCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectGetPropertyCallback = CFunctionPointer<((JSContext!, JSObject!, JSString!, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSValue>!)> ``` |
+| To | ``` typealias JSObjectGetPropertyCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSStringRef, UnsafeMutablePointer<JSValueRef>) -> JSValueRef)> ``` |
+
+Modified JSObjectGetPropertyNamesCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectGetPropertyNamesCallback = CFunctionPointer<((JSContext!, JSObject!, JSPropertyNameAccumulator!) -> Void)> ``` |
+| To | ``` typealias JSObjectGetPropertyNamesCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSPropertyNameAccumulatorRef) -> Void)> ``` |
+
+Modified JSObjectGetPrototype(JSContextRef, JSObjectRef) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectGetPrototype(_ ctx: JSContext!, _ object: JSObject!) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSObjectGetPrototype(_ ctx: JSContextRef, _ object: JSObjectRef) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSObjectHasInstanceCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectHasInstanceCallback = CFunctionPointer<((JSContext!, JSObject!, JSValue!, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool)> ``` |
+| To | ``` typealias JSObjectHasInstanceCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> Bool)> ``` |
+
+Modified JSObjectHasProperty(JSContextRef, JSObjectRef, JSStringRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectHasProperty(_ ctx: JSContext!, _ object: JSObject!, _ propertyName: JSString!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSObjectHasProperty(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyName: JSStringRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSObjectHasPropertyCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectHasPropertyCallback = CFunctionPointer<((JSContext!, JSObject!, JSString!) -> Bool)> ``` |
+| To | ``` typealias JSObjectHasPropertyCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSStringRef) -> Bool)> ``` |
+
+Modified JSObjectInitializeCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectInitializeCallback = CFunctionPointer<((JSContext!, JSObject!) -> Void)> ``` |
+| To | ``` typealias JSObjectInitializeCallback = CFunctionPointer<((JSContextRef, JSObjectRef) -> Void)> ``` |
+
+Modified JSObjectIsConstructor(JSContextRef, JSObjectRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectIsConstructor(_ ctx: JSContext!, _ object: JSObject!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSObjectIsConstructor(_ ctx: JSContextRef, _ object: JSObjectRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSObjectIsFunction(JSContextRef, JSObjectRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectIsFunction(_ ctx: JSContext!, _ object: JSObject!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSObjectIsFunction(_ ctx: JSContextRef, _ object: JSObjectRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSObjectMake(JSContextRef, JSClassRef, UnsafeMutablePointer<Void>) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectMake(_ ctx: JSContext!, _ jsClass: JSClass!, _ data: UnsafeMutablePointer<Void>) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSObjectMake(_ ctx: JSContextRef, _ jsClass: JSClassRef, _ data: UnsafeMutablePointer<Void>) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSObjectMakeArray(JSContextRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSObjectMakeArray(_ ctx: JSContext!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` |
+| To | ``` func JSObjectMakeArray(_ ctx: JSContextRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` |
+
+Modified JSObjectMakeConstructor(JSContextRef, JSClassRef, JSObjectCallAsConstructorCallback) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectMakeConstructor(_ ctx: JSContext!, _ jsClass: JSClass!, _ callAsConstructor: JSObjectCallAsConstructorCallback) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSObjectMakeConstructor(_ ctx: JSContextRef, _ jsClass: JSClassRef, _ callAsConstructor: JSObjectCallAsConstructorCallback) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSObjectMakeDate(JSContextRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSObjectMakeDate(_ ctx: JSContext!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` |
+| To | ``` func JSObjectMakeDate(_ ctx: JSContextRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` |
+
+Modified JSObjectMakeError(JSContextRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSObjectMakeError(_ ctx: JSContext!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` |
+| To | ``` func JSObjectMakeError(_ ctx: JSContextRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` |
+
+Modified JSObjectMakeFunction(JSContextRef, JSStringRef, UInt32, UnsafePointer<JSStringRef>, JSStringRef, JSStringRef, Int32, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectMakeFunction(_ ctx: JSContext!, _ name: JSString!, _ parameterCount: UInt32, _ parameterNames: UnsafePointer<Unmanaged<JSString>?>, _ body: JSString!, _ sourceURL: JSString!, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSObjectMakeFunction(_ ctx: JSContextRef, _ name: JSStringRef, _ parameterCount: UInt32, _ parameterNames: UnsafePointer<JSStringRef>, _ body: JSStringRef, _ sourceURL: JSStringRef, _ startingLineNumber: Int32, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSObjectMakeFunctionWithCallback(JSContextRef, JSStringRef, JSObjectCallAsFunctionCallback) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectMakeFunctionWithCallback(_ ctx: JSContext!, _ name: JSString!, _ callAsFunction: JSObjectCallAsFunctionCallback) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSObjectMakeFunctionWithCallback(_ ctx: JSContextRef, _ name: JSStringRef, _ callAsFunction: JSObjectCallAsFunctionCallback) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSObjectMakeRegExp(JSContextRef, Int, UnsafePointer<JSValueRef>, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSObjectMakeRegExp(_ ctx: JSContext!, _ argumentCount: UInt, _ arguments: UnsafePointer<Unmanaged<JSValue>?>, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` |
+| To | ``` func JSObjectMakeRegExp(_ ctx: JSContextRef, _ argumentCount: Int, _ arguments: UnsafePointer<JSValueRef>, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` |
+
+Modified JSObjectRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectRef = JSObject ``` |
+| To | ``` typealias JSObjectRef = COpaquePointer ``` |
+
+Modified JSObjectSetPrivate(JSObjectRef, UnsafeMutablePointer<Void>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectSetPrivate(_ object: JSObject!, _ data: UnsafeMutablePointer<Void>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSObjectSetPrivate(_ object: JSObjectRef, _ data: UnsafeMutablePointer<Void>) -> Bool ``` | iOS 8.3 |
+
+Modified JSObjectSetProperty(JSContextRef, JSObjectRef, JSStringRef, JSValueRef, JSPropertyAttributes, UnsafeMutablePointer<JSValueRef>)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectSetProperty(_ ctx: JSContext!, _ object: JSObject!, _ propertyName: JSString!, _ value: JSValue!, _ attributes: JSPropertyAttributes, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) ``` | iOS 8.0 |
+| To | ``` func JSObjectSetProperty(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyName: JSStringRef, _ value: JSValueRef, _ attributes: JSPropertyAttributes, _ exception: UnsafeMutablePointer<JSValueRef>) ``` | iOS 8.3 |
+
+Modified JSObjectSetPropertyAtIndex(JSContextRef, JSObjectRef, UInt32, JSValueRef, UnsafeMutablePointer<JSValueRef>)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectSetPropertyAtIndex(_ ctx: JSContext!, _ object: JSObject!, _ propertyIndex: UInt32, _ value: JSValue!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) ``` | iOS 8.0 |
+| To | ``` func JSObjectSetPropertyAtIndex(_ ctx: JSContextRef, _ object: JSObjectRef, _ propertyIndex: UInt32, _ value: JSValueRef, _ exception: UnsafeMutablePointer<JSValueRef>) ``` | iOS 8.3 |
+
+Modified JSObjectSetPropertyCallback
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSObjectSetPropertyCallback = CFunctionPointer<((JSContext!, JSObject!, JSString!, JSValue!, UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool)> ``` |
+| To | ``` typealias JSObjectSetPropertyCallback = CFunctionPointer<((JSContextRef, JSObjectRef, JSStringRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> Bool)> ``` |
+
+Modified JSObjectSetPrototype(JSContextRef, JSObjectRef, JSValueRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSObjectSetPrototype(_ ctx: JSContext!, _ object: JSObject!, _ value: JSValue!) ``` | iOS 8.0 |
+| To | ``` func JSObjectSetPrototype(_ ctx: JSContextRef, _ object: JSObjectRef, _ value: JSValueRef) ``` | iOS 8.3 |
+
+Modified JSPropertyDescriptorConfigurableKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorConfigurableKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorConfigurableKey: String ``` |
+
+Modified JSPropertyDescriptorEnumerableKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorEnumerableKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorEnumerableKey: String ``` |
+
+Modified JSPropertyDescriptorGetKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorGetKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorGetKey: String ``` |
+
+Modified JSPropertyDescriptorSetKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorSetKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorSetKey: String ``` |
+
+Modified JSPropertyDescriptorValueKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorValueKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorValueKey: String ``` |
+
+Modified JSPropertyDescriptorWritableKey
+
+|  | Declaration |
+| --- | --- |
+| From | ``` let JSPropertyDescriptorWritableKey: NSString! ``` |
+| To | ``` let JSPropertyDescriptorWritableKey: String ``` |
+
+Modified JSPropertyNameAccumulatorAddName(JSPropertyNameAccumulatorRef, JSStringRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSPropertyNameAccumulatorAddName(_ accumulator: JSPropertyNameAccumulator!, _ propertyName: JSString!) ``` | iOS 8.0 |
+| To | ``` func JSPropertyNameAccumulatorAddName(_ accumulator: JSPropertyNameAccumulatorRef, _ propertyName: JSStringRef) ``` | iOS 8.3 |
+
+Modified JSPropertyNameAccumulatorRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSPropertyNameAccumulatorRef = JSPropertyNameAccumulator ``` |
+| To | ``` typealias JSPropertyNameAccumulatorRef = COpaquePointer ``` |
+
+Modified JSPropertyNameArrayGetCount(JSPropertyNameArrayRef) -> Int
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSPropertyNameArrayGetCount(_ array: JSPropertyNameArray!) -> UInt ``` | iOS 8.0 |
+| To | ``` func JSPropertyNameArrayGetCount(_ array: JSPropertyNameArrayRef) -> Int ``` | iOS 8.3 |
+
+Modified JSPropertyNameArrayGetNameAtIndex(JSPropertyNameArrayRef, Int) -> JSStringRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSPropertyNameArrayGetNameAtIndex(_ array: JSPropertyNameArray!, _ index: UInt) -> Unmanaged<JSString>! ``` | iOS 8.0 |
+| To | ``` func JSPropertyNameArrayGetNameAtIndex(_ array: JSPropertyNameArrayRef, _ index: Int) -> JSStringRef ``` | iOS 8.3 |
+
+Modified JSPropertyNameArrayRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSPropertyNameArrayRef = JSPropertyNameArray ``` |
+| To | ``` typealias JSPropertyNameArrayRef = COpaquePointer ``` |
+
+Modified JSStringCopyCFString(CFAllocator!, JSStringRef) -> CFString!
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringCopyCFString(_ alloc: CFAllocator!, _ string: JSString!) -> CFString! ``` | iOS 8.0 |
+| To | ``` func JSStringCopyCFString(_ alloc: CFAllocator!, _ string: JSStringRef) -> CFString! ``` | iOS 8.3 |
+
+Modified JSStringCreateWithCFString(CFString!) -> JSStringRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringCreateWithCFString(_ string: CFString!) -> Unmanaged<JSString>! ``` | iOS 8.0 |
+| To | ``` func JSStringCreateWithCFString(_ string: CFString!) -> JSStringRef ``` | iOS 8.3 |
+
+Modified JSStringCreateWithCharacters(UnsafePointer<JSChar>, Int) -> JSStringRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringCreateWithCharacters(_ chars: UnsafePointer<JSChar>, _ numChars: UInt) -> Unmanaged<JSString>! ``` | iOS 8.0 |
+| To | ``` func JSStringCreateWithCharacters(_ chars: UnsafePointer<JSChar>, _ numChars: Int) -> JSStringRef ``` | iOS 8.3 |
+
+Modified JSStringCreateWithUTF8CString(UnsafePointer<Int8>) -> JSStringRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringCreateWithUTF8CString(_ string: UnsafePointer<Int8>) -> Unmanaged<JSString>! ``` | iOS 8.0 |
+| To | ``` func JSStringCreateWithUTF8CString(_ string: UnsafePointer<Int8>) -> JSStringRef ``` | iOS 8.3 |
+
+Modified JSStringGetCharactersPtr(JSStringRef) -> UnsafePointer<JSChar>
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringGetCharactersPtr(_ string: JSString!) -> UnsafePointer<JSChar> ``` | iOS 8.0 |
+| To | ``` func JSStringGetCharactersPtr(_ string: JSStringRef) -> UnsafePointer<JSChar> ``` | iOS 8.3 |
+
+Modified JSStringGetLength(JSStringRef) -> Int
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringGetLength(_ string: JSString!) -> UInt ``` | iOS 8.0 |
+| To | ``` func JSStringGetLength(_ string: JSStringRef) -> Int ``` | iOS 8.3 |
+
+Modified JSStringGetMaximumUTF8CStringSize(JSStringRef) -> Int
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringGetMaximumUTF8CStringSize(_ string: JSString!) -> UInt ``` | iOS 8.0 |
+| To | ``` func JSStringGetMaximumUTF8CStringSize(_ string: JSStringRef) -> Int ``` | iOS 8.3 |
+
+Modified JSStringGetUTF8CString(JSStringRef, UnsafeMutablePointer<Int8>, Int) -> Int
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringGetUTF8CString(_ string: JSString!, _ buffer: UnsafeMutablePointer<Int8>, _ bufferSize: UInt) -> UInt ``` | iOS 8.0 |
+| To | ``` func JSStringGetUTF8CString(_ string: JSStringRef, _ buffer: UnsafeMutablePointer<Int8>, _ bufferSize: Int) -> Int ``` | iOS 8.3 |
+
+Modified JSStringIsEqual(JSStringRef, JSStringRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringIsEqual(_ a: JSString!, _ b: JSString!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSStringIsEqual(_ a: JSStringRef, _ b: JSStringRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSStringIsEqualToUTF8CString(JSStringRef, UnsafePointer<Int8>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSStringIsEqualToUTF8CString(_ a: JSString!, _ b: UnsafePointer<Int8>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSStringIsEqualToUTF8CString(_ a: JSStringRef, _ b: UnsafePointer<Int8>) -> Bool ``` | iOS 8.3 |
+
+Modified JSStringRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSStringRef = JSString ``` |
+| To | ``` typealias JSStringRef = COpaquePointer ``` |
+
+Modified JSValueCreateJSONString(JSContextRef, JSValueRef, UInt32, UnsafeMutablePointer<JSValueRef>) -> JSStringRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSValueCreateJSONString(_ ctx: JSContext!, _ value: JSValue!, _ indent: UInt32, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSString>! ``` |
+| To | ``` func JSValueCreateJSONString(_ ctx: JSContextRef, _ value: JSValueRef, _ indent: UInt32, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSStringRef ``` |
+
+Modified JSValueGetType(JSContextRef, JSValueRef) -> JSType
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueGetType(_ ctx: JSContext!, _ _: JSValue!) -> JSType ``` | iOS 8.0 |
+| To | ``` func JSValueGetType(_ ctx: JSContextRef, _ _: JSValueRef) -> JSType ``` | iOS 8.3 |
+
+Modified JSValueIsBoolean(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsBoolean(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsBoolean(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsEqual(JSContextRef, JSValueRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsEqual(_ ctx: JSContext!, _ a: JSValue!, _ b: JSValue!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsEqual(_ ctx: JSContextRef, _ a: JSValueRef, _ b: JSValueRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsInstanceOfConstructor(JSContextRef, JSValueRef, JSObjectRef, UnsafeMutablePointer<JSValueRef>) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsInstanceOfConstructor(_ ctx: JSContext!, _ value: JSValue!, _ constructor: JSObject!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsInstanceOfConstructor(_ ctx: JSContextRef, _ value: JSValueRef, _ constructor: JSObjectRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsNull(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsNull(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsNull(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsNumber(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsNumber(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsNumber(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsObject(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsObject(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsObject(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsObjectOfClass(JSContextRef, JSValueRef, JSClassRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsObjectOfClass(_ ctx: JSContext!, _ value: JSValue!, _ jsClass: JSClass!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsObjectOfClass(_ ctx: JSContextRef, _ value: JSValueRef, _ jsClass: JSClassRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsStrictEqual(JSContextRef, JSValueRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsStrictEqual(_ ctx: JSContext!, _ a: JSValue!, _ b: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsStrictEqual(_ ctx: JSContextRef, _ a: JSValueRef, _ b: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsString(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsString(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsString(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueIsUndefined(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueIsUndefined(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueIsUndefined(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueMakeBoolean(JSContextRef, Bool) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueMakeBoolean(_ ctx: JSContext!, _ boolean: Bool) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSValueMakeBoolean(_ ctx: JSContextRef, _ boolean: Bool) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSValueMakeFromJSONString(JSContextRef, JSStringRef) -> JSValueRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func JSValueMakeFromJSONString(_ ctx: JSContext!, _ string: JSString!) -> Unmanaged<JSValue>! ``` |
+| To | ``` func JSValueMakeFromJSONString(_ ctx: JSContextRef, _ string: JSStringRef) -> JSValueRef ``` |
+
+Modified JSValueMakeNull(JSContextRef) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueMakeNull(_ ctx: JSContext!) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSValueMakeNull(_ ctx: JSContextRef) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSValueMakeNumber(JSContextRef, Double) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueMakeNumber(_ ctx: JSContext!, _ number: Double) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSValueMakeNumber(_ ctx: JSContextRef, _ number: Double) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSValueMakeString(JSContextRef, JSStringRef) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueMakeString(_ ctx: JSContext!, _ string: JSString!) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSValueMakeString(_ ctx: JSContextRef, _ string: JSStringRef) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSValueMakeUndefined(JSContextRef) -> JSValueRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueMakeUndefined(_ ctx: JSContext!) -> Unmanaged<JSValue>! ``` | iOS 8.0 |
+| To | ``` func JSValueMakeUndefined(_ ctx: JSContextRef) -> JSValueRef ``` | iOS 8.3 |
+
+Modified JSValueProtect(JSContextRef, JSValueRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueProtect(_ ctx: JSContext!, _ value: JSValue!) ``` | iOS 8.0 |
+| To | ``` func JSValueProtect(_ ctx: JSContextRef, _ value: JSValueRef) ``` | iOS 8.3 |
+
+Modified JSValueRef
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias JSValueRef = JSValue ``` |
+| To | ``` typealias JSValueRef = COpaquePointer ``` |
+
+Modified JSValueToBoolean(JSContextRef, JSValueRef) -> Bool
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueToBoolean(_ ctx: JSContext!, _ value: JSValue!) -> Bool ``` | iOS 8.0 |
+| To | ``` func JSValueToBoolean(_ ctx: JSContextRef, _ value: JSValueRef) -> Bool ``` | iOS 8.3 |
+
+Modified JSValueToNumber(JSContextRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> Double
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueToNumber(_ ctx: JSContext!, _ value: JSValue!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Double ``` | iOS 8.0 |
+| To | ``` func JSValueToNumber(_ ctx: JSContextRef, _ value: JSValueRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> Double ``` | iOS 8.3 |
+
+Modified JSValueToObject(JSContextRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> JSObjectRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueToObject(_ ctx: JSContext!, _ value: JSValue!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSObject>! ``` | iOS 8.0 |
+| To | ``` func JSValueToObject(_ ctx: JSContextRef, _ value: JSValueRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSObjectRef ``` | iOS 8.3 |
+
+Modified JSValueToStringCopy(JSContextRef, JSValueRef, UnsafeMutablePointer<JSValueRef>) -> JSStringRef
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueToStringCopy(_ ctx: JSContext!, _ value: JSValue!, _ exception: UnsafeMutablePointer<Unmanaged<JSValue>?>) -> Unmanaged<JSString>! ``` | iOS 8.0 |
+| To | ``` func JSValueToStringCopy(_ ctx: JSContextRef, _ value: JSValueRef, _ exception: UnsafeMutablePointer<JSValueRef>) -> JSStringRef ``` | iOS 8.3 |
+
+Modified JSValueUnprotect(JSContextRef, JSValueRef)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func JSValueUnprotect(_ ctx: JSContext!, _ value: JSValue!) ``` | iOS 8.0 |
+| To | ``` func JSValueUnprotect(_ ctx: JSContextRef, _ value: JSValueRef) ``` | iOS 8.3 |
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

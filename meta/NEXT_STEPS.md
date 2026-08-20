@@ -1,8 +1,40 @@
 # 后续计划与进度表
 
-> 基线日期：2026-07-28
-> 当前范围：高价值博客优先；官方材料只做暑期学习计划白名单
-> 详细白名单：[`SUMMER_TRANSLATION_PLAN.md`](SUMMER_TRANSLATION_PLAN.md)
+> 基线日期：2026-08-02
+> 当前范围：暑期直接白名单、强相关 B 类和受控 C1 试点均已完成
+> 详细范围：[`SUMMER_RELATED_B_PLAN.md`](SUMMER_RELATED_B_PLAN.md)、[`C1_SWIFT_API_TYPE_SYSTEM_PLAN.md`](C1_SWIFT_API_TYPE_SYSTEM_PLAN.md)
+
+## 0. 2026-07-29 新范围裁决
+
+用户确认：289 个暑期计划直接链接不是唯一边界。后续先增加与暑期底层主题高度相关的 B
+类资料，不恢复旧 `core`。2026-08-02，B 类全部完成后，用户又明确授权以固定白名单推进
+受控 C 类试点；C1 已完成，不自动扩展为 C2。
+
+已确认纳入九组：
+
+1. UIKit 的启动、生命周期、事件、手势、触摸和性能；
+2. Swift 的并发、原子操作、内存和 Objective-C 互操作；
+3. Foundation 的线程、数据、文件、序列化和进程通信；
+4. QuartzCore、Core Graphics、Metal 的渲染、帧率和内存管理；
+5. Network、Security、CryptoKit 的 TCP、TLS、证书和诊断；
+6. Core Data/SwiftData 的 stack、并发、存储和迁移；
+7. AVFoundation 的快速启动、异步加载和媒体数据管线；
+8. WWDC 中明确命中底层主题的 session；
+9. 高质量作者中明确命中底层主题的文章。
+
+机器白名单是 `meta/summer_related_b_allowlist.json`，只能通过
+`tools/summer_related_b.py` 复现和核验。分片只允许使用
+`tools/shard.py --scope summer-related-b`。完整边界、排除项、冒烟和停止条件见新计划。
+
+### 当前完成状态
+
+`summer-related-b-smoke-r01` 和复审批次已经 3 / 3 通过。完整批次
+`summer-related-b-full-r01` 完成 385 篇；此前剩余 19 篇已使用 Codex 逐篇人工修订并通过
+严格校验，B 类当前已验收 **407 / 407** 篇。本轮没有调用 DeepSeek，也没有恢复完整分片。
+累计历史估算费用仍为 6.8095 美元。收尾记录见
+[`SUMMER_RELATED_B_REMAINING.md`](SUMMER_RELATED_B_REMAINING.md)。
+
+不得自动恢复该 `run-id` 或重跑完整白名单。后续维护只应针对明确发现的问题逐篇处理。
 
 ## 1. 当前结论
 
@@ -36,11 +68,21 @@ objc.io 另有 10 篇命中暑期计划，但已有 objccn 正式中文配对，
 
 ## 2. 下一步
 
-当前可自动执行的翻译计划没有待执行项：
+原 129 篇暑期直接白名单、B 类 407 / 407 篇和独立 C1 试点均已完成。C2 必须另行建立固定清单：
 
-1. B1 补强与 36 篇补审已通过 PR #22 合入 `main`，全仓复验通过；
-2. B2 的 28 篇计划内快照已经完成，计划内 WWDC18/415、WWDC19/423 幻灯片已经归档；
-3. 只有学习计划出现新的明确缺口时，才逐篇追加新目标，不恢复宽泛 `core`。
+1. 不再调用 DeepSeek，也不重跑完整 407 篇；
+2. 19 篇复杂博客的 Codex 人工修订、语言审校和术语复核已经完成；
+3. C1 已完成 [`C1_SWIFT_API_TYPE_SYSTEM_PLAN.md`](C1_SWIFT_API_TYPE_SYSTEM_PLAN.md) 列出的 4 篇 NSHipster 文章；
+4. 为 C2 另行建立固定清单后才可继续；
+5. 不恢复宽泛 `core`，发现问题时仅逐篇修复并重跑严格校验。
+
+读者导航重整已经独立完成，不属于本次 19 篇正文翻译任务：
+
+- 中文正文和原生中文文章优先展示；
+- 其余可读英文博客提供中文目录标题，但仍明确标记正文待翻译；
+- 12 个稳定主题页代替按标题哈希生成的零散主题；
+- 目录标题更新后必须依次运行 `tools/title_aliases.py check`、
+  `tools/indexes.py` 和 `tools/check_links.py`。
 
 其余 53 场已经找到官方 PDF 的 WWDC 幻灯片不属于当前翻译计划，不批量归档。另有
 122 场没有找到官方 PDF，不从视频抽帧。两类任务都必须由用户明确扩大范围后才能执行。

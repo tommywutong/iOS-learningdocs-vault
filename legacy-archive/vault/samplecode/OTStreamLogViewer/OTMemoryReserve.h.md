@@ -1,0 +1,140 @@
+---
+title: OTStreamLogViewer
+apple_id: DTS10000255
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-07-22'
+source_url: https://developer.apple.com/library/archive/samplecode/OTStreamLogViewer/Listings/OTMemoryReserve_h.html
+archived_at: '2026-07-18T03:17:24.603636Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [OTStreamLogViewer](OTStreamLogViewer.md)
+
+
+[Next](OTStreamLogViewer.c.md)[Previous](OTMemoryReserve.c.md)
+
+# OTMemoryReserve.h
+
+```c
+/*
+    File:       OTMemoryReserve.h
+
+    Contains:   Wrapper for OTAllocMem to enable lots of interrupt-time memory allocations.
+
+    Written by: Quinn "The Eskimo!"
+
+    Copyright:  © 1998-2000 by Apple Computer, Inc., all rights reserved.
+
+    Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc.
+                ("Apple") in consideration of your agreement to the following terms, and your
+                use, installation, modification or redistribution of this Apple software
+                constitutes acceptance of these terms.  If you do not agree with these terms,
+                please do not use, install, modify or redistribute this Apple software.
+
+                In consideration of your agreement to abide by the following terms, and subject
+                to these terms, Apple grants you a personal, non-exclusive license, under AppleÕs
+                copyrights in this original Apple software (the "Apple Software"), to use,
+                reproduce, modify and redistribute the Apple Software, with or without
+                modifications, in source and/or binary forms; provided that if you redistribute
+                the Apple Software in its entirety and without modifications, you must retain
+                this notice and the following text and disclaimers in all such redistributions of
+                the Apple Software.  Neither the name, trademarks, service marks or logos of
+                Apple Computer, Inc. may be used to endorse or promote products derived from the
+                Apple Software without specific prior written permission from Apple.  Except as
+                expressly stated in this notice, no other rights or licenses, express or implied,
+                are granted by Apple herein, including but not limited to any patent rights that
+                may be infringed by your derivative works or by other works in which the Apple
+                Software may be incorporated.
+
+                The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+                WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+                WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+                PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+                COMBINATION WITH YOUR PRODUCTS.
+
+                IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+                CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+                GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+                ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION
+                OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT
+                (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN
+                ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    Change History (most recent first):
+
+*/
+
+#pragma once
+
+/////////////////////////////////////////////////////////////////
+
+// MIB Setup
+
+#include "MoreSetup.h"
+
+// Mac OS Interfaces
+
+#include <MacTypes.h>
+#include <OpenTransport.h>
+
+/////////////////////////////////////////////////////////////////////
+
+extern pascal OSStatus InitOTMemoryReserve(ByteCount freeHeapSpaceRequired, ByteCount chunkSize, 
+                                           ItemCount minChunks, ItemCount maxChunks,
+                                           OTClientContextPtr clientContext);
+    // Initialises the module.  Creates an OT memory reserve using 
+    // chunkSize chunks.  At least minChunks will be allocated.  At most 
+    // maxChunks will be allocated.  There will be at least freeHeapSpaceRequired 
+    // bytes left in the heap after the call.
+    //
+    // There are some simple rules to following for these parameters.
+    // 
+    // o In order for this module to be effective chunkSize should be
+    //   significantly bigger than the largest block you will allocate 
+    //   using OTAllocMemFromReserveInContext.
+    //
+    // o You should set freeHeapSpaceRequired to at least 32 KB, preferably 
+    //   a larger value like 64 or 128 KB.  Mac OS does not deal well if 
+    //   if you have very little free space in your application partition.
+    //
+    // o If you intend to use OTAllocMemFromReserveInContext for your 
+    //   primary application allocator, (minChunks * chunkSize) + freeHeapSpaceRequired + static allocation size
+    //   should be approximately equal to your minimum application partition 
+    //   size.
+    //
+    // o DonÕt pass $FFFFFFFF to maxChunks, even if you want your entire 
+    //   application partition (except for freeHeapSpaceRequired bytes) 
+    //   to be used for the OT memory reserve.  This will work on current 
+    //   systems (because OTAllocMemInContext will be allocating from 
+    //   your application partition) but it may cause problems on future 
+    //   systems (if OTAllocMemInContext is revised to get memory from 
+    //   a read/write file mapping, for example).  Thus is actually the 
+    //   case on Mac OS X.  This module does not make a lot of sense on 
+    //   Mac OS X, but it will work properly if you pass a reasonable 
+    //   value for maxChunks.
+    //
+    // o ItÕs likely that passing anything other than nil for clientContext 
+    //   is a bad idea.  This routine allocates the routine using OTAllocMemInContext, 
+    //   passing clientContext as the context parameter.  If you pass a non-nil 
+    //   value (not the primary application context), itÕs likely that 
+    //   OTAllocMemInContext wonÕt allocate memory from the application heap 
+    //   and thus your 
+
+extern pascal void TermOTMemoryReserve(void);
+    // Terminates the module.
+
+extern pascal void *OTAllocMemFromReserveInContext(OTByteCount size, OTClientContextPtr clientContext);
+    // Allocates memory from OT and, if that fails, returns part of 
+    // the memory reserve to OT and tries again.
+
+#if MORE_DEBUG
+
+    extern pascal void OTMemoryReserveTest(void);
+        // See comment in implementation part.
+
+#endif
+```
+
+[Next](OTStreamLogViewer.c.md)[Previous](OTMemoryReserve.c.md)
+

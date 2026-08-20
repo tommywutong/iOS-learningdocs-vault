@@ -1,0 +1,84 @@
+---
+title: PCI Video Card Bus Error
+apple_id: DTS10001903
+resource_type: QA
+platform: macOS
+topic: null
+technology: null
+published: '1997-11-17'
+source_url: https://developer.apple.com/library/archive/qa/qd/qd50.html
+archived_at: '2026-07-18T02:38:38.119780Z'
+---
+> 导航：[总目录](../../README.md) · [qa](../../_indexes/qa.md)
+
+
+
+[ADC Home](https://developer.apple.com/) > [Reference Library](https://developer.apple.com/library/archive/referencelibrary/index.html) > [Technical Q&As](https://developer.apple.com/library/archive/technicalqas/index.html) > [Legacy Documents](https://developer.apple.com/library/archive/technicalqas/LegacyTechnologies/index.html) > [Graphics & Imaging](https://developer.apple.com/library/archive/technicalqas/LegacyTechnologies/idxGraphicsImaging-date.html) >
+
+# Legacy Documentclose button
+
+__Important:__ This document is part of the Legacy section of the ADC Reference Library. This information should not be used for new development.
+
+Current information on this Reference Library topic can be found here:
+
+- [Reference Library > Graphics & Imaging](https://developer.apple.com/referencelibrary/GraphicsImaging/index.html)
+
+|  |
+| --- |
+| Technical Q&A QD50PCI Video Card Bus Error |
+
+|  |
+| --- |
+| ---   Q: I'm working on a PCI video card and I'm getting a Bus Error when users drag translucent objects over the Apple in the upper left corner. Why?  A: `CopyBits` will occasionally read a few bytes above the base address of the PixMap. If the video page starts exactly on the card's memory space, then these accesses are made to unmapped memory.  This was documented for NuBus cards on page 3-118 of [_Inside Macintosh:Imaging with QuickDraw_](https://developer.apple.com/library/archive/documentation/mac/QuickDraw/QuickDraw-2.html). The solution is to make the base address of the `PixMap` to be at least 20 bytes into the address space. Moving the `PixMap` in 32 bytes will align the `PixMap` to a cache line boundary. |
+
+#### [Nov 17 1997]
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)
+
+---

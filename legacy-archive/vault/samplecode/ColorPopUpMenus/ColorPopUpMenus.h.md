@@ -1,0 +1,66 @@
+---
+title: ColorPopUpMenus
+apple_id: DTS10000564
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-30'
+source_url: https://developer.apple.com/library/archive/samplecode/ColorPopUpMenus/Listings/ColorPopUpMenus_h.html
+archived_at: '2026-07-18T03:03:59.411817Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ColorPopUpMenus](ColorPopUpMenus.md)
+
+
+[Next](ColorPopUpMenus.r.md)[Previous](ColorPopUpMenus.c.md)
+
+# ColorPopUpMenus.h
+
+```
+/*
+    File: ColorPopUpMenus.h
+
+    Contains:   This file contains constants used in the file ColorPopUpMenus.c.
+
+    Written by:     John Montbriand
+
+    Copyright:  Copyright © 1999 by Apple Computer, Inc., All Rights Reserved.
+
+    You may incorporate this Apple sample source code into your program(s) without
+    restriction. This Apple sample source code has been provided "AS IS" and the
+    responsibility for its operation is yours. You are not permitted to redistribute
+    this Apple sample source code as "Apple sample source code" after having made
+    changes. If you're going to re-distribute the source, we require that you make
+    it clear in the source that the code was descended from Apple sample source
+    code, but that you've made changes.
+
+    Change History (most recent first):
+    7/19/1999 Karl Groethe - Updated for Metrowerks Codewarror Pro 2.1
+    10/7/1999 John Montbriand - removed bad menu resource definition, rewrote the rest :)
+*/
+
+#ifndef __COLORPOPUPMENUS__
+#define __COLORPOPUPMENUS__
+
+    /* resource ids used in this sample */
+enum {
+    kOtherIconRsrc = 383,
+        /* index of the color we are interested in inside of
+        the clut stored in the color icon resource */
+    kOutClutColorIndex = 0 
+};
+
+    /* resource ids used in the main dialog */
+enum {
+    kMainDialog = 128,
+    kMainOK = 1,
+    kMainPopUp = 2,
+    kMainPopUpOtherItem = 4
+};
+
+
+#endif
+```
+
+[Next](ColorPopUpMenus.r.md)[Previous](ColorPopUpMenus.c.md)
+

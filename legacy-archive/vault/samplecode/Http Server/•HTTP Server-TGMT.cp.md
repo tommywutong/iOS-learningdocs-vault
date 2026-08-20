@@ -1,0 +1,78 @@
+---
+title: Http Server
+apple_id: DTS10000238
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Http_Server/Listings/_HTTP_Server_TGMT_cp.html
+archived_at: '2026-07-18T03:11:57.969453Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Http Server](Http%20Server.md)
+
+
+[Next](%E2%80%A2HTTP%20Server-TGMT.h.md)[Previous](%E2%80%A2HTTP%20Server-HttpServer.r.md)
+
+# •HTTP Server/TGMT.cp
+
+```c
+//  TGmt.cp - G M Time class object
+// 
+// Apple Macintosh Developer Technical Support
+// Written by:  Vinne Moscaritolo
+//
+//  Copyright (work in progress)  Apple Computer, Inc All rights reserved.
+//
+// You may incorporate this sample code into your applications without
+// restriction, though the sample code has been provided "AS IS" and the
+// responsibility for its operation is 100% yours.  However, what you are
+// not permitted to do is to redistribute the source as "DSC Sample Code"
+// after having made changes. If you're going to re-distribute the source,
+// we require that you make it clear in the source that the code was
+// descended from Apple Sample Code, but that you've made changes.
+// 
+
+#include "TGMT.h"
+#include <iomanip.h>
+#include <OSUtils.h>
+
+void TGmt::Now()
+{
+    GetDateTime(&fTime);
+};
+
+unsigned long  TGmt::Elapsed()
+{
+    unsigned long   now;
+    GetDateTime(&now);
+    return (now - fTime);
+};
+
+ostream &operator<< (ostream& s, const TGmt& t)
+{
+    const char* wkday[]= {"XXX","Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
+    const char* month[] = {"XXX","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+    DateTimeRec d;
+    MachineLocation loc;
+    long        delta;
+    long        savedflags;
+
+// normalize for GMT
+    ReadLocation(&loc);
+    delta = 0x00FFFFFF & loc.u.gmtDelta;
+    if(delta & 0x00800000) delta |= 0xff000000;
+
+// Convert to Stream
+    SecondsToDate(t.fTime - delta ,&d);
+    savedflags = s.setf(ios::right, ios::adjustfield);
+    s << setfill('0');
+    s << wkday[ d.dayOfWeek ] << ", " << setw(2) <<  d.day << " " << month[d.month]  << " " << setw(4) << d.year << " ";
+    s << setw(2) << d.hour << ":" << setw(2) << d.minute << ":" << setw(2) << d.second <<" GMT";
+    s.setf(savedflags);
+    return s;
+};
+```
+
+[Next](%E2%80%A2HTTP%20Server-TGMT.h.md)[Previous](%E2%80%A2HTTP%20Server-HttpServer.r.md)
+

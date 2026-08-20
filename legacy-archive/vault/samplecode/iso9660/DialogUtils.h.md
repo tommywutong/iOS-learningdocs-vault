@@ -1,0 +1,67 @@
+---
+title: iso9660
+apple_id: DTS10000429
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/iso9660/Listings/DialogUtils_h.html
+archived_at: '2026-07-18T03:29:46.750155Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [iso9660](iso9660.md)
+
+
+[Next](ErrorMsg.c.md)[Previous](DialogUtils.c.md)
+
+# DialogUtils.h
+
+```
+/*
+    File:       DialogUtils.h
+
+    Description:
+
+    Author:     ME
+
+    Copyright:  Copyright: © 1988-1999 by Apple Computer, Inc.
+                all rights reserved.
+
+    Disclaimer: You may incorporate this sample code into your applications without
+                restriction, though the sample code has been provided "AS IS" and the
+                responsibility for its operation is 100% yours.  However, what you are
+                not permitted to do is to redistribute the source as "DSC Sample Code"
+                after having made changes. If you're going to re-distribute the source,
+                we require that you make it clear in the source that the code was
+                descended from Apple Sample Code, but that you've made changes.
+
+    Change History (most recent first):
+                6/24/99 Updated for Metrowerks Codewarror Pro 2.1(KG)
+
+*/
+
+/* Return topLeft point to center standard file dialogs. */
+extern Point DU_StdPutWhere(void);
+extern Point DU_StdGetWhere(void);
+
+/*
+ * Pre-load and center ALRT/DLOG template resources. Changes do not affect
+ *  the resource file, but if the ALRT/DLOG is created soon after the call
+ *  it will use the modified (centered) template in memory. Both routines
+ *  return the passed rsrc id to allow calls like:
+ *      Alert(DU_CenterALRT(alertID),filter);
+ *      GetNewDialog(DU_CenterDLOG(dlogID),dStorage,behindWindow);
+ */
+extern short DU_CenterALRT(short rsrcId);
+
+//Prototypes
+Point DU_StdPutWhere(void);
+Point DU_StdGetWhere(void);
+short DU_CenterALRT(short rsrcId);
+short DU_CenterDLOG(short rsrcId);
+
+extern short DU_CenterDLOG(short rsrcId);
+```
+
+[Next](ErrorMsg.c.md)[Previous](DialogUtils.c.md)
+

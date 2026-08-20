@@ -1,0 +1,138 @@
+# documentation / Hardware Drivers
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 38 份文档。
+
+## macOS（38 份）
+
+- **[15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note/Introduction%20to%2015-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-05-03，macOS，3 页
+  - [15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note/15-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note/Document%20Revision%20History.md)
+- **[15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/Introduction%20to%2015-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-06-11，macOS，3 页
+  - [15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/15-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/Document%20Revision%20History.md)
+- **[15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/Introduction%20to%2015-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-12-14，macOS，3 页
+  - [15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/15-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/Document%20Revision%20History.md)
+- **[15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/Introduction%20to%2015-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2008-03-04，macOS，3 页
+  - [15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/15-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/15-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/Document%20Revision%20History.md)
+- **[15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/Introduction%20to%2015-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-05-03，macOS，3 页
+  - [15 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/15-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/15-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/Document%20Revision%20History.md)
+- **[面向教育行业的 17 英寸 iMac 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20iMac%20for%20Education%20Developer%20Note/Introduction%20to%2017-inch%20iMac%20for%20Education%20Developer%20Note.md)** — Guide · 2006-11-07，macOS，3 页
+  - [面向教育行业的 17 英寸 iMac 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20iMac%20for%20Education%20Developer%20Note/17-inch%20iMac%20for%20Education%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-inch%20iMac%20for%20Education%20Developer%20Note/Document%20Revision%20History.md)
+- **[17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note/Introduction%20to%2017-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-04-03，macOS，3 页
+  - [17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note/17-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note/Document%20Revision%20History.md)
+- **[17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/Introduction%20to%2017-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-04-04，macOS，3 页
+  - [17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/17-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29/Document%20Revision%20History.md)
+- **[17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/Introduction%20to%2017-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-06-11，macOS，3 页
+  - [17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/17-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-2/Document%20Revision%20History.md)
+- **[17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/Introduction%20to%2017-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2007-12-14，macOS，3 页
+  - [17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/17-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-inch%20MacBook%20Pro%20Developer%20Note%20%282007%29-3/Document%20Revision%20History.md)
+- **[17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/Introduction%20to%2017-inch%20MacBook%20Pro%20Developer%20Note.md)** — Guide · 2008-03-04，macOS，3 页
+  - [17 英寸 MacBook Pro 开发者说明](../../documentation/Hardware%20Drivers/17-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/17-inch%20MacBook%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/17-Inch%20MacBook%20Pro%20Developer%20Note%20%282008%29/Document%20Revision%20History.md)
+- **[AirPort 开发者说明](../../documentation/Hardware%20Drivers/AirPort%20Developer%20Note/Introduction%20to%20AirPort%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [AirPort 概念](../../documentation/Hardware%20Drivers/AirPort%20Developer%20Note/AirPort%20Concepts.md)
+  - [AirPort 产品专属详情](../../documentation/Hardware%20Drivers/AirPort%20Developer%20Note/AirPort%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/AirPort%20Developer%20Note/Document%20Revision%20History.md)
+- **[蓝牙开发者说明](../../documentation/Hardware%20Drivers/Bluetooth%20Developer%20Note/Introduction%20to%20Bluetooth%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [Bluetooth 概念](../../documentation/Hardware%20Drivers/Bluetooth%20Developer%20Note/Bluetooth%20Concepts.md)
+  - [Bluetooth 产品专属详情](../../documentation/Hardware%20Drivers/Bluetooth%20Developer%20Note/Bluetooth%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Bluetooth%20Developer%20Note/Document%20Revision%20History.md)
+- **[CCL 调制解调器脚本编写指南](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/Introduction%20to%20CCL%20Modem%20Scripting%20Guide.md)** — Guide · 2007-06-28，macOS，8 页
+  - [编写 CCL 脚本](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/Writing%20a%20CCL%20Script.md)
+  - [CCL 脚本语法](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/CCL%20Script%20Syntax.md)
+  - [CCL Bundle 与属性列表](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/CCL%20Bundles%20and%20Property%20Lists.md)
+  - [CCL 命令参考](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/CCL%20Command%20Reference.md)
+  - [线缆规格](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/Cable%20Specifications.md)
+  - [结果代码](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/Result%20Codes.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/CCL%20Modem%20Scripting%20Guide/Document%20Revision%20History.md)
+- **[以太网开发者说明](../../documentation/Hardware%20Drivers/Ethernet%20Developer%20Note/Introduction%20to%20Ethernet%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [Ethernet 概念](../../documentation/Hardware%20Drivers/Ethernet%20Developer%20Note/Ethernet%20Concepts.md)
+  - [Ethernet 产品专属详情](../../documentation/Hardware%20Drivers/Ethernet%20Developer%20Note/Ethernet%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Ethernet%20Developer%20Note/Document%20Revision%20History.md)
+- **[FireWire 开发者说明](../../documentation/Hardware%20Drivers/FireWire%20Developer%20Note/Introduction%20to%20FireWire%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [FireWire 概念](../../documentation/Hardware%20Drivers/FireWire%20Developer%20Note/FireWire%20Concepts.md)
+  - [FireWire 产品专属详情](../../documentation/Hardware%20Drivers/FireWire%20Developer%20Note/FireWire%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/FireWire%20Developer%20Note/Document%20Revision%20History.md)
+- **[硬件开发者说明术语与缩写](../../documentation/Hardware%20Drivers/Hardware%20Developer%20Note%20Terms%20and%20Abbreviations/Introduction%20to%20Hardware%20Developer%20Note%20Terms%20and%20Abbreviations.md)** — Guide · 2006-08-08，macOS，3 页
+  - [硬件开发者说明术语与缩写](../../documentation/Hardware%20Drivers/Hardware%20Developer%20Note%20Terms%20and%20Abbreviations/Hardware%20Developer%20Note%20Terms%20and%20Abbreviations.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Hardware%20Developer%20Note%20Terms%20and%20Abbreviations/Document%20Revision%20History.md)
+- **[HBA 设备驱动程序编程指南](../../documentation/Hardware%20Drivers/HBA%20Device%20Driver%20Programming%20Guide/Introduction%20to%20HBA%20Device%20Driver%20Programming%20Guide.md)** — Guide · 2006-05-23，macOS · Kernel，5 页
+  - [HBA 设备与 I/O 处理](../../documentation/Hardware%20Drivers/HBA%20Device%20Driver%20Programming%20Guide/HBA%20Devices%20and%20I-O%20Processing.md)
+  - [开发 HBA 驱动程序](../../documentation/Hardware%20Drivers/HBA%20Device%20Driver%20Programming%20Guide/Developing%20an%20HBA%20Driver.md)
+  - [提高性能](../../documentation/Hardware%20Drivers/HBA%20Device%20Driver%20Programming%20Guide/Improving%20Performance.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/HBA%20Device%20Driver%20Programming%20Guide/Document%20Revision%20History.md)
+- **[iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note/Introduction%20to%20iMac%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，3 页
+  - [iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note/iMac%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note/Document%20Revision%20History.md)
+- **[iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282006%29/Introduction%20to%20iMac%20Developer%20Note.md)** — Guide · 2006-09-07，macOS，3 页
+  - [iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282006%29/iMac%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282006%29/Document%20Revision%20History.md)
+- **[iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29/Introduction%20to%20iMac%20Developer%20Note.md)** — Guide · 2007-05-03，macOS，3 页
+  - [iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29/iMac%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29/Document%20Revision%20History.md)
+- **[iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-2/Introduction%20to%20iMac%20Developer%20Note.md)** — Guide · 2007-04-04，macOS，3 页
+  - [iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-2/iMac%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-2/Document%20Revision%20History.md)
+- **[iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-3/Introduction%20to%20iMac%20Developer%20Note.md)** — Guide · 2007-08-07，macOS，3 页
+  - [iMac 开发者说明](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-3/iMac%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/iMac%20Developer%20Note%20%282007%29-3/Document%20Revision%20History.md)
+- **[Mac mini 开发者说明](../../documentation/Hardware%20Drivers/Mac%20mini%20Developer%20Note/Introduction%20to%20Mac%20mini%20Developer%20Note.md)** — Guide · 2007-04-04，macOS，3 页
+  - [Mac mini 开发者说明](../../documentation/Hardware%20Drivers/Mac%20mini%20Developer%20Note/Mac%20mini%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Mac%20mini%20Developer%20Note/Document%20Revision%20History.md)
+- **[Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note/Introduction%20to%20Mac%20Pro%20Developer%20Note.md)** — Guide · 2007-05-03，macOS，3 页
+  - [Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note/Mac%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note/Document%20Revision%20History.md)
+- **[Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282007%29/Introduction%20to%20Mac%20Pro%20Developer%20Note.md)** — Guide · 2007-04-05，macOS，3 页
+  - [Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282007%29/Mac%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282007%29/Document%20Revision%20History.md)
+- **[Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282008%29/Introduction%20to%20Mac%20Pro%20Developer%20Note.md)** — Guide · 2008-01-09，macOS，3 页
+  - [Mac Pro 开发者说明](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282008%29/Mac%20Pro%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Mac%20Pro%20Developer%20Note%20%282008%29/Document%20Revision%20History.md)
+- **[MacBook Air 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Air%20Developer%20Note/Introduction%20to%20MacBook%20Air%20Developer%20Note.md)** — Guide · 2008-01-18，macOS，3 页
+  - [MacBook Air 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Air%20Developer%20Note/MacBook%20Air%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Air%20Developer%20Note/Document%20Revision%20History.md)
+- **[MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note/Introduction%20to%20MacBook%20Developer%20Note.md)** — Guide · 2007-04-04，macOS，3 页
+  - [MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note/MacBook%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note/Document%20Revision%20History.md)
+- **[MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29/Introduction%20to%20MacBook%20Developer%20Note.md)** — Guide · 2007-04-04，macOS，3 页
+  - [MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29/MacBook%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29/Document%20Revision%20History.md)
+- **[MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-2/Introduction%20to%20MacBook%20Developer%20Note.md)** — Guide · 2007-05-17，macOS，3 页
+  - [MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-2/MacBook%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-2/Document%20Revision%20History.md)
+- **[MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-3/Introduction%20to%20MacBook%20Developer%20Note.md)** — Guide · 2007-11-10，macOS，3 页
+  - [MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-3/MacBook%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282007%29-3/Document%20Revision%20History.md)
+- **[MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282008%29/Introduction%20to%20MacBook%20Developer%20Note.md)** — Guide · 2008-03-04，macOS，3 页
+  - [MacBook 开发者说明](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282008%29/MacBook%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/MacBook%20Developer%20Note%20%282008%29/Document%20Revision%20History.md)
+- **[RAM 扩展开发者说明](../../documentation/Hardware%20Drivers/RAM%20Expansion%20Developer%20Note/Introduction%20to%20RAM%20Expansion%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [RAM 扩展概念](../../documentation/Hardware%20Drivers/RAM%20Expansion%20Developer%20Note/RAM%20Expansion%20Concepts.md)
+  - [RAM 扩展产品专属详情](../../documentation/Hardware%20Drivers/RAM%20Expansion%20Developer%20Note/RAM%20Expansion%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/RAM%20Expansion%20Developer%20Note/Document%20Revision%20History.md)
+- **[Thunderbolt 设备驱动程序编程指南](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/About%20the%20Thunderbolt%20Technology.md)** — Guide · 2013-10-22，macOS，6 页
+  - [Thunderbolt 技术概述](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/Thunderbolt%20Technology%20Overview.md)
+  - [使用 Thunderbolt 技术](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/Working%20with%20Thunderbolt%20Technology.md)
+  - [处理和路由中断](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/Handling%20and%20Routing%20Interrupts.md)
+  - [调试 Thunderbolt 驱动程序](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/Debugging%20Thunderbolt%20Drivers.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Thunderbolt%20Device%20Driver%20Programming%20Guide/Document%20Revision%20History.md)
+- **[通用串行总线开发者说明](../../documentation/Hardware%20Drivers/Universal%20Serial%20Bus%20Developer%20Note/Introduction%20to%20Universal%20Serial%20Bus%20Developer%20Note.md)** — Guide · 2008-04-28，macOS，4 页
+  - [USB 概念](../../documentation/Hardware%20Drivers/Universal%20Serial%20Bus%20Developer%20Note/USB%20Concepts.md)
+  - [USB 产品专属详情](../../documentation/Hardware%20Drivers/Universal%20Serial%20Bus%20Developer%20Note/USB%20Product-Specific%20Details.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Universal%20Serial%20Bus%20Developer%20Note/Document%20Revision%20History.md)
+- **[Xserve 开发者说明](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note/Introduction%20to%20Xserve%20Developer%20Note.md)** — Guide · 2007-01-12，macOS，3 页
+  - [Xserve 开发者说明](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note/Xserve%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note/Document%20Revision%20History.md)
+- **[Xserve 开发者说明](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note%20%282008%29/Introduction%20to%20Xserve%20Developer%20Note.md)** — Guide · 2008-02-08，macOS，3 页
+  - [Xserve 开发者说明](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note%20%282008%29/Xserve%20Developer%20Note.md)
+  - [文档修订历史](../../documentation/Hardware%20Drivers/Xserve%20Developer%20Note%20%282008%29/Document%20Revision%20History.md)

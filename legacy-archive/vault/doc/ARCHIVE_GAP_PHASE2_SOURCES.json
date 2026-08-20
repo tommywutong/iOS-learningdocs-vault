@@ -1,0 +1,2516 @@
+{
+  "meta": {
+    "input_records": 148,
+    "audited_records": 148,
+    "status_counts": {
+      "restored-alias-metadata": 2,
+      "restored-html": 7,
+      "restored-mirror-html": 10,
+      "restored-mirror-pdf": 5,
+      "restored-pdf": 7,
+      "staged-html": 83,
+      "unresolved": 34
+    },
+    "source_priority": [
+      "Apple original archive",
+      "Apple original PDF",
+      "Internet Archive historical snapshot"
+    ],
+    "note": "A live DocC redirect is not accepted as an Archive recovery."
+  },
+  "documents": {
+    "DTS10000026": {
+      "name": "SCSI Inquiry (More)",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SCSI_Inquiry_(More)/index.html",
+      "paths": [
+        "samplecode/SCSI Inquiry (More)/SCSI Inquiry (More).md",
+        "samplecode/SCSI Inquiry (More)/listing1.md",
+        "samplecode/SCSI Inquiry (More)/listing2.md",
+        "samplecode/SCSI Inquiry (More)/listing3.md",
+        "samplecode/SCSI Inquiry (More)/listing4.md",
+        "samplecode/SCSI Inquiry (More)/listing5.md",
+        "samplecode/SCSI Inquiry (More)/listing6.md",
+        "samplecode/SCSI Inquiry (More)/listing7.md",
+        "samplecode/SCSI Inquiry (More)/listing8.md",
+        "samplecode/SCSI Inquiry (More)/listing9.md"
+      ],
+      "pages": 10,
+      "images": 0,
+      "sample_archive": {
+        "path": "samplecode/SCSI Inquiry (More)/attachments/original-sample.zip",
+        "sha256": "8b46e9d37f1474f9d57276afd4cb1bd82e432d089befd57732690a5e604f1f0a",
+        "bytes": 57384
+      },
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "samplecode/SCSI_Inquiry_(More)/index.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/samplecode/SCSI_Inquiry_(More)/index.html"
+      }
+    },
+    "DTS10000165": {
+      "name": "SearchProcs & Color Sep",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SearchProcs_&_Color_Sep/index.html",
+      "paths": [
+        "samplecode/SearchProcs & Color Sep/SearchProcs & Color Sep.md",
+        "samplecode/SearchProcs & Color Sep/listing1.md"
+      ],
+      "pages": 2,
+      "images": 0,
+      "sample_archive": {
+        "path": "samplecode/SearchProcs & Color Sep/attachments/original-sample.zip",
+        "sha256": "727292508d861df78ef4f34758dccb1ea45fd8a66af69c750ed31c73193ecdeb",
+        "bytes": 13703
+      },
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "samplecode/SearchProcs_&_Color_Sep/index.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/samplecode/SearchProcs_&_Color_Sep/index.html"
+      }
+    },
+    "DTS10000340": {
+      "name": "2BufRecord&Play",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/2BufRecord&Play/index.html",
+      "paths": [
+        "samplecode/2BufRecord&Play/2BufRecord&Play.md",
+        "samplecode/2BufRecord&Play/listing1.md",
+        "samplecode/2BufRecord&Play/listing2.md"
+      ],
+      "pages": 3,
+      "images": 0,
+      "sample_archive": {
+        "path": "samplecode/2BufRecord&Play/attachments/original-sample.zip",
+        "sha256": "6b4e8bf793f389f1f0ca4ce19221151d3c849744f2e5c6308568048c496b6393",
+        "bytes": 5568
+      },
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "samplecode/2BufRecord&Play/index.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/samplecode/2BufRecord&Play/index.html"
+      }
+    },
+    "DTS10000413": {
+      "name": "ToolbarSample: Using NSToolbar to construct a window toolbar",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/ToolbarSample/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190617034712id_/https://developer.apple.com/library/archive/samplecode/ToolbarSample/Introduction/Intro.html",
+        "size": 12304,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/ToolbarSample/Introduction/Intro.html",
+        "snapshot": "20190617034712",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS10000734": {
+      "name": "Sample (Traffic Light)",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/Sample_(Traffic_Light)/index.html",
+      "paths": [
+        "samplecode/Sample (Traffic Light)/Sample (Traffic Light).md",
+        "samplecode/Sample (Traffic Light)/listing1.md",
+        "samplecode/Sample (Traffic Light)/listing2.md",
+        "samplecode/Sample (Traffic Light)/listing3.md"
+      ],
+      "pages": 4,
+      "images": 0,
+      "sample_archive": {
+        "path": "samplecode/Sample (Traffic Light)/attachments/original-sample.zip",
+        "sha256": "d1784d3c57d707a4a5869d9d3478ec85f42dfbf7bd971f9fe728ddfa4262b04c",
+        "bytes": 31642
+      },
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "samplecode/Sample_(Traffic_Light)/index.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/samplecode/Sample_(Traffic_Light)/index.html"
+      }
+    },
+    "DTS10000829": {
+      "name": "makeeffectslideshow",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/makeeffectslideshow/index.html",
+      "paths": [
+        "samplecode/makeeffectslideshow/makeeffectslideshow.md",
+        "samplecode/makeeffectslideshow/listing1.md",
+        "samplecode/makeeffectslideshow/listing10.md",
+        "samplecode/makeeffectslideshow/listing11.md",
+        "samplecode/makeeffectslideshow/listing12.md",
+        "samplecode/makeeffectslideshow/listing13.md",
+        "samplecode/makeeffectslideshow/listing14.md",
+        "samplecode/makeeffectslideshow/listing15.md",
+        "samplecode/makeeffectslideshow/listing2.md",
+        "samplecode/makeeffectslideshow/listing3.md",
+        "samplecode/makeeffectslideshow/listing4.md",
+        "samplecode/makeeffectslideshow/listing5.md",
+        "samplecode/makeeffectslideshow/listing6.md",
+        "samplecode/makeeffectslideshow/listing7.md",
+        "samplecode/makeeffectslideshow/listing8.md",
+        "samplecode/makeeffectslideshow/listing9.md"
+      ],
+      "pages": 16,
+      "images": 0,
+      "sample_archive": {
+        "path": "samplecode/makeeffectslideshow/attachments/original-sample.zip",
+        "sha256": "4c389f1e5d12c1f223cb81a43abb1c8e32e9efb7aeeb630920a5f3714766b1f8",
+        "bytes": 142626
+      },
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "samplecode/makeeffectslideshow/index.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/samplecode/makeeffectslideshow/index.html"
+      }
+    },
+    "DTS10001488": {
+      "name": "What Does Extension Manager Turn Off?",
+      "status": "restored-alias-metadata",
+      "path": "qa/ops/What Does Extension Manager Turn Off/Legacy Documentclose button.md",
+      "source_url": "https://developer.apple.com/library/archive/qa/ops/ops07.html",
+      "note": "The body was already present under the neighbouring record's metadata."
+    },
+    "DTS10001707": {
+      "name": "Getting a Packet Trace",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1176/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190204133647id_/https://developer.apple.com/library/archive/qa/qa1176/_index.html",
+        "size": 41467,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/qa/qa1176/_index.html",
+        "snapshot": "20190204133647",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "DTS10002175": {
+      "name": "Playing Compressed WAVE files via the Sound Manager",
+      "status": "restored-alias-metadata",
+      "path": "qa/snd/Playing Compressed WAVE files via the Sound Manager.md",
+      "source_url": "https://developer.apple.com/library/archive/qa/snd/snd08.html",
+      "note": "The body was already present under the neighbouring record's metadata."
+    },
+    "DTS10003386": {
+      "name": "CrashReporter",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2004/tn2123.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190926045930id_/https://developer.apple.com/library/archive/technotes/tn2004/tn2123.html",
+        "size": 78095,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2004/tn2123.html",
+        "snapshot": "20190926045930",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS10004300": {
+      "name": "vDSP Examples",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/vDSPExamples/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS10004441": {
+      "name": "SourceView: Using NSOutlineView with NSTreeController",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SourceView/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40007710": {
+      "name": "UIKit Catalog (iOS): Creating and Customizing UIKit Controls",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/UICatalog/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40008184": {
+      "name": "Understanding and Analyzing Application Crash Reports",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2151/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200113011153id_/https://developer.apple.com/library/archive/technotes/tn2151/_index.html",
+        "size": 96607,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2151/_index.html",
+        "snapshot": "20200113011153",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40009394": {
+      "name": "LazyTableImages: Populating UITableView content asynchronously",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/LazyTableImages/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191214192741id_/https://developer.apple.com/library/archive/samplecode/LazyTableImages/Introduction/Intro.html",
+        "size": 12151,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/LazyTableImages/Introduction/Intro.html",
+        "snapshot": "20191214192741",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40009469": {
+      "name": "CurrentAddress",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/CurrentAddress/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175120id_/https://developer.apple.com/library/archive/samplecode/CurrentAddress/Introduction/Intro.html",
+        "size": 11866,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/CurrentAddress/Introduction/Intro.html",
+        "snapshot": "20181026175120",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40009745": {
+      "name": "Best Practices for Creating and Deploying HTTP Live Streaming Media for Apple Devices",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2224/_index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40009746": {
+      "name": "MapCallouts: Using MapKit Annotations",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/MapCallouts/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175127id_/https://developer.apple.com/library/archive/samplecode/MapCallouts/Introduction/Intro.html",
+        "size": 12458,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/MapCallouts/Introduction/Intro.html",
+        "snapshot": "20181026175127",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40010048": {
+      "name": "Breadcrumb: Using CoreLocation to track user movement",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/Breadcrumb/Introduction/Intro.html",
+      "pages": 16,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190920231007id_/https://developer.apple.com/library/archive/samplecode/Breadcrumb/Introduction/Intro.html",
+        "size": 12222,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/Breadcrumb/Introduction/Intro.html",
+        "snapshot": "20190920231007",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40010049": {
+      "name": "HazardMap",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/HazardMap/Introduction/Intro.html",
+      "pages": 13,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191114070143id_/https://developer.apple.com/library/archive/samplecode/HazardMap/Introduction/Intro.html",
+        "size": 11753,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/HazardMap/Introduction/Intro.html",
+        "snapshot": "20191114070143",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40010112": {
+      "name": "AVCam-iOS: Using AVFoundation to Capture Images and Movies",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/AVCam/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40010116": {
+      "name": "USB Audio on the Mac",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2274/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191208030521id_/https://developer.apple.com/library/archive/technotes/tn2274/_index.html",
+        "size": 58463,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2274/_index.html",
+        "snapshot": "20191208030521",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40010209": {
+      "name": "Playing media while in the background using AV Foundation on iOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1668/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190805193515id_/https://developer.apple.com/library/archive/qa/qa1668/_index.html",
+        "size": 19749,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20190805193515id_/https://developer.apple.com/library/archive/qa/qa1668/_index.html",
+        "snapshot": "20190805193515",
+        "target_timestamp": "20190805193515"
+      }
+    },
+    "DTS40010599": {
+      "name": "Synchronous Networking On The Main Thread",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1693/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200214011333id_/https://developer.apple.com/library/archive/qa/qa1693/_index.html",
+        "size": 19261,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1693/_index.html",
+        "snapshot": "20200214011333",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40011221": {
+      "name": "Troubleshooting Application Archiving in Xcode",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2215/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200518211834id_/https://developer.apple.com/library/archive/technotes/tn2215/_index.html",
+        "size": 22749,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2215/_index.html",
+        "snapshot": "20200518211834",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40011341": {
+      "name": "Debugging Deployed iOS Apps",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1747/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191127173633id_/https://developer.apple.com/library/archive/qa/qa1747/_index.html",
+        "size": 15245,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1747/_index.html",
+        "snapshot": "20191127173633",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40011342": {
+      "name": "How do I prevent files from being backed up to iCloud and iTunes?",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1719/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200104075142id_/https://developer.apple.com/library/archive/qa/qa1719/_index.html",
+        "size": 16712,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1719/_index.html",
+        "snapshot": "20200104075142",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40011365": {
+      "name": "PrefsInCloud : Using NSUbiquitousKeyValueStore with iCloud",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/PrefsInCloud/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40011977": {
+      "name": "Testing your app on Beta OS releases",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2249/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191016095858id_/https://developer.apple.com/library/archive/technotes/tn2249/_index.html",
+        "size": 23712,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2249/_index.html",
+        "snapshot": "20191016095858",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40012186": {
+      "name": "How to fix OpenGL ES application crashes when moving to the background",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1766/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200214011332id_/https://developer.apple.com/library/archive/qa/qa1766/_index.html",
+        "size": 10209,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1766/_index.html",
+        "snapshot": "20200214011332",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40012196": {
+      "name": "How to Match a Crash Report to a Build",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1765/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191020095015id_/https://developer.apple.com/library/archive/qa/qa1765/_index.html",
+        "size": 22942,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1765/_index.html",
+        "snapshot": "20191020095015",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40012293": {
+      "name": "CoreMediaIO",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/CoreMediaIO/Introduction/Intro.html",
+      "pages": 143,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200323073455id_/https://developer.apple.com/library/archive/samplecode/CoreMediaIO/Introduction/Intro.html",
+        "size": 11909,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/CoreMediaIO/Introduction/Intro.html",
+        "snapshot": "20200323073455",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40012622": {
+      "name": "Resolving App Store Approval Issues for HTTP Live Streaming",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1767/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191216125848id_/https://developer.apple.com/library/archive/qa/qa1767/_index.html",
+        "size": 13437,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1767/_index.html",
+        "snapshot": "20191216125848",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40012713": {
+      "name": "Understanding the EXT-X-VERSION tag",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1752/_index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40013190": {
+      "name": "State Restoration",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/StateRestore/Introduction/Intro.html",
+      "reason": "http404",
+      "last_attempt": {
+        "status": 404,
+        "final": "https://web.archive.org/web/20201231235959id_/https://developer.apple.com/library/archive/samplecode/StateRestore/Introduction/Intro.html",
+        "size": 142322,
+        "ctype": "text/html",
+        "ok": false,
+        "why": "http404",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20201231235959id_/https://developer.apple.com/library/archive/samplecode/StateRestore/Introduction/Intro.html",
+        "snapshot": "20201231235959",
+        "target_timestamp": "20201231235959"
+      }
+    },
+    "DTS40013268": {
+      "name": "Reducing Download Size for iOS App Updates",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1779/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20180724002558id_/https://developer.apple.com/library/archive/qa/qa1779/_index.html",
+        "size": 12340,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/qa/qa1779/_index.html",
+        "snapshot": "20180724002558",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "DTS40013332": {
+      "name": "MapSearch",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/MapSearch/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40013589": {
+      "name": "InfoBarStackView: Demonstrates how to use NSStackView",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/InfoBarStackView/Introduction/Intro.html",
+      "reason": "http404",
+      "last_attempt": {
+        "status": 404,
+        "final": "https://web.archive.org/web/20201231235959id_/https://developer.apple.com/library/archive/samplecode/InfoBarStackView/Introduction/Intro.html",
+        "size": 142334,
+        "ctype": "text/html",
+        "ok": false,
+        "why": "http404",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20201231235959id_/https://developer.apple.com/library/archive/samplecode/InfoBarStackView/Introduction/Intro.html",
+        "snapshot": "20201231235959",
+        "target_timestamp": "20201231235959"
+      }
+    },
+    "DTS40013590": {
+      "name": "Core Audio User-Space Driver Examples",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/AudioDriverExamples/Introduction/Intro.html",
+      "pages": 3,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200413101736id_/https://developer.apple.com/library/archive/samplecode/AudioDriverExamples/Introduction/Intro.html",
+        "size": 12771,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/AudioDriverExamples/Introduction/Intro.html",
+        "snapshot": "20200413101736",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40014114": {
+      "name": "Thunderbolt Audio Devices and PCI Bus Latency",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1452/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174829id_/https://developer.apple.com/library/archive/qa/qa1452/_index.html",
+        "size": 12863,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1452/_index.html",
+        "snapshot": "20181026174829",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40014195": {
+      "name": "Reducing the size of my App",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1795/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191115095641id_/https://developer.apple.com/library/archive/qa/qa1795/_index.html",
+        "size": 27286,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1795/_index.html",
+        "snapshot": "20191115095641",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40014795": {
+      "name": "In-App Purchase Best Practices",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2387/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191113235805id_/https://developer.apple.com/library/archive/technotes/tn2387/_index.html",
+        "size": 35481,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2387/_index.html",
+        "snapshot": "20191113235805",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40015177": {
+      "name": "CFNetwork Diagnostic Logging",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1887/_index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "DTS40015545": {
+      "name": "WatchKit Project Configuration Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2410/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190320073446id_/https://developer.apple.com/library/archive/technotes/tn2410/_index.html",
+        "size": 32201,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2410/_index.html",
+        "snapshot": "20190320073446",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40016206": {
+      "name": "Understanding Memory Usage Limits for WatchKit Apps and Extensions",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1894/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175001id_/https://developer.apple.com/library/archive/qa/qa1894/_index.html",
+        "size": 15337,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1894/_index.html",
+        "snapshot": "20181026175001",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40016604": {
+      "name": "Specifying the renderer for SpriteKit and SceneKit",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1904/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191021162209id_/https://developer.apple.com/library/archive/qa/qa1904/_index.html",
+        "size": 8011,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1904/_index.html",
+        "snapshot": "20191021162209",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40017251": {
+      "name": "Project Configuration Reference for watchOS 4 Applications",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2424/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190320092139id_/https://developer.apple.com/library/archive/technotes/tn2424/_index.html",
+        "size": 26606,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2424/_index.html",
+        "snapshot": "20190320092139",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40017497": {
+      "name": "App Testing Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2431/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191122184452id_/https://developer.apple.com/library/archive/technotes/tn2431/_index.html",
+        "size": 73068,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2431/_index.html",
+        "snapshot": "20191122184452",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40017579": {
+      "name": "iOS Wi-Fi Management APIs",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/qa/qa1942/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200807164811id_/https://developer.apple.com/library/archive/qa/qa1942/_index.html",
+        "size": 12961,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/qa/qa1942/_index.html",
+        "snapshot": "20200807164811",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "DTS40017657": {
+      "name": "Setting Refresh Rates on ProMotion and Traditional Displays",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2460/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190206232920id_/https://developer.apple.com/library/archive/technotes/tn2460/_index.html",
+        "size": 21201,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/technotes/tn2460/_index.html",
+        "snapshot": "20190206232920",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "DTS40017677": {
+      "name": "Best Practices for Link Previews in Messages",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/tn2444/_index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190823134334id_/https://developer.apple.com/library/archive/technotes/tn2444/_index.html",
+        "size": 16253,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/tn2444/_index.html",
+        "snapshot": "20190823134334",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP30001001": {
+      "name": "vImage Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Performance/Conceptual/vImage/Introduction/Introduction.html",
+      "pages": 12,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191216082231id_/https://developer.apple.com/library/archive/documentation/Performance/Conceptual/vImage/Introduction/Introduction.html",
+        "size": 17045,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Performance/Conceptual/vImage/Introduction/Introduction.html",
+        "snapshot": "20191216082231",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP30001021": {
+      "name": "Java for WebObjects Developers",
+      "status": "restored-pdf",
+      "path": "documentation/Web Objects/Java for WebObjects Developers/Java for WebObjects Developers.md",
+      "attachment": "documentation/Web Objects/Java for WebObjects Developers/attachments/original.pdf",
+      "pages": 110,
+      "source_url": "https://developer.apple.com/library/archive/documentation/WebObjects/JavaForWODev/JavaForWODev.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://developer.apple.com/library/archive/documentation/WebObjects/JavaForWODev/JavaForWODev.pdf",
+        "size": 3433839,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "https://developer.apple.com/library/archive/documentation/WebObjects/JavaForWODev/JavaForWODev.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40000917": {
+      "name": "Open Directory Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Directory/Introduction/Introduction.html",
+      "pages": 5,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174817id_/https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Directory/Introduction/Introduction.html",
+        "size": 13948,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Directory/Introduction/Introduction.html",
+        "snapshot": "20181026174817",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40000918": {
+      "name": "Open Directory Plug-in Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Dir_Plugin/Introduction/Introduction.html",
+      "pages": 14,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190820210510id_/https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Dir_Plugin/Introduction/Introduction.html",
+        "size": 13539,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Networking/Conceptual/Open_Dir_Plugin/Introduction/Introduction.html",
+        "snapshot": "20190820210510",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40000939": {
+      "name": "QuickTime File Format Specification",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFPreface/qtffPreface.html",
+      "pages": 16,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200101062658id_/https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFPreface/qtffPreface.html",
+        "size": 16578,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFPreface/qtffPreface.html",
+        "snapshot": "20200101062658",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40000979": {
+      "name": "All Hardware Products",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Hardware/hardware2.html",
+      "paths": [
+        "documentation/Hardware/All Hardware Products/All Hardware Products.md"
+      ],
+      "pages": 1,
+      "images": 0,
+      "sample_archive": null,
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Hardware/hardware2.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Hardware/hardware2.html"
+      }
+    },
+    "TP40000997": {
+      "name": "Desktop Icons",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Carbon/Conceptual/DesktopIcons/ch13.html",
+      "paths": [
+        "documentation/Carbon/Desktop Icons/Desktop Icons.md"
+      ],
+      "pages": 1,
+      "images": 0,
+      "sample_archive": null,
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Carbon/Conceptual/DesktopIcons/ch13.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Carbon/Conceptual/DesktopIcons/ch13.html"
+      }
+    },
+    "TP40001014": {
+      "name": "High Level Toolbox  Release Notes (10.3 and earlier)",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/releasenotes/Carbon/HIToolboxOlderNotes.html",
+      "paths": [
+        "releasenotes/Carbon/High Level Toolbox Release Notes (10.3 and earlier)/High Level Toolbox Release Notes (10.3 and earlier).md"
+      ],
+      "pages": 1,
+      "images": 0,
+      "sample_archive": null,
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "releasenotes/Carbon/HIToolboxOlderNotes.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/releasenotes/Carbon/HIToolboxOlderNotes.html"
+      }
+    },
+    "TP40001024": {
+      "name": "Legacy Device Services",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Hardware/legacy/legacy.html",
+      "paths": [
+        "documentation/Hardware/Legacy Device Services/Legacy Device Services.md"
+      ],
+      "pages": 1,
+      "images": 0,
+      "sample_archive": null,
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Hardware/legacy/legacy.html",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Hardware/legacy/legacy.html"
+      }
+    },
+    "TP40001050": {
+      "name": "What's New In QuickTime",
+      "status": "restored-mirror-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/QuickTime/whatsnew.htm",
+      "paths": [
+        "documentation/Quick Time/What's New In QuickTime/What's New In QuickTime.md"
+      ],
+      "pages": 1,
+      "images": 0,
+      "sample_archive": null,
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/QuickTime/whatsnew.htm",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/QuickTime/whatsnew.htm"
+      }
+    },
+    "TP40001358": {
+      "name": "Certificate, Key, and Trust Services Programming Guide",
+      "status": "restored-mirror-pdf",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Security/Conceptual/CertKeyTrustProgGuide/index.html",
+      "path": "documentation/Security/Certificate, Key, and Trust Services Programming Guide/Certificate, Key, and Trust Services Programming Guide.md",
+      "attachment": "documentation/Security/Certificate, Key, and Trust Services Programming Guide/attachments/original.pdf",
+      "pages": 38,
+      "sha256": "ed68c53530997ca95d6e613c7b420fd537bbf7d0ab1e238b1f385017d8ed444c",
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Security/Conceptual/CertKeyTrustProgGuide/CertKeyTrustProgGuide.pdf",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Security/Conceptual/CertKeyTrustProgGuide/CertKeyTrustProgGuide.pdf"
+      }
+    },
+    "TP40001991": {
+      "name": "Xserve RAID Using RAID Admin 1.2 and Disk Utility",
+      "status": "restored-pdf",
+      "path": "documentation/Xserve RAID Using RAID Admin 1.2 and Disk Utility/Xserve RAID Using RAID Admin 1.2 and Disk Utility.md",
+      "attachment": "documentation/Xserve RAID Using RAID Admin 1.2 and Disk Utility/attachments/original.pdf",
+      "pages": 39,
+      "source_url": "http://images.apple.com/server/docs/RAIDAdmin1.2_121406.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://images.apple.com/server/docs/RAIDAdmin1.2_121406.pdf",
+        "size": 1207890,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "http://images.apple.com/server/docs/RAIDAdmin1.2_121406.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40002019": {
+      "name": "Xserve User's Guide",
+      "status": "restored-pdf",
+      "path": "documentation/Xserve User's Guide/Xserve User's Guide.md",
+      "attachment": "documentation/Xserve User's Guide/attachments/original.pdf",
+      "pages": 31,
+      "source_url": "http://images.apple.com/server/docs/Xserve_User_Guide20080108.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://images.apple.com/server/docs/Xserve_User_Guide20080108.pdf",
+        "size": 996617,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "http://images.apple.com/server/docs/Xserve_User_Guide20080108.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40002023": {
+      "name": "Apple Remote Desktop Administrator's Guide Version 3.3",
+      "status": "restored-pdf",
+      "path": "documentation/Apple Remote Desktop Administrator's Guide Version 3.3/Apple Remote Desktop Administrator's Guide Version 3.3.md",
+      "attachment": "documentation/Apple Remote Desktop Administrator's Guide Version 3.3/attachments/original.pdf",
+      "pages": 199,
+      "source_url": "http://images.apple.com/server/docs/ARD_3_Admin_Guide_v3.3.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://images.apple.com/server/docs/ARD_3_Admin_Guide_v3.3.pdf",
+        "size": 6754273,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "http://images.apple.com/server/docs/ARD_3_Admin_Guide_v3.3.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40002029": {
+      "name": "OS X Server Glossary",
+      "status": "unresolved",
+      "source_url": "http://manuals.info.apple.com/en_US/Mac_OS_X_Server_Glossary_v10.5.pdf",
+      "reason": "not-pdf",
+      "last_attempt": {
+        "status": 200,
+        "final": "https://support.apple.com/en-us/docs",
+        "size": 114412,
+        "ctype": "text/html;charset=utf-8",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "http://manuals.info.apple.com/en_US/Mac_OS_X_Server_Glossary_v10.5.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40004285": {
+      "name": "QuickTime Atoms and Resources Reference",
+      "status": "restored-mirror-pdf",
+      "source_url": "https://developer.apple.com/library/archive/documentation/QuickTime/Reference/QTRef_AtomsResources/index.html",
+      "path": "documentation/Quick Time/QuickTime Atoms and Resources Reference/QuickTime Atoms and Resources Reference.md",
+      "attachment": "documentation/Quick Time/QuickTime Atoms and Resources Reference/attachments/original.pdf",
+      "pages": 116,
+      "sha256": "75f6a4cc675a952f5087b4ae4fefb688b56716a3033b90b1d5934d5988c43267",
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/QuickTime/Reference/QTRef_AtomsResources/QTRef_AtomsResources.pdf",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/QuickTime/Reference/QTRef_AtomsResources/QTRef_AtomsResources.pdf"
+      }
+    },
+    "TP40004561": {
+      "name": "iSync SyncML Guide",
+      "status": "restored-pdf",
+      "path": "documentation/Apple Applications/iSync SyncML Guide/iSync SyncML Guide.md",
+      "attachment": "documentation/Apple Applications/iSync SyncML Guide/attachments/original.pdf",
+      "pages": 35,
+      "source_url": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/iSyncSyncMLGuide/iSyncSyncMLGuide.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/iSyncSyncMLGuide/iSyncSyncMLGuide.pdf",
+        "size": 248168,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/iSyncSyncMLGuide/iSyncSyncMLGuide.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40004644": {
+      "name": "QuickTime 7.1 User's Guide",
+      "status": "restored-pdf",
+      "path": "documentation/QuickTime 7.1 User's Guide/QuickTime 7.1 User's Guide.md",
+      "attachment": "documentation/QuickTime 7.1 User's Guide/attachments/original.pdf",
+      "pages": 63,
+      "source_url": "http://images.apple.com/quicktime/pdf/QuickTime7_User_Guide.pdf",
+      "acquisition_source_url": "http://images.apple.com/quicktime/pdf/QuickTime7_User_Guide.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20150207205350id_/http://images.apple.com/quicktime/pdf/QuickTime7_User_Guide.pdf",
+        "size": 558248,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20150218170513id_/http://images.apple.com/quicktime/pdf/QuickTime7_User_Guide.pdf",
+        "snapshot": "20150207205350",
+        "target_timestamp": "20150218170513"
+      }
+    },
+    "TP40004652": {
+      "name": "Instruments User Guide",
+      "status": "restored-mirror-pdf",
+      "source_url": "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/index.html",
+      "path": "documentation/Developer Tools/Instruments User Guide/Instruments User Guide.md",
+      "attachment": "documentation/Developer Tools/Instruments User Guide/attachments/original.pdf",
+      "pages": 94,
+      "sha256": "2eab7bab79fd4aa11fd44aa502c2070cc3ade889c338b0f0fa50fbafd3f7444e",
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/InstrumentsUserGuide.pdf",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/InstrumentsUserGuide.pdf"
+      }
+    },
+    "TP40006821": {
+      "name": "Drag Manager Programmer's Guide",
+      "status": "restored-mirror-pdf",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Carbon/Conceptual/DragMgrProgrammersGuide/DragMgrProgrammersGuide.pdf",
+      "path": "documentation/Carbon/Drag Manager Programmer's Guide/Drag Manager Programmer's Guide.md",
+      "attachment": "documentation/Carbon/Drag Manager Programmer's Guide/attachments/original.pdf",
+      "pages": 92,
+      "sha256": "1923f556904ab41f5662d941c46531c986c86f461f698ca00e5739fe453cc6ce",
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Carbon/Conceptual/DragMgrProgrammersGuide/DragMgrProgrammersGuide.pdf",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Carbon/Conceptual/DragMgrProgrammersGuide/DragMgrProgrammersGuide.pdf"
+      }
+    },
+    "TP40006824": {
+      "name": "PowerPC Numerics",
+      "status": "restored-mirror-pdf",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Performance/Conceptual/Mac_OSX_Numerics/Mac_OSX_Numerics.pdf",
+      "path": "documentation/Performance/PowerPC Numerics/PowerPC Numerics.md",
+      "attachment": "documentation/Performance/PowerPC Numerics/attachments/original.pdf",
+      "pages": 208,
+      "sha256": "90975596b74963be21acebd7f07fc6cac6943699aa811b2a6d246e51a265a89b",
+      "mirror": {
+        "repository": "https://github.com/cellularmitosis/ADC-reference-library-2009-july",
+        "commit": "40bbfb75fbca44be17a305321eaee3ab8382572b",
+        "path": "documentation/Performance/Conceptual/Mac_OSX_Numerics/Mac_OSX_Numerics.pdf",
+        "url": "https://github.com/cellularmitosis/ADC-reference-library-2009-july/blob/40bbfb75fbca44be17a305321eaee3ab8382572b/documentation/Performance/Conceptual/Mac_OSX_Numerics/Mac_OSX_Numerics.pdf"
+      }
+    },
+    "TP40006825": {
+      "name": "Apple Style Guide",
+      "status": "restored-html",
+      "path": "documentation/Apple Style Guide/Apple Style Guide.md",
+      "images": 0,
+      "source_url": "https://help.apple.com/asg/mac/2013/",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20150110164633id_/https://help.apple.com/asg/mac/2013/",
+        "size": 11156,
+        "ctype": "text/html; charset=UTF-8",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20150110164633id_/https://help.apple.com/asg/mac/2013/",
+        "snapshot": "20150110164633",
+        "target_timestamp": "20150110164633"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40007072": {
+      "name": "App Programming Guide for iOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html",
+      "pages": 9,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190126025331id_/https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html",
+        "size": 19235,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html",
+        "snapshot": "20190126025331",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40007451": {
+      "name": "Table View Programming Guide for iOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/TableView_iPhone/AboutTableViewsiPhone/AboutTableViewsiPhone.html",
+      "pages": 10,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190223161435id_/https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/TableView_iPhone/AboutTableViewsiPhone/AboutTableViewsiPhone.html",
+        "size": 23651,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/TableView_iPhone/AboutTableViewsiPhone/AboutTableViewsiPhone.html",
+        "snapshot": "20190223161435",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40008111": {
+      "name": "WebObjects 5.2.1 Release Notes",
+      "status": "restored-html",
+      "path": "releasenotes/WebObjects 5.2.1 Release Notes/WebObjects 5.2.1 Release Notes.md",
+      "images": 45,
+      "source_url": "http://docs.info.apple.com/article.html?artnum=75433",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20030325062408id_/http://docs.info.apple.com/article.html?artnum=75433",
+        "size": 45871,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20030325062408id_/http://docs.info.apple.com/article.html?artnum=75433",
+        "snapshot": "20030325062408",
+        "target_timestamp": "20030325062408"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40008112": {
+      "name": "WebObjects 5.2.2 Release Notes",
+      "status": "restored-html",
+      "path": "releasenotes/WebObjects 5.2.2 Release Notes/WebObjects 5.2.2 Release Notes.md",
+      "images": 2,
+      "source_url": "http://docs.info.apple.com/article.html?artnum=107649",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20080202192502id_/http://docs.info.apple.com/article.html?artnum=107649",
+        "size": 40723,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20080202192502id_/http://docs.info.apple.com/article.html?artnum=107649",
+        "snapshot": "20080202192502",
+        "target_timestamp": "20080202192502"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40008113": {
+      "name": "WebObjects 5.2.3 Release Notes",
+      "status": "restored-html",
+      "path": "releasenotes/WebObjects 5.2.3 Release Notes/WebObjects 5.2.3 Release Notes.md",
+      "images": 1,
+      "source_url": "http://docs.info.apple.com/article.html?artnum=107873",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20070812061751id_/http://docs.info.apple.com/article.html?artnum=107873",
+        "size": 31467,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20070812061751id_/http://docs.info.apple.com/article.html?artnum=107873",
+        "snapshot": "20070812061751",
+        "target_timestamp": "20070812061751"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40008267": {
+      "name": "In-App Purchase Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html",
+      "pages": 10,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190115185026id_/https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html",
+        "size": 17516,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html",
+        "snapshot": "20190115185026",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40009019": {
+      "name": "Customizing Final Cut Studio Blu-ray Disc Templates",
+      "status": "restored-pdf",
+      "path": "documentation/Apple Applications/Customizing Final Cut Studio Blu-ray Disc Templates/Customizing Final Cut Studio Blu-ray Disc Templates.md",
+      "attachment": "documentation/Apple Applications/Customizing Final Cut Studio Blu-ray Disc Templates/attachments/original.pdf",
+      "pages": 36,
+      "source_url": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/CustomizingFinalCutStudioBlu-rayDiscTemplates20091005.pdf",
+      "acquisition": {
+        "status": 200,
+        "final": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/CustomizingFinalCutStudioBlu-rayDiscTemplates20091005.pdf",
+        "size": 11621490,
+        "ctype": "application/pdf",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/CustomizingFinalCutStudioBlu-rayDiscTemplates20091005.pdf",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40009023": {
+      "name": "iOS ABI Function Call Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/iPhoneOSABIReference/Introduction/Introduction.html",
+      "pages": 5,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200102103817id_/https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/iPhoneOSABIReference/Introduction/Introduction.html",
+        "size": 11912,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/iPhoneOSABIReference/Introduction/Introduction.html",
+        "snapshot": "20200102103817",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40009765": {
+      "name": "Calendar and Reminders Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html",
+      "pages": 8,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190721212750id_/https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html",
+        "size": 16298,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html",
+        "snapshot": "20190721212750",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40009977": {
+      "name": "Safari Extensions Development Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Tools/Conceptual/SafariExtensionGuide/Introduction/Introduction.html",
+      "pages": 24,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191210160111id_/https://developer.apple.com/library/archive/documentation/Tools/Conceptual/SafariExtensionGuide/Introduction/Introduction.html",
+        "size": 22307,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Tools/Conceptual/SafariExtensionGuide/Introduction/Introduction.html",
+        "snapshot": "20191210160111",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40009993": {
+      "name": "Safari Extensions Conversion Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SafariExtensionsConversionGuide/Introduction/Introduction.html",
+      "pages": 5,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190615162635id_/https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SafariExtensionsConversionGuide/Introduction/Introduction.html",
+        "size": 11477,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SafariExtensionsConversionGuide/Introduction/Introduction.html",
+        "snapshot": "20190615162635",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40010206": {
+      "name": "Configuration Profile Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20180607120500id_/https://developer.apple.com/library/archive/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html",
+        "size": 385788,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20180607120500id_/https://developer.apple.com/library/archive/featuredarticles/iPhoneConfigurationProfileRef/Introduction/Introduction.html",
+        "snapshot": "20180607120500",
+        "target_timestamp": "20180607120500"
+      }
+    },
+    "TP40010215": {
+      "name": "Xcode Overview",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/index.html",
+      "pages": 54,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191229023901id_/https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/index.html",
+        "size": 44460,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/index.html",
+        "snapshot": "20191229023901",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40010573": {
+      "name": "Receipt Validation Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html",
+      "pages": 5,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200103192645id_/https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html",
+        "size": 12767,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html",
+        "snapshot": "20200103192645",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40011183": {
+      "name": "App Sandbox Design Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html",
+      "pages": 7,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200104224554id_/https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html",
+        "size": 21006,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AboutAppSandbox/AboutAppSandbox.html",
+        "snapshot": "20200104224554",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40011227": {
+      "name": "Final Cut Pro X XML Format",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/FinalCutProX/Reference/FinalCutProXXMLFormat/Introduction/Introduction.html",
+      "pages": 9,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191119010940id_/https://developer.apple.com/library/archive/documentation/FinalCutProX/Reference/FinalCutProXXMLFormat/Introduction/Introduction.html",
+        "size": 28227,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/FinalCutProX/Reference/FinalCutProXXMLFormat/Introduction/Introduction.html",
+        "snapshot": "20191119010940",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40011382": {
+      "name": "App Store Review Guidelines",
+      "status": "restored-html",
+      "path": "documentation/App Store Review Guidelines/App Store Review Guidelines.md",
+      "images": 0,
+      "source_url": "http://developer.apple.com/appstore/resources/approval/guidelines.html",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191223000806id_/https://developer.apple.com/app-store/review/guidelines/",
+        "size": 125671,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/http://developer.apple.com/appstore/resources/approval/guidelines.html",
+        "snapshot": "20191223000806",
+        "target_timestamp": "20191231235959"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40011383": {
+      "name": "Mac App Store Review Guidelines",
+      "status": "restored-html",
+      "path": "documentation/Mac App Store Review Guidelines/Mac App Store Review Guidelines.md",
+      "images": 0,
+      "source_url": "http://developer.apple.com/appstore/mac/resources/approval/guidelines.html",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200206111947id_/https://developer.apple.com/app-store/review/guidelines/",
+        "size": 125671,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/http://developer.apple.com/appstore/mac/resources/approval/guidelines.html",
+        "snapshot": "20200206111947",
+        "target_timestamp": "20191231235959"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40011988": {
+      "name": "PassKit Web Service Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/PassKit/Reference/PassKit_WebService/WebService.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191203022231id_/https://developer.apple.com/library/archive/documentation/PassKit/Reference/PassKit_WebService/WebService.html",
+        "size": 20129,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/PassKit/Reference/PassKit_WebService/WebService.html",
+        "snapshot": "20191203022231",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40012026": {
+      "name": "PassKit Package Format Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191015135250id_/https://developer.apple.com/library/archive/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html",
+        "size": 12400,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/Introduction.html",
+        "snapshot": "20191015135250",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40012262": {
+      "name": "Start Developing Mac Apps Today",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapOSX/index.html",
+      "pages": 13,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174831id_/https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapOSX/index.html",
+        "size": 4694,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181026174831id_/https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapOSX/index.html",
+        "snapshot": "20181026174831",
+        "target_timestamp": "20181026174831"
+      }
+    },
+    "TP40012299": {
+      "name": "iAd Producer Help",
+      "status": "restored-html",
+      "path": "documentation/iAd Producer Help/iAd Producer Help.md",
+      "images": 0,
+      "source_url": "http://help.apple.com/iadproducer/mac/",
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20150328002029id_/http://help.apple.com/iadproducer/mac/5.0/",
+        "size": 30795,
+        "ctype": "text/html; charset=UTF-8",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20150328005613id_/http://help.apple.com/iadproducer/mac/5.0/",
+        "snapshot": "20150328002029",
+        "target_timestamp": "20150328005613"
+      },
+      "layout": "generic-offsite"
+    },
+    "TP40012619": {
+      "name": "Verifying App Accessibility on iOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html",
+      "pages": 4,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200312024030id_/https://developer.apple.com/library/archive/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html",
+        "size": 14969,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/technotes/TestingAccessibilityOfiOSApps/TestingtheAccessibilityofiOSApps/TestingtheAccessibilityofiOSApps.html",
+        "snapshot": "20200312024030",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40013500": {
+      "name": "App Distribution Guide for Xcode 4",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/AppDistributionGuideXcode4/Introduction/Introduction.html",
+      "reason": "http404",
+      "last_attempt": {
+        "status": 404,
+        "final": "https://web.archive.org/web/20211231235959id_/https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/AppDistributionGuideXcode4/Introduction/Introduction.html",
+        "size": 142428,
+        "ctype": "text/html",
+        "ok": false,
+        "why": "http404",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20211231235959id_/https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/AppDistributionGuideXcode4/Introduction/Introduction.html",
+        "snapshot": "20211231235959",
+        "target_timestamp": "20211231235959"
+      }
+    },
+    "TP40013501": {
+      "name": "64-Bit Transition Guide for Cocoa Touch",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaTouch64BitGuide/Introduction/Introduction.html",
+      "pages": 5,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181216031551id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaTouch64BitGuide/Introduction/Introduction.html",
+        "size": 19277,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaTouch64BitGuide/Introduction/Introduction.html",
+        "snapshot": "20181216031551",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40013726": {
+      "name": "Game Center Configuration Guide for iTunes Connect",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide/Introduction/Introduction.html",
+      "pages": 9,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191205120558id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide/Introduction/Introduction.html",
+        "size": 20907,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide/Introduction/Introduction.html",
+        "snapshot": "20191205120558",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40014150": {
+      "name": "Adopting Modern Objective-C",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html",
+        "size": 34917,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "apple",
+        "acquisition_url": "https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html",
+        "snapshot": null,
+        "target_timestamp": null
+      }
+    },
+    "TP40014489": {
+      "name": "iTunes Connect 向けGame Center構成ガイド",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_Jpn/Chapters/Introduction.html",
+      "pages": 9,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190319171652id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_Jpn/Chapters/Introduction.html",
+        "size": 23064,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_Jpn/Chapters/Introduction.html",
+        "snapshot": "20190319171652",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40014490": {
+      "name": "iTunes Connect 的 Game Center 配置指南",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_SCh/Chapters/Introduction.html",
+      "pages": 9,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190319171357id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_SCh/Chapters/Introduction.html",
+        "size": 20282,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/iTunesConnectGameCenter_Guide_SCh/Chapters/Introduction.html",
+        "snapshot": "20190319171357",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40014547": {
+      "name": "Earthquakes: Populating a Core Data Store Using a Background Queue",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/Earthquakes/Introduction/Intro.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175121id_/https://developer.apple.com/library/archive/samplecode/Earthquakes/Introduction/Intro.html",
+        "size": 12289,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/Earthquakes/Introduction/Intro.html",
+        "snapshot": "20181026175121",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40014630": {
+      "name": "MetalDeferredLighting",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/MetalDeferredLighting/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40014683": {
+      "name": "Table Search with UISearchController",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/TableSearch_UISearchController/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40014789": {
+      "name": "Playground Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Swift/Reference/Playground_Ref/Chapters/XCPlayground.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190319122328id_/https://developer.apple.com/library/archive/documentation/Swift/Reference/Playground_Ref/Chapters/XCPlayground.html",
+        "size": 10670,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Swift/Reference/Playground_Ref/Chapters/XCPlayground.html",
+        "snapshot": "20190319122328",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40014929": {
+      "name": "Payment Token Format Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/PassKit/Reference/PaymentTokenJSON/PaymentTokenJSON.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174942id_/https://developer.apple.com/library/archive/documentation/PassKit/Reference/PaymentTokenJSON/PaymentTokenJSON.html",
+        "size": 26555,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/PassKit/Reference/PaymentTokenJSON/PaymentTokenJSON.html",
+        "snapshot": "20181026174942",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40014969": {
+      "name": "App Programming Guide for watchOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181110135042id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html",
+        "size": 25959,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html",
+        "snapshot": "20181110135042",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40015022": {
+      "name": "Debugging with Xcode",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/about_debugging_w_xcode.html",
+      "pages": 7,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191206224240id_/https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/about_debugging_w_xcode.html",
+        "size": 14034,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/about_debugging_w_xcode.html",
+        "snapshot": "20191206224240",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40015048": {
+      "name": "HomeKit Catalog: Creating Homes, Pairing and Controlling Accessories, and Setting Up Triggers",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/HomeKitCatalog/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40015050": {
+      "name": "HomeKit Developer Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html",
+      "pages": 10,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190319135624id_/https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html",
+        "size": 14064,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/HomeKitDeveloperGuide/Introduction/Introduction.html",
+        "snapshot": "20190319135624",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40015064": {
+      "name": "Apple TV Markup Language Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40015214": {
+      "name": "Start Developing iOS Apps (Swift)",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html",
+      "pages": 13,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191207174119id_/https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html",
+        "size": 20073,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html",
+        "snapshot": "20191207174119",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40015408": {
+      "name": "Apple News Format Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/Apple_News_Format_Ref/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40015409": {
+      "name": "Apple News API Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/News_API_Ref/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40016175": {
+      "name": "Emporium: A Simple Shopping Experience with Apple Pay",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/Emporium/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20200122041543id_/https://developer.apple.com/library/archive/samplecode/Emporium/Introduction/Intro.html",
+        "size": 12313,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/Emporium/Introduction/Intro.html",
+        "snapshot": "20200122041543",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016185": {
+      "name": "AudioUnitV3Example: A Basic AudioUnit Extension and Host Implementation",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/AudioUnitV3Example/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174834id_/https://developer.apple.com/library/archive/samplecode/AudioUnitV3Example/Introduction/Intro.html",
+        "size": 12809,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/samplecode/AudioUnitV3Example/Introduction/Intro.html",
+        "snapshot": "20181026174834",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40016265": {
+      "name": "Safari Content-Blocking Rules Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40016506": {
+      "name": "TVMLAudioVideo: Audio and Video Playback on tvOS",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/TVMLAudioVideo/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174958id_/https://developer.apple.com/library/archive/samplecode/TVMLAudioVideo/Introduction/Intro.html",
+        "size": 11695,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/TVMLAudioVideo/Introduction/Intro.html",
+        "snapshot": "20181026174958",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016545": {
+      "name": "ApplicationShortcuts: Using UIApplicationShortcutItems",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/ApplicationShortcuts/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190603212128id_/https://developer.apple.com/library/archive/samplecode/ApplicationShortcuts/Introduction/Intro.html",
+        "size": 12080,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/ApplicationShortcuts/Introduction/Intro.html",
+        "snapshot": "20190603212128",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016561": {
+      "name": "TouchCanvas: Using UITouch efficiently and effectively",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/TouchCanvas/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175109id_/https://developer.apple.com/library/archive/samplecode/TouchCanvas/Introduction/Intro.html",
+        "size": 12226,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/TouchCanvas/Introduction/Intro.html",
+        "snapshot": "20181026175109",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016564": {
+      "name": "XCPlayground Module Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/XCPlaygroundModuleRef/XCPlayground.html",
+      "pages": 2,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190319164207id_/https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/XCPlaygroundModuleRef/XCPlayground.html",
+        "size": 30233,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/XCPlaygroundModuleRef/XCPlayground.html",
+        "snapshot": "20190319164207",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016596": {
+      "name": "HLS Authoring Specification for Apple Devices",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Reference/HLSAuthoringSpec/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40016664": {
+      "name": "Advertising Guide for News Publishers",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/News_Advertising/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40016670": {
+      "name": "Campaign Management API for News Publishers",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/iAd_News_Campaign_API/Book/Overview.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175104id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/iAd_News_Campaign_API/Book/Overview.html",
+        "size": 24380,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/iAd_News_Campaign_API/Book/Overview.html",
+        "snapshot": "20181026175104",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016718": {
+      "name": "TVML Programming Guide",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/TVMLKitJS/Conceptual/TVMLProgrammingGuide/index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190129221401id_/https://developer.apple.com/library/archive/documentation/TVMLKitJS/Conceptual/TVMLProgrammingGuide/index.html",
+        "size": 19524,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/documentation/TVMLKitJS/Conceptual/TVMLProgrammingGuide/index.html",
+        "snapshot": "20190129221401",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016778": {
+      "name": "TVML Guide: Core concepts in TVML and TVMLKit",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/TVMLGuide/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175119id_/https://developer.apple.com/library/archive/samplecode/TVMLGuide/Introduction/Intro.html",
+        "size": 11887,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/TVMLGuide/Introduction/Intro.html",
+        "snapshot": "20181026175119",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40016784": {
+      "name": "Apple News Format: Design Tutorial",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/News_Design_Tutorial/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40016785": {
+      "name": "Apple News Format: Advanced Design Tutorial",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/News_Design_Tutorial_Advanced/index.html",
+      "reason": "http404",
+      "last_attempt": {
+        "status": 404,
+        "final": "https://web.archive.org/web/20211231235959id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/News_Design_Tutorial_Advanced/index.html",
+        "size": 142399,
+        "ctype": "text/html",
+        "ok": false,
+        "why": "http404",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20211231235959id_/https://developer.apple.com/library/archive/documentation/General/Conceptual/News_Design_Tutorial_Advanced/index.html",
+        "snapshot": "20211231235959",
+        "target_timestamp": "20211231235959"
+      }
+    },
+    "TP40017110": {
+      "name": "SpeakToMe: Using Speech Recognition with AVAudioEngine",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SpeakToMe/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190923092838id_/https://developer.apple.com/library/archive/samplecode/SpeakToMe/Introduction/Intro.html",
+        "size": 11688,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/SpeakToMe/Introduction/Intro.html",
+        "snapshot": "20190923092838",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017290": {
+      "name": "Speakerbox: Using CallKit to create a VoIP app",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/Speakerbox/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017311": {
+      "name": "Proactive Toolbox: Increasing usage of your app with proactive suggestions using NSUserActivity",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/ProactiveToolbox/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175103id_/https://developer.apple.com/library/archive/samplecode/ProactiveToolbox/Introduction/Intro.html",
+        "size": 12383,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/ProactiveToolbox/Introduction/Intro.html",
+        "snapshot": "20181026175103",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017312": {
+      "name": "AVCamBarcode: Using AVFoundation to Detect Barcodes and Faces",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/AVCamBarcode/Introduction/Intro.html",
+      "pages": 3,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20191113012412id_/https://developer.apple.com/library/archive/samplecode/AVCamBarcode/Introduction/Intro.html",
+        "size": 11968,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/AVCamBarcode/Introduction/Intro.html",
+        "snapshot": "20191113012412",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017313": {
+      "name": "Metal Heaps And Fences: Using Heaps and Fences in Metal",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/MetalHeapsAndFences/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017319": {
+      "name": "Safari App Extension Programming Guide",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/SafariAppExtension_PG/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017320": {
+      "name": "HLS Catalog: Using AVFoundation to play and persist HTTP Live Streams",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/HLSCatalog/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017322": {
+      "name": "MPRemoteCommandSample: Using MPRemoteCommandCenter respond to remote control events",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/MPRemoteCommandSample/Introduction/Intro.html",
+      "pages": 22,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175124id_/https://developer.apple.com/library/archive/samplecode/MPRemoteCommandSample/Introduction/Intro.html",
+        "size": 12523,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/MPRemoteCommandSample/Introduction/Intro.html",
+        "snapshot": "20181026175124",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017329": {
+      "name": "Ice Cream Builder: A simple Messages app extension",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/IceCreamBuilder/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017333": {
+      "name": "SpeedSketch: Leveraging touch input for a drawing application",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SpeedSketch/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017343": {
+      "name": "Playground Book Format Reference",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/swift_playgrounds_doc_format/index.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175002id_/https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/swift_playgrounds_doc_format/index.html",
+        "size": 43947,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20181231235959id_/https://developer.apple.com/library/archive/documentation/Xcode/Conceptual/swift_playgrounds_doc_format/index.html",
+        "snapshot": "20181026175002",
+        "target_timestamp": "20181231235959"
+      }
+    },
+    "TP40017380": {
+      "name": "TalkingToTheLiveView: Sending messages to a Swift Playground live view and saving data to its key-value store",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/TalkingToTheLiveView/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026175128id_/https://developer.apple.com/library/archive/samplecode/TalkingToTheLiveView/Introduction/Intro.html",
+        "size": 12735,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/TalkingToTheLiveView/Introduction/Intro.html",
+        "snapshot": "20181026175128",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017387": {
+      "name": "Mobile Device Management Protocol Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/1-Introduction/Introduction.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017495": {
+      "name": "Search Ads API Reference",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/AppStoreSearchAdsAPIReference/index.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017550": {
+      "name": "NSTouchBar Catalog: Creating and Customizing NSTouchBar",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/NSTouchBarCatalog/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20190921091545id_/https://developer.apple.com/library/archive/samplecode/NSTouchBarCatalog/Introduction/Intro.html",
+        "size": 12225,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/NSTouchBarCatalog/Introduction/Intro.html",
+        "snapshot": "20190921091545",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017556": {
+      "name": "AVCamPhotoFilter: Using AVFoundation to Capture photos with image processing",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/AVCamPhotoFilter/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017557": {
+      "name": "EmporiumWeb: Request and handle Apple Pay payments on the web",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/EmporiumWeb/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174950id_/https://developer.apple.com/library/archive/samplecode/EmporiumWeb/Introduction/Intro.html",
+        "size": 12249,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/EmporiumWeb/Introduction/Intro.html",
+        "snapshot": "20181026174950",
+        "target_timestamp": "20191231235959"
+      }
+    },
+    "TP40017580": {
+      "name": "CloudKit Share: Building CloudKit local cache and using CloudKit share APIs",
+      "status": "unresolved",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/CloudKitShare/Introduction/Intro.html",
+      "reason": "not-attempted",
+      "last_attempt": {
+        "status": 0,
+        "ok": false,
+        "why": "not-attempted"
+      }
+    },
+    "TP40017663": {
+      "name": "Using the Watch Connectivity API",
+      "status": "staged-html",
+      "source_url": "https://developer.apple.com/library/archive/samplecode/SimpleWatchConnectivity/Introduction/Intro.html",
+      "pages": 1,
+      "acquisition": {
+        "status": 200,
+        "final": "https://web.archive.org/web/20181026174952id_/https://developer.apple.com/library/archive/samplecode/SimpleWatchConnectivity/Introduction/Intro.html",
+        "size": 12002,
+        "ctype": "text/html",
+        "ok": true,
+        "why": "ok",
+        "source": "wayback",
+        "acquisition_url": "https://web.archive.org/web/20191231235959id_/https://developer.apple.com/library/archive/samplecode/SimpleWatchConnectivity/Introduction/Intro.html",
+        "snapshot": "20181026174952",
+        "target_timestamp": "20191231235959"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+---
+title: ImageMapView
+apple_id: DTS10003646
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2005-10-17'
+source_url: https://developer.apple.com/library/archive/samplecode/ImageMapView/Listings/ImageMapView_FoodPyramid_html.html
+archived_at: '2026-07-18T03:12:44.170255Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ImageMapView](ImageMapView.md)
+
+
+[Next](ImageMapView-ImageMap.cp.md)[Previous](HIFramework-TView.h.md)
+
+# ImageMapView/FoodPyramid.html
+
+```
+<map name="Food Pyramid">
+<area shape="poly" coords="150,1,116,60,184,60" href="fats" alt="Fats and Sweets">
+<area shape="poly" coords="148,63,148,122,81,122,114,63" href="dairy" alt="Dairy">
+<area shape="poly" coords="185,63,219,122,150,122,151,63" href="meat" alt="Meat and Eggs">
+<area shape="poly" coords="154,124,79,124,47,182,154,182" href="vegetables" alt="Vegetables">
+<area shape="poly" coords="158,182,158,124,220,124,253,182" href="fruits" alt="Fruits">
+<area shape="poly" coords="255,186,291,248,9,248,44,186" href="grains" alt="Grains">
+</map>
+```
+
+[Next](ImageMapView-ImageMap.cp.md)[Previous](HIFramework-TView.h.md)
+

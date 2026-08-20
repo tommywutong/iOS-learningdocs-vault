@@ -1,0 +1,89 @@
+---
+title: Pallete DA
+apple_id: DTS10000145
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Pallete_DA/Listings/Pallet_r.html
+archived_at: '2026-07-18T03:18:46.693620Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Pallete DA](Pallete%20DA.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](Pallet.c.md)
+
+# Pallet.r
+
+```c
+/*
+ * File Memory.r
+ *
+ * Copyright Apple Computer, Inc. 1985-1987
+ * All rights reserved.
+ *
+ * Sample desk accessory resource file.
+ * This incorporates the DRVR header information (defined here)
+ * with the linked code (stored as a 'DRVW' resource in the link command)
+ */
+
+#include "Types.r"              /* To get system types */
+#include "MPWTypes.r"           /* To get 'DRVW' type */
+
+#define DriverID    12
+
+#ifdef NOASM_BUILD
+/*
+ * This will produce a DRVR resource from the special DRVW type.
+ * (this eliminates the need for using the Assembler to create
+ *  the DA header, but makes it impossible to use SADE, oops!)
+ *
+ * Note that the ID 12 is irrelevant, since the Font/DA Mover
+ * will renumber it to something else when installing it anyway.
+ *
+ * The leading NUL in the resource name is required to
+ * conform to the desk accessory naming convention.
+ *
+ * The resource is declared purgeable.  If the code were to
+ * do funky things like SetTrapAddress calls (requiring the code to
+ * be around at all times), we would have to set it nonpurgeable.
+ */
+
+type 'DRVR' as 'DRVW';          /* Map 'DRVW' => 'DRVR' */
+
+resource 'DRVR' (DriverID, "\0x00Pallet", purgeable) {
+    /*
+     * DRVR flags
+     */
+    dontNeedLock,           /* OK to float around, not saving ProcPtrs */
+    needTime,               /* Yes, give us periodic Control calls */
+    dontNeedGoodbye,        /* No special requirements */
+    noStatusEnable,
+    ctlEnable,              /* Desk accessories only do Control calls */
+    noWriteEnable,
+    noReadEnable,
+    2*60,                   /* drvrDelay - Wake up every 5 seconds */
+    updateMask,             /* drvrEMask - This DA only handles update events */
+    0,                      /* drvrMenu - This DA has no menu */
+    "Memory",               /* drvrName - This isn't used by the DA */
+    /*
+     * This directive inserts the contents of the DRVW resource
+     * produced by linking DRVRRuntime.o with our DA code
+     */
+    $$resource("Pallet.DRVW", 'DRVW', 0)
+};
+#endif
+
+resource 'WIND' (0xC000 | (DriverID << 5), "Pallet") {
+    {100, 100, 355, 355},
+    noGrowDocProc,
+    visible,
+    goAway,
+    0x0,
+    "Pallet"
+};
+```
+
+[Next](Document%20Revision%20History.md)[Previous](Pallet.c.md)
+

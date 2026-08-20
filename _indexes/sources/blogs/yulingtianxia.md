@@ -1,9 +1,9 @@
 # 杨萧玉
 
-> 状态：frozen；授权：未声明 → 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：未声明 → 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-08-03，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | App 二进制文件重排已经被玩坏了 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/app-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%87%8D%E6%8E%92%E5%B7%B2%E7%BB%8F%E8%A2%AB%E7%8E%A9%E5%9D%8F%E4%BA%86.md) · [网页](http://yulingtianxia.com/blog/2019/09/01/App-Order-Files/) | — | 原生中文 |
 | App与Extensions间通信共享数据 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/app%E4%B8%8Eextensions%E9%97%B4%E9%80%9A%E4%BF%A1%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE.md) · [网页](http://yulingtianxia.com/blog/2015/04/06/Communication-between-your-App-and-Extensions/) | — | 原生中文 |
@@ -31,7 +31,7 @@
 | Flutter 官方终于出手了，DartNative 将何去何从? | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/flutter-%E5%AE%98%E6%96%B9%E7%BB%88%E4%BA%8E%E5%87%BA%E6%89%8B%E4%BA%86-dartnative-%E5%B0%86%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E.md) · [网页](http://yulingtianxia.com/blog/2022/12/12/DartNative-Interface/) | — | 原生中文 |
 | GitHub Page build warning | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/github-page-build-warning.md) · [网页](http://yulingtianxia.com/blog/2014/05/02/github-page-build-warning/) | — | 原生中文 |
 | GitHub 虚假 Star 净网行动 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/github-%E8%99%9A%E5%81%87-star-%E5%87%80%E7%BD%91%E8%A1%8C%E5%8A%A8.md) · [网页](http://yulingtianxia.com/blog/2018/09/16/Fuck-Fake-GitHub-Stars/) | — | 原生中文 |
-| Hook Objective-C Block with Libffi | — | 杨萧玉 | Objective-C Runtime、Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/hook-objective-c-block-with-libffi.md) · [网页](http://yulingtianxia.com/blog/2018/02/28/Hook-Objective-C-Block-with-Libffi/) | — | 原生中文 |
+| Hook Objective-C Block with Libffi | — | 杨萧玉 | Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/hook-objective-c-block-with-libffi.md) · [网页](http://yulingtianxia.com/blog/2018/02/28/Hook-Objective-C-Block-with-Libffi/) | — | 原生中文 |
 | How to make a Pebble watchface | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/how-to-make-a-pebble-watchface.md) · [网页](http://yulingtianxia.com/blog/2018/01/15/How-to-make-a-Pebble-watchface/) | — | 原生中文 |
 | Implementing CNN with MPS | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/implementing-cnn-with-mps.md) · [网页](http://yulingtianxia.com/blog/2017/05/30/Implementing-CNN-with-MPS/) | — | 原生中文 |
 | Initialization in Swift | — | 杨萧玉 | Swift 语言 | [中文原文](../../../blogs/zh/yulingtianxia/initialization-in-swift.md) · [网页](http://yulingtianxia.com/blog/2014/06/24/initialization-in-swift/) | — | 原生中文 |
@@ -50,7 +50,7 @@
 | Objective-C Message Throttle and Debounce | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-message-throttle-and-debounce.md) · [网页](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/) | — | 原生中文 |
 | Objective-C Method Swizzling | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-method-swizzling.md) · [网页](http://yulingtianxia.com/blog/2017/04/17/Objective-C-Method-Swizzling/) | — | 原生中文 |
 | Objective-C Runtime | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-runtime.md) · [网页](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/) | — | 原生中文 |
-| Objective-C 引用计数原理 | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86.md) · [网页](http://yulingtianxia.com/blog/2015/12/06/The-Principle-of-Refenrence-Counting/) | — | 原生中文 |
+| Objective-C 引用计数原理 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86.md) · [网页](http://yulingtianxia.com/blog/2015/12/06/The-Principle-of-Refenrence-Counting/) | — | 原生中文 |
 | Objective-C 消息发送与转发机制原理 | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/objective-c-%E6%B6%88%E6%81%AF%E5%8F%91%E9%80%81%E4%B8%8E%E8%BD%AC%E5%8F%91%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86.md) · [网页](http://yulingtianxia.com/blog/2016/06/15/Objective-C-Message-Sending-and-Forwarding/) | — | 原生中文 |
 | Objective-C中的KVC和KVO | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/objective-c%E4%B8%AD%E7%9A%84kvc%E5%92%8Ckvo.md) · [网页](http://yulingtianxia.com/blog/2014/05/12/objective-czhong-de-kvche-kvo/) | — | 原生中文 |
 | Objective-C交叉引用解决方法 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/objective-c%E4%BA%A4%E5%8F%89%E5%BC%95%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md) · [网页](http://yulingtianxia.com/blog/2014/04/24/objective-cjiao-cha-yin-yong-jie-jue-fang-fa/) | — | 原生中文 |
@@ -91,7 +91,7 @@
 | 初识Core Data(3) | — | 杨萧玉 | 数据与持久化 | [中文原文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-3.md) · [网页](http://yulingtianxia.com/blog/2014/07/03/chu-shi-core-data-3/) | — | 原生中文 |
 | 初识Core Data(4) | — | 杨萧玉 | 数据与持久化 | [中文原文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-4.md) · [网页](http://yulingtianxia.com/blog/2015/07/25/%E5%88%9D%E8%AF%86Core-Data-4/) | — | 原生中文 |
 | 告别 Flutter Channel，调用 Native API 仅需一行代码！ | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E5%91%8A%E5%88%AB-flutter-channel-%E8%B0%83%E7%94%A8-native-api-%E4%BB%85%E9%9C%80%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81.md) · [网页](http://yulingtianxia.com/blog/2020/06/25/Codegen-for-DartNative/) | — | 原生中文 |
-| 在 Flutter 中玩转 Objective-C Block | — | 杨萧玉 | Objective-C Runtime、Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E5%9C%A8-flutter-%E4%B8%AD%E7%8E%A9%E8%BD%AC-objective-c-block.md) · [网页](http://yulingtianxia.com/blog/2020/03/28/Using-Objective-C-Block-in-Flutter/) | — | 原生中文 |
+| 在 Flutter 中玩转 Objective-C Block | — | 杨萧玉 | Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E5%9C%A8-flutter-%E4%B8%AD%E7%8E%A9%E8%BD%AC-objective-c-block.md) · [网页](http://yulingtianxia.com/blog/2020/03/28/Using-Objective-C-Block-in-Flutter/) | — | 原生中文 |
 | 在Mac上用WiFi共享校园网 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E5%9C%A8mac%E4%B8%8A%E7%94%A8wifi%E5%85%B1%E4%BA%AB%E6%A0%A1%E5%9B%AD%E7%BD%91.md) · [网页](http://yulingtianxia.com/blog/2014/09/07/zai-macshang-yong-wifigong-xiang-xiao-yuan-wang/) | — | 原生中文 |
 | 在Swift中构建assert(), 第一部分: Lazy Evaluation | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E5%9C%A8swift%E4%B8%AD%E6%9E%84%E5%BB%BAassert-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-lazy-evaluation.md) · [网页](http://yulingtianxia.com/blog/2014/09/26/building-assert-in-swift-1/) | — | 原生中文 |
 | 在Swift中构建assert(), 第二部分: __FILE__ 和 __LINE__ | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E5%9C%A8swift%E4%B8%AD%E6%9E%84%E5%BB%BAassert-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-file-%E5%92%8C-line.md) · [网页](http://yulingtianxia.com/blog/2014/09/26/building-assert-in-swift-2/) | — | 原生中文 |
@@ -106,7 +106,7 @@
 | 尝试实现 Web 上的看图模式 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E5%B0%9D%E8%AF%95%E5%AE%9E%E7%8E%B0-web-%E4%B8%8A%E7%9A%84%E7%9C%8B%E5%9B%BE%E6%A8%A1%E5%BC%8F.md) · [网页](http://yulingtianxia.com/blog/2015/10/20/Try-to-implement-picture-browser-mode-on-webview/) | — | 原生中文 |
 | 悟空! | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E6%82%9F%E7%A9%BA.md) · [网页](http://yulingtianxia.com/blog/2015/03/08/Insight-of-Null/) | — | 原生中文 |
 | 深入理解typedef | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3typedef.md) · [网页](http://yulingtianxia.com/blog/2014/04/17/shen-ru-li-jie-typedef/) | — | 原生中文 |
-| 用 Dart 来写 Objective-C 代码 | — | 杨萧玉 | Objective-C Runtime | [中文原文](../../../blogs/zh/yulingtianxia/%E7%94%A8-dart-%E6%9D%A5%E5%86%99-objective-c-%E4%BB%A3%E7%A0%81.md) · [网页](http://yulingtianxia.com/blog/2019/10/27/Write-Objective-C-Code-using-Dart/) | — | 原生中文 |
+| 用 Dart 来写 Objective-C 代码 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E7%94%A8-dart-%E6%9D%A5%E5%86%99-objective-c-%E4%BB%A3%E7%A0%81.md) · [网页](http://yulingtianxia.com/blog/2019/10/27/Write-Objective-C-Code-using-Dart/) | — | 原生中文 |
 | 用DFS算法计算SpriteKit中复合体的构成 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E7%94%A8dfs%E7%AE%97%E6%B3%95%E8%AE%A1%E7%AE%97spritekit%E4%B8%AD%E5%A4%8D%E5%90%88%E4%BD%93%E7%9A%84%E6%9E%84%E6%88%90.md) · [网页](http://yulingtianxia.com/blog/2014/04/21/yong-dfssuan-fa-ji-suan-spritekitzhong-fu-he-ti-de-gou-cheng/) | — | 原生中文 |
 | 用Swift和SpriteKit开发iOS游戏 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E7%94%A8swift%E5%92%8Cspritekit%E5%BC%80%E5%8F%91ios%E6%B8%B8%E6%88%8F.md) · [网页](http://yulingtianxia.com/blog/2014/07/17/a-ios-game-developed-by-swift-and-spritekit/) | — | 原生中文 |
 | 腾讯实习第一个月工作总结 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E8%85%BE%E8%AE%AF%E5%AE%9E%E4%B9%A0%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93.md) · [网页](http://yulingtianxia.com/blog/2015/11/13/Summary-of-the-first-month-in-the-internship-of-Tencent/) | — | 原生中文 |
@@ -116,6 +116,6 @@
 | 让你的微信不再被人撤回消息 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%B8%8D%E5%86%8D%E8%A2%AB%E4%BA%BA%E6%92%A4%E5%9B%9E%E6%B6%88%E6%81%AF.md) · [网页](http://yulingtianxia.com/blog/2016/05/06/Let-your-WeChat-for-Mac-never-revoke-messages/) | — | 原生中文 |
 | 让软件支持Retina | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E8%AE%A9%E8%BD%AF%E4%BB%B6%E6%94%AF%E6%8C%81retina.md) · [网页](http://yulingtianxia.com/blog/2014/06/19/rang-ruan-jian-zhi-chi-retina/) | — | 原生中文 |
 | 谈谈 dart_native 混合编程引擎的设计 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E8%B0%88%E8%B0%88-dart-native-%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B%E5%BC%95%E6%93%8E%E7%9A%84%E8%AE%BE%E8%AE%A1.md) · [网页](http://yulingtianxia.com/blog/2019/11/28/DartObjC-Design/) | — | 原生中文 |
-| 追踪 Objective-C Block 代码定义的位置 | — | 杨萧玉 | Objective-C Runtime、Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E8%BF%BD%E8%B8%AA-objective-c-block-%E4%BB%A3%E7%A0%81%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BD%8D%E7%BD%AE.md) · [网页](http://yulingtianxia.com/blog/2018/06/24/Objective-C-Block-Mangle-Name/) | — | 原生中文 |
-| 追踪 Objective-C 方法中的 Block 参数对象 | — | 杨萧玉 | Objective-C Runtime、Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E8%BF%BD%E8%B8%AA-objective-c-%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84-block-%E5%8F%82%E6%95%B0%E5%AF%B9%E8%B1%A1.md) · [网页](http://yulingtianxia.com/blog/2018/03/31/Track-Block-Arguments-of-Objective-C-Method/) | — | 原生中文 |
+| 追踪 Objective-C Block 代码定义的位置 | — | 杨萧玉 | Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E8%BF%BD%E8%B8%AA-objective-c-block-%E4%BB%A3%E7%A0%81%E5%AE%9A%E4%B9%89%E7%9A%84%E4%BD%8D%E7%BD%AE.md) · [网页](http://yulingtianxia.com/blog/2018/06/24/Objective-C-Block-Mangle-Name/) | — | 原生中文 |
+| 追踪 Objective-C 方法中的 Block 参数对象 | — | 杨萧玉 | Block 与闭包 | [中文原文](../../../blogs/zh/yulingtianxia/%E8%BF%BD%E8%B8%AA-objective-c-%E6%96%B9%E6%B3%95%E4%B8%AD%E7%9A%84-block-%E5%8F%82%E6%95%B0%E5%AF%B9%E8%B1%A1.md) · [网页](http://yulingtianxia.com/blog/2018/03/31/Track-Block-Arguments-of-Objective-C-Method/) | — | 原生中文 |
 | 音频情绪识别 | — | 杨萧玉 | — | [中文原文](../../../blogs/zh/yulingtianxia/%E9%9F%B3%E9%A2%91%E6%83%85%E7%BB%AA%E8%AF%86%E5%88%AB.md) · [网页](http://yulingtianxia.com/blog/2019/03/30/Audio-Emotion-Recognition/) | — | 原生中文 |

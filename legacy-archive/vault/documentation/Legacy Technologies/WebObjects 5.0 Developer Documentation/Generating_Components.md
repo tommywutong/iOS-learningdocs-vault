@@ -1,0 +1,170 @@
+---
+title: WebObjects 5.0 Developer Documentation
+apple_id: TP40006776
+resource_type: Guide
+platform: macOS
+topic: null
+technology: null
+published: '2007-12-11'
+source_url: https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_5/DirectToWeb/WalkThrough/Generating_Components.html
+archived_at: '2026-07-15T08:12:29.546457Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [WebObjects 5.0 Developer Documentation](webobjects.md)
+
+
+|  |
+| --- |
+| __PATH__[Documentation](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/index.html) __>__ [WebObjects](webobjects.md) |
+
+[![Previous](attachments/DirectToWeb/Images/previous.gif)](WebAssistant_Expert_Mode.md)[![Next](attachments/DirectToWeb/Images/next.gif)](User_Templates.md)
+
+## Generating Components
+
+When you have worked with the WebAssistant and customized
+your pages to your liking, you may still want to add more features
+to your application. To do so, you can "freeze" a page; that
+is, save it as a WebObjects component. When you do this, the component becomes
+part of your project and is no longer created "on the fly" by
+Direct to Web. This has several advantages:
+
+- You have
+  complete control over the visual appearance of the page. You can
+  add any static or dynamic HTML elements you like, using a tool such
+  as WebObjects Builder.
+- You can add functionality to the page by editing the component's
+  Java code, as well as by editing the bindings of the page's dynamic
+  elements.
+- Your application's performance improves because Direct to
+  Web doesn't have to go through the process of creating the page
+  "on the fly."
+
+The main disadvantage of generating components is that you
+lose the ability to modify settings with the WebAssistant since
+the entity, property settings, and page configuration are stored
+directly in the generated component. To modify the page, you must
+edit the component or its corresponding `.java` file.
+Therefore, you should try to get your settings as close as possible
+to what you want before generating the component.
+
+To generate a component:
+
+1. Click the
+   Expert Mode button at the bottom of the WebAssistant to enter Expert
+   mode.
+2. Click the Generation tab at the top of the WebAssistant.
+   ![[image: ../Art/wafreezepage.gif]](../Art/wafreezepage.gif)
+3. Select the task and entity corresponding to the page you want
+   to generate.
+
+   You can't select "\*all\*" to generate multiple
+   components. You must generate the components one at a time.
+4. In the Advanced Options group of controls, make sure the "Use
+   DirectToWeb or User Template" radio button is selected.
+5. Click Freeze Component.
+
+   The Freeze Component window appears.
+   It contains a text field with a default name for your page (the
+   page name followed by the entity name). You can edit the name if
+   you choose.
+
+   ![[image: ../Art/wafreezecomponentwindow.gif]](../Art/wafreezecomponentwindow.gif)
+6. Click the Ok button.
+
+   Direct to Web generates a component
+   (with extension `.wo`)
+   and a corresponding `.java` file
+   and adds them to your project. You may have to wait a few moments
+   for this process to complete. Your settings are automatically saved.
+7. Rebuild and run your project, and restart the WebAssistant.
+
+If you decide not to use the frozen component and have Direct
+to Web build the page "on the fly," select the "Use DirectToWeb
+or User Template" option.
+
+When you generate a page and click Update, the browser's
+current page doesn't reflect the changes. To use the new component,
+you must rebuild the application, relaunch it, and then navigate
+to a new instance of the page. For example, if the current page
+is a Movie query page, and you use the WebAssistant to freeze it,
+you must rebuild the project with the frozen component, then launch
+the application and navigate to a new instance of Movie query (by
+clicking Build Query); the new instance uses the frozen component.
+
+The generated component is like any other WebObjects component.
+You can edit your component graphically using WebObjects Builder.
+You can also examine the HTML and bindings (`.wod` file)
+of the new component in Project Builder.
+
+Direct to Web also generates Java code for your component,
+which you can modify appropriate to your needs. Each component implements
+an interface that is appropriate to the page: QueryPageInterface,
+ListPageInterface, InspectPageInterface, and EditPageInterface.
+For example, the `QueryMovieRole.java` file
+in [Listing 2-1](#apple-ijaueqskizdue) implements
+the QueryPageInterface. For example, it contains an action method
+called `queryAction` that returns
+a component when the Query DB button is clicked. (Note that the
+component's submit button is bound to `queryAction` in `QueryMovieRole.wod`.)
+
+__Listing
+2-1 QueryMovieRole.java generated by the
+Web Assistant__
+
+```
+import com.webobjects.appserver.*;
+import com.webobjects.eocontrol.*;
+import com.webobjects.directtoweb.*;
+import com.webobjects.eoaccess.*;
+import java.util.*;
+
+public class QueryMovieRole extends WOComponent implements QueryPageInterface {
+
+    protected EODatabaseDataSource _queryDataSource;
+
+    protected WODisplayGroup displayGroup;
+
+    protected NextPageDelegate _nextPageDelegate;
+
+    public WOComponent queryAction() {
+        _queryDataSource =new  EODatabaseDataSource(session().defaultEditingContext(), "MovieRole");
+        _queryDataSource.setAuxiliaryQualifier(qualifier());
+        _queryDataSource.fetchSpecification().setIsDeep(true);
+    _queryDataSource.fetchSpecification().setUsesDistinct(false);
+    _queryDataSource.fetchSpecification().setRefreshesRefetchedObjects(false);
+
+        if (_nextPageDelegate==null) {
+            ListPageInterface  listPage=D2W.factory().listPageForEntityNamed("MovieRole",session());
+            listPage.setDataSource(_queryDataSource);
+            listPage.setNextPage(this);
+            return (WOComponent)listPage;
+        } else
+            return _nextPageDelegate.nextPage(this);
+    }
+
+    public EOQualifier qualifier() { return displayGroup.qualifierFromQueryValues();  }
+
+    public void setNextPageDelegate(NextPageDelegate delegate) {
+           _nextPageDelegate=delegate;
+    }
+
+    public EODataSource queryDataSource() { return _queryDataSource; }
+
+    public String entity() {
+            return "MovieRole";
+    }
+
+    public QueryMovieRole(WOContext aContext) {
+        super(aContext);
+    }
+
+}
+```
+
+[![Previous](attachments/DirectToWeb/Images/previous.gif)](WebAssistant_Expert_Mode.md)[![Next](attachments/DirectToWeb/Images/next.gif)](User_Templates.md)
+
+© 2001 Apple Computer, Inc.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

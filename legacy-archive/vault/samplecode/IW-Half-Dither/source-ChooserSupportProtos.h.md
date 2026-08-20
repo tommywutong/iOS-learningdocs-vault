@@ -1,0 +1,90 @@
+---
+title: IW-Half-Dither
+apple_id: DTS10000151
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/IW-Half-Dither/Listings/source_ChooserSupportProtos_h.html
+archived_at: '2026-07-18T03:12:11.194308Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [IW-Half-Dither](IW-Half-Dither.md)
+
+
+[Next](source-CommonDefines.h.md)[Previous](source-ChooserSupportPACK.c.md)
+
+# source/ChooserSupportProtos.h
+
+```c
+/*
+    copyright © 1992-1996 Apple Computer Inc.  All rights reserved.
+
+    ChooserSupportProtos.h
+
+    This file implements old application message overrides for the specific driver.
+
+    Included in this file is the old PrintRecord emulation.  Note that the ImageWriter
+    PrintRecord is a wonder of misdirection and special cases.  You'll have fun
+    figuring out the code - so unless you really want to exactly emulate the ImageWriter
+    pages, you shouldn't spend too much time looking at this code.
+
+    Modification history
+    7/23/92         TED             New file today
+    12/20/93        dmh             Sync'd with the shipping 1.0b3 GX driver.
+     8/26/94        dmh             Sync'd with the shipping 1.0.1 GX driver.
+    28/03/96        JHH             
+*/
+
+#ifndef __CHOOSERSPTPROTOSHEADER__
+#define __CHOOSERSPTPROTOSHEADER__
+
+/****   Macintosh Toolbox Headers   ****/
+
+#include <Types.h>
+#include <QuickDraw.h>
+#include <Fonts.h>
+#include <Lists.h>
+#include <Devices.h>
+#include <Resources.h>
+#include <Script.h>
+#include <ToolUtils.h>
+#include <LowMem.h>
+#ifndef __GXPRINTING__
+    #include <GXPrinting.h>
+#endif
+
+
+/****   ChooserSupport.c prototypes     ****/
+
+// typedef for structure to hold globals for PACK code.
+typedef struct PACKglobal
+{
+    gxJob       job;
+    Str31       driverName;
+} PACKglobalRec, *PACKglobalPtr;
+
+
+pascal OSErr Device(short message, short caller,
+                    StringPtr objName,
+                    StringPtr zoneName,
+                    ListHandle theList,
+                    long p2,
+                    PACKglobalPtr global);
+
+pascal void LDEF(
+    short       message,
+    Boolean     select,
+    Rect        *theRect,
+    Cell        theCell,
+    short       dataOffset,
+    short       dataLen,
+    ListHandle  theList);
+
+
+
+#endif  // __CHOOSERSPTPROTOSHEADER__
+```
+
+[Next](source-CommonDefines.h.md)[Previous](source-ChooserSupportPACK.c.md)
+

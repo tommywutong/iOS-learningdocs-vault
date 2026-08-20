@@ -1,0 +1,149 @@
+---
+title: OpenGL Filter Basics Cocoa
+apple_id: DTS10004586
+resource_type: Sample Code
+platform: macOS
+topic: Graphics & Animation
+technology: OpenGL
+published: '2008-02-06'
+source_url: https://developer.apple.com/library/archive/samplecode/OpenGLFilterBasicsCocoa/Listings/Sources_Models_Torus_Classes_OpenGLTorus_mm.html
+archived_at: '2026-07-18T03:18:05.631251Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [OpenGL Filter Basics Cocoa](OpenGL%20Filter%20Basics%20Cocoa.md)
+
+
+[Next](Sources-Models-Torus-Classes-OpenGLTorusGenerator.cpp.md)[Previous](Sources-Models-Common-Headers-OpenGLModelTypes.h.md)
+
+# Sources/Models/Torus/Classes/OpenGLTorus.mm
+
+```objc
+//-------------------------------------------------------------------------
+//
+//  File: OpenGLTorus.m
+//
+//  Abstract: Class that implements a method for generating an 
+//            ordinary torus (a surface having genus one) and
+//            returning its display list ID.
+//
+//  Disclaimer: IMPORTANT:  This Apple software is supplied to you by
+//  Apple Inc. ("Apple") in consideration of your agreement to the
+//  following terms, and your use, installation, modification or
+//  redistribution of this Apple software constitutes acceptance of these
+//  terms.  If you do not agree with these terms, please do not use,
+//  install, modify or redistribute this Apple software.
+//  
+//  In consideration of your agreement to abide by the following terms, and
+//  subject to these terms, Apple grants you a personal, non-exclusive
+//  license, under Apple's copyrights in this original Apple software (the
+//  "Apple Software"), to use, reproduce, modify and redistribute the Apple
+//  Software, with or without modifications, in source and/or binary forms;
+//  provided that if you redistribute the Apple Software in its entirety and
+//  without modifications, you must retain this notice and the following
+//  text and disclaimers in all such redistributions of the Apple Software. 
+//  Neither the name, trademarks, service marks or logos of Apple Inc.
+//  may be used to endorse or promote products derived from the Apple
+//  Software without specific prior written permission from Apple.  Except
+//  as expressly stated in this notice, no other rights or licenses, express
+//  or implied, are granted by Apple herein, including but not limited to
+//  any patent rights that may be infringed by your derivative works or by
+//  other works in which the Apple Software may be incorporated.
+//  
+//  The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+//  MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+//  THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+//  FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+//  OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+//  
+//  IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+//  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+//  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+//  INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+//  MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+//  AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+//  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+//  POSSIBILITY OF SUCH DAMAGE.
+// 
+//  Copyright (c) 2008 Apple Inc., All rights reserved.
+//
+//-------------------------------------------------------------------------
+
+//------------------------------------------------------------------------
+
+#include "OpenGLTorusGenerator.hpp"
+
+//------------------------------------------------------------------------
+
+#import "OpenGLTorus.h"
+
+//------------------------------------------------------------------------
+
+//------------------------------------------------------------------------
+
+static GLvoid NewTorus( GLint     theModelType, 
+                        GLdouble  theInnerRadii, 
+                        GLdouble  theOuterRadii, 
+                        GLint     theSidesCount, 
+                        GLint     theRingsCount )
+{
+    Torus torus( theModelType, theSidesCount, theRingsCount, theInnerRadii, theOuterRadii );
+
+    torus.GetTorus( );
+} // NewTorus
+
+//------------------------------------------------------------------------
+
+//------------------------------------------------------------------------
+
+@implementation OpenGLTorusModel
+
+//------------------------------------------------------------------------
+
+- (id) initWithModelType:(NSInteger)theModelType  
+                modelRange:(NSInteger)theRange
+                innerRadii:(GLdouble)theInnerRadii
+                outerRadii:(GLdouble)theOuterRadii 
+                sidesCount:(NSInteger)theSidesCount 
+                ringsCount:(NSInteger)theRingsCount
+{
+    self = [super init];
+
+    range = theRange;
+
+    displayList = glGenLists( theRange );
+
+    glNewList( displayList, GL_COMPILE );
+
+        NewTorus( theModelType, theInnerRadii, theOuterRadii, theSidesCount, theRingsCount );
+
+    glEndList();
+
+    return  self;
+} // initWithModelType
+
+//------------------------------------------------------------------------
+
+- (void) dealloc
+{
+    glDeleteLists( displayList, range );
+
+    [super dealloc];
+} // dealloc
+
+//------------------------------------------------------------------------
+
+- (void) callList;
+{
+    glCallList( displayList );
+} // callList
+
+//------------------------------------------------------------------------
+
+@end
+
+//------------------------------------------------------------------------
+
+//------------------------------------------------------------------------
+```
+
+[Next](Sources-Models-Torus-Classes-OpenGLTorusGenerator.cpp.md)[Previous](Sources-Models-Common-Headers-OpenGLModelTypes.h.md)
+

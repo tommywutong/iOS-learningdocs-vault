@@ -1,0 +1,165 @@
+---
+title: MovieBrowser
+apple_id: DTS10000846
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/MovieBrowser/Listings/BrowserMaker_c.html
+archived_at: '2026-07-18T03:16:04.316836Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [MovieBrowser](MovieBrowser.md)
+
+
+[Next](MovieBrowser.c.md)[Previous](MovieBrowser.md)
+
+# BrowserMaker.c
+
+```c
+/*
+    File:       BrowserMaker.c
+
+    Written by: Peter Hoddie
+
+    Copyright:  © 1992-1994 by Apple Computer, Inc., all rights reserved.
+
+    Change History (most recent first):
+  <1>       12/8/94     khs     changed the format of the file to the new look and feel
+
+
+*/
+
+
+// INCLUDES
+#include <Aliases.h>
+#include <Files.h>
+#include <Movies.h>
+#include <QDOffscreen.h>
+#include <Resources.h>
+#include <Fonts.h>
+
+#define PosterWidth 80
+#define PosterHeight 60
+
+
+// FUNCTIONS
+void main(void)
+{
+    StandardFileReply srcReply;
+    SFReply dstReply;
+    FSSpec newDoc;
+    OSType movieType = 'MooV';
+    Point where = {50, 50};
+    short dstResRef;
+    short fileIndex = 1;
+    Rect totalRect = {0,0,0,0};
+    Rect posterRect = {0,0,PosterHeight,PosterWidth};
+    GWorldPtr posterGW;
+    Handle rectH;
+    char zero = 0;
+    short resID = 128;
+
+    // initialize the world
+    InitGraf(&qd.thePort);
+    InitFonts();
+    InitWindows();
+    InitMenus();
+    TEInit();
+    InitDialogs(0L);
+    InitCursor();
+    MaxApplZone();
+    EnterMovies();
+
+    StandardGetFilePreview(nil, 1, &movieType, &srcReply);
+    if (!srcReply.sfGood) return;
+
+    SFPutFile(where, "\pCreate Page Doc:", "\pNewPageDoc", nil, &dstReply);
+    if (!dstReply.good) return;
+
+    FSMakeFSSpec(dstReply.vRefNum, 0, dstReply.fName, &newDoc);
+    FSpDelete(&newDoc);
+    FSpCreateResFile(&newDoc, 'aNdY', 'Dal', -2);
+    dstResRef = FSpOpenResFile(&newDoc, fsRdWrPerm);
+    if (ResError()) return;
+
+    // make a gworld for creating posters
+    if (NewGWorld(&posterGW, 16, &posterRect, 0, 0, 0) != noErr) return;
+    SetGWorld(posterGW, 0);
+
+    do {
+        OSErr err;
+        HFileParam pb;
+        FSSpec movieFile;
+        Str255 name;
+        short movieRes;
+
+        pb.ioVRefNum = srcReply.sfFile.vRefNum;
+        pb.ioFDirIndex = fileIndex++;
+        pb.ioDirID = srcReply.sfFile.parID;
+        pb.ioNamePtr = name;
+        err = PBHGetFInfoSync((HParmBlkPtr)&pb);
+        if (err) break;
+
+        if (pb.ioFlFndrInfo.fdType != 'MooV') continue;
+
+        FSMakeFSSpec(srcReply.sfFile.vRefNum, srcReply.sfFile.parID, name, &movieFile);
+        if (OpenMovieFile(&movieFile, &movieRes, fsRdPerm) == noErr) {
+            Movie newMovie;
+
+            err = NewMovieFromFile(&newMovie, movieRes, nil, nil,
+                0, nil);
+            CloseMovieFile(movieRes);
+            if (!err) {
+                Rect movieBox;
+                AliasHandle newAlias = 0;
+                PicHandle newPict;
+                PicHandle poster;
+
+                // accumlate the bounds
+                GetMovieBox(newMovie, &movieBox);
+                OffsetRect(&movieBox, -movieBox.left, -movieBox.top);
+                if (EmptyRect(&totalRect))
+                    totalRect = movieBox;
+                else
+                    UnionRect(&movieBox, &totalRect, &totalRect);
+
+                // add the alias
+                NewAlias(&newDoc, &movieFile, &newAlias);
+                AddResource((Handle)newAlias, rAliasType, resID, movieFile.name);
+                WriteResource((Handle)newAlias);
+                ReleaseResource((Handle)newAlias);
+
+                // add the poster
+                poster = GetMoviePosterPict(newMovie);
+                EraseRect(&posterRect);
+                DrawPicture(poster, &posterRect);
+                KillPicture(poster);
+                newPict = OpenPicture(&posterRect);
+                    CopyBits((BitMap *)*posterGW->portPixMap, (BitMap *)*posterGW->portPixMap,
+                            &posterRect, &posterRect, ditherCopy, nil);
+                ClosePicture();
+                AddResource((Handle)newPict, 'PICT', resID++, (StringPtr)&zero);
+                WriteResource((Handle)newPict);
+                ReleaseResource((Handle)newPict);
+
+                DisposeMovie(newMovie);
+             }
+        }
+
+
+    } while (true);
+
+    // add the bounds rect
+    InsetRect(&totalRect, -50, -25);
+    PtrToHand((Ptr)&totalRect, &rectH, sizeof(totalRect));
+    AddResource((Handle)rectH, 'RECT', 128, (StringPtr)&zero);
+    WriteResource((Handle)rectH);
+    ReleaseResource((Handle)rectH);
+
+    CloseResFile(dstResRef);
+}
+```
+
+[Next](MovieBrowser.c.md)[Previous](MovieBrowser.md)
+

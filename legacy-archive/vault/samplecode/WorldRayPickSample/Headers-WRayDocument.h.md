@@ -1,0 +1,105 @@
+---
+title: WorldRayPickSample
+apple_id: DTS10000140
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/WorldRayPickSample/Listings/Headers_WRay_Document_h.html
+archived_at: '2026-07-18T03:28:25.334696Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [WorldRayPickSample](WorldRayPickSample.md)
+
+
+[Next](Headers-WRayError.h.md)[Previous](WorldRayPickSample.md)
+
+# Headers/WRay_Document.h
+
+```c
+/*  
+ *  WRay_Document.h
+ *
+ *  QuickDraw 3D 1.6 Sample
+ *  Robert Dierkes
+ *
+ *   07/28/98   RDD     Created.
+ */
+
+#ifndef _HWRay_Document
+#define _HWRay_Document
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <QuickTimeComponents.h>
+
+#include "QD3D.h"
+
+
+/*------------------*/
+/*    Constants     */
+/*------------------*/
+
+
+/*----------------------*/
+/*   Type Definitions   */
+/*----------------------*/
+
+
+/*
+ * TDocument
+ */
+typedef struct TDocument {
+    WindowPtr           fWindow;        /* document's window                        */
+
+    TQ3ViewObject       fView;          /* the view for the scene                   */
+    TQ3GroupObject      fModel;         /* object in the scene being modelled       */
+    TQ3Matrix4x4        fMatrix;
+
+} TDocumentRec_;
+
+typedef TDocumentRec_ TDocument, *TDocumentPtr;
+
+
+TQ3Boolean  Document_Initialize(
+    TDocumentPtr            pDocument);
+
+TQ3Boolean  Document_Exit(
+    TDocumentPtr            pDocument);
+
+TQ3Status   Document_Draw(
+    TDocumentPtr            pDocument);
+
+TQ3Status   Document_Submit_Objects(
+    TDocumentPtr            pDocument,
+    TQ3ViewObject           view);
+
+TQ3Status   Document_UpdateCameraAspectRatio (
+    TDocumentPtr            pDocument,
+    Rect                    *pPortRect);
+
+TQ3Status   Document_UpdateCamera (
+    TDocumentPtr            pDocument);
+
+TQ3Status   Document_GetMaximumDimension(
+    TDocumentPtr            pDocument,
+    float                   *pMaxDimension,
+    TQ3BoundingBox          *pReturnedBoundingBox);
+
+TQ3Status   Document_BoundingBox(
+    TDocumentPtr            pDocument,
+    TQ3BoundingBox          *pBoundingBox);
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* _HWRay_Document */
+```
+
+[Next](Headers-WRayError.h.md)[Previous](WorldRayPickSample.md)
+

@@ -1,0 +1,240 @@
+---
+title: Soundboard
+apple_id: DTS10000059
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/Soundboard/Listings/CSoundboardWindow_cp.html
+archived_at: '2026-07-18T03:25:13.417625Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [Soundboard](Soundboard.md)
+
+
+[Next](CSoundboardWindow.h.md)[Previous](CSoundboardApp.h.md)
+
+# CSoundboardWindow.cp
+
+```c
+// ===========================================================================
+//  CSoundboardWindow.cp        ©1995 Apple Comptuer, Inc. All rights reserved.
+// ===========================================================================
+//
+//  A "do nothing" Soundboard program that you can use as a starter for
+//  you own programs.
+
+#include "CSoundboardWindow.h"
+
+// ===========================================================================
+//      ¥ CSoundboardWindow Class
+// ===========================================================================
+
+// ---------------------------------------------------------------------------
+//      ¥ CSoundboardWindow
+// ---------------------------------------------------------------------------
+//  Constructor
+
+CSoundboardWindow::CSoundboardWindow(LStream *inStream) : LWindow(inStream)
+{
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ ~CSoundboardWindow
+// ---------------------------------------------------------------------------
+//  Destructor
+
+CSoundboardWindow::~CSoundboardWindow()
+{
+        // +++ Add code here to cleanup (if necessary) before quitting
+}
+
+// ---------------------------------------------------------------------------
+//      ¥ CreateWindow
+// ---------------------------------------------------------------------------
+//  Return a newly created Window object initialized from a PPob resource
+
+CSoundboardWindow*
+CSoundboardWindow::CreateSoundboardWindow(
+    ResIDT      inWindowID,
+    LCommander  *inSuperCommander)
+{
+    return ((CSoundboardWindow*)LWindow::CreateWindow(inWindowID, inSuperCommander));
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ CreateWindowStream
+// ---------------------------------------------------------------------------
+//  Return a newly created Window object initialized with data from a Stream
+
+CSoundboardWindow*
+CSoundboardWindow::CreateSoundboardWindowStream(
+    LStream *inStream)
+{
+    return (new CSoundboardWindow(inStream));
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ AttemptClose
+// ---------------------------------------------------------------------------
+//  Try to hide a Window as a result of direct user action
+
+void
+CSoundboardWindow::AttemptClose()
+{
+                                    // Get approval from SuperCommander
+    if ((mSuperCommander == nil) || mSuperCommander->AllowSubRemoval(this)) {
+
+                                    // Send Close AE for recording only
+        SendSelfAE(kAECoreSuite, kAEClose, false);
+        Hide();
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ DoClose
+// ---------------------------------------------------------------------------
+//  Hide a Window
+
+void
+CSoundboardWindow::DoClose()
+{
+                                    // Get approval from SuperCommander
+    if ((mSuperCommander == nil) || mSuperCommander->AllowSubRemoval(this)) {
+        Hide();
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ ObeyCommand
+// ---------------------------------------------------------------------------
+//  Respond to commands
+
+Boolean
+CSoundboardWindow::ObeyCommand(
+    CommandT    inCommand,
+    void        *ioParam)
+{
+    Boolean cmdHandled = true;
+
+    switch (inCommand) {
+
+        // +++ Add cases here for the commands you handle
+        //      Remember to add same cases to FindCommandStatus below
+        //      to enable/disable the menu items for the commands
+        default:
+            cmdHandled = LWindow::ObeyCommand(inCommand, ioParam);
+            break;
+    }
+
+    return cmdHandled;
+}
+
+
+// ---------------------------------------------------------------------------
+//      ¥ FindCommandStatus
+// ---------------------------------------------------------------------------
+//  Pass back status of a (menu) command
+
+void
+CSoundboardWindow::FindCommandStatus(
+    CommandT    inCommand,
+    Boolean     &outEnabled,
+    Boolean     &outUsesMark,
+    Char16      &outMark,
+    Str255      outName)
+{
+    switch (inCommand) {
+
+        // +++ Add cases here for the commands you handle.
+        //
+        //      Set outEnabled to TRUE for commands that can be executed at
+        //      this time.
+        //
+        //      If the associated menu items can have check marks, set
+        //      outUsesMark and outMark accordingly.
+        //
+        //      Set outName to change the name of the menu item
+        default:
+            LWindow::FindCommandStatus(inCommand, outEnabled, outUsesMark,
+                                outMark, outName);
+            break;
+    }
+}
+
+// ---------------------------------------------------------------------------
+//      ¥ Show
+// ---------------------------------------------------------------------------
+//  Show the soundboard window
+
+void
+CSoundboardWindow::Show()
+{
+    Select();
+    LWindow::Show();
+}
+
+// ---------------------------------------------------------------------------
+//      ¥ ClickInContent
+// ---------------------------------------------------------------------------
+//  Respond to a click in the content region of a Window
+
+void
+CSoundboardWindow::ClickInContent(
+    const EventRecord   &inMacEvent)
+{
+                                    // Enabled Windows respond to clicks
+    Boolean     respondToClick = HasAttribute(windAttr_Enabled);
+
+                                    // Set up our extended event record
+    SMouseDownEvent     theMouseDown;
+    theMouseDown.wherePort = inMacEvent.where;
+    GlobalToPortPoint(theMouseDown.wherePort);
+    theMouseDown.whereLocal = theMouseDown.wherePort;
+    theMouseDown.macEvent = inMacEvent;
+    theMouseDown.delaySelect = false;
+
+    if (!UDesktop::WindowIsSelected(this)) {
+                                    // Window is not in front, we might
+                                    //   need to select it
+        Boolean doSelect = false;
+        if (HasAttribute(windAttr_DelaySelect)) {
+                                    // Delay selection until after handling
+                                    //   the click (called click-through)
+            theMouseDown.delaySelect = true;
+            Click(theMouseDown);
+
+                                    // After click-through, we select the
+                                    //   Window if the mouse is still down
+                                    //   or the mouse up occurred inside
+                                    //   this Window.
+            EventRecord mouseUpEvent;
+            if (!::StillDown() && ::GetOSEvent(mUpMask, &mouseUpEvent)) {
+                                    // Check location of mouse up event
+                WindowPtr   upWindow;
+                ::FindWindow(mouseUpEvent.where, &upWindow);
+                doSelect = (upWindow == mMacWindowP);
+            }
+        }
+
+        if (doSelect) {             // Selecting a Window brings it to the
+                                    //   front of its layer and activates it
+            Select();
+            respondToClick = HasAttribute(windAttr_GetSelectClick);
+        }
+    }
+
+    if (respondToClick && !theMouseDown.delaySelect) {
+        theMouseDown.delaySelect = false;
+        Click(theMouseDown);
+    }
+}
+```
+
+[Next](CSoundboardWindow.h.md)[Previous](CSoundboardApp.h.md)
+

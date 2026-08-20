@@ -1,0 +1,3509 @@
+---
+title: iOS 10.0 API Diffs
+apple_id: TP40017327
+resource_type: Release Note
+platform: iOS
+topic: General
+technology: null
+published: '2016-09-13'
+source_url: https://developer.apple.com/library/archive/releasenotes/General/iOS10APIDiffs/Swift/SceneKit.html
+archived_at: '2026-07-18T02:55:37.354599Z'
+---
+> 导航：[总目录](../../../README.md) · [releasenotes](../../../_indexes/releasenotes.md) · [iOS 10.0 API Diffs](iOS%209.3%20to%20iOS%2010.0%20API%20Differences.md)
+
+
+# SceneKit Changes for Swift
+
+### SceneKit
+
+Removed [SCNBoundingVolume.getBoundingBoxMin(_: UnsafeMutablePointer<SCNVector3>, max: UnsafeMutablePointer<SCNVector3>) -> Bool](https://developer.apple.com/documentation/scenekit/scnboundingvolume/1522872-getboundingboxmin)Removed [SCNBoundingVolume.getBoundingSphereCenter(_: UnsafeMutablePointer<SCNVector3>, radius: UnsafeMutablePointer<CGFloat>) -> Bool](https://developer.apple.com/documentation/scenekit/scnboundingvolume/1523886-getboundingspherecenter)Removed [SCNBoundingVolume.setBoundingBoxMin(_: UnsafeMutablePointer<SCNVector3>, max: UnsafeMutablePointer<SCNVector3>)](https://developer.apple.com/documentation/scenekit/scnboundingvolume/1522866-setboundingboxmin)Removed [SCNCamera.projectionTransform() -> SCNMatrix4](https://developer.apple.com/documentation/scenekit/scncamera/1436619-projectiontransform)Removed [SCNCamera.setProjectionTransform(_: SCNMatrix4)](https://developer.apple.com/documentation/scenekit/scncamera/1436590-setprojectiontransform)Removed [SCNDebugOptions.None](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionnone)Removed [SCNGeometryElement.init<IndexType : IntegerType>(indices: [IndexType], primitiveType: SCNGeometryPrimitiveType)](https://developer.apple.com/documentation/scenekit/scngeometryelement/1523191-init)Removed [SCNTransaction.animationDuration() -> CFTimeInterval [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1523888-animationduration)Removed [SCNTransaction.animationTimingFunction() -> CAMediaTimingFunction? [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1522614-animationtimingfunction)Removed [SCNTransaction.completionBlock() -> (() -> Void)? [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1523660-completionblock)Removed [SCNTransaction.disableActions() -> Bool [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1524238-disableactions)Removed SCNTransaction.setAnimationDuration(_: CFTimeInterval) [class]Removed SCNTransaction.setAnimationTimingFunction(_: CAMediaTimingFunction?) [class]Removed SCNTransaction.setCompletionBlock(_: (() -> Void)?) [class]Removed SCNTransaction.setDisableActions(_: Bool) [class]Added [MDLAsset.init(scnScene: SCNScene, bufferAllocator: MDLMeshBufferAllocator?)](https://developer.apple.com/documentation/modelio/mdlasset/1643661-assetwithscnscene)Added [MDLMesh.init(scnGeometry: SCNGeometry, bufferAllocator: MDLMeshBufferAllocator?)](https://developer.apple.com/documentation/modelio/mdlmesh/1643663-init)Added [MDLObject.init(scnNode: SCNNode, bufferAllocator: MDLMeshBufferAllocator?)](https://developer.apple.com/documentation/modelio/mdlobject/1643660-objectwithscnnode)Added [MDLSubmesh.init(scnGeometryElement: SCNGeometryElement, bufferAllocator: MDLMeshBufferAllocator?)](https://developer.apple.com/documentation/modelio/mdlsubmesh/1643662-init)Added [SCNAnimatable.setAnimationSpeed(_: CGFloat, forKey: String)](https://developer.apple.com/documentation/scenekit/scnanimatable/1778343-setspeed)Added [SCNBoundingVolume.boundingBox](https://developer.apple.com/documentation/scenekit/scnboundingvolume/2034705-boundingbox)Added [SCNBoundingVolume.boundingSphere](https://developer.apple.com/documentation/scenekit/scnboundingvolume/2034707-boundingsphere)Added [SCNCamera.averageGray](https://developer.apple.com/documentation/scenekit/scncamera/1644097-averagegray)Added [SCNCamera.bloomBlurRadius](https://developer.apple.com/documentation/scenekit/scncamera/1644096-bloomblurradius)Added [SCNCamera.bloomIntensity](https://developer.apple.com/documentation/scenekit/scncamera/1644104-bloomintensity)Added [SCNCamera.bloomThreshold](https://developer.apple.com/documentation/scenekit/scncamera/1644098-bloomthreshold)Added [SCNCamera.colorFringeIntensity](https://developer.apple.com/documentation/scenekit/scncamera/1644108-colorfringeintensity)Added [SCNCamera.colorFringeStrength](https://developer.apple.com/documentation/scenekit/scncamera/1644113-colorfringestrength)Added [SCNCamera.colorGrading](https://developer.apple.com/documentation/scenekit/scncamera/1644114-colorgrading)Added [SCNCamera.contrast](https://developer.apple.com/documentation/scenekit/scncamera/1644112-contrast)Added [SCNCamera.exposureAdaptationBrighteningSpeedFactor](https://developer.apple.com/documentation/scenekit/scncamera/1644093-exposureadaptationbrighteningspe)Added [SCNCamera.exposureAdaptationDarkeningSpeedFactor](https://developer.apple.com/documentation/scenekit/scncamera/1644094-exposureadaptationdarkeningspeed)Added [SCNCamera.exposureOffset](https://developer.apple.com/documentation/scenekit/scncamera/1644105-exposureoffset)Added [SCNCamera.maximumExposure](https://developer.apple.com/documentation/scenekit/scncamera/1644120-maximumexposure)Added [SCNCamera.minimumExposure](https://developer.apple.com/documentation/scenekit/scncamera/1644103-minimumexposure)Added [SCNCamera.motionBlurIntensity](https://developer.apple.com/documentation/scenekit/scncamera/1644099-motionblurintensity)Added [SCNCamera.projectionTransform](https://developer.apple.com/documentation/scenekit/scncamera/1690501-projectiontransform)Added [SCNCamera.saturation](https://developer.apple.com/documentation/scenekit/scncamera/1644100-saturation)Added [SCNCamera.vignettingIntensity](https://developer.apple.com/documentation/scenekit/scncamera/1644106-vignettingintensity)Added [SCNCamera.vignettingPower](https://developer.apple.com/documentation/scenekit/scncamera/1644118-vignettingpower)Added [SCNCamera.wantsExposureAdaptation](https://developer.apple.com/documentation/scenekit/scncamera/1644117-wantsexposureadaptation)Added [SCNCamera.wantsHDR](https://developer.apple.com/documentation/scenekit/scncamera/1644101-wantshdr)Added [SCNCamera.whitePoint](https://developer.apple.com/documentation/scenekit/scncamera/1644110-whitepoint)Added [SCNFloor.length](https://developer.apple.com/documentation/scenekit/scnfloor/2091890-length)Added [SCNFloor.reflectionCategoryBitMask](https://developer.apple.com/documentation/scenekit/scnfloor/1845281-reflectioncategorybitmask)Added [SCNFloor.width](https://developer.apple.com/documentation/scenekit/scnfloor/1845280-width)Added [SCNGeometryElement.init<IndexType : Integer>(indices: [IndexType], primitiveType: SCNGeometryPrimitiveType)](https://developer.apple.com/documentation/scenekit/scngeometryelement/1523191-init)Added [SCNGeometryPrimitiveType.polygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/polygon)Added [SCNGeometrySource.init(normals: [SCNVector3])](https://developer.apple.com/documentation/scenekit/scngeometrysource/2034704-init)Added [SCNGeometrySource.init(textureCoordinates: [CGPoint])](https://developer.apple.com/documentation/scenekit/scngeometrysource/2034706-init)Added [SCNGeometrySource.init(vertices: [SCNVector3])](https://developer.apple.com/documentation/scenekit/scngeometrysource/2034708-init)Added [SCNGeometrySource.Semantic [struct]](https://developer.apple.com/documentation/scenekit/scngeometrysource/semantic)Added [SCNGeometrySource.Semantic.init(_: String)](https://developer.apple.com/documentation/scenekit/scngeometrysource/semantic/2427113-init)Added [SCNGeometrySource.Semantic.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scngeometrysource/semantic/2427107-init)Added [SCNGeometrySource.Semantic.tangent](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemantictangent)Added [SCNHitTestOption [struct]](https://developer.apple.com/documentation/scenekit/scnhittestoption)Added [SCNHitTestOption.categoryBitMask](https://developer.apple.com/documentation/scenekit/scnhittestoption/1778148-categorybitmask)Added [SCNHitTestOption.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnhittestoption/2427102-init)Added [SCNHitTestResult.boneNode](https://developer.apple.com/documentation/scenekit/scnhittestresult/1823463-bonenode)Added [SCNLight.iesProfileURL](https://developer.apple.com/documentation/scenekit/scnlight/1640546-iesprofileurl)Added [SCNLight.intensity](https://developer.apple.com/documentation/scenekit/scnlight/1640548-intensity)Added [SCNLight.temperature](https://developer.apple.com/documentation/scenekit/scnlight/1640545-temperature)Added [SCNLight.LightType [struct]](https://developer.apple.com/documentation/scenekit/scnlighttype)Added [SCNLight.LightType.IES](https://developer.apple.com/documentation/scenekit/scnlighttypeies)Added [SCNLight.LightType.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnlight/lighttype/2427110-init)Added [SCNLight.LightType.probe](https://developer.apple.com/documentation/scenekit/scnlighttypeprobe)Added [SCNMaterial.metalness](https://developer.apple.com/documentation/scenekit/scnmaterial/1640554-metalness)Added [SCNMaterial.roughness](https://developer.apple.com/documentation/scenekit/scnmaterial/1640555-roughness)Added [SCNMaterial.LightingModel [struct]](https://developer.apple.com/documentation/scenekit/scnmaterial/lightingmodel)Added [SCNMaterial.LightingModel.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnmaterial/lightingmodel/2427112-init)Added [SCNMaterial.LightingModel.physicallyBased](https://developer.apple.com/documentation/scenekit/scnlightingmodelphysicallybased)Added [SCNMovabilityHint [enum]](https://developer.apple.com/documentation/scenekit/scnmovabilityhint)Added [SCNMovabilityHint.fixed](https://developer.apple.com/documentation/scenekit/scnmovabilityhint/scnmovabilityhintfixed)Added [SCNMovabilityHint.movable](https://developer.apple.com/documentation/scenekit/scnmovabilityhint/scnmovabilityhintmovable)Added [SCNNode.enumerateHierarchy(_: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Swift.Void)](https://developer.apple.com/documentation/scenekit/scnnode/1642248-enumeratehierarchyusingblock)Added [SCNNode.movabilityHint](https://developer.apple.com/documentation/scenekit/scnnode/1690499-movabilityhint)Added [SCNParticleSystem.ParticleProperty [struct]](https://developer.apple.com/documentation/scenekit/scnparticleproperty)Added [SCNParticleSystem.ParticleProperty.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/2427115-init)Added [SCNPhysicsShape.Option [struct]](https://developer.apple.com/documentation/scenekit/scnphysicsshapeoption)Added [SCNPhysicsShape.Option.collisionMargin](https://developer.apple.com/documentation/scenekit/scnphysicsshapeoptioncollisionmargin)Added [SCNPhysicsShape.Option.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnphysicsshape/option/2427105-init)Added [SCNPhysicsShape.ShapeType [struct]](https://developer.apple.com/documentation/scenekit/scnphysicsshapetype)Added [SCNPhysicsShape.ShapeType.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnphysicsshape/shapetype/2427111-init)Added [SCNPhysicsWorld.TestOption [struct]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testoption)Added [SCNPhysicsWorld.TestOption.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testoption/2427106-init)Added [SCNPhysicsWorld.TestSearchMode [struct]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testsearchmode)Added [SCNPhysicsWorld.TestSearchMode.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testsearchmode/2427104-init)Added [SCNRenderer.snapshot(atTime: CFTimeInterval, with: CGSize, antialiasingMode: SCNAntialiasingMode) -> UIImage](https://developer.apple.com/documentation/scenekit/scnrenderer/1641767-snapshot)Added [SCNRenderer.updateProbes(_: [SCNNode], atTime: CFTimeInterval)](https://developer.apple.com/documentation/scenekit/scnrenderer/2097153-updateprobes)Added [SCNScene.lightingEnvironment](https://developer.apple.com/documentation/scenekit/scnscene/1639532-lightingenvironment)Added [SCNScene.write(to: URL, options: [String : Any]?, delegate: SCNSceneExportDelegate?, progressHandler: SceneKit.SCNSceneExportProgressHandler?) -> Bool](https://developer.apple.com/documentation/scenekit/scnscene/1523577-write)Added [SCNScene.Attribute [struct]](https://developer.apple.com/documentation/scenekit/scnscene/attribute)Added [SCNScene.Attribute.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnscene/attribute/2427108-init)Added [SCNSceneExportDelegate](https://developer.apple.com/documentation/scenekit/scnsceneexportdelegate)Added [SCNSceneExportDelegate.write(_: UIImage, withSceneDocumentURL: URL, originalImageURL: URL?) -> URL?](https://developer.apple.com/documentation/scenekit/scnsceneexportdelegate/1524221-writeimage)Added [SCNSceneSource.AnimationImportPolicy [struct]](https://developer.apple.com/documentation/scenekit/scnscenesourceanimationimportpolicy)Added [SCNSceneSource.AnimationImportPolicy.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnscenesource/animationimportpolicy/2427114-init)Added [SCNSceneSource.LoadingOption [struct]](https://developer.apple.com/documentation/scenekit/scnscenesourceloadingoption)Added [SCNSceneSource.LoadingOption.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnscenesource/loadingoption/2427103-init)Added [SCNSceneSource.LoadingOption.preserveOriginalTopology](https://developer.apple.com/documentation/scenekit/scnscenesourceloadingoptionpreserveoriginaltopology)Added [SCNShaderModifierEntryPoint [struct]](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypoint)Added [SCNShaderModifierEntryPoint.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypoint/2427109-init)Added [SCNTransaction.animationDuration](https://developer.apple.com/documentation/scenekit/scntransaction/1523888-animationduration)Added [SCNTransaction.animationTimingFunction](https://developer.apple.com/documentation/scenekit/scntransaction/1522614-animationtimingfunction)Added [SCNTransaction.completionBlock](https://developer.apple.com/documentation/scenekit/scntransaction/1523660-completionblock)Added [SCNTransaction.disableActions](https://developer.apple.com/documentation/scenekit/scntransaction/1524238-disableactions)Added [SCNView.Option [struct]](https://developer.apple.com/documentation/scenekit/scnviewoption)Added [SCNView.Option.init(rawValue: String)](https://developer.apple.com/documentation/scenekit/scnview/option/2437198-init)Modified [MDLAsset.init(scnScene: SCNScene)](https://developer.apple.com/documentation/modelio/mdlasset/1419847-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNScene scnScene: SCNScene) ``` |
+| To | ``` convenience init(scnScene scnScene: SCNScene) ``` |
+
+Modified [MDLCamera.init(scnCamera: SCNCamera)](https://developer.apple.com/documentation/modelio/mdlcamera/1419832-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNCamera scnCamera: SCNCamera) ``` |
+| To | ``` convenience init(scnCamera scnCamera: SCNCamera) ``` |
+
+Modified [MDLLight.init(scnLight: SCNLight)](https://developer.apple.com/documentation/modelio/mdllight/1419830-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNLight scnLight: SCNLight) ``` |
+| To | ``` convenience init(scnLight scnLight: SCNLight) ``` |
+
+Modified [MDLMaterial.init(scnMaterial: SCNMaterial)](https://developer.apple.com/documentation/modelio/mdlmaterial/1419851-materialwithscnmaterial)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNMaterial scnMaterial: SCNMaterial) ``` |
+| To | ``` convenience init(scnMaterial scnMaterial: SCNMaterial) ``` |
+
+Modified [MDLMesh.init(scnGeometry: SCNGeometry)](https://developer.apple.com/documentation/modelio/mdlmesh/1419853-meshwithscngeometry)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNGeometry scnGeometry: SCNGeometry) ``` |
+| To | ``` convenience init(scnGeometry scnGeometry: SCNGeometry) ``` |
+
+Modified [MDLObject.init(scnNode: SCNNode)](https://developer.apple.com/documentation/modelio/mdlobject/1419855-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNNode scnNode: SCNNode) ``` |
+| To | ``` convenience init(scnNode scnNode: SCNNode) ``` |
+
+Modified [MDLSubmesh.init(scnGeometryElement: SCNGeometryElement)](https://developer.apple.com/documentation/modelio/mdlsubmesh/1419837-submeshwithscngeometryelement)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(SCNGeometryElement scnGeometryElement: SCNGeometryElement) ``` |
+| To | ``` convenience init(scnGeometryElement scnGeometryElement: SCNGeometryElement) ``` |
+
+Modified [NSValue.init(scnMatrix4: SCNMatrix4)](https://developer.apple.com/documentation/foundation/nsvalue/1409680-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(SCNMatrix4 v: SCNMatrix4) ``` |
+| To | ``` init(scnMatrix4 v: SCNMatrix4) ``` |
+
+Modified [NSValue.init(scnVector3: SCNVector3)](https://developer.apple.com/documentation/foundation/nsvalue/1409671-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(SCNVector3 v: SCNVector3) ``` |
+| To | ``` init(scnVector3 v: SCNVector3) ``` |
+
+Modified [NSValue.init(scnVector4: SCNVector4)](https://developer.apple.com/documentation/foundation/nsvalue/1409688-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(SCNVector4 v: SCNVector4) ``` |
+| To | ``` init(scnVector4 v: SCNVector4) ``` |
+
+Modified [NSValue.scnMatrix4Value](https://developer.apple.com/documentation/foundation/nsvalue/1409684-scnmatrix4value)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var SCNMatrix4Value: SCNMatrix4 { get } ``` |
+| To | ``` var scnMatrix4Value: SCNMatrix4 { get } ``` |
+
+Modified [NSValue.scnVector3Value](https://developer.apple.com/documentation/foundation/nsvalue/1409669-scnvector3value)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var SCNVector3Value: SCNVector3 { get } ``` |
+| To | ``` var scnVector3Value: SCNVector3 { get } ``` |
+
+Modified [NSValue.scnVector4Value](https://developer.apple.com/documentation/foundation/nsvalue/1409725-scnvector4value)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var SCNVector4Value: SCNVector4 { get } ``` |
+| To | ``` var scnVector4Value: SCNVector4 { get } ``` |
+
+Modified [SCNAction](https://developer.apple.com/documentation/scenekit/scnaction)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNAction : NSObject, NSCopying, NSSecureCoding {     var duration: NSTimeInterval     var timingMode: SCNActionTimingMode     var timingFunction: SCNActionTimingFunction?     var speed: CGFloat     func reversedAction() -> SCNAction     class func moveByX(_ deltaX: CGFloat, y deltaY: CGFloat, z deltaZ: CGFloat, duration duration: NSTimeInterval) -> SCNAction     class func moveBy(_ delta: SCNVector3, duration duration: NSTimeInterval) -> SCNAction     class func moveTo(_ location: SCNVector3, duration duration: NSTimeInterval) -> SCNAction     class func rotateByX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval) -> SCNAction     class func rotateToX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval) -> SCNAction     class func rotateToX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval, shortestUnitArc shortestUnitArc: Bool) -> SCNAction     class func rotateByAngle(_ angle: CGFloat, aroundAxis axis: SCNVector3, duration duration: NSTimeInterval) -> SCNAction     class func rotateToAxisAngle(_ axisAngle: SCNVector4, duration duration: NSTimeInterval) -> SCNAction     class func scaleBy(_ scale: CGFloat, duration sec: NSTimeInterval) -> SCNAction     class func scaleTo(_ scale: CGFloat, duration sec: NSTimeInterval) -> SCNAction     class func sequence(_ actions: [SCNAction]) -> SCNAction     class func group(_ actions: [SCNAction]) -> SCNAction     class func repeatAction(_ action: SCNAction, count count: Int) -> SCNAction     class func repeatActionForever(_ action: SCNAction) -> SCNAction     class func fadeInWithDuration(_ sec: NSTimeInterval) -> SCNAction     class func fadeOutWithDuration(_ sec: NSTimeInterval) -> SCNAction     class func fadeOpacityBy(_ factor: CGFloat, duration sec: NSTimeInterval) -> SCNAction     class func fadeOpacityTo(_ opacity: CGFloat, duration sec: NSTimeInterval) -> SCNAction     class func hide() -> SCNAction     class func unhide() -> SCNAction     class func waitForDuration(_ sec: NSTimeInterval) -> SCNAction     class func waitForDuration(_ sec: NSTimeInterval, withRange durationRange: NSTimeInterval) -> SCNAction     class func removeFromParentNode() -> SCNAction     class func runBlock(_ block: (SCNNode) -> Void) -> SCNAction     class func runBlock(_ block: (SCNNode) -> Void, queue queue: dispatch_queue_t) -> SCNAction     class func javaScriptActionWithScript(_ script: String, duration seconds: NSTimeInterval) -> SCNAction     class func customActionWithDuration(_ seconds: NSTimeInterval, actionBlock block: (SCNNode, CGFloat) -> Void) -> SCNAction     class func playAudioSource(_ source: SCNAudioSource, waitForCompletion wait: Bool) -> SCNAction } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNAction : NSObject, NSCopying, NSSecureCoding {     var duration: TimeInterval     var timingMode: SCNActionTimingMode     var timingFunction: SceneKit.SCNActionTimingFunction?     var speed: CGFloat     func reversed() -> SCNAction     class func moveBy(x deltaX: CGFloat, y deltaY: CGFloat, z deltaZ: CGFloat, duration duration: TimeInterval) -> SCNAction     class func move(by delta: SCNVector3, duration duration: TimeInterval) -> SCNAction     class func move(to location: SCNVector3, duration duration: TimeInterval) -> SCNAction     class func rotateBy(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval) -> SCNAction     class func rotateTo(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval) -> SCNAction     class func rotateTo(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval, usesShortestUnitArc shortestUnitArc: Bool) -> SCNAction     class func rotate(by angle: CGFloat, around axis: SCNVector3, duration duration: TimeInterval) -> SCNAction     class func rotate(toAxisAngle axisAngle: SCNVector4, duration duration: TimeInterval) -> SCNAction     class func scale(by scale: CGFloat, duration sec: TimeInterval) -> SCNAction     class func scale(to scale: CGFloat, duration sec: TimeInterval) -> SCNAction     class func sequence(_ actions: [SCNAction]) -> SCNAction     class func group(_ actions: [SCNAction]) -> SCNAction     class func `repeat`(_ action: SCNAction, count count: Int) -> SCNAction     class func repeatForever(_ action: SCNAction) -> SCNAction     class func fadeIn(duration sec: TimeInterval) -> SCNAction     class func fadeOut(duration sec: TimeInterval) -> SCNAction     class func fadeOpacity(by factor: CGFloat, duration sec: TimeInterval) -> SCNAction     class func fadeOpacity(to opacity: CGFloat, duration sec: TimeInterval) -> SCNAction     class func hide() -> SCNAction     class func unhide() -> SCNAction     class func wait(duration sec: TimeInterval) -> SCNAction     class func wait(duration sec: TimeInterval, withRange durationRange: TimeInterval) -> SCNAction     class func removeFromParentNode() -> SCNAction     class func run(_ block: @escaping (SCNNode) -> Swift.Void) -> SCNAction     class func run(_ block: @escaping (SCNNode) -> Swift.Void, queue queue: DispatchQueue) -> SCNAction     class func javaScriptAction(withScript script: String, duration seconds: TimeInterval) -> SCNAction     class func customAction(duration seconds: TimeInterval, action block: @escaping (SCNNode, CGFloat) -> Swift.Void) -> SCNAction     class func playAudio(_ source: SCNAudioSource, waitForCompletion wait: Bool) -> SCNAction     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNAction : CVarArg { } extension SCNAction : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNAction.customAction(duration: TimeInterval, action: (SCNNode, CGFloat) -> Swift.Void) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523692-customactionwithduration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func customActionWithDuration(_ seconds: NSTimeInterval, actionBlock block: (SCNNode, CGFloat) -> Void) -> SCNAction ``` |
+| To | ``` class func customAction(duration seconds: TimeInterval, action block: @escaping (SCNNode, CGFloat) -> Swift.Void) -> SCNAction ``` |
+
+Modified [SCNAction.duration](https://developer.apple.com/documentation/scenekit/scnaction/1524162-duration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var duration: NSTimeInterval ``` |
+| To | ``` var duration: TimeInterval ``` |
+
+Modified [SCNAction.fadeIn(duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522777-fadeinwithduration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func fadeInWithDuration(_ sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func fadeIn(duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.fadeOpacity(by: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523595-fadeopacityby)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func fadeOpacityBy(_ factor: CGFloat, duration sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func fadeOpacity(by factor: CGFloat, duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.fadeOpacity(to: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523875-fadeopacityto)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func fadeOpacityTo(_ opacity: CGFloat, duration sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func fadeOpacity(to opacity: CGFloat, duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.fadeOut(duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523922-fadeoutwithduration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func fadeOutWithDuration(_ sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func fadeOut(duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.javaScriptAction(withScript: String, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523984-javascriptaction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func javaScriptActionWithScript(_ script: String, duration seconds: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func javaScriptAction(withScript script: String, duration seconds: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.move(by: SCNVector3, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522605-move)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func moveBy(_ delta: SCNVector3, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func move(by delta: SCNVector3, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.move(to: SCNVector3, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522826-move)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func moveTo(_ location: SCNVector3, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func move(to location: SCNVector3, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.moveBy(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523238-moveby)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func moveByX(_ deltaX: CGFloat, y deltaY: CGFloat, z deltaZ: CGFloat, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func moveBy(x deltaX: CGFloat, y deltaY: CGFloat, z deltaZ: CGFloat, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.playAudio(_: SCNAudioSource, waitForCompletion: Bool) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523651-playaudio)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func playAudioSource(_ source: SCNAudioSource, waitForCompletion wait: Bool) -> SCNAction ``` |
+| To | ``` class func playAudio(_ source: SCNAudioSource, waitForCompletion wait: Bool) -> SCNAction ``` |
+
+Modified [SCNAction.repeat(_: SCNAction, count: Int) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522764-repeat)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func repeatAction(_ action: SCNAction, count count: Int) -> SCNAction ``` |
+| To | ``` class func `repeat`(_ action: SCNAction, count count: Int) -> SCNAction ``` |
+
+Modified [SCNAction.repeatForever(_: SCNAction) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522908-repeatforever)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func repeatActionForever(_ action: SCNAction) -> SCNAction ``` |
+| To | ``` class func repeatForever(_ action: SCNAction) -> SCNAction ``` |
+
+Modified [SCNAction.reversed() -> SCNAction](https://developer.apple.com/documentation/scenekit/scnaction/1522815-reversedaction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func reversedAction() -> SCNAction ``` |
+| To | ``` func reversed() -> SCNAction ``` |
+
+Modified [SCNAction.rotate(by: CGFloat, around: SCNVector3, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523805-rotate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func rotateByAngle(_ angle: CGFloat, aroundAxis axis: SCNVector3, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func rotate(by angle: CGFloat, around axis: SCNVector3, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.rotate(toAxisAngle: SCNVector4, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1524191-rotatetoaxisangle)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func rotateToAxisAngle(_ axisAngle: SCNVector4, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func rotate(toAxisAngle axisAngle: SCNVector4, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.rotateBy(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523522-rotateby)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func rotateByX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func rotateBy(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.rotateTo(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1524044-rotateto)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func rotateToX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func rotateTo(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.rotateTo(x: CGFloat, y: CGFloat, z: CGFloat, duration: TimeInterval, usesShortestUnitArc: Bool) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522808-rotateto)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func rotateToX(_ xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: NSTimeInterval, shortestUnitArc shortestUnitArc: Bool) -> SCNAction ``` |
+| To | ``` class func rotateTo(x xAngle: CGFloat, y yAngle: CGFloat, z zAngle: CGFloat, duration duration: TimeInterval, usesShortestUnitArc shortestUnitArc: Bool) -> SCNAction ``` |
+
+Modified [SCNAction.run(_: (SCNNode) -> Swift.Void) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523637-run)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func runBlock(_ block: (SCNNode) -> Void) -> SCNAction ``` |
+| To | ``` class func run(_ block: @escaping (SCNNode) -> Swift.Void) -> SCNAction ``` |
+
+Modified [SCNAction.run(_: (SCNNode) -> Swift.Void, queue: DispatchQueue) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1522875-runblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func runBlock(_ block: (SCNNode) -> Void, queue queue: dispatch_queue_t) -> SCNAction ``` |
+| To | ``` class func run(_ block: @escaping (SCNNode) -> Swift.Void, queue queue: DispatchQueue) -> SCNAction ``` |
+
+Modified [SCNAction.scale(by: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523129-scale)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func scaleBy(_ scale: CGFloat, duration sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func scale(by scale: CGFloat, duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.scale(to: CGFloat, duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523322-scale)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func scaleTo(_ scale: CGFloat, duration sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func scale(to scale: CGFloat, duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.timingFunction](https://developer.apple.com/documentation/scenekit/scnaction/1524130-timingfunction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var timingFunction: SCNActionTimingFunction? ``` |
+| To | ``` var timingFunction: SceneKit.SCNActionTimingFunction? ``` |
+
+Modified [SCNAction.wait(duration: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523915-waitforduration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func waitForDuration(_ sec: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func wait(duration sec: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNAction.wait(duration: TimeInterval, withRange: TimeInterval) -> SCNAction [class]](https://developer.apple.com/documentation/scenekit/scnaction/1523086-waitforduration)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func waitForDuration(_ sec: NSTimeInterval, withRange durationRange: NSTimeInterval) -> SCNAction ``` |
+| To | ``` class func wait(duration sec: TimeInterval, withRange durationRange: TimeInterval) -> SCNAction ``` |
+
+Modified [SCNActionable](https://developer.apple.com/documentation/scenekit/scnactionable)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNActionable : NSObjectProtocol {     func runAction(_ action: SCNAction)     func runAction(_ action: SCNAction, completionHandler block: (() -> Void)?)     func runAction(_ action: SCNAction, forKey key: String?)     func runAction(_ action: SCNAction, forKey key: String?, completionHandler block: (() -> Void)?)     var hasActions: Bool { get }     func actionForKey(_ key: String) -> SCNAction?     func removeActionForKey(_ key: String)     func removeAllActions()     var actionKeys: [String] { get } } ``` |
+| To | ``` protocol SCNActionable : NSObjectProtocol {     func runAction(_ action: SCNAction)     func runAction(_ action: SCNAction, completionHandler block: (@escaping () -> Swift.Void)? = nil)     func runAction(_ action: SCNAction, forKey key: String?)     func runAction(_ action: SCNAction, forKey key: String?, completionHandler block: (@escaping () -> Swift.Void)? = nil)     var hasActions: Bool { get }     func action(forKey key: String) -> SCNAction?     func removeAction(forKey key: String)     func removeAllActions()     var actionKeys: [String] { get } } ``` |
+
+Modified [SCNActionable.action(forKey: String) -> SCNAction?](https://developer.apple.com/documentation/scenekit/scnactionable/1523287-actionforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func actionForKey(_ key: String) -> SCNAction? ``` |
+| To | ``` func action(forKey key: String) -> SCNAction? ``` |
+
+Modified [SCNActionable.removeAction(forKey: String)](https://developer.apple.com/documentation/scenekit/scnactionable/1523617-removeaction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func removeActionForKey(_ key: String) ``` |
+| To | ``` func removeAction(forKey key: String) ``` |
+
+Modified [SCNActionable.runAction() -> Swift.Void)? = nil)](https://developer.apple.com/documentation/scenekit/scnactionable/1524219-runaction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func runAction(_ action: SCNAction, completionHandler block: (() -> Void)?) ``` |
+| To | ``` func runAction(_ action: SCNAction, completionHandler block: (@escaping () -> Swift.Void)? = nil) ``` |
+
+Modified [SCNActionable.runAction() -> Swift.Void)? = nil)](https://developer.apple.com/documentation/scenekit/scnactionable/1522791-runaction)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func runAction(_ action: SCNAction, forKey key: String?, completionHandler block: (() -> Void)?) ``` |
+| To | ``` func runAction(_ action: SCNAction, forKey key: String?, completionHandler block: (@escaping () -> Swift.Void)? = nil) ``` |
+
+Modified [SCNActionTimingMode [enum]](https://developer.apple.com/documentation/scenekit/scnactiontimingmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNActionTimingMode : Int {     case Linear     case EaseIn     case EaseOut     case EaseInEaseOut } ``` |
+| To | ``` enum SCNActionTimingMode : Int {     case linear     case easeIn     case easeOut     case easeInEaseOut } ``` |
+
+Modified [SCNActionTimingMode.easeIn](https://developer.apple.com/documentation/scenekit/scnactiontimingmode/scnactiontimingmodeeasein)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case EaseIn ``` |
+| To | ``` case easeIn ``` |
+
+Modified [SCNActionTimingMode.easeInEaseOut](https://developer.apple.com/documentation/scenekit/scnactiontimingmode/easeineaseout)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case EaseInEaseOut ``` |
+| To | ``` case easeInEaseOut ``` |
+
+Modified [SCNActionTimingMode.easeOut](https://developer.apple.com/documentation/scenekit/scnactiontimingmode/scnactiontimingmodeeaseout)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case EaseOut ``` |
+| To | ``` case easeOut ``` |
+
+Modified [SCNActionTimingMode.linear](https://developer.apple.com/documentation/scenekit/scnactiontimingmode/scnactiontimingmodelinear)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Linear ``` |
+| To | ``` case linear ``` |
+
+Modified [SCNAnimatable](https://developer.apple.com/documentation/scenekit/scnanimatable)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNAnimatable : NSObjectProtocol {     func addAnimation(_ animation: CAAnimation, forKey key: String?)     func removeAllAnimations()     func removeAnimationForKey(_ key: String)     var animationKeys: [String] { get }     func animationForKey(_ key: String) -> CAAnimation?     func pauseAnimationForKey(_ key: String)     func resumeAnimationForKey(_ key: String)     func isAnimationForKeyPaused(_ key: String) -> Bool     func removeAnimationForKey(_ key: String, fadeOutDuration duration: CGFloat) } ``` |
+| To | ``` protocol SCNAnimatable : NSObjectProtocol {     func addAnimation(_ animation: CAAnimation, forKey key: String?)     func removeAllAnimations()     func removeAnimation(forKey key: String)     var animationKeys: [String] { get }     func animation(forKey key: String) -> CAAnimation?     func pauseAnimation(forKey key: String)     func resumeAnimation(forKey key: String)     func isAnimationPaused(forKey key: String) -> Bool     func removeAnimation(forKey key: String, fadeOutDuration duration: CGFloat)     func setAnimationSpeed(_ speed: CGFloat, forKey key: String) } ``` |
+
+Modified [SCNAnimatable.addAnimation(_: CAAnimation, forKey: String?)](https://developer.apple.com/documentation/scenekit/scnanimatable/1523386-addanimation)
+
+|  | Introduction |
+| --- | --- |
+| From | iOS 8.0 |
+| To | iOS 2.0 |
+
+Modified [SCNAnimatable.animation(forKey: String) -> CAAnimation?](https://developer.apple.com/documentation/scenekit/scnanimatable/1524020-animationforkey)
+
+|  | Declaration | Introduction |
+| --- | --- | --- |
+| From | ``` func animationForKey(_ key: String) -> CAAnimation? ``` | iOS 8.0 |
+| To | ``` func animation(forKey key: String) -> CAAnimation? ``` | iOS 2.0 |
+
+Modified [SCNAnimatable.isAnimationPaused(forKey: String) -> Bool](https://developer.apple.com/documentation/scenekit/scnanimatable/1523703-isanimationpaused)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isAnimationForKeyPaused(_ key: String) -> Bool ``` |
+| To | ``` func isAnimationPaused(forKey key: String) -> Bool ``` |
+
+Modified [SCNAnimatable.pauseAnimation(forKey: String)](https://developer.apple.com/documentation/scenekit/scnanimatable/1523592-pauseanimationforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func pauseAnimationForKey(_ key: String) ``` |
+| To | ``` func pauseAnimation(forKey key: String) ``` |
+
+Modified [SCNAnimatable.removeAnimation(forKey: String)](https://developer.apple.com/documentation/scenekit/scnanimatable/1522880-removeanimationforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func removeAnimationForKey(_ key: String) ``` |
+| To | ``` func removeAnimation(forKey key: String) ``` |
+
+Modified [SCNAnimatable.removeAnimation(forKey: String, fadeOutDuration: CGFloat)](https://developer.apple.com/documentation/scenekit/scnanimatable/1522841-removeanimation)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func removeAnimationForKey(_ key: String, fadeOutDuration duration: CGFloat) ``` |
+| To | ``` func removeAnimation(forKey key: String, fadeOutDuration duration: CGFloat) ``` |
+
+Modified [SCNAnimatable.resumeAnimation(forKey: String)](https://developer.apple.com/documentation/scenekit/scnanimatable/1523332-resumeanimationforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func resumeAnimationForKey(_ key: String) ``` |
+| To | ``` func resumeAnimation(forKey key: String) ``` |
+
+Modified [SCNAnimationEvent](https://developer.apple.com/documentation/scenekit/scnanimationevent)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNAnimationEvent : NSObject {     convenience init(keyTime time: CGFloat, block eventBlock: SCNAnimationEventBlock)     class func animationEventWithKeyTime(_ time: CGFloat, block eventBlock: SCNAnimationEventBlock) -> Self } ``` | -- |
+| To | ``` class SCNAnimationEvent : NSObject {     convenience init(keyTime time: CGFloat, block eventBlock: SceneKit.SCNAnimationEventBlock)     class func withKeyTime(_ time: CGFloat, block eventBlock: SceneKit.SCNAnimationEventBlock) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNAnimationEvent : CVarArg { } extension SCNAnimationEvent : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNAnimationEvent.init(keyTime: CGFloat, block: SceneKit.SCNAnimationEventBlock)](https://developer.apple.com/documentation/scenekit/scnanimationevent/1524004-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(keyTime time: CGFloat, block eventBlock: SCNAnimationEventBlock) ``` |
+| To | ``` convenience init(keyTime time: CGFloat, block eventBlock: SceneKit.SCNAnimationEventBlock) ``` |
+
+Modified [SCNAntialiasingMode [enum]](https://developer.apple.com/documentation/scenekit/scnantialiasingmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNAntialiasingMode : UInt {     case None     case Multisampling2X     case Multisampling4X } ``` |
+| To | ``` enum SCNAntialiasingMode : UInt {     case none     case multisampling2X     case multisampling4X } ``` |
+
+Modified [SCNAntialiasingMode.multisampling2X](https://developer.apple.com/documentation/scenekit/scnantialiasingmode/scnantialiasingmodemultisampling2x)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Multisampling2X ``` |
+| To | ``` case multisampling2X ``` |
+
+Modified [SCNAntialiasingMode.multisampling4X](https://developer.apple.com/documentation/scenekit/scnantialiasingmode/multisampling4x)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Multisampling4X ``` |
+| To | ``` case multisampling4X ``` |
+
+Modified [SCNAntialiasingMode.none](https://developer.apple.com/documentation/scenekit/scnantialiasingmode/scnantialiasingmodenone)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case None ``` |
+| To | ``` case none ``` |
+
+Modified [SCNAudioPlayer](https://developer.apple.com/documentation/scenekit/scnaudioplayer)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNAudioPlayer : NSObject {     convenience init()     init(source source: SCNAudioSource)     init(AVAudioNode audioNode: AVAudioNode)     class func audioPlayerWithSource(_ source: SCNAudioSource) -> Self     class func audioPlayerWithAVAudioNode(_ audioNode: AVAudioNode) -> Self     var willStartPlayback: (() -> Void)?     var didFinishPlayback: (() -> Void)?     var audioNode: AVAudioNode? { get }     var audioSource: SCNAudioSource? { get } } ``` | -- |
+| To | ``` class SCNAudioPlayer : NSObject {     convenience init()     init(source source: SCNAudioSource)     init(avAudioNode audioNode: AVAudioNode)     class func withSource(_ source: SCNAudioSource) -> Self     class func withAVAudioNode(_ audioNode: AVAudioNode) -> Self     var willStartPlayback: (() -> Swift.Void)?     var didFinishPlayback: (() -> Swift.Void)?     var audioNode: AVAudioNode? { get }     var audioSource: SCNAudioSource? { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNAudioPlayer : CVarArg { } extension SCNAudioPlayer : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNAudioPlayer.didFinishPlayback](https://developer.apple.com/documentation/scenekit/scnaudioplayer/1522818-didfinishplayback)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var didFinishPlayback: (() -> Void)? ``` |
+| To | ``` var didFinishPlayback: (() -> Swift.Void)? ``` |
+
+Modified [SCNAudioPlayer.init(avAudioNode: AVAudioNode)](https://developer.apple.com/documentation/scenekit/scnaudioplayer/1523010-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(AVAudioNode audioNode: AVAudioNode) ``` |
+| To | ``` init(avAudioNode audioNode: AVAudioNode) ``` |
+
+Modified [SCNAudioPlayer.willStartPlayback](https://developer.apple.com/documentation/scenekit/scnaudioplayer/1524115-willstartplayback)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var willStartPlayback: (() -> Void)? ``` |
+| To | ``` var willStartPlayback: (() -> Swift.Void)? ``` |
+
+Modified [SCNAudioSource](https://developer.apple.com/documentation/scenekit/scnaudiosource)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNAudioSource : NSObject, NSCopying, NSSecureCoding {     convenience init?(fileNamed name: String)     init?(URL url: NSURL)     convenience init?(named fileName: String)     class func audioSourceNamed(_ fileName: String) -> Self?     var positional: Bool     var volume: Float     var rate: Float     var reverbBlend: Float     var loops: Bool     var shouldStream: Bool     func load() } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNAudioSource : NSObject, NSCopying, NSSecureCoding {     convenience init?(fileNamed name: String)     init?(url url: URL)     convenience init?(named fileName: String)     class func audioSourceNamed(_ fileName: String) -> Self?     var isPositional: Bool     var volume: Float     var rate: Float     var reverbBlend: Float     var loops: Bool     var shouldStream: Bool     func load()     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNAudioSource : CVarArg { } extension SCNAudioSource : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNAudioSource.init(url: URL)](https://developer.apple.com/documentation/scenekit/scnaudiosource/1523264-initwithurl)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(URL url: NSURL) ``` |
+| To | ``` init?(url url: URL) ``` |
+
+Modified [SCNAudioSource.isPositional](https://developer.apple.com/documentation/scenekit/scnaudiosource/1524185-ispositional)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var positional: Bool ``` |
+| To | ``` var isPositional: Bool ``` |
+
+Modified [SCNBillboardAxis [struct]](https://developer.apple.com/documentation/scenekit/scnbillboardaxis)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct SCNBillboardAxis : OptionSetType {     init(rawValue rawValue: UInt)     static var X: SCNBillboardAxis { get }     static var Y: SCNBillboardAxis { get }     static var Z: SCNBillboardAxis { get }     static var All: SCNBillboardAxis { get } } ``` | OptionSetType |
+| To | ``` struct SCNBillboardAxis : OptionSet {     init(rawValue rawValue: UInt)     static var X: SCNBillboardAxis { get }     static var Y: SCNBillboardAxis { get }     static var Z: SCNBillboardAxis { get }     static var all: SCNBillboardAxis { get }     func intersect(_ other: SCNBillboardAxis) -> SCNBillboardAxis     func exclusiveOr(_ other: SCNBillboardAxis) -> SCNBillboardAxis     mutating func unionInPlace(_ other: SCNBillboardAxis)     mutating func intersectInPlace(_ other: SCNBillboardAxis)     mutating func exclusiveOrInPlace(_ other: SCNBillboardAxis)     func isSubsetOf(_ other: SCNBillboardAxis) -> Bool     func isDisjointWith(_ other: SCNBillboardAxis) -> Bool     func isSupersetOf(_ other: SCNBillboardAxis) -> Bool     mutating func subtractInPlace(_ other: SCNBillboardAxis)     func isStrictSupersetOf(_ other: SCNBillboardAxis) -> Bool     func isStrictSubsetOf(_ other: SCNBillboardAxis) -> Bool } extension SCNBillboardAxis {     func union(_ other: SCNBillboardAxis) -> SCNBillboardAxis     func intersection(_ other: SCNBillboardAxis) -> SCNBillboardAxis     func symmetricDifference(_ other: SCNBillboardAxis) -> SCNBillboardAxis } extension SCNBillboardAxis {     func contains(_ member: SCNBillboardAxis) -> Bool     mutating func insert(_ newMember: SCNBillboardAxis) -> (inserted: Bool, memberAfterInsert: SCNBillboardAxis)     mutating func remove(_ member: SCNBillboardAxis) -> SCNBillboardAxis?     mutating func update(with newMember: SCNBillboardAxis) -> SCNBillboardAxis? } extension SCNBillboardAxis {     convenience init()     mutating func formUnion(_ other: SCNBillboardAxis)     mutating func formIntersection(_ other: SCNBillboardAxis)     mutating func formSymmetricDifference(_ other: SCNBillboardAxis) } extension SCNBillboardAxis {     convenience init<S : Sequence where S.Iterator.Element == SCNBillboardAxis>(_ sequence: S)     convenience init(arrayLiteral arrayLiteral: SCNBillboardAxis...)     mutating func subtract(_ other: SCNBillboardAxis)     func isSubset(of other: SCNBillboardAxis) -> Bool     func isSuperset(of other: SCNBillboardAxis) -> Bool     func isDisjoint(with other: SCNBillboardAxis) -> Bool     func subtracting(_ other: SCNBillboardAxis) -> SCNBillboardAxis     var isEmpty: Bool { get }     func isStrictSuperset(of other: SCNBillboardAxis) -> Bool     func isStrictSubset(of other: SCNBillboardAxis) -> Bool } ``` | OptionSet |
+
+Modified [SCNBillboardAxis.all](https://developer.apple.com/documentation/scenekit/scnbillboardaxis/1468666-all)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var All: SCNBillboardAxis { get } ``` |
+| To | ``` static var all: SCNBillboardAxis { get } ``` |
+
+Modified [SCNBlendMode [enum]](https://developer.apple.com/documentation/scenekit/scnblendmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNBlendMode : Int {     case Alpha     case Add     case Subtract     case Multiply     case Screen     case Replace } ``` |
+| To | ``` enum SCNBlendMode : Int {     case alpha     case add     case subtract     case multiply     case screen     case replace } ``` |
+
+Modified [SCNBlendMode.add](https://developer.apple.com/documentation/scenekit/scnblendmode/scnblendmodeadd)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Add ``` |
+| To | ``` case add ``` |
+
+Modified [SCNBlendMode.alpha](https://developer.apple.com/documentation/scenekit/scnblendmode/scnblendmodealpha)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Alpha ``` |
+| To | ``` case alpha ``` |
+
+Modified [SCNBlendMode.multiply](https://developer.apple.com/documentation/scenekit/scnblendmode/multiply)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Multiply ``` |
+| To | ``` case multiply ``` |
+
+Modified [SCNBlendMode.replace](https://developer.apple.com/documentation/scenekit/scnblendmode/scnblendmodereplace)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Replace ``` |
+| To | ``` case replace ``` |
+
+Modified [SCNBlendMode.screen](https://developer.apple.com/documentation/scenekit/scnblendmode/screen)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Screen ``` |
+| To | ``` case screen ``` |
+
+Modified [SCNBlendMode.subtract](https://developer.apple.com/documentation/scenekit/scnblendmode/scnblendmodesubtract)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Subtract ``` |
+| To | ``` case subtract ``` |
+
+Modified [SCNBoundingVolume](https://developer.apple.com/documentation/scenekit/scnboundingvolume)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNBoundingVolume : NSObjectProtocol {     func getBoundingBoxMin(_ min: UnsafeMutablePointer<SCNVector3>, max max: UnsafeMutablePointer<SCNVector3>) -> Bool     func getBoundingSphereCenter(_ center: UnsafeMutablePointer<SCNVector3>, radius radius: UnsafeMutablePointer<CGFloat>) -> Bool     func setBoundingBoxMin(_ min: UnsafeMutablePointer<SCNVector3>, max max: UnsafeMutablePointer<SCNVector3>) } ``` |
+| To | ``` protocol SCNBoundingVolume : NSObjectProtocol {     func __getBoundingBoxMin(_ min: UnsafeMutablePointer<SCNVector3>?, max max: UnsafeMutablePointer<SCNVector3>?) -> Bool     func __setBoundingBoxMin(_ min: UnsafeMutablePointer<SCNVector3>?, max max: UnsafeMutablePointer<SCNVector3>?)     func __getBoundingSphereCenter(_ center: UnsafeMutablePointer<SCNVector3>?, radius radius: UnsafeMutablePointer<CGFloat>?) -> Bool } ``` |
+
+Modified [SCNBox](https://developer.apple.com/documentation/scenekit/scnbox)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNBox : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat, length length: CGFloat, chamferRadius chamferRadius: CGFloat)     class func boxWithWidth(_ width: CGFloat, height height: CGFloat, length length: CGFloat, chamferRadius chamferRadius: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var length: CGFloat     var chamferRadius: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var lengthSegmentCount: Int     var chamferSegmentCount: Int } ``` | -- |
+| To | ``` class SCNBox : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat, length length: CGFloat, chamferRadius chamferRadius: CGFloat)     class func withWidth(_ width: CGFloat, height height: CGFloat, length length: CGFloat, chamferRadius chamferRadius: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var length: CGFloat     var chamferRadius: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var lengthSegmentCount: Int     var chamferSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNBox : CVarArg { } extension SCNBox : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNBufferFrequency [enum]](https://developer.apple.com/documentation/scenekit/scnbufferfrequency)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNBufferFrequency : Int {     case PerFrame     case PerNode     case PerShadable } ``` |
+| To | ``` enum SCNBufferFrequency : Int {     case perFrame     case perNode     case perShadable } ``` |
+
+Modified [SCNBufferFrequency.perFrame](https://developer.apple.com/documentation/scenekit/scnbufferfrequency/perframe)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PerFrame ``` |
+| To | ``` case perFrame ``` |
+
+Modified [SCNBufferFrequency.perNode](https://developer.apple.com/documentation/scenekit/scnbufferfrequency/scnbufferfrequencypernode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PerNode ``` |
+| To | ``` case perNode ``` |
+
+Modified [SCNBufferFrequency.perShadable](https://developer.apple.com/documentation/scenekit/scnbufferfrequency/pershadable)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PerShadable ``` |
+| To | ``` case perShadable ``` |
+
+Modified [SCNBufferStream](https://developer.apple.com/documentation/scenekit/scnbufferstream)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNBufferStream : NSObjectProtocol {     func writeBytes(_ bytes: UnsafeMutablePointer<Void>, length length: Int) } ``` |
+| To | ``` protocol SCNBufferStream : NSObjectProtocol {     func writeBytes(_ bytes: UnsafeMutableRawPointer, count length: Int) } ``` |
+
+Modified [SCNBufferStream.writeBytes(_: UnsafeMutableRawPointer, count: Int)](https://developer.apple.com/documentation/scenekit/scnbufferstream/1523175-writebytes)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func writeBytes(_ bytes: UnsafeMutablePointer<Void>, length length: Int) ``` |
+| To | ``` func writeBytes(_ bytes: UnsafeMutableRawPointer, count length: Int) ``` |
+
+Modified [SCNCamera](https://developer.apple.com/documentation/scenekit/scncamera)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNCamera : NSObject, SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding {     convenience init()     class func camera() -> Self     var name: String?     var xFov: Double     var yFov: Double     var zNear: Double     var zFar: Double     var automaticallyAdjustsZRange: Bool     var usesOrthographicProjection: Bool     var orthographicScale: Double     func projectionTransform() -> SCNMatrix4     func setProjectionTransform(_ projectionTransform: SCNMatrix4)     var focalDistance: CGFloat     var focalSize: CGFloat     var focalBlurRadius: CGFloat     var aperture: CGFloat     var categoryBitMask: Int } extension SCNCamera {     convenience init(MDLCamera mdlCamera: MDLCamera)     class func cameraWithMDLCamera(_ mdlCamera: MDLCamera) -> Self } ``` | NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport |
+| To | ``` class SCNCamera : NSObject, SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding {     convenience init()     class func camera() -> Self     var name: String?     var xFov: Double     var yFov: Double     var zNear: Double     var zFar: Double     var automaticallyAdjustsZRange: Bool     var usesOrthographicProjection: Bool     var orthographicScale: Double     var projectionTransform: SCNMatrix4     var focalDistance: CGFloat     var focalSize: CGFloat     var focalBlurRadius: CGFloat     var aperture: CGFloat     var motionBlurIntensity: CGFloat     var wantsHDR: Bool     var exposureOffset: CGFloat     var averageGray: CGFloat     var whitePoint: CGFloat     var wantsExposureAdaptation: Bool     var exposureAdaptationBrighteningSpeedFactor: CGFloat     var exposureAdaptationDarkeningSpeedFactor: CGFloat     var minimumExposure: CGFloat     var maximumExposure: CGFloat     var bloomThreshold: CGFloat     var bloomIntensity: CGFloat     var bloomBlurRadius: CGFloat     var vignettingPower: CGFloat     var vignettingIntensity: CGFloat     var colorFringeStrength: CGFloat     var colorFringeIntensity: CGFloat     var saturation: CGFloat     var contrast: CGFloat     var colorGrading: SCNMaterialProperty { get }     var categoryBitMask: Int     convenience init(mdlCamera mdlCamera: MDLCamera)     class func withMDLCamera(_ mdlCamera: MDLCamera) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNCamera {     convenience init(mdlCamera mdlCamera: MDLCamera)     class func withMDLCamera(_ mdlCamera: MDLCamera) -> Self } extension SCNCamera : CVarArg { } extension SCNCamera : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport |
+
+Modified [SCNCamera.init(mdlCamera: MDLCamera)](https://developer.apple.com/documentation/scenekit/scncamera/1419839-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLCamera mdlCamera: MDLCamera) ``` |
+| To | ``` convenience init(mdlCamera mdlCamera: MDLCamera) ``` |
+
+Modified [SCNCapsule](https://developer.apple.com/documentation/scenekit/scncapsule)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNCapsule : SCNGeometry {     convenience init(capRadius capRadius: CGFloat, height height: CGFloat)     class func capsuleWithCapRadius(_ capRadius: CGFloat, height height: CGFloat) -> Self     var capRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int     var capSegmentCount: Int } ``` | -- |
+| To | ``` class SCNCapsule : SCNGeometry {     convenience init(capRadius capRadius: CGFloat, height height: CGFloat)     class func withCapRadius(_ capRadius: CGFloat, height height: CGFloat) -> Self     var capRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int     var capSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNCapsule : CVarArg { } extension SCNCapsule : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNChamferMode [enum]](https://developer.apple.com/documentation/scenekit/scnchamfermode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNChamferMode : Int {     case Both     case Front     case Back } ``` |
+| To | ``` enum SCNChamferMode : Int {     case both     case front     case back } ``` |
+
+Modified [SCNChamferMode.back](https://developer.apple.com/documentation/scenekit/scnchamfermode/back)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Back ``` |
+| To | ``` case back ``` |
+
+Modified [SCNChamferMode.both](https://developer.apple.com/documentation/scenekit/scnchamfermode/scnchamfermodeboth)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Both ``` |
+| To | ``` case both ``` |
+
+Modified [SCNChamferMode.front](https://developer.apple.com/documentation/scenekit/scnchamfermode/front)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Front ``` |
+| To | ``` case front ``` |
+
+Modified [SCNCone](https://developer.apple.com/documentation/scenekit/scncone)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNCone : SCNGeometry {     convenience init(topRadius topRadius: CGFloat, bottomRadius bottomRadius: CGFloat, height height: CGFloat)     class func coneWithTopRadius(_ topRadius: CGFloat, bottomRadius bottomRadius: CGFloat, height height: CGFloat) -> Self     var topRadius: CGFloat     var bottomRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int } ``` | -- |
+| To | ``` class SCNCone : SCNGeometry {     convenience init(topRadius topRadius: CGFloat, bottomRadius bottomRadius: CGFloat, height height: CGFloat)     class func withTopRadius(_ topRadius: CGFloat, bottomRadius bottomRadius: CGFloat, height height: CGFloat) -> Self     var topRadius: CGFloat     var bottomRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNCone : CVarArg { } extension SCNCone : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNConstraint](https://developer.apple.com/documentation/scenekit/scnconstraint)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNConstraint : NSObject, NSCopying, NSSecureCoding, SCNAnimatable {     var influenceFactor: CGFloat } ``` | NSCopying, NSSecureCoding, SCNAnimatable |
+| To | ``` class SCNConstraint : NSObject, NSCopying, NSSecureCoding, SCNAnimatable {     var influenceFactor: CGFloat     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNConstraint : CVarArg { } extension SCNConstraint : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable |
+
+Modified [SCNCullMode [enum]](https://developer.apple.com/documentation/scenekit/scncullmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNCullMode : Int {     case Back     case Front } ``` |
+| To | ``` enum SCNCullMode : Int {     case back     case front } ``` |
+
+Modified [SCNCullMode.back](https://developer.apple.com/documentation/scenekit/scncullmode/scncullmodeback)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Back ``` |
+| To | ``` case back ``` |
+
+Modified [SCNCullMode.front](https://developer.apple.com/documentation/scenekit/scncullmode/front)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Front ``` |
+| To | ``` case front ``` |
+
+Modified [SCNCylinder](https://developer.apple.com/documentation/scenekit/scncylinder)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNCylinder : SCNGeometry {     convenience init(radius radius: CGFloat, height height: CGFloat)     class func cylinderWithRadius(_ radius: CGFloat, height height: CGFloat) -> Self     var radius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int } ``` | -- |
+| To | ``` class SCNCylinder : SCNGeometry {     convenience init(radius radius: CGFloat, height height: CGFloat)     class func withRadius(_ radius: CGFloat, height height: CGFloat) -> Self     var radius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNCylinder : CVarArg { } extension SCNCylinder : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNDebugOptions [struct]](https://developer.apple.com/documentation/scenekit/scndebugoptions)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct SCNDebugOptions : OptionSetType {     init(rawValue rawValue: UInt)     static var None: SCNDebugOptions { get }     static var ShowPhysicsShapes: SCNDebugOptions { get }     static var ShowBoundingBoxes: SCNDebugOptions { get }     static var ShowLightInfluences: SCNDebugOptions { get }     static var ShowLightExtents: SCNDebugOptions { get }     static var ShowPhysicsFields: SCNDebugOptions { get }     static var ShowWireframe: SCNDebugOptions { get } } ``` | OptionSetType |
+| To | ``` struct SCNDebugOptions : OptionSet {     init(rawValue rawValue: UInt)     static var none: SCNDebugOptions { get }     static var showPhysicsShapes: SCNDebugOptions { get }     static var showBoundingBoxes: SCNDebugOptions { get }     static var showLightInfluences: SCNDebugOptions { get }     static var showLightExtents: SCNDebugOptions { get }     static var showPhysicsFields: SCNDebugOptions { get }     static var showWireframe: SCNDebugOptions { get }     func intersect(_ other: SCNDebugOptions) -> SCNDebugOptions     func exclusiveOr(_ other: SCNDebugOptions) -> SCNDebugOptions     mutating func unionInPlace(_ other: SCNDebugOptions)     mutating func intersectInPlace(_ other: SCNDebugOptions)     mutating func exclusiveOrInPlace(_ other: SCNDebugOptions)     func isSubsetOf(_ other: SCNDebugOptions) -> Bool     func isDisjointWith(_ other: SCNDebugOptions) -> Bool     func isSupersetOf(_ other: SCNDebugOptions) -> Bool     mutating func subtractInPlace(_ other: SCNDebugOptions)     func isStrictSupersetOf(_ other: SCNDebugOptions) -> Bool     func isStrictSubsetOf(_ other: SCNDebugOptions) -> Bool } extension SCNDebugOptions {     func union(_ other: SCNDebugOptions) -> SCNDebugOptions     func intersection(_ other: SCNDebugOptions) -> SCNDebugOptions     func symmetricDifference(_ other: SCNDebugOptions) -> SCNDebugOptions } extension SCNDebugOptions {     func contains(_ member: SCNDebugOptions) -> Bool     mutating func insert(_ newMember: SCNDebugOptions) -> (inserted: Bool, memberAfterInsert: SCNDebugOptions)     mutating func remove(_ member: SCNDebugOptions) -> SCNDebugOptions?     mutating func update(with newMember: SCNDebugOptions) -> SCNDebugOptions? } extension SCNDebugOptions {     convenience init()     mutating func formUnion(_ other: SCNDebugOptions)     mutating func formIntersection(_ other: SCNDebugOptions)     mutating func formSymmetricDifference(_ other: SCNDebugOptions) } extension SCNDebugOptions {     convenience init<S : Sequence where S.Iterator.Element == SCNDebugOptions>(_ sequence: S)     convenience init(arrayLiteral arrayLiteral: SCNDebugOptions...)     mutating func subtract(_ other: SCNDebugOptions)     func isSubset(of other: SCNDebugOptions) -> Bool     func isSuperset(of other: SCNDebugOptions) -> Bool     func isDisjoint(with other: SCNDebugOptions) -> Bool     func subtracting(_ other: SCNDebugOptions) -> SCNDebugOptions     var isEmpty: Bool { get }     func isStrictSuperset(of other: SCNDebugOptions) -> Bool     func isStrictSubset(of other: SCNDebugOptions) -> Bool } ``` | OptionSet |
+
+Modified [SCNDebugOptions.showBoundingBoxes](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionshowboundingboxes)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowBoundingBoxes: SCNDebugOptions { get } ``` |
+| To | ``` static var showBoundingBoxes: SCNDebugOptions { get } ``` |
+
+Modified [SCNDebugOptions.showLightExtents](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionshowlightextents)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowLightExtents: SCNDebugOptions { get } ``` |
+| To | ``` static var showLightExtents: SCNDebugOptions { get } ``` |
+
+Modified [SCNDebugOptions.showLightInfluences](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionshowlightinfluences)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowLightInfluences: SCNDebugOptions { get } ``` |
+| To | ``` static var showLightInfluences: SCNDebugOptions { get } ``` |
+
+Modified [SCNDebugOptions.showPhysicsFields](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionshowphysicsfields)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowPhysicsFields: SCNDebugOptions { get } ``` |
+| To | ``` static var showPhysicsFields: SCNDebugOptions { get } ``` |
+
+Modified [SCNDebugOptions.showPhysicsShapes](https://developer.apple.com/documentation/scenekit/scndebugoptions/1522896-showphysicsshapes)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowPhysicsShapes: SCNDebugOptions { get } ``` |
+| To | ``` static var showPhysicsShapes: SCNDebugOptions { get } ``` |
+
+Modified [SCNDebugOptions.showWireframe](https://developer.apple.com/documentation/scenekit/scndebugoptions/scndebugoptionshowwireframe)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var ShowWireframe: SCNDebugOptions { get } ``` |
+| To | ``` static var showWireframe: SCNDebugOptions { get } ``` |
+
+Modified [SCNFilterMode [enum]](https://developer.apple.com/documentation/scenekit/scnfiltermode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNFilterMode : Int {     case None     case Nearest     case Linear } ``` |
+| To | ``` enum SCNFilterMode : Int {     case none     case nearest     case linear } ``` |
+
+Modified [SCNFilterMode.linear](https://developer.apple.com/documentation/scenekit/scnfiltermode/scnfiltermodelinear)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Linear ``` |
+| To | ``` case linear ``` |
+
+Modified [SCNFilterMode.nearest](https://developer.apple.com/documentation/scenekit/scnfiltermode/nearest)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Nearest ``` |
+| To | ``` case nearest ``` |
+
+Modified [SCNFilterMode.none](https://developer.apple.com/documentation/scenekit/scnfiltermode/scnfiltermodenone)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case None ``` |
+| To | ``` case none ``` |
+
+Modified [SCNFloor](https://developer.apple.com/documentation/scenekit/scnfloor)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNFloor : SCNGeometry {     convenience init()     class func floor() -> Self     var reflectivity: CGFloat     var reflectionFalloffStart: CGFloat     var reflectionFalloffEnd: CGFloat     var reflectionResolutionScaleFactor: CGFloat } ``` | -- |
+| To | ``` class SCNFloor : SCNGeometry {     convenience init()     class func floor() -> Self     var reflectivity: CGFloat     var reflectionFalloffStart: CGFloat     var reflectionFalloffEnd: CGFloat     var reflectionCategoryBitMask: Int     var width: CGFloat     var length: CGFloat     var reflectionResolutionScaleFactor: CGFloat     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNFloor : CVarArg { } extension SCNFloor : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNGeometry](https://developer.apple.com/documentation/scenekit/scngeometry)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNGeometry : NSObject, SCNAnimatable, SCNBoundingVolume, SCNShadable, NSCopying, NSSecureCoding {     convenience init()     class func geometry() -> Self     var name: String?     var materials: [SCNMaterial]     var firstMaterial: SCNMaterial?     func insertMaterial(_ material: SCNMaterial, atIndex index: Int)     func removeMaterialAtIndex(_ index: Int)     func replaceMaterialAtIndex(_ index: Int, withMaterial material: SCNMaterial)     func materialWithName(_ name: String) -> SCNMaterial?     convenience init(sources sources: [SCNGeometrySource], elements elements: [SCNGeometryElement])     class func geometryWithSources(_ sources: [SCNGeometrySource], elements elements: [SCNGeometryElement]) -> Self     var geometrySources: [SCNGeometrySource] { get }     func geometrySourcesForSemantic(_ semantic: String) -> [SCNGeometrySource]     var geometryElements: [SCNGeometryElement] { get }     var geometryElementCount: Int { get }     func geometryElementAtIndex(_ elementIndex: Int) -> SCNGeometryElement     var levelsOfDetail: [SCNLevelOfDetail]?     var subdivisionLevel: Int     var edgeCreasesElement: SCNGeometryElement?     var edgeCreasesSource: SCNGeometrySource? } extension SCNGeometry {     convenience init(MDLMesh mdlMesh: MDLMesh)     class func geometryWithMDLMesh(_ mdlMesh: MDLMesh) -> Self } ``` | NSCopying, NSSecureCoding, SCNAnimatable, SCNBoundingVolume, SCNShadable |
+| To | ``` class SCNGeometry : NSObject, SCNAnimatable, SCNBoundingVolume, SCNShadable, NSCopying, NSSecureCoding {     convenience init()     class func geometry() -> Self     var name: String?     var materials: [SCNMaterial]     var firstMaterial: SCNMaterial?     func insertMaterial(_ material: SCNMaterial, at index: Int)     func removeMaterial(at index: Int)     func replaceMaterial(at index: Int, with material: SCNMaterial)     func material(named name: String) -> SCNMaterial?     convenience init(sources sources: [SCNGeometrySource], elements elements: [SCNGeometryElement]?)     class func withSources(_ sources: [SCNGeometrySource], elements elements: [SCNGeometryElement]?) -> Self     var geometrySources: [SCNGeometrySource] { get }     func getGeometrySources(for semantic: SCNGeometrySource.Semantic) -> [SCNGeometrySource]     var geometryElements: [SCNGeometryElement] { get }     var geometryElementCount: Int { get }     func geometryElement(at elementIndex: Int) -> SCNGeometryElement     var levelsOfDetail: [SCNLevelOfDetail]?     var subdivisionLevel: Int     var edgeCreasesElement: SCNGeometryElement?     var edgeCreasesSource: SCNGeometrySource?     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNGeometry {     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self } extension SCNGeometry : CVarArg { } extension SCNGeometry : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable, SCNBoundingVolume, SCNShadable |
+
+Modified [SCNGeometry.geometryElement(at: Int) -> SCNGeometryElement](https://developer.apple.com/documentation/scenekit/scngeometry/1523266-geometryelementatindex)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func geometryElementAtIndex(_ elementIndex: Int) -> SCNGeometryElement ``` |
+| To | ``` func geometryElement(at elementIndex: Int) -> SCNGeometryElement ``` |
+
+Modified [SCNGeometry.getGeometrySources(for: SCNGeometrySource.Semantic) -> [SCNGeometrySource]](https://developer.apple.com/documentation/scenekit/scngeometry/1522926-sources)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func geometrySourcesForSemantic(_ semantic: String) -> [SCNGeometrySource] ``` |
+| To | ``` func getGeometrySources(for semantic: SCNGeometrySource.Semantic) -> [SCNGeometrySource] ``` |
+
+Modified [SCNGeometry.init(mdlMesh: MDLMesh)](https://developer.apple.com/documentation/scenekit/scngeometry/1419845-geometrywithmdlmesh)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLMesh mdlMesh: MDLMesh) ``` |
+| To | ``` convenience init(mdlMesh mdlMesh: MDLMesh) ``` |
+
+Modified [SCNGeometry.init(sources: [SCNGeometrySource], elements: [SCNGeometryElement]?)](https://developer.apple.com/documentation/scenekit/scngeometry/1522803-geometrywithsources)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(sources sources: [SCNGeometrySource], elements elements: [SCNGeometryElement]) ``` |
+| To | ``` convenience init(sources sources: [SCNGeometrySource], elements elements: [SCNGeometryElement]?) ``` |
+
+Modified [SCNGeometry.insertMaterial(_: SCNMaterial, at: Int)](https://developer.apple.com/documentation/scenekit/scngeometry/1522876-insertmaterial)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func insertMaterial(_ material: SCNMaterial, atIndex index: Int) ``` |
+| To | ``` func insertMaterial(_ material: SCNMaterial, at index: Int) ``` |
+
+Modified [SCNGeometry.material(named: String) -> SCNMaterial?](https://developer.apple.com/documentation/scenekit/scngeometry/1523789-materialwithname)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func materialWithName(_ name: String) -> SCNMaterial? ``` |
+| To | ``` func material(named name: String) -> SCNMaterial? ``` |
+
+Modified [SCNGeometry.removeMaterial(at: Int)](https://developer.apple.com/documentation/scenekit/scngeometry/1522646-removematerialatindex)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func removeMaterialAtIndex(_ index: Int) ``` |
+| To | ``` func removeMaterial(at index: Int) ``` |
+
+Modified [SCNGeometry.replaceMaterial(at: Int, with: SCNMaterial)](https://developer.apple.com/documentation/scenekit/scngeometry/1522714-replacematerialatindex)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func replaceMaterialAtIndex(_ index: Int, withMaterial material: SCNMaterial) ``` |
+| To | ``` func replaceMaterial(at index: Int, with material: SCNMaterial) ``` |
+
+Modified [SCNGeometryElement](https://developer.apple.com/documentation/scenekit/scngeometryelement)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNGeometryElement : NSObject, NSSecureCoding {     convenience init(data data: NSData?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int)     class func geometryElementWithData(_ data: NSData?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int) -> Self     var data: NSData { get }     var primitiveType: SCNGeometryPrimitiveType { get }     var primitiveCount: Int { get }     var bytesPerIndex: Int { get } } extension SCNGeometryElement {     convenience init(MDLSubmesh mdlSubMesh: MDLSubmesh)     class func geometryElementWithMDLSubmesh(_ mdlSubMesh: MDLSubmesh) -> Self } extension SCNGeometryElement {     convenience init<IndexType : IntegerType>(indices indices: [IndexType], primitiveType primitiveType: SCNGeometryPrimitiveType) } extension SCNGeometryElement {     convenience init<IndexType : IntegerType>(indices indices: [IndexType], primitiveType primitiveType: SCNGeometryPrimitiveType) } ``` | NSSecureCoding |
+| To | ``` class SCNGeometryElement : NSObject, NSSecureCoding {     convenience init(data data: Data?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int)     class func withData(_ data: Data?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int) -> Self     var data: Data { get }     var primitiveType: SCNGeometryPrimitiveType { get }     var primitiveCount: Int { get }     var bytesPerIndex: Int { get }     convenience init<IndexType : Integer>(indices indices: [IndexType], primitiveType primitiveType: SCNGeometryPrimitiveType)     convenience init(mdlSubmesh mdlSubMesh: MDLSubmesh)     class func withMDLSubmesh(_ mdlSubMesh: MDLSubmesh) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNGeometryElement {     convenience init(mdlSubmesh mdlSubMesh: MDLSubmesh)     class func withMDLSubmesh(_ mdlSubMesh: MDLSubmesh) -> Self } extension SCNGeometryElement : CVarArg { } extension SCNGeometryElement : Equatable, Hashable {     var hashValue: Int { get } } extension SCNGeometryElement {     convenience init<IndexType : Integer>(indices indices: [IndexType], primitiveType primitiveType: SCNGeometryPrimitiveType) } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNGeometryElement.data](https://developer.apple.com/documentation/scenekit/scngeometryelement/1523367-data)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var data: NSData { get } ``` |
+| To | ``` var data: Data { get } ``` |
+
+Modified [SCNGeometryElement.init(data: Data?, primitiveType: SCNGeometryPrimitiveType, primitiveCount: Int, bytesPerIndex: Int)](https://developer.apple.com/documentation/scenekit/scngeometryelement/1522615-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(data data: NSData?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int) ``` |
+| To | ``` convenience init(data data: Data?, primitiveType primitiveType: SCNGeometryPrimitiveType, primitiveCount primitiveCount: Int, bytesPerIndex bytesPerIndex: Int) ``` |
+
+Modified [SCNGeometryElement.init(mdlSubmesh: MDLSubmesh)](https://developer.apple.com/documentation/scenekit/scngeometryelement/1419843-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLSubmesh mdlSubMesh: MDLSubmesh) ``` |
+| To | ``` convenience init(mdlSubmesh mdlSubMesh: MDLSubmesh) ``` |
+
+Modified [SCNGeometryPrimitiveType [enum]](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNGeometryPrimitiveType : Int {     case Triangles     case TriangleStrip     case Line     case Point } ``` |
+| To | ``` enum SCNGeometryPrimitiveType : Int {     case triangles     case triangleStrip     case line     case point     case polygon } ``` |
+
+Modified [SCNGeometryPrimitiveType.line](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/line)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Line ``` |
+| To | ``` case line ``` |
+
+Modified [SCNGeometryPrimitiveType.point](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Point ``` |
+| To | ``` case point ``` |
+
+Modified [SCNGeometryPrimitiveType.triangles](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypetriangles)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Triangles ``` |
+| To | ``` case triangles ``` |
+
+Modified [SCNGeometryPrimitiveType.triangleStrip](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/trianglestrip)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case TriangleStrip ``` |
+| To | ``` case triangleStrip ``` |
+
+Modified [SCNGeometrySource](https://developer.apple.com/documentation/scenekit/scngeometrysource)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNGeometrySource : NSObject, NSSecureCoding {     convenience init(data data: NSData, semantic semantic: String, vectorCount vectorCount: Int, floatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int)     class func geometrySourceWithData(_ data: NSData, semantic semantic: String, vectorCount vectorCount: Int, floatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int) -> Self     convenience init(vertices vertices: UnsafePointer<SCNVector3>, count count: Int)     class func geometrySourceWithVertices(_ vertices: UnsafePointer<SCNVector3>, count count: Int) -> Self     convenience init(normals normals: UnsafePointer<SCNVector3>, count count: Int)     class func geometrySourceWithNormals(_ normals: UnsafePointer<SCNVector3>, count count: Int) -> Self     convenience init(textureCoordinates texcoord: UnsafePointer<CGPoint>, count count: Int)     class func geometrySourceWithTextureCoordinates(_ texcoord: UnsafePointer<CGPoint>, count count: Int) -> Self     convenience init(buffer mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: String, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int)     class func geometrySourceWithBuffer(_ mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: String, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int) -> Self     var data: NSData { get }     var semantic: String { get }     var vectorCount: Int { get }     var floatComponents: Bool { get }     var componentsPerVector: Int { get }     var bytesPerComponent: Int { get }     var dataOffset: Int { get }     var dataStride: Int { get } } ``` | NSSecureCoding |
+| To | ``` class SCNGeometrySource : NSObject, NSSecureCoding {     convenience init(data data: Data, semantic semantic: SCNGeometrySource.Semantic, vectorCount vectorCount: Int, usesFloatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int)     class func withData(_ data: Data, semantic semantic: SCNGeometrySource.Semantic, vectorCount vectorCount: Int, floatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int) -> Self     convenience init(vertices vertices: UnsafePointer<SCNVector3>, count count: Int)     class func withVertices(_ vertices: UnsafePointer<SCNVector3>, count count: Int) -> Self     convenience init(normals normals: UnsafePointer<SCNVector3>, count count: Int)     class func withNormals(_ normals: UnsafePointer<SCNVector3>, count count: Int) -> Self     convenience init(textureCoordinates texcoord: UnsafePointer<CGPoint>, count count: Int)     class func withTextureCoordinates(_ texcoord: UnsafePointer<CGPoint>, count count: Int) -> Self     convenience init(buffer mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: SCNGeometrySource.Semantic, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int)     class func withBuffer(_ mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: SCNGeometrySource.Semantic, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int) -> Self     var data: Data { get }     var semantic: SCNGeometrySource.Semantic { get }     var vectorCount: Int { get }     var usesFloatComponents: Bool { get }     var componentsPerVector: Int { get }     var bytesPerComponent: Int { get }     var dataOffset: Int { get }     var dataStride: Int { get }     convenience init(vertices vertices: [SCNVector3])     convenience init(normals normals: [SCNVector3])     convenience init(textureCoordinates textureCoordinates: [CGPoint])     struct Semantic : RawRepresentable, Equatable, Hashable, Comparable {         init(_ rawValue: String)         init(rawValue rawValue: String)     }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNGeometrySource {     struct Semantic : RawRepresentable, Equatable, Hashable, Comparable {         init(_ rawValue: String)         init(rawValue rawValue: String)     } } extension SCNGeometrySource : CVarArg { } extension SCNGeometrySource : Equatable, Hashable {     var hashValue: Int { get } } extension SCNGeometrySource {     convenience init(vertices vertices: [SCNVector3])     convenience init(normals normals: [SCNVector3])     convenience init(textureCoordinates textureCoordinates: [CGPoint]) } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNGeometrySource.data](https://developer.apple.com/documentation/scenekit/scngeometrysource/1522881-data)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var data: NSData { get } ``` |
+| To | ``` var data: Data { get } ``` |
+
+Modified [SCNGeometrySource.init(buffer: MTLBuffer, vertexFormat: MTLVertexFormat, semantic: SCNGeometrySource.Semantic, vertexCount: Int, dataOffset: Int, dataStride: Int)](https://developer.apple.com/documentation/scenekit/scngeometrysource/1522873-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(buffer mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: String, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int) ``` |
+| To | ``` convenience init(buffer mtlBuffer: MTLBuffer, vertexFormat vertexFormat: MTLVertexFormat, semantic semantic: SCNGeometrySource.Semantic, vertexCount vertexCount: Int, dataOffset offset: Int, dataStride stride: Int) ``` |
+
+Modified [SCNGeometrySource.init(data: Data, semantic: SCNGeometrySource.Semantic, vectorCount: Int, usesFloatComponents: Bool, componentsPerVector: Int, bytesPerComponent: Int, dataOffset: Int, dataStride: Int)](https://developer.apple.com/documentation/scenekit/scngeometrysource/1523320-geometrysourcewithdata)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(data data: NSData, semantic semantic: String, vectorCount vectorCount: Int, floatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int) ``` |
+| To | ``` convenience init(data data: Data, semantic semantic: SCNGeometrySource.Semantic, vectorCount vectorCount: Int, usesFloatComponents floatComponents: Bool, componentsPerVector componentsPerVector: Int, bytesPerComponent bytesPerComponent: Int, dataOffset offset: Int, dataStride stride: Int) ``` |
+
+Modified [SCNGeometrySource.semantic](https://developer.apple.com/documentation/scenekit/scngeometrysource/1523071-semantic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var semantic: String { get } ``` |
+| To | ``` var semantic: SCNGeometrySource.Semantic { get } ``` |
+
+Modified [SCNGeometrySource.usesFloatComponents](https://developer.apple.com/documentation/scenekit/scngeometrysource/1522920-floatcomponents)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var floatComponents: Bool { get } ``` |
+| To | ``` var usesFloatComponents: Bool { get } ``` |
+
+Modified [SCNGeometrySource.Semantic.boneIndices](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticboneindices)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticBoneIndices | ``` let SCNGeometrySourceSemanticBoneIndices: String ``` |
+| To | boneIndices | ``` static let boneIndices: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.boneWeights](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticboneweights)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticBoneWeights | ``` let SCNGeometrySourceSemanticBoneWeights: String ``` |
+| To | boneWeights | ``` static let boneWeights: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.color](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticcolor)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticColor | ``` let SCNGeometrySourceSemanticColor: String ``` |
+| To | color | ``` static let color: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.edgeCrease](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticedgecrease)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticEdgeCrease | ``` let SCNGeometrySourceSemanticEdgeCrease: String ``` |
+| To | edgeCrease | ``` static let edgeCrease: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.normal](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticnormal)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticNormal | ``` let SCNGeometrySourceSemanticNormal: String ``` |
+| To | normal | ``` static let normal: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.texcoord](https://developer.apple.com/documentation/scenekit/scngeometrysource/semantic/1523762-texcoord)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticTexcoord | ``` let SCNGeometrySourceSemanticTexcoord: String ``` |
+| To | texcoord | ``` static let texcoord: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.vertex](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticvertex)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticVertex | ``` let SCNGeometrySourceSemanticVertex: String ``` |
+| To | vertex | ``` static let vertex: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNGeometrySource.Semantic.vertexCrease](https://developer.apple.com/documentation/scenekit/scngeometrysourcesemanticvertexcrease)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNGeometrySourceSemanticVertexCrease | ``` let SCNGeometrySourceSemanticVertexCrease: String ``` |
+| To | vertexCrease | ``` static let vertexCrease: SCNGeometrySource.Semantic ``` |
+
+Modified [SCNHitTestOption.backFaceCulling](https://developer.apple.com/documentation/scenekit/scnhittestoption/1522617-backfaceculling)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestBackFaceCullingKey | ``` let SCNHitTestBackFaceCullingKey: String ``` |
+| To | backFaceCulling | ``` static let backFaceCulling: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.boundingBoxOnly](https://developer.apple.com/documentation/scenekit/scnhittestoption/1522963-boundingboxonly)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestBoundingBoxOnlyKey | ``` let SCNHitTestBoundingBoxOnlyKey: String ``` |
+| To | boundingBoxOnly | ``` static let boundingBoxOnly: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.clipToZRange](https://developer.apple.com/documentation/scenekit/scnhittestoption/1524024-cliptozrange)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestClipToZRangeKey | ``` let SCNHitTestClipToZRangeKey: String ``` |
+| To | clipToZRange | ``` static let clipToZRange: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.firstFoundOnly](https://developer.apple.com/documentation/scenekit/scnhittestfirstfoundonlykey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestFirstFoundOnlyKey | ``` let SCNHitTestFirstFoundOnlyKey: String ``` |
+| To | firstFoundOnly | ``` static let firstFoundOnly: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.ignoreChildNodes](https://developer.apple.com/documentation/scenekit/scnhittestignorechildnodeskey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestIgnoreChildNodesKey | ``` let SCNHitTestIgnoreChildNodesKey: String ``` |
+| To | ignoreChildNodes | ``` static let ignoreChildNodes: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.ignoreHiddenNodes](https://developer.apple.com/documentation/scenekit/scnhittestoption/1522800-ignorehiddennodes)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestIgnoreHiddenNodesKey | ``` let SCNHitTestIgnoreHiddenNodesKey: String ``` |
+| To | ignoreHiddenNodes | ``` static let ignoreHiddenNodes: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.rootNode](https://developer.apple.com/documentation/scenekit/scnhittestoption/1522971-rootnode)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestRootNodeKey | ``` let SCNHitTestRootNodeKey: String ``` |
+| To | rootNode | ``` static let rootNode: SCNHitTestOption ``` |
+
+Modified [SCNHitTestOption.sortResults](https://developer.apple.com/documentation/scenekit/scnhittestsortresultskey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNHitTestSortResultsKey | ``` let SCNHitTestSortResultsKey: String ``` |
+| To | sortResults | ``` static let sortResults: SCNHitTestOption ``` |
+
+Modified [SCNHitTestResult](https://developer.apple.com/documentation/scenekit/scnhittestresult)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNHitTestResult : NSObject {     var node: SCNNode { get }     var geometryIndex: Int { get }     var faceIndex: Int { get }     var localCoordinates: SCNVector3 { get }     var worldCoordinates: SCNVector3 { get }     var localNormal: SCNVector3 { get }     var worldNormal: SCNVector3 { get }     var modelTransform: SCNMatrix4 { get }     func textureCoordinatesWithMappingChannel(_ channel: Int) -> CGPoint } ``` | -- |
+| To | ``` class SCNHitTestResult : NSObject {     var node: SCNNode { get }     var geometryIndex: Int { get }     var faceIndex: Int { get }     var localCoordinates: SCNVector3 { get }     var worldCoordinates: SCNVector3 { get }     var localNormal: SCNVector3 { get }     var worldNormal: SCNVector3 { get }     var modelTransform: SCNMatrix4 { get }     var boneNode: SCNNode { get }     func textureCoordinates(withMappingChannel channel: Int) -> CGPoint     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNHitTestResult : CVarArg { } extension SCNHitTestResult : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNHitTestResult.textureCoordinates(withMappingChannel: Int) -> CGPoint](https://developer.apple.com/documentation/scenekit/scnhittestresult/1522771-texturecoordinateswithmappingcha)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func textureCoordinatesWithMappingChannel(_ channel: Int) -> CGPoint ``` |
+| To | ``` func textureCoordinates(withMappingChannel channel: Int) -> CGPoint ``` |
+
+Modified [SCNIKConstraint](https://developer.apple.com/documentation/scenekit/scnikconstraint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNIKConstraint : SCNConstraint {     init(chainRootNode chainRootNode: SCNNode)     class func inverseKinematicsConstraintWithChainRootNode(_ chainRootNode: SCNNode) -> Self     var chainRootNode: SCNNode { get }     var targetPosition: SCNVector3     func setMaxAllowedRotationAngle(_ angle: CGFloat, forJoint node: SCNNode)     func maxAllowedRotationAngleForJoint(_ node: SCNNode) -> CGFloat } ``` |
+| To | ``` class SCNIKConstraint : SCNConstraint {     init(chainRootNode chainRootNode: SCNNode)     class func inverseKinematicsConstraint(chainRootNode chainRootNode: SCNNode) -> Self     var chainRootNode: SCNNode { get }     var targetPosition: SCNVector3     func setMaxAllowedRotationAngle(_ angle: CGFloat, forJoint node: SCNNode)     func maxAllowedRotationAngle(forJoint node: SCNNode) -> CGFloat } ``` |
+
+Modified [SCNIKConstraint.inverseKinematicsConstraint(chainRootNode: SCNNode) -> Self [class]](https://developer.apple.com/documentation/scenekit/scnikconstraint/1468653-inversekinematicsconstraintwithc)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func inverseKinematicsConstraintWithChainRootNode(_ chainRootNode: SCNNode) -> Self ``` |
+| To | ``` class func inverseKinematicsConstraint(chainRootNode chainRootNode: SCNNode) -> Self ``` |
+
+Modified [SCNIKConstraint.maxAllowedRotationAngle(forJoint: SCNNode) -> CGFloat](https://developer.apple.com/documentation/scenekit/scnikconstraint/1468681-maxallowedrotationangle)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func maxAllowedRotationAngleForJoint(_ node: SCNNode) -> CGFloat ``` |
+| To | ``` func maxAllowedRotationAngle(forJoint node: SCNNode) -> CGFloat ``` |
+
+Modified [SCNLevelOfDetail](https://developer.apple.com/documentation/scenekit/scnlevelofdetail)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNLevelOfDetail : NSObject, NSCopying, NSSecureCoding {     convenience init(geometry geometry: SCNGeometry?, screenSpaceRadius radius: CGFloat)     class func levelOfDetailWithGeometry(_ geometry: SCNGeometry?, screenSpaceRadius radius: CGFloat) -> Self     convenience init(geometry geometry: SCNGeometry?, worldSpaceDistance distance: CGFloat)     class func levelOfDetailWithGeometry(_ geometry: SCNGeometry?, worldSpaceDistance distance: CGFloat) -> Self     var geometry: SCNGeometry? { get }     var screenSpaceRadius: CGFloat { get }     var worldSpaceDistance: CGFloat { get } } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNLevelOfDetail : NSObject, NSCopying, NSSecureCoding {     convenience init(geometry geometry: SCNGeometry?, screenSpaceRadius radius: CGFloat)     class func withGeometry(_ geometry: SCNGeometry?, screenSpaceRadius radius: CGFloat) -> Self     convenience init(geometry geometry: SCNGeometry?, worldSpaceDistance distance: CGFloat)     class func withGeometry(_ geometry: SCNGeometry?, worldSpaceDistance distance: CGFloat) -> Self     var geometry: SCNGeometry? { get }     var screenSpaceRadius: CGFloat { get }     var worldSpaceDistance: CGFloat { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNLevelOfDetail : CVarArg { } extension SCNLevelOfDetail : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNLight](https://developer.apple.com/documentation/scenekit/scnlight)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNLight : NSObject, SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding {     convenience init()     class func light() -> Self     var type: String     var color: AnyObject     var name: String?     var castsShadow: Bool     var shadowColor: AnyObject     var shadowRadius: CGFloat     var shadowMapSize: CGSize     var shadowSampleCount: Int     var shadowMode: SCNShadowMode     var shadowBias: CGFloat     var orthographicScale: CGFloat     var zNear: CGFloat     var zFar: CGFloat     var attenuationStartDistance: CGFloat     var attenuationEndDistance: CGFloat     var attenuationFalloffExponent: CGFloat     var spotInnerAngle: CGFloat     var spotOuterAngle: CGFloat     var gobo: SCNMaterialProperty? { get }     var categoryBitMask: Int } extension SCNLight {     convenience init(MDLLight mdlLight: MDLLight)     class func lightWithMDLLight(_ mdlLight: MDLLight) -> Self } ``` | NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport |
+| To | ``` class SCNLight : NSObject, SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding {     convenience init()     class func light() -> Self     var type: SCNLight.LightType     var color: Any     var temperature: CGFloat     var intensity: CGFloat     var name: String?     var castsShadow: Bool     var shadowColor: Any     var shadowRadius: CGFloat     var shadowMapSize: CGSize     var shadowSampleCount: Int     var shadowMode: SCNShadowMode     var shadowBias: CGFloat     var orthographicScale: CGFloat     var zNear: CGFloat     var zFar: CGFloat     var attenuationStartDistance: CGFloat     var attenuationEndDistance: CGFloat     var attenuationFalloffExponent: CGFloat     var spotInnerAngle: CGFloat     var spotOuterAngle: CGFloat     var gobo: SCNMaterialProperty? { get }     var iesProfileURL: URL?     var categoryBitMask: Int     struct LightType : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     convenience init(mdlLight mdlLight: MDLLight)     class func withMDLLight(_ mdlLight: MDLLight) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNLight {     convenience init(mdlLight mdlLight: MDLLight)     class func withMDLLight(_ mdlLight: MDLLight) -> Self } extension SCNLight {     struct LightType : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNLight : CVarArg { } extension SCNLight : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport |
+
+Modified [SCNLight.color](https://developer.apple.com/documentation/scenekit/scnlight/1523627-color)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var color: AnyObject ``` |
+| To | ``` var color: Any ``` |
+
+Modified [SCNLight.init(mdlLight: MDLLight)](https://developer.apple.com/documentation/scenekit/scnlight/1419849-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLLight mdlLight: MDLLight) ``` |
+| To | ``` convenience init(mdlLight mdlLight: MDLLight) ``` |
+
+Modified [SCNLight.shadowColor](https://developer.apple.com/documentation/scenekit/scnlight/1522864-shadowcolor)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var shadowColor: AnyObject ``` |
+| To | ``` var shadowColor: Any ``` |
+
+Modified [SCNLight.type](https://developer.apple.com/documentation/scenekit/scnlight/1522919-type)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var type: String ``` |
+| To | ``` var type: SCNLight.LightType ``` |
+
+Modified [SCNLight.LightType.ambient](https://developer.apple.com/documentation/scenekit/scnlighttypeambient)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightTypeAmbient | ``` let SCNLightTypeAmbient: String ``` |
+| To | ambient | ``` static let ambient: SCNLight.LightType ``` |
+
+Modified [SCNLight.LightType.directional](https://developer.apple.com/documentation/scenekit/scnlight/lighttype/1523624-directional)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightTypeDirectional | ``` let SCNLightTypeDirectional: String ``` |
+| To | directional | ``` static let directional: SCNLight.LightType ``` |
+
+Modified [SCNLight.LightType.omni](https://developer.apple.com/documentation/scenekit/scnlight/lighttype/1522821-omni)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightTypeOmni | ``` let SCNLightTypeOmni: String ``` |
+| To | omni | ``` static let omni: SCNLight.LightType ``` |
+
+Modified [SCNLight.LightType.spot](https://developer.apple.com/documentation/scenekit/scnlighttypespot)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightTypeSpot | ``` let SCNLightTypeSpot: String ``` |
+| To | spot | ``` static let spot: SCNLight.LightType ``` |
+
+Modified [SCNLookAtConstraint](https://developer.apple.com/documentation/scenekit/scnlookatconstraint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNLookAtConstraint : SCNConstraint {     convenience init(target target: SCNNode)     class func lookAtConstraintWithTarget(_ target: SCNNode) -> Self     var target: SCNNode { get }     var gimbalLockEnabled: Bool } ``` |
+| To | ``` class SCNLookAtConstraint : SCNConstraint {     convenience init(target target: SCNNode?)     class func withTarget(_ target: SCNNode?) -> Self     var target: SCNNode?     var isGimbalLockEnabled: Bool } ``` |
+
+Modified [SCNLookAtConstraint.init(target: SCNNode?)](https://developer.apple.com/documentation/scenekit/scnlookatconstraint/1468683-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(target target: SCNNode) ``` |
+| To | ``` convenience init(target target: SCNNode?) ``` |
+
+Modified [SCNLookAtConstraint.isGimbalLockEnabled](https://developer.apple.com/documentation/scenekit/scnlookatconstraint/1468675-isgimballockenabled)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var gimbalLockEnabled: Bool ``` |
+| To | ``` var isGimbalLockEnabled: Bool ``` |
+
+Modified [SCNLookAtConstraint.target](https://developer.apple.com/documentation/scenekit/scnlookatconstraint/1468677-target)
+
+|  | Declaration | Readonly |
+| --- | --- | --- |
+| From | ``` var target: SCNNode { get } ``` | yes |
+| To | ``` var target: SCNNode? ``` | -- |
+
+Modified [SCNMaterial](https://developer.apple.com/documentation/scenekit/scnmaterial)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNMaterial : NSObject, SCNAnimatable, SCNShadable, NSCopying, NSSecureCoding {     convenience init()     class func material() -> Self     var name: String?     var diffuse: SCNMaterialProperty { get }     var ambient: SCNMaterialProperty { get }     var specular: SCNMaterialProperty { get }     var emission: SCNMaterialProperty { get }     var transparent: SCNMaterialProperty { get }     var reflective: SCNMaterialProperty { get }     var multiply: SCNMaterialProperty { get }     var normal: SCNMaterialProperty { get }     var ambientOcclusion: SCNMaterialProperty { get }     var selfIllumination: SCNMaterialProperty { get }     var shininess: CGFloat     var transparency: CGFloat     var lightingModelName: String     var litPerPixel: Bool     var doubleSided: Bool     var cullMode: SCNCullMode     var transparencyMode: SCNTransparencyMode     var locksAmbientWithDiffuse: Bool     var writesToDepthBuffer: Bool     var readsFromDepthBuffer: Bool     var fresnelExponent: CGFloat     var blendMode: SCNBlendMode } extension SCNMaterial {     convenience init(MDLMaterial mdlMaterial: MDLMaterial)     class func materialWithMDLMaterial(_ mdlMaterial: MDLMaterial) -> Self } ``` | NSCopying, NSSecureCoding, SCNAnimatable, SCNShadable |
+| To | ``` class SCNMaterial : NSObject, SCNAnimatable, SCNShadable, NSCopying, NSSecureCoding {     convenience init()     class func material() -> Self     var name: String?     var diffuse: SCNMaterialProperty { get }     var ambient: SCNMaterialProperty { get }     var specular: SCNMaterialProperty { get }     var emission: SCNMaterialProperty { get }     var transparent: SCNMaterialProperty { get }     var reflective: SCNMaterialProperty { get }     var multiply: SCNMaterialProperty { get }     var normal: SCNMaterialProperty { get }     var ambientOcclusion: SCNMaterialProperty { get }     var selfIllumination: SCNMaterialProperty { get }     var metalness: SCNMaterialProperty { get }     var roughness: SCNMaterialProperty { get }     var shininess: CGFloat     var transparency: CGFloat     var lightingModel: SCNMaterial.LightingModel     var isLitPerPixel: Bool     var isDoubleSided: Bool     var cullMode: SCNCullMode     var transparencyMode: SCNTransparencyMode     var locksAmbientWithDiffuse: Bool     var writesToDepthBuffer: Bool     var readsFromDepthBuffer: Bool     var fresnelExponent: CGFloat     var blendMode: SCNBlendMode     struct LightingModel : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     convenience init(mdlMaterial mdlMaterial: MDLMaterial)     class func withMDLMaterial(_ mdlMaterial: MDLMaterial) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNMaterial {     convenience init(mdlMaterial mdlMaterial: MDLMaterial)     class func withMDLMaterial(_ mdlMaterial: MDLMaterial) -> Self } extension SCNMaterial {     struct LightingModel : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNMaterial : CVarArg { } extension SCNMaterial : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable, SCNShadable |
+
+Modified [SCNMaterial.init(mdlMaterial: MDLMaterial)](https://developer.apple.com/documentation/scenekit/scnmaterial/1419835-materialwithmdlmaterial)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLMaterial mdlMaterial: MDLMaterial) ``` |
+| To | ``` convenience init(mdlMaterial mdlMaterial: MDLMaterial) ``` |
+
+Modified [SCNMaterial.isDoubleSided](https://developer.apple.com/documentation/scenekit/scnmaterial/1462531-isdoublesided)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var doubleSided: Bool ``` |
+| To | ``` var isDoubleSided: Bool ``` |
+
+Modified [SCNMaterial.isLitPerPixel](https://developer.apple.com/documentation/scenekit/scnmaterial/1462580-litperpixel)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var litPerPixel: Bool ``` |
+| To | ``` var isLitPerPixel: Bool ``` |
+
+Modified [SCNMaterial.lightingModel](https://developer.apple.com/documentation/scenekit/scnmaterial/1462518-lightingmodel)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var lightingModelName: String ``` |
+| To | ``` var lightingModel: SCNMaterial.LightingModel ``` |
+
+Modified [SCNMaterial.LightingModel.blinn](https://developer.apple.com/documentation/scenekit/scnmaterial/lightingmodel/1462514-blinn)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightingModelBlinn | ``` let SCNLightingModelBlinn: String ``` |
+| To | blinn | ``` static let blinn: SCNMaterial.LightingModel ``` |
+
+Modified [SCNMaterial.LightingModel.constant](https://developer.apple.com/documentation/scenekit/scnlightingmodelconstant)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightingModelConstant | ``` let SCNLightingModelConstant: String ``` |
+| To | constant | ``` static let constant: SCNMaterial.LightingModel ``` |
+
+Modified [SCNMaterial.LightingModel.lambert](https://developer.apple.com/documentation/scenekit/scnlightingmodellambert)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightingModelLambert | ``` let SCNLightingModelLambert: String ``` |
+| To | lambert | ``` static let lambert: SCNMaterial.LightingModel ``` |
+
+Modified [SCNMaterial.LightingModel.phong](https://developer.apple.com/documentation/scenekit/scnlightingmodelphong)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNLightingModelPhong | ``` let SCNLightingModelPhong: String ``` |
+| To | phong | ``` static let phong: SCNMaterial.LightingModel ``` |
+
+Modified [SCNMaterialProperty](https://developer.apple.com/documentation/scenekit/scnmaterialproperty)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNMaterialProperty : NSObject, SCNAnimatable, NSSecureCoding {     convenience init(contents contents: AnyObject)     class func materialPropertyWithContents(_ contents: AnyObject) -> Self     var contents: AnyObject?     var intensity: CGFloat     var minificationFilter: SCNFilterMode     var magnificationFilter: SCNFilterMode     var mipFilter: SCNFilterMode     var contentsTransform: SCNMatrix4     var wrapS: SCNWrapMode     var wrapT: SCNWrapMode     var borderColor: AnyObject?     var mappingChannel: Int     var maxAnisotropy: CGFloat } ``` | NSSecureCoding, SCNAnimatable |
+| To | ``` class SCNMaterialProperty : NSObject, SCNAnimatable, NSSecureCoding {     convenience init(contents contents: Any)     class func withContents(_ contents: Any) -> Self     var contents: Any?     var intensity: CGFloat     var minificationFilter: SCNFilterMode     var magnificationFilter: SCNFilterMode     var mipFilter: SCNFilterMode     var contentsTransform: SCNMatrix4     var wrapS: SCNWrapMode     var wrapT: SCNWrapMode     var borderColor: Any?     var mappingChannel: Int     var maxAnisotropy: CGFloat     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNMaterialProperty : CVarArg { } extension SCNMaterialProperty : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding, SCNAnimatable |
+
+Modified [SCNMaterialProperty.borderColor](https://developer.apple.com/documentation/scenekit/scnmaterialproperty/1395376-bordercolor)
+
+|  | Declaration | Deprecation |
+| --- | --- | --- |
+| From | ``` var borderColor: AnyObject? ``` | -- |
+| To | ``` var borderColor: Any? ``` | iOS 10.0 |
+
+Modified [SCNMaterialProperty.contents](https://developer.apple.com/documentation/scenekit/scnmaterialproperty/1395372-contents)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var contents: AnyObject? ``` |
+| To | ``` var contents: Any? ``` |
+
+Modified [SCNMaterialProperty.init(contents: Any)](https://developer.apple.com/documentation/scenekit/scnmaterialproperty/1395386-materialpropertywithcontents)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(contents contents: AnyObject) ``` |
+| To | ``` convenience init(contents contents: Any) ``` |
+
+Modified [SCNMatrix4 [struct]](https://developer.apple.com/documentation/scenekit/scnmatrix4)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct SCNMatrix4 {     var m11: Float     var m12: Float     var m13: Float     var m14: Float     var m21: Float     var m22: Float     var m23: Float     var m24: Float     var m31: Float     var m32: Float     var m33: Float     var m34: Float     var m41: Float     var m42: Float     var m43: Float     var m44: Float     init()     init(m11 m11: Float, m12 m12: Float, m13 m13: Float, m14 m14: Float, m21 m21: Float, m22 m22: Float, m23 m23: Float, m24 m24: Float, m31 m31: Float, m32 m32: Float, m33 m33: Float, m34 m34: Float, m41 m41: Float, m42 m42: Float, m43 m43: Float, m44 m44: Float) } extension SCNMatrix4 {     init(_ m: float4x4)     init(_ m: double4x4) } extension SCNMatrix4 {     init(_ m: float4x4)     init(_ m: double4x4) } ``` |
+| To | ``` struct SCNMatrix4 {     var m11: Float     var m12: Float     var m13: Float     var m14: Float     var m21: Float     var m22: Float     var m23: Float     var m24: Float     var m31: Float     var m32: Float     var m33: Float     var m34: Float     var m41: Float     var m42: Float     var m43: Float     var m44: Float     init()     init(m11 m11: Float, m12 m12: Float, m13 m13: Float, m14 m14: Float, m21 m21: Float, m22 m22: Float, m23 m23: Float, m24 m24: Float, m31 m31: Float, m32 m32: Float, m33 m33: Float, m34 m34: Float, m41 m41: Float, m42 m42: Float, m43 m43: Float, m44 m44: Float)     init(_ m: float4x4)     init(_ m: double4x4) } extension SCNMatrix4 {     init(_ m: float4x4)     init(_ m: double4x4) } ``` |
+
+Modified [SCNMorpher](https://developer.apple.com/documentation/scenekit/scnmorpher)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNMorpher : NSObject, SCNAnimatable, NSSecureCoding {     var targets: [SCNGeometry]     func setWeight(_ weight: CGFloat, forTargetAtIndex targetIndex: Int)     func weightForTargetAtIndex(_ targetIndex: Int) -> CGFloat     var calculationMode: SCNMorpherCalculationMode } ``` | NSSecureCoding, SCNAnimatable |
+| To | ``` class SCNMorpher : NSObject, SCNAnimatable, NSSecureCoding {     var targets: [SCNGeometry]     func setWeight(_ weight: CGFloat, forTargetAt targetIndex: Int)     func weight(forTargetAt targetIndex: Int) -> CGFloat     var calculationMode: SCNMorpherCalculationMode     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNMorpher : CVarArg { } extension SCNMorpher : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding, SCNAnimatable |
+
+Modified [SCNMorpher.setWeight(_: CGFloat, forTargetAt: Int)](https://developer.apple.com/documentation/scenekit/scnmorpher/1522886-setweight)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func setWeight(_ weight: CGFloat, forTargetAtIndex targetIndex: Int) ``` |
+| To | ``` func setWeight(_ weight: CGFloat, forTargetAt targetIndex: Int) ``` |
+
+Modified [SCNMorpher.weight(forTargetAt: Int) -> CGFloat](https://developer.apple.com/documentation/scenekit/scnmorpher/1522940-weightfortargetatindex)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func weightForTargetAtIndex(_ targetIndex: Int) -> CGFloat ``` |
+| To | ``` func weight(forTargetAt targetIndex: Int) -> CGFloat ``` |
+
+Modified [SCNMorpherCalculationMode [enum]](https://developer.apple.com/documentation/scenekit/scnmorphercalculationmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNMorpherCalculationMode : Int {     case Normalized     case Additive } ``` |
+| To | ``` enum SCNMorpherCalculationMode : Int {     case normalized     case additive } ``` |
+
+Modified [SCNMorpherCalculationMode.additive](https://developer.apple.com/documentation/scenekit/scnmorphercalculationmode/scnmorphercalculationmodeadditive)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Additive ``` |
+| To | ``` case additive ``` |
+
+Modified [SCNMorpherCalculationMode.normalized](https://developer.apple.com/documentation/scenekit/scnmorphercalculationmode/scnmorphercalculationmodenormalized)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Normalized ``` |
+| To | ``` case normalized ``` |
+
+Modified [SCNNode](https://developer.apple.com/documentation/scenekit/scnnode)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNNode : NSObject, NSCopying, NSSecureCoding, SCNAnimatable, SCNActionable, SCNBoundingVolume {     convenience init()     class func node() -> Self      init(geometry geometry: SCNGeometry?)     class func nodeWithGeometry(_ geometry: SCNGeometry?) -> SCNNode     func clone() -> Self     func flattenedClone() -> Self     var name: String?     var light: SCNLight?     var camera: SCNCamera?     var geometry: SCNGeometry?     var skinner: SCNSkinner?     var morpher: SCNMorpher?     var transform: SCNMatrix4     var position: SCNVector3     var rotation: SCNVector4     var orientation: SCNQuaternion     var eulerAngles: SCNVector3     var scale: SCNVector3     var pivot: SCNMatrix4     var worldTransform: SCNMatrix4 { get }     var hidden: Bool     var opacity: CGFloat     var renderingOrder: Int     var castsShadow: Bool     var parentNode: SCNNode? { get }     var childNodes: [SCNNode] { get }     func addChildNode(_ child: SCNNode)     func insertChildNode(_ child: SCNNode, atIndex index: Int)     func removeFromParentNode()     func replaceChildNode(_ oldChild: SCNNode, with newChild: SCNNode)     func childNodeWithName(_ name: String, recursively recursively: Bool) -> SCNNode?     func childNodesPassingTest(_ predicate: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode]     func enumerateChildNodesUsingBlock(_ block: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Void)     func convertPosition(_ position: SCNVector3, toNode node: SCNNode?) -> SCNVector3     func convertPosition(_ position: SCNVector3, fromNode node: SCNNode?) -> SCNVector3     func convertTransform(_ transform: SCNMatrix4, toNode node: SCNNode?) -> SCNMatrix4     func convertTransform(_ transform: SCNMatrix4, fromNode node: SCNNode?) -> SCNMatrix4     var physicsBody: SCNPhysicsBody?     var physicsField: SCNPhysicsField?     var constraints: [SCNConstraint]?     var filters: [CIFilter]?     var presentationNode: SCNNode { get }     var paused: Bool     unowned(unsafe) var rendererDelegate: SCNNodeRendererDelegate?     func hitTestWithSegmentFromPoint(_ pointA: SCNVector3, toPoint pointB: SCNVector3, options options: [String : AnyObject]?) -> [SCNHitTestResult]     var categoryBitMask: Int } extension SCNNode {     convenience init(MDLObject mdlObject: MDLObject)     class func nodeWithMDLObject(_ mdlObject: MDLObject) -> Self } extension SCNNode {     func addAudioPlayer(_ player: SCNAudioPlayer)     func removeAllAudioPlayers()     func removeAudioPlayer(_ player: SCNAudioPlayer)     var audioPlayers: [SCNAudioPlayer] { get } } extension SCNNode {     func addParticleSystem(_ system: SCNParticleSystem)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get } } ``` | NSCopying, NSSecureCoding, SCNActionable, SCNAnimatable, SCNBoundingVolume |
+| To | ``` class SCNNode : NSObject, NSCopying, NSSecureCoding, SCNAnimatable, SCNActionable, SCNBoundingVolume {     convenience init()     class func node() -> Self      init(geometry geometry: SCNGeometry?)     class func withGeometry(_ geometry: SCNGeometry?) -> SCNNode     func clone() -> Self     func flattenedClone() -> Self     var name: String?     var light: SCNLight?     var camera: SCNCamera?     var geometry: SCNGeometry?     var skinner: SCNSkinner?     var morpher: SCNMorpher?     var transform: SCNMatrix4     var position: SCNVector3     var rotation: SCNVector4     var orientation: SCNQuaternion     var eulerAngles: SCNVector3     var scale: SCNVector3     var pivot: SCNMatrix4     var worldTransform: SCNMatrix4 { get }     var isHidden: Bool     var opacity: CGFloat     var renderingOrder: Int     var castsShadow: Bool     var movabilityHint: SCNMovabilityHint     var parent: SCNNode? { get }     var childNodes: [SCNNode] { get }     func addChildNode(_ child: SCNNode)     func insertChildNode(_ child: SCNNode, at index: Int)     func removeFromParentNode()     func replaceChildNode(_ oldChild: SCNNode, with newChild: SCNNode)     func childNode(withName name: String, recursively recursively: Bool) -> SCNNode?     func childNodes(passingTest predicate: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode]     func enumerateChildNodes(_ block: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Swift.Void)     func enumerateHierarchy(_ block: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Swift.Void)     func convertPosition(_ position: SCNVector3, to node: SCNNode?) -> SCNVector3     func convertPosition(_ position: SCNVector3, from node: SCNNode?) -> SCNVector3     func convertTransform(_ transform: SCNMatrix4, to node: SCNNode?) -> SCNMatrix4     func convertTransform(_ transform: SCNMatrix4, from node: SCNNode?) -> SCNMatrix4     var physicsBody: SCNPhysicsBody?     var physicsField: SCNPhysicsField?     var constraints: [SCNConstraint]?     var filters: [CIFilter]?     var presentation: SCNNode { get }     var isPaused: Bool     unowned(unsafe) var rendererDelegate: SCNNodeRendererDelegate?     func hitTestWithSegment(from pointA: SCNVector3, to pointB: SCNVector3, options options: [String : Any]? = nil) -> [SCNHitTestResult]     var categoryBitMask: Int     func addAudioPlayer(_ player: SCNAudioPlayer)     func removeAllAudioPlayers()     func removeAudioPlayer(_ player: SCNAudioPlayer)     var audioPlayers: [SCNAudioPlayer] { get }     func addParticleSystem(_ system: SCNParticleSystem)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get }     convenience init(mdlObject mdlObject: MDLObject)     class func withMDLObject(_ mdlObject: MDLObject) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNNode {     convenience init(mdlObject mdlObject: MDLObject)     class func withMDLObject(_ mdlObject: MDLObject) -> Self } extension SCNNode {     func addAudioPlayer(_ player: SCNAudioPlayer)     func removeAllAudioPlayers()     func removeAudioPlayer(_ player: SCNAudioPlayer)     var audioPlayers: [SCNAudioPlayer] { get } } extension SCNNode : CVarArg { } extension SCNNode : Equatable, Hashable {     var hashValue: Int { get } } extension SCNNode {     func addParticleSystem(_ system: SCNParticleSystem)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNActionable, SCNAnimatable, SCNBoundingVolume |
+
+Modified [SCNNode.childNode(withName: String, recursively: Bool) -> SCNNode?](https://developer.apple.com/documentation/scenekit/scnnode/1407951-childnodewithname)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func childNodeWithName(_ name: String, recursively recursively: Bool) -> SCNNode? ``` |
+| To | ``` func childNode(withName name: String, recursively recursively: Bool) -> SCNNode? ``` |
+
+Modified [SCNNode.childNodes(passingTest: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode]](https://developer.apple.com/documentation/scenekit/scnnode/1407982-childnodespassingtest)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func childNodesPassingTest(_ predicate: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode] ``` |
+| To | ``` func childNodes(passingTest predicate: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [SCNNode] ``` |
+
+Modified [SCNNode.convertPosition(_: SCNVector3, from: SCNNode?) -> SCNVector3](https://developer.apple.com/documentation/scenekit/scnnode/1408018-convertposition)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func convertPosition(_ position: SCNVector3, fromNode node: SCNNode?) -> SCNVector3 ``` |
+| To | ``` func convertPosition(_ position: SCNVector3, from node: SCNNode?) -> SCNVector3 ``` |
+
+Modified [SCNNode.convertPosition(_: SCNVector3, to: SCNNode?) -> SCNVector3](https://developer.apple.com/documentation/scenekit/scnnode/1407990-convertposition)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func convertPosition(_ position: SCNVector3, toNode node: SCNNode?) -> SCNVector3 ``` |
+| To | ``` func convertPosition(_ position: SCNVector3, to node: SCNNode?) -> SCNVector3 ``` |
+
+Modified [SCNNode.convertTransform(_: SCNMatrix4, from: SCNNode?) -> SCNMatrix4](https://developer.apple.com/documentation/scenekit/scnnode/1407996-converttransform)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func convertTransform(_ transform: SCNMatrix4, fromNode node: SCNNode?) -> SCNMatrix4 ``` |
+| To | ``` func convertTransform(_ transform: SCNMatrix4, from node: SCNNode?) -> SCNMatrix4 ``` |
+
+Modified [SCNNode.convertTransform(_: SCNMatrix4, to: SCNNode?) -> SCNMatrix4](https://developer.apple.com/documentation/scenekit/scnnode/1407986-converttransform)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func convertTransform(_ transform: SCNMatrix4, toNode node: SCNNode?) -> SCNMatrix4 ``` |
+| To | ``` func convertTransform(_ transform: SCNMatrix4, to node: SCNNode?) -> SCNMatrix4 ``` |
+
+Modified [SCNNode.enumerateChildNodes(_: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Swift.Void)](https://developer.apple.com/documentation/scenekit/scnnode/1408032-enumeratechildnodesusingblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func enumerateChildNodesUsingBlock(_ block: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Void) ``` |
+| To | ``` func enumerateChildNodes(_ block: (SCNNode, UnsafeMutablePointer<ObjCBool>) -> Swift.Void) ``` |
+
+Modified [SCNNode.hitTestWithSegment(from: SCNVector3, to: SCNVector3, options: [String : Any]?) -> [SCNHitTestResult]](https://developer.apple.com/documentation/scenekit/scnnode/1407998-hittestwithsegmentfrompoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func hitTestWithSegmentFromPoint(_ pointA: SCNVector3, toPoint pointB: SCNVector3, options options: [String : AnyObject]?) -> [SCNHitTestResult] ``` |
+| To | ``` func hitTestWithSegment(from pointA: SCNVector3, to pointB: SCNVector3, options options: [String : Any]? = nil) -> [SCNHitTestResult] ``` |
+
+Modified [SCNNode.init(mdlObject: MDLObject)](https://developer.apple.com/documentation/scenekit/scnnode/1419841-nodewithmdlobject)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLObject mdlObject: MDLObject) ``` |
+| To | ``` convenience init(mdlObject mdlObject: MDLObject) ``` |
+
+Modified [SCNNode.insertChildNode(_: SCNNode, at: Int)](https://developer.apple.com/documentation/scenekit/scnnode/1407958-insertchildnode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func insertChildNode(_ child: SCNNode, atIndex index: Int) ``` |
+| To | ``` func insertChildNode(_ child: SCNNode, at index: Int) ``` |
+
+Modified [SCNNode.isHidden](https://developer.apple.com/documentation/scenekit/scnnode/1407967-ishidden)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var hidden: Bool ``` |
+| To | ``` var isHidden: Bool ``` |
+
+Modified [SCNNode.isPaused](https://developer.apple.com/documentation/scenekit/scnnode/1407962-paused)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var paused: Bool ``` |
+| To | ``` var isPaused: Bool ``` |
+
+Modified [SCNNode.parent](https://developer.apple.com/documentation/scenekit/scnnode/1407968-parentnode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var parentNode: SCNNode? { get } ``` |
+| To | ``` var parent: SCNNode? { get } ``` |
+
+Modified [SCNNode.presentation](https://developer.apple.com/documentation/scenekit/scnnode/1408030-presentation)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var presentationNode: SCNNode { get } ``` |
+| To | ``` var presentation: SCNNode { get } ``` |
+
+Modified [SCNNodeRendererDelegate](https://developer.apple.com/documentation/scenekit/scnnoderendererdelegate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNNodeRendererDelegate : NSObjectProtocol {     optional func renderNode(_ node: SCNNode, renderer renderer: SCNRenderer, arguments arguments: [String : NSValue]) } ``` |
+| To | ``` protocol SCNNodeRendererDelegate : NSObjectProtocol {     optional func renderNode(_ node: SCNNode, renderer renderer: SCNRenderer, arguments arguments: [String : Any]) } ``` |
+
+Modified [SCNNodeRendererDelegate.renderNode(_: SCNNode, renderer: SCNRenderer, arguments: [String : Any])](https://developer.apple.com/documentation/scenekit/scnnoderendererdelegate/1407993-rendernode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderNode(_ node: SCNNode, renderer renderer: SCNRenderer, arguments arguments: [String : NSValue]) ``` |
+| To | ``` optional func renderNode(_ node: SCNNode, renderer renderer: SCNRenderer, arguments arguments: [String : Any]) ``` |
+
+Modified [SCNParticleBirthDirection [enum]](https://developer.apple.com/documentation/scenekit/scnparticlebirthdirection)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleBirthDirection : Int {     case Constant     case SurfaceNormal     case Random } ``` |
+| To | ``` enum SCNParticleBirthDirection : Int {     case constant     case surfaceNormal     case random } ``` |
+
+Modified [SCNParticleBirthDirection.constant](https://developer.apple.com/documentation/scenekit/scnparticlebirthdirection/scnparticlebirthdirectionconstant)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Constant ``` |
+| To | ``` case constant ``` |
+
+Modified [SCNParticleBirthDirection.random](https://developer.apple.com/documentation/scenekit/scnparticlebirthdirection/random)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Random ``` |
+| To | ``` case random ``` |
+
+Modified [SCNParticleBirthDirection.surfaceNormal](https://developer.apple.com/documentation/scenekit/scnparticlebirthdirection/surfacenormal)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case SurfaceNormal ``` |
+| To | ``` case surfaceNormal ``` |
+
+Modified [SCNParticleBirthLocation [enum]](https://developer.apple.com/documentation/scenekit/scnparticlebirthlocation)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleBirthLocation : Int {     case Surface     case Volume     case Vertex } ``` |
+| To | ``` enum SCNParticleBirthLocation : Int {     case surface     case volume     case vertex } ``` |
+
+Modified [SCNParticleBirthLocation.surface](https://developer.apple.com/documentation/scenekit/scnparticlebirthlocation/scnparticlebirthlocationsurface)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Surface ``` |
+| To | ``` case surface ``` |
+
+Modified [SCNParticleBirthLocation.vertex](https://developer.apple.com/documentation/scenekit/scnparticlebirthlocation/vertex)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Vertex ``` |
+| To | ``` case vertex ``` |
+
+Modified [SCNParticleBirthLocation.volume](https://developer.apple.com/documentation/scenekit/scnparticlebirthlocation/volume)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Volume ``` |
+| To | ``` case volume ``` |
+
+Modified [SCNParticleBlendMode [enum]](https://developer.apple.com/documentation/scenekit/scnparticleblendmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleBlendMode : Int {     case Additive     case Subtract     case Multiply     case Screen     case Alpha     case Replace } ``` |
+| To | ``` enum SCNParticleBlendMode : Int {     case additive     case subtract     case multiply     case screen     case alpha     case replace } ``` |
+
+Modified [SCNParticleBlendMode.additive](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/scnparticleblendmodeadditive)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Additive ``` |
+| To | ``` case additive ``` |
+
+Modified [SCNParticleBlendMode.alpha](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/scnparticleblendmodealpha)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Alpha ``` |
+| To | ``` case alpha ``` |
+
+Modified [SCNParticleBlendMode.multiply](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/multiply)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Multiply ``` |
+| To | ``` case multiply ``` |
+
+Modified [SCNParticleBlendMode.replace](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/replace)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Replace ``` |
+| To | ``` case replace ``` |
+
+Modified [SCNParticleBlendMode.screen](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/scnparticleblendmodescreen)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Screen ``` |
+| To | ``` case screen ``` |
+
+Modified [SCNParticleBlendMode.subtract](https://developer.apple.com/documentation/scenekit/scnparticleblendmode/scnparticleblendmodesubtract)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Subtract ``` |
+| To | ``` case subtract ``` |
+
+Modified [SCNParticleEvent [enum]](https://developer.apple.com/documentation/scenekit/scnparticleevent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleEvent : Int {     case Birth     case Death     case Collision } ``` |
+| To | ``` enum SCNParticleEvent : Int {     case birth     case death     case collision } ``` |
+
+Modified [SCNParticleEvent.birth](https://developer.apple.com/documentation/scenekit/scnparticleevent/scnparticleeventbirth)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Birth ``` |
+| To | ``` case birth ``` |
+
+Modified [SCNParticleEvent.collision](https://developer.apple.com/documentation/scenekit/scnparticleevent/scnparticleeventcollision)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Collision ``` |
+| To | ``` case collision ``` |
+
+Modified [SCNParticleEvent.death](https://developer.apple.com/documentation/scenekit/scnparticleevent/scnparticleeventdeath)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Death ``` |
+| To | ``` case death ``` |
+
+Modified [SCNParticleImageSequenceAnimationMode [enum]](https://developer.apple.com/documentation/scenekit/scnparticleimagesequenceanimationmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleImageSequenceAnimationMode : Int {     case Repeat     case Clamp     case AutoReverse } ``` |
+| To | ``` enum SCNParticleImageSequenceAnimationMode : Int {     case `repeat`     case clamp     case autoReverse } ``` |
+
+Modified [SCNParticleImageSequenceAnimationMode.autoReverse](https://developer.apple.com/documentation/scenekit/scnparticleimagesequenceanimationmode/scnparticleimagesequenceanimationmodeautoreverse)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case AutoReverse ``` |
+| To | ``` case autoReverse ``` |
+
+Modified [SCNParticleImageSequenceAnimationMode.clamp](https://developer.apple.com/documentation/scenekit/scnparticleimagesequenceanimationmode/scnparticleimagesequenceanimationmodeclamp)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Clamp ``` |
+| To | ``` case clamp ``` |
+
+Modified [SCNParticleImageSequenceAnimationMode.repeat](https://developer.apple.com/documentation/scenekit/scnparticleimagesequenceanimationmode/scnparticleimagesequenceanimationmoderepeat)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Repeat ``` |
+| To | ``` case `repeat` ``` |
+
+Modified [SCNParticleInputMode [enum]](https://developer.apple.com/documentation/scenekit/scnparticleinputmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleInputMode : Int {     case OverLife     case OverDistance     case OverOtherProperty } ``` |
+| To | ``` enum SCNParticleInputMode : Int {     case overLife     case overDistance     case overOtherProperty } ``` |
+
+Modified [SCNParticleInputMode.overDistance](https://developer.apple.com/documentation/scenekit/scnparticleinputmode/scnparticleinputmodeoverdistance)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OverDistance ``` |
+| To | ``` case overDistance ``` |
+
+Modified [SCNParticleInputMode.overLife](https://developer.apple.com/documentation/scenekit/scnparticleinputmode/scnparticleinputmodeoverlife)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OverLife ``` |
+| To | ``` case overLife ``` |
+
+Modified [SCNParticleInputMode.overOtherProperty](https://developer.apple.com/documentation/scenekit/scnparticleinputmode/scnparticleinputmodeoverotherproperty)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OverOtherProperty ``` |
+| To | ``` case overOtherProperty ``` |
+
+Modified [SCNParticleModifierStage [enum]](https://developer.apple.com/documentation/scenekit/scnparticlemodifierstage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleModifierStage : Int {     case PreDynamics     case PostDynamics     case PreCollision     case PostCollision } ``` |
+| To | ``` enum SCNParticleModifierStage : Int {     case preDynamics     case postDynamics     case preCollision     case postCollision } ``` |
+
+Modified [SCNParticleModifierStage.postCollision](https://developer.apple.com/documentation/scenekit/scnparticlemodifierstage/postcollision)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PostCollision ``` |
+| To | ``` case postCollision ``` |
+
+Modified [SCNParticleModifierStage.postDynamics](https://developer.apple.com/documentation/scenekit/scnparticlemodifierstage/scnparticlemodifierstagepostdynamics)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PostDynamics ``` |
+| To | ``` case postDynamics ``` |
+
+Modified [SCNParticleModifierStage.preCollision](https://developer.apple.com/documentation/scenekit/scnparticlemodifierstage/precollision)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PreCollision ``` |
+| To | ``` case preCollision ``` |
+
+Modified [SCNParticleModifierStage.preDynamics](https://developer.apple.com/documentation/scenekit/scnparticlemodifierstage/scnparticlemodifierstagepredynamics)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case PreDynamics ``` |
+| To | ``` case preDynamics ``` |
+
+Modified [SCNParticleOrientationMode [enum]](https://developer.apple.com/documentation/scenekit/scnparticleorientationmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleOrientationMode : Int {     case BillboardScreenAligned     case BillboardViewAligned     case Free     case BillboardYAligned } ``` |
+| To | ``` enum SCNParticleOrientationMode : Int {     case billboardScreenAligned     case billboardViewAligned     case free     case billboardYAligned } ``` |
+
+Modified [SCNParticleOrientationMode.billboardScreenAligned](https://developer.apple.com/documentation/scenekit/scnparticleorientationmode/scnparticleorientationmodebillboardscreenaligned)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case BillboardScreenAligned ``` |
+| To | ``` case billboardScreenAligned ``` |
+
+Modified [SCNParticleOrientationMode.billboardViewAligned](https://developer.apple.com/documentation/scenekit/scnparticleorientationmode/scnparticleorientationmodebillboardviewaligned)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case BillboardViewAligned ``` |
+| To | ``` case billboardViewAligned ``` |
+
+Modified [SCNParticleOrientationMode.billboardYAligned](https://developer.apple.com/documentation/scenekit/scnparticleorientationmode/billboardyaligned)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case BillboardYAligned ``` |
+| To | ``` case billboardYAligned ``` |
+
+Modified [SCNParticleOrientationMode.free](https://developer.apple.com/documentation/scenekit/scnparticleorientationmode/scnparticleorientationmodefree)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Free ``` |
+| To | ``` case free ``` |
+
+Modified [SCNParticlePropertyController](https://developer.apple.com/documentation/scenekit/scnparticlepropertycontroller)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNParticlePropertyController : NSObject, NSSecureCoding, NSCopying {     convenience init(animation animation: CAAnimation)     class func controllerWithAnimation(_ animation: CAAnimation) -> Self     var animation: CAAnimation     var inputMode: SCNParticleInputMode     var inputScale: CGFloat     var inputBias: CGFloat     weak var inputOrigin: SCNNode?     var inputProperty: String? } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNParticlePropertyController : NSObject, NSSecureCoding, NSCopying {     convenience init(animation animation: CAAnimation)     class func withAnimation(_ animation: CAAnimation) -> Self     var animation: CAAnimation     var inputMode: SCNParticleInputMode     var inputScale: CGFloat     var inputBias: CGFloat     weak var inputOrigin: SCNNode?     var inputProperty: SCNParticleSystem.ParticleProperty?     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNParticlePropertyController : CVarArg { } extension SCNParticlePropertyController : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNParticlePropertyController.inputProperty](https://developer.apple.com/documentation/scenekit/scnparticlepropertycontroller/1522973-inputproperty)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var inputProperty: String? ``` |
+| To | ``` var inputProperty: SCNParticleSystem.ParticleProperty? ``` |
+
+Modified [SCNParticleSortingMode [enum]](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNParticleSortingMode : Int {     case None     case ProjectedDepth     case Distance     case OldestFirst     case YoungestFirst } ``` |
+| To | ``` enum SCNParticleSortingMode : Int {     case none     case projectedDepth     case distance     case oldestFirst     case youngestFirst } ``` |
+
+Modified [SCNParticleSortingMode.distance](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode/distance)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Distance ``` |
+| To | ``` case distance ``` |
+
+Modified [SCNParticleSortingMode.none](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode/scnparticlesortingmodenone)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case None ``` |
+| To | ``` case none ``` |
+
+Modified [SCNParticleSortingMode.oldestFirst](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode/scnparticlesortingmodeoldestfirst)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OldestFirst ``` |
+| To | ``` case oldestFirst ``` |
+
+Modified [SCNParticleSortingMode.projectedDepth](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode/scnparticlesortingmodeprojecteddepth)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case ProjectedDepth ``` |
+| To | ``` case projectedDepth ``` |
+
+Modified [SCNParticleSortingMode.youngestFirst](https://developer.apple.com/documentation/scenekit/scnparticlesortingmode/youngestfirst)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case YoungestFirst ``` |
+| To | ``` case youngestFirst ``` |
+
+Modified [SCNParticleSystem](https://developer.apple.com/documentation/scenekit/scnparticlesystem)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNParticleSystem : NSObject, NSCopying, NSSecureCoding, SCNAnimatable {     convenience init()     class func particleSystem() -> Self     convenience init?(named name: String, inDirectory directory: String?)     class func particleSystemNamed(_ name: String, inDirectory directory: String?) -> Self?     var emissionDuration: CGFloat     var emissionDurationVariation: CGFloat     var idleDuration: CGFloat     var idleDurationVariation: CGFloat     var loops: Bool     var birthRate: CGFloat     var birthRateVariation: CGFloat     var warmupDuration: CGFloat     var emitterShape: SCNGeometry?     var birthLocation: SCNParticleBirthLocation     var birthDirection: SCNParticleBirthDirection     var spreadingAngle: CGFloat     var emittingDirection: SCNVector3     var acceleration: SCNVector3     var local: Bool     var particleAngle: CGFloat     var particleAngleVariation: CGFloat     var particleVelocity: CGFloat     var particleVelocityVariation: CGFloat     var particleAngularVelocity: CGFloat     var particleAngularVelocityVariation: CGFloat     var particleLifeSpan: CGFloat     var particleLifeSpanVariation: CGFloat     var systemSpawnedOnDying: SCNParticleSystem?     var systemSpawnedOnCollision: SCNParticleSystem?     var systemSpawnedOnLiving: SCNParticleSystem?     var particleImage: AnyObject?     var imageSequenceColumnCount: Int     var imageSequenceRowCount: Int     var imageSequenceInitialFrame: CGFloat     var imageSequenceInitialFrameVariation: CGFloat     var imageSequenceFrameRate: CGFloat     var imageSequenceFrameRateVariation: CGFloat     var imageSequenceAnimationMode: SCNParticleImageSequenceAnimationMode     var particleColor: UIColor     var particleColorVariation: SCNVector4     var particleSize: CGFloat     var particleSizeVariation: CGFloat     var blendMode: SCNParticleBlendMode     var blackPassEnabled: Bool     var orientationMode: SCNParticleOrientationMode     var sortingMode: SCNParticleSortingMode     var lightingEnabled: Bool     var affectedByGravity: Bool     var affectedByPhysicsFields: Bool     var particleDiesOnCollision: Bool     var colliderNodes: [SCNNode]?     var particleMass: CGFloat     var particleMassVariation: CGFloat     var particleBounce: CGFloat     var particleBounceVariation: CGFloat     var particleFriction: CGFloat     var particleFrictionVariation: CGFloat     var particleCharge: CGFloat     var particleChargeVariation: CGFloat     var dampingFactor: CGFloat     var speedFactor: CGFloat     var stretchFactor: CGFloat     var fresnelExponent: CGFloat     var propertyControllers: [String : SCNParticlePropertyController]?     func reset()     func handleEvent(_ event: SCNParticleEvent, forProperties properties: [String], withBlock block: SCNParticleEventBlock)     func addModifierForProperties(_ properties: [String], atStage stage: SCNParticleModifierStage, withBlock block: SCNParticleModifierBlock)     func removeModifiersOfStage(_ stage: SCNParticleModifierStage)     func removeAllModifiers() } ``` | NSCopying, NSSecureCoding, SCNAnimatable |
+| To | ``` class SCNParticleSystem : NSObject, NSCopying, NSSecureCoding, SCNAnimatable {     convenience init()     class func particleSystem() -> Self     convenience init?(named name: String, inDirectory directory: String?)     class func particleSystemNamed(_ name: String, inDirectory directory: String?) -> Self?     var emissionDuration: CGFloat     var emissionDurationVariation: CGFloat     var idleDuration: CGFloat     var idleDurationVariation: CGFloat     var loops: Bool     var birthRate: CGFloat     var birthRateVariation: CGFloat     var warmupDuration: CGFloat     var emitterShape: SCNGeometry?     var birthLocation: SCNParticleBirthLocation     var birthDirection: SCNParticleBirthDirection     var spreadingAngle: CGFloat     var emittingDirection: SCNVector3     var acceleration: SCNVector3     var isLocal: Bool     var particleAngle: CGFloat     var particleAngleVariation: CGFloat     var particleVelocity: CGFloat     var particleVelocityVariation: CGFloat     var particleAngularVelocity: CGFloat     var particleAngularVelocityVariation: CGFloat     var particleLifeSpan: CGFloat     var particleLifeSpanVariation: CGFloat     var systemSpawnedOnDying: SCNParticleSystem?     var systemSpawnedOnCollision: SCNParticleSystem?     var systemSpawnedOnLiving: SCNParticleSystem?     var particleImage: Any?     var imageSequenceColumnCount: Int     var imageSequenceRowCount: Int     var imageSequenceInitialFrame: CGFloat     var imageSequenceInitialFrameVariation: CGFloat     var imageSequenceFrameRate: CGFloat     var imageSequenceFrameRateVariation: CGFloat     var imageSequenceAnimationMode: SCNParticleImageSequenceAnimationMode     var particleColor: UIColor     var particleColorVariation: SCNVector4     var particleSize: CGFloat     var particleSizeVariation: CGFloat     var blendMode: SCNParticleBlendMode     var isBlackPassEnabled: Bool     var orientationMode: SCNParticleOrientationMode     var sortingMode: SCNParticleSortingMode     var isLightingEnabled: Bool     var isAffectedByGravity: Bool     var isAffectedByPhysicsFields: Bool     var particleDiesOnCollision: Bool     var colliderNodes: [SCNNode]?     var particleMass: CGFloat     var particleMassVariation: CGFloat     var particleBounce: CGFloat     var particleBounceVariation: CGFloat     var particleFriction: CGFloat     var particleFrictionVariation: CGFloat     var particleCharge: CGFloat     var particleChargeVariation: CGFloat     var dampingFactor: CGFloat     var speedFactor: CGFloat     var stretchFactor: CGFloat     var fresnelExponent: CGFloat     var propertyControllers: [SCNParticleSystem.ParticleProperty : SCNParticlePropertyController]?     func reset()     func handle(_ event: SCNParticleEvent, forProperties properties: [SCNParticleSystem.ParticleProperty], handler block: SceneKit.SCNParticleEventBlock)     func addModifier(forProperties properties: [SCNParticleSystem.ParticleProperty], at stage: SCNParticleModifierStage, modifier block: SceneKit.SCNParticleModifierBlock)     func removeModifiers(at stage: SCNParticleModifierStage)     func removeAllModifiers()     struct ParticleProperty : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNParticleSystem {     struct ParticleProperty : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNParticleSystem : CVarArg { } extension SCNParticleSystem : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable |
+
+Modified [SCNParticleSystem.addModifier(forProperties: [SCNParticleSystem.ParticleProperty], at: SCNParticleModifierStage, modifier: SceneKit.SCNParticleModifierBlock)](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1522635-addmodifier)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func addModifierForProperties(_ properties: [String], atStage stage: SCNParticleModifierStage, withBlock block: SCNParticleModifierBlock) ``` |
+| To | ``` func addModifier(forProperties properties: [SCNParticleSystem.ParticleProperty], at stage: SCNParticleModifierStage, modifier block: SceneKit.SCNParticleModifierBlock) ``` |
+
+Modified [SCNParticleSystem.handle(_: SCNParticleEvent, forProperties: [SCNParticleSystem.ParticleProperty], handler: SceneKit.SCNParticleEventBlock)](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1523251-handleevent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func handleEvent(_ event: SCNParticleEvent, forProperties properties: [String], withBlock block: SCNParticleEventBlock) ``` |
+| To | ``` func handle(_ event: SCNParticleEvent, forProperties properties: [SCNParticleSystem.ParticleProperty], handler block: SceneKit.SCNParticleEventBlock) ``` |
+
+Modified [SCNParticleSystem.isAffectedByGravity](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1523452-isaffectedbygravity)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var affectedByGravity: Bool ``` |
+| To | ``` var isAffectedByGravity: Bool ``` |
+
+Modified [SCNParticleSystem.isAffectedByPhysicsFields](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1523353-affectedbyphysicsfields)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var affectedByPhysicsFields: Bool ``` |
+| To | ``` var isAffectedByPhysicsFields: Bool ``` |
+
+Modified [SCNParticleSystem.isBlackPassEnabled](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1523901-blackpassenabled)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var blackPassEnabled: Bool ``` |
+| To | ``` var isBlackPassEnabled: Bool ``` |
+
+Modified [SCNParticleSystem.isLightingEnabled](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1522794-islightingenabled)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var lightingEnabled: Bool ``` |
+| To | ``` var isLightingEnabled: Bool ``` |
+
+Modified [SCNParticleSystem.isLocal](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1522855-local)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var local: Bool ``` |
+| To | ``` var isLocal: Bool ``` |
+
+Modified [SCNParticleSystem.particleImage](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1524153-particleimage)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var particleImage: AnyObject? ``` |
+| To | ``` var particleImage: Any? ``` |
+
+Modified [SCNParticleSystem.propertyControllers](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1522775-propertycontrollers)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var propertyControllers: [String : SCNParticlePropertyController]? ``` |
+| To | ``` var propertyControllers: [SCNParticleSystem.ParticleProperty : SCNParticlePropertyController]? ``` |
+
+Modified [SCNParticleSystem.removeModifiers(at: SCNParticleModifierStage)](https://developer.apple.com/documentation/scenekit/scnparticlesystem/1524077-removemodifiers)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func removeModifiersOfStage(_ stage: SCNParticleModifierStage) ``` |
+| To | ``` func removeModifiers(at stage: SCNParticleModifierStage) ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.angle](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1522778-angle)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyAngle | ``` let SCNParticlePropertyAngle: String ``` |
+| To | angle | ``` static let angle: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.angularVelocity](https://developer.apple.com/documentation/scenekit/scnparticlepropertyangularvelocity)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyAngularVelocity | ``` let SCNParticlePropertyAngularVelocity: String ``` |
+| To | angularVelocity | ``` static let angularVelocity: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.bounce](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1524008-bounce)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyBounce | ``` let SCNParticlePropertyBounce: String ``` |
+| To | bounce | ``` static let bounce: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.charge](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1523372-charge)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyCharge | ``` let SCNParticlePropertyCharge: String ``` |
+| To | charge | ``` static let charge: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.color](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1523749-color)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyColor | ``` let SCNParticlePropertyColor: String ``` |
+| To | color | ``` static let color: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.contactNormal](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1523709-contactnormal)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyContactNormal | ``` let SCNParticlePropertyContactNormal: String ``` |
+| To | contactNormal | ``` static let contactNormal: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.contactPoint](https://developer.apple.com/documentation/scenekit/scnparticlepropertycontactpoint)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyContactPoint | ``` let SCNParticlePropertyContactPoint: String ``` |
+| To | contactPoint | ``` static let contactPoint: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.frame](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1524217-frame)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyFrame | ``` let SCNParticlePropertyFrame: String ``` |
+| To | frame | ``` static let frame: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.frameRate](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1523574-framerate)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyFrameRate | ``` let SCNParticlePropertyFrameRate: String ``` |
+| To | frameRate | ``` static let frameRate: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.friction](https://developer.apple.com/documentation/scenekit/scnparticlepropertyfriction)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyFriction | ``` let SCNParticlePropertyFriction: String ``` |
+| To | friction | ``` static let friction: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.life](https://developer.apple.com/documentation/scenekit/scnparticlepropertylife)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyLife | ``` let SCNParticlePropertyLife: String ``` |
+| To | life | ``` static let life: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.opacity](https://developer.apple.com/documentation/scenekit/scnparticlepropertyopacity)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyOpacity | ``` let SCNParticlePropertyOpacity: String ``` |
+| To | opacity | ``` static let opacity: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.position](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1524136-position)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyPosition | ``` let SCNParticlePropertyPosition: String ``` |
+| To | position | ``` static let position: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.rotationAxis](https://developer.apple.com/documentation/scenekit/scnparticlepropertyrotationaxis)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyRotationAxis | ``` let SCNParticlePropertyRotationAxis: String ``` |
+| To | rotationAxis | ``` static let rotationAxis: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.size](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1523860-size)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertySize | ``` let SCNParticlePropertySize: String ``` |
+| To | size | ``` static let size: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNParticleSystem.ParticleProperty.velocity](https://developer.apple.com/documentation/scenekit/scnparticlesystem/particleproperty/1522760-velocity)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNParticlePropertyVelocity | ``` let SCNParticlePropertyVelocity: String ``` |
+| To | velocity | ``` static let velocity: SCNParticleSystem.ParticleProperty ``` |
+
+Modified [SCNPhysicsBallSocketJoint](https://developer.apple.com/documentation/scenekit/scnphysicsballsocketjoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNPhysicsBallSocketJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, anchorB anchorB: SCNVector3)     class func jointWithBodyA(_ bodyA: SCNPhysicsBody, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, anchor anchor: SCNVector3)     class func jointWithBody(_ body: SCNPhysicsBody, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var anchorB: SCNVector3 } ``` |
+| To | ``` class SCNPhysicsBallSocketJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, anchorB anchorB: SCNVector3)     class func withBodyA(_ bodyA: SCNPhysicsBody, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, anchor anchor: SCNVector3)     class func withBody(_ body: SCNPhysicsBody, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var anchorB: SCNVector3 } ``` |
+
+Modified [SCNPhysicsBehavior](https://developer.apple.com/documentation/scenekit/scnphysicsbehavior)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsBehavior : NSObject, NSSecureCoding { } ``` | NSSecureCoding |
+| To | ``` class SCNPhysicsBehavior : NSObject, NSSecureCoding {     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsBehavior : CVarArg { } extension SCNPhysicsBehavior : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNPhysicsBody](https://developer.apple.com/documentation/scenekit/scnphysicsbody)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsBody : NSObject, NSCopying, NSSecureCoding {     class func staticBody() -> Self     class func dynamicBody() -> Self     class func kinematicBody() -> Self     convenience init(type type: SCNPhysicsBodyType, shape shape: SCNPhysicsShape?)     class func bodyWithType(_ type: SCNPhysicsBodyType, shape shape: SCNPhysicsShape?) -> Self     var type: SCNPhysicsBodyType     var mass: CGFloat     var momentOfInertia: SCNVector3     var usesDefaultMomentOfInertia: Bool     var charge: CGFloat     var friction: CGFloat     var restitution: CGFloat     var rollingFriction: CGFloat     var physicsShape: SCNPhysicsShape?     var isResting: Bool { get }     var allowsResting: Bool     var velocity: SCNVector3     var angularVelocity: SCNVector4     var damping: CGFloat     var angularDamping: CGFloat     var velocityFactor: SCNVector3     var angularVelocityFactor: SCNVector3     var categoryBitMask: Int     var collisionBitMask: Int     var contactTestBitMask: Int     var affectedByGravity: Bool     func applyForce(_ direction: SCNVector3, impulse impulse: Bool)     func applyForce(_ direction: SCNVector3, atPosition position: SCNVector3, impulse impulse: Bool)     func applyTorque(_ torque: SCNVector4, impulse impulse: Bool)     func clearAllForces()     func resetTransform() } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNPhysicsBody : NSObject, NSCopying, NSSecureCoding {     class func `static`() -> Self     class func dynamic() -> Self     class func kinematic() -> Self     convenience init(type type: SCNPhysicsBodyType, shape shape: SCNPhysicsShape?)     class func withType(_ type: SCNPhysicsBodyType, shape shape: SCNPhysicsShape?) -> Self     var type: SCNPhysicsBodyType     var mass: CGFloat     var momentOfInertia: SCNVector3     var usesDefaultMomentOfInertia: Bool     var charge: CGFloat     var friction: CGFloat     var restitution: CGFloat     var rollingFriction: CGFloat     var physicsShape: SCNPhysicsShape?     var isResting: Bool { get }     var allowsResting: Bool     var velocity: SCNVector3     var angularVelocity: SCNVector4     var damping: CGFloat     var angularDamping: CGFloat     var velocityFactor: SCNVector3     var angularVelocityFactor: SCNVector3     var categoryBitMask: Int     var collisionBitMask: Int     var contactTestBitMask: Int     var isAffectedByGravity: Bool     func applyForce(_ direction: SCNVector3, asImpulse impulse: Bool)     func applyForce(_ direction: SCNVector3, at position: SCNVector3, asImpulse impulse: Bool)     func applyTorque(_ torque: SCNVector4, asImpulse impulse: Bool)     func clearAllForces()     func resetTransform()     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsBody : CVarArg { } extension SCNPhysicsBody : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNPhysicsBody.applyForce(_: SCNVector3, asImpulse: Bool)](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514801-applyforce)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyForce(_ direction: SCNVector3, impulse impulse: Bool) ``` |
+| To | ``` func applyForce(_ direction: SCNVector3, asImpulse impulse: Bool) ``` |
+
+Modified [SCNPhysicsBody.applyForce(_: SCNVector3, at: SCNVector3, asImpulse: Bool)](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514750-applyforce)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyForce(_ direction: SCNVector3, atPosition position: SCNVector3, impulse impulse: Bool) ``` |
+| To | ``` func applyForce(_ direction: SCNVector3, at position: SCNVector3, asImpulse impulse: Bool) ``` |
+
+Modified [SCNPhysicsBody.applyTorque(_: SCNVector4, asImpulse: Bool)](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514752-applytorque)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyTorque(_ torque: SCNVector4, impulse impulse: Bool) ``` |
+| To | ``` func applyTorque(_ torque: SCNVector4, asImpulse impulse: Bool) ``` |
+
+Modified [SCNPhysicsBody.dynamic() -> Self [class]](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514766-dynamicbody)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func dynamicBody() -> Self ``` |
+| To | ``` class func dynamic() -> Self ``` |
+
+Modified [SCNPhysicsBody.isAffectedByGravity](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514738-affectedbygravity)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var affectedByGravity: Bool ``` |
+| To | ``` var isAffectedByGravity: Bool ``` |
+
+Modified [SCNPhysicsBody.kinematic() -> Self [class]](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514776-kinematic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func kinematicBody() -> Self ``` |
+| To | ``` class func kinematic() -> Self ``` |
+
+Modified [SCNPhysicsBody.static() [class]](https://developer.apple.com/documentation/scenekit/scnphysicsbody/1514791-staticbody)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func staticBody() -> Self ``` |
+| To | ``` class func `static`() -> Self ``` |
+
+Modified [SCNPhysicsBodyType [enum]](https://developer.apple.com/documentation/scenekit/scnphysicsbodytype)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNPhysicsBodyType : Int {     case Static     case Dynamic     case Kinematic } ``` |
+| To | ``` enum SCNPhysicsBodyType : Int {     case `static`     case dynamic     case kinematic } ``` |
+
+Modified [SCNPhysicsBodyType.dynamic](https://developer.apple.com/documentation/scenekit/scnphysicsbodytype/scnphysicsbodytypedynamic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Dynamic ``` |
+| To | ``` case dynamic ``` |
+
+Modified [SCNPhysicsBodyType.kinematic](https://developer.apple.com/documentation/scenekit/scnphysicsbodytype/scnphysicsbodytypekinematic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Kinematic ``` |
+| To | ``` case kinematic ``` |
+
+Modified [SCNPhysicsBodyType.static](https://developer.apple.com/documentation/scenekit/scnphysicsbodytype/scnphysicsbodytypestatic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Static ``` |
+| To | ``` case `static` ``` |
+
+Modified [SCNPhysicsCollisionCategory [struct]](https://developer.apple.com/documentation/scenekit/scnphysicscollisioncategory)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` struct SCNPhysicsCollisionCategory : OptionSetType {     init(rawValue rawValue: UInt)     static var Default: SCNPhysicsCollisionCategory { get }     static var Static: SCNPhysicsCollisionCategory { get }     static var All: SCNPhysicsCollisionCategory { get } } ``` | OptionSetType |
+| To | ``` struct SCNPhysicsCollisionCategory : OptionSet {     init(rawValue rawValue: UInt)     static var `default`: SCNPhysicsCollisionCategory { get }     static var `static`: SCNPhysicsCollisionCategory { get }     static var all: SCNPhysicsCollisionCategory { get }     func intersect(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory     func exclusiveOr(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory     mutating func unionInPlace(_ other: SCNPhysicsCollisionCategory)     mutating func intersectInPlace(_ other: SCNPhysicsCollisionCategory)     mutating func exclusiveOrInPlace(_ other: SCNPhysicsCollisionCategory)     func isSubsetOf(_ other: SCNPhysicsCollisionCategory) -> Bool     func isDisjointWith(_ other: SCNPhysicsCollisionCategory) -> Bool     func isSupersetOf(_ other: SCNPhysicsCollisionCategory) -> Bool     mutating func subtractInPlace(_ other: SCNPhysicsCollisionCategory)     func isStrictSupersetOf(_ other: SCNPhysicsCollisionCategory) -> Bool     func isStrictSubsetOf(_ other: SCNPhysicsCollisionCategory) -> Bool } extension SCNPhysicsCollisionCategory {     func union(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory     func intersection(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory     func symmetricDifference(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory } extension SCNPhysicsCollisionCategory {     func contains(_ member: SCNPhysicsCollisionCategory) -> Bool     mutating func insert(_ newMember: SCNPhysicsCollisionCategory) -> (inserted: Bool, memberAfterInsert: SCNPhysicsCollisionCategory)     mutating func remove(_ member: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory?     mutating func update(with newMember: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory? } extension SCNPhysicsCollisionCategory {     convenience init()     mutating func formUnion(_ other: SCNPhysicsCollisionCategory)     mutating func formIntersection(_ other: SCNPhysicsCollisionCategory)     mutating func formSymmetricDifference(_ other: SCNPhysicsCollisionCategory) } extension SCNPhysicsCollisionCategory {     convenience init<S : Sequence where S.Iterator.Element == SCNPhysicsCollisionCategory>(_ sequence: S)     convenience init(arrayLiteral arrayLiteral: SCNPhysicsCollisionCategory...)     mutating func subtract(_ other: SCNPhysicsCollisionCategory)     func isSubset(of other: SCNPhysicsCollisionCategory) -> Bool     func isSuperset(of other: SCNPhysicsCollisionCategory) -> Bool     func isDisjoint(with other: SCNPhysicsCollisionCategory) -> Bool     func subtracting(_ other: SCNPhysicsCollisionCategory) -> SCNPhysicsCollisionCategory     var isEmpty: Bool { get }     func isStrictSuperset(of other: SCNPhysicsCollisionCategory) -> Bool     func isStrictSubset(of other: SCNPhysicsCollisionCategory) -> Bool } ``` | OptionSet |
+
+Modified [SCNPhysicsCollisionCategory.all](https://developer.apple.com/documentation/scenekit/scnphysicscollisioncategory/scnphysicscollisioncategoryall)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var All: SCNPhysicsCollisionCategory { get } ``` |
+| To | ``` static var all: SCNPhysicsCollisionCategory { get } ``` |
+
+Modified [SCNPhysicsCollisionCategory.default](https://developer.apple.com/documentation/scenekit/scnphysicscollisioncategory/1514799-default)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var Default: SCNPhysicsCollisionCategory { get } ``` |
+| To | ``` static var `default`: SCNPhysicsCollisionCategory { get } ``` |
+
+Modified [SCNPhysicsCollisionCategory.static](https://developer.apple.com/documentation/scenekit/scnphysicscollisioncategory/scnphysicscollisioncategorystatic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` static var Static: SCNPhysicsCollisionCategory { get } ``` |
+| To | ``` static var `static`: SCNPhysicsCollisionCategory { get } ``` |
+
+Modified [SCNPhysicsContact](https://developer.apple.com/documentation/scenekit/scnphysicscontact)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsContact : NSObject {     var nodeA: SCNNode { get }     var nodeB: SCNNode { get }     var contactPoint: SCNVector3 { get }     var contactNormal: SCNVector3 { get }     var collisionImpulse: CGFloat { get }     var penetrationDistance: CGFloat { get } } ``` | -- |
+| To | ``` class SCNPhysicsContact : NSObject {     var nodeA: SCNNode { get }     var nodeB: SCNNode { get }     var contactPoint: SCNVector3 { get }     var contactNormal: SCNVector3 { get }     var collisionImpulse: CGFloat { get }     var penetrationDistance: CGFloat { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsContact : CVarArg { } extension SCNPhysicsContact : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNPhysicsContactDelegate](https://developer.apple.com/documentation/scenekit/scnphysicscontactdelegate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNPhysicsContactDelegate : NSObjectProtocol {     optional func physicsWorld(_ world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact)     optional func physicsWorld(_ world: SCNPhysicsWorld, didUpdateContact contact: SCNPhysicsContact)     optional func physicsWorld(_ world: SCNPhysicsWorld, didEndContact contact: SCNPhysicsContact) } ``` |
+| To | ``` protocol SCNPhysicsContactDelegate : NSObjectProtocol {     optional func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact)     optional func physicsWorld(_ world: SCNPhysicsWorld, didUpdate contact: SCNPhysicsContact)     optional func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact) } ``` |
+
+Modified [SCNPhysicsContactDelegate.physicsWorld(_: SCNPhysicsWorld, didBegin: SCNPhysicsContact)](https://developer.apple.com/documentation/scenekit/scnphysicscontactdelegate/1512835-physicsworld)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didBeginContact contact: SCNPhysicsContact) ``` |
+| To | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) ``` |
+
+Modified [SCNPhysicsContactDelegate.physicsWorld(_: SCNPhysicsWorld, didEnd: SCNPhysicsContact)](https://developer.apple.com/documentation/scenekit/scnphysicscontactdelegate/1512883-physicsworld)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didEndContact contact: SCNPhysicsContact) ``` |
+| To | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact) ``` |
+
+Modified [SCNPhysicsContactDelegate.physicsWorld(_: SCNPhysicsWorld, didUpdate: SCNPhysicsContact)](https://developer.apple.com/documentation/scenekit/scnphysicscontactdelegate/1512865-physicsworld)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didUpdateContact contact: SCNPhysicsContact) ``` |
+| To | ``` optional func physicsWorld(_ world: SCNPhysicsWorld, didUpdate contact: SCNPhysicsContact) ``` |
+
+Modified [SCNPhysicsField](https://developer.apple.com/documentation/scenekit/scnphysicsfield)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsField : NSObject, NSCopying, NSSecureCoding {     var strength: CGFloat     var falloffExponent: CGFloat     var minimumDistance: CGFloat     var active: Bool     var exclusive: Bool     var halfExtent: SCNVector3     var usesEllipsoidalExtent: Bool     var scope: SCNPhysicsFieldScope     var offset: SCNVector3     var direction: SCNVector3     var categoryBitMask: Int     class func dragField() -> SCNPhysicsField     class func vortexField() -> SCNPhysicsField     class func radialGravityField() -> SCNPhysicsField     class func linearGravityField() -> SCNPhysicsField     class func noiseFieldWithSmoothness(_ smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField     class func turbulenceFieldWithSmoothness(_ smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField     class func springField() -> SCNPhysicsField     class func electricField() -> SCNPhysicsField     class func magneticField() -> SCNPhysicsField     class func customFieldWithEvaluationBlock(_ block: SCNFieldForceEvaluator) -> SCNPhysicsField } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNPhysicsField : NSObject, NSCopying, NSSecureCoding {     var strength: CGFloat     var falloffExponent: CGFloat     var minimumDistance: CGFloat     var isActive: Bool     var isExclusive: Bool     var halfExtent: SCNVector3     var usesEllipsoidalExtent: Bool     var scope: SCNPhysicsFieldScope     var offset: SCNVector3     var direction: SCNVector3     var categoryBitMask: Int     class func drag() -> SCNPhysicsField     class func vortex() -> SCNPhysicsField     class func radialGravity() -> SCNPhysicsField     class func linearGravity() -> SCNPhysicsField     class func noiseField(smoothness smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField     class func turbulenceField(smoothness smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField     class func spring() -> SCNPhysicsField     class func electric() -> SCNPhysicsField     class func magnetic() -> SCNPhysicsField     class func customField(evaluationBlock block: SceneKit.SCNFieldForceEvaluator) -> SCNPhysicsField     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsField : CVarArg { } extension SCNPhysicsField : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNPhysicsField.customField(evaluationBlock: SceneKit.SCNFieldForceEvaluator) -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388140-customfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func customFieldWithEvaluationBlock(_ block: SCNFieldForceEvaluator) -> SCNPhysicsField ``` |
+| To | ``` class func customField(evaluationBlock block: SceneKit.SCNFieldForceEvaluator) -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.drag() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388164-drag)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func dragField() -> SCNPhysicsField ``` |
+| To | ``` class func drag() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.electric() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388152-electricfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func electricField() -> SCNPhysicsField ``` |
+| To | ``` class func electric() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.isActive](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388117-isactive)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var active: Bool ``` |
+| To | ``` var isActive: Bool ``` |
+
+Modified [SCNPhysicsField.isExclusive](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388126-isexclusive)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var exclusive: Bool ``` |
+| To | ``` var isExclusive: Bool ``` |
+
+Modified [SCNPhysicsField.linearGravity() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388130-lineargravityfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func linearGravityField() -> SCNPhysicsField ``` |
+| To | ``` class func linearGravity() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.magnetic() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388168-magneticfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func magneticField() -> SCNPhysicsField ``` |
+| To | ``` class func magnetic() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.noiseField(smoothness: CGFloat, animationSpeed: CGFloat) -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388150-noisefield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func noiseFieldWithSmoothness(_ smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField ``` |
+| To | ``` class func noiseField(smoothness smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.radialGravity() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388115-radialgravityfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func radialGravityField() -> SCNPhysicsField ``` |
+| To | ``` class func radialGravity() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.spring() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388134-spring)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func springField() -> SCNPhysicsField ``` |
+| To | ``` class func spring() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.turbulenceField(smoothness: CGFloat, animationSpeed: CGFloat) -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388162-turbulencefield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func turbulenceFieldWithSmoothness(_ smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField ``` |
+| To | ``` class func turbulenceField(smoothness smoothness: CGFloat, animationSpeed speed: CGFloat) -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsField.vortex() -> SCNPhysicsField [class]](https://developer.apple.com/documentation/scenekit/scnphysicsfield/1388160-vortexfield)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func vortexField() -> SCNPhysicsField ``` |
+| To | ``` class func vortex() -> SCNPhysicsField ``` |
+
+Modified [SCNPhysicsFieldScope [enum]](https://developer.apple.com/documentation/scenekit/scnphysicsfieldscope)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNPhysicsFieldScope : Int {     case InsideExtent     case OutsideExtent } ``` |
+| To | ``` enum SCNPhysicsFieldScope : Int {     case insideExtent     case outsideExtent } ``` |
+
+Modified [SCNPhysicsFieldScope.insideExtent](https://developer.apple.com/documentation/scenekit/scnphysicsfieldscope/scnphysicsfieldscopeinsideextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case InsideExtent ``` |
+| To | ``` case insideExtent ``` |
+
+Modified [SCNPhysicsFieldScope.outsideExtent](https://developer.apple.com/documentation/scenekit/scnphysicsfieldscope/scnphysicsfieldscopeoutsideextent)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OutsideExtent ``` |
+| To | ``` case outsideExtent ``` |
+
+Modified [SCNPhysicsHingeJoint](https://developer.apple.com/documentation/scenekit/scnphysicshingejoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNPhysicsHingeJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3)     class func jointWithBodyA(_ bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3)     class func jointWithBody(_ body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var axisA: SCNVector3     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var axisB: SCNVector3     var anchorB: SCNVector3 } ``` |
+| To | ``` class SCNPhysicsHingeJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3)     class func withBodyA(_ bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3)     class func withBody(_ body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var axisA: SCNVector3     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var axisB: SCNVector3     var anchorB: SCNVector3 } ``` |
+
+Modified [SCNPhysicsShape](https://developer.apple.com/documentation/scenekit/scnphysicsshape)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsShape : NSObject, NSCopying, NSSecureCoding {     convenience init(geometry geometry: SCNGeometry, options options: [String : AnyObject]?)     class func shapeWithGeometry(_ geometry: SCNGeometry, options options: [String : AnyObject]?) -> Self     convenience init(node node: SCNNode, options options: [String : AnyObject]?)     class func shapeWithNode(_ node: SCNNode, options options: [String : AnyObject]?) -> Self     convenience init(shapes shapes: [SCNPhysicsShape], transforms transforms: [NSValue]?)     class func shapeWithShapes(_ shapes: [SCNPhysicsShape], transforms transforms: [NSValue]?) -> Self     var options: [String : AnyObject]? { get }     var sourceObject: AnyObject { get }     var transforms: [NSValue]? { get } } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNPhysicsShape : NSObject, NSCopying, NSSecureCoding {     convenience init(geometry geometry: SCNGeometry, options options: [SCNPhysicsShape.Option : Any]? = nil)     class func withGeometry(_ geometry: SCNGeometry, options options: [SCNPhysicsShape.Option : Any]? = nil) -> Self     convenience init(node node: SCNNode, options options: [SCNPhysicsShape.Option : Any]? = nil)     class func withNode(_ node: SCNNode, options options: [SCNPhysicsShape.Option : Any]? = nil) -> Self     convenience init(shapes shapes: [SCNPhysicsShape], transforms transforms: [NSValue]?)     class func withShapes(_ shapes: [SCNPhysicsShape], transforms transforms: [NSValue]?) -> Self     var options: [SCNPhysicsShape.Option : Any]? { get }     var sourceObject: Any { get }     var transforms: [NSValue]? { get }     struct Option : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct ShapeType : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsShape {     struct Option : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct ShapeType : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNPhysicsShape : CVarArg { } extension SCNPhysicsShape : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNPhysicsShape.init(geometry: SCNGeometry, options: [SCNPhysicsShape.Option : Any]?)](https://developer.apple.com/documentation/scenekit/scnphysicsshape/1508897-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(geometry geometry: SCNGeometry, options options: [String : AnyObject]?) ``` |
+| To | ``` convenience init(geometry geometry: SCNGeometry, options options: [SCNPhysicsShape.Option : Any]? = nil) ``` |
+
+Modified [SCNPhysicsShape.init(node: SCNNode, options: [SCNPhysicsShape.Option : Any]?)](https://developer.apple.com/documentation/scenekit/scnphysicsshape/1508889-shapewithnode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(node node: SCNNode, options options: [String : AnyObject]?) ``` |
+| To | ``` convenience init(node node: SCNNode, options options: [SCNPhysicsShape.Option : Any]? = nil) ``` |
+
+Modified [SCNPhysicsShape.options](https://developer.apple.com/documentation/scenekit/scnphysicsshape/1508904-options)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var options: [String : AnyObject]? { get } ``` |
+| To | ``` var options: [SCNPhysicsShape.Option : Any]? { get } ``` |
+
+Modified [SCNPhysicsShape.sourceObject](https://developer.apple.com/documentation/scenekit/scnphysicsshape/1508888-sourceobject)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var sourceObject: AnyObject { get } ``` |
+| To | ``` var sourceObject: Any { get } ``` |
+
+Modified [SCNPhysicsShape.Option.keepAsCompound](https://developer.apple.com/documentation/scenekit/scnphysicsshape/option/1508892-keepascompound)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeKeepAsCompoundKey | ``` let SCNPhysicsShapeKeepAsCompoundKey: String ``` |
+| To | keepAsCompound | ``` static let keepAsCompound: SCNPhysicsShape.Option ``` |
+
+Modified [SCNPhysicsShape.Option.scale](https://developer.apple.com/documentation/scenekit/scnphysicsshapescalekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeScaleKey | ``` let SCNPhysicsShapeScaleKey: String ``` |
+| To | scale | ``` static let scale: SCNPhysicsShape.Option ``` |
+
+Modified [SCNPhysicsShape.Option.type](https://developer.apple.com/documentation/scenekit/scnphysicsshape/option/1508903-type)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeTypeKey | ``` let SCNPhysicsShapeTypeKey: String ``` |
+| To | type | ``` static let type: SCNPhysicsShape.Option ``` |
+
+Modified [SCNPhysicsShape.ShapeType.boundingBox](https://developer.apple.com/documentation/scenekit/scnphysicsshape/shapetype/1508896-boundingbox)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeTypeBoundingBox | ``` let SCNPhysicsShapeTypeBoundingBox: String ``` |
+| To | boundingBox | ``` static let boundingBox: SCNPhysicsShape.ShapeType ``` |
+
+Modified [SCNPhysicsShape.ShapeType.concavePolyhedron](https://developer.apple.com/documentation/scenekit/scnphysicsshape/shapetype/1508890-concavepolyhedron)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeTypeConcavePolyhedron | ``` let SCNPhysicsShapeTypeConcavePolyhedron: String ``` |
+| To | concavePolyhedron | ``` static let concavePolyhedron: SCNPhysicsShape.ShapeType ``` |
+
+Modified [SCNPhysicsShape.ShapeType.convexHull](https://developer.apple.com/documentation/scenekit/scnphysicsshape/shapetype/1508894-convexhull)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsShapeTypeConvexHull | ``` let SCNPhysicsShapeTypeConvexHull: String ``` |
+| To | convexHull | ``` static let convexHull: SCNPhysicsShape.ShapeType ``` |
+
+Modified [SCNPhysicsSliderJoint](https://developer.apple.com/documentation/scenekit/scnphysicssliderjoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNPhysicsSliderJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3)     class func jointWithBodyA(_ bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3)     class func jointWithBody(_ body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var axisA: SCNVector3     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var axisB: SCNVector3     var anchorB: SCNVector3     var minimumLinearLimit: CGFloat     var maximumLinearLimit: CGFloat     var minimumAngularLimit: CGFloat     var maximumAngularLimit: CGFloat     var motorTargetLinearVelocity: CGFloat     var motorMaximumForce: CGFloat     var motorTargetAngularVelocity: CGFloat     var motorMaximumTorque: CGFloat } ``` |
+| To | ``` class SCNPhysicsSliderJoint : SCNPhysicsBehavior {     convenience init(bodyA bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3)     class func withBodyA(_ bodyA: SCNPhysicsBody, axisA axisA: SCNVector3, anchorA anchorA: SCNVector3, bodyB bodyB: SCNPhysicsBody, axisB axisB: SCNVector3, anchorB anchorB: SCNVector3) -> Self     convenience init(body body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3)     class func withBody(_ body: SCNPhysicsBody, axis axis: SCNVector3, anchor anchor: SCNVector3) -> Self     var bodyA: SCNPhysicsBody { get }     var axisA: SCNVector3     var anchorA: SCNVector3     var bodyB: SCNPhysicsBody? { get }     var axisB: SCNVector3     var anchorB: SCNVector3     var minimumLinearLimit: CGFloat     var maximumLinearLimit: CGFloat     var minimumAngularLimit: CGFloat     var maximumAngularLimit: CGFloat     var motorTargetLinearVelocity: CGFloat     var motorMaximumForce: CGFloat     var motorTargetAngularVelocity: CGFloat     var motorMaximumTorque: CGFloat } ``` |
+
+Modified [SCNPhysicsVehicle](https://developer.apple.com/documentation/scenekit/scnphysicsvehicle)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNPhysicsVehicle : SCNPhysicsBehavior {     convenience init(chassisBody chassisBody: SCNPhysicsBody, wheels wheels: [SCNPhysicsVehicleWheel])     class func vehicleWithChassisBody(_ chassisBody: SCNPhysicsBody, wheels wheels: [SCNPhysicsVehicleWheel]) -> Self     var speedInKilometersPerHour: CGFloat { get }     var wheels: [SCNPhysicsVehicleWheel] { get }     var chassisBody: SCNPhysicsBody { get }     func applyEngineForce(_ value: CGFloat, forWheelAtIndex index: Int)     func setSteeringAngle(_ value: CGFloat, forWheelAtIndex index: Int)     func applyBrakingForce(_ value: CGFloat, forWheelAtIndex index: Int) } ``` |
+| To | ``` class SCNPhysicsVehicle : SCNPhysicsBehavior {     convenience init(chassisBody chassisBody: SCNPhysicsBody, wheels wheels: [SCNPhysicsVehicleWheel])     class func withChassisBody(_ chassisBody: SCNPhysicsBody, wheels wheels: [SCNPhysicsVehicleWheel]) -> Self     var speedInKilometersPerHour: CGFloat { get }     var wheels: [SCNPhysicsVehicleWheel] { get }     var chassisBody: SCNPhysicsBody { get }     func applyEngineForce(_ value: CGFloat, forWheelAt index: Int)     func setSteeringAngle(_ value: CGFloat, forWheelAt index: Int)     func applyBrakingForce(_ value: CGFloat, forWheelAt index: Int) } ``` |
+
+Modified [SCNPhysicsVehicle.applyBrakingForce(_: CGFloat, forWheelAt: Int)](https://developer.apple.com/documentation/scenekit/scnphysicsvehicle/1387894-applybrakingforce)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyBrakingForce(_ value: CGFloat, forWheelAtIndex index: Int) ``` |
+| To | ``` func applyBrakingForce(_ value: CGFloat, forWheelAt index: Int) ``` |
+
+Modified [SCNPhysicsVehicle.applyEngineForce(_: CGFloat, forWheelAt: Int)](https://developer.apple.com/documentation/scenekit/scnphysicsvehicle/1387963-applyengineforce)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func applyEngineForce(_ value: CGFloat, forWheelAtIndex index: Int) ``` |
+| To | ``` func applyEngineForce(_ value: CGFloat, forWheelAt index: Int) ``` |
+
+Modified [SCNPhysicsVehicle.setSteeringAngle(_: CGFloat, forWheelAt: Int)](https://developer.apple.com/documentation/scenekit/scnphysicsvehicle/1387952-setsteeringangle)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func setSteeringAngle(_ value: CGFloat, forWheelAtIndex index: Int) ``` |
+| To | ``` func setSteeringAngle(_ value: CGFloat, forWheelAt index: Int) ``` |
+
+Modified [SCNPhysicsVehicleWheel](https://developer.apple.com/documentation/scenekit/scnphysicsvehiclewheel)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsVehicleWheel : NSObject, NSCopying, NSSecureCoding {     convenience init(node node: SCNNode)     class func wheelWithNode(_ node: SCNNode) -> Self     var node: SCNNode { get }     var suspensionStiffness: CGFloat     var suspensionCompression: CGFloat     var suspensionDamping: CGFloat     var maximumSuspensionTravel: CGFloat     var frictionSlip: CGFloat     var maximumSuspensionForce: CGFloat     var connectionPosition: SCNVector3     var steeringAxis: SCNVector3     var axle: SCNVector3     var radius: CGFloat     var suspensionRestLength: CGFloat } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNPhysicsVehicleWheel : NSObject, NSCopying, NSSecureCoding {     convenience init(node node: SCNNode)     class func withNode(_ node: SCNNode) -> Self     var node: SCNNode { get }     var suspensionStiffness: CGFloat     var suspensionCompression: CGFloat     var suspensionDamping: CGFloat     var maximumSuspensionTravel: CGFloat     var frictionSlip: CGFloat     var maximumSuspensionForce: CGFloat     var connectionPosition: SCNVector3     var steeringAxis: SCNVector3     var axle: SCNVector3     var radius: CGFloat     var suspensionRestLength: CGFloat     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsVehicleWheel : CVarArg { } extension SCNPhysicsVehicleWheel : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNPhysicsWorld](https://developer.apple.com/documentation/scenekit/scnphysicsworld)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPhysicsWorld : NSObject, NSSecureCoding {     var gravity: SCNVector3     var speed: CGFloat     var timeStep: NSTimeInterval     unowned(unsafe) var contactDelegate: SCNPhysicsContactDelegate?     func addBehavior(_ behavior: SCNPhysicsBehavior)     func removeBehavior(_ behavior: SCNPhysicsBehavior)     func removeAllBehaviors()     var allBehaviors: [SCNPhysicsBehavior] { get }     func rayTestWithSegmentFromPoint(_ origin: SCNVector3, toPoint dest: SCNVector3, options options: [String : AnyObject]?) -> [SCNHitTestResult]     func contactTestBetweenBody(_ bodyA: SCNPhysicsBody, andBody bodyB: SCNPhysicsBody, options options: [String : AnyObject]?) -> [SCNPhysicsContact]     func contactTestWithBody(_ body: SCNPhysicsBody, options options: [String : AnyObject]?) -> [SCNPhysicsContact]     func convexSweepTestWithShape(_ shape: SCNPhysicsShape, fromTransform from: SCNMatrix4, toTransform to: SCNMatrix4, options options: [String : AnyObject]?) -> [SCNPhysicsContact]     func updateCollisionPairs() } ``` | NSSecureCoding |
+| To | ``` class SCNPhysicsWorld : NSObject, NSSecureCoding {     var gravity: SCNVector3     var speed: CGFloat     var timeStep: TimeInterval     unowned(unsafe) var contactDelegate: SCNPhysicsContactDelegate?     func addBehavior(_ behavior: SCNPhysicsBehavior)     func removeBehavior(_ behavior: SCNPhysicsBehavior)     func removeAllBehaviors()     var allBehaviors: [SCNPhysicsBehavior] { get }     func rayTestWithSegment(from origin: SCNVector3, to dest: SCNVector3, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNHitTestResult]     func contactTestBetween(_ bodyA: SCNPhysicsBody, _ bodyB: SCNPhysicsBody, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact]     func contactTest(with body: SCNPhysicsBody, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact]     func convexSweepTest(with shape: SCNPhysicsShape, from from: SCNMatrix4, to to: SCNMatrix4, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact]     func updateCollisionPairs()     struct TestOption : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct TestSearchMode : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPhysicsWorld {     struct TestOption : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct TestSearchMode : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNPhysicsWorld : CVarArg { } extension SCNPhysicsWorld : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNPhysicsWorld.contactTest(with: SCNPhysicsBody, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/1512841-contacttestwithbody)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func contactTestWithBody(_ body: SCNPhysicsBody, options options: [String : AnyObject]?) -> [SCNPhysicsContact] ``` |
+| To | ``` func contactTest(with body: SCNPhysicsBody, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact] ``` |
+
+Modified [SCNPhysicsWorld.contactTestBetween(_: SCNPhysicsBody, _: SCNPhysicsBody, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/1512875-contacttestbetweenbody)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func contactTestBetweenBody(_ bodyA: SCNPhysicsBody, andBody bodyB: SCNPhysicsBody, options options: [String : AnyObject]?) -> [SCNPhysicsContact] ``` |
+| To | ``` func contactTestBetween(_ bodyA: SCNPhysicsBody, _ bodyB: SCNPhysicsBody, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact] ``` |
+
+Modified [SCNPhysicsWorld.convexSweepTest(with: SCNPhysicsShape, from: SCNMatrix4, to: SCNMatrix4, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNPhysicsContact]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/1512859-convexsweeptest)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func convexSweepTestWithShape(_ shape: SCNPhysicsShape, fromTransform from: SCNMatrix4, toTransform to: SCNMatrix4, options options: [String : AnyObject]?) -> [SCNPhysicsContact] ``` |
+| To | ``` func convexSweepTest(with shape: SCNPhysicsShape, from from: SCNMatrix4, to to: SCNMatrix4, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNPhysicsContact] ``` |
+
+Modified [SCNPhysicsWorld.rayTestWithSegment(from: SCNVector3, to: SCNVector3, options: [SCNPhysicsWorld.TestOption : Any]?) -> [SCNHitTestResult]](https://developer.apple.com/documentation/scenekit/scnphysicsworld/1512857-raytestwithsegmentfrompoint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func rayTestWithSegmentFromPoint(_ origin: SCNVector3, toPoint dest: SCNVector3, options options: [String : AnyObject]?) -> [SCNHitTestResult] ``` |
+| To | ``` func rayTestWithSegment(from origin: SCNVector3, to dest: SCNVector3, options options: [SCNPhysicsWorld.TestOption : Any]? = nil) -> [SCNHitTestResult] ``` |
+
+Modified [SCNPhysicsWorld.timeStep](https://developer.apple.com/documentation/scenekit/scnphysicsworld/1512881-timestep)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var timeStep: NSTimeInterval ``` |
+| To | ``` var timeStep: TimeInterval ``` |
+
+Modified [SCNPhysicsWorld.TestOption.backfaceCulling](https://developer.apple.com/documentation/scenekit/scnphysicstestbackfacecullingkey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestBackfaceCullingKey | ``` let SCNPhysicsTestBackfaceCullingKey: String ``` |
+| To | backfaceCulling | ``` static let backfaceCulling: SCNPhysicsWorld.TestOption ``` |
+
+Modified [SCNPhysicsWorld.TestOption.collisionBitMask](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testoption/1512845-collisionbitmask)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestCollisionBitMaskKey | ``` let SCNPhysicsTestCollisionBitMaskKey: String ``` |
+| To | collisionBitMask | ``` static let collisionBitMask: SCNPhysicsWorld.TestOption ``` |
+
+Modified [SCNPhysicsWorld.TestOption.searchMode](https://developer.apple.com/documentation/scenekit/scnphysicstestsearchmodekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestSearchModeKey | ``` let SCNPhysicsTestSearchModeKey: String ``` |
+| To | searchMode | ``` static let searchMode: SCNPhysicsWorld.TestOption ``` |
+
+Modified [SCNPhysicsWorld.TestSearchMode.all](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testsearchmode/1512863-all)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestSearchModeAll | ``` let SCNPhysicsTestSearchModeAll: String ``` |
+| To | all | ``` static let all: SCNPhysicsWorld.TestSearchMode ``` |
+
+Modified [SCNPhysicsWorld.TestSearchMode.any](https://developer.apple.com/documentation/scenekit/scnphysicsworld/testsearchmode/1512837-any)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestSearchModeAny | ``` let SCNPhysicsTestSearchModeAny: String ``` |
+| To | any | ``` static let any: SCNPhysicsWorld.TestSearchMode ``` |
+
+Modified [SCNPhysicsWorld.TestSearchMode.closest](https://developer.apple.com/documentation/scenekit/scnphysicstestsearchmodeclosest)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPhysicsTestSearchModeClosest | ``` let SCNPhysicsTestSearchModeClosest: String ``` |
+| To | closest | ``` static let closest: SCNPhysicsWorld.TestSearchMode ``` |
+
+Modified [SCNPlane](https://developer.apple.com/documentation/scenekit/scnplane)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPlane : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat)     class func planeWithWidth(_ width: CGFloat, height height: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var cornerRadius: CGFloat     var cornerSegmentCount: Int } ``` | -- |
+| To | ``` class SCNPlane : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat)     class func withWidth(_ width: CGFloat, height height: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var cornerRadius: CGFloat     var cornerSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPlane : CVarArg { } extension SCNPlane : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNProgram](https://developer.apple.com/documentation/scenekit/scnprogram)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNProgram : NSObject, NSCopying, NSSecureCoding {     convenience init()     class func program() -> Self     var vertexShader: String?     var fragmentShader: String?     var vertexFunctionName: String?     var fragmentFunctionName: String?     func handleBindingOfBufferNamed(_ name: String, frequency frequency: SCNBufferFrequency, usingBlock block: SCNBufferBindingBlock)     var opaque: Bool     func setSemantic(_ semantic: String?, forSymbol symbol: String, options options: [String : AnyObject]?)     func semanticForSymbol(_ symbol: String) -> String?     unowned(unsafe) var delegate: SCNProgramDelegate?     var library: MTLLibrary? } ``` | NSCopying, NSSecureCoding |
+| To | ``` class SCNProgram : NSObject, NSCopying, NSSecureCoding {     convenience init()     class func program() -> Self     var vertexShader: String?     var fragmentShader: String?     var vertexFunctionName: String?     var fragmentFunctionName: String?     func handleBinding(ofBufferNamed name: String, frequency frequency: SCNBufferFrequency, handler block: SceneKit.SCNBufferBindingBlock)     var isOpaque: Bool     func setSemantic(_ semantic: String?, forSymbol symbol: String, options options: [String : Any]? = nil)     func semantic(forSymbol symbol: String) -> String?     unowned(unsafe) var delegate: SCNProgramDelegate?     var library: MTLLibrary?     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNProgram : CVarArg { } extension SCNProgram : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding |
+
+Modified [SCNProgram.handleBinding(ofBufferNamed: String, frequency: SCNBufferFrequency, handler: SceneKit.SCNBufferBindingBlock)](https://developer.apple.com/documentation/scenekit/scnprogram/1524047-handlebindingofbuffernamed)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func handleBindingOfBufferNamed(_ name: String, frequency frequency: SCNBufferFrequency, usingBlock block: SCNBufferBindingBlock) ``` |
+| To | ``` func handleBinding(ofBufferNamed name: String, frequency frequency: SCNBufferFrequency, handler block: SceneKit.SCNBufferBindingBlock) ``` |
+
+Modified [SCNProgram.isOpaque](https://developer.apple.com/documentation/scenekit/scnprogram/1522844-isopaque)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var opaque: Bool ``` |
+| To | ``` var isOpaque: Bool ``` |
+
+Modified [SCNProgram.semantic(forSymbol: String) -> String?](https://developer.apple.com/documentation/scenekit/scnprogram/1523350-semantic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func semanticForSymbol(_ symbol: String) -> String? ``` |
+| To | ``` func semantic(forSymbol symbol: String) -> String? ``` |
+
+Modified [SCNProgram.setSemantic(_: String?, forSymbol: String, options: [String : Any]?)](https://developer.apple.com/documentation/scenekit/scnprogram/1522730-setsemantic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func setSemantic(_ semantic: String?, forSymbol symbol: String, options options: [String : AnyObject]?) ``` |
+| To | ``` func setSemantic(_ semantic: String?, forSymbol symbol: String, options options: [String : Any]? = nil) ``` |
+
+Modified [SCNProgramDelegate](https://developer.apple.com/documentation/scenekit/scnprogramdelegate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNProgramDelegate : NSObjectProtocol {     optional func program(_ program: SCNProgram, handleError error: NSError)     optional func programIsOpaque(_ program: SCNProgram) -> Bool } ``` |
+| To | ``` protocol SCNProgramDelegate : NSObjectProtocol {     optional func program(_ program: SCNProgram, handleError error: Error)     optional func programIsOpaque(_ program: SCNProgram) -> Bool } ``` |
+
+Modified [SCNProgramDelegate.program(_: SCNProgram, handleError: Error)](https://developer.apple.com/documentation/scenekit/scnprogramdelegate/1523007-program)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func program(_ program: SCNProgram, handleError error: NSError) ``` |
+| To | ``` optional func program(_ program: SCNProgram, handleError error: Error) ``` |
+
+Modified [SCNPyramid](https://developer.apple.com/documentation/scenekit/scnpyramid)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNPyramid : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat, length length: CGFloat)     class func pyramidWithWidth(_ width: CGFloat, height height: CGFloat, length length: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var length: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var lengthSegmentCount: Int } ``` | -- |
+| To | ``` class SCNPyramid : SCNGeometry {     convenience init(width width: CGFloat, height height: CGFloat, length length: CGFloat)     class func withWidth(_ width: CGFloat, height height: CGFloat, length length: CGFloat) -> Self     var width: CGFloat     var height: CGFloat     var length: CGFloat     var widthSegmentCount: Int     var heightSegmentCount: Int     var lengthSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNPyramid : CVarArg { } extension SCNPyramid : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNReferenceLoadingPolicy [enum]](https://developer.apple.com/documentation/scenekit/scnreferenceloadingpolicy)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNReferenceLoadingPolicy : Int {     case Immediate     case OnDemand } ``` |
+| To | ``` enum SCNReferenceLoadingPolicy : Int {     case immediate     case onDemand } ``` |
+
+Modified [SCNReferenceLoadingPolicy.immediate](https://developer.apple.com/documentation/scenekit/scnreferenceloadingpolicy/scnreferenceloadingpolicyimmediate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Immediate ``` |
+| To | ``` case immediate ``` |
+
+Modified [SCNReferenceLoadingPolicy.onDemand](https://developer.apple.com/documentation/scenekit/scnreferenceloadingpolicy/scnreferenceloadingpolicyondemand)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OnDemand ``` |
+| To | ``` case onDemand ``` |
+
+Modified [SCNReferenceNode](https://developer.apple.com/documentation/scenekit/scnreferencenode)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNReferenceNode : SCNNode {     init?(URL referenceURL: NSURL)     init?(coder aDecoder: NSCoder)     class func referenceNodeWithURL(_ referenceURL: NSURL) -> Self?     @NSCopying var referenceURL: NSURL     var loadingPolicy: SCNReferenceLoadingPolicy     func load()     func unload()     var loaded: Bool { get } } ``` | -- |
+| To | ``` class SCNReferenceNode : SCNNode {     init?(url referenceURL: URL)     init?(coder aDecoder: NSCoder)     class func withURL(_ referenceURL: URL) -> Self?     var referenceURL: URL     var loadingPolicy: SCNReferenceLoadingPolicy     func load()     func unload()     var isLoaded: Bool { get }     func addAudioPlayer(_ player: SCNAudioPlayer)     func removeAllAudioPlayers()     func removeAudioPlayer(_ player: SCNAudioPlayer)     var audioPlayers: [SCNAudioPlayer] { get }     func addParticleSystem(_ system: SCNParticleSystem)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get }     convenience init(mdlObject mdlObject: MDLObject)     class func withMDLObject(_ mdlObject: MDLObject) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNReferenceNode : CVarArg { } extension SCNReferenceNode : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNReferenceNode.init(url: URL)](https://developer.apple.com/documentation/scenekit/scnreferencenode/1523967-initwithurl)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(URL referenceURL: NSURL) ``` |
+| To | ``` init?(url referenceURL: URL) ``` |
+
+Modified [SCNReferenceNode.isLoaded](https://developer.apple.com/documentation/scenekit/scnreferencenode/1523906-loaded)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var loaded: Bool { get } ``` |
+| To | ``` var isLoaded: Bool { get } ``` |
+
+Modified [SCNReferenceNode.referenceURL](https://developer.apple.com/documentation/scenekit/scnreferencenode/1522733-referenceurl)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @NSCopying var referenceURL: NSURL ``` |
+| To | ``` var referenceURL: URL ``` |
+
+Modified [SCNRenderer](https://developer.apple.com/documentation/scenekit/scnrenderer)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNRenderer : NSObject, SCNSceneRenderer, SCNTechniqueSupport {     convenience init(context context: EAGLContext, options options: [NSObject : AnyObject]?)     class func rendererWithContext(_ context: EAGLContext, options options: [NSObject : AnyObject]?) -> Self     convenience init(device device: MTLDevice?, options options: [NSObject : AnyObject]?)     class func rendererWithDevice(_ device: MTLDevice?, options options: [NSObject : AnyObject]?) -> Self     var scene: SCNScene?     func renderAtTime(_ time: CFTimeInterval)     func renderAtTime(_ time: CFTimeInterval, viewport viewport: CGRect, commandBuffer commandBuffer: MTLCommandBuffer, passDescriptor renderPassDescriptor: MTLRenderPassDescriptor)     var nextFrameTime: CFTimeInterval { get }     func render() } ``` | SCNSceneRenderer, SCNTechniqueSupport |
+| To | ``` class SCNRenderer : NSObject, SCNSceneRenderer, SCNTechniqueSupport {     convenience init(context context: EAGLContext?, options options: [AnyHashable : Any]? = nil)     class func withContext(_ context: EAGLContext?, options options: [AnyHashable : Any]? = nil) -> Self     convenience init(device device: MTLDevice?, options options: [AnyHashable : Any]? = nil)     class func withDevice(_ device: MTLDevice?, options options: [AnyHashable : Any]? = nil) -> Self     var scene: SCNScene?     func render(atTime time: CFTimeInterval)     func snapshot(atTime time: CFTimeInterval, with size: CGSize, antialiasingMode antialiasingMode: SCNAntialiasingMode) -> UIImage     func render(atTime time: CFTimeInterval, viewport viewport: CGRect, commandBuffer commandBuffer: MTLCommandBuffer, passDescriptor renderPassDescriptor: MTLRenderPassDescriptor)     var nextFrameTime: CFTimeInterval { get }     func render()     func updateProbes(_ lightProbes: [SCNNode], atTime time: CFTimeInterval)     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNRenderer : CVarArg { } extension SCNRenderer : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, SCNSceneRenderer, SCNTechniqueSupport |
+
+Modified [SCNRenderer.init(context: EAGLContext?, options: [AnyHashable : Any]?)](https://developer.apple.com/documentation/scenekit/scnrenderer/1518408-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(context context: EAGLContext, options options: [NSObject : AnyObject]?) ``` |
+| To | ``` convenience init(context context: EAGLContext?, options options: [AnyHashable : Any]? = nil) ``` |
+
+Modified [SCNRenderer.init(device: MTLDevice?, options: [AnyHashable : Any]?)](https://developer.apple.com/documentation/scenekit/scnrenderer/1518404-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(device device: MTLDevice?, options options: [NSObject : AnyObject]?) ``` |
+| To | ``` convenience init(device device: MTLDevice?, options options: [AnyHashable : Any]? = nil) ``` |
+
+Modified [SCNRenderer.render(atTime: CFTimeInterval)](https://developer.apple.com/documentation/scenekit/scnrenderer/1518402-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func renderAtTime(_ time: CFTimeInterval) ``` |
+| To | ``` func render(atTime time: CFTimeInterval) ``` |
+
+Modified [SCNRenderer.render(atTime: CFTimeInterval, viewport: CGRect, commandBuffer: MTLCommandBuffer, passDescriptor: MTLRenderPassDescriptor)](https://developer.apple.com/documentation/scenekit/scnrenderer/1518401-render)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func renderAtTime(_ time: CFTimeInterval, viewport viewport: CGRect, commandBuffer commandBuffer: MTLCommandBuffer, passDescriptor renderPassDescriptor: MTLRenderPassDescriptor) ``` |
+| To | ``` func render(atTime time: CFTimeInterval, viewport viewport: CGRect, commandBuffer commandBuffer: MTLCommandBuffer, passDescriptor renderPassDescriptor: MTLRenderPassDescriptor) ``` |
+
+Modified [SCNRenderingAPI [enum]](https://developer.apple.com/documentation/scenekit/scnrenderingapi)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNRenderingAPI : UInt {     case Metal     case OpenGLES2 } ``` |
+| To | ``` enum SCNRenderingAPI : UInt {     case metal     case openGLES2 } ``` |
+
+Modified [SCNRenderingAPI.metal](https://developer.apple.com/documentation/scenekit/scnrenderingapi/metal)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Metal ``` |
+| To | ``` case metal ``` |
+
+Modified [SCNRenderingAPI.openGLES2](https://developer.apple.com/documentation/scenekit/scnrenderingapi/scnrenderingapiopengles2)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case OpenGLES2 ``` |
+| To | ``` case openGLES2 ``` |
+
+Modified [SCNScene](https://developer.apple.com/documentation/scenekit/scnscene)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNScene : NSObject, NSSecureCoding {     convenience init()     class func scene() -> Self     var rootNode: SCNNode { get }     var physicsWorld: SCNPhysicsWorld { get }     func attributeForKey(_ key: String) -> AnyObject?     func setAttribute(_ attribute: AnyObject?, forKey key: String)     var background: SCNMaterialProperty { get }     convenience init?(named name: String)     class func sceneNamed(_ name: String) -> Self?     convenience init?(named name: String, inDirectory directory: String?, options options: [String : AnyObject]?)     class func sceneNamed(_ name: String, inDirectory directory: String?, options options: [String : AnyObject]?) -> Self?     convenience init(URL url: NSURL, options options: [String : AnyObject]?) throws     class func sceneWithURL(_ url: NSURL, options options: [String : AnyObject]?) throws -> Self     var fogStartDistance: CGFloat     var fogEndDistance: CGFloat     var fogDensityExponent: CGFloat     var fogColor: AnyObject     var paused: Bool } extension SCNScene {     convenience init(MDLAsset mdlAsset: MDLAsset)     class func sceneWithMDLAsset(_ mdlAsset: MDLAsset) -> Self } extension SCNScene {     func addParticleSystem(_ system: SCNParticleSystem, withTransform transform: SCNMatrix4)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get } } ``` | NSSecureCoding |
+| To | ``` class SCNScene : NSObject, NSSecureCoding {     convenience init()     class func scene() -> Self     var rootNode: SCNNode { get }     var physicsWorld: SCNPhysicsWorld { get }     func attribute(forKey key: String) -> Any?     func setAttribute(_ attribute: Any?, forKey key: String)     var background: SCNMaterialProperty { get }     var lightingEnvironment: SCNMaterialProperty { get }     convenience init?(named name: String)     class func sceneNamed(_ name: String) -> Self?     convenience init?(named name: String, inDirectory directory: String?, options options: [SCNSceneSource.LoadingOption : Any]? = nil)     class func sceneNamed(_ name: String, inDirectory directory: String?, options options: [SCNSceneSource.LoadingOption : Any]? = nil) -> Self?     convenience init(url url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil) throws     class func withURL(_ url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil) throws -> Self     func write(to url: URL, options options: [String : Any]? = nil, delegate delegate: SCNSceneExportDelegate?, progressHandler progressHandler: SceneKit.SCNSceneExportProgressHandler? = nil) -> Bool     var fogStartDistance: CGFloat     var fogEndDistance: CGFloat     var fogDensityExponent: CGFloat     var fogColor: Any     var isPaused: Bool     func addParticleSystem(_ system: SCNParticleSystem, transform transform: SCNMatrix4)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get }     struct Attribute : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     convenience init(mdlAsset mdlAsset: MDLAsset)     class func withMDLAsset(_ mdlAsset: MDLAsset) -> Self     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNScene {     convenience init(mdlAsset mdlAsset: MDLAsset)     class func withMDLAsset(_ mdlAsset: MDLAsset) -> Self } extension SCNScene {     func addParticleSystem(_ system: SCNParticleSystem, transform transform: SCNMatrix4)     func removeAllParticleSystems()     func removeParticleSystem(_ system: SCNParticleSystem)     var particleSystems: [SCNParticleSystem]? { get } } extension SCNScene {     struct Attribute : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNScene : CVarArg { } extension SCNScene : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNScene.addParticleSystem(_: SCNParticleSystem, transform: SCNMatrix4)](https://developer.apple.com/documentation/scenekit/scnscene/1523359-addparticlesystem)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func addParticleSystem(_ system: SCNParticleSystem, withTransform transform: SCNMatrix4) ``` |
+| To | ``` func addParticleSystem(_ system: SCNParticleSystem, transform transform: SCNMatrix4) ``` |
+
+Modified [SCNScene.attribute(forKey: String) -> Any?](https://developer.apple.com/documentation/scenekit/scnscene/1522858-attributeforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func attributeForKey(_ key: String) -> AnyObject? ``` |
+| To | ``` func attribute(forKey key: String) -> Any? ``` |
+
+Modified [SCNScene.fogColor](https://developer.apple.com/documentation/scenekit/scnscene/1522774-fogcolor)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var fogColor: AnyObject ``` |
+| To | ``` var fogColor: Any ``` |
+
+Modified [SCNScene.init(mdlAsset: MDLAsset)](https://developer.apple.com/documentation/scenekit/scnscene/1419833-scenewithmdlasset)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(MDLAsset mdlAsset: MDLAsset) ``` |
+| To | ``` convenience init(mdlAsset mdlAsset: MDLAsset) ``` |
+
+Modified [SCNScene.init(named: String, inDirectory: String?, options: [SCNSceneSource.LoadingOption : Any]?)](https://developer.apple.com/documentation/scenekit/scnscene/1522851-scenenamed)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init?(named name: String, inDirectory directory: String?, options options: [String : AnyObject]?) ``` |
+| To | ``` convenience init?(named name: String, inDirectory directory: String?, options options: [SCNSceneSource.LoadingOption : Any]? = nil) ``` |
+
+Modified [SCNScene.init(url: URL, options: [SCNSceneSource.LoadingOption : Any]?) throws](https://developer.apple.com/documentation/scenekit/scnscene/1522660-scenewithurl)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(URL url: NSURL, options options: [String : AnyObject]?) throws ``` |
+| To | ``` convenience init(url url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil) throws ``` |
+
+Modified [SCNScene.isPaused](https://developer.apple.com/documentation/scenekit/scnscene/1523604-paused)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var paused: Bool ``` |
+| To | ``` var isPaused: Bool ``` |
+
+Modified [SCNScene.setAttribute(_: Any?, forKey: String)](https://developer.apple.com/documentation/scenekit/scnscene/1524229-setattribute)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func setAttribute(_ attribute: AnyObject?, forKey key: String) ``` |
+| To | ``` func setAttribute(_ attribute: Any?, forKey key: String) ``` |
+
+Modified [SCNScene.Attribute.endTime](https://developer.apple.com/documentation/scenekit/scnscene/attribute/1524134-endtime)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneEndTimeAttributeKey | ``` let SCNSceneEndTimeAttributeKey: String ``` |
+| To | endTime | ``` static let endTime: SCNScene.Attribute ``` |
+
+Modified [SCNScene.Attribute.frameRate](https://developer.apple.com/documentation/scenekit/scnsceneframerateattributekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneFrameRateAttributeKey | ``` let SCNSceneFrameRateAttributeKey: String ``` |
+| To | frameRate | ``` static let frameRate: SCNScene.Attribute ``` |
+
+Modified [SCNScene.Attribute.startTime](https://developer.apple.com/documentation/scenekit/scnscene/attribute/1522749-starttime)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneStartTimeAttributeKey | ``` let SCNSceneStartTimeAttributeKey: String ``` |
+| To | startTime | ``` static let startTime: SCNScene.Attribute ``` |
+
+Modified [SCNScene.Attribute.upAxis](https://developer.apple.com/documentation/scenekit/scnsceneupaxisattributekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneUpAxisAttributeKey | ``` let SCNSceneUpAxisAttributeKey: String ``` |
+| To | upAxis | ``` static let upAxis: SCNScene.Attribute ``` |
+
+Modified [SCNSceneRenderer](https://developer.apple.com/documentation/scenekit/scnscenerenderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNSceneRenderer : NSObjectProtocol {     var scene: SCNScene? { get set }     func presentScene(_ scene: SCNScene, withTransition transition: SKTransition, incomingPointOfView pointOfView: SCNNode?, completionHandler completionHandler: (() -> Void)?)     var sceneTime: NSTimeInterval { get set }     unowned(unsafe) var delegate: SCNSceneRendererDelegate? { get set }     func hitTest(_ point: CGPoint, options options: [String : AnyObject]?) -> [SCNHitTestResult]     func isNodeInsideFrustum(_ node: SCNNode, withPointOfView pointOfView: SCNNode) -> Bool     func nodesInsideFrustumWithPointOfView(_ pointOfView: SCNNode) -> [SCNNode]     func projectPoint(_ point: SCNVector3) -> SCNVector3     func unprojectPoint(_ point: SCNVector3) -> SCNVector3     var playing: Bool { get set }     var loops: Bool { get set }     var pointOfView: SCNNode? { get set }     var autoenablesDefaultLighting: Bool { get set }     var jitteringEnabled: Bool { get set }     func prepareObject(_ object: AnyObject, shouldAbortBlock block: (() -> Bool)?) -> Bool     func prepareObjects(_ objects: [AnyObject], withCompletionHandler completionHandler: ((Bool) -> Void)?)     var showsStatistics: Bool { get set }     var debugOptions: SCNDebugOptions { get set }     var overlaySKScene: SKScene? { get set }     var renderingAPI: SCNRenderingAPI { get }     var context: UnsafeMutablePointer<Void> { get }     var currentRenderCommandEncoder: MTLRenderCommandEncoder? { get }     var device: MTLDevice? { get }     var colorPixelFormat: MTLPixelFormat { get }     var depthPixelFormat: MTLPixelFormat { get }     var stencilPixelFormat: MTLPixelFormat { get }     var commandQueue: MTLCommandQueue? { get }     var audioEngine: AVAudioEngine { get }     var audioEnvironmentNode: AVAudioEnvironmentNode { get }     var audioListener: SCNNode? { get set } } ``` |
+| To | ``` protocol SCNSceneRenderer : NSObjectProtocol {     var scene: SCNScene? { get set }     func present(_ scene: SCNScene, with transition: SKTransition, incomingPointOfView pointOfView: SCNNode?, completionHandler completionHandler: (@escaping () -> Swift.Void)? = nil)     var sceneTime: TimeInterval { get set }     unowned(unsafe) var delegate: SCNSceneRendererDelegate? { get set }     func hitTest(_ point: CGPoint, options options: [SCNHitTestOption : Any]? = nil) -> [SCNHitTestResult]     func isNode(_ node: SCNNode, insideFrustumOf pointOfView: SCNNode) -> Bool     func nodesInsideFrustum(of pointOfView: SCNNode) -> [SCNNode]     func projectPoint(_ point: SCNVector3) -> SCNVector3     func unprojectPoint(_ point: SCNVector3) -> SCNVector3     var isPlaying: Bool { get set }     var loops: Bool { get set }     var pointOfView: SCNNode? { get set }     var autoenablesDefaultLighting: Bool { get set }     var isJitteringEnabled: Bool { get set }     func prepare(_ object: Any, shouldAbortBlock block: (() -> Bool)? = nil) -> Bool     func prepare(_ objects: [Any], completionHandler completionHandler: (@escaping (Bool) -> Swift.Void)? = nil)     var showsStatistics: Bool { get set }     var debugOptions: SCNDebugOptions { get set }     var overlaySKScene: SKScene? { get set }     var renderingAPI: SCNRenderingAPI { get }     var context: UnsafeMutableRawPointer? { get }     var currentRenderCommandEncoder: MTLRenderCommandEncoder? { get }     var device: MTLDevice? { get }     var colorPixelFormat: MTLPixelFormat { get }     var depthPixelFormat: MTLPixelFormat { get }     var stencilPixelFormat: MTLPixelFormat { get }     var commandQueue: MTLCommandQueue? { get }     var audioEngine: AVAudioEngine { get }     var audioEnvironmentNode: AVAudioEnvironmentNode { get }     var audioListener: SCNNode? { get set } } ``` |
+
+Modified [SCNSceneRenderer.context](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522840-context)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var context: UnsafeMutablePointer<Void> { get } ``` |
+| To | ``` var context: UnsafeMutableRawPointer? { get } ``` |
+
+Modified [SCNSceneRenderer.hitTest() -> [SCNHitTestResult]](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522929-hittest)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func hitTest(_ point: CGPoint, options options: [String : AnyObject]?) -> [SCNHitTestResult] ``` |
+| To | ``` func hitTest(_ point: CGPoint, options options: [SCNHitTestOption : Any]? = nil) -> [SCNHitTestResult] ``` |
+
+Modified [SCNSceneRenderer.isJitteringEnabled](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1524026-jitteringenabled)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var jitteringEnabled: Bool { get set } ``` |
+| To | ``` var isJitteringEnabled: Bool { get set } ``` |
+
+Modified [SCNSceneRenderer.isNode(_: SCNNode, insideFrustumOf: SCNNode) -> Bool](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522647-isnodeinsidefrustum)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func isNodeInsideFrustum(_ node: SCNNode, withPointOfView pointOfView: SCNNode) -> Bool ``` |
+| To | ``` func isNode(_ node: SCNNode, insideFrustumOf pointOfView: SCNNode) -> Bool ``` |
+
+Modified [SCNSceneRenderer.isPlaying](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1523401-playing)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var playing: Bool { get set } ``` |
+| To | ``` var isPlaying: Bool { get set } ``` |
+
+Modified [SCNSceneRenderer.nodesInsideFrustum(of: SCNNode) -> [SCNNode]](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522942-nodesinsidefrustum)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func nodesInsideFrustumWithPointOfView(_ pointOfView: SCNNode) -> [SCNNode] ``` |
+| To | ``` func nodesInsideFrustum(of pointOfView: SCNNode) -> [SCNNode] ``` |
+
+Modified [SCNSceneRenderer.prepare() -> Swift.Void)? = nil)](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1523375-prepare)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func prepareObjects(_ objects: [AnyObject], withCompletionHandler completionHandler: ((Bool) -> Void)?) ``` |
+| To | ``` func prepare(_ objects: [Any], completionHandler completionHandler: (@escaping (Bool) -> Swift.Void)? = nil) ``` |
+
+Modified [SCNSceneRenderer.prepare() -> Bool)? = nil) -> Bool](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522798-prepare)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func prepareObject(_ object: AnyObject, shouldAbortBlock block: (() -> Bool)?) -> Bool ``` |
+| To | ``` func prepare(_ object: Any, shouldAbortBlock block: (() -> Bool)? = nil) -> Bool ``` |
+
+Modified [SCNSceneRenderer.present() -> Swift.Void)? = nil)](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1523028-presentscene)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func presentScene(_ scene: SCNScene, withTransition transition: SKTransition, incomingPointOfView pointOfView: SCNNode?, completionHandler completionHandler: (() -> Void)?) ``` |
+| To | ``` func present(_ scene: SCNScene, with transition: SKTransition, incomingPointOfView pointOfView: SCNNode?, completionHandler completionHandler: (@escaping () -> Swift.Void)? = nil) ``` |
+
+Modified [SCNSceneRenderer.sceneTime](https://developer.apple.com/documentation/scenekit/scnscenerenderer/1522680-scenetime)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var sceneTime: NSTimeInterval { get set } ``` |
+| To | ``` var sceneTime: TimeInterval { get set } ``` |
+
+Modified [SCNSceneRendererDelegate](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNSceneRendererDelegate : NSObjectProtocol {     optional func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: NSTimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: NSTimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: NSTimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: NSTimeInterval) } ``` |
+| To | ``` protocol SCNSceneRendererDelegate : NSObjectProtocol {     optional func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: TimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval)     optional func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) } ``` |
+
+Modified [SCNSceneRendererDelegate.renderer(_: SCNSceneRenderer, didApplyAnimationsAtTime: TimeInterval)](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate/1523038-renderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: NSTimeInterval) ``` |
+| To | ``` optional func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: TimeInterval) ``` |
+
+Modified [SCNSceneRendererDelegate.renderer(_: SCNSceneRenderer, didRenderScene: SCNScene, atTime: TimeInterval)](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate/1524233-renderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: NSTimeInterval) ``` |
+| To | ``` optional func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) ``` |
+
+Modified [SCNSceneRendererDelegate.renderer(_: SCNSceneRenderer, didSimulatePhysicsAtTime: TimeInterval)](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate/1522738-renderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: NSTimeInterval) ``` |
+| To | ``` optional func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) ``` |
+
+Modified [SCNSceneRendererDelegate.renderer(_: SCNSceneRenderer, updateAtTime: TimeInterval)](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate/1522937-renderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) ``` |
+| To | ``` optional func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) ``` |
+
+Modified [SCNSceneRendererDelegate.renderer(_: SCNSceneRenderer, willRenderScene: SCNScene, atTime: TimeInterval)](https://developer.apple.com/documentation/scenekit/scnscenerendererdelegate/1523483-renderer)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: NSTimeInterval) ``` |
+| To | ``` optional func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) ``` |
+
+Modified [SCNSceneSource](https://developer.apple.com/documentation/scenekit/scnscenesource)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNSceneSource : NSObject {     convenience init?(URL url: NSURL, options options: [String : AnyObject]?)     class func sceneSourceWithURL(_ url: NSURL, options options: [String : AnyObject]?) -> Self?     convenience init?(data data: NSData, options options: [String : AnyObject]?)     class func sceneSourceWithData(_ data: NSData, options options: [String : AnyObject]?) -> Self?     init?(URL url: NSURL, options options: [String : AnyObject]?)     init?(data data: NSData, options options: [String : AnyObject]?)     var url: NSURL? { get }     var data: NSData? { get }     func sceneWithOptions(_ options: [String : AnyObject]?, statusHandler statusHandler: SCNSceneSourceStatusHandler?) -> SCNScene?     func sceneWithOptions(_ options: [String : AnyObject]?) throws -> SCNScene     func propertyForKey(_ key: String) -> AnyObject?     func __entryWithIdentifier(_ uid: String, withClass entryClass: AnyClass) -> AnyObject?     func identifiersOfEntriesWithClass(_ entryClass: AnyClass) -> [String]     func entriesPassingTest(_ predicate: (AnyObject, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [AnyObject] } extension SCNSceneSource {     @warn_unused_result     func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? } extension SCNSceneSource {     @warn_unused_result     func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? } ``` | -- |
+| To | ``` class SCNSceneSource : NSObject {     convenience init?(url url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil)     class func withURL(_ url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil) -> Self?     convenience init?(data data: Data, options options: [SCNSceneSource.LoadingOption : Any]? = nil)     class func withData(_ data: Data, options options: [SCNSceneSource.LoadingOption : Any]? = nil) -> Self?     init?(url url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil)     init?(data data: Data, options options: [SCNSceneSource.LoadingOption : Any]? = nil)     var url: URL? { get }     var data: Data? { get }     func scene(options options: [SCNSceneSource.LoadingOption : Any]? = nil, statusHandler statusHandler: SceneKit.SCNSceneSourceStatusHandler? = nil) -> SCNScene?     func scene(options options: [SCNSceneSource.LoadingOption : Any]? = nil) throws -> SCNScene     func property(forKey key: String) -> Any?     func __entry(withIdentifier uid: String, with entryClass: Swift.AnyClass) -> Any?     func identifiersOfEntries(withClass entryClass: Swift.AnyClass) -> [String]     func entries(passingTest predicate: (Any, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [Any]     func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T?     struct LoadingOption : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct AnimationImportPolicy : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNSceneSource {     struct LoadingOption : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     struct AnimationImportPolicy : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNSceneSource : CVarArg { } extension SCNSceneSource : Equatable, Hashable {     var hashValue: Int { get } } extension SCNSceneSource {     func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNSceneSource.data](https://developer.apple.com/documentation/scenekit/scnscenesource/1523061-data)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var data: NSData? { get } ``` |
+| To | ``` var data: Data? { get } ``` |
+
+Modified [SCNSceneSource.entries(passingTest: (Any, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [Any]](https://developer.apple.com/documentation/scenekit/scnscenesource/1523055-entries)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func entriesPassingTest(_ predicate: (AnyObject, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [AnyObject] ``` |
+| To | ``` func entries(passingTest predicate: (Any, String, UnsafeMutablePointer<ObjCBool>) -> Bool) -> [Any] ``` |
+
+Modified SCNSceneSource.entryWithIdentifier<T>(_: String, withClass: T.Type) -> T?
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @warn_unused_result     func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? ``` |
+| To | ``` func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? ``` |
+
+Modified [SCNSceneSource.identifiersOfEntries(withClass: Swift.AnyClass) -> [String]](https://developer.apple.com/documentation/scenekit/scnscenesource/1523656-identifiersofentrieswithclass)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func identifiersOfEntriesWithClass(_ entryClass: AnyClass) -> [String] ``` |
+| To | ``` func identifiersOfEntries(withClass entryClass: Swift.AnyClass) -> [String] ``` |
+
+Modified [SCNSceneSource.init(data: Data, options: [SCNSceneSource.LoadingOption : Any]?)](https://developer.apple.com/documentation/scenekit/scnscenesource/1523500-initwithdata)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(data data: NSData, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(data data: Data, options options: [SCNSceneSource.LoadingOption : Any]? = nil) ``` |
+
+Modified [SCNSceneSource.init(url: URL, options: [SCNSceneSource.LoadingOption : Any]?)](https://developer.apple.com/documentation/scenekit/scnscenesource/1522629-init)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(URL url: NSURL, options options: [String : AnyObject]?) ``` |
+| To | ``` init?(url url: URL, options options: [SCNSceneSource.LoadingOption : Any]? = nil) ``` |
+
+Modified [SCNSceneSource.property(forKey: String) -> Any?](https://developer.apple.com/documentation/scenekit/scnscenesource/1523277-propertyforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func propertyForKey(_ key: String) -> AnyObject? ``` |
+| To | ``` func property(forKey key: String) -> Any? ``` |
+
+Modified [SCNSceneSource.scene(options: [SCNSceneSource.LoadingOption : Any]?) throws -> SCNScene](https://developer.apple.com/documentation/scenekit/scnscenesource/1523962-scenewithoptions)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sceneWithOptions(_ options: [String : AnyObject]?) throws -> SCNScene ``` |
+| To | ``` func scene(options options: [SCNSceneSource.LoadingOption : Any]? = nil) throws -> SCNScene ``` |
+
+Modified [SCNSceneSource.scene(options: [SCNSceneSource.LoadingOption : Any]?, statusHandler: SceneKit.SCNSceneSourceStatusHandler?) -> SCNScene?](https://developer.apple.com/documentation/scenekit/scnscenesource/1522887-scenewithoptions)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func sceneWithOptions(_ options: [String : AnyObject]?, statusHandler statusHandler: SCNSceneSourceStatusHandler?) -> SCNScene? ``` |
+| To | ``` func scene(options options: [SCNSceneSource.LoadingOption : Any]? = nil, statusHandler statusHandler: SceneKit.SCNSceneSourceStatusHandler? = nil) -> SCNScene? ``` |
+
+Modified [SCNSceneSource.url](https://developer.apple.com/documentation/scenekit/scnscenesource/1524038-url)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var url: NSURL? { get } ``` |
+| To | ``` var url: URL? { get } ``` |
+
+Modified [SCNSceneSource.AnimationImportPolicy.doNotPlay](https://developer.apple.com/documentation/scenekit/scnscenesource/animationimportpolicy/1523239-donotplay)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAnimationImportPolicyDoNotPlay | ``` let SCNSceneSourceAnimationImportPolicyDoNotPlay: String ``` |
+| To | doNotPlay | ``` static let doNotPlay: SCNSceneSource.AnimationImportPolicy ``` |
+
+Modified [SCNSceneSource.AnimationImportPolicy.play](https://developer.apple.com/documentation/scenekit/scnscenesource/animationimportpolicy/1523908-play)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAnimationImportPolicyPlay | ``` let SCNSceneSourceAnimationImportPolicyPlay: String ``` |
+| To | play | ``` static let play: SCNSceneSource.AnimationImportPolicy ``` |
+
+Modified [SCNSceneSource.AnimationImportPolicy.playRepeatedly](https://developer.apple.com/documentation/scenekit/scnscenesource/animationimportpolicy/1522856-playrepeatedly)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAnimationImportPolicyPlayRepeatedly | ``` let SCNSceneSourceAnimationImportPolicyPlayRepeatedly: String ``` |
+| To | playRepeatedly | ``` static let playRepeatedly: SCNSceneSource.AnimationImportPolicy ``` |
+
+Modified [SCNSceneSource.AnimationImportPolicy.playUsingSceneTimeBase](https://developer.apple.com/documentation/scenekit/scnscenesource/animationimportpolicy/1523222-playusingscenetimebase)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase | ``` let SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase: String ``` |
+| To | playUsingSceneTimeBase | ``` static let playUsingSceneTimeBase: SCNSceneSource.AnimationImportPolicy ``` |
+
+Modified [SCNSceneSource.LoadingOption.animationImportPolicy](https://developer.apple.com/documentation/scenekit/scnscenesource/loadingoption/1522813-animationimportpolicy)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAnimationImportPolicyKey | ``` let SCNSceneSourceAnimationImportPolicyKey: String ``` |
+| To | animationImportPolicy | ``` static let animationImportPolicy: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.assetDirectoryURLs](https://developer.apple.com/documentation/scenekit/scnscenesource/loadingoption/1522982-assetdirectoryurls)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceAssetDirectoryURLsKey | ``` let SCNSceneSourceAssetDirectoryURLsKey: String ``` |
+| To | assetDirectoryURLs | ``` static let assetDirectoryURLs: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.checkConsistency](https://developer.apple.com/documentation/scenekit/scnscenesource/loadingoption/1523910-checkconsistency)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceCheckConsistencyKey | ``` let SCNSceneSourceCheckConsistencyKey: String ``` |
+| To | checkConsistency | ``` static let checkConsistency: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.createNormalsIfAbsent](https://developer.apple.com/documentation/scenekit/scnscenesource/loadingoption/1523788-createnormalsifabsent)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceCreateNormalsIfAbsentKey | ``` let SCNSceneSourceCreateNormalsIfAbsentKey: String ``` |
+| To | createNormalsIfAbsent | ``` static let createNormalsIfAbsent: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.flattenScene](https://developer.apple.com/documentation/scenekit/scnscenesourceflattenscenekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceFlattenSceneKey | ``` let SCNSceneSourceFlattenSceneKey: String ``` |
+| To | flattenScene | ``` static let flattenScene: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.overrideAssetURLs](https://developer.apple.com/documentation/scenekit/scnscenesourceoverrideasseturlskey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceOverrideAssetURLsKey | ``` let SCNSceneSourceOverrideAssetURLsKey: String ``` |
+| To | overrideAssetURLs | ``` static let overrideAssetURLs: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.strictConformance](https://developer.apple.com/documentation/scenekit/scnscenesourcestrictconformancekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceStrictConformanceKey | ``` let SCNSceneSourceStrictConformanceKey: String ``` |
+| To | strictConformance | ``` static let strictConformance: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSource.LoadingOption.useSafeMode](https://developer.apple.com/documentation/scenekit/scnscenesourceusesafemodekey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNSceneSourceUseSafeModeKey | ``` let SCNSceneSourceUseSafeModeKey: String ``` |
+| To | useSafeMode | ``` static let useSafeMode: SCNSceneSource.LoadingOption ``` |
+
+Modified [SCNSceneSourceStatus [enum]](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNSceneSourceStatus : Int {     case Error     case Parsing     case Validating     case Processing     case Complete } ``` |
+| To | ``` enum SCNSceneSourceStatus : Int {     case error     case parsing     case validating     case processing     case complete } ``` |
+
+Modified [SCNSceneSourceStatus.complete](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus/complete)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Complete ``` |
+| To | ``` case complete ``` |
+
+Modified [SCNSceneSourceStatus.error](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus/error)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Error ``` |
+| To | ``` case error ``` |
+
+Modified [SCNSceneSourceStatus.parsing](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus/scnscenesourcestatusparsing)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Parsing ``` |
+| To | ``` case parsing ``` |
+
+Modified [SCNSceneSourceStatus.processing](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus/scnscenesourcestatusprocessing)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Processing ``` |
+| To | ``` case processing ``` |
+
+Modified [SCNSceneSourceStatus.validating](https://developer.apple.com/documentation/scenekit/scnscenesourcestatus/validating)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Validating ``` |
+| To | ``` case validating ``` |
+
+Modified [SCNShadable](https://developer.apple.com/documentation/scenekit/scnshadable)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` protocol SCNShadable : NSObjectProtocol {     optional var program: SCNProgram? { get set }     optional func handleBindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?)     optional func handleUnbindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?)     optional var shaderModifiers: [String : String]? { get set } } ``` |
+| To | ``` protocol SCNShadable : NSObjectProtocol {     optional var program: SCNProgram? { get set }     optional func handleBinding(ofSymbol symbol: String, handler block: SceneKit.SCNBindingBlock? = nil)     optional func handleUnbinding(ofSymbol symbol: String, handler block: SceneKit.SCNBindingBlock? = nil)     optional var shaderModifiers: [SCNShaderModifierEntryPoint : String]? { get set } } ``` |
+
+Modified [SCNShadable.handleBinding()](https://developer.apple.com/documentation/scenekit/scnshadable/1523063-handlebindingofsymbol)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func handleBindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?) ``` |
+| To | ``` optional func handleBinding(ofSymbol symbol: String, handler block: SceneKit.SCNBindingBlock? = nil) ``` |
+
+Modified [SCNShadable.handleUnbinding()](https://developer.apple.com/documentation/scenekit/scnshadable/1522783-handleunbinding)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional func handleUnbindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?) ``` |
+| To | ``` optional func handleUnbinding(ofSymbol symbol: String, handler block: SceneKit.SCNBindingBlock? = nil) ``` |
+
+Modified [SCNShadable.shaderModifiers](https://developer.apple.com/documentation/scenekit/scnshadable/1523348-shadermodifiers)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` optional var shaderModifiers: [String : String]? { get set } ``` |
+| To | ``` optional var shaderModifiers: [SCNShaderModifierEntryPoint : String]? { get set } ``` |
+
+Modified [SCNShaderModifierEntryPoint.fragment](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypoint/1523342-fragment)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNShaderModifierEntryPointFragment | ``` let SCNShaderModifierEntryPointFragment: String ``` |
+| To | fragment | ``` static let fragment: SCNShaderModifierEntryPoint ``` |
+
+Modified [SCNShaderModifierEntryPoint.geometry](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypoint/1524108-geometry)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNShaderModifierEntryPointGeometry | ``` let SCNShaderModifierEntryPointGeometry: String ``` |
+| To | geometry | ``` static let geometry: SCNShaderModifierEntryPoint ``` |
+
+Modified [SCNShaderModifierEntryPoint.lightingModel](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypoint/1522765-lightingmodel)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNShaderModifierEntryPointLightingModel | ``` let SCNShaderModifierEntryPointLightingModel: String ``` |
+| To | lightingModel | ``` static let lightingModel: SCNShaderModifierEntryPoint ``` |
+
+Modified [SCNShaderModifierEntryPoint.surface](https://developer.apple.com/documentation/scenekit/scnshadermodifierentrypointsurface)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNShaderModifierEntryPointSurface | ``` let SCNShaderModifierEntryPointSurface: String ``` |
+| To | surface | ``` static let surface: SCNShaderModifierEntryPoint ``` |
+
+Modified [SCNShadowMode [enum]](https://developer.apple.com/documentation/scenekit/scnshadowmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNShadowMode : Int {     case Forward     case Deferred     case Modulated } ``` |
+| To | ``` enum SCNShadowMode : Int {     case forward     case deferred     case modulated } ``` |
+
+Modified [SCNShadowMode.deferred](https://developer.apple.com/documentation/scenekit/scnshadowmode/scnshadowmodedeferred)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Deferred ``` |
+| To | ``` case deferred ``` |
+
+Modified [SCNShadowMode.forward](https://developer.apple.com/documentation/scenekit/scnshadowmode/forward)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Forward ``` |
+| To | ``` case forward ``` |
+
+Modified [SCNShadowMode.modulated](https://developer.apple.com/documentation/scenekit/scnshadowmode/modulated)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Modulated ``` |
+| To | ``` case modulated ``` |
+
+Modified [SCNShape](https://developer.apple.com/documentation/scenekit/scnshape)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNShape : SCNGeometry {     convenience init(path path: UIBezierPath?, extrusionDepth extrusionDepth: CGFloat)     class func shapeWithPath(_ path: UIBezierPath?, extrusionDepth extrusionDepth: CGFloat) -> Self     @NSCopying var path: UIBezierPath?     var extrusionDepth: CGFloat     var chamferMode: SCNChamferMode     var chamferRadius: CGFloat     @NSCopying var chamferProfile: UIBezierPath? } ``` | -- |
+| To | ``` class SCNShape : SCNGeometry {     convenience init(path path: UIBezierPath?, extrusionDepth extrusionDepth: CGFloat)     class func withPath(_ path: UIBezierPath?, extrusionDepth extrusionDepth: CGFloat) -> Self     @NSCopying var path: UIBezierPath?     var extrusionDepth: CGFloat     var chamferMode: SCNChamferMode     var chamferRadius: CGFloat     @NSCopying var chamferProfile: UIBezierPath?     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNShape : CVarArg { } extension SCNShape : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNSkinner](https://developer.apple.com/documentation/scenekit/scnskinner)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNSkinner : NSObject, NSSecureCoding {     var skeleton: SCNNode?     convenience init(baseGeometry baseGeometry: SCNGeometry?, bones bones: [SCNNode], boneInverseBindTransforms boneInverseBindTransforms: [NSValue]?, boneWeights boneWeights: SCNGeometrySource, boneIndices boneIndices: SCNGeometrySource)     class func skinnerWithBaseGeometry(_ baseGeometry: SCNGeometry?, bones bones: [SCNNode], boneInverseBindTransforms boneInverseBindTransforms: [NSValue]?, boneWeights boneWeights: SCNGeometrySource, boneIndices boneIndices: SCNGeometrySource) -> Self     var baseGeometry: SCNGeometry?     var baseGeometryBindTransform: SCNMatrix4     var boneInverseBindTransforms: [NSValue]? { get }     var bones: [SCNNode] { get }     var boneWeights: SCNGeometrySource { get }     var boneIndices: SCNGeometrySource { get } } ``` | NSSecureCoding |
+| To | ``` class SCNSkinner : NSObject, NSSecureCoding {     var skeleton: SCNNode?     convenience init(baseGeometry baseGeometry: SCNGeometry?, bones bones: [SCNNode], boneInverseBindTransforms boneInverseBindTransforms: [NSValue]?, boneWeights boneWeights: SCNGeometrySource, boneIndices boneIndices: SCNGeometrySource)     class func withBaseGeometry(_ baseGeometry: SCNGeometry?, bones bones: [SCNNode], boneInverseBindTransforms boneInverseBindTransforms: [NSValue]?, boneWeights boneWeights: SCNGeometrySource, boneIndices boneIndices: SCNGeometrySource) -> Self     var baseGeometry: SCNGeometry?     var baseGeometryBindTransform: SCNMatrix4     var boneInverseBindTransforms: [NSValue]? { get }     var bones: [SCNNode] { get }     var boneWeights: SCNGeometrySource { get }     var boneIndices: SCNGeometrySource { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNSkinner : CVarArg { } extension SCNSkinner : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSSecureCoding |
+
+Modified [SCNSphere](https://developer.apple.com/documentation/scenekit/scnsphere)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNSphere : SCNGeometry {     convenience init(radius radius: CGFloat)     class func sphereWithRadius(_ radius: CGFloat) -> Self     var radius: CGFloat     var geodesic: Bool     var segmentCount: Int } ``` | -- |
+| To | ``` class SCNSphere : SCNGeometry {     convenience init(radius radius: CGFloat)     class func withRadius(_ radius: CGFloat) -> Self     var radius: CGFloat     var isGeodesic: Bool     var segmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNSphere : CVarArg { } extension SCNSphere : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNSphere.isGeodesic](https://developer.apple.com/documentation/scenekit/scnsphere/1523268-geodesic)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var geodesic: Bool ``` |
+| To | ``` var isGeodesic: Bool ``` |
+
+Modified [SCNTechnique](https://developer.apple.com/documentation/scenekit/scntechnique)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNTechnique : NSObject, SCNAnimatable, NSCopying, NSSecureCoding {      init?(dictionary dictionary: [String : AnyObject])     class func techniqueWithDictionary(_ dictionary: [String : AnyObject]) -> SCNTechnique?      init?(bySequencingTechniques techniques: [SCNTechnique])     class func techniqueBySequencingTechniques(_ techniques: [SCNTechnique]) -> SCNTechnique?     func handleBindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?)     var dictionaryRepresentation: [String : AnyObject] { get }     subscript (_ key: AnyObject) -> AnyObject? { get }     func objectForKeyedSubscript(_ key: AnyObject) -> AnyObject?     func setObject(_ obj: AnyObject?, forKeyedSubscript key: NSCopying) } ``` | NSCopying, NSSecureCoding, SCNAnimatable |
+| To | ``` class SCNTechnique : NSObject, SCNAnimatable, NSCopying, NSSecureCoding {      init?(dictionary dictionary: [String : Any])     class func withDictionary(_ dictionary: [String : Any]) -> SCNTechnique?      init?(bySequencingTechniques techniques: [SCNTechnique])     class func sequencingTechniques(_ techniques: [SCNTechnique]) -> SCNTechnique?     func handleBinding(ofSymbol symbol: String, using block: SceneKit.SCNBindingBlock? = nil)     var dictionaryRepresentation: [String : Any] { get }     subscript(_ key: Any) -> Any? { get }     func objectForKeyedSubscript(_ key: Any) -> Any?     func setObject(_ obj: Any?, forKeyedSubscript key: NSCopying)     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNTechnique : CVarArg { } extension SCNTechnique : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, NSCopying, NSSecureCoding, SCNAnimatable |
+
+Modified [SCNTechnique.dictionaryRepresentation](https://developer.apple.com/documentation/scenekit/scntechnique/1520492-dictionaryrepresentation)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var dictionaryRepresentation: [String : AnyObject] { get } ``` |
+| To | ``` var dictionaryRepresentation: [String : Any] { get } ``` |
+
+Modified [SCNTechnique.handleBinding(ofSymbol: String, using: SceneKit.SCNBindingBlock?)](https://developer.apple.com/documentation/scenekit/scntechnique/1520490-handlebinding)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func handleBindingOfSymbol(_ symbol: String, usingBlock block: SCNBindingBlock?) ``` |
+| To | ``` func handleBinding(ofSymbol symbol: String, using block: SceneKit.SCNBindingBlock? = nil) ``` |
+
+Modified [SCNTechnique.init(dictionary: [String : Any])](https://developer.apple.com/documentation/scenekit/scntechnique/1520494-techniquewithdictionary)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init?(dictionary dictionary: [String : AnyObject]) ``` |
+| To | ``` init?(dictionary dictionary: [String : Any]) ``` |
+
+Modified [SCNTechnique.setObject(_: Any?, forKeyedSubscript: NSCopying)](https://developer.apple.com/documentation/scenekit/scntechnique/1520495-setobject)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` func setObject(_ obj: AnyObject?, forKeyedSubscript key: NSCopying) ``` |
+| To | ``` func setObject(_ obj: Any?, forKeyedSubscript key: NSCopying) ``` |
+
+Modified [SCNTechnique.subscript(_: Any) -> Any?](https://developer.apple.com/documentation/scenekit/scntechnique/1520493-objectforkeyedsubscript)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` subscript (_ key: AnyObject) -> AnyObject? { get } ``` |
+| To | ``` subscript(_ key: Any) -> Any? { get } ``` |
+
+Modified [SCNText](https://developer.apple.com/documentation/scenekit/scntext)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNText : SCNGeometry {     convenience init(string string: AnyObject?, extrusionDepth extrusionDepth: CGFloat)     class func textWithString(_ string: AnyObject?, extrusionDepth extrusionDepth: CGFloat) -> Self     var extrusionDepth: CGFloat     @NSCopying var string: AnyObject?     var font: UIFont!     var wrapped: Bool     var containerFrame: CGRect     var truncationMode: String     var alignmentMode: String     var chamferRadius: CGFloat     @NSCopying var chamferProfile: UIBezierPath?     var flatness: CGFloat } ``` | -- |
+| To | ``` class SCNText : SCNGeometry {     convenience init(string string: Any?, extrusionDepth extrusionDepth: CGFloat)     class func withString(_ string: Any?, extrusionDepth extrusionDepth: CGFloat) -> Self     var extrusionDepth: CGFloat     var string: Any?     var font: UIFont!     var isWrapped: Bool     var containerFrame: CGRect     var truncationMode: String     var alignmentMode: String     var chamferRadius: CGFloat     @NSCopying var chamferProfile: UIBezierPath?     var flatness: CGFloat     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNText : CVarArg { } extension SCNText : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNText.init(string: Any?, extrusionDepth: CGFloat)](https://developer.apple.com/documentation/scenekit/scntext/1522734-textwithstring)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(string string: AnyObject?, extrusionDepth extrusionDepth: CGFloat) ``` |
+| To | ``` convenience init(string string: Any?, extrusionDepth extrusionDepth: CGFloat) ``` |
+
+Modified [SCNText.isWrapped](https://developer.apple.com/documentation/scenekit/scntext/1523585-wrapped)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` var wrapped: Bool ``` |
+| To | ``` var isWrapped: Bool ``` |
+
+Modified [SCNText.string](https://developer.apple.com/documentation/scenekit/scntext/1523439-string)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @NSCopying var string: AnyObject? ``` |
+| To | ``` var string: Any? ``` |
+
+Modified [SCNTorus](https://developer.apple.com/documentation/scenekit/scntorus)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNTorus : SCNGeometry {     convenience init(ringRadius ringRadius: CGFloat, pipeRadius pipeRadius: CGFloat)     class func torusWithRingRadius(_ ringRadius: CGFloat, pipeRadius pipeRadius: CGFloat) -> Self     var ringRadius: CGFloat     var pipeRadius: CGFloat     var ringSegmentCount: Int     var pipeSegmentCount: Int } ``` | -- |
+| To | ``` class SCNTorus : SCNGeometry {     convenience init(ringRadius ringRadius: CGFloat, pipeRadius pipeRadius: CGFloat)     class func withRingRadius(_ ringRadius: CGFloat, pipeRadius pipeRadius: CGFloat) -> Self     var ringRadius: CGFloat     var pipeRadius: CGFloat     var ringSegmentCount: Int     var pipeSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNTorus : CVarArg { } extension SCNTorus : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNTransaction](https://developer.apple.com/documentation/scenekit/scntransaction)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNTransaction : NSObject {     class func begin()     class func commit()     class func flush()     class func lock()     class func unlock()     class func animationDuration() -> CFTimeInterval     class func setAnimationDuration(_ duration: CFTimeInterval)     class func animationTimingFunction() -> CAMediaTimingFunction?     class func setAnimationTimingFunction(_ animationTimingFunction: CAMediaTimingFunction?)     class func disableActions() -> Bool     class func setDisableActions(_ flag: Bool)     class func completionBlock() -> (() -> Void)?     class func setCompletionBlock(_ block: (() -> Void)?)     class func valueForKey(_ key: String) -> AnyObject?     class func setValue(_ value: AnyObject?, forKey key: String) } ``` | -- |
+| To | ``` class SCNTransaction : NSObject {     class func begin()     class func commit()     class func flush()     class func lock()     class func unlock()     class var animationDuration: CFTimeInterval     @NSCopying class var animationTimingFunction: CAMediaTimingFunction?     class var disableActions: Bool     class var completionBlock: (() -> Swift.Void)?     class func value(forKey key: String) -> Any?     class func setValue(_ value: Any?, forKey key: String)     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNTransaction : CVarArg { } extension SCNTransaction : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNTransaction.setValue(_: Any?, forKey: String) [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1524124-setvalue)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func setValue(_ value: AnyObject?, forKey key: String) ``` |
+| To | ``` class func setValue(_ value: Any?, forKey key: String) ``` |
+
+Modified [SCNTransaction.value(forKey: String) -> Any? [class]](https://developer.apple.com/documentation/scenekit/scntransaction/1523919-valueforkey)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class func valueForKey(_ key: String) -> AnyObject? ``` |
+| To | ``` class func value(forKey key: String) -> Any? ``` |
+
+Modified [SCNTransformConstraint](https://developer.apple.com/documentation/scenekit/scntransformconstraint)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` class SCNTransformConstraint : SCNConstraint {     convenience init(inWorldSpace world: Bool, withBlock block: (SCNNode, SCNMatrix4) -> SCNMatrix4)     class func transformConstraintInWorldSpace(_ world: Bool, withBlock block: (SCNNode, SCNMatrix4) -> SCNMatrix4) -> Self } ``` |
+| To | ``` class SCNTransformConstraint : SCNConstraint {     convenience init(inWorldSpace world: Bool, with block: @escaping (SCNNode, SCNMatrix4) -> SCNMatrix4)     class func inWorldSpace(_ world: Bool, with block: @escaping (SCNNode, SCNMatrix4) -> SCNMatrix4) -> Self } ``` |
+
+Modified [SCNTransformConstraint.init(inWorldSpace: Bool, with: (SCNNode, SCNMatrix4) -> SCNMatrix4)](https://developer.apple.com/documentation/scenekit/scntransformconstraint/1468679-transformconstraintinworldspace)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` convenience init(inWorldSpace world: Bool, withBlock block: (SCNNode, SCNMatrix4) -> SCNMatrix4) ``` |
+| To | ``` convenience init(inWorldSpace world: Bool, with block: @escaping (SCNNode, SCNMatrix4) -> SCNMatrix4) ``` |
+
+Modified [SCNTransparencyMode [enum]](https://developer.apple.com/documentation/scenekit/scntransparencymode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNTransparencyMode : Int {     case AOne     case RGBZero } ``` |
+| To | ``` enum SCNTransparencyMode : Int {     case aOne     case rgbZero } ``` |
+
+Modified [SCNTransparencyMode.aOne](https://developer.apple.com/documentation/scenekit/scntransparencymode/aone)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case AOne ``` |
+| To | ``` case aOne ``` |
+
+Modified [SCNTransparencyMode.rgbZero](https://developer.apple.com/documentation/scenekit/scntransparencymode/rgbzero)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case RGBZero ``` |
+| To | ``` case rgbZero ``` |
+
+Modified [SCNTube](https://developer.apple.com/documentation/scenekit/scntube)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNTube : SCNGeometry {     convenience init(innerRadius innerRadius: CGFloat, outerRadius outerRadius: CGFloat, height height: CGFloat)     class func tubeWithInnerRadius(_ innerRadius: CGFloat, outerRadius outerRadius: CGFloat, height height: CGFloat) -> Self     var innerRadius: CGFloat     var outerRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int } ``` | -- |
+| To | ``` class SCNTube : SCNGeometry {     convenience init(innerRadius innerRadius: CGFloat, outerRadius outerRadius: CGFloat, height height: CGFloat)     class func withInnerRadius(_ innerRadius: CGFloat, outerRadius outerRadius: CGFloat, height height: CGFloat) -> Self     var innerRadius: CGFloat     var outerRadius: CGFloat     var height: CGFloat     var radialSegmentCount: Int     var heightSegmentCount: Int     convenience init(mdlMesh mdlMesh: MDLMesh)     class func withMDLMesh(_ mdlMesh: MDLMesh) -> Self     var boundingBox: (min: SCNVector3, max: SCNVector3)     var boundingSphere: (center: SCNVector3, radius: Float) { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?) } extension SCNTube : CVarArg { } extension SCNTube : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable |
+
+Modified [SCNVector3 [struct]](https://developer.apple.com/documentation/scenekit/scnvector3)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct SCNVector3 {     var x: Float     var y: Float     var z: Float     init()     init(x x: Float, y y: Float, z z: Float) } extension SCNVector3 {     init(_ x: Float, _ y: Float, _ z: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double)     init(_ x: Int, _ y: Int, _ z: Int)     init(_ v: float3)     init(_ v: double3) } extension SCNVector3 {     init(_ x: Float, _ y: Float, _ z: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double)     init(_ x: Int, _ y: Int, _ z: Int)     init(_ v: float3)     init(_ v: double3) } ``` |
+| To | ``` struct SCNVector3 {     var x: Float     var y: Float     var z: Float     init()     init(x x: Float, y y: Float, z z: Float)     init(_ x: Float, _ y: Float, _ z: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double)     init(_ x: Int, _ y: Int, _ z: Int)     init(_ v: float3)     init(_ v: double3) } extension SCNVector3 {     init(_ x: Float, _ y: Float, _ z: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double)     init(_ x: Int, _ y: Int, _ z: Int)     init(_ v: float3)     init(_ v: double3) } ``` |
+
+Modified [SCNVector4 [struct]](https://developer.apple.com/documentation/scenekit/scnvector4)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` struct SCNVector4 {     var x: Float     var y: Float     var z: Float     var w: Float     init()     init(x x: Float, y y: Float, z z: Float, w w: Float) } extension SCNVector4 {     init(_ x: Float, _ y: Float, _ z: Float, _ w: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ w: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double, _ w: Double)     init(_ x: Int, _ y: Int, _ z: Int, _ w: Int)     init(_ v: float4)     init(_ v: double4) } extension SCNVector4 {     init(_ x: Float, _ y: Float, _ z: Float, _ w: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ w: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double, _ w: Double)     init(_ x: Int, _ y: Int, _ z: Int, _ w: Int)     init(_ v: float4)     init(_ v: double4) } ``` |
+| To | ``` struct SCNVector4 {     var x: Float     var y: Float     var z: Float     var w: Float     init()     init(x x: Float, y y: Float, z z: Float, w w: Float)     init(_ x: Float, _ y: Float, _ z: Float, _ w: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ w: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double, _ w: Double)     init(_ x: Int, _ y: Int, _ z: Int, _ w: Int)     init(_ v: float4)     init(_ v: double4) } extension SCNVector4 {     init(_ x: Float, _ y: Float, _ z: Float, _ w: Float)     init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ w: CGFloat)     init(_ x: Double, _ y: Double, _ z: Double, _ w: Double)     init(_ x: Int, _ y: Int, _ z: Int, _ w: Int)     init(_ v: float4)     init(_ v: double4) } ``` |
+
+Modified [SCNView](https://developer.apple.com/documentation/scenekit/scnview)
+
+|  | Declaration | Protocols |
+| --- | --- | --- |
+| From | ``` class SCNView : UIView, SCNSceneRenderer, SCNTechniqueSupport {     init(frame frame: CGRect, options options: [String : AnyObject]?)     var scene: SCNScene?     var allowsCameraControl: Bool     func snapshot() -> UIImage     @IBAction func play(_ sender: AnyObject?)     @IBAction func pause(_ sender: AnyObject?)     @IBAction func stop(_ sender: AnyObject?)     var preferredFramesPerSecond: Int     var eaglContext: EAGLContext?     var antialiasingMode: SCNAntialiasingMode } ``` | SCNSceneRenderer, SCNTechniqueSupport |
+| To | ``` class SCNView : UIView, SCNSceneRenderer, SCNTechniqueSupport {     init(frame frame: CGRect, options options: [String : Any]? = nil)     var scene: SCNScene?     var allowsCameraControl: Bool     func snapshot() -> UIImage     @IBAction func play(_ sender: Any?)     @IBAction func pause(_ sender: Any?)     @IBAction func stop(_ sender: Any?)     var preferredFramesPerSecond: Int     var eaglContext: EAGLContext?     var antialiasingMode: SCNAntialiasingMode     struct Option : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     }     func viewPrintFormatter() -> UIViewPrintFormatter     func draw(_ rect: CGRect, for formatter: UIViewPrintFormatter)     func endEditing(_ force: Bool) -> Bool     func snapshotView(afterScreenUpdates afterUpdates: Bool) -> UIView?     func resizableSnapshotView(from rect: CGRect, afterScreenUpdates afterUpdates: Bool, withCapInsets capInsets: UIEdgeInsets) -> UIView?     func drawHierarchy(in rect: CGRect, afterScreenUpdates afterUpdates: Bool) -> Bool     var restorationIdentifier: String?     func encodeRestorableState(with coder: NSCoder)     func decodeRestorableState(with coder: NSCoder)     func constraintsAffectingLayout(for axis: UILayoutConstraintAxis) -> [NSLayoutConstraint]     var hasAmbiguousLayout: Bool { get }     func exerciseAmbiguityInLayout()     var leadingAnchor: NSLayoutXAxisAnchor { get }     var trailingAnchor: NSLayoutXAxisAnchor { get }     var leftAnchor: NSLayoutXAxisAnchor { get }     var rightAnchor: NSLayoutXAxisAnchor { get }     var topAnchor: NSLayoutYAxisAnchor { get }     var bottomAnchor: NSLayoutYAxisAnchor { get }     var widthAnchor: NSLayoutDimension { get }     var heightAnchor: NSLayoutDimension { get }     var centerXAnchor: NSLayoutXAxisAnchor { get }     var centerYAnchor: NSLayoutYAxisAnchor { get }     var firstBaselineAnchor: NSLayoutYAxisAnchor { get }     var lastBaselineAnchor: NSLayoutYAxisAnchor { get }     var layoutGuides: [UILayoutGuide] { get }     func addLayoutGuide(_ layoutGuide: UILayoutGuide)     func removeLayoutGuide(_ layoutGuide: UILayoutGuide)     func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize     func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority verticalFittingPriority: UILayoutPriority) -> CGSize     func alignmentRect(forFrame frame: CGRect) -> CGRect     func frame(forAlignmentRect alignmentRect: CGRect) -> CGRect     var alignmentRectInsets: UIEdgeInsets { get }     func forBaselineLayout() -> UIView     var forFirstBaselineLayout: UIView { get }     var forLastBaselineLayout: UIView { get }     var intrinsicContentSize: CGSize { get }     func invalidateIntrinsicContentSize()     func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority     func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: UILayoutConstraintAxis)     func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority     func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: UILayoutConstraintAxis)     var translatesAutoresizingMaskIntoConstraints: Bool     class var requiresConstraintBasedLayout: Bool { get }     func updateConstraintsIfNeeded()     func updateConstraints()     func needsUpdateConstraints() -> Bool     func setNeedsUpdateConstraints()     var constraints: [NSLayoutConstraint] { get }     func addConstraint(_ constraint: NSLayoutConstraint)     func addConstraints(_ constraints: [NSLayoutConstraint])     func removeConstraint(_ constraint: NSLayoutConstraint)     func removeConstraints(_ constraints: [NSLayoutConstraint])     func addMotionEffect(_ effect: UIMotionEffect)     func removeMotionEffect(_ effect: UIMotionEffect)     var motionEffects: [UIMotionEffect]     var gestureRecognizers: [UIGestureRecognizer]?     func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer)     func removeGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer)     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool     class func animateKeyframes(withDuration duration: TimeInterval, delay delay: TimeInterval, options options: UIViewKeyframeAnimationOptions = [], animations animations: @escaping () -> Void, completion completion: (@escaping (Bool) -> Void)? = nil)     class func addKeyframe(withRelativeStartTime frameStartTime: Double, relativeDuration frameDuration: Double, animations animations: @escaping () -> Void)     class func animate(withDuration duration: TimeInterval, delay delay: TimeInterval, options options: UIViewAnimationOptions = [], animations animations: @escaping () -> Void, completion completion: (@escaping (Bool) -> Void)? = nil)     class func animate(withDuration duration: TimeInterval, animations animations: @escaping () -> Void, completion completion: (@escaping (Bool) -> Void)? = nil)     class func animate(withDuration duration: TimeInterval, animations animations: @escaping () -> Void)     class func animate(withDuration duration: TimeInterval, delay delay: TimeInterval, usingSpringWithDamping dampingRatio: CGFloat, initialSpringVelocity velocity: CGFloat, options options: UIViewAnimationOptions = [], animations animations: @escaping () -> Void, completion completion: (@escaping (Bool) -> Void)? = nil)     class func transition(with view: UIView, duration duration: TimeInterval, options options: UIViewAnimationOptions = [], animations animations: (@escaping () -> Void)?, completion completion: (@escaping (Bool) -> Void)? = nil)     class func transition(from fromView: UIView, to toView: UIView, duration duration: TimeInterval, options options: UIViewAnimationOptions = [], completion completion: (@escaping (Bool) -> Void)? = nil)     class func perform(_ animation: UISystemAnimation, on views: [UIView], options options: UIViewAnimationOptions = [], animations parallelAnimations: (@escaping () -> Void)?, completion completion: (@escaping (Bool) -> Void)? = nil)     class func beginAnimations(_ animationID: String?, context context: UnsafeMutableRawPointer?)     class func commitAnimations()     class func setAnimationDelegate(_ delegate: Any?)     class func setAnimationWillStart(_ selector: Selector?)     class func setAnimationDidStop(_ selector: Selector?)     class func setAnimationDuration(_ duration: TimeInterval)     class func setAnimationDelay(_ delay: TimeInterval)     class func setAnimationStart(_ startDate: Date)     class func setAnimationCurve(_ curve: UIViewAnimationCurve)     class func setAnimationRepeatCount(_ repeatCount: Float)     class func setAnimationRepeatAutoreverses(_ repeatAutoreverses: Bool)     class func setAnimationBeginsFromCurrentState(_ fromCurrentState: Bool)     class func setAnimationTransition(_ transition: UIViewAnimationTransition, for view: UIView, cache cache: Bool)     class func setAnimationsEnabled(_ enabled: Bool)     class var areAnimationsEnabled: Bool { get }     class func performWithoutAnimation(_ actionsWithoutAnimation: () -> Void)     class var inheritedAnimationDuration: TimeInterval { get }     func draw(_ rect: CGRect)     func setNeedsDisplay()     func setNeedsDisplay(_ rect: CGRect)     var clipsToBounds: Bool     @NSCopying var backgroundColor: UIColor?     var alpha: CGFloat     var isOpaque: Bool     var clearsContextBeforeDrawing: Bool     var isHidden: Bool     var contentMode: UIViewContentMode     var contentStretch: CGRect     var mask: UIView?     var tintColor: UIColor!     var tintAdjustmentMode: UIViewTintAdjustmentMode     func tintColorDidChange()     var superview: UIView? { get }     var subviews: [UIView] { get }     var window: UIWindow? { get }     func removeFromSuperview()     func insertSubview(_ view: UIView, at index: Int)     func exchangeSubview(at index1: Int, withSubviewAt index2: Int)     func addSubview(_ view: UIView)     func insertSubview(_ view: UIView, belowSubview siblingSubview: UIView)     func insertSubview(_ view: UIView, aboveSubview siblingSubview: UIView)     func bringSubview(toFront view: UIView)     func sendSubview(toBack view: UIView)     func didAddSubview(_ subview: UIView)     func willRemoveSubview(_ subview: UIView)     func willMove(toSuperview newSuperview: UIView?)     func didMoveToSuperview()     func willMove(toWindow newWindow: UIWindow?)     func didMoveToWindow()     func isDescendant(of view: UIView) -> Bool     func viewWithTag(_ tag: Int) -> UIView?     func setNeedsLayout()     func layoutIfNeeded()     func layoutSubviews()     var layoutMargins: UIEdgeInsets     var preservesSuperviewLayoutMargins: Bool     func layoutMarginsDidChange()     var layoutMarginsGuide: UILayoutGuide { get }     var readableContentGuide: UILayoutGuide { get }     var frame: CGRect     var bounds: CGRect     var center: CGPoint     var transform: CGAffineTransform     var contentScaleFactor: CGFloat     var isMultipleTouchEnabled: Bool     var isExclusiveTouch: Bool     func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView?     func point(inside point: CGPoint, with event: UIEvent?) -> Bool     func convert(_ point: CGPoint, to view: UIView?) -> CGPoint     func convert(_ point: CGPoint, from view: UIView?) -> CGPoint     func convert(_ rect: CGRect, to view: UIView?) -> CGRect     func convert(_ rect: CGRect, from view: UIView?) -> CGRect     var autoresizesSubviews: Bool     var autoresizingMask: UIViewAutoresizing     func sizeThatFits(_ size: CGSize) -> CGSize     func sizeToFit()     var userActivity: NSUserActivity?     func updateUserActivityState(_ activity: NSUserActivity)     func restoreUserActivityState(_ activity: NSUserActivity)     var keyCommands: [UIKeyCommand]? { get }     func awakeFromNib()     func prepareForInterfaceBuilder()     func accessibilityActivate() -> Bool     func accessibilityIncrement()     func accessibilityDecrement()     func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool     func accessibilityPerformEscape() -> Bool     func accessibilityPerformMagicTap() -> Bool     var accessibilityCustomActions: [UIAccessibilityCustomAction]?     func accessibilityElementDidBecomeFocused()     func accessibilityElementDidLoseFocus()     func accessibilityElementIsFocused() -> Bool     func accessibilityAssistiveTechnologyFocusedIdentifiers() -> Set<String>?     func accessibilityElementCount() -> Int     func accessibilityElement(at index: Int) -> Any?     func index(ofAccessibilityElement element: Any) -> Int     var accessibilityElements: [Any]?     var isAccessibilityElement: Bool     var accessibilityLabel: String?     var accessibilityHint: String?     var accessibilityValue: String?     var accessibilityTraits: UIAccessibilityTraits     var accessibilityFrame: CGRect     @NSCopying var accessibilityPath: UIBezierPath?     var accessibilityActivationPoint: CGPoint     var accessibilityLanguage: String?     var accessibilityElementsHidden: Bool     var accessibilityViewIsModal: Bool     var shouldGroupAccessibilityChildren: Bool     var accessibilityNavigationStyle: UIAccessibilityNavigationStyle     var accessibilityHeaderElements: [Any]?     var accessibilityCustomRotors: [UIAccessibilityCustomRotor]?     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func performSelector(onMainThread aSelector: Selector, with arg: Any?, waitUntilDone wait: Bool)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool, modes array: [String]?)     func perform(_ aSelector: Selector, on thr: Thread, with arg: Any?, waitUntilDone wait: Bool)     func performSelector(inBackground aSelector: Selector, with arg: Any?)     class func classForKeyedUnarchiver() -> AnyClass     var classForKeyedArchiver: AnyClass? { get }     func replacementObject(for archiver: NSKeyedArchiver) -> Any?     class func classFallbacksForKeyedArchiver() -> [String]     class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String>     class func automaticallyNotifiesObservers(forKey key: String) -> Bool     var observationInfo: UnsafeMutableRawPointer?     func willChangeValue(forKey key: String)     func didChangeValue(forKey key: String)     func willChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func didChange(_ changeKind: NSKeyValueChange, valuesAt indexes: IndexSet, forKey key: String)     func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func didChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>)     func addObserver(_ observer: NSObject, forKeyPath keyPath: String, options options: NSKeyValueObservingOptions = [], context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String, context context: UnsafeMutableRawPointer?)     func removeObserver(_ observer: NSObject, forKeyPath keyPath: String)     func observeValue(forKeyPath keyPath: String?, of object: Any?, change change: [NSKeyValueChangeKey : Any]?, context context: UnsafeMutableRawPointer?)     class var accessInstanceVariablesDirectly: Bool { get }     func value(forKey key: String) -> Any?     func setValue(_ value: Any?, forKey key: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKey inKey: String) throws     func mutableArrayValue(forKey key: String) -> NSMutableArray     func mutableOrderedSetValue(forKey key: String) -> NSMutableOrderedSet     func mutableSetValue(forKey key: String) -> NSMutableSet     func value(forKeyPath keyPath: String) -> Any?     func setValue(_ value: Any?, forKeyPath keyPath: String)     func validateValue(_ ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>, forKeyPath inKeyPath: String) throws     func mutableArrayValue(forKeyPath keyPath: String) -> NSMutableArray     func mutableOrderedSetValue(forKeyPath keyPath: String) -> NSMutableOrderedSet     func mutableSetValue(forKeyPath keyPath: String) -> NSMutableSet     func value(forUndefinedKey key: String) -> Any?     func setValue(_ value: Any?, forUndefinedKey key: String)     func setNilValueForKey(_ key: String)     func dictionaryWithValues(forKeys keys: [String]) -> [String : Any]     func setValuesForKeys(_ keyedValues: [String : Any])     func fileManager(_ fm: FileManager, shouldProceedAfterError errorInfo: [AnyHashable : Any]) -> Bool     func fileManager(_ fm: FileManager, willProcessPath path: String)     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval, inModes modes: [RunLoopMode])     func perform(_ aSelector: Selector, with anArgument: Any?, afterDelay delay: TimeInterval)     class func cancelPreviousPerformRequests(withTarget aTarget: Any, selector aSelector: Selector, object anArgument: Any?)     class func cancelPreviousPerformRequests(withTarget aTarget: Any)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int, delegate delegate: Any?, didRecoverSelector didRecoverSelector: Selector?, contextInfo contextInfo: UnsafeMutableRawPointer?)     func attemptRecovery(fromError error: Error, optionIndex recoveryOptionIndex: Int) -> Bool     var autoContentAccessingProxy: Any { get }     class func version() -> Int     class func setVersion(_ aVersion: Int)     var classForCoder: AnyClass { get }     func awakeAfter(using aDecoder: NSCoder) -> Any?     func provideImageData(_ data: UnsafeMutableRawPointer, bytesPerRow rowbytes: Int, origin x: Int, _ y: Int, size width: Int, _ height: Int, userInfo info: Any?)     var inputView: UIView? { get }     var inputAccessoryView: UIView? { get }     var inputAssistantItem: UITextInputAssistantItem { get }     var inputViewController: UIInputViewController? { get }     var inputAccessoryViewController: UIInputViewController? { get }     var textInputMode: UITextInputMode? { get }     var textInputContextIdentifier: String? { get }     class func clearTextInputContextIdentifier(_ identifier: String)     func reloadInputViews() } extension SCNView {     struct Option : RawRepresentable, Equatable, Hashable, Comparable {         init(rawValue rawValue: String)     } } extension SCNView : UIAccessibilityIdentification { } extension SCNView : CVarArg { } extension SCNView : Equatable, Hashable {     var hashValue: Int { get } } ``` | CVarArg, Equatable, Hashable, SCNSceneRenderer, SCNTechniqueSupport, UIAccessibilityIdentification |
+
+Modified [SCNView.init(frame: CGRect, options: [String : Any]?)](https://developer.apple.com/documentation/scenekit/scnview/1524215-initwithframe)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` init(frame frame: CGRect, options options: [String : AnyObject]?) ``` |
+| To | ``` init(frame frame: CGRect, options options: [String : Any]? = nil) ``` |
+
+Modified [SCNView.pause(_: Any?)](https://developer.apple.com/documentation/scenekit/scnview/1522825-pause)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @IBAction func pause(_ sender: AnyObject?) ``` |
+| To | ``` @IBAction func pause(_ sender: Any?) ``` |
+
+Modified [SCNView.play(_: Any?)](https://developer.apple.com/documentation/scenekit/scnview/1523699-play)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @IBAction func play(_ sender: AnyObject?) ``` |
+| To | ``` @IBAction func play(_ sender: Any?) ``` |
+
+Modified [SCNView.stop(_: Any?)](https://developer.apple.com/documentation/scenekit/scnview/1524132-stop)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` @IBAction func stop(_ sender: AnyObject?) ``` |
+| To | ``` @IBAction func stop(_ sender: Any?) ``` |
+
+Modified [SCNView.Option.preferLowPowerDevice](https://developer.apple.com/documentation/scenekit/scnview/option/1522859-preferlowpowerdevice)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPreferLowPowerDeviceKey | ``` let SCNPreferLowPowerDeviceKey: String ``` |
+| To | preferLowPowerDevice | ``` static let preferLowPowerDevice: SCNView.Option ``` |
+
+Modified [SCNView.Option.preferredDevice](https://developer.apple.com/documentation/scenekit/scnview/option/1523209-preferreddevice)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPreferredDeviceKey | ``` let SCNPreferredDeviceKey: String ``` |
+| To | preferredDevice | ``` static let preferredDevice: SCNView.Option ``` |
+
+Modified [SCNView.Option.preferredRenderingAPI](https://developer.apple.com/documentation/scenekit/scnpreferredrenderingapikey)
+
+|  | Name | Declaration |
+| --- | --- | --- |
+| From | SCNPreferredRenderingAPIKey | ``` let SCNPreferredRenderingAPIKey: String ``` |
+| To | preferredRenderingAPI | ``` static let preferredRenderingAPI: SCNView.Option ``` |
+
+Modified [SCNWrapMode [enum]](https://developer.apple.com/documentation/scenekit/scnwrapmode)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` enum SCNWrapMode : Int {     case Clamp     case Repeat     case ClampToBorder     case Mirror } ``` |
+| To | ``` enum SCNWrapMode : Int {     case clamp     case `repeat`     case clampToBorder     case mirror } ``` |
+
+Modified [SCNWrapMode.clamp](https://developer.apple.com/documentation/scenekit/scnwrapmode/scnwrapmodeclamp)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Clamp ``` |
+| To | ``` case clamp ``` |
+
+Modified [SCNWrapMode.clampToBorder](https://developer.apple.com/documentation/scenekit/scnwrapmode/scnwrapmodeclamptoborder)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case ClampToBorder ``` |
+| To | ``` case clampToBorder ``` |
+
+Modified [SCNWrapMode.mirror](https://developer.apple.com/documentation/scenekit/scnwrapmode/mirror)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Mirror ``` |
+| To | ``` case mirror ``` |
+
+Modified [SCNWrapMode.repeat](https://developer.apple.com/documentation/scenekit/scnwrapmode/scnwrapmoderepeat)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` case Repeat ``` |
+| To | ``` case `repeat` ``` |
+
+Modified [SCNAnimationEventBlock](https://developer.apple.com/documentation/scenekit/scnanimationeventblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNAnimationEventBlock = (CAAnimation, AnyObject, Bool) -> Void ``` |
+| To | ``` typealias SCNAnimationEventBlock = (CAAnimation, Any, Bool) -> Swift.Void ``` |
+
+Modified [SCNBindingBlock](https://developer.apple.com/documentation/scenekit/scnbindingblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNBindingBlock = (UInt32, UInt32, SCNNode, SCNRenderer) -> Void ``` |
+| To | ``` typealias SCNBindingBlock = (UInt32, UInt32, SCNNode?, SCNRenderer) -> Swift.Void ``` |
+
+Modified [SCNBufferBindingBlock](https://developer.apple.com/documentation/scenekit/scnbufferbindingblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNBufferBindingBlock = (SCNBufferStream, SCNNode, SCNShadable, SCNRenderer) -> Void ``` |
+| To | ``` typealias SCNBufferBindingBlock = (SCNBufferStream, SCNNode, SCNShadable, SCNRenderer) -> Swift.Void ``` |
+
+Modified [SCNFieldForceEvaluator](https://developer.apple.com/documentation/scenekit/scnfieldforceevaluator)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNFieldForceEvaluator = (SCNVector3, SCNVector3, Float, Float, NSTimeInterval) -> SCNVector3 ``` |
+| To | ``` typealias SCNFieldForceEvaluator = (SCNVector3, SCNVector3, Float, Float, TimeInterval) -> SCNVector3 ``` |
+
+Modified [SCNParticleEventBlock](https://developer.apple.com/documentation/scenekit/scnparticleeventblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNParticleEventBlock = (UnsafeMutablePointer<UnsafeMutablePointer<Void>>, UnsafeMutablePointer<Int>, UnsafeMutablePointer<UInt32>, Int) -> Void ``` |
+| To | ``` typealias SCNParticleEventBlock = (UnsafeMutablePointer<UnsafeMutableRawPointer>, UnsafeMutablePointer<Int>, UnsafeMutablePointer<UInt32>?, Int) -> Swift.Void ``` |
+
+Modified [SCNParticleModifierBlock](https://developer.apple.com/documentation/scenekit/scnparticlemodifierblock)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNParticleModifierBlock = (UnsafeMutablePointer<UnsafeMutablePointer<Void>>, UnsafeMutablePointer<Int>, Int, Int, Float) -> Void ``` |
+| To | ``` typealias SCNParticleModifierBlock = (UnsafeMutablePointer<UnsafeMutableRawPointer>, UnsafeMutablePointer<Int>, Int, Int, Float) -> Swift.Void ``` |
+
+Modified [SCNSceneExportProgressHandler](https://developer.apple.com/documentation/scenekit/scnsceneexportprogresshandler)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNSceneExportProgressHandler = (Float, NSError?, UnsafeMutablePointer<ObjCBool>) -> Void ``` |
+| To | ``` typealias SCNSceneExportProgressHandler = (Float, Error?, UnsafeMutablePointer<ObjCBool>) -> Swift.Void ``` |
+
+Modified [SCNSceneSourceStatusHandler](https://developer.apple.com/documentation/scenekit/scnscenesourcestatushandler)
+
+|  | Declaration |
+| --- | --- |
+| From | ``` typealias SCNSceneSourceStatusHandler = (Float, SCNSceneSourceStatus, NSError?, UnsafeMutablePointer<ObjCBool>) -> Void ``` |
+| To | ``` typealias SCNSceneSourceStatusHandler = (Float, SCNSceneSourceStatus, Error?, UnsafeMutablePointer<ObjCBool>) -> Swift.Void ``` |
+
+## Sending feedback…
+
+## We’re sorry, an error has occurred.
+
+Please try submitting your feedback later.
+
+## Thank you for providing feedback!
+
+Your input helps improve our developer documentation.
+
+## How helpful is this document?
+
+\*
+
+Very helpful
+
+Somewhat helpful
+
+Not helpful
+
+## How can we improve this document?
+
+Fix typos or links
+
+Fix incorrect information
+
+Add or update code samples
+
+Add or update illustrations
+
+Add information about...
+
+\*
+
+_\* Required information_
+
+To submit a product bug or enhancement request, please visit the
+[Bug Reporter](https://developer.apple.com/bugreporter/)
+page.
+
+Please read [Apple's Unsolicited Idea Submission Policy](http://www.apple.com/legal/policies/ideas.html)
+before you send us your feedback.
+
+Copyright © 2016 Apple Inc. All rights reserved.
+
+- [Terms of Use](http://www.apple.com/legal/internet-services/terms/site.html)
+- [Privacy Policy](http://www.apple.com/privacy/)

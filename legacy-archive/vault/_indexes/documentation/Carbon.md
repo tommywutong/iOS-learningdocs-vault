@@ -1,0 +1,261 @@
+# documentation / Carbon
+
+> 导航：[总目录](../../README.md) · [documentation](../documentation.md)
+
+共 43 份文档。
+
+## iOS（1 份）
+
+- **[文件元数据搜索编程指南](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/About%20File%20Metadata%20Queries.md)** — Guide · 2011-09-28，iOS|macOS · CoreServices，6 页
+  - [搜索 iCloud 和桌面](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/Searching%20iCloud%20and%20the%20Desktop.md)
+  - [使用 NSMetadataQuery 搜索文件元数据](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/Searching%20File%20Metadata%20with%20NSMetadataQuery.md)
+  - [文件元数据查询表达式语法](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/File%20Metadata%20Query%20Expression%20Syntax.md)
+  - [显示 Finder 的 Spotlight 搜索窗口](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/Displaying%20the%20Finder%E2%80%99s%20Spotlight%20Search%20Window.md)
+  - [文档修订历史](../../documentation/Carbon/File%20Metadata%20Search%20Programming%20Guide/Document%20Revision%20History.md)
+
+## macOS（42 份）
+
+- **[面向 Carbon 开发者的 64 位指南](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/Introduction%20to%2064-Bit%20Guide%20for%20Carbon%20Developers.md)** — Guide · 2013-04-23，macOS，6 页
+  - [过渡到 64 位寻址](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/The%20Transition%20to%2064-Bit%20Addressing.md)
+  - [修改应用程序以使用 64 位寻址](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/Modifying%20Your%20Application%20to%20Use%2064-Bit%20Addressing.md)
+  - [Human Interface Toolbox 中的更改](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/Changes%20in%20the%20Human%20Interface%20Toolbox.md)
+  - [其他 C API 中的更改](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/Changes%20in%20Other%20C%20APIs.md)
+  - [文档修订历史](../../documentation/Carbon/64-Bit%20Guide%20for%20Carbon%20Developers/Document%20Revision%20History.md)
+- **[Carbon 辅助功能编程指南](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Introduction%20to%20Accessibility%20Programming%20Guidelines%20for%20Carbon.md)** — Guide · 2007-02-08，macOS，6 页
+  - [辅助功能与 Carbon 框架](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Accessibility%20and%20the%20Carbon%20Framework.md)
+  - [使标准 Carbon 应用程序具备辅助功能](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Making%20a%20Standard%20Carbon%20Application%20Accessible.md)
+  - [使半标准 Carbon 应用程序具备辅助功能](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Making%20a%20Semistandard%20Carbon%20Application%20Accessible.md)
+  - [使自定义 Carbon 应用程序具备辅助功能](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Making%20a%20Custom%20Carbon%20Application%20Accessible.md)
+  - [文档修订历史](../../documentation/Carbon/Accessibility%20Programming%20Guidelines%20for%20Carbon/Document%20Revision%20History.md)
+- **[Apple Help 编程指南](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Introduction%20to%20Apple%20Help%20Programming%20Guide.md)** — Guide · 2013-01-28，macOS · Carbon，8 页
+  - [Apple Help 概念](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Apple%20Help%20Concepts.md)
+  - [编写 Apple Help](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Authoring%20Apple%20Help.md)
+  - [Apple Help URL](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Apple%20Help%20URLs.md)
+  - [帮助手册注册](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Help%20Book%20Registration.md)
+  - [Apple Help 元标签属性](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Apple%20Help%20Meta%20Tag%20Properties.md)
+  - [在 Help Viewer 中打开帮助书籍](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Opening%20Your%20Help%20Book%20in%20Help%20Viewer.md)
+  - [文档修订历史](../../documentation/Carbon/Apple%20Help%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Apple Type Services for Fonts 编程指南](../../documentation/Carbon/Apple%20Type%20Services%20for%20Fonts%20Programming%20Guide/Apple%20Type%20Services%20for%20Fonts%20Programming%20Guide.md)** — Guide · 2008-09-29，macOS，4 页
+  - [管理字体：ATS 概念](../../documentation/Carbon/Apple%20Type%20Services%20for%20Fonts%20Programming%20Guide/Managing%20Fonts-%20ATS%20Concepts.md)
+  - [管理字体：ATS 任务](../../documentation/Carbon/Apple%20Type%20Services%20for%20Fonts%20Programming%20Guide/Managing%20Fonts-%20ATS%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Apple%20Type%20Services%20for%20Fonts%20Programming%20Guide/Document%20Revision%20History.md)
+- **[ATSUI 编程指南](../../documentation/Carbon/ATSUI%20Programming%20Guide/Introduction%20to%20ATSUI%20Programming%20Guide.md)** — Guide · 2008-09-30，macOS，11 页
+  - [排版概念](../../documentation/Carbon/ATSUI%20Programming%20Guide/Typography%20Concepts.md)
+  - [ATSUI 样式和文本布局对象](../../documentation/Carbon/ATSUI%20Programming%20Guide/ATSUI%20Style%20and%20Text%20Layout%20Objects.md)
+  - [字体特性](../../documentation/Carbon/ATSUI%20Programming%20Guide/Font%20Features.md)
+  - [ATSUI 对 Unicode 规范的实现](../../documentation/Carbon/ATSUI%20Programming%20Guide/ATSUI%20Implementation%20of%20the%20Unicode%20Specification.md)
+  - [基本任务：使用对象和绘制文本](../../documentation/Carbon/ATSUI%20Programming%20Guide/Basic%20Tasks-%20Working%20With%20Objects%20and%20Drawing%20Text.md)
+  - [高级任务：替换字体和修改布局](../../documentation/Carbon/ATSUI%20Programming%20Guide/Advanced%20Tasks-%20Substituting%20Fonts%20and%20Modifying%20Layouts.md)
+  - [直接访问任务：使用字形数据](../../documentation/Carbon/ATSUI%20Programming%20Guide/Direct-Access%20Tasks-%20Working%20With%20Glyph%20Data.md)
+  - [交互任务：支持插入点和高亮文本](../../documentation/Carbon/ATSUI%20Programming%20Guide/Interactive%20Tasks-%20Supporting%20Carets%20and%20Highlighting%20Text.md)
+  - [文档修订历史](../../documentation/Carbon/ATSUI%20Programming%20Guide/Document%20Revision%20History.md)
+  - [ATSUI 词汇表](../../documentation/Carbon/ATSUI%20Programming%20Guide/ATSUI%20Glossary.md)
+- **[Carbon Event Manager 编程指南](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Introduction%20to%20Carbon%20Event%20Manager%20Programming%20Guide.md)** — Guide · 2005-07-07，macOS，7 页
+  - [Carbon 事件管理器概念](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Carbon%20Event%20Manager%20Concepts.md)
+  - [Carbon 事件管理器任务](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Carbon%20Event%20Manager%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Document%20Revision%20History.md)
+  - [控件事件与经典控件消息的比较](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Control%20Events%20Versus%20Classic%20Control%20Messages.md)
+  - [术语表](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Glossary.md)
+  - [索引](../../documentation/Carbon/Carbon%20Event%20Manager%20Programming%20Guide/Index.md)
+- **[Carbon 概述](../../documentation/Carbon/Carbon%20Overview/Introduction%20to%20Carbon%20Overview.md)** — Guide · 2005-11-09，macOS，5 页
+  - [Carbon 基础](../../documentation/Carbon/Carbon%20Overview/Carbon%20Basics.md)
+  - [Carbon Factory 之旅](../../documentation/Carbon/Carbon%20Overview/The%20Carbon%20Factory%20Tour.md)
+  - [旧版接口](../../documentation/Carbon/Carbon%20Overview/Legacy%20Interfaces.md)
+  - [文档修订历史](../../documentation/Carbon/Carbon%20Overview/Document%20Revision%20History.md)
+- **[Carbon 移植指南](../../documentation/Carbon/Carbon%20Porting%20Guide/Introduction%20to%20Carbon%20Porting%20Guide.md)** — Guide · 2002-12-01，macOS，9 页
+  - [为 Carbon 准备代码](../../documentation/Carbon/Carbon%20Porting%20Guide/Preparing%20Your%20Code%20for%20Carbon.md)
+  - [构建 Carbon 应用程序](../../documentation/Carbon/Carbon%20Porting%20Guide/Building%20Carbon%20Applications.md)
+  - [移植示例](../../documentation/Carbon/Carbon%20Porting%20Guide/A%20Porting%20Example.md)
+  - [新的 Carbon 技术](../../documentation/Carbon/Carbon%20Porting%20Guide/New%20Carbon%20Technologies.md)
+  - [新的 Carbon 函数](../../documentation/Carbon/Carbon%20Porting%20Guide/New%20Carbon%20Functions.md)
+  - [示例应用程序](../../documentation/Carbon/Carbon%20Porting%20Guide/The%20Sample%20Application.md)
+  - [文档修订历史](../../documentation/Carbon/Carbon%20Porting%20Guide/Document%20Revision%20History.md)
+  - [索引](../../documentation/Carbon/Carbon%20Porting%20Guide/Index.md)
+- **[创建 Carbon 菜单](../../documentation/Carbon/Creating%20Carbon%20Menus/Carbon%20Menus%20Concepts.md)** — Guide · 2004-02-23，macOS，4 页
+  - [Carbon 菜单任务](../../documentation/Carbon/Creating%20Carbon%20Menus/Carbon%20Menu%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Creating%20Carbon%20Menus/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Creating%20Carbon%20Menus/Glossary.md)
+- **[Data Browser 编程指南](../../documentation/Carbon/Data%20Browser%20Programming%20Guide/Introduction%20to%20Data%20Browser%20Programming%20Guide.md)** — Guide · 2007-08-07，macOS · Carbon，4 页
+  - [Data Browser 概念](../../documentation/Carbon/Data%20Browser%20Programming%20Guide/Data%20Browser%20Concepts.md)
+  - [Data Browser 任务](../../documentation/Carbon/Data%20Browser%20Programming%20Guide/Data%20Browser%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Data%20Browser%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Desktop Icons](../../documentation/Carbon/Desktop%20Icons/Desktop%20Icons.md)** — Guide · 2002-08-19，macOS
+- **[Drag Manager Programmer's Guide](../../documentation/Carbon/Drag%20Manager%20Programmer%27s%20Guide/Drag%20Manager%20Programmer%27s%20Guide.md)** — Guide · 1995-12-11，macOS
+- **[处理 Carbon 窗口和控件](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Introduction%20to%20Handling%20Carbon%20Windows%20and%20Controls.md)** — Guide · 2005-07-07，macOS，6 页
+  - [窗口与控件概念](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Window%20and%20Control%20Concepts.md)
+  - [窗口与控件任务](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Window%20and%20Control%20Tasks.md)
+  - [Carbon 事件与经典 DefProc 消息的比较](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Carbon%20Events%20Versus%20Classic%20DefProc%20Messages.md)
+  - [文档修订历史](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Handling%20Carbon%20Windows%20and%20Controls/Glossary.md)
+- **[使用 MLTE 处理 Unicode 文本编辑](../../documentation/Carbon/Handling%20Unicode%20Text%20Editing%20With%20MLTE/MLTE%20Introduction.md)** — Guide · 2008-09-26，macOS，5 页
+  - [MLTE 概念](../../documentation/Carbon/Handling%20Unicode%20Text%20Editing%20With%20MLTE/MLTE%20Concepts.md)
+  - [MLTE 任务](../../documentation/Carbon/Handling%20Unicode%20Text%20Editing%20With%20MLTE/MLTE%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Handling%20Unicode%20Text%20Editing%20With%20MLTE/Document%20Revision%20History.md)
+  - [MLTE 词汇表](../../documentation/Carbon/Handling%20Unicode%20Text%20Editing%20With%20MLTE/MLTE%20Glossary.md)
+- **[HIArchive 编程指南](../../documentation/Carbon/HIArchive%20Programming%20Guide/Introduction%20to%20HIArchive%20Programming%20Guide.md)** — Guide · 2005-08-11，macOS，4 页
+  - [归档和取消归档对象](../../documentation/Carbon/HIArchive%20Programming%20Guide/Archiving%20and%20Unarchiving%20Objects.md)
+  - [使 HIObject 可归档](../../documentation/Carbon/HIArchive%20Programming%20Guide/Making%20HIObjects%20Archivable.md)
+  - [文档修订历史](../../documentation/Carbon/HIArchive%20Programming%20Guide/Document%20Revision%20History.md)
+- **[HIToolbar 编程指南](../../documentation/Carbon/HIToolbar%20Programming%20Guide/HIToolbar%20Concepts.md)** — Guide · 2005-07-07，macOS，3 页
+  - [工具栏任务](../../documentation/Carbon/HIToolbar%20Programming%20Guide/Toolbar%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/HIToolbar%20Programming%20Guide/Document%20Revision%20History.md)
+- **[HIView 编程指南](../../documentation/Carbon/HIView%20Programming%20Guide/Introduction%20to%20HIView%20Programming%20Guide.md)** — Guide · 2007-10-31，macOS，4 页
+  - [HIView 概念](../../documentation/Carbon/HIView%20Programming%20Guide/HIView%20Concepts.md)
+  - [HIView 任务](../../documentation/Carbon/HIView%20Programming%20Guide/HIView%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/HIView%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Image Capture 应用程序编程指南](../../documentation/Carbon/Image%20Capture%20Applications%20Programming%20Guide/Introduction.md)** — Guide · 2009-08-29，macOS · ImageCaptureCore，5 页
+  - [Image Capture 概述](../../documentation/Carbon/Image%20Capture%20Applications%20Programming%20Guide/Image%20Capture%20Overview.md)
+  - [使用 ImageKit 创建应用程序](../../documentation/Carbon/Image%20Capture%20Applications%20Programming%20Guide/Creating%20an%20Application%20Using%20ImageKit.md)
+  - [使用 ImageCaptureCore 创建应用程序](../../documentation/Carbon/Image%20Capture%20Applications%20Programming%20Guide/Creating%20an%20Application%20Using%20ImageCaptureCore.md)
+  - [文档修订历史](../../documentation/Carbon/Image%20Capture%20Applications%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Launch Services 编程指南](../../documentation/Carbon/Launch%20Services%20Programming%20Guide/Introduction.md)** — Guide · 2013-12-16，macOS · ApplicationServices，5 页
+  - [Launch Services 概念](../../documentation/Carbon/Launch%20Services%20Programming%20Guide/Launch%20Services%20Concepts.md)
+  - [Launch Services 任务](../../documentation/Carbon/Launch%20Services%20Programming%20Guide/Launch%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Launch%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Launch%20Services%20Programming%20Guide/Glossary.md)
+- **[管理字体：QuickDraw](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Introduction%20to%20Managing%20Fonts-%20QuickDraw.md)** — Guide · 2007-12-11，macOS，6 页
+  - [管理字体：QuickDraw 概念](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Managing%20Fonts-%20QuickDraw%20Concepts.md)
+  - [管理字体：QuickDraw 任务](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Managing%20Fonts-%20QuickDraw%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Document%20Revision%20History.md)
+  - [管理字体：QuickDraw 词汇表](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Managing%20Fonts-%20QuickDraw%20Glossary.md)
+  - [索引](../../documentation/Carbon/Managing%20Fonts-%20QuickDraw/Index.md)
+- **[多处理服务编程指南](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Introduction%20to%20Multiprocessing%20Services%20Programming%20Guide.md)** — Guide · 2012-07-23，macOS · CoreServices，8 页
+  - [关于 Mac OS 上的多任务处理](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/About%20Multitasking%20on%20the%20Mac%20OS.md)
+  - [使用 Multiprocessing Services](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Using%20Multiprocessing%20Services.md)
+  - [抢占式任务安全的 Mac OS 系统软件函数](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Preemptive%20Task%E2%80%93Safe%20Mac%20OS%20System%20Software%20Functions.md)
+  - [计算任务间信号传递时间](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Calculating%20the%20Intertask%20Signaling%20Time.md)
+  - [Multiprocessing Services 早期版本的变更](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Changes%20From%20Previous%20Versions%20of%20Multiprocessing%20Services.md)
+  - [文档修订历史](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+  - [索引](../../documentation/Carbon/Multiprocessing%20Services%20Programming%20Guide/Index.md)
+- **[Carbon 版 Navigation Services 概述](../../documentation/Carbon/Navigation%20Services%20for%20Carbon-%20An%20Overview/Navigation%20Services%20for%20Carbon.md)** — Guide · 2003-12-10，macOS，2 页
+  - [文档修订历史](../../documentation/Carbon/Navigation%20Services%20for%20Carbon-%20An%20Overview/Document%20Revision%20History.md)
+- **[Navigation Services 编程指南](../../documentation/Carbon/Navigation%20Services%20Programming%20Guide/Introduction%20to%20Navigation%20Services%20Programming%20Guide.md)** — Guide · 2007-07-10，macOS，4 页
+  - [Navigation Services 概念](../../documentation/Carbon/Navigation%20Services%20Programming%20Guide/Navigation%20Services%20Concepts.md)
+  - [Navigation Services 任务](../../documentation/Carbon/Navigation%20Services%20Programming%20Guide/Navigation%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Navigation%20Services%20Programming%20Guide/Document%20Revision%20History.md)
+- **[使用 Icon Services 获取和使用图标](../../documentation/Carbon/Obtaining%20and%20Using%20Icons%20With%20Icon%20Services/Introduction%20to%20Obtaining%20and%20Using%20Icons%20With%20Icon%20Services.md)** — Guide · 2003-02-01，macOS，4 页
+  - [Icon Services 概念](../../documentation/Carbon/Obtaining%20and%20Using%20Icons%20With%20Icon%20Services/Icon%20Services%20Concepts.md)
+  - [Icon Services 任务](../../documentation/Carbon/Obtaining%20and%20Using%20Icons%20With%20Icon%20Services/Icon%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Obtaining%20and%20Using%20Icons%20With%20Icon%20Services/Document%20Revision%20History.md)
+- **[使用 Display Manager 优化显示模式和窗口排列](../../documentation/Carbon/Optimizing%20Display%20Modes%20and%20Window%20Arrangement%20With%20the%20Display%20Manager/Introduction%20to%20Optimizing%20Display%20Modes%20and%20Window%20Arrangement%20With%20the%20Display.md)** — Guide · 2007-05-03，macOS，4 页
+  - [关于 Display Manager](../../documentation/Carbon/Optimizing%20Display%20Modes%20and%20Window%20Arrangement%20With%20the%20Display%20Manager/About%20the%20Display%20Manager.md)
+  - [使用 Display Manager](../../documentation/Carbon/Optimizing%20Display%20Modes%20and%20Window%20Arrangement%20With%20the%20Display%20Manager/Using%20the%20Display%20Manager.md)
+  - [文档修订历史](../../documentation/Carbon/Optimizing%20Display%20Modes%20and%20Window%20Arrangement%20With%20the%20Display%20Manager/Document%20Revision%20History.md)
+- **[Pasteboard Manager 编程指南](../../documentation/Carbon/Pasteboard%20Manager%20Programming%20Guide/Introduction%20to%20Pasteboard%20Manager%20Programming%20Guide.md)** — Guide · 2005-07-07，macOS，5 页
+  - [Pasteboard Manager 概念](../../documentation/Carbon/Pasteboard%20Manager%20Programming%20Guide/Pasteboard%20Manager%20Concepts.md)
+  - [Pasteboard Manager 任务](../../documentation/Carbon/Pasteboard%20Manager%20Programming%20Guide/Pasteboard%20Manager%20Tasks.md)
+  - [Scrap Manager 与 Pasteboard Manager 的比较](../../documentation/Carbon/Pasteboard%20Manager%20Programming%20Guide/Scrap%20Manager%20Versus%20the%20Pasteboard%20Manager.md)
+  - [文档修订历史](../../documentation/Carbon/Pasteboard%20Manager%20Programming%20Guide/Document%20Revision%20History.md)
+- **[在 Mac OS 9 中使用 Navigation Services 编程](../../documentation/Carbon/Programming%20With%20Navigation%20Services%20in%20Mac%20OS%209/Introduction%20to%20Programming%20With%20Navigation%20Services%20in%20Mac%20OS%209.md)** — Guide · 2005-07-07，macOS，4 页
+  - [Navigation Services 概念](../../documentation/Carbon/Programming%20With%20Navigation%20Services%20in%20Mac%20OS%209/Navigation%20Services%20Concepts.md)
+  - [Navigation Services 任务](../../documentation/Carbon/Programming%20With%20Navigation%20Services%20in%20Mac%20OS%209/Navigation%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Programming%20With%20Navigation%20Services%20in%20Mac%20OS%209/Document%20Revision%20History.md)
+- **[使用 Appearance Manager 编程](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/toc.md)** — Guide · 2001-11-20，macOS，33 页
+  - [简介](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Introduction.md)
+  - [关于 Appearance Manager](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/About%20the%20Appearance%20Manager.md)
+  - [Appearance 控制面板](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/The%20Appearance%20Control%20Panel.md)
+  - [符合主题规范的用户界面](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/A%20Theme-Compliant%20User%20Interface.md)
+  - [定义函数映射与程序注册](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Definition%20Function%20Mapping%20and%20Program%20Registration.md)
+  - [Appearance Manager 的版本](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Appearance%20Manager%20Versions.md)
+  - [Appearance Manager 的内存要求](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Appearance%20Manager%20Memory%20Requirements.md)
+  - [创建自定义主题](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Creating%20Custom%20Themes.md)
+  - [符合主题规范的字体](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Fonts.md)
+  - [符合主题规范的声音](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Sounds.md)
+  - [使自定义界面元素符合主题规范的案例研究](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Case%20Studies%20for%20Making%20Custom%20Interface%20Elements%20Theme-Compliant.md)
+  - [创建符合主题规范程序的检查清单](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/A%20Checklist%20for%20Creating%20a%20Theme-Compliant%20Program.md)
+  - [符合主题规范的光标](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Cursors.md)
+  - [符合主题规范的控件](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Controls.md)
+  - [符合主题规范的窗口](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Windows.md)
+  - [符合主题规范的菜单](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Menus.md)
+  - [符合主题规范的颜色与图案](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Theme-Compliant%20Colors%20and%20Patterns.md)
+  - [使用符合主题规范的颜色与图案](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Using%20Theme-Compliant%20Colors%20and%20Patterns.md)
+  - [成为 Appearance Manager 的客户端](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Becoming%20a%20Client%20of%20the%20Appearance%20Manager.md)
+  - [使用 Appearance Manager](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Using%20the%20Appearance%20Manager.md)
+  - [使用主题笔刷](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Using%20Theme%20Brushes.md)
+  - [使用主题文本颜色](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Using%20Theme%20Text%20Colors.md)
+  - [保存和恢复绘图环境](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Saving%20and%20Restoring%20the%20Drawing%20Environment.md)
+  - [获取设备的颜色和深度信息](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Obtaining%20Device%20Color%20and%20Depth%20Information.md)
+  - [使使用 QuickDraw 绘制的对象符合主题规范](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Making%20an%20Object%20Drawn%20With%20QuickDraw%20Theme-Compliant.md)
+  - [使对话框用户项符合主题规范](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Making%20a%20Dialog%20User%20Item%20Theme-Compliant.md)
+  - [使控件用户面板符合主题规范](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Making%20a%20Control%20User%20Pane%20Theme-Compliant.md)
+  - [使自定义定义函数符合主题规范](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Making%20a%20Custom%20Definition%20Function%20Theme-Compliant.md)
+  - [绘制轨道](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Drawing%20Tracks.md)
+  - [图、表和列表](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Figures%2C%20Tables%2C%20and%20Listings.md)
+  - [Notices](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Notices.md)
+  - [文档版本历史](../../documentation/Carbon/Programming%20with%20the%20Appearance%20Manager/Document%20Version%20History.md)
+- **[使用 Language Analysis Manager 编程](../../documentation/Carbon/Programming%20With%20the%20Language%20Analysis%20Manager/Introduction%20to%20Programming%20With%20the%20Language%20Analysis%20Manager.md)** — Guide · 2003-05-01，macOS，3 页
+  - [Concepts](../../documentation/Carbon/Programming%20With%20the%20Language%20Analysis%20Manager/Concepts.md)
+  - [文档修订历史](../../documentation/Carbon/Programming%20With%20the%20Language%20Analysis%20Manager/Document%20Revision%20History.md)
+- **[使用 Text Encoding Conversion Manager 编程](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Introduction%20to%20Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager.md)** — Guide · 2005-07-07，macOS · CoreServices，7 页
+  - [深入理解字符编码概念](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Character%20Encoding%20Concepts%20In-Depth.md)
+  - [编写自定义插件](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Writing%20Custom%20Plug-Ins.md)
+  - [字符编码与 Internet 名称](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Character%20Encodings%20and%20Internet%20Names.md)
+  - [Mac OS 编码变体](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Mac%20OS%20Encoding%20Variants.md)
+  - [文档修订历史](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Programming%20With%20the%20Text%20Encoding%20Conversion%20Manager/Glossary.md)
+- **[在 Carbon 中提供帮助标签](../../documentation/Carbon/Providing%20Help%20Tags%20in%20Carbon/Introduction%20to%20Providing%20Help%20Tags%20in%20Carbon.md)** — Guide · 2002-07-01，macOS，4 页
+  - [Carbon Help Manager 概念](../../documentation/Carbon/Providing%20Help%20Tags%20in%20Carbon/Carbon%20Help%20Manager%20Concepts.md)
+  - [使用 Carbon Help Manager 添加帮助标签的任务](../../documentation/Carbon/Providing%20Help%20Tags%20in%20Carbon/Carbon%20Help%20Manager%20Tasks%20for%20Adding%20Help%20Tags.md)
+  - [文档修订历史](../../documentation/Carbon/Providing%20Help%20Tags%20in%20Carbon/Document%20Revision%20History.md)
+- **[面向 QuickDraw 开发者的 Quartz 编程指南](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Introduction%20to%20Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers.md)** — Guide · 2006-09-05，macOS，13 页
+  - [Strategies](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Strategies.md)
+  - [基本绘制](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Basic%20Drawing.md)
+  - [转换 PICT 数据](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Converting%20PICT%20Data.md)
+  - [命中测试](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Hit%20Testing.md)
+  - [Performance](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Performance.md)
+  - [Masking](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Masking.md)
+  - [更新区域](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Updating%20Regions.md)
+  - [使用位图图像数据](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Working%20With%20Bitmap%20Image%20Data.md)
+  - [离屏绘制](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Offscreen%20Drawing.md)
+  - [使用颜色](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Using%20Color.md)
+  - [文档修订历史](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Quartz%20Programming%20Guide%20for%20QuickDraw%20Developers/Glossary.md)
+- **[设置 Carbon 应用程序以使用服务菜单](../../documentation/Carbon/Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu/Introduction%20to%20Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu.md)** — Guide · 2003-12-10，macOS，5 页
+  - [Application Services 概念](../../documentation/Carbon/Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu/Application%20Services%20Concepts.md)
+  - [Application Services 任务](../../documentation/Carbon/Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu/Application%20Services%20Tasks.md)
+  - [服务的 Carbon 事件](../../documentation/Carbon/Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu/Carbon%20Events%20for%20Services.md)
+  - [文档修订历史](../../documentation/Carbon/Setting%20Up%20Your%20Carbon%20Application%20to%20Use%20the%20Services%20Menu/Document%20Revision%20History.md)
+- **[Spotlight 导入器编程指南](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/About%20Spotlight%20Importers.md)** — Guide · 2013-08-08，macOS · CoreServices，8 页
+  - [从文件中提取元数据](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Extracting%20Metadata%20from%20Files.md)
+  - [为元数据属性赋值](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Assigning%20Values%20to%20Metadata%20Attributes.md)
+  - [Spotlight 导入器架构格式](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Spotlight%20Importer%20Schema%20Format.md)
+  - [编写 Spotlight 导入器](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Writing%20a%20Spotlight%20Importer.md)
+  - [Spotlight 导入器性能](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Spotlight%20Importer%20Performance.md)
+  - [Spotlight 导入器故障排除](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Troubleshooting%20Spotlight%20Importers.md)
+  - [文档修订历史](../../documentation/Carbon/Spotlight%20Importer%20Programming%20Guide/Document%20Revision%20History.md)
+- **[Spotlight 概述](../../documentation/Carbon/Spotlight%20Overview/Introduction%20to%20Spotlight.md)** — Guide · 2013-08-08，macOS · CoreServices，7 页
+  - [什么是 Spotlight？](../../documentation/Carbon/Spotlight%20Overview/What%20is%20Spotlight.md)
+  - [Spotlight 是如何工作的？](../../documentation/Carbon/Spotlight%20Overview/How%20Does%20Spotlight%20Work.md)
+  - [Spotlight 元数据属性](../../documentation/Carbon/Spotlight%20Overview/Spotlight%20Metadata%20Attributes.md)
+  - [安全性和隐私注意事项](../../documentation/Carbon/Spotlight%20Overview/Security%20and%20Privacy%20Considerations.md)
+  - [Spotlight 与文档包](../../documentation/Carbon/Spotlight%20Overview/Spotlight%20and%20Document%20Bundles.md)
+  - [文档修订历史](../../documentation/Carbon/Spotlight%20Overview/Document%20Revision%20History.md)
+- **[在 Carbon 应用程序中支持打印](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Introduction%20to%20Supporting%20Printing%20in%20Your%20Carbon%20Application.md)** — Guide · 2004-08-31，macOS，6 页
+  - [面向 Carbon 开发者的打印概念](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Printing%20Concepts%20for%20Carbon%20Developers.md)
+  - [打印任务](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Printing%20Tasks.md)
+  - [采用 Carbon Printing Manager](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Adopting%20the%20Carbon%20Printing%20Manager.md)
+  - [文档修订历史](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Document%20Revision%20History.md)
+  - [索引](../../documentation/Carbon/Supporting%20Printing%20in%20Your%20Carbon%20Application/Index.md)
+- **[支持 Unicode 输入](../../documentation/Carbon/Supporting%20Unicode%20Input/Introduction%20to%20Supporting%20Unicode%20Input.md)** — Guide · 2008-10-01，macOS，4 页
+  - [Mac OS X 中的国际化文本](../../documentation/Carbon/Supporting%20Unicode%20Input/International%20Text%20in%20Mac%20OS%20X.md)
+  - [在应用程序和输入法中支持 Unicode 输入](../../documentation/Carbon/Supporting%20Unicode%20Input/Supporting%20Unicode%20Input%20in%20Applications%20and%20Input%20Methods.md)
+  - [文档修订历史](../../documentation/Carbon/Supporting%20Unicode%20Input/Document%20Revision%20History.md)
+- **[使用 URL Access Manager 传输数据](../../documentation/Carbon/Transferring%20Data%20With%20URL%20Access%20Manager/Transferring%20Data%20With%20URL%20Access%20Manager.md)** — Guide · 2007-05-03，macOS，2 页
+  - [文档修订历史](../../documentation/Carbon/Transferring%20Data%20With%20URL%20Access%20Manager/Document%20Revision%20History.md)
+- **[使用 Interface Builder Services 取消归档界面对象](../../documentation/Carbon/Unarchiving%20Interface%20Objects%20With%20Interface%20Builder%20Services/Introduction%20to%20Unarchiving%20Interface%20Objects%20With%20Interface%20Builder%20Services.md)** — Guide · 2004-02-17，macOS，4 页
+  - [Interface Builder Services 概念](../../documentation/Carbon/Unarchiving%20Interface%20Objects%20With%20Interface%20Builder%20Services/Interface%20Builder%20Services%20Concepts.md)
+  - [Interface Builder Services 任务](../../documentation/Carbon/Unarchiving%20Interface%20Objects%20With%20Interface%20Builder%20Services/Interface%20Builder%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Unarchiving%20Interface%20Objects%20With%20Interface%20Builder%20Services/Document%20Revision%20History.md)
+- **[理解 Carbon 中的文本输入和 Text Services Manager](../../documentation/Carbon/Understanding%20Text%20Input%20and%20the%20Text%20Services%20Manager%20in%20Carbon/Introduction%20to%20Understanding%20Text%20Input%20and%20the%20Text%20Services%20Manager%20in%20Carbon.md)** — Guide · 2008-09-30，macOS，3 页
+  - [理解文本输入和 Text Services Manager](../../documentation/Carbon/Understanding%20Text%20Input%20and%20the%20Text%20Services%20Manager%20in%20Carbon/Understanding%20Text%20Input%20and%20the%20Text%20Services%20Manager.md)
+  - [文档修订历史](../../documentation/Carbon/Understanding%20Text%20Input%20and%20the%20Text%20Services%20Manager%20in%20Carbon/Document%20Revision%20History.md)
+- **[升级到 Mac OS X HIToolbox](../../documentation/Carbon/Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox/Introduction%20to%20Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox.md)** — Guide · 2004-06-28，macOS，5 页
+  - [现代优势](../../documentation/Carbon/Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox/The%20Modern%20Advantage.md)
+  - [移植步骤](../../documentation/Carbon/Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox/Porting%20Steps.md)
+  - [移植示例：将用户项转换为自定义视图](../../documentation/Carbon/Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox/A%20Porting%20Example-%20Converting%20a%20User%20Item%20to%20a%20Custom%20View.md)
+  - [文档修订历史](../../documentation/Carbon/Upgrading%20to%20the%20Mac%20OS%20X%20HIToolbox/Document%20Revision%20History.md)
+- **[在应用程序中使用 Ink Services](../../documentation/Carbon/Using%20Ink%20Services%20in%20Your%20Application/Introduction%20to%20Using%20Ink%20Services%20in%20Your%20Application.md)** — Guide · 2003-07-24，macOS · Foundation，5 页
+  - [Ink Services 概念](../../documentation/Carbon/Using%20Ink%20Services%20in%20Your%20Application/Ink%20Services%20Concepts.md)
+  - [Ink Services 任务](../../documentation/Carbon/Using%20Ink%20Services%20in%20Your%20Application/Ink%20Services%20Tasks.md)
+  - [文档修订历史](../../documentation/Carbon/Using%20Ink%20Services%20in%20Your%20Application/Document%20Revision%20History.md)
+  - [术语表](../../documentation/Carbon/Using%20Ink%20Services%20in%20Your%20Application/Glossary.md)

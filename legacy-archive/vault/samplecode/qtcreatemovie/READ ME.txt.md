@@ -1,0 +1,81 @@
+---
+title: qtcreatemovie
+apple_id: DTS10000777
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: QuickTime
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/qtcreatemovie/Listings/READ_ME_txt.html
+archived_at: '2026-07-26T19:52:30.924675Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [qtcreatemovie](qtcreatemovie.md)
+
+
+[Next](WinPrefix.h.md)[Previous](QTVideo.h.md)
+
+# Retired Document
+
+__Important:__
+This sample code may not represent best practices for current development. The project may use deprecated symbols and illustrate technologies and techniques that are no longer recommended.
+
+# READ ME.txt
+
+```
+README
+
+CreateMovie sample version 1.0
+6/26/98
+
+1. ABOUT CREATEMOVIE
+
+CreateMovie is a sample application that demonstrates how to use the QuickTime APIs
+to create a very simple QuickTime movie with both a video track and a sound track.
+
+2. SPECIFICS
+
+CreateMovie is based largely on the sample code included in Inside Macintosh:QuickTime,
+starting with pg. 2-45. The user is first asked to specify a location on disk to create the new movie.
+A new movie is then created using CreateMovieFile function. Next, video & sound tracks
+are added with NewMovieTrack. Media for the sound & video tracks are added with the
+NewTrackMedia, BeginMediaEdits, EndMediaEdits sequence of calls. The video track media
+is created by drawing a string and color background into an offscreen GWorld. The sound
+track media is copied from a standard macintosh 'snd ' resource included in the application file.
+Because the code relies on the presence of a 'snd ' resource in the application file,
+under Windows 95/NT we must use the QuickTime 3.0 RezWack utility to embed the 'snd ' resource
+into the application file (details below).
+
+The code contains rather limited error checking. It's up to you to add the appropriate error-handling routines.
+
+3. BUILDING CREATEMOVIE
+
+Macintosh
+   - Included is a Metrowerks project file. The application will run on any system with QuickTime 2.5
+   or better installed.
+
+Windows 95/NT
+   - Included is a Microsoft Visual C++ 4.2 makefile. The application will run on any system with QuickTime 3.0
+   or better installed. Note once the program is built using the Microsoft Visual C++ 4.2 build environment,
+   we must embed the 'snd ' resource into the application executable file (xxx.exe) using the QuickTime 3.0
+   RezWack utility. Here's how it's done:
+
+   1) build the application normally using Microsoft Visual C++ 4.2. The result is an executable file named
+   "CreateMovie.exe".
+   2) copy the executable file "CreateMovie.exe" to the root level of the project (i.e. the *same* directory
+   as the files "MyRezWack.bat" , "RezWack.exe" and "SoundResources").
+   3) launch the DOS console application "MyRezWack.bat". This console application will use the QuickTime 3.0
+   RezWack utility to embed the 'snd ' resource (read from the "SoundResources" file) into a new executable
+   titled "CreateAMovie.exe". Launch the "CreateAMovie.exe" file and you are off and running.
+
+4. USING CREATEMOVIE
+
+Launch the application, and at the prompt, specify a location to create the new movie file. A new movie file
+is created, and the application quits. Open the movie with any Quicktime movie-savvy application such as MoviePlayer.
+
+Enjoy,
+
+QuickTime Team
+```
+
+[Next](WinPrefix.h.md)[Previous](QTVideo.h.md)
+

@@ -1,0 +1,1534 @@
+# QA
+
+> 导航：[总目录](../../README.md)
+
+共 1517 份文档。
+
+## iOS（220 份）
+
+- **["Error launching remote program: failed to get the task for process"](../../qa/-Error%20launching%20remote%20program-%20failed%20to%20get%20the%20task%20for%20process.md)** — QA · 2010-02-23，iOS
+- **["Info.plist does not contain a CFBundleResourceSpecification" errors when uploading to iTunes Connect](../../qa/-Info.plist%20does%20not%20contain%20a%20CFBundleResourceSpecification-%20errors%20when%20upload/-Info.plist%20does%20not%20contain%20a%20CFBundleResourceSpecification-%20errors%20when%20upload.md)** — QA · 2009-11-23，iOS
+- **["Payment requests are restricted to products returned as valid via Store Kit's didReceiveResponse method." when testing In App Purchase in the Sandbox environment](../../qa/-Payment%20requests%20are%20restricted%20to%20products%20returned%20as%20valid%20via%20Store%20Kit%27s%20d/-Payment%20requests%20are%20restricted%20to%20products%20returned%20as%20valid%20via%20Store%20Kit%27s%20d.md)** — QA · 2010-10-05，iOS · StoreKit
+- **["Xcode cannot find the software image to install this version"](../../qa/-Xcode%20cannot%20find%20the%20software%20image%20to%20install%20this%20version/-Xcode%20cannot%20find%20the%20software%20image%20to%20install%20this%20version.md)** — QA · 2009-10-28，iOS
+- **[Accessing Audio Files in Asset Catalogs](../../qa/Accessing%20Audio%20Files%20in%20Asset%20Catalogs/Accessing%20Audio%20Files%20in%20Asset%20Catalogs.md)** — QA · 2016-10-31，tvOS|iOS|macOS · AVFoundation
+- **[Accessing Image Metadata in iOS](../../qa/Accessing%20Image%20Metadata%20in%20iOS.md)** — QA · 2011-08-22，watchOS|iOS · UIKit
+- **[Accessing image properties with ImageIO](../../qa/Accessing%20image%20properties%20with%20ImageIO.md)** — QA · 2010-08-31，watchOS|iOS|macOS · Quartz
+- **[Adding Bluetooth LE MIDI Support](../../qa/Adding%20Bluetooth%20LE%20MIDI%20Support/Adding%20Bluetooth%20LE%20MIDI%20Support.md)** — QA · 2014-11-11，iOS|macOS · CoreMIDI
+- **[Animating the frame of a CALayer.](../../qa/Animating%20the%20frame%20of%20a%20CALayer.md)** — QA · 2011-02-08，iOS|macOS · QuartzCore
+- **[App Icons on iPhone, iPad and Apple Watch](../../qa/App%20Icons%20on%20iPhone%2C%20iPad%20and%20Apple%20Watch/App%20Icons%20on%20iPhone%2C%20iPad%20and%20Apple%20Watch.md)** — QA · 2016-12-20，iOS · UIKit
+- **[Application does not crash when launched from debugger but crashes when launched by user.](../../qa/Application%20does%20not%20crash%20when%20launched%20from%20debugger%20but%20crashes%20when%20launched.md)** — QA · 2009-05-22，iOS
+- **[Application unavailable for download on older devices](../../qa/Application%20unavailable%20for%20download%20on%20older%20devices/Application%20unavailable%20for%20download%20on%20older%20devices.md)** — QA · 2016-01-19，iOS
+- **[AUAudioFilePlayer - Using the Audio File Player Audio Unit](../../qa/AUAudioFilePlayer%20-%20Using%20the%20Audio%20File%20Player%20Audio%20Unit.md)** — QA · 2013-05-20，iOS|macOS · AudioUnit
+- **[Audio Host Time On iOS](../../qa/Audio%20Host%20Time%20On%20iOS.md)** — QA · 2014-01-15，iOS · CoreAudio
+- **[Audio Interruptions during Movie Playback](../../qa/Audio%20Interruptions%20during%20Movie%20Playback.md)** — QA · 2009-08-05，iOS · AudioToolbox
+- **[Audio panning with the 3D Mixer audio unit](../../qa/Audio%20panning%20with%20the%203D%20Mixer%20audio%20unit.md)** — QA · 2010-05-22，iOS · AudioUnit
+- **[Audio Queue - Handling Playback Interruptions](../../qa/qa2008/Audio%20Queue%20-%20Handling%20Playback%20Interruptions/qa1558.md)** — QA · 2009-06-17，iOS
+- **[Audio Queue - Looping Compressed Audio](../../qa/Audio%20Queue%20-%20Looping%20Compressed%20Audio.md)** — QA · 2013-08-09，iOS|macOS · AudioToolbox
+- **[Audio Queue - Offline Rendering](../../qa/Audio%20Queue%20-%20Offline%20Rendering.md)** — QA · 2013-01-02，iOS · AudioToolbox
+- **[Audio Queue - Playing an Audio File Containing HE-AAC Encoded Audio](../../qa/Audio%20Queue%20-%20Playing%20an%20Audio%20File%20Containing%20HE-AAC%20Encoded%20Audio.md)** — QA · 2009-04-21，iOS · AudioToolbox
+- **[Audio Queue - Recording to a compressed audio format.](../../qa/Audio%20Queue%20-%20Recording%20to%20a%20compressed%20audio%20format.md)** — QA · 2009-05-21，iOS · AudioToolbox
+- **[Audio Queue playback sample time and buffer sample time explained](../../qa/Audio%20Queue%20playback%20sample%20time%20and%20buffer%20sample%20time%20explained.md)** — QA · 2010-09-20，iOS|macOS · AudioToolbox
+- **[Audio Session - Ensuring audio playback continues when screen is locked](../../qa/Audio%20Session%20-%20Ensuring%20audio%20playback%20continues%20when%20screen%20is%20locked.md)** — QA · 2009-09-16，iOS · AudioToolbox
+- **[Audio Unit Processing Graph - Ensuring audio playback continues when screen is locked](../../qa/Audio%20Unit%20Processing%20Graph%20-%20Ensuring%20audio%20playback%20continues%20when%20screen%20is%20l.md)** — QA · 2010-03-15，iOS · AudioUnit
+- **[Audio Unit Properties and Core Foundation Data Types](../../qa/Audio%20Unit%20Properties%20and%20Core%20Foundation%20Data%20Types.md)** — QA · 2010-03-03，iOS|macOS · CoreAudio
+- **[AudioFileOpenWithCallbacks - Avoiding Permissions Error With MPEG-4 File Types](../../qa/AudioFileOpenWithCallbacks%20-%20Avoiding%20Permissions%20Error%20With%20MPEG-4%20File%20Types.md)** — QA · 2009-10-27，iOS|macOS · AudioToolbox
+- **[AUSampler - Available Audio Unit Parameters](../../qa/AUSampler%20-%20Available%20Audio%20Unit%20Parameters.md)** — QA · 2013-02-21，iOS|macOS · AudioUnit
+- **[Automatic orientation support for iPhone and iPad apps](../../qa/Automatic%20orientation%20support%20for%20iPhone%20and%20iPad%20apps.md)** — QA · 2013-08-06，iOS
+- **[Automating Version and Build Numbers Using agvtool](../../qa/Automating%20Version%20and%20Build%20Numbers%20Using%20agvtool/Automating%20Version%20and%20Build%20Numbers%20Using%20agvtool.md)** — QA · 2014-05-12，iOS|Xcode Developer Tools|macOS
+- **[AVAssetExportSession - Exporting a Trimmed Audio Asset](../../qa/AVAssetExportSession%20-%20Exporting%20a%20Trimmed%20Audio%20Asset.md)** — QA · 2011-01-11，iOS · AVFoundation
+- **[AVAudioPlayer Streaming Support](../../qa/AVAudioPlayer%20Streaming%20Support.md)** — QA · 2013-04-04，iOS · AVFoundation
+- **[AVAudioSession -  How setting a category and mode affect the ability to route audio to AirPlay](../../qa/AVAudioSession%20-%20How%20setting%20a%20category%20and%20mode%20affect%20the%20ability%20to%20route%20aud.md)** — QA · 2014-01-15，iOS · AVFoundation
+- **[AVAudioSession - Audio Session APIs & The Remote IO Render Proc.](../../qa/AVAudioSession%20-%20Audio%20Session%20APIs%20%26%20The%20Remote%20IO%20Render%20Proc.md)** — QA · 2013-10-04，iOS · AudioToolbox
+- **[AVAudioSession - AVAudioSessionSilenceSecondaryAudioHintNotification Explained](../../qa/AVAudioSession%20-%20AVAudioSessionSilenceSecondaryAudioHintNotification%20Explained.md)** — QA · 2015-01-08，iOS · AVFoundation
+- **[AVAudioSession - Differences between AVAudioSessionPortOverrideSpeaker and AVAudioSessionCategoryOptionDefaultToSpeaker Explained](../../qa/AVAudioSession%20-%20Differences%20between%20AVAudioSessionPortOverrideSpeaker%20and%20AVAud.md)** — QA · 2013-09-11，iOS · AudioToolbox
+- **[AVAudioSession - General recommendations for handling AVAudioSessionMediaServicesWereResetNotification](../../qa/AVAudioSession%20-%20General%20recommendations%20for%20handling%20AVAudioSessionMediaService/AVAudioSession%20-%20General%20recommendations%20for%20handling%20AVAudioSessionMediaService.md)** — QA · 2015-05-21，iOS · CoreAudio
+- **[AVAudioSession - Microphone Selection](../../qa/AVAudioSession%20-%20Microphone%20Selection.md)** — QA · 2014-01-21，iOS · AudioToolbox
+- **[AVAudioSession - Requesting Audio Session Preferences](../../qa/AVAudioSession%20-%20Requesting%20Audio%20Session%20Preferences.md)** — QA · 2015-10-14，iOS · AudioToolbox
+- **[Backwards Compatibility With libxml2 and iPhone SDK](../../qa/Backwards%20Compatibility%20With%20libxml2%20and%20iPhone%20SDK/Backwards%20Compatibility%20With%20libxml2%20and%20iPhone%20SDK.md)** — QA · 2009-08-05，iOS
+- **[Base SDK Missing](../../qa/Base%20SDK%20Missing/Base%20SDK%20Missing.md)** — QA · 2010-11-11，iOS
+- **[Bonjour over Bluetooth on iOS 5 and Later](../../qa/Bonjour%20over%20Bluetooth%20on%20iOS%205%20and%20Later.md)** — QA · 2013-11-14，iOS · Foundation
+- **[Building a Position Independent Executable](../../qa/Building%20a%20Position%20Independent%20Executable.md)** — QA · 2014-02-20，iOS|macOS
+- **[Cannot load underlying module for XCTest](../../qa/Cannot%20load%20underlying%20module%20for%20XCTest/Cannot%20load%20underlying%20module%20for%20XCTest.md)** — QA · 2017-10-25，iOS|Xcode Developer Tools|macOS · XCTest
+- **[Capturing a sequence of still images very quickly with AV Foundation on iOS](../../qa/Capturing%20a%20sequence%20of%20still%20images%20very%20quickly%20with%20AV%20Foundation%20on%20iOS.md)** — QA · 2014-07-17，iOS · AVFoundation
+- **[CATiledLayer and UIKit graphics](../../qa/CATiledLayer%20and%20UIKit%20graphics.md)** — QA · 2011-02-15，iOS
+- **[Checking Distribution Entitlements](../../qa/Checking%20Distribution%20Entitlements/Checking%20Distribution%20Entitlements.md)** — QA · 2015-10-08，iOS|Xcode Developer Tools|macOS
+- **[Checking the availability of iCloud Drive](../../qa/Checking%20the%20availability%20of%20iCloud%20Drive.md)** — QA · 2017-04-11，watchOS|tvOS|iOS|macOS · CloudKit
+- **[Choosing an inviter when using Multipeer Connectivity](../../qa/Choosing%20an%20inviter%20when%20using%20Multipeer%20Connectivity.md)** — QA · 2014-08-05，iOS · MultipeerConnectivity
+- **[Code signing fails with error 'resource fork, Finder information, or similar detritus not allowed'](../../qa/Code%20signing%20fails%20with%20error%20%27resource%20fork%2C%20Finder%20information%2C%20or%20similar%20det.md)** — QA · 2016-10-10，watchOS|tvOS|iOS|macOS
+- **[Concurrent NSOperations Failing On iOS 4](../../qa/Concurrent%20NSOperations%20Failing%20On%20iOS%204.md)** — QA · 2010-08-23，iOS · Foundation
+- **[Conditions Under Which Bluetooth State Restoration Will Relaunch An App](../../qa/Conditions%20Under%20Which%20Bluetooth%20State%20Restoration%20Will%20Relaunch%20An%20App.md)** — QA · 2017-09-08，iOS · CoreBluetooth
+- **[Configure document types for your iCloud container](../../qa/Configure%20document%20types%20for%20your%20iCloud%20container.md)** — QA · 2017-07-27，iOS · UIKit
+- **[Controlling The Location Services Status Bar (Blue Bar) From Your App](../../qa/Controlling%20The%20Location%20Services%20Status%20Bar%20%28Blue%20Bar%29%20From%20Your%20App.md)** — QA · 2017-09-05，iOS · CoreLocation
+- **[Converting to Precomposed Unicode](../../qa/Converting%20to%20Precomposed%20Unicode.md)** — QA · 2011-09-14，iOS|macOS · Foundation
+- **[Core Animation properties and Reference Counting](../../qa/Core%20Animation%20properties%20and%20Reference%20Counting.md)** — QA · 2013-05-16，iOS|macOS · QuartzCore
+- **[CoreAudio PublicUtility - Installing the CARingBuffer Update](../../qa/CoreAudio%20PublicUtility%20-%20Installing%20the%20CARingBuffer%20Update.md)** — QA · 2009-10-09，iOS|macOS · CoreAudio
+- **[Creating Core Data Managed Object Subclasses with Xcode](../../qa/Creating%20Core%20Data%20Managed%20Object%20Subclasses%20with%20Xcode/Creating%20Core%20Data%20Managed%20Object%20Subclasses%20with%20Xcode.md)** — QA · 2017-03-09，tvOS|iOS|Xcode Developer Tools|macOS · CoreBluetooth
+- **[Creating easy-to-read short links to the App Store for your apps and company](../../qa/Creating%20easy-to-read%20short%20links%20to%20the%20App%20Store%20for%20your%20apps%20and%20company.md)** — QA · 2013-04-24，iOS|macOS
+- **[Creating IOSurface-backed CVPixelBuffers for accessing video data in OpenGL ES](../../qa/Creating%20IOSurface-backed%20CVPixelBuffers%20for%20accessing%20video%20data%20in%20OpenGL%20ES.md)** — QA · 2014-03-17，iOS · CoreVideo
+- **[Creating textures in the PVRTC compression format](../../qa/Creating%20textures%20in%20the%20PVRTC%20compression%20format.md)** — QA · 2009-07-14，iOS · OpenGLES
+- **[Customizing subtitles with AVPlayer](../../qa/Customizing%20subtitles%20with%20AVPlayer.md)** — QA · 2013-08-17，iOS|macOS · AVFoundation
+- **[Debugging Deployed iOS Apps](../../qa/Debugging%20Deployed%20iOS%20Apps.md)** — QA · 2015-07-30，iOS
+- **[Debugging issues with CloudKit subscriptions](../../qa/Debugging%20issues%20with%20CloudKit%20subscriptions.md)** — QA · 2016-11-16，tvOS|iOS|macOS · CloudKit
+- **[Delivering touch events to a view outside the bounds of its parent view](../../qa/Delivering%20touch%20events%20to%20a%20view%20outside%20the%20bounds%20of%20its%20parent%20view/qa1812.md)** — QA · 2014-04-11，iOS · UIKit
+- **[Deprecated built-in variables in GLSL Shaders](../../qa/Deprecated%20built-in%20variables%20in%20GLSL%20Shaders.md)** — QA · 2010-06-04，iOS|macOS · OpenGL
+- **[Detecting phone numbers and links in an iPhone application](../../qa/Detecting%20phone%20numbers%20and%20links%20in%20an%20iPhone%20application/Detecting%20phone%20numbers%20and%20links%20in%20an%20iPhone%20application.md)** — QA · 2009-10-27，iOS · UIKit
+- **[Determining the availability of the AAC hardware encoder at runtime](../../qa/Determining%20the%20availability%20of%20the%20AAC%20hardware%20encoder%20at%20runtime.md)** — QA · 2010-12-23，iOS · AudioToolbox
+- **[Disabling user interaction in an app while the media is still loading](../../qa/Disabling%20user%20interaction%20in%20an%20app%20while%20the%20media%20is%20still%20loading.md)** — QA · 2013-09-03，iOS
+- **[Embedding a framework in an iMessage App](../../qa/Embedding%20a%20framework%20in%20an%20iMessage%20App/Embedding%20a%20framework%20in%20an%20iMessage%20App.md)** — QA · 2017-09-26，iOS · MessageUI
+- **[Embedding Content with Swift in Objective-C](../../qa/Embedding%20Content%20with%20Swift%20in%20Objective-C/Embedding%20Content%20with%20Swift%20in%20Objective-C.md)** — QA · 2014-10-07，watchOS|iOS|Xcode Developer Tools
+- **[Ensure that property list keys UIPrerenderedIcon and UIRequiresPersistentWiFi have a Boolean value type](../../qa/Ensure%20that%20property%20list%20keys%20UIPrerenderedIcon%20and%20UIRequiresPersistentWiFi%20ha/Ensure%20that%20property%20list%20keys%20UIPrerenderedIcon%20and%20UIRequiresPersistentWiFi%20ha.md)** — QA · 2008-09-18，iOS
+- **[ExtAudioFile - ExtAudioFileTell Incorrect Position Work Around](../../qa/ExtAudioFile%20-%20ExtAudioFileTell%20Incorrect%20Position%20Work%20Around.md)** — QA · 2009-12-07，iOS|macOS · AudioToolbox
+- **[FairPlay Streaming Server SDK Development Credentials](../../qa/FairPlay%20Streaming%20Server%20SDK%20Development%20Credentials.md)** — QA · 2017-08-31，tvOS|Safari|iOS · AVFoundation
+- **[Finding and Fixing Category Method Name Clashes](../../qa/Finding%20and%20Fixing%20Category%20Method%20Name%20Clashes/Finding%20and%20Fixing%20Category%20Method%20Name%20Clashes.md)** — QA · 2016-03-23，watchOS|tvOS|iOS|macOS
+- **[Finding the latest Audio Tools for Xcode 4.3 or later](../../qa/Finding%20the%20latest%20Audio%20Tools%20for%20Xcode%204.3%20or%20later/Finding%20the%20latest%20Audio%20Tools%20for%20Xcode%204.3%20or%20later.md)** — QA · 2012-10-04，iOS|macOS · CoreAudio
+- **[Getting a Packet Trace](../../qa/Getting%20a%20Packet%20Trace.md)** — QA · 2016-08-30，iOS|macOS
+- **[Getting attachments from a CMSampleBufferRef object](../../qa/Getting%20attachments%20from%20a%20CMSampleBufferRef%20object.md)** — QA · 2017-07-03，iOS|macOS · CoreMedia
+- **[Getting the pixel data from a CGImage object](../../qa/Getting%20the%20pixel%20data%20from%20a%20CGImage%20object.md)** — QA · 2008-08-27，watchOS|iOS|macOS · ApplicationServices
+- **[Handling Popover Controllers During Orientation Changes](../../qa/Handling%20Popover%20Controllers%20During%20Orientation%20Changes.md)** — QA · 2010-12-10，iOS · UIKit
+- **[Handling “The network connection was lost” Errors](../../qa/Handling%20%E2%80%9CThe%20network%20connection%20was%20lost%E2%80%9D%20Errors.md)** — QA · 2017-01-25，watchOS|tvOS|iOS|macOS · Foundation
+- **[Hey Siri, How Can I Improve the Recognition of My App's Name?](../../qa/Hey%20Siri%2C%20How%20Can%20I%20Improve%20the%20Recognition%20of%20My%20App%27s%20Name/Hey%20Siri%2C%20How%20Can%20I%20Improve%20the%20Recognition%20of%20My%20App%27s%20Name.md)** — QA · 2017-10-27，iOS · Intents
+- **[Hiding iAd banners when ads are not available](../../qa/Hiding%20iAd%20banners%20when%20ads%20are%20not%20available.md)** — QA · 2010-09-14，iOS · iAd
+- **[How can a build engineer distribute an app on behalf of the team?](../../qa/How%20can%20a%20build%20engineer%20distribute%20an%20app%20on%20behalf%20of%20the%20team.md)** — QA · 2014-11-13，iOS
+- **[How do I achieve smooth video scrubbing with AVPlayer seekToTime:?](../../qa/How%20do%20I%20achieve%20smooth%20video%20scrubbing%20with%20AVPlayer%20seekToTime.md)** — QA · 2016-03-23，iOS|macOS · AVFoundation
+- **[How do I get my application to show up in the Open in... menu.](../../qa/How%20do%20I%20get%20my%20application%20to%20show%20up%20in%20the%20Open%20in...%20menu/How%20do%20I%20get%20my%20application%20to%20show%20up%20in%20the%20Open%20in...%20menu.md)** — QA · 2016-11-16，iOS · UIKit
+- **[How Do I Leverage Data in a Trained Network For Use With MPS CNN?](../../qa/How%20Do%20I%20Leverage%20Data%20in%20a%20Trained%20Network%20For%20Use%20With%20MPS%20CNN.md)** — QA · 2017-03-21，tvOS|iOS · Metal Performance Shaders
+- **[How do I prevent files from being backed up to iCloud and iTunes?](../../qa/How%20do%20I%20prevent%20files%20from%20being%20backed%20up%20to%20iCloud%20and%20iTunes.md)** — QA · 2016-05-16，iOS · System
+- **[How do I programmatically quit my iOS application?](../../qa/How%20do%20I%20programmatically%20quit%20my%20iOS%20application.md)** — QA · 2012-04-09，iOS
+- **[How do I rename my application in Xcode?](../../qa/How%20do%20I%20rename%20my%20application%20in%20Xcode/How%20do%20I%20rename%20my%20application%20in%20Xcode.md)** — QA · 2014-05-13，iOS|Xcode Developer Tools
+- **[How do I set the volume of audio media for playback with AVPlayer on iOS?](../../qa/How%20do%20I%20set%20the%20volume%20of%20audio%20media%20for%20playback%20with%20AVPlayer%20on%20iOS.md)** — QA · 2014-05-21，iOS · AVFoundation
+- **[How do I take a screenshot of my app that contains both UIKit and Camera elements?](../../qa/How%20do%20I%20take%20a%20screenshot%20of%20my%20app%20that%20contains%20both%20UIKit%20and%20Camera%20element.md)** — QA · 2013-05-14，iOS
+- **[How do I work-around an issue where some lines in my Core Text output have extra line spacing?](../../qa/How%20do%20I%20work-around%20an%20issue%20where%20some%20lines%20in%20my%20Core%20Text%20output%20have%20extra.md)** — QA · 2010-07-26，iOS
+- **[How iOS Determines the Language For Your App](../../qa/How%20iOS%20Determines%20the%20Language%20For%20Your%20App.md)** — QA · 2016-03-23，iOS
+- **[How many calls can I make to the Speech Framework API?](../../qa/How%20many%20calls%20can%20I%20make%20to%20the%20Speech%20Framework%20API.md)** — QA · 2017-07-19，iOS · Speech
+- **[How to capture video frames from the camera as images using AV Foundation on iOS](../../qa/How%20to%20capture%20video%20frames%20from%20the%20camera%20as%20images%20using%20AV%20Foundation%20on%20iOS.md)** — QA · 2010-09-29，iOS · AVFoundation
+- **[How to determine whether an AVPlayerItem can be played at rates greater than 1.0](../../qa/How%20to%20determine%20whether%20an%20AVPlayerItem%20can%20be%20played%20at%20rates%20greater%20than%201.0.md)** — QA · 2016-03-23，tvOS|iOS|macOS · AVFoundation
+- **[How to fix OpenGL ES application crashes when moving to the background](../../qa/How%20to%20fix%20OpenGL%20ES%20application%20crashes%20when%20moving%20to%20the%20background.md)** — QA · 2012-04-09，iOS · OpenGLES
+- **[How to Match a Crash Report to a Build](../../qa/How%20to%20Match%20a%20Crash%20Report%20to%20a%20Build.md)** — QA · 2013-01-24，iOS|Xcode Developer Tools|macOS
+- **[How to opt out of video mirroring](../../qa/How%20to%20opt%20out%20of%20video%20mirroring.md)** — QA · 2011-04-04，iOS
+- **[How to pause the animation of a layer tree](../../qa/How%20to%20pause%20the%20animation%20of%20a%20layer%20tree.md)** — QA · 2011-08-22，iOS|macOS · QuartzCore
+- **[How to reproduce bugs reported against App Store submissions](../../qa/How%20to%20reproduce%20bugs%20reported%20against%20App%20Store%20submissions/How%20to%20reproduce%20bugs%20reported%20against%20App%20Store%20submissions.md)** — QA · 2016-02-18，iOS|Xcode Developer Tools|macOS
+- **[How to securely serve Key files for HTTP Live Streaming with HTTPS](../../qa/How%20to%20securely%20serve%20Key%20files%20for%20HTTP%20Live%20Streaming%20with%20HTTPS.md)** — QA · 2009-08-27，iOS
+- **[HTTPS and Test Servers](../../qa/HTTPS%20and%20Test%20Servers.md)** — QA · 2017-11-02，watchOS|tvOS|iOS|macOS
+- **[icon dimensions (0x0) don't meet the size requirements.](../../qa/icon%20dimensions%20%280x0%29%20don%27t%20meet%20the%20size%20requirements.md)** — QA · 2012-02-13，iOS
+- **[Improved logging in Objective-C](../../qa/Improved%20logging%20in%20Objective-C.md)** — QA · 2011-10-04，iOS|macOS
+- **[Improving Image Drawing Performance on iOS](../../qa/Improving%20Image%20Drawing%20Performance%20on%20iOS.md)** — QA · 2010-08-18，iOS · CoreGraphics
+- **[In-App Purchase Product Identifiers](../../qa/In-App%20Purchase%20Product%20Identifiers/In-App%20Purchase%20Product%20Identifiers.md)** — QA · 2018-05-02，iOS · StoreKit
+- **[Incoming requests for /.well-known/apple-app-site-association file](../../qa/Incoming%20requests%20for%20-.well-known-apple-app-site-association%20file.md)** — QA · 2016-03-31，iOS
+- **[iOS 10 and the Legacy VoIP Architecture](../../qa/iOS%2010%20and%20the%20Legacy%20VoIP%20Architecture.md)** — QA · 2016-10-20，iOS · PushKit
+- **[iOS Wi-Fi Management APIs](../../qa/iOS%20Wi-Fi%20Management%20APIs.md)** — QA · 2017-08-14，iOS
+- **[iPhone/iPod Touch: application executable is missing a required architecture. At least one of the following architecture(s) must be present: armv6](../../qa/iPhone-iPod%20Touch-%20application%20executable%20is%20missing%20a%20required%20architecture.%20At/iPhone-iPod%20Touch-%20application%20executable%20is%20missing%20a%20required%20architecture.%20At.md)** — QA · 2012-02-13，iOS
+- **[Launch Image Doesn't Show Up for iPhone Apps](../../qa/Launch%20Image%20Doesn%27t%20Show%20Up%20for%20iPhone%20Apps.md)** — QA · 2013-08-06，iOS
+- **[Launching the App Store from an iOS application](../../qa/Launching%20the%20App%20Store%20from%20an%20iOS%20application.md)** — QA · 2017-06-14，iOS
+- **[Making Certificates and Keys Available To Your App](../../qa/Making%20Certificates%20and%20Keys%20Available%20To%20Your%20App.md)** — QA · 2014-09-17，iOS · Security
+- **[Making the app name on a device consistent with the name in iTunes Connect.](../../qa/Making%20the%20app%20name%20on%20a%20device%20consistent%20with%20the%20name%20in%20iTunes%20Connect/Making%20the%20app%20name%20on%20a%20device%20consistent%20with%20the%20name%20in%20iTunes%20Connect.md)** — QA · 2017-07-24，iOS · WatchKit
+- **[Making Web Inspector work with iOS 7 from Safari 6](../../qa/Making%20Web%20Inspector%20work%20with%20iOS%207%20from%20Safari%206.md)** — QA · 2013-09-23，Safari|iOS · WebKit
+- **[Manual Code Signing for both iOS and tvOS](../../qa/Manual%20Code%20Signing%20for%20both%20iOS%20and%20tvOS/Manual%20Code%20Signing%20for%20both%20iOS%20and%20tvOS.md)** — QA · 2017-06-14，iOS
+- **[Matching a Bar Tint Color To Your Corporate or Brand Color](../../qa/Matching%20a%20Bar%20Tint%20Color%20To%20Your%20Corporate%20or%20Brand%20Color.md)** — QA · 2014-03-20，iOS · UIKit
+- **[Missing Enterprise Distribution Certificate Private Keys](../../qa/Missing%20Enterprise%20Distribution%20Certificate%20Private%20Keys.md)** — QA · 2014-07-29，iOS · Security
+- **[Modifying Image Metadata Without Recompressing Image](../../qa/Modifying%20Image%20Metadata%20Without%20Recompressing%20Image.md)** — QA · 2015-09-08，iOS|macOS · ImageIO
+- **[MPMoviePlayerController plays movie audio but not video](../../qa/MPMoviePlayerController%20plays%20movie%20audio%20but%20not%20video.md)** — QA · 2010-07-20，iOS
+- **[MTAudioProcessingTap - The Pre and Post effect MTAudioProcessingTapCreationFlags](../../qa/MTAudioProcessingTap%20-%20The%20Pre%20and%20Post%20effect%20MTAudioProcessingTapCreationFlags/MTAudioProcessingTap%20-%20The%20Pre%20and%20Post%20effect%20MTAudioProcessingTapCreationFlags.md)** — QA · 2013-03-11，iOS · AVFoundation
+- **[Network Service Type Settings](../../qa/Network%20Service%20Type%20Settings.md)** — QA · 2016-09-14，iOS|macOS · Foundation
+- **[New default journaling mode for Core Data SQLite stores in iOS 7 and OS X Mavericks](../../qa/New%20default%20journaling%20mode%20for%20Core%20Data%20SQLite%20stores%20in%20iOS%207%20and%20OS%20X%20Maveri.md)** — QA · 2014-01-29，iOS|macOS · CoreData
+- **[NSDateFormatter and Internet Dates](../../qa/NSDateFormatter%20and%20Internet%20Dates.md)** — QA · 2014-08-14，iOS|macOS · Foundation
+- **[NSNetService and Automatic Reference Counting (ARC)](../../qa/NSNetService%20and%20Automatic%20Reference%20Counting%20%28ARC%29.md)** — QA · 2011-10-28，iOS|macOS · Foundation
+- **[Numerous Small Packet Exchanges Result In Poor TCP Performance](../../qa/Numerous%20Small%20Packet%20Exchanges%20Result%20In%20Poor%20TCP%20Performance.md)** — QA · 2011-09-09，iOS|macOS
+- **[OpenGL ES multithreading and EAGLSharegroup](../../qa/OpenGL%20ES%20multithreading%20and%20EAGLSharegroup.md)** — QA · 2010-03-09，iOS · OpenGLES
+- **[OpenGL ES View Snapshot](../../qa/OpenGL%20ES%20View%20Snapshot.md)** — QA · 2012-09-19，iOS
+- **[Opening Keyboard Settings from a Keyboard Extension](../../qa/Opening%20Keyboard%20Settings%20from%20a%20Keyboard%20Extension/Opening%20Keyboard%20Settings%20from%20a%20Keyboard%20Extension.md)** — QA · 2016-08-02，iOS · UIKit
+- **[Operation could not be completed. No such file or directory](../../qa/Operation%20could%20not%20be%20completed.%20No%20such%20file%20or%20directory/Operation%20could%20not%20be%20completed.%20No%20such%20file%20or%20directory.md)** — QA · 2010-08-31，iOS
+- **[Playing media while in the background using AV Foundation on iOS](../../qa/Playing%20media%20while%20in%20the%20background%20using%20AV%20Foundation%20on%20iOS.md)** — QA · 2017-07-31，iOS · AVFoundation
+- **[Preventing a View From Rotating](../../qa/Preventing%20a%20View%20From%20Rotating.md)** — QA · 2015-03-27，iOS
+- **[Preventing HTTP Live Streaming video in an iOS 8 app from being captured during screen recording on Yosemite](../../qa/Preventing%20HTTP%20Live%20Streaming%20video%20in%20an%20iOS%208%20app%20from%20being%20captured%20during.md)** — QA · 2015-03-10，iOS|macOS · QuickTime
+- **[Preventing Sensitive Information From Appearing In The Task Switcher](../../qa/Preventing%20Sensitive%20Information%20From%20Appearing%20In%20The%20Task%20Switcher.md)** — QA · 2014-05-12，iOS
+- **[Preventing the Status Bar from Covering Your Views](../../qa/Preventing%20the%20Status%20Bar%20from%20Covering%20Your%20Views/Preventing%20the%20Status%20Bar%20from%20Covering%20Your%20Views.md)** — QA · 2014-01-09，iOS
+- **[purgeIdleCellConnections Log Message](../../qa/purgeIdleCellConnections%20Log%20Message.md)** — QA · 2013-01-02，iOS · Foundation
+- **[Recording a movie (including audio) and playing a sound simultaneously](../../qa/Recording%20a%20movie%20%28including%20audio%29%20and%20playing%20a%20sound%20simultaneously.md)** — QA · 2013-02-19，iOS · AVFoundation
+- **[Recording Audio from an App Extension](../../qa/Recording%20Audio%20from%20an%20App%20Extension.md)** — QA · 2014-09-17，iOS
+- **[Reducing Download Size for iOS App Updates](../../qa/Reducing%20Download%20Size%20for%20iOS%20App%20Updates.md)** — QA · 2014-09-10，iOS
+- **[Reducing the size of my App](../../qa/Reducing%20the%20size%20of%20my%20App.md)** — QA · 2017-04-25，watchOS|tvOS|iOS
+- **[Remote I/O Audio Unit - Handling changes in the inNumberOfFrames value when rendering output](../../qa/Remote%20I-O%20Audio%20Unit%20-%20Handling%20changes%20in%20the%20inNumberOfFrames%20value%20when%20rend.md)** — QA · 2013-02-07，iOS · AudioUnit
+- **[Removing flickering in OpenGL ES applications](../../qa/Removing%20flickering%20in%20OpenGL%20ES%20applications.md)** — QA · 2010-03-24，iOS · OpenGLES
+- **[Rendering the currently visible frame of a paused AVPlayer that has a custom video compositor](../../qa/Rendering%20the%20currently%20visible%20frame%20of%20a%20paused%20AVPlayer%20that%20has%20a%20custom%20vid.md)** — QA · 2017-12-04，iOS · AVFoundation
+- **[Resetting Privacy Settings in iOS and macOS](../../qa/Resetting%20Privacy%20Settings%20in%20iOS%20and%20macOS/Resetting%20Privacy%20Settings%20in%20iOS%20and%20macOS.md)** — QA · 2017-02-15，iOS|macOS
+- **[Resolving](../../qa/Resolving/Resolving.md)** — QA · 2009-05-26，iOS
+- **[Resolving](../../qa/Resolving%20%282010%29.md)** — QA · 2010-08-06，iOS
+- **[Resolving App ID Prefix Mismatching](../../qa/Resolving%20App%20ID%20Prefix%20Mismatching.md)** — QA · 2014-09-10，iOS|macOS · Security
+- **[Resolving App Store Approval Issues for HTTP Live Streaming](../../qa/Resolving%20App%20Store%20Approval%20Issues%20for%20HTTP%20Live%20Streaming.md)** — QA · 2015-03-25，iOS · CoreMedia
+- **[Resolving the "No identities are available for signing" Error](../../qa/Resolving%20the%20-No%20identities%20are%20available%20for%20signing-%20Error.md)** — QA · 2014-06-17，iOS|Xcode Developer Tools|macOS · Security
+- **[Resolving the Invalid Signature binary rejection](../../qa/Resolving%20the%20Invalid%20Signature%20binary%20rejection/Resolving%20the%20Invalid%20Signature%20binary%20rejection.md)** — QA · 2015-09-29，iOS · Security
+- **[Resolving the Potential Loss of Keychain Access warning](../../qa/Resolving%20the%20Potential%20Loss%20of%20Keychain%20Access%20warning.md)** — QA · 2015-06-02，iOS · Security
+- **[Resolving the Privacy-Sensitive Data App Rejection](../../qa/Resolving%20the%20Privacy-Sensitive%20Data%20App%20Rejection.md)** — QA · 2016-10-07，watchOS|tvOS|iOS
+- **[Resolving the Provisioning Profile Invalid Status](../../qa/Resolving%20the%20Provisioning%20Profile%20Invalid%20Status.md)** — QA · 2014-08-28，iOS · Security
+- **[Responding to screen capture in iOS 11.](../../qa/Responding%20to%20screen%20capture%20in%20iOS%2011.md)** — QA · 2017-10-25，iOS · ReplayKit
+- **[Restoring the screen brightness when an app leaves the active state](../../qa/Restoring%20the%20screen%20brightness%20when%20an%20app%20leaves%20the%20active%20state.md)** — QA · 2013-06-04，iOS
+- **[Resumable Downloads](../../qa/Resumable%20Downloads.md)** — QA · 2012-02-13，watchOS|iOS|macOS · Foundation
+- **[Screen Capture in UIKit Applications](../../qa/Screen%20Capture%20in%20UIKit%20Applications.md)** — QA · 2011-03-28，iOS
+- **[Sending SMS Programmatically](../../qa/Sending%20SMS%20Programmatically.md)** — QA · 2017-04-14，iOS · MessageUI
+- **[Setting the orientation of video with AV Foundation](../../qa/Setting%20the%20orientation%20of%20video%20with%20AV%20Foundation.md)** — QA · 2015-06-24，iOS · AVFoundation
+- **[Setting up Xcode to automatically manage your provisioning profiles](../../qa/Setting%20up%20Xcode%20to%20automatically%20manage%20your%20provisioning%20profiles.md)** — QA · 2017-06-14，iOS|Xcode Developer Tools|macOS · AppKit
+- **[Specifying color space information for pixel buffers](../../qa/Specifying%20color%20space%20information%20for%20pixel%20buffers.md)** — QA · 2014-06-05，iOS|macOS · AVFoundation
+- **[Specifying the renderer for SpriteKit and SceneKit](../../qa/Specifying%20the%20renderer%20for%20SpriteKit%20and%20SceneKit.md)** — QA · 2015-10-08，iOS|macOS
+- **[Storing Private Data](../../qa/Storing%20Private%20Data.md)** — QA · 2010-07-22，iOS · System
+- **[Supporting In-App Purchase in iMessage apps.](../../qa/Supporting%20In-App%20Purchase%20in%20iMessage%20apps/Supporting%20In-App%20Purchase%20in%20iMessage%20apps.md)** — QA · 2016-09-13，iOS
+- **[Supporting native screen scale in your graphics application](../../qa/Supporting%20native%20screen%20scale%20in%20your%20graphics%20application.md)** — QA · 2015-11-09，iOS · Metal
+- **[Swift app crashes when trying to reference Swift library libswiftCore.dylib.](../../qa/Swift%20app%20crashes%20when%20trying%20to%20reference%20Swift%20library%20libswiftCore.dylib.md)** — QA · 2015-02-17，iOS · IOKit
+- **[Synchronous Networking On The Main Thread](../../qa/Synchronous%20Networking%20On%20The%20Main%20Thread.md)** — QA · 2010-12-23，iOS
+- **[Tab-based SpriteKit Apps and Scene Caching](../../qa/Tab-based%20SpriteKit%20Apps%20and%20Scene%20Caching.md)** — QA · 2015-06-23，iOS · SpriteKit
+- **[The beta-reports-active Entitlement](../../qa/The%20beta-reports-active%20Entitlement.md)** — QA · 2014-10-14，iOS · Security
+- **[The package does not contain an Info.plist](../../qa/The%20package%20does%20not%20contain%20an%20Info.plist/The%20package%20does%20not%20contain%20an%20Info.plist.md)** — QA · 2015-07-14，iOS|Xcode Developer Tools|macOS
+- **[TLS Session Cache](../../qa/TLS%20Session%20Cache.md)** — QA · 2015-08-19，iOS|macOS · Foundation
+- **[Troubleshooting Universal Links](../../qa/Troubleshooting%20Universal%20Links.md)** — QA · 2016-05-16，iOS · UIKit
+- **[Understanding Core Data iCloud Store Migration When Testing an iOS App Update](../../qa/Understanding%20Core%20Data%20iCloud%20Store%20Migration%20When%20Testing%20an%20iOS%20App%20Update.md)** — QA · 2015-03-05，iOS · CoreData
+- **[Understanding Memory Usage Limits for WatchKit Apps and Extensions](../../qa/Understanding%20Memory%20Usage%20Limits%20for%20WatchKit%20Apps%20and%20Extensions.md)** — QA · 2015-05-23，iOS · WatchKit
+- **[Understanding Sample Perspective in the Sampler Instrument](../../qa/Understanding%20Sample%20Perspective%20in%20the%20Sampler%20Instrument/Understanding%20Sample%20Perspective%20in%20the%20Sampler%20Instrument.md)** — QA · 2009-06-01，iOS|macOS
+- **[Understanding the bytes per row value returned by CVPixelBufferGetBytesPerRow](../../qa/Understanding%20the%20bytes%20per%20row%20value%20returned%20by%20CVPixelBufferGetBytesPerRow.md)** — QA · 2014-05-01，iOS
+- **[Understanding the UIRequiredDeviceCapabilities key](../../qa/Understanding%20the%20UIRequiredDeviceCapabilities%20key.md)** — QA · 2013-08-15，iOS
+- **[Unembedding views from stack views](../../qa/Unembedding%20views%20from%20stack%20views/Unembedding%20views%20from%20stack%20views.md)** — QA · 2016-05-16，iOS|macOS
+- **[Uniform Type Identifiers and Custom Document Type Resources](../../qa/Uniform%20Type%20Identifiers%20and%20Custom%20Document%20Type%20Resources.md)** — QA · 2014-01-29，iOS|macOS
+- **[Updating from a wildcard App ID to an explicit App ID](../../qa/Updating%20from%20a%20wildcard%20App%20ID%20to%20an%20explicit%20App%20ID/Updating%20from%20a%20wildcard%20App%20ID%20to%20an%20explicit%20App%20ID.md)** — QA · 2010-01-09，iOS · StoreKit
+- **[Updating the Display Name of Your App](../../qa/Updating%20the%20Display%20Name%20of%20Your%20App/Updating%20the%20Display%20Name%20of%20Your%20App.md)** — QA · 2015-03-26，iOS
+- **[Updating the metadata of iCloud containers for iCloud Drive](../../qa/Updating%20the%20metadata%20of%20iCloud%20containers%20for%20iCloud%20Drive.md)** — QA · 2016-04-04，iOS · Foundation
+- **[Updating Your Apps To Support 64-bit in iOS 11](../../qa/Updating%20Your%20Apps%20To%20Support%2064-bit%20in%20iOS%2011.md)** — QA · 2017-10-30，iOS
+- **[Using External Accessory framework with Bluetooth devices.](../../qa/Using%20External%20Accessory%20framework%20with%20Bluetooth%20devices.md)** — QA · 2012-10-23，iOS
+- **[Using NSStreams For A TCP Connection Without NSHost](../../qa/Using%20NSStreams%20For%20A%20TCP%20Connection%20Without%20NSHost.md)** — QA · 2012-03-27，iOS · Foundation
+- **[Using SKCloudServiceController to determine your device's music library capabilities](../../qa/Using%20SKCloudServiceController%20to%20determine%20your%20device%27s%20music%20library%20capabili.md)** — QA · 2016-07-05，iOS · StoreKit
+- **[Using the correct Bluetooth LE Advertising and Connection Parameters for a stable connection](../../qa/Using%20the%20correct%20Bluetooth%20LE%20Advertising%20and%20Connection%20Parameters%20for%20a%20stabl.md)** — QA · 2017-09-26，tvOS|iOS|macOS · CoreBluetooth
+- **[Using the ExtAudioFileSeek and ExtAudioFileTell Functions](../../qa/Using%20the%20ExtAudioFileSeek%20and%20ExtAudioFileTell%20Functions.md)** — QA · 2008-09-29，iOS|macOS · AudioToolbox
+- **[Using the iPodTime audio unit for playing audio books](../../qa/Using%20the%20iPodTime%20audio%20unit%20for%20playing%20audio%20books.md)** — QA · 2010-09-03，iOS · AudioUnit
+- **[Using UIWebView to display select document types](../../qa/Using%20UIWebView%20to%20display%20select%20document%20types.md)** — QA · 2009-08-25，iOS · UIKit
+- **[Video Player unexpectedly shows Alternate Track button for Subtitles and Captions](../../qa/Video%20Player%20unexpectedly%20shows%20Alternate%20Track%20button%20for%20Subtitles%20and%20Caption/Video%20Player%20unexpectedly%20shows%20Alternate%20Track%20button%20for%20Subtitles%20and%20Caption.md)** — QA · 2013-10-29，iOS|macOS · AVFoundation
+- **[VideoToolbox compression property kVTCompressionPropertyKey_DataRateLimits explained](../../qa/VideoToolbox%20compression%20property%20kVTCompressionPropertyKeyDataRateLimits%20explai.md)** — QA · 2017-07-31，iOS|macOS · CoreMedia
+- **[View Snapshots on iOS 7](../../qa/View%20Snapshots%20on%20iOS%207.md)** — QA · 2014-05-01，iOS
+- **[Viewing iOS-Optimized PNGs](../../qa/Viewing%20iOS-Optimized%20PNGs.md)** — QA · 2013-08-13，iOS
+- **[Viewing the interface of your Swift code](../../qa/Viewing%20the%20interface%20of%20your%20Swift%20code/Viewing%20the%20interface%20of%20your%20Swift%20code.md)** — QA · 2016-03-23，tvOS|iOS|Xcode Developer Tools|macOS
+- **[Views incorrectly draw underneath the status bar](../../qa/Views%20incorrectly%20draw%20underneath%20the%20status%20bar/Views%20incorrectly%20draw%20underneath%20the%20status%20bar.md)** — QA · 2012-02-07，iOS
+- **[Voice Processing Audio Unit Quality Settings](../../qa/Voice%20Processing%20Audio%20Unit%20Quality%20Settings.md)** — QA · 2010-07-27，iOS · AudioUnit
+- **[WARNING: The Copy Bundle Resources build phase contains this target's Info.plist file 'Info.plist'.](../../qa/WARNING-%20The%20Copy%20Bundle%20Resources%20build%20phase%20contains%20this%20target%27s%20Info.plist/WARNING-%20The%20Copy%20Bundle%20Resources%20build%20phase%20contains%20this%20target%27s%20Info.plist.md)** — QA · 2016-06-29，iOS|Xcode Developer Tools
+- **[What version of Xcode and SDK should I be using when building for the App Store?](../../qa/What%20version%20of%20Xcode%20and%20SDK%20should%20I%20be%20using%20when%20building%20for%20the%20App%20Store.md)** — QA · 2013-10-16，iOS|Xcode Developer Tools|macOS
+- **[When should I use a wildcard App ID?](../../qa/When%20should%20I%20use%20a%20wildcard%20App%20ID/When%20should%20I%20use%20a%20wildcard%20App%20ID.md)** — QA · 2016-08-23，iOS
+- **[When to upgrade your iPhone OS SDK](../../qa/When%20to%20upgrade%20your%20iPhone%20OS%20SDK/When%20to%20upgrade%20your%20iPhone%20OS%20SDK.md)** — QA · 2009-12-04，iOS
+- **[Where are my local calendars?](../../qa/Where%20are%20my%20local%20calendars/Where%20are%20my%20local%20calendars.md)** — QA · 2016-07-05，iOS · EventKit
+- **[Why am I getting a 'Failed to start remote debugserver for <name>.app on <device>' error?](../../qa/Why%20am%20I%20getting%20a%20%27Failed%20to%20start%20remote%20debugserver%20for%20.app%20on%20%27%20error.md)** — QA · 2015-03-09，iOS
+- **[Why am I getting device support errors when uploading my app?](../../qa/Why%20am%20I%20getting%20device%20support%20errors%20when%20uploading%20my%20app.md)** — QA · 2012-09-18，iOS
+- **[Why are my shadows drawn upside down in iOS 3.2 and later?](../../qa/Why%20are%20my%20shadows%20drawn%20upside%20down%20in%20iOS%203.2%20and%20later.md)** — QA · 2010-08-31，iOS
+- **[Why can't I save data to my application's bundle when running on the device?](../../qa/Why%20can%27t%20I%20save%20data%20to%20my%20application%27s%20bundle%20when%20running%20on%20the%20device.md)** — QA · 2012-11-06，iOS · Foundation
+- **[Why do I get an](../../qa/Why%20do%20I%20get%20an/Why%20do%20I%20get%20an.md)** — QA · 2011-01-20，iOS
+- **[Why do I get an "Invalid application-identifier Entitlement" error?](../../qa/Why%20do%20I%20get%20an%20-Invalid%20application-identifier%20Entitlement-%20error.md)** — QA · 2014-03-24，iOS|Xcode Developer Tools|macOS
+- **[Why does iTunes tell me my Ad Hoc-signed application "is not a valid application"?](../../qa/Why%20does%20iTunes%20tell%20me%20my%20Ad%20Hoc-signed%20application%20-is%20not%20a%20valid%20application/Why%20does%20iTunes%20tell%20me%20my%20Ad%20Hoc-signed%20application%20-is%20not%20a%20valid%20application.md)** — QA · 2009-05-26，iOS
+- **[Why does my app launch to a black screen on iOS 4?](../../qa/Why%20does%20my%20app%20launch%20to%20a%20black%20screen%20on%20iOS%204/Why%20does%20my%20app%20launch%20to%20a%20black%20screen%20on%20iOS%204.md)** — QA · 2013-08-08，iOS|macOS
+- **[Why does my app launch to a black screen on iPad?](../../qa/Why%20does%20my%20app%20launch%20to%20a%20black%20screen%20on%20iPad.md)** — QA · 2013-07-25，iOS
+- **[Why does UILocalizedIndexedCollation not give localized results?](../../qa/Why%20does%20UILocalizedIndexedCollation%20not%20give%20localized%20results.md)** — QA · 2011-07-14，iOS · UIKit
+- **[Why doesn't my device load a file that loads fine in the Simulator?](../../qa/Why%20doesn%27t%20my%20device%20load%20a%20file%20that%20loads%20fine%20in%20the%20Simulator.md)** — QA · 2010-06-01，iOS
+- **[Why doesn't the keyboard show when my text input view is tapped?](../../qa/Why%20doesn%27t%20the%20keyboard%20show%20when%20my%20text%20input%20view%20is%20tapped.md)** — QA · 2014-05-14，iOS
+- **[Why is my code acting differently when I debug with Zombies?](../../qa/Why%20is%20my%20code%20acting%20differently%20when%20I%20debug%20with%20Zombies.md)** — QA · 2012-08-06，iOS|Xcode Developer Tools|macOS
+- **[Why won't my UIViewController rotate with the device?](../../qa/Why%20won%27t%20my%20UIViewController%20rotate%20with%20the%20device.md)** — QA · 2013-04-18，iOS
+- **[Xcode debugger does not display the value of my variables.](../../qa/Xcode%20debugger%20does%20not%20display%20the%20value%20of%20my%20variables/Xcode%20debugger%20does%20not%20display%20the%20value%20of%20my%20variables.md)** — QA · 2017-02-09，watchOS|tvOS|iOS|Xcode Developer Tools
+- **[Xcode Organizer says "Could not support development"](../../qa/Xcode%20Organizer%20says%20-Could%20not%20support%20development/Xcode%20Organizer%20says%20-Could%20not%20support%20development.md)** — QA · 2009-09-08，iOS
+- **[Your (Personal Team) cannot be used to Code Sign your App for submission to the App Store](../../qa/Your%20%28Personal%20Team%29%20cannot%20be%20used%20to%20Code%20Sign%20your%20App%20for%20submission%20to%20the.md)** — QA · 2017-03-14，iOS
+
+## Java（11 份）
+
+- **[Customizing Component Border Colors](../../qa/qa2001/Customizing%20Component%20Border%20Colors/qa1272.md)** — QA · 2011-07-11，Java
+- **[Developer Tools JBoss and Tomcat Do Not Start After Installing Java 1.4.2 Update](../../qa/qa2001/Developer%20Tools%20JBoss%20and%20Tomcat%20Do%20Not%20Start%20After%20Installing%20Java%201.4.2%20Update/Legacy%20Documentclose%20button.md)** — QA · 2004-03-04，Java
+- **[Illustrating document window changes in Swing](../../qa/qa2001/Illustrating%20document%20window%20changes%20in%20Swing/qa1146.md)** — QA · 2011-07-11，Java
+- **[Important Java Directories on Mac OS X](../../qa/Important%20Java%20Directories%20on%20Mac%20OS%20X.md)** — QA · 2010-10-14，Java
+- **[Java on Intel-based Macs](../../qa/Java%20on%20Intel-based%20Macs/Java%20on%20Intel-based%20Macs.md)** — QA · 2006-10-17，Java
+- **[Rendering Multi-line text in JTree nodes](../../qa/qa2001/Rendering%20Multi-line%20text%20in%20JTree%20nodes/qa1091.md)** — QA · 2011-07-12，Java
+- **[Right- and Control-Drags on Mac OS X](../../qa/Right-%20and%20Control-Drags%20on%20Mac%20OS%20X.md)** — QA · 2005-06-29，Java
+- **[Server Processes and the Dock](../../qa/qa2001/Server%20Processes%20and%20the%20Dock/qa1328.md)** — QA · 2011-07-12，Java
+- **[Sharing Browser Cookies With Java Applets](../../qa/qa2001/Sharing%20Browser%20Cookies%20With%20Java%20Applets/Legacy%20Documentclose%20button.md)** — QA · 2004-10-13，Java
+- **[Unsolicited About Boxes](../../qa/Unsolicited%20About%20Boxes.md)** — QA · 2011-05-05，Java
+- **[Using the QuickTime for Java libraries on OS X](../../qa/qa2001/Using%20the%20QuickTime%20for%20Java%20libraries%20on%20OS%20X/Legacy%20Documentclose%20button.md)** — QA · 2002-04-08，Java
+
+## macOS（1256 份）
+
+- **['aete' in Java](../../qa/java/%27aete%27%20in%20Java/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **['dynamic shared library not made a weak library in output with MACOSX_DEPLOYMENT_TARGET...' bug](../../qa/qa2001/%27dynamic%20shared%20library%20not%20made%20a%20weak%20library%20in%20output%20with%20MACOSXDEPLOYMENTT/Legacy%20Documentclose%20button.md)** — QA · 2011-07-10，Xcode Developer Tools|macOS
+- **['ptyp' Resource Documentation](../../qa/gxpd/%27ptyp%27%20Resource%20Documentation.md)** — QA · 1995-08-01，macOS
+- **[-27835 Error at GXFinishPage](../../qa/gx/-27835%20Error%20at%20GXFinishPage/Legacy%20Documentclose%20button.md)** — QA · 1995-08-01，macOS
+- **[-28482 Errors When Selecting Markers](../../qa/qd3d/-28482%20Errors%20When%20Selecting%20Markers.md)** — QA · 1995-06-01，macOS
+- **[-51 or -39 Error Code with GX Printing](../../qa/gxpd/-51%20or%20-39%20Error%20Code%20with%20GX%20Printing.md)** — QA · 1995-07-01，macOS
+- **[128Mb SDRAM ICs limitation on original "Bronze Keyboard" Powerbook G3](../../qa/qa2001/128Mb%20SDRAM%20ICs%20limitation%20on%20original%20-Bronze%20Keyboard-%20Powerbook%20G3/qa1040.md)** — QA · 2001-06-21，macOS
+- **[3D Acceleration](../../qa/qd3d/3D%20Acceleration.md)** — QA · 1996-04-08，macOS
+- **[48 bit & 64 bit Pixel Format support in QuickTime](../../qa/qa2001/48%20bit%20%26%2064%20bit%20Pixel%20Format%20support%20in%20QuickTime/qa1114.md)** — QA · 2011-07-10，macOS · QuickTime
+- **[68K Open Transport Code on Power Macintoshes](../../qa/nw/68K%20Open%20Transport%20Code%20on%20Power%20Macintoshes/Not%20Recommended%20Documentclose%20button.md)** — QA · 1997-03-14，macOS，2 页
+- **[A Method for AMT to "remember" Changes Made on Screen](../../qa/amt%20pe/A%20Method%20for%20AMT%20to%20-remember-%20Changes%20Made%20on%20Screen.md)** — QA · 1995-08-01，macOS
+- **[A SCSI little secret](../../qa/hw/A%20SCSI%20little%20secret/hw81.md)** — QA · 1999-12-20，macOS
+- **[A5 World](../../qa/ppcsys/A5%20World.md)** — QA · 1995-05-01，macOS
+- **[Aborting a OTConnect in Progress](../../qa/nw/Aborting%20a%20OTConnect%20in%20Progress/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Accessing Decompressed Images](../../qa/qtmtb/Accessing%20Decompressed%20Images.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Accessing DHCP Options](../../qa/nw/Accessing%20DHCP%20Options/Legacy%20Documentclose%20button.md)** — QA · 1999-04-19，macOS
+- **[Accessing File Control Blocks](../../qa/fl/Accessing%20File%20Control%20Blocks.md)** — QA · 1999-10-05，macOS · CoreServices
+- **[Accessing HTTPS Proxy Settings](../../qa/qa2001/Accessing%20HTTPS%20Proxy%20Settings/qa1234.md)** — QA · 2003-02-19，macOS · SystemConfiguration
+- **[Accessing the ARA/PPP password](../../qa/nw/Accessing%20the%20ARA-PPP%20password/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Accessing the DialAssist data](../../qa/nw/Accessing%20the%20DialAssist%20data/Legacy%20Documentclose%20button.md)** — QA · 1997-07-11，macOS
+- **[Accessing the Geographical Database in Apple's Map Control Panel](../../qa/ops/Accessing%20the%20Geographical%20Database%20in%20Apple%27s%20Map%20Control%20Panel/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Activating CrashReporter in OS X](../../qa/qa2001/Activating%20CrashReporter%20in%20OS%20X/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-05-13，macOS
+- **[Adding a movie reference to a movie](../../qa/Adding%20a%20movie%20reference%20to%20a%20movie.md)** — QA · 2004-09-16，macOS · QuickTime
+- **[Adding a Text Track to a QuickTime Video](../../qa/qtmtb/Adding%20a%20Text%20Track%20to%20a%20QuickTime%20Video.md)** — QA · 1995-05-01，macOS
+- **[Adding an automated Window menu to your application](../../qa/qa2001/Adding%20an%20automated%20Window%20menu%20to%20your%20application/qa1080.md)** — QA · 2001-10-30，macOS
+- **[Adding and removing a submenu from a menu in Cocoa](../../qa/Adding%20and%20removing%20a%20submenu%20from%20a%20menu%20in%20Cocoa/Adding%20and%20removing%20a%20submenu%20from%20a%20menu%20in%20Cocoa.md)** — QA · 2007-09-10，macOS · AppKit
+- **[Adding Color Icons to Menu Items](../../qa/tb/Adding%20Color%20Icons%20to%20Menu%20Items/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Adding dependencies with kmodload](../../qa/qa2001/Adding%20dependencies%20with%20kmodload/Legacy%20Documentclose%20button.md)** — QA · 2001-12-05，macOS
+- **[Adding File and Clipboard Support to a QuickDraw 3D Application](../../qa/qd3d/Adding%20File%20and%20Clipboard%20Support%20to%20a%20QuickDraw%203D%20Application.md)** — QA · 1995-06-01，macOS
+- **[Adding menu separator items to controls in a Sherlock channel](../../qa/qa2001/Adding%20menu%20separator%20items%20to%20controls%20in%20a%20Sherlock%20channel/qa1219.md)** — QA · 2003-01-21，macOS
+- **[Adding metadata to a QuickTime movie using the QuickTime MetaData APIs](../../qa/Adding%20metadata%20to%20a%20QuickTime%20movie%20using%20the%20QuickTime%20MetaData%20APIs.md)** — QA · 2010-04-28，macOS · QuickTime
+- **[Adding metadata to an iTunes file using the QuickTime Metadata APIs](../../qa/Adding%20metadata%20to%20an%20iTunes%20file%20using%20the%20QuickTime%20Metadata%20APIs.md)** — QA · 2007-02-14，macOS · QuickTime
+- **[Adding Print Items to a Dialog](../../qa/gxpd/Adding%20Print%20Items%20to%20a%20Dialog.md)** — QA · 1995-08-01，macOS
+- **[Adding QuickDraw GX Printing Panels](../../qa/gxpd/Adding%20QuickDraw%20GX%20Printing%20Panels.md)** — QA · 1995-08-01，macOS
+- **[Adding QuickTime Movie Data to Non-QuickTime Files](../../qa/qtmtb/Adding%20QuickTime%20Movie%20Data%20to%20Non-QuickTime%20Files.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Adding Special Folders](../../qa/tb/Adding%20Special%20Folders/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Adding Unicode characters to Text Media in a Text Track](../../qa/Adding%20Unicode%20characters%20to%20Text%20Media%20in%20a%20Text%20Track.md)** — QA · 2011-07-19，macOS · QuickTime
+- **[Additional URL Access Error Codes](../../qa/nw/Additional%20URL%20Access%20Error%20Codes/Legacy%20Documentclose%20button.md)** — QA · 2002-12-18，macOS
+- **[AddrToName](../../qa/nw/AddrToName/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[Adjusting the movie brightness](../../qa/Adjusting%20the%20movie%20brightness.md)** — QA · 2004-09-16，macOS
+- **[Adopting Scripting Targets for Composing Mail](../../qa/Adopting%20Scripting%20Targets%20for%20Composing%20Mail.md)** — QA · 2013-10-10，macOS
+- **[Advertising a Bonjour service on a specific set of networking interfaces.](../../qa/Advertising%20a%20Bonjour%20service%20on%20a%20specific%20set%20of%20networking%20interfaces.md)** — QA · 2007-02-12，macOS · Foundation
+- **[AFPCommand() variation](../../qa/nw/AFPCommand%28%29%20variation/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[AGL Changes for Mac OS X Leopard (v. 10.5)](../../qa/AGL%20Changes%20for%20Mac%20OS%20X%20Leopard%20%28v.%2010.5%29.md)** — QA · 2008-01-04，macOS · OpenGL
+- **[aglChoosePixelFormat, The Inside Scoop](../../qa/ogl/aglChoosePixelFormat%2C%20The%20Inside%20Scoop.md)** — QA · 2000-04-03，macOS
+- **[All Geometry Vertices Need UV Parameterization](../../qa/qd3d/All%20Geometry%20Vertices%20Need%20UV%20Parameterization.md)** — QA · 1997-07-11，macOS
+- **[Allocate and Disk Full Error](../../qa/fl/Allocate%20and%20Disk%20Full%20Error.md)** — QA · 2011-07-10，macOS · CoreServices
+- **[Allocating and sharing memory with user space from an IOKit driver](../../qa/Allocating%20and%20sharing%20memory%20with%20user%20space%20from%20an%20IOKit%20driver.md)** — QA · 2008-10-13，macOS · Kernel
+- **[Allocating Memory to MPW](../../qa/qtvr/Allocating%20Memory%20to%20MPW.md)** — QA · 1995-09-01，macOS
+- **[Allowing OpenGL applications to utilize the integrated GPU](../../qa/Allowing%20OpenGL%20applications%20to%20utilize%20the%20integrated%20GPU/Allowing%20OpenGL%20applications%20to%20utilize%20the%20integrated%20GPU.md)** — QA · 2013-01-31，macOS · OpenGL
+- **[Altering the GX General Print Panel](../../qa/gxpd/Altering%20the%20GX%20General%20Print%20Panel.md)** — QA · 1996-10-25，macOS
+- **[Always check the result code from AudioUnitGetProperty when used with kAudioUnitProperty_FastDispatch](../../qa/Always%20check%20the%20result%20code%20from%20AudioUnitGetProperty%20when%20used%20with%20kAudioUnit.md)** — QA · 2010-02-24，macOS · AudioUnit
+- **[Ambient Coefficient](../../qa/qd3d/Ambient%20Coefficient.md)** — QA · 1996-04-08，macOS
+- **[AMT_PE and QuickTime for Windows Compatibility under Windows 95](../../qa/amt%20pe/AMTPE%20and%20QuickTime%20for%20Windows%20Compatibility%20under%20Windows%2095.md)** — QA · 1995-08-01，macOS
+- **[Animation Techniques](../../qa/qtvr/Animation%20Techniques.md)** — QA · 1995-06-01，macOS
+- **[API for Non-GX Printing?](../../qa/qd/API%20for%20Non-GX%20Printing.md)** — QA · 1996-03-04，macOS
+- **[Apple Accelerator Card & Textures](../../qa/qd3d/Apple%20Accelerator%20Card%20%26%20Textures.md)** — QA · 1997-07-11，macOS
+- **[Apple Mass Storage Class Driver always matches to my device at startup](../../qa/qa2001/Apple%20Mass%20Storage%20Class%20Driver%20always%20matches%20to%20my%20device%20at%20startup/Legacy%20Documentclose%20button.md)** — QA · 2002-05-23，macOS
+- **[Apple RGB and Generic RGB profiles explained](../../qa/Apple%20RGB%20and%20Generic%20RGB%20profiles%20explained.md)** — QA · 2005-10-17，macOS · ApplicationServices
+- **[AppleGuide 1.2.7 Fixes PowerPC Context & Coach Handler Crashes](../../qa/hs/AppleGuide%201.2.7%20Fixes%20PowerPC%20Context%20%26%20Coach%20Handler%20Crashes.md)** — QA · 1996-05-14，macOS
+- **[AppleGuideGlueLib.xcoff Name Change](../../qa/hs/AppleGuideGlueLib.xcoff%20Name%20Change.md)** — QA · 1996-05-14，macOS
+- **[AppleScript for Java](../../qa/java/AppleScript%20for%20Java/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[AppleTalk Limitations](../../qa/nw/AppleTalk%20Limitations/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Application Freezes on Startup with WorldScript I v7.1](../../qa/qd/Application%20Freezes%20on%20Startup%20with%20WorldScript%20I%20v7.1.md)** — QA · 1995-07-01，macOS
+- **[Application-Defined Functions,SetSequenceProgressProc](../../qa/qticm/Application-Defined%20Functions%2CSetSequenceProgressProc.md)** — QA · 1995-05-01，macOS
+- **[Are the Name Registry device tree nodes unique?](../../qa/hw/Are%20the%20Name%20Registry%20device%20tree%20nodes%20unique/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-10-11，macOS
+- **[Are the root control, the root view, and the content view the same entity?](../../qa/qa2001/Are%20the%20root%20control%2C%20the%20root%20view%2C%20and%20the%20content%20view%20the%20same%20entity/qa1214.md)** — QA · 2002-11-12，macOS
+- **[Are there any OSStatus values I can use in my programs?](../../qa/ov/Are%20there%20any%20OSStatus%20values%20I%20can%20use%20in%20my%20programs.md)** — QA · 1999-11-22，macOS
+- **[Asserting fast-back-to-back transfers in the PCI Power Mac](../../qa/hw/Asserting%20fast-back-to-back%20transfers%20in%20the%20PCI%20Power%20Mac/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Assigning Keystroke Combinations](../../qa/qtvr/Assigning%20Keystroke%20Combinations.md)** — QA · 1995-06-01，macOS
+- **[ATA Manager Events Clarified](../../qa/dv/ATA%20Manager%20Events%20Clarified.md)** — QA · 1995-12-07，macOS
+- **[ATSUI and MLTE Printing](../../qa/qd/ATSUI%20and%20MLTE%20Printing.md)** — QA · 2000-11-08，macOS
+- **[Audio Server PlugIn - The AudioServerPlugIn_MachServices plist Key](../../qa/Audio%20Server%20PlugIn%20-%20The%20AudioServerPlugInMachServices%20plist%20Key/Audio%20Server%20PlugIn%20-%20The%20AudioServerPlugInMachServices%20plist%20Key.md)** — QA · 2013-11-19，macOS · CoreAudio
+- **[Audio Unit - Handling audio unit authorization (copy protection)](../../qa/Audio%20Unit%20-%20Handling%20audio%20unit%20authorization%20%28copy%20protection%29/Audio%20Unit%20-%20Handling%20audio%20unit%20authorization%20%28copy%20protection%29.md)** — QA · 2010-09-13，macOS · AudioUnit
+- **[Audio Unit - Testing your custom Audio Unit in a sandboxed environment](../../qa/Audio%20Unit%20-%20Testing%20your%20custom%20Audio%20Unit%20in%20a%20sandboxed%20environment.md)** — QA · 2012-09-10，macOS · CoreAudio
+- **[Audio Unit Resizing](../../qa/Audio%20Unit%20Resizing.md)** — QA · 2004-03-23，macOS · AudioUnit
+- **[Audio Units - How to determine the version of an Audio Unit](../../qa/Audio%20Units%20-%20How%20to%20determine%20the%20version%20of%20an%20Audio%20Unit.md)** — QA · 2013-07-30，macOS · AudioUnit
+- **[AudioChannelLayout - What's the Audio Channel Order when the Layout has a Channel Bitmap?](../../qa/AudioChannelLayout%20-%20What%27s%20the%20Audio%20Channel%20Order%20when%20the%20Layout%20has%20a%20Channe.md)** — QA · 2009-04-12，macOS · QuickTime
+- **[AudioConverter: How do I know when I am done?](../../qa/AudioConverter-%20How%20do%20I%20know%20when%20I%20am%20done.md)** — QA · 2007-08-23，macOS · AudioToolbox
+- **[AudioDevice Sample Rates](../../qa/AudioDevice%20Sample%20Rates.md)** — QA · 2011-07-22，macOS · CoreAudio
+- **[AUGraphs and AudioUnit connections](../../qa/AUGraphs%20and%20AudioUnit%20connections.md)** — QA · 2003-12-09，macOS · AudioUnit
+- **[AUSampler - Adding Instrument Information and Loop Points to Core Audio Files](../../qa/AUSampler%20-%20Adding%20Instrument%20Information%20and%20Loop%20Points%20to%20Core%20Audio%20Files.md)** — QA · 2013-05-29，macOS · AudioToolbox
+- **[AuthorizationCreateFromExternalForm 100022 Error Explained](../../qa/AuthorizationCreateFromExternalForm%20100022%20Error%20Explained.md)** — QA · 2007-01-04，macOS · Security
+- **[Automatically starting and stopping application instances without using Monitor](../../qa/qa2001/Automatically%20starting%20and%20stopping%20application%20instances%20without%20using%20Monitor/qa1064.md)** — QA · 2001-07-25，macOS
+- **[auval - Invalid Selector For AU Type Error on Mac OS X 10.7](../../qa/auval%20-%20Invalid%20Selector%20For%20AU%20Type%20Error%20on%20Mac%20OS%20X%2010.7.md)** — QA · 2011-04-13，macOS · AudioUnit
+- **[Availability of Quartz Composer Patches in Web Kit](../../qa/Availability%20of%20Quartz%20Composer%20Patches%20in%20Web%20Kit/Availability%20of%20Quartz%20Composer%20Patches%20in%20Web%20Kit.md)** — QA · 2007-03-05，macOS · Quartz
+- **[Available FireWire Isochronous Bandwidth](../../qa/Available%20FireWire%20Isochronous%20Bandwidth.md)** — QA · 2004-07-07，macOS · IOKit
+- **[Avoiding DragDrawingProc Pixel Trails](../../qa/tb/Avoiding%20DragDrawingProc%20Pixel%20Trails/Legacy%20Documentclose%20button.md)** — QA · 1996-10-25，macOS
+- **[Avoiding Kernel Event Conflicts](../../qa/Avoiding%20Kernel%20Event%20Conflicts.md)** — QA · 2011-07-26，macOS · Kernel
+- **[Avoiding Pauses When Looping Audio files with QuickTime](../../qa/Avoiding%20Pauses%20When%20Looping%20Audio%20files%20with%20QuickTime.md)** — QA · 2004-09-08，macOS · QuickTime
+- **[Avoiding the -42 error with DiscRecording](../../qa/Avoiding%20the%20-42%20error%20with%20DiscRecording.md)** — QA · 2004-05-25，macOS · DiscRecording
+- **[Background Printing On, Print Monitor Dialog Missing](../../qa/qd/Background%20Printing%20On%2C%20Print%20Monitor%20Dialog%20Missing.md)** — QA · 1996-05-14，macOS
+- **[Background-only apps with NSStatusItems become active in 10.1 on NSStatusItem clicks](../../qa/qa2001/Background-only%20apps%20with%20NSStatusItems%20become%20active%20in%2010.1%20on%20NSStatusItem%20cl/qa1081.md)** — QA · 2011-07-10，macOS · AppKit
+- **[Base-Derived async image codecs must implement ImageCodecQueueStarting and ImageCodecQueueStopping](../../qa/qa2001/Base-Derived%20async%20image%20codecs%20must%20implement%20ImageCodecQueueStarting%20and%20Image/Legacy%20Documentclose%20button.md)** — QA · 2002-07-09，macOS · QuickTime
+- **[Batch Exporting movie sound tracks with ConvertMovieToFile()](../../qa/qtmtb/Batch%20Exporting%20movie%20sound%20tracks%20with%20ConvertMovieToFile%28%29.md)** — QA · 2011-07-10，macOS · QuickTime
+- **[Be careful when using AuthorizationCreate](../../qa/Be%20careful%20when%20using%20AuthorizationCreate.md)** — QA · 2011-07-26，macOS · Security
+- **[BeginMediaEdits -2050 badDataRefIndex error after calling NewMovie](../../qa/qtmtb/BeginMediaEdits%20-2050%20badDataRefIndex%20error%20after%20calling%20NewMovie.md)** — QA · 2011-07-10，macOS · QuickTime
+- **[Bizarre Extension Loading Order: BackQuote Sorts Between "A" and "B".](../../qa/ops/Bizarre%20Extension%20Loading%20Order-%20BackQuote%20Sorts%20Between%20-A-%20and%20-B/Legacy%20Documentclose%20button.md)** — QA · 1996-02-09，macOS
+- **[Bluetooth Radio Power Class for Apple Systems](../../qa/qa2001/Bluetooth%20Radio%20Power%20Class%20for%20Apple%20Systems/qa1278.md)** — QA · 2011-07-10，macOS
+- **[BOM characters in 'utxt' clipboard flavor](../../qa/qa2001/BOM%20characters%20in%20%27utxt%27%20clipboard%20flavor/qa1221.md)** — QA · 2011-07-10，macOS · AppKit
+- **[Bonjour and wake from sleep](../../qa/Bonjour%20and%20wake%20from%20sleep.md)** — QA · 2003-09-18，macOS
+- **[Bonjour enforces the service type format in Panther](../../qa/Bonjour%20enforces%20the%20service%20type%20format%20in%20Panther.md)** — QA · 2004-03-23，macOS
+- **[Bonjour enforces the TXT record format in Panther](../../qa/Bonjour%20enforces%20the%20TXT%20record%20format%20in%20Panther.md)** — QA · 2018-06-04，macOS
+- **[Bonjour Printer Subtype for HTTP](../../qa/Bonjour%20Printer%20Subtype%20for%20HTTP.md)** — QA · 2008-03-25，macOS
+- **[Bonjour service types used in Mac OS X](../../qa/Bonjour%20service%20types%20used%20in%20Mac%20OS%20X.md)** — QA · 2018-06-04，macOS
+- **[Bonjour TXT record rate limiting in Panther](../../qa/Bonjour%20TXT%20record%20rate%20limiting%20in%20Panther.md)** — QA · 2003-10-23，macOS
+- **[Booting after invoking the Open Firmware user interface](../../qa/hw/Booting%20after%20invoking%20the%20Open%20Firmware%20user%20interface/hw48.md)** — QA · 1999-02-15，macOS
+- **[BowelsOfTheMemoryManager (aka YourHeapIsProbablyCorrupt)](../../qa/me/BowelsOfTheMemoryManager%20%28aka%20YourHeapIsProbablyCorrupt%29.md)** — QA · 2001-02-01，macOS
+- **[Building an Application for Windows in Apple Media Tool](../../qa/amt%20pe/Building%20an%20Application%20for%20Windows%20in%20Apple%20Media%20Tool.md)** — QA · 1995-08-01，macOS
+- **[Building Screen Savers for Snow Leopard](../../qa/Building%20Screen%20Savers%20for%20Snow%20Leopard/Building%20Screen%20Savers%20for%20Snow%20Leopard.md)** — QA · 2009-10-09，macOS · ScreenSaver
+- **[CalcCMask and SeedCFill in Carbon](../../qa/qd/CalcCMask%20and%20SeedCFill%20in%20Carbon.md)** — QA · 2000-11-08，macOS
+- **[Calculating the static video frame rate of a QuickTime movie.](../../qa/Calculating%20the%20static%20video%20frame%20rate%20of%20a%20QuickTime%20movie.md)** — QA · 2008-08-06，macOS · QuickTime
+- **[Call Q3View_GetWorldToFrustumMatrixState Only In A Rendering Loop](../../qa/qd3d/Call%20Q3ViewGetWorldToFrustumMatrixState%20Only%20In%20A%20Rendering%20Loop.md)** — QA · 1997-07-11，macOS
+- **[Calling an AppleScript and providing parameters from an Application](../../qa/qa2001/Calling%20an%20AppleScript%20and%20providing%20parameters%20from%20an%20Application/qa1111.md)** — QA · 2011-07-10，macOS · CoreServices，3 页
+- **[Calling AppleScript from an Application](../../qa/qa2001/Calling%20an%20AppleScript%20and%20providing%20parameters%20from%20an%20Application/qa1026.md)** — QA · 2011-07-10，macOS · CoreServices
+- **[Calling ataManager on a Power Macintosh](../../qa/dv/Calling%20ataManager%20on%20a%20Power%20Macintosh.md)** — QA · 1998-09-21，macOS
+- **[Calling CloseOpenTransport When Writing an App](../../qa/nw/Calling%20CloseOpenTransport%20When%20Writing%20an%20App/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-07-03，macOS
+- **[Calling Control Strip Routines from PowerPC Code](../../qa/ops/Calling%20Control%20Strip%20Routines%20from%20PowerPC%20Code/Legacy%20Documentclose%20button.md)** — QA · 1997-03-14，macOS
+- **[Calling GetMenu Redundantly](../../qa/tb/Calling%20GetMenu%20Redundantly/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Calling InitializeQTML from DLL Main](../../qa/qtw/Calling%20InitializeQTML%20from%20DLL%20Main/Legacy%20Documentclose%20button.md)** — QA · 1998-09-21，macOS
+- **[Calling the Resource Manager from a Patch](../../qa/tb/Calling%20the%20Resource%20Manager%20from%20a%20Patch/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Calling TrackDrag with the Event Record's 'where' Field Expressed in Local Coordinates](../../qa/tb/Calling%20TrackDrag%20with%20the%20Event%20Record%27s%20%27where%27%20Field%20Expressed%20in%20Local%20Coord/Legacy%20Documentclose%20button.md)** — QA · 1996-11-27，macOS
+- **[Camera Hither Distance Must Be > 0](../../qa/qd3d/Camera%20Hither%20Distance%20Must%20Be%20-%200.md)** — QA · 1997-07-11，macOS
+- **[Can I have parameters of type typeHIRect instead of type typeQDRectangle in my kEventControlBoundsChanged message handler?](../../qa/qa2001/Can%20I%20have%20parameters%20of%20type%20typeHIRect%20instead%20of%20type%20typeQDRectangle%20in%20my%20k/qa1246.md)** — QA · 2003-04-03，macOS
+- **[Can you explain the words "begin" and "again"?](../../qa/hw/Can%20you%20explain%20the%20words%20-begin-%20and%20-again/hw70.md)** — QA · 1999-10-11，macOS
+- **[Can't Print Hairlines](../../qa/gxpd/Can%27t%20Print%20Hairlines.md)** — QA · 1995-08-01，macOS
+- **[Can't Turn Off DrawContext's clearImageMethod](../../qa/qd3d/Can%27t%20Turn%20Off%20DrawContext%27s%20clearImageMethod.md)** — QA · 1995-06-01，macOS
+- **[Capturing a real-time movie stream](../../qa/Capturing%20a%20real-time%20movie%20stream.md)** — QA · 2007-07-30，macOS
+- **[Capturing Speech Manager Output](../../qa/snd/Capturing%20Speech%20Manager%20Output.md)** — QA · 1998-05-18，macOS
+- **[Carbon Drawer problem in Mac OS X v10.4 and v10.4.1](../../qa/Carbon%20Drawer%20problem%20in%20Mac%20OS%20X%20v10.4%20and%20v10.4.1.md)** — QA · 2005-06-21，macOS
+- **[Carbon Full Screen Conundrums](../../qa/qa2001/Carbon%20Full%20Screen%20Conundrums/qa1068.md)** — QA · 2001-08-20，macOS
+- **[CFBundleIdentifier and user application access](../../qa/CFBundleIdentifier%20and%20user%20application%20access.md)** — QA · 2005-02-08，macOS · CoreFoundation
+- **[CFXML to CFPropertyListRef (and back!)](../../qa/qa2001/CFXML%20to%20CFPropertyListRef%20%28and%20back%21%29/qa1208.md)** — QA · 2011-07-10，macOS · CoreFoundation
+- **[CGBitmapContextCreate Supported Color Spaces](../../qa/CGBitmapContextCreate%20Supported%20Color%20Spaces.md)** — QA · 2007-07-18，macOS · ApplicationServices
+- **[CGContext Bounds](../../qa/qa2001/CGContext%20Bounds/qa1048.md)** — QA · 2011-07-10，macOS · ApplicationServices
+- **[CGContext parameter missing in my kEventControlDraw event](../../qa/qa2001/CGContext%20parameter%20missing%20in%20my%20kEventControlDraw%20event/qa1212.md)** — QA · 2011-07-11，macOS · Carbon
+- **[CGContextAddLineToPoint, CGContextAddCurveToPoint, et. al.](../../qa/qa2001/CGContextAddLineToPoint%2C%20CGContextAddCurveToPoint%2C%20et.%20al/qa1049.md)** — QA · 2001-07-02，macOS · ApplicationServices
+- **[CGContextClosePath](../../qa/qa2001/CGContextClosePath/qa1046.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[CGImageRef contents are immutable](../../qa/CGImageRef%20contents%20are%20immutable.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[Changing IP Numbers under Open Transport](../../qa/nw/Changing%20IP%20Numbers%20under%20Open%20Transport/Legacy%20Documentclose%20button.md)** — QA · 1996-11-27，macOS
+- **[Changing Scaling, Flipping, and Resolution](../../qa/gxpd/Changing%20Scaling%2C%20Flipping%2C%20and%20Resolution.md)** — QA · 1995-08-01，macOS
+- **[Changing the configuration variable in Open Firmware](../../qa/hw/Changing%20the%20configuration%20variable%20in%20Open%20Firmware/hw40.md)** — QA · 1999-02-15，macOS
+- **[Changing the Default Directory for StandardFile Calls](../../qa/tb/Changing%20the%20Default%20Directory%20for%20StandardFile%20Calls/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Changing the volume of audio devices](../../qa/Changing%20the%20volume%20of%20audio%20devices.md)** — QA · 2013-04-04，macOS · CoreAudio
+- **[Checking For Presence of QuickTime 3 for Windows](../../qa/qtw/Checking%20For%20Presence%20of%20QuickTime%203%20for%20Windows/Legacy%20Documentclose%20button.md)** — QA · 1998-09-21，macOS
+- **[Checking For QD3D Windows DLL's](../../qa/qd3d/Checking%20For%20QD3D%20Windows%20DLL%27s.md)** — QA · 1997-07-11，macOS
+- **[Checking for the Availability of Acceleration Hardware](../../qa/c/Checking%20for%20the%20Availability%20of%20Acceleration%20Hardware/Legacy%20Documentclose%20button.md)** — QA · 1996-03-05，macOS
+- **[Checking for the presence of a native library from Java](../../qa/java/Checking%20for%20the%20presence%20of%20a%20native%20library%20from%20Java/Legacy%20Documentclose%20button.md)** — QA · 1999-11-29，macOS
+- **[Checking for the Printer Driver](../../qa/dv/Checking%20for%20the%20Printer%20Driver.md)** — QA · 2000-06-19，macOS
+- **[Checking if Open Transport IP Stack is Loaded](../../qa/nw/Checking%20if%20Open%20Transport%20IP%20Stack%20is%20Loaded/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS
+- **[Checking Whether QD3D Is Available](../../qa/qd3d/Checking%20Whether%20QD3D%20Is%20Available.md)** — QA · 1997-07-11，macOS
+- **[Choosing the Position Where a Movie is Pasted](../../qa/qtmtb/Choosing%20the%20Position%20Where%20a%20Movie%20is%20Pasted.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Clarification of TQ3HitData's 'distance' Field](../../qa/qd3d/Clarification%20of%20TQ3HitData%27s%20%27distance%27%20Field.md)** — QA · 1996-04-08，macOS
+- **[Clearing mDNSResponder's cached records](../../qa/Clearing%20mDNSResponder%27s%20cached%20records.md)** — QA · 2004-02-11，macOS
+- **[Clearing the Z-buffer in RAVE](../../qa/qd3d/Clearing%20the%20Z-buffer%20in%20RAVE.md)** — QA · 1998-04-20，macOS
+- **[Clickable Static Text Item](../../qa/Clickable%20Static%20Text%20Item.md)** — QA · 2004-10-05，macOS
+- **[CloseDialog and 'ictb's](../../qa/tb/CloseDialog%20and%20%27ictb%27s/Legacy%20Documentclose%20button.md)** — QA · 2000-01-18，macOS
+- **[Closing PPC ports](../../qa/ic/Closing%20PPC%20ports.md)** — QA · 1995-05-01，macOS
+- **[Closing the Connection: OpenTransport](../../qa/nw/Closing%20the%20Connection-%20OpenTransport/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-03-04，macOS
+- **[Cocoa Bindings in OS X Storyboards](../../qa/Cocoa%20Bindings%20in%20OS%20X%20Storyboards/Cocoa%20Bindings%20in%20OS%20X%20Storyboards.md)** — QA · 2016-04-04，macOS · AppKit
+- **[Cocoa-Java quit/cancel-quit header bug in Mac OS X 10.0](../../qa/qa2001/Cocoa-Java%20quit-cancel-quit%20header%20bug%20in%20Mac%20OS%20X%2010.0/Legacy%20Documentclose%20button.md)** — QA · 2001-04-09，macOS
+- **[Code Resources Larger Than 32K](../../qa/plat/Code%20Resources%20Larger%20Than%2032K/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Collision Detection](../../qa/qd3d/Collision%20Detection.md)** — QA · 1996-04-08，macOS
+- **[Color Animated Cursors](../../qa/tb/Color%20Animated%20Cursors/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Color-Separating Arbitrary Shapes](../../qa/gx/Color-Separating%20Arbitrary%20Shapes/Legacy%20Documentclose%20button.md)** — QA · 1996-06-01，macOS
+- **[ColorPicker.h and ColorSync 2.0](../../qa/c/ColorPicker.h%20and%20ColorSync%202.0/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[ColorSync 2.0](../../qa/c/ColorSync%202.0/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[ColorSync 2.0 Gamut Checking](../../qa/c/ColorSync%202.0%20Gamut%20Checking/Legacy%20Documentclose%20button.md)** — QA · 1995-08-01，macOS
+- **[ColorSync Color Matching on Intel-based Macs](../../qa/ColorSync%20Color%20Matching%20on%20Intel-based%20Macs.md)** — QA · 2006-03-16，macOS · ApplicationServices
+- **[Combinations of cupsColorSpace, cupsColorOrder and cupsBitsPerColor values supported by Mac OS X](../../qa/Combinations%20of%20cupsColorSpace%2C%20cupsColorOrder%20and%20cupsBitsPerColor%20values%20suppo.md)** — QA · 2018-06-04，macOS
+- **[Common app sandboxing issues](../../qa/Common%20app%20sandboxing%20issues.md)** — QA · 2013-04-02，macOS
+- **[Common mistakes with delegation in Cocoa](../../qa/Common%20mistakes%20with%20delegation%20in%20Cocoa.md)** — QA · 2008-02-27，macOS
+- **[Common Problems when Installing QuickTime VR](../../qa/qtvr/Common%20Problems%20when%20Installing%20QuickTime%20VR.md)** — QA · 1996-09-27，macOS
+- **[Common QA and Roadmap for USB Software Development on Mac OS X](../../qa/Common%20QA%20and%20Roadmap%20for%20USB%20Software%20Development%20on%20Mac%20OS%20X/Common%20QA%20and%20Roadmap%20for%20USB%20Software%20Development%20on%20Mac%20OS%20X.md)** — QA · 2010-03-23，macOS · IOKit
+- **[Common QA for Bonjour](../../qa/Common%20QA%20for%20Bonjour.md)** — QA · 2010-07-16，macOS · CoreServices
+- **[Comparing selectors in Cocoa-Java code](../../qa/qa2001/Comparing%20selectors%20in%20Cocoa-Java%20code/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-08-31，macOS
+- **[Compiling X11 / OpenGL applications on Mac OS X  v.10.5 Leopard](../../qa/Compiling%20X11%20-%20OpenGL%20applications%20on%20Mac%20OS%20X%20v.10.5%20Leopard.md)** — QA · 2007-10-30，macOS · OpenGL
+- **[Component Definitions](../../qa/qtmcc/Component%20Definitions.md)** — QA · 2000-09-22，macOS · QuickTime
+- **[Composite Class Driver loads via both Driver/InterfaceInitialize entry point](../../qa/usb/Composite%20Class%20Driver%20loads%20via%20both%20Driver-InterfaceInitialize%20entry%20point.md)** — QA · 1998-09-28，macOS
+- **[Compressed and Uncompressed Samples in the Same Track](../../qa/qtmtb/Compressed%20and%20Uncompressed%20Samples%20in%20the%20Same%20Track.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Compression Sequence APIs - codecErr returned when compressing with H.264](../../qa/Compression%20Sequence%20APIs%20-%20codecErr%20returned%20when%20compressing%20with%20H.264.md)** — QA · 2006-11-15，macOS · QuickTime
+- **[Compression Sessions - Configuring codec quality settings](../../qa/Compression%20Sessions%20-%20Configuring%20codec%20quality%20settings.md)** — QA · 2005-10-17，macOS · QuickTime
+- **[Compression Sessions - Configuring options using the Standard Compression dialog](../../qa/Compression%20Sessions%20-%20Configuring%20options%20using%20the%20Standard%20Compression%20dialog/Compression%20Sessions%20-%20Configuring%20options%20using%20the%20Standard%20Compression%20dialog.md)** — QA · 2006-01-12，macOS · QuickTime
+- **[Compression Sessions - Enabling multi-pass encoding](../../qa/Compression%20Sessions%20-%20Enabling%20multi-pass%20encoding.md)** — QA · 2006-01-12，macOS · QuickTime
+- **[Compression Sessions - Multipass encoding and the pass mode flags](../../qa/Compression%20Sessions%20-%20Multipass%20encoding%20and%20the%20pass%20mode%20flags.md)** — QA · 2006-10-02，macOS · QuickTime
+- **[Compression Sessions - Temporal compression options](../../qa/Compression%20Sessions%20-%20Temporal%20compression%20options.md)** — QA · 2006-01-12，macOS · QuickTime
+- **[CompressSequenceBegin & Ethernet in QuickTime](../../qa/qticm/CompressSequenceBegin%20%26%20Ethernet%20in%20QuickTime.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Configuring the Recent Searches menu for NSSearchField](../../qa/Configuring%20the%20Recent%20Searches%20menu%20for%20NSSearchField.md)** — QA · 2006-11-27，macOS · AppKit
+- **[Configuring Xcode for Code Coverage](../../qa/Configuring%20Xcode%20for%20Code%20Coverage/Configuring%20Xcode%20for%20Code%20Coverage.md)** — QA · 2014-03-12，Xcode Developer Tools|macOS
+- **[Connecting the Font Menu in Interface Builder 3](../../qa/Connecting%20the%20Font%20Menu%20in%20Interface%20Builder%203.md)** — QA · 2008-01-21，macOS · AppKit
+- **[Connecting to a Sleeping or Dozing Macintosh](../../qa/nw/Connecting%20to%20a%20Sleeping%20or%20Dozing%20Macintosh/Legacy%20Documentclose%20button.md)** — QA · 1997-01-31，macOS
+- **[Context Sharing Tips](../../qa/Context%20Sharing%20Tips.md)** — QA · 2005-02-07，macOS · OpenGL
+- **[Control Panel Problems with Popup Menu's Click Area](../../qa/tb/Control%20Panel%20Problems%20with%20Popup%20Menu%27s%20Click%20Area/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Converting RGB Colors to a Palette Index](../../qa/qd/Converting%20RGB%20Colors%20to%20a%20Palette%20Index.md)** — QA · 1995-09-15，macOS
+- **[ConvertMovieToFile unexpected results](../../qa/qtmtb/ConvertMovieToFile%20unexpected%20results.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Coordinating Deferred Tasks and Secondary Interrupts](../../qa/dv/Coordinating%20Deferred%20Tasks%20and%20Secondary%20Interrupts/Legacy%20Documentclose%20button.md)** — QA · 2000-11-08，macOS，3 页
+- **[CopyBits and Background Printing](../../qa/qd/CopyBits%20and%20Background%20Printing.md)** — QA · 1995-09-15，macOS
+- **[Copybits Bus Error with Offscreen GWorld](../../qa/qd/Copybits%20Bus%20Error%20with%20Offscreen%20GWorld.md)** — QA · 1997-11-17，macOS
+- **[Core Video - Available Pixel Formats](../../qa/Core%20Video%20-%20Available%20Pixel%20Formats.md)** — QA · 2010-05-26，macOS · QuartzCore
+- **[CoreAudio Overload Warnings](../../qa/CoreAudio%20Overload%20Warnings.md)** — QA · 2006-03-29，macOS · CoreAudio
+- **[Correct Setup of an AGLDrawable](../../qa/ogl/Correct%20Setup%20of%20an%20AGLDrawable.md)** — QA · 2000-10-04，macOS
+- **[Correct Time Values](../../qa/qtmtb/Correct%20Time%20Values.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Correction to SetMediaDataRef, short, not pointer](../../qa/qtmtb/Correction%20to%20SetMediaDataRef%2C%20short%2C%20not%20pointer.md)** — QA · 1995-08-01，macOS · QuickTime
+- **[couldNotResolveDataRef (-2000) returned from DataHSetDataRef and OpenADataHandler](../../qa/qa2001/couldNotResolveDataRef%20%28-2000%29%20returned%20from%20DataHSetDataRef%20and%20OpenADataHandle/Legacy%20Documentclose%20button.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Crash in ABAddPropertiesAndTypes](../../qa/Crash%20in%20ABAddPropertiesAndTypes.md)** — QA · 2005-04-04，macOS · AddressBook
+- **[Crash When Sending Messages in an Override](../../qa/gxpd/Crash%20When%20Sending%20Messages%20in%20an%20Override.md)** — QA · 1995-08-01，macOS
+- **[CreatePortAssociation And  WM_QUERYNEWPALETTE Message](../../qa/qtw/CreatePortAssociation%20And%20WMQUERYNEWPALETTE%20Message/Legacy%20Documentclose%20button.md)** — QA · 1998-09-21，macOS
+- **[Creating a GX Printing Extension to Obtain Print Job Information](../../qa/gxpd/Creating%20a%20GX%20Printing%20Extension%20to%20Obtain%20Print%20Job%20Information.md)** — QA · 1995-07-01，macOS
+- **[Creating a Linked VR Movie without Hotspots](../../qa/qtvr/Creating%20a%20Linked%20VR%20Movie%20without%20Hotspots.md)** — QA · 1995-06-01，macOS
+- **[Creating a Menu with an Icon as its Title](../../qa/tb/Creating%20a%20Menu%20with%20an%20Icon%20as%20its%20Title/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Creating a Monitors Control Panel Extension](../../qa/hw/Creating%20a%20Monitors%20Control%20Panel%20Extension/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Creating a Movie from Movie Data in Memory](../../qa/Creating%20a%20Movie%20from%20Movie%20Data%20in%20Memory.md)** — QA · 2006-03-21，macOS · QuickTime
+- **[Creating an OpenGL texture from an NSView](../../qa/qa2001/Creating%20an%20OpenGL%20texture%20from%20an%20NSView/qa1325.md)** — QA · 2011-07-11，macOS · OpenGL
+- **[Creating Apple TV Media Files Containing Dolby Digital Professional AC-3 Audio](../../qa/Creating%20Apple%20TV%20Media%20Files%20Containing%20Dolby%20Digital%20Professional%20AC-3%20Audio/Creating%20Apple%20TV%20Media%20Files%20Containing%20Dolby%20Digital%20Professional%20AC-3%20Audio.md)** — QA · 2008-05-19，macOS · QuickTime
+- **[Creating color spaces that ensure color matching.](../../qa/Creating%20color%20spaces%20that%20ensure%20color%20matching.md)** — QA · 2005-10-04，macOS · ApplicationServices
+- **[Creating Core Audio Format (.caf) Files](../../qa/Creating%20Core%20Audio%20Format%20%28.caf%29%20Files.md)** — QA · 2009-01-07，macOS · CoreAudio
+- **[Creating Custom Icons for Documents Generated by a Plug-In](../../qa/ops/Creating%20Custom%20Icons%20for%20Documents%20Generated%20by%20a%20Plug-In/Legacy%20Documentclose%20button.md)** — QA · 1996-07-03，macOS
+- **[Creating Gray Scaled Images > 8 bits](../../qa/qd/Creating%20Gray%20Scaled%20Images%20-%208%20bits.md)** — QA · 1997-11-17，macOS
+- **[Creating QuickDrawGX Fonts](../../qa/gxty/Creating%20QuickDrawGX%20Fonts.md)** — QA · 1995-05-01，macOS
+- **[Creating Sample Descriptor Atoms for a Non-Mac Device](../../qa/qtpc/Creating%20Sample%20Descriptor%20Atoms%20for%20a%20Non-Mac%20Device.md)** — QA · 1995-08-01，macOS · QuickTime
+- **[Creating Screen Savers](../../qa/tb/Creating%20Screen%20Savers/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Creating serialVersionUIDs using MRJ](../../qa/java/Creating%20serialVersionUIDs%20using%20MRJ/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Creating Sub GWorlds using QTNewGWorldFromPtr](../../qa/qa2001/Extracting%20DV%20Fields%20using%20QTNewGWorldFromPtr/qa1014.md)** — QA · 2011-07-11，macOS · QuickTime，2 页
+- **[Creating Thumbnail PICTs](../../qa/qticm/Creating%20Thumbnail%20PICTs.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Creating track references when editing movies](../../qa/qtmtb/Creating%20track%20references%20when%20editing%20movies.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[CTB & the AppleTalk ADSP Tool](../../qa/nw/CTB%20%26%20the%20AppleTalk%20ADSP%20Tool/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Current GDevice Dependencies](../../qa/qa2001/Current%20GDevice%20Dependencies/qa1115.md)** — QA · 2002-02-13，macOS
+- **[Custom Designing a GX Font](../../qa/gxty/Custom%20Designing%20a%20GX%20Font.md)** — QA · 1996-07-03，macOS
+- **[Customizing Font Properties](../../qa/java/Customizing%20Font%20Properties/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Customizing Process Stack Size](../../qa/Customizing%20Process%20Stack%20Size.md)** — QA · 2011-01-26，macOS · CoreServices
+- **[DDC Information Source](../../qa/hw/DDC%20Information%20Source/Legacy%20Documentclose%20button.md)** — QA · 1995-11-22，macOS
+- **[DDR SDRAM ICs for PowerBooks and iBooks that use Memory bus slewing](../../qa/qa2001/DDR%20SDRAM%20ICs%20for%20PowerBooks%20and%20iBooks%20that%20use%20Memory%20bus%20slewing/qa1344.md)** — QA · 2004-03-18，macOS
+- **[Debugging a WebKit Plug-in in Xcode](../../qa/Debugging%20a%20WebKit%20Plug-in%20in%20Xcode/Debugging%20a%20WebKit%20Plug-in%20in%20Xcode.md)** — QA · 2007-06-05，macOS
+- **[Debugging arbitrary applications with Xcode](../../qa/qa2001/Debugging%20arbitrary%20applications%20with%20Xcode/qa1305.md)** — QA · 2011-07-11，Xcode Developer Tools|macOS
+- **[Debugging Graphics with QuartzDebug](../../qa/Debugging%20Graphics%20with%20QuartzDebug/Debugging%20Graphics%20with%20QuartzDebug.md)** — QA · 2014-03-20，Xcode Developer Tools|macOS
+- **[Debugging GX Graphics Code](../../qa/gx/Debugging%20GX%20Graphics%20Code/Legacy%20Documentclose%20button.md)** — QA · 1995-12-11，macOS
+- **[Debugging NSTableView's "Action Invocation" binding](../../qa/Debugging%20NSTableView%27s%20-Action%20Invocation-%20binding.md)** — QA · 2006-11-13，macOS · AppKit
+- **[Debugging Process Startup](../../qa/Debugging%20Process%20Startup.md)** — QA · 2007-12-21，macOS
+- **[Decompressing IMA WAVE files](../../qa/qtmcc/Decompressing%20IMA%20WAVE%20files.md)** — QA · 1998-10-19，macOS · QuickTime
+- **[Decompressing MP3](../../qa/qtmcc/Decompressing%20MP3.md)** — QA · 2000-09-22，macOS · QuickTime
+- **[Decompressing to Partial window: Bug & Workaround](../../qa/qticm/Decompressing%20to%20Partial%20window-%20Bug%20%26%20Workaround.md)** — QA · 1995-05-01，macOS
+- **[Decompression Sessions - Setting codec accuracy and field mode](../../qa/Decompression%20Sessions%20-%20Setting%20codec%20accuracy%20and%20field%20mode.md)** — QA · 2006-01-12，macOS · QuickTime
+- **[Default Number of Surface Planes](../../qa/qd3d/Default%20Number%20of%20Surface%20Planes.md)** — QA · 1997-07-11，macOS
+- **[Default Surface/Shader UV Params For Caps of Cones & Cylinders](../../qa/qd3d/Default%20Surface-Shader%20UV%20Params%20For%20Caps%20of%20Cones%20%26%20Cylinders.md)** — QA · 1997-07-11，macOS
+- **[Defining and Using the kTransformFocused IconTransformType](../../qa/Defining%20and%20Using%20the%20kTransformFocused%20IconTransformType/Defining%20and%20Using%20the%20kTransformFocused%20IconTransformType.md)** — QA · 2005-03-29，macOS
+- **[Defining user properties with MRJAppBuilder](../../qa/java/Defining%20user%20properties%20with%20MRJAppBuilder/Legacy%20Documentclose%20button.md)** — QA · 2000-04-17，macOS
+- **[Deleting a Resource Fork](../../qa/ops/Deleting%20a%20Resource%20Fork/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Deprecated CALL_ON_(UN)LOAD pragmas](../../qa/Deprecated%20CALLON-UN-LOAD%20pragmas.md)** — QA · 2006-01-10，macOS
+- **[Derived Media Handler Components Update](../../qa/qtmcc/Derived%20Media%20Handler%20Components%20Update.md)** — QA · 1996-08-21，macOS · QuickTime
+- **[Describing the kSecTrustResultUnspecified error.](../../qa/Describing%20the%20kSecTrustResultUnspecified%20error.md)** — QA · 2007-02-05，macOS · Security
+- **[Descriptor Passing Problems](../../qa/Descriptor%20Passing%20Problems.md)** — QA · 2007-10-29，macOS · Kernel
+- **[Deselecting Icons in the Finder](../../qa/ic/Deselecting%20Icons%20in%20the%20Finder.md)** — QA · 1997-07-11，macOS
+- **[Desk Accessory Menus](../../qa/tb/Desk%20Accessory%20Menus/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Desktop Using Icons from Old Versions of Applications](../../qa/ops/Desktop%20Using%20Icons%20from%20Old%20Versions%20of%20Applications/Legacy%20Documentclose%20button.md)** — QA · 2001-03-26，macOS
+- **[Detecting a CD-ROM](../../qa/dv/Detecting%20a%20CD-ROM.md)** — QA · 1997-01-31，macOS
+- **[Detecting CD/DVD media types](../../qa/qa2001/Detecting%20CD-DVD%20media%20types/Legacy%20Documentclose%20button.md)** — QA · 2001-02-21，macOS
+- **[Detecting Classic and Carbon X Environments](../../qa/ov/Detecting%20Classic%20and%20Carbon%20X%20Environments.md)** — QA · 2000-10-16，macOS
+- **[Detecting Control Strip at Startup](../../qa/ops/Detecting%20Control%20Strip%20at%20Startup/Legacy%20Documentclose%20button.md)** — QA · 1998-10-19，macOS
+- **[Detecting specific ROM-in-RAM Mac](../../qa/hw/Detecting%20specific%20ROM-in-RAM%20Mac/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-10-05，macOS
+- **[Detecting the Caps Lock Key](../../qa/Detecting%20the%20Caps%20Lock%20Key.md)** — QA · 2013-01-28，macOS · AppKit
+- **[Detecting the Debugger](../../qa/Detecting%20the%20Debugger.md)** — QA · 2004-10-27，Xcode Developer Tools|macOS
+- **[Detecting the Microseconds Trap](../../qa/tb/Detecting%20the%20Microseconds%20Trap/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Detecting the start and end edit sessions of a cell in NSTableView.](../../qa/Detecting%20the%20start%20and%20end%20edit%20sessions%20of%20a%20cell%20in%20NSTableView.md)** — QA · 2009-10-27，macOS · AppKit
+- **[Determining 3DMF Endian-ness](../../qa/qd3d/Determining%203DMF%20Endian-ness.md)** — QA · 1996-04-08，macOS
+- **[Determining a PostScript Printer's Optimal Resolution](../../qa/qd/Determining%20a%20PostScript%20Printer%27s%20Optimal%20Resolution/Legacy%20Documentclose%20button.md)** — QA · 1996-07-03，macOS，2 页
+- **[Determining console user login status](../../qa/Determining%20console%20user%20login%20status.md)** — QA · 2008-04-14，macOS · SystemConfiguration
+- **[Determining if a 680x0 program is Running on a PPC](../../qa/ops/Determining%20if%20a%20680x0%20program%20is%20Running%20on%20a%20PPC/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[Determining if a Drive is a Network Volume](../../qa/fl/Determining%20if%20a%20Drive%20is%20a%20Network%20Volume.md)** — QA · 1995-11-01，macOS
+- **[Determining if a PCI Bus Exists](../../qa/hw/Determining%20if%20a%20PCI%20Bus%20Exists/Legacy%20Documentclose%20button.md)** — QA · 1998-09-01，macOS
+- **[Determining if a printer is capable of color output.](../../qa/Determining%20if%20a%20printer%20is%20capable%20of%20color%20output.md)** — QA · 2009-09-24，macOS
+- **[Determining if an application uses Objective-C Garbage Collection](../../qa/Determining%20if%20an%20application%20uses%20Objective-C%20Garbage%20Collection.md)** — QA · 2008-09-08，macOS
+- **[Determining if the Cursor is Hidden Or Not](../../qa/ops/Determining%20if%20the%20Cursor%20is%20Hidden%20Or%20Not/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[Determining MRJ's Version](../../qa/java/Determining%20MRJ%27s%20Version/Legacy%20Documentclose%20button.md)** — QA · 1999-09-27，macOS
+- **[Determining Open Firmware version](../../qa/hw/Determining%20Open%20Firmware%20version/hw100.md)** — QA · 2000-10-06，macOS
+- **[Determining Power PC Type 11 Errors](../../qa/plat/Determining%20Power%20PC%20Type%2011%20Errors/Legacy%20Documentclose%20button.md)** — QA · 1996-02-15，macOS
+- **[Determining QuickDrawVideo Media Pixel Depth](../../qa/qtmtb/Determining%20QuickDrawVideo%20Media%20Pixel%20Depth/qtmtb17.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Determining RAM size & location in New World Machines](../../qa/qa2001/Determining%20RAM%20size%20%26%20location%20in%20New%20World%20Machines/qa1065.md)** — QA · 2001-08-01，macOS
+- **[Determining required components for QuickTime movies](../../qa/qa2001/Determining%20required%20components%20for%20QuickTime%20movies/qa1093.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Determining The Selected Printer's Address](../../qa/qd/Determining%20The%20Selected%20Printer%27s%20Address.md)** — QA · 1995-11-22，macOS
+- **[Determining the Size of the Disk Cache](../../qa/me/Determining%20the%20Size%20of%20the%20Disk%20Cache.md)** — QA · 1996-07-03，macOS
+- **[Determining the State of the Modern Memory Manager](../../qa/me/Determining%20the%20State%20of%20the%20Modern%20Memory%20Manager.md)** — QA · 1996-07-03，macOS
+- **[Determining the version of Open Firmware on your Mac](../../qa/hw/Determining%20the%20version%20of%20Open%20Firmware%20on%20your%20Mac/hw60.md)** — QA · 1999-03-29，macOS
+- **[Determining volume size](../../qa/fl/Determining%20volume%20size/Legacy%20Documentclose%20button.md)** — QA · 1998-09-14，macOS，2 页
+- **[Determining Whether a Device Supports Asynchronous I/O](../../qa/dv/Determining%20Whether%20a%20Device%20Supports%20Asynchronous%20I-O.md)** — QA · 1995-07-01，macOS
+- **[Determining Which Features Are Supported by Specific Renderers](../../qa/qd3d/Determining%20Which%20Features%20Are%20Supported%20by%20Specific%20Renderers.md)** — QA · 1996-04-08，macOS
+- **[Developing a QuickTime Musical Instrument](../../qa/qtma/Developing%20a%20QuickTime%20Musical%20Instrument.md)** — QA · 1995-05-01，macOS
+- **[Developing a SCSI SIM for a PCI SCSI Controller](../../qa/hw/Developing%20a%20SCSI%20SIM%20for%20a%20PCI%20SCSI%20Controller/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Developing for VFS](../../qa/Developing%20for%20VFS.md)** — QA · 2006-12-22，macOS
+- **[Device Driver Flags](../../qa/dv/Native%20Drivers%20%28%27ndrv%27s%29%20and%20dNeedTime/Legacy%20Documentclose%20button-2.md)** — QA · 1997-03-14，macOS
+- **[Device Manager](../../qa/dv/Device%20Manager.md)** — QA · 1995-05-01，macOS
+- **[Difference between an Open Firmware word and method](../../qa/hw/Difference%20between%20an%20Open%20Firmware%20word%20and%20method/hw46.md)** — QA · 1999-02-15，macOS
+- **[Difference between PCCard SDK2 and SDK3](../../qa/hw/Difference%20between%20PCCard%20SDK2%20and%20SDK3/Legacy%20Documentclose%20button.md)** — QA · 1999-03-29，macOS
+- **[Difference between using Restart or Shut Down in the Finder's Special menu in Open Firmware](../../qa/hw/Difference%20between%20using%20Restart%20or%20Shut%20Down%20in%20the%20Finder%27s%20Special%20menu%20in%20Op/hw47.md)** — QA · 1999-02-15，macOS
+- **[Differences between iMac models](../../qa/hw/Differences%20between%20iMac%20models/Legacy%20Documentclose%20button.md)** — QA · 1999-01-25，macOS
+- **[Differences between QuickDraw GX 1.1.1 and 1.0.x](../../qa/Differences%20between%20QuickDraw%20GX%201.1.1%20and%201.0.x.md)** — QA · 1995-05-01，macOS
+- **[Direction of Mesh Contours](../../qa/qd3d/Direction%20of%20Mesh%20Contours.md)** — QA · 1995-09-15，macOS
+- **[Directories Appear as Volume Aliases](../../qa/Directories%20Appear%20as%20Volume%20Aliases.md)** — QA · 2018-06-04，macOS · CoreServices
+- **[Disabling and Enabling an NSTextView](../../qa/Disabling%20and%20Enabling%20an%20NSTextView.md)** — QA · 2006-09-11，macOS · AppKit
+- **[Disabling Processor Cores on a Multi-Core System](../../qa/Disabling%20Processor%20Cores%20on%20a%20Multi-Core%20System/Disabling%20Processor%20Cores%20on%20a%20Multi-Core%20System.md)** — QA · 2008-09-16，macOS
+- **[Disabling QuickTime Error Dialogs When Opening or Tasking a Movie](../../qa/qa2001/Disabling%20QuickTime%20Error%20Dialogs%20When%20Opening%20or%20Tasking%20a%20Movie/qa1164.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Discipline startup, Documentation](../../qa/plat/Discipline%20startup%2C%20Documentation/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Disconnect/Retry](../../qa/hw/Disconnect-Retry/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Disconnected aliases on CD-ROM and Alias Manager](../../qa/ops/Disconnected%20aliases%20on%20CD-ROM%20and%20Alias%20Manager/ops05.md)** — QA · 2011-07-11，macOS · CoreServices
+- **[Discovering all advertised Bonjour service types](../../qa/Discovering%20all%20advertised%20Bonjour%20service%20types.md)** — QA · 2004-06-01，macOS
+- **[Displaying Help](../../qa/qa2001/Displaying%20Help/Legacy%20Documentclose%20button.md)** — QA · 2001-02-21，macOS · Carbon
+- **[Displaying PCI Configuration Registers contents in Open Firmware](../../qa/qa2001/Displaying%20PCI%20Configuration%20Registers%20contents%20in%20Open%20Firmware/qa1036.md)** — QA · 2001-05-18，macOS · Kernel
+- **[Displaying Windows 3DMF Files On A Mac](../../qa/qd3d/Displaying%20Windows%203DMF%20Files%20On%20A%20Mac.md)** — QA · 1997-07-11，macOS
+- **[Distorted Panoramas](../../qa/qtvr/Distorted%20Panoramas.md)** — QA · 1995-09-01，macOS
+- **[dl command in 1 machine mode](../../qa/hw/dl%20command%20in%201%20machine%20mode/hw51.md)** — QA · 1999-03-29，macOS
+- **[Do I have to call CreateRootControl after creating my window?](../../qa/qa2001/Do%20I%20have%20to%20call%20CreateRootControl%20after%20creating%20my%20window/qa1215.md)** — QA · 2002-11-12，macOS
+- **[Do PowerBooks have a PCI bus?](../../qa/hw/Do%20PowerBooks%20have%20a%20PCI%20bus/hw43.md)** — QA · 1999-02-15，macOS
+- **[Does CGContextSaveGState save the current path?](../../qa/Does%20CGContextSaveGState%20save%20the%20current%20path.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[Does Safari support 128-bit encryption?](../../qa/Does%20Safari%20support%20128-bit%20encryption.md)** — QA · 2010-04-13，macOS
+- **[Does This Printer Support PostScript?](../../qa/qd/Does%20This%20Printer%20Support%20PostScript.md)** — QA · 1997-01-09，macOS
+- **[Don't forget to cancel your Bonjour resolve](../../qa/Don%27t%20forget%20to%20cancel%20your%20Bonjour%20resolve.md)** — QA · 2007-08-30，macOS
+- **[DONT_NEED_DDRAW Preprocessor Explained](../../qa/qd3d/DONTNEEDDDRAW%20Preprocessor%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Downloading through a proxy server in Mac OS X](../../qa/qa2001/Downloading%20through%20a%20proxy%20server%20in%20Mac%20OS%20X/qa1296.md)** — QA · 2011-07-11，macOS · CoreFoundation
+- **[DR Emulator Caches](../../qa/hw/DR%20Emulator%20Caches/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-04-08，macOS
+- **[Drag Manager & the -600 (procNotFound) Error](../../qa/tb/Drag%20Manager%20%26%20the%20-600%20%28procNotFound%29%20Error/Legacy%20Documentclose%20button.md)** — QA · 1996-08-21，macOS
+- **[Drag Manager and windowKind 20](../../qa/tb/Drag%20Manager%20and%20windowKind%2020/Legacy%20Documentclose%20button.md)** — QA · 1996-11-27，macOS
+- **[Dragging to the Trash](../../qa/tb/Dragging%20to%20the%20Trash/Legacy%20Documentclose%20button.md)** — QA · 1996-11-27，macOS
+- **[DRAM DIMM power pin connections for Macintosh Computers](../../qa/qa2001/DRAM%20DIMM%20power%20pin%20connections%20for%20Macintosh%20Computers/qa1271.md)** — QA · 2003-07-04，macOS
+- **[Drawing a Path Multiple Times](../../qa/qa2001/Drawing%20a%20Path%20Multiple%20Times/qa1047.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[Drawing attributed strings that are both filled and stroked](../../qa/Drawing%20attributed%20strings%20that%20are%20both%20filled%20and%20stroked/Drawing%20attributed%20strings%20that%20are%20both%20filled%20and%20stroked.md)** — QA · 2013-04-29，macOS · AppKit
+- **[Drawing Text into a RAVE Context](../../qa/qd3d/Drawing%20Text%20into%20a%20RAVE%20Context.md)** — QA · 1998-04-20，macOS
+- **[DriverServicesLib Queue Routines](../../qa/dv/DriverServicesLib%20Queue%20Routines.md)** — QA · 2000-01-18，macOS
+- **[Driving OpenGL Rendering Loops](../../qa/Driving%20OpenGL%20Rendering%20Loops.md)** — QA · 2013-01-02，macOS · OpenGL
+- **[Duplicate Bonjour services while browsing](../../qa/Duplicate%20Bonjour%20services%20while%20browsing.md)** — QA · 2004-02-06，macOS
+- **[DV Codec settings and performance](../../qa/qa2001/DV%20Codec%20settings%20and%20performance/qa1149.md)** — QA · 2004-01-20，macOS · QuickTime
+- **[Dynamically registering a bundled component](../../qa/Dynamically%20registering%20a%20bundled%20component.md)** — QA · 2004-06-07，macOS · QuickTime
+- **[Embedding a GX Picture into a PICT](../../qa/gx/Embedding%20a%20GX%20Picture%20into%20a%20PICT/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS
+- **[Embedding Hyperlinks in NSTextField and NSTextView](../../qa/Embedding%20Hyperlinks%20in%20NSTextField%20and%20NSTextView/Embedding%20Hyperlinks%20in%20NSTextField%20and%20NSTextView.md)** — QA · 2012-01-05，macOS · AppKit
+- **[Embedding ICC Profiles](../../qa/c/Embedding%20ICC%20Profiles/Legacy%20Documentclose%20button.md)** — QA · 1996-02-09，macOS · ApplicationServices
+- **[Empty Memory Objects](../../qa/Empty%20Memory%20Objects.md)** — QA · 2011-07-26，macOS
+- **[Enabling the application menu's "Preferences" menu item on Mac OS X](../../qa/Enabling%20the%20application%20menu%27s%20-Preferences-%20menu%20item%20on%20Mac%20OS%20X/Enabling%20the%20application%20menu%27s%20-Preferences-%20menu%20item%20on%20Mac%20OS%20X.md)** — QA · 2008-01-21，macOS · AppKit
+- **[Enabling the application menu's "Preferences..." menu item on Mac OS X](../../qa/qa2001/Enabling%20the%20application%20menu%27s%20-Preferences...-%20menu%20item%20on%20Mac%20OS%20X/qa1079.md)** — QA · 2001-10-30，macOS
+- **[Enabling the Navigation Services default behavior in its dialogs](../../qa/Enabling%20the%20Navigation%20Services%20default%20behavior%20in%20its%20dialogs.md)** — QA · 2004-10-15，macOS
+- **[Enabling X11 Forwarding](../../qa/Enabling%20X11%20Forwarding.md)** — QA · 2004-10-25，macOS
+- **[EndFormsPrinting and FormsPrinting PicComments](../../qa/qd/EndFormsPrinting%20and%20FormsPrinting%20PicComments.md)** — QA · 1998-01-16，macOS
+- **[Endian Concerns When Playing 'snd ' Resources](../../qa/qtw/Endian%20Concerns%20When%20Playing%20%27snd%20%27%20Resources/Legacy%20Documentclose%20button.md)** — QA · 1999-11-08，macOS
+- **[Energy Star PCI Device](../../qa/qa2001/Energy%20Star%20PCI%20Device/qa1108.md)** — QA · 2011-07-11，macOS · Kernel
+- **[Ensuring custom effects render correctly in Photo Booth for Mac OS X Lion](../../qa/Ensuring%20custom%20effects%20render%20correctly%20in%20Photo%20Booth%20for%20Mac%20OS%20X%20Lion.md)** — QA · 2011-07-01，macOS
+- **[Ensuring hardware accelerated rendering for your OpenGL application](../../qa/Ensuring%20hardware%20accelerated%20rendering%20for%20your%20OpenGL%20application.md)** — QA · 2007-07-18，macOS · OpenGL
+- **[Enumerating fonts with ATS](../../qa/Enumerating%20fonts%20with%20ATS.md)** — QA · 2006-04-14，macOS
+- **[Environment Variables](../../qa/qa2001/Environment%20Variables/qa1255.md)** — QA · 2011-07-11，macOS
+- **[Equipment sources for QTVR movies](../../qa/qtvr/Equipment%20sources%20for%20QTVR%20movies.md)** — QA · 1995-09-01，macOS
+- **[Error -151 and NewGWorld](../../qa/qd/Error%20-151%20and%20NewGWorld.md)** — QA · 1995-09-15，macOS
+- **[Error -3168 (kOTStateChangeErr) and Handoff Endpoints](../../qa/nw/Error%20-3168%20%28kOTStateChangeErr%29%20and%20Handoff%20Endpoints/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-04-08，macOS
+- **[Error -8976 When Displaying JPEG-Compressed PICTS with DrawPicture](../../qa/qd/Error%20-8976%20When%20Displaying%20JPEG-Compressed%20PICTS%20with%20DrawPicture.md)** — QA · 1995-09-15，macOS
+- **[Error Loading: DriverServicesLib (-2804) Error Explained](../../qa/qd3d/Error%20Loading-%20DriverServicesLib%20%28-2804%29%20Error%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Error on Page 4-163 of QDGX Printing Extensions and Drivers](../../qa/gxpd/Error%20on%20Page%204-163%20of%20QDGX%20Printing%20Extensions%20and%20Drivers.md)** — QA · 1995-07-01，macOS
+- **[Errors in QADrawContextNew](../../qa/qd3d/Errors%20in%20QADrawContextNew.md)** — QA · 1998-04-20，macOS
+- **[Errors on Symbol Names Longer than 64 Characters](../../qa/tb/Errors%20on%20Symbol%20Names%20Longer%20than%2064%20Characters/Legacy%20Documentclose%20button.md)** — QA · 1997-01-31，macOS
+- **[Ethernet Addresses](../../qa/nw/Ethernet%20Addresses/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Ethernet Driver Interface](../../qa/nw/Ethernet%20Driver%20Interface/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Ethernet Driver Message Blocks](../../qa/hw/Ethernet%20Driver%20Message%20Blocks/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Ethernet Error on a PowerMac](../../qa/nw/Ethernet%20Error%20on%20a%20PowerMac/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS
+- **[Exception in JFileChooser.setAcceptAllFileFilterUsed](../../qa/qa2001/Exception%20in%20JFileChooser.setAcceptAllFileFilterUsed/Not%20Recommended%20Documentclose%20button.md)** — QA · 2003-10-07，macOS
+- **[Excluding UVs When Building a Vertex List](../../qa/qd3d/Excluding%20UVs%20When%20Building%20a%20Vertex%20List.md)** — QA · 1995-06-01，macOS
+- **[Expanding the System Heap](../../qa/ops/Expanding%20the%20System%20Heap/Legacy%20Documentclose%20button.md)** — QA · 2001-03-26，macOS
+- **[Expanding Tilde-based paths](../../qa/Expanding%20Tilde-based%20paths.md)** — QA · 2008-09-08，macOS · CoreServices
+- **[Explanation of SDRAM configuration Nomenclature](../../qa/hw/Explanation%20of%20SDRAM%20configuration%20Nomenclature/hw75.md)** — QA · 1999-10-18，macOS
+- **[Explicitly Forcing PCI Burst Transfers](../../qa/hw/Explicitly%20Forcing%20PCI%20Burst%20Transfers/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Exporting Light Groups in QuickDraw 3D](../../qa/qd3d/Exporting%20Light%20Groups%20in%20QuickDraw%203D.md)** — QA · 1995-07-15，macOS
+- **[Exporting TIFF files in little-endian format](../../qa/qa2001/Exporting%20TIFF%20files%20in%20little-endian%20format/qa1044.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[ExpressCard Prevents System Sleep](../../qa/ExpressCard%20Prevents%20System%20Sleep.md)** — QA · 2007-02-28，macOS
+- **[Extension Off, Macsbug On](../../qa/plat/Extension%20Off%2C%20Macsbug%20On/Legacy%20Documentclose%20button.md)** — QA · 2000-05-31，macOS
+- **[Extensions vs. Libraries](../../qa/qd3d/Extensions%20vs.%20Libraries.md)** — QA · 1996-04-08，macOS
+- **[Extracting DV Fields using QTNewGWorldFromPtr](../../qa/qa2001/Extracting%20DV%20Fields%20using%20QTNewGWorldFromPtr/qa1017.md)** — QA · 2011-07-11，macOS · QuickTime，3 页
+- **[Extracting InstaCompOne Archive Files](../../qa/plat/Extracting%20InstaCompOne%20Archive%20Files/Legacy%20Documentclose%20button.md)** — QA · 1997-03-14，macOS
+- **[Faster DDR DRAM in the 867MHz Power Mac G4 (Mirrored Drive Doors)](../../qa/qa2001/Faster%20DDR%20DRAM%20in%20the%20867MHz%20Power%20Mac%20G4%20%28Mirrored%20Drive%20Doors%29/qa1191.md)** — QA · 2002-08-19，macOS
+- **[FAT Code Resources](../../qa/ppcsys/FAT%20Code%20Resources.md)** — QA · 1995-05-01，macOS
+- **[fBroadCastAddr Always Zero](../../qa/nw/fBroadCastAddr%20Always%20Zero/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-03-08，macOS
+- **[FCode & OS X](../../qa/qa2001/FCode%20%26%20OS%20X/Legacy%20Documentclose%20button.md)** — QA · 2002-01-15，macOS
+- **[FDecompressImage, StdPix Bottleneck Calls During Printing](../../qa/qd/FDecompressImage%2C%20StdPix%20Bottleneck%20Calls%20During%20Printing.md)** — QA · 1995-09-15，macOS
+- **[FetchTaggedData not Called Often](../../qa/gxpd/FetchTaggedData%20not%20Called%20Often.md)** — QA · 1995-07-01，macOS
+- **[File Corruption with SCSI Manager 4.3](../../qa/dv/File%20Corruption%20with%20SCSI%20Manager%204.3.md)** — QA · 1995-07-01，macOS
+- **[File Manager Text Encoding Hints](../../qa/qa2001/File%20Manager%20Text%20Encoding%20Hints/qa1223.md)** — QA · 2011-07-11，macOS · CoreServices
+- **[Filtering QuickTime media types in Navigation Services](../../qa/qa2001/Filtering%20QuickTime%20media%20types%20in%20Navigation%20Services/qa1274.md)** — QA · 2003-07-23，macOS
+- **[Filtering the Effects List returned by QTGetEffectsList](../../qa/qa2001/Filtering%20the%20Effects%20List%20returned%20by%20QTGetEffectsList/qa1190.md)** — QA · 2002-09-04，macOS
+- **[Final Cut Pro X - Preferred Video Media Time Scales and Sample Durations](../../qa/Final%20Cut%20Pro%20X%20-%20Preferred%20Video%20Media%20Time%20Scales%20and%20Sample%20Durations.md)** — QA · 2014-08-26，macOS
+- **[Find Documents Folder](../../qa/ops/Find%20Documents%20Folder/Legacy%20Documentclose%20button.md)** — QA · 2001-03-26，macOS
+- **[Finder & AOCE](../../qa/fl/Finder%20%26%20AOCE.md)** — QA · 1995-11-01，macOS
+- **[Finding an NSView's current magnification.](../../qa/Finding%20an%20NSView%27s%20current%20magnification.md)** — QA · 2009-07-24，macOS
+- **[Finding EXC_BAD_ACCESS bugs in a Cocoa project](../../qa/Finding%20EXCBADACCESS%20bugs%20in%20a%20Cocoa%20project.md)** — QA · 2006-10-10，macOS · Foundation
+- **[Finding Missing OpenGL CFM Entry Points](../../qa/qa2001/Finding%20Missing%20OpenGL%20CFM%20Entry%20Points/Legacy%20Documentclose%20button.md)** — QA · 2002-12-23，macOS
+- **[Finding the bit depth of a Carbon Printing Manager graphics context](../../qa/qd/Finding%20the%20bit%20depth%20of%20a%20Carbon%20Printing%20Manager%20graphics%20context.md)** — QA · 2000-11-08，macOS
+- **[Finding The Center Of A Model](../../qa/qd3d/Finding%20The%20Center%20Of%20A%20Model.md)** — QA · 1997-07-11，macOS
+- **[Finding the VM Backing Store](../../qa/me/Finding%20the%20VM%20Backing%20Store.md)** — QA · 2001-03-30，macOS
+- **[Finding your application's directory](../../qa/fl/Finding%20your%20application%27s%20directory.md)** — QA · 2000-06-19，macOS · CoreServices
+- **[Fixed Math Rounding](../../qa/ops/Fixed%20Math%20Rounding/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Fixing NSDocumentController to understand HFS file types](../../qa/qa2001/Fixing%20NSDocumentController%20to%20understand%20HFS%20file%20types/Legacy%20Documentclose%20button.md)** — QA · 2001-06-19，macOS
+- **[Fixing the crash in the Picture Sharing code example](../../qa/qa2001/Fixing%20the%20crash%20in%20the%20Picture%20Sharing%20code%20example/Legacy%20Documentclose%20button.md)** — QA · 2003-01-21，macOS
+- **[Fixing the Layout Binding of the Tab control User Panes](../../qa/Fixing%20the%20Layout%20Binding%20of%20the%20Tab%20control%20User%20Panes/Fixing%20the%20Layout%20Binding%20of%20the%20Tab%20control%20User%20Panes.md)** — QA · 2004-10-14，macOS
+- **[Flattening Objects Separately](../../qa/gxpd/Flattening%20Objects%20Separately.md)** — QA · 1997-01-09，macOS
+- **[Focus Rings and Layer-Backed Views](../../qa/Focus%20Rings%20and%20Layer-Backed%20Views.md)** — QA · 2018-02-21，macOS · AppKit
+- **[Fonts not Appearing in Spool File](../../qa/qd/Fonts%20not%20Appearing%20in%20Spool%20File.md)** — QA · 1995-07-01，macOS
+- **[Forcing TextEdit To Draw Over a Background Image](../../qa/tx/Forcing%20TextEdit%20To%20Draw%20Over%20a%20Background%20Image.md)** — QA · 1996-02-15，macOS
+- **[FrontBase and JDBC](../../qa/qa2001/FrontBase%20and%20JDBC/qa1041.md)** — QA · 2001-07-09，macOS
+- **[FSDeleteObject fails with fBsyErr, sometimes](../../qa/FSDeleteObject%20fails%20with%20fBsyErr%2C%20sometimes.md)** — QA · 2008-09-24，macOS · CoreServices
+- **[FSSetCatalogInfo versus UID and GID](../../qa/qa2001/FSSetCatalogInfo%20versus%20UID%20and%20GID/qa1251.md)** — QA · 2011-07-11，macOS · CoreServices
+- **[Functions that Modify Movie Properties, QuickTime Track, and Movie Sound Volume](../../qa/qtmtb/Functions%20that%20Modify%20Movie%20Properties%2C%20QuickTime%20Track%2C%20and%20Movie%20Sound%20Volume.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[FWSendSoftwareInterrupt vs. SendSoftwareInterrupt](../../qa/qa2001/FWSendSoftwareInterrupt%20vs.%20SendSoftwareInterrupt/Legacy%20Documentclose%20button.md)** — QA · 2002-02-13，macOS
+- **[Gathering all PostScript Printer Descriptions (PPDs)](../../qa/Gathering%20all%20PostScript%20Printer%20Descriptions%20%28PPDs%29.md)** — QA · 2008-08-08，macOS
+- **[Gathering system information under Traditional Mac OS](../../qa/qa2001/Gathering%20system%20information%20under%20Traditional%20Mac%20OS/Legacy%20Documentclose%20button.md)** — QA · 2001-01-10，macOS
+- **[GDGetScale](../../qa/qticm/GDGetScale.md)** — QA · 1995-05-01，macOS
+- **[GDHasScale](../../qa/qticm/GDHasScale.md)** — QA · 1995-05-01，macOS
+- **[GDSetScale](../../qa/qticm/GDSetScale.md)** — QA · 1995-05-01，macOS
+- **[Generating a Non-Maskable Interrupt (NMI)](../../qa/Generating%20a%20Non-Maskable%20Interrupt%20%28NMI%29.md)** — QA · 2013-06-04，macOS
+- **[Gestalt Selectors for Macintosh Networking](../../qa/nw/Gestalt%20Selectors%20for%20Macintosh%20Networking/Legacy%20Documentclose%20button.md)** — QA · 1997-01-31，macOS
+- **[gestaltFWVMBackingStore](../../qa/fw/gestaltFWVMBackingStore/Legacy%20Documentclose%20button.md)** — QA · 1999-10-05，macOS
+- **[GetDIBFromPict fails with QuickTime "Minimum" installation](../../qa/GetDIBFromPict%20fails%20with%20QuickTime%20-Minimum-%20installation.md)** — QA · 2004-09-28，macOS · QuickTime
+- **[GetDriverDiskFragment and 'ndrv' Drivers](../../qa/hw/GetDriverDiskFragment%20and%20%27ndrv%27%20Drivers/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[GetPortBitMapForCopyBits](../../qa/qd/GetPortBitMapForCopyBits.md)** — QA · 2000-11-08，macOS
+- **[GetProcAdress and OpenGL Entry Points](../../qa/qa2001/GetProcAdress%20and%20OpenGL%20Entry%20Points/Legacy%20Documentclose%20button.md)** — QA · 2002-11-25，macOS · OpenGL
+- **[Getting a List of Drivers & LUNs (logical unit numbers)](../../qa/dv/Getting%20a%20List%20of%20Drivers%20%26%20LUNs%20%28logical%20unit%20numbers%29.md)** — QA · 1995-07-01，macOS
+- **[Getting Default Settings for a Given Font](../../qa/gxty/Getting%20Default%20Settings%20for%20a%20Given%20Font.md)** — QA · 1996-06-01，macOS
+- **[Getting List of All Processes on Mac OS X](../../qa/qa2001/Getting%20List%20of%20All%20Processes%20on%20Mac%20OS%20X/qa1123.md)** — QA · 2011-07-11，macOS
+- **[Getting NSWindow's toolbar actions to show up in Interface Builder](../../qa/qa2001/Getting%20NSWindow%27s%20toolbar%20actions%20to%20show%20up%20in%20Interface%20Builder/Legacy%20Documentclose%20button.md)** — QA · 2001-05-03，Xcode Developer Tools|macOS
+- **[Getting Records From the OCE Catalog Manager](../../qa/nw/Getting%20Records%20From%20the%20OCE%20Catalog%20Manager/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS
+- **[Getting Started with Network Programming](../../qa/nw/Getting%20Started%20with%20Network%20Programming/Legacy%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Getting the name of a profile](../../qa/qa2001/Getting%20the%20name%20of%20a%20profile/qa1205.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[Getting the Processor Type and Speed on a PCI Mac](../../qa/hw/Getting%20the%20Processor%20Type%20and%20Speed%20on%20a%20PCI%20Mac/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Getting the User and Computer Name](../../qa/qa2001/Getting%20the%20User%20and%20Computer%20Name/Legacy%20Documentclose%20button.md)** — QA · 2001-10-30，macOS · CoreServices
+- **[glFlush() vs. glFinish()](../../qa/glFlush%28%29%20vs.%20glFinish%28%29.md)** — QA · 2004-10-11，macOS · OpenGL
+- **[Graphics Exporters - Creating 16-bit-per-channel image files](../../qa/Graphics%20Exporters%20-%20Creating%2016-bit-per-channel%20image%20files.md)** — QA · 2004-06-03，macOS · QuickTime
+- **[Graphics Importer -8970 errors & TIFF Support](../../qa/qtmcc/Graphics%20Importer%20-8970%20errors%20%26%20TIFF%20Support.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Graphics Importers and image files containing multiple layers](../../qa/qa2001/Graphics%20Importers%20and%20image%20files%20containing%20multiple%20layers/qa1148.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[GraphicsImportSetBoundsRect resets your Matrix](../../qa/qa2001/GraphicsImportSetBoundsRect%20resets%20your%20Matrix/qa1144.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[grayishTextOr and Mac OS 8.5](../../qa/qd/grayishTextOr%20and%20Mac%20OS%208.5.md)** — QA · 1998-12-07，macOS
+- **[Grayscale Printing on a LaserWriter LS](../../qa/qd/Grayscale%20Printing%20on%20a%20LaserWriter%20LS.md)** — QA · 1995-12-07，macOS
+- **[GrayShare Software Update](../../qa/qd/GrayShare%20Software%20Update.md)** — QA · 1995-12-07，macOS
+- **[Greenwich Mean Time offsets and the Map control panel](../../qa/ops/Greenwich%20Mean%20Time%20offsets%20and%20the%20Map%20control%20panel/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Guide Maker 1.2.7 Fixes PowerTalk Crashes](../../qa/hs/Guide%20Maker%201.2.7%20Fixes%20PowerTalk%20Crashes.md)** — QA · 1996-05-14，macOS
+- **[GWorld in the 'grafPort' Field of a MacDrawContext Struct](../../qa/qd3d/GWorld%20in%20the%20%27grafPort%27%20Field%20of%20a%20MacDrawContext%20Struct.md)** — QA · 1995-06-01，macOS
+- **[GX 'comm' Resource Type](../../qa/gxpd/GX%20%27comm%27%20Resource%20Type.md)** — QA · 1995-05-01，macOS
+- **[GXGetShapeLocalBounds Call](../../qa/gx/GXGetShapeLocalBounds%20Call/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Handing Off TCP Connections to a Different Port](../../qa/nw/Handing%20Off%20TCP%20Connections%20to%20a%20Different%20Port/nw25.md)** — QA · 2011-07-11，macOS
+- **[Handling of Update Events While a Movie Plays](../../qa/qtmtb/Handling%20of%20Update%20Events%20While%20a%20Movie%20Plays.md)** — QA · 1995-09-15，macOS
+- **[Hang launching signed Applets from JavaScript](../../qa/Hang%20launching%20signed%20Applets%20from%20JavaScript.md)** — QA · 2004-12-02，macOS
+- **[Header Conditions](../../qa/qd3d/Header%20Conditions.md)** — QA · 1996-04-08，macOS
+- **[Help Book Caching During Software Development](../../qa/Help%20Book%20Caching%20During%20Software%20Development.md)** — QA · 2005-03-30，macOS
+- **[HID Manager Event Data Underruns](../../qa/qa2001/HID%20Manager%20Event%20Data%20Underruns/qa1038.md)** — QA · 2011-07-11，macOS · IOKit
+- **[Hidden Volumes in HFS](../../qa/fl/Hidden%20Volumes%20in%20HFS.md)** — QA · 1995-11-01，macOS
+- **[Hiding public methods from AppleScript in Java](../../qa/java/Hiding%20public%20methods%20from%20AppleScript%20in%20Java/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Highlight State](../../qa/qd3d/Highlight%20State.md)** — QA · 1996-04-08，macOS
+- **[HIObjectRegisterSubclass returns paramErr](../../qa/qa2001/HIObjectRegisterSubclass%20returns%20paramErr/qa1213.md)** — QA · 2002-11-12，macOS
+- **[HMShowBalloon styled TEHandle limit and Workaround](../../qa/tb/HMShowBalloon%20styled%20TEHandle%20limit%20and%20Workaround/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[How can I add the ability to read and write Keynote 2 documents to my application?](../../qa/qa2005/How%20can%20I%20add%20the%20ability%20to%20read%20and%20write%20Keynote%202%20documents%20to%20my%20applicatio/Legacy%20Documentclose%20button.md)** — QA · 2005-09-13，macOS
+- **[How can I determine the order of the languages set by the user in the Language tab of the International preference pane?](../../qa/How%20can%20I%20determine%20the%20order%20of%20the%20languages%20set%20by%20the%20user%20in%20the%20Language%20t.md)** — QA · 2006-12-19，macOS · Foundation
+- **[How can I find out what non-RGB pixel formats a codec supports?](../../qa/How%20can%20I%20find%20out%20what%20non-RGB%20pixel%20formats%20a%20codec%20supports.md)** — QA · 2008-04-24，macOS · QuickTime
+- **[How can I handle smooth mouse wheel scrolling?](../../qa/How%20can%20I%20handle%20smooth%20mouse%20wheel%20scrolling.md)** — QA · 2005-11-29，macOS
+- **[How can I identify the runtime environment, Carbon or Cocoa, of the current application?](../../qa/How%20can%20I%20identify%20the%20runtime%20environment%2C%20Carbon%20or%20Cocoa%2C%20of%20the%20current%20appl.md)** — QA · 2010-03-19，macOS
+- **[How can I optimize a Quartz Composer composition depending on the hardware it runs on?](../../qa/How%20can%20I%20optimize%20a%20Quartz%20Composer%20composition%20depending%20on%20the%20hardware%20it%20ru/How%20can%20I%20optimize%20a%20Quartz%20Composer%20composition%20depending%20on%20the%20hardware%20it%20ru.md)** — QA · 2005-06-01，macOS · Quartz
+- **[How can I programmatically determine the DPI of the current video mode?](../../qa/qa2001/How%20can%20I%20programmatically%20determine%20the%20DPI%20of%20the%20current%20video%20mode/qa1217.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[How can I set the default location with the modern Navigation APIs NavCreatexxx?](../../qa/qa2001/How%20can%20I%20set%20the%20default%20location%20with%20the%20modern%20Navigation%20APIs%20NavCreatexxx/qa1151.md)** — QA · 2002-07-01，macOS
+- **[How can I tell if a PCI device has on board I/O space?](../../qa/qa2001/How%20can%20I%20tell%20if%20a%20PCI%20device%20has%20on%20board%20I-O%20space/qa1287.md)** — QA · 2011-07-11，macOS · Kernel
+- **[How can I verify that a Movie can actually draw into a non-RGB GWorld?](../../qa/qa2001/How%20can%20I%20verify%20that%20a%20Movie%20can%20actually%20draw%20into%20a%20non-RGB%20GWorld/qa1243.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[How can I work with MPEG-2 media using QuickTime?](../../qa/How%20can%20I%20work%20with%20MPEG-2%20media%20using%20QuickTime.md)** — QA · 2011-10-19，macOS · QuickTime
+- **[How do I access files contained in my AppleScript Studio application's main bundle?](../../qa/How%20do%20I%20access%20files%20contained%20in%20my%20AppleScript%20Studio%20application%27s%20main%20bund/How%20do%20I%20access%20files%20contained%20in%20my%20AppleScript%20Studio%20application%27s%20main%20bund.md)** — QA · 2007-02-05，Xcode Developer Tools|macOS
+- **[How do I add annotations to my IMKit Input Method](../../qa/How%20do%20I%20add%20annotations%20to%20my%20IMKit%20Input%20Method/How%20do%20I%20add%20annotations%20to%20my%20IMKit%20Input%20Method.md)** — QA · 2010-03-03，macOS · InputMethodKit
+- **[How do I change the numeric base for the Open Firmware user interface?](../../qa/hw/How%20do%20I%20change%20the%20numeric%20base%20for%20the%20Open%20Firmware%20user%20interface/hw66.md)** — QA · 1999-10-11，macOS
+- **[How do I count the frames in an MPEG movie?](../../qa/How%20do%20I%20count%20the%20frames%20in%20an%20MPEG%20movie.md)** — QA · 2011-07-19，macOS · QuickTime
+- **[How do I create a QuickTime movie from PCM audio samples in memory?](../../qa/How%20do%20I%20create%20a%20QuickTime%20movie%20from%20PCM%20audio%20samples%20in%20memory.md)** — QA · 2009-08-27，macOS · QuickTime
+- **[How do I decompress individual frames into an offscreen?](../../qa/qtmtb/How%20do%20I%20decompress%20individual%20frames%20into%20an%20offscreen.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[How do I determine how much VRAM is available on my video card?](../../qa/How%20do%20I%20determine%20how%20much%20VRAM%20is%20available%20on%20my%20video%20card.md)** — QA · 2014-03-11，macOS · ApplicationServices
+- **[How do I determine the top of the Open Firmware dictionary?](../../qa/hw/How%20do%20I%20determine%20the%20top%20of%20the%20Open%20Firmware%20dictionary/hw69.md)** — QA · 1999-10-11，macOS
+- **[How do I get the hexadecimal value of an NSColor object?](../../qa/How%20do%20I%20get%20the%20hexadecimal%20value%20of%20an%20NSColor%20object.md)** — QA · 2007-12-19，macOS · AppKit
+- **[How do I localize the Services menu string for my service](../../qa/How%20do%20I%20localize%20the%20Services%20menu%20string%20for%20my%20service/How%20do%20I%20localize%20the%20Services%20menu%20string%20for%20my%20service.md)** — QA · 2010-03-29，macOS · AppKit
+- **[How do I prevent my WebKit-enabled application from writing to the shared icon database?](../../qa/How%20do%20I%20prevent%20my%20WebKit-enabled%20application%20from%20writing%20to%20the%20shared%20icon%20d.md)** — QA · 2011-03-23，macOS · CoreServices
+- **[How do I ring the Doorbell?](../../qa/fw/How%20do%20I%20ring%20the%20Doorbell/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[How do I tell if a particular display is being hardware accelerated by Quartz Extreme?](../../qa/How%20do%20I%20tell%20if%20a%20particular%20display%20is%20being%20hardware%20accelerated%20by%20Quartz%20Ex.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[How do I use asserts while debugging?](../../qa/How%20do%20I%20use%20asserts%20while%20debugging.md)** — QA · 2006-06-30，Xcode Developer Tools|macOS
+- **[How do I use kMPCreateTaskSuspendedMask with MPCreateTask?](../../qa/qa2001/How%20do%20I%20use%20kMPCreateTaskSuspendedMask%20with%20MPCreateTask/Legacy%20Documentclose%20button.md)** — QA · 2001-07-02，macOS · CoreServices
+- **[How do I use PMSessionGetGraphicsContext to get a CGContextRef?](../../qa/qa2001/How%20do%20I%20use%20PMSessionGetGraphicsContext%20to%20get%20a%20CGContextRef/Not%20Recommended%20Documentclose%20button.md)** — QA · 2003-02-25，macOS
+- **[How do I use QuickDraw with CGDirectDisplay?](../../qa/qa2001/How%20do%20I%20use%20QuickDraw%20with%20CGDirectDisplay/qa1011.md)** — QA · 2001-04-11，macOS
+- **[How does Open Firmware generate the name property?](../../qa/hw/How%20does%20Open%20Firmware%20generate%20the%20name%20property/hw39.md)** — QA · 1999-02-15，macOS
+- **[How many PCI header types exist today?](../../qa/hw/How%20many%20PCI%20header%20types%20exist%20today/hw92.md)** — QA · 2011-07-11，macOS · Kernel
+- **[How PBDTGetAPPL Chooses Which Copy of an App to Launch](../../qa/tb/How%20PBDTGetAPPL%20Chooses%20Which%20Copy%20of%20an%20App%20to%20Launch/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[How to add a folder to the contents of a package](../../qa/How%20to%20add%20a%20folder%20to%20the%20contents%20of%20a%20package/How%20to%20add%20a%20folder%20to%20the%20contents%20of%20a%20package.md)** — QA · 2006-10-31，Xcode Developer Tools|macOS
+- **[How to add other pasteboard types to an HFS Promise drag in Cocoa](../../qa/qa2001/How%20to%20add%20other%20pasteboard%20types%20to%20an%20HFS%20Promise%20drag%20in%20Cocoa/qa1300.md)** — QA · 2011-07-11，macOS · AppKit
+- **[How to capture screen activity to a movie file using AV Foundation on OS X 10.7 Lion and later](../../qa/How%20to%20capture%20screen%20activity%20to%20a%20movie%20file%20using%20AV%20Foundation%20on%20OS%20X%2010.7.md)** — QA · 2015-05-20，macOS · AVFoundation
+- **[How to Compute Data Rate for QuickTime Movies](../../qa/qtmtb/How%20to%20Compute%20Data%20Rate%20for%20QuickTime%20Movies.md)** — QA · 1995-09-15，macOS · QuickTime
+- **[How to create a Cocoa Disclosure Button Control](../../qa/How%20to%20create%20a%20Cocoa%20Disclosure%20Button%20Control.md)** — QA · 2006-08-01，macOS · AppKit
+- **[How to define a plst resource in a .r file](../../qa/qa2001/How%20to%20define%20a%20plst%20resource%20in%20a%20.r%20file/Legacy%20Documentclose%20button.md)** — QA · 2001-05-09，macOS
+- **[How to Disable the JIT](../../qa/java/Stack%20Crawl%20Not%20Showing%20Line%20Numbers/Legacy%20Documentclose%20button-2.md)** — QA · 1998-02-22，macOS
+- **[How to Find the Printer Descriptions folder](../../qa/qd/How%20to%20Find%20the%20Printer%20Descriptions%20folder.md)** — QA · 1997-11-17，macOS
+- **[How to get a native QuickTime movie object from the QuickTime ActiveX/COM control](../../qa/How%20to%20get%20a%20native%20QuickTime%20movie%20object%20from%20the%20QuickTime%20ActiveX-COM%20contro.md)** — QA · 2008-03-27，macOS · QuickTime
+- **[How to get custom views to show up in NSToolbarItems](../../qa/How%20to%20get%20custom%20views%20to%20show%20up%20in%20NSToolbarItems.md)** — QA · 2011-09-07，macOS · AppKit
+- **[How to Get the First Video Frame](../../qa/qtmcc/How%20to%20Get%20the%20First%20Video%20Frame.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[How to get the Monitor ID as displayed in the Monitors & Sound Control Panel](../../qa/qd/How%20to%20get%20the%20Monitor%20ID%20as%20displayed%20in%20the%20Monitors%20%26%20Sound%20Control%20Panel.md)** — QA · 1998-01-16，macOS
+- **[How to handle audio data with magic cookie information](../../qa/How%20to%20handle%20audio%20data%20with%20magic%20cookie%20information.md)** — QA · 2013-08-09，macOS · AudioToolbox
+- **[How to handle kAudioUnitProperty_MaximumFramesPerSlice](../../qa/How%20to%20handle%20kAudioUnitPropertyMaximumFramesPerSlice.md)** — QA · 2015-05-28，macOS · AudioUnit
+- **[How to make NSTextField accept tab, return and enter keys.](../../qa/How%20to%20make%20NSTextField%20accept%20tab%2C%20return%20and%20enter%20keys.md)** — QA · 2014-05-12，macOS · AppKit
+- **[How to measure CG text](../../qa/How%20to%20measure%20CG%20text.md)** — QA · 2007-08-02，macOS · ApplicationServices
+- **[How to play a sequence of movies in a Web page](../../qa/How%20to%20play%20a%20sequence%20of%20movies%20in%20a%20Web%20page.md)** — QA · 2008-08-08，macOS
+- **[How to remove the "Open Recent" menu item in a Document-based Cocoa application](../../qa/qa2001/How%20to%20remove%20the%20-Open%20Recent-%20menu%20item%20in%20a%20Document-based%20Cocoa%20application/qa1289.md)** — QA · 2011-07-11，macOS · AppKit
+- **[How to reproduce bugs reported against Mac App Store submissions](../../qa/How%20to%20reproduce%20bugs%20reported%20against%20Mac%20App%20Store%20submissions/How%20to%20reproduce%20bugs%20reported%20against%20Mac%20App%20Store%20submissions.md)** — QA · 2017-06-28，Xcode Developer Tools|macOS
+- **[How to set a custom drag image when doing an HFS Promise drag in Cocoa](../../qa/qa2001/How%20to%20set%20a%20custom%20drag%20image%20when%20doing%20an%20HFS%20Promise%20drag%20in%20Cocoa/qa1200.md)** — QA · 2011-07-11，macOS · AppKit
+- **[How to take an image snapshot of the screen on Mac OS X Lion](../../qa/How%20to%20take%20an%20image%20snapshot%20of%20the%20screen%20on%20Mac%20OS%20X%20Lion.md)** — QA · 2011-08-10，macOS · QuartzCore
+- **[How to Tell Whether a Picture is QuickTime-Compressed](../../qa/qticm/How%20to%20Tell%20Whether%20a%20Picture%20is%20QuickTime-Compressed.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[How to use the OT modem script engine](../../qa/nw/How%20to%20use%20the%20OT%20modem%20script%20engine/Not%20Recommended%20Documentclose%20button.md)** — QA · 1997-07-11，macOS
+- **[How to use URL Access with proxy servers](../../qa/qa2001/How%20to%20use%20URL%20Access%20with%20proxy%20servers/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-10-02，macOS
+- **[How to work around HIMovieViewCreate failing](../../qa/How%20to%20work%20around%20HIMovieViewCreate%20failing/How%20to%20work%20around%20HIMovieViewCreate%20failing.md)** — QA · 2008-03-11，macOS · QuickTime
+- **[ICC Profile copyright field](../../qa/qa2001/ICC%20Profile%20copyright%20field/qa1136.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[ICLaunchURL, "file:///" URLs and Mac OS X](../../qa/qa2001/ICLaunchURL%2C%20-file-----%20URLs%20and%20Mac%20OS%20X/qa1028.md)** — QA · 2001-04-20，macOS
+- **[Icon Families](../../qa/tb/Icon%20Families/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Identically-Sized Print Files with LW 8.x](../../qa/qd/Identically-Sized%20Print%20Files%20with%20LW%208.x.md)** — QA · 1997-01-09，macOS
+- **[IKImageView with drag and drop](../../qa/IKImageView%20with%20drag%20and%20drop.md)** — QA · 2014-08-05，macOS · ImageCaptureCore
+- **[Image Compression Dialog Options](../../qa/qticm/Image%20Compression%20Dialog%20Options.md)** — QA · 1995-08-01，macOS · QuickTime
+- **[Image Decompressor Data-loading Procs](../../qa/qtmcc/Image%20Decompressor%20Data-loading%20Procs.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[ImageDescription Extension Format](../../qa/qtmcc/ImageDescription%20Extension%20Format.md)** — QA · 1996-11-27，macOS · QuickTime
+- **[Implementing a CVFillExtendedPixelsCallBack](../../qa/qa2005/Implementing%20a%20CVFillExtendedPixelsCallBack/qa1440.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Implementing DLLs](../../qa/nw/Implementing%20DLLs/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Implementing MacsBug-Compatible USB Keyboard and Mouse Drivers](../../qa/usb/Implementing%20MacsBug-Compatible%20USB%20Keyboard%20and%20Mouse%20Drivers.md)** — QA · 2000-05-31，macOS
+- **[Implementing optional methods of the IKImageBrowserItem Protocol](../../qa/Implementing%20optional%20methods%20of%20the%20IKImageBrowserItem%20Protocol.md)** — QA · 2011-07-22，macOS · Quartz
+- **[Implementing read-modify-write on PCI](../../qa/hw/Implementing%20read-modify-write%20on%20PCI/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Importer Components - What is the 'mcfg' resource used for?](../../qa/Importer%20Components%20-%20What%20is%20the%20%27mcfg%27%20resource%20used%20for/Importer%20Components%20-%20What%20is%20the%20%27mcfg%27%20resource%20used%20for.md)** — QA · 2005-10-17，macOS · QuickTime
+- **[Importing image data from memory](../../qa/qtmtb/Importing%20image%20data%20from%20memory.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Importing Non-PICT Files Into Apple Media Tool](../../qa/amt%20pe/Importing%20Non-PICT%20Files%20Into%20Apple%20Media%20Tool.md)** — QA · 1995-08-01，macOS
+- **[Importing Sys 7 Snds](../../qa/qtmcc/Importing%20Sys%207%20Snds.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Impossibility of Extracting File System Information from the WindowPtr](../../qa/ops/Impossibility%20of%20Extracting%20File%20System%20Information%20from%20the%20WindowPtr/Legacy%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Improper Texture Mapping with Trigrids](../../qa/qd3d/Improper%20Texture%20Mapping%20with%20Trigrids.md)** — QA · 1995-06-01，macOS
+- **[Improving ATSUI Text Drawing Performance](../../qa/qa2001/Improving%20ATSUI%20Text%20Drawing%20Performance/qa1027.md)** — QA · 2001-04-17，macOS
+- **[Including a custom NSWindow in a nib file](../../qa/Including%20a%20custom%20NSWindow%20in%20a%20nib%20file/Including%20a%20custom%20NSWindow%20in%20a%20nib%20file.md)** — QA · 2007-03-21，macOS · AppKit
+- **[Including the Cursor in a Screen Capture when using CopyBits](../../qa/qd/Including%20the%20Cursor%20in%20a%20Screen%20Capture%20when%20using%20CopyBits.md)** — QA · 1996-09-27，macOS
+- **[Inconsistencies, LaserWriter 'xdtl', adding a padByte](../../qa/gxpd/Inconsistencies%2C%20LaserWriter%20%27xdtl%27%2C%20adding%20a%20padByte.md)** — QA · 1995-05-01，macOS
+- **[Incorrect Inside Macintosh Volume V documentation](../../qa/qd/Incorrect%20Inside%20Macintosh%20Volume%20V%20documentation.md)** — QA · 1995-09-15，macOS
+- **[Incorrect Paper Size with QuickDraw GX 1.1.2](../../qa/gxpd/Incorrect%20Paper%20Size%20with%20QuickDraw%20GX%201.1.2.md)** — QA · 1995-08-01，macOS
+- **[Inputting characters using InputMethod](../../qa/java/Inputting%20characters%20using%20InputMethod/Legacy%20Documentclose%20button.md)** — QA · 1999-10-18，macOS
+- **[Inserting an unmatched opening brace while having the "Automatically insert closing '}'" feature enabled.](../../qa/Inserting%20an%20unmatched%20opening%20brace%20while%20having%20the%20-Automatically%20insert%20clos/Inserting%20an%20unmatched%20opening%20brace%20while%20having%20the%20-Automatically%20insert%20clos.md)** — QA · 2009-10-27，Xcode Developer Tools|macOS
+- **[Installing an IOKit KEXT Without Rebooting](../../qa/Installing%20an%20IOKit%20KEXT%20Without%20Rebooting.md)** — QA · 2011-07-22，macOS · Kernel
+- **[Installing input methods on Mac OS X](../../qa/qa2001/Installing%20input%20methods%20on%20Mac%20OS%20X/qa1054.md)** — QA · 2011-07-11，macOS · InputMethodKit
+- **[Installing Production Provisioning Profiles](../../qa/Installing%20Production%20Provisioning%20Profiles.md)** — QA · 2011-12-15，macOS · AppKit
+- **[Integrating the QuickTime for Windows 7.0.3 Installer into your Application Installer](../../qa/Integrating%20the%20QuickTime%20for%20Windows%207.0.3%20Installer%20into%20your%20Application%20Inst.md)** — QA · 2006-02-07，macOS · QuickTime
+- **[Integrating With The Connect to Server Dialog](../../qa/Integrating%20With%20The%20Connect%20to%20Server%20Dialog.md)** — QA · 2006-11-16，macOS
+- **[Intel-Based Macs, Dashboard, Safari, and You](../../qa/qa2005/Intel-Based%20Macs%2C%20Dashboard%2C%20Safari%2C%20and%20You/Legacy%20Documentclose%20button.md)** — QA · 2006-12-13，Safari|macOS
+- **[Interactive Renderer Not Drawing Flat Surfaces](../../qa/qd3d/Interactive%20Renderer%20Not%20Drawing%20Flat%20Surfaces.md)** — QA · 1995-06-01，macOS
+- **[Intercepting movie controller actions](../../qa/qa2001/Intercepting%20movie%20controller%20actions/qa1094.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Intercepting QuickTime Wired Actions](../../qa/qa2001/Intercepting%20QuickTime%20Wired%20Actions/qa1095.md)** — QA · 2001-11-14，macOS
+- **[InterfaceLib and Native Drivers](../../qa/dv/Coordinating%20Deferred%20Tasks%20and%20Secondary%20Interrupts/Legacy%20Documentclose%20button-2.md)** — QA · 2000-09-22，macOS，2 页
+- **[Internet Connect Speed](../../qa/Internet%20Connect%20Speed.md)** — QA · 2011-08-01，macOS · SystemConfiguration
+- **[Interrupt Management](../../qa/hw/Interrupt%20Management/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Invisibility of ColorSync Accelerators](../../qa/c/Invisibility%20of%20ColorSync%20Accelerators/Legacy%20Documentclose%20button.md)** — QA · 1996-03-05，macOS
+- **[Invoking the Open Firmware user interface](../../qa/hw/Invoking%20the%20Open%20Firmware%20user%20interface/hw45.md)** — QA · 1999-02-15，macOS
+- **[IODeviceTree and the I/O Registry](../../qa/IODeviceTree%20and%20the%20I-O%20Registry.md)** — QA · 2008-09-18，macOS
+- **[IOKit Framework Headers](../../qa/qa2001/IOKit%20Framework%20Headers/qa1107.md)** — QA · 2011-07-11，macOS
+- **[IOLog and Interrupt Context](../../qa/IOLog%20and%20Interrupt%20Context.md)** — QA · 2011-07-22，macOS · Kernel
+- **[Is ColorSync thread safe?](../../qa/qa2001/Is%20ColorSync%20thread%20safe/qa1261.md)** — QA · 2011-07-11，macOS · ApplicationServices
+- **[Is dlopen available on all versions of Mac OS X?](../../qa/Is%20dlopen%20available%20on%20all%20versions%20of%20Mac%20OS%20X.md)** — QA · 2008-08-19，macOS
+- **[Is QuickTime thread-safe?](../../qa/Is%20QuickTime%20thread-safe.md)** — QA · 2006-02-14，macOS · QuickTime
+- **[Is SCSI Manager 4.3 Emulated?](../../qa/dv/Is%20SCSI%20Manager%204.3%20Emulated.md)** — QA · 1999-04-05，macOS
+- **[Is there a relationship between the device tree and the Name Registry?](../../qa/hw/Is%20there%20a%20relationship%20between%20the%20device%20tree%20and%20the%20Name%20Registry/Legacy%20Documentclose%20button.md)** — QA · 1999-02-15，macOS
+- **[iSight - Configuring gain settings for IIDC cameras](../../qa/iSight%20-%20Configuring%20gain%20settings%20for%20IIDC%20cameras/iSight%20-%20Configuring%20gain%20settings%20for%20IIDC%20cameras.md)** — QA · 2005-04-06，macOS · QuickTime
+- **[Issues with boot time KEXT loading](../../qa/Issues%20with%20boot%20time%20KEXT%20loading.md)** — QA · 2011-07-18，macOS · Kernel
+- **[Java File Paths are not Unix File Paths](../../qa/java/Java%20File%20Paths%20are%20not%20Unix%20File%20Paths/Legacy%20Documentclose%20button.md)** — QA · 2000-03-20，macOS
+- **[JBound App Results in -35 OSErr](../../qa/java/JBound%20App%20Results%20in%20-35%20OSErr/Legacy%20Documentclose%20button.md)** — QA · 1998-02-22，macOS
+- **[Jumpy Mouse when Transferring Data on PowerMacs](../../qa/dv/Jumpy%20Mouse%20when%20Transferring%20Data%20on%20PowerMacs.md)** — QA · 1995-11-01，macOS
+- **[Kanji & PostScript Printing](../../qa/qd/Kanji%20%26%20PostScript%20Printing.md)** — QA · 1996-02-01，macOS
+- **[Kanji and Special Text-Processing](../../qa/tx/Kanji%20and%20Special%20Text-Processing.md)** — QA · 1995-05-01，macOS
+- **[Keeping macro definitions out of the Xcode editor window's function pop-up](../../qa/Keeping%20macro%20definitions%20out%20of%20the%20Xcode%20editor%20window%27s%20function%20pop-up.md)** — QA · 2009-10-27，Xcode Developer Tools|macOS
+- **[Kernel extensions built with Xcode 3.x won't load on PowerPC-based Macs running Mac OS X 10.4.x](../../qa/Kernel%20extensions%20built%20with%20Xcode%203.x%20won%27t%20load%20on%20PowerPC-based%20Macs%20running/Kernel%20extensions%20built%20with%20Xcode%203.x%20won%27t%20load%20on%20PowerPC-based%20Macs%20running.md)** — QA · 2009-05-19，macOS
+- **[Kernel's MAC framework](../../qa/Kernel%27s%20MAC%20framework.md)** — QA · 2008-01-04，macOS · Kernel
+- **[Keyframes and AddMediaSample](../../qa/qtmcc/Keyframes%20and%20AddMediaSample.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Keywords Dropped from 3DMF Specification](../../qa/qd3d/Keywords%20Dropped%20from%203DMF%20Specification.md)** — QA · 1995-06-01，macOS
+- **[LaserWriter 7.5.2 Printing Update 1.1](../../qa/qd/LaserWriter%207.5.2%20Printing%20Update%201.1.md)** — QA · 1995-11-22，macOS
+- **[LaserWriter 8 Local Customization File](../../qa/qd/LaserWriter%208%20Local%20Customization%20File.md)** — QA · 1995-07-01，macOS
+- **[LaserWriter 8 Support for *JCL/PCL](../../qa/qd/LaserWriter%208%20Support%20for%20JCL-PCL.md)** — QA · 1998-05-25，macOS
+- **[LaserWriter 8.3 %%?BeginQuery: RBIAppleDevice Query](../../qa/qd/LaserWriter%208.3%20%25%25-BeginQuery-%20RBIAppleDevice%20Query.md)** — QA · 1995-07-01，macOS
+- **[LaserWriter 8.4.x - Custom page size support](../../qa/qd/LaserWriter%208.4.x%20-%20Custom%20page%20size%20support.md)** — QA · 1997-05-22，macOS
+- **[LaserWriter Drivers - Which Are ColorSync Aware?](../../qa/qd/LaserWriter%20Drivers%20-%20Which%20Are%20ColorSync%20Aware.md)** — QA · 1995-11-22，macOS
+- **[LaserWriter GX CustomDialogs Sample](../../qa/gxpd/LaserWriter%20GX%20CustomDialogs%20Sample.md)** — QA · 1995-08-01，macOS
+- **[Launch Behavior Changes for Image Capture Architecture (ICA) Device Modules on macOS Sierra 10.12](../../qa/Launch%20Behavior%20Changes%20for%20Image%20Capture%20Architecture%20%28ICA%29%20Device%20Modules%20on%20m.md)** — QA · 2016-12-06，macOS · ImageCaptureCore
+- **[Launching a PICT from a Panorama](../../qa/qtvr/Launching%20a%20PICT%20from%20a%20Panorama.md)** — QA · 1995-09-01，macOS
+- **[Launching the Default Internet Browser](../../qa/nw/Launching%20the%20Default%20Internet%20Browser/nw60.md)** — QA · 1999-10-11，macOS
+- **[Legacy Devices](../../qa/hw/Legacy%20Devices/hw84.md)** — QA · 2000-03-20，macOS
+- **[Light Color](../../qa/qd3d/Light%20Color.md)** — QA · 1996-02-15，macOS
+- **[Limitations of ShowDragHilite](../../qa/tb/Limitations%20of%20ShowDragHilite/Legacy%20Documentclose%20button.md)** — QA · 1996-08-21，macOS
+- **[Limitations of the Apple QuickDraw 3D Acceleration Card](../../qa/qd3d/Limitations%20of%20the%20Apple%20QuickDraw%203D%20Acceleration%20Card.md)** — QA · 1996-04-08，macOS
+- **[Limitations to Menu Item Size under Menu Manager](../../qa/tb/Limitations%20to%20Menu%20Item%20Size%20under%20Menu%20Manager/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[Limiting the component list in SCRequestImageSettings](../../qa/Limiting%20the%20component%20list%20in%20SCRequestImageSettings.md)** — QA · 2006-01-12，macOS · QuickTime
+- **[Linked Movies with Different Color Palettes](../../qa/qtmrf/Linked%20Movies%20with%20Different%20Color%20Palettes.md)** — QA · 1996-02-15，macOS · QuickTime
+- **[List Manager & LClick](../../qa/tb/List%20Manager%20%26%20LClick/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[LMGetTheMenu and LMSetMenuHook](../../qa/tb/LMGetTheMenu%20and%20LMSetMenuHook/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Loading Applications Without QD3D](../../qa/qd3d/Loading%20Applications%20Without%20QD3D.md)** — QA · 1995-09-15，macOS
+- **[Loading Scripting Additions in Mac OS X](../../qa/Loading%20Scripting%20Additions%20in%20Mac%20OS%20X.md)** — QA · 2005-05-06，macOS · CoreServices
+- **[Localization Problems with Apps for Japan](../../qa/tx/Localization%20Problems%20with%20Apps%20for%20Japan.md)** — QA · 1995-05-01，macOS
+- **[Localized Versions of Appearance SDK](../../qa/tb/Localized%20Versions%20of%20Appearance%20SDK/Legacy%20Documentclose%20button.md)** — QA · 1999-04-12，macOS
+- **[Locating a Font's Home File](../../qa/tb/Locating%20a%20Font%27s%20Home%20File/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-02-15，macOS
+- **[Locating the 1275-1994 Standard Document](../../qa/hw/Locating%20the%201275-1994%20Standard%20Document/hw85.md)** — QA · 2000-07-17，macOS
+- **[Locating the Selected Printer](../../qa/gxpd/Locating%20the%20Selected%20Printer.md)** — QA · 1995-09-15，macOS
+- **[Locking an Area Using PBLockRange](../../qa/ops/Locking%20an%20Area%20Using%20PBLockRange/ops09.md)** — QA · 1996-05-14，macOS
+- **[LockPixels and DisposeGWorld with QTNewGWorldFromPtr](../../qa/qa2001/Extracting%20DV%20Fields%20using%20QTNewGWorldFromPtr/qa1007.md)** — QA · 2011-07-11，macOS · QuickTime
+- **[Long Timeout When Opening Certain Files - A StyleWriter Quirk](../../qa/qd/Long%20Timeout%20When%20Opening%20Certain%20Files%20-%20A%20StyleWriter%20Quirk.md)** — QA · 1996-04-08，macOS
+- **[Looping Audio Files with QuickTime for Windows](../../qa/Looping%20Audio%20Files%20with%20QuickTime%20for%20Windows.md)** — QA · 2007-10-09，macOS · QuickTime
+- **[Losing the character code when using the control key](../../qa/qa2005/Losing%20the%20character%20code%20when%20using%20the%20control%20key/qa1446.md)** — QA · 2011-07-12，macOS · Carbon
+- **[Mac OS X and root access](../../qa/Mac%20OS%20X%20and%20root%20access.md)** — QA · 2008-09-16，macOS
+- **[MACE Restrictions](../../qa/snd/MACE%20Restrictions.md)** — QA · 1999-06-08，macOS
+- **[Mach Absolute Time Units](../../qa/Mach%20Absolute%20Time%20Units.md)** — QA · 2005-01-06，macOS
+- **[Macintosh Quadra 700 and 900 SCSI Chip Anomaly and Fix](../../qa/dv/Macintosh%20Quadra%20700%20and%20900%20SCSI%20Chip%20Anomaly%20and%20Fix.md)** — QA · 1995-07-01，macOS
+- **[Macintosh Quadra and SCSI Termination](../../qa/dv/Macintosh%20Quadra%20and%20SCSI%20Termination.md)** — QA · 1995-07-01，macOS
+- **[Macintosh Quadra SCSI Data Transfer](../../qa/dv/Macintosh%20Quadra%20SCSI%20Data%20Transfer.md)** — QA · 1995-07-01，macOS
+- **[MacTCP](../../qa/nw/MacTCP/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[MacTCP and UDP Performance](../../qa/nw/MacTCP%20and%20UDP%20Performance/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[MacTCP I/O](../../qa/plat/MacTCP%20I-O/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Make sure your PPD Plugin calls ppdCloseCompiledPPDFromTicket](../../qa/qa2001/Make%20sure%20your%20PPD%20Plugin%20calls%20ppdCloseCompiledPPDFromTicket/Legacy%20Documentclose%20button.md)** — QA · 2004-02-19，macOS
+- **[Making Data Executable](../../qa/ops/Making%20Data%20Executable/Legacy%20Documentclose%20button.md)** — QA · 1999-04-12，macOS
+- **[Making Input Gain Setting Changes](../../qa/snd/Making%20Input%20Gain%20Setting%20Changes.md)** — QA · 1996-06-01，macOS
+- **[Making Objects Invisible](../../qa/qd3d/Making%20Objects%20Invisible.md)** — QA · 1997-07-11，macOS
+- **[Making sense of IOKit error codes](../../qa/Making%20sense%20of%20IOKit%20error%20codes.md)** — QA · 2011-07-18，macOS · Kernel
+- **[Making Sure the Object Will Spin without Stopping](../../qa/qtvr/Making%20Sure%20the%20Object%20Will%20Spin%20without%20Stopping.md)** — QA · 1995-06-01，macOS
+- **[Making the ADBOp call from CFM-68K](../../qa/hw/Making%20the%20ADBOp%20call%20from%20CFM-68K/Legacy%20Documentclose%20button.md)** — QA · 1998-05-11，macOS
+- **[Managing custom drawing code in a compositing world](../../qa/Managing%20custom%20drawing%20code%20in%20a%20compositing%20world.md)** — QA · 2004-10-14，macOS
+- **[Mapping OT Error Numbers to theirNames](../../qa/nw/Mapping%20OT%20Error%20Numbers%20to%20theirNames/Legacy%20Documentclose%20button.md)** — QA · 1996-06-01，macOS
+- **[Maximum Memory for the "Firewire" PowerBook](../../qa/hw/Maximum%20Memory%20for%20the%20-Firewire-%20PowerBook/Not%20Recommended%20Documentclose%20button.md)** — QA · 2000-03-13，macOS
+- **[Maximum number of fonts](../../qa/tx/Maximum%20number%20of%20fonts.md)** — QA · 2000-01-04，macOS
+- **[Maximum Number of Menu Items](../../qa/tb/Maximum%20Number%20of%20Menu%20Items/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[MCSetClip and Clipping with the Movie Controller](../../qa/qtmtb/MCSetClip%20and%20Clipping%20with%20the%20Movie%20Controller.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[MemAllocatePhysicallyContiguous](../../qa/dv/MemAllocatePhysicallyContiguous/Legacy%20Documentclose%20button.md)** — QA · 1999-08-23，macOS，3 页
+- **[MemError](../../qa/me/MemError.md)** — QA · 1997-09-12，macOS
+- **[Memory Problems, Avoiding Blank Frames](../../qa/qtvr/Memory%20Problems%2C%20Avoiding%20Blank%20Frames.md)** — QA · 1995-06-01，macOS
+- **[Menu Bar Clock and NVRAM](../../qa/qa2001/Menu%20Bar%20Clock%20and%20NVRAM/qa1102.md)** — QA · 2001-12-21，macOS
+- **[Menu Definition Drawing Dimmed Items](../../qa/tb/Menu%20Definition%20Drawing%20Dimmed%20Items/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Menu Issues, Drawing, Removal & Increasing Size](../../qa/tb/Menu%20Issues%2C%20Drawing%2C%20Removal%20%26%20Increasing%20Size/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Menus & Hardware Accelerated OpenGL under Mac OS 9 Carbon](../../qa/qa2001/Menus%20%26%20Hardware%20Accelerated%20OpenGL%20under%20Mac%20OS%209%20Carbon/Legacy%20Documentclose%20button.md)** — QA · 2001-07-10，macOS
+- **[Mesh Edge Structure Can Not Have More Than 2 Faces](../../qa/qd3d/Mesh%20Edge%20Structure%20Can%20Not%20Have%20More%20Than%202%20Faces.md)** — QA · 1997-07-11，macOS
+- **[Metafile Specification Discrepancies](../../qa/qd3d/Metafile%20Specification%20Discrepancies.md)** — QA · 1995-06-01，macOS
+- **[Missing ColorSync Profiles](../../qa/c/Missing%20ColorSync%20Profiles/Legacy%20Documentclose%20button.md)** — QA · 1999-05-03，macOS · ApplicationServices
+- **[Missing Geometries in QuickDraw 3D 1.0.X](../../qa/qd3d/Missing%20Geometries%20in%20QuickDraw%203D%201.0.X.md)** — QA · 1996-04-08，macOS
+- **[Missing Low Memory Globals](../../qa/plat/Missing%20Low%20Memory%20Globals/Legacy%20Documentclose%20button.md)** — QA · 1997-01-09，macOS
+- **[Missing Results in Xcode Project Find Window](../../qa/Missing%20Results%20in%20Xcode%20Project%20Find%20Window.md)** — QA · 2008-03-06，Xcode Developer Tools|macOS
+- **[Mixing AWT/Swing and Cocoa-Java](../../qa/Mixing%20AWT-Swing%20and%20Cocoa-Java.md)** — QA · 2006-10-12，macOS
+- **[Mixing link-local IP addresses and routable IP addresses](../../qa/Mixing%20link-local%20IP%20addresses%20and%20routable%20IP%20addresses.md)** — QA · 2005-07-06，macOS
+- **[More Choices and Scroll Bar not Working in Print Dialog](../../qa/gxpd/More%20Choices%20and%20Scroll%20Bar%20not%20Working%20in%20Print%20Dialog.md)** — QA · 1995-08-01，macOS
+- **[Mounting a Remote File System](../../qa/nw/Mounting%20a%20Remote%20File%20System/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Move off AudioUnitRemovePropertyListener and the Component Manager on Mac OS X 10.6 and greater](../../qa/Move%20off%20AudioUnitRemovePropertyListener%20and%20the%20Component%20Manager%20on%20Mac%20OS%20X%201.md)** — QA · 2010-03-15，macOS · AudioUnit
+- **[Movie Drawing Complete Procedure with C++](../../qa/qa2001/Movie%20Drawing%20Complete%20Procedure%20with%20C%2B%2B/qa1150.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Movie Export - Always fill in the MovieExportGetDataParams dataSize field](../../qa/Movie%20Export%20-%20Always%20fill%20in%20the%20MovieExportGetDataParams%20dataSize%20field.md)** — QA · 2005-02-25，macOS · QuickTime
+- **[Movie Export Component - How to ensure Final Cut Pro recognizes your exporter](../../qa/Movie%20Export%20Component%20-%20How%20to%20ensure%20Final%20Cut%20Pro%20recognizes%20your%20exporter.md)** — QA · 2005-03-08，macOS
+- **[Movie Export Components - Supporting a MovieProgressProc](../../qa/qa2001/Movie%20Export%20Components%20-%20Supporting%20a%20MovieProgressProc/qa1230.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Movie Export From Procedures - Providing k2vuyPixelFormat data to MovieExportGetDataProc](../../qa/Movie%20Export%20From%20Procedures%20-%20Providing%20k2vuyPixelFormat%20data%20to%20MovieExportGet/Movie%20Export%20From%20Procedures%20-%20Providing%20k2vuyPixelFormat%20data%20to%20MovieExportGet.md)** — QA · 2006-03-03，macOS · QuickTime
+- **[Movie export with AMR audio](../../qa/Movie%20export%20with%20AMR%20audio.md)** — QA · 2010-02-24，macOS · QuickTime
+- **[Movie Import Component Selectors](../../qa/qtmcc/Movie%20Import%20Component%20Selectors.md)** — QA · 1996-08-21，macOS · QuickTime
+- **[Movie Import Components - MovieImportDataRef Invoked For File Import Operations](../../qa/Movie%20Import%20Components%20-%20MovieImportDataRef%20Invoked%20For%20File%20Import%20Operations.md)** — QA · 2008-03-11，macOS · QuickTime
+- **[MovieAudioExtraction - Ensure a Movie is fully loaded before starting an extraction session](../../qa/MovieAudioExtraction%20-%20Ensure%20a%20Movie%20is%20fully%20loaded%20before%20starting%20an%20extract.md)** — QA · 2006-03-29，macOS
+- **[MovieAudioExtraction - Extracting all available audio samples](../../qa/MovieAudioExtraction%20-%20Extracting%20all%20available%20audio%20samples.md)** — QA · 2006-07-18，macOS · QuickTime
+- **[Movies - Saving movie playback hints](../../qa/Movies%20-%20Saving%20movie%20playback%20hints.md)** — QA · 2004-09-14，macOS · QuickTime
+- **[Moving Code in DespoolPage to GXSetUpPageImageData](../../qa/gxpd/Moving%20Code%20in%20DespoolPage%20to%20GXSetUpPageImageData.md)** — QA · 1995-05-01，macOS
+- **[Moving Files in Java](../../qa/java/Moving%20Files%20in%20Java/Legacy%20Documentclose%20button.md)** — QA · 2000-02-02，macOS
+- **[Moving the Menu Bar](../../qa/tb/Moving%20the%20Menu%20Bar/Not%20Recommended%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[MPEG Compression in QuickTime](../../qa/qticm/MPEG%20Compression%20in%20QuickTime.md)** — QA · 1995-08-01，macOS · QuickTime
+- **[MPRemoteCall Contexts](../../qa/qa2001/MPRemoteCall%20Contexts/qa1122.md)** — QA · 2002-02-18，macOS
+- **[MPW Tool Not Found](../../qa/qtvr/MPW%20Tool%20Not%20Found.md)** — QA · 1995-09-01，macOS
+- **[MSVC++ link error LNK4098 When Building QuickTime 3 for Windows Apps](../../qa/qtw/MSVC%2B%2B%20link%20error%20LNK4098%20When%20Building%20QuickTime%203%20for%20Windows%20Apps/Legacy%20Documentclose%20button.md)** — QA · 1998-09-21，macOS
+- **[Multiple Resources with the Same Type and ID](../../qa/tb/Multiple%20Resources%20with%20the%20Same%20Type%20and%20ID/tb30.md)** — QA · 1996-11-27，macOS
+- **[Multithreaded usage of the QCRenderer](../../qa/Multithreaded%20usage%20of%20the%20QCRenderer.md)** — QA · 2008-09-08，macOS · Quartz
+- **[Music Player Sequence Destinations](../../qa/Music%20Player%20Sequence%20Destinations.md)** — QA · 2011-07-22，macOS · AudioUnit
+- **[My custom item dismisses my Navigation Services dialog](../../qa/My%20custom%20item%20dismisses%20my%20Navigation%20Services%20dialog.md)** — QA · 2004-11-22，macOS
+- **[My ListBox control works fine on Mac OS X but I get a crash on Mac OS 9 when I click in the scrollbar](../../qa/qa2001/My%20ListBox%20control%20works%20fine%20on%20Mac%20OS%20X%20but%20I%20get%20a%20crash%20on%20Mac%20OS%209%20when%20I%20c/qa1156.md)** — QA · 2002-07-12，macOS
+- **[Native App Slowdown](../../qa/ppcsys/Native%20App%20Slowdown.md)** — QA · 1995-05-01，macOS
+- **[Native App Slowdown](../../qa/tb/Native%20App%20Slowdown/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Native Disk Driver Debugging](../../qa/dv/Native%20Disk%20Driver%20Debugging.md)** — QA · 2000-02-28，macOS
+- **[Native Drivers ('ndrv's) and dNeedTime](../../qa/dv/Native%20Drivers%20%28%27ndrv%27s%29%20and%20dNeedTime/Legacy%20Documentclose%20button.md)** — QA · 1999-04-26，macOS，2 页
+- **[Native QuickDraw Hardware Acceleration notSrcCopy Blits](../../qa/qd/Native%20QuickDraw%20Hardware%20Acceleration%20notSrcCopy%20Blits.md)** — QA · 1999-06-28，macOS
+- **[Navigation Services and memFullErr](../../qa/tb/Navigation%20Services%20and%20memFullErr/Legacy%20Documentclose%20button.md)** — QA · 1998-07-06，macOS
+- **[Navigation Services Versions](../../qa/tb/Navigation%20Services%20Versions/Legacy%20Documentclose%20button.md)** — QA · 1999-03-08，macOS
+- **[Necessity of Calling PrJobDialog](../../qa/qd/Necessity%20of%20Calling%20PrJobDialog.md)** — QA · 1995-11-01，macOS
+- **[New MacApp Release Approach](../../qa/plat/New%20MacApp%20Release%20Approach/Legacy%20Documentclose%20button.md)** — QA · 1996-08-21，macOS
+- **[New Monitor Related Playback Calls](../../qa/qticm/New%20Monitor%20Related%20Playback%20Calls.md)** — QA · 1995-05-01，macOS
+- **[New PPD keywords available in Mac OS X version 10.3](../../qa/New%20PPD%20keywords%20available%20in%20Mac%20OS%20X%20version%2010.3.md)** — QA · 2004-05-26，macOS
+- **[NewMovieFromScrap, Adding the Media Later](../../qa/qtmtb/NewMovieFromScrap%2C%20Adding%20the%20Media%20Later.md)** — QA · 1995-05-01，macOS
+- **[NewRoutineDescriptor & Porting 68K code to PPC](../../qa/ppcsys/NewRoutineDescriptor%20%26%20Porting%2068K%20code%20to%20PPC.md)** — QA · 1996-06-01，macOS
+- **[No Limit To The Number Of Vertices In A Polygon](../../qa/qd3d/No%20Limit%20To%20The%20Number%20Of%20Vertices%20In%20A%20Polygon.md)** — QA · 1997-07-11，macOS
+- **[No Standard UV Parameters For Mesh](../../qa/qd3d/No%20Standard%20UV%20Parameters%20For%20Mesh.md)** — QA · 1997-07-11，macOS
+- **[Non Mac OS X Bundled data-fork based Resources](../../qa/qa2001/Non%20Mac%20OS%20X%20Bundled%20data-fork%20based%20Resources/qa1098.md)** — QA · 2003-08-20，macOS
+- **[Non-consensual Contextual Menu Manager Plug-ins](../../qa/tb/Non-consensual%20Contextual%20Menu%20Manager%20Plug-ins/Legacy%20Documentclose%20button.md)** — QA · 1999-02-08，macOS
+- **[noResponseErr from PPC Toolbox](../../qa/ic/noResponseErr%20from%20PPC%20Toolbox.md)** — QA · 1995-05-01，macOS
+- **[Normal Line of Object Pick](../../qa/qd3d/Normal%20Line%20of%20Object%20Pick.md)** — QA · 1995-06-01，macOS
+- **[Notification Manager Reinitialized During Boot](../../qa/ops/Notification%20Manager%20Reinitialized%20During%20Boot/Legacy%20Documentclose%20button.md)** — QA · 1999-10-05，macOS
+- **[Notifying the Finder of changed or newly created files](../../qa/qa2001/Notifying%20the%20Finder%20of%20changed%20or%20newly%20created%20files/qa1260.md)** — QA · 2011-07-12，macOS · CoreServices
+- **[NSL and Custom Thread Context-Switching Functions](../../qa/nw/NSL%20and%20Custom%20Thread%20Context-Switching%20Functions/Legacy%20Documentclose%20button.md)** — QA · 2000-01-31，macOS
+- **[NSL and how it relates to Bonjour](../../qa/NSL%20and%20how%20it%20relates%20to%20Bonjour.md)** — QA · 2003-09-18，macOS
+- **[NSOpenGLView redraw problems after a window is closed and re-opened.](../../qa/NSOpenGLView%20redraw%20problems%20after%20a%20window%20is%20closed%20and%20re-opened.md)** — QA · 2004-12-03，macOS · AppKit
+- **[NSOpenPanel - Choosing any file and ignoring packages](../../qa/NSOpenPanel%20-%20Choosing%20any%20file%20and%20ignoring%20packages.md)** — QA · 2007-01-25，macOS · AppKit
+- **[NSProgressIndicator animation and redraw](../../qa/NSProgressIndicator%20animation%20and%20redraw.md)** — QA · 2006-11-15，macOS · AppKit
+- **[NuBus Declaration ROM](../../qa/hw/NuBus%20Declaration%20ROM/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[NuBus Timing Problem](../../qa/hw/NuBus%20Timing%20Problem/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Obtaining a List of Volumes from a Server Programmatically](../../qa/nw/Obtaining%20a%20List%20of%20Volumes%20from%20a%20Server%20Programmatically/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Obtaining Standard Icons](../../qa/tb/Obtaining%20Standard%20Icons/Legacy%20Documentclose%20button.md)** — QA · 1997-12-23，macOS
+- **[Obtaining the localized application name in Cocoa](../../qa/Obtaining%20the%20localized%20application%20name%20in%20Cocoa.md)** — QA · 2017-06-14，macOS · Foundation
+- **[Obtaining the name of an external MIDI Device from a MIDI Endpoint](../../qa/Obtaining%20the%20name%20of%20an%20external%20MIDI%20Device%20from%20a%20MIDI%20Endpoint.md)** — QA · 2014-03-24，macOS · CoreMIDI
+- **[Open Firmware device tree nodes](../../qa/hw/Open%20Firmware%20device%20tree%20nodes/hw86.md)** — QA · 2000-09-05，macOS
+- **[Open Firmware Memory bus speed](../../qa/hw/Open%20Firmware%20Memory%20bus%20speed/hw97.md)** — QA · 2000-09-22，macOS
+- **[Open Firmware version number](../../qa/hw/Open%20Firmware%20version%20number/hw96.md)** — QA · 2000-09-22，macOS
+- **[Open Transport Error -3208:  kEBADFErr](../../qa/nw/Open%20Transport%20Error%20-3208-%20kEBADFErr/nw21.md)** — QA · 1996-03-04，macOS
+- **[Open Transport Errors -3151/-3160 and Option Management](../../qa/nw/Open%20Transport%20Errors%20-3151--3160%20and%20Option%20Management/Legacy%20Documentclose%20button.md)** — QA · 1998-04-12，macOS
+- **[Open Transport Libraries](../../qa/nw/Open%20Transport%20Libraries/nw18.md)** — QA · 2000-11-03，macOS
+- **[Open Transport T_DATA Event Queuing](../../qa/nw/Open%20Transport%20TDATA%20Event%20Queuing/Legacy%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Open Transport Versions](../../qa/nw/Open%20Transport%20Versions/Legacy%20Documentclose%20button.md)** — QA · 2000-05-08，macOS
+- **[Open Transport's Limited Compatibility with 680x0](../../qa/nw/68K%20Open%20Transport%20Code%20on%20Power%20Macintoshes/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[OpenGL and 3D Graphics Changes in Mac OS X v10.2.3](../../qa/qa2001/OpenGL%20and%203D%20Graphics%20Changes%20in%20Mac%20OS%20X%20v10.2.3/Legacy%20Documentclose%20button.md)** — QA · 2003-01-03，macOS
+- **[OpenGL and 3D Graphics Changes in Mac OS X v10.2.4](../../qa/qa2001/OpenGL%20and%203D%20Graphics%20Changes%20in%20Mac%20OS%20X%20v10.2.4/Legacy%20Documentclose%20button.md)** — QA · 2003-02-18，macOS
+- **[OpenGL and 3D Graphics Changes in Mac OS X v10.2.5](../../qa/qa2001/OpenGL%20and%203D%20Graphics%20Changes%20in%20Mac%20OS%20X%20v10.2.5/Legacy%20Documentclose%20button.md)** — QA · 2003-04-29，macOS
+- **[OpenGL Driver Monitor Decoder Ring](../../qa/qa2001/OpenGL%20Driver%20Monitor%20Decoder%20Ring/qa1334.md)** — QA · 2011-07-12，macOS · OpenGL
+- **[OpenGL Texture Sharing Between Contexts](../../qa/qa2001/OpenGL%20Texture%20Sharing%20Between%20Contexts/Legacy%20Documentclose%20button.md)** — QA · 2001-05-01，macOS
+- **[Opening a Web page using an HREF track in QuickTime Player](../../qa/Opening%20a%20Web%20page%20using%20an%20HREF%20track%20in%20QuickTime%20Player.md)** — QA · 2008-11-05，Safari|macOS · QuickTime
+- **[Order for using the Scene Editor](../../qa/qtvr/Order%20for%20using%20the%20Scene%20Editor.md)** — QA · 1995-09-01，macOS
+- **[OT Driver returns EINVAL error for TCP/IP program, but AppleTalk works fine](../../qa/nw/OT%20Driver%20returns%20EINVAL%20error%20for%20TCP-IP%20program%2C%20but%20AppleTalk%20works%20fine/Legacy%20Documentclose%20button.md)** — QA · 1997-03-14，macOS
+- **[OT Serial Port I/O Handshaking](../../qa/nw/OT%20Serial%20Port%20I-O%20Handshaking/Legacy%20Documentclose%20button.md)** — QA · 1996-11-27，macOS
+- **[OTScheduleDeferredTask When Task Running](../../qa/nw/OTScheduleDeferredTask%20When%20Task%20Running/nw52.md)** — QA · 1997-10-13，macOS
+- **[OTScheduleSystemTask Cleanup](../../qa/nw/OTScheduleSystemTask%20Cleanup/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-07-03，macOS
+- **[Page Setup/Format Dialog Extensions](../../qa/gxpd/Page%20Setup-Format%20Dialog%20Extensions.md)** — QA · 1995-08-01，macOS
+- **[Paint Program to Create Hotspot PICT files?](../../qa/qtvr/Paint%20Program%20to%20Create%20Hotspot%20PICT%20files.md)** — QA · 1995-09-01，macOS
+- **[Paper Type Menu not Updated Often](../../qa/gxpd/Paper%20Type%20Menu%20not%20Updated%20Often.md)** — QA · 1995-07-01，macOS
+- **[ParamErr from PrClosePage](../../qa/qd/ParamErr%20from%20PrClosePage.md)** — QA · 1995-12-07，macOS
+- **[paramErr returned from ConvertMovieToFile when exporting to .wav](../../qa/qa2001/paramErr%20returned%20from%20ConvertMovieToFile%20when%20exporting%20to%20.wav/qa1313.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Parsing the PICT File Format](../../qa/qd/Parsing%20the%20PICT%20File%20Format.md)** — QA · 1998-02-10，macOS
+- **[PBLockRange with a zero-length range](../../qa/fl/PBLockRange%20with%20a%20zero-length%20range.md)** — QA · 1999-11-22，macOS
+- **[PBXGetVolInfo Glue](../../qa/fl/Determining%20volume%20size/Legacy%20Documentclose%20button-2.md)** — QA · 1998-07-30，macOS
+- **[PC Card 3.x Custom Actions](../../qa/dv/PC%20Card%203.x%20Custom%20Actions.md)** — QA · 1999-10-25，macOS
+- **[PC card Voltage Sense line issues with 5-volt only cards](../../qa/hw/PC%20card%20Voltage%20Sense%20line%20issues%20with%205-volt%20only%20cards/Legacy%20Documentclose%20button.md)** — QA · 1999-10-18，macOS
+- **[PC100 SDRAM DIMMs on the Flat Panel iMac](../../qa/qa2001/PC100%20SDRAM%20DIMMs%20on%20the%20Flat%20Panel%20iMac/qa1130.md)** — QA · 2002-03-18，macOS
+- **[PCI address/data stepping](../../qa/hw/PCI%20address-data%20stepping/hw94.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Bus and IEEE Standards](../../qa/hw/PCI%20Bus%20and%20IEEE%20Standards/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI bus on the iMac](../../qa/hw/PCI%20bus%20on%20the%20iMac/hw42.md)** — QA · 1999-02-15，macOS
+- **[PCI Bus Performance with Memory Read and Memory Read Multiple Commands](../../qa/hw/PCI%20Bus%20Performance%20with%20Memory%20Read%20and%20Memory%20Read%20Multiple%20Commands/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Card's Assigned-Address Properties](../../qa/hw/PCI%20Card%27s%20Assigned-Address%20Properties/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI class codes](../../qa/hw/PCI%20class%20codes/hw91.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Device and Driver Matching](../../qa/hw/PCI%20Device%20and%20Driver%20Matching/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Drivers: I/O Queue & KillIO](../../qa/hw/PCI%20Drivers-%20I-O%20Queue%20%26%20KillIO/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Header types](../../qa/hw/PCI%20Header%20types/hw78.md)** — QA · 1999-11-15，macOS
+- **[PCI Interrupts](../../qa/hw/PCI%20Interrupts/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Macintoshes and CardBus controllers](../../qa/hw/PCI%20Macintoshes%20and%20CardBus%20controllers/hw87.md)** — QA · 2000-09-05，macOS · Kernel
+- **[PCI SIG](../../qa/hw/PCI%20SIG/hw55.md)** — QA · 2011-07-12，macOS · Kernel
+- **[PCI Support for the ISA Style Bracket](../../qa/hw/PCI%20Support%20for%20the%20ISA%20Style%20Bracket/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[PCI Throughput Issues](../../qa/dv/PCI%20Throughput%20Issues.md)** — QA · 1995-09-15，macOS
+- **[PCI Video Card Bus Error](../../qa/qd/PCI%20Video%20Card%20Bus%20Error.md)** — QA · 1997-11-17，macOS
+- **[PCI/PCI-X slots on the Power Mac G5](../../qa/qa2001/PCI-PCI-X%20slots%20on%20the%20Power%20Mac%20G5/qa1307.md)** — QA · 2003-09-30，macOS
+- **[PDD File Format API](../../qa/gxpd/PDD%20File%20Format%20API.md)** — QA · 1996-06-01，macOS
+- **[PICT, QuickTime-Compressed Testing](../../qa/qticm/PICT%2C%20QuickTime-Compressed%20Testing.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Placing a Foreground Task into the Background](../../qa/ps/Placing%20a%20Foreground%20Task%20into%20the%20Background.md)** — QA · 1995-09-27，macOS
+- **[Placing Video Over Panorama](../../qa/qtvr/Placing%20Video%20Over%20Panorama.md)** — QA · 1995-09-01，macOS
+- **[Playback of QuickTime movie audio through a multi-channel speaker system](../../qa/Playback%20of%20QuickTime%20movie%20audio%20through%20a%20multi-channel%20speaker%20system.md)** — QA · 2008-11-05，macOS · QuickTime
+- **[Playing Back VR Movies from CD-ROM Drives](../../qa/qtvr/Playing%20Back%20VR%20Movies%20from%20CD-ROM%20Drives.md)** — QA · 1995-06-01，macOS
+- **[Playing Compressed WAVE files via the Sound Manager](../../qa/snd/Playing%20Compressed%20WAVE%20files%20via%20the%20Sound%20Manager.md)** — QA · 1996-09-27，macOS
+- **[Playing memory-resident WAVE data using QuickTime 4](../../qa/qtmtb/Playing%20memory-resident%20WAVE%20data%20using%20QuickTime%204.md)** — QA · 1999-07-21，macOS · QuickTime
+- **[Playing QuickTime 3 Movie Sound Data](../../qa/qtmtb/Playing%20QuickTime%203%20Movie%20Sound%20Data.md)** — QA · 1998-11-09，macOS
+- **[Playing Uncompressed WAVE files via the Sound Manager](../../qa/snd/Playing%20Uncompressed%20WAVE%20files%20via%20the%20Sound%20Manager/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS，2 页
+- **[pointOfInterest](../../qa/qd3d/pointOfInterest.md)** — QA · 1996-04-08，macOS
+- **[PostScript Color Printing Bug](../../qa/gxpd/PostScript%20Color%20Printing%20Bug.md)** — QA · 1996-05-14，macOS
+- **[Power adapter Sensing for the 17" PowerBook](../../qa/qa2001/Power%20adapter%20Sensing%20for%20the%2017-%20PowerBook/qa1266.md)** — QA · 2003-06-12，macOS
+- **[Power Management; Policy Maker vs. Power Controller](../../qa/qa2001/Power%20Management%3B%20Policy%20Maker%20vs.%20Power%20Controller/qa1121.md)** — QA · 2011-07-12，macOS · IOKit
+- **[PowerBook and Sleep Mode](../../qa/hw/PowerBook%20and%20Sleep%20Mode/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Powered Off Devices Connected to the SCSI Bus](../../qa/dv/Powered%20Off%20Devices%20Connected%20to%20the%20SCSI%20Bus.md)** — QA · 1995-07-01，macOS
+- **[PowerMac 9500 Sound Input](../../qa/dv/PowerMac%209500%20Sound%20Input.md)** — QA · 1995-09-15，macOS
+- **[PowerPC & Writing Info to the Data Fork](../../qa/ppcsys/PowerPC%20%26%20Writing%20Info%20to%20the%20Data%20Fork.md)** — QA · 1995-05-01，macOS
+- **[PPDs](../../qa/qd/Determining%20a%20PostScript%20Printer%27s%20Optimal%20Resolution/Legacy%20Documentclose%20button-2.md)** — QA · 1995-05-01，macOS
+- **[PPPoE Server for Testing](../../qa/PPPoE%20Server%20for%20Testing.md)** — QA · 2011-07-27，macOS
+- **[PrepareMemoryForIO and Execution Levels](../../qa/dv/Coordinating%20Deferred%20Tasks%20and%20Secondary%20Interrupts/Legacy%20Documentclose%20button-3.md)** — QA · 1998-06-08，macOS
+- **[PrepareMemoryForIO in the NewWorld](../../qa/dv/MemAllocatePhysicallyContiguous/dv33.md)** — QA · 1998-12-07，macOS，2 页
+- **[PrepareMemoryForIO Options](../../qa/dv/PrepareMemoryForIO%20Options/Legacy%20Documentclose%20button.md)** — QA · 2000-09-22，macOS，3 页
+- **[Preroll Movies](../../qa/qtmtb/Preroll%20Movies.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Preserving embedded ICC profiles when using QuickTime Graphics Importer/Exporters](../../qa/qa2001/Preserving%20embedded%20ICC%20profiles%20when%20using%20QuickTime%20Graphics%20Importer-Exporter/qa1145.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Preventing column reordering in NSTableView](../../qa/Preventing%20column%20reordering%20in%20NSTableView.md)** — QA · 2007-01-24，macOS · AppKit
+- **[Preventing crashes when using multiple disabled but editable NSComboBoxes](../../qa/qa2001/Preventing%20crashes%20when%20using%20multiple%20disabled%20but%20editable%20NSComboBoxes/qa1142.md)** — QA · 2002-06-03，macOS
+- **[Preventing Memory Leaks](../../qa/me/Preventing%20Memory%20Leaks.md)** — QA · 1995-11-01，macOS
+- **[Preventing sleep](../../qa/Preventing%20sleep.md)** — QA · 2018-06-04，macOS · CoreServices
+- **[Preview image quality of DV capture](../../qa/qtmcc/Preview%20image%20quality%20of%20DV%20capture.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Print Job Cancelling](../../qa/gxpd/Print%20Job%20Cancelling.md)** — QA · 1995-05-01，macOS
+- **[Print Scaling](../../qa/qd/Print%20Scaling.md)** — QA · 1995-05-01，macOS
+- **[Printer Drivers and KanjiTalk 7.5](../../qa/qd/Printer%20Drivers%20and%20KanjiTalk%207.5.md)** — QA · 1995-05-01，macOS
+- **[Printer Queue vs. Printer Name](../../qa/Printer%20Queue%20vs.%20Printer%20Name.md)** — QA · 2007-04-26，macOS · ApplicationServices
+- **[Printing Finder Icons](../../qa/qd/Printing%20Finder%20Icons.md)** — QA · 1995-11-01，macOS
+- **[Printing, Forward and Reverse Line Feeds](../../qa/qd/Printing%2C%20Forward%20and%20Reverse%20Line%20Feeds.md)** — QA · 1997-12-01，macOS
+- **[Private HITheme APIs in Mac OS X 10.2 should not be called](../../qa/Private%20HITheme%20APIs%20in%20Mac%20OS%20X%2010.2%20should%20not%20be%20called.md)** — QA · 2004-10-27，macOS
+- **[Problem Getting PICTS to Display in Correct Colors](../../qa/qd/Problem%20Getting%20PICTS%20to%20Display%20in%20Correct%20Colors.md)** — QA · 1995-09-15，macOS
+- **[Problem with PaintRgn on 256-color Screens](../../qa/qd/Problem%20with%20PaintRgn%20on%20256-color%20Screens.md)** — QA · 1995-09-15，macOS
+- **[Problems Creating a Mask for a Picture](../../qa/qd/Problems%20Creating%20a%20Mask%20for%20a%20Picture.md)** — QA · 1995-09-15，macOS
+- **[Problems getting Bonjour TXT record information](../../qa/Problems%20getting%20Bonjour%20TXT%20record%20information.md)** — QA · 2005-07-06，macOS
+- **[Problems recording CopyBits into a PICT on Mac OS X 10.2](../../qa/qa2001/Problems%20recording%20CopyBits%20into%20a%20PICT%20on%20Mac%20OS%20X%2010.2/qa1189.md)** — QA · 2002-11-19，macOS
+- **[Problems with Caching Drivers on PowerMac 9500](../../qa/dv/Problems%20with%20Caching%20Drivers%20on%20PowerMac%209500.md)** — QA · 1995-09-15，macOS
+- **[Problems with CDEV Multiple Dialogs](../../qa/tb/Problems%20with%20CDEV%20Multiple%20Dialogs/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Problems with DiffRgn](../../qa/qd/Problems%20with%20DiffRgn.md)** — QA · 1995-09-15，macOS
+- **[Problems with Navigable Movies](../../qa/qtvr/Problems%20with%20Navigable%20Movies.md)** — QA · 1995-06-01，macOS
+- **[Problems with Objects Leaving Trails](../../qa/qtvr/Problems%20with%20Objects%20Leaving%20Trails.md)** — QA · 1995-06-01，macOS
+- **[Problems with Panning and Zooming](../../qa/qtvr/Problems%20with%20Panning%20and%20Zooming.md)** — QA · 1995-06-01，macOS
+- **[Problems with Stitching](../../qa/qtvr/Problems%20with%20Stitching.md)** — QA · 1995-06-01，macOS
+- **[Process Carbon Events Not Delivered in 10.2](../../qa/qa2001/Process%20Carbon%20Events%20Not%20Delivered%20in%2010.2/qa1181.md)** — QA · 2002-08-27，macOS
+- **[Process Manager](../../qa/ps/Process%20Manager.md)** — QA · 1995-05-01，macOS
+- **[Programatically retrieving field and frame information](../../qa/Programatically%20retrieving%20field%20and%20frame%20information.md)** — QA · 2007-09-13，macOS · QuickTime
+- **[Programmatic configuration of a Movie Export Component](../../qa/qa2001/Programmatic%20configuration%20of%20a%20Movie%20Export%20Component/qa1147.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Programmatically Accessing and Manipulating Multiple Keychain Items](../../qa/Programmatically%20Accessing%20and%20Manipulating%20Multiple%20Keychain%20Items.md)** — QA · 2006-10-03，macOS · Security
+- **[Programmatically causing restart, shutdown and/or logout](../../qa/Programmatically%20causing%20restart%2C%20shutdown%20and-or%20logout.md)** — QA · 2008-09-24，macOS · Carbon
+- **[Programmatically Performing an Open Directory Search](../../qa/Programmatically%20Performing%20an%20Open%20Directory%20Search.md)** — QA · 2006-09-11，macOS · DirectoryService
+- **[Prompting the user with MRJQuitHandler](../../qa/qa2001/Prompting%20the%20user%20with%20MRJQuitHandler/Legacy%20Documentclose%20button.md)** — QA · 2002-08-15，macOS
+- **[Properties versus methods in automatically generated 'aete' resources](../../qa/java/Properties%20versus%20methods%20in%20automatically%20generated%20%27aete%27%20resources/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Providing QuickDraw with a Known Good Port](../../qa/qa2001/Providing%20QuickDraw%20with%20a%20Known%20Good%20Port/Not%20Recommended%20Documentclose%20button.md)** — QA · 2003-09-29，macOS
+- **[PSetSelfSend in Classic AppleTalk vs. Open Transport AppleTalk](../../qa/nw/PSetSelfSend%20in%20Classic%20AppleTalk%20vs.%20Open%20Transport%20AppleTalk/nw23.md)** — QA · 1996-05-14，macOS
+- **[Public UTIs supported by Mac OS X v10.3](../../qa/Public%20UTIs%20supported%20by%20Mac%20OS%20X%20v10.3.md)** — QA · 2005-02-08，macOS · CoreServices
+- **[Putting Client/Server Systems to Sleep](../../qa/nw/Putting%20Client-Server%20Systems%20to%20Sleep/Legacy%20Documentclose%20button.md)** — QA · 1997-01-09，macOS
+- **[Q3Exit Causes Application Crashes and Error Messages](../../qa/qd3d/Q3Exit%20Causes%20Application%20Crashes%20and%20Error%20Messages.md)** — QA · 1995-06-01，macOS
+- **[Q3View_Sync/Q3View_Flush Differences](../../qa/qd3d/Q3ViewSync-Q3ViewFlush%20Differences.md)** — QA · 1997-07-11，macOS
+- **[QD3D Does Not Free Memory Used By Geometries](../../qa/qd3d/QD3D%20Does%20Not%20Free%20Memory%20Used%20By%20Geometries.md)** — QA · 1997-07-11，macOS
+- **[QD3D Does Not Provide Z-Buffer Information](../../qa/qd3d/QD3D%20Does%20Not%20Provide%20Z-Buffer%20Information.md)** — QA · 1997-07-11，macOS
+- **[QD3D Functions Not Interrupt Safe](../../qa/qd3d/QD3D%20Functions%20Not%20Interrupt%20Safe.md)** — QA · 1997-07-11，macOS
+- **[QD3D Is Not Thread-Safe](../../qa/qd3d/QD3D%20Is%20Not%20Thread-Safe.md)** — QA · 1997-07-11，macOS
+- **[QD3D Macintosh High Quality Postscript Output](../../qa/qd3d/QD3D%20Macintosh%20High%20Quality%20Postscript%20Output.md)** — QA · 1997-07-11，macOS
+- **[QD3D Plug-In Renderer Handlers](../../qa/qd3d/QD3D%20Plug-In%20Renderer%20Handlers.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows High Quality Postscript Output](../../qa/qd3d/QD3D%20Windows%20High%20Quality%20Postscript%20Output.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows Interactive Renderer](../../qa/qd3d/QD3D%20Windows%20Interactive%20Renderer.md)** — QA · 1997-07-11，macOS
+- **[QD3D Windows Pixel Format Support](../../qa/qd3d/QD3D%20Windows%20Pixel%20Format%20Support.md)** — QA · 1997-07-11，macOS
+- **[QDFlushPortBuffer](../../qa/qd/QDFlushPortBuffer.md)** — QA · 2000-11-08，macOS
+- **[QDSwapPort](../../qa/qa2001/QDSwapPort/qa1128.md)** — QA · 2002-11-06，macOS
+- **[QTKit Capture - Disabling Audio Or Video When Capturing From a Muxed Device](../../qa/QTKit%20Capture%20-%20Disabling%20Audio%20Or%20Video%20When%20Capturing%20From%20a%20Muxed%20Device.md)** — QA · 2008-05-19，macOS · QTKit
+- **[QTKit Capture - Disabling specific audio channels when recording](../../qa/QTKit%20Capture%20-%20Disabling%20specific%20audio%20channels%20when%20recording.md)** — QA · 2008-10-13，macOS · QTKit
+- **[QTKit Capture - Extracting SMPTE Timecode information from a QTSampleBuffer](../../qa/QTKit%20Capture%20-%20Extracting%20SMPTE%20Timecode%20information%20from%20a%20QTSampleBuffer.md)** — QA · 2008-03-17，macOS · QTKit
+- **[QTKit Capture - Setting DecompressedVideoOutput CVPixelBuffer Attributes](../../qa/QTKit%20Capture%20-%20Setting%20DecompressedVideoOutput%20CVPixelBuffer%20Attributes.md)** — QA · 2008-03-06，macOS · QTKit
+- **[QTKit Capture - Specifying Media Compression Settings](../../qa/QTKit%20Capture%20-%20Specifying%20Media%20Compression%20Settings.md)** — QA · 2009-10-09，macOS · QTKit
+- **[QTKit Capture - Video Compression Options And Preview](../../qa/QTKit%20Capture%20-%20Video%20Compression%20Options%20And%20Preview.md)** — QA · 2008-09-16，macOS · QTKit
+- **[QTML, c2pstr and Pascal strings](../../qa/qa2001/QTML%2C%20c2pstr%20and%20Pascal%20strings/qa1112.md)** — QA · 2011-07-12，macOS
+- **[Quality of QuickTime video effects](../../qa/qa2001/Quality%20of%20QuickTime%20video%20effects/qa1089.md)** — QA · 2001-10-26，macOS
+- **[Quality of Video Textures](../../qa/qd3d/Quality%20of%20Video%20Textures.md)** — QA · 1996-04-08，macOS
+- **[Quartz 2D Interpolation](../../qa/qa2001/Quartz%202D%20Interpolation/qa1186.md)** — QA · 2011-07-12，macOS · ApplicationServices
+- **[Quartz 2D Thread Safety](../../qa/Quartz%202D%20Thread%20Safety.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[QuickDraw 3D -- Meshes or Patches?](../../qa/qd3d/QuickDraw%203D%20--%20Meshes%20or%20Patches.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D and Submit Calls](../../qa/qd3d/QuickDraw%203D%20and%20Submit%20Calls.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D Debugging Tools](../../qa/qd3d/QuickDraw%203D%20Debugging%20Tools.md)** — QA · 1996-02-09，macOS
+- **[QuickDraw 3D Documentation](../../qa/qd3d/QuickDraw%203D%20Documentation.md)** — QA · 1996-02-09，macOS
+- **[QuickDraw 3D Projection Chain](../../qa/qd3d/QuickDraw%203D%20Projection%20Chain.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw 3D Rendering](../../qa/qd3d/QuickDraw%203D%20Rendering.md)** — QA · 1995-06-01，macOS
+- **[QuickDraw GX 'ptyp' Page Size Calc](../../qa/gxpd/QuickDraw%20GX%20%27ptyp%27%20Page%20Size%20Calc.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX 'ptyp' resources](../../qa/gxpd/QuickDraw%20GX%20%27ptyp%27%20resources.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and Adobe Type Reunion](../../qa/gxpd/QuickDraw%20GX%20and%20Adobe%20Type%20Reunion.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and Color Profiles](../../qa/gx/QuickDraw%20GX%20and%20Color%20Profiles/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and DoesPaperFit Message](../../qa/gxpd/QuickDraw%20GX%20and%20DoesPaperFit%20Message.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and GXConvertQDFont](../../qa/gxty/QuickDraw%20GX%20and%20GXConvertQDFont.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and Hypercard](../../qa/gxty/QuickDraw%20GX%20and%20Hypercard.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and Layout Shapes](../../qa/gxty/QuickDraw%20GX%20and%20Layout%20Shapes.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and PDDs](../../qa/gxpd/QuickDraw%20GX%20and%20PDDs.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX and Text Justification](../../qa/gxty/QuickDraw%20GX%20and%20Text%20Justification.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Font Format](../../qa/gxty/QuickDraw%20GX%20Font%20Format.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Font Problems](../../qa/gxty/QuickDraw%20GX%20Font%20Problems.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX General Print Panel](../../qa/gxpd/QuickDraw%20GX%20General%20Print%20Panel.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Layered Drawing](../../qa/gx/QuickDraw%20GX%20Layered%20Drawing/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Print Extension](../../qa/gxpd/QuickDraw%20GX%20Print%20Extension.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Printer Drivers & Configuration](../../qa/gxpd/QuickDraw%20GX%20Printer%20Drivers%20%26%20Configuration.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Printing Extensions](../../qa/gxpd/QuickDraw%20GX%20Printing%20Extensions.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX Raster and Blank Lines](../../qa/gxpd/QuickDraw%20GX%20Raster%20and%20Blank%20Lines.md)** — QA · 1995-05-01，macOS
+- **[Quickdraw GX Raster Printer Drivers](../../qa/gxpd/Quickdraw%20GX%20Raster%20Printer%20Drivers.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw GX's 'xdtl' Implementation](../../qa/gxpd/QuickDraw%20GX%27s%20%27xdtl%27%20Implementation.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw Printer Drivers and Colorsync](../../qa/qd/QuickDraw%20Printer%20Drivers%20and%20Colorsync.md)** — QA · 1995-05-01，macOS
+- **[QuickDraw Text Anti-Aliasing using Quartz 2D](../../qa/qa2001/QuickDraw%20Text%20Anti-Aliasing%20using%20Quartz%202D/qa1193.md)** — QA · 2002-10-29，macOS
+- **[QuickDrawGX Fonts](../../qa/gxty/QuickDrawGX%20Fonts.md)** — QA · 1995-05-01，macOS
+- **[QuickDrawGX Printer Drivers](../../qa/gxpd/QuickDrawGX%20Printer%20Drivers.md)** — QA · 1995-05-01，macOS
+- **[QuickTime & EnterMovies Call](../../qa/qtmtb/QuickTime%20%26%20EnterMovies%20Call.md)** — QA · 1995-05-01，macOS
+- **[QuickTime & Memory](../../qa/qtmtb/QuickTime%20%26%20Memory.md)** — QA · 1995-05-01，macOS
+- **[QuickTime & MIDI Support](../../qa/qtma/QuickTime%20%26%20MIDI%20Support.md)** — QA · 1995-05-01，macOS
+- **[QuickTime & Noise Problems](../../qa/qtpc/QuickTime%20%26%20Noise%20Problems.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[QuickTime & PutMovieIntoDataFork, Offsets](../../qa/qtmtb/QuickTime%20%26%20PutMovieIntoDataFork%2C%20Offsets.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[QuickTime .qtx/.qtr/.qt/.mov files defined](../../qa/qtw/QuickTime%20.qtx-.qtr-.qt-.mov%20files%20defined/qtw99.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime 2.0 & MIDI](../../qa/qtma/QuickTime%202.0%20%26%20MIDI.md)** — QA · 1995-05-01，macOS
+- **[QuickTime 2.0 and MIDI Conversions](../../qa/qtma/QuickTime%202.0%20and%20MIDI%20Conversions.md)** — QA · 1995-05-01，macOS
+- **[QuickTime 6.4 & AvailabilityMacros.h on Mac OS X 10.2.x](../../qa/qa2001/QuickTime%206.4%20%26%20AvailabilityMacros.h%20on%20Mac%20OS%20X%2010.2.x/qa1316.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime 7.1.5 Security Enhancements](../../qa/QuickTime%207.1.5%20Security%20Enhancements.md)** — QA · 2007-04-02，macOS · QuickTime
+- **[QuickTime and Carbon Events](../../qa/qa2001/QuickTime%20and%20Carbon%20Events/qa1090.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime and Native PowerPC](../../qa/qtmtb/QuickTime%20and%20Native%20PowerPC.md)** — QA · 1995-05-01，macOS
+- **[QuickTime Audio - Easy Frequency Level Metering with MovieAudio APIs](../../qa/QuickTime%20Audio%20-%20Easy%20Frequency%20Level%20Metering%20with%20MovieAudio%20APIs.md)** — QA · 2009-01-29，macOS · QuickTime
+- **[QuickTime Audio - Muting and GetMovieAudioFrequencyLevels](../../qa/QuickTime%20Audio%20-%20Muting%20and%20GetMovieAudioFrequencyLevels.md)** — QA · 2007-09-28，macOS · QuickTime
+- **[QuickTime Audio - Rendering QuickTime Movie audio to a specific Audio Device](../../qa/QuickTime%20Audio%20-%20Rendering%20QuickTime%20Movie%20audio%20to%20a%20specific%20Audio%20Device.md)** — QA · 2008-01-08，macOS · QuickTime
+- **[QuickTime Audio - Retrieving the correct audio format bit depth value](../../qa/QuickTime%20Audio%20-%20Retrieving%20the%20correct%20audio%20format%20bit%20depth%20value.md)** — QA · 2008-11-05，macOS · QuickTime
+- **[QuickTime CFM Error -2804](../../qa/qtmtb/QuickTime%20CFM%20Error%20-2804.md)** — QA · 1995-05-01，macOS
+- **[QuickTime CFM PowerPlug Libraries, Availability, Weak Links](../../qa/qtmtb/QuickTime%20CFM%20PowerPlug%20Libraries%2C%20Availability%2C%20Weak%20Links.md)** — QA · 1995-05-01，macOS
+- **[QuickTime DirectDraw Surfaces](../../qa/qtw/QuickTime%20DirectDraw%20Surfaces/Legacy%20Documentclose%20button.md)** — QA · 1999-11-01，macOS
+- **[QuickTime Effects - How to set up parameter description values when using kParameterTypeDataImage](../../qa/qa2001/QuickTime%20Effects%20-%20How%20to%20set%20up%20parameter%20description%20values%20when%20using%20kParam/qa1326.md)** — QA · 2003-12-09，macOS
+- **[QuickTime Error -2127 qtNetworkAlreadyAllocatedErr Explained](../../qa/qa2001/QuickTime%20Error%20-2127%20qtNetworkAlreadyAllocatedErr%20Explained/qa1244.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime for Windows resource files](../../qa/qa2001/QuickTime%20for%20Windows%20resource%20files/qa1132.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime for Windows returns bdNamErr (-37) error with long Windows file names](../../qa/QuickTime%20for%20Windows%20returns%20bdNamErr%20%28-37%29%20error%20with%20long%20Windows%20file%20names.md)** — QA · 2008-08-08，macOS · QuickTime
+- **[QuickTime Media Editing](../../qa/qa2001/QuickTime%20Media%20Editing/qa1110.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime Media Optimization Properties](../../qa/QuickTime%20Media%20Optimization%20Properties.md)** — QA · 2009-03-30，macOS · QuickTime
+- **[QuickTime Movie Toolbox & Global Variables](../../qa/qtmtb/QuickTime%20Movie%20Toolbox%20%26%20Global%20Variables.md)** — QA · 1995-05-01，macOS
+- **[QuickTime movies require a valid graphics port](../../qa/qa2001/QuickTime%20movies%20require%20a%20valid%20graphics%20port/qa1345.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime Music Architecture](../../qa/qtma/QuickTime%20Music%20Architecture.md)** — QA · 1995-05-01，macOS
+- **[QuickTime Music Architecture Header Update](../../qa/qtma/QuickTime%20Music%20Architecture%20Header%20Update.md)** — QA · 1996-08-21，macOS
+- **[QuickTime Preview Behavior](../../qa/qtmcc/QuickTime%20Preview%20Behavior.md)** — QA · 1996-11-27，macOS
+- **[QuickTime Sound](../../qa/qtmrf/QuickTime%20Sound.md)** — QA · 1995-05-01，macOS
+- **[QuickTime Supported YUV Pixel Formats](../../qa/qa2001/QuickTime%20Supported%20YUV%20Pixel%20Formats/qa1060.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[QuickTime Texture Visual Context - kQTVisualContextNotAllowedErr with non-accelerated graphics cards](../../qa/QuickTime%20Texture%20Visual%20Context%20-%20kQTVisualContextNotAllowedErr%20with%20non-accele.md)** — QA · 2007-09-18，macOS · QuickTime
+- **[QuickTime Toolbox GetMovieTime Call](../../qa/qtmtb/QuickTime%20Toolbox%20GetMovieTime%20Call.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[QuickTime Visual Context - Setting the kQTVisualContextOutputColorSpaceKey Attribute](../../qa/QuickTime%20Visual%20Context%20-%20Setting%20the%20kQTVisualContextOutputColorSpaceKey%20Attri.md)** — QA · 2007-09-28，macOS · QuickTime
+- **[RAVE and DrawSprocket Integration](../../qa/qd3d/RAVE%20and%20DrawSprocket%20Integration.md)** — QA · 1998-04-20，macOS
+- **[RAVE Multiple GDevice support](../../qa/qd3d/RAVE%20Multiple%20GDevice%20support.md)** — QA · 1998-04-20，macOS
+- **[RAVE Notifications](../../qa/qd3d/RAVE%20Notifications.md)** — QA · 1998-04-20，macOS
+- **[RAVE Support for Apple 3D Accelerator](../../qa/qd3d/RAVE%20Support%20for%20Apple%203D%20Accelerator.md)** — QA · 1998-04-20，macOS
+- **[RAVE Z-Buffer Access](../../qa/qd3d/RAVE%20Z-Buffer%20Access.md)** — QA · 1998-04-20，macOS
+- **[Raw IP and Open Transport 2.5.x](../../qa/nw/Raw%20IP%20and%20Open%20Transport%202.5.x/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-10-25，macOS
+- **[Re-enabling dragging from NSTableView to other applications](../../qa/Re-enabling%20dragging%20from%20NSTableView%20to%20other%20applications.md)** — QA · 2008-02-08，macOS · AppKit
+- **[Receiving UDP Broadcasts](../../qa/nw/Receiving%20UDP%20Broadcasts/Not%20Recommended%20Documentclose%20button.md)** — QA · 1997-11-17，macOS，2 页
+- **[Receiving UDP Broadcasts While Sending from a Secondary Address](../../qa/nw/Receiving%20UDP%20Broadcasts%20While%20Sending%20from%20a%20Secondary%20Address/Legacy%20Documentclose%20button.md)** — QA · 2000-05-08，macOS
+- **[Recording Compressed Sounds](../../qa/snd/Recording%20Compressed%20Sounds.md)** — QA · 1998-04-12，macOS
+- **[Reducing the size of Physical Memory in Open Firmware](../../qa/qa2001/Reducing%20the%20size%20of%20Physical%20Memory%20in%20Open%20Firmware/qa1099.md)** — QA · 2001-12-20，macOS
+- **[Reentrancy in QDGX Printer Drivers](../../qa/gxpd/Reentrancy%20in%20QDGX%20Printer%20Drivers.md)** — QA · 1996-02-09，macOS
+- **[Region Structure](../../qa/qd3d/Region%20Structure.md)** — QA · 1996-04-08，macOS
+- **[Registered Custom-Attribute Types](../../qa/qd3d/Registered%20Custom-Attribute%20Types.md)** — QA · 1995-07-15，macOS
+- **[Registering a Bonjour service multiple times](../../qa/Registering%20a%20Bonjour%20service%20multiple%20times.md)** — QA · 2003-10-23，macOS · CoreServices
+- **[Registering and unregistering for sleep and wake notifications](../../qa/Registering%20and%20unregistering%20for%20sleep%20and%20wake%20notifications.md)** — QA · 2014-01-13，macOS · Foundation
+- **[Registering custom pixel formats with QuickTime and Core Video](../../qa/Registering%20custom%20pixel%20formats%20with%20QuickTime%20and%20Core%20Video.md)** — QA · 2005-09-06，macOS · QuickTime
+- **[Releasing the iTunes Windows COM from Managed Code](../../qa/Releasing%20the%20iTunes%20Windows%20COM%20from%20Managed%20Code.md)** — QA · 2008-08-21，macOS
+- **[Remote or Two-Machine Debugging Applications with GDB](../../qa/qa2001/Remote%20or%20Two-Machine%20Debugging%20Applications%20with%20GDB/Legacy%20Documentclose%20button.md)** — QA · 2011-07-12，Xcode Developer Tools|macOS
+- **[Remotely Retrieving a Macintosh's Network Name using AppleTalk](../../qa/nw/Remotely%20Retrieving%20a%20Macintosh%27s%20Network%20Name%20using%20AppleTalk/Legacy%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Reordering of Vertices in a Mesh](../../qa/qd3d/Reordering%20of%20Vertices%20in%20a%20Mesh.md)** — QA · 1995-06-01，macOS
+- **[Requirements for Quartz GL](../../qa/Requirements%20for%20Quartz%20GL.md)** — QA · 2008-08-08，macOS · AppKit
+- **[Reserved Key Combinations](../../qa/tb/Reserved%20Key%20Combinations/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[Resetting NVRAM to factory defaults](../../qa/qa2001/Resetting%20NVRAM%20to%20factory%20defaults/qa1103.md)** — QA · 2001-12-21，macOS
+- **[Resolution Switching](../../qa/qtvr/Resolution%20Switching.md)** — QA · 1995-09-01，macOS
+- **[Resolves may return an IPv6 address in Panther](../../qa/Resolves%20may%20return%20an%20IPv6%20address%20in%20Panther.md)** — QA · 2005-01-10，macOS
+- **[Resolving Aliases Asynchronously](../../qa/fl/Resolving%20Aliases%20Asynchronously.md)** — QA · 1995-11-01，macOS
+- **[Resource chain corruption when using Navigation Services dialogs and Carbon Events](../../qa/qa2001/Resource%20chain%20corruption%20when%20using%20Navigation%20Services%20dialogs%20and%20Carbon%20Even/Legacy%20Documentclose%20button.md)** — QA · 2001-08-21，macOS
+- **[Resource forks in Mach-O binaries](../../qa/qa2001/Resource%20forks%20in%20Mach-O%20binaries/qa1175.md)** — QA · 2002-08-07，macOS
+- **[Retain Counts of io_object_t Objects in IOKit.framework](../../qa/Retain%20Counts%20of%20ioobjectt%20Objects%20in%20IOKit.framework.md)** — QA · 2008-09-24，macOS · IOKit
+- **[Retrieving Audio from QuickTime Files](../../qa/qtmtb/Retrieving%20Audio%20from%20QuickTime%20Files.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Retrieving Data from AEDesc Records - do not use the dataHandle field](../../qa/qa2001/Retrieving%20Data%20from%20AEDesc%20Records%20-%20do%20not%20use%20the%20dataHandle%20field/qa1139.md)** — QA · 2011-07-12，macOS · ApplicationServices
+- **[RunApplicationEventLoop and Thread Manager](../../qa/qa2001/RunApplicationEventLoop%20and%20Thread%20Manager/Legacy%20Documentclose%20button.md)** — QA · 2001-10-10，macOS
+- **[Safari's "Mail (Contents/Link) of This page" to Mail Client events...](../../qa/Safari%27s%20-Mail%20-Contents-Link-%20of%20This%20page-%20to%20Mail%20Client%20events.md)** — QA · 2010-12-23，macOS
+- **[Sample Description Endianness](../../qa/qa2008/Sample%20Description%20Endianness/qa1598.md)** — QA · 2008-03-17，macOS · QuickTime
+- **[Sandboxing and Automation in OS X](../../qa/Sandboxing%20and%20Automation%20in%20OS%20X.md)** — QA · 2015-05-23，macOS
+- **[Saving changes to modified movies](../../qa/qtmtb/Saving%20changes%20to%20modified%20movies.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Saving Paper Type Information](../../qa/gxpd/Saving%20Paper%20Type%20Information.md)** — QA · 1995-05-01，macOS
+- **[Saving playback hints in a Movie](../../qa/qa2001/Saving%20playback%20hints%20in%20a%20Movie/qa1194.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Saving QuickTime Movie Files](../../qa/qtmtb/Saving%20QuickTime%20Movie%20Files.md)** — QA · 1997-01-31，macOS · QuickTime
+- **[Screen Flickering](../../qa/qd3d/Screen%20Flickering.md)** — QA · 1996-04-08，macOS
+- **[Scripting Java-based command-line interface applications](../../qa/java/Scripting%20Java-based%20command-line%20interface%20applications/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[SCSI Calls Translated for IDE Devices](../../qa/dv/SCSI%20Calls%20Translated%20for%20IDE%20Devices.md)** — QA · 1995-05-01，macOS
+- **[SCSI ID from vRefNum](../../qa/dv/SCSI%20ID%20from%20vRefNum.md)** — QA · 1997-05-23，macOS
+- **[SCSI Printer Prevents System Boot](../../qa/dv/SCSI%20Printer%20Prevents%20System%20Boot.md)** — QA · 1998-10-01，macOS
+- **[SCSIAction and IOSCSIUserClient on Mac OS X 10.2](../../qa/qa2001/SCSIAction%20and%20IOSCSIUserClient%20on%20Mac%20OS%20X%2010.2/Legacy%20Documentclose%20button.md)** — QA · 2002-09-13，macOS
+- **[SDRAM Problems With Self-Powered USB Devices](../../qa/hw/SDRAM%20Problems%20With%20Self-Powered%20USB%20Devices/hw82.md)** — QA · 2003-08-21，macOS
+- **[SDRAM, CAS Latency for the](../../qa/qa2001/SDRAM%2C%20CAS%20Latency%20for%20the/qa1071.md)** — QA · 2001-09-13，macOS
+- **[Searching Directories with PBCatSearch](../../qa/fl/Searching%20Directories%20with%20PBCatSearch.md)** — QA · 1995-11-01，macOS
+- **[Secondary Interrupts on the Page Fault Path](../../qa/dv/Secondary%20Interrupts%20on%20the%20Page%20Fault%20Path/Legacy%20Documentclose%20button.md)** — QA · 1998-12-21，macOS，2 页
+- **[Securely Erasing, Accessing and Dismounting a Macintosh Partition](../../qa/fl/Securely%20Erasing%2C%20Accessing%20and%20Dismounting%20a%20Macintosh%20Partition.md)** — QA · 1999-01-11，macOS
+- **[Security Credentials](../../qa/Security%20Credentials.md)** — QA · 2011-07-26，macOS · Security
+- **[Security Framework Error Codes](../../qa/Security%20Framework%20Error%20Codes.md)** — QA · 2006-11-16，macOS · Security
+- **[Selecting a PPD When no Printer is Available](../../qa/qd/Selecting%20a%20PPD%20When%20no%20Printer%20is%20Available.md)** — QA · 1996-02-01，macOS
+- **[Selecting a specific sound input source](../../qa/snd/Selecting%20a%20specific%20sound%20input%20source.md)** — QA · 1998-01-16，macOS
+- **[Sending an Email](../../qa/Sending%20an%20Email.md)** — QA · 2004-11-05，macOS
+- **[Sending SCSI or ATA commands to storage devices](../../qa/Sending%20SCSI%20or%20ATA%20commands%20to%20storage%20devices.md)** — QA · 2005-05-10，macOS · IOKit
+- **[Sequence Grabber - Determining the capture resolution of an IIDC device](../../qa/Sequence%20Grabber%20-%20Determining%20the%20capture%20resolution%20of%20an%20IIDC%20device.md)** — QA · 2005-01-06，macOS · QuickTime
+- **[Sequence Grabber - Ensuring the SG TimeBase is being driven by the Sound Clock.](../../qa/qa2001/Sequence%20Grabber%20-%20Ensuring%20the%20SG%20TimeBase%20is%20being%20driven%20by%20the%20Sound%20Clock/qa1314.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Sequence Grabber - How do I save user settings as CFPreferences?](../../qa/qa2001/Sequence%20Grabber%20-%20How%20do%20I%20save%20user%20settings%20as%20CFPreferences/qa1286.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Sequence Grabber - How often should I call SGIdle?](../../qa/qa2001/Sequence%20Grabber%20-%20How%20often%20should%20I%20call%20SGIdle/qa1349.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Sequence Grabber - Setting the sound channel play through state](../../qa/qa2001/Sequence%20Grabber%20-%20Setting%20the%20sound%20channel%20play%20through%20state/qa1303.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Sequence Grabber - Using the SGDataProc for Sound](../../qa/qa2001/Sequence%20Grabber%20-%20Using%20the%20SGDataProc%20for%20Sound/qa1348.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Sequence Grabber preallocates large file when recording](../../qa/Sequence%20Grabber%20preallocates%20large%20file%20when%20recording.md)** — QA · 2006-02-06，macOS · QuickTime
+- **[Sequence Grabber Source, Video, and Channel Bounds](../../qa/qa2001/Sequence%20Grabber%20Source%2C%20Video%2C%20and%20Channel%20Bounds/qa1250.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Serial (Built-In)](../../qa/dv/Serial%20%28Built-In%29.md)** — QA · 1997-05-27，macOS
+- **[Serial API Choice](../../qa/dv/Serial%20API%20Choice.md)** — QA · 2001-07-02，macOS
+- **[Serial Flow Control Bug](../../qa/dv/Serial%20Flow%20Control%20Bug.md)** — QA · 1997-03-14，macOS
+- **[Server Endpoint 'qlen' Limit](../../qa/nw/Server%20Endpoint%20%27qlen%27%20Limit/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-08-21，macOS
+- **[SetFontInfoForSelection incorrect prototype](../../qa/SetFontInfoForSelection%20incorrect%20prototype.md)** — QA · 2004-10-04，macOS
+- **[SetSoundMediaBalance balance parameter clarification](../../qa/SetSoundMediaBalance%20balance%20parameter%20clarification.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Setting a Control's Variant Field](../../qa/tb/Setting%20a%20Control%27s%20Variant%20Field/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-05-03，macOS
+- **[Setting A Default Papertype for GX Printers](../../qa/gxpd/Setting%20A%20Default%20Papertype%20for%20GX%20Printers.md)** — QA · 1996-04-08，macOS
+- **[Setting a Movie's Clipping Region](../../qa/qtmtb/Setting%20a%20Movie%27s%20Clipping%20Region.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[Setting a UserPane's feature](../../qa/tb/Setting%20a%20UserPane%27s%20feature/tb64.md)** — QA · 1999-09-27，macOS
+- **[Setting Audio Input Gain](../../qa/snd/Setting%20Audio%20Input%20Gain.md)** — QA · 1998-02-10，macOS
+- **[Setting Data For Q3ViewerUseData](../../qa/qd3d/Setting%20Data%20For%20Q3ViewerUseData.md)** — QA · 1997-07-11，macOS
+- **[Setting default open Finder window](../../qa/Setting%20default%20open%20Finder%20window.md)** — QA · 2006-01-03，macOS · CoreServices
+- **[Setting environment variables for user processes](../../qa/Setting%20environment%20variables%20for%20user%20processes/Setting%20environment%20variables%20for%20user%20processes.md)** — QA · 2011-11-09，macOS
+- **[Setting Export Quality](../../qa/qtmcc/Setting%20Export%20Quality.md)** — QA · 1999-12-06，macOS · QuickTime
+- **[Setting GX Paper Types](../../qa/gxpd/Setting%20GX%20Paper%20Types.md)** — QA · 1996-10-25，macOS
+- **[Setting Landscape Printing from an Application](../../qa/qd/Setting%20Landscape%20Printing%20from%20an%20Application.md)** — QA · 1998-01-16，macOS
+- **[Setting Port Speed on a Modem Port](../../qa/dv/Setting%20Port%20Speed%20on%20a%20Modem%20Port.md)** — QA · 1996-02-23，macOS
+- **[Setting request headers in URL Access](../../qa/qa2001/Setting%20request%20headers%20in%20URL%20Access/Not%20Recommended%20Documentclose%20button.md)** — QA · 2002-09-10，macOS
+- **[Setting Sequence Grabber Sound Input Device Driver Parameters](../../qa/qa2001/Setting%20Sequence%20Grabber%20Sound%20Input%20Device%20Driver%20Parameters/qa1204.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Setting the Background Color of a Control](../../qa/tb/Setting%20the%20Background%20Color%20of%20a%20Control/Legacy%20Documentclose%20button.md)** — QA · 1999-05-03，macOS
+- **[Setting the ColorSync profile for a NSBitmapImageRep object](../../qa/Setting%20the%20ColorSync%20profile%20for%20a%20NSBitmapImageRep%20object.md)** — QA · 2018-06-04，macOS · AppKit
+- **[Setting the movie background color](../../qa/qtmtb/Setting%20the%20movie%20background%20color.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Setting the option button in the ICM dialog](../../qa/qtmcc/Setting%20the%20option%20button%20in%20the%20ICM%20dialog.md)** — QA · 1995-06-01，macOS · QuickTime
+- **[Setting the preferred CMM programatically?](../../qa/qa2001/Setting%20the%20preferred%20CMM%20programatically/Legacy%20Documentclose%20button.md)** — QA · 2001-10-24，macOS
+- **[Setting the Ratio Between Height and Width](../../qa/qtvr/Setting%20the%20Ratio%20Between%20Height%20and%20Width.md)** — QA · 1995-06-01，macOS
+- **[Setting Up a gxCustomMatrixType](../../qa/gx/Setting%20Up%20a%20gxCustomMatrixType/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[SGSetSettings unexpected results](../../qa/qtmtb/SGSetSettings%20unexpected%20results.md)** — QA · 1999-10-11，macOS · QuickTime
+- **[ShaderUV/SurfaceUV Attribute Differences](../../qa/qd3d/ShaderUV-SurfaceUV%20Attribute%20Differences.md)** — QA · 1997-07-11，macOS
+- **[Shading Using Trigrids](../../qa/qd3d/Shading%20Using%20Trigrids.md)** — QA · 1995-07-15，macOS
+- **[Sharing Globals Between Apps & Code Fragment Manager](../../qa/ic/Sharing%20Globals%20Between%20Apps%20%26%20Code%20Fragment%20Manager.md)** — QA · 1995-05-01，macOS
+- **[Sharpening Full Scene Anti-Aliasing Details](../../qa/qa2001/Sharpening%20Full%20Scene%20Anti-Aliasing%20Details/qa1268.md)** — QA · 2011-07-12，macOS · OpenGL
+- **[Shearing a Coordinate Space with NSAffineTransform](../../qa/qa2001/Shearing%20a%20Coordinate%20Space%20with%20NSAffineTransform/qa1332.md)** — QA · 2011-07-12，macOS · Foundation
+- **[Shift Booting under System 7](../../qa/ops/What%20Does%20Extension%20Manager%20Turn%20Off/Legacy%20Documentclose%20button-2.md)** — QA · 1995-09-15，macOS，2 页
+- **[siActive Channels Unsupported on Some Power Macs](../../qa/snd/siActive%20Channels%20Unsupported%20on%20Some%20Power%20Macs.md)** — QA · 1996-06-01，macOS
+- **[Signaling the end of data when using AudioConverterFillComplexBuffer](../../qa/Signaling%20the%20end%20of%20data%20when%20using%20AudioConverterFillComplexBuffer.md)** — QA · 2011-07-21，macOS · AudioToolbox
+- **[Signals and Threads](../../qa/qa2001/Signals%20and%20Threads/qa1184.md)** — QA · 2011-07-12，macOS
+- **[siMonitorSource Selector](../../qa/snd/siMonitorSource%20Selector/Not%20Recommended%20Documentclose%20button.md)** — QA · 1998-04-12，macOS，2 页
+- **[Simulated Click on AWT Button](../../qa/java/Simulated%20Click%20on%20AWT%20Button/Legacy%20Documentclose%20button.md)** — QA · 1998-12-07，macOS
+- **[siOSTypeInput Selectors](../../qa/snd/siMonitorSource%20Selector/Not%20Recommended%20Documentclose%20button-2.md)** — QA · 1998-04-12，macOS
+- **[siOSTypeInputAvailable Format](../../qa/snd/siOSTypeInputAvailable%20Format.md)** — QA · 1998-01-16，macOS
+- **[Sleep vs. Doze on Mac OS X](../../qa/qa2001/Sleep%20vs.%20Doze%20on%20Mac%20OS%20X/qa1309.md)** — QA · 2011-07-12，macOS
+- **[Small Point Size and Hinting](../../qa/gxty/Small%20Point%20Size%20and%20Hinting.md)** — QA · 1996-04-08，macOS
+- **[Small System Font Size on a Korean System](../../qa/tx/Small%20System%20Font%20Size%20on%20a%20Korean%20System.md)** — QA · 1995-06-01，macOS
+- **[SndPlayDoubleBuffer 16-bit Support](../../qa/snd/SndPlayDoubleBuffer%2016-bit%20Support.md)** — QA · 1996-06-01，macOS
+- **[Solving NSTabView drawing problems in Mac OS X 10.1.x](../../qa/qa2001/Solving%20NSTabView%20drawing%20problems%20in%20Mac%20OS%20X%2010.1.x/qa1117.md)** — QA · 2002-02-14，macOS
+- **[Sorting Like the Finder](../../qa/Sorting%20Like%20the%20Finder.md)** — QA · 2010-01-04，macOS · Foundation
+- **[Sound Manager Codec support in QuickTime 7](../../qa/Sound%20Manager%20Codec%20support%20in%20QuickTime%207.md)** — QA · 2005-10-26，macOS · QuickTime
+- **[Sound Ramp-up on Power Macs](../../qa/snd/Sound%20Ramp-up%20on%20Power%20Macs.md)** — QA · 1996-06-01，macOS
+- **[Sound Track Hiccups under Windows 95](../../qa/snd/Sound%20Track%20Hiccups%20under%20Windows%2095.md)** — QA · 1996-09-27，macOS
+- **[Sources of 3DMF Documentation](../../qa/qd3d/Sources%20of%203DMF%20Documentation.md)** — QA · 1996-04-08，macOS
+- **[spatialQuality Values with Lossy Compression](../../qa/qa2001/spatialQuality%20Values%20with%20Lossy%20Compression/qa1126.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Special Profile Sizes in ColorSync Manager](../../qa/c/Special%20Profile%20Sizes%20in%20ColorSync%20Manager/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS · ApplicationServices
+- **[Specifiying if the CPU or the GPU should be used for rendering.](../../qa/Specifiying%20if%20the%20CPU%20or%20the%20GPU%20should%20be%20used%20for%20rendering.md)** — QA · 2005-08-16，macOS · QuartzCore
+- **[Specifying a Non-Panorama](../../qa/qtvr/Specifying%20a%20Non-Panorama.md)** — QA · 1995-06-01，macOS
+- **[Specifying Chunk Sizes](../../qa/qtpc/Specifying%20Chunk%20Sizes.md)** — QA · 1995-08-01，macOS · QuickTime
+- **[Specifying Proxy Settings](../../qa/java/Specifying%20Proxy%20Settings/Legacy%20Documentclose%20button.md)** — QA · 2000-04-24，macOS
+- **[Specifying required OpenGL capabilities for the Mac App Store](../../qa/Specifying%20required%20OpenGL%20capabilities%20for%20the%20Mac%20App%20Store/Specifying%20required%20OpenGL%20capabilities%20for%20the%20Mac%20App%20Store.md)** — QA · 2012-02-22，macOS · OpenGL
+- **[Specular Control Range in QuickDraw 3D](../../qa/qd3d/Specular%20Control%20Range%20in%20QuickDraw%203D.md)** — QA · 1995-06-01，macOS
+- **[Speed of the Printer Port](../../qa/dv/Speed%20of%20the%20Printer%20Port.md)** — QA · 1997-07-11，macOS
+- **[Spooling a pixMap into a Window](../../qa/qd/Spooling%20a%20pixMap%20into%20a%20Window.md)** — QA · 1995-09-15，macOS
+- **[Spooling in or out of CompressPicture or CompressImage](../../qa/qd/Spooling%20in%20or%20out%20of%20CompressPicture%20or%20CompressImage.md)** — QA · 1995-09-15，macOS
+- **[Spot Light Not Working](../../qa/qd3d/Spot%20Light%20Not%20Working.md)** — QA · 1995-06-01，macOS
+- **[SSL and Applet Caching in MRJ 2.2](../../qa/java/SSL%20and%20Applet%20Caching%20in%20MRJ%202.2/Legacy%20Documentclose%20button.md)** — QA · 2000-02-02，macOS
+- **[Stack Crawl Not Showing Line Numbers](../../qa/java/Stack%20Crawl%20Not%20Showing%20Line%20Numbers/Legacy%20Documentclose%20button.md)** — QA · 1998-02-22，macOS，2 页
+- **[Standalone Networking](../../qa/nw/Standalone%20Networking/Legacy%20Documentclose%20button.md)** — QA · 1999-03-15，macOS
+- **[Standard Audio - Parsing the kQTSCAudioPropertyID_CodecSpecificSettingsArray property](../../qa/Standard%20Audio%20-%20Parsing%20the%20kQTSCAudioPropertyIDCodecSpecificSettingsArray%20prop/Standard%20Audio%20-%20Parsing%20the%20kQTSCAudioPropertyIDCodecSpecificSettingsArray%20prop.md)** — QA · 2006-11-30，macOS · QuickTime
+- **[Standard Audio - Setting output ASBD returns badFormatErr](../../qa/Standard%20Audio%20-%20Setting%20output%20ASBD%20returns%20badFormatErr.md)** — QA · 2006-11-15，macOS · QuickTime
+- **[Standard Audio - The CodecSpecificSettingsArray and MagicCookie properties](../../qa/Standard%20Audio%20-%20The%20CodecSpecificSettingsArray%20and%20MagicCookie%20properties/Standard%20Audio%20-%20The%20CodecSpecificSettingsArray%20and%20MagicCookie%20properties.md)** — QA · 2009-09-16，macOS · QuickTime
+- **[Standard File Package](../../qa/fl/Standard%20File%20Package.md)** — QA · 1995-11-01，macOS
+- **[Static Socket Numbers](../../qa/nw/Static%20Socket%20Numbers/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Static Sound on PCI Macs](../../qa/snd/Static%20Sound%20on%20PCI%20Macs.md)** — QA · 1996-06-01，macOS
+- **[Statically linked binaries on Mac OS X](../../qa/Statically%20linked%20binaries%20on%20Mac%20OS%20X.md)** — QA · 2011-09-20，Xcode Developer Tools|macOS
+- **[Stay away from custom Authorization dialogs](../../qa/qa2001/Stay%20away%20from%20custom%20Authorization%20dialogs/qa1199.md)** — QA · 2011-07-12，macOS · Security
+- **[Stepping through a PICT Movie](../../qa/qtmcc/Stepping%20through%20a%20PICT%20Movie.md)** — QA · 1995-09-15，macOS
+- **[Stepping Through QuickTime-Movie](../../qa/qtmtb/Stepping%20Through%20QuickTime-Movie.md)** — QA · 1995-05-01，macOS · QuickTime
+- **[StopAlert and NoteAlert now use the Application icon](../../qa/StopAlert%20and%20NoteAlert%20now%20use%20the%20Application%20icon/StopAlert%20and%20NoteAlert%20now%20use%20the%20Application%20icon.md)** — QA · 2005-10-04，macOS
+- **[Stopping Forth command scrolls](../../qa/hw/Stopping%20Forth%20command%20scrolls/hw57.md)** — QA · 1999-03-29，macOS
+- **[Storing an Array Name in a Field in Another Array](../../qa/amt%20pe/Storing%20an%20Array%20Name%20in%20a%20Field%20in%20Another%20Array.md)** — QA · 1995-08-01，macOS
+- **[Storing file references in CFPreferences](../../qa/Storing%20file%20references%20in%20CFPreferences.md)** — QA · 2018-06-04，macOS · CoreFoundation
+- **[Submenus not Updating With Mac OS Screen MenuBar](../../qa/qa2001/Submenus%20not%20Updating%20With%20Mac%20OS%20Screen%20MenuBar/Legacy%20Documentclose%20button.md)** — QA · 2002-07-12，macOS
+- **[Successful Call to NCWNewColorWorld](../../qa/c/Successful%20Call%20to%20NCWNewColorWorld/Legacy%20Documentclose%20button.md)** — QA · 1996-02-09，macOS · ApplicationServices
+- **[Supported KPIs](../../qa/Supported%20KPIs.md)** — QA · 2008-03-25，macOS · Kernel
+- **[Supporting QuickDraw GX with EPS](../../qa/gx/Supporting%20QuickDraw%20GX%20with%20EPS/Legacy%20Documentclose%20button.md)** — QA · 1996-10-27，macOS
+- **[Suppressing the "unexpectedly quit" alert](../../qa/Suppressing%20the%20-unexpectedly%20quit-%20alert.md)** — QA · 2008-03-11，macOS
+- **[Suppressing the LaserWriter 8.3 Manual Feed Alert](../../qa/qd/Suppressing%20the%20LaserWriter%208.3%20Manual%20Feed%20Alert.md)** — QA · 1996-02-01，macOS
+- **[Suppressing the Network Configuration Dialog](../../qa/Suppressing%20the%20Network%20Configuration%20Dialog/Suppressing%20the%20Network%20Configuration%20Dialog.md)** — QA · 2009-10-09，macOS · IOKit
+- **[Switching between one and two machine mode for the Open Firmware user interface](../../qa/hw/Switching%20between%20one%20and%20two%20machine%20mode%20for%20the%20Open%20Firmware%20user%20interface/hw37.md)** — QA · 1999-02-15，macOS
+- **[Symbol to Library in GDB](../../qa/Symbol%20to%20Library%20in%20GDB.md)** — QA · 2011-10-28，Xcode Developer Tools|macOS
+- **[SyncCGContextOriginWithPort](../../qa/qa2001/SyncCGContextOriginWithPort/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-04-11，macOS · ApplicationServices
+- **[Synchronizing OpenGL rendering updates to the vertical refresh of the display](../../qa/Synchronizing%20OpenGL%20rendering%20updates%20to%20the%20vertical%20refresh%20of%20the%20display/Synchronizing%20OpenGL%20rendering%20updates%20to%20the%20vertical%20refresh%20of%20the%20display.md)** — QA · 2007-07-16，macOS · OpenGL
+- **[Synchronizing Sounds to Video](../../qa/snd/Synchronizing%20Sounds%20to%20Video.md)** — QA · 1999-10-05，macOS
+- **[Synchronous SCSI Operation](../../qa/dv/Synchronous%20SCSI%20Operation.md)** — QA · 1995-07-01，macOS
+- **[Synchronous SysBeep](../../qa/snd/Synchronous%20SysBeep.md)** — QA · 1999-10-05，macOS
+- **[Synchronous TCP OTConnect Client Call Completes Before Server Responds](../../qa/nw/Synchronous%20TCP%20OTConnect%20Client%20Call%20Completes%20Before%20Server%20Responds/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[System Clock](../../qa/ops/System%20Clock/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[System Error 119](../../qa/ops/System%20Error%20119/Legacy%20Documentclose%20button.md)** — QA · 1999-10-05，macOS
+- **[System Error 29](../../qa/ops/System%20Error%2029/Legacy%20Documentclose%20button.md)** — QA · 1997-09-12，macOS
+- **[System Menu IDs](../../qa/tb/System%20Menu%20IDs/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[T_DATA_REQ vs M_DATA TPI Message Blocks](../../qa/nw/TDATAREQ%20vs%20MDATA%20TPI%20Message%20Blocks/nw42.md)** — QA · 1996-10-25，macOS
+- **[Targeting DebuggingCarbonLib asserts](../../qa/qa2001/Targeting%20DebuggingCarbonLib%20asserts/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-05-04，macOS
+- **[TCP Application Acquires Different Port Address After Relaunch](../../qa/nw/Receiving%20UDP%20Broadcasts/Not%20Recommended%20Documentclose%20button-2.md)** — QA · 1996-05-14，macOS
+- **[TCP Option Sizes](../../qa/nw/TCP%20Option%20Sizes/Not%20Recommended%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[TCP/IP Option Sizes](../../qa/nw/TCP-IP%20Option%20Sizes/Legacy%20Documentclose%20button.md)** — QA · 1999-04-26，macOS
+- **[Tear-off Menus](../../qa/tb/Tear-off%20Menus/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[Test What You Ship](../../qa/ov/Test%20What%20You%20Ship.md)** — QA · 1998-11-02，macOS
+- **[Testing an Automator Action Xcode Project](../../qa/Testing%20an%20Automator%20Action%20Xcode%20Project/Testing%20an%20Automator%20Action%20Xcode%20Project.md)** — QA · 2015-01-30，macOS
+- **[Testing Distribution Builds of Mac Apps](../../qa/Testing%20Distribution%20Builds%20of%20Mac%20Apps.md)** — QA · 2015-01-26，macOS · Security
+- **[Testing for a Network Volume](../../qa/Testing%20for%20a%20Network%20Volume.md)** — QA · 2011-09-20，macOS · CoreServices
+- **[Testing PCI drivers without any device](../../qa/hw/Testing%20PCI%20drivers%20without%20any%20device/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Text Encodings in VFS](../../qa/Text%20Encodings%20in%20VFS.md)** — QA · 2011-09-30，macOS · System
+- **[Text Mask Mode and QuickDraw](../../qa/qd/Text%20Mask%20Mode%20and%20QuickDraw.md)** — QA · 1998-09-07，macOS
+- **[Textures & BitMaps Explained](../../qa/qd3d/Textures%20%26%20BitMaps%20Explained.md)** — QA · 1996-08-21，macOS
+- **[The "/.vol" directory and "volfs"](../../qa/qa2001/The%20--.vol-%20directory%20and%20-volfs/qa1113.md)** — QA · 2011-07-12，macOS
+- **[The "/aliases" node in the device tree](../../qa/hw/The%20--aliases-%20node%20in%20the%20device%20tree/hw89.md)** — QA · 2000-09-05，macOS
+- **[The "chosen" node in the device tree](../../qa/hw/The%20-chosen-%20node%20in%20the%20device%20tree/hw88.md)** — QA · 2000-09-05，macOS
+- **[The "green" PCI bus](../../qa/hw/The%20-green-%20PCI%20bus/hw93.md)** — QA · 2011-07-12，macOS · Kernel
+- **[The "packages" node in the device tree](../../qa/hw/The%20-packages-%20node%20in%20the%20device%20tree/hw90.md)** — QA · 2006-02-22，macOS
+- **[The 'vers' Resource and Your Place in the World](../../qa/tx/The%20%27vers%27%20Resource%20and%20Your%20Place%20in%20the%20World.md)** — QA · 2000-05-01，macOS
+- **[The AAPL, slot-name property and PCI](../../qa/hw/The%20AAPL%2C%20slot-name%20property%20and%20PCI/hw61.md)** — QA · 1999-04-19，macOS
+- **[The Backfacing Option](../../qa/qd3d/The%20Backfacing%20Option.md)** — QA · 1996-04-08，macOS
+- **[The Data Browser GetDataBrowserUserState API](../../qa/qa2001/The%20Data%20Browser%20GetDataBrowserUserState%20API/qa1270.md)** — QA · 2003-07-22，macOS
+- **[The Default Output Audio Units](../../qa/The%20Default%20Output%20Audio%20Units.md)** — QA · 2008-08-21，macOS · AudioUnit
+- **[The dreaded "incompatible flag -framework" error](../../qa/qa2001/The%20dreaded%20-incompatible%20flag%20-framework-%20error/qa1096.md)** — QA · 2011-07-12，macOS · Kernel
+- **[The Gamma function in the Mac OS X 10.2 Math Library](../../qa/qa2001/The%20Gamma%20function%20in%20the%20Mac%20OS%20X%2010.2%20Math%20Library/qa1143.md)** — QA · 2002-08-27，macOS
+- **[The header file 'alut.h' is missing from the OpenAL framework.](../../qa/The%20header%20file%20%27alut.h%27%20is%20missing%20from%20the%20OpenAL%20framework.md)** — QA · 2014-02-06，macOS · OpenAL
+- **[The Improper use of FSClose](../../qa/tb/The%20Improper%20use%20of%20FSClose/Legacy%20Documentclose%20button.md)** — QA · 1998-02-10，macOS
+- **[The InterfaceLibSys7.additions Stub Library](../../qa/plat/The%20InterfaceLibSys7.additions%20Stub%20Library/Legacy%20Documentclose%20button.md)** — QA · 1996-11-14，macOS
+- **[The intermittent behavior of SetDialogItemText](../../qa/qa2001/The%20intermittent%20behavior%20of%20SetDialogItemText/Not%20Recommended%20Documentclose%20button.md)** — QA · 2001-10-30，macOS
+- **[The similarity field in ImageCodecBandCompress and Key Frames](../../qa/qa2001/The%20similarity%20field%20in%20ImageCodecBandCompress%20and%20Key%20Frames/qa1109.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[The state of mDNSResponder](../../qa/The%20state%20of%20mDNSResponder.md)** — QA · 2006-10-03，macOS
+- **[Third party VFS can't unmount on Mac OS X 10.3](../../qa/qa2001/Third%20party%20VFS%20can%27t%20unmount%20on%20Mac%20OS%20X%2010.3/qa1308.md)** — QA · 2011-07-12，macOS · CoreServices
+- **[Third-Party Input Method Management Changes in OS X Mavericks](../../qa/Third-Party%20Input%20Method%20Management%20Changes%20in%20OS%20X%20Mavericks.md)** — QA · 2014-01-28，macOS · InputMethodKit
+- **[Thunderbolt Audio Devices and PCI Bus Latency](../../qa/Thunderbolt%20Audio%20Devices%20and%20PCI%20Bus%20Latency.md)** — QA · 2014-01-30，macOS · IOKit
+- **[Tioga PostScript Printing Plugins in Mac OS X 10.2](../../qa/qa2001/Tioga%20PostScript%20Printing%20Plugins%20in%20Mac%20OS%20X%2010.2/qa1085.md)** — QA · 2003-07-14，macOS
+- **[Tips for searching Headers, APIs and ADC reference material.](../../qa/Tips%20for%20searching%20Headers%2C%20APIs%20and%20ADC%20reference%20material/Tips%20for%20searching%20Headers%2C%20APIs%20and%20ADC%20reference%20material.md)** — QA · 2009-02-13，Xcode Developer Tools|macOS
+- **[Tips on USB driver matching for Mac OS X](../../qa/Tips%20on%20USB%20driver%20matching%20for%20Mac%20OS%20X.md)** — QA · 2008-08-14，macOS · Kernel
+- **[TQ3Ellipsoid Data Caps Field Explanation](../../qa/qd3d/TQ3Ellipsoid%20Data%20Caps%20Field%20Explanation.md)** — QA · 1997-07-11，macOS
+- **[TQ3ViewObject and Bounding Box Calculating Routines](../../qa/qd3d/TQ3ViewObject%20and%20Bounding%20Box%20Calculating%20Routines.md)** — QA · 1995-06-01，macOS
+- **[Track Editing](../../qa/qtmcc/Track%20Editing.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Transparency not Working on Laptops](../../qa/amt%20pe/Transparency%20not%20Working%20on%20Laptops.md)** — QA · 1995-08-01，macOS
+- **[Transparency Not Working on Some Machines](../../qa/qd3d/Transparency%20Not%20Working%20on%20Some%20Machines.md)** — QA · 1996-04-08，macOS
+- **[Tray Mismatch Dialog in QuickDraw GX 1.1.1b1](../../qa/gxpd/Tray%20Mismatch%20Dialog%20in%20QuickDraw%20GX%201.1.1b1.md)** — QA · 1995-05-01，macOS
+- **[Triangle Strips](../../qa/qd3d/Triangle%20Strips.md)** — QA · 1998-04-20，macOS
+- **[Turning Off Core Graphics Clipping](../../qa/Turning%20Off%20Core%20Graphics%20Clipping.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[U and V limits in RAVE](../../qa/qd3d/U%20and%20V%20limits%20in%20RAVE.md)** — QA · 1998-04-20，macOS
+- **[Unable to select input device in AU Lab](../../qa/Unable%20to%20select%20input%20device%20in%20AU%20Lab.md)** — QA · 2007-05-17，macOS · AudioUnit
+- **[Unbinding from a TCP Port](../../qa/nw/Unbinding%20from%20a%20TCP%20Port/Legacy%20Documentclose%20button.md)** — QA · 1995-11-01，macOS
+- **[Undefined Routines in Open TransportLibraries](../../qa/nw/Undefined%20Routines%20in%20Open%20TransportLibraries/Legacy%20Documentclose%20button.md)** — QA · 1996-06-01，macOS
+- **[Undefined Routines with PPCLink?](../../qa/nw/Undefined%20Routines%20with%20PPCLink/Legacy%20Documentclose%20button.md)** — QA · 1996-05-14，macOS
+- **[Understanding USB Error -6911 - (kUSBNotResponding)](../../qa/usb/Understanding%20USB%20Error%20-6911%20-%20%28kUSBNotResponding%29.md)** — QA · 1998-11-16，macOS
+- **[Unexpected CG state changes](../../qa/Unexpected%20CG%20state%20changes.md)** — QA · 2013-08-13，macOS · ApplicationServices
+- **[Unified window title and toolbar appearance in Carbon](../../qa/Unified%20window%20title%20and%20toolbar%20appearance%20in%20Carbon.md)** — QA · 2005-06-17，macOS
+- **[Universality of ColorSync Accelerators and CMMs](../../qa/c/Universality%20of%20ColorSync%20Accelerators%20and%20CMMs/Legacy%20Documentclose%20button.md)** — QA · 1996-03-05，macOS
+- **[Unpopped Popup Menus and Mac OS 8.5](../../qa/tb/Unpopped%20Popup%20Menus%20and%20Mac%20OS%208.5/Legacy%20Documentclose%20button.md)** — QA · 1998-12-22，macOS
+- **[UnsupportedClassVersionError With J2SE 5.0 Release 4](../../qa/UnsupportedClassVersionError%20With%20J2SE%205.0%20Release%204/UnsupportedClassVersionError%20With%20J2SE%205.0%20Release%204.md)** — QA · 2006-04-14，macOS
+- **[Unwanted Audio with DV Capture](../../qa/qa2001/Unwanted%20Audio%20with%20DV%20Capture/qa1105.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Updating OpenGL Contexts](../../qa/qa2001/Updating%20OpenGL%20Contexts/qa1209.md)** — QA · 2011-07-12，macOS · OpenGL
+- **[Updating the TXT record of a Bonjour service](../../qa/qa2001/Updating%20the%20TXT%20record%20of%20a%20Bonjour%20service/Legacy%20Documentclose%20button.md)** — QA · 2004-07-14，macOS
+- **[UpTime's values are consistently slow?](../../qa/hw/UpTime%27s%20values%20are%20consistently%20slow/Legacy%20Documentclose%20button.md)** — QA · 1998-10-19，macOS
+- **[URL Access and the Missing Progress Dialog](../../qa/qa2001/URL%20Access%20and%20the%20Missing%20Progress%20Dialog/Not%20Recommended%20Documentclose%20button.md)** — QA · 2002-09-23，macOS
+- **[URL Access vs. CFNetwork](../../qa/qa2001/URL%20Access%20vs.%20CFNetwork/qa1291.md)** — QA · 2003-10-29，macOS
+- **[USBGetNextDeviceByClass Requires deviceRef](../../qa/usb/USBGetNextDeviceByClass%20Requires%20deviceRef.md)** — QA · 1998-09-28，macOS
+- **[Use empty string for Bonjour domains](../../qa/Use%20empty%20string%20for%20Bonjour%20domains.md)** — QA · 2004-02-06，macOS
+- **[Use Macintosh SCSI Manager for SCSI Chip Compatibility](../../qa/dv/Use%20Macintosh%20SCSI%20Manager%20for%20SCSI%20Chip%20Compatibility.md)** — QA · 1995-07-01，macOS
+- **[Use NSSound instead of NSMovie for audio only playback on Mac OS X 10.3 and greater](../../qa/qa2001/Use%20NSSound%20instead%20of%20NSMovie%20for%20audio%20only%20playback%20on%20Mac%20OS%20X%2010.3%20and%20grea/qa1335.md)** — QA · 2011-07-12，macOS · AppKit
+- **[Use QuickDraw 3D B1C3 Library to Eliminate User Breaks](../../qa/qd3d/Use%20QuickDraw%203D%20B1C3%20Library%20to%20Eliminate%20User%20Breaks.md)** — QA · 1995-06-01，macOS
+- **[Use the Computer Name when registering your Bonjour service](../../qa/Use%20the%20Computer%20Name%20when%20registering%20your%20Bonjour%20service.md)** — QA · 2004-03-05，macOS · CoreServices
+- **[Use the Doorbell](../../qa/fw/Use%20the%20Doorbell/Not%20Recommended%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[User Clicking in a Style Text Document, Human Interface Guidelines](../../qa/tx/User%20Clicking%20in%20a%20Style%20Text%20Document%2C%20Human%20Interface%20Guidelines.md)** — QA · 1995-05-01，macOS
+- **[User Interface Tool Demo at WWDC](../../qa/qd3d/User%20Interface%20Tool%20Demo%20at%20WWDC.md)** — QA · 1995-07-15，macOS
+- **[Using "words" in Open Firmware](../../qa/hw/Using%20-words-%20in%20Open%20Firmware/hw73.md)** — QA · 1999-10-11，macOS
+- **[Using 'ictb' to Change Edit Fields](../../qa/tb/Using%20%27ictb%27%20to%20Change%20Edit%20Fields/Legacy%20Documentclose%20button.md)** — QA · 1996-10-25，macOS
+- **[Using .zip and .jar Files With Applets](../../qa/java/Using%20.zip%20and%20.jar%20Files%20With%20Applets/Legacy%20Documentclose%20button.md)** — QA · 1998-02-22，macOS
+- **[Using a QuickTime time base callback to detect when a movie has stopped](../../qa/qa2001/Using%20a%20QuickTime%20time%20base%20callback%20to%20detect%20when%20a%20movie%20has%20stopped/qa1282.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using AppleScript to send an email with an attachment](../../qa/qa2001/Calling%20an%20AppleScript%20and%20providing%20parameters%20from%20an%20Application/Legacy%20Documentclose%20button.md)** — QA · 2002-01-04，macOS
+- **[Using Background Printing When The Finder Isn't Present](../../qa/qd/Using%20Background%20Printing%20When%20The%20Finder%20Isn%27t%20Present.md)** — QA · 1996-03-04，macOS
+- **[Using Clip Region and Buffer Rectangles with OpenGL Carbon](../../qa/qa2001/Using%20Clip%20Region%20and%20Buffer%20Rectangles%20with%20OpenGL%20Carbon/qa1222.md)** — QA · 2011-07-12，macOS · OpenGL
+- **[Using cmPathBased profile locations on Mac OS X](../../qa/qa2001/Using%20cmPathBased%20profile%20locations%20on%20Mac%20OS%20X/qa1203.md)** — QA · 2011-07-12，macOS · ApplicationServices
+- **[Using cmpWantsRegisterMessage not recommended on Mac OS X](../../qa/qa2001/Using%20cmpWantsRegisterMessage%20not%20recommended%20on%20Mac%20OS%20X/qa1192.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using ConvertMovieToFile or ConvertMovieToDataRef to convert movies without displaying the settings dialog](../../qa/Using%20ConvertMovieToFile%20or%20ConvertMovieToDataRef%20to%20convert%20movies%20without%20disp.md)** — QA · 2005-03-22，macOS · QuickTime
+- **[Using Custom creator codes for USB Class Drivers](../../qa/usb/Using%20Custom%20creator%20codes%20for%20USB%20Class%20Drivers.md)** — QA · 1998-09-28，macOS
+- **[Using Deferred Tasks](../../qa/nw/Using%20Deferred%20Tasks/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，macOS
+- **[Using Digital Cameras](../../qa/qtvr/Using%20Digital%20Cameras.md)** — QA · 1995-06-01，macOS
+- **[Using Embedded EPS Profiles](../../qa/c/Using%20Embedded%20EPS%20Profiles/Legacy%20Documentclose%20button.md)** — QA · 1996-02-09，macOS · ApplicationServices
+- **[Using GLUT and OpenGL on OS X](../../qa/Using%20GLUT%20and%20OpenGL%20on%20OS%20X.md)** — QA · 2013-04-02，macOS · OpenGL
+- **[Using GXNewPaperType](../../qa/gxpd/Using%20GXNewPaperType.md)** — QA · 1997-01-09，macOS
+- **[Using Hardware Acceleration](../../qa/qd3d/Using%20Hardware%20Acceleration.md)** — QA · 1997-07-11，macOS
+- **[Using Interface Builder's NSOpenGLView or Custom View objects for an OpenGL application](../../qa/Using%20Interface%20Builder%27s%20NSOpenGLView%20or%20Custom%20View%20objects%20for%20an%20OpenGL%20appl.md)** — QA · 2004-10-28，macOS · AppKit
+- **[Using JDK Tools Under MRJ 2.2](../../qa/java/Using%20JDK%20Tools%20Under%20MRJ%202.2/Legacy%20Documentclose%20button.md)** — QA · 2000-02-02，macOS
+- **[Using language-tagged QuickTime UserData text APIs with CFStrings](../../qa/Using%20language-tagged%20QuickTime%20UserData%20text%20APIs%20with%20CFStrings.md)** — QA · 2005-02-11，macOS · QuickTime
+- **[Using LaserWriter fonts with StyleWriter](../../qa/qd/Using%20LaserWriter%20fonts%20with%20StyleWriter.md)** — QA · 1995-11-22，macOS
+- **[Using Legacy Ethernet Driver Processes on a PowerMac G3](../../qa/nw/Using%20Legacy%20Ethernet%20Driver%20Processes%20on%20a%20PowerMac%20G3/Legacy%20Documentclose%20button.md)** — QA · 1999-02-08，macOS
+- **[Using Mac Toolbox routines Under Windows 98/95/NT](../../qa/qtw/Using%20Mac%20Toolbox%20routines%20Under%20Windows%2098-95-NT/Legacy%20Documentclose%20button.md)** — QA · 1998-09-21，macOS
+- **[Using Mac-style Resources](../../qa/qtw/Using%20Mac-style%20Resources/qtw86.md)** — QA · 2011-07-12，macOS
+- **[Using MovieExportSetSampleDescription to specify the format of exported data](../../qa/qtmtb/Using%20MovieExportSetSampleDescription%20to%20specify%20the%20format%20of%20exported%20data.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using Navigation Services to filter QuickTime files](../../qa/qa2001/Using%20Navigation%20Services%20to%20filter%20QuickTime%20files/qa1152.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using NSSound with CoreAudio on Mac OS 10.3.x](../../qa/Using%20NSSound%20with%20CoreAudio%20on%20Mac%20OS%2010.3.x.md)** — QA · 2006-03-29，macOS · AppKit
+- **[Using OpenTransport With CFM-68K](../../qa/nw/Using%20OpenTransport%20With%20CFM-68K/Legacy%20Documentclose%20button.md)** — QA · 1998-05-04，macOS
+- **[Using PICT Comments to Stretch and Rotate Objects](../../qa/gxpd/Using%20PICT%20Comments%20to%20Stretch%20and%20Rotate%20Objects.md)** — QA · 1995-07-01，macOS
+- **[Using PixPatHandle to Access the "Set Utilities Pattern" Pattern](../../qa/ops/Using%20PixPatHandle%20to%20Access%20the%20-Set%20Utilities%20Pattern-%20Pattern/Legacy%20Documentclose%20button.md)** — QA · 1996-09-27，macOS
+- **[Using PPD constraints with Paper Sizes](../../qa/Using%20PPD%20constraints%20with%20Paper%20Sizes.md)** — QA · 2008-08-08，macOS
+- **[Using PrGeneral() to Download Fonts](../../qa/qd/Using%20PrGeneral%28%29%20to%20Download%20Fonts.md)** — QA · 1995-05-01，macOS
+- **[Using qd and QDGlobals](../../qa/qd/Using%20qd%20and%20QDGlobals.md)** — QA · 1996-02-09，macOS
+- **[Using QTPixelBufferContextCreate with NewMovieFromProperties](../../qa/Using%20QTPixelBufferContextCreate%20with%20NewMovieFromProperties/Using%20QTPixelBufferContextCreate%20with%20NewMovieFromProperties.md)** — QA · 2008-08-08，macOS · QuickTime
+- **[Using QTSetAtomData](../../qa/Using%20QTSetAtomData.md)** — QA · 2009-09-17，macOS · QuickTime
+- **[Using QuickTime to access MP3 ID3 Tags](../../qa/qa2001/Using%20QuickTime%20to%20access%20MP3%20ID3%20Tags/qa1135.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using SetMovieGWorld to draw to the window back buffer](../../qa/qa2001/Using%20SetMovieGWorld%20to%20draw%20to%20the%20window%20back%20buffer/qa1043.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Using Standard SCSI Disk Drives on Macs](../../qa/dv/Using%20Standard%20SCSI%20Disk%20Drives%20on%20Macs.md)** — QA · 1995-07-01，macOS
+- **[Using static versions of existing dynamic libraries](../../qa/Using%20static%20versions%20of%20existing%20dynamic%20libraries/Using%20static%20versions%20of%20existing%20dynamic%20libraries.md)** — QA · 2006-10-24，Xcode Developer Tools|macOS
+- **[Using stdin on the Macintosh](../../qa/java/Using%20stdin%20on%20the%20Macintosh/Legacy%20Documentclose%20button.md)** — QA · 1998-12-07，macOS
+- **[Using System.currentTimeMillis( )](../../qa/java/Using%20System.currentTimeMillis%28%20%29/Legacy%20Documentclose%20button.md)** — QA · 2000-02-02，macOS
+- **[Using Temporary Memory with OpenPicture](../../qa/qd/Using%20Temporary%20Memory%20with%20OpenPicture.md)** — QA · 1996-02-01，macOS
+- **[Using the Color Table Stored in a Movie](../../qa/qtmcc/Using%20the%20Color%20Table%20Stored%20in%20a%20Movie.md)** — QA · 1995-06-01，macOS
+- **[Using the Command key when Resizing a Window](../../qa/tb/Using%20the%20Command%20key%20when%20Resizing%20a%20Window/Legacy%20Documentclose%20button.md)** — QA · 1996-08-21，macOS
+- **[Using the kQTPropertyClass_DRM properties with QuickTime](../../qa/Using%20the%20kQTPropertyClassDRM%20properties%20with%20QuickTime.md)** — QA · 2006-04-11，macOS · QuickTime
+- **[Using the Licensed Espy Font](../../qa/tx/Using%20the%20Licensed%20Espy%20Font.md)** — QA · 1996-10-25，macOS
+- **[Using the MRJ with IE 5](../../qa/java/Using%20the%20MRJ%20with%20IE%205/Legacy%20Documentclose%20button.md)** — QA · 2000-08-14，macOS
+- **[Using the QuickTime DVCompressor properties](../../qa/Using%20the%20QuickTime%20DVCompressor%20properties.md)** — QA · 2005-10-04，macOS · QuickTime
+- **[Using the Wide Routines in <FixMath.h>](../../qa/tb/Using%20the%20Wide%20Routines%20in/tb14.md)** — QA · 2011-07-12，macOS · CoreServices
+- **[Using UTIs to Identify Image Files](../../qa/Using%20UTIs%20to%20Identify%20Image%20Files.md)** — QA · 2007-05-11，macOS · CoreServices
+- **[Using Windows GDI for all drawing](../../qa/qtw/Using%20Windows%20GDI%20for%20all%20drawing/qtw98.md)** — QA · 2011-07-12，macOS
+- **[UV Support](../../qa/qd3d/UV%20Support.md)** — QA · 1996-02-15，macOS
+- **[UV's in Vertex List](../../qa/qd3d/UV%27s%20in%20Vertex%20List.md)** — QA · 1996-04-08，macOS
+- **[Valid QD3D Metafile Filename Extensions](../../qa/qd3d/Valid%20QD3D%20Metafile%20Filename%20Extensions.md)** — QA · 1997-07-11，macOS
+- **[Variable arguments in Objective-C methods](../../qa/Variable%20arguments%20in%20Objective-C%20methods.md)** — QA · 2005-01-13，macOS
+- **[VBL Tasking and calling FrontWindow](../../qa/qd/VBL%20Tasking%20and%20calling%20FrontWindow.md)** — QA · 1995-09-15，macOS
+- **[VBL Tasking and calling FrontWindow](../../qa/tb/VBL%20Tasking%20and%20calling%20FrontWindow/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS
+- **[Verifying the PCI Interface](../../qa/hw/Verifying%20the%20PCI%20Interface/Legacy%20Documentclose%20button.md)** — QA · 1995-07-15，macOS
+- **[Video capture with multiple IIDC cameras](../../qa/Video%20capture%20with%20multiple%20IIDC%20cameras.md)** — QA · 2008-08-08，macOS · QTKit
+- **[Video Digitizers - Adding Clean Aperture and Pixel Aspect Ratio Information](../../qa/Video%20Digitizers%20-%20Adding%20Clean%20Aperture%20and%20Pixel%20Aspect%20Ratio%20Information.md)** — QA · 2008-11-20，macOS · QuickTime
+- **[Video Output Components - Implementing QTVideoOutputGetIndSoundOutput on Mac OS X](../../qa/qa2001/Video%20Output%20Components%20-%20Implementing%20QTVideoOutputGetIndSoundOutput%20on%20Mac%20OS/qa1206.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Video Output Components - QTVideoOutputGetIndImageDecompressor](../../qa/qa2001/Video%20Output%20Components%20-%20QTVideoOutputGetIndImageDecompressor/qa1226.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[View Hints](../../qa/qd3d/View%20Hints.md)** — QA · 1996-04-08，macOS
+- **[Viewer Error "xy values outside of the viewing window" Explained](../../qa/qd3d/Viewer%20Error%20-xy%20values%20outside%20of%20the%20viewing%20window-%20Explained.md)** — QA · 1997-07-11，macOS
+- **[Viewer Only Supports Perspective Cameras](../../qa/qd3d/Viewer%20Only%20Supports%20Perspective%20Cameras.md)** — QA · 1997-07-11，macOS
+- **[Viewing multi-page PDF files](../../qa/qa2001/Viewing%20multi-page%20PDF%20files/qa1247.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Virtual Memory Management](../../qa/me/Virtual%20Memory%20Management.md)** — QA · 1995-05-01，macOS
+- **[Volumes Not Showing Up On The Desktop](../../qa/Volumes%20Not%20Showing%20Up%20On%20The%20Desktop.md)** — QA · 2006-12-20，macOS
+- **[WaitMouseUp documentation errata](../../qa/qa2001/WaitMouseUp%20documentation%20errata/qa1008.md)** — QA · 2001-02-27，macOS
+- **[Was that a path I just saw?](../../qa/hw/Was%20that%20a%20path%20I%20just%20saw/hw101.md)** — QA · 2000-10-06，macOS
+- **[Weak Linking To Spotlight](../../qa/Weak%20Linking%20To%20Spotlight.md)** — QA · 2005-06-03，macOS · CoreServices
+- **[WebObjects applications crashing on NT using IIS](../../qa/WebObjects%20applications%20crashing%20on%20NT%20using%20IIS.md)** — QA · 2000-10-30，macOS
+- **[What are configuration variables in Open Firmware?](../../qa/hw/What%20are%20configuration%20variables%20in%20Open%20Firmware/hw38.md)** — QA · 1999-02-15，macOS
+- **[What are generic names in Open Firmware?](../../qa/hw/What%20are%20generic%20names%20in%20Open%20Firmware/hw34.md)** — QA · 1999-02-15，macOS
+- **[What are NewWorld and Open Firmware version 3?](../../qa/hw/What%20are%20NewWorld%20and%20Open%20Firmware%20version%203/Legacy%20Documentclose%20button.md)** — QA · 1999-02-15，macOS
+- **[What are snag keys in Open Firmware?](../../qa/hw/What%20are%20snag%20keys%20in%20Open%20Firmware/hw35.md)** — QA · 1999-02-15，macOS
+- **[What are the predefined macros for GCC?](../../qa/What%20are%20the%20predefined%20macros%20for%20GCC.md)** — QA · 2010-06-18，macOS
+- **[What depth should I put in an Image Description?](../../qa/What%20depth%20should%20I%20put%20in%20an%20Image%20Description.md)** — QA · 2006-11-27，macOS · QuickTime
+- **[What Does Extension Manager Turn Off?](../../qa/ops/What%20Does%20Extension%20Manager%20Turn%20Off/Legacy%20Documentclose%20button.md)** — QA · 1995-09-15，macOS，2 页
+- **[What encryption, authentication, and proxy technologies does Safari support?](../../qa/What%20encryption%2C%20authentication%2C%20and%20proxy%20technologies%20does%20Safari%20support.md)** — QA · 2009-01-27，Safari|macOS
+- **[What is a 'scsz' resource in Java?](../../qa/java/What%20is%20a%20%27scsz%27%20resource%20in%20Java/Legacy%20Documentclose%20button.md)** — QA · 1999-05-17，macOS
+- **[What is a CardBus host bus adapter HBA?](../../qa/hw/What%20is%20a%20CardBus%20host%20bus%20adapter%20HBA/hw79.md)** — QA · 2011-07-12，macOS · Kernel
+- **[What is a tokenizer?](../../qa/hw/What%20is%20a%20tokenizer/hw58.md)** — QA · 1999-03-29，macOS
+- **[What is an Open Firmware devalias?](../../qa/hw/What%20is%20an%20Open%20Firmware%20devalias/Removed%20Documentclose%20button.md)** — QA · 2000-10-06，macOS
+- **[What is an Open Firmware phandle, and why can't I access it from the Mac OS?](../../qa/hw/What%20is%20an%20Open%20Firmware%20phandle%2C%20and%20why%20can%27t%20I%20access%20it%20from%20the%20Mac%20OS/hw76.md)** — QA · 1999-11-15，macOS
+- **[What is JAR caching?](../../qa/java/What%20is%20JAR%20caching/Legacy%20Documentclose%20button.md)** — QA · 2000-10-06，macOS
+- **[What is meant by 1 machine mode vs. 2 machine mode with respect to Open Firmware?](../../qa/hw/What%20is%20meant%20by%201%20machine%20mode%20vs.%202%20machine%20mode%20with%20respect%20to%20Open%20Firmware/hw36.md)** — QA · 1999-02-15，macOS
+- **[What is SetMovieDefaultDataRef?](../../qa/qtmtb/What%20is%20SetMovieDefaultDataRef.md)** — QA · 1997-03-14，macOS · QuickTime
+- **[What is the "main bundle" of a command-line foundation tool?](../../qa/What%20is%20the%20-main%20bundle-%20of%20a%20command-line%20foundation%20tool.md)** — QA · 2006-10-10，macOS
+- **[What is the correct drawing model and the correct event model for my NPAPI plug-in?](../../qa/What%20is%20the%20correct%20drawing%20model%20and%20the%20correct%20event%20model%20for%20my%20NPAPI%20plug.md)** — QA · 2011-09-30，Safari|macOS · WebKit
+- **[What is the minimal set of Carbon Events I need to override in order to implement a simple custom push button?](../../qa/qa2001/What%20is%20the%20minimal%20set%20of%20Carbon%20Events%20I%20need%20to%20override%20in%20order%20to%20implemen/qa1210.md)** — QA · 2002-11-12，macOS
+- **[What is the return stack in Open Firmware and can I use it?](../../qa/hw/What%20is%20the%20return%20stack%20in%20Open%20Firmware%20and%20can%20I%20use%20it/hw67.md)** — QA · 1999-10-11，macOS
+- **[What is the Timebase submenu available in the contextual menu of some patches in Quartz Composer?](../../qa/What%20is%20the%20Timebase%20submenu%20available%20in%20the%20contextual%20menu%20of%20some%20patches%20in/What%20is%20the%20Timebase%20submenu%20available%20in%20the%20contextual%20menu%20of%20some%20patches%20in.md)** — QA · 2005-06-15，macOS · Quartz
+- **[What is the word "see" and how do I use it to help me find what a word does?](../../qa/hw/What%20is%20the%20word%20-see-%20and%20how%20do%20I%20use%20it%20to%20help%20me%20find%20what%20a%20word%20does/hw72.md)** — QA · 1999-10-11，macOS
+- **[What is unsolicited status?](../../qa/fw/What%20is%20unsolicited%20status/fw03.md)** — QA · 2011-07-12，macOS · IOKit
+- **[When does the RSS Feed patch in Quartz Composer refresh its contents?](../../qa/When%20does%20the%20RSS%20Feed%20patch%20in%20Quartz%20Composer%20refresh%20its%20contents/When%20does%20the%20RSS%20Feed%20patch%20in%20Quartz%20Composer%20refresh%20its%20contents.md)** — QA · 2010-08-18，macOS · Quartz
+- **[When to use PCMCIA, PC Card, and CardBus](../../qa/hw/When%20to%20use%20PCMCIA%2C%20PC%20Card%2C%20and%20CardBus/hw77.md)** — QA · 1999-11-15，macOS
+- **[Where are the LiveConnect classes on Mac OS X?](../../qa/Where%20are%20the%20LiveConnect%20classes%20on%20Mac%20OS%20X.md)** — QA · 2006-10-02，macOS
+- **[Where do QuickTime extension files reside on Windows systems?](../../qa/Where%20do%20QuickTime%20extension%20files%20reside%20on%20Windows%20systems.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Where should I install my help book, and how does Help Viewer locate it?](../../qa/qa2001/Where%20should%20I%20install%20my%20help%20book%2C%20and%20how%20does%20Help%20Viewer%20locate%20it/qa1022.md)** — QA · 2011-07-12，macOS · Carbon
+- **[Which Machines Support Driver Services Library and the MP Nanokernel?](../../qa/hw/Which%20Machines%20Support%20Driver%20Services%20Library%20and%20the%20MP%20Nanokernel/hw63.md)** — QA · 1999-07-12，macOS
+- **[White Backgrounds for Dialog editText Items](../../qa/tb/White%20Backgrounds%20for%20Dialog%20editText%20Items/Legacy%20Documentclose%20button.md)** — QA · 1997-10-13，macOS
+- **[White Text on Black Background](../../qa/qd/White%20Text%20on%20Black%20Background.md)** — QA · 1995-09-15，macOS
+- **[Why am I getting a bdNamErr when trying to use a file I just located?](../../qa/Why%20am%20I%20getting%20a%20bdNamErr%20when%20trying%20to%20use%20a%20file%20I%20just%20located.md)** — QA · 2006-11-14，macOS · CoreServices
+- **[Why am I getting odd, unexpected results with various viewport tag settings](../../qa/Why%20am%20I%20getting%20odd%2C%20unexpected%20results%20with%20various%20viewport%20tag%20settings.md)** — QA · 2014-08-05，Safari|macOS
+- **[Why am I not receiving kEventControlHit events for some of the parts of my custom HIView?](../../qa/Why%20am%20I%20not%20receiving%20kEventControlHit%20events%20for%20some%20of%20the%20parts%20of%20my%20custo.md)** — QA · 2005-07-14，macOS
+- **[Why are my Core Graphics calls drawing upside down?](../../qa/qa2001/Why%20are%20my%20Core%20Graphics%20calls%20drawing%20upside%20down/qa1009.md)** — QA · 2011-07-12，macOS · ApplicationServices
+- **[Why aren't my tracking rects working?](../../qa/Why%20aren%27t%20my%20tracking%20rects%20working.md)** — QA · 2004-12-02，macOS · AppKit
+- **[Why does -stringByTrimmingCharactersInSet: give me an empty string result when it shouldn't?](../../qa/qa2001/Why%20does%20-stringByTrimmingCharactersInSet-%20give%20me%20an%20empty%20string%20result%20when%20i/qa1202.md)** — QA · 2011-07-12，macOS · Foundation
+- **[Why does logging keep my Printer Module from working?](../../qa/qa2001/Why%20does%20logging%20keep%20my%20Printer%20Module%20from%20working/Not%20Recommended%20Documentclose%20button.md)** — QA · 2002-11-06，macOS
+- **[Why does my identity matrix look strange?](../../qa/qa2001/Why%20does%20my%20identity%20matrix%20look%20strange/qa1227.md)** — QA · 2011-07-12，macOS · QuickTime
+- **[Why does my Quartz Composer composition render with a corrupted background in the QCView?](../../qa/Why%20does%20my%20Quartz%20Composer%20composition%20render%20with%20a%20corrupted%20background%20in%20th/Why%20does%20my%20Quartz%20Composer%20composition%20render%20with%20a%20corrupted%20background%20in%20th.md)** — QA · 2005-06-01，macOS · Quartz
+- **[Why doesn't my Scrolling Text Box control work in a compositing window?](../../qa/qa2001/Why%20doesn%27t%20my%20Scrolling%20Text%20Box%20control%20work%20in%20a%20compositing%20window/qa1324.md)** — QA · 2003-11-13，macOS
+- **[Why don't all of my PDE localizations show up in all applications?](../../qa/qa2001/Why%20don%27t%20all%20of%20my%20PDE%20localizations%20show%20up%20in%20all%20applications/qa1185.md)** — QA · 2011-07-12，macOS
+- **[Why is libstdc++.a missing in my Xcode project on Mac OS X v10.4 (Tiger)?](../../qa/Why%20is%20libstdc%2B%2B.a%20missing%20in%20my%20Xcode%20project%20on%20Mac%20OS%20X%20v10.4%20%28Tiger%29.md)** — QA · 2005-04-29，Xcode Developer Tools|macOS
+- **[Why is my application crashing in QuickDraw when I'm not using it?](../../qa/Why%20is%20my%20application%20crashing%20in%20QuickDraw%20when%20I%27m%20not%20using%20it.md)** — QA · 2006-11-13，macOS
+- **[Why is my Control/HIView not accepting drops on Mac OS X v10.4 (Tiger)?](../../qa/qa2005/Why%20is%20my%20Control-HIView%20not%20accepting%20drops%20on%20Mac%20OS%20X%20v10.4%20%28Tiger%29/qa1426.md)** — QA · 2005-04-29，macOS
+- **[Why is my Ruby on Rails application with FastCGI generating "'load error /etc/irbrc" errors?](../../qa/Why%20is%20my%20Ruby%20on%20Rails%20application%20with%20FastCGI%20generating%20-%27load%20error%20-etc-ir.md)** — QA · 2007-11-28，macOS
+- **[Why isn't my ColorSync CMM recognized on Mac OS X 10.5?](../../qa/Why%20isn%27t%20my%20ColorSync%20CMM%20recognized%20on%20Mac%20OS%20X%2010.5.md)** — QA · 2007-10-26，macOS · ApplicationServices
+- **[Why isn't my edit text box in my Navigation dialog's custom area working on 10.3?](../../qa/qa2001/Why%20isn%27t%20my%20edit%20text%20box%20in%20my%20Navigation%20dialog%27s%20custom%20area%20working%20on%2010.3/qa1315.md)** — QA · 2003-10-28，macOS
+- **[Why isn't my QuickTime Component recognized by iMovie '08?](../../qa/Why%20isn%27t%20my%20QuickTime%20Component%20recognized%20by%20iMovie%20%2708.md)** — QA · 2007-10-03，macOS · QuickTime
+- **[Why isn't my Static Text Control deactivating when my other controls are?](../../qa/qa2001/Why%20isn%27t%20my%20Static%20Text%20Control%20deactivating%20when%20my%20other%20controls%20are/qa1125.md)** — QA · 2002-03-11，macOS
+- **[Window Manager and EraseRect](../../qa/qd/Window%20Manager%20and%20EraseRect.md)** — QA · 1995-09-15，macOS
+- **[WindowShade Problems](../../qa/tb/WindowShade%20Problems/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，macOS
+- **[Workaround for Asynchronous SCSIAction Crashes](../../qa/qa2001/Workaround%20for%20Asynchronous%20SCSIAction%20Crashes/Not%20Recommended%20Documentclose%20button.md)** — QA · 2002-03-21，macOS
+- **[Workaround for Converting Lower to Uppercase Characters while Keeping Diacritical Marks](../../qa/tx/Workaround%20for%20Converting%20Lower%20to%20Uppercase%20Characters%20while%20Keeping%20Diacritica.md)** — QA · 1995-05-01，macOS
+- **[Workaround for PLookupName Bug](../../qa/nw/Workaround%20for%20PLookupName%20Bug/Legacy%20Documentclose%20button.md)** — QA · 1998-07-20，macOS
+- **[Working with Configuration Variables](../../qa/qa2001/Working%20with%20Configuration%20Variables/qa1119.md)** — QA · 2002-02-13，macOS
+- **[Writing Native SCSI Disk Drivers for PowerMacs](../../qa/dv/Writing%20Native%20SCSI%20Disk%20Drivers%20for%20PowerMacs.md)** — QA · 1999-03-01，macOS
+- **[WS PDS Card and SCSI Manager 4.3](../../qa/dv/WS%20PDS%20Card%20and%20SCSI%20Manager%204.3.md)** — QA · 1995-07-01，macOS
+- **[X11 FAQ](../../qa/qa2001/X11%20FAQ/Legacy%20Documentclose%20button.md)** — QA · 2003-11-17，macOS
+
+## Xcode Developer Tools（30 份）
+
+- **[Auto-dependency Checker](../../qa/plat/Auto-dependency%20Checker/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Building Objective-C static libraries with categories](../../qa/Building%20Objective-C%20static%20libraries%20with%20categories/Building%20Objective-C%20static%20libraries%20with%20categories.md)** — QA · 2014-08-05，Xcode Developer Tools
+- **[C Open File Limit](../../qa/plat/C%20Open%20File%20Limit/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[C++ Precedence Bug](../../qa/plat/C%2B%2B%20Precedence%20Bug/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Can't attach during two-machine debugging with GDB](../../qa/qa2001/Can%27t%20attach%20during%20two-machine%20debugging%20with%20GDB/Not%20Recommended%20Documentclose%20button.md)** — QA · 2003-06-02，Xcode Developer Tools
+- **[Crashes on Quit in MPW 3.4a7](../../qa/plat/Crashes%20on%20Quit%20in%20MPW%203.4a7/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Creating Native MPW Tools](../../qa/plat/Creating%20Native%20MPW%20Tools/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Developing with ZeroLink: small applications and launching on other computers](../../qa/qa2001/Developing%20with%20ZeroLink-%20small%20applications%20and%20launching%20on%20other%20computers/qa1322.md)** — QA · 2003-10-31，Xcode Developer Tools
+- **[Documentation updater for Project Builder shipping with Mac OS X 10.2](../../qa/qa2001/Documentation%20updater%20for%20Project%20Builder%20shipping%20with%20Mac%20OS%20X%2010.2/qa1207.md)** — QA · 2002-10-25，Xcode Developer Tools
+- **[Fixing the "Audio Unit with Cocoa View" Xcode 3.1.x Template on Mac OS X 10.5.x Leopard](../../qa/Fixing%20the%20-Audio%20Unit%20with%20Cocoa%20View-%20Xcode%203.1.x%20Template%20on%20Mac%20OS%20X%2010.5.x.md)** — QA · 2010-04-19，Xcode Developer Tools · AudioUnit
+- **[How to solve '_objc_exception_set_functions' ZeroLink errors in Xcode](../../qa/qa2001/How%20to%20solve%20%27objcexceptionsetfunctions%27%20ZeroLink%20errors%20in%20Xcode/qa1321.md)** — QA · 2003-10-29，Xcode Developer Tools
+- **[Interface element identification in Interface Builder](../../qa/Interface%20element%20identification%20in%20Interface%20Builder/Interface%20element%20identification%20in%20Interface%20Builder.md)** — QA · 2010-08-31，Xcode Developer Tools
+- **[Late breaking news for the MacsBug gdb plugin](../../qa/qa2001/Late%20breaking%20news%20for%20the%20MacsBug%20gdb%20plugin/Legacy%20Documentclose%20button.md)** — QA · 2001-05-03，Xcode Developer Tools
+- **[Makefiles Problems](../../qa/plat/Makefiles%20Problems/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Manually adding localhost to distcc sets](../../qa/Manually%20adding%20localhost%20to%20distcc%20sets/Manually%20adding%20localhost%20to%20distcc%20sets.md)** — QA · 2014-10-16，Xcode Developer Tools
+- **[Memory Requirements](../../qa/plat/Memory%20Requirements/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Problems with MPW and ROM Maps](../../qa/plat/Problems%20with%20MPW%20and%20ROM%20Maps/Legacy%20Documentclose%20button.md)** — QA · 1995-05-01，Xcode Developer Tools
+- **[Project Builder 2.1 needs projects to be checked into CVS to enable CVS support](../../qa/qa2001/Project%20Builder%202.1%20needs%20projects%20to%20be%20checked%20into%20CVS%20to%20enable%20CVS%20support/Legacy%20Documentclose%20button.md)** — QA · 2003-03-20，Xcode Developer Tools
+- **[Resolving App Rejections for GCC and LLVM Instrumentation](../../qa/Resolving%20App%20Rejections%20for%20GCC%20and%20LLVM%20Instrumentation.md)** — QA · 2017-09-01，Xcode Developer Tools
+- **[Software Debugging - Sources of Information](../../qa/plat/Software%20Debugging%20-%20Sources%20of%20Information/Legacy%20Documentclose%20button.md)** — QA · 1996-02-15，Xcode Developer Tools
+- **[Spaces in project names: solving "Missing file or directory" errors in Project Builder](../../qa/qa2001/Spaces%20in%20project%20names-%20solving%20-Missing%20file%20or%20directory-%20errors%20in%20Project%20B/qa1301.md)** — QA · 2003-09-15，Xcode Developer Tools
+- **[Stub Library FAQ](../../qa/plat/Stub%20Library%20FAQ/plat28.md)** — QA · 2011-07-12，Xcode Developer Tools
+- **[Stubs.o vs. fgets](../../qa/plat/Stubs.o%20vs.%20fgets/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Using Breakpoint Actions for Logging](../../qa/Using%20Breakpoint%20Actions%20for%20Logging/Using%20Breakpoint%20Actions%20for%20Logging.md)** — QA · 2015-03-09，Xcode Developer Tools
+- **[Using MacsBug to Diagnose Field Problems](../../qa/plat/Using%20MacsBug%20to%20Diagnose%20Field%20Problems/Legacy%20Documentclose%20button.md)** — QA · 1996-02-15，Xcode Developer Tools
+- **[Using Pascal strings in Project Builder](../../qa/qa2001/Using%20Pascal%20strings%20in%20Project%20Builder/Legacy%20Documentclose%20button.md)** — QA · 2001-06-28，Xcode Developer Tools
+- **[Using SourceSafe without MPW or Toolserver](../../qa/plat/Using%20SourceSafe%20without%20MPW%20or%20Toolserver/Legacy%20Documentclose%20button.md)** — QA · 1995-06-01，Xcode Developer Tools
+- **[Validating Your Version of Xcode](../../qa/Validating%20Your%20Version%20of%20Xcode.md)** — QA · 2015-09-22，Xcode Developer Tools
+- **[Working with groups and folder references in Project Builder](../../qa/qa2001/Working%20with%20groups%20and%20folder%20references%20in%20Project%20Builder/qa1077.md)** — QA · 2001-09-25，Xcode Developer Tools
+- **[xSYM files](../../qa/ppcsys/xSYM%20files.md)** — QA · 1995-05-01，Xcode Developer Tools

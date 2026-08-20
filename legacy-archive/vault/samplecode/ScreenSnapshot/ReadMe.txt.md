@@ -1,0 +1,48 @@
+---
+title: ScreenSnapshot
+apple_id: DTS40011158
+resource_type: Sample Code
+platform: macOS
+topic: User Experience
+technology: ApplicationServices
+published: '2011-07-19'
+source_url: https://developer.apple.com/library/archive/samplecode/ScreenSnapshot/Listings/ReadMe_txt.html
+archived_at: '2026-07-18T03:23:26.862925Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [ScreenSnapshot](ScreenSnapshot.md)
+
+
+[Next](ScreenSnapshot-ImageDocument.h.md)[Previous](ScreenSnapshot.md)
+
+# ReadMe.txt
+
+```
+
+### ScreenSnapshot ###
+
+===========================================================================
+DESCRIPTION:
+
+Uses Quartz Display Services to obtain an image containing the contents of any of the connected displays. When the user selects a display item from the 'Capture' menu, a screen snapshot image is obtained and displayed in a new document window. The user can then save the image to disk in any of the supported formats (jpeg, png, tiff). Also installs a callback function that's invoked whenever the configuration of a local display is changed. This is used to update the 'Capture' menu  display items. 
+
+===========================================================================
+BUILD REQUIREMENTS:
+
+Mac OS X 10.6 SDK, Xcode 3.2.6
+
+===========================================================================
+RUNTIME REQUIREMENTS:
+
+Mac OS X 10.6 and later
+
+===========================================================================
+CHANGES FROM PREVIOUS VERSIONS:
+
+1.0 - First Release
+
+===========================================================================
+Copyright (C) 2011 Apple Inc. All rights reserved.
+```
+
+[Next](ScreenSnapshot-ImageDocument.h.md)[Previous](ScreenSnapshot.md)
+

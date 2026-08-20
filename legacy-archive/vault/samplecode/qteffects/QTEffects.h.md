@@ -1,0 +1,148 @@
+---
+title: qteffects
+apple_id: DTS10000833
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/qteffects/Listings/QTEffects_h.html
+archived_at: '2026-07-26T19:52:40.475561Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [qteffects](qteffects.md)
+
+
+[Next](Document%20Revision%20History.md)[Previous](QTEffects.c.md)
+
+# Retired Document
+
+__Important:__
+This sample code may not represent best practices for current development. The project may use deprecated symbols and illustrate technologies and techniques that are no longer recommended.
+
+# QTEffects.h
+
+```c
+//////////
+//
+//  File:       QTEffects.h
+//
+//  Contains:   QuickTime video effect support for QuickTime movies.
+//
+//  Written by: Tim Monroe
+//
+//  Copyright:  © 1997-1998 by Apple Computer, Inc., all rights reserved.
+//
+//  Change History (most recent first):
+//
+//     <1>      11/06/97    rtm     first file; integrated existing code with shell framework
+//
+//////////
+
+//////////
+//
+// header files
+//
+//////////
+
+#include <ImageCodec.h>
+
+#include "ComApplication.h"
+
+#ifndef _SPRITEUTILITIES_
+#include "SpriteUtilities.h"
+#endif
+
+#ifndef __EFFECTSUTILITIES__
+#include "EffectsUtilities.h"
+#endif
+
+#ifndef __ENDIANUTILITIES__
+#include "EndianUtilities.h"
+#endif
+
+#ifndef _WIREDSPRITEUTILITIES_
+#include "WiredSpriteUtilities.h"
+#endif
+
+#if TARGET_OS_MAC
+#include "MacFramework.h"
+#endif
+
+#if TARGET_OS_WIN32
+#include "WinFramework.h"
+#endif
+
+//////////
+//
+// compiler settings
+//
+//////////
+
+#define COPY_MOVIE_MEDIA                0       // 0 == effect source track references original media; 1 == copy media
+
+//////////
+//
+// constants
+//
+//////////
+
+#define kEffectsSaveMoviePrompt         "Save effect movie file as:"
+#define kEffectsSaveMovieFileName       "untitled.mov"
+#define kEffectsFireMovieFileName       "fire.mov"
+#define kEffectsPenguinMovieFileName    "penguin.mov"
+
+#define kOneSecond                      600
+#define kEffectMovieDuration            (10 * kOneSecond)
+#define k30StepsCount                   30
+
+#define kImageEffectType                kFilmNoiseImageFilterType
+
+#define kDefaultTrackWidth              160
+#define kDefaultTrackHeight             120
+
+#define kWhiteRectID                    129
+
+#define kPenguinPictID                  128
+#define kPenguinTrackWidth              152
+#define kPenguinTrackHeight             202
+
+#define kSpriteMediaTimeScale           600
+
+#define kSpriteMediaFrameDurationPenguin    1000
+#define kEffectsWindowClassName         "Effects Window"
+
+//////////
+//
+// function prototypes
+//
+//////////
+
+void                                QTEffects_MakeFireMovie (void);
+void                                QTEffects_AddFilmNoiseToMovie (Movie theMovie);
+void                                QTEffects_AddFilmNoiseToImage (WindowObject theWindowObject);
+void                                QTEffects_MakePenguinMovie (void);
+OSErr                               QTEffects_AddEffectToMovieSegment (Movie theMovie, OSType theEffectType, long theNumSources, TimeValue theStartTime, TimeValue theDuration);
+void                                QTEffects_MakeSpriteEffectMovie (void);
+
+void                                QTEffects_PromptUserForFilesAndMakeEffectMovie (void);
+void                                QTEffects_AddRippleEffectAsSpriteImage (QTAtomContainer theKeySample, QTAtomID theImageID);
+
+OSErr                               QTEffects_DisplayDialogForSources (FSSpec *theSpecList, UInt16 theSpecCount);
+static void                         QTEffects_RespondToDialogSelection (OSErr theErr);
+#if TARGET_OS_WIN32
+static void                         QTEffects_EffectsDialogCallback (EventRecord *theEvent, DialogRef theDialog, DialogItemIndex theItemHit);
+LRESULT CALLBACK                    QTEffects_CustomDialogWndProc (HWND theWnd, UINT theMessage, UINT wParam, LONG lParam);
+#endif
+Boolean                             QTEffects_HandleEffectsDialogEvents (EventRecord *theEvent, DialogItemIndex theItemHit);
+
+Handle                              QTEffects_InitWindowData (WindowObject theWindowObject);
+void                                QTEffects_DumpWindowData (WindowObject theWindowObject);
+static OSErr                        QTEffects_SetUpEffectSequence (WindowObject theWindowObject);
+OSErr                               QTEffects_RunEffect (WindowObject theWindowObject, TimeValue theTime);
+
+static void                         QTEffects_AddPenguinMovieSamplesToMedia (Media theMedia);
+static void                         QTEffects_SetTrackProperties (Media theMedia);
+```
+
+[Next](Document%20Revision%20History.md)[Previous](QTEffects.c.md)
+

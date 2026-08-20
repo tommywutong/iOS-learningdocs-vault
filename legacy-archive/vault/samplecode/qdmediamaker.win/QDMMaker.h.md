@@ -1,0 +1,122 @@
+---
+title: qdmediamaker.win
+apple_id: DTS10000823
+resource_type: Sample Code
+platform: macOS
+topic: Cross Platform
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/qdmediamaker.win/Listings/QDMMaker_h.html
+archived_at: '2026-07-18T03:29:58.182351Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [qdmediamaker.win](qdmediamaker.win.md)
+
+
+[Next](QDrawHandler.h.md)[Previous](QDMMaker.c.md)
+
+# QDMMaker.h
+
+```c
+//////////
+//
+//  File:       QDMMaker.h
+//
+//  Contains:   Code to create movies that use the derived QuickDraw media handler.
+//
+//  Written by: Tim Monroe
+//              Based on MyMakeMediaMovies code written by John Wang.
+//
+//  Copyright:  © 1993-1999 by Apple Computer, Inc., all rights reserved.
+//
+//  Change History (most recent first):
+//
+//     <2>      01/14/99    rtm     conversion to personal coding style
+//     <1>      02/25/93    jw      first file
+//     
+//////////
+
+//////////
+//
+// header files
+//
+//////////
+
+#ifndef __MOVIES__
+#include <Movies.h>
+#endif
+
+#ifndef __MEDIAHANDLERS__
+#include <MediaHandlers.h>
+#endif
+
+#ifndef __ENDIAN__
+#include <Endian.h>
+#endif
+
+#ifndef __SCRIPT__
+#include <Script.h>
+#endif
+
+#ifndef __SOUND__
+#include <Sound.h>
+#endif
+
+#ifndef __FIXMATH__
+#include <FixMath.h>
+#endif
+
+#ifndef __QDOFFSCREEN__
+#include <QDOffscreen.h>
+#endif
+
+#ifndef __QDMEDIACOMMON__
+#include "QDMediaCommon.h"
+#endif
+
+#ifndef __QTUtilities__
+#include "QTUtilities.h"
+#endif
+
+#include "ComResource.h"
+#include "ComApplication.h"
+
+#if TARGET_OS_MAC
+#include "MacFramework.h"
+#endif
+
+#if TARGET_OS_WIN32
+#include "WinFramework.h"
+#endif
+
+
+//////////
+//
+// constants
+//
+//////////
+
+#define kQDTrackWidth               400
+#define kQDTrackHeight              300
+#define kQDMediaTimeScale           600
+
+#define kSaveQDMoviePrompt          "Save movie file as:"
+#define kSaveQDMovieFileName        "Untitled.mov"
+
+#define kWindowTitle                "Display Graphics"
+
+
+//////////
+//
+// function prototypes
+//
+//////////
+
+static OSErr                        QDMM_AddRowsSamples (Media theMedia, short theWidth, short theHeight, QDrawDescriptionHandle theQDDesc);
+static OSErr                        QDMM_AddLinesSamples (Media theMedia, short theWidth, short theHeight, QDrawDescriptionHandle theQDDesc);
+static OSErr                        QDMM_AddBoxesSamples (Media theMedia, short theWidth, short theHeight, QDrawDescriptionHandle theQDDesc);
+static OSErr                        QDMM_AddBallSamples (Media theMedia, short theWidth, short theHeight, QDrawDescriptionHandle theQDDesc);
+void                                QDMM_MakeQDMovie (UInt16 theMenuItem, short theWidth, short theHeight);
+```
+
+[Next](QDrawHandler.h.md)[Previous](QDMMaker.c.md)
+

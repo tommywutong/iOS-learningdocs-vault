@@ -1,0 +1,192 @@
+# 数据与持久化 · 全部资料
+
+> 共 153 份资料。按子主题分组，保留主题内的全部条目。
+> 文章标题链接优先打开中文正文；没有中文正文时打开英文原文。
+
+## Core Data
+
+- [打开此子主题独立页面](01.md)
+
+| 文章 | 类型 | 来源 | 阅读 | 状态 |
+|---|---|---|---|---|
+| [Core Data](../../../apple-docs/zh/coredata.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata.md) | 已翻译 |
+| [Core Data 与数据库的区别 \| Cocoa with Love](../../../blogs/zh/cocoawithlove/the-differences-between-core-data-and-a-database-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/the-differences-between-core-data-and-a-database-cocoa-with-love.md) | 已翻译 |
+| [Core Data 图书](../../../blogs/zh/oleb/the-core-data-book.md) | 技术博客 | Ole Begemann | [中文](../../../blogs/zh/oleb/the-core-data-book.md) | 已翻译 |
+| [Core Data 并发调试](../../../blogs/zh/oleb/core-data-concurrency-debugging.md) | 技术博客 | Ole Begemann | [中文](../../../blogs/zh/oleb/core-data-concurrency-debugging.md) | 已翻译 |
+| [Core Data 新变化](../../../wwdc/zh/wwdc2023/10186-what-s-new-in-core-data.md) | WWDC | Apple · WWDC2023 | [中文](../../../wwdc/zh/wwdc2023/10186-what-s-new-in-core-data.md) | 已翻译 |
+| [Core Data 最佳实践](../../../wwdc/zh/wwdc2018/224-core-data-best-practices.md) | WWDC | Apple · WWDC2018 | [中文](../../../wwdc/zh/wwdc2018/224-core-data-best-practices.md) | 已翻译 |
+| [Core Data 栈](../../../apple-docs/zh/coredata/core-data-stack.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/core-data-stack.md) | 已翻译 |
+| [Core Data：单行获取](../../../blogs/zh/cocoawithlove/core-data-one-line-fetch-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/core-data-one-line-fetch-cocoa-with-love.md) | 已翻译 |
+| [Core Data：细节与格言](../../../wwdc/zh/wwdc2020/10017-core-data-sundries-and-maxims.md) | WWDC | Apple · WWDC2020 | [中文](../../../wwdc/zh/wwdc2020/10017-core-data-sundries-and-maxims.md) | 已翻译 |
+| [Swift 中更好的 Core Data 模型](../../../blogs/zh/jessesquires/better-core-data-models-in-swift.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/better-core-data-models-in-swift.md) | 已翻译 |
+| [Swift、Core Data 与单元测试](../../../blogs/zh/jessesquires/swift-core-data-and-unit-testing.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/swift-core-data-and-unit-testing.md) | 已翻译 |
+| [优化 Core Data 和 CloudKit 的使用](../../../wwdc/zh/wwdc2022/10119-optimize-your-use-of-core-data-and-cloudkit.md) | WWDC | Apple · WWDC2022 | [中文](../../../wwdc/zh/wwdc2022/10119-optimize-your-use-of-core-data-and-cloudkit.md) | 已翻译 |
+| [使用非常大的分层数据集测试 Core Data \| Cocoa with Love](../../../blogs/zh/cocoawithlove/testing-core-data-with-very-big-hierarchical-data-sets-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/testing-core-data-with-very-big-hierarchical-data-sets-cocoa-with-love.md) | 已翻译 |
+| [在 Core Data 中立即传播删除操作](../../../blogs/zh/cocoawithlove/propagate-deletes-immediately-in-core-data-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/propagate-deletes-immediately-in-core-data-cocoa-with-love.md) | 已翻译 |
+| [在 Swift 中使用 Core Data](../../../blogs/zh/jessesquires/using-core-data-in-swift.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/using-core-data-in-swift.md) | 已翻译 |
+| [在后台使用 Core Data](../../../apple-docs/zh/coredata/using-core-data-in-the-background.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/using-core-data-in-the-background.md) | 已翻译 |
+| [如何制作 Core Data SQLite 数据库的副本](../../../blogs/zh/oleb/how-to-make-a-copy-of-a-core-data-sqlite-database.md) | 技术博客 | Ole Begemann | [中文](../../../blogs/zh/oleb/how-to-make-a-copy-of-a-core-data-sqlite-database.md) | 已翻译 |
+| [如何在 Swift 中更优雅地处理非可选 Core Data 属性](../../../blogs/zh/jessesquires/how-to-more-gracefully-handle-non-optional-core-data-properties-in-swift.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/how-to-more-gracefully-handle-non-optional-core-data-properties-in-swift.md) | 已翻译 |
+| [将 Core Data 与 CloudKit 配合使用](../../../wwdc/zh/wwdc2019/202-using-core-data-with-cloudkit.md) | WWDC | Apple · WWDC2019 | [中文](../../../wwdc/zh/wwdc2019/202-using-core-data-with-cloudkit.md) | 已翻译 |
+| [性能测试: 替换 Core Data Key Paths](../../../blogs/zh/cocoawithlove/performance-tests-replacing-core-data-key-paths-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/performance-tests-replacing-core-data-key-paths-cocoa-with-love.md) | 已翻译 |
+| [手动设置 Core Data 堆栈](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack-manually.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack-manually.md) | 已翻译 |
+| [持久化存储类型](../../../apple-docs/zh/coredata/persistent-store-types.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/persistent-store-types.md) | 已翻译 |
+| [检查 Core Data 特性](../../../blogs/zh/oleb/inspecting-core-data-attributes.md) | 技术博客 | Ole Begemann | [中文](../../../blogs/zh/oleb/inspecting-core-data-attributes.md) | 已翻译 |
+| [演进你的 Core Data 架构](../../../wwdc/zh/wwdc2022/10120-evolve-your-core-data-schema.md) | WWDC | Apple · WWDC2022 | [中文](../../../wwdc/zh/wwdc2022/10120-evolve-your-core-data-schema.md) | 已翻译 |
+| [配置 Core Data 栈](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/setting-up-a-core-data-stack.md) | 已翻译 |
+| [Core Data 概述](../../../blogs/zh/objccn/core-data-%E6%A6%82%E8%BF%B0.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/core-data-%E6%A6%82%E8%BF%B0.md) | 原生中文 |
+| [Core Data 网络应用实例](../../../blogs/zh/objccn/core-data-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/core-data-%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B.md) | 原生中文 |
+| [一个完整的 Core Data 应用](../../../blogs/zh/objccn/%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84-core-data-%E5%BA%94%E7%94%A8.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84-core-data-%E5%BA%94%E7%94%A8.md) | 原生中文 |
+| [初识Core Data(1)](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-1.md) | 技术博客 | 杨萧玉 | [中文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-1.md) | 原生中文 |
+| [初识Core Data(2)](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-2.md) | 技术博客 | 杨萧玉 | [中文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-2.md) | 原生中文 |
+| [初识Core Data(3)](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-3.md) | 技术博客 | 杨萧玉 | [中文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-3.md) | 原生中文 |
+| [初识Core Data(4)](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-4.md) | 技术博客 | 杨萧玉 | [中文](../../../blogs/zh/yulingtianxia/%E5%88%9D%E8%AF%86core-data-4.md) | 原生中文 |
+| [用 SQLite 和 FMDB 替代 Core Data](../../../blogs/zh/objccn/%E7%94%A8-sqlite-%E5%92%8C-fmdb-%E6%9B%BF%E4%BB%A3-core-data.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/%E7%94%A8-sqlite-%E5%92%8C-fmdb-%E6%9B%BF%E4%BB%A3-core-data.md) | 原生中文 |
+| [自定义 Core Data 迁移](../../../blogs/zh/objccn/%E8%87%AA%E5%AE%9A%E4%B9%89-core-data-%E8%BF%81%E7%A7%BB.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/%E8%87%AA%E5%AE%9A%E4%B9%89-core-data-%E8%BF%81%E7%A7%BB.md) | 原生中文 |
+| [Core Data 概述](../../../blogs/en/objcio/core-data-overview.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/core-data-overview.md) | 仅标题中文，正文待翻译 |
+| [使用 SQLite 和 FMDB 替代 Core Data](../../../blogs/en/objcio/on-using-sqlite-and-fmdb-instead-of-core-data.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/on-using-sqlite-and-fmdb-instead-of-core-data.md) | 仅标题中文，正文待翻译 |
+| [完整的 Core Data 应用程序](../../../blogs/en/objcio/a-complete-core-data-application.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/a-complete-core-data-application.md) | 仅标题中文，正文待翻译 |
+| [联网的 Core Data 应用程序](../../../blogs/en/objcio/a-networked-core-data-application.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/a-networked-core-data-application.md) | 仅标题中文，正文待翻译 |
+| [自定义 Core Data 迁移](../../../blogs/en/objcio/custom-core-data-migrations.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/custom-core-data-migrations.md) | 仅标题中文，正文待翻译 |
+| [Adopting SwiftData for a Core Data app](../../../apple-docs/en/coredata/adopting-swiftdata-for-a-core-data-app.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/adopting-swiftdata-for-a-core-data-app.md) | 待翻译 |
+| [Core Data Constants](../../../apple-docs/en/coredata/core-data-constants.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/core-data-constants.md) | 待翻译 |
+| [Core Data model](../../../apple-docs/en/coredata/core-data-model.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/core-data-model.md) | 待翻译 |
+| [Creating a Core Data model](../../../apple-docs/en/coredata/creating-a-core-data-model.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/creating-a-core-data-model.md) | 待翻译 |
+| [Creating a Core Data Model for CloudKit](../../../apple-docs/en/coredata/creating-a-core-data-model-for-cloudkit.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/creating-a-core-data-model-for-cloudkit.md) | 待翻译 |
+| [Handling Different Data Types in Core Data](../../../apple-docs/en/coredata/handling-different-data-types-in-core-data.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/handling-different-data-types-in-core-data.md) | 待翻译 |
+| [Linking Data Between Two Core Data Stores](../../../apple-docs/en/coredata/linking-data-between-two-core-data-stores.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/linking-data-between-two-core-data-stores.md) | 待翻译 |
+| [Mirroring a Core Data store with CloudKit](../../../apple-docs/en/coredata/mirroring-a-core-data-store-with-cloudkit.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/mirroring-a-core-data-store-with-cloudkit.md) | 待翻译 |
+| [Reading CloudKit Records for Core Data](../../../apple-docs/en/coredata/reading-cloudkit-records-for-core-data.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/reading-cloudkit-records-for-core-data.md) | 待翻译 |
+| [Setting Up Core Data with CloudKit](../../../apple-docs/en/coredata/setting-up-core-data-with-cloudkit.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/setting-up-core-data-with-cloudkit.md) | 待翻译 |
+| [Sharing Core Data objects between iCloud users](../../../apple-docs/en/coredata/sharing-core-data-objects-between-icloud-users.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/sharing-core-data-objects-between-icloud-users.md) | 待翻译 |
+| [Syncing a Core Data Store with CloudKit](../../../apple-docs/en/coredata/syncing-a-core-data-store-with-cloudkit.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/syncing-a-core-data-store-with-cloudkit.md) | 待翻译 |
+
+## SwiftData
+
+- [打开此子主题独立页面](02.md)
+
+| 文章 | 类型 | 来源 | 阅读 | 状态 |
+|---|---|---|---|---|
+| [SwiftData：深入了解继承与 Schema 迁移](../../../wwdc/zh/wwdc2025/291-swiftdata-dive-into-inheritance-and-schema-migration.md) | WWDC | Apple · WWDC2025 | [中文](../../../wwdc/zh/wwdc2025/291-swiftdata-dive-into-inheritance-and-schema-migration.md) | 已翻译 |
+| [使用 SwiftData 历史记录追踪模型变更](../../../wwdc/zh/wwdc2024/10075-track-model-changes-with-swiftdata-history.md) | WWDC | Apple · WWDC2024 | [中文](../../../wwdc/zh/wwdc2024/10075-track-model-changes-with-swiftdata-history.md) | 已翻译 |
+| [在 SwiftData 中创建自定义数据存储](../../../wwdc/zh/wwdc2024/10138-create-a-custom-data-store-with-swiftdata.md) | WWDC | Apple · WWDC2024 | [中文](../../../wwdc/zh/wwdc2024/10138-create-a-custom-data-store-with-swiftdata.md) | 已翻译 |
+| [深入了解 SwiftData](../../../wwdc/zh/wwdc2023/10196-dive-deeper-into-swiftdata.md) | WWDC | Apple · WWDC2023 | [中文](../../../wwdc/zh/wwdc2023/10196-dive-deeper-into-swiftdata.md) | 已翻译 |
+| [认识 SwiftData](../../../wwdc/zh/wwdc2023/10187-meet-swiftdata.md) | WWDC | Apple · WWDC2023 | [中文](../../../wwdc/zh/wwdc2023/10187-meet-swiftdata.md) | 已翻译 |
+| [What’s new in SwiftData](../../../wwdc/en/wwdc2024/10137-what-s-new-in-swiftdata.md) | WWDC | Apple · WWDC2024 | [英文](../../../wwdc/en/wwdc2024/10137-what-s-new-in-swiftdata.md) | 待翻译 |
+
+## 数据库与文件
+
+- [打开此子主题独立页面](03.md)
+
+| 文章 | 类型 | 来源 | 阅读 | 状态 |
+|---|---|---|---|---|
+| [Apple 文件系统的新功能](../../../wwdc/zh/wwdc2019/710-what-s-new-in-apple-file-systems.md) | WWDC | Apple · WWDC2019 | [中文](../../../wwdc/zh/wwdc2019/710-what-s-new-in-apple-file-systems.md) | 已翻译 |
+| [Steve Jobs 谈文件系统](../../../blogs/zh/oleb/steve-jobs-on-the-file-system.md) | 技术博客 | Ole Begemann | [中文](../../../blogs/zh/oleb/steve-jobs-on-the-file-system.md) | 已翻译 |
+| [使用 SQLite Magellan 漏洞让 Chrome 70 崩溃](../../../blogs/zh/worthdoingbadly/crash-chrome-70-with-the-sqlite-magellan-bug.md) | 技术博客 | worthdoingbadly (Zhuowei Zhang) | [中文](../../../blogs/zh/worthdoingbadly/crash-chrome-70-with-the-sqlite-magellan-bug.md) | 已翻译 |
+| [关于 Apple File System](../../../apple-docs/zh/foundation/about-apple-file-system.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/about-apple-file-system.md) | 已翻译 |
+| [局部变量存储期](../../../apple-docs/zh/objectivec/local-variable-storage-duration.md) | Apple 文档 | Apple · Objective-C Runtime | [中文](../../../apple-docs/zh/objectivec/local-variable-storage-duration.md) | 已翻译 |
+| [探索 SQLite 的内部机制](../../../blogs/snapshots-zh/bswanson.dev/exploring-sqlite-s-internals.md) | 网页快照 | 学习计划网页快照 | [中文](../../../blogs/snapshots-zh/bswanson.dev/exploring-sqlite-s-internals.md) | 已翻译 |
+| [文件系统](../../../apple-docs/zh/foundation/file-system.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/file-system.md) | 已翻译 |
+| [文件系统错误码](../../../apple-docs/zh/foundation/file-system-error-codes.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/file-system-error-codes.md) | 已翻译 |
+| [有效使用文件系统](../../../apple-docs/zh/foundation/using-the-file-system-effectively.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/using-the-file-system-effectively.md) | 已翻译 |
+| [检查宗卷存储容量](../../../apple-docs/zh/foundation/checking-volume-storage-capacity.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/checking-volume-storage-capacity.md) | 已翻译 |
+| [监测 App 的存储指标](../../../apple-docs/zh/xcode/monitoring-your-app-s-storage-metrics.md) | Apple 文档 | Apple · xcode | [中文](../../../apple-docs/zh/xcode/monitoring-your-app-s-storage-metrics.md) | 已翻译 |
+| [线程局部存储详解](../../../blogs/zh/maskray/all-about-thread-local-storage.md) | 技术博客 | MaskRay (宋方睿) | [中文](../../../blogs/zh/maskray/all-about-thread-local-storage.md) | 已翻译 |
+| [通过访问文件系统提升性能与稳定性](../../../apple-docs/zh/foundation/improving-performance-and-stability-when-accessing-the-file-system.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/improving-performance-and-stability-when-accessing-the-file-system.md) | 已翻译 |
+| [Android 中的 SQLite 数据库支持](../../../blogs/zh/objccn/android-%E4%B8%AD%E7%9A%84-sqlite-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81.md) | 技术博客 | ObjC 中国 (objccn.io) | [中文](../../../blogs/zh/objccn/android-%E4%B8%AD%E7%9A%84-sqlite-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81.md) | 原生中文 |
+| [7 个 iOS 应用如何能节省 500MB 存储空间](../../../blogs/en/emergetools/emerge-tools-blog-how-7-ios-apps-could-save-you-500mb-of-storage.md) | 技术博客 | Emerge Tools Blog | [英文](../../../blogs/en/emergetools/emerge-tools-blog-how-7-ios-apps-could-save-you-500mb-of-storage.md) | 仅标题中文，正文待翻译 |
+| [Android 中的 SQLite 数据库支持](../../../blogs/en/objcio/sqlite-database-support-in-android.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/sqlite-database-support-in-android.md) | 仅标题中文，正文待翻译 |
+| [Android 的存储访问框架](../../../blogs/en/oleb/android-s-storage-access-framework.md) | 技术博客 | Ole Begemann | [英文](../../../blogs/en/oleb/android-s-storage-access-framework.md) | 仅标题中文，正文待翻译 |
+| [C 存储类别](../../../blogs/en/nshipster/c-storage-classes.md) | 技术博客 | NSHipster (Mattt) | [英文](../../../blogs/en/nshipster/c-storage-classes.md) | 仅标题中文，正文待翻译 |
+| [iOS 5 Tech Talk: Michael Jurewitz 谈 iCloud 存储](../../../blogs/en/oleb/ios-5-tech-talk-michael-jurewitz-on-icloud-storage.md) | 技术博客 | Ole Begemann | [英文](../../../blogs/en/oleb/ios-5-tech-talk-michael-jurewitz-on-icloud-storage.md) | 仅标题中文，正文待翻译 |
+| [星期五问答 2016-01-29：Swift 结构体存储](../../../blogs/en/mikeash/friday-q-a-2016-01-29-swift-struct-storage.md) | 技术博客 | mikeash.com Friday Q&A | [英文](../../../blogs/en/mikeash/friday-q-a-2016-01-29-swift-struct-storage.md) | 仅标题中文，正文待翻译 |
+| [自带存储 \| Kreya](../../../blogs/en/kreya/bring-your-own-storage-kreya.md) | 技术博客 | Kreya Blog | [英文](../../../blogs/en/kreya/bring-your-own-storage-kreya.md) | 仅标题中文，正文待翻译 |
+| [Choosing a resource storage mode for Apple GPUs](../../../apple-docs/en/metal/choosing-a-resource-storage-mode-for-apple-gpus.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/choosing-a-resource-storage-mode-for-apple-gpus.md) | 待翻译 |
+| [Choosing a resource storage mode for Intel and AMD GPUs](../../../apple-docs/en/metal/choosing-a-resource-storage-mode-for-intel-and-amd-gpus.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/choosing-a-resource-storage-mode-for-intel-and-amd-gpus.md) | 待翻译 |
+| [Common File System Resource Keys](../../../apple-docs/en/corefoundation/common-file-system-resource-keys.md) | Apple 文档 | Apple · Core Foundation | [英文](../../../apple-docs/en/corefoundation/common-file-system-resource-keys.md) | 待翻译 |
+| [iOS Storage Best Practices](../../../wwdc/en/tech-talks/204-ios-storage-best-practices.md) | WWDC | Apple · TECH-TALKS | [英文](../../../wwdc/en/tech-talks/204-ios-storage-best-practices.md) | 待翻译 |
+| [Mass Storage](../../../apple-docs/en/kernel/hardware_families/mass_storage.md) | Apple 文档 | Apple · Kernel | [英文](../../../apple-docs/en/kernel/hardware_families/mass_storage.md) | 待翻译 |
+| [Offline playback and storage](../../../apple-docs/en/avfoundation/offline-playback-and-storage.md) | Apple 文档 | Apple · AVFoundation | [英文](../../../apple-docs/en/avfoundation/offline-playback-and-storage.md) | 待翻译 |
+| [Optimizing Storage in Your App](../../../wwdc/en/wwdc2019/419-optimizing-storage-in-your-app.md) | WWDC | Apple · WWDC2019 | [英文](../../../wwdc/en/wwdc2019/419-optimizing-storage-in-your-app.md) | 待翻译 |
+| [Persistent storage](../../../apple-docs/en/swiftui/persistent-storage.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/persistent-storage.md) | 待翻译 |
+| [Policy Database Constants](../../../apple-docs/en/security/policy-database-constants.md) | Apple 文档 | Apple · Security | [英文](../../../apple-docs/en/security/policy-database-constants.md) | 待翻译 |
+| [Setting resource storage modes](../../../apple-docs/en/metal/setting-resource-storage-modes.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/setting-resource-storage-modes.md) | 待翻译 |
+
+## 序列化
+
+- [打开此子主题独立页面](04.md)
+
+| 文章 | 类型 | 来源 | 阅读 | 状态 |
+|---|---|---|---|---|
+| [对自定类型使用 JSON](../../../apple-docs/zh/foundation/using-json-with-custom-types.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/using-json-with-custom-types.md) | 已翻译 |
+| [归档与序列化](../../../apple-docs/zh/foundation/archives-and-serialization.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/archives-and-serialization.md) | 已翻译 |
+| [支持 JSON Feed](../../../blogs/zh/jessesquires/supporting-json-feed.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/supporting-json-feed.md) | 已翻译 |
+| [编码、解码与序列化](../../../apple-docs/zh/swift/encoding-decoding-and-serialization.md) | Apple 文档 | Apple · Swift | [中文](../../../apple-docs/zh/swift/encoding-decoding-and-serialization.md) | 已翻译 |
+| [解读崩溃报告的 JSON 格式](../../../apple-docs/zh/xcode/interpreting-the-json-format-of-a-crash-report.md) | Apple 文档 | Apple · xcode | [中文](../../../apple-docs/zh/xcode/interpreting-the-json-format-of-a-crash-report.md) | 已翻译 |
+| [通过 HTTP 获取并解析 XML 或 JSON 的类](../../../blogs/zh/cocoawithlove/classes-for-fetching-and-parsing-xml-or-json-via-http-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [中文](../../../blogs/zh/cocoawithlove/classes-for-fetching-and-parsing-xml-or-json-via-http-cocoa-with-love.md) | 已翻译 |
+| [键控归档器根对象键](../../../apple-docs/zh/foundation/keyed-archiver-root-object-key.md) | Apple 文档 | Apple · Foundation | [中文](../../../apple-docs/zh/foundation/keyed-archiver-root-object-key.md) | 已翻译 |
+| [iOS JSON 模型转换库评测](../../../blogs/zh/ibireme/ios-json-%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%BA%93%E8%AF%84%E6%B5%8B.md) | 技术博客 | ibireme (郭曜源) | [中文](../../../blogs/zh/ibireme/ios-json-%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%BA%93%E8%AF%84%E6%B5%8B.md) | 原生中文 |
+| [Archives 与 --start-lib](../../../blogs/en/maskray/archives-and-start-lib.md) | 技术博客 | MaskRay (宋方睿) | [英文](../../../blogs/en/maskray/archives-and-start-lib.md) | 仅标题中文，正文待翻译 |
+| [NSCoding / NSKeyedArchiver](../../../blogs/en/nshipster/nscoding-nskeyedarchiver.md) | 技术博客 | NSHipster (Mattt) | [英文](../../../blogs/en/nshipster/nscoding-nskeyedarchiver.md) | 仅标题中文，正文待翻译 |
+| [reviews.llvm.org 已成为只读存档](../../../blogs/en/maskray/reviews-llvm-org-became-a-read-only-archive.md) | 技术博客 | MaskRay (宋方睿) | [英文](../../../blogs/en/maskray/reviews-llvm-org-became-a-read-only-archive.md) | 仅标题中文，正文待翻译 |
+| [从归档文件中提取成员以满足 DSO 未定义符号](../../../blogs/en/maskray/extract-an-archive-member-to-satisfy-a-dso-undef.md) | 技术博客 | MaskRay (宋方睿) | [英文](../../../blogs/en/maskray/extract-an-archive-member-to-satisfy-a-dso-undef.md) | 仅标题中文，正文待翻译 |
+| [使用 NSKeyedArchiver 归档 C 链表 \| Cocoa with Love](../../../blogs/en/cocoawithlove/using-nskeyedarchiver-to-archive-a-c-linked-list-cocoa-with-love.md) | 技术博客 | Cocoa with Love (Matt Gallagher) | [英文](../../../blogs/en/cocoawithlove/using-nskeyedarchiver-to-archive-a-c-linked-list-cocoa-with-love.md) | 仅标题中文，正文待翻译 |
+| [文章归档 Atom Feed](../../../blogs/en/saagarjha/blog.md) | 技术博客 | Saagar Jha | [英文](../../../blogs/en/saagarjha/blog.md) | 仅标题中文，正文待翻译 |
+| [Compiling binary archives from a custom configuration script](../../../apple-docs/en/metal/compiling-binary-archives-from-a-custom-configuration-script.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/compiling-binary-archives-from-a-custom-configuration-script.md) | 待翻译 |
+| [Creating binary archives from device-built pipeline state objects](../../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | 待翻译 |
+| [Customizing the Xcode archive process](../../../apple-docs/en/security/customizing-the-xcode-archive-process.md) | Apple 文档 | Apple · Security | [英文](../../../apple-docs/en/security/customizing-the-xcode-archive-process.md) | 待翻译 |
+| [HPKEPublicKeySerialization Implementations](../../../apple-docs/en/cryptokit/p521/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | Apple 文档 | Apple · Apple CryptoKit | [英文](../../../apple-docs/en/cryptokit/p521/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | 待翻译 |
+| [HPKEPublicKeySerialization Implementations](../../../apple-docs/en/cryptokit/p384/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | Apple 文档 | Apple · Apple CryptoKit | [英文](../../../apple-docs/en/cryptokit/p384/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | 待翻译 |
+| [HPKEPublicKeySerialization Implementations](../../../apple-docs/en/cryptokit/p256/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | Apple 文档 | Apple · Apple CryptoKit | [英文](../../../apple-docs/en/cryptokit/p256/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | 待翻译 |
+| [HPKEPublicKeySerialization Implementations](../../../apple-docs/en/cryptokit/curve25519/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | Apple 文档 | Apple · Apple CryptoKit | [英文](../../../apple-docs/en/cryptokit/curve25519/keyagreement/publickey/hpkepublickeyserialization-implementations.md) | 待翻译 |
+| [HPKEPublicKeySerialization Implementations](../../../apple-docs/en/cryptokit/xwingmlkem768x25519/publickey/hpkepublickeyserialization-implementations.md) | Apple 文档 | Apple · Apple CryptoKit | [英文](../../../apple-docs/en/cryptokit/xwingmlkem768x25519/publickey/hpkepublickeyserialization-implementations.md) | 待翻译 |
+| [Manipulating Metal binary archives](../../../apple-docs/en/metal/manipulating-metal-binary-archives.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/manipulating-metal-binary-archives.md) | 待翻译 |
+| [Metal binary archives](../../../apple-docs/en/metal/metal-binary-archives.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/metal-binary-archives.md) | 待翻译 |
+| [Shader library and archive creation](../../../apple-docs/en/metal/shader-library-and-archive-creation.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/shader-library-and-archive-creation.md) | 待翻译 |
+
+## 延伸阅读
+
+- [打开此子主题独立页面](05.md)
+
+| 文章 | 类型 | 来源 | 阅读 | 状态 |
+|---|---|---|---|---|
+| [持久化历史记录](../../../apple-docs/zh/coredata/persistent-history.md) | Apple 文档 | Apple · Core Data | [中文](../../../apple-docs/zh/coredata/persistent-history.md) | 已翻译 |
+| [iOS单例模式 or NSUserDefaults](../../../blogs/zh/yulingtianxia/ios%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F-or-nsuserdefaults.md) | 技术博客 | 杨萧玉 | [中文](../../../blogs/zh/yulingtianxia/ios%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F-or-nsuserdefaults.md) | 原生中文 |
+| [使用 NSUserDefaults 处理默认值](../../../blogs/en/oleb/handling-default-values-with-nsuserdefaults.md) | 技术博客 | Ole Begemann | [英文](../../../blogs/en/oleb/handling-default-values-with-nsuserdefaults.md) | 仅标题中文，正文待翻译 |
+| [停止为 UserDefaults 键添加前缀](../../../blogs/en/jessesquires/stop-prefixing-your-userdefaults-keys.md) | 技术博客 | Jesse Squires | [英文](../../../blogs/en/jessesquires/stop-prefixing-your-userdefaults-keys.md) | 仅标题中文，正文待翻译 |
+| [编写 UserDefaults 属性包装器的更好方法](../../../blogs/en/jessesquires/a-better-approach-to-writing-a-userdefaults-property-wrapper.md) | 技术博客 | Jesse Squires | [英文](../../../blogs/en/jessesquires/a-better-approach-to-writing-a-userdefaults-property-wrapper.md) | 仅标题中文，正文待翻译 |
+| [Accepting Share Invitations in a SwiftUI App](../../../apple-docs/en/coredata/accepting-share-invitations-in-a-swiftui-app.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/accepting-share-invitations-in-a-swiftui-app.md) | 待翻译 |
+| [Accessing data when the store changes](../../../apple-docs/en/coredata/accessing-data-when-the-store-changes.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/accessing-data-when-the-store-changes.md) | 待翻译 |
+| [Advances in Foundation](../../../wwdc/en/wwdc2019/723-advances-in-foundation.md) | WWDC | Apple · WWDC2019 | [英文](../../../wwdc/en/wwdc2019/723-advances-in-foundation.md) | 待翻译 |
+| [Batch processing](../../../apple-docs/en/coredata/batch-processing.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/batch-processing.md) | 待翻译 |
+| [Build robust and resumable file transfers](../../../wwdc/en/wwdc2023/10006-build-robust-and-resumable-file-transfers.md) | WWDC | Apple · WWDC2023 | [英文](../../../wwdc/en/wwdc2023/10006-build-robust-and-resumable-file-transfers.md) | 待翻译 |
+| [Configuring Attributes](../../../apple-docs/en/coredata/configuring-attributes.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/configuring-attributes.md) | 待翻译 |
+| [Configuring Entities](../../../apple-docs/en/coredata/configuring-entities.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/configuring-entities.md) | 待翻译 |
+| [Configuring Relationships](../../../apple-docs/en/coredata/configuring-relationships.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/configuring-relationships.md) | 待翻译 |
+| [Conflict resolution](../../../apple-docs/en/coredata/conflict-resolution.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/conflict-resolution.md) | 待翻译 |
+| [Consuming relevant store changes](../../../apple-docs/en/coredata/consuming-relevant-store-changes.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/consuming-relevant-store-changes.md) | 待翻译 |
+| [Data Essentials in SwiftUI](../../../wwdc/en/wwdc2020/10040-data-essentials-in-swiftui.md) | WWDC | Apple · WWDC2020 | [英文](../../../wwdc/en/wwdc2020/10040-data-essentials-in-swiftui.md) | 待翻译 |
+| [Deprecated Symbols](../../../apple-docs/en/coredata/nspersistentstorecoordinator-deprecated-symbols.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/nspersistentstorecoordinator-deprecated-symbols.md) | 待翻译 |
+| [Deprecated symbols](../../../apple-docs/en/coredata/nsattributedescription-deprecated-symbols.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/nsattributedescription-deprecated-symbols.md) | 待翻译 |
+| [Deprecated Symbols](../../../apple-docs/en/coredata/nsexpressiondescription-deprecated-symbols.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/nsexpressiondescription-deprecated-symbols.md) | 待翻译 |
+| [Deprecated Symbols](../../../apple-docs/en/coredata/nsmigrationmanager-deprecated-symbols.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/nsmigrationmanager-deprecated-symbols.md) | 待翻译 |
+| [Deprecated symbols](../../../apple-docs/en/coredata/nsmanagedobjectcontext-deprecated-symbols.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/nsmanagedobjectcontext-deprecated-symbols.md) | 待翻译 |
+| [Generating code](../../../apple-docs/en/coredata/generating-code.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/generating-code.md) | 待翻译 |
+| [Macros](../../../apple-docs/en/coredata/coredata-macros.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/coredata-macros.md) | 待翻译 |
+| [Manual migrations](../../../apple-docs/en/coredata/manual-migrations.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/manual-migrations.md) | 待翻译 |
+| [Merge Policies](../../../apple-docs/en/coredata/merge-policies.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/merge-policies.md) | 待翻译 |
+| [Migrating your data model automatically](../../../apple-docs/en/coredata/migrating-your-data-model-automatically.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/migrating-your-data-model-automatically.md) | 待翻译 |
+| [Migration options](../../../apple-docs/en/coredata/migration-options.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/migration-options.md) | 待翻译 |
+| [Modeling data](../../../apple-docs/en/coredata/modeling-data.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/modeling-data.md) | 待翻译 |
+| [Notification keys](../../../apple-docs/en/coredata/notification-keys.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/notification-keys.md) | 待翻译 |
+| [Showcase App Data in Spotlight](../../../apple-docs/en/coredata/showcase-app-data-in-spotlight.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/showcase-app-data-in-spotlight.md) | 待翻译 |
+| [Spotlight record keys](../../../apple-docs/en/coredata/spotlight-record-keys.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/spotlight-record-keys.md) | 待翻译 |
+| [Staged migrations](../../../apple-docs/en/coredata/staged-migrations.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/staged-migrations.md) | 待翻译 |
+| [Store options](../../../apple-docs/en/coredata/store-options.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/store-options.md) | 待翻译 |
+| [Store versions](../../../apple-docs/en/coredata/store-versions.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/store-versions.md) | 待翻译 |
+| [Sync files to the cloud with FileProvider on macOS](../../../wwdc/en/wwdc2021/10182-sync-files-to-the-cloud-with-fileprovider-on-macos.md) | WWDC | Apple · WWDC2021 | [英文](../../../wwdc/en/wwdc2021/10182-sync-files-to-the-cloud-with-fileprovider-on-macos.md) | 待翻译 |
+| [Synchronizing a local store to the cloud](../../../apple-docs/en/coredata/synchronizing-a-local-store-to-the-cloud.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/synchronizing-a-local-store-to-the-cloud.md) | 待翻译 |
+| [Validation Error Codes](../../../apple-docs/en/coredata/error-codes.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/error-codes.md) | 待翻译 |
+| [Validation error codes](../../../apple-docs/en/coredata/1535452-validation-error-codes.md) | Apple 文档 | Apple · Core Data | [英文](../../../apple-docs/en/coredata/1535452-validation-error-codes.md) | 待翻译 |
+| [What's new in Foundation](../../../wwdc/en/wwdc2021/10109-what-s-new-in-foundation.md) | WWDC | Apple · WWDC2021 | [英文](../../../wwdc/en/wwdc2021/10109-what-s-new-in-foundation.md) | 待翻译 |
+| [What’s New in File Management and Quick Look](../../../wwdc/en/wwdc2019/719-what-s-new-in-file-management-and-quick-look.md) | WWDC | Apple · WWDC2019 | [英文](../../../wwdc/en/wwdc2019/719-what-s-new-in-file-management-and-quick-look.md) | 待翻译 |

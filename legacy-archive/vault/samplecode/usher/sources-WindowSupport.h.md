@@ -1,0 +1,96 @@
+---
+title: usher
+apple_id: DTS10001057
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/usher/Listings/sources_WindowSupport_h.html
+archived_at: '2026-07-26T19:53:09.171811Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [usher](usher.md)
+
+
+[Next](UsherReleaseNotes.txt.md)[Previous](sources-WindowSupport.c.md)
+
+# Retired Document
+
+__Important:__
+This sample code may not represent best practices for current development. The project may use deprecated symbols and illustrate technologies and techniques that are no longer recommended.
+
+# sources/WindowSupport.h
+
+```swift
+/*
+    File:       WindowSupport.h
+
+    Copyright:  © 2000-2001 by Apple Computer, Inc., all rights reserved.
+
+*/
+
+#ifndef __WINDOWSUPPORT__
+#define __WINDOWSUPPORT__
+
+// ---------------------------------------------------------------------------
+//      D E F I N I T I O N S
+// ---------------------------------------------------------------------------
+
+#define kSignature_StandardWindow       FOUR_CHAR_CODE('stdw')
+#define kSignature_NoWindow             FOUR_CHAR_CODE('null')
+
+struct StandardWindowRecord {
+    OSType              signature;                  // identifies the structure
+    OSType              standardWindowSignature;    // identifies structure as standard window
+    WindowPtr           window;
+};
+typedef struct StandardWindowRecord StandardWindowRecord, *StandardWindowPeek;
+
+// ----- some standard messages
+
+#define kMessage_SetParentWindow        1500    /* WindowPtr (of parent window) */
+#define kMessage_WindowClosing      1501    /* WindowPtr (child window) */
+
+// ---------------------------------------------------------------------------
+//      P R O T O T Y P E S
+// ---------------------------------------------------------------------------
+
+OSErr WindowSupport_NewWindowOfType(OSType inWindowType, Boolean inUseAlt, WindowPtr *outWindow);
+
+void WindowSupport_CloseWindow(WindowPtr inWindow);
+
+OSType WindowSupport_GetWindowType(WindowPtr inWindow);
+
+void WindowSupport_GrowWindow(WindowPtr inWindow, EventRecord *inEvent);
+void WindowSupport_DoContentClick(WindowPtr inWindow, EventRecord *inEvent);
+void WindowSupport_ActivateWindow(WindowPtr inWindow, Boolean inBecomingActive);
+void WindowSupport_Draw(WindowPtr inWindow);
+
+void WindowSupport_DoUpdate(WindowPtr inWindow);
+
+OSErr WindowSupport_HandleMessage(WindowPtr inWindow, long inMessage, void *inMessageParams);
+
+long WindowSupport_GetMenuCommand(WindowPtr inWindow, long inMenuResult, void **outCommandParams);
+OSErr WindowSupport_DoCommand(WindowPtr inWindow, long inCommand, void *inCommandParams);
+
+void WindowSupport_Idle(WindowPtr inWindow);
+
+// ---------------------------------------------------------------------------
+//      general utils
+// ---------------------------------------------------------------------------
+
+Boolean WindowSupport_IsAppWindow(WindowPtr inWindow);
+Boolean WindowSupport_IsDAWindow(WindowPtr inWindow);
+
+// ---------------------------------------------------------------------------
+//      utils for window implementations
+// ---------------------------------------------------------------------------
+
+void WindowSupport_InitStandardRecord(StandardWindowRecord *inStandardRecord,
+                    OSType inWindowType, WindowPtr inWindow);
+
+#endif /* __WINDOWSUPPORT__ */
+```
+
+[Next](UsherReleaseNotes.txt.md)[Previous](sources-WindowSupport.c.md)
+

@@ -1,9 +1,9 @@
 # 南峰子 (southpeak)
 
-> 状态：frozen；授权：© 2017 南峰子（页脚）→ 仅私有归档。
-> 自动生成于 2026-07-28，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
+> 状态：frozen；授权：© 2017 南峰子（页脚）→ 仅私有归档。完整中文正文优先，其次为原生中文和仅翻译目录标题的英文文章。
+> 自动生成于 2026-08-03，请勿手工编辑；运行 `python3 tools/indexes.py` 刷新。
 
-| 中文标题 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
+| 中文标题／目录译名 | 英文标题 | 作者/来源 | 主题 | 原文 | 译文 | 翻译状态 |
 |---|---|---|---|---|---|---|
 | 10 Things You Need to Know About Cocoa Auto Layout | — | 南峰子 (southpeak) | UI 与渲染 | [中文原文](../../../blogs/zh/southpeak/10-things-you-need-to-know-about-cocoa-auto-layout.md) · [网页](https://southpeak.github.io/2015/08/31/translate-10-things-you-need-to-know-about-cocoa-auto-layout/) | — | 原生中文 |
 | App Transport Security(ATS) | — | 南峰子 (southpeak) | 网络与安全 | [中文原文](../../../blogs/zh/southpeak/app-transport-security-ats.md) · [网页](https://southpeak.github.io/2015/09/14/app-transport-security-ats/) | — | 原生中文 |

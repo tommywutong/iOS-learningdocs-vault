@@ -1,0 +1,126 @@
+---
+title: DTSCPlusLibrary
+apple_id: DTS10000731
+resource_type: Sample Code
+platform: macOS
+topic: null
+technology: null
+published: '2003-01-14'
+source_url: https://developer.apple.com/library/archive/samplecode/DTSCPlusLibrary/Listings/Sources_KeyMap_cp.html
+archived_at: '2026-07-18T03:05:57.611372Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [DTSCPlusLibrary](DTSCPlusLibrary.md)
+
+
+[Next](Sources-KeyMapTest.cp.md)[Previous](Sources-GraphicsEnvTest.cp.md)
+
+# Sources/KeyMap.cp
+
+```c
+/*
+    File:       KeyMap.cp
+
+    Contains:   TKeyMap is a KeyMap utility class.
+                TKeyMap.cp contains the member functions for the TKeyMap class.
+
+    Written by: Kent Sandvik    
+
+    Copyright:  Copyright © 1992-1999 by Apple Computer, Inc., All Rights Reserved.
+
+                You may incorporate this Apple sample source code into your program(s) without
+                restriction. This Apple sample source code has been provided "AS IS" and the
+                responsibility for its operation is yours. You are not permitted to redistribute
+                this Apple sample source code as "Apple sample source code" after having made
+                changes. If you're going to re-distribute the source, we require that you make
+                it clear in the source that the code was descended from Apple sample source
+                code, but that you've made changes.
+
+    Change History (most recent first):
+                8/18/1999   Karl Groethe    Updated for Metrowerks Codewarror Pro 2.1
+
+
+*/
+#ifndef _KEYMAP_
+#include "KeyMap.h"
+#endif
+
+
+// _________________________________________________________________________________________________________ //
+// TProcess class member function implementations
+
+//  CONSTRUCTORS & DESTRUCTORS
+
+#pragma segment KeyMap
+TKeyMap::TKeyMap()
+// Main constructor, empty for the time being.
+{
+}
+
+
+#pragma segment KeyMap
+TKeyMap::~TKeyMap()
+// Main destructor, empty for the time being.
+{
+}
+
+
+//   MAIN INTERFACES
+#pragma segment KeyMap
+Boolean TKeyMap::OptionKeyDown()
+// Return true if option key is down.
+{
+    ::GetKeys(fKeyMap);                         // get info
+    if (fKeyMap[1] & 4)
+        return true;
+    else
+        return false;
+}
+
+#pragma segment KeyMap
+Boolean TKeyMap::CommandKeyDown()
+// Return true if command (Apple) key is down.
+{
+    ::GetKeys(fKeyMap);                         // get info
+    if (fKeyMap[1] & 0x8000)
+        return true;
+    else
+        return false;
+}
+
+
+#pragma segment KeyMap
+Boolean TKeyMap::ShiftKeyDown()
+// Return true if shift key is down.
+{
+    ::GetKeys(fKeyMap);                         // get info
+    if (fKeyMap[1] & 1)
+        return true;
+    else
+        return false;
+}
+
+
+// Fast macro for testing key codes.
+#define KeyCode(x,y) (BitTst(&(x), (y) ^ 0x07))
+
+
+#pragma segment KeyMap
+Boolean TKeyMap::IsKeyDown(unsigned short key)
+// Return true if key defined is down.
+{
+    ::GetKeys(fKeyMap);                         // get info
+    return (KeyCode(fKeyMap, key));
+}
+
+
+// _________________________________________________________________________________________________________ //
+
+
+/*  Change History (most recent last):
+  No        Init.   Date        Comment
+  1         khs     9/20/92     New file
+*/
+```
+
+[Next](Sources-KeyMapTest.cp.md)[Previous](Sources-GraphicsEnvTest.cp.md)
+

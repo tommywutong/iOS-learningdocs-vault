@@ -1,0 +1,41 @@
+---
+title: 'SeismicXML: Using NSXMLParser to parse XML documents'
+apple_id: DTS40007323
+resource_type: Sample Code
+platform: iOS
+topic: Data Management
+technology: null
+published: '2016-01-08'
+source_url: https://developer.apple.com/library/archive/samplecode/SeismicXML/Listings/SeismicXML_APLAppDelegate_m.html
+archived_at: '2026-07-18T03:23:39.611225Z'
+---
+> 导航：[总目录](../../README.md) · [samplecode](../../_indexes/samplecode.md) · [SeismicXML: Using NSXMLParser to parse XML documents](SeismicXML-%20Using%20NSXMLParser%20to%20parse%20XML%20documents.md)
+
+
+[Next](SeismicXML-APLViewController.m.md)[Previous](SeismicXML-APLEarthquake.m.md)
+
+# SeismicXML/APLAppDelegate.m
+
+```objc
+/*
+ Copyright (C) 2015 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+
+ Abstract:
+ Delegate for the application.
+ */
+
+#import "APLAppDelegate.h"
+
+@implementation APLAppDelegate
+
+// The app delegate must implement the window @property
+// from UIApplicationDelegate @protocol to use a main storyboard file.
+//
+@synthesize window;
+
+@end
+```
+
+[Next](SeismicXML-APLViewController.m.md)[Previous](SeismicXML-APLEarthquake.m.md)
+

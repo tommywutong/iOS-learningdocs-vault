@@ -1,0 +1,83 @@
+---
+title: WebKit Objective-C Programming Guide
+apple_id: 10000164i
+resource_type: Guide
+platform: macOS
+topic: Networking, Internet, & Web
+technology: null
+published: '2012-11-09'
+source_url: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DisplayWebContent/Tasks/LocationChanges.html
+archived_at: '2026-07-15T07:14:52.160310Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [WebKit Objective-C Programming Guide](Introduction%20to%20WebKit%20Objective-C%20Programming%20Guide.md)
+
+
+[Next](Loading%20Resources.md)[Previous](Multiple%20Windows.md)
+
+# Loading Pages
+
+As the user navigates from page to page in your embedded browser, you may want to display the current URL, load status, and error messages. For example, in a web browser application, you might want to display the current URL in a text field that the user can edit.
+
+As a webpage goes through the process of loading, WebKit sends a series of messages to the frame load delegate. The exact sequence depends on the page content. SinceWebFrameLoadDelegate Protocol Reference is an informal protocol a message is not sent to the delegate unless it responds to it. For example, the sequence of messages for a simple page that contains a title and loads successfully might be:
+
+1. `webView:didStartProvisionalLoadForFrame:`—invoked at the start of a load.
+2. `webView:willCloseFrame:` —invoked when the WebView is done with the old frame objects (passed as an argument) just before they are cleared from memory.
+3. `webView:didCommitLoadForFrame:`—invoked when a data source transitions from provisional to committed.
+4. `webView:didReceiveTitle:forFrame:`—invoked when the frame title has arrived which is anytime after the data source is committed and before the load is finished. This method can be invoked multiple times.
+5. `webView:didFinishLoadForFrame:`—invoked when all the data has arrived for a data source
+
+Mostly, you implement the above delegate methods to display information about the webpage and load status. You might implement `webView:willCloseFrame:` if your application maintains references to the previous page content.
+
+However, loading a page is a complicated process, so you have to anticipate that some client requests will fail. Because a client request is asynchronous over the network, the new page may not load immediately and errors may occur when loading. Typically, the default implementation does nothing (displays a blank view) if an error occurs; therefore, your application may want to display error messages instead. These delegate methods can be implemented to handle errors:
+
+- `webView:didFailProvisionalLoadWithError:forFrame:` is invoked when an error occurred before any data was received. Typically invoked if the URL is bad or the network failed to deliver the request.
+- `webView:didFailLoadWithError:forFrame:` is invoked when a committed data source fails to load.
+
+Messages will also be sent to the delegate if the page content contains server redirects, or the scroll position within a frame changes (this can occur when the user clicks an anchor within a frame). See WebFrameLoadDelegate Protocol Reference for more details on these and other delegate methods.
+
+The frame load delegate is notified if a location changes for any frame in the WebFrame hierarchy. Usually, you update the display only for changes to the main frame. For that reason, your code should always test to see whether the web frame, passed as an argument to the delegate method, is the main frame, as in this example:
+
+```
+ // Only report feedback for the main frame.
+    if (frame == [sender mainFrame]){
+        [...
+    }
+```
+
+
+Whenever the user clicks on a link in a webpage, the URL changes and a new page is loaded. By default, your application is not notified of this change. If you want to keep track of the current page, you need to implement some delegate methods, specifically a frame load delegate for your WebView object. Because WebFrameLoadDelegate is an informal protocol, you need to implement only the delegate methods you want.
+
+For example, the user clicks a link and you want to update the text field to display the current URL. You do this by implementing the `webView:didStartProvisionalLoadForFrame:` delegate method as in this example:
+
+```objc
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+    // Only report feedback for the main frame.
+    if (frame == [sender mainFrame]){
+        NSString *url = [[[[frame provisionalDataSource] request] URL] absoluteString];
+        [textField setStringValue:url];
+    }
+}
+```
+
+
+If you want to display the page title, implement the `webView:didReceiveTitle:forFrame:` delegate method. For example, you can display the page title on the window, as in this example:
+
+```objc
+- (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame
+{
+    // Report feedback only for the main frame.
+    if (frame == [sender mainFrame]){
+        [[sender window] setTitle:title];
+    }
+}
+```
+
+Similarly, you can implement the `webView:didReceiveIcon:forFrame:` delegate method if you want to display the page icon.
+
+Besides implementing the `webView:didStartProvisionalLoadForFrame:` method to display the page title, you can also use it to display the status, for example, “Loading.” Remember that at this point the content has only been requested, not loaded; therefore, the data source is provisional.
+
+Similarly, implement the `webView:didFinishLoadForFrame:`, `webView:didFailProvisionalLoadWithError:forFrame:` and `webView:didFailLoadWithError:forFrame:` delegate methods to receive notification when a page has been loaded successfully or unsuccessfully. You might want to display a message if an error occurred.
+
+[Next](Loading%20Resources.md)[Previous](Multiple%20Windows.md)
+

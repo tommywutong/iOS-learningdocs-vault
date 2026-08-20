@@ -1,0 +1,50 @@
+---
+title: GNU Compiler Collection (GCC) 4.2 Internals
+apple_id: TP40007093
+resource_type: Guide
+platform: Xcode Developer Tools
+topic: null
+technology: null
+published: '2012-07-23'
+source_url: https://developer.apple.com/library/archive/documentation/DeveloperTools/gcc-4.2.1/gccint/Languages.html
+archived_at: '2026-07-15T07:31:02.199262Z'
+---
+> 导航：[总目录](../../../README.md) · [documentation](../../../_indexes/documentation.md) · [GNU Compiler Collection (GCC) 4.2 Internals](index.md)
+
+
+
+Next: [Source Tree](Source-Tree.md#apple-knxxk4tdmuwvi4tfmu),
+Previous: [Libgcc](Libgcc.md#apple-jruwez3dmm),
+Up: [Top](index.md#apple-krxxa)
+
+---
+
+## 5 Language Front Ends in GCC
+
+The interface to front ends for languages in GCC, and in particular
+the `tree` structure (see [Trees](Trees.md#apple-krzgkzlt)), was initially designed for
+C, and many aspects of it are still somewhat biased towards C and
+C-like languages. It is, however, reasonably well suited to other
+procedural languages, and front ends for many such languages have been
+written for GCC.
+
+Writing a compiler as a front end for GCC, rather than compiling
+directly to assembler or generating C code which is then compiled by
+GCC, has several advantages:
+
+- GCC front ends benefit from the support for many different
+  target machines already present in GCC.
+- GCC front ends benefit from all the optimizations in GCC. Some
+  of these, such as alias analysis, may work better when GCC is
+  compiling directly from source code then when it is compiling from
+  generated C code.
+- Better debugging information is generated when compiling
+  directly from source code than when going via intermediate generated C
+  code.
+
+Because of the advantages of writing a compiler as a GCC front end,
+GCC front ends have also been created for languages very different
+from those for which GCC was designed, such as the declarative
+logic/functional language Mercury. For these reasons, it may also be
+useful to implement compilers created for specialized purposes (for
+example, as part of a research project) as GCC front ends.

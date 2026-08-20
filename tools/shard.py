@@ -4,6 +4,8 @@
     python3 tools/shard.py --shards 12 --scope summer               # 暑期计划严格白名单
     python3 tools/shard.py --shards 8 --scope summer-b1             # 高价值博客补强白名单
     python3 tools/shard.py --shards 8 --scope summer-snapshots      # 计划内英文网页快照
+    python3 tools/shard.py --shards 16 --scope summer-related-b      # 暑期强相关 B 类
+    python3 tools/shard.py --shards 1 --scope summer-related-b-smoke # B 类三篇冒烟
     python3 tools/shard.py --shards 4 --scope legacy-review         # 36 篇早期译文补审
     python3 tools/shard.py --shards 8 --budget 130000 --scope core  # 已停止的旧宽泛范围
     python3 tools/shard.py --shards 8 --source apple-docs       # 只切一个来源
@@ -42,6 +44,7 @@ SHARD_DIR = ROOT / "meta" / "shards"
 # meta/blog_index/objcio_objccn_pairs.json，149/149 两侧文件都在、
 # 中文侧正文中位 9,749 字符）。再译一遍是纯浪费 277 万字符，永久排除。
 PAIRED_TABLE = ROOT / "meta" / "blog_index" / "objcio_objccn_pairs.json"
+SUMMER_RELATED_B_MANIFEST = ROOT / "meta" / "summer_related_b_allowlist.json"
 LEGACY_REVIEW_COMMIT = "9ee8b4b4efd0191076d07f11a8ed153ee12679d1"
 
 
@@ -129,6 +132,49 @@ def summer_snapshot_allowlist() -> frozenset[str]:
 
 
 @lru_cache(maxsize=1)
+def summer_related_b_allowlist() -> frozenset[str]:
+    """读取用户确认的暑期强相关 B 类机器白名单。"""
+    if not SUMMER_RELATED_B_MANIFEST.exists():
+        raise SystemExit(
+            "缺少 meta/summer_related_b_allowlist.json；"
+            "先运行 python3 tools/summer_related_b.py write"
+        )
+    data = json.loads(SUMMER_RELATED_B_MANIFEST.read_text(encoding="utf-8"))
+    if data.get("scope") != "summer-related-b":
+        raise SystemExit("B 类白名单 scope 字段不正确")
+    files = data.get("files")
+    if not isinstance(files, list):
+        raise SystemExit("B 类白名单 files 字段不正确")
+    paths = [str(item.get("en") or "") for item in files]
+    if len(paths) != data.get("file_count") or len(paths) != len(set(paths)):
+        raise SystemExit("B 类白名单数量或唯一性校验失败")
+    if not all(
+        path.startswith(("apple-docs/en/", "wwdc/en/", "blogs/en/"))
+        for path in paths
+    ):
+        raise SystemExit("B 类白名单包含不允许的来源路径")
+    return frozenset(paths)
+
+
+@lru_cache(maxsize=1)
+def summer_related_b_smoke_allowlist() -> frozenset[str]:
+    """读取 B 类清单中固定的 Apple、WWDC、博客三篇冒烟样本。"""
+    if not SUMMER_RELATED_B_MANIFEST.exists():
+        raise SystemExit(
+            "缺少 meta/summer_related_b_allowlist.json；"
+            "先运行 python3 tools/summer_related_b.py write"
+        )
+    data = json.loads(SUMMER_RELATED_B_MANIFEST.read_text(encoding="utf-8"))
+    paths = data.get("smoke_files")
+    if not isinstance(paths, list) or len(paths) != 3 or len(set(paths)) != 3:
+        raise SystemExit("B 类冒烟白名单必须恰好包含 3 篇互异文档")
+    full = summer_related_b_allowlist()
+    if not set(paths) <= full:
+        raise SystemExit("B 类冒烟文档必须全部属于完整 B 类白名单")
+    return frozenset(str(path) for path in paths)
+
+
+@lru_cache(maxsize=1)
 def legacy_review_allowlist() -> frozenset[str]:
     """从恢复提交提取 36 篇新增 Apple 译文对应的英文原文。"""
     result = subprocess.run(
@@ -166,6 +212,10 @@ def in_scope(rel_en: str, scope: str) -> bool:
         return rel_en in summer_b1_allowlist()
     if scope == "summer-snapshots":
         return rel_en in summer_snapshot_allowlist()
+    if scope == "summer-related-b":
+        return rel_en in summer_related_b_allowlist()
+    if scope == "summer-related-b-smoke":
+        return rel_en in summer_related_b_smoke_allowlist()
     if scope == "legacy-review":
         return rel_en in legacy_review_allowlist()
     if scope == "all":
@@ -181,7 +231,7 @@ def in_scope(rel_en: str, scope: str) -> bool:
         return any(rest.startswith(p) for p in CORE_PREFIXES)
     raise SystemExit(
         f"未知范围 {scope!r}，可选 summer / summer-b1 / summer-snapshots / "
-        "legacy-review / core / apple / all"
+        "summer-related-b / summer-related-b-smoke / legacy-review / core / apple / all"
     )
 
 
@@ -299,6 +349,8 @@ def cmd_shard(
         "summer": summer_allowlist,
         "summer-b1": summer_b1_allowlist,
         "summer-snapshots": summer_snapshot_allowlist,
+        "summer-related-b": summer_related_b_allowlist,
+        "summer-related-b-smoke": summer_related_b_smoke_allowlist,
         "legacy-review": legacy_review_allowlist,
     }
     if scope in allowlists:
