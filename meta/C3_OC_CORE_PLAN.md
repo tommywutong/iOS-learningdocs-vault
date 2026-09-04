@@ -168,4 +168,13 @@ Probing Cocoa With PyObjC（11,760）。
      （现保留英文，全库 7:3）、引号全仓体例（本批统一直角引号「」）。
 - 批 1b（C3-R02）：初译完成并推送（NSNotificationCenter、NSMutableArray、
   NSNumber），3 篇均由主会话完成并通过 `validate.py --strict-identifiers`
-  零问题；独立审校待做，完成后补记。
+  零问题；独立审校进行中，完成后补记。
+- 批 2（C3-R03）：初译完成（NSZombie、僵尸的内在生活、PLWeakCompatibility
+  Part I、实现 NSCoding、相等性与哈希、Cocoa 初始化方法原理、super init 语义；
+  5 篇由两个并行子代理初译、2 篇主会话初译），独立审校由独立子代理完成，
+  全部 [中]/[低] 修订建议已采纳（含页脚两套措辞统一为批内主流范本、
+  deallocate 统一译「销毁」、两处否定/数量语义修正、引号统一「」）。
+  七篇 `validate.py --strict-identifiers` 零问题。
+  **新增备案**：存根文件 the-implementation-of-zombies.md 的真实标题为
+  The Inner Life of Zombies（2011-05-20）；deallocate=销毁 / free=释放 /
+  release、dealloc 方法名保留英文的分工为本批约定，建议 TERMS 定案。

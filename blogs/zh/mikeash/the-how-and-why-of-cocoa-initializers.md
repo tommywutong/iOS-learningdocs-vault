@@ -16,7 +16,7 @@ translated: true
 
 发表于 2008-10-09 23:43 | [RSS 订阅](https://www.mikeash.com/pyblog/rss.py)（[全文订阅](https://www.mikeash.com/pyblog/rss.py?mode=fulltext)） | [博客索引](https://www.mikeash.com/pyblog/)  
 下一篇：[正确使用键值观察](https://www.mikeash.com/pyblog/key-value-observing-done-right.html)  
-上一篇：[拙匠才怪工具不好，或者：Xcode 又烂了一次](https://www.mikeash.com/pyblog/its-a-poor-carpenter-who-blames-his-tools-or-xcode-sucks-again.html)  
+上一篇：[只有拙匠才会怪罪工具，或者：Xcode 又烂了一次](https://www.mikeash.com/pyblog/its-a-poor-carpenter-who-blames-his-tools-or-xcode-sucks-again.html)  
 标签：[cocoa](https://www.mikeash.com/pyblog/?tag=cocoa) [init](https://www.mikeash.com/pyblog/?tag=init) [initializer](https://www.mikeash.com/pyblog/?tag=initializer) [objectivec](https://www.mikeash.com/pyblog/?tag=objectivec) [super](https://www.mikeash.com/pyblog/?tag=super)
 
 Cocoa 初始化方法的原理与缘由
@@ -67,7 +67,7 @@ Cocoa 初始化方法的原理与缘由
 **误解：** 但它没有理由这么做。它手头_已经_有一个新实例了。  
 **事实：** 如果它想在实例末尾多要一些_额外的_存储，它就有充分的理由这么做——比如它创建了你的类的一个动态子类，想改用那个子类的实例。
 
-这正是标准初始化模式成为唯一可行做法的原因。Cocoa 类_可以_，而且_确实会_释放原始实例（deallocate），然后分配一个同类（或其子类）的新实例，并从初始化方法里返回它。诚然这种情况罕见，但它是合法的，也确实会发生。简而言之，这就是为什么 Apple 的标准初始化模式是唯一正确的做法。
+这正是标准初始化模式成为唯一可行做法的原因。Cocoa 类_可以_，而且_确实会_销毁原始实例，然后分配一个同类（或其子类）的新实例，并从初始化方法里返回它。诚然这种情况罕见，但它是合法的，也确实会发生。简而言之，这就是为什么 Apple 的标准初始化模式是唯一正确的做法。
 
 **结论**  
 总结一下：超类的初始化方法可能返回三种东西之一，而 Apple 的标准模式对这三种情况都能正确处理：
@@ -94,7 +94,7 @@ Cocoa 初始化方法的原理与缘由
 1. [re: self = [super init] debate.](http://www.cocoabuilder.com/archive/message/cocoa/2008/2/11/198591) - Ben Trumbull 在 [cocoa-dev](http://lists.apple.com/mailman/listinfo/cocoa-dev) 上发帖，解释了这个主题的一些关键点。
 2. [NSManagedObject 类参考](http://developer.apple.com/documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObject_Class/Reference/NSManagedObject.html#//apple_ref/occ/instm/NSManagedObject/initWithEntity:insertIntoManagedObjectContext:) - 这个类就是一个例子：它会返回一个与正在初始化的类不同的新实例。
 
-喜欢这篇文章吗？我正在销售收录这些文章的整套书！第二卷和第三卷现已出版，提供 ePub、PDF、印刷版、iBooks 和 Kindle 版本。[点击这里了解更多信息](https://www.mikeash.com/book.html)。
+喜欢这篇文章吗？我还在销售整本整本的文章合集！第二卷和第三卷已经出版，提供 ePub、PDF、印刷版，以及 iBooks 和 Kindle 版本。[点击这里了解详情](https://www.mikeash.com/book.html)。
 
 ---
 
@@ -102,10 +102,10 @@ Cocoa 初始化方法的原理与缘由
 
 ---
 
-[本页评论 RSS 订阅](https://www.mikeash.com/commentsrss.py?page=pyblog/the-how-and-why-of-cocoa-initializers.html)
+[本页评论的 RSS 订阅](https://www.mikeash.com/commentsrss.py?page=pyblog/the-how-and-why-of-cocoa-initializers.html)
 
-分享你的想法，发表评论：
+发表你的想法，发一条评论：
 
-垃圾评论和离题内容将被删除，恕不另行通知。违规者可能会由我自行决定公开羞辱。
+垃圾内容和离题帖子将被无通知删除。发帖者可能会按我的个人判断被公开羞辱。
 
 代码语法高亮由 [Pygments](http://pygments.org/) 提供。

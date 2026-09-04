@@ -53,7 +53,7 @@ ARC 已经大大降低了这类错误的出现频率，但并没有把它们彻�
     void EmptyIMP(id obj, SEL _cmd) {}
 ```
 
-事实证明，Objective-C 运行时假定每个类都实现了 `+initialize`。在第一条消息发送给类之前，`+initialize` 会先发送给该类，让它有机会做任何需要的准备工作。如果没有实现，运行时照样会发送它，然后撞上转发机制，这在这里毫无用处。添加一个空的 `+initialize` 实现可以避开这个问题。`EmptyIMP` 将用作僵尸类上 `+initialize` 的实现。
+事实证明，Objective-C 运行时假定每个类都实现了 `+initialize`。在第一条消息发送给类之前，`+initialize` 会先发送给该类，让它有机会做任何需要的准备工作。如果没有实现，运行时照样会发送它，然后撞上转发机制，这在这里帮不上忙。添加一个空的 `+initialize` 实现可以避开这个问题。`EmptyIMP` 将用作僵尸类上 `+initialize` 的实现。
 
 `-methodSignatureForSelector:` 的实现更有意思一点：
 
