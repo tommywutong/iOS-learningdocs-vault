@@ -15,27 +15,27 @@ content_hash: 'sha256:5125e344701ce3fd'
 translated: true
 ---
 
-> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md) · [向你的 App 添加文档浏览器](adding-a-document-browser-to-your-app.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md) · [向你的 App 添加文稿浏览器](adding-a-document-browser-to-your-app.md)
 
 # 添加自定义操作与活动
 
 <sub>文章</sub>
 
-为文档浏览器添加自定义操作、活动和栏按钮项。
+为文稿浏览器添加自定义操作、活动和栏按钮项。
 
 ## 概述
 
-向文档浏览器添加自定义操作有三种不同方式：
+向文稿浏览器添加自定义操作有三种不同方式：
 
-- 把文档浏览器操作加到导航栏或编辑菜单（Edit Menu）。
+- 把文稿浏览器操作加到导航栏或编辑菜单（Edit Menu）。
 - 把活动加到活动视图（activity view）。
 - 把栏按钮项加到导航栏。
 
-### 添加文档浏览器操作
+### 添加文稿浏览器操作
 
 默认情况下，系统会提供拷贝、移动、重新命名、删除和共享等标准操作。要添加自定义操作，把一个 [UIDocumentBrowserAction](uidocumentbrowseraction.md) 对象数组赋给浏览器的 [customActions](uidocumentbrowserviewcontroller/customactions.md) 属性。
 
-文档浏览器操作有两种访问方式：
+文稿浏览器操作有两种访问方式：
 
 - _导航栏_操作在用户把浏览器切到选择（Select）模式时出现在导航栏中。
 - _编辑菜单_操作在用户长按文档或文件夹时出现。
@@ -62,4 +62,4 @@ translated: true
 
 ### 自定义
 
-- [自定义文档浏览器](customizing-the-browser.md) — 自定义文档浏览器的外观与行为。
+- [自定义文稿浏览器](customizing-the-browser.md) — 自定义文稿浏览器的外观与行为。
