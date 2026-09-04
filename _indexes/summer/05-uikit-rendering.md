@@ -67,7 +67,7 @@
 
 ## 中文资料
 
-共 104 份。包含译文和原生中文文章。
+共 106 份。包含译文和原生中文文章。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -90,6 +90,7 @@
 | 官方资料 | [UIKit 常量](../../apple-docs/zh/uikit/uikit-constants.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/uikit-constants.md) | 已翻译 |
 | 官方资料 | [UIKit 数据类型](../../apple-docs/zh/uikit/uikit-data-types.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/uikit-data-types.md) | 已翻译 |
 | 官方资料 | [UIKit 枚举](../../apple-docs/zh/uikit/uikit-enumerations.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/uikit-enumerations.md) | 已翻译 |
+| 官方资料 | [UIKit 的辅助功能](../../apple-docs/zh/uikit/accessibility-for-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/accessibility-for-uikit.md) | 已翻译 |
 | 官方资料 | [丰富文本视图中的文本](../../apple-docs/zh/uikit/enriching-your-text-in-text-views.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/enriching-your-text-in-text-views.md) | 已翻译 |
 | 官方资料 | [为 iOS 本地化自动调整视图大小](../../apple-docs/zh/xcode/autosizing-views-for-localization-in-ios.md) | Apple 文档 | Apple · xcode | [中文](../../apple-docs/zh/xcode/autosizing-views-for-localization-in-ios.md) | 已翻译 |
 | 官方资料 | [为自定义 UIKit 视图添加 Writing Tools 支持](../../apple-docs/zh/uikit/adding-writing-tools-support-to-a-custom-uiview.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/adding-writing-tools-support-to-a-custom-uiview.md) | 已翻译 |
@@ -106,6 +107,7 @@
 | 官方资料 | [使用视图控制器显示和管理视图](../../apple-docs/zh/uikit/displaying-and-managing-views-with-a-view-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/displaying-and-managing-views-with-a-view-controller.md) | 已翻译 |
 | 官方资料 | [使用调用树视图分析 CPU 概况](../../apple-docs/zh/xcode/analyzing-cpu-profiles-with-call-tree-views.md) | Apple 文档 | Apple · xcode | [中文](../../apple-docs/zh/xcode/analyzing-cpu-profiles-with-call-tree-views.md) | 已翻译 |
 | 官方资料 | [使用顶点放大提高渲染性能](../../apple-docs/zh/metal/improving-rendering-performance-with-vertex-amplification.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/improving-rendering-performance-with-vertex-amplification.md) | 已翻译 |
+| 官方资料 | [关于使用 UIKit 进行 App 开发](../../apple-docs/zh/uikit/about-app-development-with-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/about-app-development-with-uikit.md) | 已翻译 |
 | 官方资料 | [关于同步事件](../../apple-docs/zh/metal/about-synchronization-events.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/about-synchronization-events.md) | 已翻译 |
 | 官方资料 | [创建自定容器视图控制器](../../apple-docs/zh/uikit/creating-a-custom-container-view-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/creating-a-custom-container-view-controller.md) | 已翻译 |
 | 官方资料 | [动画与触感反馈](../../apple-docs/zh/uikit/animation-and-haptics.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/animation-and-haptics.md) | 已翻译 |
@@ -178,14 +180,12 @@
 
 ## 未翻译资料
 
-共 162 份。可能已有中文目录标题，但正文仍为英文。
+共 160 份。可能已有中文目录标题，但正文仍为英文。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
 | 计划核心 | [动画详解](../../blogs/en/objcio/animations-explained.md) | 技术博客 | objc.io | [英文](../../blogs/en/objcio/animations-explained.md) | 仅标题中文，正文待翻译 |
 | 计划核心 | [整洁的 Table View 代码](../../blogs/en/objcio/clean-table-view-code.md) | 技术博客 | objc.io | [英文](../../blogs/en/objcio/clean-table-view-code.md) | 仅标题中文，正文待翻译 |
-| 官方资料 | [About app development with UIKit](../../apple-docs/en/uikit/about-app-development-with-uikit.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/about-app-development-with-uikit.md) | 待翻译 |
-| 官方资料 | [Accessibility for UIKit](../../apple-docs/en/uikit/accessibility-for-uikit.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/accessibility-for-uikit.md) | 待翻译 |
 | 官方资料 | [Adding a background to your view](../../apple-docs/en/swiftui/adding-a-background-to-your-view.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/adding-a-background-to-your-view.md) | 待翻译 |
 | 官方资料 | [Aligning views across stacks](../../apple-docs/en/swiftui/aligning-views-across-stacks.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/aligning-views-across-stacks.md) | 待翻译 |
 | 官方资料 | [Aligning views within a stack](../../apple-docs/en/swiftui/aligning-views-within-a-stack.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/aligning-views-within-a-stack.md) | 待翻译 |
