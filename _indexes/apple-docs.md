@@ -1,6 +1,6 @@
 # Apple 现行文档
 
-> 来源：`developer.apple.com/documentation`，索引生成于 2026-08-03。
+> 来源：`developer.apple.com/documentation`，索引生成于 2026-09-05。
 > “成篇文章”有逐篇目录；短 API 条目仍可从框架归档目录浏览。
 
 | 框架 | 页面总数 | 成篇文章 | 已翻译 | 文章目录 | 原始归档 |
@@ -62,8 +62,8 @@
 | gamekit | 8 | 5 | 1 | [逐篇查看](sources/apple/gamekit.md) | [目录](../apple-docs/en/gamekit) |
 | corewlan | 8 | 0 | 0 | — | [目录](../apple-docs/en/corewlan) |
 | watchkit | 8 | 2 | 0 | [逐篇查看](sources/apple/watchkit.md) | [目录](../apple-docs/en/watchkit) |
-| accessibility | 7 | 7 | 0 | [逐篇查看](sources/apple/accessibility.md) | [目录](../apple-docs/en/accessibility) |
 | automator | 7 | 0 | 0 | — | [目录](../apple-docs/en/automator) |
+| accessibility | 7 | 7 | 0 | [逐篇查看](sources/apple/accessibility.md) | [目录](../apple-docs/en/accessibility) |
 | apple-silicon | 6 | 6 | 2 | [逐篇查看](sources/apple/apple-silicon.md) | [目录](../apple-docs/en/apple-silicon) |
 | networkextension | 6 | 1 | 0 | [逐篇查看](sources/apple/networkextension.md) | [目录](../apple-docs/en/networkextension) |
 | addressbook | 6 | 0 | 0 | — | [目录](../apple-docs/en/addressbook) |
@@ -203,6 +203,6 @@
 | coremotion | 1 | 0 | 0 | — | [目录](../apple-docs/en/coremotion) |
 | videotoolbox | 1 | 1 | 0 | [逐篇查看](sources/apple/videotoolbox.md) | [目录](../apple-docs/en/videotoolbox) |
 | mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
-| callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
 | opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
+| callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
 | **合计** | **95,634** | **3,746** | **1,091** | | |

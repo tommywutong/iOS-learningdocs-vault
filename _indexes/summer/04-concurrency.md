@@ -80,7 +80,7 @@
 
 ## 中文资料
 
-共 101 份。包含译文和原生中文文章。
+共 102 份。包含译文和原生中文文章。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -183,12 +183,13 @@
 | 补充资料 | [协议扩展中的方法派发](../../blogs/zh/oleb/method-dispatch-in-protocol-extensions.md) | 技术博客 | Ole Begemann | [中文](../../blogs/zh/oleb/method-dispatch-in-protocol-extensions.md) | 已翻译 |
 | 补充资料 | [在 iOS 上实现主线程看门狗](../../blogs/zh/jessesquires/implementing-a-main-thread-watchdog-on-ios.md) | 技术博客 | Jesse Squires | [中文](../../blogs/zh/jessesquires/implementing-a-main-thread-watchdog-on-ios.md) | 已翻译 |
 | 补充资料 | [我们如何看待 Threads 的 iOS 性能](../../blogs/zh/fbeng/how-we-think-about-threads-ios-performance.md) | 技术博客 | Meta Engineering — iOS | [中文](../../blogs/zh/fbeng/how-we-think-about-threads-ios-performance.md) | 已翻译 |
+| 补充资料 | [没有所谓的“隐式原子”](../../blogs/zh/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | [中文](../../blogs/zh/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | 已翻译 |
 | 补充资料 | [用 GCD 并行化你的 for 循环](../../blogs/zh/oleb/parallelize-your-for-loops-with-gcd.md) | 技术博客 | Ole Begemann | [中文](../../blogs/zh/oleb/parallelize-your-for-loops-with-gcd.md) | 已翻译 |
 | 补充资料 | [线程局部存储详解](../../blogs/zh/maskray/all-about-thread-local-storage.md) | 技术博客 | MaskRay (宋方睿) | [中文](../../blogs/zh/maskray/all-about-thread-local-storage.md) | 已翻译 |
 
 ## 未翻译资料
 
-共 49 份。可能已有中文目录标题，但正文仍为英文。
+共 48 份。可能已有中文目录标题，但正文仍为英文。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -202,6 +203,7 @@
 | 官方资料 | [AtomicOptionalRepresentable Implementations](../../apple-docs/en/swift/opaquepointer/atomicoptionalrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/opaquepointer/atomicoptionalrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicOptionalRepresentable Implementations](../../apple-docs/en/swift/unmanaged/atomicoptionalrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/unmanaged/atomicoptionalrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicOptionalRepresentable Implementations](../../apple-docs/en/swift/unsaferawpointer/atomicoptionalrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/unsaferawpointer/atomicoptionalrepresentable-implementations.md) | 待翻译 |
+| 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/synchronization/wordpair/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Synchronization | [英文](../../apple-docs/en/synchronization/wordpair/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/uint64/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/uint64/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/uint8/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/uint8/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/uint/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/uint/atomicrepresentable-implementations.md) | 待翻译 |
@@ -231,7 +233,6 @@
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/unsaferawpointer/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/unsaferawpointer/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/unsafemutablebufferpointer/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/unsafemutablebufferpointer/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/swift/int128/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Swift | [英文](../../apple-docs/en/swift/int128/atomicrepresentable-implementations.md) | 待翻译 |
-| 官方资料 | [AtomicRepresentable Implementations](../../apple-docs/en/synchronization/wordpair/atomicrepresentable-implementations.md) | Apple 文档 | Apple · Synchronization | [英文](../../apple-docs/en/synchronization/wordpair/atomicrepresentable-implementations.md) | 待翻译 |
 | 官方资料 | [CFRunLoopRunInMode Exit Codes](../../apple-docs/en/corefoundation/cfrunloopruninmode_exit_codes.md) | Apple 文档 | Apple · Core Foundation | [英文](../../apple-docs/en/corefoundation/cfrunloopruninmode_exit_codes.md) | 待翻译 |
 | 官方资料 | [Dispatch](../../apple-docs/en/dispatch.md) | Apple 文档 | Apple · Dispatch | [英文](../../apple-docs/en/dispatch.md) | 待翻译 |
 | 官方资料 | [Specifying drawing and dispatch arguments indirectly](../../apple-docs/en/metal/specifying-drawing-and-dispatch-arguments-indirectly.md) | Apple 文档 | Apple · Metal | [英文](../../apple-docs/en/metal/specifying-drawing-and-dispatch-arguments-indirectly.md) | 待翻译 |
@@ -240,4 +241,3 @@
 | 深度补充 | [测试并发应用](../../blogs/en/objcio/testing-concurrent-applications.md) | 技术博客 | objc.io | [英文](../../blogs/en/objcio/testing-concurrent-applications.md) | 仅标题中文，正文待翻译 |
 | 补充资料 | [2018 年 11 月 2 日 React Conf 回顾：Hooks、Suspense 和 Concurrent Rendering](../../blogs/en/fbeng/nov-02-2018-react-conf-recap-hooks-suspense-and-concurrent-rendering.md) | 技术博客 | Meta Engineering — iOS | [英文](../../blogs/en/fbeng/nov-02-2018-react-conf-recap-hooks-suspense-and-concurrent-rendering.md) | 仅标题中文，正文待翻译 |
 | 补充资料 | [Meta 如何在 5 个月内构建 Threads](../../blogs/en/fbeng/how-meta-built-threads-in-5-months.md) | 技术博客 | Meta Engineering — iOS | [英文](../../blogs/en/fbeng/how-meta-built-threads-in-5-months.md) | 仅标题中文，正文待翻译 |
-| 补充资料 | [没有所谓的“隐式原子”](../../blogs/en/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | [英文](../../blogs/en/belkadan/there-s-no-such-thing-as-implicitly-atomic.md) | 仅标题中文，正文待翻译 |
