@@ -45,11 +45,11 @@ Xcode 为你创建的每个 App 都提供模板项目作为起点。例如，下
 - App 图标
 - 启动屏幕 storyboard
 
-系统会在主屏幕、Settings 中以及任何需要把你的 App 与其他 App 区分开的地方显示你的 App 图标。由于图标可能以深色或浅色外观显示，用户也可能选择着色显示选项，因此你要在 Xcode 项目的 AppIcon 图像资源中提供 App 图标的多个版本。创建一个有辨识度的 App 图标，帮助用户在主屏幕上快速识别你的 App。测试不同的外观和显示选项，以确定是否需要调整图标的细节。更多信息参见[使用 Icon Composer 创建你的 App 图标](../xcode/creating-your-app-icon-using-icon-composer.md)和[通过素材目录配置 App 图标](../xcode/configuring-your-app-icon.md)。
+系统会在主屏幕、Settings 中以及任何需要把你的 App 与其他 App 区分开的地方显示你的 App 图标。由于图标可能以深色或浅色外观显示，用户也可能选择着色显示选项，因此你要在 Xcode 项目的 AppIcon 图像资源中提供 App 图标的多个版本。创建一个有辨识度的 App 图标，帮助用户在主屏幕上快速识别你的 App。测试不同的外观和显示选项，以确定是否需要调整图标的细节。更多信息参见[使用 Icon Composer 创建你的 App 图标](../xcode/creating-your-app-icon-using-icon-composer.md)和[通过资源目录配置 App 图标](../xcode/configuring-your-app-icon.md)。
 
 ![Xcode 中某个资源目录的屏幕快照，显示了 App 图标的各个变体。](../../../attachments/563356d47201ebde749ad32bffc1a2b2/about-app-development-with-uikit-2@2x.png)
 
-`LaunchScreen.storyboard` 文件包含你的 App 的初始界面，它可以是启动画面（splash screen），也可以是实际界面的简化版本。当用户轻点你的 App 图标时，系统会立即显示你的启动屏幕（launch screen），让用户知道你的 App 正在启动。在 App 自行初始化期间，启动屏幕还能为它提供遮盖。当你的 App 准备就绪时，系统会隐藏启动屏幕，呈现出你的 App 的实际界面。更多信息参见[指定你的 App 的启动画面](../xcode/specifying-your-apps-launch-screen.md)。
+`LaunchScreen.storyboard` 文件包含你的 App 的初始界面，它可以是启动画面（splash screen），也可以是实际界面的简化版本。当用户轻点你的 App 图标时，系统会立即显示你的启动屏幕（launch screen），让用户知道你的 App 正在启动。在 App 自行初始化期间，启动屏幕还能为它提供掩护。当你的 App 准备就绪时，系统会隐藏启动屏幕，呈现出你的 App 的实际界面。更多信息参见[指定你的 App 的启动画面](../xcode/specifying-your-apps-launch-screen.md)。
 
 ### 更新必需的 App 元数据
 
@@ -67,7 +67,7 @@ Xcode 为你创建的每个 App 都提供模板项目作为起点。例如，下
 
 UIKit 提供了你的 App 的许多核心对象，其中包括与系统交互的对象、运行 App 主事件循环的对象，以及在屏幕上显示内容的对象。这些对象中的大多数你都可以直接使用，或只需稍作修改。了解哪些对象需要修改、何时修改，对实现你的 App 至关重要。
 
-你的 App 使用 [UIApplication](uiapplication.md) 和 [UIApplicationDelegate](uiapplicationdelegate.md) 的子类来与应用级服务和信息交互。你需要配置并自定一个或多个[场景](scenes.md)（scene）来在屏幕上呈现你的 App。使用多个场景可以表示你的 App 的多个实例，或处理在外部非交互式显示器上显示你的 App 的情况。
+你的 App 使用 [UIApplication](uiapplication.md) 和 [UIApplicationDelegate](uiapplicationdelegate.md) 的子类来与应用级服务和信息交互。你需要配置并自定一个或多个[场景](scenes.md)（scene）来在屏幕上呈现你的 App。使用多个场景可以表示你的 App 的多个实例，或处理在非交互式外部显示器上显示你的 App 的情况。
 
 UIKit App 的结构基于模型-视图-控制器（Model-View-Controller，MVC）设计模式，你创建的对象各自承担特定的用途。模型对象管理 App 的数据和业务逻辑。视图对象提供数据的可视化呈现。控制器对象充当模型对象与视图对象之间的桥梁，在合适的时机在两者之间传递数据。
 

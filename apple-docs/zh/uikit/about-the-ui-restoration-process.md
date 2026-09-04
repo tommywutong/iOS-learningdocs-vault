@@ -15,13 +15,13 @@ content_hash: 'sha256:1996129eec70d54d'
 translated: true
 ---
 
-> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md) · [跨启动保留你的 App 的 UI](preserving-your-app-s-ui-across-launches.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图控制器](view-controllers.md) · [在多次启动间保留你的 App 的 UI](preserving-your-app-s-ui-across-launches.md)
 
 # 关于 UI 恢复过程
 
 <sub>文章</sub>
 
-了解如何自定义 UIKit 的状态恢复过程。
+了解如何自定 UIKit 的状态恢复过程。
 
 ## 概述
 
@@ -29,9 +29,9 @@ translated: true
 
 ![界面恢复过程的流程图。](../../../attachments/8ae9ad9ee6c3db2adb3b3d2ed01aa1a6/media-2934436@2x.png)
 
-恢复过程的第一步是为你的界面创建视图控制器对象（显式或隐式）。第二步是解码并恢复这些对象的状态。要重建你的视图控制器层次，两步都不可或缺。例如，在创建了一个导航控制器及其子视图控制器之后，这些对象之间并没有直接的关联。真正重新建立起它与子视图控制器之间关系的，是导航控制器的 [- decodeRestorableStateWithCoder:](<uistaterestoring/decoderestorablestate(with_).md>) 方法。
+恢复过程的第一步是为你的界面创建视图控制器对象（显式或隐式）。第二步是解码并恢复这些对象的状态。要重建你的视图控制器层级结构，两步都不可或缺。例如，在创建了一个导览控制器及其子视图控制器之后，这些对象之间并没有直接的关联。真正重新建立起它与子视图控制器之间关系的，是导航控制器的 [- decodeRestorableStateWithCoder:](<uistaterestoring/decoderestorablestate(with_).md>) 方法。
 
-状态恢复结束后，UIKit 会调用 App 委托的 [- application:didFinishLaunchingWithOptions:](<uiapplicationdelegate/application(__didfinishlaunchingwithoptions_).md>) 方法。用这个方法对界面做最后的修改或补充。例如，你可以向视图控制器层次中添加一个登录界面。
+状态恢复结束后，UIKit 会调用 App 委托的 [- application:didFinishLaunchingWithOptions:](<uiapplicationdelegate/application(__didfinishlaunchingwithoptions_).md>) 方法。用这个方法对界面做最后一刻的修改或补充。例如，你可以向视图控制器层次中添加一个登录界面。
 
 ### 重建你的视图控制器
 

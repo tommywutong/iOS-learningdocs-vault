@@ -35,4 +35,4 @@ translated: true
 
 - [UIUserNotificationActivationMode](uiusernotificationactivationmode.md) — 指示 App 应该激活到前台还是后台的常量。_(已废弃)_
 - [UIUserNotificationActionBehavior](uiusernotificationactionbehavior.md) — 指示该操作支持的附加行为的常量。_(已废弃)_
-- [Behavior Key](behavior-key.md) — 与操作相关行为有关的键。
+- [行为键](behavior-key.md) — 与操作相关行为有关的键。
