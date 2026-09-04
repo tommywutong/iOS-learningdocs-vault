@@ -4,11 +4,11 @@
 
 ## 最常用的三个入口
 
-- [可直接中文阅读的技术博客（1132 篇）](chinese-blogs.md)
+- [可直接中文阅读的技术博客（1140 篇）](chinese-blogs.md)
 - [iOS 底层知识地图](topics.md)
 - [暑期计划知识地图](summer.md)
 
-另有 1854 篇英文博客已经提供目录中文标题，但正文仍为英文。
+另有 1846 篇英文博客已经提供目录中文标题，但正文仍为英文。
 
 ## 按知识点进入
 
@@ -24,7 +24,7 @@
 | [UI 与渲染](topics/ui-rendering.md) | 333 | 79 |
 | [网络与安全](topics/network-security.md) | 67 | 8 |
 | [数据与持久化](topics/data-persistence.md) | 63 | 21 |
-| [Swift 语言](topics/swift-language.md) | 282 | 154 |
+| [Swift 语言](topics/swift-language.md) | 283 | 153 |
 | [架构、测试与工程实践](topics/architecture-testing.md) | 33 | 67 |
 
 ## 查找示例
