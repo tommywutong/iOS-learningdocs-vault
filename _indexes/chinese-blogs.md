@@ -1,6 +1,6 @@
 # 可直接中文阅读的技术博客
 
-> 共 1150 篇，包含完整中文译文和原生中文文章。
+> 共 1153 篇，包含完整中文译文和原生中文文章。
 > 本页不收录只有中文目录标题、正文仍为英文的文章。
 
 ## Objective-C Runtime
@@ -894,8 +894,10 @@
 | [一些关于 App Clips 的笔记](../blogs/zh/onevcat/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E-app-clips-%E7%9A%84%E7%AC%94%E8%AE%B0.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E-app-clips-%E7%9A%84%E7%AC%94%E8%AE%B0.md) |
 | [一些关于开发的杂谈话题 - 测试](../blogs/zh/onevcat/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E7%9A%84%E6%9D%82%E8%B0%88%E8%AF%9D%E9%A2%98-%E6%B5%8B%E8%AF%95.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E5%BC%80%E5%8F%91%E7%9A%84%E6%9D%82%E8%B0%88%E8%AF%9D%E9%A2%98-%E6%B5%8B%E8%AF%95.md) |
 | [一套媒体文件图标](../blogs/zh/ibireme/%E4%B8%80%E5%A5%97%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E5%9B%BE%E6%A0%87.md) | ibireme (郭曜源) | — | [中文原文](../blogs/zh/ibireme/%E4%B8%80%E5%A5%97%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E5%9B%BE%E6%A0%87.md) |
+| [上一期](../blogs/zh/mikeash/last-time-7579f9.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/last-time-7579f9.md) | [中文译文](../blogs/zh/mikeash/last-time-7579f9.md) |
 | [上一期](../blogs/zh/mikeash/last-time-768338.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/last-time-768338.md) | [中文译文](../blogs/zh/mikeash/last-time-768338.md) |
 | [上一期](../blogs/zh/mikeash/last-time.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/last-time.md) | [中文译文](../blogs/zh/mikeash/last-time.md) |
+| [上一期 Friday Q&A](../blogs/zh/mikeash/last-time-on-friday-q-a-29b955.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/last-time-on-friday-q-a-29b955.md) | [中文译文](../blogs/zh/mikeash/last-time-on-friday-q-a-29b955.md) |
 | [上一期 Friday Q&A](../blogs/zh/mikeash/last-time-on-friday-q-a.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/last-time-on-friday-q-a.md) | [中文译文](../blogs/zh/mikeash/last-time-on-friday-q-a.md) |
 | [上级向的十个iOS面试问题](../blogs/zh/onevcat/%E4%B8%8A%E7%BA%A7%E5%90%91%E7%9A%84%E5%8D%81%E4%B8%AAios%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B8%8A%E7%BA%A7%E5%90%91%E7%9A%84%E5%8D%81%E4%B8%AAios%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98.md) |
 | [下一个十年](../blogs/zh/dirtmelon/%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4.md) | dirtmelon | — | [中文原文](../blogs/zh/dirtmelon/%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4.md) |
@@ -912,6 +914,7 @@
 | [为什么今天安全仍然重要](../blogs/zh/objccn/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E5%AE%89%E5%85%A8%E4%BB%8D%E7%84%B6%E9%87%8D%E8%A6%81.md) | ObjC 中国 (objccn.io) | — | [中文原文](../blogs/zh/objccn/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8A%E5%A4%A9%E5%AE%89%E5%85%A8%E4%BB%8D%E7%84%B6%E9%87%8D%E8%A6%81.md) |
 | [为什么使用 RxSwift](../blogs/zh/dirtmelon/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-rxswift.md) | dirtmelon | — | [中文原文](../blogs/zh/dirtmelon/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-rxswift.md) |
 | [久石让的音乐。。](../blogs/zh/ibireme/%E4%B9%85%E7%9F%B3%E8%AE%A9%E7%9A%84%E9%9F%B3%E4%B9%90.md) | ibireme (郭曜源) | — | [中文原文](../blogs/zh/ibireme/%E4%B9%85%E7%9F%B3%E8%AE%A9%E7%9A%84%E9%9F%B3%E4%B9%90.md) |
+| [之前探索了构建 NSNotificationCenter](../blogs/zh/mikeash/previously-explored-building-nsnotificationcenter.md) | mikeash.com Friday Q&A | [英文](../blogs/en/mikeash/previously-explored-building-nsnotificationcenter.md) | [中文译文](../blogs/zh/mikeash/previously-explored-building-nsnotificationcenter.md) |
 | [乔帮主，一路走好](../blogs/zh/onevcat/%E4%B9%94%E5%B8%AE%E4%B8%BB-%E4%B8%80%E8%B7%AF%E8%B5%B0%E5%A5%BD.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B9%94%E5%B8%AE%E4%B8%BB-%E4%B8%80%E8%B7%AF%E8%B5%B0%E5%A5%BD.md) |
 | [乱世之秋](../blogs/zh/onevcat/%E4%B9%B1%E4%B8%96%E4%B9%8B%E7%A7%8B.md) | onevcat (王巍/喵神) | — | [中文原文](../blogs/zh/onevcat/%E4%B9%B1%E4%B8%96%E4%B9%8B%E7%A7%8B.md) |
 | [交互式动画](../blogs/zh/objccn/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8A%A8%E7%94%BB.md) | ObjC 中国 (objccn.io) | — | [中文原文](../blogs/zh/objccn/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%8A%A8%E7%94%BB.md) |

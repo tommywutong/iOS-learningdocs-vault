@@ -33,7 +33,7 @@
 | swiftdata | 545 | 18 | 7 | [逐篇查看](sources/apple/swiftdata.md) | [目录](../apple-docs/en/swiftdata) |
 | regexbuilder | 462 | 1 | 1 | [逐篇查看](sources/apple/regexbuilder.md) | [目录](../apple-docs/en/regexbuilder) |
 | uniformtypeidentifiers | 360 | 6 | 0 | [逐篇查看](sources/apple/uniformtypeidentifiers.md) | [目录](../apple-docs/en/uniformtypeidentifiers) |
-| xcode | 360 | 360 | 355 | [逐篇查看](sources/apple/xcode.md) | [目录](../apple-docs/en/xcode) |
+| xcode | 360 | 360 | 356 | [逐篇查看](sources/apple/xcode.md) | [目录](../apple-docs/en/xcode) |
 | appkit | 356 | 9 | 0 | [逐篇查看](sources/apple/appkit.md) | [目录](../apple-docs/en/appkit) |
 | widgetkit | 329 | 37 | 0 | [逐篇查看](sources/apple/widgetkit.md) | [目录](../apple-docs/en/widgetkit) |
 | photosui | 310 | 1 | 1 | [逐篇查看](sources/apple/photosui.md) | [目录](../apple-docs/en/photosui) |
@@ -205,4 +205,4 @@
 | mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
 | opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
 | callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
-| **合计** | **95,634** | **3,746** | **1,091** | | |
+| **合计** | **95,634** | **3,746** | **1,092** | | |
