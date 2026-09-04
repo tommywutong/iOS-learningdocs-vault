@@ -16,7 +16,7 @@ translated: true
 
 发表于 2012-07-06 15:08 | [RSS 订阅](https://www.mikeash.com/pyblog/rss.py)（[全文订阅](https://www.mikeash.com/pyblog/rss.py?mode=fulltext)） | [博客索引](https://www.mikeash.com/pyblog/)  
 下一篇：[Friday Q&A 2012-07-27：构建 Tagged Pointer](https://www.mikeash.com/pyblog/friday-qa-2012-07-27-lets-build-tagged-pointers.html)  
-上一篇：[Objective-C 字面量](https://www.mikeash.com/pyblog/friday-qa-2012-06-22-objective-c-literals.html)  
+上一篇：[Friday Q&A 2012-06-22：Objective-C 字面量](https://www.mikeash.com/pyblog/friday-qa-2012-06-22-objective-c-literals.html)  
 标签：[fridayqna](https://www.mikeash.com/pyblog/?tag=fridayqna) [letsbuild](https://www.mikeash.com/pyblog/?tag=letsbuild) [objectivec](https://www.mikeash.com/pyblog/?tag=objectivec)
 
 Friday Q&A 2012-07-06：让我们构建 NSNumber
@@ -89,7 +89,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
 **实现策略**  
 `MANumber` 将用一个 `union` 来存放底层数值。`union` 是标准 C 中少见的特性。它看上去和 `struct` 一模一样，工作方式却不同。`struct` 把多个值一起存在一处；`union` 也这样存，但你只能访问最后一次存入的那个。当你向 `union` 存入一个值时，其余所有字段的值都变成未定义。
 
-以 C 典型的"帮不上忙但很高效"的风格，编译器不强制这条规则，也不会帮你遵守它——比如说，它不会让你查询最后设置的是哪个字段。你得自己记着这件事，通常靠一个配套的 `enum`。
+以 C 典型的「帮不上忙但很高效」的风格，编译器不强制这条规则，也不会帮你遵守它——比如说，它不会让你查询最后设置的是哪个字段。你得自己记着这件事，通常靠一个配套的 `enum`。
 
 `union` 可以用来装下每一种 C 数值类型，再配一个大 `enum` 标明当前用的是哪个。然而这就过于复杂了。我们真正需要的只有三个字段：最大的整数类型、最大的无符号整数类型、最大的浮点类型。在必须处理的类型中，它们分别是 `long long`、`unsigned long long` 和 `double`。其他一切类型都能与这三者无损互转。
 
@@ -208,7 +208,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
 ```
 
 **取值方法**  
-取值方法比初始化方法还要相似。它们都检查 `_type`，然后返回 `_value` 中相应的字段。从 `_value` 的活动字段到请求的返回类型之间的最后一道转换，编译器会替你完成。
+取值方法比初始化方法还要相似。它们都检查 `_type`，然后返回 `_value` 中当前生效的字段。从 `_value` 的活动字段到请求的返回类型之间的最后一道转换，编译器会替你完成。
 
 既然这些方法都包含相同的代码，那就是用宏封装相同部分的最佳候选。下面这个宏检查 `_type`，然后返回 `_value` 中相应的字段：
 
@@ -344,7 +344,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
 
 类型有九种排列，所以要处理九种不同情形。通过强制一个顺序，可以把它缩减为六种。如果两个对象的类型是 `INT` 和 `UINT`，本来两种情形可以合并成一种：只处理 `self` 为 `INT`、对方为 `UINT` 的情形，若出现相反的顺序就把两个对象对调。
 
-为了帮忙在不同类型之间做比较，我写了一个简单的宏，接受两个数字并返回相应的 `NSComparisonResult`。它所做的只是接受两个参数、存进临时变量以避免多次求值，然后按二者的大小关系返回相应的常量。这里还有一点浮点戏法。对浮点数来说，`NAN`（非数字，not a number）与任何东西比较都不相等，与它的一切比较都是假。`NSComparisonResult` 无法表示一种意为"这个数不等于任何数，连它自己也不等于"的排序关系，所以我武断地规定：就 `MANumber` 的比较而言，`NAN` 等于它自身、小于任何其他数：
+为了帮忙在不同类型之间做比较，我写了一个简单的宏，接受两个数字并返回相应的 `NSComparisonResult`。它所做的只是接受两个参数、存进临时变量以避免多次求值，然后按二者的大小关系返回相应的常量。这里还有一点浮点戏法。对浮点数来说，`NAN`（非数字，not a number）与任何东西比较都不相等，与它的一切比较都是假。`NSComparisonResult` 无法表示一种意为「这个数不等于任何数，连它自己也不等于」的排序关系，所以我武断地规定：就 `MANumber` 的比较而言，`NAN` 等于它自身、小于任何其他数：
 
 ```
     #define COMPARE(a, b) do { \
@@ -437,7 +437,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
 
 超过某个阈值后，`double` 只能表示整数值，因为数值的大小超出了表示格式的精度。在阈值之上、且低于 `long long` 最大值时，`double` 可以安全地转换成 `long long` 而不损失精度，两个值就可以按 `long long` 比较。在阈值之下，`double` 能表示任何整数，因此 `long long` 可以安全地转换成 `double` 而不损失精度，两个值按 `double` 比较。
 
-这个阈值的位置其实不难确定。C 提供宏 `DBL_MANT_DIG`，给出 `double` 类型的精度。把它升为 2 的幂（`double` 是二进制表示），就得到了阈值：
+这个阈值的位置其实不难确定。C 提供宏 `DBL_MANT_DIG`，给出 `double` 类型的精度。以它为指数计算 2 的幂（`double` 是二进制表示），就得到了阈值：
 
 ```
                 double pureIntegerStart = 1LL << DBL_MANT_DIG;
@@ -547,7 +547,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
             return [self unsignedIntegerValue];
 ```
 
-再往下就是非整数值了。终极目标是直接返回 `double` 的位模式（bit pattern），它能给出很好的哈希。然而这只对"位模式相等即意味着 `isEqual:`"的数成立，而并非所有 `double` 都如此。首先是 `NAN`：我们让它与自身比较相等，但它有许多种不同的位表示。为处理它，显式检查 `NAN` 并为它返回一个常量哈希：
+再往下就是非整数值了。终极目标是直接返回 `double` 的位模式（bit pattern），它能给出很好的哈希。然而这只对「位模式相等即意味着 `isEqual:`」的数成立，而并非所有 `double` 都如此。首先是 `NAN`：我们让它与自身比较相等，但它有许多种不同的位表示。为处理它，显式检查 `NAN` 并为它返回一个常量哈希：
 
 ```
         if(isnan(_value.d))
@@ -561,7 +561,7 @@ Friday Q&A 2012-07-06：让我们构建 NSNumber
             return 0;
 ```
 
-排除掉所有特殊情况之后，代码若能走到这里，这个数必然满足"数值相等即位模式相等"。于是直接返回位模式作为哈希。做法是返回 `union` 的 `u` 字段：
+排除掉所有特殊情况之后，代码若能走到这里，这个数必然满足「数值相等即位模式相等」。于是直接返回位模式作为哈希。做法是返回 `union` 的 `u` 字段：
 
 ```
         return _value.u;
