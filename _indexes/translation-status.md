@@ -6,7 +6,7 @@
 | 类型 | 来源 | 可翻译原文 | 已有中文译文 | 待翻译 | 完成率 | 逐篇目录 |
 |---|---|---:|---:|---:|---:|---|
 | Apple 文档 | swift | 1027 | 138 | 889 | 13% | [查看](sources/apple/swift.md) |
-| Apple 文档 | xcode | 360 | 355 | 5 | 99% | [查看](sources/apple/xcode.md) |
+| Apple 文档 | xcode | 360 | 356 | 4 | 99% | [查看](sources/apple/xcode.md) |
 | Apple 文档 | foundation | 266 | 167 | 99 | 63% | [查看](sources/apple/foundation.md) |
 | Apple 文档 | uikit | 265 | 169 | 96 | 64% | [查看](sources/apple/uikit.md) |
 | Apple 文档 | metal | 183 | 74 | 109 | 40% | [查看](sources/apple/metal.md) |
@@ -177,10 +177,10 @@
 | Apple 文档 | xcuiautomation | 1 | 0 | 1 | 0% | [查看](sources/apple/xcuiautomation.md) |
 | WWDC | 全部 session | 178 | 105 | 73 | 59% | [查看](sources/wwdc.md) |
 | 技术博客 | Ole Begemann | 307 | 33 | 274 | 11% | [查看](sources/blogs/oleb.md) |
-| 技术博客 | mikeash.com Friday Q&A | 305 | 104 | 201 | 34% | [查看](sources/blogs/mikeash.md) |
+| 技术博客 | mikeash.com Friday Q&A | 305 | 110 | 195 | 36% | [查看](sources/blogs/mikeash.md) |
 | 技术博客 | Jesse Squires | 298 | 32 | 266 | 11% | [查看](sources/blogs/jessesquires.md) |
 | 技术博客 | MaskRay (宋方睿) | 290 | 34 | 256 | 12% | [查看](sources/blogs/maskray.md) |
-| 技术博客 | Cocoa with Love (Matt Gallagher) | 206 | 65 | 141 | 32% | [查看](sources/blogs/cocoawithlove.md) |
+| 技术博客 | Cocoa with Love (Matt Gallagher) | 206 | 66 | 140 | 32% | [查看](sources/blogs/cocoawithlove.md) |
 | 技术博客 | NSHipster (Mattt) | 196 | 20 | 176 | 10% | [查看](sources/blogs/nshipster.md) |
 | 技术博客 | Belkadan (Jordan Rose, 前 Swift 编译器工程师) | 177 | 36 | 141 | 20% | [查看](sources/blogs/belkadan.md) |
 | 技术博客 | objc.io | 149 | 1 | 148 | 1% | [查看](sources/blogs/objcio.md) |

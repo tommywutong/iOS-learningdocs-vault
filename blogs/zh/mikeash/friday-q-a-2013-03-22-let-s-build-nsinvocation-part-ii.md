@@ -271,7 +271,7 @@ API 里有几个方法只是对其他方法的小型包装。在进入正题之�
     }
 ```
 
-再对这个方法做一层小包装，就能得到给定参数的大小：
+再对_这个_方法做一层小包装，就能得到给定参数的大小：
 
 ```
     - (NSUInteger)sizeAtIndex: (NSInteger)idx
@@ -306,7 +306,7 @@ API 里有几个方法只是对其他方法的小型包装。在进入正题之�
 ```
 
 **获取与设置返回值**  
-要获取和设置返回值，需要知道值的大小。这很容易：只要取得方法签名中返回类型的 size 即可：
+要获取和设置返回值，需要知道值的大小。这很容易：只要取得方法签名中返回类型的大小即可：
 
 ```
     - (NSUInteger)returnValueSize
@@ -420,7 +420,7 @@ API 里有几个方法只是对其他方法的小型包装。在进入正题之�
             return [self classifyStructType: type];
 ```
 
-如果什么都不匹配，就返回“其他”类型：
+如果什么都不匹配，就返回「其他」类型：
 
 ```
         return TypeOther;
@@ -449,7 +449,7 @@ API 里有几个方法只是对其他方法的小型包装。在进入正题之�
                 structClassification = elementClassification;
 ```
 
-如果当前分类是整数类型，且元素分类也是整数类型，那么这个 `struct` 获得特殊的“包含两个整数的 `struct`”分类：
+如果当前分类是整数类型，且元素分类也是整数类型，那么这个 `struct` 获得特殊的「包含两个整数的 `struct`」分类：
 
 ```
             else if([self isIntegerClass: structClassification] && [self isIntegerClass: elementClassification])
@@ -513,7 +513,7 @@ API 里有几个方法只是对其他方法的小型包装。在进入正题之�
 **设置参数**  
 有了类型分类，终于可以实现设置参数了。`setArgument:atIndex:` 的基本形式与 `getArgument:atIndex:` 几乎一样，但对保留参数的支持让一切都复杂得多。
 
-你可以创建一个 `NSInvocation`，配置好，然后把它保留一段时间。为了让 `NSInvocation` 保持有效，它需要能对包含的参数做恰当的内存管理。出于灵活性的考虑，这是可选的。新建的 `NSInvocation` 不会对参数做任何内存管理，但可以向它发送 `retainArguments` 消息来启用。
+你可以创建一个 `NSInvocation`，配置好，然后把它在手里留一段时间。为了让 `NSInvocation` 保持有效，它需要能对包含的参数做恰当的内存管理。出于灵活性的考虑，这是可选的。新建的 `NSInvocation` 不会对参数做任何内存管理，但可以向它发送 `retainArguments` 消息来启用。
 
 `MAInvocation` 模仿了这一功能。当它收到 `retainArguments` 时，会对参数执行以下操作：
 
@@ -754,7 +754,7 @@ C 字符串类似，但更简单，因为这里只有一种可能的类型：
         [self setTarget: target];
 ```
 
-然后用 `methodForSelector:` 取得 invocation 选择器对应的函数指针，放进 `fptr` 字段。这就是胶水代码将要调用的东西：
+然后用 `methodForSelector:` 取得 invocation 选择器（selector）对应的函数指针，放进 `fptr` 字段。这就是胶水代码将要调用的东西：
 
 ```
         _raw.fptr = [target methodForSelector: [self selector]];
@@ -814,7 +814,7 @@ C 字符串类似，但更简单，因为这里只有一种可能的类型：
         MAInvocation *inv = [[MAInvocation alloc] initWithMethodSignature: sig];
 ```
 
-接下来的工作，是把 `r into the invocation's`_raw` 实例变量中的所有相关信息都拷贝进去。首先是寄存器：
+接下来要做的，是把 `r into the invocation's`_raw` 实例变量中的所有相关信息都拷贝进去（原文此处反引号错位，意为把 `r` 的内容拷入 invocation 的 `_raw`）。首先是寄存器：
 
 ```
         inv->_raw.rdi = r->rdi;
