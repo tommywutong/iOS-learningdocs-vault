@@ -16,7 +16,7 @@
 | [性能与调试](topics/performance-debugging.md) | 181 | 26 | 251 |
 | [启动、链接与二进制](topics/launch-linking-binary.md) | 86 | 43 | 178 |
 | [UI 与渲染](topics/ui-rendering.md) | 333 | 79 | 958 |
-| [网络与安全](topics/network-security.md) | 67 | 8 | 280 |
+| [网络与安全](topics/network-security.md) | 68 | 8 | 280 |
 | [数据与持久化](topics/data-persistence.md) | 63 | 21 | 153 |
 
 ## 扩展主题

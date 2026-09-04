@@ -6,7 +6,7 @@
 | 类型 | 来源 | 可翻译原文 | 已有中文译文 | 待翻译 | 完成率 | 逐篇目录 |
 |---|---|---:|---:|---:|---:|---|
 | Apple 文档 | swift | 1027 | 138 | 889 | 13% | [查看](sources/apple/swift.md) |
-| Apple 文档 | xcode | 360 | 356 | 4 | 99% | [查看](sources/apple/xcode.md) |
+| Apple 文档 | xcode | 360 | 359 | 1 | 100% | [查看](sources/apple/xcode.md) |
 | Apple 文档 | foundation | 266 | 167 | 99 | 63% | [查看](sources/apple/foundation.md) |
 | Apple 文档 | uikit | 265 | 169 | 96 | 64% | [查看](sources/apple/uikit.md) |
 | Apple 文档 | metal | 183 | 74 | 109 | 40% | [查看](sources/apple/metal.md) |
