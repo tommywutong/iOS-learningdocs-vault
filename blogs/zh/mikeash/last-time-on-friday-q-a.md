@@ -29,20 +29,20 @@ Friday Q&A 2013-03-08：让我们构建 NSInvocation，第一部分
 [https://github.com/mikeash/MAInvocation](https://github.com/mikeash/MAInvocation)
 
 **总览**  
-一个 `NSInvocation` 对象表示一次方法调用。一次方法调用有一个 target、一个 selector、一组参数和一个返回值。
+一个 `NSInvocation` 对象表示一次方法调用。一次方法调用有一个 target、一个选择器（selector）、一组参数和一个返回值。
 
-只把这些值存起来未免太平淡了。随手写一个简单的模型类就能做到：给返回值一个变量，给参数一个数组，就完事了。（target 和 selector 不过是第一、第二个参数。）`NSInvocation` 的有意思之处，在于它能够真正捕获并发送它所表示的调用。
+只把这些值存起来未免太平淡了。随手写一个简单的模型类就能做到：给返回值一个变量，给参数一个数组，就完事了。（target 和选择器不过是第一、第二个参数。）`NSInvocation` 的有意思之处，在于它能够真正捕获并发送它所表示的调用。
 
 `NSInvocation` 可以在某个特定对象上被_调用_（invoke）。这做的相当于 `[target message: argument]` 这样的代码，只不过 target、消息和参数全部在运行时才确定。构建 `NSInvocation` 时可以借助运行时内省，对方法本身一无所知也无妨。
 
-更进一步，`NSInvocation` 还可以_由_一次失败的消息发送构造出来。如果你写了 `[target message: argument]`，而 `target` 其实没有实现 `message:`，那么它会收到一次 `forwardInvocation:` 调用，其中传入一个表示这次调用的 `NSInvocation *`。接下来它想拿这个 invocation 做什么都可以：把它调用到别的对象上、摆弄参数，或者设一个任意返回值传回给调用方。
+更进一步，`NSInvocation` 还可以_由_一次失败的消息发送构造出来。如果你写了 `[target message: argument]`，而 `target` 其实没有实现 `message:`，那么它会收到一次 `forwardInvocation:` 调用，其中传入一个表示这次调用的 `NSInvocation *`。接下来它想拿这个 invocation 对象做什么都可以：把它调用到别的对象上、摆弄参数，或者设一个任意返回值传回给调用方。
 
 所以 `NSInvocation` 包含两块互补的难事：
 
 1. 一段代码，能拿一组参数去发起方法调用，并收集返回值。
 2. 一段代码，能接住一次方法调用，收集参数，再向调用方返回一个任意返回值。
 
-这两块都要求在实现中写入大量关于 CPU 架构调用约定（calling convention）的知识，还需要汇编语言胶水代码。
+这两块都要求在实现中写入大量关于 CPU 架构调用约定（calling convention）的知识，还需要汇编语言胶水代码（assembly glue）。
 
 **调用约定**  
 既然需要如此多架构相关的代码，我决定只聚焦一个架构。对我们这些 Mac 用户来说，`x86-64` 是最方便的选择。为了进一步简化，我决定不支持浮点参数和浮点返回值，也放弃了 `struct` 参数，不过 `struct` 返回值的支持我还是实现了。下面的讨论会略过这些我没实现的部分。
@@ -123,7 +123,7 @@ Friday Q&A 2013-03-08：让我们构建 NSInvocation，第一部分
 
 它用汇编实现，但有了上面这个原型，Objective-C 代码就能像调用 C 函数一样调用它。传入一个填好的 `struct RawArguments`，汇编胶水就会完成调用。
 
-汇编代码先声明符号。它被标记为 global，这样程序的其他部分才能访问它。前导下划线源于 involving Fortran 的古老历史——每个 C 符号都会隐式得到一个；一个希望被 C 代码访问的非 C 符号也需要带上它：
+汇编代码先声明符号。它被标记为 global，这样程序的其他部分才能访问它。前导下划线源于一段与 Fortran 有关的古老历史——每个 C 符号都会隐式得到一个；一个希望被 C 代码访问的非 C 符号也需要带上它：
 
 ```
     .globl _MAInvocationCall
@@ -311,7 +311,7 @@ Friday Q&A 2013-03-08：让我们构建 NSInvocation，第一部分
 函数调用的胶水代码到此完工。Objective-C 代码现在可以按要发起的调用填好一个 `struct RawArguments`，然后调用 `MAInvocationCall` 并传入指向该 `struct` 的指针，调用就完成了。
 
 **转发胶水**  
-在 Objective-C 里，截获一次方法调用叫做"转发"（forwarding）。运行时有一个特殊的转发处理器，每当某个选择器找不到实现时就会被调用。实际上转发处理器有两个：一个服务普通调用，一个服务 `stret` 调用。转发处理器需要知道去哪里找 `self` 和 `_cmd` 参数，而这两个参数的位置在 `stret` 调用中会变化，所以需要一点点特化。
+在 Objective-C 里，捕获一次方法调用叫做"转发"（forwarding）。运行时有一个特殊的转发处理器，每当某个选择器找不到实现时就会被调用。实际上转发处理器有两个：一个服务普通调用，一个服务 `stret` 调用。转发处理器需要知道去哪里找 `self` 和 `_cmd` 参数，而这两个参数的位置在 `stret` 调用中会变化，所以需要一点点特化。
 
 这里的策略是设两个入口，各自先记下这是不是一次 `stret` 调用，然后都跳到同一个公共实现。公共实现据此填好一个新的 `struct RawArguments`，调用进一个 Objective-C 函数；该函数返回后，再把返回值拷回返回值寄存器，然后返回。
 
@@ -454,13 +454,13 @@ Objective-C 运行时的转发处理器居然是可配置的。要把它们设�
 **结语**  
 汇编语言胶水代码与调用约定的基础知识到此收尾。剩下的工作还有很多，但这里的两个胶水函数打下了必要的地基，`MAInvocation` 的 Objective-C 部分将盖在其上。`MAInvocation` 需要管理一个 `struct RawArguments`，并在该 `struct` 的内容与 API 客户端提供、请求的参数和返回值之间做转换。发起方法调用时，它要把 `struct` 布置妥当，再调进上面的胶水代码；接住方法调用时，它要从 `struct` 的内容构建出一个新的 `MAInvocation`。
 
-这些下次再讲。在那之前，请[把你的点子发给我](mailto:mike@mikeash.com)，供 Friday Q&A 选题。下一期的主题已经有着落了，但你 对将来主题的建议永远欢迎。
+这些下次再讲。在那之前，请[把你的点子发给我](mailto:mike@mikeash.com)，供 Friday Q&A 选题。下一期的主题可能已经有主了，但你对将来主题的建议永远欢迎。
 
 喜欢这篇文章吗？我还在销售整本整本的文章合集！第二卷和第三卷已经出版，提供 ePub、PDF、印刷版，以及 iBooks 和 Kindle 版本。[点击这里了解详情](https://www.mikeash.com/book.html)。
 
 ---
 
-还没有评论。
+暂无评论。
 
 发表你的想法，发一条评论：
 

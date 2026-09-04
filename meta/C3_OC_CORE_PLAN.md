@@ -155,4 +155,17 @@ Probing Cocoa With PyObjC（11,760）。
 
 ## 完成记录
 
-- 批 1a（C3-R01）：执行中。
+- 批 1a（C3-R01）：已完成并推送，PR 待审。3 篇（NSObject、NSInvocation Ⅰ/Ⅱ）
+  初译均由主会话完成，独立审校由独立子代理上下文逐段完成，14 条修订建议已全部
+  采纳（含 2 处残留英文、3 处「选择器（selector）」首现标注、体例拉齐）。
+  `validate.py --strict-identifiers` 零问题。
+  **备案事项（待仓库所有者裁决）**：
+  1. Part II 原文 L817 反引号错位（归档损坏），译文按原样镜像以保持
+     strict-identifiers 零问题，并在句中补注原意；如需修正须先改 en 基线；
+  2. 围栏内自然语言列表（如 Part II 的四条操作清单）按"代码块逐字一致"规则保留
+     英文，与 dispatch-once 篇先例一致，政策待定；
+  3. 术语待定案：target（现保留英文）、invocation（现保留英文）、tagged pointer
+     （现保留英文，全库 7:3）、引号全仓体例（本批统一直角引号「」）。
+- 批 1b（C3-R02）：初译完成并推送（NSNotificationCenter、NSMutableArray、
+  NSNumber），3 篇均由主会话完成并通过 `validate.py --strict-identifiers`
+  零问题；独立审校待做，完成后补记。
