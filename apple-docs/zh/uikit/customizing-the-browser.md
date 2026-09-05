@@ -37,7 +37,7 @@ translated: true
 
 如果你没有提供 Thumbnail 扩展，系统可以基于你的 App 图标创建一个文稿图标。要启用自动图标创建，前往项目导航器，选择 target，点按 Info，然后执行以下操作：
 
-1. 在 Document Type 部分声明对该文稿的统一类型标识符（UTI）的支持。
+1. 在 Document Type 部分声明对该文稿的统一类型标识符（Uniform Type Identifier，UTI）的支持。
 2. 对你创建的任何自定义文稿类型，在 Exported Type Identifiers 部分导出该统一类型标识符。
 3. 对你的 App 使用的任何第三方文稿类型，在 Imported Type Identifiers 部分导入该统一类型标识符。
 

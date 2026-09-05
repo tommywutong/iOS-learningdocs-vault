@@ -76,7 +76,7 @@ func tableView(_ tableView: UITableView,
 
 `loadObject` 方法向 `ContactCard` 类索要联系人卡片对象。该类遵循 [`NSItemProviderReading`](../foundation/nsitemproviderreading.md) 协议，实现了 [`object(withItemProviderData:typeIdentifier:)`](<../foundation/nsitemproviderreading/object(withitemproviderdata_typeidentifier_).md>) 类方法，用条目提供程序的数据创建并初始化联系人卡片对象。
 
-当用户把联系人放到表格视图的某个特定位置时，完成处理器（来自 `loadObject` 调用）会创建一个占位符，在放下位置显示一个空隙。接着，处理器把放下的联系人插入列表中放下位置对应的索引路径处。最后，完成处理器用一个显示该联系人的视图替换占位符。
+当用户把联系人放到表格视图的某个特定位置时，完成处理程序（来自 `loadObject` 调用）会创建一个占位符，在放下位置显示一个空隙。接着，完成处理程序把放下的联系人插入列表中放下位置对应的索引路径处。最后，完成处理程序用一个显示该联系人的视图替换占位符。
 
 ```swift
 _ = dropItem.dragItem.itemProvider.loadObject(
@@ -107,7 +107,7 @@ _ = dropItem.dragItem.itemProvider.loadObject(
     })
 ```
 
-当用户把联系人放到表格视图的空白位置时，完成处理器把放下的联系人追加到列表末尾，不显示空隙。
+当用户把联系人放到表格视图的空白位置时，完成处理程序把放下的联系人追加到列表末尾，不显示空隙。
 
 ```swift
 _ = dropItem.dragItem.itemProvider.loadObject(

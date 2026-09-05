@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-当你使用导览控制器为你的 App 添加导览结构时，你可以使用视图控制器的 [navigationItem](uiviewcontroller/navigationitem.md) 来配置 [UINavigationBar](uinavigationbar.md)，在 iOS 设备屏幕顶部、内容上方的栏中放入导览与交互控件。
+当你使用导览控制器为你的 App 添加导览结构时，你可以使用视图控制器的 [navigationItem](uiviewcontroller/navigationitem.md) 来配置 [UINavigationBar](uinavigationbar.md)，在 iOS 设备屏幕顶部、内容上方的栏中放入导览与交互控制。
 
 本示例代码项目演示了如何把 [UINavigationController](uinavigationcontroller.md) 和 [UIViewController](uiviewcontroller.md) 类用作你的 App 用户界面的构建块。
 
@@ -210,7 +210,7 @@ navigationItem.title = "Title"
 navigationItem.subtitle = "Subtitle"
 ```
 
-除了用字符串设置标题和副标题，你还可以使用带属性的字符串或自定义视图。
+除了用字符串设置标题和副标题，你还可以使用属性字符串或自定义视图。
 
 ### 自定义大号副标题视图
 
@@ -229,7 +229,7 @@ navigationItem.largeSubtitleView = subtitleButton
 
 ### 修改导览提示
 
-导航栏还可以在顶部包含一个提示（prompt），即一行文本。
+导航栏还可以在顶部包含一个提示（prompt）或一行文本。
 
 示例在 `NavigationPromptViewController` 中演示了如何使用 `UINavigationItem` 的 [prompt](uinavigationitem/prompt.md) 属性在导航栏上方显示一行自定义文本：
 
@@ -256,7 +256,7 @@ navigationItem.leftBarButtonItem = backButton
 
 ### 修改导航栏中的大标题
 
-自定义导航栏的另一种选择是启用大标题显示模式，让它显示更大版本的标题。当视图控制器包含滚动视图时，系统会在可滚动内容的顶部显示大标题，并在用户开始滚动时把标题动画收进导航栏。
+自定义导航栏的另一种选择是启用大标题显示模式，让它显示更大版本的标题。当视图控制器包含滚动视图时，系统会在可滚动内容的顶部显示大标题，并在用户开始滚动时以动画方式把标题收进导航栏。
 
 下面的代码展示了示例如何在 `LargeTitleViewController` 中为导航栏启用大标题显示模式：
 
@@ -268,7 +268,7 @@ self.navigationController?.navigationBar.prefersLargeTitles = true
 
 ### 为栏按钮项附加菜单
 
-菜单附件把 App 功能集中在一处，方便且扩展性强。示例在 `BarButtonMenu` 中把一个 [UIMenu](uimenu.md) 附加到右侧的 `UIBarButtonItem` 控件上：
+菜单附件把 App 功能集中在一处，提供更广泛且便捷的访问。示例在 `BarButtonMenu` 中把一个 [UIMenu](uimenu.md) 附加到右侧的 `UIBarButtonItem` 控制上：
 
 ```swift
 let barButtonMenu = UIMenu(title: "", children: [

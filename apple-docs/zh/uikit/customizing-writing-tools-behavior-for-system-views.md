@@ -15,7 +15,7 @@ content_hash: 'sha256:c1f84887a7b2e70a'
 translated: true
 ---
 
-> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [Writing Tools](writing-tools.md)
+> 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [写作工具](writing-tools.md)
 
 # 为 UIKit 视图自定义写作工具行为
 
@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-[UITextView](uitextview.md) 和 [UITextField](uitextfield.md) 类内建了对写作工具的支持，但你可以为你的界面自定义这一功能的工作方式。你可以改变用户在你的 App 中体验写作工具的方式，或对特定类型的内容禁用它。例如，你可以在用于显示代码清单的视图中禁用写作工具。你还可以自定义写作工具为你的文本视图生成的内容类型。
+[UITextView](uitextview.md) 和 [UITextField](uitextfield.md) 类内建了对写作工具（Writing Tools）的支持，但你可以为你的界面自定义这一功能的工作方式。你可以改变用户在你的 App 中体验写作工具的方式，或对特定类型的内容禁用它。例如，你可以在用于显示代码清单的视图中禁用写作工具。你还可以自定义写作工具为你的文本视图生成的内容类型。
 
 > [!note] 注意
 > 如果你创建的是自定义文本视图而非使用标准系统视图，请使用可用的 API 为你的视图添加写作工具支持。更多信息参见[为自定义 UIKit 视图添加写作工具支持](adding-writing-tools-support-to-a-custom-uiview.md)。

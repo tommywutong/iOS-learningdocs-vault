@@ -29,7 +29,7 @@ translated: true
 
 关于如何创建 segue 的信息，参见[在你的 storyboard 文件中以可视化方式指定呈现](showing-and-hiding-view-controllers.md#Specify-presentations-visually-in-your-storyboard-file)。
 
-### 配置转场的呈现风格
+### 配置转场的呈现样式
 
 segue 的类型决定了 UIKit 在呈现和关闭 segue 时使用哪种动画，如下表所示。类型在创建 segue 时指定，但你之后也可以在属性检查器（attributes inspector）中更改它。
 
@@ -40,11 +40,11 @@ segue 的类型决定了 UIKit 在呈现和关闭 segue 时使用哪种动画，
 | Present Modally | 使用指定的呈现与转场样式，以模态方式显示视图控制器。 |
 | Present as Popover | 在水平常规（horizontally regular）环境中，UIKit 以弹出窗口呈现视图控制器。在水平紧凑（horizontally compact）环境中，UIKit 以模态方式呈现视图控制器。 |
 
-关于 UIKit 如何执行涉及 Show 与 Show Detail 呈现风格的 segue 的更多信息，参见[让当前上下文决定呈现技术](showing-and-hiding-view-controllers.md#Let-the-current-context-define-the-presentation-technique)。
+关于 UIKit 如何执行涉及 Show 与 Show Detail 呈现样式的 segue 的更多信息，参见[让当前上下文决定呈现技术](showing-and-hiding-view-controllers.md#Let-the-current-context-define-the-presentation-technique)。
 
 ### 根据动态条件阻止 segue
 
-当你不想让用户离开当前视图控制器时，在源视图控制器的 [- shouldPerformSegueWithIdentifier:sender:](<uiviewcontroller/shouldperformsegue(withidentifier_sender_).md>) 方法中返回 false，告诉 UIKit 不要执行 segue。用这个方法执行所需的各项检查，判断 segue 能否继续。例如，如果视图控制器的内容无效、需要用户纠正，就返回 [false](../swift/false.md)。返回 true 让 segue 继续；返回 [false](../swift/false.md) 则会让 segue 无声地失败。
+当你不想让用户离开当前视图控制器时，在源视图控制器的 [- shouldPerformSegueWithIdentifier:sender:](<uiviewcontroller/shouldperformsegue(withidentifier_sender_).md>) 方法中返回 false，告诉 UIKit 不要执行 segue。用这个方法执行所需的各项检查，判断 segue 能否继续。例如，如果视图控制器的内容无效、需要用户纠正，就返回 [false](../swift/false.md)。返回 true 让 segue 继续；返回 [false](../swift/false.md) 则会让 segue 静默失败。
 
 ### 向被呈现的视图控制器传递数据
 
@@ -78,7 +78,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ### Storyboard
 
-- [用展开 segue 关闭视图控制器](dismissing-a-view-controller-with-an-unwind-segue.md) — 在你的 storyboard 文件中配置一个展开 segue，动态选择接下来最合适的显示视图控制器。
+- [用展开 segue 关闭视图控制器](dismissing-a-view-controller-with-an-unwind-segue.md) — 在你的 storyboard 文件中配置一个展开 segue，动态选择接下来要显示的最合适的视图控制器。
 - [UIStoryboard](uistoryboard.md) — 对 Interface Builder storyboard 资源文件中所表示的设计期视图控制器图的封装。
-- [UIStoryboardSegue](uistoryboardsegue.md) — 为两个视图控制器之间的可视化转场做准备并执行转场的对象。
+- [UIStoryboardSegue](uistoryboardsegue.md) — 为两个视图控制器之间的视觉转场做准备并执行转场的对象。
 - [UIStoryboardUnwindSegueSource](uistoryboardunwindseguesource.md) — 对展开 segue 相关信息的封装。

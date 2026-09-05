@@ -41,7 +41,7 @@ translated: true
 
 ### 使用 UIFocusDebugger 查找焦点问题
 
-[UIFocusDebugger](uifocusdebugger.md) 类包含若干可帮助你查找焦点问题的方法。你不会直接在自己的代码中使用这个类或它的方法。相反，在调试会话（debugging session）期间，你可以从 LLDB 调试器命令行调用这个类的方法，以获取焦点系统（focus system）状态的相关信息。例如，`po UIFocusDebugger.status()` 会返回焦点引擎的状态。
+[UIFocusDebugger](uifocusdebugger.md) 类包含若干可帮助你查找焦点问题的方法。不要在自己的代码中直接使用这个类或它的方法。相反，在调试会话（debugging session）期间，你可以从 LLDB 调试器命令行调用这个类的方法，以获取焦点系统（focus system）状态的相关信息。例如，`po UIFocusDebugger.status()` 会返回焦点引擎的状态。
 
 ## 另请参阅
 

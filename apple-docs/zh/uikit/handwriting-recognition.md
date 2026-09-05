@@ -17,7 +17,7 @@ translated: true
 
 > 导航：[技术](../technologies.md) · [UIKit](../uikit.md)
 
-# 手写识别（Handwriting recognition）
+# 手写识别
 
 <sub>API 集合</sub>
 
@@ -27,18 +27,18 @@ translated: true
 
 ### 基础
 
-- [通过交互自定义随手写](../pencilkit/customizing-scribble-with-interactions.md) — 通过添加交互，在非文本输入视图上启用书写。
+- [通过交互自定义 Scribble](../pencilkit/customizing-scribble-with-interactions.md) — 通过添加交互，在非文本输入视图上启用书写。
 
 ### 文本字段
 
-- [UIScribbleInteraction](uiscribbleinteraction.md) — 用于自定义随手写（Scribble）在文本输入视图上的行为、或在特定情况下完全抑制它的交互。
-- [UIScribbleInteractionDelegate](uiscribbleinteractiondelegate.md) — 用于自定义或抑制文本输入视图中随手写行为的方法。
+- [UIScribbleInteraction](uiscribbleinteraction.md) — 用于自定义 Scribble 在文本输入视图上的行为、或在特定情况下完全抑制它的交互。
+- [UIScribbleInteractionDelegate](uiscribbleinteractiondelegate.md) — 用于自定义或抑制文本输入视图中 Scribble 行为的方法。
 
 ### 自定义视图
 
-- [UIIndirectScribbleInteraction](uiindirectscribbleinteraction-1nfjm.md) — 通过在并非正式文本输入的视图上书写、从而使用随手写输入文本的交互。
+- [UIIndirectScribbleInteraction](uiindirectscribbleinteraction-1nfjm.md) — 通过在并非正式文本输入的视图上书写、从而使用 Scribble 输入文本的交互。
 - [UIIndirectScribbleInteractionDelegate](uiindirectscribbleinteractiondelegate-hdh.md) — 在并非正式文本输入视图的视图上自定义行为的方法。
-- [ElementIdentifier](uiindirectscribbleinteractiondelegate-hdh/elementidentifier.md) — 随手写交互中非文本字段控件的唯一标识符。
+- [ElementIdentifier](uiindirectscribbleinteractiondelegate-hdh/elementidentifier.md) — Scribble 交互中非文本字段控制的唯一标识符。
 
 ## 另请参阅
 
