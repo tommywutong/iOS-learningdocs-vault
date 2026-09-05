@@ -67,7 +67,7 @@
 
 ## 中文资料
 
-共 106 份。包含译文和原生中文文章。
+共 109 份。包含译文和原生中文文章。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -109,6 +109,7 @@
 | 官方资料 | [使用顶点放大提高渲染性能](../../apple-docs/zh/metal/improving-rendering-performance-with-vertex-amplification.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/improving-rendering-performance-with-vertex-amplification.md) | 已翻译 |
 | 官方资料 | [关于使用 UIKit 进行 App 开发](../../apple-docs/zh/uikit/about-app-development-with-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/about-app-development-with-uikit.md) | 已翻译 |
 | 官方资料 | [关于同步事件](../../apple-docs/zh/metal/about-synchronization-events.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/about-synchronization-events.md) | 已翻译 |
+| 官方资料 | [创建自定大小的表格视图单元格](../../apple-docs/zh/uikit/creating-self-sizing-table-view-cells.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/creating-self-sizing-table-view-cells.md) | 已翻译 |
 | 官方资料 | [创建自定容器视图控制器](../../apple-docs/zh/uikit/creating-a-custom-container-view-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/creating-a-custom-container-view-controller.md) | 已翻译 |
 | 官方资料 | [动画与触感反馈](../../apple-docs/zh/uikit/animation-and-haptics.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/animation-and-haptics.md) | 已翻译 |
 | 官方资料 | [在 GPU 与 CPU 之间同步事件](../../apple-docs/zh/metal/synchronizing-events-between-a-gpu-and-the-cpu.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/synchronizing-events-between-a-gpu-and-the-cpu.md) | 已翻译 |
@@ -116,6 +117,7 @@
 | 官方资料 | [在 Swift 中以延迟光照渲染场景](../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-swift.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-swift.md) | 已翻译 |
 | 官方资料 | [在 UIKit 中使用观察跟踪自动更新视图](../../apple-docs/zh/uikit/updating-views-automatically-with-observation-tracking-in-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/updating-views-automatically-with-observation-tracking-in-uikit.md) | 已翻译 |
 | 官方资料 | [在 UIKit 中向属性字符串添加表格](../../apple-docs/zh/uikit/adding-tables-to-attributed-strings.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/adding-tables-to-attributed-strings.md) | 已翻译 |
+| 官方资料 | [在 UIKit 中自定义与调整 sheet 的大小](../../apple-docs/zh/uikit/customizing-and-resizing-sheets-in-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/customizing-and-resizing-sheets-in-uikit.md) | 已翻译 |
 | 官方资料 | [在光线追踪场景中渲染曲线图元](../../apple-docs/zh/metal/rendering-a-curve-primitive-in-a-ray-tracing-scene.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/rendering-a-curve-primitive-in-a-ray-tracing-scene.md) | 已翻译 |
 | 官方资料 | [在单个设备内同步事件](../../apple-docs/zh/metal/synchronizing-events-within-a-single-device.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/synchronizing-events-within-a-single-device.md) | 已翻译 |
 | 官方资料 | [在自定义文本视图中采用系统选择 UI](../../apple-docs/zh/uikit/adopting-system-selection-ui-in-custom-text-views.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/adopting-system-selection-ui-in-custom-text-views.md) | 已翻译 |
@@ -141,6 +143,7 @@
 | 官方资料 | [用数据填充表格](../../apple-docs/zh/uikit/filling-a-table-with-data.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/filling-a-table-with-data.md) | 已翻译 |
 | 官方资料 | [用更少的渲染流程渲染反射](../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | 已翻译 |
 | 官方资料 | [自定义渲染通道设置](../../apple-docs/zh/metal/customizing-render-pass-setup.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/customizing-render-pass-setup.md) | 已翻译 |
+| 官方资料 | [自定集合视图布局](../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | 已翻译 |
 | 官方资料 | [获取驱动视图显示的 GPU](../../apple-docs/zh/metal/getting-the-gpu-that-drives-a-views-display.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/getting-the-gpu-that-drives-a-views-display.md) | 已翻译 |
 | 官方资料 | [表格视图](../../apple-docs/zh/uikit/table-views.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/table-views.md) | 已翻译 |
 | 官方资料 | [视图控制器过渡](../../apple-docs/zh/uikit/view-controller-transitions.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/view-controller-transitions.md) | 已翻译 |
@@ -180,7 +183,7 @@
 
 ## 未翻译资料
 
-共 160 份。可能已有中文目录标题，但正文仍为英文。
+共 157 份。可能已有中文目录标题，但正文仍为英文。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -210,10 +213,7 @@
 | 官方资料 | [Creating custom container views](../../apple-docs/en/swiftui/creating-custom-container-views.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/creating-custom-container-views.md) | 待翻译 |
 | 官方资料 | [Creating custom views for Live Activities](../../apple-docs/en/activitykit/creating-custom-views-for-live-activities.md) | Apple 文档 | Apple · ActivityKit | [英文](../../apple-docs/en/activitykit/creating-custom-views-for-live-activities.md) | 待翻译 |
 | 官方资料 | [Creating performant scrollable stacks](../../apple-docs/en/swiftui/creating-performant-scrollable-stacks.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/creating-performant-scrollable-stacks.md) | 待翻译 |
-| 官方资料 | [Creating self-sizing table view cells](../../apple-docs/en/uikit/creating-self-sizing-table-view-cells.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/creating-self-sizing-table-view-cells.md) | 待翻译 |
 | 官方资料 | [Creating views for widgets, Live Activities, and watch complications](../../apple-docs/en/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications.md) | Apple 文档 | Apple · WidgetKit | [英文](../../apple-docs/en/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications.md) | 待翻译 |
-| 官方资料 | [Customizing and resizing sheets in UIKit](../../apple-docs/en/uikit/customizing-and-resizing-sheets-in-uikit.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/customizing-and-resizing-sheets-in-uikit.md) | 待翻译 |
-| 官方资料 | [Customizing collection view layouts](../../apple-docs/en/uikit/customizing-collection-view-layouts.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/customizing-collection-view-layouts.md) | 待翻译 |
 | 官方资料 | [Customizing Writing Tools behavior for UIKit views](../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | 待翻译 |
 | 官方资料 | [Declaring a custom view](../../apple-docs/en/swiftui/declaring-a-custom-view.md) | Apple 文档 | Apple · SwiftUI | [英文](../../apple-docs/en/swiftui/declaring-a-custom-view.md) | 待翻译 |
 | 官方资料 | [Dismissing a view controller with an unwind segue](../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | 待翻译 |
