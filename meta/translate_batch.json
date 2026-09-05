@@ -1,79 +1,19 @@
 {
- "count": 7,
- "chars": 58828,
+ "count": 1,
+ "chars": 9802,
  "groups": {
-  "apple-docs/objectivec": [
-   "apple-docs/en/objectivec/uiaccessibilityaction.md",
-   "apple-docs/en/objectivec/uiaccessibilityfocus.md"
-  ],
-  "apple-docs/uikit": [
-   "apple-docs/en/uikit/optimizing-memory-performance.md",
-   "apple-docs/en/uikit/responding-to-memory-warnings.md"
-  ],
-  "blogs/alwaysprocessing": [
-   "blogs/en/alwaysprocessing/objective-c-internals-retain-objective-c-memory-is-managed-through-a-reference-counting-sc.md",
-   "blogs/en/alwaysprocessing/size-matters-an-exploration-of-virtual-memory-on-ios-an-out-of-memory-crash-while-debuggin.md"
-  ],
-  "blogs/cocoawithlove": [
-   "blogs/en/cocoawithlove/memory-and-thread-safe-custom-property-methods-cocoa-with-love.md"
+  "apple-docs/appkit": [
+   "apple-docs/en/appkit/navigating-hierarchical-data-using-outline-and-split-views.md"
   ]
  },
  "files": [
   {
    "source": "apple-docs",
-   "en": "apple-docs/en/objectivec/uiaccessibilityaction.md",
-   "zh": "apple-docs/zh/objectivec/uiaccessibilityaction.md",
-   "group": "objectivec",
-   "chars": 4099,
-   "priority": 0
-  },
-  {
-   "source": "apple-docs",
-   "en": "apple-docs/en/objectivec/uiaccessibilityfocus.md",
-   "zh": "apple-docs/zh/objectivec/uiaccessibilityfocus.md",
-   "group": "objectivec",
-   "chars": 3400,
-   "priority": 0
-  },
-  {
-   "source": "apple-docs",
-   "en": "apple-docs/en/uikit/optimizing-memory-performance.md",
-   "zh": "apple-docs/zh/uikit/optimizing-memory-performance.md",
-   "group": "uikit",
-   "chars": 3057,
-   "priority": 1
-  },
-  {
-   "source": "apple-docs",
-   "en": "apple-docs/en/uikit/responding-to-memory-warnings.md",
-   "zh": "apple-docs/zh/uikit/responding-to-memory-warnings.md",
-   "group": "uikit",
-   "chars": 2421,
-   "priority": 1
-  },
-  {
-   "source": "blogs",
-   "en": "blogs/en/alwaysprocessing/objective-c-internals-retain-objective-c-memory-is-managed-through-a-reference-counting-sc.md",
-   "zh": "blogs/zh/alwaysprocessing/objective-c-internals-retain-objective-c-memory-is-managed-through-a-reference-counting-sc.md",
-   "group": "alwaysprocessing",
-   "chars": 23833,
-   "priority": 1
-  },
-  {
-   "source": "blogs",
-   "en": "blogs/en/alwaysprocessing/size-matters-an-exploration-of-virtual-memory-on-ios-an-out-of-memory-crash-while-debuggin.md",
-   "zh": "blogs/zh/alwaysprocessing/size-matters-an-exploration-of-virtual-memory-on-ios-an-out-of-memory-crash-while-debuggin.md",
-   "group": "alwaysprocessing",
-   "chars": 12598,
-   "priority": 1
-  },
-  {
-   "source": "blogs",
-   "en": "blogs/en/cocoawithlove/memory-and-thread-safe-custom-property-methods-cocoa-with-love.md",
-   "zh": "blogs/zh/cocoawithlove/memory-and-thread-safe-custom-property-methods-cocoa-with-love.md",
-   "group": "cocoawithlove",
-   "chars": 9420,
-   "priority": 1
+   "en": "apple-docs/en/appkit/navigating-hierarchical-data-using-outline-and-split-views.md",
+   "zh": "apple-docs/zh/appkit/navigating-hierarchical-data-using-outline-and-split-views.md",
+   "group": "appkit",
+   "chars": 9802,
+   "priority": 2
   }
  ]
 }
