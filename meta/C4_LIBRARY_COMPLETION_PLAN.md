@@ -146,3 +146,12 @@ python3 tools/translate_plan.py status
   代码行，补译需先调整校验器 COMMENT 规则；B2 自定/自定义；B3 sheet 保留
   英文 vs TERMS「表单」、transition=转场 vs TERMS「过渡」；B4 item=条目
   （焦点语境）/项目（集合视图语境）；点按=Mac click / 轻点=iOS tap。
+- **M1 批 3（UIKit 字母序续 16 篇，约 103KB）**：2026-09-05 完成。子代理 7 篇
+  （组 C 全部 + 组 B 4 篇，其中组 B 先前未完成的两篇由主会话重写）+ 主会话 9 篇
+  （组 A 4 篇 + 组 D 3 篇 + 补漏 handling-uikit-gestures 整篇）；
+  2 个独立子代理交叉审校，[高]×1（补漏篇）与 [中]×5 修复（控件→控制 ×3、
+  完成处理程序 ×3、Scribble 保留英文 ×5）+ 低级润色。
+  `validate.py --strict-identifiers` 零问题（存量 7 个历史问题文件除外）。
+  **新增备案**：navigation stack=导览栈、preference specifier=偏好设置
+  指定器、indirect controls=间接控制、文本字段 vs 文本栏（TERMS §3.5）——
+  待 TERMS 定案；「参见/请参阅」「代码注释翻译口径」需全库统一。

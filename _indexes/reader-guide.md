@@ -19,9 +19,9 @@
 | [Block 与闭包](topics/blocks-closures.md) | 28 | 1 |
 | [RunLoop 与响应性](topics/runloop-responsiveness.md) | 24 | 3 |
 | [并发与线程](topics/concurrency.md) | 122 | 9 |
-| [性能与调试](topics/performance-debugging.md) | 181 | 26 |
+| [性能与调试](topics/performance-debugging.md) | 182 | 26 |
 | [启动、链接与二进制](topics/launch-linking-binary.md) | 87 | 43 |
-| [UI 与渲染](topics/ui-rendering.md) | 365 | 79 |
+| [UI 与渲染](topics/ui-rendering.md) | 380 | 79 |
 | [网络与安全](topics/network-security.md) | 68 | 8 |
 | [数据与持久化](topics/data-persistence.md) | 63 | 21 |
 | [Swift 语言](topics/swift-language.md) | 283 | 153 |
