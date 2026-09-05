@@ -147,7 +147,7 @@ transitionController!.loadingProgress = doc.loadProgress
 - [UIDocumentViewController](uidocumentviewcontroller.md) — 管理并呈现存储在本地或云端的文稿的视图控制器。
 - [UIDocumentBrowserViewController](uidocumentbrowserviewcontroller.md) — 用于浏览你存储在本地和云端的文稿并对其执行操作的视图控制器。
 - [UIDocumentPickerViewController](uidocumentpickerviewcontroller.md) — 提供对你 App 沙盒之外的文稿或目的地的访问的视图控制器。
-- [UIDocumentInteractionController](uidocumentinteractioncontroller.md) — 预览、打开或打印你的 App 无法直接处理的文件格式的文件的视图控制器。
+- [UIDocumentInteractionController](uidocumentinteractioncontroller.md) — 预览、打开或打印其文件格式无法被你的 App 直接处理的文件的视图控制器。
 
 ## 下载
 

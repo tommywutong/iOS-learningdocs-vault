@@ -23,7 +23,7 @@ translated: true
 
 ## 概述
 
-自定义键盘会为想要新式文本输入法、或想以其他方式不受支持的语言输入文本的用户替换系统键盘。用户在设置中启用你的自定义键盘后，只要支持第三方键盘，他们在系统任何地方都能使用你的键盘。
+自定义键盘会为想要新式文本输入法、或想其他方式无法支持的语言输入文本的用户替换系统键盘。用户在设置中启用你的自定义键盘后，只要支持第三方键盘，他们在系统任何地方都能使用你的键盘。
 
 > [!note] 注意
 > 如果你的键盘只服务于你自己的 App，请使用 [UIInputView](uiinputview.md) 而不是创建自定义键盘。把文本字段或文本视图的 [inputView](uitextfield/inputview.md) 属性设为应该替换系统键盘的视图即可。
@@ -47,7 +47,7 @@ Custom Keyboard Extension 模板为你构建键盘扩展提供了起点。Xcode 
 
 ![Xcode 项目编辑器 Identity 部分的屏幕快照，显示 Display Name 字段。 ](../../../attachments/705644ded1016199b2092257ab518f05/media-3570265@2x.png)
 
-如果你支持多种需要不同键盘布局或功能语言，请重复上述步骤，为每种语言添加额外的自定义键盘 target，并在每个 target 的 `Info.plist` 文件中相应设置 `PrimaryLanguage` 的值。
+如果你支持多种需要不同键盘布局或不同功能的语言，请重复上述步骤，为每种语言添加额外的自定义键盘 target，并在每个 target 的 `Info.plist` 文件中相应设置 `PrimaryLanguage` 的值。
 
 ### 配置信息属性列表选项
 
@@ -82,7 +82,7 @@ Custom Keyboard Extension 模板为你构建键盘扩展提供了起点。Xcode 
 nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
 ```
 
-使用 [UIControlEventAllTouchEvents](uicontrol/event/alltouchevents.md) 可以让系统在用户长按按钮时自动显示键盘列表选择器。
+使用 [UIControlEventAllTouchEvents](uicontrol/event/alltouchevents.md) 可以让系统在用户长按按钮时自动显示键盘列表选择器（keyboard list picker）。
 
 ![](../../../attachments/4ad81e605c6c99663c3452b0278588db/media-3570259@2x.png)
 
@@ -99,10 +99,10 @@ nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:wi
 自定义键盘运行在一个隔离的进程中，无法直接访问文本输入视图。[UIInputViewController](uiinputviewcontroller.md) 提供了 [textDocumentProxy](uiinputviewcontroller/textdocumentproxy.md) 属性，让你的键盘得以访问文本输入视图。你使用这个代理获取选中的文本、插入或删除文本、操纵文本插入位置，并获取周围的文本上下文，以支持自动更正或自动补全之类的功能。
 
 ```swift
-// Insert a string into the text input view.
+// 向文本输入视图插入一个字符串。
 textDocumentProxy.insertText("Hello world.")
 
-// Get the currently selected text
+// 获取当前选中的文本
 let selectedText = textDocumentProxy.selectedText
 ```
 
@@ -110,7 +110,7 @@ let selectedText = textDocumentProxy.selectedText
 
 ### 调试你的自定义键盘
 
-调试自定义键盘与调试任何 App 扩展类似。Xcode 会提示你选择一个要启动的宿主 App，然后你在该宿主 App 中开始编辑文本，以唤起你的自定义键盘。宿主 App 可以是运行目的地上任何可用的 App，包括包含键盘扩展的你自己的 App。
+调试自定义键盘与调试任何 App 扩展类似。Xcode 会提示你选择一个要启动的宿主 App，然后你在该宿主 App 中开始编辑文本，以唤起你的自定义键盘。宿主 App 可以是运行目的地上任何可用的 App，包括含有键盘扩展的你自己的 App。
 
 1. 为你的键盘扩展 target 选择构建 scheme 和运行目的地（模拟器或设备）。
 2. 选择 Product \> Run 开始调试会话。

@@ -27,8 +27,8 @@ translated: true
 
 用 Mac Catalyst 构建的 Mac App 可以运行在 [UIUserInterfaceIdiomPad](uiuserinterfaceidiom/pad.md) 或 [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md) 两种用户界面惯用形式下。要在你的 Xcode 项目中开启 Mac Catalyst 之后选择 App 的运行惯用形式，从以下选项中选择：
 
-- **Scale Interface to Match iPad** — 让你的 App 以 [UIUserInterfaceIdiomPad](uiuserinterfaceidiom/pad.md) 惯用形式运行。想快速把你的 iPad App 带到 Mac 上，就选这个。
-- **Optimize Interface for Mac** — 让你的 App 以 [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md) 惯用形式运行。想让控制的外观和行为与 AppKit 中的一样，就选这个。
+- **Scale Interface to Match iPad** — 让你的 App 以 [UIUserInterfaceIdiomPad](uiuserinterfaceidiom/pad.md) 惯用形式运行。选择此选项以快速把你的 iPad App 带到 Mac 上。
+- **Optimize Interface for Mac** — 让你的 App 以 [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md) 惯用形式运行。想让所显示的控制与 AppKit 中可用的控制外观和行为一致，就选此项。
 
 > [!note] 注意
 > 要了解在 Xcode 项目中开启 Mac Catalyst 的更多信息，参见[创建你的 iPad App 的 Mac 版本](creating-a-mac-version-of-your-ipad-app.md)。
@@ -76,7 +76,7 @@ childViewController.didMove(toParent: self)
 
 ### 设置首选行为风格
 
-采用 Mac 惯用形式后，[UIButton](uibutton.md) 和 [UISlider](uislider.md) 等一些控制的外观与它们的 AppKit 对应物完全一致。不过，有些情况下你可能既想利用 App 中的 Mac 惯用形式，又想保留某个控制的 iPad 外观和行为。举例来说，设想一个 iPad App 显示一个带自定义滑块图标（thumb image）的滑块。默认情况下，用 Mac Catalyst 构建的 App 的 Mac 版本，在用户界面惯用形式为 [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md) 时会显示一个标准的 macOS 滑块。
+采用 Mac 惯用形式后，[UIButton](uibutton.md) 和 [UISlider](uislider.md) 等一些控制的外观与它们的 AppKit 对应物完全一致。不过，有些情况下你可能既想利用 App 中的 Mac 惯用形式，又想保留某个控制的 iPad 外观和行为。举例来说，设想一个 iPad App 显示一个带自定义滑块拖块图像（thumb image）的滑块。默认情况下，用 Mac Catalyst 构建的 App 的 Mac 版本，在用户界面惯用形式为 [UIUserInterfaceIdiomMac](uiuserinterfaceidiom/mac.md) 时会显示一个标准的 macOS 滑块。
 
 要让滑块在 App 的 iPad 版本和 Mac 版本中外观一致，把滑块的 [preferredBehavioralStyle](uislider/preferredbehavioralstyle.md) 设为 [UIBehavioralStylePad](uibehavioralstyle/pad.md)。这个行为风格告诉滑块：即便 App 正在使用 Mac 惯用形式，也要表现得像用户界面惯用形式是 [UIUserInterfaceIdiomPad](uiuserinterfaceidiom/pad.md) 一样。
 
@@ -96,7 +96,7 @@ if slider.traitCollection.userInterfaceIdiom == .mac {
 }
 ```
 
-当行为风格为 [UIBehavioralStyleMac](uibehavioralstyle/mac.md) 时，[UIButton](uibutton.md) 和 [UISlider](uislider.md) 的某些属性和方法在 Mac 惯用形式下不受支持，调用它们会抛出异常；例如，为按钮设置 [UIControlStateNormal](uicontrol/state-swift.struct/normal.md) 之外任何控制状态的标题或图片，以及设置滑块的滑块图标、最小或最大轨道图片、着色颜色或值图片。而当控制的行为风格为 [UIBehavioralStylePad](uibehavioralstyle/pad.md) 时，这些属性和方法在 Mac 惯用形式下都可正常使用。
+当行为风格为 [UIBehavioralStyleMac](uibehavioralstyle/mac.md) 时，[UIButton](uibutton.md) 和 [UISlider](uislider.md) 的某些属性和方法在 Mac 惯用形式下不受支持，调用它们会抛出异常；例如，为按钮设置 [UIControlStateNormal](uicontrol/state-swift.struct/normal.md) 之外任何控制状态的标题或图片，以及设置滑块的滑块拖块图像、最小或最大轨道图片、着色颜色或值图片。而当控制的行为风格为 [UIBehavioralStylePad](uibehavioralstyle/pad.md) 时，这些属性和方法在 Mac 惯用形式下都可正常使用。
 
 ### 提供不同的代码路径
 

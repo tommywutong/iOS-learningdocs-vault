@@ -51,4 +51,4 @@ class ViewController: UIViewController {
 }
 ```
 
-关于如何让你的 App 在有和无 3D Touch 支持两种情况下都能良好工作，参见 [iOS Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/)。
+关于如何在有和无 3D Touch 支持两种情况下实现你的 App，参见 [iOS Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/)。

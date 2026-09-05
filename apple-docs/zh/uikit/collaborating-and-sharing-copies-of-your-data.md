@@ -21,25 +21,25 @@ translated: true
 
 <sub>文章</sub>
 
-从你的 App 出发共享数据并与他人协作。
+在你的 App 中共享数据并与其他人协作。
 
 ## 概述
 
 你可以使用 [UIActivityViewController](uiactivityviewcontroller.md) 对象从 App 中共享数据。打包数据和实例化活动视图控制器有许多种方式。其中一种是为你想共享的数据创建一个或多个 [NSItemProvider](../foundation/nsitemprovider.md) 对象。用这些条目提供程序（item provider）创建一个 [UIActivityItemsConfiguration](uiactivityitemsconfiguration.md)，再用该配置创建你的活动视图控制器，然后呈现这个视图控制器。
 
 ```swift
-// Create an item provider for your data.
+// 为你的数据创建一个条目提供程序。
 let itemProvider = NSItemProvider(item: noteText.text as NSString,
                                   typeIdentifier: "public.utf8-plain-text")
 
-// Create an activity item configuration from the item provider.
+// 用条目提供程序创建活动条目配置。
 let configuration =
 UIActivityItemsConfiguration(itemProviders: [itemProvider])
 
-// Create the activity view controller from the configuration.
+// 用该配置创建活动视图控制器。
 let shareSheet = UIActivityViewController(activityItemsConfiguration: configuration)
 
-// Present the share sheet.
+// 呈现共享面板。
 present(shareSheet, animated: true) {}
 ```
 
@@ -60,10 +60,10 @@ present(shareSheet, animated: true) {}
 例如，要为 iCloud 文稿启用协作，你需要一个指向你的 App 的 iCloud 容器中文件的 URL。创建一个 [NSItemProvider](../foundation/nsitemprovider.md) 对象，调用它的 [registerFileRepresentation(for:visibility:openInPlace:loadHandler:)](<../foundation/nsitemprovider/registerfilerepresentation(for_visibility_openinplace_loadhandler_).md>) 方法，把 URL 作为 `for:` 参数传入，并把 [true](../swift/true.md) 作为 `openInPlace:` 参数传入。
 
 ```swift
-// Create an empty item provider.
+// 创建一个空的条目提供程序。
 let itemProvider = NSItemProvider()
 
-// Add the URL to a file saved in the iCloud document container.
+// 把保存在 iCloud 文稿容器中的文件的 URL 添加进来。
 itemProvider
     .registerFileRepresentation(for: .utf8PlainText,
                                 openInPlace: true) { completion in
@@ -83,19 +83,19 @@ itemProvider
 要启用协作，需在协作开始时创建一个 [CKShare](../cloudkit/ckshare.md)。你还需要你的 [CKContainer](../cloudkit/ckcontainer.md)，以及定义你授予协作者权限的 [CKAllowedSharingOptions](../cloudkit/ckallowedsharingoptions.md)。
 
 ```swift
-// Create an item provider.
+// 创建一个条目提供程序。
 let itemProvider = NSItemProvider()
 
-// Create and save a new share.
+// 创建并保存一个新的共享。
 itemProvider.registerCKShare(container: container,
                              allowedSharingOptions: CKAllowedSharingOptions.standard) {
     
-    // Create your share.
+    // 创建你的共享。
     let newShare = CKShare(rootRecord: recordToShare)
     
-    // Configure the share, save it, and handle any errors here.
+    // 在这里配置共享、保存它并处理任何错误。
     
-    // Return the newly saved share.
+    // 返回新保存的共享。
     return newShare
     
 }
@@ -104,10 +104,10 @@ itemProvider.registerCKShare(container: container,
 要邀请新的协作者加入已有共享，创建条目提供程序并注册该共享。
 
 ```swift
-// Create an item provider.
+// 创建一个条目提供程序。
 let itemProvider = NSItemProvider()
 
-// Register an existing share.
+// 注册一个已有的共享。
 itemProvider
     .registerCKShare(
         savedShare,
@@ -116,21 +116,21 @@ itemProvider
     )
 ```
 
-关于 CloudKit 中协作的更多信息，参见 [Sharing CloudKit Data with Other iCloud Users](../cloudkit/sharing-cloudkit-data-with-other-icloud-users.md)。
+关于 CloudKit 中协作的更多信息，参见 [与其他 iCloud 用户共享 CloudKit 数据](../cloudkit/sharing-cloudkit-data-with-other-icloud-users.md)。
 
 ### 限制共享模式
 
-默认情况下，如果你的条目提供程序同时支持拷贝与协作，共享面板会显示一个弹出菜单，让用户选择共享模式。在 iOS 18 及更高版本中，你可以把共享限制为两者之一。
+默认情况下，如果你的条目提供程序同时支持拷贝与协作，共享面板会显示一个弹出菜单，让用户选择共享模式。在 iOS 18 及更高版本中，你可以把共享限制为两种模式之一。
 
 要限制共享模式，创建一个 [CollaborationModeRestriction](uiactivityviewcontroller/collaborationmoderestriction.md) 并赋给你的配置的元数据。可以通过配置的 [perItemMetadataProvider](uiactivityitemsconfiguration/peritemmetadataprovider.md) 属性访问该元数据。
 
 ```swift
-// Iterate through the metadata keys.
+// 遍历元数据键。
 configuration.perItemMetadataProvider = { _, key in
     switch key {
     case .collaborationModeRestrictions:
-        // If it's the collaboration mode restriction key, return an array
-        // containing a collaboration mode restriction object.
+        // 如果是协作模式限制键，就返回一个
+        // 包含协作模式限制对象的数组。
         let modeRestriction = UIActivityViewController.CollaborationModeRestriction(
             disabledMode: .collaborate
         )
@@ -148,12 +148,12 @@ configuration.perItemMetadataProvider = { _, key in
 另一种做法是同时显示两种共享选项，但在有人选择受限模式时显示警告框。警告框还可以包含恢复建议，帮助用户启用受限模式。
 
 ```swift
-// Iterate through the metadata keys.
+// 遍历元数据键。
 configuration.perItemMetadataProvider = { _, key in
     switch key {
     case .collaborationModeRestrictions:
-        // Set the title and text for the alert. Optionally, you can set the title and provide
-        // a launch URL for the recovery action.
+        // 设置警告框的标题和文本。可选地，你还可以设置标题并提供
+        // 一个用于恢复操作的启动 URL。
         let modeRestriction = UIActivityViewController.CollaborationModeRestriction(
             disabledMode: .collaborate,
             alertTitle: "File Locked",
@@ -176,7 +176,7 @@ configuration.perItemMetadataProvider = { _, key in
 在 iOS 18 及更高版本中，你还可以为共享的数据指定接收者。为每个接收者创建一个 [INPerson](../intents/inperson.md) 实例，并把它们加到你的活动配置的元数据中。
 
 ```swift
-// Gather data about the recipient.
+// 收集接收者的相关信息。
 var name = PersonNameComponents()
 name.givenName = myBFF.givenName
 name.familyName = myBFF.familyName
@@ -185,7 +185,7 @@ let displayName = myBFF.givenName
 let email = myBFF.email
 let image = INImage(imageData: myBFF.image)
 
-// Create an `INPerson` instance for the recipient.
+// 为接收者创建一个 `INPerson` 实例。
 let recipient = INPerson(
     personHandle: .init(value: email, type: .emailAddress),
     nameComponents: name,
@@ -194,10 +194,10 @@ let recipient = INPerson(
     contactIdentifier: nil,
     customIdentifier: nil)
 
-// Iterate through the metadata keys.
+// 遍历元数据键。
 configuration.perItemMetadataProvider = { _, key in
     switch key {
-        // Set the share recipients to an array of `INPerson` instances.
+        // 把共享接收者设为一个 `INPerson` 实例数组。
     case .shareRecipients:
         return [recipient]
     default:
@@ -215,7 +215,7 @@ configuration.perItemMetadataProvider = { _, key in
 你还可以把活动视图控制器的 [excludedActivitySectionTypes](uiactivityviewcontroller/excludedactivitysectiontypes.md) 属性设为 [UIActivitySectionTypesPeopleSuggestions](uiactivitysectiontypes/peoplesuggestions.md)，从而在共享面板中隐藏其他建议的接收者。
 
 ```swift
-// Hide the suggested recipients.
+// 隐藏建议的接收者。
 shareSheet.excludedActivitySectionTypes = .peopleSuggestions
 ```
 
@@ -224,7 +224,7 @@ shareSheet.excludedActivitySectionTypes = .peopleSuggestions
 ### 活动界面
 
 - [UIActivityViewController](uiactivityviewcontroller.md) — 用于从你的 App 提供标准服务的视图控制器。
-- [UIActivityItemProvider](uiactivityitemprovider.md) — 传递给活动视图控制器的数据的代理。
+- [UIActivityItemProvider](uiactivityitemprovider.md) — 传递给活动视图控制器的数据的代理（proxy）。
 - [UIActivityItemSource](uiactivityitemsource.md) — 活动视图控制器用来获取待处理数据条目的一组方法。
 - [UIActivity](uiactivity.md) — 一个抽象类，通过子类化它来实现 App 专属的服务。
 - [UIActivityItemsConfigurationProviding](uiactivityitemsconfigurationproviding.md) — 为可共享内容提供来源的接口，用于满足用户共享当前内容的请求。

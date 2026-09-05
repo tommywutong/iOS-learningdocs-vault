@@ -17,7 +17,7 @@ translated: true
 
 > 导航：[技术](../technologies.md) · [UIKit](../uikit.md) · [视图与控制](views-and-controls.md) · [集合视图](collection-views.md)
 
-# 更改所选和高亮显示单元格的外观
+# 更改选中和高亮单元格的外观
 
 <sub>示例代码</sub>
 
