@@ -25,7 +25,7 @@ translated: true
 
 ## 概述
 
-为 Mac 配置你的 iPad App 可以简单到只需在 Xcode 中给 target 支持的目的地列表添加一个条目。根据你的 App 使用的特性和框架，配置过程可能需要额外的几步，比如手动排除其他框架或内容。
+为 Mac 配置你的 iPad App 最简单的情况下，只需在 Xcode 中给 target 支持的目的地列表添加一个条目。根据你的 App 使用的功能和框架，配置过程可能需要额外的几步，比如手动排除其他框架或内容。
 
 > [!note] 注意
 > 关于如何设计你的 iPad App 的 Mac 版本，参见 [Human Interface Guidelines \> Mac Catalyst](https://developer.apple.com/design/human-interface-guidelines/technologies/mac-catalyst/introduction)。

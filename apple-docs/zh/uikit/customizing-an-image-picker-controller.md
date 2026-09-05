@@ -21,11 +21,11 @@ translated: true
 
 <sub>示例代码</sub>
 
-通过为图像选择器添加覆盖视图（overlay view），在拍照时管理用户交互并呈现自定义信息。
+通过为图像选择器（image picker）添加覆盖视图（overlay view），在拍照时管理用户交互并呈现自定义信息。
 
 ## 概述
 
-本示例在默认图像选择器界面之上应用一个覆盖视图，以显示自定义视图层次。
+本示例在默认图像选择器界面之上应用一个覆盖视图，以显示自定义的视图层级结构。
 
 示例 App 使用覆盖视图来：
 
@@ -35,7 +35,7 @@ translated: true
 
 ### 配置示例代码项目
 
-由于模拟器中没有相机，你需要在装有 iOS 10 或更高版本的设备上构建并运行本示例。
+由于 Simulator 中没有相机，你需要在装有 iOS 10 或更高版本的设备上构建并运行本示例。
 
 首次在设备上启动示例 App 时，你需要授予该 App 使用相机的权限。
 
@@ -45,8 +45,8 @@ translated: true
 
 ```swift
 /*
-Apply the overlay view. This view contains a toolbar with custom
-controls for capturing still images in various ways.
+应用覆盖视图。这个视图包含一个工具栏，带有
+以各种方式拍摄静态图像的自定义控制。
 */
 overlayView?.frame = (imagePickerController.cameraOverlayView?.frame)!
 imagePickerController.cameraOverlayView = overlayView
@@ -66,15 +66,15 @@ imagePickerController.cameraOverlayView = overlayView
 ```swift
 if sourceType == UIImagePickerController.SourceType.camera {
 	/*
- The user tapped the camera button in the app's interface which
- specifies the device’s built-in camera as the source for the image
- picker controller.
+ 用户在 App 界面中轻点了相机按钮，该按钮指定
+ 设备的内建相机作为图像选择器
+ 控制器的来源。
 	*/
 
 	/*
- Hide the default controls.
- This sample provides its own custom controls for still image
- capture in an overlay view.
+ 隐藏默认控制。
+ 本示例在覆盖视图中提供了自己用于拍摄
+ 静态图像的自定义控制。
 	*/
 	imagePickerController.showsCameraControls = false
 
@@ -104,9 +104,9 @@ imagePickerController.takePicture()
 ```swift
 @IBAction func delayedTakePhoto(_ sender: UIBarButtonItem) {
 	/*
- Disable the photo controls during the delay time period.
- The code in the timer completion block below captures a still image
- when the delay period expires and re-enables the controls.
+ 在延迟期间禁用拍照控制。
+ 下方计时器完成块中的代码会在延迟期结束时
+ 拍摄一张静态图像，并重新启用这些控制。
 	*/
 	doneButton?.isEnabled = false
 	takePictureButton?.isEnabled = false
@@ -115,10 +115,10 @@ imagePickerController.takePicture()
 	
 	let fireDate = Date(timeIntervalSinceNow: 5)
 	cameraTimer = Timer(fire: fireDate, interval: 1.0, repeats: false, block: { timer in
-		// The time interval expired. Capture a still image.
+		// 时间间隔已到。拍摄一张静态图像。
 		self.imagePickerController.takePicture()
 
-		// Enable the delayed photos controls.
+		// 启用延时拍照控制。
 		self.doneButton?.isEnabled = true
 		self.takePictureButton?.isEnabled = true
 		self.delayedPhotoButton?.isEnabled = true
@@ -136,7 +136,7 @@ imagePickerController.takePicture()
 
 ```swift
 @IBAction func startTakingPicturesAtIntervals(_ sender: UIBarButtonItem) {
-	// Start the timer to take a photo every 5 seconds.
+	// 启动计时器，每 5 秒拍一张照片。
 
 	startStopButton?.title = NSLocalizedString("Stop", comment: "Title for overlay view controller start/stop button")
 	startStopButton?.action = #selector(stopTakingPicturesAtIntervals)
@@ -157,17 +157,17 @@ imagePickerController.takePicture()
 
 ```swift
 @IBAction func stopTakingPicturesAtIntervals(_ sender: UIBarButtonItem) {
-	// Stop and reset the timer.
+	// 停止并重置计时器。
 	cameraTimer.invalidate()
 
 	finishAndUpdate()
 	
-	// Make these buttons available again.
+	// 让这些按钮重新可用。
 	self.doneButton?.isEnabled = true
 	self.takePictureButton?.isEnabled = true
 	self.delayedPhotoButton?.isEnabled = true
 	
-	// Reset the button to start taking pictures again.
+	// 重置按钮，以便再次开始拍照。
 	startStopButton?.title = NSLocalizedString("Start", comment: "Title for overlay view controller start/stop button")
 	startStopButton?.action = #selector(startTakingPicturesAtIntervals)
 }

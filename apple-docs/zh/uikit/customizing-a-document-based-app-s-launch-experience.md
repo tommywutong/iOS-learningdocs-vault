@@ -82,22 +82,22 @@ func mySetupTextView() {
 要添加你自己的 intent，先扩展 [CreationIntent](uidocument/creationintent.md) 并为你的 intent 添加值。
 
 ```swift
-// Extend the creation intent enumeration to add custom options for document creation.
+// 扩展创建 intent 枚举，为文稿创建添加自定义选项。
 extension UIDocument.CreationIntent {
     static let template = UIDocument.CreationIntent("template")
 }
 ```
 
-然后调用 [UIDocument](uidocument.md) 类的 [+ createDocumentActionWithIntent:](<uidocumentviewcontroller/launchoptions-swift.class/createdocumentaction(withintent_).md>) 方法来创建该操作。设置 intent 的标题，并把它赋给你的 [LaunchOptions](uidocumentviewcontroller/launchoptions-swift.class.md) 实例的 [primaryAction](uidocumentviewcontroller/launchoptions-swift.class/primaryaction.md) 或 [secondaryAction](uidocumentviewcontroller/launchoptions-swift.class/secondaryaction.md) 属性。默认情况下，系统会自动把文稿视图控制器的 [primaryAction](uidocumentviewcontroller/launchoptions-swift.class/primaryaction.md) 设为默认的创建文稿操作。
+然后调用 [UIDocument](uidocument.md) 类的 [+ createDocumentActionWithIntent:](<uidocumentviewcontroller/launchoptions-swift.class/createdocumentaction(withintent_).md>) 方法来创建该 intent。设置 intent 的标题，并把它赋给你的 [LaunchOptions](uidocumentviewcontroller/launchoptions-swift.class.md) 实例的 [primaryAction](uidocumentviewcontroller/launchoptions-swift.class/primaryaction.md) 或 [secondaryAction](uidocumentviewcontroller/launchoptions-swift.class/secondaryaction.md) 属性。默认情况下，系统会自动把文稿视图控制器的 [primaryAction](uidocumentviewcontroller/launchoptions-swift.class/primaryaction.md) 设为默认的创建文稿操作。
 
 ```swift
-// Provide an action for the secondary action.
+// 为次要操作提供一个操作。
 let templateAction = LaunchOptions.createDocumentAction(withIntent: .template)
 
-// Set the intent's title.
+// 设置 intent 的标题。
 templateAction.title = "Choose a Template"
 
-// Add the intent to an action.
+// 把该 intent 加入一个操作。
 launchOptions.secondaryAction = templateAction
 ```
 
@@ -109,19 +109,19 @@ override func documentBrowser(_ controller: UIDocumentBrowserViewController, did
     switch controller.activeDocumentCreationIntent {
     case .template:
         
-        // Let someone select a template, and return
-        // a URL to that template.
+        // 让用户选择一个模板，并返回
+        // 指向该模板的 URL。
         let templateURL = myPresentTemplateSelection()
         
-        // Pass the URL to the import handler.
+        // 把 URL 传给导入处理程序。
         importHandler(templateURL, .copy)
         
     default:
         
-        // Create the default document.
+        // 创建默认文稿。
         let newDocumentURL = myCreateEmptyDocument()
         
-        // Pass the URL to the import handler.
+        // 把 URL 传给导入处理程序。
         importHandler(newDocumentURL, .move )
     }
 }
@@ -143,14 +143,14 @@ override func documentBrowser(_ controller: UIDocumentBrowserViewController, did
 override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Assign the view controller as the browser delegate.
+    // 把该视图控制器指定为浏览器委托。
     launchOptions.browserViewController.delegate = self
     
-    // Customize launch options.
+    // 自定义启动选项。
     launchOptions.title = "My Text Editor"
     launchOptions.background.backgroundColor = .darkGray
     
-    // Provide an action for the secondary action.
+    // 为次要操作提供一个操作。
     let templateAction = LaunchOptions.createDocumentAction(withIntent: .template)
     templateAction.title = "Choose a Template"
     launchOptions.secondaryAction = templateAction
@@ -168,7 +168,7 @@ override func viewDidLoad() {
 ### 文稿与目录
 
 - [向你的 App 添加文稿浏览器](adding-a-document-browser-to-your-app.md) — 让用户在你的 App 内访问他们的本地或远程文稿。
-- [提供对目录的访问](providing-access-to-directories.md) — 使用文稿选择器访问你的 App 容器之外的目录内容。
+- [提供对目录的访问](providing-access-to-directories.md) — 使用文稿选择器（document picker）访问你的 App 容器之外的目录内容。
 - [使用文稿浏览器构建 App](building-an-app-with-a-document-browser.md) — 通过为你的 App 添加文稿浏览器，提供对设备端和云端文稿的访问。
 - [为自定义文件格式构建文稿浏览器 App](building-a-document-browser-app-for-custom-file-formats.md) — 实现自定义文稿文件格式，管理用户与不同云存储提供商上文件的交互。
 - [UIDocumentViewController](uidocumentviewcontroller.md) — 管理并呈现存储在本地或云端的文稿的视图控制器。

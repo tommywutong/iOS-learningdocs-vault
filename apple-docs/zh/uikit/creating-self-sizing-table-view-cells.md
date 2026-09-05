@@ -54,13 +54,13 @@ bodyLabel.adjustsFontForContentSizeCategory = true
 
 在把每个标签的 [adjustsFontForContentSizeCategory](uicontentsizecategoryadjusting/adjustsfontforcontentsizecategory.md) 属性设为 `true` 之前，动态类型的效果是看不见的。这个属性告诉标签：当用户更改其首选文本大小时，自动为其字体调整文本大小。更多信息参见[自动缩放字体](scaling-fonts-automatically.md)。
 
-### 使用自动布局约束调整单元格大小与间距
+### 使用 Auto Layout 约束调整单元格大小与间距
 
 到这里，两个标签已经能自动调整其文本的大小了。但单元格本身还无法调整大小。要用 Auto Layout 约束来调整单元格的 [contentView](uitableviewcell/contentview.md) 及其包含的标签的大小和间距。
 
 ### 设置每个标签的水平位置
 
-两个标签的宽度都应延伸填满单元格内容视图的宽度，并且标题标签应出现在正文标签上方。要做到这一点，需要为每个标签添加 Auto Layout 约束，先从定义标签宽度的约束开始。对标题标签，添加的约束告诉它填满内容视图前缘与后缘边距之间的空间。对正文标签，添加的约束把它的前缘和后缘锚点设为与标题标签的前缘、后缘锚点相等。
+两个标签的宽度都应延伸填满单元格内容视图的宽度，并且标题标签应出现在正文标签上方。要做到这一点，需要为每个标签添加 Auto Layout 约束，先从定义标签宽度的约束开始。对标题标签，添加的约束告诉它填满内容视图前缘与后缘外边距之间的空间。对正文标签，添加的约束把它的前缘和后缘锚点设为与标题标签的前缘、后缘锚点相等。
 
 ```swift
 headlineLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
@@ -98,11 +98,11 @@ bodyLabel.firstBaselineAnchor.constraint(equalToSystemSpacingBelow: headlineLabe
 
 ![](../../../attachments/3041a7145e07686996d9f89aae8311f7/compare-sizes.png)
 
-<sub>左边是示例 App 在最小文本尺寸下的屏幕快照；中间是默认文本尺寸下的屏幕快照；右边是最大文本尺寸下的屏幕快照。</sub>
+<sub>左边是示例 App 在最小文本大小下的屏幕快照；中间是默认文本大小下的屏幕快照；右边是最大文本大小下的屏幕快照。</sub>
 
 ### 用 Accessibility Inspector 测试
 
-要测试示例 App 对不同文本大小的反应，请在模拟器中运行 App，并使用 Accessibility Inspector 更改文本大小。有了检查器，你无需在 App 与设置 App 之间来回切换，就能用不同文本大小测试 App 的界面。
+要测试示例 App 对不同文本大小的反应，请在 Simulator 中运行 App，并使用 Accessibility Inspector 更改文本大小。有了检查器，你无需在 App 与设置 App 之间来回切换，就能用不同文本大小测试 App 的界面。
 
 使用 Accessibility Inspector 的步骤如下：
 
