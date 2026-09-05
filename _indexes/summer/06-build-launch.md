@@ -47,7 +47,7 @@
 
 ## 中文资料
 
-共 69 份。包含译文和原生中文文章。
+共 70 份。包含译文和原生中文文章。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -76,6 +76,7 @@
 | 官方资料 | [指定你的 App 的启动画面](../../apple-docs/zh/xcode/specifying-your-apps-launch-screen.md) | Apple 文档 | Apple · xcode | [中文](../../apple-docs/zh/xcode/specifying-your-apps-launch-screen.md) | 已翻译 |
 | 官方资料 | [编译与链接 Metal 动态库](../../apple-docs/zh/metal/compiling-and-linking-metal-dynamic-libraries.md) | Apple 文档 | Apple · Metal | [中文](../../apple-docs/zh/metal/compiling-and-linking-metal-dynamic-libraries.md) | 已翻译 |
 | 官方资料 | [缩短你的 App 的启动时间](../../apple-docs/zh/xcode/reducing-your-app-s-launch-time.md) | Apple 文档 | Apple · xcode | [中文](../../apple-docs/zh/xcode/reducing-your-app-s-launch-time.md) | 已翻译 |
+| 官方资料 | [自定义基于文稿的 App 的启动体验](../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | Apple 文档 | Apple · UIKit | [中文](../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | 已翻译 |
 | 官方资料 | [识别二进制依赖项](../../apple-docs/zh/xcode/identifying-binary-dependencies.md) | Apple 文档 | Apple · xcode | [中文](../../apple-docs/zh/xcode/identifying-binary-dependencies.md) | 已翻译 |
 | 官方资料 | [Swift 中的二进制框架](../../wwdc/zh/wwdc2019/416-binary-frameworks-in-swift.md) | WWDC | Apple · WWDC2019 | [中文](../../wwdc/zh/wwdc2019/416-binary-frameworks-in-swift.md) | 已翻译 |
 | 官方资料 | [优化 App 启动](../../wwdc/zh/wwdc2019/423-optimizing-app-launch.md) | WWDC | Apple · WWDC2019 | [中文](../../wwdc/zh/wwdc2019/423-optimizing-app-launch.md) | 已翻译 |
@@ -123,7 +124,7 @@
 
 ## 未翻译资料
 
-共 62 份。可能已有中文目录标题，但正文仍为英文。
+共 61 份。可能已有中文目录标题，但正文仍为英文。
 
 | 优先级 | 文章 | 类型 | 来源 | 阅读 | 状态 |
 |---|---|---|---|---|---|
@@ -147,7 +148,6 @@
 | 官方资料 | [Compiling binary archives from a custom configuration script](../../apple-docs/en/metal/compiling-binary-archives-from-a-custom-configuration-script.md) | Apple 文档 | Apple · Metal | [英文](../../apple-docs/en/metal/compiling-binary-archives-from-a-custom-configuration-script.md) | 待翻译 |
 | 官方资料 | [Constraining a tool’s launch environment](../../apple-docs/en/security/constraining-a-tool%27s-launch-environment.md) | Apple 文档 | Apple · Security | [英文](../../apple-docs/en/security/constraining-a-tool%27s-launch-environment.md) | 待翻译 |
 | 官方资料 | [Creating binary archives from device-built pipeline state objects](../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | Apple 文档 | Apple · Metal | [英文](../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | 待翻译 |
-| 官方资料 | [Customizing a document-based app’s launch experience](../../apple-docs/en/uikit/customizing-a-document-based-app-s-launch-experience.md) | Apple 文档 | Apple · UIKit | [英文](../../apple-docs/en/uikit/customizing-a-document-based-app-s-launch-experience.md) | 待翻译 |
 | 官方资料 | [Launch options dictionary keys](../../apple-docs/en/mapkit/launch-options-dictionary-keys.md) | Apple 文档 | Apple · MapKit | [英文](../../apple-docs/en/mapkit/launch-options-dictionary-keys.md) | 待翻译 |
 | 官方资料 | [Launching your app from a Live Activity](../../apple-docs/en/activitykit/launching-your-app-from-a-live-activity.md) | Apple 文档 | Apple · ActivityKit | [英文](../../apple-docs/en/activitykit/launching-your-app-from-a-live-activity.md) | 待翻译 |
 | 官方资料 | [Linking Data Between Two Core Data Stores](../../apple-docs/en/coredata/linking-data-between-two-core-data-stores.md) | Apple 文档 | Apple · Core Data | [英文](../../apple-docs/en/coredata/linking-data-between-two-core-data-stores.md) | 待翻译 |
