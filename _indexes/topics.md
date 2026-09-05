@@ -13,9 +13,9 @@
 | [Block 与闭包](topics/blocks-closures.md) | 28 | 1 | 30 |
 | [RunLoop 与响应性](topics/runloop-responsiveness.md) | 24 | 3 | 31 |
 | [并发与线程](topics/concurrency.md) | 122 | 9 | 187 |
-| [性能与调试](topics/performance-debugging.md) | 181 | 26 | 251 |
+| [性能与调试](topics/performance-debugging.md) | 182 | 26 | 251 |
 | [启动、链接与二进制](topics/launch-linking-binary.md) | 87 | 43 | 178 |
-| [UI 与渲染](topics/ui-rendering.md) | 365 | 79 | 958 |
+| [UI 与渲染](topics/ui-rendering.md) | 380 | 79 | 958 |
 | [网络与安全](topics/network-security.md) | 68 | 8 | 280 |
 | [数据与持久化](topics/data-persistence.md) | 63 | 21 | 153 |
 

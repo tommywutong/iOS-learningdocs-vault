@@ -8,7 +8,7 @@
 | 子主题 | 可中文阅读 | 全部资料 |
 |---|---:|---:|
 | [Instruments 与性能分析](performance-debugging/01.md) | 84 | 97 |
-| [LLDB 与调试](performance-debugging/02.md) | 42 | 55 |
+| [LLDB 与调试](performance-debugging/02.md) | 43 | 55 |
 | [崩溃与符号化](performance-debugging/03.md) | 23 | 25 |
 | [Sanitizer 与诊断](performance-debugging/04.md) | 11 | 13 |
 | [延伸阅读](performance-debugging/05.md) | 21 | 61 |

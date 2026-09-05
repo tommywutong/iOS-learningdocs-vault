@@ -20,11 +20,13 @@
 | [UIKit 枚举](../../../apple-docs/zh/uikit/uikit-enumerations.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uikit-enumerations.md) | 已翻译 |
 | [UIKit 的辅助功能](../../../apple-docs/zh/uikit/accessibility-for-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/accessibility-for-uikit.md) | 已翻译 |
 | [UIKit 视图生命周期——viewIsAppearing](../../../blogs/snapshots-zh/useyourloaf.com/uikit-view-lifecycle-viewisappearing.md) | 网页快照 | 学习计划网页快照 | [中文](../../../blogs/snapshots-zh/useyourloaf.com/uikit-view-lifecycle-viewisappearing.md) | 已翻译 |
+| [为 UIKit 视图自定义写作工具行为](../../../apple-docs/zh/uikit/customizing-writing-tools-behavior-for-system-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-writing-tools-behavior-for-system-views.md) | 已翻译 |
 | [为自定义 UIKit 视图添加 Writing Tools 支持](../../../apple-docs/zh/uikit/adding-writing-tools-support-to-a-custom-uiview.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adding-writing-tools-support-to-a-custom-uiview.md) | 已翻译 |
 | [优先选用某个手势而非另一个](../../../apple-docs/zh/uikit/preferring-one-gesture-over-another.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/preferring-one-gesture-over-another.md) | 已翻译 |
 | [使用双指平移手势选择多个项目](../../../apple-docs/zh/uikit/selecting-multiple-items-with-a-two-finger-pan-gesture.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/selecting-multiple-items-with-a-two-finger-pan-gesture.md) | 已翻译 |
 | [使用合并触摸获取高保真输入](../../../apple-docs/zh/uikit/getting-high-fidelity-input-with-coalesced-touches.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/getting-high-fidelity-input-with-coalesced-touches.md) | 已翻译 |
 | [使用响应者和响应者链处理事件](../../../apple-docs/zh/uikit/using-responders-and-the-responder-chain-to-handle-events.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/using-responders-and-the-responder-chain-to-handle-events.md) | 已翻译 |
+| [使用展开 segue 关闭视图控制器](../../../apple-docs/zh/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | 已翻译 |
 | [使用视图控制器显示和管理视图](../../../apple-docs/zh/uikit/displaying-and-managing-views-with-a-view-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/displaying-and-managing-views-with-a-view-controller.md) | 已翻译 |
 | [使用预测触控减少延迟](../../../apple-docs/zh/uikit/minimizing-latency-with-predicted-touches.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/minimizing-latency-with-predicted-touches.md) | 已翻译 |
 | [允许同时识别多个手势](../../../apple-docs/zh/uikit/allowing-the-simultaneous-recognition-of-multiple-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/allowing-the-simultaneous-recognition-of-multiple-gestures.md) | 已翻译 |
@@ -44,6 +46,7 @@
 | [处理捏合手势](../../../apple-docs/zh/uikit/handling-pinch-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-pinch-gestures.md) | 已翻译 |
 | [处理旋转手势](../../../apple-docs/zh/uikit/handling-rotation-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-rotation-gestures.md) | 已翻译 |
 | [处理轻扫手势](../../../apple-docs/zh/uikit/handling-swipe-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-swipe-gestures.md) | 已翻译 |
+| [处理轻点手势](../../../apple-docs/zh/uikit/handling-tap-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-tap-gestures.md) | 已翻译 |
 | [处理长按手势](../../../apple-docs/zh/uikit/handling-long-press-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-long-press-gestures.md) | 已翻译 |
 | [如何发现并修复 iOS 上视图控制器过早加载的问题](../../../blogs/zh/jessesquires/how-to-find-and-fix-premature-view-controller-loading-on-ios.md) | 技术博客 | Jesse Squires | [中文](../../../blogs/zh/jessesquires/how-to-find-and-fix-premature-view-controller-loading-on-ios.md) | 已翻译 |
 | [实现一个 Multi-Touch App](../../../apple-docs/zh/uikit/implementing-a-multi-touch-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/implementing-a-multi-touch-app.md) | 已翻译 |
@@ -55,6 +58,7 @@
 | [显示与隐藏视图控制器](../../../apple-docs/zh/uikit/showing-and-hiding-view-controllers.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/showing-and-hiding-view-controllers.md) | 已翻译 |
 | [检查 3D Touch 的可用性](../../../apple-docs/zh/uikit/checking-the-availability-of-3d-touch.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/checking-the-availability-of-3d-touch.md) | 已翻译 |
 | [演示触控输入的力度、高度角和方位角属性](../../../apple-docs/zh/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md) | 已翻译 |
+| [禁用 sheet 的下拉手势](../../../apple-docs/zh/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | 已翻译 |
 | [视图控制器过渡](../../../apple-docs/zh/uikit/view-controller-transitions.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/view-controller-transitions.md) | 已翻译 |
 | [触摸、按压与手势](../../../apple-docs/zh/uikit/touches-presses-and-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/touches-presses-and-gestures.md) | 已翻译 |
 | [迁移到 UIKit 基于场景的生命周期](../../../apple-docs/zh/uikit/transitioning-to-the-uikit-scene-based-life-cycle.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/transitioning-to-the-uikit-scene-based-life-cycle.md) | 已翻译 |
@@ -83,11 +87,7 @@
 | [面向 UIKit 开发者的 AppKit](../../../blogs/en/objcio/appkit-for-uikit-developers.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/appkit-for-uikit-developers.md) | 仅标题中文，正文待翻译 |
 | [Adding interactivity with gestures](../../../apple-docs/en/swiftui/adding-interactivity-with-gestures.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/adding-interactivity-with-gestures.md) | 待翻译 |
 | [Composing SwiftUI gestures](../../../apple-docs/en/swiftui/composing-swiftui-gestures.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/composing-swiftui-gestures.md) | 待翻译 |
-| [Customizing Writing Tools behavior for UIKit views](../../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | 待翻译 |
-| [Disabling the pull-down gesture for a sheet](../../../apple-docs/en/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | 待翻译 |
-| [Dismissing a view controller with an unwind segue](../../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | 待翻译 |
 | [Gestures](../../../apple-docs/en/swiftui/gestures.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/gestures.md) | 待翻译 |
-| [Handling tap gestures](../../../apple-docs/en/uikit/handling-tap-gestures.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/handling-tap-gestures.md) | 待翻译 |
 | [Handling UIKit gestures](../../../apple-docs/en/uikit/handling-uikit-gestures.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/handling-uikit-gestures.md) | 待翻译 |
 | [MapKit for AppKit and UIKit](../../../apple-docs/en/mapkit/mapkit-for-appkit-and-uikit.md) | Apple 文档 | Apple · MapKit | [英文](../../../apple-docs/en/mapkit/mapkit-for-appkit-and-uikit.md) | 待翻译 |
 | [Tracking the force of 3D Touch events](../../../apple-docs/en/uikit/tracking-the-force-of-3d-touch-events.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/tracking-the-force-of-3d-touch-events.md) | 待翻译 |
@@ -429,6 +429,7 @@
 | [启用文稿共享](../../../apple-docs/zh/uikit/enabling-document-sharing.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/enabling-document-sharing.md) | 已翻译 |
 | [响应 Apple TV 上不断变化的显示模式](../../../apple-docs/zh/uikit/responding-to-changing-display-modes-on-apple-tv.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/responding-to-changing-display-modes-on-apple-tv.md) | 已翻译 |
 | [响应内存警告](../../../apple-docs/zh/uikit/responding-to-memory-warnings.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/responding-to-memory-warnings.md) | 已翻译 |
+| [图像与 PDF](../../../apple-docs/zh/uikit/images-and-pdf.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/images-and-pdf.md) | 已翻译 |
 | [在 CPU 上编码间接命令缓冲区](../../../apple-docs/zh/metal/encoding-indirect-command-buffers-on-the-cpu.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/encoding-indirect-command-buffers-on-the-cpu.md) | 已翻译 |
 | [在 iCloud 环境中同步文稿](../../../apple-docs/zh/uikit/synchronizing-documents-in-the-icloud-environment.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/synchronizing-documents-in-the-icloud-environment.md) | 已翻译 |
 | [在 iPad 上支持多个窗口](../../../apple-docs/zh/uikit/supporting-multiple-windows-on-ipad.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/supporting-multiple-windows-on-ipad.md) | 已翻译 |
@@ -452,6 +453,7 @@
 | [在用户界面中采用菜单和 UIAction](../../../apple-docs/zh/uikit/adopting-menus-and-uiactions-in-your-user-interface.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adopting-menus-and-uiactions-in-your-user-interface.md) | 已翻译 |
 | [在自定义文本视图中采用系统选择 UI](../../../apple-docs/zh/uikit/adopting-system-selection-ui-in-custom-text-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adopting-system-selection-ui-in-custom-text-views.md) | 已翻译 |
 | [在自定义视图中采用拖放](../../../apple-docs/zh/uikit/adopting-drag-and-drop-in-a-custom-view.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adopting-drag-and-drop-in-a-custom-view.md) | 已翻译 |
+| [在自定义键盘中处理文本交互](../../../apple-docs/zh/uikit/handling-text-interactions-in-custom-keyboards.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-text-interactions-in-custom-keyboards.md) | 已翻译 |
 | [在表格视图中采用拖放](../../../apple-docs/zh/uikit/adopting-drag-and-drop-in-a-table-view.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adopting-drag-and-drop-in-a-table-view.md) | 已翻译 |
 | [场景](../../../apple-docs/zh/swiftui/scenes.md) | Apple 文档 | Apple · SwiftUI | [中文](../../../apple-docs/zh/swiftui/scenes.md) | 已翻译 |
 | [场景](../../../apple-docs/zh/uikit/scenes.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/scenes.md) | 已翻译 |
@@ -470,6 +472,7 @@
 | [将拖动条目理解为承诺](../../../apple-docs/zh/uikit/understanding-a-drag-item-as-a-promise.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/understanding-a-drag-item-as-a-promise.md) | 已翻译 |
 | [屏幕呈现](../../../apple-docs/zh/metal/onscreen-presentation.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/onscreen-presentation.md) | 已翻译 |
 | [属性字符串的文本属性](../../../apple-docs/zh/uikit/text-attributes-for-attributed-strings.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/text-attributes-for-attributed-strings.md) | 已翻译 |
+| [已废弃的符号](../../../apple-docs/zh/uikit/deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/deprecated-symbols.md) | 已翻译 |
 | [已废弃符号](../../../apple-docs/zh/uikit/uipasteboard-deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uipasteboard-deprecated-symbols.md) | 已翻译 |
 | [已废弃符号](../../../apple-docs/zh/uikit/uiapplicationdelegate-deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uiapplicationdelegate-deprecated-symbols.md) | 已翻译 |
 | [已废弃符号](../../../apple-docs/zh/uikit/uibutton-deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uibutton-deprecated-symbols.md) | 已翻译 |
@@ -479,6 +482,7 @@
 | [已废弃符号](../../../apple-docs/zh/uikit/uiscreen-deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uiscreen-deprecated-symbols.md) | 已翻译 |
 | [延长你的 App 的后台运行时间](../../../apple-docs/zh/uikit/extending-your-app-s-background-execution-time.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/extending-your-app-s-background-execution-time.md) | 已翻译 |
 | [恢复 App 的状态](../../../apple-docs/zh/uikit/restoring-your-app-s-state.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/restoring-your-app-s-state.md) | 已翻译 |
+| [手写识别（Handwriting recognition）](../../../apple-docs/zh/uikit/handwriting-recognition.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handwriting-recognition.md) | 已翻译 |
 | [执行你自己的色调映射](../../../apple-docs/zh/metal/performing-your-own-tone-mapping.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/performing-your-own-tone-mapping.md) | 已翻译 |
 | [拖放](../../../apple-docs/zh/uikit/drag-and-drop.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/drag-and-drop.md) | 已翻译 |
 | [拖放自定](../../../apple-docs/zh/uikit/drag-and-drop-customization.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/drag-and-drop-customization.md) | 已翻译 |
@@ -501,6 +505,7 @@
 | [更新数据结构](../../../apple-docs/zh/uikit/updating-data-structures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/updating-data-structures.md) | 已翻译 |
 | [构建桌面级 iPad App](../../../apple-docs/zh/uikit/building-a-desktop-class-ipad-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-a-desktop-class-ipad-app.md) | 已翻译 |
 | [构建高性能列表和集合视图](../../../apple-docs/zh/uikit/building-high-performance-lists-and-collection-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-high-performance-lists-and-collection-views.md) | 已翻译 |
+| [检测偏好设置窗口中的更改](../../../apple-docs/zh/uikit/detecting-changes-in-the-preferences-window.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/detecting-changes-in-the-preferences-window.md) | 已翻译 |
 | [流式布局附属视图](../../../apple-docs/zh/uikit/flow-layout-supplementary-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/flow-layout-supplementary-views.md) | 已翻译 |
 | [浮点范围常量](../../../apple-docs/zh/uikit/float-range-constants.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/float-range-constants.md) | 已翻译 |
 | [添加主屏幕快速操作](../../../apple-docs/zh/uikit/add-home-screen-quick-actions.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/add-home-screen-quick-actions.md) | 已翻译 |
@@ -515,6 +520,7 @@
 | [生成 mipmap 数据](../../../apple-docs/zh/metal/generating-mipmap-data.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/generating-mipmap-data.md) | 已翻译 |
 | [用 C++ 通过延迟光照渲染场景](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-c%2B%2B.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-c%2B%2B.md) | 已翻译 |
 | [用 Mac Catalyst 构建和改进你的 App](../../../apple-docs/zh/uikit/building-and-improving-your-app-with-mac-catalyst.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-and-improving-your-app-with-mac-catalyst.md) | 已翻译 |
+| [用拖放传递数据](../../../apple-docs/zh/uikit/data-delivery-with-drag-and-drop.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/data-delivery-with-drag-and-drop.md) | 已翻译 |
 | [用数据填充表格](../../../apple-docs/zh/uikit/filling-a-table-with-data.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/filling-a-table-with-data.md) | 已翻译 |
 | [用更少的渲染流程渲染反射](../../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | 已翻译 |
 | [相对于安全区定位内容](../../../apple-docs/zh/uikit/positioning-content-relative-to-the-safe-area.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/positioning-content-relative-to-the-safe-area.md) | 已翻译 |
@@ -526,8 +532,11 @@
 | [自动特性跟踪](../../../apple-docs/zh/uikit/automatic-trait-tracking.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/automatic-trait-tracking.md) | 已翻译 |
 | [自动缩放字体](../../../apple-docs/zh/uikit/scaling-fonts-automatically.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/scaling-fonts-automatically.md) | 已翻译 |
 | [自动观察跟踪](../../../apple-docs/zh/uikit/automatic-observation-tracking.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/automatic-observation-tracking.md) | 已翻译 |
+| [自定义你的 App 的导航栏](../../../apple-docs/zh/uikit/customizing-your-app-s-navigation-bar.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-your-app-s-navigation-bar.md) | 已翻译 |
 | [自定义图像选择器控制器](../../../apple-docs/zh/uikit/customizing-an-image-picker-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-an-image-picker-controller.md) | 已翻译 |
+| [自定义基于 segue 的呈现行为](../../../apple-docs/zh/uikit/customizing-the-behavior-of-segue-based-presentations.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-the-behavior-of-segue-based-presentations.md) | 已翻译 |
 | [自定义基于文稿的 App 的启动体验](../../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | 已翻译 |
+| [自定义文稿浏览器](../../../apple-docs/zh/uikit/customizing-the-browser.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-the-browser.md) | 已翻译 |
 | [自定义渲染通道设置](../../../apple-docs/zh/metal/customizing-render-pass-setup.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/customizing-render-pass-setup.md) | 已翻译 |
 | [自定义绘图](../../../apple-docs/zh/uikit/customizing-drawings.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-drawings.md) | 已翻译 |
 | [自定集合视图布局](../../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | 已翻译 |
@@ -537,6 +546,7 @@
 | [训练一个神经网络以实时渲染辐照度](../../../apple-docs/zh/metal/training-a-neural-network-to-render-irradiance-in-real-time.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/training-a-neural-network-to-render-irradiance-in-real-time.md) | 已翻译 |
 | [设置文稿浏览器 App](../../../apple-docs/zh/uikit/setting-up-a-document-browser-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/setting-up-a-document-browser-app.md) | 已翻译 |
 | [请求访问受保护的资源](../../../apple-docs/zh/uikit/requesting-access-to-protected-resources.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/requesting-access-to-protected-resources.md) | 已翻译 |
+| [调试你的 App 中的焦点问题](../../../apple-docs/zh/uikit/debugging-focus-issues-in-your-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/debugging-focus-issues-in-your-app.md) | 已翻译 |
 | [资源同步](../../../apple-docs/zh/metal/resource-synchronization.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/resource-synchronization.md) | 已翻译 |
 | [资源管理](../../../apple-docs/zh/uikit/resource-management.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/resource-management.md) | 已翻译 |
 | [跨多个设备或进程同步事件](../../../apple-docs/zh/metal/synchronizing-events-across-multiple-devices-or-processes.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/synchronizing-events-across-multiple-devices-or-processes.md) | 已翻译 |
@@ -548,6 +558,7 @@
 | [通过搜索控制器使用建议搜索](../../../apple-docs/zh/uikit/using-suggested-searches-with-a-search-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/using-suggested-searches-with-a-search-controller.md) | 已翻译 |
 | [通过标签页栏和边栏提升你的 iPad App](../../../apple-docs/zh/uikit/elevating-your-ipad-app-with-a-tab-bar-and-sidebar.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/elevating-your-ipad-app-with-a-tab-bar-and-sidebar.md) | 已翻译 |
 | [通过流畅过渡增强你的 App](../../../apple-docs/zh/uikit/enhancing-your-app-with-fluid-transitions.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/enhancing-your-app-with-fluid-transitions.md) | 已翻译 |
+| [通过颜色空间确定颜色值](../../../apple-docs/zh/uikit/determining-color-values-with-color-spaces.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/determining-color-values-with-color-spaces.md) | 已翻译 |
 | [配置](../../../apple-docs/zh/uikit/configurations.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/configurations.md) | 已翻译 |
 | [配置自定键盘界面](../../../apple-docs/zh/uikit/configuring-a-custom-keyboard-interface.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/configuring-a-custom-keyboard-interface.md) | 已翻译 |
 | [采用 Apple Pencil 悬停支持](../../../apple-docs/zh/uikit/adopting-hover-support-for-apple-pencil.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adopting-hover-support-for-apple-pencil.md) | 已翻译 |
@@ -707,13 +718,8 @@
 | [Customizing a TensorFlow operation](../../../apple-docs/en/metal/customizing-a-tensorflow-operation.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/customizing-a-tensorflow-operation.md) | 待翻译 |
 | [Customizing Image Transitions](../../../apple-docs/en/coreimage/customizing-image-transitions.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/customizing-image-transitions.md) | 待翻译 |
 | [Customizing shaders using function pointers and stitching](../../../apple-docs/en/metal/customizing-shaders-using-function-pointers-and-stitching.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/customizing-shaders-using-function-pointers-and-stitching.md) | 待翻译 |
-| [Customizing the behavior of segue-based presentations](../../../apple-docs/en/uikit/customizing-the-behavior-of-segue-based-presentations.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-the-behavior-of-segue-based-presentations.md) | 待翻译 |
-| [Customizing the document browser](../../../apple-docs/en/uikit/customizing-the-browser.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-the-browser.md) | 待翻译 |
 | [Customizing window styles and state-restoration behavior in macOS](../../../apple-docs/en/swiftui/customizing-window-styles-and-state-restoration-behavior-in-macos.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/customizing-window-styles-and-state-restoration-behavior-in-macos.md) | 待翻译 |
-| [Customizing your app’s navigation bar](../../../apple-docs/en/uikit/customizing-your-app-s-navigation-bar.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-your-app-s-navigation-bar.md) | 待翻译 |
-| [Data delivery with drag and drop](../../../apple-docs/en/uikit/data-delivery-with-drag-and-drop.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/data-delivery-with-drag-and-drop.md) | 待翻译 |
 | [Data Type Attributes](../../../apple-docs/en/coreimage/data-type-attributes.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/data-type-attributes.md) | 待翻译 |
-| [Debugging focus issues in your app](../../../apple-docs/en/uikit/debugging-focus-issues-in-your-app.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/debugging-focus-issues-in-your-app.md) | 待翻译 |
 | [Declaring a custom view](../../../apple-docs/en/swiftui/declaring-a-custom-view.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/declaring-a-custom-view.md) | 待翻译 |
 | [Deprecated](../../../apple-docs/en/swiftui/previews-deprecated.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/previews-deprecated.md) | 待翻译 |
 | [Deprecated initializers](../../../apple-docs/en/swiftui/textfield-deprecated.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/textfield-deprecated.md) | 待翻译 |
@@ -721,16 +727,13 @@
 | [Deprecated symbols](../../../apple-docs/en/metal/deprecated-symbols.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/deprecated-symbols.md) | 待翻译 |
 | [Deprecated symbols](../../../apple-docs/en/swiftui/navigationlink-deprecated.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/navigationlink-deprecated.md) | 待翻译 |
 | [Deprecated symbols](../../../apple-docs/en/uikit/uiviewcontroller-deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/uiviewcontroller-deprecated-symbols.md) | 待翻译 |
-| [Deprecated symbols](../../../apple-docs/en/uikit/deprecated-symbols.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/deprecated-symbols.md) | 待翻译 |
 | [Designing Fluid Interfaces](../../../wwdc/en/wwdc2018/803-designing-fluid-interfaces.md) | WWDC | Apple · WWDC2018 | [英文](../../../wwdc/en/wwdc2018/803-designing-fluid-interfaces.md) | 待翻译 |
 | [Designing your app for the Always On state](../../../apple-docs/en/watchos-apps/designing-your-app-for-the-always-on-state.md) | Apple 文档 | Apple · swiftui | [英文](../../../apple-docs/en/watchos-apps/designing-your-app-for-the-always-on-state.md) | 待翻译 |
 | [Destination Video](../../../apple-docs/en/visionos/destination-video.md) | Apple 文档 | Apple · swiftui | [英文](../../../apple-docs/en/visionos/destination-video.md) | 待翻译 |
-| [Detecting changes in the preferences window](../../../apple-docs/en/uikit/detecting-changes-in-the-preferences-window.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/detecting-changes-in-the-preferences-window.md) | 待翻译 |
 | [Detecting Images in an AR Experience](../../../apple-docs/en/arkit/detecting-images-in-an-ar-experience.md) | Apple 文档 | Apple · ARKit | [英文](../../../apple-docs/en/arkit/detecting-images-in-an-ar-experience.md) | 待翻译 |
 | [Detector Accuracy Options](../../../apple-docs/en/coreimage/detector-accuracy-options.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/detector-accuracy-options.md) | 待翻译 |
 | [Detector Configuration Keys](../../../apple-docs/en/coreimage/detector-configuration-keys.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/detector-configuration-keys.md) | 待翻译 |
 | [Detector Types](../../../apple-docs/en/coreimage/detector-types.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/detector-types.md) | 待翻译 |
-| [Determining color values with color spaces](../../../apple-docs/en/uikit/determining-color-values-with-color-spaces.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/determining-color-values-with-color-spaces.md) | 待翻译 |
 | [Determining support for EDR values](../../../apple-docs/en/metal/determining-support-for-edr-values.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/determining-support-for-edr-values.md) | 待翻译 |
 | [Device inspection](../../../apple-docs/en/metal/device-inspection.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/device-inspection.md) | 待翻译 |
 | [Display Fade Blend Fractions](../../../apple-docs/en/coregraphics/display-fade-blend-fractions.md) | Apple 文档 | Apple · Core Graphics | [英文](../../../apple-docs/en/coregraphics/display-fade-blend-fractions.md) | 待翻译 |
@@ -783,8 +786,6 @@
 | [Handling advanced document scenarios](../../../apple-docs/en/swiftui/handling-advanced-document-scenarios.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/handling-advanced-document-scenarios.md) | 待翻译 |
 | [Handling double taps from Apple Pencil](../../../apple-docs/en/applepencil/handling-double-taps-from-apple-pencil.md) | Apple 文档 | Apple · uikit | [英文](../../../apple-docs/en/applepencil/handling-double-taps-from-apple-pencil.md) | 待翻译 |
 | [Handling squeezes from Apple Pencil](../../../apple-docs/en/applepencil/handling-squeezes-from-apple-pencil.md) | Apple 文档 | Apple · uikit | [英文](../../../apple-docs/en/applepencil/handling-squeezes-from-apple-pencil.md) | 待翻译 |
-| [Handling text interactions in custom keyboards](../../../apple-docs/en/uikit/handling-text-interactions-in-custom-keyboards.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/handling-text-interactions-in-custom-keyboards.md) | 待翻译 |
-| [Handwriting recognition](../../../apple-docs/en/uikit/handwriting-recognition.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/handwriting-recognition.md) | 待翻译 |
 | [Horizontal alignment modes](../../../apple-docs/en/quartzcore/horizontal-alignment-modes.md) | Apple 文档 | Apple · Core Animation | [英文](../../../apple-docs/en/quartzcore/horizontal-alignment-modes.md) | 待翻译 |
 | [Host Endian Bitmap Formats](../../../apple-docs/en/coregraphics/host-endian-bitmap-formats.md) | Apple 文档 | Apple · Core Graphics | [英文](../../../apple-docs/en/coregraphics/host-endian-bitmap-formats.md) | 待翻译 |
 | [Identifiable Implementations](../../../apple-docs/en/swiftui/binding/identifiable-implementations.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/binding/identifiable-implementations.md) | 待翻译 |
@@ -793,7 +794,6 @@
 | [Image Request Identifiers](../../../apple-docs/en/photokit/image-request-identifiers.md) | Apple 文档 | Apple · Photos | [英文](../../../apple-docs/en/photokit/image-request-identifiers.md) | 待翻译 |
 | [Image Result Info Keys](../../../apple-docs/en/photokit/image-result-info-keys.md) | Apple 文档 | Apple · Photos | [英文](../../../apple-docs/en/photokit/image-result-info-keys.md) | 待翻译 |
 | [Images](../../../apple-docs/en/swiftui/images.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/images.md) | 待翻译 |
-| [Images and PDF](../../../apple-docs/en/uikit/images-and-pdf.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/images-and-pdf.md) | 待翻译 |
 | [Images, camera, and photos](../../../apple-docs/en/technologyoverviews/images-camera-and-photos.md) | Apple 文档 | Apple · Technology Overviews | [英文](../../../apple-docs/en/technologyoverviews/images-camera-and-photos.md) | 待翻译 |
 | [Immersive spaces](../../../apple-docs/en/swiftui/immersive-spaces.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/immersive-spaces.md) | 待翻译 |
 | [Implementing a multistage image filter using heaps and events](../../../apple-docs/en/metal/implementing-a-multistage-image-filter-using-heaps-and-events.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/implementing-a-multistage-image-filter-using-heaps-and-events.md) | 待翻译 |
