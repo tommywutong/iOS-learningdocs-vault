@@ -37,6 +37,7 @@
 | [在 App 中融入预测触摸](../../../apple-docs/zh/uikit/incorporating-predicted-touches-into-an-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/incorporating-predicted-touches-into-an-app.md) | 已翻译 |
 | [在 UIKit 中使用观察跟踪自动更新视图](../../../apple-docs/zh/uikit/updating-views-automatically-with-observation-tracking-in-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/updating-views-automatically-with-observation-tracking-in-uikit.md) | 已翻译 |
 | [在 UIKit 中向属性字符串添加表格](../../../apple-docs/zh/uikit/adding-tables-to-attributed-strings.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adding-tables-to-attributed-strings.md) | 已翻译 |
+| [在 UIKit 中自定义与调整 sheet 的大小](../../../apple-docs/zh/uikit/customizing-and-resizing-sheets-in-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-and-resizing-sheets-in-uikit.md) | 已翻译 |
 | [在你的 App 中支持手势交互](../../../apple-docs/zh/uikit/supporting-gesture-interaction-in-your-apps.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/supporting-gesture-interaction-in-your-apps.md) | 已翻译 |
 | [在视图中处理触摸](../../../apple-docs/zh/uikit/handling-touches-in-your-view.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-touches-in-your-view.md) | 已翻译 |
 | [处理平移手势](../../../apple-docs/zh/uikit/handling-pan-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/handling-pan-gestures.md) | 已翻译 |
@@ -52,6 +53,7 @@
 | [将 SwiftUI 与 UIKit 搭配使用](../../../apple-docs/zh/uikit/using-swiftui-with-uikit.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/using-swiftui-with-uikit.md) | 已翻译 |
 | [将手势识别器附加到 UIKit 控制](../../../apple-docs/zh/uikit/attaching-gesture-recognizers-to-uikit-controls.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/attaching-gesture-recognizers-to-uikit-controls.md) | 已翻译 |
 | [显示与隐藏视图控制器](../../../apple-docs/zh/uikit/showing-and-hiding-view-controllers.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/showing-and-hiding-view-controllers.md) | 已翻译 |
+| [检查 3D Touch 的可用性](../../../apple-docs/zh/uikit/checking-the-availability-of-3d-touch.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/checking-the-availability-of-3d-touch.md) | 已翻译 |
 | [演示触控输入的力度、高度角和方位角属性](../../../apple-docs/zh/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/illustrating-the-force-altitude-and-azimuth-properties-of-touch-input.md) | 已翻译 |
 | [视图控制器过渡](../../../apple-docs/zh/uikit/view-controller-transitions.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/view-controller-transitions.md) | 已翻译 |
 | [触摸、按压与手势](../../../apple-docs/zh/uikit/touches-presses-and-gestures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/touches-presses-and-gestures.md) | 已翻译 |
@@ -80,9 +82,7 @@
 | [远程视图控制器更新](../../../blogs/en/oleb/update-on-remote-view-controllers.md) | 技术博客 | Ole Begemann | [英文](../../../blogs/en/oleb/update-on-remote-view-controllers.md) | 仅标题中文，正文待翻译 |
 | [面向 UIKit 开发者的 AppKit](../../../blogs/en/objcio/appkit-for-uikit-developers.md) | 技术博客 | objc.io | [英文](../../../blogs/en/objcio/appkit-for-uikit-developers.md) | 仅标题中文，正文待翻译 |
 | [Adding interactivity with gestures](../../../apple-docs/en/swiftui/adding-interactivity-with-gestures.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/adding-interactivity-with-gestures.md) | 待翻译 |
-| [Checking the availability of 3D Touch](../../../apple-docs/en/uikit/checking-the-availability-of-3d-touch.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/checking-the-availability-of-3d-touch.md) | 待翻译 |
 | [Composing SwiftUI gestures](../../../apple-docs/en/swiftui/composing-swiftui-gestures.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/composing-swiftui-gestures.md) | 待翻译 |
-| [Customizing and resizing sheets in UIKit](../../../apple-docs/en/uikit/customizing-and-resizing-sheets-in-uikit.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-and-resizing-sheets-in-uikit.md) | 待翻译 |
 | [Customizing Writing Tools behavior for UIKit views](../../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-writing-tools-behavior-for-system-views.md) | 待翻译 |
 | [Disabling the pull-down gesture for a sheet](../../../apple-docs/en/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/disabling-the-pull-down-gesture-for-a-sheet.md) | 待翻译 |
 | [Dismissing a view controller with an unwind segue](../../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/dismissing-a-view-controller-with-an-unwind-segue.md) | 待翻译 |
@@ -370,9 +370,12 @@
 | [丰富文本视图中的文本](../../../apple-docs/zh/uikit/enriching-your-text-in-text-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/enriching-your-text-in-text-views.md) | 已翻译 |
 | [为 iOS 本地化自动调整视图大小](../../../apple-docs/zh/xcode/autosizing-views-for-localization-in-ios.md) | Apple 文档 | Apple · xcode | [中文](../../../apple-docs/zh/xcode/autosizing-views-for-localization-in-ios.md) | 已翻译 |
 | [为 Mac 优化你的 iPad App](../../../apple-docs/zh/uikit/optimizing-your-ipad-app-for-mac.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/optimizing-your-ipad-app-for-mac.md) | 已翻译 |
+| [为你的 App 创建自定符号图像](../../../apple-docs/zh/uikit/creating-custom-symbol-images-for-your-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/creating-custom-symbol-images-for-your-app.md) | 已翻译 |
 | [为你的 App 执行一次性设置](../../../apple-docs/zh/uikit/performing-one-time-setup-for-your-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/performing-one-time-setup-for-your-app.md) | 已翻译 |
 | [为你的 App 添加硬件键盘支持](../../../apple-docs/zh/uikit/adding-hardware-keyboard-support-to-your-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adding-hardware-keyboard-support-to-your-app.md) | 已翻译 |
 | [为你的 App 添加自定字体](../../../apple-docs/zh/uikit/adding-a-custom-font-to-your-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adding-a-custom-font-to-your-app.md) | 已翻译 |
+| [为你的 iOS App 选择特定的界面样式](../../../apple-docs/zh/uikit/choosing-a-specific-interface-style-for-your-ios-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/choosing-a-specific-interface-style-for-your-ios-app.md) | 已翻译 |
+| [为你的 Mac App 选择用户界面惯用形式](../../../apple-docs/zh/uikit/choosing-a-user-interface-idiom-for-your-mac-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/choosing-a-user-interface-idiom-for-your-mac-app.md) | 已翻译 |
 | [为焦点移动使用自定声音](../../../apple-docs/zh/uikit/using-custom-sounds-for-focus-movement.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/using-custom-sounds-for-focus-movement.md) | 已翻译 |
 | [为自定义文件格式构建文稿浏览器 App](../../../apple-docs/zh/uikit/building-a-document-browser-app-for-custom-file-formats.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-a-document-browser-app-for-custom-file-formats.md) | 已翻译 |
 | [为自定键盘配置开放访问权限](../../../apple-docs/zh/uikit/configuring-open-access-for-a-custom-keyboard.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/configuring-open-access-for-a-custom-keyboard.md) | 已翻译 |
@@ -391,6 +394,7 @@
 | [使用堆和栅栏实现多阶段图像过滤器](../../../apple-docs/zh/metal/implementing-a-multistage-image-filter-using-heaps-and-fences.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/implementing-a-multistage-image-filter-using-heaps-and-fences.md) | 已翻译 |
 | [使用提醒和操作表单吸引用户的注意](../../../apple-docs/zh/uikit/getting-the-user-s-attention-with-alerts-and-action-sheets.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/getting-the-user-s-attention-with-alerts-and-action-sheets.md) | 已翻译 |
 | [使用搜索控制器显示可搜索内容](../../../apple-docs/zh/uikit/displaying-searchable-content-by-using-a-search-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/displaying-searchable-content-by-using-a-search-controller.md) | 已翻译 |
+| [使用文稿浏览器构建 App](../../../apple-docs/zh/uikit/building-an-app-with-a-document-browser.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-an-app-with-a-document-browser.md) | 已翻译 |
 | [使用消费者 barrier 同步 pass](../../../apple-docs/zh/metal/synchronizing-passes-with-consumer-barriers.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/synchronizing-passes-with-consumer-barriers.md) | 已翻译 |
 | [使用瓦片着色器以前向+光照渲染场景](../../../apple-docs/zh/metal/rendering-a-scene-with-forward-plus-lighting-using-tile-shaders.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-forward-plus-lighting-using-tile-shaders.md) | 已翻译 |
 | [使用生产者屏障同步通道](../../../apple-docs/zh/metal/synchronizing-passes-with-producer-barriers.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/synchronizing-passes-with-producer-barriers.md) | 已翻译 |
@@ -410,9 +414,14 @@
 | [内存堆](../../../apple-docs/zh/metal/memory-heaps.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/memory-heaps.md) | 已翻译 |
 | [准备让你的界面在后台运行](../../../apple-docs/zh/uikit/preparing-your-ui-to-run-in-the-background.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/preparing-your-ui-to-run-in-the-background.md) | 已翻译 |
 | [减小着色器库的二进制大小](../../../apple-docs/zh/metal/minimizing-the-binary-size-of-a-shader-library.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/minimizing-the-binary-size-of-a-shader-library.md) | 已翻译 |
+| [创建你的 iPad App 的 Mac 版本](../../../apple-docs/zh/uikit/creating-a-mac-version-of-your-ipad-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/creating-a-mac-version-of-your-ipad-app.md) | 已翻译 |
 | [创建线程（Thread）与线程组（Threadgroup）](../../../apple-docs/zh/metal/creating-threads-and-threadgroups.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/creating-threads-and-threadgroups.md) | 已翻译 |
+| [创建自定义导览交互](../../../apple-docs/zh/uikit/creating-custom-navigation-interactions.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/creating-custom-navigation-interactions.md) | 已翻译 |
+| [创建自定义键盘](../../../apple-docs/zh/uikit/creating-a-custom-keyboard.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/creating-a-custom-keyboard.md) | 已翻译 |
+| [创建自定大小的表格视图单元格](../../../apple-docs/zh/uikit/creating-self-sizing-table-view-cells.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/creating-self-sizing-table-view-cells.md) | 已翻译 |
 | [创建颜色](../../../apple-docs/zh/uikit/color-creation.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/color-creation.md) | 已翻译 |
 | [加密你的 App 的文件](../../../apple-docs/zh/uikit/encrypting-your-app-s-files.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/encrypting-your-app-s-files.md) | 已翻译 |
+| [协作与共享你的数据的副本](../../../apple-docs/zh/uikit/collaborating-and-sharing-copies-of-your-data.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/collaborating-and-sharing-copies-of-your-data.md) | 已翻译 |
 | [同步 pass 内的阶段](../../../apple-docs/zh/metal/synchronizing-stages-within-a-pass.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/synchronizing-stages-within-a-pass.md) | 已翻译 |
 | [向 tvOS App 添加用户可聚焦元素](../../../apple-docs/zh/uikit/adding-user-focusable-elements-to-a-tvos-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/adding-user-focusable-elements-to-a-tvos-app.md) | 已翻译 |
 | [向你的 Xcode 项目添加图像](../../../apple-docs/zh/xcode/adding-images-to-your-xcode-project.md) | Apple 文档 | Apple · xcode | [中文](../../../apple-docs/zh/xcode/adding-images-to-your-xcode-project.md) | 已翻译 |
@@ -488,6 +497,7 @@
 | [旧版自定义](../../../apple-docs/zh/uikit/uitoolbar-legacy-customizations.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uitoolbar-legacy-customizations.md) | 已翻译 |
 | [旧版自定义](../../../apple-docs/zh/uikit/uinavigationbar-legacy-customizations.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/uinavigationbar-legacy-customizations.md) | 已翻译 |
 | [显示「设置」窗口](../../../apple-docs/zh/uikit/displaying-a-settings-window.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/displaying-a-settings-window.md) | 已翻译 |
+| [更改所选和高亮显示单元格的外观](../../../apple-docs/zh/uikit/changing-the-appearance-of-selected-and-highlighted-cells.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/changing-the-appearance-of-selected-and-highlighted-cells.md) | 已翻译 |
 | [更新数据结构](../../../apple-docs/zh/uikit/updating-data-structures.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/updating-data-structures.md) | 已翻译 |
 | [构建桌面级 iPad App](../../../apple-docs/zh/uikit/building-a-desktop-class-ipad-app.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-a-desktop-class-ipad-app.md) | 已翻译 |
 | [构建高性能列表和集合视图](../../../apple-docs/zh/uikit/building-high-performance-lists-and-collection-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-high-performance-lists-and-collection-views.md) | 已翻译 |
@@ -504,6 +514,7 @@
 | [理解可渲染颜色的像素格式大小](../../../apple-docs/zh/metal/understanding-color-renderable-pixel-format-sizes.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/understanding-color-renderable-pixel-format-sizes.md) | 已翻译 |
 | [生成 mipmap 数据](../../../apple-docs/zh/metal/generating-mipmap-data.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/generating-mipmap-data.md) | 已翻译 |
 | [用 C++ 通过延迟光照渲染场景](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-c%2B%2B.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/rendering-a-scene-with-deferred-lighting-in-c%2B%2B.md) | 已翻译 |
+| [用 Mac Catalyst 构建和改进你的 App](../../../apple-docs/zh/uikit/building-and-improving-your-app-with-mac-catalyst.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/building-and-improving-your-app-with-mac-catalyst.md) | 已翻译 |
 | [用数据填充表格](../../../apple-docs/zh/uikit/filling-a-table-with-data.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/filling-a-table-with-data.md) | 已翻译 |
 | [用更少的渲染流程渲染反射](../../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/rendering-reflections-with-fewer-render-passes.md) | 已翻译 |
 | [相对于安全区定位内容](../../../apple-docs/zh/uikit/positioning-content-relative-to-the-safe-area.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/positioning-content-relative-to-the-safe-area.md) | 已翻译 |
@@ -515,8 +526,11 @@
 | [自动特性跟踪](../../../apple-docs/zh/uikit/automatic-trait-tracking.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/automatic-trait-tracking.md) | 已翻译 |
 | [自动缩放字体](../../../apple-docs/zh/uikit/scaling-fonts-automatically.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/scaling-fonts-automatically.md) | 已翻译 |
 | [自动观察跟踪](../../../apple-docs/zh/uikit/automatic-observation-tracking.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/automatic-observation-tracking.md) | 已翻译 |
+| [自定义图像选择器控制器](../../../apple-docs/zh/uikit/customizing-an-image-picker-controller.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-an-image-picker-controller.md) | 已翻译 |
+| [自定义基于文稿的 App 的启动体验](../../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-a-document-based-app-s-launch-experience.md) | 已翻译 |
 | [自定义渲染通道设置](../../../apple-docs/zh/metal/customizing-render-pass-setup.md) | Apple 文档 | Apple · Metal | [中文](../../../apple-docs/zh/metal/customizing-render-pass-setup.md) | 已翻译 |
 | [自定义绘图](../../../apple-docs/zh/uikit/customizing-drawings.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-drawings.md) | 已翻译 |
+| [自定集合视图布局](../../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/customizing-collection-view-layouts.md) | 已翻译 |
 | [行为键](../../../apple-docs/zh/uikit/behavior-key.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/behavior-key.md) | 已翻译 |
 | [表格视图](../../../apple-docs/zh/uikit/table-views.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/table-views.md) | 已翻译 |
 | [计算 Apple Pencil 的垂直作用力](../../../apple-docs/zh/uikit/computing-the-perpendicular-force-of-apple-pencil.md) | Apple 文档 | Apple · UIKit | [中文](../../../apple-docs/zh/uikit/computing-the-perpendicular-force-of-apple-pencil.md) | 已翻译 |
@@ -630,8 +644,6 @@
 | [Buffers](../../../apple-docs/en/metal/buffers.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/buffers.md) | 待翻译 |
 | [Building a document-based app using SwiftData](../../../apple-docs/en/swiftui/building-a-document-based-app-using-swiftdata.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/building-a-document-based-app-using-swiftdata.md) | 待翻译 |
 | [Building a shader library by precompiling source files](../../../apple-docs/en/metal/building-a-shader-library-by-precompiling-source-files.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/building-a-shader-library-by-precompiling-source-files.md) | 待翻译 |
-| [Building an app with a document browser](../../../apple-docs/en/uikit/building-an-app-with-a-document-browser.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/building-an-app-with-a-document-browser.md) | 待翻译 |
-| [Building and improving your app with Mac Catalyst](../../../apple-docs/en/uikit/building-and-improving-your-app-with-mac-catalyst.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/building-and-improving-your-app-with-mac-catalyst.md) | 待翻译 |
 | [Building layouts with stack views](../../../apple-docs/en/swiftui/building-layouts-with-stack-views.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/building-layouts-with-stack-views.md) | 待翻译 |
 | [Calculating primitive visibility using depth testing](../../../apple-docs/en/metal/calculating-primitive-visibility-using-depth-testing.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/calculating-primitive-visibility-using-depth-testing.md) | 待翻译 |
 | [Calculating threadgroup and grid sizes](../../../apple-docs/en/metal/calculating-threadgroup-and-grid-sizes.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/calculating-threadgroup-and-grid-sizes.md) | 待翻译 |
@@ -650,14 +662,10 @@
 | [CGPDFStream](../../../apple-docs/en/coregraphics/cgpdfstream.md) | Apple 文档 | Apple · Core Graphics | [英文](../../../apple-docs/en/coregraphics/cgpdfstream.md) | 待翻译 |
 | [CGPDFString](../../../apple-docs/en/coregraphics/cgpdfstring.md) | Apple 文档 | Apple · Core Graphics | [英文](../../../apple-docs/en/coregraphics/cgpdfstring.md) | 待翻译 |
 | [CGWindowID Encoding Type](../../../apple-docs/en/coregraphics/cgwindowid-encoding-type.md) | Apple 文档 | Apple · Core Graphics | [英文](../../../apple-docs/en/coregraphics/cgwindowid-encoding-type.md) | 待翻译 |
-| [Changing the appearance of selected and highlighted cells](../../../apple-docs/en/uikit/changing-the-appearance-of-selected-and-highlighted-cells.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/changing-the-appearance-of-selected-and-highlighted-cells.md) | 待翻译 |
 | [Chart view modifiers](../../../apple-docs/en/swiftui/view-chart-view.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/view-chart-view.md) | 待翻译 |
-| [Choosing a specific interface style for your iOS app](../../../apple-docs/en/uikit/choosing-a-specific-interface-style-for-your-ios-app.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/choosing-a-specific-interface-style-for-your-ios-app.md) | 待翻译 |
-| [Choosing a user interface idiom for your Mac app](../../../apple-docs/en/uikit/choosing-a-user-interface-idiom-for-your-mac-app.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/choosing-a-user-interface-idiom-for-your-mac-app.md) | 待翻译 |
 | [CIContext Implementations](../../../apple-docs/en/coreimage/cicontext/cicontext-implementations.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/cicontext/cicontext-implementations.md) | 待翻译 |
 | [CIFilter Implementations](../../../apple-docs/en/coreimage/cifilter-swift.class/cifilter-implementations.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/cifilter-swift.class/cifilter-implementations.md) | 待翻译 |
 | [Clipboard](../../../apple-docs/en/swiftui/clipboard.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/clipboard.md) | 待翻译 |
-| [Collaborating and sharing copies of your data](../../../apple-docs/en/uikit/collaborating-and-sharing-copies-of-your-data.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/collaborating-and-sharing-copies-of-your-data.md) | 待翻译 |
 | [Color Adjustment Filters](../../../apple-docs/en/coreimage/color-adjustment-filters.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/color-adjustment-filters.md) | 待翻译 |
 | [Color Attribute Keys](../../../apple-docs/en/coreimage/color-attribute-keys.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/color-attribute-keys.md) | 待翻译 |
 | [Color Effect Filters](../../../apple-docs/en/coreimage/color-effect-filters.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/color-effect-filters.md) | 待翻译 |
@@ -681,30 +689,22 @@
 | [Core Image](../../../apple-docs/en/coreimage.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage.md) | 待翻译 |
 | [Core Image Constants](../../../apple-docs/en/coreimage/core-image-constants.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/core-image-constants.md) | 待翻译 |
 | [Creating a 3D application with hydra rendering](../../../apple-docs/en/metal/creating-a-3d-application-with-hydra-rendering.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/creating-a-3d-application-with-hydra-rendering.md) | 待翻译 |
-| [Creating a custom keyboard](../../../apple-docs/en/uikit/creating-a-custom-keyboard.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/creating-a-custom-keyboard.md) | 待翻译 |
 | [Creating a document-based app](../../../apple-docs/en/swiftui/creating-a-document-based-app.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/creating-a-document-based-app.md) | 待翻译 |
-| [Creating a Mac version of your iPad app](../../../apple-docs/en/uikit/creating-a-mac-version-of-your-ipad-app.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/creating-a-mac-version-of-your-ipad-app.md) | 待翻译 |
 | [Creating a rasterization rate map](../../../apple-docs/en/metal/creating-a-rasterization-rate-map.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/creating-a-rasterization-rate-map.md) | 待翻译 |
 | [Creating accessible views](../../../apple-docs/en/swiftui/creating-accessible-views.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/creating-accessible-views.md) | 待翻译 |
 | [Creating an Image Classifier Model](../../../apple-docs/en/createml/creating-an-image-classifier-model.md) | Apple 文档 | Apple · Create ML | [英文](../../../apple-docs/en/createml/creating-an-image-classifier-model.md) | 待翻译 |
 | [Creating an indirect command buffer](../../../apple-docs/en/metal/creating-an-indirect-command-buffer.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/creating-an-indirect-command-buffer.md) | 待翻译 |
 | [Creating binary archives from device-built pipeline state objects](../../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/creating-binary-archives-from-device-built-pipeline-state-objects.md) | 待翻译 |
 | [Creating custom container views](../../../apple-docs/en/swiftui/creating-custom-container-views.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/creating-custom-container-views.md) | 待翻译 |
-| [Creating custom navigation interactions](../../../apple-docs/en/uikit/creating-custom-navigation-interactions.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/creating-custom-navigation-interactions.md) | 待翻译 |
-| [Creating custom symbol images for your app](../../../apple-docs/en/uikit/creating-custom-symbol-images-for-your-app.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/creating-custom-symbol-images-for-your-app.md) | 待翻译 |
 | [Creating custom views for Live Activities](../../../apple-docs/en/activitykit/creating-custom-views-for-live-activities.md) | Apple 文档 | Apple · ActivityKit | [英文](../../../apple-docs/en/activitykit/creating-custom-views-for-live-activities.md) | 待翻译 |
 | [Creating images from a video asset](../../../apple-docs/en/avfoundation/creating-images-from-a-video-asset.md) | Apple 文档 | Apple · AVFoundation | [英文](../../../apple-docs/en/avfoundation/creating-images-from-a-video-asset.md) | 待翻译 |
 | [Creating performant scrollable stacks](../../../apple-docs/en/swiftui/creating-performant-scrollable-stacks.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/creating-performant-scrollable-stacks.md) | 待翻译 |
-| [Creating self-sizing table view cells](../../../apple-docs/en/uikit/creating-self-sizing-table-view-cells.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/creating-self-sizing-table-view-cells.md) | 待翻译 |
 | [Creating spatial photos and videos with spatial metadata](../../../apple-docs/en/imageio/creating-spatial-photos-and-videos-with-spatial-metadata.md) | Apple 文档 | Apple · Image I/O | [英文](../../../apple-docs/en/imageio/creating-spatial-photos-and-videos-with-spatial-metadata.md) | 待翻译 |
 | [Creating views for widgets, Live Activities, and watch complications](../../../apple-docs/en/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications.md) | Apple 文档 | Apple · WidgetKit | [英文](../../../apple-docs/en/widgetkit/creating-views-for-widgets-live-activities-and-watch-complications.md) | 待翻译 |
 | [Culling occluded geometry using the visibility result buffer](../../../apple-docs/en/metal/culling-occluded-geometry-using-the-visibility-result-buffer.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/culling-occluded-geometry-using-the-visibility-result-buffer.md) | 待翻译 |
 | [Custom layout](../../../apple-docs/en/swiftui/custom-layout.md) | Apple 文档 | Apple · SwiftUI | [英文](../../../apple-docs/en/swiftui/custom-layout.md) | 待翻译 |
-| [Customizing a document-based app’s launch experience](../../../apple-docs/en/uikit/customizing-a-document-based-app-s-launch-experience.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-a-document-based-app-s-launch-experience.md) | 待翻译 |
 | [Customizing a PyTorch operation](../../../apple-docs/en/metal/customizing-a-pytorch-operation.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/customizing-a-pytorch-operation.md) | 待翻译 |
 | [Customizing a TensorFlow operation](../../../apple-docs/en/metal/customizing-a-tensorflow-operation.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/customizing-a-tensorflow-operation.md) | 待翻译 |
-| [Customizing an image picker controller](../../../apple-docs/en/uikit/customizing-an-image-picker-controller.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-an-image-picker-controller.md) | 待翻译 |
-| [Customizing collection view layouts](../../../apple-docs/en/uikit/customizing-collection-view-layouts.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-collection-view-layouts.md) | 待翻译 |
 | [Customizing Image Transitions](../../../apple-docs/en/coreimage/customizing-image-transitions.md) | Apple 文档 | Apple · Core Image | [英文](../../../apple-docs/en/coreimage/customizing-image-transitions.md) | 待翻译 |
 | [Customizing shaders using function pointers and stitching](../../../apple-docs/en/metal/customizing-shaders-using-function-pointers-and-stitching.md) | Apple 文档 | Apple · Metal | [英文](../../../apple-docs/en/metal/customizing-shaders-using-function-pointers-and-stitching.md) | 待翻译 |
 | [Customizing the behavior of segue-based presentations](../../../apple-docs/en/uikit/customizing-the-behavior-of-segue-based-presentations.md) | Apple 文档 | Apple · UIKit | [英文](../../../apple-docs/en/uikit/customizing-the-behavior-of-segue-based-presentations.md) | 待翻译 |
