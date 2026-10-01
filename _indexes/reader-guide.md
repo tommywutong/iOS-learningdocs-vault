@@ -21,7 +21,7 @@
 | [并发与线程](topics/concurrency.md) | 122 | 9 |
 | [性能与调试](topics/performance-debugging.md) | 181 | 26 |
 | [启动、链接与二进制](topics/launch-linking-binary.md) | 86 | 43 |
-| [UI 与渲染](topics/ui-rendering.md) | 333 | 79 |
+| [UI 与渲染](topics/ui-rendering.md) | 349 | 79 |
 | [网络与安全](topics/network-security.md) | 68 | 8 |
 | [数据与持久化](topics/data-persistence.md) | 63 | 21 |
 | [Swift 语言](topics/swift-language.md) | 283 | 153 |

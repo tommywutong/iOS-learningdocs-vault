@@ -7,7 +7,7 @@
 |---|---:|---:|---:|---|---|
 | swift | 18,401 | 1,027 | 138 | [逐篇查看](sources/apple/swift.md) | [目录](../apple-docs/en/swift) |
 | foundation | 14,127 | 266 | 177 | [逐篇查看](sources/apple/foundation.md) | [目录](../apple-docs/en/foundation) |
-| uikit | 12,614 | 265 | 174 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
+| uikit | 12,614 | 265 | 190 | [逐篇查看](sources/apple/uikit.md) | [目录](../apple-docs/en/uikit) |
 | security | 7,311 | 141 | 18 | [逐篇查看](sources/apple/security.md) | [目录](../apple-docs/en/security) |
 | swiftui | 7,106 | 146 | 4 | [逐篇查看](sources/apple/swiftui.md) | [目录](../apple-docs/en/swiftui) |
 | avfoundation | 5,530 | 130 | 3 | [逐篇查看](sources/apple/avfoundation.md) | [目录](../apple-docs/en/avfoundation) |
@@ -205,4 +205,4 @@
 | mididriverkit | 1 | 1 | 0 | [逐篇查看](sources/apple/mididriverkit.md) | [目录](../apple-docs/en/mididriverkit) |
 | opengles | 1 | 0 | 0 | — | [目录](../apple-docs/en/opengles) |
 | callkit | 1 | 1 | 0 | [逐篇查看](sources/apple/callkit.md) | [目录](../apple-docs/en/callkit) |
-| **合计** | **95,634** | **3,746** | **1,095** | | |
+| **合计** | **95,634** | **3,746** | **1,111** | | |

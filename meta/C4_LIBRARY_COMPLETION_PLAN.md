@@ -122,4 +122,18 @@ python3 tools/translate_plan.py status
 
 ## 8. 完成记录
 
-（未开工。）
+- **M0（Xcode 清零）**：2026-09-05 完成 4 篇（屏幕快照、宽度与设备变体、
+  增强安全辅助扩展、分发签名代码），`translate_plan.py next` 确认 xcode 队列
+  清零（100%）。主会话初译，独立审校待补（PR #30）。
+- **M1 批 1（UIKit 前 16 篇，约 99KB）**：2026-09-05 完成。3 个并行子代理
+  初译 9 篇 + 主会话初译 7 篇；两个独立子代理上下文交叉审校 16 篇，修订全部
+  采纳：2 处 [高]（languages frontmatter 还原、sampleCode 页 sub 标签）、
+  TERMS 违规清零（导航控制器→导览控制器、控件→控制、VoiceOver→旁白、
+  document→文稿全族、picker→选择器、popover→弹出窗口）、trait 词族按
+  TERMS 定为「特性」（初译提示词误写「特征」，已纠正）、页脚与导航行
+  跨篇统一。`validate.py --strict-identifiers` 零问题（存量 7 个历史问题
+  文件与本批无关）。
+  **新增备案（建议 TERMS 定案）**：asset catalog=资源目录（与「素材目录」
+  两说并存）、launch screen=启动屏幕、size class=尺寸类别、
+  preservation=保留 / restoration=恢复、Guided Access=引导式访问、
+  handler=处理程序、自定/自定义两形并存、轻点/点按两形并存。
