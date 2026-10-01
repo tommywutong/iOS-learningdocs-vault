@@ -15,7 +15,7 @@ translated: true
 > 原文：[Last time](https://www.mikeash.com/pyblog/friday-qa-2013-01-25-lets-build-nsobject.html)　·　mikeash.com Friday Q&A
 
 发表于 2013-01-25 15:32 | [RSS 订阅](https://www.mikeash.com/pyblog/rss.py)（[全文订阅](https://www.mikeash.com/pyblog/rss.py?mode=fulltext)） | [博客索引](https://www.mikeash.com/pyblog/)  
-下一篇：[Friday 问答 2013-02-08：构建键值编码](https://www.mikeash.com/pyblog/friday-qa-2013-02-08-lets-build-key-value-coding.html)  
+下一篇：[Friday Q&A 2013-02-08：让我们构建键值编码](https://www.mikeash.com/pyblog/friday-qa-2013-02-08-lets-build-key-value-coding.html)  
 上一篇：[Friday Q&A 2013-01-11：Mach 异常处理器](https://www.mikeash.com/pyblog/friday-qa-2013-01-11-mach-exception-handlers.html)  
 标签：[fridayqna](https://www.mikeash.com/pyblog/?tag=fridayqna) [letsbuild](https://www.mikeash.com/pyblog/?tag=letsbuild) [objectivec](https://www.mikeash.com/pyblog/?tag=objectivec)
 
@@ -217,7 +217,7 @@ release 方法做的事情多一些。它先把引用计数减一。如果引用
 
 值得注意的是，这个检查并不特别高效。对一个身处类层次深处的类调用它，可能要经过很多轮循环才会返回 `NO`。正因如此，`isKindOfClass:` 检查可能比消息发送慢得多，在某些情况下甚至会实打实地成为瓶颈。这也是"能不用就不用"的又一个理由。
 
-`respondsToSelector:` 方法直接转发调用运行时函数 `class_respondsToSelector`。后者在类的方法表里查找该选择器，看有没有对应条目：
+`respondsToSelector:` 方法直接转发调用运行时函数 `class_respondsToSelector`。后者在类的方法表里查找该选择器（selector），看有没有对应条目：
 
 ```
     - (BOOL)respondsToSelector: (SEL)aSelector
@@ -424,7 +424,7 @@ release 方法做的事情多一些。它先把引用计数减一。如果引用
 
 `NSObject` 提供的一大块功能我跳过了：键值编码。它复杂到值得单独写一篇文章，改天再回来讲它。
 
-今天就到这里。Friday Q&A 由读者的点子驱动——这事你多半早就知道了——请[把你的主题建议发给我](mailto:mike@mikeash.com)。下次见，别写出连我都不会写的代码。
+今天就到这里。Friday Q&A 由读者的点子驱动——万一你竟然还不知道的话——请[把你的主题建议发给我](mailto:mike@mikeash.com)。下次见，别写出连我都不会写的代码。
 
 喜欢这篇文章吗？我还在销售整本整本的文章合集！第二卷和第三卷已经出版，提供 ePub、PDF、印刷版，以及 iBooks 和 Kindle 版本。[点击这里了解详情](https://www.mikeash.com/book.html)。
 
