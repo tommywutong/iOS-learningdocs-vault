@@ -7,7 +7,7 @@
 
 | 子主题 | 可中文阅读 | 全部资料 |
 |---|---:|---:|
-| [App 启动与 dyld](launch-linking-binary/01.md) | 19 | 32 |
+| [App 启动与 dyld](launch-linking-binary/01.md) | 20 | 32 |
 | [Mach-O 与链接器](launch-linking-binary/02.md) | 31 | 34 |
 | [编译与构建](launch-linking-binary/03.md) | 3 | 35 |
 | [动态库与体积](launch-linking-binary/04.md) | 23 | 36 |

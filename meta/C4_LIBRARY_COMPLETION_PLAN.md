@@ -137,3 +137,12 @@ python3 tools/translate_plan.py status
   两说并存）、launch screen=启动屏幕、size class=尺寸类别、
   preservation=保留 / restoration=恢复、Guided Access=引导式访问、
   handler=处理程序、自定/自定义两形并存、轻点/点按两形并存。
+- **M1 批 2（UIKit 字母序续 16 篇，约 132KB）**：2026-09-05 完成。子代理 5 篇
+  + 主会话 11 篇（代理并发失败全部接管）；2 个独立子代理交叉审校，
+  [中]×7 修复（动态类型统一、Auto Layout/Simulator 保留英文、picker 标注、
+  视图层级结构、文稿选择器标注）、代码注释补译 40+ 条、低级润色若干。
+  `validate.py --strict-identifiers` 零问题（存量 7 个历史问题文件除外）。
+  **新增备案**：B1 SF Symbols 篇大模板内 XML 注释承载正文说明但校验器视其为
+  代码行，补译需先调整校验器 COMMENT 规则；B2 自定/自定义；B3 sheet 保留
+  英文 vs TERMS「表单」、transition=转场 vs TERMS「过渡」；B4 item=条目
+  （焦点语境）/项目（集合视图语境）；点按=Mac click / 轻点=iOS tap。
