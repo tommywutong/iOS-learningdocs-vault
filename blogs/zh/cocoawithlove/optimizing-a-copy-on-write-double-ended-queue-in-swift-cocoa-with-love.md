@@ -42,13 +42,13 @@ Foundation 库里也找不到双端队列，但 `CFArray`/`NSMutableArray` 通�
 
 由于这是最容易实现的双端队列类型，我将实现「环形缓冲区」风格的双端队列——首元素允许相对存储前端有一个「偏移」，一端不断 pop、另一端不断 push 时，队列中已初始化的值会在存储内偏移，直到在末端绕回。
 
-![Figure 1: a ring-buffer showing the indices of four initialized elements in a storage of capacity six](https://www.cocoawithlove.com/assets/blog/deque1.svg)
+![图 1：容量为六的存储中显示四个已初始化元素下标的环形缓冲区](https://www.cocoawithlove.com/assets/blog/deque1.svg)
 
 一个环形缓冲区，容量为六的存储中显示四个已初始化元素的下标
 
 若只向双端队列末尾追加元素，它会表现得像标准数组。差异出现在你从前端移除元素时。
 
-![Figure 2: the valid indices after removing the first three elements and appending three more](https://www.cocoawithlove.com/assets/blog/deque2.svg)
+![图 2：移除前三个元素并再追加三个之后的有效下标](https://www.cocoawithlove.com/assets/blog/deque2.svg)
 
 移除前三个元素并再追加三个之后的有效下标
 

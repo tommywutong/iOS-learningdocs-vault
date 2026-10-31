@@ -189,7 +189,7 @@ __weak id weakSelf = self;
 
 ### 后台绘制
 
-若你的测量显示 `drawRect:` 是性能瓶颈，可以把这段绘制代码移到后台。不过在此之前，检查是否有其他方式达到同样效果，例如使用 core animation layers，或用预渲染图像代替纯 Core Graphics 绘制。见 Florian 关于当前设备图形性能测量的[这篇博文](http://floriankugler.com/blog/2013/5/24/layer-trees-vs-flat-drawing-graphics-performance-across-ios-device-generations)，或 UIKit 工程师 Andy Matuschak 的[这条评论](https://lobste.rs/s/ckm4uw/a_performance-minded_take_on_ios_design/comments/itdkfh)，以好好感受其中涉及的所有微妙之处。
+若你的测量显示 `drawRect`: 是性能瓶颈，可以把这段绘制代码移到后台。不过在此之前，检查是否有其他方式达到同样效果，例如使用 core animation layers，或用预渲染图像代替纯 Core Graphics 绘制。见 Florian 关于当前设备图形性能测量的[这篇博文](http://floriankugler.com/blog/2013/5/24/layer-trees-vs-flat-drawing-graphics-performance-across-ios-device-generations)，或 UIKit 工程师 Andy Matuschak 的[这条评论](https://lobste.rs/s/ckm4uw/a_performance-minded_take_on_ios_design/comments/itdkfh)，以好好感受其中涉及的所有微妙之处。
 
 若你确实认定最佳选项是在后台执行绘制代码，解决方案相当简单。取出 `drawRect:` 方法中的代码，放进一个 operation。然后用 image view 替换原来的 view，并在 operation 完成后更新它。在绘制方法中，用 `UIGraphicsBeginImageContextWithOptions` 代替 `UIGraphicsGetCurrentContext`：
 
