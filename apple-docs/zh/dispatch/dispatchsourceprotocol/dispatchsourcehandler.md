@@ -31,7 +31,7 @@ typealias DispatchSourceHandler = () -> Void
 
 ### 安装事件处理程序
 
-- [setEventHandler(handler:)](<seteventhandler(handler_).md>) — Sets the event handler work item for the dispatch source.
+- [setEventHandler(handler:)](<seteventhandler(handler_).md>) — 设置该 dispatch source 的事件处理程序工作项。
 - [setEventHandler(qos:flags:handler:)](<seteventhandler(qos_flags_handler_).md>)
-- [setRegistrationHandler(handler:)](<setregistrationhandler(handler_).md>) — Sets the registration handler work item for the dispatch source.
+- [setRegistrationHandler(handler:)](<setregistrationhandler(handler_).md>) — 设置该 dispatch source 的注册处理程序工作项。
 - [setRegistrationHandler(qos:flags:handler:)](<setregistrationhandler(qos_flags_handler_).md>)
