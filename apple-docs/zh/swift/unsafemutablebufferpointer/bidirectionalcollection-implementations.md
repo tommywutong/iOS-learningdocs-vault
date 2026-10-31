@@ -15,7 +15,7 @@ content_hash: 'sha256:e0fc01dd96cce8e8'
 translated: true
 ---
 
-> 导航： [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Swift Standard Library](../swift-standard-library.md) · [Manual Memory Management](../manual-memory-management.md) · [UnsafeMutableBufferPointer](../unsafemutablebufferpointer.md)
+> 导航： [Technologies](../../technologies.md) · [Swift](../../swift.md) · [Swift Standard Library](../swift-standard-library.md) · [手动内存管理](../manual-memory-management.md) · [UnsafeMutableBufferPointer](../unsafemutablebufferpointer.md)
 
 # BidirectionalCollection 实现
 
