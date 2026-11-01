@@ -435,6 +435,7 @@ def residual_english(body: str, source_body: str | None = None) -> list[str]:
         if re.search(r"[一-鿿]", s):
             continue
         s = INLINE_CODE.sub(" ", s)
+        s = re.sub(r"\]\(<[^>]*>\)", "] ", s)
         s = re.sub(r"\]\([^)]*\)", "] ", s)
         s = re.sub(r"https?://\S+", " ", s)
         s = re.sub(r"^#{1,6}\s+|^\s*(?:[-*+]|\d+\.)\s+|^>\s*", "", s)
