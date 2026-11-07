@@ -1,5 +1,55 @@
 # 项目状态与 AI 交接
 
+## 2026-11-07 本地核对快照与接手入口
+
+本节覆盖下文过时的仓库地址、统计和“当前范围”描述；下文保留为历史记录。统计仅代表
+本工作树 `translate/docs-wwdc-full-20261030`，不是其他分支的并集。
+
+- 工作树：`/Users/tommywu/Desktop/翻译/apple-developer-docs-vault`；核对时 HEAD 为
+  `23e457399`，与 `origin/translate/docs-wwdc-full-20261030` 一致。
+- 实际远端为 `tommywutong/iOS-learningdocs-vault`，GitHub 显示 **PUBLIC**，与下文
+  “私有”不符。仓库含 Apple 和第三方材料；未核实再分发授权前，不扩大公开传播，也不
+  擅自变更仓库可见性。
+- `origin/main` 为 `ec7263f15`；本分支相对 main 双向差异为 main 独有 1 个提交、
+  本分支独有 123 个提交。另有 C2–C4 堆叠 PR #26–#33，终点
+  `c4-m1-uikit-03` 为 `bf5c4559d`，与本分支并未合并；不要把各分支成果相加。
+- 本机另一工作树 `/Users/tommywu/iOS-learningdocs-vault` 位于上述 C4 分支，其
+  `meta/C4_LIBRARY_COMPLETION_PLAN.md` 记录了较旧暑期计划更广的已批准范围。两条
+  分支实际范围及后续基线须先对账，不能只根据旧计划自行停做或扩展。
+- `python3 tools/translate_plan.py status` 本次统计（仅文件配对，不证明翻译质量）：
+
+  | 来源 | 统计范围 | 有中文配对 | 无配对 |
+  |---|---:|---:|---:|
+  | Apple 成篇文档 | 3,746 | 2,452 | 1,294 |
+  | WWDC | 178 | 178 | 0 |
+  | 英文博客 | 2,263 | 398 | 1,865 |
+  | 英文快照 | 30 | 28 | 2（历史计划排除） |
+
+  Apple 全部页面含 API 符号时，95,634 个英文 Markdown 中 4,179 个有中文同路径
+  文件；Objective-C 849/849、os 594/594、Dispatch 279/611、CoreFoundation
+  83/2,724。以上均只检查存在性，不能替代逐篇审校、结构校验和质量验收。
+- 成篇口径下 UIKit 264/264、Foundation 265/265、Xcode 355/359；不能由文件配对
+  推断译文均已通过独立审校。
+- `_indexes/translation-status.md` 和下文总账未随当前分支刷新，不得用作本次统计。
+  导航为生成产物，后续完成对账并确认修改范围后按贡献指南的工具生成、校验。
+- 未跟踪 `.dispatch/` 是 CoreFoundation 批次清单，不是已完成译文。`oc_cf_batch3.json`
+  列出 40 个目标，核对时 40 个原文存在、中文配对均不存在；保留清单，不自动提交。
+  仓库外的 `/Users/tommywu/Desktop/翻译/.dispatch/state.json` 是历史调度账，其
+  记录批次数和状态项数不一致，不能当作完成证明。
+- 历史记录称暑期直接白名单 129 篇、B 类 407 篇和 C1 四篇已验收；本次未逐篇重验。
+  22 个失败快照、独立审校覆盖、当前分支与堆叠 PR 的差异及未完成任务仍需核对。
+
+### 给其他 Agent
+
+从本工作树根目录开始，先读本节、`CONTRIBUTING.md`、`meta/TRANSLATION_STYLE.md`、
+`meta/TERMS.md`；涉及 C2–C4 时另读上面 C4 工作树中的对应计划。运行
+`git status --short --branch` 和 `python3 tools/translate_plan.py status`，先核对分支、
+目标文件、已有配对与审校记录，再领取明确路径；不要直接使用历史计数或恢复旧批次。
+
+翻译执行模板可参考仓库外 `.dispatch/AGENT_PROMPT.md`，但它只是历史模板：批次必须由
+用户或调度者明确指定，初译后还需独立上下文逐篇审校、机械校验和索引检查；不得自行
+提交、推送、合并或扩大公开范围。不要修改英文原文、其他批次或私密凭据。
+
 > 状态日期：2026-08-01
 > 历史 Claude 会话：`b6659196-95b7-4c6a-84df-44e94ea3d10d`
 > 仓库：<https://github.com/Biscoffee/apple-docs-vault>（私有）
